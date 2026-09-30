@@ -4,50 +4,95 @@ const arabic = {
   title: "مسارات كيدز",
   pathLabel: "مسار تعلّم مستقل للأطفال",
   cardDescription:
-    "ثلاث مراحل عمرية؛ يبدأ كل مستوى بدرسين مجانيين. يدير وليّ الأمر الحساب والتقدم.",
+    "ثلاث مراحل عمرية؛ يبدأ كل مستوى بدرسين مجانيين. يدير وليّ الأمر حساب الأطفال وملفاتهم.",
   details: "اكتشف مسارات كيدز",
   eyebrow: "تعلّم الذكاء الاصطناعي بحسب المرحلة العمرية",
   intro:
-    "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول والتقدم، وتبقى باقات الكبار مستقلة.",
+    "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول وملفات الأطفال، وتبقى باقات الكبار مستقلة.",
   reviewNotice:
-    "محتوى الدروس مُراجع، لكن الوصول للأطفال مغلق حتى تكتمل بوابات الخصوصية والتحقق من وليّ الأمر وتشغيل المحتوى على الخادم.",
+    "خدمة الأطفال مغلقة مؤقتًا. عند إتاحتها يقرأ وليّ الأمر سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "تعذر التحقق من حالة كيدز الآن. حاول مجددًا بعد قليل.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "12 درسًا",
-  familyTitle: "اشتراك عائلي مستقل",
-  familyDescription: "باقات Pro وPro Plus للكبار لا تفتح دروس كيدز تلقائيًا.",
-  bundleTitle: "خصم الجمع 10%",
-  bundleDescription:
-    "خصم 10% على اشتراك كيدز فقط عند الجمع مع Pro أو Pro Plus؛ لا يتغير سعر باقة الكبار.",
+  viewPricing: "عرض باقات كيدز وأسعارها",
+  nextStep: "الخطوة التالية",
+  startKids: "ابدأ كيدز",
   parentNote:
-    "إنشاء ملفات الأطفال والوصول للدروس يتطلبان تفعيل سياسة وليّ الأمر والخصوصية والتحقق على الخادم.",
+    "استخدم حساب مسارات نفسه، ثم وافق على سياسة الأطفال وأنشئ ملفًا لكل طفل. لا يحتاج كيدز إلى حساب آخر.",
 } as const;
 
 type KidsCopy = { [K in keyof typeof arabic]: string };
+
+const egyptian: KidsCopy = {
+  title: "مسارات كيدز",
+  pathLabel: "مسار تعليم مخصوص للأطفال",
+  cardDescription:
+    "٣ مراحل عمرية، وأول درسين في كل مستوى مجانًا. وليّ الأمر بيدير حساب الأطفال وملفاتهم.",
+  details: "اكتشف مسارات كيدز",
+  eyebrow: "اتعلّم الذكاء الاصطناعي على قد مرحلتك العمرية",
+  intro:
+    "٣ مراحل، في كل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر بيدير الوصول وملفات الأطفال، وباقات الكبار منفصلة.",
+  reviewNotice:
+    "خدمة الأطفال مقفولة مؤقتًا. لما تتاح، وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "مش قادرين نتأكد من حالة كيدز دلوقتي. حاول بعد شوية.",
+  freeBadge: "أول درسين ببلاش",
+  level: "المستوى",
+  lessons: "١٢ درس",
+  viewPricing: "شوف باقات كيدز وأسعارها",
+  nextStep: "الخطوة الجاية",
+  startKids: "ابدأ كيدز",
+  parentNote:
+    "استخدم نفس حساب مسارات، ووافق على سياسة الأطفال واعمل ملف لكل طفل. مفيش حساب تاني لكيدز.",
+};
+
+const gulf: KidsCopy = {
+  title: "مسارات كيدز",
+  pathLabel: "مسار تعلّم مستقل للأطفال",
+  cardDescription:
+    "ثلاث مراحل عمرية، وأول درسين بكل مستوى مجانًا. وليّ الأمر يدير حساب الأطفال وملفاتهم.",
+  details: "اكتشف مسارات كيدز",
+  eyebrow: "تعلّم الذكاء الاصطناعي على حسب مرحلتك العمرية",
+  intro:
+    "ثلاث مراحل، بكل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر يدير الوصول وملفات الأطفال، وباقات الكبار منفصلة.",
+  reviewNotice:
+    "خدمة الأطفال مقفولة مؤقتًا. عند إتاحتها وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "تعذر التحقق من حالة كيدز الحين. جرّب بعدين.",
+  freeBadge: "أول درسين مجانًا",
+  level: "المستوى",
+  lessons: "١٢ درس",
+  viewPricing: "شوف باقات كيدز وأسعارها",
+  nextStep: "الخطوة التالية",
+  startKids: "ابدأ كيدز",
+  parentNote:
+    "استخدم حساب مسارات نفسه، ثم وافق على سياسة الأطفال وسوّ ملفًا لكل طفل. ما تحتاج حساب ثاني لكيدز.",
+};
 
 const en: KidsCopy = {
   title: "Masaarat Kids",
   pathLabel: "A separate learning path for children",
   cardDescription:
-    "Three age levels, planned to start with two free lessons each. Parents will manage access and progress.",
+    "Three age levels with two free lessons each. Parents manage children's access and profiles.",
   details: "Explore Masaarat Kids",
   eyebrow: "AI learning for each age level",
   intro:
-    "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and progress; adult plans stay separate.",
+    "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and child profiles; adult plans stay separate.",
   reviewNotice:
-    "Lesson content has been reviewed, but child access remains closed pending privacy controls, parental verification, and server release.",
+    "Kids is temporarily closed. Once available, parents read and accept the children's privacy policy before creating profiles.",
+  releaseUnavailable: "Kids availability could not be checked right now. Please try again shortly.",
   freeBadge: "First two lessons free",
   level: "Level",
   lessons: "12 lessons",
-  familyTitle: "Separate family subscription",
-  familyDescription: "Adult Pro and Pro Plus plans do not unlock Kids lessons automatically.",
-  bundleTitle: "10% bundle discount",
-  bundleDescription:
-    "Save 10% on Kids only when combined with Pro or Pro Plus; the adult plan price stays the same.",
+  viewPricing: "View Kids plans and prices",
+  nextStep: "Next step",
+  startKids: "Get started with Kids",
   parentNote:
-    "Child profiles and lesson access require parental verification, approved privacy controls, and server release.",
+    "Use your existing Masaarat account, accept the children's policy, and create a profile for each child. Kids needs no second account.",
 };
 
 export function getKidsCopy(locale: SupportedLocale): KidsCopy {
-  return locale === "en" ? en : arabic;
+  if (locale === "en") return en;
+  if (locale === "ar-EG") return egyptian;
+  if (locale === "ar-Gulf") return gulf;
+  return arabic;
 }

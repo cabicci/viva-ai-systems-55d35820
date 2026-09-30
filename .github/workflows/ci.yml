@@ -41,6 +41,12 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Account Auth email localization (no email sends)
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/signup-email.test.tsx
+          src/lib/__tests__/recovery-email.test.tsx
+
       - name: Stripe billing behavior (isolated PostgreSQL, no network payments)
         run: bunx vitest run --config vitest.billing.config.ts
 
@@ -50,8 +56,11 @@ jobs:
       - name: Kids country release and parent access (isolated, no child data)
         run: |
           node scripts/kids/test_market_release_migration.mjs
+          node scripts/kids/test_consent_migration.mjs
           node scripts/kids/test_retention_migration.mjs
-          bunx vitest run src/components/kids/KidsParentRequest.test.tsx src/lib/kids/parent-state.test.tsx src/lib/kids/family-policy.test.ts src/components/kids/KidsFamilyPricing.test.tsx
+          node scripts/email/test_welcome_migration.mjs
+          node scripts/email/test_branded_mail_migration.mjs
+          bunx vitest run src/components/kids/KidsParentRequest.test.tsx src/components/kids/KidsConsentControl.test.tsx src/lib/kids/parent-state.test.tsx src/lib/kids/family-policy.test.ts src/components/kids/KidsFamilyPricing.test.tsx
           bunx vitest run src/lib/kids/retention-worker.test.ts src/lib/__tests__/resend-transport.test.ts
 
       - name: Localization contract

@@ -10,13 +10,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { KIDS_FAMILY_POLICY } from "@/lib/kids/family-policy";
+import { useKidsPrivacyRecord } from "@/lib/kids/privacy-record";
 
-export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () => void } = {}) {
+export function KidsParentPanel() {
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
   const { state, profiles, createProfile, refresh } = useKidsParentState();
+  const { record, loading: consentLoading, error: consentError } = useKidsPrivacyRecord();
   const [name, setName] = useState("");
+  const consentPolicyId = state === "ready" ? record?.policy_id : undefined;
   const [level, setLevel] = useState<KidsLevelId>("level-1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
@@ -27,8 +30,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
     setSaving(true);
     setError(false);
     try {
-      await createProfile(name, level);
-      onProfileCreated?.();
+      await createProfile(name, level, consentPolicyId);
       setName("");
     } catch {
       setError(true);
@@ -42,7 +44,6 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
       aria-label={copy.parentTitle}
       className="rounded-3xl border border-primary/20 bg-card p-6 md:p-8"
     >
-      <h2 className="text-2xl font-black">{copy.parentTitle}</h2>
       {state === "signed-out" && (
         <div className="mt-4 space-y-4">
           <p className="text-sm leading-relaxed text-muted-foreground">{copy.signInNotice}</p>
@@ -99,6 +100,14 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                   <li key={profile.id} className="rounded-xl border border-border/60 p-3 text-sm">
                     {profile.display_name} · {copy.level}{" "}
                     {KIDS_LEVELS.findIndex((item) => item.id === profile.level_id) + 1}
+                    <Link
+                      to="/kids/$levelId"
+                      params={{ levelId: profile.level_id }}
+                      search={localeSearch()}
+                      className="mt-2 block font-bold text-primary underline"
+                    >
+                      {copy.viewLevel}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -106,6 +115,11 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
           </div>
           <form onSubmit={addProfile} className="space-y-3 rounded-2xl bg-muted/30 p-4">
             <h3 className="font-bold">{copy.create}</h3>
+            {!consentPolicyId && !consentLoading && (
+              <p role="status" className="text-sm text-destructive">
+                {consentError ? copy.unavailable : copy.pending}
+              </p>
+            )}
             {atProfileLimit && (
               <p role="status" className="text-sm">
                 {copy.profileLimit}
@@ -117,7 +131,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
               value={name}
               maxLength={40}
               required
-              disabled={atProfileLimit || saving}
+              disabled={atProfileLimit || saving || !consentPolicyId}
               onChange={(event) => setName(event.target.value)}
               autoComplete="off"
             />
@@ -125,7 +139,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
             <select
               id="kids-profile-level"
               value={level}
-              disabled={atProfileLimit || saving}
+              disabled={atProfileLimit || saving || !consentPolicyId}
               onChange={(event) => setLevel(event.target.value as KidsLevelId)}
               className="min-h-11 w-full rounded-md border border-input bg-background px-3"
             >
@@ -140,7 +154,10 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                 {copy.profileError}
               </p>
             )}
-            <Button type="submit" disabled={saving || atProfileLimit || !name.trim()}>
+            <Button
+              type="submit"
+              disabled={saving || atProfileLimit || !name.trim() || !consentPolicyId}
+            >
               {copy.submit}
             </Button>
           </form>

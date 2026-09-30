@@ -27,7 +27,7 @@ describe("public commercial UI contract", () => {
     const navbar = source("src/components/site/Navbar.tsx");
 
     expect(navbar).toContain("SheetTrigger");
-    expect(navbar).toContain('className="lg:hidden rounded-full"');
+    expect(navbar).toContain('className="xl:hidden rounded-full"');
     expect(navbar).toContain('aria-label={t("nav.menu")}');
     expect(navbar).not.toContain('className="hidden md:flex items-center gap-8');
   });

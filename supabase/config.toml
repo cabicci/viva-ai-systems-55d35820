@@ -1,5 +1,8 @@
 project_id = "abyqqeboyrkkwhjpwmtd"
 
+[functions.kids-catalogue]
+verify_jwt = false # Public approved lesson names only; raw bodies stay private.
+
 [functions.billing-stripe-webhook]
 verify_jwt = false
 
@@ -8,3 +11,6 @@ verify_jwt = false # Dedicated high-entropy service job secret; no client JWT au
 
 [functions.kids-retention-webhook]
 verify_jwt = false # Signed provider payload; verified before any database access.
+
+[functions.account-welcome-job]
+verify_jwt = false # Dedicated high-entropy service secret, checked before DB access.

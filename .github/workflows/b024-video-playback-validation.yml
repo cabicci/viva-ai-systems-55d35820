@@ -3,6 +3,16 @@ name: "B024 - Authenticated lesson video playback validation"
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'src/lib/bunny-videos.ts'
+      - 'src/lib/__tests__/locale-pilot-video-*'
+      - 'src/components/intro/IntroLessonRenderer.tsx'
+      - 'src/components/locale/LocalePackageLessonRenderer.tsx'
+      - 'src/routes/learn.$pathId.$lessonId.tsx'
+      - 'src/routes/kids.$levelId.$lessonNumber.tsx'
+      - 'src/lib/kids/lesson-client.ts'
+      - 'supabase/functions/kids-playback/**'
+      - '.github/scripts/b024_video_playback_validation/**'
   workflow_dispatch:
     inputs:
       expected_product_sha:
@@ -100,6 +110,8 @@ jobs:
         run: |
           set -euo pipefail
           setsid node node_modules/wrangler/bin/wrangler.js --cwd .output dev --ip 127.0.0.1 --port 4173 \
+            --var "SUPABASE_URL:$SUPABASE_URL" \
+            --var "SUPABASE_PUBLISHABLE_KEY:$SUPABASE_PUBLISHABLE_KEY" \
             > "$B023_PRIVATE_ROOT/preview.log" 2>&1 < /dev/null &
           printf '%s\n' "$!" > "$B023_PRIVATE_ROOT/preview.pid"
           node --input-type=module <<'NODE'

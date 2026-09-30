@@ -205,7 +205,7 @@ function AnalyticsContent() {
   const totalSeconds = Number(data?.time?.total_seconds ?? 0);
 
   return (
-    <div className="min-h-dvh bg-background flex overflow-x-hidden" dir="rtl">
+    <div className="min-h-dvh bg-background flex flex-col overflow-x-clip" dir="rtl">
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-5xl mx-auto w-full min-w-0">
         <div className="mb-6">

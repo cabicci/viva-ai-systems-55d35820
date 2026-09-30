@@ -1,7 +1,13 @@
 # Kids country release preparation
 
-This change prepares the owner's all-22-Arab-country scope. It does not apply
-production migrations, enable a country, collect child records or publish a release.
+> Historical preparation state. For the activated journey and latest measured
+> controls, read [Kids current state](kids-current-state.md).
+
+The seven foundation migrations are applied in production. All global and
+22 market release flags remain closed. The 144 approved lesson records match
+144 private media records. This release adds one public family privacy policy
+in Arabic and English, the four UI locale variants, and a read-only public
+launch-status function. It does not enable a country or collect child records.
 
 ## Enforcement
 
@@ -36,7 +42,7 @@ Country selection is self-reported residence, not geolocation or proof of reside
 
 ## Rollout boundary
 
-The six prepared migrations, in order, are:
+The seven prepared migrations, in order, are:
 
 1. `20260924190000_kids_parent_content_access_foundation.sql`
 2. `20260924191000_kids_private_lesson_content.sql`
@@ -44,6 +50,14 @@ The six prepared migrations, in order, are:
 4. `20260925140000_kids_market_release_gates.sql`
 5. `20260925160000_kids_family_profile_limit.sql`
 6. `20260925190000_kids_retention_email.sql`
+7. `20260925210000_kids_profile_consent.sql`
+
+The seventh migration requires a published, reviewed policy for each enabled
+country/locale before profile creation. See [consent lifecycle](kids-consent-lifecycle.md).
+The public family policy is one consistent policy for every country. A market's
+versioned consent notice and review receipt still have to be entered before its
+server gate may open. A public policy page is not a regulator permission or a
+verified guardian-consent receipt.
 
 See [family policy preparation](kids-family-policy.md) for approved commercial
 rules, expiry retention, and the intended automatic guardian-verification path.

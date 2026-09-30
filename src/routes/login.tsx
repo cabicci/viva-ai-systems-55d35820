@@ -41,14 +41,18 @@ function LoginPage() {
     }
     toast.success(t("auth.login.toast.success"));
     if (search.intent === "kids") {
-      navigate({ to: "/kids", search: { locale: search.locale }, replace: true });
+      navigate({ to: "/kids/family", search: { locale: search.locale }, replace: true });
     } else {
       navigate({ to: "/dashboard", replace: true });
     }
   }
 
   return (
-    <AuthShell title={t("auth.login.title")} subtitle={t("auth.login.subtitle")}>
+    <AuthShell
+      title={t("auth.login.title")}
+      subtitle={t("auth.login.subtitle")}
+      showLanguageSelector
+    >
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label>{t("auth.field.email")}</Label>

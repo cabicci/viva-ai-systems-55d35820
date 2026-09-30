@@ -7,6 +7,33 @@ cancel Stripe, delete login credentials, revoke sessions, erase personal data,
 or define a legal retention period. Do not apply the migration to production
 or publish the UI until a staffed request queue and policy are approved.
 
+## Continuation on 30 September 2026
+
+The review branch is synchronized with main
+`5a5e24ddcaaae81265375c17ef42576e0c0258c8` (PR #117). The explicit migration
+inventory now includes the cumulative migrations through 29 September; no
+Kids migration or runtime behavior is changed by this continuation. Current
+head validation must be recorded separately from the earlier draft results.
+Local continuation checks: 11 tests passed and 11 PostgreSQL-dependent tests
+were skipped because this workspace has no disposable PostgreSQL service.
+TypeScript, changed-file ESLint/Prettier and the 6 GB production build passed.
+The existing GitHub disposable database gate must run on the new exact head;
+these local results do not claim that gate passed.
+
+The owner asked to complete implementation and automated checks first, and
+collect manual reviews into one final round. Password-reset inbox/link checks,
+the limited incident-alert receipt, production release checks and the deletion
+policy decisions below belong in that round. This sequencing decision does
+not approve financial/CRM retention or actual irreversible deletion. Kids
+changes remain paused and Stripe remains TEST.
+
+Before a finalizer can be approved, the review must specify the retained
+financial fields and expiry rule, the separate CRM retention rule, the
+deletion responder, and treatment of parent-account cascades and processor
+evidence. Existing schema/design and restore evidence remain valid within
+their documented limits. Request-only tests cannot prove final deletion or
+non-restoration of access after final deletion.
+
 ## Owner decision recorded 24 September 2026
 
 - Once the complete, verified deletion workflow is available, deleting the

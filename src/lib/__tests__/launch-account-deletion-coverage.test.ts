@@ -4,20 +4,14 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { disposableDbReady, psql, psqlAllowFail } from "../../../scripts/billing/disposable-db";
 
-const REPO_ROOT = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../..",
-);
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 
 describe("launch account deletion coverage (Batch A)", () => {
   // The former assertion read an obsolete migration and never ran the
   // effective function. DB execution now lives below on the cumulative tree.
 
   it("rate-limit.server.ts does not statically import client.server", () => {
-    const source = readFileSync(
-      path.join(REPO_ROOT, "src/lib/rate-limit.server.ts"),
-      "utf8",
-    );
+    const source = readFileSync(path.join(REPO_ROOT, "src/lib/rate-limit.server.ts"), "utf8");
     expect(source).not.toMatch(
       /^import\s+.*from\s+["']@\/integrations\/supabase\/client\.server["']/m,
     );
@@ -30,9 +24,7 @@ describe("launch account deletion coverage (Batch A)", () => {
       "utf8",
     );
     expect(source).toContain("allowed: false");
-    expect(source).not.toMatch(
-      /rate-limit disabled: missing supabase env[\s\S]*allowed: true/,
-    );
+    expect(source).not.toMatch(/rate-limit disabled: missing supabase env[\s\S]*allowed: true/);
   });
 });
 
@@ -81,28 +73,62 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
         VALUES ('${OTHER_USER}','free_active','none','EG','EGP','none','lc09-other');`);
 
       expect(psql(request(PAID_USER))).toContain("pending_review");
-      expect(psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`)).toBe("1");
-      expect(psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`)).toBe("0");
-      expect(psql(`SELECT count(*) FROM billing.subscriptions WHERE id='${SUBSCRIPTION}'`)).toBe("1");
-      expect(psql(`SELECT count(*) FROM billing.subscription_events WHERE subscription_id='${SUBSCRIPTION}'`)).toBe("1");
-      expect(psql(`SELECT count(*) FROM billing.refunds WHERE payment_transaction_id='${TRANSACTION}'`)).toBe("1");
+      expect(
+        psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`),
+      ).toBe("1");
+      expect(
+        psql(
+          `SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`,
+        ),
+      ).toBe("0");
+      expect(psql(`SELECT count(*) FROM billing.subscriptions WHERE id='${SUBSCRIPTION}'`)).toBe(
+        "1",
+      );
+      expect(
+        psql(
+          `SELECT count(*) FROM billing.subscription_events WHERE subscription_id='${SUBSCRIPTION}'`,
+        ),
+      ).toBe("1");
+      expect(
+        psql(`SELECT count(*) FROM billing.refunds WHERE payment_transaction_id='${TRANSACTION}'`),
+      ).toBe("1");
     });
 
     it("does not grant a user another person's request or the old destructive RPC", () => {
-      const old = psqlAllowFail(`BEGIN; ${auth(PAID_USER)} SELECT public.delete_my_account_data(); COMMIT;`);
+      const old = psqlAllowFail(
+        `BEGIN; ${auth(PAID_USER)} SELECT public.delete_my_account_data(); COMMIT;`,
+      );
       expect(old.ok).toBe(false);
       expect(old.out).toMatch(/permission denied|has no permission/i);
-      const noAuth = psqlAllowFail("BEGIN; SET LOCAL ROLE anon; SELECT public.request_account_deletion(); COMMIT;");
+      const noAuth = psqlAllowFail(
+        "BEGIN; SET LOCAL ROLE anon; SELECT public.request_account_deletion(); COMMIT;",
+      );
       expect(noAuth.ok).toBe(false);
-      expect(psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`)).toBe("0");
-      expect(psql(`SELECT has_table_privilege('authenticated','billing.account_deletion_requests','SELECT')`)).toBe("f");
+      expect(
+        psql(
+          `SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`,
+        ),
+      ).toBe("0");
+      expect(
+        psql(
+          `SELECT has_table_privilege('authenticated','billing.account_deletion_requests','SELECT')`,
+        ),
+      ).toBe("f");
     });
 
     it("rolls back an interrupted request and records repeats idempotently", () => {
-      expect(psql(`BEGIN; ${auth(OTHER_USER)} SELECT public.request_account_deletion(); ROLLBACK;`)).toContain("pending_review");
-      expect(psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`)).toBe("0");
+      expect(
+        psql(`BEGIN; ${auth(OTHER_USER)} SELECT public.request_account_deletion(); ROLLBACK;`),
+      ).toContain("pending_review");
+      expect(
+        psql(
+          `SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${OTHER_USER}'`,
+        ),
+      ).toBe("0");
       expect(psql(request(PAID_USER))).toContain("pending_review");
-      expect(psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`)).toBe("1");
+      expect(
+        psql(`SELECT count(*) FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`),
+      ).toBe("1");
     });
 
     it("keeps replayable financial events while request remains pending", () => {
@@ -110,8 +136,12 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
         (gateway_code,gateway_event_id,event_type,status,signature_valid,received_at,idempotency_key)
         VALUES ('stripe_us','evt_lc09_late','invoice.paid','processed',true,now(),'lc09-late')
         ON CONFLICT (gateway_code,gateway_event_id) DO NOTHING`);
-      expect(psql(`SELECT count(*) FROM billing.webhook_events WHERE gateway_event_id='evt_lc09_late'`)).toBe("1");
-      expect(psql(`SELECT status FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`)).toBe("pending_review");
+      expect(
+        psql(`SELECT count(*) FROM billing.webhook_events WHERE gateway_event_id='evt_lc09_late'`),
+      ).toBe("1");
+      expect(
+        psql(`SELECT status FROM billing.account_deletion_requests WHERE user_id='${PAID_USER}'`),
+      ).toBe("pending_review");
     });
   },
 );

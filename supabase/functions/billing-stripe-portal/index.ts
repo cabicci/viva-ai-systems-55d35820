@@ -100,10 +100,13 @@ Deno.serve(async (request) => {
 
   try {
     const user = await authenticate(request);
+    const body = await request.json().catch(() => ({}));
     const context = await rpc<{
       gateway_customer_id: string;
       gateway_subscription_id: string;
-    }>("get_stripe_portal_context", { p_user_id: user.id });
+    }>(body?.scope === "kids" ? "get_kids_stripe_portal_context" : "get_stripe_portal_context", {
+      p_user_id: user.id,
+    });
 
     if (!context.gateway_customer_id || !context.gateway_subscription_id) {
       throw new Error("STRIPE_PORTAL_CONTEXT_INCOMPLETE");

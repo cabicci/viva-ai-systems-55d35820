@@ -4,11 +4,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import { LESSONS, type LessonContent, type MissionBlock } from "@/lib/lesson-catalog";
 import { useUnifiedLessonsContent } from "@/lib/unified-lessons-content";
-import {
-  PATHS,
-  type CurriculumPath,
-  type CurriculumModule,
-} from "@/lib/curriculum-data";
+import { PATHS, type CurriculumPath, type CurriculumModule } from "@/lib/curriculum-data";
 
 /**
  * Context Layer — runtime snapshot of where the learner is in the ecosystem.
@@ -44,6 +40,9 @@ export interface LearnerContext {
   /* progress */
   completedLessonsCount: number;
   totalLessonsCount: number;
+  overallCompletedLessonsCount: number;
+  overallTotalLessonsCount: number;
+  overallNextLesson: LessonContent | null;
   lastCompletedLesson: LessonContent | null;
   nextLesson: LessonContent | null;
 
@@ -105,16 +104,13 @@ export function useLearnerContext(): LearnerContext {
     const currentPath = pathFromLesson ?? pathFromRoute(pathname);
     const currentModule = moduleFromLesson;
 
-    const currentLessonStatus = lessonIdFromRoute
-      ? getStatus(lessonIdFromRoute)
-      : null;
-    const currentMission = content.lessons ? currentLesson?.mission ?? null : null;
+    const currentLessonStatus = lessonIdFromRoute ? getStatus(lessonIdFromRoute) : null;
+    const currentMission = content.lessons ? (currentLesson?.mission ?? null) : null;
 
     /* progress: count across the path the learner is currently in.
        Fallback to intro (the universal onboarding path) if we can't
        infer a path from the route — never silently pick another. */
-    const scope =
-      currentPath ?? PATHS.find((p) => p.id === "intro") ?? PATHS[0];
+    const scope = currentPath ?? PATHS.find((p) => p.id === "intro") ?? PATHS[0];
     const availableIds = scope
       ? scope.modules
           .flatMap((m) => m.lessons)
@@ -122,10 +118,22 @@ export function useLearnerContext(): LearnerContext {
           .map((l) => l.id)
       : [];
 
-    const completedLessonsCount = availableIds.filter(
+    const completedLessonsCount = availableIds.filter((id) => store[id] === "completed").length;
+    const totalLessonsCount = availableIds.length;
+
+    // Match the dashboard's cross-path progress and next-action ordering.
+    const overallIds = PATHS.filter((path) => path.status === "open").flatMap((path) =>
+      path.modules.flatMap((module) =>
+        module.lessons.filter((lesson) => lesson.state === "available").map((lesson) => lesson.id),
+      ),
+    );
+    const overallCompletedLessonsCount = overallIds.filter(
       (id) => store[id] === "completed",
     ).length;
-    const totalLessonsCount = availableIds.length;
+    const overallNextLesson = findLessonById(
+      lessons,
+      overallIds.find((id) => store[id] !== "completed") ?? null,
+    );
 
     /* last completed lesson — last available lesson (in path order) marked completed */
     let lastCompletedLesson: LessonContent | null = null;
@@ -146,9 +154,7 @@ export function useLearnerContext(): LearnerContext {
         nextLesson = findLessonById(lessons, availableIds[idx + 1]);
       }
     } else {
-      const firstUnfinished = availableIds.find(
-        (id) => store[id] !== "completed",
-      );
+      const firstUnfinished = availableIds.find((id) => store[id] !== "completed");
       nextLesson = firstUnfinished ? findLessonById(lessons, firstUnfinished) : null;
     }
 
@@ -156,7 +162,7 @@ export function useLearnerContext(): LearnerContext {
       currentUser: {
         id: user?.id ?? null,
         email: user?.email ?? null,
-        isAuthenticated: !!user,
+        isAuthenticated: Boolean(user),
       },
       currentRoute: pathname,
       currentPath,
@@ -166,13 +172,13 @@ export function useLearnerContext(): LearnerContext {
       currentMission,
       completedLessonsCount,
       totalLessonsCount,
+      overallCompletedLessonsCount,
+      overallTotalLessonsCount: overallIds.length,
+      overallNextLesson,
       lastCompletedLesson,
       nextLesson,
       isReady:
-        !authLoading &&
-        (!!user ? isLoaded : true) &&
-        !content.isLoading &&
-        content.error === null,
+        !authLoading && (user ? isLoaded : true) && !content.isLoading && content.error === null,
       contentError: content.error,
       resolvedAt: new Date().toISOString(),
     };

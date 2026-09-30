@@ -88,7 +88,7 @@ function CurriculumPage() {
     .replace("{upcoming}", String(total - available));
 
   return (
-    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
+    <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <main className="flex-1 p-4 sm:p-6 md:p-10 max-w-6xl mx-auto w-full min-w-0">
         {/* Hero */}

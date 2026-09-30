@@ -36,12 +36,16 @@ import { Route as KidsIndexRouteImport } from './routes/kids.index'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
+import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
+import { Route as KidsFamilyRouteImport } from './routes/kids.family'
 import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
@@ -178,6 +182,16 @@ const RoadmapIdRoute = RoadmapIdRouteImport.update({
   path: '/roadmap/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KidsPrivacyRoute = KidsPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => KidsRoute,
+} as any)
+const KidsFamilyRoute = KidsFamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => KidsRoute,
+} as any)
 const KidsLevelIdRoute = KidsLevelIdRouteImport.update({
   id: '/$levelId',
   path: '/$levelId',
@@ -208,6 +222,16 @@ const KidsLevelIdLessonNumberRoute = KidsLevelIdLessonNumberRouteImport.update({
   path: '/$lessonNumber',
   getParentRoute: () => KidsLevelIdRoute,
 } as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -235,6 +259,8 @@ export interface FileRoutesByFullPath {
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
+  '/kids/family': typeof KidsFamilyRoute
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
@@ -243,6 +269,8 @@ export interface FileRoutesByFullPath {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -267,6 +295,8 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
+  '/kids/family': typeof KidsFamilyRoute
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
@@ -275,6 +305,8 @@ export interface FileRoutesByTo {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -303,6 +335,8 @@ export interface FileRoutesById {
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
+  '/kids/family': typeof KidsFamilyRoute
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
@@ -311,6 +345,8 @@ export interface FileRoutesById {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -340,6 +376,8 @@ export interface FileRouteTypes {
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/kids/$levelId'
+    | '/kids/family'
+    | '/kids/privacy'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
@@ -348,6 +386,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -372,6 +412,8 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
+    | '/kids/family'
+    | '/kids/privacy'
     | '/roadmap/$id'
     | '/admin'
     | '/image-gallery'
@@ -380,6 +422,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   id:
     | '__root__'
     | '/'
@@ -407,6 +451,8 @@ export interface FileRouteTypes {
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/kids/$levelId'
+    | '/kids/family'
+    | '/kids/privacy'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
@@ -415,6 +461,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -445,6 +493,8 @@ export interface RootRouteChildren {
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
+  LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
+  LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -638,6 +688,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kids/privacy': {
+      id: '/kids/privacy'
+      path: '/privacy'
+      fullPath: '/kids/privacy'
+      preLoaderRoute: typeof KidsPrivacyRouteImport
+      parentRoute: typeof KidsRoute
+    }
+    '/kids/family': {
+      id: '/kids/family'
+      path: '/family'
+      fullPath: '/kids/family'
+      preLoaderRoute: typeof KidsFamilyRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/kids/$levelId': {
       id: '/kids/$levelId'
       path: '/$levelId'
@@ -680,6 +744,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdLessonNumberRouteImport
       parentRoute: typeof KidsLevelIdRoute
     }
+    '/lovable/email/auth/webhook': {
+      id: '/lovable/email/auth/webhook'
+      path: '/lovable/email/auth/webhook'
+      fullPath: '/lovable/email/auth/webhook'
+      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -713,11 +791,15 @@ const KidsLevelIdRouteWithChildren = KidsLevelIdRoute._addFileChildren(
 
 interface KidsRouteChildren {
   KidsLevelIdRoute: typeof KidsLevelIdRouteWithChildren
+  KidsFamilyRoute: typeof KidsFamilyRoute
+  KidsPrivacyRoute: typeof KidsPrivacyRoute
   KidsIndexRoute: typeof KidsIndexRoute
 }
 
 const KidsRouteChildren: KidsRouteChildren = {
   KidsLevelIdRoute: KidsLevelIdRouteWithChildren,
+  KidsFamilyRoute: KidsFamilyRoute,
+  KidsPrivacyRoute: KidsPrivacyRoute,
   KidsIndexRoute: KidsIndexRoute,
 }
 
@@ -751,6 +833,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
+  LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
+  LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

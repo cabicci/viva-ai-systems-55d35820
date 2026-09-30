@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { KIDS_LEVELS, type KidsLevelId } from "./catalogue";
@@ -6,12 +6,7 @@ import { KIDS_FAMILY_POLICY } from "./family-policy";
 
 export type KidsProfile = { id: string; level_id: KidsLevelId; display_name: string };
 export type ParentState =
-  | "signed-out"
-  | "checking"
-  | "pending"
-  | "not-released"
-  | "ready"
-  | "unavailable";
+  "signed-out" | "checking" | "pending" | "not-released" | "ready" | "unavailable";
 
 function validProfile(value: unknown): value is KidsProfile {
   if (!value || typeof value !== "object") return false;
@@ -24,7 +19,7 @@ function validProfile(value: unknown): value is KidsProfile {
 }
 
 /** Profile reads and creation only start after the server confirms privacy release and parent verification. */
-export function useKidsParentState() {
+export function useKidsParentStateSource() {
   const { user, loading: authLoading } = useAuth();
   const userId = user?.id;
   const [state, setState] = useState<ParentState>("checking");
@@ -52,9 +47,11 @@ export function useKidsParentState() {
       refresh();
     };
     window.addEventListener("focus", recheck);
+    window.addEventListener("kids-consent-changed", refresh);
     document.addEventListener("visibilitychange", recheck);
     return () => {
       window.removeEventListener("focus", recheck);
+      window.removeEventListener("kids-consent-changed", refresh);
       document.removeEventListener("visibilitychange", recheck);
     };
   }, [userId, authLoading, refresh]);
@@ -114,7 +111,7 @@ export function useKidsParentState() {
   }, [authLoading, userId, revision]);
 
   const createProfile = useCallback(
-    async (displayName: string, levelId: KidsLevelId) => {
+    async (displayName: string, levelId: KidsLevelId, consentPolicyId?: string) => {
       if (
         state !== "ready" ||
         verifiedUserId !== userId ||
@@ -127,10 +124,17 @@ export function useKidsParentState() {
       if (profiles.length >= KIDS_FAMILY_POLICY.maxProfiles)
         throw new Error("Kids family profile limit reached");
       if (!name || name.length > 40) throw new Error("Invalid profile name");
-      // RLS repeats both owner and server-side release/verification checks.
-      const { error } = await supabase
-        .from("kids_profiles" as never)
-        .insert({ parent_id: user.id, display_name: name, level_id: levelId } as never);
+      if (!consentPolicyId) throw new Error("Child service consent is required");
+      // The server binds guardian, country, immutable policy and child atomically.
+      const { error } = await supabase.rpc(
+        "kids_parent_create_consented_profile" as never,
+        {
+          p_display_name: name,
+          p_level_id: levelId,
+          p_policy_id: consentPolicyId,
+          p_accepted: true,
+        } as never,
+      );
       if (error) throw new Error("Unable to create Kids profile");
       refresh();
     },
@@ -150,4 +154,14 @@ export function useKidsParentState() {
     refresh,
     createProfile,
   };
+}
+
+export const KidsParentStateContext = createContext<ReturnType<
+  typeof useKidsParentStateSource
+> | null>(null);
+
+export function useKidsParentState() {
+  const value = useContext(KidsParentStateContext);
+  if (!value) throw new Error("Kids parent state requires the Kids route provider");
+  return value;
 }

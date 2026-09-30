@@ -3,6 +3,7 @@ import type { UiStringKey } from "./ui-strings";
 /** Auth flow copy keys (login, signup, password reset — not account settings). */
 export const AUTH_UI_KEYS = [
   "auth.field.email",
+  "auth.field.fullName",
   "auth.field.password",
   "auth.field.passwordNew",
   "auth.field.passwordConfirm",
@@ -28,6 +29,7 @@ export const AUTH_UI_KEYS = [
   "auth.signup.submitting",
   "auth.signup.footerHasAccount",
   "auth.signup.toast.success",
+  "auth.signup.nameRequired",
   "auth.forgot.title",
   "auth.forgot.subtitle",
   "auth.forgot.submit",

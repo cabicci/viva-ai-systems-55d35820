@@ -223,6 +223,12 @@ try {
   if (!adminResponse.ok() || (await adminResponse.json()) !== true)
     throw new Error("Real browser has_role did not confirm local admin authority");
   await page.waitForURL((url) => url.origin === base && url.pathname === "/dashboard");
+  // The lesson hard-navigation verifies the mirrored JWT cookie on the server.
+  // A has_role response can arrive before AuthProvider finishes writing it;
+  // capture state only once the normal login has established both stores.
+  await page.waitForFunction(() =>
+    document.cookie.split("; ").some((part) => part.startsWith("masaarat_access_token=")),
+  );
   // Capture only state produced by normal UI login; never inject a token or edit storage.
   await context.storageState({ path: statePath });
   await browser.close();

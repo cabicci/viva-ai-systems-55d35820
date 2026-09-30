@@ -7,7 +7,7 @@ vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => state }));
 
 describe("Kids family offer", () => {
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "shows independent family prices without a purchase action in %s",
+    "shows independent family test-checkout prices in %s",
     (locale) => {
       state.locale = locale;
       render(<KidsFamilyPricing />);
@@ -15,14 +15,15 @@ describe("Kids family offer", () => {
         screen.getByText(locale === "en" ? /up to 3 children/ : /حتى 3 أطفال/),
       ).toBeInTheDocument();
       expect(
-        screen.getByText(
-          locale === "en" ? /not available for purchase yet/ : /شراء الاشتراك غير متاح/,
-        ),
+        screen.getByText(locale === "en" ? /Test checkout only/ : /الدفع تجريبي فقط/),
       ).toBeInTheDocument();
-      const formatter = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar-EG", {
-        style: "currency",
-        currency: "USD",
-      });
+      const formatter = new Intl.NumberFormat(
+        locale === "en" ? "en-US" : locale === "ar-Gulf" ? "ar-SA" : "ar-EG",
+        {
+          style: "currency",
+          currency: "USD",
+        },
+      );
       expect(screen.getByText(formatter.format(7.99).replace(/\s/g, " "))).toBeInTheDocument();
       expect(
         screen.getByText(
@@ -34,7 +35,7 @@ describe("Kids family offer", () => {
           ),
         ),
       ).toBeInTheDocument();
-      expect(screen.queryByRole("button")).not.toBeInTheDocument();
+      expect(screen.getAllByRole("button")).toHaveLength(4);
       expect(screen.queryByRole("link")).not.toBeInTheDocument();
     },
   );

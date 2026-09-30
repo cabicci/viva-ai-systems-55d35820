@@ -3,6 +3,15 @@ name: "B023 — Contextual images, module graph and browser validation"
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'src/lib/lesson-visuals/**'
+      - 'src/assets/lesson-visuals/**'
+      - 'src/components/intro/IntroLessonRenderer.tsx'
+      - 'src/components/locale/LocalePackageLessonRenderer.tsx'
+      - 'src/components/image-gallery/**'
+      - 'src/lib/__tests__/locale-strict-visual*'
+      - 'tests/lesson-visuals/**'
+      - '.github/scripts/b023_contextual_v2_validation/**'
   workflow_dispatch:
     inputs:
       expected_product_sha:
@@ -105,6 +114,8 @@ jobs:
         run: |
           set -euo pipefail
           setsid node node_modules/wrangler/bin/wrangler.js --cwd .output dev --ip 127.0.0.1 --port 4173 \
+            --var "SUPABASE_URL:$SUPABASE_URL" \
+            --var "SUPABASE_PUBLISHABLE_KEY:$SUPABASE_PUBLISHABLE_KEY" \
             > "$B023_PRIVATE_ROOT/preview.log" 2>&1 < /dev/null &
           preview_pid=$!
           printf '%s\n' "$preview_pid" > "$B023_PRIVATE_ROOT/preview.pid"

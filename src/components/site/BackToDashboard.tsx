@@ -6,6 +6,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const HIDDEN_PREFIXES = [
   "/dashboard",
+  "/ai-assistant",
   "/login",
   "/signup",
   "/forgot-password",

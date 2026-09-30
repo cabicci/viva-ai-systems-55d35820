@@ -26,10 +26,7 @@ export function ReadingProgressBar() {
   }, []);
 
   return (
-    <div
-      className="fixed top-0 inset-x-0 z-40 h-1 bg-transparent pointer-events-none"
-      aria-hidden
-    >
+    <div className="fixed top-16 inset-x-0 z-40 h-1 bg-transparent pointer-events-none" aria-hidden>
       <div
         className="h-full bg-[image:var(--gradient-primary)] transition-[width] duration-150 ease-out"
         style={{ width: `${pct}%` }}

@@ -144,7 +144,7 @@ function Dashboard() {
   if (!isProgressLoaded) return <DashboardSkeleton />;
 
   return (
-    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
+    <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <main className="flex-1 max-w-6xl mx-auto w-full min-w-0">
         <PhaseRibbon />

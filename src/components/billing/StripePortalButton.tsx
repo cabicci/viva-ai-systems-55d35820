@@ -13,7 +13,7 @@ const LABELS = {
   en: "Manage or upgrade subscription",
 } as const;
 
-export function StripePortalButton() {
+export function StripePortalButton({ scope = "adult" }: { scope?: "adult" | "kids" }) {
   const [loading, setLoading] = useState(false);
   const { locale } = useLocale();
   const t = useUiString();
@@ -28,7 +28,9 @@ export function StripePortalButton() {
         return;
       }
 
-      const { data, error } = await supabase.functions.invoke("billing-stripe-portal");
+      const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
+        body: { scope },
+      });
       if (error || !data?.url) throw error ?? new Error("Missing portal URL");
       window.location.assign(data.url);
     } catch {
@@ -38,9 +40,26 @@ export function StripePortalButton() {
   }
 
   return (
-    <Button type="button" variant="violet" size="lg" className="mt-5 w-full" disabled={loading} onClick={() => void openPortal()}>
-      {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <CreditCard className="h-4 w-4" />}
-      <span className="min-w-0 whitespace-normal text-center leading-tight">{LABELS[locale]}</span>
+    <Button
+      type="button"
+      variant="violet"
+      size="lg"
+      className="mt-5 w-full"
+      disabled={loading}
+      onClick={() => void openPortal()}
+    >
+      {loading ? (
+        <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+      ) : (
+        <CreditCard className="h-4 w-4" />
+      )}
+      <span className="min-w-0 whitespace-normal text-center leading-tight">
+        {scope === "kids"
+          ? locale === "en"
+            ? "Manage Kids subscription"
+            : "إدارة اشتراك كيدز"
+          : LABELS[locale]}
+      </span>
     </Button>
   );
 }

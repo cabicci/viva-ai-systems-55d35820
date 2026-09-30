@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_welcome_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          lease_until: string | null
+          preferred_locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          template_version: number
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          lease_until?: string | null
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          template_version?: number
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          lease_until?: string | null
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          template_version?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
       build_logs: {
         Row: {
           created_at: string
@@ -88,6 +130,589 @@ export type Database = {
           user_id?: string | null
         }
         Relationships: []
+      }
+      kids_consent_policies: {
+        Row: {
+          consent_text: string
+          country_code: string
+          enabled: boolean
+          id: string
+          locale: string
+          notice_text: string
+          published_at: string
+          review_reference: string
+          version: string
+        }
+        Insert: {
+          consent_text: string
+          country_code: string
+          enabled?: boolean
+          id?: string
+          locale: string
+          notice_text: string
+          published_at?: string
+          review_reference: string
+          version: string
+        }
+        Update: {
+          consent_text?: string
+          country_code?: string
+          enabled?: boolean
+          id?: string
+          locale?: string
+          notice_text?: string
+          published_at?: string
+          review_reference?: string
+          version?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_consent_policies_country_code_fkey"
+            columns: ["country_code"]
+            isOneToOne: false
+            referencedRelation: "kids_market_release"
+            referencedColumns: ["country_code"]
+          },
+        ]
+      }
+      kids_content_approvals: {
+        Row: {
+          approval_reference: string
+          approved_at: string
+          approved_sha256: string
+          lesson_number: number
+          level_id: string
+          locale: string
+        }
+        Insert: {
+          approval_reference: string
+          approved_at: string
+          approved_sha256: string
+          lesson_number: number
+          level_id: string
+          locale: string
+        }
+        Update: {
+          approval_reference?: string
+          approved_at?: string
+          approved_sha256?: string
+          lesson_number?: number
+          level_id?: string
+          locale?: string
+        }
+        Relationships: []
+      }
+      kids_family_entitlements: {
+        Row: {
+          active_from: string
+          active_until: string
+          entitlement_reference: string
+          parent_id: string
+        }
+        Insert: {
+          active_from: string
+          active_until: string
+          entitlement_reference: string
+          parent_id: string
+        }
+        Update: {
+          active_from?: string
+          active_until?: string
+          entitlement_reference?: string
+          parent_id?: string
+        }
+        Relationships: []
+      }
+      kids_lesson_progress: {
+        Row: {
+          lesson_number: number
+          level_id: string
+          locale: string
+          profile_id: string
+          recorded_at: string
+        }
+        Insert: {
+          lesson_number: number
+          level_id: string
+          locale: string
+          profile_id: string
+          recorded_at?: string
+        }
+        Update: {
+          lesson_number?: number
+          level_id?: string
+          locale?: string
+          profile_id?: string
+          recorded_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_lesson_progress_profile_id_level_id_fkey"
+            columns: ["profile_id", "level_id"]
+            isOneToOne: false
+            referencedRelation: "kids_profiles"
+            referencedColumns: ["id", "level_id"]
+          },
+        ]
+      }
+      kids_market_release: {
+        Row: {
+          accepts_child_data: boolean
+          country_code: string
+          review_reference: string | null
+          reviewed_at: string | null
+        }
+        Insert: {
+          accepts_child_data?: boolean
+          country_code: string
+          review_reference?: string | null
+          reviewed_at?: string | null
+        }
+        Update: {
+          accepts_child_data?: boolean
+          country_code?: string
+          review_reference?: string | null
+          reviewed_at?: string | null
+        }
+        Relationships: []
+      }
+      kids_media: {
+        Row: {
+          caption_sha256: string
+          lesson_number: number
+          level_id: string
+          locale: string
+          staged_at: string
+          video_guid: string
+          video_sha256: string
+        }
+        Insert: {
+          caption_sha256: string
+          lesson_number: number
+          level_id: string
+          locale: string
+          staged_at?: string
+          video_guid: string
+          video_sha256: string
+        }
+        Update: {
+          caption_sha256?: string
+          lesson_number?: number
+          level_id?: string
+          locale?: string
+          staged_at?: string
+          video_guid?: string
+          video_sha256?: string
+        }
+        Relationships: []
+      }
+      kids_parent_access_requests: {
+        Row: {
+          adult_confirmed: boolean
+          country_code: string | null
+          parent_email: string
+          parent_id: string
+          request_notice_version: string
+          requested_at: string
+          review_reference: string | null
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: string
+        }
+        Insert: {
+          adult_confirmed?: boolean
+          country_code?: string | null
+          parent_email: string
+          parent_id: string
+          request_notice_version?: string
+          requested_at?: string
+          review_reference?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+        }
+        Update: {
+          adult_confirmed?: boolean
+          country_code?: string | null
+          parent_email?: string
+          parent_id?: string
+          request_notice_version?: string
+          requested_at?: string
+          review_reference?: string | null
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_parent_access_requests_country_code_fkey"
+            columns: ["country_code"]
+            isOneToOne: false
+            referencedRelation: "kids_market_release"
+            referencedColumns: ["country_code"]
+          },
+        ]
+      }
+      kids_parent_attestations: {
+        Row: {
+          attested_at: string
+          country_code: string
+          parent_id: string
+          policy_id: string
+        }
+        Insert: {
+          attested_at?: string
+          country_code: string
+          parent_id: string
+          policy_id: string
+        }
+        Update: {
+          attested_at?: string
+          country_code?: string
+          parent_id?: string
+          policy_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_parent_attestations_country_code_fkey"
+            columns: ["country_code"]
+            isOneToOne: false
+            referencedRelation: "kids_market_release"
+            referencedColumns: ["country_code"]
+          },
+          {
+            foreignKeyName: "kids_parent_attestations_policy_id_fkey"
+            columns: ["policy_id"]
+            isOneToOne: false
+            referencedRelation: "kids_consent_policies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kids_parent_verifications: {
+        Row: {
+          parent_id: string
+          verification_reference: string
+          verified_at: string
+        }
+        Insert: {
+          parent_id: string
+          verification_reference: string
+          verified_at: string
+        }
+        Update: {
+          parent_id?: string
+          verification_reference?: string
+          verified_at?: string
+        }
+        Relationships: []
+      }
+      kids_profile_consents: {
+        Row: {
+          accepted_at: string
+          guardian_reference: string
+          parent_id: string
+          policy_id: string
+          profile_id: string
+          withdrawn_at: string | null
+        }
+        Insert: {
+          accepted_at?: string
+          guardian_reference: string
+          parent_id: string
+          policy_id: string
+          profile_id: string
+          withdrawn_at?: string | null
+        }
+        Update: {
+          accepted_at?: string
+          guardian_reference?: string
+          parent_id?: string
+          policy_id?: string
+          profile_id?: string
+          withdrawn_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_profile_consents_policy_id_fkey"
+            columns: ["policy_id"]
+            isOneToOne: false
+            referencedRelation: "kids_consent_policies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "kids_profile_consents_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "kids_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kids_profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+          level_id: string
+          parent_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          id?: string
+          level_id: string
+          parent_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+          level_id?: string
+          parent_id?: string
+        }
+        Relationships: []
+      }
+      kids_release_control: {
+        Row: {
+          accepts_child_data: boolean
+          lesson_access_enabled: boolean
+          singleton: boolean
+        }
+        Insert: {
+          accepts_child_data?: boolean
+          lesson_access_enabled?: boolean
+          singleton?: boolean
+        }
+        Update: {
+          accepts_child_data?: boolean
+          lesson_access_enabled?: boolean
+          singleton?: boolean
+        }
+        Relationships: []
+      }
+      kids_retention_control: {
+        Row: {
+          deletion_enabled: boolean
+          notices_enabled: boolean
+          release_reference: string | null
+          singleton: boolean
+        }
+        Insert: {
+          deletion_enabled?: boolean
+          notices_enabled?: boolean
+          release_reference?: string | null
+          singleton?: boolean
+        }
+        Update: {
+          deletion_enabled?: boolean
+          notices_enabled?: boolean
+          release_reference?: string | null
+          singleton?: boolean
+        }
+        Relationships: []
+      }
+      kids_retention_delivery_events: {
+        Row: {
+          event_id: string
+          event_type: string
+          notice_id: string
+          occurred_at: string
+          received_at: string
+        }
+        Insert: {
+          event_id: string
+          event_type: string
+          notice_id: string
+          occurred_at: string
+          received_at?: string
+        }
+        Update: {
+          event_id?: string
+          event_type?: string
+          notice_id?: string
+          occurred_at?: string
+          received_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_retention_delivery_events_notice_id_fkey"
+            columns: ["notice_id"]
+            isOneToOne: false
+            referencedRelation: "kids_retention_notices"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      kids_retention_notices: {
+        Row: {
+          claim_token: string | null
+          created_at: string
+          deleted_at: string | null
+          deleted_profile_count: number | null
+          delivered_at: string | null
+          expiry: string
+          failure_at: string | null
+          first_attempt_at: string | null
+          id: string
+          lease_until: string | null
+          parent_id: string
+          profile_ids: string[]
+          provider_email_id: string | null
+          recipient_email: string
+          state: string
+        }
+        Insert: {
+          claim_token?: string | null
+          created_at?: string
+          deleted_at?: string | null
+          deleted_profile_count?: number | null
+          delivered_at?: string | null
+          expiry: string
+          failure_at?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          lease_until?: string | null
+          parent_id: string
+          profile_ids: string[]
+          provider_email_id?: string | null
+          recipient_email: string
+          state?: string
+        }
+        Update: {
+          claim_token?: string | null
+          created_at?: string
+          deleted_at?: string | null
+          deleted_profile_count?: number | null
+          delivered_at?: string | null
+          expiry?: string
+          failure_at?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          lease_until?: string | null
+          parent_id?: string
+          profile_ids?: string[]
+          provider_email_id?: string | null
+          recipient_email?: string
+          state?: string
+        }
+        Relationships: []
+      }
+      kids_stripe_events: {
+        Row: {
+          event_id: string
+          parent_id: string
+          received_at: string
+        }
+        Insert: {
+          event_id: string
+          parent_id: string
+          received_at?: string
+        }
+        Update: {
+          event_id?: string
+          parent_id?: string
+          received_at?: string
+        }
+        Relationships: []
+      }
+      kids_stripe_prices: {
+        Row: {
+          amount_minor: number
+          billing_interval: string
+          currency_code: string
+          discounted: boolean
+          gateway_price_id: string
+          gateway_product_id: string
+          market_code: string
+        }
+        Insert: {
+          amount_minor: number
+          billing_interval: string
+          currency_code: string
+          discounted: boolean
+          gateway_price_id: string
+          gateway_product_id: string
+          market_code: string
+        }
+        Update: {
+          amount_minor?: number
+          billing_interval?: string
+          currency_code?: string
+          discounted?: boolean
+          gateway_price_id?: string
+          gateway_product_id?: string
+          market_code?: string
+        }
+        Relationships: []
+      }
+      kids_stripe_refunds: {
+        Row: {
+          amount_minor: number
+          invoice_id: string
+          parent_id: string
+          refund_id: string
+          status: string
+        }
+        Insert: {
+          amount_minor: number
+          invoice_id: string
+          parent_id: string
+          refund_id: string
+          status: string
+        }
+        Update: {
+          amount_minor?: number
+          invoice_id?: string
+          parent_id?: string
+          refund_id?: string
+          status?: string
+        }
+        Relationships: []
+      }
+      kids_stripe_subscriptions: {
+        Row: {
+          gateway_customer_id: string
+          gateway_price_id: string
+          gateway_subscription_id: string
+          last_event_at: string
+          latest_paid_invoice_id: string | null
+          paid_through: string | null
+          parent_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          gateway_customer_id: string
+          gateway_price_id: string
+          gateway_subscription_id: string
+          last_event_at: string
+          latest_paid_invoice_id?: string | null
+          paid_through?: string | null
+          parent_id: string
+          status: string
+          updated_at?: string
+        }
+        Update: {
+          gateway_customer_id?: string
+          gateway_price_id?: string
+          gateway_subscription_id?: string
+          last_event_at?: string
+          latest_paid_invoice_id?: string | null
+          paid_through?: string | null
+          parent_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "kids_stripe_subscriptions_gateway_price_id_fkey"
+            columns: ["gateway_price_id"]
+            isOneToOne: false
+            referencedRelation: "kids_stripe_prices"
+            referencedColumns: ["gateway_price_id"]
+          },
+        ]
       }
       knowledge_chunks: {
         Row: {
@@ -721,6 +1346,54 @@ export type Database = {
         }
         Relationships: []
       }
+      subscription_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          event_id: string
+          first_attempt_at: string | null
+          kind: string
+          lease_until: string | null
+          plan_key: string
+          preferred_locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          event_id: string
+          first_attempt_at?: string | null
+          kind: string
+          lease_until?: string | null
+          plan_key: string
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          event_id?: string
+          first_attempt_at?: string | null
+          kind?: string
+          lease_until?: string | null
+          plan_key?: string
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -1024,6 +1697,37 @@ export type Database = {
         Args: { p_version_key: string }
         Returns: Json
       }
+      apply_kids_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      apply_kids_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
       apply_review_outcome: {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
@@ -1068,7 +1772,45 @@ export type Database = {
         }
         Returns: Json
       }
+      auth_signup_email_profile: {
+        Args: { p_email: string }
+        Returns: {
+          full_name: string
+          preferred_locale: string
+        }[]
+      }
+      claim_account_welcome_emails: {
+        Args: never
+        Returns: {
+          claim_token: string
+          recipient: string
+          user_id: string
+        }[]
+      }
+      claim_account_welcome_emails_v2: {
+        Args: never
+        Returns: {
+          claim_token: string
+          display_name: string
+          preferred_locale: string
+          recipient: string
+          template_version: number
+          user_id: string
+        }[]
+      }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_subscription_mail: {
+        Args: never
+        Returns: {
+          claim_token: string
+          display_name: string
+          event_id: string
+          kind: string
+          plan_key: string
+          preferred_locale: string
+          recipient: string
+        }[]
+      }
       close_stripe_checkout_intent: {
         Args: {
           p_checkout_generation: string
@@ -1085,6 +1827,24 @@ export type Database = {
           p_reservation_id: string
         }
         Returns: Json
+      }
+      complete_account_welcome_email: {
+        Args: {
+          p_block: boolean
+          p_claim: string
+          p_email_id: string
+          p_user: string
+        }
+        Returns: boolean
+      }
+      complete_subscription_mail: {
+        Args: {
+          p_block: boolean
+          p_claim: string
+          p_email_id: string
+          p_event: string
+        }
+        Returns: boolean
       }
       confirm_stripe_checkout_generation: {
         Args: { p_checkout_generation: string; p_user_id: string }
@@ -1128,8 +1888,34 @@ export type Database = {
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
       get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
+      get_kids_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      get_kids_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       get_kpi_funnel: { Args: never; Returns: Json }
       get_my_billing_access_tier: { Args: never; Returns: string }
+      get_my_kids_access_status: {
+        Args: never
+        Returns: {
+          access_source: string
+          active_until: string
+        }[]
+      }
+      get_my_kids_subscription: {
+        Args: never
+        Returns: {
+          paid_through: string
+          status: string
+        }[]
+      }
       get_stripe_checkout_context: {
         Args: {
           p_billing_interval: string
@@ -1150,6 +1936,103 @@ export type Database = {
       increment_user_activity_time: {
         Args: { p_seconds: number }
         Returns: number
+      }
+      kids_admin_parent_review_ready: { Args: never; Returns: boolean }
+      kids_admin_review_parent: {
+        Args: { p_approve: boolean; p_parent_id: string; p_reference: string }
+        Returns: undefined
+      }
+      kids_block_retention_notice: {
+        Args: { p_claim: string; p_notice: string }
+        Returns: boolean
+      }
+      kids_can_access_lesson: {
+        Args: {
+          requested_lesson: number
+          requested_level: string
+          requested_locale: string
+          requested_profile: string
+        }
+        Returns: boolean
+      }
+      kids_claim_retention_notices: {
+        Args: { p_limit?: number }
+        Returns: {
+          claim_token: string
+          expiry: string
+          first_attempt_at: string
+          notice_id: string
+          recipient_email: string
+        }[]
+      }
+      kids_delete_expired_profiles: {
+        Args: { p_notice: string }
+        Returns: number
+      }
+      kids_parent_can_manage_profiles: { Args: never; Returns: boolean }
+      kids_parent_confirm_privacy: {
+        Args: { p_accepted: boolean; p_policy_id: string }
+        Returns: string
+      }
+      kids_parent_create_consented_profile: {
+        Args: {
+          p_accepted: boolean
+          p_display_name: string
+          p_level_id: string
+          p_policy_id: string
+        }
+        Returns: string
+      }
+      kids_parent_privacy_record: {
+        Args: never
+        Returns: {
+          attested_at: string
+          policy_id: string
+          policy_version: string
+        }[]
+      }
+      kids_parent_request_review:
+        | { Args: { p_acknowledged: boolean }; Returns: string }
+        | {
+            Args: {
+              p_acknowledged: boolean
+              p_adult_confirmed: boolean
+              p_country_code: string
+            }
+            Returns: string
+          }
+      kids_parent_withdraw_consent: {
+        Args: { p_profile: string }
+        Returns: undefined
+      }
+      kids_prepare_retention_notices: {
+        Args: { p_limit?: number }
+        Returns: number
+      }
+      kids_profile_has_consent: {
+        Args: { p_profile: string }
+        Returns: boolean
+      }
+      kids_public_launch_open: { Args: never; Returns: boolean }
+      kids_record_retention_delivery: {
+        Args: {
+          p_email_id: string
+          p_event_id: string
+          p_kind: string
+          p_occurred_at: string
+          p_recipient: string
+        }
+        Returns: boolean
+      }
+      kids_record_retention_submission: {
+        Args: { p_claim: string; p_email_id: string; p_notice: string }
+        Returns: boolean
+      }
+      kids_retention_deletion_candidates: {
+        Args: { p_limit?: number }
+        Returns: {
+          notice_id: string
+        }[]
       }
       mark_roadmap_done: { Args: { p_item_id: string }; Returns: undefined }
       match_knowledge_chunks: {
@@ -1278,6 +2161,22 @@ export type Database = {
         Returns: boolean
       }
       record_user_activity: { Args: never; Returns: Json }
+      register_kids_stripe_customer: {
+        Args: { p_customer_id: string; p_user_id: string }
+        Returns: string
+      }
+      register_kids_stripe_price: {
+        Args: {
+          p_amount_minor: number
+          p_billing_interval: string
+          p_currency_code: string
+          p_discounted: boolean
+          p_market_code: string
+          p_price_id: string
+          p_product_id: string
+        }
+        Returns: string
+      }
       register_provider_attempt: {
         Args: {
           p_attempt_idempotency_key?: string

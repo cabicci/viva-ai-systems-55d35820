@@ -17,6 +17,8 @@ import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useEffect, useRef } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
+import { AuthSessionGate } from "@/lib/auth-route-guard";
+import { requireLearnerBeforeLoad } from "@/lib/learner-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
@@ -149,6 +151,7 @@ function preserveLocaleSearch(
 }
 
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
+  beforeLoad: requireLearnerBeforeLoad,
   validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
   head: async ({ params, match, loaderData }) => {
     const locale = await resolveRouteHeadLocale({
@@ -215,10 +218,18 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
       cookieLocale,
     } satisfies LessonLoaderData;
   },
-  component: UnifiedLessonPage,
+  component: LearnerLessonPage,
   notFoundComponent: LearnLessonNotFound,
   errorComponent: LearnLessonError,
 });
+
+function LearnerLessonPage() {
+  return (
+    <AuthSessionGate>
+      <UnifiedLessonPage />
+    </AuthSessionGate>
+  );
+}
 
 function LearnLessonError({ error }: { error: Error }) {
   const { dir } = useLocale();
@@ -419,7 +430,7 @@ function UnifiedLessonPage() {
   }, [lesson.id, lesson.moduleId, pathId]);
 
   return (
-    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
+    <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <ReadingProgressBar />
       <CompletionReward
@@ -433,7 +444,7 @@ function UnifiedLessonPage() {
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
             aria-label={t("learn.backToMap")}
-            className="fixed top-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span className="truncate">{t("learn.backToMap")}</span>
@@ -447,7 +458,7 @@ function UnifiedLessonPage() {
               lesson: lesson.id,
             })}
             aria-label={t("learn.backToDashboard")}
-            className="fixed top-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span className="truncate">{t("learn.backToDashboard")}</span>

@@ -13,6 +13,8 @@ import {
 
 export function AnalyticsConsentGate() {
   const { locale, dir, lang } = useLocale();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const onKidsPage = pathname === "/kids" || pathname.startsWith("/kids/");
   const copy = ANALYTICS_CONSENT_COPY[locale];
   const pageView = useRouterState({
     select: (state) => {
@@ -45,14 +47,15 @@ export function AnalyticsConsentGate() {
 
   useEffect(() => {
     if (!hydrated) return;
-    applyAnalyticsConsent(consent);
-    applyTrustedSiteConsent(consent);
-  }, [consent, hydrated]);
+    const effectiveConsent = onKidsPage ? "denied" : consent;
+    applyAnalyticsConsent(effectiveConsent);
+    applyTrustedSiteConsent(effectiveConsent);
+  }, [consent, hydrated, onKidsPage]);
 
   useEffect(() => {
-    if (!hydrated || consent !== "granted" || !pageView) return;
+    if (!hydrated || consent !== "granted" || onKidsPage || !pageView) return;
     trackPageViewOnce(pageView.href, pageView.title);
-  }, [consent, hydrated, pageView]);
+  }, [consent, hydrated, onKidsPage, pageView]);
 
   function choose(next: Exclude<AnalyticsConsent, null>) {
     persistAnalyticsConsent(next);

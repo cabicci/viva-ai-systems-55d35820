@@ -1,16 +1,19 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { getKidsCopy } from "@/lib/kids/copy";
+import { useKidsParentState } from "@/lib/kids/parent-state";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/kids/$levelId/")({
   validateSearch: parseLocaleSearchParam,
@@ -34,13 +37,53 @@ function KidsLevelPage() {
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
   const product = getKidsCopy(locale);
+  const { state, profiles } = useKidsParentState();
+  const [titles, setTitles] = useState<{ key: string; values: string[] } | null>(null);
+  const titleKey = `${levelId}:${locale}`;
+  useEffect(() => {
+    let active = true;
+    setTitles(null);
+    void (async () => {
+      const { data, error } = await supabase.functions.invoke("kids-catalogue", {
+        body: { levelId, locale },
+      });
+      if (
+        !active ||
+        error ||
+        data?.levelId !== levelId ||
+        data?.locale !== locale ||
+        !Array.isArray(data.titles) ||
+        data.titles.length !== 12
+      )
+        return;
+      const values = data.titles.map((entry: unknown, index: number) => {
+        if (!entry || typeof entry !== "object") return null;
+        const row = entry as { lessonNumber?: unknown; title?: unknown };
+        return row.lessonNumber === index + 1 &&
+          typeof row.title === "string" &&
+          row.title.trim().length > 0 &&
+          row.title.length <= 160
+          ? row.title.trim()
+          : null;
+      });
+      if (values.every((value: unknown): value is string => typeof value === "string"))
+        setTitles({ key: titleKey, values });
+    })().catch(() => {
+      /* Numbered list remains visible when catalogue is unavailable. */
+    });
+    return () => {
+      active = false;
+    };
+  }, [levelId, locale, titleKey]);
   const level = KIDS_LEVELS.find((entry) => entry.id === levelId);
   if (!level) return null;
   const levelNumber = KIDS_LEVELS.findIndex((entry) => entry.id === levelId) + 1;
+  const canOpenLessons =
+    state === "ready" && profiles.some((profile) => profile.level_id === levelId);
 
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-8 px-4 py-10 md:py-16">
           <Link
@@ -58,9 +101,20 @@ function KidsLevelPage() {
             <p className="mt-2 text-lg" dir="ltr">
               {level.ages}
             </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed">{product.reviewNotice}</p>
+            <KidsReleaseNotice className="mt-4 max-w-2xl text-sm leading-relaxed" />
           </header>
-          <KidsParentPanel />
+          {!canOpenLessons && state !== "checking" && (
+            <div className="rounded-2xl border border-primary/20 bg-card p-5">
+              <p className="text-sm text-muted-foreground">{copy.levelStartNotice}</p>
+              <Link
+                to="/kids/family"
+                search={localeSearch()}
+                className="mt-3 inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
+              >
+                {product.startKids}
+              </Link>
+            </div>
+          )}
           <section
             aria-label={product.lessons}
             className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
@@ -78,17 +132,22 @@ function KidsLevelPage() {
                   <h2 className="mt-2 text-xl font-black">
                     {copy.lesson} {lessonNumber}
                   </h2>
+                  {titles?.key === titleKey && (
+                    <p className="mt-2 text-sm font-semibold">{titles.values[index]}</p>
+                  )}
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">
                     {lessonNumber <= 2 ? copy.free : copy.requiresPlan}
                   </p>
-                  <Link
-                    to="/kids/$levelId/$lessonNumber"
-                    params={{ levelId, lessonNumber: String(lessonNumber) }}
-                    search={localeSearch()}
-                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-4 text-sm font-bold text-primary hover:bg-primary/10"
-                  >
-                    {copy.openLesson}
-                  </Link>
+                  {canOpenLessons && (
+                    <Link
+                      to="/kids/$levelId/$lessonNumber"
+                      params={{ levelId, lessonNumber: String(lessonNumber) }}
+                      search={localeSearch()}
+                      className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-4 text-sm font-bold text-primary hover:bg-primary/10"
+                    >
+                      {copy.openLesson}
+                    </Link>
+                  )}
                 </article>
               );
             })}

@@ -155,6 +155,29 @@ describe("callAssistantRuntime invoke boundary", () => {
     expect(Object.prototype.hasOwnProperty.call(body, "retrievalResults")).toBe(false);
   });
 
+  it("localizes quota and grounding errors from the server", async () => {
+    const { callAssistantRuntime } = await import("@/lib/assistant-runtime");
+    invoke.mockResolvedValueOnce({
+      data: null,
+      error: { context: new Response(JSON.stringify({ error: "rate limited" }), { status: 429 }) },
+    });
+    await expect(
+      callAssistantRuntime(buildAssistantRuntimePayload("hello", resolvedFor("en"))),
+    ).rejects.toThrow(/limit/i);
+
+    invoke.mockResolvedValueOnce({
+      data: null,
+      error: {
+        context: new Response(JSON.stringify({ reason: "insufficient_grounding" }), {
+          status: 422,
+        }),
+      },
+    });
+    await expect(
+      callAssistantRuntime(buildAssistantRuntimePayload("hello", resolvedFor("en"))),
+    ).rejects.toThrow(/lesson content/i);
+  });
+
   it("fails before session acquisition when locale is missing", async () => {
     const { callAssistantRuntime } = await import("@/lib/assistant-runtime");
     const payload = {
@@ -245,8 +268,10 @@ describe("shared production builder and transport wiring", () => {
     const source = read("src/components/assistant/AssistantPanel.tsx");
     expect(source).toContain("buildAssistantRuntimePayload");
     expect(source).toContain("callAssistantRuntime");
-    expect(source).toContain("searchPlatformContent");
-    expect(source).toMatch(/buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*\)/);
+    expect(source).not.toContain("searchPlatformContent");
+    expect(source).toMatch(
+      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+    );
     expect(source).not.toMatch(
       /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*retrievalResults\s*\)/,
     );
@@ -272,11 +297,13 @@ describe("shared production builder and transport wiring", () => {
     );
   });
 
-  it("keeps local retrieval available for display while excluding it from the server body", () => {
+  it("uses only server-authoritative citations for display", () => {
     const panel = read("src/components/assistant/AssistantPanel.tsx");
-    expect(panel).toContain("searchPlatformContent");
-    expect(panel).toContain("matches: retrievalResults");
-    expect(panel).toMatch(/buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*\)/);
+    expect(panel).not.toContain("searchPlatformContent");
+    expect(panel).toContain("res.citations");
+    expect(panel).toMatch(
+      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+    );
 
     const builder = read("src/lib/assistant/resolve-assistant-learner-context.ts");
     expect(builder).toContain("export function buildAssistantRuntimePayload");

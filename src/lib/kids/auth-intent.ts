@@ -11,7 +11,7 @@ export function parseAuthIntentSearch(raw: Record<string, unknown>): AuthIntentS
 
 export function kidsSignupRedirect(origin: string, search: AuthIntentSearch): string {
   if (search.intent !== "kids") return `${origin}/dashboard`;
-  const destination = new URL("/kids", origin);
+  const destination = new URL("/kids/family", origin);
   if (search.locale) destination.searchParams.set("locale", search.locale);
   return destination.toString();
 }

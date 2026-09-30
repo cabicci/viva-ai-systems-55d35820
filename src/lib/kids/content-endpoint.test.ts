@@ -40,6 +40,29 @@ function fetches(digest = sha) {
     .mockResolvedValueOnce(new Response(raw, { status: 200 }));
 }
 describe("private Kids lesson delivery", () => {
+  it("allows only the exact project preview origin for browser preflight", async () => {
+    for (const origin of [
+      "https://masaarat.ai",
+      "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+    ]) {
+      const response = await handleKidsLessonContent(
+        new Request("https://db.example/functions/v1/kids-lesson-content", {
+          method: "OPTIONS",
+          headers: { Origin: origin },
+        }),
+        env,
+      );
+      expect(response.headers.get("Access-Control-Allow-Origin")).toBe(origin);
+    }
+    const foreign = await handleKidsLessonContent(
+      new Request("https://db.example/functions/v1/kids-lesson-content", {
+        method: "OPTIONS",
+        headers: { Origin: "https://unrelated.lovable.app" },
+      }),
+      env,
+    );
+    expect(foreign.headers.get("Access-Control-Allow-Origin")).toBeNull();
+  });
   it("stops before storage on missing parent or access grant", async () => {
     const fetcher = vi.fn();
     expect((await handleKidsLessonContent(request(input, ""), env, fetcher)).status).toBe(401);

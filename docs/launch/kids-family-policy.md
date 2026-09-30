@@ -1,5 +1,8 @@
 # Kids family policy preparation
 
+> Historical preparation state. Test checkout and the activated parent journey
+> are described in [Kids current state](kids-current-state.md).
+
 The family subscription is independent of adult plans and covers up to three
 child profiles. The first two lessons per level remain free within the existing
 guardian, market and content gates. Adult entitlements do not unlock Kids.

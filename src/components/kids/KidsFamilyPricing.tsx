@@ -1,28 +1,39 @@
 import { useLocale } from "@/lib/locale/locale-context";
 import { KIDS_FAMILY_POLICY, quoteKidsFamily } from "@/lib/kids/family-policy";
+import { KidsCheckoutButtons } from "./KidsCheckoutButtons";
 
 export function KidsFamilyPricing() {
   const { locale } = useLocale();
   const en = locale === "en";
+  const eg = locale === "ar-EG";
+  const gulf = locale === "ar-Gulf";
   const money = (minor: number, currency: string) =>
-    new Intl.NumberFormat(en ? "en-US" : "ar-EG", { style: "currency", currency }).format(
-      minor / 100,
-    );
+    new Intl.NumberFormat(en ? "en-US" : gulf ? "ar-SA" : "ar-EG", {
+      style: "currency",
+      currency,
+    }).format(minor / 100);
 
   return (
-    <section className="space-y-4 rounded-2xl border border-border/60 bg-card p-6">
-      <h2 className="text-xl font-bold">
-        {en ? "Kids family pricing" : "أسعار اشتراك كيدز العائلي"}
+    <section
+      id="kids"
+      className="glass scroll-mt-28 rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8"
+    >
+      <h2 className="text-2xl font-black">
+        {en ? "Kids family pricing" : eg ? "أسعار اشتراك كيدز للعيلة" : "أسعار اشتراك كيدز العائلي"}
       </h2>
-      <p className="text-sm text-muted-foreground">
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {en
           ? `One independent subscription for up to ${KIDS_FAMILY_POLICY.maxProfiles} children. Pro or Pro Plus is optional.`
-          : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
+          : eg
+            ? `اشتراك منفصل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. مش لازم تشترك في Pro أو Pro Plus.`
+            : gulf
+              ? `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. ما تحتاج تشترك في Pro أو Pro Plus.`
+              : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
       </p>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {(["EG", "INTL"] as const).map((market) => (
-          <div key={market} className="rounded-xl border border-border/60 p-4">
-            <h3 className="font-bold">
+          <div key={market} className="rounded-xl border border-border/50 bg-background/40 p-5">
+            <h3 className="font-bold text-primary">
               {market === "EG" ? (en ? "Egypt" : "مصر") : en ? "International" : "دولي"}
             </h3>
             {(["month", "year"] as const).map((interval) => {
@@ -31,24 +42,34 @@ export function KidsFamilyPricing() {
               const period =
                 interval === "month" ? (en ? "Monthly" : "شهريًا") : en ? "Annually" : "سنويًا";
               return (
-                <div key={interval} className="mt-3 text-sm">
-                  <p>
-                    {period}: <strong>{money(base.totalMinor, base.currency)}</strong>
+                <div key={interval} className="mt-4 border-t border-border/40 pt-4 text-sm">
+                  <p className="flex flex-wrap items-baseline justify-between gap-2">
+                    <span className="text-muted-foreground">{period}</span>
+                    <strong className="text-2xl font-black text-foreground">
+                      {money(base.totalMinor, base.currency)}
+                    </strong>
                   </p>
                   <p className="mt-1 text-muted-foreground">
                     {en ? "With Pro or Pro Plus" : "مع Pro أو Pro Plus"}:{" "}
-                    {money(bundle.totalMinor, bundle.currency)}
+                    <span className="font-semibold text-primary">
+                      {money(bundle.totalMinor, bundle.currency)}
+                    </span>
                   </p>
                 </div>
               );
             })}
+            <KidsCheckoutButtons market={market} />
           </div>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground">
+      <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Prices exclude tax. The 10% bundle discount applies to Kids only; adult plan prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Subscriptions are not available for purchase yet."
-          : "الأسعار لا تشمل الضرائب. خصم الجمع 10% يطبق على كيدز فقط، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. شراء الاشتراك غير متاح بعد."}
+          ? "Test checkout only. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
+          : eg
+            ? "الدفع تجريبي فقط. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
+            : gulf
+              ? "الدفع تجريبي فقط. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "الدفع تجريبي فقط. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );

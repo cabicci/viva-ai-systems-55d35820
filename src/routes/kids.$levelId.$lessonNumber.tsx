@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsLessonBody } from "@/components/kids/KidsLessonBody";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import {
@@ -12,6 +11,12 @@ import {
   type KidsLesson,
 } from "@/lib/kids/lesson-client";
 import { useKidsParentState } from "@/lib/kids/parent-state";
+import { useAuth } from "@/lib/auth-context";
+import {
+  clearActiveKidsProfile,
+  getActiveKidsProfile,
+  setActiveKidsProfile,
+} from "@/lib/kids/active-profile";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -46,8 +51,10 @@ export function KidsLessonPage() {
   const { locale, dir } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
-  const { state, profiles, refresh } = useKidsParentState();
+  const { state, profiles } = useKidsParentState();
+  const { user } = useAuth();
   const [profileId, setProfileId] = useState("");
+  const [profileChecked, setProfileChecked] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{
@@ -57,23 +64,42 @@ export function KidsLessonPage() {
   } | null>(null);
   const [denied, setDenied] = useState(false);
   const availableProfiles = profiles.filter((profile) => profile.level_id === level);
+  const activeProfile =
+    state === "ready" ? profiles.find((profile) => profile.id === profileId) : null;
   const selected =
     state === "ready" && availableProfiles.some((profile) => profile.id === profileId);
   const lessonKey = `${level}-${lessonNumber}-${locale}-${profileId}`;
   const visibleResult = selected && result?.key === lessonKey ? result : null;
+  const openingLesson =
+    state === "checking" ||
+    (state === "ready" &&
+      (!profileChecked || (selected && !denied && !visibleResult && (loading || attempt > 0))));
 
   useEffect(() => {
     setResult(null);
     setDenied(false);
-    setProfileId("");
     setAttempt(0);
-  }, [levelId, lessonText, locale]);
+    setProfileChecked(false);
+    if (state !== "ready" || !user?.id) {
+      setProfileId("");
+      return;
+    }
+    const stored = getActiveKidsProfile(user.id);
+    if (stored && !profiles.some((profile) => profile.id === stored)) {
+      clearActiveKidsProfile(user.id);
+    }
+    const current = profiles.find((profile) => profile.id === stored);
+    setProfileId(current?.id ?? "");
+    if (current?.level_id === level) setAttempt(1);
+    setProfileChecked(true);
+  }, [levelId, lessonText, locale, state, profiles, user?.id, level]);
 
   // Returning to a tab rechecks the parent grant. Do not redisplay a lesson
   // from memory after that check; its own entitlement may have changed.
   useEffect(() => {
     if (state === "ready") return;
     setResult(null);
+    setDenied(false);
     setAttempt(0);
     setLoading(false);
   }, [state]);
@@ -118,7 +144,7 @@ export function KidsLessonPage() {
 
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-7 px-4 py-10 md:py-16">
           <Link
@@ -147,12 +173,60 @@ export function KidsLessonPage() {
               <h1 className="mt-3 text-3xl font-black">
                 {copy.lesson} {lessonNumber}
               </h1>
-              <p role="status" className="mt-4 text-sm text-muted-foreground">
-                {loading ? copy.loading : denied ? copy.unavailableLesson : copy.lockedDetail}
-              </p>
-              {state === "ready" && (
+              {openingLesson ? (
+                <div role="status" className="mt-6 space-y-4" aria-label={copy.loading}>
+                  <span className="sr-only">{copy.loading}</span>
+                  <div
+                    aria-hidden="true"
+                    className="h-5 w-3/4 animate-pulse rounded-full bg-primary/10"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="aspect-video animate-pulse rounded-2xl bg-primary/10"
+                  />
+                </div>
+              ) : (
+                <p role="status" className="mt-4 text-sm text-muted-foreground">
+                  {state === "signed-out"
+                    ? copy.signInNotice
+                    : state === "pending"
+                      ? copy.pending
+                      : state === "not-released"
+                        ? copy.setupPending
+                        : state === "unavailable"
+                          ? copy.unavailable
+                          : denied
+                            ? copy.unavailableLesson
+                            : !selected && profileChecked
+                              ? copy.chooseProfile
+                              : null}
+                </p>
+              )}
+              {state === "ready" && profileChecked && (
                 <div className="mt-6 max-w-sm space-y-3">
-                  {availableProfiles.length > 0 ? (
+                  {activeProfile ? (
+                    <div className="space-y-3">
+                      <p className="text-sm font-bold">
+                        {copy.activeProfile}: {activeProfile.display_name}
+                      </p>
+                      {activeProfile.level_id !== level && (
+                        <p className="text-sm">{copy.otherLevelProfile}</p>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (user?.id) clearActiveKidsProfile(user.id);
+                          setResult(null);
+                          setDenied(false);
+                          setAttempt(0);
+                          setProfileId("");
+                        }}
+                        className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary"
+                      >
+                        {copy.exitProfile}
+                      </button>
+                    </div>
+                  ) : availableProfiles.length > 0 ? (
                     <>
                       <label htmlFor="kids-profile-choice" className="block text-sm font-bold">
                         {copy.chooseProfile}
@@ -165,6 +239,9 @@ export function KidsLessonPage() {
                           setDenied(false);
                           setAttempt(0);
                           setProfileId(event.target.value);
+                          if (user?.id && event.target.value)
+                            setActiveKidsProfile(user.id, event.target.value);
+                          if (event.target.value) setAttempt(1);
                         }}
                         className="min-h-11 w-full rounded-md border border-input bg-background px-3"
                       >
@@ -175,29 +252,55 @@ export function KidsLessonPage() {
                           </option>
                         ))}
                       </select>
-                      <button
-                        type="button"
-                        disabled={!selected || loading}
-                        onClick={() => setAttempt((value) => value + 1)}
-                        className="min-h-11 rounded-full bg-primary px-5 text-sm font-bold text-primary-foreground disabled:opacity-50"
-                      >
-                        {copy.openLesson}
-                      </button>
                     </>
                   ) : (
                     <div className="space-y-4">
                       <p className="text-sm">{copy.noLevelProfile}</p>
-                      <KidsParentPanel onProfileCreated={refresh} />
+                      <Link
+                        to="/kids/family"
+                        search={localeSearch()}
+                        className="inline-flex min-h-11 items-center rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary"
+                      >
+                        {copy.manageFamily}
+                      </Link>
                     </div>
                   )}
                 </div>
               )}
               {state !== "ready" && (
                 <div className="mt-6">
-                  <KidsParentPanel />
+                  <Link
+                    to={state === "signed-out" ? "/login" : "/kids/family"}
+                    search={
+                      state === "signed-out" ? localeSearch({ intent: "kids" }) : localeSearch()
+                    }
+                    className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
+                  >
+                    {state === "signed-out" ? copy.signIn : copy.manageFamily}
+                  </Link>
                 </div>
               )}
             </section>
+          )}
+          {visibleResult && (
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-primary/20 bg-card p-4">
+              <span className="text-sm font-bold">
+                {copy.activeProfile}: {activeProfile?.display_name}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  if (user?.id) clearActiveKidsProfile(user.id);
+                  setResult(null);
+                  setDenied(false);
+                  setAttempt(0);
+                  setProfileId("");
+                }}
+                className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary"
+              >
+                {copy.exitProfile}
+              </button>
+            </div>
           )}
           {visibleResult && (
             <nav aria-label={copy.lesson} className="flex flex-wrap gap-3">

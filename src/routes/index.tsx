@@ -5,6 +5,7 @@ import { Ecosystem } from "@/components/site/Ecosystem";
 import { Journey } from "@/components/site/Journey";
 import { Philosophy } from "@/components/site/Philosophy";
 import { CTA } from "@/components/site/CTA";
+import { KidsHomeIntroduction } from "@/components/site/KidsHomeIntroduction";
 import { Footer } from "@/components/site/Footer";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -31,6 +32,7 @@ function Index() {
         <Journey />
         <Philosophy />
         <CTA />
+        <KidsHomeIntroduction />
       </main>
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { StripeCheckoutButtons } from "@/components/billing/StripeCheckoutButtons";
+import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
 import { Badge } from "@/components/ui/badge";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -194,6 +195,8 @@ function PricingPage() {
               <StripeCheckoutButtons plan="pro_plus" variant="outline" />
             </article>
           </section>
+
+          <KidsFamilyPricing />
 
           <section className="glass rounded-2xl border border-border/60 p-6 md:p-8">
             <h2 className="text-lg font-bold mb-5">{t("pricing.compare.title")}</h2>

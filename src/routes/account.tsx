@@ -42,6 +42,7 @@ import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { KidsConsentControl } from "@/components/kids/KidsConsentControl";
 
 const DATE_LOCALE: Record<SupportedLocale, string> = {
   "ar-EG": "ar-EG",
@@ -195,7 +196,12 @@ function AccountContent() {
     try {
       const { data, error } = await supabase.rpc("request_account_deletion");
       if (error) throw error;
-      if (!data || typeof data !== "object" || Array.isArray(data) || data.status !== "pending_review") {
+      if (
+        !data ||
+        typeof data !== "object" ||
+        Array.isArray(data) ||
+        data.status !== "pending_review"
+      ) {
         throw new Error("ACCOUNT_DELETION_REQUEST_UNCONFIRMED");
       }
       toast.success(t("account.manage.toast.deleteSuccess"));
@@ -215,7 +221,7 @@ function AccountContent() {
   );
 
   return (
-    <div className="min-h-dvh flex" dir={dir}>
+    <div className="min-h-dvh flex flex-col" dir={dir}>
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
@@ -267,7 +273,7 @@ function AccountContent() {
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs text-muted-foreground">{t("account.subscription.label")}</p>
-              <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
+                <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
                   <h2 className="text-2xl font-black">{planLabel}</h2>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest ${
@@ -308,14 +314,16 @@ function AccountContent() {
                   </div>
                   <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
                     <span className="min-w-0">{t("account.subscription.field.provider")}</span>
-                    <span className="max-w-[55%] break-words text-end text-foreground">{sub?.provider ?? "—"}</span>
+                    <span className="max-w-[55%] break-words text-end text-foreground">
+                      {sub?.provider ?? "—"}
+                    </span>
                   </div>
                 </>
               )}
             </div>
 
-            {!admin && (
-              isPro ? (
+            {!admin &&
+              (isPro ? (
                 <StripePortalButton />
               ) : (
                 <Button asChild variant="violet" size="lg" className="mt-5">
@@ -323,8 +331,7 @@ function AccountContent() {
                     <CreditCard className="h-4 w-4" /> {t("account.subscription.ctaUpgrade")}
                   </Link>
                 </Button>
-              )
-            )}
+              ))}
           </section>
         </div>
 
@@ -352,6 +359,10 @@ function AccountContent() {
               value={`${completedCount ?? 0} / ${totalLessons}`}
             />
           </div>
+        </section>
+
+        <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
+          <KidsConsentControl />
         </section>
 
         <section className="glass rounded-2xl p-6 border border-border/50">
@@ -385,7 +396,10 @@ function AccountContent() {
         </section>
 
         <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
-          <DialogContent dir={dir} className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto sm:max-w-lg">
+          <DialogContent
+            dir={dir}
+            className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto sm:max-w-lg"
+          >
             <DialogHeader>
               <DialogTitle>{t("account.deleteDialog.title")}</DialogTitle>
               <DialogDescription>{t("account.deleteDialog.description")}</DialogDescription>

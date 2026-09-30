@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
-import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
+import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
+import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
@@ -28,7 +28,7 @@ function KidsPage() {
 
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-10 px-4 py-12 md:py-20">
           <header className="rounded-3xl border border-primary/20 bg-card p-6 md:p-10">
@@ -38,10 +38,7 @@ function KidsPage() {
             <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{copy.intro}</p>
           </header>
 
-          <p role="status" className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm">
-            {copy.reviewNotice}
-          </p>
-
+          <KidsReleaseNotice className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm" />
           <section aria-label={copy.eyebrow} className="grid gap-5 md:grid-cols-3">
             {KIDS_LEVELS.map((level, index) => (
               <article key={level.id} className="rounded-2xl border border-border/60 bg-card p-6">
@@ -67,27 +64,34 @@ function KidsPage() {
             ))}
           </section>
 
-          <KidsParentPanel />
-          <KidsFamilyPricing />
-
-          <section className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-border/60 bg-card p-6">
-              <h2 className="text-xl font-bold">{copy.familyTitle}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {copy.familyDescription}
-              </p>
+          <section className="rounded-2xl border border-border/60 bg-card p-6 md:p-8">
+            <h2 className="text-xl font-bold">{copy.nextStep}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy.parentNote}</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                to="/kids/family"
+                search={localeSearch()}
+                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground"
+              >
+                {copy.startKids}
+              </Link>
+              <Link
+                to="/pricing"
+                search={localeSearch()}
+                hash="kids"
+                className="inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
+              >
+                {copy.viewPricing}
+              </Link>
             </div>
-            <div className="rounded-2xl border border-border/60 bg-card p-6">
-              <h2 className="text-xl font-bold">{copy.bundleTitle}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {copy.bundleDescription}
-              </p>
-            </div>
+            <Link
+              to="/kids/privacy"
+              search={localeSearch()}
+              className="mt-4 inline-block text-xs font-semibold text-muted-foreground underline underline-offset-4"
+            >
+              {getKidsPrivacyCopy(locale).link}
+            </Link>
           </section>
-
-          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {copy.parentNote}
-          </p>
         </div>
       </main>
       <Footer />

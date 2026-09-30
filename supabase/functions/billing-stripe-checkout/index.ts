@@ -49,7 +49,7 @@ async function supabaseRpc<T>(name: string, body: Record<string, unknown>): Prom
   });
   const text = await response.text();
   if (!response.ok) throw new Error(`RPC_${name}_FAILED:${text}`);
-  return text ? JSON.parse(text) as T : (null as T);
+  return text ? (JSON.parse(text) as T) : (null as T);
 }
 
 async function stripeRequest<T>(
@@ -203,7 +203,6 @@ async function ensureStripeCustomer(
   return customer.id;
 }
 
-
 async function hasManagedStripeSubscription(customerId: string): Promise<boolean> {
   const query = new URLSearchParams({
     customer: customerId,
@@ -213,9 +212,11 @@ async function hasManagedStripeSubscription(customerId: string): Promise<boolean
   const result = await stripeRequest<{ data: StripeSubscription[] }>(
     `/subscriptions?${query.toString()}`,
   );
-  return result.data.some((subscription) =>
-    subscription.metadata?.environment === "test"
-    && MANAGED_STRIPE_SUBSCRIPTION_STATUSES.has(subscription.status)
+  return result.data.some(
+    (subscription) =>
+      subscription.metadata?.environment === "test" &&
+      subscription.metadata?.product_scope !== "kids" &&
+      MANAGED_STRIPE_SUBSCRIPTION_STATUSES.has(subscription.status),
   );
 }
 
@@ -233,9 +234,11 @@ Deno.serve(async (request) => {
     const billingInterval = body?.billingInterval;
     const marketCode = body?.marketCode;
 
-    if (!["pro", "pro_plus"].includes(planKey)
-      || !["month", "year"].includes(billingInterval)
-      || !["EG", "INTL"].includes(marketCode)) {
+    if (
+      !["pro", "pro_plus"].includes(planKey) ||
+      !["month", "year"].includes(billingInterval) ||
+      !["EG", "INTL"].includes(marketCode)
+    ) {
       return json({ error: "INVALID_CHECKOUT_SELECTION" }, 400, origin);
     }
 
@@ -246,7 +249,9 @@ Deno.serve(async (request) => {
       p_market_code: marketCode,
     });
 
-    if (["paid_active", "past_due", "canceled_at_period_end"].includes(context.access_state ?? "")) {
+    if (
+      ["paid_active", "past_due", "canceled_at_period_end"].includes(context.access_state ?? "")
+    ) {
       return json({ error: "SUBSCRIPTION_ALREADY_MANAGED" }, 409, origin);
     }
 
@@ -262,30 +267,45 @@ Deno.serve(async (request) => {
     const checkoutWindow = Math.floor(Date.now() / 300_000);
     const checkoutNonce = `${user.id}:${planKey}:${billingInterval}:${marketCode}:${checkoutWindow}`;
     const session = await coordinateCheckout({
-      prepare: () => supabaseRpc<CheckoutIntent>("prepare_stripe_checkout", {
-        p_user_id: user.id,
-        p_plan_version_id: context.plan_version_id,
-        p_market_price_id: context.market_price_id,
-        p_market_code: context.market_code,
-        p_currency_code: context.currency_code,
-        p_billing_interval: context.billing_interval,
-        p_gateway_customer_id: customerId,
-        p_idempotency_key: `stripe-checkout:${user.id}:${checkoutNonce}`,
-      }),
-      retrieve: (id) => stripeRequest<StripeCheckoutSession>(`/checkout/sessions/${encodeURIComponent(id)}`),
-      expire: (id) => stripeRequest<StripeCheckoutSession>(`/checkout/sessions/${encodeURIComponent(id)}/expire`, {
-        method: "POST", params: new URLSearchParams(), idempotencyKey: `expire-checkout-${id}`,
-      }),
-      attach: (intent, sessionId) => supabaseRpc<boolean>("record_stripe_checkout_session", {
-        p_user_id: user.id, p_checkout_generation: intent.checkout_generation, p_session_id: sessionId,
-      }),
-      close: (intent) => supabaseRpc<boolean>("close_stripe_checkout_intent", {
-        p_user_id: user.id, p_checkout_generation: intent.checkout_generation,
-        p_session_id: intent.checkout_session_id,
-      }),
-      confirm: (intent) => supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
-        p_user_id: user.id, p_checkout_generation: intent.checkout_generation,
-      }),
+      prepare: () =>
+        supabaseRpc<CheckoutIntent>("prepare_stripe_checkout", {
+          p_user_id: user.id,
+          p_plan_version_id: context.plan_version_id,
+          p_market_price_id: context.market_price_id,
+          p_market_code: context.market_code,
+          p_currency_code: context.currency_code,
+          p_billing_interval: context.billing_interval,
+          p_gateway_customer_id: customerId,
+          p_idempotency_key: `stripe-checkout:${user.id}:${checkoutNonce}`,
+        }),
+      retrieve: (id) =>
+        stripeRequest<StripeCheckoutSession>(`/checkout/sessions/${encodeURIComponent(id)}`),
+      expire: (id) =>
+        stripeRequest<StripeCheckoutSession>(
+          `/checkout/sessions/${encodeURIComponent(id)}/expire`,
+          {
+            method: "POST",
+            params: new URLSearchParams(),
+            idempotencyKey: `expire-checkout-${id}`,
+          },
+        ),
+      attach: (intent, sessionId) =>
+        supabaseRpc<boolean>("record_stripe_checkout_session", {
+          p_user_id: user.id,
+          p_checkout_generation: intent.checkout_generation,
+          p_session_id: sessionId,
+        }),
+      close: (intent) =>
+        supabaseRpc<boolean>("close_stripe_checkout_intent", {
+          p_user_id: user.id,
+          p_checkout_generation: intent.checkout_generation,
+          p_session_id: intent.checkout_session_id,
+        }),
+      confirm: (intent) =>
+        supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
+          p_user_id: user.id,
+          p_checkout_generation: intent.checkout_generation,
+        }),
       create: async (prepared) => {
         const appOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://masaarat.ai";
         const metadata: Record<string, string> = {
@@ -306,7 +326,10 @@ Deno.serve(async (request) => {
         params.set("line_items[0][price]", priceId);
         params.set("line_items[0][quantity]", "1");
         params.set("client_reference_id", user.id);
-        params.set("success_url", `${appOrigin}/account?payment=success&session_id={CHECKOUT_SESSION_ID}`);
+        params.set(
+          "success_url",
+          `${appOrigin}/account?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+        );
         params.set("cancel_url", `${appOrigin}/pricing?payment=canceled`);
         params.set("allow_promotion_codes", "false");
         params.set("billing_address_collection", "auto");
@@ -317,7 +340,9 @@ Deno.serve(async (request) => {
         }
 
         return stripeRequest<StripeCheckoutSession>("/checkout/sessions", {
-          method: "POST", params, idempotencyKey: `checkout-session-${prepared.checkout_generation}`,
+          method: "POST",
+          params,
+          idempotencyKey: `checkout-session-${prepared.checkout_generation}`,
         });
       },
     });
@@ -325,9 +350,14 @@ Deno.serve(async (request) => {
   } catch (error) {
     const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
     console.error("billing-stripe-checkout", message);
-    const conflict = ["CHECKOUT_INTENT_SUPERSEDED", "CHECKOUT_IN_PROGRESS", "SUBSCRIPTION_ALREADY_MANAGED"].includes(message);
+    const conflict = [
+      "CHECKOUT_INTENT_SUPERSEDED",
+      "CHECKOUT_IN_PROGRESS",
+      "SUBSCRIPTION_ALREADY_MANAGED",
+    ].includes(message);
     const status = message === "UNAUTHORIZED" ? 401 : conflict ? 409 : 500;
-    const code = status === 401 ? "UNAUTHORIZED" : status === 409 ? message : "CHECKOUT_UNAVAILABLE";
+    const code =
+      status === 401 ? "UNAUTHORIZED" : status === 409 ? message : "CHECKOUT_UNAVAILABLE";
     return json({ error: code }, status, origin);
   }
 });
