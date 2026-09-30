@@ -136,7 +136,7 @@ describe("public billing RPC bridge — static", () => {
     const afterBridge = migrations.slice(bridgeIdx + 1);
     expect(afterBridge).toEqual([
       "20260801120000_billing_legacy_user_subscriptions_compat.sql",
-      path.basename(SNAPSHOT_VALIDITY_MIGRATION),
+      "20260914190000_billing_entitlement_snapshot_validity.sql",
       "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
       "20260915070000_billing_paid_ai_quota_alignment.sql",
       "20260916080000_rag_corpus_3701_refresh.sql",
@@ -148,6 +148,21 @@ describe("public billing RPC bridge — static", () => {
       "20260918173000_stripe_customer_portal_upgrade.sql",
       "20260924190000_kids_parent_content_access_foundation.sql",
       "20260924191000_kids_private_lesson_content.sql",
+      "20260925120000_kids_parent_access_review.sql",
+      "20260925140000_kids_market_release_gates.sql",
+      "20260925160000_kids_family_profile_limit.sql",
+      "20260925190000_kids_retention_email.sql",
+      "20260925210000_kids_profile_consent.sql",
+      "20260925220000_account_welcome_email.sql",
+      "20260925230000_branded_account_mail.sql",
+      "20260925234500_auth_signup_email_profile.sql",
+      "20260926130000_kids_public_launch_status.sql",
+      "20260926180000_rag_corpus_admin_select_only.sql",
+      "20260927110000_kids_parent_self_attestation.sql",
+      "20260927111000_kids_shared_parent_policy.sql",
+      "20260928100000_kids_parent_privacy_record.sql",
+      "20260928120000_kids_stripe_test_billing.sql",
+      "20260929110000_kids_refund_reentry_and_access_status.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);

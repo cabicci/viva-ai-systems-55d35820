@@ -18,6 +18,14 @@ source: user
 summary: Localize password recovery in the four existing locales using the existing verified-recipient profile lookup, preserving SDK signature verification and recovery URLs.
 sync_status: source change prepared; roadmap_items and production delivery are not claimed
 
+## 2026-09-30 — release evidence inventory
+
+[roadmap:billing-validation-evidence]
+scope: infra
+source: user
+summary: Reuse the reviewed named-suite checker for the current 15-suite/175-test TEST inventory, and synchronize the adult quota and cumulative migration assertions.
+sync_status: source prepared; no payment, Kids runtime, database or production deployment change
+
 ## 2026-09-30 — marketing conversions
 
 [roadmap:MEP-060]
