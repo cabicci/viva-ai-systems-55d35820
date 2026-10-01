@@ -6,6 +6,12 @@ Local acknowledgement tests: 12/12 passed, including isolated PostgreSQL ACL, de
 
 # مسارات (masaarat.ai) — Current Status
 
+## 2026-10-01 — Displaced browser sign-out (source fix)
+
+The active-device watcher previously called signOut() with Supabase's default global scope when another browser claimed the account. That could revoke the newly signed-in browser's session too. Automatic displacement now explicitly uses scope: local; manual sign-out, claim ordering and existing access rules are unchanged. This is a verified source defect, not proof of the reported Failed to fetch request's cause.
+
+The added scope assertion failed against the original provider (two tests passed, one failed); all three active-device ordering tests pass after the fix. Existing CI already includes this suite. Semantic ESLint passes with the two pre-existing hook/export warnings; legacy file formatting is preserved and the narrow added lines follow the surrounding style. Full project CI and two-browser production acceptance remain required. No production writes, migrations, session-setting changes or deployment occurred. Overall NO-GO, Kids stop and Stripe TEST remain unchanged.
+
 ## 2026-09-30 — GA4 SPA page views: GTM v4 live
 
 The optional Google email subscriptions were unchecked and saved with owner approval on info@masaarat.ai. GA4 Enhanced Measurement's browser-history page changes were disabled, saved, and reopened to verify the setting. Other enhanced-measurement options were preserved.

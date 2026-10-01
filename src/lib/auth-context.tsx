@@ -155,7 +155,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         captureWarn("auth:active_device_mismatch", {
           reason: "another device claimed the session — signing out",
         });
-        supabase.auth.signOut();
+        // Only retire this displaced session; global sign-out would revoke
+        // the newly signed-in device as well.
+        supabase.auth.signOut({ scope: "local" });
       }
     };
 
