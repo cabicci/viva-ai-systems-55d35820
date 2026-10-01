@@ -2,7 +2,7 @@
 
 The shared auth email shell now uses explicit direction, inline alignment and table-cell alignment on header, content and footer. Signup and recovery copy keep Arabic right-aligned and English left-aligned; mixed-script recipient names are isolated without changing confirmation/reset URLs, locale selection or copy. Other Arabic auth templates inherit the same shared shell; reauthentication codes retain their centered LTR styling.
 
-Regression evidence: four locale cases failed against the original shell; all 13 signup/recovery tests passed after the change. Isolated email-template TypeScript checking and changed-file Prettier checks passed. Full project CI remains the merge gate. No production deployment or inbox/client visual acceptance has been performed; source tests do not prove the received email layout. Overall NO-GO, Kids stop and Stripe TEST are unchanged.
+Regression evidence: four locale cases failed against the original shell; all 13 signup/recovery tests passed after the change. Isolated email-template TypeScript checking and changed-file Prettier checks passed. Full project CI 432 (36907875088) passed on 13082f3b5c9e947aa83f5917b429dd205b522431. PR #126 merged at 2c86cc9be69a2bca1c88ab323b5608f38b9fd367; production deployment and inbox acceptance remain open. No production deployment or inbox/client visual acceptance has been performed; source tests do not prove the received email layout. Overall NO-GO, Kids stop and Stripe TEST are unchanged.
 
 ## 2026-10-01 — Contact acknowledgement mail source (PR #123)
 
@@ -11,6 +11,12 @@ Support/institutional acknowledgements now have four localized, branded template
 Local acknowledgement tests: 12/12 passed, including isolated PostgreSQL ACL, deduplication, leasing and bounded retries. CI 420 succeeded on e2d37fc47d350a34b62689fbccb0568fdbb8db42 before the sender-domain/formatting correction; the final head requires fresh CI. Production read-only inspection finds no contact outbox/claim RPC and no contact schedule; the existing welcome job remains unchanged. Migration, deployment, protected configuration, signed delivery receipt and inbox acceptance remain open; CONTACT_MAIL_ENABLED stays off. No contact resubmission or new test email occurred. Overall NO-GO, Kids stop and Stripe TEST remain unchanged. See docs/email/contact-acknowledgements.md for activation and rollback; HubSpot acceptance/local enqueue are explicitly non-atomic.
 
 # مسارات (masaarat.ai) — Current Status
+
+## 2026-10-01 — Displaced browser sign-out (source fix)
+
+The active-device watcher previously called signOut() with Supabase's default global scope when another browser claimed the account. That could revoke the newly signed-in browser's session too. Automatic displacement now explicitly uses scope: local; manual sign-out, claim ordering and existing access rules are unchanged. This is a verified source defect, not proof of the reported Failed to fetch request's cause.
+
+The added scope assertion failed against the original provider (two tests passed, one failed); all three active-device ordering tests pass after the fix. Existing CI already includes this suite. Semantic ESLint passes with the two pre-existing hook/export warnings; legacy file formatting is preserved and the narrow added lines follow the surrounding style. Full project CI and two-browser production acceptance remain required. No production writes, migrations, session-setting changes or deployment occurred. Overall NO-GO, Kids stop and Stripe TEST remain unchanged.
 
 ## 2026-09-30 — GA4 SPA page views: GTM v4 live
 

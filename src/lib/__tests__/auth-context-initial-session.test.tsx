@@ -105,5 +105,7 @@ describe("AuthProvider active-device ordering", () => {
     expect(mock.signOut).not.toHaveBeenCalled();
     await act(async () => { notifyDevice({ new: { device_id: "another-device" } }); });
     expect(mock.signOut).toHaveBeenCalledTimes(1);
+    // The displaced browser must not revoke the replacement browser's session.
+    expect(mock.signOut).toHaveBeenCalledWith({ scope: "local" });
   });
 });
