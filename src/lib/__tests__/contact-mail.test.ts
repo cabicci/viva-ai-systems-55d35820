@@ -1,4 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { authorizedServiceJob } from "../../../supabase/functions/_shared/service-job-auth";
 import { contactMailContent } from "../../../supabase/functions/_shared/contact-mail";
 import { runContactMailJob } from "../../../supabase/functions/contact-mail-job/handler";
 
@@ -127,5 +129,38 @@ describe("contact acknowledgements", () => {
         vi.fn().mockResolvedValue({ ok: true, emailId: "id" }),
       ),
     ).rejects.toThrow("contact_mail_record_failed");
+  });
+});
+
+describe("contact worker deployment boundary", () => {
+  it("requires a dedicated token and rejects user JWTs or missing configuration", async () => {
+    const request = (value: string) =>
+      new Request("https://example.test", {
+        headers: { authorization: value },
+      });
+    const secret = "x".repeat(64);
+    expect(
+      await authorizedServiceJob(request(`Bearer ${secret}`), secret),
+    ).toBe(true);
+    expect(await authorizedServiceJob(request("Bearer user-jwt"), secret)).toBe(
+      false,
+    );
+    expect(await authorizedServiceJob(request("Bearer short"), "short")).toBe(
+      false,
+    );
+    expect(
+      await authorizedServiceJob(request(`Bearer ${secret}`), undefined),
+    ).toBe(false);
+  });
+  it("bundles only its own files and shared helpers", () => {
+    const source = readFileSync(
+      "supabase/functions/contact-mail-job/index.ts",
+      "utf8",
+    );
+    const relatives = [...source.matchAll(/from "(\.\.[^"]+)"/g)].map(
+      (match) => match[1],
+    );
+    expect(relatives.length).toBeGreaterThan(0);
+    for (const path of relatives) expect(path).toMatch(/^\.\.\/_shared\//);
   });
 });
