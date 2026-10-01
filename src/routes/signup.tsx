@@ -10,10 +10,15 @@ import { AuthShell } from "@/components/auth/AuthShell";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLocale } from "@/lib/locale/locale-context";
 import { kidsSignupRedirect, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 
 export const Route = createFileRoute("/signup")({
   validateSearch: parseAuthIntentSearch,
-  head: () => ({ meta: [{ title: "إنشاء حساب — مسارات" }] }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
+    return buildLocalizedPublicMeta(locale, "signup");
+  },
   component: SignupPage,
 });
 

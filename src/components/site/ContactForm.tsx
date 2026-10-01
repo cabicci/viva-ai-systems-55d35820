@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { getCountries, type CountryCode } from "libphonenumber-js";
@@ -15,6 +15,7 @@ import {
   resolvePhoneCountry,
 } from "@/lib/contact-form";
 import { submitContactForm, type ContactSubmitResult } from "@/lib/contact-form.functions";
+import { trackAcceptedContactOnce } from "@/lib/analytics";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -48,6 +49,7 @@ export function ContactForm() {
   const [errorKey, setErrorKey] = useState<UiStringKey | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const leadKey = useRef({});
 
   const countryLanguage = contactCountryLanguage(locale);
   const countries = useMemo(() => {
@@ -63,6 +65,7 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting || submitted) return;
     setErrorKey(null);
     const data = new FormData(event.currentTarget);
     const firstName = String(data.get("firstName") ?? "").trim();
@@ -119,6 +122,7 @@ export function ContactForm() {
         return;
       }
       setSubmitted(true);
+      trackAcceptedContactOnce(result, leadKey.current);
     } catch (error) {
       console.error("Contact form submission failed:", error);
       setErrorKey("contact.error.service");

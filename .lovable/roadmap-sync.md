@@ -26,6 +26,14 @@ source: user
 summary: Reuse the reviewed named-suite checker for the current 15-suite/175-test TEST inventory, and synchronize the adult quota and cumulative migration assertions.
 sync_status: source prepared; no payment, Kids runtime, database or production deployment change
 
+## 2026-09-30 — marketing conversions
+
+[roadmap:MEP-060]
+scope: ui
+source: user
+summary: Measure accepted contact leads and distinct pricing views only after analytics consent, with no submitted personal data or payment events; localize the signup document title without changing account creation or redirects.
+sync_status: source change prepared; roadmap_items production update and deployment are not claimed
+
 ## 2026-09-30 — remaining nonfinancial security and operations gates
 
 [roadmap:launch-security-closure]
@@ -41,3 +49,4 @@ scope: infra
 source: user
 summary: Record the accepted CI/Billing heads, ordinary merge, scoped live deployment-ID responses and current governance requirements while preserving the separate final manual gates.
 sync_status: documentation only; no new deployment, database or runtime change
+
