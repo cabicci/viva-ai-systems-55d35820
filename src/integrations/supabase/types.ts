@@ -131,6 +131,54 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_acknowledgement_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          first_attempt_at: string | null
+          html_body: string
+          id: string
+          lease_until: string | null
+          locale: string
+          provider_email_id: string | null
+          recipient: string
+          stream: string
+          subject: string
+          text_body: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          first_attempt_at?: string | null
+          html_body: string
+          id: string
+          lease_until?: string | null
+          locale: string
+          provider_email_id?: string | null
+          recipient: string
+          stream: string
+          subject: string
+          text_body: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          first_attempt_at?: string | null
+          html_body?: string
+          id?: string
+          lease_until?: string | null
+          locale?: string
+          provider_email_id?: string | null
+          recipient?: string
+          stream?: string
+          subject?: string
+          text_body?: string
+        }
+        Relationships: []
+      }
       kids_consent_policies: {
         Row: {
           consent_text: string
@@ -1799,6 +1847,18 @@ export type Database = {
         }[]
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_contact_acknowledgements: {
+        Args: never
+        Returns: {
+          claim_token: string
+          html_body: string
+          id: string
+          recipient: string
+          sender: string
+          subject: string
+          text_body: string
+        }[]
+      }
       claim_subscription_mail: {
         Args: never
         Returns: {
@@ -1834,6 +1894,15 @@ export type Database = {
           p_claim: string
           p_email_id: string
           p_user: string
+        }
+        Returns: boolean
+      }
+      complete_contact_acknowledgement: {
+        Args: {
+          p_block: boolean
+          p_claim: string
+          p_email_id: string
+          p_id: string
         }
         Returns: boolean
       }
@@ -2106,6 +2175,18 @@ export type Database = {
           p_user_id: string
         }
         Returns: Json
+      }
+      queue_contact_acknowledgement: {
+        Args: {
+          p_html: string
+          p_id: string
+          p_locale: string
+          p_recipient: string
+          p_stream: string
+          p_subject: string
+          p_text: string
+        }
+        Returns: undefined
       }
       rag_activate_index_upgrade: {
         Args: { p_expected_active_version_key: string; p_version_key: string }
