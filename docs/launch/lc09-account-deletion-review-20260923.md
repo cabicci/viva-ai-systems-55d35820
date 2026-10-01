@@ -50,7 +50,21 @@ and the unresolved financial-retention decision. Those policies, the responder,
 backup/rollback rehearsal and the final live acceptance are still release gates.
 A completed isolated database test is not production deletion proof.
 
-Automated receipts are recorded below after checks finish. The former
+Automated receipt for predecessor `3d99a3973f25699843f78df446e0d6d18c4a4048`:
+CI `36861328436` SUCCESS and native cumulative LC-09 `36861328517` SUCCESS
+with 11/11 tests and no skipped tests. Billing `36861328473` found the provider
+attempt guard was resolving a ledger primary key instead of the reservation
+root. The correction uses `reservation_id` plus `attempt_index=0`, preserves
+the old missing-reservation error, and checks `registered` attempts until their financial result settles. A regression proves normal
+accounting continues before blocking and cannot start another attempt afterward.
+A corrected-head Billing run is required. Local Deno checks passed for both
+changed Edge entrypoints; the pause script retains tombstones and access guards.
+
+The request note and confirmation describe the complete Kids scope and final
+delete/new-registration contract in all four locales, while preserving the
+request-only status until the operational review.
+
+Final corrected-head receipts belong in the original continuation registers. The former
 request-only history remains as historical evidence and does not describe the
 new finalizer's implementation.
 
@@ -161,8 +175,8 @@ request receipt as completed account deletion.**
    deleted learner state or paid access. Handle retained HubSpot contact records
    under the separate CRM policy, outside this platform account deletion.
 
-The current draft implements **step 1 only** and disables the unsafe old RPC.
-Steps 2–4 are explicit blockers, not inferred from the request result.
+The historical request-only version implemented **step 1 only** and disabled the unsafe old RPC.
+The new disabled finalizer prepares steps 2–4. Policy and operational acceptance are still blockers, and completion is never inferred from a request result.
 
 ## Table/field retention proposal for owner and legal review
 

@@ -55,6 +55,7 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
       "20260915070000_billing_paid_ai_quota_alignment.sql",
       "20260916183000_billing_pro_71_lesson_contract.sql",
       "20260917120000_stripe_test_checkout_bridge.sql",
+      "20260918173000_stripe_customer_portal_upgrade.sql",
       "20260923123000_account_deletion_request_gate.sql",
       "20260924190000_kids_parent_content_access_foundation.sql",
       "20260925120000_kids_parent_access_review.sql",
@@ -109,6 +110,45 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
     expect(
       await query("SELECT count(*)::int AS value FROM billing.account_deletion_lifecycle"),
     ).toBe(0);
+  });
+
+  it("preserves active provider-attempt accounting and blocks new attempts for the actual reservation owner", async () => {
+    await db.exec(
+      `UPDATE billing.subscriptions SET plan_version_id=(SELECT pv.id FROM billing.plan_versions pv JOIN billing.plan_catalog pc ON pc.id=pv.plan_id WHERE pc.plan_key='pro' AND pv.billing_interval='month' LIMIT 1),current_period_end=now()+interval '1 month' WHERE user_id='${user}'`,
+    );
+    const reservation = (await query(
+      `SELECT billing.reserve_ai_quota('${user}','assistant_runtime','lesson-1','${randomUUID()}',1,'lc09-reservation') AS value`,
+    )) as { reservation_id: string };
+    expect(reservation.reservation_id).toBeTruthy();
+    expect(
+      await query(
+        `SELECT billing.register_provider_attempt('${reservation.reservation_id}','openai','provider-1','attempt-1') AS value`,
+      ),
+    ).toMatchObject({ attempt_index: 1 });
+    await expectDenied(
+      () =>
+        query(
+          `SELECT billing.register_provider_attempt('${randomUUID()}','openai','missing','missing') AS value`,
+        ),
+      /RESERVATION_NOT_FOUND/,
+    );
+    await enable();
+    const c = await claim();
+    await expectDenied(
+      () =>
+        query(
+          `SELECT billing.register_provider_attempt('${reservation.reservation_id}','openai','provider-2','attempt-2') AS value`,
+        ),
+      /ACCOUNT_DELETION_PENDING/,
+    );
+    await expectDenied(
+      () => advance(c.lease_token, "provider_reconciled"),
+      /FINANCIAL_RECONCILIATION_PENDING/,
+    );
+    await query(
+      `SELECT billing.finalize_provider_attempt('${reservation.reservation_id}',1,'succeeded',10,20,1000) AS value`,
+    );
+    await advance(c.lease_token, "provider_reconciled");
   });
 
   it("blocks cached entitlements, AI reservations, admin grants and fresh Checkout", async () => {
@@ -269,6 +309,13 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
     const late = `SELECT public.apply_kids_stripe_event('evt_kids_late','${user}','sub_kids','cus_lc09','price_kids','active',now(),true,'in_kids',now(),now()+interval '1 month') AS value`;
     expect(await query(late)).toBe(true);
     expect(await query(late)).toBe(false);
+    await db.exec("SET LOCAL ROLE authenticated");
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.kids_profiles WHERE parent_id='${user}'`,
+      ),
+    ).toBe(0);
+    await db.exec("RESET ROLE");
     await advance(c.lease_token, "provider_reconciled");
     await advance(c.lease_token, "learner_erased");
     await db.exec(`DELETE FROM auth.users WHERE id='${user}'`);
@@ -339,6 +386,48 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
         `SELECT count(*)::int AS value FROM public.lesson_progress WHERE user_id='${user}'`,
       ),
     ).toBe(1);
+  });
+
+  it("keeps unknown Checkout creation pending, records it after blocking and prevents both billing portals", async () => {
+    const attempt = (await query(
+      `SELECT public.lc09_begin_kids_checkout('${user}','kids-checkout-test','customer=cus_lc09') AS value`,
+    )) as { attempt_id: string };
+    await enable();
+    const c = await claim();
+    await expectDenied(
+      () => advance(c.lease_token, "provider_reconciled"),
+      /RECONCILIATION_PENDING/,
+    );
+    expect(
+      await query(
+        `SELECT public.lc09_record_kids_checkout('${user}','${attempt.attempt_id}','cs_test',true) AS value`,
+      ),
+    ).toBe(false);
+    for (const fn of ["get_stripe_portal_context", "get_kids_stripe_portal_context"])
+      await expectDenied(
+        () => query(`SELECT public.${fn}('${user}') AS value`),
+        /ACCOUNT_DELETION_PENDING/,
+      );
+    await advance(c.lease_token, "provider_reconciled");
+    await advance(c.lease_token, "learner_erased");
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM billing.account_checkout_attempts WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+  });
+
+  it("pauses an in-progress job without removing its tombstone or restoring access", async () => {
+    await enable();
+    const c = await claim();
+    await db.exec("UPDATE billing.account_deletion_control SET enabled=false");
+    await expectDenied(() => advance(c.lease_token, "provider_reconciled"), /LC09_DISABLED/);
+    expect(
+      await query(
+        `SELECT billing.evaluate_access('${user}','lesson','builder:intro')->>'allowed' AS value`,
+      ),
+    ).toBe("false");
+    expect(await query(`SELECT count(*)::int AS value FROM auth.users WHERE id='${user}'`)).toBe(1);
   });
 
   it("revokes client access to worker controls and preserved implementations", async () => {

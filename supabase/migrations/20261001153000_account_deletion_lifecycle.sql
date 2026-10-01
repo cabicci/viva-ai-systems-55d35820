@@ -152,9 +152,11 @@ BEGIN
     ('billing','get_entitlement_snapshot','uuid','p_user_id','snapshot',true),
     ('billing','evaluate_access','uuid,text,text','p_user_id','access',true),
     ('billing','reserve_ai_quota','uuid,text,text,uuid,integer,text','p_user_id','raise',true),
-    ('billing','register_provider_attempt','uuid,text,text,text','(SELECT user_id FROM billing.ai_usage_ledger WHERE id=p_reservation_id)','raise',true),
+    ('billing','register_provider_attempt','uuid,text,text,text','(SELECT user_id FROM billing.ai_usage_ledger WHERE reservation_id=p_reservation_id AND attempt_index=0)','raise',true),
     ('billing','redeem_admin_access_coupon','text,text','auth.uid()','redeem',true),
     ('public','has_role','uuid,app_role','_user_id','role',true),
+    ('public','get_stripe_portal_context','uuid','p_user_id','raise',true),
+    ('public','get_kids_stripe_portal_context','uuid','p_user_id','raise',true),
     ('public','get_stripe_checkout_context','uuid,text,text,text','p_user_id','raise',true),
     ('public','prepare_stripe_checkout','uuid,uuid,uuid,text,text,text,text,text','p_user_id','raise',true),
     ('public','confirm_stripe_checkout_generation','uuid,uuid','p_user_id','false',false),
@@ -193,6 +195,11 @@ BEGIN
       v_before:='IF auth.uid() IS NULL THEN RETURN false; END IF;';
     ELSIF r.denial='empty' THEN
       v_before:='IF auth.uid() IS NULL THEN RETURN; END IF;';
+    END IF;
+    IF r.function_name='register_provider_attempt' THEN
+      -- Keep the existing invalid-reservation error; only a real reservation
+      -- root has an account whose deletion boundary can be checked.
+      v_before:=v_before||format('IF NOT EXISTS(SELECT 1 FROM billing.ai_usage_ledger WHERE reservation_id=p_reservation_id AND attempt_index=0) THEN RETURN %I.%I(%s); END IF;',r.schema_name,'lc09_previous_'||r.function_name,v_call);
     END IF;
     v_return:=CASE r.denial
       WHEN 'snapshot' THEN 'RETURN jsonb_build_object(''paid_content_entitled'',false,''denial_reason_code'',''ACCOUNT_DELETION_PENDING'');'
@@ -491,7 +498,7 @@ BEGIN
   IF p_next_stage='provider_reconciled' THEN
     IF EXISTS(SELECT 1 FROM billing.refunds f JOIN billing.payment_transactions t ON t.id=f.payment_transaction_id WHERE t.user_id=p_user_id AND f.status IN ('pending','approved','processing'))
       OR EXISTS(SELECT 1 FROM billing.payment_transactions WHERE user_id=p_user_id AND status IN ('pending','processing'))
-      OR EXISTS(SELECT 1 FROM billing.ai_usage_ledger WHERE user_id=p_user_id AND (status='reserved' OR attempt_status='started'))
+      OR EXISTS(SELECT 1 FROM billing.ai_usage_ledger WHERE user_id=p_user_id AND (status='reserved' OR attempt_status='registered'))
       OR EXISTS(SELECT 1 FROM billing.account_checkout_attempts WHERE user_id=p_user_id AND state='pending')
       OR EXISTS(SELECT 1 FROM public.kids_stripe_refunds WHERE parent_id=p_user_id AND status IN ('pending','requires_action'))
       OR EXISTS(SELECT 1 FROM billing.subscriptions s WHERE s.user_id=p_user_id AND s.billing_state='checkout_pending' AND to_jsonb(s)->>'checkout_session_id' IS NULL)
