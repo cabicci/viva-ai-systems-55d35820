@@ -64,7 +64,14 @@ accounting continues before blocking and cannot start another attempt afterward.
 The corrected `df0158a9f2026b713e70ec5e33c9f58d231a112e` then passed
 CI `36863360845`, native cumulative deletion `36863360857` (11/11), and Billing
 `36863360633` (175/23/1, no failures/skips/todo). The subsequent scoped Storage
-ownership guard requires its own exact-head run before release. Local Deno checks passed for both
+ownership guard passed CI `36864346537`, native deletion `36864346532` (11/11)
+and Billing `36864346569` (175/23/1) on `b2564ec61846bf16bcf33191731ae30c0e259da2`.
+The draft also preserves main through PR #125 (`d2002c8e2155ef2505a6f43d60cd58cadd410840`).
+Verified-recipient contact mail is erased locally with cascading delivery receipts;
+new queues and claims are blocked and an existing sender lease must settle first.
+The temporary recipient snapshot is cleared at completion. HubSpot remains the
+separate unresolved CRM policy gate. This integration requires new exact-head receipts.
+Local Deno checks passed for both
 changed Edge entrypoints; the pause script retains tombstones and access guards.
 
 The request note and confirmation describe the complete Kids scope and final

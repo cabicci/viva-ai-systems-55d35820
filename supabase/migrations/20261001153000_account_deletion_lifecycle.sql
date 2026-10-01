@@ -26,6 +26,7 @@ CREATE TABLE billing.account_deletion_lifecycle (
   financial_retention_reference text NOT NULL,
   crm_retention_reference text NOT NULL,
   release_reference text NOT NULL,
+  contact_recipient text,
   started_at timestamptz NOT NULL DEFAULT now(),
   provider_reconciled_at timestamptz,
   learner_erased_at timestamptz,
@@ -56,6 +57,54 @@ BEGIN
 END;
 $$;
 REVOKE ALL ON FUNCTION billing.account_deletion_blocked(uuid) FROM PUBLIC,anon,authenticated,service_role;
+
+-- Contact mail has recipient ownership rather than a user_id. Keep a verified
+-- recipient only until completion, serialize claims/queues with deletion, and
+-- let existing sender leases settle before erasing the outbox and its receipts.
+CREATE FUNCTION billing.lc09_contact_recipient_active(p_recipient text) RETURNS boolean
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
+DECLARE r record;
+BEGIN
+  FOR r IN SELECT id FROM auth.users WHERE lower(email)=lower(p_recipient) ORDER BY id
+  LOOP IF billing.account_deletion_blocked(r.id) THEN RETURN false; END IF; END LOOP;
+  RETURN NOT EXISTS(SELECT 1 FROM billing.account_deletion_lifecycle
+    WHERE contact_recipient=lower(p_recipient) AND stage<>'complete');
+END;
+$$;
+REVOKE ALL ON FUNCTION billing.lc09_contact_recipient_active(text) FROM PUBLIC,anon,authenticated,service_role;
+CREATE FUNCTION billing.lc09_block_contact_queue() RETURNS trigger
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
+BEGIN
+  IF NOT billing.lc09_contact_recipient_active(NEW.recipient) THEN RAISE EXCEPTION 'ACCOUNT_DELETION_BLOCKED'; END IF;
+  RETURN NEW;
+END;
+$$;
+REVOKE ALL ON FUNCTION billing.lc09_block_contact_queue() FROM PUBLIC,anon,authenticated,service_role;
+DO $$ BEGIN
+  IF to_regclass('public.contact_acknowledgement_outbox') IS NOT NULL THEN
+    CREATE TRIGGER lc09_contact_queue BEFORE INSERT ON public.contact_acknowledgement_outbox
+      FOR EACH ROW EXECUTE FUNCTION billing.lc09_block_contact_queue();
+    EXECUTE $fn$CREATE OR REPLACE FUNCTION public.claim_contact_acknowledgements()
+    RETURNS TABLE(id uuid,claim_token uuid,recipient text,subject text,text_body text,html_body text,sender text)
+    LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $body$
+    BEGIN
+      RETURN QUERY WITH candidates AS (
+        SELECT o.id FROM public.contact_acknowledgement_outbox o
+        WHERE o.provider_email_id IS NULL AND NOT o.blocked
+          AND (o.lease_until IS NULL OR o.lease_until<now())
+          AND o.created_at>now()-interval '7 days'
+          AND (o.first_attempt_at IS NULL OR o.first_attempt_at>now()-interval '23 hours')
+          AND billing.lc09_contact_recipient_active(o.recipient)
+        ORDER BY o.created_at FOR UPDATE SKIP LOCKED LIMIT 5
+      ) UPDATE public.contact_acknowledgement_outbox o SET
+        first_attempt_at=coalesce(o.first_attempt_at,now()),lease_until=now()+interval '5 minutes',claim_token=gen_random_uuid()
+        FROM candidates c WHERE o.id=c.id
+        RETURNING o.id,o.claim_token,o.recipient,o.subject,o.text_body,o.html_body,
+          CASE WHEN o.stream='sales' THEN 'sales@mail.masaarat.ai'::text ELSE 'info@mail.masaarat.ai'::text END;
+    END;
+    $body$;$fn$;
+  END IF;
+END $$;
 
 CREATE FUNCTION billing.lc09_owned_storage(p_user_id uuid) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
@@ -479,8 +528,13 @@ BEGIN
   IF NOT FOUND THEN
     IF NOT EXISTS(SELECT 1 FROM billing.account_deletion_requests WHERE user_id=p_user_id)
       OR NOT EXISTS(SELECT 1 FROM auth.users WHERE id=p_user_id) THEN RAISE EXCEPTION 'LC09_REQUEST_OR_IDENTITY_MISSING'; END IF;
-    INSERT INTO billing.account_deletion_lifecycle(user_id,stage,financial_retention_reference,crm_retention_reference,release_reference)
-      VALUES(p_user_id,'blocked',v_control.financial_retention_reference,v_control.crm_retention_reference,v_control.release_reference);
+    INSERT INTO billing.account_deletion_lifecycle(user_id,stage,financial_retention_reference,crm_retention_reference,release_reference,contact_recipient)
+      VALUES(p_user_id,'blocked',v_control.financial_retention_reference,v_control.crm_retention_reference,v_control.release_reference,
+        (SELECT lower(email) FROM auth.users WHERE id=p_user_id AND email_confirmed_at IS NOT NULL));
+    IF to_regclass('public.contact_acknowledgement_outbox') IS NOT NULL AND
+      EXISTS(SELECT 1 FROM auth.users WHERE id=p_user_id AND email_confirmed_at IS NULL AND EXISTS
+        (SELECT 1 FROM public.contact_acknowledgement_outbox o WHERE lower(o.recipient)=lower(auth.users.email)))
+      THEN RAISE EXCEPTION 'LC09_CONTACT_IDENTITY_REVIEW_REQUIRED'; END IF;
     UPDATE billing.subscriptions SET access_state='suspended' WHERE user_id=p_user_id;
     UPDATE billing.user_entitlement_snapshots SET invalidation_reason='account_deletion',expires_at=now() WHERE user_id=p_user_id;
   END IF;
@@ -519,7 +573,14 @@ BEGIN
       OR EXISTS(SELECT 1 FROM public.kids_stripe_refunds WHERE parent_id=p_user_id AND status IN ('pending','requires_action'))
       OR EXISTS(SELECT 1 FROM billing.subscriptions s WHERE s.user_id=p_user_id AND s.billing_state='checkout_pending' AND to_jsonb(s)->>'checkout_session_id' IS NULL)
     THEN RAISE EXCEPTION 'LC09_FINANCIAL_RECONCILIATION_PENDING'; END IF;
+    IF to_regclass('public.contact_acknowledgement_outbox') IS NOT NULL AND EXISTS
+      (SELECT 1 FROM public.contact_acknowledgement_outbox WHERE lower(recipient)=v_row.contact_recipient
+        AND provider_email_id IS NULL AND lease_until>now() AND NOT blocked)
+      THEN RAISE EXCEPTION 'LC09_CONTACT_SEND_PENDING'; END IF;
   ELSIF p_next_stage='learner_erased' THEN
+    IF to_regclass('public.contact_acknowledgement_outbox') IS NOT NULL THEN
+      DELETE FROM public.contact_acknowledgement_outbox WHERE lower(recipient)=v_row.contact_recipient;
+    END IF;
     FOR r IN SELECT DISTINCT c.table_name FROM information_schema.columns c
       JOIN information_schema.tables t USING(table_schema,table_name)
       WHERE c.table_schema='public' AND c.table_name LIKE 'kids\_%' ESCAPE '\'
@@ -568,6 +629,9 @@ BEGIN
   ELSIF p_next_stage='complete' THEN
     IF EXISTS(SELECT 1 FROM auth.users WHERE id=p_user_id) THEN RAISE EXCEPTION 'LC09_AUTH_IDENTITY_STILL_EXISTS'; END IF;
     IF jsonb_array_length(billing.lc09_owned_storage(p_user_id))>0 THEN RAISE EXCEPTION 'LC09_STORAGE_OBJECTS_REMAIN'; END IF;
+    IF to_regclass('public.contact_acknowledgement_outbox') IS NOT NULL AND EXISTS
+      (SELECT 1 FROM public.contact_acknowledgement_outbox WHERE lower(recipient)=v_row.contact_recipient)
+      THEN RAISE EXCEPTION 'LC09_CONTACT_DATA_REMAINS'; END IF;
     IF EXISTS(SELECT 1 FROM public.kids_profiles WHERE parent_id=p_user_id)
       OR EXISTS(SELECT 1 FROM public.kids_profile_consents WHERE parent_id=p_user_id)
       OR EXISTS(SELECT 1 FROM public.kids_parent_attestations WHERE parent_id=p_user_id)
@@ -584,6 +648,7 @@ BEGIN
     END LOOP;
   END IF;
   UPDATE billing.account_deletion_lifecycle SET stage=p_next_stage,
+    contact_recipient=CASE WHEN p_next_stage='complete' THEN NULL ELSE contact_recipient END,
     provider_reconciled_at=CASE WHEN p_next_stage='provider_reconciled' THEN now() ELSE provider_reconciled_at END,
     learner_erased_at=CASE WHEN p_next_stage='learner_erased' THEN now() ELSE learner_erased_at END,
     completed_at=CASE WHEN p_next_stage='complete' THEN now() ELSE completed_at END,

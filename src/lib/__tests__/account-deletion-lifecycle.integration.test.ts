@@ -67,6 +67,8 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
       "20260928100000_kids_parent_privacy_record.sql",
       "20260928120000_kids_stripe_test_billing.sql",
       "20260929110000_kids_refund_reentry_and_access_status.sql",
+      "20261001120000_contact_acknowledgements.sql",
+      "20261001123000_contact_mail_receipts.sql",
     ])
       await db.exec(migration(name));
     // Exercise the runtime generation extension as well as cumulative migration
@@ -257,6 +259,63 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
         `SELECT billing.get_entitlement_snapshot('${fresh}')->>'paid_content_entitled' AS value`,
       ),
     ).toBe("false");
+  });
+
+  it("erases verified contact mail and receipts, waits for an existing sender and blocks requeue without affecting another recipient", async () => {
+    const targetMail = randomUUID(),
+      otherMail = randomUUID();
+    await db.exec(`SELECT public.queue_contact_acknowledgement('${targetMail}','same@example.test','en','support','Support','Private body','<p>Private body</p>');
+      SELECT public.queue_contact_acknowledgement('${otherMail}','other@example.test','en','support','Other','Other body','<p>Other body</p>');
+      UPDATE public.contact_acknowledgement_outbox SET first_attempt_at=now(),lease_until=now()+interval '5 minutes' WHERE id='${targetMail}';`);
+    await enable();
+    const c = await claim();
+    await expectDenied(
+      () => advance(c.lease_token, "provider_reconciled"),
+      /LC09_CONTACT_SEND_PENDING/,
+    );
+    await expectDenied(
+      () =>
+        db.exec(
+          `SELECT public.queue_contact_acknowledgement('${randomUUID()}','same@example.test','en','support','Again','Again','<p>Again</p>')`,
+        ),
+      /ACCOUNT_DELETION_BLOCKED/,
+    );
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.claim_contact_acknowledgements() WHERE recipient='same@example.test'`,
+      ),
+    ).toBe(0);
+    await db.exec(`UPDATE public.contact_acknowledgement_outbox SET provider_email_id='email_lc09' WHERE id='${targetMail}';
+      SELECT public.record_contact_mail_receipt('receipt_lc09','email_lc09','same@example.test','email.delivered',now());`);
+    await advance(c.lease_token, "provider_reconciled");
+    await advance(c.lease_token, "learner_erased");
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.contact_acknowledgement_outbox WHERE id='${targetMail}'`,
+      ),
+    ).toBe(0);
+    expect(
+      await query(
+        "SELECT count(*)::int AS value FROM public.contact_mail_receipts WHERE event_id='receipt_lc09'",
+      ),
+    ).toBe(0);
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.contact_acknowledgement_outbox WHERE id='${otherMail}'`,
+      ),
+    ).toBe(1);
+    expect(
+      await query(
+        "SELECT public.record_contact_mail_receipt('late_lc09','email_lc09','same@example.test','email.delivered',now()) AS value",
+      ),
+    ).toBe("ignored");
+    await db.exec(`DELETE FROM auth.users WHERE id='${user}'`);
+    await advance(c.lease_token, "complete");
+    expect(
+      await query(
+        `SELECT contact_recipient AS value FROM billing.account_deletion_lifecycle WHERE user_id='${user}'`,
+      ),
+    ).toBeNull();
   });
 
   it("erases Kids profiles, progress, consents and parent records, preserving the other family and financial receipts", async () => {

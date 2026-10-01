@@ -9,7 +9,7 @@ const enable = `UPDATE billing.account_deletion_control SET enabled=true,
   responder_reference='disposable-responder',release_reference='disposable-release';`;
 const seed = (
   user: string,
-) => `INSERT INTO auth.users(id,email) VALUES('${user}','${user}@example.test');
+) => `INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${user}','${user}@example.test',now());
   INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}');`;
 
 describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
@@ -39,6 +39,10 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       INSERT INTO public.kids_retention_notices(parent_id,expiry,recipient_email,profile_ids)
         VALUES('${user}',now(),'synthetic@example.test',ARRAY['${child}']::uuid[]);
       INSERT INTO public.kids_stripe_events(event_id,parent_id) VALUES('evt_native_${child.replaceAll("-", "")}','${user}');
+      SELECT public.queue_contact_acknowledgement('${child}','${user}@example.test','en','support','Support','Private body','<p>Private body</p>');
+      SELECT public.queue_contact_acknowledgement('${otherChild}','${other}@example.test','en','support','Other','Other body','<p>Other body</p>');
+      UPDATE public.contact_acknowledgement_outbox SET provider_email_id='email_${child}' WHERE id='${child}';
+      SELECT public.record_contact_mail_receipt('receipt_${child}','email_${child}','${user}@example.test','email.delivered',now());
       CREATE TEMP TABLE deletion_claim AS SELECT public.lc09_claim_deletion('${user}') AS claim;
       SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM deletion_claim),'provider_reconciled');
       SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM deletion_claim),'learner_erased');
@@ -47,11 +51,15 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       SELECT json_build_object('removed',(SELECT count(*) FROM public.kids_profiles WHERE parent_id='${user}'),
         'other_progress',(SELECT count(*) FROM public.kids_lesson_progress WHERE profile_id='${otherChild}'),
         'receipts',(SELECT count(*) FROM public.kids_stripe_events WHERE parent_id='${user}'),
-        'recipients',(SELECT count(*) FROM public.kids_retention_notices WHERE parent_id='${user}' AND recipient_email IS NOT NULL));
+        'recipients',(SELECT count(*) FROM public.kids_retention_notices WHERE parent_id='${user}' AND recipient_email IS NOT NULL),
+        'own_mail',(SELECT count(*) FROM public.contact_acknowledgement_outbox WHERE id='${child}'),
+        'own_mail_receipts',(SELECT count(*) FROM public.contact_mail_receipts WHERE event_id='receipt_${child}'),
+        'other_mail',(SELECT count(*) FROM public.contact_acknowledgement_outbox WHERE id='${otherChild}'),
+        'email_snapshot',(SELECT contact_recipient FROM billing.account_deletion_lifecycle WHERE user_id='${user}'));
       ROLLBACK;`);
       expect(out).toContain('"stage": "complete"');
       expect(out).toContain(
-        '"removed" : 0, "other_progress" : 1, "receipts" : 1, "recipients" : 0',
+        '"removed" : 0, "other_progress" : 1, "receipts" : 1, "recipients" : 0, "own_mail" : 0, "own_mail_receipts" : 0, "other_mail" : 1, "email_snapshot" : null',
       );
     });
 

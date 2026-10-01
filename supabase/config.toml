@@ -20,3 +20,6 @@ verify_jwt = false # Dedicated job secret plus disabled-by-default DB and enviro
 
 [functions.contact-mail-job]
 verify_jwt = false # Dedicated service secret; verified before DB access.
+
+[functions.contact-mail-webhook]
+verify_jwt = false # Svix signature verification before DB access.
