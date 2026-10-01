@@ -142,6 +142,8 @@ export type Database = {
           lease_until: string | null
           locale: string
           provider_email_id: string | null
+          receipt_at: string | null
+          receipt_type: string | null
           recipient: string
           stream: string
           subject: string
@@ -157,6 +159,8 @@ export type Database = {
           lease_until?: string | null
           locale: string
           provider_email_id?: string | null
+          receipt_at?: string | null
+          receipt_type?: string | null
           recipient: string
           stream: string
           subject: string
@@ -172,12 +176,46 @@ export type Database = {
           lease_until?: string | null
           locale?: string
           provider_email_id?: string | null
+          receipt_at?: string | null
+          receipt_type?: string | null
           recipient?: string
           stream?: string
           subject?: string
           text_body?: string
         }
         Relationships: []
+      }
+      contact_mail_receipts: {
+        Row: {
+          event_id: string
+          event_type: string
+          occurred_at: string
+          outbox_id: string
+          received_at: string
+        }
+        Insert: {
+          event_id: string
+          event_type: string
+          occurred_at: string
+          outbox_id: string
+          received_at?: string
+        }
+        Update: {
+          event_id?: string
+          event_type?: string
+          occurred_at?: string
+          outbox_id?: string
+          received_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "contact_mail_receipts_outbox_id_fkey"
+            columns: ["outbox_id"]
+            isOneToOne: false
+            referencedRelation: "contact_acknowledgement_outbox"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       kids_consent_policies: {
         Row: {
@@ -2232,6 +2270,16 @@ export type Database = {
         Returns: Json
       }
       rag_validate_staging_import: { Args: never; Returns: Json }
+      record_contact_mail_receipt: {
+        Args: {
+          p_at: string
+          p_email_id: string
+          p_event: string
+          p_recipient: string
+          p_type: string
+        }
+        Returns: string
+      }
       record_stripe_checkout_session: {
         Args: {
           p_checkout_generation: string
