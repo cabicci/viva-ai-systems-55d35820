@@ -430,6 +430,35 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
     expect(await query(`SELECT count(*)::int AS value FROM auth.users WHERE id='${user}'`)).toBe(1);
   });
 
+  it("includes legacy Storage ownership, verifies erasure and protects shared platform content", async () => {
+    await db.exec(`CREATE SCHEMA storage; CREATE TABLE storage.objects(bucket_id text,name text,owner_id text,owner uuid);
+      INSERT INTO storage.objects VALUES('personal-test','new','${user}',NULL),('personal-test','legacy',NULL,'${user}'),
+        ('personal-test','other','${other}',NULL),('kids-lesson-content','platform','${user}',NULL)`);
+    await enable();
+    await expectDenied(claim, /LC09_SHARED_STORAGE_REVIEW_REQUIRED/);
+    expect(
+      await query("SELECT count(*)::int AS value FROM billing.account_deletion_lifecycle"),
+    ).toBe(0);
+    await db.exec(`UPDATE storage.objects SET owner_id=NULL WHERE name='platform'`);
+    await expectDenied(claim, /LC09_STORAGE_BUCKET_REVIEW_REQUIRED/);
+    await db.exec(
+      `UPDATE billing.account_deletion_control SET learner_storage_buckets=ARRAY['personal-test']`,
+    );
+    const c = (await claim()) as {
+      lease_token: string;
+      stage: string;
+      storage_objects: { bucket: string; name: string }[];
+    };
+    expect(c.storage_objects.map((o) => o.name).sort()).toEqual(["legacy", "new"]);
+    await advance(c.lease_token, "provider_reconciled");
+    await advance(c.lease_token, "learner_erased");
+    await db.exec(`DELETE FROM auth.users WHERE id='${user}'`);
+    await expectDenied(() => advance(c.lease_token, "complete"), /STORAGE_OBJECTS_REMAIN/);
+    await db.exec(`DELETE FROM storage.objects WHERE coalesce(owner_id,owner::text)='${user}'`);
+    await advance(c.lease_token, "complete");
+    expect(await query("SELECT count(*)::int AS value FROM storage.objects")).toBe(2);
+  });
+
   it("revokes client access to worker controls and preserved implementations", async () => {
     expect(
       await query(

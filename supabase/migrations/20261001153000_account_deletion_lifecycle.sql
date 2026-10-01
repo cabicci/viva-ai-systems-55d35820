@@ -9,6 +9,8 @@ CREATE TABLE billing.account_deletion_control (
   crm_retention_reference text,
   responder_reference text,
   release_reference text,
+  learner_storage_buckets text[] NOT NULL DEFAULT '{}',
+  CHECK (NOT (learner_storage_buckets && ARRAY['audio-assets','kids-lesson-content','dna-reports'])),
   CHECK (NOT enabled OR (
     nullif(btrim(financial_retention_reference), '') IS NOT NULL AND
     nullif(btrim(crm_retention_reference), '') IS NOT NULL AND
@@ -57,14 +59,28 @@ REVOKE ALL ON FUNCTION billing.account_deletion_blocked(uuid) FROM PUBLIC,anon,a
 
 CREATE FUNCTION billing.lc09_owned_storage(p_user_id uuid) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
-DECLARE v_owner text; v_objects jsonb;
+DECLARE v_owner text; v_owner_expression text; v_objects jsonb; v_shared boolean; v_buckets text[];
 BEGIN
   IF to_regclass('storage.objects') IS NULL THEN RETURN '[]'::jsonb; END IF;
   SELECT column_name INTO v_owner FROM information_schema.columns
     WHERE table_schema='storage' AND table_name='objects' AND column_name IN ('owner_id','owner')
     ORDER BY CASE WHEN column_name='owner_id' THEN 0 ELSE 1 END LIMIT 1;
   IF v_owner IS NULL THEN RAISE EXCEPTION 'LC09_STORAGE_OWNER_UNKNOWN'; END IF;
-  EXECUTE format('SELECT coalesce(jsonb_agg(jsonb_build_object(''bucket'',bucket_id,''name'',name)),''[]''::jsonb) FROM storage.objects WHERE %I::text=$1::text',v_owner)
+  v_owner_expression:=quote_ident(v_owner)||'::text';
+  IF v_owner='owner_id' AND EXISTS(SELECT 1 FROM information_schema.columns
+    WHERE table_schema='storage' AND table_name='objects' AND column_name='owner') THEN
+    v_owner_expression:='coalesce(nullif(owner_id::text,'''') ,owner::text)';
+  END IF;
+  -- These buckets contain shared platform media/archives, not learner uploads.
+  -- Review/reassign their ownership before deleting an operator account.
+  EXECUTE format('SELECT EXISTS(SELECT 1 FROM storage.objects WHERE %s=$1::text AND bucket_id IN (''audio-assets'',''kids-lesson-content'',''dna-reports''))',v_owner_expression)
+    INTO v_shared USING p_user_id;
+  IF v_shared THEN RAISE EXCEPTION 'LC09_SHARED_STORAGE_REVIEW_REQUIRED'; END IF;
+  SELECT learner_storage_buckets INTO v_buckets FROM billing.account_deletion_control WHERE singleton;
+  EXECUTE format('SELECT EXISTS(SELECT 1 FROM storage.objects WHERE %s=$1::text AND NOT bucket_id=ANY($2::text[]))',v_owner_expression)
+    INTO v_shared USING p_user_id,v_buckets;
+  IF v_shared THEN RAISE EXCEPTION 'LC09_STORAGE_BUCKET_REVIEW_REQUIRED'; END IF;
+  EXECUTE format('SELECT coalesce(jsonb_agg(jsonb_build_object(''bucket'',bucket_id,''name'',name)),''[]''::jsonb) FROM storage.objects WHERE %s=$1::text',v_owner_expression)
     INTO v_objects USING p_user_id;
   RETURN v_objects;
 END;

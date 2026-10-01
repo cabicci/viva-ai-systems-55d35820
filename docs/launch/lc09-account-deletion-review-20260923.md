@@ -48,6 +48,10 @@ customer/payment records or HubSpot CRM. A blanket promise that every external
 record disappears would conflict with the owner's prior separate CRM decision
 and the unresolved financial-retention decision. Those policies, the responder,
 backup/rollback rehearsal and the final live acceptance are still release gates.
+Storage manifests cover current and legacy owner columns. Shared audio, Kids
+lesson content and DNA archive ownership stops the job for review/reassignment
+instead of deleting platform content used by other accounts. The approved learner bucket list starts empty. Unknown bucket ownership
+stops for classification. Owned learner objects are removed through Storage API and completion checks their absence.
 A completed isolated database test is not production deletion proof.
 
 Automated receipt for predecessor `3d99a3973f25699843f78df446e0d6d18c4a4048`:
@@ -57,7 +61,10 @@ attempt guard was resolving a ledger primary key instead of the reservation
 root. The correction uses `reservation_id` plus `attempt_index=0`, preserves
 the old missing-reservation error, and checks `registered` attempts until their financial result settles. A regression proves normal
 accounting continues before blocking and cannot start another attempt afterward.
-A corrected-head Billing run is required. Local Deno checks passed for both
+The corrected `df0158a9f2026b713e70ec5e33c9f58d231a112e` then passed
+CI `36863360845`, native cumulative deletion `36863360857` (11/11), and Billing
+`36863360633` (175/23/1, no failures/skips/todo). The subsequent scoped Storage
+ownership guard requires its own exact-head run before release. Local Deno checks passed for both
 changed Edge entrypoints; the pause script retains tombstones and access guards.
 
 The request note and confirmation describe the complete Kids scope and final
