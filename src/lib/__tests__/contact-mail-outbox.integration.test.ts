@@ -15,6 +15,12 @@ describe("service-only contact mail outbox", () => {
         "utf8",
       ),
     );
+    await db.exec(
+      readFileSync(
+        "supabase/migrations/20261001123000_contact_mail_receipts.sql",
+        "utf8",
+      ),
+    );
   });
   afterAll(async () => {
     await db?.close();
@@ -96,5 +102,86 @@ describe("service-only contact mail outbox", () => {
       (await db.query("SELECT * FROM public.claim_contact_acknowledgements()"))
         .rows,
     ).toHaveLength(0);
+  });
+
+  it("matches delivery receipts, deduplicates events and preserves newer outcomes", async () => {
+    const id = randomUUID();
+    await db.query(
+      "SELECT public.queue_contact_acknowledgement($1,'receipt@example.test','en','support','Subject','Text','HTML')",
+      [id],
+    );
+    await db.query(
+      "UPDATE public.contact_acknowledgement_outbox SET first_attempt_at=now() WHERE id=$1",
+      [id],
+    );
+    const receipt = async (
+      event: string,
+      provider: string,
+      type: string,
+      at: string,
+    ) =>
+      db.query<{ result: string }>(
+        "SELECT public.record_contact_mail_receipt($1,$2,'receipt@example.test',$3,$4) AS result",
+        [event, provider, type, at],
+      );
+    const at = new Date().toISOString(),
+      older = new Date(Date.now() - 60000).toISOString();
+    expect(
+      (await receipt("event-1", "receipt-provider", "email.delivered", at))
+        .rows[0].result,
+    ).toBe("pending");
+    await db.query(
+      "UPDATE public.contact_acknowledgement_outbox SET provider_email_id='receipt-provider' WHERE id=$1",
+      [id],
+    );
+    expect(
+      (await receipt("unmatched", "different-provider", "email.delivered", at))
+        .rows[0].result,
+    ).toBe("ignored");
+    expect(
+      (await receipt("event-1", "receipt-provider", "email.delivered", at))
+        .rows[0].result,
+    ).toBe("recorded");
+    expect(
+      (await receipt("event-1", "receipt-provider", "email.delivered", at))
+        .rows[0].result,
+    ).toBe("recorded");
+    await receipt(
+      "event-2",
+      "receipt-provider",
+      "email.delivery_delayed",
+      older,
+    );
+    expect(
+      (
+        await db.query<{ receipt_type: string }>(
+          "SELECT receipt_type FROM public.contact_acknowledgement_outbox WHERE id=$1",
+          [id],
+        )
+      ).rows[0].receipt_type,
+    ).toBe("email.delivered");
+    await receipt("event-3", "receipt-provider", "email.complained", older);
+    expect(
+      (
+        await db.query<{ blocked: boolean }>(
+          "SELECT blocked FROM public.contact_acknowledgement_outbox WHERE id=$1",
+          [id],
+        )
+      ).rows[0].blocked,
+    ).toBe(true);
+    expect(
+      (
+        await db.query<{ count: number }>(
+          "SELECT count(*)::int AS count FROM public.contact_mail_receipts WHERE outbox_id=$1",
+          [id],
+        )
+      ).rows[0].count,
+    ).toBe(3);
+    for (const role of ["anon", "authenticated"]) {
+      const r = await db.query<{ read: boolean; execute: boolean }>(
+        `SELECT has_table_privilege('${role}','public.contact_mail_receipts','SELECT') AS read,has_function_privilege('${role}','public.record_contact_mail_receipt(text,text,text,text,timestamptz)','EXECUTE') AS execute`,
+      );
+      expect(r.rows[0]).toEqual({ read: false, execute: false });
+    }
   });
 });

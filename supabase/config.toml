@@ -17,3 +17,6 @@ verify_jwt = false # Dedicated high-entropy service secret, checked before DB ac
 
 [functions.contact-mail-job]
 verify_jwt = false # Dedicated service secret; verified before DB access.
+
+[functions.contact-mail-webhook]
+verify_jwt = false # Svix signature verification before DB access.
