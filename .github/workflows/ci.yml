@@ -59,6 +59,14 @@ jobs:
       - name: Contact rate limiter (isolated PostgreSQL)
         run: bunx vitest run src/lib/__tests__/contact-rate-limit.integration.test.ts
 
+      - name: Contact Edge Function entrypoints
+        run: >-
+          bunx tsc --noEmit --strict --target ES2022 --module ESNext
+          --moduleResolution bundler --lib ES2022,DOM --skipLibCheck
+          --allowImportingTsExtensions scripts/email/contact-edge-runtime.d.ts
+          supabase/functions/contact-mail-job/index.ts
+          supabase/functions/contact-mail-webhook/index.ts
+
       - name: Contact acknowledgement mail (isolated DB, no sends)
         run: >-
           bunx vitest run

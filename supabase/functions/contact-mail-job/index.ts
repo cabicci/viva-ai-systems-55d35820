@@ -5,7 +5,7 @@ import { runContactMailJob } from "./handler.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (
-    !(await authorizedWelcomeJob(
+    !(await authorizedServiceJob(
       request,
       Deno.env.get("CONTACT_MAIL_JOB_SECRET"),
     ))
