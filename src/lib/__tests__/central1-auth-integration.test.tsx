@@ -12,9 +12,7 @@ import type { Session } from "@supabase/supabase-js";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
-  authListener: undefined as
-    | ((event: string, session: Session | null) => void)
-    | undefined,
+  authListener: undefined as ((event: string, session: Session | null) => void) | undefined,
   getSession: vi.fn(),
   onAuthStateChange: vi.fn(),
   signInWithPassword: vi.fn(),
@@ -60,13 +58,20 @@ vi.mock("@/components/auth/AuthShell", () => ({
 vi.mock("@/lib/locale/use-ui-strings", () => ({
   useUiString: () => (key: string) => key,
 }));
+vi.mock("@/lib/locale/locale-context", () => ({
+  useLocale: () => ({ locale: "en", dir: "ltr" }),
+}));
+vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
+vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
+vi.mock("@/components/billing/StripeCheckoutButtons", () => ({
+  StripeCheckoutButtons: () => null,
+}));
+vi.mock("@/components/kids/KidsFamilyPricing", () => ({ KidsFamilyPricing: () => null }));
 
 import { AuthProvider } from "@/lib/auth-context";
-import {
-  AuthSessionGate,
-  requireAuthBeforeLoad,
-} from "@/lib/auth-route-guard";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Route as LoginFileRoute } from "@/routes/login";
+import { Route as PricingFileRoute } from "@/routes/pricing";
 
 const SESSION = {
   access_token: "header.payload.signature",
@@ -128,7 +133,7 @@ afterEach(() => {
 });
 
 async function renderAt(
-  initialEntry: "/login" | "/dashboard",
+  initialEntry: "/login" | "/dashboard" | "/pricing",
   { guardDashboard = false }: { guardDashboard?: boolean } = {},
 ) {
   const rootRoute = createRootRoute({
@@ -157,8 +162,13 @@ async function renderAt(
   });
 
   const history = createMemoryHistory({ initialEntries: [initialEntry] });
+  const pricingRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/pricing",
+    component: PricingFileRoute.options.component,
+  });
   const router = createRouter({
-    routeTree: rootRoute.addChildren([loginRoute, dashboardRoute]),
+    routeTree: rootRoute.addChildren([loginRoute, dashboardRoute, pricingRoute]),
     history,
   });
 
@@ -174,9 +184,7 @@ function fillLoginForm() {
   fireEvent.change(screen.getByRole("textbox"), {
     target: { value: "learner@example.test" },
   });
-  const password = document.querySelector<HTMLInputElement>(
-    'input[type="password"]',
-  );
+  const password = document.querySelector<HTMLInputElement>('input[type="password"]');
   expect(password).not.toBeNull();
   fireEvent.change(password!, { target: { value: "correct horse battery staple" } });
 }
@@ -228,9 +236,7 @@ describe("central1 auth integration", () => {
     const router = await renderAt("/login", { guardDashboard: true });
     fillLoginForm();
 
-    fireEvent.click(
-      screen.getByRole("button", { name: /auth\.login\.submit/ }),
-    );
+    fireEvent.click(screen.getByRole("button", { name: /auth\.login\.submit/ }));
 
     await waitFor(() => {
       expect(router.state.location.pathname).toBe("/dashboard");
@@ -240,28 +246,79 @@ describe("central1 auth integration", () => {
     expect(router.state.location.pathname).toBe("/dashboard");
     expect(screen.queryByText("auth-fallback")).not.toBeInTheDocument();
     expect(mocks.signOut).not.toHaveBeenCalled();
-    expect(mocks.toastSuccess).toHaveBeenCalledWith(
-      "auth.login.toast.success",
-    );
+    expect(mocks.toastSuccess).toHaveBeenCalledWith("auth.login.toast.success");
   });
 
   it("stays on login and does not navigate when sign-in fails", async () => {
     mocks.signInWithPassword.mockResolvedValue({
       data: { session: null, user: null },
-      error: { message: "invalid credentials" },
+      error: { code: "invalid_credentials", message: "invalid credentials" },
     });
     const router = await renderAt("/login");
     fillLoginForm();
 
-    fireEvent.click(
-      screen.getByRole("button", { name: /auth\.login\.submit/ }),
-    );
+    fireEvent.click(screen.getByRole("button", { name: /auth\.login\.submit/ }));
 
     await waitFor(() => {
-      expect(mocks.toastError).toHaveBeenCalledWith("invalid credentials");
+      expect(mocks.toastError).toHaveBeenCalledWith("auth.login.error.credentials");
     });
     expect(router.state.location.pathname).toBe("/login");
-    expect(screen.getByText("auth.login.failedMessage")).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent("auth.login.error.credentials");
+    expect(screen.getByRole("link", { name: "auth.link.resetPassword" })).toBeInTheDocument();
     expect(screen.queryByText("protected-dashboard")).not.toBeInTheDocument();
+  });
+
+  it.each([
+    [{ name: "AuthRetryableFetchError", status: 0 }, "auth.login.error.connection"],
+    [{ code: "over_request_rate_limit", status: 429 }, "auth.login.error.rateLimit"],
+    [{ code: "email_not_confirmed" }, "auth.login.error.unconfirmed"],
+    [{ code: "unexpected_failure", message: "internal details" }, "auth.login.failedMessage"],
+  ])("shows the correct category without a password-reset prompt for %j", async (error, key) => {
+    mocks.signInWithPassword.mockResolvedValue({ data: { session: null }, error });
+    const router = await renderAt("/login");
+    fillLoginForm();
+    fireEvent.click(screen.getByRole("button", { name: /auth\.login\.submit/ }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(key);
+    expect(mocks.toastError).toHaveBeenCalledWith(key);
+    expect(screen.queryByRole("link", { name: "auth.link.resetPassword" })).not.toBeInTheDocument();
+    expect(router.state.location.pathname).toBe("/login");
+    expect(screen.getByRole("button", { name: /auth\.login\.submit/ })).toBeEnabled();
+  });
+
+  it("settles a thrown network error and permits a successful retry", async () => {
+    mocks.signInWithPassword.mockRejectedValueOnce(new TypeError("Failed to fetch"));
+    mocks.signInWithPassword.mockResolvedValueOnce({ data: { session: SESSION }, error: null });
+    const router = await renderAt("/login");
+    fillLoginForm();
+    fireEvent.click(screen.getByRole("button", { name: /auth\.login\.submit/ }));
+    expect(await screen.findByRole("alert")).toHaveTextContent("auth.login.error.connection");
+    const retry = screen.getByRole("button", { name: /auth\.login\.submit/ });
+    expect(retry).toBeEnabled();
+    fireEvent.click(retry);
+    await waitFor(() => expect(router.state.location.pathname).toBe("/dashboard"));
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+  });
+
+  it("associates login labels and exposes password-manager autocomplete", async () => {
+    await renderAt("/login");
+    expect(screen.getByLabelText("auth.field.email")).toHaveAttribute("autocomplete", "username");
+    expect(screen.getByLabelText("auth.field.password")).toHaveAttribute(
+      "autocomplete",
+      "current-password",
+    );
+  });
+
+  it.each([false, true])("routes the Free CTA for authenticated=%s", async (signedIn) => {
+    mocks.getSession.mockResolvedValue({
+      data: { session: signedIn ? SESSION : null },
+      error: null,
+    });
+    await renderAt("/pricing");
+    await waitFor(() =>
+      expect(screen.getByRole("link", { name: "pricing.cta.startFree" })).toHaveAttribute(
+        "href",
+        signedIn ? "/dashboard" : "/signup",
+      ),
+    );
   });
 });

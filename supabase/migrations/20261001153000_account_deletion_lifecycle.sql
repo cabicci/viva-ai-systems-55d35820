@@ -106,6 +106,35 @@ DO $$ BEGIN
   END IF;
 END $$;
 
+-- Preserve the installed v1/v2 welcome and subscription claimers in place.
+-- Their normal recipient, paid-state, retry and lease conditions remain intact.
+-- Account locks precede outbox row locks, just as they do during finalization.
+DO $mail$ DECLARE v_name text; v_oid oid; v_definition text;
+  v_marker constant text := 'WHERE o.provider_email_id IS NULL AND NOT o.blocked';
+BEGIN
+  FOREACH v_name IN ARRAY ARRAY['claim_account_welcome_emails','claim_account_welcome_emails_v2','claim_subscription_mail'] LOOP
+    v_oid:=to_regprocedure(format('public.%I()',v_name));
+    IF v_oid IS NULL THEN RAISE EXCEPTION 'LC09_REQUIRED_MAIL_CLAIM_MISSING: %',v_name; END IF;
+    v_definition:=pg_get_functiondef(v_oid);
+    IF (length(v_definition)-length(replace(v_definition,v_marker,'')))/length(v_marker)<>1
+      THEN RAISE EXCEPTION 'LC09_MAIL_CLAIM_REVIEW_REQUIRED: %',v_name; END IF;
+    EXECUTE replace(v_definition,v_marker,v_marker||' AND NOT billing.account_deletion_blocked(o.user_id)');
+  END LOOP;
+END $mail$;
+CREATE FUNCTION billing.lc09_skip_account_mail() RETURNS trigger
+LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
+BEGIN
+  -- Suppress the mail only; do not abort the Auth confirmation/audit transaction.
+  IF billing.account_deletion_blocked(NEW.user_id) THEN RETURN NULL; END IF;
+  RETURN NEW;
+END;
+$$;
+REVOKE ALL ON FUNCTION billing.lc09_skip_account_mail() FROM PUBLIC,anon,authenticated,service_role;
+CREATE TRIGGER lc09_welcome_queue BEFORE INSERT ON public.account_welcome_outbox
+  FOR EACH ROW EXECUTE FUNCTION billing.lc09_skip_account_mail();
+CREATE TRIGGER lc09_subscription_queue BEFORE INSERT ON public.subscription_mail_outbox
+  FOR EACH ROW EXECUTE FUNCTION billing.lc09_skip_account_mail();
+
 CREATE FUNCTION billing.lc09_owned_storage(p_user_id uuid) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
 DECLARE v_owner text; v_owner_expression text; v_objects jsonb; v_shared boolean; v_buckets text[];
@@ -553,7 +582,7 @@ $$;
 
 CREATE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
-DECLARE v_row billing.account_deletion_lifecycle%ROWTYPE; r record; v_count integer;
+DECLARE v_row billing.account_deletion_lifecycle%ROWTYPE; r record; v_count integer; v_mail_pending boolean;
 BEGIN
   IF NOT billing.is_service_role_caller() THEN RAISE EXCEPTION 'LC09_SERVICE_ONLY' USING ERRCODE='42501'; END IF;
   IF NOT EXISTS(SELECT 1 FROM billing.account_deletion_control WHERE enabled) THEN RAISE EXCEPTION 'LC09_DISABLED'; END IF;
@@ -565,6 +594,13 @@ BEGIN
     RETURN jsonb_build_object('stage',v_row.stage);
   END IF;
   IF (v_row.stage,p_next_stage) NOT IN (('blocked','provider_reconciled'),('provider_reconciled','learner_erased'),('learner_erased','complete')) THEN RAISE EXCEPTION 'LC09_INVALID_STAGE'; END IF;
+  IF p_next_stage IN ('provider_reconciled','learner_erased') THEN
+    FOR r IN SELECT unnest(ARRAY['account_welcome_outbox','subscription_mail_outbox']) AS name LOOP
+      EXECUTE format('SELECT EXISTS(SELECT 1 FROM public.%I WHERE user_id=$1 AND provider_email_id IS NULL AND lease_until>now() AND NOT blocked)',r.name)
+        INTO v_mail_pending USING p_user_id;
+      IF v_mail_pending THEN RAISE EXCEPTION 'LC09_ACCOUNT_MAIL_SEND_PENDING'; END IF;
+    END LOOP;
+  END IF;
   IF p_next_stage='provider_reconciled' THEN
     IF EXISTS(SELECT 1 FROM billing.refunds f JOIN billing.payment_transactions t ON t.id=f.payment_transaction_id WHERE t.user_id=p_user_id AND f.status IN ('pending','approved','processing'))
       OR EXISTS(SELECT 1 FROM billing.payment_transactions WHERE user_id=p_user_id AND status IN ('pending','processing'))

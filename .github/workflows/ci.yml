@@ -47,6 +47,12 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Login and Free CTA regression (isolated clients, no account writes)
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/central1-auth-integration.test.tsx
+          src/lib/__tests__/locale-auth.test.ts
+
       - name: Account Auth email localization (no email sends)
         run: >-
           bunx vitest run

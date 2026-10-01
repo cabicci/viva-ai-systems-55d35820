@@ -31,7 +31,7 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
   beforeAll(async () => {
     db = new PGlite();
     await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
-      CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,email_confirmed_at timestamptz);
+      CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,email_confirmed_at timestamptz,raw_user_meta_data jsonb DEFAULT '{}');
       CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
       CREATE FUNCTION auth.jwt() RETURNS jsonb LANGUAGE sql STABLE AS $$SELECT jsonb_build_object('role',current_setting('request.jwt.claim.role',true))$$;
       CREATE FUNCTION auth.role() RETURNS text LANGUAGE sql STABLE AS $$SELECT current_setting('request.jwt.claim.role',true)$$;
@@ -63,6 +63,8 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
       "20260925160000_kids_family_profile_limit.sql",
       "20260925190000_kids_retention_email.sql",
       "20260925210000_kids_profile_consent.sql",
+      "20260925220000_account_welcome_email.sql",
+      "20260925230000_branded_account_mail.sql",
       "20260927110000_kids_parent_self_attestation.sql",
       "20260928100000_kids_parent_privacy_record.sql",
       "20260928120000_kids_stripe_test_billing.sql",
@@ -259,6 +261,63 @@ describe("LC-09 disabled lifecycle, erasure and financial replay", () => {
         `SELECT billing.get_entitlement_snapshot('${fresh}')->>'paid_content_entitled' AS value`,
       ),
     ).toBe("false");
+  });
+
+  it("blocks welcome and subscription claims and waits for earlier sender leases before erasure", async () => {
+    const event = randomUUID();
+    await db.exec(`UPDATE billing.subscriptions SET plan_version_id=(SELECT pv.id FROM billing.plan_versions pv JOIN billing.plan_catalog pc ON pc.id=pv.plan_id WHERE pc.plan_key='pro' AND pv.billing_interval='month' LIMIT 1) WHERE id='${subscription}';
+      INSERT INTO billing.subscription_events(id,subscription_id,event_type,source,processing_status,to_access_state,from_access_state,idempotency_key,occurred_at)
+      VALUES('${event}','${subscription}','payment_succeeded','gateway_webhook','applied','paid_active','free_active','mail_${event}',now());
+      UPDATE public.account_welcome_outbox SET first_attempt_at=now(),lease_until=now()+interval '5 minutes' WHERE user_id='${user}';
+      UPDATE public.subscription_mail_outbox SET first_attempt_at=now(),lease_until=now()+interval '5 minutes' WHERE user_id='${user}';`);
+    await enable();
+    const c = await claim();
+    await expectDenied(
+      () => advance(c.lease_token, "provider_reconciled"),
+      /LC09_ACCOUNT_MAIL_SEND_PENDING/,
+    );
+    await db.exec(
+      `UPDATE public.account_welcome_outbox SET provider_email_id='welcome_settled' WHERE user_id='${user}';`,
+    );
+    await expectDenied(
+      () => advance(c.lease_token, "provider_reconciled"),
+      /LC09_ACCOUNT_MAIL_SEND_PENDING/,
+    );
+    await db.exec(
+      `UPDATE public.subscription_mail_outbox SET provider_email_id='subscription_settled' WHERE user_id='${user}';`,
+    );
+    await db.exec(
+      `UPDATE public.account_welcome_outbox SET provider_email_id=NULL,lease_until=now()-interval '1 minute' WHERE user_id='${user}';`,
+    );
+    for (const fn of [
+      "claim_account_welcome_emails",
+      "claim_account_welcome_emails_v2",
+      "claim_subscription_mail",
+    ])
+      expect(
+        await query(
+          `SELECT count(*)::int AS value FROM public.${fn}() WHERE ${fn === "claim_subscription_mail" ? "event_id='" + event + "'" : "user_id='" + user + "'"}`,
+        ),
+      ).toBe(0);
+    await db.exec(`DELETE FROM public.account_welcome_outbox WHERE user_id='${user}';
+      INSERT INTO public.account_welcome_outbox(user_id,recipient) VALUES('${user}','same@example.test');`);
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.account_welcome_outbox WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.account_welcome_outbox WHERE user_id='${other}'`,
+      ),
+    ).toBe(1);
+    await advance(c.lease_token, "provider_reconciled");
+    await advance(c.lease_token, "learner_erased");
+    expect(
+      await query(
+        `SELECT count(*)::int AS value FROM public.subscription_mail_outbox WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
   });
 
   it("erases verified contact mail and receipts, waits for an existing sender and blocks requeue without affecting another recipient", async () => {

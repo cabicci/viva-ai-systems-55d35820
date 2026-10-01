@@ -47,7 +47,10 @@ an approved field/expiry schedule is supplied. This draft does not erase Stripe
 customer/payment records or HubSpot CRM. A blanket promise that every external
 record disappears would conflict with the owner's prior separate CRM decision
 and the unresolved financial-retention decision. Those policies, the responder,
-backup/rollback rehearsal and the final live acceptance are still release gates.
+pause/resume rehearsal and the final live acceptance are still release gates.
+The owner cancelled every backup requirement on 1 October; no backup or recovery
+key is required by this release. Earlier backup references below are historical
+and cannot reintroduce that cancelled gate.
 Storage manifests cover current and legacy owner columns. Shared audio, Kids
 lesson content and DNA archive ownership stops the job for review/reassignment
 instead of deleting platform content used by other accounts. The approved learner bucket list starts empty. Unknown bucket ownership

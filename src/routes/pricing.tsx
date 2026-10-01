@@ -13,6 +13,7 @@ import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { APPROVED_PRICES_MINOR } from "@/lib/billing/catalogue/prices";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
+import { useAuth } from "@/lib/auth-context";
 
 const FREE_FEATURE_KEYS = [
   "pricing.free.feature.1",
@@ -103,6 +104,7 @@ export const Route = createFileRoute("/pricing")({
 function PricingPage() {
   const t = useUiString();
   const { dir } = useLocale();
+  const { user } = useAuth();
 
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
@@ -137,7 +139,7 @@ function PricingPage() {
               </ul>
               <p className="mb-5 text-3xl font-black">{t("pricing.price.free")}</p>
               <Button asChild variant="hero" size="lg" className="w-full">
-                <Link to="/signup">{t("pricing.cta.startFree")}</Link>
+                <Link to={user ? "/dashboard" : "/signup"}>{t("pricing.cta.startFree")}</Link>
               </Button>
             </article>
 

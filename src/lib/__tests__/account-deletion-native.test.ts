@@ -1,5 +1,6 @@
 // @vitest-environment node
 import { randomUUID } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { afterAll, describe, expect, it } from "vitest";
 import { psql, psqlAllowFail, psqlConcurrent } from "../../../scripts/billing/disposable-db";
 
@@ -63,7 +64,7 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       );
     });
 
-    it("allows only one simultaneous worker to acquire the durable lease", async () => {
+    it("serializes workers and rehearses the actual pause script without restoring access or erasing the identity", async () => {
       const user = randomUUID();
       psql(`${enable} ${seed(user)}`);
       const results = await psqlConcurrent([
@@ -75,6 +76,25 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       expect(
         psql(`SELECT count(*) FROM billing.account_deletion_lifecycle WHERE user_id='${user}'`),
       ).toBe("1");
+      psql(readFileSync("docs/launch/lc09-finalizer-pause.sql", "utf8"));
+      expect(psql("SELECT enabled FROM billing.account_deletion_control")).toBe("f");
+      expect(
+        psql(
+          `${service} SELECT billing.evaluate_access('${user}','lesson','builder:intro')->>'allowed'`,
+        )
+          .split("\n")
+          .at(-1),
+      ).toBe("false");
+      expect(
+        psqlAllowFail(`${service} SELECT public.lc09_claim_deletion('${user}')`).out,
+      ).toContain("LC09_DISABLED");
+      expect(psql(`SELECT count(*) FROM auth.users WHERE id='${user}'`)).toBe("1");
+      psql(
+        `${enable} UPDATE billing.account_deletion_lifecycle SET lease_until=now()-interval '1 second' WHERE user_id='${user}';`,
+      );
+      expect(psql(`${service} SELECT public.lc09_claim_deletion('${user}')`)).toContain(
+        '"stage": "blocked"',
+      );
     });
 
     it("serializes a late Kids paid event behind deletion and records it without granting access", async () => {
