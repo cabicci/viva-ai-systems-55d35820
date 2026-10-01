@@ -1,3 +1,9 @@
+## 2026-10-01 — Auth email RTL alignment (source fix)
+
+The shared auth email shell now uses explicit direction, inline alignment and table-cell alignment on header, content and footer. Signup and recovery copy keep Arabic right-aligned and English left-aligned; mixed-script recipient names are isolated without changing confirmation/reset URLs, locale selection or copy. Other Arabic auth templates inherit the same shared shell; reauthentication codes retain their centered LTR styling.
+
+Regression evidence: four locale cases failed against the original shell; all 13 signup/recovery tests passed after the change. Isolated email-template TypeScript checking and changed-file Prettier checks passed. Full project CI 432 (36907875088) passed on 13082f3b5c9e947aa83f5917b429dd205b522431. PR #126 merged at 2c86cc9be69a2bca1c88ab323b5608f38b9fd367; production deployment and inbox acceptance remain open. No production deployment or inbox/client visual acceptance has been performed; source tests do not prove the received email layout. Overall NO-GO, Kids stop and Stripe TEST are unchanged.
+
 ## 2026-10-01 — Contact acknowledgement mail source (PR #123)
 
 Support/institutional acknowledgements now have four localized, branded templates and a service-only durable outbox/worker. Account preferred_locale takes priority; visitors use the selected form locale and an explicit request type. Current Resend UI confirms mail.masaarat.ai Verified; automated senders use that subdomain with info@masaarat.ai / sales@masaarat.ai Reply-To. Gmail preview delivery is separate evidence. No marketing consent is inferred.

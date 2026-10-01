@@ -1,7 +1,11 @@
 import * as React from "react";
 
 import { Link, Text } from "@react-email/components";
-import { MasaaratShell, bodyText } from "./masaarat-shell";
+import {
+  MasaaratShell,
+  bodyTextForLocale,
+  RecipientName,
+} from "./masaarat-shell";
 import type { SignupProfile } from "./signup-profile";
 
 interface SignupEmailProps extends SignupProfile {
@@ -15,7 +19,8 @@ const copies = {
     preview: "خطوة أخيرة لإنشاء حسابك في مسارات",
     title: "أكّد بريدك الإلكتروني",
     greeting: "أهلًا",
-    instruction: "فاضل خطوة أخيرة لإنشاء حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
+    instruction:
+      "فاضل خطوة أخيرة لإنشاء حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
     action: "تأكيد البريد",
     note: "لو ما طلبتش إنشاء الحساب، تجاهل الرسالة دي.",
   },
@@ -24,7 +29,8 @@ const copies = {
     preview: "أكمل إنشاء حسابك في مسارات",
     title: "تأكيد البريد الإلكتروني",
     greeting: "مرحبًا",
-    instruction: "تبقّت خطوة واحدة لإنشاء حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
+    instruction:
+      "تبقّت خطوة واحدة لإنشاء حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
     action: "تأكيد البريد",
     note: "إذا لم تطلب إنشاء الحساب، فتجاهل هذه الرسالة.",
   },
@@ -33,7 +39,8 @@ const copies = {
     preview: "باقي خطوة لإكمال حسابك في مسارات",
     title: "تأكيد البريد الإلكتروني",
     greeting: "حيّاك الله",
-    instruction: "باقي خطوة لإكمال حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
+    instruction:
+      "باقي خطوة لإكمال حسابك في مسارات: اضغط الزر لتأكيد بريدك الإلكتروني.",
     action: "تأكيد البريد",
     note: "إذا ما طلبت إنشاء الحساب، تجاهل هالرسالة.",
   },
@@ -49,14 +56,22 @@ const copies = {
   },
 } as const;
 
-export const signupCopy = (locale: SignupProfile["locale"]) => (locale ? copies[locale] : null);
+export const signupCopy = (locale: SignupProfile["locale"]) =>
+  locale ? copies[locale] : null;
 
-export const SignupEmail = ({ siteUrl, confirmationUrl, name, locale }: SignupEmailProps) => {
+export const SignupEmail = ({
+  siteUrl,
+  confirmationUrl,
+  name,
+  locale,
+}: SignupEmailProps) => {
   const copy = signupCopy(locale);
   return (
     <MasaaratShell
       locale={locale ?? "ar-MSA"}
-      preview={copy?.preview ?? "تأكيد بريدك في مسارات | Confirm your Masaarat email"}
+      preview={
+        copy?.preview ?? "تأكيد بريدك في مسارات | Confirm your Masaarat email"
+      }
       title={copy?.title ?? "تأكيد البريد | Confirm your email"}
       actionLabel={copy?.action ?? "تأكيد البريد | Confirm email"}
       actionUrl={confirmationUrl}
@@ -65,13 +80,28 @@ export const SignupEmail = ({ siteUrl, confirmationUrl, name, locale }: SignupEm
         "إن لم تنشئ هذا الحساب، تجاهل الرسالة. If you did not sign up, ignore this email."
       }
     >
-      <Text style={bodyText}>
+      <Text
+        dir={locale === "en" ? "ltr" : "rtl"}
+        style={bodyTextForLocale(locale)}
+      >
         {copy?.greeting ?? "مرحبًا / Hello"}
-        {name ? ` ${name}` : ""}
+        <RecipientName name={name} />
       </Text>
-      <Text style={bodyText}>
-        {copy?.instruction ?? "اضغط الزر لتأكيد بريدك. Use the button to confirm your email."}{" "}
-        <Link href={siteUrl} style={{ color: "#356f9a" }}>
+      <Text
+        dir={locale === "en" ? "ltr" : "rtl"}
+        style={bodyTextForLocale(locale)}
+      >
+        {copy?.instruction ??
+          "اضغط الزر لتأكيد بريدك. Use the button to confirm your email."}{" "}
+        <Link
+          dir="ltr"
+          href={siteUrl}
+          style={{
+            color: "#356f9a",
+            display: "inline-block",
+            unicodeBidi: "isolate",
+          }}
+        >
           Masaarat
         </Link>
       </Text>
