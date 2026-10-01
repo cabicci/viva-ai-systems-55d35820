@@ -1,5 +1,15 @@
 # Marketing tracking governance
 
+## 2026-09-30 — GA4 SPA page views: GTM v4 live
+
+The optional Google email subscriptions were unchecked and saved with owner approval on info@masaarat.ai. GA4 Enhanced Measurement's browser-history page changes were disabled, saved, and reopened to verify the setting. Other enhanced-measurement options were preserved.
+
+GTM-5BVZ85DR version 4 was published on 2026-09-30 at 09:16:03 as shown by Google and is Live. The seven reviewed changes are the Google setup tag, one GA4 page_view event tag, the masaarat_page_view trigger, three page data-layer variables, and paused TikTok. The Google tag uses send_page_view=false, runs as setup once per page, and has no independent firing trigger; the event runs once per event and stops if setup fails. Both require analytics_storage. Meta remains application-owned.
+
+Preview sent two page_view hits for curriculum EN and pricing EN, with one Google tag initialization in that document; GA4 DebugView received both. After withdrawal, the selected user_engagement message showed no hit; re-grant added one page_view in a new document group. Live environment testing after publication showed one curriculum page_view and one pricing page_view in the last document. The pricing hit carried /pricing?locale=en and Plans — Masaarat. Across all test documents the six application events matched six Page View hits and six received page_view events in DebugView. Extra manual reloads are distinct document visits, not duplicated SPA navigation. Testing ended with consent Declined and no active debugging domain.
+
+This accepts the scoped GA4 duplicate-pageview correction and backend receipt. It does not establish full network silence, Meta deduplication/attribution, lead conversion, CRM routing, or send-as. Do not create generate_lead from a /contact page view or resubmit the contact form. Campaigns remain stopped and overall NO-GO remains. Kids changes are stopped and Stripe remains TEST. No application code, email, campaign, payment, or permissions were changed. MARKETING-TRACKING-02 supersedes the earlier unpublished/GA4-history blocker only; ACCOUNT-RECOVERY-01 and the preceding history remain intact.
+
 ## Ownership
 
 - Google Tag Manager container: `GTM-5BVZ85DR`.
@@ -77,6 +87,29 @@ and rendered metadata. They do not prove actual vendor delivery or stopped
 network traffic. C02 must obtain fresh-session, SPA, withdrawal and re-grant
 network evidence after an approved deployment and review of the existing GTM
 draft. No GTM/GA4 setting is changed by this repository slice.
+
+## Nonfinancial conversions — source contract, 30 September 2026
+
+`masaarat_view_pricing` follows an accepted, consented `/pricing` page view.
+Replayed router effects cannot produce a second conversion; leaving and returning
+counts another pricing visit. GTM maps it to GA4 `view_pricing`; it is not a lead.
+
+`masaarat_generate_lead` follows a successful server response from ContactForm.
+It carries only `form_id=contact`, with one event per mounted accepted form.
+GTM maps it to GA4 `generate_lead`; the application sends one direct Meta `Lead`.
+Rejected or failed submissions and visits to `/contact` produce no lead. No form
+values, visitor identifier, email, phone, name or message enter this event.
+Consent is checked at response time. Denied events are never replayed after grant,
+and vendor failures cannot change the successful contact UI result.
+
+These events require the corresponding consent-required GTM event tags and live
+delivery acceptance after deployment. No extra contact submission is authorized.
+`sign_up`, `lesson_start` and `lesson_complete` remain unimplemented in this slice;
+a signup request must not be represented as confirmed signup. Payment events and
+automated marketing mail remain deferred. This source change does not publish GTM.
+
+Signup metadata uses the existing requested-locale resolver and localized auth copy.
+This fixes the English signup document title without changing Auth submission or redirects.
 
 ## Route visibility
 

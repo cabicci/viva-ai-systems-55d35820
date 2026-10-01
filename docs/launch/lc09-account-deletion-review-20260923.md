@@ -1,11 +1,58 @@
 # LC-09 — deletion contract and staged review (23 September 2026)
 
-Status: **draft / NO-GO**. This change turns the misleading, broken one-click
-wipe into an authenticated, idempotent **request**, and blocks direct execution
-of the old destructive RPC. It does **not** fulfill or approve a deletion,
-cancel Stripe, delete login credentials, revoke sessions, erase personal data,
-or define a legal retention period. Do not apply the migration to production
-or publish the UI until a staffed request queue and policy are approved.
+Status: **disabled implementation draft / NO-GO**. Account deletion now has a
+prepared finalizer covering learner records, parent/child profiles, progress,
+consents, parent attestations and credentials, with durable access blocking,
+TEST-provider reconciliation and resumable checkpoints. This has not been
+merged, deployed, activated or exercised on a real account. The request UI
+continues to report `pending_review`. No retention period is invented.
+
+## 1 October: Kids scope decision and complete finalization preparation
+
+The owner explicitly confirmed that account deletion includes Kids. This
+replaces the earlier exclusion of Kids from this repair only. Broader Kids
+changes stay paused. Deletion remains final, and a returning person registers
+with a new UUID without inheriting the former progress or entitlement.
+
+Prepared migration `20261001153000_account_deletion_lifecycle.sql` starts
+disabled, requires finance/CRM/responder/release policy references, and exposes
+only service-role claim/checkpoint RPCs. The worker separately requires a long
+job secret and an explicitly enabled environment flag. Neither is provisioned
+by this draft. Temporary tests use synthetic identities and mocked processors.
+
+The lifecycle blocks adult and Kids access, Checkout, AI and privileged role
+checks before any erasure. Original function OIDs remain in place so existing
+RLS policies cannot keep calling an unguarded implementation. Restrictive RLS
+and write guards protect against a stale JWT. Shared editorial records and
+unrelated families are preserved. Unknown learner/family ownership tables fail
+closed instead of producing a false completion.
+
+Kids progress and consents cascade only through the selected parent's child
+profiles. Parent requests, attestations, verification and grants are erased.
+Retention notices lose their recipient and child IDs and are cancelled. Auth
+parent cascades are removed from processor receipts so financial evidence is
+not destroyed accidentally. Signed late paid events are recorded without
+regranting access; refund reconciliation remains possible.
+
+Checkout parameters are persisted before the Kids session creation call. If
+the response is lost, the deletion job reuses the original Stripe key and
+parameters, expires the recovered session and reconciles the provider again.
+Adult Checkout creation still blocks erasure until its existing coordinator
+records the outcome. Active and scheduled TEST renewals are cancelled without
+automatic prorated invoices or refunds. Outstanding invoices, payment attempts,
+AI attempts, pending refunds and disputes hold the workflow for reconciliation.
+
+Financial and processor records remain restricted pseudonymous evidence until
+an approved field/expiry schedule is supplied. This draft does not erase Stripe
+customer/payment records or HubSpot CRM. A blanket promise that every external
+record disappears would conflict with the owner's prior separate CRM decision
+and the unresolved financial-retention decision. Those policies, the responder,
+backup/rollback rehearsal and the final live acceptance are still release gates.
+A completed isolated database test is not production deletion proof.
+
+Automated receipts are recorded below after checks finish. The former
+request-only history remains as historical evidence and does not describe the
+new finalizer's implementation.
 
 ## 30 September: validation infrastructure resolved
 

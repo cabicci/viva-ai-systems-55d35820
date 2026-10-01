@@ -38,6 +38,14 @@ afterEach(() => {
 });
 
 describe("settled localized page-view metadata", () => {
+  it("keeps signup metadata in the requested language without publishing a signup sitemap identity", () => {
+    for (const locale of SUPPORTED_LOCALES) {
+      const head = buildLocalizedPublicMeta(locale, "signup");
+      expect(head.links).toBeUndefined();
+      if (locale === "en") expect(JSON.stringify(head.meta)).not.toMatch(/[\u0600-\u06FF]/);
+      else expect(JSON.stringify(head.meta)).toMatch(/[\u0600-\u06FF]/);
+    }
+  });
   beforeEach(() => {
     localStorage.clear();
     resetAnalyticsRuntimeForTests();

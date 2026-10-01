@@ -1,3 +1,5 @@
+import { coordinateKidsCheckout } from "./coordinator.ts";
+
 const ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
@@ -185,13 +187,24 @@ Deno.serve(async (request) => {
       params.set(`subscription_data[metadata][${key}]`, value);
     }
     const windowId = Math.floor(Date.now() / 300_000);
-    const session = await stripe<{ id: string; url: string | null }>(
-      "/checkout/sessions",
-      params,
-      `kids-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${context.discounted}-${windowId}`,
-    );
-    if (!session.url?.startsWith("https://checkout.stripe.com/"))
-      throw new Error("CHECKOUT_URL_MISSING");
+    const session = await coordinateKidsCheckout({
+      begin: () =>
+        rpc("lc09_begin_kids_checkout", {
+          p_user_id: user.id,
+          p_key: `kids-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${context.discounted}-${windowId}`,
+          p_parameters: params.toString(),
+        }),
+      create: (key) => stripe("/checkout/sessions", params, key),
+      record: (attempt, session, expired = false) =>
+        rpc("lc09_record_kids_checkout", {
+          p_user_id: user.id,
+          p_attempt: attempt,
+          p_session: session,
+          p_expired: expired,
+        }),
+      expire: (session) =>
+        stripe(`/checkout/sessions/${encodeURIComponent(session)}/expire`, new URLSearchParams()),
+    });
     return json({ url: session.url, sessionId: session.id }, 200, origin);
   } catch (error) {
     const message = error instanceof Error ? error.message : "UNKNOWN";

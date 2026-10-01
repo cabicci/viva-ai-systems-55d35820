@@ -14,3 +14,9 @@ verify_jwt = false # Signed provider payload; verified before any database acces
 
 [functions.account-welcome-job]
 verify_jwt = false # Dedicated high-entropy service secret, checked before DB access.
+
+[functions.account-deletion-job]
+verify_jwt = false # Dedicated job secret plus disabled-by-default DB and environment gates.
+
+[functions.contact-mail-job]
+verify_jwt = false # Dedicated service secret; verified before DB access.

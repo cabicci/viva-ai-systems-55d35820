@@ -1,4 +1,41 @@
+## 2026-10-01 — Contact acknowledgement mail source (PR #123)
+
+Support/institutional acknowledgements now have four localized, branded templates and a service-only durable outbox/worker. Account preferred_locale takes priority; visitors use the selected form locale and an explicit request type. Current Resend UI confirms mail.masaarat.ai Verified; automated senders use that subdomain with info@masaarat.ai / sales@masaarat.ai Reply-To. Gmail preview delivery is separate evidence. No marketing consent is inferred.
+
+Local acknowledgement tests: 12/12 passed, including isolated PostgreSQL ACL, deduplication, leasing and bounded retries. CI 420 succeeded on e2d37fc47d350a34b62689fbccb0568fdbb8db42 before the sender-domain/formatting correction; the final head requires fresh CI. Production read-only inspection finds no contact outbox/claim RPC and no contact schedule; the existing welcome job remains unchanged. Migration, deployment, protected configuration, signed delivery receipt and inbox acceptance remain open; CONTACT_MAIL_ENABLED stays off. No contact resubmission or new test email occurred. Overall NO-GO, Kids stop and Stripe TEST remain unchanged. See docs/email/contact-acknowledgements.md for activation and rollback; HubSpot acceptance/local enqueue are explicitly non-atomic.
+
 # مسارات (masaarat.ai) — Current Status
+
+## 2026-09-30 — GA4 SPA page views: GTM v4 live
+
+The optional Google email subscriptions were unchecked and saved with owner approval on info@masaarat.ai. GA4 Enhanced Measurement's browser-history page changes were disabled, saved, and reopened to verify the setting. Other enhanced-measurement options were preserved.
+
+GTM-5BVZ85DR version 4 was published on 2026-09-30 at 09:16:03 as shown by Google and is Live. The seven reviewed changes are the Google setup tag, one GA4 page_view event tag, the masaarat_page_view trigger, three page data-layer variables, and paused TikTok. The Google tag uses send_page_view=false, runs as setup once per page, and has no independent firing trigger; the event runs once per event and stops if setup fails. Both require analytics_storage. Meta remains application-owned.
+
+Preview sent two page_view hits for curriculum EN and pricing EN, with one Google tag initialization in that document; GA4 DebugView received both. After withdrawal, the selected user_engagement message showed no hit; re-grant added one page_view in a new document group. Live environment testing after publication showed one curriculum page_view and one pricing page_view in the last document. The pricing hit carried /pricing?locale=en and Plans — Masaarat. Across all test documents the six application events matched six Page View hits and six received page_view events in DebugView. Extra manual reloads are distinct document visits, not duplicated SPA navigation. Testing ended with consent Declined and no active debugging domain.
+
+This accepts the scoped GA4 duplicate-pageview correction and backend receipt. It does not establish full network silence, Meta deduplication/attribution, lead conversion, CRM routing, or send-as. Do not create generate_lead from a /contact page view or resubmit the contact form. Campaigns remain stopped and overall NO-GO remains. Kids changes are stopped and Stripe remains TEST. No application code, email, campaign, payment, or permissions were changed. MARKETING-TRACKING-02 supersedes the earlier unpublished/GA4-history blocker only; ACCOUNT-RECOVERY-01 and the preceding history remain intact.
+
+## 2026-09-30 — التحويلات غير المالية: مصدر قابل للاختبار
+
+- يرسل مسار مشاهدة الأسعار `masaarat_view_pricing` مرة واحدة لكل انتقال مقبول بعد موافقة القياس. يرسل ContactForm `masaarat_generate_lead` وMeta `Lead` بعد استجابة خادم ناجحة فقط، دون اسم أو بريد أو هاتف أو رسالة. طلب فاشل أو فتح صفحة التواصل لا يولّد Lead؛ سحب الموافقة يمنع الأحداث اللاحقة ولا يعيدها منح الموافقة.
+- نجحت 64 اختبارات محلية للقياس والنموذج وmetadata واللغات، وTypeScript وESLint وPrettier. نجح البناء بذاكرة6GB. أُضيف اختبارا التحويلات إلى CI. صُحح عنوان التسجيل الثابت بالعربية ليطابق اللغة المختارة دون تغيير طلب Auth أو إعادة التوجيه. هذا قبول للمصدر فقط، وليس إثبات نشر أو تحويلات حية أو توجيه CRM. لا إرسال جديد للنموذج ولا بريد أو حملة.
+- إعداد GA4 الحي السابق: Enhanced Measurement history pageviews متوقف ومحفوظ، وGTM v4 Live. عينة المنهج ثم الأسعار أثبتت صفحة واحدة لكل انتقال ووصول DebugView. Meta يملكه التطبيق؛ حدثا التحويل الجديدان يحتاجان GTM مضبوطًا وقبولًا بعد نشر الكود. التسجيل المؤكد وأحداث التعلم والردود الآلية تبقى منفصلة؛ Kids متوقف وStripe TEST وNO-GO محفوظة.
+
+## 2026-09-30 — إيصالات تسليم الأمان والنشر المحدود
+
+- PR #121 مدمج عند `bb6482e5bf4c587258d7c45278b6026fabda7cd3`. CI `36706929376` وBilling `36706929434` نجحا على `bbb9c9c3d8ef276adc9a4e1ac72cfe2a860d5cb2`: Phase A عدد175، B عدد23، C عدد1، لا فشل/تخطٍ/todo. CI فحص635 حزمة بلا ثغرات معلنة، ونجح21 اختبارRAG و4 اختبارات مفتاح وهمية والبناء. لا ادعاء بفحص Codex Security؛ رفض تثبيته محفوظ.
+- رأس PR #53 `ec7a2c2dcd21a45c5fc1eeaa46d720cfd1d6a122` نجح في CI `36705363989` وLC-09 `36705364027` (7/7) وBilling `36705363921` (175/23/1)، بلا تخطٍ. حُل عائق الفاحص؛ يبقى طلب حذف فقط في Draft دون finalizer أو تطبيق/نشر.
+- طابقت قراءتا Lovable الافتراضيتان `package.json` و`bun.lock` بايتًا ببايت المصدر المدمج رغم metadata SHA الأقدم. طُلب نشر واحد `370a1afe-8fc6-48c5-9a86-d46945b93eb9` فأعادpending. عند `2026-09-30T11:22:59Z` أعادت `/` و`/pricing` و`/login` و`/forgot-password` و`/privacy` و`/terms` جميعها200، وحملت `x-deployment-id` المتضمن رقم الطلب نفسه. ثبت أن استجابات هذه الصفحات من هذا النشر؛ SHA artifact الإنتاج غير مثبت، ولا يثبت HTTP وصول بريد أو جلسة مستخدم أو صلاحية شراء. get_project أصبحready وأحدث مصدرbb6482e5؛ هذا دليل مصدر منفصل.
+- هذا التحديث الوثائقي لا يغير runtime ولا يتطلب إعادة نشر. تُجمع مراجعات البريد والتنبيه والرجوع والواجهات المتأثرة وقرارات الاحتفاظ/الاستعادة في الجولة الأخيرة. النسخة النهائية آخر خطوة. Kids متوقف وStripe TEST، ولا تكرر الوسائط أو الاتصال المقبول.
+
+## 2026-09-30 — استكمال الأمان المتاح والتشغيل
+
+- دُمج إصلاح فاحص Billing في PR #120 عند `559a82a7e36769e700974e102488b7e29751c241` بعد نجاح CI `36703452558` وBilling `36703452382` على الرأس `a0d3dcc964b56be1f916ce56a5567fe52eab11ad`، بنتائج 175/23/1 وصفر تخطٍ. هذه بنية تحقق فقط ولا تحتاج نشرًا جديدًا.
+- رفض المالك تثبيت Codex Security. كشف فحص التبعيات المتاح نتائج لـ16 اسم حزمة، بما فيها Seroval وTanStack server adapter؛ أُصلحت الحزم المتأثرة في هذا المرشح وأعاد الفحص `{}`/exit0. نجح 59 اختبارًا مركزًا محليًا. نتيجة مراجعة التطبيق والبناء وCI والدمج والنشر تُسجل منفصلة؛ ليس هذا ادعاء بفحص الإضافة أو اختبار اختراق شامل. التفاصيل في `docs/launch/security-review-20260930.md`.
+- أثبت فحص RAG الإنتاجي القرائي تفعيل RLS وسياسة الإداريين الوحيدة للمحتوى، وservice-role-only للدوال المسترجعة. أثبت الاختبار المعزول تنفيذ السياسة الفعلية ومنع learner/anon والادعاء المزور وتعديل المحتوى، مع إبقاء admin/service. لم تُقرأ بيانات المحتوى أو يُعاد الفهرسة أو اختبار رحلة RAG المقبولة.
+- أُعيد تشغيل مهمة المراقبة القائمة `6aaaa016cacc8191bae3ddab4227c586` بعد رصد توقفها، بتعديل `enabled=true` فقط في 10:44:30 UTC. الجدول والحدود محفوظان؛ وصول التنبيه ما زال ضمن الجولة اليدوية الأخيرة. خطة التشغيل تذكر خليل وحده، أدلة الاتصال المقبولة، والنسخة النهائية كآخر خطوة، وتحافظ على الأدلة القديمة.
+- تبقى PR #53 طلب حذف فقط دون اعتماد سياسة الاحتفاظ أو finalizer؛ وPR #52 منفصل، Stripe TEST، وKids متوقف. خريطة الجولة اليدوية وخطة الفشل والرجوع محددتان في `docs/launch/c01-operations-and-gates-20260923.md`.
 
 ## 2026-09-30 — إصلاح بوابة أدلة Billing
 
@@ -197,3 +234,4 @@ None
 ## Latest Assistant Milestone
 
 Assistant P0.2 PASS · standalone page auth-gated · in-lesson embedding confirmed
+

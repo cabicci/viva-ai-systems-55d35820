@@ -8,6 +8,7 @@ import {
   HUBSPOT_PORTAL_ID,
 } from "./contact-form";
 import { enforceRateLimit, RateLimitExceededError } from "./rate-limit.server";
+import { queueContactAcknowledgement } from "./contact-mail.server";
 import { verifyTurnstileToken } from "./turnstile.server";
 
 export type ContactSubmitResult =
@@ -23,11 +24,15 @@ function readClientIp(headers: Headers): string | undefined {
     headers.get("x-real-ip") ??
     headers.get("x-forwarded-for")?.split(",")[0];
   const value = raw?.trim();
-  if (!value || value.length > 64 || !/^[0-9a-f:.]+$/i.test(value)) return undefined;
+  if (!value || value.length > 64 || !/^[0-9a-f:.]+$/i.test(value))
+    return undefined;
   return value;
 }
 
-function readCookie(cookieHeader: string | null, name: string): string | undefined {
+function readCookie(
+  cookieHeader: string | null,
+  name: string,
+): string | undefined {
   if (!cookieHeader) return undefined;
   for (const entry of cookieHeader.split(";")) {
     const separator = entry.indexOf("=");
@@ -39,7 +44,9 @@ function readCookie(cookieHeader: string | null, name: string): string | undefin
   return undefined;
 }
 
-async function stableAnonymousId(ipAddress: string | undefined): Promise<string> {
+async function stableAnonymousId(
+  ipAddress: string | undefined,
+): Promise<string> {
   const source = `masaarat-contact:${ipAddress ?? "unknown"}`;
   const digest = new Uint8Array(
     await crypto.subtle.digest("SHA-256", new TextEncoder().encode(source)),
@@ -47,7 +54,9 @@ async function stableAnonymousId(ipAddress: string | undefined): Promise<string>
   const bytes = digest.slice(0, 16);
   bytes[6] = (bytes[6] & 0x0f) | 0x40;
   bytes[8] = (bytes[8] & 0x3f) | 0x80;
-  const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const hex = Array.from(bytes, (byte) =>
+    byte.toString(16).padStart(2, "0"),
+  ).join("");
   return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
 }
 
@@ -77,12 +86,16 @@ export const submitContactForm = createServerFn({ method: "POST" })
       console.warn("Contact form rate limit rejected:", error);
       return {
         success: false,
-        error: error instanceof RateLimitExceededError ? "rate_limit" : "service_unavailable",
+        error:
+          error instanceof RateLimitExceededError
+            ? "rate_limit"
+            : "service_unavailable",
       };
     }
 
     const portalId = process.env.HUBSPOT_PORTAL_ID ?? HUBSPOT_PORTAL_ID;
-    const formId = process.env.HUBSPOT_CONTACT_FORM_ID ?? HUBSPOT_CONTACT_FORM_ID;
+    const formId =
+      process.env.HUBSPOT_CONTACT_FORM_ID ?? HUBSPOT_CONTACT_FORM_ID;
     const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${encodeURIComponent(portalId)}/${encodeURIComponent(formId)}`;
     const payload = buildHubSpotSubmission(data, {
       ipAddress,
@@ -97,11 +110,19 @@ export const submitContactForm = createServerFn({ method: "POST" })
         signal: AbortSignal.timeout(12_000),
       });
       if (!response.ok) {
-        console.error("HubSpot contact submission failed", { status: response.status });
+        console.error("HubSpot contact submission failed", {
+          status: response.status,
+        });
         return {
           success: false,
           error: response.status === 429 ? "rate_limit" : "service_unavailable",
         };
+      }
+      try {
+        await queueContactAcknowledgement(data, crypto.randomUUID());
+      } catch {
+        // HubSpot already accepted the request. Do not invite a duplicate submission.
+        console.error("Contact acknowledgement could not be queued");
       }
       return { success: true };
     } catch (error) {
