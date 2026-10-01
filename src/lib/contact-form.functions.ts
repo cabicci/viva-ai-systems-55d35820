@@ -8,6 +8,7 @@ import {
   HUBSPOT_PORTAL_ID,
 } from "./contact-form";
 import { enforceRateLimit, RateLimitExceededError } from "./rate-limit.server";
+import { queueContactAcknowledgement } from "./contact-mail.server";
 import { verifyTurnstileToken } from "./turnstile.server";
 
 export type ContactSubmitResult =
@@ -102,6 +103,12 @@ export const submitContactForm = createServerFn({ method: "POST" })
           success: false,
           error: response.status === 429 ? "rate_limit" : "service_unavailable",
         };
+      }
+      try {
+        await queueContactAcknowledgement(data, crypto.randomUUID());
+      } catch {
+        // HubSpot already accepted the request. Do not invite a duplicate submission.
+        console.error("Contact acknowledgement could not be queued");
       }
       return { success: true };
     } catch (error) {

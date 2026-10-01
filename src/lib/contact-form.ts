@@ -14,6 +14,7 @@ export const HUBSPOT_CONTACT_FORM_ID = "c1bee095-d92a-441f-8da1-9e91a8130bd1";
 const countryCodes = new Set<string>(getCountries());
 
 export const contactFormInputSchema = z.object({
+  requestType: z.enum(["support", "sales"]).optional(),
   firstName: z.string().trim().min(1).max(80),
   lastName: z.string().trim().max(80).optional().default(""),
   email: z.string().trim().email().max(254),
@@ -97,3 +98,10 @@ export function buildHubSpotSubmission(
     },
   };
 }
+
+export const contactMailLabels = {
+  "ar-EG": ["نوع الطلب", "دعم ومساعدة", "استفسار للمؤسسات"],
+  "ar-MSA": ["نوع الطلب", "الدعم والمساعدة", "استفسار المؤسسات"],
+  "ar-Gulf": ["نوع الطلب", "الدعم والمساعدة", "استفسار للجهات"],
+  en: ["Request type", "Support", "Institutional enquiry"],
+} as const;

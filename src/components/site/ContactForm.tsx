@@ -15,6 +15,7 @@ import {
   resolvePhoneCountry,
 } from "@/lib/contact-form";
 import { submitContactForm, type ContactSubmitResult } from "@/lib/contact-form.functions";
+import { contactMailLabels } from "@/lib/contact-form";
 import { trackAcceptedContactOnce } from "@/lib/analytics";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -102,6 +103,7 @@ export function ContactForm() {
     try {
       const result = await submit({
         data: {
+          requestType: data.get("requestType") === "sales" ? "sales" : "support",
           firstName,
           lastName,
           email,
@@ -157,6 +159,15 @@ export function ContactForm() {
       <div className="mb-7">
         <h2 className="text-2xl font-black">{t("contact.form.title")}</h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">{t("contact.form.subtitle")}</p>
+      </div>
+
+      <div className="mb-5">
+        <Field label={contactMailLabels[locale][0]} htmlFor="contact-request-type">
+          <select id="contact-request-type" name="requestType" defaultValue="support" className="flex h-10 w-full rounded-md border border-input bg-white px-3 text-sm">
+            <option value="support">{contactMailLabels[locale][1]}</option>
+            <option value="sales">{contactMailLabels[locale][2]}</option>
+          </select>
+        </Field>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
