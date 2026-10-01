@@ -1,6 +1,6 @@
 # Contact acknowledgements
 
-Support and institutional requests receive a necessary receipt acknowledgement after successful CAPTCHA, rate limiting and HubSpot acceptance. The form provides an explicit request type; company names never determine routing. Support uses `info@masaarat.ai`, institutions `sales@masaarat.ai`, with the same reply destination. This does not assign a HubSpot owner or subscribe a recipient to marketing.
+Support and institutional requests receive a necessary receipt acknowledgement after successful CAPTCHA, rate limiting and HubSpot acceptance. The form provides an explicit request type; company names never determine routing. Support sends from `info@mail.masaarat.ai` and institutions from `sales@mail.masaarat.ai`, using the existing verified sending subdomain. Replies go to `info@masaarat.ai` and `sales@masaarat.ai` respectively. This does not assign a HubSpot owner or subscribe a recipient to marketing.
 
 The recipient's stored preferred locale takes priority. For visitors without an account preference, the explicitly selected form locale is used. Supported values are ar-EG, ar-MSA, ar-Gulf and en. No IP-based language inference is used. All messages use the current Masaarat logo and pastel shell, Sunday–Thursday 09:00–17:00 Africa/Cairo service hours, and no promised response deadline. Submitted message contents are never copied into the email.
 
@@ -8,7 +8,7 @@ The recipient's stored preferred locale takes priority. For visitors without an 
 
 1. Rehearse `20261001120000_contact_acknowledgements.sql` on an isolated DB, then apply through the approved migration process with a backup and rollback plan.
 2. Deploy `contact-mail-job` and the matching application source. Keep `CONTACT_MAIL_ENABLED` absent/false on both services until the complete sending path is accepted.
-3. Verify both root-domain sending identities in the existing Resend account. Gmail alias delivery alone does not prove Resend sender verification. Disable provider open/click tracking; preserve Workspace MX records.
+3. Recheck the existing verified `mail.masaarat.ai` sending domain in Resend; confirmed Verified on 1 October 2026. Gmail alias delivery alone does not prove Resend sender verification. Disable provider open/click tracking; preserve Workspace MX records.
 4. Supply server-only `RESEND_API_KEY` and a dedicated `CONTACT_MAIL_JOB_SECRET` of at least 32 characters. The worker also needs its existing Supabase service configuration. No credentials are stored in this repository.
 5. Use the existing protected scheduler to POST to the job endpoint with its dedicated Bearer secret. Do not reuse an account-welcome schedule to activate subscription or Kids mail. Verify the current schedule contract before creating it.
 6. Accept one specifically authorized transport test, signed provider receipt and inbox arrival. The previously accepted contact submission must not be repeated. After acceptance enable the flag on app and worker together. No historic HubSpot contacts are backfilled.

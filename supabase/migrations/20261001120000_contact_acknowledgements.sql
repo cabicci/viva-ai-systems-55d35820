@@ -34,7 +34,7 @@ BEGIN
   first_attempt_at=coalesce(o.first_attempt_at,now()),lease_until=now()+interval '5 minutes',claim_token=gen_random_uuid()
   FROM candidates c WHERE o.id=c.id
   RETURNING o.id,o.claim_token,o.recipient,o.subject,o.text_body,o.html_body,
-   CASE WHEN o.stream='sales' THEN 'sales@masaarat.ai'::text ELSE 'info@masaarat.ai'::text END;
+   CASE WHEN o.stream='sales' THEN 'sales@mail.masaarat.ai'::text ELSE 'info@mail.masaarat.ai'::text END;
 END;
 $$;
 CREATE FUNCTION public.complete_contact_acknowledgement(p_id uuid,p_claim uuid,p_email_id text,p_block boolean)

@@ -1,3 +1,9 @@
+## 2026-10-01 — Contact acknowledgement mail source (PR #123)
+
+Support/institutional acknowledgements now have four localized, branded templates and a service-only durable outbox/worker. Account preferred_locale takes priority; visitors use the selected form locale and an explicit request type. Current Resend UI confirms mail.masaarat.ai Verified; automated senders use that subdomain with info@masaarat.ai / sales@masaarat.ai Reply-To. Gmail preview delivery is separate evidence. No marketing consent is inferred.
+
+Local acknowledgement tests: 12/12 passed, including isolated PostgreSQL ACL, deduplication, leasing and bounded retries. CI 420 succeeded on e2d37fc47d350a34b62689fbccb0568fdbb8db42 before the sender-domain/formatting correction; the final head requires fresh CI. Production read-only inspection finds no contact outbox/claim RPC and no contact schedule; the existing welcome job remains unchanged. Migration, deployment, protected configuration, signed delivery receipt and inbox acceptance remain open; CONTACT_MAIL_ENABLED stays off. No contact resubmission or new test email occurred. Overall NO-GO, Kids stop and Stripe TEST remain unchanged. See docs/email/contact-acknowledgements.md for activation and rollback; HubSpot acceptance/local enqueue are explicitly non-atomic.
+
 # مسارات (masaarat.ai) — Current Status
 
 ## 2026-09-30 — GA4 SPA page views: GTM v4 live

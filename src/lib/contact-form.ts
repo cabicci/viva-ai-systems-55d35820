@@ -56,12 +56,19 @@ export function resolvePhoneCountry(
   locale: SupportedLocale,
 ): CountryCode {
   const normalized = ipCountryCode?.toUpperCase();
-  return isCountryCode(normalized) ? normalized : fallbackCountryForLocale(locale);
+  return isCountryCode(normalized)
+    ? normalized
+    : fallbackCountryForLocale(locale);
 }
 
-export function normalizePhoneNumber(rawNumber: string, countryCode: CountryCode): string | null {
+export function normalizePhoneNumber(
+  rawNumber: string,
+  countryCode: CountryCode,
+): string | null {
   const parsed = parsePhoneNumberFromString(rawNumber, countryCode);
-  return parsed?.isValid() && parsed.country === countryCode ? parsed.number : null;
+  return parsed?.isValid() && parsed.country === countryCode
+    ? parsed.number
+    : null;
 }
 
 export function getCallingCode(countryCode: CountryCode): string {

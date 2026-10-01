@@ -1,4 +1,10 @@
-import { useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import {
+  useMemo,
+  useRef,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { getCountries, type CountryCode } from "libphonenumber-js";
@@ -14,7 +20,10 @@ import {
   normalizePhoneNumber,
   resolvePhoneCountry,
 } from "@/lib/contact-form";
-import { submitContactForm, type ContactSubmitResult } from "@/lib/contact-form.functions";
+import {
+  submitContactForm,
+  type ContactSubmitResult,
+} from "@/lib/contact-form.functions";
 import { contactMailLabels } from "@/lib/contact-form";
 import { trackAcceptedContactOnce } from "@/lib/analytics";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -54,14 +63,18 @@ export function ContactForm() {
 
   const countryLanguage = contactCountryLanguage(locale);
   const countries = useMemo(() => {
-    const displayNames = new Intl.DisplayNames([countryLanguage], { type: "region" });
+    const displayNames = new Intl.DisplayNames([countryLanguage], {
+      type: "region",
+    });
     return getCountries()
       .map((code) => ({
         code,
         name: displayNames.of(code) ?? code,
         callingCode: getCallingCode(code),
       }))
-      .sort((left, right) => left.name.localeCompare(right.name, countryLanguage));
+      .sort((left, right) =>
+        left.name.localeCompare(right.name, countryLanguage),
+      );
   }, [countryLanguage]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -85,7 +98,9 @@ export function ContactForm() {
       setErrorKey("contact.error.email");
       return;
     }
-    const phone = rawPhone ? normalizePhoneNumber(rawPhone, selectedCountry) : "";
+    const phone = rawPhone
+      ? normalizePhoneNumber(rawPhone, selectedCountry)
+      : "";
     if (rawPhone && !phone) {
       setErrorKey("contact.error.phone");
       return;
@@ -103,7 +118,8 @@ export function ContactForm() {
     try {
       const result = await submit({
         data: {
-          requestType: data.get("requestType") === "sales" ? "sales" : "support",
+          requestType:
+            data.get("requestType") === "sales" ? "sales" : "support",
           firstName,
           lastName,
           email,
@@ -144,8 +160,12 @@ export function ContactForm() {
         <span className="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-emerald-100 text-emerald-700">
           <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
         </span>
-        <h2 className="text-2xl font-black md:text-3xl">{t("contact.success.title")}</h2>
-        <p className="mt-3 max-w-md leading-7 text-muted-foreground">{t("contact.success.body")}</p>
+        <h2 className="text-2xl font-black md:text-3xl">
+          {t("contact.success.title")}
+        </h2>
+        <p className="mt-3 max-w-md leading-7 text-muted-foreground">
+          {t("contact.success.body")}
+        </p>
       </div>
     );
   }
@@ -158,12 +178,22 @@ export function ContactForm() {
     >
       <div className="mb-7">
         <h2 className="text-2xl font-black">{t("contact.form.title")}</h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">{t("contact.form.subtitle")}</p>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          {t("contact.form.subtitle")}
+        </p>
       </div>
 
       <div className="mb-5">
-        <Field label={contactMailLabels[locale][0]} htmlFor="contact-request-type">
-          <select id="contact-request-type" name="requestType" defaultValue="support" className="flex h-10 w-full rounded-md border border-input bg-white px-3 text-sm">
+        <Field
+          label={contactMailLabels[locale][0]}
+          htmlFor="contact-request-type"
+        >
+          <select
+            id="contact-request-type"
+            name="requestType"
+            defaultValue="support"
+            className="flex h-10 w-full rounded-md border border-input bg-white px-3 text-sm"
+          >
             <option value="support">{contactMailLabels[locale][1]}</option>
             <option value="sales">{contactMailLabels[locale][2]}</option>
           </select>
@@ -171,7 +201,10 @@ export function ContactForm() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label={t("contact.field.firstName")} htmlFor="contact-first-name">
+        <Field
+          label={t("contact.field.firstName")}
+          htmlFor="contact-first-name"
+        >
           <Input
             id="contact-first-name"
             name="firstName"
@@ -184,7 +217,12 @@ export function ContactForm() {
           label={`${t("contact.field.lastName")} (${t("contact.optional")})`}
           htmlFor="contact-last-name"
         >
-          <Input id="contact-last-name" name="lastName" autoComplete="family-name" maxLength={80} />
+          <Input
+            id="contact-last-name"
+            name="lastName"
+            autoComplete="family-name"
+            maxLength={80}
+          />
         </Field>
       </div>
 
@@ -208,7 +246,12 @@ export function ContactForm() {
           label={`${t("contact.field.company")} (${t("contact.optional")})`}
           htmlFor="contact-company"
         >
-          <Input id="contact-company" name="company" autoComplete="organization" maxLength={160} />
+          <Input
+            id="contact-company"
+            name="company"
+            autoComplete="organization"
+            maxLength={160}
+          />
         </Field>
       </div>
 
@@ -219,12 +262,15 @@ export function ContactForm() {
             name="country"
             value={selectedCountry}
             required
-            onChange={(event) => setSelectedCountry(event.target.value as CountryCode)}
+            onChange={(event) =>
+              setSelectedCountry(event.target.value as CountryCode)
+            }
             className="flex h-10 w-full rounded-md border border-input bg-white px-3 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-primary/30"
           >
             {countries.map((country) => (
               <option key={country.code} value={country.code}>
-                {countryFlag(country.code)} {country.name} ({country.callingCode})
+                {countryFlag(country.code)} {country.name} (
+                {country.callingCode})
               </option>
             ))}
           </select>
@@ -250,12 +296,20 @@ export function ContactForm() {
         </Field>
       </div>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        {isCountryCode(countryCode) ? t("contact.phone.detected") : t("contact.phone.helper")}
+        {isCountryCode(countryCode)
+          ? t("contact.phone.detected")
+          : t("contact.phone.helper")}
       </p>
 
       <div className="mt-5">
         <Field label={t("contact.field.message")} htmlFor="contact-message">
-          <Textarea id="contact-message" name="message" rows={6} required maxLength={4_000} />
+          <Textarea
+            id="contact-message"
+            name="message"
+            rows={6}
+            required
+            maxLength={4_000}
+          />
         </Field>
       </div>
 
@@ -299,7 +353,12 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button type="submit" size="lg" className="mt-6 h-12 w-full rounded-xl" disabled={submitting}>
+      <Button
+        type="submit"
+        size="lg"
+        className="mt-6 h-12 w-full rounded-xl"
+        disabled={submitting}
+      >
         {submitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
