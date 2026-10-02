@@ -1,72 +1,40 @@
-# فحص حالة قراءة فقط — بريد التواصل والترحيب
+# Owner action list — protected configuration prerequisites
 
-فحص حالة حالي بدون أي تعديل. النتائج:
+Plain-English, numbered. Each item: what is needed, why, where to get it, where to enter it. No secret values in chat, files, SQL literals, or logs.
 
-## الدوال المنشورة (GET بدون مصادقة)
-- contact-mail-job: منشورة (405)
-- contact-mail-webhook: منشورة (405)
-- account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
-- account-deletion-job: غير منشورة (404)
+## What the owner must do
 
-## الأعلام والأسرار (أسماء فقط، بدون قيم)
-- CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
-- مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
-- RESEND_API_KEY: موجود
-- RESEND_WEBHOOK_SECRET: موجود (ربط التوقيع نجح سابقًا)
-- CONTACT_MAIL_JOB_SECRET: موجود
-- ACCOUNT_WELCOME_JOB_SECRET: موجود
+1. **Bind the account-deletion job secret into Postgres Vault**
+   - Setting: Vault entry named `masaarat_account_lifecycle_job_secret`, value identical to the existing Edge secret `ACCOUNT_DELETION_JOB_SECRET`.
+   - Why: the lifecycle schedule (`lc09-account-lifecycle-schedule.sql`) reads the bearer token from Vault; without it the schedule cannot be installed and activation stays blocked.
+   - Where the value comes from: it already exists in Edge configuration. Edge secret values are write-only — neither the agent nor the owner UI can read them back.
+   - Where to enter it: **there is no native Vault-entry form in this Lovable Cloud project.** The only supported route is a privileged database session (the owner's own Root/postgres access) running `vault.create_secret(...)` with the value typed directly by the owner. If the owner cannot retrieve the existing Edge value (it is unreadable), the clean path is: owner generates a fresh random value (32+ chars), enters it in **Project Settings → Secrets → ACCOUNT_DELETION_JOB_SECRET** (owner UI can edit existing secrets; the agent tool cannot), and enters the same value into Vault in the same session.
 
-## الجداول المجدولة
-- masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
-- لا يوجد أي جدول مجدول لبريد التواصل
+2. **Bind the contact mail job secret into Postgres Vault**
+   - Setting: Vault entry named `masaarat_contact_mail_job_secret`, value identical to the existing Edge secret `CONTACT_MAIL_JOB_SECRET`.
+   - Why: the contact schedule (`contact-mail-schedule.sql`) reads its bearer token from Vault.
+   - Same constraint and same route as item 1: no native Vault form; owner enters via privileged DB session. If the existing Edge value is not retrievable, owner regenerates and sets both stores in one session.
 
-## قابلية نشر account-deletion-job
-- نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
+3. **Rotate the Resend webhook signing secret (coordinated, both ends)**
+   - Setting: `RESEND_WEBHOOK_SECRET` in Edge configuration, matching the signing secret of existing webhook `c6c8a671-9128-4304-b65c-7f8dbaffc2e1`.
+   - Why: previous exposure requires rotation before contact activation.
+   - Where to get it: Resend dashboard → Webhooks → the existing endpoint → rotate/roll signing secret. Do not create a new webhook; the six subscribed events stay as-is.
+   - Where to enter it: **Project Settings → Secrets → RESEND_WEBHOOK_SECRET** (owner edits the existing entry; agent tool cannot update existing secrets).
+   - Order: rotate in Resend first, immediately paste the new value into Lovable Secrets. Until both ends match, receipt verification returns 401 — that is expected during the swap window.
 
-## لا إجراءات
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
+## What is NOT needed from the owner
 
+- No Resend API key — the connector is working; `RESEND_API_KEY` is preserved untouched.
+- No Auth mail/provider changes — preserved.
+- No business re-approval — existing approvals stand.
 
-## Previous read-only explanation preserved
+## What the platform cannot do (verified, not assumed)
 
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
+- Agent tool: cannot read secret values, cannot update existing secret entries, cannot write to Vault, and there is no native Vault form in this project. Lovable Cloud users have no Supabase dashboard.
+- No single protected input can bind the same value to both Edge secrets and Vault in one action.
 
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
+## What the integration owner completes after items 1–3
 
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
-
-التسلسل الفعلي من سجل خادم التطوير:
-
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
-
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+- Verify both Vault bindings exist (length >= 32) via privileged read.
+- Verify contact-mail-job returns 200 `{"enabled":false}` with the protected bearer, and webhook rejects unsigned POST with 401 / accepts correctly signed POST.
+- Then, under separate activation confirmation: install the two schedules and enable the flags.
