@@ -167,6 +167,7 @@ describe("public billing RPC bridge — static", () => {
       "20261001120000_contact_acknowledgements.sql",
       "20261001123000_contact_mail_receipts.sql",
       "20261001153000_account_deletion_lifecycle.sql",
+      "20261002090000_account_financial_retention_15_days.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
