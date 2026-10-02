@@ -18,6 +18,18 @@ source: user
 summary: Localize password recovery in the four existing locales using the existing verified-recipient profile lookup, preserving SDK signature verification and recovery URLs.
 sync_status: source change prepared; roadmap_items and production delivery are not claimed
 
+## 2026-09-30 — LC-09 cumulative review
+
+[roadmap:account-deletion-review]
+scope: other
+source: user
+summary: Synchronize the existing request-only deletion draft with PR #117, update the explicit cumulative migration inventory, and collect manual/policy checks for the final review round.
+sync_status: draft only; final deletion, roadmap_items update and production activation are not claimed
+
+The automatic Billing gate found one stale adult-quota inventory assertion.
+The review correction scopes that assertion to adult migrations; the complete
+cumulative inventory remains checked separately. One corrected-head run is
+pending. Kids runtime and payment behavior are unchanged.
 ## 2026-09-30 — release evidence inventory
 
 [roadmap:billing-validation-evidence]
@@ -50,3 +62,11 @@ source: user
 summary: Record the accepted CI/Billing heads, ordinary merge, scoped live deployment-ID responses and current governance requirements while preserving the separate final manual gates.
 sync_status: documentation only; no new deployment, database or runtime change
 
+
+## 2026-10-01 — account and family deletion
+
+[roadmap:account-deletion-review]
+scope: db
+source: user
+summary: Prepare disabled finalization, full Kids family erasure, retained financial replay guards, and recoverable Checkout coordination. The owner explicitly included Kids in account deletion; all broader Kids work remains paused.
+sync_status: draft implementation and tests; roadmap_items production update and activation are not claimed

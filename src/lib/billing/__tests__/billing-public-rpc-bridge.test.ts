@@ -146,6 +146,7 @@ describe("public billing RPC bridge — static", () => {
       "20260916183000_billing_pro_71_lesson_contract.sql",
       "20260917120000_stripe_test_checkout_bridge.sql",
       "20260918173000_stripe_customer_portal_upgrade.sql",
+      "20260923123000_account_deletion_request_gate.sql",
       "20260924190000_kids_parent_content_access_foundation.sql",
       "20260924191000_kids_private_lesson_content.sql",
       "20260925120000_kids_parent_access_review.sql",
@@ -163,6 +164,10 @@ describe("public billing RPC bridge — static", () => {
       "20260928100000_kids_parent_privacy_record.sql",
       "20260928120000_kids_stripe_test_billing.sql",
       "20260929110000_kids_refund_reentry_and_access_status.sql",
+      "20261001120000_contact_acknowledgements.sql",
+      "20261001123000_contact_mail_receipts.sql",
+      "20261001153000_account_deletion_lifecycle.sql",
+      "20261002090000_account_financial_retention_15_days.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);

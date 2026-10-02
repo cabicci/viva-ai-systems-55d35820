@@ -252,7 +252,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     push(`- \`record_user_activity()\` — تحديث الـ streak.`);
     push(`- \`increment_user_activity_time(seconds)\` — جمع وقت النشاط.`);
     push(`- \`mark_roadmap_done(item_id)\` — admin-only، يحدّث الـ status + completed_at.`);
-    push(`- \`delete_my_account_data()\` — مسح كل بيانات المستخدم تحت user-initiated request.`);
+    push(`- \`request_account_deletion()\` — يسجل طلبًا للمراجعة؛ لا يحذف هوية الدخول أو بيانات التعلم، ولا يلغي اشتراك Stripe. الدالة القديمة \`delete_my_account_data()\` محجوبة عن المستخدم.`);
     push(`- \`match_knowledge_chunks(...)\` — vector search للـ RAG.`);
     push(`- \`protect_mission_submission_insert/admin_columns()\` — triggers تمنع المستخدم من تعديل score/feedback.`);
 

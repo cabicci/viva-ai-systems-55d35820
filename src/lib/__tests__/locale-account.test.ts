@@ -5,10 +5,7 @@ import { ACCOUNT_UI_KEYS } from "@/lib/locale/account-ui-keys";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { SUPPORTED_LOCALES } from "@/lib/locale/types";
 
-const ACCOUNT_SOURCE = readFileSync(
-  resolve(process.cwd(), "src/routes/account.tsx"),
-  "utf8",
-);
+const ACCOUNT_SOURCE = readFileSync(resolve(process.cwd(), "src/routes/account.tsx"), "utf8");
 
 describe("locale account page (Phase 12.4D)", () => {
   it("serves account strings for all four locales", () => {
@@ -23,9 +20,7 @@ describe("locale account page (Phase 12.4D)", () => {
 
   it("renders English account copy for locale=en", () => {
     expect(getUiString("en", "account.title")).toBe("Account");
-    expect(getUiString("en", "account.manage.deleteAccount").toLowerCase()).toContain(
-      "delete",
-    );
+    expect(getUiString("en", "account.manage.deleteAccount")).toBe("Request account deletion");
   });
 
   it("wires account page through useUiString and useLocale", () => {

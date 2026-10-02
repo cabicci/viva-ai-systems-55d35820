@@ -47,6 +47,12 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Login and Free CTA regression (isolated clients, no account writes)
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/central1-auth-integration.test.tsx
+          src/lib/__tests__/locale-auth.test.ts
+
       - name: Account Auth email localization (no email sends)
         run: >-
           bunx vitest run
@@ -79,6 +85,24 @@ jobs:
           bunx vitest run
           src/lib/__tests__/rag-corpus-rls.integration.test.ts
           src/lib/__tests__/rag-migration-security.test.ts
+
+      - name: Account deletion lifecycle and worker (isolated PostgreSQL and mocked providers)
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/account-deletion-lifecycle.integration.test.ts
+          src/lib/__tests__/account-financial-retention.integration.test.ts
+          src/lib/__tests__/account-financial-retention-worker.test.ts
+          src/lib/__tests__/account-lifecycle-edge.test.ts
+          src/lib/__tests__/account-deletion-worker.test.ts
+          src/lib/__tests__/kids-checkout-deletion.test.ts
+
+      - name: Account lifecycle Edge entrypoints
+        run: >-
+          bunx tsc --noEmit --strict --target ES2022 --module ESNext
+          --moduleResolution bundler --lib ES2022,DOM --skipLibCheck
+          --allowImportingTsExtensions scripts/billing/account-edge-runtime.d.ts
+          supabase/functions/account-deletion-job/index.ts
+          supabase/functions/billing-stripe-webhook/index.ts
 
       - name: Kids country release and parent access (isolated, no child data)
         run: |

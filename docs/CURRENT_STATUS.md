@@ -1,3 +1,11 @@
+## 2026-10-02 — Fifteen-day financial erasure candidate; completed cleanup preserved
+
+The nine explicitly selected accounts were deleted in production at 07:48:43Z; read-only verification confirms only the two protected Auth accounts remain. Their data and the owner's three Kids profiles are preserved. The accepted two contact outboxes/delivered receipts and the existing welcome schedule remain intact. The contact/deletion migrations already applied are not reapplied.
+
+PR #53 adds the approved fifteen-day financial deadline, disabled service-only purge/leases, FK-ordered financial and Kids receipt erasure, protected batch processing, TEST Customer deletion verification, and late webhook/write guards. The deadline starts at verified account completion; retries or pause do not reset it. Shared configuration and other accounts remain protected. The two authoritative registers own the consolidated remaining list and exact-head CI receipts. See docs/launch/20261002-financial-retention-release.md for the reviewed source and production sequence.
+
+Local affected checks: 49 isolated tests passed, including the authored Edge batch entrypoint; root and Edge TypeScript checks and scoped ESLint passed. Native cumulative and exact-head CI are required after push. No new production migration, worker/schedule activation, website publication, email send, payment or account creation is claimed by this candidate. PR #127 and the accepted QA fixes remain preserved. Actual served SHA/final acceptance are open; Stripe TEST, other Kids stop and NO-GO continue. Historical absence/approval statements below are superseded by the current registers.
+
 ## 2026-10-01 — Auth email RTL alignment (source fix)
 
 The shared auth email shell now uses explicit direction, inline alignment and table-cell alignment on header, content and footer. Signup and recovery copy keep Arabic right-aligned and English left-aligned; mixed-script recipient names are isolated without changing confirmation/reset URLs, locale selection or copy. Other Arabic auth templates inherit the same shared shell; reauthentication codes retain their centered LTR styling.
@@ -246,4 +254,3 @@ None
 ## Latest Assistant Milestone
 
 Assistant P0.2 PASS · standalone page auth-gated · in-lesson embedding confirmed
-

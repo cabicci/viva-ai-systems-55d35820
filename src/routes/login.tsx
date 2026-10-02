@@ -11,6 +11,7 @@ import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-me
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
+import { loginErrorPresentation } from "@/lib/login-error";
 
 export const Route = createFileRoute("/login")({
   validateSearch: parseAuthIntentSearch,
@@ -28,16 +29,22 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [failure, setFailure] = useState<ReturnType<typeof loginErrorPresentation> | null>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setFailure(null);
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setLoading(false);
-    if (error) {
-      setFailed(true);
-      return toast.error(error.message);
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+    } catch (error) {
+      const presentation = loginErrorPresentation(error);
+      setFailure(presentation);
+      toast.error(t(presentation.key));
+      return;
+    } finally {
+      setLoading(false);
     }
     toast.success(t("auth.login.toast.success"));
     if (search.intent === "kids") {
@@ -55,12 +62,23 @@ function LoginPage() {
     >
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label>{t("auth.field.email")}</Label>
-          <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <Label htmlFor="login-email">{t("auth.field.email")}</Label>
+          <Input
+            id="login-email"
+            name="email"
+            autoComplete="username"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
         <div className="space-y-2">
-          <Label>{t("auth.field.password")}</Label>
+          <Label htmlFor="login-password">{t("auth.field.password")}</Label>
           <Input
+            id="login-password"
+            name="password"
+            autoComplete="current-password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -77,12 +95,17 @@ function LoginPage() {
           )}
         </Button>
       </form>
-      {failed && (
-        <div className="mt-4 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-center">
-          <p className="mb-2">{t("auth.login.failedMessage")}</p>
-          <Link to="/forgot-password" className="text-primary hover:underline font-medium">
-            {t("auth.link.resetPassword")}
-          </Link>
+      {failure && (
+        <div
+          role="alert"
+          className="mt-4 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-center"
+        >
+          <p className="mb-2">{t(failure.key)}</p>
+          {failure.canReset && (
+            <Link to="/forgot-password" className="text-primary hover:underline font-medium">
+              {t("auth.link.resetPassword")}
+            </Link>
+          )}
         </div>
       )}
       <p className="text-center text-sm text-muted-foreground mt-6">
