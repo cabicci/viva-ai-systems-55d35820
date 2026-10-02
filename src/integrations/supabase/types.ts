@@ -2150,6 +2150,20 @@ export type Database = {
         Returns: Json
       }
       lc09_claim_deletion: { Args: { p_user_id: string }; Returns: Json }
+      lc09_claim_financial_purge: { Args: { p_user_id: string }; Returns: Json }
+      lc09_complete_financial_purge: {
+        Args: { p_lease_token: string; p_release?: boolean; p_user_id: string }
+        Returns: Json
+      }
+      lc09_deletion_candidates: {
+        Args: { p_limit?: number }
+        Returns: string[]
+      }
+      lc09_financial_expired: { Args: { p_user_id: string }; Returns: boolean }
+      lc09_financial_purge_candidates: {
+        Args: { p_limit?: number }
+        Returns: string[]
+      }
       lc09_previous_apply_kids_stripe_event: {
         Args: {
           p_customer_id: string
@@ -2300,6 +2314,60 @@ export type Database = {
           p_user_id: string
         }
         Returns: boolean
+      }
+      lc09_retained_apply_kids_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      lc09_retained_apply_kids_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      lc09_retained_apply_stripe_webhook_event: {
+        Args: {
+          p_amount_minor?: number
+          p_cancel_at_period_end: boolean
+          p_currency_code?: string
+          p_effective_at: string
+          p_event_type: string
+          p_gateway_customer_id: string
+          p_gateway_event_id: string
+          p_gateway_status: string
+          p_gateway_subscription_id: string
+          p_gateway_transaction_id?: string
+          p_market_price_id: string
+          p_payload_minimized?: Json
+          p_period_end: string
+          p_period_start: string
+          p_plan_version_id: string
+          p_subscription_id: string
+          p_transition: string
+          p_user_id: string
+        }
+        Returns: Json
       }
       mark_roadmap_done: { Args: { p_item_id: string }; Returns: undefined }
       match_knowledge_chunks: {
