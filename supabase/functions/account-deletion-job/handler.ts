@@ -32,6 +32,36 @@ export async function authorizedDeletionJob(request: Request, secret?: string): 
   return difference === 0;
 }
 
+export type FinancialPurgeClaim = {
+  stage: "financial_due" | "financial_purged";
+  user_id?: string;
+  lease_token?: string;
+  customers?: { id: string; gateway: string; mode: string | null }[];
+};
+export type FinancialPurgeDependencies = {
+  claim(userId: string): Promise<FinancialPurgeClaim>;
+  complete(userId: string, lease: string, release?: boolean): Promise<unknown>;
+  eraseCustomer(customer: string, userId: string): Promise<void>;
+};
+export async function purgeFinancialAccount(userId: string, deps: FinancialPurgeDependencies) {
+  const claim = await deps.claim(userId);
+  if (claim.stage === "financial_purged") return { stage: "financial_purged" };
+  if (claim.stage !== "financial_due" || claim.user_id !== userId || !claim.lease_token)
+    throw new Error("LC09_INVALID_FINANCIAL_CLAIM");
+  const lease = claim.lease_token;
+  try {
+    for (const customer of claim.customers ?? []) {
+      if (customer.gateway !== "stripe_us" || !["test", null].includes(customer.mode))
+        throw new Error("LC09_PROVIDER_REVIEW_REQUIRED");
+      await deps.eraseCustomer(customer.id, userId);
+    }
+    await deps.complete(userId, lease);
+    return { stage: "financial_purged" };
+  } finally {
+    await deps.complete(userId, lease, true).catch(() => undefined);
+  }
+}
+
 // Each database checkpoint is durable. Auth removal may succeed before a crash:
 // the next attempt verifies absence and completes instead of resurrecting data.
 export async function finalizeAccount(userId: string, deps: DeletionDependencies) {
@@ -80,6 +110,34 @@ export type StripeTransport = (
   path: string,
   options?: { method?: "GET" | "POST" | "DELETE"; params?: URLSearchParams; idempotency?: string },
 ) => Promise<StripeObject | { data: StripeObject[]; has_more: boolean }>;
+
+// Stripe deletes the Customer/payment details; its historical transaction
+// records have separate provider retention. This is never a claim to erase
+// every Stripe object. Retry the same owned customer after a lost response.
+export async function eraseStripeCustomer(
+  transport: StripeTransport,
+  customerId: string,
+  userId: string,
+) {
+  if (!/^cus_[A-Za-z0-9_]+$/.test(customerId)) throw new Error("LC09_INVALID_CUSTOMER");
+  const path = `/customers/${encodeURIComponent(customerId)}`;
+  const customer = (await transport(path)) as StripeObject;
+  if (customer.id !== customerId) throw new Error("LC09_PROVIDER_OWNERSHIP_MISMATCH");
+  if (customer.deleted === true) return;
+  const metadata = customer.metadata as Record<string, string> | undefined;
+  if (
+    customer.livemode !== false ||
+    metadata?.environment !== "test" ||
+    metadata?.user_id !== userId
+  )
+    throw new Error("LC09_PROVIDER_OWNERSHIP_MISMATCH");
+  const removed = (await transport(path, { method: "DELETE" })) as StripeObject;
+  if (removed.id !== customerId || removed.deleted !== true)
+    throw new Error("LC09_CUSTOMER_REMOVAL_UNVERIFIED");
+  const verified = (await transport(path)) as StripeObject;
+  if (verified.id !== customerId || verified.deleted !== true)
+    throw new Error("LC09_CUSTOMER_REMOVAL_UNVERIFIED");
+}
 
 export async function recoverStripeCheckout(
   transport: StripeTransport,

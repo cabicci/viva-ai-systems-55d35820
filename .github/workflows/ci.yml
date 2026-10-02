@@ -90,8 +90,19 @@ jobs:
         run: >-
           bunx vitest run
           src/lib/__tests__/account-deletion-lifecycle.integration.test.ts
+          src/lib/__tests__/account-financial-retention.integration.test.ts
+          src/lib/__tests__/account-financial-retention-worker.test.ts
+          src/lib/__tests__/account-lifecycle-edge.test.ts
           src/lib/__tests__/account-deletion-worker.test.ts
           src/lib/__tests__/kids-checkout-deletion.test.ts
+
+      - name: Account lifecycle Edge entrypoints
+        run: >-
+          bunx tsc --noEmit --strict --target ES2022 --module ESNext
+          --moduleResolution bundler --lib ES2022,DOM --skipLibCheck
+          --allowImportingTsExtensions scripts/billing/account-edge-runtime.d.ts
+          supabase/functions/account-deletion-job/index.ts
+          supabase/functions/billing-stripe-webhook/index.ts
 
       - name: Kids country release and parent access (isolated, no child data)
         run: |

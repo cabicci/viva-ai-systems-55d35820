@@ -1,5 +1,6 @@
 import { decidePaidPlanEvidence } from "../_shared/stripe-generation-decisions.ts";
 import { resolveStripeRefund } from "../_shared/stripe-refunds.ts";
+import { financialDeliveryExpired } from "../_shared/account-financial-gate.ts";
 
 const STRIPE_API_VERSION = "2026-07-29.dahlia";
 const SIGNATURE_TOLERANCE_SECONDS = 300;
@@ -172,6 +173,8 @@ Deno.serve(async (request) => {
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), stripeGet);
       if (!resolved) return response({ received: true, ignored: true });
+      if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, rpc))
+        return response({ received: true, ignored: true, financial_erased: true });
       if (resolved.subscription.metadata?.product_scope === "kids") {
         const revoked = await rpc<boolean>("apply_kids_stripe_refund", {
           p_event_id: event.id,
@@ -230,6 +233,8 @@ Deno.serve(async (request) => {
         );
 
     const metadata = subscription.metadata ?? {};
+    if (await financialDeliveryExpired(metadata.user_id, rpc))
+      return response({ received: true, ignored: true, financial_erased: true });
     if (metadata.product_scope === "kids") {
       if (
         metadata.environment !== "test" ||

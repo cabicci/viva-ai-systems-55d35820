@@ -62,4 +62,4 @@ jobs:
           bunx vitest run src/lib/__tests__/launch-account-deletion-coverage.test.ts src/lib/__tests__/account-deletion-native.test.ts 2>&1 | tee lc09-validation/vitest.log
           sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' lc09-validation/vitest.log > lc09-validation/vitest.plain.log
           ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/vitest.plain.log
-          grep -Eq 'Tests[[:space:]]+11 passed[[:space:]]+\(11\)' lc09-validation/vitest.plain.log
+          grep -Eq 'Tests[[:space:]]+14 passed[[:space:]]+\(14\)' lc09-validation/vitest.plain.log

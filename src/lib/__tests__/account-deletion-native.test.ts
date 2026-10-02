@@ -120,5 +120,86 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
         psql(`SELECT count(*) FROM billing.webhook_events WHERE gateway_event_id='evt_${suffix}'`),
       ).toBe("1");
     });
+    it("executes the financial purge on the full cumulative schema after the fifteen-day boundary", () => {
+      const user = randomUUID(),
+        other = randomUUID(),
+        sub = randomUUID(),
+        payment = randomUUID();
+      const result = psql(`BEGIN; ${service}
+        UPDATE billing.account_deletion_control SET financial_purge_enabled=true;
+        INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}');
+        INSERT INTO billing.account_deletion_lifecycle(user_id,stage,completed_at,financial_retention_reference,crm_retention_reference,release_reference)
+          VALUES('${user}','complete',now(),'OWNER-FINANCIAL-15D-01','separate-crm','native');
+        INSERT INTO billing.subscriptions(id,user_id,access_state,billing_state,market_code,currency_code,billing_interval,idempotency_key)
+          VALUES('${sub}','${user}','suspended','canceled','EG','EGP','month','native-finance-${user}');
+        INSERT INTO billing.gateway_customers(user_id,gateway_code,gateway_customer_id,status)
+          VALUES('${user}','stripe_us','cus_${user.replaceAll("-", "")}','active'),
+          ('${other}','stripe_us','cus_${other.replaceAll("-", "")}','active');
+        INSERT INTO billing.payment_transactions(id,user_id,subscription_id,gateway_code,gateway_transaction_id,transaction_type,status,amount_minor,currency_code,idempotency_key,initiated_at)
+          VALUES('${payment}','${user}','${sub}','stripe_us','in_${user.replaceAll("-", "")}','checkout','succeeded',1000,'EGP','native-payment-${user}',now());
+        INSERT INTO billing.refunds(payment_transaction_id,refund_type,status,amount_minor,currency_code,reason_code,gateway_code,idempotency_key,requested_at)
+          VALUES('${payment}','manual','succeeded',1000,'EGP','synthetic','stripe_us','native-refund-${user}',now());
+        INSERT INTO public.kids_stripe_events(event_id,parent_id) VALUES('evt_${user.replaceAll("-", "")}','${user}');
+        UPDATE billing.account_deletion_lifecycle SET completed_at=now()-interval '361 hours' WHERE user_id='${user}';
+        CREATE TEMP TABLE financial_claim AS SELECT public.lc09_claim_financial_purge('${user}') AS claim;
+        SELECT public.lc09_complete_financial_purge('${user}',(SELECT (claim->>'lease_token')::uuid FROM financial_claim));
+        SELECT json_build_object('own',(SELECT count(*) FROM billing.payment_transactions WHERE user_id='${user}'),
+          'other',(SELECT count(*) FROM billing.gateway_customers WHERE user_id='${other}'),
+          'kids',(SELECT count(*) FROM public.kids_stripe_events WHERE parent_id='${user}'),
+          'receipt',(SELECT count(*) FROM billing.account_deletion_lifecycle WHERE user_id='${user}' AND financial_purged_at IS NOT NULL));
+        ROLLBACK;`);
+      expect(result).toContain('"stage": "financial_purged"');
+      expect(result).toContain('"own" : 0, "other" : 1, "kids" : 0, "receipt" : 1');
+    });
+
+    it("serializes financial workers and a late paid event without recreating finance", async () => {
+      const user = randomUUID(),
+        suffix = user.replaceAll("-", "");
+      psql(`UPDATE billing.account_deletion_control SET financial_purge_enabled=true;
+        INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}');
+        INSERT INTO billing.account_deletion_lifecycle(user_id,stage,completed_at,financial_retention_reference,crm_retention_reference,release_reference)
+          VALUES('${user}','complete',now()-interval '361 hours','OWNER-FINANCIAL-15D-01','separate-crm','native');`);
+      const claims = await psqlConcurrent([
+        `BEGIN; ${service} SELECT public.lc09_claim_financial_purge('${user}'); SELECT pg_sleep(0.15); COMMIT;`,
+        `BEGIN; ${service} SELECT public.lc09_claim_financial_purge('${user}'); COMMIT;`,
+      ]);
+      expect(claims.filter((r) => r.ok)).toHaveLength(1);
+      expect(claims.find((r) => !r.ok)?.out).toContain("LC09_FINANCIAL_WORKER_BUSY");
+      const lease = psql(
+        `SELECT financial_lease_token FROM billing.account_deletion_lifecycle WHERE user_id='${user}'`,
+      );
+      const race = await psqlConcurrent([
+        `BEGIN; ${service} SELECT public.lc09_complete_financial_purge('${user}','${lease}'); SELECT pg_sleep(0.15); COMMIT;`,
+        `BEGIN; ${service} SELECT public.apply_kids_stripe_event('evt_${suffix}','${user}','sub_${suffix}','cus_${suffix}',
+          'unknown','active',now(),true,'in_${suffix}',now(),now()+interval '1 month'); COMMIT;`,
+      ]);
+      expect(
+        race.every((r) => r.ok),
+        JSON.stringify(race),
+      ).toBe(true);
+      expect(psql(`SELECT count(*) FROM public.kids_stripe_events WHERE parent_id='${user}'`)).toBe(
+        "0",
+      );
+      expect(
+        psql(`SELECT count(*) FROM billing.payment_transactions WHERE user_id='${user}'`),
+      ).toBe("0");
+    });
+
+    it("exposes neither financial erasure nor a deletion batch to a browser", () => {
+      for (const call of [
+        `public.lc09_financial_purge_candidates()`,
+        `public.lc09_deletion_candidates()`,
+        `public.lc09_financial_expired('${randomUUID()}')`,
+      ]) {
+        expect(
+          psqlAllowFail(`BEGIN; SET LOCAL ROLE authenticated; SELECT ${call}; ROLLBACK;`).ok,
+        ).toBe(false);
+      }
+      expect(
+        psql(
+          "SELECT has_table_privilege('authenticated','billing.account_deletion_lifecycle','SELECT')",
+        ),
+      ).toBe("f");
+    });
   },
 );
