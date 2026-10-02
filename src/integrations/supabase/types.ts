@@ -645,7 +645,7 @@ export type Database = {
           parent_id: string
           profile_ids: string[]
           provider_email_id: string | null
-          recipient_email: string
+          recipient_email: string | null
           state: string
         }
         Insert: {
@@ -662,7 +662,7 @@ export type Database = {
           parent_id: string
           profile_ids: string[]
           provider_email_id?: string | null
-          recipient_email: string
+          recipient_email?: string | null
           state?: string
         }
         Update: {
@@ -679,7 +679,7 @@ export type Database = {
           parent_id?: string
           profile_ids?: string[]
           provider_email_id?: string | null
-          recipient_email?: string
+          recipient_email?: string | null
           state?: string
         }
         Relationships: []
@@ -1971,7 +1971,6 @@ export type Database = {
         }[]
       }
       delete_my_account_data: { Args: never; Returns: undefined }
-      request_account_deletion: { Args: never; Returns: Json }
       evaluate_access: {
         Args: {
           p_resource_id: string
@@ -2140,6 +2139,167 @@ export type Database = {
         Returns: {
           notice_id: string
         }[]
+      }
+      lc09_account_active: { Args: never; Returns: boolean }
+      lc09_advance_deletion: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      lc09_begin_kids_checkout: {
+        Args: { p_key: string; p_parameters: string; p_user_id: string }
+        Returns: Json
+      }
+      lc09_claim_deletion: { Args: { p_user_id: string }; Returns: Json }
+      lc09_previous_apply_kids_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      lc09_previous_apply_kids_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      lc09_previous_apply_stripe_webhook_event: {
+        Args: {
+          p_amount_minor?: number
+          p_cancel_at_period_end: boolean
+          p_currency_code?: string
+          p_effective_at: string
+          p_event_type: string
+          p_gateway_customer_id: string
+          p_gateway_event_id: string
+          p_gateway_status: string
+          p_gateway_subscription_id: string
+          p_gateway_transaction_id?: string
+          p_market_price_id: string
+          p_payload_minimized?: Json
+          p_period_end: string
+          p_period_start: string
+          p_plan_version_id: string
+          p_subscription_id: string
+          p_transition: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      lc09_previous_confirm_stripe_checkout_generation: {
+        Args: { p_checkout_generation: string; p_user_id: string }
+        Returns: boolean
+      }
+      lc09_previous_get_kids_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      lc09_previous_get_kids_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
+      lc09_previous_get_my_billing_access_tier: { Args: never; Returns: string }
+      lc09_previous_get_my_kids_access_status: {
+        Args: never
+        Returns: {
+          access_source: string
+          active_until: string
+        }[]
+      }
+      lc09_previous_get_my_kids_subscription: {
+        Args: never
+        Returns: {
+          paid_through: string
+          status: string
+        }[]
+      }
+      lc09_previous_get_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_plan_key: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      lc09_previous_get_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
+      lc09_previous_has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      lc09_previous_kids_parent_can_manage_profiles: {
+        Args: never
+        Returns: boolean
+      }
+      lc09_previous_kids_parent_privacy_record: {
+        Args: never
+        Returns: {
+          attested_at: string
+          policy_id: string
+          policy_version: string
+        }[]
+      }
+      lc09_previous_prepare_stripe_checkout: {
+        Args: {
+          p_billing_interval: string
+          p_currency_code: string
+          p_gateway_customer_id: string
+          p_idempotency_key: string
+          p_market_code: string
+          p_market_price_id: string
+          p_plan_version_id: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      lc09_previous_record_stripe_checkout_session: {
+        Args: {
+          p_checkout_generation: string
+          p_session_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
+      lc09_previous_register_kids_stripe_customer: {
+        Args: { p_customer_id: string; p_user_id: string }
+        Returns: string
+      }
+      lc09_record_kids_checkout: {
+        Args: {
+          p_attempt: string
+          p_expired?: boolean
+          p_session: string
+          p_user_id: string
+        }
+        Returns: boolean
       }
       mark_roadmap_done: { Args: { p_item_id: string }; Returns: undefined }
       match_knowledge_chunks: {
@@ -2327,6 +2487,7 @@ export type Database = {
         Args: { p_idempotency_key: string; p_reservation_id: string }
         Returns: Json
       }
+      request_account_deletion: { Args: never; Returns: Json }
       reserve_learner_ai_access: {
         Args: {
           p_category: string
