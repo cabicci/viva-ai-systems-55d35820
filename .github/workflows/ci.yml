@@ -47,6 +47,9 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Build and storage watcher compatibility
+        run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
+
       - name: Login and Free CTA regression (isolated clients, no account writes)
         run: >-
           bunx vitest run
