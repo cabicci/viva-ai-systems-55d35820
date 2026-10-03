@@ -1865,6 +1865,17 @@ export type Database = {
           preferred_locale: string
         }[]
       }
+      claim_account_welcome_email: {
+        Args: { p_user: string }
+        Returns: {
+          claim_token: string
+          display_name: string
+          preferred_locale: string
+          recipient: string
+          template_version: number
+          user_id: string
+        }[]
+      }
       claim_account_welcome_emails: {
         Args: never
         Returns: {
