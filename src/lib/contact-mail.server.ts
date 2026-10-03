@@ -5,7 +5,12 @@ import { resolveSignupProfile } from "./email-templates/signup-profile";
 import type { ContactFormInput } from "./contact-form";
 /** Called only after CAPTCHA, rate limit and HubSpot acceptance. */
 export async function queueContactAcknowledgement(input: ContactFormInput, id: string) {
-  if (process.env.CONTACT_MAIL_ENABLED !== "true") return;
+  // Direct send at submit time; needs no scheduler or Vault.
+  if (
+    process.env.CONTACT_MAIL_ENABLED !== "true" &&
+    process.env.CONTACT_MAIL_DIRECT_ENABLED !== "true"
+  )
+    return;
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const profile = await resolveSignupProfile(input.email, async (email) => {
     const result = await supabaseAdmin.rpc(
