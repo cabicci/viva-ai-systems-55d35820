@@ -1,3 +1,9 @@
+## 2026-10-03 — Furniture teaching experiment (temporary branch only)
+
+The owner requested one furniture technical-education trial on `experiment/furniture-pilot-20261003`. This branch adds only `/experiments/furniture-pilot` with the existing shell and four locales: original cabinet-planning geometry, reading, SVG drawings, panel calculator, quiz, arithmetic practice, review/cost workbook and fixed reference FAQ. It is outside the six canonical adult paths and does not change catalogue IDs,100/71/29 entitlement counts, Stripe TEST, accounts, database, existing lesson videos or production. Local validation evidence is recorded in `docs/experiments/furniture-pilot.md`.
+
+The lesson is not fully delivered: photorealistic practical video awaits a connected provider and visual/technical review; the grounded generative assistant and human portfolio assessment are not implemented. No certification, video generation, credit spend, merge, CI or deployment is claimed. Prior accepted mail/lifecycle results and the two existing authoritative registers remain controlling for their scopes.
+
 ## 2026-10-03 — Reuse the working Edge transport for immediate mail
 
 The owner-created English temporary account confirmed at 10:38:26Z. Its app-side immediate claim occurred at 10:38:30Z, but no provider ID was recorded; the exact first failure cause is unestablished. The existing Edge retry accepted the same immutable welcome at 10:45:02Z, Resend recorded delivery, and Gmail recorded INBOX at 10:45:03Z. Do not resend it or repeat confirmation.

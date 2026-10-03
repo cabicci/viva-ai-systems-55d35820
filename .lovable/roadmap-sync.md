@@ -147,3 +147,11 @@ scope: infra
 source: user
 summary: Owner-requested retirement of unused contact cron preparation, legacy Edge entrypoint and original switch consumption; preserve immediate delivery, existing-worker retries and all receipt/outbox data.
 sync_status: source prepared; platform deletion and runtime acceptance remain separate
+
+## 2026-10-03 — isolated furniture lesson experiment
+
+[roadmap:furniture-pilot-temporary-branch]
+scope: lessons
+source: user
+summary: Original cabinet-planning lesson on experiment/furniture-pilot-20261003 with four locale views, exact drawings, calculator, quiz, practice and printable assets. Realistic video/provider connection and grounded generative assistant are still pending.
+sync_status: temporary branch only; no roadmap_items database update, entitlement change, production activation or deployment claimed

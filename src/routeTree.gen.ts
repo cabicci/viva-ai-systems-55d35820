@@ -33,6 +33,7 @@ import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
+import { Route as ExperimentsFurniturePilotRouteImport } from './routes/experiments.furniture-pilot'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
 import { Route as KidsIndexRouteImport } from './routes/kids.index'
@@ -167,6 +168,12 @@ const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
   path: '/admin/kids-parents',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperimentsFurniturePilotRoute =
+  ExperimentsFurniturePilotRouteImport.update({
+    id: '/experiments/furniture-pilot',
+    path: '/experiments/furniture-pilot',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -257,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
+  '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
@@ -294,6 +302,7 @@ export interface FileRoutesByTo {
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
+  '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/family': typeof KidsFamilyRoute
   '/kids/privacy': typeof KidsPrivacyRoute
@@ -333,6 +342,7 @@ export interface FileRoutesById {
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
+  '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
@@ -374,6 +384,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/terms'
     | '/admin/kids-parents'
+    | '/experiments/furniture-pilot'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/kids/family'
@@ -411,6 +422,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/terms'
     | '/admin/kids-parents'
+    | '/experiments/furniture-pilot'
     | '/image-gallery/$path'
     | '/kids/family'
     | '/kids/privacy'
@@ -449,6 +461,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/terms'
     | '/admin/kids-parents'
+    | '/experiments/furniture-pilot'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/kids/family'
@@ -489,6 +502,7 @@ export interface RootRouteChildren {
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
+  ExperimentsFurniturePilotRoute: typeof ExperimentsFurniturePilotRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
@@ -667,6 +681,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminKidsParentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiments/furniture-pilot': {
+      id: '/experiments/furniture-pilot'
+      path: '/experiments/furniture-pilot'
+      fullPath: '/experiments/furniture-pilot'
+      preLoaderRoute: typeof ExperimentsFurniturePilotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-gallery/': {
       id: '/image-gallery/'
       path: '/'
@@ -829,6 +850,7 @@ const rootRouteChildren: RootRouteChildren = {
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,
+  ExperimentsFurniturePilotRoute: ExperimentsFurniturePilotRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,

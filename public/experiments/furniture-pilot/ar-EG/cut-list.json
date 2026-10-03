@@ -1,0 +1,68 @@
+{
+  "lessonId": "furniture-m1-cut-list",
+  "locale": "ar-EG",
+  "units": "mm",
+  "assumptions": "وحدة مفتوحة من الأمام، بجانبين كاملَي الارتفاع. السقف والقاع والرف الأوسط تقع بين الجانبين. الظهر قطعة تغطي الوجه الخلفي من الخارج. العمق النهائي يشمل الظهر. جميع الأبعاد بالمليمتر. افتراضات الدرس: سمك اسمي، وصلات تلامسية مباشرة، دون مجاري أو أبواب أو أرجل أو سماحات تشطيب. تغيير أي افتراض يقتضي تحديث الرسم والقائمة.",
+  "dimensions": {
+    "width": 600,
+    "height": 600,
+    "depth": 300,
+    "thickness": 18,
+    "backThickness": 6
+  },
+  "panels": [
+    {
+      "key": "sides",
+      "ids": [
+        "A1",
+        "A2"
+      ],
+      "quantity": 2,
+      "length": 600,
+      "width": 294,
+      "thickness": 18,
+      "label": "الجانبان"
+    },
+    {
+      "key": "horizontal",
+      "ids": [
+        "B1",
+        "B2"
+      ],
+      "quantity": 2,
+      "length": 564,
+      "width": 294,
+      "thickness": 18,
+      "label": "السقف والقاع"
+    },
+    {
+      "key": "shelf",
+      "ids": [
+        "C1"
+      ],
+      "quantity": 1,
+      "length": 564,
+      "width": 294,
+      "thickness": 18,
+      "label": "الرف الأوسط"
+    },
+    {
+      "key": "back",
+      "ids": [
+        "D1"
+      ],
+      "quantity": 1,
+      "length": 600,
+      "width": 600,
+      "thickness": 6,
+      "label": "الظهر الخارجي"
+    }
+  ],
+  "totalPieces": 6,
+  "netAreaM2ByThickness": {
+    "6": 0.36,
+    "18": 0.8502479999999999
+  },
+  "stockBoardCount": null,
+  "status": "teaching-example-requires-workshop-review"
+}

@@ -1,0 +1,68 @@
+{
+  "lessonId": "furniture-m1-cut-list",
+  "locale": "en",
+  "units": "mm",
+  "assumptions": "An open-front cabinet with two full-height sides. The top, bottom and middle shelf fit between the sides. A separate back overlays the rear face. Overall depth includes the back. All dimensions are in millimetres. Lesson assumptions: nominal thickness, butt-joint geometry, no grooves, doors, feet or finishing allowances. Any changed assumption requires a revised drawing and cut list.",
+  "dimensions": {
+    "width": 600,
+    "height": 600,
+    "depth": 300,
+    "thickness": 18,
+    "backThickness": 6
+  },
+  "panels": [
+    {
+      "key": "sides",
+      "ids": [
+        "A1",
+        "A2"
+      ],
+      "quantity": 2,
+      "length": 600,
+      "width": 294,
+      "thickness": 18,
+      "label": "Sides"
+    },
+    {
+      "key": "horizontal",
+      "ids": [
+        "B1",
+        "B2"
+      ],
+      "quantity": 2,
+      "length": 564,
+      "width": 294,
+      "thickness": 18,
+      "label": "Top & bottom"
+    },
+    {
+      "key": "shelf",
+      "ids": [
+        "C1"
+      ],
+      "quantity": 1,
+      "length": 564,
+      "width": 294,
+      "thickness": 18,
+      "label": "Middle shelf"
+    },
+    {
+      "key": "back",
+      "ids": [
+        "D1"
+      ],
+      "quantity": 1,
+      "length": 600,
+      "width": 600,
+      "thickness": 6,
+      "label": "Overlay back"
+    }
+  ],
+  "totalPieces": 6,
+  "netAreaM2ByThickness": {
+    "6": 0.36,
+    "18": 0.8502479999999999
+  },
+  "stockBoardCount": null,
+  "status": "teaching-example-requires-workshop-review"
+}
