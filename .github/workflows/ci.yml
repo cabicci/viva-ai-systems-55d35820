@@ -87,6 +87,9 @@ jobs:
           src/lib/__tests__/contact-mail-streams.test.ts
           src/lib/__tests__/contact-form-server.test.ts
           src/lib/__tests__/account-welcome-job.test.ts
+          src/lib/__tests__/account-welcome-server.test.ts
+          src/lib/__tests__/account-welcome-immediate.integration.test.ts
+          src/lib/__tests__/auth-context-initial-session.test.tsx
 
       - name: RAG corpus access policy (isolated PostgreSQL, no indexing)
         run: >-

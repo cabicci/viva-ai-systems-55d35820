@@ -1,3 +1,9 @@
+## 2026-10-03 — Immediate welcome after confirmed sign-in candidate
+
+The first temporary Arabic acceptance account was created and confirmed by the owner outside the Cloud browser. Its confirmation and branded welcome reached the real inbox; the welcome waited about four minutes for the existing five-minute scheduled worker. This candidate attempts the same durable welcome immediately after a confirmed session, through a verified server request and a service-only single-account claim. It preserves the immutable locale/name/content, provider idempotency key, scheduled retry, account/family deletion lock order, and local displaced-session sign-out. Mail failures never block sign-in. No new secret, Vault entry, cron, template or backfill is introduced; accepted messages are not resent.
+
+Local checks and the two authoritative registers own subsequent CI, migration, deployment and production evidence. The Arabic inbox evidence does not prove the candidate is deployed, immediate sending, two-browser enforcement, family erasure or full final acceptance. The protected accounts/data, fifteen-day financial retention, Stripe TEST, other Kids work stop and NO-GO remain in force.
+
 ## 2026-10-03 — Lifecycle automation through the existing protected worker
 
 The owner cancelled additional Vault/token setup. The existing account-welcome-job now calls an internal lifecycle helper using its existing scheduler authorization and server permissions. No new credential, Vault binding, lifecycle cron or migration is introduced. Existing deletion/family/financial handlers, service-only RPCs, fifteen-day deadlines and independent activation switches are preserved. Mail configuration/failure and lifecycle configuration/failure are isolated. Both protected accounts and their family data remain excluded from test deletion; Stripe stays TEST.
