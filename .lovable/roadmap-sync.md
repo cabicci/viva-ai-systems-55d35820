@@ -153,5 +153,5 @@ sync_status: source prepared; platform deletion and runtime acceptance remain se
 [roadmap:furniture-pilot-temporary-branch]
 scope: lessons
 source: user
-summary: Owner revised the temporary furniture lesson to Egyptian colloquial Arabic and English only. Calculated assembly animation reuses existing Remotion, Gemini TTS, lesson-video Actions and Bunny pipeline; hosted/narrated acceptance and grounded generative assistant remain pending. A silent Higgsfield comparison sample completed; no further photorealistic shots planned.
+summary: Owner revised the temporary furniture lesson to Egyptian colloquial Arabic and English only. Calculated assembly animation reuses existing Remotion, Gemini TTS, lesson-video Actions and Bunny pipeline; both narrated videos completed through Actions37155581488 and reached Bunny status4 in the technical-education collection; grounded generative assistant and human teaching assessment remain pending. A silent Higgsfield comparison sample completed; no further photorealistic shots planned.
 sync_status: temporary branch only; no roadmap_items database update, entitlement change, production activation or deployment claimed

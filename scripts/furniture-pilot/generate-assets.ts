@@ -6,6 +6,7 @@ import { getPilotCopy } from "../../src/lib/furniture-pilot/content";
 import { calculateCabinet, SAMPLE, PILOT_ID } from "../../src/lib/furniture-pilot/model";
 import { splitTechnicalText } from "../../src/lib/furniture-pilot/technical-text";
 import type { SupportedLocale } from "../../src/lib/locale/types";
+import { getBunnyEmbedUrlForLocale } from "../../src/lib/bunny-videos";
 
 const output = path.resolve("public/experiments/furniture-pilot");
 const locales: SupportedLocale[] = ["ar-EG", "en"];
@@ -137,6 +138,7 @@ try {
   for (const locale of locales) {
     const copy = getPilotCopy(locale),
       c = copy.labels;
+    const bunnyEmbed = getBunnyEmbedUrlForLocale(PILOT_ID, locale);
     const dir = locale === "en" ? "ltr" : "rtl";
     const folder = path.join(output, locale);
     await mkdir(folder, { recursive: true });
@@ -241,7 +243,7 @@ try {
       ),
       page(
         c.video,
-        `<div class="note"><strong>${escape(c.videoPending)}</strong>${para(c.videoNote)}</div>` +
+        `<div class="note"><strong>${escape(bunnyEmbed ? c.videoReady : c.videoPending)}</strong>${para(c.videoNote)}${bunnyEmbed ? `<p><a href="${escape(bunnyEmbed)}">${escape(locale === "en" ? "Watch the video on Bunny" : "شوف الفيديو على Bunny")}</a></p>` : ""}</div>` +
           copy.sections
             .map((s, i) => `<h2>${i + 1}. ${escape(s.title)}</h2>${para(s.body)}`)
             .join("") +
