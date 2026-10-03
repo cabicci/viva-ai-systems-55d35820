@@ -1,5 +1,30 @@
 # Account/family deletion: fifteen-day financial erasure
 
+## Current integration: reuse the existing scheduled server worker
+
+The owner cancelled the additional Vault/token setup on 3 October. Automatic
+account and financial processing now uses the existing protected
+`account-welcome-job` schedule through an internal server helper. No additional
+Vault binding, generated credential or lifecycle cron is required. The existing
+scheduler authorization is unchanged; browser JWTs cannot invoke processing.
+Account erasure and financial erasure retain their separate Edge and database
+switches. Missing/invalid Stripe TEST configuration stops lifecycle claims;
+mail failures do not prevent lifecycle processing and the reverse is also true.
+
+The existing schedule runs every five minutes, with the existing bounded batch
+size and durable leases. It never changes the fifteen-day deadline or runs a
+financial claim early. The protected dedicated deletion endpoint is retained
+as a compatible operational endpoint; automation does not depend on its token.
+Only the existing welcome worker and the shared helper need deployment for this
+automatic path. Source/CI checks are not production or synthetic-family acceptance.
+
+The already-applied migrations and nine completed deletions must not be replayed.
+Both protected accounts and all their family data remain preserved. The two
+authoritative registers hold the current activation evidence and remaining list.
+
+The production sequence below is historical. Its separate Vault/minute-schedule
+steps are superseded; do not perform them.
+
 Owner decision: `OWNER-FINANCIAL-15D-01`. Keep the completed nine-account cleanup
 closed. Keep both protected owner/test accounts and their family data. The
 financial period is fifteen elapsed days from verified account/Auth deletion;

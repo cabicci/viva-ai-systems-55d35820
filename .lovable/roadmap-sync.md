@@ -1,3 +1,11 @@
+## 2026-10-03 — Existing scheduled lifecycle integration
+
+[roadmap:lifecycle-existing-worker-20261003]
+scope: infra
+source: user
+summary: Reuse the existing protected welcome scheduler for internal account/financial lifecycle processing; no new Vault binding, token or cron. Preserve fifteen-day deadlines, durable leases, family erasure, separate switches and mail isolation.
+sync_status: recorded in CURRENT_STATUS; production/CI evidence belongs in the existing two authoritative registers
+
 # Roadmap sync marker
 
 [roadmap:cc83bcf5-3929-45ff-b3a5-8ff8abd7f5bf]

@@ -2,6 +2,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.105.4";
 import { sendTransactionalEmail } from "../_shared/resend.ts";
 import { runContactMailJob } from "../_shared/contact-mail-worker.ts";
 import { contactMailEnabled } from "../_shared/contact-mail-enabled.ts";
+import { createAccountLifecycleWorker } from "../_shared/account-lifecycle-worker.ts";
 import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
 Deno.serve(async (request) => {
@@ -11,17 +12,25 @@ Deno.serve(async (request) => {
   const welcomeEnabled = Deno.env.get("ACCOUNT_WELCOME_ENABLED") === "true";
   const subscriptionEnabled = Deno.env.get("SUBSCRIPTION_MAIL_ENABLED") === "true";
   const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
-  if (!welcomeEnabled && !subscriptionEnabled && !contactEnabled)
+  const deletionEnabled = Deno.env.get("ACCOUNT_DELETION_ENABLED") === "true";
+  const financialEnabled = Deno.env.get("ACCOUNT_FINANCIAL_PURGE_ENABLED") === "true";
+  if (
+    !welcomeEnabled &&
+    !subscriptionEnabled &&
+    !contactEnabled &&
+    !deletionEnabled &&
+    !financialEnabled
+  )
     return Response.json({ enabled: false });
   const apiKey = Deno.env.get("RESEND_API_KEY");
   const from = Deno.env.get("RESEND_FROM_EMAIL");
   const url = Deno.env.get("SUPABASE_URL");
   const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  if (!apiKey || !url || !key) return new Response(null, { status: 503 });
+  if (!url || !key) return new Response(null, { status: 503 });
   try {
     const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
     const send = (message: Parameters<typeof sendTransactionalEmail>[1]) => {
-      if (!from) throw new Error("mail_sender_unconfigured");
+      if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
       return sendTransactionalEmail(
         { apiKey, from, replyTo: Deno.env.get("RESEND_REPLY_TO_EMAIL"), enabled: true },
         message,
@@ -30,22 +39,36 @@ Deno.serve(async (request) => {
     const result = await runMailStreams({
       welcome: welcomeEnabled
         ? () => {
-            if (!from) throw new Error("mail_sender_unconfigured");
+            if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
             return runWelcomeJob(db, send);
           }
         : null,
       subscription: subscriptionEnabled
         ? () => {
-            if (!from) throw new Error("mail_sender_unconfigured");
+            if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
             return runSubscriptionMailJob(db, send);
           }
         : null,
       contact: contactEnabled
-        ? () =>
-            runContactMailJob(db, (message, sender) =>
+        ? () => {
+            if (!apiKey) throw new Error("mail_sender_unconfigured");
+            return runContactMailJob(db, (message, sender) =>
               sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
-            )
+            );
+          }
         : null,
+      lifecycle:
+        deletionEnabled || financialEnabled
+          ? () => {
+              const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
+              if (!stripeKey || !/^(sk|rk)_test_/.test(stripeKey))
+                throw new Error("LC09_TEST_ONLY");
+              return createAccountLifecycleWorker(db, stripeKey).runBatch({
+                deletionEnabled,
+                financialEnabled,
+              });
+            }
+          : null,
     });
     return Response.json(result.body, { status: result.status });
   } catch {
