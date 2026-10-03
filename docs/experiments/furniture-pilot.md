@@ -49,3 +49,15 @@ Corrective Actions run [37155581488](https://github.com/cabicci/viva-ai-systems-
 - [English video](https://iframe.mediadelivery.net/embed/670679/2c9e2846-cf35-4817-88aa-ca7edbe503b5?autoplay=false&preload=true)
 
 Both retained workbooks link to their Bunny videos. Actual desktop/mobile route checks for both languages returned200 with correct RTL/LTR, noindex, no document overflow or page errors; each revised lesson uses the existing Bunny iframe. Fusha and Gulf remain proposed extensions, not generated. No main merge or production deployment. The generative assistant and human assessment remain open.
+
+
+## Private live lesson preview — 2026-10-04 (Cairo)
+
+Owner requested the whole lesson as displayed on Masaarat, rather than separate video/PDF links. An isolated private preview reuses the compiled platform route, Navbar, styles, FurniturePilotLesson component and both accepted Bunny mappings from commit `31cc4861c2fbd95e02245f808f41cb787691c2bf`. No lesson UI was rewritten.
+
+- [Egyptian lesson](https://masaarat-furniture-lesson-preview.khalillotfy.chatgpt.site/experiments/furniture-pilot?locale=ar-EG)
+- [English lesson](https://masaarat-furniture-lesson-preview.khalillotfy.chatgpt.site/experiments/furniture-pilot?locale=en)
+
+Private preview publication succeeded: Site `appgprj_6ac17ca726108191a946e5eda8d27a90`, deployment `appgdep_6ac17d4f65808191bb2e486f27ee0b73`, preview source `c5fdda72650bfffafd1f06ca3f17b9d9020b4d93`. This is separate review hosting; no main merge, Masaarat production deployment, production configuration or central-register update occurred. Only the experimental lesson and public assets are served; account/payment/API/server-function endpoints return404.
+
+The exact preview Worker was checked locally with Playwright in both locales at1440px and390px: HTTP200, correct RTL/LTR, no horizontal overflow or page errors, correct Bunny iframe with autoplay disabled, interactive calculator table and both workbook downloads. Native deployment reported succeeded; this is not a production-platform acceptance claim.
