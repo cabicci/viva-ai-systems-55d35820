@@ -1,4 +1,10 @@
-## 2026-10-03 — Immediate contact acknowledgement candidate
+## 2026-10-03 — Lifecycle automation through the existing protected worker
+
+The owner cancelled additional Vault/token setup. The existing account-welcome-job now calls an internal lifecycle helper using its existing scheduler authorization and server permissions. No new credential, Vault binding, lifecycle cron or migration is introduced. Existing deletion/family/financial handlers, service-only RPCs, fifteen-day deadlines and independent activation switches are preserved. Mail configuration/failure and lifecycle configuration/failure are isolated. Both protected accounts and their family data remain excluded from test deletion; Stripe stays TEST.
+
+PR130 is already merged and published; CONTACT_MAIL_DIRECT_ENABLED is the sole immediate/retry flag, and the obsolete contact function, flags and schedule artifact have been retired. Do not repeat accepted contact intake/transport tests. The two authoritative registers own current deployment, runtime activation, final acceptance and remaining blockers; the historical candidate reports below do not supersede them.
+
+## Historical evidence — 2026-10-03 — Immediate contact acknowledgement candidate
 
 The owner approved immediate server-side contact sending. Accepted intake queues immutable content then attempts only its own leased message through the existing Resend transport. The existing account-welcome-job retries eligible contact rows without a new cron/Vault binding; failures in one mail stream cannot prevent the others. Existing CONTACT_MAIL_ENABLED, sender routing, templates, receipt verification and LC-09 deletion suppression remain enforced.
 

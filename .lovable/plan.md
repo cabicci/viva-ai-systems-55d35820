@@ -1,13 +1,13 @@
 # Current coordination note — 3 October 2026
 
-The owner has retired the obsolete contact-mail-job path. The sole active
-contact switch is CONTACT_MAIL_DIRECT_ENABLED, used by immediate app delivery
-and retries in the existing account-welcome-job. Do not reinstall the old
-contact cron preparation or its Vault/job-secret binding. The source below is
-historical capability evidence, not current release instructions. The direct
-query_database tool has independently proven postgres and EXECUTE permission
-on Vault create_secret/update_secret; protected matching of the lifecycle token
-remains a separate operation.
+The owner cancelled additional Vault/token setup. Automatic lifecycle processing
+uses the existing protected account-welcome-job schedule and internal server
+permissions. Do not propose or reinstall a separate lifecycle/contact Vault
+binding or cron. Existing account/family/financial handlers and separate switches
+are preserved. The sole contact flag is CONTACT_MAIL_DIRECT_ENABLED; old contact
+resources are retired. Historical capability notes below are not current rollout
+instructions. Exact activation evidence and final acceptance belong to the two
+authoritative registers.
 
 ---
 

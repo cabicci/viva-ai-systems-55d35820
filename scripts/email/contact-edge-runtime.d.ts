@@ -4,14 +4,5 @@ declare const Deno: {
   serve(handler: (request: Request) => Response | Promise<Response>): void;
 };
 declare module "npm:@supabase/supabase-js@2.105.4" {
-  export function createClient(
-    url: string,
-    key: string,
-    options: { auth: { persistSession: boolean; autoRefreshToken: boolean } },
-  ): {
-    rpc(
-      name: string,
-      args?: Record<string, unknown>,
-    ): PromiseLike<{ data: unknown; error: unknown }>;
-  };
+  export const createClient: typeof import("@supabase/supabase-js").createClient;
 }

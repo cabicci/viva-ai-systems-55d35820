@@ -101,6 +101,7 @@ jobs:
           src/lib/__tests__/account-financial-retention.integration.test.ts
           src/lib/__tests__/account-financial-retention-worker.test.ts
           src/lib/__tests__/account-lifecycle-edge.test.ts
+          src/lib/__tests__/account-lifecycle-scheduled.test.ts
           src/lib/__tests__/account-deletion-worker.test.ts
           src/lib/__tests__/kids-checkout-deletion.test.ts
 
