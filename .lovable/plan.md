@@ -1,90 +1,21 @@
-# Current coordination note — 3 October 2026
+# Read-only production status report (no action required)
 
-The owner cancelled additional Vault/token setup. Automatic lifecycle processing
-uses the existing protected account-welcome-job schedule and internal server
-permissions. Do not propose or reinstall a separate lifecycle/contact Vault
-binding or cron. Existing account/family/financial handlers and separate switches
-are preserved. The sole contact flag is CONTACT_MAIL_DIRECT_ENABLED; old contact
-resources are retired. Historical capability notes below are not current rollout
-instructions. Exact activation evidence and final acceptance belong to the two
-authoritative registers.
+Check time: 2026-10-03 21:30:11Z. Nothing was changed or sent.
 
----
+1. Contact mail
+- Queue rows: 2. Receipts: 2.
+- Completed: 2. Blocked: 0. Pending: 0.
+- Rows other than the two accepted test messages: none. No normal automated contact message has come in yet.
 
-# فحص حالة قراءة فقط — بريد التواصل والترحيب
+2. Scheduled welcome worker (masaarat-account-welcome-v1)
+- Run 2336 at 21:30:00Z: succeeded. Response id 2337: HTTP 200.
+- Run 2335 at 21:25:00Z: succeeded. Response id 2336: HTTP 200.
 
-فحص حالة حالي بدون أي تعديل. النتائج:
+3. Accounts
+- Protected owner accounts: 2 of 2 exist.
+- Acceptance accounts (AR d11cd603, EN b08ff00f): 2 of 2 exist.
 
-## الدوال المنشورة (GET بدون مصادقة)
-
-- contact-mail-job: منشورة (405)
-- contact-mail-webhook: منشورة (405)
-- account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
-- account-deletion-job: غير منشورة (404)
-
-## الأعلام والأسرار (أسماء فقط، بدون قيم)
-
-- CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
-- مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
-- RESEND_API_KEY: موجود
-- RESEND_WEBHOOK_SECRET: موجود (ربط التوقيع نجح سابقًا)
-- CONTACT_MAIL_JOB_SECRET: موجود
-- ACCOUNT_WELCOME_JOB_SECRET: موجود
-
-## الجداول المجدولة
-
-- masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
-- لا يوجد أي جدول مجدول لبريد التواصل
-
-## قابلية نشر account-deletion-job
-
-- نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
-
-## لا إجراءات
-
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
-
-## Previous read-only explanation preserved
-
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
-
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
-
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
-
-التسلسل الفعلي من سجل خادم التطوير:
-
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
-
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+4. Webhook secret transfer capability
+- Not available. No supported operation can rotate the Resend signing secret and write it straight into the existing RESEND_WEBHOOK_SECRET.
+- What is missing: a private link from Resend to the existing secret. Today, no Resend connector is linked, rotating the secret shows its value, and the secrets tool can't overwrite a secret name that already exists.
+- The only supported way is for the owner to paste the new value in Project Settings > Secrets.
