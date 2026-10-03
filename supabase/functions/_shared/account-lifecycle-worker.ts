@@ -7,7 +7,7 @@ import {
   type DeletionClaim,
   type FinancialPurgeClaim,
   type StripeTransport,
-} from "../account-deletion-job/handler.ts";
+} from "./account-lifecycle-handler.ts";
 
 export type LifecycleDatabase = {
   rpc(name: string, args: Record<string, unknown>): PromiseLike<{ data: unknown; error: unknown }>;
