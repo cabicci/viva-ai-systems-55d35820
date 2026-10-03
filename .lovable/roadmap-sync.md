@@ -107,3 +107,11 @@ This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
 
 The same activation decision governs direct sends and retries on the existing welcome schedule. Historical receipts above are preserved; production activation evidence remains a separate gate.
+
+## 2026-10-03 — remove obsolete contact delivery path
+
+[roadmap:contact-direct-retirement]
+scope: infra
+source: user
+summary: Owner-requested retirement of unused contact cron preparation, legacy Edge entrypoint and original switch consumption; preserve immediate delivery, existing-worker retries and all receipt/outbox data.
+sync_status: source prepared; platform deletion and runtime acceptance remain separate

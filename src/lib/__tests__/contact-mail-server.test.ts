@@ -29,8 +29,8 @@ const row = {
 };
 beforeEach(() => {
   vi.clearAllMocks();
-  vi.stubEnv("CONTACT_MAIL_ENABLED", "true");
-  vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "false");
+  vi.stubEnv("CONTACT_MAIL_ENABLED", "false");
+  vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "true");
   vi.stubEnv("RESEND_API_KEY", "synthetic-test-only");
   rpc.mockImplementation(async (name) => ({
     error: null,
@@ -63,8 +63,15 @@ describe("server acknowledgement", () => {
       }),
     );
   });
-  it.each(["false", ""])("does nothing when existing switch is %s", async (flag) => {
-    vi.stubEnv("CONTACT_MAIL_ENABLED", flag);
+  it.each(["false", ""])("does nothing when the direct switch is %s", async (flag) => {
+    vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", flag);
+    await queueContactAcknowledgement(input, row.id);
+    expect(rpc).not.toHaveBeenCalled();
+    expect(send).not.toHaveBeenCalled();
+  });
+  it("cannot be reactivated through the retired switch", async () => {
+    vi.stubEnv("CONTACT_MAIL_ENABLED", "true");
+    vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "false");
     await queueContactAcknowledgement(input, row.id);
     expect(rpc).not.toHaveBeenCalled();
     expect(send).not.toHaveBeenCalled();

@@ -12,19 +12,22 @@ The owner authorized immediate server-side sending after accepted contact
 intake. This candidate reuses the existing transport, frozen outbox, receipts
 and account-deletion suppression. It does not require a new contact cron job,
 Vault binding, or replacement sending API key. The existing five-minute
-welcome schedule also retries contact messages when either CONTACT_MAIL_ENABLED
-or the owner-enabled CONTACT_MAIL_DIRECT_ENABLED is exactly true. Welcome/subscription/contact streams report their own outcome; a failed
+welcome schedule also retries contact messages when the owner-enabled
+CONTACT_MAIL_DIRECT_ENABLED is exactly true. Welcome/subscription/contact streams report their own outcome; a failed
 stream cannot prevent another stream running.
 
 Source implementation is separate from deployment and activation evidence.
-The original CONTACT_MAIL_ENABLED setting remains false. On 3 October the owner
-asked Lovable to activate the direct route; Lovable created the new protected
-CONTACT_MAIL_DIRECT_ENABLED=true setting and changed the server gate. Integration
-preserves this work and shares the same decision with the existing retry worker.
-The supported setter still cannot replace existing secret names. Production
-availability of the direct flag and sending key must be proven without printing
-values. Webhook signing-secret rotation/rebinding remains unresolved; the
-verified Resend sending API key is preserved.
+On 3 October the owner asked Lovable to activate the direct route, then explicitly
+asked to remove obsolete remnants. CONTACT_MAIL_DIRECT_ENABLED is the sole
+activation switch for both the app and existing retry worker. The original
+CONTACT_MAIL_ENABLED and CONTACT_MAIL_JOB_SECRET are no longer consumed.
+The obsolete contact-mail-job entrypoint, deployment config and contact cron
+preparation are removed. Production deletion of that endpoint and unused
+protected names must be established through supported platform operations.
+The outbox, claim/completion RPCs, shared worker and receipt webhook are active
+and preserved. No contact-specific Vault binding or cron is required.
+Webhook signing-secret rotation/rebinding remains unresolved; the verified
+Resend sending API key is preserved.
 The owner's execution approvals and cancellation of the backup requirement
 remain effective; no repeated business approval is requested.
 
@@ -53,34 +56,27 @@ absence does not establish that old effective objects were never installed.
 
 ## Coordinated rollout and rollback
 
-1. Merge the reviewed, tested candidate and preserve later Lovable changes.
-   Apply only `20261003070000_contact_immediate_claim.sql`; it requires the
-   installed LC-09 suppression function and exposes the targeted claim only
-   to service_role. Its rollback is dropping that new function after reverting
-   the application; no existing data or migrations are removed.
-2. Deploy the matching `account-welcome-job` (and preserved `contact-mail-job`
-   shared helper) with the existing contact switch disabled, then publish the
-   application. Verify the current five-minute welcome schedule still calls
-   its existing protected endpoint successfully. Do not change that schedule,
-   its dedicated token, or its Vault binding. The old contact schedule SQL is
-   retained as historical preparation and must not be installed for this route.
-3. Resolve the existing protected webhook signing-secret rotation/rebinding
-   gate without exposing values. Preserve its six event types and verified
-   sending domain with tracking disabled. This does not replace RESEND_API_KEY.
-4. Preserve the owner-enabled server/Edge `CONTACT_MAIL_DIRECT_ENABLED=true`.
-   Deploy the worker with the shared activation decision and publish the tested
-   application. Confirm both runtimes see the decision and that the application
-   server has the existing sending key. Do not claim activation while runtime
-   availability remains unverified. The original CONTACT_MAIL_ENABLED stays false.
-5. Verify normal accepted intake triggers the targeted first attempt and the
-   already running worker can retry deferred rows. Reuse prior inbox/receipt
-   transport evidence; do not recreate accepted historical tests. Source tests
-   cover the changed failure, retry, isolation and deletion paths. A real new
-   intake can establish changed production behavior under the existing bounded
-   send authorization; visual acceptance remains a separate final-round item.
-6. Disable both contact flags in both runtimes to roll back sending, preserving
-   outbox/receipt records. Revert the candidate worker/application if needed.
-   **Do not unschedule the welcome job**: it serves welcome/subscription mail.
+1. Merge only after current-head CI and LC09 pass. Preserve the owner's new
+   direct flag and reviewed package alignment. All migrations are already
+   applied; do not replay either the original SQL or platform receipts.
+2. Deploy the matching existing account-welcome-job and publish the application.
+   Confirm CONTACT_MAIL_DIRECT_ENABLED and sending credentials in the runtimes
+   without exposing values. Verify the existing five-minute welcome schedule
+   reports an enabled contact stream. Do not change its protected endpoint,
+   dedicated token or Vault binding; it also serves welcome/subscription mail.
+3. Remove the obsolete deployed contact-mail-job and only its unused contact
+   settings through supported platform operations. Verify no contact-specific
+   cron or Vault name exists. Preserve all live mail tables and RPCs.
+4. Complete the separate signing-secret rotation/rebinding using protected
+   configuration; keep the webhook's six event types and tracking disabled.
+5. Reuse the accepted original transport evidence. Establish the changed normal
+   intake path from actual production evidence without repeating those tests.
+   Source tests cover failure, retry, isolation and account-deletion suppression.
+6. Rollback sending by setting CONTACT_MAIL_DIRECT_ENABLED=false in both
+   runtimes through supported protected configuration. If that capability is
+   unavailable, revert the app and retry worker to their disabled release.
+   Preserve the outbox/receipts and welcome schedule. Restoring the obsolete
+   contact endpoint or setting the retired flag cannot activate this route.
 
 The accepted request first queues immutable content, then claims only its own
 outbox ID and awaits a bounded Resend attempt (transport timeout: ten seconds).
@@ -93,7 +89,7 @@ Claims are limited to five, leased for five minutes, and use a stable provider k
 
 HubSpot is an external system: its acceptance and local enqueue are not atomic. Enqueue failure leaves the accepted contact successful and emits a payload-free operational error, preventing a duplicate submission prompt. Such failures need operational reconciliation; this is not a durable intake replacement or an exactly-once HubSpot guarantee. ID deduplication applies to a queued accepted request, not separate new form submissions.
 
-Outbox rows contain personal email data and service content, restricted to service_role. Apply the existing operational retention policy; no automatic deletion schedule is installed here. Rollback disables both contact switches in both runtimes, preserving the welcome schedule and rows for reconciliation. No production migration, schedule, provider configuration or email send occurs from source preparation or CI.
+Outbox rows contain personal email data and service content, restricted to service_role. Apply the existing operational retention policy; no automatic deletion schedule is installed here. Rollback disables the direct switch in both runtimes, preserving the welcome schedule and rows for reconciliation. No production migration, schedule, provider configuration or email send occurs from source preparation or CI.
 
 ## Direct activation reconciliation — 3 October 2026
 
@@ -104,3 +100,9 @@ changes and the updated lock, restores prior roadmap history, and closes the
 missing retry activation. No original migration or accepted transport test is
 replayed. Publication and scheduled-worker receipts will be recorded after
 current-head CI gates pass.
+
+## Owner-requested retirement — 3 October 2026
+
+Only unused contact infrastructure is retired. Applied migration history and
+accepted delivery evidence remain traceable. Auth/welcome/subscription mail,
+Resend transport and financial lifecycle schedules are independent and retained.

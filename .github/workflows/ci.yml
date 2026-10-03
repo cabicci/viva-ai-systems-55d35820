@@ -73,7 +73,6 @@ jobs:
           bunx tsc --noEmit --strict --target ES2022 --module ESNext
           --moduleResolution bundler --lib ES2022,DOM --skipLibCheck
           --allowImportingTsExtensions scripts/email/contact-edge-runtime.d.ts
-          supabase/functions/contact-mail-job/index.ts
           supabase/functions/contact-mail-webhook/index.ts
           supabase/functions/account-welcome-job/index.ts
 

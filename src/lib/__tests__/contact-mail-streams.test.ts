@@ -7,14 +7,14 @@ describe("independent welcome, subscription and contact processing", () => {
     const retry = vi.fn().mockResolvedValue({ accepted: 1, deferred: 0 });
     const result = await runMailStreams({
       welcome: null,
-      contact: contactMailEnabled("false", "true") ? retry : null,
+      contact: contactMailEnabled("true") ? retry : null,
     });
     expect(retry).toHaveBeenCalledTimes(1);
     expect(result.body.contact).toEqual({ accepted: 1, deferred: 0 });
   });
   it.each([undefined, "", "false", "TRUE", "1"])(
     "does not activate either runtime for an absent or invalid direct flag: %s",
-    (direct) => expect(contactMailEnabled("false", direct)).toBe(false),
+    (direct) => expect(contactMailEnabled(direct)).toBe(false),
   );
   it("runs contact retries despite another stream failing, and reports partial failure", async () => {
     const contact = vi.fn().mockResolvedValue({ accepted: 1, deferred: 0 });

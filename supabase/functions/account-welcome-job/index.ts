@@ -10,10 +10,7 @@ Deno.serve(async (request) => {
     return new Response(null, { status: 401 });
   const welcomeEnabled = Deno.env.get("ACCOUNT_WELCOME_ENABLED") === "true";
   const subscriptionEnabled = Deno.env.get("SUBSCRIPTION_MAIL_ENABLED") === "true";
-  const contactEnabled = contactMailEnabled(
-    Deno.env.get("CONTACT_MAIL_ENABLED"),
-    Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"),
-  );
+  const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
   if (!welcomeEnabled && !subscriptionEnabled && !contactEnabled)
     return Response.json({ enabled: false });
   const apiKey = Deno.env.get("RESEND_API_KEY");

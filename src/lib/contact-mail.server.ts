@@ -6,10 +6,7 @@ import type { ContactFormInput } from "./contact-form";
 import { contactMailEnabled } from "../../supabase/functions/_shared/contact-mail-enabled";
 /** Called only after CAPTCHA, rate limit and HubSpot acceptance. */
 export async function queueContactAcknowledgement(input: ContactFormInput, id: string) {
-  if (
-    !contactMailEnabled(process.env.CONTACT_MAIL_ENABLED, process.env.CONTACT_MAIL_DIRECT_ENABLED)
-  )
-    return;
+  if (!contactMailEnabled(process.env.CONTACT_MAIL_DIRECT_ENABLED)) return;
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const profile = await resolveSignupProfile(input.email, async (email) => {
     const result = await supabaseAdmin.rpc(
