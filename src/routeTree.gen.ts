@@ -10,146 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SystemStateRouteImport } from './routes/system-state'
-import { Route as StartRouteImport } from './routes/start'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as ResetPasswordRouteImport } from './routes/reset-password'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as OnboardingRouteImport } from './routes/onboarding'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as KidsRouteImport } from './routes/kids'
-import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
-import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as CurriculumRouteImport } from './routes/curriculum'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BuildLogsRouteImport } from './routes/build-logs'
-import { Route as AssistantRuntimeRouteImport } from './routes/assistant-runtime'
-import { Route as AnalyticsRouteImport } from './routes/analytics'
-import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
-import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
-import { Route as KidsIndexRouteImport } from './routes/kids.index'
-import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AssistantRuntimeRouteImport } from './routes/assistant-runtime'
+import { Route as BuildLogsRouteImport } from './routes/build-logs'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CurriculumRouteImport } from './routes/curriculum'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
+import { Route as KidsRouteImport } from './routes/kids'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StartRouteImport } from './routes/start'
+import { Route as SystemStateRouteImport } from './routes/system-state'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
-import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
-import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
-import { Route as KidsFamilyRouteImport } from './routes/kids.family'
-import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
-import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
+import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
+import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
+import { Route as KidsIndexRouteImport } from './routes/kids.index'
+import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
+import { Route as KidsFamilyRouteImport } from './routes/kids.family'
+import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
+import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
+import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
-import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
-import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
   path: '/index',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SystemStateRoute = SystemStateRouteImport.update({
-  id: '/system-state',
-  path: '/system-state',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StartRoute = StartRouteImport.update({
-  id: '/start',
-  path: '/start',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResetPasswordRoute = ResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OnboardingRoute = OnboardingRouteImport.update({
-  id: '/onboarding',
-  path: '/onboarding',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KidsRoute = KidsRouteImport.update({
-  id: '/kids',
-  path: '/kids',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImageGalleryRoute = ImageGalleryRouteImport.update({
-  id: '/image-gallery',
-  path: '/image-gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
-  id: '/forgot-password',
-  path: '/forgot-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CurriculumRoute = CurriculumRouteImport.update({
-  id: '/curriculum',
-  path: '/curriculum',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BuildLogsRoute = BuildLogsRouteImport.update({
-  id: '/build-logs',
-  path: '/build-logs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AssistantRuntimeRoute = AssistantRuntimeRouteImport.update({
-  id: '/assistant-runtime',
-  path: '/assistant-runtime',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AnalyticsRoute = AnalyticsRouteImport.update({
-  id: '/analytics',
-  path: '/analytics',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiAssistantRoute = AiAssistantRouteImport.update({
-  id: '/ai-assistant',
-  path: '/ai-assistant',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AccountRoute = AccountRouteImport.update({
-  id: '/account',
-  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -157,39 +57,129 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RoadmapIndexRoute = RoadmapIndexRouteImport.update({
-  id: '/roadmap/',
-  path: '/roadmap/',
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KidsIndexRoute = KidsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => KidsRoute,
+const AiAssistantRoute = AiAssistantRouteImport.update({
+  id: '/ai-assistant',
+  path: '/ai-assistant',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ImageGalleryRoute,
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistantRuntimeRoute = AssistantRuntimeRouteImport.update({
+  id: '/assistant-runtime',
+  path: '/assistant-runtime',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildLogsRoute = BuildLogsRouteImport.update({
+  id: '/build-logs',
+  path: '/build-logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurriculumRoute = CurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImageGalleryRoute = ImageGalleryRouteImport.update({
+  id: '/image-gallery',
+  path: '/image-gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsRoute = KidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartRoute = StartRouteImport.update({
+  id: '/start',
+  path: '/start',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemStateRoute = SystemStateRouteImport.update({
+  id: '/system-state',
+  path: '/system-state',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RoadmapIdRoute = RoadmapIdRouteImport.update({
-  id: '/roadmap/$id',
-  path: '/roadmap/$id',
+const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
+  id: '/admin/kids-parents',
+  path: '/admin/kids-parents',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KidsPrivacyRoute = KidsPrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => KidsRoute,
+const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ImageGalleryRoute,
 } as any)
-const KidsFamilyRoute = KidsFamilyRouteImport.update({
-  id: '/family',
-  path: '/family',
+const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
+  id: '/$path',
+  path: '/$path',
+  getParentRoute: () => ImageGalleryRoute,
+} as any)
+const KidsIndexRoute = KidsIndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => KidsRoute,
 } as any)
 const KidsLevelIdRoute = KidsLevelIdRouteImport.update({
@@ -197,14 +187,24 @@ const KidsLevelIdRoute = KidsLevelIdRouteImport.update({
   path: '/$levelId',
   getParentRoute: () => KidsRoute,
 } as any)
-const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
-  id: '/$path',
-  path: '/$path',
-  getParentRoute: () => ImageGalleryRoute,
+const KidsFamilyRoute = KidsFamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => KidsRoute,
 } as any)
-const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
-  id: '/admin/kids-parents',
-  path: '/admin/kids-parents',
+const KidsPrivacyRoute = KidsPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => KidsRoute,
+} as any)
+const RoadmapIndexRoute = RoadmapIndexRouteImport.update({
+  id: '/roadmap/',
+  path: '/roadmap/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapIdRoute = RoadmapIdRouteImport.update({
+  id: '/roadmap/$id',
+  path: '/roadmap/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
@@ -212,24 +212,24 @@ const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   path: '/',
   getParentRoute: () => KidsLevelIdRoute,
 } as any)
-const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
-  id: '/learn/$pathId/$lessonId',
-  path: '/learn/$pathId/$lessonId',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KidsLevelIdLessonNumberRoute = KidsLevelIdLessonNumberRouteImport.update({
   id: '/$lessonNumber',
   path: '/$lessonNumber',
   getParentRoute: () => KidsLevelIdRoute,
 } as any)
-const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
-  id: '/lovable/email/auth/webhook',
-  path: '/lovable/email/auth/webhook',
+const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
+  id: '/learn/$pathId/$lessonId',
+  path: '/learn/$pathId/$lessonId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
   id: '/lovable/email/auth/preview',
   path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -506,137 +506,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char91indexChar93RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/system-state': {
-      id: '/system-state'
-      path: '/system-state'
-      fullPath: '/system-state'
-      preLoaderRoute: typeof SystemStateRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/start': {
-      id: '/start'
-      path: '/start'
-      fullPath: '/start'
-      preLoaderRoute: typeof StartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reset-password': {
-      id: '/reset-password'
-      path: '/reset-password'
-      fullPath: '/reset-password'
-      preLoaderRoute: typeof ResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/onboarding': {
-      id: '/onboarding'
-      path: '/onboarding'
-      fullPath: '/onboarding'
-      preLoaderRoute: typeof OnboardingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kids': {
-      id: '/kids'
-      path: '/kids'
-      fullPath: '/kids'
-      preLoaderRoute: typeof KidsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/image-gallery': {
-      id: '/image-gallery'
-      path: '/image-gallery'
-      fullPath: '/image-gallery'
-      preLoaderRoute: typeof ImageGalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/forgot-password': {
-      id: '/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/forgot-password'
-      preLoaderRoute: typeof ForgotPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/curriculum': {
-      id: '/curriculum'
-      path: '/curriculum'
-      fullPath: '/curriculum'
-      preLoaderRoute: typeof CurriculumRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/build-logs': {
-      id: '/build-logs'
-      path: '/build-logs'
-      fullPath: '/build-logs'
-      preLoaderRoute: typeof BuildLogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/assistant-runtime': {
-      id: '/assistant-runtime'
-      path: '/assistant-runtime'
-      fullPath: '/assistant-runtime'
-      preLoaderRoute: typeof AssistantRuntimeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/analytics': {
-      id: '/analytics'
-      path: '/analytics'
-      fullPath: '/analytics'
-      preLoaderRoute: typeof AnalyticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-assistant': {
-      id: '/ai-assistant'
-      path: '/ai-assistant'
-      fullPath: '/ai-assistant'
-      preLoaderRoute: typeof AiAssistantRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account': {
@@ -646,33 +520,138 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/ai-assistant': {
+      id: '/ai-assistant'
+      path: '/ai-assistant'
+      fullPath: '/ai-assistant'
+      preLoaderRoute: typeof AiAssistantRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/roadmap/': {
-      id: '/roadmap/'
-      path: '/roadmap'
-      fullPath: '/roadmap/'
-      preLoaderRoute: typeof RoadmapIndexRouteImport
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/kids/': {
-      id: '/kids/'
-      path: '/'
-      fullPath: '/kids/'
-      preLoaderRoute: typeof KidsIndexRouteImport
-      parentRoute: typeof KidsRoute
+    '/assistant-runtime': {
+      id: '/assistant-runtime'
+      path: '/assistant-runtime'
+      fullPath: '/assistant-runtime'
+      preLoaderRoute: typeof AssistantRuntimeRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/image-gallery/': {
-      id: '/image-gallery/'
-      path: '/'
-      fullPath: '/image-gallery/'
-      preLoaderRoute: typeof ImageGalleryIndexRouteImport
-      parentRoute: typeof ImageGalleryRoute
+    '/build-logs': {
+      id: '/build-logs'
+      path: '/build-logs'
+      fullPath: '/build-logs'
+      preLoaderRoute: typeof BuildLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/curriculum': {
+      id: '/curriculum'
+      path: '/curriculum'
+      fullPath: '/curriculum'
+      preLoaderRoute: typeof CurriculumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/image-gallery': {
+      id: '/image-gallery'
+      path: '/image-gallery'
+      fullPath: '/image-gallery'
+      preLoaderRoute: typeof ImageGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids': {
+      id: '/kids'
+      path: '/kids'
+      fullPath: '/kids'
+      preLoaderRoute: typeof KidsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/start': {
+      id: '/start'
+      path: '/start'
+      fullPath: '/start'
+      preLoaderRoute: typeof StartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system-state': {
+      id: '/system-state'
+      path: '/system-state'
+      fullPath: '/system-state'
+      preLoaderRoute: typeof SystemStateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/admin/': {
       id: '/admin/'
@@ -681,25 +660,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/roadmap/$id': {
-      id: '/roadmap/$id'
-      path: '/roadmap/$id'
-      fullPath: '/roadmap/$id'
-      preLoaderRoute: typeof RoadmapIdRouteImport
+    '/admin/kids-parents': {
+      id: '/admin/kids-parents'
+      path: '/admin/kids-parents'
+      fullPath: '/admin/kids-parents'
+      preLoaderRoute: typeof AdminKidsParentsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/kids/privacy': {
-      id: '/kids/privacy'
-      path: '/privacy'
-      fullPath: '/kids/privacy'
-      preLoaderRoute: typeof KidsPrivacyRouteImport
-      parentRoute: typeof KidsRoute
+    '/image-gallery/': {
+      id: '/image-gallery/'
+      path: '/'
+      fullPath: '/image-gallery/'
+      preLoaderRoute: typeof ImageGalleryIndexRouteImport
+      parentRoute: typeof ImageGalleryRoute
     }
-    '/kids/family': {
-      id: '/kids/family'
-      path: '/family'
-      fullPath: '/kids/family'
-      preLoaderRoute: typeof KidsFamilyRouteImport
+    '/image-gallery/$path': {
+      id: '/image-gallery/$path'
+      path: '/$path'
+      fullPath: '/image-gallery/$path'
+      preLoaderRoute: typeof ImageGalleryPathRouteImport
+      parentRoute: typeof ImageGalleryRoute
+    }
+    '/kids/': {
+      id: '/kids/'
+      path: '/'
+      fullPath: '/kids/'
+      preLoaderRoute: typeof KidsIndexRouteImport
       parentRoute: typeof KidsRoute
     }
     '/kids/$levelId': {
@@ -709,18 +695,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdRouteImport
       parentRoute: typeof KidsRoute
     }
-    '/image-gallery/$path': {
-      id: '/image-gallery/$path'
-      path: '/$path'
-      fullPath: '/image-gallery/$path'
-      preLoaderRoute: typeof ImageGalleryPathRouteImport
-      parentRoute: typeof ImageGalleryRoute
+    '/kids/family': {
+      id: '/kids/family'
+      path: '/family'
+      fullPath: '/kids/family'
+      preLoaderRoute: typeof KidsFamilyRouteImport
+      parentRoute: typeof KidsRoute
     }
-    '/admin/kids-parents': {
-      id: '/admin/kids-parents'
-      path: '/admin/kids-parents'
-      fullPath: '/admin/kids-parents'
-      preLoaderRoute: typeof AdminKidsParentsRouteImport
+    '/kids/privacy': {
+      id: '/kids/privacy'
+      path: '/privacy'
+      fullPath: '/kids/privacy'
+      preLoaderRoute: typeof KidsPrivacyRouteImport
+      parentRoute: typeof KidsRoute
+    }
+    '/roadmap/': {
+      id: '/roadmap/'
+      path: '/roadmap'
+      fullPath: '/roadmap/'
+      preLoaderRoute: typeof RoadmapIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap/$id': {
+      id: '/roadmap/$id'
+      path: '/roadmap/$id'
+      fullPath: '/roadmap/$id'
+      preLoaderRoute: typeof RoadmapIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kids/$levelId/': {
@@ -730,13 +730,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdIndexRouteImport
       parentRoute: typeof KidsLevelIdRoute
     }
-    '/learn/$pathId/$lessonId': {
-      id: '/learn/$pathId/$lessonId'
-      path: '/learn/$pathId/$lessonId'
-      fullPath: '/learn/$pathId/$lessonId'
-      preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/kids/$levelId/$lessonNumber': {
       id: '/kids/$levelId/$lessonNumber'
       path: '/$lessonNumber'
@@ -744,11 +737,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdLessonNumberRouteImport
       parentRoute: typeof KidsLevelIdRoute
     }
-    '/lovable/email/auth/webhook': {
-      id: '/lovable/email/auth/webhook'
-      path: '/lovable/email/auth/webhook'
-      fullPath: '/lovable/email/auth/webhook'
-      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
+    '/learn/$pathId/$lessonId': {
+      id: '/learn/$pathId/$lessonId'
+      path: '/learn/$pathId/$lessonId'
+      fullPath: '/learn/$pathId/$lessonId'
+      preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lovable/email/auth/preview': {
@@ -756,6 +749,13 @@ declare module '@tanstack/react-router' {
       path: '/lovable/email/auth/preview'
       fullPath: '/lovable/email/auth/preview'
       preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/webhook': {
+      id: '/lovable/email/auth/webhook'
+      path: '/lovable/email/auth/webhook'
+      fullPath: '/lovable/email/auth/webhook'
+      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
