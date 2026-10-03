@@ -1,14 +1,29 @@
+# Current coordination note — 3 October 2026
+
+The owner has retired the obsolete contact-mail-job path. The sole active
+contact switch is CONTACT_MAIL_DIRECT_ENABLED, used by immediate app delivery
+and retries in the existing account-welcome-job. Do not reinstall the old
+contact cron preparation or its Vault/job-secret binding. The source below is
+historical capability evidence, not current release instructions. The direct
+query_database tool has independently proven postgres and EXECUTE permission
+on Vault create_secret/update_secret; protected matching of the lifecycle token
+remains a separate operation.
+
+---
+
 # فحص حالة قراءة فقط — بريد التواصل والترحيب
 
 فحص حالة حالي بدون أي تعديل. النتائج:
 
 ## الدوال المنشورة (GET بدون مصادقة)
+
 - contact-mail-job: منشورة (405)
 - contact-mail-webhook: منشورة (405)
 - account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
 - account-deletion-job: غير منشورة (404)
 
 ## الأعلام والأسرار (أسماء فقط، بدون قيم)
+
 - CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
 - مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
 - RESEND_API_KEY: موجود
@@ -17,15 +32,17 @@
 - ACCOUNT_WELCOME_JOB_SECRET: موجود
 
 ## الجداول المجدولة
+
 - masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
 - لا يوجد أي جدول مجدول لبريد التواصل
 
 ## قابلية نشر account-deletion-job
+
 - نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
 
 ## لا إجراءات
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
 
+لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
 
 ## Previous read-only explanation preserved
 
@@ -58,6 +75,7 @@
 ## متى ترجع البطء تاني
 
 أي حاجة تمسح أو تبطّل الكاش:
+
 - إعادة تشغيل بيئة البريفيو أو الخادم
 - تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
 - تثبيت أو تحديث أي حزمة

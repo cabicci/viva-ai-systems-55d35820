@@ -30,6 +30,7 @@ The automatic Billing gate found one stale adult-quota inventory assertion.
 The review correction scopes that assertion to adult migrations; the complete
 cumulative inventory remains checked separately. One corrected-head run is
 pending. Kids runtime and payment behavior are unchanged.
+
 ## 2026-09-30 — release evidence inventory
 
 [roadmap:billing-validation-evidence]
@@ -62,7 +63,6 @@ source: user
 summary: Record the accepted CI/Billing heads, ordinary merge, scoped live deployment-ID responses and current governance requirements while preserving the separate final manual gates.
 sync_status: documentation only; no new deployment, database or runtime change
 
-
 ## 2026-10-01 — account and family deletion
 
 [roadmap:account-deletion-review]
@@ -94,3 +94,24 @@ scope: infra
 source: user
 summary: Reconcile Lovable's already-applied targeted-claim migration artifact, generated types and migration-tool dependencies after PR128 deployment; update the lock without reapplying SQL.
 sync_status: platform function deployed with contact disabled; application publication and activation remain separate
+
+## 2026-10-03 — owner-enabled direct route integration
+
+[roadmap:d50a17d1-6185-4015-9798-d2d79b3035d3]
+date: 2026-10-03
+scope: other
+source: user
+summary: [scope:infra] contact confirmation emails now send at form submit via CONTACT_MAIL_DIRECT_ENABLED, no cron/Vault
+
+This file is updated after the matching roadmap_items row is updated.
+The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
+
+The same activation decision governs direct sends and retries on the existing welcome schedule. Historical receipts above are preserved; production activation evidence remains a separate gate.
+
+## 2026-10-03 — remove obsolete contact delivery path
+
+[roadmap:contact-direct-retirement]
+scope: infra
+source: user
+summary: Owner-requested retirement of unused contact cron preparation, legacy Edge entrypoint and original switch consumption; preserve immediate delivery, existing-worker retries and all receipt/outbox data.
+sync_status: source prepared; platform deletion and runtime acceptance remain separate

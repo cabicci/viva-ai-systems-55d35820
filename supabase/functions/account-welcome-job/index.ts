@@ -1,6 +1,7 @@
 import { createClient } from "npm:@supabase/supabase-js@2.105.4";
 import { sendTransactionalEmail } from "../_shared/resend.ts";
 import { runContactMailJob } from "../_shared/contact-mail-worker.ts";
+import { contactMailEnabled } from "../_shared/contact-mail-enabled.ts";
 import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
 Deno.serve(async (request) => {
@@ -9,7 +10,7 @@ Deno.serve(async (request) => {
     return new Response(null, { status: 401 });
   const welcomeEnabled = Deno.env.get("ACCOUNT_WELCOME_ENABLED") === "true";
   const subscriptionEnabled = Deno.env.get("SUBSCRIPTION_MAIL_ENABLED") === "true";
-  const contactEnabled = Deno.env.get("CONTACT_MAIL_ENABLED") === "true";
+  const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
   if (!welcomeEnabled && !subscriptionEnabled && !contactEnabled)
     return Response.json({ enabled: false });
   const apiKey = Deno.env.get("RESEND_API_KEY");

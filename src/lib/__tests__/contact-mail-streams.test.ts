@@ -1,7 +1,21 @@
 import { describe, expect, it, vi } from "vitest";
 import { runMailStreams } from "../../../supabase/functions/account-welcome-job/streams";
+import { contactMailEnabled } from "../../../supabase/functions/_shared/contact-mail-enabled";
 
 describe("independent welcome, subscription and contact processing", () => {
+  it("retries the direct route even while the original switch is disabled", async () => {
+    const retry = vi.fn().mockResolvedValue({ accepted: 1, deferred: 0 });
+    const result = await runMailStreams({
+      welcome: null,
+      contact: contactMailEnabled("true") ? retry : null,
+    });
+    expect(retry).toHaveBeenCalledTimes(1);
+    expect(result.body.contact).toEqual({ accepted: 1, deferred: 0 });
+  });
+  it.each([undefined, "", "false", "TRUE", "1"])(
+    "does not activate either runtime for an absent or invalid direct flag: %s",
+    (direct) => expect(contactMailEnabled(direct)).toBe(false),
+  );
   it("runs contact retries despite another stream failing, and reports partial failure", async () => {
     const contact = vi.fn().mockResolvedValue({ accepted: 1, deferred: 0 });
     expect(
