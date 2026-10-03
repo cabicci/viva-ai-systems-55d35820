@@ -47,7 +47,11 @@ def _req(method: str, url: str, *, body: bytes | None = None, ctype: str | None 
 
 
 def create_video(title: str) -> str:
-    raw = _req("POST", BASE, body=json.dumps({"title": title}).encode(), ctype="application/json")
+    payload = {"title": title}
+    collection_id = os.environ.get("BUNNY_COLLECTION_ID")
+    if collection_id:
+        payload["collectionId"] = collection_id
+    raw = _req("POST", BASE, body=json.dumps(payload).encode(), ctype="application/json")
     data = json.loads(raw.decode())
     guid = data.get("guid")
     if not guid:
@@ -72,6 +76,9 @@ def verify_playable(guid: str) -> str:
     """Fetch video metadata; return playback iframe URL."""
     raw = _req("GET", f"{BASE}/{guid}")
     meta = json.loads(raw.decode())
+    collection_id = os.environ.get("BUNNY_COLLECTION_ID")
+    if collection_id and meta.get("collectionId") != collection_id:
+        raise RuntimeError("Uploaded video is not in the requested Bunny collection")
     status = meta.get("status")
     sys.stderr.write(f"[bunny] guid={guid} status={status} length={meta.get('length')}\n")
     return f"https://iframe.mediadelivery.net/embed/{LIBRARY_ID}/{guid}?autoplay=false&preload=true"

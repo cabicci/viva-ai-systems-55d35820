@@ -153,5 +153,5 @@ sync_status: source prepared; platform deletion and runtime acceptance remain se
 [roadmap:furniture-pilot-temporary-branch]
 scope: lessons
 source: user
-summary: Original cabinet-planning lesson on experiment/furniture-pilot-20261003 with four locale views, exact drawings, calculator, quiz, practice and printable assets. Realistic video/provider connection and grounded generative assistant are still pending.
+summary: Owner revised the temporary furniture lesson to Egyptian colloquial Arabic and English only. Calculated assembly animation reuses existing Remotion, Gemini TTS, lesson-video Actions and Bunny pipeline; hosted/narrated acceptance and grounded generative assistant remain pending. A silent Higgsfield comparison sample completed; no further photorealistic shots planned.
 sync_status: temporary branch only; no roadmap_items database update, entitlement change, production activation or deployment claimed

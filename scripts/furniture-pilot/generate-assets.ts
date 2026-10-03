@@ -8,7 +8,7 @@ import { splitTechnicalText } from "../../src/lib/furniture-pilot/technical-text
 import type { SupportedLocale } from "../../src/lib/locale/types";
 
 const output = path.resolve("public/experiments/furniture-pilot");
-const locales: SupportedLocale[] = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
+const locales: SupportedLocale[] = ["ar-EG", "en"];
 const escape = (value: string | number) =>
   String(value).replace(
     /[&<>"]/g,

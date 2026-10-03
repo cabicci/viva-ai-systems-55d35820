@@ -1,15 +1,20 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { FurniturePilotLesson } from "./FurniturePilotLesson";
-import { getPilotCopy } from "@/lib/furniture-pilot/content";
+import { getPilotCopy, resolvePilotLocale } from "@/lib/furniture-pilot/content";
+import { getBunnyEmbedUrlForLocale } from "@/lib/bunny-videos";
 import type { SupportedLocale } from "@/lib/locale/types";
 
-afterEach(cleanup);
+vi.mock("@/lib/bunny-videos", () => ({ getBunnyEmbedUrlForLocale: vi.fn() }));
+afterEach(() => {
+  cleanup();
+  vi.mocked(getBunnyEmbedUrlForLocale).mockReset();
+});
 const open = (name: string) => fireEvent.click(screen.getByRole("button", { name }));
 
 describe("furniture pilot interaction", () => {
   it.each<SupportedLocale>(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
-    "renders %s without claiming generated media or reviewed competence",
+    "renders %s using only the two authored language assets with pending Bunny delivery",
     (locale) => {
       const copy = getPilotCopy(locale);
       render(<FurniturePilotLesson locale={locale} />);
@@ -17,11 +22,11 @@ describe("furniture pilot interaction", () => {
       expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(copy.title);
       open(copy.labels.video);
       expect(screen.getByText(copy.labels.videoPending)).toBeVisible();
-      expect(document.querySelector("video")).toBeNull();
+      expect(document.querySelector("video, iframe")).toBeNull();
       open(copy.labels.downloads);
       expect(screen.getByRole("link", { name: copy.labels.downloadPack })).toHaveAttribute(
         "href",
-        `/experiments/furniture-pilot/${locale}/workbook.pdf`,
+        `/experiments/furniture-pilot/${resolvePilotLocale(locale)}/workbook.pdf`,
       );
       open(copy.labels.assistant);
       expect(screen.getByText(copy.labels.guideNote)).toBeVisible();
@@ -29,6 +34,19 @@ describe("furniture pilot interaction", () => {
       expect(screen.getByRole("status")).toHaveTextContent(copy.faq[0].answer);
     },
   );
+
+  it.each<SupportedLocale>(["ar-EG", "en"])("uses the existing Bunny player for %s", (locale) => {
+    const url =
+      "https://iframe.mediadelivery.net/embed/670679/pilot-guid?autoplay=false&preload=true";
+    vi.mocked(getBunnyEmbedUrlForLocale).mockReturnValue(url);
+    render(<FurniturePilotLesson locale={locale} />);
+    const copy = getPilotCopy(locale);
+    open(copy.labels.video);
+    expect(getBunnyEmbedUrlForLocale).toHaveBeenCalledWith("furniture-m1-cut-list", locale);
+    expect(screen.getByTitle(copy.labels.video)).toHaveAttribute("src", url);
+    expect(screen.queryByText(copy.labels.videoPending)).toBeNull();
+    expect(screen.getByText(copy.labels.videoReady)).toBeVisible();
+  });
 
   it("reports invalid geometry, then restores the sample", () => {
     render(<FurniturePilotLesson locale="en" />);

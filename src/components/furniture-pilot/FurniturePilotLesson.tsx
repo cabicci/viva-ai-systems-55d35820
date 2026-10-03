@@ -3,10 +3,12 @@ import { Download, FileCheck2, Ruler, BookOpen, PlayCircle, MessageCircle } from
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import type { SupportedLocale } from "@/lib/locale/types";
-import { getPilotCopy } from "@/lib/furniture-pilot/content";
+import { getPilotCopy, resolvePilotLocale } from "@/lib/furniture-pilot/content";
+import { getBunnyEmbedUrlForLocale } from "@/lib/bunny-videos";
 import { splitTechnicalText } from "@/lib/furniture-pilot/technical-text";
 import {
   SAMPLE,
+  PILOT_ID,
   calculateCabinet,
   gradeQuiz,
   checkAssignment,
@@ -45,7 +47,9 @@ const sections: SectionId[] = [
   "assistant",
 ];
 
-export function FurniturePilotLesson({ locale }: { locale: SupportedLocale }) {
+export function FurniturePilotLesson({ locale: requestedLocale }: { locale: SupportedLocale }) {
+  const locale = resolvePilotLocale(requestedLocale);
+  const bunnyEmbed = getBunnyEmbedUrlForLocale(PILOT_ID, locale);
   const copy = getPilotCopy(locale);
   const c = copy.labels;
   const [tab, setTab] = useState<SectionId>("reading");
@@ -228,8 +232,20 @@ export function FurniturePilotLesson({ locale }: { locale: SupportedLocale }) {
 
           {tab === "video" && (
             <div className="space-y-5">
+              {bunnyEmbed && (
+                <div className="relative aspect-video overflow-hidden rounded-2xl bg-black">
+                  <iframe
+                    src={bunnyEmbed}
+                    title={c.video}
+                    loading="lazy"
+                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
+              )}
               <div className="rounded-2xl border border-primary/20 bg-accent/20 p-6">
-                <h3 className="text-xl font-bold">{c.videoPending}</h3>
+                <h3 className="text-xl font-bold">{bunnyEmbed ? c.videoReady : c.videoPending}</h3>
                 <p className="mt-3 leading-8">{c.videoNote}</p>
               </div>
               <ol className="list-decimal space-y-4 ps-6">

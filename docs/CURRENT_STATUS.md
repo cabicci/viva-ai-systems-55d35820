@@ -1,8 +1,12 @@
+## 2026-10-04 — Furniture pilot: reuse Remotion and Bunny
+
+The owner revised the trial to Egyptian colloquial Arabic and English only, and requested the established Remotion → narration → GitHub Actions → Bunny path to avoid duplicated work and further photorealistic generation cost. The temporary branch now includes a calculated six-panel placement animation and reuses the existing Gemini TTS profiles, lesson-video workflow, Bunny uploader/readiness verification, registry and playback convention. The owner also requested one new Bunny folder named «مسارات التعليم الفني»; the job resolves or creates this collection once and uploads both languages into it. Source/render validation is separate from the pending Actions narration/Bunny acceptance. One silent Higgsfield comparison sample completed; no further Higgsfield shots are planned. No main merge, deployment, catalogue/entitlement changes or completed generative-assistant/human-assessment claim. Details: `docs/experiments/furniture-pilot.md`.
+
 ## 2026-10-03 — Furniture teaching experiment (temporary branch only)
 
 The owner requested one furniture technical-education trial on `experiment/furniture-pilot-20261003`. This branch adds only `/experiments/furniture-pilot` with the existing shell and four locales: original cabinet-planning geometry, reading, SVG drawings, panel calculator, quiz, arithmetic practice, review/cost workbook and fixed reference FAQ. It is outside the six canonical adult paths and does not change catalogue IDs,100/71/29 entitlement counts, Stripe TEST, accounts, database, existing lesson videos or production. Local validation evidence is recorded in `docs/experiments/furniture-pilot.md`.
 
-The lesson is not fully delivered: photorealistic practical video awaits a connected provider and visual/technical review; the grounded generative assistant and human portfolio assessment are not implemented. No certification, video generation, credit spend, merge, CI or deployment is claimed. Prior accepted mail/lifecycle results and the two existing authoritative registers remain controlling for their scopes.
+The lesson is not fully delivered: the original photorealistic practical video was pending at this initial snapshot; the revised Remotion/Bunny scope is recorded above; the grounded generative assistant and human portfolio assessment are not implemented. This initial snapshot claimed no certification, video generation, credit spend, merge, CI or deployment; the dated update above records subsequent generation. Prior accepted mail/lifecycle results and the two existing authoritative registers remain controlling for their scopes.
 
 ## 2026-10-03 — Reuse the working Edge transport for immediate mail
 

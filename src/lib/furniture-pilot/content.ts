@@ -1,21 +1,23 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 
-type Text = readonly [string, string, string, string];
-const locales: SupportedLocale[] = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
-function text(value: Text, locale: SupportedLocale) {
-  return value[locales.indexOf(locale)];
+type Text = readonly [string, string];
+function text(value: Text, locale: "ar-EG" | "en") {
+  return value[locale === "en" ? 1 : 0];
 }
 function common(ar: string, en: string): Text {
-  return [ar, ar, ar, en];
+  return [ar, en];
 }
 
-export function getPilotCopy(locale: SupportedLocale) {
+export const PILOT_LOCALES = ["ar-EG", "en"] as const;
+export function resolvePilotLocale(locale: SupportedLocale): "ar-EG" | "en" {
+  return locale === "en" ? "en" : "ar-EG";
+}
+export function getPilotCopy(requestedLocale: SupportedLocale) {
+  const locale = resolvePilotLocale(requestedLocale);
   const t = (value: Text) => text(value, locale);
   return {
     title: t([
       "من الرسم لقائمة القطع: وحدة تخزين صغيرة",
-      "من الرسم إلى قائمة القطع: وحدة تخزين صغيرة",
-      "من المخطط إلى قائمة القص: وحدة تخزين صغيرة",
       "From drawing to cut list: a small storage cabinet",
     ]),
     eyebrow: t(
@@ -26,8 +28,6 @@ export function getPilotCopy(locale: SupportedLocale) {
     ),
     intro: t([
       "قبل ما نبدأ التصنيع، لازم كل قطعة تكون واضحة في الرسم وفي قائمة القطع. هنتدرّب على نموذج واحد، ونحسب المقاسات بنفسنا، وبعدها نراجع القائمة.",
-      "قبل بدء التصنيع، يجب أن تتطابق أجزاء المنتج في الرسم وقائمة القطع. سنحل نموذجًا محددًا ونراجع حساباته، ثم نطبق الطريقة على أبعاد جديدة.",
-      "قبل نبدأ التصنيع، نحتاج مخطط واضح وقائمة قص متطابقة معه. بنتدرّب على نموذج محدد، ونحسب أبعاده، ثم نراجع القائمة قبل تسليمها للورشة.",
       "Before fabrication, each part must agree with the drawing and cut list. Work through one defined cabinet, check the arithmetic, then apply the same construction to new dimensions.",
     ]),
     draft: t(common("تجربة تعليمية على فرع مؤقت", "Temporary-branch teaching pilot")),
@@ -76,13 +76,13 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("افهم النموذج أولًا", "Read the brief first")),
         body: t(
           common(
-            "وحدة مفتوحة من الأمام، بجانبين كاملَي الارتفاع. السقف والقاع والرف الأوسط تقع بين الجانبين. الظهر قطعة تغطي الوجه الخلفي من الخارج. العمق النهائي يشمل الظهر. جميع الأبعاد بالمليمتر.",
+            "الوحدة مفتوحة من قدّام، والجانبين كاملين في الارتفاع. السقف والقاع والرف اللي في النص بيركبوا بين الجانبين. الظهر بيغطي الوحدة من برّه، والعمق النهائي شامل الظهر. كل المقاسات بالملّي.",
             "An open-front cabinet with two full-height sides. The top, bottom and middle shelf fit between the sides. A separate back overlays the rear face. Overall depth includes the back. All dimensions are in millimetres.",
           ),
         ),
         note: t(
           common(
-            "افتراضات الدرس: سمك اسمي، وصلات تلامسية مباشرة، دون مجاري أو أبواب أو أرجل أو سماحات تشطيب. تغيير أي افتراض يقتضي تحديث الرسم والقائمة.",
+            "في النموذج ده بنحسب بالسمك الاسمي، والألواح بتلامس بعض من غير مجاري أو أبواب أو أرجل أو سماحات تشطيب. لو غيّرت أي افتراض، لازم تعدّل الرسم والقائمة.",
             "Lesson assumptions: nominal thickness, butt-joint geometry, no grooves, doors, feet or finishing allowances. Any changed assumption requires a revised drawing and cut list.",
           ),
         ),
@@ -92,7 +92,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("احسب العرض الداخلي", "Calculate the internal width")),
         body: t(
           common(
-            "العرض الخارجي 600. يشغل كل جانب 18 من العرض. لذلك طول السقف والقاع والرف هو 600 − 18 − 18 = 564. هذه المعادلة صالحة لأن الأجزاء تقع بين الجانبين في هذا النموذج.",
+            "العرض من برّه 600، وكل جنب بياخد 18 من العرض. يبقى طول السقف والقاع والرف: 600 − 18 − 18 = 564. بنحسب كده لأن الأجزاء دي بين الجانبين في النموذج ده.",
             "Outside width is 600. Each side occupies 18 of that width. The top, bottom and shelf lengths are therefore 600 − 18 − 18 = 564. This equation applies because those panels sit between the sides in this construction.",
           ),
         ),
@@ -103,7 +103,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("افصل عمق الهيكل عن الظهر", "Separate body depth from back thickness")),
         body: t(
           common(
-            "العمق النهائي 300 ويشمل ظهرًا خارجيًا سمكه 6. عمق أجزاء الهيكل = 300 − 6 = 294. يبقى الظهر كامل العرض والارتفاع: 600 × 600. لو كان الظهر داخل مجرى لتغيرت طريقة الحساب.",
+            "العمق النهائي 300، وشامل ظهر خارجي سمكه 6. يبقى عمق أجزاء الهيكل = 300 − 6 = 294. الظهر كامل العرض والارتفاع: 600 × 600. لو الظهر داخل مجرى، الحساب هيختلف.",
             "Overall depth is 300, including a 6-thick overlay back. Body panels are 300 − 6 = 294 deep. The back retains the full outside width and height: 600 × 600. A rebated or grooved back would require different geometry.",
           ),
         ),
@@ -114,7 +114,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("تحقق من الرف والفتحات", "Check shelf and opening heights")),
         body: t(
           common(
-            "السقف والقاع والرف تستهلك ثلاثة أسماك: 3 × 18 = 54. الارتفاع الصافي المتبقي = 600 − 54 = 546. لتكوين فتحتين متساويتين يكون ارتفاع كل فتحة 546 ÷ 2 = 273. هذا ارتفاع الفراغ، وليس طول الرف.",
+            "السقف والقاع والرف بياخدوا تلات أسماك: 3 × 18 = 54. الارتفاع الصافي اللي فاضل = 600 − 54 = 546. عشان الفتحتين يبقوا قد بعض، ارتفاع كل فتحة 546 ÷ 2 = 273. ده ارتفاع الفراغ، مش طول الرف.",
             "The top, bottom and shelf occupy three thicknesses: 3 × 18 = 54. Remaining clear height is 600 − 54 = 546. Two equal openings are 546 ÷ 2 = 273 high each. This is the clear opening height, not the shelf length.",
           ),
         ),
@@ -125,7 +125,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("حوّل الرسم إلى قائمة قطع", "Turn the drawing into a cut list")),
         body: t(
           common(
-            "اكتب رقم الجزء والكمية والطول والعرض والسمك. اجمع الأجزاء المتطابقة في صف واحد مع الاحتفاظ بأرقامها. احتفظ بالسمك المختلف للظهر في صف مستقل. العدد الكلي ست قطع: خمسة أجزاء للهيكل وظهر واحد.",
+            "اكتب رقم الجزء والكمية والطول والعرض والسمك. اجمع الأجزاء اللي نفس المقاس في صف واحد، وسيب أرقامها واضحة. الظهر سمكه مختلف، فخليه في صف لوحده. عندنا ست قطع: خمسة للهيكل وظهر واحد.",
             "Record part IDs, quantity, length, width and thickness. Group identical parts in a single row while retaining their IDs. Keep the thinner back as its own item. There are six pieces: five body panels and one back.",
           ),
         ),
@@ -141,7 +141,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         title: t(common("راجع قبل تسليم القائمة", "Review before releasing the list")),
         body: t(
           common(
-            "طابق كل رقم في القائمة مع الرسم. راجع الوحدة والكمية والسمك وطريقة الظهر. قبل التنفيذ الفعلي، يعتمد مختص سماحات القص والتشطيب واتجاه الخامة والوصلات والتثبيت والحمل المتوقع. نطاق هذا الدرس ينتهي عند إعداد ومراجعة قائمة التخطيط.",
+            "طابق كل رقم في القائمة مع الرسم. راجع الوحدة والكمية والسمك وطريقة الظهر. قبل التنفيذ، المختص لازم يعتمد سماحات القص والتشطيب واتجاه الخامة والوصلات والتثبيت والحمل المتوقع. الدرس ده بيقف عند تجهيز ومراجعة قائمة التخطيط.",
             "Match every part ID to the drawing. Check units, quantities, thickness and back construction. Before fabrication, a competent specialist must approve cutting and finishing allowances, material direction, joints, fixing and intended loading. This lesson ends at preparing and checking the planning list.",
           ),
         ),
@@ -213,13 +213,14 @@ export function getPilotCopy(locale: SupportedLocale) {
       downloadPack: t(common("تحميل دليل الدرس والتطبيق PDF", "Download lesson & workbook PDF")),
       downloadParts: t(common("تحميل قائمة القطع JSON", "Download cut list JSON")),
       downloadDrawing: t(common("تحميل الرسم SVG", "Download drawing SVG")),
+      videoReady: t(common("شرح مكان الألواح", "Panel placement explanation")),
       videoPending: t(
-        common("الفيديو الواقعي لم يُنتج بعد", "Photorealistic video not generated yet"),
+        common("الفيديو التعليمي الكامل قيد الإعداد", "Full lesson video in preparation"),
       ),
       videoNote: t(
         common(
-          "السيناريو وتسلسل المشاهد جاهزان. التوليد ينتظر ربط مزود الفيديو واختبار عينة. الصور المتحركة والرسومات ليست بديلًا عن الفيديو الواقعي المطلوب.",
-          "The script and shot sequence are ready. Generation awaits a video-provider connection and sample evaluation. Animated drawings do not substitute for the requested photorealistic footage.",
+          "شرح مكان الألواح بـ Remotion والمقاسات المحسوبة، بالعامية المصرية والإنجليزي. الفيديو بيتحفظ في Bunny بنفس طريقة المنصة. دي حركة توضيحية؛ الوصلات والتثبيت وسماحات التصنيع لازم الورشة تعتمدها.",
+          "A Remotion panel placement explanation using calculated dimensions, in Egyptian Arabic and English. Videos use the platform's existing Bunny delivery. This is a schematic demonstration; the workshop must approve joints, fixings and machining allowances.",
         ),
       ),
       guideNote: t(
