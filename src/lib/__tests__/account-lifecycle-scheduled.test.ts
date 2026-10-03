@@ -1,5 +1,6 @@
 // @vitest-environment node
 import { readFileSync } from "node:fs";
+import { dirname, resolve, sep } from "node:path";
 import ts from "typescript";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as mailHandlers from "../../../supabase/functions/account-welcome-job/handler";
@@ -54,6 +55,34 @@ beforeEach(() => {
     },
     {},
   );
+});
+
+describe("packaged lifecycle dependency boundary", () => {
+  it("keeps every relative shared dependency inside the platform-packaged shared directory", () => {
+    const shared = resolve("supabase/functions/_shared") + sep;
+    const seen = new Set<string>();
+    const inspect = (file: string) => {
+      expect(file.startsWith(shared), "Edge packaging excludes sibling function directories").toBe(
+        true,
+      );
+      if (seen.has(file)) return;
+      seen.add(file);
+      const source = ts.createSourceFile(
+        file,
+        readFileSync(file, "utf8"),
+        ts.ScriptTarget.Latest,
+        true,
+      );
+      for (const statement of source.statements) {
+        if (!ts.isImportDeclaration(statement) && !ts.isExportDeclaration(statement)) continue;
+        const specifier = statement.moduleSpecifier;
+        if (!specifier || !ts.isStringLiteral(specifier) || !specifier.text.startsWith("."))
+          continue;
+        inspect(resolve(dirname(file), specifier.text));
+      }
+    };
+    inspect(resolve("supabase/functions/_shared/account-lifecycle-worker.ts"));
+  });
 });
 
 describe("lifecycle through the existing protected scheduled entrypoint", () => {

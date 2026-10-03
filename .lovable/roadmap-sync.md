@@ -1,3 +1,11 @@
+## 2026-10-03 — Shared lifecycle packaging correction
+
+[roadmap:lifecycle-shared-packaging-20261003]
+scope: infra
+source: user
+summary: Preserve the lifecycle handler implementation unchanged in _shared so the existing welcome function packages it; keep dedicated endpoint compatibility exports. The additional Vault/token setup remains cancelled.
+sync_status: recorded in source and the two authoritative registers with integration evidence
+
 ## 2026-10-03 — Existing scheduled lifecycle integration
 
 [roadmap:lifecycle-existing-worker-20261003]
