@@ -70,3 +70,19 @@ scope: db
 source: user
 summary: Prepare disabled finalization, full Kids family erasure, retained financial replay guards, and recoverable Checkout coordination. The owner explicitly included Kids in account deletion; all broader Kids work remains paused.
 sync_status: draft implementation and tests; roadmap_items production update and activation are not claimed
+
+## 2026-10-03 — immediate contact acknowledgement
+
+[roadmap:contact-immediate-send]
+scope: other
+source: user
+summary: Start a targeted server-side attempt after durable contact enqueue; reuse the existing welcome schedule for isolated retries, preserving sender, receipts and LC-09 deletion suppression.
+sync_status: source candidate tested locally; production activation and roadmap_items update are not claimed
+
+CI443 surfaced GHSA-vfj7-8cjw-p6xm in braces3.0.3 (no patched braces release).
+The existing override mechanism pins Chokidar4.0.3, removing braces and its unused
+transitives. TanStack watches a literal route directory; unstorage watches its
+base directory and supports Chokidar4. Two actual watcher tests cover add/change/
+unlink and storage notifications. bun audit is clean (627 packages); no gate is
+disabled. Reference: https://github.com/advisories/GHSA-vfj7-8cjw-p6xm and
+https://github.com/paulmillr/chokidar#upgrading.

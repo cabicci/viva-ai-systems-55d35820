@@ -47,6 +47,9 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Build and storage watcher compatibility
+        run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
+
       - name: Login and Free CTA regression (isolated clients, no account writes)
         run: >-
           bunx vitest run
@@ -72,6 +75,7 @@ jobs:
           --allowImportingTsExtensions scripts/email/contact-edge-runtime.d.ts
           supabase/functions/contact-mail-job/index.ts
           supabase/functions/contact-mail-webhook/index.ts
+          supabase/functions/account-welcome-job/index.ts
 
       - name: Contact acknowledgement mail (isolated DB, no sends)
         run: >-
@@ -79,6 +83,11 @@ jobs:
           src/lib/__tests__/contact-mail.test.ts
           src/lib/__tests__/contact-mail-receipt.test.ts
           src/lib/__tests__/contact-mail-outbox.integration.test.ts
+          src/lib/__tests__/contact-mail-immediate.integration.test.ts
+          src/lib/__tests__/contact-mail-server.test.ts
+          src/lib/__tests__/contact-mail-streams.test.ts
+          src/lib/__tests__/contact-form-server.test.ts
+          src/lib/__tests__/account-welcome-job.test.ts
 
       - name: RAG corpus access policy (isolated PostgreSQL, no indexing)
         run: >-
