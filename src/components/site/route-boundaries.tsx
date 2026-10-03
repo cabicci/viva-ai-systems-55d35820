@@ -33,13 +33,7 @@ export function RouteNotFound() {
  * router's `defaultErrorComponent` so every loader/component error
  * lands here unless a route opts in to its own boundary.
  */
-export function RouteError({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+export function RouteError({ error, reset }: { error: unknown; reset: () => void }) {
   captureError("route", error);
   const router = useRouter();
 

@@ -30,6 +30,7 @@ const row = {
 beforeEach(() => {
   vi.clearAllMocks();
   vi.stubEnv("CONTACT_MAIL_ENABLED", "true");
+  vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "false");
   vi.stubEnv("RESEND_API_KEY", "synthetic-test-only");
   rpc.mockImplementation(async (name) => ({
     error: null,
@@ -67,6 +68,13 @@ describe("server acknowledgement", () => {
     await queueContactAcknowledgement(input, row.id);
     expect(rpc).not.toHaveBeenCalled();
     expect(send).not.toHaveBeenCalled();
+  });
+  it("sends through the owner-enabled direct route with the original switch disabled", async () => {
+    vi.stubEnv("CONTACT_MAIL_ENABLED", "false");
+    vi.stubEnv("CONTACT_MAIL_DIRECT_ENABLED", "true");
+    await queueContactAcknowledgement(input, row.id);
+    expect(rpc).toHaveBeenCalledWith("claim_contact_acknowledgement", { p_id: row.id });
+    expect(send).toHaveBeenCalledTimes(1);
   });
   it("persists a retry before detecting missing transport configuration", async () => {
     vi.stubEnv("RESEND_API_KEY", "");

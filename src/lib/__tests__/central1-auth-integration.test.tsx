@@ -287,7 +287,10 @@ describe("central1 auth integration", () => {
 
   it("settles a thrown network error and permits a successful retry", async () => {
     mocks.signInWithPassword.mockRejectedValueOnce(new TypeError("Failed to fetch"));
-    mocks.signInWithPassword.mockResolvedValueOnce({ data: { session: SESSION }, error: null });
+    mocks.signInWithPassword.mockImplementationOnce(async () => {
+      mocks.authListener?.("SIGNED_IN", SESSION);
+      return { data: { session: SESSION }, error: null };
+    });
     const router = await renderAt("/login");
     fillLoginForm();
     fireEvent.click(screen.getByRole("button", { name: /auth\.login\.submit/ }));
@@ -296,6 +299,11 @@ describe("central1 auth integration", () => {
     expect(retry).toBeEnabled();
     fireEvent.click(retry);
     await waitFor(() => expect(router.state.location.pathname).toBe("/dashboard"));
+    expect(mocks.signInWithPassword).toHaveBeenLastCalledWith({
+      email: "learner@example.test",
+      password: "correct horse battery staple",
+    });
+    expect(await screen.findByText("protected-dashboard")).toBeInTheDocument();
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
 

@@ -3,12 +3,11 @@ import { runContactMailJob } from "../../supabase/functions/_shared/contact-mail
 import { sendTransactionalEmail } from "../../supabase/functions/_shared/resend";
 import { resolveSignupProfile } from "./email-templates/signup-profile";
 import type { ContactFormInput } from "./contact-form";
+import { contactMailEnabled } from "../../supabase/functions/_shared/contact-mail-enabled";
 /** Called only after CAPTCHA, rate limit and HubSpot acceptance. */
 export async function queueContactAcknowledgement(input: ContactFormInput, id: string) {
-  // Direct send at submit time; needs no scheduler or Vault.
   if (
-    process.env.CONTACT_MAIL_ENABLED !== "true" &&
-    process.env.CONTACT_MAIL_DIRECT_ENABLED !== "true"
+    !contactMailEnabled(process.env.CONTACT_MAIL_ENABLED, process.env.CONTACT_MAIL_DIRECT_ENABLED)
   )
     return;
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");

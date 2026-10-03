@@ -27,11 +27,7 @@ import { loadIntroLessonContent } from "@/components/intro/lessons";
 import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continuity";
 import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
-import {
-  getPath,
-  type CurriculumLesson,
-  type PathId,
-} from "@/lib/curriculum-data";
+import { getPath, type CurriculumLesson, type PathId } from "@/lib/curriculum-data";
 import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import {
@@ -77,10 +73,7 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
  *  Route: /learn/{pathId}/{lessonId}
  * -------------------------------------------------------------- */
 
-export const PATH_META: Record<
-  PathId,
-  { icon: LucideIcon; tone: "accent" | "primary" }
-> = {
+export const PATH_META: Record<PathId, { icon: LucideIcon; tone: "accent" | "primary" }> = {
   intro: { icon: MapIcon, tone: "accent" },
   builder: { icon: Hammer, tone: "primary" },
   creator: { icon: Palette, tone: "accent" },
@@ -161,9 +154,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
     if (!VALID_PATHS.includes(pathId)) {
       return buildLocalizedLearnerMeta(locale, "learn", { unknownPath: true });
     }
-    const lesson = getPathLessons(pathId).find(
-      (l) => l.slug === params.lessonId,
-    );
+    const lesson = getPathLessons(pathId).find((l) => l.slug === params.lessonId);
     const data = loaderData as LessonLoaderData | undefined;
     return buildLocalizedLearnerMeta(locale, "learn", {
       pathId,
@@ -179,14 +170,10 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
   loader: async ({ params, deps }) => {
     const pathId = params.pathId as PathId;
     if (!VALID_PATHS.includes(pathId)) throw notFound();
-    const lesson = getPathLessons(pathId).find(
-      (l) => l.slug === params.lessonId,
-    );
+    const lesson = getPathLessons(pathId).find((l) => l.slug === params.lessonId);
     if (!lesson) throw notFound();
 
-    const previewSearch = parseLessonPreviewSearch(
-      deps as Record<string, unknown>,
-    );
+    const previewSearch = parseLessonPreviewSearch(deps as Record<string, unknown>);
     const cookieLocale = await readRequestCookieLocale();
     const countryCode = await readRequestCountryCode();
     let lessonAccess = resolveRouteLessonAccess(
@@ -201,10 +188,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
       lessonAccess.contentSource === "locale-package-json" &&
       isPackageLocale(lessonAccess.effectiveLocale)
     ) {
-      localizedPackage = await loadLocalePackageLesson(
-        lessonAccess.effectiveLocale,
-        lesson.id,
-      );
+      localizedPackage = await loadLocalePackageLesson(lessonAccess.effectiveLocale, lesson.id);
       if (!localizedPackage) {
         lessonAccess = resolveLessonAccess(lesson.id);
       }
@@ -231,12 +215,15 @@ function LearnerLessonPage() {
   );
 }
 
-function LearnLessonError({ error }: { error: Error }) {
+function LearnLessonError({ error }: { error: unknown }) {
   const { dir } = useLocale();
+  const t = useUiString();
 
   return (
     <div className="min-h-dvh grid place-items-center p-6" dir={dir}>
-      <p className="text-sm text-destructive">{error.message}</p>
+      <p className="text-sm text-destructive">
+        {error instanceof Error ? error.message : t("learn.error.load")}
+      </p>
     </div>
   );
 }
@@ -270,8 +257,7 @@ function UnifiedLessonPage() {
 
   const effectiveAccess = lessonAccess;
   const isLocalizedPackagePage =
-    effectiveAccess.contentSource === "locale-package-json" &&
-    localizedPackage !== null;
+    effectiveAccess.contentSource === "locale-package-json" && localizedPackage !== null;
   const [egyptianContent, setEgyptianContent] = useState<
     Awaited<ReturnType<typeof loadIntroLessonContent>> | undefined
   >(undefined);
@@ -304,8 +290,7 @@ function UnifiedLessonPage() {
     meta.tone === "primary"
       ? "border-primary/25 bg-primary/[0.05]"
       : "border-accent/25 bg-accent/[0.05]";
-  const continuityLabelClass =
-    meta.tone === "primary" ? "text-primary" : "text-accent";
+  const continuityLabelClass = meta.tone === "primary" ? "text-primary" : "text-accent";
   const PreviousNavIcon = dir === "rtl" ? ArrowRight : ArrowLeft;
   const NextNavIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
 
@@ -314,19 +299,12 @@ function UnifiedLessonPage() {
   const next = lessons[idx + 1];
   const prev = lessons[idx - 1];
   const total = lessons.length;
-  const completedCount = lessons.filter(
-    (l) => getStatus(l.id) === "completed",
-  ).length;
+  const completedCount = lessons.filter((l) => getStatus(l.id) === "completed").length;
   const pct = total ? Math.round((completedCount / total) * 100) : 0;
   const pathLabel = learnPathLabel(t, pathId);
   const curriculumLessonTitle = getCurriculumLessonLabel(locale, lesson.id);
-  const displayTitle = resolveLearnDisplayTitle(
-    curriculumLessonTitle,
-    localizedPackage,
-  );
-  const nextLessonTitle = next
-    ? getCurriculumLessonLabel(locale, next.id)
-    : undefined;
+  const displayTitle = resolveLearnDisplayTitle(curriculumLessonTitle, localizedPackage);
+  const nextLessonTitle = next ? getCurriculumLessonLabel(locale, next.id) : undefined;
   const progressStats = t("learn.progress.stats")
     .replace("{completed}", String(completedCount))
     .replace("{total}", String(total))
@@ -349,11 +327,7 @@ function UnifiedLessonPage() {
     localizedPackage,
     isLocalizedPackagePage,
   );
-  const missionGate = useMissionGateForPage(
-    lesson.slug,
-    localizedPackage,
-    isLocalizedPackagePage,
-  );
+  const missionGate = useMissionGateForPage(lesson.slug, localizedPackage, isLocalizedPackagePage);
   const nextLocked = isLessonNavigationMissionLocked(missionGate);
 
   const assistantContextOverride = useMemo(() => {
@@ -474,16 +448,13 @@ function UnifiedLessonPage() {
             </span>
             <span className="text-[11px] font-mono text-muted-foreground">
               {`M${lesson.moduleOrder} · ${moduleTitle}`} ·{" "}
-              {String(lesson.globalOrder).padStart(2, "0")}/
-              {String(total).padStart(2, "0")}
+              {String(lesson.globalOrder).padStart(2, "0")}/{String(total).padStart(2, "0")}
             </span>
             {isLocalizedPackagePage ? (
               <span aria-hidden hidden data-locale-live-active={effectiveAccess.effectiveLocale} />
             ) : null}
           </div>
-          <h1 className="text-2xl md:text-4xl font-black leading-tight">
-            {displayTitle}
-          </h1>
+          <h1 className="text-2xl md:text-4xl font-black leading-tight">{displayTitle}</h1>
 
           {isAdmin && (
             <button
@@ -537,143 +508,129 @@ function UnifiedLessonPage() {
             <p className="text-sm font-semibold text-accent-warning-foreground">
               {t("learn.content.unavailable.title")}
             </p>
-            <p className="text-xs text-muted-foreground">
-              {t("learn.content.unavailable.body")}
-            </p>
+            <p className="text-xs text-muted-foreground">{t("learn.content.unavailable.body")}</p>
           </div>
         )}
 
         {isGateReady && gate.kind === "open" && (
-        <>
-        <LessonNotes lessonId={lesson.id} />
-        <DifficultyPrompt
-          lessonId={lesson.id}
-          pathId={pathId}
-          moduleId={lesson.moduleId}
-          completedCount={completedCount}
-          isCompleted={isCompleted}
-          nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
-        />
-        {nextLocked && missionShape?.hasRubric && (
-          <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
-            <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-            <div className="text-sm leading-relaxed">
-              <p className="font-semibold text-foreground mb-1">
-                {t("learn.missionGate.title")}
-              </p>
-              <p className="text-foreground/80 text-[13px]">
-                {t("learn.missionGate.body")}
-              </p>
-            </div>
-          </div>
-        )}
-        <section
-          className={`mt-8 rounded-2xl border p-5 ${continuityClasses}`}
-        >
-          <p
-            className={`text-[11px] font-mono flex items-center gap-1.5 mb-2 ${continuityLabelClass}`}
-          >
-            <Milestone className="h-3.5 w-3.5" />
-            {next ? t("learn.continuity.next") : t("learn.continuity.lastInPath")}
-          </p>
-          <p className="text-[15px] leading-[1.9] text-foreground/90">
-            {getContinuityForLocale(locale, lesson.id, {
-              nextTitle: nextLessonTitle,
-              pathTitle: pathLabel,
-              hasNext: Boolean(next),
-            })}
-          </p>
-          {next && nextLessonTitle && (
-            <p className="text-xs text-muted-foreground mt-2 font-mono">
-              → {nextLessonTitle}
-            </p>
-          )}
-        </section>
-
-        <nav className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-          <div className="flex min-w-0 flex-wrap gap-2">
-            {prev ? (
-              <Button asChild variant="glass" size="sm">
-                <Link
-                  to="/learn/$pathId/$lessonId"
-                  params={{ pathId, lessonId: prev.slug }}
-                  search={localeNavSearch}
-                >
-                  <PreviousNavIcon className="h-4 w-4" />
-                  {t("learn.nav.previous")}
-                </Link>
-              </Button>
-            ) : (
-              <span />
+          <>
+            <LessonNotes lessonId={lesson.id} />
+            <DifficultyPrompt
+              lessonId={lesson.id}
+              pathId={pathId}
+              moduleId={lesson.moduleId}
+              completedCount={completedCount}
+              isCompleted={isCompleted}
+              nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
+            />
+            {nextLocked && missionShape?.hasRubric && (
+              <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
+                <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                <div className="text-sm leading-relaxed">
+                  <p className="font-semibold text-foreground mb-1">
+                    {t("learn.missionGate.title")}
+                  </p>
+                  <p className="text-foreground/80 text-[13px]">{t("learn.missionGate.body")}</p>
+                </div>
+              </div>
             )}
-          </div>
+            <section className={`mt-8 rounded-2xl border p-5 ${continuityClasses}`}>
+              <p
+                className={`text-[11px] font-mono flex items-center gap-1.5 mb-2 ${continuityLabelClass}`}
+              >
+                <Milestone className="h-3.5 w-3.5" />
+                {next ? t("learn.continuity.next") : t("learn.continuity.lastInPath")}
+              </p>
+              <p className="text-[15px] leading-[1.9] text-foreground/90">
+                {getContinuityForLocale(locale, lesson.id, {
+                  nextTitle: nextLessonTitle,
+                  pathTitle: pathLabel,
+                  hasNext: Boolean(next),
+                })}
+              </p>
+              {next && nextLessonTitle && (
+                <p className="text-xs text-muted-foreground mt-2 font-mono">→ {nextLessonTitle}</p>
+              )}
+            </section>
 
-          <div className="flex gap-2">
-            {!isCompleted && (
-              <Button
-                variant="glass"
-                size="sm"
-                onClick={markCompleted}
-                disabled={nextLocked && !!missionShape?.hasRubric}
-                title={
-                  nextLocked && missionShape?.hasRubric
-                    ? t("learn.missionGate.finishFirst")
-                    : undefined
-                }
-              >
-                <CheckCircle2 className="h-4 w-4" />
-                {t("learn.nav.markComplete")}
-              </Button>
-            )}
-            {next ? (
-              <Button
-                asChild
-                variant="violet"
-                size="sm"
-                onClick={markCompleted}
-                disabled={nextLocked}
-                title={nextLocked ? t("learn.missionGate.finishFirst") : undefined}
-              >
-                {nextLocked ? (
-                  <span className="inline-flex items-center gap-1.5 opacity-60 cursor-not-allowed">
-                    <Lock className="h-3.5 w-3.5" />
-                    {t("learn.nav.next")}
-                  </span>
+            <nav className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+              <div className="flex min-w-0 flex-wrap gap-2">
+                {prev ? (
+                  <Button asChild variant="glass" size="sm">
+                    <Link
+                      to="/learn/$pathId/$lessonId"
+                      params={{ pathId, lessonId: prev.slug }}
+                      search={localeNavSearch}
+                    >
+                      <PreviousNavIcon className="h-4 w-4" />
+                      {t("learn.nav.previous")}
+                    </Link>
+                  </Button>
                 ) : (
-                  <Link
-                    to="/learn/$pathId/$lessonId"
-                    params={{ pathId, lessonId: next.slug }}
-                    search={localeNavSearch}
-                  >
-                    {t("learn.nav.next")}
-                    <NextNavIcon className="h-4 w-4" />
-                  </Link>
+                  <span />
                 )}
-              </Button>
-            ) : (
-              <Button
-                asChild
-                variant="violet"
-                size="sm"
-                onClick={markCompleted}
-              >
-                <Link to="/dashboard" search={localeSearch()}>
-                  {t("learn.backToDashboard")}
-                  <NextNavIcon className="h-4 w-4" />
-                </Link>
-              </Button>
+              </div>
 
-            )}
-          </div>
-        </nav>
-        <FloatingAssistantLauncher
-          fabLabel={t("learn.assistant.fab")}
-          fabAriaLabel={t("learn.assistant.fabAria")}
-          panelTitle={t("learn.assistant.summary")}
-        >
-          <AssistantPanel compact contextOverride={assistantContextOverride} />
-        </FloatingAssistantLauncher>
-        </>
+              <div className="flex gap-2">
+                {!isCompleted && (
+                  <Button
+                    variant="glass"
+                    size="sm"
+                    onClick={markCompleted}
+                    disabled={nextLocked && !!missionShape?.hasRubric}
+                    title={
+                      nextLocked && missionShape?.hasRubric
+                        ? t("learn.missionGate.finishFirst")
+                        : undefined
+                    }
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                    {t("learn.nav.markComplete")}
+                  </Button>
+                )}
+                {next ? (
+                  <Button
+                    asChild
+                    variant="violet"
+                    size="sm"
+                    onClick={markCompleted}
+                    disabled={nextLocked}
+                    title={nextLocked ? t("learn.missionGate.finishFirst") : undefined}
+                  >
+                    {nextLocked ? (
+                      <span className="inline-flex items-center gap-1.5 opacity-60 cursor-not-allowed">
+                        <Lock className="h-3.5 w-3.5" />
+                        {t("learn.nav.next")}
+                      </span>
+                    ) : (
+                      <Link
+                        to="/learn/$pathId/$lessonId"
+                        params={{ pathId, lessonId: next.slug }}
+                        search={localeNavSearch}
+                      >
+                        {t("learn.nav.next")}
+                        <NextNavIcon className="h-4 w-4" />
+                      </Link>
+                    )}
+                  </Button>
+                ) : (
+                  <Button asChild variant="violet" size="sm" onClick={markCompleted}>
+                    <Link to="/dashboard" search={localeSearch()}>
+                      {t("learn.backToDashboard")}
+                      <NextNavIcon className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
+              </div>
+            </nav>
+            <FloatingAssistantLauncher
+              fabLabel={t("learn.assistant.fab")}
+              fabAriaLabel={t("learn.assistant.fabAria")}
+              panelTitle={t("learn.assistant.summary")}
+            >
+              <AssistantPanel compact contextOverride={assistantContextOverride} />
+            </FloatingAssistantLauncher>
+          </>
         )}
       </main>
     </div>
