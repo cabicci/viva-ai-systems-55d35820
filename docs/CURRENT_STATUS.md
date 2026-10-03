@@ -1,3 +1,11 @@
+## 2026-10-03 — Reuse the working Edge transport for immediate mail
+
+The owner-created English temporary account confirmed at 10:38:26Z. Its app-side immediate claim occurred at 10:38:30Z, but no provider ID was recorded; the exact first failure cause is unestablished. The existing Edge retry accepted the same immutable welcome at 10:45:02Z, Resend recorded delivery, and Gmail recorded INBOX at 10:45:03Z. Do not resend it or repeat confirmation.
+
+This bounded candidate makes application-side welcome and contact dispatch call the same installed protected Edge worker. The welcome target comes exclusively from verified request identity; contact persists its accepted immutable message before dispatch. Immediate requests attempt only their target and return before other mail or lifecycle batches. Existing server authorization is reused without any new secret, Vault, cron, migration or browser credential. The existing scheduled retry, leases, provider idempotency, stored locale/name/sender, deletion locks and receipt webhook remain intact. Safe diagnostics report only failure category/status; mail failure still cannot block sign-in.
+
+Source checks, CI, deployment and production probes are separate gates. Both accepted temporary welcomes are already complete, so a zero-claim probe establishes non-resending, not fresh first-confirmation delivery. The two existing authoritative registers own the consolidated remaining list. Protected accounts/data, fifteen-day financial retention, Stripe TEST, other Kids work stop and NO-GO remain in force.
+
 ## 2026-10-03 — Immediate welcome after confirmed sign-in candidate
 
 The first temporary Arabic acceptance account was created and confirmed by the owner outside the Cloud browser. Its confirmation and branded welcome reached the real inbox; the welcome waited about four minutes for the existing five-minute scheduled worker. This candidate attempts the same durable welcome immediately after a confirmed session, through a verified server request and a service-only single-account claim. It preserves the immutable locale/name/content, provider idempotency key, scheduled retry, account/family deletion lock order, and local displaced-session sign-out. Mail failures never block sign-in. No new secret, Vault entry, cron, template or backfill is introduced; accepted messages are not resent.

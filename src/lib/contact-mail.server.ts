@@ -1,6 +1,5 @@
 import { contactMailContent } from "../../supabase/functions/_shared/contact-mail";
-import { runContactMailJob } from "../../supabase/functions/_shared/contact-mail-worker";
-import { sendTransactionalEmail } from "../../supabase/functions/_shared/resend";
+import { dispatchImmediateMail } from "./mail-dispatch.server";
 import { resolveSignupProfile } from "./email-templates/signup-profile";
 import type { ContactFormInput } from "./contact-form";
 import { contactMailEnabled } from "../../supabase/functions/_shared/contact-mail-enabled";
@@ -37,11 +36,5 @@ export async function queueContactAcknowledgement(input: ContactFormInput, id: s
   );
   if (queued.error) throw new Error("contact_mail_queue_failed");
   // Persist first. An unavailable provider/configuration must not lose the retry.
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) throw new Error("contact_mail_transport_unconfigured");
-  return runContactMailJob(
-    { rpc: (name, args) => supabaseAdmin.rpc(name as never, args as never) },
-    (message, sender) => sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
-    id,
-  );
+  return dispatchImmediateMail({ stream: "contact", id });
 }

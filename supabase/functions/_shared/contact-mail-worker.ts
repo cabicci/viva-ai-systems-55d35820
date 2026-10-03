@@ -19,6 +19,8 @@ export async function runContactMailJob(db: Db, send: Send, outboxId?: string) {
     ? await db.rpc("claim_contact_acknowledgement", { p_id: outboxId })
     : await db.rpc("claim_contact_acknowledgements");
   if (claims.error || !Array.isArray(claims.data)) throw new Error("contact_mail_claim_failed");
+  if (outboxId && (claims.data.length > 1 || claims.data.some((row) => row?.id !== outboxId)))
+    throw new Error("contact_mail_claim_scope_invalid");
   const stats = { accepted: 0, deferred: 0 };
   for (const row of claims.data as Array<{
     id: string;
