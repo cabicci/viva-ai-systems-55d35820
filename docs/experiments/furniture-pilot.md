@@ -61,3 +61,8 @@ Owner requested the whole lesson as displayed on Masaarat, rather than separate 
 Private preview publication succeeded: Site `appgprj_6ac17ca726108191a946e5eda8d27a90`, deployment `appgdep_6ac17d4f65808191bb2e486f27ee0b73`, preview source `c5fdda72650bfffafd1f06ca3f17b9d9020b4d93`. This is separate review hosting; no main merge, Masaarat production deployment, production configuration or central-register update occurred. Only the experimental lesson and public assets are served; account/payment/API/server-function endpoints return404.
 
 The exact preview Worker was checked locally with Playwright in both locales at1440px and390px: HTTP200, correct RTL/LTR, no horizontal overflow or page errors, correct Bunny iframe with autoplay disabled, interactive calculator table and both workbook downloads. Native deployment reported succeeded; this is not a production-platform acceptance claim.
+
+
+## Owner presentation refinements — 2026-10-04 (Cairo)
+
+Removed the source section from the learner-facing lesson footer and workbook. Internal reference history above remains unchanged. Lesson files now offers three PDF downloads per authored language: the7-page workbook,1-page cut list and3-page drawing set. JSON/SVG files remain technical/inline drawing assets, not Lesson files downloads. Six contextual thumbnails reuse the existing front, side and exploded drawings beside their respective explanation sections; each opens the drawing at full size. On smaller screens the diagram follows the explanation to retain readability. Existing Bunny videos are reused without regeneration.

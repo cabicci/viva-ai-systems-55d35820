@@ -174,8 +174,8 @@ try {
         .map((part) => (part.ltr ? `<bdi dir="ltr">${escape(part.text)}</bdi>` : escape(part.text)))
         .join("");
     const para = (value: string) => `<p>${prose(value)}</p>`;
-    const page = (title: string, body: string, n: number) =>
-      `<section class="page"><div class="brand">MASAARAT · M1 · ${escape(locale)}</div><h1>${escape(title)}</h1>${body}<footer>${escape(copy.draft)} · ${n}/7</footer></section>`;
+    const page = (title: string, body: string, n: number, total = 7) =>
+      `<section class="page"><div class="brand">MASAARAT · M1 · ${escape(locale)}</div><h1>${escape(title)}</h1>${body}<footer>${escape(copy.draft)} · ${n}/${total}</footer></section>`;
     const cutRows = geometry.panels
       .map(
         (p) =>
@@ -246,10 +246,7 @@ try {
         `<div class="note"><strong>${escape(bunnyEmbed ? c.videoReady : c.videoPending)}</strong>${para(c.videoNote)}${bunnyEmbed ? `<p><a href="${escape(bunnyEmbed)}">${escape(locale === "en" ? "Watch the video on Bunny" : "شوف الفيديو على Bunny")}</a></p>` : ""}</div>` +
           copy.sections
             .map((s, i) => `<h2>${i + 1}. ${escape(s.title)}</h2>${para(s.body)}`)
-            .join("") +
-          `<h2>${escape(c.sources)}</h2>` +
-          para(c.sourceNote) +
-          `<p dir="ltr">https://www.hse.gov.uk/woodworking/training.htm</p>`,
+            .join(""),
         6,
       ),
       page(
@@ -262,10 +259,11 @@ try {
         7,
       ),
     ];
-    const html = `<!doctype html><html lang="${locale === "en" ? "en" : "ar"}" dir="${dir}"><head><meta charset="utf-8"><title>${escape(copy.title)}</title><style>@page{size:A4;margin:14mm}*{box-sizing:border-box}body{margin:0;color:#203f45;font-family:"DejaVu Sans",sans-serif;font-size:${locale === "en" ? 12 : 13}px;line-height:1.65}.page{position:relative;min-height:264mm;page-break-after:always;padding-bottom:12mm}.page:last-child{page-break-after:auto}.brand{font-size:10px;font-weight:bold;color:#367482;border-bottom:1px solid #cadfda;padding-bottom:10px}h1{font-size:23px;line-height:1.4;margin:16px 0}h2{font-size:15px;margin:16px 0 5px}p{margin:7px 0}li{margin:7px 0}.note,.formula{background:#edf5f3;border-radius:8px;padding:12px;margin:12px 0}.formula{text-align:center;direction:ltr;font-size:14px}table{width:100%;border-collapse:collapse;margin:12px 0;font-size:10px}th,td{border:1px solid #cadfda;padding:8px;text-align:start}th{background:#edf5f3}.blank{height:33px}.question{margin-bottom:20px;break-inside:avoid}.drawings{display:flex;gap:8px;direction:ltr}.drawings svg{width:50%;height:245px}.parts svg{width:100%;height:350px;margin-top:15px}footer{position:absolute;bottom:0;inset-inline:0;border-top:1px solid #cadfda;font-size:9px;color:#5b7175;padding-top:8px}svg text{font-family:"DejaVu Sans",sans-serif}</style></head><body>${pages.join("")}</body></html>`;
+    const documentHtml = (body: string) =>
+      `<!doctype html><html lang="${locale === "en" ? "en" : "ar"}" dir="${dir}"><head><meta charset="utf-8"><title>${escape(copy.title)}</title><style>@page{size:A4;margin:14mm}*{box-sizing:border-box}body{margin:0;color:#203f45;font-family:"DejaVu Sans",sans-serif;font-size:${locale === "en" ? 12 : 13}px;line-height:1.65}.page{position:relative;min-height:264mm;page-break-after:always;padding-bottom:12mm}.page:last-child{page-break-after:auto}.brand{font-size:10px;font-weight:bold;color:#367482;border-bottom:1px solid #cadfda;padding-bottom:10px}h1{font-size:23px;line-height:1.4;margin:16px 0}h2{font-size:15px;margin:16px 0 5px}p{margin:7px 0}li{margin:7px 0}.note,.formula{background:#edf5f3;border-radius:8px;padding:12px;margin:12px 0}.formula{text-align:center;direction:ltr;font-size:14px}table{width:100%;border-collapse:collapse;margin:12px 0;font-size:10px}th,td{border:1px solid #cadfda;padding:8px;text-align:start}th{background:#edf5f3}.blank{height:33px}.question{margin-bottom:20px;break-inside:avoid}.drawings{display:flex;gap:8px;direction:ltr}.drawings svg{width:50%;height:245px}.parts svg{width:100%;height:350px;margin-top:15px}footer{position:absolute;bottom:0;inset-inline:0;border-top:1px solid #cadfda;font-size:9px;color:#5b7175;padding-top:8px}svg text{font-family:"DejaVu Sans",sans-serif}</style></head><body>${body}</body></html>`;
     const tab = await browser.newPage({ viewport: { width: 688, height: 1100 } });
     await tab.emulateMedia({ media: "print" });
-    await tab.setContent(html, { waitUntil: "load" });
+    await tab.setContent(documentHtml(pages.join("")), { waitUntil: "load" });
     await tab.evaluate(() => document.fonts.ready);
     const overflow = await tab
       .locator(".page")
@@ -281,8 +279,51 @@ try {
       printBackground: true,
       preferCSSPageSize: true,
     });
+    const pdfDownloads = [
+      {
+        filename: "cut-list.pdf",
+        body: page(
+          c.downloadParts,
+          para(copy.sections[0].body) + cutTable + para(copy.sections[4].note) + para(copy.scope),
+          1,
+          1,
+        ),
+      },
+      {
+        filename: "drawings.pdf",
+        body: [
+          { title: c.front, drawing: localizedFront },
+          { title: c.side, drawing: localizedSide },
+          { title: c.exploded, drawing: localizedMap },
+        ]
+          .map((drawing, i) =>
+            page(
+              drawing.title,
+              `<div class="single-drawing">${drawing.drawing}</div>` + para(copy.scope),
+              i + 1,
+              3,
+            ),
+          )
+          .join(""),
+      },
+    ];
+    for (const download of pdfDownloads) {
+      await tab.setContent(
+        documentHtml(download.body).replace(
+          "</style>",
+          ".single-drawing svg{display:block;width:100%;height:auto}</style>",
+        ),
+        { waitUntil: "load" },
+      );
+      await tab.evaluate(() => document.fonts.ready);
+      await tab.pdf({
+        path: path.join(folder, download.filename),
+        printBackground: true,
+        preferCSSPageSize: true,
+      });
+    }
     await tab.close();
-    console.log(`Generated ${locale} workbook and cut list`);
+    console.log(`Generated ${locale} workbook, cut-list PDF and drawing PDF`);
   }
 } finally {
   await browser.close();

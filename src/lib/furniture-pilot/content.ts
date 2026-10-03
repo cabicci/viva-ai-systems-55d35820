@@ -211,8 +211,8 @@ export function getPilotCopy(requestedLocale: SupportedLocale) {
       exploded: t(common("خريطة الأجزاء", "Part map")),
       zoom: t(common("فتح الرسم بالحجم الكامل", "Open full-size drawing")),
       downloadPack: t(common("تحميل دليل الدرس والتطبيق PDF", "Download lesson & workbook PDF")),
-      downloadParts: t(common("تحميل قائمة القطع JSON", "Download cut list JSON")),
-      downloadDrawing: t(common("تحميل الرسم SVG", "Download drawing SVG")),
+      downloadParts: t(common("تحميل قائمة القطع PDF", "Download cut list PDF")),
+      downloadDrawing: t(common("تحميل الرسومات PDF", "Download drawings PDF")),
       videoReady: t(common("شرح مكان الألواح", "Panel placement explanation")),
       videoPending: t(
         common("الفيديو التعليمي الكامل قيد الإعداد", "Full lesson video in preparation"),

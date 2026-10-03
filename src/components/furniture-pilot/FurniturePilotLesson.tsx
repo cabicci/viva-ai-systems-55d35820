@@ -46,6 +46,14 @@ const sections: SectionId[] = [
   "downloads",
   "assistant",
 ];
+const explanationDrawings: Record<string, "front" | "side" | "exploded"> = {
+  brief: "front",
+  width: "front",
+  depth: "side",
+  openings: "front",
+  list: "exploded",
+  review: "exploded",
+};
 
 export function FurniturePilotLesson({ locale: requestedLocale }: { locale: SupportedLocale }) {
   const locale = resolvePilotLocale(requestedLocale);
@@ -179,18 +187,44 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
                 <p className="mt-4 text-sm leading-7">{copy.prerequisites}</p>
               </section>
               {copy.sections.map((section, index) => (
-                <article id={`pilot-${section.id}`} key={section.id}>
-                  <p className="text-xs font-bold text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="mt-2 text-xl font-bold">{section.title}</h3>
-                  <p className="mt-3 leading-8">{technicalText(section.body)}</p>
-                  <p
-                    className="mt-3 rounded-xl bg-muted p-4 text-sm leading-7"
-                    dir={section.note.includes(" = ") ? "ltr" : undefined}
-                  >
-                    {section.note}
-                  </p>
+                <article
+                  id={`pilot-${section.id}`}
+                  key={section.id}
+                  className="grid items-start gap-5 md:grid-cols-[minmax(0,1fr)_230px]"
+                >
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-primary">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-2 text-xl font-bold">{section.title}</h3>
+                    <p className="mt-3 leading-8">{technicalText(section.body)}</p>
+                    <p
+                      className="mt-3 rounded-xl bg-muted p-4 text-sm leading-7"
+                      dir={section.note.includes(" = ") ? "ltr" : undefined}
+                    >
+                      {section.note}
+                    </p>
+                  </div>
+                  <figure className="overflow-hidden rounded-2xl border border-border bg-white">
+                    <a
+                      href={`${ASSET_ROOT}/${locale}/${explanationDrawings[section.id] ?? "front"}.svg`}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${c.zoom}: ${section.title}`}
+                    >
+                      <img
+                        src={`${ASSET_ROOT}/${locale}/${explanationDrawings[section.id] ?? "front"}.svg`}
+                        alt={section.title}
+                        width={960}
+                        height={720}
+                        className="mx-auto h-auto w-full max-w-sm"
+                        loading="lazy"
+                      />
+                    </a>
+                    <figcaption className="border-t border-border bg-card px-3 py-2 text-center text-xs font-semibold text-primary">
+                      {c.zoom}
+                    </figcaption>
+                  </figure>
                 </article>
               ))}
               <Button onClick={() => setRead(true)}>{read ? c.readDone : c.markRead}</Button>
@@ -468,8 +502,8 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
             <div className="space-y-4">
               {[
                 { label: c.downloadPack, file: `${locale}/workbook.pdf` },
-                { label: c.downloadParts, file: `${locale}/cut-list.json` },
-                { label: c.downloadDrawing, file: `${locale}/front.svg` },
+                { label: c.downloadParts, file: `${locale}/cut-list.pdf` },
+                { label: c.downloadDrawing, file: `${locale}/drawings.pdf` },
               ].map((file) => (
                 <a
                   key={file.file}
@@ -521,19 +555,6 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
           )}
         </section>
       </div>
-
-      <section className={`${panelClass} text-sm leading-7`}>
-        <h2 className="font-bold">{c.sources}</h2>
-        <p className="mt-3">{c.sourceNote}</p>
-        <a
-          className="mt-2 inline-block font-semibold text-primary underline"
-          href="https://www.hse.gov.uk/woodworking/training.htm"
-          target="_blank"
-          rel="noreferrer"
-        >
-          HSE — Training and supervision
-        </a>
-      </section>
     </main>
   );
 }

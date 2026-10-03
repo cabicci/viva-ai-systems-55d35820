@@ -155,3 +155,12 @@ scope: lessons
 source: user
 summary: Owner revised the temporary furniture lesson to Egyptian colloquial Arabic and English only. Calculated assembly animation reuses existing Remotion, Gemini TTS, lesson-video Actions and Bunny pipeline; both narrated videos completed through Actions37155581488 and reached Bunny status4 in the technical-education collection; grounded generative assistant and human teaching assessment remain pending. A silent Higgsfield comparison sample completed; no further photorealistic shots planned.
 sync_status: temporary branch only; no roadmap_items database update, entitlement change, production activation or deployment claimed
+
+
+## 2026-10-04 — furniture preview presentation refinements
+
+[roadmap:furniture-pilot-temporary-branch]
+scope: lessons
+source: user
+summary: Remove the learner-facing source footer and workbook reference section; offer workbook, cut list and drawings exclusively as PDFs in Lesson files; place contextual, expandable drawing thumbnails beside the six explanation sections in both authored locales. Reuse existing diagrams, media and preview hosting.
+sync_status: temporary branch and isolated private preview only; no roadmap_items database or main-production changes
