@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -13,6 +14,20 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE / "lib"))
 from gemini_tts import synthesize_segments, GAP_MS  # noqa: E402
 from captions_vtt import write_captions_vtt  # noqa: E402
+
+
+def mux_audio(silent, audio, output):
+    subprocess.run(["ffmpeg", "-y", "-i", str(silent), "-i", str(audio),
+                    "-map", "0:v:0", "-map", "1:a:0", "-af", "apad",
+                    "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                    "-shortest", str(output)], check=True, capture_output=True)
+    report = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(output),
+        "-af", "volumedetect", "-vn", "-sn", "-dn", "-f", "null", "-"],
+        check=True, capture_output=True, text=True).stderr
+    match = re.search(r"mean_volume:\s*([-\d.]+) dB", report)
+    if not match or float(match.group(1)) < -60:
+        raise RuntimeError("Narrated output is silent or below the audible level gate; upload blocked")
+    return float(match.group(1))
 
 
 def main():
@@ -39,14 +54,13 @@ def main():
     output = ROOT / "public/lessons/intro" / f"{work_id}.mp4"
     output.parent.mkdir(parents=True, exist_ok=True)
     # Pad the final narration to cover rounding/tail; never trim the last sentence.
-    subprocess.run(["ffmpeg", "-y", "-i", str(silent), "-i", str(audio),
-                    "-af", "apad", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-                    "-shortest", str(output)], check=True)
+    mean_volume = mux_audio(silent, audio, output)
     write_captions_vtt(work_id, scenes, durations)
     (work / "transcript.txt").write_text("\n\n".join(scene["spoken"] for scene in scenes))
     (work / "render-evidence.json").write_text(json.dumps({"locale": args.locale,
         "sceneFrames": frames, "durationSeconds": sum(frames) / 30,
-        "mp4": str(output), "tts": "existing-gemini-tts", "voice": "Charon"}, indent=2))
+        "mp4": str(output), "tts": "existing-gemini-tts", "voice": "Charon",
+        "meanVolumeDb": mean_volume}, indent=2))
     print(f"Built {output}")
 
 

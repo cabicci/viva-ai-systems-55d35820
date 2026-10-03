@@ -17,6 +17,7 @@ on:
     paths:
       - remotion/src/furniture/**
       - remotion/scripts/build-furniture-pilot.py
+      - remotion/scripts/test_furniture_audio.py
       - src/lib/furniture-pilot/model.ts
       - .github/workflows/lesson-video.yml
       - .github/scripts/ensure_bunny_collection.py
@@ -245,7 +246,7 @@ jobs:
       - name: Reuse a ready pilot video on retry
         id: precheck
         env:
-          FORCE: ${{ inputs.force_script || 'false' }}
+          FORCE: ${{ github.event_name == 'push' || inputs.force_script || 'false' }}
         run: |
           set -euo pipefail
           GUID=$(python3 - <<'PY'
@@ -268,6 +269,13 @@ jobs:
           cd remotion
           bun install --frozen-lockfile
           bun test src/furniture/geometry.test.ts
+          python3 scripts/test_furniture_audio.py
+      - name: Cache narration separately from animation revisions
+        if: steps.precheck.outputs.skip != 'true'
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
+        with:
+          path: /tmp/furniture-m1-cut-list__${{ matrix.locale }}/audio
+          key: furniture-tts-v1-${{ matrix.locale }}-${{ hashFiles('remotion/src/furniture/script.json', 'remotion/scripts/lib/gemini_tts.py', 'remotion/scripts/lib/locale_profiles.py', 'remotion/scripts/lib/egyptian_phonetic.py') }}
       - name: Build assembly with the existing Egyptian and English TTS profiles
         if: steps.precheck.outputs.skip != 'true'
         env:
@@ -314,3 +322,4 @@ jobs:
             /tmp/furniture-m1-cut-list__${{ matrix.locale }}/captions.vtt
             /tmp/furniture-m1-cut-list__${{ matrix.locale }}/transcript.txt
             /tmp/furniture-m1-cut-list__${{ matrix.locale }}/render-evidence.json
+            /tmp/furniture-m1-cut-list__${{ matrix.locale }}/audio/master.mp3
