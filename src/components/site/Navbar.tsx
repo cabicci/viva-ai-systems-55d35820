@@ -15,6 +15,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { TechnicalBrand } from "@/components/furniture-pilot/TechnicalBrand";
 import {
   AccountHeaderLinks,
   DashboardNavigation,
@@ -22,7 +23,13 @@ import {
 import { useEntitlement } from "@/lib/entitlements";
 import { cn } from "@/lib/utils";
 
-export function Navbar({ variant = "public" }: { variant?: "public" | "account" }) {
+export function Navbar({
+  variant = "public",
+  showTechnicalPreview = false,
+}: {
+  variant?: "public" | "account";
+  showTechnicalPreview?: boolean;
+}) {
   const { user, signOut } = useAuth();
   const { isAdmin } = useEntitlement();
   const t = useUiString();
@@ -53,6 +60,14 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
       <a href={`/kids?locale=${locale}`} className="hover:text-foreground transition">
         <KidsBrand compact />
       </a>
+      {showTechnicalPreview && (
+        <a
+          href={`/experiments/furniture-pilot?locale=${locale}`}
+          className="hover:text-foreground transition"
+        >
+          <TechnicalBrand compact />
+        </a>
+      )}
     </>
   );
 
@@ -151,6 +166,13 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
                         <KidsBrand compact />
                       </a>
                     </SheetClose>
+                    {showTechnicalPreview && (
+                      <SheetClose asChild>
+                        <a href={`/experiments/furniture-pilot?locale=${locale}`}>
+                          <TechnicalBrand compact />
+                        </a>
+                      </SheetClose>
+                    )}
                   </nav>
                   <div className="mt-8 grid gap-3 border-t border-border/60 pt-6">
                     {user ? (

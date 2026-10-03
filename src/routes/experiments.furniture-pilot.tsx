@@ -25,7 +25,7 @@ function FurniturePilotPage() {
   const { locale } = useLocale();
   return (
     <div className="min-h-dvh">
-      <Navbar variant="account" />
+      <Navbar variant="account" showTechnicalPreview />
       <FurniturePilotLesson locale={locale} />
     </div>
   );

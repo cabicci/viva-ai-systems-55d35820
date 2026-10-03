@@ -173,3 +173,12 @@ scope: lessons
 source: user
 summary: All experimental PDF downloads now save as localized file type plus lesson title, including the workbook link in Practice. Asset URLs, PDF contents and videos are reused.
 sync_status: temporary branch and existing private preview only
+
+
+## 2026-10-04 — temporary technical education brand
+
+[roadmap:furniture-pilot-temporary-branch]
+scope: ui
+source: user
+summary: Add a TECH wordmark using the KIDS logo lockup, letter colors and typography, with a localized technical-education caption. Show it immediately beside KIDS in desktop/mobile navigation only when the experimental lesson opts in.
+sync_status: existing temporary branch/private preview only; normal Navbar callers retain current navigation

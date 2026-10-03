@@ -73,3 +73,8 @@ Validation:8 existing lesson UI tests, application TypeScript, scoped ESLint and
 ## Descriptive PDF filenames — 2026-10-04 (Cairo)
 
 Owner requested downloaded filenames to contain the file type and lesson name. All three Lesson files downloads and the Practice workbook link use localized descriptive download names, ending in.pdf. Characters unsuitable for Windows filenames are replaced with separators. Existing asset paths, PDF contents and Bunny videos are reused.
+
+
+## Temporary technical-education wordmark — 2026-10-04 (Cairo)
+
+Owner requested a technical-education logo matching KIDS and temporarily placed next to it. TechnicalBrand reuses the official Masaarat lockup and KIDS typography, stroke and four letter colors for TECH, with an Egyptian/English education caption. The experimental route opts into its adjacent desktop/mobile link through Navbar.showTechnicalPreview; other Navbar callers retain the existing default. The link opens this experimental lesson.

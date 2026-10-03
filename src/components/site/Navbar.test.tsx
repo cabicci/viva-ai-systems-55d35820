@@ -21,7 +21,9 @@ vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: "adult" }, signOut: vi.fn() }),
 }));
 vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: false }) }));
-vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ dir: "rtl" }) }));
+vi.mock("@/lib/locale/locale-context", () => ({
+  useLocale: () => ({ dir: "rtl", locale: "ar-EG" }),
+}));
 vi.mock("@/lib/locale/use-locale-link-search", () => ({ useLocaleLinkSearch: () => () => ({}) }));
 vi.mock("@/lib/locale/use-ui-strings", () => ({ useUiString: () => (key: string) => key }));
 vi.mock("@/components/locale/LanguageSelector", () => ({
@@ -41,13 +43,13 @@ describe("shared top navigation", () => {
     const desktopLinks = within(desktop)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href"));
-    expect(desktopLinks.slice(-2)).toEqual(["/contact", "/kids"]);
+    expect(desktopLinks.slice(-2)).toEqual(["/contact", "/kids?locale=ar-EG"]);
 
     fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
     const mobileLinks = within(screen.getByRole("dialog"))
       .getAllByRole("link")
       .map((link) => link.getAttribute("href"));
-    expect(mobileLinks.indexOf("/kids")).toBe(mobileLinks.indexOf("/contact") + 1);
+    expect(mobileLinks.indexOf("/kids?locale=ar-EG")).toBe(mobileLinks.indexOf("/contact") + 1);
   });
 
   it("keeps account destinations reachable from the top bar", () => {
@@ -76,15 +78,35 @@ describe("shared top navigation", () => {
       within(accountNav)
         .getAllByRole("link")
         .map((link) => link.getAttribute("href")),
-    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account", "/kids"]);
+    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account", "/kids?locale=ar-EG"]);
     expect(within(header).queryByRole("link", { name: "nav.contact" })).not.toBeInTheDocument();
-    expect(within(accountNav).getByRole("link", { name: "Kids" })).toHaveAttribute("href", "/kids");
+    expect(within(accountNav).getByRole("link", { name: "Kids" })).toHaveAttribute(
+      "href",
+      "/kids?locale=ar-EG",
+    );
     expect(within(header).getByRole("button", { name: "sidebar.signOut" })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
     expect(within(screen.getByRole("dialog")).getByRole("link", { name: "Kids" })).toHaveAttribute(
       "href",
-      "/kids",
+      "/kids?locale=ar-EG",
     );
+  });
+
+  it("shows the temporary TECH brand immediately after KIDS only when opted in", () => {
+    const { rerender } = render(<Navbar />);
+    expect(screen.queryByRole("link", { name: "التعليم الفني" })).toBeNull();
+    rerender(<Navbar showTechnicalPreview />);
+    const desktop = screen.getByRole("navigation");
+    const links = within(desktop).getAllByRole("link");
+    expect(links.slice(-2).map((link) => link.getAttribute("href"))).toEqual([
+      "/kids?locale=ar-EG",
+      "/experiments/furniture-pilot?locale=ar-EG",
+    ]);
+    expect(within(desktop).getByRole("link", { name: "التعليم الفني" })).toHaveTextContent("TECH");
+    fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
+    const mobile = within(screen.getByRole("dialog")).getAllByRole("link");
+    const kids = mobile.findIndex((link) => link.getAttribute("href") === "/kids?locale=ar-EG");
+    expect(mobile[kids + 1]).toHaveAttribute("href", "/experiments/furniture-pilot?locale=ar-EG");
   });
 });
