@@ -86,3 +86,11 @@ base directory and supports Chokidar4. Two actual watcher tests cover add/change
 unlink and storage notifications. bun audit is clean (627 packages); no gate is
 disabled. Reference: https://github.com/advisories/GHSA-vfj7-8cjw-p6xm and
 https://github.com/paulmillr/chokidar#upgrading.
+
+## 2026-10-03 — preserve platform migration artifacts
+
+[roadmap:contact-immediate-platform-sync]
+scope: infra
+source: user
+summary: Reconcile Lovable's already-applied targeted-claim migration artifact, generated types and migration-tool dependencies after PR128 deployment; update the lock without reapplying SQL.
+sync_status: platform function deployed with contact disabled; application publication and activation remain separate

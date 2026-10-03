@@ -31,6 +31,25 @@ Support and institutional requests receive a necessary receipt acknowledgement a
 
 The recipient's stored preferred locale takes priority. For visitors without an account preference, the explicitly selected form locale is used. Supported values are ar-EG, ar-MSA, ar-Gulf and en. No IP-based language inference is used. All messages use the current Masaarat logo and pastel shell, Sunday–Thursday 09:00–17:00 Africa/Cairo service hours, and no promised response deadline. Submitted message contents are never copied into the email.
 
+## Applied platform receipt — 3 October 2026
+
+PR128 merged at `6d47bca83269ea5e77ec0c8fd2d08b96c6a6d565` after CI444
+and LC09 passed on `03dc4ec2663b02d2ed8b14dd3adf389cba5ac3f3`.
+The platform applied the targeted claim once and deployed both workers.
+Independent DB verification at 06:52:18Z confirms the function, service-only
+execution, LC09 guard, two preserved outboxes/receipts, no unsent rows and
+unchanged welcome cron. Protected worker calls returned 200, contact disabled
+and welcome/subscription zero counts with contact:null. Application publication
+and contact activation are separate, still unverified at this checkpoint.
+
+`drizzle/migrations/0000_contact_immediate_claim.sql` is the platform receipt of
+the **same already-applied SQL** as the Supabase-named source file, SHA256
+`7be1032cb9ed890c80c8fa255f05bc76b4b82f5a214fb01beca063ab8015649f`.
+These are not two migrations to execute. Do not replay either on production.
+Generated types and Drizzle configuration/dependencies are preserved; the lock
+is reconciled separately before website publication. Supabase timestamp-ledger
+absence does not establish that old effective objects were never installed.
+
 ## Coordinated rollout and rollback
 
 1. Merge the reviewed, tested candidate and preserve later Lovable changes.
