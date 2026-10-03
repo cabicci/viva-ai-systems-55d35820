@@ -1,3 +1,11 @@
+## 2026-10-03 — Immediate contact acknowledgement candidate
+
+The owner approved immediate server-side contact sending. Accepted intake queues immutable content then attempts only its own leased message through the existing Resend transport. The existing account-welcome-job retries eligible contact rows without a new cron/Vault binding; failures in one mail stream cannot prevent the others. Existing CONTACT_MAIL_ENABLED, sender routing, templates, receipt verification and LC-09 deletion suppression remain enforced.
+
+Local evidence: 92 focused tests passed (39 immediate/server/stream/welcome and 53 existing outbox/receipt/transport/deletion); root and affected Edge TypeScript passed. Final build, exact-head CI, additive migration, worker/application deployment and protected activation are recorded separately by the integration owner. No runtime activation or new production email is claimed here. The two already accepted production contact messages remain accepted. Protected replacement of the webhook signing secret and changing the existing contact switch are still platform configuration blockers.
+
+The latest two authoritative registers retain the consolidated remaining-work list. User approvals persist, the backup requirement is cancelled, the two protected accounts and their data stay preserved, the financial deadline remains fifteen days after completed deletion, and Stripe TEST / broader Kids stop / NO-GO remain in force. See docs/email/contact-acknowledgements.md for the bounded rollout and rollback.
+
 ## 2026-10-02 — Fifteen-day financial erasure candidate; completed cleanup preserved
 
 The nine explicitly selected accounts were deleted in production at 07:48:43Z; read-only verification confirms only the two protected Auth accounts remain. Their data and the owner's three Kids profiles are preserved. The accepted two contact outboxes/delivered receipts and the existing welcome schedule remain intact. The contact/deletion migrations already applied are not reapplied.
