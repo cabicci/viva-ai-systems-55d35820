@@ -1,3 +1,11 @@
+## 2026-10-03 — Immediate mail through the existing Edge worker
+
+[roadmap:5ef825a9-66b9-430f-9c03-57b161126504]
+scope: infra
+source: user
+summary: Reuse installed server-only worker authorization for target-only welcome/contact dispatch; preserve immutable queues, idempotency, retries and separate batch lifecycle. No new secret, Vault, cron or migration; no accepted-message resend.
+sync_status: matching roadmap_items note appended; current production and acceptance evidence remain in the two authoritative registers
+
 ## 2026-10-03 — Immediate confirmed-account welcome
 
 [roadmap:5ef825a9-66b9-430f-9c03-57b161126504]

@@ -5,10 +5,17 @@ import { contactMailEnabled } from "../_shared/contact-mail-enabled.ts";
 import { createAccountLifecycleWorker } from "../_shared/account-lifecycle-worker.ts";
 import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
+import { readImmediateMailTarget } from "../_shared/immediate-mail-request.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (!(await authorizedWelcomeJob(request, Deno.env.get("ACCOUNT_WELCOME_JOB_SECRET"))))
     return new Response(null, { status: 401 });
+  let immediate;
+  try {
+    immediate = await readImmediateMailTarget(request);
+  } catch {
+    return new Response(null, { status: 400 });
+  }
   const welcomeEnabled = Deno.env.get("ACCOUNT_WELCOME_ENABLED") === "true";
   const subscriptionEnabled = Deno.env.get("SUBSCRIPTION_MAIL_ENABLED") === "true";
   const contactEnabled = contactMailEnabled(Deno.env.get("CONTACT_MAIL_DIRECT_ENABLED"));
@@ -36,6 +43,24 @@ Deno.serve(async (request) => {
         message,
       );
     };
+    // An immediate request can only attempt its stored message. It never runs
+    // batch subscription, contact, deletion or financial operations.
+    if (immediate) {
+      const active = immediate.stream === "welcome" ? welcomeEnabled : contactEnabled;
+      if (!active) return Response.json({ enabled: false });
+      if (!apiKey || (immediate.stream === "welcome" && !from))
+        throw new Error("mail_sender_unconfigured");
+      const stats =
+        immediate.stream === "welcome"
+          ? await runWelcomeJob(db, send, immediate.id)
+          : await runContactMailJob(
+              db,
+              (message, sender) =>
+                sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+              immediate.id,
+            );
+      return Response.json({ [immediate.stream]: stats });
+    }
     const result = await runMailStreams({
       welcome: welcomeEnabled
         ? () => {

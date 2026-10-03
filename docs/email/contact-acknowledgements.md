@@ -1,3 +1,9 @@
+## 2026-10-03 — Common immediate and retry transport candidate
+
+After persistence, the application calls account-welcome-job with a server-authorized target-only contact request using its installed worker authorization. The same Edge transport handles immediate sends and existing scheduled retries. Immediate dispatch never runs unrelated mail or account/financial batches. A completed target returns zero claims, preserving the accepted messages. Worker failures leave the durable retry intact. No new secret, Vault, cron, migration or receipt change is required. CONTACT_MAIL_DIRECT_ENABLED remains the sole contact activation flag. CI/deployment/current acceptance belong in the two authoritative registers; do not repeat completed intake or transport tests.
+
+Rollback: revert the bounded dispatch source change and redeploy the application and existing account-welcome-job together. Keep all outboxes, receipts, migrations, runtime flags and the existing schedule intact.
+
 # Contact acknowledgements
 
 ## Current integration state — 3 October 2026

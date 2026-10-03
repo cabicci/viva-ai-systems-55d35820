@@ -88,6 +88,17 @@ describe("contact acknowledgements", () => {
     await expect(runContactMailJob(db, send)).rejects.toThrow("contact_mail_claim_failed");
     expect(send).not.toHaveBeenCalled();
   });
+  it.each([[{ ...row, id: "another-request" }], [row, row]])(
+    "rejects a target claim outside its requested scope before sending",
+    async (...rows) => {
+      const send = vi.fn();
+      const db = { rpc: vi.fn().mockResolvedValue({ data: rows, error: null }) };
+      await expect(runContactMailJob(db, send, row.id)).rejects.toThrow(
+        "contact_mail_claim_scope_invalid",
+      );
+      expect(send).not.toHaveBeenCalled();
+    },
+  );
   it("does not report success after completion fails", async () => {
     const db = database();
     db.rpc
