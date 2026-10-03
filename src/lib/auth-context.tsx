@@ -3,6 +3,7 @@ import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { syncAccessTokenCookie } from "@/lib/auth-access-token-cookie";
 import { captureError, captureWarn } from "@/lib/error-capture";
+import { requestAccountWelcome } from "@/lib/account-welcome.functions";
 
 const DEVICE_KEY = "lovable.device_id";
 
@@ -77,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Promise that resolves once the claim RPC for the current user finished,
   // so the device-watcher effect won't read a stale row mid-login and sign us out.
   const claimPromises = useRef<Map<string, Promise<void>>>(new Map());
+  const welcomeAttempted = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -96,7 +98,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false);
       // INITIAL_SESSION can reach React before the separate getSession() call
       // settles. Register the claim now so the device watcher waits for it.
-      if ((e === "SIGNED_IN" || e === "INITIAL_SESSION") && s?.user && !claimedUserIds.current.has(s.user.id)) {
+      if (
+        (e === "SIGNED_IN" || e === "INITIAL_SESSION") &&
+        s?.user &&
+        !claimedUserIds.current.has(s.user.id)
+      ) {
         claimedUserIds.current.add(s.user.id);
         const deviceId = getDeviceId();
         const p = Promise.resolve(
@@ -109,6 +115,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (e === "SIGNED_OUT") {
         claimedUserIds.current.clear();
         claimPromises.current.clear();
+        welcomeAttempted.current.clear();
         syncAccessTokenCookie(null);
       }
     });
@@ -139,6 +146,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
     return () => sub.subscription.unsubscribe();
   }, []);
+
+  // After the token cookie is synced, attempt only this confirmed account's
+  // stored welcome. Never hold up device claiming, rendering or sign-in.
+  useEffect(() => {
+    const userId = session?.user?.id;
+    if (!userId || !session.user.email_confirmed_at || welcomeAttempted.current.has(userId)) return;
+    welcomeAttempted.current.add(userId);
+    void requestAccountWelcome().catch(() => {
+      captureWarn("auth:welcome_deferred", { reason: "scheduled retry retained" });
+    });
+  }, [session?.user?.id, session?.user?.email_confirmed_at]);
 
   // Single-device enforcement: only kicks AFTER our own claim has settled,
   // so we never race our own login and false-sign-out.

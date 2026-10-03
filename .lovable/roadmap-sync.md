@@ -1,3 +1,11 @@
+## 2026-10-03 — Immediate confirmed-account welcome
+
+[roadmap:5ef825a9-66b9-430f-9c03-57b161126504]
+scope: infra
+source: user
+summary: Verified-request immediate welcome attempt reuses the durable outbox, existing transport, idempotency and retry; preserve account/family deletion locks and local displaced-session sign-out. No new Vault/token/cron or resend.
+sync_status: matching roadmap_items note appended; deployment and final acceptance remain separate in the two authoritative registers
+
 ## 2026-10-03 — Shared lifecycle packaging correction
 
 [roadmap:lifecycle-shared-packaging-20261003]

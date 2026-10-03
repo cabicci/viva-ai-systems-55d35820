@@ -82,6 +82,7 @@ describe("packaged lifecycle dependency boundary", () => {
       }
     };
     inspect(resolve("supabase/functions/_shared/account-lifecycle-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/account-welcome-worker.ts"));
   });
 });
 

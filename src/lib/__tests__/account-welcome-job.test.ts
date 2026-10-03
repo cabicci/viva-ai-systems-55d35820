@@ -19,6 +19,24 @@ function db() {
   };
 }
 describe("transactional account welcome", () => {
+  it("claims only the verified account on the immediate route", async () => {
+    const database = db();
+    database.rpc.mockResolvedValueOnce({ data: [claim], error: null });
+    const send = vi.fn().mockResolvedValue({ ok: true, emailId: "provider-id" });
+    await runWelcomeJob(database, send, claim.user_id);
+    expect(database.rpc).toHaveBeenNthCalledWith(1, "claim_account_welcome_email", {
+      p_user: claim.user_id,
+    });
+  });
+  it("rejects another account in a targeted claim before sending anything", async () => {
+    const database = db();
+    database.rpc.mockResolvedValueOnce({ data: [claim], error: null });
+    const send = vi.fn();
+    await expect(runWelcomeJob(database, send, "another-user")).rejects.toThrow(
+      "welcome_claim_target_mismatch",
+    );
+    expect(send).not.toHaveBeenCalled();
+  });
   it("requires the dedicated service secret, not a client JWT", async () => {
     const secret = "x".repeat(48);
     expect(
