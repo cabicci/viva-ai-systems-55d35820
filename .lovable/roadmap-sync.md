@@ -164,3 +164,12 @@ scope: lessons
 source: user
 summary: Remove the learner-facing source footer and workbook reference section; offer workbook, cut list and drawings exclusively as PDFs in Lesson files; place contextual, expandable drawing thumbnails beside the six explanation sections in both authored locales. Reuse existing diagrams, media and preview hosting.
 sync_status: temporary branch and isolated private preview only; no roadmap_items database or main-production changes
+
+
+## 2026-10-04 — descriptive furniture PDF filenames
+
+[roadmap:furniture-pilot-temporary-branch]
+scope: lessons
+source: user
+summary: All experimental PDF downloads now save as localized file type plus lesson title, including the workbook link in Practice. Asset URLs, PDF contents and videos are reused.
+sync_status: temporary branch and existing private preview only

@@ -488,7 +488,7 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
               <h3 className="text-lg font-bold">{c.cost}</h3>
               <p className="text-sm leading-7">{c.costNote}</p>
               <a
-                download
+                download={copy.downloadNames.workbook}
                 href={`${ASSET_ROOT}/${locale}/workbook.pdf`}
                 className="inline-flex min-h-11 items-center gap-2 font-bold text-primary underline"
               >
@@ -501,13 +501,25 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
           {tab === "downloads" && (
             <div className="space-y-4">
               {[
-                { label: c.downloadPack, file: `${locale}/workbook.pdf` },
-                { label: c.downloadParts, file: `${locale}/cut-list.pdf` },
-                { label: c.downloadDrawing, file: `${locale}/drawings.pdf` },
+                {
+                  label: c.downloadPack,
+                  file: `${locale}/workbook.pdf`,
+                  name: copy.downloadNames.workbook,
+                },
+                {
+                  label: c.downloadParts,
+                  file: `${locale}/cut-list.pdf`,
+                  name: copy.downloadNames.cutList,
+                },
+                {
+                  label: c.downloadDrawing,
+                  file: `${locale}/drawings.pdf`,
+                  name: copy.downloadNames.drawings,
+                },
               ].map((file) => (
                 <a
                   key={file.file}
-                  download
+                  download={file.name}
                   href={`${ASSET_ROOT}/${file.file}`}
                   className="flex min-h-16 items-center gap-3 rounded-xl border border-border p-4 font-bold hover:bg-muted"
                 >

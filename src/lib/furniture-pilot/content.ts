@@ -15,11 +15,22 @@ export function resolvePilotLocale(locale: SupportedLocale): "ar-EG" | "en" {
 export function getPilotCopy(requestedLocale: SupportedLocale) {
   const locale = resolvePilotLocale(requestedLocale);
   const t = (value: Text) => text(value, locale);
+  const title = t([
+    "من الرسم لقائمة القطع: وحدة تخزين صغيرة",
+    "From drawing to cut list: a small storage cabinet",
+  ]);
+  const pdfName = (type: string) =>
+    `${type} — ${title}`
+      .replace(/[:<>"/\\|?*]/g, " - ")
+      .replace(/\s+/g, " ")
+      .trim() + ".pdf";
   return {
-    title: t([
-      "من الرسم لقائمة القطع: وحدة تخزين صغيرة",
-      "From drawing to cut list: a small storage cabinet",
-    ]),
+    title,
+    downloadNames: {
+      workbook: pdfName(t(common("دليل الدرس", "Lesson workbook"))),
+      cutList: pdfName(t(common("قائمة القطع", "Cut list"))),
+      drawings: pdfName(t(common("الرسومات", "Drawings"))),
+    },
     eyebrow: t(
       common(
         "المهارات الفنية · الأثاث · M1 · الدرس 1",
