@@ -1885,6 +1885,18 @@ export type Database = {
         }[]
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_contact_acknowledgement: {
+        Args: { p_id: string }
+        Returns: {
+          claim_token: string
+          html_body: string
+          id: string
+          recipient: string
+          sender: string
+          subject: string
+          text_body: string
+        }[]
+      }
       claim_contact_acknowledgements: {
         Args: never
         Returns: {
