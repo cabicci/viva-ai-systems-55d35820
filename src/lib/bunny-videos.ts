@@ -430,6 +430,8 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "technical-m01-l04__ar-Gulf": "d4b71af5-bd06-476b-94ce-485f9a197da6",
   "technical-m01-l04__ar-MSA": "7152e480-af18-469d-a44d-e0f59c8e2040",
   "technical-m01-l04__en": "c3e6e777-591c-4d02-8659-c30acd6792fa",
+  "technical-m02-l01__ar-EG": "39c64dd2-af3d-4452-8aa6-ee554a6596aa",
+
 };
 
 export function getBunnyEmbedUrl(lessonId: string | undefined): string | undefined {
