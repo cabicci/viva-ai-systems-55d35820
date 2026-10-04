@@ -17,10 +17,12 @@ const accountLinks: { to: string; key: UiStringKey }[] = [
   { to: "/ai-assistant", key: "sidebar.assistant" },
   { to: "/analytics", key: "sidebar.analytics" },
   { to: "/account", key: "sidebar.account" },
+  { to: "/payments", key: "sidebar.payments" },
 ];
 
 const adminLinks: { to: string; key: UiStringKey }[] = [
   { to: "/admin", key: "sidebar.admin" },
+  { to: "/admin/commerce", key: "sidebar.commerce" },
   { to: "/image-gallery", key: "sidebar.imageGallery" },
   { to: "/roadmap", key: "sidebar.roadmap" },
   { to: "/assistant-runtime", key: "sidebar.assistantRuntime" },

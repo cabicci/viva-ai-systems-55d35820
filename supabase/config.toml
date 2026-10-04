@@ -20,3 +20,6 @@ verify_jwt = false # Dedicated job secret plus disabled-by-default DB and enviro
 
 [functions.contact-mail-webhook]
 verify_jwt = false # Svix signature verification before DB access.
+
+[functions.commerce-invitations]
+verify_jwt = true # Explicit signed-in admin batch; handler and SQL revalidate identity/role.

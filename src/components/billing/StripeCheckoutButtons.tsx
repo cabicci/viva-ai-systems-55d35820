@@ -8,6 +8,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { getKidsCheckoutCopy } from "@/lib/kids/checkout-copy";
+import { PaymentMethods } from "@/components/commerce/PaymentMethods";
 
 type PaidPlanKey = "pro" | "pro_plus";
 type BillingInterval = "month" | "year";
@@ -97,13 +98,15 @@ export function StripeCheckoutButtons({
           <p className="font-bold">{kidsCopy.confirm}</p>
           <p className="mt-2 text-muted-foreground">{kidsCopy.choice}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Button
-              type="button"
+            <PaymentMethods
+              packageKey={plan}
+              interval={pendingInterval}
+              market={marketCode}
               disabled={loading !== null}
-              onClick={() => void startCheckout(pendingInterval)}
+              stripe={() => void startCheckout(pendingInterval)}
             >
               {kidsCopy.adultOnly}
-            </Button>
+            </PaymentMethods>
             <Button
               type="button"
               variant="outline"

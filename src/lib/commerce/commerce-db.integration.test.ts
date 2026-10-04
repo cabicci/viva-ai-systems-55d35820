@@ -1,0 +1,1129 @@
+// @vitest-environment node
+import { readFileSync } from "node:fs";
+import { randomUUID } from "node:crypto";
+import postgres from "postgres";
+import { afterAll, beforeAll, beforeEach, afterEach, describe, expect, it } from "vitest";
+import {
+  accountDeletionTestDb,
+  accountDeletionSchemaSql,
+} from "../__tests__/fixtures/account-deletion-db";
+
+import type { Order, Invitation } from "./contracts";
+type CommandResult = Order & {
+  enabled: boolean;
+  [index: number]: Invitation & { error: string; enabled: boolean };
+};
+type TestDb = {
+  query<T>(sql: string, args?: unknown[]): Promise<{ rows: T[] }>;
+  exec(sql: string): Promise<unknown>;
+  close(): Promise<void>;
+};
+let db: TestDb;
+const nativeUrl = process.env.COMMERCE_NATIVE_DATABASE_URL;
+let nativeClient: ReturnType<typeof postgres> | undefined;
+const admin = randomUUID(),
+  user = randomUUID(),
+  other = randomUUID();
+const command = async (action: string, data: unknown = {}) =>
+  (
+    await db.query<{ value: CommandResult }>(
+      "SELECT public.commerce_command($1,$2::jsonb) AS value",
+      [action, JSON.stringify(data)],
+    )
+  ).rows[0].value;
+const caller = (id: string) =>
+  db.query(
+    "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
+    [id],
+  );
+const value = async <T = unknown>(sql: string) =>
+  (await db.query<{ value: T }>(sql)).rows[0]?.value;
+async function denied(action: string, data: unknown, error: RegExp) {
+  await db.exec("SAVEPOINT denied");
+  try {
+    await expect(command(action, data)).rejects.toThrow(error);
+  } finally {
+    await db.exec("ROLLBACK TO SAVEPOINT denied; RELEASE SAVEPOINT denied");
+  }
+}
+beforeAll(async () => {
+  if (nativeUrl) {
+    const parsed = new URL(nativeUrl);
+    if (
+      !["localhost", "127.0.0.1"].includes(parsed.hostname) ||
+      parsed.pathname !== "/commerce_test"
+    )
+      throw new Error("Disposable localhost commerce_test database required");
+    nativeClient = postgres(nativeUrl, { max: 1 });
+    for (const sql of accountDeletionSchemaSql(true)) await nativeClient.unsafe(sql);
+    db = {
+      query: async <T>(sql: string, args: unknown[] = []) => ({
+        rows: (await nativeClient!.unsafe(
+          sql,
+          args.map((v) =>
+            typeof v === "string" && (v.startsWith("{") || v.startsWith("["))
+              ? nativeClient!.json(JSON.parse(v))
+              : v,
+          ) as never,
+        )) as unknown as T[],
+      }),
+      exec: async (sql) => nativeClient!.unsafe(sql),
+      close: () => nativeClient!.end(),
+    };
+  } else db = await accountDeletionTestDb(true);
+  await db.exec(`CREATE SCHEMA storage;
+   CREATE TABLE storage.buckets(id text PRIMARY KEY,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
+   CREATE TABLE storage.objects(id uuid DEFAULT gen_random_uuid(),bucket_id text,name text,owner_id text);`);
+  for (const name of [
+    "20261004010000_commerce_foundation.sql",
+    "20261004011000_commerce_commands.sql",
+    "20261004012000_commerce_access.sql",
+    "20261004013000_commerce_receipts_mail.sql",
+    "20261004014000_commerce_account_retention.sql",
+  ])
+    try {
+      await db.exec(readFileSync(`supabase/migrations/${name}`, "utf8"));
+    } catch (error) {
+      console.error(name, (error as { message: string }).message);
+      throw error;
+    }
+  await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now());
+      INSERT INTO public.user_roles VALUES('${admin}','admin');`);
+}, 30000);
+afterAll(async () => db?.close());
+describe("unified commerce with installed billing and LC09", () => {
+  beforeEach(async () => {
+    await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+    await caller(admin);
+    await command("configure_method", {
+      code: "instapay",
+      enabled: true,
+      instructions: "Transfer then upload",
+      destination: "SYNTHETIC ONLY",
+      currencies: ["EGP"],
+    });
+  });
+  afterEach(async () => db.exec("ROLLBACK"));
+  it("keeps feature disabled by default and forbids bare admin writes", async () => {
+    await db.exec("UPDATE billing.commerce_control SET enabled=false");
+    await caller(user);
+    expect((await command("status")).enabled).toBe(false);
+    expect((await command("methods"))[0].enabled).toBe(false);
+    await denied(
+      "create_order",
+      {
+        package: "pro",
+        market: "EG",
+        billing_interval: "month",
+        method: "instapay",
+        key: randomUUID(),
+      },
+      /COMMERCE_DISABLED/,
+    );
+    await db.exec("UPDATE billing.commerce_control SET enabled=true");
+    await denied("create_group", { name: "test" }, /ADMIN_REQUIRED/);
+  });
+  it("confirming twice cannot extend access or multiply revenue", async () => {
+    await caller(user);
+    const o = await command("create_order", {
+      package: "pro",
+      market: "EG",
+      billing_interval: "month",
+      method: "instapay",
+      key: "order-0001",
+    });
+    expect(o.final_minor).toBe(16900);
+    await caller(admin);
+    const data = {
+      key: "payment-0001",
+      method: "instapay",
+      currency: "EGP",
+      amount_minor: 16900,
+      transaction_reference: "synthetic-ref-0001",
+      received_at: new Date().toISOString(),
+      funds_verified: true,
+      allocations: [{ order_id: o.id, amount_minor: 16900 }],
+    };
+    const first = await command("confirm", data);
+    expect((await command("confirm", data)).id).toBe(first.id);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(1);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_payments"),
+    ).toBe(16900);
+    await caller(user);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro");
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const snapshot = await value<{
+      lessons: { entitled_lesson_ids: string[] };
+      builder_access: boolean;
+    }>(`SELECT billing.get_entitlement_snapshot('${user}') AS value`);
+    expect(snapshot.lessons.entitled_lesson_ids).toHaveLength(71);
+    expect(snapshot.builder_access).toBe(false);
+    expect(
+      snapshot.lessons.entitled_lesson_ids.every((id: string) => !id.startsWith("builder-")),
+    ).toBe(true);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.gateway_customers WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+  });
+  it("rejects unavailable destinations and explicit customer admin access", async () => {
+    await caller(user);
+    for (const method of ["bank", "paymob", "admin", "stripe"])
+      await denied(
+        "create_order",
+        {
+          package: "pro",
+          market: "EG",
+          billing_interval: "month",
+          method,
+          key: "unconfigured-" + method,
+        },
+        /METHOD_UNAVAILABLE/,
+      );
+  });
+});
+
+describe("commerce review, invitation and lifecycle edge cases", () => {
+  beforeEach(async () => {
+    await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+    await caller(admin);
+    await command("configure_method", {
+      code: "instapay",
+      enabled: true,
+      instructions: "Synthetic instructions",
+      destination: "SYNTHETIC ONLY",
+      currencies: ["EGP"],
+    });
+  });
+  afterEach(async () => db.exec("ROLLBACK"));
+  const selection = { package: "pro", market: "EG", billing_interval: "month", method: "instapay" };
+  const order = async () => {
+    await caller(user);
+    return command("create_order", { ...selection, key: randomUUID() });
+  };
+  const pay = async (
+    o: { id: string; final_minor: number },
+    changes: Record<string, unknown> = {},
+  ) => {
+    await caller(admin);
+    return command("confirm", {
+      key: randomUUID(),
+      method: "instapay",
+      currency: "EGP",
+      amount_minor: o.final_minor,
+      transaction_reference: randomUUID(),
+      received_at: new Date().toISOString(),
+      funds_verified: true,
+      allocations: [{ order_id: o.id, amount_minor: o.final_minor }],
+      ...changes,
+    });
+  };
+  const recipient = (email = "member@example.test", changes: Record<string, unknown> = {}) => ({
+    email,
+    name: "Synthetic",
+    locale: "ar-EG",
+    package: "pro",
+    access_kind: "complimentary",
+    duration_days: 30,
+    start_rule: "acceptance",
+    deadline: new Date(Date.now() + 86400000).toISOString(),
+    market: "EG",
+    billing_interval: "month",
+    currency: "EGP",
+    method: "instapay",
+    ...changes,
+  });
+  async function invite(rows: unknown[]) {
+    await caller(admin);
+    const group = await command("create_group", { name: "Synthetic group" });
+    return { group, rows: await command("import", { group_id: group.id, rows }) };
+  }
+  it("receipt submission remains pending and private", async () => {
+    const o = await order(),
+      id = randomUUID();
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    await db.query("SELECT public.commerce_receipt($1,'attach',$2::jsonb)", [
+      user,
+      JSON.stringify({
+        id,
+        order_id: o.id,
+        storage_path: `${o.id}/${id}`,
+        mime: "image/png",
+        size_bytes: 100,
+        digest: "a".repeat(64),
+      }),
+    ]);
+    expect(
+      await value(`SELECT review_status AS value FROM billing.commerce_orders WHERE id='${o.id}'`),
+    ).toBe("pending");
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await db.exec("SAVEPOINT privacy");
+    await expect(
+      db.query("SELECT public.commerce_receipt($1,'read',$2::jsonb)", [
+        other,
+        JSON.stringify({ id }),
+      ]),
+    ).rejects.toThrow(/FORBIDDEN/);
+    await db.exec("ROLLBACK TO SAVEPOINT privacy");
+    await caller(other);
+    await denied("order", { id: o.id }, /FORBIDDEN/);
+  });
+  it("rejection and more-information never activate access", async () => {
+    const o = await order();
+    await caller(admin);
+    await command("review", { id: o.id, status: "rejected", reason: "No funds" });
+    await denied(
+      "confirm",
+      {
+        key: randomUUID(),
+        method: "instapay",
+        currency: "EGP",
+        amount_minor: o.final_minor,
+        transaction_reference: randomUUID(),
+        received_at: new Date().toISOString(),
+        funds_verified: true,
+        allocations: [{ order_id: o.id, amount_minor: o.final_minor }],
+      },
+      /NOT_CONFIRMABLE/,
+    );
+    await command("review", { id: o.id, status: "more_info", reason: "Need transaction details" });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+  });
+  it("duplicate transaction references cannot count a second payment", async () => {
+    const a = await order(),
+      b = await order();
+    const reference = randomUUID();
+    await pay(a, { transaction_reference: reference });
+    await db.exec("SAVEPOINT repeated");
+    await expect(pay(b, { transaction_reference: reference })).rejects.toThrow(
+      /unique|duplicate|REUSED/i,
+    );
+    await db.exec("ROLLBACK TO SAVEPOINT repeated");
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_payments")).toBe(1);
+  });
+  it("imports are idempotent, do not send and require matching verified email", async () => {
+    const row = recipient(),
+      { group, rows } = await invite([row]);
+    expect((await command("import", { group_id: group.id, rows: [row] }))[0].id).toBe(rows[0].id);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_outbox")).toBe(0);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await caller(other);
+    await denied("accept", { id: rows[0].id }, /FORBIDDEN/);
+    await caller(user);
+    await command("invitation", { id: rows[0].id });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await command("accept", { id: rows[0].id });
+    const ends = await value("SELECT ends_at::text AS value FROM billing.commerce_entitlements");
+    await command("accept", { id: rows[0].id });
+    expect(await value("SELECT ends_at::text AS value FROM billing.commerce_entitlements")).toBe(
+      ends,
+    );
+  });
+  it("import preview identifies per-row errors without reserving or writing", async () => {
+    await caller(admin);
+    const group = await command("create_group", { name: "Preview" });
+    const rows = await command("preview_import", {
+      group_id: group.id,
+      rows: [
+        recipient(),
+        recipient("broken", { duration_days: 0 }),
+        recipient("other@example.test", { access_kind: "external", method: "bank" }),
+      ],
+    });
+    expect(rows[1].error).toMatch(/RECIPIENT/);
+    expect(rows[2].error).toMatch(/UNAVAILABLE/);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_invitations")).toBe(0);
+  });
+  it("partial group payments count gross once and activate only fully funded accepted members", async () => {
+    const { group, rows } = await invite([
+      recipient(undefined, { access_kind: "external" }),
+      recipient("other@example.test", { access_kind: "external" }),
+    ]);
+    await caller(user);
+    await command("accept", { id: rows[0].id });
+    await caller(other);
+    await command("accept", { id: rows[1].id });
+    const o = { id: rows[0].order_id!, final_minor: 16900 };
+    await pay(o, {
+      group_id: group.id,
+      amount_minor: 20000,
+      allocations: [
+        { order_id: rows[0].order_id!, amount_minor: 16900 },
+        { order_id: rows[1].order_id!, amount_minor: 3100 },
+      ],
+    });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(1);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_payments"),
+    ).toBe(20000);
+    await pay({ id: rows[1].order_id!, final_minor: 13800 }, { group_id: group.id });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(2);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_payments"),
+    ).toBe(33800);
+  });
+  it("payment before invitation acceptance waits, then activates once", async () => {
+    const { group, rows } = await invite([recipient(undefined, { access_kind: "external" })]);
+    await pay({ id: rows[0].order_id!, final_minor: 16900 }, { group_id: group.id });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await caller(user);
+    await command("accept", { id: rows[0].id });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(1);
+  });
+  it("paid offers reserve reversibly, enforce identity and never touch Stripe coupons", async () => {
+    await caller(admin);
+    await command("create_offer", {
+      code: "PERSONAL",
+      campaign: "Synthetic",
+      package: "pro",
+      kind: "percent",
+      value_minor: 20,
+      currency: "EGP",
+      email: "member@example.test",
+      duration_days: 30,
+      eligibility: "all",
+      renewals: false,
+      valid_from: new Date(Date.now() - 1000).toISOString(),
+      valid_until: new Date(Date.now() + 86400000).toISOString(),
+      max_redemptions: 1,
+      per_email_limit: 1,
+      enabled: true,
+    });
+    await caller(other);
+    await denied("quote", { ...selection, code: "PERSONAL" }, /INELIGIBLE/);
+    await caller(user);
+    const o = await command("create_order", { ...selection, code: "PERSONAL", key: randomUUID() });
+    expect(o.final_minor).toBe(13520);
+    await denied("create_order", { ...selection, code: "PERSONAL", key: randomUUID() }, /LIMIT/);
+    await command("cancel_order", { id: o.id });
+    const b = await command("create_order", { ...selection, code: "PERSONAL", key: randomUUID() });
+    expect(b.final_minor).toBe(13520);
+    await pay(b);
+    await caller(user);
+    await denied("quote", { ...selection, code: "PERSONAL", renewal: true }, /INELIGIBLE/);
+    expect(
+      await value(
+        "SELECT offer_consumed AS value FROM billing.commerce_orders WHERE id='" + b.id + "'",
+      ),
+    ).toBe(true);
+  });
+  it("expiring or revoking a gift preserves valid paid access and package boundaries", async () => {
+    const o = await order();
+    await pay(o);
+    await caller(admin);
+    const grant = await command("grant", {
+      user_id: user,
+      package: "pro_plus",
+      duration_days: 1,
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    await caller(user);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+    await db.exec(
+      `UPDATE billing.commerce_entitlements SET starts_at=now()-interval '2 days',ends_at=now()-interval '1 day' WHERE grant_id='${grant.id}'`,
+    );
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro");
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_entitlements WHERE user_id='${user}' AND package='kids'`,
+      ),
+    ).toBe(0);
+  });
+  it("previews campaign capacity across the batch and preserves its anonymous consumed total", async () => {
+    await caller(admin);
+    const offer = await command("create_offer", {
+      code: "BATCHLIMIT",
+      campaign: "Synthetic",
+      package: "pro",
+      kind: "percent",
+      value_minor: 20,
+      currency: "EGP",
+      duration_days: 30,
+      renewals: true,
+      valid_from: new Date(Date.now() - 1000).toISOString(),
+      valid_until: new Date(Date.now() + 86400000).toISOString(),
+      max_redemptions: 1,
+      per_email_limit: 1,
+    });
+    const group = await command("create_group", { name: "Capacity preview" });
+    const preview = await command("preview_import", {
+      group_id: group.id,
+      rows: [
+        recipient(undefined, { access_kind: "external", code: "BATCHLIMIT" }),
+        recipient("other@example.test", { access_kind: "external", code: "BATCHLIMIT" }),
+      ],
+    });
+    expect(preview[1].error).toMatch(/OFFER_LIMIT/);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_orders")).toBe(0);
+    await caller(user);
+    const o = await command("create_order", {
+      ...selection,
+      code: "BATCHLIMIT",
+      key: randomUUID(),
+    });
+    await pay(o);
+    expect(
+      await value(
+        `SELECT consumed_count AS value FROM billing.commerce_offers WHERE id='${offer.id}'`,
+      ),
+    ).toBe(1);
+    // Simulate completed financial erasure of the identity-bearing order.
+    await db.query("DELETE FROM billing.commerce_orders WHERE id=$1", [o.id]);
+    await caller(other);
+    await denied("quote", { ...selection, code: "BATCHLIMIT" }, /OFFER_LIMIT/);
+  });
+  it("financial erasure retains a shared payment until its last member is purged", async () => {
+    const { group, rows } = await invite([
+      recipient(undefined, { access_kind: "external" }),
+      recipient("other@example.test", { access_kind: "external" }),
+    ]);
+    for (const [index, id] of [user, other].entries()) {
+      await caller(id);
+      await command("accept", { id: rows[index].id });
+    }
+    await pay(
+      { id: rows[0].order_id!, final_minor: 16900 },
+      { group_id: group.id, amount_minor: 33800, allocations: rowsAsAllocations(rows) },
+    );
+    await db.exec(
+      `SELECT set_config('request.jwt.claim.role','service_role',false); UPDATE billing.account_deletion_control SET enabled=true,financial_purge_enabled=true,financial_retention_reference='synthetic-finance',crm_retention_reference='synthetic-crm',responder_reference='synthetic-owner',release_reference='synthetic-release';`,
+    );
+    for (const [index, id] of [user, other].entries()) {
+      await db.query("INSERT INTO billing.account_deletion_requests(user_id) VALUES($1)", [id]);
+      const claim = await value<{ lease_token: string }>(
+        `SELECT public.lc09_claim_deletion('${id}') AS value`,
+      );
+      for (const stage of ["provider_reconciled", "learner_erased"])
+        await db.query("SELECT public.lc09_advance_deletion($1,$2,$3)", [
+          id,
+          claim.lease_token,
+          stage,
+        ]);
+      await db.query("DELETE FROM auth.users WHERE id=$1", [id]);
+      await db.query("SELECT public.lc09_advance_deletion($1,$2,'complete')", [
+        id,
+        claim.lease_token,
+      ]);
+      await db.query(
+        "UPDATE billing.account_deletion_lifecycle SET completed_at=now()-interval '361 hours' WHERE user_id=$1",
+        [id],
+      );
+      const finance = await value<{ lease_token: string }>(
+        `SELECT public.lc09_claim_financial_purge('${id}') AS value`,
+      );
+      await db.query("SELECT public.lc09_complete_financial_purge($1,$2)", [
+        id,
+        finance.lease_token,
+      ]);
+      expect(await value("SELECT count(*)::int AS value FROM billing.commerce_payments")).toBe(
+        index === 0 ? 1 : 0,
+      );
+      expect(await value("SELECT count(*)::int AS value FROM billing.commerce_allocations")).toBe(
+        index === 0 ? 1 : 0,
+      );
+    }
+  });
+  it("Kids eligibility and account suspension are never bypassed", async () => {
+    await caller(user);
+    await denied(
+      "create_order",
+      { ...selection, package: "kids", key: randomUUID() },
+      /PARENT_REQUIRED/,
+    );
+    await caller(admin);
+    await denied(
+      "grant",
+      { user_id: user, package: "kids", duration_days: 1, reason: "Synthetic", key: randomUUID() },
+      /PARENT_REQUIRED/,
+    );
+    await db.exec(
+      `INSERT INTO billing.subscriptions(user_id,access_state,billing_state,market_code,currency_code,billing_interval,idempotency_key) VALUES('${user}','suspended','canceled','EG','EGP','month','synthetic-suspended')`,
+    );
+    await denied(
+      "grant",
+      {
+        user_id: user,
+        package: "pro_plus",
+        duration_days: 1,
+        reason: "Synthetic",
+        key: randomUUID(),
+      },
+      /IDENTITY_UNAVAILABLE/,
+    );
+  });
+  it("refunds affect only their order and cannot exceed allocation", async () => {
+    const a = await order(),
+      b = await order();
+    const p = await pay(a);
+    await pay(b);
+    const request = {
+      payment_id: p.id,
+      order_id: a.id,
+      amount_minor: a.final_minor,
+      reference: "refund-synthetic",
+      reason: "Synthetic",
+      funds_verified: true,
+      revoke_access: true,
+      key: randomUUID(),
+    };
+    await command("refund", request);
+    await command("refund", request);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_refunds")).toBe(1);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_entitlements WHERE revoked_at IS NULL`,
+      ),
+    ).toBe(1);
+  });
+  it("durable queue honors pause and suppression without provider calls", async () => {
+    const { group, rows } = await invite([recipient()]);
+    await command("queue", { ids: [rows[0].id] });
+    await command("queue", { ids: [rows[0].id] });
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_outbox")).toBe(1);
+    await db.exec("UPDATE billing.commerce_control SET invitations_enabled=true");
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    let result = await db.query<{ value: unknown[] }>(
+      "SELECT public.commerce_mail('claim',$1::jsonb) AS value",
+      [JSON.stringify({ actor: admin, group_id: group.id })],
+    );
+    expect(result.rows[0].value).toHaveLength(0);
+    await caller(admin);
+    await command("group_state", { id: group.id, state: "ready" });
+    await command("mail_preferences", {
+      email: "member@example.test",
+      marketing_opt_out: true,
+      suppressed: false,
+    });
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    result = await db.query("SELECT public.commerce_mail('claim',$1::jsonb) AS value", [
+      JSON.stringify({ actor: admin, group_id: group.id }),
+    ]);
+    expect(result.rows[0].value).toHaveLength(0);
+  });
+  it("bare authenticated clients cannot read tables or call service-only receipt/mail RPCs", async () => {
+    await caller(user);
+    await db.exec("SAVEPOINT acl; SET LOCAL ROLE authenticated");
+    await expect(db.query("SELECT * FROM billing.commerce_orders")).rejects.toThrow(/permission/);
+    await db.exec("ROLLBACK TO SAVEPOINT acl; SET LOCAL ROLE authenticated");
+    await expect(
+      db.query("SELECT public.commerce_receipt($1,'read','{}')", [user]),
+    ).rejects.toThrow(/permission/);
+    await db.exec("ROLLBACK TO SAVEPOINT acl; SET LOCAL ROLE authenticated");
+    await expect(db.query("SELECT public.commerce_mail('claim','{}')")).rejects.toThrow(
+      /permission/,
+    );
+    await db.exec("ROLLBACK TO SAVEPOINT acl");
+  });
+});
+
+function rowsAsAllocations(rows: CommandResult) {
+  return [rows[0], rows[1]].map((i) => ({ order_id: i.order_id!, amount_minor: 16900 }));
+}
+
+it("LC09 erases new access, preserves financial data for 15 days, then purges it", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+  try {
+    await caller(admin);
+    await command("configure_method", {
+      code: "instapay",
+      enabled: true,
+      instructions: "Synthetic",
+      destination: "Synthetic",
+      currencies: ["EGP"],
+    });
+    await caller(user);
+    const o = await command("create_order", {
+      package: "pro",
+      market: "EG",
+      billing_interval: "month",
+      method: "instapay",
+      key: randomUUID(),
+    });
+    await caller(admin);
+    await command("confirm", {
+      key: randomUUID(),
+      method: "instapay",
+      currency: "EGP",
+      amount_minor: o.final_minor,
+      transaction_reference: randomUUID(),
+      received_at: new Date().toISOString(),
+      funds_verified: true,
+      allocations: [{ order_id: o.id, amount_minor: o.final_minor }],
+    });
+    const receiptId = randomUUID();
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    await db.query("SELECT public.commerce_receipt($1,'attach',$2::jsonb)", [
+      admin,
+      JSON.stringify({
+        id: receiptId,
+        order_id: o.id,
+        storage_path: `${o.id}/${receiptId}`,
+        mime: "image/png",
+        size_bytes: 100,
+        digest: "c".repeat(64),
+      }),
+    ]);
+    await db.query("INSERT INTO storage.objects(bucket_id,name) VALUES('commerce-receipts',$1)", [
+      `${o.id}/${receiptId}`,
+    ]);
+    await db.exec(`SELECT set_config('request.jwt.claim.role','service_role',false);
+ UPDATE billing.account_deletion_control SET enabled=true,financial_purge_enabled=true,financial_retention_reference='synthetic-finance',crm_retention_reference='synthetic-crm',responder_reference='synthetic-owner',release_reference='synthetic-release';
+ INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}');`);
+    const claim = await value<{ lease_token: string }>(
+      `SELECT public.lc09_claim_deletion('${user}') AS value`,
+    );
+    await db.query("SELECT public.lc09_advance_deletion($1,$2,'provider_reconciled')", [
+      user,
+      claim.lease_token,
+    ]);
+    await db.query("SELECT public.lc09_advance_deletion($1,$2,'learner_erased')", [
+      user,
+      claim.lease_token,
+    ]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_entitlements WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+    expect(
+      await value(
+        `SELECT recipient_email AS value FROM billing.commerce_orders WHERE id='${o.id}'`,
+      ),
+    ).toBe("");
+    await db.query("DELETE FROM auth.users WHERE id=$1", [user]);
+    await db.query("SELECT public.lc09_advance_deletion($1,$2,'complete')", [
+      user,
+      claim.lease_token,
+    ]);
+    await db.exec("SAVEPOINT early");
+    await expect(db.query("SELECT public.lc09_claim_financial_purge($1)", [user])).rejects.toThrow(
+      /NOT_DUE/,
+    );
+    await db.exec("ROLLBACK TO SAVEPOINT early");
+    await db.query(
+      "UPDATE billing.account_deletion_lifecycle SET completed_at=now()-interval '361 hours' WHERE user_id=$1",
+      [user],
+    );
+    const finance = await value<{
+      lease_token: string;
+      storage_objects: { bucket: string; name: string }[];
+    }>(`SELECT public.lc09_claim_financial_purge('${user}') AS value`);
+    expect(finance.storage_objects).toEqual([
+      { bucket: "commerce-receipts", name: `${o.id}/${receiptId}` },
+    ]);
+    await db.exec("SAVEPOINT remaining_receipt");
+    await expect(
+      db.query("SELECT public.lc09_complete_financial_purge($1,$2)", [user, finance.lease_token]),
+    ).rejects.toThrow(/RECEIPTS_REMAIN/);
+    await db.exec("ROLLBACK TO SAVEPOINT remaining_receipt; RELEASE SAVEPOINT remaining_receipt");
+    await db.query("DELETE FROM storage.objects WHERE bucket_id='commerce-receipts' AND name=$1", [
+      `${o.id}/${receiptId}`,
+    ]);
+    await db.query("SELECT public.lc09_complete_financial_purge($1,$2)", [
+      user,
+      finance.lease_token,
+    ]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_orders WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_payments WHERE user_id='${user}'`,
+      ),
+    ).toBe(0);
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});
+
+it.skipIf(!nativeUrl)(
+  "serializes genuinely concurrent campaign redemption and repeated confirmation",
+  async () => {
+    if (!nativeUrl || !nativeClient) throw new Error("Native disposable database required");
+    await db.exec("UPDATE billing.commerce_control SET enabled=true");
+    await caller(admin);
+    await command("configure_method", {
+      code: "instapay",
+      enabled: true,
+      instructions: "Synthetic",
+      destination: "Synthetic",
+      currencies: ["EGP"],
+    });
+    await command("create_offer", {
+      code: "CONCURRENT",
+      campaign: "Concurrent",
+      package: "pro",
+      kind: "complimentary",
+      value_minor: 0,
+      currency: "EGP",
+      duration_days: 1,
+      eligibility: "all",
+      renewals: false,
+      valid_from: new Date(Date.now() - 1000).toISOString(),
+      valid_until: new Date(Date.now() + 86400000).toISOString(),
+      max_redemptions: 1,
+      per_email_limit: 1,
+      enabled: true,
+    });
+    const clients = [postgres(nativeUrl, { max: 1 }), postgres(nativeUrl, { max: 1 })];
+    const nativeKey = `native-${randomUUID()}-`;
+    try {
+      const results = await Promise.allSettled(
+        clients.map(async (client, index) => {
+          await client.unsafe(
+            "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
+            [index === 0 ? user : other],
+          );
+          return client.unsafe("SELECT public.commerce_command('create_order',$1::jsonb)", [
+            client.json({
+              package: "pro",
+              market: "EG",
+              billing_interval: "month",
+              method: "admin",
+              code: "CONCURRENT",
+              key: nativeKey + index,
+            }),
+          ]);
+        }),
+      );
+      expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(1);
+      expect(results.filter((r) => r.status === "rejected")).toHaveLength(1);
+      expect(
+        await value(
+          "SELECT count(*)::int AS value FROM billing.commerce_orders o JOIN billing.commerce_offers f ON f.id=o.offer_id WHERE f.code='CONCURRENT'",
+        ),
+      ).toBe(1);
+      await caller(user);
+      const order = await command("create_order", {
+        package: "pro",
+        market: "EG",
+        billing_interval: "month",
+        method: "instapay",
+        key: nativeKey + "order",
+      });
+      const payment = {
+        key: nativeKey + "payment",
+        method: "instapay",
+        currency: "EGP",
+        amount_minor: order.final_minor,
+        transaction_reference: randomUUID(),
+        received_at: new Date().toISOString(),
+        funds_verified: true,
+        allocations: [{ order_id: order.id, amount_minor: order.final_minor }],
+      };
+      const confirmed = await Promise.all(
+        clients.map(async (client) => {
+          await client.unsafe(
+            "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
+            [admin],
+          );
+          return client.unsafe("SELECT public.commerce_command('confirm',$1::jsonb) AS value", [
+            client.json(payment),
+          ]);
+        }),
+      );
+      expect(confirmed[0][0].value.id).toBe(confirmed[1][0].value.id);
+      expect(
+        await value(
+          `SELECT count(*)::int AS value FROM billing.commerce_entitlements WHERE order_id='${order.id}'`,
+        ),
+      ).toBe(1);
+    } finally {
+      await Promise.all(clients.map((client) => client.end()));
+      await db.query("DELETE FROM billing.commerce_audit WHERE details->>'key' LIKE $1", [
+        nativeKey + "%",
+      ]);
+      await db.query("DELETE FROM billing.commerce_orders WHERE request_key LIKE $1", [
+        "%:" + nativeKey + "%",
+      ]);
+      await db.query("DELETE FROM billing.commerce_payments WHERE request_key LIKE $1", [
+        "payment:" + nativeKey + "%",
+      ]);
+      await db.exec("DELETE FROM billing.commerce_offers WHERE code='CONCURRENT'");
+    }
+  },
+);
+
+it("uses private receipts, records out-of-order delivery durably and checks real funds separately", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true,invitations_enabled=true");
+  try {
+    await caller(admin);
+    const group = await command("create_group", { name: "Mail" });
+    const row = {
+      email: "member@example.test",
+      name: "Synthetic",
+      locale: "en",
+      package: "pro",
+      access_kind: "complimentary",
+      duration_days: 1,
+      start_rule: "acceptance",
+      deadline: new Date(Date.now() + 86400000).toISOString(),
+      market: "EG",
+      billing_interval: "month",
+      currency: "EGP",
+      method: "instapay",
+    };
+    const imported = await command("import", { group_id: group.id, rows: [row] });
+    await command("queue", { ids: [imported[0].id] });
+    await command("group_state", { id: group.id, state: "ready" });
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const claims = await db.query<{ value: { id: string }[] }>(
+      "SELECT public.commerce_mail('claim',$1::jsonb) AS value",
+      [JSON.stringify({ actor: admin, group_id: group.id })],
+    );
+    const outbox = claims.rows[0].value[0];
+    expect(outbox).toBeDefined();
+    await db.exec(
+      "INSERT INTO public.contact_acknowledgement_outbox(id,recipient,locale,stream,subject,text_body,html_body,provider_email_id) VALUES(gen_random_uuid(),'member@example.test','en','support','Synthetic','Synthetic','Synthetic','existing_contact_email')",
+    );
+    expect(
+      await value(
+        "SELECT public.record_contact_mail_receipt('existing-delivered','existing_contact_email','member@example.test','email.delivered',now()) AS value",
+      ),
+    ).toBe("recorded");
+    expect(await value("SELECT count(*)::int AS value FROM public.contact_mail_receipts")).toBe(1);
+    expect(
+      await value(
+        "SELECT public.record_contact_mail_receipt('early','synthetic_email','member@example.test','email.delivered',now()) AS value",
+      ),
+    ).toBe("pending");
+    await db.query("SELECT public.commerce_mail('result',$1::jsonb)", [
+      JSON.stringify({ id: outbox.id, provider_id: "synthetic_email" }),
+    ]);
+    await db.exec(
+      "SELECT public.record_contact_mail_receipt('delivered','synthetic_email','member@example.test','email.delivered',now());SELECT public.record_contact_mail_receipt('delivered','synthetic_email','member@example.test','email.delivered',now());SELECT public.record_contact_mail_receipt('older','synthetic_email','member@example.test','email.delivery_delayed',now()-interval '1 hour');",
+    );
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_mail_receipts")).toBe(
+      2,
+    );
+    expect(await value("SELECT delivery AS value FROM billing.commerce_outbox")).toBe(
+      "email.delivered",
+    );
+    expect(
+      await value("SELECT public AS value FROM storage.buckets WHERE id='commerce-receipts'"),
+    ).toBe(false);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await caller(admin);
+    const secondGroup = await command("create_group", { name: "Late suppression" });
+    const second = await command("import", { group_id: secondGroup.id, rows: [row] });
+    await command("queue", { ids: [second[0].id] });
+    await command("group_state", { id: secondGroup.id, state: "ready" });
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const secondClaim = await value<{ id: string }[]>(
+      `SELECT public.commerce_mail('claim','${JSON.stringify({ actor: admin, group_id: secondGroup.id })}'::jsonb) AS value`,
+    );
+    expect(secondClaim).toHaveLength(1);
+    await db.exec(
+      "SELECT public.record_contact_mail_receipt('existing-failed','existing_contact_email','member@example.test','email.failed',now())",
+    );
+    expect(
+      await value(
+        `SELECT public.commerce_mail('authorize_attempt','${JSON.stringify({ id: secondClaim[0].id })}'::jsonb) AS value`,
+      ),
+    ).toBe(false);
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});
+
+it("uses canonical video and RAG lesson boundaries and existing AI quotas without stacking", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+  try {
+    await caller(admin);
+    await command("grant", {
+      user_id: user,
+      package: "pro",
+      duration_days: 30,
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const limits = await db.query<{ general_monthly_limit: number; per_lesson_limit: number }>(
+      "SELECT * FROM billing.resolve_ai_assistant_limits($1)",
+      [user],
+    );
+    expect(limits.rows[0]).toEqual({ general_monthly_limit: 50, per_lesson_limit: 3 });
+    const builder = await value<string>(
+      "SELECT lesson_id AS value FROM billing.commerce_lesson_catalog WHERE path_id='builder' ORDER BY lesson_id LIMIT 1",
+    );
+    const video = await db.query<{ value: { allowed: boolean } }>(
+      "SELECT billing.evaluate_access($1,'video',$2) AS value",
+      [user, builder],
+    );
+    expect(video.rows[0].value.allowed).toBe(false);
+    const rag = await db.query<{ value: { allowed: boolean } }>(
+      "SELECT billing.evaluate_access($1,'rag',$2) AS value",
+      [user, builder],
+    );
+    expect(rag.rows[0].value.allowed).toBe(false);
+    await caller(admin);
+    await command("grant", {
+      user_id: user,
+      package: "pro_plus",
+      duration_days: 30,
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const larger = await db.query<{ general_monthly_limit: number; per_lesson_limit: number }>(
+      "SELECT * FROM billing.resolve_ai_assistant_limits($1)",
+      [user],
+    );
+    expect(larger.rows[0]).toEqual({ general_monthly_limit: 150, per_lesson_limit: 6 });
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});
+it("preserves canonical Stripe paid access after a separate gift is revoked", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+  try {
+    await db.query(
+      `INSERT INTO billing.subscriptions(user_id,plan_version_id,access_state,billing_state,market_code,currency_code,billing_interval,idempotency_key,current_period_start,current_period_end)
+ SELECT $1,pv.id,'paid_active','active','EG','EGP','month','synthetic-preserved',now(),now()+interval '30 days' FROM billing.plan_versions pv JOIN billing.plan_catalog pc ON pc.id=pv.plan_id WHERE pc.plan_key='pro_plus' AND pv.billing_interval='month' ORDER BY pv.version_number LIMIT 1`,
+      [user],
+    );
+    await caller(admin);
+    const grant = await command("grant", {
+      user_id: user,
+      package: "pro",
+      duration_days: 1,
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    const entitlement = await value<string>(
+      `SELECT id::text AS value FROM billing.commerce_entitlements WHERE grant_id='${grant.id}'`,
+    );
+    await command("manage_access", {
+      id: entitlement,
+      operation: "revoke",
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    await caller(user);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+    expect(
+      await value(
+        `SELECT access_state AS value FROM billing.subscriptions WHERE user_id='${user}'`,
+      ),
+    ).toBe("paid_active");
+    await db.query("UPDATE auth.users SET email_confirmed_at=NULL WHERE id=$1", [user]);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+    await denied(
+      "quote",
+      { package: "pro", market: "EG", billing_interval: "month" },
+      /IDENTITY_UNAVAILABLE/,
+    );
+    await db.exec("UPDATE billing.commerce_control SET enabled=false");
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});
+it("an emergency stop of new commerce preserves already issued paid access", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+  try {
+    await caller(admin);
+    await command("grant", {
+      user_id: user,
+      package: "pro",
+      duration_days: 1,
+      reason: "Synthetic",
+      key: randomUUID(),
+    });
+    await db.exec("UPDATE billing.commerce_control SET enabled=false,invitations_enabled=false");
+    await caller(user);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro");
+    await denied(
+      "create_order",
+      {
+        package: "pro",
+        market: "EG",
+        billing_interval: "month",
+        method: "instapay",
+        key: randomUUID(),
+      },
+      /DISABLED/,
+    );
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});
+
+it("allocates confirmed group balances without new revenue and caps unallocated refunds", async () => {
+  await db.exec("BEGIN; UPDATE billing.commerce_control SET enabled=true");
+  try {
+    await caller(admin);
+    await command("configure_method", {
+      code: "instapay",
+      enabled: true,
+      instructions: "Synthetic",
+      destination: "Synthetic",
+      currencies: ["EGP"],
+    });
+    const group = await command("create_group", { name: "Balance" });
+    const recipient = (email: string) => ({
+      email,
+      name: "Synthetic",
+      locale: "en",
+      package: "pro",
+      access_kind: "external",
+      duration_days: 30,
+      start_rule: "acceptance",
+      deadline: new Date(Date.now() + 86400000).toISOString(),
+      market: "EG",
+      billing_interval: "month",
+      currency: "EGP",
+      method: "instapay",
+    });
+    const rows = await command("import", {
+      group_id: group.id,
+      rows: [recipient("member@example.test"), recipient("other@example.test")],
+    });
+    const p = await command("confirm", {
+      key: randomUUID(),
+      method: "instapay",
+      currency: "EGP",
+      group_id: group.id,
+      amount_minor: 40000,
+      transaction_reference: randomUUID(),
+      received_at: new Date().toISOString(),
+      funds_verified: true,
+      allocations: [{ order_id: rows[0].order_id, amount_minor: 16900 }],
+    });
+    const allocation = {
+      payment_id: p.id,
+      key: randomUUID(),
+      allocations: [{ order_id: rows[1].order_id, amount_minor: 16900 }],
+    };
+    await command("allocate", allocation);
+    await command("allocate", allocation);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_payments"),
+    ).toBe(40000);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_allocations"),
+    ).toBe(33800);
+    const refund = {
+      payment_id: p.id,
+      amount_minor: 6200,
+      reference: randomUUID(),
+      reason: "Synthetic surplus returned",
+      revoke_access: false,
+      funds_verified: true,
+      key: randomUUID(),
+    };
+    await command("refund", refund);
+    await command("refund", refund);
+    expect(
+      await value("SELECT sum(amount_minor)::int AS value FROM billing.commerce_refunds"),
+    ).toBe(6200);
+    await denied("refund", { ...refund, key: randomUUID(), amount_minor: 1 }, /AMOUNT_MISMATCH/);
+  } finally {
+    await db.exec("ROLLBACK");
+  }
+});

@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { PGlite } from "@electric-sql/pglite";
 const migration = (name: string) => readFileSync(`supabase/migrations/${name}`, "utf8");
-export async function accountDeletionTestDb(financial = false) {
-  const db = new PGlite();
-  await db.exec(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
+export function accountDeletionSchemaSql(financial = false) {
+  const steps: string[] = [];
+  steps.push(`CREATE ROLE anon; CREATE ROLE authenticated; CREATE ROLE service_role BYPASSRLS;
       CREATE SCHEMA auth; CREATE TABLE auth.users(id uuid PRIMARY KEY,email text,email_confirmed_at timestamptz,raw_user_meta_data jsonb DEFAULT '{}');
       CREATE FUNCTION auth.uid() RETURNS uuid LANGUAGE sql STABLE AS $$SELECT nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
       CREATE FUNCTION auth.jwt() RETURNS jsonb LANGUAGE sql STABLE AS $$SELECT jsonb_build_object('role',current_setting('request.jwt.claim.role',true))$$;
@@ -47,13 +47,19 @@ export async function accountDeletionTestDb(financial = false) {
     "20261001120000_contact_acknowledgements.sql",
     "20261001123000_contact_mail_receipts.sql",
   ])
-    await db.exec(migration(name));
+    steps.push(migration(name));
   // Exercise the runtime generation extension as well as cumulative migration
   // functions. The wrapper must retain this installed implementation.
-  await db.exec(
+  steps.push(
     readFileSync("docs/billing/20260918_stripe_resubscription_generation_guard.sql", "utf8"),
   );
-  await db.exec(migration("20261001153000_account_deletion_lifecycle.sql"));
-  if (financial) await db.exec(migration("20261002090000_account_financial_retention_15_days.sql"));
+  steps.push(migration("20261001153000_account_deletion_lifecycle.sql"));
+  if (financial) steps.push(migration("20261002090000_account_financial_retention_15_days.sql"));
+  return steps;
+}
+
+export async function accountDeletionTestDb(financial = false) {
+  const db = new PGlite();
+  for (const sql of accountDeletionSchemaSql(financial)) await db.exec(sql);
   return db;
 }
