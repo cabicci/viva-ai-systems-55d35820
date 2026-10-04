@@ -82,12 +82,15 @@ beforeAll(async () => {
     path.resolve(process.env.DISPOSABLE_SUPABASE_ROOT ?? "") !== root
   )
     throw new Error("Prepared disposable Supabase harness required");
-  const status = spawnSync("supabase", ["status", "-o", "json"], {
+  const status = spawnSync("npx", ["--no-install", "supabase", "status", "-o", "json"], {
     cwd: root,
     encoding: "utf8",
     timeout: 30000,
   });
-  if (status.status !== 0) throw new Error("Disposable Supabase status unavailable");
+  if (status.status !== 0)
+    throw new Error(
+      `Disposable Supabase status unavailable (exit ${status.status}, code ${(status.error as NodeJS.ErrnoException | undefined)?.code ?? "none"})`,
+    );
   const keys = JSON.parse(status.stdout) as Record<string, string>;
   const api = new URL(keys.API_URL),
     db = new URL(keys.DB_URL);

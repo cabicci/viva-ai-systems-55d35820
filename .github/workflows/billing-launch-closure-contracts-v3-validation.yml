@@ -90,17 +90,20 @@ jobs:
       - name: Focused ESLint (billing)
         run: bunx eslint src/lib/billing supabase/functions/billing-entitlement/index.ts --max-warnings 0
 
-      # Harness performs independent clean db-reset before Phase A and again before Phase B.
-      - name: Run billing validation harness (Phase A suite + Phase B concurrency)
-        run: |
-          chmod +x .github/scripts/billing_contracts_v3_validation/run.sh
-          .github/scripts/billing_contracts_v3_validation/run.sh
-
+      # Read local HTTP credentials while Supabase's startup metadata still
+      # exists. The billing harness rebuilds the disposable directory on reset.
       - name: Commerce receipt handlers and native Storage HTTP privacy
         run: |
           bunx tsc --noEmit -p scripts/commerce/tsconfig.native.json
           bunx eslint scripts/commerce/native-storage.test.ts scripts/commerce/vitest.native.config.ts --max-warnings 0
           bunx vitest run --config scripts/commerce/vitest.native.config.ts
+
+      # Independent clean resets remove the preceding commerce fixtures before
+      # Phase A and again before Phase B; historical billing gates stay intact.
+      - name: Run billing validation harness (Phase A suite + Phase B concurrency)
+        run: |
+          chmod +x .github/scripts/billing_contracts_v3_validation/run.sh
+          .github/scripts/billing_contracts_v3_validation/run.sh
 
       - name: Show sanitized validation result
         if: ${{ always() }}
