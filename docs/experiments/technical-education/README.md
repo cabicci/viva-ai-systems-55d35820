@@ -85,3 +85,6 @@ User requires qaf pronunciation to be decided per word and context, including wo
 
 
 Private preview delivery: source89ba7808fd2273012147a23daea226369219c0b3, deployment appgdep_6ac20681821881918debe0509c4a2ac4 succeeded at 2026-10-04T07:56:00Z. The owner-private preview contains the single platform header selector and the new Cairo Egyptian M01-L01 video GUID5a7ddb0e-7154-4fae-9a36-6b5ceced090f. Main integration remains unchanged. Actions run37186728823 has completed Egyptian M01-L01 through L03; L04 is in progress. Later media mappings are not included in this compiled preview. Egyptian pronunciation remains pending word/context and actual-listening acceptance.
+
+
+Source recovered — 2026-10-04: resolved-reference prepare_materialize placed the exact source at /workspace/scratch/61b6becf6b09/technical-source-recovery/Metwood_Furniture_Design(1).pdf. Verified 183250232 bytes, 408 pages and SHA25663ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136; applied Library identity/xattrs. The earlier HTTP502 materialization blocker is superseded. The second agent has resumed actual remaining-75 authoring in its isolated branch/worktree, starting M02–M06. Existing curriculum mapping is reused without restarting planning. No new lesson-completion count, audio acceptance or publication is claimed until reviewed batch evidence arrives.
