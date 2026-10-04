@@ -3,15 +3,21 @@ import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { PaymentMethods } from "./PaymentMethods";
+import { ReceiptView } from "./ReceiptUpload";
 import { AdminGroups } from "./AdminGroups";
 import { commerceCopy } from "@/lib/commerce/copy";
 import type { AdminData } from "@/lib/commerce/contracts";
-const mock = vi.hoisted(() => ({ command: vi.fn(), upload: vi.fn(), dispatch: vi.fn() }));
+const mock = vi.hoisted(() => ({
+  command: vi.fn(),
+  upload: vi.fn(),
+  dispatch: vi.fn(),
+  read: vi.fn(),
+}));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
 vi.mock("@/lib/commerce/commerce.functions", () => ({
   commerceCommand: mock.command,
   uploadCommerceReceipt: mock.upload,
-  readCommerceReceipt: vi.fn(),
+  readCommerceReceipt: mock.read,
   previewCommerceInvitation: vi.fn(),
   dispatchCommerceInvitations: mock.dispatch,
 }));
@@ -47,6 +53,106 @@ beforeEach(() => {
   );
 });
 afterEach(cleanup);
+describe("private receipt preview", () => {
+  const createUrl = vi.fn(() => "blob:receipt-preview"),
+    revokeUrl = vi.fn();
+  beforeEach(() => {
+    vi.stubGlobal(
+      "URL",
+      class extends URL {
+        static createObjectURL = createUrl;
+        static revokeObjectURL = revokeUrl;
+      },
+    );
+    mock.read.mockResolvedValue({ mime: "image/png", base64: btoa("synthetic receipt") });
+  });
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "previews without downloading, offers an explicit download and releases bytes on close in %s",
+    async (locale) => {
+      const automaticDownload = vi
+        .spyOn(HTMLAnchorElement.prototype, "click")
+        .mockImplementation(() => {});
+      const w = commerceCopy(locale);
+      render(
+        <LocaleProvider initialLocale={locale}>
+          <ReceiptView id="receipt-1" />
+        </LocaleProvider>,
+      );
+      fireEvent.click(screen.getByRole("button", { name: w.viewReceipt }));
+      expect(screen.getByRole("dialog", { name: w.viewReceipt })).toHaveAttribute(
+        "dir",
+        locale === "en" ? "ltr" : "rtl",
+      );
+      expect(await screen.findByRole("img", { name: w.receipt })).toHaveAttribute(
+        "src",
+        "blob:receipt-preview",
+      );
+      expect(automaticDownload).not.toHaveBeenCalled();
+      expect(screen.getByRole("link", { name: w.downloadReceipt })).toHaveAttribute(
+        "download",
+        "receipt-receipt-1.png",
+      );
+      fireEvent.click(screen.getByRole("button", { name: w.closeReceipt }));
+      expect(screen.queryByRole("dialog")).toBeNull();
+      expect(revokeUrl).toHaveBeenCalledWith("blob:receipt-preview");
+      fireEvent.click(screen.getByRole("button", { name: w.viewReceipt }));
+      await screen.findByRole("img", { name: w.receipt });
+      expect(mock.read).toHaveBeenCalledTimes(2);
+    },
+  );
+  it("embeds PDFs with an explicit download fallback", async () => {
+    mock.read.mockResolvedValue({ mime: "application/pdf", base64: btoa("%PDF-synthetic") });
+    render(
+      <LocaleProvider initialLocale="en">
+        <ReceiptView id="pdf-1" />
+      </LocaleProvider>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "View receipt" }));
+    expect(await screen.findByLabelText("Payment receipt")).toHaveAttribute(
+      "type",
+      "application/pdf",
+    );
+    expect(screen.getByRole("link", { name: "Download receipt" })).toHaveAttribute(
+      "download",
+      "receipt-pdf-1.pdf",
+    );
+  });
+  it("shows an access failure without exposing or downloading a file", async () => {
+    mock.read.mockRejectedValue(new Error("Receipt access denied"));
+    render(
+      <LocaleProvider initialLocale="en">
+        <ReceiptView id="denied" />
+      </LocaleProvider>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "View receipt" }));
+    await screen.findByRole("alert");
+    expect(createUrl).not.toHaveBeenCalled();
+    expect(screen.queryByRole("link", { name: "Download receipt" })).toBeNull();
+  });
+  it("does not keep receipt bytes when closed before the read finishes", async () => {
+    let finish!: (receipt: { mime: string; base64: string }) => void;
+    mock.read.mockReturnValue(
+      new Promise((resolve) => {
+        finish = resolve;
+      }),
+    );
+    render(
+      <LocaleProvider initialLocale="en">
+        <ReceiptView id="slow" />
+      </LocaleProvider>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "View receipt" }));
+    fireEvent.click(screen.getByRole("button", { name: "Close preview" }));
+    finish({ mime: "image/jpeg", base64: btoa("synthetic") });
+    await Promise.resolve();
+    expect(createUrl).not.toHaveBeenCalled();
+    expect(screen.queryByRole("dialog")).toBeNull();
+  });
+});
 describe("commerce journeys", () => {
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
     "renders the frozen order instructions in the selected locale %s",
