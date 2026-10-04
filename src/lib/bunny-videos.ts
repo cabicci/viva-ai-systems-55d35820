@@ -384,7 +384,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "creator-m7-l2-grid-consistency__en": "4557b5fb-5f1a-4793-8c17-ab73ac7038ec",
   "furniture-m1-cut-list__ar-EG": "4263989a-7c7b-45d2-9baf-ee6739aff6ff",
   "furniture-m1-cut-list__ar-Gulf": "361bdabc-328e-4185-80ad-f7a01bfb5b5b",
-  "furniture-m1-cut-list__ar-MSA": "36b5d93c-414a-4347-b741-6f8409277e10",
+  "furniture-m1-cut-list__ar-MSA": "09344d4e-d09a-40ab-b231-0fc780d00e1e",
   "furniture-m1-cut-list__en": "2c9e2846-cf35-4817-88aa-ca7edbe503b5",
   "intro-m1-l1-what-is-ai": "5831030f-4c9f-4a8c-b171-eef993cb3d36",
   "intro-m1-l1-what-is-ai__ar-Gulf": "67adb197-03a4-4f9a-84ef-2d296a916391",
