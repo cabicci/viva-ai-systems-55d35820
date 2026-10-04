@@ -49,7 +49,7 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
             <LineLogo line={line} />
           </div>
           <div className="flex flex-1 flex-col p-6">
-            <h2 className="text-2xl font-black">{c[line]}</h2>
+            <h2 className="text-center text-2xl font-black">{c[line]}</h2>
             <p className="mt-4 flex-1 leading-relaxed text-muted-foreground">{c[`${line}Intro`]}</p>
             {line === "technical" && (
               <p className="mt-4 text-xs font-semibold text-primary">{c.preparing}</p>
