@@ -93,7 +93,11 @@ jobs:
       # Read local HTTP credentials while Supabase's startup metadata still
       # exists. The billing harness rebuilds the disposable directory on reset.
       - name: Commerce receipt handlers and native Storage HTTP privacy
+        env:
+          COMMERCE_NATIVE_STATUS_FILE: ${{ runner.temp }}/commerce-native-status.json
         run: |
+          trap 'rm -f "$COMMERCE_NATIVE_STATUS_FILE"' EXIT
+          (cd "$DISPOSABLE_SUPABASE_ROOT" && supabase status -o json) > "$COMMERCE_NATIVE_STATUS_FILE"
           bunx tsc --noEmit -p scripts/commerce/tsconfig.native.json
           bunx eslint scripts/commerce/native-storage.test.ts scripts/commerce/vitest.native.config.ts --max-warnings 0
           bunx vitest run --config scripts/commerce/vitest.native.config.ts

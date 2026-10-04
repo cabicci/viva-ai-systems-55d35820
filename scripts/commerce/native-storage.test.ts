@@ -1,4 +1,4 @@
-import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
@@ -82,16 +82,14 @@ beforeAll(async () => {
     path.resolve(process.env.DISPOSABLE_SUPABASE_ROOT ?? "") !== root
   )
     throw new Error("Prepared disposable Supabase harness required");
-  const status = spawnSync("npx", ["--no-install", "supabase", "status", "-o", "json"], {
-    cwd: root,
-    encoding: "utf8",
-    timeout: 30000,
-  });
-  if (status.status !== 0)
-    throw new Error(
-      `Disposable Supabase status unavailable (exit ${status.status}, code ${(status.error as NodeJS.ErrnoException | undefined)?.code ?? "none"})`,
-    );
-  const keys = JSON.parse(status.stdout) as Record<string, string>;
+  const statusFile = process.env.COMMERCE_NATIVE_STATUS_FILE;
+  if (
+    !statusFile ||
+    !process.env.RUNNER_TEMP ||
+    path.dirname(path.resolve(statusFile)) !== path.resolve(process.env.RUNNER_TEMP)
+  )
+    throw new Error("Ephemeral CI status file required");
+  const keys = JSON.parse(readFileSync(statusFile, "utf8")) as Record<string, string>;
   const api = new URL(keys.API_URL),
     db = new URL(keys.DB_URL);
   if (
