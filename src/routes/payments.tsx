@@ -17,12 +17,16 @@ export const Route = createFileRoute("/payments")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
   validateSearch: parsePaymentSearch,
   beforeLoad: ({ search }) => guardPaymentLink(requireAuthBeforeLoad, search.order, "customer"),
-  component: () => (
-    <AuthSessionGate>
+  component: PaymentRoute,
+});
+function PaymentRoute() {
+  const { order } = Route.useSearch();
+  return (
+    <AuthSessionGate loginSearch={order ? { order, paymentView: "customer" } : undefined}>
       <Payments />
     </AuthSessionGate>
-  ),
-});
+  );
+}
 function Payments() {
   const { order: targetOrderId } = Route.useSearch();
   const requestKey = useCommandKey();

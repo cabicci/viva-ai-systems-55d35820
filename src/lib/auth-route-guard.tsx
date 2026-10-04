@@ -43,19 +43,27 @@ export function AuthLoadingShell() {
 export function AuthSessionGate({
   children,
   fallback,
+  loginSearch,
 }: {
   children: ReactNode;
   /** Optional skeleton shown instead of the bare spinner while auth hydrates. */
   fallback?: ReactNode;
+  loginSearch?: { order: string; paymentView: "customer" | "admin" };
 }) {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const order = loginSearch?.order,
+    paymentView = loginSearch?.paymentView;
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate({ to: "/login", replace: true });
+      navigate({
+        to: "/login",
+        search: order && paymentView ? { order, paymentView } : undefined,
+        replace: true,
+      });
     }
-  }, [loading, user, navigate]);
+  }, [loading, user, navigate, order, paymentView]);
 
   if (loading || !user) {
     return <>{fallback ?? <AuthLoadingShell />}</>;
