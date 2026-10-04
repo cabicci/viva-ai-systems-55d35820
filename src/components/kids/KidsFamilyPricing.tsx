@@ -64,12 +64,12 @@ export function KidsFamilyPricing() {
       </div>
       <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Test checkout only. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
+          ? "Stripe uses test mode. Available manual transfers are real payments and require administrator verification. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
           : eg
-            ? "الدفع تجريبي فقط. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
+            ? "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي وبيحتاج مراجعة الإدارة. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
             : gulf
-              ? "الدفع تجريبي فقط. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
-              : "الدفع تجريبي فقط. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
+              ? "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي ويحتاج مراجعة الإدارة. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "Stripe تجريبي. التحويل اليدوي المتاح دفع فعلي ويستلزم مراجعة الإدارة. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );

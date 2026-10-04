@@ -7,7 +7,7 @@ vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => state }));
 
 describe("Kids family offer", () => {
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "shows independent family test-checkout prices in %s",
+    "shows independent family prices and distinguishes manual payments in %s",
     (locale) => {
       state.locale = locale;
       render(<KidsFamilyPricing />);
@@ -15,7 +15,14 @@ describe("Kids family offer", () => {
         screen.getByText(locale === "en" ? /up to 3 children/ : /حتى 3 أطفال/),
       ).toBeInTheDocument();
       expect(
-        screen.getByText(locale === "en" ? /Test checkout only/ : /الدفع تجريبي فقط/),
+        screen.getByText(locale === "en" ? /Stripe uses test mode/ : /Stripe تجريبي/),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          locale === "en"
+            ? /manual transfers are real payments/i
+            : /التحويل اليدوي المتاح دفع فعلي/,
+        ),
       ).toBeInTheDocument();
       const formatter = new Intl.NumberFormat(
         locale === "en" ? "en-US" : locale === "ar-Gulf" ? "ar-SA" : "ar-EG",
