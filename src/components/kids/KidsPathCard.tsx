@@ -12,10 +12,10 @@ export function KidsPathCard() {
   return (
     <article className="rounded-3xl border border-border/60 bg-[var(--pastel-lavender)] p-6 md:p-8 transition hover:shadow-[var(--shadow-card)]">
       <div className="flex flex-wrap items-center gap-4">
-        <span className="rounded-2xl bg-background/80 px-4 py-3">
+        <span className="max-w-full rounded-2xl bg-background/80 px-4 py-3">
           <KidsBrand />
         </span>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 basis-full sm:basis-0">
           <p className="text-xs font-semibold text-primary">{copy.pathLabel}</p>
           <h3 className="text-xl font-black text-foreground">{copy.title}</h3>
         </div>
