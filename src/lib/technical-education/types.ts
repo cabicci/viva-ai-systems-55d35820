@@ -1,4 +1,4 @@
-import type { SupportedLocale } from "@/lib/locale/types";
+import type { SupportedLocale } from "../locale/types";
 
 export type TechnicalDiagramKind =
   | "brief"

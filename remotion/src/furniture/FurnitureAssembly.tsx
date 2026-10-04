@@ -1,6 +1,7 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { SAMPLE, calculateCabinet } from "../../../src/lib/furniture-pilot/model";
 import { ASSEMBLY_PANELS, panelFaces, panelOrigin, project } from "./geometry";
+import { cairo } from "../theme";
 import scripts from "./script.json";
 
 const steps = [
@@ -79,7 +80,7 @@ export const FurnitureAssembly = ({ locale, sceneFrames, narrated }: AssemblyPro
       style={{
         background: "linear-gradient(135deg,#EAF5FF,#DCEFE3 55%,#F5E7ED)",
         color: "#203F45",
-        fontFamily: '"DejaVu Sans", sans-serif',
+        fontFamily: english ? '"DejaVu Sans", sans-serif' : cairo,
       }}
     >
       <header

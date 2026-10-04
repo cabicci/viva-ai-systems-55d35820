@@ -1,12 +1,14 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, interpolate } from "remotion";
 import { TechnicalDiagram } from "../../../src/components/technical-education/TechnicalDiagram";
+import { cairo } from "../theme";
+import type { TechnicalDiagramKind } from "../../../src/lib/technical-education/types";
 import type { SupportedLocale } from "../../../src/lib/locale/types";
 
 export type TechnicalScene = {
   title: string;
   detail: string;
   spoken: string;
-  diagram: "brief" | "survey" | "scope" | "workflow";
+  diagram: TechnicalDiagramKind;
 };
 export type TechnicalExplainerProps = {
   locale: SupportedLocale;
@@ -35,7 +37,7 @@ export function TechnicalExplainer({
       style={{
         background: "linear-gradient(135deg,#EAF5FF,#DCEFE3 55%,#F5E7ED)",
         color: "#203f45",
-        fontFamily: '"DejaVu Sans",sans-serif',
+        fontFamily: locale === "en" ? '"DejaVu Sans",sans-serif' : cairo,
       }}
     >
       <header

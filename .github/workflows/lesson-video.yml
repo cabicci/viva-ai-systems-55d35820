@@ -216,7 +216,7 @@ jobs:
       max-parallel: 1
       matrix:
         locale: [ar-EG, ar-MSA, ar-Gulf, en]
-        lesson_id: [furniture-m1-cut-list, technical-m01-l01, technical-m01-l02, technical-m01-l03, technical-m01-l04]
+        lesson_id: [technical-m01-l01, technical-m01-l02, technical-m01-l03, technical-m01-l04, furniture-m1-cut-list]
     concurrency:
       group: furniture-pilot-${{ github.ref }}-${{ matrix.lesson_id }}-${{ matrix.locale }}
       cancel-in-progress: false

@@ -200,3 +200,7 @@ Delivery evidence: experiment source f4c4051b5556dc4c981c2100b66c0fea21064fb3; p
 Acceptance: 23 scoped tests, TypeScript, scoped lint, production build, 40 mobile/desktop locale lesson views and all 44 PDF layout gates passed. 18 distinct explanation drawings are shared by reading/zoom/workbook. Private preview publication pending; main/account/package unchanged.
 
 Illustration correction published: temporary branch commit 8ef640f8; private preview source 77ca53c6; deployment appgdep_6ac1e621fa688191a887dd8b8edd97b2 succeeded 2026-10-04T05:38:15Z. Main integration remains pending.
+
+[roadmap:furniture-pilot-temporary-branch]
+2026-10-04 — Remove the technical journey's duplicate language controls and use the existing platform LanguageSelector. Match Arabic technical-video typography to the existing Remotion Cairo theme; reuse narration caches. Five authored lesson IDs/20 successful video jobs verified in run37165099121; 75 lessons remain unproduced. Temporary branch/private preview only; no main-site, Kids, account or billing change. Checks and revised media publication pending.
+Acceptance: 18 scoped tests, application TypeScript/lint/build, Remotion TypeScript, geometry and audio-mux checks passed. Rendered all 81 Arabic scene frames with the existing Cairo font and visually checked all three Arabic registers. English assembly pixel comparison passed seven scenes and retains its accepted media revision. Header language-switch browser verification and revised media publication in progress.

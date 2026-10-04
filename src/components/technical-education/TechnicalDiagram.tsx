@@ -1,5 +1,5 @@
-import type { SupportedLocale } from "@/lib/locale/types";
-import type { TechnicalDiagramKind } from "@/lib/technical-education/types";
+import type { SupportedLocale } from "../../lib/locale/types";
+import type { TechnicalDiagramKind } from "../../lib/technical-education/types";
 
 /** Each key depicts one explanation, shared by reading, zoom and workbook. */
 export function TechnicalDiagram({

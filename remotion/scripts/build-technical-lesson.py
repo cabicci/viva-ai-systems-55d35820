@@ -40,6 +40,9 @@ def fingerprint(lesson_id, locale):
     else:
         paths += [package_path(lesson_id, locale), ROOT / "remotion/src/furniture/TechnicalExplainer.tsx",
                   ROOT / "src/components/technical-education/TechnicalDiagram.tsx"]
+    # Shared Cairo source is part of Arabic visual revisions, never the voice cache.
+    if locale != "en":
+        paths += [ROOT / "remotion/src/theme.ts"]
     h = hashlib.sha256(lesson_id.encode() + locale.encode())
     for p in sorted(set(paths)):
         h.update(str(p.relative_to(ROOT)).encode() + b"\0" + p.read_bytes())

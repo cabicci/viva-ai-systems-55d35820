@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { TechnicalLessonView } from "./TechnicalJourney";
+import { TechnicalJourney, TechnicalLessonView } from "./TechnicalJourney";
 import lesson from "@/lib/technical-education/lessons/M01-L01__en.json";
 import type { TechnicalLesson } from "@/lib/technical-education/types";
 
@@ -9,6 +9,17 @@ afterEach(() => {
   localStorage.clear();
 });
 describe("technical lesson preview", () => {
+  it("uses the platform language control and loads the selected lesson locale", async () => {
+    const view = render(<TechnicalJourney locale="en" lessonId="M01-L01" />);
+    await screen.findByRole("heading", { name: lesson.title });
+    expect(
+      screen.queryByRole("navigation", { name: "Technical education journey" }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "مصري" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "English" })).not.toBeInTheDocument();
+    view.rerender(<TechnicalJourney locale="ar-EG" lessonId="M01-L01" />);
+    await screen.findByRole("heading", { name: "تحويل طلب العميل إلى موجز تصميم" });
+  });
   it("requires correct answers and a completed self-review, then restores the saved practice", () => {
     const view = render(<TechnicalLessonView lesson={lesson as TechnicalLesson} />);
     fireEvent.click(screen.getByRole("button", { name: "I have read the explanation" }));

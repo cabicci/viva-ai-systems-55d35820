@@ -3,7 +3,6 @@ import { Search, ArrowLeft, ArrowRight, BookOpen, CheckCircle2 } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import type { SupportedLocale } from "@/lib/locale/types";
-import { LOCALE_META, SUPPORTED_LOCALES } from "@/lib/locale/types";
 import {
   catalog,
   hasTechnicalLesson,
@@ -61,18 +60,6 @@ export function TechnicalJourney({
       dir={locale === "en" ? "ltr" : "rtl"}
       className="mx-auto max-w-7xl space-y-6 px-4 py-8 md:py-12"
     >
-      <nav className="flex flex-wrap items-center gap-2" aria-label={copy.title}>
-        {SUPPORTED_LOCALES.map((value) => (
-          <a
-            key={value}
-            aria-current={value === locale ? "page" : undefined}
-            className={`rounded-xl border px-4 py-2 text-sm ${value === locale ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"}`}
-            href={`/experiments/technical-education?locale=${value}${lessonId ? `&lesson=${encodeURIComponent(lessonId)}` : ""}`}
-          >
-            {LOCALE_META[value].displayName}
-          </a>
-        ))}
-      </nav>
       {lessonId ? (
         <>
           <a
