@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getLineCopy } from "@/lib/learning-lines";
 
 export function AuthShell({
   title,
@@ -15,6 +17,7 @@ export function AuthShell({
 }) {
   const t = useUiString();
   const brand = t("nav.brand");
+  const copy = getLineCopy(useLocale().locale);
 
   return (
     <div className="min-h-dvh flex overflow-x-hidden">
@@ -30,12 +33,8 @@ export function AuthShell({
         <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-primary/30 blur-[120px] animate-pulse-glow" />
         <div className="absolute top-20 -right-20 h-[400px] w-[400px] rounded-full bg-accent/30 blur-[100px] animate-pulse-glow" />
         <div className="relative z-10 max-w-md">
-          <h2 className="text-4xl font-black leading-tight">
-            {t("auth.shell.headlineBefore")}
-            <span className="text-gradient">{t("auth.shell.headlineHighlight")}</span>
-            {t("auth.shell.headlineAfter")}
-          </h2>
-          <p className="mt-4 text-muted-foreground">{t("auth.shell.tagline")}</p>
+          <h2 className="text-4xl font-black leading-tight">{copy.shared}</h2>
+          <p className="mt-4 text-muted-foreground">{copy.platformIntro}</p>
         </div>
       </div>
       <div className="flex min-w-0 flex-1 items-center justify-center px-4 py-8 sm:p-6">

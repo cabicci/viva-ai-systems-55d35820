@@ -6,6 +6,11 @@ export const PUBLIC_ROUTE_PATHS = {
   pricing: "/pricing",
   privacy: "/privacy",
   terms: "/terms",
+  ai: "/ai",
+  about: "/about",
+  kidsPricing: "/kids/pricing",
+  technical: "/technical",
+  technicalPricing: "/technical/pricing",
 } as const;
 
 /** Keep the existing language-neutral sitemap policy; never copy search/hash. */

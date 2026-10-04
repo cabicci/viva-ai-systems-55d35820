@@ -11,6 +11,7 @@ import { Footer } from "@/components/site/Footer";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { getUiString } from "@/lib/locale/ui-strings";
+import { getLineCopy } from "@/lib/learning-lines";
 import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 
 async function renderFooterAt(
@@ -26,7 +27,7 @@ async function renderFooterAt(
     ),
   });
 
-  const routes = ["/", "/pricing", "/privacy", "/terms"].map((path) =>
+  const routes = ["/", "/ai", "/kids", "/technical", "/pricing", "/privacy", "/terms"].map((path) =>
     createRoute({
       getParentRoute: () => rootRoute,
       path,
@@ -57,10 +58,7 @@ describe("Footer locale navigation", () => {
     for (const locale of SUPPORTED_LOCALES) {
       const rendered = await renderFooterAt(locale);
 
-      expectLocaleInHref(
-        screen.getByRole("link", { name: getUiString(locale, "nav.pricing") }),
-        locale,
-      );
+      expectLocaleInHref(screen.getByRole("link", { name: getLineCopy(locale).ai }), locale);
       expectLocaleInHref(
         screen.getByRole("link", { name: getUiString(locale, "footer.privacy") }),
         locale,

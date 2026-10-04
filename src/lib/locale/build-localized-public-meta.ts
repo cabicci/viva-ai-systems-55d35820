@@ -2,22 +2,14 @@ import { getUiString } from "@/lib/locale/ui-strings";
 import { getKidsCopy } from "@/lib/kids/copy";
 import type { SupportedLocale } from "./types";
 import { buildPublicRouteIdentity } from "@/lib/seo/public-route-identity";
+import { lineMeta } from "@/lib/learning-lines";
 
 export type PublicRouteMetaKind =
-  | "home"
-  | "kids"
-  | "pricing"
-  | "terms"
-  | "privacy"
-  | "contact"
-  | "login"
-  | "signup"
-  | "root";
+  "home" | "kids" | "pricing" | "terms" | "privacy" | "contact" | "login" | "signup" | "root";
+type LineMetaKind = "ai" | "about" | "kidsPricing" | "technical" | "technicalPricing";
 
 export type RouteMetaTag =
-  | { title: string }
-  | { name: string; content: string }
-  | { property: string; content: string };
+  { title: string } | { name: string; content: string } | { property: string; content: string };
 
 function withSocialTags(title: string, description: string): RouteMetaTag[] {
   return [
@@ -66,8 +58,17 @@ const META_KEYS: Record<
 
 export function buildLocalizedPublicMeta(
   locale: SupportedLocale,
-  kind: PublicRouteMetaKind,
+  kind: PublicRouteMetaKind | LineMetaKind,
 ): { meta: RouteMetaTag[]; links?: { rel: string; href: string }[] } {
+  if (kind === "home") return lineMeta(locale, "platform");
+  if (
+    kind === "ai" ||
+    kind === "about" ||
+    kind === "kidsPricing" ||
+    kind === "technical" ||
+    kind === "technicalPricing"
+  )
+    return lineMeta(locale, kind);
   if (kind === "signup") {
     return {
       meta: withSocialTags(

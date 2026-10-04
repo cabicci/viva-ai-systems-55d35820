@@ -221,6 +221,24 @@ export const ROUTE_CATALOG = [
     sitemap: false,
     robotsPath: "/system-state",
   },
+  { source: "ai.tsx", pattern: "/ai", visibility: "public", sitemap: true },
+  { source: "about.tsx", pattern: "/about", visibility: "public", sitemap: true },
+  { source: "kids.pricing.tsx", pattern: "/kids/pricing", visibility: "public", sitemap: true },
+  { source: "technical.tsx", pattern: "/technical", visibility: "public", sitemap: false },
+  { source: "technical.index.tsx", pattern: "/technical", visibility: "public", sitemap: true },
+  {
+    source: "technical.pricing.tsx",
+    pattern: "/technical/pricing",
+    visibility: "public",
+    sitemap: true,
+  },
+  {
+    source: "my-learning.tsx",
+    pattern: "/my-learning",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/my-learning",
+  },
 ] as const satisfies readonly RouteCatalogEntry[];
 
 export const PUBLIC_SITEMAP_PATHS = ROUTE_CATALOG.filter((route) => route.sitemap).map(

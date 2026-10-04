@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AccountRouteImport } from './routes/account'
+import { Route as AiRouteImport } from './routes/ai'
 import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AssistantRuntimeRouteImport } from './routes/assistant-runtime'
@@ -23,6 +25,7 @@ import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
 import { Route as KidsRouteImport } from './routes/kids'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as MyLearningRouteImport } from './routes/my-learning'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -31,6 +34,7 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as StartRouteImport } from './routes/start'
 import { Route as SystemStateRouteImport } from './routes/system-state'
+import { Route as TechnicalRouteImport } from './routes/technical'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
@@ -41,9 +45,12 @@ import { Route as InvitationsInvitationIdRouteImport } from './routes/invitation
 import { Route as KidsIndexRouteImport } from './routes/kids.index'
 import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
 import { Route as KidsFamilyRouteImport } from './routes/kids.family'
+import { Route as KidsPricingRouteImport } from './routes/kids.pricing'
 import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
 import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
+import { Route as TechnicalIndexRouteImport } from './routes/technical.index'
+import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
@@ -60,9 +67,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AccountRoute = AccountRouteImport.update({
   id: '/account',
   path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiRoute = AiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AiAssistantRoute = AiAssistantRouteImport.update({
@@ -120,6 +137,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyLearningRoute = MyLearningRouteImport.update({
+  id: '/my-learning',
+  path: '/my-learning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -158,6 +180,11 @@ const StartRoute = StartRouteImport.update({
 const SystemStateRoute = SystemStateRouteImport.update({
   id: '/system-state',
   path: '/system-state',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TechnicalRoute = TechnicalRouteImport.update({
+  id: '/technical',
+  path: '/technical',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -210,6 +237,11 @@ const KidsFamilyRoute = KidsFamilyRouteImport.update({
   path: '/family',
   getParentRoute: () => KidsRoute,
 } as any)
+const KidsPricingRoute = KidsPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => KidsRoute,
+} as any)
 const KidsPrivacyRoute = KidsPrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -224,6 +256,16 @@ const RoadmapIdRoute = RoadmapIdRouteImport.update({
   id: '/roadmap/$id',
   path: '/roadmap/$id',
   getParentRoute: () => rootRouteImport,
+} as any)
+const TechnicalIndexRoute = TechnicalIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TechnicalRoute,
+} as any)
+const TechnicalPricingRoute = TechnicalPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => TechnicalRoute,
 } as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
@@ -253,7 +295,9 @@ const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
@@ -266,6 +310,7 @@ export interface FileRoutesByFullPath {
   '/index': typeof Char91indexChar93Route
   '/kids': typeof KidsRouteWithChildren
   '/login': typeof LoginRoute
+  '/my-learning': typeof MyLearningRoute
   '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/pricing': typeof PricingRoute
@@ -274,6 +319,7 @@ export interface FileRoutesByFullPath {
   '/signup': typeof SignupRoute
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
+  '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
@@ -281,12 +327,15 @@ export interface FileRoutesByFullPath {
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
+  '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/pricing': typeof TechnicalPricingRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/technical/': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
@@ -295,7 +344,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
@@ -306,6 +357,7 @@ export interface FileRoutesByTo {
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
+  '/my-learning': typeof MyLearningRoute
   '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/pricing': typeof PricingRoute
@@ -320,12 +372,15 @@ export interface FileRoutesByTo {
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
   '/kids/family': typeof KidsFamilyRoute
+  '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/pricing': typeof TechnicalPricingRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
   '/kids': typeof KidsIndexRoute
   '/roadmap': typeof RoadmapIndexRoute
+  '/technical': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
@@ -335,7 +390,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
@@ -348,6 +405,7 @@ export interface FileRoutesById {
   '/index': typeof Char91indexChar93Route
   '/kids': typeof KidsRouteWithChildren
   '/login': typeof LoginRoute
+  '/my-learning': typeof MyLearningRoute
   '/onboarding': typeof OnboardingRoute
   '/payments': typeof PaymentsRoute
   '/pricing': typeof PricingRoute
@@ -356,6 +414,7 @@ export interface FileRoutesById {
   '/signup': typeof SignupRoute
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
+  '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
@@ -363,12 +422,15 @@ export interface FileRoutesById {
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
+  '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/pricing': typeof TechnicalPricingRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/technical/': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
@@ -379,7 +441,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/account'
+    | '/ai'
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
@@ -392,6 +456,7 @@ export interface FileRouteTypes {
     | '/index'
     | '/kids'
     | '/login'
+    | '/my-learning'
     | '/onboarding'
     | '/payments'
     | '/pricing'
@@ -400,6 +465,7 @@ export interface FileRouteTypes {
     | '/signup'
     | '/start'
     | '/system-state'
+    | '/technical'
     | '/terms'
     | '/admin/commerce'
     | '/admin/kids-parents'
@@ -407,12 +473,15 @@ export interface FileRouteTypes {
     | '/invitations/$invitationId'
     | '/kids/$levelId'
     | '/kids/family'
+    | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/pricing'
     | '/admin/'
     | '/image-gallery/'
     | '/kids/'
     | '/roadmap/'
+    | '/technical/'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
@@ -421,7 +490,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/account'
+    | '/ai'
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
@@ -432,6 +503,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/index'
     | '/login'
+    | '/my-learning'
     | '/onboarding'
     | '/payments'
     | '/pricing'
@@ -446,12 +518,15 @@ export interface FileRouteTypes {
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
     | '/kids/family'
+    | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/pricing'
     | '/admin'
     | '/image-gallery'
     | '/kids'
     | '/roadmap'
+    | '/technical'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId'
@@ -460,7 +535,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/account'
+    | '/ai'
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
@@ -473,6 +550,7 @@ export interface FileRouteTypes {
     | '/index'
     | '/kids'
     | '/login'
+    | '/my-learning'
     | '/onboarding'
     | '/payments'
     | '/pricing'
@@ -481,6 +559,7 @@ export interface FileRouteTypes {
     | '/signup'
     | '/start'
     | '/system-state'
+    | '/technical'
     | '/terms'
     | '/admin/commerce'
     | '/admin/kids-parents'
@@ -488,12 +567,15 @@ export interface FileRouteTypes {
     | '/invitations/$invitationId'
     | '/kids/$levelId'
     | '/kids/family'
+    | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/pricing'
     | '/admin/'
     | '/image-gallery/'
     | '/kids/'
     | '/roadmap/'
+    | '/technical/'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
@@ -503,7 +585,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AccountRoute: typeof AccountRoute
+  AiRoute: typeof AiRoute
   AiAssistantRoute: typeof AiAssistantRoute
   AnalyticsRoute: typeof AnalyticsRoute
   AssistantRuntimeRoute: typeof AssistantRuntimeRoute
@@ -516,6 +600,7 @@ export interface RootRouteChildren {
   Char91indexChar93Route: typeof Char91indexChar93Route
   KidsRoute: typeof KidsRouteWithChildren
   LoginRoute: typeof LoginRoute
+  MyLearningRoute: typeof MyLearningRoute
   OnboardingRoute: typeof OnboardingRoute
   PaymentsRoute: typeof PaymentsRoute
   PricingRoute: typeof PricingRoute
@@ -524,6 +609,7 @@ export interface RootRouteChildren {
   SignupRoute: typeof SignupRoute
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
+  TechnicalRoute: typeof TechnicalRouteWithChildren
   TermsRoute: typeof TermsRoute
   AdminCommerceRoute: typeof AdminCommerceRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
@@ -552,11 +638,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/account': {
       id: '/account'
       path: '/account'
       fullPath: '/account'
       preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai': {
+      id: '/ai'
+      path: '/ai'
+      fullPath: '/ai'
+      preLoaderRoute: typeof AiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ai-assistant': {
@@ -636,6 +736,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-learning': {
+      id: '/my-learning'
+      path: '/my-learning'
+      fullPath: '/my-learning'
+      preLoaderRoute: typeof MyLearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -690,6 +797,13 @@ declare module '@tanstack/react-router' {
       path: '/system-state'
       fullPath: '/system-state'
       preLoaderRoute: typeof SystemStateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/technical': {
+      id: '/technical'
+      path: '/technical'
+      fullPath: '/technical'
+      preLoaderRoute: typeof TechnicalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -762,6 +876,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsFamilyRouteImport
       parentRoute: typeof KidsRoute
     }
+    '/kids/pricing': {
+      id: '/kids/pricing'
+      path: '/pricing'
+      fullPath: '/kids/pricing'
+      preLoaderRoute: typeof KidsPricingRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/kids/privacy': {
       id: '/kids/privacy'
       path: '/privacy'
@@ -782,6 +903,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/roadmap/$id'
       preLoaderRoute: typeof RoadmapIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/technical/': {
+      id: '/technical/'
+      path: '/'
+      fullPath: '/technical/'
+      preLoaderRoute: typeof TechnicalIndexRouteImport
+      parentRoute: typeof TechnicalRoute
+    }
+    '/technical/pricing': {
+      id: '/technical/pricing'
+      path: '/pricing'
+      fullPath: '/technical/pricing'
+      preLoaderRoute: typeof TechnicalPricingRouteImport
+      parentRoute: typeof TechnicalRoute
     }
     '/kids/$levelId/': {
       id: '/kids/$levelId/'
@@ -852,6 +987,7 @@ const KidsLevelIdRouteWithChildren = KidsLevelIdRoute._addFileChildren(
 interface KidsRouteChildren {
   KidsLevelIdRoute: typeof KidsLevelIdRouteWithChildren
   KidsFamilyRoute: typeof KidsFamilyRoute
+  KidsPricingRoute: typeof KidsPricingRoute
   KidsPrivacyRoute: typeof KidsPrivacyRoute
   KidsIndexRoute: typeof KidsIndexRoute
 }
@@ -859,15 +995,32 @@ interface KidsRouteChildren {
 const KidsRouteChildren: KidsRouteChildren = {
   KidsLevelIdRoute: KidsLevelIdRouteWithChildren,
   KidsFamilyRoute: KidsFamilyRoute,
+  KidsPricingRoute: KidsPricingRoute,
   KidsPrivacyRoute: KidsPrivacyRoute,
   KidsIndexRoute: KidsIndexRoute,
 }
 
 const KidsRouteWithChildren = KidsRoute._addFileChildren(KidsRouteChildren)
 
+interface TechnicalRouteChildren {
+  TechnicalPricingRoute: typeof TechnicalPricingRoute
+  TechnicalIndexRoute: typeof TechnicalIndexRoute
+}
+
+const TechnicalRouteChildren: TechnicalRouteChildren = {
+  TechnicalPricingRoute: TechnicalPricingRoute,
+  TechnicalIndexRoute: TechnicalIndexRoute,
+}
+
+const TechnicalRouteWithChildren = TechnicalRoute._addFileChildren(
+  TechnicalRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AccountRoute: AccountRoute,
+  AiRoute: AiRoute,
   AiAssistantRoute: AiAssistantRoute,
   AnalyticsRoute: AnalyticsRoute,
   AssistantRuntimeRoute: AssistantRuntimeRoute,
@@ -880,6 +1033,7 @@ const rootRouteChildren: RootRouteChildren = {
   Char91indexChar93Route: Char91indexChar93Route,
   KidsRoute: KidsRouteWithChildren,
   LoginRoute: LoginRoute,
+  MyLearningRoute: MyLearningRoute,
   OnboardingRoute: OnboardingRoute,
   PaymentsRoute: PaymentsRoute,
   PricingRoute: PricingRoute,
@@ -888,6 +1042,7 @@ const rootRouteChildren: RootRouteChildren = {
   SignupRoute: SignupRoute,
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
+  TechnicalRoute: TechnicalRouteWithChildren,
   TermsRoute: TermsRoute,
   AdminCommerceRoute: AdminCommerceRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,

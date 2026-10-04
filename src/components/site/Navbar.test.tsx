@@ -1,90 +1,149 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { fireEvent, render, screen, within, cleanup } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { Navbar } from "./Navbar";
-
+import { LearningLineCards } from "./LearningLines";
+import { getLineCopy, LEARNING_LINES, LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
+import { SUPPORTED_LOCALES } from "@/lib/locale/types";
+const state = vi.hoisted(() => ({
+  path: "/",
+  locale: "en" as "en" | "ar-EG" | "ar-MSA" | "ar-Gulf",
+  user: null as null | { id: string },
+  admin: false,
+  signOut: vi.fn(),
+}));
 vi.mock("@tanstack/react-router", () => ({
+  useRouterState: ({ select }: { select: (state: unknown) => unknown }) =>
+    select({ location: { pathname: state.path } }),
   Link: ({
     to,
+    search,
     children,
     ...props
   }: {
     to: string;
+    search?: Record<string, unknown>;
     children: React.ReactNode;
     [key: string]: unknown;
   }) => (
-    <a href={to} {...Object.fromEntries(Object.entries(props).filter(([key]) => key !== "search"))}>
+    <a
+      href={
+        to + (search ? `?${new URLSearchParams(search as Record<string, string>).toString()}` : "")
+      }
+      {...props}
+    >
       {children}
     </a>
   ),
 }));
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: { id: "adult" }, signOut: vi.fn() }),
+  useAuth: () => ({ user: state.user, signOut: state.signOut }),
 }));
-vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: false }) }));
-vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ dir: "rtl" }) }));
-vi.mock("@/lib/locale/use-locale-link-search", () => ({ useLocaleLinkSearch: () => () => ({}) }));
+vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: state.admin }) }));
+vi.mock("@/lib/locale/locale-context", () => ({
+  useLocale: () => ({ dir: state.locale === "en" ? "ltr" : "rtl", locale: state.locale }),
+}));
+vi.mock("@/lib/locale/use-locale-link-search", () => ({
+  useLocaleLinkSearch: () => (base?: Record<string, unknown>) => ({
+    ...base,
+    locale: state.locale,
+  }),
+}));
 vi.mock("@/lib/locale/use-ui-strings", () => ({ useUiString: () => (key: string) => key }));
 vi.mock("@/components/locale/LanguageSelector", () => ({
   LanguageSelector: () => <span>Language</span>,
 }));
-vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <span>Kids</span> }));
-
-describe("shared top navigation", () => {
-  it("keeps the public links in one sticky row with Kids after Contact", () => {
+afterEach(cleanup);
+beforeEach(() => {
+  state.path = "/";
+  state.locale = "en";
+  state.user = null;
+  state.admin = false;
+  state.signOut.mockClear();
+});
+describe("learning lines and shared account navigation", () => {
+  it.each(SUPPORTED_LOCALES)("offers three complete clickable cards preserving %s", (locale) => {
+    state.locale = locale;
+    render(<LearningLineCards />);
+    const c = getLineCopy(locale);
+    const cards = within(screen.getByRole("region", { name: c.choose })).getAllByRole("link");
+    expect(cards).toHaveLength(3);
+    cards.forEach((card, index) => {
+      const line = LEARNING_LINES[index];
+      expect(card).toHaveAttribute("href", `${LINE_ROUTES[line]}?locale=${locale}`);
+      expect(within(card).getByRole("heading")).toHaveTextContent(c[line]);
+      expect(within(card).getByRole("img")).toHaveAttribute(
+        "src",
+        `/brand/masaarat-${line === "technical" ? "tech" : line}.png`,
+      );
+    });
+  });
+  it("keeps the public home header simple and uses unified registration", () => {
     render(<Navbar />);
     const header = screen.getByRole("banner");
     expect(header).toHaveClass("sticky", "top-0");
-    const desktop = within(header).getByRole("navigation");
-    expect(desktop).toHaveClass("whitespace-nowrap", "min-[1180px]:flex");
-    expect(desktop).not.toHaveClass("flex-wrap");
-    expect(screen.getByRole("button", { name: "nav.menu" })).toHaveClass("min-[1180px]:hidden");
-    const desktopLinks = within(desktop)
-      .getAllByRole("link")
-      .map((link) => link.getAttribute("href"));
-    expect(desktopLinks.slice(-2)).toEqual(["/contact", "/kids"]);
-
-    fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
-    const mobileLinks = within(screen.getByRole("dialog"))
-      .getAllByRole("link")
-      .map((link) => link.getAttribute("href"));
-    expect(mobileLinks.indexOf("/kids")).toBe(mobileLinks.indexOf("/contact") + 1);
-  });
-
-  it("keeps account destinations reachable from the top bar", () => {
-    render(<Navbar />);
-    fireEvent.click(screen.getByRole("button", { name: "nav.myDashboard" }));
-    const accountMenu = screen.getByRole("navigation", { name: "nav.myDashboard" });
-    expect(within(accountMenu).getByRole("link", { name: "sidebar.dashboard" })).toHaveAttribute(
-      "href",
-      "/dashboard",
-    );
-    expect(within(accountMenu).getByRole("link", { name: "sidebar.analytics" })).toHaveAttribute(
-      "href",
-      "/analytics",
-    );
-    expect(within(accountMenu).getByRole("link", { name: "sidebar.account" })).toHaveAttribute(
-      "href",
-      "/account",
-    );
-  });
-
-  it("replaces the public links with account links in the same header on account pages", () => {
-    render(<Navbar variant="account" />);
-    const header = screen.getByRole("banner");
-    const accountNav = within(header).getByRole("navigation", { name: "nav.myDashboard" });
+    const nav = within(header).getByRole("navigation");
     expect(
-      within(accountNav)
+      within(nav)
         .getAllByRole("link")
-        .map((link) => link.getAttribute("href")),
-    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account", "/kids"]);
-    expect(within(header).queryByRole("link", { name: "nav.contact" })).not.toBeInTheDocument();
-    expect(within(accountNav).getByRole("link", { name: "Kids" })).toHaveAttribute("href", "/kids");
-    expect(within(header).getByRole("button", { name: "sidebar.signOut" })).toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
-    expect(within(screen.getByRole("dialog")).getByRole("link", { name: "Kids" })).toHaveAttribute(
+        .map((x) => new URL(x.getAttribute("href")!, "https://test").pathname),
+    ).toEqual(["/about", "/contact"]);
+    expect(screen.getByRole("link", { name: "nav.signup" })).toHaveAttribute(
       "href",
-      "/kids",
+      "/signup?returnTo=%2Fmy-learning&locale=en",
+    );
+  });
+  it.each(LEARNING_LINES)(
+    "keeps %s pricing scoped and all lines reachable before and after sign-in",
+    (line) => {
+      state.path = LINE_ROUTES[line];
+      render(<Navbar />);
+      const c = getLineCopy(state.locale);
+      const desktop = screen.getByRole("navigation");
+      expect(within(desktop).getByRole("link", { name: c.plans })).toHaveAttribute(
+        "href",
+        `${LINE_PRICING[line]}?locale=en`,
+      );
+      fireEvent.click(screen.getByRole("button", { name: c.switch }));
+      const switcher = screen.getByRole("navigation", { name: c.switch });
+      LEARNING_LINES.forEach((item) =>
+        expect(within(switcher).getByRole("link", { name: c[item] })).toHaveAttribute(
+          "href",
+          `${LINE_ROUTES[item]}?locale=en`,
+        ),
+      );
+      cleanup();
+      state.user = { id: "adult" };
+      render(<Navbar variant="account" />);
+      fireEvent.click(screen.getByRole("button", { name: "nav.myDashboard" }));
+      const menu = screen.getByRole("navigation", { name: "nav.myDashboard" });
+      expect(within(menu).getByRole("link", { name: "sidebar.payments" })).toHaveAttribute(
+        "href",
+        "/payments?locale=en",
+      );
+      expect(within(menu).getByRole("link", { name: "sidebar.account" })).toHaveAttribute(
+        "href",
+        "/account?locale=en",
+      );
+      LEARNING_LINES.forEach((item) =>
+        expect(within(menu).getByRole("link", { name: c[item] })).toBeInTheDocument(),
+      );
+      fireEvent.click(within(menu).getByRole("button", { name: "sidebar.signOut" }));
+      expect(state.signOut).toHaveBeenCalledOnce();
+    },
+  );
+  it("exposes line switching and admin commerce inside the mobile menu", () => {
+    state.path = "/kids/level-1/2";
+    state.user = { id: "admin" };
+    state.admin = true;
+    render(<Navbar variant="account" />);
+    fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
+    const menu = screen.getByRole("dialog");
+    expect(
+      within(menu).getByRole("link", { name: getLineCopy("en").technical }),
+    ).toBeInTheDocument();
+    expect(within(menu).getByRole("link", { name: "sidebar.commerce" })).toHaveAttribute(
+      "href",
+      "/admin/commerce?locale=en",
     );
   });
 });

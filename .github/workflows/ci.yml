@@ -56,6 +56,14 @@ jobs:
           src/lib/__tests__/central1-auth-integration.test.tsx
           src/lib/__tests__/locale-auth.test.ts
 
+      - name: Learning lines and shared navigation (isolated clients)
+        run: >-
+          bunx vitest run
+          src/components/site/Navbar.test.tsx
+          src/components/site/__tests__/Footer.test.tsx
+          src/lib/learning-lines.test.ts
+          src/lib/kids/lesson-client.test.ts
+
       - name: Account Auth email localization (no email sends)
         run: >-
           bunx vitest run

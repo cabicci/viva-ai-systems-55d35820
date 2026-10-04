@@ -1,17 +1,16 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { StripeCheckoutButtons } from "@/components/billing/StripeCheckoutButtons";
-import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
+import { PlanPrices } from "@/components/site/PlanPrices";
 import { Badge } from "@/components/ui/badge";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import { APPROVED_PRICES_MINOR } from "@/lib/billing/catalogue/prices";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import { useAuth } from "@/lib/auth-context";
 
@@ -76,13 +75,6 @@ const COMPARISON_ROWS = [
   },
 ] as const;
 
-type PaidPlanKey = "pro" | "pro_plus";
-
-function formatMinorUnits(amount: number): string {
-  const major = amount / 100;
-  return Number.isInteger(major) ? String(major) : major.toFixed(2);
-}
-
 const FAQ_KEYS = [
   { q: "pricing.faq.1.q", a: "pricing.faq.1.a" },
   { q: "pricing.faq.2.q", a: "pricing.faq.2.a" },
@@ -92,6 +84,11 @@ const FAQ_KEYS = [
 
 export const Route = createFileRoute("/pricing")({
   validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  beforeLoad: ({ location, search }) => {
+    if (location.hash.replace(/^#/, "") === "kids") {
+      throw redirect({ to: "/kids/pricing", search: { locale: search.locale }, replace: true });
+    }
+  },
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({
       searchLocale: match.search.locale,
@@ -198,8 +195,6 @@ function PricingPage() {
             </article>
           </section>
 
-          <KidsFamilyPricing />
-
           <section className="glass rounded-2xl border border-border/60 p-6 md:p-8">
             <h2 className="text-lg font-bold mb-5">{t("pricing.compare.title")}</h2>
             <div className="overflow-x-auto">
@@ -299,32 +294,6 @@ function PricingPage() {
         </div>
       </main>
       <Footer />
-    </div>
-  );
-}
-
-function PlanPrices({ plan }: { plan: PaidPlanKey }) {
-  const t = useUiString();
-  const egypt = APPROVED_PRICES_MINOR.EG[plan];
-  const international = APPROVED_PRICES_MINOR.INTL[plan];
-
-  return (
-    <div className="mb-5 rounded-xl border border-border/60 bg-background/60 p-4">
-      <p className="font-bold">
-        {formatMinorUnits(egypt.month)} EGP{" "}
-        <span className="text-xs font-normal text-muted-foreground">
-          / {t("pricing.price.month")}
-        </span>
-      </p>
-      <p className="mt-1 text-sm text-muted-foreground">
-        {formatMinorUnits(egypt.year)} EGP / {t("pricing.price.year")}
-      </p>
-      <p className="mt-3 border-t border-border/50 pt-3 text-xs text-muted-foreground">
-        {t("pricing.price.international")}: {formatMinorUnits(international.month)} USD /{" "}
-        {t("pricing.price.month")} · {formatMinorUnits(international.year)} USD /{" "}
-        {t("pricing.price.year")}
-      </p>
-      <p className="mt-2 text-[11px] text-muted-foreground">{t("pricing.price.taxExclusive")}</p>
     </div>
   );
 }

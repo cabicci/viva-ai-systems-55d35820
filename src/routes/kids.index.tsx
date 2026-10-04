@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { KidsBrand } from "@/components/kids/KidsBrand";
+import { LineIntroduction } from "@/components/site/LearningLines";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -30,11 +30,11 @@ function KidsPage() {
     <div className="min-h-dvh flex flex-col" dir={dir}>
       <Navbar variant="account" />
       <main id="main-content" className="flex-1">
+        <LineIntroduction line="kids" />
         <div className="container mx-auto max-w-5xl space-y-10 px-4 py-12 md:py-20">
           <header className="rounded-3xl border border-primary/20 bg-card p-6 md:p-10">
-            <KidsBrand />
             <p className="mt-6 text-sm font-semibold text-primary">{copy.eyebrow}</p>
-            <h1 className="mt-2 text-3xl font-black md:text-5xl">{copy.title}</h1>
+            <h2 className="mt-2 text-3xl font-black md:text-5xl">{copy.title}</h2>
             <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{copy.intro}</p>
           </header>
 
@@ -76,9 +76,8 @@ function KidsPage() {
                 {copy.startKids}
               </Link>
               <Link
-                to="/pricing"
+                to="/kids/pricing"
                 search={localeSearch()}
-                hash="kids"
                 className="inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
               >
                 {copy.viewPricing}
