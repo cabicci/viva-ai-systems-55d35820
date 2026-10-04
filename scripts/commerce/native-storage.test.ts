@@ -285,8 +285,15 @@ describe("native signed-in commerce handlers and Storage HTTP privacy", () => {
     const receipt = await upload(member);
     await sql`INSERT INTO billing.account_deletion_requests (user_id) VALUES (${member.id})`;
     try {
+      // The established LC-09 boundary is the durable lifecycle, not a
+      // submitted request alone. Exercise both states without a real deletion.
+      expect((await read(member, receipt.id)).mime).toBe("application/pdf");
+      await sql`INSERT INTO billing.account_deletion_lifecycle
+        (user_id,stage,financial_retention_reference,crm_retention_reference,release_reference)
+        VALUES (${member.id},'blocked','CI fixture','CI fixture','CI fixture')`;
       await expect(read(member, receipt.id)).rejects.toThrow(/Receipt access denied/);
     } finally {
+      await sql`DELETE FROM billing.account_deletion_lifecycle WHERE user_id=${member.id}`;
       await sql`DELETE FROM billing.account_deletion_requests WHERE user_id=${member.id}`;
     }
   });
