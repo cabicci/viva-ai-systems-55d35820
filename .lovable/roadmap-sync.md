@@ -198,3 +198,5 @@ Delivery evidence: experiment source f4c4051b5556dc4c981c2100b66c0fea21064fb3; p
 [roadmap:furniture-pilot-temporary-branch]
 2026-10-04 — Correcting repeated explanation diagrams: 12 section-specific foundation figures and six unique cut-list figures across all four registers. Reading, zoom assets and PDF workbooks share the same drawings. Scope remains temporary branch/private preview; no entitlement/main integration change. Regression checks cover actual SVG content uniqueness. Publication and visual acceptance pending.
 Acceptance: 23 scoped tests, TypeScript, scoped lint, production build, 40 mobile/desktop locale lesson views and all 44 PDF layout gates passed. 18 distinct explanation drawings are shared by reading/zoom/workbook. Private preview publication pending; main/account/package unchanged.
+
+Illustration correction published: temporary branch commit 8ef640f8; private preview source 77ca53c6; deployment appgdep_6ac1e621fa688191a887dd8b8edd97b2 succeeded 2026-10-04T05:38:15Z. Main integration remains pending.
