@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M17-L04",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Kitchen hardware, construction and installation",
+      "spoken_text": "Create a coordinated manufacturing package that connects carcass details, hardware, site conditions and an inspectable installation sequence.",
+      "caption": "Create a coordinated manufacturing package that connects carcass details, hardware, site conditions and an inspectable installation sequence."
+    },
+    {
+      "id": "release",
+      "display_title": "Freeze the manufacturing references",
+      "spoken_text": "Reconcile plans, elevations, sections, cut lists, appliances and hardware by compatible revisions. Distinguish carcass, finished-part and cutting dimensions according to edge details. Mark unresolved device/service inputs and do not release affected parts as fully approved.",
+      "caption": "A release identifies its references and open items.",
+      "diagram": "new-M17-L04-release"
+    },
+    {
+      "id": "hardwarelist",
+      "display_title": "Link hardware to units and parts",
+      "spoken_text": "For each hardware item record product code, handing, quantity, cabinet and approved drilling reference. Distinguish a purchased set from its component parts to avoid double ordering. Product changes reopen front, carcass, machining and motion coordination before procurement.",
+      "caption": "A set and its components are different counting units.",
+      "diagram": "new-M17-L04-hardwarelist"
+    },
+    {
+      "id": "sequence",
+      "display_title": "Sequence installation and inspection",
+      "spoken_text": "Link site readiness to delivery and assembly of units, worktops and devices under their references. Put hold points before fixing/services are concealed and assign inspectors. Check alignment, operation and samples, then record corrections and reinspection; do not improvise load tests.",
+      "caption": "Acceptance of hidden work precedes concealment.",
+      "diagram": "new-M17-L04-sequence"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The schedule orders a complete pull-out set and accidentally reorders its included components. Check the set contents, separate genuine additions and correct procurement. Decision: reconcile the purchasing unit before ordering.",
+      "caption": "Decision: reconcile the purchasing unit before ordering."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit an assembly detail, hardware schedule and installation plan with three inspection hold points and open items.",
+      "spoken_text": "Submit an assembly detail, hardware schedule and installation plan with three inspection hold points and open items.",
+      "caption": "Submit an assembly detail, hardware schedule and installation plan with three inspection hold points and open items."
+    }
+  ]
+}

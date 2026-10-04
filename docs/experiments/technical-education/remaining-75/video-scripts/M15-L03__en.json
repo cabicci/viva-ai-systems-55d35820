@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M15-L03",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "pronunciation_review": {
+    "required_for_all_locales": true,
+    "status": "pending_native_listener_review",
+    "listening_performed": false
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Coordinate electrical, plumbing and ventilation work",
+      "spoken_text": "Coordinate service envelopes, inputs and responsibilities without substituting for specialist electrical, plumbing or ventilation design.",
+      "caption": "Coordinate service envelopes, inputs and responsibilities without substituting for specialist electrical, plumbing or ventilation design."
+    },
+    {
+      "id": "register",
+      "display_title": "Register service needs and review ownership",
+      "spoken_text": "Register product model, proposed location, function, required inputs, responsible specialist and status. The electrical specialist reviews location and protection against the applicable jurisdiction/reference edition and product data. Do not generalise a poster’s zones or protection ratings to every bathroom. Keep unresolved points visible until settled before furniture fixing or concealment.",
+      "caption": "Identify jurisdiction, reference, product and review owner.",
+      "diagram": "new-M15-L03-register"
+    },
+    {
+      "id": "plumbing",
+      "display_title": "Coordinate plumbing envelopes and access",
+      "spoken_text": "Obtain supply/waste interfaces and service envelopes from the plumbing specialist and reconcile them with the basin, drawers and supports. Show clashes and removable maintenance access in section. Routing, slopes, pipe sizing and test procedures belong to the project specialist. Propagate moved interfaces to coordination drawings and affected parts before fabrication.",
+      "caption": "Coordinate physical interfaces; retain specialist design ownership.",
+      "diagram": "new-M15-L03-plumbing"
+    },
+    {
+      "id": "airlight",
+      "display_title": "Coordinate lighting, ventilation and service",
+      "spoken_text": "Overlay luminaires, ventilation openings and service components with mirror, cabinet and ceiling. Check that furniture does not obstruct approved openings or replacement access, and coordinate operation with the specialist. A lighting mock-up tests shadows/reflections, not ventilation performance or electrical safety. Receive distinct commissioning/inspection evidence for each system.",
+      "caption": "Keep each system’s acceptance evidence separate.",
+      "diagram": "new-M15-L03-airlight"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "A revised tall cabinet covers a documented ventilation opening. Review cabinet placement or a specialist-approved alternative rather than moving or reducing the opening by guesswork. Update drawings after resolution and recheck service access and the system’s required verification. Decision: resolve the clash with the system design owner.",
+      "caption": "Decision: resolve the clash with the system design owner."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit a coordination overlay and register of references, products, envelopes, conflicts, owners and statuses.",
+      "spoken_text": "Submit a coordination overlay and register of references, products, envelopes, conflicts, owners and statuses.",
+      "caption": "Submit a coordination overlay and register of references, products, envelopes, conflicts, owners and statuses."
+    }
+  ]
+}

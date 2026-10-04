@@ -1,0 +1,72 @@
+{
+  "id": "M17-L01",
+  "locale": "en",
+  "title": "Integrate appliances using their instructions",
+  "intro": "Appliance integration requires more than fitting the visible body. Coordinate the exact model with its installation envelope, airflow, services and access.",
+  "goals": [
+    "Identify the appliance and manual",
+    "Read cavity and airflow requirements",
+    "Coordinate service and substitutions"
+  ],
+  "sections": [
+    {
+      "id": "identity",
+      "title": "Identify the appliance and manual",
+      "text": "Record manufacturer, full model, market, installed configuration, manual identifier/revision and requirement page. A marketing width such as “60 cm” is not an installation opening. Collect device envelope, cavity and neighboring-device compatibility. Assign missing information an owner rather than guessing dimensions.",
+      "diagram": "new-M17-L01-identity",
+      "caption": "Tie each requirement to an exact model and page."
+    },
+    {
+      "id": "envelope",
+      "title": "Read cavity and airflow requirements",
+      "text": "Review the required cavity and airflow path in the exact appliance manual. As a manual-reading example, Bosch CPA565GS0B section 21.3 addresses cabinet backs and ventilation as well as space. Map requirements onto a cabinet section without transferring them to another model. A nominal void does not meet a required path if furniture blocks it.",
+      "diagram": "new-M17-L01-envelope",
+      "caption": "This is a model-specific manual-reading exercise."
+    },
+    {
+      "id": "change",
+      "title": "Coordinate service and substitutions",
+      "text": "Show service/access zones and removal routes from the manual. The service specialist reviews services while furniture design coordinates parts around them. A model substitution reopens cavity, airflow, services, movement and support; approval of the original does not transfer automatically.",
+      "diagram": "new-M17-L01-change",
+      "caption": "A model substitution reopens affected interfaces."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A replacement has the same marketed size but different installation documentation. Update its record and review cavity, back, airflow and services before releasing procurement or manufacture.",
+    "decision": "Decision: review the replacement requirements before approval."
+  },
+  "quiz": [
+    {
+      "id": "M17-L01-check",
+      "question": "What defines the appliance installation space?",
+      "options": [
+        "The exact model and installation instructions",
+        "Marketing size alone",
+        "A similar old appliance"
+      ],
+      "correct": 0,
+      "explanation": "Installation requirements can extend beyond the visible envelope."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two referenced appliance records, a cavity/service section and a substitution review.",
+    "fields": [
+      "Identify the appliance and manual",
+      "Read cavity and airflow requirements",
+      "Coordinate service and substitutions"
+    ],
+    "criteria": [
+      "Traceable manual and page",
+      "Cavity, airflow and service distinguished",
+      "Missing data flagged, not guessed"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can the Bosch example apply to every oven?",
+      "answer": "No. It teaches requirement extraction; each model needs its own review.",
+      "sectionId": "envelope"
+    }
+  ]
+}

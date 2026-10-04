@@ -1,0 +1,72 @@
+{
+  "id": "M19-L01",
+  "locale": "en",
+  "title": "Hotel furniture and repeated use",
+  "intro": "A hotel room is an operating system as well as a guest space. Translate guest, housekeeping and maintenance tasks into furniture requirements, then approve a traceable sample before repeated supply.",
+  "goals": [
+    "Map guest and service tasks",
+    "Detail replacement and care",
+    "Control the reference room and batch"
+  ],
+  "sections": [
+    {
+      "id": "operation",
+      "title": "Map guest and service tasks",
+      "text": "Map arrival with luggage, storage opening, seating and access to charging. Add housekeeping and maintenance routes on the same plan. Test conflicts between an open drawer, service trolley and room door, recording who tried each state. An attractive empty-room image does not demonstrate that the operating sequence works.",
+      "diagram": "new-M19-L01-operation",
+      "caption": "Overlay guest, opening and service states."
+    },
+    {
+      "id": "replace",
+      "title": "Detail replacement and care",
+      "text": "Select a serviceable component such as a luggage-protection panel or bedside front. Show its removal sequence and connector access without destroying adjacent finishes. Link material and finish IDs to the product-specific care instructions, and review a sample with the operator. A textile cleaning method cannot simply be assigned to every surface.",
+      "diagram": "new-M19-L01-replace",
+      "caption": "Component identity links replacement detail and care record."
+    },
+    {
+      "id": "batch",
+      "title": "Control the reference room and batch",
+      "text": "The supply exercise assumes 12 rooms with two bedside units each: 12 × 2 = 24 units. The reference-room units are included in those 24, not additional. Schedule room IDs, handedness, finishes and sample revisions. Colour approval is separate from stability, performance and applicable local requirements; close the reference-room issues before releasing repeated supply.",
+      "diagram": "new-M19-L01-batch",
+      "caption": "12 × 2 = 24; reference units are included."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The sample looks acceptable, but replacing its front requires removal of a glued top. Revise the service detail and review the changed sample with operations before releasing the 24-unit order. Earlier appearance approval does not cover the revised connection.",
+    "decision": "Decision: hold batch release until the service detail is reviewed."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "Should reference units already included in 24 be added again?",
+      "options": [
+        "No; record it within the total",
+        "Always add it",
+        "Remove room IDs"
+      ],
+      "correct": 0,
+      "explanation": "Counting the reference twice creates an unrequested supply quantity."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a hotel-room operating plan, replaceable-part detail and 24-unit room schedule.",
+    "fields": [
+      "Guest and service states",
+      "Replacement and care",
+      "Room and sample schedule"
+    ],
+    "criteria": [
+      "Conflicts identified",
+      "Connector access documented",
+      "No reference-unit double count"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does this card certify commercial furniture performance?",
+      "answer": "No. It is a review package; the actual system and project requirements still need verification.",
+      "sectionId": "batch"
+    }
+  ]
+}

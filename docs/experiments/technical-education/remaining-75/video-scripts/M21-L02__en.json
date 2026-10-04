@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M21-L02",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Issue a coordinated project package",
+      "spoken_text": "A reviewable package keeps drawings, model, part lists, quantities and specifications consistent. Continue the reception and two-storage-unit case using shared identities, controlled changes and an explicit issue purpose.",
+      "caption": "A reviewable package keeps drawings, model, part lists, quantities and specifications consistent. Continue the reception and two-storage-unit case using shared identities, controlled changes and an explicit issue purpose."
+    },
+    {
+      "id": "identity",
+      "display_title": "Link documents by item identity",
+      "spoken_text": "Use C-A and C-B consistently in plan, elevations, sections and schedules. Distinguish the supplied cabinet item from panel and hardware rows, with explicit counting units. Reconcile dimensions, material, face, edge and connection references across documents. Mark unavailable information as unresolved instead of filling cells with invented values.",
+      "caption": "Cabinet, panel and hardware are different schedule levels.",
+      "diagram": "new-M21-L02-identity"
+    },
+    {
+      "id": "change",
+      "display_title": "Propagate the shelf change",
+      "spoken_text": "The initial 3 shelves per unit give 2 × 3 = 6 shelves. Revising to 4 per unit gives 2 × 4 = 8, an increase of 8 − 6 = 2. Update elevations, sections, shelf rows, support references and specifications together. Correct arithmetic does not approve spacing or load performance; review the actual system separately.",
+      "caption": "6 becomes 8; add 2 shelves and update dependent records.",
+      "diagram": "new-M21-L02-change"
+    },
+    {
+      "id": "issue",
+      "display_title": "Declare issue purpose and status",
+      "spoken_text": "Index each document’s ID, revision, date, purpose, reviewer and superseded version. A review package does not become a fabrication release while critical dimensions or connections remain unresolved. Include reconciliation results and owned open issues, then confirm that indexed files exist, open correctly and belong to the declared revision.",
+      "caption": "Review issue and fabrication release are different statuses.",
+      "diagram": "new-M21-L02-issue"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The schedule lists 8 shelves, but elevations still show 3 in each unit. Hold issue until drawings and support references are coordinated, recording the superseded total of 6 and increase of 2. Renaming the schedule file does not resolve the contradiction. Decision: reconcile drawings and schedules before package issue.",
+      "caption": "Decision: reconcile drawings and schedules before package issue."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit a linked issue index and trace the shelf revision from 6 to 8 with its 2-shelf increase.",
+      "spoken_text": "Submit a linked issue index and trace the shelf revision from 6 to 8 with its 2-shelf increase.",
+      "caption": "Submit a linked issue index and trace the shelf revision from 6 to 8 with its 2-shelf increase."
+    }
+  ]
+}

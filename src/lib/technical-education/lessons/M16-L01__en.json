@@ -1,0 +1,72 @@
+{
+  "id": "M16-L01",
+  "locale": "en",
+  "title": "Kitchen activity zones and layout",
+  "intro": "A kitchen layout connects storage, washing, preparation, cooking and serving. Compare alternatives against the same users, use scenario and movement requirements.",
+  "goals": [
+    "Map the work zones",
+    "Test openings and movement",
+    "Compare with consistent criteria"
+  ],
+  "sections": [
+    {
+      "id": "zones",
+      "title": "Map the work zones",
+      "text": "Map a meal from retrieving ingredients through washing, preparation, cooking and serving, including returning utensils and handling waste. Multiple users or appliances change these relationships. A three-point triangle may support analysis but cannot by itself validate the entire kitchen.",
+      "diagram": "new-M16-L01-zones",
+      "caption": "Include work, serving and return paths."
+    },
+    {
+      "id": "movement",
+      "title": "Test openings and movement",
+      "text": "Draw open appliance doors and drawers with standing and walking positions. Test credible simultaneous activities, such as preparation and retrieval. Closed-door space does not establish usable space during opening. Give every conflict a code, affected elements and triggering use state.",
+      "diagram": "new-M16-L01-movement",
+      "caption": "Review simultaneous use, not only a static gap."
+    },
+    {
+      "id": "compare",
+      "title": "Compare with consistent criteria",
+      "text": "Compare feasible alternatives against user routes, usable preparation surface, appliance opening, service access and storage. Attach plan evidence and flag missing site or device data. More cabinets or a more expensive appearance does not automatically improve the layout.",
+      "diagram": "new-M16-L01-compare",
+      "caption": "A plan and conflict log justify the decision."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A preparation drawer conflicts with the dishwasher door in A. B resolves the conflict but reduces preparation surface. Record that trade-off and check the remaining surface with the user before selecting it.",
+    "decision": "Decision: resolve the conflict while retaining the required preparation function."
+  },
+  "quiz": [
+    {
+      "id": "M16-L01-check",
+      "question": "What best supports layout acceptance?",
+      "options": [
+        "Use-state plans and conflict records",
+        "More cabinets",
+        "A triangle alone"
+      ],
+      "correct": 0,
+      "explanation": "The evidence must address actual work and movement."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two layouts, a meal scenario, three opening states and a conflict/decision record.",
+    "fields": [
+      "Map the work zones",
+      "Test openings and movement",
+      "Compare with consistent criteria"
+    ],
+    "criteria": [
+      "Same brief for both alternatives",
+      "Simultaneous states tested",
+      "Evidence-based decision"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a work triangle validate the kitchen?",
+      "answer": "No. Review the complete tasks, users, devices and movement states.",
+      "sectionId": "zones"
+    }
+  ]
+}

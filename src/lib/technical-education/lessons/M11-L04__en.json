@@ -1,0 +1,72 @@
+{
+  "id": "M11-L04",
+  "locale": "en",
+  "title": "A complete media cabinet project",
+  "intro": "An integrated media-unit package connects viewing needs, equipment, structure, services, quantities and inspection. Make every change traceable across the documents it affects.",
+  "goals": [
+    "Freeze the project brief and references",
+    "Link geometry, quantities and services",
+    "Prepare installation and acceptance checks"
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "title": "Freeze the project brief and references",
+      "text": "Record users, viewing position, device models, storage and site survey. Separate confirmed data from assumptions; an unselected device size must not become a manufacturing release. Refer back to screen and unit decisions, and assign substrate, fixing and service reviews. An attractive elevation does not establish equipment compatibility or wall suitability.",
+      "diagram": "new-M11-L04-brief",
+      "caption": "Show unresolved inputs explicitly before drawing release."
+    },
+    {
+      "id": "consistency",
+      "title": "Link geometry, quantities and services",
+      "text": "Use the same unit codes in plan, elevation, section and parts list. Show structure, finish build-up and service paths, linking materials to products, samples and edges. A deeper device may affect the compartment, back, cable space, shelf and cut parts. Update affected documents under one revision; changing only the presentation elevation leaves a conflicting package.",
+      "diagram": "new-M11-L04-consistency",
+      "caption": "One change can affect several coordinated documents."
+    },
+    {
+      "id": "handover",
+      "title": "Prepare installation and acceptance checks",
+      "text": "Plan delivery, assembly and fixing/service checks before closure. Assign references and reviewers for motion, alignment, finish, ventilation and maintenance access. Secure equipment and furniture using the approved system and substrate conditions; weight alone does not prove tip-over resistance. Handover includes final drawings, product identities, care instructions and outstanding items.",
+      "diagram": "new-M11-L04-handover",
+      "caption": "A coordinated package includes evidence and unresolved items."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A deeper device replaces the selected model after the elevation is approved. Review section, connections, ventilation and affected parts, then issue a coordinated revision. The finish sample may remain valid if that system is unchanged, but it does not establish that the new equipment fits.",
+    "decision": "Decision: revise affected documents and verify them before production release."
+  },
+  "quiz": [
+    {
+      "id": "device-change",
+      "question": "What needs review when a deeper device is selected?",
+      "options": [
+        "Section, services and affected parts",
+        "Only elevation colour",
+        "Only the filename"
+      ],
+      "correct": 0,
+      "explanation": "Equipment depth affects geometry, service space and potentially part dimensions."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare the package index, a device-change record and three referenced inspection items.",
+    "fields": [
+      "Confirmed and pending inputs",
+      "Affected drawings and schedules",
+      "Inspection and handover"
+    ],
+    "criteria": [
+      "Consistent codes/revisions",
+      "Change effects traced",
+      "Referenced acceptance"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is an elevation enough for manufacturing release?",
+      "answer": "No. Coordinated sections, details, parts, materials and services are also needed.",
+      "sectionId": "consistency"
+    }
+  ]
+}

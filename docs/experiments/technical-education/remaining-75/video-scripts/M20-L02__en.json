@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M20-L02",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Geometric and organic forms and modelling",
+      "spoken_text": "Organic geometry needs defined references as much as rectilinear furniture. Coordinate profiles and sections, distinguish surface appearance from construction, and inspect part interfaces before releasing fabrication data.",
+      "caption": "Organic geometry needs defined references as much as rectilinear furniture. Coordinate profiles and sections, distinguish surface appearance from construction, and inspect part interfaces before releasing fabrication data."
+    },
+    {
+      "id": "profiles",
+      "display_title": "Define profiles and section references",
+      "spoken_text": "Establish floor datum, axes and view direction. Locate named sections on the plan where depth or form changes. A curved elevation does not reveal whether the body is a constant extrusion or a changing surface. Coordinate overall references across views rather than drawing each view independently.",
+      "caption": "Named section locations explain changing depth.",
+      "diagram": "new-M20-L02-profiles"
+    },
+    {
+      "id": "build",
+      "display_title": "Distinguish skin from structure",
+      "spoken_text": "Compare a solid form, ribs with a skin, and an assembly of shaped sections. Show support paths, interfaces and finish build-up for each. These are design strategies requiring material and fabrication review, not bending or machine-setting instructions. Identical outer silhouettes can conceal different weights, edges and service access.",
+      "caption": "Matching silhouettes do not imply matching construction.",
+      "diagram": "new-M20-L02-build"
+    },
+    {
+      "id": "assembly",
+      "display_title": "Check parts and assembly orientation",
+      "spoken_text": "Number parts and define face, orientation, mating surface and insertion sequence. In the example A and B are mirrored ribs, not identical same-handed copies. Exporting both as A can change the interface. Check virtual assembly and interference, then state which uncertainties need a physical sample before specialist fabrication release.",
+      "caption": "Mirrored parts retain distinct identities.",
+      "diagram": "new-M20-L02-assembly"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The outer form is correct, but B was exported with A’s handedness. Virtual assembly exposes a collision. Correct identity and orientation, then recheck the interface rather than enlarging the whole object to conceal the part error. Decision: correct the mirrored part and recheck assembly.",
+      "caption": "Decision: correct the mirrored part and recheck assembly."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit coordinated profiles, construction alternatives and an A/B assembly check.",
+      "spoken_text": "Submit coordinated profiles, construction alternatives and an A/B assembly check.",
+      "caption": "Submit coordinated profiles, construction alternatives and an A/B assembly check."
+    }
+  ]
+}

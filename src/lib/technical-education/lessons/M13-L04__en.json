@@ -1,0 +1,72 @@
+{
+  "id": "M13-L04",
+  "locale": "en",
+  "title": "Children’s desks, wardrobes and toy storage",
+  "intro": "Coordinate the child’s desk, wardrobe and toy storage through reach, posture, movement and stability. Distinguish user-fit review from evidence for product safety and installation.",
+  "goals": [
+    "Review posture and task access",
+    "Coordinate reach and tip-over prevention",
+    "Review toy-storage and material hazards"
+  ],
+  "sections": [
+    {
+      "id": "deskfit",
+      "title": "Review posture and task access",
+      "text": "Check foot support, tool reach, sightline and knee space in the study position. For adjustable furniture, use permitted settings and locking methods from its instructions and verify that the setting stays secure during use. An age table is not a substitute for user fit. Coordinate lighting and cables with the task and chair movement.",
+      "diagram": "new-M13-L04-deskfit",
+      "caption": "Fit the task and user, with adjustment secured as specified."
+    },
+    {
+      "id": "restraint",
+      "title": "Coordinate reach and tip-over prevention",
+      "text": "Place daily contents within suitable reach and remove tempting toys from furniture tops. CPSC recommends securing dressers and bookcases according to manufacturer instructions; weight or a broad side panel does not establish immunity to tipping. Review compatible restraints, substrate and fixings with competent personnel and document installation. Never use a climbing child as a stability test.",
+      "diagram": "new-M13-L04-restraint",
+      "caption": "Good access does not replace verified furniture restraint."
+    },
+    {
+      "id": "toys",
+      "title": "Review toy-storage and material hazards",
+      "text": "Review a moving toy-storage lid for falling, pinching, entrapment and escape requirements. CPSC warnings identify serious hazards from falling lids and automatic latches. An improvised soft-close fitting is not proof of safety. Compare suitable open storage with a verified lidded system, and review edges, detachable parts and material/finish documentation; “natural” or low odour is not a compliance certificate.",
+      "diagram": "new-M13-L04-toys",
+      "caption": "Smooth closing does not establish toy-storage safety."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The proposal places a tempting toy on a wardrobe and an undocumented lidded chest by the desk. Relocate the toy, verify wardrobe restraint and select verified storage or an appropriate open alternative. Rounding an edge does not address tip-over or entrapment hazards.",
+    "decision": "Decision: address each hazard with its own control and verification evidence."
+  },
+  "quiz": [
+    {
+      "id": "softclose",
+      "question": "Does soft-close alone establish toy-chest safety?",
+      "options": [
+        "No; verify the complete lid/entrapment system",
+        "Yes; any slow lid is safe",
+        "Yes, if the material is natural"
+      ],
+      "correct": 0,
+      "explanation": "Closing speed alone does not demonstrate protection against falling lids, entrapment or other applicable requirements."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a desk/wardrobe/toy-storage package with user-fit review, hazard register, product evidence and installation checks.",
+    "fields": [
+      "Task, posture and reach",
+      "Restraint and installation",
+      "Lid/material hazards and acceptance evidence"
+    ],
+    "criteria": [
+      "Fit reviewed after product verification",
+      "No weight-only stability assumption",
+      "No soft-close-only safety claim"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does natural material automatically mean safe?",
+      "answer": "No. Review product/finish documentation and requirements applicable to children’s use.",
+      "sectionId": "toys"
+    }
+  ]
+}

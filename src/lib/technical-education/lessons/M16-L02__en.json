@@ -1,0 +1,72 @@
+{
+  "id": "M16-L02",
+  "locale": "en",
+  "title": "Base, wall and tall kitchen units",
+  "intro": "Compare base, wall and tall cabinets through elevation and section, coordinating function, support and site datums rather than assuming universal dimensions.",
+  "goals": [
+    "Read each cabinet type",
+    "Coordinate heights from one datum",
+    "Coordinate parts and access"
+  ],
+  "sections": [
+    {
+      "id": "types",
+      "title": "Read each cabinet type",
+      "text": "List contents and access for each type: base units with a worktop, wall units with reach and wall support, tall units with storage or devices. Matching fronts do not imply matching carcasses or supports. Standardize parts only after reviewing their actual function.",
+      "diagram": "new-M16-L02-types",
+      "caption": "Similar fronts do not imply identical construction."
+    },
+    {
+      "id": "datums",
+      "title": "Coordinate heights from one datum",
+      "text": "Reference finished floor and separate base, carcass and top heights. Exercise only: ⁦120 + 720 + 30 = 870⁩ mm. This is a dimensional stack, not a universal user height. Changes to flooring or worktop require renewed level and appliance coordination.",
+      "diagram": "new-M16-L02-datums",
+      "caption": "870 mm is only the exercise stack."
+    },
+    {
+      "id": "parts",
+      "title": "Coordinate parts and access",
+      "text": "Label back, shelf, front, plinth and service space in section, with dimension directions. Give parts codes, materials, thicknesses and drawing references. Review opening and tool access. A tall appliance cabinet remains unresolved until the chosen model’s requirements are coordinated.",
+      "diagram": "new-M16-L02-parts",
+      "caption": "Link dimensions and parts to sections and approved devices."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Changing the top from 30 to 40 mm increases the exercise total from 870 to 880 mm. Update the elevation and dimensional stack and review device interfaces, not just the material description.",
+    "decision": "Decision: update the full stack and affected references."
+  },
+  "quiz": [
+    {
+      "id": "M16-L02-check",
+      "question": "What is 120 + 720 + 30 mm?",
+      "options": [
+        "870 mm",
+        "840 mm",
+        "750 mm"
+      ],
+      "correct": 0,
+      "explanation": "Add all three components under the stated assumption."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit the three cabinet types in elevation/section, the height stack and a shared/different part schedule.",
+    "fields": [
+      "Read each cabinet type",
+      "Coordinate heights from one datum",
+      "Coordinate parts and access"
+    ],
+    "criteria": [
+      "Each type has a defined function",
+      "870 mm identified as assumed",
+      "Referenced parts"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is 870 mm correct for every user?",
+      "answer": "No. It is an arithmetic example; actual height needs user, task and device review.",
+      "sectionId": "datums"
+    }
+  ]
+}

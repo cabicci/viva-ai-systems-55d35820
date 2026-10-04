@@ -1,0 +1,158 @@
+{
+  "source_sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
+  "source_pages": 408,
+  "numbering": "1-indexed PDF pages",
+  "mapped_pages": {
+    "M14-L01": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      208
+    ],
+    "M14-L02": [
+      204,
+      205,
+      206,
+      207,
+      210,
+      211,
+      212,
+      213
+    ],
+    "M14-L03": [
+      203,
+      209,
+      214,
+      215,
+      248
+    ],
+    "M14-L04": [
+      216,
+      217,
+      218,
+      219
+    ],
+    "M15-L01": [
+      11,
+      220,
+      221,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239
+    ],
+    "M15-L02": [
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      251,
+      252,
+      254
+    ],
+    "M15-L03": [
+      222,
+      223,
+      224,
+      247,
+      248,
+      249,
+      250,
+      251,
+      253
+    ],
+    "M15-L04": [
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259
+    ]
+  },
+  "selected_pages_rendered_and_visually_reviewed": [
+    193,
+    194,
+    198,
+    204,
+    205,
+    203,
+    214,
+    216,
+    219,
+    220,
+    225,
+    231,
+    240,
+    242,
+    244,
+    247,
+    248,
+    249,
+    250,
+    253,
+    255,
+    259
+  ],
+  "full_resolution_inspected": [
+    204,
+    216,
+    231,
+    249,
+    250,
+    255
+  ],
+  "method": "Visual topic-anchor review; original lesson text and schematic figures. No source images copied. Generic dimensions, electrical zones/IP values, pipe sizes, falls, pressures, test durations and waterproofing sequences on the source posters are not adopted as universal rules. Page240 is facade material context, not a bathroom installation authority.",
+  "primary_verification": [
+    {
+      "title": "Kohler Assist: Cutout Templates",
+      "url": "https://assist.kohler.com/en/bathing/Cutout-Templates",
+      "reviewed_on": "2026-10-04",
+      "supports": "Model-specific sink cutout templates obtained with the product or CAD/product information. Supports using selected-product templates rather than exterior bowl dimensions."
+    },
+    {
+      "title": "Schluter-KERDI product information",
+      "url": "https://www.schluter.com/schluter-us/en_US/Membranes/Waterproofing-(KERDI)/Schluter-KERDI/p/KERDI",
+      "reviewed_on": "2026-10-04",
+      "supports": "Manufacturer-specific bonded membrane system and dedicated sealing details at penetrations. Used only as evidence that interfaces require a system solution, not as universal installation advice."
+    },
+    {
+      "title": "Schluter-KERDI product data sheet 8.1",
+      "url": "https://eu.schluter.com/statics/www_schlueter_gb_2x/downloads/cumulus/schlueter_db_8_1_kerdi_uk.pdf",
+      "reviewed_on": "2026-10-04",
+      "supports": "Product literature identifies pipe collars for penetrations; no dimensions, adhesives or execution steps are copied into the lessons.",
+      "inspection": "Retrieved search excerpt; no normative values or execution steps relied on."
+    }
+  ],
+  "boundaries": [
+    "No normative electrical or plumbing values are asserted. Applicable jurisdiction, reference edition, selected product and responsible specialist are explicit inputs.",
+    "Coordination lessons teach envelopes, clash resolution, document consistency, maintenance access and separate inspection evidence, not electrical wiring or pipe installation.",
+    "Finish appearance is not used as evidence of waterproofing continuity or test completion.",
+    "Product substitutions reopen compatibility and detail review."
+  ],
+  "arithmetic_assumptions": {
+    "M15-L04": "Rectangular 2 m by3 m floor, no deductions:2×3=6 m² net takeoff. Neither recommended bathroom dimensions nor final purchasing quantity. Product layout, pack size, cuts, approved allowance and dated quote remain separate inputs."
+  }
+}

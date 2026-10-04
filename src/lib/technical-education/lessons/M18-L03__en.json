@@ -1,0 +1,72 @@
+{
+  "id": "M18-L03",
+  "locale": "en",
+  "title": "Shared workspaces, meeting areas and handover",
+  "intro": "Coordinate shared workstations, meetings, circulation and services, then issue an installation and handover record tied to users and approved references.",
+  "goals": [
+    "Map work modes and adjacency",
+    "Test meetings, setup and changeover",
+    "Create a traceable handover record"
+  ],
+  "sections": [
+    {
+      "id": "shared",
+      "title": "Map work modes and adjacency",
+      "text": "Record focus, calls, collaboration and shared storage needs by group. Map adjacency and simultaneous chair/circulation states. A partition’s appearance does not establish acoustic or privacy performance; route acoustic, access and exit requirements to the relevant review.",
+      "diagram": "new-M18-L03-shared",
+      "caption": "Adjacency follows tasks and use states."
+    },
+    {
+      "id": "meeting",
+      "title": "Test meetings, setup and changeover",
+      "text": "Test the meeting, reconfiguration and maintenance states with participants, display, door and equipment. Review sight lines, tool access and leaving seats. Added chairs require a new layout/movement check, not simply filling the table perimeter.",
+      "diagram": "new-M18-L03-meeting",
+      "caption": "Meeting and changeover are distinct use states."
+    },
+    {
+      "id": "handover",
+      "title": "Create a traceable handover record",
+      "text": "Code workstations, meeting groups and storage against products and drawing revisions. Record quantities, locations, acceptance, defects and available care/warranty information. 6 stations plus 2 meeting groups are 8 functional groups, not 8 furniture pieces; itemize components. Close defects with reinspection evidence and provide relevant user orientation.",
+      "diagram": "new-M18-L03-handover",
+      "caption": "Functional groups and physical pieces are different counts."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Six stations fit with chairs tucked in, but two pulled-out chairs block shared storage. Revise storage or station positions, retest the state and update the referenced drawing before procurement.",
+    "decision": "Decision: validate shared use before fixing quantities and locations."
+  },
+  "quiz": [
+    {
+      "id": "M18-L03-check",
+      "question": "Do 6 workstations and 2 meeting groups mean exactly 8 furniture pieces?",
+      "options": [
+        "No; itemize each group’s components",
+        "Yes, exactly 8 pieces",
+        "Yes,6 pieces"
+      ],
+      "correct": 0,
+      "explanation": "A functional group may contain several physical items."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a shared-office layout/use states, group/component schedule, installation plan and defect/reinspection card.",
+    "fields": [
+      "Map work modes and adjacency",
+      "Test meetings, setup and changeover",
+      "Create a traceable handover record"
+    ],
+    "criteria": [
+      "Shared movement tested",
+      "Groups separated from items",
+      "Referenced handover evidence"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a tall partition prove acoustic privacy?",
+      "answer": "No. Performance needs appropriate evidence and project-specific review, not appearance alone.",
+      "sectionId": "shared"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M20-L04",
+  "locale": "en",
+  "title": "Small spaces and user testing",
+  "intro": "Space saving must be tested during use, not only in the closed state. Compare open, closed and changing configurations, then record user tasks and conflicts before accepting a multifunctional solution.",
+  "goals": [
+    "Compare complete use states",
+    "Test simultaneous and transition use",
+    "Observe a defined user task"
+  ],
+  "sections": [
+    {
+      "id": "states",
+      "title": "Compare complete use states",
+      "text": "Draw the same room at the same scale in closed, open and transition states. Include the user, chair, door and items that must move. The exercise assumes projections of 350 mm closed and 950 mm open: 950 − 350 = 600 mm additional projection. This is not the complete user envelope or a clearance standard.",
+      "diagram": "new-M20-L04-states",
+      "caption": "600 mm is additional projection, not the entire use zone."
+    },
+    {
+      "id": "concurrent",
+      "title": "Test simultaneous and transition use",
+      "text": "Distinguish simultaneous functions from alternating ones. Record displaced contents and blocked routes during transformation. Identify grip, support and locking positions as review points for the selected system, not an invented mechanism. Have the responsible specialist assess pinch locations and cable paths before operating a moving prototype.",
+      "diagram": "new-M20-L04-concurrent",
+      "caption": "Alternating functions are not automatically simultaneous functions."
+    },
+    {
+      "id": "trial",
+      "title": "Observe a defined user task",
+      "text": "Observe a relevant user setting up the work surface, retrieving an item and restoring the closed state. Record obstruction, displaced objects, assistance and untested conditions. Repeat the same task after revision for a fair comparison. One participant does not represent every age or ability, and usability findings do not replace technical system verification.",
+      "diagram": "new-M20-L04-trial",
+      "caption": "Compare the same task and declare the sample limits."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The 950 mm open projection blocks storage needed during work. Revise movement or choose another configuration, then repeat the task. The 350 mm closed projection and 600 mm difference remain exercise references, not proof that the route is usable.",
+    "decision": "Decision: resolve simultaneous-use conflict and repeat the task."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "What is the projection increase from 350 to 950?",
+      "options": [
+        "600 mm",
+        "950 mm",
+        "350 mm"
+      ],
+      "correct": 0,
+      "explanation": "950 − 350 = 600 mm, excluding the additional user envelope."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit use-state plans, concurrency review and a before/after task record.",
+    "fields": [
+      "Use-state geometry",
+      "Concurrency and transition",
+      "Observed task and revision"
+    ],
+    "criteria": [
+      "Same drawing scale",
+      "Conflicts explicit",
+      "Sample and task limits stated"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does adding functions always improve the solution?",
+      "answer": "No. Functions can conflict or impose unacceptable transitions.",
+      "sectionId": "concurrent"
+    }
+  ]
+}

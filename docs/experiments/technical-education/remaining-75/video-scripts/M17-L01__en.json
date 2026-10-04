@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M17-L01",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Integrate appliances using their instructions",
+      "spoken_text": "Appliance integration requires more than fitting the visible body. Coordinate the exact model with its installation envelope, airflow, services and access.",
+      "caption": "Appliance integration requires more than fitting the visible body. Coordinate the exact model with its installation envelope, airflow, services and access."
+    },
+    {
+      "id": "identity",
+      "display_title": "Identify the appliance and manual",
+      "spoken_text": "Record manufacturer, full model, market, installed configuration, manual identifier/revision and requirement page. A marketing width such as “60 cm” is not an installation opening. Collect device envelope, cavity and neighboring-device compatibility. Assign missing information an owner rather than guessing dimensions.",
+      "caption": "Tie each requirement to an exact model and page.",
+      "diagram": "new-M17-L01-identity"
+    },
+    {
+      "id": "envelope",
+      "display_title": "Read cavity and airflow requirements",
+      "spoken_text": "Review the required cavity and airflow path in the exact appliance manual. As a manual-reading example, Bosch CPA565GS0B section 21.3 addresses cabinet backs and ventilation as well as space. Map requirements onto a cabinet section without transferring them to another model. A nominal void does not meet a required path if furniture blocks it.",
+      "caption": "This is a model-specific manual-reading exercise.",
+      "diagram": "new-M17-L01-envelope"
+    },
+    {
+      "id": "change",
+      "display_title": "Coordinate service and substitutions",
+      "spoken_text": "Show service/access zones and removal routes from the manual. The service specialist reviews services while furniture design coordinates parts around them. A model substitution reopens cavity, airflow, services, movement and support; approval of the original does not transfer automatically.",
+      "caption": "A model substitution reopens affected interfaces.",
+      "diagram": "new-M17-L01-change"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "A replacement has the same marketed size but different installation documentation. Update its record and review cavity, back, airflow and services before releasing procurement or manufacture. Decision: review the replacement requirements before approval.",
+      "caption": "Decision: review the replacement requirements before approval."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit two referenced appliance records, a cavity/service section and a substitution review.",
+      "spoken_text": "Submit two referenced appliance records, a cavity/service section and a substitution review.",
+      "caption": "Submit two referenced appliance records, a cavity/service section and a substitution review."
+    }
+  ]
+}

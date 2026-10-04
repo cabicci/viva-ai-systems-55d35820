@@ -1,0 +1,72 @@
+{
+  "id": "M17-L05",
+  "locale": "en",
+  "title": "A small kitchen project and a larger comparison",
+  "intro": "Build a small-kitchen package and compare medium/large cases, identifying reusable details and changes that require renewed review.",
+  "goals": [
+    "Assemble the small-kitchen package",
+    "Compare what changes with scale",
+    "Reconcile quantities and approvals separately"
+  ],
+  "sections": [
+    {
+      "id": "small",
+      "title": "Assemble the small-kitchen package",
+      "text": "Combine user brief, site survey, layout, elevations, sections, devices, services and hardware. Test openings and reconcile cut lists to drawing revisions. List open issues before release; limited area does not remove access or service needs.",
+      "diagram": "new-M17-L05-small",
+      "caption": "A small project still needs every coordination interface."
+    },
+    {
+      "id": "scales",
+      "title": "Compare what changes with scale",
+      "text": "Larger cases may introduce zones, users, appliances or an island. For each difference record its cause, affected elements, drawings/services and owner. Reuse a detail only if its conditions remain valid; floor-area growth does not scale drawer dimensions or fixing capacity.",
+      "diagram": "new-M17-L05-scales",
+      "caption": "Compare changed use, not just floor-area ratios."
+    },
+    {
+      "id": "releasecompare",
+      "title": "Reconcile quantities and approvals separately",
+      "text": "Quantity exercise: 4 base and 3 wall units total 7. The larger case has ⁦6 + 4 + 1 = 11⁩ base/wall/tall units, 4 more cabinets. This does not state panel count or cost difference. Each case needs its own part, service and inspection records.",
+      "diagram": "new-M17-L05-releasecompare",
+      "caption": "7 and 11 count cabinets, not panels or prices."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The larger option adds an island. Updating cabinet counts alone misses changed movement, services and support. Create a difference card instead of copying the small-project approval.",
+    "decision": "Decision: review changed execution conditions before reusing the package."
+  },
+  "quiz": [
+    {
+      "id": "M17-L05-check",
+      "question": "How many cabinets are 6 base, 4 wall and 1 tall?",
+      "options": [
+        "11 cabinets",
+        "10 cabinets",
+        "4 cabinets"
+      ],
+      "correct": 0,
+      "explanation": "The three counts total 11 cabinets, not panels."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a small-kitchen package, medium/large difference cards, cabinet counts and reopened review items.",
+    "fields": [
+      "Assemble the small-kitchen package",
+      "Compare what changes with scale",
+      "Reconcile quantities and approvals separately"
+    ],
+    "criteria": [
+      "Coordinated small-case outputs",
+      "Each difference has a cause",
+      "7/11 identified as cabinet counts"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can details scale by the room-area ratio?",
+      "answer": "No. Parts, products, support and services need condition-specific review.",
+      "sectionId": "scales"
+    }
+  ]
+}

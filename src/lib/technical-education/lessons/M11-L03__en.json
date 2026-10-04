@@ -1,0 +1,72 @@
+{
+  "id": "M11-L03",
+  "locale": "en",
+  "title": "Cables, ventilation, lighting and access",
+  "intro": "An enclosed media device needs cable routing, ventilation and maintenance access. Coordinate these in section and test lighting from the viewing position before closing the unit.",
+  "goals": [
+    "Draw complete connection routes",
+    "Match ventilation to the equipment",
+    "Test service access and light reflection"
+  ],
+  "sections": [
+    {
+      "id": "routes",
+      "title": "Draw complete connection routes",
+      "text": "List devices and power/data points, then map each route end to end. Check connector passage and cable bending, not cable diameter alone. Coordinate electrical protection and separation with the relevant specialist and product instructions. Keep routing clear of drawer travel and structural connections; one isolated hole does not establish a usable route through several partitions.",
+      "diagram": "new-M11-L03-routes",
+      "caption": "Check the connector, complete route and moving parts."
+    },
+    {
+      "id": "airflow",
+      "title": "Match ventilation to the equipment",
+      "text": "Obtain the device’s ventilation and clearance requirements and draw the air path in section. An open back does not ensure cooling if a wall blocks it or equipment is crowded. Do not guess vent area or fan selection. Review shelves, covers and cables, then verify operation under the manufacturer’s conditions in the intended enclosed configuration.",
+      "diagram": "new-M11-L03-airflow",
+      "caption": "Device vents need an effective air path in the installed configuration."
+    },
+    {
+      "id": "service",
+      "title": "Test service access and light reflection",
+      "text": "Show device withdrawal, cover removal and connector access without cable strain or unintended dismantling. Coordinate access to lighting drivers according to their requirements. Test reflections from the viewing seat with the screen present. Glare calls for reviewing source position, direction and control, not automatically increasing brightness. Handover includes route and removable-cover identification.",
+      "diagram": "new-M11-L03-service",
+      "caption": "Review a maintenance state and the actual viewing position."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Option A has a hole too small for its connector and a fixed cover. Option B provides connector passage and a service cover, with ventilation reviewed against the equipment instructions. Develop B and check device withdrawal and cable allowance before issuing the section.",
+    "decision": "Decision: coordinate connection, maintenance and ventilation in one detail."
+  },
+  "quiz": [
+    {
+      "id": "connector",
+      "question": "Does cable diameter alone prove the route works?",
+      "options": [
+        "No; check connector, bend and the complete route",
+        "Yes; diameter is sufficient",
+        "Yes, if the back is closed"
+      ],
+      "correct": 0,
+      "explanation": "Connectors, partitions and moving parts can defeat an otherwise adequate cable hole."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw a device section with cable/air paths, a maintenance state and a reflection check.",
+    "fields": [
+      "Devices and routes",
+      "Ventilation and reference",
+      "Service and lighting"
+    ],
+    "criteria": [
+      "Connector passage verified",
+      "Equipment-specific ventilation",
+      "Access without strain"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does an open back guarantee ventilation?",
+      "answer": "No. Walls or other equipment may obstruct the path; verify the installed arrangement and device requirements.",
+      "sectionId": "airflow"
+    }
+  ]
+}
