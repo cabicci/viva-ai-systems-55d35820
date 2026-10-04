@@ -1940,6 +1940,48 @@ export type Database = {
         }
         Returns: boolean
       }
+      commerce_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      commerce_mail: { Args: { p_action: string; p_data: Json }; Returns: Json }
+      commerce_previous_get_my_billing_access_tier: {
+        Args: never
+        Returns: string
+      }
+      commerce_previous_get_my_kids_access_status: {
+        Args: never
+        Returns: {
+          access_source: string
+          active_until: string
+        }[]
+      }
+      commerce_previous_lc09_advance_deletion: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_lc09_claim_financial_purge: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_lc09_complete_financial_purge: {
+        Args: { p_lease_token: string; p_release?: boolean; p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_record_contact_mail_receipt: {
+        Args: {
+          p_at: string
+          p_email_id: string
+          p_event: string
+          p_recipient: string
+          p_type: string
+        }
+        Returns: string
+      }
+      commerce_receipt: {
+        Args: { p_action: string; p_actor: string; p_data: Json }
+        Returns: Json
+      }
       commit_ai_quota: {
         Args: {
           p_idempotency_key: string
