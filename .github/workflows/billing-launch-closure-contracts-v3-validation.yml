@@ -90,7 +90,30 @@ jobs:
       - name: Focused ESLint (billing)
         run: bunx eslint src/lib/billing supabase/functions/billing-entitlement/index.ts --max-warnings 0
 
-      # Harness performs independent clean db-reset before Phase A and again before Phase B.
+      # Read local HTTP credentials while Supabase's startup metadata still
+      # exists. The billing harness rebuilds the disposable directory on reset.
+      - name: Node with native WebSocket for the installed Supabase client
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+
+      - name: Commerce receipt handlers and native Storage HTTP privacy
+        env:
+          COMMERCE_NATIVE_STATUS_FILE: ${{ runner.temp }}/commerce-native-status.json
+        run: |
+          trap 'rm -f "$COMMERCE_NATIVE_STATUS_FILE"' EXIT
+          (cd "$DISPOSABLE_SUPABASE_ROOT" && supabase status -o json) > "$COMMERCE_NATIVE_STATUS_FILE"
+          bunx tsc --noEmit -p scripts/commerce/tsconfig.native.json
+          bunx eslint scripts/commerce/native-storage.test.ts scripts/commerce/vitest.native.config.ts --max-warnings 0
+          bunx vitest run --config scripts/commerce/vitest.native.config.ts
+
+      - name: Restore the existing billing proof runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "20"
+
+      # Independent clean resets remove the preceding commerce fixtures before
+      # Phase A and again before Phase B; historical billing gates stay intact.
       - name: Run billing validation harness (Phase A suite + Phase B concurrency)
         run: |
           chmod +x .github/scripts/billing_contracts_v3_validation/run.sh

@@ -101,6 +101,17 @@ export function createAccountLifecycleWorker(db: LifecycleDatabase, stripeKey: s
           p_release: release,
         }),
       eraseCustomer: (customer, user) => eraseStripeCustomer(stripe, customer, user),
+      removeStorage: async (objects) => {
+        for (const object of objects) {
+          if (
+            object.bucket !== "commerce-receipts" ||
+            !/^[a-f0-9-]{36}\/[a-f0-9-]{36}$/.test(object.name)
+          )
+            throw new Error("LC09_FINANCIAL_STORAGE_MANIFEST_INVALID");
+          const { error } = await db.storage.from(object.bucket).remove([object.name]);
+          if (error) throw new Error("LC09_FINANCIAL_STORAGE_REMOVAL_FAILED");
+        }
+      },
     });
   const runBatch = async ({
     deletionEnabled,
