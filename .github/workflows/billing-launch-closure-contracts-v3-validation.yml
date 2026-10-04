@@ -92,6 +92,11 @@ jobs:
 
       # Read local HTTP credentials while Supabase's startup metadata still
       # exists. The billing harness rebuilds the disposable directory on reset.
+      - name: Node with native WebSocket for the installed Supabase client
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+
       - name: Commerce receipt handlers and native Storage HTTP privacy
         env:
           COMMERCE_NATIVE_STATUS_FILE: ${{ runner.temp }}/commerce-native-status.json
@@ -101,6 +106,11 @@ jobs:
           bunx tsc --noEmit -p scripts/commerce/tsconfig.native.json
           bunx eslint scripts/commerce/native-storage.test.ts scripts/commerce/vitest.native.config.ts --max-warnings 0
           bunx vitest run --config scripts/commerce/vitest.native.config.ts
+
+      - name: Restore the existing billing proof runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "20"
 
       # Independent clean resets remove the preceding commerce fixtures before
       # Phase A and again before Phase B; historical billing gates stay intact.
