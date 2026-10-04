@@ -1,0 +1,72 @@
+{
+  "id": "M02-L04",
+  "locale": "en",
+  "title": "Room layouts and activity zones",
+  "intro": "Space planning starts with activities and routes. Define functional zones, then compare layouts without concealing openings, services or access requirements.",
+  "goals": [
+    "Define activities and zones",
+    "Identify relationships between zones",
+    "Check the layout through a use sequence"
+  ],
+  "sections": [
+    {
+      "id": "zones",
+      "title": "Define activities and zones",
+      "text": "List activities, users, timing and required contents. Sketch an initial zone for each without approving unknown furniture dimensions. A functional zone includes the object, its operation and related movement. Check which activities occur together before developing a final arrangement.",
+      "diagram": "new-M02-L04-zones",
+      "caption": "A zone includes the activity, not just the object footprint."
+    },
+    {
+      "id": "adjacency",
+      "title": "Identify relationships between zones",
+      "text": "Identify useful adjacencies, such as storage near work or dining near serving, and separations needed for privacy or quiet. An adjacency diagram expresses priorities, not final distances. Test those relationships in the actual plan with openings, services and circulation before approval.",
+      "diagram": "new-M02-L04-adjacency",
+      "caption": "Adjacency priorities must be tested in the measured plan."
+    },
+    {
+      "id": "routes",
+      "title": "Check the layout through a use sequence",
+      "text": "Trace entry, access to the activity, storage use and exit. Show doors and moving parts in the intended scenarios. Compare alternatives against the same activities and record routes through another activity or inaccessible storage. After relocating a zone, recheck the complete sequence so the clash is not merely displaced.",
+      "diagram": "new-M02-L04-routes",
+      "caption": "Recheck the complete route after moving a zone."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "One room contains a sitting area and work zone. One layout puts the desk on the entry route; another places it near storage clear of the door. Test both against the same user tasks.",
+    "decision": "Decision: prefer the arrangement that supports entry and storage access without interrupting the main activity."
+  },
+  "quiz": [
+    {
+      "id": "zone",
+      "question": "What belongs in a functional zone?",
+      "options": [
+        "The object footprint alone",
+        "The object, its use and required movement",
+        "The colour alone"
+      ],
+      "correct": 1,
+      "explanation": "An object footprint alone can conceal an opening or access clash."
+    }
+  ],
+  "assignment": {
+    "prompt": "Identify a room’s activities, map their relationships and compare two layouts.",
+    "fields": [
+      "Users and activities",
+      "Adjacencies and alternatives",
+      "Use sequence and selection rationale"
+    ],
+    "criteria": [
+      "Both layouts use the same brief",
+      "Openings and services are visible",
+      "The full use sequence is checked"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should I place all furniture before adding circulation?",
+      "answer": "Develop activities, furniture and routes together. Leaving circulation until the end can force major layout changes.",
+      "sectionId": "routes"
+    }
+  ]
+}

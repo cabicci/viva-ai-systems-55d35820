@@ -2,11 +2,11 @@
   "schema_version": 1,
   "record_scope": "isolated remaining-75 authoring execution; not learner availability",
   "parent_commit": "a908cb5698dfa00d7552658413f23fe93ff0f2c0",
-  "status": "blocked_reference_unavailable",
+  "status": "in_progress",
   "remaining_lesson_count": 75,
   "expected_locale_package_count": 300,
-  "new_authored_lesson_count": 0,
-  "new_authored_locale_package_count": 0,
+  "new_authored_lesson_count": 4,
+  "new_authored_locale_package_count": 16,
   "source_evidence": {
     "library_file_id": "libfile_e700ff35ecc48191a7c4f0425700a7f8",
     "resolved_filename": "Metwood_Furniture_Design(1).pdf",
@@ -15,8 +15,42 @@
     "materialization_attempts": 2,
     "error": "library download request failed: download failed with HTTP status 502",
     "internal_failure_stage": "unverified",
-    "local_reference_available": false,
-    "reference_visual_review_this_branch": false
+    "local_reference_available": true,
+    "reference_visual_review_this_branch": true,
+    "verified_sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
+    "verified_page_count": 408,
+    "recovery": "coordinator materialized via documented workspace placement and applied Library identity",
+    "reviewed_pdf_pages": [
+      5,
+      6,
+      7,
+      23,
+      25,
+      26,
+      27,
+      44,
+      63,
+      64,
+      75,
+      76,
+      78,
+      80,
+      83,
+      97,
+      98,
+      102,
+      104,
+      109,
+      110,
+      111,
+      124,
+      126,
+      155,
+      175,
+      204,
+      212
+    ],
+    "review_scope": "selected source pages; dimensional/regulatory/example-price claims are not blanket accepted"
   },
   "batches": [
     {
@@ -29,9 +63,13 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
-      "new_authored_lesson_count": 0,
-      "new_authored_locale_package_count": 0
+      "status": "reading_assets_verified_video_text_pending_voice_review",
+      "new_authored_lesson_count": 4,
+      "new_authored_locale_package_count": 16,
+      "pdf_count": 32,
+      "unique_concept_diagrams": 12,
+      "pdf_rendered_page_count": 64,
+      "runtime_viewport_cases_passed": 32
     },
     {
       "module_id": "M03",
@@ -43,7 +81,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -56,7 +94,7 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -70,7 +108,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -84,7 +122,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -98,7 +136,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -111,7 +149,7 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -125,7 +163,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -138,7 +176,7 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -152,7 +190,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -166,7 +204,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -180,7 +218,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -194,7 +232,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -208,7 +246,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -222,7 +260,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -237,7 +275,7 @@
       ],
       "lesson_count": 5,
       "expected_locale_package_count": 20,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -250,7 +288,7 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -263,7 +301,7 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -277,7 +315,7 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     },
@@ -290,9 +328,14 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "blocked_reference_unavailable",
+      "status": "queued",
       "new_authored_lesson_count": 0,
       "new_authored_locale_package_count": 0
     }
-  ]
+  ],
+  "authored_draft_lesson_count": 0,
+  "count_definition": "new_authored counts represent verified complete lesson batches; draft counts are not completion",
+  "remaining_unauthored_lesson_count": 71,
+  "video_outputs_created": 0,
+  "voice_outputs_created": 0
 }

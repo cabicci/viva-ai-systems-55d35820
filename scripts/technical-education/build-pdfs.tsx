@@ -16,7 +16,7 @@ import { splitTechnicalText } from "../../src/lib/furniture-pilot/technical-text
 
 const root = process.cwd();
 const output = path.join(root, "public/experiments");
-const files: { target: string; html: string; pages: number }[] = [];
+const files: { target: string; html: string; pages: number; autoPaginate: boolean }[] = [];
 const manifestPath = path.join(root, "docs/experiments/technical-education/pdf-revisions.json");
 let revisions: Record<string, { source: string; output: string }> = {};
 try {
@@ -40,8 +40,20 @@ function document(title: string, locale: string, type: string, pages: string[]) 
   return `<!doctype html><html lang="${locale === "en" ? "en" : "ar"}" dir="${locale === "en" ? "ltr" : "rtl"}"><meta charset="utf-8"><title>${esc(type)} - ${esc(title)}</title><style>
   @page { size:A4; margin:0; } * {box-sizing:border-box} body{margin:0;font-family:'DejaVu Sans',sans-serif;color:#203f45;font-size:13px;line-height:1.85} .page{width:210mm;height:297mm;padding:17mm 16mm 22mm;position:relative;break-after:page;overflow:hidden} .page:last-child{break-after:auto} header{display:flex;justify-content:space-between;border-bottom:2px solid #9be3c4;padding-bottom:10px;margin-bottom:16px;color:#387b83;font-size:11px} h1{font-size:23px;line-height:1.6;margin:0 0 13px} h2{font-size:17px;line-height:1.6;margin:16px 0 8px} h3{font-size:14px;margin:12px 0 6px} p{margin:6px 0 12px} li{margin:3px 0} ul{padding-inline-start:22px} .box{padding:12px;background:#eef7f4;border-radius:12px;margin-top:12px} .section{display:grid;grid-template-columns:1fr 145px;gap:15px;align-items:start;margin-top:16px} svg{width:100%;height:auto} .draw{width:100%;height:208mm;object-fit:contain} footer{position:absolute;inset-inline:16mm;bottom:12mm;border-top:1px solid #d5e5df;padding-top:6px;display:flex;justify-content:space-between;font-size:10px} .lines{height:96px;background:repeating-linear-gradient(white 0px,white 23px,#d5e5df 24px);margin:7px 0 15px} table{width:100%;border-collapse:collapse;font-size:12px} td,th{padding:10px 6px;border-bottom:1px solid #d5e5df;text-align:start} bdi{unicode-bidi:isolate} .caption{font-size:10px;color:#536e70} </style>${pages.map((body, index) => `<section class="page"><header><span dir="ltr">Masaarat · TECH</span><span>${esc(type)}</span></header><div class="content">${body}</div><footer><span>${esc(title)}</span><bdi dir="ltr">${index + 1} / ${pages.length}</bdi></footer></section>`).join("")}</html>`;
 }
-const push = (target: string, title: string, locale: string, type: string, pages: string[]) =>
-  files.push({ target, html: document(title, locale, type, pages), pages: pages.length });
+const push = (
+  target: string,
+  title: string,
+  locale: string,
+  type: string,
+  pages: string[],
+  autoPaginate = false,
+) =>
+  files.push({
+    target,
+    html: document(title, locale, type, pages),
+    pages: pages.length,
+    autoPaginate,
+  });
 const packages = await readdir(path.join(root, "src/lib/technical-education/lessons"));
 for (const name of packages.filter((name) => name.endsWith(".json"))) {
   const lesson: TechnicalLesson = JSON.parse(
@@ -53,13 +65,38 @@ for (const name of packages.filter((name) => name.endsWith(".json"))) {
     (section) =>
       `<div class="section"><div><h2>${txt(section.title)}</h2><p>${txt(section.text)}</p></div><div>${renderToStaticMarkup(<TechnicalDiagram kind={section.diagram} locale={lesson.locale} title={section.title} />)}<p class="caption">${txt(section.caption)}</p></div></div>`,
   );
-  const pages = [
+  const legacyPages = [
     `<h1>${txt(lesson.title)}</h1><p>${txt(lesson.intro)}</p><h2>${c.goals}</h2>${list(lesson.goals)}${sections.slice(0, 2).join("")}`,
     `${sections.slice(2).join("")}<h2>${txt(lesson.example.title)}</h2><p>${txt(lesson.example.text)}</p><div class="box">${txt(lesson.example.decision)}</div><h2>${c.quiz}</h2>${lesson.quiz.map((question) => `<h3>${txt(question.question)}</h3>${list(question.options)}<p class="caption">${c.correct}: ${txt(question.options[question.correct])}. ${txt(question.explanation)}</p>`).join("")}`,
     `<h1>${c.assignment}</h1><p>${txt(lesson.assignment.prompt)}</p>${lesson.assignment.fields.map((field) => `<h3>${txt(field)}</h3><div class="lines"></div>`).join("")}<h2>${c.taskReview}</h2>${list(lesson.assignment.criteria)}`,
   ];
-  push(path.join(directory, "workbook.pdf"), lesson.title, lesson.locale, c.workbook, pages);
-  push(path.join(directory, "worksheet.pdf"), lesson.title, lesson.locale, c.worksheet, [pages[2]]);
+  // Preserve accepted first-module exports byte-for-byte. New lessons paginate by concept.
+  const isExisting = lesson.id.startsWith("M01-");
+  const practice = legacyPages[2];
+  const flow = [
+    `<div><h1>${txt(lesson.title)}</h1><p>${txt(lesson.intro)}</p><h2>${c.goals}</h2>${list(lesson.goals)}</div>`,
+    ...sections,
+    `<div><h2>${txt(lesson.example.title)}</h2><p>${txt(lesson.example.text)}</p><div class="box">${txt(lesson.example.decision)}</div></div>`,
+    ...lesson.quiz.map(
+      (question, index) =>
+        `<div>${index === 0 ? `<h2>${c.quiz}</h2>` : ""}<h3>${txt(question.question)}</h3>${list(question.options)}<p class="caption">${c.correct}: ${txt(question.options[question.correct])}. ${txt(question.explanation)}</p></div>`,
+    ),
+    ...lesson.faq.map(
+      (item, index) =>
+        `<div>${index === 0 ? `<h2>${c.assistant}</h2>` : ""}<h3>${txt(item.question)}</h3><p>${txt(item.answer)}</p></div>`,
+    ),
+    `<div data-new-page="true">${practice}</div>`,
+  ];
+  const pages = isExisting ? legacyPages : [flow.join("")];
+  push(
+    path.join(directory, "workbook.pdf"),
+    lesson.title,
+    lesson.locale,
+    c.workbook,
+    pages,
+    !isExisting,
+  );
+  push(path.join(directory, "worksheet.pdf"), lesson.title, lesson.locale, c.worksheet, [practice]);
   for (const section of lesson.sections) {
     const assetDir = path.join(output, "technical-education", lesson.locale);
     await mkdir(assetDir, { recursive: true });
@@ -142,7 +179,9 @@ try {
   await page.emulateMedia({ media: "print" });
   for (const file of files) {
     const key = path.relative(root, file.target);
-    const source = hash("technical-pdf-v1\0" + file.html);
+    const source = hash(
+      (file.autoPaginate ? "technical-pdf-flow-v1\0" : "technical-pdf-v1\0") + file.html,
+    );
     if (revisions[key]?.source === source) {
       try {
         if (hash(await readFile(file.target)) === revisions[key].output) {
@@ -155,6 +194,52 @@ try {
     }
     await page.setContent(file.html, { waitUntil: "load" });
     await page.evaluate(() => document.fonts.ready);
+    if (file.autoPaginate) {
+      file.pages = await page.evaluate(() => {
+        const template = document.querySelector<HTMLElement>(".page")!;
+        const blocks = Array.from(template.querySelector(".content")!.children);
+        const clean = template.cloneNode(true) as HTMLElement;
+        clean.querySelector(".content")!.replaceChildren();
+        template.remove();
+        let current: HTMLElement;
+        const nextPage = () => {
+          current = clean.cloneNode(true) as HTMLElement;
+          document.body.append(current);
+        };
+        const overflows = () =>
+          current.querySelector(".content")!.getBoundingClientRect().bottom >
+          current.querySelector("footer")!.getBoundingClientRect().top - 8;
+        nextPage();
+        for (const block of blocks) {
+          if (
+            block.hasAttribute("data-new-page") &&
+            current!.querySelector(".content")!.children.length
+          )
+            nextPage();
+          let content = current!.querySelector(".content")!;
+          content.append(block);
+          if (overflows()) {
+            block.remove();
+            if (!content.children.length)
+              throw new Error(
+                "An explanation block exceeds an A4 page; split the authored concept.",
+              );
+            nextPage();
+            content = current!.querySelector(".content")!;
+            content.append(block);
+            if (overflows())
+              throw new Error(
+                "An explanation block exceeds an A4 page; split the authored concept.",
+              );
+          }
+        }
+        const pages = Array.from(document.querySelectorAll(".page"));
+        pages.forEach((element, index) => {
+          element.querySelector("footer bdi")!.textContent = `${index + 1} / ${pages.length}`;
+        });
+        return pages.length;
+      });
+    }
     const clashes = await page.locator(".page").evaluateAll((pages) =>
       pages.flatMap((page, index) => {
         const body = page.querySelector(".content")!.getBoundingClientRect();

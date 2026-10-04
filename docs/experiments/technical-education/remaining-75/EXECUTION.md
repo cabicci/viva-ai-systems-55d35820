@@ -49,3 +49,17 @@ Do not generate narration/video or alter workflow, Bunny mappings or accepted ex
 - Complete-journey gate intentionally fails with `completion denied: 75 lessons remain unauthored`.
 - Existing application, PDF exports and media were not changed; UI/build/media/layout checks were not rerun and no such new acceptance is claimed.
 - No merge, publication, database, payment, entitlement or production action occurred.
+
+## Reference recovery and resumed authoring
+
+The coordinator recovered the exact reference via authenticated workspace placement and applied Library identity metadata. SHA-256 and 408 pages match the previously documented source. Status is now `in_progress`; the earlier 502 records remain historical evidence. Selected source pages have been visually reviewed, and M02-L01/L02 four-register manuscripts are drafted. Drafts do not yet count as complete lessons: illustration assets, PDF/layout and runtime gates remain. No new audio/video has been generated.
+
+## M02 authored and verified
+
+Four new lessons (M02-L01 through L04) now have 16 contextual locale packages, 12 distinct concept geometries, 32 PDF downloads and 16 linked video-text scripts. They cover actual-user reach testing, opening/use conflicts, same-scale proportional comparison and functional layouts. Generic source dimension tables are not presented as universally applicable requirements.
+
+New workbooks use measured block pagination; practice starts on a separate page. All 32 new PDFs passed content/footer separation. All64 PDF pages were rendered and their four-register contact sheets reviewed; old44 PDF SHA-256 hashes remain unchanged. The two original door/collision figures were corrected so their hinge arcs and highlighted overlap match the depicted geometry before final export.
+
+Nineteen scoped UI/content/diagram tests, nine authoring-integrity tests, application TypeScript and scoped ESLint passed. Browser checks passed32 lesson/register/viewport visits at390/1440px: three distinct illustrations per lesson, matching full-size SVG assets, valid PDF-only links with type-plus-title download names, one platform language selector, no page errors/overflow and pending video instead of invented playback. No new speech/video was generated; written narration needs the coordinating qaf and listener gate.
+
+Verified cumulative content count is9 lessons including the five preceding lessons. This branch contributes4;71 of its original75 remain unauthored. Production build and GitHub durability receipts follow after the batch commit. No main deployment or integration is implied.

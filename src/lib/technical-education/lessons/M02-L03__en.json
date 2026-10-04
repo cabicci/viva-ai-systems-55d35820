@@ -1,0 +1,72 @@
+{
+  "id": "M02-L03",
+  "locale": "en",
+  "title": "Scale, proportion and visual balance",
+  "intro": "Proportion relates a piece to its room and neighbouring furniture. Compare alternatives at the same scale while keeping functional access visible.",
+  "goals": [
+    "Compare alternatives at one scale",
+    "Review solid, void and visual rhythm",
+    "Balance proportion with function"
+  ],
+  "sections": [
+    {
+      "id": "scale",
+      "title": "Compare alternatives at one scale",
+      "text": "Draw the room and furniture at a shared scale and retain their original dimensions. Camera perspective can distort perceived size. Use plan to compare footprints and elevation to compare the wall composition. Two differently scaled photographs do not establish a reliable proportional difference.",
+      "diagram": "new-M02-L03-scale",
+      "caption": "A shared drawing scale preserves the room-to-piece relationship."
+    },
+    {
+      "id": "rhythm",
+      "title": "Review solid, void and visual rhythm",
+      "text": "Compare closed areas, open areas and repeated divisions in elevation. Symmetry is one organising approach, not the only form of balance. Connect appearance to construction: moving a divider may change a shelf span and its support needs. Do not approve an elevation separately from its details.",
+      "diagram": "new-M02-L03-rhythm",
+      "caption": "Moving a divider affects both rhythm and shelf construction."
+    },
+    {
+      "id": "options",
+      "title": "Balance proportion with function",
+      "text": "Compare two alternatives for the same contents and site boundaries. Check capacity, circulation and neighbouring elements for each. If a piece is reduced to improve its appearance, recheck storage and access. State the benefit and trade-off using evidence rather than simply calling one option more attractive.",
+      "diagram": "new-M02-L03-options",
+      "caption": "Keep the functional requirements fixed during comparison."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A storage elevation has one large closed block beside a door. An alternative distributes the same contents into two blocks with a different surrounding void. Compare scale, door movement and capacity together.",
+    "decision": "Decision: select the option that meets capacity and movement needs while achieving the intended proportions."
+  },
+  "quiz": [
+    {
+      "id": "comparison",
+      "question": "What makes a fair comparison?",
+      "options": [
+        "Different image scales",
+        "The same scale, contents and site constraints",
+        "Choosing the largest photograph"
+      ],
+      "correct": 1,
+      "explanation": "A common reference and brief let you compare the design decision rather than presentation size."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw two storage elevations for the same contents and justify the solid-and-void arrangement.",
+    "fields": [
+      "Shared scale and contents",
+      "Two alternatives",
+      "Functional and visual trade-offs"
+    ],
+    "criteria": [
+      "The scales match",
+      "Capacity and movement are checked",
+      "Divider changes connect to construction"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is symmetry required for balance?",
+      "answer": "No. Symmetry is an organising method; an asymmetric arrangement can also balance solids and voids while meeting the brief.",
+      "sectionId": "rhythm"
+    }
+  ]
+}
