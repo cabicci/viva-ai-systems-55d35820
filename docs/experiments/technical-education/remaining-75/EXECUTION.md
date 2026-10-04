@@ -108,3 +108,5 @@ All64 final PDF pages were rendered and reviewed in eight contact sheets, with t
 The original44 accepted PDF hashes and all preceding diagram definitions are unchanged; all132 pre-M05 PDF bytes remain unchanged. Source identity remains408 pages and the recorded SHA-256. The initial dirty-tree build was stopped by the existing roadmap guard; the clean-commit build result follows. Evidence is preserved in `m05-acceptance-evidence/`.
 
 Verified authoring contribution is15 lessons/60 locale packages; with the initial five the content count is20 of80. Remaining scope is60 lessons. Stop here until the owner authorizes continuation.
+
+M05 clean-commit build receipt: passed with `PATH=/tmp/technical-tools/node_modules/.bin:$PATH NODE_OPTIONS=--max-old-space-size=4096 /tmp/technical-tools/node_modules/.bin/bun run build`. Existing roadmap and contextual-visuals gates passed, followed by client/server production bundling. No bypass was used. The final receipt changes documentation only. Local acceptance is ready for coordinator integration; this branch did not push or publish.
