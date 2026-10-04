@@ -73,3 +73,11 @@ Four additional lessons distinguish actual timber/sheet products, finish and edg
 The batch has16 contextual packages,12 concept-specific diagrams,32 PDF downloads and16 linked video-text scripts. All64 exported PDF pages were rendered and contact sheets visually reviewed. Browser acceptance passed32 lesson/register/viewport cases; representative Egyptian mobile and English desktop readings were inspected. Nineteen scoped Vitest checks, nine Python integrity tests and application TypeScript passed. All44 preceding PDF hashes remain byte-identical. No audio or video was produced.
 
 Cumulative verified new authoring is8 lessons/32 locale packages, making13 existing-plus-new content lessons of80. The original75 scope has67 remaining. The earlier502 materialization failure is historical and resolved. Clean-commit build and durable GitHub receipt follow.
+
+M03 delivery receipt: build passed with4096MB Node heap after the default2GB limit was reached. Commit `4a35a18882ea8acb40f49a1045434461ff8c2b48` is durable on the isolated branch; tree `0a8bf18edb081afc3efac02d896b400fdba05d58` exactly matches119 files.
+
+## M04 authored and verified
+
+Three remaining M04 lessons now provide12 contextual packages,9 distinct concept diagrams,24 PDFs/48 rendered pages and12 video-text scripts. The reused M04-L02 pilot is unchanged. Concrete exercises link three600×720×400mm views and resolve a450mm conflict, calculate398/399mm cores under explicit1mm edge assumptions, and update training costs300→330 with a30 difference. These are declared exercises, not universal product dimensions or market prices.
+
+All48 PDF pages were visually inspected; proportion and section-direction figures were corrected and their final Egyptian/English pages reviewed. Browser acceptance passed24 locale/viewport cases and representative reading views were inspected. Nineteen scoped Vitest tests, TypeScript and nine Python integrity tests passed. All44 accepted original PDF hashes remain unchanged. Verified cumulative contribution is11 lessons/44 locale packages, or16 content lessons including the preceding five;64 remaining lessons are unauthored. No speech or video was generated.

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M04-L03",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Grain direction, edging and allowances",
+      "spoken_text": "A finished part dimension may differ from its core cutting dimension. Specify grain, edge treatment and measurement stage, then calculate allowances from the defined construction.",
+      "caption": "A finished part dimension may differ from its core cutting dimension. Specify grain, edge treatment and measurement stage, then calculate allowances from the defined construction."
+    },
+    {
+      "id": "grain",
+      "display_title": "Specify grain direction for each part",
+      "spoken_text": "Place a grain arrow on the identified face. For adjacent fronts, state orientation and sequence when a continuous appearance is required. Rotating a rectangle in a cutting layout may save material but change grain. Do not assume the first scheduled dimension defines grain direction; record it separately.",
+      "caption": "A grain arrow is independent of dimension order.",
+      "diagram": "new-M04-L03-grain"
+    },
+    {
+      "id": "edgecalc",
+      "display_title": "Calculate core size from defined edges",
+      "spoken_text": "In this declared exercise, finished width is 400 mm and opposite edges each receive an assumed 1 mm band, with no other additions in that direction. Core width is 400 − 1 − 1 = 398 mm; one banded edge would give 399 mm. Label stage, edges and system. This geometric assumption is not a universal product recipe.",
+      "caption": "Exercise only: 400 finished = 1 edge + 398 core + 1 edge.",
+      "diagram": "new-M04-L03-edgecalc"
+    },
+    {
+      "id": "allowance",
+      "display_title": "Document allowance and operation",
+      "spoken_text": "Distinguish rough preparation stock from edge deductions and assembly clearances. Saw kerf affects sheet layout, not an automatic addition to each finished part. Record finished, core and rough-stage dimensions with reasons. A 402 mm schedule entry against a 400 mm drawing requires clarification of stage or revision, rather than an unexplained correction.",
+      "caption": "Every dimensional difference needs a stage and reason.",
+      "diagram": "new-M04-L03-allowance"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "Both exercise fronts finish at 400 mm width. P01 has two 1 mm opposite bands, giving a 398 mm core; P02 has one 1 mm band, giving 399 mm. Mark E1/E2, grain and measurement stage. A bare 400 mm entry does not establish the required cut size. Decision: schedule 398 and 399 mm as core sizes under the documented exercise assumptions.",
+      "caption": "Decision: schedule 398 and 399 mm as core sizes under the documented exercise assumptions."
+    },
+    {
+      "id": "practice",
+      "display_title": "Prepare P01/P02 rows, a face sketch with grain and edge IDs, and a table of finished/core dimensions with reasons.",
+      "spoken_text": "Prepare P01/P02 rows, a face sketch with grain and edge IDs, and a table of finished/core dimensions with reasons.",
+      "caption": "Prepare P01/P02 rows, a face sketch with grain and edge IDs, and a table of finished/core dimensions with reasons."
+    }
+  ]
+}
