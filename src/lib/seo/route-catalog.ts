@@ -239,6 +239,18 @@ export const ROUTE_CATALOG = [
     sitemap: false,
     robotsPath: "/my-learning",
   },
+  {
+    source: "kids.curriculum.tsx",
+    pattern: "/kids/curriculum",
+    visibility: "public",
+    sitemap: true,
+  },
+  {
+    source: "technical.curriculum.tsx",
+    pattern: "/technical/curriculum",
+    visibility: "public",
+    sitemap: true,
+  },
 ] as const satisfies readonly RouteCatalogEntry[];
 
 export const PUBLIC_SITEMAP_PATHS = ROUTE_CATALOG.filter((route) => route.sitemap).map(

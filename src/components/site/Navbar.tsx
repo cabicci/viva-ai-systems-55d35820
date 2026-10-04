@@ -23,6 +23,7 @@ import {
   LEARNING_LINES,
   LINE_ROUTES,
   LINE_PRICING,
+  LINE_CURRICULUM,
 } from "@/lib/learning-lines";
 
 export function Navbar({ variant = "public" }: { variant?: "public" | "account" }) {
@@ -41,7 +42,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
     ? [
         { to: LINE_ROUTES[line], label: c.overview },
         {
-          to: line === "ai" ? "/curriculum" : line === "kids" ? "/kids" : "/technical",
+          to: LINE_CURRICULUM[line],
           label: c.paths,
         },
         { to: LINE_PRICING[line], label: c.plans },

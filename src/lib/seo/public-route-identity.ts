@@ -11,6 +11,8 @@ export const PUBLIC_ROUTE_PATHS = {
   kidsPricing: "/kids/pricing",
   technical: "/technical",
   technicalPricing: "/technical/pricing",
+  kidsCurriculum: "/kids/curriculum",
+  technicalCurriculum: "/technical/curriculum",
 } as const;
 
 /** Keep the existing language-neutral sitemap policy; never copy search/hash. */

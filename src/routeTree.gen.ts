@@ -44,12 +44,14 @@ import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$pa
 import { Route as InvitationsInvitationIdRouteImport } from './routes/invitations.$invitationId'
 import { Route as KidsIndexRouteImport } from './routes/kids.index'
 import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
+import { Route as KidsCurriculumRouteImport } from './routes/kids.curriculum'
 import { Route as KidsFamilyRouteImport } from './routes/kids.family'
 import { Route as KidsPricingRouteImport } from './routes/kids.pricing'
 import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
 import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as TechnicalIndexRouteImport } from './routes/technical.index'
+import { Route as TechnicalCurriculumRouteImport } from './routes/technical.curriculum'
 import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
@@ -232,6 +234,11 @@ const KidsLevelIdRoute = KidsLevelIdRouteImport.update({
   path: '/$levelId',
   getParentRoute: () => KidsRoute,
 } as any)
+const KidsCurriculumRoute = KidsCurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
+  getParentRoute: () => KidsRoute,
+} as any)
 const KidsFamilyRoute = KidsFamilyRouteImport.update({
   id: '/family',
   path: '/family',
@@ -260,6 +267,11 @@ const RoadmapIdRoute = RoadmapIdRouteImport.update({
 const TechnicalIndexRoute = TechnicalIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => TechnicalRoute,
+} as any)
+const TechnicalCurriculumRoute = TechnicalCurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
   getParentRoute: () => TechnicalRoute,
 } as any)
 const TechnicalPricingRoute = TechnicalPricingRouteImport.update({
@@ -326,10 +338,12 @@ export interface FileRoutesByFullPath {
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
+  '/kids/curriculum': typeof KidsCurriculumRoute
   '/kids/family': typeof KidsFamilyRoute
   '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
@@ -371,10 +385,12 @@ export interface FileRoutesByTo {
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
+  '/kids/curriculum': typeof KidsCurriculumRoute
   '/kids/family': typeof KidsFamilyRoute
   '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
@@ -421,10 +437,12 @@ export interface FileRoutesById {
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
+  '/kids/curriculum': typeof KidsCurriculumRoute
   '/kids/family': typeof KidsFamilyRoute
   '/kids/pricing': typeof KidsPricingRoute
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
+  '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
@@ -472,10 +490,12 @@ export interface FileRouteTypes {
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
     | '/kids/$levelId'
+    | '/kids/curriculum'
     | '/kids/family'
     | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/curriculum'
     | '/technical/pricing'
     | '/admin/'
     | '/image-gallery/'
@@ -517,10 +537,12 @@ export interface FileRouteTypes {
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
+    | '/kids/curriculum'
     | '/kids/family'
     | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/curriculum'
     | '/technical/pricing'
     | '/admin'
     | '/image-gallery'
@@ -566,10 +588,12 @@ export interface FileRouteTypes {
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
     | '/kids/$levelId'
+    | '/kids/curriculum'
     | '/kids/family'
     | '/kids/pricing'
     | '/kids/privacy'
     | '/roadmap/$id'
+    | '/technical/curriculum'
     | '/technical/pricing'
     | '/admin/'
     | '/image-gallery/'
@@ -869,6 +893,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdRouteImport
       parentRoute: typeof KidsRoute
     }
+    '/kids/curriculum': {
+      id: '/kids/curriculum'
+      path: '/curriculum'
+      fullPath: '/kids/curriculum'
+      preLoaderRoute: typeof KidsCurriculumRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/kids/family': {
       id: '/kids/family'
       path: '/family'
@@ -909,6 +940,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/technical/'
       preLoaderRoute: typeof TechnicalIndexRouteImport
+      parentRoute: typeof TechnicalRoute
+    }
+    '/technical/curriculum': {
+      id: '/technical/curriculum'
+      path: '/curriculum'
+      fullPath: '/technical/curriculum'
+      preLoaderRoute: typeof TechnicalCurriculumRouteImport
       parentRoute: typeof TechnicalRoute
     }
     '/technical/pricing': {
@@ -986,6 +1024,7 @@ const KidsLevelIdRouteWithChildren = KidsLevelIdRoute._addFileChildren(
 
 interface KidsRouteChildren {
   KidsLevelIdRoute: typeof KidsLevelIdRouteWithChildren
+  KidsCurriculumRoute: typeof KidsCurriculumRoute
   KidsFamilyRoute: typeof KidsFamilyRoute
   KidsPricingRoute: typeof KidsPricingRoute
   KidsPrivacyRoute: typeof KidsPrivacyRoute
@@ -994,6 +1033,7 @@ interface KidsRouteChildren {
 
 const KidsRouteChildren: KidsRouteChildren = {
   KidsLevelIdRoute: KidsLevelIdRouteWithChildren,
+  KidsCurriculumRoute: KidsCurriculumRoute,
   KidsFamilyRoute: KidsFamilyRoute,
   KidsPricingRoute: KidsPricingRoute,
   KidsPrivacyRoute: KidsPrivacyRoute,
@@ -1003,11 +1043,13 @@ const KidsRouteChildren: KidsRouteChildren = {
 const KidsRouteWithChildren = KidsRoute._addFileChildren(KidsRouteChildren)
 
 interface TechnicalRouteChildren {
+  TechnicalCurriculumRoute: typeof TechnicalCurriculumRoute
   TechnicalPricingRoute: typeof TechnicalPricingRoute
   TechnicalIndexRoute: typeof TechnicalIndexRoute
 }
 
 const TechnicalRouteChildren: TechnicalRouteChildren = {
+  TechnicalCurriculumRoute: TechnicalCurriculumRoute,
   TechnicalPricingRoute: TechnicalPricingRoute,
   TechnicalIndexRoute: TechnicalIndexRoute,
 }
