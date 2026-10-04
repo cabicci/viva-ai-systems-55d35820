@@ -10,13 +10,9 @@ import type { UiStringKey } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { SheetClose } from "@/components/ui/sheet";
-import { KidsBrand } from "@/components/kids/KidsBrand";
-import { getLineCopy, LEARNING_LINES, LINE_ROUTES } from "@/lib/learning-lines";
+import { getLineCopy } from "@/lib/learning-lines";
 
 const accountLinks: { to: string; key: UiStringKey }[] = [
-  { to: "/dashboard", key: "sidebar.dashboard" },
-  { to: "/ai-assistant", key: "sidebar.assistant" },
-  { to: "/analytics", key: "sidebar.analytics" },
   { to: "/account", key: "sidebar.account" },
   { to: "/payments", key: "sidebar.payments" },
 ];
@@ -31,35 +27,16 @@ const adminLinks: { to: string; key: UiStringKey }[] = [
   { to: "/build-logs", key: "sidebar.buildLogs" },
 ];
 
-export function AccountHeaderLinks() {
-  const t = useUiString();
-  const localeSearch = useLocaleLinkSearch();
-  const { locale } = useLocale();
-
-  return (
-    <>
-      {accountLinks.map(({ to, key }) => (
-        <Link key={to} to={to} search={localeSearch()} className="hover:text-foreground transition">
-          {t(key)}
-        </Link>
-      ))}
-      <a href={`/kids?locale=${locale}`} className="hover:text-foreground transition">
-        <KidsBrand compact />
-      </a>
-    </>
-  );
-}
-
 export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
   const t = useUiString();
   const { signOut } = useAuth();
   const { isAdmin } = useEntitlement();
   const localeSearch = useLocaleLinkSearch();
   const { locale } = useLocale();
-  const [open, setOpen] = useState(false);
   const copy = getLineCopy(locale);
+  const [open, setOpen] = useState(false);
 
-  const links = (isAdmin ? [...accountLinks, ...adminLinks] : accountLinks).map(({ to, key }) => {
+  const renderLink = ({ to, key }: { to: string; key: UiStringKey }) => {
     const link = (
       <Link
         to={to}
@@ -77,50 +54,29 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
     ) : (
       <div key={to}>{link}</div>
     );
-  });
+  };
 
-  const sharedLinks = (
+  const links = (
     <>
-      <Link
-        to="/my-learning"
-        search={localeSearch()}
-        onClick={() => setOpen(false)}
-        className="block rounded-lg px-3 py-2 text-sm font-bold text-primary"
-      >
-        {copy.learning}
-      </Link>
-      {LEARNING_LINES.map((line) => (
-        <Link
-          key={line}
-          to={LINE_ROUTES[line]}
-          search={localeSearch()}
-          onClick={() => setOpen(false)}
-          className="block rounded-lg px-3 py-2 text-sm hover:bg-primary/10"
-        >
-          {copy[line]}
-        </Link>
-      ))}
+      {accountLinks.map(renderLink)}
+      {isAdmin && (
+        <div className="mt-3 border-t border-border pt-3">
+          {adminLinks.slice(0, 2).map(renderLink)}
+          <details className="mt-1">
+            <summary className="cursor-pointer rounded-lg px-3 py-2 text-sm font-semibold">
+              {copy.adminTools}
+            </summary>
+            {adminLinks.slice(2).map(renderLink)}
+          </details>
+        </div>
+      )}
     </>
   );
   if (mobile)
     return (
-      <div className="space-y-1" aria-label={t("nav.myDashboard")}>
-        <p className="px-3 text-sm font-bold">{t("nav.myDashboard")}</p>
-        <SheetClose asChild>
-          <Link
-            to="/my-learning"
-            search={localeSearch()}
-            className="block px-3 py-2 text-sm font-bold text-primary"
-          >
-            {copy.learning}
-          </Link>
-        </SheetClose>
+      <section className="space-y-1" aria-label={t("sidebar.account")}>
+        <p className="px-3 text-sm font-bold">{t("sidebar.account")}</p>
         {links}
-        <SheetClose asChild>
-          <a href={`/kids?locale=${locale}`} className="block rounded-lg px-3 py-2 text-sm">
-            <KidsBrand compact />
-          </a>
-        </SheetClose>
         <SheetClose asChild>
           <button
             type="button"
@@ -131,7 +87,7 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
             {t("sidebar.signOut")}
           </button>
         </SheetClose>
-      </div>
+      </section>
     );
 
   return (
@@ -141,14 +97,13 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
           type="button"
           size="sm"
           className="rounded-full px-5"
-          aria-label={t("nav.myDashboard")}
+          aria-label={t("sidebar.account")}
         >
-          {t("nav.myDashboard")} <ChevronDown className="ms-2 h-4 w-4" />
+          {t("sidebar.account")} <ChevronDown className="ms-2 h-4 w-4" />
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="max-h-[min(70vh,560px)] overflow-y-auto p-2">
-        <nav aria-label={t("nav.myDashboard")} className="space-y-1">
-          {sharedLinks}
+        <nav aria-label={t("sidebar.account")} className="space-y-1">
           {links}
           <button
             type="button"
