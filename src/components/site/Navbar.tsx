@@ -34,6 +34,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
   const search = useLocaleLinkSearch();
   const path = useRouterState({ select: (state) => state.location.pathname });
   const line = learningLineForPath(path);
+  const switchableLines = LEARNING_LINES.filter((item) => item !== line);
   const returnTo =
     SAFE_LINE_RETURNS.find((entry) => entry === path) ??
     (line ? LINE_ROUTES[line] : "/my-learning");
@@ -109,12 +110,11 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
               </PopoverTrigger>
               <PopoverContent align="end" className="p-2">
                 <nav aria-label={c.switch}>
-                  {LEARNING_LINES.map((item) => (
+                  {switchableLines.map((item) => (
                     <Link
                       key={item}
                       to={LINE_ROUTES[item]}
                       search={search()}
-                      aria-current={line === item ? "page" : undefined}
                       className="block rounded-lg px-3 py-3 text-sm font-semibold hover:bg-primary/10"
                     >
                       {c[item]}
@@ -175,21 +175,22 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
                     </Link>
                   </SheetClose>
                 ))}
-                <p className="mt-5 border-t border-border px-3 pt-5 text-xs font-bold text-muted-foreground">
-                  {c.switch}
-                </p>
-                {LEARNING_LINES.map((item) => (
-                  <SheetClose asChild key={item}>
-                    <Link
-                      to={LINE_ROUTES[item]}
-                      search={search()}
-                      aria-current={line === item ? "page" : undefined}
-                      className="block rounded-lg px-3 py-3 text-sm font-semibold hover:bg-primary/10"
-                    >
-                      {c[item]}
-                    </Link>
-                  </SheetClose>
-                ))}
+                <section aria-label={c.switch}>
+                  <p className="mt-5 border-t border-border px-3 pt-5 text-xs font-bold text-muted-foreground">
+                    {c.switch}
+                  </p>
+                  {switchableLines.map((item) => (
+                    <SheetClose asChild key={item}>
+                      <Link
+                        to={LINE_ROUTES[item]}
+                        search={search()}
+                        className="block rounded-lg px-3 py-3 text-sm font-semibold hover:bg-primary/10"
+                      >
+                        {c[item]}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </section>
               </nav>
               <div className="mt-6 border-t border-border pt-5">
                 {user ? (
