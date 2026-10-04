@@ -133,7 +133,7 @@ afterEach(() => {
 });
 
 async function renderAt(
-  initialEntry: "/login" | "/dashboard" | "/pricing" | `/payments?order=${string}`,
+  initialEntry: string,
   { guardDashboard = false }: { guardDashboard?: boolean } = {},
 ) {
   const rootRoute = createRootRoute({
@@ -166,6 +166,15 @@ async function renderAt(
   const pricingRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/pricing",
+    beforeLoad: (context) =>
+      PricingFileRoute.options.beforeLoad?.(
+        // The isolated router omits the production root's query client;
+        // this compatibility guard reads only location and search.
+        context as unknown as Parameters<
+          NonNullable<typeof PricingFileRoute.options.beforeLoad>
+        >[0],
+      ),
+    validateSearch: PricingFileRoute.options.validateSearch,
     component: PricingFileRoute.options.component,
   });
   const paymentRoute = createRoute({
@@ -183,7 +192,28 @@ async function renderAt(
     );
   }
   const router = createRouter({
-    routeTree: rootRoute.addChildren([loginRoute, dashboardRoute, pricingRoute, paymentRoute]),
+    routeTree: rootRoute.addChildren([
+      loginRoute,
+      dashboardRoute,
+      pricingRoute,
+      paymentRoute,
+      ...(
+        [
+          "/my-learning",
+          "/ai",
+          "/kids",
+          "/kids/pricing",
+          "/technical",
+          "/technical/pricing",
+        ] as const
+      ).map((path) =>
+        createRoute({
+          getParentRoute: () => rootRoute,
+          path,
+          component: () => <div>line-destination</div>,
+        }),
+      ),
+    ]),
     history,
   });
 
@@ -205,6 +235,28 @@ function fillLoginForm() {
 }
 
 describe("central1 auth integration", () => {
+  it.each(["/my-learning", "/ai", "/kids", "/kids/pricing", "/technical", "/technical/pricing"])(
+    "returns to %s with the chosen locale after login",
+    async (destination) => {
+      const router = await renderAt(`/login?returnTo=${encodeURIComponent(destination)}&locale=en`);
+      mocks.signInWithPassword.mockImplementation(async () => {
+        mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
+        mocks.authListener?.("SIGNED_IN", SESSION);
+        return { data: { session: SESSION }, error: null };
+      });
+      fillLoginForm();
+      fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
+      await waitFor(() => expect(router.state.location.pathname).toBe(destination));
+      expect(router.state.location.search).toMatchObject({ locale: "en" });
+    },
+  );
+
+  it("preserves the legacy Kids pricing URL and locale", async () => {
+    const router = await renderAt("/pricing?locale=ar-gulf#kids");
+    await waitFor(() => expect(router.state.location.pathname).toBe("/kids/pricing"));
+    expect(router.state.location.search).toMatchObject({ locale: "ar-gulf" });
+  });
+
   it("preserves an emailed payment order through the hydration gate and successful login", async () => {
     const order = "00000000-0000-4000-8000-000000000009";
     const router = await renderAt(`/payments?order=${order}`);

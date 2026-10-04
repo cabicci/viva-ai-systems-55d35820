@@ -35,13 +35,15 @@ export function CTA() {
             ) : (
               <>
                 <Button asChild variant="hero" size="xl">
-                  <Link to="/signup">
+                  <Link to="/signup" search={localeSearch({ returnTo: "/ai" })}>
                     {t("cta.createAccount")}{" "}
                     <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
                   </Link>
                 </Button>
                 <Button asChild variant="glass" size="xl">
-                  <Link to="/login">{t("cta.signIn")}</Link>
+                  <Link to="/login" search={localeSearch({ returnTo: "/ai" })}>
+                    {t("cta.signIn")}
+                  </Link>
                 </Button>
               </>
             )}

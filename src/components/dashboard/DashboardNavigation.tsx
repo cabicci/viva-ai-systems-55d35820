@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { SheetClose } from "@/components/ui/sheet";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { getLineCopy, LEARNING_LINES, LINE_ROUTES } from "@/lib/learning-lines";
 
 const accountLinks: { to: string; key: UiStringKey }[] = [
   { to: "/dashboard", key: "sidebar.dashboard" },
@@ -56,6 +57,7 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
   const localeSearch = useLocaleLinkSearch();
   const { locale } = useLocale();
   const [open, setOpen] = useState(false);
+  const copy = getLineCopy(locale);
 
   const links = (isAdmin ? [...accountLinks, ...adminLinks] : accountLinks).map(({ to, key }) => {
     const link = (
@@ -77,10 +79,42 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
     );
   });
 
+  const sharedLinks = (
+    <>
+      <Link
+        to="/my-learning"
+        search={localeSearch()}
+        onClick={() => setOpen(false)}
+        className="block rounded-lg px-3 py-2 text-sm font-bold text-primary"
+      >
+        {copy.learning}
+      </Link>
+      {LEARNING_LINES.map((line) => (
+        <Link
+          key={line}
+          to={LINE_ROUTES[line]}
+          search={localeSearch()}
+          onClick={() => setOpen(false)}
+          className="block rounded-lg px-3 py-2 text-sm hover:bg-primary/10"
+        >
+          {copy[line]}
+        </Link>
+      ))}
+    </>
+  );
   if (mobile)
     return (
       <div className="space-y-1" aria-label={t("nav.myDashboard")}>
         <p className="px-3 text-sm font-bold">{t("nav.myDashboard")}</p>
+        <SheetClose asChild>
+          <Link
+            to="/my-learning"
+            search={localeSearch()}
+            className="block px-3 py-2 text-sm font-bold text-primary"
+          >
+            {copy.learning}
+          </Link>
+        </SheetClose>
         {links}
         <SheetClose asChild>
           <a href={`/kids?locale=${locale}`} className="block rounded-lg px-3 py-2 text-sm">
@@ -114,6 +148,7 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
       </PopoverTrigger>
       <PopoverContent align="end" className="max-h-[min(70vh,560px)] overflow-y-auto p-2">
         <nav aria-label={t("nav.myDashboard")} className="space-y-1">
+          {sharedLinks}
           {links}
           <button
             type="button"

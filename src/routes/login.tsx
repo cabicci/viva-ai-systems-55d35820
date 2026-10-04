@@ -10,7 +10,7 @@ import { AuthShell } from "@/components/auth/AuthShell";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
+import { parseAuthIntentSearch, type AuthIntentSearch } from "@/lib/kids/auth-intent";
 import { parsePaymentLoginSearch } from "@/lib/commerce/payment-links";
 import { loginErrorPresentation } from "@/lib/login-error";
 
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/login")({
 function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
-  const search = Route.useSearch();
+  const search: AuthIntentSearch & ReturnType<typeof parsePaymentLoginSearch> = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -56,6 +56,8 @@ function LoginPage() {
         search: { order: search.order, locale: search.locale },
         replace: true,
       });
+    } else if (search.returnTo) {
+      navigate({ to: search.returnTo, search: () => ({ locale: search.locale }), replace: true });
     } else {
       navigate({ to: "/dashboard", replace: true });
     }

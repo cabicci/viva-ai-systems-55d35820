@@ -8,7 +8,7 @@ export const SITE_STRUCTURED_DATA = {
       alternateName: "masaarat.ai",
       url: "https://masaarat.ai",
       description:
-        "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك.",
+        "منصة تعليمية تجمع الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني، وتربط الفهم بالتطبيق.",
       inLanguage: "ar",
       areaServed: { "@type": "Place", name: "MENA" },
     },

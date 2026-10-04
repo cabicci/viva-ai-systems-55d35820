@@ -55,9 +55,9 @@ export function StripeCheckoutButtons({
         <p className="font-semibold">{kidsCopy.offer}</p>
         <p className="mt-1 text-muted-foreground">{kidsCopy.pending}</p>
         <Link
-          to="/pricing"
+          to="/kids/pricing"
           search={localeSearch()}
-          hash="kids"
+
           className="mt-2 inline-block font-bold text-primary underline"
         >
           {kidsCopy.prices}
@@ -116,9 +116,9 @@ export function StripeCheckoutButtons({
               {kidsCopy.back}
             </Button>
             <Link
-              to="/pricing"
+              to="/kids/pricing"
               search={localeSearch()}
-              hash="kids"
+
               className="inline-flex min-h-11 items-center font-bold text-primary underline"
             >
               {kidsCopy.prices}
