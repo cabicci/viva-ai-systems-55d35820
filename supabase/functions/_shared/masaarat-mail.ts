@@ -182,3 +182,57 @@ export function subscriptionContent(
     ...personalized(locale, name, title, body, action, "/dashboard"),
   };
 }
+
+/** Invitations remain separate from delivery, verified acceptance and paid activation. */
+export function invitationContent(input: {
+  id: string;
+  name?: string | null;
+  locale: unknown;
+  package: string;
+  duration_days: number;
+  deadline: string;
+  access_kind: string;
+}) {
+  if (
+    !/^[0-9a-f-]{36}$/i.test(input.id) ||
+    !["pro", "pro_plus", "kids"].includes(input.package) ||
+    !Number.isInteger(input.duration_days) ||
+    input.duration_days < 1 ||
+    input.duration_days > 1095 ||
+    !Number.isFinite(Date.parse(input.deadline))
+  )
+    throw new Error("Invalid invitation");
+  const locale = mailLocale(input.locale),
+    english = locale === "en";
+  const pack =
+    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+  const deadline = new Date(input.deadline).toISOString().slice(0, 10);
+  const title = english
+    ? "Your Masaarat invitation"
+    : locale === "ar-Gulf"
+      ? "دعوتك لمسارات"
+      : "دعوتك إلى مسارات";
+  const body = english
+    ? `You are invited to ${pack} for ${input.duration_days} days. Accept by ${deadline} using the verified invited email. ${input.access_kind === "external" ? "Access waits for confirmed payment and acceptance." : "Complimentary access starts when you accept, unless a scheduled start was selected."} ${input.package === "kids" ? "Complete the existing guardian and family setup first." : ""}`
+    : `لديك دعوة لباقة ${pack} لمدة ${input.duration_days} يومًا. آخر موعد للقبول ${deadline}. سجّل الدخول بالبريد المدعو وأكده قبل القبول. ${input.access_kind === "external" ? "الصلاحية تنتظر تأكيد الدفع وقبول الدعوة." : "تبدأ المنحة عند القبول، إلا إذا حُدد موعد آخر للبداية."} ${input.package === "kids" ? "أكمل إعداد ولي الأمر والأسرة بالطريقة الحالية أولًا." : ""}`;
+  const result = personalized(
+    locale,
+    input.name,
+    title,
+    body,
+    english ? "Review invitation" : "مراجعة الدعوة",
+    `/invitations/${input.id}?locale=${locale}`,
+  );
+  // Invitation campaigns honor opt-outs. Reuse branding while making the footer accurate.
+  const footer = english ? "Invitation preferences" : "تفضيلات الدعوات";
+  return {
+    subject: `${title} | Masaarat`,
+    text: `${result.text}\n${footer}: https://masaarat.ai/payments?locale=${locale}`,
+    html: result.html.replace(
+      english
+        ? "This is an account service message. Need help?"
+        : "هذه رسالة خدمة تخص حسابك. تحتاج مساعدة؟",
+      `<a href="https://masaarat.ai/payments?locale=${locale}">${footer}</a>. ${english ? "Need help?" : "تحتاج مساعدة؟"}`,
+    ),
+  };
+}

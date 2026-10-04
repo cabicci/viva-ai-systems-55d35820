@@ -105,6 +105,9 @@ function AdminDashboard() {
             لوحة الإدارة
           </div>
           <div className="flex items-center gap-3">
+            <Link to="/admin/commerce" className="text-sm font-bold text-primary">
+              المدفوعات والمجموعات والعروض
+            </Link>
             <Link to="/admin/kids-parents" className="text-sm font-bold text-primary">
               طلبات أولياء الأمور
             </Link>

@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
+import { PaymentMethods } from "@/components/commerce/PaymentMethods";
 
 const copy = {
   "ar-EG": {
@@ -31,6 +32,7 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
   const { locale } = useLocale();
   const words = copy[locale];
   const [pending, setPending] = useState(false);
+  const [selectedInterval, setSelectedInterval] = useState<"month" | "year" | null>(null);
 
   async function checkout(billingInterval: "month" | "year") {
     if (pending) return;
@@ -62,17 +64,30 @@ export function KidsCheckoutButtons({ market }: { market: "EG" | "INTL" }) {
 
   return (
     <div className="mt-4 grid gap-2 sm:grid-cols-2">
-      <Button type="button" disabled={pending} onClick={() => void checkout("month")}>
+      <Button type="button" disabled={pending} onClick={() => setSelectedInterval("month")}>
         {words.month}
       </Button>
       <Button
         type="button"
         variant="outline"
         disabled={pending}
-        onClick={() => void checkout("year")}
+        onClick={() => setSelectedInterval("year")}
       >
         {words.year}
       </Button>
+      {selectedInterval && (
+        <div className="sm:col-span-2">
+          <PaymentMethods
+            packageKey="kids"
+            interval={selectedInterval}
+            market={market}
+            disabled={pending}
+            stripe={() => void checkout(selectedInterval)}
+          >
+            {words[selectedInterval]}
+          </PaymentMethods>
+        </div>
+      )}
     </div>
   );
 }

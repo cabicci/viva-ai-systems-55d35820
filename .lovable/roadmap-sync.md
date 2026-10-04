@@ -147,3 +147,11 @@ scope: infra
 source: user
 summary: Owner-requested retirement of unused contact cron preparation, legacy Edge entrypoint and original switch consumption; preserve immediate delivery, existing-worker retries and all receipt/outbox data.
 sync_status: source prepared; platform deletion and runtime acceptance remain separate
+
+## 2026-10-04 — isolated unified commerce implementation
+
+[roadmap:commerce-groups-manual-payments-20261004]
+scope: db
+source: user
+summary: Implement independent external orders, confirmed payments, private receipts, complimentary grants, package entitlements, group imports, offers and explicit invitation batches. Preserve Stripe TEST, legacy coupon constraints, family consent, account suspension and the existing 15-day financial deletion rule.
+sync_status: isolated candidate; launch checkpoint ACCEPTANCE-EXPLANATION-PAUSE-12 remains paused. No merge, production migration, real mail/payment, Paymob activation or deployment is claimed.

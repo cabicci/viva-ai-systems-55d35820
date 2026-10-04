@@ -37,11 +37,13 @@ export type FinancialPurgeClaim = {
   user_id?: string;
   lease_token?: string;
   customers?: { id: string; gateway: string; mode: string | null }[];
+  storage_objects?: { bucket: string; name: string }[];
 };
 export type FinancialPurgeDependencies = {
   claim(userId: string): Promise<FinancialPurgeClaim>;
   complete(userId: string, lease: string, release?: boolean): Promise<unknown>;
   eraseCustomer(customer: string, userId: string): Promise<void>;
+  removeStorage?(objects: { bucket: string; name: string }[]): Promise<void>;
 };
 export async function purgeFinancialAccount(userId: string, deps: FinancialPurgeDependencies) {
   const claim = await deps.claim(userId);
@@ -54,6 +56,10 @@ export async function purgeFinancialAccount(userId: string, deps: FinancialPurge
       if (customer.gateway !== "stripe_us" || !["test", null].includes(customer.mode))
         throw new Error("LC09_PROVIDER_REVIEW_REQUIRED");
       await deps.eraseCustomer(customer.id, userId);
+    }
+    if (claim.storage_objects?.length) {
+      if (!deps.removeStorage) throw new Error("LC09_FINANCIAL_STORAGE_HANDLER_REQUIRED");
+      await deps.removeStorage(claim.storage_objects);
     }
     await deps.complete(userId, lease);
     return { stage: "financial_purged" };
