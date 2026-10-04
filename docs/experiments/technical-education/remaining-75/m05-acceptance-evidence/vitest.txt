@@ -1,0 +1,13 @@
+12:58:20 PM [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+12:58:20 PM [vite] warning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+Both esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored. The following esbuild options were set: `{ jsx: 'automatic', jsxImportSource: undefined }`
+
+ RUN  v4.1.11 /workspace/scratch/61b6becf6b09/technical-remaining-75
+
+
+ Test Files  4 passed (4)
+      Tests  20 passed (20)
+   Start at  12:58:20
+   Duration  2.90s (transform 879ms, setup 508ms, import 1.55s, tests 1.05s, environment 4.32s)
+

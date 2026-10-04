@@ -1,0 +1,72 @@
+{
+  "id": "M04-L04",
+  "locale": "en",
+  "title": "Specifications, quantities and costing",
+  "intro": "A quantity file links drawings, materials, hardware and services. Build identifiable items with explicit units and a declared training cost model, then check revisions and double counting.",
+  "goals": [
+    "Link part IDs to specifications and quantities",
+    "Calculate each line using matching units",
+    "Check scope and revision before issue"
+  ],
+  "sections": [
+    {
+      "id": "schedule",
+      "title": "Link part IDs to specifications and quantities",
+      "text": "Assign unit U01 and part IDs such as P01. A panel row records material, thickness, dimension stage, face, edges, count and drawing reference. Distinguish a parts list from sheet purchasing: total part area alone does not establish sheet count without layout, grain, kerf and waste review. Separate hardware, finish and services with stated units.",
+      "diagram": "new-M04-L04-schedule",
+      "caption": "Stable IDs connect drawings, part rows and quantity items."
+    },
+    {
+      "id": "cost",
+      "title": "Calculate each line using matching units",
+      "text": "Training prices only: assume 2 sheets at 100 currency units each, 4 hardware sets at 15 per set, and 1 installation service at 40. Line totals are 200, 60 and 40; the total is 300 currency units. These are not market prices. Record quantity × matching unit price, currency, date, source and scope; do not multiply an area rate by a part count.",
+      "diagram": "new-M04-L04-cost",
+      "caption": "Training total: 2 × 100 + 4 × 15 + 1 × 40 = 300."
+    },
+    {
+      "id": "revision",
+      "title": "Check scope and revision before issue",
+      "text": "Define included scope: finish already included in a faced-sheet rate must not be counted again for the same work. List transport, installation, tax and contingency as items or explicit exclusions without inventing universal percentages. Update dependent quantities when a unit changes and compare revisions. Mark an unpriced item as missing information rather than zero-cost work.",
+      "diagram": "new-M04-L04-revision",
+      "caption": "Scope checks prevent duplication; missing rates remain visible."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The training total was 300 currency units. Increasing hardware sets from 4 to 6 while other inputs stay fixed changes that line from 60 to 6 × 15 = 90. The revised total is 200 + 90 + 40 = 330. Record the 30 increase, revision and the exercise exclusion of transport.",
+    "decision": "Decision: issue the revised 330 total with the 30 change and exclusions recorded."
+  },
+  "quiz": [
+    {
+      "id": "cost-check",
+      "question": "What is the line total for 6 sets at 15 per set?",
+      "options": [
+        "90",
+        "21",
+        "60"
+      ],
+      "correct": 0,
+      "explanation": "Quantity × matching rate: 6 × 15 = 90."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare the three training lines in two revisions, with units, assumed prices, scope and cost change.",
+    "fields": [
+      "Quantity and specification table",
+      "Cost calculation",
+      "Revision change and exclusions"
+    ],
+    "criteria": [
+      "Quantity and rate units match",
+      "Totals are 300 then 330",
+      "No duplicated scope"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should an unknown rate be entered as zero?",
+      "answer": "Mark it as missing; zero can misleadingly imply free or included work.",
+      "sectionId": "revision"
+    }
+  ]
+}

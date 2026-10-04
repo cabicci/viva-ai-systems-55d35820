@@ -1,0 +1,72 @@
+{
+  "id": "M05-L03",
+  "locale": "en",
+  "title": "Drawers, runners and movement",
+  "intro": "A drawer combines an opening, box, front and slide system. Separate their dimensions, calculate a declared box-width exercise and examine extension and access.",
+  "goals": [
+    "Separate opening, box and front",
+    "Calculate box width from the stated slide assumption",
+    "Review depth, extension and contents"
+  ],
+  "sections": [
+    {
+      "id": "parts",
+      "title": "Separate opening, box and front",
+      "text": "The opening is the available space within the carcass; the box carries contents; the front provides the visible closure. The slide occupies a defined interface between box and carcass. Draw a horizontal section through these elements and a vertical section through the bottom and height. An overlay front may be wider than the box, so record their dimensions separately.",
+      "diagram": "new-M05-L03-parts",
+      "caption": "Opening, box and front dimensions are separate."
+    },
+    {
+      "id": "boxcalc",
+      "title": "Calculate box width from the stated slide assumption",
+      "text": "Exercise only: the opening is 560 mm and the teaching system assumes 12.5 mm between box and carcass on each side. External box width is 560 − 12.5 − 12.5 = 535 mm. The combined side allowance is 25 mm. This is neither a drilling layout nor a universal slide clearance; the actual system determines opening, box and bottom relationships.",
+      "diagram": "new-M05-L03-boxcalc",
+      "caption": "Exercise: 560 = 12.5 + 535 + 12.5 mm."
+    },
+    {
+      "id": "extension",
+      "title": "Review depth, extension and contents",
+      "text": "External carcass depth does not directly specify slide length: the back, services and construction consume internal space. Draw closed and extended positions, checking access to rear contents and collisions involving the front or handle. Partial and full extension affect access differently. Define intended contents and loading, then review the system and inspect movement/alignment against approved requirements.",
+      "diagram": "new-M05-L03-extension",
+      "caption": "Review available depth, extension and access together."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "For the 560 mm opening with 12.5 mm per side, the exercise box is 535 mm. A 560 mm box entry incorrectly copies the opening and exceeds the assumed relationship by 25 mm. Correct it to 535, reconcile the section and keep the front dimension separate. This calculation does not establish product performance.",
+    "decision": "Decision: 535 mm is the box dimension under the assumption; schedule the front separately."
+  },
+  "quiz": [
+    {
+      "id": "drawer-width",
+      "question": "For a 560 mm opening with 12.5 mm each side, what is the box width?",
+      "options": [
+        "535 mm",
+        "547.5 mm",
+        "560 mm"
+      ],
+      "correct": 0,
+      "explanation": "Subtract both sides: 560 − 25 = 535 mm."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a drawer section, separate dimension rows, the exercise calculation and an extension/access review.",
+    "fields": [
+      "Component section",
+      "Calculation and dimension table",
+      "Extension and access"
+    ],
+    "criteria": [
+      "535 mm under the assumption",
+      "Box/front kept separate",
+      "Available internal space identified"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is front width necessarily box width?",
+      "answer": "No. The front may overlay the sides while box width depends on opening and slide requirements.",
+      "sectionId": "parts"
+    }
+  ]
+}

@@ -67,6 +67,14 @@ describe("technical learning journey", () => {
     expect(JSON.stringify(pkg)).not.toMatch(/Metwood|HSE reference|مصدر HSE|sourceNote/);
     expect(Object.values(pkg.downloadNames).every((name) => name.endsWith(".pdf"))).toBe(true);
   });
+  it("preserves arithmetic reading order in M04 Arabic prose", () => {
+    for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf"]) {
+      const lesson = JSON.parse(readFileSync(`src/lib/technical-education/lessons/M04-L03__${locale}.json`, "utf8"));
+      expect(lesson.sections[1].text).toContain("\u2066400 − 1 − 1 = 398\u2069");
+      const costing = JSON.parse(readFileSync(`src/lib/technical-education/lessons/M04-L04__${locale}.json`, "utf8"));
+      expect(costing.example.text).toContain("\u2066200 + 90 + 40 = 330\u2069");
+    }
+  });
   it("rejects corrupt or unrelated preview state rather than manufacturing completion", () => {
     expect(parsePreviewProgress("broken")).toEqual({});
     expect(

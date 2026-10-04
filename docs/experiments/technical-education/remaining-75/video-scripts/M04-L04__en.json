@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M04-L04",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Specifications, quantities and costing",
+      "spoken_text": "A quantity file links drawings, materials, hardware and services. Build identifiable items with explicit units and a declared training cost model, then check revisions and double counting.",
+      "caption": "A quantity file links drawings, materials, hardware and services. Build identifiable items with explicit units and a declared training cost model, then check revisions and double counting."
+    },
+    {
+      "id": "schedule",
+      "display_title": "Link part IDs to specifications and quantities",
+      "spoken_text": "Assign unit U01 and part IDs such as P01. A panel row records material, thickness, dimension stage, face, edges, count and drawing reference. Distinguish a parts list from sheet purchasing: total part area alone does not establish sheet count without layout, grain, kerf and waste review. Separate hardware, finish and services with stated units.",
+      "caption": "Stable IDs connect drawings, part rows and quantity items.",
+      "diagram": "new-M04-L04-schedule"
+    },
+    {
+      "id": "cost",
+      "display_title": "Calculate each line using matching units",
+      "spoken_text": "Training prices only: assume 2 sheets at 100 currency units each, 4 hardware sets at 15 per set, and 1 installation service at 40. Line totals are 200, 60 and 40; the total is 300 currency units. These are not market prices. Record quantity × matching unit price, currency, date, source and scope; do not multiply an area rate by a part count.",
+      "caption": "Training total: 2 × 100 + 4 × 15 + 1 × 40 = 300.",
+      "diagram": "new-M04-L04-cost"
+    },
+    {
+      "id": "revision",
+      "display_title": "Check scope and revision before issue",
+      "spoken_text": "Define included scope: finish already included in a faced-sheet rate must not be counted again for the same work. List transport, installation, tax and contingency as items or explicit exclusions without inventing universal percentages. Update dependent quantities when a unit changes and compare revisions. Mark an unpriced item as missing information rather than zero-cost work.",
+      "caption": "Scope checks prevent duplication; missing rates remain visible.",
+      "diagram": "new-M04-L04-revision"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The training total was 300 currency units. Increasing hardware sets from 4 to 6 while other inputs stay fixed changes that line from 60 to 6 × 15 = 90. The revised total is 200 + 90 + 40 = 330. Record the 30 increase, revision and the exercise exclusion of transport. Decision: issue the revised 330 total with the 30 change and exclusions recorded.",
+      "caption": "Decision: issue the revised 330 total with the 30 change and exclusions recorded."
+    },
+    {
+      "id": "practice",
+      "display_title": "Prepare the three training lines in two revisions, with units, assumed prices, scope and cost change.",
+      "spoken_text": "Prepare the three training lines in two revisions, with units, assumed prices, scope and cost change.",
+      "caption": "Prepare the three training lines in two revisions, with units, assumed prices, scope and cost change."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M04-L01",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Read plans, elevations, sections and details",
+      "spoken_text": "An attractive perspective does not define construction. Link the front, plan and side views, then use a section and enlarged detail to resolve hidden interfaces.",
+      "caption": "An attractive perspective does not define construction. Link the front, plan and side views, then use a section and enlarged detail to resolve hidden interfaces."
+    },
+    {
+      "id": "views",
+      "display_title": "Link dimensions across views",
+      "spoken_text": "For this exercise, the unit is 600 mm wide, 720 mm high and 400 mm deep. The front shows width and height, the plan width and depth, and the side depth and height. Use one scale and light projection lines. Check that shelf elevation agrees in front and side views; disagreement must be resolved before scheduling parts.",
+      "caption": "Shared dimensions provide a consistency check.",
+      "diagram": "new-M04-L01-views"
+    },
+    {
+      "id": "section",
+      "display_title": "Distinguish a section from an elevation",
+      "spoken_text": "An elevation represents the visible surface; a section reveals construction at a defined cutting plane. Mark A–A and viewing arrows on the reference view. Show panel thicknesses and shelf/back interfaces, hatching only cut material. A shelf line alone does not define its joint; an enlarged detail must show how it meets the side.",
+      "caption": "A section needs a cutting-plane reference and viewing direction.",
+      "diagram": "new-M04-L01-section"
+    },
+    {
+      "id": "detail",
+      "display_title": "Review a referenced detail",
+      "spoken_text": "Mark the shelf-to-side junction D1 and draw an enlarged detail at a stated scale. Identify material, thickness, dimension datum, interface and visible edge. Use written dimensions rather than measuring a resized print. Cross-check the detail against views and the parts schedule, retaining unit ID and drawing revision so different issues are not combined.",
+      "caption": "Views, detail and schedule must share one revision.",
+      "diagram": "new-M04-L01-detail"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The exercise front is 600 × 720 mm, the plan states a 400 mm depth, and the side states 450 mm. Flag the conflict and establish the controlling dimension. If 400 mm is confirmed, revise the side and recheck any parts previously scheduled from 450 mm. Decision: do not issue the parts schedule until the depth conflict is resolved.",
+      "caption": "Decision: do not issue the parts schedule until the depth conflict is resolved."
+    },
+    {
+      "id": "practice",
+      "display_title": "Draw three views of the exercise unit, add section A–A and detail D1, and submit dimensions, revision and unresolved information.",
+      "spoken_text": "Draw three views of the exercise unit, add section A–A and detail D1, and submit dimensions, revision and unresolved information.",
+      "caption": "Draw three views of the exercise unit, add section A–A and detail D1, and submit dimensions, revision and unresolved information."
+    }
+  ]
+}

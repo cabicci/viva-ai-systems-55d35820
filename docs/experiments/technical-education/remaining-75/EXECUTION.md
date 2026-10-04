@@ -73,3 +73,38 @@ Four additional lessons distinguish actual timber/sheet products, finish and edg
 The batch has16 contextual packages,12 concept-specific diagrams,32 PDF downloads and16 linked video-text scripts. All64 exported PDF pages were rendered and contact sheets visually reviewed. Browser acceptance passed32 lesson/register/viewport cases; representative Egyptian mobile and English desktop readings were inspected. Nineteen scoped Vitest checks, nine Python integrity tests and application TypeScript passed. All44 preceding PDF hashes remain byte-identical. No audio or video was produced.
 
 Cumulative verified new authoring is8 lessons/32 locale packages, making13 existing-plus-new content lessons of80. The original75 scope has67 remaining. The earlier502 materialization failure is historical and resolved. Clean-commit build and durable GitHub receipt follow.
+
+M03 delivery receipt: build passed with4096MB Node heap after the default2GB limit was reached. Commit `4a35a18882ea8acb40f49a1045434461ff8c2b48` is durable on the isolated branch; tree `0a8bf18edb081afc3efac02d896b400fdba05d58` exactly matches119 files.
+
+## M04 authored and verified
+
+Three remaining M04 lessons now provide12 contextual packages,9 distinct concept diagrams,24 PDFs/48 rendered pages and12 video-text scripts. The reused M04-L02 pilot is unchanged. Concrete exercises link three600×720×400mm views and resolve a450mm conflict, calculate398/399mm cores under explicit1mm edge assumptions, and update training costs300→330 with a30 difference. These are declared exercises, not universal product dimensions or market prices.
+
+All48 PDF pages were visually inspected; proportion and section-direction figures were corrected and their final Egyptian/English pages reviewed. Browser acceptance passed24 locale/viewport cases and representative reading views were inspected. Nineteen scoped Vitest tests, TypeScript and nine Python integrity tests passed. All44 accepted original PDF hashes remain unchanged. Verified cumulative contribution is11 lessons/44 locale packages, or16 content lessons including the preceding five;64 remaining lessons are unauthored. No speech or video was generated.
+
+M04 delivery receipt: production build passed with4096MB heap. Commit `60e4b021f23d24752c3a78ca9a9e2ecc4bc37dae`, tree `04b051392991349e819e34ff63821ec940a7e5b3`, durably contains91 matching changed files on the isolated branch.
+
+## M04 Arabic arithmetic remediation
+
+Coordinator review found that right-to-left SVG text reversed arithmetic operands and the signed change. Seven numerical labels in the three M04 arithmetic geometries now use Unicode LRI/PDI. The shared renderer is unchanged. Nine Arabic-register SVG assets and six affected workbooks were regenerated; worksheet, English and all44 original accepted PDF hashes remain unchanged. All9 actual SVG renderings were visually reviewed with correct400−1−1=398,4×15=60,6×15=90 and+30 order. A dedicated regression checks isolates and operand equality;11 scoped Vitest tests,10 Python tests and TypeScript pass.
+
+Status counts are recomputed from verified batches:11 new +64 remaining =75;44 verified locale packages. A new invariant verifies batch sums, four-register totals and the75-lesson scope. M05 content drafts are not included in this completion count or remediation commit.
+
+M04 arithmetic remediation receipt: commit `5dd5886b4989eee2c254fdec6bcbb70da14037e5`, tree `bf9581bc7ea02a79b74152cf1b7cc8c8f78c4252`, durably matches22 remediation files. M05 four-register content is now drafted and remains outside verified counts pending diagrams/PDF/runtime acceptance.
+
+## User-requested safe stop
+
+Execution is paused. M05 is a separate unapproved checkpoint with four draft lessons/16 packages and generated reading assets; it is not included in11 verified lessons/44 packages or64 remaining. See `M05-CHECKPOINT.md` for exact completed runs, final visual gaps and replay evidence. No M06 manuscript, publication, reviewed-media update or audio/video production occurred.
+
+
+## M05 resumed and accepted through the owner-requested 20-lesson boundary
+
+The owner authorized completion through20 content-reviewed lessons and then a stop. M05-L01 through M05-L04 now pass final content/reading-asset review in Egyptian Arabic, MSA, Gulf Arabic and English. The batch contains16 contextual packages,12 distinct concept geometries/48 locale SVGs,32 PDFs/64 rendered pages and16 written video scripts. Narration and video are not produced or accepted by this authoring branch. No M06 package was started.
+
+The final review corrected joined numeric text, isolated Arabic arithmetic (including addition and parentheses), and adjusted Egyptian/Gulf wording. Spoken script strings omit directional control characters while display text retains them. Bottom labels were moved clear of SVG limits and separated from neighbouring labels. The drawer opening guide was changed from a line through the box label to a horizontal opening-width guide; closed and extended box dimensions remain identical. No previous lesson content, geometry or accepted PDF was changed.
+
+All64 final PDF pages were rendered and reviewed in eight contact sheets, with the critical L03 calculation page and final SVGs inspected at readable scale. The complete48-export SVG text-bounds gate passes. Browser acceptance passes32 lesson/register/viewport visits at390/1440px: correct distinct figures, valid PDF downloads, one platform locale selector, no overflow/page errors and honest video-pending copy. Twenty scoped Vitest checks, ten Python integrity tests and TypeScript pass. The structural gate reports20 available content IDs and60 missing IDs; it does not claim80 complete lessons.
+
+The original44 accepted PDF hashes and all preceding diagram definitions are unchanged; all132 pre-M05 PDF bytes remain unchanged. Source identity remains408 pages and the recorded SHA-256. The initial dirty-tree build was stopped by the existing roadmap guard; the clean-commit build result follows. Evidence is preserved in `m05-acceptance-evidence/`.
+
+Verified authoring contribution is15 lessons/60 locale packages; with the initial five the content count is20 of80. Remaining scope is60 lessons. Stop here until the owner authorizes continuation.
