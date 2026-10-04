@@ -115,6 +115,15 @@ const en = {
   receiptCloudNote: "The receipt is stored securely online. Download a copy only if you need one.",
   receiptPreviewFallback:
     "If the PDF preview is unavailable in your browser, use Download receipt.",
+  paymentAmountUnits:
+    "Enter amounts in the displayed currency: 169 means EGP 169. Decimals are allowed.",
+  paymentAllocation: "Amount assigned to this order",
+  paymentRecorded:
+    "Payment recorded. Fully paid orders are confirmed; access follows each order's start date.",
+  partialPaymentRecorded:
+    "Partial payment recorded. The order remains pending until its full amount is received and assigned.",
+  partialPaymentWarning:
+    "This is a partial allocation. It will not activate an order until its full amount is covered.",
   allocation: "Allocation amount (minor units)",
   gross: "Received total (minor units)",
   campaign: "Campaign name",
@@ -272,6 +281,13 @@ const ar: Record<keyof typeof en, string> = {
   receiptLoading: "جارٍ تحميل الإيصال…",
   receiptCloudNote: "الإيصال محفوظ بأمان سحابيًا. يمكنك تنزيل نسخة عند الحاجة.",
   receiptPreviewFallback: "إذا تعذرت معاينة PDF في متصفحك، استخدم زر تنزيل الإيصال.",
+  paymentAmountUnits:
+    "أدخل المبلغ بالعملة المعروضة: 169 تعني 169 جنيهًا. يمكنك إدخال الكسور العشرية.",
+  paymentAllocation: "المبلغ المخصص لهذا الطلب",
+  paymentRecorded:
+    "سُجّل الدفع وأُكّدت الطلبات المسددة بالكامل. تبدأ الصلاحية وفق موعد بدء كل طلب.",
+  partialPaymentRecorded: "سُجّلت دفعة جزئية. يبقى الطلب معلقًا حتى استلام كامل قيمته وتخصيصها له.",
+  partialPaymentWarning: "هذا تخصيص جزئي؛ لن يُفعّل الطلب حتى تكتمل قيمته.",
   allocation: "المبلغ المخصص (الوحدات الصغرى)",
   gross: "إجمالي المستلم (الوحدات الصغرى)",
   campaign: "اسم الحملة",
@@ -330,6 +346,14 @@ export function commerceCopy(locale: SupportedLocale): CommerceCopy {
       ...ar,
       continue: "كمّل",
       quote: "راجع السعر",
+      paymentAmountUnits:
+        "اكتب المبلغ بالعملة اللي ظاهرة: 169 يعني 169 جنيه. تقدر تكتب كسور عشرية.",
+      paymentAllocation: "المبلغ المخصص للطلب ده",
+      paymentRecorded:
+        "الدفع اتسجّل والطلبات المسددة بالكامل اتأكدت. الصلاحية بتبدأ في موعد كل طلب.",
+      partialPaymentRecorded:
+        "اتسجّلت دفعة جزئية. الطلب هيفضل معلّق لحد ما كامل قيمته توصل وتتخصص له.",
+      partialPaymentWarning: "ده مبلغ جزئي؛ الطلب مش هيتفعّل إلا لما قيمته تكمل.",
       receipt: "إيصال التحويل",
       downloadReceipt: "نزّل الإيصال",
       closeReceipt: "اقفل المعاينة",
@@ -347,6 +371,12 @@ export function commerceCopy(locale: SupportedLocale): CommerceCopy {
       receiptLoading: "جاري تحميل الإيصال…",
       receiptCloudNote: "الإيصال محفوظ بأمان أونلاين. تقدر تنزّل نسخة إذا احتجتها.",
       receiptPreviewFallback: "إذا ما ظهر ملف PDF في متصفحك، اضغط «نزّل الإيصال».",
+      paymentAmountUnits: "اكتب المبلغ بالعملة المعروضة: 169 يعني 169 جنيه. تقدر تدخل كسور عشرية.",
+      paymentAllocation: "المبلغ المخصص لهالطلب",
+      paymentRecorded:
+        "تسجّل الدفع وتأكدت الطلبات المدفوعة بالكامل. الصلاحية تبدأ حسب موعد كل طلب.",
+      partialPaymentRecorded: "تسجّلت دفعة جزئية. الطلب يبقى معلّق لين توصل قيمته كاملة وتتخصص له.",
+      partialPaymentWarning: "هذا مبلغ جزئي؛ الطلب ما يتفعّل لين تكتمل قيمته.",
       inviteTitle: "دعوتك لمسارات",
       verify: "سجّل دخولك بالإيميل المدعو وأكده لقبول الدعوة.",
     };

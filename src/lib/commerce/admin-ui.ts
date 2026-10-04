@@ -12,6 +12,17 @@ export function download(
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 export const packages = ["pro", "pro_plus", "kids"] as const;
+/** Parse a displayed EGP/USD amount exactly; storage and RPCs keep minor units. */
+export function moneyToMinor(value: string): number {
+  const normalized = value
+    .trim()
+    .replace(/[٠-٩]/g, (digit) => String("٠١٢٣٤٥٦٧٨٩".indexOf(digit)))
+    .replace("٫", ".");
+  if (!/^\d+(?:\.\d{1,2})?$/.test(normalized)) return NaN;
+  const [whole, fraction = ""] = normalized.split(".");
+  const minor = Number(whole) * 100 + Number(fraction.padEnd(2, "0"));
+  return Number.isSafeInteger(minor) && minor <= 1_000_000_000 ? minor : NaN;
+}
 export const instant = (value: string) => new Date(value).toISOString();
 export const localDateInput = (value: string | number) => {
   const date = new Date(value);

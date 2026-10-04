@@ -1,12 +1,15 @@
-import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, cleanup, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { PaymentMethods } from "./PaymentMethods";
 import { ReceiptView } from "./ReceiptUpload";
 import { AdminGroups } from "./AdminGroups";
+import { AdminPayments } from "./AdminPayments";
+import { AdminSettings } from "./AdminSettings";
+import { moneyToMinor } from "@/lib/commerce/admin-ui";
 import { commerceCopy } from "@/lib/commerce/copy";
-import type { AdminData } from "@/lib/commerce/contracts";
+import { commandSchemas, type AdminData, type Order } from "@/lib/commerce/contracts";
 const mock = vi.hoisted(() => ({
   command: vi.fn(),
   upload: vi.fn(),
@@ -53,6 +56,154 @@ beforeEach(() => {
   );
 });
 afterEach(cleanup);
+describe("administrator payment amounts", () => {
+  const order: Order = {
+    id: "00000000-0000-4000-8000-000000000009",
+    reference: "SYNTHETIC-ORDER",
+    user_id: "synthetic-user",
+    recipient_email: "buyer@example.test",
+    package: "pro",
+    billing_interval: "month",
+    review_status: "pending",
+    method: "instapay",
+    currency: "EGP",
+    original_minor: 16900,
+    final_minor: 16900,
+    expires_at: "2099-01-01T00:00:00Z",
+    group_id: null,
+    instructions_snapshot: {
+      code: "instapay",
+      enabled: true,
+      instructions: "Synthetic",
+      destination: "Synthetic",
+      currencies: ["EGP"],
+    },
+  };
+  function setup(locale: "ar-EG" | "ar-MSA" | "ar-Gulf" | "en", sample = order) {
+    const run = vi.fn().mockResolvedValue({ id: "synthetic-payment" });
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <LocaleProvider initialLocale={locale}>
+          <AdminPayments
+            data={{ ...empty, orders: [sample] }}
+            orders={[sample]}
+            access={[]}
+            run={run}
+            busy={false}
+          />
+        </LocaleProvider>
+      </QueryClientProvider>,
+    );
+    const w = commerceCopy(locale);
+    const form = within(screen.getByRole("button", { name: w.confirm }).closest("form")!);
+    fireEvent.click(form.getByRole("checkbox", { name: /SYNTHETIC-ORDER/ }));
+    fireEvent.change(form.getByLabelText(w.transaction), {
+      target: { value: "synthetic-transfer" },
+    });
+    fireEvent.click(form.getByRole("checkbox", { name: w.funds }));
+    return { run, form, w };
+  }
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "records 169 EGP as 16900 minor units and displays confirmation in %s",
+    async (locale) => {
+      const { run, form, w } = setup(locale);
+      expect(form.getByLabelText(`${w.paymentAllocation} (EGP)`)).toHaveValue(169);
+      fireEvent.change(form.getByLabelText(`${w.received} (EGP)`), { target: { value: "169" } });
+      fireEvent.click(form.getByRole("button", { name: w.confirm }));
+      await waitFor(() =>
+        expect(run).toHaveBeenCalledWith(
+          "confirm",
+          expect.objectContaining({
+            amount_minor: 16900,
+            allocations: [{ order_id: order.id, amount_minor: 16900 }],
+          }),
+        ),
+      );
+      expect(await form.findByText(w.paymentRecorded)).toBeInTheDocument();
+    },
+  );
+  it("preserves cents exactly for a supported USD payment", async () => {
+    const { run, form, w } = setup("en", {
+      ...order,
+      method: "bank",
+      currency: "USD",
+      original_minor: 699,
+      final_minor: 699,
+    });
+    fireEvent.change(form.getByLabelText(`${w.received} (USD)`), { target: { value: "6.99" } });
+    fireEvent.click(form.getByRole("button", { name: w.confirm }));
+    await waitFor(() =>
+      expect(run).toHaveBeenCalledWith(
+        "confirm",
+        expect.objectContaining({
+          amount_minor: 699,
+          allocations: [{ order_id: order.id, amount_minor: 699 }],
+        }),
+      ),
+    );
+  });
+  it("explains partial allocations before and after saving", async () => {
+    const { run, form, w } = setup("en");
+    fireEvent.change(form.getByLabelText(`${w.received} (EGP)`), { target: { value: "1.69" } });
+    fireEvent.change(form.getByLabelText(`${w.paymentAllocation} (EGP)`), {
+      target: { value: "1.69" },
+    });
+    expect(form.getByText(w.partialPaymentWarning)).toBeInTheDocument();
+    fireEvent.click(form.getByRole("button", { name: w.confirm }));
+    expect(await form.findByText(w.partialPaymentRecorded)).toBeInTheDocument();
+    expect(run).toHaveBeenCalledWith("confirm", expect.objectContaining({ amount_minor: 169 }));
+    expect(form.queryByText(w.paymentRecorded)).toBeNull();
+  });
+  it("blocks an invalid amount and keeps a server failure next to the confirmation button", async () => {
+    const { run, form, w } = setup("en");
+    fireEvent.change(form.getByLabelText(`${w.received} (EGP)`), { target: { value: "169.001" } });
+    expect(form.getByRole("button", { name: w.confirm })).toBeDisabled();
+    fireEvent.change(form.getByLabelText(`${w.received} (EGP)`), { target: { value: "169" } });
+    run.mockResolvedValue(undefined);
+    fireEvent.click(form.getByRole("button", { name: w.confirm }));
+    expect(await form.findByRole("alert")).toHaveTextContent(w.error);
+    expect(form.queryByText(w.paymentRecorded)).toBeNull();
+  });
+  it("parses major units without rounding or accepting invalid precision", () => {
+    expect(moneyToMinor("169")).toBe(16900);
+    expect(moneyToMinor("6.99")).toBe(699);
+    expect(moneyToMinor("١٦٩٫٥٠")).toBe(16950);
+    for (const value of ["", "-1", "1.001", "1e3", "10000001"])
+      expect(moneyToMinor(value)).toBeNaN();
+  });
+  it.each(["instapay", "wallet"] as const)(
+    "restricts %s configuration to EGP in both UI and server validation",
+    (code) => {
+      const method = {
+        code,
+        enabled: true,
+        destination: "Synthetic",
+        instructions: "Synthetic",
+        currencies: ["EGP"],
+      };
+      render(
+        <AdminSettings
+          data={{ ...empty, methods: [method] }}
+          w={commerceCopy("en")}
+          run={vi.fn()}
+          busy={false}
+        />,
+      );
+      const form = screen.getByRole("heading", { name: commerceCopy("en")[code] }).closest("form")!;
+    expect(within(form).queryByRole("option", { name: "USD" })).toBeNull();
+      expect(commandSchemas.configure_method.safeParse(method).success).toBe(true);
+      expect(
+        commandSchemas.configure_method.safeParse({ ...method, currencies: ["USD"] }).success,
+      ).toBe(false);
+      expect(
+        commandSchemas.configure_method.safeParse({ ...method, currencies: ["EGP", "USD"] })
+          .success,
+      ).toBe(false);
+    },
+  );
+});
 describe("private receipt preview", () => {
   const createUrl = vi.fn(() => "blob:receipt-preview"),
     revokeUrl = vi.fn();

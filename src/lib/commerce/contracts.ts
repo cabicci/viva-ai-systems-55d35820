@@ -71,15 +71,28 @@ export const commandSchemas = {
   my_list: z.object({}),
   order: z.object({ id: uuid }),
   cancel_order: z.object({ id: uuid }),
-  configure_method: z.object({
-    code: methodSchema,
-    enabled: z.boolean(),
-    instructions: z.string().max(4000),
-    instructions_localized: z.record(localeSchema, z.string().trim().min(1).max(4000)).optional(),
-    destination: z.string().max(1000),
-    qr_url: z.string().url().startsWith("https://").optional().or(z.literal("")),
-    currencies: z.array(currencySchema).min(1).max(2),
-  }),
+  configure_method: z
+    .object({
+      code: methodSchema,
+      enabled: z.boolean(),
+      instructions: z.string().max(4000),
+      instructions_localized: z.record(localeSchema, z.string().trim().min(1).max(4000)).optional(),
+      destination: z.string().max(1000),
+      qr_url: z.string().url().startsWith("https://").optional().or(z.literal("")),
+      currencies: z.array(currencySchema).min(1).max(2),
+    })
+    .superRefine((method, context) => {
+      if (
+        (method.code === "instapay" || method.code === "wallet") &&
+        (method.currencies.length !== 1 || method.currencies[0] !== "EGP")
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["currencies"],
+          message: "InstaPay and Wallet support EGP only",
+        });
+      }
+    }),
   create_group: z.object({ name: z.string().trim().min(1).max(120) }),
   import: z.object({ group_id: uuid, rows: z.array(recipientSchema).min(1).max(1000) }),
   preview_import: z.object({ group_id: uuid, rows: z.array(recipientSchema).min(1).max(1000) }),
