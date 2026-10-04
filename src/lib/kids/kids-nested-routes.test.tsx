@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-router";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { Route as KidsLayout } from "@/routes/kids";
+import { Route as KidsCurriculum } from "@/routes/kids.curriculum";
 import { Route as KidsIndex } from "@/routes/kids.index";
 import { Route as Family } from "@/routes/kids.family";
 import { Route as LevelLayout } from "@/routes/kids.$levelId";
@@ -57,6 +58,11 @@ function mountKids(start = "/kids?locale=en") {
     path: "/",
     getParentRoute: () => kids,
   } as unknown as Parameters<typeof KidsIndex.update>[0]);
+  const curriculum = KidsCurriculum.update({
+    id: "/curriculum",
+    path: "/curriculum",
+    getParentRoute: () => kids,
+  } as unknown as Parameters<typeof KidsCurriculum.update>[0]);
   const level = LevelLayout.update({
     id: "/$levelId",
     path: "/$levelId",
@@ -78,7 +84,7 @@ function mountKids(start = "/kids?locale=en") {
     getParentRoute: () => level,
   } as unknown as Parameters<typeof Lesson.update>[0]);
   const tree = root.addChildren([
-    kids.addChildren([kidsIndex, family, level.addChildren([levelIndex, lesson])]),
+    kids.addChildren([kidsIndex, curriculum, family, level.addChildren([levelIndex, lesson])]),
   ]);
   const router = createRouter({
     routeTree: tree,
@@ -95,14 +101,24 @@ afterEach(() => {
 });
 
 describe("Kids nested routes", () => {
-  it("shows level summaries and links to platform pricing without placing prices in Kids landing", async () => {
+  it("matches the static curriculum route before the dynamic level route and keeps visitors out of lesson links", async () => {
+    mountKids("/kids/curriculum?locale=en");
+    expect(
+      await screen.findByRole("heading", { level: 1, name: "Curriculum — Masaarat Kids" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Kids route not found")).not.toBeInTheDocument();
+    expect(document.querySelectorAll("main li")).toHaveLength(36);
+    expect(document.querySelectorAll("a[href^='/kids/level-']")).toHaveLength(0);
+  });
+
+  it("shows level summaries and links to Kids pricing without placing prices in Kids landing", async () => {
     mountKids();
     expect(
       await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "View Kids plans and prices" })).toHaveAttribute(
       "href",
-      "/pricing?locale=en#kids",
+      "/kids/pricing?locale=en",
     );
     expect(screen.queryByText("Kids family pricing")).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Get started with Kids" })).toHaveAttribute(

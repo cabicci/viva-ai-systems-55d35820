@@ -6,7 +6,14 @@ import { lineMeta } from "@/lib/learning-lines";
 
 export type PublicRouteMetaKind =
   "home" | "kids" | "pricing" | "terms" | "privacy" | "contact" | "login" | "signup" | "root";
-type LineMetaKind = "ai" | "about" | "kidsPricing" | "technical" | "technicalPricing";
+type LineMetaKind =
+  | "ai"
+  | "about"
+  | "kidsPricing"
+  | "technical"
+  | "technicalPricing"
+  | "kidsCurriculum"
+  | "technicalCurriculum";
 
 export type RouteMetaTag =
   { title: string } | { name: string; content: string } | { property: string; content: string };
@@ -66,7 +73,9 @@ export function buildLocalizedPublicMeta(
     kind === "about" ||
     kind === "kidsPricing" ||
     kind === "technical" ||
-    kind === "technicalPricing"
+    kind === "technicalPricing" ||
+    kind === "kidsCurriculum" ||
+    kind === "technicalCurriculum"
   )
     return lineMeta(locale, kind);
   if (kind === "signup") {

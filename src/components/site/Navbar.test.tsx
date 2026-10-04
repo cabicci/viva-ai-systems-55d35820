@@ -2,7 +2,13 @@ import { fireEvent, render, screen, within, cleanup } from "@testing-library/rea
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { Navbar } from "./Navbar";
 import { LearningLineCards } from "./LearningLines";
-import { getLineCopy, LEARNING_LINES, LINE_PRICING, LINE_ROUTES } from "@/lib/learning-lines";
+import {
+  getLineCopy,
+  LEARNING_LINES,
+  LINE_PRICING,
+  LINE_ROUTES,
+  LINE_CURRICULUM,
+} from "@/lib/learning-lines";
 import { SUPPORTED_LOCALES } from "@/lib/locale/types";
 const state = vi.hoisted(() => ({
   path: "/",
@@ -102,6 +108,10 @@ describe("learning lines and shared account navigation", () => {
       expect(within(desktop).getByRole("link", { name: c.plans })).toHaveAttribute(
         "href",
         `${LINE_PRICING[line]}?locale=en`,
+      );
+      expect(within(desktop).getByRole("link", { name: c.paths })).toHaveAttribute(
+        "href",
+        `${LINE_CURRICULUM[line]}?locale=en`,
       );
       fireEvent.click(screen.getByRole("button", { name: c.switch }));
       const switcher = screen.getByRole("navigation", { name: c.switch });

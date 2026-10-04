@@ -7,8 +7,10 @@ export const SAFE_LINE_RETURNS = [
   "/curriculum",
   "/kids",
   "/kids/pricing",
+  "/kids/curriculum",
   "/technical",
   "/technical/pricing",
+  "/technical/curriculum",
 ] as const;
 export type AuthIntentSearch = {
   locale?: string;

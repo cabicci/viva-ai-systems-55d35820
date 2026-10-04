@@ -8,6 +8,11 @@ export const LINE_PRICING = {
   kids: "/kids/pricing",
   technical: "/technical/pricing",
 } as const;
+export const LINE_CURRICULUM = {
+  ai: "/curriculum",
+  kids: "/kids/curriculum",
+  technical: "/technical/curriculum",
+} as const;
 export const LINE_LOGOS = {
   ai: "/brand/masaarat-ai.png",
   kids: "/brand/masaarat-kids.png",
@@ -67,7 +72,7 @@ const copy = {
   learning: ["تعلّمي", "تعلّمي", "تعلّمي", "My learning"],
   overview: ["عن المجال", "عن المجال", "عن المجال", "Overview"],
   plans: ["الباقات", "الباقات", "الباقات", "Plans"],
-  paths: ["المسارات", "المسارات", "المسارات", "Learning paths"],
+  paths: ["المنهج", "المنهج", "المنهج", "Curriculum"],
   ai: ["الذكاء الاصطناعي", "الذكاء الاصطناعي", "الذكاء الاصطناعي", "Artificial intelligence"],
   kids: ["مسارات كيدز", "مسارات كيدز", "مسارات كيدز", "Masaarat Kids"],
   technical: ["التعليم المهني", "التعليم المهني", "التعليم المهني", "Vocational learning"],
@@ -84,10 +89,10 @@ const copy = {
     "Age-appropriate AI learning for children, guided by a parent. Age levels, lessons and practical activities, with family management in one account.",
   ],
   technicalIntro: [
-    "مهارات مهنية تتعلمها خطوة بخطوة، من الأساسيات للتطبيق العملي. البداية مع النجارة وصناعة الأثاث، من فهم الخامات والأدوات لتخطيط وتنفيذ الشغل.",
-    "مهارات مهنية تُكتسب تدريجيًا من الأساسيات إلى التطبيق العملي. البداية مع النجارة وصناعة الأثاث، من فهم المواد والأدوات إلى تخطيط العمل وتنفيذه.",
-    "مهارات مهنية تتعلّمها خطوة بخطوة، من الأساسيات للتطبيق العملي. البداية مع النجارة وصناعة الأثاث، من فهم الخامات والأدوات إلى تخطيط العمل وتنفيذه.",
-    "Build vocational skills step by step, from foundations to practical work. Starting with carpentry and furniture making: materials, tools, planning and execution.",
+    "مجال للمهارات المهنية، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات مهنية تانية هتنضاف بعد كده.",
+    "مجال للمهارات المهنية يبدأ بمسار النجارة وصناعة الأثاث، من تحليل الاحتياج والتصميم إلى تخطيط التصنيع والتركيب. ستُضاف مسارات مهنية أخرى لاحقًا.",
+    "مجال للمهارات المهنية، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات مهنية ثانية بتنضاف لاحقًا.",
+    "A vocational learning area, starting with carpentry and furniture making: from requirements and design to production and installation planning. More vocational paths will follow.",
   ],
   shared: [
     "حساب واحد. واختيارك هو اللي يحدد رحلتك.",
@@ -121,16 +126,16 @@ const copy = {
     "Carpentry and furniture making",
   ],
   preparing: [
-    "المسار بيتجهّز",
-    "المسار قيد الإعداد",
-    "المسار قيد التجهيز",
-    "This path is being prepared",
+    "محتوى الدروس جاهز، والفيديوهات في الإنتاج",
+    "محتوى الدروس جاهز، والفيديوهات قيد الإنتاج",
+    "محتوى الدروس جاهز، والفيديوهات قيد الإنتاج",
+    "Lesson content is ready; videos are in production",
   ],
   preparingIntro: [
-    "بنجهّز رحلة من الصفر للاحتراف: شرح وتطبيقات وصور واختبارات. الدروس والاشتراك هيتاحوا بعد اكتمال تجهيز المسار.",
-    "يجري إعداد رحلة من الأساسيات إلى الاحتراف، تضم شروحًا وتطبيقات وصورًا واختبارات. ستتاح الدروس والاشتراك بعد اكتمال إعداد المسار.",
-    "نجهّز رحلة من الأساسيات للاحتراف، فيها شرح وتطبيقات وصور واختبارات. الدروس والاشتراك تتاح بعد اكتمال تجهيز المسار.",
-    "A journey from foundations to professional practice is being prepared, with explanations, activities, visuals and quizzes. Lessons and enrolment will open when the path is ready.",
+    "محتوى دروس النجارة وصناعة الأثاث جاهز بالشرح والتطبيقات والصور والاختبارات. الفيديوهات لسه في الإنتاج؛ تقدر تتعرّف على المنهج والباقات هنا.",
+    "محتوى دروس النجارة وصناعة الأثاث جاهز، ويضم الشرح والتطبيقات والصور والاختبارات. الفيديوهات قيد الإنتاج؛ يمكنك استعراض المنهج والتعرّف على الباقات هنا.",
+    "محتوى دروس النجارة وصناعة الأثاث جاهز بالشرح والتطبيقات والصور والاختبارات. الفيديوهات قيد الإنتاج؛ تقدر تطّلع على المنهج والباقات هنا.",
+    "Carpentry and furniture lesson content is ready, with explanations, activities, visuals and quizzes. Videos are in production; explore the curriculum and plans here.",
   ],
   technicalPrice: [
     "باقة التعليم المهني بنفس سعر Pro Plus، واشتراكها مستقل.",
@@ -139,11 +144,43 @@ const copy = {
     "The vocational plan is priced at the same rate as Pro Plus, with an independent subscription.",
   ],
   unavailable: [
-    "الاشتراك متاح بعد تجهيز المسار",
-    "يتاح الاشتراك بعد اكتمال المسار",
-    "الاشتراك يتاح بعد تجهيز المسار",
-    "Enrolment opens when the path is ready",
+    "موعد فتح الاشتراك هيتعلن لاحقًا",
+    "سيُعلن موعد إتاحة الاشتراك لاحقًا",
+    "موعد إتاحة الاشتراك بيُعلن لاحقًا",
+    "Enrolment availability will be announced",
   ],
+  firstTechnicalTrack: [
+    "أول مسار في التعليم المهني",
+    "أول مسار في التعليم المهني",
+    "أول مسار في التعليم المهني",
+    "The first vocational learning path",
+  ],
+  trackOutline: [
+    "محاور مسار النجارة وصناعة الأثاث",
+    "محاور مسار النجارة وصناعة الأثاث",
+    "محاور مسار النجارة وصناعة الأثاث",
+    "Carpentry and furniture curriculum",
+  ],
+  futureTracks: [
+    "النجارة وصناعة الأثاث مسار واحد جوّه التعليم المهني. مسارات تانية هتنضاف بعد كده.",
+    "النجارة وصناعة الأثاث مسار ضمن التعليم المهني. ستُضاف مسارات أخرى لاحقًا.",
+    "النجارة وصناعة الأثاث مسار ضمن التعليم المهني. مسارات ثانية بتنضاف لاحقًا.",
+    "Carpentry and furniture making is one path within vocational learning. More paths will be added later.",
+  ],
+  catalogLoading: [
+    "جارٍ تحميل عناوين الدروس",
+    "جارٍ تحميل عناوين الدروس",
+    "جارٍ تحميل عناوين الدروس",
+    "Loading lesson titles",
+  ],
+  catalogUnavailable: [
+    "عناوين الدروس مش متاحة دلوقتي. جرّب تحديث الصفحة.",
+    "عناوين الدروس غير متاحة حاليًا. حاول تحديث الصفحة.",
+    "عناوين الدروس مو متاحة الحين. جرّب تحديث الصفحة.",
+    "Lesson titles are currently unavailable. Try refreshing the page.",
+  ],
+  lessonLabel: ["درس", "درسًا", "درس", "lessons"],
+  moduleLabel: ["وحدة تعليمية", "وحدة تعليمية", "وحدة تعليمية", "modules"],
   aboutIntro: [
     "مسارات بتجمع تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني في منصة واحدة. كل مجال له طريقه ومحتواه وباقاته، والتعلّم مبني على الفهم والتطبيق.",
     "تجمع مسارات تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني في منصة واحدة. لكل مجال مساراته ومحتواه وباقاته، ضمن منهج يربط الفهم بالتطبيق.",
@@ -171,7 +208,14 @@ export function getLineCopy(locale: SupportedLocale) {
 }
 export function lineMeta(
   locale: SupportedLocale,
-  kind: LearningLine | "platform" | "about" | "kidsPricing" | "technicalPricing",
+  kind:
+    | LearningLine
+    | "platform"
+    | "about"
+    | "kidsPricing"
+    | "technicalPricing"
+    | "kidsCurriculum"
+    | "technicalCurriculum",
 ) {
   const c = getLineCopy(locale);
   const path = {
@@ -182,17 +226,21 @@ export function lineMeta(
     about: "/about",
     kidsPricing: "/kids/pricing",
     technicalPricing: "/technical/pricing",
+    kidsCurriculum: "/kids/curriculum",
+    technicalCurriculum: "/technical/curriculum",
   }[kind];
   const title =
-    kind === "platform"
-      ? c.platformTitle
-      : kind === "about"
-        ? c.about
-        : kind === "kidsPricing"
-          ? `${c.kids} — ${c.plans}`
-          : kind === "technicalPricing"
-            ? `${c.technical} — ${c.plans}`
-            : c[kind];
+    kind === "kidsCurriculum" || kind === "technicalCurriculum"
+      ? `${kind === "kidsCurriculum" ? c.kids : c.technical} — ${c.paths}`
+      : kind === "platform"
+        ? c.platformTitle
+        : kind === "about"
+          ? c.about
+          : kind === "kidsPricing"
+            ? `${c.kids} — ${c.plans}`
+            : kind === "technicalPricing"
+              ? `${c.technical} — ${c.plans}`
+              : c[kind];
   const description =
     kind === "platform"
       ? c.platformIntro

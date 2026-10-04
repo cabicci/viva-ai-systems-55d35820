@@ -8,6 +8,7 @@ import {
   LINE_LOGOS,
   LINE_ROUTES,
   LINE_PRICING,
+  LINE_CURRICULUM,
   type LearningLine,
 } from "@/lib/learning-lines";
 
@@ -97,6 +98,13 @@ export function LineIntroduction({ line }: { line: LearningLine }) {
               className="mt-6 inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
             >
               {c.plans}
+            </Link>
+            <Link
+              to={LINE_CURRICULUM[line]}
+              search={search()}
+              className="ms-4 mt-6 inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
+            >
+              {c.paths}
             </Link>
           </div>
           <div className="rounded-2xl p-6">

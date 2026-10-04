@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
-import { Sidebar } from "@/components/dashboard/Sidebar";
+import {
+  CurriculumLayout,
+  CurriculumSectionHeader as SectionHeader,
+  CURRICULUM_MODULE_CLASS,
+  CURRICULUM_ROW_CLASS,
+} from "@/components/site/CurriculumLayout";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Clock, Lock, Map as MapIcon, Play, ArrowRight } from "lucide-react";
@@ -50,7 +55,6 @@ export const Route = createFileRoute("/curriculum")({
 function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
   const { tier, isPro, isAdmin } = useEntitlement();
-  const { dir } = useLocale();
   const t = useUiString();
   const search = Route.useSearch();
   const allModules = useMemo(() => PATHS.flatMap((p) => p.modules), []);
@@ -88,140 +92,99 @@ function CurriculumPage() {
     .replace("{upcoming}", String(total - available));
 
   return (
-    <div className="min-h-dvh flex flex-col overflow-x-clip" dir={dir}>
-      <Sidebar />
-      <main className="flex-1 p-4 sm:p-6 md:p-10 max-w-6xl mx-auto w-full min-w-0">
-        {/* Hero */}
-        <header className="glass rounded-3xl p-5 sm:p-8 md:p-10 mb-10 relative overflow-hidden">
-          <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/30 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
-          <div className="relative">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary shrink-0">
-                <MapIcon className="h-6 w-6 text-primary-foreground" />
-              </span>
-              <p className="text-primary font-mono text-sm">{t("curriculum.badge")}</p>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight break-words">
-              {t("curriculum.title1")}{" "}
-              <span className="text-gradient">{t("curriculum.titleHighlight")}</span>{" "}
-              {t("curriculum.title2")}
-            </h1>
-            <p className="text-muted-foreground mt-3 max-w-2xl">{t("curriculum.subtitle")}</p>
-
-            <div className="mt-6 max-w-md">
-              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-xs text-muted-foreground mb-1.5 font-mono">
-                <span>{t("curriculum.progress.label")}</span>
-                <span className="text-end">{progressLessons}</span>
-              </div>
-              <Progress value={pct} />
-              <p className="text-[11px] text-muted-foreground mt-2 font-mono">{progressFooter}</p>
-            </div>
+    <CurriculumLayout
+      line="ai"
+      subtitle={t("curriculum.subtitle")}
+      summary={
+        <div className="max-w-md">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-xs text-muted-foreground mb-1.5 font-mono">
+            <span>{t("curriculum.progress.label")}</span>
+            <span className="text-end">{progressLessons}</span>
           </div>
-        </header>
+          <Progress value={pct} />
+          <p className="text-[11px] text-muted-foreground mt-2 font-mono">{progressFooter}</p>
+        </div>
+      }
+    >
+      {/* Three-tier sections (v14): User → Operator → Builder */}
+      {(() => {
+        const intros = PATHS.filter((p) => p.kind === "intro");
+        const userPaths = PATHS.filter((p) => p.kind !== "intro" && p.tier === "user");
+        const operatorPaths = PATHS.filter((p) => p.tier === "operator");
+        const builderPaths = PATHS.filter((p) => p.tier === "builder");
 
-        {/* Three-tier sections (v14): User → Operator → Builder */}
-        {(() => {
-          const intros = PATHS.filter((p) => p.kind === "intro");
-          const userPaths = PATHS.filter((p) => p.kind !== "intro" && p.tier === "user");
-          const operatorPaths = PATHS.filter((p) => p.tier === "operator");
-          const builderPaths = PATHS.filter((p) => p.tier === "builder");
+        const renderPaths = (paths: typeof PATHS) =>
+          paths.map((p) => (
+            <PathBlock
+              key={p.id}
+              path={p}
+              progress={store}
+              getStatus={getStatus}
+              mastery={mastery}
+              isPro={isPro}
+              tier={tier}
+              isAdmin={isAdmin}
+              introCompletedCount={introCompletedCount}
+              introTotal={introIds.length}
+            />
+          ));
 
-          const renderPaths = (paths: typeof PATHS) =>
-            paths.map((p) => (
-              <PathBlock
-                key={p.id}
-                path={p}
-                progress={store}
-                getStatus={getStatus}
-                mastery={mastery}
-                isPro={isPro}
-                tier={tier}
-                isAdmin={isAdmin}
-                introCompletedCount={introCompletedCount}
-                introTotal={introIds.length}
-              />
-            ));
-
-          return (
-            <div className="space-y-16">
-              {intros.length > 0 && (
-                <section>
-                  <SectionHeader
-                    eyebrow={t("curriculum.section.intro.eyebrow")}
-                    title={t("curriculum.section.intro.title")}
-                    subtitle={t("curriculum.section.intro.subtitle")}
-                  />
-                  <div className="space-y-10">{renderPaths(intros)}</div>
-                </section>
-              )}
-
-              {userPaths.length > 0 && (
-                <section>
-                  <SectionHeader
-                    eyebrow={t("curriculum.section.user.eyebrow")}
-                    title={t("curriculum.section.user.title")}
-                    subtitle={t("curriculum.section.user.subtitle")}
-                  />
-                  <div className="space-y-10">{renderPaths(userPaths)}</div>
-                </section>
-              )}
-
-              {operatorPaths.length > 0 && (
-                <section>
-                  <SectionHeader
-                    eyebrow={t("curriculum.section.operator.eyebrow")}
-                    title={t("curriculum.section.operator.title")}
-                    subtitle={t("curriculum.section.operator.subtitle")}
-                  />
-                  <div className="space-y-10">{renderPaths(operatorPaths)}</div>
-                </section>
-              )}
-
-              {builderPaths.length > 0 && (
-                <section>
-                  <SectionHeader
-                    eyebrow={t("curriculum.section.builder.eyebrow")}
-                    title={t("curriculum.section.builder.title")}
-                    subtitle={t("curriculum.section.builder.subtitle")}
-                  />
-                  <div className="space-y-10">{renderPaths(builderPaths)}</div>
-                </section>
-              )}
-              <section aria-label="Masaarat Kids">
-                <KidsPathCard />
+        return (
+          <div className="space-y-16">
+            {intros.length > 0 && (
+              <section>
+                <SectionHeader
+                  eyebrow={t("curriculum.section.intro.eyebrow")}
+                  title={t("curriculum.section.intro.title")}
+                  subtitle={t("curriculum.section.intro.subtitle")}
+                />
+                <div className="space-y-10">{renderPaths(intros)}</div>
               </section>
-            </div>
-          );
-        })()}
-      </main>
-    </div>
+            )}
+
+            {userPaths.length > 0 && (
+              <section>
+                <SectionHeader
+                  eyebrow={t("curriculum.section.user.eyebrow")}
+                  title={t("curriculum.section.user.title")}
+                  subtitle={t("curriculum.section.user.subtitle")}
+                />
+                <div className="space-y-10">{renderPaths(userPaths)}</div>
+              </section>
+            )}
+
+            {operatorPaths.length > 0 && (
+              <section>
+                <SectionHeader
+                  eyebrow={t("curriculum.section.operator.eyebrow")}
+                  title={t("curriculum.section.operator.title")}
+                  subtitle={t("curriculum.section.operator.subtitle")}
+                />
+                <div className="space-y-10">{renderPaths(operatorPaths)}</div>
+              </section>
+            )}
+
+            {builderPaths.length > 0 && (
+              <section>
+                <SectionHeader
+                  eyebrow={t("curriculum.section.builder.eyebrow")}
+                  title={t("curriculum.section.builder.title")}
+                  subtitle={t("curriculum.section.builder.subtitle")}
+                />
+                <div className="space-y-10">{renderPaths(builderPaths)}</div>
+              </section>
+            )}
+            <section aria-label="Masaarat Kids">
+              <KidsPathCard />
+            </section>
+          </div>
+        );
+      })()}
+    </CurriculumLayout>
   );
 }
 
 /* -------------------------------------------------------------- */
-
-function SectionHeader({
-  eyebrow,
-  title,
-  subtitle,
-}: {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-}) {
-  return (
-    <div className="mb-5 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
-      <div>
-        <p className="text-[11px] font-mono text-primary tracking-widest mb-1">{eyebrow}</p>
-        <h2 className="text-2xl md:text-3xl font-black">
-          <span className="text-gradient">{title}</span>
-        </h2>
-        <p className="text-sm text-muted-foreground mt-1 max-w-2xl">{subtitle}</p>
-      </div>
-    </div>
-  );
-}
 
 function PathBlock({
   path,
@@ -359,7 +322,7 @@ function PathBlock({
               <article
                 key={m.id}
                 id={`module-${m.id}`}
-                className={`rounded-2xl p-5 flex flex-col gap-4 transition border border-border/40 bg-background/40 ${
+                className={`${CURRICULUM_MODULE_CLASS} ${
                   !moduleUnlocked
                     ? "opacity-60"
                     : moduleCompleted
@@ -490,8 +453,7 @@ function LessonRow({
   const accessible = access.isAccessible && lessonGate.kind === "open";
   const badge = String(orderedIds.indexOf(lesson.id) + 1);
 
-  const baseClasses =
-    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition border border-transparent";
+  const baseClasses = CURRICULUM_ROW_CLASS;
 
   const StateIcon = !accessible ? Lock : completed ? CheckCircle2 : inProgress ? Clock : Play;
 
