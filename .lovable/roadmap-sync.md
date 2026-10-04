@@ -295,3 +295,13 @@ M05 content accepted from bbdbf4ad: four lessons/four locales,12 separate concep
 Authoring gates:160 browser lesson/locale/viewport cases at390/1440,240 SVG label-boundary checks,320 PDF pages visually reviewed, contextual four-register facts and assessment alignment. Coordinator read all20 Egyptian packages, compared selected MSA/Gulf/English concepts, corrected formal Egyptian phrasings and reviewed400 rendered Remotion frames through all240 concept frames plus representative intro/case frames. The unsupported amber paint defect was corrected in definitions only; a rendered-paint regression now rejects invalid SVG colors. Renderer, TTS pipeline and earlier accepted media identities are unchanged.
 
 Correct pronunciation is mandatory independently in Egyptian, MSA, Gulf and English. All listening decisions remain pending; text/volume/render/production evidence is not listener approval. The reviewed media manifest is bounded to40 IDs. Main-site integration,account progress,entitlements,database and billing remain unchanged. Final integrated gates/build/GitHub/private-preview receipts follow.
+
+
+## Final private publication receipt — 40 lessons — 2026-10-04
+
+Content stopped at M11-L02 (40 lessons / 160 localized packages / 324 PDFs); M11-L03 requires a new continuation request.
+Owner-private preview published successfully: https://masaarat-furniture-lesson-preview.khalillotfy.chatgpt.site
+Site source: `0be59e63df8e4fbaec937dec97e41d3a393e3dba`; deployment: `appgdep_6ac23f3bd21c81918f13655ee60cccdc`.
+Compiled content tree: `411c72047ac742543786dc3cb4ad582e52d7f923`, durable content commit: `cef9a4591ec9bddd444dd7a3e4f787c4cc936926`. Experiment integration: `44c4343a595d8757497ecadc17c8f6f8d2b06e4f`; preserves later media bot updates.
+Preview has 68 video mappings for 17 lessons at build time. Video run 37200455123 is pending behind in-progress run 37197540381; do not claim production completion. Actual pronunciation acceptance remains pending independently for ar-EG, ar-MSA, ar-Gulf, and en.
+Root gates passed: 17 Vitest, 10 Python integrity tests, TypeScript, scoped ESLint, production build. No main-platform release.
