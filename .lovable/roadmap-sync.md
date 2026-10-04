@@ -182,3 +182,13 @@ scope: ui
 source: user
 summary: Add a TECH wordmark using the KIDS logo lockup, letter colors and typography, with a localized technical-education caption. Show it immediately beside KIDS in desktop/mobile navigation only when the experimental lesson opts in.
 sync_status: existing temporary branch/private preview only; normal Navbar callers retain current navigation
+
+## 2026-10-04 — technical journey implementation
+
+[roadmap:furniture-pilot-temporary-branch]
+scope: lessons
+source: user
+summary: Begin the authorized technical journey on the existing experiment branch: source-free 7-section/21-module/80-lesson catalogue; original first-module content in four registers; reading, examples, quizzes, saved practice, PDF-only downloads, contextual diagrams and device-local preview progress. Reuse M04-L02 and extend its authored copy, PDFs and narrated assembly script to four locales. Main-site package/account integration follows content acceptance.
+sync_status: implementation in progress on temporary branch; checks, media production and preview deployment not yet accepted; no central roadmap_items database, billing, account permissions, main merge or production changes
+
+Acceptance update: 22 scoped tests, TypeScript, scoped lint, production build, Remotion geometry and audio gate passed. Local browser checks accepted four locales on mobile/desktop, PDF names, reload persistence and isolated endpoints. The first 5 authored lesson IDs are ready for reading; 75 catalogue entries remain in preparation. 20 production cells are configured, with one compatible existing English video reusable and 19 newly rendered cells pending. No production or account-progress integration is claimed.

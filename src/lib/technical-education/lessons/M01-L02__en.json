@@ -1,0 +1,72 @@
+{
+  "id": "M01-L02",
+  "intro": "A polished drawing cannot repair an incomplete survey. Record dimensions against clear references, document obstacles and keep unverified measurements visible.",
+  "goals": [
+    "Choose a reference",
+    "Document obstacles and movement",
+    "Check dimensions and disagreements"
+  ],
+  "sections": [
+    {
+      "id": "step-1",
+      "title": "Choose a reference",
+      "text": "Sketch the walls and openings and name a measurement reference. Use one unit throughout and define the height datum. Record whether flooring and wall finishes are final. A preliminary measurement is not a fabrication dimension if the site build-up can still change.",
+      "diagram": "survey",
+      "caption": "A conceptual diagram; read it with the explanation."
+    },
+    {
+      "id": "step-2",
+      "title": "Document obstacles and movement",
+      "text": "Record door swings, windows, skirting, outlets, pipes and projections, and link photographs to the plan. Consider moving parts as well as the furniture’s closed footprint. A photograph does not establish a fixing substrate or its capacity; identify what information still needs specialist confirmation.",
+      "diagram": "survey",
+      "caption": "A conceptual diagram; read it with the explanation."
+    },
+    {
+      "id": "step-3",
+      "title": "Check dimensions and disagreements",
+      "text": "Measure at additional positions when unevenness is possible and retain the actual readings. Compare dimension chains with the overall dimension. A mismatch calls for investigation, not an invented allowance. Deliver a dated survey plan, linked photographs and a list of open questions before releasing construction drawings.",
+      "diagram": "survey",
+      "caption": "A conceptual diagram; read it with the explanation."
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "text": "In this teaching example, an opening measures 1200 mm near the floor and 1194 mm higher up. Retain both readings and their locations. Review the surface condition before deciding the cabinet width or infill detail.",
+    "decision": "Decision: the 6 mm difference needs investigation; it is not an approved installation allowance."
+  },
+  "quiz": [
+    {
+      "id": "decision",
+      "question": "What should you do when the dimension chain disagrees with the overall measurement?",
+      "options": [
+        "Change the readings to make them match",
+        "Recheck the measurement and reference and record the cause",
+        "Ignore the overall dimension"
+      ],
+      "correct": 1,
+      "explanation": "Decision: the 6 mm difference needs investigation; it is not an approved installation allowance."
+    }
+  ],
+  "assignment": {
+    "prompt": "Survey a storage location: include a dated plan, door swing, services, numbered photographs and any differing readings.",
+    "fields": [
+      "References, units and readings",
+      "Obstacles and linked photographs",
+      "Disagreements and open questions"
+    ],
+    "criteria": [
+      "Each decision connects to a fact or a clear open question.",
+      "The deliverable is complete, dated and reviewable.",
+      "Unconfirmed information is identified before release."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I know the practice is complete?",
+      "answer": "Decision: the 6 mm difference needs investigation; it is not an approved installation allowance.",
+      "sectionId": "step-3"
+    }
+  ],
+  "locale": "en",
+  "title": "Survey a site and record obstacles"
+}

@@ -32,7 +32,7 @@ def mux_audio(silent, audio, output):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--locale", choices=["ar-EG", "en"], required=True)
+    parser.add_argument("--locale", choices=["ar-EG", "ar-MSA", "ar-Gulf", "en"], required=True)
     args = parser.parse_args()
     scripts = json.loads((ROOT / "remotion/src/furniture/script.json").read_text())
     scenes = scripts[args.locale]
@@ -40,9 +40,9 @@ def main():
     work = Path("/tmp") / work_id
     work.mkdir(parents=True, exist_ok=True)
     audio = work / "audio/master.mp3"
-    segments = [(i, "Charon", scene["spoken"], "") for i, scene in enumerate(scenes)]
+    segments = [(i, "Charon", scene["spoken"], scene.get("focus", "")) for i, scene in enumerate(scenes)]
     durations = synthesize_segments(segments, str(audio.parent), str(audio),
-                                   locale=None if args.locale == "ar-EG" else "en")
+                                   locale=None if args.locale == "ar-EG" else args.locale)
     frames = [math.ceil((duration + (GAP_MS / 1000 if i < len(durations) - 1 else 0.5)) * 30)
               for i, duration in enumerate(durations)]
     props = work / "props.json"

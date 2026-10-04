@@ -6,6 +6,8 @@ import type { SupportedLocale } from "@/lib/locale/types";
 import { getPilotCopy, resolvePilotLocale } from "@/lib/furniture-pilot/content";
 import { getBunnyEmbedUrlForLocale } from "@/lib/bunny-videos";
 import { splitTechnicalText } from "@/lib/furniture-pilot/technical-text";
+import { useTechnicalPreviewProgress } from "@/lib/technical-education/preview-progress";
+import { getTechnicalCopy } from "@/lib/technical-education/copy";
 import {
   SAMPLE,
   PILOT_ID,
@@ -59,6 +61,9 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
   const locale = resolvePilotLocale(requestedLocale);
   const bunnyEmbed = getBunnyEmbedUrlForLocale(PILOT_ID, locale);
   const copy = getPilotCopy(locale);
+  const journeyCopy = getTechnicalCopy(locale);
+  const { progress, update } = useTechnicalPreviewProgress();
+  const stored = progress["M04-L02"];
   const c = copy.labels;
   const [tab, setTab] = useState<SectionId>("reading");
   const [read, setRead] = useState(false);
@@ -88,7 +93,10 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
   const taskResults = checkAssignment(task);
   const taskPassed = taskSubmitted && taskResults.every((result) => result.correct);
   const quizPassed = quizSubmitted && quiz.passed;
-  const completed = Number(read) + Number(quizPassed) + Number(taskPassed);
+  const completed =
+    Number(read || stored?.read) +
+    Number(quizPassed || stored?.quizPassed) +
+    Number(taskPassed || stored?.practiceReviewed);
   const panelClass = "rounded-3xl border border-border bg-card p-5 md:p-8";
   const inputClass =
     "mt-2 min-h-11 w-full rounded-xl border border-border bg-background px-3 py-2 text-start focus-visible:outline-2 focus-visible:outline-primary";
@@ -99,6 +107,12 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
       dir={locale === "en" ? "ltr" : "rtl"}
       className="mx-auto w-full max-w-7xl space-y-6 px-4 py-8 md:py-12"
     >
+      <a
+        className="inline-flex font-bold text-primary"
+        href={`/experiments/technical-education?locale=${locale}`}
+      >
+        {journeyCopy.back}
+      </a>
       <header className={`${panelClass} bg-gradient-to-br from-accent/30 via-card to-secondary/30`}>
         <span className="inline-flex rounded-full border border-primary/30 bg-card px-3 py-1 text-xs font-bold text-primary">
           {copy.draft}
@@ -227,7 +241,14 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
                   </figure>
                 </article>
               ))}
-              <Button onClick={() => setRead(true)}>{read ? c.readDone : c.markRead}</Button>
+              <Button
+                onClick={() => {
+                  setRead(true);
+                  update("M04-L02", { read: true });
+                }}
+              >
+                {read || stored?.read ? c.readDone : c.markRead}
+              </Button>
             </div>
           )}
 
@@ -397,6 +418,7 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
               onSubmit={(event) => {
                 event.preventDefault();
                 setQuizSubmitted(true);
+                update("M04-L02", { quizPassed: quiz.passed });
               }}
             >
               {copy.quiz.map((question, index) => (
@@ -418,6 +440,7 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
                           onChange={() => {
                             setAnswers((previous) => ({ ...previous, [question.id]: optionIndex }));
                             setQuizSubmitted(false);
+                            update("M04-L02", { quizPassed: false });
                           }}
                         />
                         <span>{technicalText(option)}</span>
@@ -448,6 +471,9 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
               onSubmit={(event) => {
                 event.preventDefault();
                 setTaskSubmitted(true);
+                update("M04-L02", {
+                  practiceReviewed: taskResults.every((result) => result.correct),
+                });
               }}
             >
               <p className="rounded-2xl bg-accent/20 p-5 leading-8">{c.worksheet}</p>
@@ -465,6 +491,7 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
                       onChange={(event) => {
                         setTask((previous) => ({ ...previous, [key]: event.target.value }));
                         setTaskSubmitted(false);
+                        update("M04-L02", { practiceReviewed: false });
                       }}
                     />
                     {taskSubmitted && (

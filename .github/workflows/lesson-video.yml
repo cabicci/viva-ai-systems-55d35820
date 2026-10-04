@@ -18,6 +18,7 @@ on:
       - remotion/src/furniture/**
       - remotion/scripts/build-furniture-pilot.py
       - remotion/scripts/test_furniture_audio.py
+      - remotion/scripts/build-technical-lesson.py
       - src/lib/furniture-pilot/model.ts
       - .github/workflows/lesson-video.yml
       - .github/scripts/ensure_bunny_collection.py
@@ -27,7 +28,7 @@ permissions:
 
 jobs:
   plan:
-    if: github.event_name == 'workflow_dispatch' && inputs.lesson_ids != 'furniture-m1-cut-list'
+    if: github.event_name == 'workflow_dispatch' && inputs.lesson_ids != 'furniture-m1-cut-list' && inputs.lesson_ids != 'technical-first-module'
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set.outputs.matrix }}
@@ -188,7 +189,7 @@ jobs:
           fi
 
   furniture-collection:
-    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list')
+    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     concurrency:
@@ -207,19 +208,21 @@ jobs:
 
   furniture-pilot:
     needs: furniture-collection
-    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list')
+    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
       fail-fast: false
       max-parallel: 1
       matrix:
-        locale: [ar-EG, en]
+        locale: [ar-EG, ar-MSA, ar-Gulf, en]
+        lesson_id: [furniture-m1-cut-list, technical-m01-l01, technical-m01-l02, technical-m01-l03, technical-m01-l04]
     concurrency:
-      group: furniture-pilot-${{ github.ref }}-${{ matrix.locale }}
+      group: furniture-pilot-${{ github.ref }}-${{ matrix.lesson_id }}-${{ matrix.locale }}
       cancel-in-progress: false
     env:
-      LID: furniture-m1-cut-list
+      LID: ${{ matrix.lesson_id }}
+      KEEP_PREVIOUS_BUNNY_VIDEO: "true"
       LOCALE: ${{ matrix.locale }}
       BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
       BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
@@ -246,7 +249,7 @@ jobs:
       - name: Reuse a ready pilot video on retry
         id: precheck
         env:
-          FORCE: ${{ github.event_name == 'push' || inputs.force_script || 'false' }}
+          FORCE: ${{ inputs.force_script || 'false' }}
         run: |
           set -euo pipefail
           GUID=$(python3 - <<'PY'
@@ -257,7 +260,19 @@ jobs:
           print(m.group(1) if m else '')
           PY
           )
-          if [ "$FORCE" != 'true' ] && [ -n "$GUID" ] && GUID="$GUID" MAX_ATTEMPTS=2 SLEEP_SECONDS=5 python3 .github/scripts/verify_bunny_ready.py; then
+          VOICE_KEY=$(python3 remotion/scripts/build-technical-lesson.py --lesson-id "$LID" --locale "$LOCALE" --audio-fingerprint)
+          echo "voice_key=$VOICE_KEY" >> "$GITHUB_OUTPUT"
+          EXPECTED=$(python3 remotion/scripts/build-technical-lesson.py --lesson-id "$LID" --locale "$LOCALE" --fingerprint)
+          MATCH=$(EXPECTED="$EXPECTED" python3 - <<'PYCODE'
+          import json, os
+          from pathlib import Path
+          p = Path('docs/experiments/technical-education/video-revisions.json')
+          entries = json.loads(p.read_text()) if p.exists() else {}
+          key = f"{os.environ['LID']}__{os.environ['LOCALE']}"
+          print('true' if entries.get(key) == os.environ['EXPECTED'] else 'false')
+          PYCODE
+          )
+          if [ "$FORCE" != 'true' ] && [ "$MATCH" = 'true' ] && [ -n "$GUID" ] && GUID="$GUID" MAX_ATTEMPTS=2 SLEEP_SECONDS=5 python3 .github/scripts/verify_bunny_ready.py; then
             echo 'skip=true' >> "$GITHUB_OUTPUT"
           else
             echo 'skip=false' >> "$GITHUB_OUTPUT"
@@ -274,16 +289,16 @@ jobs:
         if: steps.precheck.outputs.skip != 'true'
         uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
         with:
-          path: /tmp/furniture-m1-cut-list__${{ matrix.locale }}/audio
-          key: furniture-tts-v1-${{ matrix.locale }}-${{ hashFiles('remotion/src/furniture/script.json', 'remotion/scripts/lib/gemini_tts.py', 'remotion/scripts/lib/locale_profiles.py', 'remotion/scripts/lib/egyptian_phonetic.py') }}
-      - name: Build assembly with the existing Egyptian and English TTS profiles
+          path: /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/audio
+          key: technical-tts-v2-${{ matrix.lesson_id }}-${{ matrix.locale }}-${{ steps.precheck.outputs.voice_key }}
+      - name: Build reviewed technical lesson with its existing locale TTS profile
         if: steps.precheck.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
-        run: python3 remotion/scripts/build-furniture-pilot.py --locale "$LOCALE"
+        run: python3 remotion/scripts/build-technical-lesson.py --lesson-id "$LID" --locale "$LOCALE"
       - name: Upload with the existing Bunny uploader and require playable status
         if: steps.precheck.outputs.skip != 'true'
         run: |
@@ -299,13 +314,22 @@ jobs:
           set -euo pipefail
           SAVE=$(mktemp)
           cp src/lib/bunny-videos.ts "$SAVE"
+          FINGERPRINT=$(python3 remotion/scripts/build-technical-lesson.py --lesson-id "$LID" --locale "$LOCALE" --fingerprint)
           git restore src/lib/bunny-videos.ts
           git fetch origin "$BRANCH"
           git checkout -B "$BRANCH" "origin/$BRANCH"
           LID="${LID}__${LOCALE}" python3 .github/scripts/merge_bunny_entry.py "$SAVE"
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/lib/bunny-videos.ts
+          KEY="${LID}__${LOCALE}" FINGERPRINT="$FINGERPRINT" python3 - <<'PYCODE'
+          import json, os
+          from pathlib import Path
+          p = Path('docs/experiments/technical-education/video-revisions.json')
+          entries = json.loads(p.read_text()) if p.exists() else {}
+          entries[os.environ['KEY']] = os.environ['FINGERPRINT']
+          p.write_text(json.dumps(entries, indent=2, sort_keys=True) + '\n')
+          PYCODE
+          git add src/lib/bunny-videos.ts docs/experiments/technical-education/video-revisions.json
           if ! git diff --cached --quiet; then
             git commit -m "build(video): furniture pilot [$LOCALE] Bunny mapping"
             git push origin "HEAD:$BRANCH"
@@ -314,12 +338,12 @@ jobs:
         if: always() && steps.precheck.outputs.skip != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: furniture-pilot-${{ matrix.locale }}-${{ github.run_id }}
+          name: technical-${{ matrix.lesson_id }}-${{ matrix.locale }}-${{ github.run_id }}
           retention-days: 7
           if-no-files-found: warn
           path: |
-            public/lessons/intro/furniture-m1-cut-list__${{ matrix.locale }}.mp4
-            /tmp/furniture-m1-cut-list__${{ matrix.locale }}/captions.vtt
-            /tmp/furniture-m1-cut-list__${{ matrix.locale }}/transcript.txt
-            /tmp/furniture-m1-cut-list__${{ matrix.locale }}/render-evidence.json
-            /tmp/furniture-m1-cut-list__${{ matrix.locale }}/audio/master.mp3
+            public/lessons/intro/${{ matrix.lesson_id }}__${{ matrix.locale }}.mp4
+            /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/captions.vtt
+            /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/transcript.txt
+            /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/render-evidence.json
+            /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/audio/master.mp3

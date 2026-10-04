@@ -8,13 +8,14 @@ import type { SupportedLocale } from "@/lib/locale/types";
 vi.mock("@/lib/bunny-videos", () => ({ getBunnyEmbedUrlForLocale: vi.fn() }));
 afterEach(() => {
   cleanup();
+  localStorage.clear();
   vi.mocked(getBunnyEmbedUrlForLocale).mockReset();
 });
 const open = (name: string) => fireEvent.click(screen.getByRole("button", { name }));
 
 describe("furniture pilot interaction", () => {
   it.each<SupportedLocale>(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
-    "renders %s using only the two authored language assets with pending Bunny delivery",
+    "renders %s using its authored language assets with pending Bunny delivery",
     (locale) => {
       const copy = getPilotCopy(locale);
       render(<FurniturePilotLesson locale={locale} />);
@@ -35,18 +36,21 @@ describe("furniture pilot interaction", () => {
     },
   );
 
-  it.each<SupportedLocale>(["ar-EG", "en"])("uses the existing Bunny player for %s", (locale) => {
-    const url =
-      "https://iframe.mediadelivery.net/embed/670679/pilot-guid?autoplay=false&preload=true";
-    vi.mocked(getBunnyEmbedUrlForLocale).mockReturnValue(url);
-    render(<FurniturePilotLesson locale={locale} />);
-    const copy = getPilotCopy(locale);
-    open(copy.labels.video);
-    expect(getBunnyEmbedUrlForLocale).toHaveBeenCalledWith("furniture-m1-cut-list", locale);
-    expect(screen.getByTitle(copy.labels.video)).toHaveAttribute("src", url);
-    expect(screen.queryByText(copy.labels.videoPending)).toBeNull();
-    expect(screen.getByText(copy.labels.videoReady)).toBeVisible();
-  });
+  it.each<SupportedLocale>(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
+    "uses the existing Bunny player for %s",
+    (locale) => {
+      const url =
+        "https://iframe.mediadelivery.net/embed/670679/pilot-guid?autoplay=false&preload=true";
+      vi.mocked(getBunnyEmbedUrlForLocale).mockReturnValue(url);
+      render(<FurniturePilotLesson locale={locale} />);
+      const copy = getPilotCopy(locale);
+      open(copy.labels.video);
+      expect(getBunnyEmbedUrlForLocale).toHaveBeenCalledWith("furniture-m1-cut-list", locale);
+      expect(screen.getByTitle(copy.labels.video)).toHaveAttribute("src", url);
+      expect(screen.queryByText(copy.labels.videoPending)).toBeNull();
+      expect(screen.getByText(copy.labels.videoReady)).toBeVisible();
+    },
+  );
 
   it("reports invalid geometry, then restores the sample", () => {
     render(<FurniturePilotLesson locale="en" />);

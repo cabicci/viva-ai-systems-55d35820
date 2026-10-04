@@ -144,7 +144,7 @@ def main() -> int:
         raise
     print(f"[bunny] upload complete; updating {REGISTRY_PATH}", flush=True)
     prev = update_registry(COMPOSITE_KEY, guid)
-    if prev and prev != guid:
+    if prev and prev != guid and os.environ.get("KEEP_PREVIOUS_BUNNY_VIDEO") != "true":
         print(f"[bunny] replaced previous guid {prev} for {COMPOSITE_KEY}; deleting old video", flush=True)
         delete_video(prev)
     with open(GUID_OUT, "w") as f:

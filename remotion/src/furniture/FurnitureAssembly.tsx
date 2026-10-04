@@ -55,7 +55,11 @@ const steps = [
   },
 ];
 
-export type AssemblyProps = { locale: "ar-EG" | "en"; sceneFrames: number[]; narrated: boolean };
+export type AssemblyProps = {
+  locale: "ar-EG" | "ar-MSA" | "ar-Gulf" | "en";
+  sceneFrames: number[];
+  narrated: boolean;
+};
 export const FurnitureAssembly = ({ locale, sceneFrames, narrated }: AssemblyProps) => {
   const frame = useCurrentFrame();
   let index = 0,
@@ -180,7 +184,11 @@ export const FurnitureAssembly = ({ locale, sceneFrames, narrated }: AssemblyPro
         <p style={{ fontSize: 23, lineHeight: 1.8, margin: "35px 0 0", color: "#5B7175" }}>
           {english
             ? "A simplified panel diagram; joints and machine operation are outside this demonstration."
-            : "شرح مبسط لمكان الألواح؛ نوع الوصلات وتشغيل الماكينات محتاجين تدريب منفصل."}
+            : locale === "ar-MSA"
+              ? "توضح الحركة مواضع الألواح؛ تتطلب الوصلات وتشغيل الماكينات مراجعة وتدريبًا منفصلين."
+              : locale === "ar-Gulf"
+                ? "الحركة توضّح مكان الألواح؛ الوصلات وتشغيل الماكينات تحتاج مراجعة وتدريب منفصل."
+                : "شرح مبسط لمكان الألواح؛ نوع الوصلات وتشغيل الماكينات محتاجين تدريب منفصل."}
         </p>
       </aside>
       <footer dir={dir} style={{ position: "absolute", bottom: 57, right: 100, fontSize: 24 }}>

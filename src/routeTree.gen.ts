@@ -34,6 +34,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as ExperimentsFurniturePilotRouteImport } from './routes/experiments.furniture-pilot'
+import { Route as ExperimentsTechnicalEducationRouteImport } from './routes/experiments.technical-education'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
 import { Route as KidsIndexRouteImport } from './routes/kids.index'
@@ -174,6 +175,12 @@ const ExperimentsFurniturePilotRoute =
     path: '/experiments/furniture-pilot',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ExperimentsTechnicalEducationRoute =
+  ExperimentsTechnicalEducationRouteImport.update({
+    id: '/experiments/technical-education',
+    path: '/experiments/technical-education',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -265,6 +272,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
+  '/experiments/technical-education': typeof ExperimentsTechnicalEducationRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
@@ -303,6 +311,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
+  '/experiments/technical-education': typeof ExperimentsTechnicalEducationRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/family': typeof KidsFamilyRoute
   '/kids/privacy': typeof KidsPrivacyRoute
@@ -343,6 +352,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/experiments/furniture-pilot': typeof ExperimentsFurniturePilotRoute
+  '/experiments/technical-education': typeof ExperimentsTechnicalEducationRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/kids/family': typeof KidsFamilyRoute
@@ -385,6 +395,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin/kids-parents'
     | '/experiments/furniture-pilot'
+    | '/experiments/technical-education'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/kids/family'
@@ -423,6 +434,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin/kids-parents'
     | '/experiments/furniture-pilot'
+    | '/experiments/technical-education'
     | '/image-gallery/$path'
     | '/kids/family'
     | '/kids/privacy'
@@ -462,6 +474,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/admin/kids-parents'
     | '/experiments/furniture-pilot'
+    | '/experiments/technical-education'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/kids/family'
@@ -503,6 +516,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   ExperimentsFurniturePilotRoute: typeof ExperimentsFurniturePilotRoute
+  ExperimentsTechnicalEducationRoute: typeof ExperimentsTechnicalEducationRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
@@ -688,6 +702,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperimentsFurniturePilotRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiments/technical-education': {
+      id: '/experiments/technical-education'
+      path: '/experiments/technical-education'
+      fullPath: '/experiments/technical-education'
+      preLoaderRoute: typeof ExperimentsTechnicalEducationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-gallery/': {
       id: '/image-gallery/'
       path: '/'
@@ -851,6 +872,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,
   ExperimentsFurniturePilotRoute: ExperimentsFurniturePilotRoute,
+  ExperimentsTechnicalEducationRoute: ExperimentsTechnicalEducationRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,

@@ -1,0 +1,83 @@
+{
+  "id": "M01-L01",
+  "intro": "“I need a practical wardrobe” is a starting point, not a specification. Turn it into a brief that identifies the user, contents, constraints and evidence needed to accept the design.",
+  "goals": [
+    "Ask about use before choosing a form.",
+    "Separate confirmed requirements from assumptions.",
+    "Write an acceptance criterion you can actually check."
+  ],
+  "sections": [
+    {
+      "id": "use",
+      "title": "Start with the user and activity",
+      "text": "Identify who will use the furniture, what they will do and how often. Ask for an inventory and the dimensions of the largest item before proposing shelves. Shared use can involve different reach needs. Rank requests as essential, important or optional, and record who confirmed each requirement.",
+      "diagram": "brief",
+      "caption": "User → activity → contents → requirements"
+    },
+    {
+      "id": "constraints",
+      "title": "Record constraints and assumptions",
+      "text": "Record the available space, openings, services, budget, deadline and maintenance needs. Distinguish the client’s statements from measured facts. An unknown appliance size or fixing substrate remains an open item with an owner and a design impact. Using an assumed value in a drawing does not confirm it.",
+      "diagram": "brief",
+      "caption": "Each assumption needs a question, an owner and an impact"
+    },
+    {
+      "id": "acceptance",
+      "title": "Make acceptance testable",
+      "text": "Connect each requirement to evidence. To store a particular bag, confirm its dimensions and test its insertion path in a drawing or mock-up. For maintenance access, identify the service point and how it can be reached. Review the brief with the client before developing options, and retain unresolved items rather than concealing them.",
+      "diagram": "brief",
+      "caption": "Requirement + verification evidence = acceptance criterion"
+    }
+  ],
+  "example": {
+    "title": "From vague request to a usable brief",
+    "text": "A client needs entrance storage for two daily bags and keys. The available space and door swing are unconfirmed. Record the inventory, measure the bags and survey the entrance. Treat the preferred colour as a choice to review with a sample.",
+    "decision": "Decision: keep the depth and frontage open until the door swing and bag insertion paths have been checked."
+  },
+  "quiz": [
+    {
+      "id": "assumption",
+      "question": "How should an unconfirmed door swing be recorded?",
+      "options": [
+        "A confirmed fact",
+        "An open assumption with an owner",
+        "Ignore it to finish faster"
+      ],
+      "correct": 1,
+      "explanation": "The swing may change the cabinet’s position or depth, so it needs confirmation before design approval."
+    },
+    {
+      "id": "evidence",
+      "question": "Which acceptance criterion is testable?",
+      "options": [
+        "The cabinet looks beautiful",
+        "The cabinet is large",
+        "The confirmed bag can be inserted and removed without a clash"
+      ],
+      "correct": 2,
+      "explanation": "It names a known item and a movement that can be tested."
+    }
+  ],
+  "assignment": {
+    "prompt": "Write an entrance-storage brief for a real user. Keep unconfirmed dimensions open until the site is surveyed.",
+    "fields": [
+      "User, contents and priorities",
+      "Constraints, assumptions and confirmation owners",
+      "Two acceptance criteria and their evidence"
+    ],
+    "criteria": [
+      "Requirements connect to an activity.",
+      "Assumptions are visible and unconfirmed.",
+      "Each acceptance criterion has a verification method."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should I start with colour?",
+      "answer": "Record the preference, but establish use and constraints first. Review colour with a finishing sample.",
+      "sectionId": "constraints"
+    }
+  ],
+  "locale": "en",
+  "title": "Turn a client request into a design brief"
+}

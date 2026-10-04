@@ -29,3 +29,23 @@ The present experiment's FAQ is fixed and math grading limited. Grounded generat
 Validated unique lesson IDs, valid page anchors, forward prerequisite references, exhaustive 1-408 page disposition coverage, and direct lesson anchors for all404 learning-reference pages. Calibration concept IDs and fact keys match across four locales; original cabinet arithmetic remains internally consistent. The 32-page Arabic review PDF was rendered and checked for content/footer overlap and visual layout. No runtime code, media, database, entitlement, payment or production change was made; unchanged UI/media tests were not repeated.
 
 The user-facing review PDF is saved separately as `Masaarat_Technical_Education_Curriculum_Blueprint_2026-10-04.pdf`. Its source bookkeeping belongs to this internal plan, not to downloadable learner lesson footers.
+
+## Implementation batch 1 — 2026-10-04
+
+Authorized execution is underway on the same temporary branch. The learner catalogue contains all 7 sections, 21 modules and 80 lesson IDs, with original source-free labels in all four locales. Ready content and planned catalogue entries are distinguished: only M01-L01 through M01-L04 and the reused M04-L02 are authored in this batch. An outline entry is not a produced lesson.
+
+The first module contains 16 independently authored locale packages: explanation, worked case, objective quiz, practice fields, self-review criteria and fixed lesson Q&A. Technical diagrams accompany each explanation and open at full size. Device-local preview progress and locale-specific practice text survive reloads, but are separate from the existing account lesson_progress system reserved for main integration. Changing an accepted quiz or arithmetic answer invalidates the corresponding preview state. Practice self-review is not human project approval.
+
+M04-L02 now has Egyptian, MSA, Gulf and English copy and assets, without fallback to Egyptian for the other Arabic registers. Its underlying cabinet arithmetic and original Remotion geometry are reused. The Egyptian narration script uses revised number wording and scoped pronunciation hints; audio naturalness remains pending until a listener checks new output.
+
+44 PDF downloads: two PDFs per first-module localized lesson (32), plus workbook/cut-list/drawings for the four pilot registers (12). Download names combine the localized file type and lesson title. Export uses the same authored content, checks every page for content/footer overlap and preserves metric expressions with bidi isolation. No book title, page reference, source footer or book download enters learner data or assets.
+
+The existing lesson-video.yml workflow now produces the reviewed first-module lessons and the reused pilot: 5 lesson IDs × 4 locales. It reuses pinned Remotion, Gemini profiles, Bunny uploader, collection and ready-status gate. Audio cache keys depend on the actual spoken text/focus/profile; a separate render fingerprint identifies an already playable matching video. The technical jobs retain previous Bunny videos. The original adult build job is preserved unchanged. All 20 outputs require successful rendering and Bunny readiness; committing this batch schedules production, not completion or speech acceptance.
+
+Main-site merging/publication, technical package eligibility/pricing, account progress integration, grounded generative assistance and human project assessment remain separate integration tasks after content readiness. The remaining 75 lessons are not yet authored.
+
+### Current local acceptance
+
+22 scoped tests passed; application TypeScript, scoped ESLint, production build, original two Remotion geometry tests and audio-mux regression passed. The original adult video build job matches its pre-change configuration. Browser checks passed all four locales at 390/1440 px across the journey, four authored lessons and reused pilot: no page errors/overflow, contextual diagrams and PDF-only downloads with actual descriptive browser filenames. A reload restored saved practice. Non-experiment account/payment/API routes and POST requests return 404 in the private preview wrapper.
+
+Every PDF page passed content/footer separation; all 76 workbook pages were rendered and visually checked in contact sheets. The technical Remotion explainer rendered successfully and its Arabic frame was reviewed. Unchanged PDF inputs now reuse verified output hashes; a second export reused all 44 PDFs. Existing accepted English assembly speech/visual fields are unchanged and its compatible render revision is seeded for ready-status reuse, rather than producing a duplicate video. Production of the new 19 cells and pronunciation listening remain unverified until Actions returns evidence.

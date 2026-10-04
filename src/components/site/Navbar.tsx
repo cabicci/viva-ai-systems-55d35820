@@ -62,7 +62,7 @@ export function Navbar({
       </a>
       {showTechnicalPreview && (
         <a
-          href={`/experiments/furniture-pilot?locale=${locale}`}
+          href={`/experiments/technical-education?locale=${locale}`}
           className="hover:text-foreground transition"
         >
           <TechnicalBrand compact />
@@ -168,7 +168,7 @@ export function Navbar({
                     </SheetClose>
                     {showTechnicalPreview && (
                       <SheetClose asChild>
-                        <a href={`/experiments/furniture-pilot?locale=${locale}`}>
+                        <a href={`/experiments/technical-education?locale=${locale}`}>
                           <TechnicalBrand compact />
                         </a>
                       </SheetClose>

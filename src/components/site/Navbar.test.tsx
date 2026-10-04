@@ -101,12 +101,15 @@ describe("shared top navigation", () => {
     const links = within(desktop).getAllByRole("link");
     expect(links.slice(-2).map((link) => link.getAttribute("href"))).toEqual([
       "/kids?locale=ar-EG",
-      "/experiments/furniture-pilot?locale=ar-EG",
+      "/experiments/technical-education?locale=ar-EG",
     ]);
     expect(within(desktop).getByRole("link", { name: "التعليم الفني" })).toHaveTextContent("TECH");
     fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
     const mobile = within(screen.getByRole("dialog")).getAllByRole("link");
     const kids = mobile.findIndex((link) => link.getAttribute("href") === "/kids?locale=ar-EG");
-    expect(mobile[kids + 1]).toHaveAttribute("href", "/experiments/furniture-pilot?locale=ar-EG");
+    expect(mobile[kids + 1]).toHaveAttribute(
+      "href",
+      "/experiments/technical-education?locale=ar-EG",
+    );
   });
 });

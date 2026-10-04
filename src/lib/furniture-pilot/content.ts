@@ -1,5 +1,7 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 
+import additional from "./additional-copy.json";
+
 type Text = readonly [string, string];
 function text(value: Text, locale: "ar-EG" | "en") {
   return value[locale === "en" ? 1 : 0];
@@ -8,12 +10,11 @@ function common(ar: string, en: string): Text {
   return [ar, en];
 }
 
-export const PILOT_LOCALES = ["ar-EG", "en"] as const;
-export function resolvePilotLocale(locale: SupportedLocale): "ar-EG" | "en" {
-  return locale === "en" ? "en" : "ar-EG";
+export const PILOT_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
+export function resolvePilotLocale(locale: SupportedLocale): SupportedLocale {
+  return locale;
 }
-export function getPilotCopy(requestedLocale: SupportedLocale) {
-  const locale = resolvePilotLocale(requestedLocale);
+function getPilotBaseCopy(locale: "ar-EG" | "en") {
   const t = (value: Text) => text(value, locale);
   const title = t([
     "من الرسم لقائمة القطع: وحدة تخزين صغيرة",
@@ -33,8 +34,8 @@ export function getPilotCopy(requestedLocale: SupportedLocale) {
     },
     eyebrow: t(
       common(
-        "المهارات الفنية · الأثاث · M1 · الدرس 1",
-        "Technical skills · Furniture · M1 · Lesson 1",
+        "المهارات الفنية · الأثاث · M04 · الدرس 2",
+        "Technical skills · Furniture · M04 · Lesson 2",
       ),
     ),
     intro: t([
@@ -271,13 +272,6 @@ export function getPilotCopy(requestedLocale: SupportedLocale) {
           "Record dated supplier quotes, materials, hardware, labour, finishing and transport. This lesson assumes no market prices.",
         ),
       ),
-      sources: t(common("المصادر وحدود الاستخدام", "Sources & scope")),
-      sourceNote: t(
-        common(
-          "ملف Metwood المقدم: أساسيات التخطيط ص3، تفاصيل الأثاث ص25، الخامات ص97. الأبعاد والمعادلات هنا نموذج هندسي أصلي لهذه التجربة؛ ليست نقلًا لمقاسات الملف ولا اعتمادًا لصحتها جميعًا.",
-          "User-supplied Metwood reference: planning p3, furniture details p25, materials p97. This pilot's dimensions and equations are an original teaching example, not copied dimensions or validation of every source page.",
-        ),
-      ),
     },
     quiz: [
       {
@@ -383,8 +377,8 @@ export function getPilotCopy(requestedLocale: SupportedLocale) {
         ),
         answer: t(
           common(
-            "هذا درس تخطيط. تشغيل الماكينة يحتاج تدريبًا عمليًا خاصًا بها وإشرافًا وتقييمًا للكفاءة؛ راجع فقرة المراجعة ومصدر HSE.",
-            "This is a planning lesson. Machine operation requires machine-specific practical instruction, supervision and assessment. See the review section and HSE reference.",
+            "هذا درس تخطيط. تشغيل الماكينة يحتاج تدريبًا عمليًا خاصًا بها وإشرافًا وتقييمًا للكفاءة؛ راجع فقرة المراجعة.",
+            "This is a planning lesson. Machine operation requires machine-specific practical instruction, supervision and assessment. See the review section.",
           ),
         ),
         source: "review",
@@ -393,4 +387,29 @@ export function getPilotCopy(requestedLocale: SupportedLocale) {
   };
 }
 
+export function getPilotCopy(locale: SupportedLocale) {
+  const copy =
+    locale === "ar-MSA" || locale === "ar-Gulf" ? additional[locale] : getPilotBaseCopy(locale);
+  return {
+    ...copy,
+    eyebrow:
+      locale === "en"
+        ? "Technical skills · Furniture · M04 · Lesson 2"
+        : "المهارات الفنية · الأثاث · M04 · الدرس 2",
+    labels: {
+      ...copy.labels,
+      progress: locale === "en" ? "Your progress" : "تقدمك",
+      progressNote:
+        locale === "en"
+          ? "Preview progress is saved on this device. Account sync follows main-site integration."
+          : "يُحفظ التقدم على هذا الجهاز في المعاينة. يُربط بحسابك عند التكامل مع الموقع الرئيسي.",
+      videoNote:
+        locale === "en"
+          ? "The animation shows panel placement using the calculated model. The workshop must approve joints, fixings and machining allowances."
+          : locale === "ar-EG"
+            ? "الحركة بتوضح مكان الألواح بالمقاسات المحسوبة. الوصلات والتثبيت وسماحات التصنيع لازم الورشة تعتمدها قبل التنفيذ."
+            : copy.labels.videoNote,
+    },
+  };
+}
 export type PilotCopy = ReturnType<typeof getPilotCopy>;
