@@ -1,5 +1,29 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 
+export type TechnicalDiagramKind =
+  | "brief"
+  | "survey"
+  | "scope"
+  | "workflow"
+  | "brief-use"
+  | "brief-constraints"
+  | "brief-acceptance"
+  | "survey-reference"
+  | "survey-obstacles"
+  | "survey-check"
+  | "scope-construction"
+  | "scope-customization"
+  | "scope-responsibility"
+  | "workflow-deliverables"
+  | "workflow-approval"
+  | "workflow-revisions"
+  | "cabinet-brief"
+  | "cabinet-width"
+  | "cabinet-depth"
+  | "cabinet-openings"
+  | "cabinet-list"
+  | "cabinet-review";
+
 export type LocalizedText = Record<SupportedLocale, string>;
 export type TechnicalLesson = {
   id: string;
@@ -11,7 +35,7 @@ export type TechnicalLesson = {
     id: string;
     title: string;
     text: string;
-    diagram: "brief" | "survey" | "scope" | "workflow";
+    diagram: TechnicalDiagramKind;
     caption: string;
   }[];
   example: { title: string; text: string; decision: string };

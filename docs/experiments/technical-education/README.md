@@ -53,3 +53,11 @@ Every PDF page passed content/footer separation; all 76 workbook pages were rend
 ### Delivery evidence
 
 Implementation commit: f4c4051b5556dc4c981c2100b66c0fea21064fb3. Private preview source: 76dcd96c2d7ae02500cc7228009859d35a675e40. Deployment appgdep_6ac19e28d1988191b32bede202bdfd82 succeeded at the existing owner-private URL; root redirects to the journey. No Masaarat main-site deployment occurred. Actions run37165099121 started: technical collection succeeded, adult plan/build skipped, first Egyptian assembly production in progress. New narration is not yet accepted by a listener. The deterministic PDF exporter is included in scripts/technical-education/build-pdfs.tsx.
+
+### Explanation illustration correction — 2026-10-04
+
+The previous first-module explanations reused one generic SVG three times per lesson; the cut-list reading view also reused front/exploded assets for different steps. Those repeated figures did not communicate the paragraph-specific idea and the earlier browser check missed that semantic defect.
+
+The correction gives each of the 12 first-module sections its own diagram key and geometry, plus six dedicated cabinet explanation figures. All four locale packages preserve the same concept mapping and use localized captions. Reading, full-size SVG links and workbook PDFs consume the same figure. Existing drawing downloads remain PDFs; workbook downloads retain type-plus-title filenames. No reference-book mention is added.
+
+Acceptance: 23 scoped tests passed, including actual SVG-content uniqueness across all 18 concepts and four locales; application TypeScript, scoped lint and production build passed. Browser checks covered 40 lesson/locale/viewport combinations at 390/1440 px: unique figures per explanation, matching full-size assets, no horizontal overflow or page errors. All 44 PDFs passed content/footer separation (20 illustrated workbooks regenerated, 24 unchanged PDFs reused). All 76 workbook pages were rendered; representative Arabic/English pages and diagram sheets were visually reviewed. Narration/video production was not changed or restarted by this reading/PDF correction. Main integration remains pending.

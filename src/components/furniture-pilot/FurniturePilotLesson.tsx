@@ -1,3 +1,6 @@
+import { TechnicalDiagram } from "../technical-education/TechnicalDiagram";
+import type { TechnicalDiagramKind } from "@/lib/technical-education/types";
+
 import { useMemo, useState } from "react";
 import { Download, FileCheck2, Ruler, BookOpen, PlayCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -48,14 +51,6 @@ const sections: SectionId[] = [
   "downloads",
   "assistant",
 ];
-const explanationDrawings: Record<string, "front" | "side" | "exploded"> = {
-  brief: "front",
-  width: "front",
-  depth: "side",
-  openings: "front",
-  list: "exploded",
-  review: "exploded",
-};
 
 export function FurniturePilotLesson({ locale: requestedLocale }: { locale: SupportedLocale }) {
   const locale = resolvePilotLocale(requestedLocale);
@@ -221,18 +216,15 @@ export function FurniturePilotLesson({ locale: requestedLocale }: { locale: Supp
                   </div>
                   <figure className="overflow-hidden rounded-2xl border border-border bg-white">
                     <a
-                      href={`${ASSET_ROOT}/${locale}/${explanationDrawings[section.id] ?? "front"}.svg`}
+                      href={`${ASSET_ROOT}/${locale}/${"cabinet-" + section.id}.svg`}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`${c.zoom}: ${section.title}`}
                     >
-                      <img
-                        src={`${ASSET_ROOT}/${locale}/${explanationDrawings[section.id] ?? "front"}.svg`}
-                        alt={section.title}
-                        width={960}
-                        height={720}
-                        className="mx-auto h-auto w-full max-w-sm"
-                        loading="lazy"
+                      <TechnicalDiagram
+                        kind={`cabinet-${section.id}` as TechnicalDiagramKind}
+                        locale={locale}
+                        title={section.title}
                       />
                     </a>
                     <figcaption className="border-t border-border bg-card px-3 py-2 text-center text-xs font-semibold text-primary">

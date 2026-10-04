@@ -6,7 +6,10 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { TechnicalDiagram } from "../../src/components/technical-education/TechnicalDiagram";
 import { getTechnicalCopy } from "../../src/lib/technical-education/copy";
-import type { TechnicalLesson } from "../../src/lib/technical-education/types";
+import type {
+  TechnicalDiagramKind,
+  TechnicalLesson,
+} from "../../src/lib/technical-education/types";
 import { getPilotCopy, PILOT_LOCALES } from "../../src/lib/furniture-pilot/content";
 import { SAMPLE, calculateCabinet } from "../../src/lib/furniture-pilot/model";
 import { splitTechnicalText } from "../../src/lib/furniture-pilot/technical-text";
@@ -84,6 +87,18 @@ for (const locale of PILOT_LOCALES) {
         `<h1>${txt(c.labels[kind as "front" | "side" | "exploded"])}</h1><img class="draw" src="data:image/svg+xml;base64,${Buffer.from(await readFile(path.join(dir, `${kind}.svg`))).toString("base64")}" />`,
     ),
   );
+  for (const section of c.sections) {
+    await Bun.write(
+      path.join(dir, `cabinet-${section.id}.svg`),
+      renderToStaticMarkup(
+        <TechnicalDiagram
+          kind={`cabinet-${section.id}` as TechnicalDiagramKind}
+          locale={locale}
+          title={section.title}
+        />,
+      ),
+    );
+  }
   const geometry = calculateCabinet(SAMPLE);
   const cut = `<h1>${txt(c.title)}</h1><p>${txt(c.scope)}</p><table><thead><tr>${[c.labels.part, c.labels.ids, c.labels.quantity, c.labels.length, c.labels.panelWidth, c.labels.thickness].map((t) => `<th>${txt(t)}</th>`).join("")}</tr></thead><tbody>${geometry.panels.map((p) => `<tr><td>${txt(c.labels[p.key])}</td><td dir="ltr">${p.ids.join(" / ")}</td>${[p.quantity, p.length, p.width, p.thickness].map((value) => `<td dir="ltr">${value}</td>`).join("")}</tr>`).join("")}</tbody></table><p>${txt(c.sections[4].note)}</p><div class="box">${txt(c.labels.rubric)}</div>`;
   push(
@@ -101,7 +116,7 @@ for (const locale of PILOT_LOCALES) {
         .slice(start, start + 2)
         .map(
           (s) =>
-            `<h2>${txt(s.title)}</h2><p>${txt(s.body)}</p><div class="box">${txt(s.note)}</div>`,
+            `<div class="section"><div><h2>${txt(s.title)}</h2><p>${txt(s.body)}</p><div class="box">${txt(s.note)}</div></div><div>${renderToStaticMarkup(<TechnicalDiagram kind={`cabinet-${s.id}` as TechnicalDiagramKind} locale={locale} title={s.title} />)}</div></div>`,
         )
         .join(""),
     ),

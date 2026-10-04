@@ -11,22 +11,22 @@
       "id": "step-1",
       "title": "Give every stage a deliverable",
       "text": "Start with the brief and survey, develop options, then prepare drawings, cut lists and specifications. Review fabrication information before production, installation plans before transport and inspection results before handover. Iteration is normal, but a changed decision must propagate to all affected documents.",
-      "diagram": "workflow",
-      "caption": "A conceptual diagram; read it with the explanation."
+      "diagram": "workflow-deliverables",
+      "caption": "Connect the brief, drawings, cut list and inspection outputs."
     },
     {
       "id": "step-2",
       "title": "Define real review gates",
       "text": "For each gate, name what is reviewed, who reviews it and what evidence is required. Client approval of needs or appearance differs from technical review of construction, fixing and production capability. Keep material open issues visible; one person’s visual approval does not approve every technical aspect.",
-      "diagram": "workflow",
-      "caption": "A conceptual diagram; read it with the explanation."
+      "diagram": "workflow-approval",
+      "caption": "Resolve and verify open comments before approving an output."
     },
     {
       "id": "step-3",
       "title": "Control revisions and changes",
       "text": "Give each document a revision, date, status and approval purpose. If dimensions or materials change after release, record the reason, identify affected drawings, lists and costs, and repeat the review. Remove superseded versions from operational use. Close defects with reinspection evidence, not merely a changed status.",
-      "diagram": "workflow",
-      "caption": "A conceptual diagram; read it with the explanation."
+      "diagram": "workflow-revisions",
+      "caption": "A dimension change updates the drawing and list and withdraws the old revision."
     }
   ],
   "example": {
