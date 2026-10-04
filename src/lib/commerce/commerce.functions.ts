@@ -8,6 +8,25 @@ export const commerceCommand = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .validator(parseCommand)
   .handler(async ({ data, context }): Promise<import("@/integrations/supabase/types").Json> => {
+    if (data.action === "email_confirmation") {
+      const orderId = (data.data as { id: string }).id;
+      const queued = (await context.supabase.rpc(
+        "queue_commerce_payment_confirmation" as never,
+        { p_order: orderId } as never,
+      )) as unknown as { data: { id: string; status: string } | null; error: unknown };
+      if (queued.error || !queued.data) throw new Error("COMMERCE_CONFIRMATION_UNAVAILABLE");
+      const mail = queued.data as { status: string };
+      if (mail.status === "sent") return { mail_status: "accepted" };
+      if (!["pending", "sending"].includes(mail.status))
+        throw new Error("COMMERCE_CONFIRMATION_UNAVAILABLE");
+      const { dispatchImmediateMail } = await import("@/lib/mail-dispatch.server");
+      try {
+        const sent = await dispatchImmediateMail({ stream: "commerce", id: orderId });
+        return { mail_status: sent.accepted ? "accepted" : "queued" };
+      } catch {
+        return { mail_status: "queued" };
+      }
+    }
     // Keep the user's verified JWT all the way through the SQL authorization
     // boundary. No service role is used for orders/grants/admin commands.
     const { data: result, error } = await context.supabase.rpc(
@@ -15,6 +34,20 @@ export const commerceCommand = createServerFn({ method: "POST" })
       { p_action: data.action, p_data: data.data } as never,
     );
     if (error) throw new Error(error.message);
+    if (data.action === "confirm" || data.action === "allocate") {
+      // Payment is already committed. A mail failure must never roll it back or
+      // prompt the administrator to create another payment. Batch retries use
+      // the same stored outbox and provider idempotency key.
+      const { dispatchImmediateMail } = await import("@/lib/mail-dispatch.server");
+      const allocations = (data.data as { allocations: { order_id: string }[] }).allocations;
+      await Promise.allSettled(
+        allocations
+          .slice(0, 5)
+          .map((allocation) =>
+            dispatchImmediateMail({ stream: "commerce", id: allocation.order_id }),
+          ),
+      );
+    }
     return result;
   });
 export const uploadCommerceReceipt = createServerFn({ method: "POST" })
@@ -62,7 +95,6 @@ export const uploadCommerceReceipt = createServerFn({ method: "POST" })
         .from("commerce-receipts")
         .upload(path, bytes, { contentType: data.mime, upsert: false });
       if (stored.error) throw new Error("Receipt could not be stored");
-      return receipt;
     } catch (error) {
       const cleanup = await supabaseAdmin.storage.from("commerce-receipts").remove([path]);
       // Keep the manifest if removal was uncertain; the account's existing
@@ -70,6 +102,15 @@ export const uploadCommerceReceipt = createServerFn({ method: "POST" })
       if (!cleanup.error) await rpc("discard", { id, order_id: data.orderId });
       throw error;
     }
+    // The manifest transaction already queued a durable sales notification.
+    // Dispatch only after storage succeeds; mail failure never deletes a receipt.
+    const { dispatchImmediateMail } = await import("@/lib/mail-dispatch.server");
+    try {
+      await dispatchImmediateMail({ stream: "commerce_receipt", id });
+    } catch {
+      // The existing scheduled worker retries the same outbox message.
+    }
+    return receipt;
   });
 export const readCommerceReceipt = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])

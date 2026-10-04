@@ -11,12 +11,14 @@ import { Button } from "@/components/ui/button";
 import { ReceiptUpload, ReceiptView } from "./ReceiptUpload";
 import { Field, Select, Panel, Check, type RunCommand } from "./AdminShared";
 export function AdminPayments({
+  initialOrderId,
   data,
   orders,
   access,
   run,
   busy,
 }: {
+  initialOrderId?: string;
   data: AdminData;
   orders: Order[];
   access: Entitlement[];
@@ -26,7 +28,17 @@ export function AdminPayments({
   const requestKey = useCommandKey();
   const { locale } = useLocale(),
     w = commerceCopy(locale);
-  const [selected, setSelected] = useState<string[]>([]),
+  const [selected, setSelected] = useState<string[]>(
+      initialOrderId &&
+        orders.some(
+          (o) =>
+            o.id === initialOrderId &&
+            ["awaiting_receipt", "pending", "more_info"].includes(o.review_status) &&
+            new Date(o.expires_at) > new Date(),
+        )
+        ? [initialOrderId]
+        : [],
+    ),
     [existingPayment, setExistingPayment] = useState(""),
     [amounts, setAmounts] = useState<Record<string, string>>({}),
     [received, setReceived] = useState(""),
@@ -297,6 +309,7 @@ function OrderCard({ order: o, run, busy }: { order: Order; run: RunCommand; bus
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     [reason, setReason] = useState(""),
+    [mailNotice, setMailNotice] = useState(""),
     command = useServerFn(commerceCommand);
   const detail = useQuery({
     queryKey: ["commerce-admin-order", o.id, o.review_status],
@@ -337,6 +350,31 @@ function OrderCard({ order: o, run, busy }: { order: Order; run: RunCommand; bus
           </div>
         ))}
       </div>
+      {o.review_status === "confirmed" && (
+        <div className="space-y-2">
+          <Button
+            type="button"
+            variant="outline"
+            disabled={busy}
+            onClick={async () => {
+              setMailNotice("");
+              const result = (await run("email_confirmation", { id: o.id })) as
+                | { mail_status?: string }
+                | undefined;
+              setMailNotice(
+                result
+                  ? result.mail_status === "accepted"
+                    ? w.confirmationMailAccepted
+                    : w.confirmationMailQueued
+                  : w.error,
+              );
+            }}
+          >
+            {w.sendConfirmationMail}
+          </Button>
+          {mailNotice && <p role="status">{mailNotice}</p>}
+        </div>
+      )}
       {closed && ["confirmed", "refunded"].includes(o.review_status) && (
         <ReceiptUpload orderId={o.id} onUploaded={() => void detail.refetch()} />
       )}

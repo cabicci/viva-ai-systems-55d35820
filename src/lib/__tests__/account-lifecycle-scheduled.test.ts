@@ -8,6 +8,7 @@ import * as streams from "../../../supabase/functions/account-welcome-job/stream
 import * as enabled from "../../../supabase/functions/_shared/contact-mail-enabled";
 import * as immediate from "../../../supabase/functions/_shared/immediate-mail-request";
 import * as contact from "../../../supabase/functions/_shared/contact-mail-worker";
+import * as commerce from "../../../supabase/functions/_shared/commerce-payment-mail-worker";
 const send = vi.fn();
 
 const compiled = ts.transpileModule(
@@ -50,6 +51,7 @@ beforeEach(() => {
       if (name.endsWith("/contact-mail-enabled.ts")) return enabled;
       if (name.endsWith("/immediate-mail-request.ts")) return immediate;
       if (name.endsWith("/contact-mail-worker.ts")) return contact;
+      if (name.endsWith("/commerce-payment-mail-worker.ts")) return commerce;
       if (name.endsWith("/resend.ts")) return { sendTransactionalEmail: send };
       if (name.endsWith("/account-lifecycle-worker.ts"))
         return { createAccountLifecycleWorker: () => ({ runBatch: batch }) };
@@ -93,6 +95,7 @@ describe("packaged lifecycle dependency boundary", () => {
     inspect(resolve("supabase/functions/_shared/account-welcome-worker.ts"));
     inspect(resolve("supabase/functions/_shared/immediate-mail-request.ts"));
     inspect(resolve("supabase/functions/_shared/contact-mail-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/commerce-payment-mail-worker.ts"));
   });
 });
 
@@ -118,6 +121,27 @@ describe("target-only immediate worker entrypoint", () => {
       expect(rpc).toHaveBeenCalledExactlyOnceWith(name, { [key]: id });
       expect(batch).not.toHaveBeenCalled();
       expect(send).not.toHaveBeenCalled();
+    },
+  );
+  it.each([
+    ["commerce", "order_id"],
+    ["commerce_receipt", "receipt_id"],
+  ])(
+    "claims only the requested %s without running deletion or unrelated mail",
+    async (stream, key) => {
+      const response = await call(undefined, request(stream));
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({ [stream]: { accepted: 0, deferred: 0 } });
+      expect(rpc).toHaveBeenCalledExactlyOnceWith("commerce_payment_mail", {
+        p_action: "claim",
+        p_data: { [key]: id },
+      });
+      expect(batch).not.toHaveBeenCalled();
+      expect(send).not.toHaveBeenCalled();
+      rpc.mockClear();
+      environment.SUBSCRIPTION_MAIL_ENABLED = "false";
+      expect(await (await call(undefined, request(stream))).json()).toEqual({ enabled: false });
+      expect(rpc).not.toHaveBeenCalled();
     },
   );
   it("sends frozen contact content through the same Edge transport and records its lease", async () => {
