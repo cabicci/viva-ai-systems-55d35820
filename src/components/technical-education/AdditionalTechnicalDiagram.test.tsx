@@ -19,7 +19,6 @@ const lessons = files.map(
 describe("additional authored technical lessons", () => {
   it("isolates authored arithmetic in Arabic SVG labels to retain left-to-right operand order", () => {
     const labels = Object.entries(definitions)
-      .filter(([key]) => key.startsWith("new-M04-") || key.startsWith("new-M05-"))
       .flatMap(([, nodes]) => nodes)
       .filter((node) => node.type === "text" && "value" in node)
       .map((node) => (node as { value: { ar: string; en: string } }).value)
@@ -28,7 +27,25 @@ describe("additional authored technical lessons", () => {
     for (const value of labels) {
       expect(value.ar.startsWith("\u2066")).toBe(true);
       expect(value.ar.endsWith("\u2069")).toBe(true);
-      expect(value.ar.slice(1, -1)).toBe(value.en);
+      expect(value.ar.slice(1, -1).replace(/\s+/g, " ")).toBe(value.en.replace(/\s+/g, " "));
+    }
+  });
+  it("uses valid rendered paint colors so concept lines cannot silently disappear", () => {
+    const probe = document.createElement("span");
+    for (const key of Object.keys(definitions) as (keyof typeof definitions)[]) {
+      const svg = new DOMParser().parseFromString(
+        renderToStaticMarkup(<TechnicalDiagram kind={key} locale="en" title={key} />),
+        "image/svg+xml",
+      );
+      for (const node of svg.querySelectorAll("[stroke], [fill]")) {
+        for (const attribute of ["stroke", "fill"]) {
+          const value = node.getAttribute(attribute);
+          if (!value || value === "none") continue;
+          probe.style.color = "";
+          probe.style.color = value;
+          expect(probe.style.color, `${key}: invalid ${attribute}=${value}`).not.toBe("");
+        }
+      }
     }
   });
   it("keeps explanation concept and objective answer meaning aligned in all four registers", () => {

@@ -3,7 +3,7 @@
   "status": "authored_calibration_text_not_generated_or_audio_accepted",
   "lesson_id": "furniture-m1-cut-list",
   "curriculum_slot": "M04-L02",
-  "purpose": "Review four context-adapted spoken versions and Egyptian technical pronunciation before extending production.",
+  "purpose": "Review context-adapted Egyptian, MSA, Gulf and English speech; correct pronunciation is a mandatory independent acceptance gate in every locale.",
   "canonical_facts": {
     "overall_width_mm": 600,
     "overall_height_mm": 600,
@@ -1291,5 +1291,45 @@
       ]
     },
     "inventory_scope": "Authored narration text; a package/word inventory does not approve media or candidate M04 diagrams."
+  },
+  "four_locale_pronunciation_requirement": {
+    "owner_instruction_ar": "النطق الصحيح مهم جدًا جدًا في النسخ الأربع: المصرية والفصحى والخليجية والإنجليزية.",
+    "applies_to": [
+      "ar-EG",
+      "ar-MSA",
+      "ar-Gulf",
+      "en"
+    ],
+    "acceptance_unit": "one actual generated lesson take in one locale; approval never transfers between locales or revisions",
+    "all_locale_status": {
+      "ar-EG": "pending_actual_listening_acceptance",
+      "ar-MSA": "pending_actual_listening_acceptance",
+      "ar-Gulf": "pending_actual_listening_acceptance",
+      "en": "pending_actual_listening_acceptance"
+    },
+    "common_checks": [
+      "Compare actual spoken numbers, units, symbols and model codes with the lesson facts.",
+      "Listen to technical terms, word stress, natural pauses and complete sentences in context.",
+      "Confirm the register stays consistent; reject unexplained mixing or altered meaning.",
+      "Record the take/video identity, timestamp, word, expected pronunciation, reviewer decision and revision; regenerate only rejected segments then re-listen."
+    ],
+    "locale_focus": {
+      "ar-EG": "Natural Egyptian workshop language; qaf and gim by word/context. Keep the scoped piece correction and review its actual output; never replace every qaf.",
+      "ar-MSA": "Clear educational MSA; review vowels, technical word forms, number/unit reading and sentence endings. Do not carry Egyptian phonetic rewriting over.",
+      "ar-Gulf": "Consistent, natural Gulf register without caricature or drifting into Egyptian. Review technical terminology and number/unit readings in context.",
+      "en": "Intelligible English technical vocabulary, stress and phrasing; review abbreviations, dimensions, units and model codes."
+    },
+    "current_limitation": "Direct audio listening is unsupported in this session. Text review, successful synthesis, volume gates, media readiness and rendered frames are not listening approval.",
+    "review_evidence_required": [
+      "lesson_id",
+      "locale",
+      "take_id_or_video_guid",
+      "timestamp",
+      "word_or_phrase",
+      "expected_reading",
+      "decision",
+      "reviewer",
+      "revision"
+    ]
   }
 }

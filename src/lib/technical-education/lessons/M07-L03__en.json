@@ -1,0 +1,72 @@
+{
+  "id": "M07-L03",
+  "locale": "en",
+  "title": "Apply hinged and sliding door systems",
+  "intro": "Compare hinged and sliding doors on the same wardrobe through opening space, access to storage and system maintenance. Neither is automatically the best solution in every room.",
+  "goals": [
+    "Draw the opening envelope",
+    "Check the available access opening",
+    "Tie the decision to system data"
+  ],
+  "sections": [
+    {
+      "id": "envelope",
+      "title": "Draw the opening envelope",
+      "text": "A hinged leaf occupies space in front: check edge and handle against the wall, opposite furniture and user position. A conventional sliding leaf moves along the frontage but needs system-specific tracks and overlap. Reduced forward door projection does not eliminate standing space or internal drawer extension. Draw open states and verify the selected system’s actual motion.",
+      "diagram": "new-M07-L03-envelope",
+      "caption": "Door opening space is distinct from user and drawer space."
+    },
+    {
+      "id": "access",
+      "title": "Check the available access opening",
+      "text": "Overlapping sliding leaves may conceal part of the interior depending on their position. Define the door position required for each storage zone and check that an internal drawer clears the available opening and handles. Do not assume exactly half the width is accessible for every system: overlap, leaf count and tracks change the opening. Compare the hinged alternative using the same task.",
+      "diagram": "new-M07-L03-access",
+      "caption": "Evaluate clear access in a defined door position."
+    },
+    {
+      "id": "system",
+      "title": "Tie the decision to system data",
+      "text": "Record door material, dimensions, expected mass and proposed motion system. Obtain panel/component compatibility, machining requirements, use limits and maintenance/removal information. A label such as sliding or soft-close does not prove suitability or capacity. State the selection reasons and unresolved checks; do not infer hinge count or roller capacity from an illustration.",
+      "diagram": "new-M07-L03-system",
+      "caption": "Reasoned choice + product data + verification before release."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The exercise wardrobe faces a bed and contains a wide central drawer. Sliding doors reduce forward projection, but the proposed overlap conceals one drawer edge. Revise the internal layout or door system and compare the hinged envelope before selection. Reduced projection alone does not justify an inaccessible drawer.",
+    "decision": "Decision: resolve drawer access and opening states before approving the system."
+  },
+  "quiz": [
+    {
+      "id": "sliding-access",
+      "question": "Is reduced forward projection sufficient to approve sliding doors?",
+      "options": [
+        "No; check access, drawers and system requirements",
+        "Yes, no other checks are needed",
+        "Yes, every internal drawer will clear"
+      ],
+      "correct": 0,
+      "explanation": "Overlap can obstruct a drawer even when forward door projection is reduced."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw hinged and sliding alternatives for the same wardrobe with opening states, drawer access and a reasoned system-data checklist.",
+    "fields": [
+      "Motion and surroundings",
+      "Clear access and drawer",
+      "Decision and system information"
+    ],
+    "criteria": [
+      "Same use task compared",
+      "No universal half-width assumption",
+      "Decision linked to actual system data"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does every sliding system expose exactly half the width?",
+      "answer": "No. Leaf count, overlap, tracks and stop positions determine the actual opening.",
+      "sectionId": "access"
+    }
+  ]
+}

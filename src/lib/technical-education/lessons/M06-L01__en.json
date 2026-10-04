@@ -1,0 +1,72 @@
+{
+  "id": "M06-L01",
+  "locale": "en",
+  "title": "Plan cutting, machining and assembly",
+  "intro": "A production plan connects each part to a drawing revision, operation sequence and inspection point. Learn to release work in controlled stages instead of treating a cutting list as a complete manufacturing instruction.",
+  "goals": [
+    "Freeze the production inputs",
+    "Order operations by dependency",
+    "Place a check before repetition"
+  ],
+  "sections": [
+    {
+      "id": "release",
+      "title": "Freeze the production inputs",
+      "text": "Start with an approved drawing revision, stable part codes, material, thickness, grain direction and exposed edges. Distinguish finished size from any process allowance defined by the production method. If a drawing changes, identify affected parts and withdraw obsolete instructions. A part should point to one controlling revision, not leave conflicting dimensions for the operator to resolve.",
+      "diagram": "new-M06-L01-release",
+      "caption": "Part codes connect drawing, parts list and operation sheet."
+    },
+    {
+      "id": "sequence",
+      "title": "Order operations by dependency",
+      "text": "For a teaching cabinet side, identify a datum face, cutting, the system-specific order of edge treatment and holes, then trial assembly. Ask whether the next operation will conceal a measurement surface or block tool access. Some faces may need finishing before assembly. There is no universal sequence; this plan describes outputs and checks, not machine operating procedures.",
+      "diagram": "new-M06-L01-sequence",
+      "caption": "Concealed references and access affect the operation order."
+    },
+    {
+      "id": "holdpoint",
+      "title": "Place a check before repetition",
+      "text": "Before repeating the operation across a batch, check the first part against the drawing: code, datum, finished dimensions and prepared features. Record the result, reviewer and release decision. If a mismatch appears, isolate potentially affected parts and identify the last verified stage. Forcing parts together does not replace dimensional checking or correction of the cause.",
+      "diagram": "new-M06-L01-holdpoint",
+      "caption": "First-part approval precedes batch release."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A teaching batch contains 12 sides. Inspection of the first finds a hole located from the wrong datum. Hold the batch, correct the reference and instructions, and decide the disposition of that part before producing the remaining 11. A tight schedule does not justify repeating the mismatch.",
+    "decision": "Decision: hold repetition, correct the datum, then recheck the first conforming part."
+  },
+  "quiz": [
+    {
+      "id": "release-check",
+      "question": "When should the operation be released across the batch?",
+      "options": [
+        "After first-part inspection and documented acceptance",
+        "After producing any first part",
+        "When setup time expires"
+      ],
+      "correct": 0,
+      "explanation": "Early verification prevents a reference or dimension error from propagating."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a cabinet-side operation sheet with part code, revision, three dependent stages, inspection point and mismatch response.",
+    "fields": [
+      "Part and controlling revision",
+      "Sequence and outputs",
+      "Inspection and release decision"
+    ],
+    "criteria": [
+      "One dimensional reference",
+      "Reasoned dependencies",
+      "No invented machine settings"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does an operation sheet qualify someone to operate a machine?",
+      "answer": "No. Machine operation requires separate competent training, approved instructions and appropriate supervision.",
+      "sectionId": "sequence"
+    }
+  ]
+}

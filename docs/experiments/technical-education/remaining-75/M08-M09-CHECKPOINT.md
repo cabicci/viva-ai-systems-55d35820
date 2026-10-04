@@ -1,0 +1,15 @@
+# M08–M09 authoring checkpoint — 2026-10-04
+
+Scope: positions 29–35 of the curriculum, exactly M08-L01, M08-L02, M08-L03, M09-L01, M09-L02, M09-L03 and M09-L04. This contribution does not update the global progress ledger or production manifest.
+
+Completed content: 28 independently adapted packages across Egyptian Arabic, MSA, Gulf Arabic and English. Each contains three explained concepts with original diagrams, a worked decision, quiz with feedback, practical assignment/review criteria and contextual FAQ. These are original teaching adaptations from reviewed topic anchors, not copied source posters.
+
+Assets: 21 concept definitions, 84 SVG exports, 56 PDFs comprising 112 pages (three-page workbook plus one-page worksheet per package), and 28 contextual video text scripts. The 164 pre-existing PDFs remain byte-identical. `new-diagrams.json` and `pdf-revisions.json` contain only additive entries for this scope; integrate these keys into the parent alongside other agents' additions.
+
+Technical boundaries: the 400 mm module and 1800 mm seating examples are explicit arithmetic assumptions. A matching grid does not certify stacking; clear seat width does not establish comfort or occupancy; a hinge does not establish worktop support. Foam density is distinguished from firmness. Abrasion evidence does not prove unrelated stain/fire properties. Source poster dimensions or standards lists are not promoted into universal project requirements.
+
+Verification: 16 scoped Vitest tests passed; TypeScript passed. Browser checks passed 56 combinations (seven lessons × four locales × 390/1440 widths), confirming three distinct diagrams, valid zoom exports, one header locale selector, PDF downloads with valid signatures and filenames, honest pending-video state and no page errors or horizontal overflow. Asset integrity separately matches each section diagram key to its SVG export. All 84 SVG text-bound checks passed. All 112 PDF pages were rendered and inspected through 16 contact sheets, with selected pages at full size. Original diagrams were inspected in Arabic and English. An English inspection label was shortened to `Checks` to fit its box and affected exports were regenerated.
+
+Evidence is under `m08-m09-acceptance-evidence/`, with source review, content/asset integrity, PDF hashes, prior PDF preservation hashes, SVG bounds, browser results and test logs. Replay helpers are under `checkpoint-tools/m08-m09/`. Scratch visual evidence: `/tmp/technical-29-35/pdf/contact-*.jpg`, `/tmp/technical-29-35/svg/contact-*.jpg`, and `/tmp/technical-29-35/ui/`.
+
+Pronunciation acceptance is PENDING for **all four locales**. The scripts explicitly say no audio/video generated in this contribution and no listening performed. Display arithmetic retains direction isolates; `spoken_text` removes them. No blanket Egyptian qaf replacement, audio pipeline change, media mapping, external push, deployment or main-site release occurred in this scope. Parent integration and media/frame review remain separate.

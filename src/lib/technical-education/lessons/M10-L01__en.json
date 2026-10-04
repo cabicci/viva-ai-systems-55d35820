@@ -1,0 +1,72 @@
+{
+  "id": "M10-L01",
+  "locale": "en",
+  "title": "Dining layouts and table clearances",
+  "intro": "Dining layout starts with people and use scenarios. Compare table forms, map moving chairs and doors, and distinguish chair operation from a usable circulation route.",
+  "goals": [
+    "Define users and table form",
+    "Separate chair movement from circulation",
+    "Calculate an explicit layout envelope"
+  ],
+  "sections": [
+    {
+      "id": "users",
+      "title": "Define users and table form",
+      "text": "Record daily and guest counts, actual chair models and access needs. Rectangular and round tables do not become interchangeable merely by seating the same number: legs, bases and chair widths affect usable positions. Draw actual chairs and check entry and knee space. For an extending table, prepare both closed and extended layouts.",
+      "diagram": "new-M10-L01-users",
+      "caption": "Compare actual seating positions, bases and use states."
+    },
+    {
+      "id": "motion",
+      "title": "Separate chair movement from circulation",
+      "text": "Draw the chair stored, occupied and pulled back for standing, then add the walking route and room/sideboard door swings. Empty space with a tucked chair does not prove passage when it is pulled out. Test credible simultaneous states. If serving blocks access, revise position, dimensions or service arrangement and record why.",
+      "diagram": "new-M10-L01-motion",
+      "caption": "Check passage in the relevant occupied and moving states."
+    },
+    {
+      "id": "envelope",
+      "title": "Calculate an explicit layout envelope",
+      "text": "Exercise only: a 900 mm wide top with an assumed total movement zone of 1000 mm measured from each side edge needs ⁦1000 + 900 + 1000 = 2900⁩ mm. In a 3000 mm room, the arithmetic remainder is 100 mm. This is a geometric difference, not proof of comfort or accessibility. Verify the assumed zones against actual chairs, users, openings and project requirements.",
+      "diagram": "new-M10-L01-envelope",
+      "caption": "2900 mm follows the exercise assumptions; it is not a universal clearance."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The 2900 mm exercise envelope fits within 3000 mm, but an open sideboard door intersects an occupied chair. Reject approval based on arithmetic alone; relocate the sideboard and retest chair movement and serving together.",
+    "decision": "Decision: resolve the door conflict, then repeat the movement check."
+  },
+  "quiz": [
+    {
+      "id": "layout-check",
+      "question": "The arithmetic fits but a door hits a chair. What next?",
+      "options": [
+        "Revise and retest movement",
+        "Approve the arithmetic alone",
+        "Omit the door swing"
+      ],
+      "correct": 0,
+      "explanation": "Dimensional fit does not prove conflict-free operation."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit daily/guest layouts, moving-chair and door envelopes, the exercise calculation and a conflict log.",
+    "fields": [
+      "Users and chair models",
+      "Layouts and movement",
+      "Calculation and decision"
+    ],
+    "criteria": [
+      "Actual use defined",
+      "Simultaneous states checked",
+      "2900 mm identified as an assumption"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is the 1000 mm zone a universal rule?",
+      "answer": "No. It is an exercise assumption that must be checked against actual use and project requirements.",
+      "sectionId": "envelope"
+    }
+  ]
+}

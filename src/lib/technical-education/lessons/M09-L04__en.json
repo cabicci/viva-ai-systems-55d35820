@@ -1,0 +1,72 @@
+{
+  "id": "M09-L04",
+  "locale": "en",
+  "title": "Compare seating design alternatives",
+  "intro": "Appearance changes differ from changes affecting structure, support or usable seating. Compare two variants on one frame, then a third requiring construction review.",
+  "goals": [
+    "Lock the baseline before appearance variants",
+    "Identify changes that affect construction",
+    "Tie the decision to a change register"
+  ],
+  "sections": [
+    {
+      "id": "cosmetic",
+      "title": "Lock the baseline before appearance variants",
+      "text": "Fix the frame, support and effective seating dimensions, then compare A/B cover, colour or seam layouts. Record what changes and what stays fixed. A cover change still needs review of fabric direction, cleaning, stretch and tensioning; “appearance” is not an exemption from material specification. Compare using equivalent scale, viewpoint and sample presentation conditions.",
+      "diagram": "new-M09-L04-cosmetic",
+      "caption": "Shared frame, explicit variables and reviewed cover properties."
+    },
+    {
+      "id": "structuralchange",
+      "title": "Identify changes that affect construction",
+      "text": "Variant C removes a centre leg for a lighter appearance. This changes load paths and the supported span even if upholstery remains identical. Arm width, back angle or joint changes can affect usable seating, forces and cutting patterns. Mark affected parts and require design/performance review before claiming equivalence. Do not compensate for a removed support by guessing a larger fastener.",
+      "diagram": "new-M09-L04-structuralchange",
+      "caption": "A visual change can alter the load path and supported span."
+    },
+    {
+      "id": "decisionfile",
+      "title": "Tie the decision to a change register",
+      "text": "For each option record the reason, changed parts/materials, effects on cutting, upholstery and support, and required samples or reviews. Use consistent revision identifiers across drawings and schedules to prevent incompatible old/new parts being combined. Balance function, appearance, fabrication and serviceability, explicitly identifying outstanding checks rather than issuing an undifferentiated “approved” label.",
+      "diagram": "new-M09-L04-decisionfile",
+      "caption": "A revision-controlled change register connects choice to fabrication."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A and B share a centre-supported frame and differ in colour/seam layout. C removes the centre support and requires a construction change file and performance review. Selecting B’s cover after sample review does not approve C’s structure. Record the appearance decision separately from the support decision.",
+    "decision": "Decision: cover selection does not approve support removal."
+  },
+  "quiz": [
+    {
+      "id": "change",
+      "question": "Which change directly calls for a load-path review?",
+      "options": [
+        "Removing the centre leg",
+        "Colour layout only",
+        "Presentation background"
+      ],
+      "correct": 0,
+      "explanation": "Removing support changes the span and load path."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two same-frame appearance options and a support-changing third option, with an impact register and separate approval conditions.",
+    "fields": [
+      "A/B baseline",
+      "C support impact",
+      "Revision and decision register"
+    ],
+    "criteria": [
+      "Appearance/construction separated",
+      "Affected parts listed",
+      "Outstanding checks remain explicit"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is a cover change always purely cosmetic?",
+      "answer": "Not always. Review the new material’s tensioning, cutting, cleaning and sample requirements.",
+      "sectionId": "cosmetic"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M06-L02",
+  "locale": "en",
+  "title": "Plan finishing and approve a sample",
+  "intro": "A finish sample connects colour, substrate, texture, edge treatment and viewing conditions. Build a controlled approval process rather than treating a colour name as a complete finish specification.",
+  "goals": [
+    "Define a representative sample",
+    "Plan preparation and protection",
+    "Compare and record acceptance"
+  ],
+  "sections": [
+    {
+      "id": "sample",
+      "title": "Define a representative sample",
+      "text": "Use the proposed substrate and finishing system, including a face, edge and corner where these are visible on the product. Record sample code, revision, substrate, product references and intended use. Approval on another substrate may misrepresent appearance or texture. A phone photograph helps communication but is not a substitute for an agreed physical reference.",
+      "diagram": "new-M06-L02-sample",
+      "caption": "Include substrate, face, edge and corner in the reference."
+    },
+    {
+      "id": "process",
+      "title": "Plan preparation and protection",
+      "text": "Plan substrate inspection, system-specific preparation, application, verification and transport protection. Identify faces requiring finish before assembly and handling points that could mark them. Compatibility, preparation, application conditions, drying and safe handling come from product documentation and competent personnel. Do not transfer drying times or abrasive grades between unrelated systems.",
+      "diagram": "new-M06-L02-process",
+      "caption": "Process requirements come from the selected system."
+    },
+    {
+      "id": "compare",
+      "title": "Compare and record acceptance",
+      "text": "Agree viewing conditions and criteria for colour, sheen, texture, edges and visible defects. Compare under equivalent conditions and record acceptance or a specific requested adjustment. Retain the accepted sample and its identifier. A material or process change affecting appearance triggers review; verbal approval of a colour name is not a controlled production reference.",
+      "diagram": "new-M06-L02-compare",
+      "caption": "Reference sample + consistent conditions + recorded decision."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Sample A is close in colour but its edge fails the agreed surface criterion. Sample B uses the same substrate and has a consistent face and edge under the agreed lighting. If B meets all criteria, record its code and revision as the reference; a flattering face photograph does not resolve A’s edge defect.",
+    "decision": "Decision: approve and retain the sample meeting the complete agreed criteria."
+  },
+  "quiz": [
+    {
+      "id": "finish-reference",
+      "question": "Which is the best finish comparison reference?",
+      "options": [
+        "A documented sample of the proposed substrate and system",
+        "A colour name alone",
+        "An undocumented screen image"
+      ],
+      "correct": 0,
+      "explanation": "The sample ties appearance to substrate and system under defined review conditions."
+    }
+  ],
+  "assignment": {
+    "prompt": "Create a sample card with substrate, face/edge criteria, viewing conditions and a reasoned acceptance decision.",
+    "fields": [
+      "Sample identification",
+      "Comparison criteria and conditions",
+      "Decision and required adjustment"
+    ],
+    "criteria": [
+      "Representative substrate and edge",
+      "Verifiable criteria",
+      "No invented application recipe"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a phone image approve the finish?",
+      "answer": "It can aid communication, but does not replace the physical reference and agreed viewing conditions.",
+      "sectionId": "compare"
+    }
+  ]
+}
