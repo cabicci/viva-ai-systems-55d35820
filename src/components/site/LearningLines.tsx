@@ -17,8 +17,8 @@ export function LineLogo({ line, className = "" }: { line: LearningLine; classNa
     <img
       src={LINE_LOGOS[line]}
       alt={`Masaarat ${line === "technical" ? "TECH" : line.toUpperCase()}`}
-      width={1536}
-      height={line === "ai" ? 452 : line === "kids" ? 373 : 363}
+      width={2048}
+      height={line === "ai" ? 602 : line === "kids" ? 497 : 483}
       className={`h-auto w-full object-contain ${className}`}
       draggable={false}
       aria-label={getLineCopy(locale)[line]}
@@ -45,7 +45,7 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
           search={search()}
           className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         >
-          <div className="flex h-32 items-center bg-black px-5 sm:h-36">
+          <div className="flex h-32 items-center px-5 sm:h-36">
             <LineLogo line={line} />
           </div>
           <div className="flex flex-1 flex-col p-6">
@@ -99,7 +99,7 @@ export function LineIntroduction({ line }: { line: LearningLine }) {
               {c.plans}
             </Link>
           </div>
-          <div className="rounded-2xl bg-black p-6">
+          <div className="rounded-2xl p-6">
             <LineLogo line={line} />
           </div>
         </div>
