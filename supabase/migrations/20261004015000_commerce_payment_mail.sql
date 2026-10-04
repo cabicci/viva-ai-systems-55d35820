@@ -12,7 +12,7 @@ DECLARE v_id uuid; BEGIN
  INSERT INTO billing.commerce_outbox(order_id,recipient,payload)
  SELECT o.id,lower(u.email),jsonb_build_object('name',left(u.raw_user_meta_data->>'full_name',80),
    'locale',u.raw_user_meta_data->>'preferred_locale','package',o.package,'reference',o.reference,
-   'amount_minor',o.final_minor,'currency',o.currency)
+   'amount_minor',o.final_minor,'currency',o.currency,'order_id',o.id)
  FROM billing.commerce_orders o JOIN auth.users u ON u.id=o.user_id
  WHERE o.id=p_order AND o.review_status='confirmed' AND o.confirmed_at IS NOT NULL
    AND EXISTS(SELECT 1 FROM billing.commerce_entitlements e WHERE e.order_id=o.id AND e.revoked_at IS NULL AND e.ends_at>now())
@@ -51,7 +51,7 @@ LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$ BEGIN
  INSERT INTO billing.commerce_outbox(receipt_id,recipient,payload)
  SELECT NEW.id,'sales@masaarat.ai',jsonb_build_object('kind','receipt_review',
    'locale',u.raw_user_meta_data->>'preferred_locale','package',o.package,
-   'reference',o.reference,'amount_minor',o.final_minor,'currency',o.currency)
+   'reference',o.reference,'amount_minor',o.final_minor,'currency',o.currency,'order_id',o.id)
  FROM billing.commerce_orders o JOIN auth.users u ON u.id=o.user_id
  WHERE o.id=NEW.order_id AND NOT billing.account_deletion_blocked(u.id)
  ON CONFLICT(receipt_id) DO NOTHING;

@@ -79,7 +79,11 @@ describe("administrator payment amounts", () => {
       currencies: ["EGP"],
     },
   };
-  function setup(locale: "ar-EG" | "ar-MSA" | "ar-Gulf" | "en", sample = order) {
+  function setup(
+    locale: "ar-EG" | "ar-MSA" | "ar-Gulf" | "en",
+    sample = order,
+    initialOrderId?: string,
+  ) {
     const run = vi.fn().mockResolvedValue({ id: "synthetic-payment" });
     render(
       <QueryClientProvider
@@ -87,6 +91,7 @@ describe("administrator payment amounts", () => {
       >
         <LocaleProvider initialLocale={locale}>
           <AdminPayments
+            initialOrderId={initialOrderId}
             data={{ ...empty, orders: [sample] }}
             orders={[sample]}
             access={[]}
@@ -98,6 +103,7 @@ describe("administrator payment amounts", () => {
     );
     const w = commerceCopy(locale);
     const form = within(screen.getByRole("button", { name: w.confirm }).closest("form")!);
+    if (initialOrderId) return { run, form, w };
     fireEvent.click(form.getByRole("checkbox", { name: /SYNTHETIC-ORDER/ }));
     fireEvent.change(form.getByLabelText(w.transaction), {
       target: { value: "synthetic-transfer" },
@@ -124,6 +130,11 @@ describe("administrator payment amounts", () => {
       expect(await form.findByText(w.paymentRecorded)).toBeInTheDocument();
     },
   );
+  it("opens an emailed pending order with its allocation ready but still requires funds verification", () => {
+    const { form, w } = setup("en", order, order.id);
+    expect(form.getByLabelText(`${w.paymentAllocation} (EGP)`)).toHaveValue(169);
+    expect(form.getByRole("button", { name: w.confirm })).toBeDisabled();
+  });
   it("preserves cents exactly for a supported USD payment", async () => {
     const { run, form, w } = setup("en", {
       ...order,
@@ -192,7 +203,7 @@ describe("administrator payment amounts", () => {
         />,
       );
       const form = screen.getByRole("heading", { name: commerceCopy("en")[code] }).closest("form")!;
-    expect(within(form).queryByRole("option", { name: "USD" })).toBeNull();
+      expect(within(form).queryByRole("option", { name: "USD" })).toBeNull();
       expect(commandSchemas.configure_method.safeParse(method).success).toBe(true);
       expect(
         commandSchemas.configure_method.safeParse({ ...method, currencies: ["USD"] }).success,

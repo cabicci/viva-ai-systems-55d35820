@@ -11,10 +11,11 @@ import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-me
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
+import { parsePaymentLoginSearch } from "@/lib/commerce/payment-links";
 import { loginErrorPresentation } from "@/lib/login-error";
 
 export const Route = createFileRoute("/login")({
-  validateSearch: parseAuthIntentSearch,
+  validateSearch: (raw) => ({ ...parseAuthIntentSearch(raw), ...parsePaymentLoginSearch(raw) }),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
     return buildLocalizedPublicMeta(locale, "login");
@@ -49,6 +50,12 @@ function LoginPage() {
     toast.success(t("auth.login.toast.success"));
     if (search.intent === "kids") {
       navigate({ to: "/kids/family", search: { locale: search.locale }, replace: true });
+    } else if (search.paymentView && search.order) {
+      navigate({
+        to: search.paymentView === "admin" ? "/admin/commerce" : "/payments",
+        search: { order: search.order, locale: search.locale },
+        replace: true,
+      });
     } else {
       navigate({ to: "/dashboard", replace: true });
     }

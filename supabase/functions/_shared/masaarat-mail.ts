@@ -184,6 +184,7 @@ export function subscriptionContent(
 }
 
 export type PaymentConfirmation = {
+  order_id: string;
   name?: string | null;
   locale: unknown;
   package: string;
@@ -191,6 +192,11 @@ export type PaymentConfirmation = {
   amount_minor: number;
   currency: string;
 };
+function paymentPath(input: PaymentConfirmation, admin = false) {
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(input.order_id))
+    throw new Error("Invalid payment order");
+  return `${admin ? "/admin/commerce" : "/payments"}?order=${input.order_id}`;
+}
 export function paymentConfirmationContent(input: PaymentConfirmation) {
   const locale = mailLocale(input.locale);
   const plan =
@@ -224,7 +230,7 @@ export function paymentConfirmationContent(input: PaymentConfirmation) {
   const [title, body, action] = copy[locale];
   return {
     subject: `${title} | Masaarat ${plan}`,
-    ...personalized(locale, input.name, title, body, action, "/payments"),
+    ...personalized(locale, input.name, title, body, action, paymentPath(input)),
   };
 }
 
@@ -261,7 +267,7 @@ export function receiptReviewContent(input: PaymentConfirmation) {
   const [title, body, action] = copy[locale];
   return {
     subject: `${title} | ${input.reference}`,
-    ...personalized(locale, null, title, body, action, "/admin/commerce"),
+    ...personalized(locale, null, title, body, action, paymentPath(input, true)),
   };
 }
 

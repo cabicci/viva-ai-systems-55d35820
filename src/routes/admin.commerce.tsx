@@ -1,3 +1,4 @@
+import { guardPaymentLink, parsePaymentSearch } from "@/lib/commerce/payment-links";
 import { download } from "@/lib/commerce/admin-ui";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useRef } from "react";
@@ -16,17 +17,22 @@ import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
 export const Route = createFileRoute("/admin/commerce")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
-  beforeLoad: requireAdminBeforeLoad,
-  component: CommerceAdmin,
+  validateSearch: parsePaymentSearch,
+  beforeLoad: ({ search }) => guardPaymentLink(requireAdminBeforeLoad, search.order, "admin"),
+  component: CommerceAdminRoute,
 });
-function CommerceAdmin() {
+function CommerceAdminRoute() {
+  const { order } = Route.useSearch();
+  return <CommerceAdmin key={order ?? "all"} targetOrderId={order} />;
+}
+function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     command = useServerFn(commerceCommand),
     qc = useQueryClient();
   const [tab, setTab] = useState("payments"),
     [page, setPage] = useState(0),
-    [search, setSearch] = useState(""),
+    [search, setSearch] = useState(targetOrderId ?? ""),
     [filter, setFilter] = useState("all"),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
@@ -60,7 +66,7 @@ function CommerceAdmin() {
   const orders =
     data?.orders.filter(
       (o) =>
-        `${o.recipient_email} ${o.reference} ${o.package}`
+        `${o.id} ${o.recipient_email} ${o.reference} ${o.package}`
           .toLowerCase()
           .includes(search.toLowerCase()) &&
         (filter === "all" || o.review_status === filter),
@@ -173,6 +179,7 @@ function CommerceAdmin() {
           <>
             {tab === "payments" && (
               <AdminPayments
+                initialOrderId={targetOrderId}
                 data={data}
                 orders={orders.slice(page * 25, (page + 1) * 25)}
                 access={access.slice(page * 25, (page + 1) * 25)}

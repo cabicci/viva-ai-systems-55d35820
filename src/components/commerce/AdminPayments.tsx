@@ -11,12 +11,14 @@ import { Button } from "@/components/ui/button";
 import { ReceiptUpload, ReceiptView } from "./ReceiptUpload";
 import { Field, Select, Panel, Check, type RunCommand } from "./AdminShared";
 export function AdminPayments({
+  initialOrderId,
   data,
   orders,
   access,
   run,
   busy,
 }: {
+  initialOrderId?: string;
   data: AdminData;
   orders: Order[];
   access: Entitlement[];
@@ -26,7 +28,17 @@ export function AdminPayments({
   const requestKey = useCommandKey();
   const { locale } = useLocale(),
     w = commerceCopy(locale);
-  const [selected, setSelected] = useState<string[]>([]),
+  const [selected, setSelected] = useState<string[]>(
+      initialOrderId &&
+        orders.some(
+          (o) =>
+            o.id === initialOrderId &&
+            ["awaiting_receipt", "pending", "more_info"].includes(o.review_status) &&
+            new Date(o.expires_at) > new Date(),
+        )
+        ? [initialOrderId]
+        : [],
+    ),
     [existingPayment, setExistingPayment] = useState(""),
     [amounts, setAmounts] = useState<Record<string, string>>({}),
     [received, setReceived] = useState(""),

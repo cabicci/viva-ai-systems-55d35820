@@ -11,6 +11,7 @@ const row = {
   claim_token: "claim-1",
   recipient: "synthetic@example.test",
   payload: {
+    order_id: "00000000-0000-4000-8000-000000000009",
     locale: "en",
     name: "Synthetic",
     package: "pro",
@@ -45,7 +46,7 @@ describe("manual payment confirmation mail", () => {
       expect(mail.text).toContain("MS-SYNTHETIC");
       expect(mail.html).toContain("&lt;script&gt;name&lt;/script&gt;");
       expect(mail.html).toContain(locale === "en" ? 'dir="ltr"' : 'dir="rtl"');
-      expect(mail.html).toContain("https://masaarat.ai/payments");
+      expect(mail.html).toContain(`https://masaarat.ai/payments?order=${row.payload.order_id}`);
     },
   );
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
@@ -53,7 +54,9 @@ describe("manual payment confirmation mail", () => {
     (locale) => {
       const mail = receiptReviewContent({ ...row.payload, locale });
       expect(mail.text).toContain("MS-SYNTHETIC");
-      expect(mail.html).toContain("https://masaarat.ai/admin/commerce");
+      expect(mail.html).toContain(
+        `https://masaarat.ai/admin/commerce?order=${row.payload.order_id}`,
+      );
       expect(mail.html).not.toContain("storage/v1");
       expect(mail.html).toContain(locale === "en" ? 'dir="ltr"' : 'dir="rtl"');
     },
