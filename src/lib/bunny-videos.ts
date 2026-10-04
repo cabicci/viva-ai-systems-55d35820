@@ -696,6 +696,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "technical-m19-l01__en": "e5833ad9-b03f-40b4-9728-f2aadee28ef9",
   "technical-m19-l02__ar-EG": "e42a0a16-5bd1-4f3e-b8c8-d574a34a4f32",
   "technical-m19-l02__ar-Gulf": "17f23d16-2d17-4f0b-8474-f4468dc19723",
+  "technical-m19-l02__ar-MSA": "42cbf139-4080-41e8-817a-04c2ff73f787",
 
 };
 
