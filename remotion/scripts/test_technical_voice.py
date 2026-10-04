@@ -45,6 +45,21 @@ class TechnicalVoiceTests(unittest.TestCase):
         revised = tts.NarrationPolicy("revision-2", TECHNICAL_EGYPTIAN.prompt_prefix)
         self.assertNotEqual(original, tts.segment_cache_name(1, "Charon", "قائمة القطع", "", revised))
 
+    def test_piece_uses_hamza_only_in_the_egyptian_audio_request(self):
+        text = "قطعة، القِطْعة، والقطعة وبقطعتين؛ القاع والقطع ودقة القياس: 600 ملّي."
+        spoken, _ = tts.prepare_narration(text, narration_policy=TECHNICAL_EGYPTIAN)
+        self.assertEqual(spoken, "إِطعة، الإِطعة، والإِطعة وبإِطعتين؛ القاع والقطع ودقة القياس: 600 ملّي.")
+        for locale in ["ar-MSA", "ar-Gulf", "en"]:
+            self.assertEqual(tts.prepare_narration(text, locale)[0], text)
+
+    def test_piece_fix_invalidates_only_segments_containing_the_word(self):
+        prior = tts.NarrationPolicy(TECHNICAL_EGYPTIAN.name, TECHNICAL_EGYPTIAN.prompt_prefix)
+        for text in ["راجع دقة القياس.", "القاع له مقاس محدد."]:
+            self.assertEqual(tts.segment_cache_name(1, "Charon", text, "", prior),
+                             tts.segment_cache_name(1, "Charon", text, "", TECHNICAL_EGYPTIAN))
+        self.assertNotEqual(tts.segment_cache_name(2, "Charon", "قطعة كبيرة.", "", prior),
+                            tts.segment_cache_name(2, "Charon", "قطعة كبيرة.", "", TECHNICAL_EGYPTIAN))
+
     def test_policy_is_applied_to_real_request_and_not_spoken_as_text(self):
         captured = []
         class Response:
@@ -57,10 +72,11 @@ class TechnicalVoiceTests(unittest.TestCase):
             captured.append(json.loads(request.data))
             return Response()
         with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, {"TTS_REQUEST_GAP_SECONDS": "0"}), patch.object(tts.urllib.request, "urlopen", respond):
-            tts._tts("القاع له مقاس محدد.", "Charon", "احفظ معنى المصطلح", directory + "/a.wav", ["test-only"], narration_policy=TECHNICAL_EGYPTIAN)
+            tts._tts("قطعة فوق القاع: 600 ملّي.", "Charon", "احفظ معنى المصطلح", directory + "/a.wav", ["test-only"], narration_policy=TECHNICAL_EGYPTIAN)
         prompt = captured[0]["contents"][0]["parts"][0]["text"]
         self.assertTrue(prompt.startswith(TECHNICAL_EGYPTIAN.prompt_prefix))
-        self.assertIn("القاع له مقاس محدد.", prompt)
+        self.assertIn("إِطعة فوق القاع: 600 ملّي.", prompt)
+        self.assertNotIn("قطعة فوق", prompt)
         self.assertNotIn("الأرار", prompt)
         self.assertEqual(captured[0]["generationConfig"]["speechConfig"]["voiceConfig"]["prebuiltVoiceConfig"]["voiceName"], "Charon")
 

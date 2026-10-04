@@ -6,6 +6,20 @@ try:
 except ImportError:
     from gemini_tts import NarrationPolicy
 
+# The user reported qaf in "قطعة". These are audio-only, reviewed singular/dual
+# forms; no rule is inferred for ambiguous "قطع" or words that retain qaf.
+_PIECE_FORMS = {
+    "قطعة": "إِطعة", "القطعة": "الإِطعة",
+    "قطعتين": "إِطعتين", "القطعتين": "الإِطعتين",
+}
+_PIECE_PRONUNCIATIONS = dict(_PIECE_FORMS)
+for _prefix in ("و", "ف", "ب", "ل", "وب", "ول", "فب", "فل"):
+    for _word, _spoken in _PIECE_FORMS.items():
+        _PIECE_PRONUNCIATIONS[_prefix + _word] = _prefix + _spoken
+for _word, _spoken in _PIECE_FORMS.items():
+    if _word.startswith("ال"):
+        _PIECE_PRONUNCIATIONS["لل" + _word[2:]] = "لل" + _spoken[2:]
+
 TECHNICAL_EGYPTIAN = NarrationPolicy(
     name="technical-egyptian-context-v1",
     prompt_prefix="""اقرأ النص التالي بعامية مصرية قاهرية طبيعية في سياق شرح داخل ورشة.
@@ -19,6 +33,7 @@ TECHNICAL_EGYPTIAN = NarrationPolicy(
 
 النص:
 """,
+    word_pronunciations=tuple(sorted(_PIECE_PRONUNCIATIONS.items())),
 )
 
 

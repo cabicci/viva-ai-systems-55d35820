@@ -12,7 +12,7 @@ Usage:
     synthesize_segments(segments, out_dir, master_path)
 """
 from __future__ import annotations
-import os, json, base64, struct, subprocess, time, urllib.request, urllib.error, hashlib
+import os, json, base64, struct, subprocess, time, urllib.request, urllib.error, hashlib, re
 from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import cycle
@@ -90,6 +90,7 @@ class NarrationPolicy:
     """An explicit caller-owned Egyptian voice revision; legacy callers stay unchanged."""
     name: str
     prompt_prefix: str
+    word_pronunciations: tuple[tuple[str, str], ...] = ()
 
 
 def prepare_narration(text: str, locale: str | None = None,
@@ -98,9 +99,15 @@ def prepare_narration(text: str, locale: str | None = None,
     if narration_policy is not None:
         if locale is not None:
             raise ValueError("An Egyptian narration policy cannot override another locale")
-        # Technical text is already context-authored. Preserve terms and spelling:
-        # do not apply the legacy qaf allow-list or semantic substitutions.
-        return text, narration_policy.prompt_prefix
+        # Apply only explicitly reviewed word pronunciations to the audio request.
+        # Display text/captions and all other technical terms stay untouched.
+        pronunciations = dict(narration_policy.word_pronunciations)
+        def pronounce(match):
+            word = match.group(0)
+            normalized = re.sub(r"[\u064B-\u0652\u0670\u0640]", "", word)
+            return pronunciations.get(normalized, word)
+        spoken = re.sub(r"[\u0621-\u064A\u064B-\u0652\u0670\u0640]+", pronounce, text)
+        return spoken, narration_policy.prompt_prefix
     if profile.egyptian_phonetic_rewrite:
         rewritten, diffs = egyptianize_with_diff(text)
         if diffs:
@@ -113,10 +120,11 @@ def segment_cache_name(idx: int, voice: str, text: str, focus: str,
                        narration_policy: NarrationPolicy | None = None) -> str:
     if narration_policy is None:
         return f"s{idx}_{voice.lower()}.wav"
-    content = json.dumps({"text": text, "voice": voice, "focus": focus,
+    spoken, prefix = prepare_narration(text, narration_policy=narration_policy)
+    content = json.dumps({"text": spoken, "voice": voice, "focus": focus,
                           "model": MODEL, "sampleRate": SAMPLE_RATE,
                           "policy": narration_policy.name,
-                          "prompt": narration_policy.prompt_prefix},
+                          "prompt": prefix},
                          ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(content.encode()).hexdigest()
     return f"s{idx}_{voice.lower()}_{digest}.wav"
