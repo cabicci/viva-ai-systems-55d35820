@@ -839,10 +839,10 @@ it.skipIf(!nativeUrl)(
         nativeKey + "%",
       ]);
       await db.query("DELETE FROM billing.commerce_orders WHERE request_key LIKE $1", [
-        nativeKey + "%",
+        "%:" + nativeKey + "%",
       ]);
       await db.query("DELETE FROM billing.commerce_payments WHERE request_key LIKE $1", [
-        nativeKey + "%",
+        "payment:" + nativeKey + "%",
       ]);
       await db.exec("DELETE FROM billing.commerce_offers WHERE code='CONCURRENT'");
     }
