@@ -1945,6 +1945,10 @@ export type Database = {
         Returns: Json
       }
       commerce_mail: { Args: { p_action: string; p_data: Json }; Returns: Json }
+      commerce_payment_mail: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
       commerce_previous_get_my_billing_access_tier: {
         Args: never
         Returns: string
@@ -2506,6 +2510,10 @@ export type Database = {
           p_plan_version_id: string
           p_user_id: string
         }
+        Returns: Json
+      }
+      queue_commerce_payment_confirmation: {
+        Args: { p_order: string }
         Returns: Json
       }
       queue_contact_acknowledgement: {
