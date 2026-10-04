@@ -96,17 +96,13 @@ describe("public page locale (pricing, terms, privacy, home, login, root)", () =
   it("includes og and twitter tags for public routes", () => {
     for (const kind of ["pricing", "privacy"] as const) {
       const { meta } = buildLocalizedPublicMeta("en", kind);
-      expect(meta.some((tag) => "property" in tag && tag.property === "og:title")).toBe(
-        true,
-      );
-      expect(meta.some((tag) => "name" in tag && tag.name === "twitter:title")).toBe(
-        true,
-      );
+      expect(meta.some((tag) => "property" in tag && tag.property === "og:title")).toBe(true);
+      expect(meta.some((tag) => "name" in tag && tag.name === "twitter:title")).toBe(true);
       expect(metaDescription(meta).length).toBeGreaterThan(0);
     }
   });
 
-  it("labels paid checkout as test-only with no real charge in every locale", () => {
+  it("distinguishes Stripe test checkout from real manual transfers in every locale", () => {
     const copyKeys = [
       "pricing.hero.subtitle",
       "pricing.legal.note",
@@ -120,20 +116,20 @@ describe("public page locale (pricing, terms, privacy, home, login, root)", () =
       if (locale === "en") {
         expect(blob).toMatch(/test/i);
         expect(blob).toMatch(/real money/i);
+        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/manual.*real money/i);
+        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/administrator.*verif/i);
       } else {
         expect(blob).toMatch(/تجريبي/);
         expect(blob).toMatch(/(?:فلوس|أموال)/);
+        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/التحويل اليدوي/);
+        expect(getUiString(locale, "pricing.faq.2.a")).toMatch(/مراجعة.*الإدارة/);
       }
 
-      expect(getUiString(locale, "pricing.badge.comingSoon")).not.toMatch(
-        /coming soon|قريب[اًًا]?/i,
-      );
-      expect(getUiString(locale, "pricing.cta.paymentPending")).not.toMatch(
-        /coming soon|قريب[اًًا]?/i,
-      );
-      expect(getUiString(locale, "pricing.cta.proSoon")).not.toMatch(
-        /coming soon|قريب[اًًا]?/i,
-      );
+      for (const key of copyKeys) expect(getUiString(locale, key)).toContain("Stripe");
+
+      expect(getUiString(locale, "pricing.badge.comingSoon")).not.toMatch(/coming soon|قريب/i);
+      expect(getUiString(locale, "pricing.cta.paymentPending")).not.toMatch(/coming soon|قريب/i);
+      expect(getUiString(locale, "pricing.cta.proSoon")).not.toMatch(/coming soon|قريب/i);
     }
   });
 
