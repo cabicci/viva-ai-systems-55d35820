@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -39,6 +40,12 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
     SAFE_LINE_RETURNS.find((entry) => entry === path) ??
     (line ? LINE_ROUTES[line] : "/my-learning");
   const authSearch = search({ returnTo });
+  const [learningOpen, setLearningOpen] = useState(false);
+  const aiLearningLinks = [
+    { to: "/dashboard", label: t("sidebar.dashboard") },
+    { to: "/ai-assistant", label: t("sidebar.assistant") },
+    { to: "/analytics", label: t("sidebar.analytics") },
+  ];
   const links = line
     ? [
         { to: LINE_ROUTES[line], label: c.overview },
@@ -47,12 +54,11 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
           label: c.paths,
         },
         { to: LINE_PRICING[line], label: c.plans },
-        ...(user
+        ...(user && line !== "ai"
           ? [
               {
-                to:
-                  line === "ai" ? "/dashboard" : line === "kids" ? "/kids/family" : "/my-learning",
-                label: c.learning,
+                to: line === "kids" ? "/kids/family" : "/my-learning",
+                label: line === "kids" ? c.family : c.learning,
               },
             ]
           : []),
@@ -60,6 +66,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
     : [
         { to: "/about", label: c.about },
         { to: "/contact", label: t("nav.contact") },
+        ...(user ? [{ to: "/my-learning", label: c.learning }] : []),
       ];
   return (
     <header
@@ -100,6 +107,31 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
               {label}
             </Link>
           ))}
+          {user && line === "ai" && (
+            <Popover open={learningOpen} onOpenChange={setLearningOpen}>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  {c.learning}
+                  <ChevronDown className="ms-2 h-4 w-4" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="end" className="p-2">
+                <nav aria-label={c.learning}>
+                  {aiLearningLinks.map(({ to, label }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      search={search()}
+                      onClick={() => setLearningOpen(false)}
+                      className="block rounded-lg px-3 py-3 text-sm font-semibold hover:bg-primary/10"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </nav>
+              </PopoverContent>
+            </Popover>
+          )}
           {line && (
             <Popover>
               <PopoverTrigger asChild>
@@ -175,6 +207,22 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
                     </Link>
                   </SheetClose>
                 ))}
+                {user && line === "ai" && (
+                  <section aria-label={c.learning} className="mt-5 border-t border-border pt-5">
+                    <p className="px-3 text-xs font-bold text-muted-foreground">{c.learning}</p>
+                    {aiLearningLinks.map(({ to, label }) => (
+                      <SheetClose asChild key={to}>
+                        <Link
+                          to={to}
+                          search={search()}
+                          className="block rounded-lg px-3 py-3 text-sm font-semibold"
+                        >
+                          {label}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </section>
+                )}
                 <section aria-label={c.switch}>
                   <p className="mt-5 border-t border-border px-3 pt-5 text-xs font-bold text-muted-foreground">
                     {c.switch}
