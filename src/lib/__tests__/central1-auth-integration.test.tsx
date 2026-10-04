@@ -133,7 +133,7 @@ afterEach(() => {
 });
 
 async function renderAt(
-  initialEntry: "/login" | "/dashboard" | "/pricing",
+  initialEntry: "/login" | "/dashboard" | "/pricing" | `/payments?order=${string}`,
   { guardDashboard = false }: { guardDashboard?: boolean } = {},
 ) {
   const rootRoute = createRootRoute({
@@ -147,6 +147,7 @@ async function renderAt(
   const loginRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/login",
+    validateSearch: LoginFileRoute.options.validateSearch,
     component: LoginComponent,
   });
 
@@ -167,8 +168,22 @@ async function renderAt(
     path: "/pricing",
     component: PricingFileRoute.options.component,
   });
+  const paymentRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/payments",
+    validateSearch: (raw: Record<string, unknown>) => ({ order: String(raw.order ?? "") }),
+    component: PaymentGate,
+  });
+  function PaymentGate() {
+    const { order } = paymentRoute.useSearch();
+    return (
+      <AuthSessionGate loginSearch={order ? { order, paymentView: "customer" } : undefined}>
+        <div>protected-payment</div>
+      </AuthSessionGate>
+    );
+  }
   const router = createRouter({
-    routeTree: rootRoute.addChildren([loginRoute, dashboardRoute, pricingRoute]),
+    routeTree: rootRoute.addChildren([loginRoute, dashboardRoute, pricingRoute, paymentRoute]),
     history,
   });
 
@@ -190,6 +205,24 @@ function fillLoginForm() {
 }
 
 describe("central1 auth integration", () => {
+  it("preserves an emailed payment order through the hydration gate and successful login", async () => {
+    const order = "00000000-0000-4000-8000-000000000009";
+    const router = await renderAt(`/payments?order=${order}`);
+    await waitFor(() => expect(router.state.location.pathname).toBe("/login"));
+    expect(router.state.location.search).toMatchObject({ order, paymentView: "customer" });
+    expect(screen.queryByText("protected-payment")).not.toBeInTheDocument();
+    mocks.signInWithPassword.mockImplementation(async () => {
+      mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
+      mocks.authListener?.("SIGNED_IN", SESSION);
+      return { data: { session: SESSION }, error: null };
+    });
+    fillLoginForm();
+    fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
+    await waitFor(() => expect(router.state.location.pathname).toBe("/payments"));
+    expect(router.state.location.search).toMatchObject({ order });
+    expect(await screen.findByText("protected-payment")).toBeInTheDocument();
+  });
+
   it("shows the supplied fallback without protected content while auth hydrates", async () => {
     mocks.getSession.mockReturnValue(new Promise(() => {}));
 
