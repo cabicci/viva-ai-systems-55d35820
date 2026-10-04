@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M05-L02",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Doors, hinges and clearances",
+      "spoken_text": "Door size depends on its relationship to the opening, motion and hinge system. Distinguish inset and overlay geometry and calculate a declared gap exercise before selecting hardware.",
+      "caption": "Door size depends on its relationship to the opening, motion and hinge system. Distinguish inset and overlay geometry and calculate a declared gap exercise before selecting hardware."
+    },
+    {
+      "id": "doorfit",
+      "display_title": "Distinguish inset from overlay",
+      "spoken_text": "An inset door sits within the opening and needs defined edge gaps. An overlay door extends across part of the side face; state the overlay and whether the side is shared or external. Sketch a closed horizontal section with body face, door face and opening edge. A shared divider between doors differs from an outer cabinet end.",
+      "caption": "The opening edge defines the starting geometric relationship.",
+      "diagram": "new-M05-L02-doorfit"
+    },
+    {
+      "id": "gaps",
+      "display_title": "Calculate a two-door gap exercise",
+      "spoken_text": "Exercise only: a 560 mm opening has two equal inset doors with 2 mm left, centre and right gaps. Total gaps are 6 mm, leaving 554 mm across the doors, or 277 mm each. Mark all gaps and deduct the centre once. Actual clearances require review of the chosen door and hinge system; these values are not a product specification.",
+      "caption": "Exercise: 560 = 2 + 277 + 2 + 277 + 2 mm.",
+      "diagram": "new-M05-L02-gaps"
+    },
+    {
+      "id": "motion",
+      "display_title": "Review motion and hinge requirements",
+      "spoken_text": "Define opening direction and track the edge and handle against walls and neighbouring units. Actual hinge motion may differ from simple rotation about an edge; a preliminary swing sketch identifies conflicts but does not establish the final product envelope. Match door type, thickness, dimensions and mass to the chosen system, using its data for mounting and adjustment requirements.",
+      "caption": "A preliminary envelope must be checked against the actual hinge motion.",
+      "diagram": "new-M05-L02-motion"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The inset exercise gives 277 mm per door. Changing to overlay does not preserve that width automatically: the dimension now depends on coverage of the sides. Define overlay and gaps in the section, review the hinge system, then issue a revised size. Decision:277 mm belongs to the inset assumption; overlay needs a revised calculation.",
+      "caption": "Decision:277 mm belongs to the inset assumption; overlay needs a revised calculation."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit the two-door section, gap calculation, opening direction and required hinge information.",
+      "spoken_text": "Submit the two-door section, gap calculation, opening direction and required hinge information.",
+      "caption": "Submit the two-door section, gap calculation, opening direction and required hinge information."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M05-L01",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Choose a joint for its purpose",
+      "spoken_text": "Joint selection begins with the interface function and load path. Compare contact geometry, assembly and disassembly before choosing a construction system.",
+      "caption": "Joint selection begins with the interface function and load path. Compare contact geometry, assembly and disassembly before choosing a construction system."
+    },
+    {
+      "id": "contact",
+      "display_title": "Read contact geometry and load path",
+      "spoken_text": "A shelf transfers the load of its contents through its interfaces to the sides. A butt interface meets the shelf end against the side face; a housing seats it in a recess. Geometry alone does not establish capacity. Draw load direction, contact surfaces and connection method, distinguishing the construction principle from strength verification.",
+      "caption": "Trace contents → shelf → joint → side; geometry is not capacity.",
+      "diagram": "new-M05-L01-contact"
+    },
+    {
+      "id": "assembly",
+      "display_title": "Compare assembly and disassembly",
+      "spoken_text": "Glued assembly may require simultaneous engagement and may not separate without damage. A mechanical system designed for disassembly can support separate transport, provided tools and connectors remain accessible. Draw an exploded sequence and identify permanent and removable joints. A finish or cover that blocks access can defeat the intended serviceability.",
+      "caption": "Disassembly requires a feasible sequence and tool access.",
+      "diagram": "new-M05-L01-assembly"
+    },
+    {
+      "id": "choice",
+      "display_title": "Record the joint decision and verification",
+      "spoken_text": "Record part, material, thickness and interface purpose. Compare contact, positioning, tool access, appearance and disassembly. Identify the detail, connection system, product data and required performance review. Do not guess fastener diameter or length from teaching panel sizes; dimensional geometry and connection performance are separate checks.",
+      "caption": "A reasoned decision identifies the detail and pending performance checks.",
+      "diagram": "new-M05-L01-choice"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The exercise unit must travel in parts and permit shelf replacement. A is permanently glued; B uses a system designed for disassembly with internal tool access. B better meets serviceability after material/system review. This functional comparison does not establish that B is structurally stronger. Decision: develop B for serviceability while retaining performance verification.",
+      "caption": "Decision: develop B for serviceability while retaining performance verification."
+    },
+    {
+      "id": "practice",
+      "display_title": "Sketch butt and housed shelf interfaces with load paths, then compare A/B in a disassembly decision card.",
+      "spoken_text": "Sketch butt and housed shelf interfaces with load paths, then compare A/B in a disassembly decision card.",
+      "caption": "Sketch butt and housed shelf interfaces with load paths, then compare A/B in a disassembly decision card."
+    }
+  ]
+}

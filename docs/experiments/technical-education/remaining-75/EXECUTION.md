@@ -89,3 +89,9 @@ M04 delivery receipt: production build passed with4096MB heap. Commit `60e4b021f
 Coordinator review found that right-to-left SVG text reversed arithmetic operands and the signed change. Seven numerical labels in the three M04 arithmetic geometries now use Unicode LRI/PDI. The shared renderer is unchanged. Nine Arabic-register SVG assets and six affected workbooks were regenerated; worksheet, English and all44 original accepted PDF hashes remain unchanged. All9 actual SVG renderings were visually reviewed with correct400−1−1=398,4×15=60,6×15=90 and+30 order. A dedicated regression checks isolates and operand equality;11 scoped Vitest tests,10 Python tests and TypeScript pass.
 
 Status counts are recomputed from verified batches:11 new +64 remaining =75;44 verified locale packages. A new invariant verifies batch sums, four-register totals and the75-lesson scope. M05 content drafts are not included in this completion count or remediation commit.
+
+M04 arithmetic remediation receipt: commit `5dd5886b4989eee2c254fdec6bcbb70da14037e5`, tree `bf9581bc7ea02a79b74152cf1b7cc8c8f78c4252`, durably matches22 remediation files. M05 four-register content is now drafted and remains outside verified counts pending diagrams/PDF/runtime acceptance.
+
+## User-requested safe stop
+
+Execution is paused. M05 is a separate unapproved checkpoint with four draft lessons/16 packages and generated reading assets; it is not included in11 verified lessons/44 packages or64 remaining. See `M05-CHECKPOINT.md` for exact completed runs, final visual gaps and replay evidence. No M06 manuscript, publication, reviewed-media update or audio/video production occurred.

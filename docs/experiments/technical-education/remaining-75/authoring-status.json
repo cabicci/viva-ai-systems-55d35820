@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_scope": "isolated remaining-75 authoring execution; not learner availability",
   "parent_commit": "a908cb5698dfa00d7552658413f23fe93ff0f2c0",
-  "status": "in_progress",
+  "status": "paused_at_user_requested_checkpoint",
   "remaining_lesson_count": 75,
   "expected_locale_package_count": 300,
   "new_authored_lesson_count": 11,
@@ -125,9 +125,17 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "queued",
+      "status": "checkpoint_unapproved_requires_final_visual_and_content_QA",
       "new_authored_lesson_count": 0,
-      "new_authored_locale_package_count": 0
+      "new_authored_locale_package_count": 0,
+      "authored_draft_lesson_count": 4,
+      "draft_locale_package_count": 16,
+      "pdf_count": 32,
+      "unique_concept_diagrams": 12,
+      "pdf_rendered_page_count": 64,
+      "runtime_viewport_cases_passed": 32,
+      "production_build": "not_run_for_checkpoint",
+      "approval": "not_approved"
     },
     {
       "module_id": "M06",
@@ -350,8 +358,8 @@
       "new_authored_locale_package_count": 0
     }
   ],
-  "authored_draft_lesson_count": 0,
-  "count_definition": "new_authored counts represent verified complete lesson batches; draft counts are not completion",
+  "authored_draft_lesson_count": 4,
+  "count_definition": "new_authored counts represent verified complete batches; drafts awaiting asset/layout/runtime gates are excluded",
   "remaining_unauthored_lesson_count": 64,
   "video_outputs_created": 0,
   "voice_outputs_created": 0
