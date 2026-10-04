@@ -1,3 +1,5 @@
+import { AdminOffers } from "./AdminOffers";
+import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
 import { render, screen, fireEvent, waitFor, cleanup, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -474,4 +476,156 @@ describe("commerce journeys", () => {
       expect(screen.getByRole("button", { name: w.send })).toBeDisabled();
     },
   );
+});
+
+describe("simple administrator offers", () => {
+  function setup(locale: "ar-EG" | "ar-MSA" | "ar-Gulf" | "en") {
+    const run = vi.fn().mockImplementation(async (action: string, p: Record<string, unknown>) =>
+      action === "simple_offer"
+        ? {
+            id: "synthetic-offer",
+            code: p.code,
+            package: p.package,
+            kind: "percent",
+            value_minor: p.percent,
+            delivery_mode: p.delivery,
+            enabled: true,
+            valid_until: null,
+            max_redemptions: 2,
+          }
+        : { group_id: empty.groups[0].id },
+    );
+    mock.command.mockResolvedValue([
+      {
+        package: "pro",
+        market: "EG",
+        billing_interval: "month",
+        original_minor: 16900,
+        currency: "EGP",
+      },
+      {
+        package: "pro_plus",
+        market: "EG",
+        billing_interval: "year",
+        original_minor: 249000,
+        currency: "EGP",
+      },
+    ]);
+    render(
+      <QueryClientProvider
+        client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}
+      >
+        <LocaleProvider initialLocale={locale}>
+          <AdminOffers data={empty} run={run} busy={false} />
+        </LocaleProvider>
+      </QueryClientProvider>,
+    );
+    return { run, s: adminOfferCopy(locale), w: commerceCopy(locale) };
+  }
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "creates a 100 percent email-only coupon after review in %s",
+    async (locale) => {
+      const { run, s } = setup(locale);
+      await screen.findByRole("option", { name: /Pro.*169/ });
+      fireEvent.change(screen.getByLabelText(s.emails), {
+        target: { value: "member@example.test" },
+      });
+      expect(screen.queryByLabelText(commerceCopy(locale).name)).toBeNull();
+      fireEvent.click(screen.getByRole("button", { name: s.review }));
+      expect(run).not.toHaveBeenCalled();
+      expect(screen.getByText(s.reviewTitle)).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: s.confirm }));
+      await screen.findByText(s.created);
+      expect(run).toHaveBeenCalledWith(
+        "simple_offer",
+        expect.objectContaining({
+          audience: "individual",
+          emails: ["member@example.test"],
+          percent: 100,
+          expected_price_minor: 16900,
+          delivery: "coupon",
+        }),
+      );
+      expect(mock.dispatch).not.toHaveBeenCalled();
+    },
+  );
+  it("keeps time-only/count-only limits mutually exclusive and permits a restricted direct invitation", async () => {
+    const { run, s, w } = setup("en");
+    await screen.findByRole("option", { name: /Pro.*169/ });
+    fireEvent.click(screen.getByRole("radio", { name: s.public }));
+    expect(screen.queryByLabelText(s.emails)).toBeNull();
+    fireEvent.change(screen.getByLabelText(s.limitMode), { target: { value: "count" } });
+    expect(screen.queryByLabelText(s.until)).toBeNull();
+    fireEvent.change(screen.getByLabelText(s.total), { target: { value: "2" } });
+    fireEvent.change(screen.getByLabelText(s.percent), { target: { value: "20" } });
+    fireEvent.click(screen.getByRole("button", { name: s.review }));
+    fireEvent.click(screen.getByRole("button", { name: s.confirm }));
+    await screen.findByText(s.created);
+    expect(run).toHaveBeenCalledWith(
+      "simple_offer",
+      expect.objectContaining({ valid_until: null, max_redemptions: 2, percent: 20 }),
+    );
+    fireEvent.click(screen.getByRole("button", { name: s.another }));
+    fireEvent.click(screen.getByRole("radio", { name: s.group }));
+    fireEvent.change(screen.getByLabelText(s.emails), {
+      target: { value: "member@example.test\nother@example.test" },
+    });
+    fireEvent.change(screen.getByLabelText(w.kind), { target: { value: "invitation" } });
+    fireEvent.click(screen.getByRole("button", { name: s.review }));
+    fireEvent.click(screen.getByRole("button", { name: s.confirm }));
+    await screen.findByText(s.sendHint);
+    expect(mock.dispatch).not.toHaveBeenCalled();
+    mock.dispatch.mockResolvedValue({ accepted: 2, claimed: 2, pending: 0 });
+    fireEvent.click(screen.getAllByRole("button", { name: s.send })[0]);
+    await waitFor(() =>
+      expect(mock.dispatch).toHaveBeenCalledWith({ data: { groupId: empty.groups[0].id } }),
+    );
+  });
+  it("requires a normalized phone for free redemption, without invoking Stripe or receipt upload", async () => {
+    const stripe = vi.fn(),
+      s = adminOfferCopy("en"),
+      w = commerceCopy("en");
+    mock.command.mockImplementation(async ({ data }: { data: { action: string } }) =>
+      data.action === "methods"
+        ? []
+        : data.action === "quote"
+          ? {
+              original_minor: 16900,
+              final_minor: 0,
+              currency: "EGP",
+              offer_kind: "complimentary",
+              phone_required: true,
+            }
+          : {
+              id: "free-order",
+              reference: "FREE",
+              final_minor: 0,
+              currency: "EGP",
+              review_status: "confirmed",
+            },
+    );
+    render(
+      <LocaleProvider initialLocale="en">
+        <PaymentMethods packageKey="pro" interval="month" market="EG" stripe={stripe}>
+          {w.continue}
+        </PaymentMethods>
+      </LocaleProvider>,
+    );
+    fireEvent.change(screen.getByLabelText(w.code), { target: { value: "FREE100" } });
+    fireEvent.click(screen.getByRole("button", { name: w.quote }));
+    await screen.findByLabelText(s.phone);
+    expect(screen.getByRole("button", { name: w.continue })).toBeDisabled();
+    fireEvent.change(screen.getByLabelText(s.phone), { target: { value: "+20 10 1234 5678" } });
+    fireEvent.click(screen.getByRole("button", { name: w.continue }));
+    await screen.findByText(/FREE/);
+    expect(mock.command).toHaveBeenCalledWith({
+      data: {
+        action: "create_order",
+        data: expect.objectContaining({ method: "admin", phone: "+201012345678", code: "FREE100" }),
+      },
+    });
+    expect(stripe).not.toHaveBeenCalled();
+    expect(mock.upload).not.toHaveBeenCalled();
+    expect(screen.queryByText(w.receiptNote)).toBeNull();
+  });
 });

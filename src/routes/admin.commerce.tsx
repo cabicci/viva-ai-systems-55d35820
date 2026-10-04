@@ -12,6 +12,8 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { AdminPayments } from "@/components/commerce/AdminPayments";
 import { AdminSettings } from "@/components/commerce/AdminSettings";
+import { AdminOffers } from "@/components/commerce/AdminOffers";
+import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { AdminGroups } from "@/components/commerce/AdminGroups";
 import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
@@ -56,7 +58,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
       setNotice(w.saved);
       return response;
     } catch (err) {
-      setError(err instanceof Error ? err.message : w.error);
+      setError(offerError(err, locale, w.error));
     } finally {
       setBusy(false);
       running.current = false;
@@ -89,7 +91,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
         <nav className="flex flex-wrap gap-2">
           {[
             ["payments", w.payments],
-            ["groups", w.groups],
+            ["groups", adminOfferCopy(locale).title],
             ["settings", w.settings],
             ["audit", w.audit],
           ].map(([id, title]) => (
@@ -108,50 +110,52 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             {w.refresh}
           </Button>
         </nav>
-        <div className="flex flex-wrap gap-3">
-          <input
-            aria-label={w.search}
-            placeholder={w.search}
-            value={search}
-            onChange={(e) => {
-              setSearch(e.target.value);
-              setPage(0);
-            }}
-            className="min-h-11 flex-1 rounded border bg-background px-3"
-          />
-          <Select
-            label={w.select}
-            value={filter}
-            onChange={(value) => {
-              setFilter(value);
-              setPage(0);
-            }}
-            options={[
-              ["all", w.all],
-              ...[
-                "pending",
-                "awaiting_receipt",
-                "confirmed",
-                "rejected",
-                "more_info",
-                "cancelled",
-                "active",
-                "expired",
-                "revoked",
-                "scheduled",
-                "sent",
-                "accepted",
-              ].map((s) => [s, w[s as "pending"]] as const),
-            ]}
-          />
-          <Button
-            variant="outline"
-            disabled={!data}
-            onClick={() => data && download("Masaarat_Commerce_Export.csv", exportCommerce(data))}
-          >
-            {w.export}
-          </Button>
-        </div>
+        {tab !== "groups" && (
+          <div className="flex flex-wrap gap-3">
+            <input
+              aria-label={w.search}
+              placeholder={w.search}
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setPage(0);
+              }}
+              className="min-h-11 flex-1 rounded border bg-background px-3"
+            />
+            <Select
+              label={w.select}
+              value={filter}
+              onChange={(value) => {
+                setFilter(value);
+                setPage(0);
+              }}
+              options={[
+                ["all", w.all],
+                ...[
+                  "pending",
+                  "awaiting_receipt",
+                  "confirmed",
+                  "rejected",
+                  "more_info",
+                  "cancelled",
+                  "active",
+                  "expired",
+                  "revoked",
+                  "scheduled",
+                  "sent",
+                  "accepted",
+                ].map((s) => [s, w[s as "pending"]] as const),
+              ]}
+            />
+            <Button
+              variant="outline"
+              disabled={!data}
+              onClick={() => data && download("Masaarat_Commerce_Export.csv", exportCommerce(data))}
+            >
+              {w.export}
+            </Button>
+          </div>
+        )}
         {(error || result.error) && (
           <p role="alert" className="text-destructive">
             {error || w.disabled}
@@ -187,40 +191,46 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
                 busy={busy}
               />
             )}
+            {tab === "groups" && <AdminOffers data={data} run={run} busy={busy} />}
             {tab === "groups" && (
-              <AdminGroups
-                data={{
-                  ...data,
-                  invitations: data.invitations.filter(
-                    (i) =>
-                      `${i.email} ${i.package}`.toLowerCase().includes(search.toLowerCase()) &&
-                      (filter === "all" ||
-                        (filter === "pending" && !i.accepted_at) ||
-                        (filter === "accepted" && !!i.accepted_at) ||
-                        (filter === "sent" && i.send_status === "sent") ||
-                        (filter === "active" &&
-                          data.entitlements.some(
-                            (e) =>
-                              ((e.order_id === i.order_id && !!i.order_id) ||
-                                data.grants.some(
-                                  (g) => g.id === e.grant_id && g.invitation_id === i.id,
-                                )) &&
-                              accessState(e) === "active",
-                          )) ||
-                        (filter === "expired" &&
-                          new Date(i.deadline) <= new Date() &&
-                          !i.accepted_at) ||
-                        (filter === "rejected" &&
-                          data.orders.some(
-                            (o) => o.id === i.order_id && o.review_status === "rejected",
-                          )) ||
-                        (filter === "revoked" && !!i.revoked_at)),
-                  ),
-                }}
-                w={w}
-                run={run}
-                busy={busy}
-              />
+              <details>
+                <summary className="cursor-pointer text-sm text-muted-foreground">
+                  {adminOfferCopy(locale).advanced}
+                </summary>
+                <AdminGroups
+                  data={{
+                    ...data,
+                    invitations: data.invitations.filter(
+                      (i) =>
+                        `${i.email} ${i.package}`.toLowerCase().includes(search.toLowerCase()) &&
+                        (filter === "all" ||
+                          (filter === "pending" && !i.accepted_at) ||
+                          (filter === "accepted" && !!i.accepted_at) ||
+                          (filter === "sent" && i.send_status === "sent") ||
+                          (filter === "active" &&
+                            data.entitlements.some(
+                              (e) =>
+                                ((e.order_id === i.order_id && !!i.order_id) ||
+                                  data.grants.some(
+                                    (g) => g.id === e.grant_id && g.invitation_id === i.id,
+                                  )) &&
+                                accessState(e) === "active",
+                            )) ||
+                          (filter === "expired" &&
+                            new Date(i.deadline) <= new Date() &&
+                            !i.accepted_at) ||
+                          (filter === "rejected" &&
+                            data.orders.some(
+                              (o) => o.id === i.order_id && o.review_status === "rejected",
+                            )) ||
+                          (filter === "revoked" && !!i.revoked_at)),
+                    ),
+                  }}
+                  w={w}
+                  run={run}
+                  busy={busy}
+                />
+              </details>
             )}
             {tab === "settings" && <AdminSettings data={data} w={w} run={run} busy={busy} />}
             {tab === "audit" && (

@@ -1,17 +1,17 @@
 import { guardPaymentLink, parsePaymentSearch } from "@/lib/commerce/payment-links";
-import { useCommandKey } from "@/lib/commerce/use-command-key";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import { commerceCopy, formatAmount, accessState, paymentInstructions } from "@/lib/commerce/copy";
-import type { Order, Entitlement, PackageKey, Quote } from "@/lib/commerce/contracts";
+import type { Order, Entitlement } from "@/lib/commerce/contracts";
 import { requireAuthBeforeLoad, AuthSessionGate } from "@/lib/auth-route-guard";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useAuth } from "@/lib/auth-context";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
+import { RedeemOffer } from "@/components/commerce/RedeemOffer";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
 export const Route = createFileRoute("/payments")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
@@ -29,17 +29,13 @@ function PaymentRoute() {
 }
 function Payments() {
   const { order: targetOrderId } = Route.useSearch();
-  const requestKey = useCommandKey();
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     { user } = useAuth(),
     command = useServerFn(commerceCommand),
     qc = useQueryClient();
   const [error, setError] = useState(""),
-    [busy, setBusy] = useState(false),
-    [code, setCode] = useState(""),
-    [pack, setPack] = useState<PackageKey>("pro"),
-    [quote, setQuote] = useState<Quote>();
+    [busy, setBusy] = useState(false);
   const rows = useQuery({
     queryKey: ["commerce-my", user?.id],
     queryFn: async () =>
@@ -85,15 +81,6 @@ function Payments() {
       setBusy(false);
     }
   }
-  async function reviewCode() {
-    const q = await run("quote", {
-      package: pack,
-      market: locale === "ar-EG" ? "EG" : "INTL",
-      billing_interval: "month",
-      code,
-    });
-    if (q) setQuote(q as unknown as Quote);
-  }
   return (
     <div className="min-h-dvh bg-background">
       <Sidebar />
@@ -121,77 +108,7 @@ function Payments() {
         )}
         {!targetOrderId && (
           <>
-            <section className="rounded-xl border p-4 space-y-3">
-              <h2 className="font-bold">{w.code}</h2>
-              <label>
-                {w.package}
-                <select
-                  className="ms-2 min-h-11 rounded border bg-background"
-                  value={pack}
-                  onChange={(e) => {
-                    setPack(e.target.value as PackageKey);
-                    setQuote(undefined);
-                  }}
-                >
-                  <option value="pro">Pro</option>
-                  <option value="pro_plus">Pro Plus</option>
-                  <option value="kids">Kids</option>
-                </select>
-              </label>
-              <label className="block">
-                {w.code}
-                <input
-                  className="min-h-11 rounded border bg-background p-2"
-                  value={code}
-                  onChange={(e) => {
-                    setCode(e.target.value);
-                    setQuote(undefined);
-                  }}
-                />
-              </label>
-              <Button variant="outline" disabled={busy || !code} onClick={() => void reviewCode()}>
-                {w.quote}
-              </Button>
-              {quote?.offer_kind === "complimentary" && (
-                <>
-                  <p>
-                    {w.complimentary} · {quote.offer_duration_days} {w.days}
-                  </p>
-                  <Button
-                    disabled={busy}
-                    onClick={() =>
-                      void run("create_order", {
-                        package: pack,
-                        market: locale === "ar-EG" ? "EG" : "INTL",
-                        billing_interval: "month",
-                        method: "admin",
-                        code,
-                        key: requestKey({ pack, code, locale }),
-                      })
-                    }
-                  >
-                    {w.accept}
-                  </Button>
-                </>
-              )}
-              {quote && quote.offer_kind !== "complimentary" && (
-                <p>
-                  {w.amount}: {formatAmount(quote.final_minor, quote.currency, locale)} ·{" "}
-                  <Link to="/pricing" search={{ locale }} className="underline">
-                    {w.continue}
-                  </Link>
-                </p>
-              )}
-              {pack === "kids" && (
-                <Link
-                  to="/kids/family"
-                  search={{ locale }}
-                  className="block text-primary underline"
-                >
-                  {w.kids}
-                </Link>
-              )}
-            </section>
+            <RedeemOffer />
             <MailPreferences />
             <section>
               <h2 className="text-xl font-bold">{w.access}</h2>

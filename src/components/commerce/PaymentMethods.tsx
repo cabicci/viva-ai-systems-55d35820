@@ -6,6 +6,9 @@ import { commerceCommand } from "@/lib/commerce/commerce.functions";
 import { commerceCopy, formatAmount, paymentInstructions } from "@/lib/commerce/copy";
 import type { Order, PackageKey, PaymentMethod, Quote } from "@/lib/commerce/contracts";
 import { Button } from "@/components/ui/button";
+import { OfferPhone } from "./OfferPhone";
+import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
+import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { ReceiptUpload } from "./ReceiptUpload";
 
 export function PaymentMethods({
@@ -24,11 +27,13 @@ export function PaymentMethods({
   children: React.ReactNode;
 }) {
   const { locale } = useLocale(),
-    w = commerceCopy(locale);
+    w = commerceCopy(locale),
+    s = adminOfferCopy(locale);
   const command = useServerFn(commerceCommand);
   const [methods, setMethods] = useState<PaymentMethod[]>([]),
     [method, setMethod] = useState("stripe"),
     [code, setCode] = useState(""),
+    [phone, setPhone] = useState(""),
     [quote, setQuote] = useState<Quote>(),
     [order, setOrder] = useState<Order>(),
     [error, setError] = useState(""),
@@ -63,14 +68,20 @@ export function PaymentMethods({
           },
         })) as unknown as Quote,
       );
-    } catch {
-      setError(w.error);
+    } catch (err) {
+      setError(offerError(err, locale, w.error));
     } finally {
       setBusy(false);
     }
   }
   async function proceed() {
-    if (method === "stripe") {
+    const free = quote?.offer_kind === "complimentary";
+    if (quote?.phone_required && !normalizeOfferPhone(phone)) {
+      setError(s.phoneError);
+      return;
+    }
+    if (code && method === "stripe" && !free) return;
+    if (method === "stripe" && !free) {
       stripe();
       return;
     }
@@ -85,7 +96,8 @@ export function PaymentMethods({
               package: packageKey,
               market,
               billing_interval: interval,
-              method,
+              method: free ? "admin" : method,
+              ...(quote?.phone_required ? { phone: normalizeOfferPhone(phone) } : {}),
               code,
               renewal,
               key: requestKey,
@@ -93,8 +105,8 @@ export function PaymentMethods({
           },
         })) as unknown as Order,
       );
-    } catch {
-      setError(w.error);
+    } catch (err) {
+      setError(offerError(err, locale, w.error));
     } finally {
       setBusy(false);
     }
@@ -111,21 +123,29 @@ export function PaymentMethods({
         <p>
           {w.duration}: {w[interval]}
         </p>
-        <p>
-          {w.paymentExpiry}:{" "}
-          {new Date(order.expires_at).toLocaleString(locale === "en" ? "en-US" : "ar")}
-        </p>
-        <p className="whitespace-pre-wrap">
-          {paymentInstructions(order.instructions_snapshot, locale)}
-        </p>
-        <p className="break-all" dir="auto">
-          {order.instructions_snapshot.destination}
-        </p>
-        {order.instructions_snapshot.qr_url && (
-          <img src={order.instructions_snapshot.qr_url} alt="QR" className="max-h-48" />
+        {order.review_status === "confirmed" && order.final_minor === 0 ? (
+          <p>
+            {w.confirmed} · {s.activation}
+          </p>
+        ) : (
+          <>
+            <p>
+              {w.paymentExpiry}:{" "}
+              {new Date(order.expires_at).toLocaleString(locale === "en" ? "en-US" : "ar")}
+            </p>
+            <p className="whitespace-pre-wrap">
+              {paymentInstructions(order.instructions_snapshot, locale)}
+            </p>
+            <p className="break-all" dir="auto">
+              {order.instructions_snapshot.destination}
+            </p>
+            {order.instructions_snapshot.qr_url && (
+              <img src={order.instructions_snapshot.qr_url} alt="QR" className="max-h-48" />
+            )}
+            <p>{w.receiptNote}</p>
+            {order.review_status !== "confirmed" && <ReceiptUpload orderId={order.id} />}
+          </>
         )}
-        <p>{w.receiptNote}</p>
-        {order.review_status !== "confirmed" && <ReceiptUpload orderId={order.id} />}
         <Link to="/payments" search={{ locale }} className="text-primary underline">
           {w.orders}
         </Link>
@@ -165,43 +185,67 @@ export function PaymentMethods({
           <option disabled>{w.paymob}</option>
         </select>
       </label>
-      {method !== "stripe" && (
-        <>
-          <label className="block">
-            {w.code}
-            <input
-              className="min-h-11 w-full rounded border bg-background p-2"
-              value={code}
-              onChange={(e) => {
-                setCode(e.target.value);
-                setQuote(undefined);
-              }}
-              maxLength={64}
-            />
-          </label>
+      <>
+        <label className="block">
+          {w.code}
+          <input
+            className="min-h-11 w-full rounded border bg-background p-2"
+            value={code}
+            onChange={(e) => {
+              setCode(e.target.value);
+              setQuote(undefined);
+            }}
+            maxLength={64}
+          />
+        </label>
+        {(method !== "stripe" || code) && (
           <Button type="button" variant="outline" onClick={() => void review()} disabled={busy}>
             {w.quote}
           </Button>
-          {quote && (
-            <p>
-              {w.original}: {formatAmount(quote.original_minor, quote.currency, locale)} ·{" "}
-              {w.amount}: <strong>{formatAmount(quote.final_minor, quote.currency, locale)}</strong>
-            </p>
-          )}
-          <label className="flex gap-2 items-center min-h-11">
-            <input
-              type="checkbox"
-              checked={renewal}
-              onChange={(e) => setRenewal(e.target.checked)}
-            />
-            {w.renew} · {w.after_expiry}
-          </label>
-          <p className="text-sm text-muted-foreground">{w.noAutopay}</p>
-        </>
-      )}
+        )}
+        {quote && (
+          <p>
+            {w.original}: {formatAmount(quote.original_minor, quote.currency, locale)} · {w.amount}:{" "}
+            <strong>{formatAmount(quote.final_minor, quote.currency, locale)}</strong>
+          </p>
+        )}
+        {quote?.phone_required && (
+          <OfferPhone
+            value={phone}
+            onChange={(value) => {
+              setPhone(value);
+              setRequestKey(crypto.randomUUID());
+            }}
+          />
+        )}
+        {code && quote && quote.offer_kind !== "complimentary" && method === "stripe" && (
+          <p>
+            {w.methods}: {w.instapay} / {w.wallet}
+          </p>
+        )}
+        {method !== "stripe" && (
+          <>
+            <label className="flex gap-2 items-center min-h-11">
+              <input
+                type="checkbox"
+                checked={renewal}
+                onChange={(e) => setRenewal(e.target.checked)}
+              />
+              {w.renew} · {w.after_expiry}
+            </label>
+            <p className="text-sm text-muted-foreground">{w.noAutopay}</p>
+          </>
+        )}
+      </>
       <Button
         type="button"
-        disabled={disabled || busy || (method !== "stripe" && !quote)}
+        disabled={
+          disabled ||
+          busy ||
+          ((method !== "stripe" || !!code) && !quote) ||
+          (!!code && method === "stripe" && quote?.offer_kind !== "complimentary") ||
+          (!!quote?.phone_required && !normalizeOfferPhone(phone))
+        }
         onClick={() => void proceed()}
       >
         {children}

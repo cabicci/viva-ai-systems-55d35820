@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { simpleOfferSchema, offerPhoneSchema } from "./offer-input";
 
 export const packageSchema = z.enum(["pro", "pro_plus", "kids"]);
 export type PackageKey = z.infer<typeof packageSchema>;
@@ -64,10 +65,17 @@ const selection = z.object({
   renewal: z.boolean().optional(),
 });
 export const commandSchemas = {
+  offer_catalogue: z.object({}),
+  simple_offer: simpleOfferSchema,
+  send_offer_invitations: z.object({ id: uuid }),
   status: z.object({}),
   methods: z.object({}),
   quote: selection,
-  create_order: selection.extend({ method: z.enum(["instapay", "wallet", "bank", "admin"]), key }),
+  create_order: selection.extend({
+    method: z.enum(["instapay", "wallet", "bank", "admin"]),
+    phone: offerPhoneSchema.optional(),
+    key,
+  }),
   my_list: z.object({}),
   order: z.object({ id: uuid }),
   email_confirmation: z.object({ id: uuid }),
@@ -140,7 +148,7 @@ export const commandSchemas = {
     enabled: z.boolean(),
   }),
   invitation: z.object({ id: uuid }),
-  accept: z.object({ id: uuid }),
+  accept: z.object({ id: uuid, phone: offerPhoneSchema.optional() }),
   grant: z.object({
     user_id: uuid,
     package: packageSchema,
@@ -209,6 +217,8 @@ export interface Quote {
   currency: string;
   offer_kind?: string;
   offer_duration_days?: number;
+  phone_required?: boolean;
+  billing_interval?: string;
 }
 export interface Order extends Quote {
   id: string;
@@ -251,6 +261,7 @@ export interface Invitation extends Recipient {
   revoked_at?: string;
   delivery?: string;
   send_status?: string;
+  offer_id?: string;
 }
 export interface Group {
   id: string;
@@ -272,8 +283,16 @@ export interface Offer {
   package: PackageKey;
   kind: string;
   renewals: boolean;
-  valid_until: string;
+  valid_until: string | null;
   enabled: boolean;
+  max_redemptions?: number | null;
+  consumed_count?: number;
+  value_minor?: number;
+  billing_interval?: "month" | "year";
+  currency?: string;
+  delivery_mode?: "coupon" | "invitation";
+  audience_emails?: string[] | null;
+  group_id?: string;
 }
 export interface AdminData {
   groups: Group[];

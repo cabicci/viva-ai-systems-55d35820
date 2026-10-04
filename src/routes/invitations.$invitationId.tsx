@@ -8,6 +8,9 @@ import type { Invitation } from "@/lib/commerce/contracts";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Navbar } from "@/components/site/Navbar";
+import { OfferPhone } from "@/components/commerce/OfferPhone";
+import { normalizeOfferPhone } from "@/lib/commerce/offer-input";
+import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/invitations/$invitationId")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
@@ -21,7 +24,8 @@ function InvitationPage() {
     command = useServerFn(commerceCommand),
     qc = useQueryClient();
   const [busy, setBusy] = useState(false),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [phone, setPhone] = useState("");
   const result = useQuery({
     queryKey: ["commerce-invitation", user?.id, invitationId],
     queryFn: async () =>
@@ -31,13 +35,26 @@ function InvitationPage() {
     enabled: !!user,
   });
   async function accept() {
+    setError("");
+    if (result.data?.offer_id && !normalizeOfferPhone(phone)) {
+      setError(adminOfferCopy(locale).phoneError);
+      return;
+    }
     setBusy(true);
     try {
-      await command({ data: { action: "accept", data: { id: invitationId } } });
+      await command({
+        data: {
+          action: "accept",
+          data: {
+            id: invitationId,
+            ...(result.data?.offer_id ? { phone: normalizeOfferPhone(phone) } : {}),
+          },
+        },
+      });
       void result.refetch();
       void qc.invalidateQueries({ queryKey: ["user-subscription"] });
-    } catch {
-      setError(w.error);
+    } catch (err) {
+      setError(offerError(err, locale, w.error));
     } finally {
       setBusy(false);
     }
@@ -82,14 +99,24 @@ function InvitationPage() {
             {result.data.accepted_at ? (
               <>
                 <p>{w.accepted}</p>
-                <Link to="/payments" search={{ locale }} className="underline">
+                <Link
+                  to="/payments"
+                  search={{ locale, order: result.data.order_id }}
+                  className="underline"
+                >
                   {w.orders}
                 </Link>
               </>
             ) : (
-              <Button disabled={busy} onClick={() => void accept()}>
-                {w.accept}
-              </Button>
+              <>
+                {result.data.offer_id && <OfferPhone value={phone} onChange={setPhone} />}
+                <Button
+                  disabled={busy || (!!result.data.offer_id && !normalizeOfferPhone(phone))}
+                  onClick={() => void accept()}
+                >
+                  {w.accept}
+                </Button>
+              </>
             )}
           </>
         ) : result.error ? (
