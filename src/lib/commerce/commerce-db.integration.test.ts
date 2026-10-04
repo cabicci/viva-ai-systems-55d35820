@@ -80,6 +80,7 @@ beforeAll(async () => {
     "20261004012000_commerce_access.sql",
     "20261004013000_commerce_receipts_mail.sql",
     "20261004014000_commerce_account_retention.sql",
+    "20261004015000_commerce_payment_mail.sql",
   ])
     try {
       await db.exec(readFileSync(`supabase/migrations/${name}`, "utf8"));
@@ -288,11 +289,193 @@ describe("commerce review, invitation and lifecycle edge cases", () => {
     method: "instapay",
     ...changes,
   });
+  it("queues one confirmation only after full payment and leases an immutable targeted message", async () => {
+    const o = await order();
+    await pay(o, { amount_minor: 169, allocations: [{ order_id: o.id, amount_minor: 169 }] });
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_outbox WHERE order_id='${o.id}'`,
+      ),
+    ).toBe(0);
+    await pay(o, {
+      amount_minor: o.final_minor - 169,
+      allocations: [{ order_id: o.id, amount_minor: o.final_minor - 169 }],
+    });
+    await db.query("SELECT public.queue_commerce_payment_confirmation($1)", [o.id]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_outbox WHERE order_id='${o.id}'`,
+      ),
+    ).toBe(1);
+    await db.query("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const rpc = async (action: string, data: unknown) =>
+      (
+        await db.query<{ value: unknown }>(
+          "SELECT public.commerce_payment_mail($1,$2::jsonb) AS value",
+          [action, JSON.stringify(data)],
+        )
+      ).rows[0].value;
+    const rows = (await rpc("claim", { order_id: o.id })) as {
+      id: string;
+      claim_token: string;
+      payload: { amount_minor: number };
+      recipient: string;
+    }[];
+    expect(rows).toHaveLength(1);
+    expect(rows[0].recipient).toBe("member@example.test");
+    expect(rows[0].payload.amount_minor).toBe(o.final_minor);
+    expect(await rpc("claim", { order_id: o.id })).toEqual([]);
+    const claim = { id: rows[0].id, claim_token: rows[0].claim_token };
+    expect(await rpc("authorize_attempt", claim)).toBe(true);
+    expect(await rpc("result", { ...claim, claim_token: randomUUID(), provider_id: "wrong" })).toBe(
+      false,
+    );
+    expect(await rpc("result", { ...claim, provider_id: "synthetic-payment-mail" })).toBe(true);
+    expect(await rpc("claim", { order_id: o.id })).toEqual([]);
+  });
+  it("blocks non-admin resend, service claims from clients, suppression and erases payment mail with learner identity", async () => {
+    const o = await order();
+    await pay(o);
+    await caller(user);
+    await db.exec("SAVEPOINT mail_denied");
+    await expect(
+      db.query("SELECT public.queue_commerce_payment_confirmation($1)", [o.id]),
+    ).rejects.toThrow(/COMMERCE_ADMIN_REQUIRED/);
+    await db.exec("ROLLBACK TO SAVEPOINT mail_denied");
+    await expect(db.query("SELECT public.commerce_payment_mail('claim','{}')")).rejects.toThrow(
+      /COMMERCE_SERVICE_ONLY/,
+    );
+    await db.exec("ROLLBACK TO SAVEPOINT mail_denied; RELEASE SAVEPOINT mail_denied");
+    await db.exec(
+      "INSERT INTO billing.commerce_mail_preferences(email,suppressed) VALUES('member@example.test',true); SELECT set_config('request.jwt.claim.role','service_role',false)",
+    );
+    expect(await value("SELECT public.commerce_payment_mail('claim','{}') AS value")).toEqual([]);
+    expect(
+      await value(`SELECT status AS value FROM billing.commerce_outbox WHERE order_id='${o.id}'`),
+    ).toBe("suppressed");
+    await db.query("UPDATE billing.commerce_orders SET recipient_email='' WHERE id=$1", [o.id]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_outbox WHERE order_id='${o.id}'`,
+      ),
+    ).toBe(0);
+  });
+  it("bounds unknown mail retries and rechecks deletion before sending", async () => {
+    const o = await order();
+    await pay(o);
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const rows = await value<{ id: string; claim_token: string }[]>(
+      `SELECT public.commerce_payment_mail('claim','{"order_id":"${o.id}"}') AS value`,
+    );
+    await db.exec(
+      `INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}'); INSERT INTO billing.account_deletion_lifecycle(user_id,stage,financial_retention_reference,crm_retention_reference,release_reference) VALUES('${user}','blocked','synthetic','synthetic','synthetic')`,
+    );
+    expect(
+      await value(
+        `SELECT public.commerce_payment_mail('authorize_attempt','${JSON.stringify(rows[0])}') AS value`,
+      ),
+    ).toBe(false);
+    await db.exec(
+      `DELETE FROM billing.account_deletion_lifecycle WHERE user_id='${user}'; DELETE FROM billing.account_deletion_requests WHERE user_id='${user}'; UPDATE billing.commerce_outbox SET lease_until=now()-interval '1 minute',first_attempt_at=now()-interval '24 hours' WHERE order_id='${o.id}'`,
+    );
+    expect(
+      await value(`SELECT public.commerce_payment_mail('claim','{"order_id":"${o.id}"}') AS value`),
+    ).toEqual([]);
+    expect(
+      await value(`SELECT status AS value FROM billing.commerce_outbox WHERE order_id='${o.id}'`),
+    ).toBe("unknown");
+  });
   async function invite(rows: unknown[]) {
     await caller(admin);
     const group = await command("create_group", { name: "Synthetic group" });
     return { group, rows: await command("import", { group_id: group.id, rows }) };
   }
+  it("queues sales review durably but waits for private storage, deduplicates and protects erasure", async () => {
+    const o = await order(),
+      id = randomUUID(),
+      path = `${o.id}/${id}`;
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    await db.query("SELECT public.commerce_receipt($1,'attach',$2::jsonb)", [
+      user,
+      JSON.stringify({
+        id,
+        order_id: o.id,
+        storage_path: path,
+        mime: "image/png",
+        size_bytes: 100,
+        digest: "c".repeat(64),
+      }),
+    ]);
+    expect(
+      await value(
+        `SELECT recipient AS value FROM billing.commerce_outbox WHERE receipt_id='${id}'`,
+      ),
+    ).toBe("sales@masaarat.ai");
+    const claim = () =>
+      value<{ id: string; claim_token: string; recipient: string; receipt_id: string }[]>(
+        `SELECT public.commerce_payment_mail('claim','{"receipt_id":"${id}"}') AS value`,
+      );
+    expect(await claim()).toEqual([]);
+    expect(
+      await value(`SELECT status AS value FROM billing.commerce_outbox WHERE receipt_id='${id}'`),
+    ).toBe("pending");
+    await db.query("INSERT INTO storage.objects(bucket_id,name) VALUES('commerce-receipts',$1)", [
+      path,
+    ]);
+    const rows = await claim();
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject({ recipient: "sales@masaarat.ai", receipt_id: id });
+    expect(await claim()).toEqual([]);
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await db.exec("SAVEPOINT active_mail");
+    await expect(
+      db.query("UPDATE billing.commerce_orders SET recipient_email='' WHERE id=$1", [o.id]),
+    ).rejects.toThrow("LC09_COMMERCE_MAIL_PENDING");
+    await db.exec("ROLLBACK TO SAVEPOINT active_mail; RELEASE SAVEPOINT active_mail");
+    await db.exec(
+      `INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}'); INSERT INTO billing.account_deletion_lifecycle(user_id,stage,financial_retention_reference,crm_retention_reference,release_reference) VALUES('${user}','blocked','synthetic','synthetic','synthetic')`,
+    );
+    expect(
+      await value(
+        `SELECT public.commerce_payment_mail('authorize_attempt','${JSON.stringify(rows[0])}') AS value`,
+      ),
+    ).toBe(false);
+    await db.query(
+      "UPDATE billing.commerce_outbox SET lease_until=now()-interval '1 minute' WHERE receipt_id=$1",
+      [id],
+    );
+    await db.query("UPDATE billing.commerce_orders SET recipient_email='' WHERE id=$1", [o.id]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_outbox WHERE receipt_id='${id}'`,
+      ),
+    ).toBe(0);
+  });
+  it("discards an unsent sales alert with a failed upload manifest", async () => {
+    const o = await order(),
+      id = randomUUID();
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    await db.query("SELECT public.commerce_receipt($1,'attach',$2::jsonb)", [
+      user,
+      JSON.stringify({
+        id,
+        order_id: o.id,
+        storage_path: `${o.id}/${id}`,
+        mime: "image/png",
+        size_bytes: 100,
+        digest: "d".repeat(64),
+      }),
+    ]);
+    await db.query("SELECT public.commerce_receipt($1,'discard',$2::jsonb)", [
+      user,
+      JSON.stringify({ id, order_id: o.id }),
+    ]);
+    expect(
+      await value(
+        `SELECT count(*)::int AS value FROM billing.commerce_outbox WHERE receipt_id='${id}'`,
+      ),
+    ).toBe(0);
+  });
   it("receipt submission remains pending and private", async () => {
     const o = await order(),
       id = randomUUID();

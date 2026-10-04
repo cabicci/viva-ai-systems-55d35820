@@ -1,3 +1,4 @@
+import { guardPaymentLink, parsePaymentSearch } from "@/lib/commerce/payment-links";
 import { useCommandKey } from "@/lib/commerce/use-command-key";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
@@ -14,7 +15,8 @@ import { Button } from "@/components/ui/button";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
 export const Route = createFileRoute("/payments")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
-  beforeLoad: requireAuthBeforeLoad,
+  validateSearch: parsePaymentSearch,
+  beforeLoad: ({ search }) => guardPaymentLink(requireAuthBeforeLoad, search.order, "customer"),
   component: () => (
     <AuthSessionGate>
       <Payments />
@@ -22,6 +24,7 @@ export const Route = createFileRoute("/payments")({
   ),
 });
 function Payments() {
+  const { order: targetOrderId } = Route.useSearch();
   const requestKey = useCommandKey();
   const { locale } = useLocale(),
     w = commerceCopy(locale),
@@ -42,9 +45,28 @@ function Payments() {
       },
     enabled: !!user,
   });
+  const target = useQuery({
+    queryKey: ["commerce-order", user?.id, targetOrderId],
+    queryFn: async () =>
+      (await command({
+        data: { action: "order", data: { id: targetOrderId } },
+      })) as unknown as Order,
+    enabled: !!user && !!targetOrderId,
+  });
+  const orders = targetOrderId
+    ? target.data
+      ? [
+          {
+            ...target.data,
+            entitlement: rows.data?.entitlements.find((e) => e.order_id === targetOrderId),
+          },
+        ]
+      : []
+    : rows.data?.orders;
   const refresh = () => {
     void qc.invalidateQueries({ queryKey: ["commerce-my", user?.id] });
     void qc.invalidateQueries({ queryKey: ["user-subscription"] });
+    void qc.invalidateQueries({ queryKey: ["commerce-order", user?.id] });
   };
   async function run(action: string, data: unknown) {
     setBusy(true);
@@ -79,96 +101,113 @@ function Payments() {
             {w.package}
           </Link>
         </div>
-        {(error || rows.error) && (
+        {targetOrderId && (
+          <Link
+            to="/payments"
+            search={{ locale, order: undefined }}
+            className="block text-primary underline"
+          >
+            {w.all}
+          </Link>
+        )}
+        {(error || rows.error || target.error) && (
           <p role="alert" className="text-destructive">
             {error || w.disabled}
           </p>
         )}
-        <section className="rounded-xl border p-4 space-y-3">
-          <h2 className="font-bold">{w.code}</h2>
-          <label>
-            {w.package}
-            <select
-              className="ms-2 min-h-11 rounded border bg-background"
-              value={pack}
-              onChange={(e) => {
-                setPack(e.target.value as PackageKey);
-                setQuote(undefined);
-              }}
-            >
-              <option value="pro">Pro</option>
-              <option value="pro_plus">Pro Plus</option>
-              <option value="kids">Kids</option>
-            </select>
-          </label>
-          <label className="block">
-            {w.code}
-            <input
-              className="min-h-11 rounded border bg-background p-2"
-              value={code}
-              onChange={(e) => {
-                setCode(e.target.value);
-                setQuote(undefined);
-              }}
-            />
-          </label>
-          <Button variant="outline" disabled={busy || !code} onClick={() => void reviewCode()}>
-            {w.quote}
-          </Button>
-          {quote?.offer_kind === "complimentary" && (
-            <>
-              <p>
-                {w.complimentary} · {quote.offer_duration_days} {w.days}
-              </p>
-              <Button
-                disabled={busy}
-                onClick={() =>
-                  void run("create_order", {
-                    package: pack,
-                    market: locale === "ar-EG" ? "EG" : "INTL",
-                    billing_interval: "month",
-                    method: "admin",
-                    code,
-                    key: requestKey({ pack, code, locale }),
-                  })
-                }
-              >
-                {w.accept}
+        {!targetOrderId && (
+          <>
+            <section className="rounded-xl border p-4 space-y-3">
+              <h2 className="font-bold">{w.code}</h2>
+              <label>
+                {w.package}
+                <select
+                  className="ms-2 min-h-11 rounded border bg-background"
+                  value={pack}
+                  onChange={(e) => {
+                    setPack(e.target.value as PackageKey);
+                    setQuote(undefined);
+                  }}
+                >
+                  <option value="pro">Pro</option>
+                  <option value="pro_plus">Pro Plus</option>
+                  <option value="kids">Kids</option>
+                </select>
+              </label>
+              <label className="block">
+                {w.code}
+                <input
+                  className="min-h-11 rounded border bg-background p-2"
+                  value={code}
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                    setQuote(undefined);
+                  }}
+                />
+              </label>
+              <Button variant="outline" disabled={busy || !code} onClick={() => void reviewCode()}>
+                {w.quote}
               </Button>
-            </>
-          )}
-          {quote && quote.offer_kind !== "complimentary" && (
-            <p>
-              {w.amount}: {formatAmount(quote.final_minor, quote.currency, locale)} ·{" "}
-              <Link to="/pricing" search={{ locale }} className="underline">
-                {w.continue}
-              </Link>
-            </p>
-          )}
-          {pack === "kids" && (
-            <Link to="/kids/family" search={{ locale }} className="block text-primary underline">
-              {w.kids}
-            </Link>
-          )}
-        </section>
-        <MailPreferences />
-        <section>
-          <h2 className="text-xl font-bold">{w.access}</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {rows.data?.entitlements.map((e) => (
-              <article key={e.id} className="rounded-xl border p-4">
-                <strong>{e.package}</strong>
-                <p>{w[accessState(e)]}</p>
+              {quote?.offer_kind === "complimentary" && (
+                <>
+                  <p>
+                    {w.complimentary} · {quote.offer_duration_days} {w.days}
+                  </p>
+                  <Button
+                    disabled={busy}
+                    onClick={() =>
+                      void run("create_order", {
+                        package: pack,
+                        market: locale === "ar-EG" ? "EG" : "INTL",
+                        billing_interval: "month",
+                        method: "admin",
+                        code,
+                        key: requestKey({ pack, code, locale }),
+                      })
+                    }
+                  >
+                    {w.accept}
+                  </Button>
+                </>
+              )}
+              {quote && quote.offer_kind !== "complimentary" && (
                 <p>
-                  {new Date(e.starts_at).toLocaleDateString()} —{" "}
-                  {new Date(e.ends_at).toLocaleDateString()}
+                  {w.amount}: {formatAmount(quote.final_minor, quote.currency, locale)} ·{" "}
+                  <Link to="/pricing" search={{ locale }} className="underline">
+                    {w.continue}
+                  </Link>
                 </p>
-              </article>
-            ))}
-          </div>
-        </section>
+              )}
+              {pack === "kids" && (
+                <Link
+                  to="/kids/family"
+                  search={{ locale }}
+                  className="block text-primary underline"
+                >
+                  {w.kids}
+                </Link>
+              )}
+            </section>
+            <MailPreferences />
+            <section>
+              <h2 className="text-xl font-bold">{w.access}</h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {rows.data?.entitlements.map((e) => (
+                  <article key={e.id} className="rounded-xl border p-4">
+                    <strong>{e.package}</strong>
+                    <p>{w[accessState(e)]}</p>
+                    <p>
+                      {new Date(e.starts_at).toLocaleDateString()} —{" "}
+                      {new Date(e.ends_at).toLocaleDateString()}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
         <section className="space-y-4">
-          {rows.data?.orders.map((o) => (
+          {orders?.map((o) => (
             <article key={o.id} className="rounded-xl border p-4 space-y-3">
               <h2 className="font-bold">
                 <bdi>{o.reference}</bdi> · {o.package}

@@ -70,6 +70,7 @@ export const commandSchemas = {
   create_order: selection.extend({ method: z.enum(["instapay", "wallet", "bank", "admin"]), key }),
   my_list: z.object({}),
   order: z.object({ id: uuid }),
+  email_confirmation: z.object({ id: uuid }),
   cancel_order: z.object({ id: uuid }),
   configure_method: z
     .object({
