@@ -115,7 +115,9 @@ describe("learning lines and shared account navigation", () => {
       );
       fireEvent.click(screen.getByRole("button", { name: c.switch }));
       const switcher = screen.getByRole("navigation", { name: c.switch });
-      LEARNING_LINES.forEach((item) =>
+      expect(within(switcher).getAllByRole("link")).toHaveLength(2);
+      expect(within(switcher).queryByRole("link", { name: c[line] })).not.toBeInTheDocument();
+      LEARNING_LINES.filter((item) => item !== line).forEach((item) =>
         expect(within(switcher).getByRole("link", { name: c[item] })).toHaveAttribute(
           "href",
           `${LINE_ROUTES[item]}?locale=en`,
@@ -124,6 +126,16 @@ describe("learning lines and shared account navigation", () => {
       cleanup();
       state.user = { id: "adult" };
       render(<Navbar variant="account" />);
+      fireEvent.click(screen.getByRole("button", { name: c.switch }));
+      expect(
+        within(screen.getByRole("navigation", { name: c.switch })).getAllByRole("link"),
+      ).toHaveLength(2);
+      expect(
+        within(screen.getByRole("navigation", { name: c.switch })).queryByRole("link", {
+          name: c[line],
+        }),
+      ).not.toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: c.switch }));
       fireEvent.click(screen.getByRole("button", { name: "nav.myDashboard" }));
       const menu = screen.getByRole("navigation", { name: "nav.myDashboard" });
       expect(within(menu).getByRole("link", { name: "sidebar.payments" })).toHaveAttribute(
@@ -141,6 +153,28 @@ describe("learning lines and shared account navigation", () => {
       expect(state.signOut).toHaveBeenCalledOnce();
     },
   );
+  it.each(SUPPORTED_LOCALES)("shows only the other two lines on mobile in %s", (locale) => {
+    state.locale = locale;
+    const c = getLineCopy(locale);
+    for (const line of LEARNING_LINES) {
+      for (const user of [null, { id: "adult" }]) {
+        state.path = LINE_CURRICULUM[line];
+        state.user = user;
+        render(<Navbar variant={user ? "account" : "public"} />);
+        fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
+        const switcher = within(screen.getByRole("dialog")).getByRole("region", { name: c.switch });
+        expect(within(switcher).getAllByRole("link")).toHaveLength(2);
+        expect(within(switcher).queryByRole("link", { name: c[line] })).not.toBeInTheDocument();
+        LEARNING_LINES.filter((item) => item !== line).forEach((item) =>
+          expect(within(switcher).getByRole("link", { name: c[item] })).toHaveAttribute(
+            "href",
+            `${LINE_ROUTES[item]}?locale=${locale}`,
+          ),
+        );
+        cleanup();
+      }
+    }
+  });
   it("exposes line switching and admin commerce inside the mobile menu", () => {
     state.path = "/kids/level-1/2";
     state.user = { id: "admin" };
