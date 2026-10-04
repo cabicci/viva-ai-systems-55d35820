@@ -81,3 +81,11 @@ M03 delivery receipt: build passed with4096MB Node heap after the default2GB lim
 Three remaining M04 lessons now provide12 contextual packages,9 distinct concept diagrams,24 PDFs/48 rendered pages and12 video-text scripts. The reused M04-L02 pilot is unchanged. Concrete exercises link three600×720×400mm views and resolve a450mm conflict, calculate398/399mm cores under explicit1mm edge assumptions, and update training costs300→330 with a30 difference. These are declared exercises, not universal product dimensions or market prices.
 
 All48 PDF pages were visually inspected; proportion and section-direction figures were corrected and their final Egyptian/English pages reviewed. Browser acceptance passed24 locale/viewport cases and representative reading views were inspected. Nineteen scoped Vitest tests, TypeScript and nine Python integrity tests passed. All44 accepted original PDF hashes remain unchanged. Verified cumulative contribution is11 lessons/44 locale packages, or16 content lessons including the preceding five;64 remaining lessons are unauthored. No speech or video was generated.
+
+M04 delivery receipt: production build passed with4096MB heap. Commit `60e4b021f23d24752c3a78ca9a9e2ecc4bc37dae`, tree `04b051392991349e819e34ff63821ec940a7e5b3`, durably contains91 matching changed files on the isolated branch.
+
+## M04 Arabic arithmetic remediation
+
+Coordinator review found that right-to-left SVG text reversed arithmetic operands and the signed change. Seven numerical labels in the three M04 arithmetic geometries now use Unicode LRI/PDI. The shared renderer is unchanged. Nine Arabic-register SVG assets and six affected workbooks were regenerated; worksheet, English and all44 original accepted PDF hashes remain unchanged. All9 actual SVG renderings were visually reviewed with correct400−1−1=398,4×15=60,6×15=90 and+30 order. A dedicated regression checks isolates and operand equality;11 scoped Vitest tests,10 Python tests and TypeScript pass.
+
+Status counts are recomputed from verified batches:11 new +64 remaining =75;44 verified locale packages. A new invariant verifies batch sums, four-register totals and the75-lesson scope. M05 content drafts are not included in this completion count or remediation commit.
