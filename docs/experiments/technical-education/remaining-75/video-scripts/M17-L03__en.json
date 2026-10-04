@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M17-L03",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Coordinate electricity, gas, lighting and ventilation",
+      "spoken_text": "Build a service-coordination drawing and approval record without replacing qualified electrical, gas or ventilation design and installation.",
+      "caption": "Build a service-coordination drawing and approval record without replacing qualified electrical, gas or ventilation design and installation."
+    },
+    {
+      "id": "register",
+      "display_title": "Collect referenced service requirements",
+      "spoken_text": "Link each model’s service and access requirements to its manual and specialist drawing. The Bosch CPA565GS0B example assigns connection without a plug to a licensed professional. Furniture coordination identifies interfaces and owners; it does not select wiring, protection or connection procedures.",
+      "caption": "Each service has a requirement, source and responsible specialist.",
+      "diagram": "new-M17-L03-register"
+    },
+    {
+      "id": "air",
+      "display_title": "Distinguish extraction from room ventilation",
+      "spoken_text": "Do not assume a hood provides room ventilation. Miele DA7198W documentation distinguishes recirculation above a gas hob from ventilation of the room. Record operating mode, model and airflow route for ventilation/gas specialist review; do not derive a universal distance or duct size from an image.",
+      "caption": "Operating mode and room requirements need specialist review.",
+      "diagram": "new-M17-L03-air"
+    },
+    {
+      "id": "approval",
+      "display_title": "Resolve conflicts before concealment",
+      "spoken_text": "Use common datums and mark proposed, approved and open items. Log drawer, access or airflow conflicts with owner, response, revised drawing and inspection evidence. Qualified specialists retain responsibility for electrical/gas work and testing under the applicable site and product requirements.",
+      "caption": "Concealing a conflict does not close it.",
+      "diagram": "new-M17-L03-approval"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "A cover blocks required service access while the specialist drawing remains unapproved. Hold concealment, coordinate removable access or an alternative, and record the specialist approval. Decision: document access and service approval before closure.",
+      "caption": "Decision: document access and service approval before closure."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit a furniture/service overlay, referenced appliance record, three approval points and a conflict requiring a response.",
+      "spoken_text": "Submit a furniture/service overlay, referenced appliance record, three approval points and a conflict requiring a response.",
+      "caption": "Submit a furniture/service overlay, referenced appliance record, three approval points and a conflict requiring a response."
+    }
+  ]
+}

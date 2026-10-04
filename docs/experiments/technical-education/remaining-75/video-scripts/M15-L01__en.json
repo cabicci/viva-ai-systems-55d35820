@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M15-L01",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "pronunciation_review": {
+    "required_for_all_locales": true,
+    "status": "pending_native_listener_review",
+    "listening_performed": false
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Bathroom fixtures, layout and openings",
+      "spoken_text": "Bathroom planning coordinates fixtures, movement and openings around the users and surveyed site. Produce a layout with explicit conflicts and unresolved inputs.",
+      "caption": "Bathroom planning coordinates fixtures, movement and openings around the users and surveyed site. Produce a layout with explicit conflicts and unresolved inputs."
+    },
+    {
+      "id": "survey",
+      "display_title": "Establish surveyed boundaries and inputs",
+      "spoken_text": "Record finished boundaries, doors, windows, fixed elements and services. Distinguish measured facts from assumptions and identify each source. Represent fixtures using product codes and documented envelopes rather than generic symbols alone. A changed basin or toilet can alter service interfaces, so keep dependent locations provisional until the product is identified.",
+      "caption": "Document measured facts, assumptions and product envelopes.",
+      "diagram": "new-M15-L01-survey"
+    },
+    {
+      "id": "openings",
+      "display_title": "Test openings with occupied use",
+      "spoken_text": "Show room and shower-door swings, drawer extension and user positions together. Check entry and access in operating states, recording bottlenecks and clashes. Review project and accessibility requirements with the responsible specialist. Reversing a door may move a conflict into the adjacent space, so include that space in the comparison.",
+      "caption": "Review simultaneous openings and neighbouring space.",
+      "diagram": "new-M15-L01-openings"
+    },
+    {
+      "id": "compare",
+      "display_title": "Compare alternatives and unresolved items",
+      "spoken_text": "Compare two options using equivalent site boundaries and product assumptions. Review routes, use access, cleaning and service coordination, recording any product change. Visual spaciousness does not prove code compliance. State advantages, trade-offs, missing inputs and decision owners, distinguishing a coordination proposal from an approved execution drawing.",
+      "caption": "Keep proposal status and required reviews explicit.",
+      "diagram": "new-M15-L01-compare"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "In A, an extended vanity drawer conflicts with the room door. B relocates the vanity and resolves movement, but service access at the new position needs review. Prefer B as a coordination option while holding final location approval for the responsible specialist’s confirmation. Decision: prefer B subject to service confirmation.",
+      "caption": "Decision: prefer B subject to service confirmation."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit two layouts with openings/users, dimension sources, conflicts and unresolved review owners.",
+      "spoken_text": "Submit two layouts with openings/users, dimension sources, conflicts and unresolved review owners.",
+      "caption": "Submit two layouts with openings/users, dimension sources, conflicts and unresolved review owners."
+    }
+  ]
+}

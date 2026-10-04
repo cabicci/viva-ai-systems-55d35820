@@ -1,0 +1,108 @@
+{
+  "review_date": "2026-10-04",
+  "book": {
+    "filename": "Metwood_Furniture_Design(1).pdf",
+    "sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
+    "page_count": 408,
+    "reviewed_readable_pages": {
+      "M16-L01": [
+        267
+      ],
+      "M16-L02": [
+        270
+      ],
+      "M16-L03": [
+        273
+      ],
+      "M16-L04": [
+        284
+      ],
+      "M17-L01": [
+        290
+      ],
+      "M17-L02": [
+        296
+      ],
+      "M17-L03": [
+        298,
+        302
+      ],
+      "M17-L04": [
+        308
+      ],
+      "M17-L05": [
+        312
+      ],
+      "M18-L01": [
+        318
+      ],
+      "M18-L02": [
+        322
+      ],
+      "M18-L03": [
+        329
+      ]
+    },
+    "method": "Original authoring from topic anchors after readable page-image review. Source numeric guidance is not promoted into universal cabinet, appliance, electrical, gas, accessibility, ventilation or ergonomic specifications. No source image is copied into learner assets."
+  },
+  "manufacturer_documents": [
+    {
+      "id": "MFG-01",
+      "manufacturer": "Bosch",
+      "model": "CPA565GS0B",
+      "document": "User manual and installation instructions",
+      "document_id": "9001686063_C",
+      "url": "https://media3.bosch-home.com/Documents/9001686063_C.pdf",
+      "reviewed_pages": [
+        2,
+        50,
+        51
+      ],
+      "sections": [
+        "1.2",
+        "21.1",
+        "21.3",
+        "21.4",
+        "21.5",
+        "21.6"
+      ],
+      "verified_scope": [
+        "The document is specific to this built-in appliance.",
+        "Connection without a plug is assigned to a licensed professional.",
+        "Section21.3 addresses cabinet backs and ventilation paths; these are not just external-envelope dimensions.",
+        "Installation combinations and clearances are model-specific."
+      ],
+      "lesson_ids": [
+        "M17-L01",
+        "M17-L03"
+      ],
+      "numeric_specifications_transferred_to_lessons": false
+    },
+    {
+      "id": "MFG-02",
+      "manufacturer": "Miele",
+      "model": "DA7198W",
+      "market_language": "en-AU",
+      "document": "Operating and installation instructions",
+      "document_id": "11559270-01",
+      "url": "https://media.miele.com/downloads/87/9d/01_96106EC61D0B1EEAB8BEB42C1DCC879D.pdf",
+      "reviewed_pages": [
+        4,
+        6,
+        8,
+        9,
+        46
+      ],
+      "verified_scope": [
+        "Recirculation operation over a gas hob is distinguished from ventilation of the room.",
+        "Installation/maintenance and electrical work are assigned to appropriately qualified or authorized personnel.",
+        "Overall room ventilation and interactions require competent review."
+      ],
+      "lesson_ids": [
+        "M17-L03"
+      ],
+      "numeric_specifications_transferred_to_lessons": false
+    }
+  ],
+  "boundary": "Services lessons teach spatial coordination and evidence/approval ownership, not electrical/gas/plumbing operation or connection procedures."
+}

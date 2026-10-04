@@ -1,0 +1,72 @@
+{
+  "id": "M12-L01",
+  "locale": "en",
+  "title": "Bedroom layout and daily use",
+  "intro": "Bedroom planning connects the bed, storage, openings and daily tasks. Compare two layouts using actual furniture envelopes and explicit open-state checks.",
+  "goals": [
+    "Define the room and furniture envelopes",
+    "Calculate the geometric remainder",
+    "Compare daily use states"
+  ],
+  "sections": [
+    {
+      "id": "envelopes",
+      "title": "Define the room and furniture envelopes",
+      "text": "Survey openings and services and establish how users approach the bed and storage. Draw the bed’s complete external envelope, including upholstery and projections, rather than mattress size alone. Include curtains, handles and moving leaves. Moving the bed can improve one route while blocking another opening or control, so compare alternatives against the same inputs.",
+      "diagram": "new-M12-L01-envelopes",
+      "caption": "The complete furniture envelope occupies the room."
+    },
+    {
+      "id": "clearances",
+      "title": "Calculate the geometric remainder",
+      "text": "Exercise: a 3200 mm zone contains an 1800 mm-wide bed envelope and two 400 mm bedside units. The remainder is 3200 − 1800 − 400 − 400 = 600 mm in total, not on each side. A symmetric split gives 300 mm each. This exposes a planning constraint; it does not approve access for the users or opening states.",
+      "diagram": "new-M12-L01-clearances",
+      "caption": "600 mm total; 300 mm per side only with a symmetric split."
+    },
+    {
+      "id": "compare",
+      "title": "Compare daily use states",
+      "text": "Test entry, bed access, storage opening, bed-making and cleaning, including simultaneous tasks and any assistance needs. Compare a different arrangement or genuinely slimmer furniture and record the trade-offs. Do not shrink a furniture symbol to make the plan appear workable while the selected product remains larger.",
+      "diagram": "new-M12-L01-compare",
+      "caption": "Judge alternatives through explicit use cases and real dimensions."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The symmetric exercise leaves 300 mm per side. Develop slimmer pieces or another arrangement and reassess user access instead of accepting the plan because the arithmetic is correct. The 600 mm total must not be recorded twice.",
+    "decision": "Decision: revise the layout and distinguish correct arithmetic from usable access."
+  },
+  "quiz": [
+    {
+      "id": "total-space",
+      "question": "What does the 600 mm remainder represent?",
+      "options": [
+        "The combined remainder, not each side",
+        "Each side separately",
+        "Mattress width"
+      ],
+      "correct": 0,
+      "explanation": "600 ÷ 2 = 300 mm per side if symmetric; access still needs review."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare two layouts using identical room inputs, with remainder calculations and storage/use states.",
+    "fields": [
+      "Survey and envelopes",
+      "Calculation and use states",
+      "Comparison and decision"
+    ],
+    "criteria": [
+      "Actual outer dimensions",
+      "Correct total/per-side allocation",
+      "Use-based decision"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can mattress size alone define the plan?",
+      "answer": "No. Use the complete bed envelope including upholstery, projections and moving parts.",
+      "sectionId": "envelopes"
+    }
+  ]
+}

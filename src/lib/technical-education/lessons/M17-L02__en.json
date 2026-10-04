@@ -1,0 +1,72 @@
+{
+  "id": "M17-L02",
+  "locale": "en",
+  "title": "Sink units and plumbing coordination",
+  "intro": "Coordinate the sink, cabinet and service space using product/site data, while distinguishing furniture coordination from plumbing design and approval.",
+  "goals": [
+    "Draw the sink below the top",
+    "Coordinate the service envelope",
+    "Review access, protection and acceptance"
+  ],
+  "sections": [
+    {
+      "id": "basin",
+      "title": "Draw the sink below the top",
+      "text": "Draw the bowl, rim, mounting arrangement and underside clips from the selected model/template. Compare the underside envelope with rails, hinges and drawers. Keep sink-body dimensions distinct from the worktop cut-out and reference both before fabrication.",
+      "diagram": "new-M17-L02-basin",
+      "caption": "The bowl envelope and cut-out are different."
+    },
+    {
+      "id": "services",
+      "title": "Coordinate the service envelope",
+      "text": "Overlay approved plumbing locations and routes onto the furniture section from a shared datum. Do not infer pipe sizes or gradients from cabinet geometry. Check drawers, bins, shelves and connection access; return conflicts for specialist review before altering a site route.",
+      "diagram": "new-M17-L02-services",
+      "caption": "Coordination identifies conflicts; it does not replace plumbing design."
+    },
+    {
+      "id": "access",
+      "title": "Review access, protection and acceptance",
+      "text": "Show service access and removable parts. Coordinate water-exposed edges, joints and care with the relevant suppliers. Before concealment, obtain the specialist’s service inspection record and inspect furniture against its drawing. A finished front does not prove hidden services accepted.",
+      "diagram": "new-M17-L02-access",
+      "caption": "Link service and furniture inspection records."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A moving waste bin intersects the approved drainage envelope. Review the bin product or furniture arrangement; any service alteration returns to the specialist before execution.",
+    "decision": "Decision: coordinate the conflict before release."
+  },
+  "quiz": [
+    {
+      "id": "M17-L02-check",
+      "question": "How should a drawer/drain conflict be resolved?",
+      "options": [
+        "Coordinate furniture and services with the specialist",
+        "Guess a new drain route",
+        "Block service access"
+      ],
+      "correct": 0,
+      "explanation": "The resolution must retain approved service requirements and access."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a sink/service section, an access review, a conflict record and an acceptance hold point.",
+    "fields": [
+      "Draw the sink below the top",
+      "Coordinate the service envelope",
+      "Review access, protection and acceptance"
+    ],
+    "criteria": [
+      "Envelope/template distinguished",
+      "Referenced specialist routes",
+      "Access and inspection before concealment"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does cabinet size determine drain diameter?",
+      "answer": "No. The specialist defines services; furniture coordinates space and access.",
+      "sectionId": "services"
+    }
+  ]
+}

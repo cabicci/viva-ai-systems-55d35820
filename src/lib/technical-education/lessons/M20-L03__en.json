@@ -1,0 +1,72 @@
+{
+  "id": "M20-L03",
+  "locale": "en",
+  "title": "Mixed materials and interface details",
+  "intro": "Mixed materials require coordinated interfaces, not only a finish board. Detail support, finish build-ups and service routes, assigning ownership for each connection and supplied component.",
+  "goals": [
+    "Define material interfaces",
+    "Coordinate lighting service access",
+    "Reconcile the thickness stack"
+  ],
+  "sections": [
+    {
+      "id": "layers",
+      "title": "Define material interfaces",
+      "text": "Section the timber surface and metal frame, identifying substrate, visible finish, separator and connection. Assign each supplied part and list missing data before selecting an adhesive or fixing. Similar colour does not prove compatibility; review system data and a joined sample, including any intended disassembly for service.",
+      "diagram": "new-M20-L03-layers",
+      "caption": "Review the assembled interface, not isolated swatches."
+    },
+    {
+      "id": "light",
+      "title": "Coordinate lighting service access",
+      "text": "Locate the light unit, cable route, service cover and power-supply zone as coordination spaces. Product data and the electrical specialist determine connection, thermal and protection requirements. Simulate cover removal and component withdrawal, checking cable conflicts with drawers or fixings before closing the finish. This is coordination, not wiring instruction.",
+      "diagram": "new-M20-L03-light",
+      "caption": "Service access is designed before concealment."
+    },
+    {
+      "id": "stack",
+      "title": "Reconcile the thickness stack",
+      "text": "The exercise assumes a 40 mm-deep assembly zone containing layers of 18, 6 and 2 mm: 40 − 18 − 6 − 2 = 14 mm remains. This is a geometric remainder, not an approved fitting allowance. Record measurement stage and actual product limits; if a layer changes, revisit every dependent section and interface before release.",
+      "diagram": "new-M20-L03-stack",
+      "caption": "40 − 18 − 6 − 2 = 14; exercise assumptions."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The earlier section deducted only the 18 mm board, missing the 6 mm finish and 2 mm separator. Correct the remainder to 14 mm and recheck covers and interfaces. That calculation still does not establish suitability for the lighting power supply without its data.",
+    "decision": "Decision: reconcile layers and keep electrical-system review separate."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "What remains from 40 after subtracting 18, 6 and 2?",
+      "options": [
+        "14 mm",
+        "22 mm",
+        "16 mm"
+      ],
+      "correct": 0,
+      "explanation": "40 − 18 − 6 − 2 = 14 mm under the stated assumptions."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit an interface section, thickness stack and lighting service/responsibility plan.",
+    "fields": [
+      "Layers and connection",
+      "Thickness calculation",
+      "Service access and ownership"
+    ],
+    "criteria": [
+      "All layers included",
+      "Remainder is not clearance approval",
+      "Service path and reviewers identified"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does matching colour prove material compatibility?",
+      "answer": "No. Review system data and the assembled interface.",
+      "sectionId": "layers"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M13-L03",
+  "locale": "en",
+  "title": "Raised beds and bunk-bed design review",
+  "intro": "Elevated and bunk beds need specialist verification of falls, entrapment, support and access. Prepare a traceable review record; the figures are hazard maps, not construction drawings.",
+  "goals": [
+    "Identify the product, user and market",
+    "Review guards, mattress and openings as a system",
+    "Require traceable verification evidence"
+  ],
+  "sections": [
+    {
+      "id": "classification",
+      "title": "Identify the product, user and market",
+      "text": "Identify the product definition, intended user and market. US reference 16 CFR 1513 addresses elevated children’s beds within its scope and requires the warning against upper-bunk use below age 6. Reaching 6 does not itself establish suitability. Verify current requirements for the intended market and product; the absence of a lower bed does not automatically exclude a loft bed from review.",
+      "diagram": "new-M13-L03-classification",
+      "caption": "Classify first; a US reference does not replace local applicability review."
+    },
+    {
+      "id": "hazards",
+      "title": "Review guards, mattress and openings as a system",
+      "text": "Mark guards relative to the specified mattress, end openings, wall interfaces, ladder route and supports. A thicker mattress changes the exposed guard height; do not improvise an added rail. Entrapment assessment depends on opening shape, location and defined test methods, not one general gap rule. Never use a child’s head or body as a test probe.",
+      "diagram": "new-M13-L03-hazards",
+      "caption": "Review the mattress, guards and openings together; a sketch is not a test result."
+    },
+    {
+      "id": "evidence",
+      "title": "Require traceable verification evidence",
+      "text": "Link applicable requirement, drawing revision, product/mattress identity, verifier, result and outstanding action. CPSC guidance explains accepted third-party testing, children’s product certification and additional US requirements; establish what applies in the project’s market. Obtain assembly, labeling and service instructions. A visual prototype or one adult standing on a bed is not a substitute for required system testing.",
+      "diagram": "new-M13-L03-evidence",
+      "caption": "Requirement + identified configuration + traceable result."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The exercise proposes an upper bunk for a 4-year-old and provides only an unidentified image. Reject that allocation and review an appropriate non-elevated sleeping alternative with product verification. Even changing the user’s age would not resolve the separate absence of system evidence.",
+    "decision": "Decision: reject the upper-bunk allocation and obtain evidence for a suitable alternative."
+  },
+  "quiz": [
+    {
+      "id": "bunk-evidence",
+      "question": "Do an image and one informal load trial establish safety?",
+      "options": [
+        "No; traceable system verification is needed",
+        "Yes, if it looks strong",
+        "Yes, if the child is older than 6"
+      ],
+      "correct": 0,
+      "explanation": "Classification, guards, mattress, openings, supports and applicable tests concern the identified system."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare an elevated-bed review register covering classification, hazards, applicable requirements, missing evidence and disposition, without a construction detail.",
+    "fields": [
+      "Product, user and market",
+      "Hazards, requirements and evidence",
+      "Missing information and disposition"
+    ],
+    "criteria": [
+      "Market applicability explicit",
+      "No invented gaps/capacities",
+      "No acceptance without evidence"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is a loft bed without a lower bunk automatically excluded?",
+      "answer": "No. Check the applicable product definition and scope rather than relying on its marketing name.",
+      "sectionId": "classification"
+    }
+  ]
+}

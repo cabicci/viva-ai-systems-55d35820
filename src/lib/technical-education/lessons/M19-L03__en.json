@@ -1,0 +1,72 @@
+{
+  "id": "M19-L03",
+  "locale": "en",
+  "title": "Reception and waiting areas",
+  "intro": "Reception furniture joins visitor arrival, staff work and waiting. Coordinate queues, service surfaces, privacy and maintainable storage instead of treating the desk and seating as isolated objects.",
+  "goals": [
+    "Coordinate arrival and waiting",
+    "Separate visitor and staff interfaces",
+    "Coordinate privacy and maintenance"
+  ],
+  "sections": [
+    {
+      "id": "arrival",
+      "title": "Coordinate arrival and waiting",
+      "text": "Map first contact, queue, waiting and onward movement from the entrance. Check staff sightlines and conflicts between occupied seats, doors and open storage. Represent relevant visitors with luggage or mobility aids and obtain the applicable access review. A neat row of chairs does not by itself make the service journey clear.",
+      "diagram": "new-M19-L03-arrival",
+      "caption": "First contact and onward route remain legible."
+    },
+    {
+      "id": "counter",
+      "title": "Separate visitor and staff interfaces",
+      "text": "Section the visitor surface, staff worktop, screen and approach space. Lowering one surface alone may not solve access if the base still obstructs use. Identify writing, payment or handover tasks and device positions. Review the actual service against applicable requirements rather than borrowing a domestic desk height as a universal solution.",
+      "diagram": "new-M19-L03-counter",
+      "caption": "Service task, approach and device position are linked."
+    },
+    {
+      "id": "privacy",
+      "title": "Coordinate privacy and maintenance",
+      "text": "Check views of screens and papers from waiting positions and place staff documents in controlled storage. Draw cable access and cover removal from the staff side, avoiding cables across routes. Public/back-of-house zoning supports privacy, but a furniture plan alone does not certify acoustic isolation or data-protection compliance.",
+      "diagram": "new-M19-L03-privacy",
+      "caption": "Sightlines, storage and service access need coordination."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The screen faces waiting seats and the cable cover opens toward the public. Revise screen orientation and service access, then recheck staff drawers and visitor contact. An arbitrary tall barrier may hide the visitor rather than solve the privacy problem.",
+    "decision": "Decision: test privacy and visitor contact together after revision."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "Does lowering the service surface alone establish usable access?",
+      "options": [
+        "No; check approach, base and task",
+        "Always",
+        "A new colour is enough"
+      ],
+      "correct": 0,
+      "explanation": "Usability includes approach and task, not surface height alone."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a reception plan, service section and sightline/maintenance review.",
+    "fields": [
+      "Arrival and waiting",
+      "Service interface",
+      "Privacy and cable access"
+    ],
+    "criteria": [
+      "Occupied routes shown",
+      "Tasks distinguished",
+      "Sightlines and access documented"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a domestic living-room specification be transferred unchanged?",
+      "answer": "No. Public service, privacy and operating tasks change the requirements.",
+      "sectionId": "arrival"
+    }
+  ]
+}

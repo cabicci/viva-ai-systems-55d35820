@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M21-L03",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Review, revise and present the project",
+      "spoken_text": "The final review connects observations to fixes and reinspection. Present the reception/storage project with evidence, revision history and explicit limits so a human reviewer can assess the work rather than only its images.",
+      "caption": "The final review connects observations to fixes and reinspection. Present the reception/storage project with evidence, revision history and explicit limits so a human reviewer can assess the work rather than only its images."
+    },
+    {
+      "id": "snag",
+      "display_title": "Write actionable review observations",
+      "spoken_text": "Record item ID, location, operating state, evidence, consequence, owner and closure condition. For example: drawer C-A collides with the adjacent handle in the documented open state. Distinguish an observed defect from an untested concern. A general “drawer problem” is not actionable, and an untested state must not be marked passed.",
+      "caption": "Locate the observation and define its closure evidence.",
+      "diagram": "new-M21-L03-snag"
+    },
+    {
+      "id": "recheck",
+      "display_title": "Reinspect the corrected state",
+      "spoken_text": "Link the fix to a revision and compare before/after at the same reference. A handle change must also be checked for grip, door motion and the hardware schedule. Move from open to corrected to reinspected, then close only against the stated evidence. Correcting a drawing does not prove an installation that never occurred.",
+      "caption": "Corrected is not the same as verified closed.",
+      "diagram": "new-M21-L03-recheck"
+    },
+    {
+      "id": "portfolio",
+      "display_title": "Present decisions and evidence limits",
+      "spoken_text": "Structure the presentation around the problem, constraints, alternatives, coordinated package, trial and revision. The exercise register has 5 issues with 3 closed: 5 − 3 = 2 remain. Show those open issues and closure actions. Give a human reviewer the rubric and evidence; an automated quiz result is not professional project approval.",
+      "caption": "5 − 3 = 2; open issues stay visible.",
+      "diagram": "new-M21-L03-portfolio"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "The handle collision is corrected and the model state rechecked, but the user trial and connection review remain open. Present the geometric fix within that scope and retain both issues. Updated images do not turn the project into an approved fabrication release. Decision: present verified and unresolved work separately for human review.",
+      "caption": "Decision: present verified and unresolved work separately for human review."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit the five-issue register, before/after correction and portfolio showing 3 closed and 2 open.",
+      "spoken_text": "Submit the five-issue register, before/after correction and portfolio showing 3 closed and 2 open.",
+      "caption": "Submit the five-issue register, before/after correction and portfolio showing 3 closed and 2 open."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M15-L04",
+  "locale": "en",
+  "title": "Bathroom drawings, quantities and inspection",
+  "intro": "Assemble the project drawings, quantities, approval sequence and inspection records, distinguishing a teaching takeoff from purchasing and execution approval.",
+  "goals": [
+    "Unify the coordinated project package",
+    "Separate takeoff from purchasing",
+    "Tie the sequence to inspections and handover"
+  ],
+  "sections": [
+    {
+      "id": "package",
+      "title": "Unify the coordinated project package",
+      "text": "Index plans, elevations, sections, interfaces and product/material/quantity schedules. Give items identifiers, sources, revisions and approval statuses, reconciling them across documents. Identify work outside the furniture scope and its owner. Completeness means consistent, actionable inputs rather than a large page count.",
+      "diagram": "new-M15-L04-package",
+      "caption": "Consistent IDs, revisions and ownership make the package usable."
+    },
+    {
+      "id": "quantities",
+      "title": "Separate takeoff from purchasing",
+      "text": "Exercise only: a rectangular floor measures 2 m by 3 m with no deductions, so 2 × 3 = 6 m². This is a geometric takeoff, not a recommended bathroom size or final order. Purchasing also reviews product layout, cuts, pack sizes and an approved allowance. Link cost to unit rate, source and date; keep net area separate from additions.",
+      "diagram": "new-M15-L04-quantities",
+      "caption": "6 m² net under the assumption; purchasing is a separate review."
+    },
+    {
+      "id": "sequence",
+      "title": "Tie the sequence to inspections and handover",
+      "text": "Link confirmed products and specialist coordination to approved stages and required pre-concealment inspections, then close/finish according to the selected system. Do not impose one layer sequence on all products. Assign an owner and acceptance evidence to each hold point, followed by defects, reinspection, as-built information and operation/maintenance records. Keep outstanding items visible at handover.",
+      "diagram": "new-M15-L04-sequence",
+      "caption": "Required evidence controls release of the next stage."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The 6 m² teaching takeoff is entered directly as a purchase order before packs and cutting layout are reviewed. Retain 6 m² as net takeoff and hold the order quantity and cost until product selection, layout and a dated quotation are resolved.",
+    "decision": "Decision: keep takeoff and order quantity separate."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "Exercise floor 2 m × 3 m, no deductions: net area?",
+      "options": [
+        "6 m²",
+        "5 m²",
+        "6 m³"
+      ],
+      "correct": 0,
+      "explanation": "Length times width gives 6 m² of area, not volume or an order quantity."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a package index, teaching takeoff, purchase inputs and a stage/inspection/handover plan.",
+    "fields": [
+      "Index and revisions",
+      "Takeoff/purchasing",
+      "Dependencies and handover"
+    ],
+    "criteria": [
+      "6 m² with correct unit",
+      "Net and allowances separate",
+      "Owner/evidence for hold points"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does correct area arithmetic release purchasing?",
+      "answer": "No. Review product, layout, pack sizes, approved allowances and dated quotation.",
+      "sectionId": "quantities"
+    }
+  ]
+}

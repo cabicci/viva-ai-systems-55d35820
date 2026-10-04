@@ -1,0 +1,72 @@
+{
+  "id": "M13-L02",
+  "locale": "en",
+  "title": "Single, multiple and extending beds",
+  "intro": "Compare a single bed, two separate beds and pull-out or extending systems through access, support and transformation states. A compact closed footprint is not sufficient to approve a mechanism.",
+  "goals": [
+    "Compare sleeping places and use patterns",
+    "Draw closed, transition and occupied states",
+    "Verify mechanism, support and mattress compatibility"
+  ],
+  "sections": [
+    {
+      "id": "alternatives",
+      "title": "Compare sleeping places and use patterns",
+      "text": "Define users, sleeping frequency and independent entry/exit. Two separate beds have different envelopes and routes from a single bed or a pull-out lower bed. Check whether the deployed bed blocks a door or drawer. Elevated beds require the separate safety review in the next lesson; lack of floor space does not by itself justify elevating a sleeping place.",
+      "diagram": "new-M13-L02-alternatives",
+      "caption": "Compare occupied sleeping states, not only closed footprints."
+    },
+    {
+      "id": "states",
+      "title": "Draw closed, transition and occupied states",
+      "text": "Draw components before, during and after movement, identifying hand/body paths, pinch/shear locations and the deployed supports. Do not use a child to trial an unverified mechanism. Have the specified system’s motion, protection and retention reviewed competently first; assess appropriate use only after acceptance and in accordance with the product instructions.",
+      "diagram": "new-M13-L02-states",
+      "caption": "Transition states need review as well as the final position."
+    },
+    {
+      "id": "compatibility",
+      "title": "Verify mechanism, support and mattress compatibility",
+      "text": "Identify the system, compatible mattress, use limits, required retention/stops, floor conditions and maintenance instructions. A large drawer does not become a bed merely because it pulls out, and wheels do not establish sleeping-load support or stability. Refer changes to length, support or mechanism to the manufacturer or competent reviewer before implementation.",
+      "diagram": "new-M13-L02-compatibility",
+      "caption": "Verify a sleeping system rather than relabeling a drawer."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The pull-out option frees daytime space but blocks the entrance route when occupied. Revise the arrangement or compare separate beds against the programme. Do not approve it solely because the closed-state illustration looks more spacious.",
+    "decision": "Decision: review sleeping, transition and access states before selection."
+  },
+  "quiz": [
+    {
+      "id": "trundle",
+      "question": "Which state must be included when comparing a pull-out bed?",
+      "options": [
+        "Deployed occupied state and access route",
+        "Closed state only",
+        "Front colour only"
+      ],
+      "correct": 0,
+      "explanation": "The occupied footprint can obstruct access even when the closed state is compact."
+    }
+  ],
+  "assignment": {
+    "prompt": "Compare the bed options and draw closed/transition/deployed states with required compatibility information.",
+    "fields": [
+      "Users and frequency",
+      "States and access",
+      "Mechanism, mattress and verification"
+    ],
+    "criteria": [
+      "Occupied state included",
+      "Transition hazards identified",
+      "No unverified drawer-to-bed conversion"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can any wheeled drawer serve as a bed?",
+      "answer": "No. It must be a verified sleeping system with appropriate support, mattress compatibility and stability.",
+      "sectionId": "compatibility"
+    }
+  ]
+}

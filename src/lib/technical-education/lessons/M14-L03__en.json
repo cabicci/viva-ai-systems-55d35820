@@ -1,0 +1,72 @@
+{
+  "id": "M14-L03",
+  "locale": "en",
+  "title": "Materials, lighting and service coordination",
+  "intro": "Coordinate materials, lighting and services through exposure and maintenance maps, separating appearance choices from technical system approval.",
+  "goals": [
+    "Match materials to exposure",
+    "Trial lighting at the mirror",
+    "Preserve service and replacement access"
+  ],
+  "sections": [
+    {
+      "id": "exposure",
+      "title": "Match materials to exposure",
+      "text": "Map possible splashes, cleaning chemicals, cut edges and top joints. Request the exact board, facing, edge treatment and declared use limits. A moisture-resistance label does not authorise every exposure or immersion. Link the specification to a finish sample and documented cleaning method, assigning responsibility for joints and wall interfaces.",
+      "diagram": "new-M14-L03-exposure",
+      "caption": "Specify the exact assembly and declared exposure limits."
+    },
+    {
+      "id": "light",
+      "title": "Trial lighting at the mirror",
+      "text": "Trial lighting from the user position, checking facial shadows, reflected glare and colour appearance for the task. Backlighting may provide an appearance effect without meeting the face-lighting brief. Record the product, position and trial result; electrical suitability, protection and supply location remain subject to qualified project/product review.",
+      "diagram": "new-M14-L03-light",
+      "caption": "Task-lighting review is distinct from electrical approval."
+    },
+    {
+      "id": "coordination",
+      "title": "Preserve service and replacement access",
+      "text": "Reserve service envelopes and identify removable access for lighting or waste components. Reconcile them with drawers and fixings before closing finishes. Register each component, data source, location, responsible discipline and approval status. The furniture drawing coordinates space and inputs; it does not substitute for electrical or plumbing execution design.",
+      "diagram": "new-M14-L03-coordination",
+      "caption": "Show ownership, status and physical maintenance access."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The mirror appearance is accepted but a lighting component is trapped behind a glued back. Record appearance acceptance only and hold the unit approval until service access is resolved with the responsible specialist, then repeat the lighting trial and update the component register.",
+    "decision": "Decision: appearance acceptance does not close the service-access issue."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "Lighting looks right but cannot be serviced: status?",
+      "options": [
+        "Unit approval held for access resolution",
+        "Fully approved",
+        "Omit servicing"
+      ],
+      "correct": 0,
+      "explanation": "Appearance does not establish serviceability."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit exposure/material specifications, a lighting trial and a service coordination register.",
+    "fields": [
+      "Exposure/materials",
+      "Lighting trial",
+      "Services and ownership"
+    ],
+    "criteria": [
+      "Exact product data",
+      "Appearance separate from safety approval",
+      "Replacement access preserved"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a moisture-resistance label cover every exposure?",
+      "answer": "No. Review product limits, assembly, edges and cleaning for the intended use.",
+      "sectionId": "exposure"
+    }
+  ]
+}

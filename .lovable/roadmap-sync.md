@@ -305,3 +305,28 @@ Site source: `0be59e63df8e4fbaec937dec97e41d3a393e3dba`; deployment: `appgdep_6a
 Compiled content tree: `411c72047ac742543786dc3cb4ad582e52d7f923`, durable content commit: `cef9a4591ec9bddd444dd7a3e4f787c4cc936926`. Experiment integration: `44c4343a595d8757497ecadc17c8f6f8d2b06e4f`; preserves later media bot updates.
 Preview has 68 video mappings for 17 lessons at build time. Video run 37200455123 is pending behind in-progress run 37197540381; do not claim production completion. Actual pronunciation acceptance remains pending independently for ar-EG, ar-MSA, ar-Gulf, and en.
 Root gates passed: 17 Vitest, 10 Python integrity tests, TypeScript, scoped ESLint, production build. No main-platform release.
+
+
+## Final 40 lessons authorized — 2026-10-04
+
+[roadmap:furniture-pilot-temporary-branch] Owner requested all remaining 40 lessons. Continue M11-L03 through M21-L03 to 80 content-reviewed lessons in four locales. Four isolated authoring worktrees own non-overlapping lesson scopes; coordinator owns additive integration, final gates, reviewed media manifest and owner-private preview publication. Existing 324 PDF bytes are preserved. Full pronunciation listening acceptance remains a separate mandatory gate in each of ar-EG, ar-MSA, ar-Gulf and en. No main-platform, payment, entitlement or account integration is included.
+
+
+## Final40 integrated — 80 content lessons — 2026-10-04
+
+[roadmap:furniture-pilot-temporary-branch] Owner authorized all remaining40. M11-L03 through M21-L03 now add160 contextual packages,120 concept diagrams,480 SVGs,320 PDFs/640 visually reviewed pages and160 video-text scripts. Total80 content lessons/320 locale packages/644 PDFs. All324 preceding PDFs remain byte-identical. Global register and media production approval contain all80 IDs.
+
+Coordinator reviewed all40 Egyptian manuscripts, selected MSA/Gulf/English comparisons, all480 concept frames from800 rendered Remotion stills, and representative intro/case frames. Corrections cover Arabic numeric spacing/isolation, quiz alignment, assembly-depth wording and complete manual references. M17-L01 was rerendered in allfour locales after its first-sentence correction. Scoped evidence records320 browser viewport cases plus targeted retests,480 SVG bounds and640 PDF pages. No actual listening acceptance is claimed in any of ar-EG/ar-MSA/ar-Gulf/en.
+
+Final integrated tests/build, durable GitHub and private-preview receipts follow. Keep generated preview assets in dist/client (the earlier plain-HTML cause is fixed). Renderer/TTS runtime, main platform, billing, entitlements and account integration are unchanged.
+
+
+## Private publication receipt — 80 content lessons — 2026-10-04
+
+Published successfully at https://masaarat-furniture-lesson-preview.khalillotfy.chatgpt.site . Site source36e0a4a6fe5d71e35fbf55496728649fe95ba0d2; deployment appgdep_6ac24b01ae7481919a8ce25281b9313f; succeeded2026-10-04T12:48:31Z. Owner-private audience retained. Compiled repository snapshot cba238e2b39bd272569a2619704e68f8278a5a0c/tree062149eef4c7727decc91c98fd3e70c468f58487.
+
+Published content:80 lessons,320 localized packages,644 PDFs,80 video mappings covering20 lessons. This is a media snapshot; later bot updates are preserved in the experiment branch. Main-site integration remains out of scope. Correct pronunciation is independently pending actual listening in Egyptian,MSA,Gulf andEnglish.
+
+Integrated gates passed:80-lesson structural completion,17 Vitest checks,10 Python integrity tests,TypeScript,scoped component/runtime ESLint,clean-commit production build. The wider directory lint also reports two pre-existing formatting warnings-as-errors in unchanged M04 test lines; no functional issue was found and the file was not reformatted. Preview asset regression verifies SSR and all12 referenced CSS/JS/brand assets; generated files are under dist/client. All324 earlier PDFs retain their SHA-256 hashes.
+
+Preserve the existing media workflow and accepted voice caches; the planner handles at most200 missing/revised locale cells per run and reports any deferred remainder. Production success is not pronunciation listening acceptance.

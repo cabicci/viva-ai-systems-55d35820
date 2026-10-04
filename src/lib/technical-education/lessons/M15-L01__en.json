@@ -1,0 +1,72 @@
+{
+  "id": "M15-L01",
+  "locale": "en",
+  "title": "Bathroom fixtures, layout and openings",
+  "intro": "Bathroom planning coordinates fixtures, movement and openings around the users and surveyed site. Produce a layout with explicit conflicts and unresolved inputs.",
+  "goals": [
+    "Establish surveyed boundaries and inputs",
+    "Test openings with occupied use",
+    "Compare alternatives and unresolved items"
+  ],
+  "sections": [
+    {
+      "id": "survey",
+      "title": "Establish surveyed boundaries and inputs",
+      "text": "Record finished boundaries, doors, windows, fixed elements and services. Distinguish measured facts from assumptions and identify each source. Represent fixtures using product codes and documented envelopes rather than generic symbols alone. A changed basin or toilet can alter service interfaces, so keep dependent locations provisional until the product is identified.",
+      "diagram": "new-M15-L01-survey",
+      "caption": "Document measured facts, assumptions and product envelopes."
+    },
+    {
+      "id": "openings",
+      "title": "Test openings with occupied use",
+      "text": "Show room and shower-door swings, drawer extension and user positions together. Check entry and access in operating states, recording bottlenecks and clashes. Review project and accessibility requirements with the responsible specialist. Reversing a door may move a conflict into the adjacent space, so include that space in the comparison.",
+      "diagram": "new-M15-L01-openings",
+      "caption": "Review simultaneous openings and neighbouring space."
+    },
+    {
+      "id": "compare",
+      "title": "Compare alternatives and unresolved items",
+      "text": "Compare two options using equivalent site boundaries and product assumptions. Review routes, use access, cleaning and service coordination, recording any product change. Visual spaciousness does not prove code compliance. State advantages, trade-offs, missing inputs and decision owners, distinguishing a coordination proposal from an approved execution drawing.",
+      "diagram": "new-M15-L01-compare",
+      "caption": "Keep proposal status and required reviews explicit."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "In A, an extended vanity drawer conflicts with the room door. B relocates the vanity and resolves movement, but service access at the new position needs review. Prefer B as a coordination option while holding final location approval for the responsible specialist’s confirmation.",
+    "decision": "Decision: prefer B subject to service confirmation."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "Does resolving the door clash approve the relocation?",
+      "options": [
+        "No; review services and remaining conditions",
+        "Yes, automatically",
+        "A perspective is sufficient"
+      ],
+      "correct": 0,
+      "explanation": "Resolving one clash does not close every review."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two layouts with openings/users, dimension sources, conflicts and unresolved review owners.",
+    "fields": [
+      "Site/products",
+      "Openings and movement",
+      "Conflicts and decision"
+    ],
+    "criteria": [
+      "Facts distinguished from assumptions",
+      "Adjacent space checked",
+      "No unsupported compliance claim"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a generic fixture symbol fix the final location?",
+      "answer": "Only for early comparison; final approval needs the selected product and service interfaces.",
+      "sectionId": "survey"
+    }
+  ]
+}

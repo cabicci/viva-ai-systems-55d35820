@@ -1,0 +1,72 @@
+{
+  "id": "M21-L03",
+  "locale": "en",
+  "title": "Review, revise and present the project",
+  "intro": "The final review connects observations to fixes and reinspection. Present the reception/storage project with evidence, revision history and explicit limits so a human reviewer can assess the work rather than only its images.",
+  "goals": [
+    "Write actionable review observations",
+    "Reinspect the corrected state",
+    "Present decisions and evidence limits"
+  ],
+  "sections": [
+    {
+      "id": "snag",
+      "title": "Write actionable review observations",
+      "text": "Record item ID, location, operating state, evidence, consequence, owner and closure condition. For example: drawer C-A collides with the adjacent handle in the documented open state. Distinguish an observed defect from an untested concern. A general “drawer problem” is not actionable, and an untested state must not be marked passed.",
+      "diagram": "new-M21-L03-snag",
+      "caption": "Locate the observation and define its closure evidence."
+    },
+    {
+      "id": "recheck",
+      "title": "Reinspect the corrected state",
+      "text": "Link the fix to a revision and compare before/after at the same reference. A handle change must also be checked for grip, door motion and the hardware schedule. Move from open to corrected to reinspected, then close only against the stated evidence. Correcting a drawing does not prove an installation that never occurred.",
+      "diagram": "new-M21-L03-recheck",
+      "caption": "Corrected is not the same as verified closed."
+    },
+    {
+      "id": "portfolio",
+      "title": "Present decisions and evidence limits",
+      "text": "Structure the presentation around the problem, constraints, alternatives, coordinated package, trial and revision. The exercise register has 5 issues with 3 closed: 5 − 3 = 2 remain. Show those open issues and closure actions. Give a human reviewer the rubric and evidence; an automated quiz result is not professional project approval.",
+      "diagram": "new-M21-L03-portfolio",
+      "caption": "5 − 3 = 2; open issues stay visible."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The handle collision is corrected and the model state rechecked, but the user trial and connection review remain open. Present the geometric fix within that scope and retain both issues. Updated images do not turn the project into an approved fabrication release.",
+    "decision": "Decision: present verified and unresolved work separately for human review."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "How many issues remain when 3 of 5 are closed?",
+      "options": [
+        "2",
+        "3",
+        "5"
+      ],
+      "correct": 0,
+      "explanation": "5 − 3 = 2; retain their closure actions in the handover."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit the five-issue register, before/after correction and portfolio showing 3 closed and 2 open.",
+    "fields": [
+      "Review observations",
+      "Fix and reinspection",
+      "Portfolio and approval limits"
+    ],
+    "criteria": [
+      "Actionable issue records",
+      "Closure supported by evidence",
+      "Human review and limits explicit"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does passing the quiz approve the project professionally?",
+      "answer": "No. Human and technical review of the actual evidence and open items is required.",
+      "sectionId": "portfolio"
+    }
+  ]
+}

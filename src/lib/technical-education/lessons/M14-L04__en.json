@@ -1,0 +1,72 @@
+{
+  "id": "M14-L04",
+  "locale": "en",
+  "title": "Vanity installation and handover",
+  "intro": "Build a unit-specific inspection linking site readiness, function, appearance, services and documented defect closure.",
+  "goals": [
+    "Verify installation readiness",
+    "Separate functional and visual checks",
+    "Close defects through reinspection"
+  ],
+  "sections": [
+    {
+      "id": "readiness",
+      "title": "Verify installation readiness",
+      "text": "Reconcile finished site dimensions, levels and substrate with the approved drawing; check delivery access, work space and system components. Obtain the responsible specialist’s service-readiness confirmation. Missing support or service approval becomes a hold point, not an undocumented site adjustment. Follow the selected project system.",
+      "diagram": "new-M14-L04-readiness",
+      "caption": "Verify inputs before installation is released."
+    },
+    {
+      "id": "checks",
+      "title": "Separate functional and visual checks",
+      "text": "Check drawer operation, contents access and user/mirror position against the selected system. Compare alignment, edges, colour and damage with the reference sample. Receive required service test records from the responsible specialist; no visible defect is not proof of a passed test. Record the part, observation and suitable evidence without improvising load or pressure tests.",
+      "diagram": "new-M14-L04-checks",
+      "caption": "Each inspection category needs its own evidence."
+    },
+    {
+      "id": "closure",
+      "title": "Close defects through reinspection",
+      "text": "Register defect ID, location, description, owner and follow-up. Distinguish rectified from reinspected and closed. After a drawer or light is altered, recheck the affected item and related functions. Hand over as-built information, operation/cleaning instructions, product data and outstanding items with an accurate acceptance status.",
+      "diagram": "new-M14-L04-closure",
+      "caption": "Rectification is followed by evidence-based reinspection."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A rubbing drawer is adjusted on site. Record the action, then recheck travel, access and alignment. If rubbing remains, keep the item open with an owner even though the rest of the unit’s appearance is acceptable.",
+    "decision": "Decision: defect status follows the reinspection result."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "When should a rectified defect be closed?",
+      "options": [
+        "After documented satisfactory reinspection",
+        "After a promise to fix",
+        "After a photograph alone"
+      ],
+      "correct": 0,
+      "explanation": "An action does not establish acceptance without checking its result."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit readiness and unit inspection lists, one traced defect and a handover index.",
+    "fields": [
+      "Readiness inputs",
+      "Functional/visual checks",
+      "Defect and handover"
+    ],
+    "criteria": [
+      "Named ownership",
+      "Rectification separate from closure",
+      "Outstanding items explicit"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does no visible defect establish service acceptance?",
+      "answer": "No. Obtain the required documented checks from the responsible specialist.",
+      "sectionId": "checks"
+    }
+  ]
+}
