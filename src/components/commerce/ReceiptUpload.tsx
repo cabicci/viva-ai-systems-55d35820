@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { uploadCommerceReceipt, readCommerceReceipt } from "@/lib/commerce/commerce.functions";
 import { validateReceipt } from "@/lib/commerce/receipts";
 import { useLocale } from "@/lib/locale/locale-context";
 import { commerceCopy } from "@/lib/commerce/copy";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 export function ReceiptUpload({
   orderId,
   onUploaded,
@@ -60,31 +67,82 @@ export function ReceiptView({ id }: { id: string }) {
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     read = useServerFn(readCommerceReceipt);
-  const [busy, setBusy] = useState(false),
+  const [open, setOpen] = useState(false),
+    [file, setFile] = useState<{ url: string; mime: string; name: string }>(),
     [error, setError] = useState("");
-  async function open() {
-    setBusy(true);
-    try {
-      const file = await read({ data: { id } });
-      const bytes = Uint8Array.from(atob(file.base64), (c) => c.charCodeAt(0));
-      const url = URL.createObjectURL(new Blob([bytes], { type: file.mime }));
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `receipt-${id}.${file.mime === "application/pdf" ? "pdf" : file.mime === "image/png" ? "png" : "jpg"}`;
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 10000);
-    } catch {
-      setError(w.error);
-    } finally {
-      setBusy(false);
-    }
-  }
+  useEffect(() => {
+    if (!open) return;
+    let active = true;
+    let url: string | undefined;
+    setFile(undefined);
+    setError("");
+    void read({ data: { id } })
+      .then((receipt) => {
+        if (!active) return;
+        if (!["image/png", "image/jpeg", "application/pdf"].includes(receipt.mime)) {
+          throw new Error("Unsupported receipt format");
+        }
+        const bytes = Uint8Array.from(atob(receipt.base64), (c) => c.charCodeAt(0));
+        url = URL.createObjectURL(new Blob([bytes], { type: receipt.mime }));
+        setFile({
+          url,
+          mime: receipt.mime,
+          name: `receipt-${id}.${receipt.mime === "application/pdf" ? "pdf" : receipt.mime === "image/png" ? "png" : "jpg"}`,
+        });
+      })
+      .catch(() => {
+        if (active) setError(w.error);
+      });
+    return () => {
+      active = false;
+      if (url) URL.revokeObjectURL(url);
+    };
+  }, [open, id, read, w.error]);
   return (
-    <>
-      <Button variant="outline" size="sm" disabled={busy} onClick={() => void open()}>
-        {w.viewReceipt}
-      </Button>
-      {error && <p role="alert">{error}</p>}
-    </>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button type="button" variant="outline" size="sm">
+          {w.viewReceipt}
+        </Button>
+      </DialogTrigger>
+      <DialogContent
+        className="max-h-[90dvh] w-[calc(100%_-_2rem)] max-w-4xl overflow-y-auto"
+        dir={locale === "en" ? "ltr" : "rtl"}
+        closeLabel={w.closeReceipt}
+      >
+        <DialogTitle className="px-6 text-start">{w.viewReceipt}</DialogTitle>
+        <DialogDescription className="text-start">{w.receiptCloudNote}</DialogDescription>
+        {error ? (
+          <p role="alert">{error}</p>
+        ) : !file ? (
+          <p role="status">{w.receiptLoading}</p>
+        ) : (
+          <>
+            {file.mime === "application/pdf" ? (
+              <object
+                data={file.url}
+                type="application/pdf"
+                aria-label={w.receipt}
+                className="h-[60dvh] w-full rounded border"
+              >
+                <p>{w.receiptPreviewFallback}</p>
+              </object>
+            ) : (
+              <img
+                src={file.url}
+                alt={w.receipt}
+                className="max-h-[65dvh] w-full rounded object-contain"
+              />
+            )}
+            {file.mime === "application/pdf" && <p>{w.receiptPreviewFallback}</p>}
+            <Button asChild variant="outline" className="justify-self-start">
+              <a href={file.url} download={file.name}>
+                {w.downloadReceipt}
+              </a>
+            </Button>
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
   );
 }
