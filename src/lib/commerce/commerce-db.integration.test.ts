@@ -81,6 +81,7 @@ beforeAll(async () => {
     "20261004013000_commerce_receipts_mail.sql",
     "20261004014000_commerce_account_retention.sql",
     "20261004015000_commerce_payment_mail.sql",
+    "20261004016000_commerce_simple_offers.sql",
   ])
     try {
       await db.exec(readFileSync(`supabase/migrations/${name}`, "utf8"));
@@ -274,6 +275,214 @@ describe("commerce review, invitation and lifecycle edge cases", () => {
       ...changes,
     });
   };
+  const simple = async (changes: Record<string, unknown> = {}) => {
+    const catalogue = (await command("offer_catalogue")) as unknown as {
+      package: string;
+      market: string;
+      billing_interval: string;
+      original_minor: number;
+    }[];
+    const params = {
+      key: randomUUID(),
+      audience: "public",
+      emails: [],
+      group_name: "",
+      package: "pro",
+      market: "EG",
+      billing_interval: "month",
+      percent: 100,
+      delivery: "coupon",
+      code: `S-${randomUUID().slice(0, 8)}`.toUpperCase(),
+      locale: "ar-EG",
+      limit_mode: "time",
+      valid_until: new Date(Date.now() + 86400000).toISOString(),
+      max_redemptions: null,
+      ...changes,
+    };
+    const input = {
+      ...params,
+      expected_price_minor: catalogue.find(
+        (p) =>
+          p.package === params.package &&
+          p.market === params.market &&
+          p.billing_interval === params.billing_interval,
+      )!.original_minor,
+    };
+    return { input, offer: await command("simple_offer", input) };
+  };
+  const redeem = (code: string, phone = "+201012345678", key = randomUUID()) =>
+    command("create_order", { ...selection, code, phone, key });
+  it("creates time-only/count-only coupons atomically, with live prices and no automatic email", async () => {
+    const { input, offer } = await simple();
+    expect((offer as unknown as { max_redemptions: null }).max_redemptions).toBeNull();
+    expect((await command("simple_offer", input)).id).toBe(offer.id);
+    await denied("simple_offer", { ...input, percent: 50 }, /RETRY_CONFLICT/);
+    await denied(
+      "simple_offer",
+      { ...input, key: randomUUID(), code: "TAMPERED", expected_price_minor: 1 },
+      /PRICE_CHANGED/,
+    );
+    const counted = await simple({ limit_mode: "count", valid_until: null, max_redemptions: 2 });
+    expect((counted.offer as unknown as { valid_until: null }).valid_until).toBeNull();
+    expect(await value("SELECT count(*)::int AS value FROM billing.commerce_outbox")).toBe(0);
+    await caller(user);
+    await denied("simple_offer", { ...input, key: randomUUID() }, /ADMIN_REQUIRED/);
+    await denied("offer_catalogue", {}, /ADMIN_REQUIRED/);
+    expect(
+      await value(
+        "SELECT has_function_privilege('authenticated','billing.commerce_previous_simple_command(text,jsonb)','EXECUTE') AS value",
+      ),
+    ).toBe(false);
+  });
+  it("100 percent activates from redemption for a calendar month and rejects same email, phone or user", async () => {
+    const { input } = await simple();
+    await caller(user);
+    await denied(
+      "create_order",
+      { ...selection, code: input.code, key: randomUUID() },
+      /PHONE_REQUIRED/,
+    );
+    const key = randomUUID();
+    const o = await redeem(input.code, undefined, key);
+    expect(o.final_minor).toBe(0);
+    expect(o.review_status).toBe("confirmed");
+    expect((await redeem(input.code, undefined, key)).id).toBe(o.id);
+    expect(
+      await value(
+        `SELECT ends_at=starts_at+interval '1 month' AND starts_at=now() AS value FROM billing.commerce_entitlements WHERE grant_id IN (SELECT id FROM billing.commerce_grants WHERE offer_order_id='${o.id}')`,
+      ),
+    ).toBe(true);
+    await denied(
+      "create_order",
+      { ...selection, code: input.code, key: randomUUID(), phone: "+201112345678" },
+      /ALREADY_USED/,
+    );
+    await caller(other);
+    await denied(
+      "create_order",
+      { ...selection, code: input.code, key: randomUUID(), phone: "+201012345678" },
+      /ALREADY_USED/,
+    );
+    expect((await redeem(input.code, "+201112345678")).review_status).toBe("confirmed");
+  });
+  it("restricts targeted coupons to listed emails and selected package interval", async () => {
+    const { input } = await simple({ audience: "group", emails: ["member@example.test"] });
+    await caller(other);
+    await denied("quote", { ...selection, code: input.code }, /INELIGIBLE/);
+    await caller(user);
+    await denied(
+      "quote",
+      { ...selection, billing_interval: "year", code: input.code },
+      /INELIGIBLE/,
+    );
+    expect((await redeem(input.code)).review_status).toBe("confirmed");
+  });
+  it("count-only coupons enforce capacity without expiry and time-only coupons expire", async () => {
+    const { input } = await simple({ limit_mode: "count", valid_until: null, max_redemptions: 1 });
+    await caller(user);
+    await redeem(input.code);
+    await caller(other);
+    await denied(
+      "create_order",
+      { ...selection, code: input.code, key: randomUUID(), phone: "+201112345678" },
+      /OFFER_LIMIT/,
+    );
+    await caller(admin);
+    const timed = await simple();
+    await db.query(
+      "UPDATE billing.commerce_offers SET valid_from=now()-interval '2 days',valid_until=now()-interval '1 day' WHERE id=$1",
+      [timed.offer.id],
+    );
+    await caller(user);
+    await denied("quote", { ...selection, code: timed.input.code }, /INELIGIBLE/);
+  });
+  it.each([20, 100])(
+    "direct %s percent invitations use 15-day deadline, email-only recipients and explicit send",
+    async (percent) => {
+      const { offer, input } = await simple({
+        audience: "group",
+        emails: ["member@example.test", "other@example.test"],
+        delivery: "invitation",
+        percent,
+      });
+      const invitations = (
+        await db.query<Invitation>(
+          "SELECT * FROM billing.commerce_invitations WHERE offer_id=$1 ORDER BY email",
+          [offer.id],
+        )
+      ).rows;
+      expect(invitations).toHaveLength(2);
+      expect(invitations[0].name).toBeNull();
+      expect(
+        await value(
+          `SELECT bool_and(deadline=now()+interval '15 days') AS value FROM billing.commerce_invitations WHERE offer_id='${offer.id}'`,
+        ),
+      ).toBe(true);
+      expect(await value("SELECT count(*)::int AS value FROM billing.commerce_outbox")).toBe(0);
+      await db.exec("UPDATE billing.commerce_control SET invitations_enabled=true");
+      await command("send_offer_invitations", { id: offer.id });
+      await command("send_offer_invitations", { id: offer.id });
+      expect(await value("SELECT count(*)::int AS value FROM billing.commerce_outbox")).toBe(2);
+      await caller(user);
+      await denied("quote", { ...selection, code: input.code }, /INELIGIBLE/);
+      await denied("accept", { id: invitations[0].id }, /PHONE_REQUIRED/);
+      await command("accept", { id: invitations[0].id, phone: "+201012345678" });
+      await command("accept", { id: invitations[0].id, phone: "+201012345678" });
+      if (percent < 100) {
+        const o = await command("order", { id: invitations[0].order_id });
+        expect(o.final_minor).toBe(13520);
+        expect(
+          await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements"),
+        ).toBe(0);
+        await pay(o, { group_id: (offer as unknown as { group_id: string }).group_id });
+      }
+      expect(
+        await value(
+          `SELECT ends_at=starts_at+interval '1 month' AS value FROM billing.commerce_entitlements WHERE user_id='${user}'`,
+        ),
+      ).toBe(true);
+      await caller(other);
+      await denied("accept", { id: invitations[1].id, phone: "+201012345678" }, /ALREADY_USED/);
+      await db.query(
+        "UPDATE billing.commerce_invitations SET deadline=now()-interval '1 second' WHERE id=$1",
+        [invitations[1].id],
+      );
+      await denied("accept", { id: invitations[1].id, phone: "+201112345678" }, /EXPIRED/);
+    },
+  );
+  it("erases coupon phones and targeted emails with the existing account deletion lifecycle", async () => {
+    const { input, offer } = await simple({
+      audience: "individual",
+      emails: ["member@example.test"],
+    });
+    await caller(user);
+    const o = await redeem(input.code);
+    await db.exec(
+      `SELECT set_config('request.jwt.claim.role','service_role',false); UPDATE billing.account_deletion_control SET enabled=true,financial_purge_enabled=true,financial_retention_reference='synthetic',crm_retention_reference='synthetic',responder_reference='synthetic',release_reference='synthetic'; INSERT INTO billing.account_deletion_requests(user_id) VALUES('${user}')`,
+    );
+    const claim = await value<{ lease_token: string }>(
+      `SELECT public.lc09_claim_deletion('${user}') AS value`,
+    );
+    for (const stage of ["provider_reconciled", "learner_erased"])
+      await db.query("SELECT public.lc09_advance_deletion($1,$2,$3)", [
+        user,
+        claim.lease_token,
+        stage,
+      ]);
+    expect(
+      await value(
+        `SELECT redemption_phone AS value FROM billing.commerce_orders WHERE id='${o.id}'`,
+      ),
+    ).toBeNull();
+    expect(
+      await value(
+        `SELECT audience_emails AS value FROM billing.commerce_offers WHERE id='${offer.id}'`,
+      ),
+    ).toEqual([]);
+    expect(
+      await value(`SELECT parameters AS value FROM billing.commerce_offers WHERE id='${offer.id}'`),
+    ).toEqual({});
+  });
   const recipient = (email = "member@example.test", changes: Record<string, unknown> = {}) => ({
     email,
     name: "Synthetic",
@@ -1363,3 +1572,71 @@ it("allocates confirmed group balances without new revenue and caps unallocated 
     await db.exec("ROLLBACK");
   }
 });
+
+it.skipIf(!nativeUrl)(
+  "serializes new coupons by phone and final available use under simultaneous redemption",
+  async () => {
+    if (!nativeUrl) throw new Error("Native disposable database required");
+    await db.exec("UPDATE billing.commerce_control SET enabled=true");
+    const clients = [postgres(nativeUrl, { max: 1 }), postgres(nativeUrl, { max: 1 })];
+    try {
+      for (const limitMode of ["time", "count"]) {
+        await caller(admin);
+        const catalogue = (await command("offer_catalogue")) as unknown as {
+          package: string;
+          market: string;
+          billing_interval: string;
+          original_minor: number;
+        }[];
+        const code = `RACE-${randomUUID().slice(0, 8)}`.toUpperCase();
+        const f = await command("simple_offer", {
+          key: randomUUID(),
+          audience: "public",
+          emails: [],
+          group_name: "",
+          package: "pro",
+          market: "EG",
+          billing_interval: "month",
+          percent: 100,
+          delivery: "coupon",
+          code,
+          locale: "en",
+          limit_mode: limitMode,
+          valid_until: limitMode === "time" ? new Date(Date.now() + 86400000).toISOString() : null,
+          max_redemptions: limitMode === "count" ? 1 : null,
+          expected_price_minor: catalogue.find(
+            (p) => p.package === "pro" && p.market === "EG" && p.billing_interval === "month",
+          )!.original_minor,
+        });
+        const results = await Promise.allSettled(
+          clients.map(async (client, index) => {
+            await client.unsafe(
+              "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
+              [index === 0 ? user : other],
+            );
+            return client.unsafe("SELECT public.commerce_command('create_order',$1::jsonb)", [
+              client.json({
+                package: "pro",
+                market: "EG",
+                billing_interval: "month",
+                method: "admin",
+                code,
+                key: randomUUID(),
+                phone: limitMode === "time" || index === 0 ? "+201012345678" : "+201112345678",
+              }),
+            ]);
+          }),
+        );
+        expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(1);
+        expect(results.filter((r) => r.status === "rejected")).toHaveLength(1);
+        expect(
+          await value(
+            `SELECT consumed_count AS value FROM billing.commerce_offers WHERE id='${f.id}'`,
+          ),
+        ).toBe(1);
+      }
+    } finally {
+      await Promise.all(clients.map((c) => c.end()));
+    }
+  },
+);
