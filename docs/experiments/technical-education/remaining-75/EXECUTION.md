@@ -63,3 +63,13 @@ New workbooks use measured block pagination; practice starts on a separate page.
 Nineteen scoped UI/content/diagram tests, nine authoring-integrity tests, application TypeScript and scoped ESLint passed. Browser checks passed32 lesson/register/viewport visits at390/1440px: three distinct illustrations per lesson, matching full-size SVG assets, valid PDF-only links with type-plus-title download names, one platform language selector, no page errors/overflow and pending video instead of invented playback. No new speech/video was generated; written narration needs the coordinating qaf and listener gate.
 
 Verified cumulative content count is9 lessons including the five preceding lessons. This branch contributes4;71 of its original75 remain unauthored. Production build and GitHub durability receipts follow after the batch commit. No main deployment or integration is implied.
+
+M02 delivery receipt: production build passed; GitHub commit `4effbd66dae5a4bb698ad91b811a2b6a8c2aa172` on the isolated remaining-75 branch has tree `965c07d3ee3837f137b12bee25e8af7736b8677c`, matching all126 local files exactly. Native HTTPS push lacked credentials, so immutable blobs/tree/commit and a non-force branch update were used. Parent branch, main, publication and audio/video production remain untouched.
+
+## M03 authored and verified
+
+Four additional lessons distinguish actual timber/sheet products, finish and edge build-ups, upholstery/mixed-material interfaces and evidence-based material alternatives. All four registers retain the same decisions and assessment answers while adapting spoken wording. Source review is recorded internally; manufacturer performance, support values and prices are not invented.
+
+The batch has16 contextual packages,12 concept-specific diagrams,32 PDF downloads and16 linked video-text scripts. All64 exported PDF pages were rendered and contact sheets visually reviewed. Browser acceptance passed32 lesson/register/viewport cases; representative Egyptian mobile and English desktop readings were inspected. Nineteen scoped Vitest checks, nine Python integrity tests and application TypeScript passed. All44 preceding PDF hashes remain byte-identical. No audio or video was produced.
+
+Cumulative verified new authoring is8 lessons/32 locale packages, making13 existing-plus-new content lessons of80. The original75 scope has67 remaining. The earlier502 materialization failure is historical and resolved. Clean-commit build and durable GitHub receipt follow.

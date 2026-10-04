@@ -5,16 +5,14 @@
   "status": "in_progress",
   "remaining_lesson_count": 75,
   "expected_locale_package_count": 300,
-  "new_authored_lesson_count": 4,
-  "new_authored_locale_package_count": 16,
+  "new_authored_lesson_count": 8,
+  "new_authored_locale_package_count": 32,
   "source_evidence": {
     "library_file_id": "libfile_e700ff35ecc48191a7c4f0425700a7f8",
     "resolved_filename": "Metwood_Furniture_Design(1).pdf",
     "resolved_size_bytes": 183250232,
     "reported_pdf_page_count": 408,
     "materialization_attempts": 2,
-    "error": "library download request failed: download failed with HTTP status 502",
-    "internal_failure_stage": "unverified",
     "local_reference_available": true,
     "reference_visual_review_this_branch": true,
     "verified_sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
@@ -50,7 +48,12 @@
       204,
       212
     ],
-    "review_scope": "selected source pages; dimensional/regulatory/example-price claims are not blanket accepted"
+    "review_scope": "selected source pages; dimensional/regulatory/example-price claims are not blanket accepted",
+    "previous_materialization_failure": {
+      "error": "library download request failed: download failed with HTTP status 502",
+      "internal_failure_stage": "unverified",
+      "status": "historical_resolved"
+    }
   },
   "batches": [
     {
@@ -69,7 +72,9 @@
       "pdf_count": 32,
       "unique_concept_diagrams": 12,
       "pdf_rendered_page_count": 64,
-      "runtime_viewport_cases_passed": 32
+      "runtime_viewport_cases_passed": 32,
+      "production_build": "passed",
+      "github_commit": "4effbd66dae5a4bb698ad91b811a2b6a8c2aa172"
     },
     {
       "module_id": "M03",
@@ -81,9 +86,14 @@
       ],
       "lesson_count": 4,
       "expected_locale_package_count": 16,
-      "status": "queued",
-      "new_authored_lesson_count": 0,
-      "new_authored_locale_package_count": 0
+      "status": "reading_assets_verified_video_text_pending_voice_review",
+      "new_authored_lesson_count": 4,
+      "new_authored_locale_package_count": 16,
+      "pdf_count": 32,
+      "unique_concept_diagrams": 12,
+      "pdf_rendered_page_count": 64,
+      "runtime_viewport_cases_passed": 32,
+      "production_build": "pending_clean_commit_build"
     },
     {
       "module_id": "M04",

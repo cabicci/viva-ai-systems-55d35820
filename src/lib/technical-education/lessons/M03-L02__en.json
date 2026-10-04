@@ -1,0 +1,72 @@
+{
+  "id": "M03-L02",
+  "locale": "en",
+  "title": "Edges, veneers and finish layers",
+  "intro": "A finished face is only one part of the specification. Identify the core, facing, edge treatment and visible surfaces, then approve a representative sample.",
+  "goals": [
+    "Separate core, facing and finish",
+    "Identify visible faces and edge treatments",
+    "Approve a representative finished sample"
+  ],
+  "sections": [
+    {
+      "id": "layers",
+      "title": "Separate core, facing and finish",
+      "text": "Identify the core and product code, then the facing or paint-ready substrate and final finish. State colour and sheen without using them as a description of the build-up. Check the selected system’s requirements for the back and edges rather than assuming every surface is treated alike.",
+      "diagram": "new-M03-L02-layers",
+      "caption": "Core, facing and final finish are separate specification items."
+    },
+    {
+      "id": "edges",
+      "title": "Identify visible faces and edge treatments",
+      "text": "Tag the part faces and edges in drawings and schedules. Specify visible edges, their treatment and stated dimensions. Declare whether scheduled sizes are finished or pre-treatment. Calculate edge effects for the agreed system instead of applying an arbitrary deduction, and record facing direction where it affects the appearance.",
+      "diagram": "new-M03-L02-edges",
+      "caption": "Edge treatment links to the part identity and dimension stage."
+    },
+    {
+      "id": "sample",
+      "title": "Approve a representative finished sample",
+      "text": "Request a sample containing core, face and edge in the proposed system. Review it under lighting relevant to the site and record its code, colour, sheen, facing direction and decision. A face-only sample does not demonstrate the edge junction. Revisit approval whenever a material or finish is substituted.",
+      "diagram": "new-M03-L02-sample",
+      "caption": "The sample shows the face-to-edge junction as well as colour."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A light-coloured shelf has a side edge visible from the entrance. The specification names only the colour, and the supplier provides a face-only sample. The complete appearance remains unconfirmed.",
+    "decision": "Decision: define the visible edge treatment and review a face-to-edge sample before approving the system."
+  },
+  "quiz": [
+    {
+      "id": "sample",
+      "question": "Which sample demonstrates the edge junction?",
+      "options": [
+        "A colour swatch alone",
+        "A sample with core, face and edge in the proposed system",
+        "A distant photograph"
+      ],
+      "correct": 1,
+      "explanation": "The sample must show the layer junction within the selected system."
+    }
+  ],
+  "assignment": {
+    "prompt": "Specify a shelf visible from two directions, including face tags, edges and approval sample.",
+    "fields": [
+      "Core, facing and finish",
+      "Edges and dimension stage",
+      "Sample and approval record"
+    ],
+    "criteria": [
+      "Layers are specified separately",
+      "Visible edges are identified",
+      "The sample demonstrates the junction"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can I approve colour from a screen image?",
+      "answer": "Use the image for initial comparison; approval needs an identified physical sample with the specified finish under suitable lighting.",
+      "sectionId": "sample"
+    }
+  ]
+}
