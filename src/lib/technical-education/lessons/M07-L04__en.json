@@ -1,0 +1,72 @@
+{
+  "id": "M07-L04",
+  "locale": "en",
+  "title": "Develop a walk-in wardrobe project",
+  "intro": "Combine the storage programme, room layout, opening states, services and drawings into one coordinated walk-in wardrobe project. Test a complete use sequence and keep decisions traceable across the package.",
+  "goals": [
+    "Compare layouts against the programme",
+    "Calculate space and test open states",
+    "Coordinate lighting and the project package"
+  ],
+  "sections": [
+    {
+      "id": "layout",
+      "title": "Compare layouts against the programme",
+      "text": "Start with the room survey, openings, services, inventory and user needs. Compare single-sided, parallel or L-shaped arrangements as appropriate. Record programme coverage and corner access. More frontage is not automatically better when a corner is blocked or use space is unsuitable. Retain the reasons for rejecting alternatives, not just the preferred image.",
+      "diagram": "new-M07-L04-layout",
+      "caption": "Compare storage provision with practical access."
+    },
+    {
+      "id": "usecases",
+      "title": "Calculate space and test open states",
+      "text": "Geometry exercise: a 2600 mm room with two opposing 600 mm-deep units leaves 2600 − 600 − 600 = 1400 mm between fronts. One drawer projecting 450 mm leaves 950 mm geometrically, before the user or other projections. These subtraction results do not approve circulation; verify actual users, applicable requirements and simultaneous opening states.",
+      "diagram": "new-M07-L04-usecases",
+      "caption": "Exercise only: 1400 mm closed; 950 mm with one drawer."
+    },
+    {
+      "id": "package",
+      "title": "Coordinate lighting and the project package",
+      "text": "Coordinate lighting, controls, services and maintenance access with the appropriate specialist. Check how open doors and the user affect visibility. Link the plan to internal elevations, sections, unit codes, materials, systems and manufacturing/installation/inspection plans. List unresolved decisions and responsible reviewers; an attractive visual does not compensate for a missing detail or blocked service access.",
+      "diagram": "new-M07-L04-package",
+      "caption": "Plan, elevation, section and services describe the same solution."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The parallel option provides more storage categories, but opposing drawers opening together remain unresolved. Record the 1400 mm frontage separation and single-drawer state, then draw simultaneous opening and user position. Revise the arrangement if the task fails. The 950 mm single-drawer result is not a universal clearance criterion.",
+    "decision": "Decision: resolve use states and service coordination before approving the package."
+  },
+  "quiz": [
+    {
+      "id": "walkin-space",
+      "question": "What does 950 mm represent in the example?",
+      "options": [
+        "Geometric remainder with one drawer; use still needs checking",
+        "A universal circulation criterion",
+        "Space before the drawer opens"
+      ],
+      "correct": 0,
+      "explanation": "1400 − 450 = 950 mm under the assumptions; users and other opening states still need review."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare two layout options, a storage programme, closed/open-state calculations, and linked plan/elevation/section with a service coordination log.",
+    "fields": [
+      "Options and programme",
+      "Geometry and use states",
+      "Drawings, services and unresolved decisions"
+    ],
+    "criteria": [
+      "1400/950 mm under the assumptions",
+      "Geometry not treated as approval",
+      "Consistent codes and service access"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Are more units always better?",
+      "answer": "No. Compare usable storage with movement, reach, corner access and services.",
+      "sectionId": "layout"
+    }
+  ]
+}

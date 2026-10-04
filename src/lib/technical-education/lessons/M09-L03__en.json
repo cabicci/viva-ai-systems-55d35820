@@ -1,0 +1,72 @@
+{
+  "id": "M09-L03",
+  "locale": "en",
+  "title": "Layers of upholstered furniture",
+  "intro": "Upholstery is an assembly of frame, support, filling and cover. Produce a layer section and supply/inspection specification that separates material properties from assembly performance.",
+  "goals": [
+    "Draw layers and their functions",
+    "Specify independent material properties",
+    "Inspect samples, deliveries and assembly"
+  ],
+  "sections": [
+    {
+      "id": "layers",
+      "title": "Draw layers and their functions",
+      "text": "In an illustrative seat, the cover provides the contact surface, filling shapes the feel, a support system such as webbing or springs transfers load, and the frame carries the assembly. Separators or wraps may be added by the chosen system; this is not a universal recipe. Identify each layer’s role, attachment and replacement access, then trace load to legs and floor.",
+      "diagram": "new-M09-L03-layers",
+      "caption": "Cover, filling, support and frame form one assembly."
+    },
+    {
+      "id": "specification",
+      "title": "Specify independent material properties",
+      "text": "Foam density is mass per volume, not the same property as firmness or sitting feel. Request material identity, density, firmness/support data and the measurement method, tied to a reference sample. For covers, record composition, colour, fabric direction, cleaning and required performance evidence. An abrasion result does not prove stain or fire performance; each requirement needs suitable evidence for the intended assembly and market.",
+      "diagram": "new-M09-L03-specification",
+      "caption": "Density is not firmness; match evidence to each requirement."
+    },
+    {
+      "id": "inspection",
+      "title": "Inspect samples, deliveries and assembly",
+      "text": "Retain an approved sample and material identifier. Before cutting, check delivery identity, batch, colour and fabric direction. During assembly inspect filling consistency, edge protection, cutting direction, seams and removable-cover access if specified. Review appearance, comfort and approved performance checks after assembly. Record and assess supplier or filling substitutions rather than accepting an alternative merely because its colour matches.",
+      "diagram": "new-M09-L03-inspection",
+      "caption": "Inspect before cutting and trace every substitution."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A supplier offers two foams with equal density and claims identical feel. Request each material identity and support data, then trial them in the same seating assembly. Record differences and select against the approved specification. Increasing density is not an automatic cure: the issue may arise from support, filling thickness or seat geometry.",
+    "decision": "Decision: assess properties and a representative assembly, not density alone."
+  },
+  "quiz": [
+    {
+      "id": "density",
+      "question": "What does equal foam density alone establish?",
+      "options": [
+        "Equal mass-per-volume property only",
+        "Necessarily identical firmness",
+        "Identical complete-seat performance"
+      ],
+      "correct": 0,
+      "explanation": "Firmness, support and assembly performance require separate evidence."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a layer section, sample-linked material specification and inspection/substitution plan.",
+    "fields": [
+      "Layers and load path",
+      "Properties and reference sample",
+      "Inspection and substitution"
+    ],
+    "criteria": [
+      "Support/filling distinguished",
+      "Density not equated with firmness",
+      "Material traceability before cutting"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does an abrasion test prove fire performance?",
+      "answer": "No. These are different requirements and need appropriate material/assembly evidence.",
+      "sectionId": "specification"
+    }
+  ]
+}

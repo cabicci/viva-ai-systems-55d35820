@@ -1,0 +1,72 @@
+{
+  "id": "M06-L04",
+  "locale": "en",
+  "title": "Inspect, hand over and resolve defects",
+  "intro": "Inspection connects an observed result to an agreed criterion. Learn to record a defect, its corrective action and reinspection so that handover is supported by evidence.",
+  "goals": [
+    "Link each check to an acceptance criterion",
+    "Write an actionable defect record",
+    "Reinspect before closing handover"
+  ],
+  "sections": [
+    {
+      "id": "criteria",
+      "title": "Link each check to an acceptance criterion",
+      "text": "Group checks into dimensions, alignment, finish, operation, completeness and access. Assign an approved drawing, sample, system document or project requirement to each. Record the method and result rather than a vague quality statement. If a criterion is missing, flag it for agreement before judgment; do not invent a numerical tolerance to fill the form.",
+      "diagram": "new-M06-L04-criteria",
+      "caption": "Check item + reference + method + result."
+    },
+    {
+      "id": "defect",
+      "title": "Write an actionable defect record",
+      "text": "Give the issue an ID, unit/part location, observed condition, reference and photograph where useful. Record its effect, the responsible reviewer and due date. “W02 door rubs the side during opening” can be rechecked; “bad door” cannot. Identify the cause before selecting a remedy rather than replacing a sound part solely because the symptom appears there.",
+      "diagram": "new-M06-L04-defect",
+      "caption": "A specific location and observable condition make the issue actionable."
+    },
+    {
+      "id": "closure",
+      "title": "Reinspect before closing handover",
+      "text": "After correction, repeat the acceptance check and record the result, date and reviewer. Check whether the change affects adjacent gaps or drawer movement. An issue closes on reinspection evidence, not a message saying “fixed.” Handover includes final documents, use/care instructions and outstanding items with responsibilities. A signature does not resolve an issue affecting safe use.",
+      "diagram": "new-M06-L04-closure",
+      "caption": "Correction → reinspection → documented closure."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Issue D04 records rubbing at the W02 door. The approved correction has been carried out, but reinspection is outstanding. Its status is “corrected, awaiting verification.” Close it only after the movement and adjacent conditions meet the criteria and the result is recorded.",
+    "decision": "Decision: keep D04 open until reinspection is documented."
+  },
+  "quiz": [
+    {
+      "id": "close-issue",
+      "question": "What closes an issue after correction?",
+      "options": [
+        "Documented reinspection against the criterion",
+        "A message saying fixed",
+        "Changing the handover date"
+      ],
+      "correct": 0,
+      "explanation": "Carrying out a correction does not establish its result; reinspection does."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare the D04 issue record through correction and reinspection, plus three handover-document items.",
+    "fields": [
+      "Issue, criterion and location",
+      "Correction and responsible reviewer",
+      "Reinspection and handover status"
+    ],
+    "criteria": [
+      "Observable description",
+      "Closure supported by evidence",
+      "Outstanding items assigned"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a check be marked accepted without a criterion?",
+      "answer": "A defined reference is needed. Record the missing criterion and obtain agreement before judging the result.",
+      "sectionId": "criteria"
+    }
+  ]
+}

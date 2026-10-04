@@ -279,3 +279,19 @@ Resume order:inspect latest experiment/media-bot state and the author-agent paus
 [roadmap:furniture-pilot-temporary-branch]
 ### Requested20-lesson checkpoint
 M05 content accepted from bbdbf4ad: four lessons/four locales,12 separate concepts,32 PDF assets; all48 SVG layouts,64 PDF pages,32 browser visits,20 Vitest,10 Python tests and TypeScript passed on the authoring branch. Integrated original5+M02 4+M03 4+M04 3+M05 4 =20 content-reviewed lessons. Do not begin M06 until owner resumes.52 existing video mappings cover13 lessons; missing28 video cells and pronunciation listening remain separate gates. Coordinator M04 prose isolation,8 updated PDFs and four-locale Remotion frames verified. Main/account/pricing unchanged. Existing media mappings through b6ad6e6a preserved.
+
+
+### Owner continuation to40 content lessons — 2026-10-04
+[roadmap:furniture-pilot-temporary-branch] Owner requested20 additional lessons after the20 checkpoint. Scope M06–M10 plus M11-L01/L02, stopping before M11-L03. Three non-overlapping authoring worktrees prepare8+7+5 lessons; coordinator owns integration and private preview. Pronunciation acceptance is explicitly required for Egyptian, MSA, Gulf and English individually; no listening approval is inferred from generated media. Previous20 stop is superseded only for this bounded continuation.
+
+## 2026-10-04 — M08–M09 isolated authoring contribution
+
+[roadmap:furniture-pilot-temporary-branch] Added seven reviewed content lessons (positions 29–35) in four locales, 21 concept diagrams, 56 PDF files and scoped acceptance evidence. Preserved 164 accepted PDF assets. All four pronunciation reviews remain pending; no main-site deployment or production-media acceptance claimed.
+
+### Integrated second20-lesson batch; stop at40
+
+[roadmap:furniture-pilot-temporary-branch] Owner requested20 more after the20 checkpoint. Integrated M06/M07 (616b186d), M08/M09 (35a7f10f), M10 and firsttwo M11 lessons (2ecf46b8):20 new lessons/80 localized content packages/60 concept diagrams/240 SVGs/160 PDFs. Cumulative40 content-reviewed lessons/160 locale packages/324 PDFs;40 remain. M11-L03 and later are untouched. The original164 PDFs remain byte-identical.
+
+Authoring gates:160 browser lesson/locale/viewport cases at390/1440,240 SVG label-boundary checks,320 PDF pages visually reviewed, contextual four-register facts and assessment alignment. Coordinator read all20 Egyptian packages, compared selected MSA/Gulf/English concepts, corrected formal Egyptian phrasings and reviewed400 rendered Remotion frames through all240 concept frames plus representative intro/case frames. The unsupported amber paint defect was corrected in definitions only; a rendered-paint regression now rejects invalid SVG colors. Renderer, TTS pipeline and earlier accepted media identities are unchanged.
+
+Correct pronunciation is mandatory independently in Egyptian, MSA, Gulf and English. All listening decisions remain pending; text/volume/render/production evidence is not listener approval. The reviewed media manifest is bounded to40 IDs. Main-site integration,account progress,entitlements,database and billing remain unchanged. Final integrated gates/build/GitHub/private-preview receipts follow.

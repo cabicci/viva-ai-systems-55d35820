@@ -1,5 +1,7 @@
 # Technical education curriculum blueprint
 
+> Current checkpoint:40 content-reviewed lessons in four locales (160 packages),324 PDFs; authoring stops before M11-L03. The former20-stop instructions below are historical. Video production and actual pronunciation listening remain separate gates.
+
 Owner instruction, 2026-10-04 (Africa/Cairo): convert the entire supplied furniture book into a complete learning journey, deduplicate repeated methods, improve Egyptian narration, and produce context-adapted Egyptian, MSA, Gulf and English versions. This replaces the earlier two-locale production target; existing delivered pilot assets remain Egyptian/English until actually revised.
 
 ## Reviewed source and completed planning
@@ -150,3 +152,17 @@ User authorized the next checkpoint at20 content-reviewed lessons, then stop. M0
 M05 acceptance bbdbf4ad integrated after32 browser cases,48 SVG boundary checks,64 rendered PDF pages and four-register semantic review. Cumulative20 lessons/80 localized content packages with164 PDFs. M05 has12 concept-specific diagrams, lowered bottom labels, corrected drawer dimension geometry and directional isolation for Arabic equations. All earlier accepted PDF and SVG hashes in the authoring checkpoint remain unchanged.
 
 User requested stop at20: M06 and later lessons are not started. The reviewed production manifest now contains exactly20 IDs; only missing/revised media within those IDs may be produced.52 prior Bunny mappings cover13 lessons;28 cells for M04/M05 remain without media. Actual listening is pending, including the piece-word correction already delivered. Private preview publication/build receipt follows. No main merge/deployment, database, account progress, entitlement or billing changes.
+
+### Published20-lesson stop receipt
+
+Integrated16 scoped Vitest and10 authoring-integrity tests passed; clean production build passed with existing guards. Runtime inventory confirms20 lessons/80 locale packages/164 PDFs; no M06 packages. Private Site source f6dd431b414627312fb793d9333de3ea3001c819 deployed successfully as appgdep_6ac2331cfab881919b10069e62cd30e4 at2026-10-04T11:06:30.991661Z. Owner-only audience unchanged. GitHub source d907939b792f6bccb35cdd57a258de5c507cf671 has tree cb8f615b9727925830231d24c72f103350d97f13, identical to compiled local37504bd7.
+
+Authoring stopped exactly at20 per user.52 video mappings/13 lessons are in this deployment, including Egyptian piece correction231483c4-394c-4e5f-874f-5b8468c1b8dc. Actions37197540381 started for missing/revised cells within20 reviewed IDs only; completion and subsequent mapping updates are unverified at handoff.28 M04/M05 cells were missing at build time. Actual listener acceptance remains pending. Resume by checking this run and bot mappings; do not restart authoring or begin M06 without authorization.
+
+### Integrated second20-lesson batch; stop at40
+
+[roadmap:furniture-pilot-temporary-branch] Owner requested20 more after the20 checkpoint. Integrated M06/M07 (616b186d), M08/M09 (35a7f10f), M10 and firsttwo M11 lessons (2ecf46b8):20 new lessons/80 localized content packages/60 concept diagrams/240 SVGs/160 PDFs. Cumulative40 content-reviewed lessons/160 locale packages/324 PDFs;40 remain. M11-L03 and later are untouched. The original164 PDFs remain byte-identical.
+
+Authoring gates:160 browser lesson/locale/viewport cases at390/1440,240 SVG label-boundary checks,320 PDF pages visually reviewed, contextual four-register facts and assessment alignment. Coordinator read all20 Egyptian packages, compared selected MSA/Gulf/English concepts, corrected formal Egyptian phrasings and reviewed400 rendered Remotion frames through all240 concept frames plus representative intro/case frames. The unsupported amber paint defect was corrected in definitions only; a rendered-paint regression now rejects invalid SVG colors. Renderer, TTS pipeline and earlier accepted media identities are unchanged.
+
+Correct pronunciation is mandatory independently in Egyptian, MSA, Gulf and English. All listening decisions remain pending; text/volume/render/production evidence is not listener approval. The reviewed media manifest is bounded to40 IDs. Main-site integration,account progress,entitlements,database and billing remain unchanged. Final integrated gates/build/GitHub/private-preview receipts follow.

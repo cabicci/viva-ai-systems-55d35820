@@ -1,0 +1,72 @@
+{
+  "id": "M07-L01",
+  "locale": "en",
+  "title": "Plan storage around its contents",
+  "intro": "Storage planning starts with contents and access patterns, not equally spaced shelves. Translate an inventory into a storage programme that can be checked with the user.",
+  "goals": [
+    "Inventory contents before allocating space",
+    "Allocate by the user’s reach",
+    "Review capacity and adaptability"
+  ],
+  "sections": [
+    {
+      "id": "inventory",
+      "title": "Inventory contents before allocating space",
+      "text": "List current quantities and anticipated additions for long/short hanging, folded items, shoes, bags and small objects. Record storage method and frequency, then measure representative contents with their hangers or containers. Item count alone does not determine rail length: bulk and arrangement matter. State growth assumptions explicitly rather than adding an unexplained allowance everywhere.",
+      "diagram": "new-M07-L01-inventory",
+      "caption": "Category + quantity + measured sample + frequency."
+    },
+    {
+      "id": "reach",
+      "title": "Allocate by the user’s reach",
+      "text": "Place daily items where the user can see and reach them comfortably, verified through a practical trial. Seasonal items may occupy suitable secondary areas with a defined access method; that does not justify heavy overhead storage or unsuitable access. Stature, mobility and use patterns change the allocation, so a reference diagram is not a universal mounting height.",
+      "diagram": "new-M07-L01-reach",
+      "caption": "Verify daily access with the actual user."
+    },
+    {
+      "id": "balance",
+      "title": "Review capacity and adaptability",
+      "text": "Translate the programme into an internal elevation showing categories and their relationship to doors and drawers. Trial representative items for visibility, removal and replacement. Adjustable shelves support changing contents, but still require verification of supports and intended loads. Record shortages and intentional reserve; an empty space is not automatically wasted capacity.",
+      "diagram": "new-M07-L01-balance",
+      "caption": "Check the elevation with representative contents and use."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The user has 6 long garments and 12 short ones. Short garments are daily use; long garments are seasonal. Size each zone from representative measurements and prioritise daily access. The total of 18 is an inventory count, not a rail length or a mandatory width ratio.",
+    "decision": "Decision: use measured contents and frequency to allocate space and access."
+  },
+  "quiz": [
+    {
+      "id": "storage-count",
+      "question": "What does an inventory count of 18 establish?",
+      "options": [
+        "Quantity only; space still needs measurement",
+        "Rail length in millimetres",
+        "A fixed width for every category"
+      ],
+      "correct": 0,
+      "explanation": "Quantity must be combined with item size, storage method and access requirements."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a three-category inventory and internal elevation with measured samples, an access trial and a justified reserve.",
+    "fields": [
+      "Inventory and samples",
+      "Allocation and access",
+      "Shortage, reserve and adjustment"
+    ],
+    "criteria": [
+      "No direct count-to-dimension conversion",
+      "Daily access prioritised",
+      "Support/load verification retained"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is every empty space wasted?",
+      "answer": "No. It may support growth or handling if its purpose is explicit and justified.",
+      "sectionId": "balance"
+    }
+  ]
+}

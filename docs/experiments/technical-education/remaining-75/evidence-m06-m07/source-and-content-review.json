@@ -1,0 +1,95 @@
+{
+  "source": {
+    "filename": "Metwood_Furniture_Design(1).pdf",
+    "pages": 408,
+    "sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
+    "identity": "Existing recovered local source; not downloaded or divided again"
+  },
+  "selected_visual_pages_by_lesson": {
+    "M06-L01": [
+      8,
+      65
+    ],
+    "M06-L02": [
+      8,
+      113,
+      187
+    ],
+    "M06-L03": [
+      66,
+      311
+    ],
+    "M06-L04": [
+      30,
+      218
+    ],
+    "M07-L01": [
+      33,
+      42
+    ],
+    "M07-L02": [
+      38,
+      354
+    ],
+    "M07-L03": [
+      36,
+      44,
+      46,
+      184
+    ],
+    "M07-L04": [
+      32,
+      353
+    ]
+  },
+  "review": "18 distinct mapped pages rendered at 1.5x or 1.6x and visually examined. Used as topic anchors, not copied specifications. Authored examples and diagrams are original. Broad pages 36/184 provide appearance context; circulation pages 44/46 support access discussion.",
+  "technical_decisions": [
+    "M06 covers release revisions, operation dependencies, first-part checks, finish samples, installation/service coordination, defect reinspection and closure. No machine settings, anchor prescription or tolerance invented.",
+    "M07 inventory quantities do not imply rail lengths. Reach is checked with actual users.",
+    "M07-L02 independent modules have six side panels; 600 - 18 - 18 = 564 mm is clear width, not automatically a shelf cut size; combined 1800 mm excludes site gaps/fillers.",
+    "M07-L03 sliding overlap can obstruct drawers; no universal half-width opening claim.",
+    "M07-L04 2600 - 600 - 600 = 1400 mm and 1400 - 450 = 950 mm are declared teaching geometry; circulation approval and simultaneous use require separate review."
+  ],
+  "localization": "Four contextually authored registers retain concepts and answer keys. Parent reviewed M06/M07 and requested Egyptian natural-speech edits, all applied. Numeral parity passes.",
+  "pronunciation": {
+    "ar-EG": {
+      "text_review": "complete",
+      "direction_controls_in_spoken_text": 0,
+      "generated_audio_in_this_scope": false,
+      "listening_acceptance": "pending_not_claimed"
+    },
+    "ar-MSA": {
+      "text_review": "complete",
+      "direction_controls_in_spoken_text": 0,
+      "generated_audio_in_this_scope": false,
+      "listening_acceptance": "pending_not_claimed"
+    },
+    "ar-Gulf": {
+      "text_review": "complete",
+      "direction_controls_in_spoken_text": 0,
+      "generated_audio_in_this_scope": false,
+      "listening_acceptance": "pending_not_claimed"
+    },
+    "en": {
+      "text_review": "complete",
+      "direction_controls_in_spoken_text": 0,
+      "generated_audio_in_this_scope": false,
+      "listening_acceptance": "pending_not_claimed"
+    }
+  },
+  "diagram_corrections": [
+    "Use supported palette or valid hex only.",
+    "Moved 950 away from dimension/outline overlap.",
+    "Moved W01 label away from elevation divider.",
+    "Removed an impossible divider crossing the wide drawer in access diagram."
+  ],
+  "counts": {
+    "lessons": 8,
+    "localized_packages": 32,
+    "concepts": 24,
+    "svg": 96,
+    "pdf": 64,
+    "pdf_pages": 128,
+    "contextual_video_scripts": 32
+  }
+}

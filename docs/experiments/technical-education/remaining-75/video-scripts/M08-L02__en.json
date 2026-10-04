@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "lesson_id": "M08-L02",
+  "locale": "en",
+  "status": "contextual_text_draft_pending_pronunciation_and_listener_review",
+  "audio_generated": false,
+  "video_generated": false,
+  "scenes": [
+    {
+      "id": "intro",
+      "display_title": "Modular storage and reconfiguration",
+      "spoken_text": "Modularity requires compatible interfaces, not merely repeated shapes. Build two arrangements from a shared part set and review access and stability in each.",
+      "caption": "Modularity requires compatible interfaces, not merely repeated shapes. Build two arrangements from a shared part set and review access and stability in each."
+    },
+    {
+      "id": "grid",
+      "display_title": "Define the grid and module envelope",
+      "spoken_text": "Distinguish external module width from clear internal opening. Assume four teaching modules, each 400 mm externally, with no intermediate gaps: a four-unit row is 1600 mm wide and a two-unit row is 800 mm. Stacked height depends on module height and the stacking detail, not width. A grid coordinates dimensions; it does not certify stackability.",
+      "caption": "Exercise uses 400 mm external widths and no intermediate gaps.",
+      "diagram": "new-M08-L02-grid"
+    },
+    {
+      "id": "interfaces",
+      "display_title": "Standardise interfaces and keep access",
+      "spoken_text": "Label the common shell A, shelf B and end cover C. Record connector datum, orientation and whether each part is genuinely reversible. Matching outside dimensions do not ensure interchangeability when connector positions or door handing differ. Show tool access and disassembly order, and distinguish a visible end cover when its finish differs. Repeated site drilling undermines reconfiguration.",
+      "caption": "Interchangeability requires matching interfaces and orientation.",
+      "diagram": "new-M08-L02-interfaces"
+    },
+    {
+      "id": "reconfigure",
+      "display_title": "Review each arrangement independently",
+      "spoken_text": "Compare a four-module row with a proposed two-by-two arrangement. Reconcile shells, shelves and end covers and list additional connectors explicitly. Review openings, service access and load paths for each layout. Increased height changes stability and support conditions. A matching grid does not permit stacking a product that was not designed and reviewed for that use.",
+      "caption": "Reconfiguration requires a fresh opening and support review.",
+      "diagram": "new-M08-L02-reconfigure"
+    },
+    {
+      "id": "decision",
+      "display_title": "Worked case and decision",
+      "spoken_text": "Four 400 mm modules make a 1600 mm row. A requested 800 mm width suggests two rows, retaining four shells. The width arithmetic works under the assumption, but stacking connections and stability are unverified. Accept the dimensional exercise while holding approval of the vertical arrangement until the system is reviewed. Decision: confirm width arithmetic; hold stacking approval.",
+      "caption": "Decision: confirm width arithmetic; hold stacking approval."
+    },
+    {
+      "id": "practice",
+      "display_title": "Submit two arrangements, a shared parts register, interfaces and separate stability review requirements.",
+      "spoken_text": "Submit two arrangements, a shared parts register, interfaces and separate stability review requirements.",
+      "caption": "Submit two arrangements, a shared parts register, interfaces and separate stability review requirements."
+    }
+  ],
+  "pronunciation_review": {
+    "required_for_all_locales": true,
+    "status": "pending_native_listener_review",
+    "listening_performed": false
+  }
+}
