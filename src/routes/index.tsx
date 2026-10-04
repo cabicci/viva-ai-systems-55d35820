@@ -2,14 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LearningLineCards } from "@/components/site/LearningLines";
-import { getLineCopy, lineMeta } from "@/lib/learning-lines";
+import { getLineCopy } from "@/lib/learning-lines";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 export const Route = createFileRoute("/")({
   validateSearch: parseLocaleSearchParam,
   head: async ({ match }) =>
-    lineMeta(await resolveRouteHeadLocale({ searchLocale: match.search.locale }), "platform"),
+    buildLocalizedPublicMeta(
+      await resolveRouteHeadLocale({ searchLocale: match.search.locale }),
+      "home",
+    ),
   component: Index,
 });
 export function Index() {
