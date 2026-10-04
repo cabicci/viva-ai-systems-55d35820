@@ -1,0 +1,72 @@
+{
+  "id": "M03-L01",
+  "locale": "en",
+  "title": "Solid wood and manufactured boards",
+  "intro": "A material family is not a complete specification. Identify its structure, then compare the actual products and supporting data before selecting construction details.",
+  "goals": [
+    "Identify the material structure",
+    "Request data for the actual product",
+    "Relate the material to the whole construction"
+  ],
+  "sections": [
+    {
+      "id": "structure",
+      "title": "Identify the material structure",
+      "text": "Inspect an identified cross-section. Distinguish solid wood and its grain from plywood veneer layers and an MDF fibre-based panel. A facing can hide the core, so specify core and face separately. A wood appearance does not establish that the entire board is solid timber.",
+      "diagram": "new-M03-L01-structure",
+      "caption": "The cross-section separates core from facing."
+    },
+    {
+      "id": "product",
+      "title": "Request data for the actual product",
+      "text": "Record the product code, thickness, sheet size, grade and declared use. Request data relevant to the environment and proposed fixing system. Do not infer water resistance or joint capacity from a family name alone; different grades and constructions require review of the actual product data.",
+      "diagram": "new-M03-L01-product",
+      "caption": "Connect performance claims to an identified product and grade."
+    },
+    {
+      "id": "selection",
+      "title": "Relate the material to the whole construction",
+      "text": "Compare alternatives for the same part and use. Review core, thickness, facing, edges, joints and finish as a system, and record missing data. If the product changes after drawing issue, recheck details, schedules and samples. The same colour does not establish the same construction requirements.",
+      "diagram": "new-M03-L01-selection",
+      "caption": "Product substitution triggers a review of details and schedules."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Two veneered boards look alike but have different cores and grades. The brief is a cabinet in a dry interior; hinge and fixing compatibility are still unconfirmed.",
+    "decision": "Decision: compare product data and joint details before accepting a substitute based on appearance."
+  },
+  "quiz": [
+    {
+      "id": "identity",
+      "question": "What supports accepting a board substitution?",
+      "options": [
+        "The same colour",
+        "Product data and compatible construction for the stated use",
+        "The same family name alone"
+      ],
+      "correct": 1,
+      "explanation": "A matching facing does not establish core identity or fixing compatibility."
+    }
+  ],
+  "assignment": {
+    "prompt": "Compare two identified products and list the data still needed before selection.",
+    "fields": [
+      "Core, facing and grade",
+      "Use and construction compatibility",
+      "Missing data and decision"
+    ],
+    "criteria": [
+      "The product and grade are identified",
+      "Core and facing are separate",
+      "Performance claims have product-specific evidence"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should I immediately choose the cheaper sheet?",
+      "answer": "First confirm compatibility, then compare the whole cost including edges, finishing, waste and supply.",
+      "sectionId": "selection"
+    }
+  ]
+}
