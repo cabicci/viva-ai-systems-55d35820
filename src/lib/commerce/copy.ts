@@ -1,4 +1,12 @@
 import type { SupportedLocale } from "@/lib/locale/types";
+import type { PaymentMethod } from "./contracts";
+
+export function paymentInstructions(
+  method: Pick<PaymentMethod, "instructions" | "instructions_localized">,
+  locale: SupportedLocale,
+) {
+  return method.instructions_localized?.[locale] ?? method.instructions;
+}
 const en = {
   audit: "Administrator action history",
   delivered: "Delivered",
@@ -8,7 +16,7 @@ const en = {
   title: "Payments, groups and offers",
   methods: "Payment method",
   instapay: "InstaPay",
-  wallet: "Vodafone Cash",
+  wallet: "Wallet",
   bank: "Bank transfer",
   stripe: "Stripe",
   paymob: "Paymob — unavailable",
@@ -160,7 +168,7 @@ const ar: Record<keyof typeof en, string> = {
   title: "المدفوعات والمجموعات والعروض",
   methods: "وسيلة الدفع",
   instapay: "إنستا باي",
-  wallet: "فودافون كاش",
+  wallet: "محفظة",
   bank: "تحويل بنكي",
   stripe: "Stripe",
   paymob: "Paymob — غير متاح",

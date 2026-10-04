@@ -1,0 +1,40 @@
+{
+  "status": "prepared_only_not_applied",
+  "source": "Owner supplied QR and wallet destination on 2026-10-04; bank transfer deferred.",
+  "methods": [
+    {
+      "code": "instapay",
+      "enabled": false,
+      "currencies": ["EGP"],
+      "destination": "InstaPay QR",
+      "qr_url": "https://masaarat.ai/payments/instapay-qr.png",
+      "instructions": "Scan the attached QR code, transfer the amount in the currency shown on your order, then upload your transfer receipt. Your package activates after an administrator verifies the transfer and confirms the payment.",
+      "instructions_localized": {
+        "ar-EG": "امسح رمز QR المرفق، وحوّل نفس المبلغ وبنفس العملة المكتوبين في الطلب، وبعدها ارفع إيصال التحويل. الباقة هتتفعّل بعد مراجعة التحويل وتأكيد الإدارة.",
+        "ar-MSA": "امسح رمز QR المرفق، وحوّل المبلغ بالعملة الموضّحين في الطلب، ثم أرفق إيصال التحويل. تتفعّل الباقة بعد مراجعة التحويل وتأكيد الإدارة.",
+        "ar-Gulf": "امسح رمز QR المرفق، وحوّل المبلغ بنفس العملة الموضّحة في الطلب، وبعدها أرفق إيصال التحويل. تتفعّل الباقة بعد مراجعة التحويل وتأكيد الإدارة.",
+        "en": "Scan the attached QR code, transfer the amount in the currency shown on your order, then upload your transfer receipt. Your package activates after an administrator verifies the transfer and confirms the payment."
+      }
+    },
+    {
+      "code": "wallet",
+      "enabled": false,
+      "currencies": ["EGP"],
+      "destination": "01222608682",
+      "instructions": "Transfer the amount in the currency shown on your order to wallet 01222608682, then upload your transfer receipt. Your package activates after an administrator verifies the transfer and confirms the payment.",
+      "instructions_localized": {
+        "ar-EG": "حوّل نفس المبلغ وبنفس العملة المكتوبين في الطلب للمحفظة 01222608682، وبعدها ارفع إيصال التحويل. الباقة هتتفعّل بعد مراجعة التحويل وتأكيد الإدارة.",
+        "ar-MSA": "حوّل المبلغ بالعملة الموضّحين في الطلب إلى المحفظة 01222608682، ثم أرفق إيصال التحويل. تتفعّل الباقة بعد مراجعة التحويل وتأكيد الإدارة.",
+        "ar-Gulf": "حوّل المبلغ بنفس العملة الموضّحة في الطلب إلى المحفظة 01222608682، وبعدها أرفق إيصال التحويل. تتفعّل الباقة بعد مراجعة التحويل وتأكيد الإدارة.",
+        "en": "Transfer the amount in the currency shown on your order to wallet 01222608682, then upload your transfer receipt. Your package activates after an administrator verifies the transfer and confirms the payment."
+      }
+    },
+    {
+      "code": "bank",
+      "enabled": false,
+      "currencies": ["EGP", "USD"],
+      "destination": "",
+      "instructions": ""
+    }
+  ]
+}

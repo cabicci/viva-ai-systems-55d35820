@@ -48,6 +48,115 @@ beforeEach(() => {
 });
 afterEach(cleanup);
 describe("commerce journeys", () => {
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "renders the frozen order instructions in the selected locale %s",
+    async (locale) => {
+      const localized = {
+        "ar-EG": "تعليمات التحويل المصرية",
+        "ar-MSA": "تعليمات التحويل بالفصحى",
+        "ar-Gulf": "تعليمات التحويل الخليجية",
+        en: "English transfer instructions",
+      };
+      const w = commerceCopy(locale);
+      mock.command.mockImplementation(async ({ data }: { data: { action: string } }) => {
+        if (data.action === "methods")
+          return [
+            {
+              code: "instapay",
+              enabled: true,
+              destination: "Synthetic QR",
+              instructions: "Fallback",
+              currencies: ["EGP"],
+            },
+          ];
+        if (data.action === "quote")
+          return { original_minor: 16900, final_minor: 16900, currency: "EGP" };
+        return {
+          id: "00000000-0000-4000-8000-000000000009",
+          reference: "SYNTHETIC",
+          final_minor: 16900,
+          currency: "EGP",
+          review_status: "confirmed",
+          expires_at: "2027-01-01T00:00:00Z",
+          instructions_snapshot: {
+            instructions: "Fallback",
+            instructions_localized: localized,
+            destination: "Synthetic QR",
+            qr_url: "https://example.test/qr.png",
+          },
+        };
+      });
+      render(
+        <LocaleProvider initialLocale={locale}>
+          <PaymentMethods packageKey="pro" interval="month" market="EG" stripe={vi.fn()}>
+            {w.continue}
+          </PaymentMethods>
+        </LocaleProvider>,
+      );
+      await waitFor(() => expect(screen.getByRole("option", { name: w.instapay })).toBeEnabled());
+      fireEvent.change(screen.getByRole("combobox"), { target: { value: "instapay" } });
+      fireEvent.click(screen.getByRole("button", { name: w.quote }));
+      await waitFor(() => expect(screen.getByRole("button", { name: w.continue })).toBeEnabled());
+      fireEvent.click(screen.getByRole("button", { name: w.continue }));
+      await waitFor(() => expect(screen.getByText(localized[locale])).toBeInTheDocument());
+      expect(screen.queryByText("Fallback")).toBeNull();
+      expect(screen.getByRole("img", { name: "QR" })).toHaveAttribute(
+        "src",
+        "https://example.test/qr.png",
+      );
+    },
+  );
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "shows a provider-neutral wallet and hides deferred bank transfer in %s",
+    async (locale) => {
+      const w = commerceCopy(locale);
+      render(
+        <LocaleProvider initialLocale={locale}>
+          <PaymentMethods packageKey="pro" interval="month" market="EG" stripe={vi.fn()}>
+            Continue
+          </PaymentMethods>
+        </LocaleProvider>,
+      );
+      await waitFor(() => expect(mock.command).toHaveBeenCalled());
+      expect(
+        screen.getByRole("option", {
+          name: `${locale === "en" ? "Wallet" : "محفظة"} — ${w.unavailable}`,
+        }),
+      ).toBeDisabled();
+      expect(screen.queryByRole("option", { name: new RegExp(w.bank) })).toBeNull();
+    },
+  );
+  it("shows bank transfer only when fully configured for the customer's currency", async () => {
+    const bank = {
+      code: "bank",
+      enabled: true,
+      destination: "SYNTHETIC",
+      instructions: "Synthetic",
+      currencies: ["USD"],
+    };
+    mock.command.mockResolvedValue([bank]);
+    const view = render(
+      <LocaleProvider initialLocale="en">
+        <PaymentMethods packageKey="pro" interval="month" market="EG" stripe={vi.fn()}>
+          Continue
+        </PaymentMethods>
+      </LocaleProvider>,
+    );
+    await waitFor(() => expect(mock.command).toHaveBeenCalled());
+    expect(screen.queryByRole("option", { name: /Bank transfer/ })).toBeNull();
+    view.unmount();
+    mock.command.mockResolvedValue([{ ...bank, currencies: ["EGP"] }]);
+    render(
+      <LocaleProvider initialLocale="en">
+        <PaymentMethods packageKey="pro" interval="month" market="EG" stripe={vi.fn()}>
+          Continue
+        </PaymentMethods>
+      </LocaleProvider>,
+    );
+    await waitFor(() =>
+      expect(screen.getByRole("option", { name: "Bank transfer" })).toBeEnabled(),
+    );
+  });
   it("preserves Stripe checkout and requires a server quote before transfer orders", async () => {
     const stripe = vi.fn();
     render(

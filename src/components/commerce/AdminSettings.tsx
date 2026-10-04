@@ -1,6 +1,7 @@
 import { useCommandKey } from "@/lib/commerce/use-command-key";
 import { packages, instant, dayInput } from "@/lib/commerce/admin-ui";
 import { useState } from "react";
+import { SUPPORTED_LOCALES, LOCALE_META } from "@/lib/locale/types";
 import type { AdminData, PaymentMethod } from "@/lib/commerce/contracts";
 import type { CommerceCopy } from "@/lib/commerce/copy";
 import { Button } from "@/components/ui/button";
@@ -68,6 +69,23 @@ function Method({
           onChange={(e) => set({ ...m, instructions: e.target.value })}
         />
       </label>
+      {SUPPORTED_LOCALES.map((locale) => (
+        <label className="sm:col-span-2" key={locale}>
+          {w.instructions} ({LOCALE_META[locale].displayName})
+          <textarea
+            className="block min-h-24 w-full rounded border bg-background p-2"
+            dir={LOCALE_META[locale].dir}
+            value={m.instructions_localized?.[locale] ?? ""}
+            onChange={(e) => {
+              const instructions_localized = { ...m.instructions_localized };
+              if (e.target.value.trim()) instructions_localized[locale] = e.target.value;
+              else delete instructions_localized[locale];
+              set({ ...m, instructions_localized });
+            }}
+            maxLength={4000}
+          />
+        </label>
+      ))}
       <Select
         label={w.currency}
         value={m.currencies.join(",")}

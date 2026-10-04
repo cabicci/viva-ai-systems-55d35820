@@ -75,6 +75,7 @@ export const commandSchemas = {
     code: methodSchema,
     enabled: z.boolean(),
     instructions: z.string().max(4000),
+    instructions_localized: z.record(localeSchema, z.string().trim().min(1).max(4000)).optional(),
     destination: z.string().max(1000),
     qr_url: z.string().url().startsWith("https://").optional().or(z.literal("")),
     currencies: z.array(currencySchema).min(1).max(2),
@@ -183,6 +184,7 @@ export interface PaymentMethod {
   code: string;
   enabled: boolean;
   instructions: string;
+  instructions_localized?: Partial<Record<z.infer<typeof localeSchema>, string>>;
   destination: string;
   qr_url?: string;
   currencies: string[];

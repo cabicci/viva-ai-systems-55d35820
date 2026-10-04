@@ -13,6 +13,11 @@ CREATE TABLE billing.commerce_methods (
   code text PRIMARY KEY CHECK(code IN ('instapay','wallet','bank','admin','stripe','paymob')),
   enabled boolean NOT NULL DEFAULT false,
   instructions text NOT NULL DEFAULT '' CHECK(length(instructions)<=4000),
+  instructions_localized jsonb NOT NULL DEFAULT '{}' CHECK(
+    jsonb_typeof(instructions_localized)='object'
+    AND instructions_localized - ARRAY['ar-EG','ar-MSA','ar-Gulf','en']::text[] = '{}'
+    AND NOT jsonb_path_exists(instructions_localized,'$.* ? (@.type() != "string")')
+  ),
   destination text NOT NULL DEFAULT '' CHECK(length(destination)<=1000),
   qr_url text CHECK(qr_url IS NULL OR qr_url ~ '^https://'),
   currencies text[] NOT NULL DEFAULT ARRAY['EGP'],

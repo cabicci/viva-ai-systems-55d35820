@@ -49,10 +49,18 @@ BEGIN
    RETURN billing.commerce_quote(p_data->>'package',p_data->>'market',p_data->>'billing_interval',p_data->>'code',v_email,coalesce((p_data->>'renewal')::boolean,false));
  ELSIF p_action='configure_method' THEN
    IF p_data->>'code' NOT IN ('instapay','wallet','bank') THEN RAISE EXCEPTION 'COMMERCE_METHOD_NOT_CONFIGURABLE'; END IF;
+   IF p_data ? 'instructions_localized' THEN
+     IF jsonb_typeof(p_data->'instructions_localized')<>'object' THEN RAISE EXCEPTION 'COMMERCE_INVALID_LOCALIZED_INSTRUCTIONS'; END IF;
+     IF EXISTS(SELECT 1 FROM jsonb_each(p_data->'instructions_localized') x
+       WHERE x.key NOT IN ('ar-EG','ar-MSA','ar-Gulf','en') OR jsonb_typeof(x.value)<>'string'
+       OR length(btrim(x.value#>>'{}')) NOT BETWEEN 1 AND 4000)
+       THEN RAISE EXCEPTION 'COMMERCE_INVALID_LOCALIZED_INSTRUCTIONS'; END IF;
+   END IF;
    IF coalesce((p_data->>'enabled')::boolean,false) AND (length(btrim(coalesce(p_data->>'destination','')))=0 OR length(btrim(coalesce(p_data->>'instructions','')))=0)
       THEN RAISE EXCEPTION 'COMMERCE_DESTINATION_REQUIRED'; END IF;
    UPDATE billing.commerce_methods SET enabled=(p_data->>'enabled')::boolean,
      destination=p_data->>'destination',instructions=p_data->>'instructions',qr_url=nullif(p_data->>'qr_url',''),
+     instructions_localized=coalesce(p_data->'instructions_localized',instructions_localized),
      currencies=ARRAY(SELECT jsonb_array_elements_text(p_data->'currencies')),updated_at=now() WHERE code=p_data->>'code';
    v_id:=NULL;
  ELSIF p_action='create_order' THEN

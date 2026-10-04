@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
-import { commerceCopy, formatAmount, accessState } from "@/lib/commerce/copy";
+import { commerceCopy, formatAmount, accessState, paymentInstructions } from "@/lib/commerce/copy";
 import type { Order, Entitlement, PackageKey, Quote } from "@/lib/commerce/contracts";
 import { requireAuthBeforeLoad, AuthSessionGate } from "@/lib/auth-route-guard";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -194,8 +194,17 @@ function Payments() {
                 o.review_status,
               ) && (
                 <>
-                  <p className="whitespace-pre-wrap">{o.instructions_snapshot.instructions}</p>
+                  <p className="whitespace-pre-wrap">
+                    {paymentInstructions(o.instructions_snapshot, locale)}
+                  </p>
                   <bdi className="break-all">{o.instructions_snapshot.destination}</bdi>
+                  {o.instructions_snapshot.qr_url && (
+                    <img
+                      src={o.instructions_snapshot.qr_url}
+                      alt={`${w.instapay} QR`}
+                      className="max-h-48"
+                    />
+                  )}
                   <ReceiptUpload orderId={o.id} onUploaded={refresh} />
                   <Button
                     variant="outline"

@@ -3,7 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { Link } from "@tanstack/react-router";
 import { useLocale } from "@/lib/locale/locale-context";
 import { commerceCommand } from "@/lib/commerce/commerce.functions";
-import { commerceCopy, formatAmount } from "@/lib/commerce/copy";
+import { commerceCopy, formatAmount, paymentInstructions } from "@/lib/commerce/copy";
 import type { Order, PackageKey, PaymentMethod, Quote } from "@/lib/commerce/contracts";
 import { Button } from "@/components/ui/button";
 import { ReceiptUpload } from "./ReceiptUpload";
@@ -115,7 +115,9 @@ export function PaymentMethods({
           {w.paymentExpiry}:{" "}
           {new Date(order.expires_at).toLocaleString(locale === "en" ? "en-US" : "ar")}
         </p>
-        <p className="whitespace-pre-wrap">{order.instructions_snapshot.instructions}</p>
+        <p className="whitespace-pre-wrap">
+          {paymentInstructions(order.instructions_snapshot, locale)}
+        </p>
         <p className="break-all" dir="auto">
           {order.instructions_snapshot.destination}
         </p>
@@ -150,6 +152,9 @@ export function PaymentMethods({
                 configured.destination &&
                 configured.instructions &&
                 configured.currencies.includes(market === "EG" ? "EGP" : "USD");
+            // Bank transfer is deferred until an administrator explicitly
+            // configures it for the customer's market.
+            if (code === "bank" && !available) return null;
             return (
               <option value={code} key={code} disabled={!available}>
                 {w[code as "instapay"]}

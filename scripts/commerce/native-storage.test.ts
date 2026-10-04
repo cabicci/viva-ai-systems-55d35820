@@ -133,6 +133,12 @@ beforeAll(async () => {
     currencies: ["EGP"],
     destination: "SYNTHETIC ONLY",
     instructions: "CI fixture. No transfer.",
+    instructions_localized: {
+      "ar-EG": "تعليمات مصرية اصطناعية",
+      "ar-MSA": "تعليمات فصحى اصطناعية",
+      "ar-Gulf": "تعليمات خليجية اصطناعية",
+      en: "Synthetic English instructions",
+    },
   });
 });
 beforeEach(async () => {
@@ -174,6 +180,12 @@ describe("native signed-in commerce handlers and Storage HTTP privacy", () => {
     const receipt = await upload(member);
     const details = await command<Order>(member, "order", { id: order.id });
     expect(details.review_status).toBe("pending");
+    expect(details.instructions_snapshot.instructions_localized).toEqual({
+      "ar-EG": "تعليمات مصرية اصطناعية",
+      "ar-MSA": "تعليمات فصحى اصطناعية",
+      "ar-Gulf": "تعليمات خليجية اصطناعية",
+      en: "Synthetic English instructions",
+    });
     expect(details.receipts?.some((x) => x.id === receipt.id)).toBe(true);
     const counts = await sql`SELECT
       (SELECT count(*) FROM billing.commerce_entitlements WHERE order_id=${order.id})::int AS access,

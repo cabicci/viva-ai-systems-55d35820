@@ -104,6 +104,59 @@ describe("unified commerce with installed billing and LC09", () => {
     });
   });
   afterEach(async () => db.exec("ROLLBACK"));
+  it("freezes four-locale instructions on the order and rejects invalid locale maps at the SQL boundary", async () => {
+    const instructions_localized = {
+      "ar-EG": "مصري",
+      "ar-MSA": "فصحى",
+      "ar-Gulf": "خليجي",
+      en: "English",
+    };
+    const settings = {
+      code: "instapay",
+      enabled: true,
+      instructions: "Fallback",
+      destination: "SYNTHETIC ONLY",
+      currencies: ["EGP"],
+    };
+    await command("configure_method", { ...settings, instructions_localized });
+    await caller(user);
+    const order = await command("create_order", {
+      package: "pro",
+      market: "EG",
+      billing_interval: "month",
+      method: "instapay",
+      key: "localized-order-snapshot",
+    });
+    await caller(admin);
+    await command("configure_method", settings);
+    const methods = (await command("methods")) as unknown as {
+      code: string;
+      instructions_localized: typeof instructions_localized;
+    }[];
+    expect(
+      methods.find((m: { code: string }) => m.code === "instapay")?.instructions_localized,
+    ).toEqual(instructions_localized);
+    await command("configure_method", {
+      ...settings,
+      instructions_localized: { ...instructions_localized, en: "Changed later" },
+    });
+    await caller(user);
+    const stored = await command("order", { id: order.id });
+    expect(stored.instructions_snapshot.instructions_localized).toEqual(instructions_localized);
+    await caller(admin);
+    for (const invalid of [
+      { fr: "Unsupported" },
+      { en: 123 },
+      { en: "" },
+      { en: "x".repeat(4001) },
+    ]) {
+      await db.exec("SAVEPOINT invalid_localized_instructions");
+      await expect(
+        command("configure_method", { ...settings, instructions_localized: invalid }),
+      ).rejects.toThrow(/COMMERCE_INVALID_LOCALIZED_INSTRUCTIONS/);
+      await db.exec("ROLLBACK TO SAVEPOINT invalid_localized_instructions");
+    }
+  });
   it("keeps feature disabled by default and forbids bare admin writes", async () => {
     await db.exec("UPDATE billing.commerce_control SET enabled=false");
     await caller(user);
