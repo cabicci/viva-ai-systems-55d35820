@@ -183,6 +183,88 @@ export function subscriptionContent(
   };
 }
 
+export type PaymentConfirmation = {
+  name?: string | null;
+  locale: unknown;
+  package: string;
+  reference: string;
+  amount_minor: number;
+  currency: string;
+};
+export function paymentConfirmationContent(input: PaymentConfirmation) {
+  const locale = mailLocale(input.locale);
+  const plan =
+    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+  const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
+    style: "currency",
+    currency: input.currency,
+  }).format(input.amount_minor / 100);
+  const copy = {
+    "ar-EG": [
+      "تم تأكيد دفعك",
+      `أهلًا بيك في ${plan}! الإدارة أكدت استلام ${amount} للطلب ${input.reference}. باقتك اتأكدت، وصلاحيتها بتبدأ في الموعد المسجّل في حسابك. شوف تفاصيل الباقة وابدأ رحلتك.`,
+      "عرض باقتي",
+    ],
+    "ar-MSA": [
+      "تأكيد الدفع والباقة",
+      `مرحبًا بك في ${plan}! أكدت الإدارة استلام ${amount} للطلب ${input.reference}. تم تأكيد باقتك، وتبدأ صلاحيتها في الموعد المسجّل في حسابك. اطّلع على تفاصيل الباقة وابدأ رحلتك.`,
+      "عرض باقتي",
+    ],
+    "ar-Gulf": [
+      "تأكد دفعك وباقتك",
+      `حيّاك في ${plan}! الإدارة أكدت استلام ${amount} للطلب ${input.reference}. باقتك تأكدت، وصلاحيتها تبدأ حسب الموعد المسجّل في حسابك. شوف تفاصيل الباقة وابدأ رحلتك.`,
+      "شوف باقتي",
+    ],
+    en: [
+      "Payment and plan confirmed",
+      `Welcome to ${plan}! Our team has verified receipt of ${amount} for order ${input.reference}. Your plan is confirmed and access starts on the date recorded in your account. View your plan details and continue your learning journey.`,
+      "View my plan",
+    ],
+  } as const;
+  const [title, body, action] = copy[locale];
+  return {
+    subject: `${title} | Masaarat ${plan}`,
+    ...personalized(locale, input.name, title, body, action, "/payments"),
+  };
+}
+
+export function receiptReviewContent(input: PaymentConfirmation) {
+  const locale = mailLocale(input.locale);
+  const plan =
+    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+  const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
+    style: "currency",
+    currency: input.currency,
+  }).format(input.amount_minor / 100);
+  const copy = {
+    "ar-EG": [
+      "إيصال جديد محتاج مراجعة",
+      `اترفع إيصال للطلب ${input.reference}، باقة ${plan}، وقيمة الطلب ${amount}. ادخل لوحة الإدارة عشان تشوف الإيصال وتتأكد من وصول التحويل قبل تأكيد الدفع وتفعيل الباقة. رفع الإيصال لوحده مش تأكيد للدفع.`,
+      "مراجعة الطلب",
+    ],
+    "ar-MSA": [
+      "إيصال جديد بانتظار المراجعة",
+      `تم رفع إيصال للطلب ${input.reference}، باقة ${plan}، وقيمة الطلب ${amount}. افتح لوحة الإدارة لمراجعة الإيصال والتحقق من وصول التحويل قبل تأكيد الدفع وتفعيل الباقة. رفع الإيصال لا يُعد تأكيدًا للدفع.`,
+      "مراجعة الطلب",
+    ],
+    "ar-Gulf": [
+      "إيصال جديد ينتظر المراجعة",
+      `انرفع إيصال للطلب ${input.reference}، باقة ${plan}، وقيمة الطلب ${amount}. ادخل لوحة الإدارة وراجع الإيصال وتأكد من وصول التحويل قبل تأكيد الدفع وتفعيل الباقة. رفع الإيصال بروحه ما يعني تأكيد الدفع.`,
+      "راجع الطلب",
+    ],
+    en: [
+      "New receipt awaiting review",
+      `A receipt was uploaded for order ${input.reference}, plan ${plan}, order total ${amount}. Open the admin panel to review the receipt and verify that the transfer arrived before confirming payment and activating the plan. Uploading a receipt does not confirm payment.`,
+      "Review order",
+    ],
+  } as const;
+  const [title, body, action] = copy[locale];
+  return {
+    subject: `${title} | ${input.reference}`,
+    ...personalized(locale, null, title, body, action, "/admin/commerce"),
+  };
+}
+
 /** Invitations remain separate from delivery, verified acceptance and paid activation. */
 export function invitationContent(input: {
   id: string;

@@ -109,6 +109,11 @@ const en = {
   newCustomer: "New customers only",
   export: "Export records",
   viewReceipt: "View receipt",
+  sendConfirmationMail: "Send payment confirmation email",
+  confirmationMailAccepted:
+    "The email service accepted the confirmation. Inbox delivery is not yet confirmed.",
+  confirmationMailQueued:
+    "The confirmation is saved for sending. It has not been confirmed as sent yet.",
   downloadReceipt: "Download receipt",
   closeReceipt: "Close preview",
   receiptLoading: "Loading receipt…",
@@ -276,6 +281,9 @@ const ar: Record<keyof typeof en, string> = {
   newCustomer: "للعملاء الجدد فقط",
   export: "تصدير السجلات",
   viewReceipt: "عرض الإيصال",
+  sendConfirmationMail: "إرسال بريد تأكيد الدفع",
+  confirmationMailAccepted: "قبلت خدمة البريد رسالة التأكيد؛ وصولها إلى صندوق البريد لم يتأكد بعد.",
+  confirmationMailQueued: "حُفظت رسالة التأكيد للإرسال، ولم يتأكد إرسالها بعد.",
   downloadReceipt: "تنزيل الإيصال",
   closeReceipt: "إغلاق المعاينة",
   receiptLoading: "جارٍ تحميل الإيصال…",
@@ -346,6 +354,10 @@ export function commerceCopy(locale: SupportedLocale): CommerceCopy {
       ...ar,
       continue: "كمّل",
       quote: "راجع السعر",
+      sendConfirmationMail: "ابعت إيميل تأكيد الدفع",
+      confirmationMailAccepted:
+        "خدمة البريد قبلت رسالة التأكيد؛ وصولها لصندوق البريد لسه مش متأكد.",
+      confirmationMailQueued: "رسالة التأكيد محفوظة للإرسال، لكن إرسالها لسه ما اتأكدش.",
       paymentAmountUnits:
         "اكتب المبلغ بالعملة اللي ظاهرة: 169 يعني 169 جنيه. تقدر تكتب كسور عشرية.",
       paymentAllocation: "المبلغ المخصص للطلب ده",
@@ -366,6 +378,10 @@ export function commerceCopy(locale: SupportedLocale): CommerceCopy {
     return {
       ...ar,
       continue: "تابع",
+      sendConfirmationMail: "أرسل إيميل تأكيد الدفع",
+      confirmationMailAccepted:
+        "خدمة البريد قبلت رسالة التأكيد؛ وصولها لصندوق البريد ما تأكد للحين.",
+      confirmationMailQueued: "رسالة التأكيد محفوظة للإرسال، لكن إرسالها ما تأكد للحين.",
       downloadReceipt: "نزّل الإيصال",
       closeReceipt: "إغلاق المعاينة",
       receiptLoading: "جاري تحميل الإيصال…",

@@ -6,6 +6,7 @@ import { createAccountLifecycleWorker } from "../_shared/account-lifecycle-worke
 import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
 import { readImmediateMailTarget } from "../_shared/immediate-mail-request.ts";
+import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-worker.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (!(await authorizedWelcomeJob(request, Deno.env.get("ACCOUNT_WELCOME_JOB_SECRET"))))
@@ -46,22 +47,32 @@ Deno.serve(async (request) => {
     // An immediate request can only attempt its stored message. It never runs
     // batch subscription, contact, deletion or financial operations.
     if (immediate) {
-      const active = immediate.stream === "welcome" ? welcomeEnabled : contactEnabled;
+      const active =
+        immediate.stream === "welcome"
+          ? welcomeEnabled
+          : immediate.stream === "commerce" || immediate.stream === "commerce_receipt"
+            ? subscriptionEnabled
+            : contactEnabled;
       if (!active) return Response.json({ enabled: false });
-      if (!apiKey || (immediate.stream === "welcome" && !from))
+      if (!apiKey || (immediate.stream !== "contact" && !from))
         throw new Error("mail_sender_unconfigured");
       const stats =
         immediate.stream === "welcome"
           ? await runWelcomeJob(db, send, immediate.id)
-          : await runContactMailJob(
-              db,
-              (message, sender) =>
-                sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
-              immediate.id,
-            );
+          : immediate.stream === "commerce"
+            ? await runCommercePaymentMailJob(db, send, immediate.id)
+            : immediate.stream === "commerce_receipt"
+              ? await runCommercePaymentMailJob(db, send, undefined, immediate.id)
+              : await runContactMailJob(
+                  db,
+                  (message, sender) =>
+                    sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+                  immediate.id,
+                );
       return Response.json({ [immediate.stream]: stats });
     }
     const result = await runMailStreams({
+      commerce: subscriptionEnabled ? () => runCommercePaymentMailJob(db, send) : null,
       welcome: welcomeEnabled
         ? () => {
             if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
