@@ -2,11 +2,11 @@
   "schema_version": 1,
   "record_scope": "isolated remaining-75 authoring execution; not learner availability",
   "parent_commit": "a908cb5698dfa00d7552658413f23fe93ff0f2c0",
-  "status": "in_progress",
+  "status": "paused_by_user",
   "remaining_lesson_count": 75,
   "expected_locale_package_count": 300,
-  "new_authored_lesson_count": 8,
-  "new_authored_locale_package_count": 32,
+  "new_authored_lesson_count": 11,
+  "new_authored_locale_package_count": 44,
   "source_evidence": {
     "library_file_id": "libfile_e700ff35ecc48191a7c4f0425700a7f8",
     "resolved_filename": "Metwood_Furniture_Design(1).pdf",
@@ -93,7 +93,8 @@
       "unique_concept_diagrams": 12,
       "pdf_rendered_page_count": 64,
       "runtime_viewport_cases_passed": 32,
-      "production_build": "pending_clean_commit_build"
+      "production_build": "passed_with_node_heap_4096",
+      "github_commit": "4a35a18882ea8acb40f49a1045434461ff8c2b48"
     },
     {
       "module_id": "M04",
@@ -104,9 +105,15 @@
       ],
       "lesson_count": 3,
       "expected_locale_package_count": 12,
-      "status": "queued",
-      "new_authored_lesson_count": 0,
-      "new_authored_locale_package_count": 0
+      "status": "reading_assets_verified_video_text_pending_voice_review",
+      "new_authored_lesson_count": 3,
+      "new_authored_locale_package_count": 12,
+      "pdf_count": 24,
+      "unique_concept_diagrams": 9,
+      "pdf_rendered_page_count": 48,
+      "runtime_viewport_cases_passed": 24,
+      "production_build": "passed_with_node_heap_4096",
+      "github_commit": "60e4b021f23d24752c3a78ca9a9e2ecc4bc37dae"
     },
     {
       "module_id": "M05",
@@ -345,7 +352,16 @@
   ],
   "authored_draft_lesson_count": 0,
   "count_definition": "new_authored counts represent verified complete lesson batches; draft counts are not completion",
-  "remaining_unauthored_lesson_count": 71,
+  "remaining_unauthored_lesson_count": 64,
   "video_outputs_created": 0,
-  "voice_outputs_created": 0
+  "voice_outputs_created": 0,
+  "pause": {
+    "requested_at": "2026-10-04T12:52:01+03:00",
+    "coordinator_checkpoint_branch": "checkpoint/technical-education-pause-20261004",
+    "author_branch": "experiment/technical-remaining-75-20261004",
+    "verified_content_total": 16,
+    "fully_complete_lesson_total": "not asserted; actual speech acceptance and media gates pending",
+    "m05_status": "unapproved draft checkpoint on author branch; final QA pending",
+    "resume_register": "docs/experiments/technical-education/README.md#user-requested-safe-pause"
+  }
 }

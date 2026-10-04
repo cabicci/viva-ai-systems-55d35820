@@ -1,0 +1,72 @@
+{
+  "id": "M04-L01",
+  "locale": "en",
+  "title": "Read plans, elevations, sections and details",
+  "intro": "An attractive perspective does not define construction. Link the front, plan and side views, then use a section and enlarged detail to resolve hidden interfaces.",
+  "goals": [
+    "Link dimensions across views",
+    "Distinguish a section from an elevation",
+    "Review a referenced detail"
+  ],
+  "sections": [
+    {
+      "id": "views",
+      "title": "Link dimensions across views",
+      "text": "For this exercise, the unit is 600 mm wide, 720 mm high and 400 mm deep. The front shows width and height, the plan width and depth, and the side depth and height. Use one scale and light projection lines. Check that shelf elevation agrees in front and side views; disagreement must be resolved before scheduling parts.",
+      "diagram": "new-M04-L01-views",
+      "caption": "Shared dimensions provide a consistency check."
+    },
+    {
+      "id": "section",
+      "title": "Distinguish a section from an elevation",
+      "text": "An elevation represents the visible surface; a section reveals construction at a defined cutting plane. Mark A–A and viewing arrows on the reference view. Show panel thicknesses and shelf/back interfaces, hatching only cut material. A shelf line alone does not define its joint; an enlarged detail must show how it meets the side.",
+      "diagram": "new-M04-L01-section",
+      "caption": "A section needs a cutting-plane reference and viewing direction."
+    },
+    {
+      "id": "detail",
+      "title": "Review a referenced detail",
+      "text": "Mark the shelf-to-side junction D1 and draw an enlarged detail at a stated scale. Identify material, thickness, dimension datum, interface and visible edge. Use written dimensions rather than measuring a resized print. Cross-check the detail against views and the parts schedule, retaining unit ID and drawing revision so different issues are not combined.",
+      "diagram": "new-M04-L01-detail",
+      "caption": "Views, detail and schedule must share one revision."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The exercise front is 600 × 720 mm, the plan states a 400 mm depth, and the side states 450 mm. Flag the conflict and establish the controlling dimension. If 400 mm is confirmed, revise the side and recheck any parts previously scheduled from 450 mm.",
+    "decision": "Decision: do not issue the parts schedule until the depth conflict is resolved."
+  },
+  "quiz": [
+    {
+      "id": "view-check",
+      "question": "Which dimension is shared by front and side views?",
+      "options": [
+        "Height",
+        "Width only",
+        "Camera angle"
+      ],
+      "correct": 0,
+      "explanation": "Both views describe the height of the same unit."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw three views of the exercise unit, add section A–A and detail D1, and submit dimensions, revision and unresolved information.",
+    "fields": [
+      "Linked views",
+      "Section and detail",
+      "Unresolved information"
+    ],
+    "criteria": [
+      "Shared dimensions agree",
+      "Cutting plane and view direction identified",
+      "Detail reference and revision stated"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can I measure a dimension from the image?",
+      "answer": "Use the written dimension; request missing information because image scaling can change.",
+      "sectionId": "detail"
+    }
+  ]
+}

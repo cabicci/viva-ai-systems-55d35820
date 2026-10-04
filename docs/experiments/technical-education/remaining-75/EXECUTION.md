@@ -73,3 +73,34 @@ Four additional lessons distinguish actual timber/sheet products, finish and edg
 The batch has16 contextual packages,12 concept-specific diagrams,32 PDF downloads and16 linked video-text scripts. All64 exported PDF pages were rendered and contact sheets visually reviewed. Browser acceptance passed32 lesson/register/viewport cases; representative Egyptian mobile and English desktop readings were inspected. Nineteen scoped Vitest checks, nine Python integrity tests and application TypeScript passed. All44 preceding PDF hashes remain byte-identical. No audio or video was produced.
 
 Cumulative verified new authoring is8 lessons/32 locale packages, making13 existing-plus-new content lessons of80. The original75 scope has67 remaining. The earlier502 materialization failure is historical and resolved. Clean-commit build and durable GitHub receipt follow.
+
+M03 delivery receipt: build passed with4096MB Node heap after the default2GB limit was reached. Commit `4a35a18882ea8acb40f49a1045434461ff8c2b48` is durable on the isolated branch; tree `0a8bf18edb081afc3efac02d896b400fdba05d58` exactly matches119 files.
+
+## M04 authored and verified
+
+Three remaining M04 lessons now provide12 contextual packages,9 distinct concept diagrams,24 PDFs/48 rendered pages and12 video-text scripts. The reused M04-L02 pilot is unchanged. Concrete exercises link three600×720×400mm views and resolve a450mm conflict, calculate398/399mm cores under explicit1mm edge assumptions, and update training costs300→330 with a30 difference. These are declared exercises, not universal product dimensions or market prices.
+
+All48 PDF pages were visually inspected; proportion and section-direction figures were corrected and their final Egyptian/English pages reviewed. Browser acceptance passed24 locale/viewport cases and representative reading views were inspected. Nineteen scoped Vitest tests, TypeScript and nine Python integrity tests passed. All44 accepted original PDF hashes remain unchanged. Verified cumulative contribution is11 lessons/44 locale packages, or16 content lessons including the preceding five;64 remaining lessons are unauthored. No speech or video was generated.
+
+M04 delivery receipt: production build passed with4096MB heap. Commit `60e4b021f23d24752c3a78ca9a9e2ecc4bc37dae`, tree `04b051392991349e819e34ff63821ec940a7e5b3`, durably contains91 matching changed files on the isolated branch.
+
+## M04 Arabic arithmetic remediation
+
+Coordinator review found that right-to-left SVG text reversed arithmetic operands and the signed change. Seven numerical labels in the three M04 arithmetic geometries now use Unicode LRI/PDI. The shared renderer is unchanged. Nine Arabic-register SVG assets and six affected workbooks were regenerated; worksheet, English and all44 original accepted PDF hashes remain unchanged. All9 actual SVG renderings were visually reviewed with correct400−1−1=398,4×15=60,6×15=90 and+30 order. A dedicated regression checks isolates and operand equality;11 scoped Vitest tests,10 Python tests and TypeScript pass.
+
+Status counts are recomputed from verified batches:11 new +64 remaining =75;44 verified locale packages. A new invariant verifies batch sums, four-register totals and the75-lesson scope. M05 content drafts are not included in this completion count or remediation commit.
+
+
+### User-requested safe pause — 2026-10-04 12:52 Africa/Cairo
+
+Stopped new authoring, QA, video dispatch and preview publication at the user's request. Coordinator checkpoint is on checkpoint/technical-education-pause-20261004; the authoring agent is saving unapproved M05 work separately on experiment/technical-remaining-75-20261004. Resume from these saved branches, not from an older chat or main.
+
+State:16 content-reviewed lesson IDs (original5 plus M02/M03/M04 new11),64 remaining outside that content-review count. This is NOT16 fully complete lessons: media delivery, actual pronunciation listening and final preview gates remain separate. M05 has4 draft lessons/16 packages/12 diagrams/32 PDFs, excluded from approved counts and production approval pending final visual/browser acceptance.
+
+The corrected M04 production build and30 actual Remotion frame renders finished successfully before this pause. Corrected SVG numeric expressions were visually checked; final visual inspection of corrected Remotion frames and checking numeric expressions in raw TechnicalJourney/Remotion detail text remain the next verification steps. No speculative renderer changes were made.
+
+Egyptian piece correction is implemented and delivered at Bunny231483c4-394c-4e5f-874f-5b8468c1b8dc (status4,109s). Four audio segments reused; only the affected segment regenerated. Actual pronunciation remains UNVERIFIED by listening: current audio-input capability is unsupported. Do not claim the reported word was audibly accepted.
+
+Private preview remains the prior9-lesson build (source0f1edee6d086703e1d22ed311da061d31e5ad58b; deployment appgdep_6ac21a624ce081918085b64ac5145661). It predates the new piece video and M03/M04. No new deployment was made at this pause. Previously submitted Actions runs37191746985/37192233302/37192762844 can still finish; no new runs are dispatched. The available connector has no cancellation capability; do not state those jobs were canceled. Preserve any subsequent bot media receipts on the experiment branch.
+
+Resume order:inspect latest experiment/media-bot state and the author-agent pause receipt; verify remaining M04 frames/math display; reconcile checkpoint without overwriting new Bunny mappings; complete M05 QA; then update the private preview and continue M06 onward. Retain per-word Egyptian pronunciation handling,existing shared fonts/language selector,PDF-only downloads,hidden source and accepted-asset reuse. Main-site integration,packages/account progress and billing remain for the integration room.

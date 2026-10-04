@@ -17,6 +17,20 @@ const lessons = files.map(
 );
 
 describe("additional authored technical lessons", () => {
+  it("isolates M04 arithmetic in Arabic SVG labels to retain left-to-right operand order", () => {
+    const labels = Object.entries(definitions)
+      .filter(([key]) => key.startsWith("new-M04-"))
+      .flatMap(([, nodes]) => nodes)
+      .filter((node) => node.type === "text" && "value" in node)
+      .map((node) => (node as { value: { ar: string; en: string } }).value)
+      .filter((value) => /[×−=+]/.test(value.ar) && !/[\u0600-\u06ff]/.test(value.ar));
+    expect(labels.length).toBeGreaterThan(0);
+    for (const value of labels) {
+      expect(value.ar.startsWith("\u2066")).toBe(true);
+      expect(value.ar.endsWith("\u2069")).toBe(true);
+      expect(value.ar.slice(1, -1)).toBe(value.en);
+    }
+  });
   it("keeps explanation concept and objective answer meaning aligned in all four registers", () => {
     for (const id of new Set(lessons.map((lesson) => lesson.id))) {
       const variants = SUPPORTED_LOCALES.map((locale) =>

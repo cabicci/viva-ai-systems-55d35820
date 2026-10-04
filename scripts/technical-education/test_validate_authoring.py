@@ -12,6 +12,14 @@ spec.loader.exec_module(authoring)
 
 
 class AuthoringGate(unittest.TestCase):
+    def test_execution_count_invariants(self):
+        status = json.loads((ROOT / 'docs/experiments/technical-education/remaining-75/authoring-status.json').read_text())
+        verified = sum(batch['new_authored_lesson_count'] for batch in status['batches'])
+        self.assertEqual(status['new_authored_lesson_count'], verified)
+        self.assertEqual(status['new_authored_locale_package_count'], verified * 4)
+        self.assertEqual(verified + status['remaining_unauthored_lesson_count'], 75)
+        self.assertEqual(status['remaining_lesson_count'], 75)
+
     def setUp(self):
         self.pkg = json.loads((ROOT / 'src/lib/technical-education/lessons/M01-L01__en.json').read_text())
 
