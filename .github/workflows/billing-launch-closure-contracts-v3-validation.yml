@@ -96,6 +96,12 @@ jobs:
           chmod +x .github/scripts/billing_contracts_v3_validation/run.sh
           .github/scripts/billing_contracts_v3_validation/run.sh
 
+      - name: Commerce receipt handlers and native Storage HTTP privacy
+        run: |
+          bunx tsc --noEmit -p scripts/commerce/tsconfig.native.json
+          bunx eslint scripts/commerce/native-storage.test.ts scripts/commerce/vitest.native.config.ts --max-warnings 0
+          bunx vitest run --config scripts/commerce/vitest.native.config.ts
+
       - name: Show sanitized validation result
         if: ${{ always() }}
         run: |
