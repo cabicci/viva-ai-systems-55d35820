@@ -8,12 +8,14 @@ export function Field({
   onChange,
   type = "text",
   required = false,
+  step,
 }: {
   label: string;
   value: string | number;
   onChange: (value: string) => void;
   type?: string;
   required?: boolean;
+  step?: string;
 }) {
   return (
     <label className="grid gap-1 text-sm">
@@ -23,6 +25,7 @@ export function Field({
         type={type}
         value={value}
         required={required}
+        step={step}
         onChange={(e) => onChange(e.target.value)}
       />
     </label>

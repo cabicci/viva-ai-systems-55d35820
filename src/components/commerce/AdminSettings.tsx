@@ -45,7 +45,8 @@ function Method({
   run: RunCommand;
   busy: boolean;
 }) {
-  const [m, set] = useState(method);
+  const egpOnly = method.code === "instapay" || method.code === "wallet";
+  const [m, set] = useState({ ...method, currencies: egpOnly ? ["EGP"] : method.currencies });
   return (
     <form
       className="grid gap-3 rounded-lg border p-3 sm:grid-cols-2"
@@ -90,7 +91,7 @@ function Method({
         label={w.currency}
         value={m.currencies.join(",")}
         onChange={(v) => set({ ...m, currencies: v.split(",") })}
-        options={["EGP", "USD", "EGP,USD"]}
+        options={egpOnly ? ["EGP"] : ["EGP", "USD", "EGP,USD"]}
       />
       <Check label={w.enabled} checked={m.enabled} onChange={(enabled) => set({ ...m, enabled })} />
       <Save w={w} busy={busy} />

@@ -1,5 +1,5 @@
 import { useCommandKey } from "@/lib/commerce/use-command-key";
-import { instant, dayInput } from "@/lib/commerce/admin-ui";
+import { instant, dayInput, moneyToMinor } from "@/lib/commerce/admin-ui";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
@@ -28,12 +28,14 @@ export function AdminPayments({
     w = commerceCopy(locale);
   const [selected, setSelected] = useState<string[]>([]),
     [existingPayment, setExistingPayment] = useState(""),
-    [amounts, setAmounts] = useState<Record<string, number>>({}),
-    [received, setReceived] = useState(0),
+    [amounts, setAmounts] = useState<Record<string, string>>({}),
+    [received, setReceived] = useState(""),
     [reference, setReference] = useState(""),
     [date, setDate] = useState(dayInput(0)),
     [verified, setVerified] = useState(false),
-    [reuse, setReuse] = useState("");
+    [reuse, setReuse] = useState(""),
+    [confirmation, setConfirmation] = useState(""),
+    [confirmationError, setConfirmationError] = useState("");
   const pending = orders.filter(
     (o) =>
       ["awaiting_receipt", "pending", "more_info"].includes(o.review_status) &&
@@ -80,8 +82,22 @@ export function AdminPayments({
           ? o.group_id === selectedPayment.group_id
           : o.user_id === selectedPayment.user_id && !o.group_id),
     );
-  const allocated = picked.reduce((sum, o) => sum + (amounts[o.id] ?? remaining(o)), 0);
-  const balanceAfter = (existingPayment ? availableBalance(existingPayment) : received) - allocated;
+  const allocationMinor = (o: Order) =>
+    amounts[o.id] === undefined ? remaining(o) : moneyToMinor(amounts[o.id]);
+  const allocated = picked.reduce((sum, o) => sum + allocationMinor(o), 0);
+  const receivedMinor = moneyToMinor(received);
+  const balanceAfter =
+    (existingPayment ? availableBalance(existingPayment) : receivedMinor) - allocated;
+  const validAmounts =
+    picked.every(
+      (o) =>
+        Number.isFinite(allocationMinor(o)) &&
+        allocationMinor(o) > 0 &&
+        allocationMinor(o) <= remaining(o),
+    ) && Number.isFinite(balanceAfter);
+  const fullyCovered =
+    picked.length > 0 && picked.every((o) => allocationMinor(o) === remaining(o));
+  const paymentCurrency = selectedPayment?.currency ?? picked[0]?.currency ?? "EGP";
   return (
     <>
       <Panel title={w.overview}>
@@ -120,12 +136,15 @@ export function AdminPayments({
           <OrderCard key={order.id} order={order} run={run} busy={busy} />
         ))}
         <h3 className="font-bold">{w.confirm}</h3>
-        <p>{w.currencyNotice}</p>
+        <p>{w.paymentAmountUnits}</p>
         <form
           className="space-y-3"
           onSubmit={async (e) => {
             e.preventDefault();
-            if (!compatible || !sourceCompatible || !verified || balanceAfter < 0) return;
+            setConfirmation("");
+            setConfirmationError("");
+            if (!compatible || !sourceCompatible || !verified || !validAmounts || balanceAfter < 0)
+              return;
             if (existingPayment) {
               const result = await run("allocate", {
                 payment_id: existingPayment,
@@ -133,14 +152,15 @@ export function AdminPayments({
                 reuse_review: reuse,
                 allocations: picked.map((o) => ({
                   order_id: o.id,
-                  amount_minor: amounts[o.id] ?? remaining(o),
+                  amount_minor: allocationMinor(o),
                 })),
               });
               if (result) {
+                setConfirmation(fullyCovered ? w.paymentRecorded : w.partialPaymentRecorded);
                 setSelected([]);
                 setExistingPayment("");
                 setVerified(false);
-              }
+              } else setConfirmationError(w.error);
               return;
             }
             const result = await run("confirm", {
@@ -148,21 +168,24 @@ export function AdminPayments({
               method: picked[0].method,
               currency: picked[0].currency,
               group_id: picked[0].group_id ?? undefined,
-              amount_minor: received,
+              amount_minor: receivedMinor,
               transaction_reference: reference,
               received_at: instant(date),
               funds_verified: true,
               reuse_review: reuse,
               allocations: picked.map((o) => ({
                 order_id: o.id,
-                amount_minor: amounts[o.id] ?? remaining(o),
+                amount_minor: allocationMinor(o),
               })),
             });
             if (result) {
+              setConfirmation(fullyCovered ? w.paymentRecorded : w.partialPaymentRecorded);
               setSelected([]);
               setVerified(false);
               setReference("");
-            }
+              setReceived("");
+              setAmounts({});
+            } else setConfirmationError(w.error);
           }}
         >
           <Select
@@ -196,10 +219,11 @@ export function AdminPayments({
                 />
                 {selected.includes(o.id) && (
                   <Field
-                    label={`${w.allocation} (${o.currency})`}
+                    label={`${w.paymentAllocation} (${o.currency})`}
                     type="number"
-                    value={amounts[o.id] ?? remaining(o)}
-                    onChange={(x) => setAmounts({ ...amounts, [o.id]: Number(x) })}
+                    step="0.01"
+                    value={amounts[o.id] ?? (remaining(o) / 100).toFixed(2)}
+                    onChange={(x) => setAmounts({ ...amounts, [o.id]: x })}
                   />
                 )}
               </div>
@@ -209,10 +233,11 @@ export function AdminPayments({
             {!existingPayment && (
               <>
                 <Field
-                  label={w.gross}
+                  label={`${w.received} (${paymentCurrency})`}
                   value={received}
                   type="number"
-                  onChange={(x) => setReceived(Number(x))}
+                  step="0.01"
+                  onChange={setReceived}
                 />
                 <Field label={w.transaction} value={reference} onChange={setReference} required />
                 <Field label={w.receivedAt} value={date} type="datetime-local" onChange={setDate} />
@@ -222,12 +247,18 @@ export function AdminPayments({
           </div>
           <p>
             {w.remaining}:{" "}
-            {formatAmount(
-              balanceAfter,
-              selectedPayment?.currency ?? picked[0]?.currency ?? "EGP",
-              locale,
-            )}
+            {Number.isFinite(balanceAfter)
+              ? formatAmount(balanceAfter, paymentCurrency, locale)
+              : "—"}
           </p>
+          {picked.length > 0 && validAmounts && (
+            <p>
+              {w.paymentAllocation}: {formatAmount(allocated, paymentCurrency, locale)}
+            </p>
+          )}
+          {picked.length > 0 && validAmounts && !fullyCovered && (
+            <p role="status">{w.partialPaymentWarning}</p>
+          )}
           <Check label={w.funds} checked={verified} onChange={setVerified} />
           <Button
             type="submit"
@@ -236,13 +267,20 @@ export function AdminPayments({
               !compatible ||
               !sourceCompatible ||
               !verified ||
+              !validAmounts ||
               allocated <= 0 ||
               balanceAfter < 0 ||
-              (!existingPayment && received <= 0)
+              (!existingPayment && receivedMinor <= 0)
             }
           >
             {existingPayment ? w.allocateExisting : w.confirm}
           </Button>
+          {confirmation && <p role="status">{confirmation}</p>}
+          {confirmationError && (
+            <p role="alert" className="text-destructive">
+              {confirmationError}
+            </p>
+          )}
         </form>
       </Panel>
       <Panel title={w.access}>
@@ -390,22 +428,25 @@ function Refund({ data, run, busy }: { data: AdminData; run: RunCommand; busy: b
   const { locale } = useLocale(),
     w = commerceCopy(locale),
     [allocation, setAllocation] = useState(""),
-    [amount, setAmount] = useState(0),
+    [amount, setAmount] = useState(""),
     [reference, setReference] = useState(""),
     [reason, setReason] = useState(""),
     [verified, setVerified] = useState(false),
     [revoke, setRevoke] = useState(false);
+  const amountMinor = moneyToMinor(amount);
+  const currency = data.payments.find((p) => p.id === allocation.split(":")[0])?.currency ?? "EGP";
   return (
     <Panel title={w.refund}>
       <form
         className="grid gap-3 sm:grid-cols-2"
         onSubmit={(e) => {
           e.preventDefault();
+          if (!Number.isFinite(amountMinor) || amountMinor <= 0) return;
           const [payment_id, order_id] = allocation.split(":");
           void run("refund", {
             payment_id,
             order_id: order_id === "unallocated" ? undefined : order_id,
-            amount_minor: amount,
+            amount_minor: amountMinor,
             reference,
             reason,
             funds_verified: true,
@@ -430,16 +471,22 @@ function Refund({ data, run, busy }: { data: AdminData; run: RunCommand; busy: b
           ]}
         />
         <Field
-          label={w.amount}
+          label={`${w.amount} (${currency})`}
           value={amount}
           type="number"
-          onChange={(x) => setAmount(Number(x))}
+          step="0.01"
+          onChange={setAmount}
         />
         <Field label={w.transaction} value={reference} onChange={setReference} required />
         <Field label={w.reason} value={reason} onChange={setReason} required />
         <Check label={w.funds} checked={verified} onChange={setVerified} />
         <Check label={w.refundAccess} checked={revoke} onChange={setRevoke} />
-        <Button type="submit" disabled={busy || !allocation || !verified || amount <= 0}>
+        <Button
+          type="submit"
+          disabled={
+            busy || !allocation || !verified || !Number.isFinite(amountMinor) || amountMinor <= 0
+          }
+        >
           {w.refund}
         </Button>
       </form>
