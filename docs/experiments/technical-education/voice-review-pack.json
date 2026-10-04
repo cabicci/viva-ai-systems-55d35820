@@ -25,19 +25,32 @@
           "concept_id": "dimensions",
           "spoken": "خلّينا نبدأ بالمقاس الكُلّي للوحدة. العرض ستّمية ملّي، والارتفاع ستّمية ملّي، والعمق تلاتمية ملّي. هنراجع المقاسات دي على الرسم قبل ما نجهّز قائمة القِطَع.",
           "focus": "ستّمية: set-meyya; تلاتمية: talaat-meyya; ملّي: mil-li; القِطَع: el-e-ta'",
-          "numeric_fact_keys": ["overall_width_mm", "overall_height_mm", "overall_depth_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "overall_height_mm",
+            "overall_depth_mm"
+          ]
         },
         {
           "concept_id": "internal_width",
           "spoken": "القاع راكب بين الجنبين. عشان نطلع عرضه، هنطرح سُمك الجنبين من العرض الكُلّي. سُمك كل جنب تمنتاشر ملّي. يبقى ستّمية ناقص تمنتاشر، ناقص تمنتاشر: الناتج خُمسُمية أربعة وستّين ملّي.",
           "focus": "القاع: el-aa'; سُمك: somk; تمنتاشر: ta-man-taa-shar; خُمسُمية: khom-someyya; أربعة وستّين: arba'a we set-teen",
-          "numeric_fact_keys": ["overall_width_mm", "body_panel_thickness_mm", "internal_width_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "body_panel_thickness_mm",
+            "internal_width_mm"
+          ]
         },
         {
           "concept_id": "overlay_back_and_scope",
           "spoken": "عمق الهيكل ميتين أربعة وتسعين ملّي. الظهر راكب من برّه، وسُمكه ستّة ملّي. لما نضيفه، العمق الكُلّي يبقى تلاتمية ملّي. الحركة هنا بتوضّح مكان الستّ قِطَع. الوصلات والتثبيت والسماحات لازم الورشة تراجعهم وتعتمدهم قبل التصنيع.",
           "focus": "الهيكل: el-hay-kal; ميتين أربعة وتسعين: mey-teen arba'a we tes-een; من برّه: men barra; سماحات: sa-maa-haat",
-          "numeric_fact_keys": ["body_depth_mm", "overlay_back_thickness_mm", "overall_depth_mm", "piece_count"]
+          "numeric_fact_keys": [
+            "body_depth_mm",
+            "overlay_back_thickness_mm",
+            "overall_depth_mm",
+            "piece_count"
+          ]
         }
       ]
     },
@@ -48,19 +61,32 @@
           "concept_id": "dimensions",
           "spoken": "نبدأ بالأبعاد الكُلّية للوحدة: عرضها ستمئة مليمتر، وارتفاعها ستمئة مليمتر، وعمقها ثلاثمئة مليمتر. نراجع هذه الأبعاد في الرسم قبل إعداد قائمة القطع.",
           "focus": "الكُلّية; ستمئة; مليمتر; قائمة القطع",
-          "numeric_fact_keys": ["overall_width_mm", "overall_height_mm", "overall_depth_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "overall_height_mm",
+            "overall_depth_mm"
+          ]
         },
         {
           "concept_id": "internal_width",
           "spoken": "يقع اللوح السفلي بين اللوحين الجانبيين. لحساب عرضه، نطرح سُمكهما من العرض الكُلّي. سُمك كل لوح جانبي ثمانية عشر مليمترًا. إذن: ستمئة ناقص ثمانية عشر، ناقص ثمانية عشر، يساوي خمسمئة وأربعة وستين مليمترًا.",
           "focus": "السفلي; الجانبيين; سُمكهما; ثمانية عشر; خمسمئة وأربعة وستين",
-          "numeric_fact_keys": ["overall_width_mm", "body_panel_thickness_mm", "internal_width_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "body_panel_thickness_mm",
+            "internal_width_mm"
+          ]
         },
         {
           "concept_id": "overlay_back_and_scope",
           "spoken": "عمق الهيكل مئتان وأربعة وتسعون مليمترًا. يغطي اللوح الخلفي الهيكل من الخارج، وسُمكه ستة مليمترات. بإضافته يصبح العمق الكُلّي ثلاثمئة مليمتر. توضح الحركة مواقع القطع الست فقط. يجب أن تراجع الورشة الوصلات والتثبيت وسماحات التشغيل وتعتمدها قبل التصنيع.",
           "focus": "مئتان وأربعة وتسعون; سُمكه; سماحات التشغيل",
-          "numeric_fact_keys": ["body_depth_mm", "overlay_back_thickness_mm", "overall_depth_mm", "piece_count"]
+          "numeric_fact_keys": [
+            "body_depth_mm",
+            "overlay_back_thickness_mm",
+            "overall_depth_mm",
+            "piece_count"
+          ]
         }
       ]
     },
@@ -71,19 +97,32 @@
           "concept_id": "dimensions",
           "spoken": "خلّنا نبدأ بالمقاس الكلّي للوحدة. عرضها ستمية ملي، وارتفاعها ستمية ملي، وعمقها ثلاثمية ملي. نراجع هالمقاسات على الرسم قبل ما نجهّز قائمة القطع.",
           "focus": "ستمية; ثلاثمية; ملي; هالمقاسات",
-          "numeric_fact_keys": ["overall_width_mm", "overall_height_mm", "overall_depth_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "overall_height_mm",
+            "overall_depth_mm"
+          ]
         },
         {
           "concept_id": "internal_width",
           "spoken": "اللوح السفلي يركب بين الجانبين. عشان نحسب عرضه، نطرح سماكة الجانبين من العرض الكلّي. سماكة كل جانب ثمنتعش ملي. يعني ستمية ناقص ثمنتعش، ناقص ثمنتعش: الناتج خمسمية وأربعة وستين ملي.",
           "focus": "اللوح السفلي; سماكة; ثمنتعش; خمسمية وأربعة وستين",
-          "numeric_fact_keys": ["overall_width_mm", "body_panel_thickness_mm", "internal_width_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "body_panel_thickness_mm",
+            "internal_width_mm"
+          ]
         },
         {
           "concept_id": "overlay_back_and_scope",
           "spoken": "عمق الهيكل ميتين وأربعة وتسعين ملي. لوح الظهر يغطّي الهيكل من برّا، وسماكته ستة ملي. معاه يصير العمق الكلّي ثلاثمية ملي. الحركة توضّح مكان القطع الست بس. لازم الورشة تراجع الوصلات والتثبيت وسماحات التشغيل وتعتمدها قبل التصنيع.",
           "focus": "ميتين وأربعة وتسعين; من برّا; سماحات التشغيل",
-          "numeric_fact_keys": ["body_depth_mm", "overlay_back_thickness_mm", "overall_depth_mm", "piece_count"]
+          "numeric_fact_keys": [
+            "body_depth_mm",
+            "overlay_back_thickness_mm",
+            "overall_depth_mm",
+            "piece_count"
+          ]
         }
       ]
     },
@@ -94,19 +133,32 @@
           "concept_id": "dimensions",
           "spoken": "Start with the cabinet's overall dimensions: six hundred millimetres wide, six hundred millimetres tall, and three hundred millimetres deep. Check those dimensions on the drawing before preparing the cut list.",
           "focus": "overall dimensions; millimetres; cut list",
-          "numeric_fact_keys": ["overall_width_mm", "overall_height_mm", "overall_depth_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "overall_height_mm",
+            "overall_depth_mm"
+          ]
         },
         {
           "concept_id": "internal_width",
           "spoken": "The bottom panel fits between the sides. To find its width, subtract both side thicknesses from the overall width. Each side is eighteen millimetres thick. Six hundred minus eighteen, minus eighteen, gives five hundred and sixty-four millimetres.",
           "focus": "bottom panel; thicknesses; eighteen; five hundred and sixty-four",
-          "numeric_fact_keys": ["overall_width_mm", "body_panel_thickness_mm", "internal_width_mm"]
+          "numeric_fact_keys": [
+            "overall_width_mm",
+            "body_panel_thickness_mm",
+            "internal_width_mm"
+          ]
         },
         {
           "concept_id": "overlay_back_and_scope",
           "spoken": "The body is two hundred and ninety-four millimetres deep. The overlay back covers the body from the outside and is six millimetres thick. Adding it gives an overall depth of three hundred millimetres. This animation shows where the six pieces belong. The workshop must review and approve joints, fixings and machining allowances before fabrication.",
           "focus": "two hundred and ninety-four; overlay back; machining allowances; fabrication",
-          "numeric_fact_keys": ["body_depth_mm", "overlay_back_thickness_mm", "overall_depth_mm", "piece_count"]
+          "numeric_fact_keys": [
+            "body_depth_mm",
+            "overlay_back_thickness_mm",
+            "overall_depth_mm",
+            "piece_count"
+          ]
         }
       ]
     }
@@ -118,6 +170,138 @@
     "Review the transformed text that is actually sent to TTS; a focus hint must not change technical meaning.",
     "Regenerate only rejected segments; match animation timing to the accepted audio duration.",
     "Keep display text, spoken text and captions separately authored and linked by concept_id.",
-    "Label naturalness review as pending until a proficient listener accepts each locale."
-  ]
+    "Label naturalness review as pending until a proficient listener accepts each locale.",
+    "For Egyptian qaf, accept or reject pronunciation word by word in sentence context. Do not approve a blanket qaf-to-hamza rule; technical terms and exceptions require listener review."
+  ],
+  "egyptian_qaf_review": {
+    "status": "required_pending_word_context_and_listening_review",
+    "user_requirement": "القاف في العامية المصرية تُراجع حسب الكلمة والسياق؛ لا تعميم لنطقها همزة أو قاف.",
+    "observed_issue": "Legacy EGYPTIAN_RULES_COMPACT contains a blanket qaf-to-hamza instruction. The existing word map can additionally rewrite words. Neither establishes listener acceptance.",
+    "scope": "Technical Egyptian narration only. Preserve other platform lessons and other locale voices.",
+    "word_inventory": {
+      "M01-L01": [
+        "الحقيبة",
+        "الحقيبتين",
+        "العمق",
+        "القرار",
+        "القطعة",
+        "القياسات",
+        "القيود",
+        "الموقع",
+        "تقدر",
+        "حقيبة",
+        "طريقة",
+        "قائمة",
+        "قال",
+        "قبل",
+        "قطعة",
+        "لحقيبتين",
+        "مقاس",
+        "ومقاس",
+        "ونقيس",
+        "يبقى",
+        "يقول"
+      ],
+      "M01-L02": [
+        "أرقام",
+        "اتقاس",
+        "العوائق",
+        "الفرق",
+        "القراءات",
+        "القراءتين",
+        "القرار",
+        "القياسات",
+        "المقابس",
+        "رقم",
+        "فرق",
+        "فوق",
+        "قبل",
+        "قيس",
+        "للقياس",
+        "مقابل",
+        "مقاس",
+        "مقفولة",
+        "ناقص",
+        "وافقش",
+        "وتوثّق",
+        "وطريقة"
+      ],
+      "M01-L03": [
+        "الانقلاب",
+        "القائمة",
+        "القرار",
+        "القياسات",
+        "القياسي",
+        "المقاسات",
+        "المقبس",
+        "النطاق",
+        "بمقاس",
+        "بيقيس",
+        "علاقة",
+        "قبل",
+        "قسّم",
+        "مستقل",
+        "مقاس",
+        "مقبس",
+        "موقعها",
+        "نطاقه",
+        "هتبقى",
+        "هتتنقل",
+        "وتنسيقه",
+        "وطريقة",
+        "ونقطة",
+        "ونقل"
+      ],
+      "M01-L04": [
+        "القائمة",
+        "القديم",
+        "القديمة",
+        "القرار",
+        "القطع",
+        "المقاس",
+        "الموقع",
+        "النقل",
+        "رقم",
+        "قائمة",
+        "قبل",
+        "قدرات",
+        "قفل",
+        "نقاط",
+        "نقطة",
+        "نقل",
+        "وأوقف",
+        "والقائمة",
+        "وقائمة"
+      ],
+      "M04-L02": [
+        "السقف",
+        "العمق",
+        "القاع",
+        "عمق",
+        "قبل",
+        "قد",
+        "قطع",
+        "قطعة",
+        "مقاس",
+        "ناقص",
+        "نقسمهم",
+        "والقائمة",
+        "والقاع",
+        "وسقف",
+        "وعمقه",
+        "وعمقها",
+        "وقاع",
+        "يبقوا",
+        "يبقى",
+        "يتبقّى"
+      ]
+    },
+    "acceptance_steps": [
+      "Review the original word, sentence context and post-rewrite TTS input together; preserve technical meaning.",
+      "Record word-level pronunciation decisions and exceptions after proficient Egyptian listener review; do not infer a universal letter substitution.",
+      "Replace the blanket technical Egyptian instruction before a pronunciation correction batch; include the scoped policy in audio-cache fingerprints.",
+      "Regenerate rejected segments only, review the actual audio, then update video timing and Bunny mapping.",
+      "The Cairo typography batch reuses previous audio and is not evidence that pronunciation was corrected."
+    ]
+  }
 }
