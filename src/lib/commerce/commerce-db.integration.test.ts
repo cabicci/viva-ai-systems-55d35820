@@ -58,7 +58,14 @@ beforeAll(async () => {
     for (const sql of accountDeletionSchemaSql(true)) await nativeClient.unsafe(sql);
     db = {
       query: async <T>(sql: string, args: unknown[] = []) => ({
-        rows: (await nativeClient!.unsafe(sql, args as never)) as unknown as T[],
+        rows: (await nativeClient!.unsafe(
+          sql,
+          args.map((v) =>
+            typeof v === "string" && (v.startsWith("{") || v.startsWith("["))
+              ? nativeClient!.json(JSON.parse(v))
+              : v,
+          ) as never,
+        )) as unknown as T[],
       }),
       exec: async (sql) => nativeClient!.unsafe(sql),
       close: () => nativeClient!.end(),
@@ -764,6 +771,7 @@ it.skipIf(!nativeUrl)(
       enabled: true,
     });
     const clients = [postgres(nativeUrl, { max: 1 }), postgres(nativeUrl, { max: 1 })];
+    const nativeKey = `native-${randomUUID()}-`;
     try {
       const results = await Promise.allSettled(
         clients.map(async (client, index) => {
@@ -772,13 +780,13 @@ it.skipIf(!nativeUrl)(
             [index === 0 ? user : other],
           );
           return client.unsafe("SELECT public.commerce_command('create_order',$1::jsonb)", [
-            JSON.stringify({
+            client.json({
               package: "pro",
               market: "EG",
               billing_interval: "month",
               method: "admin",
               code: "CONCURRENT",
-              key: randomUUID(),
+              key: nativeKey + index,
             }),
           ]);
         }),
@@ -796,10 +804,10 @@ it.skipIf(!nativeUrl)(
         market: "EG",
         billing_interval: "month",
         method: "instapay",
-        key: randomUUID(),
+        key: nativeKey + "order",
       });
       const payment = {
-        key: randomUUID(),
+        key: nativeKey + "payment",
         method: "instapay",
         currency: "EGP",
         amount_minor: order.final_minor,
@@ -815,7 +823,7 @@ it.skipIf(!nativeUrl)(
             [admin],
           );
           return client.unsafe("SELECT public.commerce_command('confirm',$1::jsonb) AS value", [
-            JSON.stringify(payment),
+            client.json(payment),
           ]);
         }),
       );
@@ -827,6 +835,16 @@ it.skipIf(!nativeUrl)(
       ).toBe(1);
     } finally {
       await Promise.all(clients.map((client) => client.end()));
+      await db.query("DELETE FROM billing.commerce_audit WHERE details->>'key' LIKE $1", [
+        nativeKey + "%",
+      ]);
+      await db.query("DELETE FROM billing.commerce_orders WHERE request_key LIKE $1", [
+        nativeKey + "%",
+      ]);
+      await db.query("DELETE FROM billing.commerce_payments WHERE request_key LIKE $1", [
+        nativeKey + "%",
+      ]);
+      await db.exec("DELETE FROM billing.commerce_offers WHERE code='CONCURRENT'");
     }
   },
 );
@@ -860,6 +878,15 @@ it("uses private receipts, records out-of-order delivery durably and checks real
     );
     const outbox = claims.rows[0].value[0];
     expect(outbox).toBeDefined();
+    await db.exec(
+      "INSERT INTO public.contact_acknowledgement_outbox(id,recipient,locale,stream,subject,text_body,html_body,provider_email_id) VALUES(gen_random_uuid(),'member@example.test','en','support','Synthetic','Synthetic','Synthetic','existing_contact_email')",
+    );
+    expect(
+      await value(
+        "SELECT public.record_contact_mail_receipt('existing-delivered','existing_contact_email','member@example.test','email.delivered',now()) AS value",
+      ),
+    ).toBe("recorded");
+    expect(await value("SELECT count(*)::int AS value FROM public.contact_mail_receipts")).toBe(1);
     expect(
       await value(
         "SELECT public.record_contact_mail_receipt('early','synthetic_email','member@example.test','email.delivered',now()) AS value",
@@ -881,6 +908,24 @@ it("uses private receipts, records out-of-order delivery durably and checks real
       await value("SELECT public AS value FROM storage.buckets WHERE id='commerce-receipts'"),
     ).toBe(false);
     expect(await value("SELECT count(*)::int AS value FROM billing.commerce_entitlements")).toBe(0);
+    await caller(admin);
+    const secondGroup = await command("create_group", { name: "Late suppression" });
+    const second = await command("import", { group_id: secondGroup.id, rows: [row] });
+    await command("queue", { ids: [second[0].id] });
+    await command("group_state", { id: secondGroup.id, state: "ready" });
+    await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+    const secondClaim = await value<{ id: string }[]>(
+      `SELECT public.commerce_mail('claim','${JSON.stringify({ actor: admin, group_id: secondGroup.id })}'::jsonb) AS value`,
+    );
+    expect(secondClaim).toHaveLength(1);
+    await db.exec(
+      "SELECT public.record_contact_mail_receipt('existing-failed','existing_contact_email','member@example.test','email.failed',now())",
+    );
+    expect(
+      await value(
+        `SELECT public.commerce_mail('authorize_attempt','${JSON.stringify({ id: secondClaim[0].id })}'::jsonb) AS value`,
+      ),
+    ).toBe(false);
   } finally {
     await db.exec("ROLLBACK");
   }
@@ -966,6 +1011,13 @@ it("preserves canonical Stripe paid access after a separate gift is revoked", as
         `SELECT access_state AS value FROM billing.subscriptions WHERE user_id='${user}'`,
       ),
     ).toBe("paid_active");
+    await db.query("UPDATE auth.users SET email_confirmed_at=NULL WHERE id=$1", [user]);
+    expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+    await denied(
+      "quote",
+      { package: "pro", market: "EG", billing_interval: "month" },
+      /IDENTITY_UNAVAILABLE/,
+    );
     await db.exec("UPDATE billing.commerce_control SET enabled=false");
     expect(await value("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
   } finally {

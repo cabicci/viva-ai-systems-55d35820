@@ -13,6 +13,7 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
 export const Route = createFileRoute("/payments")({
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
   beforeLoad: requireAuthBeforeLoad,
   component: () => (
     <AuthSessionGate>

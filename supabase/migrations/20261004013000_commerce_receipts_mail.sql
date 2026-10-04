@@ -93,7 +93,7 @@ DECLARE v_actor uuid; r record; v_rows jsonb:='[]'; v_id uuid; BEGIN
      ORDER BY o.created_at FOR UPDATE OF o SKIP LOCKED LIMIT 25
    LOOP
      IF NOT billing.lc09_contact_recipient_active(r.recipient) OR EXISTS(SELECT 1 FROM billing.commerce_mail_preferences WHERE email=r.recipient AND (marketing_opt_out OR suppressed))
-       OR EXISTS(SELECT 1 FROM public.contact_mail_receipts c JOIN public.contact_acknowledgement_outbox a ON a.id=c.outbox_id WHERE a.recipient=r.recipient AND c.event_type IN ('email.bounced','email.complained','email.suppressed')) THEN
+       OR EXISTS(SELECT 1 FROM public.contact_mail_receipts c JOIN public.contact_acknowledgement_outbox a ON a.id=c.outbox_id WHERE a.recipient=r.recipient AND c.event_type IN ('email.bounced','email.failed','email.complained','email.suppressed')) THEN
        UPDATE billing.commerce_outbox SET status='suppressed',delivery='suppressed' WHERE id=r.id; CONTINUE;
      END IF;
      -- Provider idempotency is bounded. Unknown outcomes become manual review
@@ -109,7 +109,8 @@ DECLARE v_actor uuid; r record; v_rows jsonb:='[]'; v_id uuid; BEGIN
    v_id:=(p_data->>'id')::uuid;
    IF NOT EXISTS(SELECT 1 FROM billing.commerce_outbox o JOIN billing.commerce_invitations i ON i.id=o.invitation_id JOIN billing.commerce_groups g ON g.id=i.group_id
      WHERE o.id=v_id AND o.status='sending' AND o.lease_until>now() AND g.send_state='ready' AND i.revoked_at IS NULL AND i.accepted_at IS NULL AND i.deadline>now()
-     AND billing.lc09_contact_recipient_active(o.recipient) AND NOT EXISTS(SELECT 1 FROM billing.commerce_mail_preferences WHERE email=o.recipient AND (marketing_opt_out OR suppressed)))
+     AND billing.lc09_contact_recipient_active(o.recipient) AND NOT EXISTS(SELECT 1 FROM billing.commerce_mail_preferences WHERE email=o.recipient AND (marketing_opt_out OR suppressed))
+     AND NOT EXISTS(SELECT 1 FROM public.contact_mail_receipts c JOIN public.contact_acknowledgement_outbox a ON a.id=c.outbox_id WHERE a.recipient=o.recipient AND c.event_type IN ('email.bounced','email.failed','email.complained','email.suppressed')))
      OR NOT EXISTS(SELECT 1 FROM billing.commerce_control WHERE enabled AND invitations_enabled) THEN
      UPDATE billing.commerce_outbox SET status='pending',lease_until=NULL WHERE id=v_id AND status='sending'; RETURN 'false'; END IF;
    RETURN 'true';
@@ -147,6 +148,11 @@ DECLARE v_id uuid; BEGIN
  IF NOT billing.is_service_role_caller() THEN RAISE EXCEPTION 'COMMERCE_SERVICE_ONLY'; END IF;
  SELECT id INTO v_id FROM billing.commerce_outbox WHERE provider_email_id=p_email_id AND recipient=lower(p_recipient) FOR UPDATE;
  IF v_id IS NULL THEN
+  -- A known existing contact event must reach its existing handler even while
+  -- an invitation to the same recipient has an uncertain provider result.
+  IF EXISTS(SELECT 1 FROM public.contact_acknowledgement_outbox WHERE provider_email_id=p_email_id AND recipient=lower(p_recipient)) THEN
+    RETURN public.commerce_previous_record_contact_mail_receipt(p_event,p_email_id,p_recipient,p_type,p_at);
+  END IF;
   IF EXISTS(SELECT 1 FROM billing.commerce_outbox WHERE recipient=lower(p_recipient) AND provider_email_id IS NULL AND first_attempt_at IS NOT NULL AND status IN ('sending','pending')) THEN RETURN 'pending'; END IF;
   RETURN public.commerce_previous_record_contact_mail_receipt(p_event,p_email_id,p_recipient,p_type,p_at); END IF;
  IF p_type NOT IN ('email.delivered','email.delivery_delayed','email.bounced','email.failed','email.complained','email.suppressed') OR p_at IS NULL THEN RETURN 'ignored'; END IF;

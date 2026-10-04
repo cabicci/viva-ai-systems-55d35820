@@ -15,6 +15,7 @@ import { AdminGroups } from "@/components/commerce/AdminGroups";
 import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
 export const Route = createFileRoute("/admin/commerce")({
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
   beforeLoad: requireAdminBeforeLoad,
   component: CommerceAdmin,
 });

@@ -9,7 +9,10 @@ import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Navbar } from "@/components/site/Navbar";
 import { Button } from "@/components/ui/button";
-export const Route = createFileRoute("/invitations/$invitationId")({ component: InvitationPage });
+export const Route = createFileRoute("/invitations/$invitationId")({
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
+  component: InvitationPage,
+});
 function InvitationPage() {
   const { invitationId } = Route.useParams(),
     { user, loading } = useAuth(),

@@ -120,7 +120,9 @@ END $$;
 CREATE FUNCTION billing.commerce_account_allowed(p_user uuid) RETURNS boolean
 LANGUAGE plpgsql SECURITY DEFINER SET search_path=billing,public,pg_temp AS $$
 BEGIN
- IF billing.account_deletion_blocked(p_user) OR NOT EXISTS(SELECT 1 FROM auth.users WHERE id=p_user AND email_confirmed_at IS NOT NULL)
+ -- Verified identity is enforced when NEW orders/grants/invitations are issued.
+ -- Preserve the installed reader's eligibility for pre-existing paid sources.
+ IF billing.account_deletion_blocked(p_user)
    OR EXISTS(SELECT 1 FROM billing.subscriptions WHERE user_id=p_user AND access_state='suspended') THEN RETURN false; END IF;
  RETURN true;
 END $$;

@@ -96,6 +96,27 @@ export const ROUTE_CATALOG = [
     robotsPath: "/account",
   },
   {
+    source: "payments.tsx",
+    pattern: "/payments",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/payments",
+  },
+  {
+    source: "invitations.$invitationId.tsx",
+    pattern: "/invitations/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/invitations/",
+  },
+  {
+    source: "admin.commerce.tsx",
+    pattern: "/admin/commerce",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/admin",
+  },
+  {
     source: "admin.index.tsx",
     pattern: "/admin/",
     visibility: "private",
