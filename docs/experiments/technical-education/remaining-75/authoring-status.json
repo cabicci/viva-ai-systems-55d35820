@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "record_scope": "isolated remaining-75 authoring execution; not learner availability",
+  "parent_commit": "a908cb5698dfa00d7552658413f23fe93ff0f2c0",
+  "status": "in_progress",
+  "remaining_lesson_count": 75,
+  "expected_locale_package_count": 300,
+  "new_authored_lesson_count": 4,
+  "new_authored_locale_package_count": 16,
+  "source_evidence": {
+    "library_file_id": "libfile_e700ff35ecc48191a7c4f0425700a7f8",
+    "resolved_filename": "Metwood_Furniture_Design(1).pdf",
+    "resolved_size_bytes": 183250232,
+    "reported_pdf_page_count": 408,
+    "materialization_attempts": 2,
+    "error": "library download request failed: download failed with HTTP status 502",
+    "internal_failure_stage": "unverified",
+    "local_reference_available": true,
+    "reference_visual_review_this_branch": true,
+    "verified_sha256": "63ae6c7b933fe33cacddbb32210390d43926da632b72d9cbeb5643f10bc6a136",
+    "verified_page_count": 408,
+    "recovery": "coordinator materialized via documented workspace placement and applied Library identity",
+    "reviewed_pdf_pages": [
+      5,
+      6,
+      7,
+      23,
+      25,
+      26,
+      27,
+      44,
+      63,
+      64,
+      75,
+      76,
+      78,
+      80,
+      83,
+      97,
+      98,
+      102,
+      104,
+      109,
+      110,
+      111,
+      124,
+      126,
+      155,
+      175,
+      204,
+      212
+    ],
+    "review_scope": "selected source pages; dimensional/regulatory/example-price claims are not blanket accepted"
+  },
+  "batches": [
+    {
+      "module_id": "M02",
+      "lesson_ids": [
+        "M02-L01",
+        "M02-L02",
+        "M02-L03",
+        "M02-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "reading_assets_verified_video_text_pending_voice_review",
+      "new_authored_lesson_count": 4,
+      "new_authored_locale_package_count": 16,
+      "pdf_count": 32,
+      "unique_concept_diagrams": 12,
+      "pdf_rendered_page_count": 64,
+      "runtime_viewport_cases_passed": 32
+    },
+    {
+      "module_id": "M03",
+      "lesson_ids": [
+        "M03-L01",
+        "M03-L02",
+        "M03-L03",
+        "M03-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M04",
+      "lesson_ids": [
+        "M04-L01",
+        "M04-L03",
+        "M04-L04"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M05",
+      "lesson_ids": [
+        "M05-L01",
+        "M05-L02",
+        "M05-L03",
+        "M05-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M06",
+      "lesson_ids": [
+        "M06-L01",
+        "M06-L02",
+        "M06-L03",
+        "M06-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M07",
+      "lesson_ids": [
+        "M07-L01",
+        "M07-L02",
+        "M07-L03",
+        "M07-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M08",
+      "lesson_ids": [
+        "M08-L01",
+        "M08-L02",
+        "M08-L03"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M09",
+      "lesson_ids": [
+        "M09-L01",
+        "M09-L02",
+        "M09-L03",
+        "M09-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M10",
+      "lesson_ids": [
+        "M10-L01",
+        "M10-L02",
+        "M10-L03"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M11",
+      "lesson_ids": [
+        "M11-L01",
+        "M11-L02",
+        "M11-L03",
+        "M11-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M12",
+      "lesson_ids": [
+        "M12-L01",
+        "M12-L02",
+        "M12-L03",
+        "M12-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M13",
+      "lesson_ids": [
+        "M13-L01",
+        "M13-L02",
+        "M13-L03",
+        "M13-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M14",
+      "lesson_ids": [
+        "M14-L01",
+        "M14-L02",
+        "M14-L03",
+        "M14-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M15",
+      "lesson_ids": [
+        "M15-L01",
+        "M15-L02",
+        "M15-L03",
+        "M15-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M16",
+      "lesson_ids": [
+        "M16-L01",
+        "M16-L02",
+        "M16-L03",
+        "M16-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M17",
+      "lesson_ids": [
+        "M17-L01",
+        "M17-L02",
+        "M17-L03",
+        "M17-L04",
+        "M17-L05"
+      ],
+      "lesson_count": 5,
+      "expected_locale_package_count": 20,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M18",
+      "lesson_ids": [
+        "M18-L01",
+        "M18-L02",
+        "M18-L03"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M19",
+      "lesson_ids": [
+        "M19-L01",
+        "M19-L02",
+        "M19-L03"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M20",
+      "lesson_ids": [
+        "M20-L01",
+        "M20-L02",
+        "M20-L03",
+        "M20-L04"
+      ],
+      "lesson_count": 4,
+      "expected_locale_package_count": 16,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    },
+    {
+      "module_id": "M21",
+      "lesson_ids": [
+        "M21-L01",
+        "M21-L02",
+        "M21-L03"
+      ],
+      "lesson_count": 3,
+      "expected_locale_package_count": 12,
+      "status": "queued",
+      "new_authored_lesson_count": 0,
+      "new_authored_locale_package_count": 0
+    }
+  ],
+  "authored_draft_lesson_count": 0,
+  "count_definition": "new_authored counts represent verified complete lesson batches; draft counts are not completion",
+  "remaining_unauthored_lesson_count": 71,
+  "video_outputs_created": 0,
+  "voice_outputs_created": 0
+}

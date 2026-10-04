@@ -1,3 +1,5 @@
+import { AdditionalTechnicalDiagram } from "./AdditionalTechnicalDiagram";
+import additionalDiagrams from "../../lib/technical-education/new-diagrams.json";
 import type { SupportedLocale } from "../../lib/locale/types";
 import type { TechnicalDiagramKind } from "../../lib/technical-education/types";
 
@@ -11,6 +13,14 @@ export function TechnicalDiagram({
   locale: SupportedLocale;
   title: string;
 }) {
+  if (kind in additionalDiagrams)
+    return (
+      <AdditionalTechnicalDiagram
+        kind={kind as keyof typeof additionalDiagrams}
+        locale={locale}
+        title={title}
+      />
+    );
   const en = locale === "en";
   const t = (ar: string, english: string) => (en ? english : ar);
   const ink = "#203f45",

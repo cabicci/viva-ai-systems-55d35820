@@ -13,6 +13,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE / "lib"))
 from gemini_tts import synthesize_segments, GAP_MS  # noqa: E402
+from technical_egyptian import technical_policy  # noqa: E402
 from captions_vtt import write_captions_vtt  # noqa: E402
 
 
@@ -42,7 +43,8 @@ def main():
     audio = work / "audio/master.mp3"
     segments = [(i, "Charon", scene["spoken"], scene.get("focus", "")) for i, scene in enumerate(scenes)]
     durations = synthesize_segments(segments, str(audio.parent), str(audio),
-                                   locale=None if args.locale == "ar-EG" else args.locale)
+                                   locale=None if args.locale == "ar-EG" else args.locale,
+                                   narration_policy=technical_policy(args.locale))
     frames = [math.ceil((duration + (GAP_MS / 1000 if i < len(durations) - 1 else 0.5)) * 30)
               for i, duration in enumerate(durations)]
     props = work / "props.json"

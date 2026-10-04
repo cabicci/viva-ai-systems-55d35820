@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -15,6 +16,7 @@ VOICE = "Charon"
 FOCUS = "Clear workshop vocabulary; preserve dimensions and decision meaning."
 sys.path.insert(0, str(HERE / "lib"))
 from gemini_tts import synthesize_segments, GAP_MS  # noqa: E402
+from technical_egyptian import technical_policy  # noqa: E402
 from captions_vtt import write_captions_vtt  # noqa: E402
 from importlib.util import spec_from_file_location, module_from_spec
 spec = spec_from_file_location("furniture_builder", HERE / "build-furniture-pilot.py")
@@ -23,13 +25,29 @@ spec.loader.exec_module(furniture)
 
 
 def package_path(lesson_id, locale):
-    if lesson_id not in {f"technical-m01-l0{i}" for i in range(1, 5)}:
-        raise ValueError("Only reviewed M01 lesson IDs are eligible for this production batch")
+    if not re.fullmatch(r"technical-m\d{2}-l\d{2}", lesson_id):
+        raise ValueError("Invalid technical lesson ID")
     canonical_id = lesson_id.removeprefix("technical-").upper()
-    return ROOT / f"src/lib/technical-education/lessons/{canonical_id}__{locale}.json"
+    path = ROOT / f"src/lib/technical-education/lessons/{canonical_id}__{locale}.json"
+    lesson = json.loads(path.read_text())
+    if lesson.get("id") != canonical_id or lesson.get("locale") != locale:
+        raise ValueError("Narration package identity does not match the requested lesson")
+    return path
+
+
+def reuse_unchanged(key, digest, field, locale):
+    """Exact reviewed migration guards, never a broad cache fallback."""
+    if locale == "ar-EG":
+        return digest
+    path = ROOT / "docs/experiments/technical-education/media-cache-compatibility.json"
+    if not path.exists():
+        return digest
+    entry = json.loads(path.read_text()).get("entries", {}).get(key, {}).get(field, {})
+    return entry.get("reuse", digest) if entry.get("guard") == digest else digest
 
 
 def fingerprint(lesson_id, locale):
+    used_definitions = None
     paths = [HERE / "build-technical-lesson.py", HERE / "build-furniture-pilot.py",
              HERE / "lib/gemini_tts.py", HERE / "lib/locale_profiles.py",
              HERE / "lib/egyptian_phonetic.py", ROOT / "remotion/src/furniture/index.tsx"]
@@ -43,10 +61,38 @@ def fingerprint(lesson_id, locale):
     # Shared Cairo source is part of Arabic visual revisions, never the voice cache.
     if locale != "en":
         paths += [ROOT / "remotion/src/theme.ts"]
+    if locale == "ar-EG":
+        paths += [HERE / "lib/technical_egyptian.py"]
+    # New concept drawings are part of the lesson's visual revision.
+    if lesson_id != "furniture-m1-cut-list":
+        lesson = json.loads(package_path(lesson_id, locale).read_text())
+        if any(s["diagram"].startswith("new-") for s in lesson["sections"]):
+            paths += [ROOT / "src/components/technical-education/AdditionalTechnicalDiagram.tsx"]
+            definitions = json.loads((ROOT / "src/lib/technical-education/new-diagrams.json").read_text())
+            used_definitions = {s["diagram"]: definitions[s["diagram"]] for s in lesson["sections"]}
     h = hashlib.sha256(lesson_id.encode() + locale.encode())
     for p in sorted(set(paths)):
         h.update(str(p.relative_to(ROOT)).encode() + b"\0" + p.read_bytes())
-    return h.hexdigest()
+    if used_definitions is not None:
+        h.update(b"concept-definitions\0" + json.dumps(used_definitions, ensure_ascii=False, sort_keys=True).encode())
+    return reuse_unchanged(f"{lesson_id}__{locale}", h.hexdigest(), "render", locale)
+
+
+def audio_fingerprint(lesson_id, locale):
+    if lesson_id == "furniture-m1-cut-list":
+        data = json.loads((ROOT / "remotion/src/furniture/script.json").read_text())[locale]
+        spoken = [{"spoken": s["spoken"], "focus": s.get("focus", "")} for s in data]
+    else:
+        lesson = json.loads(package_path(lesson_id, locale).read_text())
+        spoken = [lesson["intro"], *[s["text"] for s in lesson["sections"]], lesson["example"]["text"] + " " + lesson["example"]["decision"]]
+    h = hashlib.sha256(json.dumps({"spoken": spoken, "voice": VOICE, "locale": locale, "focus": FOCUS if lesson_id != "furniture-m1-cut-list" else "per-scene"}, ensure_ascii=False, sort_keys=True).encode())
+    if lesson_id == "furniture-m1-cut-list":
+        h.update((HERE / "build-furniture-pilot.py").read_bytes())
+    for name in ["gemini_tts.py", "locale_profiles.py", "egyptian_phonetic.py"]:
+        h.update((HERE / "lib" / name).read_bytes())
+    if locale == "ar-EG":
+        h.update((HERE / "lib/technical_egyptian.py").read_bytes())
+    return reuse_unchanged(f"{lesson_id}__{locale}", h.hexdigest(), "audio", locale)
 
 
 def main():
@@ -57,17 +103,7 @@ def main():
     parser.add_argument("--audio-fingerprint", action="store_true")
     args = parser.parse_args()
     if args.audio_fingerprint:
-        if args.lesson_id == "furniture-m1-cut-list":
-            data = json.loads((ROOT / "remotion/src/furniture/script.json").read_text())[args.locale]
-            spoken = [{"spoken": s["spoken"], "focus": s.get("focus", "")} for s in data]
-        else:
-            lesson = json.loads(package_path(args.lesson_id, args.locale).read_text())
-            spoken = [lesson["intro"], *[s["text"] for s in lesson["sections"]], lesson["example"]["text"] + " " + lesson["example"]["decision"]]
-        h = hashlib.sha256(json.dumps({"spoken": spoken, "voice": VOICE, "locale": args.locale, "focus": FOCUS if args.lesson_id != "furniture-m1-cut-list" else "per-scene"}, ensure_ascii=False, sort_keys=True).encode())
-        if args.lesson_id == "furniture-m1-cut-list": h.update((HERE / "build-furniture-pilot.py").read_bytes())
-        for name in ["gemini_tts.py", "locale_profiles.py", "egyptian_phonetic.py"]:
-            h.update((HERE / "lib" / name).read_bytes())
-        print(h.hexdigest())
+        print(audio_fingerprint(args.lesson_id, args.locale))
         return
     if args.fingerprint:
         print(fingerprint(args.lesson_id, args.locale))
@@ -91,7 +127,9 @@ def main():
     work.mkdir(exist_ok=True)
     audio = work / "audio/master.mp3"
     segments = [(i, VOICE, s["spoken"], FOCUS) for i, s in enumerate(scenes)]
-    durations = synthesize_segments(segments, str(audio.parent), str(audio), locale=None if args.locale == "ar-EG" else args.locale)
+    durations = synthesize_segments(segments, str(audio.parent), str(audio),
+        locale=None if args.locale == "ar-EG" else args.locale,
+        narration_policy=technical_policy(args.locale))
     frames = [math.ceil((duration + (GAP_MS / 1000 if i < len(durations) - 1 else 0.5)) * 30) for i, duration in enumerate(durations)]
     props = work / "props.json"
     props.write_text(json.dumps({"locale": args.locale, "title": lesson["title"], "scenes": scenes, "sceneFrames": frames}))

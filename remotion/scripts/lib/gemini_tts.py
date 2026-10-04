@@ -12,7 +12,8 @@ Usage:
     synthesize_segments(segments, out_dir, master_path)
 """
 from __future__ import annotations
-import os, json, base64, struct, subprocess, time, urllib.request, urllib.error
+import os, json, base64, struct, subprocess, time, urllib.request, urllib.error, hashlib
+from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from itertools import cycle
 from threading import Lock
@@ -84,6 +85,43 @@ EGYPTIAN_RULES_COMPACT = """اقرأ النص ده باللهجة المصرية
 """
 
 
+@dataclass(frozen=True)
+class NarrationPolicy:
+    """An explicit caller-owned Egyptian voice revision; legacy callers stay unchanged."""
+    name: str
+    prompt_prefix: str
+
+
+def prepare_narration(text: str, locale: str | None = None,
+                      narration_policy: NarrationPolicy | None = None) -> tuple[str, str]:
+    profile = _get_locale_profile(locale)
+    if narration_policy is not None:
+        if locale is not None:
+            raise ValueError("An Egyptian narration policy cannot override another locale")
+        # Technical text is already context-authored. Preserve terms and spelling:
+        # do not apply the legacy qaf allow-list or semantic substitutions.
+        return text, narration_policy.prompt_prefix
+    if profile.egyptian_phonetic_rewrite:
+        rewritten, diffs = egyptianize_with_diff(text)
+        if diffs:
+            print(f"     phonetic rewrites: {diffs}")
+        return rewritten, EGYPTIAN_RULES_COMPACT
+    return text, profile.tts_prompt
+
+
+def segment_cache_name(idx: int, voice: str, text: str, focus: str,
+                       narration_policy: NarrationPolicy | None = None) -> str:
+    if narration_policy is None:
+        return f"s{idx}_{voice.lower()}.wav"
+    content = json.dumps({"text": text, "voice": voice, "focus": focus,
+                          "model": MODEL, "sampleRate": SAMPLE_RATE,
+                          "policy": narration_policy.name,
+                          "prompt": narration_policy.prompt_prefix},
+                         ensure_ascii=False, sort_keys=True)
+    digest = hashlib.sha256(content.encode()).hexdigest()
+    return f"s{idx}_{voice.lower()}_{digest}.wav"
+
+
 def _pcm_to_wav(pcm: bytes, sr: int = SAMPLE_RATE) -> bytes:
     nc, bps = 1, 16
     br = sr * nc * bps // 8
@@ -111,7 +149,7 @@ def _soften_text(text: str) -> str:
 
 
 def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
-         locale: str | None = None) -> None:
+         locale: str | None = None, narration_policy: NarrationPolicy | None = None) -> None:
     """Generate one segment. Voice = 'Charon' (male, main) or 'Aoede' (female, aside).
 
     locale=None       -> legacy Egyptian: phonetic rewrite + Egyptian prompt.
@@ -120,16 +158,7 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
     locale='en'       -> English prompt, NO Egyptian rewrite.
     """
     profile = _get_locale_profile(locale)
-    if profile.egyptian_phonetic_rewrite:
-        # Legacy Egyptian mode — deterministic Egyptian pronunciation.
-        rewritten, diffs = egyptianize_with_diff(text)
-        if diffs:
-            print(f"     phonetic rewrites: {diffs}")
-        prompt_prefix = EGYPTIAN_RULES_COMPACT
-    else:
-        # New locales: keep source text intact; use locale-specific prompt.
-        rewritten = text
-        prompt_prefix = profile.tts_prompt
+    rewritten, prompt_prefix = prepare_narration(text, locale, narration_policy)
     focus_label = profile.focus_note_label
     last_err = None
     n_keys = len(api_keys)
@@ -161,6 +190,8 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
                 d = json.loads(r.read())
                 # Check for PROHIBITED_CONTENT in successful response (no HTTP error).
                 cand = (d.get("candidates") or [{}])[0]
+                if cand.get("finishReason") == "PROHIBITED_CONTENT" and narration_policy is not None:
+                    raise RuntimeError("Technical narration rejected; source text was not rewritten")
                 if cand.get("finishReason") == "PROHIBITED_CONTENT" and not softened:
                     print(f"     [{voice}] PROHIBITED_CONTENT, softening text and retrying")
                     current_text = _soften_text(current_text)
@@ -172,7 +203,7 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
                     other_count += 1
                     # After 3 silent OTHER failures, the model is likely choking
                     # on a specific phrase. Soften the text once and reset.
-                    if other_count == 3 and not softened:
+                    if other_count == 3 and not softened and narration_policy is None:
                         print(f"     [{voice}] 3x OTHER in a row, softening text and continuing")
                         current_text = _soften_text(current_text)
                         softened = True
@@ -233,6 +264,8 @@ def synthesize_segments(
     master_path: str,
     api_key: str | None = None,
     locale: str | None = None,
+    *,
+    narration_policy: NarrationPolicy | None = None,
 ) -> list[float]:
     """Generate all segments + concatenate with silence gaps.
 
@@ -249,6 +282,8 @@ def synthesize_segments(
         list of per-segment durations in seconds (in order). Use these to time
         Remotion scene_frames = ceil(duration * fps) + gap_frames.
     """
+    if narration_policy is not None and locale is not None:
+        raise ValueError("An Egyptian narration policy cannot override another locale")
     api_keys = _collect_api_keys(api_key)
     profile = _get_locale_profile(locale)
     print(f"  TTS: using {len(api_keys)} API key(s) in round-robin | "
@@ -260,7 +295,7 @@ def synthesize_segments(
     plan = []  # list of (idx, voice, text, focus, path, cached)
     for idx, voice, text, focus in segments:
         assert voice in ("Charon", "Aoede"), f"unknown voice {voice}"
-        p = os.path.join(out_dir, f"s{idx}_{voice.lower()}.wav")
+        p = os.path.join(out_dir, segment_cache_name(idx, voice, text, focus, narration_policy))
         cached = os.path.exists(p) and os.path.getsize(p) > 1000
         plan.append((idx, voice, text, focus, p, cached))
 
@@ -280,7 +315,7 @@ def synthesize_segments(
         t_gen0 = time.time()
         with ThreadPoolExecutor(max_workers=max_workers) as ex:
             futures = {
-                ex.submit(_tts, text, voice, focus, p, api_keys, locale):
+                ex.submit(_tts, text, voice, focus, p, api_keys, locale, narration_policy):
                     (idx, voice, text)
                 for (idx, voice, text, focus, p) in to_generate
             }

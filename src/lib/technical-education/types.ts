@@ -1,6 +1,8 @@
+import type additionalDiagrams from "./new-diagrams.json";
 import type { SupportedLocale } from "../locale/types";
 
 export type TechnicalDiagramKind =
+  | keyof typeof additionalDiagrams
   | "brief"
   | "survey"
   | "scope"

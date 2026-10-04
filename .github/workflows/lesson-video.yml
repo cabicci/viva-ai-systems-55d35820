@@ -20,6 +20,11 @@ on:
       - remotion/scripts/test_furniture_audio.py
       - remotion/scripts/build-technical-lesson.py
       - src/lib/furniture-pilot/model.ts
+      - src/lib/technical-education/lessons/**
+      - docs/experiments/technical-education/video-production-reviewed.json
+      - remotion/scripts/lib/technical_egyptian.py
+      - remotion/scripts/test_technical_voice.py
+      - .github/scripts/plan_technical_videos.py
       - .github/workflows/lesson-video.yml
       - .github/scripts/ensure_bunny_collection.py
 
@@ -28,7 +33,7 @@ permissions:
 
 jobs:
   plan:
-    if: github.event_name == 'workflow_dispatch' && inputs.lesson_ids != 'furniture-m1-cut-list' && inputs.lesson_ids != 'technical-first-module'
+    if: github.event_name == 'workflow_dispatch' && inputs.lesson_ids != 'furniture-m1-cut-list' && inputs.lesson_ids != 'technical-first-module' && inputs.lesson_ids != 'technical-journey'
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set.outputs.matrix }}
@@ -189,7 +194,7 @@ jobs:
           fi
 
   furniture-collection:
-    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module')
+    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module' || inputs.lesson_ids == 'technical-journey')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     concurrency:
@@ -197,26 +202,38 @@ jobs:
       cancel-in-progress: false
     outputs:
       collection_id: ${{ steps.collection.outputs.collection_id }}
+      matrix: ${{ steps.video_plan.outputs.matrix }}
+      count: ${{ steps.video_plan.outputs.count }}
+      deferred_count: ${{ steps.video_plan.outputs.deferred_count }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: experiment/furniture-pilot-20261003
       - name: Find or create technical-education folder in Bunny
         id: collection
         env:
           BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
         run: python3 .github/scripts/ensure_bunny_collection.py
+      - name: Plan only reviewed media that need production
+        id: video_plan
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          FORCE: ${{ inputs.force_script || 'false' }}
+        run: |
+          python3 .github/scripts/test_plan_technical_videos.py
+          python3 .github/scripts/plan_technical_videos.py
 
   furniture-pilot:
     needs: furniture-collection
-    if: github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module')
+    if: needs.furniture-collection.outputs.count != '0' && github.ref == 'refs/heads/experiment/furniture-pilot-20261003' && (github.event_name == 'push' || inputs.lesson_ids == 'furniture-m1-cut-list' || inputs.lesson_ids == 'technical-first-module' || inputs.lesson_ids == 'technical-journey')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
       fail-fast: false
-      max-parallel: 1
-      matrix:
-        locale: [ar-EG, ar-MSA, ar-Gulf, en]
-        lesson_id: [technical-m01-l01, technical-m01-l02, technical-m01-l03, technical-m01-l04, furniture-m1-cut-list]
+      max-parallel: 2
+      matrix: ${{ fromJson(needs.furniture-collection.outputs.matrix) }}
     concurrency:
       group: furniture-pilot-${{ github.ref }}-${{ matrix.lesson_id }}-${{ matrix.locale }}
       cancel-in-progress: false
@@ -230,6 +247,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
+          ref: experiment/furniture-pilot-20261003
           fetch-depth: 0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -285,12 +303,14 @@ jobs:
           bun install --frozen-lockfile
           bun test src/furniture/geometry.test.ts
           python3 scripts/test_furniture_audio.py
+          python3 scripts/test_technical_voice.py
       - name: Cache narration separately from animation revisions
         if: steps.precheck.outputs.skip != 'true'
         uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809
         with:
           path: /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/audio
           key: technical-tts-v2-${{ matrix.lesson_id }}-${{ matrix.locale }}-${{ steps.precheck.outputs.voice_key }}
+          restore-keys: ${{ matrix.locale == 'ar-EG' && format('technical-tts-v2-{0}-{1}-', matrix.lesson_id, matrix.locale) || '' }}
       - name: Build reviewed technical lesson with its existing locale TTS profile
         if: steps.precheck.outputs.skip != 'true'
         env:
@@ -316,12 +336,14 @@ jobs:
           cp src/lib/bunny-videos.ts "$SAVE"
           FINGERPRINT=$(python3 remotion/scripts/build-technical-lesson.py --lesson-id "$LID" --locale "$LOCALE" --fingerprint)
           git restore src/lib/bunny-videos.ts
-          git fetch origin "$BRANCH"
-          git checkout -B "$BRANCH" "origin/$BRANCH"
-          LID="${LID}__${LOCALE}" python3 .github/scripts/merge_bunny_entry.py "$SAVE"
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          KEY="${LID}__${LOCALE}" FINGERPRINT="$FINGERPRINT" python3 - <<'PYCODE'
+          PUSHED=0
+          for attempt in $(seq 1 10); do
+            git fetch origin "$BRANCH"
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+            LID="${LID}__${LOCALE}" python3 .github/scripts/merge_bunny_entry.py "$SAVE"
+            KEY="${LID}__${LOCALE}" FINGERPRINT="$FINGERPRINT" python3 - <<'PYCODE'
           import json, os
           from pathlib import Path
           p = Path('docs/experiments/technical-education/video-revisions.json')
@@ -329,11 +351,21 @@ jobs:
           entries[os.environ['KEY']] = os.environ['FINGERPRINT']
           p.write_text(json.dumps(entries, indent=2, sort_keys=True) + '\n')
           PYCODE
-          git add src/lib/bunny-videos.ts docs/experiments/technical-education/video-revisions.json
-          if ! git diff --cached --quiet; then
+            git add src/lib/bunny-videos.ts docs/experiments/technical-education/video-revisions.json
+            if git diff --cached --quiet; then
+              PUSHED=1
+              break
+            fi
             git commit -m "build(video): furniture pilot [$LOCALE] Bunny mapping"
-            git push origin "HEAD:$BRANCH"
-          fi
+            if git push origin "HEAD:$BRANCH"; then
+              PUSHED=1
+              break
+            fi
+            # Discard only this failed bot mapping commit; replay its saved cell onto latest.
+            git reset --hard "origin/$BRANCH"
+            sleep $((RANDOM % 10 + 2))
+          done
+          test "$PUSHED" -eq 1
       - name: Keep preview, captions and rendering evidence
         if: always() && steps.precheck.outputs.skip != 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

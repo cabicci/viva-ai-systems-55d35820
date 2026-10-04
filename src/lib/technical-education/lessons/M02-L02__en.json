@@ -1,0 +1,72 @@
+{
+  "id": "M02-L02",
+  "locale": "en",
+  "title": "Movement, openings and clearances",
+  "intro": "A cabinet can fit while closed and still fail in use. Map the body, moving parts and user route as separate overlapping zones.",
+  "goals": [
+    "Map door movement",
+    "Check drawer extension and user position",
+    "Check simultaneous-use cases"
+  ],
+  "sections": [
+    {
+      "id": "door",
+      "title": "Map door movement",
+      "text": "Draw the cabinet body, hinge axis and intended door sweep in plan. Include the room door and nearby furniture. A sweep overlapping a fixed object or user route needs review. A closed-door image cannot establish sufficient opening for access to the contents.",
+      "diagram": "new-M02-L02-door",
+      "caption": "The sweep reveals clashes with doors and routes."
+    },
+    {
+      "id": "drawer",
+      "title": "Check drawer extension and user position",
+      "text": "Mark the drawer front closed and at the required extension, then add the user position for retrieving contents. Use the selected runner data. Different runners, handles and contents can change the space needed; the extension alone does not represent the whole activity.",
+      "diagram": "new-M02-L02-drawer",
+      "caption": "Add the user zone to the drawer extension."
+    },
+    {
+      "id": "clash",
+      "title": "Check simultaneous-use cases",
+      "text": "Check credible simultaneous-use cases, such as a room door open while a drawer is in use. State which functions must operate together and any deliberate sequence. Do not add generic clearances without reading the plan. Recheck other access routes after changing the position or mechanism.",
+      "diagram": "new-M02-L02-clash",
+      "caption": "Recheck the alternative under required opening scenarios."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "An entrance door hits an extended drawer. The closed cabinet fits, but entry and drawer use cannot occur together as required.",
+    "decision": "Decision: compare repositioning with another opening arrangement and test the entry route for both."
+  },
+  "quiz": [
+    {
+      "id": "clash",
+      "question": "When should clearance be checked?",
+      "options": [
+        "With the cabinet closed only",
+        "With body, movement and user in required scenarios",
+        "From a photograph alone"
+      ],
+      "correct": 1,
+      "explanation": "Clearance depends on movement and use, not the closed body alone."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw an entrance with a door and drawer cabinet; identify one clash and two corrective options.",
+    "fields": [
+      "Bodies and movement axes",
+      "Use scenarios and clash",
+      "Alternative and check result"
+    ],
+    "criteria": [
+      "Opening zones are shown",
+      "The user zone is included",
+      "Both options use the same scenario"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should I immediately shrink the drawer?",
+      "answer": "Identify the cause first. A different position or opening direction may preserve the function better than reducing storage.",
+      "sectionId": "clash"
+    }
+  ]
+}

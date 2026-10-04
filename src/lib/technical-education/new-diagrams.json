@@ -1,0 +1,813 @@
+{
+  "new-M02-L01-reach": [
+    {
+      "type": "rect",
+      "x": 255,
+      "y": 50,
+      "width": 80,
+      "height": 150,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 255,
+      "y1": 90,
+      "x2": 335,
+      "y2": 90,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 255,
+      "y1": 140,
+      "x2": 335,
+      "y2": 140,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "circle",
+      "cx": 130,
+      "cy": 60,
+      "r": 16,
+      "fill": "mint",
+      "stroke": "teal"
+    },
+    {
+      "type": "path",
+      "d": "M130 78V155M130 95L230 95M130 155L100 218M130 155L155 218",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "path",
+      "d": "M155 60Q240 60 254 135",
+      "fill": "none",
+      "stroke": "purple",
+      "strokeWidth": 2
+    },
+    {
+      "type": "text",
+      "x": 200,
+      "y": 245,
+      "value": {
+        "ar": "المستخدم + المحتوى",
+        "en": "User + contents"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L01-posture": [
+    {
+      "type": "rect",
+      "x": 160,
+      "y": 110,
+      "width": 175,
+      "height": 12,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 300,
+      "y1": 122,
+      "x2": 300,
+      "y2": 215,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "circle",
+      "cx": 110,
+      "cy": 60,
+      "r": 15,
+      "fill": "mint",
+      "stroke": "teal"
+    },
+    {
+      "type": "path",
+      "d": "M110 77V138H167V203M110 96L176 105M92 141V205M85 151H144",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "rect",
+      "x": 176,
+      "y": 163,
+      "width": 70,
+      "height": 40,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "text",
+      "x": 210,
+      "y": 241,
+      "value": {
+        "ar": "المقعد · السطح · الركبة",
+        "en": "Seat · surface · knee"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L01-trial": [
+    {
+      "type": "rect",
+      "x": 65,
+      "y": 55,
+      "width": 70,
+      "height": 45,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 245,
+      "y": 55,
+      "width": 80,
+      "height": 65,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 135,
+      "y1": 78,
+      "x2": 245,
+      "y2": 88,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "rect",
+      "x": 65,
+      "y": 165,
+      "width": 260,
+      "height": 45,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "text",
+      "x": 100,
+      "y": 84,
+      "value": {
+        "ar": "نموذج",
+        "en": "Mock-up"
+      },
+      "fontSize": 14
+    },
+    {
+      "type": "text",
+      "x": 285,
+      "y": 91,
+      "value": {
+        "ar": "مهمة",
+        "en": "Task"
+      },
+      "fontSize": 14
+    },
+    {
+      "type": "text",
+      "x": 195,
+      "y": 194,
+      "value": {
+        "ar": "ملاحظة ← تعديل",
+        "en": "Observe → revise"
+      },
+      "fontSize": 15
+    }
+  ],
+  "new-M02-L02-door": [
+    {
+      "type": "path",
+      "d": "M45 40H340V210H160M100 210H45V40",
+      "fill": "none",
+      "stroke": "ink",
+      "strokeWidth": 4
+    },
+    {
+      "type": "rect",
+      "x": 215,
+      "y": 65,
+      "width": 100,
+      "height": 95,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 100,
+      "y1": 210,
+      "x2": 100,
+      "y2": 145,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "path",
+      "d": "M100 145A65 65 0 0 1 165 210",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "path",
+      "d": "M215 160A95 95 0 0 0 310 65",
+      "fill": "none",
+      "stroke": "purple",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 215,
+      "y1": 65,
+      "x2": 310,
+      "y2": 65,
+      "stroke": "purple",
+      "strokeWidth": 2
+    },
+    {
+      "type": "circle",
+      "cx": 215,
+      "cy": 65,
+      "r": 4,
+      "fill": "purple",
+      "stroke": "teal"
+    },
+    {
+      "type": "text",
+      "x": 195,
+      "y": 248,
+      "value": {
+        "ar": "راجع قوسَي الفتح",
+        "en": "Check both door sweeps"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L02-drawer": [
+    {
+      "type": "rect",
+      "x": 80,
+      "y": 40,
+      "width": 130,
+      "height": 160,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 210,
+      "y": 88,
+      "width": 95,
+      "height": 63,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "path",
+      "d": "M218 170H300M218 164V176M300 164V176",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "circle",
+      "cx": 328,
+      "cy": 126,
+      "r": 20,
+      "fill": "purple",
+      "stroke": "teal"
+    },
+    {
+      "type": "text",
+      "x": 244,
+      "y": 196,
+      "value": {
+        "ar": "امتداد",
+        "en": "Extension"
+      },
+      "fontSize": 14
+    },
+    {
+      "type": "text",
+      "x": 210,
+      "y": 245,
+      "value": {
+        "ar": "الدرج + المستخدم",
+        "en": "Drawer + user"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L02-clash": [
+    {
+      "type": "rect",
+      "x": 85,
+      "y": 45,
+      "width": 125,
+      "height": 80,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 85,
+      "y": 125,
+      "width": 125,
+      "height": 65,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 290,
+      "y1": 190,
+      "x2": 290,
+      "y2": 90,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "path",
+      "d": "M190 190A100 100 0 0 1 290 90",
+      "fill": "none",
+      "stroke": "purple",
+      "strokeWidth": 3
+    },
+    {
+      "type": "path",
+      "d": "M185 156L220 191M220 156L185 191",
+      "fill": "none",
+      "stroke": "danger",
+      "strokeWidth": 4
+    },
+    {
+      "type": "text",
+      "x": 205,
+      "y": 244,
+      "value": {
+        "ar": "حالة فتح متزامن",
+        "en": "Simultaneous opening"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L03-scale": [
+    {
+      "type": "rect",
+      "x": 45,
+      "y": 40,
+      "width": 145,
+      "height": 175,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 63,
+      "y": 77,
+      "width": 56,
+      "height": 69,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 225,
+      "y": 80,
+      "width": 100,
+      "height": 122,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 237,
+      "y": 106,
+      "width": 39,
+      "height": 48,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "text",
+      "x": 115,
+      "y": 241,
+      "value": {
+        "ar": "نسبة ثابتة",
+        "en": "Same ratio"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 275,
+      "y": 55,
+      "value": {
+        "ar": "نفس المرجع",
+        "en": "Shared reference"
+      },
+      "fontSize": 14
+    }
+  ],
+  "new-M02-L03-rhythm": [
+    {
+      "type": "rect",
+      "x": 48,
+      "y": 50,
+      "width": 302,
+      "height": 150,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 48,
+      "y": 50,
+      "width": 84,
+      "height": 150,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "line",
+      "x1": 132,
+      "y1": 50,
+      "x2": 132,
+      "y2": 200,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 240,
+      "y1": 50,
+      "x2": 240,
+      "y2": 200,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 132,
+      "y1": 122,
+      "x2": 350,
+      "y2": 122,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "text",
+      "x": 89,
+      "y": 130,
+      "value": {
+        "ar": "كتلة",
+        "en": "Solid"
+      },
+      "fontSize": 13
+    },
+    {
+      "type": "text",
+      "x": 188,
+      "y": 94,
+      "value": {
+        "ar": "فراغ",
+        "en": "Void"
+      },
+      "fontSize": 13
+    },
+    {
+      "type": "text",
+      "x": 200,
+      "y": 244,
+      "value": {
+        "ar": "الفاصل يغيّر الرف",
+        "en": "Divider changes the shelf"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L03-options": [
+    {
+      "type": "rect",
+      "x": 45,
+      "y": 48,
+      "width": 130,
+      "height": 170,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 54,
+      "y": 62,
+      "width": 110,
+      "height": 100,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 225,
+      "y": 48,
+      "width": 130,
+      "height": 170,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 235,
+      "y": 62,
+      "width": 48,
+      "height": 100,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 297,
+      "y": 62,
+      "width": 48,
+      "height": 100,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "text",
+      "x": 110,
+      "y": 244,
+      "value": {
+        "ar": "بديل A",
+        "en": "Option A"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 290,
+      "y": 244,
+      "value": {
+        "ar": "بديل B",
+        "en": "Option B"
+      },
+      "fontSize": 16
+    }
+  ],
+  "new-M02-L04-zones": [
+    {
+      "type": "rect",
+      "x": 40,
+      "y": 45,
+      "width": 320,
+      "height": 170,
+      "fill": "white",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 45,
+      "y": 50,
+      "width": 155,
+      "height": 90,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 205,
+      "y": 50,
+      "width": 150,
+      "height": 70,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 45,
+      "y": 145,
+      "width": 100,
+      "height": 65,
+      "fill": "pale",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "text",
+      "x": 120,
+      "y": 100,
+      "value": {
+        "ar": "جلوس",
+        "en": "Sit"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 280,
+      "y": 95,
+      "value": {
+        "ar": "عمل",
+        "en": "Work"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 95,
+      "y": 186,
+      "value": {
+        "ar": "تخزين",
+        "en": "Store"
+      },
+      "fontSize": 14
+    },
+    {
+      "type": "text",
+      "x": 245,
+      "y": 187,
+      "value": {
+        "ar": "حركة",
+        "en": "Move"
+      },
+      "fontSize": 14
+    }
+  ],
+  "new-M02-L04-adjacency": [
+    {
+      "type": "circle",
+      "cx": 105,
+      "cy": 80,
+      "r": 42,
+      "fill": "mint",
+      "stroke": "teal"
+    },
+    {
+      "type": "circle",
+      "cx": 290,
+      "cy": 80,
+      "r": 42,
+      "fill": "purple",
+      "stroke": "teal"
+    },
+    {
+      "type": "circle",
+      "cx": 200,
+      "cy": 190,
+      "r": 42,
+      "fill": "pale",
+      "stroke": "teal"
+    },
+    {
+      "type": "line",
+      "x1": 146,
+      "y1": 80,
+      "x2": 248,
+      "y2": 80,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 125,
+      "y1": 120,
+      "x2": 174,
+      "y2": 157,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 270,
+      "y1": 119,
+      "x2": 227,
+      "y2": 157,
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "text",
+      "x": 105,
+      "y": 86,
+      "value": {
+        "ar": "عمل",
+        "en": "Work"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 290,
+      "y": 86,
+      "value": {
+        "ar": "تخزين",
+        "en": "Store"
+      },
+      "fontSize": 14
+    },
+    {
+      "type": "text",
+      "x": 200,
+      "y": 196,
+      "value": {
+        "ar": "دخول",
+        "en": "Enter"
+      },
+      "fontSize": 16
+    },
+    {
+      "type": "text",
+      "x": 200,
+      "y": 250,
+      "value": {
+        "ar": "علاقات قبل المقاسات",
+        "en": "Relations before dimensions"
+      },
+      "fontSize": 15
+    }
+  ],
+  "new-M02-L04-routes": [
+    {
+      "type": "path",
+      "d": "M45 40H355V215H125M75 215H45V40",
+      "fill": "none",
+      "stroke": "ink",
+      "strokeWidth": 4
+    },
+    {
+      "type": "rect",
+      "x": 250,
+      "y": 60,
+      "width": 80,
+      "height": 75,
+      "fill": "purple",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "rect",
+      "x": 75,
+      "y": 60,
+      "width": 140,
+      "height": 75,
+      "fill": "mint",
+      "stroke": "teal",
+      "rx": 4
+    },
+    {
+      "type": "path",
+      "d": "M100 240V170H225V100",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 5
+    },
+    {
+      "type": "path",
+      "d": "M225 100L218 112M225 100L232 112",
+      "fill": "none",
+      "stroke": "teal",
+      "strokeWidth": 2
+    },
+    {
+      "type": "text",
+      "x": 210,
+      "y": 249,
+      "value": {
+        "ar": "دخول ← نشاط ← تخزين",
+        "en": "Entry → activity → storage"
+      },
+      "fontSize": 14
+    }
+  ]
+}
