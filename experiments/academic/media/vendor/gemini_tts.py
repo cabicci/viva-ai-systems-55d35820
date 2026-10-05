@@ -141,21 +141,6 @@ def _pcm_to_wav(pcm: bytes, sr: int = SAMPLE_RATE) -> bytes:
     return h + pcm
 
 
-def _soften_text(text: str) -> str:
-    """Lightweight rewrite to dodge Gemini TTS safety filter without changing meaning."""
-    repl = [
-        ("اقتل", "اوقف"), ("قتل", "إيقاف"), ("اضرب", "استخدم"), ("ضرب", "تطبيق"),
-        ("هاجم", "اشتغل على"), ("هجوم", "محاولة"), ("سلاح", "أداة"),
-        ("خطر", "حذر"), ("خطير", "محتاج انتباه"), ("موت", "توقف"),
-        ("دمار", "خراب"), ("دمّر", "خرّب"), ("تدمير", "إفساد"),
-        ("ينفجر", "يقع"), ("انفجار", "مشكلة كبيرة"),
-    ]
-    out = text
-    for a, b in repl:
-        out = out.replace(a, b)
-    return out
-
-
 def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
          locale: str | None = None, narration_policy: NarrationPolicy | None = None) -> None:
     """Generate one segment. Voice = 'Charon' (male, main) or 'Aoede' (female, aside).
@@ -173,7 +158,6 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
     max_attempts = max(18, n_keys * 6)
     d = None
     current_text = rewritten
-    softened = False
     other_count = 0
     for attempt in range(max_attempts):
         prompt = prompt_prefix + current_text
@@ -198,23 +182,11 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
                 d = json.loads(r.read())
                 # Check for PROHIBITED_CONTENT in successful response (no HTTP error).
                 cand = (d.get("candidates") or [{}])[0]
-                if cand.get("finishReason") == "PROHIBITED_CONTENT" and narration_policy is not None:
-                    raise RuntimeError("Technical narration rejected; source text was not rewritten")
-                if cand.get("finishReason") == "PROHIBITED_CONTENT" and not softened:
-                    print(f"     [{voice}] PROHIBITED_CONTENT, softening text and retrying")
-                    current_text = _soften_text(current_text)
-                    softened = True
-                    d = None
-                    continue
+                if cand.get("finishReason") == "PROHIBITED_CONTENT":
+                    raise RuntimeError("Academic narration rejected; source text retained for editorial review")
                 # Transient model error — no audio returned, retry on next key.
                 if not cand.get("content") and cand.get("finishReason") in ("OTHER", "MAX_TOKENS", None):
                     other_count += 1
-                    # After 3 silent OTHER failures, the model is likely choking
-                    # on a specific phrase. Soften the text once and reset.
-                    if other_count == 3 and not softened and narration_policy is None:
-                        print(f"     [{voice}] 3x OTHER in a row, softening text and continuing")
-                        current_text = _soften_text(current_text)
-                        softened = True
                     wait = 5 + (attempt * 3)
                     print(f"     [{voice}] finishReason={cand.get('finishReason')} on {key_label}, retry in {wait}s (attempt {attempt+1}/{max_attempts})")
                     time.sleep(wait)

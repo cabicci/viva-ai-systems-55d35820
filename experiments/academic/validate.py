@@ -1,6 +1,6 @@
 """Offline curriculum, locale, numeric and speech-policy gates."""
 from pathlib import Path
-import json, sys
+import json, sys, re
 ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).parent
 locales=['ar-EG','ar-MSA','ar-Gulf','en']
@@ -40,3 +40,13 @@ lessons=[l for m in course['modules'] for l in m['lessons']]
 assert len(lessons)==30 and len({l['id'] for l in lessons})==30
 assert sum(sum(l['minutes'].values()) for l in lessons)==1800
 print('PASS: four locale packages; aligned outcomes/sections; quiz integrity; arithmetic; brand-only output; 1800-minute curriculum; context-only Egyptian policy/cache/locale isolation.')
+
+manifest=json.loads((HERE/'media-manifest.json').read_text())
+assert set(manifest)==set(locales)
+for locale, item in manifest.items():
+    if item['playbackReady']:
+        assert re.fullmatch(r'https://iframe\.mediadelivery\.net/embed/\d+/[a-f0-9-]+\?autoplay=false&preload=false',item['embedUrl'])
+        assert item['durationSeconds'] > 0
+    else: assert item['embedUrl'] is None
+assert '_soften_text' not in (HERE/'media/vendor/gemini_tts.py').read_text()
+print('PASS: bounded Bunny manifest and unchanged narration source.')

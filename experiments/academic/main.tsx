@@ -7,6 +7,7 @@ import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
 import en from "./content/en.json";
+import mediaManifest from "./media-manifest.json";
 import "./style.css";
 
 const packages = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
@@ -128,6 +129,19 @@ function LessonView({ lesson }: { lesson: Lesson }) {
   const locale = lesson.locale as Locale,
     english = locale === "en",
     t = labels[locale];
+  const media = mediaManifest[locale] as {
+    embedUrl: string | null;
+    durationSeconds: number | null;
+    playbackReady: boolean;
+  };
+  const videoUrl =
+    media.playbackReady &&
+    media.embedUrl &&
+    /^https:\/\/iframe\.mediadelivery\.net\/embed\/\d+\/[a-f0-9-]+\?autoplay=false&preload=false$/.test(
+      media.embedUrl,
+    )
+      ? media.embedUrl
+      : null;
   const [tab, setTab] = useState(0),
     [answers, setAnswers] = useState<Record<string, number>>({}),
     [submitted, setSubmitted] = useState(false),
@@ -237,11 +251,22 @@ function LessonView({ lesson }: { lesson: Lesson }) {
             {tab === 2 && (
               <>
                 <h2 className="text-xl font-bold">{t[2]}</h2>
-                <p className="leading-8">
-                  {english
-                    ? "The video is being prepared. Reading and practice are ready for review."
-                    : "الفيديو قيد التجهيز. الشرح والتطبيق جاهزان للمراجعة."}
-                </p>
+                {videoUrl ? (
+                  <iframe
+                    title={lesson.title}
+                    src={videoUrl}
+                    className="aspect-video w-full rounded-xl border-0"
+                    allow="encrypted-media; picture-in-picture; fullscreen"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                ) : (
+                  <p className="leading-8">
+                    {english
+                      ? "The video is being prepared. Reading and practice are ready for review."
+                      : "الفيديو قيد التجهيز. الشرح والتطبيق جاهزان للمراجعة."}
+                  </p>
+                )}
               </>
             )}
             {tab === 3 && (
