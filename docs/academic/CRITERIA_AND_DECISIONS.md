@@ -111,3 +111,12 @@ The owner's latest instruction authorizes continuing through the first pilot wit
 - New ACADEMIC logo candidate generated as a sibling asset; master and existing line assets unchanged. Candidate label/fidelity still needs acceptance.
 - Media workflow run 37322389925 produces only this pilot's four locale variants. Full pilot drafts were queued before a separately accepted pronunciation sample; they remain provisional. This is a recorded deviation from the earlier sample-first editorial sequence, not evidence that the pronunciation gate passed. Real listening and timestamped corrections are mandatory before acceptance or scaling.
 - All prices, subscription periods, assistant quota/dependency, certificate terms and shared integration remain open. The instruction to continue does not invent those commercial values.
+
+## Latest delivery state — AC-PILOT-01 / AC-MEDIA-01
+Only AC-BUS-M01-L01 is fully authored. The other 29 lessons are outlines; no complete 30-lesson content claim is authorized. The 30-hour total is a curriculum planning target, not measured study time or academic-credit equivalence.
+
+Actual Egyptian and MSA pilot files passed render/stream/checksum checks and sampled visual frame review. Their measured durations are 310.308 and 342.228 seconds. Bunny accepted new identities, but both initial readiness checks and read-only follow-up 37324850367 observed processing status 2. They are not marked playable. Original media were neither replaced nor deleted. Playback readiness remains AC-MEDIA-01, independent of pending owner audio acceptance.
+
+The hardened isolated TTS helper now stops for editorial review on provider content rejection for every locale; no automatic source-word replacement fallback remains. This revision does not retroactively change the provenance of already rendered pilot files. See AUDIO_REVIEW.md and review/media-receipts.json.
+
+Final AC-PILOT-01 observation: all four pilot MP4s have been produced and uploaded as new Bunny identities. ar-Gulf is 294.188 seconds and en is 317.628 seconds. All four initial readiness steps expired at processing status 2; none is marked playable. Ten sampled actual video frames were reviewed across the four locales; full listening and playback remain open. This completes the authored pilot review package, not the other 29 lessons or the integrated Academic product.

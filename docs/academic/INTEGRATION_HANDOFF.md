@@ -9,6 +9,8 @@ Pilot implementation commit: 2ccc6af7e54ca6c688f1d4ef1b6a0c7bf78c4b3b
 Review-delivery commit: the commit introducing this updated handoff and review evidence; its immutable SHA is supplied in the delivery message to avoid a self-referential hash.
 
 ## Delivered scope
+Only the first lesson has full authored content. The other 29 lessons are curriculum outlines with objectives and workload estimates; they are not complete lesson packages.
+
 Seven modules and 30 proposed lessons cover business fundamentals, leadership, small businesses, innovation/feasibility, strategy/business planning, establishment/operations readiness and project management. The owner selected 30 total study hours, overriding the source advert's 40 hours. The proposed 60-minute lesson breakdown is a workload estimate; neither university-credit equivalence nor measured learner time is established.
 
 AC-BUS-M01-L01 is authored in ar-EG, ar-MSA, ar-Gulf and en, with outcomes, six explanation sections, an original worked case, formative quiz/feedback, practical assignment, rubric, FAQ and summary. Four nine-page review PDFs were exported and visually checked. Content is original Masaarat production, with no learner-facing external bibliography. Internal verified academic alignment is kept separately and is not included in the learner bundle or RAG.
@@ -32,7 +34,7 @@ Passed: seven modules, 30 unique lessons and 1,800 planned minutes; four context
 
 Browser: 4 locales × 2 viewport widths (390/1440) × 8 sections = 64 visits. No uncaught page errors or horizontal overflow. Reading sections, quiz controls and feedback checked. Four PDFs each have nine pages and were visually inspected. Evidence: experiments/academic/review/browser-checks.json; reproducible exporter: review.mjs.
 
-ESLint: zero errors, three react-refresh component-export warnings in the isolated main.tsx entry. Full production application, authentication, payment, database and RAG regression suites were not run because these surfaces were not changed. Local Remotion still rendering bundled successfully but was blocked by this execution environment's network-interface enumeration; it is not reported as a successful visual video test.
+ESLint: zero errors, three react-refresh component-export warnings in the isolated main.tsx entry. Full production application, authentication, payment, database and RAG regression suites were not run because these surfaces were not changed. Local Remotion still rendering bundled successfully but was blocked by this execution environment's network-interface enumeration. Subsequently, the actual CI-rendered Egyptian/MSA MP4s were downloaded, SHA-256 verified and four frames per video visually checked; no clipping was found in those samples. This is sampled frame review, not full audiovisual acceptance.
 
 ## Preservation and central coordination
 One shared account, independent line entitlements, existing receipts/emails/coupons/invitations, stored-admin lesson access, four locales and other-lines-only switcher remain required. No shared runtime was modified. See INTEGRATION_REQUIREMENTS.md for the server permission matrix, shared ownership and required integration tests. No central-chat message was sent; this handoff is prepared for review there. Central integration retains ownership of global registers.
@@ -72,6 +74,73 @@ No merge, website publication, production settings change, migration, indexing, 
 - experiments/academic/media/vendor/gemini_tts.py
 - experiments/academic/review.mjs
 - experiments/academic/review/browser-checks.json
+- experiments/academic/style.css
+- experiments/academic/tsconfig.json
+- experiments/academic/validate.py
+- experiments/academic/vite.config.ts
+- remotion/src/academic/index.tsx
+
+## Media follow-up
+The Egyptian and MSA videos rendered successfully and uploaded as new Bunny identities, but the original 300-second readiness checks expired with Bunny still at status 2 (processing). Read-only verification run 37324850367 rechecks the same identities without reupload/deletion. Egyptian measured duration is 310.308 seconds and MSA is 342.228 seconds; the proposed eight-minute video allocation is not an actual measured length. Keep the full 30-hour ledger provisional pending a learner timing trial and an explicit allocation revision.
+
+Render provenance remains commit 2ccc6af; subsequent helper hardening removed legacy automatic content rewriting across all locales. Completed Egyptian/MSA job logs contain no softening/rewrite fallback events. The candidate media are not silently attributed to the hardened renderer revision.
+
+## Additional verification files
+- .github/workflows/academic-verify.yml
+- experiments/academic/media/verify.py
+- experiments/academic/media/verification-request.json
+- experiments/academic/media-manifest.json
+- experiments/academic/review/media-receipts.json
+
+Read-only verification 37324850367 finished without readiness: both Egyptian and MSA were still Bunny status 2 at 2026-10-05T14:32:29–30Z. This is tracked as AC-MEDIA-01. Recheck these exact IDs; do not rerender/reupload merely because the initial workflow is red. Source files themselves are retained for review.
+
+Additional review files: docs/academic/AUDIO_REVIEW.md and experiments/academic/review/bunny-verification.json.
+
+## Final media observation — 2026-10-05
+All four locale MP4s rendered, passed stream/checksum verification, were retained as review files and uploaded to four new Bunny identities. Each initial readiness step exceeded its 300-second budget while Bunny remained status 2. Consequently the production workflow is failed on readiness, not a successful release. The review embed manifest intentionally retains null URLs and playbackReady=false. No new duplicate uploads were attempted.
+
+| Locale | Measured MP4 seconds | Bunny video ID | Acceptance |
+| --- | --- | --- | --- |
+| ar-EG | 310.308 | 69b5c1a7-f37b-4b5b-b771-5f7910736a32 | Playback unverified; listener review pending |
+| ar-MSA | 342.228 | 954a46c1-cf01-4efa-a156-bb56cf8bc95c | Playback unverified; listener review pending |
+| ar-Gulf | 294.188 | cc3416fa-e248-45ff-aea9-d0498e276a79 | Playback unverified; listener review pending |
+| en | 317.628 | b3ca5096-df11-4a30-8be1-51d9f65f6510 | Playback unverified; listener review pending |
+
+Visual sampling: four actual frames each for Egyptian/MSA, one each for Gulf/English; no clipping observed in these ten sampled frames. This does not substitute for full playback/audio review. All four completed job logs show no automatic softening fallback event. Source/render provenance and hashes are in media-receipts.json.
+
+## Complete branch file inventory
+- .github/workflows/academic-pilot.yml
+- .github/workflows/academic-verify.yml
+- docs/academic/AUDIO_REVIEW.md
+- docs/academic/CRITERIA_AND_DECISIONS.md
+- docs/academic/CURRICULUM_PROPOSAL.ar.md
+- docs/academic/INTEGRATION_HANDOFF.md
+- docs/academic/INTEGRATION_REQUIREMENTS.md
+- docs/academic/INTERNAL_ACADEMIC_ALIGNMENT.md
+- docs/academic/curriculum-proposal.json
+- experiments/academic/.gitignore
+- experiments/academic/Diagram.tsx
+- experiments/academic/README.md
+- experiments/academic/assets/README.md
+- experiments/academic/assets/masaarat-academic-candidate.png
+- experiments/academic/content/ar-EG.json
+- experiments/academic/content/ar-Gulf.json
+- experiments/academic/content/ar-MSA.json
+- experiments/academic/content/en.json
+- experiments/academic/index.html
+- experiments/academic/main.tsx
+- experiments/academic/media-manifest.json
+- experiments/academic/media/build.py
+- experiments/academic/media/policy.py
+- experiments/academic/media/production-request.json
+- experiments/academic/media/upload.py
+- experiments/academic/media/vendor/gemini_tts.py
+- experiments/academic/media/verification-request.json
+- experiments/academic/media/verify.py
+- experiments/academic/review.mjs
+- experiments/academic/review/browser-checks.json
+- experiments/academic/review/bunny-verification.json
+- experiments/academic/review/media-receipts.json
 - experiments/academic/style.css
 - experiments/academic/tsconfig.json
 - experiments/academic/validate.py
