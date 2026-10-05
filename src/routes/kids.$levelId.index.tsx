@@ -8,6 +8,7 @@ import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { getKidsCopy } from "@/lib/kids/copy";
 import { useKidsParentState } from "@/lib/kids/parent-state";
+import { useEntitlement } from "@/lib/entitlements";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -38,6 +39,7 @@ function KidsLevelPage() {
   const copy = getKidsJourneyCopy(locale);
   const product = getKidsCopy(locale);
   const { state, profiles } = useKidsParentState();
+  const { isAdmin } = useEntitlement();
   const [titles, setTitles] = useState<{ key: string; values: string[] } | null>(null);
   const titleKey = `${levelId}:${locale}`;
   useEffect(() => {
@@ -79,7 +81,7 @@ function KidsLevelPage() {
   if (!level) return null;
   const levelNumber = KIDS_LEVELS.findIndex((entry) => entry.id === levelId) + 1;
   const canOpenLessons =
-    state === "ready" && profiles.some((profile) => profile.level_id === levelId);
+    isAdmin || (state === "ready" && profiles.some((profile) => profile.level_id === levelId));
 
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>

@@ -12,6 +12,7 @@ import {
 } from "@/lib/kids/lesson-client";
 import { useKidsParentState } from "@/lib/kids/parent-state";
 import { useAuth } from "@/lib/auth-context";
+import { useEntitlement } from "@/lib/entitlements";
 import {
   clearActiveKidsProfile,
   getActiveKidsProfile,
@@ -53,6 +54,8 @@ export function KidsLessonPage() {
   const copy = getKidsJourneyCopy(locale);
   const { state, profiles } = useKidsParentState();
   const { user } = useAuth();
+  const { isAdmin } = useEntitlement();
+  const adminReview = !!user?.id && isAdmin;
   const [profileId, setProfileId] = useState("");
   const [profileChecked, setProfileChecked] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -67,12 +70,13 @@ export function KidsLessonPage() {
   const activeProfile =
     state === "ready" ? profiles.find((profile) => profile.id === profileId) : null;
   const selected =
-    state === "ready" && availableProfiles.some((profile) => profile.id === profileId);
+    (adminReview && profileId === user?.id) ||
+    (state === "ready" && availableProfiles.some((profile) => profile.id === profileId));
   const lessonKey = `${level}-${lessonNumber}-${locale}-${profileId}`;
   const visibleResult = selected && result?.key === lessonKey ? result : null;
   const openingLesson =
-    state === "checking" ||
-    (state === "ready" &&
+    (!adminReview && state === "checking") ||
+    ((adminReview || state === "ready") &&
       (!profileChecked || (selected && !denied && !visibleResult && (loading || attempt > 0))));
 
   useEffect(() => {
@@ -80,6 +84,12 @@ export function KidsLessonPage() {
     setDenied(false);
     setAttempt(0);
     setProfileChecked(false);
+    if (adminReview && user?.id) {
+      setProfileId(user.id);
+      setAttempt(1);
+      setProfileChecked(true);
+      return;
+    }
     if (state !== "ready" || !user?.id) {
       setProfileId("");
       return;
@@ -92,17 +102,17 @@ export function KidsLessonPage() {
     setProfileId(current?.id ?? "");
     if (current?.level_id === level) setAttempt(1);
     setProfileChecked(true);
-  }, [levelId, lessonText, locale, state, profiles, user?.id, level]);
+  }, [levelId, lessonText, locale, state, profiles, user?.id, level, adminReview]);
 
   // Returning to a tab rechecks the parent grant. Do not redisplay a lesson
   // from memory after that check; its own entitlement may have changed.
   useEffect(() => {
-    if (state === "ready") return;
+    if (adminReview || state === "ready") return;
     setResult(null);
     setDenied(false);
     setAttempt(0);
     setLoading(false);
-  }, [state]);
+  }, [state, adminReview]);
 
   useEffect(() => {
     let active = true;
@@ -187,22 +197,24 @@ export function KidsLessonPage() {
                 </div>
               ) : (
                 <p role="status" className="mt-4 text-sm text-muted-foreground">
-                  {state === "signed-out"
-                    ? copy.signInNotice
-                    : state === "pending"
-                      ? copy.pending
-                      : state === "not-released"
-                        ? copy.setupPending
-                        : state === "unavailable"
-                          ? copy.unavailable
-                          : denied
-                            ? copy.unavailableLesson
-                            : !selected && profileChecked
-                              ? copy.chooseProfile
-                              : null}
+                  {adminReview && denied
+                    ? copy.unavailableLesson
+                    : state === "signed-out"
+                      ? copy.signInNotice
+                      : state === "pending"
+                        ? copy.pending
+                        : state === "not-released"
+                          ? copy.setupPending
+                          : state === "unavailable"
+                            ? copy.unavailable
+                            : denied
+                              ? copy.unavailableLesson
+                              : !selected && profileChecked
+                                ? copy.chooseProfile
+                                : null}
                 </p>
               )}
-              {state === "ready" && profileChecked && (
+              {!adminReview && state === "ready" && profileChecked && (
                 <div className="mt-6 max-w-sm space-y-3">
                   {activeProfile ? (
                     <div className="space-y-3">
@@ -267,7 +279,7 @@ export function KidsLessonPage() {
                   )}
                 </div>
               )}
-              {state !== "ready" && (
+              {!adminReview && state !== "ready" && (
                 <div className="mt-6">
                   <Link
                     to={state === "signed-out" ? "/login" : "/kids/family"}
@@ -282,7 +294,7 @@ export function KidsLessonPage() {
               )}
             </section>
           )}
-          {visibleResult && (
+          {visibleResult && !adminReview && (
             <div className="flex items-center justify-between gap-3 rounded-2xl border border-primary/20 bg-card p-4">
               <span className="text-sm font-bold">
                 {copy.activeProfile}: {activeProfile?.display_name}

@@ -6,6 +6,7 @@ const mock = vi.hoisted(() => ({
   refresh: vi.fn(),
   useKidsParentState: vi.fn(),
   invoke: vi.fn(),
+  isAdmin: false,
   params: { levelId: "level-2", lessonNumber: "1" },
 }));
 vi.mock("@tanstack/react-router", () => ({
@@ -27,6 +28,7 @@ vi.mock("@/lib/kids/lesson-client", () => ({
 }));
 vi.mock("@/lib/kids/parent-state", () => ({ useKidsParentState: mock.useKidsParentState }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: { id: "parent-1" } }) }));
+vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: mock.isAdmin }) }));
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: { functions: { invoke: mock.invoke } },
 }));
@@ -39,6 +41,7 @@ vi.mock("@/lib/locale/use-locale-link-search", () => ({
 
 beforeEach(() => {
   vi.resetAllMocks();
+  mock.isAdmin = false;
   localStorage.clear();
   mock.params = { levelId: "level-2", lessonNumber: "1" };
   mock.invoke.mockResolvedValue({ data: {}, error: null });
@@ -50,6 +53,36 @@ beforeEach(() => {
 });
 
 describe("Kids direct lesson route", () => {
+  it("opens administrator lessons with the administrator account scope and clears access when the role is revoked", async () => {
+    mock.isAdmin = true;
+    mock.params = { levelId: "level-3", lessonNumber: "12" };
+    mock.useKidsParentState.mockReturnValue({ state: "pending", profiles: [] });
+    const page = render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    for (const name of ["kids-lesson-content", "kids-playback"])
+      expect(mock.invoke).toHaveBeenCalledWith(name, {
+        body: { profileId: "parent-1", levelId: "level-3", lessonNumber: 12, locale: "en" },
+      });
+    expect(localStorage.length).toBe(0);
+    expect(screen.queryByRole("button", { name: "Exit child profile" })).not.toBeInTheDocument();
+    mock.isAdmin = false;
+    page.rerender(<KidsLessonPage />);
+    expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
+  });
+  it("does not expose cached administrator content when either protected request fails", async () => {
+    mock.isAdmin = true;
+    mock.useKidsParentState.mockReturnValue({ state: "pending", profiles: [] });
+    const page = render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    mock.invoke.mockResolvedValue({ data: null, error: new Error("Access denied") });
+    mock.params = { levelId: "level-2", lessonNumber: "12" };
+    page.rerender(<KidsLessonPage />);
+    expect(
+      await screen.findByText("This lesson is not ready. Video and content were not loaded."),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Go to parent space" })).not.toBeInTheDocument();
+  });
   it("sends an approved parent without a matching profile to the separate family page", () => {
     render(<KidsLessonPage />);
     expect(screen.getByText("No profile for this level.")).toBeInTheDocument();

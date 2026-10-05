@@ -12,10 +12,12 @@ import { SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 const state = vi.hoisted(() => ({
   locale: "en" as SupportedLocale,
   parent: "signed-out",
+  isAdmin: false,
   profiles: [] as { level_id: string }[],
   invoke: vi.fn(),
 }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: null }) }));
+vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: state.isAdmin }) }));
 vi.mock("@/lib/technical-education/client", () => ({
   useTechnicalProgress: () => ({ progress: {}, paid: false }),
 }));
@@ -68,6 +70,7 @@ const response = (levelId: string, locale: SupportedLocale) => ({
 beforeEach(() => {
   state.locale = "en";
   state.parent = "signed-out";
+  state.isAdmin = false;
   state.profiles = [];
   state.invoke.mockReset();
   state.invoke.mockImplementation(async (_name, { body }) => ({
@@ -78,6 +81,19 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("line-specific overviews and curricula", () => {
+  it.each(SUPPORTED_LOCALES)(
+    "opens all 36 Kids lesson links for administrators without child profiles in %s",
+    async (locale) => {
+      state.locale = locale;
+      state.isAdmin = true;
+      state.parent = "pending";
+      const page = render(<KidsCurriculum />);
+      await waitFor(() =>
+        expect(page.container.querySelectorAll('a[href^="/kids/level-"]')).toHaveLength(36),
+      );
+      expect(page.container.querySelector('a[href^="/kids/family"]')).toBeNull();
+    },
+  );
   it.each(SUPPORTED_LOCALES)(
     "renders both overviews and the shared three-line curriculum shell in %s",
     (locale) => {
