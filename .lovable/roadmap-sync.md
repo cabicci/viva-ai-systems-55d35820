@@ -1,3 +1,11 @@
+## 2026-10-05 — Technical checkout deployment packaging
+
+[roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
+scope: infra
+source: user
+summary: Cloud import verified 320 lesson packages and 644 private PDFs. Fix observed technical checkout deployment failure by placing the unchanged coordinator in _shared; preserve Kids import compatibility and deletion/idempotency behavior. Videos remain on Bunny.
+sync_status: same production roadmap item in progress; checkout redeployment and administrator migration precede frontend publication
+
 ## 2026-10-05 — Technical furniture integration
 
 [roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
