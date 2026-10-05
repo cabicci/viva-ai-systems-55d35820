@@ -8,7 +8,8 @@ library=os.environ['BUNNY_STREAM_LIBRARY_ID']
 key=os.environ['BUNNY_STREAM_API_KEY']
 output=Path('tmp/academic-verification.json')
 output.parent.mkdir(parents=True,exist_ok=True)
-for attempt in range(20):
+attempts=min(20,max(1,int(request.get('maxAttempts',20))))
+for attempt in range(attempts):
     for locale,guid in list(pending.items()):
         req=urllib.request.Request(f'https://video.bunnycdn.com/library/{library}/videos/{guid}',headers={'AccessKey':key,'accept':'application/json'})
         with urllib.request.urlopen(req,timeout=30) as response:data=json.loads(response.read())
@@ -20,5 +21,5 @@ for attempt in range(20):
         if ready or data.get('status') in [5,6]:del pending[locale]
     output.write_text(json.dumps(results,indent=2))
     if not pending:break
-    if attempt<19:time.sleep(15)
+    if attempt<attempts-1:time.sleep(15)
 if not all(r['playbackReady'] for r in results.values()):raise SystemExit('Playback remains unverified; no media changed.')
