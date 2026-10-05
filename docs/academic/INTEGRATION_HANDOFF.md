@@ -50,3 +50,9 @@ Existing four pilot Bunny assets were verified ready in run 37332447947. Browser
 Use `scripts/academic-education/README.md` for the bounded generation, normalization, editorial correction, assembly, tests and delivery commands. Historical raw generation artifacts expire; compiled reviewed drafts are the durable content source. Do not re-run paid generation to reproduce an already committed package.
 
 Source groups: `docs/academic/`, `experiments/academic/`, `scripts/academic-education/`, `src/components/academic-education/`, `src/lib/academic-education/`, `.github/workflows/academic-written-*.yml`, and the new `public/brand/masaarat-academic.png`. No pre-existing brand/media file is overwritten. An exact changed-file manifest and final commit are supplied with the final delivery checkpoint.
+
+## Verified checkpoint: afac41c8d79ce5bc3cb10c0a67e48527ce6d7fdd
+
+Egyptian and MSA each have all 40 expanded/pilot lessons. Latest browser run exercised 80 lesson visits, 468 additional-lesson quiz questions and 234 reading visuals, exporting 80 workbooks. Shared-shell checks pass four locales/mobile/desktop, three other-line choices and zero account/payment calls. Gulf has 20 expanded additional lessons and English 19, plus each pilot; their complete assembly remains blocked on 39 missing contextual packages. Recovery arrays preserve successful output and corrections.
+
+Selected repair run 37364538469 failed before generation: the selection job was cancelled with no executed steps. One retry of that job was requested at 20:02Z. No provider calls or new output are inferred from a queued run. Final status must be verified before claiming 160 complete packages.

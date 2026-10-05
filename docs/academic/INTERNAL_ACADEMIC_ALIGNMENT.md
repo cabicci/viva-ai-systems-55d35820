@@ -34,7 +34,7 @@ The fictional currency amounts are Masaarat-authored assumptions, not research s
 
 ## Limits and editorial gates
 
-Topic alignment is complete for the outline; this does not complete scientific review of the remaining 29 lessons. Those lessons need their own claim-level verification before authoring acceptance. Local registration, tax, employment and other legal requirements must be verified from jurisdiction-specific official sources at authoring time. The first pilot makes no legal advice or registration claim. Reading workload remains an estimate including reflection; audio duration is measured separately, never padded to justify a nominal duration.
+Topic alignment is complete for the outline; this does not complete scientific review of the remaining 39 lessons. Those lessons need their own claim-level verification before authoring acceptance. Local registration, tax, employment and other legal requirements must be verified from jurisdiction-specific official sources at authoring time. The first pilot makes no legal advice or registration claim. Reading workload remains an estimate including reflection; audio duration is measured separately, never padded to justify a nominal duration.
 
 ## Expanded written drafts — verification scope, 2026-10-05
 
@@ -49,3 +49,9 @@ References checked for scope/concept alignment:
 These checks support topic selection, not a completed claim-by-claim editorial review of all 39 new lessons. Source-derived wording or images must not be copied into an uncredited commercial learner bundle. Local formation/tax lessons deliberately teach a verification workflow rather than asserting jurisdiction-specific obligations. Privacy/continuity examples describe general operational reasoning, not legal compliance claims.
 
 OPEN: full concept-to-outcome ledger per new lesson, subject-matter editorial depth, independent contextual-language review, stronger lesson-specific assessment/rubrics, and observed learner timing. Current concise briefs are not sufficient evidence to close these gates.
+
+## Expanded review corrections — 2026-10-05
+
+The exact editorial ledger records 46 corrections to recovered packages: answer indices, closing cash versus period flow, weighted scores, unit comparability, advertising reach versus orders, assumptions versus observations, and limits of causal inference/sample representativeness. Numeric quiz review covered the currently recovered locale packages. This is a bounded editorial review, not independent approval of every claim. Full generated packages now replace brief-only text for completed locale sets; contextual acceptance and learner timing remain open.
+
+The pilot's historical 60-minute plan included eight estimated video minutes. Its written-study planning fields are now aligned to the current 50-minute non-video course ledger (15 reading/reflection, 25 application, 10 assessment). No measured duration is invented; existing media duration and assets remain unchanged.

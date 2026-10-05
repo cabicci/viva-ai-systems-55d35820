@@ -6,8 +6,8 @@
   "courseId": "AC-BUS",
   "status": "pilot-review",
   "workloadMinutes": {
-    "video": 8,
-    "readingAndReflection": 17,
+    "video": 0,
+    "readingAndReflection": 15,
     "application": 25,
     "assessment": 10
   },
@@ -139,28 +139,44 @@
     {
       "id": "q2",
       "question": "Which statement describes a customer outcome?",
-      "options": ["New equipment", "Two employees", "A complete document ready at the agreed time"],
+      "options": [
+        "New equipment",
+        "Two employees",
+        "A complete document ready at the agreed time"
+      ],
       "correct": 2,
       "explanation": "Equipment is a resource. The outcome is what the customer receives and can check."
     },
     {
       "id": "q3",
       "question": "How should file checking be classified?",
-      "options": ["An activity", "A resource", "Revenue"],
+      "options": [
+        "An activity",
+        "A resource",
+        "Revenue"
+      ],
       "correct": 0,
       "explanation": "Checking is work performed; equipment and staff time are resources supporting it."
     },
     {
       "id": "q4",
       "question": "What is the simplified result for 20 orders priced at 150, direct cost of 90 each and other costs of 900?",
-      "options": ["3000", "1200", "300"],
+      "options": [
+        "3000",
+        "1200",
+        "300"
+      ],
       "correct": 2,
       "explanation": "Revenue of 3000 minus direct cost of 1800 minus other costs of 900 equals 300."
     },
     {
       "id": "q5",
       "question": "If 600 of sales remains unpaid, how much cash was collected?",
-      "options": ["2400", "3000", "300"],
+      "options": [
+        "2400",
+        "3000",
+        "300"
+      ],
       "correct": 0,
       "explanation": "3000 minus 600 is 2400. This is collection, not closing cash or profit."
     },

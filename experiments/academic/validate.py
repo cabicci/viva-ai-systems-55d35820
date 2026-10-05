@@ -9,7 +9,7 @@ for locale in locales:
     d=json.loads((HERE/f'content/{locale}.json').read_text())
     assert d['locale']==locale and d['id']=='AC-BUS-M01-L01'
     assert [s['id'] for s in d['sections']]==expected
-    assert sum(d['workloadMinutes'].values())==60
+    assert sum(d['workloadMinutes'].values())==50
     assert len(d['goals'])==4 and len(d['quiz'])==6
     assert len({q['id'] for q in d['quiz']})==6
     for q in d['quiz']:assert 0<=q['correct']<len(q['options']) and q['explanation']

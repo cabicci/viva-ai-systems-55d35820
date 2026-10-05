@@ -29,6 +29,7 @@ for module in course['modules']:
   title=byid[id]['title']['ar'] if id in byid else existing[id]['title']
   title_en=byid[id]['title']['en'] if id in byid else 'How a business creates customer value'
   module['lessons'].append({'id':id,'title':title,'titleEn':title_en,'minutes':{'video':0,'readingAndExamples':10,'application':30,'assessmentAndReflection':10},'contentStatus':'AUTHORED_DRAFT','videoRequired':False})
+course['modules'][0]['lessons'][0]['minutes']={'video':0,'readingAndExamples':15,'application':25,'assessmentAndReflection':10}
 course.update(status='WRITTEN_DRAFT_REVIEW_REQUIRED',courseId='AC-BUS',cataloguePosition=1,totalMinutes=2000,outlinedLessonCount=40,authoredLessonCount=40)
 course['ownerRequirement'].update(studyTimeIncludes=['readingAndExamples','application','assessmentAndReflection'],note='40 lesson drafts, 2000 planned non-video minutes (33h20). Video is optional and excluded. Not learner-timing evidence or accredited equivalence.')
 course['reviewStatus']={'academicReview':'PENDING','contextualLocaleReview':'PENDING','learnerTiming':'UNVERIFIED','videoCompletionBlocksWrittenRelease':False}
