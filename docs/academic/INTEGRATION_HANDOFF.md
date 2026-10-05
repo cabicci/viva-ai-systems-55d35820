@@ -1,10 +1,10 @@
 # Masaarat Academic — current integration handoff
 
-Updated 2026-10-05. This document replaces historical status sections; git history retains them.
+Updated 2026-10-05T21:37:05.844845+00:00. This document replaces historical status sections; git history retains them.
 
 ## Ownership and delivery boundary
 
-Repository: cabicci/viva-ai-systems-55d35820. Branch: `work/masaarat-academic-20261005`. Current main inspected: `062b5f59dc56fabbce89c2034008fa1d8ef21114`. Recovery register v143 and continuation register v73, modified 2026-10-05 13:05:27Z, supersede historical Technical integration/admin pending items. Those completed platform capabilities are reused, not reopened.
+Repository: cabicci/viva-ai-systems-55d35820. Branch: `work/masaarat-academic-20261005`. Current main inspected: `062b5f59dc56fabbce89c2034008fa1d8ef21114`. Recovery register v144 and continuation register v74, modified 2026-10-05 19:37:06Z, supersede historical Technical integration/admin pending items. Those completed platform capabilities are reused, not reopened.
 
 No merge, publication, production migration/settings change, existing media replacement, payment, email or central-chat message was performed. Shared navigation, routes and billing remain central-integration ownership. SQL candidates are intentionally outside `supabase/migrations` and must not be executed as an automatic release.
 
@@ -51,16 +51,20 @@ Use `scripts/academic-education/README.md` for the bounded generation, normaliza
 
 Source groups: `docs/academic/`, `experiments/academic/`, `scripts/academic-education/`, `src/components/academic-education/`, `src/lib/academic-education/`, `.github/workflows/academic-written-*.yml`, and the new `public/brand/masaarat-academic.png`. No pre-existing brand/media file is overwritten. An exact changed-file manifest and final commit are supplied with the final delivery checkpoint.
 
-## Verified checkpoint: afac41c8d79ce5bc3cb10c0a67e48527ce6d7fdd
+## Final written delivery checkpoint
 
-Egyptian and MSA each have all 40 expanded/pilot lessons. Latest browser run exercised 80 lesson visits, 468 additional-lesson quiz questions and 234 reading visuals, exporting 80 workbooks. Shared-shell checks pass four locales/mobile/desktop, three other-line choices and zero account/payment calls. Gulf has 20 expanded additional lessons and English 19, plus each pilot; their complete assembly remains blocked on 39 missing contextual packages. Recovery arrays preserve successful output and corrections.
+Content commit: `e23804c6859bbaeaa61694b28fcd697d9ca66ba6`. Branch: `work/masaarat-academic-20261005`. The later handoff-only commit is identified in the delivery message and branch history. `CHANGED_FILES.txt` lists every branch path against main `062b5f59dc56fabbce89c2034008fa1d8ef21114`.
 
-Selected repair run 37364538469 failed before generation: the selection job was cancelled with no executed steps. One retry of that job was requested at 20:02Z. No provider calls or new output are inferred from a queued run. Final status must be verified before claiming 160 complete packages.
+All 160 contextual review packages are present: 40 lessons in each of ar-EG, ar-MSA, ar-Gulf and en. There are no missing written packages. The course comprises 40 lessons, not 160 separate curriculum lessons. All 156 additional packages pass structural validation, with six explanation sections, six formative questions and three reading visuals each; the four original pilots remain separate identities.
 
-## Delivered review artifacts and recovery boundary
+Two additional rendering tests verify LTR arithmetic isolation inside Arabic text and inert HTML/link handling. Worked steps and reading/quiz expressions use the same safe presentation helper in the preview and production candidate.
 
-Content/recovery commit: `b47eb636c4de516c8e4f9f5cecb79c5d2e6411cc`; implementation checkpoint: `afac41c8d79ce5bc3cb10c0a67e48527ce6d7fdd`. `CHANGED_FILES.txt` enumerates exact branch paths against main `062b5f59`; `FINAL_CHECKPOINT.json` records verified counts, tests and outstanding requirements. Root and isolated TypeScript checks pass; candidate-source lint has no errors/warnings; isolated Vite build passes with the expected large offline-review bundle warning.
+The final exported-file browser check passed 160 lesson visits, 936 additional-lesson quiz questions and 468 reading visuals. It verified the one-card catalogue, curriculum, locale preservation, mobile overflow and absence of runtime errors. All 160 workbooks were regenerated. `PDF_REVIEW.json` records the page/text scan and selected visual review; it is not an assertion that every page received independent academic review.
 
-Saved review HTML version 2 contains full Egyptian/MSA course packages and historical concise briefs for the two not-yet-completed locales. The separate workbook ZIP contains exactly 80 PDFs, clearly labelled Egyptian/MSA review only. The separate reusable methodology PDF remains available. None is represented as a complete four-locale production release.
+The separate reusable methodology PDF and the updated interactive HTML/workbook bundle are review deliverables. The HTML intentionally contains answers and is unsuitable for paid production delivery. The private preparation receipt contains 160 unapproved payloads and 160 workbook manifests, all inactive; RAG staging contains 960 section chunks with no answer keys or internal references. No files, embeddings or content were imported into production.
 
-Recovery: retrieve only output from run 37364538469 attempt 2 if it becomes available; normalize successful packages and review retained failed drafts. Seed normalized staging from committed expanded Egyptian/MSA arrays and recovery Gulf/English arrays. Apply the exact correction ledger idempotently, then run complete-set assembly. Do not rerun successful content. The final 160-package private delivery and 960-chunk RAG staging cannot pass until the missing 39 contextual packages and their workbooks are complete. No autonomous follow-on review, merge or publication is claimed.
+The exact correction ledger contains 197 corrections, including answer indices, arithmetic, period/unit consistency, contribution versus variable cost, resource scheduling, author-commentary removal and explicit fictional-case labels. Review findings are retained rather than silently treating generated drafts as academically approved.
+
+English recovery used run 37371816157, retained-draft repairs and one original local lesson completion. Gulf recovery used the dedicated run 37374230148 after runnerless matrix attempts: five provider-valid outputs, thirteen retained drafts completed locally and one original local contextual lesson. These provider runs ended with failed raw-draft validation; their workflow conclusions are not represented as passing CI. Final compiled packages passed the local assembly and rendering gates. Completed outputs were not regenerated. Compiled locale arrays are the durable source; obsolete partial recovery arrays have been removed. Existing media were not modified.
+
+The remaining requirements are central integration and acceptance, not missing written content: shared routes/navigation, candidate SQL/private import review, complete TEST commerce/mail journeys, independent contextual/academic acceptance, learner timing, the assistant price/quota and gateway, and media listening/remaining videos. Written release need not wait for all videos. No merge, publication or production setting change occurred.

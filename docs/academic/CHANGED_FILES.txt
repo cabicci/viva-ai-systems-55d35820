@@ -6,11 +6,14 @@ docs/academic/AUDIO_REVIEW.md
 docs/academic/CHANGED_FILES.txt
 docs/academic/CRITERIA_AND_DECISIONS.md
 docs/academic/CURRICULUM_PROPOSAL.ar.md
+docs/academic/EXPANSION_VALIDATION.json
 docs/academic/FINAL_CHECKPOINT.json
 docs/academic/INTEGRATION_HANDOFF.md
 docs/academic/INTEGRATION_REQUIREMENTS.md
 docs/academic/INTERNAL_ACADEMIC_ALIGNMENT.md
+docs/academic/LOCAL_COMPLETION_RECEIPT.json
 docs/academic/MASAARAT_LESSON_PRODUCTION_METHODOLOGY.ar.md
+docs/academic/PDF_REVIEW.json
 docs/academic/WRITTEN_REVIEW_STATUS.json
 docs/academic/curriculum-proposal.json
 experiments/academic/.gitignore
@@ -37,11 +40,10 @@ experiments/academic/course/authored-briefs.json
 experiments/academic/course/compile.py
 experiments/academic/course/en.json
 experiments/academic/course/expanded/ar-EG.json
+experiments/academic/course/expanded/ar-Gulf.json
 experiments/academic/course/expanded/ar-MSA.json
+experiments/academic/course/expanded/en.json
 experiments/academic/course/packages.ts
-experiments/academic/course/recovery/README.md
-experiments/academic/course/recovery/ar-Gulf.json
-experiments/academic/course/recovery/en.json
 experiments/academic/export-preview.py
 experiments/academic/index.html
 experiments/academic/main.tsx
@@ -84,6 +86,7 @@ scripts/academic-education/validate_expansion_test.py
 src/components/academic-education/AcademicCataloguePage.tsx
 src/components/academic-education/AcademicLessonPage.test.tsx
 src/components/academic-education/AcademicLessonPage.tsx
+src/components/academic-education/LessonText.test.tsx
 src/components/academic-education/LessonText.tsx
 src/components/academic-education/ReadingVisual.tsx
 src/lib/academic-education/client.ts
