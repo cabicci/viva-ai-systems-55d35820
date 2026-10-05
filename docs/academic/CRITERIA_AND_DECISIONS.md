@@ -79,3 +79,23 @@ Baseline: 062b5f59dc56fabbce89c2034008fa1d8ef21114
 
 ## Stage log
 2026-10-05: reviewed latest register entries, repository baseline, attached image and video frames. Created isolated branch and planning documents. Source audio transcription unverified. No application code, migrations, dependencies, media, billing/configuration or existing files changed. Curriculum proposal ready for owner review; pilot not produced.
+
+## Owner refinement — 2026-10-05: academic grounding and Egyptian pronunciation
+This requirement supersedes any interpretation of "original authored" as unsupported invention.
+
+### Academic grounding gate
+- Before writing full lessons, identify a specific published university curriculum/syllabus or internationally recognized academic framework appropriate to this course. Verify its issuing institution, level, learning outcomes, coverage and authoritative URL. Verify any accreditation claim separately; do not infer it from a textbook publisher or institutional reputation.
+- Present the selected curriculum basis and a mapping from its outcomes/topics to the seven modules and proposed lessons. The present OpenStax bibliography is an initial source list, not proof that a specific accredited curriculum has been selected or that Masaarat is accredited.
+- Build explanations and assessments from verified academic references. Record edition/date and chapter/section or page for each lesson; distinguish supported concepts, contextual adaptations and clearly labelled hypothetical examples.
+- Original wording, local cases and visuals are allowed; invented theories, unsupported claims, fabricated references or unverified accreditation are not.
+- The 30-hour outline remains provisional until this alignment check; revise its coverage and sequence if the selected academic basis requires it. Do not force a source to fit the current lesson count.
+- The owner said "ماشي" to proceeding, with these binding quality conditions. This does not resolve unpriced packages, certificates or other unspecified commercial decisions.
+
+### Egyptian Arabic audio gate
+- Treat ar-EG pronunciation as word- and context-dependent. Do not apply universal letter substitutions (including ق/ج/ث/ذ/ظ) across all words, technical terms, names or quoted formal language.
+- Maintain a reusable pronunciation lexicon: written word, intended meaning/context, desired Egyptian spoken form, disambiguating vocalization or provider-supported phonetic hint, and accepted audio reference when available.
+- Keep learner-facing spelling separate from TTS-only pronunciation hints. Preserve academic terminology and natural Egyptian explanation; avoid accidental switching to MSA or Gulf pronunciation.
+- Check ambiguous unvowelled words, stress, consonants, numbers, abbreviations, foreign names, technical terms, pauses and sentence meaning in the rendered audio.
+- Produce a short pronunciation sample before the full pilot narration. Listen to actual rendered audio, then the complete pilot. Text review, successful generation or automated transcript matching alone do not establish pronunciation acceptance.
+- Log errors by timestamp/word/context and regenerate only affected segments, then check joins and synchronization. Do not scale production before the owner's pilot audio acceptance.
+- No audio has been generated or marked accepted by this update.
