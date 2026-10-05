@@ -1,5 +1,12 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { SupportedLocale } from "@/lib/locale/types";
+import type { AcademicCourse } from "./types";
+
+export async function academicCatalogue(locale: SupportedLocale): Promise<AcademicCourse[]> {
+  const response = await supabase.rpc("academic_catalogue" as never, { p_locale: locale } as never);
+  if (response.error) throw new Error("ACADEMIC_CATALOGUE_UNAVAILABLE");
+  return response.data as AcademicCourse[];
+}
 
 export type AcademicProgress = {
   read: boolean;

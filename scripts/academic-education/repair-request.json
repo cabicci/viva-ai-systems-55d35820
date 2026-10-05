@@ -1,48 +1,18 @@
 {
-  "requestId": "AC-WRITTEN-REPAIR-20261005-01",
-  "sourceRun": 37358374247,
+  "requestId": "AC-WRITTEN-REPAIR-20261005-02",
+  "sourceRun": 37362118517,
+  "reason": "Two packages stopped at output token limit; other failed drafts repaired locally from retained text. No provider safety refusal occurred.",
   "lessonsByLocale": {
     "ar-EG": [
-      "AC-BUS-M02-L01",
-      "AC-BUS-M02-L02",
-      "AC-BUS-M03-L01",
-      "AC-BUS-M02-L05",
-      "AC-BUS-M03-L03",
-      "AC-BUS-M03-L04",
-      "AC-BUS-M04-L01",
-      "AC-BUS-M04-L02",
-      "AC-BUS-M04-L05",
-      "AC-BUS-M05-L02",
-      "AC-BUS-M05-L06",
-      "AC-BUS-M06-L01",
-      "AC-BUS-M06-L03",
-      "AC-BUS-M06-L06",
-      "AC-BUS-M07-L04",
-      "AC-BUS-M07-L06",
-      "AC-BUS-M07-L08"
+      "AC-BUS-M04-L01"
     ],
     "ar-MSA": [
-      "AC-BUS-M01-L04",
-      "AC-BUS-M02-L01",
-      "AC-BUS-M02-L02",
-      "AC-BUS-M03-L04",
-      "AC-BUS-M04-L01",
-      "AC-BUS-M04-L02",
-      "AC-BUS-M04-L03",
-      "AC-BUS-M04-L04",
-      "AC-BUS-M05-L01",
-      "AC-BUS-M05-L04",
-      "AC-BUS-M06-L01",
-      "AC-BUS-M06-L03",
-      "AC-BUS-M06-L05",
-      "AC-BUS-M06-L06",
-      "AC-BUS-M07-L04",
-      "AC-BUS-M07-L05"
+      "AC-BUS-M02-L02"
     ]
   },
   "maximumProviderCallsByLocale": {
-    "ar-EG": 34,
-    "ar-MSA": 32
+    "ar-EG": 2,
+    "ar-MSA": 2
   },
   "publish": false,
   "overwriteExistingMedia": false

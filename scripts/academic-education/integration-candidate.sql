@@ -4,10 +4,11 @@
 BEGIN;
 CREATE TABLE public.academic_courses (
  id text PRIMARY KEY CHECK(id ~ '^AC-[A-Z0-9]+$'),
+ titles jsonb NOT NULL CHECK(jsonb_typeof(titles)='object' AND titles ?& ARRAY['ar-EG','ar-MSA','ar-Gulf','en']),
  enabled boolean NOT NULL DEFAULT false,
  assistant_enabled boolean NOT NULL DEFAULT false
 );
-INSERT INTO public.academic_courses(id) VALUES('AC-BUS');
+INSERT INTO public.academic_courses(id,titles) VALUES('AC-BUS','{"ar-EG":"أساسيات إدارة الأعمال وبناء المشروعات","ar-MSA":"أساسيات إدارة الأعمال وبناء المشروعات","ar-Gulf":"أساسيات إدارة الأعمال وبناء المشروعات","en":"Business foundations and building a venture"}');
 CREATE TABLE public.academic_lesson_content (
  course_id text NOT NULL REFERENCES public.academic_courses(id),
  lesson_id text NOT NULL CHECK(lesson_id ~ '^AC-[A-Z0-9]+-M[0-9]{2}-L[0-9]{2}$'),
@@ -42,6 +43,19 @@ DO $$ DECLARE t text; BEGIN
   EXECUTE format('GRANT ALL ON public.%I TO service_role',t);
  END LOOP;
 END $$;
+-- Public discovery contains approved titles only, never lesson bodies or answer keys.
+CREATE FUNCTION public.academic_catalogue(p_locale text) RETURNS jsonb
+LANGUAGE plpgsql STABLE SECURITY DEFINER SET search_path='' AS $$ BEGIN
+ IF p_locale IS NULL OR p_locale NOT IN ('ar-EG','ar-MSA','ar-Gulf','en') THEN RAISE EXCEPTION 'ACADEMIC_INVALID_LOCALE'; END IF;
+ RETURN coalesce((SELECT jsonb_agg(jsonb_build_object('id',c.id,'title',c.titles->>p_locale,
+  'lessons',(SELECT jsonb_agg(jsonb_build_object('id',l.lesson_id,'title',l.payload->>'title',
+    'moduleId',regexp_replace(l.lesson_id,'-L[0-9]{2}$',''),'position',l.position,'introductory',l.introductory) ORDER BY l.position)
+   FROM public.academic_lesson_content l WHERE l.course_id=c.id AND l.locale=p_locale AND l.approved)) ORDER BY c.id)
+  FROM public.academic_courses c WHERE c.enabled AND EXISTS(SELECT 1 FROM public.academic_lesson_content l
+   WHERE l.course_id=c.id AND l.locale=p_locale AND l.approved)),'[]'::jsonb);
+END $$;
+REVOKE ALL ON FUNCTION public.academic_catalogue(text) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.academic_catalogue(text) TO anon,authenticated;
 CREATE FUNCTION public.academic_can_access(p_course text,p_lesson text,p_locale text) RETURNS boolean
 LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  SELECT auth.uid() IS NOT NULL AND billing.commerce_account_allowed(auth.uid())
@@ -133,4 +147,21 @@ BEGIN
 END $$;
 REVOKE ALL ON FUNCTION public.academic_can_access(text,text,text),public.academic_assistant_allowed(text,text,text),public.academic_storage_allowed(text),public.academic_command(text,text,text,text,jsonb) FROM PUBLIC,anon,service_role;
 GRANT EXECUTE ON FUNCTION public.academic_can_access(text,text,text),public.academic_assistant_allowed(text,text,text),public.academic_storage_allowed(text),public.academic_command(text,text,text,text,jsonb) TO authenticated;
+-- Extend the installed learner-erasure inventory; financial retention is unchanged.
+DO $$ DECLARE d text; marker text:='''technical_progress'',''technical_mail_outbox'''; BEGIN
+ d:=pg_get_functiondef('public.commerce_previous_lc09_advance_deletion(uuid,uuid,text)'::regprocedure);
+ IF position(marker IN d)=0 THEN RAISE EXCEPTION 'ACADEMIC_DELETION_DEFINITION_CHANGED'; END IF;
+ EXECUTE replace(d,marker,marker||',''academic_progress''');
+ EXECUTE replace(pg_get_functiondef('public.lc09_advance_deletion(uuid,uuid,text)'::regprocedure),
+  'FUNCTION public.lc09_advance_deletion(','FUNCTION billing.academic_previous_deletion(');
+END $$;
+REVOKE ALL ON FUNCTION billing.academic_previous_deletion(uuid,uuid,text) FROM PUBLIC,anon,authenticated,service_role;
+CREATE TRIGGER lc09_academic_write BEFORE INSERT OR UPDATE ON public.academic_progress
+ FOR EACH ROW EXECUTE FUNCTION billing.lc09_block_learner_write();
+CREATE OR REPLACE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text) RETURNS jsonb
+LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$ DECLARE r jsonb; BEGIN
+ r:=billing.academic_previous_deletion(p_user_id,p_lease_token,p_next_stage);
+ IF p_next_stage='learner_erased' THEN DELETE FROM public.academic_progress WHERE user_id=p_user_id; END IF;
+ RETURN r;
+END $$;
 COMMIT;

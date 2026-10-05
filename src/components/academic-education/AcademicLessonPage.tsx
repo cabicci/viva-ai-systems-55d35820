@@ -3,6 +3,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { getAcademicCopy } from "@/lib/academic-education/copy";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
@@ -13,6 +15,7 @@ import {
 } from "@/lib/academic-education/client";
 import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-education/types";
 import { ReadingVisual } from "./ReadingVisual";
+import { LessonText } from "./LessonText";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -80,6 +83,7 @@ function AuthorizedLesson({
 }) {
   const { lesson } = delivery,
     en = locale === "en";
+  const c = getAcademicCopy(locale);
   const { user } = useAuth();
   const [tab, setTab] = useState("reading"),
     [answers, setAnswers] = useState<Record<string, number>>({}),
@@ -99,27 +103,15 @@ function AuthorizedLesson({
       ),
     staleTime: 0,
   });
-  const labels: Record<string, string> = en
-    ? {
-        reading: "Reading",
-        example: "Worked example",
-        video: "Video",
-        quiz: "Check understanding",
-        practice: "Practice",
-        faq: "FAQ",
-        downloads: "Downloads",
-        assistant: "AI assistant",
-      }
-    : {
-        reading: "الشرح",
-        example: "مثال محلول",
-        video: "الفيديو",
-        quiz: "اختبر فهمك",
-        practice: "التطبيق",
-        faq: "أسئلة شائعة",
-        downloads: "التحميل",
-        assistant: "المساعد الذكي",
-      };
+  const labels: Record<string, string> = Object.fromEntries(
+    (
+      ["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const
+    ).map((key) => [key, c[key]]),
+  );
+  const record = progress.data?.progress[lesson.id];
+  const completed = [record?.read, record?.quizPassed, record?.practiceSubmitted].filter(
+    Boolean,
+  ).length;
   const validVideo =
     delivery.video &&
     /^https:\/\/iframe\.mediadelivery\.net\/embed\/\d+\/[a-f0-9-]+\?autoplay=false&preload=false$/.test(
@@ -159,7 +151,7 @@ function AuthorizedLesson({
   return (
     <>
       <a className="font-bold text-primary" href={`/academic/courses/${courseId}?locale=${locale}`}>
-        {en ? "Back to curriculum" : "العودة إلى المنهج"}
+        {c.backToCurriculum}
       </a>
       <header className="my-6 rounded-3xl border bg-accent/20 p-6">
         <p className="text-sm font-bold text-primary">
@@ -170,10 +162,7 @@ function AuthorizedLesson({
       </header>
       <div className="grid items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
         <aside className="rounded-3xl border bg-card p-4 lg:sticky lg:top-24">
-          <nav
-            aria-label={en ? "Lesson sections" : "أقسام الدرس"}
-            className="grid grid-cols-2 gap-2 lg:grid-cols-1"
-          >
+          <nav aria-label={c.sections} className="grid grid-cols-2 gap-2 lg:grid-cols-1">
             {Object.entries(labels)
               .filter(([key]) => key !== "video" || validVideo)
               .map(([key, label]) => (
@@ -191,6 +180,11 @@ function AuthorizedLesson({
                 </button>
               ))}
           </nav>
+          <section className="mt-6 space-y-3 border-t pt-5">
+            <h2 className="font-bold">{c.progress}</h2>
+            <Progress value={(completed / 3) * 100} />
+            <p className="text-sm leading-7 text-muted-foreground">{c.progressNote}</p>
+          </section>
         </aside>
         <section
           className="min-w-0 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
@@ -203,7 +197,7 @@ function AuthorizedLesson({
                 : "تعذر الحفظ. أعد تحميل الدرس وحاول مجددًا."}
             </p>
           )}
-          {saved && <p role="status">{en ? "Saved to your account." : "تم الحفظ في حسابك."}</p>}
+          {saved && <p role="status">{c.saved}</p>}
           {tab === "reading" && (
             <>
               <ul className="list-inside list-disc space-y-3 leading-8">
@@ -214,7 +208,7 @@ function AuthorizedLesson({
               {lesson.sections.map((s) => (
                 <article key={s.id} className="space-y-4 border-t pt-5">
                   <h2 className="text-xl font-bold">{s.title}</h2>
-                  <p className="whitespace-pre-line leading-8">{s.text}</p>
+                  <LessonText text={s.text} />
                   <p className="rounded-xl bg-accent/20 p-4 leading-8">{s.reflection}</p>
                 </article>
               ))}
@@ -222,14 +216,14 @@ function AuthorizedLesson({
                 <ReadingVisual key={v.id} visual={v} />
               ))}
               <Button disabled={busy} onClick={() => void save("read")}>
-                {en ? "Mark reading complete" : "أنهيت القراءة"}
+                {c.markRead}
               </Button>
             </>
           )}
           {tab === "example" && (
             <>
               <h2 className="text-xl font-bold">{lesson.example.title}</h2>
-              <p className="leading-8">{lesson.example.text}</p>
+              <LessonText text={lesson.example.text} />
               <ol className="list-inside list-decimal space-y-4 leading-8">
                 {lesson.example.steps?.map((s, i) => (
                   <li key={i}>{s}</li>
@@ -279,7 +273,7 @@ function AuthorizedLesson({
                 disabled={busy || !lesson.quiz.every((q) => q.id in answers)}
                 onClick={() => void save("quiz")}
               >
-                {en ? "Submit answers" : "تسليم الإجابات"}
+                {c.submit}
               </Button>
               {result && (
                 <p role="status">
@@ -314,7 +308,7 @@ function AuthorizedLesson({
                   if (draft?.length === fields.length) setFields(draft);
                 }}
               >
-                {en ? "Restore saved response" : "استعادة الإجابة المحفوظة"}
+                {c.restore}
               </Button>
               {lesson.assignment.rubric?.map((r) => (
                 <details key={r.criterion} className="rounded-xl border p-4">
@@ -328,7 +322,7 @@ function AuthorizedLesson({
                 disabled={busy || fields.some((f) => !f.trim())}
                 onClick={() => void save("practice")}
               >
-                {en ? "Save practice submission" : "حفظ التطبيق"}
+                {c.save}
               </Button>
               <p className="text-sm leading-7 text-muted-foreground">
                 {en

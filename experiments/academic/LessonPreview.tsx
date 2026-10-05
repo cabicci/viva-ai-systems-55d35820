@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ReadingDiagram } from "./ReadingDiagram";
 import { ReadingVisual, type ReadingVisualSpec } from "./ReadingVisual";
+import { LessonText } from "@/components/academic-education/LessonText";
 import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
@@ -102,8 +103,8 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
         <section className="print-page" key={s.id}>
           <p>{english ? "Masaarat Academic" : "مسارات أكاديمي"}</p>
           <h2>{s.title}</h2>
-          <p>{s.text}</p>
-          <ReadingDiagram kind={s.id} english={english} />
+          <LessonText text={s.text} />
+          {lesson.id === "AC-BUS-M01-L01" && <ReadingDiagram kind={s.id} english={english} />}
           <p>
             <strong>{english ? "Pause and apply" : "توقف وطبّق"}:</strong> {s.reflection}
           </p>
@@ -112,9 +113,31 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           </footer>
         </section>
       ))}
+      {lesson.readingVisuals?.map((visual) => (
+        <section className="print-page" key={visual.id}>
+          <ReadingVisual visual={visual} />
+        </section>
+      ))}
+      {lesson.id !== "AC-BUS-M01-L01" && (
+        <section className="print-page">
+          <h2>{english ? "Check understanding" : "اختبر فهمك"}</h2>
+          {lesson.quiz.map((question, index) => (
+            <article key={question.id} className="print-keep">
+              <h3>
+                {index + 1}. {question.question}
+              </h3>
+              <ol>
+                {question.options.map((option, i) => (
+                  <li key={i}>{option}</li>
+                ))}
+              </ol>
+            </article>
+          ))}
+        </section>
+      )}
       <section className="print-page">
         <h2>{lesson.example.title}</h2>
-        <p>{lesson.example.text}</p>
+        <LessonText text={lesson.example.text} />
         <p>{lesson.example.decision}</p>
         <ol>
           {lesson.example.steps?.map((step, i) => (
@@ -133,6 +156,28 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {lesson.sections.length + 2}
         </footer>
       </section>
+      {lesson.assignment.rubric && (
+        <section className="print-page">
+          <h2>{english ? "Practice review criteria" : "معايير مراجعة التطبيق"}</h2>
+          {lesson.assignment.rubric.map((row, i) => (
+            <article key={i} className="print-keep">
+              <h3>{row.criterion}</h3>
+              <p>
+                <strong>{english ? "Excellent: " : "متقن: "}</strong>
+                {row.excellent}
+              </p>
+              <p>
+                <strong>{english ? "Adequate: " : "مستوفٍ: "}</strong>
+                {row.adequate}
+              </p>
+              <p>
+                <strong>{english ? "Needs revision: " : "يحتاج مراجعة: "}</strong>
+                {row.needsRevision}
+              </p>
+            </article>
+          ))}
+        </section>
+      )}
       <section className="print-page">
         <h2>{english ? "Review and summary" : "المراجعة والملخص"}</h2>
         <ul>
@@ -253,17 +298,19 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                 {lesson.sections.map((s) => (
                   <article
                     key={s.id}
-                    className="grid items-start gap-5 border-t pt-6 md:grid-cols-[minmax(0,1fr)_220px]"
+                    className={`grid items-start gap-5 border-t pt-6 ${lesson.id === "AC-BUS-M01-L01" ? "md:grid-cols-[minmax(0,1fr)_220px]" : ""}`}
                   >
                     <div>
                       <h3 className="text-xl font-bold">{s.title}</h3>
-                      <p className="academic-prose mt-3">{s.text}</p>
+                      <LessonText text={s.text} className="mt-3" />
                       <p className="mt-4 rounded-xl bg-accent/20 p-4 leading-8">
                         <strong>{english ? "Think it through: " : "فكّر وطبّق: "}</strong>
                         {s.reflection}
                       </p>
                     </div>
-                    <ReadingDiagram kind={s.id} english={english} />
+                    {lesson.id === "AC-BUS-M01-L01" && (
+                      <ReadingDiagram kind={s.id} english={english} />
+                    )}
                   </article>
                 ))}
                 {lesson.readingVisuals?.map((visual) => (
@@ -283,7 +330,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             {tab === 1 && (
               <>
                 <h2 className="text-xl font-bold">{lesson.example.title}</h2>
-                <p className="academic-prose">{lesson.example.text}</p>
+                <LessonText text={lesson.example.text} />
                 <ol className="list-inside list-decimal space-y-4 leading-8">
                   {lesson.example.steps?.map((step, i) => (
                     <li key={i}>{step}</li>

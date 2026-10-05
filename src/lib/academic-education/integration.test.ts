@@ -10,7 +10,7 @@ const admin = randomUUID(),
   other = randomUUID();
 const value = async <T = Record<string, unknown>>(sql: string, args: unknown[] = []) =>
   (await db.query<{ v: T }>(sql, args)).rows[0]?.v;
-const caller = async (id = user) => {
+const caller = async (id: string = user) => {
   await db.query(
     "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
     [id],
@@ -107,6 +107,51 @@ beforeEach(async () => {
 afterEach(async () => {
   await db.exec("ROLLBACK");
 });
+it("erases academic learner progress at the existing deletion stage without erasing finance early", async () => {
+  await caller(admin);
+  await commerce("configure_method", {
+    code: "instapay",
+    enabled: true,
+    instructions: "Synthetic fixture",
+    destination: "SYNTHETIC ONLY",
+    currencies: ["EGP"],
+  });
+  await caller();
+  const order = await commerce("create_order", {
+    package: "academic",
+    market: "EG",
+    billing_interval: "month",
+    method: "instapay",
+    key: randomUUID(),
+    locale: "en",
+  });
+  await grant();
+  await command("read");
+  await db.exec("SELECT set_config('request.jwt.claim.role','service_role',false)");
+  await db.exec(
+    "UPDATE billing.account_deletion_control SET enabled=true,financial_purge_enabled=true,financial_retention_reference='synthetic',crm_retention_reference='synthetic',responder_reference='synthetic',release_reference='synthetic'",
+  );
+  await db.query("INSERT INTO billing.account_deletion_requests(user_id) VALUES($1)", [user]);
+  const claim = await value<{ lease_token: string }>("SELECT public.lc09_claim_deletion($1) v", [
+    user,
+  ]);
+  await value("SELECT public.lc09_advance_deletion($1,$2,'provider_reconciled') v", [
+    user,
+    claim.lease_token,
+  ]);
+  await value("SELECT public.lc09_advance_deletion($1,$2,'learner_erased') v", [
+    user,
+    claim.lease_token,
+  ]);
+  expect(
+    await value("SELECT count(*)::int v FROM public.academic_progress WHERE user_id=$1", [user]),
+  ).toBe(0);
+  expect(
+    await value("SELECT count(*)::int v FROM billing.commerce_orders WHERE id=$1", [order.id]),
+  ).toBe(1);
+  await caller();
+  await rejectsSql(() => command("read"), "COMMERCE_ACCOUNT_UNAVAILABLE");
+});
 it("keeps Pro Plus pricing parity without giving Pro Plus academic rights", async () => {
   for (const market of ["EG", "INTL"])
     for (const interval of ["month", "year"]) {
@@ -125,6 +170,26 @@ it("keeps Pro Plus pricing parity without giving Pro Plus academic rights", asyn
     }
   await grant("pro_plus");
   expect(await command("lesson")).toEqual({ allowed: false });
+});
+it("exposes only approved public catalogue titles, even to anonymous visitors", async () => {
+  await caller("");
+  await db.exec("SET LOCAL ROLE anon");
+  const catalog = await value<
+    { id: string; title: string; lessons: { id: string; title: string }[] }[]
+  >("SELECT public.academic_catalogue('en') v");
+  expect(catalog).toHaveLength(1);
+  expect(catalog[0].lessons).toHaveLength(2);
+  expect(JSON.stringify(catalog)).not.toMatch(/sections|quiz|assignment|correct|NEVER_DELIVER/);
+  await db.exec("RESET ROLE");
+  await db.exec(
+    "UPDATE public.academic_lesson_content SET approved=false WHERE lesson_id='AC-BUS-M01-L02'",
+  );
+  const filtered = await value<{ lessons: unknown[] }[]>(
+    "SELECT public.academic_catalogue('en') v",
+  );
+  expect(filtered[0].lessons).toHaveLength(1);
+  await db.exec("UPDATE public.academic_courses SET enabled=false");
+  expect(await value("SELECT public.academic_catalogue('en') v")).toEqual([]);
 });
 it("reuses the individual coupon path without granting the assistant or another line", async () => {
   await caller(admin);

@@ -1,4 +1,15 @@
 import type { ReadingVisualSpec } from "@/components/academic-education/ReadingVisual";
+export type AcademicCourse = {
+  id: string;
+  title: string;
+  lessons: {
+    id: string;
+    title: string;
+    moduleId: string;
+    position: number;
+    introductory: boolean;
+  }[];
+};
 export type AcademicLesson = {
   id: string;
   locale: string;

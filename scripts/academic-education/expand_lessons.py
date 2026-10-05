@@ -14,8 +14,18 @@ Return ONLY a JSON object with these fields:
 {id,locale,title,intro,goals:[4 measurable outcomes],sections:[6 objects {id,title,text,reflection}],example:{title,text,decision,steps:[5 explained solution steps]},quiz:[6 objects {id,question,options:[4 plausible distinct choices],correct:zero-based integer,explanation}],assignment:{prompt,fields:[5 lesson-specific output fields],criteria:[5 lesson-specific observable criteria],rubric:[5 objects {criterion,excellent,adequate,needsRevision}]},faq:[3 objects {question,answer}],summary:[4],readingVisuals:[3 objects {id,title,kind:flow|comparison|table,columns:[2 or 3],rows:[[matching cells]],caption}],videoVisualPlan:[3 distinct scene descriptions]}.
 Each section must teach a DIFFERENT aspect: concept, reasoning/process, use, limits, common error, transfer. At least 90 words per section and at least 650 words across six section texts; avoid repetition or filler. The worked case must show all reasoning and calculations step by step, with assumptions and exclusions. The quiz must include at least 3 scenario/application questions, not just recall. Explain WHY the correct answer is correct and identify the misconception behind alternatives. Do not use all correct answers in the same position. The task must take the learner through constructing and revising a meaningful artifact. Rubrics must describe evidence at each level, not generic praise. Visuals must explain this lesson's specific content with accurate labels. Reading visuals and video plans must use DIFFERENT representations, not renamed copies or video stills. No decorative generic placeholders. Do not mention these production instructions to learners.'''
 
+INSTRUCTIONS += '\nLength control: aim for 110–160 words per section and 40–70 words per solution step. Complete every sentence. Never embed serialized JSON fields inside a text string. Never repeat a section. Recompute every arithmetic result and ensure the zero-based answer index selects the result explained in the feedback.'
+
 def validate(d,lesson_id,locale):
  assert d['id']==lesson_id and d['locale']==locale
+ def reject_embedded_schema(value):
+  if isinstance(value,dict):
+   for item in value.values():reject_embedded_schema(item)
+  elif isinstance(value,list):
+   for item in value:reject_embedded_schema(item)
+  elif isinstance(value,str):
+   assert not re.search(r'(?:reflection|readingVisuals|assignment|sections|videoVisualPlan)"\s*:',value), 'embedded_schema_in_text'
+ reject_embedded_schema(d)
  def text(value):
   assert isinstance(value,str) and value.strip(), 'missing_text'
  for key in ['title','intro']:text(d[key])
