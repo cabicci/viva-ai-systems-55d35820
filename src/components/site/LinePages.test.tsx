@@ -109,6 +109,10 @@ describe("line-specific overviews and curricula", () => {
           "href",
           `/${line}/curriculum?locale=${locale}`,
         );
+        if (line === "technical") {
+          expect(screen.getByText(getLineCopy(locale).technicalPrice)).toBeInTheDocument();
+          expect(screen.queryByText(getLineCopy(locale).unavailable)).not.toBeInTheDocument();
+        }
         if (locale === "en") expect(view.container.textContent).not.toMatch(/[\u0600-\u06ff]/);
         cleanup();
       }
