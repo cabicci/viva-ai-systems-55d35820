@@ -280,7 +280,7 @@ export function LineOverview({ line }: { line: "kids" | "technical" }) {
                 {getKidsPrivacyCopy(locale).link}
               </Link>
             ) : (
-              <p className="mt-6 text-sm text-muted-foreground">{shared.unavailable}</p>
+              <p className="mt-6 text-sm text-muted-foreground">{shared.technicalPrice}</p>
             )}
           </div>
         </div>

@@ -1,3 +1,11 @@
+## 2026-10-05 — Released technical enrolment copy
+
+[roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
+scope: ui
+source: user
+summary: Production verification found one obsolete enrolment-coming-later sentence below the available technical plans link. Reuse the existing four-locale independent-plan/Pro Plus-price copy. No payment, access, backend or media change.
+sync_status: same release roadmap item; technical import/admin/checkout and frontend deployed, final copy correction and verification in progress
+
 ## 2026-10-05 — Technical checkout deployment packaging
 
 [roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
