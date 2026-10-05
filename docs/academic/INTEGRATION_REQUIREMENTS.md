@@ -1,11 +1,11 @@
 # Academic shared integration contract
 
-Status: review requirements, not implemented commerce or deployment authorization.
+Status: central integration requirements. Guarded commerce and delivery candidates are implemented on the isolated branch; they are not activated or deployment authorization.
 
 ## Ownership and sequence
 The Academic branch owns curriculum, original lesson packages and the isolated pilot. Central integration owns edits to the shared line registry, navigation, account overview, billing, receipt/email/coupon/invitation paths and global registers. This document is a handoff for that chat; no message has been sent on the owner's behalf.
 
-Sequence: agree pilot and commercial values; rebase onto the then-current main; coordinate shared surfaces; implement through existing architecture; test authorization and regression behavior; seek a separate merge/release decision. A successful pilot workflow does not authorize any of those later release actions.
+Sequence: review the completed branch candidates against then-current main; coordinate shared surfaces; register through the existing architecture; complete integration and regression checks; record the central merge/release decision. Base Academic price parity and written release before remaining videos are already agreed. Assistant price and allowance remain separate outstanding requirements.
 
 ## Required access matrix
 | Session / entitlement | Academic lessons | Academic assistant |
@@ -18,7 +18,7 @@ Sequence: agree pilot and commercial values; rebase onto the then-current main; 
 | Stored administrator role | Existing lesson-review rules, account checks and release controls | No automatic unlimited paid model calls |
 | Expired/refunded/revoked access | Existing server-side revocation behavior | No stale retrieval/cache grant |
 
-Whether an assistant-only buyer can use it without an active Academic content subscription is unresolved. Do not implement a permissive default. Exact prices, billing periods, quota, catalogue-versus-course scope and cancellation/refund interactions also remain unresolved.
+Whether an assistant-only buyer can use it without an active Academic content subscription is unresolved. Do not implement a permissive default. The Academic base uses the canonical Pro Plus price catalogue, with independent rights. Assistant price, billing allowance/quota, catalogue-versus-course scope and cancellation/refund interactions remain unresolved. Do not ask again for the already-agreed base price parity.
 
 ## Shared product surfaces
 - Add Academic through `src/lib/learning-lines.ts` and the existing route/component family; reuse introductory section order, curriculum hierarchy, lesson layout, typography and one locale selector.

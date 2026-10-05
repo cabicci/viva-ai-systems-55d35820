@@ -28,4 +28,4 @@ Egyptian draft: AC-BUS-M01-L01 / ar-EG. Render commit: 2ccc6af7e54ca6c688f1d4ef1
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | ar-EG | Pending | Pending actual listening | — | Not yet assessed | — | — | Not accepted |
 
-Full course generation remains behind pilot acceptance. This sheet records an outstanding review; it is not an assertion that the voice sounds natural.
+Full-course audio/video generation remains behind pilot listening acceptance; this media gate does not block the separately reviewed written course. This sheet records an outstanding review; it is not an assertion that the voice sounds natural.
