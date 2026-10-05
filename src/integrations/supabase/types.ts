@@ -1480,6 +1480,102 @@ export type Database = {
         }
         Relationships: []
       }
+      technical_asset_manifest: {
+        Row: {
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Insert: {
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Update: {
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          path?: string
+          sha256?: string
+        }
+        Relationships: []
+      }
+      technical_lesson_content: {
+        Row: {
+          kind: string
+          lesson_id: string
+          locale: string
+          payload: Json
+          source_sha256: string
+          video_guid: string
+        }
+        Insert: {
+          kind: string
+          lesson_id: string
+          locale: string
+          payload: Json
+          source_sha256: string
+          video_guid: string
+        }
+        Update: {
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          payload?: Json
+          source_sha256?: string
+          video_guid?: string
+        }
+        Relationships: []
+      }
+      technical_progress: {
+        Row: {
+          drafts: Json
+          lesson_id: string
+          practice_reviewed: boolean
+          quiz_passed: boolean
+          read: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          drafts?: Json
+          lesson_id: string
+          practice_reviewed?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          drafts?: Json
+          lesson_id?: string
+          practice_reviewed?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      technical_release_control: {
+        Row: {
+          enabled: boolean
+          singleton: boolean
+        }
+        Insert: {
+          enabled?: boolean
+          singleton?: boolean
+        }
+        Update: {
+          enabled?: boolean
+          singleton?: boolean
+        }
+        Relationships: []
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -2700,6 +2796,17 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      technical_can_access: { Args: { p_lesson: string }; Returns: boolean }
+      technical_command: {
+        Args: {
+          p_action: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      technical_storage_allowed: { Args: { p_path: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
