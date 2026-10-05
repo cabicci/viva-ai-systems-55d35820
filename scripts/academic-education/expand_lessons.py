@@ -3,6 +3,7 @@ REST reference: https://ai.google.dev/gemini-api/docs/structured-output
 """
 import argparse, concurrent.futures, hashlib, json, os, re, time, urllib.request, urllib.error
 from pathlib import Path
+from schema import LESSON_SCHEMA
 ROOT=Path(__file__).resolve().parents[2]
 LOCALES=['ar-EG','ar-MSA','ar-Gulf','en']
 MODEL='gemini-2.5-flash'
@@ -38,7 +39,8 @@ def validate(d,lesson_id,locale):
   for key in ['id','title','caption']:text(visual[key])
   for value in visual['columns']:text(value)
   for row in visual['rows']:
-   for value in row:text(value)
+   # Blank cells may encode continuation in a hierarchy; other types are invalid.
+   for value in row:assert isinstance(value,str), 'invalid_visual_cell'
  assert len({v['id'] for v in d['readingVisuals']})==3
  for value in d['videoVisualPlan']:text(value)
  assert len(d['goals'])==4 and len(d['sections'])==6 and len(d['quiz'])==6
@@ -74,7 +76,7 @@ def generate(brief,locale,key,out):
  for attempt in range(MAX_ATTEMPTS):
   # Retry is bounded for transient errors or format repair, never to evade a safety refusal.
   repair='\nPrevious response failed structural validation: '+last_error+'. Correct that structure.' if last_error else ''
-  body={'contents':[{'role':'user','parts':[{'text':prompt+repair}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0.35,'maxOutputTokens':16000,'thinkingConfig':{'thinkingBudget':1024}}}
+  body={'contents':[{'role':'user','parts':[{'text':prompt+repair}]}],'generationConfig':{'responseMimeType':'application/json','responseSchema':LESSON_SCHEMA,'temperature':0.35,'maxOutputTokens':16000,'thinkingConfig':{'thinkingBudget':1024}}}
   req=urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/'+MODEL+':generateContent',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','x-goog-api-key':key},method='POST')
   try:
    with urllib.request.urlopen(req,timeout=180) as response:r=json.load(response)
@@ -82,6 +84,9 @@ def generate(brief,locale,key,out):
    if not candidates or candidates[0].get('finishReason') not in ['STOP',None]:
     raise RuntimeError('generation_stopped:'+str(candidates[0].get('finishReason') if candidates else 'no_candidate'))
    text=''.join(p.get('text','') for p in candidates[0]['content']['parts'] if not p.get('thought'))
+   # Preserve structurally rejected responses for repair, avoiding needless regeneration.
+   review=out/'attempts';review.mkdir(exist_ok=True)
+   (review/f'{id}-attempt-{attempt+1}.txt').write_text(text)
    d=validate(json.loads(text),id,locale)
    d.update(version='2.0.0-editorial-review',status='GENERATED_REVIEW_REQUIRED',brand='Masaarat',line='academic',courseId='AC-BUS',media={'provider':'bunny','videoId':None},workloadMinutes={'readingAndExamples':10,'application':30,'assessmentAndReflection':10},provenance={'briefSha256':hashlib.sha256(json.dumps(brief,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),'model':MODEL,'method':'original-brief-expansion','promptSha256':hashlib.sha256(INSTRUCTIONS.encode()).hexdigest()})
    dest.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
@@ -95,11 +100,16 @@ def generate(brief,locale,key,out):
  raise RuntimeError('attempt_limit')
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--locale',choices=LOCALES,required=True);p.add_argument('--limit',type=int,default=39);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--locale',choices=LOCALES,required=True);p.add_argument('--limit',type=int,default=39);p.add_argument('--request',type=Path);a=p.parse_args()
  assert 1<=a.limit<=39
  key=os.environ.get('GEMINI_API_KEY') or os.environ.get('GEMINI_API_KEY_1')
  if not key:raise SystemExit('Missing configured generation credential')
  briefs=json.loads((ROOT/'experiments/academic/course/authored-briefs.json').read_text())[:a.limit]
+ if a.request:
+  request=json.loads(a.request.read_text());selected=request['lessonsByLocale'].get(a.locale,[])
+  assert len(selected)==len(set(selected)) and set(selected)<=set(b['id'] for b in briefs)
+  assert len(selected)*MAX_ATTEMPTS<=request['maximumProviderCallsByLocale'].get(a.locale,0)
+  briefs=[b for b in briefs if b['id'] in selected]
  out=ROOT/'tmp/academic-expanded'/a.locale;out.mkdir(parents=True,exist_ok=True)
  receipts=[]
  with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
