@@ -37,3 +37,13 @@ The review entry now uses the actual shared Navbar, Footer, LanguageSelector, Da
 `media-manifest.json` now records all four existing Bunny identities at status 4, verified read-only in run 37332447947. No rerender or reupload occurred. Actual listening remains pending. `shell-review.mjs` verifies the exported file in four locales at 390/1440 widths, eight lesson sections, one locale selector, three other-line choices, responsive menus, locale switching, embedded PDF downloads and correct non-autoplay Bunny URLs. No account/payment requests are made.
 
 Known review-build warnings: five react-refresh export-shape warnings from fixture entry/provider files and one bundle-size warning because the self-contained review includes four locales and the shared shell in one bundle. These are not production performance acceptance.
+
+## Course expansion review (2026-10-05)
+
+The preview now exposes one course card, 40 lesson drafts, the seven-module curriculum, previous/next navigation, and initial price parity using the existing Pro Plus price catalogue (independent rights; assistant separate). The 39 new drafts reuse LessonView and contain one formative question each. They are NOT at the completed pilot's editorial depth; release review is open. Arabic conceptual text is shared formal Arabic, with contextual interaction prompts.
+
+`course/author.py` contains original bilingual authored briefs; run it before `course/compile.py` to regenerate four contextual review datasets and the planning ledger. Both are deterministic local content packaging, not production migrations. Answer keys in this self-contained review must never be used as the paid production delivery architecture.
+
+Reading diagrams now live in ReadingDiagram.tsx. Video diagrams and already-created videos are unchanged. A missing video cannot inherit the pilot's media; its tab is hidden. Non-video estimated workload is 2000 minutes; not verified learner time.
+
+`course-review.mjs` checks all 40 lessons in each locale and the single-card hierarchy. `review.mjs` supports ACADEMIC_REVIEW_URL for file-based review when a development server is unavailable. Generated PDF output is not committed; source methodology lives in docs/academic.

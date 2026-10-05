@@ -14,7 +14,8 @@ for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf", "en"]) {
     const page = await browser.newPage({ viewport: { width, height: 1000 } });
     const errors = [];
     page.on("pageerror", (e) => errors.push(e.message));
-    await page.goto(`http://127.0.0.1:4178/?locale=${locale}`);
+    await page.goto(`${process.env.ACADEMIC_REVIEW_URL || "http://127.0.0.1:4178/"}?locale=${locale}`);
+    await page.locator("aside nav button").first().waitFor();
     await page.evaluate(() => document.fonts.ready);
     assert.equal(await page.locator("html").getAttribute("dir"), locale === "en" ? "ltr" : "rtl");
     const buttons = page.locator("aside nav button");

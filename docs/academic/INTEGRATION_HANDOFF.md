@@ -162,3 +162,52 @@ Validation: isolated TS and Vite build passed; exported HTML browser checks pass
 New/changed presentation files: experiments/academic/main.tsx, LessonPreview.tsx, adapters/lines.ts, adapters/account.tsx, vite.config.ts, export-preview.py, shell-review.mjs, review/shell-checks.json, .gitignore, README.md, media-manifest.json, review/media-receipts.json and review/bunny-verification.json. Bounded readiness follow-up uses media/verify.py and media/verification-request.json. The final commit SHA is supplied in the delivery message.
 
 Playback test limitation: opening the Egyptian Bunny iframe from the exported preview in the test browser failed with net::ERR_EMPTY_RESPONSE and a 12-second frame-navigation timeout. Provider status 4 and correct embed URLs are verified; in-browser playback in this environment is not. Do not describe this as an end-to-end player pass or change production settings to bypass the failure. The exported shell/PDF/UI interactions passed independently.
+
+## Latest handoff — course-card and written-draft expansion, 2026-10-05
+
+This section supersedes earlier statements that only the first lesson is navigable or that the outline still contains 30 lessons. It does not supersede previously verified Bunny readiness or imply production readiness.
+
+**Branch:** `work/masaarat-academic-20261005`.
+**Baseline:** `f51ca4d542e9aad0ea90ddbe524c24a6051d2e33`.
+**Status:** isolated interactive review; no merge, publication, production setting change, existing video replacement or central-chat message.
+
+### Implemented
+
+- One Academic course catalogue card: AC-BUS, Business foundations and building a venture. The card opens all seven modules and 40 draft lessons. Stable lesson IDs are preserved; the capstone retains M07-L05 and appears after its new preparatory lessons.
+- 39 additional original bilingual lesson briefs, packaged into ar-EG/ar-MSA/ar-Gulf/en review data. Shared formal Arabic explanations plus contextual interaction prompts; independent locale acceptance is still pending.
+- Same LessonView components for pilot and draft lessons; previous/next, curriculum return, contextual-language changes, formative questions, practice fields, print-to-PDF fallback.
+- ReadingDiagram separated from the unchanged video Diagram component. Pilot PDF illustrations refreshed. Existing MP4s, Bunny IDs and production media untouched.
+- Missing video has no visible video tab. A non-pilot lesson cannot inherit the pilot Bunny link. Written completion does not depend on video or a paid assistant.
+- Initial Academic pricing reads canonical Pro Plus catalogue values. No purchase action or production billing mutation. Egypt EGP 309/month, EGP 3090/year; international USD 12.99/month, USD 129.90/year, tax exclusive, repository evidence only. Equal price does not imply equal entitlement. Academic assistant remains a separate optional add-on with price/quota unset.
+- Standalone reusable methodology source and six-page user PDF. Covers academic verification, original Masaarat-only learner output, visual separation, contextual localisation, Egyptian pronunciation review, independent media readiness, workload evidence, RAG boundaries and delivery gates.
+
+### Changed file groups
+
+- `docs/academic/{CRITERIA_AND_DECISIONS.md,CURRICULUM_PROPOSAL.ar.md,curriculum-proposal.json,INTERNAL_ACADEMIC_ALIGNMENT.md,INTEGRATION_HANDOFF.md,MASAARAT_LESSON_PRODUCTION_METHODOLOGY.ar.md}`
+- `experiments/academic/{main.tsx,LessonPreview.tsx,CourseCatalogue.tsx,ReadingDiagram.tsx,README.md,review.mjs,course-review.mjs,validate.py}`
+- `experiments/academic/course/{author.py,authored-briefs.json,compile.py,packages.ts,ar-EG.json,ar-MSA.json,ar-Gulf.json,en.json}`
+- `experiments/academic/review/course-checks.json`
+- Generated review HTML and PDF deliverables are separate from repository source; no production media files changed.
+
+### Verification
+
+- `python experiments/academic/validate.py`: passed 40 unique draft IDs, 2000 planned non-video minutes, 156 additional locale packages, basic field integrity, source-name separation, illustrative arithmetic, pronunciation source isolation and reading/video component separation. These checks do not establish academic completeness.
+- `npx tsc -p experiments/academic/tsconfig.json`: passed.
+- Changed-source ESLint: zero errors, three existing-pattern React Fast Refresh warnings in the review entry/component exports.
+- Vite review build: passed. Single self-contained review bundle is approximately 1.08 MB before compression; bundle-size warning remains and is not production performance acceptance.
+- Pilot browser review: 64 locale/viewport/tab visits, four refreshed nine-page PDFs, no horizontal overflow or runtime errors.
+- Expanded-course browser review: 160 lesson visits, 156 draft quiz submissions, missing-video tabs hidden, one catalogue card, 40 curriculum entries, locale preserves current lesson, no mobile overflow or runtime errors.
+- Shared-shell review: four locales, mobile/desktop, actual Navbar/Footer, three other line choices, PDF link and Bunny embed presence, no account/payment network requests.
+- Methodology PDF: six pages visually inspected. No full listening acceptance or new actual Bunny playback verification claimed.
+- Development-server browser attempt failed with connection loss; final checks ran against the built self-contained HTML, not a claimed working development server.
+
+### Outstanding requirements — do not mark release-ready
+
+1. **Written-content depth:** new lessons are concise authored drafts, not 39 finished pilot-depth lessons. Expand explanation, lesson-specific visuals, richer formative questions and task-specific scoring rubrics; perform concept-by-concept academic editorial review. The presence of files and a working UI does not close this requirement.
+2. **Audience and contextual acceptance:** confirm final audience/prerequisites in the course specification and independently review all four contextual packages. Shared Arabic concept text is not proof of locale acceptance.
+3. **Workload:** 40 × 50 minutes = 2000 minutes (33h20) is an unverified planning estimate. Obtain learner timing evidence; no accredited-equivalence or guaranteed-duration claim.
+4. **Central integration:** agree ownership before shared LearningLine/route/navigation/billing/schema changes. Integrate existing server-authorised content, progress, assessment and private downloads. Do not ship the answer-bearing offline review bundle as the paid runtime.
+5. **Entitlements/regressions:** test shared account, independent Academic subscription, optional separately paid assistant, existing Free/Pro/Pro Plus/Builder rules, stored-admin lesson access, all four locales, payments/receipts/emails/coupons/invitations. No production authorization or payment tests were performed in this slice.
+6. **Assistant:** separate price/quota decision, server entitlement checks and private per-course/lesson/locale/version retrieval corpus excluding answer keys, private rubrics and internal research.
+7. **Media:** remaining videos may follow written release after written gates pass. Keep hidden until exact lesson/locale media is ready. Maintain per-word Egyptian listening review; do not regenerate or replace existing media unnecessarily.
+8. **Merge/publication:** eventual integration is the owner's stated direction, but this draft has not passed the remaining written and central-integration gates. No merge or publication has occurred.

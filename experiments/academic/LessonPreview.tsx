@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { AcademicDiagram } from "./Diagram";
+import { ReadingDiagram } from "./ReadingDiagram";
 import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
@@ -11,7 +11,20 @@ import "./style.css";
 
 export const packages = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
 type Locale = keyof typeof packages;
-type Lesson = typeof eg;
+export type Lesson = Pick<
+  typeof eg,
+  | "id"
+  | "locale"
+  | "title"
+  | "intro"
+  | "goals"
+  | "sections"
+  | "example"
+  | "quiz"
+  | "assignment"
+  | "faq"
+  | "summary"
+>;
 const labels = {
   "ar-EG": [
     "الشرح",
@@ -75,7 +88,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
             <li key={g}>{g}</li>
           ))}
         </ul>
-        <AcademicDiagram kind="customer" english={english} />
+        {lesson.id === "AC-BUS-M01-L01" && <ReadingDiagram kind="customer" english={english} />}
         <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 1</footer>
       </section>
       {lesson.sections.map((s, i) => (
@@ -83,7 +96,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           <p>{english ? "Masaarat Academic" : "مسارات أكاديمي"}</p>
           <h2>{s.title}</h2>
           <p>{s.text}</p>
-          <AcademicDiagram kind={s.id} english={english} />
+          <ReadingDiagram kind={s.id} english={english} />
           <p>
             <strong>{english ? "Pause and apply" : "توقف وطبّق"}:</strong> {s.reflection}
           </p>
@@ -104,7 +117,9 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
             <div style={{ borderBottom: "1px solid #aaa", height: "10mm" }} />
           </div>
         ))}
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 8</footer>
+        <footer>
+          {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {lesson.sections.length + 2}
+        </footer>
       </section>
       <section className="print-page">
         <h2>{english ? "Review and summary" : "المراجعة والملخص"}</h2>
@@ -124,7 +139,9 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
             <p>{f.answer}</p>
           </article>
         ))}
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 9</footer>
+        <footer>
+          {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {lesson.sections.length + 3}
+        </footer>
       </section>
     </div>
   );
@@ -133,7 +150,11 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const locale = lesson.locale as Locale,
     english = locale === "en",
     t = labels[locale];
-  const media = mediaManifest[locale] as {
+  const media = (
+    lesson.id === "AC-BUS-M01-L01"
+      ? mediaManifest[locale]
+      : { embedUrl: null, durationSeconds: null, playbackReady: false }
+  ) as {
     embedUrl: string | null;
     durationSeconds: number | null;
     playbackReady: boolean;
@@ -160,7 +181,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
       <div className="screen-only mx-auto max-w-7xl space-y-6 px-4 py-8">
         <header className={`${panel} bg-gradient-to-br from-accent/20 to-card`}>
           <p className="text-sm font-bold text-primary">
-            {english ? "Business foundations · Lesson 1" : "أساسيات الأعمال · الدرس الأول"}
+            {english ? "Business foundations" : "أساسيات الأعمال"} · {lesson.id}
           </p>
           <h1 className="mt-3 text-3xl font-black leading-snug md:text-4xl">{lesson.title}</h1>
           <p className="mt-4 max-w-4xl leading-8 text-muted-foreground">{lesson.intro}</p>
@@ -172,17 +193,19 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               aria-label={english ? "Lesson sections" : "أقسام الدرس"}
             >
               <div className="grid grid-cols-2 gap-1 lg:grid-cols-1">
-                {t.map((label, i) => (
-                  <button
-                    key={label}
-                    className={`min-h-11 rounded-xl px-3 py-3 text-start text-sm font-bold ${tab === i ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-                    aria-pressed={tab === i}
-                    aria-controls="lesson-panel"
-                    onClick={() => select(i)}
-                  >
-                    {label}
-                  </button>
-                ))}
+                {t.map((label, i) =>
+                  i === 2 && !videoUrl ? null : (
+                    <button
+                      key={label}
+                      className={`min-h-11 rounded-xl px-3 py-3 text-start text-sm font-bold ${tab === i ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
+                      aria-pressed={tab === i}
+                      aria-controls="lesson-panel"
+                      onClick={() => select(i)}
+                    >
+                      {label}
+                    </button>
+                  ),
+                )}
               </div>
             </nav>
             <section className={`${panel} !p-5`}>
@@ -228,7 +251,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                         {s.reflection}
                       </p>
                     </div>
-                    <AcademicDiagram kind={s.id} english={english} />
+                    <ReadingDiagram kind={s.id} english={english} />
                   </article>
                 ))}
                 <Button onClick={() => setRead(true)}>
@@ -246,7 +269,9 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               <>
                 <h2 className="text-xl font-bold">{lesson.example.title}</h2>
                 <p className="academic-prose">{lesson.example.text}</p>
-                <AcademicDiagram kind="money" english={english} />
+                {lesson.id === "AC-BUS-M01-L01" && (
+                  <ReadingDiagram kind="money" english={english} />
+                )}
                 <p className="rounded-xl bg-accent/30 p-4 leading-8 font-bold">
                   {lesson.example.decision}
                 </p>
@@ -321,7 +346,10 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                 </Button>
                 {submitted && (
                   <p role="status">
-                    <bdi>{lesson.quiz.filter((q) => answers[q.id] === q.correct).length} / 6</bdi>
+                    <bdi>
+                      {lesson.quiz.filter((q) => answers[q.id] === q.correct).length} /{" "}
+                      {lesson.quiz.length}
+                    </bdi>
                   </p>
                 )}
               </>
@@ -365,11 +393,11 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
             {tab === 6 && (
               <>
                 <h2 className="text-xl font-bold">{t[6]}</h2>
-                {window.__ACADEMIC_REVIEW_PDFS__?.[locale] ? (
+                {lesson.id === "AC-BUS-M01-L01" && window.__ACADEMIC_REVIEW_PDFS__?.[locale] ? (
                   <Button asChild>
                     <a
                       href={window.__ACADEMIC_REVIEW_PDFS__[locale]}
-                      download={`Lesson_Workbook_AC-BUS-M01-L01_${locale}.pdf`}
+                      download={`Lesson_Workbook_${lesson.id}_${locale}.pdf`}
                     >
                       {english ? "Download lesson workbook (PDF)" : "تنزيل كراسة الدرس (PDF)"}
                     </a>

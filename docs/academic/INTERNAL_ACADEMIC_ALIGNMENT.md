@@ -35,3 +35,17 @@ The fictional currency amounts are Masaarat-authored assumptions, not research s
 ## Limits and editorial gates
 
 Topic alignment is complete for the outline; this does not complete scientific review of the remaining 29 lessons. Those lessons need their own claim-level verification before authoring acceptance. Local registration, tax, employment and other legal requirements must be verified from jurisdiction-specific official sources at authoring time. The first pilot makes no legal advice or registration claim. Reading workload remains an estimate including reflection; audio duration is measured separately, never padded to justify a nominal duration.
+
+## Expanded written drafts — verification scope, 2026-10-05
+
+Internal only. No external source names, quotations, diagrams or attributed examples are shipped in learner content. New cases and explanations are original Masaarat drafting. Topic alignment is not accreditation or an independent academic approval.
+
+References checked for scope/concept alignment:
+- Modules 2 and 5: OpenStax Principles of Management, managerial decision-making, team development and planning. https://openstax.org/books/principles-management/pages/2-1-overview-of-managerial-decision-making ; https://openstax.org/books/principles-management/pages/15-2-team-development-over-time ; https://openstax.org/books/principles-management/pages/17-1-is-planning-important
+- Modules 3–5: OpenStax Entrepreneurship, marketing planning, feasibility and business plans. https://openstax.org/books/entrepreneurship/pages/8-5-marketing-strategy-and-the-marketing-plan ; https://openstax.org/books/entrepreneurship/pages/11-3-conducting-a-feasibility-analysis ; https://openstax.org/books/entrepreneurship/pages/11-4-the-business-plan
+- Module 6: operational planning and launch sequencing. https://openstax.org/books/entrepreneurship/pages/12-3-designing-a-startup-operational-plan ; https://openstax.org/books/entrepreneurship/pages/15-1-launching-your-venture
+- Module 7: MIT 1.040 syllabus, organisation/planning/monitoring/control/learning, general principles only; the source is construction-specific. https://ocw.mit.edu/courses/1-040-project-management-spring-2004/pages/syllabus/
+
+These checks support topic selection, not a completed claim-by-claim editorial review of all 39 new lessons. Source-derived wording or images must not be copied into an uncredited commercial learner bundle. Local formation/tax lessons deliberately teach a verification workflow rather than asserting jurisdiction-specific obligations. Privacy/continuity examples describe general operational reasoning, not legal compliance claims.
+
+OPEN: full concept-to-outcome ledger per new lesson, subject-matter editorial depth, independent contextual-language review, stronger lesson-specific assessment/rubrics, and observed learner timing. Current concise briefs are not sufficient evidence to close these gates.

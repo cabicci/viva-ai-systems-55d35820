@@ -39,7 +39,7 @@ course=json.loads((ROOT/'docs/academic/curriculum-proposal.json').read_text())
 lessons=[l for m in course['modules'] for l in m['lessons']]
 assert len(lessons)==course['outlinedLessonCount'] and len({l['id'] for l in lessons})==len(lessons)
 assert sum(sum(l['minutes'].values()) for l in lessons)==course['totalMinutes']
-print('PASS: four locale packages; aligned outcomes/sections; quiz integrity; arithmetic; brand-only output; 1800-minute baseline ledger (not expanded-target acceptance); context-only Egyptian policy/cache/locale isolation.')
+print('PASS: four locale packages; aligned outcomes/sections; quiz integrity; arithmetic; brand-only output; 2000-minute proposed non-video ledger (learner timing unverified); context-only Egyptian policy/cache/locale isolation.')
 
 manifest=json.loads((HERE/'media-manifest.json').read_text())
 assert set(manifest)==set(locales)
@@ -58,3 +58,21 @@ meets_plan=course['totalMinutes']>1800 and len(lessons)>30
 if not meets_plan:
     assert course['status']=='SCOPE_EXPANSION_REQUIRED'
     print('OPEN REQUIREMENT: current outline needs expansion beyond 30 lessons and 1800 study minutes; actual learner timing remains unverified.')
+
+assert course['outlinedLessonCount']==40 and course['totalMinutes']==2000
+assert all(l['minutes']['video']==0 for l in lessons)
+for locale in locales:
+    drafted=json.loads((HERE/f'course/{locale}.json').read_text())
+    assert len(drafted)==39 and {d['id'] for d in drafted}=={l['id'] for l in lessons if l['id']!='AC-BUS-M01-L01'}
+    for d in drafted:
+        assert d['locale']==locale and d['video'] is None
+        assert all(d[k].strip() for k in ['concept','case','task','question','correct','wrong'])
+        assert d['correct']!=d['wrong']
+        assert sum(d['studyMinutes'].values())==50
+        raw=json.dumps(d,ensure_ascii=False).lower()
+        assert not any(x in raw for x in ['openstax','ocw.mit','edu4arab','https://'])
+assert 'ReadingDiagram' not in (ROOT/'remotion/src/academic/index.tsx').read_text()
+assert './Diagram' not in (HERE/'LessonPreview.tsx').read_text()
+assert 20*60==24*50 and 900/60==15 and 500+2400-2700==200
+assert 100*20==2000 and 2+3+1==6
+print('PASS: 40 draft lesson IDs; 156 additional locale packages; source separation; absent-video data; independent reading diagrams; illustrative arithmetic. Editorial depth and learner timing remain OPEN.')

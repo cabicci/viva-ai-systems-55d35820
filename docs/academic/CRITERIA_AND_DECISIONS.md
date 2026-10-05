@@ -128,3 +128,14 @@ The owner requested increasing the lesson count beyond 30 to ensure total study 
 The owner requires an interactive lesson sample in the platform presentation, not content-only deliverables. The fixture now reuses actual shared navigation/footer/language/account menu/curriculum components through review-only adapters. It includes the same lesson content, quiz/practice, downloadable locale PDFs and Bunny embeds. A single-file interactive review export is available; this is not a merged or deployed Academic product. Account, billing and assistant services remain unconnected and are visibly labelled.
 
 AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z found all four exact pilot identities at Bunny status 4 with positive lengths. The original failed readiness runs remain historical evidence; no replacement upload was needed. Audio acceptance and full browser playback acceptance are separate from provider readiness.
+
+## AC-COURSE-01 — 2026-10-05 — Owner refinement after pilot review
+
+- Owner accepted the pilot direction and requested all written content, with reading illustrations meaningfully different from video visuals.
+- Academic is a course-card catalogue. AC-BUS is the first course, not the entire line. Exactly one real course card is present; no invented available courses.
+- Owner requested eventual integration without waiting for videos. Missing video is optional and its tab is hidden; it does not block reading, practice or assessment. This does not waive written-content, entitlement, security or integration gates.
+- Academic initially matches canonical Pro Plus catalogue prices, not Pro Plus rights: Egypt EGP 309/month or 3090/year; international USD 12.99/month or 129.90/year, tax exclusive. These are repository prices, not a live Stripe/database assertion. Assistant stays an independently priced optional Academic add-on; no price/quota invented.
+- Expanded to 40 lesson drafts, 7 modules, 2000 estimated non-video study minutes. The 39 new lessons currently contain concise authored explanations/cases/tasks and one formative MCQ each. They have NOT passed the full pilot-depth editorial gate, contextual language review or learner timing. Do not label the entire course release-ready.
+- Arabic core academic definitions are shared deliberately across Arabic locales; interaction prompts are contextual. This is not evidence of completed independent locale review.
+- New reusable methodology: MASAARAT_LESSON_PRODUCTION_METHODOLOGY.ar.md. ReadingDiagram is separate from the unchanged video Diagram component. Existing MP4s and production media are untouched.
+- Shared navigation/billing implementation and global registers remain centrally owned. Branch preview uses isolated adapters. No central coordination message, merge, publication or production change has occurred in this slice.
