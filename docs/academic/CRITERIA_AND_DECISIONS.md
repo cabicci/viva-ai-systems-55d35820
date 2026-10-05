@@ -153,3 +153,9 @@ AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z f
 Supersedes the brief-only depth status for Egyptian/MSA: 40 complete review packages each, 80 browser lesson visits, 468 expanded questions and 234 reading visuals; 80 workbooks exported. Gulf has 21 packages including pilot; English has 20 including pilot. The remaining 39 contextual packages are not complete. Exact editorial ledger records 46 corrections; independent academic/contextual approval remains open.
 
 19 disposable DB/UI tests and seven Python tests pass; both TypeScript checks, candidate lint and isolated build pass (offline bundle-size warning). The course remains inactive/unapproved. First selected Gulf/English repair attempt failed before any generation; one bounded retry is queued. Central integration, assistant price/quota, learner timing and listening acceptance remain outstanding. This entry records a checkpoint, not full completion, launch or future automatic continuation.
+
+## AC-RECOVERY-04 — 2026-10-05 — continued completion
+
+Read Recovery v144 / Continuation v74 (CENTRAL-TAKEOVER-01), modified 19:37Z. Main remains 062b5f59. Central explicitly owns shared integration and is awaiting the completed written branch handoff; no global register or production mutation is made here. The earlier academic head in those registers is historical relative to this branch.
+
+Run37364538469 attempts1/2 never acquired a runner (runner_id0, empty steps, cancellation after15 minutes). This is infrastructure allocation evidence, not a failed provider/content call. New run37371816157 at048852e1 pins the documented ubuntu-22.04 standard runner and uses only the exact Gulf/English matrix, eliminating the redundant selector allocation. Missing IDs and 78-call maximum are unchanged. English generation has started; later outcome must be checked separately. No media production or settings changes.

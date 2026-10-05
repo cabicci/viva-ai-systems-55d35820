@@ -587,5 +587,726 @@
     "before": "الإجابة الصحيحة هي 'آه، لأن ده بيأثر على جودة الخدمة الأساسية'. فشل الشات بوت في الرد على 5% من الاستفسارات الشائعة يعني أن الخدمة الأساسية (تقديم الدعم) لا تعمل بكفاءة كافية، مما يؤثر سلبًا على تجربة العملاء ومصداقية الخدمة. هذا يعتبر عيبًا حرجًا.",
     "after": "المشكلة هنا أثر المعلومة المالية الغلط وغياب وسيلة احتواء، مش نسبة أخطاء مجردة. نعالج الوظيفة المتأثرة ونختبر الرد الصحيح والتحويل لموظف قبل إطلاقها؛ ممكن باقي الوظائف المستقلة تستمر بعد مراجعة جاهزيتها.",
     "reason": "Avoid arbitrary pass/fail threshold."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L01",
+    "path": [
+      "example",
+      "decision"
+    ],
+    "before": "بعد تقييم البدائل، تبين أن 'استقبال الملفات مبكراً' هو البديل الأكثر واعدة، لأنه يعالج سبب المشكلة بتكلفة أقل ومخاطر محدودة، مع افتراض قبول الطلاب له. البدائل الأخرى كانت إما مكلفة جداً أو لا تقدم مرونة كافية.",
+    "after": "وفق الدرجات والأوزان الافتراضية، استقبال الملفات مبكرًا هو المرشح الأول للاختبار. النتيجة ما تثبت إنه يعالج سبب الانتظار، ولا إن الطلاب بيتبنونه. نتحقق من تدفق العمل ونختبر الحل قبل الإنفاق أو التوسع.",
+    "reason": "Do not infer root cause or market acceptance from weighted scores."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L01",
+    "path": [
+      "example",
+      "steps",
+      1
+    ],
+    "before": "تحديد معايير التقييم وتحديد أوزانها: سنستخدم المعايير الأربعة الرئيسية: فائدة العميل، القدرة على التنفيذ، التكلفة، والمخاطر. سنعطي 'فائدة العميل' و 'التكلفة' وزناً أعلى (40% لكل منهما) لأنها الأكثر أهمية في هذا السياق، بينما 'القدرة على التنفيذ' و 'المخاطر' (10% لكل منهما). الدرجات ستكون من 1 (ضعيف جداً) إلى 5 (ممتاز).",
+    "after": "تحديد معايير التقييم وتحديد أوزانها: سنستخدم المعايير الأربعة الرئيسية: فائدة العميل، القدرة على التنفيذ، التكلفة، والمخاطر. سنعطي 'فائدة العميل' و 'التكلفة' وزناً أعلى (40% لكل منهما) لأنها الأكثر أهمية في هذا السياق، بينما 'القدرة على التنفيذ' و 'المخاطر' (10% لكل منهما). الدرجات ستكون من 1 (ضعيف جداً) إلى 5 (ممتاز). الدرجة الأعلى في معيار التكلفة تعني تكلفة أقل، وفي معيار المخاطر تعني مخاطر متبقية أقل بعد الضوابط. الدرجات تقديرات تعليمية، ولا نعتمد بديلًا يخالف شرطًا إلزاميًا حتى لو مجموعه أعلى.",
+    "reason": "Clarify desirability direction and non-compensable constraints."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "example",
+      "steps",
+      4
+    ],
+    "before": "**الخطوة 5: تسجيل قرار وقائي، مؤشر إنذار، وتاريخ مراجعة.**\n   *   **القرار الوقائي:** البدء في البحث عن موردين بديلين للبن والحليب بأسعار تنافسية، وتطوير عروض ترويجية لجذب العملاء في حال انخفاض المبيعات، مع التركيز على المشروبات ذات هامش الربح الأعلى.\n   *   **مؤشر الإنذار:** مراقبة عدد الأكواب المباعة يومياً وأسبوعياً. إذا انخفض متوسط المبيعات الأسبوعي عن 400 كوب (أي أقل من 1600 كوب شهرياً)، فهذا مؤشر يستدعي تفعيل خطة الطوارئ.\n   *   **تاريخ إعادة المراجعة:** مراجعة هذه الافتراضات والقرارات الوقائية كل ثلاثة أشهر، أو فور ظهور أي تغيرات كبيرة في السوق أو أسعار الموردين.",
+    "after": "**الخطوة 5: تسجيل قرار وقائي، مؤشر إنذار، وتاريخ مراجعة.**\n   *   **القرار الوقائي:** البدء في البحث عن موردين بديلين للبن والحليب بأسعار تنافسية، وتطوير عروض ترويجية لجذب العملاء في حال انخفاض المبيعات، مع التركيز على المشروبات ذات هامش الربح الأعلى.\n   *   **مؤشر الإنذار:** مراقبة عدد الأكواب المباعة يومياً وأسبوعياً. إذا انخفض متوسط المبيعات الأسبوعي عن 400 كوب (أي أقل من 1600 كوب خلال أربع أسابيع؛ هذا تبسيط للتخطيط وليس تحويلًا دقيقًا لكل شهر تقويمي)، فهذا مؤشر يستدعي تفعيل خطة الطوارئ.\n   *   **تاريخ إعادة المراجعة:** مراجعة هذه الافتراضات والقرارات الوقائية كل ثلاثة أشهر، أو فور ظهور أي تغيرات كبيرة في السوق أو أسعار الموردين.",
+    "reason": "Four weeks is not necessarily a calendar month."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "example",
+      "text"
+    ],
+    "before": "لنفترض أنك تخطط لافتتاح مقهى 'الواحة'. قمت بوضع خطة عمل تتضمن الافتراضات التالية:\n*   عدد الطلبات المتوقعة يومياً: 20 طلباً.\n*   متوسط المساهمة من كل طلب (الإيراد بعد خصم التكلفة المتغيرة): 60 جنيهاً.\n*   التكاليف الثابتة الشهرية (إيجار، رواتب، فواتير): 900 جنيه.\n\nبناءً على هذه الافتراضات، تكون النتيجة الشهرية المتوقعة (الربح/الخسارة) كالتالي:\n(20 طلباً/يوم * 30 يوماً/شهر) * 60 جنيهاً/طلب - 900 جنيه = 300 جنيه ربح شهري.\n\nالآن، نريد اختبار حساسية هذه الخطة.",
+    "after": "في مشروع افتراضي لبيع منتجات يدوية، الخطة الشهرية هي 20 طلبًا، ومساهمة الطلب 60 وحدة نقدية بعد تكلفته المتغيرة، والتكاليف الثابتة للشهر 900 وحدة نقدية. النتيجة المبسطة = 20 × 60 − 900 = 300 وحدة نقدية. جميع أحجام الطلبات أدناه تخص شهرًا واحدًا؛ لا نضربها في عدد أيام الشهر. لا يشمل النموذج بنودًا غير مذكورة أو تغير المخزون أو توقيت التحصيل.",
+    "reason": "Align period and units with original author brief; remove false daily/monthly calculation."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "example",
+      "decision"
+    ],
+    "before": "تحديد نقطة التعادل بناءً على حجم الطلبات اليومية، وتقييم تأثير انخفاض المساهمة لكل طلب.",
+    "after": "نختبر حجم الطلبات ومساهمة الطلب كلًا على حدة، ثم سيناريو يجمعهما. نحدد إنذارًا مبكرًا ومراجعة، دون اعتبار نتيجة النموذج تنبؤًا مؤكدًا.",
+    "reason": "Correct interpretation."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "example",
+      "steps"
+    ],
+    "before": [
+      "تحديد المتغيرات الرئيسية والنتيجة الأساسية: المتغيرات هي عدد الطلبات، المساهمة لكل طلب، والتكاليف الثابتة. النتيجة الأساسية هي الربح الشهري. في حالتنا، الربح = (عدد الطلبات اليومية * 30 * المساهمة لكل طلب) - التكاليف الثابتة. النتيجة الأساسية هي 300 جنيه ربح.",
+      "اختبار حساسية حجم الطلبات (المتغير الأول): لنفترض أن عدد الطلبات اليومية انخفض. نريد معرفة عند أي عدد من الطلبات يصبح الربح صفراً (نقطة التعادل). نثبت المساهمة (60 جنيهاً) والتكاليف الثابتة (900 جنيه). \nالربح = 0 = (عدد الطلبات * 30 * 60) - 900\n1800 * عدد الطلبات = 900\nعدد الطلبات = 900 / 1800 = 0.5 طلب يومياً.\n\nهنا، المثال الأصلي يشير إلى 15 طلباً يومياً. لنعد حسابها بناءً على 15 طلباً:\n(15 طلباً/يوم * 30 يوماً/شهر) * 60 جنيهاً/طلب - 900 جنيه = 27000 - 900 = 0 جنيه.\n\nهذا يوضح أن نقطة التعادل هي 15 طلباً يومياً. إذا انخفضت الطلبات إلى 15، فلن يحقق المقهى أي ربح.",
+      "اختبار حساسية المساهمة لكل طلب (المتغير الثاني): لنفترض أن المساهمة لكل طلب انخفضت بسبب زيادة تكلفة المكونات أو تخفيض الأسعار. نثبت عدد الطلبات (20 طلباً) والتكاليف الثابتة (900 جنيه). ما هي المساهمة التي تجعل الربح صفراً؟\nالربح = 0 = (20 طلباً * 30 * المساهمة) - 900\n600 * المساهمة = 900\nالمساهمة = 900 / 600 = 1.5 جنيه لكل طلب.\n\nهذا يعني أن المقهى يحتاج إلى مساهمة لا تقل عن 1.5 جنيه لكل طلب لتغطية التكاليف الثابتة عند 20 طلباً يومياً. أي انخفاض كبير عن 60 جنيهاً سيؤثر سلباً.",
+      "بناء سيناريو متحفظ متماسك: لنفترض سيناريو يجمع بين انخفاض معقول في الطلبات وارتفاع طفيف في التكاليف المتغيرة (مما يقلل المساهمة). \n*   عدد الطلبات اليومية ينخفض إلى 18 طلباً (بدلاً من 20).\n*   المساهمة لكل طلب تنخفض إلى 55 جنيهاً (بدلاً من 60).\n*   التكاليف الثابتة تظل 900 جنيه.\n\nالربح = (18 طلباً/يوم * 30 يوماً/شهر) * 55 جنيهاً/طلب - 900 جنيه\nالربح = 540 * 55 - 900 = 29700 - 900 = 28800 جنيه.\n\nالنتيجة لا تزال ربحاً، لكنها أقل بكثير من 300 جنيه. هذا السيناريو يوضح أن الخطة لا تزال صامدة ولكن بهامش أقل.",
+      "استخلاص القرارات الوقائية ومؤشرات الإنذار: من الخطوة 2، نعلم أن 15 طلباً يومياً هي نقطة التعادل. هذا مؤشر خطر. القرار الوقائي يمكن أن يكون: إطلاق برنامج ولاء للعملاء لضمان استمرارية الطلبات، أو البحث عن موردين بديلين للقهوة لتقليل التكاليف المتغيرة. مؤشر الإنذار المبكر: مراقبة عدد الطلبات اليومية. إذا انخفض المتوسط الأسبوعي إلى أقل من 18 طلباً، يجب تفعيل الإجراءات الوقائية. تاريخ المراجعة: مراجعة هذه الافتراضات والتحليل كل 3 أشهر."
+    ],
+    "after": [
+      "نثبت فترة التحليل شهرًا واحدًا. النتيجة الأساسية هي 20 × 60 − 900 = 300 وحدة نقدية. هذا ناتج النموذج المبسط تحت افتراضاته، وليس ضمانًا لصافي الربح الفعلي أو النقد المتاح. نسجل كل متغير ووحدته ومصدر تقديره حتى لا نجمع طلبات يومية مع تكاليف شهرية أو نكرر احتساب التكاليف.",
+      "نغير عدد الطلبات فقط إلى 15 طلبًا في الشهر، مع تثبيت مساهمة الطلب عند 60 والتكاليف الثابتة عند 900. النتيجة = 15 × 60 − 900 = صفر. إذن نقطة التعادل في هذا النموذج 900 ÷ 60 = 15 طلبًا شهريًا. انخفاض الطلبات دون هذا العدد يجعل النتيجة سالبة ما دامت الافتراضات الأخرى ثابتة.",
+      "نعيد عدد الطلبات إلى 20 ونختبر مساهمة الطلب وحدها. عند مساهمة 55 تصبح النتيجة 20 × 55 − 900 = 200، وعند 50 تصبح 100، وعند 45 تصبح صفرًا. المساهمة الحرجة = 900 ÷ 20 = 45. لا نخلط هذا الاختبار بالاختبار السابق؛ كل صف يبدأ من خط الأساس نفسه.",
+      "نبني سيناريو متحفظًا مترابطًا: 18 طلبًا شهريًا ومساهمة 55 لكل طلب، مع بقاء التكاليف الثابتة 900. النتيجة = 18 × 55 − 900 = 90 وحدة نقدية. هي أقل من النتيجة الأساسية 300 بمقدار 210، لكنها موجبة في النموذج. سبب جمع التغيرين يجب توضيحه كافتراض قابل للفحص، لا كواقعة مؤكدة عن السوق.",
+      "نحدد إنذارًا تجريبيًا عندما يشير تقدير الطلبات للشهر إلى 17 طلبًا أو أقل، ونراجع أسباب التراجع قبل اختيار إجراء. قد نقارن قنوات الوصول للعملاء أو تكاليف الموردين مع الحفاظ على الجودة. يسجل المسؤول تاريخ مراجعة بنهاية كل أسبوع، وتُراجع النتيجة الفعلية آخر الشهر. حد الإنذار قرار تخطيطي قابل للتعديل بالأدلة، وليس قاعدة عامة لكل مشروع."
+    ],
+    "reason": "Recompute all scenario and break-even values on one monthly basis."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "quiz",
+      0,
+      "question"
+    ],
+    "before": "ماذا يثبت سيناريو انخفاض الطلبات إلى 15 طلباً يومياً في مثال مقهى الواحة؟",
+    "after": "ماذا يثبت سيناريو انخفاض الطلبات إلى 15 طلبًا شهريًا في المثال؟",
+    "reason": "Consistent period."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "readingVisuals",
+      2
+    ],
+    "before": {
+      "id": "RV3",
+      "title": "تأثير تغير المساهمة على الربح الشهري (مقهى الواحة)",
+      "kind": "table",
+      "columns": [
+        "متوسط المساهمة لكل طلب (جنيه)",
+        "الربح الشهري المتوقع (جنيه)"
+      ],
+      "rows": [
+        [
+          "60 (الافتراضي)",
+          "300"
+        ],
+        [
+          "55",
+          "0"
+        ],
+        [
+          "50",
+          "-300 (خسارة)"
+        ],
+        [
+          "65",
+          "600"
+        ]
+      ],
+      "caption": "يوضح هذا الجدول كيف يتغير الربح الشهري لمقهى الواحة بتغير متوسط المساهمة لكل طلب، مع ثبات عدد الطلبات (20 يومياً) والتكاليف الثابتة (900 جنيه). نقطة التعادل عند مساهمة 55 جنيهاً."
+    },
+    "after": {
+      "id": "RV3",
+      "title": "حساسية النتيجة الشهرية لمساهمة الطلب",
+      "kind": "table",
+      "columns": [
+        "المساهمة لكل طلب",
+        "النتيجة الشهرية المبسطة"
+      ],
+      "rows": [
+        [
+          "60",
+          "300"
+        ],
+        [
+          "55",
+          "200"
+        ],
+        [
+          "50",
+          "100"
+        ],
+        [
+          "45",
+          "0"
+        ],
+        [
+          "65",
+          "400"
+        ]
+      ],
+      "caption": "عدد الطلبات ثابت عند 20 في الشهر والتكاليف الثابتة 900. النتيجة = 20 × المساهمة − 900؛ نقطة التعادل عند مساهمة 45. القيم افتراضات تعليمية."
+    },
+    "reason": "Correct visual values and period."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "videoVisualPlan",
+      1
+    ],
+    "before": "ينتقل المشهد إلى شاشة كمبيوتر تعرض جدول بيانات. يتم تسليط الضوء على عمود 'عدد الطلبات اليومية' ثم يتم تغيير قيمته من 20 إلى 15. تظهر النتائج المحسوبة تلقائياً في عمود 'الربح الشهري' لتتحول من 300 إلى 0. تظهر رسوم متحركة توضح 'المتغيرات الأخرى ثابتة'. ثم يتم تكرار العملية لمتغير آخر مثل 'المساهمة لكل طلب' مع تثبيت البقية. يظهر نص: 'اختبار الحساسية: متغير واحد في كل مرة'.",
+    "after": "ينتقل المشهد إلى شاشة كمبيوتر تعرض جدول بيانات. يتم تسليط الضوء على عمود 'عدد الطلبات الشهرية' ثم يتم تغيير قيمته من 20 إلى 15. تظهر النتائج المحسوبة تلقائياً في عمود 'الربح الشهري' لتتحول من 300 إلى 0. تظهر رسوم متحركة توضح 'المتغيرات الأخرى ثابتة'. ثم يتم تكرار العملية لمتغير آخر مثل 'المساهمة لكل طلب' مع تثبيت البقية. يظهر نص: 'اختبار الحساسية: متغير واحد في كل مرة'.",
+    "reason": "Future scene plan uses same period; no media regeneration."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "example",
+      "text"
+    ],
+    "before": "تخيل إنك بتطور تطبيق موبايل بسيط. المشروع فيه 3 مهام رئيسية: 'تصميم الواجهة' (يومين)، 'بناء الكود' (ثلاثة أيام)، و'اختبار التطبيق' (يوم واحد). المهام دي لازم تتعمل بالترتيب: التصميم الأول، بعدين البناء، بعدين الاختبار. فيه مهمة تانية جانبية وهي 'تدريب المستخدمين' (يومين)، ودي ممكن تتعمل بالتوازي مع 'بناء الكود' لو فيه مدرب تاني متاح. لو نفس المبرمج هو اللي هيعمل 'بناء الكود' و'تدريب المستخدمين'، إيه اللي هيحصل للجدول الزمني؟",
+    "after": "في مشروع تطبيق افتراضي، التصميم يومين، وبناء الكود 3 أيام بعد التصميم، والاختبار يوم بعد البناء. فيه تدريب على نموذج الواجهة مدته يومين؛ يقدر يبدأ بعد التصميم ومش محتاج الكود النهائي. كل مهمة بتحتاج شخصًا متفرغًا وما بتتجزأش. نقارن بين موارد منفصلة لكل مهمة، وبين حالة فيها شخص واحد مسؤول عن البناء والتدريب والاختبار بعد انتهاء التصميم. الأيام هنا أيام عمل متساوية من غير إجازات أو انتظار إضافي.",
+    "reason": "State dependency and full resource constraints needed for the 6-to-8-day result."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "example",
+      "steps"
+    ],
+    "before": [
+      "-   **مهمة 1: تصميم الواجهة:** المدة = يومين. لا يوجد سابق.\n-   **مهمة 2: بناء الكود:** المدة = 3 أيام. السابق = تصميم الواجهة.\n-   **مهمة 3: اختبار التطبيق:** المدة = يوم واحد. السابق = بناء الكود.\n-   **مهمة 4: تدريب المستخدمين:** المدة = يومين. السابق = بناء الكود (في حالة التوازي، أو لا يوجد سابق مباشر إذا كان يمكن أن يبدأ بعد التصميم مباشرة).",
+      "المسار الأساسي هو: تصميم الواجهة (2 يوم) -> بناء الكود (3 أيام) -> اختبار التطبيق (1 يوم).\nالمدة الإجمالية = 2 + 3 + 1 = 6 أيام. \nمهمة تدريب المستخدمين (يومين) يمكن أن تتم بالتوازي مع بناء الكود (3 أيام) إذا كان هناك مورد منفصل. في هذه الحالة، المسار الأطول (الحرج) سيظل هو 6 أيام.",
+      "إذا كان نفس المبرمج مسؤولاً عن 'بناء الكود' و'تدريب المستخدمين'، فلن يتمكن من القيام بالمهمتين في نفس الوقت. يجب أن ينهي إحداهما قبل البدء في الأخرى. بما أن 'بناء الكود' هي جزء من المسار الأساسي، فمن المنطقي أن يقوم بها أولاً ثم ينتقل إلى 'تدريب المستخدمين'.",
+      "الآن التسلسل يصبح:\n-   تصميم الواجهة: 2 يوم.\n-   بناء الكود: 3 أيام (تبدأ بعد التصميم).\n-   بعد انتهاء بناء الكود، المبرمج يصبح متاحًا لـ 'تدريب المستخدمين': 2 يوم.\n-   اختبار التطبيق: 1 يوم (يمكن أن يبدأ بعد بناء الكود، ولكن يجب أن ينتظر انتهاء التدريب إذا كان نفس الشخص هو المختبر والمدرب، أو يمكن أن يبدأ بالتوازي مع التدريب إذا كان هناك مختبر آخر).\n\nبافتراض أن المبرمج هو نفسه المدرب، فإن المسار الجديد يصبح:\nتصميم (2 يوم) -> بناء (3 أيام) -> تدريب (2 يوم) -> اختبار (1 يوم).\nالمدة الإجمالية = 2 + 3 + 2 + 1 = 8 أيام.",
+      "المدة الأصلية كانت 6 أيام. بعد إضافة قيد المورد (نفس المبرمج يقوم بالبناء والتدريب)، أصبحت المدة 8 أيام. هذا يعني تأخير يومين في تسليم المشروع. هذا التأخير قد يؤدي إلى زيادة في التكلفة (أجور المبرمج ليومين إضافيين، أو غرامات تأخير إذا كان هناك عقد). هذا يوضح أهمية تقدير الموارد بشكل صحيح وتأثيرها على الجدول الزمني والتكلفة الإجمالية للمشروع."
+    ],
+    "after": [
+      "بنكتب العلاقات الأول: التصميم ملوش سابق؛ البناء بعد التصميم؛ الاختبار بعد البناء؛ التدريب على نموذج الواجهة بعد التصميم. التدريب هنا مش تدريب على النسخة النهائية، عشان كده يقدر يبدأ أثناء البناء لو المدرب منفصل. لو التدريب محتاج التطبيق المكتمل، يبقى دي خطة مختلفة ولازم نغير الاعتمادية قبل الحساب.",
+      "مع موارد منفصلة، التصميم في اليومين 1 و2. البناء في الأيام 3 و4 و5، والتدريب في اليومين 3 و4، والاختبار في اليوم 6. تسليم المشروع يحتاج اكتمال التدريب والاختبار معًا؛ آخر انتهاء هو اليوم 6، فمدة الخطة ستة أيام عمل. جمع مدد كل المهام مش صحيح هنا لأن فيه شغل متوازٍ.",
+      "في الحالة التانية الشخص نفسه بيبني ويدرّب ويختبر، ومش متاح يعمل مهمتين في الوقت نفسه. بعد التصميم مطلوب منه 3 أيام بناء ويومين تدريب ويوم اختبار؛ إجمالي ستة أيام شغل متفرغ. القيد ده يمنع التوازي حتى لو الاعتماديات الفنية وحدها كانت بتسمح بيه. ما نفترضش إن زيادة السرعة أو العمل الإضافي متاحة من غير دليل.",
+      "جدول ممكن: التصميم يومان، ثم البناء ثلاثة أيام، ثم الاختبار يوم واحد، ثم التدريب يومان. الإجمالي = 2 + 3 + 1 + 2 = 8 أيام. ممكن نبدل ترتيب التدريب والاختبار بعد البناء من غير تغيير المجموع. لكن لو المختبر منفصل والشخص الواحد مسؤول عن البناء والتدريب فقط، ممكن ينتهي الاختبار أثناء التدريب وتبقى المدة 7 أيام، مش 8.",
+      "المقارنة الصحيحة مرتبطة بالموارد المعلنة: ستة أيام مع التوازي والموارد المنفصلة، وثمانية أيام مع شخص واحد للبناء والتدريب والاختبار. بنراجع التكلفة والجودة والتفرغ قبل إضافة مورد، وبنسجل الجدول الجديد بدل الوعد بالموعد القديم. التأخير هنا نتيجة افتراضات الحالة؛ مش قاعدة إن كل تعارض موارد يضيف يومين لأي مشروع."
+    ],
+    "reason": "Remove contradictory predecessor and unstated tester constraint."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "readingVisuals",
+      0,
+      "rows",
+      3
+    ],
+    "before": [
+      "تدريب المستخدمين",
+      "2",
+      "بناء الكود (يمكن بالتوازي)"
+    ],
+    "after": [
+      "تدريب على نموذج الواجهة",
+      "2",
+      "تصميم الواجهة؛ يمكن بالتوازي مع البناء بمدرب منفصل"
+    ],
+    "reason": "Correct training predecessor."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "readingVisuals",
+      2,
+      "rows",
+      1
+    ],
+    "before": [
+      "مع تعارض (مبرمج واحد للبناء والتدريب)",
+      "مصمم، مبرمج واحد (للبناء والتدريب)، مختبر",
+      "8 أيام"
+    ],
+    "after": [
+      "مورد واحد للبناء والتدريب والاختبار",
+      "مصمم، ثم شخص واحد متفرغ للمهام الثلاث",
+      "8 أيام"
+    ],
+    "reason": "Make visual match stated resource constraint."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M03-L05",
+    "path": [
+      "readingVisuals",
+      0,
+      "rows",
+      4,
+      1
+    ],
+    "before": "الربح الصافي",
+    "after": "نتيجة تشغيلية في النموذج؛ قبل أي بنود تانية مش مدرجة",
+    "reason": "Contribution after modeled fixed costs is not necessarily final net profit."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M03-L05",
+    "path": [
+      "readingVisuals",
+      0,
+      "rows",
+      4,
+      1
+    ],
+    "before": "ربحاً صافياً",
+    "after": "نتيجة تشغيلية في النموذج؛ قبل أي بنود أخرى غير مدرجة",
+    "reason": "Do not equate simplified operating result with net profit."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "readingVisuals",
+      0,
+      "rows",
+      0,
+      1
+    ],
+    "before": "لا تتغير مع حجم الإنتاج",
+    "after": "ثابتة إجمالًا ضمن فترة ونطاق نشاط محددين",
+    "reason": "Fixed cost is bounded by relevant range and period."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "readingVisuals",
+      0,
+      "rows",
+      1,
+      2
+    ],
+    "before": "المواد الخام، أجور عمال الإنتاج",
+    "after": "المواد الخام، أجور تُدفع لكل وحدة منتجة في هذا المثال",
+    "reason": "Labor classification depends on payment structure."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      1,
+      "correct"
+    ],
+    "before": 2,
+    "after": 1,
+    "reason": "1200 / (50 - 20) = 40, option 1."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      3,
+      "correct"
+    ],
+    "before": 3,
+    "after": 0,
+    "reason": "800 + 1500 - 1900 = 400, option 0."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      4,
+      "explanation"
+    ],
+    "before": "The closing cash balance is calculated by taking the opening cash balance, adding all cash receipts, and subtracting all cash payments. In the example, $500 (opening) + $2,400 (receipts) - $2,700 (payments) = $200. Total sales ($3,000 in the brief's wrong answer) are not the same as cash receipts and do not directly determine the cash balance.",
+    "after": "Closing cash equals opening cash plus actual receipts minus actual payments: 500 + 2,400 − 2,700 = 200. Sales revenue can differ from receipts, so neither sales nor the opening balance alone establishes closing cash.",
+    "reason": "Remove author-brief leakage while retaining accounting distinction."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "readingVisuals",
+      1,
+      "rows",
+      3
+    ],
+    "before": [
+      "Expense Example",
+      "Recognizes expenses when bill received",
+      "Recognizes expenses only when cash is paid"
+    ],
+    "after": [
+      "Expense example",
+      "Recognizes the expense when incurred under the relevant accounting treatment",
+      "Records the cash outflow when paid"
+    ],
+    "reason": "Invoice receipt alone does not determine expense recognition."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "example"
+    ],
+    "before": {
+      "title": "Analyzing Profit Sensitivity to Sales Volume",
+      "text": "A small artisanal bakery, 'Sweet Delights,' is planning its monthly operations. Their current plan assumes 20 customer orders per day, with each order contributing $60 to cover variable costs and profit after ingredients. Their fixed monthly costs (rent, utilities, salaries) are $900. They want to understand how sensitive their profit is to changes in the number of orders.",
+      "decision": "To understand the bakery's financial vulnerability, we will calculate the monthly profit at the planned 20 orders per day and then test a scenario with a reduced number of orders to see the impact on profitability.",
+      "steps": [
+        "Step 1: Calculate the total monthly orders. The bakery operates 30 days a month. Planned daily orders are 20. So, total monthly orders = 20 orders/day * 30 days/month = 600 orders.",
+        "Step 2: Calculate the total monthly contribution. Each order contributes $60. With 600 monthly orders, the total contribution = 600 orders * $60/order = $36,000.",
+        "Step 3: Calculate the planned monthly profit. Monthly profit is total contribution minus fixed costs. Planned monthly profit = $36,000 (contribution) - $900 (fixed costs) = $35,100.",
+        "Step 4: Test a reduced sales volume scenario. Let's assume daily orders drop to 15. Total monthly orders = 15 orders/day * 30 days/month = 450 orders. Total monthly contribution = 450 orders * $60/order = $27,000.",
+        "Step 5: Calculate profit in the reduced sales scenario. Monthly profit = $27,000 (contribution) - $900 (fixed costs) = $26,100. This shows that a reduction from 20 to 15 daily orders significantly impacts profit, demonstrating the plan's sensitivity to sales volume. If the brief's example of 15 orders resulting in zero profit was used, it would imply a different fixed cost or contribution per order. The brief states 20 orders at contribution 60 and fixed costs 900 produce 300. Let's re-evaluate based on the brief's numbers for consistency. If 20 orders * 60 contribution - 900 fixed costs = 300 profit, then 1200 - 900 = 300. This means the brief's example is based on a total contribution of 1200 for 20 orders. If 15 orders lead to zero profit, then 15 orders * 60 contribution - 900 fixed costs = 0. This means 900 - 900 = 0. So the brief's numbers are consistent. I will adjust my example to match the brief's specific numbers for the initial calculation. Let's assume the brief's example implies a *single period* (e.g., a week or a specific batch) rather than a month, to match the direct numbers. Let's re-do the example steps to match the brief's numbers directly. The brief states: "
+      ]
+    },
+    "after": {
+      "title": "Testing a fictional monthly plan",
+      "text": "A fictional small service plans 20 orders in one month. Each order contributes 60 after variable costs, and the included fixed costs are 900 for that same month. All values use one currency. The model assumes unchanged capacity and excludes taxes, financing and unlisted costs.",
+      "decision": "Test the effect of volume and unit contribution separately, then combine a plausible pair of changes and set a warning measure.",
+      "steps": [
+        "The base monthly operating result is 20 × 60 − 900 = 300. The 60 is contribution after variable costs, not revenue and not an amount that must cover variable costs again. Keep the same month and included cost categories throughout the comparison.",
+        "Change only volume: at 15 orders per month, 15 × 60 − 900 = 0. This establishes a break-even scenario under the model assumptions. It is not a prediction that 15 orders will occur, and it does not establish a cash balance.",
+        "Restore volume to 20 and change only contribution. At contribution of 55 per order, 20 × 55 − 900 = 200. At 50 it becomes 100, and at 45 it becomes zero. A supplier price change could affect contribution, but its actual amount requires evidence.",
+        "Combine an explicitly hypothetical conservative pair: 18 orders at contribution of 55 gives 18 × 55 − 900 = 90. Explain why these changes might occur together instead of adding unrelated extreme assumptions. The scenario is a planning exercise and carries no assigned probability.",
+        "Monitor paid orders for the month and actual contribution per order. If either departs from the plan, check the causes and update the forecast before making new commitments. Possible actions include a small supplier comparison or a limited offer test; assess their cost and impact rather than assuming they will restore sales."
+      ]
+    },
+    "reason": "Replace inconsistent daily/monthly unfinished author commentary with a complete monthly sensitivity case."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "readingVisuals",
+      2
+    ],
+    "before": {
+      "id": "rv3",
+      "title": "Impact of Sales Volume on Profit",
+      "kind": "table",
+      "columns": [
+        "Daily Orders",
+        "Monthly Orders (30 days)",
+        "Total Contribution ($60/order) Fixed Costs ($900) Profit"
+      ],
+      "rows": [
+        [
+          "20 (Planned)",
+          "600",
+          "36000 - 900 = 35100"
+        ],
+        [
+          "18 (-10%)",
+          "540",
+          "32400 - 900 = 31500"
+        ],
+        [
+          "15 (-25%)",
+          "450",
+          "27000 - 900 = 26100"
+        ],
+        [
+          "10 (-50%)",
+          "300",
+          "18000 - 900 = 17100"
+        ]
+      ],
+      "caption": "This table shows how a decrease in daily orders significantly impacts the monthly profit, demonstrating the plan's sensitivity to sales volume."
+    },
+    "after": {
+      "id": "rv3",
+      "title": "Monthly volume sensitivity",
+      "kind": "table",
+      "columns": [
+        "Orders per month",
+        "Total contribution at 60 per order",
+        "Simplified operating result after 900 fixed costs"
+      ],
+      "rows": [
+        [
+          "20",
+          "1,200",
+          "300"
+        ],
+        [
+          "18",
+          "1,080",
+          "180"
+        ],
+        [
+          "15",
+          "900",
+          "0"
+        ],
+        [
+          "10",
+          "600",
+          "−300"
+        ]
+      ],
+      "caption": "Fictional monthly scenarios with constant unit contribution and fixed costs; results exclude taxes, financing and unlisted costs."
+    },
+    "reason": "Synchronize reading table with corrected monthly case."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L06",
+    "path": [
+      "quiz",
+      0,
+      "question"
+    ],
+    "before": "What does the 15-order scenario establish in the bakery example (20 orders at contribution 60 and fixed costs 900 produce 300; at 15 orders the result is zero)?",
+    "after": "In the fictional monthly case, 20 orders at contribution of 60 and fixed costs of 900 give a result of 300. At 15 orders the result is zero. What does this establish?",
+    "reason": "State consistent period in case assessment."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "example",
+      "steps"
+    ],
+    "before": [
+      "Step 1: Map Initial Tasks and Durations. The initial tasks are: 'Design' (2 days), 'Development' (3 days), 'Testing' (1 day), and 'Marketing Preparation' (2 days). 'Development' depends on 'Design'. 'Testing' depends on 'Development'. 'Marketing Preparation' can start once 'Design' is complete.",
+      "Step 2: Identify Initial Critical Path. The longest sequential path is Design (2 days) -> Development (3 days) -> Testing (1 day). This path sums up to 2 + 3 + 1 = 6 days. Marketing Preparation (2 days) runs in parallel with Development and Testing, starting after Design. Since Marketing (2 days) is shorter than Development+Testing (3+1=4 days), it doesn't extend the overall duration. The initial critical path is 6 days.",
+      "Step 3: Introduce a Resource Conflict. The 'Design' task requires the Lead Designer. The 'Marketing Preparation' task also requires the Lead Designer for initial content review, but only for 1 day. If the Lead Designer must complete all their 'Design' work before assisting with 'Marketing Preparation', this creates a resource conflict.",
+      "Step 4: Adjust Schedule for Resource Conflict. 'Design' takes 2 days. 'Marketing Preparation' needs the Lead Designer for 1 day after Design is complete. If the Lead Designer is fully occupied with 'Design' for 2 days, they can only start the 'Marketing Preparation' review on day 3. This means 'Marketing Preparation' effectively starts on day 3 and finishes on day 4 (2 days duration). The critical path remains 6 days, as Marketing Preparation still finishes before the Testing phase is complete.",
+      "Step 5: Introduce an External Delay and Re-evaluate. A critical component for 'Development' is delayed by 1 day. This means 'Development' now takes 4 days instead of 3. The new critical path becomes Design (2 days) -> Development (4 days) -> Testing (1 day), totaling 2 + 4 + 1 = 7 days. The project's earliest completion date is now 7 days, an increase of 1 day due to the delay. This delay also impacts potential costs, such as extended team salaries or missed market opportunities."
+    ],
+    "after": [
+      "Step 1: Map Initial Tasks and Durations. The initial tasks are: 'Design' (2 days), 'Development' (3 days), 'Testing' (1 day), and 'Marketing Preparation' (2 days). 'Development' depends on 'Design'. 'Testing' depends on 'Development'. 'Marketing Preparation' can start once 'Design' is complete.",
+      "Step 2: Identify Initial Critical Path. The longest sequential path is Design (2 days) -> Development (3 days) -> Testing (1 day). This path sums up to 2 + 3 + 1 = 6 days. Marketing Preparation (2 days) runs in parallel with Development and Testing, starting after Design. Since Marketing (2 days) is shorter than Development+Testing (3+1=4 days), it doesn't extend the overall duration. The initial critical path is 6 days.",
+      "Step 3: Introduce a genuine resource constraint. Suppose one developer must now perform Development, Marketing Preparation and Testing, without multitasking. Marketing Preparation can start after Design, but it cannot overlap Development or Testing when the same person performs all three. Design uses a different person and remains two days.",
+      "Step 4: Schedule the shared resource. After the two-day Design task, the developer completes three days of Development, one day of Testing and two days of Marketing Preparation. These activities need six non-overlapping days, so the whole project takes eight working days. Marketing Preparation could be placed earlier, but no order removes the resource constraint.",
+      "Step 5: Test a separate delay scenario. Return to the original independent-resource arrangement before adding a one-day waiting delay before Development. The dependency path becomes two days of Design, one day of waiting, three days of Development and one day of Testing: seven working days. This is a separate scenario, not an unexplained alternative answer to the eight-day resource-constrained case."
+    ],
+    "reason": "Design and marketing were already sequential and had no conflict; specify a genuine shared resource and separate delay scenario."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "quiz",
+      1
+    ],
+    "before": {
+      "id": "Q2",
+      "question": "A task requires 4 hours of work but needs a 2-day approval process after completion. What is its duration?",
+      "options": [
+        "4 hours",
+        "2 days",
+        "2 days and 4 hours",
+        "3 days"
+      ],
+      "correct": 3,
+      "explanation": "The task requires 4 hours of effort, but the duration includes the 2-day approval process. If the 4 hours of work are completed on day 1, and then it waits 2 full days for approval, the task effectively finishes on day 3. So, the duration is 3 days (day 1 for work + 2 days for approval). Option 0 is effort only. Option 1 is approval only. Option 2 is not a standard way to express duration in this context."
+    },
+    "after": {
+      "id": "Q2",
+      "question": "A task involves four continuous hours of work followed immediately by a 48-hour approval wait. With no additional calendar restrictions, what is elapsed duration?",
+      "options": [
+        "4 hours",
+        "48 hours",
+        "52 hours",
+        "72 hours"
+      ],
+      "correct": 2,
+      "explanation": "Elapsed duration includes the four work hours and the following 48-hour wait, giving 52 hours. Rounding the start day to a whole day would add an unstated calendar assumption."
+    },
+    "reason": "Remove ambiguous calendar rounding from effort versus elapsed time question."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "readingVisuals",
+      1,
+      "rows",
+      2
+    ],
+    "before": [
+      "Example",
+      "4 hours coding.",
+      "3 days (4 hours coding + 2 days approval)."
+    ],
+    "after": [
+      "Example",
+      "4 hours of active work",
+      "52 elapsed hours: 4 work hours followed by a 48-hour wait"
+    ],
+    "reason": "Keep visual aligned with explicit continuous-time quiz."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L02",
+    "path": [
+      "readingVisuals",
+      2
+    ],
+    "before": {
+      "id": "RV3",
+      "title": "Impact of Resource Conflict on Schedule",
+      "kind": "table",
+      "columns": [
+        "Task",
+        "Duration",
+        "Owner (Resource)"
+      ],
+      "rows": [
+        [
+          "Design",
+          "2 days",
+          "Lead Designer"
+        ],
+        [
+          "Development",
+          "3 days",
+          "Developer A"
+        ],
+        [
+          "Marketing Prep",
+          "2 days",
+          "Lead Designer"
+        ],
+        [
+          "Testing",
+          "1 day",
+          "Developer B"
+        ],
+        [
+          "Original Critical Path",
+          "6 days",
+          "N/A"
+        ],
+        [
+          "New Critical Path (with conflict)",
+          "7 days",
+          "Lead Designer conflict"
+        ]
+      ],
+      "caption": "This table shows how a shared resource (Lead Designer) can create a conflict between 'Design' and 'Marketing Prep', potentially extending the project's critical path if not managed."
+    },
+    "after": {
+      "id": "RV3",
+      "title": "Three distinct scheduling scenarios",
+      "kind": "table",
+      "columns": [
+        "Scenario",
+        "Assumption",
+        "Earliest completion"
+      ],
+      "rows": [
+        [
+          "Independent resources",
+          "Development and marketing can overlap after design",
+          "6 working days"
+        ],
+        [
+          "Shared developer",
+          "One person performs development, marketing and testing",
+          "8 working days"
+        ],
+        [
+          "Separate waiting delay",
+          "Independent resources, plus 1 day waiting before development",
+          "7 working days"
+        ]
+      ],
+      "caption": "Each result follows a stated assumption. A dependency calculation alone does not resolve a resource conflict."
+    },
+    "reason": "Align case table with dependencies and resource assumptions."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M06-L06",
+    "path": [
+      "sections",
+      4,
+      "text"
+    ],
+    "before": "A frequent mistake in assessing readiness is relying on general completion marks or subjective opinions rather than concrete evidence. Saying \"testing is done\" without providing a test report, bug log, or sign-off from the QA team is an example of this. Another common error is underestimating the impact of seemingly \"small\" issues. As the brief highlights, an imperfect button color might be minor, but lost orders due to connection failure, even if described as a \"small bug,\" has severe consequences. The impact of a problem, not its perceived size, should determine its criticality. Furthermore, failing to assign clear ownership for each readiness condition can lead to items falling through the cracks, with no one person accountable for ensuring their completion and verification. These errors can create a false sense of readiness, leading to premature launches and subsequent failures.",
+    "after": "A frequent mistake in assessing readiness is relying on general completion marks or subjective opinions rather than concrete evidence. Saying \"testing is done\" without providing a test report, bug log, or sign-off from the QA team is an example of this. Another common error is underestimating the impact of seemingly \"small\" issues. For example, an imperfect button color might be minor, but lost orders due to connection failure, even if described as a \"small bug,\" has severe consequences. The impact of a problem, not its perceived size, should determine its criticality. Furthermore, failing to assign clear ownership for each readiness condition can lead to items falling through the cracks, with no one person accountable for ensuring their completion and verification. These errors can create a false sense of readiness, leading to premature launches and subsequent failures.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L04",
+    "path": [
+      "sections",
+      3,
+      "text"
+    ],
+    "before": "Even with the best intentions, performance monitoring and improvement efforts can have limitations and lead to unintended consequences. A common limitation is 'gaming the system,' where individuals or teams manipulate metrics to appear successful without genuine improvement. For example, if a call center agent is solely measured on 'call duration,' they might rush customers off the phone, leading to unresolved issues and frustration, even if their metric looks good. Another limitation is 'tunnel vision,' where an intense focus on one or two metrics causes other important aspects of performance to be neglected. This can lead to a narrow view of success and a failure to see the bigger picture. The 'fictional case' from our brief perfectly illustrates this: reducing order time seemed like an improvement, but it hid a significant increase in rework. This shows how a positive change in one metric can mask a severe decline in quality or efficiency elsewhere. Always consider the interconnectedness of your metrics and anticipate how a change might ripple through the entire process, impacting areas you weren't directly measuring.",
+    "after": "Even with the best intentions, performance monitoring and improvement efforts can have limitations and lead to unintended consequences. A common limitation is 'gaming the system,' where individuals or teams manipulate metrics to appear successful without genuine improvement. For example, if a call center agent is solely measured on 'call duration,' they might rush customers off the phone, leading to unresolved issues and frustration, even if their metric looks good. Another limitation is 'tunnel vision,' where an intense focus on one or two metrics causes other important aspects of performance to be neglected. This can lead to a narrow view of success and a failure to see the bigger picture. The fictional order-processing case illustrates this: reducing order time seemed like an improvement, but it hid a significant increase in rework. This shows how a positive change in one metric can mask a severe decline in quality or efficiency elsewhere. Always consider the interconnectedness of your metrics and anticipate how a change might ripple through the entire process, impacting areas you weren't directly measuring.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L01",
+    "path": [
+      "sections",
+      2,
+      "text"
+    ],
+    "before": "A common pitfall in goal setting is confusing activities with outcomes. An activity is an action performed, like 'launching a new marketing campaign' or 'holding five team meetings.' While these activities are necessary, they are not the end result. An outcome, on the other hand, is the measurable result or impact of those activities, such as 'increasing customer engagement by 15%' or 'reducing project delays by 10%.' The brief highlights this by stating that 'launching an advertisement is an activity, not an outcome such as completed orders.' Goals should always focus on the desired outcome, not merely the effort expended. Focusing on outcomes ensures that efforts are directed towards achieving tangible results that align with the vision and mission.",
+    "after": "A common pitfall in goal setting is confusing activities with outcomes. An activity is an action performed, like 'launching a new marketing campaign' or 'holding five team meetings.' While these activities are necessary, they are not the end result. An outcome, on the other hand, is the measurable result or impact of those activities, such as 'increasing customer engagement by 15%' or 'reducing project delays by 10%.' For example, launching an advertisement is an activity; completed paid orders are an outcome. Goals should always focus on the desired outcome, not merely the effort expended. Focusing on outcomes ensures that efforts are directed towards achieving tangible results that align with the vision and mission.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M03-L02",
+    "path": [
+      "example",
+      "steps",
+      0
+    ],
+    "before": "**Step 1: Identify the core problem to investigate.** The initial assumption was 'customers want faster machines'. The brief suggests this might be a surface-level problem. The real problem could be related to file preparation, proofing, or communication. The goal is to understand the entire customer journey for urgent printing needs.",
+    "after": "**Step 1: Identify the core problem to investigate.** The initial assumption was 'customers want faster machines'. This might describe a surface-level symptom rather than the underlying problem. The real problem could be related to file preparation, proofing, or communication. The goal is to understand the entire customer journey for urgent printing needs.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L05",
+    "path": [
+      "sections",
+      3,
+      "text"
+    ],
+    "before": "Even the most carefully crafted business plans can fall into the 'inconsistency trap.' This happens when different sections of the plan, often developed by different people or at different times, don't align. A classic example, as highlighted in our brief, is when a plan 'forecasts 200 orders while its capacity schedule supports 120.' This is a fundamental contradiction. If you can only produce 120 units, you cannot fulfill 200 orders. This isn't a minor detail; it's a flaw that undermines the entire plan. The danger here is trying to 'fix' it by simply editing the summary or making superficial changes. For instance, just changing the summary to say 'we expect 120 orders' without adjusting the marketing, sales, and financial projections based on 200 orders is a cosmetic fix that leaves the core problem unresolved. Such inconsistencies can lead to operational bottlenecks, unmet customer expectations, financial shortfalls, and ultimately, business failure. Recognizing these limits and proactively seeking out and resolving contradictions is a crucial skill for any planner.",
+    "after": "Even the most carefully crafted business plans can fall into the 'inconsistency trap.' This happens when different sections of the plan, often developed by different people or at different times, don't align. One fictional example is a plan that 'forecasts 200 orders while its capacity schedule supports 120.' This is a fundamental contradiction. If you can only produce 120 units, you cannot fulfill 200 orders. This isn't a minor detail; it's a flaw that undermines the entire plan. The danger here is trying to 'fix' it by simply editing the summary or making superficial changes. For instance, just changing the summary to say 'we expect 120 orders' without adjusting the marketing, sales, and financial projections based on 200 orders is a cosmetic fix that leaves the core problem unresolved. Such inconsistencies can lead to operational bottlenecks, unmet customer expectations, financial shortfalls, and ultimately, business failure. Recognizing these limits and proactively seeking out and resolving contradictions is a crucial skill for any planner.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M06-L05",
+    "path": [
+      "example",
+      "steps",
+      0
+    ],
+    "before": "**Step 1: Assess immediate needs and data minimisation for pickup.** For existing pickups, the immediate need is to identify the customer and their order. The original brief states 'order collection may need contact details and an order number, not automatically an identity-document copy.' So, staff will ask customers for their order number and name. They will *not* ask for an ID document unless absolutely necessary for a high-value order where fraud is suspected, and even then, only to verify identity, not to copy or store the ID. This minimises data collection during a stressful period.",
+    "after": "**Step 1: Assess immediate needs and data minimisation for pickup.** For existing pickups, the immediate need is to identify the customer and their order. Collect only the information needed to match the customer with the order under the applicable pickup policy. So, staff will ask customers for their order number and name. They will *not* ask for an ID document unless absolutely necessary for a high-value order where fraud is suspected, and even then, only to verify identity, not to copy or store the ID. This minimises data collection during a stressful period.",
+    "reason": "Remove internal author-brief references from learner text."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M05-L01",
+    "path": [
+      "sections",
+      3,
+      "text"
+    ],
+    "before": "Quality guardrails are essential components of measurable goals, designed to prevent undesirable side effects or shortcuts that might compromise overall quality or other important objectives. For instance, if a goal is to 'reduce customer service response time by 20%,' a guardrail could be 'without decreasing customer satisfaction scores below 90%.' This ensures that the pursuit of speed doesn't lead to rushed, unhelpful responses. The brief's example, 'without increasing rework,' is another excellent guardrail. It acknowledges that pushing for faster delivery might lead to errors, and the guardrail explicitly states that this negative consequence is unacceptable. Guardrails promote balanced performance and protect the organization's broader interests.",
+    "after": "Quality guardrails are essential components of measurable goals, designed to prevent undesirable side effects or shortcuts that might compromise overall quality or other important objectives. For instance, if a goal is to 'reduce customer service response time by 20%,' a guardrail could be 'without decreasing customer satisfaction scores below 90%.' This ensures that the pursuit of speed doesn't lead to rushed, unhelpful responses. Another useful guardrail is 'without increasing rework.' It acknowledges that pushing for faster delivery might lead to errors, and the guardrail explicitly states that this negative consequence is unacceptable. Guardrails promote balanced performance and protect the organization's broader interests.",
+    "reason": "Keep learner explanation independent of authoring instructions."
   }
 ]

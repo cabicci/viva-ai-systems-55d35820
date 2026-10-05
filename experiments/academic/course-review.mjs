@@ -17,6 +17,7 @@ for(const locale of locales) {
  await page.goto(pathToFileURL(path.resolve('experiments/academic/review/Masaarat_Academic_Interactive_Preview.html')).href+'?locale='+locale);
  await page.locator('aside nav button').first().waitFor();
  for(let i=0;i<ids.length;i++) {
+  await page.waitForFunction(expected=>Array.from(document.querySelectorAll('.screen-only header')).at(-1)?.textContent?.includes(expected),ids[i]);
   assert.ok((await page.locator('.screen-only header').last().innerText()).includes(ids[i]));
   const tabs=page.locator('aside nav button');
   assert.equal(await tabs.count(),i===0?8:7);
