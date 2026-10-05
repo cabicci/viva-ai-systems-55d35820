@@ -20,4 +20,10 @@ The uploader reuses transport functions from the existing Bunny uploader, but de
 
 ## Integration
 
-No shared navigation or commerce change is made here. Central integration must add the new line and optional independent assistant add-on after the pilot and commercial scope are agreed. The current logo is the existing master mark beside a text label; the final new logo asset is outstanding. PDFs are review outputs, not uploaded to production storage.
+No shared navigation or commerce change is made here. Central integration must add the new line and optional independent assistant add-on after the pilot and commercial scope are agreed. The current logo is the existing master mark beside a text label; a new sibling logo candidate is in assets/ and awaits acceptance. PDFs are review outputs, not uploaded to production storage.
+
+## Review evidence — 2026-10-05
+
+`review.mjs` exercised four locales, desktop and mobile widths, and eight lesson sections: 64 visits, no page errors or horizontal overflow. It also checks six reading sections, all quiz controls and score feedback. Four nine-page workbooks were exported and visually reviewed; generated PDFs are review deliverables, not production downloads or tracked source assets. Browser evidence is in `review/browser-checks.json`.
+
+To regenerate using an installed Playwright Chromium, start Vite as above, then run `node experiments/academic/review.mjs`. Set `ACADEMIC_CHROME` only when a custom Chromium executable is necessary. The script requires a running localhost:4178 server.
