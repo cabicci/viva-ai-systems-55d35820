@@ -1,6 +1,6 @@
 # Masaarat Academic — reusable curriculum criteria and decision register
 Date: 2026-10-05
-Status: planning only. Owner-authorized isolated branch work; curriculum agreement precedes pilot production; pilot acceptance precedes scale-up.
+Status: isolated pilot production authorized by owner on 2026-10-05; full-course scale-up still follows pilot acceptance.
 Repository: cabicci/viva-ai-systems-55d35820
 Branch: work/masaarat-academic-20261005
 Baseline: 062b5f59dc56fabbce89c2034008fa1d8ef21114
@@ -99,3 +99,7 @@ This requirement supersedes any interpretation of "original authored" as unsuppo
 - Produce a short pronunciation sample before the full pilot narration. Listen to actual rendered audio, then the complete pilot. Text review, successful generation or automated transcript matching alone do not establish pronunciation acceptance.
 - Log errors by timestamp/word/context and regenerate only affected segments, then check joins and synchronization. Do not scale production before the owner's pilot audio acceptance.
 - No audio has been generated or marked accepted by this update.
+
+## Owner decision — brand-only learner content and continuation
+The owner confirmed that all learner-facing lessons, videos and PDFs must be original Masaarat production without external source lists or source-brand references. Academic mapping and verification remain internal editorial records, outside the learner bundle and RAG corpus. Do not copy material whose mandatory attribution would be removed. No accreditation claim is authorized.
+The owner's latest instruction authorizes continuing through the first pilot without repeated interim questions. Four contextual pilot packages and an isolated review UI are being prepared. Price, add-on limits and production merge remain outside this slice. Earlier requirements to display references in learner lessons/PDFs are superseded; internal references remain mandatory.
