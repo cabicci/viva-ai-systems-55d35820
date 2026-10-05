@@ -123,3 +123,8 @@ Final AC-PILOT-01 observation: all four pilot MP4s have been produced and upload
 
 ## Latest owner scope revision — 2026-10-05, after pilot delivery work
 The owner requested increasing the lesson count beyond 30 to ensure total study time exceeds 30 hours. This supersedes the original exactly-30-hour target and its fixed 30-lesson design. The current 30-lesson/1,800-minute outline is retained as the baseline and explicitly marked SCOPE_EXPANSION_REQUIRED; it does not meet the new target. No final expanded count or new subject area is invented by this update. Expand with distinct learning outcomes within the seven supplied subject areas, then validate workload without padding, duplicate project hours or optional assistant time. Only the first lesson is fully authored; the pilot-acceptance gate before scale-up remains.
+
+## Latest owner presentation requirement — AC-PREVIEW-02
+The owner requires an interactive lesson sample in the platform presentation, not content-only deliverables. The fixture now reuses actual shared navigation/footer/language/account menu/curriculum components through review-only adapters. It includes the same lesson content, quiz/practice, downloadable locale PDFs and Bunny embeds. A single-file interactive review export is available; this is not a merged or deployed Academic product. Account, billing and assistant services remain unconnected and are visibly labelled.
+
+AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z found all four exact pilot identities at Bunny status 4 with positive lengths. The original failed readiness runs remain historical evidence; no replacement upload was needed. Audio acceptance and full browser playback acceptance are separate from provider readiness.

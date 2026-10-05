@@ -1,435 +1,182 @@
-import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
+import {
+  createRootRoute,
+  createRoute,
+  createRouter,
+  createMemoryHistory,
+  RouterProvider,
+  useRouterState,
+  useRouter,
+} from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/Footer";
+import {
+  CurriculumLayout,
+  CURRICULUM_MODULE_CLASS,
+  CURRICULUM_ROW_CLASS,
+} from "@/components/site/CurriculumLayout";
+import { LocaleProvider, useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { AcademicDiagram } from "./Diagram";
-import eg from "./content/ar-EG.json";
-import msa from "./content/ar-MSA.json";
-import gulf from "./content/ar-Gulf.json";
-import en from "./content/en.json";
-import mediaManifest from "./media-manifest.json";
+import { ReviewAccount } from "./adapters/account";
+import { LessonView, packages } from "./LessonPreview";
 import "./style.css";
-
-const packages = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
-type Locale = keyof typeof packages;
-type Lesson = typeof eg;
-const labels = {
-  "ar-EG": [
-    "الشرح",
-    "مثال محلول",
-    "الفيديو",
-    "اختبر فهمك",
-    "التطبيق",
-    "أسئلة شائعة",
-    "التحميل",
-    "المساعد الذكي",
-  ],
-  "ar-MSA": [
-    "الشرح",
-    "مثال محلول",
-    "الفيديو",
-    "اختبر فهمك",
-    "التطبيق",
-    "أسئلة شائعة",
-    "التحميل",
-    "المساعد الذكي",
-  ],
-  "ar-Gulf": [
-    "الشرح",
-    "مثال محلول",
-    "الفيديو",
-    "اختبر فهمك",
-    "التطبيق",
-    "أسئلة شائعة",
-    "التحميل",
-    "المساعد الذكي",
-  ],
-  en: [
-    "Reading",
-    "Worked example",
-    "Video",
-    "Check understanding",
-    "Practice",
-    "FAQ",
-    "Download",
-    "AI assistant",
-  ],
-};
-const panel = "rounded-3xl border border-border bg-card p-5 md:p-8";
-function PrintBook({ lesson }: { lesson: Lesson }) {
-  const english = lesson.locale === "en";
+function ReviewApp() {
+  const search = useRouterState({ select: (s) => s.location.search }) as { locale?: string };
+  const locale =
+    search.locale && search.locale in packages ? (search.locale as keyof typeof packages) : "ar-EG";
   return (
-    <div className="print-only" dir={english ? "ltr" : "rtl"}>
-      <section className="print-page">
-        <img src="/brand/masaarat-logo-lockup.png" width="170" />
-        <p>{english ? "Masaarat Academic · Lesson workbook" : "مسارات أكاديمي · كراسة الدرس"}</p>
-        <h1>{lesson.title}</h1>
-        <p>{lesson.intro}</p>
-        <h2>{english ? "Learning outcomes" : "أهداف التعلم"}</h2>
-        <ul>
-          {lesson.goals.map((g) => (
-            <li key={g}>{g}</li>
-          ))}
-        </ul>
-        <AcademicDiagram kind="customer" english={english} />
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 1</footer>
-      </section>
-      {lesson.sections.map((s, i) => (
-        <section className="print-page" key={s.id}>
-          <p>{english ? "Masaarat Academic" : "مسارات أكاديمي"}</p>
-          <h2>{s.title}</h2>
-          <p>{s.text}</p>
-          <AcademicDiagram kind={s.id} english={english} />
-          <p>
-            <strong>{english ? "Pause and apply" : "توقف وطبّق"}:</strong> {s.reflection}
-          </p>
-          <footer>
-            {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {i + 2}
-          </footer>
-        </section>
-      ))}
-      <section className="print-page">
-        <h2>{lesson.example.title}</h2>
-        <p>{lesson.example.text}</p>
-        <p>{lesson.example.decision}</p>
-        <h2>{english ? "Practice" : "التطبيق"}</h2>
-        <p>{lesson.assignment.prompt}</p>
-        {lesson.assignment.fields.map((f) => (
-          <div key={f}>
-            <p>{f}</p>
-            <div style={{ borderBottom: "1px solid #aaa", height: "10mm" }} />
-          </div>
-        ))}
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 8</footer>
-      </section>
-      <section className="print-page">
-        <h2>{english ? "Review and summary" : "المراجعة والملخص"}</h2>
-        <ul>
-          {lesson.assignment.criteria.map((c) => (
-            <li key={c}>{c}</li>
-          ))}
-        </ul>
-        <ul>
-          {lesson.summary.map((s) => (
-            <li key={s}>{s}</li>
-          ))}
-        </ul>
-        {lesson.faq.map((f) => (
-          <article key={f.question}>
-            <h3>{f.question}</h3>
-            <p>{f.answer}</p>
-          </article>
-        ))}
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 9</footer>
-      </section>
+    <ReviewAccount>
+      <LocaleProvider initialLocale={locale}>
+        <Page />
+      </LocaleProvider>
+    </ReviewAccount>
+  );
+}
+function Page() {
+  const { locale, dir, lang } = useLocale();
+  const en = locale === "en";
+  const lesson = packages[locale];
+  const path = useRouterState({ select: (s) => s.location.pathname });
+  const router = useRouter();
+  useEffect(() => {
+    document.documentElement.dir = dir;
+    document.documentElement.lang = lang;
+  }, [dir, lang]);
+  const go = (to: string) => void router.navigate({ to, search: { locale } });
+  const lessonPath = "/academic/learn/AC-BUS-M01-L01";
+  const note = (
+    <div
+      className="screen-only border-b bg-accent/20 px-4 py-2 text-center text-xs leading-6"
+      role="note"
+    >
+      {en
+        ? "Interactive review · Account, purchases and assistant are not connected."
+        : "معاينة تفاعلية · الحساب والشراء والمساعد غير متصلة بالخدمات الفعلية."}
     </div>
   );
-}
-function LessonView({ lesson }: { lesson: Lesson }) {
-  const locale = lesson.locale as Locale,
-    english = locale === "en",
-    t = labels[locale];
-  const media = mediaManifest[locale] as {
-    embedUrl: string | null;
-    durationSeconds: number | null;
-    playbackReady: boolean;
-  };
-  const videoUrl =
-    media.playbackReady &&
-    media.embedUrl &&
-    /^https:\/\/iframe\.mediadelivery\.net\/embed\/\d+\/[a-f0-9-]+\?autoplay=false&preload=false$/.test(
-      media.embedUrl,
-    )
-      ? media.embedUrl
-      : null;
-  const [tab, setTab] = useState(0),
-    [answers, setAnswers] = useState<Record<string, number>>({}),
-    [submitted, setSubmitted] = useState(false),
-    [read, setRead] = useState(false),
-    [fields, setFields] = useState<string[]>(lesson.assignment.fields.map(() => ""));
-  const select = (n: number) => {
-    setTab(n);
-    document.getElementById("lesson-panel")?.scrollIntoView({ block: "start" });
-  };
+  const curriculum = path === "/academic/curriculum";
   return (
     <>
-      <div className="screen-only mx-auto max-w-7xl space-y-6 px-4 py-8">
-        <header className={`${panel} bg-gradient-to-br from-accent/20 to-card`}>
-          <p className="text-sm font-bold text-primary">
-            {english ? "Business foundations · Lesson 1" : "أساسيات الأعمال · الدرس الأول"}
-          </p>
-          <h1 className="mt-3 text-3xl font-black leading-snug md:text-4xl">{lesson.title}</h1>
-          <p className="mt-4 max-w-4xl leading-8 text-muted-foreground">{lesson.intro}</p>
-        </header>
-        <div className="grid items-start gap-6 lg:grid-cols-[250px_minmax(0,1fr)]">
-          <aside className="space-y-4 lg:sticky lg:top-24">
-            <nav
-              className={`${panel} !p-3`}
-              aria-label={english ? "Lesson sections" : "أقسام الدرس"}
+      {note}
+      {curriculum ? (
+        <CurriculumLayout
+          line={"academic" as "technical"}
+          subtitle={
+            en
+              ? "Business foundations and building a venture"
+              : "أساسيات إدارة الأعمال وبناء المشروعات"
+          }
+          summary={
+            <p>
+              {en
+                ? "The curriculum is being expanded beyond 30 lessons and 30 study hours. Only lesson 1 is available in this review."
+                : "المنهج قيد التوسعة ليتجاوز ٣٠ درسًا و٣٠ ساعة دراسة. المتاح في هذه المعاينة هو الدرس الأول فقط."}
+            </p>
+          }
+        >
+          <section className={CURRICULUM_MODULE_CLASS}>
+            <h2 className="text-2xl font-bold">
+              {en ? "Module 1 · Business foundations" : "الوحدة الأولى · أساسيات عالم الأعمال"}
+            </h2>
+            <button
+              onClick={() => go(lessonPath)}
+              className={`${CURRICULUM_ROW_CLASS} text-start hover:bg-primary/10`}
             >
-              <div className="grid grid-cols-2 gap-1 lg:grid-cols-1">
-                {t.map((label, i) => (
-                  <button
-                    key={label}
-                    className={`min-h-11 rounded-xl px-3 py-3 text-start text-sm font-bold ${tab === i ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-                    aria-pressed={tab === i}
-                    aria-controls="lesson-panel"
-                    onClick={() => select(i)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </nav>
-            <section className={`${panel} !p-5`}>
-              <h2 className="font-bold">{english ? "Your review" : "مراجعتك"}</h2>
-              <Progress
-                className="mt-3"
-                value={
-                  ((Number(read) + Number(submitted) + Number(fields.every(Boolean))) / 3) * 100
-                }
-              />
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                {english
-                  ? "This review session is not saved to an account."
-                  : "هذه المراجعة لا تُحفظ في حسابك."}
-              </p>
-            </section>
-          </aside>
-          <section
-            id="lesson-panel"
-            className={`${panel} min-w-0 scroll-mt-24 space-y-6`}
-            aria-label={t[tab]}
-          >
-            {tab === 0 && (
-              <>
-                <h2 className="text-xl font-bold">
-                  {english ? "Learning outcomes" : "أهداف التعلم"}
-                </h2>
-                <ul className="list-inside list-disc space-y-2 leading-7">
-                  {lesson.goals.map((g) => (
-                    <li key={g}>{g}</li>
-                  ))}
-                </ul>
-                {lesson.sections.map((s) => (
-                  <article
-                    key={s.id}
-                    className="grid items-start gap-5 border-t pt-6 md:grid-cols-[minmax(0,1fr)_220px]"
-                  >
-                    <div>
-                      <h3 className="text-xl font-bold">{s.title}</h3>
-                      <p className="academic-prose mt-3">{s.text}</p>
-                      <p className="mt-4 rounded-xl bg-accent/20 p-4 leading-8">
-                        <strong>{english ? "Think it through: " : "فكّر وطبّق: "}</strong>
-                        {s.reflection}
-                      </p>
-                    </div>
-                    <AcademicDiagram kind={s.id} english={english} />
-                  </article>
-                ))}
-                <Button onClick={() => setRead(true)}>
-                  {read
-                    ? english
-                      ? "Reading reviewed"
-                      : "تمت مراجعة الشرح"
-                    : english
-                      ? "Mark reading reviewed"
-                      : "أنهيت مراجعة الشرح"}
-                </Button>
-              </>
-            )}
-            {tab === 1 && (
-              <>
-                <h2 className="text-xl font-bold">{lesson.example.title}</h2>
-                <p className="academic-prose">{lesson.example.text}</p>
-                <AcademicDiagram kind="money" english={english} />
-                <p className="rounded-xl bg-accent/30 p-4 leading-8 font-bold">
-                  {lesson.example.decision}
-                </p>
-              </>
-            )}
-            {tab === 2 && (
-              <>
-                <h2 className="text-xl font-bold">{t[2]}</h2>
-                {videoUrl ? (
-                  <iframe
-                    title={lesson.title}
-                    src={videoUrl}
-                    className="aspect-video w-full rounded-xl border-0"
-                    allow="encrypted-media; picture-in-picture; fullscreen"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                ) : (
-                  <p className="leading-8">
-                    {english
-                      ? "The video is being prepared. Reading and practice are ready for review."
-                      : "الفيديو قيد التجهيز. الشرح والتطبيق جاهزان للمراجعة."}
-                  </p>
-                )}
-              </>
-            )}
-            {tab === 3 && (
-              <>
-                <h2 className="text-xl font-bold">{t[3]}</h2>
-                {lesson.quiz.map((q) => (
-                  <fieldset key={q.id} className="space-y-3 rounded-2xl border p-4">
-                    <legend className="px-2 font-bold leading-8">{q.question}</legend>
-                    {q.options.map((o, i) => (
-                      <label
-                        key={i}
-                        className="flex min-h-11 items-start gap-3 rounded-xl bg-muted/40 p-3"
-                      >
-                        <input
-                          type="radio"
-                          name={q.id}
-                          checked={answers[q.id] === i}
-                          onChange={() => {
-                            setAnswers({ ...answers, [q.id]: i });
-                            setSubmitted(false);
-                          }}
-                          className="mt-1"
-                        />
-                        <span className="leading-7">{o}</span>
-                      </label>
-                    ))}
-                    {submitted && (
-                      <p className="leading-8">
-                        <strong>
-                          {answers[q.id] === q.correct
-                            ? english
-                              ? "Correct. "
-                              : "صحيح. "
-                            : english
-                              ? "Review your answer. "
-                              : "راجع إجابتك. "}
-                        </strong>
-                        {q.explanation}
-                      </p>
-                    )}
-                  </fieldset>
-                ))}
-                <Button
-                  disabled={!lesson.quiz.every((q) => q.id in answers)}
-                  onClick={() => setSubmitted(true)}
-                >
-                  {english ? "Review answers" : "راجع الإجابات"}
-                </Button>
-                {submitted && (
-                  <p role="status">
-                    <bdi>{lesson.quiz.filter((q) => answers[q.id] === q.correct).length} / 6</bdi>
-                  </p>
-                )}
-              </>
-            )}
-            {tab === 4 && (
-              <>
-                <h2 className="text-xl font-bold">{t[4]}</h2>
-                <p className="leading-8">{lesson.assignment.prompt}</p>
-                {lesson.assignment.fields.map((f, i) => (
-                  <label key={f} className="block font-bold">
-                    {f}
-                    <textarea
-                      className="mt-2 block w-full rounded-xl border bg-background p-3 font-normal leading-7"
-                      rows={3}
-                      maxLength={5000}
-                      value={fields[i]}
-                      onChange={(e) =>
-                        setFields(fields.map((v, j) => (j === i ? e.target.value : v)))
-                      }
-                    />
-                  </label>
-                ))}
-                <ul className="list-inside list-disc space-y-3 leading-7">
-                  {lesson.assignment.criteria.map((c) => (
-                    <li key={c}>{c}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-            {tab === 5 && (
-              <>
-                <h2 className="text-xl font-bold">{t[5]}</h2>
-                {lesson.faq.map((f) => (
-                  <details key={f.question} className="rounded-xl border p-4">
-                    <summary className="cursor-pointer font-bold leading-7">{f.question}</summary>
-                    <p className="mt-3 leading-8">{f.answer}</p>
-                  </details>
-                ))}
-              </>
-            )}
-            {tab === 6 && (
-              <>
-                <h2 className="text-xl font-bold">{t[6]}</h2>
-                <Button onClick={() => window.print()}>
-                  {english ? "Print lesson workbook / save PDF" : "طباعة كراسة الدرس / حفظ PDF"}
-                </Button>
-              </>
-            )}
-            {tab === 7 && (
-              <>
-                <h2 className="text-xl font-bold">{t[7]}</h2>
-                <p className="leading-8">
-                  {english
-                    ? "The Academic assistant will be an optional separate subscription. It is not connected in this lesson review."
-                    : "المساعد الأكاديمي إضافة اختيارية باشتراك منفصل. لم يتم توصيله في مراجعة هذا الدرس."}
-                </p>
-              </>
-            )}
+              <span className="rounded-lg bg-primary/10 px-3 py-2">1</span>
+              <span className="flex-1">{lesson.title}</span>
+              <span>{en ? "Open lesson" : "افتح الدرس"} ←</span>
+            </button>
           </section>
-        </div>
-      </div>
-      <PrintBook lesson={lesson} />
-    </>
-  );
-}
-function App() {
-  const requested = new URLSearchParams(location.search).get("locale");
-  const initial = requested && requested in packages ? (requested as Locale) : "ar-EG";
-  const [locale, setLocale] = useState<Locale>(initial);
-  const english = locale === "en";
-  document.documentElement.lang = english ? "en" : "ar";
-  document.documentElement.dir = english ? "ltr" : "rtl";
-  return (
-    <>
-      <header className="screen-only sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4">
-          <div className="flex items-center gap-4">
-            <img
-              className="h-9 w-auto max-w-[132px]"
-              src="/brand/masaarat-logo-lockup.png"
-              alt="Masaarat"
-            />
-            <span className="border-s ps-4 text-sm font-bold text-primary">
-              {english ? "Masaarat Academic" : "مسارات أكاديمي"}
-            </span>
+        </CurriculumLayout>
+      ) : (
+        <>
+          <div className="screen-only">
+            <Navbar variant="account" />
           </div>
-          <label className="text-sm">
-            <span className="sr-only">{english ? "Language" : "اللغة"}</span>
-            <select
-              aria-label={english ? "Language" : "اللغة"}
-              className="rounded-xl border bg-card p-2"
-              value={locale}
-              onChange={(e) => {
-                setLocale(e.target.value as Locale);
-                history.replaceState(null, "", `?locale=${e.target.value}`);
-              }}
-            >
-              <option value="ar-EG">مصري</option>
-              <option value="ar-MSA">العربية</option>
-              <option value="ar-Gulf">خليجي</option>
-              <option value="en">English</option>
-            </select>
-          </label>
-        </div>
-      </header>
-      <LessonView key={locale} lesson={packages[locale]} />
-      <footer className="screen-only py-8 text-center text-sm text-muted-foreground">
-        {english
-          ? "Produced by Masaarat · Academic lesson review"
-          : "إنتاج مسارات · مراجعة الدرس الأكاديمي"}
-      </footer>
+          {path === lessonPath || path === "/" ? (
+            <>
+              <div className="screen-only mx-auto max-w-7xl px-4 pt-6">
+                <button
+                  className="font-bold text-primary"
+                  onClick={() => go("/academic/curriculum")}
+                >
+                  {en ? "Back to curriculum" : "العودة إلى المنهج"}
+                </button>
+              </div>
+              <LessonView key={locale} lesson={lesson} />
+              <nav className="screen-only mx-auto flex max-w-7xl justify-between px-4 py-8">
+                <button className="underline" onClick={() => go("/academic/curriculum")}>
+                  {en ? "Curriculum" : "المنهج"}
+                </button>
+                <span className="text-sm text-muted-foreground">
+                  {en ? "Next lesson is outside this pilot" : "الدرس التالي خارج نطاق العينة"}
+                </span>
+              </nav>
+            </>
+          ) : (
+            <main className="container mx-auto px-4 py-16">
+              <section className="glass mx-auto max-w-4xl rounded-3xl p-8 md:p-14">
+                <p className="text-sm font-bold text-primary">
+                  {en ? "Masaarat Academic" : "مسارات أكاديمي"}
+                </p>
+                <h1 className="mt-4 text-3xl font-black md:text-5xl">
+                  {path === "/academic"
+                    ? en
+                      ? "Understand business. Apply what you learn."
+                      : "افهم الأعمال وطبّق ما تتعلّمه."
+                    : en
+                      ? "This page is outside the lesson review"
+                      : "هذه الصفحة خارج معاينة الدرس"}
+                </h1>
+                <p className="my-6 leading-8 text-muted-foreground">
+                  {path === "/academic"
+                    ? en
+                      ? "An academic learning experience with explanations, worked cases, practice and assessment. The AI assistant is an optional separate subscription."
+                      : "تجربة تعلم أكاديمية تجمع الشرح والحالات التطبيقية والتدريب والتقييم. المساعد الذكي إضافة اختيارية باشتراك منفصل."
+                    : en
+                      ? "No account, purchase or subscription action is performed in this review."
+                      : "لا تُنفَّذ عمليات حساب أو شراء أو اشتراك داخل هذه المعاينة."}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button onClick={() => go(lessonPath)}>
+                    {en ? "Try the first lesson" : "جرّب الدرس الأول"}
+                  </Button>
+                  <Button variant="outline" onClick={() => go("/academic/curriculum")}>
+                    {en ? "View curriculum" : "استعرض المنهج"}
+                  </Button>
+                </div>
+              </section>
+            </main>
+          )}
+          <div className="screen-only">
+            <Footer />
+          </div>
+        </>
+      )}
     </>
   );
 }
-createRoot(document.getElementById("root")!).render(<App />);
+const root = createRootRoute({ component: ReviewApp });
+const routes = [
+  "/",
+  "/academic",
+  "/academic/curriculum",
+  "/academic/pricing",
+  "/academic/learn/AC-BUS-M01-L01",
+  "/$",
+].map((path) =>
+  createRoute({
+    getParentRoute: () => root,
+    path,
+    validateSearch: (s: Record<string, unknown>) => ({
+      locale: typeof s.locale === "string" ? s.locale : "ar-EG",
+    }),
+  }),
+);
+const q = new URLSearchParams(window.location.search).get("locale") || "ar-EG";
+const history = createMemoryHistory({
+  initialEntries: [`/academic/learn/AC-BUS-M01-L01?locale=${encodeURIComponent(q)}`],
+});
+const router = createRouter({ routeTree: root.addChildren(routes), history });
+createRoot(document.getElementById("root")!).render(<RouterProvider router={router} />);

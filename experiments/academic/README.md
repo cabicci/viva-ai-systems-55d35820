@@ -27,3 +27,13 @@ No shared navigation or commerce change is made here. Central integration must a
 `review.mjs` exercised four locales, desktop and mobile widths, and eight lesson sections: 64 visits, no page errors or horizontal overflow. It also checks six reading sections, all quiz controls and score feedback. Four nine-page workbooks were exported and visually reviewed; generated PDFs are review deliverables, not production downloads or tracked source assets. Browser evidence is in `review/browser-checks.json`.
 
 To regenerate using an installed Playwright Chromium, start Vite as above, then run `node experiments/academic/review.mjs`. Set `ACADEMIC_CHROME` only when a custom Chromium executable is necessary. The script requires a running localhost:4178 server.
+
+## Site-like interactive preview — 2026-10-05
+
+The review entry now uses the actual shared Navbar, Footer, LanguageSelector, DashboardNavigation and CurriculumLayout. Review-only Vite aliases extend the line registry with Academic and provide a clearly labelled in-memory account persona. They cannot be imported by the production build and do not confer any real account or entitlement. Shared source files and live settings remain unchanged. The memory router keeps all navigation inside the isolated fixture; non-pilot pages explicitly report their scope.
+
+`LessonPreview.tsx` contains the pilot lesson interface. `export-preview.py` embeds the built JS/CSS, existing brand images, local fonts and four reviewed PDFs into `review/Masaarat_Academic_Interactive_Preview.html`. Open that file in a browser: all interface assets/downloads are self-contained; Bunny playback needs internet. Build first with Vite. The single-file export is a review artifact and is not tracked or published. Its source stays in this branch.
+
+`media-manifest.json` now records all four existing Bunny identities at status 4, verified read-only in run 37332447947. No rerender or reupload occurred. Actual listening remains pending. `shell-review.mjs` verifies the exported file in four locales at 390/1440 widths, eight lesson sections, one locale selector, three other-line choices, responsive menus, locale switching, embedded PDF downloads and correct non-autoplay Bunny URLs. No account/payment requests are made.
+
+Known review-build warnings: five react-refresh export-shape warnings from fixture entry/provider files and one bundle-size warning because the self-contained review includes four locales and the shared shell in one bundle. These are not production performance acceptance.
