@@ -1,6 +1,6 @@
 # Masaarat Academic — reusable curriculum criteria and decision register
 Date: 2026-10-05
-Status: isolated pilot production authorized by owner on 2026-10-05; full-course scale-up still follows pilot acceptance.
+Status: full written-course implementation authorized after pilot-direction acceptance; isolated branch, editorial and central integration gates remain open.
 Repository: cabicci/viva-ai-systems-55d35820
 Branch: work/masaarat-academic-20261005
 Baseline: 062b5f59dc56fabbce89c2034008fa1d8ef21114
@@ -144,6 +144,6 @@ AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z f
 
 - Recovered the same branch after workspace maintenance; read latest recovery v143 and continuation v73. Main remains 062b5f59; no broad re-audit or changes to global registers.
 - Started bounded written expansion run 37358374247 at 6bbb5ca7eff684903140aa6107ad600cc8eb9aaa: 39 lessons × four contextual locales, at most two requests per package, review artifacts only. This is generation, not editorial acceptance or publication. The original pilot and existing media are untouched.
-- Prepared centrally reviewed SQL candidates outside auto-applied migrations. New Academic course/content/progress/download RPCs reuse existing verified identity, stored admin role and commerce entitlements. First approved introductory lesson remains free to authenticated users. Equal Pro Plus price does not grant Pro Plus rights. Assistant access requires a separate entitlement and remains disabled until price/quota/provider service decisions are configured.
+- Prepared SQL candidates for central review outside auto-applied migrations. New Academic course/content/progress/download RPCs reuse existing verified identity, stored admin role and commerce entitlements. First approved introductory lesson remains free to authenticated users. Equal Pro Plus price does not grant Pro Plus rights. Assistant access requires a separate entitlement and remains disabled until price/quota/provider service decisions are configured.
 - Production lesson component contains no static lesson bodies or answer keys. Query keys include user/course/lesson/locale; denied mutation clears visible protected content. Practice submission is distinct from academic grading. Quiz completion follows the existing technical all-correct rule rather than an invented percentage threshold.
 - Shared navigation, complete commerce/mail/Stripe integration, erasure inventory and production activation still require central integration. No candidate SQL has been applied to production and no merge/publication occurred.

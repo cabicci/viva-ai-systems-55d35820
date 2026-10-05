@@ -46,6 +46,9 @@ for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf", "en"]) {
         path: `${output}/pdf/Lesson_Workbook_AC-BUS-M01-L01_${locale}.pdf`,
         printBackground: true,
         preferCSSPageSize: true,
+        displayHeaderFooter: true,
+        headerTemplate: '<span></span>',
+        footerTemplate: '<div style="width:100%;text-align:center;font:9px sans-serif"><span class="pageNumber"></span> / <span class="totalPages"></span></div>',
       });
     }
     await page.close();

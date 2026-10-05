@@ -6,6 +6,10 @@ from expand_lessons import validate
 def normalize(source):
     d = copy.deepcopy(source)
     changes = []
+    for i, value in enumerate(d['videoVisualPlan']):
+        if isinstance(value,dict) and set(value)=={'scene','description','elements'} and isinstance(value['description'],str) and isinstance(value['elements'],list) and all(isinstance(x,str) for x in value['elements']):
+            d['videoVisualPlan'][i]=value['description']+'\n'+' / '.join(value['elements'])
+            changes.append(f'videoVisualPlan[{i}]: preserved description and elements in one scene string')
     for parent, key, field, allowed in [
         (d['example'], 'steps', 'explanation', {'step', 'explanation'}),
         (d['example'], 'steps', 'explainedSolution', {'step', 'explainedSolution'}),

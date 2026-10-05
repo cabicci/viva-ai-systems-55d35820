@@ -67,6 +67,10 @@
   .print-page li {
     margin-block: 2mm;
     line-height: 1.7;
+    break-inside: avoid;
+  }
+  .print-page tr {
+    break-inside: avoid;
   }
   .print-page svg {
     width: 100%;

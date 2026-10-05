@@ -247,5 +247,345 @@
     "before": "يوضح هذا الجدول كيف يمكن أن يؤدي تغيير أوزان معايير التقييم إلى تغيير ترتيب الأفكار، مما يؤكد أهمية تحديد الأوزان بعناية.",
     "after": "نتائج الحالة الافتراضية قبل تغيير الأوزان وبعده. لم يتغير الترتيب في هذا الاختبار؛ قد يتغير مع درجات أو أوزان أخرى، لذلك لا يعادل التقييم دليلًا على نجاح السوق.",
     "reason": "Remove contradictory diagram outcomes."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      0,
+      "correct"
+    ],
+    "before": 3,
+    "after": 1,
+    "reason": "Correct answer index to match independently checked arithmetic."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      1,
+      "correct"
+    ],
+    "before": 2,
+    "after": 1,
+    "reason": "Correct answer index to match independently checked arithmetic."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      5,
+      "correct"
+    ],
+    "before": 1,
+    "after": 0,
+    "reason": "Correct answer index to match independently checked arithmetic."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M05-L04",
+    "path": [
+      "quiz",
+      1,
+      "correct"
+    ],
+    "before": 2,
+    "after": 1,
+    "reason": "500*30/60-200 = 50 hours."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M05-L04",
+    "path": [
+      "quiz",
+      1,
+      "explanation"
+    ],
+    "before": "إجمالي الوقت المطلوب: 500 وحدة × 30 دقيقة/وحدة = 15000 دقيقة. نحولها لساعات: 15000 دقيقة ÷ 60 دقيقة/ساعة = 250 ساعة. الوقت المتاح هو 200 ساعة. إذن، الفجوة هي 250 - 200 = 50 ساعة. الخيار الصحيح هو 2 (50 ساعة). الخيار 0 (25 ساعة) قد ينتج عن خطأ في التحويل أو الحساب. الخيار 1 (75 ساعة) و 3 (100 ساعة) بعيدان عن الحساب الصحيح.",
+    "after": "إجمالي الوقت المطلوب = 500 × 30 ÷ 60 = 250 ساعة. الوقت المتاح 200 ساعة، فالفجوة = 250 − 200 = 50 ساعة. تكلفة المواد ما تدخل في حساب ساعات العمل.",
+    "reason": "Remove contradictory option indexing."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L06",
+    "path": [
+      "videoVisualPlan",
+      2
+    ],
+    "before": "يعود المشهد إلى أحمد وسارة. سارة تشرح لأحمد كيف يمكنه تصميم تجربة أفضل. تظهر رسوم متحركة لمقارنة: على اليسار 'التجربة الأصلية' (أصدقاء + امتحانات + خصم)، وعلى اليمين 'التجربة المقترحة' (مجموعة عشوائية من العملاء + أسبوع عادي + خصم). تظهر أسهم توضح أن في التجربة المقترحة، 'الخصم' هو المتغير الوحيد الذي يتم عزله. ينتهي المشهد بسارة تقول: 'كذا تقدر تعرف فعلاً إذا الخصم هو اللي سوى الفرق، مو عوامل ثانية'.\nشخصيتان (أحمد وسارة) / رسوم متحركة لمقارنة تصميمي تجربة / أسهم توضيحية لمتغيرات التجربة",
+    "after": "تشرح سارة تجربة مقترحة في نفس الفترة ولنفس المنتج: توزيع العملاء المؤهلين عشوائياً على مجموعتين، مجموعة تحصل على الخصم والأخرى على السعر المعتاد، مع تثبيت الإعلان وطريقة الخدمة. تعرض الشاشة معدل الشراء في كل مجموعة وحجم العينة، ثم حدود التجربة واحتمال عدم اليقين. لا تُقارن تجربة الأصدقاء وقت الامتحانات بتجربة عملاء مختلفين في أسبوع آخر لإثبات أثر الخصم.",
+    "reason": "Hold contemporaneous conditions comparable and vary discount only; no false causal inference."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L06",
+    "path": [
+      "quiz",
+      1,
+      "explanation"
+    ],
+    "before": "النتائج من عينة معينة (المراهقين) لا يمكن تعميمها تلقائياً على فئات عمرية أخرى (كبار السن، الأطفال) لأن طبيعة البشرة واحتياجاتها تختلف. هذا يمثل حدود التعميم. الخيار الأول والثاني يمثلان تعميماً زائداً أو غير منطقي.",
+    "after": "النتائج من عينة المراهقين ما تنطبق تلقائياً على الأطفال أو كبار السن. اختلاف الفئة والظروف يحد من التعميم، والتجربة وحدها ما تثبت فعالية المنتج لكل الناس.",
+    "reason": "Remove explanation that labels the correct choice incorrect."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L06",
+    "path": [
+      "quiz",
+      5,
+      "options",
+      1
+    ],
+    "before": "القائمة الجديدة أدت إلى زيادة الإقبال في الفرع الذي تم تجربتها فيه، وقد لا تنطبق النتائج على الفروع الأخرى.",
+    "after": "لوحظت زيادة في الإقبال بعد تغيير القائمة في هذا الفرع؛ ما نقدر نجزم بالسبب أو نعمّم على الفروع الأخرى.",
+    "reason": "Observed association does not establish causation."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L06",
+    "path": [
+      "quiz",
+      5,
+      "explanation"
+    ],
+    "before": "الاستنتاج الأكثر دقة هو أن القائمة الجديدة أدت إلى زيادة الإقبال في الفرع الذي تم تجربتها فيه، مع الاعتراف بأن النتائج قد لا تنطبق على الفروع الأخرى بسبب اختلاف الظروف أو العملاء. هذا يمثل تطبيقاً لمفهوم حدود التعميم. الخيار الأول يمثل تعميماً زائداً، والثالث تجاهلاً للنتائج، والرابع قراراً متطرفاً وغير مبني على تحليل سليم.",
+    "after": "الزيادة حصلت بعد تغيير القائمة، لكن ممكن عوامل ثانية أثرت عليها. نحتاج مقارنة مناسبة قبل نسبتها للقائمة، ونختبر اختلاف ظروف الفروع قبل التعميم.",
+    "reason": "Remove unjustified causal claim."
+  },
+  {
+    "locale": "ar-Gulf",
+    "lessonId": "AC-BUS-M04-L03",
+    "path": [
+      "quiz",
+      2,
+      "question"
+    ],
+    "before": "لو عندك محل قهوة، وقدرة تحضير القهوة 30 كوب في الساعة، وقدرة استلام الطلبات والدفع 40 طلب في الساعة. وش هي القدرة القصوى للمحل ككل في الساعة؟",
+    "after": "في نموذج تشغيل مستقر، كل طلب فيه كوب واحد، وما فيه مخزون جاهز أو استعانة بمصدر خارجي. تحضير القهوة ينجز 30 كوب في الساعة واستلام الطلبات والدفع ينجز 40 طلب في الساعة. وش القدرة القصوى للمحل في الساعة؟",
+    "reason": "Align units and state bottleneck assumptions."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M01-L04",
+    "path": [
+      "quiz",
+      3,
+      "correct"
+    ],
+    "before": 3,
+    "after": 1,
+    "reason": "5/125 = 4%, index 1."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M06-L02",
+    "path": [
+      "quiz",
+      3,
+      "options",
+      1
+    ],
+    "before": "Offer B is cheaper by $50.",
+    "after": "Offer B is cheaper by $100.",
+    "reason": "1450 - 1350 = 100; previously no correct option."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L05",
+    "path": [
+      "quiz",
+      1,
+      "question"
+    ],
+    "before": "A project plan's marketing section proposes a large-scale advertising campaign targeting 50,000 potential customers. However, the operational plan details production capacity for only 5,000 units. What is the most significant issue here?",
+    "after": "A project plan forecasts 8,000 paid orders in one month after an advertising campaign. Each order requires one unit. The operational plan can supply only 5,000 units that month, with no opening inventory or outsourcing. What is the most significant issue?",
+    "reason": "Advertising reach is not demand; use explicit orders with comparable time and units."
+  },
+  {
+    "locale": "en",
+    "lessonId": "AC-BUS-M07-L05",
+    "path": [
+      "quiz",
+      1,
+      "explanation"
+    ],
+    "before": "The correct answer is 'There is a critical inconsistency between demand generation and supply capacity.' The marketing plan aims to create demand far exceeding the project's ability to supply, which will lead to unmet customer expectations and wasted marketing spend. Options A and B are judgments, not the core issue. Option D might be a consequence, but the fundamental problem is the mismatch between what's promised and what can be delivered.",
+    "after": "The forecast requires 8,000 units but the plan can supply only 5,000 in the same period: a 3,000-unit gap. Reconcile the forecast, capacity, timing and finances. Audience reach alone would not establish this mismatch because only some people convert to orders.",
+    "reason": "Remove reach-to-sales fallacy."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M02-L02",
+    "path": [
+      "example",
+      "steps",
+      2
+    ],
+    "before": "الخطوة 3: تحديد السبب الجذري. بناءً على تحليل السجلات، إذا وجدت أن 70% من التأخيرات ناتجة عن أخطاء في ملفات الطلبات، فإن السبب الجذري ليس نقص الآلات أو المواد، بل مشكلة في عملية إدخال البيانات أو التواصل. هذا يوضح أهمية الأدلة في توجيه القرار الصحيح.",
+    "after": "الخطوة 3: صياغة تفسير قابل للاختبار. في هذا المثال الافتراضي، صُنّفت سبعة من عشرة طلبات متأخرة بأنها تنتظر تصحيح الملفات. هذا دليل أولي على نقطة انتظار متكررة، وليس إثباتًا للسبب الجذري أو لنسبة التأخير في جميع الطلبات. نفحص طريقة التصنيف، ونقارن بطلبات وصلت في موعدها، ونتتبع كيف نشأ خطأ الملف قبل اختيار التدخل. قد يكون السبب نقص معلومة من العميل أو خللًا في النموذج، لا نقص تدريب الموظف بالضرورة.",
+    "reason": "A small selected delayed-order sample does not prove root cause or population frequency."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      1,
+      "correct"
+    ],
+    "before": 2,
+    "after": 1,
+    "reason": "15000/(100-40)=250, index1."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L04",
+    "path": [
+      "quiz",
+      4,
+      "question"
+    ],
+    "before": "شركة 'الأمل' لديها التزام بدفع 5000 دولار لمورد في 15 يناير، لكن موعد الدفع الفعلي هو 15 فبراير. ما هو الأثر المحتمل إذا لم تميز الشركة بين موعد الالتزام وموعد الدفع؟",
+    "after": "وقّعت شركة عقد شراء بقيمة 5000 وحدة نقدية في 15 يناير، على أن تستحق الدفعة وتُسدَّد في 15 فبراير. ما أثر تسجيل خروج النقد في يناير بدلًا من فبراير؟",
+    "reason": "Distinguish commitment date from contractual cash payment date."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L04",
+    "path": [
+      "quiz",
+      4,
+      "options",
+      1
+    ],
+    "before": "قد تواجه الشركة نقصًا في السيولة النقدية في 15 يناير إذا لم تخطط لذلك.",
+    "after": "قد تقلل تقدير النقد المتاح في يناير وتبالغ فيه في فبراير، فتخطط للسيولة في الفترة الخطأ.",
+    "reason": "Cash leaves on payment, not commitment."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M05-L04",
+    "path": [
+      "quiz",
+      4,
+      "explanation"
+    ],
+    "before": "عدم التمييز بين موعد الالتزام وموعد الدفع قد يؤدي إلى سوء تقدير للتدفق النقدي. إذا اعتقدت الشركة أن الدفع سيتم في فبراير، ولم تخطط للالتزام المالي في يناير، فقد تواجه نقصًا في السيولة في يناير. الخيارات الأخرى غير صحيحة.",
+    "after": "توقيع العقد أنشأ التزامًا، لكن النقد في هذا المثال يخرج في فبراير. نقيد موعد الالتزام للمتابعة، ونضع السداد في فترة الدفع عند إعداد التدفق النقدي. تسجيله في يناير قد يشوه الرصيد المتوقع في الشهرين؛ لا يعني ذلك أن المبلغ يُدفع مرتين.",
+    "reason": "Correct cash-timing reasoning."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M01-L04",
+    "path": [
+      "quiz",
+      2,
+      "options",
+      2
+    ],
+    "before": "النسبة انخفضت، ولكن حجم العينة في الربع الثاني أكبر بكثير، مما قد يجعلها أكثر تمثيلاً.",
+    "after": "انخفضت النسبة المعلنة خمس نقاط مئوية؛ يلزم فحص طريقة اختيار العينتين واتساق القياس قبل تفسير الفرق.",
+    "reason": "Larger sample is not necessarily representative."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M01-L04",
+    "path": [
+      "quiz",
+      2,
+      "explanation"
+    ],
+    "before": "الإجابة الصحيحة هي 'النسبة انخفضت، ولكن حجم العينة في الربع الثاني أكبر بكثير، مما قد يجعلها أكثر تمثيلاً.' على الرغم من انخفاض النسبة المئوية، فإن حجم العينة الأكبر في الربع الثاني (1000 عميل مقابل 200) يجعل هذه النتيجة أكثر موثوقية وتمثيلاً لقاعدة العملاء الإجمالية. مجرد القول بأن الرضا انخفض بشكل كبير قد يكون مبالغًا فيه دون النظر إلى حجم العينة، وزيادة عدد المستجيبين لا تعني تحسن الرضا بالضرورة، والمقارنة ممكنة مع مراعاة الفروقات.",
+    "after": "80% أقل من 85% بخمس نقاط مئوية. زيادة عدد المستجيبين لا تزيل تحيز الاختيار ولا تضمن التمثيل. نراجع إطار العينة وطريقة الاستجابة وتعريف الرضا وثبات الأسئلة قبل الحكم على دلالة الفرق أو تعميمه.",
+    "reason": "Do not equate sample size with representativeness."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      4,
+      "correct"
+    ],
+    "before": 2,
+    "after": 0,
+    "reason": "Closing cash is positive 500; net period flow is negative 500."
+  },
+  {
+    "locale": "ar-MSA",
+    "lessonId": "AC-BUS-M04-L04",
+    "path": [
+      "quiz",
+      4,
+      "explanation"
+    ],
+    "before": "الرصيد النقدي الختامي = الرصيد النقدي الافتتاحي + المقبوضات النقدية - المدفوعات النقدية = 1000 + 3000 - 3500 = 500 وحدة نقدية. الخيار -500 يعني أن هناك عجزًا، وهو ما يحدث إذا كانت المدفوعات أكبر من المقبوضات والرصيد الافتتاحي معًا.",
+    "after": "الرصيد الختامي = 1000 + 3000 − 3500 = 500 وحدة نقدية موجبة. صافي التدفق خلال الفترة سالب 500، لكنه يختلف عن الرصيد الختامي الذي يشمل الرصيد الافتتاحي.",
+    "reason": "Closing cash is positive 500; net period flow is negative 500."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L08",
+    "path": [
+      "quiz",
+      2,
+      "correct"
+    ],
+    "before": 2,
+    "after": 1,
+    "reason": "Projected transfer from other firms is an assumption, even if informed by calculations."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M07-L08",
+    "path": [
+      "quiz",
+      2,
+      "explanation"
+    ],
+    "before": "هذا الادعاء هو 'حساب' لأنه مبني على تحليل ومقارنة بيانات (تكاليف أنظمة مشابهة) للوصول إلى تقدير رقمي (انخفاض 5%). على الرغم من أنه قد يحتوي على افتراضات ضمنية، إلا أن جوهره هو عملية حسابية أو تحليلية.",
+    "after": "انخفاض التكلفة عندك لسه افتراض محتاج اختبار. المقارنة بثلاث شركات ممكن تدعم تقديره، لكنها مش ملاحظة عن مشروعك ولا ضمان للنتيجة. ممكن يكون وراء رقم 5% حساب، لكن تطبيقه على مشروعك يفضل افتراضًا لحد ما تجمع دليل مناسب.",
+    "reason": "Distinguish calculation provenance from projected claim status."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M06-L06",
+    "path": [
+      "quiz",
+      3,
+      "question"
+    ],
+    "before": "أنت بتجهز لإطلاق خدمة عملاء جديدة عبر الشات بوت. اكتشفت إن الشات بوت ممكن يفشل في الرد على 5% من الاستفسارات الشائعة. هل ده عيب حرج؟",
+    "after": "قبل إطلاق شات بوت خدمة العملاء، اكتشفت إنه بيدي معلومة غلط عن استرداد المدفوعات في بعض الحالات، ومفيش تحويل لموظف أو وسيلة لتصحيح الرد قبل ما العميل يعتمد عليه. إيه القرار الأنسب؟",
+    "reason": "Severity depends on consequence and controls, not arbitrary error percentage."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M06-L06",
+    "path": [
+      "quiz",
+      3,
+      "options",
+      1
+    ],
+    "before": "آه، لأن ده بيأثر على جودة الخدمة الأساسية.",
+    "after": "نؤجل إطلاق الوظيفة المتأثرة لحد تصحيح الردود أو توفير تحويل موثوق لموظف واختبار الحل.",
+    "reason": "Risk-based critical function gate."
+  },
+  {
+    "locale": "ar-EG",
+    "lessonId": "AC-BUS-M06-L06",
+    "path": [
+      "quiz",
+      3,
+      "explanation"
+    ],
+    "before": "الإجابة الصحيحة هي 'آه، لأن ده بيأثر على جودة الخدمة الأساسية'. فشل الشات بوت في الرد على 5% من الاستفسارات الشائعة يعني أن الخدمة الأساسية (تقديم الدعم) لا تعمل بكفاءة كافية، مما يؤثر سلبًا على تجربة العملاء ومصداقية الخدمة. هذا يعتبر عيبًا حرجًا.",
+    "after": "المشكلة هنا أثر المعلومة المالية الغلط وغياب وسيلة احتواء، مش نسبة أخطاء مجردة. نعالج الوظيفة المتأثرة ونختبر الرد الصحيح والتحويل لموظف قبل إطلاقها؛ ممكن باقي الوظائف المستقلة تستمر بعد مراجعة جاهزيتها.",
+    "reason": "Avoid arbitrary pass/fail threshold."
   }
 ]

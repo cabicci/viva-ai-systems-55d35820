@@ -28,6 +28,11 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
         className="mx-auto w-full max-w-6xl flex-1 space-y-8 p-4 sm:p-6 md:p-10"
       >
         <header className="glass rounded-3xl p-6 md:p-10">
+          <img
+            src="/brand/masaarat-academic.png"
+            alt={locale === "en" ? "Masaarat Academic" : "مسارات أكاديمي"}
+            className="mb-6 h-24 w-auto object-contain"
+          />
           <p className="mb-3 font-bold text-primary">
             {locale === "en" ? "Masaarat Academic" : "مسارات أكاديمي"}
           </p>

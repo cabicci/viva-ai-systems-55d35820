@@ -97,9 +97,9 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           ))}
         </ul>
         {lesson.id === "AC-BUS-M01-L01" && <ReadingDiagram kind="customer" english={english} />}
-        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"} · 1</footer>
+        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"}</footer>
       </section>
-      {lesson.sections.map((s, i) => (
+      {lesson.sections.map((s) => (
         <section className="print-page" key={s.id}>
           <p>{english ? "Masaarat Academic" : "مسارات أكاديمي"}</p>
           <h2>{s.title}</h2>
@@ -108,9 +108,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           <p>
             <strong>{english ? "Pause and apply" : "توقف وطبّق"}:</strong> {s.reflection}
           </p>
-          <footer>
-            {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {i + 2}
-          </footer>
+          <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"}</footer>
         </section>
       ))}
       {lesson.readingVisuals?.map((visual) => (
@@ -118,7 +116,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           <ReadingVisual visual={visual} />
         </section>
       ))}
-      {lesson.id !== "AC-BUS-M01-L01" && (
+      {lesson.quiz.length > 0 && (
         <section className="print-page">
           <h2>{english ? "Check understanding" : "اختبر فهمك"}</h2>
           {lesson.quiz.map((question, index) => (
@@ -152,9 +150,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
             <div style={{ borderBottom: "1px solid #aaa", height: "10mm" }} />
           </div>
         ))}
-        <footer>
-          {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {lesson.sections.length + 2}
-        </footer>
+        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"}</footer>
       </section>
       {lesson.assignment.rubric && (
         <section className="print-page">
@@ -196,9 +192,7 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
             <p>{f.answer}</p>
           </article>
         ))}
-        <footer>
-          {english ? "Produced by Masaarat" : "إنتاج مسارات"} · {lesson.sections.length + 3}
-        </footer>
+        <footer>{english ? "Produced by Masaarat" : "إنتاج مسارات"}</footer>
       </section>
     </div>
   );

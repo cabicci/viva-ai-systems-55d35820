@@ -47,3 +47,11 @@ The preview now exposes one course card, 40 lesson drafts, the seven-module curr
 Reading diagrams now live in ReadingDiagram.tsx. Video diagrams and already-created videos are unchanged. A missing video cannot inherit the pilot's media; its tab is hidden. Non-video estimated workload is 2000 minutes; not verified learner time.
 
 `course-review.mjs` checks all 40 lessons in each locale and the single-card hierarchy. `review.mjs` supports ACADEMIC_REVIEW_URL for file-based review when a development server is unavailable. Generated PDF output is not committed; source methodology lives in docs/academic.
+
+## Expanded package pipeline — supersedes brief-only depth above
+
+`course/expanded/` contains the full review packages as locale sets are completed. `packages.ts` prefers these over historical concise briefs. Full packages contain six explanation sections, worked steps, six four-option questions, applied tasks/rubrics, three reading visuals, FAQs and summaries. Structural, numeric and browser checks are evidence, not independent academic approval. The final `docs/academic/EXPANSION_VALIDATION.json` and course browser report determine which locale sets passed; do not infer completeness from this README.
+
+Print workbooks now include all formative questions and all three reading visuals, with actual PDF page numbering. Their page count varies with contextual text. Earlier fixed nine-page statements describe only the prior pilot export. The standalone preview intentionally includes review answers and all available locales; it is not a production content-security or bundle-performance design.
+
+The new production candidate in `src/components/academic-education/` reuses the shared shell and server authorization. It is distinct from the offline review fixture and awaits central route registration. The sibling logo candidate is available as a new `public/brand/masaarat-academic.png`; existing brand/media assets are untouched.

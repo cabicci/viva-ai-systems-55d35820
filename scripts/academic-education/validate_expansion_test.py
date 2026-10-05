@@ -10,6 +10,20 @@ class PackageValidation(unittest.TestCase):
  def test_rejects_answer_outside_choices(self):
   d=self.package();d['quiz'][0]['correct']=4
   with self.assertRaises(AssertionError):validate(d,d['id'],d['locale'])
+ def test_rejects_embedded_output_and_duplicate_sections(self):
+  d=self.package();d['example']['steps'][2]='reflection":"Continue"},{"sections":[]}'
+  with self.assertRaisesRegex(AssertionError,'embedded_schema'):validate(d,d['id'],d['locale'])
+  d=self.package();d['sections'][5]['id']=d['sections'][4]['id']
+  with self.assertRaises(AssertionError):validate(d,d['id'],d['locale'])
+ def test_lossless_step_normalization(self):
+  from normalize_packages import normalize
+  d=self.package();d['example']['steps'][0]={'step':1,'explanation':'A complete reasoning step.'}
+  d['videoVisualPlan'][0]={'scene':1,'description':'A different scene.','elements':['A workshop','A customer']}
+  result,changes=normalize(d)
+  self.assertEqual(result['example']['steps'][0],'A complete reasoning step.')
+  self.assertIn('A workshop',result['videoVisualPlan'][0]);self.assertIn('A customer',result['videoVisualPlan'][0])
+  self.assertIsInstance(d['example']['steps'][0],dict)
+  self.assertEqual(len(changes),2)
  def test_rejects_wrong_locale_and_source_names(self):
   d=self.package()
   with self.assertRaises(AssertionError):validate(d,d['id'],'ar-EG')
