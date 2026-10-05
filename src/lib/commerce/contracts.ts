@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { simpleOfferSchema, offerPhoneSchema } from "./offer-input";
 
-export const packageSchema = z.enum(["pro", "pro_plus", "kids"]);
+export const packageSchema = z.enum(["pro", "pro_plus", "kids", "technical"]);
 export type PackageKey = z.infer<typeof packageSchema>;
 export const localeSchema = z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]);
 export const currencySchema = z.enum(["EGP", "USD"]);

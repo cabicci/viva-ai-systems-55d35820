@@ -17,6 +17,7 @@ export function PaymentMethods({
   market,
   stripe,
   disabled = false,
+  initialMethod = "stripe",
   children,
 }: {
   packageKey: PackageKey;
@@ -24,6 +25,7 @@ export function PaymentMethods({
   market: "EG" | "INTL";
   stripe: () => void;
   disabled?: boolean;
+  initialMethod?: "stripe" | "instapay";
   children: React.ReactNode;
 }) {
   const { locale } = useLocale(),
@@ -31,7 +33,7 @@ export function PaymentMethods({
     s = adminOfferCopy(locale);
   const command = useServerFn(commerceCommand);
   const [methods, setMethods] = useState<PaymentMethod[]>([]),
-    [method, setMethod] = useState("stripe"),
+    [method, setMethod] = useState<string>(initialMethod),
     [code, setCode] = useState(""),
     [phone, setPhone] = useState(""),
     [quote, setQuote] = useState<Quote>(),

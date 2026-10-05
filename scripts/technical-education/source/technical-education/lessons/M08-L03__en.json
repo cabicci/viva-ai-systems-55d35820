@@ -1,0 +1,72 @@
+{
+  "id": "M08-L03",
+  "locale": "en",
+  "title": "Built-in and multifunction furniture",
+  "intro": "Multifunction furniture must work when stored, deployed and moving between states. Review a fold-down desk within storage, including access, support and maintenance.",
+  "goals": [
+    "Map operating states and swept space",
+    "Separate support, movement and locking",
+    "Plan maintenance and operating sequence"
+  ],
+  "sections": [
+    {
+      "id": "states",
+      "title": "Map operating states and swept space",
+      "text": "Draw stored, transitioning and working states with the chair and user. The swept movement envelope can exceed the final footprint. Check interference with room doors and storage drawers, and identify anything that must be moved before deployment. If desk and storage are needed simultaneously, review their movements together rather than in separate conflict-free drawings.",
+      "diagram": "new-M08-L03-states",
+      "caption": "Review the transition envelope as well as the end positions."
+    },
+    {
+      "id": "supportlock",
+      "title": "Separate support, movement and locking",
+      "text": "A hinge explains rotation but does not by itself establish adequate worktop support. Trace load through supports, carcass and substrate; identify how the working position is secured against unintended folding. Mark pinch zones and safe lock operation. Select a compatible movement/support assembly from product data and review it; do not turn a teaching sketch into a fixing recipe or improvised load test.",
+      "diagram": "new-M08-L03-supportlock",
+      "caption": "Movement, support and locking have distinct roles."
+    },
+    {
+      "id": "service",
+      "title": "Plan maintenance and operating sequence",
+      "text": "Document a sequence: clear the path, deploy the top, confirm support engagement according to the system, then place equipment. Remove equipment and chair from the movement envelope before closing. Retain access for adjustment and replacement without damaging finishes. If power is included, protect it from pinching and preserve service access through a qualified design. Check each function after transitions.",
+      "diagram": "new-M08-L03-service",
+      "caption": "Operating sequence and service access belong in the design."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A fold-down desktop blocks the daily file drawer when deployed, although the closed arrangement looks compact. Relocate the drawer to an accessible side or revise the simultaneous-use requirement, then review movement and support again. A small stored footprint alone has not solved the user need.",
+    "decision": "Decision: resolve simultaneous-use access before approving the concept."
+  },
+  "quiz": [
+    {
+      "id": "transition",
+      "question": "Which review reveals transition conflicts?",
+      "options": [
+        "Swept movement with user and neighbours",
+        "Stored appearance only",
+        "Hinge colour"
+      ],
+      "correct": 0,
+      "explanation": "A conflict may occur between end positions or during simultaneous use."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit three operating states, load path, locking, pinch zones and a maintenance/verification plan.",
+    "fields": [
+      "States and swept envelope",
+      "Support and locking",
+      "Operation and service"
+    ],
+    "criteria": [
+      "Simultaneous use checked",
+      "Hinge not assumed sufficient support",
+      "Replacement access retained"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Will any hinge suit a folding desk?",
+      "answer": "No. Movement, support, locking and fixing must be reviewed as a compatible system.",
+      "sectionId": "supportlock"
+    }
+  ]
+}

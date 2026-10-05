@@ -1,0 +1,72 @@
+{
+  "id": "M03-L04",
+  "locale": "en",
+  "title": "Material selection and alternatives",
+  "intro": "A selection matrix links materials to use, care and total cost. Separate essential compatibility checks from aesthetic preferences before comparing acceptable alternatives.",
+  "goals": [
+    "Set acceptance conditions before scoring",
+    "Compare evidence on the same basis",
+    "Review the whole system and record the decision"
+  ],
+  "sections": [
+    {
+      "id": "criteria",
+      "title": "Set acceptance conditions before scoring",
+      "text": "Start with the part’s function, environment, support and care needs. Identify acceptance conditions requiring evidence, such as product–hardware compatibility or suitability for the stated environment. An unverified option stays open. A colour preference or low price cannot compensate for a missing technical acceptance condition.",
+      "diagram": "new-M03-L04-criteria",
+      "caption": "Compatibility is a gate, not a compensating preference score."
+    },
+    {
+      "id": "matrix",
+      "title": "Compare evidence on the same basis",
+      "text": "Use a row for each option and columns for use, care, appearance, supply and cost. Record evidence or missing information in each cell. Define any ratings and client priorities before scoring. Match quantity, stage and pricing unit: a raw sheet price is not directly comparable to a fully finished component cost.",
+      "diagram": "new-M03-L04-matrix",
+      "caption": "Compare matching quantities, stages and pricing units."
+    },
+    {
+      "id": "system",
+      "title": "Review the whole system and record the decision",
+      "text": "Define the system cost scope: boards, facing, edges, finishing, hardware, waste and relevant services. Identify price dates and sources, or clearly label training values. Record the selected option, rationale and open items. A product or supply change requires review of the matrix, sample and details, not merely replacing a name.",
+      "diagram": "new-M03-L04-system",
+      "caption": "Record the decision with cost scope and unresolved items."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "One cabinet option quotes raw board; another includes edges and finishing. The first lacks hardware compatibility data. Their cost scopes differ and one acceptance condition remains unverified.",
+    "decision": "Decision: obtain the missing data and align both cost scopes before selecting an option."
+  },
+  "quiz": [
+    {
+      "id": "gate",
+      "question": "Can a preferred colour compensate for unverified compatibility?",
+      "options": [
+        "Yes, if the score is high",
+        "No; the compatibility gate still needs evidence",
+        "Price alone decides"
+      ],
+      "correct": 1,
+      "explanation": "Acceptance conditions require their own evidence; preference scores cannot remove a technical information gap."
+    }
+  ],
+  "assignment": {
+    "prompt": "Create a matrix for two alternatives for one component and record selection or a reason to defer approval.",
+    "fields": [
+      "Acceptance gates and priorities",
+      "Comparison matrix and evidence",
+      "Cost scope and decision"
+    ],
+    "criteria": [
+      "Preference scores do not replace acceptance evidence",
+      "Comparisons use the same basis",
+      "Prices and open items are identified"
+    ]
+  },
+  "faq": [
+    {
+      "question": "How should missing data be scored?",
+      "answer": "Mark it unverified with an owner and decision impact. Do not give a neutral score that implies evidence exists.",
+      "sectionId": "criteria"
+    }
+  ]
+}

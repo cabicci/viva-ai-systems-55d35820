@@ -1,0 +1,72 @@
+{
+  "id": "M15-L02",
+  "locale": "en",
+  "title": "Moisture, surfaces and waterproofing interfaces",
+  "intro": "Coordinate furniture and surface materials with exposure and the selected waterproofing system, identifying product documents and review points before concealment.",
+  "goals": [
+    "Distinguish finish from waterproofing",
+    "Coordinate penetrations and furniture interfaces",
+    "Assemble product and inspection records"
+  ],
+  "sections": [
+    {
+      "id": "assembly",
+      "title": "Distinguish finish from waterproofing",
+      "text": "Draw a conceptual section separating substrate, waterproofing system, finish and furniture without prescribing one installation sequence for every product. Finish appearance does not establish continuity at corners or penetrations. Obtain the selected system’s interface details and identify who reviews them before the furniture conceals them.",
+      "diagram": "new-M15-L02-assembly",
+      "caption": "Finish appearance does not verify waterproofing continuity."
+    },
+    {
+      "id": "interfaces",
+      "title": "Coordinate penetrations and furniture interfaces",
+      "text": "Map pipes, furniture fixing points and top-to-wall interfaces. Any point affecting waterproofing needs an approved system detail, owner and inspection. A manufacturer’s dedicated pipe collar illustrates a coordinated system solution, not a universal product prescription. Coordinate any later penetration before it is made.",
+      "diagram": "new-M15-L02-interfaces",
+      "caption": "Use compatible details and record ownership at interfaces."
+    },
+    {
+      "id": "documents",
+      "title": "Assemble product and inspection records",
+      "text": "Schedule the exact product, use, edges, cleaning and compatibility with adjacent materials. Collect waterproofing/interface details, approvals and required pre-concealment inspection evidence. Colour or a similar trade name does not establish suitability. Review substitutions for compatibility, details and samples and record the change before proceeding.",
+      "diagram": "new-M15-L02-documents",
+      "caption": "Trace product identity, compatibility and inspection evidence."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A wall-unit fixing position changes after waterproofing. Hold the new fixing until support and waterproofing owners coordinate and document the detail, then obtain the system-required inspection before concealment. Covering the opening with the final finish does not establish acceptance.",
+    "decision": "Decision: coordinate the changed fixing with the waterproofing system."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "A fixing moves after waterproofing: what is needed?",
+      "options": [
+        "Coordinate support and waterproofing detail",
+        "Appearance cover only",
+        "Automatic reuse of old approval"
+      ],
+      "correct": 0,
+      "explanation": "The change creates a new interface requiring system review."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a conceptual layer section, interface map, product register and pre-concealment review plan.",
+    "fields": [
+      "Layers and roles",
+      "Interfaces and ownership",
+      "Products and inspection"
+    ],
+    "criteria": [
+      "No universal system sequence",
+      "Affected interfaces have details",
+      "Substitutions traced"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can furniture material replace the waterproofing review?",
+      "answer": "No. They serve different roles and their interface needs coordination.",
+      "sectionId": "assembly"
+    }
+  ]
+}

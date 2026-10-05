@@ -1,0 +1,72 @@
+{
+  "id": "M18-L01",
+  "locale": "en",
+  "title": "Workstations, sitting and the user",
+  "intro": "Design a workstation around the user, task and relationships between chair, surface, screen and tools, then document a user trial and dimension sources.",
+  "goals": [
+    "Start with user and task",
+    "Test chair, surface and screen together",
+    "Record the trial and dimension sources"
+  ],
+  "sections": [
+    {
+      "id": "task",
+      "title": "Start with user and task",
+      "text": "Record tasks such as typing, paper work, calls and presenting, including devices, paper sizes and user-reported frequency. Separate frequently used tools from less-used storage and map reach relationships. One person’s station should not automatically become the team-wide solution.",
+      "diagram": "new-M18-L01-task",
+      "caption": "Tasks define tools and access relationships."
+    },
+    {
+      "id": "relationships",
+      "title": "Test chair, surface and screen together",
+      "text": "Draw chair, surface, screen and leg relationships in section and input devices/paper in plan. Trial reach and movement with the user and review adjustment features under product instructions. Do not prescribe one height/distance for everyone or present the trial as medical diagnosis or treatment.",
+      "diagram": "new-M18-L01-relationships",
+      "caption": "Review relationships with the actual user and products."
+    },
+    {
+      "id": "trial",
+      "title": "Record the trial and dimension sources",
+      "text": "Record user, task, products and the source of each dimension: site measurement, product data or a trial assumption. Compare alternatives with the same task and log observation, change and acceptance. Recheck affected relationships after changing chair or device.",
+      "diagram": "new-M18-L01-trial",
+      "caption": "Measurements, assumptions and product data are different sources."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A screen base occupies the needed paper area in A. B uses a compatible arm to free it, but introduces mounting requirements. Review screen/arm/surface compatibility and repeat the user task before accepting B.",
+    "decision": "Decision: improve the task while verifying product compatibility."
+  },
+  "quiz": [
+    {
+      "id": "M18-L01-check",
+      "question": "What supports workstation acceptance?",
+      "options": [
+        "Documented task trial and product data",
+        "An attractive image alone",
+        "One dimension for everyone"
+      ],
+      "correct": 0,
+      "explanation": "Acceptance connects tasks, system relationships and dimension sources."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a user/task card, workstation plan/section, comparison trial and dimension-source register.",
+    "fields": [
+      "Start with user and task",
+      "Test chair, surface and screen together",
+      "Record the trial and dimension sources"
+    ],
+    "criteria": [
+      "Specific user and task",
+      "Coordinated workstation relationships",
+      "Assumptions distinguished from measurements"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Do common dimensions validate a workstation?",
+      "answer": "No. Review the actual user, task, products and site.",
+      "sectionId": "trial"
+    }
+  ]
+}

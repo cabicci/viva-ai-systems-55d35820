@@ -1,0 +1,72 @@
+{
+  "id": "M08-L02",
+  "locale": "en",
+  "title": "Modular storage and reconfiguration",
+  "intro": "Modularity requires compatible interfaces, not merely repeated shapes. Build two arrangements from a shared part set and review access and stability in each.",
+  "goals": [
+    "Define the grid and module envelope",
+    "Standardise interfaces and keep access",
+    "Review each arrangement independently"
+  ],
+  "sections": [
+    {
+      "id": "grid",
+      "title": "Define the grid and module envelope",
+      "text": "Distinguish external module width from clear internal opening. Assume four teaching modules, each 400 mm externally, with no intermediate gaps: a four-unit row is 1600 mm wide and a two-unit row is 800 mm. Stacked height depends on module height and the stacking detail, not width. A grid coordinates dimensions; it does not certify stackability.",
+      "diagram": "new-M08-L02-grid",
+      "caption": "Exercise uses 400 mm external widths and no intermediate gaps."
+    },
+    {
+      "id": "interfaces",
+      "title": "Standardise interfaces and keep access",
+      "text": "Label the common shell A, shelf B and end cover C. Record connector datum, orientation and whether each part is genuinely reversible. Matching outside dimensions do not ensure interchangeability when connector positions or door handing differ. Show tool access and disassembly order, and distinguish a visible end cover when its finish differs. Repeated site drilling undermines reconfiguration.",
+      "diagram": "new-M08-L02-interfaces",
+      "caption": "Interchangeability requires matching interfaces and orientation."
+    },
+    {
+      "id": "reconfigure",
+      "title": "Review each arrangement independently",
+      "text": "Compare a four-module row with a proposed two-by-two arrangement. Reconcile shells, shelves and end covers and list additional connectors explicitly. Review openings, service access and load paths for each layout. Increased height changes stability and support conditions. A matching grid does not permit stacking a product that was not designed and reviewed for that use.",
+      "diagram": "new-M08-L02-reconfigure",
+      "caption": "Reconfiguration requires a fresh opening and support review."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Four 400 mm modules make a 1600 mm row. A requested 800 mm width suggests two rows, retaining four shells. The width arithmetic works under the assumption, but stacking connections and stability are unverified. Accept the dimensional exercise while holding approval of the vertical arrangement until the system is reviewed.",
+    "decision": "Decision: confirm width arithmetic; hold stacking approval."
+  },
+  "quiz": [
+    {
+      "id": "grid-width",
+      "question": "Four 400 mm external modules with no gaps: row width?",
+      "options": [
+        "1600 mm",
+        "800 mm",
+        "400 mm"
+      ],
+      "correct": 0,
+      "explanation": "4 × 400 = 1600 mm under the stated assumption."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two arrangements, a shared parts register, interfaces and separate stability review requirements.",
+    "fields": [
+      "Two dimensioned layouts",
+      "Part and connector quantities",
+      "Opening and stability review"
+    ],
+    "criteria": [
+      "Correct 1600/800 widths",
+      "Additional connectors explicit",
+      "No implied stacking approval"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Do equal modules automatically stack safely?",
+      "answer": "No. Stacking requires a suitable system and review of connections, loads and stability.",
+      "sectionId": "reconfigure"
+    }
+  ]
+}

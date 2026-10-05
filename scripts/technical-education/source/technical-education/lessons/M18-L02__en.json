@@ -1,0 +1,72 @@
+{
+  "id": "M18-L02",
+  "locale": "en",
+  "title": "Desks, storage and cable management",
+  "intro": "Coordinate desk surface, storage and cable routes around usable space, actual products, movement and service access.",
+  "goals": [
+    "Calculate and define usable space",
+    "Coordinate storage and movement",
+    "Plan cable routing and access"
+  ],
+  "sections": [
+    {
+      "id": "workspace",
+      "title": "Calculate and define usable space",
+      "text": "Exercise only: a 1400 mm under-desk envelope with storage occupying 400 mm leaves ⁦1400 − 400 = 1000⁩ mm. This is geometric remainder, not proof of comfort or accessibility. Define measurement boundaries and check frame, base, chair and user movement.",
+      "diagram": "new-M18-L02-workspace",
+      "caption": "1000 mm is the geometric remainder only."
+    },
+    {
+      "id": "storage",
+      "title": "Coordinate storage and movement",
+      "text": "Draw drawers open with the chair in use. Define contents, access and product-specific stability requirements. Fitting beneath the top does not prove freedom of movement. Test mobile storage in its actual working position, not a convenient display position.",
+      "diagram": "new-M18-L02-storage",
+      "caption": "Review storage with the chair and open drawers."
+    },
+    {
+      "id": "cables",
+      "title": "Plan cable routing and access",
+      "text": "List devices, cable entries, supports and access covers. For moving or height-adjustable desks, check the documented route at travel limits under system instructions so cables are not pulled or trapped. Furniture details do not authorize electrical cable alterations; specialists review services while furniture provides coordinated routing and access.",
+      "diagram": "new-M18-L02-cables",
+      "caption": "Check the route through its movement states."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The 1000 mm remainder is correct, yet an open drawer obstructs the chair. Revise storage position and review access and cables, then repeat the task trial.",
+    "decision": "Decision: complete the calculation with a movement check."
+  },
+  "quiz": [
+    {
+      "id": "M18-L02-check",
+      "question": "What remains from 1400 mm after 400 mm storage?",
+      "options": [
+        "1000 mm",
+        "1800 mm",
+        "400 mm"
+      ],
+      "correct": 0,
+      "explanation": "The remainder is 1000 mm; actual use still needs review."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit desk/storage drawings, opening states, the exercise calculation and cable routing in two positions with service access.",
+    "fields": [
+      "Calculate and define usable space",
+      "Coordinate storage and movement",
+      "Plan cable routing and access"
+    ],
+    "criteria": [
+      "Measurement boundaries explicit",
+      "1000 mm identified as assumed",
+      "Movement and access reviewed"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does hiding cables prove the route is suitable?",
+      "answer": "No. Review movement, protection, access and system/service requirements.",
+      "sectionId": "cables"
+    }
+  ]
+}

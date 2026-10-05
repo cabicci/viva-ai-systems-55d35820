@@ -1,0 +1,72 @@
+{
+  "id": "M16-L04",
+  "locale": "en",
+  "title": "Worktops, fronts, plinths and gaps",
+  "intro": "Coordinate worktops, fronts, plinths and joints through material, movement and maintenance requirements before fabrication.",
+  "goals": [
+    "Document the top and cut-outs",
+    "Coordinate fronts and gaps",
+    "Review plinths, access and junctions"
+  ],
+  "sections": [
+    {
+      "id": "top",
+      "title": "Document the top and cut-outs",
+      "text": "Document material, build-up, support, edges and joints. Sink/appliance cut-outs follow the approved template and worktop fabricator’s requirements, not a marketing size. Check sides, rails and underside fittings. A product change reopens cut-out and support review before cutting.",
+      "diagram": "new-M16-L04-top",
+      "caption": "Coordinate product templates with worktop details."
+    },
+    {
+      "id": "fronts",
+      "title": "Coordinate fronts and gaps",
+      "text": "Draw front divisions, handles and the top/front junction. Give every gap a purpose, dimension and reference: motion, installation or appearance. Check that handles and top projections do not obstruct neighboring fronts or devices under the selected system.",
+      "diagram": "new-M16-L04-fronts",
+      "caption": "Each defined gap needs a purpose and reference."
+    },
+    {
+      "id": "plinth",
+      "title": "Review plinths, access and junctions",
+      "text": "Show base, removable plinth and cleaning/service access. Do not conceal an airflow route required by the selected appliance. Record worktop/wall joints and joint materials with the relevant material supplier and identify inspection before concealing the detail.",
+      "diagram": "new-M16-L04-plinth",
+      "caption": "The plinth is part of service coordination, not only appearance."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A replacement sink has the same marketed width, but its template and clips may differ. Hold cutting until the replacement template, rails, support and joint details are coordinated.",
+    "decision": "Decision: approve the coordinated template before cutting."
+  },
+  "quiz": [
+    {
+      "id": "M16-L04-check",
+      "question": "Does the same marketed size justify reusing the sink cut-out?",
+      "options": [
+        "No; review the replacement template",
+        "Yes, without review",
+        "Yes, if the colour matches"
+      ],
+      "correct": 0,
+      "explanation": "Cut-out geometry and fixing details can differ by model."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit top/front/plinth sections, a cut-out/joint detail, references and hold points before cutting and concealment.",
+    "fields": [
+      "Document the top and cut-outs",
+      "Coordinate fronts and gaps",
+      "Review plinths, access and junctions"
+    ],
+    "criteria": [
+      "Referenced model template",
+      "Purposeful gaps",
+      "Service access retained"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should every gap be identical?",
+      "answer": "No. Function and the selected system may require documented differences.",
+      "sectionId": "fronts"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
 import { readImmediateMailTarget } from "../_shared/immediate-mail-request.ts";
 import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-worker.ts";
+import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (!(await authorizedWelcomeJob(request, Deno.env.get("ACCOUNT_WELCOME_JOB_SECRET"))))
@@ -82,7 +83,13 @@ Deno.serve(async (request) => {
       subscription: subscriptionEnabled
         ? () => {
             if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
-            return runSubscriptionMailJob(db, send);
+            return Promise.all([
+              runSubscriptionMailJob(db, send),
+              runTechnicalMailJob(db, send),
+            ]).then(([a, b]) => ({
+              accepted: a.accepted + b.accepted,
+              deferred: a.deferred + b.deferred,
+            }));
           }
         : null,
       contact: contactEnabled

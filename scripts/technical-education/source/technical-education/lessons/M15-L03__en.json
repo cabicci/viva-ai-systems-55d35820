@@ -1,0 +1,72 @@
+{
+  "id": "M15-L03",
+  "locale": "en",
+  "title": "Coordinate electrical, plumbing and ventilation work",
+  "intro": "Coordinate service envelopes, inputs and responsibilities without substituting for specialist electrical, plumbing or ventilation design.",
+  "goals": [
+    "Register service needs and review ownership",
+    "Coordinate plumbing envelopes and access",
+    "Coordinate lighting, ventilation and service"
+  ],
+  "sections": [
+    {
+      "id": "register",
+      "title": "Register service needs and review ownership",
+      "text": "Register product model, proposed location, function, required inputs, responsible specialist and status. The electrical specialist reviews location and protection against the applicable jurisdiction/reference edition and product data. Do not generalise a poster’s zones or protection ratings to every bathroom. Keep unresolved points visible until settled before furniture fixing or concealment.",
+      "diagram": "new-M15-L03-register",
+      "caption": "Identify jurisdiction, reference, product and review owner."
+    },
+    {
+      "id": "plumbing",
+      "title": "Coordinate plumbing envelopes and access",
+      "text": "Obtain supply/waste interfaces and service envelopes from the plumbing specialist and reconcile them with the basin, drawers and supports. Show clashes and removable maintenance access in section. Routing, slopes, pipe sizing and test procedures belong to the project specialist. Propagate moved interfaces to coordination drawings and affected parts before fabrication.",
+      "diagram": "new-M15-L03-plumbing",
+      "caption": "Coordinate physical interfaces; retain specialist design ownership."
+    },
+    {
+      "id": "airlight",
+      "title": "Coordinate lighting, ventilation and service",
+      "text": "Overlay luminaires, ventilation openings and service components with mirror, cabinet and ceiling. Check that furniture does not obstruct approved openings or replacement access, and coordinate operation with the specialist. A lighting mock-up tests shadows/reflections, not ventilation performance or electrical safety. Receive distinct commissioning/inspection evidence for each system.",
+      "diagram": "new-M15-L03-airlight",
+      "caption": "Keep each system’s acceptance evidence separate."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A revised tall cabinet covers a documented ventilation opening. Review cabinet placement or a specialist-approved alternative rather than moving or reducing the opening by guesswork. Update drawings after resolution and recheck service access and the system’s required verification.",
+    "decision": "Decision: resolve the clash with the system design owner."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "A cabinet blocks ventilation: what should happen?",
+      "options": [
+        "Coordinate an approved alternative and revise",
+        "Reduce the opening by guesswork",
+        "Permanently cover it"
+      ],
+      "correct": 0,
+      "explanation": "Service requirements need review by the responsible system designer."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a coordination overlay and register of references, products, envelopes, conflicts, owners and statuses.",
+    "fields": [
+      "References/products",
+      "Envelopes and clashes",
+      "Ownership and evidence"
+    ],
+    "criteria": [
+      "No universal code values",
+      "No improvised execution design",
+      "Separate system evidence"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a successful lighting trial approve all services?",
+      "answer": "No. Electrical, plumbing and ventilation need their own reviews and evidence.",
+      "sectionId": "airlight"
+    }
+  ]
+}

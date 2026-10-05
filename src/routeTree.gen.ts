@@ -56,6 +56,7 @@ import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
+import { Route as TechnicalLearnLessonIdRouteImport } from './routes/technical.learn.$lessonId'
 import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
 
@@ -294,6 +295,11 @@ const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   path: '/learn/$pathId/$lessonId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TechnicalLearnLessonIdRoute = TechnicalLearnLessonIdRouteImport.update({
+  id: '/learn/$lessonId',
+  path: '/learn/$lessonId',
+  getParentRoute: () => TechnicalRoute,
+} as any)
 const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
   id: '/lovable/email/auth/preview',
   path: '/lovable/email/auth/preview',
@@ -352,6 +358,7 @@ export interface FileRoutesByFullPath {
   '/technical/': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -399,6 +406,7 @@ export interface FileRoutesByTo {
   '/technical': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -451,6 +459,7 @@ export interface FileRoutesById {
   '/technical/': typeof TechnicalIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
   '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
   '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
@@ -504,6 +513,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -551,6 +561,7 @@ export interface FileRouteTypes {
     | '/technical'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/technical/learn/$lessonId'
     | '/kids/$levelId'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -602,6 +613,7 @@ export interface FileRouteTypes {
     | '/technical/'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/technical/learn/$lessonId'
     | '/kids/$levelId/'
     | '/lovable/email/auth/preview'
     | '/lovable/email/auth/webhook'
@@ -977,6 +989,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/technical/learn/$lessonId': {
+      id: '/technical/learn/$lessonId'
+      path: '/learn/$lessonId'
+      fullPath: '/technical/learn/$lessonId'
+      preLoaderRoute: typeof TechnicalLearnLessonIdRouteImport
+      parentRoute: typeof TechnicalRoute
+    }
     '/lovable/email/auth/preview': {
       id: '/lovable/email/auth/preview'
       path: '/lovable/email/auth/preview'
@@ -1046,12 +1065,14 @@ interface TechnicalRouteChildren {
   TechnicalCurriculumRoute: typeof TechnicalCurriculumRoute
   TechnicalPricingRoute: typeof TechnicalPricingRoute
   TechnicalIndexRoute: typeof TechnicalIndexRoute
+  TechnicalLearnLessonIdRoute: typeof TechnicalLearnLessonIdRoute
 }
 
 const TechnicalRouteChildren: TechnicalRouteChildren = {
   TechnicalCurriculumRoute: TechnicalCurriculumRoute,
   TechnicalPricingRoute: TechnicalPricingRoute,
   TechnicalIndexRoute: TechnicalIndexRoute,
+  TechnicalLearnLessonIdRoute: TechnicalLearnLessonIdRoute,
 }
 
 const TechnicalRouteWithChildren = TechnicalRoute._addFileChildren(

@@ -24,6 +24,7 @@ export function RedeemOffer() {
             ["pro", "Pro"],
             ["pro_plus", "Pro Plus"],
             ["kids", "Masaarat Kids"],
+            ["technical", "Masaarat TECH"],
           ]}
         />
         <Select
@@ -49,7 +50,11 @@ export function RedeemOffer() {
         packageKey={pack}
         market={market}
         interval={interval}
-        stripe={() => window.location.assign(`/pricing?locale=${locale}`)}
+        stripe={() =>
+          window.location.assign(
+            `${pack === "technical" ? "/technical/pricing" : "/pricing"}?locale=${locale}`,
+          )
+        }
       >
         {w.continue}
       </PaymentMethods>

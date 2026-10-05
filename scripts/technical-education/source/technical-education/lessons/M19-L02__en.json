@@ -1,0 +1,72 @@
+{
+  "id": "M19-L02",
+  "locale": "en",
+  "title": "Restaurant furniture and service routes",
+  "intro": "Restaurant capacity is not just a chair count. Study occupied seating, guest arrival, staff service and cleaning together, then relate each table and chair to verifiable use and maintenance requirements.",
+  "goals": [
+    "Trace occupied service routes",
+    "Test the table–seat interface",
+    "Plan cleaning and replacement"
+  ],
+  "sections": [
+    {
+      "id": "flows",
+      "title": "Trace occupied service routes",
+      "text": "Locate entry, waiting, tables and service points, distinguishing guest movement from staff carrying dishes. Include occupied and pulled-out chairs and returning traffic. Mark simultaneous conflicts rather than assuming everyone takes turns. Assign applicable access and egress review to the project team; this teaching plan is not a code-compliance approval.",
+      "diagram": "new-M19-L02-flows",
+      "caption": "Occupied states determine route conflicts."
+    },
+    {
+      "id": "interface",
+      "title": "Test the table–seat interface",
+      "text": "Draw the tabletop, underframe, seat and space beneath together. A base can obstruct approach or knees even when the tested user finds the top height suitable. Test approach, sitting and rising with relevant users. Review clear floor space and access separately from surface height; a chair photograph cannot establish those relationships.",
+      "diagram": "new-M19-L02-interface",
+      "caption": "Top height and usable approach are separate checks."
+    },
+    {
+      "id": "care",
+      "title": "Plan cleaning and replacement",
+      "text": "Mark tabletop edges, upholstery joints and access below seats, linking each finish to supplier care instructions and repair access. The exercise has 6 tables with 4 chairs each: 6 × 4 = 24 chairs. Moving a table while keeping 24 chairs changes the layout; unchanged quantities do not prove that circulation still works.",
+      "diagram": "new-M19-L02-care",
+      "caption": "6 × 4 = 24; quantity is not layout approval."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Both options contain 24 chairs, but A places a table at the guest/service crossing. Develop B, which relocates that table, then test occupied chairs and access. Matching seat counts do not establish equivalent operating performance.",
+    "decision": "Decision: recheck operating routes before accepting relocation."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "What needs review when a table moves but chair count stays unchanged?",
+      "options": [
+        "Routes and occupied states",
+        "Only the total",
+        "Menu colour"
+      ],
+      "correct": 0,
+      "explanation": "A new position can create conflicts without changing quantities."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a 24-chair restaurant plan, table–seat section and operating/care review.",
+    "fields": [
+      "Occupied plan and routes",
+      "Table–seat interface",
+      "Care and replacement"
+    ],
+    "criteria": [
+      "Conflicts located",
+      "Base and approach shown",
+      "Product-specific care reference"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a 24-chair count establish operating approval?",
+      "answer": "No. It is an exercise quantity; applicable project requirements need separate review.",
+      "sectionId": "flows"
+    }
+  ]
+}

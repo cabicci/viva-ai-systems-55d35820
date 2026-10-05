@@ -1,0 +1,72 @@
+{
+  "id": "M14-L01",
+  "locale": "en",
+  "title": "Dry vanities and washbasin units",
+  "intro": "A dry dressing unit and a basin vanity can look similar but have different activities, exposures and services. Establish the use brief before choosing dimensions.",
+  "goals": [
+    "Distinguish function and exposure",
+    "Map posture and access",
+    "Reserve component and service space"
+  ],
+  "sections": [
+    {
+      "id": "function",
+      "title": "Distinguish function and exposure",
+      "text": "A dressing unit supports personal storage and mirror use; a basin vanity adds water supply, drainage and possible splashing. Record tasks, contents and cleaning for each. Shared mirrors or drawers do not make the products equivalent. Adding a basin changes service needs, internal space, worktop details and material selection.",
+      "diagram": "new-M14-L01-function",
+      "caption": "A shared appearance does not imply shared requirements."
+    },
+    {
+      "id": "user",
+      "title": "Map posture and access",
+      "text": "Show standing or seated use, chair position and drawer extension. Check reach, knee space when seating is required, and mirror sightlines. Do not treat an image height as suitable for everyone. Trial a full-size positioning mock-up and record observations; project-specific accessibility requirements need their own review.",
+      "diagram": "new-M14-L01-user",
+      "caption": "Check dimensions in the intended operating state."
+    },
+    {
+      "id": "envelope",
+      "title": "Reserve component and service space",
+      "text": "Show carcass, basin, drawers and service space in plan and section. The basin’s outside dimensions are not the worktop cutout dimensions; use the selected product’s drawing and template. Resolve mounting type, tap, waste assembly and maintenance access before approval, then assess the remaining storage volume.",
+      "diagram": "new-M14-L01-envelope",
+      "caption": "Separate product envelope, cutout and usable storage."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A client adds a basin to a full-drawer dressing unit. The section reveals a conflict between the top drawer, basin body and services. Confirm the product and revise the drawer arrangement or carcass before fabrication, then recheck access rather than improvising a drawer cut later.",
+    "decision": "Decision: a change of function requires a fresh internal/service review."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "What must be reviewed when adding a basin?",
+      "options": [
+        "Basin, services and drawer conflicts",
+        "Mirror colour only",
+        "Automatically retain all dimensions"
+      ],
+      "correct": 0,
+      "explanation": "The new function changes space, services and details."
+    }
+  ],
+  "assignment": {
+    "prompt": "Compare a dressing unit and basin vanity with a user/opening plan and service-space section.",
+    "fields": [
+      "Function and exposure",
+      "User and opening",
+      "Services and missing inputs"
+    ],
+    "criteria": [
+      "No universal copied height",
+      "Cutout distinguished from basin size",
+      "Drawer conflict identified"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does appearance prove suitability for water exposure?",
+      "answer": "No. Review materials, details, services and intended exposure conditions.",
+      "sectionId": "function"
+    }
+  ]
+}

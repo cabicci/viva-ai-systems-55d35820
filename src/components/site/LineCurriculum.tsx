@@ -1,3 +1,5 @@
+import { useAuth } from "@/lib/auth-context";
+import { useTechnicalProgress } from "@/lib/technical-education/client";
 import { Link } from "@tanstack/react-router";
 import { Lock, Play, Hammer, Users } from "lucide-react";
 import {
@@ -140,6 +142,8 @@ export function KidsCurriculum() {
 
 export function TechnicalCurriculum() {
   const { locale } = useLocale();
+  const { user } = useAuth();
+  const { paid, progress } = useTechnicalProgress();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
   const numbers = new Intl.NumberFormat(
@@ -206,20 +210,33 @@ export function TechnicalCurriculum() {
                       </h3>
                     </header>
                     <ul className="space-y-1.5">
-                      {module.lessons.map((lesson, i) => (
-                        <li
-                          key={lesson.id}
-                          id={`lesson-${lesson.id}`}
-                          className={`${CURRICULUM_ROW_CLASS} text-muted-foreground`}
-                          aria-disabled="true"
-                        >
-                          <span className="grid h-6 min-w-7 shrink-0 place-items-center rounded-md bg-foreground/5 px-1.5 text-[11px] tabular-nums">
-                            {numbers.format(i + 1)}
-                          </span>
-                          <span className="min-w-0 flex-1 break-words">{lesson.title}</span>
-                          <Lock aria-hidden className="h-3.5 w-3.5 shrink-0" />
-                        </li>
-                      ))}
+                      {module.lessons.map((lesson, i) => {
+                        const allowed = !!user && (paid || lesson.id === "M01-L01");
+                        return (
+                          <li key={lesson.id} id={`lesson-${lesson.id}`}>
+                            <a
+                              href={`/technical/learn/${lesson.id}?locale=${locale}`}
+                              className={`${CURRICULUM_ROW_CLASS} hover:border-primary/20 hover:bg-foreground/5`}
+                            >
+                              <span className="grid h-6 min-w-7 shrink-0 place-items-center rounded-md bg-foreground/5 px-1.5 text-[11px] tabular-nums">
+                                {numbers.format(i + 1)}
+                              </span>
+                              <span className="min-w-0 flex-1 break-words">{lesson.title}</span>
+                              {allowed ? (
+                                <span aria-hidden>
+                                  {progress[lesson.id]?.quizPassed &&
+                                  progress[lesson.id]?.read &&
+                                  progress[lesson.id]?.practiceReviewed
+                                    ? "✓"
+                                    : "→"}
+                                </span>
+                              ) : (
+                                <Lock aria-label={c.plans} className="h-3.5 w-3.5 shrink-0" />
+                              )}
+                            </a>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </article>
                 ))}

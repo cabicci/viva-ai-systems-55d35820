@@ -150,6 +150,11 @@ function Payments() {
                   )}
                 </p>
               )}
+              {o.review_status === "confirmed" && o.package === "technical" && (
+                <Link to="/technical/curriculum" search={{ locale }} className="block underline">
+                  Masaarat TECH
+                </Link>
+              )}
               {["awaiting_receipt", "pending", "more_info", "rejected"].includes(
                 o.review_status,
               ) && (

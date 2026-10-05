@@ -1,0 +1,72 @@
+{
+  "id": "M06-L03",
+  "locale": "en",
+  "title": "Installation and site coordination",
+  "intro": "Installation planning starts before delivery: verified site information, a transport route, an assembly sequence and coordinated services. Define review points before positioning or fixing units.",
+  "goals": [
+    "Check the site and delivery route",
+    "Sequence positioning and levelling",
+    "Coordinate services and hold points"
+  ],
+  "sections": [
+    {
+      "id": "route",
+      "title": "Check the site and delivery route",
+      "text": "Compare the latest survey with walls, floor, openings, services and obstructions. Record changes and their effects before modifying furniture. Check packaged components through doors, turns and lifts against site conditions. A single panel fitting through does not prove an assembled unit will fit. Resolve the transport and subdivision strategy before delivery.",
+      "diagram": "new-M06-L03-route",
+      "caption": "Check packaged size and turns, not just the room opening."
+    },
+    {
+      "id": "position",
+      "title": "Sequence positioning and levelling",
+      "text": "Identify unit positions and the agreed alignment datum. Sequence receipt inspection, positioning, levelling and alignment according to the system, then verify reveals and operation. Do not twist a carcass to follow an uneven wall or floor. Required fixing or anti-tip provisions need approved details suited to the substrate and system; the layout is not a universal anchor specification.",
+      "diagram": "new-M06-L03-position",
+      "caption": "Alignment datum and fixing approval are separate requirements."
+    },
+    {
+      "id": "coordinate",
+      "title": "Coordinate services and hold points",
+      "text": "Mark services, maintenance access and removable covers. Before permanent closure, confirm coordination with the relevant trades and preserve required access and ventilation. Refer changed service locations or conflicts for review before cutting or drilling; an old drawing does not establish a clear substrate. Closing a stage requires a recorded check and a responsible release decision.",
+      "diagram": "new-M06-L03-coordinate",
+      "caption": "Review service access before closing the assembly."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "In the exercise, a socket has moved behind a cover designed as fixed. Record the conflict and review it with design and the service specialist, then approve an appropriate access detail. Do not improvise an opening or close the cover before coordination is resolved.",
+    "decision": "Decision: hold cover closure until the coordinated access detail is approved."
+  },
+  "quiz": [
+    {
+      "id": "site-change",
+      "question": "A service moves behind a fixed cover. What is the correct next action?",
+      "options": [
+        "Record and review access before closure",
+        "Close it and leave it to maintenance",
+        "Cut an opening without review"
+      ],
+      "correct": 0,
+      "explanation": "The change affects service access and needs coordination before the stage is closed."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a two-unit delivery route, positioning sequence and hold point for a service conflict.",
+    "fields": [
+      "Site and delivery route",
+      "Unit sequence and datum",
+      "Conflict, responsible reviewer and release"
+    ],
+    "criteria": [
+      "Packaged route checked",
+      "Maintenance access retained",
+      "No universal fixing prescription"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can the same fixing be assumed for every wall?",
+      "answer": "No. Fixing selection depends on substrate, system, performance requirements and competent approval.",
+      "sectionId": "position"
+    }
+  ]
+}

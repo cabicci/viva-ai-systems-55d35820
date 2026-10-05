@@ -1,0 +1,72 @@
+{
+  "id": "M11-L02",
+  "locale": "en",
+  "title": "Floor-standing and wall-mounted media units",
+  "intro": "Floor-standing and wall-hung media units may look similar but transfer loads differently. Distinguish cabinet support from screen support and prepare the substrate, connection and service review.",
+  "goals": [
+    "Separate cabinet and screen support paths",
+    "Document the substrate and connection chain",
+    "Review access and approval sequence"
+  ],
+  "sections": [
+    {
+      "id": "supports",
+      "title": "Separate cabinet and screen support paths",
+      "text": "A floor-standing unit transfers weight through base or legs to the floor and may need anti-tip restraint according to its system and use. A wall-hung unit transfers through carcass joints to suspension and wall. A screen may sit on the unit or use a separate mount: draw its path independently and never assume decorative cladding support is adequate for the screen.",
+      "diagram": "new-M11-L02-supports",
+      "caption": "Bearing, restraint and screen support are distinct functions."
+    },
+    {
+      "id": "wall",
+      "title": "Document the substrate and connection chain",
+      "text": "Visible finish does not identify the supporting substrate. Obtain wall construction, condition and concealed-service information from the site. Trace carcass, carcass connection, suspension member, substrate fixing and supporting material, assigning review responsibility. A qualified party must select fixing type, number, dimensions and locations for the actual system, substrate and loads; the schematic is not drilling guidance.",
+      "diagram": "new-M11-L02-wall",
+      "caption": "Each link needs identification and a review reference."
+    },
+    {
+      "id": "review",
+      "title": "Review access and approval sequence",
+      "text": "Draw tool access and removal routes for cabinet and screen without damaging finishes; keep service points reachable. Establish hold points for site information, system/load review, component inspection before concealment and qualified installation inspection. Record evidence, owners and open items. A level front or smooth door action alone does not establish suspension adequacy.",
+      "diagram": "new-M11-L02-review",
+      "caption": "Inspect concealed connections before closure and preserve service access."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The proposal hangs a cabinet on timber cladding with no information about the wall behind it. Hold approval until the substrate, carcass, suspension and screen-support path are reviewed. A floor-standing alternative may be studied, but its stability and restraint still need review; changing type does not remove verification.",
+    "decision": "Decision: hold suspension approval until the support chain is documented and reviewed."
+  },
+  "quiz": [
+    {
+      "id": "support-data",
+      "question": "Can a level cabinet front justify suspension approval without substrate data?",
+      "options": [
+        "No; complete support data and review",
+        "Yes, appearance is correct",
+        "Yes, if the door opens"
+      ],
+      "correct": 0,
+      "explanation": "Alignment does not establish the adequacy of the support chain."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit floor-standing/wall-hung alternatives, screen load paths, substrate data, connection chain and approval/access plan.",
+    "fields": [
+      "Alternatives and load paths",
+      "Substrate and connection chain",
+      "Acceptance and service access"
+    ],
+    "criteria": [
+      "Screen/cabinet paths distinguished",
+      "No guessed fixing specification",
+      "Owners and evidence at hold points"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does floor support remove the need to review restraint?",
+      "answer": "No. Review restraint needs for the system and use in addition to vertical bearing.",
+      "sectionId": "supports"
+    }
+  ]
+}

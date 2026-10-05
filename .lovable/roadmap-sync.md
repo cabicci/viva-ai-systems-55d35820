@@ -1,3 +1,11 @@
+## 2026-10-05 — Technical furniture integration
+
+[roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
+scope: lessons
+source: user
+summary: Integrate 80 lessons/320 contextual packages, protect 644 original PDFs, preserve 320 delivered videos, save progress to the account and add independent technical payments/coupons at Pro Plus prices. Publication authorized; pronunciation review belongs to the owner. Existing AI/Kids/menu/payment contracts retained; Stripe TEST.
+sync_status: production roadmap row created; release evidence pending
+
 ## 2026-10-03 — Immediate mail through the existing Edge worker
 
 [roadmap:5ef825a9-66b9-430f-9c03-57b161126504]
