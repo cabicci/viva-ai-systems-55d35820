@@ -1954,6 +1954,37 @@ export type Database = {
         }
         Returns: Json
       }
+      apply_technical_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      apply_technical_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
       auth_signup_email_profile: {
         Args: { p_email: string }
         Returns: {
@@ -2197,6 +2228,14 @@ export type Database = {
         Returns: Json
       }
       get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
+      get_technical_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -2719,6 +2758,18 @@ export type Database = {
           p_market_price_id: string
         }
         Returns: Json
+      }
+      register_technical_stripe_price: {
+        Args: {
+          p_amount_minor: number
+          p_billing_interval: string
+          p_currency_code: string
+          p_discounted: boolean
+          p_market_code: string
+          p_price_id: string
+          p_product_id: string
+        }
+        Returns: string
       }
       release_ai_quota: {
         Args: { p_idempotency_key: string; p_reservation_id: string }
