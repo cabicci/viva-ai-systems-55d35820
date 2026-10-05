@@ -1,90 +1,19 @@
-# Current coordination note — 3 October 2026
+# Technical furniture integration — capability report (read-only)
 
-The owner cancelled additional Vault/token setup. Automatic lifecycle processing
-uses the existing protected account-welcome-job schedule and internal server
-permissions. Do not propose or reinstall a separate lifecycle/contact Vault
-binding or cron. Existing account/family/financial handlers and separate switches
-are preserved. The sole contact flag is CONTACT_MAIL_DIRECT_ENABLED; old contact
-resources are retired. Historical capability notes below are not current rollout
-instructions. Exact activation evidence and final acceptance belong to the two
-authoritative registers.
+## Findings
+- Workspace runtime has `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL` present as env vars (checked by presence only; values never printed).
+- `scripts/technical-education/import.ts` does NOT exist in the current synced source (main `99eec7c`). It becomes runnable only after the integration branch is merged and synced.
+- Edge function folders present: `account-welcome-job`, `billing-stripe-webhook`, `billing-stripe-portal`, `commerce-invitations`. `technical-stripe-checkout` is NOT present yet (arrives with the merge).
 
----
+## Execution capability (after merge + sync)
+1. Run `bun run scripts/technical-education/import.ts` in the workspace shell; the script reads the service key from env inside the process, no echo/logging of secrets.
+2. Bucket `technical-downloads` (private) can be created via the storage tool if the script does not create it (SQL inserts into buckets are blocked).
+3. Upload 644 PDFs, upsert 320 packages, download-back SHA-256 verify — all feasible inside one command, split into chunks if any run exceeds the 600s command limit (script must be resumable/idempotent).
+4. Enable only `technical_release_control` via a migration or the script, as the merged code defines.
+5. Constraint: PDFs must be inside the synced repo (or reachable path) for the workspace to read them.
 
-# فحص حالة قراءة فقط — بريد التواصل والترحيب
+## Function deployment
+- Deploy tool available; can deploy by exact name: `technical-stripe-checkout`, `billing-stripe-webhook`, `billing-stripe-portal`, `account-welcome-job`, `commerce-invitations`. `config.toml` `verify_jwt` entries must come from the merged source (technical-stripe-checkout has none today).
 
-فحص حالة حالي بدون أي تعديل. النتائج:
-
-## الدوال المنشورة (GET بدون مصادقة)
-
-- contact-mail-job: منشورة (405)
-- contact-mail-webhook: منشورة (405)
-- account-welcome-job: منشورة (405) — تشمل بريد الترحيب والاشتراك
-- account-deletion-job: غير منشورة (404)
-
-## الأعلام والأسرار (أسماء فقط، بدون قيم)
-
-- CONTACT_MAIL_ENABLED: موجودة في الأسرار؛ القيمة الحالية غير قابلة للفحص بأمان — UNVERIFIED (آخر حالة موثقة: false)
-- مفتاح الإدخال في التطبيق (نفس الراية): UNVERIFIED لنفس السبب
-- RESEND_API_KEY: موجود
-- RESEND_WEBHOOK_SECRET: موجود (ربط التوقيع نجح سابقًا)
-- CONTACT_MAIL_JOB_SECRET: موجود
-- ACCOUNT_WELCOME_JOB_SECRET: موجود
-
-## الجداول المجدولة
-
-- masaarat-account-welcome-v1: موجودة ونشطة (كل 5 دقائق) — محفوظة
-- لا يوجد أي جدول مجدول لبريد التواصل
-
-## قابلية نشر account-deletion-job
-
-- نعم: بعد دمج/مزامنة مصدرها المراجع من GitHub في المشروع، يمكن نشرها عبر أداة نشر الدوال المعتمدة (نفس مسار contact-mail-job). هذا يختلف عن إنشاء عامل مؤقت جديد الذي رُفض سابقًا — النشر لدالة موجودة في المصدر مسموح. لا نشر الآن.
-
-## لا إجراءات
-
-لا تعديل كود، لا SQL، لا نشر، لا تغيير أسرار أو أعلام، لا بريد. تدوير الأسرار والإرسال الحقيقي ونشر الموقع بوابات إنتاج منفصلة.
-
-## Previous read-only explanation preserved
-
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
-
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
-
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
-
-التسلسل الفعلي من سجل خادم التطوير:
-
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
-
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+## Then
+Publish via deploy after verification, on owner instruction. No changes made in this turn.
