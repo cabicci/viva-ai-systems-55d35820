@@ -1531,6 +1531,57 @@ export type Database = {
         }
         Relationships: []
       }
+      technical_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          id: string
+          invoice_id: string
+          kind: string
+          lease_until: string | null
+          locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id: string
+          kind: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id?: string
+          kind?: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          subscription_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       technical_progress: {
         Row: {
           drafts: Json
@@ -2236,6 +2287,10 @@ export type Database = {
         }
         Returns: Json
       }
+      get_technical_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -2855,6 +2910,10 @@ export type Database = {
           p_lesson?: string
           p_locale?: string
         }
+        Returns: Json
+      }
+      technical_mail_command: {
+        Args: { p_action: string; p_data?: Json }
         Returns: Json
       }
       technical_storage_allowed: { Args: { p_path: string }; Returns: boolean }
