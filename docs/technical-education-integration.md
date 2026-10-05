@@ -24,6 +24,7 @@ Source: `experiment/furniture-pilot-20261003`, immutable handoff `87728437970170
 2. Apply migrations `20261005100000`, `20261005101000`, `20261005102000`, `20261005110000` in order. No global commerce, account deletion, Kids or Stripe-mode control change. The last migration only extends the existing Kids lesson gate with administrator review; rollback restores `billing.kids_previous_admin_lesson_access` as `public.kids_can_access_lesson` with its original authenticated-only execute grant.
 3. Run `bun run scripts/technical-education/import.ts` with existing server-only Supabase credentials. Never print credentials. Expected receipts: source SHA above, imported 320, uploaded 644, verified cloud hashes 644, release enabled true. This is repeatable without duplicating lessons or assets.
 4. Deploy exact reviewed functions: `technical-stripe-checkout`, `billing-stripe-webhook`, `billing-stripe-portal`, `account-welcome-job`, `commerce-invitations` (shared technical mail labels).
+   The checkout coordinator is packaged from `_shared/checkout-coordinator.ts`; sibling function directories are not included by the deployment service. The Kids compatibility module re-exports this unchanged coordinator.
 5. Build preview, verify protected/visitor navigation and four locales, then publish the same approved snapshot. Verify the actual production URLs separately.
 
 ## Validation evidence

@@ -1,4 +1,4 @@
-import { coordinateKidsCheckout } from "../kids-stripe-checkout/coordinator.ts";
+import { coordinateKidsCheckout } from "../_shared/checkout-coordinator.ts";
 
 const ORIGINS = new Set([
   "https://masaarat.ai",
