@@ -1,3 +1,5 @@
+import { LessonInlineText } from "./LessonText";
+
 export type ReadingVisualSpec = {
   id: string;
   title: string;
@@ -24,7 +26,7 @@ export function ReadingVisual({ visual }: { visual: ReadingVisualSpec }) {
                 {row.map((cell, j) => (
                   <p className="break-words leading-7" key={j}>
                     <strong>{visual.columns[j]}: </strong>
-                    {cell}
+                    <LessonInlineText text={cell} />
                   </p>
                 ))}
               </div>
@@ -48,7 +50,7 @@ export function ReadingVisual({ visual }: { visual: ReadingVisualSpec }) {
                 <tr key={i}>
                   {row.map((cell, j) => (
                     <td key={j} className="border-b p-3 align-top leading-7">
-                      {cell}
+                      <LessonInlineText text={cell} />
                     </td>
                   ))}
                 </tr>
@@ -57,7 +59,9 @@ export function ReadingVisual({ visual }: { visual: ReadingVisualSpec }) {
           </table>
         </div>
       )}
-      <p className="mt-4 text-sm leading-7 text-muted-foreground">{visual.caption}</p>
+      <p className="mt-4 text-sm leading-7 text-muted-foreground">
+        <LessonInlineText text={visual.caption} />
+      </p>
     </figure>
   );
 }

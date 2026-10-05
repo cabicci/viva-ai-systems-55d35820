@@ -55,3 +55,7 @@ Reading diagrams now live in ReadingDiagram.tsx. Video diagrams and already-crea
 Print workbooks now include all formative questions and all three reading visuals, with actual PDF page numbering. Their page count varies with contextual text. Earlier fixed nine-page statements describe only the prior pilot export. The standalone preview intentionally includes review answers and all available locales; it is not a production content-security or bundle-performance design.
 
 The new production candidate in `src/components/academic-education/` reuses the shared shell and server authorization. It is distinct from the offline review fixture and awaits central route registration. The sibling logo candidate is available as a new `public/brand/masaarat-academic.png`; existing brand/media assets are untouched.
+
+## Complete written review delivery
+
+All four `course/expanded/{locale}.json` arrays are now complete, with 39 additional packages each plus the existing pilot. `docs/academic/EXPANSION_VALIDATION.json`, `LOCAL_COMPLETION_RECEIPT.json` and the final course browser/PDF reports replace historical partial counts above. Temporary recovery arrays have been removed. The 40-lesson curriculum is the same course across four contextual locales, not 160 separate course lessons. Editorial acceptance, learner timing and central activation remain separate gates.

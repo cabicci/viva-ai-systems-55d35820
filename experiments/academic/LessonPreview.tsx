@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ReadingDiagram } from "./ReadingDiagram";
 import { ReadingVisual, type ReadingVisualSpec } from "./ReadingVisual";
-import { LessonText } from "@/components/academic-education/LessonText";
+import { LessonText, LessonInlineText } from "@/components/academic-education/LessonText";
 import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
@@ -122,11 +122,13 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
           {lesson.quiz.map((question, index) => (
             <article key={question.id} className="print-keep">
               <h3>
-                {index + 1}. {question.question}
+                {index + 1}. <LessonInlineText text={question.question} />
               </h3>
               <ol>
                 {question.options.map((option, i) => (
-                  <li key={i}>{option}</li>
+                  <li key={i}>
+                    <LessonInlineText text={option} />
+                  </li>
                 ))}
               </ol>
             </article>
@@ -139,7 +141,9 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
         <p>{lesson.example.decision}</p>
         <ol>
           {lesson.example.steps?.map((step, i) => (
-            <li key={i}>{step}</li>
+            <li key={i}>
+              <LessonText text={step} />
+            </li>
           ))}
         </ol>
         <h2>{english ? "Practice" : "التطبيق"}</h2>
@@ -327,7 +331,9 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                 <LessonText text={lesson.example.text} />
                 <ol className="list-inside list-decimal space-y-4 leading-8">
                   {lesson.example.steps?.map((step, i) => (
-                    <li key={i}>{step}</li>
+                    <li key={i}>
+                      <LessonText text={step} />
+                    </li>
                   ))}
                 </ol>
                 {lesson.id === "AC-BUS-M01-L01" && (
@@ -364,7 +370,9 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                 <h2 className="text-xl font-bold">{t[3]}</h2>
                 {lesson.quiz.map((q) => (
                   <fieldset key={q.id} className="space-y-3 rounded-2xl border p-4">
-                    <legend className="px-2 font-bold leading-8">{q.question}</legend>
+                    <legend className="px-2 font-bold leading-8">
+                      <LessonInlineText text={q.question} />
+                    </legend>
                     {q.options.map((o, i) => (
                       <label
                         key={i}
@@ -380,7 +388,9 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                           }}
                           className="mt-1"
                         />
-                        <span className="leading-7">{o}</span>
+                        <span className="leading-7">
+                          <LessonInlineText text={o} />
+                        </span>
                       </label>
                     ))}
                     {submitted && (
@@ -394,7 +404,7 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                               ? "Review your answer. "
                               : "راجع إجابتك. "}
                         </strong>
-                        {q.explanation}
+                        <LessonInlineText text={q.explanation} />
                       </p>
                     )}
                   </fieldset>

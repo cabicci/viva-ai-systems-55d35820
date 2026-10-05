@@ -15,7 +15,7 @@ import {
 } from "@/lib/academic-education/client";
 import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-education/types";
 import { ReadingVisual } from "./ReadingVisual";
-import { LessonText } from "./LessonText";
+import { LessonText, LessonInlineText } from "./LessonText";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -226,7 +226,9 @@ function AuthorizedLesson({
               <LessonText text={lesson.example.text} />
               <ol className="list-inside list-decimal space-y-4 leading-8">
                 {lesson.example.steps?.map((s, i) => (
-                  <li key={i}>{s}</li>
+                  <li key={i}>
+                    <LessonText text={s} />
+                  </li>
                 ))}
               </ol>
               <p className="rounded-xl bg-accent/20 p-4 leading-8">{lesson.example.decision}</p>
@@ -246,7 +248,9 @@ function AuthorizedLesson({
             <>
               {lesson.quiz.map((q) => (
                 <fieldset key={q.id} className="rounded-xl border p-4">
-                  <legend className="px-2 font-bold leading-8">{q.question}</legend>
+                  <legend className="px-2 font-bold leading-8">
+                    <LessonInlineText text={q.question} />
+                  </legend>
                   {q.options.map((option, i) => (
                     <label key={i} className="my-3 flex gap-3 rounded-lg bg-muted/30 p-3 leading-7">
                       <input
@@ -259,12 +263,14 @@ function AuthorizedLesson({
                           setResult(null);
                         }}
                       />
-                      {option}
+                      <LessonInlineText text={option} />
                     </label>
                   ))}
                   {result?.feedback.find((f) => f.id === q.id) && (
                     <p className="leading-8">
-                      {result.feedback.find((f) => f.id === q.id)?.explanation}
+                      <LessonInlineText
+                        text={result.feedback.find((f) => f.id === q.id)?.explanation ?? ""}
+                      />
                     </p>
                   )}
                 </fieldset>
