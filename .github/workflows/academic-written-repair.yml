@@ -9,7 +9,29 @@ concurrency:
   group: academic-written-repair
   cancel-in-progress: false
 jobs:
+  select:
+    runs-on: ubuntu-latest
+    outputs:
+      locales: ${{ steps.request.outputs.locales }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /scripts/academic-education/repair-request.json
+      - id: request
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          request=json.loads(Path('scripts/academic-education/repair-request.json').read_text())
+          locales=[locale for locale, ids in request['lessonsByLocale'].items() if ids]
+          assert locales and set(locales)<=set(['ar-EG','ar-MSA','ar-Gulf','en'])
+          with open(os.environ['GITHUB_OUTPUT'],'a') as output:
+              output.write('locales='+json.dumps(locales)+'\n')
+          PY
   selected:
+    needs: select
     if: github.ref == 'refs/heads/work/masaarat-academic-20261005'
     runs-on: ubuntu-latest
     timeout-minutes: 35
@@ -17,9 +39,15 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        locale: [ar-EG, ar-MSA, ar-Gulf, en]
+        locale: ${{ fromJSON(needs.select.outputs.locales) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/academic-education/
+            /experiments/academic/course/authored-briefs.json
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.11'
