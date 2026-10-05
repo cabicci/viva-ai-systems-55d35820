@@ -1,4 +1,5 @@
 import { useAuth } from "@/lib/auth-context";
+import { useEntitlement } from "@/lib/entitlements";
 import { useTechnicalProgress } from "@/lib/technical-education/client";
 import { Link } from "@tanstack/react-router";
 import { Lock, Play, Hammer, Users } from "lucide-react";
@@ -25,6 +26,7 @@ import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 const pastels = ["var(--pastel-lavender)", "var(--pastel-pink)", "var(--pastel-blue)"];
 
 export function KidsCurriculum() {
+  const { isAdmin } = useEntitlement();
   const { locale } = useLocale();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
@@ -38,27 +40,30 @@ export function KidsCurriculum() {
       subtitle={kids.intro}
       summary={<KidsReleaseNotice className="text-sm" />}
     >
-      <div className="mb-10 flex flex-wrap items-center gap-4 rounded-2xl border border-primary/20 bg-card p-5">
-        <p className="flex-1 text-sm text-muted-foreground">{kids.parentNote}</p>
-        <Link
-          to="/kids/family"
-          search={search()}
-          className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
-        >
-          {kids.startKids}
-        </Link>
-        <Link
-          to={LINE_PRICING.kids}
-          search={search()}
-          className="text-sm font-semibold text-primary underline"
-        >
-          {kids.viewPricing}
-        </Link>
-      </div>
+      {!isAdmin && (
+        <div className="mb-10 flex flex-wrap items-center gap-4 rounded-2xl border border-primary/20 bg-card p-5">
+          <p className="flex-1 text-sm text-muted-foreground">{kids.parentNote}</p>
+          <Link
+            to="/kids/family"
+            search={search()}
+            className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
+          >
+            {kids.startKids}
+          </Link>
+          <Link
+            to={LINE_PRICING.kids}
+            search={search()}
+            className="text-sm font-semibold text-primary underline"
+          >
+            {kids.viewPricing}
+          </Link>
+        </div>
+      )}
       <div className="space-y-16">
         {KIDS_LEVELS.map((level, index) => {
           const canOpen =
-            state === "ready" && profiles.some((profile) => profile.level_id === level.id);
+            isAdmin ||
+            (state === "ready" && profiles.some((profile) => profile.level_id === level.id));
           return (
             <section key={level.id} id={`track-${level.id}`}>
               <CurriculumSectionHeader title={`${kids.level} ${index + 1}`} subtitle={level.ages} />

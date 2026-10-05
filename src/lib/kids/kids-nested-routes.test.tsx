@@ -24,6 +24,7 @@ const mock = vi.hoisted(() => ({
 }));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
+vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: false }) }));
 vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <div>Kids brand</div> }));
 vi.mock("@/components/kids/KidsReleaseNotice", () => ({ KidsReleaseNotice: () => null }));
 vi.mock("@/components/kids/KidsParentPanel", () => ({

@@ -136,6 +136,7 @@ jobs:
           node scripts/email/test_branded_mail_migration.mjs
           bunx vitest run src/components/kids/KidsParentRequest.test.tsx src/components/kids/KidsConsentControl.test.tsx src/lib/kids/parent-state.test.tsx src/lib/kids/family-policy.test.ts src/components/kids/KidsFamilyPricing.test.tsx
           bunx vitest run src/lib/kids/retention-worker.test.ts src/lib/__tests__/resend-transport.test.ts
+          bunx vitest run src/lib/kids/kids-direct-lesson.test.tsx src/lib/kids/kids-nested-routes.test.tsx src/components/site/LinePages.test.tsx src/lib/__tests__/entitlements.test.ts
 
       - name: Localization contract
         run: bun run scripts/locale-lessons/validate-localization-contract.ts

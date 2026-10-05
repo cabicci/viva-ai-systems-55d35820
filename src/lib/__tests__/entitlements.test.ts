@@ -91,16 +91,19 @@ describe("entitlements: decideLessonGate", () => {
   const introLessons = getPath("intro")!.modules.flatMap((m) => m.lessons);
   const introLessonId = introLessons.find((l) => l.state === "available")!.id;
 
-  it("admin always opens any lesson", () => {
-    expect(
-      decideLessonGate({
-        lessonId: paidBuilderLesson?.id ?? "anything",
-        tier: "free",
-        isAdmin: true,
-        introCompletedCount: 0,
-        introTotal: 10,
-      }),
-    ).toEqual({ kind: "open" });
+  it("admin opens all 100 AI lessons without a subscription or intro prerequisite", () => {
+    const allLessons = lessonIdsForTier("pro_plus");
+    expect(allLessons).toHaveLength(100);
+    for (const lessonId of allLessons)
+      expect(
+        decideLessonGate({
+          lessonId,
+          tier: "free",
+          isAdmin: true,
+          introCompletedCount: 0,
+          introTotal: 10,
+        }),
+      ).toEqual({ kind: "open" });
   });
 
   it("pro paywalls Builder while Pro Plus opens it", () => {

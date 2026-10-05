@@ -56,6 +56,7 @@ beforeAll(async () => {
     "20261005100000_technical_education_integration",
     "20261005101000_technical_stripe_test",
     "20261005102000_technical_subscription_mail",
+    "20261005110000_admin_kids_lesson_review",
   ])
     await db.exec(migration(name));
   await db.exec(
@@ -135,6 +136,75 @@ it("technical alone never grants adult or family access", async () => {
       `SELECT count(*)::int v FROM billing.commerce_entitlements WHERE user_id='${user}' AND package IN ('pro','pro_plus','kids')`,
     ),
   ).toBe(0);
+});
+it("opens all 320 technical packages for the administrator without a paid grant", async () => {
+  await caller(admin);
+  const delivery = JSON.parse(readFileSync("scripts/technical-education/delivery.json", "utf8"));
+  for (const item of delivery.lessons) {
+    expect((await tech("lesson", item.lesson_id, item.locale)).allowed).toBe(true);
+  }
+  expect(
+    await value("SELECT count(*)::int v FROM billing.commerce_entitlements WHERE user_id=$1", [
+      admin,
+    ]),
+  ).toBe(0);
+  await db.query("DELETE FROM public.user_roles WHERE user_id=$1", [admin]);
+  expect(await tech("lesson")).toEqual({ allowed: false });
+});
+it("allows administrator-owned Kids review for all 144 approved tuples without creating child profiles", async () => {
+  await db.exec(
+    "UPDATE public.kids_release_control SET accepts_child_data=true,lesson_access_enabled=true",
+  );
+  await db.exec(`INSERT INTO public.kids_content_approvals(level_id,lesson_number,locale,approved_at,approval_reference)
+    SELECT 'level-'||level,lesson,locale,now(),'synthetic-admin-review'
+    FROM generate_series(1,3) level CROSS JOIN generate_series(1,12) lesson
+    CROSS JOIN unnest(ARRAY['ar-EG','ar-MSA','ar-Gulf','en']) locale ON CONFLICT DO NOTHING`);
+  const kids = (profile: string, level = "level-3", lesson = 12, locale = "en") =>
+    value("SELECT public.kids_can_access_lesson($1,$2,$3,$4) v", [profile, level, lesson, locale]);
+  await caller(admin);
+  for (let level = 1; level <= 3; level++)
+    for (let lesson = 1; lesson <= 12; lesson++)
+      for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf", "en"])
+        expect(await kids(admin, `level-${level}`, lesson, locale)).toBe(true);
+  expect(await kids(user)).toBe(false);
+  expect(await kids(admin, "level-3", 13)).toBe(false);
+  expect(await kids(admin, "level-3", 12, "fr")).toBe(false);
+  expect(await value("SELECT count(*)::int v FROM public.kids_profiles")).toBe(0);
+  await caller(user);
+  expect(await kids(user)).toBe(false);
+  expect(await kids(admin)).toBe(false);
+  await caller("");
+  await db.exec("SAVEPOINT anonymous_review");
+  await expect(kids(admin)).rejects.toThrow(/ACCOUNT_USER_REQUIRED/);
+  await db.exec("ROLLBACK TO SAVEPOINT anonymous_review");
+  await caller(admin);
+  await db.exec("UPDATE public.kids_release_control SET lesson_access_enabled=false");
+  expect(await kids(admin)).toBe(false);
+  await db.exec("UPDATE public.kids_release_control SET lesson_access_enabled=true");
+  await db.query("UPDATE auth.users SET email_confirmed_at=NULL WHERE id=$1", [admin]);
+  expect(await kids(admin)).toBe(false);
+  await db.query("UPDATE auth.users SET email_confirmed_at=now() WHERE id=$1", [admin]);
+  await db.query("INSERT INTO billing.account_deletion_requests(user_id) VALUES($1)", [admin]);
+  await db.query(
+    "INSERT INTO billing.account_deletion_lifecycle(user_id,stage,financial_retention_reference,crm_retention_reference,release_reference) VALUES($1,'blocked','synthetic','synthetic','synthetic')",
+    [admin],
+  );
+  expect(await kids(admin)).toBe(false);
+  await db.query("DELETE FROM billing.account_deletion_lifecycle WHERE user_id=$1", [admin]);
+  await db.query("DELETE FROM billing.account_deletion_requests WHERE user_id=$1", [admin]);
+  expect(await kids(admin)).toBe(true);
+  await db.query("DELETE FROM public.user_roles WHERE user_id=$1", [admin]);
+  expect(await kids(admin)).toBe(false);
+  expect(
+    await value(
+      "SELECT has_function_privilege('authenticated','billing.kids_previous_admin_lesson_access(uuid,text,integer,text)','EXECUTE') v",
+    ),
+  ).toBe(false);
+  expect(
+    await value(
+      "SELECT has_function_privilege('anon','public.kids_can_access_lesson(uuid,text,integer,text)','EXECUTE') v",
+    ),
+  ).toBe(false);
 });
 it("delivers all 320 protected packages, original videos and private file references, without quiz keys", async () => {
   await grant();

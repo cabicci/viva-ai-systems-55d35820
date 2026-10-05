@@ -8,6 +8,7 @@ Source: `experiment/furniture-pilot-20261003`, immutable handoff `87728437970170
 
 - `/technical/curriculum` retains the same curriculum shell as AI/Kids; its 80 rows open `/technical/learn/:lessonId`.
 - Existing single account, menus, transparent logos, other-line choices, AI tiers, Kids consent and payment review flows are preserved.
+- Stored administrators can review all AI, technical and Kids lessons from their own account. Kids uses the administrator UUID as its review scope, requires a confirmed active account, released lessons and an approved locale tuple, and does not create a child profile or grant access to another family's records. Existing parent consent/subscription rules remain delegated unchanged. Removing the role removes this review access.
 - Authenticated first lesson `M01-L01` is Free. Other lessons require the independent `technical` entitlement, a verified TEST Stripe technical subscription, or administrator access. AI Pro/Pro Plus and Kids never grant technical access automatically.
 - Technical prices reuse the published Pro Plus catalogue, without granting AI Pro Plus: EG monthly EGP309/year EGP3090; international monthly USD12.99/year USD129.90. Existing manual transfer, receipt preview/review, coupons, invitations and confirmation mail support the technical package. Phone verification remains deferred; the existing recorded-phone redemption limit is retained.
 - Content: 320 four-context packages served by the authenticated `technical_command` RPC from private cloud tables. Quiz keys and explanations are excluded from delivery; server grading records account progress. Practice drafts are separate by locale; read/quiz/practice progress is shared across the same user's localized lesson. The lesson guide uses authored reference answers.
@@ -20,7 +21,7 @@ Source: `experiment/furniture-pilot-20261003`, immutable handoff `87728437970170
 ## Operations sequence
 
 1. Merge the reviewed source after normal CI. Do not merge the experiment wholesale or restore its old Navbar.
-2. Apply migrations `20261005100000`, `20261005101000`, `20261005102000` in order. No global commerce, account deletion, Kids or Stripe-mode control change.
+2. Apply migrations `20261005100000`, `20261005101000`, `20261005102000`, `20261005110000` in order. No global commerce, account deletion, Kids or Stripe-mode control change. The last migration only extends the existing Kids lesson gate with administrator review; rollback restores `billing.kids_previous_admin_lesson_access` as `public.kids_can_access_lesson` with its original authenticated-only execute grant.
 3. Run `bun run scripts/technical-education/import.ts` with existing server-only Supabase credentials. Never print credentials. Expected receipts: source SHA above, imported 320, uploaded 644, verified cloud hashes 644, release enabled true. This is repeatable without duplicating lessons or assets.
 4. Deploy exact reviewed functions: `technical-stripe-checkout`, `billing-stripe-webhook`, `billing-stripe-portal`, `account-welcome-job`, `commerce-invitations` (shared technical mail labels).
 5. Build preview, verify protected/visitor navigation and four locales, then publish the same approved snapshot. Verify the actual production URLs separately.

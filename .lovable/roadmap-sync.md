@@ -163,3 +163,10 @@ scope: db
 source: user
 summary: Implement independent external orders, confirmed payments, private receipts, complimentary grants, package entitlements, group imports, offers and explicit invitation batches. Preserve Stripe TEST, legacy coupon constraints, family consent, account suspension and the existing 15-day financial deletion rule.
 sync_status: isolated candidate; launch checkpoint ACCEPTANCE-EXPLANATION-PAUSE-12 remains paused. No merge, production migration, real mail/payment, Paymob activation or deployment is claimed.
+## 2026-10-05 — Administrator access in all learning lines
+
+[roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
+scope: lessons
+source: user
+summary: Extend existing administrator lesson access to Kids using the administrator's own account, with no child profile or family subscription. Preserve server role, account, release and content approval checks and normal parent access. Verify all 320 technical and 144 Kids localized lesson tuples. Videos stay on Bunny.
+sync_status: same production roadmap item remains in progress; cloud execution and publication are paused by Lovable human-input gate
