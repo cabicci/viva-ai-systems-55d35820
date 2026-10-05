@@ -211,3 +211,5 @@ This section supersedes earlier statements that only the first lesson is navigab
 6. **Assistant:** separate price/quota decision, server entitlement checks and private per-course/lesson/locale/version retrieval corpus excluding answer keys, private rubrics and internal research.
 7. **Media:** remaining videos may follow written release after written gates pass. Keep hidden until exact lesson/locale media is ready. Maintain per-word Egyptian listening review; do not regenerate or replace existing media unnecessarily.
 8. **Merge/publication:** eventual integration is the owner's stated direction, but this draft has not passed the remaining written and central-integration gates. No merge or publication has occurred.
+
+**Implementation commit for this slice:** `4f7014d28192c9a88050d9cf8c4576b603278f57`. This includes the 23 changed source/report files listed above. The subsequent documentation-only commit records this SHA.
