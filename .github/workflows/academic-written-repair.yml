@@ -7,17 +7,12 @@ permissions:
   contents: read
 concurrency:
   group: academic-written-repair
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   selected:
     if: github.ref == 'refs/heads/work/masaarat-academic-20261005'
     runs-on: ubuntu-22.04
     timeout-minutes: 35
-    strategy:
-      fail-fast: false
-      max-parallel: 2
-      matrix:
-        locale: [ar-Gulf, en]
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -33,13 +28,13 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
-          LOCALE: ${{ matrix.locale }}
+          LOCALE: ar-Gulf
         run: python3 scripts/academic-education/expand_lessons.py --locale "$LOCALE" --request scripts/academic-education/repair-request.json
       - name: Preserve drafts and structural-repair evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: academic-repaired-${{ matrix.locale }}
+          name: academic-repaired-ar-Gulf
           retention-days: 14
           path: tmp/academic-expanded/
           if-no-files-found: warn
