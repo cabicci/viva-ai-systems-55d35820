@@ -1,6 +1,6 @@
 # Technical education curriculum blueprint
 
-> Current checkpoint: 80 content-reviewed lessons in four locales (320 packages), 644 PDFs. All content authoring is complete. Video production and actual pronunciation listening remain separate gates; earlier stop instructions below are historical.
+> Current checkpoint: 80 content-reviewed lessons in four locales (320 packages), 644 PDFs, and 320 produced/uploaded Bunny video mappings. Content authoring and video delivery are complete. Actual pronunciation listening remains a separate pending gate; earlier stop instructions below are historical.
 
 Owner instruction, 2026-10-04 (Africa/Cairo): convert the entire supplied furniture book into a complete learning journey, deduplicate repeated methods, improve Egyptian narration, and produce context-adapted Egyptian, MSA, Gulf and English versions. This replaces the earlier two-locale production target; existing delivered pilot assets remain Egyptian/English until actually revised.
 
@@ -196,3 +196,14 @@ Published content:80 lessons,320 localized packages,644 PDFs,80 video mappings c
 Integrated gates passed:80-lesson structural completion,17 Vitest checks,10 Python integrity tests,TypeScript,scoped component/runtime ESLint,clean-commit production build. The wider directory lint also reports two pre-existing formatting warnings-as-errors in unchanged M04 test lines; no functional issue was found and the file was not reformatted. Preview asset regression verifies SSR and all12 referenced CSS/JS/brand assets; generated files are under dist/client. All324 earlier PDFs retain their SHA-256 hashes.
 
 Preserve the existing media workflow and accepted voice caches; the planner handles at most200 missing/revised locale cells per run and reports any deferred remainder. Production success is not pronunciation listening acceptance.
+
+
+## Complete video delivery receipt — 2026-10-05 UTC
+
+Owner authorized completion without further pauses. Resumed the existing collection/planning job in Actions run [37203787642](https://github.com/cabicci/viva-ai-systems-55d35820/actions/runs/37203787642), attempt 2. The planner selected exactly the 30 deferred missing locale cells; all 290 previously delivered video GUIDs were preserved. No workflow, renderer, voice policy, content, payment or entitlement code was changed.
+
+The final 30 jobs all succeeded, including reviewed Remotion rendering, Bunny upload, playable-status verification, and mapping/revision commits. The run completed successfully at 2026-10-05T02:34:42Z. Immutable media receipt: `ee3b09fa21eace4e52f7a49f89eaf3a35659a837` on `experiment/furniture-pilot-20261003`.
+
+Final catalogue-to-registry verification: 80 unique lesson runtime IDs × 4 locales = 320 expected video cells; 320 mappings, 320 distinct Bunny GUIDs, and 320 nonempty render revision receipts. Each of ar-EG, ar-MSA, ar-Gulf and en has 80 videos. Missing cells: 0. All 290 earlier GUIDs remain unchanged. The reused `furniture-m1-cut-list` lesson is included through the catalogue runtime ID; counting only the technical-m prefix would incorrectly omit its four videos.
+
+Actual pronunciation/naturalness listening is still UNVERIFIED independently in all four locales; successful production and playable status are not listener acceptance. No merge to main, main-site deployment, database, account, billing, brand settings or private-preview publication occurred in this completion slice. The existing published private preview remains its earlier video snapshot; current media receipts are authoritative on the experiment branch.
