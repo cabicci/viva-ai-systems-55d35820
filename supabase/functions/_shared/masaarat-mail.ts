@@ -146,13 +146,13 @@ export function welcomeContent(name: unknown, localeInput: unknown) {
   };
 }
 export function subscriptionContent(
-  plan: "pro" | "pro_plus",
+  plan: "pro" | "pro_plus" | "technical",
   kind: "activated" | "renewed",
   name: unknown,
   localeInput: unknown,
 ) {
   const locale = mailLocale(localeInput);
-  const label = plan === "pro_plus" ? "Pro Plus" : "Pro";
+  const label = plan === "technical" ? "TECH" : plan === "pro_plus" ? "Pro Plus" : "Pro";
   const first = kind === "activated";
   const copy = {
     "ar-EG": [
@@ -179,7 +179,14 @@ export function subscriptionContent(
   const [title, body, action] = copy[locale];
   return {
     subject: `${title} | Masaarat ${label}`,
-    ...personalized(locale, name, title, body, action, "/dashboard"),
+    ...personalized(
+      locale,
+      name,
+      title,
+      body,
+      action,
+      plan === "technical" ? "/technical/curriculum" : "/dashboard",
+    ),
   };
 }
 
@@ -200,7 +207,13 @@ function paymentPath(input: PaymentConfirmation, admin = false) {
 export function paymentConfirmationContent(input: PaymentConfirmation) {
   const locale = mailLocale(input.locale);
   const plan =
-    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+    input.package === "pro_plus"
+      ? "Pro Plus"
+      : input.package === "kids"
+        ? "Kids"
+        : input.package === "technical"
+          ? "Masaarat TECH"
+          : "Pro";
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,
@@ -237,7 +250,13 @@ export function paymentConfirmationContent(input: PaymentConfirmation) {
 export function receiptReviewContent(input: PaymentConfirmation) {
   const locale = mailLocale(input.locale);
   const plan =
-    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+    input.package === "pro_plus"
+      ? "Pro Plus"
+      : input.package === "kids"
+        ? "Kids"
+        : input.package === "technical"
+          ? "Masaarat TECH"
+          : "Pro";
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,
@@ -283,7 +302,7 @@ export function invitationContent(input: {
 }) {
   if (
     !/^[0-9a-f-]{36}$/i.test(input.id) ||
-    !["pro", "pro_plus", "kids"].includes(input.package) ||
+    !["pro", "pro_plus", "kids", "technical"].includes(input.package) ||
     !Number.isInteger(input.duration_days) ||
     input.duration_days < 1 ||
     input.duration_days > 1095 ||
@@ -293,7 +312,13 @@ export function invitationContent(input: {
   const locale = mailLocale(input.locale),
     english = locale === "en";
   const pack =
-    input.package === "pro_plus" ? "Pro Plus" : input.package === "kids" ? "Kids" : "Pro";
+    input.package === "pro_plus"
+      ? "Pro Plus"
+      : input.package === "kids"
+        ? "Kids"
+        : input.package === "technical"
+          ? "Masaarat TECH"
+          : "Pro";
   const deadline = new Date(input.deadline).toISOString().slice(0, 10);
   const title = english
     ? "Your Masaarat invitation"

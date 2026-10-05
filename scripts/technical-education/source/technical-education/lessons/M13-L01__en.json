@@ -1,0 +1,72 @@
+{
+  "id": "M13-L01",
+  "locale": "en",
+  "title": "Plan children’s rooms around activities",
+  "intro": "Plan a room for two school-age children around sleeping, playing, studying and storage. Coordinate movement, foreseeable hazards and changing needs rather than beginning with a colour theme.",
+  "goals": [
+    "Define both children’s activity needs",
+    "Connect zones and review hazards",
+    "Plan growth without improvised conversion"
+  ],
+  "sections": [
+    {
+      "id": "activities",
+      "title": "Define both children’s activity needs",
+      "text": "Record each child’s activities, schedules, belongings and assistance needs. Similar ages do not establish identical reach or preferences. Separate shared and personal areas. This project concerns school-age users; infant and toddler sleeping products require distinct classifications and requirements. Turn the family’s brief into a reviewable programme before choosing a furniture arrangement.",
+      "diagram": "new-M13-L01-activities",
+      "caption": "Individual needs first, then shared-space decisions."
+    },
+    {
+      "id": "zones",
+      "title": "Connect zones and review hazards",
+      "text": "Connect sleeping, study, play and storage zones to the entrance and open furniture states. Review services, window coverings and objects that encourage climbing. CPSC advises securing furniture/TVs according to manufacturer instructions and removing tempting objects from their tops. A layout does not replace appropriate product selection, assembly and substrate-specific installation review.",
+      "diagram": "new-M13-L01-zones",
+      "caption": "Review routes, open states and climbing incentives together."
+    },
+    {
+      "id": "growth",
+      "title": "Plan growth without improvised conversion",
+      "text": "Identify changes supported by the product: content rearrangement, a designed adjustable shelf or relocating a unit with renewed restraint review. Distinguish these from modifying a bed or adding an unapproved mechanism. Document a future arrangement and its rechecks rather than promising one piece for every age. Preserve openings and useful shared space after changes.",
+      "diagram": "new-M13-L01-growth",
+      "caption": "Adapt within the product’s permitted configuration and recheck changes."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "One child studies while the other plays. Option A places the occupied chair in the entrance route; B relocates study and retains a clear route and personal storage. Develop B, test opening states and review storage restraint against the selected product instructions.",
+    "decision": "Decision: verify simultaneous tasks, access and hazard controls before acceptance."
+  },
+  "quiz": [
+    {
+      "id": "two-users",
+      "question": "Do similar ages prove identical needs?",
+      "options": [
+        "No; review each child and their use",
+        "Yes; duplicate the brief",
+        "Yes; choose matching colours"
+      ],
+      "correct": 0,
+      "explanation": "Activities, reach, assistance and schedules can differ despite similar ages."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare individual briefs, two layouts, a simultaneous-use case and a permitted future adaptation.",
+    "fields": [
+      "Each child’s needs",
+      "Zones, openings and hazards",
+      "Growth option and rechecks"
+    ],
+    "criteria": [
+      "No age-only assumptions",
+      "Route clear during use",
+      "No unapproved product conversion"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can the same school-age brief be used for an infant?",
+      "answer": "No. Users, sleeping-product categories and their requirements differ and need a separate review.",
+      "sectionId": "activities"
+    }
+  ]
+}

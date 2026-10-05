@@ -175,19 +175,24 @@ Deno.serve(async (request) => {
       if (!resolved) return response({ received: true, ignored: true });
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, rpc))
         return response({ received: true, ignored: true, financial_erased: true });
-      if (resolved.subscription.metadata?.product_scope === "kids") {
-        const revoked = await rpc<boolean>("apply_kids_stripe_refund", {
-          p_event_id: event.id,
-          p_parent_id: resolved.subscription.metadata.user_id,
-          p_subscription_id: resolved.subscription.id,
-          p_customer_id: idOf(resolved.subscription.customer),
-          p_invoice_id: resolved.invoice.id,
-          p_refund_id: resolved.refund.id,
-          p_refund_amount: resolved.refund.amount,
-          p_invoice_amount: resolved.invoice.amount_paid,
-          p_refund_status: resolved.refund.status,
-          p_occurred_at: new Date(event.created * 1000).toISOString(),
-        });
+      if (["kids", "technical"].includes(resolved.subscription.metadata?.product_scope ?? "")) {
+        const revoked = await rpc<boolean>(
+          resolved.subscription.metadata?.product_scope === "technical"
+            ? "apply_technical_stripe_refund"
+            : "apply_kids_stripe_refund",
+          {
+            p_event_id: event.id,
+            p_parent_id: resolved.subscription.metadata.user_id,
+            p_subscription_id: resolved.subscription.id,
+            p_customer_id: idOf(resolved.subscription.customer),
+            p_invoice_id: resolved.invoice.id,
+            p_refund_id: resolved.refund.id,
+            p_refund_amount: resolved.refund.amount,
+            p_invoice_amount: resolved.invoice.amount_paid,
+            p_refund_status: resolved.refund.status,
+            p_occurred_at: new Date(event.created * 1000).toISOString(),
+          },
+        );
         if (revoked && resolved.subscription.status !== "canceled") {
           await stripeGet(
             `/subscriptions/${encodeURIComponent(resolved.subscription.id)}`,
@@ -235,7 +240,7 @@ Deno.serve(async (request) => {
     const metadata = subscription.metadata ?? {};
     if (await financialDeliveryExpired(metadata.user_id, rpc))
       return response({ received: true, ignored: true, financial_erased: true });
-    if (metadata.product_scope === "kids") {
+    if (["kids", "technical"].includes(metadata.product_scope)) {
       if (
         metadata.environment !== "test" ||
         !metadata.user_id ||
@@ -261,19 +266,25 @@ Deno.serve(async (request) => {
       const start = subscription.items.data[0].current_period_start;
       const end = subscription.items.data[0].current_period_end;
       const paidInvoice = event.type === "invoice.paid" ? object.id : idOf(object.invoice);
-      const result = await rpc<boolean>("apply_kids_stripe_event", {
-        p_event_id: event.id,
-        p_parent_id: metadata.user_id,
-        p_subscription_id: gatewaySubscriptionId,
-        p_customer_id: idOf(subscription.customer),
-        p_price_id: priceId,
-        p_status: subscription.status,
-        p_occurred_at: new Date(event.created * 1000).toISOString(),
-        p_paid: evidence.transition === "payment_succeeded",
-        p_paid_invoice_id: evidence.transition ? paidInvoice : null,
-        p_period_start: evidence.transition && start ? new Date(start * 1000).toISOString() : null,
-        p_period_end: evidence.transition && end ? new Date(end * 1000).toISOString() : null,
-      });
+      const result = await rpc<boolean>(
+        metadata.product_scope === "technical"
+          ? "apply_technical_stripe_event"
+          : "apply_kids_stripe_event",
+        {
+          p_event_id: event.id,
+          p_parent_id: metadata.user_id,
+          p_subscription_id: gatewaySubscriptionId,
+          p_customer_id: idOf(subscription.customer),
+          p_price_id: priceId,
+          p_status: subscription.status,
+          p_occurred_at: new Date(event.created * 1000).toISOString(),
+          p_paid: evidence.transition === "payment_succeeded",
+          p_paid_invoice_id: evidence.transition ? paidInvoice : null,
+          p_period_start:
+            evidence.transition && start ? new Date(start * 1000).toISOString() : null,
+          p_period_end: evidence.transition && end ? new Date(end * 1000).toISOString() : null,
+        },
+      );
       return response({ received: true, result });
     }
     const internalSubscriptionId = metadata.internal_subscription_id;

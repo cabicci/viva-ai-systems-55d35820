@@ -1,0 +1,72 @@
+{
+  "id": "M08-L01",
+  "locale": "en",
+  "title": "Storage for entrances, displays and offices",
+  "intro": "A shared cabinet shell can serve an entrance, display or office, but contents and access change the interior. Produce three application cards that justify each functional change.",
+  "goals": [
+    "Start with the arrival sequence",
+    "Plan display visibility and protection",
+    "Adapt storage to office workflows"
+  ],
+  "sections": [
+    {
+      "id": "arrival",
+      "title": "Start with the arrival sequence",
+      "text": "List carried items and their arrival sequence: keys, bag and shoes. Separate dirty from clean contents and provide accessible cleaning rather than trapping dirt in a closed corner. Draw room and cabinet doors open together, including the user position. A cabinet top is not automatically a seat; seating requires its own support and performance review.",
+      "diagram": "new-M08-L01-arrival",
+      "caption": "Check entrance, opening and user positions together."
+    },
+    {
+      "id": "display",
+      "title": "Plan display visibility and protection",
+      "text": "Inventory object dimensions, support needs and cleaning access. Establish a focal object with surrounding space rather than filling every shelf. Check reflections from glazing and lighting, as well as access to replace the light source. Do not derive glass thickness or shelf capacity from a perspective image; record loads, support and the required system review.",
+      "diagram": "new-M08-L01-display",
+      "caption": "Visibility, protection and service access shape the display."
+    },
+    {
+      "id": "office",
+      "title": "Adapt storage to office workflows",
+      "text": "Measure the actual file or box sample and identify users, access frequency and confidentiality. Daily storage follows the workflow; shared items need clear identification; sensitive contents require controlled access. Check extended drawers against chairs and circulation, and review system stability. Record which dividers, closures or finishes change, why they change and which shell parts remain common.",
+      "diagram": "new-M08-L01-office",
+      "caption": "Keep the common shell separate from justified functional changes."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Exercise: one hypothetical three-bay shell becomes an entrance cabinet with a cleaning tray, a display with object-specific space, or an office cabinet with file dividers. Do not add the same drawer and lock to all three. If the common shell prevents a core function, revise the shell and document the reason instead of forcing identical geometry.",
+    "decision": "Decision: share the shell only while it supports the required function."
+  },
+  "quiz": [
+    {
+      "id": "adapt",
+      "question": "What should precede adapting office storage?",
+      "options": [
+        "Measure contents and define access",
+        "Copy display shelves",
+        "Choose lock colour"
+      ],
+      "correct": 0,
+      "explanation": "Contents and access establish the subdivision and protection."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare entrance, display and office cards for one shell, including opening plans and justified changes.",
+    "fields": [
+      "Contents and user",
+      "Opening/access plan",
+      "Common and changed parts"
+    ],
+    "criteria": [
+      "Function-based changes",
+      "Opening conflicts checked",
+      "Required support review identified"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Must the shell remain identical in every application?",
+      "answer": "No. Revise it if it prevents a core function and record why.",
+      "sectionId": "office"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M09-L02",
+  "locale": "en",
+  "title": "Design a sofa or chair around its user",
+  "intro": "Overall sofa dimensions differ from the effective seating dimensions experienced by a user. Link posture, support and cushion behaviour to a specification that can be tried and reviewed.",
+  "goals": [
+    "Start with the user and task posture",
+    "Distinguish overall and effective dimensions",
+    "Record the trial and reference sample"
+  ],
+  "sections": [
+    {
+      "id": "posture",
+      "title": "Start with the user and task posture",
+      "text": "Define the task, sitting duration and how the user sits down and rises. In a mock-up, review foot and back support and the area behind the knee. Stature alone cannot establish a seat that suits everyone. Record observations and any access or further assessment needs rather than turning one user observation into a universal ideal dimension.",
+      "diagram": "new-M09-L02-posture",
+      "caption": "Task-specific user trials inform the seating specification."
+    },
+    {
+      "id": "effective",
+      "title": "Distinguish overall and effective dimensions",
+      "text": "Overall width includes arms and overall depth includes the back. Draw a section showing the usable seat and back support with the cushion occupied. Geometry exercise only: an 1800 mm overall width with two 100 mm arms leaves 1600 mm clear. This arithmetic establishes neither comfortable occupancy nor effective loaded seat height.",
+      "diagram": "new-M09-L02-effective",
+      "caption": "Exercise: 1800 − 100 − 100 = 1600 mm clear."
+    },
+    {
+      "id": "trial",
+      "title": "Record the trial and reference sample",
+      "text": "Use a sample representing the proposed frame, support and filling, not an unrelated cushion on a random chair. Record effective dimensions, measurement state and sitting/rising observations. Changes to filling or back angle may change feel and usable dimensions, so repeat the trial after changes. Tie the specification to a reference sample and distinguish comfort acceptance from required strength and durability verification.",
+      "diagram": "new-M09-L02-trial",
+      "caption": "Comfort acceptance and structural performance are separate checks."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The 1800 mm exercise with two 100 mm arms gives 1600 mm clear. Enlarging each arm to 150 mm while retaining overall width reduces clear space to 1500 mm. Update the drawing and repeat the user trial before approving the new appearance: usable width has decreased by 100 mm despite an unchanged outside length.",
+    "decision": "Decision: record 1500 mm clear and repeat the seating trial."
+  },
+  "quiz": [
+    {
+      "id": "clear-width",
+      "question": "1800 mm overall with two 150 mm arms: clear width?",
+      "options": [
+        "1500 mm",
+        "1650 mm",
+        "1800 mm"
+      ],
+      "correct": 0,
+      "explanation": "Subtract both arms: 1500 mm; this does not prove comfort."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a user brief, seat section, width calculation and trial record separating comfort from strength verification.",
+    "fields": [
+      "User and task",
+      "Overall/clear dimensions and measurement state",
+      "Sample and trial results"
+    ],
+    "criteria": [
+      "Both arms deducted",
+      "Effective measurement state explicit",
+      "No universal comfort claim"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Do equal outside dimensions guarantee equal comfort?",
+      "answer": "No. Arms, back, filling and support change effective space and user experience.",
+      "sectionId": "effective"
+    }
+  ]
+}

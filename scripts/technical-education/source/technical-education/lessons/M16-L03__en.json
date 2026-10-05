@@ -1,0 +1,72 @@
+{
+  "id": "M16-L03",
+  "locale": "en",
+  "title": "Corners, islands and internal storage",
+  "intro": "Special cabinets need more than nominal volume. Review corner access, island movement and internal hardware against contents and actual product information.",
+  "goals": [
+    "Distinguish corner volume from access",
+    "Test the island in context",
+    "Select hardware using its data"
+  ],
+  "sections": [
+    {
+      "id": "corner",
+      "title": "Distinguish corner volume from access",
+      "text": "Draw the corner opening and contents, then compare fixed shelving and pull-out systems for opening size, operating sweep, cleaning and removal. Volume alone does not prove access. A product image does not establish handing or carcass compatibility.",
+      "diagram": "new-M16-L03-corner",
+      "caption": "Access includes operation, cleaning and replacement."
+    },
+    {
+      "id": "island",
+      "title": "Test the island in context",
+      "text": "Test the island with open drawers, occupied seating and passing routes, including simultaneous opposing openings. An appliance or sink introduces a separate service-coordination item. Its appearance on a plan does not prove feasible or approved service connections.",
+      "diagram": "new-M16-L03-island",
+      "caption": "Test the island during opening and work."
+    },
+    {
+      "id": "hardware",
+      "title": "Select hardware using its data",
+      "text": "Record manufacturer, model, handing, opening requirements, sweep and rated loading with conditions. Compare actual contents and tool access. A hinge, handle or front change reopens the assembly review; individually suitable parts may still conflict when combined.",
+      "diagram": "new-M16-L03-hardware",
+      "caption": "Review the product within the complete assembly."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The mechanism fits the carcass but a handle prevents the front opening far enough. Review front, handle and hinge together against product data, then retest the sweep without improvising changes to the mechanism.",
+    "decision": "Decision: establish assembly compatibility before approval."
+  },
+  "quiz": [
+    {
+      "id": "M16-L03-check",
+      "question": "Does fitting inside the carcass establish operability?",
+      "options": [
+        "No; check sweep and front",
+        "Yes, if it looks good",
+        "Yes, if volume is large"
+      ],
+      "correct": 0,
+      "explanation": "Operation depends on the front, neighbors and service access."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit corner/island layouts, opening states, a hardware card and a conflict decision.",
+    "fields": [
+      "Distinguish corner volume from access",
+      "Test the island in context",
+      "Select hardware using its data"
+    ],
+    "criteria": [
+      "Defined contents and access",
+      "Simultaneous use checked",
+      "Model and handing documented"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is the largest volume always better storage?",
+      "answer": "Not necessarily. Contents, reach, cleaning and movement determine usable value.",
+      "sectionId": "corner"
+    }
+  ]
+}

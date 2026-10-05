@@ -1,0 +1,72 @@
+{
+  "id": "M03-L03",
+  "locale": "en",
+  "title": "Upholstery, metals, glass and stone",
+  "intro": "Complementary materials serve different roles. Separate upholstery, cushioning, surfaces and supports, then review the actual products, their interfaces and maintenance requirements.",
+  "goals": [
+    "Separate cover, cushioning and support",
+    "Review interfaces between different materials",
+    "Document use, care and maintenance"
+  ],
+  "sections": [
+    {
+      "id": "upholstery",
+      "title": "Separate cover, cushioning and support",
+      "text": "In an upholstered seat, specify cover, liner, filling, support and frame separately. Request fabric identification, intended use and cleaning instructions, filling data and a seating sample. A fabric colour or one foam property is not a complete comfort specification. Review the assembly and whether covers can be maintained or replaced.",
+      "diagram": "new-M03-L03-upholstery",
+      "caption": "Each layer has a role; assess the assembly together."
+    },
+    {
+      "id": "interfaces",
+      "title": "Review interfaces between different materials",
+      "text": "For glass or stone on a metal base, identify the product, dimensions, support and connection system. Request edge, protection and joint details for the selected assembly. Do not infer thickness or capacity from a photograph. Obtain supplier data and technical review, including installation access and possible disassembly.",
+      "diagram": "new-M03-L03-interfaces",
+      "caption": "The material interface needs a reviewed connection detail."
+    },
+    {
+      "id": "care",
+      "title": "Document use, care and maintenance",
+      "text": "Link each surface to its use environment and declared care method, considering liquids, abrasion and light exposure. Record product limits instead of a general durability claim. Review samples according to supplier instructions and identify replaceable parts. Deliver material codes and care information so maintenance does not depend on guesswork.",
+      "diagram": "new-M03-L03-care",
+      "caption": "Care records belong to identified products."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A client selects a chair from an appealing photograph. Filling, support and removable-cover details are unknown. Daily use and frequent cleaning require evidence beyond the image.",
+    "decision": "Decision: request layer specifications, care information and a seating sample before approving the upholstery system."
+  },
+  "quiz": [
+    {
+      "id": "cover",
+      "question": "Does changing fabric establish chair comfort?",
+      "options": [
+        "Yes, always",
+        "No; filling, support, frame and user also need review",
+        "A darker colour proves comfort"
+      ],
+      "correct": 1,
+      "explanation": "The cover is one component; it does not prove the whole seat fits the user."
+    }
+  ],
+  "assignment": {
+    "prompt": "Create a seat-layer schedule and an interface information sheet for a surface on a different-material base.",
+    "fields": [
+      "Layers and product identities",
+      "Interface detail and missing data",
+      "Care and replacement"
+    ],
+    "criteria": [
+      "Cover and filling are separate",
+      "Capacity is not inferred from appearance",
+      "Care instructions identify the product"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Should I test an arbitrary cleaner on the sample?",
+      "answer": "Follow the product’s permitted care and test instructions; do not generalise one sample result to other surface systems.",
+      "sectionId": "care"
+    }
+  ]
+}

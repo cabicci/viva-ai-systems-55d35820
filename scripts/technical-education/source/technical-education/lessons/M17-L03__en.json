@@ -1,0 +1,72 @@
+{
+  "id": "M17-L03",
+  "locale": "en",
+  "title": "Coordinate electricity, gas, lighting and ventilation",
+  "intro": "Build a service-coordination drawing and approval record without replacing qualified electrical, gas or ventilation design and installation.",
+  "goals": [
+    "Collect referenced service requirements",
+    "Distinguish extraction from room ventilation",
+    "Resolve conflicts before concealment"
+  ],
+  "sections": [
+    {
+      "id": "register",
+      "title": "Collect referenced service requirements",
+      "text": "Link each model’s service and access requirements to its manual and specialist drawing. The Bosch CPA565GS0B example assigns connection without a plug to a licensed professional. Furniture coordination identifies interfaces and owners; it does not select wiring, protection or connection procedures.",
+      "diagram": "new-M17-L03-register",
+      "caption": "Each service has a requirement, source and responsible specialist."
+    },
+    {
+      "id": "air",
+      "title": "Distinguish extraction from room ventilation",
+      "text": "Do not assume a hood provides room ventilation. Miele DA7198W documentation distinguishes recirculation above a gas hob from ventilation of the room. Record operating mode, model and airflow route for ventilation/gas specialist review; do not derive a universal distance or duct size from an image.",
+      "diagram": "new-M17-L03-air",
+      "caption": "Operating mode and room requirements need specialist review."
+    },
+    {
+      "id": "approval",
+      "title": "Resolve conflicts before concealment",
+      "text": "Use common datums and mark proposed, approved and open items. Log drawer, access or airflow conflicts with owner, response, revised drawing and inspection evidence. Qualified specialists retain responsibility for electrical/gas work and testing under the applicable site and product requirements.",
+      "diagram": "new-M17-L03-approval",
+      "caption": "Concealing a conflict does not close it."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A cover blocks required service access while the specialist drawing remains unapproved. Hold concealment, coordinate removable access or an alternative, and record the specialist approval.",
+    "decision": "Decision: document access and service approval before closure."
+  },
+  "quiz": [
+    {
+      "id": "M17-L03-check",
+      "question": "Does a finished front prove service acceptance?",
+      "options": [
+        "No; specialist approvals and inspection are needed",
+        "Yes, if connections are hidden",
+        "Yes, if the colour matches"
+      ],
+      "correct": 0,
+      "explanation": "Acceptance is evidenced and assigned, not inferred from appearance."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a furniture/service overlay, referenced appliance record, three approval points and a conflict requiring a response.",
+    "fields": [
+      "Collect referenced service requirements",
+      "Distinguish extraction from room ventilation",
+      "Resolve conflicts before concealment"
+    ],
+    "criteria": [
+      "Referenced service owners",
+      "Approval states explicit",
+      "No invented connection instructions or sizes"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does every hood replace room ventilation?",
+      "answer": "No. Review the model, mode and room requirements with the specialist.",
+      "sectionId": "air"
+    }
+  ]
+}

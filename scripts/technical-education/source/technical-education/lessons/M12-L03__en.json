@@ -1,0 +1,72 @@
+{
+  "id": "M12-L03",
+  "locale": "en",
+  "title": "Headboards, upholstery and details",
+  "intro": "A headboard combines appearance, build-up and attachment. Separate these decisions in a section, then review the sample, assembly and service access.",
+  "goals": [
+    "Separate appearance from build-up",
+    "Define attachment and removal",
+    "Review sample, cover and services"
+  ],
+  "sections": [
+    {
+      "id": "layers",
+      "title": "Separate appearance from build-up",
+      "text": "Draw the visual pattern in elevation and the substrate, padding, lining and cover in section as applicable to the system. Pattern lines do not necessarily represent structural joints. Include the finished build-up in room planning and mattress relationships. Padding specifications and upholstery attachment require performance criteria and sample review, not copying a value from a similar-looking product.",
+      "diagram": "new-M12-L03-layers",
+      "caption": "Elevation describes pattern; section describes build-up and finished size."
+    },
+    {
+      "id": "attachment",
+      "title": "Define attachment and removal",
+      "text": "Distinguish a headboard attached to the bed frame from one independently attached to the wall: their load paths and servicing differ. Define connectors, tool access and removal sequence, with competent review of the system, substrate and performance. A decorative cover may block access. A screw symbol or concealed-hanger sketch does not establish fastener type or quantity.",
+      "diagram": "new-M12-L03-attachment",
+      "caption": "Attachment depends on system/substrate; removal needs access."
+    },
+    {
+      "id": "sample",
+      "title": "Review sample, cover and services",
+      "text": "Include an edge, joint and fabric direction in the sample; review texture, cleaning and appearance under intended lighting. A removable cover needs a feasible removal/replacement sequence consistent with its instructions, not just a label. Coordinate controls, lighting and cables away from mattress compression and removal paths, and check access from the occupied bed position.",
+      "diagram": "new-M12-L03-sample",
+      "caption": "Review edge/joint quality and a feasible service sequence."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Option A labels its cover removable, but its edge is trapped behind a permanent component. Revise the detail or removal sequence and trial an edge sample. Do not promise servicing that the assembled product prevents.",
+    "decision": "Decision: verify removal through a sample and sequence before approving the claim."
+  },
+  "quiz": [
+    {
+      "id": "removable",
+      "question": "What demonstrates a removable cover?",
+      "options": [
+        "A verified access/removal/replacement sequence",
+        "A removable label on the elevation",
+        "Concealing all edges"
+      ],
+      "correct": 0,
+      "explanation": "Access to edges and attachments must remain possible in the assembled condition."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw an elevation/section, specify an edge sample and list attachment/service requirements.",
+    "fields": [
+      "Pattern and build-up",
+      "Attachment/removal",
+      "Sample and services"
+    ],
+    "criteria": [
+      "Pattern distinct from joint",
+      "No guessed fixings",
+      "Feasible removal"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can a photograph establish padding density?",
+      "answer": "No. Use performance requirements, system information and a representative sample.",
+      "sectionId": "layers"
+    }
+  ]
+}

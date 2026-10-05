@@ -7,6 +7,15 @@ import { getLineCopy, lineMeta } from "@/lib/learning-lines";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import { supabase } from "@/integrations/supabase/client";
+import { PaymentMethods } from "@/components/commerce/PaymentMethods";
+import { commerceCopy } from "@/lib/commerce/copy";
+import { useTechnicalProgress } from "@/lib/technical-education/client";
+import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
+import { technicalUiCopy } from "@/lib/technical-education/ui-copy";
+import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/technical/pricing")({
   validateSearch: parseLocaleSearchParam,
   head: async ({ match }) =>
@@ -19,6 +28,50 @@ export const Route = createFileRoute("/technical/pricing")({
 function TechnicalPricing() {
   const { locale } = useLocale();
   const c = getLineCopy(locale);
+  const w = commerceCopy(locale),
+    text = technicalUiCopy(locale),
+    offers = adminOfferCopy(locale);
+  const { user } = useAuth();
+  const { stripe: hasStripe } = useTechnicalProgress();
+  const [interval, setInterval] = useState<"month" | "year">("month");
+  const [market, setMarket] = useState<"EG" | "INTL">("EG");
+  const [busy, setBusy] = useState(false),
+    [error, setError] = useState(false);
+  async function portal() {
+    setBusy(true);
+    setError(false);
+    try {
+      const { data, error } = await supabase.functions.invoke("billing-stripe-portal", {
+        body: { scope: "technical" },
+      });
+      if (
+        error ||
+        typeof data?.url !== "string" ||
+        new URL(data.url).origin !== "https://billing.stripe.com"
+      )
+        throw new Error("Unavailable");
+      window.location.assign(data.url);
+    } catch {
+      setError(true);
+      setBusy(false);
+    }
+  }
+  async function checkout() {
+    setBusy(true);
+    setError(false);
+    try {
+      const { data, error } = await supabase.functions.invoke("technical-stripe-checkout", {
+        body: { marketCode: market, billingInterval: interval, locale },
+      });
+      if (error || typeof data?.url !== "string") throw new Error("Unavailable");
+      const url = new URL(data.url);
+      if (url.origin !== "https://checkout.stripe.com") throw new Error("Invalid checkout");
+      window.location.assign(url.href);
+    } catch {
+      setError(true);
+      setBusy(false);
+    }
+  }
   return (
     <div>
       <Navbar />
@@ -26,14 +79,64 @@ function TechnicalPricing() {
         <LineIntroduction line="technical" />
         <section className="container mx-auto max-w-3xl px-4 py-12">
           <article className="rounded-3xl border border-primary/30 bg-card p-7">
-            <h2 className="text-2xl font-black">
-              {c.technical} — {c.plans}
-            </h2>
-            <p className="my-5 leading-relaxed text-muted-foreground">{c.technicalPrice}</p>
+            <h2 className="text-2xl font-black">{text.title}</h2>
+            <p className="my-5 leading-relaxed text-muted-foreground">{text.details}</p>
             <PlanPrices plan="pro_plus" />
-            <p className="rounded-xl bg-primary/10 p-4 font-semibold text-primary">
-              {c.unavailable}
-            </p>
+            {user ? (
+              <div className="space-y-5">
+                <label className="block">
+                  {w.duration}
+                  <select
+                    className="mt-2 w-full rounded border bg-background p-3"
+                    value={interval}
+                    onChange={(e) => setInterval(e.target.value as "month" | "year")}
+                  >
+                    <option value="month">{w.month}</option>
+                    <option value="year">{w.year}</option>
+                  </select>
+                </label>
+                <label className="block">
+                  {w.market}
+                  <select
+                    className="mt-2 w-full rounded border bg-background p-3"
+                    value={market}
+                    onChange={(e) => setMarket(e.target.value as "EG" | "INTL")}
+                  >
+                    <option value="EG">{offers.egypt} — EGP</option>
+                    <option value="INTL">{offers.international} — USD</option>
+                  </select>
+                </label>
+                <PaymentMethods
+                  packageKey="technical"
+                  interval={interval}
+                  market={market}
+                  stripe={() => void checkout()}
+                  disabled={busy}
+                  initialMethod="instapay"
+                >
+                  <Button className="w-full">{w.continue}</Button>
+                </PaymentMethods>
+                {hasStripe && (
+                  <Button variant="outline" disabled={busy} onClick={() => void portal()}>
+                    {locale === "en"
+                      ? "Manage subscription"
+                      : locale === "ar-EG"
+                        ? "إدارة اشتراكك"
+                        : locale === "ar-Gulf"
+                          ? "إدارة اشتراكك"
+                          : "إدارة الاشتراك"}
+                  </Button>
+                )}
+                {error && <p role="alert">{w.error}</p>}
+              </div>
+            ) : (
+              <a
+                className="inline-block rounded bg-primary px-5 py-3 font-bold text-primary-foreground"
+                href={`/login?locale=${locale}`}
+              >
+                {text.login}
+              </a>
+            )}
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.separate}</p>
           </article>
         </section>

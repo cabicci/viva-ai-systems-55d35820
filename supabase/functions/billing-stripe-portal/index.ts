@@ -104,9 +104,16 @@ Deno.serve(async (request) => {
     const context = await rpc<{
       gateway_customer_id: string;
       gateway_subscription_id: string;
-    }>(body?.scope === "kids" ? "get_kids_stripe_portal_context" : "get_stripe_portal_context", {
-      p_user_id: user.id,
-    });
+    }>(
+      body?.scope === "technical"
+        ? "get_technical_stripe_portal_context"
+        : body?.scope === "kids"
+          ? "get_kids_stripe_portal_context"
+          : "get_stripe_portal_context",
+      {
+        p_user_id: user.id,
+      },
+    );
 
     if (!context.gateway_customer_id || !context.gateway_subscription_id) {
       throw new Error("STRIPE_PORTAL_CONTEXT_INCOMPLETE");
@@ -114,7 +121,7 @@ Deno.serve(async (request) => {
 
     const session = await createPortalSession(
       context.gateway_customer_id,
-      `${allowedOrigin(origin)}/account`,
+      `${allowedOrigin(origin)}${body?.scope === "technical" ? "/technical/pricing" : "/account"}`,
     );
     if (!session.url) throw new Error("STRIPE_PORTAL_URL_MISSING");
 

@@ -1,0 +1,72 @@
+{
+  "id": "M12-L04",
+  "locale": "en",
+  "title": "Bedside tables, dressing tables and storage",
+  "intro": "Bedside units, dressing table and storage must work together with the bed. Coordinate use, levels, materials and services, referring to the existing construction lessons rather than repeating them.",
+  "goals": [
+    "Relate surface levels to the use position",
+    "Coordinate movement and service interfaces",
+    "Coordinate the visual family and detail references"
+  ],
+  "sections": [
+    {
+      "id": "uselevel",
+      "title": "Relate surface levels to the use position",
+      "text": "Check the bedside surface from lying and sitting positions, including daily objects and controls. A dressing table needs a seated posture, mirror view and drawer access. Making every surface the same height may undermine these different tasks. Establish relationships through a user trial or mock-up rather than treating a common height as universal.",
+      "diagram": "new-M12-L04-uselevel",
+      "caption": "Visual coordination does not require identical surface heights."
+    },
+    {
+      "id": "interfaces",
+      "title": "Coordinate movement and service interfaces",
+      "text": "Draw the dressing chair in use with the drawer and nearby door open. Check circulation, cleaning and the relationship to mirror and lighting. Coordinate services with specialists and product requirements, keeping cables clear of pull and pinch paths. Test simultaneous states: one drawer working on its own does not prove the whole group is coordinated.",
+      "diagram": "new-M12-L04-interfaces",
+      "caption": "Test combined use states, not isolated components."
+    },
+    {
+      "id": "family",
+      "title": "Coordinate the visual family and detail references",
+      "text": "Create a schedule of piece codes, materials, samples, edges, hardware and referenced carcass/drawer/joint details. Coordinate colour and material direction while allowing different functional construction. Distinguish truly shared parts from similar-looking ones and link the schedule to drawing revisions. Matching fronts do not establish interchangeable drawer boxes.",
+      "diagram": "new-M12-L04-family",
+      "caption": "A shared visual family can contain different functional details."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The bedside and dressing-table drawer fronts look alike, but the carcass depths and slide systems differ. Share the finish sample while keeping distinct box codes and details. Visual similarity does not justify reusing one box dimension.",
+    "decision": "Decision: coordinate the finish while retaining function-specific part details."
+  },
+  "quiz": [
+    {
+      "id": "samefront",
+      "question": "Do matching fronts prove identical drawer boxes?",
+      "options": [
+        "No; check depth, system and interfaces",
+        "Yes; appearance is sufficient",
+        "Yes; colour determines size"
+      ],
+      "correct": 0,
+      "explanation": "The box depends on opening, depth and slide system, not front appearance alone."
+    }
+  ],
+  "assignment": {
+    "prompt": "Prepare a three-piece schedule with detail references and a combined chair/drawer/door use state.",
+    "fields": [
+      "Use and levels",
+      "Movement/services",
+      "Codes, samples and references"
+    ],
+    "criteria": [
+      "Use position tested",
+      "No assumed interchangeability",
+      "Consistent references/revisions"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does coordination mean every piece has the same height?",
+      "answer": "No. Use and posture determine levels while materials or design rhythm can provide visual coordination.",
+      "sectionId": "uselevel"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M01-L03",
+  "intro": "Will the furniture move with the user or depend on this particular site? Classify its relationship to the room and its degree of customization before assigning design and installation responsibilities.",
+  "goals": [
+    "Freestanding or built-in?",
+    "How much customization?",
+    "Define interfaces and responsibilities"
+  ],
+  "sections": [
+    {
+      "id": "step-1",
+      "title": "Freestanding or built-in?",
+      "text": "Freestanding furniture has a comparatively independent form; built-in furniture relies on its relationship with the site. Neither category removes the need to review stability and fixing requirements. For built-ins, document interfaces with finishes and services, and how the unit can be removed or maintained.",
+      "diagram": "scope-construction",
+      "caption": "Compare wall relationships and the access needed for maintenance."
+    },
+    {
+      "id": "step-2",
+      "title": "How much customization?",
+      "text": "Standard furniture comes with defined product specifications. Semi-custom options allow changes within a supplier’s system. Bespoke furniture is developed for the project. A dimension change does not automatically preserve joint suitability, capacity or warranty: obtain the supplier’s modification limits.",
+      "diagram": "scope-customization",
+      "caption": "Supplier-system adjustments differ from a bespoke design."
+    },
+    {
+      "id": "step-3",
+      "title": "Define interfaces and responsibilities",
+      "text": "Separate design, supply, fabrication, transport, installation and service coordination. State what is included and who owns external work. Identify who confirms fixing substrates and who remeasures after finishes. Each deliverable needs an owner and handover point; “all inclusive” does not define these interfaces.",
+      "diagram": "scope-responsibility",
+      "caption": "Assign an owner and handoff to each output; define service boundaries."
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "text": "A cabinet made for a specific recess with an outlet behind it is both built-in and bespoke. The furniture package must address access and coordination, but electrical alterations are not automatically part of furniture fabrication.",
+    "decision": "Decision: agree the scope and interfaces before issuing construction details."
+  },
+  "quiz": [
+    {
+      "id": "decision",
+      "question": "What does semi-custom mean?",
+      "options": [
+        "Unlimited modification",
+        "Modifications within the supplier’s defined system",
+        "No dimensional review is needed"
+      ],
+      "correct": 1,
+      "explanation": "Decision: agree the scope and interfaces before issuing construction details."
+    }
+  ],
+  "assignment": {
+    "prompt": "Classify an entrance unit, a built-in wardrobe and a ready-made table. Define each scope, its owners and missing information.",
+    "fields": [
+      "Classification and reasons",
+      "Deliverables and scope boundaries",
+      "Owners and open questions"
+    ],
+    "criteria": [
+      "Each decision connects to a fact or a clear open question.",
+      "The deliverable is complete, dated and reviewable.",
+      "Unconfirmed information is identified before release."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I know the practice is complete?",
+      "answer": "Decision: agree the scope and interfaces before issuing construction details.",
+      "sectionId": "step-3"
+    }
+  ],
+  "locale": "en",
+  "title": "Furniture categories and project scope"
+}

@@ -11,7 +11,7 @@ export function download(
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-export const packages = ["pro", "pro_plus", "kids"] as const;
+export const packages = ["pro", "pro_plus", "kids", "technical"] as const;
 /** Parse a displayed EGP/USD amount exactly; storage and RPCs keep minor units. */
 export function moneyToMinor(value: string): number {
   const normalized = value

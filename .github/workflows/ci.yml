@@ -156,6 +156,12 @@ jobs:
           src/lib/__tests__/locale-phase13a-pilot-collector.test.ts
           src/lib/__tests__/locale-phase13a-pilot-sanitize-output.test.ts
 
+      - name: Technical integration (private assets and isolated billing)
+        run: |
+          bun run scripts/technical-education/import.ts --prepare
+          bunx vitest run src/lib/technical-education src/components/technical-education src/components/furniture-pilot
+          bunx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck --allowImportingTsExtensions scripts/billing/account-edge-runtime.d.ts supabase/functions/technical-stripe-checkout/index.ts supabase/functions/billing-stripe-portal/index.ts
+
       - name: Build
         run: bun run build
 

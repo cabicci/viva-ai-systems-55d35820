@@ -15,6 +15,10 @@ const state = vi.hoisted(() => ({
   profiles: [] as { level_id: string }[],
   invoke: vi.fn(),
 }));
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: null }) }));
+vi.mock("@/lib/technical-education/client", () => ({
+  useTechnicalProgress: () => ({ progress: {}, paid: false }),
+}));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => <header>Navigation</header> }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => <footer>Footer</footer> }));
 vi.mock("@/components/kids/KidsReleaseNotice", () => ({ KidsReleaseNotice: () => null }));
@@ -115,12 +119,10 @@ describe("line-specific overviews and curricula", () => {
       const modules = getTechnicalCurriculumPreview(locale).flatMap((section) => section.modules);
       expect(modules).toHaveLength(21);
       expect(modules.flatMap((module) => module.lessons)).toHaveLength(80);
-      expect(view.container.querySelectorAll("li[aria-disabled=true]")).toHaveLength(80);
-      expect(
-        view.container.querySelectorAll(
-          "a[href*='experiments'], a[href*='/learn/'], video, iframe",
-        ),
-      ).toHaveLength(0);
+      expect(view.container.querySelectorAll("a[href^='/technical/learn/']")).toHaveLength(80);
+      expect(view.container.querySelectorAll("a[href*='experiments'], video, iframe")).toHaveLength(
+        0,
+      );
       expect(screen.getByRole("link", { name: getLineCopy(locale).plans })).toHaveAttribute(
         "href",
         `/technical/pricing?locale=${locale}`,

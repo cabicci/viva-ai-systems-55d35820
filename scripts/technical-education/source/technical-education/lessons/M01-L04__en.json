@@ -1,0 +1,72 @@
+{
+  "id": "M01-L04",
+  "intro": "An approved appearance is not a release for fabrication. Organize the journey from brief to handover, with review gates, defined deliverables and controlled changes.",
+  "goals": [
+    "Give every stage a deliverable",
+    "Define real review gates",
+    "Control revisions and changes"
+  ],
+  "sections": [
+    {
+      "id": "step-1",
+      "title": "Give every stage a deliverable",
+      "text": "Start with the brief and survey, develop options, then prepare drawings, cut lists and specifications. Review fabrication information before production, installation plans before transport and inspection results before handover. Iteration is normal, but a changed decision must propagate to all affected documents.",
+      "diagram": "workflow-deliverables",
+      "caption": "Connect the brief, drawings, cut list and inspection outputs."
+    },
+    {
+      "id": "step-2",
+      "title": "Define real review gates",
+      "text": "For each gate, name what is reviewed, who reviews it and what evidence is required. Client approval of needs or appearance differs from technical review of construction, fixing and production capability. Keep material open issues visible; one person’s visual approval does not approve every technical aspect.",
+      "diagram": "workflow-approval",
+      "caption": "Resolve and verify open comments before approving an output."
+    },
+    {
+      "id": "step-3",
+      "title": "Control revisions and changes",
+      "text": "Give each document a revision, date, status and approval purpose. If dimensions or materials change after release, record the reason, identify affected drawings, lists and costs, and repeat the review. Remove superseded versions from operational use. Close defects with reinspection evidence, not merely a changed status.",
+      "diagram": "workflow-revisions",
+      "caption": "A dimension change updates the drawing and list and withdraws the old revision."
+    }
+  ],
+  "example": {
+    "title": "Worked example",
+    "text": "The required width changes after the cut list is issued. Identify affected geometry and parts, then update drawings, quantities and cost before releasing the replacement. Editing the elevation alone leaves inconsistent fabrication information.",
+    "decision": "Decision: do not release the revision for production until all affected deliverables have been reviewed."
+  },
+  "quiz": [
+    {
+      "id": "decision",
+      "question": "What is required when the width changes after the list is issued?",
+      "options": [
+        "Update only the picture",
+        "Record the change and review all affected deliverables",
+        "Keep using the old release"
+      ],
+      "correct": 1,
+      "explanation": "Decision: do not release the revision for production until all affected deliverables have been reviewed."
+    }
+  ],
+  "assignment": {
+    "prompt": "Plan the stages for a storage unit and write a change record for a width revision after the drawings are issued.",
+    "fields": [
+      "Stages, deliverables and reviewers",
+      "Review gates and open items",
+      "Change record, revisions and reinspection evidence"
+    ],
+    "criteria": [
+      "Each decision connects to a fact or a clear open question.",
+      "The deliverable is complete, dated and reviewable.",
+      "Unconfirmed information is identified before release."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I know the practice is complete?",
+      "answer": "Decision: do not release the revision for production until all affected deliverables have been reviewed.",
+      "sectionId": "step-3"
+    }
+  ],
+  "locale": "en",
+  "title": "Workflow and review checkpoints"
+}

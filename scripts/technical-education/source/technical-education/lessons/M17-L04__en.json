@@ -1,0 +1,72 @@
+{
+  "id": "M17-L04",
+  "locale": "en",
+  "title": "Kitchen hardware, construction and installation",
+  "intro": "Create a coordinated manufacturing package that connects carcass details, hardware, site conditions and an inspectable installation sequence.",
+  "goals": [
+    "Freeze the manufacturing references",
+    "Link hardware to units and parts",
+    "Sequence installation and inspection"
+  ],
+  "sections": [
+    {
+      "id": "release",
+      "title": "Freeze the manufacturing references",
+      "text": "Reconcile plans, elevations, sections, cut lists, appliances and hardware by compatible revisions. Distinguish carcass, finished-part and cutting dimensions according to edge details. Mark unresolved device/service inputs and do not release affected parts as fully approved.",
+      "diagram": "new-M17-L04-release",
+      "caption": "A release identifies its references and open items."
+    },
+    {
+      "id": "hardwarelist",
+      "title": "Link hardware to units and parts",
+      "text": "For each hardware item record product code, handing, quantity, cabinet and approved drilling reference. Distinguish a purchased set from its component parts to avoid double ordering. Product changes reopen front, carcass, machining and motion coordination before procurement.",
+      "diagram": "new-M17-L04-hardwarelist",
+      "caption": "A set and its components are different counting units."
+    },
+    {
+      "id": "sequence",
+      "title": "Sequence installation and inspection",
+      "text": "Link site readiness to delivery and assembly of units, worktops and devices under their references. Put hold points before fixing/services are concealed and assign inspectors. Check alignment, operation and samples, then record corrections and reinspection; do not improvise load tests.",
+      "diagram": "new-M17-L04-sequence",
+      "caption": "Acceptance of hidden work precedes concealment."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The schedule orders a complete pull-out set and accidentally reorders its included components. Check the set contents, separate genuine additions and correct procurement.",
+    "decision": "Decision: reconcile the purchasing unit before ordering."
+  },
+  "quiz": [
+    {
+      "id": "M17-L04-check",
+      "question": "How do you prevent double ordering set components?",
+      "options": [
+        "Check set contents and purchasing units",
+        "Add all rows blindly",
+        "Delete the hardware details"
+      ],
+      "correct": 0,
+      "explanation": "Quantity must match the product actually supplied."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit an assembly detail, hardware schedule and installation plan with three inspection hold points and open items.",
+    "fields": [
+      "Freeze the manufacturing references",
+      "Link hardware to units and parts",
+      "Sequence installation and inspection"
+    ],
+    "criteria": [
+      "Compatible revisions",
+      "Clear purchasing units",
+      "Inspection before concealment"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is a final elevation enough to manufacture?",
+      "answer": "No. Parts, details, hardware, references, service coordination and inspection points are also needed.",
+      "sectionId": "release"
+    }
+  ]
+}

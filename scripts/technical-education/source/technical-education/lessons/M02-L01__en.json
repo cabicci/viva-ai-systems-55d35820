@@ -1,0 +1,72 @@
+{
+  "id": "M02-L01",
+  "locale": "en",
+  "title": "Human dimensions and reach zones",
+  "intro": "A furniture dimension is a relationship between a user and an activity. Establish who needs to reach, sit or move, then test the proposed arrangement.",
+  "goals": [
+    "Define the user and reaching task",
+    "Relate dimensions to working posture",
+    "Test fit and record the result"
+  ],
+  "sections": [
+    {
+      "id": "reach",
+      "title": "Define the user and reaching task",
+      "text": "Record the users, frequency, contents and handling weight. Reaching from a chair differs from standing, and touching an item does not demonstrate lifting it safely. General body-size information can guide questions, but cannot establish that a particular shelf fits the intended user.",
+      "diagram": "new-M02-L01-reach",
+      "caption": "The task includes reaching and handling the item."
+    },
+    {
+      "id": "posture",
+      "title": "Relate dimensions to working posture",
+      "text": "Consider the chair, work surface and task location together. A different seat can change hand position and knee space. Record posture and duration, then test an adjustable mock-up with the user. A photograph without a reliable scale and user context cannot establish a working height.",
+      "diagram": "new-M02-L01-posture",
+      "caption": "Seat, surface and knee space interact."
+    },
+    {
+      "id": "trial",
+      "title": "Test fit and record the result",
+      "text": "Use a cardboard mock-up or temporary position marker. Test the actual task with suitable contents without exposing the user to an unsafe load. Record reach, clashes and assistance. Success for one participant is not evidence for everyone; adjust the arrangement or provide another option.",
+      "diagram": "new-M02-L01-trial",
+      "caption": "Record the participant, task and resulting change."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "A shared shelf serves a standing user and a seated user. One can touch the box; the other cannot remove it from the back. Selecting an average height does not resolve both tasks.",
+    "decision": "Decision: bring frequently used contents within a tested reach zone and verify removal with both users."
+  },
+  "quiz": [
+    {
+      "id": "evidence",
+      "question": "Which evidence demonstrates shelf fit?",
+      "options": [
+        "An attractive photograph",
+        "Observed item removal by the intended users",
+        "An average body dimension alone"
+      ],
+      "correct": 1,
+      "explanation": "Test the complete task; touching an item does not prove it can be removed."
+    }
+  ],
+  "assignment": {
+    "prompt": "Evaluate a shelf or work surface for two different users with a documented mock-up.",
+    "fields": [
+      "Users and tasks",
+      "Mock-up and observations",
+      "Change and rationale"
+    ],
+    "criteria": [
+      "The task names the actual contents",
+      "User posture is recorded",
+      "The change follows observed evidence"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can I use a general dimension table?",
+      "answer": "Use it to guide comparison and questions, then test the intended users and task. It is not proof of fit.",
+      "sectionId": "reach"
+    }
+  ]
+}

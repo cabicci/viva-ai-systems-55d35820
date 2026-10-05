@@ -1,0 +1,72 @@
+{
+  "id": "M09-L01",
+  "locale": "en",
+  "title": "Plan living and reception spaces",
+  "intro": "Living-space planning starts with people and activities. Compare conversation and viewing arrangements, testing circulation and access against explicit acceptance points.",
+  "goals": [
+    "Define activities and seating relationships",
+    "Test circulation during use",
+    "Compare layouts using the same acceptance points"
+  ],
+  "sections": [
+    {
+      "id": "activities",
+      "title": "Define activities and seating relationships",
+      "text": "Record everyday and guest occupancy and priorities for conversation, viewing or reading. Conversation needs reciprocal sightlines; viewing needs a suitable orientation to the screen from the intended seats. Seat count alone does not establish usability. Draw sightlines and identify seats requiring an awkward turn for the requested activity; do not derive seating comfort from screen size.",
+      "diagram": "new-M09-L01-activities",
+      "caption": "Judge sightlines against the intended activity."
+    },
+    {
+      "id": "circulation",
+      "title": "Test circulation during use",
+      "text": "Map routes from the entrance to destinations, including open doors, moved chairs and table use. Where the brief allows, keep through-traffic outside the conversation group. Measure the narrowest point in realistic operating states and compare it with documented user and project requirements. A clearance copied from an image is not a universal rule or evidence of accessibility compliance.",
+      "diagram": "new-M09-L01-circulation",
+      "caption": "Measure bottlenecks in occupied and opening states."
+    },
+    {
+      "id": "alternatives",
+      "title": "Compare layouts using the same acceptance points",
+      "text": "Keep room boundaries and assumed occupancy fixed when comparing A for conversation with B for viewing. Assess sightlines, through-routes, door opening and table access using the same criteria. Record trade-offs rather than changing drawing scale to flatter a proposal. Floor markings and a simple use mock-up can test positions before selection; symmetry alone is not a functional pass.",
+      "diagram": "new-M09-L01-alternatives",
+      "caption": "Use common criteria and state the trade-off."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The family prioritises conversation and daily balcony access. A faces seats toward each other but places a chair in the balcony route. B moves the chair to the side while retaining visual connection. Prefer B subject to checking the narrowest route and balcony door operation on site; an extra seat must not reintroduce the conflict.",
+    "decision": "Decision: prefer B subject to route and door verification."
+  },
+  "quiz": [
+    {
+      "id": "layout",
+      "question": "What makes the A/B comparison meaningful?",
+      "options": [
+        "Same boundaries, users and criteria",
+        "Shrink furniture in the favoured option",
+        "Judge symmetry alone"
+      ],
+      "correct": 0,
+      "explanation": "Fixed assumptions expose real functional differences."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit two same-scale layouts with activities, sightlines, circulation and acceptance criteria; justify the choice.",
+    "fields": [
+      "Users and activities",
+      "Two circulation plans",
+      "Criteria and trade-off"
+    ],
+    "criteria": [
+      "Consistent assumptions",
+      "Bottlenecks checked",
+      "Priority-based decision"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does symmetry prove a good layout?",
+      "answer": "No. Test activities, sightlines, routes and openings for the actual users.",
+      "sectionId": "alternatives"
+    }
+  ]
+}

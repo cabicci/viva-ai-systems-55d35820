@@ -1,0 +1,72 @@
+{
+  "id": "M10-L03",
+  "locale": "en",
+  "title": "A coordinated dining furniture project",
+  "intro": "A dining set needs functional and visual coordination across table, chairs and sideboard. Turn those decisions into a traceable drawing, procurement, sample and inspection package.",
+  "goals": [
+    "Connect the pieces through a use scenario",
+    "Link drawings to procurement records",
+    "Translate design intent into acceptance criteria"
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "title": "Connect the pieces through a use scenario",
+      "text": "Define everyday meals, guests, serving and clearing away. Assign each piece a role and list the sideboard contents and requirement owner. Check chair arms against the table underside and sideboard doors against pulled-out chairs. A matching finish cannot compensate for an incompatible functional interface.",
+      "diagram": "new-M10-L03-brief",
+      "caption": "Review the pieces together in the same use scenario."
+    },
+    {
+      "id": "schedule",
+      "title": "Link drawings to procurement records",
+      "text": "Assign type codes T for table, C for chair and S for sideboard. Record quantity, approved dimensions, material, finish, drawing/revision reference and missing product information. One table, four chairs and one sideboard means ⁦1 + 4 + 1 = 6⁩ physical pieces but three types. Do not confuse quantities with type or drawing counts; distinguish any different chair product.",
+      "diagram": "new-M10-L03-schedule",
+      "caption": "Three types, six physical pieces in the exercise."
+    },
+    {
+      "id": "acceptance",
+      "title": "Translate design intent into acceptance criteria",
+      "text": "Code the finish sample and review it alongside chair materials under relevant project lighting. Acceptance criteria should reference approved dimensions and samples, hardware movement, edge quality and seating/serving interfaces. Each piece needs appropriate performance documentation and review. Record defects, owners, corrective actions and reinspection evidence before closing an item.",
+      "diagram": "new-M10-L03-acceptance",
+      "caption": "Close defects with referenced correction and reinspection evidence."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Chair C changes to an armchair while its quantity remains four. Its arm no longer clears the underside of table T. The six-piece quantity is still correct, but the functional package is not. Update the chair reference, review the T/C interface and obtain renewed selection approval.",
+    "decision": "Decision: a product change reopens its interfaces even when quantity is unchanged."
+  },
+  "quiz": [
+    {
+      "id": "set-count",
+      "question": "One table, four chairs and one sideboard: how many types and pieces?",
+      "options": [
+        "3 types and 6 pieces",
+        "6 types and 3 pieces",
+        "3 types and 3 pieces"
+      ],
+      "correct": 0,
+      "explanation": "The chair is one type repeated four times."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a use layout, type/quantity/revision schedule, sample card and one defect/correction record.",
+    "fields": [
+      "Use and interfaces",
+      "Procurement/revision schedule",
+      "Sample and inspection"
+    ],
+    "criteria": [
+      "Interfaces checked",
+      "3 types and 6 pieces",
+      "Evidence before defect closure"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does matching colour establish a coordinated set?",
+      "answer": "No. Functional interfaces, materials, details and procurement references must also align.",
+      "sectionId": "brief"
+    }
+  ]
+}

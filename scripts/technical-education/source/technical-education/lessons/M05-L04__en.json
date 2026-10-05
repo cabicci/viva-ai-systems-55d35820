@@ -1,0 +1,72 @@
+{
+  "id": "M05-L04",
+  "locale": "en",
+  "title": "Fixings, support and disassembly",
+  "intro": "Support design starts with load paths, the supporting substrate and access for service. Distinguish bearing support from restraint without turning a sketch into a universal fixing prescription.",
+  "goals": [
+    "Trace load paths and support type",
+    "Identify the substrate and fixing system",
+    "Plan service access before closure"
+  ],
+  "sections": [
+    {
+      "id": "support",
+      "title": "Trace load paths and support type",
+      "text": "A floor-standing unit transfers weight through its parts and base or legs to the floor. A wall-hung unit transfers it through carcass connections and suspension to the wall. These paths define the review scope, not adequacy. Distinguish vertical weight from a user pull at a handle and identify bearing and restraint points for each use case.",
+      "diagram": "new-M05-L04-support",
+      "caption": "Floor-bearing and wall-hung load paths differ."
+    },
+    {
+      "id": "substrate",
+      "title": "Identify the substrate and fixing system",
+      "text": "Paint or tile does not identify the load-bearing substrate. Document its construction, condition and concealed services using site information. The detail must show carcass, support member, carcass-to-support connection and support-to-substrate connection. Fixing type, number, size and location require system-specific technical review; this lesson provides planning, not drilling instructions.",
+      "diagram": "new-M05-L04-substrate",
+      "caption": "Review both carcass-to-support and support-to-substrate connections."
+    },
+    {
+      "id": "service",
+      "title": "Plan service access before closure",
+      "text": "A cover may hide adjustment or fixing points; define access without destroying finishes. Draw cover removal and service sequence, identifying any temporary support needed in a competent specialist’s plan. Do not treat a load-carrying connection as a freely removable cover. Retain system references, fixing locations and inspection records with approved maintenance instructions.",
+      "diagram": "new-M05-L04-service",
+      "caption": "Service access must preserve the required support plan."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Option A shows a screw into a finish without identifying its substrate. B shows carcass, support, substrate and both connections, flagging load and substrate information for review. B is a more complete review package because it exposes the load path and unknowns; it is not installation approval.",
+    "decision": "Decision: develop B as a review package; do not issue it for installation before technical verification."
+  },
+  "quiz": [
+    {
+      "id": "support-check",
+      "question": "What is missing when the sketch shows a fixing only into the finish?",
+      "options": [
+        "Substrate identity and connection chain",
+        "Cover colour only",
+        "Image title"
+      ],
+      "correct": 0,
+      "explanation": "The finish does not identify the supporting substrate or complete connection chain."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit floor-standing/wall-hung load paths, a support detail and a substrate/service review list.",
+    "fields": [
+      "Load paths",
+      "Connection-chain detail",
+      "Verification and service information"
+    ],
+    "criteria": [
+      "Substrate identified beyond finish",
+      "Both connections shown",
+      "No guessed fixing specification"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can any connector be removed for access?",
+      "answer": "No. Review its load-carrying role and specialist support/disassembly plan first.",
+      "sectionId": "service"
+    }
+  ]
+}

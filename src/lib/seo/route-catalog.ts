@@ -251,6 +251,13 @@ export const ROUTE_CATALOG = [
     visibility: "public",
     sitemap: true,
   },
+  {
+    source: "technical.learn.$lessonId.tsx",
+    pattern: "/technical/learn/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/technical/learn/",
+  },
 ] as const satisfies readonly RouteCatalogEntry[];
 
 export const PUBLIC_SITEMAP_PATHS = ROUTE_CATALOG.filter((route) => route.sitemap).map(

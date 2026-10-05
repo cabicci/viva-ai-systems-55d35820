@@ -1,0 +1,72 @@
+{
+  "id": "M21-L01",
+  "locale": "en",
+  "title": "Select a capstone and plan the work",
+  "intro": "The capstone integrates one selected application with the foundation skills. Define scope, trace each requirement to evidence and plan review dependencies before producing a large but disconnected drawing set.",
+  "goals": [
+    "Select a bounded application",
+    "Create a requirement–evidence matrix",
+    "Plan dependencies and hold points"
+  ],
+  "sections": [
+    {
+      "id": "scope",
+      "title": "Select a bounded application",
+      "text": "Choose an application already studied, such as reception with two staff-storage units. Record users, site, contents, services, included items and exclusions. This exercise initially has two units with 3 shelves each; that is a scope decision, not a fabrication release. Record missing survey information and its approver, distinguishing training from an actual installation order.",
+      "diagram": "new-M21-L01-scope",
+      "caption": "Scope defines inclusions, exclusions and unresolved information."
+    },
+    {
+      "id": "evidence",
+      "title": "Create a requirement–evidence matrix",
+      "text": "Create rows for staff retrieval, unobstructed visitor movement and cable servicing. Link each to a drawing, trial or specification, an acceptance observation and reviewer. Map prerequisites from briefing, planning, materials, drawings, joints and the selected application. Watching those lessons is not a substitute for producing connected project evidence.",
+      "diagram": "new-M21-L01-evidence",
+      "caption": "Requirement, evidence and reviewer form a traceable row."
+    },
+    {
+      "id": "plan",
+      "title": "Plan dependencies and hold points",
+      "text": "Place survey confirmation before layout and dimensional freeze, then coordinate details and quantities. Define hold points for material samples, connections and use trials. Missing wall data may allow provisional planning, but not final fixing release. Assign an owner, needed evidence and decision to each hold point rather than only a deadline.",
+      "diagram": "new-M21-L01-plan",
+      "caption": "Unresolved inputs hold dependent approvals."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "Reception and the two units are selected, but the delivery opening is unconfirmed. Continue layout alternatives while holding assembly size and delivery decisions. The 3 shelves per unit remain a documented assumption, not an approved purchase quantity.",
+    "decision": "Decision: progress independent work and hold survey-dependent release."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "How should an unconfirmed delivery opening be handled?",
+      "options": [
+        "Record ownership and hold dependent assembly release",
+        "Guess the opening",
+        "Ignore delivery"
+      ],
+      "correct": 0,
+      "explanation": "The missing input holds dependent decisions, not every independent task."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit the reception/two-unit brief, requirement matrix, prerequisite map and review plan.",
+    "fields": [
+      "Scope and assumptions",
+      "Requirements and prerequisites",
+      "Dependencies and owners"
+    ],
+    "criteria": [
+      "Bounded application",
+      "Evidence traceability",
+      "Unresolved inputs owned"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Must the capstone include every application?",
+      "answer": "No. Select one main application with its prerequisites and explicit extensions.",
+      "sectionId": "scope"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "M07-L02",
+  "locale": "en",
+  "title": "Divide a wardrobe into buildable modules",
+  "intro": "Three bays can be built as a shared carcass or as three independent modules. The choice changes side-panel count, clear storage widths, assembly and transport, even when the front elevation looks similar.",
+  "goals": [
+    "Distinguish shared and independent carcasses",
+    "Calculate clear width under stated assumptions",
+    "Connect drawings to the parts list"
+  ],
+  "sections": [
+    {
+      "id": "carcass",
+      "title": "Distinguish shared and independent carcasses",
+      "text": "A three-bay shared carcass may use two outer sides and two dividers. Three independent two-sided modules use six side panels. Compare transport, assembly, support and serviceability, not clear width alone. Show doubled sides at module interfaces in the section and parts list; a single elevation line must not hide their thickness.",
+      "diagram": "new-M07-L02-carcass",
+      "caption": "Three bays do not imply the same panel count in both systems."
+    },
+    {
+      "id": "clearwidth",
+      "title": "Calculate clear width under stated assumptions",
+      "text": "Exercise assumptions: three independent modules, each 600 mm externally, with two 18 mm sides. Clear width is 600 − 18 − 18 = 564 mm. Their combined external width is 1800 mm before site gaps or fillers. The 564 mm is not automatically a shelf cutting size; shelf interfaces and the connection system determine that dimension.",
+      "diagram": "new-M07-L02-clearwidth",
+      "caption": "Exercise: 600 = 18 + 564 + 18 mm."
+    },
+    {
+      "id": "drawings",
+      "title": "Connect drawings to the parts list",
+      "text": "Assign unit codes W01, W02 and W03 and part codes shared by the elevation, section and list. The elevation shows allocation; the section explains depth, back and assembly relationships; a detail explains the joint. Record quantity, orientation, exposed edges and dimensional reference for each part. Check transport and assembly before release, avoiding duplicate shared dividers or omitted doubled sides.",
+      "diagram": "new-M07-L02-drawings",
+      "caption": "Use the same code in elevation, section and parts list."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The drawing shows three independent modules with two sides each, but the list contains only four sides. Correct it to six sides for this design, or explicitly approve a system change and update all documents. Do not combine a shared-carcass count with independent-module drawings.",
+    "decision": "Decision: the exercise uses six sides and 564 mm clear width per module."
+  },
+  "quiz": [
+    {
+      "id": "module-width",
+      "question": "What is the clear width of a 600 mm module with two 18 mm sides?",
+      "options": [
+        "564 mm",
+        "582 mm",
+        "600 mm"
+      ],
+      "correct": 0,
+      "explanation": "600 − 18 − 18 = 564 mm under the assumptions; shelf size still needs its interface detail."
+    }
+  ],
+  "assignment": {
+    "prompt": "Draw the three-module elevation and section, calculate clear width and list coded side panels.",
+    "fields": [
+      "Elevation and section",
+      "Clear-width calculation",
+      "Side codes and quantities"
+    ],
+    "criteria": [
+      "Six sides for independent modules",
+      "564 mm under the assumptions",
+      "Clear width distinct from shelf cut size"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Is an elevation alone enough for a parts list?",
+      "answer": "No. Sections and details establish depth, back construction, interfaces and concealed parts.",
+      "sectionId": "drawings"
+    }
+  ]
+}

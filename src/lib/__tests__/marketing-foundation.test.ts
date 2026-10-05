@@ -266,6 +266,8 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/image-gallery", rules)).toBe(true);
     expect(isDisallowed("/image-gallery/", rules)).toBe(true);
     expect(isDisallowed("/learn/builder/lesson-1", rules)).toBe(true);
+    expect(isDisallowed("/technical/learn/M01-L01", rules)).toBe(true);
+    expect(ROUTE_CATALOG.find((route) => route.source === "technical.learn.$lessonId.tsx")?.visibility).toBe("private");
     expect(isDisallowed("/kids", rules)).toBe(false);
     expect(isDisallowed("/kids/", rules)).toBe(false);
     expect(isDisallowed("/kids/level-1", rules)).toBe(true);

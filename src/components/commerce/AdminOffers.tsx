@@ -20,7 +20,12 @@ type Price = {
   original_minor: number;
   currency: string;
 };
-const packageName = { pro: "Pro", pro_plus: "Pro Plus", kids: "Masaarat Kids" };
+const packageName = {
+  pro: "Pro",
+  pro_plus: "Pro Plus",
+  kids: "Masaarat Kids",
+  technical: "Masaarat TECH",
+};
 const makeCode = () => `MAS-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
 export function AdminOffers({
   data,
@@ -130,8 +135,7 @@ export function AdminOffers({
     setMessage("");
     try {
       const queued = (await run("send_offer_invitations", { id: offer.id })) as
-        | { group_id: string }
-        | undefined;
+        { group_id: string } | undefined;
       if (!queued) return;
       setMessage(s.queued);
       const result = await dispatch({ data: { groupId: queued.group_id } });

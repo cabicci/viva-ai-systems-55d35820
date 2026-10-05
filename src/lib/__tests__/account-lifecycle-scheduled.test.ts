@@ -9,6 +9,7 @@ import * as enabled from "../../../supabase/functions/_shared/contact-mail-enabl
 import * as immediate from "../../../supabase/functions/_shared/immediate-mail-request";
 import * as contact from "../../../supabase/functions/_shared/contact-mail-worker";
 import * as commerce from "../../../supabase/functions/_shared/commerce-payment-mail-worker";
+import * as technical from "../../../supabase/functions/_shared/technical-mail-worker";
 const send = vi.fn();
 
 const compiled = ts.transpileModule(
@@ -52,6 +53,7 @@ beforeEach(() => {
       if (name.endsWith("/immediate-mail-request.ts")) return immediate;
       if (name.endsWith("/contact-mail-worker.ts")) return contact;
       if (name.endsWith("/commerce-payment-mail-worker.ts")) return commerce;
+      if (name.endsWith("/technical-mail-worker.ts")) return technical;
       if (name.endsWith("/resend.ts")) return { sendTransactionalEmail: send };
       if (name.endsWith("/account-lifecycle-worker.ts"))
         return { createAccountLifecycleWorker: () => ({ runBatch: batch }) };
@@ -96,6 +98,7 @@ describe("packaged lifecycle dependency boundary", () => {
     inspect(resolve("supabase/functions/_shared/immediate-mail-request.ts"));
     inspect(resolve("supabase/functions/_shared/contact-mail-worker.ts"));
     inspect(resolve("supabase/functions/_shared/commerce-payment-mail-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/technical-mail-worker.ts"));
   });
 });
 
@@ -204,6 +207,10 @@ describe("target-only immediate worker entrypoint", () => {
     expect((await call(undefined, JSON.stringify({ source: "cron" }))).status).toBe(200);
     expect(batch).toHaveBeenCalledTimes(1);
     expect(rpc.mock.calls.map((c) => c[0])).toContain("claim_account_welcome_emails_v2");
+    expect(rpc).toHaveBeenCalledWith("technical_mail_command", {
+      p_action: "claim",
+      p_data: {},
+    });
   });
 });
 

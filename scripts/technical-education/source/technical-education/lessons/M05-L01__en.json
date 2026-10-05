@@ -1,0 +1,72 @@
+{
+  "id": "M05-L01",
+  "locale": "en",
+  "title": "Choose a joint for its purpose",
+  "intro": "Joint selection begins with the interface function and load path. Compare contact geometry, assembly and disassembly before choosing a construction system.",
+  "goals": [
+    "Read contact geometry and load path",
+    "Compare assembly and disassembly",
+    "Record the joint decision and verification"
+  ],
+  "sections": [
+    {
+      "id": "contact",
+      "title": "Read contact geometry and load path",
+      "text": "A shelf transfers the load of its contents through its interfaces to the sides. A butt interface meets the shelf end against the side face; a housing seats it in a recess. Geometry alone does not establish capacity. Draw load direction, contact surfaces and connection method, distinguishing the construction principle from strength verification.",
+      "diagram": "new-M05-L01-contact",
+      "caption": "Trace contents → shelf → joint → side; geometry is not capacity."
+    },
+    {
+      "id": "assembly",
+      "title": "Compare assembly and disassembly",
+      "text": "Glued assembly may require simultaneous engagement and may not separate without damage. A mechanical system designed for disassembly can support separate transport, provided tools and connectors remain accessible. Draw an exploded sequence and identify permanent and removable joints. A finish or cover that blocks access can defeat the intended serviceability.",
+      "diagram": "new-M05-L01-assembly",
+      "caption": "Disassembly requires a feasible sequence and tool access."
+    },
+    {
+      "id": "choice",
+      "title": "Record the joint decision and verification",
+      "text": "Record part, material, thickness and interface purpose. Compare contact, positioning, tool access, appearance and disassembly. Identify the detail, connection system, product data and required performance review. Do not guess fastener diameter or length from teaching panel sizes; dimensional geometry and connection performance are separate checks.",
+      "diagram": "new-M05-L01-choice",
+      "caption": "A reasoned decision identifies the detail and pending performance checks."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The exercise unit must travel in parts and permit shelf replacement. A is permanently glued; B uses a system designed for disassembly with internal tool access. B better meets serviceability after material/system review. This functional comparison does not establish that B is structurally stronger.",
+    "decision": "Decision: develop B for serviceability while retaining performance verification."
+  },
+  "quiz": [
+    {
+      "id": "joint-check",
+      "question": "What is necessary for practical disassembly?",
+      "options": [
+        "A disassembly system and tool access",
+        "Appearance alone",
+        "Covering every connector"
+      ],
+      "correct": 0,
+      "explanation": "Disassembly needs a suitable system, sequence and actual access."
+    }
+  ],
+  "assignment": {
+    "prompt": "Sketch butt and housed shelf interfaces with load paths, then compare A/B in a disassembly decision card.",
+    "fields": [
+      "Interface and load sketches",
+      "Assembly and access sequence",
+      "Decision and verification requirements"
+    ],
+    "criteria": [
+      "Contact surfaces identified",
+      "Permanent/removable joints distinguished",
+      "No unverified capacity claim"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does a housing prove joint capacity?",
+      "answer": "It explains bearing geometry; capacity needs review of material, detail and the complete system.",
+      "sectionId": "contact"
+    }
+  ]
+}

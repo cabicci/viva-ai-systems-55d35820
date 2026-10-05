@@ -1,0 +1,72 @@
+{
+  "id": "M14-L02",
+  "locale": "en",
+  "title": "Carcasses, drawers, mirrors and details",
+  "intro": "Develop the carcass, drawers and mirror around identified systems, reconciling plans, sections and part schedules before fabrication.",
+  "goals": [
+    "Define carcass, support and datums",
+    "Coordinate drawers with their hardware",
+    "Reconcile mirror and fabrication documents"
+  ],
+  "sections": [
+    {
+      "id": "carcass",
+      "title": "Define carcass, support and datums",
+      "text": "Distinguish floor-bearing from wall-hung construction and trace load to the supporting substrate. Use clear datums for carcass, top and mirror, stating whether sizes are finished. The section explains sides, bottom, back and joints; it does not certify wall fixing. Review loads, materials, substrate and the selected support system.",
+      "diagram": "new-M14-L02-carcass",
+      "caption": "Construction geometry and support approval are separate."
+    },
+    {
+      "id": "drawers",
+      "title": "Coordinate drawers with their hardware",
+      "text": "Identify the slide system and its opening/box/front relationship, including available depth ahead of backs and services. Draw full extension with the chair and neighbours. If services require a divided or shaped drawer, document the geometry and connections according to the system. Size internal dividers from actual contents and preserve cleaning access.",
+      "diagram": "new-M14-L02-drawers",
+      "caption": "Hardware and service envelopes inform the drawer detail."
+    },
+    {
+      "id": "mirror",
+      "title": "Reconcile mirror and fabrication documents",
+      "text": "Specify mirror shape, location, support and edge treatment through the selected system, including service access for lighting. Do not infer glass thickness or adhesive from size alone. Use matching part identifiers across sections and schedules, showing finished faces and service zones. Propagate revisions throughout the fabrication issue.",
+      "diagram": "new-M14-L02-mirror",
+      "caption": "Use consistent part IDs and document revisions."
+    }
+  ],
+  "example": {
+    "title": "Worked case and decision",
+    "text": "The section shows a service route that conflicts with a full back in the part schedule. Hold that part’s release, coordinate back geometry and maintenance access, then update drawing and schedule to the same revision rather than leaving the installer to improvise.",
+    "decision": "Decision: resolve the conflict before issuing consistent documents."
+  },
+  "quiz": [
+    {
+      "id": "review",
+      "question": "How should a scheduled back/service conflict be handled?",
+      "options": [
+        "Hold, coordinate and revise documents",
+        "Improvise a site cut",
+        "Ignore the section"
+      ],
+      "correct": 0,
+      "explanation": "The drawing and schedule must describe the same reviewed solution."
+    }
+  ],
+  "assignment": {
+    "prompt": "Submit a plan, section and matching part schedule identifying drawer, mirror, support and service systems.",
+    "fields": [
+      "Carcass datums and support",
+      "Drawer/service system",
+      "Mirror and part schedule"
+    ],
+    "criteria": [
+      "Matching part IDs",
+      "No guessed fixing details",
+      "Service access shown"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Can mirror width alone determine its thickness?",
+      "answer": "No. Review the mirror system, support, edges and intended use with product data.",
+      "sectionId": "mirror"
+    }
+  ]
+}
