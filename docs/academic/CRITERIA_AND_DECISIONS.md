@@ -20,7 +20,7 @@ Baseline: 062b5f59dc56fabbce89c2034008fa1d8ef21114
 | --- | --- | --- |
 | AC-01 | New learning line: مسارات أكاديمي | Approved line identity and copy |
 | AC-02 | Curriculum based on supplied video and headings; academic depth | Outcomes, source mapping, original authored lessons and review |
-| AC-03 | 30 total learning hours, including video, reading, practice, assessment | Per-lesson workload ledger; pilot timing, no double counting |
+| AC-03 | More than 30 total study hours and expansion beyond 30 lessons, including video, reading, practice and assessment; latest owner decision supersedes the exact-30 target | Per-lesson workload ledger; pilot timing, no double counting |
 | AC-04 | Curriculum first, then one pilot, then owner acceptance before scaling | Explicit scope and pilot decisions |
 | AC-05 | Existing Masaarat identity, components, typography, navigation, intro/curriculum/lesson experience; AI pedagogy and technical presentation | Component reuse map and four-locale responsive visual checks |
 | AC-06 | One shared account and independent subscriptions; preserve existing entitlement rules | Server-side permission matrix and revocation tests |
@@ -120,3 +120,6 @@ Actual Egyptian and MSA pilot files passed render/stream/checksum checks and sam
 The hardened isolated TTS helper now stops for editorial review on provider content rejection for every locale; no automatic source-word replacement fallback remains. This revision does not retroactively change the provenance of already rendered pilot files. See AUDIO_REVIEW.md and review/media-receipts.json.
 
 Final AC-PILOT-01 observation: all four pilot MP4s have been produced and uploaded as new Bunny identities. ar-Gulf is 294.188 seconds and en is 317.628 seconds. All four initial readiness steps expired at processing status 2; none is marked playable. Ten sampled actual video frames were reviewed across the four locales; full listening and playback remain open. This completes the authored pilot review package, not the other 29 lessons or the integrated Academic product.
+
+## Latest owner scope revision — 2026-10-05, after pilot delivery work
+The owner requested increasing the lesson count beyond 30 to ensure total study time exceeds 30 hours. This supersedes the original exactly-30-hour target and its fixed 30-lesson design. The current 30-lesson/1,800-minute outline is retained as the baseline and explicitly marked SCOPE_EXPANSION_REQUIRED; it does not meet the new target. No final expanded count or new subject area is invented by this update. Expand with distinct learning outcomes within the seven supplied subject areas, then validate workload without padding, duplicate project hours or optional assistant time. Only the first lesson is fully authored; the pilot-acceptance gate before scale-up remains.

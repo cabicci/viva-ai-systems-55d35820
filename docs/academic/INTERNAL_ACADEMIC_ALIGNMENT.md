@@ -1,6 +1,6 @@
 # Internal editorial alignment — never imported into learner UI or RAG
 
-Checked 2026-10-05. This is a topic/outcome comparison with published university courses, not a claim of equivalence, endorsement or accreditation. Masaarat's 30-hour programme is its own introductory synthesis. No university text, slides, assignments, examples or illustrations are reproduced.
+Checked 2026-10-05. This is a topic/outcome comparison with published university courses, not a claim of equivalence, endorsement or accreditation. Masaarat's programme is its own introductory synthesis. The latest owner decision expands the target beyond 30 lessons and 30 study hours; the existing 30-lesson outline is a baseline, not proof of meeting that new target. No university text, slides, assignments, examples or illustrations are reproduced.
 
 ## Verified university anchors
 

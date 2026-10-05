@@ -37,9 +37,9 @@ for locale in ['ar-MSA','ar-Gulf','en']:
     else:raise AssertionError('Egyptian policy must reject other locales')
 course=json.loads((ROOT/'docs/academic/curriculum-proposal.json').read_text())
 lessons=[l for m in course['modules'] for l in m['lessons']]
-assert len(lessons)==30 and len({l['id'] for l in lessons})==30
-assert sum(sum(l['minutes'].values()) for l in lessons)==1800
-print('PASS: four locale packages; aligned outcomes/sections; quiz integrity; arithmetic; brand-only output; 1800-minute curriculum; context-only Egyptian policy/cache/locale isolation.')
+assert len(lessons)==course['outlinedLessonCount'] and len({l['id'] for l in lessons})==len(lessons)
+assert sum(sum(l['minutes'].values()) for l in lessons)==course['totalMinutes']
+print('PASS: four locale packages; aligned outcomes/sections; quiz integrity; arithmetic; brand-only output; 1800-minute baseline ledger (not expanded-target acceptance); context-only Egyptian policy/cache/locale isolation.')
 
 manifest=json.loads((HERE/'media-manifest.json').read_text())
 assert set(manifest)==set(locales)
@@ -50,3 +50,11 @@ for locale, item in manifest.items():
     else: assert item['embedUrl'] is None
 assert '_soften_text' not in (HERE/'media/vendor/gemini_tts.py').read_text()
 print('PASS: bounded Bunny manifest and unchanged narration source.')
+
+requirement=course['ownerRequirement']
+assert requirement['minimumStudyMinutesExclusive']==1800
+assert requirement['minimumLessonCountExclusive']==30
+meets_plan=course['totalMinutes']>1800 and len(lessons)>30
+if not meets_plan:
+    assert course['status']=='SCOPE_EXPANSION_REQUIRED'
+    print('OPEN REQUIREMENT: current outline needs expansion beyond 30 lessons and 1800 study minutes; actual learner timing remains unverified.')

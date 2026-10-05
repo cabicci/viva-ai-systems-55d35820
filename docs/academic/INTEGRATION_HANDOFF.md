@@ -1,6 +1,6 @@
 # Central Integration Handoff — Academic isolated pilot
 Date: 2026-10-05
-Status: ORIGINAL CURRICULUM AND FOUR-LOCALE PILOT READY FOR REVIEW; NOT MERGED OR RELEASE-READY
+Status: FOUR-LOCALE PILOT READY FOR REVIEW; CURRICULUM EXPANSION REQUIRED BY LATEST OWNER DECISION; NOT MERGED OR RELEASE-READY
 
 Repository: cabicci/viva-ai-systems-55d35820
 Branch: work/masaarat-academic-20261005
@@ -146,3 +146,6 @@ Visual sampling: four actual frames each for Egyptian/MSA, one each for Gulf/Eng
 - experiments/academic/validate.py
 - experiments/academic/vite.config.ts
 - remotion/src/academic/index.tsx
+
+## Superseding owner scope decision — 2026-10-05
+After the pilot work, the owner requested expansion beyond 30 lessons to exceed 30 total study hours. This supersedes the original fixed 30-lesson/30-hour target wherever historically described above. Current delivery is still a 30-lesson outline and one fully authored four-locale pilot. The outline now carries SCOPE_EXPANSION_REQUIRED; it does not meet the new target. Expanded count, distinct additional outcomes and measured workload are outstanding. Keep expansion inside the seven agreed subject areas, avoid duplicate hours and retain pilot acceptance before full content/media scale-up. No full-course completion or duration guarantee is claimed.

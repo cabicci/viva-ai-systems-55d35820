@@ -1,5 +1,5 @@
 {
-  "status": "PROPOSAL_AWAITING_OWNER_SCOPE_REVIEW",
+  "status": "SCOPE_EXPANSION_REQUIRED",
   "line": "academic",
   "workingTitle": "أساسيات إدارة الأعمال وبناء المشروعات",
   "locales": [
@@ -366,5 +366,19 @@
         }
       ]
     }
-  ]
+  ],
+  "outlinedLessonCount": 30,
+  "ownerRequirement": {
+    "minimumStudyMinutesExclusive": 1800,
+    "minimumLessonCountExclusive": 30,
+    "studyTimeIncludes": [
+      "video",
+      "reading",
+      "practice",
+      "assessment"
+    ],
+    "measurementStatus": "UNVERIFIED_PLANNING_ESTIMATE",
+    "changeDate": "2026-10-05",
+    "note": "Owner requested expansion beyond 30 lessons to exceed 30 study hours. Current outline does not yet meet the revised requirement; additional lesson scope remains to be designed."
+  }
 }
