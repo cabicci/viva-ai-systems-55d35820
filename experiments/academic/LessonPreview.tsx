@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ReadingDiagram } from "./ReadingDiagram";
+import { ReadingVisual, type ReadingVisualSpec } from "./ReadingVisual";
 import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
@@ -24,7 +25,13 @@ export type Lesson = Pick<
   | "assignment"
   | "faq"
   | "summary"
->;
+> & {
+  readingVisuals?: ReadingVisualSpec[];
+  example: typeof eg.example & { steps?: string[] };
+  assignment: typeof eg.assignment & {
+    rubric?: { criterion: string; excellent: string; adequate: string; needsRevision: string }[];
+  };
+};
 const labels = {
   "ar-EG": [
     "الشرح",
@@ -109,6 +116,11 @@ function PrintBook({ lesson }: { lesson: Lesson }) {
         <h2>{lesson.example.title}</h2>
         <p>{lesson.example.text}</p>
         <p>{lesson.example.decision}</p>
+        <ol>
+          {lesson.example.steps?.map((step, i) => (
+            <li key={i}>{step}</li>
+          ))}
+        </ol>
         <h2>{english ? "Practice" : "التطبيق"}</h2>
         <p>{lesson.assignment.prompt}</p>
         {lesson.assignment.fields.map((f) => (
@@ -254,6 +266,9 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                     <ReadingDiagram kind={s.id} english={english} />
                   </article>
                 ))}
+                {lesson.readingVisuals?.map((visual) => (
+                  <ReadingVisual key={visual.id} visual={visual} />
+                ))}
                 <Button onClick={() => setRead(true)}>
                   {read
                     ? english
@@ -269,6 +284,11 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
               <>
                 <h2 className="text-xl font-bold">{lesson.example.title}</h2>
                 <p className="academic-prose">{lesson.example.text}</p>
+                <ol className="list-inside list-decimal space-y-4 leading-8">
+                  {lesson.example.steps?.map((step, i) => (
+                    <li key={i}>{step}</li>
+                  ))}
+                </ol>
                 {lesson.id === "AC-BUS-M01-L01" && (
                   <ReadingDiagram kind="money" english={english} />
                 )}
@@ -371,6 +391,21 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
                       }
                     />
                   </label>
+                ))}
+                {lesson.assignment.rubric?.map((row, i) => (
+                  <details key={i} className="rounded-xl border p-4">
+                    <summary className="cursor-pointer font-bold">{row.criterion}</summary>
+                    <dl className="mt-3 space-y-2 leading-7">
+                      <dt className="font-bold">{english ? "Strong evidence" : "أداء متقن"}</dt>
+                      <dd>{row.excellent}</dd>
+                      <dt className="font-bold">
+                        {english ? "Meets requirements" : "يستوفي المطلوب"}
+                      </dt>
+                      <dd>{row.adequate}</dd>
+                      <dt className="font-bold">{english ? "Needs revision" : "يحتاج مراجعة"}</dt>
+                      <dd>{row.needsRevision}</dd>
+                    </dl>
+                  </details>
                 ))}
                 <ul className="list-inside list-disc space-y-3 leading-7">
                   {lesson.assignment.criteria.map((c) => (

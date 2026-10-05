@@ -3,8 +3,13 @@ import msa from "./ar-MSA.json";
 import gulf from "./ar-Gulf.json";
 import en from "./en.json";
 import type { Lesson } from "../LessonPreview";
+const expanded = import.meta.glob("./expanded/*.json", {
+  eager: true,
+  import: "default",
+}) as Record<string, Lesson[]>;
 const source = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
 export function courseLessons(locale: keyof typeof source): Lesson[] {
+  if (expanded[`./expanded/${locale}.json`]) return expanded[`./expanded/${locale}.json`];
   const english = locale === "en";
   return source[locale].map((item, index) => {
     const options = index % 2 ? [item.wrong, item.correct] : [item.correct, item.wrong];

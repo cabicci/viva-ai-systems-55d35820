@@ -1,0 +1,7 @@
+# Academic production and integration
+
+`expand_lessons.py` performs bounded original lesson expansion from committed authored briefs using the existing Gemini credential. Outputs are review-only, never imported or published automatically. The request caps 39 lessons × four locales × two attempts. The pilot is not regenerated. A refusal does not trigger safety-evasion rewriting. Secret values and provider bodies are not logged.
+
+`integration-candidate.sql` is deliberately outside `supabase/migrations`. It is a central-integration review candidate, not an applied migration. It reuses stored account/admin identity and existing commerce entitlement records. It creates inactive course/content, private downloads and server-graded quiz/progress delivery. Academic and assistant rights are independent. Missing video is nullable. Practice submission is not represented as academic grading.
+
+Central dependencies before activation: extend existing commerce package constraints/catalogue and all existing checkout/manual-payment/receipt/mail/coupon/invitation paths for `academic`; do not replace them. Academic uses Pro Plus prices, not rights. `academic_assistant` needs its own approved price/quota and provider gateway; it remains disabled. Add private bucket/import, existing deletion inventory registration, Stripe TEST routing, shared line registration and route integration. Do not enable the course until all 160 packages and required PDFs are editorially accepted and imported. Generated review JSON is not production payload approval.

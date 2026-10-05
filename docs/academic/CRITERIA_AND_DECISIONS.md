@@ -139,3 +139,11 @@ AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z f
 - Arabic core academic definitions are shared deliberately across Arabic locales; interaction prompts are contextual. This is not evidence of completed independent locale review.
 - New reusable methodology: MASAARAT_LESSON_PRODUCTION_METHODOLOGY.ar.md. ReadingDiagram is separate from the unchanged video Diagram component. Existing MP4s and production media are untouched.
 - Shared navigation/billing implementation and global registers remain centrally owned. Branch preview uses isolated adapters. No central coordination message, merge, publication or production change has occurred in this slice.
+
+## AC-FULL-EXECUTION-02 — 2026-10-05 — Continued owner-authorised implementation
+
+- Recovered the same branch after workspace maintenance; read latest recovery v143 and continuation v73. Main remains 062b5f59; no broad re-audit or changes to global registers.
+- Started bounded written expansion run 37358374247 at 6bbb5ca7eff684903140aa6107ad600cc8eb9aaa: 39 lessons × four contextual locales, at most two requests per package, review artifacts only. This is generation, not editorial acceptance or publication. The original pilot and existing media are untouched.
+- Prepared centrally reviewed SQL candidates outside auto-applied migrations. New Academic course/content/progress/download RPCs reuse existing verified identity, stored admin role and commerce entitlements. First approved introductory lesson remains free to authenticated users. Equal Pro Plus price does not grant Pro Plus rights. Assistant access requires a separate entitlement and remains disabled until price/quota/provider service decisions are configured.
+- Production lesson component contains no static lesson bodies or answer keys. Query keys include user/course/lesson/locale; denied mutation clears visible protected content. Practice submission is distinct from academic grading. Quiz completion follows the existing technical all-correct rule rather than an invented percentage threshold.
+- Shared navigation, complete commerce/mail/Stripe integration, erasure inventory and production activation still require central integration. No candidate SQL has been applied to production and no merge/publication occurred.

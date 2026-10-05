@@ -15,6 +15,32 @@ Each section must teach a DIFFERENT aspect: concept, reasoning/process, use, lim
 
 def validate(d,lesson_id,locale):
  assert d['id']==lesson_id and d['locale']==locale
+ def text(value):
+  assert isinstance(value,str) and value.strip(), 'missing_text'
+ for key in ['title','intro']:text(d[key])
+ for group in ['goals','summary']:
+  for value in d[group]:text(value)
+ for section in d['sections']:
+  for key in ['id','title','text','reflection']:text(section[key])
+ for key in ['title','text','decision']:text(d['example'][key])
+ for value in d['example']['steps']:text(value)
+ text(d['assignment']['prompt'])
+ for key in ['fields','criteria']:
+  for value in d['assignment'][key]:text(value)
+ for row in d['assignment']['rubric']:
+  for key in ['criterion','excellent','adequate','needsRevision']:text(row[key])
+ for row in d['faq']:
+  text(row['question']);text(row['answer'])
+ for q in d['quiz']:
+  text(q['id']);text(q['question'])
+  for choice in q['options']:text(choice)
+ for visual in d['readingVisuals']:
+  for key in ['id','title','caption']:text(visual[key])
+  for value in visual['columns']:text(value)
+  for row in visual['rows']:
+   for value in row:text(value)
+ assert len({v['id'] for v in d['readingVisuals']})==3
+ for value in d['videoVisualPlan']:text(value)
  assert len(d['goals'])==4 and len(d['sections'])==6 and len(d['quiz'])==6
  assert len({s['id'] for s in d['sections']})==6
  assert sum(len(s['text'].split()) for s in d['sections'])>=650,'reading_depth'
