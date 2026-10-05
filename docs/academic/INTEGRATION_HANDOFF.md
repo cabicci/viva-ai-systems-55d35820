@@ -56,3 +56,11 @@ Source groups: `docs/academic/`, `experiments/academic/`, `scripts/academic-educ
 Egyptian and MSA each have all 40 expanded/pilot lessons. Latest browser run exercised 80 lesson visits, 468 additional-lesson quiz questions and 234 reading visuals, exporting 80 workbooks. Shared-shell checks pass four locales/mobile/desktop, three other-line choices and zero account/payment calls. Gulf has 20 expanded additional lessons and English 19, plus each pilot; their complete assembly remains blocked on 39 missing contextual packages. Recovery arrays preserve successful output and corrections.
 
 Selected repair run 37364538469 failed before generation: the selection job was cancelled with no executed steps. One retry of that job was requested at 20:02Z. No provider calls or new output are inferred from a queued run. Final status must be verified before claiming 160 complete packages.
+
+## Delivered review artifacts and recovery boundary
+
+Content/recovery commit: `b47eb636c4de516c8e4f9f5cecb79c5d2e6411cc`; implementation checkpoint: `afac41c8d79ce5bc3cb10c0a67e48527ce6d7fdd`. `CHANGED_FILES.txt` enumerates exact branch paths against main `062b5f59`; `FINAL_CHECKPOINT.json` records verified counts, tests and outstanding requirements. Root and isolated TypeScript checks pass; candidate-source lint has no errors/warnings; isolated Vite build passes with the expected large offline-review bundle warning.
+
+Saved review HTML version 2 contains full Egyptian/MSA course packages and historical concise briefs for the two not-yet-completed locales. The separate workbook ZIP contains exactly 80 PDFs, clearly labelled Egyptian/MSA review only. The separate reusable methodology PDF remains available. None is represented as a complete four-locale production release.
+
+Recovery: retrieve only output from run 37364538469 attempt 2 if it becomes available; normalize successful packages and review retained failed drafts. Seed normalized staging from committed expanded Egyptian/MSA arrays and recovery Gulf/English arrays. Apply the exact correction ledger idempotently, then run complete-set assembly. Do not rerun successful content. The final 160-package private delivery and 960-chunk RAG staging cannot pass until the missing 39 contextual packages and their workbooks are complete. No autonomous follow-on review, merge or publication is claimed.

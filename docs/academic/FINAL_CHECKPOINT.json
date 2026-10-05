@@ -1,0 +1,53 @@
+{
+  "branch": "work/masaarat-academic-20261005",
+  "implementationCommit": "afac41c8d79ce5bc3cb10c0a67e48527ce6d7fdd",
+  "recoveryCommit": "b47eb636c4de516c8e4f9f5cecb79c5d2e6411cc",
+  "baseMain": "062b5f59dc56fabbce89c2034008fa1d8ef21114",
+  "writtenPackages": {
+    "ar-EG": 40,
+    "ar-MSA": 40,
+    "ar-Gulf": 21,
+    "en": 20
+  },
+  "completeCourseLocales": [
+    "ar-EG",
+    "ar-MSA"
+  ],
+  "missingContextualPackages": 39,
+  "privateWorkbooksExported": 80,
+  "editorialCorrections": 46,
+  "tests": {
+    "databaseAndUI": 19,
+    "python": 7,
+    "rootTypecheck": "PASS",
+    "isolatedTypecheck": "PASS",
+    "productionCandidateLint": "PASS",
+    "isolatedBuild": "PASS_WITH_REVIEW_BUNDLE_SIZE_WARNING",
+    "courseBrowserLessons": 80,
+    "expandedQuestions": 468,
+    "readingVisuals": 234,
+    "sharedShellLocales": 4
+  },
+  "editorialAcceptance": "PENDING_INDEPENDENT_REVIEW",
+  "learnerTiming": "UNVERIFIED",
+  "productionActivated": false,
+  "merged": false,
+  "published": false,
+  "existingMediaChanged": false,
+  "pendingRun": 37364538469,
+  "pendingRunAttempt": 2,
+  "pendingRunLastObserved": "select job queued after attempt 1 failed before generation",
+  "externalBlocker": "GitHub Actions selection job did not start in first attempt; one bounded retry remains queued. No provider output inferred.",
+  "assistantRequirements": [
+    "approved price",
+    "approved allowance/quota",
+    "central retrieval/provider integration"
+  ],
+  "centralRequirements": [
+    "shared route and line registry integration",
+    "review candidate SQL and private imports",
+    "complete Stripe TEST and existing mail/receipt/coupon/invitation journeys",
+    "editorial/localization acceptance",
+    "release decision"
+  ]
+}
