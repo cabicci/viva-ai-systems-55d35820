@@ -164,6 +164,7 @@ function PathBlock({
   const { locale, dir } = useLocale();
   const t = useUiString();
   const pathTitle = getCurriculumPathLabel(locale, path.id, "title");
+  const localeSearch = useLocaleLinkSearch();
   const pathTagline = getCurriculumPathLabel(locale, path.id, "tagline");
   const builderPathTitle = getCurriculumPathLabel(locale, "builder", "title");
   const builderPromptParts = t("curriculum.footer.builderPrompt").split("{path}");
@@ -353,6 +354,7 @@ function PathBlock({
             <Link
               to="/learn/$pathId/$lessonId"
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
+              search={localeSearch()}
             >
               <span className="truncate">
                 {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}

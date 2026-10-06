@@ -9,6 +9,10 @@ const ARABIC_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf"] as const satisfies readonl
 
 const STYLES_SOURCE = readFileSync(resolve(process.cwd(), "src/styles.css"), "utf8");
 const CURRICULUM_SOURCE = readFileSync(resolve(process.cwd(), "src/routes/curriculum.tsx"), "utf8");
+const CURRICULUM_LAYOUT_SOURCE = readFileSync(
+  resolve(process.cwd(), "src/components/site/CurriculumLayout.tsx"),
+  "utf8",
+);
 const DASHBOARD_SOURCE = readFileSync(resolve(process.cwd(), "src/routes/dashboard.tsx"), "utf8");
 const LEARN_SOURCE = readFileSync(
   resolve(process.cwd(), "src/routes/learn.$pathId.$lessonId.tsx"),
@@ -48,7 +52,8 @@ describe("locale learner directionality (inherited RTL regression)", () => {
   });
 
   it("binds curriculum and dashboard shells to locale dir", () => {
-    expect(CURRICULUM_SOURCE).toMatch(/dir=\{dir\}/);
+    expect(CURRICULUM_SOURCE).toContain("<CurriculumLayout");
+    expect(CURRICULUM_LAYOUT_SOURCE).toMatch(/dir=\{dir\}/);
     expect(DASHBOARD_SOURCE).toMatch(/dir=\{dir\}/);
   });
 
@@ -64,9 +69,13 @@ describe("locale learner directionality (inherited RTL regression)", () => {
   });
 
   it("uses locale-aware navigation arrows on learn route", () => {
-    expect(LEARN_SOURCE).toContain('const PreviousNavIcon = dir === "rtl" ? ArrowRight : ArrowLeft');
+    expect(LEARN_SOURCE).toContain(
+      'const PreviousNavIcon = dir === "rtl" ? ArrowRight : ArrowLeft',
+    );
     expect(LEARN_SOURCE).toContain('const NextNavIcon = dir === "rtl" ? ArrowLeft : ArrowRight');
-    expect(LEARN_SOURCE).not.toMatch(/<ArrowRight className="h-4 w-4" \/>\s*\{t\("learn\.nav\.previous"\)/);
+    expect(LEARN_SOURCE).not.toMatch(
+      /<ArrowRight className="h-4 w-4" \/>\s*\{t\("learn\.nav\.previous"\)/,
+    );
   });
 
   it("uses logical borders in IntroLessonRenderer concept and case-study blocks", () => {
