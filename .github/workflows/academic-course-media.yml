@@ -44,7 +44,7 @@ jobs:
           mkdir -p public/academic-fonts public/brand
           cp ../src/lib/lesson-visuals/v1/fonts/Tajawal-*.woff2 public/academic-fonts/
           cp ../public/brand/masaarat-logo-lockup.png public/brand/
-          npx --no-install tsc --noEmit --skipLibCheck --jsx react-jsx --target ES2022 --moduleResolution bundler --module esnext src/academic-course/index.tsx
+          npx --no-install tsc -p tsconfig.academic-course.json
       - name: Render actual silent frames in four locales
         run: |
           for locale in ar-EG ar-MSA ar-Gulf en; do
