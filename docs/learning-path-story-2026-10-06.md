@@ -28,6 +28,8 @@ No source lesson payload, approval, database migration, permission policy, prote
 
 ## Verification and remaining gate
 
+Release CI discovered newly reviewed transitive dependency advisories on 2026-10-06. The release branch pins sharp 0.35.5 (GHSA-wq5f-xc86-pv6w) and shell-quote 1.11.0 (GHSA-pqg4-j6r4-53mv), regenerating only their lock entries and sharp platform binaries. The dependency advisory gate remains enforced.
+
 - Production build passed locally (Vite client and server).
 - Project TypeScript, scoped ESLint and roadmap guard passed.
 - 61 selected journey/locale/access tests passed across nine files, including real nested route navigation and the admin refresh/focus regression.
