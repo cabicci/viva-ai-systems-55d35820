@@ -206,3 +206,7 @@ sync_status: owner instructed continuation after confirming missing cloud schema
 
 
 [roadmap:ACADEMIC-NAVIGATION-05] 2026-10-06 — Owner requests consistent learning-area navigation. /academic is now a general overview using the shared LineIntroduction; /academic/curriculum lists server-authorized course cards; each card opens its existing course modules/lessons. Navbar curriculum and return links preserve all four locales; unified login accepts the fixed curriculum destination. No entitlement/payment/media/publication flags changed. Private PDF import remains a separate authorized operational step; results recorded in the authoritative registers.
+
+[roadmap:SHARED-COURSE-CATALOGUES-06] 2026-10-06 — Owner clarified Technical and Academic curriculum buttons must both open stacked full-width course cards, each opening a separate course contents page. Reused one CourseCatalogue component and CurriculumLayout; moved existing furniture contents to /technical/courses/furniture and preserved all 80 lesson URLs/rights/progress. Academic remains server-authorized. No content, payment or media changes.
+
+The owner supplied screenshots showing reversed hero actions. Academic now uses the same unmodified LineIntroduction as Technical: primary plans button followed by curriculum link, with identical labels, order and styles in all four locales.

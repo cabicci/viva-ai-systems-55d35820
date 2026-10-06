@@ -13,11 +13,13 @@ export const CURRICULUM_ROW_CLASS =
 
 export function CurriculumLayout({
   line,
+  title,
   subtitle,
   summary,
   children,
 }: {
   line: LearningLine;
+  title?: string;
   subtitle: string;
   summary?: ReactNode;
   children: ReactNode;
@@ -49,7 +51,7 @@ export function CurriculumLayout({
                 <p className="text-sm font-semibold text-primary">{c[line]}</p>
               </div>
               <h1 className="break-words text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
-                {c.paths} <span className="text-gradient">— {c[line]}</span>
+                {title ?? c.paths} <span className="text-gradient">— {c[line]}</span>
               </h1>
               <p className="mt-3 max-w-2xl text-muted-foreground">{subtitle}</p>
               {summary && <div className="mt-6">{summary}</div>}

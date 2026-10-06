@@ -1,3 +1,4 @@
+import { getCourseCatalogueCopy } from "@/lib/course-catalogue-copy";
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import { useTechnicalProgress } from "@/lib/technical-education/client";
@@ -22,6 +23,7 @@ import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { useKidsParentState } from "@/lib/kids/parent-state";
 import { useKidsCurriculumTitles } from "@/lib/kids/use-curriculum-titles";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
+import { CourseCatalogue } from "./CourseCatalogue";
 
 const pastels = ["var(--pastel-lavender)", "var(--pastel-pink)", "var(--pastel-blue)"];
 
@@ -145,6 +147,25 @@ export function KidsCurriculum() {
   );
 }
 
+export function TechnicalCatalogue() {
+  const { locale } = useLocale();
+  const c = getLineCopy(locale);
+  return (
+    <CurriculumLayout line="technical" subtitle={getCourseCatalogueCopy(locale).intro}>
+      <CourseCatalogue
+        line="technical"
+        courses={TECHNICAL_TRACK_PREVIEWS.map((track) => ({
+          id: track.id,
+          title: c.furniture,
+          lessonCount: track.lessonCount,
+          moduleCount: track.moduleCount,
+          href: `/technical/courses/${track.id}?locale=${locale}`,
+        }))}
+      />
+    </CurriculumLayout>
+  );
+}
+
 export function TechnicalCurriculum() {
   const { locale } = useLocale();
   const { user } = useAuth();
@@ -158,6 +179,7 @@ export function TechnicalCurriculum() {
   return (
     <CurriculumLayout
       line="technical"
+      title={c.furniture}
       subtitle={c.preparingIntro}
       summary={
         <div className="flex flex-wrap gap-3 text-sm font-semibold">
@@ -170,6 +192,12 @@ export function TechnicalCurriculum() {
         </div>
       }
     >
+      <a
+        href={`/technical/curriculum?locale=${locale}`}
+        className="mb-6 inline-block font-bold text-primary"
+      >
+        {getCourseCatalogueCopy(locale).back}
+      </a>
       <div id="track-furniture" className="mb-10 rounded-2xl border border-primary/20 bg-card p-5">
         <p className="text-xs font-semibold text-primary">{c.firstTechnicalTrack}</p>
         <h2 className="mt-2 flex items-center gap-3 text-2xl font-black">

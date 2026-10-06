@@ -252,6 +252,13 @@ export const ROUTE_CATALOG = [
     sitemap: true,
   },
   {
+    source: "technical.courses.furniture.tsx",
+    pattern: "/technical/courses/furniture",
+    visibility: "utility",
+    sitemap: false,
+    robotsPath: "/technical/courses/",
+  },
+  {
     source: "technical.learn.$lessonId.tsx",
     pattern: "/technical/learn/*",
     visibility: "private",
