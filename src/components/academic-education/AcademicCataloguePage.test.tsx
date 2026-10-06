@@ -35,29 +35,35 @@ it("shows the review course and curriculum without retaining administrator catal
       : [],
   );
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  const page = (courseId?: string) => (
+  const page = (courseId?: string, contents = false) => (
     <QueryClientProvider client={client}>
-      <AcademicCataloguePage courseId={courseId} />
+      <AcademicCataloguePage courseId={courseId} contents={contents} />
     </QueryClientProvider>
   );
   const view = render(page());
-  expect(await screen.findByRole("link", { name: /Open curriculum/ })).toHaveAttribute(
+  expect(await screen.findByRole("link", { name: /Explore path/ })).toHaveAttribute(
     "href",
     "/academic/courses/AC-BUS?locale=en",
   );
   expect(screen.getByText("Administrator review — not yet released to learners.")).toBeTruthy();
   view.rerender(page("AC-BUS"));
+  expect(await screen.findByRole("link", { name: "Explore path steps" })).toHaveAttribute(
+    "href",
+    "/academic/courses/AC-BUS/contents?locale=en",
+  );
+  expect(screen.queryByRole("link", { name: /Business functions/ })).toBeNull();
+  view.rerender(page("AC-BUS", true));
   expect(await screen.findByRole("link", { name: /Business functions/ })).toHaveAttribute(
     "href",
     "/academic/learn/AC-BUS-M01-L02?locale=en",
   );
-  expect(screen.getByRole("link", { name: "All courses" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Back to path overview" })).toHaveAttribute(
     "href",
-    "/academic/curriculum?locale=en",
+    "/academic/courses/AC-BUS?locale=en",
   );
   state.user = { id: "ordinary" };
   view.rerender(page());
-  await screen.findByText("Courses will appear here when available.");
+  await screen.findByText("Paths will appear here when available.");
   expect(screen.queryByText("Business foundations")).toBeNull();
   state.user = null;
   view.rerender(page());

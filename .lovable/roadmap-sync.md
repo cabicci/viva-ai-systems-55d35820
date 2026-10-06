@@ -210,3 +210,7 @@ sync_status: owner instructed continuation after confirming missing cloud schema
 [roadmap:SHARED-COURSE-CATALOGUES-06] 2026-10-06 — Owner clarified Technical and Academic curriculum buttons must both open stacked full-width course cards, each opening a separate course contents page. Reused one CourseCatalogue component and CurriculumLayout; moved existing furniture contents to /technical/courses/furniture and preserved all 80 lesson URLs/rights/progress. Academic remains server-authorized. No content, payment or media changes.
 
 The owner supplied screenshots showing reversed hero actions. Academic now uses the same unmodified LineIntroduction as Technical: primary plans button followed by curriculum link, with identical labels, order and styles in all four locales.
+
+
+## [roadmap:path-story-20261006] Owner-approved unified learning journey
+Implement Masaarat → line paths → path introduction → optional stations → learning steps. Four contextual locales; shared admin/learner pages with existing server-authorised subscription bypass. One catalogue per line; legacy catalogue redirects. Preserve all source payloads, PDFs, Bunny mappings, production runs, billing rules, parental consent and profiles. Approval in owner chat 2026-10-06; About/vision/mission/values reflect the intellectual and knowledge growth narrative. Validation and deployment are reported separately.

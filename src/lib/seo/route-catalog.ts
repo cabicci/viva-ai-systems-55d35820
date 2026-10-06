@@ -9,6 +9,48 @@ export type RouteCatalogEntry = {
 };
 
 export const ROUTE_CATALOG = [
+  { source: "ai.index.tsx", pattern: "/ai", visibility: "public", sitemap: true },
+  {
+    source: "ai.paths.applied.tsx",
+    pattern: "/ai/paths/applied",
+    visibility: "public",
+    sitemap: true,
+  },
+  {
+    source: "kids.$levelId.contents.tsx",
+    pattern: "/kids/level-*/contents",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/kids/level-",
+  },
+  {
+    source: "academic.courses.$courseId.index.tsx",
+    pattern: "/academic/courses/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "academic.courses.$courseId.contents.tsx",
+    pattern: "/academic/courses/*/contents",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "technical.courses.furniture.index.tsx",
+    pattern: "/technical/courses/furniture",
+    visibility: "utility",
+    sitemap: false,
+    robotsPath: "/technical/courses/",
+  },
+  {
+    source: "technical.courses.furniture.contents.tsx",
+    pattern: "/technical/courses/furniture/contents",
+    visibility: "utility",
+    sitemap: false,
+    robotsPath: "/technical/courses/",
+  },
   { source: "index.tsx", pattern: "/", visibility: "public", sitemap: true },
   { source: "contact.tsx", pattern: "/contact", visibility: "public", sitemap: true },
   { source: "curriculum.tsx", pattern: "/curriculum", visibility: "public", sitemap: true },
@@ -221,7 +263,6 @@ export const ROUTE_CATALOG = [
     sitemap: false,
     robotsPath: "/system-state",
   },
-  { source: "ai.tsx", pattern: "/ai", visibility: "public", sitemap: true },
   { source: "about.tsx", pattern: "/about", visibility: "public", sitemap: true },
   { source: "kids.pricing.tsx", pattern: "/kids/pricing", visibility: "public", sitemap: true },
   { source: "technical.tsx", pattern: "/technical", visibility: "public", sitemap: false },
@@ -243,20 +284,13 @@ export const ROUTE_CATALOG = [
     source: "kids.curriculum.tsx",
     pattern: "/kids/curriculum",
     visibility: "public",
-    sitemap: true,
+    sitemap: false,
   },
   {
     source: "technical.curriculum.tsx",
     pattern: "/technical/curriculum",
     visibility: "public",
-    sitemap: true,
-  },
-  {
-    source: "technical.courses.furniture.tsx",
-    pattern: "/technical/courses/furniture",
-    visibility: "utility",
     sitemap: false,
-    robotsPath: "/technical/courses/",
   },
   {
     source: "technical.learn.$lessonId.tsx",
@@ -289,13 +323,6 @@ export const ROUTE_CATALOG = [
   {
     source: "academic.pricing.tsx",
     pattern: "/academic/pricing",
-    visibility: "private",
-    sitemap: false,
-    robotsPath: "/academic",
-  },
-  {
-    source: "academic.courses.$courseId.tsx",
-    pattern: "/academic/courses/*",
     visibility: "private",
     sitemap: false,
     robotsPath: "/academic",

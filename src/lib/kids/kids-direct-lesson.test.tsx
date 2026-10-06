@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { KidsLessonPage } from "../../routes/kids.$levelId.$lessonNumber";
 
@@ -78,14 +78,14 @@ describe("Kids direct lesson route", () => {
     mock.params = { levelId: "level-2", lessonNumber: "12" };
     page.rerender(<KidsLessonPage />);
     expect(
-      await screen.findByText("This lesson is not ready. Video and content were not loaded."),
+      await screen.findByText("This step is not ready. Video and content were not loaded."),
     ).toBeInTheDocument();
     expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Go to parent space" })).not.toBeInTheDocument();
   });
   it("sends an approved parent without a matching profile to the separate family page", () => {
     render(<KidsLessonPage />);
-    expect(screen.getByText("No profile for this level.")).toBeInTheDocument();
+    expect(screen.getByText("No profile for this path.")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Go to parent space" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Create child profile" })).not.toBeInTheDocument();
   });
@@ -96,7 +96,7 @@ describe("Kids direct lesson route", () => {
     expect(screen.getByText(/Use your existing Masaarat account/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Sign in" })).toBeInTheDocument();
     expect(
-      screen.queryByText("This lesson is not ready. Video and content were not loaded."),
+      screen.queryByText("This step is not ready. Video and content were not loaded."),
     ).not.toBeInTheDocument();
     expect(mock.invoke).not.toHaveBeenCalled();
   });
@@ -109,7 +109,7 @@ describe("Kids direct lesson route", () => {
     };
     mock.useKidsParentState.mockReturnValue(ready);
     const { rerender } = render(<KidsLessonPage />);
-    fireEvent.change(screen.getByLabelText("Choose a profile for this level"), {
+    fireEvent.change(screen.getByLabelText("Choose a profile for this path"), {
       target: { value: "profile-1" },
     });
     expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
@@ -119,10 +119,10 @@ describe("Kids direct lesson route", () => {
     rerender(<KidsLessonPage />);
     expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
     expect(mock.invoke).toHaveBeenCalledTimes(4);
-    expect(screen.queryByLabelText("Choose a profile for this level")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Choose a profile for this path")).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "Exit child profile" }));
-    expect(screen.getByLabelText("Choose a profile for this level")).toBeInTheDocument();
+    expect(screen.getByLabelText("Choose a profile for this path")).toBeInTheDocument();
     expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
   });
 
@@ -132,7 +132,7 @@ describe("Kids direct lesson route", () => {
       profiles: [{ id: "profile-1", level_id: "level-2", display_name: "Explorer" }],
     });
     const page = render(<KidsLessonPage />);
-    fireEvent.change(screen.getByLabelText("Choose a profile for this level"), {
+    fireEvent.change(screen.getByLabelText("Choose a profile for this path"), {
       target: { value: "profile-1" },
     });
     expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
@@ -146,7 +146,7 @@ describe("Kids direct lesson route", () => {
     );
     mock.params = { levelId: "level-2", lessonNumber: "2" };
     page.rerender(<KidsLessonPage />);
-    expect(await screen.findByRole("status", { name: "Opening lesson..." })).toBeInTheDocument();
+    expect(await screen.findByRole("status", { name: "Opening step..." })).toBeInTheDocument();
     expect(screen.queryByText(/Checking access|server grant/i)).not.toBeInTheDocument();
     expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
     expect(mock.invoke).toHaveBeenCalledTimes(4);
@@ -162,7 +162,7 @@ describe("Kids direct lesson route", () => {
     };
     mock.useKidsParentState.mockReturnValue(ready);
     const { rerender } = render(<KidsLessonPage />);
-    fireEvent.change(screen.getByLabelText("Choose a profile for this level"), {
+    fireEvent.change(screen.getByLabelText("Choose a profile for this path"), {
       target: { value: "profile-1" },
     });
     expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
@@ -186,7 +186,7 @@ describe("Kids direct lesson route", () => {
       ],
     });
     const page = render(<KidsLessonPage />);
-    fireEvent.change(screen.getByLabelText("Choose a profile for this level"), {
+    fireEvent.change(screen.getByLabelText("Choose a profile for this path"), {
       target: { value: "profile-1" },
     });
     expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
@@ -194,10 +194,29 @@ describe("Kids direct lesson route", () => {
 
     mock.params = { levelId: "level-1", lessonNumber: "1" };
     render(<KidsLessonPage />);
-    expect(screen.getByText(/This profile is for another level/)).toBeInTheDocument();
-    expect(screen.queryByLabelText("Choose a profile for this level")).not.toBeInTheDocument();
+    expect(screen.getByText(/This profile is for another path/)).toBeInTheDocument();
+    expect(screen.queryByLabelText("Choose a profile for this path")).not.toBeInTheDocument();
     expect(mock.invoke).toHaveBeenCalledTimes(2);
     fireEvent.click(screen.getByRole("button", { name: "Exit child profile" }));
-    expect(screen.getByLabelText("Choose a profile for this level")).toBeInTheDocument();
+    expect(screen.getByLabelText("Choose a profile for this path")).toBeInTheDocument();
+  });
+  it("preserves admin scope during parent refresh and rechecks both protected endpoints on focus", async () => {
+    mock.isAdmin = true;
+    mock.useKidsParentState.mockReturnValue({ state: "ready", profiles: [] });
+    const page = render(<KidsLessonPage />);
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    mock.useKidsParentState.mockReturnValue({ state: "checking", profiles: [] });
+    page.rerender(<KidsLessonPage />);
+    expect(screen.getByText("Opened protected lesson")).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(2);
+    await act(async () => window.dispatchEvent(new Event("focus")));
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(4);
+    mock.invoke.mockResolvedValue({ data: null, error: new Error("Access denied") });
+    await act(async () => window.dispatchEvent(new Event("focus")));
+    expect(
+      await screen.findByText("This step is not ready. Video and content were not loaded."),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Opened protected lesson")).toBeNull();
   });
 });

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LearningLineCards } from "@/components/site/LearningLines";
+import { PathStory } from "@/components/site/PathStory";
 import { getLineCopy, lineMeta } from "@/lib/learning-lines";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -23,6 +24,7 @@ function About() {
         <p className="my-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           {c.aboutIntro}
         </p>
+        <PathStory full />
         <LearningLineCards />
         <p className="mt-8 font-bold">{c.shared}</p>
         <p className="mt-2 text-muted-foreground">{c.separate}</p>

@@ -1,24 +1,19 @@
 import type { SupportedLocale } from "@/lib/locale/types";
-
+import { getPathStoryCopy } from "@/lib/path-story";
 export function getCourseCatalogueCopy(locale: SupportedLocale) {
-  return locale === "en"
-    ? {
-        intro: "Choose a course to explore its modules and lessons.",
-        open: "Open curriculum",
-        back: "All courses",
-        lessons: "lessons",
-        modules: "modules",
-      }
-    : {
-        intro:
-          locale === "ar-EG"
-            ? "اختار المنهج عشان تشوف وحداته ودروسه."
-            : locale === "ar-Gulf"
-              ? "اختر المنهج عشان تشوف وحداته ودروسه."
-              : "اختر المنهج لاستعراض وحداته ودروسه.",
-        open: "افتح المنهج",
-        back: "كل المناهج",
-        lessons: "درسًا",
-        modules: "وحدات",
-      };
+  const c = getPathStoryCopy(locale);
+  return {
+    intro:
+      locale === "en"
+        ? "Choose a path, explore its overview, then begin its steps."
+        : locale === "ar-EG"
+          ? "اختار مسارك، اعرف هتتعلّم إيه، وبعدها ابدأ خطواتك."
+          : locale === "ar-Gulf"
+            ? "اختر مسارك، شوف وش بتتعلّم، وبعدها ابدأ خطواتك."
+            : "اختر مسارك، وتعرّف إلى محتواه، ثم ابدأ خطواتك.",
+    open: c.open,
+    back: c.back,
+    lessons: c.steps,
+    modules: c.stations,
+  };
 }

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LearningLineCards } from "@/components/site/LearningLines";
+import { PathStory } from "@/components/site/PathStory";
 import { getLineCopy } from "@/lib/learning-lines";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -32,6 +33,7 @@ export function Index() {
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{c.platformIntro}</p>
           </header>
           <LearningLineCards />
+          <PathStory />
           <div className="mt-10 text-center">
             <p className="font-bold">{c.shared}</p>
             <p className="mt-2 text-sm text-muted-foreground">{c.separate}</p>

@@ -79,6 +79,9 @@ export function KidsLessonPage() {
     ((adminReview || state === "ready") &&
       (!profileChecked || (selected && !denied && !visibleResult && (loading || attempt > 0))));
 
+  const scopedParentState = adminReview ? "ready" : state;
+  const scopedProfiles = adminReview ? null : profiles;
+
   useEffect(() => {
     setResult(null);
     setDenied(false);
@@ -90,19 +93,47 @@ export function KidsLessonPage() {
       setProfileChecked(true);
       return;
     }
-    if (state !== "ready" || !user?.id) {
+    if (scopedParentState !== "ready" || !user?.id) {
       setProfileId("");
       return;
     }
     const stored = getActiveKidsProfile(user.id);
-    if (stored && !profiles.some((profile) => profile.id === stored)) {
+    if (stored && !(scopedProfiles ?? []).some((profile) => profile.id === stored)) {
       clearActiveKidsProfile(user.id);
     }
-    const current = profiles.find((profile) => profile.id === stored);
+    const current = (scopedProfiles ?? []).find((profile) => profile.id === stored);
     setProfileId(current?.id ?? "");
     if (current?.level_id === level) setAttempt(1);
     setProfileChecked(true);
-  }, [levelId, lessonText, locale, state, profiles, user?.id, level, adminReview]);
+  }, [
+    levelId,
+    lessonText,
+    locale,
+    scopedParentState,
+    scopedProfiles,
+    user?.id,
+    level,
+    adminReview,
+  ]);
+
+  // The administrator uses the same protected delivery endpoints. A parent-state
+  // refresh cannot erase that scope, but focus still rechecks its server grant.
+  useEffect(() => {
+    if (!adminReview) return;
+    const recheck = () => {
+      setResult(null);
+      setAttempt((value) => value + 1);
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") recheck();
+    };
+    window.addEventListener("focus", recheck);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.removeEventListener("focus", recheck);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [adminReview]);
 
   // Returning to a tab rechecks the parent grant. Do not redisplay a lesson
   // from memory after that check; its own entitlement may have changed.
@@ -158,7 +189,7 @@ export function KidsLessonPage() {
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-7 px-4 py-10 md:py-16">
           <Link
-            to="/kids/$levelId"
+            to="/kids/$levelId/contents"
             params={{ levelId }}
             search={localeSearch()}
             className="text-sm font-bold text-primary hover:underline"

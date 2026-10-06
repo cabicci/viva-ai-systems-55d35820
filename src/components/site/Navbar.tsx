@@ -48,7 +48,6 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
   ];
   const links = line
     ? [
-        { to: LINE_ROUTES[line], label: c.overview },
         {
           to: LINE_CURRICULUM[line],
           label: c.paths,

@@ -1,3 +1,7 @@
+import { PathIntroduction } from "@/components/site/PathIntroduction";
+import { getPathStoryCopy, getPathDefinition } from "@/lib/path-story";
+import { getLineCopy } from "@/lib/learning-lines";
+import { getAcademicStationTitle } from "@/lib/academic-education/station-titles";
 import { getCourseCatalogueCopy } from "@/lib/course-catalogue-copy";
 import { useAuth } from "@/lib/auth-context";
 import { useQuery } from "@tanstack/react-query";
@@ -13,7 +17,13 @@ import { academicCatalogue } from "@/lib/academic-education/client";
 import { getAcademicCopy } from "@/lib/academic-education/copy";
 
 /** Ready for central route registration; public metadata never contains lesson bodies. */
-export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
+export function AcademicCataloguePage({
+  courseId,
+  contents = false,
+}: {
+  courseId?: string;
+  contents?: boolean;
+}) {
   const { user, loading } = useAuth();
   const { locale } = useLocale();
   const c = getAcademicCopy(locale);
@@ -24,11 +34,19 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
   });
   const course = query.data?.find((item) => item.id === courseId);
   const modules = [...new Set(course?.lessons.map((lesson) => lesson.moduleId) ?? [])];
+  if (course && !contents)
+    return (
+      <PathIntroduction
+        line="academic"
+        title={course.title}
+        contentsHref={`/academic/courses/${course.id}/contents`}
+      />
+    );
   return (
     <CurriculumLayout
       line="academic"
-      title={course?.title}
-      subtitle={getCourseCatalogueCopy(locale).intro}
+      title={course ? getPathStoryCopy(locale).contents : undefined}
+      subtitle={course ? course.title : getLineCopy(locale).academicIntro}
     >
       {query.data?.some((item) => item.reviewOnly) && (
         <p role="status" className="rounded-xl border p-4">
@@ -41,19 +59,24 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
         <div role="alert">
           <p>{c.unavailable}</p>
           <button className="mt-3 underline" onClick={() => void query.refetch()}>
-            {locale === "en" ? "Retry" : "إعادة المحاولة"}
+            {getPathStoryCopy(locale).retry}
           </button>
         </div>
       ) : courseId && !course ? (
         <p>{c.empty}</p>
       ) : course ? (
         <div className="space-y-6">
-          <a className="font-bold text-primary" href={`/academic/curriculum?locale=${locale}`}>
-            {getCourseCatalogueCopy(locale).back}
+          <a
+            className="font-bold text-primary"
+            href={`/academic/courses/${course.id}?locale=${locale}`}
+          >
+            {getPathStoryCopy(locale).backPath}
           </a>
           {modules.map((module, index) => (
             <section className={CURRICULUM_MODULE_CLASS} key={module}>
-              <CurriculumSectionHeader title={`${c.unit} ${index + 1}`} />
+              <CurriculumSectionHeader
+                title={`${c.unit} — ${getAcademicStationTitle(module, locale) ?? String(index + 1)}`}
+              />
               {course.lessons
                 .filter((lesson) => lesson.moduleId === module)
                 .map((lesson) => (
@@ -74,7 +97,9 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
           line="academic"
           courses={query.data.map((item) => ({
             id: item.id,
-            title: item.title,
+            title: `${getPathStoryCopy(locale).path} ${item.title}`,
+            description:
+              item.id === "AC-BUS" ? getPathDefinition("academic", locale).intro : undefined,
             lessonCount: item.lessons.length,
             moduleCount: new Set(item.lessons.map((lesson) => lesson.moduleId)).size,
             href: `/academic/courses/${item.id}?locale=${locale}`,

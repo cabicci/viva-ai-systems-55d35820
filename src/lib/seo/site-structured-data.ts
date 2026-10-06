@@ -8,7 +8,7 @@ export const SITE_STRUCTURED_DATA = {
       alternateName: "masaarat.ai",
       url: "https://masaarat.ai",
       description:
-        "منصة تعليمية تجمع الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني، وتربط الفهم بالتطبيق.",
+        "منصة تعليمية تجمع الذكاء الاصطناعي وتعليم الأطفال والتعليم الفني، وتربط الفهم بالتطبيق.",
       inLanguage: "ar",
       areaServed: { "@type": "Place", name: "MENA" },
     },

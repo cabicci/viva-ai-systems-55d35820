@@ -27,26 +27,21 @@ export function LineLogo({ line, className = "" }: { line: LearningLine; classNa
   );
 }
 
-export function LearningLineCards({ learning = false }: { learning?: boolean }) {
+export function LearningLineCards({ learning = false }: { learning?: boolean } = {}) {
   const { locale } = useLocale();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
   return (
     <section
       id="learning-lines"
+      data-catalogue-view={learning ? "account" : "public"}
       aria-label={c.choose}
       className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
     >
       {LEARNING_LINES.map((line) => (
         <Link
           key={line}
-          to={
-            learning && line === "ai"
-              ? "/dashboard"
-              : learning && line === "kids"
-                ? "/kids/family"
-                : LINE_ROUTES[line]
-          }
+          to={LINE_ROUTES[line]}
           search={search()}
           className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         >
@@ -56,15 +51,9 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
           <div className="flex flex-1 flex-col p-6">
             <h2 className="text-center text-2xl font-black">{c[line]}</h2>
             <p className="mt-4 flex-1 leading-relaxed text-muted-foreground">{c[`${line}Intro`]}</p>
-            {line === "technical" && (
-              <p className="mt-4 text-xs font-semibold text-primary">{c.preparing}</p>
-            )}
+
             <span className="mt-6 flex items-center justify-between gap-2 font-bold text-primary">
-              {learning && line === "ai"
-                ? c.continueAI
-                : learning && line === "kids"
-                  ? c.family
-                  : c.enter}
+              {c.enter}
               <ArrowUpRight className="h-5 w-5 shrink-0 rtl:-scale-x-100" aria-hidden />
             </span>
           </div>
@@ -74,7 +63,13 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
   );
 }
 
-export function LineIntroduction({ line }: { line: LearningLine }) {
+export function LineIntroduction({
+  line,
+  contentsHref,
+}: {
+  line: LearningLine;
+  contentsHref?: string;
+}) {
   const { locale } = useLocale();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
@@ -104,7 +99,7 @@ export function LineIntroduction({ line }: { line: LearningLine }) {
               {c.plans}
             </Link>
             <Link
-              to={LINE_CURRICULUM[line]}
+              to={contentsHref ?? LINE_CURRICULUM[line]}
               search={search()}
               className="ms-4 mt-6 inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
             >
