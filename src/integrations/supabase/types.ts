@@ -117,6 +117,57 @@ export type Database = {
           },
         ]
       }
+      academic_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          id: string
+          invoice_id: string
+          kind: string
+          lease_until: string | null
+          locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id: string
+          kind: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id?: string
+          kind?: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          subscription_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       academic_progress: {
         Row: {
           course_id: string
@@ -2089,6 +2140,10 @@ export type Database = {
         }
         Returns: Json
       }
+      academic_mail_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
       activate_rag_index_version: {
         Args: { p_version_key: string }
@@ -2439,6 +2494,10 @@ export type Database = {
           p_market_code: string
           p_user_id: string
         }
+        Returns: Json
+      }
+      get_academic_stripe_portal_context: {
+        Args: { p_user_id: string }
         Returns: Json
       }
       get_admin_insights: { Args: never; Returns: Json }
