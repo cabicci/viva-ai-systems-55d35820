@@ -9,10 +9,7 @@ const ARABIC_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf"] as const satisfies readonl
 
 const ARABIC_LETTER = /[\u0600-\u06FF]/;
 
-const CURRICULUM_SOURCE = readFileSync(
-  resolve(process.cwd(), "src/routes/curriculum.tsx"),
-  "utf8",
-);
+const CURRICULUM_SOURCE = readFileSync(resolve(process.cwd(), "src/routes/curriculum.tsx"), "utf8");
 
 const PAYWALL_SOURCE = readFileSync(
   resolve(process.cwd(), "src/components/learn/PaywallCard.tsx"),
@@ -44,6 +41,11 @@ const LATIN_EYEBROW_KEYS = new Set([
 ]);
 
 describe("locale learner chrome (Phase 12.5D-A)", () => {
+  it.each(SUPPORTED_LOCALES)("keeps the station label placeholder contract in %s", (locale) => {
+    const template = getUiString(locale, "curriculum.path.pathEyebrow");
+    expect(template.match(/\{[^}]+\}/g)).toEqual(["{path}"]);
+    expect(template.replace("{path}", "Business")).not.toMatch(/\{[^}]+\}/);
+  });
   it("serves all new keys for all four locales", () => {
     for (const locale of SUPPORTED_LOCALES) {
       for (const key of LEARNER_CHROME_12_5D_A_KEYS) {
