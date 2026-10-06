@@ -8,8 +8,8 @@ import eg from "./content/ar-EG.json";
 import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
 import en from "./content/en.json";
-import mediaManifest from "./media-manifest.json";
 import courseMediaManifest from "./course-media-manifest.json";
+import { resolveReviewMedia } from "./review-media";
 import "./style.css";
 
 export const packages = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
@@ -206,24 +206,8 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const locale = lesson.locale as Locale,
     english = locale === "en",
     t = labels[locale];
-  const media = (
-    lesson.id === "AC-BUS-M01-L01"
-      ? mediaManifest[locale]
-      : (courseMediaManifest as Record<string, {lessonId:string;locale:string;embedUrl:string;durationSeconds:number;playbackReady:boolean}>)[`${lesson.id}__${locale}`]
-        ?? { embedUrl: null, durationSeconds: null, playbackReady: false }
-  ) as {
-    embedUrl: string | null;
-    durationSeconds: number | null;
-    playbackReady: boolean;
-  };
-  const videoUrl =
-    media.playbackReady &&
-    media.embedUrl &&
-    /^https:\/\/iframe\.mediadelivery\.net\/embed\/\d+\/[a-f0-9-]+\?autoplay=false&preload=false$/.test(
-      media.embedUrl,
-    )
-      ? media.embedUrl
-      : null;
+  const media = resolveReviewMedia(courseMediaManifest, lesson.id, locale);
+  const videoUrl = media?.embedUrl ?? null;
   const [tab, setTab] = useState(0),
     [answers, setAnswers] = useState<Record<string, number>>({}),
     [submitted, setSubmitted] = useState(false),

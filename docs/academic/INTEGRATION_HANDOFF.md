@@ -1,16 +1,20 @@
 # Masaarat Academic — current integration handoff
 
-## 2026-10-06 continuation: complete product requested, media preparation saved
+## 2026-10-06 written-first integration authorized; media runs independently
 
-The owner resumed the paused work and requested the final product including videos, toward central merge. Recovery v145 and Continuation v75 were retrieved; the leading ACADEMIC-WRITTEN-HANDOFF-02 confirms the written checkpoint. Remote main and Academic remained at `062b5f59` / `5778f143` before this continuation. Central shared integration ownership is unchanged.
+The owner explicitly asked central integration to merge the written work now while videos finish independently. The written deliverables remain 40 lessons, 160 contextual packages and 160 PDFs. Start central integration now; remaining media is not a written-release prerequisite. Merge is distinct from publication: the authorization, editorial and TEST integration gates below still apply.
 
-`scripts/academic-education/media_plan.py` deterministically prepares exactly 156 additional lesson/locale narration plans from the corrected source packages, preserving the four existing pilot identities. Each plan retains the authored bespoke visual direction and source checksum; no reading image/component is copied. Narration includes explanations, worked cases, application prompts and summaries, excluding quiz answer keys and hidden rubrics. Sentence grouping preserves words and quantities. These are production inputs, **not rendered videos or accepted storyboards**.
+The owner accepted the actual four pilot voices with “تمام زي الفل كمل” on 2026-10-06 at 13:25:53 +03:00. This closes the pilot listening gate for scaling; it does not certify every future rendered video. The four existing Bunny Stream pilot identities in library 670679 are preserved.
 
-`MEDIA_PREPARATION.json` records the current preparation counts. Six new regression checks plus the existing seven Python checks passed (13 total). No full-course renderer, TTS request, new Bunny upload, production import, merge or publication occurred. The pre-existing listening gate in `AUDIO_REVIEW.md` remains unfulfilled; continuing toward the product is not recorded as an assertion that the owner heard and accepted the actual pilot. Next: obtain actual pilot audio acceptance/corrections, implement the bespoke scene directions, then render/upload only the additional exact lesson/locale identities. Central integration and assistant commercial decisions remain open.
+Active production: https://github.com/cabicci/viva-ai-systems-55d35820/actions/runs/37451264552 at immutable source commit `f6617cfcf7ac7aa72284b0144baeb4bda81f753b`. Preparation passed 19 Python checks, isolated renderer TypeScript and actual four-locale silent frame rendering. At handoff, the four AC-BUS-M01-L02 locale jobs are in progress; no additional completed-upload count has been verified. If those succeed, the remaining 152 requested identities run automatically, maximum four in parallel. This is a running workflow, not a promise that all outputs will succeed.
 
-The preparation outputs under `tmp/academic-course-media/plans` are reproducible from the committed source; do not treat their existence as paid production progress. Reproduction: `python scripts/academic-education/media_plan.py`.
+Keep `work/masaarat-academic-20261005` and the active run available through media collection. Do not cancel/restart successful production, delete/rebase/reset the branch, replace existing Bunny media, or change in-flight narration/source/voice/render policy as part of the written merge. Queue subsequent content corrections separately with exact affected lesson/locale identities.
 
-Updated 2026-10-05T21:37:05.844845+00:00. This document replaces historical status sections; git history retains them.
+The run uploads new videos to Bunny and retains exact receipts. It does not activate production database records or automatically commit the media manifest. Collect the `academic-course-media-collection` artifact (14-day retention), validate exact lesson/locale/source hashes and playback readiness, and apply a small follow-up media mapping update. Only ready exact matches may display. Missing/unready video tabs stay hidden; no pilot fallback or autoplay. A follow-up mapping deployment may be needed, but the written curriculum does not need rebuilding or regenerating.
+
+The preview now consumes the exact course registry, and its checks handle partial video availability. Two lookup regression tests and both preview/project TypeScript checks passed. The written 160-lesson browser report below remains the previous checkpoint; this update is not a fresh full browser acceptance claim.
+
+`MEDIA_PREPARATION.json` records this production snapshot. Shared routes, SQL review/private import, entitlements and TEST journeys remain central ownership. Academic assistant remains disabled until its separate price/quota and provider decisions are approved. No merge, production import or publication has been performed by this Academic room.
 
 ## Ownership and delivery boundary
 
@@ -43,7 +47,7 @@ Generation produced structural and content errors. Selected failed packages were
 
 Browser/PDF/content counts and final validation status are recorded in the companion validation reports produced by this branch. Do not substitute old brief-only browser checks for the expanded-content report.
 
-Existing four pilot Bunny assets were verified ready in run 37332447947. Browser playback encountered ERR_EMPTY_RESPONSE in this environment; full listening, Egyptian per-word pronunciation and player acceptance remain open. No new media generation was triggered in this continuation.
+Existing four pilot Bunny assets were verified ready in run 37332447947. The earlier browser playback attempt encountered ERR_EMPTY_RESPONSE. Owner pilot voice acceptance subsequently closed the listening gate as recorded above; new-video playback and pronunciation checks remain per-output acceptance work.
 
 ## Central integration requirements
 
@@ -77,4 +81,4 @@ The exact correction ledger contains 197 corrections, including answer indices, 
 
 English recovery used run 37371816157, retained-draft repairs and one original local lesson completion. Gulf recovery used the dedicated run 37374230148 after runnerless matrix attempts: five provider-valid outputs, thirteen retained drafts completed locally and one original local contextual lesson. These provider runs ended with failed raw-draft validation; their workflow conclusions are not represented as passing CI. Final compiled packages passed the local assembly and rendering gates. Completed outputs were not regenerated. Compiled locale arrays are the durable source; obsolete partial recovery arrays have been removed. Existing media were not modified.
 
-The remaining requirements are central integration and acceptance, not missing written content: shared routes/navigation, candidate SQL/private import review, complete TEST commerce/mail journeys, independent contextual/academic acceptance, learner timing, the assistant price/quota and gateway, and media listening/remaining videos. Written release need not wait for all videos. No merge, publication or production setting change occurred.
+The remaining requirements are central integration and acceptance, not missing written content: shared routes/navigation, candidate SQL/private import review, complete TEST commerce/mail journeys, independent contextual/academic acceptance, learner timing, the assistant price/quota and gateway, and remaining-video acceptance. Written release need not wait for all videos. No merge, publication or production setting change occurred.
