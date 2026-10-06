@@ -146,13 +146,20 @@ export function welcomeContent(name: unknown, localeInput: unknown) {
   };
 }
 export function subscriptionContent(
-  plan: "pro" | "pro_plus" | "technical",
+  plan: "pro" | "pro_plus" | "technical" | "academic",
   kind: "activated" | "renewed",
   name: unknown,
   localeInput: unknown,
 ) {
   const locale = mailLocale(localeInput);
-  const label = plan === "technical" ? "TECH" : plan === "pro_plus" ? "Pro Plus" : "Pro";
+  const label =
+    plan === "academic"
+      ? "Academic"
+      : plan === "technical"
+        ? "TECH"
+        : plan === "pro_plus"
+          ? "Pro Plus"
+          : "Pro";
   const first = kind === "activated";
   const copy = {
     "ar-EG": [
@@ -185,7 +192,11 @@ export function subscriptionContent(
       title,
       body,
       action,
-      plan === "technical" ? "/technical/curriculum" : "/dashboard",
+      plan === "academic"
+        ? "/academic"
+        : plan === "technical"
+          ? "/technical/curriculum"
+          : "/dashboard",
     ),
   };
 }
@@ -211,9 +222,11 @@ export function paymentConfirmationContent(input: PaymentConfirmation) {
       ? "Pro Plus"
       : input.package === "kids"
         ? "Kids"
-        : input.package === "technical"
-          ? "Masaarat TECH"
-          : "Pro";
+        : input.package === "academic"
+          ? "Masaarat Academic"
+          : input.package === "technical"
+            ? "Masaarat TECH"
+            : "Pro";
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,
@@ -254,9 +267,11 @@ export function receiptReviewContent(input: PaymentConfirmation) {
       ? "Pro Plus"
       : input.package === "kids"
         ? "Kids"
-        : input.package === "technical"
-          ? "Masaarat TECH"
-          : "Pro";
+        : input.package === "academic"
+          ? "Masaarat Academic"
+          : input.package === "technical"
+            ? "Masaarat TECH"
+            : "Pro";
   const amount = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar", {
     style: "currency",
     currency: input.currency,
@@ -302,7 +317,7 @@ export function invitationContent(input: {
 }) {
   if (
     !/^[0-9a-f-]{36}$/i.test(input.id) ||
-    !["pro", "pro_plus", "kids", "technical"].includes(input.package) ||
+    !["pro", "pro_plus", "kids", "technical", "academic"].includes(input.package) ||
     !Number.isInteger(input.duration_days) ||
     input.duration_days < 1 ||
     input.duration_days > 1095 ||
@@ -316,9 +331,11 @@ export function invitationContent(input: {
       ? "Pro Plus"
       : input.package === "kids"
         ? "Kids"
-        : input.package === "technical"
-          ? "Masaarat TECH"
-          : "Pro";
+        : input.package === "academic"
+          ? "Masaarat Academic"
+          : input.package === "technical"
+            ? "Masaarat TECH"
+            : "Pro";
   const deadline = new Date(input.deadline).toISOString().slice(0, 10);
   const title = english
     ? "Your Masaarat invitation"

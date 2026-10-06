@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AcademicRouteImport } from './routes/academic'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
@@ -36,6 +37,8 @@ import { Route as StartRouteImport } from './routes/start'
 import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as TechnicalRouteImport } from './routes/technical'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AcademicIndexRouteImport } from './routes/academic.index'
+import { Route as AcademicPricingRouteImport } from './routes/academic.pricing'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
@@ -53,6 +56,8 @@ import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as TechnicalIndexRouteImport } from './routes/technical.index'
 import { Route as TechnicalCurriculumRouteImport } from './routes/technical.curriculum'
 import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
+import { Route as AcademicCoursesCourseIdRouteImport } from './routes/academic.courses.$courseId'
+import { Route as AcademicLearnLessonIdRouteImport } from './routes/academic.learn.$lessonId'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
@@ -73,6 +78,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicRoute = AcademicRouteImport.update({
+  id: '/academic',
+  path: '/academic',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountRoute = AccountRouteImport.update({
@@ -195,6 +205,16 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcademicIndexRoute = AcademicIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AcademicRoute,
+} as any)
+const AcademicPricingRoute = AcademicPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => AcademicRoute,
+} as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
@@ -280,6 +300,16 @@ const TechnicalPricingRoute = TechnicalPricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => TechnicalRoute,
 } as any)
+const AcademicCoursesCourseIdRoute = AcademicCoursesCourseIdRouteImport.update({
+  id: '/courses/$courseId',
+  path: '/courses/$courseId',
+  getParentRoute: () => AcademicRoute,
+} as any)
+const AcademicLearnLessonIdRoute = AcademicLearnLessonIdRouteImport.update({
+  id: '/learn/$lessonId',
+  path: '/learn/$lessonId',
+  getParentRoute: () => AcademicRoute,
+} as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -314,6 +344,7 @@ const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/academic': typeof AcademicRouteWithChildren
   '/account': typeof AccountRoute
   '/ai': typeof AiRoute
   '/ai-assistant': typeof AiAssistantRoute
@@ -339,6 +370,7 @@ export interface FileRoutesByFullPath {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
@@ -351,11 +383,14 @@ export interface FileRoutesByFullPath {
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
+  '/academic/': typeof AcademicIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
   '/technical/': typeof TechnicalIndexRoute
+  '/academic/courses/$courseId': typeof AcademicCoursesCourseIdRoute
+  '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
@@ -388,6 +423,7 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
@@ -399,11 +435,14 @@ export interface FileRoutesByTo {
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
+  '/academic': typeof AcademicIndexRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
   '/kids': typeof KidsIndexRoute
   '/roadmap': typeof RoadmapIndexRoute
   '/technical': typeof TechnicalIndexRoute
+  '/academic/courses/$courseId': typeof AcademicCoursesCourseIdRoute
+  '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
@@ -415,6 +454,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/academic': typeof AcademicRouteWithChildren
   '/account': typeof AccountRoute
   '/ai': typeof AiRoute
   '/ai-assistant': typeof AiAssistantRoute
@@ -440,6 +480,7 @@ export interface FileRoutesById {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
@@ -452,11 +493,14 @@ export interface FileRoutesById {
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
   '/technical/pricing': typeof TechnicalPricingRoute
+  '/academic/': typeof AcademicIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
   '/technical/': typeof TechnicalIndexRoute
+  '/academic/courses/$courseId': typeof AcademicCoursesCourseIdRoute
+  '/academic/learn/$lessonId': typeof AcademicLearnLessonIdRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/technical/learn/$lessonId': typeof TechnicalLearnLessonIdRoute
@@ -469,6 +513,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/academic'
     | '/account'
     | '/ai'
     | '/ai-assistant'
@@ -494,6 +539,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
@@ -506,11 +552,14 @@ export interface FileRouteTypes {
     | '/roadmap/$id'
     | '/technical/curriculum'
     | '/technical/pricing'
+    | '/academic/'
     | '/admin/'
     | '/image-gallery/'
     | '/kids/'
     | '/roadmap/'
     | '/technical/'
+    | '/academic/courses/$courseId'
+    | '/academic/learn/$lessonId'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/technical/learn/$lessonId'
@@ -543,6 +592,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
@@ -554,11 +604,14 @@ export interface FileRouteTypes {
     | '/roadmap/$id'
     | '/technical/curriculum'
     | '/technical/pricing'
+    | '/academic'
     | '/admin'
     | '/image-gallery'
     | '/kids'
     | '/roadmap'
     | '/technical'
+    | '/academic/courses/$courseId'
+    | '/academic/learn/$lessonId'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/technical/learn/$lessonId'
@@ -569,6 +622,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/academic'
     | '/account'
     | '/ai'
     | '/ai-assistant'
@@ -594,6 +648,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
@@ -606,11 +661,14 @@ export interface FileRouteTypes {
     | '/roadmap/$id'
     | '/technical/curriculum'
     | '/technical/pricing'
+    | '/academic/'
     | '/admin/'
     | '/image-gallery/'
     | '/kids/'
     | '/roadmap/'
     | '/technical/'
+    | '/academic/courses/$courseId'
+    | '/academic/learn/$lessonId'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/technical/learn/$lessonId'
@@ -622,6 +680,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AcademicRoute: typeof AcademicRouteWithChildren
   AccountRoute: typeof AccountRoute
   AiRoute: typeof AiRoute
   AiAssistantRoute: typeof AiAssistantRoute
@@ -679,6 +738,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academic': {
+      id: '/academic'
+      path: '/academic'
+      fullPath: '/academic'
+      preLoaderRoute: typeof AcademicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account': {
@@ -849,6 +915,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/academic/': {
+      id: '/academic/'
+      path: '/'
+      fullPath: '/academic/'
+      preLoaderRoute: typeof AcademicIndexRouteImport
+      parentRoute: typeof AcademicRoute
+    }
+    '/academic/pricing': {
+      id: '/academic/pricing'
+      path: '/pricing'
+      fullPath: '/academic/pricing'
+      preLoaderRoute: typeof AcademicPricingRouteImport
+      parentRoute: typeof AcademicRoute
+    }
     '/admin/': {
       id: '/admin/'
       path: '/admin'
@@ -968,6 +1048,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TechnicalPricingRouteImport
       parentRoute: typeof TechnicalRoute
     }
+    '/academic/courses/$courseId': {
+      id: '/academic/courses/$courseId'
+      path: '/courses/$courseId'
+      fullPath: '/academic/courses/$courseId'
+      preLoaderRoute: typeof AcademicCoursesCourseIdRouteImport
+      parentRoute: typeof AcademicRoute
+    }
+    '/academic/learn/$lessonId': {
+      id: '/academic/learn/$lessonId'
+      path: '/learn/$lessonId'
+      fullPath: '/academic/learn/$lessonId'
+      preLoaderRoute: typeof AcademicLearnLessonIdRouteImport
+      parentRoute: typeof AcademicRoute
+    }
     '/kids/$levelId/': {
       id: '/kids/$levelId/'
       path: '/'
@@ -1012,6 +1106,24 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AcademicRouteChildren {
+  AcademicPricingRoute: typeof AcademicPricingRoute
+  AcademicIndexRoute: typeof AcademicIndexRoute
+  AcademicCoursesCourseIdRoute: typeof AcademicCoursesCourseIdRoute
+  AcademicLearnLessonIdRoute: typeof AcademicLearnLessonIdRoute
+}
+
+const AcademicRouteChildren: AcademicRouteChildren = {
+  AcademicPricingRoute: AcademicPricingRoute,
+  AcademicIndexRoute: AcademicIndexRoute,
+  AcademicCoursesCourseIdRoute: AcademicCoursesCourseIdRoute,
+  AcademicLearnLessonIdRoute: AcademicLearnLessonIdRoute,
+}
+
+const AcademicRouteWithChildren = AcademicRoute._addFileChildren(
+  AcademicRouteChildren,
+)
 
 interface ImageGalleryRouteChildren {
   ImageGalleryPathRoute: typeof ImageGalleryPathRoute
@@ -1082,6 +1194,7 @@ const TechnicalRouteWithChildren = TechnicalRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AcademicRoute: AcademicRouteWithChildren,
   AccountRoute: AccountRoute,
   AiRoute: AiRoute,
   AiAssistantRoute: AiAssistantRoute,

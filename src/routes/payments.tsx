@@ -150,6 +150,11 @@ function Payments() {
                   )}
                 </p>
               )}
+              {o.review_status === "confirmed" && o.package === "academic" && (
+                <Link to="/academic" search={{ locale }} className="block underline">
+                  Masaarat Academic
+                </Link>
+              )}
               {o.review_status === "confirmed" && o.package === "technical" && (
                 <Link to="/technical/curriculum" search={{ locale }} className="block underline">
                   Masaarat TECH

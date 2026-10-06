@@ -105,11 +105,13 @@ Deno.serve(async (request) => {
       gateway_customer_id: string;
       gateway_subscription_id: string;
     }>(
-      body?.scope === "technical"
-        ? "get_technical_stripe_portal_context"
-        : body?.scope === "kids"
-          ? "get_kids_stripe_portal_context"
-          : "get_stripe_portal_context",
+      body?.scope === "academic"
+        ? "get_academic_stripe_portal_context"
+        : body?.scope === "technical"
+          ? "get_technical_stripe_portal_context"
+          : body?.scope === "kids"
+            ? "get_kids_stripe_portal_context"
+            : "get_stripe_portal_context",
       {
         p_user_id: user.id,
       },
@@ -121,7 +123,7 @@ Deno.serve(async (request) => {
 
     const session = await createPortalSession(
       context.gateway_customer_id,
-      `${allowedOrigin(origin)}${body?.scope === "technical" ? "/technical/pricing" : "/account"}`,
+      `${allowedOrigin(origin)}${body?.scope === "academic" ? "/academic/pricing" : body?.scope === "technical" ? "/technical/pricing" : "/account"}`,
     );
     if (!session.url) throw new Error("STRIPE_PORTAL_URL_MISSING");
 

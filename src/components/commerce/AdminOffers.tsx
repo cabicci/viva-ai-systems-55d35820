@@ -25,6 +25,7 @@ const packageName = {
   pro_plus: "Pro Plus",
   kids: "Masaarat Kids",
   technical: "Masaarat TECH",
+  academic: "Masaarat Academic",
 };
 const makeCode = () => `MAS-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
 export function AdminOffers({

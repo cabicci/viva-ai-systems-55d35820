@@ -25,6 +25,7 @@ export function RedeemOffer() {
             ["pro_plus", "Pro Plus"],
             ["kids", "Masaarat Kids"],
             ["technical", "Masaarat TECH"],
+            ["academic", "Masaarat Academic"],
           ]}
         />
         <Select
@@ -52,7 +53,7 @@ export function RedeemOffer() {
         interval={interval}
         stripe={() =>
           window.location.assign(
-            `${pack === "technical" ? "/technical/pricing" : "/pricing"}?locale=${locale}`,
+            `${pack === "academic" ? "/academic/pricing" : pack === "technical" ? "/technical/pricing" : "/pricing"}?locale=${locale}`,
           )
         }
       >

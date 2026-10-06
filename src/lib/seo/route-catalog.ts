@@ -258,6 +258,41 @@ export const ROUTE_CATALOG = [
     sitemap: false,
     robotsPath: "/technical/learn/",
   },
+  {
+    source: "academic.tsx",
+    pattern: "/academic",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "academic.index.tsx",
+    pattern: "/academic",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "academic.pricing.tsx",
+    pattern: "/academic/pricing",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "academic.courses.$courseId.tsx",
+    pattern: "/academic/courses/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
+    source: "academic.learn.$lessonId.tsx",
+    pattern: "/academic/learn/*",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
 ] as const satisfies readonly RouteCatalogEntry[];
 
 export const PUBLIC_SITEMAP_PATHS = ROUTE_CATALOG.filter((route) => route.sitemap).map(

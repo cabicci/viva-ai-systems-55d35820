@@ -10,10 +10,10 @@ const admin = randomUUID(),
   other = randomUUID();
 const value = async <T = Record<string, unknown>>(sql: string, args: unknown[] = []) =>
   (await db.query<{ v: T }>(sql, args)).rows[0]?.v;
-const caller = async (id: string = user) => {
+const caller = async (id: string = user, role = "authenticated") => {
   await db.query(
-    "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role','authenticated',false)",
-    [id],
+    "SELECT set_config('request.jwt.claim.sub',$1,false),set_config('request.jwt.claim.role',$2,false)",
+    [id, role],
   );
 };
 const command = (action: string, id = "AC-BUS-M01-L02", locale = "en", data: unknown = {}) =>
@@ -67,8 +67,13 @@ beforeAll(async () => {
     "20261005110000_admin_kids_lesson_review",
   ])
     await db.exec(readFileSync(`supabase/migrations/${name}.sql`, "utf8"));
-  await db.exec(readFileSync("scripts/academic-education/commerce-candidate.sql", "utf8"));
-  await db.exec(readFileSync("scripts/academic-education/integration-candidate.sql", "utf8"));
+  for (const name of [
+    "20261006110000_academic_commerce",
+    "20261006111000_academic_content",
+    "20261006112000_academic_stripe_test",
+    "20261006113000_academic_mail_retention",
+  ])
+    await db.exec(readFileSync(`supabase/migrations/${name}.sql`, "utf8"));
   await db.exec(
     `INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@academic.test',now()),('${user}','learner@academic.test',now()),('${other}','other@academic.test',now()); INSERT INTO public.user_roles VALUES('${admin}','admin');`,
   );
@@ -391,4 +396,179 @@ it("uses the existing technical complete-correction rule rather than inventing a
   );
   answers[pilot.quiz[0].id] = (answers[pilot.quiz[0].id] + 1) % pilot.quiz[0].options.length;
   expect((await command("quiz", "AC-BUS-M01-L02", "en", { answers })).passed).toBe(false);
+});
+
+async function stripeEvent(overrides: Record<string, unknown> = {}) {
+  const args = {
+    event_id: "evt_academicOne",
+    parent_id: user,
+    subscription_id: "sub_academicOne",
+    customer_id: "cus_academicOne",
+    price_id: "price_academicOne",
+    status: "active",
+    occurred_at: new Date().toISOString(),
+    paid: true,
+    paid_invoice_id: "in_academicOne",
+    period_start: new Date(Date.now() - 10000).toISOString(),
+    period_end: new Date(Date.now() + 86400000).toISOString(),
+    ...overrides,
+  };
+  return value(
+    "SELECT public.apply_academic_stripe_event($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) v",
+    Object.values(args),
+  );
+}
+async function stripeSetup() {
+  await caller(user, "service_role");
+  await db.query(
+    "INSERT INTO billing.gateway_customers(user_id,gateway_code,gateway_customer_id,status,metadata) VALUES($1,'stripe_us','cus_academicOne','active','{\"mode\":\"test\"}')",
+    [user],
+  );
+  await value(
+    "SELECT public.register_academic_stripe_price('EG','month',false,'egp',30900,'prod_academicOne','price_academicOne') v",
+  );
+}
+it("activates Stripe only from known paid evidence, deduplicates invoices, queues welcome and fully revokes refund", async () => {
+  await stripeSetup();
+  await stripeEvent({ paid: false, paid_invoice_id: null, period_start: null, period_end: null });
+  await caller();
+  expect((await command("lesson")).allowed).toBe(false);
+  await caller(user, "service_role");
+  await stripeEvent({ event_id: "evt_academicPaid" });
+  expect(await stripeEvent({ event_id: "evt_academicPaid" })).toBe(false);
+  expect(await value("SELECT count(*)::int v FROM public.academic_mail_outbox")).toBe(1);
+  await caller();
+  expect((await command("lesson")).allowed).toBe(true);
+  expect(await value("SELECT public.get_my_billing_access_tier() v")).toBe("free");
+  await caller(user, "service_role");
+  await stripeEvent({ event_id: "evt_duplicateInvoice" });
+  expect(await value("SELECT count(*)::int v FROM public.academic_mail_outbox")).toBe(1);
+  const claims = await value<Record<string, unknown>[]>(
+    "SELECT public.academic_mail_command('claim') v",
+  );
+  expect(claims).toHaveLength(1);
+  expect(
+    await value("SELECT public.academic_mail_command('authorize',$1::jsonb) v", [
+      JSON.stringify(claims[0]),
+    ]),
+  ).toBe(true);
+  expect(
+    await value("SELECT public.academic_mail_command('result',$1::jsonb) v", [
+      JSON.stringify({ ...claims[0], provider_id: "synthetic-provider" }),
+    ]),
+  ).toBe(true);
+  expect(await value("SELECT public.academic_mail_command('claim') v")).toEqual([]);
+  expect(
+    await value(
+      "SELECT public.apply_academic_stripe_refund('evt_refund',$1,'sub_academicOne','cus_academicOne','in_academicOne','re_academicOne',30900,30900,'succeeded',now()) v",
+      [user],
+    ),
+  ).toBe(true);
+  await caller();
+  expect((await command("lesson")).allowed).toBe(false);
+  await caller(user, "service_role");
+  expect(await stripeEvent({ event_id: "evt_lateInvoice" })).toBe(false);
+});
+it("erases academic progress on account deletion and finance only after the existing 15 days", async () => {
+  await grant();
+  await command("read");
+  await stripeSetup();
+  await stripeEvent();
+  await db.exec(
+    "UPDATE billing.account_deletion_control SET enabled=true,financial_purge_enabled=true,financial_retention_reference='synthetic',crm_retention_reference='synthetic',responder_reference='synthetic',release_reference='synthetic'",
+  );
+  await db.query("INSERT INTO billing.account_deletion_requests(user_id) VALUES($1)", [user]);
+  const claim = await value<{ lease_token: string }>("SELECT public.lc09_claim_deletion($1) v", [
+    user,
+  ]);
+  await value("SELECT public.lc09_advance_deletion($1,$2,'provider_reconciled') v", [
+    user,
+    claim.lease_token,
+  ]);
+  await value("SELECT public.lc09_advance_deletion($1,$2,'learner_erased') v", [
+    user,
+    claim.lease_token,
+  ]);
+  expect(
+    await value("SELECT count(*)::int v FROM public.academic_progress WHERE user_id=$1", [user]),
+  ).toBe(0);
+  expect(
+    await value("SELECT count(*)::int v FROM public.academic_mail_outbox WHERE user_id=$1", [user]),
+  ).toBe(0);
+  expect(
+    await value(
+      "SELECT count(*)::int v FROM billing.academic_stripe_subscriptions WHERE user_id=$1",
+      [user],
+    ),
+  ).toBe(1);
+  await db.query("DELETE FROM auth.users WHERE id=$1", [user]);
+  await value("SELECT public.lc09_advance_deletion($1,$2,'complete') v", [user, claim.lease_token]);
+  await db.exec("SAVEPOINT early");
+  await expect(value("SELECT public.lc09_claim_financial_purge($1) v", [user])).rejects.toThrow(
+    /NOT_DUE/,
+  );
+  await db.exec("ROLLBACK TO early");
+  await db.query(
+    "UPDATE billing.account_deletion_lifecycle SET completed_at=now()-interval '16 days' WHERE user_id=$1",
+    [user],
+  );
+  const purge = await value<{ lease_token: string }>(
+    "SELECT public.lc09_claim_financial_purge($1) v",
+    [user],
+  );
+  await value("SELECT public.lc09_complete_financial_purge($1,$2,false) v", [
+    user,
+    purge.lease_token,
+  ]);
+  expect(
+    await value(
+      "SELECT count(*)::int v FROM billing.academic_stripe_subscriptions WHERE user_id=$1",
+      [user],
+    ),
+  ).toBe(0);
+  expect(await value("SELECT count(*)::int v FROM public.academic_lesson_content")).toBe(8);
+});
+
+it("rejects purchases before the course release even with existing commerce enabled", async () => {
+  await db.exec("UPDATE public.academic_courses SET enabled=false");
+  await rejectsSql(
+    () => commerce("quote", { package: "academic", market: "EG", billing_interval: "month" }),
+    "ACADEMIC_UNAVAILABLE",
+  );
+  await caller(user, "service_role");
+  await rejectsSql(
+    () => value("SELECT public.get_academic_stripe_checkout_context($1,'EG','month') v", [user]),
+    "ACADEMIC_UNAVAILABLE",
+  );
+});
+it("binds private object policies to the exact authorized lesson and locale", async () => {
+  await db.exec(
+    "ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY; GRANT SELECT ON storage.objects TO authenticated; GRANT USAGE ON SCHEMA storage TO authenticated",
+  );
+  await db.exec(
+    "INSERT INTO storage.objects(bucket_id,name) VALUES('academic-downloads','AC-BUS/L02-en.pdf'),('academic-downloads','AC-BUS/missing.pdf'),('another-bucket','AC-BUS/L02-en.pdf')",
+  );
+  await grant();
+  await db.exec("SET LOCAL ROLE authenticated");
+  expect((await db.query("SELECT name FROM storage.objects")).rows).toEqual([
+    { name: "AC-BUS/L02-en.pdf" },
+  ]);
+  await db.exec(
+    "RESET ROLE; UPDATE public.academic_lesson_content SET approved=false WHERE locale='en'",
+  );
+  await db.exec("SET LOCAL ROLE authenticated");
+  expect((await db.query("SELECT name FROM storage.objects")).rows).toEqual([]);
+  await db.exec("RESET ROLE");
+});
+
+it("keeps existing admin offer catalogue available while Academic is closed", async () => {
+  await db.exec("UPDATE public.academic_courses SET enabled=false");
+  await caller(admin);
+  const rows = await value<{ package: string }[]>(
+    "SELECT public.commerce_command('offer_catalogue','{}') v",
+  );
+  expect(rows).toHaveLength(16);
+  expect(new Set(rows.map((r) => r.package))).toEqual(
+    new Set(["pro", "pro_plus", "kids", "technical"]),
+  );
 });

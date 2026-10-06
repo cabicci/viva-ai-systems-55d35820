@@ -7,6 +7,7 @@ import { runMailStreams } from "./streams.ts";
 import { authorizedWelcomeJob, runWelcomeJob, runSubscriptionMailJob } from "./handler.ts";
 import { readImmediateMailTarget } from "../_shared/immediate-mail-request.ts";
 import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-worker.ts";
+import { runAcademicMailJob } from "../_shared/academic-mail-worker.ts";
 import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
@@ -86,9 +87,10 @@ Deno.serve(async (request) => {
             return Promise.all([
               runSubscriptionMailJob(db, send),
               runTechnicalMailJob(db, send),
-            ]).then(([a, b]) => ({
-              accepted: a.accepted + b.accepted,
-              deferred: a.deferred + b.deferred,
+              runAcademicMailJob(db, send),
+            ]).then(([a, b, c]) => ({
+              accepted: a.accepted + b.accepted + c.accepted,
+              deferred: a.deferred + b.deferred + c.deferred,
             }));
           }
         : null,

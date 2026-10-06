@@ -186,3 +186,11 @@ scope: lessons
 source: user
 summary: Extend existing administrator lesson access to Kids using the administrator's own account, with no child profile or family subscription. Preserve server role, account, release and content approval checks and normal parent access. Verify all 320 technical and 144 Kids localized lesson tuples. Videos stay on Bunny.
 sync_status: same production roadmap item remains in progress; cloud execution and publication are paused by Lovable human-input gate
+
+## 2026-10-06 — Academic written-first integration
+
+[roadmap:0e77dbf5-3737-4742-93ec-b44764a4d9fa]
+source: user
+scope: db
+summary: Integrate pinned written handoff 7b93d7d with independent Academic access, private downloads and TEST commerce. Preserve active media run and source branch. Course and assistant remain disabled pending acceptance; no production release claimed.
+sync_status: matching roadmap item created in_progress before implementation

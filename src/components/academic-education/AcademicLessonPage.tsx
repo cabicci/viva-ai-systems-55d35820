@@ -33,7 +33,7 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
   return (
     <div className="min-h-dvh">
       <Navbar variant="account" />
-      <main className="mx-auto max-w-7xl px-4 py-8" dir={en ? "ltr" : "rtl"}>
+      <main id="main-content" className="mx-auto max-w-7xl px-4 py-8" dir={en ? "ltr" : "rtl"}>
         {loading || (!!user && query.isPending) ? (
           <p role="status">{en ? "Loading lesson…" : "جارٍ تحميل الدرس…"}</p>
         ) : !user ? (
