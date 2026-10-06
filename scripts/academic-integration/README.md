@@ -23,3 +23,9 @@ Run `37451264552` belongs to `work/masaarat-academic-20261005` at `f6617cfcf7ac7
 ## Recovery
 
 This slice does not remove existing data or change existing prices. Before activation, course disablement keeps new content/purchases closed. If a deployment needs rollback, disable the new course and restore the previous application/functions; retain private data and financial receipts. Do not drop the new financial tables, reset any deletion clock, or re-run historical account deletion. Existing financial retention remains 15 days after completed Auth/account deletion. The optional assistant remains disabled throughout.
+
+## Administrator review before public acceptance
+
+Owner requested completion of the real catalogue and administrator access on2026-10-06. Apply `20261006120000_academic_admin_review.sql` after the four earlier Academic migrations. `--stage-review --pdf-root PRIVATE_DIR` imports the exact original source and private PDFs for stored administrators, without claiming academic acceptance. `--stage-content` stages and hash-verifies only the written packages when PDF transfer is unavailable; it explicitly reports zero verified PDFs and pending PDF import, creates no bucket/asset rows and sends no PDF bytes. Both modes keep `enabled=false`, `approved=false`, the assistant disabled and all video mappings unchanged. `review_enabled=true` is set only after the relevant cloud checks pass.
+
+Normal accounts cannot see review catalogue titles, lessons or files. Stored admin role and account eligibility are checked server-side on each request. Catalogue caching is scoped to account identity, and review visibility never opens payment controls. The accepted `--apply --acceptance` flow still requires the independent review receipt. Review access does not authorize public release.

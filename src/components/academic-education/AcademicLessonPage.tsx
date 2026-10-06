@@ -153,6 +153,11 @@ function AuthorizedLesson({
       <a className="font-bold text-primary" href={`/academic/courses/${courseId}?locale=${locale}`}>
         {c.backToCurriculum}
       </a>
+      {delivery.reviewOnly && (
+        <p role="status" className="mt-4 rounded-xl border p-4">
+          {c.reviewOnly}
+        </p>
+      )}
       <header className="my-6 rounded-3xl border bg-accent/20 p-6">
         <p className="text-sm font-bold text-primary">
           {en ? "Masaarat Academic" : "مسارات أكاديمي"}

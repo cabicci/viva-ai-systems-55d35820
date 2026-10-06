@@ -72,6 +72,7 @@ beforeAll(async () => {
     "20261006111000_academic_content",
     "20261006112000_academic_stripe_test",
     "20261006113000_academic_mail_retention",
+    "20261006120000_academic_admin_review",
   ])
     await db.exec(readFileSync(`supabase/migrations/${name}.sql`, "utf8"));
   await db.exec(
@@ -571,4 +572,38 @@ it("keeps existing admin offer catalogue available while Academic is closed", as
   expect(new Set(rows.map((r) => r.package))).toEqual(
     new Set(["pro", "pro_plus", "kids", "technical"]),
   );
+});
+
+it("stages all locales for stored admins without publishing or granting other users access", async () => {
+  await db.exec(
+    "UPDATE public.academic_courses SET enabled=false,review_enabled=true; UPDATE public.academic_lesson_content SET approved=false",
+  );
+  for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf", "en"]) {
+    await caller(admin);
+    const cat = await value<any[]>(`SELECT public.academic_catalogue('${locale}') v`);
+    expect(cat[0].reviewOnly).toBe(true);
+    expect(cat[0].released).toBe(false);
+    expect(cat[0].lessons).toHaveLength(2);
+    const lesson = await command("lesson", "AC-BUS-M01-L02", locale);
+    expect(lesson.allowed).toBe(true);
+    expect(lesson.reviewOnly).toBe(true);
+    expect(lesson.assistantAllowed).toBe(false);
+    expect(lesson.video).toBeNull();
+    await caller(user);
+    expect(await value(`SELECT public.academic_catalogue('${locale}') v`)).toEqual([]);
+    expect(
+      await value(`SELECT public.academic_can_access('AC-BUS','AC-BUS-M01-L02','${locale}') v`),
+    ).toBe(false);
+  }
+  await caller(admin);
+  expect(await value("SELECT public.academic_storage_allowed('AC-BUS/L02-en.pdf') v")).toBe(true);
+  await rejectsSql(
+    () => commerce("quote", { package: "academic", market: "EG", billing_interval: "month" }),
+    "ACADEMIC_UNAVAILABLE",
+  );
+  await db.query("DELETE FROM public.user_roles WHERE user_id=$1", [admin]);
+  expect(await value("SELECT public.academic_catalogue('en') v")).toEqual([]);
+  expect(await value("SELECT public.academic_storage_allowed('AC-BUS/L02-en.pdf') v")).toBe(false);
+  await caller("", "anon");
+  expect(await value("SELECT public.academic_catalogue('en') v")).toEqual([]);
 });

@@ -2,6 +2,8 @@ import type { ReadingVisualSpec } from "@/components/academic-education/ReadingV
 export type AcademicCourse = {
   id: string;
   title: string;
+  reviewOnly?: boolean;
+  released?: boolean;
   lessons: {
     id: string;
     title: string;
@@ -33,6 +35,7 @@ export type AcademicDelivery =
   | { allowed: false }
   | {
       allowed: true;
+      reviewOnly?: boolean;
       lesson: AcademicLesson;
       video: string | null;
       files: { kind: string; path: string }[];

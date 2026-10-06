@@ -1,5 +1,6 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 const msa = {
+  reviewOnly: "نسخة للمراجعة الإدارية — لم تُتح للمتعلمين بعد.",
   catalogue: "مقررات مسارات أكاديمي",
   intro: "اختر المقرر، ثم استعرض وحداته ودروسه وتعلّم بالتطبيق.",
   open: "افتح المنهج",
@@ -31,6 +32,7 @@ const copy: Record<SupportedLocale, typeof msa> = {
   "ar-MSA": msa,
   "ar-EG": {
     ...msa,
+    reviewOnly: "نسخة لمراجعة الإدارة — لسه مش متاحة للطلاب.",
     intro: "اختار المقرر، وشوف وحداته ودروسه واتعلّم بالتطبيق.",
     open: "افتح المنهج",
     back: "ارجع للمقررات",
@@ -45,6 +47,7 @@ const copy: Record<SupportedLocale, typeof msa> = {
   },
   "ar-Gulf": {
     ...msa,
+    reviewOnly: "نسخة لمراجعة الإدارة — ما أُتيحت للطلاب بعد.",
     intro: "اختر المقرر، وشوف وحداته ودروسه وتعلّم بالتطبيق.",
     back: "ارجع للمقررات",
     unavailable: "المحتوى مو متاح الحين. جرّب مرة ثانية.",
@@ -57,6 +60,7 @@ const copy: Record<SupportedLocale, typeof msa> = {
     backToCurriculum: "ارجع للمنهج",
   },
   en: {
+    reviewOnly: "Administrator review — not yet released to learners.",
     catalogue: "Academic courses",
     intro: "Choose a course, explore its modules and lessons, and learn through practice.",
     open: "Open curriculum",

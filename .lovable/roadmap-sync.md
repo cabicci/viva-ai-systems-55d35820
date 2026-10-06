@@ -196,3 +196,10 @@ summary: Integrate pinned written handoff 7b93d7d with independent Academic acce
 sync_status: matching roadmap item created in_progress before implementation
 
 Integration gate correction: CI37455120227 reported GHSA-68fv-2mgg-jv7q in source-map-js1.2.1. Pin the patched1.2.2 dependency only; preserve the advisory gate and active media branch.
+
+## 2026-10-06 — Academic administrator review activation
+roadmap_item_id: 0e77dbf5-3737-4742-93ec-b44764a4d9fa
+source: user
+scope: db
+summary: Complete cloud setup and private import so the stored administrator sees the course card and all written lessons/PDFs. Separate review_enabled from public enabled/approved. Preserve ordinary learner gates, source video production and disabled assistant.
+sync_status: owner instructed continuation after confirming missing cloud schema; activation and verification in progress

@@ -36,12 +36,14 @@ function AcademicPricing() {
       login: locale === "en" ? "Sign in" : "تسجيل الدخول",
     },
     offers = adminOfferCopy(locale);
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const catalogue = useQuery({
-    queryKey: ["academic-catalogue", locale],
+    queryKey: ["academic-catalogue", user?.id ?? "anonymous", locale],
+    enabled: !loading,
     queryFn: () => academicCatalogue(locale),
   });
-  const released = !catalogue.isError && !!catalogue.data?.length;
+  const released =
+    !catalogue.isError && !!catalogue.data?.some((course) => course.released === true);
   const status = useQuery({
     queryKey: ["academic-account", user?.id, locale],
     enabled: !!user && released,

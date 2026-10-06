@@ -1,3 +1,4 @@
+import { useAuth } from "@/lib/auth-context";
 import { useQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -12,10 +13,12 @@ import { getAcademicCopy } from "@/lib/academic-education/copy";
 
 /** Ready for central route registration; public metadata never contains lesson bodies. */
 export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
+  const { user, loading } = useAuth();
   const { locale, dir } = useLocale();
   const c = getAcademicCopy(locale);
   const query = useQuery({
-    queryKey: ["academic-catalogue", locale],
+    queryKey: ["academic-catalogue", user?.id ?? "anonymous", locale],
+    enabled: !loading,
     queryFn: () => academicCatalogue(locale),
   });
   const course = query.data?.find((item) => item.id === courseId);
@@ -39,6 +42,11 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
           <h1 className="text-3xl font-black md:text-4xl">{course?.title ?? c.catalogue}</h1>
           <p className="mt-4 leading-8 text-muted-foreground">{c.intro}</p>
         </header>
+        {query.data?.some((item) => item.reviewOnly) && (
+          <p role="status" className="rounded-xl border p-4">
+            {c.reviewOnly}
+          </p>
+        )}
         {query.isPending ? (
           <p role="status">{c.loading}</p>
         ) : query.isError ? (

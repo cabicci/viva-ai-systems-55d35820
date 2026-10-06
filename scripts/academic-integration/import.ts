@@ -1,4 +1,4 @@
-/** Explicit accepted-only import; --check is offline and never regenerates content/media. */
+/** Private review staging or accepted import; neither operation publishes content. */
 import { createClient } from "@supabase/supabase-js";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -8,6 +8,7 @@ const delivery = JSON.parse(raw);
 const rootArg = process.argv.indexOf("--pdf-root");
 const pdfRoot = rootArg >= 0 ? process.argv[rootArg + 1] : "tmp/academic-pdfs";
 const sourceOnly = process.argv.includes("--check-source");
+const contentOnly = process.argv.includes("--stage-content");
 for (const locale of ["ar-EG", "ar-MSA", "ar-Gulf", "en"]) {
   const packages = [
     JSON.parse(readFileSync(`experiments/academic/content/${locale}.json`, "utf8")),
@@ -56,7 +57,7 @@ for (const asset of delivery.assets) {
     asset.path !== `AC-BUS/${asset.lesson_id}/${asset.locale}/workbook.pdf`
   )
     throw Error("Invalid workbook identity");
-  const bytes = sourceOnly ? null : readFileSync(asset.local);
+  const bytes = sourceOnly || contentOnly ? null : readFileSync(asset.local);
   if (bytes && (sha(bytes) !== asset.sha256 || bytes.subarray(0, 5).toString() !== "%PDF-"))
     throw Error("Workbook mismatch");
   assets.add(identity(asset));
@@ -65,30 +66,36 @@ console.log(
   JSON.stringify({
     source: delivery.source,
     packages: ids.size,
-    pdfs: sourceOnly ? "not checked" : assets.size,
+    pdfs: sourceOnly || contentOnly ? "not checked" : assets.size,
     deliverySha256: sha(raw),
     videoMappings: 0,
     approved: false,
   }),
 );
 if (!process.argv.includes("--check") && !sourceOnly) {
+  const review = process.argv.includes("--stage-review") || contentOnly;
   const index = process.argv.indexOf("--acceptance");
-  if (!process.argv.includes("--apply") || index < 0 || !process.argv[index + 1])
-    throw Error(
-      "Use --check --pdf-root PRIVATE_DIR, or --apply --pdf-root PRIVATE_DIR --acceptance REVIEW.json after independent acceptance",
-    );
-  const acceptance = JSON.parse(readFileSync(process.argv[index + 1], "utf8"));
   if (
-    acceptance.source !== delivery.source ||
-    acceptance.deliverySha256 !== sha(raw) ||
-    acceptance.academicAccepted !== true ||
-    acceptance.contextualAccepted !== true ||
-    !acceptance.reviewReference ||
-    !acceptance.reviewer ||
-    !acceptance.acceptedAt ||
-    !Number.isFinite(Date.parse(acceptance.acceptedAt))
+    (!review && (!process.argv.includes("--apply") || index < 0 || !process.argv[index + 1])) ||
+    (review && process.argv.includes("--apply"))
   )
-    throw Error("Independent acceptance missing or does not match exact delivery");
+    throw Error(
+      "Use --check, --stage-review for private administrator review, or --apply --acceptance REVIEW.json after independent acceptance",
+    );
+  if (!review) {
+    const acceptance = JSON.parse(readFileSync(process.argv[index + 1], "utf8"));
+    if (
+      acceptance.source !== delivery.source ||
+      acceptance.deliverySha256 !== sha(raw) ||
+      acceptance.academicAccepted !== true ||
+      acceptance.contextualAccepted !== true ||
+      !acceptance.reviewReference ||
+      !acceptance.reviewer ||
+      !acceptance.acceptedAt ||
+      !Number.isFinite(Date.parse(acceptance.acceptedAt))
+    )
+      throw Error("Independent acceptance missing or does not match exact delivery");
+  }
   const url = process.env.SUPABASE_URL,
     key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) throw Error("Server credentials required");
@@ -100,20 +107,22 @@ if (!process.argv.includes("--check") && !sourceOnly) {
     .single();
   if (release.error || release.data.enabled || release.data.assistant_enabled)
     throw Error("Import requires an existing inactive course and disabled assistant");
-  const bucket = await db.storage.getBucket("academic-downloads");
-  if (bucket.error) {
-    if (
-      bucket.error.message !== "Bucket not found" &&
-      String((bucket.error as { status?: number }).status) !== "404"
-    )
-      throw Error("Private storage lookup failed");
-    const made = await db.storage.createBucket("academic-downloads", {
-      public: false,
-      allowedMimeTypes: ["application/pdf"],
-      fileSizeLimit: 10485760,
-    });
-    if (made.error) throw Error("Private bucket creation failed");
-  } else if (bucket.data.public) throw Error("Academic bucket unexpectedly public");
+  if (!contentOnly) {
+    const bucket = await db.storage.getBucket("academic-downloads");
+    if (bucket.error) {
+      if (
+        bucket.error.message !== "Bucket not found" &&
+        String((bucket.error as { status?: number }).status) !== "404"
+      )
+        throw Error("Private storage lookup failed");
+      const made = await db.storage.createBucket("academic-downloads", {
+        public: false,
+        allowedMimeTypes: ["application/pdf"],
+        fileSizeLimit: 10485760,
+      });
+      if (made.error) throw Error("Private bucket creation failed");
+    } else if (bucket.data.public) throw Error("Academic bucket unexpectedly public");
+  }
   for (const row of delivery.lessons) {
     const existing = await db
       .from("academic_lesson_content")
@@ -134,7 +143,7 @@ if (!process.argv.includes("--check") && !sourceOnly) {
       if (inserted.error) throw Error("Content import failed");
     }
   }
-  for (const asset of delivery.assets) {
+  for (const asset of contentOnly ? [] : delivery.assets) {
     const bytes = readFileSync(asset.local);
     const uploaded = await db.storage
       .from("academic-downloads")
@@ -164,12 +173,25 @@ if (!process.argv.includes("--check") && !sourceOnly) {
     )
       throw Error("Cloud content verification failed");
   }
-  // Intentionally never enables a course, approves rows, or activates a video mapping.
+  if (review) {
+    const reviewed = await db
+      .from("academic_courses")
+      .update({ review_enabled: true })
+      .eq("id", "AC-BUS")
+      .eq("enabled", false)
+      .eq("assistant_enabled", false)
+      .select("id")
+      .single();
+    if (reviewed.error) throw Error("Private review activation failed");
+  }
+  // Never enables public course release, approves content or activates video mappings.
   console.log(
     JSON.stringify({
+      reviewOnly: review,
       imported: 160,
       verifiedCloudContent: 160,
-      verifiedCloudPdfs: 160,
+      verifiedCloudPdfs: contentOnly ? 0 : 160,
+      pdfImportPending: contentOnly,
       enabled: false,
       approved: false,
       assistant: false,
