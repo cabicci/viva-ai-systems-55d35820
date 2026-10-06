@@ -18,7 +18,7 @@ export const LINE_CURRICULUM = {
   ai: "/curriculum",
   kids: "/kids/curriculum",
   technical: "/technical/curriculum",
-  academic: "/academic",
+  academic: "/academic/curriculum",
 } as const;
 export const LINE_LOGOS = {
   ai: "/brand/masaarat-ai.png",
@@ -179,7 +179,7 @@ const copy = {
   ],
   trackOutline: [
     "محاور مسار النجارة وصناعة الأثاث",
-    "محاور مسار النجارة وصناعة الأثاث",
+    "محاور مسار النجارة و��ناعة الأثاث",
     "محاور مسار النجارة وصناعة الأثاث",
     "Carpentry and furniture curriculum",
   ],

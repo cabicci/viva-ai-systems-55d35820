@@ -1,5 +1,7 @@
 import { cleanup, render, screen, act, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { AcademicOverviewPage } from "@/components/academic-education/AcademicOverviewPage";
+import { getAcademicOverviewCopy } from "@/lib/academic-education/overview-copy";
 import { LineOverview } from "./LineOverview";
 import { KidsCurriculum, TechnicalCurriculum } from "./LineCurriculum";
 import { CurriculumLayout } from "./CurriculumLayout";
@@ -81,6 +83,25 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("line-specific overviews and curricula", () => {
+  it.each(SUPPORTED_LOCALES)(
+    "keeps the Academic overview separate from its course catalogue in %s",
+    (locale) => {
+      state.locale = locale;
+      const view = render(<AcademicOverviewPage />);
+      const c = getAcademicOverviewCopy(locale);
+      expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+        getLineCopy(locale).academic,
+      );
+      expect(screen.getByRole("heading", { name: c.title })).toBeInTheDocument();
+      expect(screen.getAllByRole("link", { name: c.browse })).toHaveLength(2);
+      for (const link of screen.getAllByRole("link", { name: c.browse }))
+        expect(link).toHaveAttribute("href", `/academic/curriculum?locale=${locale}`);
+      expect(view.container.querySelector('[data-testid="academic-course-card"]')).toBeNull();
+      expect(view.container.querySelector('a[href^="/academic/learn/"]')).toBeNull();
+      expect(state.invoke).not.toHaveBeenCalled();
+      if (locale === "en") expect(view.container.textContent).not.toMatch(/[\u0600-\u06ff]/);
+    },
+  );
   it.each(SUPPORTED_LOCALES)(
     "opens all 36 Kids lesson links for administrators without child profiles in %s",
     async (locale) => {

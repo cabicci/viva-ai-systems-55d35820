@@ -51,6 +51,10 @@ it("shows the review course and curriculum without retaining administrator catal
     "href",
     "/academic/learn/AC-BUS-M01-L02?locale=en",
   );
+  expect(screen.getByRole("link", { name: "All courses" })).toHaveAttribute(
+    "href",
+    "/academic/curriculum?locale=en",
+  );
   state.user = { id: "ordinary" };
   view.rerender(page());
   await screen.findByText("Courses will appear here when available.");

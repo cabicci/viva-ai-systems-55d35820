@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AcademicCataloguePage } from "@/components/academic-education/AcademicCataloguePage";
+import { AcademicOverviewPage } from "@/components/academic-education/AcademicOverviewPage";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 export const Route = createFileRoute("/academic/")({
   validateSearch: parseLocaleSearchParam,
@@ -9,5 +9,5 @@ export const Route = createFileRoute("/academic/")({
   component: Page,
 });
 function Page() {
-  return <AcademicCataloguePage />;
+  return <AcademicOverviewPage />;
 }

@@ -38,6 +38,7 @@ import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as TechnicalRouteImport } from './routes/technical'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AcademicIndexRouteImport } from './routes/academic.index'
+import { Route as AcademicCurriculumRouteImport } from './routes/academic.curriculum'
 import { Route as AcademicPricingRouteImport } from './routes/academic.pricing'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
@@ -210,6 +211,11 @@ const AcademicIndexRoute = AcademicIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AcademicRoute,
 } as any)
+const AcademicCurriculumRoute = AcademicCurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
+  getParentRoute: () => AcademicRoute,
+} as any)
 const AcademicPricingRoute = AcademicPricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -370,6 +376,7 @@ export interface FileRoutesByFullPath {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
@@ -423,6 +430,7 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
@@ -480,6 +488,7 @@ export interface FileRoutesById {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
@@ -539,6 +548,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
@@ -592,6 +602,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
@@ -648,6 +659,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
     | '/admin/kids-parents'
@@ -922,6 +934,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AcademicIndexRouteImport
       parentRoute: typeof AcademicRoute
     }
+    '/academic/curriculum': {
+      id: '/academic/curriculum'
+      path: '/curriculum'
+      fullPath: '/academic/curriculum'
+      preLoaderRoute: typeof AcademicCurriculumRouteImport
+      parentRoute: typeof AcademicRoute
+    }
     '/academic/pricing': {
       id: '/academic/pricing'
       path: '/pricing'
@@ -1108,6 +1127,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface AcademicRouteChildren {
+  AcademicCurriculumRoute: typeof AcademicCurriculumRoute
   AcademicPricingRoute: typeof AcademicPricingRoute
   AcademicIndexRoute: typeof AcademicIndexRoute
   AcademicCoursesCourseIdRoute: typeof AcademicCoursesCourseIdRoute
@@ -1115,6 +1135,7 @@ interface AcademicRouteChildren {
 }
 
 const AcademicRouteChildren: AcademicRouteChildren = {
+  AcademicCurriculumRoute: AcademicCurriculumRoute,
   AcademicPricingRoute: AcademicPricingRoute,
   AcademicIndexRoute: AcademicIndexRoute,
   AcademicCoursesCourseIdRoute: AcademicCoursesCourseIdRoute,

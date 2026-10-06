@@ -9,6 +9,7 @@ export const SAFE_LINE_RETURNS = [
   "/kids/pricing",
   "/kids/curriculum",
   "/academic",
+  "/academic/curriculum",
   "/academic/pricing",
   "/technical",
   "/technical/pricing",

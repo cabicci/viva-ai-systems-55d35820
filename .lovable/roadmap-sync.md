@@ -203,3 +203,6 @@ source: user
 scope: db
 summary: Complete cloud setup and private import so the stored administrator sees the course card and all written lessons/PDFs. Separate review_enabled from public enabled/approved. Preserve ordinary learner gates, source video production and disabled assistant.
 sync_status: owner instructed continuation after confirming missing cloud schema; activation and verification in progress
+
+
+[roadmap:ACADEMIC-NAVIGATION-05] 2026-10-06 — Owner requests consistent learning-area navigation. /academic is now a general overview using the shared LineIntroduction; /academic/curriculum lists server-authorized course cards; each card opens its existing course modules/lessons. Navbar curriculum and return links preserve all four locales; unified login accepts the fixed curriculum destination. No entitlement/payment/media/publication flags changed. Private PDF import remains a separate authorized operational step; results recorded in the authoritative registers.
