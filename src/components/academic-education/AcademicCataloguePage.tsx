@@ -60,7 +60,7 @@ export function AcademicCataloguePage({ courseId }: { courseId?: string }) {
           <p>{c.empty}</p>
         ) : course ? (
           <>
-            <a className="font-bold text-primary" href={`/academic?locale=${locale}`}>
+            <a className="font-bold text-primary" href={`/academic/curriculum?locale=${locale}`}>
               {c.back}
             </a>
             {modules.map((module, index) => (

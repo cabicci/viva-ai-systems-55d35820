@@ -273,6 +273,13 @@ export const ROUTE_CATALOG = [
     robotsPath: "/academic",
   },
   {
+    source: "academic.curriculum.tsx",
+    pattern: "/academic/curriculum",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/academic",
+  },
+  {
     source: "academic.pricing.tsx",
     pattern: "/academic/pricing",
     visibility: "private",
