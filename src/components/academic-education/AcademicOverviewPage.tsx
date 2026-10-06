@@ -20,7 +20,7 @@ export function AcademicOverviewPage() {
     <div className="flex min-h-dvh flex-col" dir={dir}>
       <Navbar variant="account" />
       <main id="main-content" className="flex-1">
-        <LineIntroduction line="academic" curriculumLabel={c.browse} />
+        <LineIntroduction line="academic" />
         <section className="container mx-auto px-4 py-20 md:py-28">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight md:text-5xl">{c.title}</h2>

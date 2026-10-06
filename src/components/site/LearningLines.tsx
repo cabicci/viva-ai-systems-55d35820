@@ -74,13 +74,7 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
   );
 }
 
-export function LineIntroduction({
-  line,
-  curriculumLabel,
-}: {
-  line: LearningLine;
-  curriculumLabel?: string;
-}) {
+export function LineIntroduction({ line }: { line: LearningLine }) {
   const { locale } = useLocale();
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
@@ -103,18 +97,18 @@ export function LineIntroduction({
             <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">{c[line]}</h1>
             <p className="mt-5 leading-relaxed text-muted-foreground">{c[`${line}Intro`]}</p>
             <Link
-              to={curriculumLabel ? LINE_CURRICULUM[line] : LINE_PRICING[line]}
+              to={LINE_PRICING[line]}
               search={search()}
               className="mt-6 inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground"
             >
-              {curriculumLabel ?? c.plans}
+              {c.plans}
             </Link>
             <Link
-              to={curriculumLabel ? LINE_PRICING[line] : LINE_CURRICULUM[line]}
+              to={LINE_CURRICULUM[line]}
               search={search()}
               className="ms-4 mt-6 inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
             >
-              {curriculumLabel ? c.plans : c.paths}
+              {c.paths}
             </Link>
           </div>
           <div className="rounded-2xl p-6">

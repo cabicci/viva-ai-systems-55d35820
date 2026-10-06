@@ -7,7 +7,10 @@ describe("line identities and safe unified auth returns", () => {
     "has complete contextual copy and distinct canonical metadata in %s",
     (locale) => {
       const c = getLineCopy(locale);
-      Object.values(c).forEach((value) => expect(value.length).toBeGreaterThan(2));
+      Object.values(c).forEach((value) => {
+        expect(value.length).toBeGreaterThan(2);
+        expect(value).not.toContain("\uFFFD");
+      });
       if (locale === "en") expect(JSON.stringify(c)).not.toMatch(/[\u0600-\u06ff]/);
       for (const kind of [
         "platform",

@@ -56,6 +56,7 @@ import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as TechnicalIndexRouteImport } from './routes/technical.index'
 import { Route as TechnicalCurriculumRouteImport } from './routes/technical.curriculum'
+import { Route as TechnicalCoursesFurnitureRouteImport } from './routes/technical.courses.furniture'
 import { Route as TechnicalPricingRouteImport } from './routes/technical.pricing'
 import { Route as AcademicCoursesCourseIdRouteImport } from './routes/academic.courses.$courseId'
 import { Route as AcademicLearnLessonIdRouteImport } from './routes/academic.learn.$lessonId'
@@ -301,6 +302,11 @@ const TechnicalCurriculumRoute = TechnicalCurriculumRouteImport.update({
   path: '/curriculum',
   getParentRoute: () => TechnicalRoute,
 } as any)
+const TechnicalCoursesFurnitureRoute = TechnicalCoursesFurnitureRouteImport.update({
+  id: '/courses/furniture',
+  path: '/courses/furniture',
+  getParentRoute: () => TechnicalRoute,
+} as any)
 const TechnicalPricingRoute = TechnicalPricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -389,6 +395,7 @@ export interface FileRoutesByFullPath {
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
+  '/technical/courses/furniture': typeof TechnicalCoursesFurnitureRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/academic/': typeof AcademicIndexRoute
   '/admin/': typeof AdminIndexRoute
@@ -442,6 +449,7 @@ export interface FileRoutesByTo {
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
+  '/technical/courses/furniture': typeof TechnicalCoursesFurnitureRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/academic': typeof AcademicIndexRoute
   '/admin': typeof AdminIndexRoute
@@ -501,6 +509,7 @@ export interface FileRoutesById {
   '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/technical/curriculum': typeof TechnicalCurriculumRoute
+  '/technical/courses/furniture': typeof TechnicalCoursesFurnitureRoute
   '/technical/pricing': typeof TechnicalPricingRoute
   '/academic/': typeof AcademicIndexRoute
   '/admin/': typeof AdminIndexRoute
@@ -561,6 +570,7 @@ export interface FileRouteTypes {
     | '/kids/privacy'
     | '/roadmap/$id'
     | '/technical/curriculum'
+    | '/technical/courses/furniture'
     | '/technical/pricing'
     | '/academic/'
     | '/admin/'
@@ -614,6 +624,7 @@ export interface FileRouteTypes {
     | '/kids/privacy'
     | '/roadmap/$id'
     | '/technical/curriculum'
+    | '/technical/courses/furniture'
     | '/technical/pricing'
     | '/academic'
     | '/admin'
@@ -672,6 +683,7 @@ export interface FileRouteTypes {
     | '/kids/privacy'
     | '/roadmap/$id'
     | '/technical/curriculum'
+    | '/technical/courses/furniture'
     | '/technical/pricing'
     | '/academic/'
     | '/admin/'
@@ -1060,6 +1072,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TechnicalCurriculumRouteImport
       parentRoute: typeof TechnicalRoute
     }
+    '/technical/courses/furniture': {
+      id: '/technical/courses/furniture'
+      path: '/courses/furniture'
+      fullPath: '/technical/courses/furniture'
+      preLoaderRoute: typeof TechnicalCoursesFurnitureRouteImport
+      parentRoute: typeof TechnicalRoute
+    }
     '/technical/pricing': {
       id: '/technical/pricing'
       path: '/pricing'
@@ -1196,6 +1215,7 @@ const KidsRouteWithChildren = KidsRoute._addFileChildren(KidsRouteChildren)
 
 interface TechnicalRouteChildren {
   TechnicalCurriculumRoute: typeof TechnicalCurriculumRoute
+  TechnicalCoursesFurnitureRoute: typeof TechnicalCoursesFurnitureRoute
   TechnicalPricingRoute: typeof TechnicalPricingRoute
   TechnicalIndexRoute: typeof TechnicalIndexRoute
   TechnicalLearnLessonIdRoute: typeof TechnicalLearnLessonIdRoute
@@ -1203,6 +1223,7 @@ interface TechnicalRouteChildren {
 
 const TechnicalRouteChildren: TechnicalRouteChildren = {
   TechnicalCurriculumRoute: TechnicalCurriculumRoute,
+  TechnicalCoursesFurnitureRoute: TechnicalCoursesFurnitureRoute,
   TechnicalPricingRoute: TechnicalPricingRoute,
   TechnicalIndexRoute: TechnicalIndexRoute,
   TechnicalLearnLessonIdRoute: TechnicalLearnLessonIdRoute,

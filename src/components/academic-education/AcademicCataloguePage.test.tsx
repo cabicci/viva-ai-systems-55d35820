@@ -41,7 +41,7 @@ it("shows the review course and curriculum without retaining administrator catal
     </QueryClientProvider>
   );
   const view = render(page());
-  expect(await screen.findByRole("link", { name: "Open curriculum" })).toHaveAttribute(
+  expect(await screen.findByRole("link", { name: /Open curriculum/ })).toHaveAttribute(
     "href",
     "/academic/courses/AC-BUS?locale=en",
   );

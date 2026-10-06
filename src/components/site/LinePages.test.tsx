@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { AcademicOverviewPage } from "@/components/academic-education/AcademicOverviewPage";
 import { getAcademicOverviewCopy } from "@/lib/academic-education/overview-copy";
 import { LineOverview } from "./LineOverview";
-import { KidsCurriculum, TechnicalCurriculum } from "./LineCurriculum";
+import { KidsCurriculum, TechnicalCurriculum, TechnicalCatalogue } from "./LineCurriculum";
 import { CurriculumLayout } from "./CurriculumLayout";
 import { getLineCopy } from "@/lib/learning-lines";
 import { getLineOverviewCopy } from "@/lib/line-overview-copy";
@@ -84,6 +84,20 @@ afterEach(cleanup);
 
 describe("line-specific overviews and curricula", () => {
   it.each(SUPPORTED_LOCALES)(
+    "opens the Technical catalogue before its course contents in %s",
+    (locale) => {
+      state.locale = locale;
+      const view = render(<TechnicalCatalogue />);
+      expect(screen.getAllByTestId("technical-course-card")).toHaveLength(1);
+      expect(screen.getByTestId("technical-course-card")).toHaveAttribute(
+        "href",
+        `/technical/courses/furniture?locale=${locale}`,
+      );
+      expect(view.container.querySelectorAll('a[href^="/technical/learn/"]')).toHaveLength(0);
+    },
+  );
+
+  it.each(SUPPORTED_LOCALES)(
     "keeps the Academic overview separate from its course catalogue in %s",
     (locale) => {
       state.locale = locale;
@@ -93,7 +107,15 @@ describe("line-specific overviews and curricula", () => {
         getLineCopy(locale).academic,
       );
       expect(screen.getByRole("heading", { name: c.title })).toBeInTheDocument();
-      expect(screen.getAllByRole("link", { name: c.browse })).toHaveLength(2);
+      expect(screen.getAllByRole("link", { name: c.browse })).toHaveLength(1);
+      expect(screen.getByRole("link", { name: getLineCopy(locale).paths })).toHaveAttribute(
+        "href",
+        `/academic/curriculum?locale=${locale}`,
+      );
+      expect(screen.getByRole("link", { name: getLineCopy(locale).plans })).toHaveAttribute(
+        "href",
+        `/academic/pricing?locale=${locale}`,
+      );
       for (const link of screen.getAllByRole("link", { name: c.browse }))
         expect(link).toHaveAttribute("href", `/academic/curriculum?locale=${locale}`);
       expect(view.container.querySelector('[data-testid="academic-course-card"]')).toBeNull();
