@@ -194,3 +194,5 @@ source: user
 scope: db
 summary: Integrate pinned written handoff 7b93d7d with independent Academic access, private downloads and TEST commerce. Preserve active media run and source branch. Course and assistant remain disabled pending acceptance; no production release claimed.
 sync_status: matching roadmap item created in_progress before implementation
+
+Integration gate correction: CI37455120227 reported GHSA-68fv-2mgg-jv7q in source-map-js1.2.1. Pin the patched1.2.2 dependency only; preserve the advisory gate and active media branch.
