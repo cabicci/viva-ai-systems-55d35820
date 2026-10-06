@@ -1,5 +1,15 @@
 # Masaarat Academic — current integration handoff
 
+## 2026-10-06 continuation: complete product requested, media preparation saved
+
+The owner resumed the paused work and requested the final product including videos, toward central merge. Recovery v145 and Continuation v75 were retrieved; the leading ACADEMIC-WRITTEN-HANDOFF-02 confirms the written checkpoint. Remote main and Academic remained at `062b5f59` / `5778f143` before this continuation. Central shared integration ownership is unchanged.
+
+`scripts/academic-education/media_plan.py` deterministically prepares exactly 156 additional lesson/locale narration plans from the corrected source packages, preserving the four existing pilot identities. Each plan retains the authored bespoke visual direction and source checksum; no reading image/component is copied. Narration includes explanations, worked cases, application prompts and summaries, excluding quiz answer keys and hidden rubrics. Sentence grouping preserves words and quantities. These are production inputs, **not rendered videos or accepted storyboards**.
+
+`MEDIA_PREPARATION.json` records the current preparation counts. Six new regression checks plus the existing seven Python checks passed (13 total). No full-course renderer, TTS request, new Bunny upload, production import, merge or publication occurred. The pre-existing listening gate in `AUDIO_REVIEW.md` remains unfulfilled; continuing toward the product is not recorded as an assertion that the owner heard and accepted the actual pilot. Next: obtain actual pilot audio acceptance/corrections, implement the bespoke scene directions, then render/upload only the additional exact lesson/locale identities. Central integration and assistant commercial decisions remain open.
+
+The preparation outputs under `tmp/academic-course-media/plans` are reproducible from the committed source; do not treat their existence as paid production progress. Reproduction: `python scripts/academic-education/media_plan.py`.
+
 Updated 2026-10-05T21:37:05.844845+00:00. This document replaces historical status sections; git history retains them.
 
 ## Ownership and delivery boundary

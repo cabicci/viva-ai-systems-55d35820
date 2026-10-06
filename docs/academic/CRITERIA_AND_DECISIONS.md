@@ -1,4 +1,13 @@
 # Masaarat Academic — reusable curriculum criteria and decision register
+
+## AC-MEDIA-PREPARE-01 — 2026-10-06 continuation
+
+The owner resumed work toward the final product including videos and merge readiness. Read current Recovery145 / Continuation75, and verified remote main062b5f59 / Academic5778f143. The written content remains complete as review packages; central integration retains ownership of shared surfaces and global registers.
+
+Prepared 156 exact narration/scene-text plans without generation, upload or production writes. Preserved source quantities, existing pilots and separation from formative answer keys. Stored bespoke visual directions are not yet executable/rendered storyboards. Six media-preparation tests and seven existing Python tests passed. Actual pilot audio acceptance is still outstanding under the existing listening requirement; no acceptance, new media or completed final product is inferred from this continuation request.
+
+The next owner input is a review of the existing actual pilot sound (acceptance or timestamped corrections). Source preparation does not require re-producing that pilot. The separate assistant's commercial values remain undecided; no invented price/quota is introduced.
+
 Date: 2026-10-05
 Status: full written-course implementation authorized after pilot-direction acceptance; isolated branch, editorial and central integration gates remain open.
 Repository: cabicci/viva-ai-systems-55d35820

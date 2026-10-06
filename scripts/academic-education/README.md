@@ -1,5 +1,11 @@
 # Academic production and integration
 
+## Full-course video preparation (2026-10-06)
+
+Run `python scripts/academic-education/media_plan.py` to prepare the 156 additional lesson/locale narration plans under `tmp/academic-course-media/plans`. The manifest binds exact lesson, locale and source checksums. It does not include the four existing pilot videos and cannot call TTS, upload or deploy. Authored visual directions remain review inputs; no claim of completed animated scenes is made. `media_plan_test.py` covers exact coverage, assessment exclusion, lossless numeric text, source changes and no pilot/locale fallback.
+
+Full-course media production remains subject to the actual listening acceptance recorded in `docs/academic/AUDIO_REVIEW.md`. Prepared plans are not videos. The existing pilot-only workflow/request must not be widened implicitly or used to overwrite pilot identities. Review changes to pronunciation against real audio before scaling; keep source wording separate from provider-only pronunciation instructions.
+
 `expand_lessons.py` performs bounded original lesson expansion from committed authored briefs using the existing Gemini credential. Outputs are review-only, never imported or published automatically. The request caps 39 lessons × four locales × two attempts. The pilot is not regenerated. A refusal does not trigger safety-evasion rewriting. Secret values and provider bodies are not logged.
 
 `integration-candidate.sql` is deliberately outside `supabase/migrations`. It is a central-integration review candidate, not an applied migration. It reuses stored account/admin identity and existing commerce entitlement records. It creates inactive course/content, private downloads and server-graded quiz/progress delivery. Academic and assistant rights are independent. Missing video is nullable. Practice submission is not represented as academic grading.
