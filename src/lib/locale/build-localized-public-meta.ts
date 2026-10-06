@@ -5,9 +5,18 @@ import { buildPublicRouteIdentity } from "@/lib/seo/public-route-identity";
 import { lineMeta } from "@/lib/learning-lines";
 
 export type PublicRouteMetaKind =
-  "home" | "kids" | "pricing" | "terms" | "privacy" | "contact" | "login" | "signup" | "root";
+  | "home"
+  | "kids"
+  | "pricing"
+  | "terms"
+  | "privacy"
+  | "contact"
+  | "login"
+  | "signup"
+  | "root";
 type LineMetaKind =
   | "ai"
+  | "aiApplied"
   | "about"
   | "kidsPricing"
   | "technical"
@@ -16,7 +25,9 @@ type LineMetaKind =
   | "technicalCurriculum";
 
 export type RouteMetaTag =
-  { title: string } | { name: string; content: string } | { property: string; content: string };
+  | { title: string }
+  | { name: string; content: string }
+  | { property: string; content: string };
 
 function withSocialTags(title: string, description: string): RouteMetaTag[] {
   return [
@@ -70,6 +81,7 @@ export function buildLocalizedPublicMeta(
   if (kind === "home") return lineMeta(locale, "platform");
   if (
     kind === "ai" ||
+    kind === "aiApplied" ||
     kind === "about" ||
     kind === "kidsPricing" ||
     kind === "technical" ||

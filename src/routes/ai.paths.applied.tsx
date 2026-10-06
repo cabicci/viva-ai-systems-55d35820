@@ -12,10 +12,8 @@ import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 export const Route = createFileRoute("/ai/paths/applied")({
   validateSearch: parseLocaleSearchParam,
-  head: async ({ match }) => ({
-    ...lineMeta(await resolveRouteHeadLocale({ searchLocale: match.search.locale }), "ai"),
-    links: [{ rel: "canonical", href: "https://masaarat.ai/ai/paths/applied" }],
-  }),
+  head: async ({ match }) =>
+    lineMeta(await resolveRouteHeadLocale({ searchLocale: match.search.locale }), "aiApplied"),
   component: AIPage,
 });
 function AIPage() {

@@ -1,4 +1,5 @@
 import type { SupportedLocale } from "@/lib/locale/types";
+import { getPathDefinition } from "@/lib/path-story";
 
 export type LearningLine = "ai" | "kids" | "technical" | "academic";
 export const LEARNING_LINES = ["ai", "kids", "technical", "academic"] as const;
@@ -234,6 +235,7 @@ export function lineMeta(
   kind:
     | LearningLine
     | "platform"
+    | "aiApplied"
     | "about"
     | "kidsPricing"
     | "technicalPricing"
@@ -245,6 +247,7 @@ export function lineMeta(
   const path = {
     platform: "/",
     ai: "/ai",
+    aiApplied: "/ai/paths/applied",
     kids: "/kids",
     academic: "/academic",
     technical: "/technical",
@@ -252,23 +255,25 @@ export function lineMeta(
     kidsPricing: "/kids/pricing",
     technicalPricing: "/technical/pricing",
     academicPricing: "/academic/pricing",
-    kidsCurriculum: "/kids/curriculum",
-    technicalCurriculum: "/technical/curriculum",
+    kidsCurriculum: "/kids",
+    technicalCurriculum: "/technical",
   }[kind];
   const title =
-    kind === "kidsCurriculum" || kind === "technicalCurriculum"
-      ? `${kind === "kidsCurriculum" ? c.kids : c.technical} — ${c.paths}`
-      : kind === "platform"
-        ? c.platformTitle
-        : kind === "about"
-          ? c.about
-          : kind === "kidsPricing"
-            ? `${c.kids} — ${c.plans}`
-            : kind === "academicPricing"
-              ? `${c.academic} — ${c.plans}`
-              : kind === "technicalPricing"
-                ? `${c.technical} — ${c.plans}`
-                : c[kind];
+    kind === "aiApplied"
+      ? getPathDefinition("ai", locale).title
+      : kind === "kidsCurriculum" || kind === "technicalCurriculum"
+        ? `${kind === "kidsCurriculum" ? c.kids : c.technical} — ${c.paths}`
+        : kind === "platform"
+          ? c.platformTitle
+          : kind === "about"
+            ? c.about
+            : kind === "kidsPricing"
+              ? `${c.kids} — ${c.plans}`
+              : kind === "academicPricing"
+                ? `${c.academic} — ${c.plans}`
+                : kind === "technicalPricing"
+                  ? `${c.technical} — ${c.plans}`
+                  : c[kind];
   const description =
     kind === "platform"
       ? c.platformIntro

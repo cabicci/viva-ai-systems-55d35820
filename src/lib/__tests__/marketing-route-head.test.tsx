@@ -191,6 +191,19 @@ describe("settled localized page-view metadata", () => {
 });
 
 describe("public route identity", () => {
+  it.each(SUPPORTED_LOCALES)("uses catalogue identities for legacy redirects in %s", (locale) => {
+    for (const [kind, path] of [
+      ["kidsCurriculum", "/kids"],
+      ["technicalCurriculum", "/technical"],
+    ] as const) {
+      const head = buildLocalizedPublicMeta(locale, kind);
+      expect(head.links).toEqual([{ rel: "canonical", href: `https://masaarat.ai${path}` }]);
+      expect(head.meta.filter((tag) => "property" in tag && tag.property === "og:url")).toEqual([
+        { property: "og:url", content: `https://masaarat.ai${path}` },
+      ]);
+    }
+    expect(readFileSync("src/routes/ai.paths.applied.tsx", "utf8")).toContain('"aiApplied"');
+  });
   it.each(SUPPORTED_LOCALES)(
     "keeps localized metadata and one sitemap-aligned identity for %s",
     (locale) => {
