@@ -1,25 +1,34 @@
 import type { SupportedLocale } from "@/lib/locale/types";
 
-export type LearningLine = "ai" | "kids" | "technical";
-export const LEARNING_LINES = ["ai", "kids", "technical"] as const;
-export const LINE_ROUTES = { ai: "/ai", kids: "/kids", technical: "/technical" } as const;
+export type LearningLine = "ai" | "kids" | "technical" | "academic";
+export const LEARNING_LINES = ["ai", "kids", "technical", "academic"] as const;
+export const LINE_ROUTES = {
+  ai: "/ai",
+  kids: "/kids",
+  academic: "/academic",
+  technical: "/technical",
+} as const;
 export const LINE_PRICING = {
   ai: "/pricing",
   kids: "/kids/pricing",
   technical: "/technical/pricing",
+  academic: "/academic/pricing",
 } as const;
 export const LINE_CURRICULUM = {
   ai: "/curriculum",
   kids: "/kids/curriculum",
   technical: "/technical/curriculum",
+  academic: "/academic",
 } as const;
 export const LINE_LOGOS = {
   ai: "/brand/masaarat-ai.png",
   kids: "/brand/masaarat-kids.png",
   technical: "/brand/masaarat-tech.png",
+  academic: "/brand/masaarat-academic.png",
 } as const;
 
 export function learningLineForPath(path: string): LearningLine | null {
+  if (path === "/academic" || path.startsWith("/academic/")) return "academic";
   if (path === "/kids" || path.startsWith("/kids/")) return "kids";
   if (path === "/technical" || path.startsWith("/technical/")) return "technical";
   if (
@@ -82,6 +91,13 @@ const copy = {
   ai: ["الذكاء الاصطناعي", "الذكاء الاصطناعي", "الذكاء الاصطناعي", "Artificial intelligence"],
   kids: ["مسارات كيدز", "مسارات كيدز", "مسارات كيدز", "Masaarat Kids"],
   technical: ["التعليم المهني", "التعليم المهني", "التعليم المهني", "Vocational learning"],
+  academic: ["مسارات أكاديمي", "مسارات أكاديمي", "مسارات أكاديمي", "Masaarat Academic"],
+  academicIntro: [
+    "مقررات عملية في إدارة الأعمال، فيها شرح وأمثلة وتطبيقات، باشتراك مستقل في حسابك نفسه.",
+    "مقررات تطبيقية في إدارة الأعمال، تضم الشرح والأمثلة والتطبيقات، باشتراك مستقل ضمن حسابك الموحد.",
+    "مقررات عملية في إدارة الأعمال، فيها شرح وأمثلة وتطبيقات، باشتراك مستقل ضمن حسابك نفسه.",
+    "Practical business courses with explanations, examples and activities, with an independent subscription in your shared account.",
+  ],
   aiIntro: [
     "من فهم AI لاستخدامه في شغلك، وتحليل البيانات، وتشغيل الأنظمة وبناء المنتجات. مسارات عملية للكبار، تبدأ من الأساسيات وتكبر مع هدفك.",
     "من فهم الذكاء الاصطناعي إلى استخدامه في العمل وتحليل البيانات وتشغيل الأنظمة وبناء المنتجات. مسارات تطبيقية للكبار تبدأ بالأساسيات وتتدرج وفق أهدافك.",
@@ -220,6 +236,7 @@ export function lineMeta(
     | "about"
     | "kidsPricing"
     | "technicalPricing"
+    | "academicPricing"
     | "kidsCurriculum"
     | "technicalCurriculum",
 ) {
@@ -228,10 +245,12 @@ export function lineMeta(
     platform: "/",
     ai: "/ai",
     kids: "/kids",
+    academic: "/academic",
     technical: "/technical",
     about: "/about",
     kidsPricing: "/kids/pricing",
     technicalPricing: "/technical/pricing",
+    academicPricing: "/academic/pricing",
     kidsCurriculum: "/kids/curriculum",
     technicalCurriculum: "/technical/curriculum",
   }[kind];
@@ -244,9 +263,11 @@ export function lineMeta(
           ? c.about
           : kind === "kidsPricing"
             ? `${c.kids} — ${c.plans}`
-            : kind === "technicalPricing"
-              ? `${c.technical} — ${c.plans}`
-              : c[kind];
+            : kind === "academicPricing"
+              ? `${c.academic} — ${c.plans}`
+              : kind === "technicalPricing"
+                ? `${c.technical} — ${c.plans}`
+                : c[kind];
   const description =
     kind === "platform"
       ? c.platformIntro
@@ -254,9 +275,11 @@ export function lineMeta(
         ? c.aboutIntro
         : kind.startsWith("kids")
           ? c.kidsIntro
-          : kind.startsWith("technical")
-            ? c.technicalIntro
-            : c.aiIntro;
+          : kind.startsWith("academic")
+            ? c.academicIntro
+            : kind.startsWith("technical")
+              ? c.technicalIntro
+              : c.aiIntro;
   const url = `https://masaarat.ai${path}`;
   return {
     meta: [

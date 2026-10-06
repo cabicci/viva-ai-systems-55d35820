@@ -1,0 +1,38 @@
+{
+  "asOf": "2026-10-05T21:30:21.629292+00:00",
+  "gulf": {
+    "run": 37374230148,
+    "artifact": 11371460911,
+    "providerValidated": 5,
+    "retainedDraftsCompletedLocally": 13,
+    "originalLocalCompletion": [
+      "AC-BUS-M01-L04"
+    ],
+    "idCorrection": {
+      "AC-BUS-M07-L07-AR": "AC-BUS-M07-L07"
+    },
+    "structuralRepair": [
+      "AC-BUS-M07-L06 reading comparison contained duplicated serialized cells; replaced with a coherent comparison"
+    ],
+    "finalAdditionalPackages": 39
+  },
+  "english": {
+    "run": 37371816157,
+    "artifact": 11369737927,
+    "providerValidated": 17,
+    "retainedDraftsCompletedLocally": [
+      "AC-BUS-M04-L01",
+      "AC-BUS-M05-L04"
+    ],
+    "originalLocalCompletion": [
+      "AC-BUS-M03-L05"
+    ],
+    "finalAdditionalPackages": 39
+  },
+  "noCompletedPackagesRegenerated": true,
+  "editorialCorrectionCount": 197,
+  "academicAcceptance": "PENDING_INDEPENDENT_REVIEW",
+  "measuredStudyTime": null,
+  "productionChanged": false,
+  "existingMediaChanged": false
+}

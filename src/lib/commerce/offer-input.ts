@@ -32,7 +32,7 @@ export const simpleOfferSchema = z
       )
       .max(1000),
     group_name: z.string().trim().max(120).default(""),
-    package: z.enum(["pro", "pro_plus", "kids", "technical"]),
+    package: z.enum(["pro", "pro_plus", "kids", "technical", "academic"]),
     market: z.enum(["EG", "INTL"]),
     billing_interval: z.enum(["month", "year"]),
     percent: z.number().int().min(1).max(100),

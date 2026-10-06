@@ -1,0 +1,1016 @@
+[
+  {
+    "title": "Business functions and connected decisions",
+    "concept": "Marketing defines a customer promise, operations delivers it, finance tests affordability, and people management provides skills and accountability. A decision that improves one department can damage the whole service. Trace an order across functions and specify what information must cross each handoff.",
+    "case": "Fictional case: sales promises 30 orders today while operations can deliver 20. More advertising does not close this gap. Renegotiate the promise with customers or verify and cost extra capacity. Blaming operators alone hides the coordination failure.",
+    "task": "Map one order through sales, operations and finance. Record information, owner and handoff time. Identify one conflict, propose two responses, and compare customer, cost and capacity effects.",
+    "question": "What is needed before promising 30 orders?",
+    "correct": "Available capacity and existing commitments",
+    "wrong": "Advertising follower count alone",
+    "id": "AC-BUS-M01-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Environment, stakeholders and ethical decisions",
+    "concept": "Stakeholders affect or are affected by a business. Customers, workers, suppliers and neighbours can have different interests. Separate external conditions from internal capabilities. Ethical analysis considers harm, fairness and honesty alongside revenue. Limited power to complain does not make a stakeholder unimportant.",
+    "case": "Fictional case: running a machine at night speeds delivery but disturbs neighbours and fatigues workers. Compare scheduling changes, sound insulation and workload redistribution. Compensation does not automatically remove harm or replace checking local requirements.",
+    "task": "Map five stakeholders, their interests, possible harm and voice in the decision. Design two alternatives, justify a choice and identify missing evidence that could change it.",
+    "question": "Does limited power to object justify ignoring harm?",
+    "correct": "No; assess harm and ways to reduce it",
+    "wrong": "Yes, if revenue increases",
+    "id": "AC-BUS-M01-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Reading data and limits of inference",
+    "concept": "A count answers how many; a rate needs a numerator and denominator; a trend needs comparable periods. Improvement does not establish its cause. Separate observation, calculation and assumption. Record sample size and selection. Do not compare rates with different definitions or periods without explaining the difference.",
+    "case": "Fictional case: complaints rise from 4 of 40 orders to 6 of 100. The count increases while the rate falls from 10% to 6%. Service may have improved, but reporting methods or customer mix may also have changed.",
+    "task": "Tabulate both periods and calculate rates. Write one misleading headline and one accurate headline. List three alternative explanations and evidence that distinguishes them. Rewrite your conclusion with its limits.",
+    "question": "What is the second-period complaint rate?",
+    "correct": "6%, because 6 / 100 = 0.06",
+    "wrong": "15%, using the first-period denominator",
+    "id": "AC-BUS-M01-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Leadership, management and accountability",
+    "concept": "Management organises resources and follow-up; leadership helps people understand and pursue direction. One person can do both. Task responsibility, decision authority and accountability are related but distinct. Clear roles support collaboration by preventing everyone from waiting for someone else.",
+    "case": "Fictional case: a launch stalls because a designer awaits the manager, who assumes the coordinator approved it. Motivation alone will not fix ambiguous authority. Specify who authorises publication, who reviews it and when delays escalate.",
+    "task": "Choose a five-task project. Assign an executor, decision owner and reviewer to each task. Test the arrangement against an absent decision owner and define a fallback that respects sensitive permissions.",
+    "question": "What should address conflicting approvals first?",
+    "correct": "Clarify the decision owner and authority",
+    "wrong": "Send only a motivational message",
+    "id": "AC-BUS-M02-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Decision-making and problem-solving",
+    "concept": "Define the gap between actual and desired performance. Separate symptoms from possible causes and gather evidence before fixing on one explanation. Compare alternatives, including temporarily maintaining the current approach. Set criteria before favouring an option. Reversible decisions can use bounded trials with stop conditions.",
+    "case": "Fictional case: late orders may reflect missing supplies or incorrect files. A new machine only addresses production capacity. Review ten delayed orders and classify waiting causes before allocating money.",
+    "task": "Define the problem without personal blame. Create an evidence log, three alternatives and a three-criterion comparison. Explain the weights and select a small test with a clear stop measure.",
+    "question": "Does late delivery prove the machine is the cause?",
+    "correct": "No; trace the causes of waiting",
+    "wrong": "Yes; delays always mean too few machines",
+    "id": "AC-BUS-M02-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Communication, delegation and feedback",
+    "concept": "Delegation specifies the outcome, deadline, resources, authority and review point. It is not handing over an ambiguous task and judging against unstated expectations. Useful feedback describes observable behaviour and its effect, invites the other person’s explanation and agrees a verifiable next step.",
+    "case": "Fictional case: replace “you are disorganised” with “the last two orders lacked a delivery date, so the team had to ask again.” Ask why and agree a required field plus a review of subsequent orders.",
+    "task": "Write a one-page delegation brief and a six-turn feedback conversation with a question, listening and agreement. Check whether the person actually has the necessary resources and authority.",
+    "question": "Which opening supports useful feedback?",
+    "correct": "Describe a specific event and its effect",
+    "wrong": "Make a general judgement about character",
+    "id": "AC-BUS-M02-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Teams, motivation and conflict",
+    "concept": "Teams need shared goals, roles, information and working agreements. Motivation is not only reward: clarity, fairness and the ability to succeed also matter. Distinguish disagreement about work from personal attack. Explore interests behind positions and seek alternatives that protect the shared goal.",
+    "case": "Fictional case: sales wants faster delivery while operations wants more inspection time. Reliable service is their shared interest. Early file checking may help more than dropping checks or making unrealistic promises.",
+    "task": "Write five working agreements. Analyse a conflict using positions, interests, evidence and alternatives. Design a conversation ending with an owner and follow-up date rather than a vague call to cooperate.",
+    "question": "What shared interest can connect both teams?",
+    "correct": "Reliable delivery that meets the customer promise",
+    "wrong": "One department defeating the other",
+    "id": "AC-BUS-M02-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Negotiating and documenting agreements",
+    "concept": "Clarify your needs, acceptable limits and alternative if no agreement is reached. Ask about the other party’s needs. Compare price, quality, delivery and payment together; a lower price may cost more after delays. A clear agreement specifies obligations, verification and change handling.",
+    "case": "Fictional case: a supplier offers a discount for buying above expected consumption. Compare the saving with storage, unused stock and cash requirements. The discount is not automatically a gain.",
+    "task": "Prepare a negotiation brief and three alternative packages. Draft an agreement covering quantity, specification, timing, acceptance and changes. Mark assumptions requiring verification before commitment.",
+    "question": "How should a bulk discount be evaluated?",
+    "correct": "Using total cost, cash needs and inventory risk",
+    "wrong": "Using only the discount percentage",
+    "id": "AC-BUS-M02-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Choosing a problem and customer segment",
+    "concept": "A segment groups customers with similar contexts, needs and purchasing behaviour. “Everyone” does not guide service design or testing. Describe the problem before choosing a solution. Distinguish user, buyer and approver. An initial segment focuses learning without permanently excluding others.",
+    "case": "Fictional case: students submitting printed projects weekly differ from a shop buying seasonal promotional materials. Both print, but frequency, deadlines and selection criteria differ. One vague offer may serve neither well.",
+    "task": "Compare two segments across user, buyer, context, frequency, alternative and selection criterion. Choose a test segment and identify missing evidence that could change the choice.",
+    "question": "Which description better defines an initial segment?",
+    "correct": "Customers with a similar context and need",
+    "wrong": "Everyone who can pay",
+    "id": "AC-BUS-M03-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Customer research and interview questions",
+    "concept": "Ask about recent experiences, actual behaviour and current alternatives, then clarify reasons or sequence. Leading questions suggest an answer; future enthusiasm is not a purchase. Obtain consent for recording, minimise collected data and avoid generalising a small sample to the entire market.",
+    "case": "Instead of “wouldn’t you love our fast service?”, ask “tell me about the last time you needed printing before a tight deadline.” The issue may be file checking, not machine speed. One interview without a problem does not establish its absence.",
+    "task": "Design six open interview questions. Rewrite three leading questions neutrally. Run a peer simulation or clearly label fictional responses, then separate reported statements from your interpretation.",
+    "question": "Which evidence better reveals behaviour?",
+    "correct": "A recent actual experience",
+    "wrong": "Polite enthusiasm for an untried idea",
+    "id": "AC-BUS-M03-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Value proposition and business model",
+    "concept": "A value proposition identifies the customer, problem, useful outcome and reason to choose the offer over alternatives. A business model connects this to activities, resources, partners, channels, revenue and costs. Coherence matters more than filling boxes: fast service needs feasible operations and economics.",
+    "case": "Fictional case: a service receives student files early and checks them before printing. Its value is less rework and waiting, not simply owning a machine. Lengthy manual checking must appear in capacity and cost estimates.",
+    "task": "Write a two-sentence value proposition and connect customer, channel, activity, resource, revenue and cost. Attach an assumption and test to each relationship. Find and repair one inconsistency.",
+    "question": "Is owning a machine enough for a value proposition?",
+    "correct": "No; explain the customer benefit and evidence",
+    "wrong": "Yes; the resource is always the value",
+    "id": "AC-BUS-M03-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Channels, selling and customer experience",
+    "concept": "A channel connects an offer to customers and may differ from delivery or support channels. Follow awareness, enquiry, order, receipt and return. Each stage has questions, information and friction. Views are not sales; comparing channels requires consistent cost definitions and measurement windows.",
+    "case": "Fictional case: 100 visits yield 20 enquiries and 5 orders. Visit-to-order conversion is 5%; enquiry-to-order conversion is 25%. Different denominators describe different transitions, not different underlying performance.",
+    "task": "Map five journey stages with customer question, friction, owner and measure. Choose one leakage point, propose one change and specify how to measure it consistently.",
+    "question": "What is enquiry-to-order conversion?",
+    "correct": "25% = 5 / 20",
+    "wrong": "5% = 5 / 100",
+    "id": "AC-BUS-M03-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Pricing and unit economics",
+    "concept": "Price is not profit. Unit contribution equals price minus variable cost and helps cover fixed costs before producing a positive result. Examine discounts, commissions and rework. This simplified model does not replace full accounting or research into willingness to pay.",
+    "case": "Fictional case: price 150 and variable cost 90 give contribution 60. A price of 140 gives 50. Matching the contribution from 20 old-price orders needs 24 new-price orders, assuming unchanged costs and sufficient capacity.",
+    "task": "Compare three prices and unit contributions. Calculate orders needed to cover fictional fixed costs of 900, rounding up where necessary. State limitations and design a willingness-to-pay test.",
+    "question": "What is contribution at price 140 and variable cost 90?",
+    "correct": "50 before fixed costs",
+    "wrong": "140 net profit",
+    "id": "AC-BUS-M03-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Generating and selecting ideas",
+    "concept": "Separate generating alternatives from evaluating them. Start with a defined problem and vary service sequence, access or division of work. Evaluate customer benefit, capability, cost and risk. Scores structure discussion but do not turn assumptions into facts.",
+    "case": "Fictional case: reduce printing queues through early file submission, collection slots or another machine. The most technical option is not necessarily best. Early submission may address the cause more cheaply if customers adopt it.",
+    "task": "Generate six alternatives and compare three against four criteria. Explain each score and its evidence or assumption. Change one important weight, check the ranking and design a test for the leading option.",
+    "question": "What does a high score based on assumptions mean?",
+    "correct": "A priority to test, not proven success",
+    "wrong": "Guaranteed success",
+    "id": "AC-BUS-M04-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Market, alternatives and competition",
+    "concept": "A market is not everyone who might hear about an offer. Define segment, location, period and reach, then distinguish estimated demand from sales you can serve. Alternatives include another provider, doing it yourself or postponing. Compare using customer criteria rather than price alone.",
+    "case": "Fictional case: 1,000 students do not imply 1,000 monthly orders. Some need no printing and others use alternatives. Assuming 10% buy once monthly gives 100 estimated orders, but that assumption needs testing.",
+    "task": "Build a demand estimate with three explicit assumptions, then compare three alternatives across four selection criteria. Do not invent real market statistics. Identify the most influential assumption and how to investigate it.",
+    "question": "Does segment population equal expected sales?",
+    "correct": "No; estimate purchase, frequency and reach",
+    "wrong": "Yes; every person is a confirmed order",
+    "id": "AC-BUS-M04-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Operational feasibility and capacity",
+    "concept": "Capacity is output achievable within a period under defined quality conditions. A bottleneck can constrain a sequential process. Measure processing, waiting and rework separately. Available staff time is not all productive time; consider breakdowns, breaks and differences between orders.",
+    "case": "Fictional case: checking handles 8 orders per hour, printing 12 and binding 10. In a stable sequential model, the maximum is 8 orders per hour. Speeding printing alone does not raise that limit.",
+    "task": "Map four steps with explicit time and capacity assumptions. Identify the bottleneck, propose two improvements, calculate the new limit and explain why actual output may fall below it.",
+    "question": "Which step constrains the example?",
+    "correct": "Checking at 8 orders per hour",
+    "wrong": "Printing because it uses a machine",
+    "id": "AC-BUS-M04-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Costs, revenue, breakeven and cash flow",
+    "concept": "For a single-product model, breakeven units equal fixed costs divided by positive unit contribution, under stated assumptions. Accounting profit and cash collection differ. Closing cash equals opening cash plus receipts minus payments; sales alone cannot determine it.",
+    "case": "Fictional case: fixed costs of 900 and contribution of 60 give breakeven at 15 orders. Opening cash 500, receipts 2,400 and payments 2,700 give closing cash 200. Credit sales may not yet appear in receipts.",
+    "task": "Build three sales-volume scenarios and a two-week cash schedule. Separate sales, collection and payment dates. Delay a receipt of 600, identify any shortfall and discuss responses without treating a loan as sales revenue.",
+    "question": "What is closing cash in the example?",
+    "correct": "200 = 500 + 2400 − 2700",
+    "wrong": "3000 because it is total sales",
+    "id": "AC-BUS-M04-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Testing, scenarios and continuation decisions",
+    "concept": "Turn a critical assumption into a testable question. Specify a measure, decision threshold, test size and duration before observing results. Scenarios combine consistent assumptions; sensitivity analysis varies a particular factor. A limited test supports a limited decision, not guaranteed success at scale.",
+    "case": "Fictional case: 8 of 10 collection-slot orders arrive on time against a predeclared threshold of 9. Do not lower the threshold after seeing results. Investigate delays and revise the test before expanding.",
+    "task": "Write an experiment card with assumption, measure, threshold and actions for success or failure. Add conservative and base scenarios, then justify continue, revise or stop with evidence limitations.",
+    "question": "How should a missed predeclared threshold be handled?",
+    "correct": "Investigate and document a revision decision",
+    "wrong": "Lower it afterwards to declare success",
+    "id": "AC-BUS-M04-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Experiment validity and bias",
+    "concept": "Results can reflect participant selection, seasonality or several simultaneous changes. Record who was included and excluded, and distinguish intervention effects from alternative explanations. Fair allocation and consistent measurement help, but a small sample still has substantial limitations.",
+    "case": "Fictional case: a discount offered to friends during exam week produces more orders than an ordinary week. Discount, participant relationships and timing all changed. Design a comparison with more similar participants and timing.",
+    "task": "Audit the previous experiment for three biases. Redesign the comparison, specify constants and changes, and record exclusions. Write a conclusion limited to the tested participants and conditions.",
+    "question": "Does the increase establish the discount effect alone?",
+    "correct": "No; other factors changed simultaneously",
+    "wrong": "Yes; every increase after a discount is caused by it",
+    "id": "AC-BUS-M04-L06",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Vision, mission and measurable goals",
+    "concept": "Vision describes a desired future; mission states whom the organisation serves and its value. A goal translates direction into a result with a measure, baseline and deadline. Launching an advertisement is an activity, not an outcome such as completed orders. Check that targets do not encourage harmful shortcuts.",
+    "case": "Fictional case: “improve service” is a direction. “Raise on-time delivery from 80% to 90% in four weeks without increasing rework” is more specific. These are teaching assumptions, not a performance promise.",
+    "task": "Write a mission, vision and three goals. For each, record baseline, formula, deadline, owner and quality guardrail. Check whether proposed activities can plausibly influence the result.",
+    "question": "Which item describes an outcome?",
+    "correct": "A higher on-time delivery rate",
+    "wrong": "Sending ten advertisements alone",
+    "id": "AC-BUS-M05-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Environment, capabilities and priorities",
+    "concept": "Strategic analysis connects external conditions to internal capabilities. In a simple classification, strengths and weaknesses are internal; opportunities and threats are external. Lists do not constitute strategy. End with choices about what to do, postpone and why.",
+    "case": "Fictional case: file-checking expertise is an internal strength; seasonal submission pressure is external. Early booking can fit that capability better than competing on the lowest price with limited capacity.",
+    "task": "Classify eight internal and external observations with evidence. Derive three priorities and select one using impact, capability and cost. Name an activity to postpone so the priority is feasible.",
+    "question": "How does analysis become a decision?",
+    "correct": "By choosing a priority and what to defer",
+    "wrong": "By making the factor list longer",
+    "id": "AC-BUS-M05-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Positioning, marketing and sales planning",
+    "concept": "Positioning defines how a chosen segment should see an offer relative to alternatives. Connect the promise to evidence, a channel and a clear purchase step. Marketing plans specify activities, budget, ownership and measurement; sales plans handle enquiries, objections and follow-up without misleading pressure.",
+    "case": "Fictional case: “reliable printing for project deadlines” is more focused than “best for everyone.” The claim needs delivery evidence and checking processes. A campaign exceeding service capacity may undermine the promise.",
+    "task": "Write an offer statement, short advertisement and objection response. Connect them to a two-week plan with budget, capacity and conversion measure. Set a pause rule if the promise cannot be fulfilled.",
+    "question": "What supports a reliable-delivery promise?",
+    "correct": "Operational capacity and delivery evidence",
+    "wrong": "An unsupported “best” claim",
+    "id": "AC-BUS-M05-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Operations, resources and budgeting",
+    "concept": "Translate sales goals into people, materials, time and cash requirements. A budget is a documented estimate, not a promise. Separate one-off and recurring costs, and commitments from payment dates. Align capacity, purchasing and budget assumptions across the same period.",
+    "case": "Fictional case: 100 orders at 20 minutes each require 2,000 minutes before breaks and rework. Allocating only 25 hours cannot meet that assumption, even if the materials budget looks adequate.",
+    "task": "Build a four-week plan connecting demand, staff hours, materials and payments. Calculate a capacity or cash gap and revise the plan, documenting the service-cost trade-off.",
+    "question": "How many minutes does the example require before allowances?",
+    "correct": "2000 minutes",
+    "wrong": "1500 minutes because 25 hours are available",
+    "id": "AC-BUS-M05-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "An integrated business plan and measures",
+    "concept": "A business plan connects problem, customer, offer, demand evidence, operations, people, finance and risk. Every promise needs capability; every capability has a cost; every forecast has assumptions. A useful measure has a definition, source, frequency, owner and decision it can inform.",
+    "case": "Fictional case: a plan forecasts 200 orders while its capacity schedule supports 120. Editing the summary does not solve it. Revisit demand or capacity and its cost, then update finance and risk together.",
+    "task": "Integrate earlier outputs into a six-section plan. Reconcile three figures appearing in multiple sections. Define three metric cards and the decision each informs.",
+    "question": "How should demand-capacity inconsistency be fixed?",
+    "correct": "Revise assumptions and connected sections",
+    "wrong": "Change only the summary wording",
+    "id": "AC-BUS-M05-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Reviewing a plan and its sensitivity",
+    "concept": "Review the plan as if your favourite assumption were wrong. Vary an influential factor while initially holding others constant, then examine a scenario with related changes. Combining arbitrary worst values does not create a forecast. Distinguish possible events from preventive decisions.",
+    "case": "Fictional case: 20 orders at contribution 60 and fixed costs 900 produce 300. At 15 orders the result is zero. This shows volume sensitivity; it does not predict that 15 orders will occur.",
+    "task": "Choose three plan assumptions and vary each separately. Build a coherent conservative scenario, then record a preventive action, warning measure and review date.",
+    "question": "What does the 15-order scenario establish?",
+    "correct": "The model result under that assumption",
+    "wrong": "The certain number of future orders",
+    "id": "AC-BUS-M05-L06",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Formation requirements and local verification",
+    "concept": "Formation, licensing and tax requirements vary by jurisdiction, activity and legal form. Do not transfer a checklist between countries as if universally valid. Build a question map, identify the relevant official authority and record when an answer was checked and whether it applies. This lesson teaches verification, not legal advice.",
+    "case": "Fictional case: a home-based service and a physical shop may have different location requirements. Small size does not establish exemption. Record the question, authority, verified answer and effect on launch timing.",
+    "task": "Create eight questions covering activity, location, workers, data and invoicing. Mark unsupported answers unverified, assign an owner and note delay consequences. Never invent legal answers to fill the table.",
+    "question": "What should happen when local verification is missing?",
+    "correct": "Record the gap and seek the competent authority’s answer",
+    "wrong": "Assume another country’s rules apply",
+    "id": "AC-BUS-M06-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Suppliers, resources and purchasing",
+    "concept": "Evaluate suppliers on price, specification, timing, reliability, payment and failure response. Total cost can include delivery, inspection and waste. Define acceptance before purchasing and compare equivalent specifications. A backup supplier helps only if its capability is verified in time.",
+    "case": "Fictional case: offer A costs 1,000 plus 200 delivery; offer B costs 1,150 delivered. With other terms equal, B is 50 cheaper overall. Quality or lead-time differences could still change the decision.",
+    "task": "Write a purchasing specification and compare three fictional offers on total cost, quality and timing. Add inspection, acceptance, a backup supplier and its activation trigger.",
+    "question": "Which offer costs less when other terms are equal?",
+    "correct": "B: 1150 versus 1200",
+    "wrong": "A: because its headline price is 1000",
+    "id": "AC-BUS-M06-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Procedures, quality and customer service",
+    "concept": "A procedure defines its trigger, input, steps, owner, output, acceptance and exception handling. Quality is not only final inspection; early prevention can reduce rework. Customer service explains what happened, possible remedies and timing without promising beyond the team’s capability.",
+    "case": "Fictional case: an old file was printed because its version was not checked. Confirming the version with the customer before printing addresses the cause earlier. Inspection after binding discovers the mistake after resources are spent.",
+    "task": "Write a seven-step procedure with an error-prevention point and acceptance check. Add two exceptions and a professional complaint response. Walk through a fictional order, identify ambiguity and revise.",
+    "question": "When should the file version be checked?",
+    "correct": "Before printing, confirming the required version",
+    "wrong": "Only after delivery",
+    "id": "AC-BUS-M06-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Digital tools, rehearsal and launch readiness",
+    "concept": "Choose tools for the task, data, permissions, recovery and cost rather than popularity. An operational rehearsal follows a complete journey using test data, including success, failure and exceptions. An attractive screen does not prove correct routing or recoverability.",
+    "case": "Fictional case: an order form sends confirmation but omits delivery time. A complete rehearsal exposes the gap before a real order. Also test connection loss and duplicates without using real customer data.",
+    "task": "Compare two tools against written requirements. Design six rehearsal cases including failure, duplication and inappropriate access. Record result, evidence and owner, and define a critical launch blocker.",
+    "question": "Does receiving confirmation prove the process works?",
+    "correct": "No; trace recording, execution and exceptions",
+    "wrong": "Yes; testing the first screen is enough",
+    "id": "AC-BUS-M06-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Data minimisation and business continuity",
+    "concept": "Define data needed for a clear purpose, who requires access and when retention needs are reviewed. Continuity identifies critical work, alternatives and recovery owners. An untested backup is insufficient: verify restoration using test data and appropriate permissions.",
+    "case": "Fictional case: order collection may need contact details and an order number, not automatically an identity-document copy. If the order system fails, a controlled fallback should prevent duplicates and exposure of customer data.",
+    "task": "Map order data and permissions. Remove unnecessary fields with reasons. Write a disruption scenario, recovery steps and a test that demonstrates record completeness without exposing sensitive data.",
+    "question": "What makes backup readiness more credible?",
+    "correct": "A documented restoration test",
+    "wrong": "Only a file named backup",
+    "id": "AC-BUS-M06-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Launch checklist and readiness decision",
+    "concept": "A readiness checklist links each condition to evidence, owner and status. Distinguish a defect that blocks safe service from a deferrable improvement. A launch decision states scope, limitations, monitoring and rollback, and depends on verified conditions rather than deadline pressure alone.",
+    "case": "Fictional case: imperfect button colour may be deferrable, but lost orders during connection failure require a fix or reliable fallback before accepting real orders. Calling an issue small does not change its consequences.",
+    "task": "Create ten readiness conditions across operations, quality, finance and local verification. Classify blockers and deferrable defects. Write a one-page launch-or-delay decision and first-week monitoring plan.",
+    "question": "Which issue justifies delaying real orders?",
+    "correct": "Lost orders without a reliable fallback",
+    "wrong": "A minor nonfunctional colour difference",
+    "id": "AC-BUS-M06-L06",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Scope, deliverables and work breakdown",
+    "concept": "A project is temporary work producing a defined result; operations are ongoing. Scope states inclusions, exclusions and acceptance criteria. Break deliverables into assignable, reviewable parts and then activities. A list of activities is not a set of accepted outputs: a meeting is not an approved plan.",
+    "case": "Fictional case: launching print booking includes an order form, confirmation procedure and rehearsal, but excludes a complete mobile app. Recording that exclusion prevents uncontrolled expansion when a new idea appears.",
+    "task": "Write scope with deliverables, exclusions and acceptance. Break one output into five work packages with owners and evidence. Check for gaps and overlap.",
+    "question": "Which item is an output that can be accepted?",
+    "correct": "An order form that passes defined test cases",
+    "wrong": "Holding a meeting about the form",
+    "id": "AC-BUS-M07-L01",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Schedule, resources, cost and dependencies",
+    "concept": "Dependencies specify precedence; duration differs from effort. A task may need two work hours but wait two days for approval. Map sequence and then check resource conflicts. The longest path in a simple dependency network gives a minimum duration, but resource constraints can extend it.",
+    "case": "Fictional case: design takes two days, build three and testing one: six sequential days. Two-day training can overlap building if a separate trainer is available. If one person performs both, revise the schedule.",
+    "task": "Create six tasks with durations, dependencies and owners. Calculate earliest completion, then add a resource conflict and one-day delay. Update timing and cost and explain effort versus waiting.",
+    "question": "How long is the example’s design-build-test sequence?",
+    "correct": "Six days before additional constraints",
+    "wrong": "Three days because that is the longest task",
+    "id": "AC-BUS-M07-L02",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Risk, change and stakeholder communication",
+    "concept": "A risk is uncertain and may affect objectives; an issue has occurred. Record cause, event, impact, owner, response and trigger. Assess a change request for scope, timing, cost and quality before approval, then update the plan and inform affected stakeholders.",
+    "case": "Fictional case: possible supplier delay is a risk. Once the supplier confirms failure to deliver, it becomes an issue. A backup supplier may change cost and specification; do not treat that as impact-free.",
+    "task": "Create five risks and responses. Turn one into an issue and prepare a change request with two alternatives. Identify the approver and who must be informed and when.",
+    "question": "What is a supplier delay once confirmed?",
+    "correct": "An existing issue requiring action",
+    "wrong": "Only a possible risk needing no action",
+    "id": "AC-BUS-M07-L03",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Performance monitoring and improvement",
+    "concept": "Monitoring compares actual performance with a clear baseline and explains variance rather than merely displaying numbers. Activity and outcome measures differ, and improvement can trade off against quality. Test a small change, monitor its effect and a guardrail, then retain, revise or reverse it.",
+    "case": "Fictional case: average order time falls from 20 to 15 minutes while rework rises from 2 to 8 of 100 orders. Speed alone hides a quality decline. Investigate the changed process steps.",
+    "task": "Define four metrics with sources and baselines. Analyse a variance and propose an improvement test, guardrail and rollback decision. Write a report separating facts from interpretation.",
+    "question": "Is shorter time enough to declare improvement?",
+    "correct": "No; examine quality and rework",
+    "wrong": "Yes; speed makes other measures irrelevant",
+    "id": "AC-BUS-M07-L04",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Acceptance criteria and handover",
+    "concept": "Implementation completion is not acceptance. Acceptance criteria describe verifiable behaviour or results, judged by an authorised recipient. Handover includes usage, limitations, support ownership and known defects. Record acceptance or rejection against specific evidence.",
+    "case": "Fictional case: booking works on success but loses data after connection failure. “The form is ready” is insufficient. Recovery or clear user-notification criteria expose what must be fixed before acceptance.",
+    "task": "Write five acceptance criteria and a test for each. Prepare a handover with version, owner and deferred defects. Conduct a self-review and record missing evidence.",
+    "question": "What is stronger acceptance evidence?",
+    "correct": "Test results linked to agreed criteria",
+    "wrong": "Only the implementer saying it is finished",
+    "id": "AC-BUS-M07-L06",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Closing a project and learning from it",
+    "concept": "Closure confirms acceptance, transfers responsibility and records remaining commitments. A learning review asks what was expected, what happened, why and what will change next time. Avoid blame and generic advice; connect each lesson to evidence, a change and an owner.",
+    "case": "Fictional case: approval delays recur in three tasks. “We need more cooperation” specifies no action. An alternate approver and escalation time limit create a change testable in the next project.",
+    "task": "Write a short closure report and three lessons learned. For each, provide evidence, possible cause, action, owner and measure. Separate established facts from explanations requiring verification.",
+    "question": "Which lesson learned is actionable?",
+    "correct": "Define an alternate approver and escalation deadline",
+    "wrong": "A general request for better cooperation",
+    "id": "AC-BUS-M07-L07",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Evidence audit and defending a plan",
+    "concept": "A persuasive plan depends on coherent reasoning and evidence limits, not delivery confidence alone. Classify claims as observations, calculations, assumptions or decisions. Important claims need traceable internal support. Stating uncertainty with a verification plan is stronger than presenting assumptions as facts.",
+    "case": "Fictional case: five interviews do not establish that all students want a service. Say “the problem appeared in three of five exploratory interviews; a broader test is needed.” Do not hide cases that disagree.",
+    "task": "Audit ten claims in your plan and classify them. Prepare five challenging questions and answers grounded in evidence or its limits. Correct an overstated claim and define the next test.",
+    "question": "How should a five-interview finding be stated?",
+    "correct": "With sample size and generalisation limits",
+    "wrong": "As a fact about all customers",
+    "id": "AC-BUS-M07-L08",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  },
+  {
+    "title": "Presenting and reviewing the integrated project",
+    "concept": "The final project integrates problem, customer, value, business model, feasibility, operations, schedule, risks and metrics. It is not a stack of separate files: assumptions, figures and decisions must agree across sections. Explain your choices, what could change them and a bounded next action.",
+    "case": "Fictional case: reducing price to 140 should update contribution, breakeven and cash; demand and capacity assumptions may also change. Old tables create contradictions even in an attractive presentation.",
+    "task": "Submit an integrated plan, one-page summary and five-minute presentation. Check arithmetic, three risks, demand evidence and local-verification limits. Apply the rubric, revise the weakest section and record the change.",
+    "question": "What must be updated when price changes?",
+    "correct": "Connected calculations and assumptions throughout",
+    "wrong": "Only the pricing page title",
+    "id": "AC-BUS-M07-L05",
+    "locale": "en",
+    "context": {
+      "start": "Read the concept, then apply it to a project you choose.",
+      "practice": "Apply it",
+      "check": "Check your understanding",
+      "reflect": "What evidence supports your decision, and what still needs verification?",
+      "fiction": "This is a fictional teaching case, not actual market data."
+    },
+    "status": "AUTHORED_DRAFT",
+    "video": null,
+    "studyMinutes": {
+      "readingAndExamples": 10,
+      "application": 30,
+      "assessmentAndReflection": 10
+    },
+    "timingStatus": "UNVERIFIED_PLANNING_ESTIMATE"
+  }
+]

@@ -26,3 +26,6 @@ verify_jwt = true # Explicit signed-in admin batch; handler and SQL revalidate i
 
 [functions.technical-stripe-checkout]
 verify_jwt = false
+
+[functions.academic-stripe-checkout]
+verify_jwt = false # Handler verifies the caller with Auth before any operation.

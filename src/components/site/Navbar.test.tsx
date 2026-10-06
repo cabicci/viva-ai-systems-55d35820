@@ -67,12 +67,12 @@ beforeEach(() => {
   state.signOut.mockClear();
 });
 describe("learning lines and shared account navigation", () => {
-  it.each(SUPPORTED_LOCALES)("offers three complete clickable cards preserving %s", (locale) => {
+  it.each(SUPPORTED_LOCALES)("offers all complete clickable cards preserving %s", (locale) => {
     state.locale = locale;
     render(<LearningLineCards />);
     const c = getLineCopy(locale);
     const cards = within(screen.getByRole("region", { name: c.choose })).getAllByRole("link");
-    expect(cards).toHaveLength(3);
+    expect(cards).toHaveLength(LEARNING_LINES.length);
     cards.forEach((card, index) => {
       const line = LEARNING_LINES[index];
       expect(card).toHaveAttribute("href", `${LINE_ROUTES[line]}?locale=${locale}`);
@@ -115,7 +115,7 @@ describe("learning lines and shared account navigation", () => {
       );
       fireEvent.click(screen.getByRole("button", { name: c.switch }));
       const switcher = screen.getByRole("navigation", { name: c.switch });
-      expect(within(switcher).getAllByRole("link")).toHaveLength(2);
+      expect(within(switcher).getAllByRole("link")).toHaveLength(LEARNING_LINES.length - 1);
       expect(within(switcher).queryByRole("link", { name: c[line] })).not.toBeInTheDocument();
       LEARNING_LINES.filter((item) => item !== line).forEach((item) =>
         expect(within(switcher).getByRole("link", { name: c[item] })).toHaveAttribute(
@@ -129,7 +129,7 @@ describe("learning lines and shared account navigation", () => {
       fireEvent.click(screen.getByRole("button", { name: c.switch }));
       expect(
         within(screen.getByRole("navigation", { name: c.switch })).getAllByRole("link"),
-      ).toHaveLength(2);
+      ).toHaveLength(LEARNING_LINES.length - 1);
       expect(
         within(screen.getByRole("navigation", { name: c.switch })).queryByRole("link", {
           name: c[line],
@@ -170,7 +170,7 @@ describe("learning lines and shared account navigation", () => {
       expect(state.signOut).toHaveBeenCalledOnce();
     },
   );
-  it.each(SUPPORTED_LOCALES)("shows only the other two lines on mobile in %s", (locale) => {
+  it.each(SUPPORTED_LOCALES)("shows only the other learning lines on mobile in %s", (locale) => {
     state.locale = locale;
     const c = getLineCopy(locale);
     for (const line of LEARNING_LINES) {
@@ -180,7 +180,7 @@ describe("learning lines and shared account navigation", () => {
         render(<Navbar variant={user ? "account" : "public"} />);
         fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
         const switcher = within(screen.getByRole("dialog")).getByRole("region", { name: c.switch });
-        expect(within(switcher).getAllByRole("link")).toHaveLength(2);
+        expect(within(switcher).getAllByRole("link")).toHaveLength(LEARNING_LINES.length - 1);
         expect(within(switcher).queryByRole("link", { name: c[line] })).not.toBeInTheDocument();
         LEARNING_LINES.filter((item) => item !== line).forEach((item) =>
           expect(within(switcher).getByRole("link", { name: c[item] })).toHaveAttribute(

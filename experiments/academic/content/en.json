@@ -1,0 +1,195 @@
+{
+  "id": "AC-BUS-M01-L01",
+  "version": "1.0.0-pilot",
+  "brand": "Masaarat",
+  "line": "academic",
+  "courseId": "AC-BUS",
+  "status": "pilot-review",
+  "workloadMinutes": {
+    "video": 0,
+    "readingAndReflection": 15,
+    "application": 25,
+    "assessment": 10
+  },
+  "media": {
+    "provider": "bunny",
+    "videoId": null,
+    "embedUrl": null,
+    "audioAcceptance": "pending"
+  },
+  "caseFacts": {
+    "fictional": true,
+    "orders": 20,
+    "pricePerOrder": 150,
+    "revenue": 3000,
+    "variableCostPerOrder": 90,
+    "totalVariableCost": 1800,
+    "otherPeriodCosts": 900,
+    "illustrativeResult": 300,
+    "unpaidRevenue": 600,
+    "cashCollected": 2400,
+    "currencyByLocale": {
+      "ar-EG": "EGP",
+      "ar-MSA": "وحدة نقدية",
+      "ar-Gulf": "وحدة نقدية",
+      "en": "currency units"
+    }
+  },
+  "locale": "en",
+  "title": "How does a business work and create customer value?",
+  "intro": "A business can increase sales and still struggle to continue. This lesson connects a customer's need to a clear promise, the work required to deliver it, the resources involved and a simple financial result. Your task is to explain those connections, rather than memorise a definition.",
+  "goals": [
+    "Identify a specific customer, situation and need.",
+    "Connect a customer promise to activities, resources and observable evidence.",
+    "Distinguish revenue, cost, a simplified result and cash collected.",
+    "Formulate an assumption and a suitable small test."
+  ],
+  "sections": [
+    {
+      "id": "customer",
+      "title": "Start with the customer's situation",
+      "text": "Consider a service that prepares, prints and binds student submissions. Saying 'we print documents' names the activity but does not explain the problem being solved. A student facing a deadline may need a complete, correctly ordered document ready at an agreed time. Another customer may care more about the cost per copy. Do not assume their priorities are identical. Identify whom you serve, the situation they face and the outcome they need. Ask how they handle the task today: another provider, home printing or postponement are possible alternatives. Your initial customer description is a hypothesis to investigate, not a fact about the whole market.",
+      "reflection": "Describe one customer, one situation and the alternative they currently use."
+    },
+    {
+      "id": "value",
+      "title": "Turn a feature into an outcome",
+      "text": "Owning newer equipment is a feature of the service, not proof of greater customer value. A useful promise might be a complete document, ready at the agreed time, for a price confirmed before production. Link each feature to an outcome: checking the file can reveal ordering errors before printing, while confirming a feasible deadline helps the customer plan. Avoid promising speed that operations cannot deliver. 'High quality' also needs an observable meaning. For this case, you might check print clarity, page completeness and copy count. Those are case-specific criteria, not a universal checklist. Compare the offer with alternatives from the customer's perspective.",
+      "reflection": "Choose one feature, describe its customer benefit and specify evidence that it was delivered."
+    },
+    {
+      "id": "system",
+      "title": "Connect the promise to the work",
+      "text": "Delivery requires understanding the request, checking it, producing the work, inspecting it and handing it over. Staff time, equipment, materials and order information are resources. Checking and printing are activities; completed copies are outputs. Separating these categories helps locate failures. If sales promises a deadline without checking available capacity, the problem includes coordination with operations. Identify the owner of each step, the input they need and the output they pass on. A production order might require an approved file and an agreed copy count. Then ask what happens downstream when approval is delayed. A useful process map explains dependencies, rather than merely listing departments.",
+      "reflection": "Name one resource, one activity and one output; identify a possible point of delay."
+    },
+    {
+      "id": "money",
+      "title": "Separate sales from the result and cash",
+      "text": "In a fictional teaching case, the service completes twenty orders at 150 currency units each. Revenue is 3,000 units. Direct cost is 90 units per order, or 1,800 in total, and other costs for the period are 900. The simplified result is 300 units. These figures are not market prices. Nor is this necessarily a complete accounting net profit if taxes, depreciation or other expenses are omitted. If customers have not yet paid 600 units of the sales value, cash collected is 2,400. Sales value and cash received therefore answer different questions. Closing cash cannot be calculated without the opening balance and the amounts and timing of payments.",
+      "reflection": "Calculate the effect of a ten-unit increase in direct cost per order while all other values stay unchanged."
+    },
+    {
+      "id": "decision",
+      "title": "Test a change before expanding it",
+      "text": "Management is considering a shorter delivery promise. Customers may like it, but operations must support it. State the hypothesis: customers prefer the shorter deadline. Run a limited test using a deadline the service can meet without disrupting existing commitments. Record acceptance, actual delivery, rework and cost. More orders accompanied by more errors may reveal a capacity constraint. One customer's acceptance does not demonstrate a market-wide preference. Match the decision to the strength of the evidence: continue testing, revise the promise or stop the change. Consider competing explanations too: acceptance might reflect the price or ordering convenience rather than speed.",
+      "reflection": "Choose a customer measure, an operational measure and a condition for stopping the test."
+    },
+    {
+      "id": "evidence",
+      "title": "Distinguish observations from assumptions",
+      "text": "An order log can establish how many orders were recorded; by itself it does not explain why people bought. A stated preference is also different from an actual purchase. Label your claims as observations, calculations or assumptions. If you blame a delay on equipment, look for a breakdown record and consider whether file approval arrived late. Analysis means explaining a relationship, its evidence and its limits, while remaining open to another explanation. The business map you create here is an initial model, not a complete feasibility study. Keep unresolved questions visible so later work can investigate them instead of filling the gaps with invented certainty.",
+      "reflection": "Write one observation and one assumption, then identify evidence that could change your conclusion."
+    }
+  ],
+  "example": {
+    "title": "Decision case: should the price fall?",
+    "text": "A fictional print service completes twenty orders at 150 currency units each. Direct cost is 90 per order; other period costs are 900. Customers still owe 600. Management proposes a ten-unit price reduction. Compare the simplified results at the same order volume and costs; do not assume that the discount will attract extra orders.",
+    "decision": "The current result is 300 units; after the discount it is 100. Current cash collected is 2,400. Closing cash still requires opening cash and payment information."
+  },
+  "assignment": {
+    "prompt": "Choose a small business or use the teaching case. Create a one-page map linking the customer, promise, work, resources and financial result. Label invented figures as assumptions. Do not collect personal customer data.",
+    "fields": [
+      "Customer, situation, need and current alternative",
+      "Promise and observable delivery evidence",
+      "Three activities, their resources and owners",
+      "Simple calculation and its exclusions",
+      "One assumption, test, measure and possible decision"
+    ],
+    "criteria": [
+      "The customer and need are specific.",
+      "Resources, activities and outputs are distinct.",
+      "Calculations are correct and cash is distinguished from revenue.",
+      "Evidence limits are explicit.",
+      "The test can actually examine the stated assumption."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Does the business have to sell a physical product?",
+      "answer": "No. You can analyse a service. Identify the customer outcome and the work needed to deliver it."
+    },
+    {
+      "question": "Are strong sales enough to establish success?",
+      "answer": "Not alone. Consider costs, collection and the ability to deliver the promise."
+    },
+    {
+      "question": "Must I subscribe to the assistant to finish?",
+      "answer": "No. The lesson, practice and assessment are independent of the optional paid assistant add-on."
+    }
+  ],
+  "summary": [
+    "Identify the customer and need.",
+    "Connect the promise to resources and activities.",
+    "Separate revenue, result and cash collection.",
+    "Test assumptions and state the limits of evidence."
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which description identifies the customer most clearly?",
+      "options": [
+        "Everyone in town",
+        "A student needing an ordered document before a specific deadline",
+        "Anyone with a phone"
+      ],
+      "correct": 1,
+      "explanation": "The second option identifies a person, a situation and a testable need."
+    },
+    {
+      "id": "q2",
+      "question": "Which statement describes a customer outcome?",
+      "options": [
+        "New equipment",
+        "Two employees",
+        "A complete document ready at the agreed time"
+      ],
+      "correct": 2,
+      "explanation": "Equipment is a resource. The outcome is what the customer receives and can check."
+    },
+    {
+      "id": "q3",
+      "question": "How should file checking be classified?",
+      "options": [
+        "An activity",
+        "A resource",
+        "Revenue"
+      ],
+      "correct": 0,
+      "explanation": "Checking is work performed; equipment and staff time are resources supporting it."
+    },
+    {
+      "id": "q4",
+      "question": "What is the simplified result for 20 orders priced at 150, direct cost of 90 each and other costs of 900?",
+      "options": [
+        "3000",
+        "1200",
+        "300"
+      ],
+      "correct": 2,
+      "explanation": "Revenue of 3000 minus direct cost of 1800 minus other costs of 900 equals 300."
+    },
+    {
+      "id": "q5",
+      "question": "If 600 of sales remains unpaid, how much cash was collected?",
+      "options": [
+        "2400",
+        "3000",
+        "300"
+      ],
+      "correct": 0,
+      "explanation": "3000 minus 600 is 2400. This is collection, not closing cash or profit."
+    },
+    {
+      "id": "q6",
+      "question": "One customer accepts faster delivery. What is justified?",
+      "options": [
+        "The entire market prefers speed",
+        "A limited signal that needs further testing",
+        "Immediate equipment investment"
+      ],
+      "correct": 1,
+      "explanation": "One observation does not establish a market-wide preference or justify investment by itself."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "branch": "work/masaarat-academic-20261005",
+  "contentCommit": "e23804c6859bbaeaa61694b28fcd697d9ca66ba6",
+  "baseMain": "062b5f59dc56fabbce89c2034008fa1d8ef21114",
+  "writtenPackages": {
+    "ar-EG": 40,
+    "ar-MSA": 40,
+    "ar-Gulf": 40,
+    "en": 40
+  },
+  "completeCourseLocales": [
+    "ar-EG",
+    "ar-MSA",
+    "ar-Gulf",
+    "en"
+  ],
+  "missingContextualPackages": 0,
+  "privateWorkbooksExported": 160,
+  "ragChunks": 960,
+  "editorialCorrections": 197,
+  "tests": {
+    "databaseAndUI": 19,
+    "safeArithmeticRendering": 2,
+    "python": 7,
+    "rootTypecheck": "PASS",
+    "isolatedTypecheck": "PASS",
+    "isolatedBuild": "PASS_WITH_REVIEW_BUNDLE_SIZE_WARNING",
+    "courseBrowserLessons": 160,
+    "expandedQuestions": 936,
+    "readingVisuals": 468,
+    "sharedShellLocales": 4
+  },
+  "editorialAcceptance": "PENDING_INDEPENDENT_REVIEW",
+  "learnerTiming": "UNVERIFIED",
+  "productionActivated": false,
+  "merged": false,
+  "published": false,
+  "existingMediaChanged": false,
+  "assistantRequirements": [
+    "approved price",
+    "approved allowance/quota",
+    "central retrieval/provider integration"
+  ],
+  "centralRequirements": [
+    "shared route and line registry integration",
+    "review candidate SQL and approved private imports",
+    "complete Stripe TEST and existing mail/receipt/coupon/invitation journeys",
+    "editorial/localization acceptance and learner timing",
+    "release decision"
+  ],
+  "mediaRequirements": [
+    "full pilot playback/listening and Egyptian per-word pronunciation review",
+    "remaining videos may follow accepted written release"
+  ]
+}

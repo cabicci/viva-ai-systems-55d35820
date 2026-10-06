@@ -175,11 +175,17 @@ Deno.serve(async (request) => {
       if (!resolved) return response({ received: true, ignored: true });
       if (await financialDeliveryExpired(resolved.subscription.metadata?.user_id, rpc))
         return response({ received: true, ignored: true, financial_erased: true });
-      if (["kids", "technical"].includes(resolved.subscription.metadata?.product_scope ?? "")) {
+      if (
+        ["kids", "technical", "academic"].includes(
+          resolved.subscription.metadata?.product_scope ?? "",
+        )
+      ) {
         const revoked = await rpc<boolean>(
-          resolved.subscription.metadata?.product_scope === "technical"
-            ? "apply_technical_stripe_refund"
-            : "apply_kids_stripe_refund",
+          resolved.subscription.metadata?.product_scope === "academic"
+            ? "apply_academic_stripe_refund"
+            : resolved.subscription.metadata?.product_scope === "technical"
+              ? "apply_technical_stripe_refund"
+              : "apply_kids_stripe_refund",
           {
             p_event_id: event.id,
             p_parent_id: resolved.subscription.metadata.user_id,
@@ -240,7 +246,7 @@ Deno.serve(async (request) => {
     const metadata = subscription.metadata ?? {};
     if (await financialDeliveryExpired(metadata.user_id, rpc))
       return response({ received: true, ignored: true, financial_erased: true });
-    if (["kids", "technical"].includes(metadata.product_scope)) {
+    if (["kids", "technical", "academic"].includes(metadata.product_scope)) {
       if (
         metadata.environment !== "test" ||
         !metadata.user_id ||
@@ -267,9 +273,11 @@ Deno.serve(async (request) => {
       const end = subscription.items.data[0].current_period_end;
       const paidInvoice = event.type === "invoice.paid" ? object.id : idOf(object.invoice);
       const result = await rpc<boolean>(
-        metadata.product_scope === "technical"
-          ? "apply_technical_stripe_event"
-          : "apply_kids_stripe_event",
+        metadata.product_scope === "academic"
+          ? "apply_academic_stripe_event"
+          : metadata.product_scope === "technical"
+            ? "apply_technical_stripe_event"
+            : "apply_kids_stripe_event",
         {
           p_event_id: event.id,
           p_parent_id: metadata.user_id,

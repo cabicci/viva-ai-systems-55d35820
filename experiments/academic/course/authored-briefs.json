@@ -1,0 +1,1211 @@
+[
+  {
+    "id": "AC-BUS-M01-L02",
+    "title": {
+      "ar": "وظائف المنشأة وترابط قراراتها",
+      "en": "Business functions and connected decisions"
+    },
+    "concept": {
+      "ar": "التسويق يحدد الوعد الذي يسمعه العميل، والتشغيل يحوله إلى عمل، والتمويل يختبر القدرة على دفع تكلفته. وظيفة الموارد البشرية تضمن وجود مهارة ومسؤولية واضحتين. قد يبدو قرار مفيدًا لقسم واحد لكنه يضر النتيجة الكلية؛ لذلك نتابع الطلب عبر الأقسام ونحدد المعلومات اللازمة عند كل انتقال.",
+      "en": "Marketing defines a customer promise, operations delivers it, finance tests affordability, and people management provides skills and accountability. A decision that improves one department can damage the whole service. Trace an order across functions and specify what information must cross each handoff."
+    },
+    "case": {
+      "ar": "حالة افتراضية: وعد فريق البيع بتجهيز 30 طلبًا اليوم بينما قدرة التشغيل 20. زيادة الإعلان لا تعالج الفجوة. يمكن تعديل الموعد بموافقة العميل أو إضافة قدرة مثبتة بعد حساب تكلفتها. تحميل العاملين مسؤولية الوعد وحدهم يخفي سبب المشكلة.",
+      "en": "Fictional case: sales promises 30 orders today while operations can deliver 20. More advertising does not close this gap. Renegotiate the promise with customers or verify and cost extra capacity. Blaming operators alone hides the coordination failure."
+    },
+    "task": {
+      "ar": "ارسم انتقال طلب عبر البيع والتشغيل والمالية. عند كل انتقال سجّل المعلومة والمسؤول وموعد التسليم. اختر موضع تعارض، واقترح حلين، ثم قارن أثرهما على العميل والتكلفة والقدرة.",
+      "en": "Map one order through sales, operations and finance. Record information, owner and handoff time. Identify one conflict, propose two responses, and compare customer, cost and capacity effects."
+    },
+    "question": {
+      "ar": "ما المعلومة المطلوبة قبل وعد تسليم 30 طلبًا؟",
+      "en": "What is needed before promising 30 orders?"
+    },
+    "correct": {
+      "ar": "القدرة المتاحة والتزاماتها الحالية",
+      "en": "Available capacity and existing commitments"
+    },
+    "wrong": {
+      "ar": "عدد متابعي الإعلان فقط",
+      "en": "Advertising follower count alone"
+    }
+  },
+  {
+    "id": "AC-BUS-M01-L03",
+    "title": {
+      "ar": "بيئة الأعمال وأصحاب المصلحة وأخلاقيات القرار",
+      "en": "Environment, stakeholders and ethical decisions"
+    },
+    "concept": {
+      "ar": "أصحاب المصلحة هم من يؤثرون في العمل أو يتأثرون به، مثل العملاء والعاملين والموردين والجيران. تحليل البيئة يميز عاملًا خارجيًا لا نتحكم فيه من قدرة داخلية يمكن تحسينها. القرار الأخلاقي يراجع الضرر والعدالة والصدق، لا الإيراد وحده؛ ولا تساوي قلة قدرة طرف على الاعتراض قلة أهميته.",
+      "en": "Stakeholders affect or are affected by a business. Customers, workers, suppliers and neighbours can have different interests. Separate external conditions from internal capabilities. Ethical analysis considers harm, fairness and honesty alongside revenue. Limited power to complain does not make a stakeholder unimportant."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تشغيل آلة ليلًا يسرع التسليم لكنه يزعج الجيران ويزيد إجهاد العاملين. قارن تغيير المواعيد بعزل الصوت وتوزيع العمل. لا تفترض أن التعويض المالي يزيل كل ضرر أو يغني عن التحقق من الاشتراطات المحلية.",
+      "en": "Fictional case: running a machine at night speeds delivery but disturbs neighbours and fatigues workers. Compare scheduling changes, sound insulation and workload redistribution. Compensation does not automatically remove harm or replace checking local requirements."
+    },
+    "task": {
+      "ar": "أنشئ خريطة خمسة أطراف، ودوّن مصلحة كل طرف والضرر المحتمل وصوته في القرار. صمّم بديلين وفسّر اختيارك، ثم اكتب معلومة ناقصة قد تغيره.",
+      "en": "Map five stakeholders, their interests, possible harm and voice in the decision. Design two alternatives, justify a choice and identify missing evidence that could change it."
+    },
+    "question": {
+      "ar": "هل ضعف قدرة الجيران على الاعتراض يبرر تجاهل الضرر؟",
+      "en": "Does limited power to object justify ignoring harm?"
+    },
+    "correct": {
+      "ar": "لا؛ يجب تقييم الضرر وبدائل تقليله",
+      "en": "No; assess harm and ways to reduce it"
+    },
+    "wrong": {
+      "ar": "نعم إذا زادت الإيرادات",
+      "en": "Yes, if revenue increases"
+    }
+  },
+  {
+    "id": "AC-BUS-M01-L04",
+    "title": {
+      "ar": "قراءة البيانات وحدود الاستنتاج",
+      "en": "Reading data and limits of inference"
+    },
+    "concept": {
+      "ar": "العدد يجيب عن كم، والنسبة تحتاج بسطًا ومقامًا، والاتجاه يحتاج فترات قابلة للمقارنة. تحسن رقم لا يثبت سبب التحسن. افصل ما شاهدته عما حسبته وما افترضته، واذكر حجم العينة وطريقة اختيارها. لا تقارن نسبتين إذا اختلف تعريف الحدث أو الفترة دون توضيح.",
+      "en": "A count answers how many; a rate needs a numerator and denominator; a trend needs comparable periods. Improvement does not establish its cause. Separate observation, calculation and assumption. Record sample size and selection. Do not compare rates with different definitions or periods without explaining the difference."
+    },
+    "case": {
+      "ar": "حالة افتراضية: وصلت شكاوى 4 من 40 طلبًا ثم 6 من 100. العدد زاد، لكن النسبة انخفضت من 10% إلى 6%. لا نعرف هل الخدمة تحسنت أم تغير أسلوب تلقي الشكاوى أو نوع العملاء.",
+      "en": "Fictional case: complaints rise from 4 of 40 orders to 6 of 100. The count increases while the rate falls from 10% to 6%. Service may have improved, but reporting methods or customer mix may also have changed."
+    },
+    "task": {
+      "ar": "اكتب جدول الفترتين، واحسب النسب، وصغ عنوانين أحدهما مضلل والآخر دقيق. حدد ثلاثة تفسيرات بديلة ومعلومة تفصل بينها. أعد صياغة استنتاجك بحدوده.",
+      "en": "Tabulate both periods and calculate rates. Write one misleading headline and one accurate headline. List three alternative explanations and evidence that distinguishes them. Rewrite your conclusion with its limits."
+    },
+    "question": {
+      "ar": "ما نسبة الشكاوى في الفترة الثانية؟",
+      "en": "What is the second-period complaint rate?"
+    },
+    "correct": {
+      "ar": "6% لأن 6 ÷ 100 = 0.06",
+      "en": "6%, because 6 / 100 = 0.06"
+    },
+    "wrong": {
+      "ar": "15% باستخدام مقام الفترة الأولى",
+      "en": "15%, using the first-period denominator"
+    }
+  },
+  {
+    "id": "AC-BUS-M02-L01",
+    "title": {
+      "ar": "القيادة والإدارة والمسؤولية",
+      "en": "Leadership, management and accountability"
+    },
+    "concept": {
+      "ar": "الإدارة تنظم الموارد والمتابعة، والقيادة تساعد الفريق على فهم الاتجاه والعمل نحوه. قد يمارسهما الشخص نفسه. المسؤولية عن تنفيذ مهمة تختلف عن صلاحية اتخاذ القرار والمساءلة عن نتيجته. وضوح الأدوار لا يلغي التعاون، لكنه يمنع انتظار كل شخص أن يبدأ الآخر.",
+      "en": "Management organises resources and follow-up; leadership helps people understand and pursue direction. One person can do both. Task responsibility, decision authority and accountability are related but distinct. Clear roles support collaboration by preventing everyone from waiting for someone else."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تأخر إطلاق خدمة لأن المصمم ينتظر موافقة المدير والمدير يظن أن المنسق وافق. المشكلة ليست نقص الحماس. تحديد صاحب قرار النشر والجهة التي تراجعه وموعد التصعيد يجعل التنفيذ قابلًا للمتابعة.",
+      "en": "Fictional case: a launch stalls because a designer awaits the manager, who assumes the coordinator approved it. Motivation alone will not fix ambiguous authority. Specify who authorises publication, who reviews it and when delays escalate."
+    },
+    "task": {
+      "ar": "اختر مشروعًا من خمس مهام. عيّن منفذًا وصاحب قرار ومراجعًا لكل مهمة. اختبر الجدول بموقف غياب صاحب القرار، واكتب قاعدة بديلة لا تسمح بتجاوز صلاحيات حساسة.",
+      "en": "Choose a five-task project. Assign an executor, decision owner and reviewer to each task. Test the arrangement against an absent decision owner and define a fallback that respects sensitive permissions."
+    },
+    "question": {
+      "ar": "ما أول علاج لتضارب الموافقات؟",
+      "en": "What should address conflicting approvals first?"
+    },
+    "correct": {
+      "ar": "توضيح صاحب القرار وحدود صلاحياته",
+      "en": "Clarify the decision owner and authority"
+    },
+    "wrong": {
+      "ar": "إرسال رسالة تحفيزية فقط",
+      "en": "Send only a motivational message"
+    }
+  },
+  {
+    "id": "AC-BUS-M02-L02",
+    "title": {
+      "ar": "اتخاذ القرار وحل المشكلات",
+      "en": "Decision-making and problem-solving"
+    },
+    "concept": {
+      "ar": "ابدأ بتعريف الفجوة بين النتيجة الحالية والمطلوبة. افصل العرض عن السبب المحتمل، واجمع دليلًا قبل تثبيت السبب. ضع بدائل تشمل عدم التغيير مؤقتًا، وحدد معايير المقارنة قبل اختيار البديل المفضل. القرار القابل للعكس يمكن اختباره على نطاق محدود مع شرط إيقاف.",
+      "en": "Define the gap between actual and desired performance. Separate symptoms from possible causes and gather evidence before fixing on one explanation. Compare alternatives, including temporarily maintaining the current approach. Set criteria before favouring an option. Reversible decisions can use bounded trials with stop conditions."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تأخير الطلبات قد ينتج من نقص المواد أو أخطاء الملفات. شراء آلة جديدة يعالج قدرة الإنتاج فقط. سجل عشرة طلبات متأخرة وصنّف سبب الانتظار قبل تخصيص ميزانية.",
+      "en": "Fictional case: late orders may reflect missing supplies or incorrect files. A new machine only addresses production capacity. Review ten delayed orders and classify waiting causes before allocating money."
+    },
+    "task": {
+      "ar": "اكتب المشكلة بلا اتهام شخص. صمم سجل أدلة وثلاثة بدائل ومصفوفة مقارنة بثلاثة معايير. فسّر وزن المعايير، واختر تجربة صغيرة ومؤشر إيقاف واضحًا.",
+      "en": "Define the problem without personal blame. Create an evidence log, three alternatives and a three-criterion comparison. Explain the weights and select a small test with a clear stop measure."
+    },
+    "question": {
+      "ar": "هل تأخر التسليم يثبت أن الآلة هي السبب؟",
+      "en": "Does late delivery prove the machine is the cause?"
+    },
+    "correct": {
+      "ar": "لا؛ يلزم تتبع أسباب الانتظار",
+      "en": "No; trace the causes of waiting"
+    },
+    "wrong": {
+      "ar": "نعم؛ التأخير يعني نقص الآلات دائمًا",
+      "en": "Yes; delays always mean too few machines"
+    }
+  },
+  {
+    "id": "AC-BUS-M02-L03",
+    "title": {
+      "ar": "التواصل والتفويض والتغذية الراجعة",
+      "en": "Communication, delegation and feedback"
+    },
+    "concept": {
+      "ar": "التفويض يوضح النتيجة المطلوبة والموعد والموارد وحدود القرار وموعد المراجعة. لا يعني نقل مهمة غامضة ثم محاسبة منفذها على توقعات لم يسمعها. التغذية الراجعة المفيدة تصف سلوكًا يمكن ملاحظته وأثره، ثم تستمع لتفسير الطرف الآخر وتتفق على خطوة قابلة للتحقق.",
+      "en": "Delegation specifies the outcome, deadline, resources, authority and review point. It is not handing over an ambiguous task and judging against unstated expectations. Useful feedback describes observable behaviour and its effect, invites the other person’s explanation and agrees a verifiable next step."
+    },
+    "case": {
+      "ar": "حالة افتراضية: بدل «أنت غير منظم»، قل «غاب موعد التسليم عن آخر طلبين، فاضطر الفريق للسؤال مجددًا». اسأل عن سبب النقص ثم اتفق على حقل إلزامي ومراجعة عينة من الطلبات التالية.",
+      "en": "Fictional case: replace “you are disorganised” with “the last two orders lacked a delivery date, so the team had to ask again.” Ask why and agree a required field plus a review of subsequent orders."
+    },
+    "task": {
+      "ar": "اكتب تكليفًا من صفحة واحدة، ثم حوار تغذية راجعة من ست مداخلات يتضمن سؤالًا واستماعًا واتفاقًا. راجع هل يملك المنفذ الموارد والصلاحية اللازمة فعلًا.",
+      "en": "Write a one-page delegation brief and a six-turn feedback conversation with a question, listening and agreement. Check whether the person actually has the necessary resources and authority."
+    },
+    "question": {
+      "ar": "أي عبارة تصلح كبداية تغذية راجعة؟",
+      "en": "Which opening supports useful feedback?"
+    },
+    "correct": {
+      "ar": "وصف واقعة محددة وأثرها",
+      "en": "Describe a specific event and its effect"
+    },
+    "wrong": {
+      "ar": "حكم عام على شخصية الزميل",
+      "en": "Make a general judgement about character"
+    }
+  },
+  {
+    "id": "AC-BUS-M02-L04",
+    "title": {
+      "ar": "بناء الفريق والتحفيز وإدارة الخلاف",
+      "en": "Teams, motivation and conflict"
+    },
+    "concept": {
+      "ar": "الفريق يحتاج هدفًا مشتركًا وأدوارًا ومعلومات وقواعد تعاون. لا تختزل التحفيز في المكافأة؛ وضوح العمل والإنصاف والقدرة على الإنجاز تؤثر أيضًا. عند الخلاف ميّز اختلاف المهمة من الهجوم الشخصي. اشرح المصالح خلف المواقف وابحث عن بديل يحمي الهدف.",
+      "en": "Teams need shared goals, roles, information and working agreements. Motivation is not only reward: clarity, fairness and the ability to succeed also matter. Distinguish disagreement about work from personal attack. Explore interests behind positions and seek alternatives that protect the shared goal."
+    },
+    "case": {
+      "ar": "حالة افتراضية: يريد البيع موعدًا أسرع ويريد التشغيل وقت فحص أطول. المصلحة المشتركة تسليم موثوق. يمكن تجربة فحص مبكر للملفات بدل إلغاء الفحص أو وعد غير واقعي.",
+      "en": "Fictional case: sales wants faster delivery while operations wants more inspection time. Reliable service is their shared interest. Early file checking may help more than dropping checks or making unrealistic promises."
+    },
+    "task": {
+      "ar": "اكتب اتفاق فريق من خمس قواعد. حلل خلافًا بجدول الموقف والمصلحة والدليل والبديل. صمم محادثة تنتهي بمسؤول وموعد متابعة، لا بمجرد مطالبة الجميع بالتعاون.",
+      "en": "Write five working agreements. Analyse a conflict using positions, interests, evidence and alternatives. Design a conversation ending with an owner and follow-up date rather than a vague call to cooperate."
+    },
+    "question": {
+      "ar": "ما المصلحة المشتركة بين الطرفين؟",
+      "en": "What shared interest can connect both teams?"
+    },
+    "correct": {
+      "ar": "تسليم موثوق يفي بوعد العميل",
+      "en": "Reliable delivery that meets the customer promise"
+    },
+    "wrong": {
+      "ar": "فوز قسم على الآخر",
+      "en": "One department defeating the other"
+    }
+  },
+  {
+    "id": "AC-BUS-M02-L05",
+    "title": {
+      "ar": "التفاوض وتوثيق الاتفاق",
+      "en": "Negotiating and documenting agreements"
+    },
+    "concept": {
+      "ar": "ابدأ بما تحتاج تحقيقه وحدود ما يمكنك قبوله والبديل المتاح إذا لم يحدث اتفاق. اسأل عن احتياجات الطرف الآخر بدل افتراضها. قارن حزمة السعر والجودة والموعد وشروط الدفع؛ فقد يكون السعر الأقل أغلى عند احتساب التأخير. الاتفاق الواضح يحدد الالتزامات وطريقة التحقق والتعامل مع التغيير.",
+      "en": "Clarify your needs, acceptable limits and alternative if no agreement is reached. Ask about the other party’s needs. Compare price, quality, delivery and payment together; a lower price may cost more after delays. A clear agreement specifies obligations, verification and change handling."
+    },
+    "case": {
+      "ar": "حالة افتراضية: مورد يعرض خصمًا مقابل شراء كمية تفوق الاستهلاك المتوقع. قارن الوفر بتكلفة التخزين ومخاطر عدم الاستخدام والسيولة المطلوبة. لا تعتبر الخصم مكسبًا قبل هذه المقارنة.",
+      "en": "Fictional case: a supplier offers a discount for buying above expected consumption. Compare the saving with storage, unused stock and cash requirements. The discount is not automatically a gain."
+    },
+    "task": {
+      "ar": "أعد ورقة استعداد للتفاوض وثلاث حزم بديلة. اكتب محضر اتفاق يوضح الكمية والمواصفة والموعد والقبول وآلية التعديل. علّم الافتراضات التي تحتاج تحققًا قبل الالتزام.",
+      "en": "Prepare a negotiation brief and three alternative packages. Draft an agreement covering quantity, specification, timing, acceptance and changes. Mark assumptions requiring verification before commitment."
+    },
+    "question": {
+      "ar": "كيف نقيم خصم شراء كمية كبيرة؟",
+      "en": "How should a bulk discount be evaluated?"
+    },
+    "correct": {
+      "ar": "بالتكلفة الكلية والسيولة ومخاطر المخزون",
+      "en": "Using total cost, cash needs and inventory risk"
+    },
+    "wrong": {
+      "ar": "بنسبة الخصم وحدها",
+      "en": "Using only the discount percentage"
+    }
+  },
+  {
+    "id": "AC-BUS-M03-L01",
+    "title": {
+      "ar": "اختيار مشكلة وشريحة عملاء محددة",
+      "en": "Choosing a problem and customer segment"
+    },
+    "concept": {
+      "ar": "الشريحة تجمع عملاء لديهم سياق واحتياج وسلوك شراء متقارب. «كل الناس» لا يساعد في تصميم خدمة أو تجربة اختبار. صِف المشكلة قبل الحل، وميز المستخدم عن المشتري وصاحب الموافقة. تحديد شريحة أولى لا يعني منع الآخرين؛ بل يجعل التعلم الأولي أكثر دقة.",
+      "en": "A segment groups customers with similar contexts, needs and purchasing behaviour. “Everyone” does not guide service design or testing. Describe the problem before choosing a solution. Distinguish user, buyer and approver. An initial segment focuses learning without permanently excluding others."
+    },
+    "case": {
+      "ar": "حالة افتراضية: طلاب يسلمون مشاريع مطبوعة أسبوعيًا يختلفون عن متجر يطلب مواد دعائية موسمية. كلاهما يطبع، لكن تواتر الطلب والموعد ومعيار الاختيار مختلفة. عرض واحد مبهم قد لا يلائم أيًا منهما.",
+      "en": "Fictional case: students submitting printed projects weekly differ from a shop buying seasonal promotional materials. Both print, but frequency, deadlines and selection criteria differ. One vague offer may serve neither well."
+    },
+    "task": {
+      "ar": "قارن شريحتين في ستة حقول: المستخدم والمشتري والموقف والتكرار والبديل ومعيار الاختيار. اختر شريحة اختبار واذكر دليلًا ناقصًا قد يدفعك لتغيير الاختيار.",
+      "en": "Compare two segments across user, buyer, context, frequency, alternative and selection criterion. Choose a test segment and identify missing evidence that could change the choice."
+    },
+    "question": {
+      "ar": "أي وصف أصلح لشريحة أولى؟",
+      "en": "Which description better defines an initial segment?"
+    },
+    "correct": {
+      "ar": "عملاء لهم موقف واحتياج متقاربان",
+      "en": "Customers with a similar context and need"
+    },
+    "wrong": {
+      "ar": "كل من يستطيع الدفع",
+      "en": "Everyone who can pay"
+    }
+  },
+  {
+    "id": "AC-BUS-M03-L02",
+    "title": {
+      "ar": "بحث العميل وصياغة أسئلة المقابلات",
+      "en": "Customer research and interview questions"
+    },
+    "concept": {
+      "ar": "اسأل عن تجربة حديثة وتصرف فعلي والبديل المستخدم، ثم تابع بسؤال يوضح السبب أو التسلسل. السؤال الموجه يلقّن الإجابة، والوعد المستقبلي ليس شراءً فعليًا. اطلب الموافقة على التسجيل، واجمع أقل بيانات لازمة، ولا تنسب استنتاجات عينة صغيرة إلى السوق كله.",
+      "en": "Ask about recent experiences, actual behaviour and current alternatives, then clarify reasons or sequence. Leading questions suggest an answer; future enthusiasm is not a purchase. Obtain consent for recording, minimise collected data and avoid generalising a small sample to the entire market."
+    },
+    "case": {
+      "ar": "بدل «ألن تحب خدمتنا السريعة؟» اسأل «احكِ عن آخر مرة احتجت فيها للطباعة قبل موعد ضيق». قد تكشف الإجابة أن المشكلة مراجعة الملف لا سرعة الآلة. عدم ظهور المشكلة في مقابلة واحدة لا ينفي وجودها.",
+      "en": "Instead of “wouldn’t you love our fast service?”, ask “tell me about the last time you needed printing before a tight deadline.” The issue may be file checking, not machine speed. One interview without a problem does not establish its absence."
+    },
+    "task": {
+      "ar": "صمم دليل مقابلة من ستة أسئلة مفتوحة. حوّل ثلاثة أسئلة موجهة إلى محايدة. نفّذ محاكاة مع زميل أو اكتب إجابات افتراضية موسومة بوضوح، ثم افصل الاقتباس عن تفسيرك.",
+      "en": "Design six open interview questions. Rewrite three leading questions neutrally. Run a peer simulation or clearly label fictional responses, then separate reported statements from your interpretation."
+    },
+    "question": {
+      "ar": "أي دليل أقوى لفهم السلوك؟",
+      "en": "Which evidence better reveals behaviour?"
+    },
+    "correct": {
+      "ar": "وصف تجربة فعلية حديثة",
+      "en": "A recent actual experience"
+    },
+    "wrong": {
+      "ar": "مجاملة حول فكرة لم تُجرّب",
+      "en": "Polite enthusiasm for an untried idea"
+    }
+  },
+  {
+    "id": "AC-BUS-M03-L03",
+    "title": {
+      "ar": "عرض القيمة ونموذج الأعمال",
+      "en": "Value proposition and business model"
+    },
+    "concept": {
+      "ar": "عرض القيمة يوضح لمن نخدم، وما المشكلة، وما النتيجة المفيدة، ولماذا يختارنا العميل مقارنة ببديله. نموذج الأعمال يربط ذلك بالأنشطة والموارد والشركاء والقنوات والإيراد والتكلفة. ترابط العناصر أهم من ملء المربعات؛ وعد سريع يتطلب تشغيلًا وتكلفة يسمحان بتحقيقه.",
+      "en": "A value proposition identifies the customer, problem, useful outcome and reason to choose the offer over alternatives. A business model connects this to activities, resources, partners, channels, revenue and costs. Coherence matters more than filling boxes: fast service needs feasible operations and economics."
+    },
+    "case": {
+      "ar": "حالة افتراضية: خدمة تستقبل ملفات الطلاب مسبقًا وتؤكد سلامتها قبل الطباعة. القيمة تقليل إعادة العمل والانتظار، وليست مجرد امتلاك آلة. إذا كان الفحص يدويًا طويلًا فيجب إدراجه في القدرة والتكلفة.",
+      "en": "Fictional case: a service receives student files early and checks them before printing. Its value is less rework and waiting, not simply owning a machine. Lengthy manual checking must appear in capacity and cost estimates."
+    },
+    "task": {
+      "ar": "اكتب عرض قيمة من جملتين، ثم اربطه بجدول العميل والقناة والنشاط والمورد والإيراد والتكلفة. ضع أمام كل علاقة افتراضًا واختبارًا. اكتشف تناقضًا واحدًا وعدّل النموذج.",
+      "en": "Write a two-sentence value proposition and connect customer, channel, activity, resource, revenue and cost. Attach an assumption and test to each relationship. Find and repair one inconsistency."
+    },
+    "question": {
+      "ar": "هل امتلاك آلة يكفي ليكون عرض قيمة؟",
+      "en": "Is owning a machine enough for a value proposition?"
+    },
+    "correct": {
+      "ar": "لا؛ يجب توضيح فائدة العميل ودليلها",
+      "en": "No; explain the customer benefit and evidence"
+    },
+    "wrong": {
+      "ar": "نعم؛ المورد هو القيمة دائمًا",
+      "en": "Yes; the resource is always the value"
+    }
+  },
+  {
+    "id": "AC-BUS-M03-L04",
+    "title": {
+      "ar": "قنوات الوصول والبيع وتجربة العميل",
+      "en": "Channels, selling and customer experience"
+    },
+    "concept": {
+      "ar": "القناة طريق وصول العرض للعميل، وقد تختلف عن طريق التسليم أو الدعم. تتبع الانتقال من معرفة الخدمة إلى الاستفسار والطلب والاستلام والعودة. لكل مرحلة سؤال ومعلومة وعائق. لا تساوِ المشاهدات بالمبيعات، ولا تقارن قناتين دون تعريف تكلفة القياس ونافذته.",
+      "en": "A channel connects an offer to customers and may differ from delivery or support channels. Follow awareness, enquiry, order, receipt and return. Each stage has questions, information and friction. Views are not sales; comparing channels requires consistent cost definitions and measurement windows."
+    },
+    "case": {
+      "ar": "حالة افتراضية: 100 زيارة ينتج عنها 20 استفسارًا و5 طلبات. التحويل من الزيارة إلى الطلب 5%، ومن الاستفسار إلى الطلب 25%. اختيار مقام مختلف يغير معنى النسبة، لا أداء الخدمة نفسه.",
+      "en": "Fictional case: 100 visits yield 20 enquiries and 5 orders. Visit-to-order conversion is 5%; enquiry-to-order conversion is 25%. Different denominators describe different transitions, not different underlying performance."
+    },
+    "task": {
+      "ar": "ارسم رحلة خمس مراحل، وسجل سؤال العميل والعائق والمسؤول والمؤشر لكل مرحلة. اختر أكبر تسرب، واقترح تغييرًا واحدًا، وحدد كيف تقيسه دون تغيير تعريف النسبة.",
+      "en": "Map five journey stages with customer question, friction, owner and measure. Choose one leakage point, propose one change and specify how to measure it consistently."
+    },
+    "question": {
+      "ar": "ما نسبة التحول من الاستفسار إلى الطلب؟",
+      "en": "What is enquiry-to-order conversion?"
+    },
+    "correct": {
+      "ar": "25% = 5 ÷ 20",
+      "en": "25% = 5 / 20"
+    },
+    "wrong": {
+      "ar": "5% = 5 ÷ 100",
+      "en": "5% = 5 / 100"
+    }
+  },
+  {
+    "id": "AC-BUS-M03-L05",
+    "title": {
+      "ar": "التسعير واقتصاديات الطلب الواحد",
+      "en": "Pricing and unit economics"
+    },
+    "concept": {
+      "ar": "سعر البيع ليس الربح. هامش المساهمة للوحدة يساوي السعر ناقص التكلفة المتغيرة للوحدة، ويساهم في تغطية التكاليف الثابتة قبل تحقيق نتيجة موجبة. افحص أثر الخصم والعمولة وإعادة العمل. هذا نموذج مبسط لا يغني عن محاسبة كاملة أو بحث استعداد العميل للدفع.",
+      "en": "Price is not profit. Unit contribution equals price minus variable cost and helps cover fixed costs before producing a positive result. Examine discounts, commissions and rework. This simplified model does not replace full accounting or research into willingness to pay."
+    },
+    "case": {
+      "ar": "حالة افتراضية: السعر 150 والتكلفة المتغيرة 90؛ المساهمة 60. خفض السعر إلى 140 يجعلها 50. لتعويض مساهمة 20 طلبًا بالسعر القديم نحتاج 24 طلبًا بالسعر الجديد، بافتراض ثبات التكلفة والقدرة.",
+      "en": "Fictional case: price 150 and variable cost 90 give contribution 60. A price of 140 gives 50. Matching the contribution from 20 old-price orders needs 24 new-price orders, assuming unchanged costs and sufficient capacity."
+    },
+    "task": {
+      "ar": "أنشئ جدول ثلاثة أسعار ومساهمة كل طلب. احسب الطلبات اللازمة لتغطية تكلفة ثابتة افتراضية 900، وقرّب لأعلى عند اللزوم. اكتب حدود النموذج واختبارًا لاستعداد العميل للدفع.",
+      "en": "Compare three prices and unit contributions. Calculate orders needed to cover fictional fixed costs of 900, rounding up where necessary. State limitations and design a willingness-to-pay test."
+    },
+    "question": {
+      "ar": "ما مساهمة الطلب عند سعر 140 وتكلفة متغيرة 90؟",
+      "en": "What is contribution at price 140 and variable cost 90?"
+    },
+    "correct": {
+      "ar": "50 قبل تغطية التكاليف الثابتة",
+      "en": "50 before fixed costs"
+    },
+    "wrong": {
+      "ar": "140 ربحًا صافيًا",
+      "en": "140 net profit"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L01",
+    "title": {
+      "ar": "توليد الأفكار واختيارها بمعايير واضحة",
+      "en": "Generating and selecting ideas"
+    },
+    "concept": {
+      "ar": "افصل مرحلة توليد البدائل عن تقييمها حتى لا تختفي الأفكار مبكرًا. ابدأ بمشكلة محددة، وجرّب تغيير ترتيب الخدمة أو طريقة الوصول أو تقسيم العمل. عند الاختيار استخدم معايير مرتبطة بالعميل والقدرة والتكلفة والمخاطر. الدرجة العددية تنظّم النقاش لكنها لا تحول الافتراض إلى حقيقة.",
+      "en": "Separate generating alternatives from evaluating them. Start with a defined problem and vary service sequence, access or division of work. Evaluate customer benefit, capability, cost and risk. Scores structure discussion but do not turn assumptions into facts."
+    },
+    "case": {
+      "ar": "حالة افتراضية: لتقليل انتظار الطباعة توجد بدائل: استقبال الملفات مبكرًا، أو مواعيد استلام، أو آلة إضافية. البديل الأكثر تقنية ليس بالضرورة الأفضل؛ استقبال مبكر قد يعالج السبب بتكلفة أقل، إذا قبله العملاء.",
+      "en": "Fictional case: reduce printing queues through early file submission, collection slots or another machine. The most technical option is not necessarily best. Early submission may address the cause more cheaply if customers adopt it."
+    },
+    "task": {
+      "ar": "ولّد ستة بدائل ثم قارن ثلاثة بأربعة معايير. اكتب سبب كل درجة ودليلها أو افتراضها. غيّر وزن معيار مهم ولاحظ هل يتغير الترتيب، ثم اختر اختبارًا للبديل الأول.",
+      "en": "Generate six alternatives and compare three against four criteria. Explain each score and its evidence or assumption. Change one important weight, check the ranking and design a test for the leading option."
+    },
+    "question": {
+      "ar": "ماذا تعني الدرجة العالية المبنية على افتراض؟",
+      "en": "What does a high score based on assumptions mean?"
+    },
+    "correct": {
+      "ar": "أولوية تستحق الاختبار لا نجاحًا مثبتًا",
+      "en": "A priority to test, not proven success"
+    },
+    "wrong": {
+      "ar": "ضمان نجاح الفكرة",
+      "en": "Guaranteed success"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L02",
+    "title": {
+      "ar": "تحليل السوق والبدائل والمنافسة",
+      "en": "Market, alternatives and competition"
+    },
+    "concept": {
+      "ar": "السوق ليس كل من قد يسمع بالمنتج. حدد الشريحة والمكان والفترة والقدرة على الوصول، ثم ميّز تقدير الحجم من المبيعات التي تستطيع خدمتها. المنافس قد يكون خدمة أخرى أو حل العميل بنفسه أو تأجيل المهمة. استخدم معايير العميل بدل الاكتفاء بمقارنة السعر.",
+      "en": "A market is not everyone who might hear about an offer. Define segment, location, period and reach, then distinguish estimated demand from sales you can serve. Alternatives include another provider, doing it yourself or postponing. Compare using customer criteria rather than price alone."
+    },
+    "case": {
+      "ar": "حالة افتراضية: وجود 1000 طالب لا يعني 1000 طلب شهري. بعضهم لا يحتاج الطباعة وبعضهم يستخدم بديلًا. افتراض أن 10% يشترون مرة شهريًا ينتج 100 طلب تقديري، ويحتاج اختبارًا مستقلًا.",
+      "en": "Fictional case: 1,000 students do not imply 1,000 monthly orders. Some need no printing and others use alternatives. Assuming 10% buy once monthly gives 100 estimated orders, but that assumption needs testing."
+    },
+    "task": {
+      "ar": "ابنِ تقدير طلب بثلاثة افتراضات معلنة، ثم مصفوفة ثلاثة بدائل وأربعة معايير اختيار. لا تستخدم أرقام سوق حقيقية بلا تحقق. حدد الافتراض الأكثر تأثيرًا وطريقة جمع دليل عنه.",
+      "en": "Build a demand estimate with three explicit assumptions, then compare three alternatives across four selection criteria. Do not invent real market statistics. Identify the most influential assumption and how to investigate it."
+    },
+    "question": {
+      "ar": "هل عدد أفراد الشريحة يساوي المبيعات المتوقعة؟",
+      "en": "Does segment population equal expected sales?"
+    },
+    "correct": {
+      "ar": "لا؛ يلزم تقدير الشراء والتكرار والوصول",
+      "en": "No; estimate purchase, frequency and reach"
+    },
+    "wrong": {
+      "ar": "نعم؛ كل فرد طلب مؤكد",
+      "en": "Yes; every person is a confirmed order"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L03",
+    "title": {
+      "ar": "الجدوى التشغيلية والموارد والطاقة",
+      "en": "Operational feasibility and capacity"
+    },
+    "concept": {
+      "ar": "القدرة تحدد ما يمكن إنجازه خلال فترة بشروط جودة معينة. في سلسلة خطوات متتابعة قد يقيد عنق الزجاجة الناتج الكلي. قِس وقت العمل والانتظار وإعادة العمل منفصلًا. لا تحسب وقت العامل المتاح كأنه إنتاج صافٍ، ولا تتجاهل الأعطال والراحة وتغير نوع الطلب.",
+      "en": "Capacity is output achievable within a period under defined quality conditions. A bottleneck can constrain a sequential process. Measure processing, waiting and rework separately. Available staff time is not all productive time; consider breakdowns, breaks and differences between orders."
+    },
+    "case": {
+      "ar": "حالة افتراضية: الفحص يستوعب 8 طلبات في الساعة والطباعة 12 والتجليد 10. في نموذج متتابع مستقر، الحد الأعلى 8 طلبات في الساعة. تسريع الطباعة وحدها لا يرفع هذا الحد.",
+      "en": "Fictional case: checking handles 8 orders per hour, printing 12 and binding 10. In a stable sequential model, the maximum is 8 orders per hour. Speeding printing alone does not raise that limit."
+    },
+    "task": {
+      "ar": "ارسم عملية من أربع خطوات وحدد زمن وقدرة كل خطوة بافتراضات معلنة. عيّن عنق الزجاجة، واقترح تحسينين، ثم احسب الحد الجديد وناقش ما قد يمنع بلوغه فعليًا.",
+      "en": "Map four steps with explicit time and capacity assumptions. Identify the bottleneck, propose two improvements, calculate the new limit and explain why actual output may fall below it."
+    },
+    "question": {
+      "ar": "أي خطوة تقيد المثال؟",
+      "en": "Which step constrains the example?"
+    },
+    "correct": {
+      "ar": "الفحص بقدرة 8 طلبات في الساعة",
+      "en": "Checking at 8 orders per hour"
+    },
+    "wrong": {
+      "ar": "الطباعة لأنها تستخدم آلة",
+      "en": "Printing because it uses a machine"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L04",
+    "title": {
+      "ar": "التكاليف والإيرادات والتعادل والتدفق النقدي",
+      "en": "Costs, revenue, breakeven and cash flow"
+    },
+    "concept": {
+      "ar": "نقطة التعادل في نموذج منتج واحد تساوي التكلفة الثابتة مقسومة على مساهمة الوحدة، بشرط مساهمة موجبة وثبات الافتراضات. الربح المحاسبي والتحصيل النقدي ليسا الشيء نفسه. رصيد النقد الختامي يساوي الافتتاحي مضافًا إليه المقبوضات مطروحًا منه المدفوعات؛ ولا تكفي المبيعات وحدها لحسابه.",
+      "en": "For a single-product model, breakeven units equal fixed costs divided by positive unit contribution, under stated assumptions. Accounting profit and cash collection differ. Closing cash equals opening cash plus receipts minus payments; sales alone cannot determine it."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تكلفة ثابتة 900 ومساهمة 60 تعني التعادل عند 15 طلبًا. رصيد أول 500 ومقبوضات 2400 ومدفوعات 2700 تعني رصيد آخر 200. قد توجد مبيعات آجلة لم تدخل المقبوضات.",
+      "en": "Fictional case: fixed costs of 900 and contribution of 60 give breakeven at 15 orders. Opening cash 500, receipts 2,400 and payments 2,700 give closing cash 200. Credit sales may not yet appear in receipts."
+    },
+    "task": {
+      "ar": "ابنِ جدول ثلاثة أحجام مبيعات، ثم جدول نقد لأسبوعين. افصل موعد البيع عن التحصيل والدفع. اختبر تأخر تحصيل 600، وحدد متى يحدث العجز وكيف يمكن معالجته دون اعتبار القرض إيراد مبيعات.",
+      "en": "Build three sales-volume scenarios and a two-week cash schedule. Separate sales, collection and payment dates. Delay a receipt of 600, identify any shortfall and discuss responses without treating a loan as sales revenue."
+    },
+    "question": {
+      "ar": "ما الرصيد الختامي في المثال؟",
+      "en": "What is closing cash in the example?"
+    },
+    "correct": {
+      "ar": "200 = 500 + 2400 − 2700",
+      "en": "200 = 500 + 2400 − 2700"
+    },
+    "wrong": {
+      "ar": "3000 لأن هذا إجمالي المبيعات",
+      "en": "3000 because it is total sales"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L05",
+    "title": {
+      "ar": "اختبار الفكرة وتحليل السيناريوهات وقرار الاستمرار",
+      "en": "Testing, scenarios and continuation decisions"
+    },
+    "concept": {
+      "ar": "حوّل الافتراض الحاسم إلى سؤال قابل للاختبار. حدد مقياسًا وحد قبول وحجم تجربة ومدة قبل رؤية النتائج. السيناريو يغير مجموعة افتراضات متسقة، أما تحليل الحساسية فيفحص أثر تغيير عامل محدد. نتيجة اختبار محدود تدعم قرارًا محدودًا، ولا تضمن نجاح التوسع.",
+      "en": "Turn a critical assumption into a testable question. Specify a measure, decision threshold, test size and duration before observing results. Scenarios combine consistent assumptions; sensitivity analysis varies a particular factor. A limited test supports a limited decision, not guaranteed success at scale."
+    },
+    "case": {
+      "ar": "حالة افتراضية: جُرّب موعد استلام محدد مع 10 طلبات، ووصل 8 في الموعد مقابل حد قبول معلن 9. لا تغيّر الحد إلى 8 بعد رؤية النتيجة. افحص أسباب التأخير وعدّل التجربة قبل التوسع.",
+      "en": "Fictional case: 8 of 10 collection-slot orders arrive on time against a predeclared threshold of 9. Do not lower the threshold after seeing results. Investigate delays and revise the test before expanding."
+    },
+    "task": {
+      "ar": "اكتب بطاقة تجربة وافتراضها ومقياسها وحدها وقرار النجاح والفشل. أضف سيناريو متحفظًا وآخر أساسيًا، ثم سجل قرار الاستمرار أو التعديل أو التوقف مع حدود الدليل.",
+      "en": "Write an experiment card with assumption, measure, threshold and actions for success or failure. Add conservative and base scenarios, then justify continue, revise or stop with evidence limitations."
+    },
+    "question": {
+      "ar": "كيف نتعامل مع عدم بلوغ الحد المعلن؟",
+      "en": "How should a missed predeclared threshold be handled?"
+    },
+    "correct": {
+      "ar": "نفحص الأسباب ونقرر تعديلًا موثقًا",
+      "en": "Investigate and document a revision decision"
+    },
+    "wrong": {
+      "ar": "نخفض الحد بأثر رجعي لإعلان النجاح",
+      "en": "Lower it afterwards to declare success"
+    }
+  },
+  {
+    "id": "AC-BUS-M04-L06",
+    "title": {
+      "ar": "صلاحية التجربة والتحيز وحدود التعميم",
+      "en": "Experiment validity and bias"
+    },
+    "concept": {
+      "ar": "قد تختلف نتيجة تجربة بسبب اختيار المشاركين أو تغير الموسم أو تغير أكثر من عنصر معًا. حدّد من شملته التجربة ومن استُبعد، وميّز أثر التدخل من التفسيرات البديلة. توزيع المجموعات بطريقة عادلة وتوحيد القياس يساعدان، لكن العينة الصغيرة تبقى محدودة ولا تتحول إلى يقين.",
+      "en": "Results can reflect participant selection, seasonality or several simultaneous changes. Record who was included and excluded, and distinguish intervention effects from alternative explanations. Fair allocation and consistent measurement help, but a small sample still has substantial limitations."
+    },
+    "case": {
+      "ar": "حالة افتراضية: عرض خصم للأصدقاء في أسبوع الامتحانات حقق طلبات أكثر من أسبوع عادي. لا يمكن نسب الزيادة كلها للخصم؛ تغيرت العلاقة بالمشاركين والتوقيت. صمم مقارنة أقرب في الشريحة والفترة.",
+      "en": "Fictional case: a discount offered to friends during exam week produces more orders than an ordinary week. Discount, participant relationships and timing all changed. Design a comparison with more similar participants and timing."
+    },
+    "task": {
+      "ar": "راجع تجربة الدرس السابق بحثًا عن ثلاثة مصادر تحيز. أعد تصميم المقارنة، وحدد ما ستثبته وما ستغيره وكيف تسجل الاستبعادات. اكتب استنتاجًا لا يتجاوز المشاركين والظروف المختبرة.",
+      "en": "Audit the previous experiment for three biases. Redesign the comparison, specify constants and changes, and record exclusions. Write a conclusion limited to the tested participants and conditions."
+    },
+    "question": {
+      "ar": "هل الزيادة تثبت أثر الخصم وحده؟",
+      "en": "Does the increase establish the discount effect alone?"
+    },
+    "correct": {
+      "ar": "لا؛ توجد عوامل تغيرت بالتزامن",
+      "en": "No; other factors changed simultaneously"
+    },
+    "wrong": {
+      "ar": "نعم؛ كل زيادة بعد الخصم سببها الخصم",
+      "en": "Yes; every increase after a discount is caused by it"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L01",
+    "title": {
+      "ar": "الرؤية والرسالة والأهداف القابلة للقياس",
+      "en": "Vision, mission and measurable goals"
+    },
+    "concept": {
+      "ar": "الرؤية تصف مستقبلًا مرغوبًا، والرسالة توضح من نخدم وما القيمة التي نقدمها. الهدف يحول الاتجاه إلى نتيجة محددة بموعد ومقياس وخط أساس. النشاط مثل إطلاق إعلان ليس نتيجة مثل زيادة الطلبات المكتملة. اجعل الهدف قابلًا للمراجعة دون تشجيع سلوك يضر الجودة.",
+      "en": "Vision describes a desired future; mission states whom the organisation serves and its value. A goal translates direction into a result with a measure, baseline and deadline. Launching an advertisement is an activity, not an outcome such as completed orders. Check that targets do not encourage harmful shortcuts."
+    },
+    "case": {
+      "ar": "حالة افتراضية: «نحسن الخدمة» اتجاه عام. «رفع نسبة التسليم في الموعد من 80% إلى 90% خلال أربع أسابيع، مع عدم زيادة إعادة العمل» هدف أوضح. الأرقام هنا تعليمية وليست وعد أداء.",
+      "en": "Fictional case: “improve service” is a direction. “Raise on-time delivery from 80% to 90% in four weeks without increasing rework” is more specific. These are teaching assumptions, not a performance promise."
+    },
+    "task": {
+      "ar": "اكتب رسالة ورؤية وثلاثة أهداف. لكل هدف سجل خط الأساس والمعادلة والموعد والمسؤول ومؤشر حماية للجودة. افحص هل الأنشطة المقترحة يمكن أن تؤثر في النتيجة فعلًا.",
+      "en": "Write a mission, vision and three goals. For each, record baseline, formula, deadline, owner and quality guardrail. Check whether proposed activities can plausibly influence the result."
+    },
+    "question": {
+      "ar": "أي بند يمثل نتيجة؟",
+      "en": "Which item describes an outcome?"
+    },
+    "correct": {
+      "ar": "ارتفاع نسبة التسليم في الموعد",
+      "en": "A higher on-time delivery rate"
+    },
+    "wrong": {
+      "ar": "إرسال عشر رسائل إعلانية فقط",
+      "en": "Sending ten advertisements alone"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L02",
+    "title": {
+      "ar": "تحليل البيئة والقدرات واختيار الأولويات",
+      "en": "Environment, capabilities and priorities"
+    },
+    "concept": {
+      "ar": "التحليل الاستراتيجي يربط ما يحدث خارج المنشأة بما تستطيع فعله داخلها. القوة والضعف داخليان، والفرصة والتهديد خارجيان في هذا التصنيف المبسط. القائمة وحدها لا تصنع استراتيجية؛ يجب أن تنتهي باختيار يحدد ما سنفعله وما سنؤجله وسبب ذلك.",
+      "en": "Strategic analysis connects external conditions to internal capabilities. In a simple classification, strengths and weaknesses are internal; opportunities and threats are external. Lists do not constitute strategy. End with choices about what to do, postpone and why."
+    },
+    "case": {
+      "ar": "حالة افتراضية: مهارة فحص الملفات قوة داخلية، وازدحام موسم التسليم ظرف خارجي. يمكن اختيار خدمة حجز مبكر تناسب المهارة، بدل منافسة الجميع على أقل سعر مع قدرة محدودة.",
+      "en": "Fictional case: file-checking expertise is an internal strength; seasonal submission pressure is external. Early booking can fit that capability better than competing on the lowest price with limited capacity."
+    },
+    "task": {
+      "ar": "صنف ثماني ملاحظات داخلية وخارجية مع دليل لكل منها. استخرج ثلاث أولويات، ثم اختر واحدة وفق الأثر والقدرة والتكلفة. اكتب نشاطًا ستؤجله حتى تصبح الأولوية قابلة للتنفيذ.",
+      "en": "Classify eight internal and external observations with evidence. Derive three priorities and select one using impact, capability and cost. Name an activity to postpone so the priority is feasible."
+    },
+    "question": {
+      "ar": "كيف يتحول التحليل إلى قرار؟",
+      "en": "How does analysis become a decision?"
+    },
+    "correct": {
+      "ar": "باختيار أولوية وتحديد ما سيؤجل",
+      "en": "By choosing a priority and what to defer"
+    },
+    "wrong": {
+      "ar": "بزيادة طول قائمة العوامل فقط",
+      "en": "By making the factor list longer"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L03",
+    "title": {
+      "ar": "التموضع وخطة التسويق والمبيعات",
+      "en": "Positioning, marketing and sales planning"
+    },
+    "concept": {
+      "ar": "التموضع يوضح المكان الذي تريد أن يشغله عرضك في اختيار شريحة محددة مقارنة ببدائلها. اربط الوعد بدليل وبقناة وبخطوة شراء واضحة. خطة التسويق تضع نشاطًا وميزانية ومسؤولًا ومقياسًا؛ وخطة البيع تحدد التعامل مع الاستفسار والاعتراض والمتابعة دون ضغط مضلل.",
+      "en": "Positioning defines how a chosen segment should see an offer relative to alternatives. Connect the promise to evidence, a channel and a clear purchase step. Marketing plans specify activities, budget, ownership and measurement; sales plans handle enquiries, objections and follow-up without misleading pressure."
+    },
+    "case": {
+      "ar": "حالة افتراضية: «طباعة موثوقة لمواعيد المشاريع» أدق من «الأفضل للجميع». يحتاج الوعد سجل تسليم وخدمة فحص لا مجرد عبارة. حملة تجلب طلبات تفوق القدرة قد تضر الوعد بدل دعمه.",
+      "en": "Fictional case: “reliable printing for project deadlines” is more focused than “best for everyone.” The claim needs delivery evidence and checking processes. A campaign exceeding service capacity may undermine the promise."
+    },
+    "task": {
+      "ar": "اكتب رسالة عرض وإعلانًا قصيرًا وردًا على اعتراض. اربطها بخطة أسبوعين فيها الميزانية والطاقة القصوى ومؤشر التحويل. ضع قاعدة لإيقاف الحملة إذا تعذر الوفاء بالوعد.",
+      "en": "Write an offer statement, short advertisement and objection response. Connect them to a two-week plan with budget, capacity and conversion measure. Set a pause rule if the promise cannot be fulfilled."
+    },
+    "question": {
+      "ar": "ماذا يدعم وعد التسليم الموثوق؟",
+      "en": "What supports a reliable-delivery promise?"
+    },
+    "correct": {
+      "ar": "قدرة تشغيل ودليل التزام",
+      "en": "Operational capacity and delivery evidence"
+    },
+    "wrong": {
+      "ar": "صفة الأفضل بلا دليل",
+      "en": "An unsupported “best” claim"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L04",
+    "title": {
+      "ar": "خطة التشغيل والموارد والميزانية",
+      "en": "Operations, resources and budgeting"
+    },
+    "concept": {
+      "ar": "حوّل هدف المبيعات إلى طلب متوقع على الأشخاص والمواد والوقت والنقد. الميزانية تقدير موثق، وليست تصريحًا بأن الأرقام ستتحقق. افصل التكلفة لمرة واحدة من المتكررة، وموعد الالتزام من موعد الدفع. راجع اتساق القدرة والشراء والميزانية عبر الفترة نفسها.",
+      "en": "Translate sales goals into people, materials, time and cash requirements. A budget is a documented estimate, not a promise. Separate one-off and recurring costs, and commitments from payment dates. Align capacity, purchasing and budget assumptions across the same period."
+    },
+    "case": {
+      "ar": "حالة افتراضية: 100 طلب يحتاج كل منها 20 دقيقة عمل، أي 2000 دقيقة قبل الراحة وإعادة العمل. تخصيص 25 ساعة فقط لا يكفي لهذا الافتراض، حتى لو بدت ميزانية المواد مناسبة.",
+      "en": "Fictional case: 100 orders at 20 minutes each require 2,000 minutes before breaks and rework. Allocating only 25 hours cannot meet that assumption, even if the materials budget looks adequate."
+    },
+    "task": {
+      "ar": "أنشئ خطة شهر بأربعة أسابيع تربط الطلب المتوقع وساعات العمل والمواد والمدفوعات. احسب فجوة قدرة أو نقد، ثم عدّل الخطة مع توثيق المقايضة بين الخدمة والتكلفة.",
+      "en": "Build a four-week plan connecting demand, staff hours, materials and payments. Calculate a capacity or cash gap and revise the plan, documenting the service-cost trade-off."
+    },
+    "question": {
+      "ar": "كم دقيقة يتطلب المثال قبل الاحتياطي؟",
+      "en": "How many minutes does the example require before allowances?"
+    },
+    "correct": {
+      "ar": "2000 دقيقة",
+      "en": "2000 minutes"
+    },
+    "wrong": {
+      "ar": "1500 دقيقة لأنها 25 ساعة متاحة",
+      "en": "1500 minutes because 25 hours are available"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L05",
+    "title": {
+      "ar": "كتابة خطة عمل مترابطة ومؤشرات متابعة",
+      "en": "An integrated business plan and measures"
+    },
+    "concept": {
+      "ar": "خطة العمل حجة مترابطة: مشكلة وعميل، عرض، دليل طلب، تشغيل، فريق، مالية ومخاطر. كل وعد تسويقي يحتاج قدرة، وكل قدرة لها تكلفة، وكل توقع يحتاج افتراضًا. المؤشر الجيد له تعريف ومصدر ودورية ومسؤول وقرار يمكن أن يتغير بسببه.",
+      "en": "A business plan connects problem, customer, offer, demand evidence, operations, people, finance and risk. Every promise needs capability; every capability has a cost; every forecast has assumptions. A useful measure has a definition, source, frequency, owner and decision it can inform."
+    },
+    "case": {
+      "ar": "حالة افتراضية: خطة تتوقع 200 طلب لكن جدول القدرة يسمح بـ120 تحتوي تناقضًا. لا تعالجه بتجميل الملخص؛ راجع توقع الطلب أو القدرة وتكلفتها ثم حدث المالية والمخاطر معًا.",
+      "en": "Fictional case: a plan forecasts 200 orders while its capacity schedule supports 120. Editing the summary does not solve it. Revisit demand or capacity and its cost, then update finance and risk together."
+    },
+    "task": {
+      "ar": "ادمج مخرجات الوحدات في خطة من ستة أقسام. نفّذ مراجعة اتساق لثلاثة أرقام تتكرر في أكثر من قسم. أنشئ بطاقة ثلاثة مؤشرات وحدد القرار المرتبط بكل منها.",
+      "en": "Integrate earlier outputs into a six-section plan. Reconcile three figures appearing in multiple sections. Define three metric cards and the decision each informs."
+    },
+    "question": {
+      "ar": "كيف نعالج تضارب الطلب المتوقع مع القدرة؟",
+      "en": "How should demand-capacity inconsistency be fixed?"
+    },
+    "correct": {
+      "ar": "بمراجعة الافتراضات وتحديث الأقسام المرتبطة",
+      "en": "Revise assumptions and connected sections"
+    },
+    "wrong": {
+      "ar": "بتغيير صياغة الملخص فقط",
+      "en": "Change only the summary wording"
+    }
+  },
+  {
+    "id": "AC-BUS-M05-L06",
+    "title": {
+      "ar": "مراجعة الخطة واختبار حساسيتها",
+      "en": "Reviewing a plan and its sensitivity"
+    },
+    "concept": {
+      "ar": "راجع الخطة كما لو أن افتراضك المفضل خطأ. اختر متغيرًا مؤثرًا، وغيّره مع تثبيت الباقي أولًا لفهم الحساسية، ثم اختبر سيناريو يجمع تغييرات مترابطة. لا تجمع أسوأ رقم عشوائيًا لكل عنصر وتسمي الناتج توقعًا. وثق الفرق بين الحدث المحتمل والقرار الوقائي.",
+      "en": "Review the plan as if your favourite assumption were wrong. Vary an influential factor while initially holding others constant, then examine a scenario with related changes. Combining arbitrary worst values does not create a forecast. Distinguish possible events from preventive decisions."
+    },
+    "case": {
+      "ar": "حالة افتراضية: عند 20 طلبًا ومساهمة 60 وتكلفة ثابتة 900 تكون النتيجة 300. عند 15 طلبًا تصبح صفرًا. هذا يوضح حساسية الحجم، ولا يثبت أن 15 هو العدد الذي سيحدث.",
+      "en": "Fictional case: 20 orders at contribution 60 and fixed costs 900 produce 300. At 15 orders the result is zero. This shows volume sensitivity; it does not predict that 15 orders will occur."
+    },
+    "task": {
+      "ar": "اختر ثلاثة افتراضات في خطتك واختبر كل واحد منفردًا. صمم سيناريو متحفظًا متسقًا، ثم سجل قرارًا وقائيًا ومؤشر إنذار وتاريخ إعادة مراجعة.",
+      "en": "Choose three plan assumptions and vary each separately. Build a coherent conservative scenario, then record a preventive action, warning measure and review date."
+    },
+    "question": {
+      "ar": "ماذا يثبت سيناريو 15 طلبًا؟",
+      "en": "What does the 15-order scenario establish?"
+    },
+    "correct": {
+      "ar": "نتيجة النموذج تحت هذا الافتراض",
+      "en": "The model result under that assumption"
+    },
+    "wrong": {
+      "ar": "العدد الفعلي المؤكد للطلبات القادمة",
+      "en": "The certain number of future orders"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L01",
+    "title": {
+      "ar": "متطلبات التأسيس وخريطة التحقق المحلية",
+      "en": "Formation requirements and local verification"
+    },
+    "concept": {
+      "ar": "تختلف إجراءات التأسيس والتراخيص والضرائب بحسب البلد والنشاط والشكل القانوني. لا تنقل قائمة من بلد إلى آخر بوصفها حكمًا جاهزًا. المطلوب إداريًا بناء خريطة أسئلة، وتحديد الجهة الرسمية المختصة لكل سؤال، وتسجيل تاريخ الإجابة وما ينطبق على الحالة. هذا الدرس يشرح طريقة التحقق ولا يقدم استشارة قانونية.",
+      "en": "Formation, licensing and tax requirements vary by jurisdiction, activity and legal form. Do not transfer a checklist between countries as if universally valid. Build a question map, identify the relevant official authority and record when an answer was checked and whether it applies. This lesson teaches verification, not legal advice."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تقديم خدمة من المنزل وفتح محل قد يختلفان في متطلبات الموقع. لا نستنتج الإعفاء من مجرد صغر المشروع. نسجل السؤال والجهة والإجابة الموثقة وأثرها على موعد الإطلاق.",
+      "en": "Fictional case: a home-based service and a physical shop may have different location requirements. Small size does not establish exemption. Record the question, authority, verified answer and effect on launch timing."
+    },
+    "task": {
+      "ar": "أنشئ سجلًا لثمانية أسئلة عن النشاط والموقع والتعامل مع العاملين والبيانات والفوترة. ضع حالة «لم يُتحقق» عند غياب دليل، وحدد مسؤول التحقق وأثر التأخير. لا تخترع إجابة قانونية لإكمال الجدول.",
+      "en": "Create eight questions covering activity, location, workers, data and invoicing. Mark unsupported answers unverified, assign an owner and note delay consequences. Never invent legal answers to fill the table."
+    },
+    "question": {
+      "ar": "ماذا نفعل عند غياب تحقق محلي؟",
+      "en": "What should happen when local verification is missing?"
+    },
+    "correct": {
+      "ar": "نسجل عدم التحقق ونطلب جوابًا من الجهة المختصة",
+      "en": "Record the gap and seek the competent authority’s answer"
+    },
+    "wrong": {
+      "ar": "نفترض أن قواعد بلد آخر تنطبق",
+      "en": "Assume another country’s rules apply"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L02",
+    "title": {
+      "ar": "اختيار الموردين والموارد وتخطيط المشتريات",
+      "en": "Suppliers, resources and purchasing"
+    },
+    "concept": {
+      "ar": "المورد يُقيّم بالسعر والمواصفة والموعد والاعتمادية وشروط الدفع وخطة التعويض عند الإخفاق. التكلفة الكلية قد تشمل النقل والفحص والهدر. حدد شرط قبول واضحًا قبل الشراء، وقارن عروضًا على مواصفات واحدة. المورد البديل لا يفيد إذا لم تُختبر قدرته في الوقت المناسب.",
+      "en": "Evaluate suppliers on price, specification, timing, reliability, payment and failure response. Total cost can include delivery, inspection and waste. Define acceptance before purchasing and compare equivalent specifications. A backup supplier helps only if its capability is verified in time."
+    },
+    "case": {
+      "ar": "حالة افتراضية: عرض أ بسعر 1000 ونقل 200، وعرض ب بسعر 1150 شامل النقل. إذا تساوت بقية الشروط، ب أقل تكلفة كلية بمقدار 50. لا يكفي ذلك وحده إذا اختلفت الجودة أو مهلة التسليم.",
+      "en": "Fictional case: offer A costs 1,000 plus 200 delivery; offer B costs 1,150 delivered. With other terms equal, B is 50 cheaper overall. Quality or lead-time differences could still change the decision."
+    },
+    "task": {
+      "ar": "اكتب مواصفة شراء، وقارن ثلاثة عروض افتراضية بالتكلفة الكلية والجودة والموعد. أضف خطة قبول وفحص وموردًا بديلًا وشرط تفعيل البديل.",
+      "en": "Write a purchasing specification and compare three fictional offers on total cost, quality and timing. Add inspection, acceptance, a backup supplier and its activation trigger."
+    },
+    "question": {
+      "ar": "أي عرض أقل تكلفة في المثال مع تساوي بقية الشروط؟",
+      "en": "Which offer costs less when other terms are equal?"
+    },
+    "correct": {
+      "ar": "ب: 1150 مقابل 1200",
+      "en": "B: 1150 versus 1200"
+    },
+    "wrong": {
+      "ar": "أ: لأن السعر المعلن 1000",
+      "en": "A: because its headline price is 1000"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L03",
+    "title": {
+      "ar": "تصميم إجراءات العمل والجودة وخدمة العميل",
+      "en": "Procedures, quality and customer service"
+    },
+    "concept": {
+      "ar": "الإجراء يوضح المحفز والمدخل والخطوات والمسؤول والمخرج ومعيار القبول والتصرف عند الاستثناء. الجودة ليست فحصًا نهائيًا فقط؛ منع الخطأ مبكرًا قد يقلل إعادة العمل. خدمة العميل توضح ما حدث وما يمكن فعله ومتى، ولا تعد بما لا يملك الفريق تنفيذه.",
+      "en": "A procedure defines its trigger, input, steps, owner, output, acceptance and exception handling. Quality is not only final inspection; early prevention can reduce rework. Customer service explains what happened, possible remedies and timing without promising beyond the team’s capability."
+    },
+    "case": {
+      "ar": "حالة افتراضية: طُبع ملف قديم لأن اسم النسخة لم يُراجع. إضافة فحص نسخة مع تأكيد العميل قبل الطباعة تعالج السبب أقرب إلى بدايته. زيادة الفحص بعد التجليد تكتشف الخطأ بعد استهلاك الموارد.",
+      "en": "Fictional case: an old file was printed because its version was not checked. Confirming the version with the customer before printing addresses the cause earlier. Inspection after binding discovers the mistake after resources are spent."
+    },
+    "task": {
+      "ar": "اكتب إجراءً من سبع خطوات مع نقطة منع خطأ ونقطة قبول. أضف استثناءين وردًا مهنيًا على شكوى. جرّب الإجراء على طلب افتراضي وسجل موضع غموض وعدّله.",
+      "en": "Write a seven-step procedure with an error-prevention point and acceptance check. Add two exceptions and a professional complaint response. Walk through a fictional order, identify ambiguity and revise."
+    },
+    "question": {
+      "ar": "أين الأفضل فحص نسخة الملف؟",
+      "en": "When should the file version be checked?"
+    },
+    "correct": {
+      "ar": "قبل الطباعة مع تأكيد النسخة المطلوبة",
+      "en": "Before printing, confirming the required version"
+    },
+    "wrong": {
+      "ar": "بعد التسليم فقط",
+      "en": "Only after delivery"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L04",
+    "title": {
+      "ar": "الأدوات الرقمية وتجربة التشغيل والاستعداد للإطلاق",
+      "en": "Digital tools, rehearsal and launch readiness"
+    },
+    "concept": {
+      "ar": "اختر الأداة بحسب المهمة والبيانات والصلاحيات وسهولة الاسترجاع والتكلفة، لا شهرتها. تجربة التشغيل تختبر رحلة كاملة ببيانات اختبار، تشمل النجاح والفشل والاستثناء. وجود شاشة جميلة لا يثبت أن الطلب يصل للشخص الصحيح أو أن الخطأ يمكن تداركه.",
+      "en": "Choose tools for the task, data, permissions, recovery and cost rather than popularity. An operational rehearsal follows a complete journey using test data, including success, failure and exceptions. An attractive screen does not prove correct routing or recoverability."
+    },
+    "case": {
+      "ar": "حالة افتراضية: نموذج طلب يرسل تأكيدًا لكنه لا يسجل موعد التسليم. تجربة كاملة تكشف النقص قبل وصول طلب حقيقي. اختبر أيضًا انقطاع الاتصال والطلب المكرر، دون استخدام بيانات عميل حقيقية.",
+      "en": "Fictional case: an order form sends confirmation but omits delivery time. A complete rehearsal exposes the gap before a real order. Also test connection loss and duplicates without using real customer data."
+    },
+    "task": {
+      "ar": "قارن أداتين باستخدام متطلبات مكتوبة. صمم ست حالات تجربة تشمل حالة فشل وتكرارًا وصلاحية غير مناسبة. سجل النتيجة والدليل والمسؤول، وحدد شرطًا يمنع الإطلاق عند إخفاق حرج.",
+      "en": "Compare two tools against written requirements. Design six rehearsal cases including failure, duplication and inappropriate access. Record result, evidence and owner, and define a critical launch blocker."
+    },
+    "question": {
+      "ar": "هل وصول رسالة تأكيد يثبت اكتمال العملية؟",
+      "en": "Does receiving confirmation prove the process works?"
+    },
+    "correct": {
+      "ar": "لا؛ يجب تتبع التسجيل والتنفيذ والاستثناءات",
+      "en": "No; trace recording, execution and exceptions"
+    },
+    "wrong": {
+      "ar": "نعم؛ يكفي اختبار أول شاشة",
+      "en": "Yes; testing the first screen is enough"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L05",
+    "title": {
+      "ar": "الحد الأدنى من البيانات واستمرارية العمل",
+      "en": "Data minimisation and business continuity"
+    },
+    "concept": {
+      "ar": "حدد البيانات اللازمة لغرض واضح، ومن يحتاج الوصول إليها، ومتى تُراجع الحاجة إلى الاحتفاظ بها. الاستمرارية تعني معرفة الأعمال الحرجة وبدائلها ومسؤول استعادتها. النسخة الاحتياطية غير المختبرة لا تكفي؛ يجب التحقق من إمكانية الاسترجاع ببيانات اختبار وصلاحيات مناسبة.",
+      "en": "Define data needed for a clear purpose, who requires access and when retention needs are reviewed. Continuity identifies critical work, alternatives and recovery owners. An untested backup is insufficient: verify restoration using test data and appropriate permissions."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تسليم طلب قد يحتاج وسيلة تواصل ورقم طلب، ولا يبرر تلقائيًا جمع صورة هوية. إذا تعطل سجل الطلبات، يلزم إجراء بديل مضبوط يمنع ازدواج الطلبات أو كشف بيانات العملاء.",
+      "en": "Fictional case: order collection may need contact details and an order number, not automatically an identity-document copy. If the order system fails, a controlled fallback should prevent duplicates and exposure of customer data."
+    },
+    "task": {
+      "ar": "صمم خريطة بيانات وصلاحيات لعملية الطلب. احذف حقولًا غير لازمة مع ذكر السبب. اكتب سيناريو تعطل وخطوات استعادة واختبارًا يثبت اكتمال السجلات دون عرض بيانات حساسة.",
+      "en": "Map order data and permissions. Remove unnecessary fields with reasons. Write a disruption scenario, recovery steps and a test that demonstrates record completeness without exposing sensitive data."
+    },
+    "question": {
+      "ar": "ما الذي يجعل النسخة الاحتياطية دليلًا أقوى على الاستعداد؟",
+      "en": "What makes backup readiness more credible?"
+    },
+    "correct": {
+      "ar": "اختبار استرجاع موثق",
+      "en": "A documented restoration test"
+    },
+    "wrong": {
+      "ar": "وجود اسم ملف نسخة احتياطية فقط",
+      "en": "Only a file named backup"
+    }
+  },
+  {
+    "id": "AC-BUS-M06-L06",
+    "title": {
+      "ar": "قائمة الإطلاق وقرار الجاهزية",
+      "en": "Launch checklist and readiness decision"
+    },
+    "concept": {
+      "ar": "قائمة الجاهزية تربط كل شرط بدليل ومسؤول وحالة، ولا تكتفي بعلامات إنجاز عامة. ميّز عيبًا يمنع تقديم الخدمة بأمان عن تحسين يمكن تأجيله. قرار الإطلاق يذكر النطاق والقيود وطريقة المتابعة والرجوع، ويعتمد على تحقق الشروط لا ضغط الموعد وحده.",
+      "en": "A readiness checklist links each condition to evidence, owner and status. Distinguish a defect that blocks safe service from a deferrable improvement. A launch decision states scope, limitations, monitoring and rollback, and depends on verified conditions rather than deadline pressure alone."
+    },
+    "case": {
+      "ar": "حالة افتراضية: لون زر غير مثالي قد يُؤجل، لكن ضياع الطلب عند انقطاع الاتصال يحتاج معالجة أو بديلًا موثوقًا قبل استقبال طلبات فعلية. وصف المشكلة بصغيرة لا يغير أثرها.",
+      "en": "Fictional case: imperfect button colour may be deferrable, but lost orders during connection failure require a fix or reliable fallback before accepting real orders. Calling an issue small does not change its consequences."
+    },
+    "task": {
+      "ar": "أعد قائمة من عشرة شروط تشمل التشغيل والجودة والمالية والتحقق المحلي. صنف العيوب الحرجة والمؤجلة، واكتب مذكرة إطلاق أو تأجيل من صفحة واحدة وخطة متابعة لأول أسبوع.",
+      "en": "Create ten readiness conditions across operations, quality, finance and local verification. Classify blockers and deferrable defects. Write a one-page launch-or-delay decision and first-week monitoring plan."
+    },
+    "question": {
+      "ar": "أي شرط يبرر تأجيل استقبال طلبات فعلية؟",
+      "en": "Which issue justifies delaying real orders?"
+    },
+    "correct": {
+      "ar": "فقد الطلبات دون بديل موثوق",
+      "en": "Lost orders without a reliable fallback"
+    },
+    "wrong": {
+      "ar": "اختلاف بسيط في لون غير مؤثر",
+      "en": "A minor nonfunctional colour difference"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L01",
+    "title": {
+      "ar": "نطاق المشروع ومخرجاته وتقسيم العمل",
+      "en": "Scope, deliverables and work breakdown"
+    },
+    "concept": {
+      "ar": "المشروع عمل مؤقت يحقق مخرجًا محددًا، بينما التشغيل نشاط متكرر. النطاق يوضح الداخل والخارج ومعايير قبول المخرجات. قسّم المخرج إلى أجزاء يمكن إسنادها ومراجعتها، ثم إلى أنشطة. لا تخلط قائمة أنشطة بمخرجات مقبولة؛ «اجتماع» ليس هو «خطة معتمدة».",
+      "en": "A project is temporary work producing a defined result; operations are ongoing. Scope states inclusions, exclusions and acceptance criteria. Break deliverables into assignable, reviewable parts and then activities. A list of activities is not a set of accepted outputs: a meeting is not an approved plan."
+    },
+    "case": {
+      "ar": "حالة افتراضية: إطلاق حجز الطباعة يشمل نموذج الطلب وإجراء التأكيد والتجربة، لكنه لا يشمل تطبيق هاتف كاملًا. توثيق هذا الاستبعاد يمنع توسعًا غير محسوب عند ظهور فكرة جديدة.",
+      "en": "Fictional case: launching print booking includes an order form, confirmation procedure and rehearsal, but excludes a complete mobile app. Recording that exclusion prevents uncontrolled expansion when a new idea appears."
+    },
+    "task": {
+      "ar": "اكتب وثيقة نطاق بمخرجات واستبعادات وقبول. قسّم مخرجًا إلى خمس حزم عمل، وحدد مسؤولًا ودليل قبول لكل حزمة. افحص إن كانت الحزم تغطي المطلوب دون تكرار.",
+      "en": "Write scope with deliverables, exclusions and acceptance. Break one output into five work packages with owners and evidence. Check for gaps and overlap."
+    },
+    "question": {
+      "ar": "أي بند مخرج يمكن قبوله؟",
+      "en": "Which item is an output that can be accepted?"
+    },
+    "correct": {
+      "ar": "نموذج طلب اجتاز حالات تجربة محددة",
+      "en": "An order form that passes defined test cases"
+    },
+    "wrong": {
+      "ar": "عقد اجتماع حول النموذج فقط",
+      "en": "Holding a meeting about the form"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L02",
+    "title": {
+      "ar": "الجدول والموارد والتكلفة والاعتماديات",
+      "en": "Schedule, resources, cost and dependencies"
+    },
+    "concept": {
+      "ar": "الاعتمادية تحدد ما يجب أن يسبق نشاطًا، والمدة تختلف عن الجهد. قد تحتاج مهمة ساعتين من العمل لكنها تنتظر موافقة يومين. ارسم التسلسل ثم افحص تعارض الموارد. المسار الأطول في شبكة الاعتماديات البسيطة يحدد مدة دنيا، لكن قيود الموارد قد تطيلها.",
+      "en": "Dependencies specify precedence; duration differs from effort. A task may need two work hours but wait two days for approval. Map sequence and then check resource conflicts. The longest path in a simple dependency network gives a minimum duration, but resource constraints can extend it."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تصميم يومان، ثم بناء ثلاثة أيام، ثم تجربة يوم. التسلسل ستة أيام. تدريب يومين يمكن أن يتوازى مع البناء إذا توفر مدرب مستقل؛ إذا كان الشخص نفسه ينفذ المهمتين يجب مراجعة الجدول.",
+      "en": "Fictional case: design takes two days, build three and testing one: six sequential days. Two-day training can overlap building if a separate trainer is available. If one person performs both, revise the schedule."
+    },
+    "task": {
+      "ar": "أنشئ شبكة ست مهام بمدد واعتماديات ومسؤولين. احسب أقرب انتهاء، ثم أدخل تعارض مورد وتأخير مهمة يومًا. حدّث الموعد والتكلفة واشرح الفرق بين الجهد والانتظار.",
+      "en": "Create six tasks with durations, dependencies and owners. Calculate earliest completion, then add a resource conflict and one-day delay. Update timing and cost and explain effort versus waiting."
+    },
+    "question": {
+      "ar": "ما مدة تسلسل التصميم والبناء والتجربة في المثال؟",
+      "en": "How long is the example’s design-build-test sequence?"
+    },
+    "correct": {
+      "ar": "ستة أيام قبل قيود إضافية",
+      "en": "Six days before additional constraints"
+    },
+    "wrong": {
+      "ar": "ثلاثة أيام لأنها أطول مهمة",
+      "en": "Three days because that is the longest task"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L03",
+    "title": {
+      "ar": "المخاطر والتغيير والتواصل مع أصحاب المصلحة",
+      "en": "Risk, change and stakeholder communication"
+    },
+    "concept": {
+      "ar": "الخطر حدث غير مؤكد قد يؤثر في الهدف، والمشكلة حدث وقع ويحتاج معالجة. سجل السبب والحدث والأثر والمالك والاستجابة وإشارة التفعيل. طلب التغيير يُقيّم قبل اعتماده من حيث النطاق والوقت والتكلفة والجودة، ثم تُحدّث الخطة وتُبلّغ الأطراف المتأثرة.",
+      "en": "A risk is uncertain and may affect objectives; an issue has occurred. Record cause, event, impact, owner, response and trigger. Assess a change request for scope, timing, cost and quality before approval, then update the plan and inform affected stakeholders."
+    },
+    "case": {
+      "ar": "حالة افتراضية: احتمال تأخر المورد خطر. عندما يعلن عدم قدرته على التسليم صار الأمر مشكلة. إضافة مورد بديل قد تغير التكلفة والمواصفة، فلا تُنفذ كأنها تعديل بلا أثر.",
+      "en": "Fictional case: possible supplier delay is a risk. Once the supplier confirms failure to deliver, it becomes an issue. A backup supplier may change cost and specification; do not treat that as impact-free."
+    },
+    "task": {
+      "ar": "اكتب سجل خمسة مخاطر واستجابة لكل منها. حوّل أحدها إلى مشكلة واكتب طلب تغيير ببديلين. حدد صاحب الاعتماد ومن يحتاج معرفة القرار ومتى.",
+      "en": "Create five risks and responses. Turn one into an issue and prepare a change request with two alternatives. Identify the approver and who must be informed and when."
+    },
+    "question": {
+      "ar": "ماذا يسمى تأخر المورد بعد تأكيد وقوعه؟",
+      "en": "What is a supplier delay once confirmed?"
+    },
+    "correct": {
+      "ar": "مشكلة قائمة تحتاج إجراءً",
+      "en": "An existing issue requiring action"
+    },
+    "wrong": {
+      "ar": "خطر احتمالي فقط بلا متابعة",
+      "en": "Only a possible risk needing no action"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L04",
+    "title": {
+      "ar": "متابعة الأداء والتحسين والقرارات المبنية على البيانات",
+      "en": "Performance monitoring and improvement"
+    },
+    "concept": {
+      "ar": "المتابعة تقارن الفعلي بخط أساس واضح وتفسر الانحراف بدل الاكتفاء بعرض الأرقام. مؤشرات النشاط تختلف عن النتيجة، وقد يتحسن أحدها على حساب الجودة. اختبر تحسينًا صغيرًا، وراقب أثره ومؤشر حماية، ثم قرر التثبيت أو التعديل أو الرجوع.",
+      "en": "Monitoring compares actual performance with a clear baseline and explains variance rather than merely displaying numbers. Activity and outcome measures differ, and improvement can trade off against quality. Test a small change, monitor its effect and a guardrail, then retain, revise or reverse it."
+    },
+    "case": {
+      "ar": "حالة افتراضية: خفض متوسط وقت الطلب من 20 إلى 15 دقيقة ترافق مع زيادة إعادة العمل من 2 إلى 8 طلبات من أصل 100. الحكم بالسرعة وحدها يخفي تراجع الجودة. يلزم فحص خطوات التغيير.",
+      "en": "Fictional case: average order time falls from 20 to 15 minutes while rework rises from 2 to 8 of 100 orders. Speed alone hides a quality decline. Investigate the changed process steps."
+    },
+    "task": {
+      "ar": "أنشئ لوحة أربعة مؤشرات بتعريفاتها ومصادرها وخطوط أساسها. حلل انحرافًا، واقترح تجربة تحسين ومؤشر حماية وقرار رجوع. اكتب تقرير متابعة يميز الحقيقة من التفسير.",
+      "en": "Define four metrics with sources and baselines. Analyse a variance and propose an improvement test, guardrail and rollback decision. Write a report separating facts from interpretation."
+    },
+    "question": {
+      "ar": "هل انخفاض الزمن يكفي لإعلان التحسن؟",
+      "en": "Is shorter time enough to declare improvement?"
+    },
+    "correct": {
+      "ar": "لا؛ يجب فحص الجودة وإعادة العمل",
+      "en": "No; examine quality and rework"
+    },
+    "wrong": {
+      "ar": "نعم؛ السرعة تلغي أهمية بقية المؤشرات",
+      "en": "Yes; speed makes other measures irrelevant"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L06",
+    "title": {
+      "ar": "معايير القبول وتسليم المخرجات",
+      "en": "Acceptance criteria and handover"
+    },
+    "concept": {
+      "ar": "الانتهاء من التنفيذ لا يعني قبول المخرج. معيار القبول يصف سلوكًا أو نتيجة يمكن التحقق منها، وصاحب القبول هو الجهة المخولة بالحكم. التسليم يشمل طريقة الاستخدام وحدود المخرج والمسؤول عن الدعم والعيوب المعروفة. سجّل القبول أو الرفض بأدلة محددة.",
+      "en": "Implementation completion is not acceptance. Acceptance criteria describe verifiable behaviour or results, judged by an authorised recipient. Handover includes usage, limitations, support ownership and known defects. Record acceptance or rejection against specific evidence."
+    },
+    "case": {
+      "ar": "حالة افتراضية: يعمل نموذج الحجز في الطلب الصحيح لكنه يفقد البيانات عند خطأ اتصال. عبارة «النموذج جاهز» غير كافية. معيار استعادة الطلب أو إعلام المستخدم بوضوح يكشف ما يحتاج معالجة قبل القبول.",
+      "en": "Fictional case: booking works on success but loses data after connection failure. “The form is ready” is insufficient. Recovery or clear user-notification criteria expose what must be fixed before acceptance."
+    },
+    "task": {
+      "ar": "اكتب خمسة معايير قبول لمخرجك النهائي واختبارًا لكل معيار. أنشئ محضر تسليم يوضح الإصدار والمسؤول والعيوب المؤجلة، ثم نفذ مراجعة ذاتية ودوّن الأدلة الناقصة.",
+      "en": "Write five acceptance criteria and a test for each. Prepare a handover with version, owner and deferred defects. Conduct a self-review and record missing evidence."
+    },
+    "question": {
+      "ar": "ما دليل القبول الأقوى؟",
+      "en": "What is stronger acceptance evidence?"
+    },
+    "correct": {
+      "ar": "نتائج اختبارات مرتبطة بمعايير متفق عليها",
+      "en": "Test results linked to agreed criteria"
+    },
+    "wrong": {
+      "ar": "قول المنفذ إنه انتهى فقط",
+      "en": "Only the implementer saying it is finished"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L07",
+    "title": {
+      "ar": "إغلاق المشروع والدروس المستفادة",
+      "en": "Closing a project and learning from it"
+    },
+    "concept": {
+      "ar": "الإغلاق يتأكد من قبول المخرجات وتسليم المسؤوليات وتوثيق الالتزامات المتبقية. مراجعة الدروس المستفادة تسأل ما المتوقع وما حدث ولماذا وما الإجراء المختلف القادم. لا تجعلها جلسة لوم أو قائمة نصائح عامة؛ اربط كل درس بدليل وتغيير ومسؤول.",
+      "en": "Closure confirms acceptance, transfers responsibility and records remaining commitments. A learning review asks what was expected, what happened, why and what will change next time. Avoid blame and generic advice; connect each lesson to evidence, a change and an owner."
+    },
+    "case": {
+      "ar": "حالة افتراضية: تكرر تأخير الموافقة في ثلاث مهام. «نحتاج تعاونًا أكثر» لا يحدد إجراء. تحديد بديل لصاحب الموافقة وحد زمني للتصعيد تغيير يمكن اختباره في المشروع التالي.",
+      "en": "Fictional case: approval delays recur in three tasks. “We need more cooperation” specifies no action. An alternate approver and escalation time limit create a change testable in the next project."
+    },
+    "task": {
+      "ar": "اكتب تقرير إغلاق مختصرًا وسجل ثلاثة دروس مستفادة. لكل درس دليل وسبب محتمل وإجراء ومسؤول وطريقة قياس. افصل ما ثبت عن تفسير يحتاج تحققًا.",
+      "en": "Write a short closure report and three lessons learned. For each, provide evidence, possible cause, action, owner and measure. Separate established facts from explanations requiring verification."
+    },
+    "question": {
+      "ar": "أي درس مستفاد قابل للتطبيق؟",
+      "en": "Which lesson learned is actionable?"
+    },
+    "correct": {
+      "ar": "تحديد بديل للموافقة وحد زمني للتصعيد",
+      "en": "Define an alternate approver and escalation deadline"
+    },
+    "wrong": {
+      "ar": "المطالبة العامة بتحسين التعاون",
+      "en": "A general request for better cooperation"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L08",
+    "title": {
+      "ar": "مراجعة الأدلة والاستعداد للدفاع عن الخطة",
+      "en": "Evidence audit and defending a plan"
+    },
+    "concept": {
+      "ar": "قوة العرض تعتمد على اتساق الحجة وحدود الدليل، لا الثقة في الإلقاء وحدها. صنف الادعاءات إلى ملاحظة وحساب وافتراض وقرار. لكل ادعاء مهم أصل يمكن تتبعه داخليًا. التصريح بعدم المعرفة مع خطة تحقق أدق من تحويل افتراض إلى حقيقة أمام المراجعين.",
+      "en": "A persuasive plan depends on coherent reasoning and evidence limits, not delivery confidence alone. Classify claims as observations, calculations, assumptions or decisions. Important claims need traceable internal support. Stating uncertainty with a verification plan is stronger than presenting assumptions as facts."
+    },
+    "case": {
+      "ar": "حالة افتراضية: «كل الطلاب يريدون الخدمة» لا تثبته خمس مقابلات. يمكن قول «ظهرت المشكلة في ثلاث من خمس مقابلات استكشافية؛ نحتاج اختبارًا أوسع». لا نخفي الحالات التي لم تؤيد الفكرة.",
+      "en": "Fictional case: five interviews do not establish that all students want a service. Say “the problem appeared in three of five exploratory interviews; a broader test is needed.” Do not hide cases that disagree."
+    },
+    "task": {
+      "ar": "راجع عشرة ادعاءات من خطتك وصنفها. جهز خمسة أسئلة اعتراض وإجابات تستند إلى دليل أو تعترف بحدوده. صحح ادعاءً مبالغًا فيه وحدد التجربة التالية.",
+      "en": "Audit ten claims in your plan and classify them. Prepare five challenging questions and answers grounded in evidence or its limits. Correct an overstated claim and define the next test."
+    },
+    "question": {
+      "ar": "كيف نصوغ نتيجة خمس مقابلات؟",
+      "en": "How should a five-interview finding be stated?"
+    },
+    "correct": {
+      "ar": "مع حجم العينة وحدود التعميم",
+      "en": "With sample size and generalisation limits"
+    },
+    "wrong": {
+      "ar": "كحقيقة عن جميع العملاء",
+      "en": "As a fact about all customers"
+    }
+  },
+  {
+    "id": "AC-BUS-M07-L05",
+    "title": {
+      "ar": "عرض خطة المشروع المتكاملة ومراجعتها",
+      "en": "Presenting and reviewing the integrated project"
+    },
+    "concept": {
+      "ar": "المخرج النهائي يجمع المشكلة والعميل وعرض القيمة ونموذج الأعمال والجدوى وخطة التشغيل والجدول والمخاطر والمؤشرات. ليس تجميع ملفات منفصلة؛ يجب أن تتطابق الافتراضات والأرقام والقرارات عبر الأقسام. اشرح لماذا اخترت مسارك وما الذي قد يغيره، وحدد خطوة تالية محدودة يمكن تنفيذها.",
+      "en": "The final project integrates problem, customer, value, business model, feasibility, operations, schedule, risks and metrics. It is not a stack of separate files: assumptions, figures and decisions must agree across sections. Explain your choices, what could change them and a bounded next action."
+    },
+    "case": {
+      "ar": "حالة افتراضية: إذا خفضت الخطة السعر إلى 140، يجب أن تتغير مساهمة الطلب والتعادل والنقد، وقد يتغير الطلب المتوقع والقدرة. ترك جداول قديمة يعطي عرضًا متناقضًا حتى لو كان تصميمه جميلًا.",
+      "en": "Fictional case: reducing price to 140 should update contribution, breakeven and cash; demand and capacity assumptions may also change. Old tables create contradictions even in an attractive presentation."
+    },
+    "task": {
+      "ar": "سلّم ملف خطة متكاملة وملخصًا من صفحة واحدة وعرضًا من خمس دقائق. راجع الاتساق الحسابي وثلاثة مخاطر ودليل الطلب وحدود التحقق المحلي. استخدم معايير التقييم أدناه ثم عدّل أضعف قسم وسجل التغيير.",
+      "en": "Submit an integrated plan, one-page summary and five-minute presentation. Check arithmetic, three risks, demand evidence and local-verification limits. Apply the rubric, revise the weakest section and record the change."
+    },
+    "question": {
+      "ar": "ما التحديث اللازم عند تغيير السعر؟",
+      "en": "What must be updated when price changes?"
+    },
+    "correct": {
+      "ar": "الحسابات والافتراضات المرتبطة في جميع الأقسام",
+      "en": "Connected calculations and assumptions throughout"
+    },
+    "wrong": {
+      "ar": "عنوان صفحة السعر فقط",
+      "en": "Only the pricing page title"
+    }
+  }
+]

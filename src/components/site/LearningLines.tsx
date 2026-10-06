@@ -32,7 +32,11 @@ export function LearningLineCards({ learning = false }: { learning?: boolean }) 
   const search = useLocaleLinkSearch();
   const c = getLineCopy(locale);
   return (
-    <section id="learning-lines" aria-label={c.choose} className="grid gap-6 lg:grid-cols-3">
+    <section
+      id="learning-lines"
+      aria-label={c.choose}
+      className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+    >
       {LEARNING_LINES.map((line) => (
         <Link
           key={line}

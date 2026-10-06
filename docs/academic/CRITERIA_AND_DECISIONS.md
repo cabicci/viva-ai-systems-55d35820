@@ -1,0 +1,188 @@
+# Masaarat Academic — reusable curriculum criteria and decision register
+
+## AC-MEDIA-APPROVED-01 — 2026-10-06
+
+The owner accepted the four presented pilot voices with «تمام زي الفل كمل» at 13:25:53 Cairo, explicitly responding to the question about scaling their sound. The previous listening prerequisite is closed for the current policy. Continue the 156 additional exact lesson/locale identities; preserve the four pilot videos. No new commercial assistant terms or central publication decision is inferred.
+
+The course pipeline is create-only on Bunny with full source/render/policy fingerprints, exact lesson/locale bounds, a pre-generation check for existing media, per-output receipts and retained partial work. Its first run performs visual preflight without TTS; once reviewed, the same owner authorization permits production. Video semantic data is recomposed as animated field cards; no reading SVG, image or HTML component is reused. Local preparation and media regression checks: 17 passing. Output checks are not independent academic acceptance or live platform integration.
+
+## AC-MEDIA-PREPARE-01 — 2026-10-06 continuation
+
+The owner resumed work toward the final product including videos and merge readiness. Read current Recovery145 / Continuation75, and verified remote main062b5f59 / Academic5778f143. The written content remains complete as review packages; central integration retains ownership of shared surfaces and global registers.
+
+Prepared 156 exact narration/scene-text plans without generation, upload or production writes. Preserved source quantities, existing pilots and separation from formative answer keys. Stored bespoke visual directions are not yet executable/rendered storyboards. Six media-preparation tests and seven existing Python tests passed. Actual pilot audio acceptance is still outstanding under the existing listening requirement; no acceptance, new media or completed final product is inferred from this continuation request.
+
+The next owner input is a review of the existing actual pilot sound (acceptance or timestamped corrections). Source preparation does not require re-producing that pilot. The separate assistant's commercial values remain undecided; no invented price/quota is introduced.
+
+Date: 2026-10-05
+Status: full written-course implementation authorized after pilot-direction acceptance; isolated branch, editorial and central integration gates remain open.
+Repository: cabicci/viva-ai-systems-55d35820
+Branch: work/masaarat-academic-20261005
+Baseline: 062b5f59dc56fabbce89c2034008fa1d8ef21114
+
+## Verified current-state inputs
+- Recovery plan: Masaarat_Current_State_and_Recovery_Plan_2026-09-16.md, version 143, modified 2026-10-05T13:05:27Z. Read the latest leading TECH-INTEGRATION-01 / ADMIN-LESSON-ACCESS-01 entry.
+- Continuation register: MASAARAT_CONTINUATION_REGISTER_2026-09-15.xlsx, version 73, modified 2026-10-05T13:05:27Z. Read current commerce/learning-lines row 22, rendered line 233.
+- Both registers record PR151–154 integrated, technical/admin changes published, technical videos remaining on Bunny, PDFs in private technical-downloads storage. These supersede older pending technical integration entries.
+- GitHub main independently confirmed at 062b5f59, PR154 merge. Production verification is attributed to the registers; no new production test was performed in this task.
+- No AGENTS.md appeared anywhere in the complete recursive baseline tree; root fetch returned 404.
+- docs/CURRENT_STATUS.md has older October 3 entries; do not elevate them over the newer registers/main.
+- Existing docs/rag/ARCHITECTURE.md contains historical corpus counts and an old freeze SHA. Reuse architectural concepts only; re-inspect current runtime before implementation and never import historical counts as current requirements.
+- Central integration owns the two global registers. This branch-local register is specific to reusable academic content criteria, not a replacement global project-status register. Global register updates remain with the central integration handoff.
+
+## Owner-confirmed requirements
+| ID | Requirement | Acceptance evidence needed |
+| --- | --- | --- |
+| AC-01 | New learning line: مسارات أكاديمي | Approved line identity and copy |
+| AC-02 | Curriculum based on supplied video and headings; academic depth | Outcomes, source mapping, original authored lessons and review |
+| AC-03 | More than 30 total study hours and expansion beyond 30 lessons, including video, reading, practice and assessment; latest owner decision supersedes the exact-30 target | Per-lesson workload ledger; pilot timing, no double counting |
+| AC-04 | Curriculum first, then one pilot, then owner acceptance before scaling | Explicit scope and pilot decisions |
+| AC-05 | Existing Masaarat identity, components, typography, navigation, intro/curriculum/lesson experience; AI pedagogy and technical presentation | Component reuse map and four-locale responsive visual checks |
+| AC-06 | One shared account and independent subscriptions; preserve existing entitlement rules | Server-side permission matrix and revocation tests |
+| AC-07 | Academic assistant is separately purchased inside Academic, not bundled automatically | Independent add-on entitlement; academic learning usable without it |
+| AC-08 | Four contextual locales ar-EG, ar-MSA, ar-Gulf, en | Aligned outcomes, local examples, RTL/LTR, pronunciation and numeric checks |
+| AC-09 | Videos on Bunny; do not move or modify existing media | Dedicated new-media manifest, locale/video IDs, checksums and playback proof when authorized |
+| AC-10 | New logo in approved Masaarat logo family | Preserve master mark/colors/composition; section label on visual right; final English label pending approval |
+| AC-11 | Administrator lesson access | Stored server-side admin role, existing active/confirmed account checks and content release controls; no client-only bypass |
+| AC-12 | Switcher shows other available lines only | Excludes active line, desktop/mobile, keeps selected locale and account |
+| AC-13 | Reuse payments/receipts/emails/coupons/invitations | Existing paths preserved; idempotent mail and entitlement grants; no duplicated commerce stack |
+| AC-14 | Isolated branch until separate merge decision; no publication/config changes | Scoped diff and English central integration handoff |
+
+## Proposed reusable lesson quality contract (not yet owner-approved)
+1. Assign stable line/course/module/lesson IDs, locale, content version, source references and checksum.
+2. Define observable learning outcomes and link each to explanation, example, learner output and assessment.
+3. Include a prerequisite statement, realistic opening problem, academic explanation, glossary, worked example, application with rubric, quiz with feedback, summary, FAQ, references and downloadable PDF.
+4. Give each illustration a teaching purpose, alt text and source/rights record. Avoid decorative repetition and unrelated imagery.
+5. Maintain a workload ledger by activity. Optional assistant conversations do not supply mandatory hours or required answers.
+6. Use a cumulative project to demonstrate transfer of knowledge. Clearly label hypothetical examples; verify factual and numerical claims.
+7. Cite original authoritative/academic sources by section. Do not present the advertising video as academic substantiation.
+8. Localize examples and speech contextually, preserving outcomes and correct calculations. Keep one platform language selector. Review Arabic consonants and technical terms by locale.
+9. Reuse player behavior including no autoplay. Keep shared header and consistent back/previous/next navigation. Keep server authorization checks without introducing visible redundant consent/login prompts.
+10. Generate PDFs from approved locale content, with meaningful type-plus-lesson filenames; proposed storage is a dedicated private academic location following the technical signed-download pattern, subject to central integration. No assumption that PDFs go to Bunny.
+11. Track content review, visual review, audio acceptance, media upload and live release as distinct states. Never call a generated asset uploaded or released without evidence.
+12. Pilot all four contextual versions of the same lesson; check smartphone/desktop, keyboard, RTL/LTR, text contrast, print/PDF, captions, playback and practical task clarity before scaling.
+
+## Future RAG boundary — design requirements only
+- Separate academic line/course corpus identity from AI, Kids and technical. Never copy the AI corpus and treat it as academic knowledge.
+- Server verifies authentication, independent assistant add-on, applicable academic content access and course/locale/release/version before retrieval and model use.
+- Whether active academic subscription is required for assistant use remains an owner decision. Until specified, no permissive fallback or implementation.
+- Retrieval and cache identity must bind user/access scope, line, course, locale and content version. Do not leak cross-line paid content through answers or citations.
+- Answers cite authorized academic lesson/section sources and admit insufficient evidence. User prompts and retrieved documents cannot change entitlement decisions.
+- Exclude assessment answer keys, hidden rubrics, private learner submissions and internal notes from the general corpus.
+- Preserve current AI assistant access rules. Administrator access to lessons does not silently imply unlimited paid assistant calls.
+- Do not index, embed, reindex or call paid generation services during this planning slice.
+
+## Reuse map inspected at the baseline
+| Surface | Existing evidence | Integration implication |
+| --- | --- | --- |
+| Line registry/routes/logos/copy | src/lib/learning-lines.ts | Extend existing typed registry after scope approval; no parallel registry |
+| Shared navigation | src/components/site/Navbar.tsx | Existing LEARNING_LINES.filter(item => item !== line); preserve rule, add academic only when available |
+| Introductory page | src/components/site/LineOverview.tsx | Existing AI-derived section order and platform pastel/token styling |
+| Curriculum layout | src/components/site/LineCurriculum.tsx and its CurriculumLayout imports | Reuse layout and lesson/module hierarchy |
+| Lesson page | src/routes/technical.learn.$lessonId.tsx | Existing auth, locale, shared header/footer, server delivery, learner navigation |
+| Lesson renderer | TechnicalLessonView imported from src/components/technical-education/TechnicalJourney | Inspect renderer in pilot implementation; do not build a competing UI system |
+| Commerce and permissions | docs/technical-education-integration.md and current register | Separate package/add-on through existing commerce only; prices not inherited from technical |
+| RAG | docs/rag/ARCHITECTURE.md | Locale/source/citation concepts useful; historical data not current runtime proof |
+
+## Decisions still open
+- Course name, target audience and prerequisites; 30-lesson proposal and detailed assessment structure.
+- Academic catalogue billing scope (line vs course), price, period, free preview policy and add-on pricing/usage limits.
+- Add-on dependency on a current academic subscription; expiry, cancellation and refund interactions.
+- Certificate/completion wording and assessment threshold; no official university credit or accreditation implied.
+- Final English logo label (ACADEMIC/ACADEMY not automatically selected).
+- Final media production durations/voices after pilot and PDF namespace agreement.
+
+## Stage log
+2026-10-05: reviewed latest register entries, repository baseline, attached image and video frames. Created isolated branch and planning documents. Source audio transcription unverified. No application code, migrations, dependencies, media, billing/configuration or existing files changed. Curriculum proposal ready for owner review; pilot not produced.
+
+## Owner refinement — 2026-10-05: academic grounding and Egyptian pronunciation
+This requirement supersedes any interpretation of "original authored" as unsupported invention.
+
+### Academic grounding gate
+- Before writing full lessons, identify a specific published university curriculum/syllabus or internationally recognized academic framework appropriate to this course. Verify its issuing institution, level, learning outcomes, coverage and authoritative URL. Verify any accreditation claim separately; do not infer it from a textbook publisher or institutional reputation.
+- Present the selected curriculum basis and a mapping from its outcomes/topics to the seven modules and proposed lessons. The present OpenStax bibliography is an initial source list, not proof that a specific accredited curriculum has been selected or that Masaarat is accredited.
+- Build explanations and assessments from verified academic references. Record edition/date and chapter/section or page for each lesson; distinguish supported concepts, contextual adaptations and clearly labelled hypothetical examples.
+- Original wording, local cases and visuals are allowed; invented theories, unsupported claims, fabricated references or unverified accreditation are not.
+- The 30-hour outline remains provisional until this alignment check; revise its coverage and sequence if the selected academic basis requires it. Do not force a source to fit the current lesson count.
+- The owner said "ماشي" to proceeding, with these binding quality conditions. This does not resolve unpriced packages, certificates or other unspecified commercial decisions.
+
+### Egyptian Arabic audio gate
+- Treat ar-EG pronunciation as word- and context-dependent. Do not apply universal letter substitutions (including ق/ج/ث/ذ/ظ) across all words, technical terms, names or quoted formal language.
+- Maintain a reusable pronunciation lexicon: written word, intended meaning/context, desired Egyptian spoken form, disambiguating vocalization or provider-supported phonetic hint, and accepted audio reference when available.
+- Keep learner-facing spelling separate from TTS-only pronunciation hints. Preserve academic terminology and natural Egyptian explanation; avoid accidental switching to MSA or Gulf pronunciation.
+- Check ambiguous unvowelled words, stress, consonants, numbers, abbreviations, foreign names, technical terms, pauses and sentence meaning in the rendered audio.
+- Produce a short pronunciation sample before the full pilot narration. Listen to actual rendered audio, then the complete pilot. Text review, successful generation or automated transcript matching alone do not establish pronunciation acceptance.
+- Log errors by timestamp/word/context and regenerate only affected segments, then check joins and synchronization. Do not scale production before the owner's pilot audio acceptance.
+- No audio has been generated or marked accepted by this update.
+
+## Owner decision — brand-only learner content and continuation
+The owner confirmed that all learner-facing lessons, videos and PDFs must be original Masaarat production without external source lists or source-brand references. Academic mapping and verification remain internal editorial records, outside the learner bundle and RAG corpus. Do not copy material whose mandatory attribution would be removed. No accreditation claim is authorized.
+The owner's latest instruction authorizes continuing through the first pilot without repeated interim questions. Four contextual pilot packages and an isolated review UI are being prepared. Price, add-on limits and production merge remain outside this slice. Earlier requirements to display references in learner lessons/PDFs are superseded; internal references remain mandatory.
+
+## Pilot evidence — 2026-10-05
+- Internal academic mapping now records verified MIT syllabi and concept checks, without any claim of Masaarat accreditation or transferable university credit. The learner files contain original Masaarat wording/cases and no external source list.
+- Authored AC-BUS-M01-L01 in all four locales; built an isolated review UI reusing platform typography/tokens and shared primitives. No production route, shared navigation, account or commerce implementation changed.
+- Offline workload/content/numeric checks, isolated TypeScript/Vite build, 64 browser section visits and four nine-page PDF exports passed. PDF pages were visually reviewed. These checks do not validate academic credit or actual student completion time.
+- New ACADEMIC logo candidate generated as a sibling asset; master and existing line assets unchanged. Candidate label/fidelity still needs acceptance.
+- Media workflow run 37322389925 produces only this pilot's four locale variants. Full pilot drafts were queued before a separately accepted pronunciation sample; they remain provisional. This is a recorded deviation from the earlier sample-first editorial sequence, not evidence that the pronunciation gate passed. Real listening and timestamped corrections are mandatory before acceptance or scaling.
+- All prices, subscription periods, assistant quota/dependency, certificate terms and shared integration remain open. The instruction to continue does not invent those commercial values.
+
+## Latest delivery state — AC-PILOT-01 / AC-MEDIA-01
+Only AC-BUS-M01-L01 is fully authored. The other 29 lessons are outlines; no complete 30-lesson content claim is authorized. The 30-hour total is a curriculum planning target, not measured study time or academic-credit equivalence.
+
+Actual Egyptian and MSA pilot files passed render/stream/checksum checks and sampled visual frame review. Their measured durations are 310.308 and 342.228 seconds. Bunny accepted new identities, but both initial readiness checks and read-only follow-up 37324850367 observed processing status 2. They are not marked playable. Original media were neither replaced nor deleted. Playback readiness remains AC-MEDIA-01, independent of pending owner audio acceptance.
+
+The hardened isolated TTS helper now stops for editorial review on provider content rejection for every locale; no automatic source-word replacement fallback remains. This revision does not retroactively change the provenance of already rendered pilot files. See AUDIO_REVIEW.md and review/media-receipts.json.
+
+Final AC-PILOT-01 observation: all four pilot MP4s have been produced and uploaded as new Bunny identities. ar-Gulf is 294.188 seconds and en is 317.628 seconds. All four initial readiness steps expired at processing status 2; none is marked playable. Ten sampled actual video frames were reviewed across the four locales; full listening and playback remain open. This completes the authored pilot review package, not the other 29 lessons or the integrated Academic product.
+
+## Latest owner scope revision — 2026-10-05, after pilot delivery work
+The owner requested increasing the lesson count beyond 30 to ensure total study time exceeds 30 hours. This supersedes the original exactly-30-hour target and its fixed 30-lesson design. The current 30-lesson/1,800-minute outline is retained as the baseline and explicitly marked SCOPE_EXPANSION_REQUIRED; it does not meet the new target. No final expanded count or new subject area is invented by this update. Expand with distinct learning outcomes within the seven supplied subject areas, then validate workload without padding, duplicate project hours or optional assistant time. Only the first lesson is fully authored; the pilot-acceptance gate before scale-up remains.
+
+## Latest owner presentation requirement — AC-PREVIEW-02
+The owner requires an interactive lesson sample in the platform presentation, not content-only deliverables. The fixture now reuses actual shared navigation/footer/language/account menu/curriculum components through review-only adapters. It includes the same lesson content, quiz/practice, downloadable locale PDFs and Bunny embeds. A single-file interactive review export is available; this is not a merged or deployed Academic product. Account, billing and assistant services remain unconnected and are visibly labelled.
+
+AC-MEDIA-01 superseded: read-only run 37332447947 at 2026-10-05T15:23:45–46Z found all four exact pilot identities at Bunny status 4 with positive lengths. The original failed readiness runs remain historical evidence; no replacement upload was needed. Audio acceptance and full browser playback acceptance are separate from provider readiness.
+
+## AC-COURSE-01 — 2026-10-05 — Owner refinement after pilot review
+
+- Owner accepted the pilot direction and requested all written content, with reading illustrations meaningfully different from video visuals.
+- Academic is a course-card catalogue. AC-BUS is the first course, not the entire line. Exactly one real course card is present; no invented available courses.
+- Owner requested eventual integration without waiting for videos. Missing video is optional and its tab is hidden; it does not block reading, practice or assessment. This does not waive written-content, entitlement, security or integration gates.
+- Academic initially matches canonical Pro Plus catalogue prices, not Pro Plus rights: Egypt EGP 309/month or 3090/year; international USD 12.99/month or 129.90/year, tax exclusive. These are repository prices, not a live Stripe/database assertion. Assistant stays an independently priced optional Academic add-on; no price/quota invented.
+- Expanded to 40 lesson drafts, 7 modules, 2000 estimated non-video study minutes. The 39 new lessons currently contain concise authored explanations/cases/tasks and one formative MCQ each. They have NOT passed the full pilot-depth editorial gate, contextual language review or learner timing. Do not label the entire course release-ready.
+- Arabic core academic definitions are shared deliberately across Arabic locales; interaction prompts are contextual. This is not evidence of completed independent locale review.
+- New reusable methodology: MASAARAT_LESSON_PRODUCTION_METHODOLOGY.ar.md. ReadingDiagram is separate from the unchanged video Diagram component. Existing MP4s and production media are untouched.
+- Shared navigation/billing implementation and global registers remain centrally owned. Branch preview uses isolated adapters. No central coordination message, merge, publication or production change has occurred in this slice.
+
+## AC-FULL-EXECUTION-02 — 2026-10-05 — Continued owner-authorised implementation
+
+- Recovered the same branch after workspace maintenance; read latest recovery v143 and continuation v73. Main remains 062b5f59; no broad re-audit or changes to global registers.
+- Started bounded written expansion run 37358374247 at 6bbb5ca7eff684903140aa6107ad600cc8eb9aaa: 39 lessons × four contextual locales, at most two requests per package, review artifacts only. This is generation, not editorial acceptance or publication. The original pilot and existing media are untouched.
+- Prepared SQL candidates for central review outside auto-applied migrations. New Academic course/content/progress/download RPCs reuse existing verified identity, stored admin role and commerce entitlements. First approved introductory lesson remains free to authenticated users. Equal Pro Plus price does not grant Pro Plus rights. Assistant access requires a separate entitlement and remains disabled until price/quota/provider service decisions are configured.
+- Production lesson component contains no static lesson bodies or answer keys. Query keys include user/course/lesson/locale; denied mutation clears visible protected content. Practice submission is distinct from academic grading. Quiz completion follows the existing technical all-correct rule rather than an invented percentage threshold.
+- Shared navigation, complete commerce/mail/Stripe integration, erasure inventory and production activation still require central integration. No candidate SQL has been applied to production and no merge/publication occurred.
+
+## AC-WRITTEN-CHECKPOINT-03 — verified recovery delivery
+
+Supersedes the brief-only depth status for Egyptian/MSA: 40 complete review packages each, 80 browser lesson visits, 468 expanded questions and 234 reading visuals; 80 workbooks exported. Gulf has 21 packages including pilot; English has 20 including pilot. The remaining 39 contextual packages are not complete. Exact editorial ledger records 46 corrections; independent academic/contextual approval remains open.
+
+19 disposable DB/UI tests and seven Python tests pass; both TypeScript checks, candidate lint and isolated build pass (offline bundle-size warning). The course remains inactive/unapproved. First selected Gulf/English repair attempt failed before any generation; one bounded retry is queued. Central integration, assistant price/quota, learner timing and listening acceptance remain outstanding. This entry records a checkpoint, not full completion, launch or future automatic continuation.
+
+## AC-RECOVERY-04 — 2026-10-05 — continued completion
+
+Read Recovery v144 / Continuation v74 (CENTRAL-TAKEOVER-01), modified 19:37Z. Main remains 062b5f59. Central explicitly owns shared integration and is awaiting the completed written branch handoff; no global register or production mutation is made here. The earlier academic head in those registers is historical relative to this branch.
+
+Run37364538469 attempts1/2 never acquired a runner (runner_id0, empty steps, cancellation after15 minutes). This is infrastructure allocation evidence, not a failed provider/content call. New run37371816157 at048852e1 pins the documented ubuntu-22.04 standard runner and uses only the exact Gulf/English matrix, eliminating the redundant selector allocation. Missing IDs and 78-call maximum are unchanged. English generation has started; later outcome must be checked separately. No media production or settings changes.
+
+## AC-RECOVERY-05 — English complete; Gulf runner isolation
+
+English additional packages are complete in commit `2c9236a8b6d79c1eeb6a963120b1e4f49b14dd57`. Run 37371816157 produced 17 valid English packages; two retained drafts were repaired and one missing lesson was originally completed locally. The Gulf matrix job never acquired a runner, including its retry. Commit `6d0132f8eda102d661bfa61f2d6a5171582e0774` isolates exactly 19 Gulf packages into one bounded job, excluding all completed English output. Run 37374230148 acquired a runner and began generation. No existing media or production settings changed.
+
+The latest three-locale browser run passed 120 lesson visits, 702 additional quiz questions and 351 reading visuals, exporting 120 PDFs. A PDF text/page scan found 2018 pages with no blank pages; selected Arabic and English calculation/schedule pages were visually reviewed. This is structural and selected visual evidence, not a claim of page-by-page academic review. Final four-locale acceptance still requires the Gulf output and final regenerated artifacts.
+
+## AC-WRITTEN-COMPLETE-01 — Four contextual sets assembled
+
+All four locale sets now contain 39 additional full packages plus the existing pilot, yielding 40 lessons per locale. Gulf run 37374230148 produced five validated packages and retained drafts; thirteen drafts were completed locally, and M01-L04 was originally localized using the owned Masaarat assessment structure. The malformed M07-L06 reading table and M07-L07 identifier were repaired. Gulf scheduling, effort/cost and conversion-rate explanations were corrected explicitly. `LOCAL_COMPLETION_RECEIPT.json` records this recovery without equating provider completion or structural validation with academic acceptance.
+
+Full assembly passes 156 additional packages, with no exact duplicate explanation sections within a locale. Obsolete partial recovery arrays were removed after full assembly. RAG staging contains 960 allowlisted section chunks, pending editorial acceptance; no provider, embeddings or production import is activated. Final browser/PDF and delivery reports supersede the preceding partial checkpoint counts.

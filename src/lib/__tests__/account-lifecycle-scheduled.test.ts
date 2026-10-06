@@ -9,6 +9,7 @@ import * as enabled from "../../../supabase/functions/_shared/contact-mail-enabl
 import * as immediate from "../../../supabase/functions/_shared/immediate-mail-request";
 import * as contact from "../../../supabase/functions/_shared/contact-mail-worker";
 import * as commerce from "../../../supabase/functions/_shared/commerce-payment-mail-worker";
+import * as academic from "../../../supabase/functions/_shared/academic-mail-worker";
 import * as technical from "../../../supabase/functions/_shared/technical-mail-worker";
 const send = vi.fn();
 
@@ -54,6 +55,7 @@ beforeEach(() => {
       if (name.endsWith("/contact-mail-worker.ts")) return contact;
       if (name.endsWith("/commerce-payment-mail-worker.ts")) return commerce;
       if (name.endsWith("/technical-mail-worker.ts")) return technical;
+      if (name.endsWith("/academic-mail-worker.ts")) return academic;
       if (name.endsWith("/resend.ts")) return { sendTransactionalEmail: send };
       if (name.endsWith("/account-lifecycle-worker.ts"))
         return { createAccountLifecycleWorker: () => ({ runBatch: batch }) };
