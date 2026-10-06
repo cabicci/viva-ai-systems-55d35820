@@ -8,7 +8,7 @@ describe("Kids locale copy", () => {
     const locales = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
     expect(new Set(locales.map((locale) => getKidsCopy(locale).reviewNotice)).size).toBe(4);
     expect(new Set(locales.map((locale) => getKidsJourneyCopy(locale).signInNotice)).size).toBe(4);
-    expect(getKidsJourneyCopy("ar-EG").watch).toBe("اتفرج على الدرس");
+    expect(getKidsJourneyCopy("ar-EG").watch).toBe("اتفرج على الخطوة");
     expect(getKidsJourneyCopy("ar-Gulf").objectives).toBe("وش بنتعلّم؟");
     expect(getKidsJourneyCopy("ar-MSA").objectives).toBe("ماذا سنتعلم؟");
   });

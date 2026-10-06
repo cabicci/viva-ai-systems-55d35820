@@ -1,3 +1,9 @@
+## 2026-10-06 — Owner-approved path names, introductions and growth narrative candidate
+
+Implemented on `integration/path-story-20261006`, based on main `e8946bbfe2743f5f1d018d87f8b136908a22f270`. The four contextual locales use Masaarat → line paths → path → optional stations → steps. One catalogue per line, dedicated path introductions, canonical returns and legacy redirects; shared admin/learner pages. About includes the step-to-path intellectual and knowledge growth story, vision, mission and values. See `docs/learning-path-story-2026-10-06.md` for scope and evidence.
+
+61 journey/access tests plus16 crawler tests passed; TypeScript, scoped lint and local production build passed. Browser acceptance remains unverified because browser archive installation failed. This is a candidate only: no main merge or Lovable publication. No source content, private PDF, Bunny mapping, active media job, billing rule, database grant or account was changed. Existing Academic release/payment gates remain open; media continuation stays independent.
+
 ## 2026-10-03 — Reuse the working Edge transport for immediate mail
 
 The owner-created English temporary account confirmed at 10:38:26Z. Its app-side immediate claim occurred at 10:38:30Z, but no provider ID was recorded; the exact first failure cause is unestablished. The existing Edge retry accepted the same immutable welcome at 10:45:02Z, Resend recorded delivery, and Gmail recorded INBOX at 10:45:03Z. Do not resend it or repeat confirmation.

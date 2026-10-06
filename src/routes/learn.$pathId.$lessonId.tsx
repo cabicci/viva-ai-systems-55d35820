@@ -248,7 +248,6 @@ function UnifiedLessonPage() {
   const { pathId, lesson, lessonAccess, localizedPackage, cookieLocale } =
     Route.useLoaderData() as LessonLoaderData;
   const previewSearch = Route.useSearch();
-  const { from } = previewSearch;
   const localeNavSearch = preserveLocaleSearch(previewSearch, cookieLocale);
   const localeSearch = useLocaleLinkSearch();
   const { dir, locale } = useLocale();
@@ -413,31 +412,15 @@ function UnifiedLessonPage() {
         completedCount={completedCount}
       />
       <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
-        {from === "curriculum" ? (
-          <Link
-            to="/curriculum"
-            search={{ module: lesson.moduleId, lesson: lesson.id }}
-            aria-label={t("learn.backToMap")}
-            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="truncate">{t("learn.backToMap")}</span>
-          </Link>
-        ) : (
-          <Link
-            to="/dashboard"
-            search={localeSearch({
-              path: pathId,
-              module: lesson.moduleId,
-              lesson: lesson.id,
-            })}
-            aria-label={t("learn.backToDashboard")}
-            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="truncate">{t("learn.backToDashboard")}</span>
-          </Link>
-        )}
+        <Link
+          to="/curriculum"
+          search={localeSearch({ module: lesson.moduleId, lesson: lesson.id })}
+          aria-label={t("learn.backToMap")}
+          className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span className="truncate">{t("learn.backToMap")}</span>
+        </Link>
 
         <header className="mb-8">
           <div className="flex items-center gap-2 mb-3 flex-wrap">

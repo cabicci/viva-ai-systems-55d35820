@@ -1,4 +1,5 @@
 import type { SupportedLocale } from "@/lib/locale/types";
+import { getPathDefinition } from "@/lib/path-story";
 
 export type LearningLine = "ai" | "kids" | "technical" | "academic";
 export const LEARNING_LINES = ["ai", "kids", "technical", "academic"] as const;
@@ -15,10 +16,10 @@ export const LINE_PRICING = {
   academic: "/academic/pricing",
 } as const;
 export const LINE_CURRICULUM = {
-  ai: "/curriculum",
-  kids: "/kids/curriculum",
-  technical: "/technical/curriculum",
-  academic: "/academic/curriculum",
+  ai: "/ai",
+  kids: "/kids",
+  technical: "/technical",
+  academic: "/academic",
 } as const;
 export const LINE_LOGOS = {
   ai: "/brand/masaarat-ai.png",
@@ -32,6 +33,7 @@ export function learningLineForPath(path: string): LearningLine | null {
   if (path === "/kids" || path.startsWith("/kids/")) return "kids";
   if (path === "/technical" || path.startsWith("/technical/")) return "technical";
   if (
+    path.startsWith("/ai/") ||
     [
       "/ai",
       "/pricing",
@@ -57,10 +59,10 @@ const copy = {
     "Masaarat: learning that opens new paths",
   ],
   platformIntro: [
-    "AI، وتعليم للأطفال، ومهارات مهنية. اختار الطريق اللي يناسبك وابدأ تتعلم بالتطبيق، بحساب واحد لكل مساراتك.",
-    "الذكاء الاصطناعي، وتعليم الأطفال، والمهارات المهنية. اختر المجال المناسب لك وتعلّم بالتطبيق، بحساب موحّد لجميع مساراتك.",
-    "ذكاء اصطناعي، وتعليم للأطفال، ومهارات مهنية. اختر المجال اللي يناسبك وتعلّم بالتطبيق، بحساب واحد لكل مساراتك.",
-    "AI, learning for children and vocational skills. Choose your direction and learn through practice, with one account across Masaarat.",
+    "ذكاء اصطناعي، وتعليم للأطفال، وتعليم فني وأكاديمي. اختار الطريق اللي يناسبك وابدأ تتعلم بالتطبيق، بحساب واحد لكل مساراتك.",
+    "الذكاء الاصطناعي، وتعليم الأطفال، والتعليم الفني والأكاديمي. اختر المجال المناسب لك وتعلّم بالتطبيق، بحساب موحّد لجميع مساراتك.",
+    "ذكاء اصطناعي، وتعليم للأطفال، وتعليم فني وأكاديمي. اختر المجال اللي يناسبك وتعلّم بالتطبيق، بحساب واحد لكل مساراتك.",
+    "AI, learning for children, technical and academic education. Choose your direction and learn through practice, with one account across Masaarat.",
   ],
   eyebrow: [
     "منصة تعليمية متكاملة",
@@ -85,12 +87,12 @@ const copy = {
     "أدوات الإدارة الإضافية",
     "More admin tools",
   ],
-  overview: ["عن المجال", "عن المجال", "عن المجال", "Overview"],
+  overview: ["عن المسارات", "عن المسارات", "عن المسارات", "About these paths"],
   plans: ["الباقات", "الباقات", "الباقات", "Plans"],
-  paths: ["المنهج", "المنهج", "المنهج", "Curriculum"],
+  paths: ["المسارات", "المسارات", "المسارات", "Paths"],
   ai: ["الذكاء الاصطناعي", "الذكاء الاصطناعي", "الذكاء الاصطناعي", "Artificial intelligence"],
   kids: ["مسارات كيدز", "مسارات كيدز", "مسارات كيدز", "Masaarat Kids"],
-  technical: ["التعليم المهني", "التعليم المهني", "التعليم المهني", "Vocational learning"],
+  technical: ["التعليم الفني", "التعليم الفني", "التعليم الفني", "Technical learning"],
   academic: ["مسارات أكاديمي", "مسارات أكاديمي", "مسارات أكاديمي", "Masaarat Academic"],
   academicIntro: [
     "مقررات عملية في إدارة الأعمال، فيها شرح وأمثلة وتطبيقات، باشتراك مستقل في حسابك نفسه.",
@@ -105,16 +107,16 @@ const copy = {
     "Understand AI, use it at work, analyse data, operate systems and build products. Practical adult learning paths, from foundations to your chosen goal.",
   ],
   kidsIntro: [
-    "تعلّم AI للأطفال بشكل مناسب لعمرهم، بمتابعة وليّ الأمر. مستويات عمرية، دروس وتطبيقات، وحساب العيلة في مكان واحد.",
-    "تعلّم الذكاء الاصطناعي للأطفال بمحتوى مناسب لأعمارهم وإشراف وليّ الأمر. مستويات عمرية ودروس وتطبيقات، مع إدارة الأسرة من حساب موحّد.",
-    "تعلّم الذكاء الاصطناعي للأطفال بمحتوى يناسب أعمارهم ومتابعة وليّ الأمر. مستويات عمرية ودروس وتطبيقات، وإدارة العائلة من حساب واحد.",
-    "Age-appropriate AI learning for children, guided by a parent. Age levels, lessons and practical activities, with family management in one account.",
+    "تعلّم AI للأطفال بشكل مناسب لعمرهم، بمتابعة وليّ الأمر. مستويات عمرية، خطوات وتطبيقات، وحساب العيلة في مكان واحد.",
+    "تعلّم الذكاء الاصطناعي للأطفال بمحتوى مناسب لأعمارهم وإشراف وليّ الأمر. مستويات عمرية وخطوات وتطبيقات، مع إدارة الأسرة من حساب موحّد.",
+    "تعلّم الذكاء الاصطناعي للأطفال بمحتوى يناسب أعمارهم ومتابعة وليّ الأمر. مستويات عمرية وخطوات وتطبيقات، وإدارة العائلة من حساب واحد.",
+    "Age-appropriate AI learning for children, guided by a parent. Age paths, steps and practical activities, with family management in one account.",
   ],
   technicalIntro: [
-    "مجال للمهارات المهنية، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات مهنية تانية هتنضاف بعد كده.",
-    "مجال للمهارات المهنية يبدأ بمسار النجارة وصناعة الأثاث، من تحليل الاحتياج والتصميم إلى تخطيط التصنيع والتركيب. ستُضاف مسارات مهنية أخرى لاحقًا.",
-    "مجال للمهارات المهنية، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات مهنية ثانية بتنضاف لاحقًا.",
-    "A vocational learning area, starting with carpentry and furniture making: from requirements and design to production and installation planning. More vocational paths will follow.",
+    "مجال للتعليم الفني، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات فنية تانية هتنضاف بعد كده.",
+    "مجال للتعليم الفني يبدأ بمسار النجارة وصناعة الأثاث، من تحليل الاحتياج والتصميم إلى تخطيط التصنيع والتركيب. ستُضاف مسارات فنية أخرى لاحقًا.",
+    "مجال للتعليم الفني، يبدأ بمسار النجارة وصناعة الأثاث: من فهم الاحتياج والتصميم لتخطيط التصنيع والتركيب. مسارات فنية ثانية بتنضاف لاحقًا.",
+    "A technical learning area, starting with carpentry and furniture making: from requirements and design to production and installation planning. More technical paths will follow.",
   ],
   shared: [
     "حساب واحد. واختيارك هو اللي يحدد رحلتك.",
@@ -154,16 +156,16 @@ const copy = {
     "Carpentry and furniture learning is available",
   ],
   preparingIntro: [
-    "اختار الدرس من المنهج. حساب واحد، وتقدمك بيتحفظ فيه.",
-    "اختر الدرس من المنهج، مع حفظ تقدمك في حسابك الموحد.",
-    "اختر الدرس من المنهج، وتقدمك ينحفظ في حسابك.",
+    "اختار الخطوة من المنهج. حساب واحد، وتقدمك بيتحفظ فيه.",
+    "اختر الخطوة من المنهج، مع حفظ تقدمك في حسابك الموحد.",
+    "اختر الخطوة من المنهج، وتقدمك ينحفظ في حسابك.",
     "Choose a lesson from the curriculum. Your progress is saved to your unified account.",
   ],
   technicalPrice: [
-    "باقة التعليم المهني بنفس سعر Pro Plus، واشتراكها مستقل.",
-    "باقة التعليم المهني بسعر Pro Plus، مع اشتراك مستقل.",
-    "باقة التعليم المهني بنفس سعر Pro Plus، واشتراكها مستقل.",
-    "The vocational plan is priced at the same rate as Pro Plus, with an independent subscription.",
+    "باقة التعليم الفني بنفس سعر Pro Plus، واشتراكها مستقل.",
+    "باقة التعليم الفني بسعر Pro Plus، مع اشتراك مستقل.",
+    "باقة التعليم الفني بنفس سعر Pro Plus، واشتراكها مستقل.",
+    "The technical plan is priced at the same rate as Pro Plus, with an independent subscription.",
   ],
   unavailable: [
     "موعد فتح الاشتراك هيتعلن لاحقًا",
@@ -172,10 +174,10 @@ const copy = {
     "Enrolment availability will be announced",
   ],
   firstTechnicalTrack: [
-    "أول مسار في التعليم المهني",
-    "أول مسار في التعليم المهني",
-    "أول مسار في التعليم المهني",
-    "The first vocational learning path",
+    "أول مسار في التعليم الفني",
+    "أول مسار في التعليم الفني",
+    "أول مسار في التعليم الفني",
+    "The first technical learning path",
   ],
   trackOutline: [
     "محاور مسار النجارة وصناعة الأثاث",
@@ -184,30 +186,30 @@ const copy = {
     "Carpentry and furniture curriculum",
   ],
   futureTracks: [
-    "النجارة وصناعة الأثاث مسار واحد جوّه التعليم المهني. مسارات تانية هتنضاف بعد كده.",
-    "النجارة وصناعة الأثاث مسار ضمن التعليم المهني. ستُضاف مسارات أخرى لاحقًا.",
-    "النجارة وصناعة الأثاث مسار ضمن التعليم المهني. مسارات ثانية بتنضاف لاحقًا.",
-    "Carpentry and furniture making is one path within vocational learning. More paths will be added later.",
+    "النجارة وصناعة الأثاث مسار واحد جوّه التعليم الفني. مسارات تانية هتنضاف بعد كده.",
+    "النجارة وصناعة الأثاث مسار ضمن التعليم الفني. ستُضاف مسارات أخرى لاحقًا.",
+    "النجارة وصناعة الأثاث مسار ضمن التعليم الفني. مسارات ثانية بتنضاف لاحقًا.",
+    "Carpentry and furniture making is one path within technical learning. More paths will be added later.",
   ],
   catalogLoading: [
-    "جارٍ تحميل عناوين الدروس",
-    "جارٍ تحميل عناوين الدروس",
-    "جارٍ تحميل عناوين الدروس",
-    "Loading lesson titles",
+    "جارٍ تحميل عناوين الخطوات",
+    "جارٍ تحميل عناوين الخطوات",
+    "جارٍ تحميل عناوين الخطوات",
+    "Loading step titles",
   ],
   catalogUnavailable: [
-    "عناوين الدروس مش متاحة دلوقتي. جرّب تحديث الصفحة.",
-    "عناوين الدروس غير متاحة حاليًا. حاول تحديث الصفحة.",
-    "عناوين الدروس مو متاحة الحين. جرّب تحديث الصفحة.",
-    "Lesson titles are currently unavailable. Try refreshing the page.",
+    "عناوين الخطوات مش متاحة دلوقتي. جرّب تحديث الصفحة.",
+    "عناوين الخطوات غير متاحة حاليًا. حاول تحديث الصفحة.",
+    "عناوين الخطوات مو متاحة الحين. جرّب تحديث الصفحة.",
+    "Step titles are currently unavailable. Try refreshing the page.",
   ],
-  lessonLabel: ["درس", "درسًا", "درس", "lessons"],
-  moduleLabel: ["وحدة تعليمية", "وحدة تعليمية", "وحدة تعليمية", "modules"],
+  lessonLabel: ["خطوة", "خطوة", "خطوة", "steps"],
+  moduleLabel: ["محطة", "محطة", "محطة", "stations"],
   aboutIntro: [
-    "مسارات بتجمع تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني في منصة واحدة. كل مجال له طريقه ومحتواه وباقاته، والتعلّم مبني على الفهم والتطبيق.",
-    "تجمع مسارات تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني في منصة واحدة. لكل مجال مساراته ومحتواه وباقاته، ضمن منهج يربط الفهم بالتطبيق.",
-    "مسارات تجمع تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم المهني في منصة واحدة. كل مجال له مساراته ومحتواه وباقاته، والتعلّم يربط الفهم بالتطبيق.",
-    "Masaarat brings AI education, learning for children and vocational education into one platform. Each line has its own paths, content and plans, connecting understanding with practice.",
+    "مسارات بتجمع تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم الفني والأكاديمي في منصة واحدة. كل مجال له طريقه ومحتواه وباقاته، والتعلّم مبني على الفهم والتطبيق.",
+    "تجمع مسارات تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم الفني والأكاديمي في منصة واحدة. لكل مجال مساراته ومحتواه وباقاته، ضمن منهج يربط الفهم بالتطبيق.",
+    "مسارات تجمع تعليم الذكاء الاصطناعي وتعليم الأطفال والتعليم الفني والأكاديمي في منصة واحدة. كل مجال له مساراته ومحتواه وباقاته، والتعلّم يربط الفهم بالتطبيق.",
+    "Masaarat brings AI education, learning for children, technical and academic education into one platform. Each line has its own paths, content and plans, connecting understanding with practice.",
   ],
   continueAI: [
     "كمّل تعلّم AI",
@@ -233,6 +235,7 @@ export function lineMeta(
   kind:
     | LearningLine
     | "platform"
+    | "aiApplied"
     | "about"
     | "kidsPricing"
     | "technicalPricing"
@@ -244,6 +247,7 @@ export function lineMeta(
   const path = {
     platform: "/",
     ai: "/ai",
+    aiApplied: "/ai/paths/applied",
     kids: "/kids",
     academic: "/academic",
     technical: "/technical",
@@ -251,23 +255,25 @@ export function lineMeta(
     kidsPricing: "/kids/pricing",
     technicalPricing: "/technical/pricing",
     academicPricing: "/academic/pricing",
-    kidsCurriculum: "/kids/curriculum",
-    technicalCurriculum: "/technical/curriculum",
+    kidsCurriculum: "/kids",
+    technicalCurriculum: "/technical",
   }[kind];
   const title =
-    kind === "kidsCurriculum" || kind === "technicalCurriculum"
-      ? `${kind === "kidsCurriculum" ? c.kids : c.technical} — ${c.paths}`
-      : kind === "platform"
-        ? c.platformTitle
-        : kind === "about"
-          ? c.about
-          : kind === "kidsPricing"
-            ? `${c.kids} — ${c.plans}`
-            : kind === "academicPricing"
-              ? `${c.academic} — ${c.plans}`
-              : kind === "technicalPricing"
-                ? `${c.technical} — ${c.plans}`
-                : c[kind];
+    kind === "aiApplied"
+      ? getPathDefinition("ai", locale).title
+      : kind === "kidsCurriculum" || kind === "technicalCurriculum"
+        ? `${kind === "kidsCurriculum" ? c.kids : c.technical} — ${c.paths}`
+        : kind === "platform"
+          ? c.platformTitle
+          : kind === "about"
+            ? c.about
+            : kind === "kidsPricing"
+              ? `${c.kids} — ${c.plans}`
+              : kind === "academicPricing"
+                ? `${c.academic} — ${c.plans}`
+                : kind === "technicalPricing"
+                  ? `${c.technical} — ${c.plans}`
+                  : c[kind];
   const description =
     kind === "platform"
       ? c.platformIntro

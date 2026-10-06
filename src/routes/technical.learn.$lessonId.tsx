@@ -65,7 +65,7 @@ export function TechnicalLessonPage() {
           <div className="mx-auto max-w-7xl px-4 pt-6">
             <a
               className="font-bold text-primary"
-              href={`/technical/courses/furniture?locale=${locale}`}
+              href={`/technical/courses/furniture/contents?locale=${locale}`}
             >
               {c.back}
             </a>

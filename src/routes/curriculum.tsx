@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
 import {
   CurriculumLayout,
-  CurriculumSectionHeader as SectionHeader,
   CURRICULUM_MODULE_CLASS,
   CURRICULUM_ROW_CLASS,
 } from "@/components/site/CurriculumLayout";
@@ -33,7 +32,8 @@ import {
   getCurriculumPathLabel,
 } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import { KidsPathCard } from "@/components/kids/KidsPathCard";
+import { getPathStoryCopy } from "@/lib/path-story";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
 
@@ -56,6 +56,8 @@ function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
   const { tier, isPro, isAdmin } = useEntitlement();
   const t = useUiString();
+  const { locale } = useLocale();
+  const localeSearch = useLocaleLinkSearch();
   const search = Route.useSearch();
   const allModules = useMemo(() => PATHS.flatMap((p) => p.modules), []);
   const { mastery } = useModulesMastery(allModules);
@@ -94,6 +96,7 @@ function CurriculumPage() {
   return (
     <CurriculumLayout
       line="ai"
+      title={getPathStoryCopy(locale).contents}
       subtitle={t("curriculum.subtitle")}
       summary={
         <div className="max-w-md">
@@ -106,18 +109,20 @@ function CurriculumPage() {
         </div>
       }
     >
-      {/* Three-tier sections (v14): User → Operator → Builder */}
-      {(() => {
-        const intros = PATHS.filter((p) => p.kind === "intro");
-        const userPaths = PATHS.filter((p) => p.kind !== "intro" && p.tier === "user");
-        const operatorPaths = PATHS.filter((p) => p.tier === "operator");
-        const builderPaths = PATHS.filter((p) => p.tier === "builder");
-
-        const renderPaths = (paths: typeof PATHS) =>
-          paths.map((p) => (
+      <Link
+        to="/ai/paths/applied"
+        search={localeSearch()}
+        className="mb-6 inline-block font-bold text-primary"
+      >
+        {getPathStoryCopy(locale).backPath}
+      </Link>
+      <div className="space-y-10">
+        {["intro", "business", "creator", "analyst", "automator", "builder"]
+          .map((id) => PATHS.find((path) => path.id === id)!)
+          .map((path) => (
             <PathBlock
-              key={p.id}
-              path={p}
+              key={path.id}
+              path={path}
               progress={store}
               getStatus={getStatus}
               mastery={mastery}
@@ -127,59 +132,8 @@ function CurriculumPage() {
               introCompletedCount={introCompletedCount}
               introTotal={introIds.length}
             />
-          ));
-
-        return (
-          <div className="space-y-16">
-            {intros.length > 0 && (
-              <section>
-                <SectionHeader
-                  eyebrow={t("curriculum.section.intro.eyebrow")}
-                  title={t("curriculum.section.intro.title")}
-                  subtitle={t("curriculum.section.intro.subtitle")}
-                />
-                <div className="space-y-10">{renderPaths(intros)}</div>
-              </section>
-            )}
-
-            {userPaths.length > 0 && (
-              <section>
-                <SectionHeader
-                  eyebrow={t("curriculum.section.user.eyebrow")}
-                  title={t("curriculum.section.user.title")}
-                  subtitle={t("curriculum.section.user.subtitle")}
-                />
-                <div className="space-y-10">{renderPaths(userPaths)}</div>
-              </section>
-            )}
-
-            {operatorPaths.length > 0 && (
-              <section>
-                <SectionHeader
-                  eyebrow={t("curriculum.section.operator.eyebrow")}
-                  title={t("curriculum.section.operator.title")}
-                  subtitle={t("curriculum.section.operator.subtitle")}
-                />
-                <div className="space-y-10">{renderPaths(operatorPaths)}</div>
-              </section>
-            )}
-
-            {builderPaths.length > 0 && (
-              <section>
-                <SectionHeader
-                  eyebrow={t("curriculum.section.builder.eyebrow")}
-                  title={t("curriculum.section.builder.title")}
-                  subtitle={t("curriculum.section.builder.subtitle")}
-                />
-                <div className="space-y-10">{renderPaths(builderPaths)}</div>
-              </section>
-            )}
-            <section aria-label="Masaarat Kids">
-              <KidsPathCard />
-            </section>
-          </div>
-        );
-      })()}
+          ))}
+      </div>
     </CurriculumLayout>
   );
 }
@@ -275,7 +229,9 @@ function PathBlock({
               ? t("curriculum.path.introductionEyebrow")
               : t("curriculum.path.pathEyebrow").replace("{path}", pathTitle.toUpperCase())}
           </p>
-          <h2 className="text-2xl md:text-3xl font-black">{pathTitle}</h2>
+          <h2 className="text-2xl md:text-3xl font-black">
+            {isIntro ? pathTitle : `${getPathStoryCopy(locale).station} — ${pathTitle}`}
+          </h2>
           <p className="text-sm text-muted-foreground mt-1">{pathTagline}</p>
         </div>
         {!isOpen && (
@@ -338,9 +294,6 @@ function PathBlock({
                     M{mi + 1}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[11px] font-mono text-muted-foreground">
-                      {t("curriculum.module.eyebrow").replace("{order}", String(mi + 1))}
-                    </p>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="font-bold text-lg leading-tight">{moduleTitle}</h3>
                       {m.level === "technical" && (

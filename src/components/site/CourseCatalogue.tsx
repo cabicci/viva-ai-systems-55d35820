@@ -7,7 +7,7 @@ export function CourseCatalogue({
   line,
   courses,
 }: {
-  line: "academic" | "technical";
+  line: "ai" | "kids" | "academic" | "technical";
   courses: {
     id: string;
     title: string;
@@ -42,9 +42,11 @@ export function CourseCatalogue({
               <span>
                 {numbers.format(course.lessonCount)} {c.lessons}
               </span>
-              <span>
-                {numbers.format(course.moduleCount)} {c.modules}
-              </span>
+              {course.moduleCount > 0 && (
+                <span>
+                  {numbers.format(course.moduleCount)} {c.modules}
+                </span>
+              )}
             </p>
           </div>
           <span className="inline-flex min-h-11 shrink-0 items-center gap-3 font-bold text-primary">

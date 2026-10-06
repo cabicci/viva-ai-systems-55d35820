@@ -222,19 +222,19 @@ const overviews: Record<"kids" | "technical", Overview> = {
       "مهارات مهنية من الفهم للتطبيق",
       "مهارات مهنية من الفهم إلى التطبيق",
       "مهارات مهنية من الفهم للتطبيق",
-      "Vocational skills from understanding to practice",
+      "Technical skills from understanding to practice",
     ],
     ecosystemBody: [
       "تعليم مهني يبدأ بالنجارة وصناعة الأثاث، ويربط فهم الخامات والأدوات بالتخطيط والتنفيذ ومراجعة الجودة.",
       "تعليم مهني يبدأ بالنجارة وصناعة الأثاث، ويربط فهم المواد والأدوات بالتخطيط والتنفيذ ومراجعة الجودة.",
       "تعليم مهني يبدأ بالنجارة وصناعة الأثاث، ويربط فهم الخامات والأدوات بالتخطيط والتنفيذ ومراجعة الجودة.",
-      "Vocational learning starts with carpentry and furniture making, connecting materials and tools with planning, execution and quality review.",
+      "Technical learning starts with carpentry and furniture making, connecting materials and tools with planning, execution and quality review.",
     ],
     levelsTitle: [
-      "مسارات التعليم المهني",
-      "مسارات التعليم المهني",
-      "مسارات التعليم المهني",
-      "Vocational learning paths",
+      "مسارات التعليم الفني",
+      "مسارات التعليم الفني",
+      "مسارات التعليم الفني",
+      "Technical learning paths",
     ],
     levelsBody: [
       "للمبتدئ اللي عايز يتعلّم حرفة، ولصاحب الخبرة اللي عايز يرتّب معرفته ويطوّر شغله.",
@@ -267,10 +267,10 @@ const overviews: Record<"kids" | "technical", Overview> = {
       "Skills begin with understanding choices and methods, then develop through practice and review with appropriate safety guidance.",
     ],
     ctaTitle: [
-      "اكتشف رحلتك في التعليم المهني",
-      "اكتشف رحلتك في التعليم المهني",
-      "اكتشف رحلتك في التعليم المهني",
-      "Explore your vocational learning journey",
+      "اكتشف رحلتك في التعليم الفني",
+      "اكتشف رحلتك في التعليم الفني",
+      "اكتشف رحلتك في التعليم الفني",
+      "Explore your technical learning journey",
     ],
     pillars: [
       {

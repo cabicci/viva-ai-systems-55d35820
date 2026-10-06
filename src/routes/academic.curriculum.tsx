@@ -1,16 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { AcademicCataloguePage } from "@/components/academic-education/AcademicCataloguePage";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 export const Route = createFileRoute("/academic/curriculum")({
   validateSearch: parseLocaleSearchParam,
-  head: () => ({
-    meta: [
-      { title: "Academic courses | Masaarat" },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
-  }),
-  component: Page,
+  beforeLoad: ({ search }) => {
+    throw redirect({ to: "/academic", search, replace: true });
+  },
 });
-function Page() {
-  return <AcademicCataloguePage />;
-}

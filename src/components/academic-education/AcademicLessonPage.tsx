@@ -150,7 +150,7 @@ function AuthorizedLesson({
   }
   return (
     <>
-      <a className="font-bold text-primary" href={`/academic/courses/${courseId}?locale=${locale}`}>
+      <a className="font-bold text-primary" href={`/academic/courses/${courseId}/contents?locale=${locale}`}>
         {c.backToCurriculum}
       </a>
       {delivery.reviewOnly && (

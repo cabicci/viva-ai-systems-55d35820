@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import {
   createMemoryHistory,
   createRootRoute,
@@ -12,6 +12,7 @@ import { Route as KidsCurriculum } from "@/routes/kids.curriculum";
 import { Route as KidsIndex } from "@/routes/kids.index";
 import { Route as Family } from "@/routes/kids.family";
 import { Route as LevelLayout } from "@/routes/kids.$levelId";
+import { Route as Contents } from "@/routes/kids.$levelId.contents";
 import { Route as LevelIndex } from "@/routes/kids.$levelId.index";
 import { Route as Lesson } from "@/routes/kids.$levelId.$lessonNumber";
 
@@ -24,6 +25,7 @@ const mock = vi.hoisted(() => ({
 }));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: null, loading: false }) }));
 vi.mock("@/lib/entitlements", () => ({ useEntitlement: () => ({ isAdmin: false }) }));
 vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <div>Kids brand</div> }));
 vi.mock("@/components/kids/KidsReleaseNotice", () => ({ KidsReleaseNotice: () => null }));
@@ -79,13 +81,23 @@ function mountKids(start = "/kids?locale=en") {
     path: "/",
     getParentRoute: () => level,
   } as unknown as Parameters<typeof LevelIndex.update>[0]);
+  const contents = Contents.update({
+    id: "/contents",
+    path: "/contents",
+    getParentRoute: () => level,
+  } as unknown as Parameters<typeof Contents.update>[0]);
   const lesson = Lesson.update({
     id: "/$lessonNumber",
     path: "/$lessonNumber",
     getParentRoute: () => level,
   } as unknown as Parameters<typeof Lesson.update>[0]);
   const tree = root.addChildren([
-    kids.addChildren([kidsIndex, curriculum, family, level.addChildren([levelIndex, lesson])]),
+    kids.addChildren([
+      kidsIndex,
+      curriculum,
+      family,
+      level.addChildren([levelIndex, contents, lesson]),
+    ]),
   ]);
   const router = createRouter({
     routeTree: tree,
@@ -101,135 +113,89 @@ afterEach(() => {
   mock.parentState = { state: "signed-out", profiles: [] };
 });
 
-describe("Kids nested routes", () => {
-  it("matches the static curriculum route before the dynamic level route and keeps visitors out of lesson links", async () => {
-    mountKids("/kids/curriculum?locale=en");
+describe("Kids canonical nested path journey", () => {
+  it("redirects the former curriculum to the sole catalogue without exposing step bodies", async () => {
+    const { router } = mountKids("/kids/curriculum?locale=en");
     expect(
-      await screen.findByRole("heading", { level: 1, name: "Curriculum — Masaarat Kids" }),
+      await screen.findByRole("heading", { level: 1, name: "Paths — Masaarat Kids" }),
     ).toBeInTheDocument();
-    expect(screen.queryByText("Kids route not found")).not.toBeInTheDocument();
-    expect(document.querySelectorAll("main li")).toHaveLength(36);
-    expect(document.querySelectorAll("a[href^='/kids/level-']")).toHaveLength(0);
+    expect(router.state.location.pathname).toBe("/kids");
+    expect(screen.getAllByTestId("kids-course-card")).toHaveLength(3);
+    expect(mock.invoke).not.toHaveBeenCalled();
   });
-
-  it("shows level summaries and links to Kids pricing without placing prices in Kids landing", async () => {
-    mountKids();
-    expect(
-      await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
-    ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "View Kids plans and prices" })).toHaveAttribute(
-      "href",
-      "/kids/pricing?locale=en",
-    );
-    expect(screen.queryByText("Kids family pricing")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Get started with Kids" })).toHaveAttribute(
-      "href",
-      "/kids/family?locale=en",
-    );
-  });
-  it("keeps parent setup on a standalone page and out of the level and lesson", async () => {
-    const { router } = mountKids();
-    fireEvent.click(await screen.findByRole("link", { name: "Get started with Kids" }));
-    expect(
-      await screen.findByRole("heading", { level: 1, name: "Parent space" }),
-    ).toBeInTheDocument();
-    expect(router.state.location.pathname).toBe("/kids/family");
-    expect(screen.getByText("Parent access pending")).toBeInTheDocument();
-    await act(() =>
-      router.navigate({
-        to: "/kids/$levelId/$lessonNumber",
-        params: { levelId: "level-1", lessonNumber: "1" },
-        search: { locale: "en" },
-      }),
-    );
-    expect(await screen.findByRole("heading", { level: 1, name: "Lesson 1" })).toBeInTheDocument();
-    expect(screen.queryByText("Parent access pending")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Sign in" })).toHaveAttribute(
-      "href",
-      "/login?intent=kids&locale=en",
-    );
-  });
-  it("shows lesson titles but one setup action to a visitor without an account", async () => {
-    const { router } = mountKids();
-    expect(
-      await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
-    ).toBeInTheDocument();
-    fireEvent.click(screen.getAllByRole("link", { name: "Explore Masaarat Kids" })[0]);
-    expect(await screen.findByRole("heading", { level: 1, name: "Level 1" })).toBeInTheDocument();
-    expect(
-      screen.queryByRole("heading", { level: 1, name: "Masaarat Kids" }),
-    ).not.toBeInTheDocument();
-    expect(router.state.location.pathname).toBe("/kids/level-1");
-    expect(screen.getByRole("heading", { level: 2, name: "Lesson 1" })).toBeInTheDocument();
-    expect(screen.getAllByRole("heading", { level: 2, name: /Lesson/ })).toHaveLength(12);
-    expect(screen.queryByRole("link", { name: "View lesson status" })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Get started with Kids" })).toHaveAttribute(
-      "href",
-      "/kids/family?locale=en",
-    );
-    expect(mock.invoke).toHaveBeenCalledWith("kids-catalogue", {
-      body: { levelId: "level-1", locale: "en" },
-    });
-    await act(() => router.navigate({ to: "/kids", search: { locale: "en" } }));
-    expect(
-      await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
-    ).toBeInTheDocument();
-  });
-
-  it("shows approved localized names without exposing a lesson to a signed-out visitor", async () => {
+  it("opens one path definition then contents; a signed-out visitor cannot open protected steps", async () => {
     mock.invoke.mockResolvedValue({
       data: {
         levelId: "level-1",
         locale: "en",
-        titles: Array.from({ length: 12 }, (_, index) => ({
-          lessonNumber: index + 1,
-          title: `Approved topic ${index + 1}`,
+        titles: Array.from({ length: 12 }, (_, i) => ({
+          lessonNumber: i + 1,
+          title: `Approved topic ${i + 1}`,
         })),
       },
       error: null,
     });
-    mountKids("/kids/level-1?locale=en");
+    const { router } = mountKids("/kids/level-1?locale=en");
+    expect(
+      await screen.findByRole("heading", { level: 1, name: /Path Kids ages 10–12/ }),
+    ).toBeInTheDocument();
+    expect(mock.invoke).not.toHaveBeenCalled();
+    expect(screen.getByRole("link", { name: "Explore path steps" })).toHaveAttribute(
+      "href",
+      "/kids/level-1/contents?locale=en",
+    );
+    await act(() =>
+      router.navigate({
+        to: "/kids/$levelId/contents",
+        params: { levelId: "level-1" },
+        search: { locale: "en" },
+      }),
+    );
     expect(await screen.findByText("Approved topic 1")).toBeInTheDocument();
     expect(screen.getByText("Approved topic 12")).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: "View lesson status" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "View step status" })).toBeNull();
+    expect(screen.getByRole("link", { name: "Back to path overview" })).toHaveAttribute(
+      "href",
+      "/kids/level-1?locale=en",
+    );
+    expect(screen.getByRole("link", { name: "Get started with Kids" })).toHaveAttribute(
+      "href",
+      "/kids/family?locale=en",
+    );
   });
-
-  it("shows lesson actions after consent and a profile for the level are ready", async () => {
+  it("shows the same twelve step titles with open actions for a consented matching profile", async () => {
     mock.parentState = {
       state: "ready",
       profiles: [{ id: "child-profile", level_id: "level-1", display_name: "Explorer" }],
     };
-    mountKids("/kids/level-1?locale=en");
-    expect(await screen.findByRole("heading", { level: 1, name: "Level 1" })).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: "View lesson status" })).toHaveLength(12);
-    expect(screen.queryByRole("link", { name: "Get started with Kids" })).not.toBeInTheDocument();
+    mountKids("/kids/level-1/contents?locale=en");
+    expect(
+      await screen.findByRole("heading", { level: 1, name: "Path contents" }),
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "View step status" })).toHaveLength(12);
+    expect(document.querySelector('a[href="/kids/level-1/1?locale=en"]')).toBeTruthy();
   });
-
-  it("renders a directly opened lesson at a narrow viewport without fetching child data", async () => {
-    const priorWidth = window.innerWidth;
+  it("opens a direct protected step at mobile width with the canonical return and no private fetch", async () => {
+    const prior = window.innerWidth;
     Object.defineProperty(window, "innerWidth", { configurable: true, value: 375 });
     try {
       mountKids("/kids/level-1/1?locale=en");
-      expect(
-        await screen.findByRole("heading", { level: 1, name: "Lesson 1" }),
-      ).toBeInTheDocument();
-      expect(screen.getByRole("link", { name: "Back to level" })).toBeInTheDocument();
-      expect(
-        screen.queryByRole("heading", { level: 1, name: "Masaarat Kids" }),
-      ).not.toBeInTheDocument();
+      expect(await screen.findByRole("heading", { level: 1, name: "Step 1" })).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: "Back to path" })).toHaveAttribute(
+        "href",
+        "/kids/level-1/contents?locale=en",
+      );
       expect(mock.invoke).not.toHaveBeenCalled();
     } finally {
-      Object.defineProperty(window, "innerWidth", { configurable: true, value: priorWidth });
+      Object.defineProperty(window, "innerWidth", { configurable: true, value: prior });
     }
   });
-
-  it("rejects a directly opened lesson with an unknown level", async () => {
+  it("rejects an unknown age path without fetching content", async () => {
     const { router } = mountKids("/kids/unknown/1?locale=en");
     await waitFor(() =>
-      expect(router.state.matches.some((match) => match.status === "notFound")).toBe(true),
+      expect(router.state.matches.some((m) => m.status === "notFound")).toBe(true),
     );
     expect(screen.getByText("Kids route not found")).toBeInTheDocument();
-    expect(screen.queryByRole("heading", { level: 1, name: "Lesson 1" })).not.toBeInTheDocument();
     expect(mock.invoke).not.toHaveBeenCalled();
   });
 });
