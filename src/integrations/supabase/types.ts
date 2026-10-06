@@ -14,6 +14,150 @@ export type Database = {
   }
   public: {
     Tables: {
+      academic_asset_manifest: {
+        Row: {
+          course_id: string
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Insert: {
+          course_id: string
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Update: {
+          course_id?: string
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          path?: string
+          sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_asset_manifest_course_id_lesson_id_locale_fkey"
+            columns: ["course_id", "lesson_id", "locale"]
+            isOneToOne: false
+            referencedRelation: "academic_lesson_content"
+            referencedColumns: ["course_id", "lesson_id", "locale"]
+          },
+        ]
+      }
+      academic_courses: {
+        Row: {
+          assistant_enabled: boolean
+          enabled: boolean
+          id: string
+          titles: Json
+        }
+        Insert: {
+          assistant_enabled?: boolean
+          enabled?: boolean
+          id: string
+          titles: Json
+        }
+        Update: {
+          assistant_enabled?: boolean
+          enabled?: boolean
+          id?: string
+          titles?: Json
+        }
+        Relationships: []
+      }
+      academic_lesson_content: {
+        Row: {
+          approved: boolean
+          course_id: string
+          introductory: boolean
+          lesson_id: string
+          locale: string
+          payload: Json
+          position: number
+          source_sha256: string
+          video_guid: string | null
+          video_ready: boolean
+        }
+        Insert: {
+          approved?: boolean
+          course_id: string
+          introductory?: boolean
+          lesson_id: string
+          locale: string
+          payload: Json
+          position: number
+          source_sha256: string
+          video_guid?: string | null
+          video_ready?: boolean
+        }
+        Update: {
+          approved?: boolean
+          course_id?: string
+          introductory?: boolean
+          lesson_id?: string
+          locale?: string
+          payload?: Json
+          position?: number
+          source_sha256?: string
+          video_guid?: string | null
+          video_ready?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_lesson_content_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_progress: {
+        Row: {
+          course_id: string
+          drafts: Json
+          lesson_id: string
+          practice_submitted: boolean
+          quiz_passed: boolean
+          read: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          course_id: string
+          drafts?: Json
+          lesson_id: string
+          practice_submitted?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          course_id?: string
+          drafts?: Json
+          lesson_id?: string
+          practice_submitted?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_progress_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       account_welcome_outbox: {
         Row: {
           blocked: boolean
@@ -1926,6 +2070,26 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      academic_assistant_allowed: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: boolean
+      }
+      academic_can_access: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: boolean
+      }
+      academic_catalogue: { Args: { p_locale: string }; Returns: Json }
+      academic_command: {
+        Args: {
+          p_action: string
+          p_course?: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
       activate_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
