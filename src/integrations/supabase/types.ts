@@ -14,6 +14,204 @@ export type Database = {
   }
   public: {
     Tables: {
+      academic_asset_manifest: {
+        Row: {
+          course_id: string
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Insert: {
+          course_id: string
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Update: {
+          course_id?: string
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          path?: string
+          sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_asset_manifest_course_id_lesson_id_locale_fkey"
+            columns: ["course_id", "lesson_id", "locale"]
+            isOneToOne: false
+            referencedRelation: "academic_lesson_content"
+            referencedColumns: ["course_id", "lesson_id", "locale"]
+          },
+        ]
+      }
+      academic_courses: {
+        Row: {
+          assistant_enabled: boolean
+          enabled: boolean
+          id: string
+          review_enabled: boolean
+          titles: Json
+        }
+        Insert: {
+          assistant_enabled?: boolean
+          enabled?: boolean
+          id: string
+          review_enabled?: boolean
+          titles: Json
+        }
+        Update: {
+          assistant_enabled?: boolean
+          enabled?: boolean
+          id?: string
+          review_enabled?: boolean
+          titles?: Json
+        }
+        Relationships: []
+      }
+      academic_lesson_content: {
+        Row: {
+          approved: boolean
+          course_id: string
+          introductory: boolean
+          lesson_id: string
+          locale: string
+          payload: Json
+          position: number
+          source_sha256: string
+          video_guid: string | null
+          video_ready: boolean
+        }
+        Insert: {
+          approved?: boolean
+          course_id: string
+          introductory?: boolean
+          lesson_id: string
+          locale: string
+          payload: Json
+          position: number
+          source_sha256: string
+          video_guid?: string | null
+          video_ready?: boolean
+        }
+        Update: {
+          approved?: boolean
+          course_id?: string
+          introductory?: boolean
+          lesson_id?: string
+          locale?: string
+          payload?: Json
+          position?: number
+          source_sha256?: string
+          video_guid?: string | null
+          video_ready?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_lesson_content_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          id: string
+          invoice_id: string
+          kind: string
+          lease_until: string | null
+          locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id: string
+          kind: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id?: string
+          kind?: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          subscription_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      academic_progress: {
+        Row: {
+          course_id: string
+          drafts: Json
+          lesson_id: string
+          practice_submitted: boolean
+          quiz_passed: boolean
+          read: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          course_id: string
+          drafts?: Json
+          lesson_id: string
+          practice_submitted?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          course_id?: string
+          drafts?: Json
+          lesson_id?: string
+          practice_submitted?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_progress_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       account_welcome_outbox: {
         Row: {
           blocked: boolean
@@ -1480,6 +1678,153 @@ export type Database = {
         }
         Relationships: []
       }
+      technical_asset_manifest: {
+        Row: {
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Insert: {
+          kind: string
+          lesson_id: string
+          locale: string
+          path: string
+          sha256: string
+        }
+        Update: {
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          path?: string
+          sha256?: string
+        }
+        Relationships: []
+      }
+      technical_lesson_content: {
+        Row: {
+          kind: string
+          lesson_id: string
+          locale: string
+          payload: Json
+          source_sha256: string
+          video_guid: string
+        }
+        Insert: {
+          kind: string
+          lesson_id: string
+          locale: string
+          payload: Json
+          source_sha256: string
+          video_guid: string
+        }
+        Update: {
+          kind?: string
+          lesson_id?: string
+          locale?: string
+          payload?: Json
+          source_sha256?: string
+          video_guid?: string
+        }
+        Relationships: []
+      }
+      technical_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          id: string
+          invoice_id: string
+          kind: string
+          lease_until: string | null
+          locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id: string
+          kind: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          subscription_id: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          id?: string
+          invoice_id?: string
+          kind?: string
+          lease_until?: string | null
+          locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          subscription_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      technical_progress: {
+        Row: {
+          drafts: Json
+          lesson_id: string
+          practice_reviewed: boolean
+          quiz_passed: boolean
+          read: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          drafts?: Json
+          lesson_id: string
+          practice_reviewed?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          drafts?: Json
+          lesson_id?: string
+          practice_reviewed?: boolean
+          quiz_passed?: boolean
+          read?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      technical_release_control: {
+        Row: {
+          enabled: boolean
+          singleton: boolean
+        }
+        Insert: {
+          enabled?: boolean
+          singleton?: boolean
+        }
+        Update: {
+          enabled?: boolean
+          singleton?: boolean
+        }
+        Relationships: []
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -1779,9 +2124,65 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      academic_assistant_allowed: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: boolean
+      }
+      academic_can_access: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: boolean
+      }
+      academic_catalogue: { Args: { p_locale: string }; Returns: Json }
+      academic_command: {
+        Args: {
+          p_action: string
+          p_course?: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      academic_mail_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
+      academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
       activate_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
+      }
+      apply_academic_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      apply_academic_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
       }
       apply_kids_stripe_event: {
         Args: {
@@ -1857,6 +2258,37 @@ export type Database = {
           p_user_id: string
         }
         Returns: Json
+      }
+      apply_technical_stripe_event: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_occurred_at: string
+          p_paid: boolean
+          p_paid_invoice_id: string
+          p_parent_id: string
+          p_period_end: string
+          p_period_start: string
+          p_price_id: string
+          p_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
+      }
+      apply_technical_stripe_refund: {
+        Args: {
+          p_customer_id: string
+          p_event_id: string
+          p_invoice_amount: number
+          p_invoice_id: string
+          p_occurred_at: string
+          p_parent_id: string
+          p_refund_amount: number
+          p_refund_id: string
+          p_refund_status: string
+          p_subscription_id: string
+        }
+        Returns: boolean
       }
       auth_signup_email_profile: {
         Args: { p_email: string }
@@ -1940,6 +2372,52 @@ export type Database = {
         }
         Returns: boolean
       }
+      commerce_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      commerce_mail: { Args: { p_action: string; p_data: Json }; Returns: Json }
+      commerce_payment_mail: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      commerce_previous_get_my_billing_access_tier: {
+        Args: never
+        Returns: string
+      }
+      commerce_previous_get_my_kids_access_status: {
+        Args: never
+        Returns: {
+          access_source: string
+          active_until: string
+        }[]
+      }
+      commerce_previous_lc09_advance_deletion: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_lc09_claim_financial_purge: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_lc09_complete_financial_purge: {
+        Args: { p_lease_token: string; p_release?: boolean; p_user_id: string }
+        Returns: Json
+      }
+      commerce_previous_record_contact_mail_receipt: {
+        Args: {
+          p_at: string
+          p_email_id: string
+          p_event: string
+          p_recipient: string
+          p_type: string
+        }
+        Returns: string
+      }
+      commerce_receipt: {
+        Args: { p_action: string; p_actor: string; p_data: Json }
+        Returns: Json
+      }
       commit_ai_quota: {
         Args: {
           p_idempotency_key: string
@@ -2014,6 +2492,18 @@ export type Database = {
         }
         Returns: Json
       }
+      get_academic_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      get_academic_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
       get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
@@ -2055,6 +2545,18 @@ export type Database = {
         Returns: Json
       }
       get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
+      get_technical_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      get_technical_stripe_portal_context: {
+        Args: { p_user_id: string }
+        Returns: Json
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -2466,6 +2968,10 @@ export type Database = {
         }
         Returns: Json
       }
+      queue_commerce_payment_confirmation: {
+        Args: { p_order: string }
+        Returns: Json
+      }
       queue_contact_acknowledgement: {
         Args: {
           p_html: string
@@ -2541,6 +3047,18 @@ export type Database = {
         Returns: boolean
       }
       record_user_activity: { Args: never; Returns: Json }
+      register_academic_stripe_price: {
+        Args: {
+          p_amount_minor: number
+          p_billing_interval: string
+          p_currency_code: string
+          p_discounted: boolean
+          p_market_code: string
+          p_price_id: string
+          p_product_id: string
+        }
+        Returns: string
+      }
       register_kids_stripe_customer: {
         Args: { p_customer_id: string; p_user_id: string }
         Returns: string
@@ -2573,6 +3091,18 @@ export type Database = {
           p_market_price_id: string
         }
         Returns: Json
+      }
+      register_technical_stripe_price: {
+        Args: {
+          p_amount_minor: number
+          p_billing_interval: string
+          p_currency_code: string
+          p_discounted: boolean
+          p_market_code: string
+          p_price_id: string
+          p_product_id: string
+        }
+        Returns: string
       }
       release_ai_quota: {
         Args: { p_idempotency_key: string; p_reservation_id: string }
@@ -2650,6 +3180,21 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      technical_can_access: { Args: { p_lesson: string }; Returns: boolean }
+      technical_command: {
+        Args: {
+          p_action: string
+          p_data?: Json
+          p_lesson?: string
+          p_locale?: string
+        }
+        Returns: Json
+      }
+      technical_mail_command: {
+        Args: { p_action: string; p_data?: Json }
+        Returns: Json
+      }
+      technical_storage_allowed: { Args: { p_path: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
