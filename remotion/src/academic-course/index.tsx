@@ -1,5 +1,26 @@
 import React from 'react';
 import {AbsoluteFill, Composition, Img, interpolate, registerRoot, staticFile, useCurrentFrame} from 'remotion';
+import {Network, Scale, ChartNoAxesCombined, Compass, GitBranch, MessagesSquare, Users,
+  Handshake, Target, Search, LayoutGrid, Megaphone, Calculator, Lightbulb, ScanSearch,
+  Factory, Wallet, FlaskConical, Microscope, Flag, ListFilter, Map, Boxes, FileChartColumn,
+  SlidersHorizontal, FileCheck, Truck, Settings, Laptop, ShieldCheck, ClipboardCheck,
+  Workflow, CalendarClock, TriangleAlert, Gauge, BadgeCheck, BookCheck, Fingerprint,
+  Presentation, BookOpen} from 'lucide-react';
+
+const lessonIcons:Record<string, typeof BookOpen>={
+  'M01-L02':Network,'M01-L03':Scale,'M01-L04':ChartNoAxesCombined,
+  'M02-L01':Compass,'M02-L02':GitBranch,'M02-L03':MessagesSquare,'M02-L04':Users,'M02-L05':Handshake,
+  'M03-L01':Target,'M03-L02':Search,'M03-L03':LayoutGrid,'M03-L04':Megaphone,'M03-L05':Calculator,
+  'M04-L01':Lightbulb,'M04-L02':ScanSearch,'M04-L03':Factory,'M04-L04':Wallet,'M04-L05':FlaskConical,'M04-L06':Microscope,
+  'M05-L01':Flag,'M05-L02':ListFilter,'M05-L03':Map,'M05-L04':Boxes,'M05-L05':FileChartColumn,'M05-L06':SlidersHorizontal,
+  'M06-L01':FileCheck,'M06-L02':Truck,'M06-L03':Settings,'M06-L04':Laptop,'M06-L05':ShieldCheck,'M06-L06':ClipboardCheck,
+  'M07-L01':Workflow,'M07-L02':CalendarClock,'M07-L03':TriangleAlert,'M07-L04':Gauge,
+  'M07-L05':Presentation,'M07-L06':BadgeCheck,'M07-L07':BookCheck,'M07-L08':Fingerprint,
+};
+function InlineText({text}:{text:string}) {
+  const arithmetic=/([-−]?[0-9٠-٩][0-9٠-٩,.٬٫]*(?:\s*[%٪]?\s*[+\-−×÷*/=]\s*[-−]?[0-9٠-٩][0-9٠-٩,.٬٫]*[%٪]?)+)/g;
+  return <>{text.split(arithmetic).map((part,i)=>i%2?<bdi dir="ltr" key={i}>{part}</bdi>:<React.Fragment key={i}>{part}</React.Fragment>)}</>;
+}
 
 type Scene = {id:string; blockId:string; title:string; kind:string; display:string; spoken:string;
   cells?: {label:string; value:string}[]; rowIndex?:number; rowCount?:number};
@@ -16,6 +37,7 @@ function CourseVideo({locale, lessonId, title, scenes, sceneFrames, chapters}:Pr
   const palette=['#357a84','#845c7d','#7b7938','#315f94'];
   const accent=palette[index%palette.length];
   const graphic=!!scene.cells;
+  const Illustration=lessonIcons[lessonId.replace('AC-BUS-','')]||BookOpen;
   const textSize=scene.display.length>350?34:scene.display.length>230?38:44;
   const enter=interpolate(local,[0,18],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
   return <AbsoluteFill dir={en?'ltr':'rtl'} style={{background:'linear-gradient(135deg,#edf6ff,#e4f2eb 58%,#f4e9ef)',color:'#203f45',fontFamily:'Tajawal,Arial,sans-serif'}}>
@@ -31,14 +53,16 @@ function CourseVideo({locale, lessonId, title, scenes, sceneFrames, chapters}:Pr
           {scene.cells!.map((cell,i)=><div key={i} style={{flex:1,minWidth:0,borderRadius:36,background:i===Math.min(scene.cells!.length-1,Math.floor(local/Math.max(1,sceneFrames[index]/scene.cells!.length)))?'#fff':'#ffffffad',border:`3px solid ${accent}55`,padding:'32px 30px',minHeight:360,boxShadow:'0 16px 36px #203f4512',transform:`translateY(${Math.sin(Math.min(1,local/30)*Math.PI)*-8}px)`}}>
             <div style={{width:68,height:68,borderRadius:'50%',background:accent,color:'#fff',display:'grid',placeItems:'center',fontSize:34,marginBottom:26}}>{i+1}</div>
             <div style={{fontSize:30,color:accent,fontWeight:700,marginBottom:20}}>{cell.label}</div>
-            <div style={{fontSize:cell.value.length>150?28:cell.value.length>90?32:38,lineHeight:1.6,overflowWrap:'anywhere',unicodeBidi:'plaintext'}}>{cell.value}</div>
+            <div style={{fontSize:cell.value.length>150?28:cell.value.length>90?32:38,lineHeight:1.6,overflowWrap:'anywhere'}}><InlineText text={cell.value}/></div>
           </div>)}
         </div>
         <div style={{display:'flex',gap:10,marginTop:26}}>{Array.from({length:scene.rowCount||1},(_,i)=><div key={i} style={{height:9,flex:1,borderRadius:8,background:i===(scene.rowIndex||0)?accent:'#bfcfd0'}}/>)}</div>
-        <p style={{fontSize:28,lineHeight:1.6,margin:'24px 0 0',maxWidth:1720}}>{scene.display}</p>
+        <p style={{fontSize:28,lineHeight:1.6,margin:'24px 0 0',maxWidth:1720}}><InlineText text={scene.display}/></p>
       </> : <div style={{display:'flex',gap:45,alignItems:'stretch'}}>
-        <div style={{flex:1.6,borderRadius:36,background:'#ffffffdd',borderInlineStart:`9px solid ${accent}`,padding:42,minHeight:515,fontSize:textSize,lineHeight:1.75,unicodeBidi:'plaintext'}}>{scene.display}</div>
-        <div style={{flex:1,display:'flex',flexDirection:'column',gap:14}}>{chapters.map((chapter,i)=><div key={chapter.id} style={{display:'flex',alignItems:'center',gap:16,padding:'17px 20px',borderRadius:20,background:chapter.id===scene.blockId?accent:'#ffffffa8',color:chapter.id===scene.blockId?'#fff':'#36585e',fontSize:25,lineHeight:1.5}}><span style={{minWidth:34,fontWeight:700}}>{i+1}</span><span>{chapter.title}</span></div>)}</div>
+        <div style={{flex:1.6,borderRadius:36,background:'#ffffffdd',borderInlineStart:`9px solid ${accent}`,padding:42,minHeight:515,fontSize:textSize,lineHeight:1.75}}><InlineText text={scene.display}/></div>
+        <div style={{flex:1,display:'flex',flexDirection:'column',gap:10}}>
+          <div style={{height:132,display:'flex',alignItems:'center',justifyContent:'center',color:accent,background:'#ffffff80',borderRadius:28}}><Illustration size={100} strokeWidth={1.4}/></div>
+          {chapters.map((chapter,i)=><div key={chapter.id} style={{display:'flex',alignItems:'center',gap:12,padding:'11px 17px',borderRadius:18,background:chapter.id===scene.blockId?accent:'#ffffffa8',color:chapter.id===scene.blockId?'#fff':'#36585e',fontSize:23,lineHeight:1.45}}><span style={{minWidth:30,fontWeight:700}}>{i+1}</span><span>{chapter.title}</span></div>)}</div>
       </div>}
     </section>
     <footer style={{position:'absolute',bottom:38,left:80,right:80,display:'flex',justifyContent:'space-between',fontSize:24,color:'#456b70'}}><span>{en?'Produced by Masaarat':'إنتاج مسارات'}</span><span>{index+1} / {scenes.length}</span></footer>

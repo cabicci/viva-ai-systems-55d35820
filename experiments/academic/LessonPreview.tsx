@@ -9,6 +9,7 @@ import msa from "./content/ar-MSA.json";
 import gulf from "./content/ar-Gulf.json";
 import en from "./content/en.json";
 import mediaManifest from "./media-manifest.json";
+import courseMediaManifest from "./course-media-manifest.json";
 import "./style.css";
 
 export const packages = { "ar-EG": eg, "ar-MSA": msa, "ar-Gulf": gulf, en };
@@ -208,7 +209,8 @@ export function LessonView({ lesson }: { lesson: Lesson }) {
   const media = (
     lesson.id === "AC-BUS-M01-L01"
       ? mediaManifest[locale]
-      : { embedUrl: null, durationSeconds: null, playbackReady: false }
+      : (courseMediaManifest as Record<string, {lessonId:string;locale:string;embedUrl:string;durationSeconds:number;playbackReady:boolean}>)[`${lesson.id}__${locale}`]
+        ?? { embedUrl: null, durationSeconds: null, playbackReady: false }
   ) as {
     embedUrl: string | null;
     durationSeconds: number | null;

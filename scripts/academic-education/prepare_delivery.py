@@ -2,12 +2,14 @@
 import argparse, hashlib, json
 from pathlib import Path
 from expand_lessons import validate, LOCALES
+from media_registry import checked_media, load_registry
 ROOT=Path(__file__).resolve().parents[2]
 
 def canonical(value):
     return json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'))
 
 def prepare(pdf_root):
+    media_registry=load_registry()
     course=json.loads((ROOT/'docs/academic/curriculum-proposal.json').read_text())
     order=[l['id'] for m in course['modules'] for l in m['lessons']]
     rows=[];assets=[];missing=[]
@@ -21,9 +23,10 @@ def prepare(pdf_root):
             if d['locale']!=locale:raise ValueError('Locale mismatch')
             if index:validate(d,id,locale)
             digest=hashlib.sha256(canonical(d).encode()).hexdigest()
+            media=checked_media(d,media_registry)
             rows.append({'course_id':'AC-BUS','lesson_id':id,'locale':locale,'position':index+1,
                 'introductory':index==0,'approved':False,'payload':d,'source_sha256':digest,
-                'video_guid':None,'video_ready':False})
+                'video_guid':media['videoId'] if media else None,'video_ready':bool(media)})
             pdf=pdf_root/f'Lesson_Workbook_{id}_{locale}.pdf'
             if not pdf.exists():missing.append(str(pdf));continue
             assets.append({'path':f'AC-BUS/{id}/{locale}/workbook.pdf','course_id':'AC-BUS',
