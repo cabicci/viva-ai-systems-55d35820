@@ -1,5 +1,11 @@
 # Masaarat Academic — reusable curriculum criteria and decision register
 
+## AC-MEDIA-APPROVED-01 — 2026-10-06
+
+The owner accepted the four presented pilot voices with «تمام زي الفل كمل» at 13:25:53 Cairo, explicitly responding to the question about scaling their sound. The previous listening prerequisite is closed for the current policy. Continue the 156 additional exact lesson/locale identities; preserve the four pilot videos. No new commercial assistant terms or central publication decision is inferred.
+
+The course pipeline is create-only on Bunny with full source/render/policy fingerprints, exact lesson/locale bounds, a pre-generation check for existing media, per-output receipts and retained partial work. Its first run performs visual preflight without TTS; once reviewed, the same owner authorization permits production. Video semantic data is recomposed as animated field cards; no reading SVG, image or HTML component is reused. Local preparation and media regression checks: 17 passing. Output checks are not independent academic acceptance or live platform integration.
+
 ## AC-MEDIA-PREPARE-01 — 2026-10-06 continuation
 
 The owner resumed work toward the final product including videos and merge readiness. Read current Recovery145 / Continuation75, and verified remote main062b5f59 / Academic5778f143. The written content remains complete as review packages; central integration retains ownership of shared surfaces and global registers.

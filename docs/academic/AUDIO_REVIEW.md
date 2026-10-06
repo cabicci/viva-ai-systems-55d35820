@@ -1,6 +1,10 @@
 # Academic pilot audio review sheet
 
-Status: NOT ACCEPTED. Generated audio must be listened to; text, hashes, provider completion and visual frame review cannot establish natural pronunciation.
+## Owner acceptance — 2026-10-06
+
+Status: PILOT VOICE ACCEPTED FOR SCALING. After the four actual Bunny pilot links were presented with the explicit question whether their sound was acceptable for full production, Khalil replied «تمام زي الفل كمل» at 2026-10-06T13:25:53+03:00. This closes the preceding pilot-voice gate for ar-EG, ar-MSA, ar-Gulf and en. The exact policy fingerprint and bounded 156 additional identities are recorded in `scripts/academic-education/media-request.json`.
+
+The existing four pilot videos are preserved. New outputs still require stream/duration/identity checks and review for output-specific defects; pilot acceptance is not a claim of listening to videos that do not yet exist. The following table and notes are historical review guidance, not a renewed approval request.
 
 Egyptian draft: AC-BUS-M01-L01 / ar-EG. Render commit: 2ccc6af7e54ca6c688f1d4ef1b6a0c7bf78c4b3b. Measured MP4 length: 310.308 seconds. The table uses scene-frame boundaries for navigation, not word-level alignment. The final scene can end slightly earlier than its planned frame boundary because muxing uses the shorter audio/video stream.
 
@@ -28,4 +32,4 @@ Egyptian draft: AC-BUS-M01-L01 / ar-EG. Render commit: 2ccc6af7e54ca6c688f1d4ef1
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | ar-EG | Pending | Pending actual listening | — | Not yet assessed | — | — | Not accepted |
 
-Full-course audio/video generation remains behind pilot listening acceptance; this media gate does not block the separately reviewed written course. This sheet records an outstanding review; it is not an assertion that the voice sounds natural.
+The historical pilot listening gate is superseded by the owner acceptance above. Full-course production is now authorized with the accepted policy; do not re-request the same approval.

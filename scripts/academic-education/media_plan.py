@@ -79,11 +79,26 @@ def make_plan(data):
             scenes.append({"id": f"{block_id}-{index}", "blockId": block_id,
                            "title": plain(title), "kind": kind, "spoken": part,
                            "display": part})
+    # Reinterpret semantic information as animated field cards. No reading
+    # bitmap/SVG/HTML or table component enters the video renderer.
+    visual_scenes = []
+    for visual in data['readingVisuals']:
+        for index, row in enumerate(visual['rows']):
+            cells = [{"label": plain(label), "value": plain(value)}
+                     for label, value in zip(visual['columns'], row)]
+            spoken = '. '.join(f"{cell['label']}: {cell['value']}" for cell in cells)
+            visual_scenes.append({"id": f"graphic-{visual['id']}-{index}",
+                "blockId": f"graphic-{visual['id']}", "title": plain(visual['title']),
+                "kind": visual['kind'], "spoken": spoken, "display": plain(visual['caption']),
+                "cells": cells, "rowIndex": index, "rowCount": len(visual['rows'])})
+    case_index = next(i for i, scene in enumerate(scenes) if scene['blockId'] == 'case')
+    scenes[case_index:case_index] = visual_scenes
     return {"schemaVersion": 1, "lessonId": data["id"], "locale": data["locale"],
             "title": data["title"], "sourceSha256": digest(data), "scenes": scenes,
+            "chapters": [{"id": s['id'], "title": plain(s['title'])} for s in data['sections']],
             "visualDirection": data["videoVisualPlan"],
-            "visualAcceptance": "pending-bespoke-storyboard-review",
-            "audioAcceptance": "pending-listener-review",
+            "visualAcceptance": "pending-render-review",
+            "audioAcceptance": "pilot-approved-new-output-review-pending",
             "contentAcceptance": "pending-independent-review",
             "readingAssetsUsed": [], "quizKeysIncluded": False}
 
@@ -106,7 +121,7 @@ def prepare(output):
                             "narrationWords": sum(len(s["spoken"].split()) for s in plan["scenes"])})
     receipt = {"schemaVersion": 1, "courseId": "AC-BUS", "existingPilotPreserved": True,
                "plannedVideos": len(entries), "generatedVideos": 0, "uploadedVideos": 0,
-               "mediaProductionStarted": False, "audioAcceptance": "pending-listener-review",
+               "mediaProductionStarted": False, "audioAcceptance": "pilot-approved-new-output-review-pending",
                "entries": entries}
     (output / "manifest.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
     return receipt

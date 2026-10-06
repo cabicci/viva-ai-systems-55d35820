@@ -1,0 +1,128 @@
+name: Academic course media
+on:
+  push:
+    branches: [work/masaarat-academic-20261005]
+    paths: [scripts/academic-education/media-request.json]
+permissions:
+  contents: read
+concurrency:
+  group: academic-course-media-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    outputs:
+      matrix: ${{ steps.request.outputs.matrix }}
+      enabled: ${{ steps.request.outputs.enabled }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: '1.4.2'
+      - name: Validate bounded request and all exact source hashes
+        id: request
+        run: |
+          python3 -m unittest discover -s scripts/academic-education -p '*_test.py'
+          python3 - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'scripts/academic-education')
+          from course_media import production_plan
+          r=json.load(open('scripts/academic-education/media-request.json'))
+          for e in r['entries']: production_plan(e['lessonId'], e['locale'])
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+            f.write('enabled='+str(r['productionEnabled']).lower()+'\n')
+            f.write('matrix='+json.dumps({'include':[{'lesson':e['lessonId'],'locale':e['locale']} for e in r['entries']]},separators=(',',':'))+'\n')
+          PY
+      - name: Prepare isolated renderer
+        run: |
+          cd remotion
+          bun install --frozen-lockfile
+          mkdir -p public/academic-fonts public/brand
+          cp ../src/lib/lesson-visuals/v1/fonts/Tajawal-*.woff2 public/academic-fonts/
+          cp ../public/brand/masaarat-logo-lockup.png public/brand/
+          npx --no-install tsc --noEmit --skipLibCheck --jsx react-jsx --target ES2022 --moduleResolution bundler --module esnext src/academic-course/index.tsx
+      - name: Render actual silent frames in four locales
+        run: |
+          for locale in ar-EG ar-MSA ar-Gulf en; do
+            python3 scripts/academic-education/course_media.py --lesson AC-BUS-M01-L02 --locale "$locale" --preview
+          done
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: academic-course-visual-preflight
+          retention-days: 14
+          path: |
+            tmp/academic-course-media/**/preview-*.png
+            tmp/academic-course-media/**/preview-*.json
+  produce:
+    needs: prepare
+    if: needs.prepare.outputs.enabled == 'true'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: '1.4.2'
+      - name: Prepare existing renderer and fonts
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          cd remotion
+          bun install --frozen-lockfile
+          mkdir -p public/academic-fonts public/brand
+          cp ../src/lib/lesson-visuals/v1/fonts/Tajawal-*.woff2 public/academic-fonts/
+          cp ../public/brand/masaarat-logo-lockup.png public/brand/
+      - name: Produce one exact additional lesson and locale
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          TTS_MAX_WORKERS: '1'
+          TTS_REQUEST_GAP_SECONDS: '15'
+          PYTHONUNBUFFERED: '1'
+          LESSON: ${{ matrix.lesson }}
+          LOCALE: ${{ matrix.locale }}
+        run: python3 scripts/academic-education/course_media.py --lesson "$LESSON" --locale "$LOCALE"
+      - name: Preserve every per-video receipt and review timeline
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: academic-media-${{ matrix.lesson }}-${{ matrix.locale }}
+          retention-days: 14
+          path: |
+            tmp/academic-course-media/**/receipt.json
+            tmp/academic-course-media/**/props.json
+            tmp/academic-course-media/**/transcript.txt
+            tmp/academic-course-media/**/listening-timeline.json
+            tmp/academic-course-media/**/audio/master.mp3
+      - name: Preserve the first completed review video in each locale
+        if: always() && matrix.lesson == 'AC-BUS-M01-L02'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: academic-media-review-${{ matrix.locale }}
+          retention-days: 14
+          compression-level: 0
+          path: tmp/academic-course-media/**/lesson.mp4
+      - name: Preserve partial voice work on failure
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: academic-media-recovery-${{ matrix.lesson }}-${{ matrix.locale }}
+          retention-days: 14
+          path: |
+            tmp/academic-course-media/**/audio/*.wav
+            tmp/academic-course-media/**/lesson.mp4
