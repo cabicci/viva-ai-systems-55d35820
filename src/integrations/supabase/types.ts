@@ -54,18 +54,21 @@ export type Database = {
           assistant_enabled: boolean
           enabled: boolean
           id: string
+          review_enabled: boolean
           titles: Json
         }
         Insert: {
           assistant_enabled?: boolean
           enabled?: boolean
           id: string
+          review_enabled?: boolean
           titles: Json
         }
         Update: {
           assistant_enabled?: boolean
           enabled?: boolean
           id?: string
+          review_enabled?: boolean
           titles?: Json
         }
         Relationships: []
@@ -2144,6 +2147,7 @@ export type Database = {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
       }
+      academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
       activate_rag_index_version: {
         Args: { p_version_key: string }
