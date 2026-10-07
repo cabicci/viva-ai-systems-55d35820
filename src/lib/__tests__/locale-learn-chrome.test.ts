@@ -24,9 +24,9 @@ describe("locale learn route chrome (Phase 12.4A)", () => {
 
   it("renders English learn chrome copy for locale=en", () => {
     expect(getUiString("en", "learn.backToMap")).toBe("Back to map");
-    expect(getUiString("en", "learn.backToDashboard")).toBe("Back to dashboard");
+    expect(getUiString("en", "learn.backToDashboard")).toBe("Back to My journey");
     expect(getUiString("en", "learn.nav.previous")).toBe("Previous");
-    expect(getUiString("en", "learn.nav.next")).toBe("Next lesson");
+    expect(getUiString("en", "learn.nav.next")).toBe("Next step");
     expect(getUiString("en", "learn.assistant.fab")).toBe("Ask assistant");
   });
 

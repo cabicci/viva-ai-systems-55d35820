@@ -224,13 +224,18 @@ try {
     throw new Error("Real browser has_role did not confirm local admin authority");
   await page.waitForURL((url) => url.origin === base && url.pathname === "/my-learning");
   await page.getByRole("heading", { name: "My Masaarat journey", exact: true }).waitFor({ state: "visible" });
-  await page.waitForLoadState("networkidle");
   // Capture only the disposable synthetic account. Keep the frozen media gate unchanged.
-  for (const [name, width, height] of [["desktop", 1365, 900], ["mobile", 390, 844]]) {
-    await page.setViewportSize({ width, height });
-    if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1))
-      throw new Error(`My journey overflows the ${name} viewport`);
-    await page.screenshot({ path: join(out, `journey-${name}.png`), fullPage: true });
+  await page.getByRole("button", { name: "Decline", exact: true }).click();
+  for (const locale of ["en", "ar-EG"]) {
+    if (locale !== "en") await page.goto(`${base}/my-learning?locale=${locale}`, { waitUntil: "domcontentloaded" });
+    for (const path of ["ai:ai", "technical:furniture"])
+      await page.locator(`[data-journey-path="${path}"]`).waitFor({ state: "visible", timeout: 45_000 });
+    for (const [name, width, height] of [["desktop", 1365, 900], ["mobile", 390, 844]]) {
+      await page.setViewportSize({ width, height });
+      if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1))
+        throw new Error(`My journey overflows the ${locale} ${name} viewport`);
+      await page.screenshot({ path: join(out, `journey-${locale}-${name}.png`), fullPage: true });
+    }
   }
   // The lesson hard-navigation verifies the mirrored JWT cookie on the server.
   // A has_role response can arrive before AuthProvider finishes writing it;

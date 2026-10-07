@@ -235,3 +235,7 @@ sync_status: appended to the matching production roadmap row before implementati
 [roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 LC09 follow-up: classify journey_visits in the guarded existing erasure inventory, reuse lifecycle read/write blocking, and verify own/other bookmarks before auth deletion in the cumulative native test. Nine isolated migration tests passed; native CI revalidation pending. Production unchanged.
 
 [roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-151 authenticated successfully but its fixture waited for retired /dashboard. Update that wait to canonical /my-learning, require the rendered journey heading, and capture synthetic-account desktop/mobile receipts with overflow checks. Frozen video gate and its digest unchanged.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] Visual receipt review: CI534/LC09-77/B024-152 passed. Initial screenshots captured loading states. Wait for real AI/Technical cards and capture English/Egyptian desktop/mobile; hide the redundant floating return link on /my-learning and use its approved name across locales. No frozen gate changes.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] Billing289 passed concurrency and quiz ACL; its only Phase A failure was the stale exact migration inventory (11 already-merged files plus this additive journey migration). Extend the explicit expected list, retaining exact equality and every wrapper/permission assertion. No billing behavior or historical migration edited. Localized chrome test also reconciled with the existing main label Next step.

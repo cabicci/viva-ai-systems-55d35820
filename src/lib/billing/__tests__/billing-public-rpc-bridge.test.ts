@@ -175,6 +175,18 @@ describe("public billing RPC bridge — static", () => {
       "20261004012000_commerce_access.sql",
       "20261004013000_commerce_receipts_mail.sql",
       "20261004014000_commerce_account_retention.sql",
+      "20261004015000_commerce_payment_mail.sql",
+      "20261004016000_commerce_simple_offers.sql",
+      "20261005100000_technical_education_integration.sql",
+      "20261005101000_technical_stripe_test.sql",
+      "20261005102000_technical_subscription_mail.sql",
+      "20261005110000_admin_kids_lesson_review.sql",
+      "20261006110000_academic_commerce.sql",
+      "20261006111000_academic_content.sql",
+      "20261006112000_academic_stripe_test.sql",
+      "20261006113000_academic_mail_retention.sql",
+      "20261006120000_academic_admin_review.sql",
+      "20261007072809_unified_learning_journey.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
