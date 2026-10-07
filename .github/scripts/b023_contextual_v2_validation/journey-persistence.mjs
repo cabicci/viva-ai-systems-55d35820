@@ -22,7 +22,7 @@ mkdirSync(out); // Never overwrite a previous receipt.
 const { chromium } = createRequire(join(repo, "package.json"))("playwright");
 const locales = ["en", "ar-EG", "ar-MSA", "ar-Gulf"];
 const children = [randomUUID(), randomUUID()];
-const policy = randomUUID();
+let policy = randomUUID();
 const password = `${randomBytes(30).toString("base64url")}aA9!`;
 const users = [];
 const checks = [];
@@ -134,6 +134,10 @@ try {
     users.push({ id, email });
   }
   const user = users[0].id;
+  policy =
+    sql(
+      "SELECT id FROM public.kids_consent_policies WHERE country_code='EG' AND locale='en' AND enabled;",
+    ) || policy;
   // Fixture grants exercise the real entitlement authority, not a payment transaction.
   sql(`BEGIN;
     UPDATE billing.commerce_control SET access_enabled=true WHERE singleton;
@@ -145,7 +149,7 @@ try {
     UPDATE public.kids_release_control SET accepts_child_data=true,lesson_access_enabled=true WHERE singleton;
     UPDATE public.kids_market_release SET accepts_child_data=true,reviewed_at=now(),review_reference='disposable-journey-fixture' WHERE country_code='EG';
     INSERT INTO public.kids_consent_policies(id,country_code,version,locale,notice_text,consent_text,review_reference,enabled)
-      VALUES('${policy}','EG','journey-${policy}','en',repeat('Synthetic local privacy fixture. ',4),'Synthetic parent consent fixture.','disposable-journey-fixture',true);
+      VALUES('${policy}','EG','journey-${policy}','en',repeat('Synthetic local privacy fixture. ',4),'Synthetic parent consent fixture.','disposable-journey-fixture',true) ON CONFLICT(id) DO NOTHING;
     INSERT INTO public.kids_parent_access_requests(parent_id,parent_email,status,country_code,adult_confirmed)
       VALUES('${user}',${quote(users[0].email)},'approved','EG',true);
     INSERT INTO public.kids_parent_attestations(parent_id,policy_id,country_code) VALUES('${user}','${policy}','EG');
@@ -154,7 +158,7 @@ try {
     INSERT INTO public.kids_profile_consents(profile_id,parent_id,policy_id,guardian_reference)
       SELECT id,'${user}','${policy}','synthetic-local-parent' FROM public.kids_profiles WHERE parent_id='${user}';
     INSERT INTO public.kids_content_approvals(level_id,lesson_number,locale,approved_at,approval_reference,approved_sha256)
-      SELECT 'level-1',n,l,now(),'disposable-journey-fixture',repeat('0',64) FROM generate_series(1,3) n CROSS JOIN unnest(ARRAY['en','ar-EG','ar-MSA','ar-Gulf']) l;
+      SELECT 'level-1',n,l,now(),'disposable-journey-fixture',repeat('0',64) FROM generate_series(1,3) n CROSS JOIN unnest(ARRAY['en','ar-EG','ar-MSA','ar-Gulf']) l ON CONFLICT DO NOTHING;
     INSERT INTO public.technical_progress(user_id,lesson_id,read,quiz_passed,practice_reviewed) VALUES('${user}','M01-L01',true,true,true);
     INSERT INTO public.academic_progress(user_id,course_id,lesson_id,read,quiz_passed,practice_submitted) VALUES('${user}','AC-BUS','AC-BUS-M01-L01',true,true,true);
     COMMIT;`);
