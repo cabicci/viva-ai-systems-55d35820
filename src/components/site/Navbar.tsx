@@ -42,7 +42,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
   const authSearch = search({ returnTo });
   const [learningOpen, setLearningOpen] = useState(false);
   const aiLearningLinks = [
-    { to: "/dashboard", label: t("sidebar.dashboard") },
+    { to: "/my-learning", label: c.learning },
     { to: "/ai-assistant", label: t("sidebar.assistant") },
     { to: "/analytics", label: t("sidebar.analytics") },
   ];
@@ -53,6 +53,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
           label: c.paths,
         },
         { to: LINE_PRICING[line], label: c.plans },
+        ...(user && line === "kids" ? [{ to: "/my-learning", label: c.learning }] : []),
         ...(user && line !== "ai"
           ? [
               {

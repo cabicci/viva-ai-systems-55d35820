@@ -143,7 +143,7 @@ describe("learning lines and shared account navigation", () => {
           within(learning)
             .getAllByRole("link")
             .map((link) => new URL(link.getAttribute("href")!, "https://test").pathname),
-        ).toEqual(["/dashboard", "/ai-assistant", "/analytics"]);
+        ).toEqual(["/my-learning", "/ai-assistant", "/analytics"]);
         fireEvent.click(screen.getByRole("button", { name: c.learning }));
       }
       fireEvent.click(screen.getByRole("button", { name: "sidebar.account" }));

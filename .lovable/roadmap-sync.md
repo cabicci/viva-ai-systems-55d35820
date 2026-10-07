@@ -222,3 +222,10 @@ scope: ui
 source: user
 summary: Complete PR160/161 public QA by preserving all four locales and safe lesson return destinations through server verification, hydrated auth gate, login and signup. Make the Builder Egyptian locale explicit. No entitlement, payment or media changes.
 sync_status: matching roadmap row created before this marker; 58 tests, TypeScript and scoped lint passed; build, CI and production verification pending.
+
+## 2026-10-07 — Unified account journey
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40]
+scope: ui, db
+source: user
+summary: Owner approved My journey / رحلتي; one /my-learning destination, localized legacy dashboard redirect, per-product progress from existing records, child-specific summaries, durable resume bookmarks and explicit Kids completion marks. No quiz/mastery claim from opening or self-marking a step. Existing progress, lesson content, subscriptions, admin roles and media preserved.
+sync_status: appended to the matching production roadmap row before implementation checks. Candidate migration and UI only; production migration/publication pending.

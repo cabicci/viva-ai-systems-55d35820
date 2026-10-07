@@ -9,6 +9,9 @@ const state = vi.hoisted(() => ({
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: state.user, loading: false }) }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: "en" }) }));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => <header>Masaarat</header> }));
+vi.mock("@/components/journey/JourneyVisitRecorder", () => ({
+  JourneyVisitRecorder: () => <span data-testid="journey-visit" />,
+}));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => <footer>Masaarat</footer> }));
 vi.mock("@/lib/academic-education/client", () => ({
   academicCommand: state.command,
