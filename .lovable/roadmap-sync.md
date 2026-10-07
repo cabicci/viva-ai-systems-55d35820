@@ -1,3 +1,11 @@
+## 2026-10-07 — Multi-domain social sharing card
+
+[roadmap:b5525659-9af0-488c-b4ad-494e206e46be]
+scope: ui
+source: user
+summary: Replace AI-only social artwork with the approved umbrella headline and four learning fields. Preserve the exact original logo PNG without generation or retouching; use a new image URL for root Open Graph and Twitter metadata. Existing localized title and description remain intact.
+sync_status: draft implementation; publication prohibited by owner; roadmap row records the same scope
+
 ## 2026-10-05 — Released technical enrolment copy
 
 [roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]

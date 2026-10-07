@@ -40,8 +40,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         ...localizedMeta,
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
-        { name: "twitter:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
+        {
+          property: "og:image",
+          content: "https://masaarat.ai/brand/masaarat-og-all-domains-20261007.png",
+        },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        {
+          name: "twitter:image",
+          content: "https://masaarat.ai/brand/masaarat-og-all-domains-20261007.png",
+        },
       ],
       links: [
         { rel: "icon", href: "/brand/masaarat-icon.png", type: "image/png" },
