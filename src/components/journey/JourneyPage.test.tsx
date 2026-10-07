@@ -1,4 +1,4 @@
-import { render, screen, waitFor, within, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, within, cleanup, fireEvent } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
 import { JourneyPage } from "./JourneyPage";
@@ -12,7 +12,9 @@ const state = vi.hoisted(() => ({
   profiles: [] as { id: string; level_id: string; display_name: string }[],
   visits: [] as unknown[],
   rpc: vi.fn(),
+  selectChild: vi.fn(),
 }));
+vi.mock("@/lib/kids/active-profile", () => ({ setActiveKidsProfile: state.selectChild }));
 vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: state.user }, loading: false }),
 }));
@@ -147,6 +149,12 @@ it("keeps both children's progress independent and selects the child before resu
   );
   expect(container.querySelector('[data-journey-path="kids:child-a"]')).toHaveTextContent("1 / 2");
   expect(container.querySelector('[data-journey-path="kids:child-b"]')).toHaveTextContent("0 / 2");
+  const childB = container.querySelector('[data-journey-path="kids:child-b"]')!;
+  fireEvent.click(within(childB as HTMLElement).getByRole("link", { name: "Path contents" }));
+  expect(state.selectChild).toHaveBeenLastCalledWith("parent-a", "child-b");
+  const childA = container.querySelector('[data-journey-path="kids:child-a"]')!;
+  fireEvent.click(within(childA as HTMLElement).getByRole("link", { name: "Next step" }));
+  expect(state.selectChild).toHaveBeenLastCalledWith("parent-a", "child-a");
 });
 it("offers all Kids admin previews without invented child progress", async () => {
   state.admin = true;

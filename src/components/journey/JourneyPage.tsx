@@ -116,6 +116,7 @@ function PathCard({ path }: { path: PathView }) {
         )}
         <a
           href={path.contents}
+          onClick={path.onOpen}
           className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-5 font-semibold"
         >
           <BookOpen className="h-4 w-4" />
