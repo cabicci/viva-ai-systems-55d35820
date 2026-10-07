@@ -54,6 +54,8 @@ jobs:
         run: >-
           bunx vitest run
           src/lib/__tests__/central1-auth-integration.test.tsx
+          src/lib/__tests__/learner-route-guard.test.ts
+          src/lib/kids/auth-intent.test.ts
           src/lib/__tests__/locale-auth.test.ts
 
       - name: Academic written integration (no generation, payments or email sends)

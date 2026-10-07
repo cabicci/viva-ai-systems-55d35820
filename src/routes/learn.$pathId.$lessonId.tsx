@@ -18,6 +18,7 @@ import { useMemo, useState } from "react";
 import { useEffect, useRef } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { AuthSessionGate } from "@/lib/auth-route-guard";
+import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 import { requireLearnerBeforeLoad } from "@/lib/learner-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -208,8 +209,15 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
 });
 
 function LearnerLessonPage() {
+  const { locale } = useLocale();
+  const search = Route.useSearch();
+  const { pathId, lessonId } = Route.useParams();
+  const loginSearch = parseAuthIntentSearch({
+    locale: search.locale ?? locale,
+    returnTo: `/learn/${pathId}/${lessonId}`,
+  });
   return (
-    <AuthSessionGate>
+    <AuthSessionGate loginSearch={loginSearch}>
       <UnifiedLessonPage />
     </AuthSessionGate>
   );

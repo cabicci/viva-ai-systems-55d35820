@@ -25,6 +25,10 @@ const mocks = vi.hoisted(() => ({
   syncCookie: vi.fn(),
   toastError: vi.fn(),
   toastSuccess: vi.fn(),
+  assertLearnerSession: vi.fn(),
+}));
+vi.mock("@/lib/learner-auth.functions", () => ({
+  assertLearnerSession: mocks.assertLearnerSession,
 }));
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: {
@@ -70,6 +74,8 @@ vi.mock("@/components/kids/KidsFamilyPricing", () => ({ KidsFamilyPricing: () =>
 
 import { AuthProvider } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { requireLearnerBeforeLoad } from "@/lib/learner-route-guard";
+import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 import { Route as LoginFileRoute } from "@/routes/login";
 import { Route as PricingFileRoute } from "@/routes/pricing";
 
@@ -124,6 +130,7 @@ beforeEach(() => {
     },
   );
   mocks.signOut.mockResolvedValue({ error: null });
+  mocks.assertLearnerSession.mockResolvedValue(null);
   mocks.rpc.mockResolvedValue({ data: null, error: null });
   mocks.removeChannel.mockResolvedValue({ error: null });
   configureDataClients();
@@ -134,7 +141,10 @@ afterEach(() => {
 
 async function renderAt(
   initialEntry: string,
-  { guardDashboard = false }: { guardDashboard?: boolean } = {},
+  {
+    guardDashboard = false,
+    guardLesson = true,
+  }: { guardDashboard?: boolean; guardLesson?: boolean } = {},
 ) {
   const rootRoute = createRootRoute({
     component: () => (
@@ -191,12 +201,29 @@ async function renderAt(
       </AuthSessionGate>
     );
   }
+  const lessonPath = "/learn/builder/builder-m1-l1-what-is-llm";
+  const lessonRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: lessonPath,
+    validateSearch: (raw: Record<string, unknown>) => ({ locale: String(raw.locale ?? "ar-EG") }),
+    ...(guardLesson ? { beforeLoad: requireLearnerBeforeLoad } : {}),
+    component: LessonGate,
+  });
+  function LessonGate() {
+    const { locale } = lessonRoute.useSearch();
+    return (
+      <AuthSessionGate loginSearch={parseAuthIntentSearch({ locale, returnTo: lessonPath })}>
+        <div>protected-lesson</div>
+      </AuthSessionGate>
+    );
+  }
   const router = createRouter({
     routeTree: rootRoute.addChildren([
       loginRoute,
       dashboardRoute,
       pricingRoute,
       paymentRoute,
+      lessonRoute,
       ...(
         [
           "/my-learning",
@@ -235,6 +262,31 @@ function fillLoginForm() {
 }
 
 describe("central1 auth integration", () => {
+  it.each(
+    ["ar-EG", "ar-MSA", "ar-Gulf", "en"].flatMap((locale) =>
+      [true, false].map((guardLesson) => ({ locale, guardLesson })),
+    ),
+  )(
+    "preserves $locale through lesson authentication (server guard: $guardLesson)",
+    async ({ locale, guardLesson }) => {
+      const destination = "/learn/builder/builder-m1-l1-what-is-llm";
+      const router = await renderAt(`${destination}?locale=${locale}`, { guardLesson });
+      await waitFor(() => expect(router.state.location.pathname).toBe("/login"));
+      expect(router.state.location.search).toMatchObject({ locale, returnTo: destination });
+      expect(screen.queryByText("protected-lesson")).not.toBeInTheDocument();
+      mocks.signInWithPassword.mockImplementation(async () => {
+        mocks.getSession.mockResolvedValue({ data: { session: SESSION }, error: null });
+        mocks.assertLearnerSession.mockResolvedValue({ userId: SESSION.user.id });
+        mocks.authListener?.("SIGNED_IN", SESSION);
+        return { data: { session: SESSION }, error: null };
+      });
+      fillLoginForm();
+      fireEvent.click(screen.getByRole("button", { name: "auth.login.submit" }));
+      await waitFor(() => expect(router.state.location.pathname).toBe(destination));
+      expect(router.state.location.search).toMatchObject({ locale });
+      expect(await screen.findByText("protected-lesson")).toBeInTheDocument();
+    },
+  );
   it.each(["/my-learning", "/ai", "/kids", "/kids/pricing", "/technical", "/technical/pricing"])(
     "returns to %s with the chosen locale after login",
     async (destination) => {
