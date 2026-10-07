@@ -61,6 +61,8 @@ let browser;
 let gateResult;
 let failure;
 let cleanupError;
+let journeyPage;
+const journeyResponses = [];
 const blocked = new Set();
 const redact = (value) =>
   typeof value === "string"
@@ -185,6 +187,10 @@ try {
   // Runtime authority remains public.user_roles + has_role. The fixture grant uses
   // the exact loopback database because PostgREST has no service-role table grant.
   grantLocalAdminRole();
+  // Match the enabled Technical release in this disposable database only.
+  execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-qAt", "-c",
+    "UPDATE public.technical_release_control SET enabled=true WHERE singleton;"],
+    { encoding: "utf8", env: process.env });
   const options = { headless: true };
   if (process.env.B023_CHROME_EXECUTABLE)
     options.executablePath = process.env.B023_CHROME_EXECUTABLE;
@@ -199,6 +205,19 @@ try {
     } else await route.continue();
   });
   const page = await context.newPage();
+  journeyPage = page;
+  page.on("response", async (response) => {
+    const url = new URL(response.url());
+    if (url.origin === localSupabase && url.pathname.startsWith("/rest/v1/")) {
+      const item = { path: url.pathname, status: response.status() };
+      journeyResponses.push(item);
+      if (response.status() >= 400) {
+        const body = await response.json().catch(() => ({}));
+        item.code = body.code;
+        item.message = redact(body.message);
+      }
+    }
+  });
   page.setDefaultTimeout(25_000);
   await page.goto(`${base}/login?locale=en`, { waitUntil: "domcontentloaded", timeout: 30_000 });
   await page.locator('input[type="email"]').fill(email);
@@ -257,6 +276,13 @@ try {
   gateResult = await runFrozenGate(childEnv);
 } catch (error) {
   failure = error;
+  if (journeyPage && !journeyPage.isClosed()) {
+    await journeyPage.screenshot({ path: join(out, "journey-failure.png"), fullPage: true }).catch(() => {});
+    writeFileSync(join(out, "journey-runtime.json"), JSON.stringify({
+      head, responses: journeyResponses,
+      mainText: redact(await journeyPage.locator("main").innerText().catch(() => "unavailable")),
+    }, null, 2));
+  }
 } finally {
   if (browser) await browser.close().catch(() => {});
   if (userId) {
