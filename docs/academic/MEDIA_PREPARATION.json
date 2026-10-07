@@ -27,7 +27,7 @@
   ],
   "productionRunId": 37451264552,
   "productionRunUrl": "https://github.com/cabicci/viva-ai-systems-55d35820/actions/runs/37451264552",
-  "countStatus": "Verified original run collection 2026-10-07T10:27Z; recovery queued by owner authorization.",
+  "countStatus": "Original collection counts remain unchanged until recovery receipts are collected; recovery now in progress.",
   "writtenFirstIntegrationAuthorized": true,
   "readyVideosIncludingPilot": 140,
   "failedVideos": 19,
@@ -37,7 +37,11 @@
   "recovery": {
     "request": "scripts/academic-education/media-recovery-request.json",
     "maxParallel": 4,
-    "status": "prepared",
-    "focusedTestsPassed": 8
+    "status": "in_progress",
+    "focusedTestsPassed": 8,
+    "runId": 37618948414,
+    "runUrl": "https://github.com/cabicci/viva-ai-systems-55d35820/actions/runs/37618948414",
+    "commit": "8bf102519ab0c14eab6e94c4742905b71ff7c622",
+    "preparation": "passed eight focused tests and all 19 original production fingerprints"
   }
 }
