@@ -354,7 +354,7 @@ function PathBlock({
             <Link
               to="/learn/$pathId/$lessonId"
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
-              search={localeSearch()}
+              search={{ locale: "ar-EG", ...localeSearch() }}
             >
               <span className="truncate">
                 {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}

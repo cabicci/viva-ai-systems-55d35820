@@ -10,7 +10,11 @@ import { AuthShell } from "@/components/auth/AuthShell";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import { parseAuthIntentSearch, type AuthIntentSearch } from "@/lib/kids/auth-intent";
+import {
+  isLearnerAuthReturn,
+  parseAuthIntentSearch,
+  type AuthIntentSearch,
+} from "@/lib/kids/auth-intent";
 import { parsePaymentLoginSearch } from "@/lib/commerce/payment-links";
 import { loginErrorPresentation } from "@/lib/login-error";
 
@@ -54,6 +58,14 @@ function LoginPage() {
       navigate({
         to: search.paymentView === "admin" ? "/admin/commerce" : "/payments",
         search: { order: search.order, locale: search.locale },
+        replace: true,
+      });
+    } else if (isLearnerAuthReturn(search.returnTo)) {
+      const [, , pathId, lessonId] = search.returnTo.split("/");
+      navigate({
+        to: "/learn/$pathId/$lessonId",
+        params: { pathId, lessonId },
+        search: { locale: search.locale },
         replace: true,
       });
     } else if (search.returnTo) {

@@ -3,6 +3,7 @@ import { redirect, useNavigate } from "@tanstack/react-router";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { parseAuthIntentSearch, type AuthIntentSearch } from "@/lib/kids/auth-intent";
 
 function isRedirect(err: unknown): boolean {
   return !!err && typeof err === "object" && "to" in (err as Record<string, unknown>);
@@ -48,22 +49,28 @@ export function AuthSessionGate({
   children: ReactNode;
   /** Optional skeleton shown instead of the bare spinner while auth hydrates. */
   fallback?: ReactNode;
-  loginSearch?: { order: string; paymentView: "customer" | "admin" };
+  loginSearch?: AuthIntentSearch & { order?: string; paymentView?: "customer" | "admin" };
 }) {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
   const order = loginSearch?.order,
     paymentView = loginSearch?.paymentView;
+  const locale = loginSearch?.locale,
+    returnTo = loginSearch?.returnTo,
+    intent = loginSearch?.intent;
 
   useEffect(() => {
     if (!loading && !user) {
       navigate({
         to: "/login",
-        search: order && paymentView ? { order, paymentView } : undefined,
+        search: {
+          ...parseAuthIntentSearch({ locale, returnTo, intent }),
+          ...(order && paymentView ? { order, paymentView } : {}),
+        },
         replace: true,
       });
     }
-  }, [loading, user, navigate, order, paymentView]);
+  }, [loading, user, navigate, order, paymentView, locale, returnTo, intent]);
 
   if (loading || !user) {
     return <>{fallback ?? <AuthLoadingShell />}</>;

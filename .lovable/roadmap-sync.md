@@ -214,3 +214,11 @@ The owner supplied screenshots showing reversed hero actions. Academic now uses 
 
 ## [roadmap:path-story-20261006] Owner-approved unified learning journey
 Implement Masaarat → line paths → path introduction → optional stations → learning steps. Four contextual locales; shared admin/learner pages with existing server-authorised subscription bypass. One catalogue per line; legacy catalogue redirects. Preserve all source payloads, PDFs, Bunny mappings, production runs, billing rules, parental consent and profiles. Approval in owner chat 2026-10-06; About/vision/mission/values reflect the intellectual and knowledge growth narrative. Validation and deployment are reported separately.
+
+## 2026-10-07 — Learner login continuation
+
+[roadmap:2ed66ecf-84ce-4a5f-b5f5-85f5ff928d1f]
+scope: ui
+source: user
+summary: Complete PR160/161 public QA by preserving all four locales and safe lesson return destinations through server verification, hydrated auth gate, login and signup. Make the Builder Egyptian locale explicit. No entitlement, payment or media changes.
+sync_status: matching roadmap row created before this marker; 58 tests, TypeScript and scoped lint passed; build, CI and production verification pending.
