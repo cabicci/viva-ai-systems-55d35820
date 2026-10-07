@@ -70,3 +70,5 @@
 - Markdown imbalance was fixed deterministically without OpenAI / generation.
 - No OpenAI calls, generation, workflow dispatch, rerun, publish, runtime import, UI changes, or dev-server use during final clean bundle acceptance.
 - This entry is documentation-only; the artifact is not imported into the runtime or used in production.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] Owner authorized continuation without publication. Correct child-card contents selection; add disposable real Auth/PostgREST persistence, four-locale populated Academic/child screenshots and other-account denial to B024. Synthetic entitlement grants do not prove a payment transaction; Kids media/lesson end-to-end acceptance remains separate. Candidate only; no main merge, frontend publication or production migration.

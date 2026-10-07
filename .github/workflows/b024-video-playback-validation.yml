@@ -139,6 +139,10 @@ jobs:
           test "$(git rev-parse HEAD)" = "$B023_EXPECTED_GIT_HEAD"
           test -z "$(git status --porcelain=v1 --untracked-files=all)"
 
+      - name: Verify journey persistence with ordinary parent and isolated child profiles
+        timeout-minutes: 8
+        run: node .github/scripts/b023_contextual_v2_validation/journey-persistence.mjs
+
       - name: Always stop preview and disposable database
         if: ${{ always() }}
         shell: bash
@@ -166,5 +170,8 @@ jobs:
             ${{ env.B023_RECEIPTS_ROOT }}/browser/b024-video-playback-gate.json
             ${{ env.B023_RECEIPTS_ROOT }}/browser/fixture-and-gate-receipt.json
             ${{ env.B023_RECEIPTS_ROOT }}/browser/gate.stderr.log
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/journey-*.png
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/journey-runtime.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/persistence/**
           if-no-files-found: warn
           retention-days: 14

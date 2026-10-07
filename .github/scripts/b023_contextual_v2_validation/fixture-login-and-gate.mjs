@@ -61,6 +61,8 @@ let browser;
 let gateResult;
 let failure;
 let cleanupError;
+let journeyPage;
+const journeyResponses = [];
 const blocked = new Set();
 const redact = (value) =>
   typeof value === "string"
@@ -185,6 +187,15 @@ try {
   // Runtime authority remains public.user_roles + has_role. The fixture grant uses
   // the exact loopback database because PostgREST has no service-role table grant.
   grantLocalAdminRole();
+  // Match the enabled Technical release in this disposable database only.
+  execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-qAt", "-c",
+    "UPDATE public.technical_release_control SET enabled=true WHERE singleton;"],
+    { encoding: "utf8", env: process.env });
+  // Fresh CLI databases lack these historical Data API grants. Match the
+  // production grants verified read-only on 2026-10-07, never disable RLS.
+  execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-qAt", "-c",
+    "GRANT SELECT,INSERT,UPDATE ON public.lesson_progress,public.user_active_device TO authenticated; GRANT SELECT ON public.user_mission_state,public.build_logs TO authenticated;"],
+    { encoding: "utf8", env: process.env });
   const options = { headless: true };
   if (process.env.B023_CHROME_EXECUTABLE)
     options.executablePath = process.env.B023_CHROME_EXECUTABLE;
@@ -199,6 +210,19 @@ try {
     } else await route.continue();
   });
   const page = await context.newPage();
+  journeyPage = page;
+  page.on("response", async (response) => {
+    const url = new URL(response.url());
+    if (url.origin === localSupabase && url.pathname.startsWith("/rest/v1/")) {
+      const item = { path: url.pathname, status: response.status() };
+      journeyResponses.push(item);
+      if (response.status() >= 400) {
+        const body = await response.json().catch(() => ({}));
+        item.code = body.code;
+        item.message = redact(body.message);
+      }
+    }
+  });
   page.setDefaultTimeout(25_000);
   await page.goto(`${base}/login?locale=en`, { waitUntil: "domcontentloaded", timeout: 30_000 });
   await page.locator('input[type="email"]').fill(email);
@@ -222,7 +246,21 @@ try {
     throw new Error("Normal UI login did not authenticate the exact local fixture");
   if (!adminResponse.ok() || (await adminResponse.json()) !== true)
     throw new Error("Real browser has_role did not confirm local admin authority");
-  await page.waitForURL((url) => url.origin === base && url.pathname === "/dashboard");
+  await page.waitForURL((url) => url.origin === base && url.pathname === "/my-learning");
+  await page.getByRole("heading", { name: "My Masaarat journey", exact: true }).waitFor({ state: "visible" });
+  // Capture only the disposable synthetic account. Keep the frozen media gate unchanged.
+  await page.getByRole("button", { name: "Decline", exact: true }).click();
+  for (const locale of ["en", "ar-EG"]) {
+    if (locale !== "en") await page.goto(`${base}/my-learning?locale=${locale}`, { waitUntil: "domcontentloaded" });
+    for (const path of ["ai:ai", "technical:furniture"])
+      await page.locator(`[data-journey-path="${path}"]`).waitFor({ state: "visible", timeout: 45_000 });
+    for (const [name, width, height] of [["desktop", 1365, 900], ["mobile", 390, 844]]) {
+      await page.setViewportSize({ width, height });
+      if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1))
+        throw new Error(`My journey overflows the ${locale} ${name} viewport`);
+      await page.screenshot({ path: join(out, `journey-${locale}-${name}.png`), fullPage: true });
+    }
+  }
   // The lesson hard-navigation verifies the mirrored JWT cookie on the server.
   // A has_role response can arrive before AuthProvider finishes writing it;
   // capture state only once the normal login has established both stores.
@@ -243,6 +281,13 @@ try {
   gateResult = await runFrozenGate(childEnv);
 } catch (error) {
   failure = error;
+  if (journeyPage && !journeyPage.isClosed()) {
+    await journeyPage.screenshot({ path: join(out, "journey-failure.png"), fullPage: true }).catch(() => {});
+    writeFileSync(join(out, "journey-runtime.json"), JSON.stringify({
+      head, responses: journeyResponses,
+      mainText: redact(await journeyPage.locator("main").innerText().catch(() => "unavailable")),
+    }, null, 2));
+  }
 } finally {
   if (browser) await browser.close().catch(() => {});
   if (userId) {
@@ -260,7 +305,7 @@ const receipt = {
   localSupabaseOrigin: localSupabase,
   baseOrigin: base,
   fixtureId,
-  authMethod: "normal login form → password token endpoint → dashboard has_role",
+  authMethod: "normal login form → password token endpoint → stored has_role → My journey",
   authority: "public.user_roles(role=admin) via exact disposable local PostgreSQL fixture insert",
   fixtureDeleted: Boolean(userId) && !cleanupError,
   credentialFileRemoved: true,

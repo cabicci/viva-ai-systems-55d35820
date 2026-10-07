@@ -37,6 +37,11 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
         VALUES('${child}','${user}','Synthetic A','level-1'),('${otherChild}','${other}','Synthetic B','level-1');
       INSERT INTO public.kids_lesson_progress(profile_id,level_id,lesson_number,locale)
         VALUES('${child}','level-1',1,'en'),('${otherChild}','level-1',1,'en');
+      INSERT INTO public.journey_visits(user_id,line,course_id,subject_id,profile_id,lesson_id,locale)
+        VALUES('${user}','ai','ai','${user}',NULL,'intro','en'),
+        ('${user}','kids','level-1','${child}','${child}','1','en'),
+        ('${other}','ai','ai','${other}',NULL,'intro','en'),
+        ('${other}','kids','level-1','${otherChild}','${otherChild}','1','en');
       INSERT INTO public.kids_retention_notices(parent_id,expiry,recipient_email,profile_ids)
         VALUES('${user}',now(),'synthetic@example.test',ARRAY['${child}']::uuid[]);
       INSERT INTO public.kids_stripe_events(event_id,parent_id) VALUES('evt_native_${child.replaceAll("-", "")}','${user}');
@@ -47,6 +52,8 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       CREATE TEMP TABLE deletion_claim AS SELECT public.lc09_claim_deletion('${user}') AS claim;
       SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM deletion_claim),'provider_reconciled');
       SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM deletion_claim),'learner_erased');
+      SELECT json_build_object('own_visits_before_auth_delete',(SELECT count(*) FROM public.journey_visits WHERE user_id='${user}'),
+        'other_visits',(SELECT count(*) FROM public.journey_visits WHERE user_id='${other}'));
       DELETE FROM auth.users WHERE id='${user}';
       SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM deletion_claim),'complete');
       SELECT json_build_object('removed',(SELECT count(*) FROM public.kids_profiles WHERE parent_id='${user}'),
@@ -59,6 +66,7 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
         'email_snapshot',(SELECT contact_recipient FROM billing.account_deletion_lifecycle WHERE user_id='${user}'));
       ROLLBACK;`);
       expect(out).toContain('"stage": "complete"');
+      expect(out).toContain('"own_visits_before_auth_delete" : 0, "other_visits" : 2');
       expect(out).toContain(
         '"removed" : 0, "other_progress" : 1, "receipts" : 1, "recipients" : 0, "own_mail" : 0, "own_mail_receipts" : 0, "other_mail" : 1, "email_snapshot" : null',
       );

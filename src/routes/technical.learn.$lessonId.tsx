@@ -1,3 +1,4 @@
+import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
@@ -62,6 +63,12 @@ export function TechnicalLessonPage() {
         </main>
       ) : (
         <>
+          <JourneyVisitRecorder
+            line="technical"
+            course="furniture"
+            lesson={lessonId}
+            locale={locale}
+          />
           <div className="mx-auto max-w-7xl px-4 pt-6">
             <a
               className="font-bold text-primary"

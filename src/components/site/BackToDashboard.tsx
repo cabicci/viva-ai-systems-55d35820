@@ -5,6 +5,7 @@ import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const HIDDEN_PREFIXES = [
+  "/my-learning",
   "/dashboard",
   "/ai-assistant",
   "/login",
@@ -29,7 +30,7 @@ export function BackToDashboard() {
 
   return (
     <Link
-      to="/dashboard"
+      to="/my-learning"
       search={localeSearch()}
       aria-label={t("common.backToDashboard")}
       className="fixed bottom-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-border/60 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"

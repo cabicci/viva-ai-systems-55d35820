@@ -1,3 +1,4 @@
+import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import {
   ArrowLeft,
@@ -505,6 +506,7 @@ function UnifiedLessonPage() {
 
         {isGateReady && gate.kind === "open" && (
           <>
+            <JourneyVisitRecorder line="ai" course="ai" lesson={lesson.id} locale={locale} />
             <LessonNotes lessonId={lesson.id} />
             <DifficultyPrompt
               lessonId={lesson.id}

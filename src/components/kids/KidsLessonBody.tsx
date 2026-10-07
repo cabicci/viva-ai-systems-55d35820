@@ -1,3 +1,5 @@
+import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
+import { KidsStepCompletion } from "@/components/journey/KidsStepCompletion";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
@@ -109,6 +111,13 @@ export function KidsLessonBody({
 
   return (
     <div className="space-y-8">
+      <JourneyVisitRecorder
+        line="kids"
+        course={levelId}
+        lesson={String(lessonNumber)}
+        locale={locale}
+        profile={profileId}
+      />
       <header className="rounded-3xl border border-primary/20 bg-[var(--pastel-lavender)] p-6 md:p-9">
         <p className="text-sm font-bold text-primary">
           {copy.level} {Number(levelId.slice(-1))} · {copy.lesson} {lessonNumber}
@@ -296,6 +305,12 @@ export function KidsLessonBody({
           )}
         </section>
       )}
+      <KidsStepCompletion
+        profile={profileId}
+        level={levelId}
+        lesson={lessonNumber}
+        locale={locale}
+      />
     </div>
   );
 }
