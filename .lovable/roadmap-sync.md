@@ -229,3 +229,5 @@ scope: ui, db
 source: user
 summary: Owner approved My journey / رحلتي; one /my-learning destination, localized legacy dashboard redirect, per-product progress from existing records, child-specific summaries, durable resume bookmarks and explicit Kids completion marks. No quiz/mastery claim from opening or self-marking a step. Existing progress, lesson content, subscriptions, admin roles and media preserved.
 sync_status: appended to the matching production roadmap row before implementation checks. Candidate migration and UI only; production migration/publication pending.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 follow-up: retain localized legacy dashboard head for the existing localization contract; new journey tests join the existing CI navigation gate. CI532 found this route-head contract before build; no gate disabled.
