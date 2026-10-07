@@ -1,3 +1,11 @@
+## 2026-10-07 — Multi-domain social sharing card
+
+[roadmap:b5525659-9af0-488c-b4ad-494e206e46be]
+scope: ui
+source: user
+summary: Replace AI-only social artwork with the approved umbrella headline and four learning fields. Preserve the exact original logo PNG without generation or retouching; use a new image URL for root Open Graph and Twitter metadata. Existing localized title and description remain intact.
+sync_status: draft implementation; publication prohibited by owner; roadmap row records the same scope
+
 ## 2026-10-05 — Released technical enrolment copy
 
 [roadmap:1e5f7920-f35b-4407-9bc0-17c9ff429489]
@@ -243,3 +251,12 @@ sync_status: appended to the matching production roadmap row before implementati
 [roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-153 stricter loaded-card gate failed waiting for AI. Retain that gate and capture sanitized local REST status paths/UI text on failure for diagnosis. Seed the Technical enabled flag in the disposable fixture only, matching its released state; no production flags or data changed.
 
 [roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-154 receipt confirmed HTTP403/42501 from legacy lesson_progress/user_active_device/user_mission_state/build_logs in the fresh CLI database. Production read-only inspection confirms the corresponding authenticated grants. Restore only required grants in the bounded disposable fixture, retain every RLS policy and the loaded-card assertion. The UI correctly showed an explicit progress-load error; no fake zero progress. New journey_visits RPC/table returned200. Production unchanged.
+
+
+## 2026-10-07 — owner-authorized website release
+
+roadmap_id: b5525659-9af0-488c-b4ad-494e206e46be
+source: user
+scope: ui
+summary: Owner explicitly authorized merging and publishing the reviewed My journey and original-logo social card. PR163 merged at e1f270b9; social-card candidate synchronizes that base and its exact migration inventory. Preserve payments, entitlements and Academic media production. The branded promotional video is a delivered standalone creative, not a new homepage feature or social post.
+sync_status: controlled release in progress; apply the reviewed journey migration before frontend deployment, verify current-head checks and live output, then reconcile both continuation registers. This supersedes the earlier no-publication hold only for this release.

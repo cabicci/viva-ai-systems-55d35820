@@ -415,6 +415,47 @@ export type Database = {
           },
         ]
       }
+      journey_visits: {
+        Row: {
+          course_id: string
+          lesson_id: string
+          line: string
+          locale: string
+          profile_id: string | null
+          subject_id: string
+          user_id: string
+          visited_at: string
+        }
+        Insert: {
+          course_id: string
+          lesson_id: string
+          line: string
+          locale: string
+          profile_id?: string | null
+          subject_id: string
+          user_id: string
+          visited_at?: string
+        }
+        Update: {
+          course_id?: string
+          lesson_id?: string
+          line?: string
+          locale?: string
+          profile_id?: string | null
+          subject_id?: string
+          user_id?: string
+          visited_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_visits_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "kids_profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       kids_consent_policies: {
         Row: {
           consent_text: string
@@ -2445,6 +2486,15 @@ export type Database = {
         }
         Returns: boolean
       }
+      complete_kids_step: {
+        Args: {
+          p_lesson: number
+          p_level: string
+          p_locale: string
+          p_profile: string
+        }
+        Returns: boolean
+      }
       complete_subscription_mail: {
         Args: {
           p_block: boolean
@@ -2599,6 +2649,10 @@ export type Database = {
       kids_delete_expired_profiles: {
         Args: { p_notice: string }
         Returns: number
+      }
+      kids_journey: {
+        Args: { p_locale: string; p_profile: string }
+        Returns: Json
       }
       kids_parent_can_manage_profiles: { Args: never; Returns: boolean }
       kids_parent_confirm_privacy: {

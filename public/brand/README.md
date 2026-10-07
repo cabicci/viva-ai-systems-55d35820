@@ -26,6 +26,9 @@ Do **not** document or wire `masaarat-logo-horizontal.png` as the Navbar lockup 
 | `masaarat-logo-horizontal.png` | Horizontal crop (symbol + مسارات, no `masaarat.ai`). **Not** the current Navbar/Sidebar runtime source. |
 | `masaarat-logo-horizontal-rtl.png` | RTL horizontal variant. Reserved for future placements; not current runtime lockup. |
 | `masaarat-icon.png` | Symbol-only mark. **Wired** in `src/routes/__root.tsx` as favicon + apple-touch-icon (`/brand/masaarat-icon.png`). |
+| `masaarat-og-all-domains-20261007.png` | 1200 × 630 sharing card covering AI, Kids, Technical and Academic learning. Uses the unchanged approved lockup PNG; root Open Graph and Twitter image point here. |
+
+Rebuild the sharing card with `node scripts/brand/render-social-card.mjs` in the installed project on Linux. The approved logo PNG is composited unchanged at its original dimensions; the native layout and Arabic text use the existing Tajawal font. The legacy `masaarat-og.png` is retained for existing references.
 
 ## Rules
 
