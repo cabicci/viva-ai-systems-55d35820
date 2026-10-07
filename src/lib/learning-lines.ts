@@ -34,15 +34,7 @@ export function learningLineForPath(path: string): LearningLine | null {
   if (path === "/technical" || path.startsWith("/technical/")) return "technical";
   if (
     path.startsWith("/ai/") ||
-    [
-      "/ai",
-      "/pricing",
-      "/curriculum",
-      "/dashboard",
-      "/analytics",
-      "/ai-assistant",
-      "/intro",
-    ].includes(path) ||
+    ["/ai", "/pricing", "/curriculum", "/analytics", "/ai-assistant", "/intro"].includes(path) ||
     path.startsWith("/learn/") ||
     path.startsWith("/mission/") ||
     path.startsWith("/intro/")
@@ -80,7 +72,7 @@ const copy = {
   switch: ["غيّر مجال التعلّم", "تبديل مجال التعلّم", "غيّر مجال التعلّم", "Switch learning line"],
   about: ["عن مسارات", "عن مسارات", "عن مسارات", "About Masaarat"],
   home: ["مسارات الرئيسية", "مسارات الرئيسية", "مسارات الرئيسية", "Masaarat home"],
-  learning: ["تعلّمي", "تعلّمي", "تعلّمي", "My learning"],
+  learning: ["رحلتي", "رحلتي", "رحلتي", "My journey"],
   adminTools: [
     "أدوات الإدارة الإضافية",
     "أدوات الإدارة الإضافية",

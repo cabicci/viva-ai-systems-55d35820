@@ -222,3 +222,24 @@ scope: ui
 source: user
 summary: Complete PR160/161 public QA by preserving all four locales and safe lesson return destinations through server verification, hydrated auth gate, login and signup. Make the Builder Egyptian locale explicit. No entitlement, payment or media changes.
 sync_status: matching roadmap row created before this marker; 58 tests, TypeScript and scoped lint passed; build, CI and production verification pending.
+
+## 2026-10-07 — Unified account journey
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40]
+scope: ui, db
+source: user
+summary: Owner approved My journey / رحلتي; one /my-learning destination, localized legacy dashboard redirect, per-product progress from existing records, child-specific summaries, durable resume bookmarks and explicit Kids completion marks. No quiz/mastery claim from opening or self-marking a step. Existing progress, lesson content, subscriptions, admin roles and media preserved.
+sync_status: appended to the matching production roadmap row before implementation checks. Candidate migration and UI only; production migration/publication pending.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 follow-up: retain localized legacy dashboard head for the existing localization contract; new journey tests join the existing CI navigation gate. CI532 found this route-head contract before build; no gate disabled.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 LC09 follow-up: classify journey_visits in the guarded existing erasure inventory, reuse lifecycle read/write blocking, and verify own/other bookmarks before auth deletion in the cumulative native test. Nine isolated migration tests passed; native CI revalidation pending. Production unchanged.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-151 authenticated successfully but its fixture waited for retired /dashboard. Update that wait to canonical /my-learning, require the rendered journey heading, and capture synthetic-account desktop/mobile receipts with overflow checks. Frozen video gate and its digest unchanged.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] Visual receipt review: CI534/LC09-77/B024-152 passed. Initial screenshots captured loading states. Wait for real AI/Technical cards and capture English/Egyptian desktop/mobile; hide the redundant floating return link on /my-learning and use its approved name across locales. No frozen gate changes.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] Billing289 passed concurrency and quiz ACL; its only Phase A failure was the stale exact migration inventory (11 already-merged files plus this additive journey migration). Extend the explicit expected list, retaining exact equality and every wrapper/permission assertion. No billing behavior or historical migration edited. Localized chrome test also reconciled with the existing main label Next step.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-153 stricter loaded-card gate failed waiting for AI. Retain that gate and capture sanitized local REST status paths/UI text on failure for diagnosis. Seed the Technical enabled flag in the disposable fixture only, matching its released state; no production flags or data changed.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-154 receipt confirmed HTTP403/42501 from legacy lesson_progress/user_active_device/user_mission_state/build_logs in the fresh CLI database. Production read-only inspection confirms the corresponding authenticated grants. Restore only required grants in the bounded disposable fixture, retain every RLS policy and the loaded-card assertion. The UI correctly showed an explicit progress-load error; no fake zero progress. New journey_visits RPC/table returned200. Production unchanged.

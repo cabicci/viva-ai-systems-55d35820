@@ -26,7 +26,13 @@ export function useLessonProgress() {
   const userId = user?.id ?? null;
   const qc = useQueryClient();
 
-  const { data: store = {}, isSuccess, isFetched } = useQuery({
+  const {
+    data: store = {},
+    isSuccess,
+    isFetched,
+    isError,
+    refetch,
+  } = useQuery({
     queryKey: [...QK, userId],
     queryFn: () => fetchProgress(userId),
     enabled: !!userId,
@@ -38,10 +44,7 @@ export function useLessonProgress() {
       if (!userId) throw new Error("Not authenticated");
       const { error } = await supabase
         .from("lesson_progress")
-        .upsert(
-          { user_id: userId, lesson_id: id, status },
-          { onConflict: "user_id,lesson_id" },
-        );
+        .upsert({ user_id: userId, lesson_id: id, status }, { onConflict: "user_id,lesson_id" });
       if (error) throw error;
       // user_lesson_status is kept in sync by a DB trigger
       // (sync_lesson_status_mirror). No client-side mirror needed.
@@ -74,6 +77,8 @@ export function useLessonProgress() {
 
   return {
     store,
+    isError,
+    refetch,
     getStatus,
     setStatus,
     isLoaded: !loading && (!userId || isSuccess || isFetched),

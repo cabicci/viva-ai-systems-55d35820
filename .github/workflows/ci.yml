@@ -67,6 +67,9 @@ jobs:
       - name: Learning lines and shared navigation (isolated clients)
         run: >-
           bunx vitest run
+          src/components/journey
+          src/lib/journey
+          src/lib/__tests__/dashboard-progress-loading.test.ts
           src/components/site/Navbar.test.tsx
           src/components/site/LinePages.test.tsx
           src/lib/kids/kids-nested-routes.test.tsx

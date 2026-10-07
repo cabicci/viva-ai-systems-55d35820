@@ -1,3 +1,4 @@
+import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
@@ -52,18 +53,26 @@ export function AcademicLessonPage({ courseId, lessonId }: { courseId: string; l
               : "يتطلب هذا الدرس اشتراكًا ساريًا في مسارات أكاديمي."}
           </p>
         ) : (
-          <AuthorizedLesson
-            key={`${user.id}:${courseId}:${lessonId}:${locale}`}
-            delivery={query.data}
-            locale={locale}
-            courseId={courseId}
-            revoke={() => {
-              queryClient.setQueryData(academicQueryKey(user?.id, courseId, lessonId, locale), {
-                allowed: false,
-              });
-              void query.refetch();
-            }}
-          />
+          <>
+            <JourneyVisitRecorder
+              line="academic"
+              course={courseId}
+              lesson={lessonId}
+              locale={locale}
+            />
+            <AuthorizedLesson
+              key={`${user.id}:${courseId}:${lessonId}:${locale}`}
+              delivery={query.data}
+              locale={locale}
+              courseId={courseId}
+              revoke={() => {
+                queryClient.setQueryData(academicQueryKey(user?.id, courseId, lessonId, locale), {
+                  allowed: false,
+                });
+                void query.refetch();
+              }}
+            />
+          </>
         )}
       </main>
       <Footer />
@@ -150,7 +159,10 @@ function AuthorizedLesson({
   }
   return (
     <>
-      <a className="font-bold text-primary" href={`/academic/courses/${courseId}/contents?locale=${locale}`}>
+      <a
+        className="font-bold text-primary"
+        href={`/academic/courses/${courseId}/contents?locale=${locale}`}
+      >
         {c.backToCurriculum}
       </a>
       {delivery.reviewOnly && (
