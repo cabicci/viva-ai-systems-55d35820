@@ -231,3 +231,7 @@ summary: Owner approved My journey / رحلتي; one /my-learning destination, l
 sync_status: appended to the matching production roadmap row before implementation checks. Candidate migration and UI only; production migration/publication pending.
 
 [roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 follow-up: retain localized legacy dashboard head for the existing localization contract; new journey tests join the existing CI navigation gate. CI532 found this route-head contract before build; no gate disabled.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] PR163 LC09 follow-up: classify journey_visits in the guarded existing erasure inventory, reuse lifecycle read/write blocking, and verify own/other bookmarks before auth deletion in the cumulative native test. Nine isolated migration tests passed; native CI revalidation pending. Production unchanged.
+
+[roadmap:421c000b-e7e8-4a13-a2d4-85920e6c7f40] B024-151 authenticated successfully but its fixture waited for retired /dashboard. Update that wait to canonical /my-learning, require the rendered journey heading, and capture synthetic-account desktop/mobile receipts with overflow checks. Frozen video gate and its digest unchanged.

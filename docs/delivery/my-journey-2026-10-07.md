@@ -6,7 +6,7 @@ The page presents one AI path, the Technical furniture path, server-returned Aca
 
 ## Durable resume and Kids completion
 
-The additive migration 20261007072809_unified_learning_journey creates account/child-scoped resume bookmarks with RLS, server timestamps, and deletion cascades. Bookmarks never grant access or imply completion. Consumers revalidate the stored lesson against their current catalogue and access. Existing progress is retained. Resume history begins when the new authorized lesson recorder is deployed; no historical visits are fabricated.
+The additive migration 20261007072809_unified_learning_journey creates account/child-scoped resume bookmarks with RLS, server timestamps, and deletion cascades. It joins the existing explicit account-erasure inventory and reuses its read/write blocking during deletion. Bookmarks never grant access or imply completion. Consumers revalidate the stored lesson against their current catalogue and access. Existing progress is retained. Resume history begins when the new authorized lesson recorder is deployed; no historical visits are fabricated.
 
 Existing Kids lessons had a progress table but no completion writer. An explicit learner/guardian completion button now writes that existing table through an ownership-checked function that reuses kids_can_access_lesson. This records completion of activities, not a quiz score, mastery or inferred video viewing. Marks remain locale-specific under the existing schema. Quiz answer selections are still transient; this change does not claim persisted quiz attempts. Admin preview is excluded.
 
@@ -14,6 +14,7 @@ Existing Kids lessons had a progress table but no completion writer. An explicit
 
 - 103 tests passed across 12 targeted files: summary/resume selection, four locales, Pro restriction, child separation, query errors, navigation, actual Technical/Academic SQL integrations, existing parent and lesson guards, and new migration RLS/idempotency/cascade tests.
 - New migration tests run against a disposable PGlite database; they do not mutate production learners.
+- Follow-up: all nine migration tests passed, including blocking bookmark reads and privileged writes during deletion. The existing native cumulative deletion test now asserts that own adult/child bookmarks are erased before auth deletion while the other family's bookmarks remain. CI revalidation is pending; this closes the missing inventory classification found by LC09-76.
 - Technical test fixture was prepared locally with the existing import.ts --prepare command. No import/upload was performed.
 - TypeScript passed; scoped lint passed with one existing Fast Refresh warning.
 - Client/server build passed; roadmap and contextual-visual guards passed.

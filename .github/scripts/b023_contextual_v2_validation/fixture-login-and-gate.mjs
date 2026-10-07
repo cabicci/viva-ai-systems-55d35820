@@ -222,7 +222,16 @@ try {
     throw new Error("Normal UI login did not authenticate the exact local fixture");
   if (!adminResponse.ok() || (await adminResponse.json()) !== true)
     throw new Error("Real browser has_role did not confirm local admin authority");
-  await page.waitForURL((url) => url.origin === base && url.pathname === "/dashboard");
+  await page.waitForURL((url) => url.origin === base && url.pathname === "/my-learning");
+  await page.getByRole("heading", { name: "My Masaarat journey", exact: true }).waitFor({ state: "visible" });
+  await page.waitForLoadState("networkidle");
+  // Capture only the disposable synthetic account. Keep the frozen media gate unchanged.
+  for (const [name, width, height] of [["desktop", 1365, 900], ["mobile", 390, 844]]) {
+    await page.setViewportSize({ width, height });
+    if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1))
+      throw new Error(`My journey overflows the ${name} viewport`);
+    await page.screenshot({ path: join(out, `journey-${name}.png`), fullPage: true });
+  }
   // The lesson hard-navigation verifies the mirrored JWT cookie on the server.
   // A has_role response can arrive before AuthProvider finishes writing it;
   // capture state only once the normal login has established both stores.
@@ -260,7 +269,7 @@ const receipt = {
   localSupabaseOrigin: localSupabase,
   baseOrigin: base,
   fixtureId,
-  authMethod: "normal login form → password token endpoint → dashboard has_role",
+  authMethod: "normal login form → password token endpoint → stored has_role → My journey",
   authority: "public.user_roles(role=admin) via exact disposable local PostgreSQL fixture insert",
   fixtureDeleted: Boolean(userId) && !cleanupError,
   credentialFileRemoved: true,

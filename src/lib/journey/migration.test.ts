@@ -24,7 +24,26 @@ beforeAll(async () => {
  CREATE TABLE public.kids_profiles(id uuid PRIMARY KEY,parent_id uuid,level_id text); INSERT INTO kids_profiles VALUES('${child}','${user}','level-1'),('${child2}','${other}','level-1'); ALTER TABLE kids_profiles ENABLE ROW LEVEL SECURITY; GRANT SELECT ON kids_profiles TO authenticated; CREATE POLICY owner ON kids_profiles FOR SELECT TO authenticated USING(parent_id=auth.uid());
  CREATE FUNCTION public.kids_parent_can_manage_profiles() RETURNS boolean LANGUAGE sql STABLE AS $$ SELECT coalesce(current_setting('test.parent',true),'yes')='yes' $$;
  CREATE FUNCTION public.kids_can_access_lesson(uuid,text,integer,text) RETURNS boolean LANGUAGE sql STABLE AS $$ SELECT coalesce(current_setting('test.access',true),'yes')='yes' AND $3 BETWEEN 1 AND 12 AND $4 IN ('en','ar-EG','ar-MSA','ar-Gulf') $$;
- CREATE TABLE kids_lesson_progress(profile_id uuid REFERENCES kids_profiles(id) ON DELETE CASCADE,level_id text,lesson_number integer,locale text,recorded_at timestamptz DEFAULT now(),PRIMARY KEY(profile_id,level_id,lesson_number,locale));`);
+ CREATE TABLE kids_lesson_progress(profile_id uuid REFERENCES kids_profiles(id) ON DELETE CASCADE,level_id text,lesson_number integer,locale text,recorded_at timestamptz DEFAULT now(),PRIMARY KEY(profile_id,level_id,lesson_number,locale));
+ CREATE SCHEMA billing;
+ CREATE FUNCTION billing.account_deletion_blocked(uuid) RETURNS boolean LANGUAGE sql AS $$ SELECT coalesce(current_setting('test.blocked',true),'no')='yes' $$;
+ CREATE FUNCTION public.lc09_account_active() RETURNS boolean LANGUAGE sql AS $$ SELECT NOT billing.account_deletion_blocked(auth.uid()) $$;
+ GRANT USAGE ON SCHEMA billing TO authenticated;
+ -- Dependency fixture only; account-deletion-native.test.ts exercises the real cumulative erasure function.
+ CREATE FUNCTION public.commerce_previous_lc09_advance_deletion(uuid,uuid,text) RETURNS jsonb LANGUAGE sql AS $$ SELECT jsonb_build_array('academic_progress') $$;`);
+  const lifecycle = readFileSync(
+    "supabase/migrations/20261001153000_account_deletion_lifecycle.sql",
+    "utf8",
+  );
+  await db.exec(
+    lifecycle.slice(
+      lifecycle.indexOf("CREATE FUNCTION billing.lc09_block_learner_write()"),
+      lifecycle.indexOf(
+        "DO $$ DECLARE r record; BEGIN",
+        lifecycle.indexOf("CREATE FUNCTION billing.lc09_block_learner_write()"),
+      ),
+    ),
+  );
   await db.exec(
     readFileSync("supabase/migrations/20261007072809_unified_learning_journey.sql", "utf8"),
   );
@@ -32,7 +51,7 @@ beforeAll(async () => {
 afterAll(() => db.close());
 beforeEach(async () => {
   await db.exec(
-    "RESET ROLE; TRUNCATE journey_visits,kids_lesson_progress; SELECT set_config('test.parent','yes',false),set_config('test.access','yes',false)",
+    "RESET ROLE; TRUNCATE journey_visits,kids_lesson_progress; SELECT set_config('test.parent','yes',false),set_config('test.access','yes',false),set_config('test.blocked','no',false)",
   );
   await caller();
 });
@@ -67,6 +86,14 @@ it("does not show child bookmarks after guardian approval is withdrawn", async (
   await visit("kids", child, child);
   await db.exec("SELECT set_config('test.parent','no',false)");
   expect((await db.query("SELECT * FROM journey_visits")).rows).toHaveLength(0);
+});
+it("blocks bookmark reads and writes once account deletion starts, including privileged writes", async () => {
+  await visit();
+  await db.exec("SELECT set_config('test.blocked','yes',false)");
+  expect((await db.query("SELECT * FROM journey_visits")).rows).toHaveLength(0);
+  await expect(visit()).rejects.toThrow(/ACCOUNT_DELETION_PENDING|row-level security/);
+  await db.exec("RESET ROLE");
+  await expect(visit()).rejects.toThrow("ACCOUNT_DELETION_PENDING");
 });
 it("saves explicit child completion idempotently and separately per locale", async () => {
   for (const locale of ["en", "en", "ar-EG"])

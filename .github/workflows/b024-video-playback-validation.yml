@@ -166,5 +166,7 @@ jobs:
             ${{ env.B023_RECEIPTS_ROOT }}/browser/b024-video-playback-gate.json
             ${{ env.B023_RECEIPTS_ROOT }}/browser/fixture-and-gate-receipt.json
             ${{ env.B023_RECEIPTS_ROOT }}/browser/gate.stderr.log
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/journey-desktop.png
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/journey-mobile.png
           if-no-files-found: warn
           retention-days: 14

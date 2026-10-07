@@ -17,6 +17,17 @@ ALTER TABLE public.journey_visits ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON public.journey_visits FROM PUBLIC,anon,authenticated;
 GRANT SELECT,INSERT,UPDATE ON public.journey_visits TO authenticated;
 GRANT ALL ON public.journey_visits TO service_role;
+CREATE POLICY lc09_active_account ON public.journey_visits AS RESTRICTIVE FOR ALL TO authenticated
+ USING (public.lc09_account_active()) WITH CHECK (public.lc09_account_active());
+CREATE TRIGGER lc09_journey_write BEFORE INSERT OR UPDATE ON public.journey_visits
+ FOR EACH ROW EXECUTE FUNCTION billing.lc09_block_learner_write();
+-- Join the existing explicit erasure inventory. Its user-scoped deletion loop
+-- removes bookmarks before auth deletion; unknown future tables still fail closed.
+DO $$ DECLARE d text; marker text:='''academic_progress'''; BEGIN
+ d:=pg_get_functiondef('public.commerce_previous_lc09_advance_deletion(uuid,uuid,text)'::regprocedure);
+ IF position(marker IN d)=0 THEN RAISE EXCEPTION 'JOURNEY_DELETION_CONTRACT_CHANGED'; END IF;
+ EXECUTE replace(d,marker,marker||',''journey_visits''');
+END $$;
 CREATE POLICY journey_owner_read ON public.journey_visits FOR SELECT TO authenticated
  USING (user_id=(SELECT auth.uid()) AND (profile_id IS NULL OR
  (public.kids_parent_can_manage_profiles() AND EXISTS(SELECT 1 FROM public.kids_profiles p WHERE p.id=profile_id AND p.parent_id=(SELECT auth.uid())))));
