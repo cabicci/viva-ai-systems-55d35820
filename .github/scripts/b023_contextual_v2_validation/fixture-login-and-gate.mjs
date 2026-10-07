@@ -191,6 +191,11 @@ try {
   execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-qAt", "-c",
     "UPDATE public.technical_release_control SET enabled=true WHERE singleton;"],
     { encoding: "utf8", env: process.env });
+  // Fresh CLI databases lack these historical Data API grants. Match the
+  // production grants verified read-only on 2026-10-07, never disable RLS.
+  execFileSync("psql", ["-v", "ON_ERROR_STOP=1", "-qAt", "-c",
+    "GRANT SELECT,INSERT,UPDATE ON public.lesson_progress,public.user_active_device TO authenticated; GRANT SELECT ON public.user_mission_state,public.build_logs TO authenticated;"],
+    { encoding: "utf8", env: process.env });
   const options = { headless: true };
   if (process.env.B023_CHROME_EXECUTABLE)
     options.executablePath = process.env.B023_CHROME_EXECUTABLE;
