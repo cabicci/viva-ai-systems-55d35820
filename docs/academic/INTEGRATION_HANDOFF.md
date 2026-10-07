@@ -1,5 +1,14 @@
 # Masaarat Academic — current integration handoff
 
+## 2026-10-07 failed-only media recovery authorized
+
+Original run 37451264552 completed with 137 successful new uploads and 19 failed media jobs. Its collection verified 140 ready videos including the four existing pilots; AC-BUS-M07-L08__en was still processing. The 19 failures occurred before upload: 18 failed the original audio duration gate, and AC-BUS-M01-L04__ar-MSA exhausted TTS retries with finishReason OTHER. Recovery audio artifacts were preserved for all 19.
+
+The owner authorized recovery on 2026-10-07 at 15:02 +03:00. The dedicated failed-only workflow restores each original receipt and WAV cache, verifies exact source/fingerprint, preserves valid WAV bytes, regenerates missing/invalid segments with bounded retries, then invokes the unchanged production renderer/uploader. Four jobs maximum; original voice, prompt, lesson text, production fingerprints and duration gate remain unchanged. A no-audio OTHER failure may be retried as two word-preserving chunks with the same voice/prompt and PCM concatenation; explicit editorial rejections are not bypassed.
+
+Recovery results include an audit of retained hashes and regenerated scene IDs. Collection combines original ready receipts, the previously pending English upload and new recovery receipts; playback readiness remains separate from output listening acceptance and live website mapping. Eight focused local regression tests passed. The run URL/status will be recorded after the workflow starts. No shared platform files, main merge, production mapping or publication are part of this recovery.
+
+
 ## 2026-10-06 written-first integration authorized; media runs independently
 
 The owner explicitly asked central integration to merge the written work now while videos finish independently. The written deliverables remain 40 lessons, 160 contextual packages and 160 PDFs. Start central integration now; remaining media is not a written-release prerequisite. Merge is distinct from publication: the authorization, editorial and TEST integration gates below still apply.
@@ -82,3 +91,4 @@ The exact correction ledger contains 197 corrections, including answer indices, 
 English recovery used run 37371816157, retained-draft repairs and one original local lesson completion. Gulf recovery used the dedicated run 37374230148 after runnerless matrix attempts: five provider-valid outputs, thirteen retained drafts completed locally and one original local contextual lesson. These provider runs ended with failed raw-draft validation; their workflow conclusions are not represented as passing CI. Final compiled packages passed the local assembly and rendering gates. Completed outputs were not regenerated. Compiled locale arrays are the durable source; obsolete partial recovery arrays have been removed. Existing media were not modified.
 
 The remaining requirements are central integration and acceptance, not missing written content: shared routes/navigation, candidate SQL/private import review, complete TEST commerce/mail journeys, independent contextual/academic acceptance, learner timing, the assistant price/quota and gateway, and remaining-video acceptance. Written release need not wait for all videos. No merge, publication or production setting change occurred.
+

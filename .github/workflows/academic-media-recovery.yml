@@ -1,0 +1,95 @@
+name: Academic failed media recovery
+on:
+  push:
+    branches: [work/masaarat-academic-20261005]
+    paths: [scripts/academic-education/media-recovery-request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: academic-course-media-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.request.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Validate failed-only recovery and preserved source identities
+        id: request
+        run: |
+          python3 -m unittest discover -s scripts/academic-education -p 'recover_media_test.py'
+          python3 - <<'PY'
+          import json, os, sys
+          sys.path.insert(0, 'scripts/academic-education')
+          from course_media import production_plan
+          r=json.load(open('scripts/academic-education/media-recovery-request.json'))
+          assert r['sourceRunId'] == 37451264552
+          assert len(r['entries']) == 19
+          assert len({(e['lesson'],e['locale']) for e in r['entries']}) == 19
+          for e in r['entries']:
+              plan, fingerprint=production_plan(e['lesson'],e['locale'])
+              assert e.get('fingerprint',fingerprint) == fingerprint
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              f.write('matrix='+json.dumps({'include':[{'lesson':e['lesson'],'locale':e['locale']} for e in r['entries']]},separators=(',',':'))+'\n')
+          PY
+  recover:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    uses: ./.github/workflows/academic-media-recovery-cell.yml
+    with:
+      lesson: ${{ matrix.lesson }}
+      locale: ${{ matrix.locale }}
+    secrets: inherit
+  collect:
+    needs: [prepare, recover]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-course-media-collection
+          run-id: 37451264552
+          github-token: ${{ github.token }}
+          path: tmp/original-collection
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-course-receipt-AC-BUS-M07-L08-en
+          run-id: 37451264552
+          github-token: ${{ github.token }}
+          path: tmp/recovery-receipts/original-pending
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: academic-course-receipt-*
+          path: tmp/recovery-receipts/recovered
+      - name: Combine original ready media, recovered receipts and pending upload
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          sys.path.insert(0, 'scripts/academic-education')
+          from course_media import write_json
+          from collect_media import collect
+          from media_plan import PILOT
+          root=pathlib.Path('tmp/recovery-receipts')
+          old=json.load(open('tmp/original-collection/course-media-manifest.json'))
+          for identity,row in old.items():
+              if row['lessonId'] != PILOT:
+                  write_json(root/'original-ready'/identity/'receipt.json',row)
+          print(json.dumps(collect(root,pathlib.Path('tmp/academic-media-collection'),True),indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: academic-course-media-collection
+          retention-days: 14
+          path: tmp/academic-media-collection/
