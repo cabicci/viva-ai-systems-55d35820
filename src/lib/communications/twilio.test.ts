@@ -26,8 +26,81 @@ const transport = (body: unknown, status = 200) =>
   vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify(body), { status }));
 const startInput = { phone, channel: "sms", locale: "ar-EG" };
 const checkInput = { verificationSid, phone, code: "123456" };
+const connectorEnv = {
+  TWILIO_API_KEY: "SYNTHETIC_OPAQUE_CONNECTION_KEY",
+  LOVABLE_API_KEY: "SYNTHETIC_SERVER_GATEWAY_TOKEN",
+  TWILIO_VERIFY_SERVICE_SID: env.TWILIO_VERIFY_SERVICE_SID,
+};
 
 describe("Twilio transport before activation", () => {
+  it("uses the linked Lovable connector without requiring a raw Twilio Auth Token", async () => {
+    const fetcher = transport({ sid: env.TWILIO_VERIFY_SERVICE_SID });
+    const readiness = await readCommunicationsReadiness(connectorEnv, fetcher);
+    expect(readiness.credentialsConfigured).toBe(true);
+    expect(readiness.verifyReachable).toBe(true);
+    const [url, options] = fetcher.mock.calls[0];
+    expect(url).toBe(
+      `https://connector-gateway.lovable.dev/twilio/verify/v2/Services/${env.TWILIO_VERIFY_SERVICE_SID}`,
+    );
+    expect(options?.headers).toEqual({
+      Authorization: `Bearer ${connectorEnv.LOVABLE_API_KEY}`,
+      "X-Connection-Api-Key": connectorEnv.TWILIO_API_KEY,
+    });
+    expect(options?.redirect).toBe("error");
+    expect(JSON.stringify(readiness)).not.toContain(connectorEnv.TWILIO_API_KEY);
+    expect(JSON.stringify(readiness)).not.toContain(connectorEnv.LOVABLE_API_KEY);
+  });
+  it("recognizes an existing connector while Verify Service configuration is still pending", async () => {
+    const fetcher = transport(result);
+    const readiness = await readCommunicationsReadiness(
+      { ...connectorEnv, TWILIO_VERIFY_SERVICE_SID: undefined },
+      fetcher,
+    );
+    expect(readiness.credentialsConfigured).toBe(true);
+    expect(readiness.verifyConfigured).toBe(false);
+    expect(readiness.verifyReachable).toBe(null);
+    expect(fetcher).not.toHaveBeenCalled();
+  });
+  it.each([
+    { TWILIO_API_KEY: connectorEnv.TWILIO_API_KEY },
+    { LOVABLE_API_KEY: connectorEnv.LOVABLE_API_KEY },
+    { TWILIO_API_KEY: "", LOVABLE_API_KEY: connectorEnv.LOVABLE_API_KEY },
+  ])(
+    "rejects partial native credentials instead of falling back to another account",
+    async (partial) => {
+      const fetcher = transport(result),
+        configuration = { ...env, ...partial };
+      expect(
+        (await readCommunicationsReadiness(configuration, fetcher)).credentialsConfigured,
+      ).toBe(false);
+      await expect(startPhoneVerification(startInput, configuration, fetcher)).rejects.toThrow(
+        "COMMUNICATIONS_NOT_CONFIGURED",
+      );
+      expect(fetcher).not.toHaveBeenCalled();
+    },
+  );
+  it("uses the connector gateway for start and check, while retaining exact receipt binding", async () => {
+    const fetcher = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(JSON.stringify(result)))
+      .mockResolvedValueOnce(
+        new Response(JSON.stringify({ ...result, status: "approved", valid: true })),
+      );
+    expect(await startPhoneVerification(startInput, connectorEnv, fetcher)).toEqual({
+      verificationSid,
+      phone,
+    });
+    expect(await checkPhoneVerification(checkInput, connectorEnv, fetcher)).toBe(true);
+    expect(fetcher.mock.calls.map(([url]) => url)).toEqual([
+      `https://connector-gateway.lovable.dev/twilio/verify/v2/Services/${env.TWILIO_VERIFY_SERVICE_SID}/Verifications`,
+      `https://connector-gateway.lovable.dev/twilio/verify/v2/Services/${env.TWILIO_VERIFY_SERVICE_SID}/VerificationCheck`,
+    ]);
+    expect(
+      fetcher.mock.calls.every(
+        ([, options]) => options?.method === "POST" && options?.redirect === "error",
+      ),
+    ).toBe(true);
+  });
   it.each([false, null, "true"])(
     "denies non-admin stored-role outcomes (%s) before calling Twilio",
     async (data) => {

@@ -24,6 +24,32 @@ display-name approval are owner-reported; actual sender/Verify readiness is pend
 Connector setup is completed through the Lovable dashboard by the account owner.
 Never put tokens in Git, browser-readable environment variables, chat or logs.
 
+### Later verified connection checkpoint, 8 October
+
+The owner added the connection and reported API friendly name `masaarat`.
+Lovable's native inventory found one connection named `Khalil's Twilio`, linked
+it to this project and successfully read provider resources. The association of
+`masaarat` with the underlying API key is owner-reported, not independently read.
+
+The runtime uses the Twilio connector gateway, with server-only opaque
+`TWILIO_API_KEY` and `LOVABLE_API_KEY` credentials. These are not a raw Twilio SK
+key/secret. The transport now supports this actual binding; it does not call
+the AI Gateway. Legacy direct Account SID/Auth Token support remains only when
+no connector configuration is present. Partial native configuration fails closed.
+
+Verify and Messaging services were absent. One SMS/voice-capable number was
+present; no voice/Make setting was changed. WhatsApp sender linkage was not
+established; `masaarat_whatsapp_test` was pending approval as a MARKETING template,
+which is not authentication-template acceptance. No message was sent.
+
+Creation of one Verify Service named `Masaarat` was attempted through Lovable.
+The gateway rejected the write because interactive owner approval is unavailable
+in this external session. Nothing was created; the service remains pending an
+owner action inside Lovable. Do not retry the rejected write through another
+client or ask for new credentials. A configured connector does not prove OTP
+delivery. All website send endpoints, persistent configuration and event hooks
+remain pending, and PR165 remains a draft.
+
 ## Supabase implementation handoff to Lovable
 
 Do not apply this plan until the correct Masaarat Twilio account and runtime

@@ -1,3 +1,11 @@
+## 2026-10-08 — Linked Twilio connector runtime
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: Lovable linked the owner-added Twilio connection to this project and confirmed the actual native gateway binding. Adapt the private Verify transport to opaque server-only connector credentials without requiring another Auth Token. Partial connector configuration fails closed. Provider service creation is blocked by Lovable's interactive approval boundary and requires owner action inside its editor; no write retry through another client.
+sync_status: draft PR165; no Verify service created, message send, feature migration, merge or publish. WhatsApp sender linkage unverified and marketing test template pending. Supabase/platform operations through Lovable only.
+
 ## 2026-10-08 — Twilio communications setup draft
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
