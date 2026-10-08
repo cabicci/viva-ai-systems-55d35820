@@ -259,3 +259,43 @@ Supabase source file as already applied. Do not execute the migration twice.
 Fresh schema absence and the exact original function hash must be rechecked at
 that step. Sending stays disabled with an empty pilot list until the actual
 signed-in test account and both provider channels are ready.
+
+### Approved native application and source reconciliation — 8 October 2026
+
+The owner explicitly approved the live phone-storage/deletion change at 17:02
+Cairo. Lovable applied the unchanged reviewed SQL once using its native migration
+tool. The final platform commit is
+`58d00efd628b504a55a6442c639bc3c3d3ba3de7`; its only four changed files are the
+0008 SQL, Drizzle snapshot/journal and generated public RPC type. The actual
+platform-generated files now match this branch byte for byte.
+
+Independent readback through Lovable confirmed `drizzle.__drizzle_migrations`
+row 18 with `created_at=1791468373472` and SHA256
+`497eaa033b4e782a2fdfd4e74b430d3aec4b1bd85a6cede4338e27db99d73351`.
+The 10,880-byte SQL matches both
+`drizzle/migrations/0008_account_phone_verification.sql` and
+`supabase/migrations/20261008115718_account_phone_verification.sql` exactly.
+The latter is a source mirror of the already applied migration: **do not apply
+it again or create a second migration for the same change**. Journal entry 8 uses
+the actual native timestamp; snapshot ID is
+`db098e11-9fd6-408e-8f39-82c112fb0a63` with its existing predecessor unchanged.
+
+All three private tables have RLS enabled and owner-only table ACLs. The public
+command and installed LC09 wrapper remain service-only; the copied previous
+deletion function is owner-only. Its normalized source MD5 still equals the
+durable original backup, `8c92b9dc579d65e68cba2ffb25489e1f`.
+
+Post-apply controls are `enabled=false`, no test actors, SMS only, Egypt only,
+daily cap 20 and zero sends. There are zero challenges and zero verified phones.
+All four required workflows passed on the reviewed SQL/page head `ec02a210`;
+the native metadata/type reconciliation changes no runtime SQL or frontend
+behavior. Current-head checks remain required before release.
+
+No message was sent, preview branch switched, change merged or frontend
+published. The remaining provider link requires the owner to approve the existing
+WhatsApp sender/service linkage inside Lovable. The preview branch then requires
+selection in that editor. The supplied phone recipient is already known, but an
+actual signed-in test account and real arrival/code acceptance for both channels
+have not yet been established. Do not label provider configuration or isolated
+tests as real delivery. Existing roadmap history was appended with an exact
+version guard at `2026-10-08T14:10:00.707615Z`.

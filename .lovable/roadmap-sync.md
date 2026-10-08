@@ -1,3 +1,11 @@
+## 2026-10-08 — Approved native phone migration applied once
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: db
+source: user
+summary: Owner explicitly approved live phone storage and deletion integration at 17:02 Cairo. Lovable applied the unchanged 10,880-byte SQL once as native Drizzle 0008. Reconcile the actual native journal timestamp, snapshot and generated public RPC type from platform commit 58d00efd628b504a55a6442c639bc3c3d3ba3de7 into this branch. Both SQL source copies are already applied and must not be applied again.
+sync_status: Roadmap appended with exact version guard at 2026-10-08T14:10:00.707615Z. Independent DB readback confirms migration row18, created_at1791468373472 and SHA256497eaa033b4e782a2fdfd4e74b430d3aec4b1bd85a6cede4338e27db99d73351; private RLS/service-only RPCs and previous LC09 source match verified. Sending disabled, no test actors, zero sends/challenges/phones. Previous head ec02a210 passed all four required workflows. No provider write, real message, preview switch, merge or publication. WhatsApp linking still requires the native owner approval inside Lovable.
+
 ## 2026-10-08 — Direct phone-entry page and verified rollback source
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
