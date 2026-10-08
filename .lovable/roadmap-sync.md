@@ -1,3 +1,11 @@
+## 2026-10-08 — Twilio communications setup draft
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Prepare an isolated administrator communications console and private Verify transport. Configuration checks return booleans only after stored-admin and account-active authorization. All send switches remain disabled. Signup/phone/offers/grants/invitations/receipt event hooks and persistence are pending the correct Twilio account/connector setup through Lovable. Existing auth, payment and entitlements retained.
+sync_status: draft only; no Supabase migration, code delivery, provider send, merge or publication. Lovable verified the five Twilio settings and connector absent on 2026-10-08. Real testing required before integration/release.
+
 ## 2026-10-07 — Multi-domain social sharing card
 
 [roadmap:b5525659-9af0-488c-b4ad-494e206e46be]

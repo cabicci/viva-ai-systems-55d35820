@@ -41,6 +41,7 @@ import { Route as AcademicCurriculumRouteImport } from './routes/academic.curric
 import { Route as AcademicPricingRouteImport } from './routes/academic.pricing'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
+import { Route as AdminCommunicationsRouteImport } from './routes/admin.communications'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as AiIndexRouteImport } from './routes/ai.index'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
@@ -231,6 +232,11 @@ const AdminCommerceRoute = AdminCommerceRouteImport.update({
   path: '/admin/commerce',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminCommunicationsRoute = AdminCommunicationsRouteImport.update({
+  id: '/admin/communications',
+  path: '/admin/communications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
   id: '/admin/kids-parents',
   path: '/admin/kids-parents',
@@ -412,6 +418,7 @@ export interface FileRoutesByFullPath {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -471,6 +478,7 @@ export interface FileRoutesByTo {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -534,6 +542,7 @@ export interface FileRoutesById {
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -599,6 +608,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -658,6 +668,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -720,6 +731,7 @@ export interface FileRouteTypes {
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -782,6 +794,7 @@ export interface RootRouteChildren {
   TechnicalRoute: typeof TechnicalRouteWithChildren
   TermsRoute: typeof TermsRoute
   AdminCommerceRoute: typeof AdminCommerceRoute
+  AdminCommunicationsRoute: typeof AdminCommunicationsRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   InvitationsInvitationIdRoute: typeof InvitationsInvitationIdRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
@@ -1018,6 +1031,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/commerce'
       fullPath: '/admin/commerce'
       preLoaderRoute: typeof AdminCommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/communications': {
+      id: '/admin/communications'
+      path: '/admin/communications'
+      fullPath: '/admin/communications'
+      preLoaderRoute: typeof AdminCommunicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/kids-parents': {
@@ -1350,6 +1370,7 @@ const rootRouteChildren: RootRouteChildren = {
   TechnicalRoute: TechnicalRouteWithChildren,
   TermsRoute: TermsRoute,
   AdminCommerceRoute: AdminCommerceRoute,
+  AdminCommunicationsRoute: AdminCommunicationsRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,
   InvitationsInvitationIdRoute: InvitationsInvitationIdRoute,
   RoadmapIdRoute: RoadmapIdRoute,
