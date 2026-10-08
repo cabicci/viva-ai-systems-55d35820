@@ -1,9 +1,10 @@
-import { createFileRoute, Link, redirect } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhoneVerification } from "@/components/communications/PhoneVerification";
 import { phoneVerificationTitle } from "@/lib/communications/phone-copy";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
 import { useAuth } from "@/lib/auth-context";
-import { AuthSessionGate, isRedirect, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { AuthSessionGate } from "@/lib/auth-route-guard";
+import { requirePhoneAccount } from "@/lib/communications/phone-route";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -11,18 +12,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export const Route = createFileRoute("/verify-phone")({
   validateSearch: parseLocaleSearchParam,
-  beforeLoad: async ({ search }) => {
-    try {
-      await requireAuthBeforeLoad();
-    } catch (error) {
-      if (!isRedirect(error)) throw error;
-      throw redirect({
-        to: "/login",
-        search: { locale: search.locale, returnTo: "/verify-phone" },
-        replace: true,
-      });
-    }
-  },
+  beforeLoad: ({ search }) => requirePhoneAccount(search),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
     return {
