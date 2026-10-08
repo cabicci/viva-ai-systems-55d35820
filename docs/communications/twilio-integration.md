@@ -299,3 +299,46 @@ actual signed-in test account and real arrival/code acceptance for both channels
 have not yet been established. Do not label provider configuration or isolated
 tests as real delivery. Existing roadmap history was appended with an exact
 version guard at `2026-10-08T14:10:00.707615Z`.
+
+### First live preview attempt and safe diagnostics — 8 October 2026
+
+The owner completed the existing WhatsApp sender / Messaging Service / Verify
+linkage in Lovable and selected the existing stored-admin account for the bounded
+pilot. The exact single-actor allowlist now permits WhatsApp and SMS for Egyptian
+numbers; existing quotas, Auth metadata and roles remain unchanged. That legacy
+account has no saved signup locale, so the explicit page-language fallback applies.
+The owner switched the preview to this PR's c60a7709 head. These dated facts
+supersede earlier pending-link, disabled-pilot and unswitched-preview checkpoints.
+
+One owner-triggered WhatsApp reservation at `2026-10-08T16:40:49.625767Z` became
+`uncertain`, with no stored provider verification SID, and expires at
+`2026-10-08T16:50:49.625767Z`. A subsequent SMS click was blocked by the active
+attempt guard before another reservation or provider request. No phone ownership
+was verified. The bounded read-only Lovable investigation found no corresponding
+Verify Attempt or matching message receipt. Because the original HTTP status and
+provider error were not retained, the cause and provider acceptance remain
+unproven. Absence from those lists does not prove that no POST reached Twilio.
+
+The private transport now emits one failure event containing only fixed operation
+and stage labels, an HTTP status when available, and a bounded integer provider
+error code when supplied. Configuration, transport, non-success HTTP, malformed
+JSON and invalid receipt failures are distinguishable. No phone, OTP, SID, request
+URL, credential, provider message, raw body or caught exception is logged. Public
+error responses, receipt binding, quotas and no-retry behavior are unchanged.
+
+Preserve the uncertain challenge and its budget. Do not delete/reset it or retry
+automatically. After expiry and preview synchronization, the next controlled
+owner-triggered WhatsApp attempt can expose the failure stage without changing
+provider configuration. Real arrival and code acceptance for BOTH channels,
+authentication-template/language acceptance and release approval remain pending.
+No further message, database schema change, merge or publication was performed.
+Roadmap history was appended with an exact version guard at
+`2026-10-08T16:46:40.033918Z`.
+
+The transport and account orchestration suites pass 62 focused tests locally,
+including failure-stage distinction, sensitive-body exclusion and unchanged
+no-retry/receipt-binding behavior. Strict TypeScript checking of those modules
+and tests passes. Current-head repository CI remains a release gate; isolated
+tests are not proof of real delivery.
+
+

@@ -1,3 +1,12 @@
+## 2026-10-08 — Diagnose the first WhatsApp preview failure
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: The owner selected the existing stored-admin pilot and switched preview to PR165. The first WhatsApp attempt became uncertain with no stored provider SID; the next SMS click was blocked before sending. Add private failure stage / HTTP status / numeric provider-code diagnostics without phones, OTPs, credentials or raw provider text. Preserve quota, exact receipt binding and no-retry behavior.
+sync_status: Roadmap history appended with exact version guard at 2026-10-08T16:46:40.033918Z. Provider linkage and single-account pilot are now configured; earlier pending/disabled notes below are historical. Bounded provider reads did not establish the original error or delivery. No reset/resend, provider setup change, merge or publication. Both-channel real arrival/check and current-head CI remain pending.
+
+
 ## 2026-10-08 — Approved native phone migration applied once
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
@@ -324,3 +333,4 @@ source: user
 scope: ui
 summary: Owner explicitly authorized merging and publishing the reviewed My journey and original-logo social card. PR163 merged at e1f270b9; social-card candidate synchronizes that base and its exact migration inventory. Preserve payments, entitlements and Academic media production. The branded promotional video is a delivered standalone creative, not a new homepage feature or social post.
 sync_status: controlled release in progress; apply the reviewed journey migration before frontend deployment, verify current-head checks and live output, then reconcile both continuation registers. This supersedes the earlier no-publication hold only for this release.
+

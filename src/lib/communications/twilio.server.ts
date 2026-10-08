@@ -13,6 +13,33 @@ const resultSchema = z.object({
 });
 type Env = Record<string, string | undefined>;
 type Transport = typeof fetch;
+type Operation = "readiness" | "start" | "check";
+type FailureStage = "configuration" | "transport" | "http" | "json" | "receipt";
+const operations = {
+  "": "readiness",
+  "/Verifications": "start",
+  "/VerificationCheck": "check",
+} as const;
+const providerErrorSchema = z.object({
+  code: z.number().int().min(1).max(999_999),
+});
+
+function reportFailure(
+  operation: Operation,
+  stage: FailureStage,
+  httpStatus?: number,
+  providerCode?: number,
+) {
+  // Only fixed labels and validated numbers cross this boundary. Never log
+  // input, URLs, headers, SIDs, provider text, raw bodies or caught errors.
+  console.warn("[masaarat.phone]", {
+    operation,
+    stage,
+    ...(httpStatus === undefined ? {} : { httpStatus }),
+    ...(providerCode === undefined ? {} : { providerCode }),
+  });
+}
+
 type Authorizer = (
   name: "has_role" | "lc09_account_active",
   parameters?: { _user_id: string; _role: "admin" },
@@ -25,9 +52,11 @@ export async function readAuthorizedCommunicationsReadiness(
   transport: Transport = fetch,
 ): Promise<CommunicationsReadiness> {
   const role = await rpc("has_role", { _user_id: userId, _role: "admin" });
-  if (role.error || role.data !== true) throw new Error("Forbidden: admin role required");
+  if (role.error || role.data !== true)
+    throw new Error("Forbidden: admin role required");
   const active = await rpc("lc09_account_active");
-  if (active.error || active.data !== true) throw new Error("ACCOUNT_DELETION_PENDING");
+  if (active.error || active.data !== true)
+    throw new Error("ACCOUNT_DELETION_PENDING");
   return readCommunicationsReadiness(env, transport);
 }
 
@@ -52,19 +81,34 @@ function credentials(env: Env) {
     throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
   return {
     base: "https://verify.twilio.com/v2/Services/",
-    headers: { Authorization: `Basic ${btoa(`${account}:${token}`)}` } as Record<string, string>,
+    headers: {
+      Authorization: `Basic ${btoa(`${account}:${token}`)}`,
+    } as Record<string, string>,
   };
 }
 
 function configuration(env: Env) {
   const connection = credentials(env);
   const service = env.TWILIO_VERIFY_SERVICE_SID;
-  if (!service || !sid("VA").test(service)) throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
+  if (!service || !sid("VA").test(service))
+    throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
   return { ...connection, service };
 }
 
-async function request(env: Env, transport: Transport, resource: string, body?: URLSearchParams) {
-  const config = configuration(env);
+async function request(
+  env: Env,
+  transport: Transport,
+  resource: keyof typeof operations,
+  body?: URLSearchParams,
+) {
+  const operation = operations[resource];
+  let config: ReturnType<typeof configuration>;
+  try {
+    config = configuration(env);
+  } catch {
+    reportFailure(operation, "configuration");
+    throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
+  }
   let response: Response;
   try {
     response = await transport(`${config.base}${config.service}${resource}`, {
@@ -73,24 +117,37 @@ async function request(env: Env, transport: Transport, resource: string, body?: 
       signal: AbortSignal.timeout(8_000),
       headers: {
         ...config.headers,
-        ...(body ? { "Content-Type": "application/x-www-form-urlencoded" } : {}),
+        ...(body
+          ? { "Content-Type": "application/x-www-form-urlencoded" }
+          : {}),
       },
       ...(body ? { body } : {}),
     });
   } catch {
     // A timed-out POST may have succeeded. No automatic retry or channel fallback.
+    reportFailure(operation, "transport");
     throw new Error("COMMUNICATIONS_PROVIDER_UNCERTAIN");
   }
   if (!response.ok) {
     // Provider text can include a phone number, request details or account data.
-    // Do not return it, attach it as a cause, or log it.
+    // Extract only a bounded numeric error code; discard every other field.
+    let providerCode: number | undefined;
+    try {
+      const parsed = providerErrorSchema.safeParse(await response.json());
+      if (parsed.success) providerCode = parsed.data.code;
+    } catch {
+      /* Non-JSON gateway errors still have an HTTP status. */
+    }
+    reportFailure(operation, "http", response.status, providerCode);
     if (response.status === 429) throw new Error("COMMUNICATIONS_RATE_LIMITED");
-    if (response.status === 404) throw new Error("COMMUNICATIONS_VERIFICATION_UNAVAILABLE");
+    if (response.status === 404)
+      throw new Error("COMMUNICATIONS_VERIFICATION_UNAVAILABLE");
     throw new Error("COMMUNICATIONS_PROVIDER_REJECTED");
   }
   try {
     return (await response.json()) as unknown;
   } catch {
+    reportFailure(operation, "json", response.status);
     throw new Error("COMMUNICATIONS_PROVIDER_INVALID");
   }
 }
@@ -117,6 +174,7 @@ export async function readCommunicationsReadiness(
       verifyReachable = z
         .object({ sid: z.literal(env.TWILIO_VERIFY_SERVICE_SID!) })
         .safeParse(response).success;
+      if (!verifyReachable) reportFailure("readiness", "receipt");
     } catch {
       verifyReachable = false;
     }
@@ -129,7 +187,9 @@ export async function readCommunicationsReadiness(
       credentialsConfigured &&
       !!env.TWILIO_MESSAGING_SERVICE_SID &&
       sid("MG").test(env.TWILIO_MESSAGING_SERVICE_SID),
-    whatsappSenderConfigured: /^whatsapp:\+[1-9][0-9]{7,14}$/.test(env.TWILIO_WHATSAPP_FROM ?? ""),
+    whatsappSenderConfigured: /^whatsapp:\+[1-9][0-9]{7,14}$/.test(
+      env.TWILIO_WHATSAPP_FROM ?? "",
+    ),
     activationAvailable: false,
   };
 }
@@ -159,8 +219,10 @@ export async function startPhoneVerification(
     response.data.service_sid !== env.TWILIO_VERIFY_SERVICE_SID ||
     response.data.to !== data.phone ||
     response.data.status !== "pending"
-  )
+  ) {
+    reportFailure("start", "receipt");
     throw new Error("COMMUNICATIONS_PROVIDER_INVALID");
+  }
   return { verificationSid: response.data.sid, phone: data.phone };
 }
 
@@ -193,7 +255,9 @@ export async function checkPhoneVerification(
     response.data.service_sid !== env.TWILIO_VERIFY_SERVICE_SID ||
     response.data.sid !== data.verificationSid ||
     response.data.to !== data.phone
-  )
+  ) {
+    reportFailure("check", "receipt");
     throw new Error("COMMUNICATIONS_PROVIDER_INVALID");
+  }
   return response.data.status === "approved" && response.data.valid === true;
 }
