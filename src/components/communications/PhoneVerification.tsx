@@ -11,11 +11,15 @@ import {
   verifyAccountPhoneCode,
 } from "@/lib/communications/phone.functions";
 import type { PhoneChallenge, PhoneError } from "@/lib/communications/phone-contracts";
+import type { DeliveryChannel } from "@/lib/communications/contracts";
 
 const copy = {
   "ar-EG": {
     title: "تأكيد رقم الموبايل",
-    intro: "أكد رقمك بكود SMS. دخولك بالإيميل وكلمة المرور زي ما هو.",
+    intro: "اختار واتساب أو SMS لتأكيد رقمك. دخولك بالإيميل وكلمة المرور زي ما هو.",
+    channel: "طريقة وصول الكود",
+    sms: "SMS — رسالة نصية",
+    whatsapp: "واتساب",
     phone: "رقم الموبايل مع كود الدولة",
     send: "ابعت كود التأكيد",
     code: "كود التأكيد — 6 أرقام",
@@ -35,7 +39,10 @@ const copy = {
   },
   "ar-MSA": {
     title: "تأكيد رقم الهاتف",
-    intro: "أكّد رقمك برمز SMS. يستمر الدخول بالبريد الإلكتروني وكلمة المرور.",
+    intro: "اختر واتساب أو SMS لتأكيد رقمك. يستمر الدخول بالبريد الإلكتروني وكلمة المرور.",
+    channel: "طريقة استلام الرمز",
+    sms: "SMS — رسالة نصية",
+    whatsapp: "واتساب",
     phone: "رقم الهاتف مع رمز الدولة",
     send: "إرسال رمز التأكيد",
     code: "رمز التأكيد — 6 أرقام",
@@ -55,7 +62,10 @@ const copy = {
   },
   "ar-Gulf": {
     title: "تأكيد رقم الجوال",
-    intro: "أكد رقمك برمز SMS. دخولك بالإيميل وكلمة المرور يبقى مثل ما هو.",
+    intro: "اختر واتساب أو SMS لتأكيد رقمك. دخولك بالإيميل وكلمة المرور يبقى مثل ما هو.",
+    channel: "طريقة استلام الرمز",
+    sms: "SMS — رسالة نصية",
+    whatsapp: "واتساب",
     phone: "رقم الجوال مع رمز الدولة",
     send: "أرسل رمز التأكيد",
     code: "رمز التأكيد — 6 أرقام",
@@ -75,7 +85,11 @@ const copy = {
   },
   en: {
     title: "Verify your phone",
-    intro: "Confirm your number with an SMS code. Email and password sign-in stays the same.",
+    intro:
+      "Choose WhatsApp or SMS to confirm your number. Email and password sign-in stays the same.",
+    channel: "Code delivery method",
+    sms: "SMS — text message",
+    whatsapp: "WhatsApp",
     phone: "Phone number with country code",
     send: "Send verification code",
     code: "Verification code — 6 digits",
@@ -111,6 +125,7 @@ export function PhoneVerification() {
     refetchOnWindowFocus: false,
   });
   const [phone, setPhone] = useState("");
+  const [selectedChannel, setSelectedChannel] = useState<DeliveryChannel | null>(null);
   const [code, setCode] = useState("");
   const [challenge, setChallenge] = useState<PhoneChallenge | null>(null);
   const [busy, setBusy] = useState(false);
@@ -132,12 +147,18 @@ export function PhoneVerification() {
     invalid: t.invalid,
   };
   const value = status.data?.ok ? status.data.value : undefined;
+  const channel =
+    selectedChannel && value?.channels.includes(selectedChannel)
+      ? selectedChannel
+      : value?.channels.includes("whatsapp")
+        ? "whatsapp"
+        : "sms";
   async function start() {
-    if (busy || !value?.enabled || challenge) return;
+    if (busy || !value?.enabled || !value.channels.includes(channel) || challenge) return;
     setBusy(true);
     setError(null);
     try {
-      const result = await send({ data: { phone, locale } });
+      const result = await send({ data: { phone, locale, channel } });
       if (result.ok) setChallenge(result.value);
       else setError(result.error);
     } catch {
@@ -199,6 +220,23 @@ export function PhoneVerification() {
         </p>
       ) : (
         <div className="mt-4 grid gap-3 max-w-md">
+          <fieldset disabled={busy || !!challenge} className="grid gap-2">
+            <legend className="text-sm mb-2">{t.channel}</legend>
+            {(["whatsapp", "sms"] as const)
+              .filter((item) => value.channels.includes(item))
+              .map((item) => (
+                <label key={item} className="flex items-center gap-2 min-h-10">
+                  <input
+                    type="radio"
+                    name="phone-delivery-channel"
+                    value={item}
+                    checked={channel === item}
+                    onChange={() => setSelectedChannel(item)}
+                  />
+                  {t[item]}
+                </label>
+              ))}
+          </fieldset>
           <label>
             {t.phone}
             <Input

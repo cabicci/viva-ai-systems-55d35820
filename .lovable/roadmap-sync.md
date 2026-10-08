@@ -1,3 +1,11 @@
+## 2026-10-08 — One verification flow for WhatsApp and SMS
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner explicitly requested both OTP channels, WhatsApp preferred, without duplicate work. Reuse the existing service, account ownership, durable reservations and global/per-actor/per-number quotas. A server-owned channel allowlist gates sends; the UI prefers WhatsApp when available and locks selection during a live attempt. Add isolated mobile/desktop browser checks for four locales and password eyes. Correct native test JSON serialization and transaction cleanup and verify rollback preserves the installed deletion chain.
+sync_status: Draft PR165. Local isolated checks pass; physical PostgreSQL and browser CI pending. Existing WhatsApp sender ONLINE, but native provider setup write rejected because interactive owner approval is unavailable externally. No provider change, real send, persistent schema apply, merge or publication. Provider linking must be approved inside Lovable. No Recovery Plan use.
+
 ## 2026-10-08 — Password confirmation and visibility
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]

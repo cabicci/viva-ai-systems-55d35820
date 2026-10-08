@@ -22,47 +22,75 @@ const challenge = { challengeId: id, expiresAt: "2026-10-08T12:10:00Z" };
 const bound = { phone, serviceSid: env.TWILIO_VERIFY_SERVICE_SID, verificationSid: sid, lease };
 describe("account-bound Verify orchestration", () => {
   it("loads only the current actor's status", async () => {
-    const db = vi.fn().mockResolvedValue({ enabled: false, phone: null, verifiedAt: null });
+    const db = vi
+      .fn()
+      .mockResolvedValue({ enabled: false, channels: ["sms"], phone: null, verifiedAt: null });
     expect((await loadAccountPhone(db)).ok).toBe(true);
     expect(db).toHaveBeenCalledWith("status");
   });
   it("never calls Twilio if ownership/quota reservation fails", async () => {
     const db = vi.fn().mockRejectedValue(new Error("PHONE_DISABLED")),
       fetcher = vi.fn();
-    expect(await beginAccountPhone({ phone, locale: "en" }, db, env, fetcher)).toEqual({
+    expect(
+      await beginAccountPhone({ phone, channel: "sms", locale: "en" }, db, env, fetcher),
+    ).toEqual({
       ok: false,
       error: "disabled",
     });
     expect(fetcher).not.toHaveBeenCalled();
   });
-  it("reserves before provider send and attaches the exact SID afterwards", async () => {
-    const events: string[] = [];
-    const db = vi.fn(async (action: string) => {
-      events.push(action);
-      return action === "reserve" ? challenge : {};
-    });
-    const fetcher = vi.fn(async () => {
-      events.push("provider");
-      return new Response(JSON.stringify(receipt));
-    });
-    expect(await beginAccountPhone({ phone, locale: "ar-EG" }, db, env, fetcher)).toEqual({
-      ok: true,
-      value: challenge,
-    });
-    expect(events).toEqual(["reserve", "provider", "sent"]);
-    expect(db).toHaveBeenLastCalledWith("sent", { challengeId: id, verificationSid: sid });
+  it.each(["whatsapp", "sms"] as const)(
+    "reserves before %s send and attaches the exact SID afterwards",
+    async (channel) => {
+      const events: string[] = [];
+      const db = vi.fn(async (action: string) => {
+        events.push(action);
+        return action === "reserve" ? challenge : {};
+      });
+      const fetcher = vi.fn(async () => {
+        events.push("provider");
+        return new Response(JSON.stringify(receipt));
+      });
+      expect(
+        await beginAccountPhone({ phone, channel, locale: "ar-EG" }, db, env, fetcher),
+      ).toEqual({
+        ok: true,
+        value: challenge,
+      });
+      expect(events).toEqual(["reserve", "provider", "sent"]);
+      expect(db).toHaveBeenCalledWith("reserve", {
+        phone,
+        country: "EG",
+        serviceSid: env.TWILIO_VERIFY_SERVICE_SID,
+        channel,
+      });
+      expect(
+        (fetcher.mock.calls[0] as unknown as [string, RequestInit])[1].body?.toString(),
+      ).toContain(`Channel=${channel}`);
+      expect(db).toHaveBeenLastCalledWith("sent", { challengeId: id, verificationSid: sid });
+    },
+  );
+  it("does not call the provider for a disabled channel", async () => {
+    const db = vi.fn().mockRejectedValue(new Error("PHONE_CHANNEL_UNAVAILABLE"));
+    const fetcher = vi.fn();
+    expect(
+      (await beginAccountPhone({ phone, locale: "en", channel: "whatsapp" }, db, env, fetcher)).ok,
+    ).toBe(false);
+    expect(fetcher).not.toHaveBeenCalled();
   });
   it("never retries a timeout, preserves uncertain reservation and redacts provider data", async () => {
     const db = vi.fn().mockResolvedValueOnce(challenge).mockResolvedValue({});
     const fetcher = vi.fn().mockRejectedValue(new Error(`${phone} secret`));
-    expect(await beginAccountPhone({ phone, locale: "en" }, db, env, fetcher)).toEqual({
+    expect(
+      await beginAccountPhone({ phone, channel: "sms", locale: "en" }, db, env, fetcher),
+    ).toEqual({
       ok: false,
       error: "unavailable",
     });
     expect(fetcher).toHaveBeenCalledTimes(1);
     expect(db).toHaveBeenLastCalledWith("uncertain", { challengeId: id });
   });
-  it("rejects a browser-supplied actor, receipt, channel or phone at check boundary", async () => {
+  it("rejects a browser-supplied actor, receipt or phone at check boundary", async () => {
     const db = vi.fn(),
       fetcher = vi.fn();
     for (const extra of [
@@ -78,7 +106,14 @@ describe("account-bound Verify orchestration", () => {
     expect(db).not.toHaveBeenCalled();
     expect(fetcher).not.toHaveBeenCalled();
     expect(
-      (await beginAccountPhone({ phone, locale: "en", channel: "whatsapp" }, db, env, fetcher)).ok,
+      (
+        await beginAccountPhone(
+          { phone, channel: "sms", locale: "en", actor: randomUUID() },
+          db,
+          env,
+          fetcher,
+        )
+      ).ok,
     ).toBe(false);
   });
   it("commits provider-approved ownership with the database check lease, without storing the OTP", async () => {

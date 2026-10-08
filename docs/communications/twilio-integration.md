@@ -137,10 +137,10 @@ The existing service is `masaarat OTP`. Lovable saved its reference as server-on
 service/approval entries are historical and no longer a setup blocker. No SMS
 arrival has been tested. WhatsApp authentication remains unconfigured.
 
-The current PR adds an account-page SMS flow and authenticated server functions.
+The current PR adds one account-page WhatsApp/SMS flow and authenticated server functions.
 The server revalidates the current Auth user/email; a service-only RPC derives the
 actor from that server context. Browser data cannot select an actor, provider SID,
-channel or approval result. A private schema holds challenges and verified phones;
+or approval result. The client chooses only a delivery channel; the private server-controlled channel allowlist decides whether it can be used. A private schema holds challenges and verified phones;
 no direct learner/admin/table write can mark a number verified. Verify is not
 phone sign-in, parent consent or a paid entitlement.
 
@@ -173,3 +173,32 @@ switches/templates/logs/usage, signup/plan/grant/coupon/invitation/receipt messa
 hooks and a mandatory verified-phone transition for offers remain pending. This
 slice changes no commerce function and must not be advertised as all messaging
 features complete. The Recovery Plan is not used or updated.
+
+### Owner correction and dual-channel checkpoint
+
+The owner explicitly requires BOTH WhatsApp and SMS testing, with WhatsApp first.
+Both reuse the existing Verify service, orchestration, ownership record, quota
+and expiry rules. The account UI prefers WhatsApp when it is in the server-owned
+channel allowlist and offers SMS as an explicit alternative. Changing channel
+during a live challenge is disabled. There is no second provider POST on an
+uncertain attempt. Initial channel configuration is SMS-only until the WhatsApp
+provider setup is proven; the overall sending switch remains OFF.
+
+Lovable's fresh provider read found the own Masaarat WhatsApp sender ONLINE and
+one empty Messaging Service. Verify's WhatsApp linkage is empty. The attempt to
+add that existing sender to the existing pool was blocked by the native connector
+requiring interactive owner approval in Lovable. No provider change or send
+occurred. The next provider action must happen in the owner’s Lovable editor;
+do not retry through a different client. Authentication template readiness and
+real arrival/check acceptance remain unverified for WhatsApp and SMS.
+
+The current project's Preview can switch a GitHub branch, but uses the same live
+backend. It was not switched. Lovable's read-only database role cannot run the
+DDL rollback rehearsal; its migration tool persists changes. Native PostgreSQL
+rehearsal, concurrency and rollback are therefore tested in the disposable CI
+phone_test database, not claimed as an executed production-database rehearsal.
+The first native run exposed JSON fixture serialization and failed-transaction
+cleanup in the test adapter; both were corrected without weakening database
+permissions or assertions. Browser checks use actual components and shipped CSS
+at 375/1280 pixels in four locales, with synthetic Auth/Verify and every external
+request blocked. They do not establish real Twilio delivery.

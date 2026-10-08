@@ -10,6 +10,7 @@ export type PhoneDatabase = (action: string, data?: Record<string, unknown>) => 
 const service = z.string().regex(/^VA[a-fA-F0-9]{32}$/);
 const status = z.object({
   enabled: z.boolean(),
+  channels: z.array(z.enum(["sms", "whatsapp"])),
   phone: z.string().nullable(),
   verifiedAt: z.string().nullable(),
 });
@@ -49,9 +50,11 @@ export async function beginAccountPhone(
     const serviceSid = service.parse(env.TWILIO_VERIFY_SERVICE_SID);
     const country = parsePhoneNumberFromString(data.phone)?.country;
     if (!country) throw new Error("PHONE_INVALID");
-    reservation = challenge.parse(await db("reserve", { phone: data.phone, country, serviceSid }));
+    reservation = challenge.parse(
+      await db("reserve", { phone: data.phone, country, serviceSid, channel: data.channel }),
+    );
     // The durable reservation and quotas commit BEFORE the provider call.
-    const receipt = await startPhoneVerification({ ...data, channel: "sms" }, env, transport);
+    const receipt = await startPhoneVerification(data, env, transport);
     await db("sent", {
       challengeId: reservation.challengeId,
       verificationSid: receipt.verificationSid,

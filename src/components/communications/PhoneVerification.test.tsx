@@ -32,7 +32,7 @@ beforeEach(() => {
   mocks.locale = "en";
   mocks.load.mockResolvedValue({
     ok: true,
-    value: { enabled: true, phone: null, verifiedAt: null },
+    value: { enabled: true, channels: ["whatsapp", "sms"], phone: null, verifiedAt: null },
   });
 });
 afterEach(cleanup);
@@ -43,7 +43,7 @@ describe("account phone verification UI", () => {
       mocks.locale = locale;
       mocks.load.mockResolvedValue({
         ok: true,
-        value: { enabled: false, phone: null, verifiedAt: null },
+        value: { enabled: false, channels: ["sms"], phone: null, verifiedAt: null },
       });
       const { container } = renderPhone();
       await screen.findByText(
@@ -78,6 +78,9 @@ describe("account phone verification UI", () => {
     fireEvent.click(screen.getByRole("button", { name: "Send verification code" }));
     await screen.findByLabelText("Verification code — 6 digits");
     expect(mocks.send).toHaveBeenCalledTimes(1);
+    expect(mocks.send).toHaveBeenCalledWith({
+      data: { phone: "+201012345678", locale: "en", channel: "whatsapp" },
+    });
     expect(screen.queryByText(/Number verified/)).not.toBeInTheDocument();
     fireEvent.change(screen.getByLabelText("Verification code — 6 digits"), {
       target: { value: "123456" },
@@ -87,7 +90,12 @@ describe("account phone verification UI", () => {
     expect(screen.getByLabelText("Verification code — 6 digits")).toHaveValue("");
     mocks.load.mockResolvedValue({
       ok: true,
-      value: { enabled: true, phone: "+201012345678", verifiedAt: new Date().toISOString() },
+      value: {
+        enabled: true,
+        channels: ["whatsapp", "sms"],
+        phone: "+201012345678",
+        verifiedAt: new Date().toISOString(),
+      },
     });
     fireEvent.change(screen.getByLabelText("Verification code — 6 digits"), {
       target: { value: "654321" },
@@ -107,6 +115,25 @@ describe("account phone verification UI", () => {
     await screen.findByRole("alert");
     expect(mocks.send).toHaveBeenCalledTimes(1);
     expect(mocks.check).not.toHaveBeenCalled();
+  });
+  it("allows SMS as an explicit alternative and locks channel choice during an attempt", async () => {
+    mocks.send.mockResolvedValue({
+      ok: true,
+      value: { challengeId: "test", expiresAt: new Date(Date.now() + 600000).toISOString() },
+    });
+    renderPhone();
+    expect(await screen.findByRole("radio", { name: "WhatsApp" })).toBeChecked();
+    fireEvent.click(screen.getByRole("radio", { name: "SMS — text message" }));
+    fireEvent.change(screen.getByLabelText("Phone number with country code"), {
+      target: { value: "+201012345678" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Send verification code" }));
+    await screen.findByLabelText("Verification code — 6 digits");
+    expect(mocks.send).toHaveBeenCalledWith({
+      data: { phone: "+201012345678", locale: "en", channel: "sms" },
+    });
+    expect(screen.getByRole("radio", { name: "WhatsApp" })).toBeDisabled();
+    expect(screen.getByRole("radio", { name: "SMS — text message" })).toBeDisabled();
   });
   it("allows resetting an expired attempt without automatically sending another message", async () => {
     mocks.send.mockResolvedValue({

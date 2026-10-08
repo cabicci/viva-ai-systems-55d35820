@@ -8,6 +8,7 @@ CREATE TABLE communications_private.phone_control (
  enabled boolean NOT NULL DEFAULT false,
  test_users uuid[] NOT NULL DEFAULT '{}',
  countries text[] NOT NULL DEFAULT '{EG}',
+ channels text[] NOT NULL DEFAULT '{sms}' CHECK(cardinality(channels)>0 AND channels <@ ARRAY['sms','whatsapp']::text[]),
  budget_day date NOT NULL DEFAULT (now() AT TIME ZONE 'UTC')::date,
  day_sends integer NOT NULL DEFAULT 0 CHECK(day_sends>=0),
  daily_cap integer NOT NULL DEFAULT 20 CHECK(daily_cap BETWEEN 1 AND 100)
@@ -22,6 +23,7 @@ CREATE TABLE communications_private.phone_challenges (
  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
  actor uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
  phone text NOT NULL CHECK(phone ~ '^\+[1-9][0-9]{7,14}$'),
+ channel text NOT NULL CHECK(channel IN ('sms','whatsapp')),
  service_sid text NOT NULL CHECK(service_sid ~ '^VA[a-fA-F0-9]{32}$'),
  verification_sid text CHECK(verification_sid ~ '^VE[a-fA-F0-9]{32}$'),
  state text NOT NULL DEFAULT 'reserved' CHECK(state IN ('reserved','pending','uncertain','checking','exhausted','verified')),
@@ -54,7 +56,7 @@ BEGIN
  SELECT * INTO c FROM communications_private.phone_control WHERE singleton;
  IF p_action='status' THEN
   SELECT phone,verified_at INTO v_phone,v_time FROM communications_private.verified_phones WHERE actor=p_actor;
-  RETURN jsonb_build_object('enabled',c.enabled AND p_actor=ANY(c.test_users),'phone',v_phone,'verifiedAt',v_time);
+  RETURN jsonb_build_object('enabled',c.enabled AND p_actor=ANY(c.test_users),'channels',to_jsonb(c.channels),'phone',v_phone,'verifiedAt',v_time);
  END IF;
  IF NOT c.enabled OR NOT p_actor=ANY(c.test_users) THEN RAISE EXCEPTION 'PHONE_DISABLED'; END IF;
  IF p_action='reserve' THEN
@@ -62,6 +64,7 @@ BEGIN
   PERFORM pg_advisory_xact_lock(hashtextextended('masaarat-phone-budget',0));
   SELECT * INTO c FROM communications_private.phone_control WHERE singleton FOR UPDATE;
   IF NOT c.enabled OR NOT p_actor=ANY(c.test_users) THEN RAISE EXCEPTION 'PHONE_DISABLED'; END IF;
+  IF coalesce(p_data->>'channel','')<>ALL(c.channels) THEN RAISE EXCEPTION 'PHONE_CHANNEL_UNAVAILABLE'; END IF;
   v_phone:=p_data->>'phone';
   IF v_phone IS NULL OR v_phone !~ '^\+[1-9][0-9]{7,14}$' THEN RAISE EXCEPTION 'PHONE_INVALID'; END IF;
   IF coalesce(p_data->>'country','')<>ALL(c.countries)
@@ -79,8 +82,8 @@ BEGIN
     c.day_sends:=0;
   END IF;
   IF c.day_sends>=c.daily_cap THEN RAISE EXCEPTION 'PHONE_LIMIT'; END IF;
-  INSERT INTO communications_private.phone_challenges(actor,phone,service_sid)
-    VALUES(p_actor,v_phone,p_data->>'serviceSid') RETURNING * INTO q;
+  INSERT INTO communications_private.phone_challenges(actor,phone,service_sid,channel)
+    VALUES(p_actor,v_phone,p_data->>'serviceSid',p_data->>'channel') RETURNING * INTO q;
   UPDATE communications_private.phone_control SET day_sends=day_sends+1 WHERE singleton;
   RETURN jsonb_build_object('challengeId',q.id,'expiresAt',q.expires_at);
  END IF;

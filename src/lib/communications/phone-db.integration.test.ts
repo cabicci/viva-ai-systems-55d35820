@@ -16,6 +16,10 @@ type TestDb = Pick<PGlite, "exec" | "query" | "close">;
 let db: TestDb;
 const nativeUrl = process.env.PHONE_NATIVE_DATABASE_URL;
 let native: ReturnType<typeof postgres> | undefined;
+let originalDeletion: string;
+const rollback = readFileSync("docs/communications/phone-verification.rollback.sql", "utf8")
+  .replace(/^BEGIN;$/m, "")
+  .replace(/^COMMIT;$/m, "");
 const actor = randomUUID(),
   other = randomUUID(),
   serviceSid = `VA${"b".repeat(32)}`,
@@ -40,7 +44,7 @@ async function denied(fn: () => Promise<unknown>, pattern: RegExp) {
 const reserve = (number = phone, user = actor) =>
   call<{ challengeId: string; expiresAt: string }>(
     "reserve",
-    { phone: number, country: "EG", serviceSid },
+    { phone: number, country: "EG", serviceSid, channel: "sms" },
     user,
   );
 const enable = () =>
@@ -62,11 +66,21 @@ beforeAll(async () => {
     db = {
       exec: async (sql: string) => native!.unsafe(sql),
       query: async <T>(sql: string, args: unknown[] = []) => ({
-        rows: (await native!.unsafe(sql, args as never)) as unknown as T[],
+        rows: (await native!.unsafe(
+          sql,
+          args.map((v, i) =>
+            i === 2 && typeof v === "string" ? native!.json(JSON.parse(v)) : v,
+          ) as never,
+        )) as unknown as T[],
       }),
       close: () => native!.end(),
     } as unknown as TestDb;
   } else db = await accountDeletionTestDb(true);
+  originalDeletion = (
+    await db.query<{ value: string }>(
+      "SELECT pg_get_functiondef('public.lc09_advance_deletion(uuid,uuid,text)'::regprocedure) value",
+    )
+  ).rows[0].value;
   await db.exec(migration);
 }, 30000);
 afterAll(async () => db?.close());
@@ -76,9 +90,53 @@ describe("account phone ownership with installed billing and LC09", () => {
     SELECT set_config('request.jwt.claim.role','service_role',false);
     INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${actor}','actor@example.test',now()),('${other}','other@example.test',now());`),
   );
-  afterEach(async () => db.exec("RESET ROLE; ROLLBACK"));
+  afterEach(async () => {
+    await db.exec("ROLLBACK");
+    await db.exec("RESET ROLE");
+  });
+  it("rolls back an unused schema and restores the exact original deletion function", async () => {
+    await db.exec(rollback);
+    expect(
+      (
+        await db.query<{ value: string }>(
+          "SELECT pg_get_functiondef('public.lc09_advance_deletion(uuid,uuid,text)'::regprocedure) value",
+        )
+      ).rows[0].value,
+    ).toBe(originalDeletion);
+    expect(
+      (
+        await db.query<{ absent: boolean }>(
+          "SELECT to_regnamespace('communications_private') IS NULL absent",
+        )
+      ).rows[0].absent,
+    ).toBe(true);
+    expect(
+      (
+        await db.query<{ absent: boolean }>(
+          "SELECT to_regprocedure('public.account_phone_command(uuid,text,jsonb)') IS NULL absent",
+        )
+      ).rows[0].absent,
+    ).toBe(true);
+  });
+  it("refuses rollback once any challenge or ownership history exists", async () => {
+    await enable();
+    await reserve();
+    await denied(() => db.exec(rollback), /PHONE_ROLLBACK_HAS_DATA/);
+    expect(
+      (
+        await db.query<{ n: number }>(
+          "SELECT count(*)::int n FROM communications_private.phone_challenges",
+        )
+      ).rows[0].n,
+    ).toBe(1);
+  });
   it("is off by default and pilot allowlist is required", async () => {
-    expect(await call("status")).toEqual({ enabled: false, phone: null, verifiedAt: null });
+    expect(await call("status")).toEqual({
+      enabled: false,
+      channels: ["sms"],
+      phone: null,
+      verifiedAt: null,
+    });
     await denied(() => reserve(), /PHONE_DISABLED/);
     await db.exec("UPDATE communications_private.phone_control SET enabled=true");
     await denied(() => reserve(), /PHONE_DISABLED/);
@@ -99,6 +157,44 @@ describe("account phone ownership with installed billing and LC09", () => {
       `INSERT INTO public.user_roles VALUES('${actor}','admin'); SET ROLE authenticated`,
     );
     await denied(() => call("reserve"), /permission denied/);
+  });
+  it("gates WhatsApp separately while sharing ownership, cooldown and budget with SMS", async () => {
+    await enable();
+    await denied(
+      () => call("reserve", { phone, country: "EG", serviceSid, channel: "whatsapp" }),
+      /PHONE_CHANNEL_UNAVAILABLE/,
+    );
+    await db.exec(
+      "UPDATE communications_private.phone_control SET channels=ARRAY['whatsapp','sms']",
+    );
+    expect((await call("status")).channels).toEqual(["whatsapp", "sms"]);
+    const r = await call<{ challengeId: string }>("reserve", {
+      phone,
+      country: "EG",
+      serviceSid,
+      channel: "whatsapp",
+    });
+    expect(
+      (
+        await db.query<{ channel: string }>(
+          "SELECT channel FROM communications_private.phone_challenges WHERE id=$1",
+          [r.challengeId],
+        )
+      ).rows[0].channel,
+    ).toBe("whatsapp");
+    await call("uncertain", { challengeId: r.challengeId });
+    await denied(() => reserve(), /PHONE_COOLDOWN/);
+    expect(
+      (
+        await db.query<{ n: number }>(
+          "SELECT day_sends n FROM communications_private.phone_control",
+        )
+      ).rows[0].n,
+    ).toBe(1);
+    await denied(
+      () => call("reserve", { phone, country: "EG", serviceSid, channel: "voice" }),
+      /PHONE_CHANNEL_UNAVAILABLE/,
+    );
   });
   it("accepts the server role, rejects claimed authenticated authority and current unconfirmed/deleted users", async () => {
     await enable();
@@ -186,7 +282,7 @@ describe("account phone ownership with installed billing and LC09", () => {
   it("enforces per-account and per-number quotas and country selection", async () => {
     await enable();
     await denied(
-      () => call("reserve", { phone: "+14155552671", country: "US", serviceSid }),
+      () => call("reserve", { phone: "+14155552671", country: "US", serviceSid, channel: "sms" }),
       /COUNTRY_UNAVAILABLE/,
     );
     for (let i = 0; i < 3; i++) {
@@ -283,13 +379,14 @@ describe.skipIf(!nativeUrl)("physical PostgreSQL verification concurrency", () =
   it("allows only one reservation when the same actor submits simultaneously", async () => {
     await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${actor}','actor@example.test',now()),('${other}','other@example.test',now());
       UPDATE communications_private.phone_control SET enabled=true,test_users=ARRAY['${actor}'::uuid,'${other}'::uuid];`);
-    const input = JSON.stringify({ phone, country: "EG", serviceSid });
+    const input = { phone, country: "EG", serviceSid, channel: "sms" };
     await Promise.all(
       racers.map((c) => c`SELECT set_config('request.jwt.claim.role','service_role',false)`),
     );
     const results = await Promise.allSettled(
       racers.map(
-        (c) => c`SELECT public.account_phone_command(${actor}::uuid,'reserve',${input}::jsonb)`,
+        (c) =>
+          c`SELECT public.account_phone_command(${actor}::uuid,'reserve',${c.json(input)}::jsonb)`,
       ),
     );
     expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(1);
@@ -317,7 +414,7 @@ describe.skipIf(!nativeUrl)("physical PostgreSQL verification concurrency", () =
     const results = await Promise.allSettled(
       racers.map(
         (c, i) =>
-          c`SELECT public.account_phone_command(${i === 0 ? actor : other}::uuid,'checked',${JSON.stringify({ challengeId: i === 0 ? first.challengeId : second.challengeId, lease: leases[i].lease, approved: true })}::jsonb)`,
+          c`SELECT public.account_phone_command(${i === 0 ? actor : other}::uuid,'checked',${c.json({ challengeId: i === 0 ? first.challengeId : second.challengeId, lease: String(leases[i].lease), approved: true })}::jsonb)`,
       ),
     );
     expect(results.filter((r) => r.status === "fulfilled")).toHaveLength(1);
