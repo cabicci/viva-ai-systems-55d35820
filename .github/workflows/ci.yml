@@ -66,6 +66,9 @@ jobs:
           src/components/auth/PasswordInput.test.tsx
           src/lib/__tests__/signup-password.test.tsx
 
+      - name: Phone transport in Workers runtime (synthetic outbound only)
+        run: node scripts/communications/worker-check.mjs
+
       - name: Academic written integration (no generation, payments or email sends)
         run: |
           bunx vitest run src/lib/academic-education src/components/academic-education
@@ -199,3 +202,4 @@ jobs:
           src/lib/__tests__/marketing-route-head.test.tsx
           src/lib/__tests__/locale-public-pages.test.ts
           src/lib/__tests__/locale-route-meta.test.ts
+

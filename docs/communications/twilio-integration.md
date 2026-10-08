@@ -341,4 +341,35 @@ no-retry/receipt-binding behavior. Strict TypeScript checking of those modules
 and tests passes. Current-head repository CI remains a release gate; isolated
 tests are not proof of real delivery.
 
+### Workers transport correction — 8 October 2026
+
+The second owner-triggered WhatsApp attempt at `16:52:06.496073Z` also became
+uncertain. Preview logs now provide the exact sanitized event at `16:52:06.528Z`:
+`{"operation":"start","stage":"transport"}`. There is no HTTP status or provider
+error code. Both reservations and their consumed budget remain untouched.
+
+A native workerd `1.20261006.1` reproduction using the repository's compatibility
+date `2025-09-24` and `nodejs_compat` demonstrates that `redirect: "error"` throws
+before network access. The [Cloudflare implementation](https://github.com/cloudflare/workerd/blob/main/src/workerd/api/http.c%2B%2B)
+explicitly supports only `follow` and `manual`, although its Request documentation
+lists all three. The private transport now uses `manual`; the existing non-success
+status guard rejects redirects without following their destination or forwarding
+credentials. The timeout, quotas, receipt binding and no-retry policy are unchanged.
+
+`node scripts/communications/worker-check.mjs` bundles the actual private module,
+uses the repository's compatibility settings, and routes all outbound requests to
+a synthetic Worker with internet access disabled. It exercises GET readiness,
+WhatsApp start, code acceptance and redirect rejection. Restoring the old option
+makes that same native test fail at GET; the corrected module passes. Existing
+locked workerd/esbuild dependencies run this gate in CI; no package version changes.
+The local native run uses the newer workerd version noted above; CI uses the
+repository's locked version. No test contacts Twilio or sends a real message.
+
+The focused suites pass 67 cases, including five redirect statuses, and strict
+TypeScript passes. All four workflows passed on the preceding diagnostic head
+`f9d6da94`; current correction CI and preview synchronization remain pending.
+Actual WhatsApp/SMS arrival, code acceptance and language acceptance remain open.
+No provider configuration, database schema, role or entitlement was changed;
+there was no third send, challenge reset, merge or publication.
+
 

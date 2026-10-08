@@ -38,6 +38,27 @@ describe("private failure diagnostics", () => {
   });
   afterEach(() => vi.restoreAllMocks());
 
+  it.each([301, 302, 303, 307, 308])(
+    "rejects a redirect (%s) without forwarding credentials or retrying",
+    async (status) => {
+      const fetcher = vi
+        .fn<typeof fetch>()
+        .mockResolvedValue(
+          new Response(null, { status, headers: { Location: "https://unexpected.invalid/" } }),
+        );
+      await expect(startPhoneVerification(startInput, connectorEnv, fetcher)).rejects.toThrow(
+        "COMMUNICATIONS_PROVIDER_REJECTED",
+      );
+      expect(fetcher).toHaveBeenCalledTimes(1);
+      expect(fetcher.mock.calls[0][1]?.redirect).toBe("manual");
+      expect(console.warn).toHaveBeenCalledExactlyOnceWith("[masaarat.phone]", {
+        operation: "start",
+        stage: "http",
+        httpStatus: status,
+      });
+    },
+  );
+
   it("identifies missing configuration without fetching or exposing any configured value", async () => {
     const fetcher = transport(result);
     await expect(
@@ -164,7 +185,7 @@ describe("Twilio transport before activation", () => {
       Authorization: `Bearer ${connectorEnv.LOVABLE_API_KEY}`,
       "X-Connection-Api-Key": connectorEnv.TWILIO_API_KEY,
     });
-    expect(options?.redirect).toBe("error");
+    expect(options?.redirect).toBe("manual");
     expect(JSON.stringify(readiness)).not.toContain(connectorEnv.TWILIO_API_KEY);
     expect(JSON.stringify(readiness)).not.toContain(connectorEnv.LOVABLE_API_KEY);
   });
@@ -215,7 +236,7 @@ describe("Twilio transport before activation", () => {
     ]);
     expect(
       fetcher.mock.calls.every(
-        ([, options]) => options?.method === "POST" && options?.redirect === "error",
+        ([, options]) => options?.method === "POST" && options?.redirect === "manual",
       ),
     ).toBe(true);
   });
@@ -301,7 +322,7 @@ describe("Twilio transport before activation", () => {
     const [url, options] = fetcher.mock.calls[0];
     expect(url).toBe(`https://verify.twilio.com/v2/Services/${env.TWILIO_VERIFY_SERVICE_SID}`);
     expect(options?.method).toBe("GET");
-    expect(options?.redirect).toBe("error");
+    expect(options?.redirect).toBe("manual");
     expect(options?.body).toBeUndefined();
     expect(JSON.stringify(flags)).not.toContain(env.TWILIO_AUTH_TOKEN);
     expect(JSON.stringify(flags)).not.toContain(env.TWILIO_ACCOUNT_SID);

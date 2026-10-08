@@ -110,7 +110,9 @@ async function request(
   try {
     response = await transport(`${config.base}${config.service}${resource}`, {
       method: body ? "POST" : "GET",
-      redirect: "error", // Never forward credentials to a redirected origin.
+      // workerd rejects redirect:error before sending. Return redirects as
+      // non-success responses; never forward credentials to their destination.
+      redirect: "manual",
       signal: AbortSignal.timeout(8_000),
       headers: {
         ...config.headers,

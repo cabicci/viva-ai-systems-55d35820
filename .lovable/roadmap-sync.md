@@ -1,3 +1,11 @@
+## 2026-10-08 — Correct native Workers Verify transport
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: The second owner-triggered WhatsApp attempt exposed a transport-stage failure. Native workerd reproduction proves redirect:error is rejected before network. Use manual redirect handling while retaining non-success rejection, credential isolation and no retries. Add the actual-module native Worker gate to existing CI with synthetic outbound only and existing locked dependencies.
+sync_status: Existing roadmap history appended with an exact version guard before this correction. Both uncertain attempts and budget preserved. Local 67 focused tests, strict TypeScript and native GET/start/check/redirect rejection pass; the old option fails the native test. All four previous-head workflows passed. Current-head CI, preview sync and real delivery acceptance remain pending. No extra send, provider/schema change, merge or publication.
+
 ## 2026-10-08 — Diagnose the first WhatsApp preview failure
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
