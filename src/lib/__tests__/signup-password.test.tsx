@@ -22,7 +22,7 @@ vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: "en"
 vi.mock("@/lib/locale/use-ui-strings", () => ({ useUiString: () => (key: string) => key }));
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { signUp: mocks.signup } } }));
 vi.mock("sonner", () => ({ toast: { error: mocks.error, success: mocks.success } }));
-import { Route } from "./signup";
+import { Route } from "@/routes/signup";
 beforeEach(() => {
   vi.clearAllMocks();
   mocks.signup.mockResolvedValue({ error: null });

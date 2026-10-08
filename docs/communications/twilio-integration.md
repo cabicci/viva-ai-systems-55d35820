@@ -202,3 +202,23 @@ cleanup in the test adapter; both were corrected without weakening database
 permissions or assertions. Browser checks use actual components and shipped CSS
 at 375/1280 pixels in four locales, with synthetic Auth/Verify and every external
 request blocked. They do not establish real Twilio delivery.
+
+### Saved registration language
+
+Both verification channels use the current account's saved signup
+`user_metadata.preferred_locale`, already stored by the registration flow. A
+different page language or telephone country cannot override a valid saved choice.
+Legacy accounts with no valid preference use their explicit current page choice.
+Provider Locale is `en` for English and `ar` for ar-EG/ar-MSA/ar-Gulf. Verify
+authentication templates provide Arabic, not separate Egyptian/Gulf OTP dialects;
+no custom OTP wording or translation template is claimed. Both channels and all
+four choices have provider-form and saved-preference regression coverage.
+Future notification queues must snapshot this same account preference and select
+the corresponding approved template revision; these event hooks remain pending.
+
+On head b2aa0526 the disposable PostgreSQL job passed14 cases, including two
+physical races, and browser checks passed16 locale/channel/viewport scenarios.
+The final CI route-catalog assertion caught a missing private communications route
+and a signup test in the route directory. The route is now classified private
+(no sitemap/indexing), and the test was moved to the existing lib/**tests** folder
+without relaxing the assertion. Current-head required CI remains a release gate.

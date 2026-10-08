@@ -1,3 +1,11 @@
+## 2026-10-08 — Saved signup language for verification
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner requires verification messages in the language chosen at registration, for both WhatsApp and SMS. Read the saved preferred_locale from the current Auth account before sending; it overrides the page locale and telephone country. Legacy accounts without a valid preference retain explicit page-language selection. Twilio OTP uses ar for all three Arabic UI locales and en for English. Notification hooks remain pending and must use the same stored preference. Register the additive phone migration in the explicit billing inventory and complete missing private route classification for the admin console and move signup regression tests outside the route source directory.
+sync_status: Draft PR165, no merge/publish. Prior head b2aa0526 passed14 native PostgreSQL cases and16 browser locale/channel/viewport scenarios. Its last CI step caught the incomplete route catalog; corrected without weakening the assertion. Provider linking still needs interactive owner approval in Lovable; no real sends or persistent schema apply.
+
 ## 2026-10-08 — One verification flow for WhatsApp and SMS
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]

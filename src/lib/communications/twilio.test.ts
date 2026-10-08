@@ -191,19 +191,24 @@ describe("Twilio transport before activation", () => {
         .verifyReachable,
     ).toBe(false);
   });
-  it.each(["sms", "whatsapp"])(
-    "requests only the selected %s channel and canonical locale",
-    async (channel) => {
-      const fetcher = transport(result);
-      expect(await startPhoneVerification({ ...startInput, channel }, env, fetcher)).toEqual({
-        verificationSid,
-        phone,
-      });
-      const body = fetcher.mock.calls[0][1]?.body as URLSearchParams;
-      expect(Object.fromEntries(body)).toEqual({ To: phone, Channel: channel, Locale: "ar" });
-      expect(fetcher).toHaveBeenCalledTimes(1);
-    },
-  );
+  it.each(
+    ["sms", "whatsapp"].flatMap((channel) =>
+      ["ar-EG", "ar-MSA", "ar-Gulf", "en"].map((locale) => [channel, locale]),
+    ),
+  )("requests only the selected %s channel and canonical %s locale", async (channel, locale) => {
+    const fetcher = transport(result);
+    expect(await startPhoneVerification({ ...startInput, channel, locale }, env, fetcher)).toEqual({
+      verificationSid,
+      phone,
+    });
+    const body = fetcher.mock.calls[0][1]?.body as URLSearchParams;
+    expect(Object.fromEntries(body)).toEqual({
+      To: phone,
+      Channel: channel,
+      Locale: locale === "en" ? "en" : "ar",
+    });
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
   it.each([
     { ...result, to: "+201099999999" },
     { ...result, service_sid: `VA${"d".repeat(32)}` },

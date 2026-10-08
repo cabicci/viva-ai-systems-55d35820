@@ -152,6 +152,13 @@ export const ROUTE_CATALOG = [
     robotsPath: "/invitations/",
   },
   {
+    source: "admin.communications.tsx",
+    pattern: "/admin/communications",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/admin",
+  },
+  {
     source: "admin.commerce.tsx",
     pattern: "/admin/commerce",
     visibility: "private",

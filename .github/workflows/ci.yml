@@ -64,7 +64,7 @@ jobs:
           src/lib/communications
           src/components/communications
           src/components/auth/PasswordInput.test.tsx
-          src/routes/signup-password.test.tsx
+          src/lib/__tests__/signup-password.test.tsx
 
       - name: Academic written integration (no generation, payments or email sends)
         run: |

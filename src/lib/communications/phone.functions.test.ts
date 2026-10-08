@@ -35,6 +35,48 @@ beforeEach(() => {
   });
 });
 describe("phone server endpoint authority", () => {
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
+    "uses the saved registration language %s for both channels, even on a different page locale",
+    async (locale) => {
+      mocks.getUser.mockResolvedValue({
+        data: {
+          user: {
+            id: "trusted-actor",
+            email_confirmed_at: "confirmed",
+            user_metadata: { preferred_locale: locale },
+          },
+        },
+        error: null,
+      });
+      for (const channel of ["whatsapp", "sms"]) {
+        const input = { phone: "+201012345678", channel, locale: locale === "en" ? "ar-EG" : "en" };
+        await (sendAccountPhoneCode as unknown as Handler)({ context, data: input });
+        expect(mocks.begin).toHaveBeenLastCalledWith(
+          { ...input, locale },
+          expect.any(Function),
+          process.env,
+        );
+      }
+    },
+  );
+  it.each([undefined, "fr", null])(
+    "uses the explicit page language for a legacy account without a valid saved language %s",
+    async (locale) => {
+      mocks.getUser.mockResolvedValue({
+        data: {
+          user: {
+            id: "trusted-actor",
+            email_confirmed_at: "confirmed",
+            user_metadata: { preferred_locale: locale },
+          },
+        },
+        error: null,
+      });
+      const input = { phone: "+201012345678", channel: "whatsapp", locale: "ar-Gulf" };
+      await (sendAccountPhoneCode as unknown as Handler)({ context, data: input });
+      expect(mocks.begin).toHaveBeenLastCalledWith(input, expect.any(Function), process.env);
+    },
+  );
   it.each([null, { id: "different-actor", email_confirmed_at: "confirmed" }])(
     "rejects missing/current-account mismatch %j",
     async (user) => {
