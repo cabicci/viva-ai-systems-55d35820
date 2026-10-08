@@ -2190,6 +2190,10 @@ export type Database = {
       }
       academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
+      account_phone_command: {
+        Args: { p_action: string; p_actor: string; p_data?: Json }
+        Returns: Json
+      }
       activate_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
