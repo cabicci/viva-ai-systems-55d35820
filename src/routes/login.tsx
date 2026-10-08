@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -96,11 +97,10 @@ function LoginPage() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="login-password">{t("auth.field.password")}</Label>
-          <Input
+          <PasswordInput
             id="login-password"
             name="password"
             autoComplete="current-password"
-            type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required

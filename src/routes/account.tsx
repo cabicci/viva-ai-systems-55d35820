@@ -43,6 +43,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { KidsConsentControl } from "@/components/kids/KidsConsentControl";
+import { PhoneVerification } from "@/components/communications/PhoneVerification";
 
 const DATE_LOCALE: Record<SupportedLocale, string> = {
   "ar-EG": "ar-EG",
@@ -362,6 +363,7 @@ function AccountContent() {
         </section>
 
         <section className="glass rounded-2xl p-6 border border-border/50 mb-5">
+          <PhoneVerification key={userId} />
           <KidsConsentControl />
         </section>
 

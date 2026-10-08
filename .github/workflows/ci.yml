@@ -58,6 +58,14 @@ jobs:
           src/lib/kids/auth-intent.test.ts
           src/lib/__tests__/locale-auth.test.ts
 
+      - name: Phone verification and password confirmation (isolated, no sends)
+        run: >-
+          bunx vitest run
+          src/lib/communications
+          src/components/communications
+          src/components/auth/PasswordInput.test.tsx
+          src/routes/signup-password.test.tsx
+
       - name: Academic written integration (no generation, payments or email sends)
         run: |
           bunx vitest run src/lib/academic-education src/components/academic-education

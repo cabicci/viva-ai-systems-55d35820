@@ -129,3 +129,47 @@ Official references: [Twilio Verify](https://www.twilio.com/docs/verify/api/veri
 [verification checks](https://www.twilio.com/docs/verify/api/verification-check),
 [WhatsApp sender setup for Verify](https://www.twilio.com/docs/verify/whatsapp/byo),
 [Egypt SMS rules](https://www.twilio.com/en-us/guidelines/eg/sms).
+
+## Latest implementation checkpoint — 8 October 2026
+
+The existing service is `masaarat OTP`. Lovable saved its reference as server-only
+`TWILIO_VERIFY_SERVICE_SID` and the subsequent GET succeeded. The earlier missing
+service/approval entries are historical and no longer a setup blocker. No SMS
+arrival has been tested. WhatsApp authentication remains unconfigured.
+
+The current PR adds an account-page SMS flow and authenticated server functions.
+The server revalidates the current Auth user/email; a service-only RPC derives the
+actor from that server context. Browser data cannot select an actor, provider SID,
+channel or approval result. A private schema holds challenges and verified phones;
+no direct learner/admin/table write can mark a number verified. Verify is not
+phone sign-in, parent consent or a paid entitlement.
+
+A reservation commits before the paid provider POST. The initial off-by-default
+pilot allows only explicit actor UUIDs and Egyptian numbers. Its conservative
+application caps are 3 sends per account/number per rolling day, 20 globally per
+UTC day, five code checks per challenge, ten-minute expiry and a 30-second
+in-flight lease. Uncertain sends consume budget and block another send until
+expiry; there is no automatic retry or fallback. These are implementation limits,
+not Twilio pricing or provider policy claims. Previous verified ownership remains
+until a replacement is approved. Exactly bound `approved` plus `valid=true`
+receipts and a live check lease are required; deletion/conflicting ownership wins.
+
+The additive migration is mirrored in the Drizzle inventory as
+`0008_account_phone_verification`. It wraps the installed LC09 chain rather than
+replacing its financial/commerce/journey behavior. In-flight leases fence erasure;
+challenge/contact data and the pilot identifier are erased at `learner_erased`.
+Global budget is not refunded by account deletion. Retention of unexpired provider
+assets is unchanged. No verification code is stored in SQL or passed to the RPC.
+
+The owner also requested password confirmation and eye buttons. Signup now
+requires exact password equality before Auth; login, signup and reset reuse a
+localized visibility control. This does not change password policy or Auth mode.
+
+Remaining gates: actual native PostgreSQL/concurrency CI, current-database
+transactional rehearsal through Lovable, apply disabled schema through Lovable,
+owner-controlled phone target and bounded real delivery/check test, browser/mobile
+verification and merge/publication authorization. Persistent notification
+switches/templates/logs/usage, signup/plan/grant/coupon/invitation/receipt messaging
+hooks and a mandatory verified-phone transition for offers remain pending. This
+slice changes no commerce function and must not be advertised as all messaging
+features complete. The Recovery Plan is not used or updated.

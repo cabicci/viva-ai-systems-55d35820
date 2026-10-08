@@ -134,9 +134,8 @@ export async function readCommunicationsReadiness(
   };
 }
 
-// These transport methods are not exposed as public endpoints. The pending
-// Lovable database boundary must authorize the user and reserve quotas BEFORE
-// using them, then bind the receipt to the exact user/phone/challenge.
+// These transports are private. phone.server reserves database quotas before
+// calling them and binds the receipt to the exact current actor/challenge.
 export async function startPhoneVerification(
   input: unknown,
   env: Env,

@@ -1,3 +1,19 @@
+## 2026-10-08 — Password confirmation and visibility
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner requested re-enter password at signup and full eye controls. Reuse a localized accessible visibility field in signup, login and reset; reject signup mismatch before Auth and preserve password login. No new Auth provider or subscription change.
+sync_status: draft in PR165, isolated tests only, no merge/publication.
+
+## 2026-10-08 — Account phone verification draft
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: db
+source: user
+summary: Continue PR165 using the existing masaarat OTP service and saved TWILIO_VERIFY_SERVICE_SID. Add an account-bound SMS verification draft with private ownership/challenge data, before-send quotas, exact receipt/check leases, confirmed email/current account checks and LC09 erasure. Preserve email/password sign-in and all subscription/offer access. Initial country scope is Egypt; rollout is off and restricted to an explicit pilot actor allowlist.
+sync_status: local implementation and rehearsal; real delivery not tested. No duplicate service, code generation in Lovable, merge or publication. No Recovery Plan use. Platform migration handoff remains through Lovable.
+
 ## 2026-10-08 — Linked Twilio connector runtime
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
