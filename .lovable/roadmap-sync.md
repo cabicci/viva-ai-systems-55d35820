@@ -1,3 +1,11 @@
+## 2026-10-08 — Direct phone-entry page and verified rollback source
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Add a private /verify-phone page reusing the same account verification component and server actions. Keep the exact path through login/signup, display the signed-in account, preserve four locales and require neither an administrator nor a previously verified phone. The owner supplied a test recipient outside source control. Capture the exact live LC09 function through Lovable for the pending additive migration rollback.
+sync_status: Roadmap updated with an exact version guard at 2026-10-08T13:48:02.847921Z. Local 49 focused tests, TypeScript and production build passed. Backup MD5 8c92b9dc579d65e68cba2ffb25489e1f matches live source. No persistent phone migration, preview switch, messages, merge or publication. WhatsApp linking still requires the native owner approval inside Lovable.
+
 ## 2026-10-08 — Saved signup language for verification
 
 [roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]

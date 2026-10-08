@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { phoneVerificationCopy } from "@/lib/communications/phone-copy";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/lib/auth-context";
@@ -13,107 +14,11 @@ import {
 import type { PhoneChallenge, PhoneError } from "@/lib/communications/phone-contracts";
 import type { DeliveryChannel } from "@/lib/communications/contracts";
 
-const copy = {
-  "ar-EG": {
-    title: "تأكيد رقم الموبايل",
-    intro: "اختار واتساب أو SMS لتأكيد رقمك. دخولك بالإيميل وكلمة المرور زي ما هو.",
-    channel: "طريقة وصول الكود",
-    sms: "SMS — رسالة نصية",
-    whatsapp: "واتساب",
-    phone: "رقم الموبايل مع كود الدولة",
-    send: "ابعت كود التأكيد",
-    code: "كود التأكيد — 6 أرقام",
-    confirm: "أكد الرقم",
-    sent: "طلب إرسال الكود اتقبل. لو ما وصلكش، استنى انتهاء المحاولة قبل طلب كود جديد.",
-    wait: "الطلب قيد التنفيذ…",
-    verified: "الرقم مؤكد",
-    off: "تأكيد الهاتف غير متاح حاليًا.",
-    retry: "حاول تاني",
-    invalid: "الكود غير صحيح. راجعه وحاول تاني.",
-    disabled: "تأكيد الهاتف غير متاح حاليًا.",
-    email: "أكد بريدك الإلكتروني أولًا.",
-    phoneError: "اكتب رقمًا صحيحًا مع كود الدولة ضمن الدول المتاحة.",
-    limit: "وصلت لحد المحاولات، أو عندك محاولة لسه شغالة. حاول لاحقًا.",
-    challenge: "المحاولة انتهت أو استنفدت. اطلب كودًا جديدًا بعد انتهاء فترة الانتظار.",
-    unavailable: "تعذر إكمال الطلب. ما تطلبش إرسال جديد فورًا؛ استنى انتهاء المحاولة.",
-  },
-  "ar-MSA": {
-    title: "تأكيد رقم الهاتف",
-    intro: "اختر واتساب أو SMS لتأكيد رقمك. يستمر الدخول بالبريد الإلكتروني وكلمة المرور.",
-    channel: "طريقة استلام الرمز",
-    sms: "SMS — رسالة نصية",
-    whatsapp: "واتساب",
-    phone: "رقم الهاتف مع رمز الدولة",
-    send: "إرسال رمز التأكيد",
-    code: "رمز التأكيد — 6 أرقام",
-    confirm: "تأكيد الرقم",
-    sent: "قُبل طلب إرسال الرمز. إذا لم يصلك، انتظر انتهاء المحاولة قبل طلب رمز جديد.",
-    wait: "جارٍ تنفيذ الطلب…",
-    verified: "الرقم مؤكد",
-    off: "تأكيد الهاتف غير متاح حاليًا.",
-    retry: "إعادة المحاولة",
-    invalid: "الرمز غير صحيح. راجعه وحاول مجددًا.",
-    disabled: "تأكيد الهاتف غير متاح حاليًا.",
-    email: "أكّد بريدك الإلكتروني أولًا.",
-    phoneError: "أدخل رقمًا صحيحًا مع رمز الدولة ضمن الدول المتاحة.",
-    limit: "بلغت حد المحاولات أو توجد محاولة قيد التنفيذ. حاول لاحقًا.",
-    challenge: "انتهت المحاولة أو استُنفدت. اطلب رمزًا جديدًا بعد انتهاء فترة الانتظار.",
-    unavailable: "تعذر إكمال الطلب. انتظر انتهاء المحاولة قبل طلب إرسال جديد.",
-  },
-  "ar-Gulf": {
-    title: "تأكيد رقم الجوال",
-    intro: "اختر واتساب أو SMS لتأكيد رقمك. دخولك بالإيميل وكلمة المرور يبقى مثل ما هو.",
-    channel: "طريقة استلام الرمز",
-    sms: "SMS — رسالة نصية",
-    whatsapp: "واتساب",
-    phone: "رقم الجوال مع رمز الدولة",
-    send: "أرسل رمز التأكيد",
-    code: "رمز التأكيد — 6 أرقام",
-    confirm: "تأكيد الرقم",
-    sent: "تم قبول طلب إرسال الرمز. إذا ما وصلك، انتظر انتهاء المحاولة قبل طلب رمز جديد.",
-    wait: "جاري تنفيذ الطلب…",
-    verified: "الرقم مؤكد",
-    off: "تأكيد الجوال غير متاح حاليًا.",
-    retry: "حاول مرة ثانية",
-    invalid: "الرمز غير صحيح. راجعه وحاول مرة ثانية.",
-    disabled: "تأكيد الجوال غير متاح حاليًا.",
-    email: "أكد بريدك الإلكتروني أولًا.",
-    phoneError: "أدخل رقمًا صحيحًا مع رمز الدولة ضمن الدول المتاحة.",
-    limit: "وصلت لحد المحاولات أو عندك محاولة قيد التنفيذ. حاول لاحقًا.",
-    challenge: "انتهت المحاولة أو استنفدت. اطلب رمزًا جديدًا بعد انتهاء فترة الانتظار.",
-    unavailable: "تعذر إكمال الطلب. انتظر انتهاء المحاولة قبل طلب إرسال جديد.",
-  },
-  en: {
-    title: "Verify your phone",
-    intro:
-      "Choose WhatsApp or SMS to confirm your number. Email and password sign-in stays the same.",
-    channel: "Code delivery method",
-    sms: "SMS — text message",
-    whatsapp: "WhatsApp",
-    phone: "Phone number with country code",
-    send: "Send verification code",
-    code: "Verification code — 6 digits",
-    confirm: "Verify number",
-    sent: "The send request was accepted. If no code arrives, wait for this attempt to expire before requesting another.",
-    wait: "Working…",
-    verified: "Number verified",
-    off: "Phone verification is currently unavailable.",
-    retry: "Try again",
-    invalid: "Incorrect code. Check it and try again.",
-    disabled: "Phone verification is currently unavailable.",
-    email: "Confirm your email first.",
-    phoneError: "Enter a valid international number in an available country.",
-    limit: "An attempt is still active or the attempt limit was reached. Try later.",
-    challenge:
-      "This attempt has expired or been exhausted. Request a new code after the waiting period.",
-    unavailable:
-      "The request could not be completed. Wait for the attempt to expire before sending again.",
-  },
-};
-export function PhoneVerification() {
+export function PhoneVerification({ standalone = false }: { standalone?: boolean } = {}) {
   const { user } = useAuth();
   const { locale, dir } = useLocale();
-  const t = copy[locale];
+  const t = phoneVerificationCopy(locale);
+  const Heading = standalone ? "h1" : "h2";
   const load = useServerFn(getAccountPhone),
     send = useServerFn(sendAccountPhoneCode),
     check = useServerFn(verifyAccountPhoneCode);
@@ -192,11 +97,12 @@ export function PhoneVerification() {
   }
   return (
     <section
+      id="phone-verification"
       className="glass rounded-2xl p-6 border border-border/50 mb-5"
       dir={dir}
       aria-busy={busy || status.isFetching}
     >
-      <h2 className="text-lg font-bold">{t.title}</h2>
+      <Heading className="text-lg font-bold">{t.title}</Heading>
       <p className="text-sm text-muted-foreground mt-2">{t.intro}</p>
       {value?.phone && (
         <p className="mt-3" role="status">

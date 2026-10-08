@@ -222,3 +222,40 @@ The final CI route-catalog assertion caught a missing private communications rou
 and a signup test in the route directory. The route is now classified private
 (no sitemap/indexing), and the test was moved to the existing lib/**tests** folder
 without relaxing the assertion. Current-head required CI remains a release gate.
+
+### Direct phone-entry page and exact rollback source
+
+The owner requested a concrete phone-entry page and supplied a test recipient.
+The number is not stored in repository files, fixtures or URLs. The private
+`/verify-phone` route reuses the same account component and server operations;
+it displays the current signed-in account and keeps its exact return path through
+login/signup. It requires an ordinary confirmed-email account, not administrator
+permissions or a previously verified phone. Four locales and the saved-signup
+message language contract remain unchanged. The route is excluded from indexing
+and the sitemap. `/account#phone-verification` retains the same embedded flow.
+
+The preceding immutable head `bdf65b4e` passed all four required CI workflows,
+including 14 native PostgreSQL phone cases and 16 browser scenarios. The direct
+page change passed 49 focused tests, TypeScript, changed-file lint and a production
+build locally. Current-head CI must still pass after this update. No real message
+was sent, no customer/account was modified, and the preview has not been switched.
+
+Lovable retrieved the current `public.lc09_advance_deletion(uuid,uuid,text)`
+definition on 8 October, before any phone migration. Its exact database text is
+preserved in `docs/communications/lc09-before-phone.sql` (765 bytes, one final
+newline): MD5 `8c92b9dc579d65e68cba2ffb25489e1f`, SHA256
+`da2c21ba56d60478cc1d34a33b4cbac5f22127bbcbdd1e59d6ba11aa74067317`.
+The owner is `postgres`; the ACL is
+`{postgres=X/postgres,service_role=X/postgres}`. This is a source backup of the
+only existing function replaced by this additive migration, not a claim that
+managed database backups/PITR were verified. The tested rollback restores the
+copied previous function and refuses to erase any phone challenge/ownership data.
+
+Lovable's migration tool accepts the name `account_phone_verification` and exact
+reviewed SQL, generates the next Drizzle entry (currently 0008) and applies it.
+After an authorized successful apply, preserve its actual generated SQL/meta
+records in this PR instead of the draft Drizzle records, and record the matching
+Supabase source file as already applied. Do not execute the migration twice.
+Fresh schema absence and the exact original function hash must be rechecked at
+that step. Sending stays disabled with an empty pilot list until the actual
+signed-in test account and both provider channels are ready.

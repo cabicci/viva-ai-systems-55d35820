@@ -131,6 +131,13 @@ export const ROUTE_CATALOG = [
     robotsPath: "/onboarding",
   },
   {
+    source: "verify-phone.tsx",
+    pattern: "/verify-phone",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/verify-phone",
+  },
+  {
     source: "account.tsx",
     pattern: "/account",
     visibility: "private",
