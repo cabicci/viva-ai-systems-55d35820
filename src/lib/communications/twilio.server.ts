@@ -52,11 +52,9 @@ export async function readAuthorizedCommunicationsReadiness(
   transport: Transport = fetch,
 ): Promise<CommunicationsReadiness> {
   const role = await rpc("has_role", { _user_id: userId, _role: "admin" });
-  if (role.error || role.data !== true)
-    throw new Error("Forbidden: admin role required");
+  if (role.error || role.data !== true) throw new Error("Forbidden: admin role required");
   const active = await rpc("lc09_account_active");
-  if (active.error || active.data !== true)
-    throw new Error("ACCOUNT_DELETION_PENDING");
+  if (active.error || active.data !== true) throw new Error("ACCOUNT_DELETION_PENDING");
   return readCommunicationsReadiness(env, transport);
 }
 
@@ -90,8 +88,7 @@ function credentials(env: Env) {
 function configuration(env: Env) {
   const connection = credentials(env);
   const service = env.TWILIO_VERIFY_SERVICE_SID;
-  if (!service || !sid("VA").test(service))
-    throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
+  if (!service || !sid("VA").test(service)) throw new Error("COMMUNICATIONS_NOT_CONFIGURED");
   return { ...connection, service };
 }
 
@@ -117,9 +114,7 @@ async function request(
       signal: AbortSignal.timeout(8_000),
       headers: {
         ...config.headers,
-        ...(body
-          ? { "Content-Type": "application/x-www-form-urlencoded" }
-          : {}),
+        ...(body ? { "Content-Type": "application/x-www-form-urlencoded" } : {}),
       },
       ...(body ? { body } : {}),
     });
@@ -140,8 +135,7 @@ async function request(
     }
     reportFailure(operation, "http", response.status, providerCode);
     if (response.status === 429) throw new Error("COMMUNICATIONS_RATE_LIMITED");
-    if (response.status === 404)
-      throw new Error("COMMUNICATIONS_VERIFICATION_UNAVAILABLE");
+    if (response.status === 404) throw new Error("COMMUNICATIONS_VERIFICATION_UNAVAILABLE");
     throw new Error("COMMUNICATIONS_PROVIDER_REJECTED");
   }
   try {
@@ -187,9 +181,7 @@ export async function readCommunicationsReadiness(
       credentialsConfigured &&
       !!env.TWILIO_MESSAGING_SERVICE_SID &&
       sid("MG").test(env.TWILIO_MESSAGING_SERVICE_SID),
-    whatsappSenderConfigured: /^whatsapp:\+[1-9][0-9]{7,14}$/.test(
-      env.TWILIO_WHATSAPP_FROM ?? "",
-    ),
+    whatsappSenderConfigured: /^whatsapp:\+[1-9][0-9]{7,14}$/.test(env.TWILIO_WHATSAPP_FROM ?? ""),
     activationAvailable: false,
   };
 }
