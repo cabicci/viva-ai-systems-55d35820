@@ -25,8 +25,11 @@ class API:
         self.token = os.environ['GH_TOKEN']
 
     def get(self, path):
+        url = 'https://api.github.com/repos/' + REPO
+        if path:
+            url += '/' + path
         request = urllib.request.Request(
-            'https://api.github.com/repos/' + REPO + '/' + path,
+            url,
             headers={'Authorization': 'Bearer ' + self.token,
                      'Accept': 'application/vnd.github+json',
                      'X-GitHub-Api-Version': '2022-11-28'})
@@ -69,7 +72,9 @@ def validate_manifest(manifest):
 
 def read_main(api):
     repository = api.get('')
-    if not repository or repository['default_branch'] != 'main':
+    if not repository:
+        raise RuntimeError('Repository metadata unavailable')
+    if repository['default_branch'] != 'main':
         raise RuntimeError('Default branch changed')
     main = api.get('git/ref/heads/main')
     if not main:
