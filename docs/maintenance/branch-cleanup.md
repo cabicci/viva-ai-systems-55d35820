@@ -1,10 +1,18 @@
 # Reviewed branch cleanup
 
-This manual workflow operates only on the 104 branch names and exact commit SHAs
+This workflow operates only on the 104 branch names and exact commit SHAs
 in `branch-cleanup-2026-10-10.json`. It cannot discover or add deletion targets.
 It never merges, publishes, changes repository settings, or deletes files.
 
-After this change is merged, open **Actions → Clean reviewed merged branches →
+The owner requested execution through the connected GitHub account. PR #170
+therefore includes a single automatic deletion run: a push to main changing the
+workflow, whose prior main is exactly `68dd81423cf9d9f7748316b0dc5cdf6b312a9ed8`
+and whose commit title starts with
+`chore: run approved branch cleanup 2026-10-10 (#170)`. Both conditions must
+match. Later commits cannot reuse this trigger because their prior main differs.
+The same preflight, saved recovery manifest and per-branch guards apply.
+
+For a later manual run, open **Actions → Clean reviewed merged branches →
 Run workflow**, keep branch **main**, select **delete**, and enter
 `DELETE MERGED BRANCHES`. The default **preview** mode performs no deletion.
 
