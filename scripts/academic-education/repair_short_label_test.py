@@ -71,4 +71,46 @@ class HeadingRepairTests(unittest.TestCase):
         self.assertEqual(pcm,b'ab')
 
 
+class SplitHeadingTests(unittest.TestCase):
+    def run_split(self,durations,transcripts):
+        temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
+        work=Path(temp.name);target=work/'retained.wav';target.write_bytes(b'original')
+        tts=FakeTts(durations);audit={'attempts':[]};values=iter(transcripts);calls=[]
+        def generate(tts,policy,text,path,keys,attempt):
+            calls.append(text);path.write_bytes(text.encode());return {'audioParts':1}
+        def join(parts,path):path.write_bytes(b''.join(p.read_bytes() for p in parts))
+        repair.repair_split_label(tts,'policy',target,['private'],'asr',audit,work,
+            lambda *args:next(values),generate,join)
+        return target,work,audit,calls
+    def test_each_word_and_combined_must_match(self):
+        p,w,a,c=self.run_split([1.4,1.4,2.8],['تعديل','النموذج','تعديل النموذج'])
+        self.assertEqual(c,['تعديل.','النموذج.'])
+        self.assertEqual(p.read_bytes(),'تعديل.النموذج.'.encode())
+        self.assertEqual((w/'preserved-invalid-label.wav').read_bytes(),b'original')
+        self.assertTrue(a['combined']['wordsMatch'])
+    def test_extra_single_word_rejected_and_retried(self):
+        p,w,a,c=self.run_split([1.4,1.4,1.4,2.8],['تعديل تعديل','تعديل','النموذج','تعديل النموذج'])
+        self.assertFalse(a['attempts'][0]['wordsMatch']);self.assertEqual(len(c),3)
+    def test_combined_missing_word_refused(self):
+        with self.assertRaisesRegex(ValueError,'Combined'):
+            self.run_split([1.4,1.4,2.8],['تعديل','النموذج','تعديل'])
+    def test_per_word_duration_gate_enforced_without_asr(self):
+        with self.assertRaisesRegex(ValueError,'Bounded'):
+            self.run_split([2]*repair.MAX_ATTEMPTS,[])
+    def test_combined_duration_gate_preserved(self):
+        with self.assertRaisesRegex(ValueError,'Combined'):
+            self.run_split([1.4,1.4,4],['تعديل','النموذج'])
+    def test_pcm_join_preserves_all_frames_in_order(self):
+        import wave
+        temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup);work=Path(temp.name)
+        parts=[]
+        for i,data in enumerate([b'\x01\x00'*24,b'\x02\x00'*48]):
+            p=work/f'{i}.wav';parts.append(p)
+            with wave.open(str(p),'wb') as out:
+                out.setnchannels(1);out.setsampwidth(2);out.setframerate(24000);out.writeframes(data)
+        repair.join_pcm(parts,work/'joined.wav')
+        with wave.open(str(work/'joined.wav'),'rb') as joined:
+            self.assertEqual(joined.readframes(joined.getnframes()),b'\x01\x00'*24+b'\x02\x00'*48)
+
+
 if __name__=='__main__':unittest.main()

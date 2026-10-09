@@ -12,7 +12,7 @@ import urllib.request
 
 import course_media as media
 from media_plan import ROOT, digest
-from recover_media import acceptable, matching_receipt, restore_audio
+from recover_media import acceptable, matching_receipt, restore_audio, join_pcm
 
 LESSON='AC-BUS-M03-L03'
 LOCALE='ar-EG'
@@ -22,7 +22,7 @@ SCENE='case-step-5-1'
 LABEL='تعديل النموذج:'
 TTS_INPUT='تعديل النموذج.'
 FOCUS='Preserve meaning and all numbers; natural academic teaching.'
-SHORT_PREFIX='اقرأ العنوان التالي فقط مرة واحدة بعامية مصرية قاهرية طبيعية، دون شرح أو تكرار. لا تقرأ تعليمات النطق.\nالنص:\n'
+SHORT_PREFIX='قل هذه الكلمة فقط بوضوح باللهجة المصرية، دون إضافة أي كلمات أخرى:\n'
 MAX_ATTEMPTS=4
 
 
@@ -90,10 +90,9 @@ def pcm_parts(result):
     return b''.join(audio),{'audioParts':len(audio),'pcmBytes':[len(a) for a in audio]}
 
 
-def synthesize_label(tts,short_policy,candidate,keys,attempt):
-    if words(TTS_INPUT)!=words(LABEL):raise ValueError('Heading words changed')
-    rewritten,prefix=tts.prepare_narration(TTS_INPUT,None,short_policy)
-    if words(rewritten)!=words(LABEL):raise ValueError('Narration rewrite changed heading words')
+def synthesize_text(tts,short_policy,text,candidate,keys,attempt):
+    rewritten,prefix=tts.prepare_narration(text,None,short_policy)
+    if words(rewritten)!=words(text):raise ValueError('Narration rewrite changed heading words')
     tts._throttle_before_request('Charon',f'key#{(attempt-1)%len(keys)+1}')
     payload={'contents':[{'parts':[{'text':prefix+rewritten}]}],
         'generationConfig':{'responseModalities':['AUDIO'],
@@ -102,6 +101,11 @@ def synthesize_label(tts,short_policy,candidate,keys,attempt):
     pcm,stats=pcm_parts(result)
     candidate.write_bytes(tts._pcm_to_wav(pcm))
     return stats
+
+
+def synthesize_label(tts,short_policy,candidate,keys,attempt):
+    if words(TTS_INPUT)!=words(LABEL):raise ValueError('Heading words changed')
+    return synthesize_text(tts,short_policy,TTS_INPUT,candidate,keys,attempt)
 
 
 def repair_label(tts,short_policy,target,keys,asr_model,audit,work,recognize=transcribe,generate=synthesize_label):
@@ -131,6 +135,52 @@ def repair_label(tts,short_policy,target,keys,asr_model,audit,work,recognize=tra
     raise ValueError('Bounded short heading repair did not meet unchanged duration/verbatim gates')
 
 
+def repair_split_label(tts,short_policy,target,keys,asr_model,audit,work,
+                       recognize=transcribe,generate=synthesize_text,join=join_pcm):
+    # Only this exact two-word heading may use the explicit word-boundary recipe.
+    tokens=words(LABEL)
+    if tokens!=['تعديل','النموذج']:raise ValueError('Split heading identity changed')
+    original=sha(target);target.replace(work/'preserved-invalid-label.wav')
+    audit['originalInvalidSha256']=original
+    parts=[]
+    for index,word in enumerate(tokens):
+        accepted=None
+        for attempt in range(1,MAX_ATTEMPTS+1):
+            path=work/f'split-word-{index+1}-attempt-{attempt}.wav'
+            stats=generate(tts,short_policy,word+'.',path,keys,index*MAX_ATTEMPTS+attempt)
+            seconds=tts._duration_s(str(path))
+            item={'wordIndex':index+1,'word':word,'attempt':attempt,'sha256':sha(path),
+                  'durationSeconds':seconds,'durationValid':acceptable(word,seconds),
+                  'transcript':None,'wordsMatch':False,'responseStats':stats}
+            audit['attempts'].append(item)
+            if item['durationValid']:
+                item['transcript']=recognize(path,keys[0],asr_model)
+                item['wordsMatch']=words(item['transcript'])==[word]
+            media.write_json(work/'short-label-audit.json',audit)
+            print(f'Exact heading word{index+1} attempt{attempt}: duration={item["durationValid"]}, words={item["wordsMatch"]}',flush=True)
+            if item['durationValid'] and item['wordsMatch']:
+                accepted=path;break
+        if accepted is None:raise ValueError('Bounded split heading word failed unchanged duration/verbatim gates')
+        parts.append(accepted)
+    candidate=work/'split-label-joined.wav'
+    join(parts,candidate)
+    seconds=tts._duration_s(str(candidate))
+    combined={'sha256':sha(candidate),'durationSeconds':seconds,
+              'durationValid':acceptable(LABEL,seconds),'transcript':None,'wordsMatch':False,
+              'orderedPartSha256':[sha(p) for p in parts],
+              'pcmHandling':'concatenationOnlyNoTrimNoSpeedChangeNoAddedSilence'}
+    audit['combined']=combined
+    if combined['durationValid']:
+        combined['transcript']=recognize(candidate,keys[0],asr_model)
+        combined['wordsMatch']=words(combined['transcript'])==tokens
+    media.write_json(work/'short-label-audit.json',audit)
+    if not (combined['durationValid'] and combined['wordsMatch']):
+        raise ValueError('Combined split heading failed unchanged duration/verbatim gates')
+    target.write_bytes(candidate.read_bytes())
+    audit['acceptedSha256']=sha(target)
+    media.write_json(work/'short-label-audit.json',audit)
+
+
 def validated_plan():
     plan,base=media.production_plan(LESSON,LOCALE)
     if base!=BASE or plan['sourceSha256']!=SOURCE:raise ValueError('Exact production source/fingerprint changed')
@@ -145,12 +195,15 @@ def run(retained):
     sys.path.insert(0,str(ROOT/'experiments/academic/media'))
     from policy import POLICY
     import gemini_tts as tts
-    short_policy=tts.NarrationPolicy('academic-egyptian-short-heading-v1',SHORT_PREFIX,())
-    recipe={'schemaVersion':1,'baseProductionFingerprint':BASE,'sourceSha256':SOURCE,
-        'sceneId':SCENE,'spoken':LABEL,'ttsInput':TTS_INPUT,'punctuationOnlyChange':True,
+    short_policy=tts.NarrationPolicy('academic-egyptian-verbatim-word-v2',SHORT_PREFIX,())
+    recipe={'schemaVersion':2,'baseProductionFingerprint':BASE,'sourceSha256':SOURCE,
+        'sceneId':SCENE,'spoken':LABEL,'ttsInputs':[word+'.' for word in words(LABEL)],
+        'wordBoundarySegmentation':True,'pcmJoin':'orderedUnmodifiedConcatenation',
+        'previousFailedRepairRuns':[37912431573,37913198572],
         'audioResponseHandling':'allPCMpartsInOriginalOrder','voice':'Charon','ttsModel':tts.MODEL,
         'shortPolicy':asdict(short_policy),'shortFocus':'','durationGateWpm':[35,300],
-        'maxAttempts':MAX_ATTEMPTS,'verbatimAsrRequired':True,'executorSha256':sha(Path(__file__))}
+        'maxAttemptsPerWord':MAX_ATTEMPTS,'maxTotalTtsRequests':MAX_ATTEMPTS*2,
+        'verbatimAsrRequiredForEachWordAndCombined':True,'executorSha256':sha(Path(__file__))}
     fingerprint=digest(recipe)
     work=ROOT/f'tmp/academic-course-media/{LESSON}/{LOCALE}/{fingerprint}'
     work.mkdir(parents=True,exist_ok=True)
@@ -183,7 +236,7 @@ def run(retained):
     audit={'recipe':recipe,'fingerprint':fingerprint,'retained':retained_hashes,'restoredSegments':restored,
         'attempts':[],'asrModel':asr_model,'asrIsListeningAcceptance':False,'outputListening':'pending'}
     media.write_json(work/'short-label-audit.json',audit)
-    repair_label(tts,short_policy,paths[label_index],keys,asr_model,audit,work)
+    repair_split_label(tts,short_policy,paths[label_index],keys,asr_model,audit,work)
     receipt.update(media.render(plan,fingerprint,work))
     for i,(s,p) in enumerate(zip(plan['scenes'],paths)):
         if i!=label_index and sha(p)!=retained_hashes[s['id']]:raise ValueError('Retained valid audio changed')

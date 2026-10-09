@@ -1,4 +1,4 @@
-name: Academic complete verbatim short heading repair
+name: Academic complete exact two-word heading recovery
 on:
   push:
     branches: [work/masaarat-academic-20261005]
@@ -80,5 +80,7 @@ jobs:
           path: |
             tmp/academic-course-media/**/audio/*.wav
             tmp/academic-course-media/**/short-label-attempt-*.wav
+            tmp/academic-course-media/**/split-word-*-attempt-*.wav
+            tmp/academic-course-media/**/split-label-joined.wav
             tmp/academic-course-media/**/preserved-invalid-label.wav
             tmp/academic-course-media/**/lesson.mp4
