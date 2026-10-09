@@ -1,0 +1,422 @@
+{
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "baseline_main": "1b9bf55af291d736758bf19c86c02406642f4faf",
+  "targets": [
+    {
+      "branch": "chore/marketing-foundation-ga4-seo",
+      "sha": "d051d97d04944e57bc87e6255d7a06c0681b0516"
+    },
+    {
+      "branch": "chore/register-controlled-400-workflow",
+      "sha": "9ab6d06e6c9e93134338b9083051b07d23ff617e"
+    },
+    {
+      "branch": "docs/kids-closeout-20260929",
+      "sha": "dbd11ba60c8bd54cc822fa3f1e790c1dafe8d764"
+    },
+    {
+      "branch": "feat/contact-acknowledgements-20261001",
+      "sha": "9d8afe8cbc8a497e3f0be7cc1675674dca94105e"
+    },
+    {
+      "branch": "feat/contact-hubspot-form",
+      "sha": "2b3fb6cf44ee3d93863bee9e8729f2eb681c76d0"
+    },
+    {
+      "branch": "feat/contact-mail-receipts-20261001",
+      "sha": "43342e6e550fe700675a09a01f58b59c7a999f0f"
+    },
+    {
+      "branch": "feat/kids-media-staging",
+      "sha": "20dbdafa1ecfa5a1cda91ca33077bc7688c315ff"
+    },
+    {
+      "branch": "feat/kids-technical-line-overviews",
+      "sha": "865e1798b0a2c4c9dae7403ef353e65a29f9f7d9"
+    },
+    {
+      "branch": "feat/localized-mission-stage2-3a",
+      "sha": "167b8d240c56da4d9002145169d4dabc7678b5bf"
+    },
+    {
+      "branch": "feat/localized-quiz-completion-stage2-2",
+      "sha": "3d8257e2ac9af2ad07188b5b85a5e82a04e8a384"
+    },
+    {
+      "branch": "feat/marketing-conversions-20260930",
+      "sha": "15231c0e2320027bad88378a7a241441de2d025a"
+    },
+    {
+      "branch": "feat/masaarat-learning-lines-20261004",
+      "sha": "82233ee3d565ea55b62c39a95032da27ddbf39c7"
+    },
+    {
+      "branch": "feat/runtime-package-stage1",
+      "sha": "c9ac173365eb96bdefd186c19bb01109ff58c7aa"
+    },
+    {
+      "branch": "feat/trustedsite-consent-20260923",
+      "sha": "4a9e59ba7eed5adec79d90926c5788557cd91b3f"
+    },
+    {
+      "branch": "feat/trustedsite-pro-footer",
+      "sha": "f512042bcd1f5a0701099ce46846369347853222"
+    },
+    {
+      "branch": "feat/trustedsite-public-proof-link",
+      "sha": "1df199e97563e5e698b128fa4ebc836330c2a132"
+    },
+    {
+      "branch": "feat/unified-my-journey-20261007",
+      "sha": "349fe4d8d22ef10b3217cd8a7252c2d924add25a"
+    },
+    {
+      "branch": "feat/unified-payments-groups-20261004",
+      "sha": "b0a9c34d43136c5fd0219b3aaf21958ccc42d800"
+    },
+    {
+      "branch": "fix/admin-payment-amounts-20261004",
+      "sha": "f0009574a26c0e0e368d969a4fb2c8d7923daab1"
+    },
+    {
+      "branch": "fix/analytics-spa-title",
+      "sha": "4dd4ea3fb5ce5dddb711b6972125c9fced5eb76d"
+    },
+    {
+      "branch": "fix/auth-email-rtl-20261001",
+      "sha": "13082f3b5c9e947aa83f5917b429dd205b522431"
+    },
+    {
+      "branch": "fix/auth-initial-session-device-ordering-20260916",
+      "sha": "494fff18bb8cf8fa2ba68f1aac7b0db7814cbaab"
+    },
+    {
+      "branch": "fix/billing-launch-closure-contracts-v3",
+      "sha": "a285629f918e7ba01d9f50230d48e55faf16b94b"
+    },
+    {
+      "branch": "fix/billing-native-rehearsal-correction-20260801",
+      "sha": "fc978184a5e2248d2023ed400e87007143654706"
+    },
+    {
+      "branch": "fix/c01-lc09-account-deletion",
+      "sha": "65937bed5e90096a56995e8a2d5386ade5790d24"
+    },
+    {
+      "branch": "fix/central-seo-consent-20260923",
+      "sha": "d88a72d4de82edd50c111ac9bfaec8941efe1ce5"
+    },
+    {
+      "branch": "fix/clear-learning-account-navigation",
+      "sha": "c88b2b80c752c083bc49520775f0666bcae031d4"
+    },
+    {
+      "branch": "fix/contact-direct-activation-20261003",
+      "sha": "17fe12adb001fa34acf0a07f532ba4672d8fd93b"
+    },
+    {
+      "branch": "fix/contact-intl-locale-20260923",
+      "sha": "ee92076ccdbdc2d6f47ce8bf34269df9fb30071f"
+    },
+    {
+      "branch": "fix/contact-mail-edge-bundle-20261001",
+      "sha": "bd7e94ab0ff7fb0e5991b61664f3b75f3c930f82"
+    },
+    {
+      "branch": "fix/contact-mail-immediate-20261003",
+      "sha": "03dc4ec2663b02d2ed8b14dd3adf389cba5ac3f3"
+    },
+    {
+      "branch": "fix/contact-turnstile-sitekey-20260924",
+      "sha": "dd8ed554a6ac3185d62e761f7123f4981423a65d"
+    },
+    {
+      "branch": "fix/curriculum-scientific-corrections",
+      "sha": "b0826b7f15505b0b444a077ffddb344245d00b9f"
+    },
+    {
+      "branch": "fix/full-300-matrix-limit",
+      "sha": "b77493c7510cc598cdd426d78856dcaf5b5d6d00"
+    },
+    {
+      "branch": "fix/immediate-account-welcome-20261003",
+      "sha": "66093a3458a4685546668c6e4e7284850ddd9379"
+    },
+    {
+      "branch": "fix/immediate-mail-worker-dispatch-20261003",
+      "sha": "b47368f2f9b412b0d9b2849d19f282715e0cda12"
+    },
+    {
+      "branch": "fix/kids-arabic-caption-code",
+      "sha": "b93a6847cc314a80ad6015970f66d3c981cbfea1"
+    },
+    {
+      "branch": "fix/kids-bunny-audit-private-output",
+      "sha": "70ec7a64dacdc73b48d6ec651fb3ec5aaedb5cd6"
+    },
+    {
+      "branch": "fix/kids-caption-eventual-confirmation",
+      "sha": "81519309e423624f15f0542644906202f1650f9b"
+    },
+    {
+      "branch": "fix/kids-card-mobile-overflow",
+      "sha": "9ec9143f3ffba59034c834405504b5638eaf97b9"
+    },
+    {
+      "branch": "fix/kids-parent-state-shared",
+      "sha": "e241c5541c200a183299e9f876b228495081a944"
+    },
+    {
+      "branch": "fix/kids-player-manual-start",
+      "sha": "b48c50fb6ef953a2de1e6c655063e55f27995c7b"
+    },
+    {
+      "branch": "fix/kids-quiet-lesson-navigation",
+      "sha": "24ed084985905c85a9e8dce66d9c017578a8f360"
+    },
+    {
+      "branch": "fix/lifecycle-existing-worker-20261003",
+      "sha": "db7038dcf300f9ac38405ab0365374745161709d"
+    },
+    {
+      "branch": "fix/lifecycle-shared-packaging-20261003",
+      "sha": "3b53250b679a2a8b2646950425c972e151588728"
+    },
+    {
+      "branch": "fix/locale-learner-parity-20260712",
+      "sha": "45c79899b9fc9cb598f0befb2c35e59e9655be78"
+    },
+    {
+      "branch": "fix/locale-runtime-no-ar-eg-fallback",
+      "sha": "9dfd7ac9366f5cb6c8c9e5e279b38124d932f5d4"
+    },
+    {
+      "branch": "fix/locale-scientific-review-gate-20260915",
+      "sha": "146235782d0e3b5b7834b758126a0eb9644c3f24"
+    },
+    {
+      "branch": "fix/localization-deterministic-test-isolation",
+      "sha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
+    },
+    {
+      "branch": "fix/localization-final-integration",
+      "sha": "1a02f55c19d555c5f1e23642753828e6491fd4c3"
+    },
+    {
+      "branch": "fix/localization-ui-key-parity-launch-blocker",
+      "sha": "4be18348bad906ab21c0d461d6d6ea7c4214feff"
+    },
+    {
+      "branch": "fix/localized-mission-gate-stage2-1",
+      "sha": "ef18610d7a34e1a39ead744b012c8e111b3d1d4b"
+    },
+    {
+      "branch": "fix/login-path-meta-export",
+      "sha": "5497491e08cc69408fc803e43f5bba5ebefa6650"
+    },
+    {
+      "branch": "fix/manual-payment-copy-20261004",
+      "sha": "9e5d3d574f05acbb727cbc2642275dc87ea9050c"
+    },
+    {
+      "branch": "fix/manual-payment-email-20261004",
+      "sha": "a14e238dc881d59795e194f323ceacac21b7327b"
+    },
+    {
+      "branch": "fix/mobile-nav-pricing-catalog-20260915",
+      "sha": "49040d26f753eb43ca3dc45a19f0d40bf5bc00c9"
+    },
+    {
+      "branch": "fix/payment-login-return-20261004",
+      "sha": "b41869e5f5af98d016f62eefc8cfa67277faf4f2"
+    },
+    {
+      "branch": "fix/phase13a-pilot-sanitize-test",
+      "sha": "8cb1cea76b6ebe142aa6be9175b5ca61dffb827a"
+    },
+    {
+      "branch": "fix/phase13b-final-two",
+      "sha": "d36efab393d04697a0d98f3b85b7563711830dfe"
+    },
+    {
+      "branch": "fix/phase13b-merge-readiness",
+      "sha": "49f89d11d068e17ebfac494508150dc71722b53f"
+    },
+    {
+      "branch": "fix/pro-71-stale-fixtures",
+      "sha": "ea1a2a49c65386a0c74f66666fcd0baf2c4bd6cb"
+    },
+    {
+      "branch": "fix/production-governance-github-controls",
+      "sha": "2d6642ef244f7b157eb0746e4cae28135f3461e5"
+    },
+    {
+      "branch": "fix/public-locale-runtime-corrections",
+      "sha": "15302520cfc420601690741b59e759d515e7f72c"
+    },
+    {
+      "branch": "fix/receipt-preview-20261004",
+      "sha": "53b3334492e8d4271daffbaecca80b547a875786"
+    },
+    {
+      "branch": "fix/reconcile-lovable-preview-auth-20260917",
+      "sha": "c2721c6d4b57dc4c76a180d5bd231866cf306925"
+    },
+    {
+      "branch": "fix/remove-trustedsite-text-link",
+      "sha": "b0f12f6533da4285d7b9831d165e8ab48be833f7"
+    },
+    {
+      "branch": "fix/retire-displaced-session-20261001",
+      "sha": "503de9076e6f0603d79ce72acd6531749c808864"
+    },
+    {
+      "branch": "fix/screenshot-card-20260712-1732",
+      "sha": "d7f0039785a6271ac12ecff791dfbbb9593e94e5"
+    },
+    {
+      "branch": "fix/security-admin-auth-launch-closure-eslint-refresh",
+      "sha": "a3fd7f56c75def8b39a53fc268b9715bfab1ceb2"
+    },
+    {
+      "branch": "fix/simple-commerce-offers-20261004",
+      "sha": "002d0353f63bc2dc45fb576143097aeec01c079e"
+    },
+    {
+      "branch": "fix/stripe-generation-verified-20260918",
+      "sha": "b0fe78f0125dcee11c2aee6e1db974dc60570431"
+    },
+    {
+      "branch": "fix/stripe-refund-object-shape-20260920",
+      "sha": "190140ed3b3f2693a072b6132435091176e38d8c"
+    },
+    {
+      "branch": "fix/stripe-repeated-payment-failure-20260920",
+      "sha": "afd2353600fc3925db06a1cb073f414e6e4f099b"
+    },
+    {
+      "branch": "fix/stripe-test-refund-reconciliation-20260920",
+      "sha": "ae0c6dbb21598339bd3e000198f1a7723c58af68"
+    },
+    {
+      "branch": "fix/switch-other-learning-lines",
+      "sha": "0430f8b7e2fc67f807185314770fe140d794782c"
+    },
+    {
+      "branch": "fix/technical-checkout-packaging-20261005",
+      "sha": "9e46555de54b1c22ced94f1ba88b623d503c040b"
+    },
+    {
+      "branch": "fix/technical-enrolment-copy-20261005",
+      "sha": "7a8a62f69e85d5eb1a53b48bd4021bb29096a49c"
+    },
+    {
+      "branch": "fix/transparent-learning-line-logos",
+      "sha": "5ebbcbf3fe02bd212d950244896f3d62b7e7dc92"
+    },
+    {
+      "branch": "integrate/admin-all-lessons-20261005",
+      "sha": "2202b1064add83bebf7431ebedc310d275efe5f5"
+    },
+    {
+      "branch": "integrate/technical-education-20261005",
+      "sha": "3ac1de6885f77083cff362298560f5a88f41c8d5"
+    },
+    {
+      "branch": "integration/academic-admin-review-20261006",
+      "sha": "e52ca3cffc6d2ddb0db06608ceeb56afbb7b72d1"
+    },
+    {
+      "branch": "integration/academic-cloud-records-20261006",
+      "sha": "3a257b09c24e97f1fe7bc7de5dc8be34fd61b35a"
+    },
+    {
+      "branch": "integration/academic-navigation-20261006",
+      "sha": "fc19c03027844016536cb4d3b70861b083289afa"
+    },
+    {
+      "branch": "integration/academic-written-20261006",
+      "sha": "59da3f10c9afb0fe6749c30df0f6c67370d115dc"
+    },
+    {
+      "branch": "integration/billing-after-login-hotfix",
+      "sha": "10bc2f5abc880c5622c0d751cbfb1dca4fbdc191"
+    },
+    {
+      "branch": "integration/billing-subscriptions-closure",
+      "sha": "e3a31f187d90df8e51cf397d17c31f1bcb2a9bd9"
+    },
+    {
+      "branch": "integration/learner-login-locale-20261007",
+      "sha": "faa0d9d56046aba83894b44e0920496d931f3974"
+    },
+    {
+      "branch": "integration/lovable-assistant-kids-20260925",
+      "sha": "e4c40c930c9a3f475cff166683bd3588f9b98aa3"
+    },
+    {
+      "branch": "integration/path-story-20261006",
+      "sha": "320c39862c8d893964fd6bc9626323e9f2c9b994"
+    },
+    {
+      "branch": "integration/path-story-polish-20261006",
+      "sha": "1479356485e9ac741759de3e9a2ae60c2a667c92"
+    },
+    {
+      "branch": "integration/unified-course-catalogues-20261006",
+      "sha": "e21490eec5512fdab679cbbd2fd1f33d541a1bc8"
+    },
+    {
+      "branch": "work/central1-b011-final-url-20260915",
+      "sha": "b348ee30a5f9d578a58f14ee1b2b579ee53f03df"
+    },
+    {
+      "branch": "work/central1-b017-quiz-acl-20260914",
+      "sha": "6841626ef31202b58b6cbeb173981c9ce3601e40"
+    },
+    {
+      "branch": "work/central1-b019-dashboard-mission-20260914",
+      "sha": "94b20865f755b55ae1ab015bb3c926b6e79cfc70"
+    },
+    {
+      "branch": "work/central1-b021-bold-balance-20260915",
+      "sha": "dc49ae558e715283e7fd5b489894d80749edc806"
+    },
+    {
+      "branch": "work/central1-b022-b003-20260913",
+      "sha": "e88d01587c44f2eb0833d9fb0a23e1ad9536bdc2"
+    },
+    {
+      "branch": "work/central1-b023-contextual-images-20260915",
+      "sha": "659307cb443519b718c7c95edfbcac28a92af04d"
+    },
+    {
+      "branch": "work/central1-integration-candidate-20260914",
+      "sha": "659307cb443519b718c7c95edfbcac28a92af04d"
+    },
+    {
+      "branch": "work/central1-lovable-integration-20260914",
+      "sha": "b149d076b72ea9c866ae2f2e32c9e2be915e2537"
+    },
+    {
+      "branch": "work/confirmed-account-welcome",
+      "sha": "7d514ba6b65be8cf906d23c25a0995e2d72dcead"
+    },
+    {
+      "branch": "work/masaarat-about-legal-ownership-20261009",
+      "sha": "b9edb66ad1a18c6a1646e7a8948e33cf84a07324"
+    },
+    {
+      "branch": "work/masaarat-about-owner-name-only-20261009",
+      "sha": "a081f0c39549a5f49973c640d1a75c015d58b773"
+    },
+    {
+      "branch": "work/masaarat-share-preview-20261007",
+      "sha": "2de0eb2f57823bbf2b949a2055db596bb252f3fd"
+    },
+    {
+      "branch": "work/welcome-guide-20260925",
+      "sha": "dee2dc561ede3e1beea22fba940544ed16b57f1d"
+    }
+  ]
+}

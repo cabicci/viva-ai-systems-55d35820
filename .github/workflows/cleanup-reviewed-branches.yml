@@ -1,0 +1,76 @@
+name: Clean reviewed merged branches
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Preview the reviewed branches or delete eligible branches
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - delete
+      confirmation:
+        description: For delete mode, type DELETE MERGED BRANCHES
+        required: false
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: reviewed-branch-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      pull-requests: read
+      actions: read
+      deployments: read
+    steps:
+      - name: Validate requested mode
+        env:
+          MODE: ${{ inputs.mode }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+        run: |
+          if [ "$MODE" = delete ] && [ "$CONFIRMATION" != 'DELETE MERGED BRANCHES' ]; then
+            echo 'Delete mode requires the exact confirmation phrase.'
+            exit 1
+          fi
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Test safety guards offline
+        run: python3 -m unittest discover -s scripts/maintenance -p 'test_cleanup_merged_branches.py' -v
+      - name: Prepare exact recovery manifest and live preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/maintenance/cleanup_merged_branches.py plan
+      - name: Save preflight before any deletion
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: branch-cleanup-preflight-${{ github.run_id }}
+          retention-days: 90
+          if-no-files-found: error
+          path: |
+            docs/maintenance/branch-cleanup-2026-10-10.json
+            branch-cleanup-output/plan.json
+      - name: Delete with an atomic expected-SHA lease
+        if: inputs.mode == 'delete'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+        run: python3 scripts/maintenance/cleanup_merged_branches.py apply
+      - name: Save final results, including partial failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: branch-cleanup-result-${{ github.run_id }}
+          retention-days: 90
+          if-no-files-found: warn
+          path: branch-cleanup-output/
