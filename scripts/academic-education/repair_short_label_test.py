@@ -84,8 +84,8 @@ class SplitHeadingTests(unittest.TestCase):
         return target,work,audit,calls
     def test_each_word_and_combined_must_match(self):
         p,w,a,c=self.run_split([1.4,1.4,2.8],['تعديل','النموذج','تعديل النموذج'])
-        self.assertEqual(c,['تعديل.','النموذج.'])
-        self.assertEqual(p.read_bytes(),'تعديل.النموذج.'.encode())
+        self.assertEqual(c,repair.TTS_WORD_INPUTS)
+        self.assertEqual(p.read_bytes(),''.join(repair.TTS_WORD_INPUTS).encode())
         self.assertEqual((w/'preserved-invalid-label.wav').read_bytes(),b'original')
         self.assertTrue(a['combined']['wordsMatch'])
     def test_extra_single_word_rejected_and_retried(self):
@@ -111,6 +111,42 @@ class SplitHeadingTests(unittest.TestCase):
         repair.join_pcm(parts,work/'joined.wav')
         with wave.open(str(work/'joined.wav'),'rb') as joined:
             self.assertEqual(joined.readframes(joined.getnframes()),b'\x01\x00'*24+b'\x02\x00'*48)
+
+
+class BoundedResponseTests(unittest.TestCase):
+    def test_only_unblocked_other_without_audio_is_retryable(self):
+        result={'candidates':[{'finishReason':'OTHER','content':{'parts':[]}}]}
+        self.assertTrue(repair.unblocked_no_audio_other(result))
+        for finish in ['SAFETY','PROHIBITED_CONTENT','MAX_TOKENS']:
+            self.assertFalse(repair.unblocked_no_audio_other({'candidates':[{'finishReason':finish}]}))
+        for result in [
+            {'promptFeedback':{'blockReason':'SAFETY'},'candidates':[{'finishReason':'OTHER'}]},
+            {'candidates':[{'finishReason':'OTHER','safetyRatings':[{'blocked':True}]}]},
+            {'candidates':[{'finishReason':'OTHER','content':{'parts':[{'inlineData':{'data':'YWI='}}]}}]}]:
+            self.assertFalse(repair.unblocked_no_audio_other(result))
+    def test_retained_first_word_rechecked_and_never_synthesized(self):
+        temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup);work=Path(temp.name)
+        target=work/'label.wav';target.write_bytes(b'old')
+        prior=work/'prior.wav';prior.write_bytes(b'proven first word')
+        tts=FakeTts([1,1.4,2.4]);audit={'attempts':[]};calls=[]
+        results=iter(['تعديل','النموذج','تعديل النموذج'])
+        def generate(tts,policy,text,path,keys,attempt):
+            calls.append(text);path.write_bytes(b'word2');return {'audioParts':1}
+        def join(parts,path):path.write_bytes(b''.join(p.read_bytes() for p in parts))
+        with patch.object(repair,'RETAINED_WORD_SHA',hashlib.sha256(prior.read_bytes()).hexdigest()):
+            repair.repair_split_label(tts,'policy',target,['private'],'asr',audit,work,
+                lambda *a:next(results),generate,join,{0:prior})
+        self.assertEqual(calls,[repair.TTS_WORD_INPUTS[1]])
+        self.assertEqual(prior.read_bytes(),b'proven first word')
+        self.assertTrue(audit['retainedHeadingWord']['freshWordsMatch'])
+    def test_bad_retained_word_hash_fails_before_generation(self):
+        temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup);work=Path(temp.name)
+        target=work/'label.wav';target.write_bytes(b'old');prior=work/'prior.wav';prior.write_bytes(b'wrong')
+        with self.assertRaisesRegex(ValueError,'Retained proven'):
+            repair.repair_split_label(FakeTts([1]),'policy',target,['private'],'asr',{'attempts':[]},work,
+                lambda *a:'تعديل',lambda *a:self.fail('Must not regenerate'),lambda *a:None,{0:prior})
+    def test_diacritics_only_preserve_the_two_exact_words(self):
+        self.assertEqual([repair.words(t) for t in repair.TTS_WORD_INPUTS],[['تعديل'],['النموذج']])
 
 
 if __name__=='__main__':unittest.main()

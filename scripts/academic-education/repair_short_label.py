@@ -22,8 +22,10 @@ SCENE='case-step-5-1'
 LABEL='تعديل النموذج:'
 TTS_INPUT='تعديل النموذج.'
 FOCUS='Preserve meaning and all numbers; natural academic teaching.'
-SHORT_PREFIX='قل هذه الكلمة فقط بوضوح باللهجة المصرية، دون إضافة أي كلمات أخرى:\n'
+SHORT_PREFIX='Say the following word exactly once in natural Cairo Egyptian Arabic. Speak the entire word clearly; say only the word, without instructions or commentary:\n'
 MAX_ATTEMPTS=4
+TTS_WORD_INPUTS=['تعديل.','النَّمُوذَج.']
+RETAINED_WORD_SHA='51be036cf8c51dbf6c7cd1854edf1b11de84104e26a75da6b59f0f9902682b91'
 
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -90,6 +92,18 @@ def pcm_parts(result):
     return b''.join(audio),{'audioParts':len(audio),'pcmBytes':[len(a) for a in audio]}
 
 
+class NoAudioOther(RuntimeError):
+    """A bounded retry is allowed only for unblocked OTHER with zero audio."""
+
+
+def unblocked_no_audio_other(result):
+    candidates=result.get('candidates',[])
+    if (len(candidates)!=1 or candidates[0].get('finishReason')!='OTHER'
+        or result.get('promptFeedback',{}).get('blockReason')):return False
+    if any(r.get('blocked') for r in candidates[0].get('safetyRatings',[])):return False
+    return not any(p.get('inlineData') for p in candidates[0].get('content',{}).get('parts',[]))
+
+
 def synthesize_text(tts,short_policy,text,candidate,keys,attempt):
     rewritten,prefix=tts.prepare_narration(text,None,short_policy)
     if words(rewritten)!=words(text):raise ValueError('Narration rewrite changed heading words')
@@ -98,6 +112,7 @@ def synthesize_text(tts,short_policy,text,candidate,keys,attempt):
         'generationConfig':{'responseModalities':['AUDIO'],
             'speechConfig':{'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':'Charon'}}}}}
     result=api_json('POST',f'https://generativelanguage.googleapis.com/v1beta/models/{tts.MODEL}:generateContent',keys[(attempt-1)%len(keys)],payload)
+    if unblocked_no_audio_other(result):raise NoAudioOther('Unblocked OTHER response contains no audio')
     pcm,stats=pcm_parts(result)
     candidate.write_bytes(tts._pcm_to_wav(pcm))
     return stats
@@ -136,18 +151,34 @@ def repair_label(tts,short_policy,target,keys,asr_model,audit,work,recognize=tra
 
 
 def repair_split_label(tts,short_policy,target,keys,asr_model,audit,work,
-                       recognize=transcribe,generate=synthesize_text,join=join_pcm):
+                       recognize=transcribe,generate=synthesize_text,join=join_pcm,retained_parts=None):
     # Only this exact two-word heading may use the explicit word-boundary recipe.
     tokens=words(LABEL)
-    if tokens!=['تعديل','النموذج']:raise ValueError('Split heading identity changed')
+    if tokens!=['تعديل','النموذج'] or [words(t) for t in TTS_WORD_INPUTS]!=[[w] for w in tokens]:
+        raise ValueError('Split heading identity changed')
     original=sha(target);target.replace(work/'preserved-invalid-label.wav')
     audit['originalInvalidSha256']=original
     parts=[]
     for index,word in enumerate(tokens):
+        if retained_parts and index in retained_parts:
+            path=retained_parts[index]
+            seconds=tts._duration_s(str(path));transcript=recognize(path,keys[0],asr_model)
+            if index!=0 or sha(path)!=RETAINED_WORD_SHA or not acceptable(word,seconds) or words(transcript)!=[word]:
+                raise ValueError('Retained proven word failed exact hash/duration/fresh ASR')
+            audit['retainedHeadingWord']={'word':word,'sha256':sha(path),'durationSeconds':seconds,
+                                         'transcript':transcript,'freshWordsMatch':True,'sourceRun':37914063227}
+            parts.append(path);continue
         accepted=None
         for attempt in range(1,MAX_ATTEMPTS+1):
             path=work/f'split-word-{index+1}-attempt-{attempt}.wav'
-            stats=generate(tts,short_policy,word+'.',path,keys,index*MAX_ATTEMPTS+attempt)
+            try:
+                stats=generate(tts,short_policy,TTS_WORD_INPUTS[index],path,keys,index*MAX_ATTEMPTS+attempt)
+            except NoAudioOther:
+                audit['attempts'].append({'wordIndex':index+1,'attempt':attempt,
+                    'outcome':'unblockedOTHER_noAudio','generated':False,'accepted':False})
+                media.write_json(work/'short-label-audit.json',audit)
+                print(f'Heading word{index+1} attempt{attempt}: unblocked OTHER/no audio; no acceptance',flush=True)
+                continue
             seconds=tts._duration_s(str(path))
             item={'wordIndex':index+1,'word':word,'attempt':attempt,'sha256':sha(path),
                   'durationSeconds':seconds,'durationValid':acceptable(word,seconds),
@@ -195,14 +226,15 @@ def run(retained):
     sys.path.insert(0,str(ROOT/'experiments/academic/media'))
     from policy import POLICY
     import gemini_tts as tts
-    short_policy=tts.NarrationPolicy('academic-egyptian-verbatim-word-v2',SHORT_PREFIX,())
-    recipe={'schemaVersion':2,'baseProductionFingerprint':BASE,'sourceSha256':SOURCE,
-        'sceneId':SCENE,'spoken':LABEL,'ttsInputs':[word+'.' for word in words(LABEL)],
+    short_policy=tts.NarrationPolicy('academic-egyptian-verbatim-word-v3',SHORT_PREFIX,())
+    recipe={'schemaVersion':3,'baseProductionFingerprint':BASE,'sourceSha256':SOURCE,
+        'sceneId':SCENE,'spoken':LABEL,'ttsInputs':TTS_WORD_INPUTS,'diacriticsOnlyNoWordChange':True,
         'wordBoundarySegmentation':True,'pcmJoin':'orderedUnmodifiedConcatenation',
-        'previousFailedRepairRuns':[37912431573,37913198572],
+        'previousFailedRepairRuns':[37912431573,37913198572,37914063227],
+        'retainedHeadingWord':{'sourceRun':37914063227,'commit':'ce2502af20cc196e25f1fc3cb8af1c1ca81e513b','sha256':RETAINED_WORD_SHA},
         'audioResponseHandling':'allPCMpartsInOriginalOrder','voice':'Charon','ttsModel':tts.MODEL,
         'shortPolicy':asdict(short_policy),'shortFocus':'','durationGateWpm':[35,300],
-        'maxAttemptsPerWord':MAX_ATTEMPTS,'maxTotalTtsRequests':MAX_ATTEMPTS*2,
+        'maxAttemptsPerWord':MAX_ATTEMPTS,'maxTotalTtsRequests':MAX_ATTEMPTS,'unblockedOTHERNoAudioRetryOnly':True,
         'verbatimAsrRequiredForEachWordAndCombined':True,'executorSha256':sha(Path(__file__))}
     fingerprint=digest(recipe)
     work=ROOT/f'tmp/academic-course-media/{LESSON}/{LOCALE}/{fingerprint}'
@@ -236,7 +268,19 @@ def run(retained):
     audit={'recipe':recipe,'fingerprint':fingerprint,'retained':retained_hashes,'restoredSegments':restored,
         'attempts':[],'asrModel':asr_model,'asrIsListeningAcceptance':False,'outputListening':'pending'}
     media.write_json(work/'short-label-audit.json',audit)
-    repair_split_label(tts,short_policy,paths[label_index],keys,asr_model,audit,work)
+    prior_receipts=list((retained/'heading-receipt').rglob('receipt.json'))
+    prior_audits=list((retained/'heading-receipt').rglob('short-label-audit.json'))
+    prior_parts=list((retained/'heading-audio').rglob('split-word-1-attempt-1.wav'))
+    if len(prior_receipts)!=1 or len(prior_audits)!=1 or len(prior_parts)!=1:raise ValueError('Retained heading proof missing/ambiguous')
+    prior=json.loads(prior_receipts[0].read_text()); prior_audit=json.loads(prior_audits[0].read_text())
+    if (prior['sourceSha256']!=SOURCE or prior['baseProductionFingerprint']!=BASE
+        or prior['commit']!='ce2502af20cc196e25f1fc3cb8af1c1ca81e513b'
+        or prior['fingerprint']!='2465519dfef37c644a5bdf0aa9756eba8593a72004eff93293f11e5d96af416c'
+        or prior_audit['attempts'][0]['sha256']!=RETAINED_WORD_SHA
+        or not prior_audit['attempts'][0]['wordsMatch']
+        or sha(prior_parts[0])!=RETAINED_WORD_SHA):raise ValueError('Retained heading provenance conflict')
+    retained_word=work/'retained-heading-word1.wav';retained_word.write_bytes(prior_parts[0].read_bytes())
+    repair_split_label(tts,short_policy,paths[label_index],keys,asr_model,audit,work,retained_parts={0:retained_word})
     receipt.update(media.render(plan,fingerprint,work))
     for i,(s,p) in enumerate(zip(plan['scenes'],paths)):
         if i!=label_index and sha(p)!=retained_hashes[s['id']]:raise ValueError('Retained valid audio changed')

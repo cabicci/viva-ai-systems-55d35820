@@ -1,4 +1,4 @@
-name: Academic complete exact two-word heading recovery
+name: Academic final heading recover exact second word
 on:
   push:
     branches: [work/masaarat-academic-20261005]
@@ -45,6 +45,20 @@ jobs:
           run-id: 37903717527
           github-token: ${{ github.token }}
           path: tmp/retained/audio
+      - name: Restore prior exact heading word receipt
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-course-receipt-AC-BUS-M03-L03-ar-EG
+          run-id: 37914063227
+          github-token: ${{ github.token }}
+          path: tmp/retained/heading-receipt
+      - name: Restore proven first heading word audio
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-media-recovery-AC-BUS-M03-L03-ar-EG
+          run-id: 37914063227
+          github-token: ${{ github.token }}
+          path: tmp/retained/heading-audio
       - name: Complete the single failed output
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -82,5 +96,6 @@ jobs:
             tmp/academic-course-media/**/short-label-attempt-*.wav
             tmp/academic-course-media/**/split-word-*-attempt-*.wav
             tmp/academic-course-media/**/split-label-joined.wav
+            tmp/academic-course-media/**/retained-heading-word1.wav
             tmp/academic-course-media/**/preserved-invalid-label.wav
             tmp/academic-course-media/**/lesson.mp4
