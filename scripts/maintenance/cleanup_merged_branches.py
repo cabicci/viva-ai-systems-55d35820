@@ -111,23 +111,40 @@ def eligibility(api, target, main, workflow_text):
     return None
 
 
-def delete_ref(target, directory, token, remote='https://github.com/' + REPO + '.git'):
-    # Git's explicit lease atomically rejects a branch whose SHA changed.
-    ref = 'refs/heads/' + target['branch']
+def git_auth_env(token):
     env = os.environ.copy()
     env['GIT_TERMINAL_PROMPT'] = '0'
     env['GIT_CONFIG_COUNT'] = '1'
     env['GIT_CONFIG_KEY_0'] = 'http.https://github.com/.extraheader'
     env['GIT_CONFIG_VALUE_0'] = 'AUTHORIZATION: basic ' + base64.b64encode(
         ('x-access-token:' + token).encode()).decode()
+    return env
+
+
+def delete_ref(target, directory, token, remote='https://github.com/' + REPO + '.git'):
+    # Git's explicit lease atomically rejects a branch whose SHA changed.
+    ref = 'refs/heads/' + target['branch']
     result = subprocess.run(
         ['git', '-C', directory, 'push', '--porcelain',
          '--force-with-lease=' + ref + ':' + target['sha'],
          remote, ':' + ref],
-        env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+        env=git_auth_env(token), text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
     if result.returncode:
         # Do not print Git transport output or retry an uncertain mutation.
         raise RuntimeError('Deletion rejected or uncertain; no automatic retry')
+
+
+def verify_deleted(target, directory, token, remote='https://github.com/' + REPO + '.git'):
+    # Query the authoritative Git transport instead of the REST readback.
+    ref = 'refs/heads/' + target['branch']
+    result = subprocess.run(
+        ['git', '-C', directory, 'ls-remote', '--exit-code', '--refs', remote, ref],
+        env=git_auth_env(token), text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+    if result.returncode == 2 and not result.stdout.strip():
+        return
+    if result.returncode == 0:
+        raise RuntimeError('Branch still exists or was recreated; no automatic retry')
+    raise RuntimeError('Git absence check failed; no automatic retry')
 
 
 def write_report(path, report):
@@ -174,8 +191,10 @@ def run(mode):
                 row['result'] = 'skip: ' + reason if reason else 'eligible'
                 if mode == 'apply' and not reason:
                     delete_ref(target, directory, api.token)
-                    if api.get('git/ref/heads/' + urllib.parse.quote(target['branch'], safe='')) is not None:
-                        raise RuntimeError('Branch absence could not be verified')
+                    row['delete_transport_succeeded'] = True
+                    row['result'] = 'deleted; verifying absence'
+                    write_report(report_path, dict(report, branches=report['branches'] + [row]))
+                    verify_deleted(target, directory, api.token)
                     row['result'] = 'deleted and verified'
             except Exception as error:
                 row['result'] = 'STOP: ' + str(error)

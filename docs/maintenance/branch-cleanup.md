@@ -17,7 +17,11 @@ or in-use branches. It stops on an unexpected error or a moving main branch.
 Git deletes each ref with `--force-with-lease=refs/heads/NAME:EXPECTED_SHA`.
 An intervening commit therefore causes rejection, not deletion of new work.
 No retry follows a rejected or uncertain delete. Every successful delete is
-independently checked for absence. The final artifact includes partial results
+independently checked for absence with an authenticated Git `ls-remote` request
+for the exact ref, rather than an immediate REST response. A transport failure
+is not treated as absence. The successful delete acknowledgement is saved before
+verification, so a later verification failure remains distinguishable from a
+rejected deletion. The final artifact includes partial results
 if a later operation fails.
 
 The workflow uses the short-lived repository `GITHUB_TOKEN`, with only contents
