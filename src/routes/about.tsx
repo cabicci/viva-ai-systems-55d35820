@@ -38,19 +38,19 @@ function About() {
           <p className="mt-3">
             {locale === "en" ? (
               <>
-                masaarat.ai is owned by Intersect, an Egyptian sole proprietorship owned by
-                Khalil Wahid Ibrahim Abdelghany Lotfy.
+                masaarat.ai is owned by Khalil Wahid Ibrahim Abdelghany Lotfy, a sole
+                proprietor in Egypt.
               </>
             ) : (
               <>
-                موقع masaarat.ai مملوك لمنشأة انترسكت، وهي منشأة فردية مصرية لصاحبها خليل وحيد
-                إبراهيم عبد الغني لطفي.
+                موقع masaarat.ai مملوك لخليل وحيد إبراهيم عبد الغني لطفي، صاحب منشأة فردية
+                مصرية.
               </>
             )}
           </p>
           {locale === "en" && (
             <p lang="ar" dir="rtl" className="mt-2">
-              الاسم القانوني: خليل وحيد إبراهيم عبد الغني لطفي — انترسكت
+              الاسم القانوني: خليل وحيد إبراهيم عبد الغني لطفي
             </p>
           )}
           <p className="mt-3">
