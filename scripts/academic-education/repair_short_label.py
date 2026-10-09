@@ -20,6 +20,7 @@ BASE='bf9883b0871462ea923d45843dcfadc157b660d2d171d20f5dbea5d2640244e3'
 SOURCE='b519a65249af8578d6fbf0f22b83c1dde1cdd610b1fdfdecdf1cd563142cdc33'
 SCENE='case-step-5-1'
 LABEL='تعديل النموذج:'
+TTS_INPUT='تعديل النموذج.'
 FOCUS='Preserve meaning and all numbers; natural academic teaching.'
 SHORT_PREFIX='اقرأ العنوان التالي فقط مرة واحدة بعامية مصرية قاهرية طبيعية، دون شرح أو تكرار. لا تقرأ تعليمات النطق.\nالنص:\n'
 MAX_ATTEMPTS=4
@@ -71,17 +72,50 @@ def transcribe(path,key,model):
     return value['transcript']
 
 
-def repair_label(tts,short_policy,target,keys,asr_model,audit,work,recognize=transcribe):
+def pcm_parts(result):
+    candidates=result.get('candidates',[])
+    if len(candidates)!=1 or candidates[0].get('finishReason')!='STOP':
+        raise RuntimeError('Short heading synthesis incomplete/rejected; no editorial bypass')
+    audio=[]
+    for part in candidates[0].get('content',{}).get('parts',[]):
+        inline=part.get('inlineData')
+        if inline is None:continue
+        mime=[x.strip() for x in inline.get('mimeType','').lower().split(';')]
+        params=dict(x.split('=',1) for x in mime[1:] if '=' in x)
+        if (mime[0] not in ('audio/pcm','audio/l16') or params.get('rate')!='24000'
+                or params.get('channels','1')!='1' or params.get('codec','pcm')!='pcm'):
+            raise ValueError('Unexpected heading PCM format; no conversion bypass')
+        audio.append(base64.b64decode(inline['data'],validate=True))
+    if not audio or any(not a or len(a)%2 for a in audio):raise ValueError('Missing/invalid heading PCM')
+    return b''.join(audio),{'audioParts':len(audio),'pcmBytes':[len(a) for a in audio]}
+
+
+def synthesize_label(tts,short_policy,candidate,keys,attempt):
+    if words(TTS_INPUT)!=words(LABEL):raise ValueError('Heading words changed')
+    rewritten,prefix=tts.prepare_narration(TTS_INPUT,None,short_policy)
+    if words(rewritten)!=words(LABEL):raise ValueError('Narration rewrite changed heading words')
+    tts._throttle_before_request('Charon',f'key#{(attempt-1)%len(keys)+1}')
+    payload={'contents':[{'parts':[{'text':prefix+rewritten}]}],
+        'generationConfig':{'responseModalities':['AUDIO'],
+            'speechConfig':{'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':'Charon'}}}}}
+    result=api_json('POST',f'https://generativelanguage.googleapis.com/v1beta/models/{tts.MODEL}:generateContent',keys[(attempt-1)%len(keys)],payload)
+    pcm,stats=pcm_parts(result)
+    candidate.write_bytes(tts._pcm_to_wav(pcm))
+    return stats
+
+
+def repair_label(tts,short_policy,target,keys,asr_model,audit,work,recognize=transcribe,generate=synthesize_label):
     original=sha(target)
     archive=work/'preserved-invalid-label.wav'
     target.replace(archive)
     audit['originalInvalidSha256']=original
     for attempt in range(1,MAX_ATTEMPTS+1):
         candidate=work/f'short-label-attempt-{attempt}.wav'
-        tts._tts(LABEL,'Charon','',str(candidate),keys,None,short_policy)
+        response_stats=generate(tts,short_policy,candidate,keys,attempt)
         seconds=tts._duration_s(str(candidate))
         item={'attempt':attempt,'sha256':sha(candidate),'durationSeconds':seconds,
-              'durationValid':acceptable(LABEL,seconds),'transcript':None,'wordsMatch':False}
+              'durationValid':acceptable(LABEL,seconds),'transcript':None,'wordsMatch':False,
+              'responseStats':response_stats}
         audit['attempts'].append(item)
         if item['durationValid']:
             item['transcript']=recognize(candidate,keys[0],asr_model)
@@ -113,7 +147,8 @@ def run(retained):
     import gemini_tts as tts
     short_policy=tts.NarrationPolicy('academic-egyptian-short-heading-v1',SHORT_PREFIX,())
     recipe={'schemaVersion':1,'baseProductionFingerprint':BASE,'sourceSha256':SOURCE,
-        'sceneId':SCENE,'spoken':LABEL,'voice':'Charon','ttsModel':tts.MODEL,
+        'sceneId':SCENE,'spoken':LABEL,'ttsInput':TTS_INPUT,'punctuationOnlyChange':True,
+        'audioResponseHandling':'allPCMpartsInOriginalOrder','voice':'Charon','ttsModel':tts.MODEL,
         'shortPolicy':asdict(short_policy),'shortFocus':'','durationGateWpm':[35,300],
         'maxAttempts':MAX_ATTEMPTS,'verbatimAsrRequired':True,'executorSha256':sha(Path(__file__))}
     fingerprint=digest(recipe)
