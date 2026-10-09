@@ -1,0 +1,83 @@
+name: Academic final failed output recovery
+on:
+  push:
+    branches: [work/masaarat-academic-20261005]
+    paths: [.github/workflows/academic-media-final-recovery.yml]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: academic-course-media-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: '1.4.2'
+      - name: Validate bounded recovery
+        run: python3 -m unittest discover -s scripts/academic-education -p 'recover_*test.py'
+      - name: Prepare existing renderer and fonts
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          cd remotion
+          bun install --frozen-lockfile
+          mkdir -p public/academic-fonts public/brand
+          cp ../src/lib/lesson-visuals/v1/fonts/Tajawal-*.woff2 public/academic-fonts/
+          cp ../public/brand/masaarat-logo-lockup.png public/brand/
+      - name: Restore original exact-source failed receipt
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-course-receipt-AC-BUS-M03-L03-ar-EG
+          run-id: 37451264552
+          github-token: ${{ github.token }}
+          path: tmp/retained/receipt
+      - name: Restore latest repaired audio
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: academic-media-recovery-AC-BUS-M03-L03-ar-EG
+          run-id: 37618948414
+          github-token: ${{ github.token }}
+          path: tmp/retained/audio
+      - name: Complete the single failed output
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          TTS_MAX_WORKERS: '1'
+          TTS_REQUEST_GAP_SECONDS: '15'
+          PYTHONUNBUFFERED: '1'
+        run: python3 scripts/academic-education/recover_remaining.py tmp/retained
+      - name: Preserve exact receipt and recovery audit
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: academic-course-receipt-AC-BUS-M03-L03-ar-EG
+          retention-days: 14
+          path: |
+            tmp/academic-course-media/**/receipt.json
+            tmp/academic-course-media/**/recovery-audit.json
+            tmp/academic-course-media/**/short-segment-audit.json
+            tmp/academic-course-media/**/props.json
+            tmp/academic-course-media/**/transcript.txt
+            tmp/academic-course-media/**/listening-timeline.json
+            tmp/academic-course-media/**/audio/master.mp3
+      - name: Preserve audio and video for recovery
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: academic-media-recovery-AC-BUS-M03-L03-ar-EG
+          retention-days: 14
+          path: |
+            tmp/academic-course-media/**/audio/*.wav
+            tmp/academic-course-media/**/rejected-label-*.wav
+            tmp/academic-course-media/**/lesson.mp4
