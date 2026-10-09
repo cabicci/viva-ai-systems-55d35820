@@ -28,6 +28,40 @@ function About() {
         <LearningLineCards />
         <p className="mt-8 font-bold">{c.shared}</p>
         <p className="mt-2 text-muted-foreground">{c.separate}</p>
+        <section
+          aria-labelledby="legal-ownership-heading"
+          className="mt-12 rounded-2xl border border-border bg-muted/30 p-6 text-sm leading-7"
+        >
+          <h2 id="legal-ownership-heading" className="text-lg font-bold">
+            {locale === "en" ? "Website ownership" : "ملكية الموقع"}
+          </h2>
+          <p className="mt-3">
+            {locale === "en" ? (
+              <>
+                masaarat.ai is owned by Intersect, an Egyptian sole proprietorship owned by
+                Khalil Wahid Ibrahim Abdelghany Lotfy.
+              </>
+            ) : (
+              <>
+                موقع masaarat.ai مملوك لمنشأة انترسكت، وهي منشأة فردية مصرية لصاحبها خليل وحيد
+                إبراهيم عبد الغني لطفي.
+              </>
+            )}
+          </p>
+          {locale === "en" && (
+            <p lang="ar" dir="rtl" className="mt-2">
+              الاسم القانوني: خليل وحيد إبراهيم عبد الغني لطفي — انترسكت
+            </p>
+          )}
+          <p className="mt-3">
+            {locale === "en" ? "Commercial registration number: " : "رقم السجل التجاري: "}
+            <bdi>31028</bdi>
+          </p>
+          <p>
+            {locale === "en" ? "Tax registration number: " : "رقم التسجيل الضريبي: "}
+            <bdi>325-771-456</bdi>
+          </p>
+        </section>
       </main>
       <Footer />
     </div>
