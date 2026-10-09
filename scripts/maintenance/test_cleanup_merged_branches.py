@@ -1,5 +1,6 @@
 """Offline tests; temporary repositories only, never a network request."""
 import copy
+import io
 import json
 import os
 from pathlib import Path
@@ -8,7 +9,28 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from cleanup_merged_branches import MANIFEST, delete_ref, eligibility, validate_manifest
+from cleanup_merged_branches import API, MANIFEST, REPO, delete_ref, eligibility, read_main, validate_manifest
+
+
+class RepositoryEndpoint(unittest.TestCase):
+    def test_repository_metadata_uses_canonical_endpoint(self):
+        calls = []
+        base = 'https://api.github.com/repos/' + REPO
+        def response(request, timeout):
+            calls.append(request.full_url)
+            if request.full_url == base:
+                return io.BytesIO(b'{"default_branch":"main"}')
+            if request.full_url == base + '/git/ref/heads/main':
+                return io.BytesIO(json.dumps({'object': {'sha': 'a' * 40}}).encode())
+            raise AssertionError('Unexpected endpoint: ' + request.full_url)
+        with patch.dict(os.environ, {'GH_TOKEN': 'offline-test'}), \
+             patch('urllib.request.urlopen', side_effect=response):
+            self.assertEqual(read_main(API()), 'a' * 40)
+        self.assertEqual(calls, [base, base + '/git/ref/heads/main'])
+
+    def test_unavailable_repository_is_not_misreported_as_branch_change(self):
+        with self.assertRaisesRegex(RuntimeError, 'Repository metadata unavailable'):
+            read_main(type('MissingAPI', (), {'get': lambda self, path: None})())
 
 
 class FakeAPI:
