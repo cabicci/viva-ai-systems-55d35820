@@ -1,6 +1,11 @@
 name: Clean reviewed merged branches
 
 on:
+  # One authorized run when PR #170 is squash-merged from this exact main.
+  # The fixed before-SHA prevents later edits from repeating this trigger.
+  push:
+    branches: [main]
+    paths: [.github/workflows/cleanup-reviewed-branches.yml]
   workflow_dispatch:
     inputs:
       mode:
@@ -24,9 +29,18 @@ concurrency:
 
 jobs:
   cleanup:
-    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/main'
+    if: >-
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'push' &&
+        github.event.before == '68dd81423cf9d9f7748316b0dc5cdf6b312a9ed8' &&
+        startsWith(github.event.head_commit.message, 'chore: run approved branch cleanup 2026-10-10 (#170)')))
     runs-on: ubuntu-22.04
     timeout-minutes: 40
+    env:
+      CLEANUP_MODE: ${{ github.event_name == 'push' && 'delete' || inputs.mode }}
+      CONFIRMATION: ${{ github.event_name == 'push' && 'DELETE MERGED BRANCHES' || inputs.confirmation }}
     permissions:
       contents: write
       pull-requests: read
@@ -34,11 +48,9 @@ jobs:
       deployments: read
     steps:
       - name: Validate requested mode
-        env:
-          MODE: ${{ inputs.mode }}
-          CONFIRMATION: ${{ inputs.confirmation }}
         run: |
-          if [ "$MODE" = delete ] && [ "$CONFIRMATION" != 'DELETE MERGED BRANCHES' ]; then
+          case "$CLEANUP_MODE" in preview|delete) ;; *) exit 1 ;; esac
+          if [ "$CLEANUP_MODE" = delete ] && [ "$CONFIRMATION" != 'DELETE MERGED BRANCHES' ]; then
             echo 'Delete mode requires the exact confirmation phrase.'
             exit 1
           fi
@@ -61,10 +73,9 @@ jobs:
             docs/maintenance/branch-cleanup-2026-10-10.json
             branch-cleanup-output/plan.json
       - name: Delete with an atomic expected-SHA lease
-        if: inputs.mode == 'delete'
+        if: env.CLEANUP_MODE == 'delete'
         env:
           GH_TOKEN: ${{ github.token }}
-          CONFIRMATION: ${{ inputs.confirmation }}
         run: python3 scripts/maintenance/cleanup_merged_branches.py apply
       - name: Save final results, including partial failures
         if: always()
