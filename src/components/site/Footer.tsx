@@ -59,6 +59,29 @@ export function Footer() {
           <span className="font-mono opacity-70">{t("footer.version")}</span>
         </nav>
       </div>
+      <div className="container mx-auto px-4 pb-8 text-sm leading-7 text-foreground">
+        <p>
+          {locale === "en" ? (
+            <>
+              Website owner and registered legal name: Khalil Wahid Ibrahim Abdelghany Lotfy
+              {" ("}
+              <bdi lang="ar">خليل وحيد إبراهيم عبد الغني لطفي</bdi>
+              {")."}
+            </>
+          ) : (
+            <>مالك الموقع والاسم القانوني بالسجل التجاري: خليل وحيد إبراهيم عبد الغني لطفي.</>
+          )}
+        </p>
+        <p>
+          {locale === "en" ? (
+            <>
+              Trade name: Intersect (<bdi lang="ar">انترسيكت</bdi>).
+            </>
+          ) : (
+            <>الاسم التجاري: انترسيكت (Intersect).</>
+          )}
+        </p>
+      </div>
       <div className="container mx-auto flex justify-center px-4 pb-8">
         <div className="trustedsite-trustmark" data-type="202" data-width="120" data-height="50" />
       </div>
