@@ -2,29 +2,63 @@ name: Technical v2 preparation
 on:
   push:
     branches: [review/cabinet-ai-style-20261010]
-    paths: [.github/workflows/technical-v2-preparation.yml, scripts/technical-v2/preflight.py]
+    paths:
+      - .github/workflows/technical-v2-preparation.yml
+      - scripts/technical-v2/**
+      - remotion/src/technical-v2/**
 permissions:
   contents: read
 jobs:
-  read-only-preflight:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+  source-and-motion-checks:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with: {persist-credentials: false}
-      - name: Read-only provider and existing credential checks
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24'}
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with: {bun-version: '1.4.2'}
+      - name: Validate scope and authorization failures
+        run: |
+          python3 scripts/technical-v2/test_production.py
+          node --experimental-strip-types scripts/technical-v2/test_auth.mjs
+          node --experimental-strip-types scripts/technical-v2/test_bridge.mjs
+          python3 scripts/technical-v2/production.py prepare
+          python3 scripts/technical-v2/probe_props.py
+      - name: Install pinned render and media dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install numpy==2.2.6
+          cd remotion
+          bun install --frozen-lockfile
+      - name: Verify existing non-Egyptian scene timings without new TTS
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
-          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
-          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python3 scripts/technical-v2/preflight.py
+        run: |
+          python3 scripts/technical-v2/production.py probe-timing --lesson M01-L01 --locale en
+          python3 scripts/technical-v2/production.py probe-timing --lesson M05-L03 --locale ar-MSA
+          python3 scripts/technical-v2/production.py probe-timing --lesson M04-L02 --locale en
+      - name: Render representative motion frames
+        working-directory: remotion
+        run: |
+          for cell in M01-L01__en M05-L02__ar-EG M05-L03__ar-EG M04-L02__en; do
+            for frame in 330 430; do
+              bunx --no-install remotion still src/technical-v2/index.tsx technical-motion-v2 "../technical-v2-probes/${cell}/frame-${frame}.png" --props "../technical-v2-probes/${cell}/motion-props.json" --frame "${frame}"
+            done
+          done
+      - name: Retain exact render source and verification outputs
+        if: always()
+        run: |
+          mkdir -p technical-v2-source
+          git archive HEAD remotion scripts/technical-v2 docs/production/technical-v2 src/components/technical-education src/lib/technical-education src/lib/locale/types.ts scripts/technical-education/source supabase/functions/technical-video-replacement | gzip > technical-v2-source/source.tgz
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
-          name: technical-v2-preflight
-          path: technical-v2-preflight/
+          name: technical-v2-preparation-evidence
+          path: |
+            technical-v2-probes/
+            technical-v2-source/source.tgz
           retention-days: 30
+          if-no-files-found: error
