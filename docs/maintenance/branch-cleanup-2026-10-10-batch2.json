@@ -1,0 +1,679 @@
+{
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "baseline_main": "e989902e4e70025d0d6c96b36b38d71ccc5e527e",
+  "review_batch": "2026-10-10-112",
+  "targets": [
+    {
+      "branch": "audit/kids-bunny-readonly",
+      "sha": "2403080e6cccd27fa6298a0330f0f151fca8080e",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "chore/recovery-platform-artifact-20261004",
+      "sha": "602296a343687086304b055c039fb2a62495fb7d",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "chore/reviewed-branch-cleanup-20261010",
+      "sha": "95d81bf12e8eb3d8a371f085357fc41a6f7033bd",
+      "proof": "merged_pr",
+      "pr": 168,
+      "merge_sha": "160da6149c2d4aba7efe4d10170e6a7d973c409e"
+    },
+    {
+      "branch": "chore/welcome-platform-artifacts-20261003",
+      "sha": "13e4f288f2411ff5f6f12638043c2bc66b7d063c",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "codex/kids-family-policy-20260925",
+      "sha": "547c95057bf72f57965f3aee3c436ce81acd75f6",
+      "proof": "merged_pr",
+      "pr": 76,
+      "merge_sha": "5993f119784548dc2dcefe9c24889c4ae4ed048b"
+    },
+    {
+      "branch": "codex/kids-retention-resend-20260925",
+      "sha": "b7e3dedded800a37a2df730abc4a8f9e4c0f06d2",
+      "proof": "merged_pr",
+      "pr": 77,
+      "merge_sha": "bdf9dc24bbe7984202654d610dedb07e5633e314"
+    },
+    {
+      "branch": "codex/sync-generated-billing-types-20260920",
+      "sha": "d53a1c8651ed7f64f4c5a630b36b70ac3170a06f",
+      "proof": "merged_pr",
+      "pr": 45,
+      "merge_sha": "792a7fe3b8cfa98c5be58f271f795efd0f83335d"
+    },
+    {
+      "branch": "docs/kids-36-video-verification",
+      "sha": "ae3fd6b0cc2d09d58bcbc51358659f20cb37b4e2",
+      "proof": "merged_pr",
+      "pr": 108,
+      "merge_sha": "886f4c9a42926cd35fabef4e2dcd2e287de5360a"
+    },
+    {
+      "branch": "docs/kids-production-evidence",
+      "sha": "91fdffb5517fc127c1a9e97abc1bc35da998420e",
+      "proof": "merged_pr",
+      "pr": 97,
+      "merge_sha": "e172cfc0444e68de5676e359f056d163e175ae4c"
+    },
+    {
+      "branch": "docs/nonfinancial-closure-receipts-20260930",
+      "sha": "06783fa10a1da5ae7f8a19fc0aed466163babc45",
+      "proof": "merged_pr",
+      "pr": 122,
+      "merge_sha": "f06c56d95b7f459698d3c8d63559b2c53df43592"
+    },
+    {
+      "branch": "feat/ar-eg-next-lesson-visual",
+      "sha": "5239a25eccc21af7b57d523752b8f26056df5465",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/central-kids-market-policy-20260925",
+      "sha": "491d91674321c80cee0d8e44607580befad22051",
+      "proof": "merged_pr",
+      "pr": 75,
+      "merge_sha": "b9b4b344a3487a4db920217a9853f3e28868b422"
+    },
+    {
+      "branch": "feat/full-300-localized-video-batch",
+      "sha": "3c8b8e85b31640a443baced34e6b56975c0cf69c",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/kids-family-page-20260927",
+      "sha": "e65d052b855ec0d0b52d7a9d2c86bd84ab243ab8",
+      "proof": "merged_pr",
+      "pr": 99,
+      "merge_sha": "5e70c79cfc68567d6e01a82b62b348361d6d0df0"
+    },
+    {
+      "branch": "feat/kids-parent-self-consent",
+      "sha": "ba4e74322edf4bee6a0926b223162c311694f28c",
+      "proof": "merged_pr",
+      "pr": 94,
+      "merge_sha": "32a93c9d7b88709c847de068e9049235733cd1cb"
+    },
+    {
+      "branch": "feat/kids-platform-integration",
+      "sha": "2ea85704f216d5b8dca753d689ab1e05d82d7dab",
+      "proof": "merged_pr",
+      "pr": 63,
+      "merge_sha": "8a7ff67676db4a03555bcad0cc69086e9a4828bf"
+    },
+    {
+      "branch": "feat/kids-pricing-journey-20260927",
+      "sha": "0ab3256b3f38b128b717b492fe26775def5895a2",
+      "proof": "merged_pr",
+      "pr": 100,
+      "merge_sha": "9681d84ff57ea63b2b44082eb0c012590c78aad4"
+    },
+    {
+      "branch": "feat/kids-stripe-test",
+      "sha": "01d505f344a3ea793182a5565860fdd021eaea0a",
+      "proof": "merged_pr",
+      "pr": 105,
+      "merge_sha": "302033959a9ddf748af6c443099eba9d93e684ae"
+    },
+    {
+      "branch": "feat/rag-lovable-native-resumable-importer",
+      "sha": "586ecda4140f5b74635c3ecee7e97d0d38340909",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/rag-production-inactive-importer",
+      "sha": "0f6ace644e683f1bc1ae15ad710a741305371f58",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/stripe-prorated-upgrades-20260918",
+      "sha": "7c0a1f036ddb48147ebe11f9d11449f335c8f756",
+      "proof": "merged_pr",
+      "pr": 40,
+      "merge_sha": "6c4ae06f6fb0e7571cbfd37c033b4944b1b8fadb"
+    },
+    {
+      "branch": "feat/stripe-test-checkout-20260917",
+      "sha": "f11a883df80f3e7adec45773ccc524340d6a135a",
+      "proof": "merged_pr",
+      "pr": 36,
+      "merge_sha": "e796efb5380b73999370813ff6bb4c56f512abd2"
+    },
+    {
+      "branch": "feat/video-generate-one-mode",
+      "sha": "900c1e7fcfda1b3c15c37bbc62a1850c378b59a8",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/video-generate-unresolved-31",
+      "sha": "f40b2ebc4418dcaa7401e35d212e86bb815c66f1",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feat/video-incremental-bunny-finalization",
+      "sha": "4f26574bdd2471b606ce9367234be718a3e36322",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "feature/kids-unified-policy-locale-20260926",
+      "sha": "8c25204e71d9819717f7a086a8cd9e8efa08a44c",
+      "proof": "merged_pr",
+      "pr": 86,
+      "merge_sha": "de6c7ab0c6fc235a2de3abed236abfca84932ed5"
+    },
+    {
+      "branch": "fix/assistant-format-locale-kids-nav",
+      "sha": "5cda65bdcbca2bbc34f8ff1aeeab1531d8f04660",
+      "proof": "merged_pr",
+      "pr": 92,
+      "merge_sha": "cac26efd95f54c08eb3c808d8851db1d5498b2c6"
+    },
+    {
+      "branch": "fix/assistant-page-complete",
+      "sha": "cfd320f986972f1bb419cc4bc8268ea7f2a6d150",
+      "proof": "merged_pr",
+      "pr": 90,
+      "merge_sha": "5028c7fcc12c201a762e12ba21e4943f76df6415"
+    },
+    {
+      "branch": "fix/assistant-source-excerpts",
+      "sha": "d97f9713ad8aa694253736551b7977d28280325c",
+      "proof": "merged_pr",
+      "pr": 93,
+      "merge_sha": "c42c569d0311891d055b61651a2b27b043642bd0"
+    },
+    {
+      "branch": "fix/auth-language-welcome-rtl-20260926",
+      "sha": "d9248f2c1aaa8e2c65f0f58f37730e63ed3ca0e4",
+      "proof": "merged_pr",
+      "pr": 83,
+      "merge_sha": "8de5a53e506b1bf0dde22b18de60b7c5d6b7da5e"
+    },
+    {
+      "branch": "fix/billing-evidence-inventory-20260930",
+      "sha": "a0d3dcc964b56be1f916ce56a5567fe52eab11ad",
+      "proof": "merged_pr",
+      "pr": 120,
+      "merge_sha": "559a82a7e36769e700974e102488b7e29751c241"
+    },
+    {
+      "branch": "fix/billing-pro-71-entitlements-20260916",
+      "sha": "8181d0fa4a62ff555f0ac20a1fef462ec6dee382",
+      "proof": "merged_pr",
+      "pr": 30,
+      "merge_sha": "7caa9b84c6ff3059722ea53885f762c72c403047"
+    },
+    {
+      "branch": "fix/branch-cleanup-repository-endpoint",
+      "sha": "ca8972ebbf68df87adffe9aabe5a5de1a54b679e",
+      "proof": "merged_pr",
+      "pr": 169,
+      "merge_sha": "68dd81423cf9d9f7748316b0dc5cdf6b312a9ed8"
+    },
+    {
+      "branch": "fix/cleanup-git-absence-verification",
+      "sha": "2698a77e39ce0919c93a6fcab9ec194564dab8db",
+      "proof": "merged_pr",
+      "pr": 170,
+      "merge_sha": "17351d80a13d91dc91d9ed5df3b2db6e14ce262b"
+    },
+    {
+      "branch": "fix/contact-platform-artifacts-20261003",
+      "sha": "290e5ed6182ae06ad89bdce2fd5c4ec1739380cf",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/kids-active-profile",
+      "sha": "29578cbe4d23d95a95aab5121dbd6d8290dc28e0",
+      "proof": "merged_pr",
+      "pr": 107,
+      "merge_sha": "aa062a75378b805dfc2cfafa44477923bdecd0ea"
+    },
+    {
+      "branch": "fix/kids-combination-copy-20260925",
+      "sha": "6a0bf60425aedbed0fa4a3a7497ac1621ef9a7b3",
+      "proof": "merged_pr",
+      "pr": 70,
+      "merge_sha": "fe700bf520cf2e57acad4579368092fafab847c1"
+    },
+    {
+      "branch": "fix/kids-consent-copy",
+      "sha": "9a89c8a5bbd5cfafef2570f29ada8775d99a18c8",
+      "proof": "merged_pr",
+      "pr": 104,
+      "merge_sha": "2f9a23e68f3f690066a836a0617d2455408a69c2"
+    },
+    {
+      "branch": "fix/kids-edge-bundle",
+      "sha": "0824c50908a8fb2435dc3d4ebe298786e30aff98",
+      "proof": "merged_pr",
+      "pr": 96,
+      "merge_sha": "04991637c5b821f7d21bfb19db2b49b8f6cfdc4f"
+    },
+    {
+      "branch": "fix/kids-in-account-header-20260926",
+      "sha": "190d98ce3e507a879732297ccccc24f4277db1f6",
+      "proof": "merged_pr",
+      "pr": 89,
+      "merge_sha": "b1f0f3a24fa01a5ecf717fc66f74eaf1dfee1540"
+    },
+    {
+      "branch": "fix/kids-lesson-session-message",
+      "sha": "c36aa17a62a002e1bf60f1ea1fd4699e17da273a",
+      "proof": "merged_pr",
+      "pr": 106,
+      "merge_sha": "8e740b5f95a580f05f5ad750446d93d030551ea6"
+    },
+    {
+      "branch": "fix/kids-nested-route-outlet-20260925",
+      "sha": "3fc5cac6d76a72ec8c9e3c77cc88d2b8f2ea675f",
+      "proof": "merged_pr",
+      "pr": 71,
+      "merge_sha": "b17fe983777bd9c014dcc188548204136d7ab681"
+    },
+    {
+      "branch": "fix/kids-parent-one-declaration-20260926",
+      "sha": "fb45425e3d36de873f8e3b4e2e62803bc6d59f28",
+      "proof": "merged_pr",
+      "pr": 84,
+      "merge_sha": "cb75579efecd3a54be074037e5b446a90a73a800"
+    },
+    {
+      "branch": "fix/kids-parent-service-pending-20260925",
+      "sha": "8555b0e288e9a124dedf73be269e414a12bcb861",
+      "proof": "merged_pr",
+      "pr": 72,
+      "merge_sha": "83b48cb800cf6d5ec9da1b5dc66e67c5194fd07e"
+    },
+    {
+      "branch": "fix/kids-policy-account",
+      "sha": "a42223aaa3436df714cf1c6961905a85e7f75dca",
+      "proof": "merged_pr",
+      "pr": 103,
+      "merge_sha": "3cb9469b3bdc29b150fff271cb1872459546b995"
+    },
+    {
+      "branch": "fix/kids-preserve-review-audit",
+      "sha": "e833588bb1b0b089f880b7308ea5e9a100deef45",
+      "proof": "merged_pr",
+      "pr": 95,
+      "merge_sha": "79723370f5a4ea0d9449b45c2c24e7aa6a0a1f34"
+    },
+    {
+      "branch": "fix/kids-preview-and-family-copy",
+      "sha": "733705b6e1ce45f3a6e59be11bbe58f322a7e330",
+      "proof": "merged_pr",
+      "pr": 109,
+      "merge_sha": "a95284c627edc86dc046058214b8a72459f032a2"
+    },
+    {
+      "branch": "fix/kids-refund-reentry",
+      "sha": "e3421896e16fc12d21edb611b7ffcc4e2228543e",
+      "proof": "merged_pr",
+      "pr": 110,
+      "merge_sha": "ef0f7255383ebcd845b2dd8626dd2de679cbd75a"
+    },
+    {
+      "branch": "fix/kids-visitor-flow-20260927",
+      "sha": "757938212e6a920482ea26b11d5a879e125f77aa",
+      "proof": "merged_pr",
+      "pr": 102,
+      "merge_sha": "bb2b31c00777f07b1fcc7cb9e74c1d3aefe2f18b"
+    },
+    {
+      "branch": "fix/launch-footer-legal-consistency-20260916",
+      "sha": "ba76aa8e870b8a361cdaa57e65092b2d2230cfd6",
+      "proof": "merged_pr",
+      "pr": 33,
+      "merge_sha": "b706d6cd534112baeea84e802c18fc190c177207"
+    },
+    {
+      "branch": "fix/launch-legal-support-20260916",
+      "sha": "57b8ddbbae9e2e5ae65c49f43b39f6029ed08a45",
+      "proof": "merged_pr",
+      "pr": 32,
+      "merge_sha": "f7d32a91fcd45e1a2c2b5119b8f0b0ff77dc0d7b"
+    },
+    {
+      "branch": "fix/lesson-visuals-method-c-fixture-reproducibility",
+      "sha": "c312aec97a8aebadad8be308980b6dde16bf0285",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/lesson-visuals-publication-precheck-reproducibility",
+      "sha": "52553141446b849efa1c909e7e33ad00da992709",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/lesson-visuals-root-chromium-render",
+      "sha": "95bfbb3d346d6f4cfcae82a776a49fb0036cfc04",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/lesson-visuals-runtime-integration",
+      "sha": "b4840b8fabbc0510bf7b1a7ea1c7f147de784669",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/locale-video-bunny-lookup",
+      "sha": "4746218a3d92dfa8574e46c591f6614c8e26db92",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/masaarat-recovery-email-20260930",
+      "sha": "9a64e4e062f8e6c2e26ffe5d4f3e0471004fb72f",
+      "proof": "merged_pr",
+      "pr": 117,
+      "merge_sha": "5a5e24ddcaaae81265375c17ef42576e0c0258c8"
+    },
+    {
+      "branch": "fix/prelaunch-ui-payment-copy-20260918",
+      "sha": "6e4759b3f3c89fa14b10b03149216e8fcd4bd9d7",
+      "proof": "merged_pr",
+      "pr": 38,
+      "merge_sha": "bbe92869aa19ee34a80ac109990ea5a4c49a8000"
+    },
+    {
+      "branch": "fix/preserve-centered-line-headings",
+      "sha": "9c692dd3b039517547d76373356ad0d9d7279ed8",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/public-lesson-gate-kids-home",
+      "sha": "e7c00362f7a8e857b74bc74ab227bf547214597b",
+      "proof": "merged_pr",
+      "pr": 98,
+      "merge_sha": "4e9ccb67f5a778627b2a9873df9a0236a6930671"
+    },
+    {
+      "branch": "fix/rag-active-index-admission-20260916",
+      "sha": "74ef3acad0ae9adf9e0dc89a4e28341acd2ece65",
+      "proof": "merged_pr",
+      "pr": 31,
+      "merge_sha": "be6d5d03dde3e9a558f44758ab2c11afefc21738"
+    },
+    {
+      "branch": "fix/rag-billing-public-rpc-bridge-20260728",
+      "sha": "83ea809e2132171af989d8b906c238626138e493",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-corpus-read-access",
+      "sha": "6621aeb27031db3f81fbfb97895e980dc0061a58",
+      "proof": "merged_pr",
+      "pr": 91,
+      "merge_sha": "b1bf9b094fa976ba516d0d05c10351d731a788c5"
+    },
+    {
+      "branch": "fix/rag-final-corpus-3701-20260915",
+      "sha": "5fa2987d9b0cf997921fe2ae8de222086b676a04",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-grounding-p0-correction",
+      "sha": "c009d5301dce7eabc6750a188b0b5bd33b123ac5",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-production-first-activation",
+      "sha": "66bcebf44355c1af045e6035958a0866ff8b28a7",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-security-grounding-launch-closure",
+      "sha": "7c248c8f0f8ed2dc7e3337bacc6402a7f84e3959",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-upgrade-activation-20260916",
+      "sha": "980003290184be5508a80a0e0f7889a1c70a7cb7",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-upgrade-timeout-20260916",
+      "sha": "b14057405231a04737939c12b283a6005e16f3a6",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/rag-versioned-identity-20260916",
+      "sha": "7dea0440f66e768366d7dc9c4809b131820c6b27",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/responsive-top-navigation-20260926",
+      "sha": "f27ae4adce36155253b0a0de35a9f1c9b75bd960",
+      "proof": "merged_pr",
+      "pr": 87,
+      "merge_sha": "15c7dbe4a2f7c447ab2c4779ce92615ff62ef735"
+    },
+    {
+      "branch": "fix/single-context-header-20260926",
+      "sha": "e1c129557766d19adedff4e05f00d000cdfd47f4",
+      "proof": "merged_pr",
+      "pr": 88,
+      "merge_sha": "fe382caeb5f1a006763fc053938914b62adb435e"
+    },
+    {
+      "branch": "fix/stripe-duplicate-subscriptions-20260918",
+      "sha": "a4e6b44ddafd57b28f17fe6fb441d31233951c6c",
+      "proof": "merged_pr",
+      "pr": 39,
+      "merge_sha": "e10eb0f30e8b7a9a3f62c6f6a480524dd0cfbc70"
+    },
+    {
+      "branch": "fix/stripe-preview-cors",
+      "sha": "10b5db867d5cd34ac3afa27d2c579f9f697890bc",
+      "proof": "merged_pr",
+      "pr": 37,
+      "merge_sha": "a27ca6b1002710e748b06ddbb2d429ee272a888c"
+    },
+    {
+      "branch": "fix/top-navigation-20260926",
+      "sha": "6036d2354826f1e8434b2fe35a81c529d54329da",
+      "proof": "merged_pr",
+      "pr": 85,
+      "merge_sha": "58ef37aecf95989ef5f83b6c9d7088e6317967c6"
+    },
+    {
+      "branch": "fix/video-final-3-mapping-completion",
+      "sha": "225c1bb62afcee7519c617b8b547b2bbc304644b",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-final-3-mapping-promotion-source-policy",
+      "sha": "1fc10630098f3d58eff2d717e1b0a744c24d6281",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-final-3-scene-normalization",
+      "sha": "55917718e7403be04f3dbc5b1c6ba021333141b9",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-finalization-ref-and-readiness",
+      "sha": "69ba815e256d6f46382c9f0fa901bb3fea88c85b",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-finalize-one-control-checkout",
+      "sha": "d0b8a1ea6073f7b7c244051083609611dcb90c7f",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-finalized-mapping-promotion",
+      "sha": "608959620aaf65bfdcc499481e8af6bf10cf0e96",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-full-300-production-pin",
+      "sha": "e1f45171daf6608da11e8a37b66107a58f5e0d83",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-generate-one-captions-contract",
+      "sha": "6cfd019d315ec3f5a30ffc83bd551f4deb52385c",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-integrity-validator-import",
+      "sha": "46406f5382c188bd1fc38077698cb450096133c7",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-pilot-tests-receipt-authority",
+      "sha": "ffe8ae48508431f380ccfd0e242c568c5038fe5a",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-production-root-recovery",
+      "sha": "ee3786fe628a0e9e4dd32c8518a3506a1fc5265f",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-promote-recovered-mappings",
+      "sha": "d9461e967f248efbd8aeb4e6d01277763b2c6457",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-recover-uploaded-receipts",
+      "sha": "1dacee7afd925f1863741c6a6324486cb3d45b74",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-recovery-control-gate",
+      "sha": "0c2f556588029d4bcd8f95710a46ca38301a1998",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "fix/video-source-sha-captions",
+      "sha": "5c12e2c41858109c96c877645bfd2daaa227e9b3",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "integrate/lesson-visuals-400-production",
+      "sha": "6bfcfd9b2425e61b609899aeeadb9d20cbf74305",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "integrate/localized-video-preproduction",
+      "sha": "9ece45762d040f3fcc708887e0fee2913d7ba1c1",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "launch/c01-stripe-live-readiness",
+      "sha": "c9dc8bc64e544e80c73bab0507c5fe26098771cb",
+      "proof": "merged_pr",
+      "pr": 51,
+      "merge_sha": "c4cd4d050a36c7dfbafe11225dac146e5c73c5d4"
+    },
+    {
+      "branch": "launch/nonfinancial-closure-20260930",
+      "sha": "bbb9c9c3d8ef276adc9a4e1ac72cfe2a860d5cb2",
+      "proof": "merged_pr",
+      "pr": 121,
+      "merge_sha": "bb6482e5bf4c587258d7c45278b6026fabda7cd3"
+    },
+    {
+      "branch": "lovable-sync-1790672000",
+      "sha": "947538d18610da6f0d7255083f8fb6208c049ec6",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1790723831",
+      "sha": "882d22ee0c846aaa42894c9798377542f29fd3ce",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1790723900",
+      "sha": "20f0dccddff13ab0762f5419478355735e622a6a",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1790883486",
+      "sha": "fe511e6c36af68576025091e7a0dd4b8d920aed6",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1791011784",
+      "sha": "d483c0893d0281112232848452bb2c82f15d90ae",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1791022865",
+      "sha": "13e4f288f2411ff5f6f12638043c2bc66b7d063c",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1791061905",
+      "sha": "602296a343687086304b055c039fb2a62495fb7d",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1791287928",
+      "sha": "3a257b09c24e97f1fe7bc7de5dc8be34fd61b35a",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "lovable-sync-1791394254",
+      "sha": "ca08d0f8f2f0d28a7710bd3c6cebaab8602947ac",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "rollback/pre-pr23-main-20260915",
+      "sha": "72a3cd079869ad9431cd5b7c91fda815c0103bbb",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "style/kids-pricing-card-20260927",
+      "sha": "2272852ff3374aead3fb732d2d9fd0dbd40f8fe2",
+      "proof": "merged_pr",
+      "pr": 101,
+      "merge_sha": "f87c8a92cb57684bf8a47ee19c623223ac37a22a"
+    },
+    {
+      "branch": "test/contact-rate-limit-deny-20260924",
+      "sha": "de1d3918eb8bacd200dffffa7b6e00e9c1834e3a",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "work/auth-signup-mail-20260925",
+      "sha": "af2bf9613c60483cb8291f0d270f2902c0ea9135",
+      "proof": "merged_pr",
+      "pr": 81,
+      "merge_sha": "479fdc4b2477774d63f8126b8ef8f1c75ed7cfe0"
+    },
+    {
+      "branch": "work/branded-lifecycle-mail-20260925",
+      "sha": "38ba53acd541e54fa79063e545de7cd7f3584993",
+      "proof": "merged_pr",
+      "pr": 80,
+      "merge_sha": "03843c363a122f51a511296e6788f5e363c64da5"
+    },
+    {
+      "branch": "work/central1-b007-snapshot-validity-20260914",
+      "sha": "cfd3722024625617a96c52847954c203f281de17",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "work/kids-consent-receipts",
+      "sha": "16cfbbbc8cad42f20c89d650de7c61c26905a558",
+      "proof": "merged_pr",
+      "pr": 78,
+      "merge_sha": "6ee8a6fdd8710f8389a53b7e23f41f895c5c53e7"
+    },
+    {
+      "branch": "work/masaarat-footer-legal-owner-20261010",
+      "sha": "a74aaedcad510192e7c2a2edd072c7574f1c97c8",
+      "proof": "ancestor"
+    },
+    {
+      "branch": "work/rag-ai-assistant-complete",
+      "sha": "8e48d655489fcdfad4df8e33b3c93c61bbde3468",
+      "proof": "ancestor"
+    }
+  ]
+}

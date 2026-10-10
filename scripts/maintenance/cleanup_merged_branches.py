@@ -2,6 +2,7 @@
 """Delete only reviewed, unchanged, fully merged branch refs. No dependencies."""
 import argparse
 import base64
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -14,6 +15,8 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / 'docs/maintenance/branch-cleanup-2026-10-10.json'
+BATCH2_MANIFEST = ROOT / 'docs/maintenance/branch-cleanup-2026-10-10-batch2.json'
+BATCH2_DIGEST = 'ec6cf3a752651c4813889bfb02199fea94dc07422325284b441495043e400e9e'
 REPO = 'cabicci/viva-ai-systems-55d35820'
 SHA = re.compile(r'^[0-9a-f]{40}$')
 ALLOWED = re.compile(r'^(fix|feat|feature|integrate|integration|style|docs|chore|codex|work)/')
@@ -59,11 +62,23 @@ def validate_manifest(manifest):
     if manifest.get('repository') != REPO or not SHA.fullmatch(manifest.get('baseline_main', '')):
         raise ValueError('Unexpected repository or baseline')
     targets = manifest.get('targets', [])
+    if manifest.get('review_batch') == '2026-10-10-112':
+        digest = hashlib.sha256(json.dumps(targets, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        if (manifest['baseline_main'] != 'e989902e4e70025d0d6c96b36b38d71ccc5e527e'
+                or len(targets) != 112 or digest != BATCH2_DIGEST):
+            raise ValueError('Expected the exact 112 reviewed names, SHAs and merge proofs')
+        for target in targets:
+            subprocess.run(['git', 'check-ref-format', 'refs/heads/' + target['branch']], check=True,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return targets
+    if 'review_batch' in manifest:
+        raise ValueError('Unknown review batch')
     if len(targets) != 104 or len({t['branch'] for t in targets}) != 104:
         raise ValueError('Expected the exact 104-branch review scope')
     for target in targets:
         name = target['branch']
-        if not ALLOWED.match(name) or RESERVED.search(name) or not SHA.fullmatch(target['sha']):
+        if (set(target) != {'branch', 'sha'} or not ALLOWED.match(name)
+                or RESERVED.search(name) or not SHA.fullmatch(target['sha'])):
             raise ValueError('Invalid or reserved target')
         subprocess.run(['git', 'check-ref-format', 'refs/heads/' + name], check=True,
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -105,7 +120,19 @@ def eligibility(api, target, main, workflow_text):
         statuses = api.get('deployments/' + str(deployment['id']) + '/statuses?per_page=1')
         if not statuses or statuses[0]['state'] not in ('inactive', 'failure', 'error'):
             return 'active or unresolved deployment'
-    comparison = api.get('compare/' + main + '...' + expected)
+    preserved = expected
+    if target.get('proof') == 'merged_pr':
+        pr = api.get('pulls/' + str(target['pr']))
+        if (not pr or not pr.get('merged') or not pr.get('merged_at') or pr.get('state') != 'closed'
+                or pr.get('head', {}).get('sha') != expected
+                or pr.get('head', {}).get('ref') != name
+                or (pr.get('head', {}).get('repo') or {}).get('full_name') != REPO
+                or pr.get('base', {}).get('ref') != 'main'
+                or (pr.get('base', {}).get('repo') or {}).get('full_name') != REPO
+                or pr.get('merge_commit_sha') != target['merge_sha']):
+            return 'merged PR proof changed or unavailable'
+        preserved = target['merge_sha']
+    comparison = api.get('compare/' + main + '...' + preserved)
     if not comparison or comparison.get('ahead_by') != 0:
         return 'not fully merged into current main'
     return None
@@ -147,14 +174,29 @@ def verify_deleted(target, directory, token, remote='https://github.com/' + REPO
     raise RuntimeError('Git absence check failed; no automatic retry')
 
 
+def verify_retained_pull_head(target, directory, token, remote='https://github.com/' + REPO + '.git'):
+    # Squash heads are retained through GitHub's pull ref, not ancestry in main.
+    ref = 'refs/pull/' + str(target['pr']) + '/head'
+    result = subprocess.run(
+        ['git', '-C', directory, 'ls-remote', '--exit-code', '--refs', remote, ref],
+        env=git_auth_env(token), text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=60)
+    if result.returncode or result.stdout.strip() != target['sha'] + '\t' + ref:
+        raise RuntimeError('Reviewed pull head is not independently retained; stopping')
+
+
 def write_report(path, report):
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(report, indent=2) + '\n')
     temporary.replace(path)
 
 
-def run(mode):
-    manifest = json.loads(MANIFEST.read_text())
+def run(mode, batch='original-104'):
+    if batch not in ('original-104', 'reviewed-112'):
+        raise ValueError('Unknown review batch')
+    manifest_path = BATCH2_MANIFEST if batch == 'reviewed-112' else MANIFEST
+    manifest = json.loads(manifest_path.read_text())
+    if (batch == 'reviewed-112') != (manifest.get('review_batch') == '2026-10-10-112'):
+        raise ValueError('Requested batch does not match the reviewed manifest')
     targets = validate_manifest(manifest)
     if os.environ.get('GITHUB_REPOSITORY') != REPO:
         raise RuntimeError('This command runs only in the reviewed repository')
@@ -169,13 +211,13 @@ def run(mode):
     output = ROOT / 'branch-cleanup-output'
     output.mkdir(exist_ok=True)
     report_path = output / ('plan.json' if mode == 'plan' else 'result.json')
-    report = {'repository': REPO, 'main_sha': main, 'mode': mode, 'branches': []}
+    report = {'repository': REPO, 'main_sha': main, 'mode': mode, 'batch': batch, 'branches': []}
     if mode == 'apply':
         if os.environ.get('CONFIRMATION') != 'DELETE MERGED BRANCHES':
             raise RuntimeError('Missing deletion confirmation')
         plan = json.loads((output / 'plan.json').read_text())
-        if plan['main_sha'] != main or plan['repository'] != REPO:
-            raise RuntimeError('Main changed after the saved preflight')
+        if plan['main_sha'] != main or plan['repository'] != REPO or plan.get('batch') != batch:
+            raise RuntimeError('Main or reviewed batch changed after the saved preflight')
         eligible = {row['branch'] for row in plan['branches'] if row['result'] == 'eligible'}
         targets = [t for t in targets if t['branch'] in eligible]
     write_report(report_path, report)
@@ -189,6 +231,10 @@ def run(mode):
                     raise RuntimeError('Main changed during execution; stopping')
                 reason = eligibility(api, target, main, workflow_text)
                 row['result'] = 'skip: ' + reason if reason else 'eligible'
+                if not reason and target.get('proof') == 'merged_pr':
+                    verify_retained_pull_head(target, directory, api.token)
+                    row['recovery_ref'] = 'refs/pull/' + str(target['pr']) + '/head'
+                    row['recovery_ref_verified'] = True
                 if mode == 'apply' and not reason:
                     delete_ref(target, directory, api.token)
                     row['delete_transport_succeeded'] = True
@@ -207,6 +253,8 @@ def run(mode):
     counts = {}
     for row in report['branches']:
         counts[row['result']] = counts.get(row['result'], 0) + 1
+    report['counts'] = counts
+    write_report(report_path, report)
     if os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
             summary.write('\n### Branch cleanup: ' + mode + '\n\n')
@@ -217,4 +265,6 @@ def run(mode):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('mode', choices=['plan', 'apply'])
-    run(parser.parse_args().mode)
+    parser.add_argument('--batch', choices=['original-104', 'reviewed-112'], default='original-104')
+    args = parser.parse_args()
+    run(args.mode, args.batch)

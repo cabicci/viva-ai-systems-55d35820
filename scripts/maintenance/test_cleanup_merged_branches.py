@@ -124,6 +124,25 @@ class RealGitLease(unittest.TestCase):
             verify_deleted({'branch': 'fix/example'}, source, 'offline-test', remote)
             self.assertEqual(git('for-each-ref', '--format=%(refname)', 'refs/heads/fix/example'), '')
 
+    def test_squash_head_must_remain_reachable_through_exact_pull_ref(self):
+        with tempfile.TemporaryDirectory() as root:
+            remote = str(Path(root) / 'remote.git')
+            subprocess.run(['git', 'init', '--bare', remote], check=True, capture_output=True)
+            env = dict(os.environ, GIT_AUTHOR_NAME='Offline test', GIT_COMMITTER_NAME='Offline test',
+                       GIT_AUTHOR_EMAIL='test@example.invalid', GIT_COMMITTER_EMAIL='test@example.invalid')
+            def git(*args, input=None):
+                return subprocess.run(['git', '-C', remote, *args], input=input, text=True,
+                                      check=True, capture_output=True, env=env).stdout.strip()
+            tree = git('mktree', input='')
+            sha = git('commit-tree', tree, '-m', 'retained pull head')
+            target = {'pr': 172, 'sha': sha}
+            with self.assertRaisesRegex(RuntimeError, 'not independently retained'):
+                cleanup.verify_retained_pull_head(target, root, 'offline-test', remote)
+            git('update-ref', 'refs/pull/172/head', sha)
+            cleanup.verify_retained_pull_head(target, root, 'offline-test', remote)
+            with self.assertRaisesRegex(RuntimeError, 'not independently retained'):
+                cleanup.verify_retained_pull_head(dict(target, sha='a' * 40), root, 'offline-test', remote)
+
     def test_transport_failure_is_never_treated_as_absence(self):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(RuntimeError, 'absence check failed'):
@@ -191,6 +210,85 @@ class FullWorkflow(unittest.TestCase):
             self.assertEqual(git('for-each-ref', '--format=%(refname)', 'refs/heads/fix/').stdout.strip(),
                              'refs/heads/fix/offline-1')
             self.assertEqual(git('rev-parse', 'refs/heads/main').stdout.strip(), sha)
+
+
+class Batch2Checks(unittest.TestCase):
+    target = {'branch': 'fix/example', 'sha': 'a' * 40, 'proof': 'merged_pr',
+              'pr': 172, 'merge_sha': 'd' * 40}
+
+    def pr(self):
+        return {'merged': True, 'merged_at': '2026-10-10T00:00:00Z', 'state': 'closed',
+                'merge_commit_sha': 'd' * 40,
+                'head': {'ref': 'fix/example', 'sha': 'a' * 40, 'repo': {'full_name': REPO}},
+                'base': {'ref': 'main', 'repo': {'full_name': REPO}}}
+
+    def api(self, pr=None, merged_ahead=0, **options):
+        obj = FakeAPI(**options)
+        original_get = obj.get
+        record = self.pr() if pr is None else pr
+        def get(path):
+            if path == 'pulls/172':
+                return record
+            if path == 'compare/' + 'c' * 40 + '...' + 'd' * 40:
+                return {'ahead_by': merged_ahead}
+            return original_get(path)
+        obj.get = get
+        return obj
+
+    def test_exact_second_batch_and_both_preservation_categories(self):
+        manifest = json.loads(cleanup.BATCH2_MANIFEST.read_text())
+        targets = validate_manifest(manifest)
+        self.assertEqual(len(targets), 112)
+        self.assertEqual(sum(t['proof'] == 'ancestor' for t in targets), 56)
+        self.assertEqual(sum(t['proof'] == 'merged_pr' for t in targets), 56)
+
+    def test_batch_cannot_change_names_heads_proofs_baseline_or_scope(self):
+        original = json.loads(cleanup.BATCH2_MANIFEST.read_text())
+        for field, value in [('branch', 'main'), ('sha', 'a' * 40), ('proof', 'merged_pr')]:
+            changed = copy.deepcopy(original)
+            changed['targets'][0][field] = value
+            with self.assertRaises(ValueError):
+                validate_manifest(changed)
+        for change in ['baseline', 'removed', 'extra', 'unknown-batch']:
+            changed = copy.deepcopy(original)
+            if change == 'baseline':
+                changed['baseline_main'] = 'a' * 40
+            elif change == 'removed':
+                changed['targets'].pop()
+            elif change == 'extra':
+                changed['targets'].append(dict(changed['targets'][0]))
+            else:
+                changed['review_batch'] = 'unreviewed'
+            with self.assertRaises(ValueError):
+                validate_manifest(changed)
+
+    def test_exact_merged_pr_allows_squashed_head(self):
+        self.assertIsNone(eligibility(self.api(ahead=2), self.target, 'c' * 40, ''))
+
+    def test_unpreserved_merge_commit_is_kept(self):
+        self.assertEqual(eligibility(self.api(merged_ahead=1), self.target, 'c' * 40, ''),
+                         'not fully merged into current main')
+
+    def test_wrong_or_unmerged_pr_cannot_prove_preservation(self):
+        mutations = [({'merged': False}, None), ({'merged_at': None}, None),
+                     ({'state': 'open'}, None), ({'merge_commit_sha': 'e' * 40}, None),
+                     ({'sha': 'e' * 40}, 'head'), ({'ref': 'other'}, 'head'),
+                     ({'repo': {'full_name': 'other/repo'}}, 'head'),
+                     ({'ref': 'other'}, 'base'), ({'repo': {'full_name': 'other/repo'}}, 'base')]
+        for mutation, key in mutations:
+            record = self.pr()
+            (record[key] if key else record).update(mutation)
+            with self.subTest(mutation=mutation, key=key):
+                self.assertEqual(eligibility(self.api(pr=record), self.target, 'c' * 40, ''),
+                                 'merged PR proof changed or unavailable')
+
+    def test_squash_does_not_bypass_changed_protected_or_in_use_guards(self):
+        for options in [{'changed': True}, {'protected': True}, {'prs': True},
+                        {'running': True}, {'deployed': True}]:
+            with self.subTest(options=options):
+                self.assertIsNotNone(eligibility(self.api(**options), self.target, 'c' * 40, ''))
+        self.assertEqual(eligibility(self.api(), self.target, 'c' * 40, 'ref: fix/example'),
+                         'referenced by a current workflow')
 
 
 if __name__ == '__main__':
