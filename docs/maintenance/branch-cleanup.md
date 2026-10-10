@@ -51,3 +51,36 @@ outside the 112-target scope. Nine Lovable sync heads that are wholly ancestral
 to main are explicitly included; other sync heads remain outside the scope.
 External work absent from GitHub PR, workflow or deployment records cannot be
 detected. No acceptance test or production verification is implied by cleanup.
+
+
+## Dormant-history archive after production preservation
+
+PR173 preserved production sources and exact AI receipts. Its execution receipt
+is run 38082103065: nine source heads, 309 verified branch-name deletions, 76
+remaining branches. These counts supersede older inventories above.
+
+The next fixed plan is `dormant-branches-2026-10-10.json`, reviewed at main
+`d74fdc503f80ada0d091c4608e1a0c230111fae4`: 71 historical independent heads.
+All 75 non-main heads were compared to that main. The 71 targets have no current
+open PR or workflow-name dependency at review. They are NOT falsely treated as
+merged, accepted, cancelled features, or remaining launch tasks. Their exact
+commit trees and full reachable history must be independently preserved through
+`archive/dormant/2026-10-10/OLD_NAME` tags before any branch name is removed.
+Unmerged changes remain reviewable and restorable from those tags. Resuming them
+requires comparison to current main; cleanup does not merge old application code.
+
+Keep main, the three open drafts (#165 Twilio, #60 contact automation, #52 Stripe
+LIVE preparation), and `work/masaarat-academic-20261005`, which five current
+production workflows reference. No workflow consumers are changed merely to
+remove the Academic branch. The fixed plan cannot discover or add targets.
+
+`Archive reviewed dormant branch histories` can mutate refs only on one main
+push with the exact before-SHA above and commit prefix
+`chore: archive dormant branch histories`. PR execution is read-only testing.
+The runner reuses proven tag, explicit lease, independent Git absence, PR,
+workflow, protection, Actions and deployment guards. Complete live preflight
+precedes any mutation. All 71 verified archive refs precede any deletion.
+Changed or newly used heads are retained. A rejected or uncertain operation is
+not retried. The complete or partial execution receipt is saved as an Actions
+artifact; only that receipt establishes actual completion/counts. This file is
+an operational guide, not a competing project register.

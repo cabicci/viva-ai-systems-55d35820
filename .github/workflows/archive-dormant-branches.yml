@@ -1,0 +1,64 @@
+name: Archive reviewed dormant branch histories
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/archive-dormant-branches.yml]
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/archive-dormant-branches.yml
+      - scripts/maintenance/archive_dormant_branches.py
+      - scripts/maintenance/test_archive_dormant_branches.py
+      - docs/maintenance/dormant-branches-2026-10-10.json
+permissions: {}
+concurrency:
+  group: reviewed-branch-cleanup
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts/maintenance -p test_archive_dormant_branches.py -v
+  archive-cleanup:
+    if: >-
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.event_name == 'push' && github.ref == 'refs/heads/main' &&
+      github.event.before == 'd74fdc503f80ada0d091c4608e1a0c230111fae4' &&
+      startsWith(github.event.head_commit.message, 'chore: archive dormant branch histories')
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      pull-requests: read
+      actions: read
+      deployments: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts/maintenance -p test_archive_dormant_branches.py -v
+      - name: Save fixed reviewed input before mutation
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dormant-archive-reviewed-input
+          path: docs/maintenance/dormant-branches-2026-10-10.json
+          retention-days: 90
+          if-no-files-found: error
+      - name: Archive every exact history, then remove inactive names with leases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/maintenance/archive_dormant_branches.py
+      - name: Save complete or partial receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: dormant-archive-result
+          path: dormant-archive-output/
+          retention-days: 90
+          if-no-files-found: warn

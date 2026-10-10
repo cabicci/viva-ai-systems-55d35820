@@ -1,0 +1,744 @@
+{
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "baseline_main": "d74fdc503f80ada0d091c4608e1a0c230111fae4",
+  "maintenance_branch": "chore/archive-dormant-histories-20261010",
+  "keep": [
+    {
+      "branch": "feat/c01-contact-automation-prep-20260924",
+      "sha": "6293074afc202b2d9ee787159f7dd5008a3a4d60",
+      "reason": "open unfinished draft; do not merge, close or publish"
+    },
+    {
+      "branch": "launch/c01-stripe-live-isolation",
+      "sha": "2ec537b0db20630d5e347e705a1aa52cf3072114",
+      "reason": "open unfinished draft; do not merge, close or publish"
+    },
+    {
+      "branch": "main",
+      "sha": "d74fdc503f80ada0d091c4608e1a0c230111fae4",
+      "reason": "default protected application"
+    },
+    {
+      "branch": "work/masaarat-academic-20261005",
+      "sha": "08a56ccb35596632476fec7ebc6f0436c13baaf9",
+      "reason": "source referenced by five current workflows"
+    },
+    {
+      "branch": "work/masaarat-twilio-communications-20261008",
+      "sha": "9306b7b3eca61c9bb6a1debad8f75137865f00f7",
+      "reason": "open unfinished draft; do not merge, close or publish"
+    }
+  ],
+  "targets": [
+    {
+      "branch": "chore/preserve-readonly-status-plan-20261004",
+      "sha": "58f715401a995b3d85d17ae3b7687534e51ee6c9",
+      "tag": "archive/dormant/2026-10-10/chore/preserve-readonly-status-plan-20261004",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 137,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "ci/subscriptions-stage2a1-validation",
+      "sha": "90e0725eaad102f908f0371cbe0794081554a725",
+      "tag": "archive/dormant/2026-10-10/ci/subscriptions-stage2a1-validation",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 15,
+      "behind_by": 836,
+      "changed_file_count": 19
+    },
+    {
+      "branch": "docs/marketing-ga4-live-v4-20260930",
+      "sha": "6f71a019630bcf839e35e16502b6317c3059806c",
+      "tag": "archive/dormant/2026-10-10/docs/marketing-ga4-live-v4-20260930",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 213,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "feat/kids-rag-isolation",
+      "sha": "6bf2d5ffa8e5cf3b4ea19d95a0084883996fabaa",
+      "tag": "archive/dormant/2026-10-10/feat/kids-rag-isolation",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 16,
+      "behind_by": 292,
+      "changed_file_count": 181
+    },
+    {
+      "branch": "feat/lesson-driven-400-visual-pipeline",
+      "sha": "a2fe23c2032e0418bd3709c0f44f5d54452c900e",
+      "tag": "archive/dormant/2026-10-10/feat/lesson-driven-400-visual-pipeline",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 655,
+      "changed_file_count": 152
+    },
+    {
+      "branch": "feat/lesson-driven-400-visual-pipeline-refresh",
+      "sha": "df4bf761b17b7f3da262f340f600e08ce0c1fa43",
+      "tag": "archive/dormant/2026-10-10/feat/lesson-driven-400-visual-pipeline-refresh",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 7,
+      "behind_by": 617,
+      "changed_file_count": 300
+    },
+    {
+      "branch": "feat/subscriptions-stage2a-foundation",
+      "sha": "3351c88ad6fd1265aa480ce8ab727221cad42d25",
+      "tag": "archive/dormant/2026-10-10/feat/subscriptions-stage2a-foundation",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 836,
+      "changed_file_count": 18
+    },
+    {
+      "branch": "fix/admin-navigation-continuity-phase-1",
+      "sha": "4b644c5c5a7be6280ec1a90ce2c2ceca0f01019b",
+      "tag": "archive/dormant/2026-10-10/fix/admin-navigation-continuity-phase-1",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 663,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "fix/approved-localized-mission-copy",
+      "sha": "25811b570d632e0179d9d97029558e20d5fb1f03",
+      "tag": "archive/dormant/2026-10-10/fix/approved-localized-mission-copy",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 833,
+      "changed_file_count": 17
+    },
+    {
+      "branch": "fix/billing-launch-closure",
+      "sha": "3669ccfea9a47edca849b1a272ae155aa3943ec7",
+      "tag": "archive/dormant/2026-10-10/fix/billing-launch-closure",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 716,
+      "changed_file_count": 3
+    },
+    {
+      "branch": "fix/billing-launch-closure-final-refresh",
+      "sha": "d5a83e461f22611d80dc164afffe70590bf65c20",
+      "tag": "archive/dormant/2026-10-10/fix/billing-launch-closure-final-refresh",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 619,
+      "changed_file_count": 3
+    },
+    {
+      "branch": "fix/billing-launch-closure-refresh",
+      "sha": "413452b22001ee4d5f6caff2b6656d3de7ce230a",
+      "tag": "archive/dormant/2026-10-10/fix/billing-launch-closure-refresh",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 659,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "fix/billing-service-role-auth",
+      "sha": "49373d5bfae36f24b339826809130d8122d26ab1",
+      "tag": "archive/dormant/2026-10-10/fix/billing-service-role-auth",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 836,
+      "changed_file_count": 24
+    },
+    {
+      "branch": "fix/lesson-feedback-migration-replay",
+      "sha": "8e792189c06aa329473586781948df8c5833b242",
+      "tag": "archive/dormant/2026-10-10/fix/lesson-feedback-migration-replay",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 836,
+      "changed_file_count": 20
+    },
+    {
+      "branch": "fix/localized-video-presentation",
+      "sha": "53c54e6720b18e8cf1ae75bfc42ba8326cbf3afb",
+      "tag": "archive/dormant/2026-10-10/fix/localized-video-presentation",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 730,
+      "changed_file_count": 24
+    },
+    {
+      "branch": "fix/localized-videos-launch-closure-final",
+      "sha": "925c3b44bed751f88d1f8a6c432b9b65b61d51d1",
+      "tag": "archive/dormant/2026-10-10/fix/localized-videos-launch-closure-final",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 619,
+      "changed_file_count": 4
+    },
+    {
+      "branch": "fix/roadmap-migration-replay",
+      "sha": "56a49f74a17bdd0c077a590d802d987e3190bd07",
+      "tag": "archive/dormant/2026-10-10/fix/roadmap-migration-replay",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 836,
+      "changed_file_count": 19
+    },
+    {
+      "branch": "fix/sandbox-exec-migration-replay-fix",
+      "sha": "5596118c2c78a0c8bf466773a91ac8dde0704a98",
+      "tag": "archive/dormant/2026-10-10/fix/sandbox-exec-migration-replay-fix",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 836,
+      "changed_file_count": 22
+    },
+    {
+      "branch": "fix/security-admin-auth-launch-closure-final-refresh",
+      "sha": "6df86b76e6f50d0f6fc836c18bf2227b755bcac8",
+      "tag": "archive/dormant/2026-10-10/fix/security-admin-auth-launch-closure-final-refresh",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 619,
+      "changed_file_count": 6
+    },
+    {
+      "branch": "fix/ssr-admin-auth-remediation",
+      "sha": "e0ea0dda58c769698fcdf6b2287d7820f640e92e",
+      "tag": "archive/dormant/2026-10-10/fix/ssr-admin-auth-remediation",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 661,
+      "changed_file_count": 7
+    },
+    {
+      "branch": "fix/ssr-admin-auth-remediation-refresh",
+      "sha": "bdacebfc4253b982b482ac8df9a84ce8a23042f3",
+      "tag": "archive/dormant/2026-10-10/fix/ssr-admin-auth-remediation-refresh",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 659,
+      "changed_file_count": 6
+    },
+    {
+      "branch": "fix/video-post-completion-test-contracts",
+      "sha": "dce5b862b587ac83a3922757e1a6f00dae26bfd1",
+      "tag": "archive/dormant/2026-10-10/fix/video-post-completion-test-contracts",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 657,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync",
+      "sha": "32e567f3783983c00d99653af854dcc302669954",
+      "tag": "archive/dormant/2026-10-10/lovable-sync",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 262,
+      "changed_file_count": 16
+    },
+    {
+      "branch": "lovable-sync-1782094790",
+      "sha": "89cb5f46bcc47ef31075fcea6e7c5a8ad2268d44",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1782094790",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 10,
+      "behind_by": 978,
+      "changed_file_count": 5
+    },
+    {
+      "branch": "lovable-sync-1790635200",
+      "sha": "7fd5115e2859affd9f1b4f01faa3cf85f4be333e",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790635200",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 234,
+      "changed_file_count": 3
+    },
+    {
+      "branch": "lovable-sync-1790638126",
+      "sha": "c88942028c334a4c63c01f61d87310bcc084836a",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790638126",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 233,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1790669781",
+      "sha": "3de1e45cd3cacd4321384ff02b49bf325b6a521f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790669781",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 232,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1790670050",
+      "sha": "b0ea4b9eefb4a4fef70166c70a46eac4b4c604fe",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790670050",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 232,
+      "changed_file_count": 3
+    },
+    {
+      "branch": "lovable-sync-1790670377",
+      "sha": "c2169e0c8e83e9e82fc84f646999a5c48923b51f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790670377",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 232,
+      "changed_file_count": 4
+    },
+    {
+      "branch": "lovable-sync-1790856466",
+      "sha": "b071684557443ed6dc83394bc0f40ba1ac51fcac",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790856466",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 201,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1790873114",
+      "sha": "93c87f43df40b12fff587331be91c009c75687f7",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790873114",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 196,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1790880418",
+      "sha": "d739f86d200e0ea7329adc5d8cfefd334fd0b727",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790880418",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 196,
+      "changed_file_count": 11
+    },
+    {
+      "branch": "lovable-sync-1790883224",
+      "sha": "b4c15bae71bc089bf843785c0a45bf17d0c6a445",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790883224",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 194,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1790926096",
+      "sha": "3667763671ec36c690eea6af1b6aa59669d03e81",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790926096",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 189,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1790933333",
+      "sha": "d3d9a10131406516e66567f67421c2cd52a41bba",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790933333",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 189,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1790938401",
+      "sha": "dc3822cde83fcce3d2f63f300b09ca8f1b030815",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790938401",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 168,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1790971357",
+      "sha": "2721d325e0fe6ada8c8abbac79dbce6f200b8f6f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790971357",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 168,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1790971460",
+      "sha": "d5019bb01785de612e56e9cb0e4bec25ba0a8507",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1790971460",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 168,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791010282",
+      "sha": "b0cbef0e571a283d7a0c752bc2ca5a8e220e090f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791010282",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 165,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "lovable-sync-1791063044",
+      "sha": "58f715401a995b3d85d17ae3b7687534e51ee6c9",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791063044",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 137,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791064321",
+      "sha": "569871f00fde96052fe81377202dab94bb0cb44c",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791064321",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 137,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791104066",
+      "sha": "9c550e900e39950acd8bde427e8993bbee868ad9",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791104066",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 126,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791105186",
+      "sha": "c5009af8344ce8d0beaecfc36841b0e5856db5f3",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791105186",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 124,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791111041",
+      "sha": "a9c61b2ae5834f11fffb8e04649e4de6ea09cc8f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791111041",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 120,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791111803",
+      "sha": "5646fd223f0f888f3cf6a4b985a70d4b6b36c91b",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791111803",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 8,
+      "behind_by": 116,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791112678",
+      "sha": "54e1f65d78d42804288c48fb82830ffe534a3a39",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791112678",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 114,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791117252",
+      "sha": "38a42a3793099967c1b37d753c31c13100105115",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791117252",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 112,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791141605",
+      "sha": "5b01e6493c77f2e10a6d2e0a8d499f50525cf813",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791141605",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 109,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791145401",
+      "sha": "0e3702b479e46e16869905d5b01d236ff6c4bcb5",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791145401",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 107,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791147207",
+      "sha": "3db6a52024a61004fc59c2d60b97eb2e1132aca9",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791147207",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 5,
+      "behind_by": 107,
+      "changed_file_count": 3
+    },
+    {
+      "branch": "lovable-sync-1791147544",
+      "sha": "995b13fd996f0ecea07f00c3e15da58888611530",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791147544",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 105,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791148180",
+      "sha": "39db4d993b5f719143c26fa94e561add7e5f9846",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791148180",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 103,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791148657",
+      "sha": "2838f20b2e9661eae665323902c81abbef62f92e",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791148657",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 101,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791149941",
+      "sha": "ac665d04895d820490a75c53f418713a80eaba1d",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791149941",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 97,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791197106",
+      "sha": "fd6934f43499adc06770eb3d6318ea6e3281da89",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791197106",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 97,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791200573",
+      "sha": "811bec9bc2513d6bc4a8fd12d8f813b879a66a3f",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791200573",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 93,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791203315",
+      "sha": "4061e27904e3ef4cf0ee244c76be2656fa4e812e",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791203315",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 6,
+      "behind_by": 93,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "lovable-sync-1791203685",
+      "sha": "48776a514e9d10e8a940b118e1ea20da5c79f866",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791203685",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 91,
+      "changed_file_count": 5
+    },
+    {
+      "branch": "lovable-sync-1791204443",
+      "sha": "e7f48ca86c5acdfffa79c8470143d03c837429d0",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791204443",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 89,
+      "changed_file_count": 2
+    },
+    {
+      "branch": "lovable-sync-1791205418",
+      "sha": "01e923f884fd59d58abb1f67ae6aadc46a509768",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791205418",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 87,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791291515",
+      "sha": "3499676c79f3e3a87fc065a6cdde609af8233c43",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791291515",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 37,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791462711",
+      "sha": "d6378c682087ff98f6ebb57e3cf16505e6524e7c",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791462711",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 11,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "lovable-sync-1791468443",
+      "sha": "58d00efd628b504a55a6442c639bc3c3d3ba3de7",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791468443",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 4,
+      "behind_by": 11,
+      "changed_file_count": 5
+    },
+    {
+      "branch": "lovable-sync-1791578681",
+      "sha": "699a512ec3f0a596c0d6651b959aa572483096a0",
+      "tag": "archive/dormant/2026-10-10/lovable-sync-1791578681",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 9,
+      "changed_file_count": 1
+    },
+    {
+      "branch": "preserve/2026-07-21/rag-portable-batch-import-a3c19205",
+      "sha": "a3c1920509e6c50187abf9a6b2a9d8bfe438ce4f",
+      "tag": "archive/dormant/2026-10-10/preserve/2026-07-21/rag-portable-batch-import-a3c19205",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 716,
+      "changed_file_count": 21
+    },
+    {
+      "branch": "validate/billing-launch-closure-runtime",
+      "sha": "23aea6f2e6524231c86b66cefdb86e696054760c",
+      "tag": "archive/dormant/2026-10-10/validate/billing-launch-closure-runtime",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 3,
+      "behind_by": 659,
+      "changed_file_count": 4
+    },
+    {
+      "branch": "validation/rag-corrective-8e48d65",
+      "sha": "7dffb22347d424a2a35b36f799cc63fa99dcda88",
+      "tag": "archive/dormant/2026-10-10/validation/rag-corrective-8e48d65",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 8,
+      "behind_by": 818,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "validation/rag-final-integration-9b30c1f",
+      "sha": "e2a8527e6b1b2b84238370dd3a404368a98bb244",
+      "tag": "archive/dormant/2026-10-10/validation/rag-final-integration-9b30c1f",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 806,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "validation/rag-final-integration-retry-9b30c1f",
+      "sha": "8cc0798ff5a1820dfc5bc643298f6c1b9903b0a7",
+      "tag": "archive/dormant/2026-10-10/validation/rag-final-integration-retry-9b30c1f",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 806,
+      "changed_file_count": 8
+    },
+    {
+      "branch": "validation/rag-paid-embedding-8e48d65",
+      "sha": "023a56866767812c03f82d207250fce825f0df9f",
+      "tag": "archive/dormant/2026-10-10/validation/rag-paid-embedding-8e48d65",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 818,
+      "changed_file_count": 10
+    },
+    {
+      "branch": "work/rag-additive-portable-import",
+      "sha": "2be6ee139bded38a0dee4e2b1a7a217749450c08",
+      "tag": "archive/dormant/2026-10-10/work/rag-additive-portable-import",
+      "review": "unmerged historical head preserved; no active PR or current workflow reference",
+      "comparison_status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 659,
+      "changed_file_count": 9
+    }
+  ]
+}
