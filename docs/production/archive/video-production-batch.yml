@@ -1,0 +1,1941 @@
+name: Video Production Full 300 — Localized Batch
+
+# Full 300-cell localized video production (100 × en, ar-MSA, ar-Gulf).
+# Manual dispatch only — Lovable is the authorized dispatcher.
+# Generation produces validated per-cell GitHub artifacts; full-300 cells then
+# finalize Bunny MP4 upload + isolated result-branch receipts (no caption-track
+# upload; captions remain in the artifact). Canonical bunny-videos.ts mappings
+# are not modified by this workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization; recover-uploaded-receipts = receipt-only recovery for uploaded cells from run 29407852029; generate-unresolved = generate only currently unresolved approved cells (never matrix finalized cells)."
+        required: true
+        default: preflight-one
+        type: choice
+        options:
+          - preflight-one
+          - generate-one
+          - finalize-one
+          - full-300
+          - recover-uploaded-receipts
+          - generate-unresolved
+      retry_failed_only:
+        description: "Retained for compatibility. Cross-run retry is unsupported; use Re-run failed jobs on the original run."
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: video-full-300-localized-v1
+  cancel-in-progress: false
+
+env:
+  SOURCE_SHA: 6cfd019d315ec3f5a30ffc83bd551f4deb52385c
+  FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
+  REPAIR_SOURCE_SHA: 71fbe483b931cba91bedb1feadb1941092518890
+  OFFICIAL_LOGO_PATH: public/brand/masaarat-logo-lockup.png
+  OFFICIAL_LOGO_SHA256: 60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706
+  BATCH_ID: video-full-300-localized-v1
+
+jobs:
+  plan:
+    name: Validate and plan full 300-cell matrix
+    runs-on: ubuntu-latest
+
+    outputs:
+      run_mode: ${{ steps.plan.outputs.run_mode }}
+      matrix_a: ${{ steps.plan.outputs.matrix_a }}
+      matrix_b: ${{ steps.plan.outputs.matrix_b }}
+      count_a: ${{ steps.plan.outputs.count_a }}
+      count_b: ${{ steps.plan.outputs.count_b }}
+      total_count: ${{ steps.plan.outputs.total_count }}
+      recovery_matrix: ${{ steps.plan.outputs.recovery_matrix }}
+      recovery_count: ${{ steps.plan.outputs.recovery_count }}
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - name: Verify official Masaarat logo
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          test "$(
+            sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}'
+          )" = "$OFFICIAL_LOGO_SHA256"
+
+      - name: Build run plan
+        id: plan
+        shell: bash
+        env:
+          RETRY_INPUT: ${{ inputs.retry_failed_only }}
+          RUN_MODE: ${{ inputs.run_mode }}
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          run_mode = os.environ.get("RUN_MODE", "preflight-one")
+          if run_mode not in (
+              "preflight-one",
+              "generate-one",
+              "finalize-one",
+              "full-300",
+              "recover-uploaded-receipts",
+              "generate-unresolved",
+          ):
+              print(f"::error::Unsupported run_mode {run_mode!r}", file=sys.stderr)
+              sys.exit(1)
+
+          retry_only = os.environ.get("RETRY_INPUT", "false").lower() == "true"
+          if retry_only:
+              print(
+                  "::error::Cross-run retry_failed_only is unsupported for this "
+                  "workflow. Use GitHub Actions \"Re-run failed jobs\" "
+                  "on the original run; finalized cells skip via durable receipts.",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+
+          print(f"run_mode={run_mode}")
+
+          if run_mode == "recover-uploaded-receipts":
+              print("matrix_a=" + json.dumps([], separators=(",", ":")))
+              print("matrix_b=" + json.dumps([], separators=(",", ":")))
+              print("count_a=0")
+              print("count_b=0")
+              print("total_count=79")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
+              sys.exit(0)
+
+          if run_mode == "generate-unresolved":
+              # Matrix is produced by unresolved_plan from live receipt evidence.
+              print("matrix_a=" + json.dumps([], separators=(",", ":")))
+              print("matrix_b=" + json.dumps([], separators=(",", ":")))
+              print("count_a=0")
+              print("count_b=0")
+              print("total_count=0")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
+              sys.exit(0)
+
+          if run_mode in ("preflight-one", "generate-one", "finalize-one"):
+              locale = "en"
+              lesson_id = "analyst-m3-l2-ai-summarization"
+              package_path = (
+                  f"src/lib/locale-lessons/{locale}/lessons/{lesson_id}.json"
+              )
+              if not Path(package_path).is_file():
+                  raise SystemExit(f"Missing one-cell package: {package_path}")
+              print("matrix_a=" + json.dumps([], separators=(",", ":")))
+              print("matrix_b=" + json.dumps([], separators=(",", ":")))
+              print("count_a=0")
+              print("count_b=0")
+              print("total_count=1")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
+              sys.exit(0)
+
+          locales = ("ar-MSA", "ar-Gulf", "en")
+          voice_profiles = {
+              "ar-MSA": "gemini-ar-msa-formal",
+              "ar-Gulf": "gemini-ar-gulf",
+              "en": "gemini-en-narrator",
+          }
+
+          former_pilot = {
+              "ar-MSA::analyst-m3-l2-ai-summarization",
+              "ar-Gulf::analyst-m3-l2-ai-summarization",
+              "en::analyst-m3-l2-ai-summarization",
+              "ar-MSA::intro-m1-l4-ai-can-cannot",
+              "ar-Gulf::intro-m1-l4-ai-can-cannot",
+              "en::intro-m1-l4-ai-can-cannot",
+          }
+
+          approved: list[dict] = []
+
+          for locale in locales:
+              manifest_path = Path(
+                  "src/lib/locale-lessons", locale, "manifest.json"
+              )
+              manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              lesson_ids = manifest.get("lessonIds") or []
+              if len(lesson_ids) != 100:
+                  raise SystemExit(
+                      f"{locale} manifest has {len(lesson_ids)} lessons, expected 100"
+                  )
+              for lesson_id in lesson_ids:
+                  if locale == "ar-EG":
+                      raise SystemExit("ar-EG cells are forbidden")
+                  cell_id = f"{locale}::{lesson_id}"
+                  composite_key = f"{lesson_id}__{locale}"
+                  package_path = (
+                      f"src/lib/locale-lessons/{locale}/lessons/{lesson_id}.json"
+                  )
+                  if not Path(package_path).is_file():
+                      raise SystemExit(f"Missing package: {package_path}")
+                  approved.append(
+                      {
+                          "locale": locale,
+                          "lessonId": lesson_id,
+                          "cellId": cell_id,
+                          "compositeKey": composite_key,
+                          "packagePath": package_path,
+                          "voiceProfileId": voice_profiles[locale],
+                      }
+                  )
+
+          assert len(approved) == 300
+          assert len({cell["cellId"] for cell in approved}) == 300
+          assert len({cell["compositeKey"] for cell in approved}) == 300
+          assert sum(cell["locale"] == "en" for cell in approved) == 100
+          assert sum(cell["locale"] == "ar-MSA" for cell in approved) == 100
+          assert sum(cell["locale"] == "ar-Gulf" for cell in approved) == 100
+          assert {cell["cellId"] for cell in approved} >= former_pilot
+          assert all(
+              cell["compositeKey"] == f'{cell["lessonId"]}__{cell["locale"]}'
+              for cell in approved
+          )
+          assert all(cell["locale"] != "ar-EG" for cell in approved)
+
+          filtered = approved
+          matrix_a = filtered[:150]
+          matrix_b = filtered[150:]
+
+          assert len(matrix_a) <= 150
+          assert len(matrix_b) <= 150
+          assert len(matrix_a) + len(matrix_b) == len(filtered)
+
+          print("matrix_a=" + json.dumps(matrix_a, separators=(",", ":")))
+          print("matrix_b=" + json.dumps(matrix_b, separators=(",", ":")))
+          print(f"count_a={len(matrix_a)}")
+          print(f"count_b={len(matrix_b)}")
+          print(f"total_count={len(filtered)}")
+          print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+          print("recovery_count=0")
+          PY
+
+  recovery_plan:
+    name: Plan uploaded receipt recovery (79 cells)
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'recover-uploaded-receipts'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      recovery_matrix: ${{ steps.plan_recovery.outputs.recovery_matrix }}
+      recovery_count: ${{ steps.plan_recovery.outputs.recovery_count }}
+
+    steps:
+      - name: Check out immutable full-300 production source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned full-300 production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Fetch result branch receipts (read-only)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results--${BATCH_ID}--"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: List immutable artifacts from recovery run
+        id: artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --paginate \
+            "/repos/${{ github.repository }}/actions/runs/29407852029/artifacts" \
+            --jq '[.artifacts[] | {id: (.id|tostring), name: .name}]' \
+            > /tmp/recovery-artifacts.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          chunks = []
+          text = Path("/tmp/recovery-artifacts.json").read_text(encoding="utf-8")
+          # gh --paginate may emit multiple JSON arrays
+          decoder = json.JSONDecoder()
+          idx = 0
+          while idx < len(text):
+              while idx < len(text) and text[idx].isspace():
+                  idx += 1
+              if idx >= len(text):
+                  break
+              obj, end = decoder.raw_decode(text, idx)
+              chunks.extend(obj)
+              idx = end
+          Path("/tmp/recovery-artifacts-flat.json").write_text(
+              json.dumps(chunks, separators=(",", ":")), encoding="utf-8"
+          )
+          print(f"listed_artifacts={len(chunks)}")
+          PY
+
+      - name: Build fail-closed recovery matrix
+        id: plan_recovery
+        shell: bash
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+          RECOVERY_ARTIFACTS_PATH: /tmp/recovery-artifacts-flat.json
+          RECOVERY_WORKFLOW_RUN_ID: "29407852029"
+        run: |
+          set -euo pipefail
+          python3 control-code/.github/scripts/plan_uploaded_receipt_recovery_cli.py \
+            | tee recovery-plan.json
+          COUNT=$(python3 -c "import json; print(json.load(open('recovery-plan.json'))['recoveryCount'])")
+          test "$COUNT" = "79"
+
+  unresolved_plan:
+    name: Plan generate-unresolved matrix
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'generate-unresolved'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      matrix_a: ${{ steps.plan_unresolved.outputs.matrix_a }}
+      matrix_b: ${{ steps.plan_unresolved.outputs.matrix_b }}
+      count_a: ${{ steps.plan_unresolved.outputs.count_a }}
+      count_b: ${{ steps.plan_unresolved.outputs.count_b }}
+      total_count: ${{ steps.plan_unresolved.outputs.total_count }}
+      empty: ${{ steps.plan_unresolved.outputs.empty }}
+
+    steps:
+      - name: Check out immutable full-300 production source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned full-300 production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
+          test -f control-code/.github/scripts/plan_generate_unresolved_cli.py
+          test -f control-code/.github/scripts/video_finalize/unresolved_generation_plan.py
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Fetch result branch receipts (read-only)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results--${BATCH_ID}--"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: Build fail-closed unresolved generation matrix
+        id: plan_unresolved
+        shell: bash
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+        run: |
+          set -euo pipefail
+          python3 control-code/.github/scripts/plan_generate_unresolved_cli.py \
+            | tee unresolved-plan.json
+          TOTAL=$(python3 -c "import json; print(json.load(open('unresolved-plan.json'))['total_count'])")
+          echo "::notice::generate-unresolved selected ${TOTAL} cell(s)"
+
+  recover_cells:
+    name: Recover — ${{ matrix.locale }} — ${{ matrix.lessonId }}
+    needs: [plan, recovery_plan]
+    if: needs.plan.outputs.run_mode == 'recover-uploaded-receipts' && needs.recovery_plan.outputs.recovery_count == '79'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: read
+
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include: ${{ fromJSON(needs.recovery_plan.outputs.recovery_matrix) }}
+
+    env:
+      LID: ${{ matrix.lessonId }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.logicalKey }}
+      BATCH_ID: ${{ matrix.batchId }}
+      SOURCE_SHA: ${{ matrix.sourceSha }}
+      WORKFLOW_RUN_ID: ${{ matrix.workflowRunId }}
+      ARTIFACT_ID: ${{ matrix.artifactId }}
+      ARTIFACT_NAME: ${{ matrix.artifactName }}
+
+    steps:
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test -f .github/scripts/recover_uploaded_receipt_cli.py
+          test -f .github/scripts/plan_uploaded_receipt_recovery_cli.py
+          python3 .github/scripts/recovery_control_gate.py .
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Prepare isolated results worktree repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-recover@github-actions"
+          git -C /tmp/results-repo config user.name "video-recover"
+          git -C /tmp/results-repo remote add origin \
+            "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
+          if git -C /tmp/results-repo fetch --depth=1 origin "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-repo checkout -B "$BRANCH" FETCH_HEAD
+          fi
+
+      - name: Existing-receipt early skip (before artifact download / Bunny)
+        id: receipt_skip
+        shell: bash
+        env:
+          RESULTS_REPO: /tmp/results-repo
+          BUNNY_STREAM_API_KEY: "unused-before-download"
+          BUNNY_STREAM_LIBRARY_ID: "unused-before-download"
+        run: |
+          set -euo pipefail
+          # No PRODUCTION_ROOT → skip-check / pending-artifact only.
+          python3 .github/scripts/recover_uploaded_receipt_cli.py
+
+      - name: Download exact recovery artifact
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$WORKFLOW_RUN_ID" = "29407852029"
+          test "$SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          mkdir -p /tmp/recovery-artifact
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            > /tmp/recovery-artifact.zip
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          zpath = Path("/tmp/recovery-artifact.zip")
+          out = Path("/tmp/recovery-artifact")
+          with zipfile.ZipFile(zpath) as zf:
+              zf.extractall(out)
+          print("extracted", len(list(out.rglob("*"))))
+          PY
+
+      - name: Recover receipt without Bunny upload
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/recovery-artifact
+          RESULTS_REPO: /tmp/results-repo
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          test "$ARTIFACT_NAME" = "full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          python3 .github/scripts/recover_uploaded_receipt_cli.py
+
+      - name: Skipped — existing finalized receipt
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: echo "::notice::recovery-skipped-success ${{ matrix.logicalKey }}"
+
+  preflight_one:
+    name: Preflight one — en — analyst-m3-l2-ai-summarization
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'preflight-one'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      LID: analyst-m3-l2-ai-summarization
+      LOCALE: en
+      COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en
+      CELL_ID: en::analyst-m3-l2-ai-summarization
+      LESSON_PACKAGE_PATH: src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: latest
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        run: cd remotion && bun install --frozen-lockfile
+
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        env:
+          LESSON_LOCALE: en
+        run: |
+          set -euo pipefail
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
+
+      - name: Write preflight-one validation report (no paid calls reached)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+
+          report = {
+              "runMode": "preflight-one",
+              "locale": os.environ["LOCALE"],
+              "lessonId": os.environ["LID"],
+              "logicalKey": os.environ["COMPOSITE_KEY"],
+              "sourceSha": os.environ["SOURCE_SHA"],
+              "validationStatus": "passed",
+              "paidCallsReached": False,
+              "noPaidCallsConfirmation": (
+                  "validate-source-only and integrity gates completed; "
+                  "Gemini secret verification, TTS, rendering, Bunny, and "
+                  "repository writes were not reached"
+              ),
+          }
+          out = "/tmp/preflight-one-report.json"
+          with open(out, "w", encoding="utf-8") as f:
+              json.dump(report, f, ensure_ascii=False, indent=2)
+              f.write("\n")
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload preflight-one validation artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: preflight-one-${{ env.SOURCE_SHA }}-en-analyst-m3-l2-ai-summarization
+          path: |
+            /tmp/preflight-one-report.json
+            /tmp/${{ env.COMPOSITE_KEY }}/evidence.json
+            /tmp/${{ env.COMPOSITE_KEY }}/build-evidence.json
+          if-no-files-found: error
+          retention-days: 14
+
+  generate_one:
+    name: Generate one — en — analyst-m3-l2-ai-summarization
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'generate-one'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    env:
+      LID: analyst-m3-l2-ai-summarization
+      LOCALE: en
+      COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en
+      CELL_ID: en::analyst-m3-l2-ai-summarization
+      LESSON_PACKAGE_PATH: src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json
+      EXPECTED_VOICE_PROFILE: gemini-en-narrator
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: latest
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        run: cd remotion && bun install --frozen-lockfile
+
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        env:
+          LESSON_LOCALE: en
+        run: |
+          set -euo pipefail
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
+
+      - name: Verify paid Gemini secret
+        shell: bash
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "${GEMINI_API_KEY:-}"
+
+      - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          TTS_REQUEST_GAP_SECONDS: "8"
+          REMOTION_CONCURRENCY: "2"
+          LESSON_LOCALE: en
+        run: |
+          set -euo pipefail
+          mkdir -p "public/lessons/intro"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH"
+          test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
+
+      - name: Validate media and write production result evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          MP4="public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          CAPTIONS="/tmp/${COMPOSITE_KEY}/captions.vtt"
+          AUDIO="/tmp/${COMPOSITE_KEY}/audio/master.mp3"
+          OUT_DIR="/tmp/${COMPOSITE_KEY}/production-result"
+          mkdir -p "$OUT_DIR"
+
+          test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
+          BYTES=$(stat -c%s "$MP4")
+          [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          python3 -c "import sys; sys.exit(0 if float('${DUR}' or 0) > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO_STREAM=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          [ -n "$AUDIO_STREAM" ] || { echo "::error::No audio stream in $MP4"; exit 1; }
+
+          export MEDIA_DUR="$DUR"
+
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
+
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "runMode": "generate-one",
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "logicalKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
+          )
+          print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload generate-one validated production artifact (artifact-only output)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: generate-one-${{ env.SOURCE_SHA }}-en-analyst-m3-l2-ai-summarization
+          path: |
+            /tmp/${{ env.COMPOSITE_KEY }}/production-result/
+            /tmp/${{ env.COMPOSITE_KEY }}/evidence.json
+            /tmp/${{ env.COMPOSITE_KEY }}/build-evidence.json
+            /tmp/${{ env.COMPOSITE_KEY }}/script-preview.md
+          if-no-files-found: error
+          retention-days: 14
+
+  finalize_one:
+    name: Finalize one — pinned accepted artifact → Bunny + result branch
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'finalize-one'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      actions: read
+
+    env:
+      LID: analyst-m3-l2-ai-summarization
+      LOCALE: en
+      COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en
+      CELL_ID: en::analyst-m3-l2-ai-summarization
+      WORKFLOW_RUN_ID: "29296309474"
+      ARTIFACT_ID: "8296996512"
+      ARTIFACT_DIGEST: "sha256:3dd0f69515d9fa8a551518c0d42395623d3d00202355817f0d434ec68bb16175"
+
+    steps:
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify finalization control scripts at dispatched workflow SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test -f .github/scripts/verify_finalize_one_pins.py
+          test -f .github/scripts/finalize_cell_cli.py
+          test -f .github/scripts/check_finalized_receipt.py
+          test -f .github/scripts/collect_finalization_cli.py
+          test -d .github/scripts/video_finalize
+          test -f .github/scripts/video_finalize/finalize_cell.py
+
+      - name: Check out immutable production SOURCE_SHA (read-only baseline)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          path: source-baseline
+          fetch-depth: 1
+
+      - name: Verify pinned SOURCE_SHA baseline (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$SOURCE_SHA" = "6cfd019d315ec3f5a30ffc83bd551f4deb52385c"
+          test "$(git -C source-baseline rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Verify finalize-one pinned identities
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/verify_finalize_one_pins.py
+
+      - name: Download pinned accepted artifact by ID
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/finalize-one-artifact
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            > /tmp/finalize-one-artifact.zip
+          python3 - <<'PY'
+          import hashlib, pathlib, os, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import resolve_production_root
+          zpath = pathlib.Path("/tmp/finalize-one-artifact.zip")
+          digest = "sha256:" + hashlib.sha256(zpath.read_bytes()).hexdigest()
+          expected = os.environ["ARTIFACT_DIGEST"]
+          if digest != expected:
+              raise SystemExit(f"artifact digest mismatch: {digest} != {expected}")
+          import zipfile
+          with zipfile.ZipFile(zpath) as zf:
+              zf.extractall("/tmp/finalize-one-artifact")
+          root = resolve_production_root(pathlib.Path("/tmp/finalize-one-artifact"))
+          print(f"::notice::artifact digest verified {digest}; bundle at {root}")
+          PY
+
+      - name: Prepare isolated results worktree repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Finalize Bunny upload + isolated receipt commit (no Gemini/TTS/render)
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/finalize-one-artifact
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ env.WORKFLOW_RUN_ID }}
+          ARTIFACT_ID: ${{ env.ARTIFACT_ID }}
+          ARTIFACT_DIGEST: ${{ env.ARTIFACT_DIGEST }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
+  produce_a:
+    name: A — ${{ matrix.locale }} — ${{ matrix.lessonId }}
+    needs: [plan, unresolved_plan]
+    if: >-
+      always() &&
+      needs.plan.result == 'success' &&
+      (
+        (needs.plan.outputs.run_mode == 'full-300' &&
+         needs.unresolved_plan.result == 'skipped' &&
+         needs.plan.outputs.count_a != '0') ||
+        (needs.plan.outputs.run_mode == 'generate-unresolved' &&
+         needs.unresolved_plan.result == 'success' &&
+         needs.unresolved_plan.outputs.count_a != '0')
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: read
+
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.run_mode == 'generate-unresolved' && needs.unresolved_plan.outputs.matrix_a || needs.plan.outputs.matrix_a) }}
+
+    env:
+      LID: ${{ matrix.lessonId }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.compositeKey }}
+      CELL_ID: ${{ matrix.cellId }}
+      LESSON_PACKAGE_PATH: ${{ matrix.packagePath }}
+      SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+      PRODUCTION_SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+          fetch-depth: 0
+
+      - name: Verify pinned production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$REPAIR_SOURCE_SHA" = "71fbe483b931cba91bedb1feadb1941092518890"
+          EXPECTED="$FULL_300_SOURCE_SHA"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            EXPECTED="$REPAIR_SOURCE_SHA"
+          fi
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+          test "$SOURCE_SHA" = "$EXPECTED"
+          test "$PRODUCTION_SOURCE_SHA" = "$EXPECTED"
+
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Skip paid generation when durable finalized receipt matches
+        id: receipt_skip
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
+          mkdir -p /tmp/results-check
+          git init /tmp/results-check
+          if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-check checkout FETCH_HEAD
+          fi
+          RESULTS_REPO=/tmp/results-check python3 .github/scripts/check_finalized_receipt.py
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        if: steps.receipt_skip.outputs.skip != 'true'
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        if: steps.receipt_skip.outputs.skip != 'true'
+        with:
+          bun-version: latest
+
+      - name: Install ffmpeg
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: cd remotion && bun install --frozen-lockfile
+
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        env:
+          LESSON_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
+
+      - name: Verify paid Gemini secret
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "${GEMINI_API_KEY:-}"
+
+      - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          TTS_REQUEST_GAP_SECONDS: "8"
+          REMOTION_CONCURRENCY: "2"
+          LESSON_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          mkdir -p "public/lessons/intro"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --force-script
+          test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
+
+      - name: Validate media and write production result evidence
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
+        run: |
+          set -euo pipefail
+          MP4="public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          CAPTIONS="/tmp/${COMPOSITE_KEY}/captions.vtt"
+          AUDIO="/tmp/${COMPOSITE_KEY}/audio/master.mp3"
+          OUT_DIR="/tmp/${COMPOSITE_KEY}/production-result"
+          mkdir -p "$OUT_DIR"
+
+          test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
+          BYTES=$(stat -c%s "$MP4")
+          [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          python3 -c "import sys; sys.exit(0 if float('${DUR}' or 0) > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO_STREAM=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          [ -n "$AUDIO_STREAM" ] || { echo "::error::No audio stream in $MP4"; exit 1; }
+
+          export MEDIA_DUR="$DUR"
+
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
+
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "logicalKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
+          )
+          print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload per-cell validated production artifact (artifact-only output)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
+          path: |
+            /tmp/${{ matrix.compositeKey }}/production-result/
+            /tmp/${{ matrix.compositeKey }}/evidence.json
+            /tmp/${{ matrix.compositeKey }}/build-evidence.json
+            /tmp/${{ matrix.compositeKey }}/script-preview.md
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Prepare isolated results worktree repo
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Resolve uploaded artifact identity for receipt
+        if: steps.receipt_skip.outputs.skip != 'true'
+        id: artifact_meta
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          NAME="full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          ID=$(gh api \
+            "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            --jq ".artifacts[] | select(.name==\"${NAME}\") | .id" | head -n1)
+          test -n "$ID"
+          echo "artifact_id=$ID" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import os, pathlib, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import compute_bundle_digest
+          root = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          digest = compute_bundle_digest(root)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"artifact_digest={digest}\n")
+          PY
+
+      - name: Finalize Bunny upload + isolated receipt commit (no regeneration)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/${{ matrix.compositeKey }}/production-result
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.artifact_meta.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ steps.artifact_meta.outputs.artifact_digest }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
+      - name: Skipped — durable finalized receipt present
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: |
+          if [ "${{ steps.receipt_skip.outputs.carried_forward }}" = "true" ]; then
+            echo "::notice::accepted-carried-forward-completed-cell ${{ matrix.compositeKey }}"
+          else
+            echo "::notice::skipped-success ${{ matrix.compositeKey }}"
+          fi
+
+  produce_b:
+    name: B — ${{ matrix.locale }} — ${{ matrix.lessonId }}
+    needs: [plan, unresolved_plan]
+    if: >-
+      always() &&
+      needs.plan.result == 'success' &&
+      (
+        (needs.plan.outputs.run_mode == 'full-300' &&
+         needs.unresolved_plan.result == 'skipped' &&
+         needs.plan.outputs.count_b != '0') ||
+        (needs.plan.outputs.run_mode == 'generate-unresolved' &&
+         needs.unresolved_plan.result == 'success' &&
+         needs.unresolved_plan.outputs.count_b != '0')
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: read
+
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.run_mode == 'generate-unresolved' && needs.unresolved_plan.outputs.matrix_b || needs.plan.outputs.matrix_b) }}
+
+    env:
+      LID: ${{ matrix.lessonId }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.compositeKey }}
+      CELL_ID: ${{ matrix.cellId }}
+      LESSON_PACKAGE_PATH: ${{ matrix.packagePath }}
+      SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+      PRODUCTION_SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+          fetch-depth: 0
+
+      - name: Verify pinned production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$REPAIR_SOURCE_SHA" = "71fbe483b931cba91bedb1feadb1941092518890"
+          EXPECTED="$FULL_300_SOURCE_SHA"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            EXPECTED="$REPAIR_SOURCE_SHA"
+          fi
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+          test "$SOURCE_SHA" = "$EXPECTED"
+          test "$PRODUCTION_SOURCE_SHA" = "$EXPECTED"
+
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11"
+
+      - name: Skip paid generation when durable finalized receipt matches
+        id: receipt_skip
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
+          mkdir -p /tmp/results-check
+          git init /tmp/results-check
+          if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-check checkout FETCH_HEAD
+          fi
+          RESULTS_REPO=/tmp/results-check python3 .github/scripts/check_finalized_receipt.py
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        if: steps.receipt_skip.outputs.skip != 'true'
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        if: steps.receipt_skip.outputs.skip != 'true'
+        with:
+          bun-version: latest
+
+      - name: Install ffmpeg
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: cd remotion && bun install --frozen-lockfile
+
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        env:
+          LESSON_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
+
+      - name: Verify paid Gemini secret
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "${GEMINI_API_KEY:-}"
+
+      - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          TTS_REQUEST_GAP_SECONDS: "8"
+          REMOTION_CONCURRENCY: "2"
+          LESSON_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          mkdir -p "public/lessons/intro"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --force-script
+          test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
+
+      - name: Validate media and write production result evidence
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
+        run: |
+          set -euo pipefail
+          MP4="public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          CAPTIONS="/tmp/${COMPOSITE_KEY}/captions.vtt"
+          AUDIO="/tmp/${COMPOSITE_KEY}/audio/master.mp3"
+          OUT_DIR="/tmp/${COMPOSITE_KEY}/production-result"
+          mkdir -p "$OUT_DIR"
+
+          test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
+          BYTES=$(stat -c%s "$MP4")
+          [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          python3 -c "import sys; sys.exit(0 if float('${DUR}' or 0) > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO_STREAM=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          [ -n "$AUDIO_STREAM" ] || { echo "::error::No audio stream in $MP4"; exit 1; }
+
+          export MEDIA_DUR="$DUR"
+
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
+
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "logicalKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
+          )
+          print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload per-cell validated production artifact (artifact-only output)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
+          path: |
+            /tmp/${{ matrix.compositeKey }}/production-result/
+            /tmp/${{ matrix.compositeKey }}/evidence.json
+            /tmp/${{ matrix.compositeKey }}/build-evidence.json
+            /tmp/${{ matrix.compositeKey }}/script-preview.md
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Prepare isolated results worktree repo
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Resolve uploaded artifact identity for receipt
+        if: steps.receipt_skip.outputs.skip != 'true'
+        id: artifact_meta
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          NAME="full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          ID=$(gh api \
+            "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            --jq ".artifacts[] | select(.name==\"${NAME}\") | .id" | head -n1)
+          test -n "$ID"
+          echo "artifact_id=$ID" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import os, pathlib, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import compute_bundle_digest
+          root = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          digest = compute_bundle_digest(root)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"artifact_digest={digest}\n")
+          PY
+
+      - name: Finalize Bunny upload + isolated receipt commit (no regeneration)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/${{ matrix.compositeKey }}/production-result
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.artifact_meta.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ steps.artifact_meta.outputs.artifact_digest }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
+      - name: Skipped — durable finalized receipt present
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: |
+          if [ "${{ steps.receipt_skip.outputs.carried_forward }}" = "true" ]; then
+            echo "::notice::accepted-carried-forward-completed-cell ${{ matrix.compositeKey }}"
+          else
+            echo "::notice::skipped-success ${{ matrix.compositeKey }}"
+          fi
+
+  report:
+    name: Collect full-300 production report
+    needs: [plan, unresolved_plan, preflight_one, generate_one, finalize_one, produce_a, produce_b]
+    if: >-
+      always() &&
+      (
+        needs.plan.outputs.run_mode == 'full-300' ||
+        needs.plan.outputs.run_mode == 'generate-unresolved'
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned full-300 production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
+
+      - name: Emit combined batch summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::notice::Full-300 artifact + finalization batch report"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            echo "source_sha=${{ env.REPAIR_SOURCE_SHA }}"
+          else
+            echo "source_sha=${{ env.FULL_300_SOURCE_SHA }}"
+          fi
+          echo "total_count=${{ needs.plan.outputs.total_count }}"
+          echo "count_a=${{ needs.plan.outputs.count_a }}"
+          echo "count_b=${{ needs.plan.outputs.count_b }}"
+          echo "produce_a_result=${{ needs.produce_a.result }}"
+          echo "produce_b_result=${{ needs.produce_b.result }}"
+
+      - name: Build expected logical key manifest
+        if: always()
+        id: manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          locales = ("ar-MSA", "ar-Gulf", "en")
+          keys = []
+          for locale in locales:
+              manifest = json.loads(Path(f"src/lib/locale-lessons/{locale}/manifest.json").read_text())
+              for lesson_id in manifest["lessonIds"]:
+                  keys.append(f"{lesson_id}__{locale}")
+          assert len(keys) == 300
+          print("expected_keys_json=" + json.dumps(keys, separators=(",", ":")))
+          PY
+
+      - name: Fetch result branch receipts (read-only)
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results--${BATCH_ID}--"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: Collect durable finalization inventory (read-only)
+        if: always()
+        id: collector
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+          EXPECTED_LOGICAL_KEYS_JSON: ${{ steps.manifest.outputs.expected_keys_json }}
+          FAILED_LOGICAL_KEYS_JSON: "[]"
+          RESULTS_FETCH_DIR: /tmp/result-branches
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/collect_finalization_cli.py | tee collector-report.json
+
+      - name: Collect per-cell artifacts (read-only)
+        if: needs.plan.outputs.total_count != '0'
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: full-300-${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}-*
+          merge-multiple: true
+          path: collected-artifacts
+        continue-on-error: true
+
+      - name: Report collected artifact inventory
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d collected-artifacts ]; then
+            find collected-artifacts -type f | sort | tee collected-files.txt
+            echo "collected_file_count=$(find collected-artifacts -type f | wc -l)"
+          else
+            echo "No collected artifacts directory (zero pending or all produce jobs skipped/failed before upload)."
+          fi
+
+      - name: Promote validated finalized receipts to canonical registry
+        if: always()
+        id: mapping_promotion
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+          EXPECTED_LOGICAL_KEYS_JSON: ${{ steps.manifest.outputs.expected_keys_json }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+          MAPPING_REPO: /tmp/mapping-repo
+          MAPPING_REMOTE_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+          DISPATCHED_SHA: ${{ github.sha }}
+          PUSH_TO_MAIN: "true"
+          MAPPING_COMMIT_MESSAGE: "chore(video): promote finalized localized mappings"
+        run: |
+          set -uo pipefail
+          mkdir -p /tmp/mapping-repo
+          PROMOTE_EXIT=0
+          python3 control-code/.github/scripts/promote_finalized_mappings_cli.py \
+            | tee mapping-promotion-report.json || PROMOTE_EXIT=$?
+          if [ "$PROMOTE_EXIT" -eq 40 ] || [ "$PROMOTE_EXIT" -eq 41 ]; then
+            exit "$PROMOTE_EXIT"
+          fi
+
+      - name: Fail when unresolved cells remain after registry promotion
+        if: always() && steps.mapping_promotion.outputs.all_resolved != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::error::Unresolved localized video cells remain after registry promotion"
+          echo "unresolved_keys=${{ steps.mapping_promotion.outputs.unresolved_keys }}"
+          exit 1

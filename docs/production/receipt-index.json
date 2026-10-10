@@ -1,0 +1,3064 @@
+{
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "baseline_main": "64ede9b73274481ae7b09f1178201b767ad21e6f",
+  "receipt_count": 300,
+  "sources": [
+    {
+      "branch": "video-results",
+      "sha": "0056f23afe93c985b8269feeabc8d9e54c3dc733",
+      "tag": "archive/production/2026-10-10/video-results",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feat/video-production-pipeline",
+      "sha": "e1d6ff9d281468afee2399ccbcac9dbcdbdb33d9",
+      "tag": "archive/production/2026-10-10/feat/video-production-pipeline",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feat/video-production-final-v2",
+      "sha": "4865d864e3be4e270f8067985ca1ed9503b85be2",
+      "tag": "archive/production/2026-10-10/feat/video-production-final-v2",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feature/masaarat-kids-pilot",
+      "sha": "b783f1684f97ca030a142c03665f834eaf748b94",
+      "tag": "archive/production/2026-10-10/feature/masaarat-kids-pilot",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feature/masaarat-kids-levels-2-3",
+      "sha": "d73026bb93393e74e47a9e29f4cc2d4f6865b6b0",
+      "tag": "archive/production/2026-10-10/feature/masaarat-kids-levels-2-3",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "experiment/furniture-pilot-20261003",
+      "sha": "87728437970170a0cb28bda536fddcaf6c1340ee",
+      "tag": "archive/production/2026-10-10/experiment/furniture-pilot-20261003",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "experiment/technical-remaining-75-20261004",
+      "sha": "6b7a22270c923186aa9c44210ffcf56935257ce0",
+      "tag": "archive/production/2026-10-10/experiment/technical-remaining-75-20261004",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "checkpoint/technical-education-pause-20261004",
+      "sha": "64f9583d9f0a0bb9bc96b9f94c729c4dd304cc31",
+      "tag": "archive/production/2026-10-10/checkpoint/technical-education-pause-20261004",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "work/masaarat-academic-20261005",
+      "sha": "08a56ccb35596632476fec7ebc6f0436c13baaf9",
+      "tag": "archive/production/2026-10-10/work/masaarat-academic-20261005",
+      "delete_after_archive": false
+    }
+  ],
+  "receipts": [
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__ar-Gulf",
+      "sha": "ee1485f701b337458cfa6785560266f0488abb8e",
+      "logicalKey": "analyst-m1-l1-from-automation-to-insight__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m1-l1-from-automation-to-insight__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m1-l1-from-automation-to-insight__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "463e40abb33ac5b5477d85b9c5d5268c234f55b7",
+      "sha256": "8e298f6f0eff178691bc0d2bbc4ddde14951820d9e52e78605dc1a14d487767a",
+      "bytes": 810
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__ar-MSA",
+      "sha": "dfa0cbcd7134fd70abb9fccef7fb56d05231e79b",
+      "logicalKey": "analyst-m1-l1-from-automation-to-insight__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m1-l1-from-automation-to-insight__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m1-l1-from-automation-to-insight__ar-MSA/finalization-receipt.json",
+      "blob_sha": "25e563c0731c5d01903cca99bcf47db5319723fa",
+      "sha256": "f396070b9848803e919cd0211462240e0d4494cbf14b8a962eff25b514827337",
+      "bytes": 808
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__en",
+      "sha": "fa078acd899918c96f7a1fd9b54bed6811ea39ad",
+      "logicalKey": "analyst-m1-l1-from-automation-to-insight__en",
+      "path": "docs/production/receipts/ai/analyst-m1-l1-from-automation-to-insight__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m1-l1-from-automation-to-insight__en/finalization-receipt.json",
+      "blob_sha": "c4e2e5f16cc81f1eab2de782a0d0e504dfe8e22e",
+      "sha256": "e1af25154c1884704c22e265e57df75f1f8c253d64a8eb54f5183e1fd3e6ff13",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__ar-Gulf",
+      "sha": "fcabddc6fd5fb8648141c8204b9ed7470a4851d8",
+      "logicalKey": "analyst-m2-l1-feeling-to-question__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m2-l1-feeling-to-question__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l1-feeling-to-question__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "860e287b82a36959ed75dd4f1e4dbdf77d70ca1e",
+      "sha256": "faa643f464cdd4f072ea9fff131647527897bea33d9180168829d720644881fc",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__ar-MSA",
+      "sha": "9d19571bc44094b9ff660f33c131db33644f808f",
+      "logicalKey": "analyst-m2-l1-feeling-to-question__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m2-l1-feeling-to-question__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l1-feeling-to-question__ar-MSA/finalization-receipt.json",
+      "blob_sha": "8faecc6b317644f3bcb61baf4895b3d8c8ef3d48",
+      "sha256": "374160476bea321f9967769da7f88d4ac019a2c6224bd349eb3955c2cdde9f8e",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__en",
+      "sha": "dcfb31a45a5e5fed79e35f8b77cf29d27c27604b",
+      "logicalKey": "analyst-m2-l1-feeling-to-question__en",
+      "path": "docs/production/receipts/ai/analyst-m2-l1-feeling-to-question__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l1-feeling-to-question__en/finalization-receipt.json",
+      "blob_sha": "1d9518b0a5be3a3493b2be2e404a6c9a1b7acd79",
+      "sha256": "a840426eca8e8772fa0219e426ef48dc29833527685ed20ac45f9d2d927240ef",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__ar-Gulf",
+      "sha": "533657fe58d4b047736ca8fd99e6a66d86c0ade0",
+      "logicalKey": "analyst-m2-l2-right-question-rule__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m2-l2-right-question-rule__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l2-right-question-rule__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "764ffc770440a84a18c00e4bcd21417f37a39b13",
+      "sha256": "f7130580f2f4133e34bfec8cbdfdfbc6aa9af234bbd5a618a660d0c86c328573",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__ar-MSA",
+      "sha": "1285c9d43579f1c479bdd918e1b709da787a1b57",
+      "logicalKey": "analyst-m2-l2-right-question-rule__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m2-l2-right-question-rule__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l2-right-question-rule__ar-MSA/finalization-receipt.json",
+      "blob_sha": "696c66d0af2e539259aa644508da30162980ecd7",
+      "sha256": "12c0eac3bdf09c94d4e4d9d5c61888c898a38a575547a832539772c569d3c209",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__en",
+      "sha": "744b76cd61cfa48ab64e2b3c79466759a0e42b21",
+      "logicalKey": "analyst-m2-l2-right-question-rule__en",
+      "path": "docs/production/receipts/ai/analyst-m2-l2-right-question-rule__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m2-l2-right-question-rule__en/finalization-receipt.json",
+      "blob_sha": "e313fbf0437f6974f21a419e3044f57c1ba3e737",
+      "sha256": "59848fc856b9ba13d0ccc1348de0a3d8f2d8a97f8d6f39328edb74677d93b015",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__ar-Gulf",
+      "sha": "6207ac00daa841aa3526ee7003c8381396adc730",
+      "logicalKey": "analyst-m3-l1-three-sources__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m3-l1-three-sources__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l1-three-sources__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "0fa753ec580a3575dc4d9f1ade07378db72e0998",
+      "sha256": "00ccfd45ab58b53631756ee494bba8f114ed312e6bd02ea85e54396ad00ee9b2",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__ar-MSA",
+      "sha": "0751ec2a9c363ee24aa814c6c993fcce472c1c5c",
+      "logicalKey": "analyst-m3-l1-three-sources__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m3-l1-three-sources__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l1-three-sources__ar-MSA/finalization-receipt.json",
+      "blob_sha": "e176ea03e6553bfa842fabebe9fa7bfa5d6b3548",
+      "sha256": "a5ea2d56e2218a76b949ff3cd207be2fd66b7e21728e3706a0cc8341ec89ace1",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__en",
+      "sha": "5bfbc92cff37bf7e7ceb0cdda9a47ebe235ece0c",
+      "logicalKey": "analyst-m3-l1-three-sources__en",
+      "path": "docs/production/receipts/ai/analyst-m3-l1-three-sources__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l1-three-sources__en/finalization-receipt.json",
+      "blob_sha": "ad029057e4bc848d06b450e935047d309df470f8",
+      "sha256": "50703841195c25f809e0eda85453053100fa7a872e8679ff4fa6e9f06d61b702",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__ar-Gulf",
+      "sha": "a7c45ddedf15579e39f71bf52789fcd867fd7c18",
+      "logicalKey": "analyst-m3-l2-ai-summarization__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m3-l2-ai-summarization__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l2-ai-summarization__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "edff89305a442bb29bcc649b5016f853a7b2ad78",
+      "sha256": "19780f221ede76a1d6f31709da83e0141fd462eddbdbb9152842038e357eaf02",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__ar-MSA",
+      "sha": "fbb44c54e34c0c66e3d9a972b251ed49662e27d3",
+      "logicalKey": "analyst-m3-l2-ai-summarization__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m3-l2-ai-summarization__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l2-ai-summarization__ar-MSA/finalization-receipt.json",
+      "blob_sha": "de575f8a53807282f9b57c1415b041cd52a1a800",
+      "sha256": "d70422ca94f5f21391f90f56901f8da34616129981b842bd1ea7912c80fbfaa9",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en",
+      "sha": "31697984017897e7dd03d73ba55e636030acff6c",
+      "logicalKey": "analyst-m3-l2-ai-summarization__en",
+      "path": "docs/production/receipts/ai/analyst-m3-l2-ai-summarization__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m3-l2-ai-summarization__en/finalization-receipt.json",
+      "blob_sha": "dba21bf9db977baf990db488e840b6316745841c",
+      "sha256": "e0469a70c09a2583c328fb806fda1dd92558820d683f11fdcb361895082a400e",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__ar-Gulf",
+      "sha": "36ce49bb5c2f11e410f7948fe9e91e007e7324de",
+      "logicalKey": "analyst-m4-automated-dashboard__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m4-automated-dashboard__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-automated-dashboard__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d9582e4842af411055154db4329bf62e0dea78e4",
+      "sha256": "0c7225b7753a2a80240e621fae42bf1283b2f866a36a5214f419a3c4b06b6d30",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__ar-MSA",
+      "sha": "527a96e50044b457c8fddb4269123db8582b55ce",
+      "logicalKey": "analyst-m4-automated-dashboard__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m4-automated-dashboard__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-automated-dashboard__ar-MSA/finalization-receipt.json",
+      "blob_sha": "1b0776135431118308d7fb1ed8f17ec73c62bdf1",
+      "sha256": "b86db055082aac5d9afbe0296355ba25a30c7843e69b966cd1b9c3f61274cc71",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__en",
+      "sha": "a47b23e8650d1d970c85018b1e2fbf77613da473",
+      "logicalKey": "analyst-m4-automated-dashboard__en",
+      "path": "docs/production/receipts/ai/analyst-m4-automated-dashboard__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-automated-dashboard__en/finalization-receipt.json",
+      "blob_sha": "a4406b2d86329c7a07a800b5aff255ce4c6c4f4c",
+      "sha256": "0ab9fe4672ddd1160a8212fd892b6871b3819688935a96a396a520d30f67d089",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__ar-Gulf",
+      "sha": "20a969c683ed52ea935bdbc305d7e0fdece6a17e",
+      "logicalKey": "analyst-m4-l1-pattern-vs-outlier__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m4-l1-pattern-vs-outlier__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l1-pattern-vs-outlier__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "3c1417980444f34eb7d73ffca4a4e47bd786ec40",
+      "sha256": "5de331a353be94d480f1d6a67f5dade5a88c796a8bdccc26255895d2f146bca1",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__ar-MSA",
+      "sha": "80dc48e724c0b02c2b1d918d831024e0b89e523d",
+      "logicalKey": "analyst-m4-l1-pattern-vs-outlier__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m4-l1-pattern-vs-outlier__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l1-pattern-vs-outlier__ar-MSA/finalization-receipt.json",
+      "blob_sha": "10692b87ac5d565bc5e82560ee0f0ac124a11131",
+      "sha256": "df29380c87cb322be2f5e9341d18c406d411acbc4b025f4b86f331ff7552a27e",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__en",
+      "sha": "6aba647a78e6b9dcd2810cd70d65b55940f8e264",
+      "logicalKey": "analyst-m4-l1-pattern-vs-outlier__en",
+      "path": "docs/production/receipts/ai/analyst-m4-l1-pattern-vs-outlier__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l1-pattern-vs-outlier__en/finalization-receipt.json",
+      "blob_sha": "829d3b47afbf44a38d52b74478d2ec1564c2e37a",
+      "sha256": "9341862aaa7945ad172e9f98763d590502cfc129abf511836977c2030e1a242b",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__ar-Gulf",
+      "sha": "a5c6131d16676ad2265cc66e636dfd943391e9fe",
+      "logicalKey": "analyst-m4-l2-decision-rule__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m4-l2-decision-rule__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l2-decision-rule__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "82ec2f9e33789ecc13b47495125f74050146b8f8",
+      "sha256": "09370bbf263a2649d21f9fa8b1042fedf55c95cbe9bce43527edcf55d6cfc93d",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__ar-MSA",
+      "sha": "09192b42bf3dd5aee5da4efa3282b25ef5400d39",
+      "logicalKey": "analyst-m4-l2-decision-rule__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m4-l2-decision-rule__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l2-decision-rule__ar-MSA/finalization-receipt.json",
+      "blob_sha": "d82a5e1ca6c325ade5d1a6f0b343c0e4dab7b742",
+      "sha256": "b918657f059ef77b8b0641093218dcde93355a1fea0916d71588805753607098",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__en",
+      "sha": "bfbf0735dda7fd764decf2d0260cae0a6976ba46",
+      "logicalKey": "analyst-m4-l2-decision-rule__en",
+      "path": "docs/production/receipts/ai/analyst-m4-l2-decision-rule__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m4-l2-decision-rule__en/finalization-receipt.json",
+      "blob_sha": "4761a4b9c7bbc809d7237e0e727beccda4ad323d",
+      "sha256": "32a3e533d8594686fcc790180bcaf3a080c670c6f512f7f32d64764759006ae9",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__ar-Gulf",
+      "sha": "6ea4d8a906fffb94131f57e7268e3272a59cb37b",
+      "logicalKey": "analyst-m5-ab-testing__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m5-ab-testing__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-ab-testing__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "95781bae4ac684b7eb460e8c18b31bdd2eb43ee6",
+      "sha256": "67bf5e5603fe73edc239f13aa48f0e19e064ca924d8784fd9eeb2d094b90ed2c",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__ar-MSA",
+      "sha": "b6db19e97a8542dd6d18bf05b452ab2a652a5012",
+      "logicalKey": "analyst-m5-ab-testing__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m5-ab-testing__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-ab-testing__ar-MSA/finalization-receipt.json",
+      "blob_sha": "0b18f491a176179ba2f9e615c4d98acff089c428",
+      "sha256": "7088cfa74d9bd3b8340a4521deff6a30d5fb3c218c480a543afacfac138e6c30",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__en",
+      "sha": "4db9d3fa6a9bd61e5958bcf8d1fb1032e0f90c0c",
+      "logicalKey": "analyst-m5-ab-testing__en",
+      "path": "docs/production/receipts/ai/analyst-m5-ab-testing__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-ab-testing__en/finalization-receipt.json",
+      "blob_sha": "3c59015183afaf3cbffcfd82df26edbb7119cf2d",
+      "sha256": "5c24751df838ac33ced71a35c6bce5074b561418248fb74ac7adaf58cb6bf9f3",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__ar-Gulf",
+      "sha": "e2d5aab5502c00cdc5f966df60baca45848d88c4",
+      "logicalKey": "analyst-m5-l1-four-numbers-dashboard__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m5-l1-four-numbers-dashboard__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l1-four-numbers-dashboard__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6eebabea45751f20c59475b86f71f6afb98fdfc4",
+      "sha256": "373820c1e8b081af63253ad5c78a128daff06df522d1dd8651fb878284456987",
+      "bytes": 802
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__ar-MSA",
+      "sha": "4c5ef66909a5b9248f7f9b0dc745b293b206b168",
+      "logicalKey": "analyst-m5-l1-four-numbers-dashboard__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m5-l1-four-numbers-dashboard__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l1-four-numbers-dashboard__ar-MSA/finalization-receipt.json",
+      "blob_sha": "29a5445e986604c31d7b8599da01f53247a7d209",
+      "sha256": "ff95368c9b91657bdaa868bbd881f45ecfbd10d3c2bf7fb4ec383fa14b667856",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__en",
+      "sha": "c76eeb447d482399f9e223dc3c2b8ab7c656111d",
+      "logicalKey": "analyst-m5-l1-four-numbers-dashboard__en",
+      "path": "docs/production/receipts/ai/analyst-m5-l1-four-numbers-dashboard__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l1-four-numbers-dashboard__en/finalization-receipt.json",
+      "blob_sha": "48b859dc7cf24be3e15d7b7ae6f384dbe4262290",
+      "sha256": "d8b87876c0367d6dc8a90e9de68f2746503305fa3a959b47dda08df7eb4458ac",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__ar-Gulf",
+      "sha": "146649ca49e7e1a2fe832f91547377ccb7854a2a",
+      "logicalKey": "analyst-m5-l2-weekly-review-ritual__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m5-l2-weekly-review-ritual__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l2-weekly-review-ritual__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "e5545246c9d5481d9de965a5144df3b90ad95bf8",
+      "sha256": "3a717b6136ae48dbaf36744d3dc28ccece275560212cb3541a3f589036d04ca3",
+      "bytes": 798
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__ar-MSA",
+      "sha": "bb006015b537fdd2508a4e5ca7e339a2989d84d6",
+      "logicalKey": "analyst-m5-l2-weekly-review-ritual__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m5-l2-weekly-review-ritual__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l2-weekly-review-ritual__ar-MSA/finalization-receipt.json",
+      "blob_sha": "0a0c679c22bfde53520859271c01eaa51246bb7d",
+      "sha256": "a85613f7223e3ff32baa55e271b841331eac9caea8499f97354f1e1b30f3295c",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__en",
+      "sha": "d3679473613ec87bc7607ec8e60381234d15b257",
+      "logicalKey": "analyst-m5-l2-weekly-review-ritual__en",
+      "path": "docs/production/receipts/ai/analyst-m5-l2-weekly-review-ritual__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m5-l2-weekly-review-ritual__en/finalization-receipt.json",
+      "blob_sha": "1aac5fdc67a0ebf570158310ef04e562f751f21f",
+      "sha256": "ba2c6ad0d4099520a82e39ab9ef367ef551ea53fe37e4bc2597645a319ef46af",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__ar-Gulf",
+      "sha": "45df2d1b558c4336aca3f2a4d9694dc9d62f6ffb",
+      "logicalKey": "analyst-m6-l1-question-mistakes__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m6-l1-question-mistakes__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l1-question-mistakes__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "2806acc7d751f029cde1efd3d3e6c70595d1ec2a",
+      "sha256": "d4fac4c95e2f186eb236359a61de5e997589b143f68a8613b2f4e02e8dcfd067",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__ar-MSA",
+      "sha": "eec3dc6df85168fa53ab8a9d3ee715c6153538ae",
+      "logicalKey": "analyst-m6-l1-question-mistakes__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m6-l1-question-mistakes__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l1-question-mistakes__ar-MSA/finalization-receipt.json",
+      "blob_sha": "9eb28f8f12f2883526d3bcf6dbe872d742100886",
+      "sha256": "419fd9c650d57c55107d6cf8f08af6a65bcf4926d34b847d7b858cc5f46c3ed9",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__en",
+      "sha": "c9e10997e3e733b897096fe02dca67fe89a7fa85",
+      "logicalKey": "analyst-m6-l1-question-mistakes__en",
+      "path": "docs/production/receipts/ai/analyst-m6-l1-question-mistakes__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l1-question-mistakes__en/finalization-receipt.json",
+      "blob_sha": "502364761a87eff1c561c56f3f3c58dfa3e743b9",
+      "sha256": "cf083b3e9a64609a68fdd0f510e07addce9a9a251b8d2614c7bc8776b6da682a",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__ar-Gulf",
+      "sha": "04cc057aa88fcb0c06ae9911d797a9b661dd1b07",
+      "logicalKey": "analyst-m6-l2-interpretation-mistakes__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m6-l2-interpretation-mistakes__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l2-interpretation-mistakes__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "cb62e8c00bbbbadfb2453d169eb184783ef53a02",
+      "sha256": "4dd5e7727482f6abdaa18044c6e2b5b5c779c293f60e7c75a5d5a8e512aa30cd",
+      "bytes": 804
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__ar-MSA",
+      "sha": "a478b1fb65720f5e440be68d2c55da65f15d3dfa",
+      "logicalKey": "analyst-m6-l2-interpretation-mistakes__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m6-l2-interpretation-mistakes__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l2-interpretation-mistakes__ar-MSA/finalization-receipt.json",
+      "blob_sha": "aed7f13e58821086707e4a6f479b7150d3b46a76",
+      "sha256": "0422edec40002383229e2e7cd489a8e3363897b4017ef365e8d298ac01c2fc85",
+      "bytes": 802
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__en",
+      "sha": "50ad3c399e3075668fac5e7b8b4e9ae50574c6bb",
+      "logicalKey": "analyst-m6-l2-interpretation-mistakes__en",
+      "path": "docs/production/receipts/ai/analyst-m6-l2-interpretation-mistakes__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m6-l2-interpretation-mistakes__en/finalization-receipt.json",
+      "blob_sha": "f2c5dc772f297cf7c67e29b29f53869820047948",
+      "sha256": "32529f60cd14b42b8fb25881e9835eece97190ae0dd5b0bc51faa6c6fca89907",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__ar-Gulf",
+      "sha": "bdff67455bfc1ab4dcb6093a63fd6abd8ef47aef",
+      "logicalKey": "analyst-m7-l1-from-decisions-to-business__ar-Gulf",
+      "path": "docs/production/receipts/ai/analyst-m7-l1-from-decisions-to-business__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m7-l1-from-decisions-to-business__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b14e4b4e73133598bedb194f05bd007c229df653",
+      "sha256": "22e0d8ec1a4bba17d6257c3491d6bf5699ce4a1837acf6753fa11c13f30b08c6",
+      "bytes": 810
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__ar-MSA",
+      "sha": "a134e13f1e023b09a65f675890a5321a47dfb425",
+      "logicalKey": "analyst-m7-l1-from-decisions-to-business__ar-MSA",
+      "path": "docs/production/receipts/ai/analyst-m7-l1-from-decisions-to-business__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m7-l1-from-decisions-to-business__ar-MSA/finalization-receipt.json",
+      "blob_sha": "2d929e1f4d867ced43ebb232e4849d32b90f7f1d",
+      "sha256": "f3bd03b00fae9f6a9cb2cce9cdc3ff4b22709db606483264b8b9ef06bd2eb242",
+      "bytes": 808
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__en",
+      "sha": "adf7e348908d35599b45f1148583d70c6152cb87",
+      "logicalKey": "analyst-m7-l1-from-decisions-to-business__en",
+      "path": "docs/production/receipts/ai/analyst-m7-l1-from-decisions-to-business__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/analyst-m7-l1-from-decisions-to-business__en/finalization-receipt.json",
+      "blob_sha": "597ce4223ade2709ce9a42d73b7b85a7936fac84",
+      "sha256": "2fbc6ca92fddce4541664acbb878d794a7a3b7d1b9d1f4199ca3de74305d7ded",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__ar-Gulf",
+      "sha": "00510e442c4adab762423d744a13441a375e7caf",
+      "logicalKey": "automator-m1-l1-where-you-are__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m1-l1-where-you-are__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m1-l1-where-you-are__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "4d7d0c4ba835f95680d8adf6caaaeb2d9df8fe43",
+      "sha256": "babf8810a4dd3651067c00e0281ab4c9709acf62b47a82d6ffd0cb0bd0df0f89",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__ar-MSA",
+      "sha": "e27576514fd3ccc03870b01a03b7f28444da16cb",
+      "logicalKey": "automator-m1-l1-where-you-are__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m1-l1-where-you-are__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m1-l1-where-you-are__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a9d135aa114bd2519932ed16717be17e38483575",
+      "sha256": "93f8a6d77cae1e9b7e51e34dc387ed1d4cea46bda18bf8328281bcbfab98bcc2",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__en",
+      "sha": "f6519a0dec956656b042eefe64b2e83f0d0cdfc7",
+      "logicalKey": "automator-m1-l1-where-you-are__en",
+      "path": "docs/production/receipts/ai/automator-m1-l1-where-you-are__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m1-l1-where-you-are__en/finalization-receipt.json",
+      "blob_sha": "b58a449306c6a298afa77785b94ace7c5c3207b5",
+      "sha256": "ad1500d65a3ab697d9e6f4be5895382e2553cdd100a74fb7ba19caf298e8e3e3",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__ar-Gulf",
+      "sha": "308104ce415c05b1fa1a9016c5b20e365e68f09a",
+      "logicalKey": "automator-m2-l1-systems-view__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m2-l1-systems-view__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l1-systems-view__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "2550479b928c7053de099ea0286b097b1c70c041",
+      "sha256": "e74f11cfdc97006e7b766d2741ced39441547c6d0493d9dfe53cd16d3fa4d427",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__ar-MSA",
+      "sha": "676c954afab509d0a376b7cdc7f8e9a6bbee599e",
+      "logicalKey": "automator-m2-l1-systems-view__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m2-l1-systems-view__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l1-systems-view__ar-MSA/finalization-receipt.json",
+      "blob_sha": "4edb238dc821654a15c2cbe480691e86f8c6deec",
+      "sha256": "fffdb256fb2c12b53fb1fdc668b6b0f8af08387623f370bae29b95f0c83e4942",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__en",
+      "sha": "b88a48b8e6a5c32c2b9585ef7d461b13606460a8",
+      "logicalKey": "automator-m2-l1-systems-view__en",
+      "path": "docs/production/receipts/ai/automator-m2-l1-systems-view__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l1-systems-view__en/finalization-receipt.json",
+      "blob_sha": "afdca0867d8711251c9ed38185aa1b0d927b8feb",
+      "sha256": "25bd501d6c7b0a79edc3a2c314603335a0af4705ae56bbdcef89710e1d72753d",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__ar-Gulf",
+      "sha": "c62d011efe8cd286a651ace4bfcf4d798592a0ea",
+      "logicalKey": "automator-m2-l2-spot-patterns__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m2-l2-spot-patterns__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l2-spot-patterns__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "36235c07168a87886b0161b6f3fda0f0a255431d",
+      "sha256": "d5d72c231550a126f8a30aaba469548b4317b5f2208823c457a4b77f89f45c3f",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__ar-MSA",
+      "sha": "6580f4a43660dd172a22de789389002e5d72e099",
+      "logicalKey": "automator-m2-l2-spot-patterns__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m2-l2-spot-patterns__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l2-spot-patterns__ar-MSA/finalization-receipt.json",
+      "blob_sha": "da712b393c7f70726ffcd3ee70140352d691d960",
+      "sha256": "1789ad6dc013225b4a92018832399b389ea2820042129b0bb9e01ae8a24ecd70",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__en",
+      "sha": "65cef9c354c752a98000f0189cfb47150049bcb8",
+      "logicalKey": "automator-m2-l2-spot-patterns__en",
+      "path": "docs/production/receipts/ai/automator-m2-l2-spot-patterns__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l2-spot-patterns__en/finalization-receipt.json",
+      "blob_sha": "20930f608b53a92143627baef9a038b9c5518f4d",
+      "sha256": "6a3f35014008fcf422b48973943868567272ad17d5aae8cd1133290b18a2ce25",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__ar-Gulf",
+      "sha": "bfd631f6085be607307f0981c3c269e68c208a75",
+      "logicalKey": "automator-m2-l3-decide-what-to-automate__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m2-l3-decide-what-to-automate__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l3-decide-what-to-automate__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "32d768ae5206987f4ace3629b4371dea4dd5595e",
+      "sha256": "8ef949d1401ca346b4145ff95d7cc3286b2a4945441769cb2661fe041603d630",
+      "bytes": 808
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__ar-MSA",
+      "sha": "c4b77ad057fd8e728115744581b57721758bc431",
+      "logicalKey": "automator-m2-l3-decide-what-to-automate__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m2-l3-decide-what-to-automate__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l3-decide-what-to-automate__ar-MSA/finalization-receipt.json",
+      "blob_sha": "ca795551060644ef0f9b6d5cb9a0787ac48c8de3",
+      "sha256": "87df162ec90ccd00e9db1d398e435f253b8924bea3061beba30c5318a5cfc91b",
+      "bytes": 806
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__en",
+      "sha": "ddb27ab11d4faedc33cb3dbeeeb48524891936f5",
+      "logicalKey": "automator-m2-l3-decide-what-to-automate__en",
+      "path": "docs/production/receipts/ai/automator-m2-l3-decide-what-to-automate__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m2-l3-decide-what-to-automate__en/finalization-receipt.json",
+      "blob_sha": "e61aa0388408091e52a3e26c4ae35e5cec5a735e",
+      "sha256": "e687eb12d35c94981807078ff913e7d675b3853b29f4e1cb1f06772ad9e8c7b8",
+      "bytes": 798
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__ar-Gulf",
+      "sha": "97987500d4c722669bbd14de625d3bf4364fdb90",
+      "logicalKey": "automator-m3-l1-tools-landscape__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m3-l1-tools-landscape__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l1-tools-landscape__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "266d8c13618752504ea60b70540ba1dc5c399fa1",
+      "sha256": "c7abb95df2965de83825ec076637144de4788457baa6e9c64a304b49093e56e7",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__ar-MSA",
+      "sha": "587f62afc3ea1c47f41a6c0fbffd8d053b4b4083",
+      "logicalKey": "automator-m3-l1-tools-landscape__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m3-l1-tools-landscape__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l1-tools-landscape__ar-MSA/finalization-receipt.json",
+      "blob_sha": "45db7fc020515a0f89b4a7bdd670393ec9933621",
+      "sha256": "a22ec055e7e8ea88513a1354e0d883bb1d281b134153e366643adb1a43dcca4d",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__en",
+      "sha": "0efe9cbe38cf14724a5b87b423398a59fe3dea2e",
+      "logicalKey": "automator-m3-l1-tools-landscape__en",
+      "path": "docs/production/receipts/ai/automator-m3-l1-tools-landscape__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l1-tools-landscape__en/finalization-receipt.json",
+      "blob_sha": "930409417aab8d03a40748ab661e43226d554400",
+      "sha256": "0040cc499f073564f33c74c762279aec61ff351fe70368581b32e21d41899535",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__ar-Gulf",
+      "sha": "0cb7127679614c244e2aa316e94c46e8637a5c86",
+      "logicalKey": "automator-m3-l2-triggers-actions__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m3-l2-triggers-actions__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l2-triggers-actions__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "5cdde226f8125544e49a2bb4719586b9357d65c8",
+      "sha256": "c72d5c130fb44ff8890b5a919db7d93c07666d5fac07888fd2980b5bfe945373",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__ar-MSA",
+      "sha": "488829031b7847e49f6db9972cf7c39e9328ff97",
+      "logicalKey": "automator-m3-l2-triggers-actions__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m3-l2-triggers-actions__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l2-triggers-actions__ar-MSA/finalization-receipt.json",
+      "blob_sha": "eebadd5d5a9788e383bd0cbe8b371e5ff2c080e1",
+      "sha256": "0d8b78e89e031fd06ffa17260913492c2c6ba13a94caf0f3c6aa92a1f1484f26",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__en",
+      "sha": "e5a909813665a7f6c5892607318ecec3a42b48a5",
+      "logicalKey": "automator-m3-l2-triggers-actions__en",
+      "path": "docs/production/receipts/ai/automator-m3-l2-triggers-actions__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l2-triggers-actions__en/finalization-receipt.json",
+      "blob_sha": "4aede4805d0abf7a9dc511f4370fc8f6d3fce711",
+      "sha256": "7a92a3175a7a0fcdb3d2aa6171f7cea99227060bc937c3d209750619de908adc",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__ar-Gulf",
+      "sha": "132845cb3a457d3bd9e4e5e38b0a2fa2bf7baa92",
+      "logicalKey": "automator-m3-l3-filters-routers__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m3-l3-filters-routers__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l3-filters-routers__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "1ccd3f7404a4ae6094093fb1a707649fc0723a9f",
+      "sha256": "57827392b24095cebaede6415b71b4d423c341b817f0bb8cd1b5ffbb5178d238",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__ar-MSA",
+      "sha": "dfffbfd3129409a94d8fbf8f5a9fdc93aa070fe5",
+      "logicalKey": "automator-m3-l3-filters-routers__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m3-l3-filters-routers__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l3-filters-routers__ar-MSA/finalization-receipt.json",
+      "blob_sha": "cfdb27ecc0e441b36341d83544b3db6248f92eb8",
+      "sha256": "fa5eaed90ac60693aa84e020971fb8540a8f6b06f9cbe326025937ee0785638c",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__en",
+      "sha": "13fab8decb60ca7fa1a93dc137c3816da074dba6",
+      "logicalKey": "automator-m3-l3-filters-routers__en",
+      "path": "docs/production/receipts/ai/automator-m3-l3-filters-routers__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-l3-filters-routers__en/finalization-receipt.json",
+      "blob_sha": "984319026500d7ced8e529092e57240d44736a7e",
+      "sha256": "d06f066647f1789d9cb8ee85abe5e6c3f7d88356a9ccd4f1e94a7e592c992410",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__ar-Gulf",
+      "sha": "0d01053ecd54642d5a5f5a513eda34e22101c796",
+      "logicalKey": "automator-m3-testing-automation__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m3-testing-automation__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-testing-automation__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b843a82fbc19ae818ae1e1b49d13b5b98cf9810f",
+      "sha256": "b5cb597f8bc4970bb008510b91ab66fb19259ac98f825cd09b66e288459e1fc1",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__ar-MSA",
+      "sha": "79daf457592603b35abbfc1de82bdab3ae13ad9f",
+      "logicalKey": "automator-m3-testing-automation__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m3-testing-automation__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-testing-automation__ar-MSA/finalization-receipt.json",
+      "blob_sha": "9d307658ddbec8b4786927232bedbb0a0a89872a",
+      "sha256": "d714979a97aecd49d072583648669fd4218cb1ff5b9a4187b764ee8a88f6b815",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__en",
+      "sha": "ea4c4854c604354958d779349a7649d5f498a4ea",
+      "logicalKey": "automator-m3-testing-automation__en",
+      "path": "docs/production/receipts/ai/automator-m3-testing-automation__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m3-testing-automation__en/finalization-receipt.json",
+      "blob_sha": "2d86df270a5c67fcacda7292870902cb74a078e1",
+      "sha256": "a3cca80f7905fb506fd33d134b27409349ec97cf9ba56cfd1a2fff274e388c65",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__ar-Gulf",
+      "sha": "e61da21966f20b5c9b8308490b6e9f589769c3ca",
+      "logicalKey": "automator-m4-l1-connect-database__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m4-l1-connect-database__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l1-connect-database__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "43a86b7a2f25c72a5d70702b5d6ca783c5e4ba20",
+      "sha256": "421c0d7ada789ce9b4502ff9010e6ab6cc454de1e26cb65a93e3ff958f33f9ad",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__ar-MSA",
+      "sha": "555e66d3da89f9556a54c479ac424b475ed46cf7",
+      "logicalKey": "automator-m4-l1-connect-database__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m4-l1-connect-database__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l1-connect-database__ar-MSA/finalization-receipt.json",
+      "blob_sha": "7a44e0262f0430cc7af77a2b22864ebcb698ad90",
+      "sha256": "2e90f32b8790bedc7c54a607677c0d3a1067c0e21cb60bb2bdf9872ec23c3dda",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__en",
+      "sha": "dba03b47e003e09b7134ac8a01f5b7fd8197a2bc",
+      "logicalKey": "automator-m4-l1-connect-database__en",
+      "path": "docs/production/receipts/ai/automator-m4-l1-connect-database__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l1-connect-database__en/finalization-receipt.json",
+      "blob_sha": "a79cc6a90a996594d26b454e96cf2a0053499a87",
+      "sha256": "04ede784425a89cb14f48d3c6896a99bc50a20995d260f409cce149712ef9e47",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__ar-Gulf",
+      "sha": "734f01c6a25241bb90f4e76fdcc8a79485d82cf9",
+      "logicalKey": "automator-m4-l2-webhooks-api__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m4-l2-webhooks-api__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l2-webhooks-api__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "f9c195b15a1a5bb1ece4473e94077ff2674543d7",
+      "sha256": "1f07cd7a905802fba66034eaf00645eef623c4c41d8ad2acabacd46f7ad763e0",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__ar-MSA",
+      "sha": "1ccba1b5f46d8cc6dd5b9813a6d7618b9ea7093e",
+      "logicalKey": "automator-m4-l2-webhooks-api__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m4-l2-webhooks-api__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l2-webhooks-api__ar-MSA/finalization-receipt.json",
+      "blob_sha": "8c9a80ba363c56add7c865c543ef1f0c69eb80a1",
+      "sha256": "19c932c21fd6d0ed0b43463f4712b80a65cf7d6c1ef43d481bb3e08192bc9a72",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__en",
+      "sha": "94d8609f7ec2ee3770867701724be7d3fde5b869",
+      "logicalKey": "automator-m4-l2-webhooks-api__en",
+      "path": "docs/production/receipts/ai/automator-m4-l2-webhooks-api__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l2-webhooks-api__en/finalization-receipt.json",
+      "blob_sha": "a0022a8f49685f35a120ab43f751f0e0ad58abc4",
+      "sha256": "1586a68d51a7f8f4fee6698e5768762d56012b599698cbd86d82aa20e5b5ed98",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__ar-Gulf",
+      "sha": "61bc16cbcf769dca4b31c3497abcc1a298f6233d",
+      "logicalKey": "automator-m4-l3-error-handling__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m4-l3-error-handling__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l3-error-handling__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "01059853e71d7f8cc4a5be9f4b9f69043f7c8265",
+      "sha256": "2157db03c7e43e9b8d065597d73b7df77d0560a6e16f2ea2d35cda08e9082228",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__ar-MSA",
+      "sha": "2dc4b06853675d1cc8de204bfe3398e6ea0206ca",
+      "logicalKey": "automator-m4-l3-error-handling__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m4-l3-error-handling__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l3-error-handling__ar-MSA/finalization-receipt.json",
+      "blob_sha": "2ae526ec25f6096c63ba0a93ed39f6bb72c52ccf",
+      "sha256": "db604407b51b4a7a50d17929afbd284be2290aa13fb47b20cf86f5fca9f15c87",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__en",
+      "sha": "bee5ed5dcbd8ac292b1e05194388b8424353fd59",
+      "logicalKey": "automator-m4-l3-error-handling__en",
+      "path": "docs/production/receipts/ai/automator-m4-l3-error-handling__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m4-l3-error-handling__en/finalization-receipt.json",
+      "blob_sha": "1a71aa8ac65f580b07dfbaa4b7b561d374fa8d8a",
+      "sha256": "93994517e59c6158e043786d998684f8708fbe0da358dcb423355e6b0afc0100",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__ar-Gulf",
+      "sha": "9f053820e11142c71c943b585bfa33bbf0246572",
+      "logicalKey": "automator-m5-l1-llm-in-flow__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m5-l1-llm-in-flow__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l1-llm-in-flow__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "ab020dedc84492f84a7c34240ec17ebbc1c1db68",
+      "sha256": "42b9ffd151f7fe94020392091fa6aa65e5e902e786df284c9c3971337b9cdd2c",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__ar-MSA",
+      "sha": "df49a459d2d500f813b94d145a716bc8f8d58eac",
+      "logicalKey": "automator-m5-l1-llm-in-flow__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m5-l1-llm-in-flow__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l1-llm-in-flow__ar-MSA/finalization-receipt.json",
+      "blob_sha": "ce3ae45b5cf77eae8c3a0a38498f6df8faf62318",
+      "sha256": "14c27da230c477fbe86eca7e79c10362622bc75c65760d846860b2af70d7cfad",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__en",
+      "sha": "181975edec5bdeee5a47a1a845cad758a2d0b8cf",
+      "logicalKey": "automator-m5-l1-llm-in-flow__en",
+      "path": "docs/production/receipts/ai/automator-m5-l1-llm-in-flow__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l1-llm-in-flow__en/finalization-receipt.json",
+      "blob_sha": "cec092caf51f35e9dff39939a554a1f20c2589f8",
+      "sha256": "4126fe45ab2ee8192693331b0d77011d6cfedb6d98ff886d793943bd7976258e",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__ar-Gulf",
+      "sha": "04991f822a994e16d34694114dc1a84a587f3b68",
+      "logicalKey": "automator-m5-l2-rag-in-n8n__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m5-l2-rag-in-n8n__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l2-rag-in-n8n__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "1fc670475c01f5058e0c41f488bc0ec8a689690c",
+      "sha256": "392dbbbcd45d81cde4d326cdc6ef83b24f40135be17b9b39088f54ef47611bdb",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__ar-MSA",
+      "sha": "b36031a556a07106e2f396cb9bace28a88246c0c",
+      "logicalKey": "automator-m5-l2-rag-in-n8n__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m5-l2-rag-in-n8n__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l2-rag-in-n8n__ar-MSA/finalization-receipt.json",
+      "blob_sha": "24f7f1831afeee4a176dc67f75d81abe8afe250c",
+      "sha256": "3c4de493a293061e08a8a11629304a9337c59b9780c322ad327b64a4f48a45af",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__en",
+      "sha": "7501616047c36235e200aa05c9cf44774fe169c5",
+      "logicalKey": "automator-m5-l2-rag-in-n8n__en",
+      "path": "docs/production/receipts/ai/automator-m5-l2-rag-in-n8n__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l2-rag-in-n8n__en/finalization-receipt.json",
+      "blob_sha": "adfed094b8606a04e9343b9d28201ea99f6b5b00",
+      "sha256": "d529dc6bdc6d05e73dd2023da69fd99db5c27c459f009e486d882c1f740f2c87",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__ar-Gulf",
+      "sha": "cdf41c6896b037692130eb75fc9cd9a5833940c4",
+      "logicalKey": "automator-m5-l3-agents__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m5-l3-agents__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l3-agents__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b23fba4548faa1b71af716cba6c94dbff1d34dd2",
+      "sha256": "20311317369b29653e53e5f3c67ed0e1d8367a1e07e37ee9c6538064ee0b6d5e",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__ar-MSA",
+      "sha": "6d4bc3c26db637bd6d01c50600cc3bbc128855f4",
+      "logicalKey": "automator-m5-l3-agents__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m5-l3-agents__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l3-agents__ar-MSA/finalization-receipt.json",
+      "blob_sha": "77e30651c3696be64a96c8c0299855f1976a895a",
+      "sha256": "dec6578dfa4339e2ec2d8abbe940acec57f106df71a164c2cc2c181306d6d0ad",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__en",
+      "sha": "59fc7826e4923f64839fe50b4273c87a4aaae7cb",
+      "logicalKey": "automator-m5-l3-agents__en",
+      "path": "docs/production/receipts/ai/automator-m5-l3-agents__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m5-l3-agents__en/finalization-receipt.json",
+      "blob_sha": "a7bacf0a24fb608671e7cf1abb64910b7b4cfd93",
+      "sha256": "e822621c4108a838379dd833155f8303112347824fafd0297abd196cfcbf943f",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__ar-Gulf",
+      "sha": "6121449b26255d8e5476b079e83ca1936ffc55d3",
+      "logicalKey": "automator-m6-l1-lead-capture__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m6-l1-lead-capture__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l1-lead-capture__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "dc7d8a75e470720ee442f8511070dea825cee08f",
+      "sha256": "397428c8d27c9a9b9e9e79d112165ed3333d9d4c6e5140c775df15571a6c5135",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__ar-MSA",
+      "sha": "ef125542e0a8700c68199dae7c926eba619ce3a5",
+      "logicalKey": "automator-m6-l1-lead-capture__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m6-l1-lead-capture__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l1-lead-capture__ar-MSA/finalization-receipt.json",
+      "blob_sha": "1563ecb269fc6d2a30ea8d316e68b9f00c56ed29",
+      "sha256": "d47a06b1bf9de7ec9d9346132f998cadb5e14589b2f2e02109287b1fc8d598c5",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__en",
+      "sha": "6d59cdb4cb7dcd8da7c6c257505eaa780ffae909",
+      "logicalKey": "automator-m6-l1-lead-capture__en",
+      "path": "docs/production/receipts/ai/automator-m6-l1-lead-capture__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l1-lead-capture__en/finalization-receipt.json",
+      "blob_sha": "3ada6bd971f6d7054710cdb16ac9403a40a12c90",
+      "sha256": "cf129a327897d213006f390569d357f7df646393b772b0cf3b470a6966021489",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__ar-Gulf",
+      "sha": "33b20e90910ab9bc2fc2c65a67050939404b62b9",
+      "logicalKey": "automator-m6-l2-whatsapp-flow__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m6-l2-whatsapp-flow__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l2-whatsapp-flow__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6c74cf3385313c4e7531b8a82f8033ffbe791cac",
+      "sha256": "273d5c96550e92d27a2bf875aff2d4f57f637a009155fcec0836e42b431a9d47",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__ar-MSA",
+      "sha": "ee7d4b9f60a7fcb5b53fded5a13c442ab1f009e0",
+      "logicalKey": "automator-m6-l2-whatsapp-flow__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m6-l2-whatsapp-flow__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l2-whatsapp-flow__ar-MSA/finalization-receipt.json",
+      "blob_sha": "5ef3c4d03b9d19e85ed21b8f3dec38813bdfd2e9",
+      "sha256": "be5f1d1285343accaed4663c2c90df6c9c91e3d7aa61c9b8c7fb60db9daec9b2",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__en",
+      "sha": "d3484e04cd5a8e9b211e338336764a8dd7b8b433",
+      "logicalKey": "automator-m6-l2-whatsapp-flow__en",
+      "path": "docs/production/receipts/ai/automator-m6-l2-whatsapp-flow__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l2-whatsapp-flow__en/finalization-receipt.json",
+      "blob_sha": "59ad2a508c5d23948a90ab2b3386187512c07cda",
+      "sha256": "e269623140f9563a6d9eabbd4962eb7cad7d8403fe21c45fe9bd56dcf68668a6",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__ar-Gulf",
+      "sha": "02b125329e9b1ba36242483e6d93acba0fd03c69",
+      "logicalKey": "automator-m6-l3-follow-up__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m6-l3-follow-up__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l3-follow-up__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "06ce8a50e2ca7df87279bd17541ccbfcb838f7bf",
+      "sha256": "ef51587807742b4e4f3972019531cc0584cf5ce654b4ec1939a6f7e5bc8bfeca",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__ar-MSA",
+      "sha": "09ec9475cd428f4aab163315a44321cdf1b19294",
+      "logicalKey": "automator-m6-l3-follow-up__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m6-l3-follow-up__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l3-follow-up__ar-MSA/finalization-receipt.json",
+      "blob_sha": "cb9f61c9197e597c8edc66f659f607ceb552f4ed",
+      "sha256": "3a4160d761fd562a25ed7507253c3ffc105d0341c6ce24f2e7616d24c5816a5c",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__en",
+      "sha": "06b2d012c9eca4cfcde95bc32cab996ca421f993",
+      "logicalKey": "automator-m6-l3-follow-up__en",
+      "path": "docs/production/receipts/ai/automator-m6-l3-follow-up__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m6-l3-follow-up__en/finalization-receipt.json",
+      "blob_sha": "d7357d4a6c984ed8fd94412db673be31043e837c",
+      "sha256": "afd375ae761bcd1edf0d0096435680a33d87feabaaa187934e8b2e76f935b49d",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__ar-Gulf",
+      "sha": "56f09bfc1f5e67f6092e6b0648540b708da723c0",
+      "logicalKey": "automator-m7-l1-closing-loop__ar-Gulf",
+      "path": "docs/production/receipts/ai/automator-m7-l1-closing-loop__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m7-l1-closing-loop__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "abf493ce15cafe5f6b3a790dbed53326c9bcda3d",
+      "sha256": "16d4ad05696152653f6765aadbf14e18affbed92185ffc90b86c0e7b315c191c",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__ar-MSA",
+      "sha": "4518a5357b48d6b3c80d104b9bed37209ce767ee",
+      "logicalKey": "automator-m7-l1-closing-loop__ar-MSA",
+      "path": "docs/production/receipts/ai/automator-m7-l1-closing-loop__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m7-l1-closing-loop__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a96c484e174825f06d431c796b9a05af14dbfe4e",
+      "sha256": "c542347b95264711a4b7cacd1735364dc003df9c146c5d9b6b573309be7a4c74",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__en",
+      "sha": "03fc89735a7a40ce9606b27d330617e60996a323",
+      "logicalKey": "automator-m7-l1-closing-loop__en",
+      "path": "docs/production/receipts/ai/automator-m7-l1-closing-loop__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/automator-m7-l1-closing-loop__en/finalization-receipt.json",
+      "blob_sha": "7376546ed738be220405738d16b009aef163e81e",
+      "sha256": "478403665d06aa90eea8ad057fd0d6b1a2d46027b41da80b8b007e89c2619508",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__ar-Gulf",
+      "sha": "c86edfa118c09ff8b8f39c27ace2d3d4c7f7293b",
+      "logicalKey": "builder-m1-l1-what-is-llm__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m1-l1-what-is-llm__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l1-what-is-llm__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "2eb765ac195a9ca616e139b913a26ecef7ec7887",
+      "sha256": "451ca3cf9771bbc710e50c402f59f55d1d760761f8edee4de82fe82b739767dd",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__ar-MSA",
+      "sha": "09a958199764f028fd1c194542f3c4dda5425d20",
+      "logicalKey": "builder-m1-l1-what-is-llm__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m1-l1-what-is-llm__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l1-what-is-llm__ar-MSA/finalization-receipt.json",
+      "blob_sha": "61460fa3c1235aa8d41fd2ef3d55722797aa717d",
+      "sha256": "f211a96a80e898f1ddc6d3618a47a67056f9319629ef5893216c95f6fbbe133d",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__en",
+      "sha": "18aca3927446616ee25372e54e063377de79e254",
+      "logicalKey": "builder-m1-l1-what-is-llm__en",
+      "path": "docs/production/receipts/ai/builder-m1-l1-what-is-llm__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l1-what-is-llm__en/finalization-receipt.json",
+      "blob_sha": "8d262f75d5411bd92b953b502f330448e9e6030a",
+      "sha256": "94ce0be024d2c77731ea9812f35b195e1bcf54ff7942a879c991003e19a8a461",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__ar-Gulf",
+      "sha": "556979f1cd6a049e4708a472a647c462bee5fff9",
+      "logicalKey": "builder-m1-l2-tokens-training__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m1-l2-tokens-training__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l2-tokens-training__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d671a3aba5b0a9f986de42d9dea7e505d42ab0e5",
+      "sha256": "c7104370a2fa6df872fd7692c5f7e574a9286a01269d51b101a9aa0753c5d09a",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__ar-MSA",
+      "sha": "f2da2290f0ae0617ef80c19cba7e71fcc3d59874",
+      "logicalKey": "builder-m1-l2-tokens-training__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m1-l2-tokens-training__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l2-tokens-training__ar-MSA/finalization-receipt.json",
+      "blob_sha": "41a38ae6947c8237e66b7c6886000f450043a7ed",
+      "sha256": "f0b78be831ce1c90ab3070aa55d448d0de010f7c4637c7090177c5faa8c48bc1",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__en",
+      "sha": "4e86491c47057e212c1a910e94b7d5e467591acd",
+      "logicalKey": "builder-m1-l2-tokens-training__en",
+      "path": "docs/production/receipts/ai/builder-m1-l2-tokens-training__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m1-l2-tokens-training__en/finalization-receipt.json",
+      "blob_sha": "8de88725b99490959fc36642dbe6784b83356322",
+      "sha256": "03a1d5ad474dab16cc211bc1ca449ae2876482d86fc16aea75dd4746c5082ec0",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__ar-Gulf",
+      "sha": "76f3558f9b4a5c381174247a8e74b802b1bc3150",
+      "logicalKey": "builder-m2-l1-prompt-layer__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m2-l1-prompt-layer__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l1-prompt-layer__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d62b9e9cd412d2c7a748ebc50b8ea3eb84ca5ef3",
+      "sha256": "8a315071453a6024c2d494da8b36245a907de03e0231c4e68efcfcdb98fda091",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__ar-MSA",
+      "sha": "396e99511664508ae2e32de62ccdda94cac99e08",
+      "logicalKey": "builder-m2-l1-prompt-layer__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m2-l1-prompt-layer__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l1-prompt-layer__ar-MSA/finalization-receipt.json",
+      "blob_sha": "39b250542daab89a8ef8d61ed6b0971d16243540",
+      "sha256": "3908ad13392702291778ed9aac80c9f579999d86553670a32231594a070f7258",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__en",
+      "sha": "d5ddbd39de6c576e7771e261dd703d8465477b1d",
+      "logicalKey": "builder-m2-l1-prompt-layer__en",
+      "path": "docs/production/receipts/ai/builder-m2-l1-prompt-layer__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l1-prompt-layer__en/finalization-receipt.json",
+      "blob_sha": "807536224363c8efbd7b941f8e653435abc9d739",
+      "sha256": "35b2b640c86d4396de87f8188f66f2acd2d25db1e016b22868465f8430d0fcad",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__ar-Gulf",
+      "sha": "1b6b9625af8f0deb2a1e77ebda7f442e74b1b596",
+      "logicalKey": "builder-m2-l2-instructions-examples__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m2-l2-instructions-examples__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l2-instructions-examples__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "95db4685ee54ae02fd01ab0bba2cc80061418593",
+      "sha256": "5ca978ae44ba13776d6aeb62c65e9d7a4b83a87005304cb9ff6f8983b8524bdb",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__ar-MSA",
+      "sha": "f6a6ddbc46f77921950c3bfeb8d19f4e62b9b536",
+      "logicalKey": "builder-m2-l2-instructions-examples__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m2-l2-instructions-examples__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l2-instructions-examples__ar-MSA/finalization-receipt.json",
+      "blob_sha": "ee2057dd61a97568db90201614f12cc53702e030",
+      "sha256": "08513d505e56429f573db7780b072e26ed51748117a3bb809249876d473140be",
+      "bytes": 798
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__en",
+      "sha": "8ec38d2e7a63017c174fad270a19da2100182df4",
+      "logicalKey": "builder-m2-l2-instructions-examples__en",
+      "path": "docs/production/receipts/ai/builder-m2-l2-instructions-examples__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l2-instructions-examples__en/finalization-receipt.json",
+      "blob_sha": "809ae87ee63f7d63667b9615dd1aedded4d2f101",
+      "sha256": "83837b6a6eb959b2e052b1cf2ddf6c7570ed0cbcc7c6b2e17c778c35e9a2c382",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__ar-Gulf",
+      "sha": "4af8d351d3bc35a1c3097c562cf0fbcfe5e44792",
+      "logicalKey": "builder-m2-l3-style-control__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m2-l3-style-control__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l3-style-control__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "5ebfebb683cb2200ab7bad38f471b579a983e611",
+      "sha256": "fd6d22c683264babf28af283537de8a8df334e0c289df14e6b695d30ccf40fd1",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__ar-MSA",
+      "sha": "75a6cf294ff47a37079aff23a4dc62d3db04defa",
+      "logicalKey": "builder-m2-l3-style-control__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m2-l3-style-control__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l3-style-control__ar-MSA/finalization-receipt.json",
+      "blob_sha": "dd942250a10cb62c512a0ebece6b239e78ad03ed",
+      "sha256": "f9dd311c4a089a6c7d7ee9e4af8db0eab198828b602384e28d6010bd4c1ed24e",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__en",
+      "sha": "22b06b931d42bcb8917965c296de9e9054551975",
+      "logicalKey": "builder-m2-l3-style-control__en",
+      "path": "docs/production/receipts/ai/builder-m2-l3-style-control__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m2-l3-style-control__en/finalization-receipt.json",
+      "blob_sha": "94536cfa81153f1187d30cdbbdfca7b14f396481",
+      "sha256": "71febdc864b4732e7e3d211db4e659d459ca848edbe75e3f715393a93737859d",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__ar-Gulf",
+      "sha": "5b7820f97729eed9572067a90c6cf05613093e0b",
+      "logicalKey": "builder-m3-l1-context-layer__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m3-l1-context-layer__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l1-context-layer__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "a1da2aaca8429b3be6555d9af4a3928b5cab150d",
+      "sha256": "2b560a9698a2726e4abf0c1bcff9777b1046a4531bc6eede322d62974081a5a2",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__ar-MSA",
+      "sha": "7298596579cc11f4f070dc371dfa5907537be45a",
+      "logicalKey": "builder-m3-l1-context-layer__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m3-l1-context-layer__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l1-context-layer__ar-MSA/finalization-receipt.json",
+      "blob_sha": "933f791ed33ead9e408600cabb92aa67dcc93859",
+      "sha256": "c5d06429350510d5e5eb2b25b7880f397155deac1fc860697a291759b40ab846",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__en",
+      "sha": "5f1dd70123a68a05e48f08a976c2f37d9c987a04",
+      "logicalKey": "builder-m3-l1-context-layer__en",
+      "path": "docs/production/receipts/ai/builder-m3-l1-context-layer__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l1-context-layer__en/finalization-receipt.json",
+      "blob_sha": "8ddeeb454bbb4e87f4cd02f41691bdfc13f000c5",
+      "sha256": "349f82b14be5c45fc7e49bd87b7ada16d773ac0708a5ee905d0916e15db5a17e",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__ar-Gulf",
+      "sha": "017f074fd6c2d478690f5a9aebdcc8a1c9cb6e5d",
+      "logicalKey": "builder-m3-l2-memory-limits__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m3-l2-memory-limits__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l2-memory-limits__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b596da26d37b1d002b3dc46d7ab76c6bfab6a9ce",
+      "sha256": "58193cd342105a163fdb0989d9b1b0cf80e2fe87666641a2abd690836719ee9c",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__ar-MSA",
+      "sha": "3be91007922c2ac70f5d24c8266f450579303947",
+      "logicalKey": "builder-m3-l2-memory-limits__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m3-l2-memory-limits__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l2-memory-limits__ar-MSA/finalization-receipt.json",
+      "blob_sha": "d131de3246b82c3d2256b3ea99ccf5f80aed01af",
+      "sha256": "3bf54b4a37b565cad8717b46e33ef2a3be2efaa9d8b1acc88017f35bcc498c25",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__en",
+      "sha": "55f3b9ef6dceee022983629525ba608d767e587d",
+      "logicalKey": "builder-m3-l2-memory-limits__en",
+      "path": "docs/production/receipts/ai/builder-m3-l2-memory-limits__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m3-l2-memory-limits__en/finalization-receipt.json",
+      "blob_sha": "9b97349306e5f79d2aa77052709fe05330da7236",
+      "sha256": "f5635f432a836fa2e83a581c54cce492fcf06bf741f129ab6013e24c591c027c",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__ar-Gulf",
+      "sha": "119d23e110f974946b1214ffa47cf88364428d27",
+      "logicalKey": "builder-m4-l1-parameters__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m4-l1-parameters__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m4-l1-parameters__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "7a60d46c46b6f853df4f7fcee8dd51250be19284",
+      "sha256": "7f64b0335d91cef3bea76f77567916c3cf0aaddc44ea4526693608996b8d65f1",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__ar-MSA",
+      "sha": "ae5b9d283eb5cd8789808c02aa6f1f44e4f6fb70",
+      "logicalKey": "builder-m4-l1-parameters__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m4-l1-parameters__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m4-l1-parameters__ar-MSA/finalization-receipt.json",
+      "blob_sha": "bda55401e1193fab00288054779164428a147442",
+      "sha256": "9fe1edc237b5aab83a33a8dbac782eb5751a544dbee77a1b0658c156696b29ec",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__en",
+      "sha": "0e90deead88f154f1beded6ee08eb14a57b9d18b",
+      "logicalKey": "builder-m4-l1-parameters__en",
+      "path": "docs/production/receipts/ai/builder-m4-l1-parameters__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m4-l1-parameters__en/finalization-receipt.json",
+      "blob_sha": "402d27182a8952eeb477df17ff9992d8f2149338",
+      "sha256": "934da2c18a0775aa1262893a9c146a12a1db688de32ca08405c70f2195595706",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__ar-Gulf",
+      "sha": "19c93e548f9502c0c52e97c5e2abdd962e2e63ff",
+      "logicalKey": "builder-m5-l1-transition__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m5-l1-transition__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l1-transition__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "bb734881afa79b676ee35bc1fffd0c4b3c563b24",
+      "sha256": "4e1b4cb85d99d650bde5f4506e97f120f86a3f3fb8c1f6d65a428a058645b3b0",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__ar-MSA",
+      "sha": "94df1bb472eb3b5c8fd9e069c87bc8823e48f843",
+      "logicalKey": "builder-m5-l1-transition__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m5-l1-transition__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l1-transition__ar-MSA/finalization-receipt.json",
+      "blob_sha": "1d41fd970c2d57d60fe1f106f7801740ccb690be",
+      "sha256": "fea086fceabb05ab1e4a3f6148407092fc52e7ceb1ba17c35dd29a958a70c4f0",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__en",
+      "sha": "251f53cf6f6d83b7a238fbe17ba41f6a6614812f",
+      "logicalKey": "builder-m5-l1-transition__en",
+      "path": "docs/production/receipts/ai/builder-m5-l1-transition__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l1-transition__en/finalization-receipt.json",
+      "blob_sha": "09544b593ecb1074df4a1631c1b36de49db91a9a",
+      "sha256": "5b9d047b68925ef23b97d0b04c413eab80d518e2e25408d69ed25f994cfe7980",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__ar-Gulf",
+      "sha": "930c56d38b15238f21d4f6d15e2c3299684d9d80",
+      "logicalKey": "builder-m5-l2-frontend__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m5-l2-frontend__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l2-frontend__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "fc26a84d93550a44fb79fc446a4c0f8d0a2eb5d6",
+      "sha256": "9c8322c1dc9d9408e5d0a74b95ac61a803611fca3408d4926179d4359622dc31",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__ar-MSA",
+      "sha": "804aaf8d0b6c93fecd2be1c4a7559c2fd2b04963",
+      "logicalKey": "builder-m5-l2-frontend__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m5-l2-frontend__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l2-frontend__ar-MSA/finalization-receipt.json",
+      "blob_sha": "58e0ab0d097edf1c0cfef9dfae2b8ca3a8fe51e3",
+      "sha256": "d227723b1fc0d387371059366d19111e22caadae495ba79ee12fdd48bf59f71a",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__en",
+      "sha": "1840ab3de0af82809515680b0bc20e942eb5c921",
+      "logicalKey": "builder-m5-l2-frontend__en",
+      "path": "docs/production/receipts/ai/builder-m5-l2-frontend__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l2-frontend__en/finalization-receipt.json",
+      "blob_sha": "356e66eae6e9fcec680f0ae302806df482ed0225",
+      "sha256": "04e6ed8a509ef846b33d2b89c97e6b9c94bfb9bfa8e9dec5a7f5f68c05ce110f",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__ar-Gulf",
+      "sha": "e553eba1c916d36e17b74fe94015f9f5a1881640",
+      "logicalKey": "builder-m5-l3-backend-api__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m5-l3-backend-api__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l3-backend-api__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "f132402f7598c263bb80a004fe1521b40b569bff",
+      "sha256": "00ed50e546d2f2c3b7f3a79b4a4aa9466d1ec97414e6121104ecfa0c83e75d66",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__ar-MSA",
+      "sha": "72dd0657ac6825a37d15bf9eed9fc80c45b34a56",
+      "logicalKey": "builder-m5-l3-backend-api__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m5-l3-backend-api__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l3-backend-api__ar-MSA/finalization-receipt.json",
+      "blob_sha": "3b46095a285cfe926351c0ddf88dab5a9b986b3a",
+      "sha256": "9e7c40dafc8de3f4cf6c2c6d38485137a30f0b97bc672dd7489acccd89029767",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__en",
+      "sha": "6d402085ee5073162203a600f66a1509bb0543d9",
+      "logicalKey": "builder-m5-l3-backend-api__en",
+      "path": "docs/production/receipts/ai/builder-m5-l3-backend-api__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l3-backend-api__en/finalization-receipt.json",
+      "blob_sha": "3ee406bb23a8ddef4a9fe135a74b2b90a1e38b20",
+      "sha256": "265ebc005e61a0dfe733a699bde1625422d5b7dd450e7ed6953d961dc6f549bb",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__ar-Gulf",
+      "sha": "6ebe119ae9211d851276c251ba4bb5dd8b8998d3",
+      "logicalKey": "builder-m5-l4-database-intro__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m5-l4-database-intro__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l4-database-intro__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6b4ae71e7925b3bc1a9b95318d3c884920ecbc9f",
+      "sha256": "df6f8204b875e845be7d8adc76385e42646ce55c4681b53074dd277c47d804e5",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__ar-MSA",
+      "sha": "dfd95b26ad516d9bbb2e8f9d950d14327923c5f1",
+      "logicalKey": "builder-m5-l4-database-intro__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m5-l4-database-intro__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l4-database-intro__ar-MSA/finalization-receipt.json",
+      "blob_sha": "2e231277a4fb5e3c8f08fcc53e2de60102f26650",
+      "sha256": "0522b398bf5cd642d4268dba3df91d7ac94fff3bb4d55618fb8e84de918a3c29",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__en",
+      "sha": "68dd8c3b0b98fa2cef72deef33494693360a2733",
+      "logicalKey": "builder-m5-l4-database-intro__en",
+      "path": "docs/production/receipts/ai/builder-m5-l4-database-intro__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l4-database-intro__en/finalization-receipt.json",
+      "blob_sha": "96d1d3ee8d761d7d3ea5be4b5e3d5ac45ec97806",
+      "sha256": "ce9e1197269f0098f89a681323a1abdb253c94e0abfca51fbd4fd90312d794a7",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__ar-Gulf",
+      "sha": "155836c7d81318fc4b349605460e19fec79eb0d0",
+      "logicalKey": "builder-m5-l5-mini-win__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m5-l5-mini-win__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l5-mini-win__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6a4df091e2f6ac68cb45e33bd0a2ad293a9a40eb",
+      "sha256": "8245c53ed4c3c4dcea43a0f0a0b2beaf023bc9fa6a0d3742b4e6408a62cb3bc8",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__ar-MSA",
+      "sha": "e0381a246f5cc703efe8490ae07fb044ebc296f3",
+      "logicalKey": "builder-m5-l5-mini-win__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m5-l5-mini-win__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l5-mini-win__ar-MSA/finalization-receipt.json",
+      "blob_sha": "2bcdd4518938b3c07a4b754425fe9d22a777ef6a",
+      "sha256": "cca451e4d4053e6b2a254fee9d8e73fe7a264eaf0c6765e2ac0ed53b9378326b",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__en",
+      "sha": "b052084f9c74e23561afcaa89fbe3bad8412b728",
+      "logicalKey": "builder-m5-l5-mini-win__en",
+      "path": "docs/production/receipts/ai/builder-m5-l5-mini-win__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m5-l5-mini-win__en/finalization-receipt.json",
+      "blob_sha": "3b134dcde21ea708fe6ec90ec7892aab9aa5a8d9",
+      "sha256": "93fb1c8797cdad33cc3a11ab3cf9d9070042ba5e5d1b6a1802d8e63e79569b2d",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__ar-Gulf",
+      "sha": "23f990ecd9ea7ecb7bcb6f87481f83abfc99ee20",
+      "logicalKey": "builder-m6-l1-idea-to-page__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l1-idea-to-page__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l1-idea-to-page__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "f18d6326ffaf62926c9a7023e14598ee351f1ecf",
+      "sha256": "820594025fbd67256ee3a8297a801caafd06e83409547fbab3a3b0b87f8b4133",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__ar-MSA",
+      "sha": "839c34293531236a44b06c794b141353c148fc61",
+      "logicalKey": "builder-m6-l1-idea-to-page__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l1-idea-to-page__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l1-idea-to-page__ar-MSA/finalization-receipt.json",
+      "blob_sha": "cc33b2b4f95b19849b908854966bfc081732ba59",
+      "sha256": "716b36c67f2220d872eddce2a00674b89ca83385c8b969d27571ec9268b8d51a",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__en",
+      "sha": "1e3d12a242c02faa005fd1e00ef81085832b2de1",
+      "logicalKey": "builder-m6-l1-idea-to-page__en",
+      "path": "docs/production/receipts/ai/builder-m6-l1-idea-to-page__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l1-idea-to-page__en/finalization-receipt.json",
+      "blob_sha": "21c3ae7c37d9cf05f07fee09cc902848cb29ec47",
+      "sha256": "2471d94c5b13ca291d4ba959953db44a5d0a286aaa74d5529f7393ac48a0ee00",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__ar-Gulf",
+      "sha": "0e0ee9b9f8d12d470e14b86a169fc2bda47a18f6",
+      "logicalKey": "builder-m6-l2-wireframe__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l2-wireframe__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l2-wireframe__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "034a03f2d3b68cb7edf2c5ac8deac3554a3503bb",
+      "sha256": "532c357da228db61c111623efb0d856468480ae759614747d1f6e590e6c69ea6",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__ar-MSA",
+      "sha": "919f191ee7d3956ded95ba2ecd76bb24922a2ca7",
+      "logicalKey": "builder-m6-l2-wireframe__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l2-wireframe__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l2-wireframe__ar-MSA/finalization-receipt.json",
+      "blob_sha": "c6365b40822b3c47105e262a362ebbc199ab00ec",
+      "sha256": "9c6f041f1910adea85ebed82201ad19f5ccb4e535918680dbc44b2e9e94d3c32",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__en",
+      "sha": "948f440086a597f600780f1f6965afc93b66a019",
+      "logicalKey": "builder-m6-l2-wireframe__en",
+      "path": "docs/production/receipts/ai/builder-m6-l2-wireframe__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l2-wireframe__en/finalization-receipt.json",
+      "blob_sha": "a6f7b4348f6703bb297bef1103e03ba87fa0c2c0",
+      "sha256": "cf88a955fbae7f41f746133cbe050646ccba3c609cdc4755999c5efc846f2a07",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
+      "sha": "2a33ff9086c88641e7c80179ae3e9a2edc6a9386",
+      "logicalKey": "builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l3-first-prompt-to-lovable__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l3-first-prompt-to-lovable__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "55cf3f2b6e3e670dd8407cfe1f219922854cad46",
+      "sha256": "54ff7fdb32c88d7719660c6a27c7a6a6ef3db7ccdced55fc9e579f57b58b60e2",
+      "bytes": 804
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__ar-MSA",
+      "sha": "7697514d4f67cfb78d971e3e847aa9f4a9c3c95d",
+      "logicalKey": "builder-m6-l3-first-prompt-to-lovable__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l3-first-prompt-to-lovable__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l3-first-prompt-to-lovable__ar-MSA/finalization-receipt.json",
+      "blob_sha": "aef483973e402a23c486a97d1e58ce3314f6699d",
+      "sha256": "a5be565075c9e019e814fb0c5326148a0d75f3303306131ce15de486a001200b",
+      "bytes": 802
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__en",
+      "sha": "09cc931bca849dc26f5771aba780efda107bf015",
+      "logicalKey": "builder-m6-l3-first-prompt-to-lovable__en",
+      "path": "docs/production/receipts/ai/builder-m6-l3-first-prompt-to-lovable__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l3-first-prompt-to-lovable__en/finalization-receipt.json",
+      "blob_sha": "8844713d818266053ead046656064b1c0445db5a",
+      "sha256": "6570c4b7621f82344bfa6735d25a332aa457b80643f448cd1e5e6710f7c7a96e",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__ar-Gulf",
+      "sha": "0163ed78bce84d8eb3cfefdcb8f333b1578bff5f",
+      "logicalKey": "builder-m6-l4-components-routes__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l4-components-routes__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l4-components-routes__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "56351e203e3ae2a06a449ad2e7a4f4a5fa9b504e",
+      "sha256": "77242eb618cf814aa34d8945b3a96b8141eba4cb38df8ac51dcbd8b6f75f0e2d",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__ar-MSA",
+      "sha": "3d7bdbb290e23317b91a60f308f4bcc2da91ca68",
+      "logicalKey": "builder-m6-l4-components-routes__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l4-components-routes__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l4-components-routes__ar-MSA/finalization-receipt.json",
+      "blob_sha": "74fb706102fdf65dcfa9afc5781a500334efd87e",
+      "sha256": "d1c6fdc7fbf01a6f713f34afff94b974641ffb15c53cdb0e138b2723e179acb0",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__en",
+      "sha": "6b9d7f3c9bf3a9d2185fe361764a0f4dc9a3df25",
+      "logicalKey": "builder-m6-l4-components-routes__en",
+      "path": "docs/production/receipts/ai/builder-m6-l4-components-routes__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l4-components-routes__en/finalization-receipt.json",
+      "blob_sha": "46c9bd605aa3a53b5e07d05fe7f4775e450701a7",
+      "sha256": "1a92102bcf0cb1c127479d92b24e58758d667da2148b96ce45023ae37d4361c9",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__ar-Gulf",
+      "sha": "a93548708f654f27248fc0ac5d80b19456dcfa9d",
+      "logicalKey": "builder-m6-l5-iteration__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l5-iteration__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l5-iteration__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "a006f97e8d36ceda2ce190771f2b768ed4ca4b53",
+      "sha256": "523f9a459425dbc7309b457347d69bd356127191c9e2b74a16d77ef3387bf7bd",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__ar-MSA",
+      "sha": "b0decbdc10164c17cc2080ff966def1a0c0312c5",
+      "logicalKey": "builder-m6-l5-iteration__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l5-iteration__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l5-iteration__ar-MSA/finalization-receipt.json",
+      "blob_sha": "67bebf7bbce1da97be1d347dbf2616b09eeb8ee6",
+      "sha256": "faec8ab9ac353566c4a4fe9907dfc4d6a7bd38adc8e1f23529a324bd8416cfce",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__en",
+      "sha": "cb260e2ff3069ecc16b124ed31c1c30a13a92e4e",
+      "logicalKey": "builder-m6-l5-iteration__en",
+      "path": "docs/production/receipts/ai/builder-m6-l5-iteration__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l5-iteration__en/finalization-receipt.json",
+      "blob_sha": "fe235d30cc123920fae2ecd5386720ff917b91ab",
+      "sha256": "95c41845a6a2f7c117e5ee92b9b1811f9d63aa2f6ffbe2f5a7bbf8938274cc3a",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__ar-Gulf",
+      "sha": "22d93a14d0c4e6d148ddc68c6d4b8b72159989c8",
+      "logicalKey": "builder-m6-l6-debugging__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m6-l6-debugging__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l6-debugging__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "f5020155a59d4f59b63cd0632a1040b43d4571ba",
+      "sha256": "2755c7aecabd0614ec9bcfd89a89a271e6e1adfe8c201d2b37ea5087af22bcf4",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__ar-MSA",
+      "sha": "da0428ebba9e72a0f900e7f40aed202d50d5d6e4",
+      "logicalKey": "builder-m6-l6-debugging__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m6-l6-debugging__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l6-debugging__ar-MSA/finalization-receipt.json",
+      "blob_sha": "6afa76be2bb2dda2a931a6ab4b3e74234b0fbbf5",
+      "sha256": "a08961a69ef94d668f9cd2839cb6a3a06dea55a8a762207d421f61815155b248",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__en",
+      "sha": "50a614860d72250d8ab480dd7ce8117a229a71a0",
+      "logicalKey": "builder-m6-l6-debugging__en",
+      "path": "docs/production/receipts/ai/builder-m6-l6-debugging__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m6-l6-debugging__en/finalization-receipt.json",
+      "blob_sha": "3d6c6fba49c2b21b9847449d7f30f876c9ba0a3e",
+      "sha256": "03c57cdf854b4d0cc8c407f04aaee824ef3cb0ab4dae0ab19421d0281268b890",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__ar-Gulf",
+      "sha": "ccd1f5e8f25d86e44b7f5e423eccee21e04a668a",
+      "logicalKey": "builder-m7-l1-tables-columns__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m7-l1-tables-columns__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l1-tables-columns__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "f6fbe8cb42313e54e4237848d957653c489ada9f",
+      "sha256": "d84c55ee5c7e1b71eafb9f9b798fd0fb0a263129d37da7fa8d2923599b591ea7",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__ar-MSA",
+      "sha": "4fb88a08e6691e884a2bb766c03fe24e44544ab6",
+      "logicalKey": "builder-m7-l1-tables-columns__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m7-l1-tables-columns__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l1-tables-columns__ar-MSA/finalization-receipt.json",
+      "blob_sha": "9f46906f0681fc72e9e68bd707c623f8feec1d62",
+      "sha256": "a85828ac371ce0b7d8cdf417b432f62fb2f84a39c0023d465db78af248632110",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__en",
+      "sha": "a8cc51e68c5ff9d47d7239628d293e00f59c6c9c",
+      "logicalKey": "builder-m7-l1-tables-columns__en",
+      "path": "docs/production/receipts/ai/builder-m7-l1-tables-columns__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l1-tables-columns__en/finalization-receipt.json",
+      "blob_sha": "4a1b44c8aeb32846fd0c5674028f5e09d8cee2c0",
+      "sha256": "98ab2210698477348b1cddc9ef8d68274172441630d56ad3e1e09b09f94a5e9c",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__ar-Gulf",
+      "sha": "b4049a112e66c10c2e3e8c22220f90c115c9124d",
+      "logicalKey": "builder-m7-l2-relations__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m7-l2-relations__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l2-relations__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "79a4f89750fe30b7dcafb02b8e34de884ea5150c",
+      "sha256": "1aba53613dd16305df8d9614926639fd9a135329b31ac4f598a97259ff7d5851",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__ar-MSA",
+      "sha": "22a36dca7c938fef825949d20d956dd5aff3732d",
+      "logicalKey": "builder-m7-l2-relations__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m7-l2-relations__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l2-relations__ar-MSA/finalization-receipt.json",
+      "blob_sha": "17959ddef18393e2c13b7ffb2eceadb8e49e548e",
+      "sha256": "2ff9fe4f1dfcc391dc6a788a6675c56c8512c9377cb82b636192f5590ee82e3e",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__en",
+      "sha": "df3d9fe9cb08fef87a6d755744380f3bb7e09125",
+      "logicalKey": "builder-m7-l2-relations__en",
+      "path": "docs/production/receipts/ai/builder-m7-l2-relations__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l2-relations__en/finalization-receipt.json",
+      "blob_sha": "49bf1d1fb9a8a601195a90a0bd32818f052d56c8",
+      "sha256": "781d820e42374c4c68aa4dba60cfcdba4d893cdc20e1d003b1c1896e6be679fe",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__ar-Gulf",
+      "sha": "ec2063c8e8bddb388ca308e59d9dbbc183d55df4",
+      "logicalKey": "builder-m7-l3-queries__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m7-l3-queries__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l3-queries__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "cdb54d7726367233fce8f6137d2e7969ffba872f",
+      "sha256": "50ee22abea7028edee2bb3f8784a074fefbd77d1e3ba227c8ea65639b8a382e2",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__ar-MSA",
+      "sha": "527f9384aa6803243ae71ebdfadc1222b1282c71",
+      "logicalKey": "builder-m7-l3-queries__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m7-l3-queries__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l3-queries__ar-MSA/finalization-receipt.json",
+      "blob_sha": "4005aeff4e73b3a0c1ed482eb73f4d9bd4b91656",
+      "sha256": "91b63acd90625b97d129c5374542fc682ed042f77399cbc82eace2e09aef74d0",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__en",
+      "sha": "7d0e4ad665ba8501a06c7c0d708ab417190b99d8",
+      "logicalKey": "builder-m7-l3-queries__en",
+      "path": "docs/production/receipts/ai/builder-m7-l3-queries__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m7-l3-queries__en/finalization-receipt.json",
+      "blob_sha": "f4e00b99e08106bfcf7717bae1e778c20caf9b6c",
+      "sha256": "50482538541918a47bb53feb29ebc2a3c7647dc1a88c6cb91dd3e91f5c086fb3",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__ar-Gulf",
+      "sha": "5a34b32ba160cdf06c77e0139b7b0fe4b709509a",
+      "logicalKey": "builder-m8-l1-sessions-jwt__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m8-l1-sessions-jwt__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l1-sessions-jwt__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "1259b1f5629470011b5483f96be4f5d651796b61",
+      "sha256": "3642a741958849ca75759f7ab118b7e312b7922fa89fd53191812aab45dad0f3",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__ar-MSA",
+      "sha": "b54a86d28ee729d7d00b9406efd4f4d178490b22",
+      "logicalKey": "builder-m8-l1-sessions-jwt__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m8-l1-sessions-jwt__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l1-sessions-jwt__ar-MSA/finalization-receipt.json",
+      "blob_sha": "bc37768548d25e801d732a11beae6d313f9839ba",
+      "sha256": "8f0eefe8e837e062ff4b1cb1b5bf40f9de3c117319751268a3f7dedd652189d9",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__en",
+      "sha": "f40f548cab9b1910b47e411662db64c2e7079eb2",
+      "logicalKey": "builder-m8-l1-sessions-jwt__en",
+      "path": "docs/production/receipts/ai/builder-m8-l1-sessions-jwt__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l1-sessions-jwt__en/finalization-receipt.json",
+      "blob_sha": "88df85c3536caca4a912844fe5a656b926f960b7",
+      "sha256": "bb2a40816cf6add8e9aabffddbc1b03d64f04e78f5c9e6c1d22d943b8d523318",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__ar-Gulf",
+      "sha": "24ddad1039610b76fab26fd0b53aff1100ad5f57",
+      "logicalKey": "builder-m8-l2-rls__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m8-l2-rls__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l2-rls__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "89c852bf4d182e48aa83bd972d3e51596cc4f167",
+      "sha256": "57235efac31b75e4e196a4089a1b542c46231359181144dd559757c2bc4c0906",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__ar-MSA",
+      "sha": "6f7bc5db1d15039df9afaa37b0a69255c8a06d88",
+      "logicalKey": "builder-m8-l2-rls__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m8-l2-rls__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l2-rls__ar-MSA/finalization-receipt.json",
+      "blob_sha": "9f22913ff6d883c4606f8ad08d7e490b2d252afc",
+      "sha256": "a735c93d99ecc86ebaf712c38b19bfdb5f1ec5b6fa874ef6c5c6b9f55a382416",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__en",
+      "sha": "f0a77bde7d43106652a0dc2ae6f6dc3b1c75dbfa",
+      "logicalKey": "builder-m8-l2-rls__en",
+      "path": "docs/production/receipts/ai/builder-m8-l2-rls__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m8-l2-rls__en/finalization-receipt.json",
+      "blob_sha": "57c9a0e92e6499e618610a8a8b20c8cfa1511f85",
+      "sha256": "4eb2a00cc497106b6fb42b938b199e46eac1b50a5f65c1014f73dee8001ab4ec",
+      "bytes": 754
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__ar-Gulf",
+      "sha": "a2fd62848a4c3f68af17e3f31f561ebd7d5ad65e",
+      "logicalKey": "builder-m9-l1-rag__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m9-l1-rag__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l1-rag__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "8594a489e1d3e537d8472ba2799e0a89fda2359d",
+      "sha256": "410229e8b0cb6048ebf6804cba1c0b76a8629a2c0b7755dc55c27b21e239c822",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__ar-MSA",
+      "sha": "3417ec351492937faeb1718bb08f6d6e9154d75e",
+      "logicalKey": "builder-m9-l1-rag__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m9-l1-rag__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l1-rag__ar-MSA/finalization-receipt.json",
+      "blob_sha": "2836edcaeec5e9c53d97d98d05b1876e9591f3d9",
+      "sha256": "4f8528493a70d22426bf40b46704e0ee824de857f47531345d096096698ccc3a",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__en",
+      "sha": "6a249ec69e463c4e5fdfc04bfcfca5b1c576580d",
+      "logicalKey": "builder-m9-l1-rag__en",
+      "path": "docs/production/receipts/ai/builder-m9-l1-rag__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l1-rag__en/finalization-receipt.json",
+      "blob_sha": "7558addafcb941a246b96514fcd20806f2912227",
+      "sha256": "f2208cc31ee178869d0b074a2b9873b25126de0b2b946e7e05cbb105c471ed75",
+      "bytes": 754
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__ar-Gulf",
+      "sha": "84c7d03bd6acce3108dcb75d27cef37b43e5b254",
+      "logicalKey": "builder-m9-l2-embeddings__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m9-l2-embeddings__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l2-embeddings__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "124c41bdcb2b811ee37857d0d0369000ddeea732",
+      "sha256": "916bd879af1da0cc19599c70fc90a4d5a5d551faaac2d7e91dceececc8e93190",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__ar-MSA",
+      "sha": "69673f6a1bcbe8a1cc84160f3ecc523ca8a3ae42",
+      "logicalKey": "builder-m9-l2-embeddings__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m9-l2-embeddings__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l2-embeddings__ar-MSA/finalization-receipt.json",
+      "blob_sha": "bd59903cdfeec314d2266d4f00aa0d8a27bf062b",
+      "sha256": "98ba5ae46183890dd21a37dedb19923d3460d99d42a62d676b0bc3eb14a4ca14",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__en",
+      "sha": "a438d85ab5981289e1c76e8094b542f39babd72c",
+      "logicalKey": "builder-m9-l2-embeddings__en",
+      "path": "docs/production/receipts/ai/builder-m9-l2-embeddings__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l2-embeddings__en/finalization-receipt.json",
+      "blob_sha": "1cadc599321dbcfc8343cb168799ff65bfaac3d2",
+      "sha256": "3ee3e1e76b0c37661ffc353c58689e248abbc3e14eea9ca9668566b9426d4cab",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__ar-Gulf",
+      "sha": "1c39a946cc64fd385a37c3f061ae4081b6c588af",
+      "logicalKey": "builder-m9-l3-agents__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m9-l3-agents__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l3-agents__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "3a749fb92b95f9b9dad55f36cebbada82379e054",
+      "sha256": "30b31b5b5f6117a3a9d6c26167b3c196985c32f0b6ee9fb0e45f62e3aa7393a6",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__ar-MSA",
+      "sha": "1e4ffc165f4ca34f2c5cc51d8ea3715eaf230501",
+      "logicalKey": "builder-m9-l3-agents__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m9-l3-agents__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l3-agents__ar-MSA/finalization-receipt.json",
+      "blob_sha": "ec2163de97c5a0b84ea74facfef8836700eaf77a",
+      "sha256": "b2300010501eb2799a105d547e704a74598d7f5d0a1bd204d10399837fd5608f",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__en",
+      "sha": "e4c186f697d6e9da0fab9d70e82e00dded6eaa19",
+      "logicalKey": "builder-m9-l3-agents__en",
+      "path": "docs/production/receipts/ai/builder-m9-l3-agents__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m9-l3-agents__en/finalization-receipt.json",
+      "blob_sha": "62b632f21f3e0b335335c4e2d6d029baac1e45a8",
+      "sha256": "54c85e5f38485d5d1020065fb35df10b8fc3a9f75740f82d96bc56c35312a808",
+      "bytes": 760
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__ar-Gulf",
+      "sha": "dcc79873bb38fb483752381bb5f18585da6a5a68",
+      "logicalKey": "builder-m10-l1-deploy-domain__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m10-l1-deploy-domain__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l1-deploy-domain__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "2a16bebda3169c8790e1cbe8f6043ce7a2d07d15",
+      "sha256": "d8d107f7623a63fdfce8f73de0a7a6c19d6662503ac5c9acda25e224ea39a3a7",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__ar-MSA",
+      "sha": "4754da8b9e7040fa292e2a68229f85c1cacb33e4",
+      "logicalKey": "builder-m10-l1-deploy-domain__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m10-l1-deploy-domain__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l1-deploy-domain__ar-MSA/finalization-receipt.json",
+      "blob_sha": "68c7e5c2f3e4df3b51bc30f53601c369d42be282",
+      "sha256": "227df136f307df8b35fa2846588fbcc47a253d3d922e87e831ff9a52f5db20e2",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__en",
+      "sha": "b872791bf43cd99548ea110320da2a9fab6076f6",
+      "logicalKey": "builder-m10-l1-deploy-domain__en",
+      "path": "docs/production/receipts/ai/builder-m10-l1-deploy-domain__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l1-deploy-domain__en/finalization-receipt.json",
+      "blob_sha": "27672ec1fa10caf2ff54b9698063c13f3c7b253e",
+      "sha256": "c82e7842beb68265c2bf26e1fbfff220347f7cdf4e15d8aab23a818068880a16",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__ar-Gulf",
+      "sha": "a0468fabff7c7bd6de81afa4a82b2ab578070da9",
+      "logicalKey": "builder-m10-l2-first-users__ar-Gulf",
+      "path": "docs/production/receipts/ai/builder-m10-l2-first-users__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l2-first-users__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "17a550a19bfabd23b010fc76018631fe6967d33d",
+      "sha256": "405a905f9c037c0f5c6b0e1f59e66b42743db6f800144b439a147f89f8c58eef",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__ar-MSA",
+      "sha": "e0cf313a0a80082c1bcc3f4efc9bf97c7509126f",
+      "logicalKey": "builder-m10-l2-first-users__ar-MSA",
+      "path": "docs/production/receipts/ai/builder-m10-l2-first-users__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l2-first-users__ar-MSA/finalization-receipt.json",
+      "blob_sha": "d04710b49f8f9f9d4788c6868c184ffed5562416",
+      "sha256": "f7860d4d39f56a573c3b5b95a2c0e632706b769582c8828428a0c91d2d048af1",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__en",
+      "sha": "c6925fcc0e96355fc7c6309f19629eb405da8649",
+      "logicalKey": "builder-m10-l2-first-users__en",
+      "path": "docs/production/receipts/ai/builder-m10-l2-first-users__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/builder-m10-l2-first-users__en/finalization-receipt.json",
+      "blob_sha": "756a0592120f100e36ce8984717763e0606d7e3e",
+      "sha256": "eed36548c3deb882c60f2bc0d9f517d64e7130429b6ad7427f67f0236705a13f",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__ar-Gulf",
+      "sha": "7b2c823990abebcc6dcdfaff631aa0fde9fd7268",
+      "logicalKey": "business-m1-l1-from-decisions-to-leadership__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m1-l1-from-decisions-to-leadership__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l1-from-decisions-to-leadership__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b7112eff2199606493782289d93a7e909ec9691e",
+      "sha256": "9b84714ba870d1b27b490509309b7b5c0bc3eadb78abddb3119fc32f76e2ed5a",
+      "bytes": 816
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__ar-MSA",
+      "sha": "7d696e29207514debd67b579c5b4f11713485f49",
+      "logicalKey": "business-m1-l1-from-decisions-to-leadership__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m1-l1-from-decisions-to-leadership__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l1-from-decisions-to-leadership__ar-MSA/finalization-receipt.json",
+      "blob_sha": "fa0988877f32ef8c887cb750c2238b3c6e799c66",
+      "sha256": "93beb392581a1b0a5aefe1e411075cf869c358d26c2dd6f1a04968cfc17330cd",
+      "bytes": 814
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__en",
+      "sha": "0b8e2bd17e76b17a1c6e76deeed028fb0885fc9c",
+      "logicalKey": "business-m1-l1-from-decisions-to-leadership__en",
+      "path": "docs/production/receipts/ai/business-m1-l1-from-decisions-to-leadership__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l1-from-decisions-to-leadership__en/finalization-receipt.json",
+      "blob_sha": "4af28bd6205d91593eb7f69f3d8f327b3cadafb4",
+      "sha256": "26441aa30c71a2e65f65abe677d3c23d67fac65286cc86696eed82188d63e2f7",
+      "bytes": 806
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__ar-Gulf",
+      "sha": "dcd1c6e307dd650fccd5dfc645bc64d5f7e7ca9d",
+      "logicalKey": "business-m1-l2-reactive-vs-proactive__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m1-l2-reactive-vs-proactive__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l2-reactive-vs-proactive__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "a9f76a3cbe5239b2c2ad567610fcf9e84c53fb81",
+      "sha256": "02166920be9af0e34a88196f5a715f993c641056f2b0452ac2de5bfedfc986df",
+      "bytes": 802
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__ar-MSA",
+      "sha": "6e983cf509229d4397aab4814258483740fd22d2",
+      "logicalKey": "business-m1-l2-reactive-vs-proactive__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m1-l2-reactive-vs-proactive__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l2-reactive-vs-proactive__ar-MSA/finalization-receipt.json",
+      "blob_sha": "cf3e361c9fc766f66519b6f1b5fd98f12e057e29",
+      "sha256": "4c3b1ac48f3e01579c5898fedd77c259707350315c350cbf580a5d0767e5c110",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__en",
+      "sha": "a81d91daf45e3652b68a8183e7b431eb76908703",
+      "logicalKey": "business-m1-l2-reactive-vs-proactive__en",
+      "path": "docs/production/receipts/ai/business-m1-l2-reactive-vs-proactive__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m1-l2-reactive-vs-proactive__en/finalization-receipt.json",
+      "blob_sha": "bb6f06e21879b40fbd3c8da2d31ae3e8dee235f3",
+      "sha256": "2788dec41061b02cccd8ebd2b190620fc7a8341a71f24b26006f594dd95a7a91",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__ar-Gulf",
+      "sha": "61c942c8df3dde7487d07ee75e72ab6e59b1928e",
+      "logicalKey": "business-m2-l1-customer-lifecycle__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m2-l1-customer-lifecycle__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l1-customer-lifecycle__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "36af2adae36f1ead78c6ca8012dd1763530c2de7",
+      "sha256": "0a3a2136e2a14d696380f8b0d61e4fcdd2e88ef02dcfd356076e9acc15d24f0a",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__ar-MSA",
+      "sha": "455f2b224526913790da0d2f60d0a3e09d51cf14",
+      "logicalKey": "business-m2-l1-customer-lifecycle__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m2-l1-customer-lifecycle__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l1-customer-lifecycle__ar-MSA/finalization-receipt.json",
+      "blob_sha": "1909bdd26adf102b9a27fa61bb8ccffb045234cf",
+      "sha256": "d2d85928bde774b013f8131cc03d3f20d624a1571408bceff4f45cc3721c96ac",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__en",
+      "sha": "b7e1a3a2c5d29fa8ee12f0e5be731b3b2aab4228",
+      "logicalKey": "business-m2-l1-customer-lifecycle__en",
+      "path": "docs/production/receipts/ai/business-m2-l1-customer-lifecycle__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l1-customer-lifecycle__en/finalization-receipt.json",
+      "blob_sha": "c1d32c35525d21b5745350cb4d84bde9c4d2384b",
+      "sha256": "ddd8d26d1d9cd17e0388881bad6bf1afb345f650ebd99db57fb548f30d67c862",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__ar-Gulf",
+      "sha": "c764443907298e723d25518f79d09422115c7ee2",
+      "logicalKey": "business-m2-l2-build-your-offer__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m2-l2-build-your-offer__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-build-your-offer__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "19caf0681f08575564926d200b5dbf6a0edfeba0",
+      "sha256": "d884e2b41bf50c78c0a6bacae661ecb5b76adcd8b7117b5b04c412c07c9504f3",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__ar-MSA",
+      "sha": "5398dc9a884f8eaca85db53d31533a32b05dad3a",
+      "logicalKey": "business-m2-l2-build-your-offer__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m2-l2-build-your-offer__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-build-your-offer__ar-MSA/finalization-receipt.json",
+      "blob_sha": "540d7401715b60486927b22f439ce17b22ac91e1",
+      "sha256": "3bc6a158ac83198a9614e9213fe7a431fd0f1072f248d07348d595253849821f",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__en",
+      "sha": "015cd7d2357feb826e851a8790b713b0014e15c8",
+      "logicalKey": "business-m2-l2-build-your-offer__en",
+      "path": "docs/production/receipts/ai/business-m2-l2-build-your-offer__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-build-your-offer__en/finalization-receipt.json",
+      "blob_sha": "06a480f5946dd96c878d691b193e01980d2495e9",
+      "sha256": "21bee7aed98d9ef8f3a1de4f45e2835ce08eb71fb17c47481883f2cde0b14e82",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__ar-Gulf",
+      "sha": "3f431c6ba91bce02ec3f53e18ab3f5e3fa42084a",
+      "logicalKey": "business-m2-l2-retention-flow__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m2-l2-retention-flow__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-retention-flow__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d7bc097550dd76a681043f58582ad47cd7c7e8f9",
+      "sha256": "b9f881fe2328298dc787d1e0b71ffd0b6925491e95d045763cb5610a0f9ff05d",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__ar-MSA",
+      "sha": "f12289339f94e655101d3eb09bf51d0c04f91e4d",
+      "logicalKey": "business-m2-l2-retention-flow__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m2-l2-retention-flow__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-retention-flow__ar-MSA/finalization-receipt.json",
+      "blob_sha": "10e973a2982804500e6a1284d22c1d74acf2ab13",
+      "sha256": "ed6c0406517bd57bd9302bbb828f63351aec1e2b0dd0689e9b530a4eabfe1643",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__en",
+      "sha": "cfe06d7f790eec617e8df8c8567aa8f62f95d8d8",
+      "logicalKey": "business-m2-l2-retention-flow__en",
+      "path": "docs/production/receipts/ai/business-m2-l2-retention-flow__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l2-retention-flow__en/finalization-receipt.json",
+      "blob_sha": "7515b214efeeacf062a842ce9f0a5ce297faf623",
+      "sha256": "e799064785cfc24b83e8cf970c51268094688d53bd9d514c0a760fe546531947",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__ar-Gulf",
+      "sha": "1cbff87358c8c6314c0134504c1f4bdadba767f0",
+      "logicalKey": "business-m2-l3-readiness-signals__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m2-l3-readiness-signals__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l3-readiness-signals__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "41d8c20d8c7a192a47c4103f35f442e8d7e95392",
+      "sha256": "2fbead27508b2864e3367541cfd1e1e4f0a65696fcc7d69caee2a8a4cdd387d2",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__ar-MSA",
+      "sha": "a279fd0443783cb0140457e18cc1a490e224bb5b",
+      "logicalKey": "business-m2-l3-readiness-signals__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m2-l3-readiness-signals__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l3-readiness-signals__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a6f29aaf3ede0c1d6ae0950061612ef35af337e4",
+      "sha256": "76f1a0c3a6dffcb8bb896290a6c881b8e71d41e37f2bda962f6207bdf7a04060",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__en",
+      "sha": "1d9147c31abb45cb51fcf5dad1eb918620b1b481",
+      "logicalKey": "business-m2-l3-readiness-signals__en",
+      "path": "docs/production/receipts/ai/business-m2-l3-readiness-signals__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m2-l3-readiness-signals__en/finalization-receipt.json",
+      "blob_sha": "1660d522d5594db1cf102c82778a4a7ae041ff32",
+      "sha256": "c6131e2941c5f442f4efc59aaeb2f2f4096ab552f319a5359b1f6c7e0c68b7a6",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__ar-Gulf",
+      "sha": "660c4b9db162116de9134e2593b5043e7224d515",
+      "logicalKey": "business-m3-l1-delegate-or-automate__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m3-l1-delegate-or-automate__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l1-delegate-or-automate__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "0c287975b3c27d846b9154b2ce3df0eb5023f462",
+      "sha256": "cf7d2029620abee2b13f825d3d57cda46b9212e18b021708072f54dcad5f053e",
+      "bytes": 800
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__ar-MSA",
+      "sha": "ff73e0d64e6c5ce0e9804e03a9b363b712db6c07",
+      "logicalKey": "business-m3-l1-delegate-or-automate__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m3-l1-delegate-or-automate__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l1-delegate-or-automate__ar-MSA/finalization-receipt.json",
+      "blob_sha": "c9e8d08bc81638227ded1c57ce39e6c1ba6a0d44",
+      "sha256": "59c188fb6a6f54838cfe495930443e107b993c7fee0e0566a73e53bdbfe0f65c",
+      "bytes": 798
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__en",
+      "sha": "225fdc29c95ec867b84daf4060a6cb0b3f1192b1",
+      "logicalKey": "business-m3-l1-delegate-or-automate__en",
+      "path": "docs/production/receipts/ai/business-m3-l1-delegate-or-automate__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l1-delegate-or-automate__en/finalization-receipt.json",
+      "blob_sha": "469d68daf21909f8ba82532f906324852ba1e5ad",
+      "sha256": "4fcd701a3df2d79b0557e840107b345830b024fae378cd7e3900570757c1b29f",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__ar-Gulf",
+      "sha": "d7b7fe6573a2d40a0750bba7bf9586da6b03ff8a",
+      "logicalKey": "business-m3-l2-strategic-operational-admin__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m3-l2-strategic-operational-admin__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l2-strategic-operational-admin__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "1001099bb112eedbcf92a1f71ab114ba067a99b4",
+      "sha256": "bfa613a673e8e81c713de2cde72ed0491001bbd72c6db8ef2e787539fc57995b",
+      "bytes": 814
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__ar-MSA",
+      "sha": "fa045a4d3338d332f786e963666842a4f9dfdf80",
+      "logicalKey": "business-m3-l2-strategic-operational-admin__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m3-l2-strategic-operational-admin__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l2-strategic-operational-admin__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a3db352778c68595ec353b4487180d70a19c1388",
+      "sha256": "8fb3af5466a358a21cabe826ce028d64da98bab3883f04f6869c1acd234e3c19",
+      "bytes": 812
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__en",
+      "sha": "ac902ab72d1e8711a5774e04e579c3e77c085685",
+      "logicalKey": "business-m3-l2-strategic-operational-admin__en",
+      "path": "docs/production/receipts/ai/business-m3-l2-strategic-operational-admin__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l2-strategic-operational-admin__en/finalization-receipt.json",
+      "blob_sha": "977637d882a67c97e412826358692ea9ee94bcb7",
+      "sha256": "807cdf9d95c0f7978a1e7a98c61a0b206e374904656a9d6ac86d0b554a5cee76",
+      "bytes": 804
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__ar-Gulf",
+      "sha": "cccc286e10e2f3eb6944c4ee26b3fc94ab547414",
+      "logicalKey": "business-m3-l3-system-then-people__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m3-l3-system-then-people__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l3-system-then-people__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "9dbdaf8a91e619232849090d4dcd26c6a0b3a0a3",
+      "sha256": "39aa5635fdedf8de967a0fffa77d06ae4174b52e95cb0c522e797362c1243dc2",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__ar-MSA",
+      "sha": "2c495c8ac8ea11da88ad48a3ffc5d3d78b3fbce9",
+      "logicalKey": "business-m3-l3-system-then-people__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m3-l3-system-then-people__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l3-system-then-people__ar-MSA/finalization-receipt.json",
+      "blob_sha": "f679f65235eee64a93c22220681d34294cfe8a50",
+      "sha256": "308f78d1be18f83152f85aa91d3ae04f8ac26406353f671f6f39c1141cde9282",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__en",
+      "sha": "4ff1dfa82bae9ebc8956912664778e36ea39c0c6",
+      "logicalKey": "business-m3-l3-system-then-people__en",
+      "path": "docs/production/receipts/ai/business-m3-l3-system-then-people__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m3-l3-system-then-people__en/finalization-receipt.json",
+      "blob_sha": "be4d06945f4c507e7cb2ca907c02603366d3181d",
+      "sha256": "86a486ac82bc0d3d085edaba399a0576841028b8ab494f92aafcc47d66fd3171",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__ar-Gulf",
+      "sha": "684a3f54da064901642e6f81ea3c86bd7165cf1f",
+      "logicalKey": "business-m4-l1-premature-scaling__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m4-l1-premature-scaling__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l1-premature-scaling__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "dcb49d14d97b8b0381a0fef8fbebc27629a9ce0d",
+      "sha256": "7ca62cf6180b55270b7841dc09dfcc46a2d0f730c7a48c9b9b663a9dba18b81d",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__ar-MSA",
+      "sha": "b7230dc0fa770da137b7a16641033eba6eb42c98",
+      "logicalKey": "business-m4-l1-premature-scaling__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m4-l1-premature-scaling__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l1-premature-scaling__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a02ae6c40b937cfe1b832e0ba05c53a126087cef",
+      "sha256": "bbd96c81d3504452917f10dcc21f1d847d95129b709de77536fad90c67ea6d49",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__en",
+      "sha": "897641d168c46b08ded9c131dc7fcdacf152d5c2",
+      "logicalKey": "business-m4-l1-premature-scaling__en",
+      "path": "docs/production/receipts/ai/business-m4-l1-premature-scaling__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l1-premature-scaling__en/finalization-receipt.json",
+      "blob_sha": "bd5ff40a3c5ec3a327d24908e3d9bd57e9668e1e",
+      "sha256": "d4accbd6a5bb9f1dc5bf954da3a694d8a17b8ac97c9e74550e2c5a38bb1d4089",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__ar-Gulf",
+      "sha": "da290b197109551b6db779e0679bda9707b2b67d",
+      "logicalKey": "business-m4-l2-reactive-relapse__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m4-l2-reactive-relapse__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l2-reactive-relapse__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "0c52e95c882c48d790681d3ae3a8b41e7f6419a7",
+      "sha256": "b0130733e0fcfa4e57237d7951f885254929cb7c68e34eb9c22cf4de005eef4e",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__ar-MSA",
+      "sha": "e06e92557ba9d341da3e7419336f358994ef9f0f",
+      "logicalKey": "business-m4-l2-reactive-relapse__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m4-l2-reactive-relapse__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l2-reactive-relapse__ar-MSA/finalization-receipt.json",
+      "blob_sha": "19b8e5672eb35290688b366548bfe6644ba76048",
+      "sha256": "b2e1dc6a6d6e33d72b74ba8979a970074840c362960ba193ca77ca665ada22fb",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__en",
+      "sha": "df055f5c52f63501356c3201dc73e2f784e6a4d8",
+      "logicalKey": "business-m4-l2-reactive-relapse__en",
+      "path": "docs/production/receipts/ai/business-m4-l2-reactive-relapse__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l2-reactive-relapse__en/finalization-receipt.json",
+      "blob_sha": "a038c3cbd605d7850bc0eefba28bc0fd22324531",
+      "sha256": "78aa798ad3618d5f3bab4a27b447506137cf1abda0f8cead6fedf9974cdd6b84",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__ar-Gulf",
+      "sha": "7245c704608b577f2bea01b83c1e44361288a79f",
+      "logicalKey": "business-m4-l3-weekly-rhythm__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m4-l3-weekly-rhythm__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l3-weekly-rhythm__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "a4d1e50c60a76494f7eae396db2c934940bc2243",
+      "sha256": "c75a0b9a2203142dfc7b28e582ec3b8112b1aa5849203ef1df78524342b72de8",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__ar-MSA",
+      "sha": "7748896ac8b9c4f808eed567d34230650c14a4a6",
+      "logicalKey": "business-m4-l3-weekly-rhythm__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m4-l3-weekly-rhythm__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l3-weekly-rhythm__ar-MSA/finalization-receipt.json",
+      "blob_sha": "d4ee362ac05a09538b4b00e68259723f57f83b6d",
+      "sha256": "aabf7b9bd5bd0a57da0832626f8303cf29bc2ff366f3e3a2ed87b6b5612111c3",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__en",
+      "sha": "37da725d94d487cdf508dc611802cdf99ff86145",
+      "logicalKey": "business-m4-l3-weekly-rhythm__en",
+      "path": "docs/production/receipts/ai/business-m4-l3-weekly-rhythm__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l3-weekly-rhythm__en/finalization-receipt.json",
+      "blob_sha": "2a777bf320987fd6899f1036a83ddd4c6ee35819",
+      "sha256": "e794c74a199a88ded3b349fe0fc723d48cd290b2be2ca4ae2e4e8567734a8109",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__ar-Gulf",
+      "sha": "09fd63322c699722b95338008c089eaa36d8311b",
+      "logicalKey": "business-m4-l4-full-ecosystem__ar-Gulf",
+      "path": "docs/production/receipts/ai/business-m4-l4-full-ecosystem__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l4-full-ecosystem__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "ab92e74af75e911d046284927db3e1f58d7dd275",
+      "sha256": "730588ed586b42d31139abd2913aac5eb6b6050b4764af4753133c8fc2fc100e",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__ar-MSA",
+      "sha": "2a04e04e6ab59d14a8c52c08d6b6844f4b8540b3",
+      "logicalKey": "business-m4-l4-full-ecosystem__ar-MSA",
+      "path": "docs/production/receipts/ai/business-m4-l4-full-ecosystem__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l4-full-ecosystem__ar-MSA/finalization-receipt.json",
+      "blob_sha": "58a33589efc3f75cda76e987389b37ca50c23dd3",
+      "sha256": "8e1cd92f39d0f5a6bbbd2056b4824e6492f4ee9424d353302b5a78e4909c16db",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__en",
+      "sha": "84a85557cf80184b40f63796262e50a84cba9350",
+      "logicalKey": "business-m4-l4-full-ecosystem__en",
+      "path": "docs/production/receipts/ai/business-m4-l4-full-ecosystem__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/business-m4-l4-full-ecosystem__en/finalization-receipt.json",
+      "blob_sha": "eddd29f7dd7882d1f663ed21b17b46de23e6cfd5",
+      "sha256": "67c9edb2d4bbb021126c95256c16da73dd680fedff608edfc3492148a9813891",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__ar-Gulf",
+      "sha": "3fd44eeed810f33d02da408d18779bb0525a7b38",
+      "logicalKey": "creator-m1-l1-why-content__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m1-l1-why-content__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l1-why-content__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6b4eba0536a508da9e9121fef1919d0e5db490e9",
+      "sha256": "6216e46923dfef04546766a05219f47aae6124f268b7970172aa3dff22ccfce3",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__ar-MSA",
+      "sha": "c39dc4ea25b72f55205b15e3ebf120d6a406633b",
+      "logicalKey": "creator-m1-l1-why-content__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m1-l1-why-content__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l1-why-content__ar-MSA/finalization-receipt.json",
+      "blob_sha": "e44533960273e53d152aca9016a6e350d1ce105f",
+      "sha256": "3ab3cf4732e79e17860e163e9cecfc549c08f4c5f977c94371ae5dcaa80936d6",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__en",
+      "sha": "3c9e71e67976e7120c7118216c7204dc7e544ae7",
+      "logicalKey": "creator-m1-l1-why-content__en",
+      "path": "docs/production/receipts/ai/creator-m1-l1-why-content__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l1-why-content__en/finalization-receipt.json",
+      "blob_sha": "6af101734644ebaa3b6a93d6e13e5b7e956dc27b",
+      "sha256": "4e55afcf2fd049ac017dd991d9b205a863fe6d941f382528be203146e3f2dede",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__ar-Gulf",
+      "sha": "e3de152024217772798eb2290cb1b360203dbb50",
+      "logicalKey": "creator-m1-l2-attention-economy__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m1-l2-attention-economy__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l2-attention-economy__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "1566e0b34d156105fd64116fa96d99eb802c1387",
+      "sha256": "a6ed9365b33ba2ca1aa71238e802badf6f5063022cae0f054d54679afbcdb83c",
+      "bytes": 792
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__ar-MSA",
+      "sha": "5bc8a57d5605b907fa8e4b7b837d4c8deb73718c",
+      "logicalKey": "creator-m1-l2-attention-economy__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m1-l2-attention-economy__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l2-attention-economy__ar-MSA/finalization-receipt.json",
+      "blob_sha": "abf7a6f4ac1a4ce2b57bc3a8791495302ffb9456",
+      "sha256": "6bf346835ac0c9a38ac4d2c92ecb69501986d995f4d20877a6ca26695d3f0f68",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__en",
+      "sha": "6d4a5a51ebbd76514eb8a7eb73d8d52f3bb9f211",
+      "logicalKey": "creator-m1-l2-attention-economy__en",
+      "path": "docs/production/receipts/ai/creator-m1-l2-attention-economy__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m1-l2-attention-economy__en/finalization-receipt.json",
+      "blob_sha": "cc525292f4f2a14c1457281f814735bc18a5350a",
+      "sha256": "71094b24402b2e19feb152efe3ed0a42192a6724327167d2d63eaf5dffa71bd7",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__ar-Gulf",
+      "sha": "c4433f921829d8878e01e03242e565fac9ced91a",
+      "logicalKey": "creator-m2-l1-know-audience__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m2-l1-know-audience__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l1-know-audience__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "cdd226c06d06b034c12a650637025cc2b253062f",
+      "sha256": "627902f14b0639b4c730eb2072c4c3a2e9298d6e16c8d4acf017c33d8da10c0b",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__ar-MSA",
+      "sha": "954b025e5dfa2a91e9e7b059a5551b32735d75cd",
+      "logicalKey": "creator-m2-l1-know-audience__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m2-l1-know-audience__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l1-know-audience__ar-MSA/finalization-receipt.json",
+      "blob_sha": "d7d30b092db117638898d600f0a19c16c40feb80",
+      "sha256": "97f5d6e735813bd89eba8f0898030207ca99deadf8c99b3a2e7d120b9eda4069",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__en",
+      "sha": "a1bd18f15183e21eadf9b6c594e0267f847ec62b",
+      "logicalKey": "creator-m2-l1-know-audience__en",
+      "path": "docs/production/receipts/ai/creator-m2-l1-know-audience__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l1-know-audience__en/finalization-receipt.json",
+      "blob_sha": "f5be8da2947907ad6f54c33e83bfdba3ef0c5edb",
+      "sha256": "9e9a9d0e9496f0ed2f1c83b55df71c9f2a552d0d6203032a472ead3da5362e4c",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__ar-Gulf",
+      "sha": "791b5365ec7739234489740c754c49a9dcdc8132",
+      "logicalKey": "creator-m2-l2-content-pillars__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m2-l2-content-pillars__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l2-content-pillars__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "9b3d8c74f92ef02da34b6c5e701149616f82154c",
+      "sha256": "6a94373bc7d8ebdd3b14a40d11663883aa5c72d8545503ec841210f4e40bda27",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__ar-MSA",
+      "sha": "746e27efeed30430033f384c1817387aaa1346fd",
+      "logicalKey": "creator-m2-l2-content-pillars__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m2-l2-content-pillars__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l2-content-pillars__ar-MSA/finalization-receipt.json",
+      "blob_sha": "fdb0fa652a0cf115817c8063855ddd2239cdefba",
+      "sha256": "1f1f5b0a80a7ff89b1f730479f2c2f3d79a657737d6eaa8b0a9b3da52fc395ef",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__en",
+      "sha": "f981cd0e5433681ba6bcd346cfed588480f197b8",
+      "logicalKey": "creator-m2-l2-content-pillars__en",
+      "path": "docs/production/receipts/ai/creator-m2-l2-content-pillars__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m2-l2-content-pillars__en/finalization-receipt.json",
+      "blob_sha": "60888b45c6a25d21fb45a9a20bbb6e11de467604",
+      "sha256": "abffff651ae335d95850de9963fc6166a2aaaa0c42be8a5dfe5080a7dd324589",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__ar-Gulf",
+      "sha": "ca49ee9ac83325d292c0e75a2276b5f0bf8004df",
+      "logicalKey": "creator-m3-l1-hook__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m3-l1-hook__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l1-hook__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "bbce6e55714f69f4bcb4c2dc9ebd4a373244140a",
+      "sha256": "a8942042bcdd16cbb4c95ca4aef1cccf5d9f5020b8e90eaf5b0a22203fbbaa94",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__ar-MSA",
+      "sha": "986b6d9606024adbe459628f800c586307c6251e",
+      "logicalKey": "creator-m3-l1-hook__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m3-l1-hook__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l1-hook__ar-MSA/finalization-receipt.json",
+      "blob_sha": "56c1ead86df254884a7459edee898d5f3fb30c1d",
+      "sha256": "686ae103e91348638d64d919dfd5244acfef2ce0f38f958c248831a0c6782b1c",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__en",
+      "sha": "4637dff9421ec019d266fb761c7f5037080b10c3",
+      "logicalKey": "creator-m3-l1-hook__en",
+      "path": "docs/production/receipts/ai/creator-m3-l1-hook__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l1-hook__en/finalization-receipt.json",
+      "blob_sha": "a9a1df63d108496471dc8e5d99469d2186232da3",
+      "sha256": "d56a6acc86f33412d63d1eaaa0b7f2f0f867b454f21114aa18edf7529f57d3dc",
+      "bytes": 756
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__ar-Gulf",
+      "sha": "ce6166e2418132daa7fbd0a99140f2a40b66a2af",
+      "logicalKey": "creator-m3-l2-script-structure__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m3-l2-script-structure__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l2-script-structure__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "b070ef67c14136a5c26c0276062be01bc73a4c95",
+      "sha256": "c0a94d8bcf2fdf5e23f6db49614c2a7a6cc40d0ee7273b332149bea8e7d619d2",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__ar-MSA",
+      "sha": "f4909b803bb2e4f43dd848e9d3d934d3db18f56a",
+      "logicalKey": "creator-m3-l2-script-structure__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m3-l2-script-structure__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l2-script-structure__ar-MSA/finalization-receipt.json",
+      "blob_sha": "3612b735bff74e0d3a66d9f8e066422f7edfe25c",
+      "sha256": "a4cf01a07a8858e79560a3ae983ea2edde39d1eb1ddaccd81d8789b7979dbab7",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__en",
+      "sha": "7d45828b690807d40af3051149343b8eb8e99b50",
+      "logicalKey": "creator-m3-l2-script-structure__en",
+      "path": "docs/production/receipts/ai/creator-m3-l2-script-structure__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l2-script-structure__en/finalization-receipt.json",
+      "blob_sha": "2bd140698026bd9addfa692eddb972479221438c",
+      "sha256": "60ea665f8bdbe9fdbc9abec25edbc98d83d58d941953967d3523d4be7fa3c88e",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__ar-Gulf",
+      "sha": "bd5345d16da7f8511bae2f45ccf840f5851228a0",
+      "logicalKey": "creator-m3-l3-cta__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m3-l3-cta__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l3-cta__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "ad77454fd0fe058f57d9646ca4ebb3b50b08a3f5",
+      "sha256": "216653437063ba0d830f7a67372d2d005ac1e4ae7b0abb3df2bc751b7862e2bc",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__ar-MSA",
+      "sha": "58da4517efb8ad4464e9184549eee0196007c305",
+      "logicalKey": "creator-m3-l3-cta__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m3-l3-cta__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l3-cta__ar-MSA/finalization-receipt.json",
+      "blob_sha": "683bba8756101ad0c626653416b7890740df8701",
+      "sha256": "40be8737173b6c4625fbfe6f10fb9bbd6cbed14b6e1c9864ebc6bf54732b91fb",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__en",
+      "sha": "d22b0e5279531e030d13c3169459b5a4effca726",
+      "logicalKey": "creator-m3-l3-cta__en",
+      "path": "docs/production/receipts/ai/creator-m3-l3-cta__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m3-l3-cta__en/finalization-receipt.json",
+      "blob_sha": "a055eaa92687d3d1b9a59b39c863d2340a816fed",
+      "sha256": "4a5fab575726945a2d5fadd318b1eb9d5409cacbcb0f520f2892b99da9d92e69",
+      "bytes": 754
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__ar-Gulf",
+      "sha": "dcea370b4c1b788dfdb5408d60a80a1ddf884114",
+      "logicalKey": "creator-m4-l1-reality-check__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m4-l1-reality-check__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l1-reality-check__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "7b492757d8636aed811f704b061aa23a0a5caabd",
+      "sha256": "c5a3540ce47da31764f9e5328a48af2fe68738cc72fc6fe139cd0daf59f19b68",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__ar-MSA",
+      "sha": "a633edd92699578f2ce653e3d2391c4774646852",
+      "logicalKey": "creator-m4-l1-reality-check__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m4-l1-reality-check__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l1-reality-check__ar-MSA/finalization-receipt.json",
+      "blob_sha": "c57d1781a8e494e55b413464f6424402fd1147e2",
+      "sha256": "7649bf582f53fc8593b7465a44850951cd6fb0f39101949d62fc46755e037729",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__en",
+      "sha": "5014136aa5c46adc9b744538300fb674ba08c176",
+      "logicalKey": "creator-m4-l1-reality-check__en",
+      "path": "docs/production/receipts/ai/creator-m4-l1-reality-check__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l1-reality-check__en/finalization-receipt.json",
+      "blob_sha": "d0e7a5895fbc1f04de52e544015a6b67ab161092",
+      "sha256": "ae28ae3e4d6e2fc789518b072af529ce16217f34521eb457d830ac22c81f2a0a",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__ar-Gulf",
+      "sha": "92d9f51b0103e4c4d2017768a6bcc77a324f57ca",
+      "logicalKey": "creator-m4-l2-mobile-shooting__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m4-l2-mobile-shooting__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l2-mobile-shooting__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "782425c9b4a68d9bd4da5e5159c7fb7570877968",
+      "sha256": "523efb2e5d6361e8a9bb0847f32559d5fdc4a14a41e05bcc5290e276f35f8f8b",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__ar-MSA",
+      "sha": "f81f8088c52a390b8135cc467a5952b9a6170b6b",
+      "logicalKey": "creator-m4-l2-mobile-shooting__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m4-l2-mobile-shooting__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l2-mobile-shooting__ar-MSA/finalization-receipt.json",
+      "blob_sha": "c154224df9f8c5c87b8e909c2c8bb28879bc6db5",
+      "sha256": "83625c1986249b19976201f06d15f930c28962fa0e806c2ddb5c151d10f1f904",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__en",
+      "sha": "a6a4aadc8a613114a8fcb413788c85ccf3b81807",
+      "logicalKey": "creator-m4-l2-mobile-shooting__en",
+      "path": "docs/production/receipts/ai/creator-m4-l2-mobile-shooting__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l2-mobile-shooting__en/finalization-receipt.json",
+      "blob_sha": "4bc55b9690801d94e36419552f4d2c773fd2a3eb",
+      "sha256": "f49bc6c94f773ffc20ad952cde08f859e48fca77330bdc101a6b1a2ac4524825",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__ar-Gulf",
+      "sha": "2ccfa1e96b73ac46a00f2bceca08605ac7c3a083",
+      "logicalKey": "creator-m4-l3-ai-writing__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m4-l3-ai-writing__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l3-ai-writing__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "dff9092626cbd51e0bd57d3fe0a9c4e37dae29af",
+      "sha256": "9b350b979e461e8e42c0b6b5f88c5ed043620085aeed18f080e01ca9646ea265",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__ar-MSA",
+      "sha": "859861ece0feb96f8df50841cbebf6529c01e791",
+      "logicalKey": "creator-m4-l3-ai-writing__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m4-l3-ai-writing__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l3-ai-writing__ar-MSA/finalization-receipt.json",
+      "blob_sha": "175f32b2409539df2de7785e321e61ad1fb4dd88",
+      "sha256": "fdc851cec975f98c43f15ceffbe0e825ca27d3062c724cffa4c6672c3aa5b33f",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__en",
+      "sha": "7eb7f8d8bbc3adc62c1ea214a506887e9012fc2d",
+      "logicalKey": "creator-m4-l3-ai-writing__en",
+      "path": "docs/production/receipts/ai/creator-m4-l3-ai-writing__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-l3-ai-writing__en/finalization-receipt.json",
+      "blob_sha": "9fd23eefe5e040b2a7cbaeaa628407c08d4ccf7f",
+      "sha256": "d273b9caf30dacde282c087272d8eb95637617d180b4267e004f58a8915f3734",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__ar-Gulf",
+      "sha": "397a649ad5a697d8f993485ee91c8cc009c9df1b",
+      "logicalKey": "creator-m4-repurposing__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m4-repurposing__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-repurposing__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "9653f96148c62ae2be8d0cba5f4f27bb0e1141da",
+      "sha256": "20cb3d8622b283b6242c0797c634c67b22e3951888bc613c86ca5530ded467bf",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__ar-MSA",
+      "sha": "1e370279d216b82787ef695c91fbfd57faeeba3c",
+      "logicalKey": "creator-m4-repurposing__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m4-repurposing__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-repurposing__ar-MSA/finalization-receipt.json",
+      "blob_sha": "1883baa2594162d5503b7324aab1154595ef41d6",
+      "sha256": "86c056cf6c311c914341b9cbdcb74dce57ad31da9d086948c91deb28d3ab8655",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__en",
+      "sha": "a31e91a4d89e2b1f45cf8e4154a439fdbe293ef7",
+      "logicalKey": "creator-m4-repurposing__en",
+      "path": "docs/production/receipts/ai/creator-m4-repurposing__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m4-repurposing__en/finalization-receipt.json",
+      "blob_sha": "1a489239d78946b79b134d359444d99f28639348",
+      "sha256": "a063d80e17c0d31efcf3023b01cd53c44ee0901bd735c4b258ba938be536eca9",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__ar-Gulf",
+      "sha": "df8e394fbc7ace701a6824d3df1e2c9916ce5a1c",
+      "logicalKey": "creator-m5-l1-editing__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m5-l1-editing__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l1-editing__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "6bcd1bf7a489546dfdd1c102b9cb6928b16ce28c",
+      "sha256": "9f774e5bd114fb98689328d4a9d6e4d84ad4c23cb819a691652e066b5ba25eb0",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__ar-MSA",
+      "sha": "94671dbdf9e26def4da2ce74ec7c3ab6069c4178",
+      "logicalKey": "creator-m5-l1-editing__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m5-l1-editing__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l1-editing__ar-MSA/finalization-receipt.json",
+      "blob_sha": "3efd2e8cc6a8ad0f2efee9cada2dda46da695d65",
+      "sha256": "3443f08f9967def65815f5323f4fc7e2f9d01251ea989f6764e25cba1e1b2419",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__en",
+      "sha": "9e1b5a6b2b8282b7d02077925e47acdc4485de7f",
+      "logicalKey": "creator-m5-l1-editing__en",
+      "path": "docs/production/receipts/ai/creator-m5-l1-editing__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l1-editing__en/finalization-receipt.json",
+      "blob_sha": "f6df79dd56920ae802b41069f7da5851a02ce027",
+      "sha256": "6a54b9e16416cdee31fcae97d83d0001c1ccc54c34410bebfcaf7061e16d985d",
+      "bytes": 762
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__ar-Gulf",
+      "sha": "1da0048146eb8fe7c8d06dc58e7257e093528a28",
+      "logicalKey": "creator-m5-l2-thumbnails-captions__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m5-l2-thumbnails-captions__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l2-thumbnails-captions__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "54fae861de81c3a514b565cc1c213f31c7e9e751",
+      "sha256": "f387bb20135caebbab1b3bd1d1214914018bc34bc932db919afb0206d268ef28",
+      "bytes": 796
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__ar-MSA",
+      "sha": "238ebd65a5ebdd7fbed98abd08a97b8d4699bd21",
+      "logicalKey": "creator-m5-l2-thumbnails-captions__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m5-l2-thumbnails-captions__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l2-thumbnails-captions__ar-MSA/finalization-receipt.json",
+      "blob_sha": "7eb619b82dddd0152d4bcc632d6bf30ea59a8e8a",
+      "sha256": "0bdb2fc52751e1985a24d3961785012d5fa5f025427cf68de6b640068b2856a9",
+      "bytes": 794
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__en",
+      "sha": "e7da775cdf88af90aaa01092953f7dd438f3610c",
+      "logicalKey": "creator-m5-l2-thumbnails-captions__en",
+      "path": "docs/production/receipts/ai/creator-m5-l2-thumbnails-captions__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m5-l2-thumbnails-captions__en/finalization-receipt.json",
+      "blob_sha": "73a561075fc502f5c5920dda29c49e6957818443",
+      "sha256": "7366c372cb3f6d370c765fffd5651e604efe55872270e6c8348d46b38a063459",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__ar-Gulf",
+      "sha": "629bacfcdc652574e70c56c68cbfaaab5c7d60cd",
+      "logicalKey": "creator-m6-l1-platforms__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m6-l1-platforms__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l1-platforms__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "2ab0789afd708afbec7baf5164af85dbb8265754",
+      "sha256": "1e309a87bc7bb79327790c0db78f584632d4aa7b86876ae6765954cc6e9c9b47",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__ar-MSA",
+      "sha": "56c0addf9e6cd5b2f53b28325fabeac9d1bbcf12",
+      "logicalKey": "creator-m6-l1-platforms__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m6-l1-platforms__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l1-platforms__ar-MSA/finalization-receipt.json",
+      "blob_sha": "f9ebbb5289b1b58d3d3f46304c5afd08017bb0c1",
+      "sha256": "7b685bebc1ae58e03bafb53c8ea76625f76e43d7961d0bf7bcaa8346c92d603d",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__en",
+      "sha": "7e62aef2be3083e5e965cec4ab189949af974efc",
+      "logicalKey": "creator-m6-l1-platforms__en",
+      "path": "docs/production/receipts/ai/creator-m6-l1-platforms__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l1-platforms__en/finalization-receipt.json",
+      "blob_sha": "8bba880ba9c962ca391de5378edf0db97eb0903f",
+      "sha256": "032d66399bd5f450c411966e133ac6de25d38b51ffd6304262f3f06745788ef1",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__ar-Gulf",
+      "sha": "089a7456998c77faea42329f205d418ffa1fe597",
+      "logicalKey": "creator-m6-l2-scheduling__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m6-l2-scheduling__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l2-scheduling__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "cf6e33487d601448b80bc05808ceff56fad4ab3e",
+      "sha256": "c3db305d41c16317f38fece9cd43c57df899c79597c736d4ca6305370e6191c3",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__ar-MSA",
+      "sha": "170498d8b0a9d7ed337d1d878eeca8383b35516e",
+      "logicalKey": "creator-m6-l2-scheduling__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m6-l2-scheduling__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l2-scheduling__ar-MSA/finalization-receipt.json",
+      "blob_sha": "5d609634546c1760f66bda28cf0ff0e4ea17fbd7",
+      "sha256": "3c52130beabd519e835305741568b9d2698b56da499b964edbdacebac198c504",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__en",
+      "sha": "1415003f78ac63ade175a6872ba83ae9a515ffc1",
+      "logicalKey": "creator-m6-l2-scheduling__en",
+      "path": "docs/production/receipts/ai/creator-m6-l2-scheduling__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l2-scheduling__en/finalization-receipt.json",
+      "blob_sha": "d4f23979aeb56ff3398898eef9b17483e53514c9",
+      "sha256": "1087d5cea215cd2834d3df97294c950b05f32c5fce0719c49a5b24fdb8668d09",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__ar-Gulf",
+      "sha": "31b66705c388cdc83c62bd250f1da4c95b619164",
+      "logicalKey": "creator-m6-l3-analytics__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m6-l3-analytics__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l3-analytics__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "4aaf8ff3fb8514fc971d53bd1df0f7c4193cebbf",
+      "sha256": "f138f5cdab66914d5f36e4f1488f78319e690e4b5be9ba28ee390eff49c3b121",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__ar-MSA",
+      "sha": "da7a3f4473a194d8389194b80ce0f1bfae0d460e",
+      "logicalKey": "creator-m6-l3-analytics__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m6-l3-analytics__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l3-analytics__ar-MSA/finalization-receipt.json",
+      "blob_sha": "6ae467b57e55afc7bd06667800ca65b2eccf65b6",
+      "sha256": "fe6df2725379144ea811af1766100556a30be92b36b076aaeefa8b34d84146a4",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__en",
+      "sha": "7ce9ff0ec0ad9c48a2e81ad0dd04fce3c1192f48",
+      "logicalKey": "creator-m6-l3-analytics__en",
+      "path": "docs/production/receipts/ai/creator-m6-l3-analytics__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l3-analytics__en/finalization-receipt.json",
+      "blob_sha": "9a003ba0f3aa06c4dc0b6d4fddd00d0c9661deb3",
+      "sha256": "ca497c58cff6f26742be954dbe2e1348558398d6544ee8fc54ac0bb55e8ac4e2",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__ar-Gulf",
+      "sha": "f9dbbf1fc9dcf847b927380bf517d6a8c3d51271",
+      "logicalKey": "creator-m6-l4-leads__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m6-l4-leads__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l4-leads__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d10e64339cf6064c7e75f602925dd84b4c4d399a",
+      "sha256": "e3444b1a42465b0c942d97fdc7d249a0dd817a5195e53e993cc9963509b1f635",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__ar-MSA",
+      "sha": "4bb4973f5d4f790596e913c1a78bf2df5308c8b6",
+      "logicalKey": "creator-m6-l4-leads__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m6-l4-leads__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l4-leads__ar-MSA/finalization-receipt.json",
+      "blob_sha": "3e03b766709d72a4b869e9fece851a240d912f7e",
+      "sha256": "2fa04dd2f9759756c4b940e5bc8cf6a7f158d17ffd77c07e4be22c58cffc2622",
+      "bytes": 766
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__en",
+      "sha": "02610be60bf3beab0cfb4f55135dc2cc84cc4e23",
+      "logicalKey": "creator-m6-l4-leads__en",
+      "path": "docs/production/receipts/ai/creator-m6-l4-leads__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m6-l4-leads__en/finalization-receipt.json",
+      "blob_sha": "0bffe8fc007d9d18ef580bbcf01f31dd876170e6",
+      "sha256": "92e95912425348f3fffa50bf6350e2b83733952d7ed1e941f1b97e2eef593626",
+      "bytes": 758
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__ar-Gulf",
+      "sha": "e5be35e89386756c047385eee2518fae169a660a",
+      "logicalKey": "creator-m7-l1-brand-basics__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m7-l1-brand-basics__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l1-brand-basics__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "e8c39927f29b0f5c3a568f3c236b721822a023f2",
+      "sha256": "06fbc0330b2712b2e200785233be6e3c79c05337629a968736bccfbf0ebe83e3",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__ar-MSA",
+      "sha": "7e5d1434015d789401ab4c41013ab81ddf27f558",
+      "logicalKey": "creator-m7-l1-brand-basics__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m7-l1-brand-basics__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l1-brand-basics__ar-MSA/finalization-receipt.json",
+      "blob_sha": "7ac7c290c499070d45a519fc462adfc414ae21c5",
+      "sha256": "f2003ae77debfd50a1a8ed79f2a0c8fb07badc04cf41ca93d87086c59f953b24",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__en",
+      "sha": "29b87fd78f28633f36bd702a225d3d7fc2f58624",
+      "logicalKey": "creator-m7-l1-brand-basics__en",
+      "path": "docs/production/receipts/ai/creator-m7-l1-brand-basics__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l1-brand-basics__en/finalization-receipt.json",
+      "blob_sha": "5d60aac11be7d245e7368d202a5714f43ed58e5a",
+      "sha256": "07dc3d7c389b1cc504416cb5d9753796b4950b151d9a76a9c70c80fdfc4c7148",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__ar-Gulf",
+      "sha": "9e08ed721915a888e0c7738d77da75463f070ecd",
+      "logicalKey": "creator-m7-l2-grid-consistency__ar-Gulf",
+      "path": "docs/production/receipts/ai/creator-m7-l2-grid-consistency__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l2-grid-consistency__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d4074ec43ba25faf7dcc92a957e6507b1c05a155",
+      "sha256": "2f818aa0e5f2fcd8ecbef2d6f5c3bc943ee073549c36f766e0f7e197cab6cd25",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__ar-MSA",
+      "sha": "ff11ffd503bdc9266e219dfab9630541424518f3",
+      "logicalKey": "creator-m7-l2-grid-consistency__ar-MSA",
+      "path": "docs/production/receipts/ai/creator-m7-l2-grid-consistency__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l2-grid-consistency__ar-MSA/finalization-receipt.json",
+      "blob_sha": "10d288575fc451e4558d9895333dbbed42cfee42",
+      "sha256": "f2e67564890649f78310350ce5c0b7565cacb6d84901f7de43c6737a3fbf0539",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__en",
+      "sha": "c2619a0616861e2a69e1f1274c78f6b3daa89603",
+      "logicalKey": "creator-m7-l2-grid-consistency__en",
+      "path": "docs/production/receipts/ai/creator-m7-l2-grid-consistency__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/creator-m7-l2-grid-consistency__en/finalization-receipt.json",
+      "blob_sha": "dbec0eb0a19004a59e1796cba215961c743301c4",
+      "sha256": "006aec3722124ea486e23e6c51ce5740f34e452e09bc32a471ac6ea8baf49792",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__ar-Gulf",
+      "sha": "49d30593fa824906d7e63f7357bc06ee0e166b1a",
+      "logicalKey": "intro-m1-l1-what-is-ai__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l1-what-is-ai__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l1-what-is-ai__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "d78d5a2fa8c8e5fdf7873f26d14256e5fc6e916e",
+      "sha256": "bbc7c9912b02c3395237f006e413791f71f88c63202515cd107f3af9bf52a029",
+      "bytes": 774
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__ar-MSA",
+      "sha": "8634bf1fbbbfc0844b4f5f1b5a011668ff248576",
+      "logicalKey": "intro-m1-l1-what-is-ai__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l1-what-is-ai__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l1-what-is-ai__ar-MSA/finalization-receipt.json",
+      "blob_sha": "e31b1ddc466ab051445bc1b362328d466a158942",
+      "sha256": "15f234b60ab0f762d059397aa4c9da444584ec216603863ca71efd05d336b9f6",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__en",
+      "sha": "fc2a8c25467d0cf84f0cc21a66e15b0eb7804aa9",
+      "logicalKey": "intro-m1-l1-what-is-ai__en",
+      "path": "docs/production/receipts/ai/intro-m1-l1-what-is-ai__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l1-what-is-ai__en/finalization-receipt.json",
+      "blob_sha": "32dfb20a66999df23a121fb99cfb232c3cc76729",
+      "sha256": "6c4bed278cdbc4b05742dc1e4449588bdb3b650bcd659efcb80802d23f330f47",
+      "bytes": 764
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__ar-Gulf",
+      "sha": "290351ffa3b99d375a15f55311eb54edada4bd03",
+      "logicalKey": "intro-m1-l2-first-prompt__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l2-first-prompt__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l2-first-prompt__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "a064582af9cabef58a5221c75efd077a4c594bf3",
+      "sha256": "66dbac8615ac3522f726ee3c2e57e552d99087bfce07694e09eb1ddd79e7fc8a",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__ar-MSA",
+      "sha": "b0efebd9dabc71a190e00e0390bd2ce6a7801803",
+      "logicalKey": "intro-m1-l2-first-prompt__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l2-first-prompt__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l2-first-prompt__ar-MSA/finalization-receipt.json",
+      "blob_sha": "af4aba081ec433c0c0c6c89ae329c864f49016cf",
+      "sha256": "2e72d80eaf38f74de2ace3b61b159d56516a1c7e234cce1c0fa75a0d47f628ee",
+      "bytes": 776
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__en",
+      "sha": "d9309856b2b20988518f412ed4398834e5864d2f",
+      "logicalKey": "intro-m1-l2-first-prompt__en",
+      "path": "docs/production/receipts/ai/intro-m1-l2-first-prompt__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l2-first-prompt__en/finalization-receipt.json",
+      "blob_sha": "cc7a153c8f52a347ae7f04813c43e1dc7cab388c",
+      "sha256": "a6db1ecef880cc0e06faf9879a61d64f7f95cee53ebae75046ae9382b6c7db83",
+      "bytes": 768
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__ar-Gulf",
+      "sha": "05833831916274788d756e04dfc23f399508588a",
+      "logicalKey": "intro-m1-l3-setup-your-ai__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l3-setup-your-ai__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l3-setup-your-ai__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "3e457065af7d3165e7e26337337ab5a2303f420f",
+      "sha256": "e6aac9e20062cc68f87b33e655703ca54cc347a685b311449c35a7b815755e3b",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__ar-MSA",
+      "sha": "fbcb6cc66e0b1222759ce4a75d2480e3dc64ca61",
+      "logicalKey": "intro-m1-l3-setup-your-ai__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l3-setup-your-ai__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l3-setup-your-ai__ar-MSA/finalization-receipt.json",
+      "blob_sha": "fd37888fbba02bb15e1f1dc95db4cb59abb6bf06",
+      "sha256": "6da0345c4caa4e811a28ff96fdf4bc16141981313bb76e241ddcd55018651e6a",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__en",
+      "sha": "c5ddf0756357758be539dc769bccebafed0aab32",
+      "logicalKey": "intro-m1-l3-setup-your-ai__en",
+      "path": "docs/production/receipts/ai/intro-m1-l3-setup-your-ai__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l3-setup-your-ai__en/finalization-receipt.json",
+      "blob_sha": "025a2ca1824505c4d412ba429144dff9d6d657a5",
+      "sha256": "2179b3180712c13209088abe2514f31a7ad47ed9c0429a896a9779bcd66ff197",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "sha": "77a10d4728ba9c894f397c7007e8bdbf63a52a7b",
+      "logicalKey": "intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l4-ai-can-cannot__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l4-ai-can-cannot__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "84b58a347dadf89e04ce9c4de9838bb1af7cd1d3",
+      "sha256": "54361e267c560f9c4f8672134d7c8395374bc7397886e2aa1f09145f758e2d06",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__ar-MSA",
+      "sha": "c2d6217776505bd267ff41e338c7288afcdc019d",
+      "logicalKey": "intro-m1-l4-ai-can-cannot__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l4-ai-can-cannot__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l4-ai-can-cannot__ar-MSA/finalization-receipt.json",
+      "blob_sha": "f2c36449fbd48c8f7e17a655cbb9faa2228b747f",
+      "sha256": "a3667480289fc312ea4bf9f28d4d421854758d95749d199714690d791692f5ec",
+      "bytes": 778
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__en",
+      "sha": "b6abf91e2e4f8f9dacff410d911db75d5c0d52f5",
+      "logicalKey": "intro-m1-l4-ai-can-cannot__en",
+      "path": "docs/production/receipts/ai/intro-m1-l4-ai-can-cannot__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l4-ai-can-cannot__en/finalization-receipt.json",
+      "blob_sha": "62a098c23ea335e3e994756017b2441993216cb9",
+      "sha256": "35f1e1b45ec40924b7538925cee25a54d65f9f5e4499ccd5ecc6606f89dc9081",
+      "bytes": 770
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__ar-Gulf",
+      "sha": "b727b8ec80645bbfbb99168daba59b3b947daed6",
+      "logicalKey": "intro-m1-l5-ai-vs-software__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l5-ai-vs-software__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l5-ai-vs-software__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "de183528e13e380bd5c5842267aad3c0b4dfdcb7",
+      "sha256": "d45d3c07606e94931d461b0afe7d48a0d7276d11079b21b7f5432ec4859c94e6",
+      "bytes": 782
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__ar-MSA",
+      "sha": "45be07767a446990a525cbfde852cf44df0ba66f",
+      "logicalKey": "intro-m1-l5-ai-vs-software__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l5-ai-vs-software__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l5-ai-vs-software__ar-MSA/finalization-receipt.json",
+      "blob_sha": "c260e8011b6ead3a1418df66600f7cd343a0fd3c",
+      "sha256": "ab66e52d0e232efc8d1db734d293f971a1ed94bbe4708aa579d118b1bd5126d2",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__en",
+      "sha": "d6b68cd2eb14767803be36d9b23e9871ca0be6e9",
+      "logicalKey": "intro-m1-l5-ai-vs-software__en",
+      "path": "docs/production/receipts/ai/intro-m1-l5-ai-vs-software__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l5-ai-vs-software__en/finalization-receipt.json",
+      "blob_sha": "ce0ab4f5949ba5a72ff00262569776e5ce8fdf24",
+      "sha256": "81a6433cac8f95ad78fff039c7779986bebe5a7bdf5f5a123ea0d2e00736e591",
+      "bytes": 772
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__ar-Gulf",
+      "sha": "c638e9672ce55bf401b15fa0ad47572e791f444a",
+      "logicalKey": "intro-m1-l6-learn-without-fear__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l6-learn-without-fear__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l6-learn-without-fear__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "346024ef37e22439c5e4a9c739f5bcca2982de22",
+      "sha256": "fe14fa6e841ed7335ab7b47755c03c5805eb1e29146f6deaf93df2f99999feef",
+      "bytes": 790
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__ar-MSA",
+      "sha": "058053b044c11e63d1f86aa5c20471d0aff20088",
+      "logicalKey": "intro-m1-l6-learn-without-fear__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l6-learn-without-fear__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l6-learn-without-fear__ar-MSA/finalization-receipt.json",
+      "blob_sha": "9f552b68cb2c277185bbc016a4863c02486bc6b5",
+      "sha256": "d86c45160d7832ce06bdf9d9486ecf69b4465787bf00ef3115ff9a11c4d5a6f8",
+      "bytes": 788
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__en",
+      "sha": "0f388cc5eb82474e35133bb2a118d9c4a1df1657",
+      "logicalKey": "intro-m1-l6-learn-without-fear__en",
+      "path": "docs/production/receipts/ai/intro-m1-l6-learn-without-fear__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l6-learn-without-fear__en/finalization-receipt.json",
+      "blob_sha": "b5793da2eeb271ccb9f149f0f8efff64158c8c60",
+      "sha256": "f7e68dde50dc58d1b9d610dd36891340f3e7a85a7236c4776699ef89dbbb1076",
+      "bytes": 780
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__ar-Gulf",
+      "sha": "5d83e6f0dcc635122dbc676648a27909fde094a2",
+      "logicalKey": "intro-m1-l7-choose-your-path__ar-Gulf",
+      "path": "docs/production/receipts/ai/intro-m1-l7-choose-your-path__ar-Gulf/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l7-choose-your-path__ar-Gulf/finalization-receipt.json",
+      "blob_sha": "627fcb76000ab8b45fce01573daaa5992a20cfab",
+      "sha256": "f0a138ff62dd797baa41949b0103d366feeadd5dfb1d6d198bcf9d1917692f5e",
+      "bytes": 786
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__ar-MSA",
+      "sha": "873948f0cec7d92a86fa2ad2fa66f04eed806b40",
+      "logicalKey": "intro-m1-l7-choose-your-path__ar-MSA",
+      "path": "docs/production/receipts/ai/intro-m1-l7-choose-your-path__ar-MSA/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l7-choose-your-path__ar-MSA/finalization-receipt.json",
+      "blob_sha": "a7f67905fe92f5155161f28630a34bc9469636da",
+      "sha256": "dcc17e5bf4b98144e0086fbd453574ef1ce475b67c0ab5cdcecc23b9944615f0",
+      "bytes": 784
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__en",
+      "sha": "e714b7bf8b765f42cc04e626ac0a069e9c223866",
+      "logicalKey": "intro-m1-l7-choose-your-path__en",
+      "path": "docs/production/receipts/ai/intro-m1-l7-choose-your-path__en/finalization-receipt.json",
+      "original_path": "remotion/video-pipeline/results/video-full-300-localized-v1/intro-m1-l7-choose-your-path__en/finalization-receipt.json",
+      "blob_sha": "9779de82d644d343cac696afacdbde055ac464dc",
+      "sha256": "9ccdc1df68082f4fc41b65d91cac9051b20772c1e71b8925b269aec9071295db",
+      "bytes": 776
+    }
+  ],
+  "scope": "Exact receipt bytes only; no Bunny reads, generation, uploads, mappings or app changes."
+}

@@ -1,0 +1,1266 @@
+{
+  "schema": 1,
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "baseline_main": "64ede9b73274481ae7b09f1178201b767ad21e6f",
+  "batch": "video-full-300-localized-v1",
+  "sources": [
+    {
+      "branch": "video-results",
+      "sha": "0056f23afe93c985b8269feeabc8d9e54c3dc733",
+      "tag": "archive/production/2026-10-10/video-results",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feat/video-production-pipeline",
+      "sha": "e1d6ff9d281468afee2399ccbcac9dbcdbdb33d9",
+      "tag": "archive/production/2026-10-10/feat/video-production-pipeline",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feat/video-production-final-v2",
+      "sha": "4865d864e3be4e270f8067985ca1ed9503b85be2",
+      "tag": "archive/production/2026-10-10/feat/video-production-final-v2",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feature/masaarat-kids-pilot",
+      "sha": "b783f1684f97ca030a142c03665f834eaf748b94",
+      "tag": "archive/production/2026-10-10/feature/masaarat-kids-pilot",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "feature/masaarat-kids-levels-2-3",
+      "sha": "d73026bb93393e74e47a9e29f4cc2d4f6865b6b0",
+      "tag": "archive/production/2026-10-10/feature/masaarat-kids-levels-2-3",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "experiment/furniture-pilot-20261003",
+      "sha": "87728437970170a0cb28bda536fddcaf6c1340ee",
+      "tag": "archive/production/2026-10-10/experiment/furniture-pilot-20261003",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "experiment/technical-remaining-75-20261004",
+      "sha": "6b7a22270c923186aa9c44210ffcf56935257ce0",
+      "tag": "archive/production/2026-10-10/experiment/technical-remaining-75-20261004",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "checkpoint/technical-education-pause-20261004",
+      "sha": "64f9583d9f0a0bb9bc96b9f94c729c4dd304cc31",
+      "tag": "archive/production/2026-10-10/checkpoint/technical-education-pause-20261004",
+      "delete_after_archive": true
+    },
+    {
+      "branch": "work/masaarat-academic-20261005",
+      "sha": "08a56ccb35596632476fec7ebc6f0436c13baaf9",
+      "tag": "archive/production/2026-10-10/work/masaarat-academic-20261005",
+      "delete_after_archive": false
+    }
+  ],
+  "receipts": [
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__ar-Gulf",
+      "sha": "ee1485f701b337458cfa6785560266f0488abb8e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__ar-MSA",
+      "sha": "dfa0cbcd7134fd70abb9fccef7fb56d05231e79b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m1-l1-from-automation-to-insight__en",
+      "sha": "fa078acd899918c96f7a1fd9b54bed6811ea39ad"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__ar-Gulf",
+      "sha": "fcabddc6fd5fb8648141c8204b9ed7470a4851d8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__ar-MSA",
+      "sha": "9d19571bc44094b9ff660f33c131db33644f808f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l1-feeling-to-question__en",
+      "sha": "dcfb31a45a5e5fed79e35f8b77cf29d27c27604b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__ar-Gulf",
+      "sha": "533657fe58d4b047736ca8fd99e6a66d86c0ade0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__ar-MSA",
+      "sha": "1285c9d43579f1c479bdd918e1b709da787a1b57"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m2-l2-right-question-rule__en",
+      "sha": "744b76cd61cfa48ab64e2b3c79466759a0e42b21"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__ar-Gulf",
+      "sha": "6207ac00daa841aa3526ee7003c8381396adc730"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__ar-MSA",
+      "sha": "0751ec2a9c363ee24aa814c6c993fcce472c1c5c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l1-three-sources__en",
+      "sha": "5bfbc92cff37bf7e7ceb0cdda9a47ebe235ece0c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__ar-Gulf",
+      "sha": "a7c45ddedf15579e39f71bf52789fcd867fd7c18"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__ar-MSA",
+      "sha": "fbb44c54e34c0c66e3d9a972b251ed49662e27d3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en",
+      "sha": "31697984017897e7dd03d73ba55e636030acff6c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__ar-Gulf",
+      "sha": "36ce49bb5c2f11e410f7948fe9e91e007e7324de"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__ar-MSA",
+      "sha": "527a96e50044b457c8fddb4269123db8582b55ce"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-automated-dashboard__en",
+      "sha": "a47b23e8650d1d970c85018b1e2fbf77613da473"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__ar-Gulf",
+      "sha": "20a969c683ed52ea935bdbc305d7e0fdece6a17e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__ar-MSA",
+      "sha": "80dc48e724c0b02c2b1d918d831024e0b89e523d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l1-pattern-vs-outlier__en",
+      "sha": "6aba647a78e6b9dcd2810cd70d65b55940f8e264"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__ar-Gulf",
+      "sha": "a5c6131d16676ad2265cc66e636dfd943391e9fe"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__ar-MSA",
+      "sha": "09192b42bf3dd5aee5da4efa3282b25ef5400d39"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m4-l2-decision-rule__en",
+      "sha": "bfbf0735dda7fd764decf2d0260cae0a6976ba46"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__ar-Gulf",
+      "sha": "6ea4d8a906fffb94131f57e7268e3272a59cb37b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__ar-MSA",
+      "sha": "b6db19e97a8542dd6d18bf05b452ab2a652a5012"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-ab-testing__en",
+      "sha": "4db9d3fa6a9bd61e5958bcf8d1fb1032e0f90c0c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__ar-Gulf",
+      "sha": "e2d5aab5502c00cdc5f966df60baca45848d88c4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__ar-MSA",
+      "sha": "4c5ef66909a5b9248f7f9b0dc745b293b206b168"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l1-four-numbers-dashboard__en",
+      "sha": "c76eeb447d482399f9e223dc3c2b8ab7c656111d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__ar-Gulf",
+      "sha": "146649ca49e7e1a2fe832f91547377ccb7854a2a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__ar-MSA",
+      "sha": "bb006015b537fdd2508a4e5ca7e339a2989d84d6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m5-l2-weekly-review-ritual__en",
+      "sha": "d3679473613ec87bc7607ec8e60381234d15b257"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__ar-Gulf",
+      "sha": "45df2d1b558c4336aca3f2a4d9694dc9d62f6ffb"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__ar-MSA",
+      "sha": "eec3dc6df85168fa53ab8a9d3ee715c6153538ae"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l1-question-mistakes__en",
+      "sha": "c9e10997e3e733b897096fe02dca67fe89a7fa85"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__ar-Gulf",
+      "sha": "04cc057aa88fcb0c06ae9911d797a9b661dd1b07"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__ar-MSA",
+      "sha": "a478b1fb65720f5e440be68d2c55da65f15d3dfa"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m6-l2-interpretation-mistakes__en",
+      "sha": "50ad3c399e3075668fac5e7b8b4e9ae50574c6bb"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__ar-Gulf",
+      "sha": "bdff67455bfc1ab4dcb6093a63fd6abd8ef47aef"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__ar-MSA",
+      "sha": "a134e13f1e023b09a65f675890a5321a47dfb425"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--analyst-m7-l1-from-decisions-to-business__en",
+      "sha": "adf7e348908d35599b45f1148583d70c6152cb87"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__ar-Gulf",
+      "sha": "00510e442c4adab762423d744a13441a375e7caf"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__ar-MSA",
+      "sha": "e27576514fd3ccc03870b01a03b7f28444da16cb"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m1-l1-where-you-are__en",
+      "sha": "f6519a0dec956656b042eefe64b2e83f0d0cdfc7"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__ar-Gulf",
+      "sha": "308104ce415c05b1fa1a9016c5b20e365e68f09a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__ar-MSA",
+      "sha": "676c954afab509d0a376b7cdc7f8e9a6bbee599e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l1-systems-view__en",
+      "sha": "b88a48b8e6a5c32c2b9585ef7d461b13606460a8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__ar-Gulf",
+      "sha": "c62d011efe8cd286a651ace4bfcf4d798592a0ea"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__ar-MSA",
+      "sha": "6580f4a43660dd172a22de789389002e5d72e099"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l2-spot-patterns__en",
+      "sha": "65cef9c354c752a98000f0189cfb47150049bcb8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__ar-Gulf",
+      "sha": "bfd631f6085be607307f0981c3c269e68c208a75"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__ar-MSA",
+      "sha": "c4b77ad057fd8e728115744581b57721758bc431"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m2-l3-decide-what-to-automate__en",
+      "sha": "ddb27ab11d4faedc33cb3dbeeeb48524891936f5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__ar-Gulf",
+      "sha": "97987500d4c722669bbd14de625d3bf4364fdb90"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__ar-MSA",
+      "sha": "587f62afc3ea1c47f41a6c0fbffd8d053b4b4083"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l1-tools-landscape__en",
+      "sha": "0efe9cbe38cf14724a5b87b423398a59fe3dea2e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__ar-Gulf",
+      "sha": "0cb7127679614c244e2aa316e94c46e8637a5c86"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__ar-MSA",
+      "sha": "488829031b7847e49f6db9972cf7c39e9328ff97"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l2-triggers-actions__en",
+      "sha": "e5a909813665a7f6c5892607318ecec3a42b48a5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__ar-Gulf",
+      "sha": "132845cb3a457d3bd9e4e5e38b0a2fa2bf7baa92"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__ar-MSA",
+      "sha": "dfffbfd3129409a94d8fbf8f5a9fdc93aa070fe5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-l3-filters-routers__en",
+      "sha": "13fab8decb60ca7fa1a93dc137c3816da074dba6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__ar-Gulf",
+      "sha": "0d01053ecd54642d5a5f5a513eda34e22101c796"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__ar-MSA",
+      "sha": "79daf457592603b35abbfc1de82bdab3ae13ad9f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m3-testing-automation__en",
+      "sha": "ea4c4854c604354958d779349a7649d5f498a4ea"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__ar-Gulf",
+      "sha": "e61da21966f20b5c9b8308490b6e9f589769c3ca"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__ar-MSA",
+      "sha": "555e66d3da89f9556a54c479ac424b475ed46cf7"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l1-connect-database__en",
+      "sha": "dba03b47e003e09b7134ac8a01f5b7fd8197a2bc"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__ar-Gulf",
+      "sha": "734f01c6a25241bb90f4e76fdcc8a79485d82cf9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__ar-MSA",
+      "sha": "1ccba1b5f46d8cc6dd5b9813a6d7618b9ea7093e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l2-webhooks-api__en",
+      "sha": "94d8609f7ec2ee3770867701724be7d3fde5b869"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__ar-Gulf",
+      "sha": "61bc16cbcf769dca4b31c3497abcc1a298f6233d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__ar-MSA",
+      "sha": "2dc4b06853675d1cc8de204bfe3398e6ea0206ca"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m4-l3-error-handling__en",
+      "sha": "bee5ed5dcbd8ac292b1e05194388b8424353fd59"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__ar-Gulf",
+      "sha": "9f053820e11142c71c943b585bfa33bbf0246572"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__ar-MSA",
+      "sha": "df49a459d2d500f813b94d145a716bc8f8d58eac"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l1-llm-in-flow__en",
+      "sha": "181975edec5bdeee5a47a1a845cad758a2d0b8cf"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__ar-Gulf",
+      "sha": "04991f822a994e16d34694114dc1a84a587f3b68"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__ar-MSA",
+      "sha": "b36031a556a07106e2f396cb9bace28a88246c0c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l2-rag-in-n8n__en",
+      "sha": "7501616047c36235e200aa05c9cf44774fe169c5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__ar-Gulf",
+      "sha": "cdf41c6896b037692130eb75fc9cd9a5833940c4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__ar-MSA",
+      "sha": "6d4bc3c26db637bd6d01c50600cc3bbc128855f4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m5-l3-agents__en",
+      "sha": "59fc7826e4923f64839fe50b4273c87a4aaae7cb"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__ar-Gulf",
+      "sha": "6121449b26255d8e5476b079e83ca1936ffc55d3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__ar-MSA",
+      "sha": "ef125542e0a8700c68199dae7c926eba619ce3a5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l1-lead-capture__en",
+      "sha": "6d59cdb4cb7dcd8da7c6c257505eaa780ffae909"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__ar-Gulf",
+      "sha": "33b20e90910ab9bc2fc2c65a67050939404b62b9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__ar-MSA",
+      "sha": "ee7d4b9f60a7fcb5b53fded5a13c442ab1f009e0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l2-whatsapp-flow__en",
+      "sha": "d3484e04cd5a8e9b211e338336764a8dd7b8b433"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__ar-Gulf",
+      "sha": "02b125329e9b1ba36242483e6d93acba0fd03c69"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__ar-MSA",
+      "sha": "09ec9475cd428f4aab163315a44321cdf1b19294"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m6-l3-follow-up__en",
+      "sha": "06b2d012c9eca4cfcde95bc32cab996ca421f993"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__ar-Gulf",
+      "sha": "56f09bfc1f5e67f6092e6b0648540b708da723c0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__ar-MSA",
+      "sha": "4518a5357b48d6b3c80d104b9bed37209ce767ee"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--automator-m7-l1-closing-loop__en",
+      "sha": "03fc89735a7a40ce9606b27d330617e60996a323"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__ar-Gulf",
+      "sha": "c86edfa118c09ff8b8f39c27ace2d3d4c7f7293b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__ar-MSA",
+      "sha": "09a958199764f028fd1c194542f3c4dda5425d20"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l1-what-is-llm__en",
+      "sha": "18aca3927446616ee25372e54e063377de79e254"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__ar-Gulf",
+      "sha": "556979f1cd6a049e4708a472a647c462bee5fff9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__ar-MSA",
+      "sha": "f2da2290f0ae0617ef80c19cba7e71fcc3d59874"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m1-l2-tokens-training__en",
+      "sha": "4e86491c47057e212c1a910e94b7d5e467591acd"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__ar-Gulf",
+      "sha": "76f3558f9b4a5c381174247a8e74b802b1bc3150"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__ar-MSA",
+      "sha": "396e99511664508ae2e32de62ccdda94cac99e08"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l1-prompt-layer__en",
+      "sha": "d5ddbd39de6c576e7771e261dd703d8465477b1d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__ar-Gulf",
+      "sha": "1b6b9625af8f0deb2a1e77ebda7f442e74b1b596"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__ar-MSA",
+      "sha": "f6a6ddbc46f77921950c3bfeb8d19f4e62b9b536"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l2-instructions-examples__en",
+      "sha": "8ec38d2e7a63017c174fad270a19da2100182df4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__ar-Gulf",
+      "sha": "4af8d351d3bc35a1c3097c562cf0fbcfe5e44792"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__ar-MSA",
+      "sha": "75a6cf294ff47a37079aff23a4dc62d3db04defa"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m2-l3-style-control__en",
+      "sha": "22b06b931d42bcb8917965c296de9e9054551975"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__ar-Gulf",
+      "sha": "5b7820f97729eed9572067a90c6cf05613093e0b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__ar-MSA",
+      "sha": "7298596579cc11f4f070dc371dfa5907537be45a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l1-context-layer__en",
+      "sha": "5f1dd70123a68a05e48f08a976c2f37d9c987a04"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__ar-Gulf",
+      "sha": "017f074fd6c2d478690f5a9aebdcc8a1c9cb6e5d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__ar-MSA",
+      "sha": "3be91007922c2ac70f5d24c8266f450579303947"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m3-l2-memory-limits__en",
+      "sha": "55f3b9ef6dceee022983629525ba608d767e587d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__ar-Gulf",
+      "sha": "119d23e110f974946b1214ffa47cf88364428d27"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__ar-MSA",
+      "sha": "ae5b9d283eb5cd8789808c02aa6f1f44e4f6fb70"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m4-l1-parameters__en",
+      "sha": "0e90deead88f154f1beded6ee08eb14a57b9d18b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__ar-Gulf",
+      "sha": "19c93e548f9502c0c52e97c5e2abdd962e2e63ff"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__ar-MSA",
+      "sha": "94df1bb472eb3b5c8fd9e069c87bc8823e48f843"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l1-transition__en",
+      "sha": "251f53cf6f6d83b7a238fbe17ba41f6a6614812f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__ar-Gulf",
+      "sha": "930c56d38b15238f21d4f6d15e2c3299684d9d80"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__ar-MSA",
+      "sha": "804aaf8d0b6c93fecd2be1c4a7559c2fd2b04963"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l2-frontend__en",
+      "sha": "1840ab3de0af82809515680b0bc20e942eb5c921"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__ar-Gulf",
+      "sha": "e553eba1c916d36e17b74fe94015f9f5a1881640"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__ar-MSA",
+      "sha": "72dd0657ac6825a37d15bf9eed9fc80c45b34a56"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l3-backend-api__en",
+      "sha": "6d402085ee5073162203a600f66a1509bb0543d9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__ar-Gulf",
+      "sha": "6ebe119ae9211d851276c251ba4bb5dd8b8998d3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__ar-MSA",
+      "sha": "dfd95b26ad516d9bbb2e8f9d950d14327923c5f1"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l4-database-intro__en",
+      "sha": "68dd8c3b0b98fa2cef72deef33494693360a2733"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__ar-Gulf",
+      "sha": "155836c7d81318fc4b349605460e19fec79eb0d0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__ar-MSA",
+      "sha": "e0381a246f5cc703efe8490ae07fb044ebc296f3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m5-l5-mini-win__en",
+      "sha": "b052084f9c74e23561afcaa89fbe3bad8412b728"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__ar-Gulf",
+      "sha": "23f990ecd9ea7ecb7bcb6f87481f83abfc99ee20"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__ar-MSA",
+      "sha": "839c34293531236a44b06c794b141353c148fc61"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l1-idea-to-page__en",
+      "sha": "1e3d12a242c02faa005fd1e00ef81085832b2de1"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__ar-Gulf",
+      "sha": "0e0ee9b9f8d12d470e14b86a169fc2bda47a18f6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__ar-MSA",
+      "sha": "919f191ee7d3956ded95ba2ecd76bb24922a2ca7"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l2-wireframe__en",
+      "sha": "948f440086a597f600780f1f6965afc93b66a019"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
+      "sha": "2a33ff9086c88641e7c80179ae3e9a2edc6a9386"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__ar-MSA",
+      "sha": "7697514d4f67cfb78d971e3e847aa9f4a9c3c95d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l3-first-prompt-to-lovable__en",
+      "sha": "09cc931bca849dc26f5771aba780efda107bf015"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__ar-Gulf",
+      "sha": "0163ed78bce84d8eb3cfefdcb8f333b1578bff5f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__ar-MSA",
+      "sha": "3d7bdbb290e23317b91a60f308f4bcc2da91ca68"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l4-components-routes__en",
+      "sha": "6b9d7f3c9bf3a9d2185fe361764a0f4dc9a3df25"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__ar-Gulf",
+      "sha": "a93548708f654f27248fc0ac5d80b19456dcfa9d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__ar-MSA",
+      "sha": "b0decbdc10164c17cc2080ff966def1a0c0312c5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l5-iteration__en",
+      "sha": "cb260e2ff3069ecc16b124ed31c1c30a13a92e4e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__ar-Gulf",
+      "sha": "22d93a14d0c4e6d148ddc68c6d4b8b72159989c8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__ar-MSA",
+      "sha": "da0428ebba9e72a0f900e7f40aed202d50d5d6e4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m6-l6-debugging__en",
+      "sha": "50a614860d72250d8ab480dd7ce8117a229a71a0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__ar-Gulf",
+      "sha": "ccd1f5e8f25d86e44b7f5e423eccee21e04a668a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__ar-MSA",
+      "sha": "4fb88a08e6691e884a2bb766c03fe24e44544ab6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l1-tables-columns__en",
+      "sha": "a8cc51e68c5ff9d47d7239628d293e00f59c6c9c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__ar-Gulf",
+      "sha": "b4049a112e66c10c2e3e8c22220f90c115c9124d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__ar-MSA",
+      "sha": "22a36dca7c938fef825949d20d956dd5aff3732d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l2-relations__en",
+      "sha": "df3d9fe9cb08fef87a6d755744380f3bb7e09125"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__ar-Gulf",
+      "sha": "ec2063c8e8bddb388ca308e59d9dbbc183d55df4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__ar-MSA",
+      "sha": "527f9384aa6803243ae71ebdfadc1222b1282c71"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m7-l3-queries__en",
+      "sha": "7d0e4ad665ba8501a06c7c0d708ab417190b99d8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__ar-Gulf",
+      "sha": "5a34b32ba160cdf06c77e0139b7b0fe4b709509a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__ar-MSA",
+      "sha": "b54a86d28ee729d7d00b9406efd4f4d178490b22"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l1-sessions-jwt__en",
+      "sha": "f40f548cab9b1910b47e411662db64c2e7079eb2"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__ar-Gulf",
+      "sha": "24ddad1039610b76fab26fd0b53aff1100ad5f57"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__ar-MSA",
+      "sha": "6f7bc5db1d15039df9afaa37b0a69255c8a06d88"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m8-l2-rls__en",
+      "sha": "f0a77bde7d43106652a0dc2ae6f6dc3b1c75dbfa"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__ar-Gulf",
+      "sha": "a2fd62848a4c3f68af17e3f31f561ebd7d5ad65e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__ar-MSA",
+      "sha": "3417ec351492937faeb1718bb08f6d6e9154d75e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l1-rag__en",
+      "sha": "6a249ec69e463c4e5fdfc04bfcfca5b1c576580d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__ar-Gulf",
+      "sha": "84c7d03bd6acce3108dcb75d27cef37b43e5b254"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__ar-MSA",
+      "sha": "69673f6a1bcbe8a1cc84160f3ecc523ca8a3ae42"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l2-embeddings__en",
+      "sha": "a438d85ab5981289e1c76e8094b542f39babd72c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__ar-Gulf",
+      "sha": "1c39a946cc64fd385a37c3f061ae4081b6c588af"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__ar-MSA",
+      "sha": "1e4ffc165f4ca34f2c5cc51d8ea3715eaf230501"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m9-l3-agents__en",
+      "sha": "e4c186f697d6e9da0fab9d70e82e00dded6eaa19"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__ar-Gulf",
+      "sha": "dcc79873bb38fb483752381bb5f18585da6a5a68"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__ar-MSA",
+      "sha": "4754da8b9e7040fa292e2a68229f85c1cacb33e4"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l1-deploy-domain__en",
+      "sha": "b872791bf43cd99548ea110320da2a9fab6076f6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__ar-Gulf",
+      "sha": "a0468fabff7c7bd6de81afa4a82b2ab578070da9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__ar-MSA",
+      "sha": "e0cf313a0a80082c1bcc3f4efc9bf97c7509126f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--builder-m10-l2-first-users__en",
+      "sha": "c6925fcc0e96355fc7c6309f19629eb405da8649"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__ar-Gulf",
+      "sha": "7b2c823990abebcc6dcdfaff631aa0fde9fd7268"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__ar-MSA",
+      "sha": "7d696e29207514debd67b579c5b4f11713485f49"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l1-from-decisions-to-leadership__en",
+      "sha": "0b8e2bd17e76b17a1c6e76deeed028fb0885fc9c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__ar-Gulf",
+      "sha": "dcd1c6e307dd650fccd5dfc645bc64d5f7e7ca9d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__ar-MSA",
+      "sha": "6e983cf509229d4397aab4814258483740fd22d2"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m1-l2-reactive-vs-proactive__en",
+      "sha": "a81d91daf45e3652b68a8183e7b431eb76908703"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__ar-Gulf",
+      "sha": "61c942c8df3dde7487d07ee75e72ab6e59b1928e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__ar-MSA",
+      "sha": "455f2b224526913790da0d2f60d0a3e09d51cf14"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l1-customer-lifecycle__en",
+      "sha": "b7e1a3a2c5d29fa8ee12f0e5be731b3b2aab4228"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__ar-Gulf",
+      "sha": "c764443907298e723d25518f79d09422115c7ee2"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__ar-MSA",
+      "sha": "5398dc9a884f8eaca85db53d31533a32b05dad3a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-build-your-offer__en",
+      "sha": "015cd7d2357feb826e851a8790b713b0014e15c8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__ar-Gulf",
+      "sha": "3f431c6ba91bce02ec3f53e18ab3f5e3fa42084a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__ar-MSA",
+      "sha": "f12289339f94e655101d3eb09bf51d0c04f91e4d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l2-retention-flow__en",
+      "sha": "cfe06d7f790eec617e8df8c8567aa8f62f95d8d8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__ar-Gulf",
+      "sha": "1cbff87358c8c6314c0134504c1f4bdadba767f0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__ar-MSA",
+      "sha": "a279fd0443783cb0140457e18cc1a490e224bb5b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m2-l3-readiness-signals__en",
+      "sha": "1d9147c31abb45cb51fcf5dad1eb918620b1b481"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__ar-Gulf",
+      "sha": "660c4b9db162116de9134e2593b5043e7224d515"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__ar-MSA",
+      "sha": "ff73e0d64e6c5ce0e9804e03a9b363b712db6c07"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l1-delegate-or-automate__en",
+      "sha": "225fdc29c95ec867b84daf4060a6cb0b3f1192b1"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__ar-Gulf",
+      "sha": "d7b7fe6573a2d40a0750bba7bf9586da6b03ff8a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__ar-MSA",
+      "sha": "fa045a4d3338d332f786e963666842a4f9dfdf80"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l2-strategic-operational-admin__en",
+      "sha": "ac902ab72d1e8711a5774e04e579c3e77c085685"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__ar-Gulf",
+      "sha": "cccc286e10e2f3eb6944c4ee26b3fc94ab547414"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__ar-MSA",
+      "sha": "2c495c8ac8ea11da88ad48a3ffc5d3d78b3fbce9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m3-l3-system-then-people__en",
+      "sha": "4ff1dfa82bae9ebc8956912664778e36ea39c0c6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__ar-Gulf",
+      "sha": "684a3f54da064901642e6f81ea3c86bd7165cf1f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__ar-MSA",
+      "sha": "b7230dc0fa770da137b7a16641033eba6eb42c98"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l1-premature-scaling__en",
+      "sha": "897641d168c46b08ded9c131dc7fcdacf152d5c2"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__ar-Gulf",
+      "sha": "da290b197109551b6db779e0679bda9707b2b67d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__ar-MSA",
+      "sha": "e06e92557ba9d341da3e7419336f358994ef9f0f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l2-reactive-relapse__en",
+      "sha": "df055f5c52f63501356c3201dc73e2f784e6a4d8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__ar-Gulf",
+      "sha": "7245c704608b577f2bea01b83c1e44361288a79f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__ar-MSA",
+      "sha": "7748896ac8b9c4f808eed567d34230650c14a4a6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l3-weekly-rhythm__en",
+      "sha": "37da725d94d487cdf508dc611802cdf99ff86145"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__ar-Gulf",
+      "sha": "09fd63322c699722b95338008c089eaa36d8311b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__ar-MSA",
+      "sha": "2a04e04e6ab59d14a8c52c08d6b6844f4b8540b3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--business-m4-l4-full-ecosystem__en",
+      "sha": "84a85557cf80184b40f63796262e50a84cba9350"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__ar-Gulf",
+      "sha": "3fd44eeed810f33d02da408d18779bb0525a7b38"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__ar-MSA",
+      "sha": "c39dc4ea25b72f55205b15e3ebf120d6a406633b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l1-why-content__en",
+      "sha": "3c9e71e67976e7120c7118216c7204dc7e544ae7"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__ar-Gulf",
+      "sha": "e3de152024217772798eb2290cb1b360203dbb50"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__ar-MSA",
+      "sha": "5bc8a57d5605b907fa8e4b7b837d4c8deb73718c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m1-l2-attention-economy__en",
+      "sha": "6d4a5a51ebbd76514eb8a7eb73d8d52f3bb9f211"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__ar-Gulf",
+      "sha": "c4433f921829d8878e01e03242e565fac9ced91a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__ar-MSA",
+      "sha": "954b025e5dfa2a91e9e7b059a5551b32735d75cd"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l1-know-audience__en",
+      "sha": "a1bd18f15183e21eadf9b6c594e0267f847ec62b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__ar-Gulf",
+      "sha": "791b5365ec7739234489740c754c49a9dcdc8132"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__ar-MSA",
+      "sha": "746e27efeed30430033f384c1817387aaa1346fd"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m2-l2-content-pillars__en",
+      "sha": "f981cd0e5433681ba6bcd346cfed588480f197b8"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__ar-Gulf",
+      "sha": "ca49ee9ac83325d292c0e75a2276b5f0bf8004df"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__ar-MSA",
+      "sha": "986b6d9606024adbe459628f800c586307c6251e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l1-hook__en",
+      "sha": "4637dff9421ec019d266fb761c7f5037080b10c3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__ar-Gulf",
+      "sha": "ce6166e2418132daa7fbd0a99140f2a40b66a2af"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__ar-MSA",
+      "sha": "f4909b803bb2e4f43dd848e9d3d934d3db18f56a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l2-script-structure__en",
+      "sha": "7d45828b690807d40af3051149343b8eb8e99b50"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__ar-Gulf",
+      "sha": "bd5345d16da7f8511bae2f45ccf840f5851228a0"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__ar-MSA",
+      "sha": "58da4517efb8ad4464e9184549eee0196007c305"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m3-l3-cta__en",
+      "sha": "d22b0e5279531e030d13c3169459b5a4effca726"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__ar-Gulf",
+      "sha": "dcea370b4c1b788dfdb5408d60a80a1ddf884114"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__ar-MSA",
+      "sha": "a633edd92699578f2ce653e3d2391c4774646852"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l1-reality-check__en",
+      "sha": "5014136aa5c46adc9b744538300fb674ba08c176"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__ar-Gulf",
+      "sha": "92d9f51b0103e4c4d2017768a6bcc77a324f57ca"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__ar-MSA",
+      "sha": "f81f8088c52a390b8135cc467a5952b9a6170b6b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l2-mobile-shooting__en",
+      "sha": "a6a4aadc8a613114a8fcb413788c85ccf3b81807"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__ar-Gulf",
+      "sha": "2ccfa1e96b73ac46a00f2bceca08605ac7c3a083"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__ar-MSA",
+      "sha": "859861ece0feb96f8df50841cbebf6529c01e791"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-l3-ai-writing__en",
+      "sha": "7eb7f8d8bbc3adc62c1ea214a506887e9012fc2d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__ar-Gulf",
+      "sha": "397a649ad5a697d8f993485ee91c8cc009c9df1b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__ar-MSA",
+      "sha": "1e370279d216b82787ef695c91fbfd57faeeba3c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m4-repurposing__en",
+      "sha": "a31e91a4d89e2b1f45cf8e4154a439fdbe293ef7"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__ar-Gulf",
+      "sha": "df8e394fbc7ace701a6824d3df1e2c9916ce5a1c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__ar-MSA",
+      "sha": "94671dbdf9e26def4da2ce74ec7c3ab6069c4178"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l1-editing__en",
+      "sha": "9e1b5a6b2b8282b7d02077925e47acdc4485de7f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__ar-Gulf",
+      "sha": "1da0048146eb8fe7c8d06dc58e7257e093528a28"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__ar-MSA",
+      "sha": "238ebd65a5ebdd7fbed98abd08a97b8d4699bd21"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m5-l2-thumbnails-captions__en",
+      "sha": "e7da775cdf88af90aaa01092953f7dd438f3610c"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__ar-Gulf",
+      "sha": "629bacfcdc652574e70c56c68cbfaaab5c7d60cd"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__ar-MSA",
+      "sha": "56c0addf9e6cd5b2f53b28325fabeac9d1bbcf12"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l1-platforms__en",
+      "sha": "7e62aef2be3083e5e965cec4ab189949af974efc"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__ar-Gulf",
+      "sha": "089a7456998c77faea42329f205d418ffa1fe597"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__ar-MSA",
+      "sha": "170498d8b0a9d7ed337d1d878eeca8383b35516e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l2-scheduling__en",
+      "sha": "1415003f78ac63ade175a6872ba83ae9a515ffc1"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__ar-Gulf",
+      "sha": "31b66705c388cdc83c62bd250f1da4c95b619164"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__ar-MSA",
+      "sha": "da7a3f4473a194d8389194b80ce0f1bfae0d460e"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l3-analytics__en",
+      "sha": "7ce9ff0ec0ad9c48a2e81ad0dd04fce3c1192f48"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__ar-Gulf",
+      "sha": "f9dbbf1fc9dcf847b927380bf517d6a8c3d51271"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__ar-MSA",
+      "sha": "4bb4973f5d4f790596e913c1a78bf2df5308c8b6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m6-l4-leads__en",
+      "sha": "02610be60bf3beab0cfb4f55135dc2cc84cc4e23"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__ar-Gulf",
+      "sha": "e5be35e89386756c047385eee2518fae169a660a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__ar-MSA",
+      "sha": "7e5d1434015d789401ab4c41013ab81ddf27f558"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l1-brand-basics__en",
+      "sha": "29b87fd78f28633f36bd702a225d3d7fc2f58624"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__ar-Gulf",
+      "sha": "9e08ed721915a888e0c7738d77da75463f070ecd"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__ar-MSA",
+      "sha": "ff11ffd503bdc9266e219dfab9630541424518f3"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--creator-m7-l2-grid-consistency__en",
+      "sha": "c2619a0616861e2a69e1f1274c78f6b3daa89603"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__ar-Gulf",
+      "sha": "49d30593fa824906d7e63f7357bc06ee0e166b1a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__ar-MSA",
+      "sha": "8634bf1fbbbfc0844b4f5f1b5a011668ff248576"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l1-what-is-ai__en",
+      "sha": "fc2a8c25467d0cf84f0cc21a66e15b0eb7804aa9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__ar-Gulf",
+      "sha": "290351ffa3b99d375a15f55311eb54edada4bd03"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__ar-MSA",
+      "sha": "b0efebd9dabc71a190e00e0390bd2ce6a7801803"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l2-first-prompt__en",
+      "sha": "d9309856b2b20988518f412ed4398834e5864d2f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__ar-Gulf",
+      "sha": "05833831916274788d756e04dfc23f399508588a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__ar-MSA",
+      "sha": "fbcb6cc66e0b1222759ce4a75d2480e3dc64ca61"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l3-setup-your-ai__en",
+      "sha": "c5ddf0756357758be539dc769bccebafed0aab32"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "sha": "77a10d4728ba9c894f397c7007e8bdbf63a52a7b"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__ar-MSA",
+      "sha": "c2d6217776505bd267ff41e338c7288afcdc019d"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l4-ai-can-cannot__en",
+      "sha": "b6abf91e2e4f8f9dacff410d911db75d5c0d52f5"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__ar-Gulf",
+      "sha": "b727b8ec80645bbfbb99168daba59b3b947daed6"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__ar-MSA",
+      "sha": "45be07767a446990a525cbfde852cf44df0ba66f"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l5-ai-vs-software__en",
+      "sha": "d6b68cd2eb14767803be36d9b23e9871ca0be6e9"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__ar-Gulf",
+      "sha": "c638e9672ce55bf401b15fa0ad47572e791f444a"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__ar-MSA",
+      "sha": "058053b044c11e63d1f86aa5c20471d0aff20088"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l6-learn-without-fear__en",
+      "sha": "0f388cc5eb82474e35133bb2a118d9c4a1df1657"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__ar-Gulf",
+      "sha": "5d83e6f0dcc635122dbc676648a27909fde094a2"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__ar-MSA",
+      "sha": "873948f0cec7d92a86fa2ad2fa66f04eed806b40"
+    },
+    {
+      "branch": "video-results--video-full-300-localized-v1--intro-m1-l7-choose-your-path__en",
+      "sha": "e714b7bf8b765f42cc04e626ac0a069e9c223866"
+    }
+  ],
+  "application_checkpoint": "e989902e4e70025d0d6c96b36b38d71ccc5e527e",
+  "deferred_decision": "Owner may later request new Technical/Academic Remotion presentation. No decision or production authorized."
+}
