@@ -48,17 +48,18 @@ jobs:
           python3 - <<'PY'
           import hashlib,json,subprocess
           from pathlib import Path
-          audio=next(Path('/tmp/original-pilot').rglob('master.mp3'))
           original=next(Path('/tmp/original-pilot').rglob('furniture-m1-cut-list__ar-EG.mp4'))
           assert hashlib.sha256(original.read_bytes()).hexdigest()=='09f254d361874a5079b5a8ac4c1c3c663f73a1435245e7a214502c4f877e16f8'
+          audio=Path('/tmp/cabinet-review/retained-audio.m4a')
+          subprocess.run(['ffmpeg','-y','-i',str(original),'-map','0:a:0','-c:a','copy',str(audio)],check=True)
           out=Path('/tmp/cabinet-review/Masaarat_Technical_AI_Style_Sample_ar-EG.mp4')
-          subprocess.run(['ffmpeg','-y','-i','/tmp/cabinet-review/silent.mp4','-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-shortest','-movflags','+faststart',str(out)],check=True)
+          subprocess.run(['ffmpeg','-y','-i','/tmp/cabinet-review/silent.mp4','-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','copy','-t','63.4','-movflags','+faststart',str(out)],check=True)
           meta=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(out)]))
           video=next(s for s in meta['streams'] if s['codec_type']=='video')
           assert video['width']==1920 and video['height']==1080 and video['r_frame_rate']=='30/1'
           assert any(s['codec_type']=='audio' for s in meta['streams'])
           assert abs(float(meta['format']['duration'])-63.4)<.25
-          receipt={'reviewOnly':True,'lessonId':'M04-L02','runtimeId':'furniture-m1-cut-list','locale':'ar-EG','originalRun':37155581488,'originalMp4Sha256':hashlib.sha256(original.read_bytes()).hexdigest(),'audioSha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'newMp4Sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'durationSeconds':float(meta['format']['duration']),'newTtsCalls':0,'bunnyUploads':0,'mappingChanges':0,'applicationPublished':False,'ownerAcceptance':'pending'}
+          receipt={'reviewOnly':True,'lessonId':'M04-L02','runtimeId':'furniture-m1-cut-list','locale':'ar-EG','originalRun':37155581488,'originalMp4Sha256':hashlib.sha256(original.read_bytes()).hexdigest(),'audioSource':'original-pilot-MP4-AAC-stream-copy','audioSha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'newMp4Sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'durationSeconds':float(meta['format']['duration']),'newTtsCalls':0,'bunnyUploads':0,'mappingChanges':0,'applicationPublished':False,'ownerAcceptance':'pending'}
           Path('/tmp/cabinet-review/sample-receipt.json').write_text(json.dumps(receipt,indent=2))
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
