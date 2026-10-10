@@ -105,7 +105,8 @@ def backup_original(old,work):
   if not play.get("isPlayable") or play.get("enableDRM"):raise RuntimeError("Original video unavailable")
   url=play.get("originalUrl") or play.get("videoPlaylistUrl")
   if not url or urllib.parse.urlparse(url).scheme!="https" or not urllib.parse.urlparse(url).hostname.endswith(".b-cdn.net"):raise RuntimeError("Unexpected playback host")
-  run(["ffmpeg","-hide_banner","-loglevel","error","-y","-headers","Referer: https://masaarat.ai/\r\n","-i",url,"-map","0:v:0","-map","0:a:0","-c","copy",str(path)])
+  # Automatic stream selection chooses the highest-resolution HLS rendition.
+  run(["ffmpeg","-hide_banner","-loglevel","error","-y","-headers","Referer: https://masaarat.ai/\r\n","-i",url,"-c","copy",str(path)])
  info=probe(path)
  if not any(s["codec_type"]=="audio" for s in info["streams"]):raise RuntimeError("Original has no audio")
  dump(work/"previous.json",{"oldGuid":old["video_guid"],"backupSha256":digest(path),"metadata":{k:meta.get(k) for k in ["guid","title","collectionId","length","status"]}})
@@ -115,7 +116,7 @@ def detect_scene_frames(video,count,cabinet=False):
  # No narration guessing, word-weight allocation, or regeneration of other locales.
  import numpy as np
  crop="530:112:1210:326" if cabinet else "680:112:995:330"
- raw=subprocess.check_output(["ffmpeg","-hide_banner","-loglevel","error","-i",str(video),"-vf",f"fps=30,crop={crop},scale=136:24,format=gray","-f","rawvideo","-"])
+ raw=subprocess.check_output(["ffmpeg","-hide_banner","-loglevel","error","-i",str(video),"-vf",f"fps=30,scale=1920:1080,crop={crop},scale=136:24,format=gray","-f","rawvideo","-"])
  a=np.frombuffer(raw,dtype=np.uint8).reshape(-1,24*136).astype(np.int16)
  differences=np.abs(a[1:]-a[:-1]).mean(axis=1)
  for threshold in (1.3,1.0,.7,1.7,2.3,3.0):
