@@ -1,0 +1,95 @@
+name: Preserve production sources and completed receipts
+on:
+  push:
+    branches: [main, chore/production-preservation-20261010]
+    paths:
+      - .github/workflows/preserve-production-sources.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - docs/production/**
+      - scripts/maintenance/preserve_production.py
+      - scripts/maintenance/test_preserve_production.py
+      - .github/workflows/preserve-production-sources.yml
+      - .github/workflows/video-production-batch.yml
+permissions: {}
+concurrency:
+  group: production-preservation-20261010
+  cancel-in-progress: false
+jobs:
+  harvest:
+    if: >-
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/chore/production-preservation-20261010' &&
+      startsWith(github.event.head_commit.message, 'chore: collect exact production receipts')
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Collect exact existing receipts without media/provider calls
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/maintenance/preserve_production.py harvest
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: exact-production-receipts
+          path: |
+            docs/production/receipt-index.json
+            docs/production/receipts/
+            production-preservation-output/harvest.json
+          retention-days: 30
+          if-no-files-found: error
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts/maintenance -p test_preserve_production.py -v
+      - run: python3 scripts/maintenance/preserve_production.py verify
+  preserve-cleanup:
+    if: >-
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.event_name == 'push' && github.ref == 'refs/heads/main' &&
+      github.event.before == '64ede9b73274481ae7b09f1178201b767ad21e6f' &&
+      startsWith(github.event.head_commit.message, 'chore: preserve completed production sources')
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      pull-requests: read
+      actions: read
+      deployments: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s scripts/maintenance -p test_preserve_production.py -v
+      - name: Save reviewed inputs before any reference changes
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: production-preservation-reviewed-inputs
+          path: |
+            docs/production/preservation-plan.json
+            docs/production/receipt-index.json
+          retention-days: 90
+          if-no-files-found: error
+      - name: Preserve exact source tags, then delete leased eligible refs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/maintenance/preserve_production.py preserve-cleanup
+      - name: Keep complete or partial execution receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: production-preservation-result
+          path: production-preservation-output/
+          retention-days: 90
+          if-no-files-found: warn
