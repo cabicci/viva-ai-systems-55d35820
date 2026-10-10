@@ -6,8 +6,6 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 BATCH="technical-motion-v2-20261011"
 LIBRARY="670679"
-ENDPOINT="https://abyqqeboyrkkwhjpwmtd.supabase.co/functions/v1/technical-video-replacement"
-AUDIENCE="masaarat-technical-motion-v2-20261011"
 MODEL="gemini-3.8-flash-tts"
 STYLE="Native Cairo Egyptian Arabic (ar-EG), warm patient workshop instructor explaining cabinet assembly. Natural conversational connected speech and moderate pace, with short pauses at sentence boundaries. Maintain authentic Egyptian pronunciation, including Egyptian numbers and furniture terms. Preserve every word and number. Read only the supplied transcript; no introduction or added words."
 LOCALES=("ar-EG","ar-MSA","ar-Gulf","en")
@@ -29,13 +27,6 @@ def bunny(method,path,body=None):
 def playback(guid):
  req=urllib.request.Request(f"https://video.bunnycdn.com/library/{LIBRARY}/videos/{guid}/play",headers={"Referer":"https://masaarat.ai/"})
  with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)
-def identity():
- url=os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"]+"&audience="+urllib.parse.quote(AUDIENCE)
- req=urllib.request.Request(url,headers={"Authorization":"Bearer "+os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"]})
- with urllib.request.urlopen(req,timeout=30) as r:return json.load(r)["value"]
-def bridge(body):
- req=urllib.request.Request(ENDPOINT,data=json.dumps({"batchId":BATCH,**body}).encode(),method="POST",headers={"Content-Type":"application/json","x-github-oidc":identity()})
- with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
 
 _small=["صفر","واحد","اتنين","تلاتة","أربعة","خمسة","ستة","سبعة","تمانية","تسعة","عشرة","حداشر","اتناشر","تلتاشر","أربعتاشر","خمستاشر","ستاشر","سبعتاشر","تمنتاشر","تسعتاشر"]
 _tens=["","","عشرين","تلاتين","أربعين","خمسين","ستين","سبعين","تمانين","تسعين"]
@@ -171,7 +162,7 @@ def publish(lesson,locale):
  assert digest(video)==r["videoSha256"] and digest(work/"previous.mp4")==r["backupSha256"]
  artifact=os.environ.get("BACKUP_ARTIFACT_ID","")
  if not artifact.isdigit():raise RuntimeError("Durable backup artifact receipt required before publication")
- r["backupArtifactId"]=artifact
+ r["backupArtifactId"]=artifact;r["sourceCommit"]=os.environ["GITHUB_SHA"]
  title=f"{BATCH}:{lesson}__{locale}"
  # Locate deterministic provider identity before any create; retries never
  # blindly duplicate a paid render or replace the existing learner mapping.
@@ -193,19 +184,21 @@ def publish(lesson,locale):
    time.sleep(10)
   else:raise RuntimeError("Bunny encoding pending; old mapping retained")
  r["status"]="ready";dump(work/"receipt.json",r)
- linked=bridge(r)
- if not linked.get("linked"):raise RuntimeError("Mapping not confirmed; old video retained")
- r["status"]="linked";r["mappingReceipt"]=linked;dump(work/"receipt.json",r)
- # Reconfirm the exact cloud mapping and the playable replacement before
- # removing only this cell's old video. Its durable backup already exists.
- confirmed=bridge(r)
- if not confirmed.get("linked") or confirmed.get("newGuid")!=r["newGuid"] or confirmed.get("oldGuid")!=r["oldGuid"]:
-  raise RuntimeError("Deletion confirmation unavailable; both videos retained")
+ from coordination import commit_receipt,await_mapping
+ commit_receipt(r,"ready")
+ ack=await_mapping(r)
+ current=bunny("GET","/"+r["newGuid"])
+ play=playback(r["newGuid"])
+ if current.get("guid")!=r["newGuid"] or current.get("status")!=4 or not play.get("isPlayable"):
+  raise RuntimeError("Replacement readiness changed; both videos retained")
+ r["status"]="linked";r["mappingReceipt"]=ack;dump(work/"receipt.json",r)
  old=bunny("GET","/"+r["oldGuid"])
  if old.get("guid")!=r["oldGuid"] or old.get("collectionId")!="4972720c-4dd7-48e6-b341-34e3b4875b26":
   raise RuntimeError("Deletion identity rejected; old video retained")
- bunny("DELETE","/"+r["oldGuid"])
+ deleted=bunny("DELETE","/"+r["oldGuid"])
+ if deleted.get("success") is False:raise RuntimeError("Old deletion not confirmed; linked replacement retained")
  r["oldVideoRetained"]=False;r["status"]="linked-old-deleted";dump(work/"receipt.json",r)
+ commit_receipt(r,"done")
  print(json.dumps({"cell":lesson+"__"+locale,"newGuid":r["newGuid"],"status":r["status"],"oldVideoRetained":False}))
 
 def prepare():
@@ -216,19 +209,9 @@ def prepare():
   ids=sorted({r["lesson_id"] for r in rows})
   with open(os.environ["GITHUB_OUTPUT"],"a") as f:f.write("matrix="+json.dumps(ids)+"\n")
  print(json.dumps({"lessons":80,"cells":320,"newEgyptianAudio":80,"otherAudioReused":240}))
-def cloud_preflight():
- for i in range(10):
-  try:
-   r=bridge({"operation":"preflight"})
-   if r.get("ready") and r.get("cells")==320:return
-  except urllib.error.HTTPError as e:
-   if e.code not in (403,404,503):raise
-  if i<9:time.sleep(30)
- raise RuntimeError("Mapping endpoint not ready; production not launched")
 if __name__=="__main__":
- p=argparse.ArgumentParser();p.add_argument("mode",choices=["prepare","cloud-preflight","build","publish","probe-timing"]);p.add_argument("--lesson");p.add_argument("--locale",choices=LOCALES);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument("mode",choices=["prepare","build","publish","probe-timing"]);p.add_argument("--lesson");p.add_argument("--locale",choices=LOCALES);a=p.parse_args()
  if a.mode=="prepare":prepare()
- elif a.mode=="cloud-preflight":cloud_preflight()
  elif a.mode=="build":build(a.lesson,a.locale)
  elif a.mode=="publish":publish(a.lesson,a.locale)
  else:

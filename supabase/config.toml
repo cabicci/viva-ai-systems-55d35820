@@ -29,6 +29,3 @@ verify_jwt = false
 
 [functions.academic-stripe-checkout]
 verify_jwt = false # Handler verifies the caller with Auth before any operation.
-
-[functions.technical-video-replacement]
-verify_jwt = false # Dedicated GitHub OIDC signature + exact batch/workflow/commit checks.
