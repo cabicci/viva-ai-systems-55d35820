@@ -1,0 +1,72 @@
+name: Cabinet animation review sample
+on:
+  push:
+    branches: [review/cabinet-ai-style-20261010]
+    paths:
+      - remotion/src/review/**
+      - .github/workflows/cabinet-ai-review.yml
+permissions:
+  contents: read
+  actions: read
+jobs:
+  render-review-only:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    concurrency:
+      group: cabinet-ai-style-review
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Reuse original audio without new TTS
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          run-id: 37155581488
+          name: furniture-pilot-ar-EG-37155581488
+          path: /tmp/original-pilot
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: latest
+      - name: Install pinned render dependencies
+        working-directory: remotion
+        run: bun install --frozen-lockfile
+      - name: Install video tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Render new visual sample
+        working-directory: remotion
+        run: |
+          mkdir -p /tmp/cabinet-review
+          bunx --no-install remotion render src/review/cabinet-ai-sample.tsx cabinet-ai-review /tmp/cabinet-review/silent.mp4 --codec=h264 --crf=18 --concurrency=2
+          bunx --no-install remotion still src/review/cabinet-ai-sample.tsx cabinet-ai-review /tmp/cabinet-review/review-frame.png --frame=1200
+      - name: Mux retained narration and check output
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          audio=next(Path('/tmp/original-pilot').rglob('master.mp3'))
+          original=next(Path('/tmp/original-pilot').rglob('furniture-m1-cut-list__ar-EG.mp4'))
+          assert hashlib.sha256(original.read_bytes()).hexdigest()=='09f254d361874a5079b5a8ac4c1c3c663f73a1435245e7a214502c4f877e16f8'
+          out=Path('/tmp/cabinet-review/Masaarat_Technical_AI_Style_Sample_ar-EG.mp4')
+          subprocess.run(['ffmpeg','-y','-i','/tmp/cabinet-review/silent.mp4','-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-shortest','-movflags','+faststart',str(out)],check=True)
+          meta=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(out)]))
+          video=next(s for s in meta['streams'] if s['codec_type']=='video')
+          assert video['width']==1920 and video['height']==1080 and video['r_frame_rate']=='30/1'
+          assert any(s['codec_type']=='audio' for s in meta['streams'])
+          assert abs(float(meta['format']['duration'])-63.4)<.25
+          receipt={'reviewOnly':True,'lessonId':'M04-L02','runtimeId':'furniture-m1-cut-list','locale':'ar-EG','originalRun':37155581488,'originalMp4Sha256':hashlib.sha256(original.read_bytes()).hexdigest(),'audioSha256':hashlib.sha256(audio.read_bytes()).hexdigest(),'newMp4Sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'durationSeconds':float(meta['format']['duration']),'newTtsCalls':0,'bunnyUploads':0,'mappingChanges':0,'applicationPublished':False,'ownerAcceptance':'pending'}
+          Path('/tmp/cabinet-review/sample-receipt.json').write_text(json.dumps(receipt,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cabinet-ai-style-review
+          path: |
+            /tmp/cabinet-review/Masaarat_Technical_AI_Style_Sample_ar-EG.mp4
+            /tmp/cabinet-review/review-frame.png
+            /tmp/cabinet-review/sample-receipt.json
+          retention-days: 30
+          if-no-files-found: error
