@@ -1866,6 +1866,89 @@ export type Database = {
         }
         Relationships: []
       }
+      technical_video_replacement_batches: {
+        Row: {
+          baseline: Json
+          batch_id: string
+          enabled: boolean
+          expires_at: string
+          source_sha: string
+        }
+        Insert: {
+          baseline: Json
+          batch_id: string
+          enabled?: boolean
+          expires_at: string
+          source_sha: string
+        }
+        Update: {
+          baseline?: Json
+          batch_id?: string
+          enabled?: boolean
+          expires_at?: string
+          source_sha?: string
+        }
+        Relationships: []
+      }
+      technical_video_replacement_receipts: {
+        Row: {
+          audio_sha256: string
+          backup_artifact_id: string
+          backup_sha256: string
+          batch_id: string
+          duration_seconds: number
+          lesson_id: string
+          linked_at: string | null
+          locale: string
+          new_guid: string
+          old_guid: string
+          run_id: string
+          source_sha256: string
+          status: string
+          video_sha256: string
+        }
+        Insert: {
+          audio_sha256: string
+          backup_artifact_id: string
+          backup_sha256: string
+          batch_id: string
+          duration_seconds: number
+          lesson_id: string
+          linked_at?: string | null
+          locale: string
+          new_guid: string
+          old_guid: string
+          run_id: string
+          source_sha256: string
+          status: string
+          video_sha256: string
+        }
+        Update: {
+          audio_sha256?: string
+          backup_artifact_id?: string
+          backup_sha256?: string
+          batch_id?: string
+          duration_seconds?: number
+          lesson_id?: string
+          linked_at?: string | null
+          locale?: string
+          new_guid?: string
+          old_guid?: string
+          run_id?: string
+          source_sha256?: string
+          status?: string
+          video_sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "technical_video_replacement_receipts_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "technical_video_replacement_batches"
+            referencedColumns: ["batch_id"]
+          },
+        ]
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -2190,6 +2273,10 @@ export type Database = {
       }
       academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
+      account_phone_command: {
+        Args: { p_action: string; p_actor: string; p_data?: Json }
+        Returns: Json
+      }
       activate_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
