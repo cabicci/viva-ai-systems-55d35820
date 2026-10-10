@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import urllib.parse
-from cleanup_merged_branches import API, REPO, git_auth_env, delete_ref, verify_deleted, read_main, write_report
+from cleanup_merged_branches import API, REPO, git_auth_env, delete_ref, verify_deleted, read_main, write_report, verify_retained_pull_head
 
 ROOT = Path(__file__).resolve().parents[2]
 PLAN = ROOT / 'docs/production/preservation-plan.json'
@@ -208,6 +208,24 @@ def preserve_cleanup():
         for target in targets:
             reason = deletion_guard(api, target, workflows, state)
             report['branches'].append({**target, 'result': 'skip: ' + reason if reason else 'eligible'})
+        # Remove this task's temporary PR branch only with an exact merged PR
+        # and independently retained pull head; never target unrelated branches.
+        maintenance = 'chore/production-preservation-20261010'
+        prs = api.pages('pulls?state=closed&head=cabicci%3A' + urllib.parse.quote(maintenance,safe='') + '&base=main')
+        merged = [pr for pr in prs if pr.get('merged_at') and pr.get('merge_commit_sha') == main
+                  and pr.get('head',{}).get('ref') == maintenance
+                  and (pr.get('head',{}).get('repo') or {}).get('full_name') == REPO
+                  and pr.get('base',{}).get('ref') == 'main']
+        if len(merged) == 1:
+            pr = merged[0]
+            own = {'branch':maintenance,'sha':pr['head']['sha'],'pr':pr['number'],'recovery_ref':'refs/pull/'+str(pr['number'])+'/head'}
+            other_workflows = '\n'.join(p.read_text() for p in (ROOT/'.github/workflows').glob('*.y*ml') if p.name != 'preserve-production-sources.yml')
+            reason = deletion_guard(api,own,other_workflows,state)
+            if reason is None:
+                verify_retained_pull_head(own,directory,api.token)
+                own['result']='eligible';own['self_maintenance']=True
+                report['branches'].append(own)
+                preserved.pop(maintenance,None)
         write_report(out / 'plan.json', report)
         for position, row in enumerate(report['branches']):
             if row['result'] != 'eligible':
@@ -221,13 +239,16 @@ def preserve_cleanup():
                 report['status'] = 'stopped: main moved'
                 write_report(path, report)
                 raise RuntimeError('Main moved; no further deletion')
-            reason = deletion_guard(api, row, workflows, state)
+            scope_workflows = other_workflows if row.get('self_maintenance') else workflows
+            reason = deletion_guard(api, row, scope_workflows, state)
             if reason:
                 row['result'] = 'skip: ' + reason
                 write_report(path, report)
                 continue
             if row.get('tag'):
                 tag_verified(directory, row, api.token)
+            if row.get('self_maintenance'):
+                verify_retained_pull_head(row,directory,api.token)
             try:
                 delete_ref(row, directory, api.token)
                 verify_deleted(row, directory, api.token)
