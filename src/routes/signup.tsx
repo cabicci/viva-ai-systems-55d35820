@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLocale } from "@/lib/locale/locale-context";
 import { kidsSignupRedirect, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
@@ -29,12 +30,15 @@ function SignupPage() {
   const search = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (fullName.trim().length < 2) return toast.error(t("auth.signup.nameRequired"));
+    if (password !== confirmPassword) return toast.error(t("auth.reset.toast.passwordMismatch"));
+    if (loading) return;
     setLoading(true);
     const { error } = await supabase.auth.signUp({
       email,
@@ -75,11 +79,25 @@ function SignupPage() {
           <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className="space-y-2">
-          <Label>{t("auth.field.password")}</Label>
-          <Input
-            type="password"
+          <Label htmlFor="signup-password">{t("auth.field.password")}</Label>
+          <PasswordInput
+            id="signup-password"
+            name="password"
+            autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
+            minLength={6}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="signup-password-confirm">{t("auth.field.passwordConfirm")}</Label>
+          <PasswordInput
+            id="signup-password-confirm"
+            name="confirmPassword"
+            autoComplete="new-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
             minLength={6}
           />

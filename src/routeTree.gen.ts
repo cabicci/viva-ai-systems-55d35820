@@ -36,11 +36,13 @@ import { Route as StartRouteImport } from './routes/start'
 import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as TechnicalRouteImport } from './routes/technical'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VerifyPhoneRouteImport } from './routes/verify-phone'
 import { Route as AcademicIndexRouteImport } from './routes/academic.index'
 import { Route as AcademicCurriculumRouteImport } from './routes/academic.curriculum'
 import { Route as AcademicPricingRouteImport } from './routes/academic.pricing'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminCommerceRouteImport } from './routes/admin.commerce'
+import { Route as AdminCommunicationsRouteImport } from './routes/admin.communications'
 import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as AiIndexRouteImport } from './routes/ai.index'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
@@ -206,6 +208,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerifyPhoneRoute = VerifyPhoneRouteImport.update({
+  id: '/verify-phone',
+  path: '/verify-phone',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcademicIndexRoute = AcademicIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -229,6 +236,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const AdminCommerceRoute = AdminCommerceRouteImport.update({
   id: '/admin/commerce',
   path: '/admin/commerce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCommunicationsRoute = AdminCommunicationsRouteImport.update({
+  id: '/admin/communications',
+  path: '/admin/communications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
@@ -409,9 +421,11 @@ export interface FileRoutesByFullPath {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/verify-phone': typeof VerifyPhoneRoute
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -468,9 +482,11 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/verify-phone': typeof VerifyPhoneRoute
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -531,9 +547,11 @@ export interface FileRoutesById {
   '/system-state': typeof SystemStateRoute
   '/technical': typeof TechnicalRouteWithChildren
   '/terms': typeof TermsRoute
+  '/verify-phone': typeof VerifyPhoneRoute
   '/academic/curriculum': typeof AcademicCurriculumRoute
   '/academic/pricing': typeof AcademicPricingRoute
   '/admin/commerce': typeof AdminCommerceRoute
+  '/admin/communications': typeof AdminCommunicationsRoute
   '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/invitations/$invitationId': typeof InvitationsInvitationIdRoute
@@ -596,9 +614,11 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/verify-phone'
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -655,9 +675,11 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/verify-phone'
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -717,9 +739,11 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/technical'
     | '/terms'
+    | '/verify-phone'
     | '/academic/curriculum'
     | '/academic/pricing'
     | '/admin/commerce'
+    | '/admin/communications'
     | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/invitations/$invitationId'
@@ -781,7 +805,9 @@ export interface RootRouteChildren {
   SystemStateRoute: typeof SystemStateRoute
   TechnicalRoute: typeof TechnicalRouteWithChildren
   TermsRoute: typeof TermsRoute
+  VerifyPhoneRoute: typeof VerifyPhoneRoute
   AdminCommerceRoute: typeof AdminCommerceRoute
+  AdminCommunicationsRoute: typeof AdminCommunicationsRoute
   AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   InvitationsInvitationIdRoute: typeof InvitationsInvitationIdRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
@@ -985,6 +1011,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verify-phone': {
+      id: '/verify-phone'
+      path: '/verify-phone'
+      fullPath: '/verify-phone'
+      preLoaderRoute: typeof VerifyPhoneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academic/': {
       id: '/academic/'
       path: '/'
@@ -1018,6 +1051,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/commerce'
       fullPath: '/admin/commerce'
       preLoaderRoute: typeof AdminCommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/communications': {
+      id: '/admin/communications'
+      path: '/admin/communications'
+      fullPath: '/admin/communications'
+      preLoaderRoute: typeof AdminCommunicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/kids-parents': {
@@ -1349,7 +1389,9 @@ const rootRouteChildren: RootRouteChildren = {
   SystemStateRoute: SystemStateRoute,
   TechnicalRoute: TechnicalRouteWithChildren,
   TermsRoute: TermsRoute,
+  VerifyPhoneRoute: VerifyPhoneRoute,
   AdminCommerceRoute: AdminCommerceRoute,
+  AdminCommunicationsRoute: AdminCommunicationsRoute,
   AdminKidsParentsRoute: AdminKidsParentsRoute,
   InvitationsInvitationIdRoute: InvitationsInvitationIdRoute,
   RoadmapIdRoute: RoadmapIdRoute,

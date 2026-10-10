@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/auth/PasswordInput";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -50,12 +50,24 @@ function ResetPasswordPage() {
       ) : (
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label>{t("auth.field.passwordNew")}</Label>
-            <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <Label htmlFor="reset-password">{t("auth.field.passwordNew")}</Label>
+            <PasswordInput
+              id="reset-password"
+              autoComplete="new-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
           <div className="space-y-2">
-            <Label>{t("auth.field.passwordConfirm")}</Label>
-            <Input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} required />
+            <Label htmlFor="reset-password-confirm">{t("auth.field.passwordConfirm")}</Label>
+            <PasswordInput
+              id="reset-password-confirm"
+              autoComplete="new-password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              required
+            />
           </div>
           <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
             {loading ? t("auth.reset.submitting") : t("auth.reset.submit")}

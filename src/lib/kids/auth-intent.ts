@@ -2,6 +2,7 @@ import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 
 export const SAFE_LINE_RETURNS = [
   "/my-learning",
+  "/verify-phone",
   "/ai",
   "/pricing",
   "/curriculum",
@@ -29,7 +30,7 @@ export function isLearnerAuthReturn(value: unknown): value is LearnerReturn {
   );
 }
 
-/** Only fixed catalogue paths or plain lesson paths; never URLs, queries or encoded redirects. */
+/** Only fixed first-party paths or plain lesson paths; never URLs, queries or encoded redirects. */
 export function isSafeAuthReturn(value: unknown): value is SafeReturn {
   return (
     typeof value === "string" &&

@@ -131,6 +131,13 @@ export const ROUTE_CATALOG = [
     robotsPath: "/onboarding",
   },
   {
+    source: "verify-phone.tsx",
+    pattern: "/verify-phone",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/verify-phone",
+  },
+  {
     source: "account.tsx",
     pattern: "/account",
     visibility: "private",
@@ -150,6 +157,13 @@ export const ROUTE_CATALOG = [
     visibility: "private",
     sitemap: false,
     robotsPath: "/invitations/",
+  },
+  {
+    source: "admin.communications.tsx",
+    pattern: "/admin/communications",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/admin",
   },
   {
     source: "admin.commerce.tsx",

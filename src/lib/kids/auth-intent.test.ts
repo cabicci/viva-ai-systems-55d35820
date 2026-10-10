@@ -5,6 +5,16 @@ const lesson = "/learn/builder/builder-m1-l1-what-is-llm";
 
 describe("safe learner authentication destinations", () => {
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
+    "returns an ordinary account to phone entry after signup in %s",
+    (locale) => {
+      const search = parseAuthIntentSearch({ locale, returnTo: "/verify-phone" });
+      expect(search).toMatchObject({ locale, returnTo: "/verify-phone" });
+      expect(kidsSignupRedirect("https://masaarat.ai", search)).toBe(
+        `https://masaarat.ai/verify-phone?locale=${locale}`,
+      );
+    },
+  );
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     "retains a lesson through signup in %s",
     (locale) => {
       const search = parseAuthIntentSearch({ locale, returnTo: lesson });
@@ -20,6 +30,8 @@ describe("safe learner authentication destinations", () => {
     "//evil.test",
     "/\\evil.test",
     "/admin",
+    "/verify-phone?phone=private",
+    "/verify-phone/../admin",
     "/learn/builder/../admin",
     "/learn/builder/%2e%2e",
     "/learn/builder/%2f%2fevil.test",

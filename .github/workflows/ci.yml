@@ -58,6 +58,17 @@ jobs:
           src/lib/kids/auth-intent.test.ts
           src/lib/__tests__/locale-auth.test.ts
 
+      - name: Phone verification and password confirmation (isolated, no sends)
+        run: >-
+          bunx vitest run
+          src/lib/communications
+          src/components/communications
+          src/components/auth/PasswordInput.test.tsx
+          src/lib/__tests__/signup-password.test.tsx
+
+      - name: Phone transport in Workers runtime (synthetic outbound only)
+        run: node scripts/communications/worker-check.mjs
+
       - name: Academic written integration (no generation, payments or email sends)
         run: |
           bunx vitest run src/lib/academic-education src/components/academic-education
@@ -177,6 +188,11 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Phone and password mobile browser checks (synthetic only, network blocked)
+        run: |
+          bunx playwright install --with-deps chromium
+          bun scripts/communications/browser-check.mjs
+
       - name: Marketing consent and public route metadata
         run: >-
           bunx vitest run
@@ -186,3 +202,4 @@ jobs:
           src/lib/__tests__/marketing-route-head.test.tsx
           src/lib/__tests__/locale-public-pages.test.ts
           src/lib/__tests__/locale-route-meta.test.ts
+

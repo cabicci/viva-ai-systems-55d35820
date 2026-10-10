@@ -1,3 +1,84 @@
+## 2026-10-08 — Correct native Workers Verify transport
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: The second owner-triggered WhatsApp attempt exposed a transport-stage failure. Native workerd reproduction proves redirect:error is rejected before network. Use manual redirect handling while retaining non-success rejection, credential isolation and no retries. Add the actual-module native Worker gate to existing CI with synthetic outbound only and existing locked dependencies.
+sync_status: Existing roadmap history appended with an exact version guard before this correction. Both uncertain attempts and budget preserved. Local 67 focused tests, strict TypeScript and native GET/start/check/redirect rejection pass; the old option fails the native test. All four previous-head workflows passed. Current-head CI, preview sync and real delivery acceptance remain pending. No extra send, provider/schema change, merge or publication.
+
+## 2026-10-08 — Diagnose the first WhatsApp preview failure
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: The owner selected the existing stored-admin pilot and switched preview to PR165. The first WhatsApp attempt became uncertain with no stored provider SID; the next SMS click was blocked before sending. Add private failure stage / HTTP status / numeric provider-code diagnostics without phones, OTPs, credentials or raw provider text. Preserve quota, exact receipt binding and no-retry behavior.
+sync_status: Roadmap history appended with exact version guard at 2026-10-08T16:46:40.033918Z. Provider linkage and single-account pilot are now configured; earlier pending/disabled notes below are historical. Bounded provider reads did not establish the original error or delivery. No reset/resend, provider setup change, merge or publication. Both-channel real arrival/check and current-head CI remain pending.
+
+
+## 2026-10-08 — Approved native phone migration applied once
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: db
+source: user
+summary: Owner explicitly approved live phone storage and deletion integration at 17:02 Cairo. Lovable applied the unchanged 10,880-byte SQL once as native Drizzle 0008. Reconcile the actual native journal timestamp, snapshot and generated public RPC type from platform commit 58d00efd628b504a55a6442c639bc3c3d3ba3de7 into this branch. Both SQL source copies are already applied and must not be applied again.
+sync_status: Roadmap appended with exact version guard at 2026-10-08T14:10:00.707615Z. Independent DB readback confirms migration row18, created_at1791468373472 and SHA256497eaa033b4e782a2fdfd4e74b430d3aec4b1bd85a6cede4338e27db99d73351; private RLS/service-only RPCs and previous LC09 source match verified. Sending disabled, no test actors, zero sends/challenges/phones. Previous head ec02a210 passed all four required workflows. No provider write, real message, preview switch, merge or publication. WhatsApp linking still requires the native owner approval inside Lovable.
+
+## 2026-10-08 — Direct phone-entry page and verified rollback source
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Add a private /verify-phone page reusing the same account verification component and server actions. Keep the exact path through login/signup, display the signed-in account, preserve four locales and require neither an administrator nor a previously verified phone. The owner supplied a test recipient outside source control. Capture the exact live LC09 function through Lovable for the pending additive migration rollback.
+sync_status: Roadmap updated with an exact version guard at 2026-10-08T13:48:02.847921Z. Local 49 focused tests, TypeScript and production build passed. Backup MD5 8c92b9dc579d65e68cba2ffb25489e1f matches live source. No persistent phone migration, preview switch, messages, merge or publication. WhatsApp linking still requires the native owner approval inside Lovable.
+
+## 2026-10-08 — Saved signup language for verification
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner requires verification messages in the language chosen at registration, for both WhatsApp and SMS. Read the saved preferred_locale from the current Auth account before sending; it overrides the page locale and telephone country. Legacy accounts without a valid preference retain explicit page-language selection. Twilio OTP uses ar for all three Arabic UI locales and en for English. Notification hooks remain pending and must use the same stored preference. Register the additive phone migration in the explicit billing inventory and complete missing private route classification for the admin console and move signup regression tests outside the route source directory.
+sync_status: Draft PR165, no merge/publish. Prior head b2aa0526 passed14 native PostgreSQL cases and16 browser locale/channel/viewport scenarios. Its last CI step caught the incomplete route catalog; corrected without weakening the assertion. Provider linking still needs interactive owner approval in Lovable; no real sends or persistent schema apply.
+
+## 2026-10-08 — One verification flow for WhatsApp and SMS
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner explicitly requested both OTP channels, WhatsApp preferred, without duplicate work. Reuse the existing service, account ownership, durable reservations and global/per-actor/per-number quotas. A server-owned channel allowlist gates sends; the UI prefers WhatsApp when available and locks selection during a live attempt. Add isolated mobile/desktop browser checks for four locales and password eyes. Correct native test JSON serialization and transaction cleanup and verify rollback preserves the installed deletion chain.
+sync_status: Draft PR165. Local isolated checks pass; physical PostgreSQL and browser CI pending. Existing WhatsApp sender ONLINE, but native provider setup write rejected because interactive owner approval is unavailable externally. No provider change, real send, persistent schema apply, merge or publication. Provider linking must be approved inside Lovable. No Recovery Plan use.
+
+## 2026-10-08 — Password confirmation and visibility
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Owner requested re-enter password at signup and full eye controls. Reuse a localized accessible visibility field in signup, login and reset; reject signup mismatch before Auth and preserve password login. No new Auth provider or subscription change.
+sync_status: draft in PR165, isolated tests only, no merge/publication.
+
+## 2026-10-08 — Account phone verification draft
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: db
+source: user
+summary: Continue PR165 using the existing masaarat OTP service and saved TWILIO_VERIFY_SERVICE_SID. Add an account-bound SMS verification draft with private ownership/challenge data, before-send quotas, exact receipt/check leases, confirmed email/current account checks and LC09 erasure. Preserve email/password sign-in and all subscription/offer access. Initial country scope is Egypt; rollout is off and restricted to an explicit pilot actor allowlist.
+sync_status: local implementation and rehearsal; real delivery not tested. No duplicate service, code generation in Lovable, merge or publication. No Recovery Plan use. Platform migration handoff remains through Lovable.
+
+## 2026-10-08 — Linked Twilio connector runtime
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: infra
+source: user
+summary: Lovable linked the owner-added Twilio connection to this project and confirmed the actual native gateway binding. Adapt the private Verify transport to opaque server-only connector credentials without requiring another Auth Token. Partial connector configuration fails closed. Provider service creation is blocked by Lovable's interactive approval boundary and requires owner action inside its editor; no write retry through another client.
+sync_status: draft PR165; no Verify service created, message send, feature migration, merge or publish. WhatsApp sender linkage unverified and marketing test template pending. Supabase/platform operations through Lovable only.
+
+## 2026-10-08 — Twilio communications setup draft
+
+[roadmap:6b617b31-c9be-44c8-98fb-a3e18f6f311a]
+scope: ui
+source: user
+summary: Prepare an isolated administrator communications console and private Verify transport. Configuration checks return booleans only after stored-admin and account-active authorization. All send switches remain disabled. Signup/phone/offers/grants/invitations/receipt event hooks and persistence are pending the correct Twilio account/connector setup through Lovable. Existing auth, payment and entitlements retained.
+sync_status: draft only; no Supabase migration, code delivery, provider send, merge or publication. Lovable verified the five Twilio settings and connector absent on 2026-10-08. Real testing required before integration/release.
+
 ## 2026-10-07 — Multi-domain social sharing card
 
 [roadmap:b5525659-9af0-488c-b4ad-494e206e46be]
@@ -260,3 +341,4 @@ source: user
 scope: ui
 summary: Owner explicitly authorized merging and publishing the reviewed My journey and original-logo social card. PR163 merged at e1f270b9; social-card candidate synchronizes that base and its exact migration inventory. Preserve payments, entitlements and Academic media production. The branded promotional video is a delivered standalone creative, not a new homepage feature or social post.
 sync_status: controlled release in progress; apply the reviewed journey migration before frontend deployment, verify current-head checks and live output, then reconcile both continuation registers. This supersedes the earlier no-publication hold only for this release.
+
