@@ -196,9 +196,17 @@ def publish(lesson,locale):
  linked=bridge(r)
  if not linked.get("linked"):raise RuntimeError("Mapping not confirmed; old video retained")
  r["status"]="linked";r["mappingReceipt"]=linked;dump(work/"receipt.json",r)
- # Old deletion is intentionally deferred to batch closure, after all 320
- # mappings and durable backup artifacts are verified. No deletion on failure.
- print(json.dumps({"cell":lesson+"__"+locale,"newGuid":r["newGuid"],"status":"linked","oldVideoRetained":True}))
+ # Reconfirm the exact cloud mapping and the playable replacement before
+ # removing only this cell's old video. Its durable backup already exists.
+ confirmed=bridge(r)
+ if not confirmed.get("linked") or confirmed.get("newGuid")!=r["newGuid"] or confirmed.get("oldGuid")!=r["oldGuid"]:
+  raise RuntimeError("Deletion confirmation unavailable; both videos retained")
+ old=bunny("GET","/"+r["oldGuid"])
+ if old.get("guid")!=r["oldGuid"] or old.get("collectionId")!="4972720c-4dd7-48e6-b341-34e3b4875b26":
+  raise RuntimeError("Deletion identity rejected; old video retained")
+ bunny("DELETE","/"+r["oldGuid"])
+ r["oldVideoRetained"]=False;r["status"]="linked-old-deleted";dump(work/"receipt.json",r)
+ print(json.dumps({"cell":lesson+"__"+locale,"newGuid":r["newGuid"],"status":r["status"],"oldVideoRetained":False}))
 
 def prepare():
  rows=baseline();assert len(rows)==320 and len({(r["lesson_id"],r["locale"]) for r in rows})==320

@@ -22,8 +22,10 @@ Only video_guid changes, guarded by old GUID and unchanged content hash. Readbac
 and Bunny playback readiness are required. No service-role credential is copied
 to GitHub. Unauthenticated, fork, main-branch and unreviewed-code calls are refused.
 
-Old video deletion waits for batch closure and backup verification. Failures
-retain the old video. Backups have 90-day retention. Per-cell operational receipts
+Each old video is deleted only after a second authenticated confirmation of the
+playable replacement and its exact stored lesson mapping, and validation of the
+old video's library/collection identity. Failure before that confirmation keeps
+both videos. Backups have 90-day retention. Per-cell operational receipts
 are evidence; the existing MD/XLSX remain the authoritative project registers.
 
 The preparation workflow checks source coverage, motion renders and original audio
