@@ -1,0 +1,22 @@
+name: Technical v2 coordination checks
+on:
+  push:
+    branches: [review/cabinet-ai-style-20261010]
+    paths:
+      - scripts/technical-v2/**
+      - .github/workflows/technical-v2-preparation.yml
+permissions:
+  contents: read
+jobs:
+  scope-and-coordination:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check changed receipt coordination and deletion scope
+        run: |
+          python3 scripts/technical-v2/test_coordination.py
+          python3 scripts/technical-v2/test_replacement.py
+          python3 scripts/technical-v2/production.py prepare
