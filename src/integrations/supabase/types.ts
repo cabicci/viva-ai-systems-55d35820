@@ -49,9 +49,158 @@ export type Database = {
           },
         ]
       }
+      academic_assistant_course_grants: {
+        Row: {
+          course_id: string
+          entitlement_id: string
+        }
+        Insert: {
+          course_id: string
+          entitlement_id: string
+        }
+        Update: {
+          course_id?: string
+          entitlement_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_assistant_course_grants_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_assistant_policy: {
+        Row: {
+          course_id: string
+          eg_month_minor: number
+          eg_year_minor: number
+          runtime_enabled: boolean
+          sales_enabled: boolean
+          usd_month_minor: number
+          usd_year_minor: number
+        }
+        Insert: {
+          course_id: string
+          eg_month_minor: number
+          eg_year_minor: number
+          runtime_enabled?: boolean
+          sales_enabled?: boolean
+          usd_month_minor: number
+          usd_year_minor: number
+        }
+        Update: {
+          course_id?: string
+          eg_month_minor?: number
+          eg_year_minor?: number
+          runtime_enabled?: boolean
+          sales_enabled?: boolean
+          usd_month_minor?: number
+          usd_year_minor?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_assistant_policy_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: true
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_assistant_purchases: {
+        Row: {
+          course_id: string
+          order_id: string
+          surcharge_minor: number
+        }
+        Insert: {
+          course_id: string
+          order_id: string
+          surcharge_minor: number
+        }
+        Update: {
+          course_id?: string
+          order_id?: string
+          surcharge_minor?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_assistant_purchases_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_assistant_questions: {
+        Row: {
+          course_id: string
+          created_at: string
+          lesson_id: string
+          locale: string
+          period_key: string
+          request_id: string
+          user_id: string
+        }
+        Insert: {
+          course_id: string
+          created_at?: string
+          lesson_id: string
+          locale: string
+          period_key: string
+          request_id: string
+          user_id: string
+        }
+        Update: {
+          course_id?: string
+          created_at?: string
+          lesson_id?: string
+          locale?: string
+          period_key?: string
+          request_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_assistant_questions_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_content_course_grants: {
+        Row: {
+          course_id: string
+          entitlement_id: string
+        }
+        Insert: {
+          course_id: string
+          entitlement_id: string
+        }
+        Update: {
+          course_id?: string
+          entitlement_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_content_course_grants_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       academic_courses: {
         Row: {
           assistant_enabled: boolean
+          assistant_review_enabled: boolean
           enabled: boolean
           id: string
           review_enabled: boolean
@@ -59,6 +208,7 @@ export type Database = {
         }
         Insert: {
           assistant_enabled?: boolean
+          assistant_review_enabled?: boolean
           enabled?: boolean
           id: string
           review_enabled?: boolean
@@ -66,6 +216,7 @@ export type Database = {
         }
         Update: {
           assistant_enabled?: boolean
+          assistant_review_enabled?: boolean
           enabled?: boolean
           id?: string
           review_enabled?: boolean
@@ -209,6 +360,57 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "academic_courses"
             referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_rag_chunks: {
+        Row: {
+          content: string
+          content_sha256: string
+          content_version: string
+          course_id: string
+          embedding: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          source_sha256: string
+        }
+        Insert: {
+          content: string
+          content_sha256: string
+          content_version: string
+          course_id: string
+          embedding: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          source_sha256: string
+        }
+        Update: {
+          content?: string
+          content_sha256?: string
+          content_version?: string
+          course_id?: string
+          embedding?: string
+          lesson_id?: string
+          locale?: string
+          section_id?: string
+          source_sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_rag_chunks_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "academic_rag_chunks_course_id_lesson_id_locale_fkey"
+            columns: ["course_id", "lesson_id", "locale"]
+            isOneToOne: false
+            referencedRelation: "academic_lesson_content"
+            referencedColumns: ["course_id", "lesson_id", "locale"]
           },
         ]
       }
@@ -1866,6 +2068,89 @@ export type Database = {
         }
         Relationships: []
       }
+      technical_video_replacement_batches: {
+        Row: {
+          baseline: Json
+          batch_id: string
+          enabled: boolean
+          expires_at: string
+          source_sha: string
+        }
+        Insert: {
+          baseline: Json
+          batch_id: string
+          enabled?: boolean
+          expires_at: string
+          source_sha: string
+        }
+        Update: {
+          baseline?: Json
+          batch_id?: string
+          enabled?: boolean
+          expires_at?: string
+          source_sha?: string
+        }
+        Relationships: []
+      }
+      technical_video_replacement_receipts: {
+        Row: {
+          audio_sha256: string
+          backup_artifact_id: string
+          backup_sha256: string
+          batch_id: string
+          duration_seconds: number
+          lesson_id: string
+          linked_at: string | null
+          locale: string
+          new_guid: string
+          old_guid: string
+          run_id: string
+          source_sha256: string
+          status: string
+          video_sha256: string
+        }
+        Insert: {
+          audio_sha256: string
+          backup_artifact_id: string
+          backup_sha256: string
+          batch_id: string
+          duration_seconds: number
+          lesson_id: string
+          linked_at?: string | null
+          locale: string
+          new_guid: string
+          old_guid: string
+          run_id: string
+          source_sha256: string
+          status: string
+          video_sha256: string
+        }
+        Update: {
+          audio_sha256?: string
+          backup_artifact_id?: string
+          backup_sha256?: string
+          batch_id?: string
+          duration_seconds?: number
+          lesson_id?: string
+          linked_at?: string | null
+          locale?: string
+          new_guid?: string
+          old_guid?: string
+          run_id?: string
+          source_sha256?: string
+          status?: string
+          video_sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "technical_video_replacement_receipts_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "technical_video_replacement_batches"
+            referencedColumns: ["batch_id"]
+          },
+        ]
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -2165,9 +2450,26 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      academic_assistant_access: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: string
+      }
       academic_assistant_allowed: {
         Args: { p_course: string; p_lesson: string; p_locale: string }
         Returns: boolean
+      }
+      academic_assistant_previous_advance: {
+        Args: { p_lease_token: string; p_next_stage: string; p_user_id: string }
+        Returns: Json
+      }
+      academic_assistant_take_question: {
+        Args: {
+          p_course: string
+          p_lesson: string
+          p_locale: string
+          p_request: string
+        }
+        Returns: Json
       }
       academic_can_access: {
         Args: { p_course: string; p_lesson: string; p_locale: string }
@@ -2184,12 +2486,33 @@ export type Database = {
         }
         Returns: Json
       }
+      academic_import_chunks: { Args: { p_rows: Json }; Returns: number }
       academic_mail_command: {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
       }
+      academic_rag_match: {
+        Args: {
+          p_course: string
+          p_embedding: string
+          p_limit?: number
+          p_locale: string
+        }
+        Returns: {
+          content: string
+          course_id: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          similarity: number
+        }[]
+      }
       academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
+      account_phone_command: {
+        Args: { p_action: string; p_actor: string; p_data?: Json }
+        Returns: Json
+      }
       activate_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
@@ -2539,6 +2862,14 @@ export type Database = {
           p_output_tokens?: number
           p_provider_cost_micro?: number
           p_reservation_id: string
+        }
+        Returns: Json
+      }
+      get_academic_assistant_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_user_id: string
         }
         Returns: Json
       }
@@ -3101,6 +3432,18 @@ export type Database = {
         Returns: boolean
       }
       record_user_activity: { Args: never; Returns: Json }
+      register_academic_assistant_stripe_price: {
+        Args: {
+          p_amount_minor: number
+          p_billing_interval: string
+          p_currency_code: string
+          p_discounted: boolean
+          p_market_code: string
+          p_price_id: string
+          p_product_id: string
+        }
+        Returns: string
+      }
       register_academic_stripe_price: {
         Args: {
           p_amount_minor: number
