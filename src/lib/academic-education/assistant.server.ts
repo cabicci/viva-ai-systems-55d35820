@@ -1,6 +1,5 @@
 import { handleAcademicAssistant, type Locale, type Chunk } from "../../../supabase/functions/academic-assistant/handler";
 import { approvedChunks, type ApprovedLesson } from "./assistant-corpus";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { callAI } from "@/lib/ai-providers.server";
 
 type RpcClient = { rpc(name: never, body: never): PromiseLike<{ data: unknown; error: unknown }> };
@@ -27,6 +26,7 @@ async function embeddings(texts: string[]): Promise<number[][]> {
   return rows.map(x => x.embedding);
 }
 export async function runAcademicAssistant(data: {courseId:string; lessonId:string; locale:Locale; query:string; requestId:string}, context: Context) {
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const setting = await supabaseAdmin.from("academic_assistant_policy" as never)
     .select("runtime_enabled").eq("course_id", data.courseId).maybeSingle();
   const enabled = !setting.error && (setting.data as {runtime_enabled?:boolean}|null)?.runtime_enabled === true;
@@ -61,6 +61,7 @@ async function requireAdmin(context: Context) {
 }
 export async function indexAcademicBatch(data:{offset:number;batchSize:number},context:Context) {
   await requireAdmin(context);
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const result = await supabaseAdmin.from("academic_lesson_content" as never)
     .select("course_id,lesson_id,locale,approved,source_sha256,payload")
     .eq("course_id","AC-BUS").eq("approved",true).order("locale").order("lesson_id");
