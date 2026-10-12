@@ -1,4 +1,5 @@
 -- Append inside the candidate transaction and ROLLBACK. No sends/provider calls.
+BEGIN;
 CREATE TEMP TABLE academic_native_checks(name text PRIMARY KEY,passed boolean NOT NULL);
 CREATE FUNCTION pg_temp.academic_assert(ok boolean,label text) RETURNS void LANGUAGE plpgsql AS $$
 BEGIN IF ok IS NOT TRUE THEN RAISE EXCEPTION 'ACADEMIC_TEST_FAILED:%',label; END IF;
@@ -10,8 +11,9 @@ BEGIN
  PERFORM set_config('request.jwt.claims',jsonb_build_object('sub',id,'role',role_name)::text,true);
 END $$;
 DO $checks$
-DECLARE a uuid; u uuid; mail text; q jsonb; base jsonb; data jsonb; ord jsonb; ent uuid; req uuid; result jsonb;
+DECLARE a uuid; u uuid; mail text; q jsonb; base jsonb; data jsonb; ord jsonb; payment jsonb; ent uuid; req uuid; result jsonb;
  ids text[]; i integer; j integer; expected integer; region text; span text; old_end timestamptz; old_start timestamptz;
+ lesson record; section jsonb; chunk jsonb; vector_text text:='['||repeat('0.1,',1535)||'0.1]'; rejected boolean;
 BEGIN
  SELECT user_id INTO a FROM public.user_roles WHERE role='admin' AND billing.commerce_account_allowed(user_id) LIMIT 1;
  SELECT id,lower(email) INTO u,mail FROM auth.users au WHERE email_confirmed_at IS NOT NULL
@@ -43,7 +45,7 @@ BEGIN
  PERFORM pg_temp.academic_assert(result->>'id'=ord->>'id','order_retry_idempotent');
  PERFORM pg_temp.academic_assert(public.academic_assistant_access('AC-BUS',ids[1],'en')='none','unpaid_addon_no_access');
  PERFORM pg_temp.academic_caller(a);
- PERFORM public.commerce_command('confirm',jsonb_build_object('key',gen_random_uuid()::text,'method','instapay','currency','EGP','amount_minor',(ord->>'final_minor')::bigint,
+ payment:=public.commerce_command('confirm',jsonb_build_object('key',gen_random_uuid()::text,'method','instapay','currency','EGP','amount_minor',(ord->>'final_minor')::bigint,
  'transaction_reference','rollback-academic-'||gen_random_uuid()::text,'received_at',now(),'funds_verified',true,
  'allocations',jsonb_build_array(jsonb_build_object('order_id',ord->>'id','amount_minor',(ord->>'final_minor')::bigint))));
  SELECT id,ends_at,starts_at INTO ent,old_end,old_start FROM billing.commerce_entitlements WHERE order_id=(ord->>'id')::uuid;
@@ -84,6 +86,38 @@ BEGIN
   IF NOT (result->>'allowed')::boolean OR result->>'mode'<>'admin' THEN RAISE EXCEPTION 'ADMIN_QUOTA'; END IF;
  END LOOP;
  PERFORM pg_temp.academic_assert(NOT EXISTS(SELECT 1 FROM public.academic_assistant_questions WHERE user_id=a),'admin_unlimited_no_learner_counter');
+ PERFORM public.commerce_command('refund',jsonb_build_object('key',gen_random_uuid()::text,'payment_id',payment->>'id','order_id',ord->>'id',
+ 'amount_minor',(ord->>'final_minor')::bigint,'reference','rollback-refund','reason','Isolated rollback test',
+ 'revoke_access',false,'funds_verified',true));
+ PERFORM pg_temp.academic_caller(u);
+ PERFORM pg_temp.academic_assert(public.academic_assistant_access('AC-BUS',ids[1],'en')='none','full_refund_removes_assistant');
+ PERFORM pg_temp.academic_caller(a,'service_role');
+ FOR lesson IN SELECT * FROM public.academic_lesson_content
+  WHERE course_id='AC-BUS' AND lesson_id=ids[1] AND locale IN ('en','ar-EG') AND approved LOOP
+  section:=lesson.payload->'sections'->0;
+  chunk:=jsonb_build_object('course_id','AC-BUS','lesson_id',lesson.lesson_id,'locale',lesson.locale,
+   'section_id',section->>'id','content_version',coalesce(lesson.payload->>'version','1.0.0-pilot'),
+   'source_sha256',lesson.source_sha256,'content',section->>'title'||E'\n'||(section->>'text'),
+   'content_sha256',encode(extensions.digest(convert_to(section->>'title'||E'\n'||(section->>'text'),'UTF8'),'sha256'),'hex'),
+   'embedding',vector_text);
+  PERFORM public.academic_import_chunks(jsonb_build_array(chunk));
+ END LOOP;
+ PERFORM pg_temp.academic_assert((SELECT count(*)=1 AND bool_and(locale='en') FROM public.academic_rag_match('AC-BUS','en',vector_text::extensions.vector,6)),'retrieval_exact_locale_before_limit');
+ PERFORM pg_temp.academic_assert(NOT EXISTS(SELECT 1 FROM public.academic_rag_match('AC-OTHER','en',vector_text::extensions.vector,6)),'retrieval_cross_course_denied');
+ rejected:=false;
+ BEGIN
+  PERFORM public.academic_import_chunks(jsonb_build_array(chunk||jsonb_build_object('source_sha256',repeat('a',64))));
+ EXCEPTION WHEN OTHERS THEN rejected:=true; END;
+ PERFORM pg_temp.academic_assert(rejected,'import_rejects_changed_source');
+ rejected:=false;
+ BEGIN
+  PERFORM public.academic_import_chunks(jsonb_build_array(chunk||jsonb_build_object('content','INJECTED_QUIZ_KEY')));
+ EXCEPTION WHEN OTHERS THEN rejected:=true; END;
+ PERFORM pg_temp.academic_assert(rejected,'import_rejects_nonsection_content');
+ PERFORM pg_temp.academic_caller(a);
+ DELETE FROM public.user_roles WHERE user_id=a AND role='admin';
+ PERFORM pg_temp.academic_assert(public.academic_assistant_access('AC-BUS',ids[1],'en')='none','stored_admin_role_revocation');
 END $checks$;
 SELECT * FROM academic_native_checks ORDER BY name;
+ROLLBACK;
 

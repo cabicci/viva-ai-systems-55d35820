@@ -132,6 +132,8 @@ RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
  JOIN public.academic_content_course_grants b ON b.entitlement_id=e.id AND b.course_id=p_course
  JOIN public.academic_assistant_course_grants a ON a.entitlement_id=e.id AND a.course_id=p_course
  WHERE e.user_id=auth.uid() AND e.package='academic' AND e.revoked_at IS NULL AND e.starts_at<=now() AND e.ends_at>now()
+ AND NOT EXISTS(SELECT 1 FROM billing.commerce_orders o WHERE o.id=e.order_id
+  AND coalesce((SELECT sum(r.amount_minor) FROM billing.commerce_refunds r WHERE r.order_id=o.id),0)>=o.final_minor)
  AND EXISTS(SELECT 1 FROM billing.commerce_control WHERE access_enabled))
  OR EXISTS(SELECT 1 FROM billing.academic_stripe_subscriptions s JOIN billing.academic_stripe_prices p ON p.gateway_price_id=s.price_id
  WHERE s.user_id=auth.uid() AND p.course_id=p_course AND p.includes_assistant AND s.status IN ('active','trialing')
