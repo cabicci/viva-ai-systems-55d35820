@@ -58,3 +58,13 @@ it("keeps the runtime gate closed before provider calls",async()=>{
   state.enabled=false;expect((await runAcademicAssistant(input,context)).status).toBe(503);
   expect(fetch).not.toHaveBeenCalled();expect(state.answer).not.toHaveBeenCalled();
 });
+it.each([
+  ["ar-EG", "Egyptian Arabic"],
+  ["ar-MSA", "Modern Standard Arabic"],
+  ["ar-Gulf", "Gulf Arabic"],
+  ["en", "clear English"],
+] as const)("sets an explicit answer register for %s",async(locale,register)=>{
+  state.chunks[0].locale=locale;
+  expect((await runAcademicAssistant({...input,locale},context)).status).toBe(200);
+  expect(state.answer.mock.calls[0][0].messages[0].content).toContain(register);
+});
