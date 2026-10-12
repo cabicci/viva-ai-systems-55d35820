@@ -1,5 +1,11 @@
 # Academic shared integration contract
 
+## 2026-10-13 owner decision: assistant and RAG per course
+
+Within Academic, each course has its own assistant entitlement and retrieval scope. For `AC-BUS`, questions can use every approved lesson in that course and selected locale, including lessons other than the open page. A later Academic course must have separate approved chunks and an exact course entitlement; its chunks must never appear in `AC-BUS` answers. The browser's course identity is not authority: the server checks stored lesson/course membership and the caller's course-scoped access before provider calls. The public platform assistant index, Kids and Technical content are excluded.
+
+The implementation candidate is `scripts/academic-education/assistant-rag-candidate.sql`, `supabase/functions/academic-assistant/` and the guarded lesson UI. Its SQL is intentionally separate from deployed migrations until central review and access to the owner-managed Supabase project. `build_rag_corpus.py` only stages section text; `import_academic_rag.py` refuses embeddings and writes until every source matches an approved production lesson. Assistant flags default off. Activation also requires a priced `academic_assistant` product, atomic course binding for both the base Academic entitlement and the assistant add-on, an approved monthly question limit, deployed function secrets, and TEST checkout/revocation verification. The binding cannot be granted solely because a learner can open an introductory lesson. Do not treat the isolated candidate or local tests as production activation.
+
 Status: central integration requirements. Guarded commerce and delivery candidates are implemented on the isolated branch; they are not activated or deployment authorization.
 
 ## Ownership and sequence
@@ -18,7 +24,7 @@ Sequence: review the completed branch candidates against then-current main; coor
 | Stored administrator role | Existing lesson-review rules, account checks and release controls | No automatic unlimited paid model calls |
 | Expired/refunded/revoked access | Existing server-side revocation behavior | No stale retrieval/cache grant |
 
-Whether an assistant-only buyer can use it without an active Academic content subscription is unresolved. Do not implement a permissive default. The Academic base uses the canonical Pro Plus price catalogue, with independent rights. Assistant price, billing allowance/quota, catalogue-versus-course scope and cancellation/refund interactions remain unresolved. Do not ask again for the already-agreed base price parity.
+Assistant use requires a base Academic entitlement and a separate assistant entitlement, both bound to the exact course; assistant-only purchase or introductory lesson access does not grant retrieval across the course. The Academic base uses the canonical Pro Plus price catalogue, with independent rights. Assistant price, monthly usage allowance and cancellation/refund implementation remain unresolved. Do not ask again for the already-agreed base price parity.
 
 ## Shared product surfaces
 - Add Academic through `src/lib/learning-lines.ts` and the existing route/component family; reuse introductory section order, curriculum hierarchy, lesson layout, typography and one locale selector.
@@ -34,3 +40,4 @@ Use only approved Masaarat learner lesson content. Internal academic references,
 
 ## Required integration tests
 Test the access matrix with actual server handlers, not mocked client flags. Cover purchase grant/replay, receipt review/replay, add-on-only state, expiry/refund/revocation, admin lesson access, locale switching, private PDF denial, cross-line/course RAG denial, stale cache denial and existing AI/Kids/Technical commerce regressions. These are future integration gates, not tests claimed as passed by the isolated pilot.
+

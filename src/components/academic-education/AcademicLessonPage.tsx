@@ -16,6 +16,7 @@ import {
 } from "@/lib/academic-education/client";
 import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-education/types";
 import { ReadingVisual } from "./ReadingVisual";
+import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
 import { LessonText, LessonInlineText } from "./LessonText";
 import type { SupportedLocale } from "@/lib/locale/types";
 
@@ -380,15 +381,18 @@ function AuthorizedLesson({
               )}
             </>
           )}
-          {tab === "assistant" && (
+          {tab === "assistant" && (delivery.assistantAllowed ? (
+            <AcademicAssistantPanel courseId={courseId} lessonId={lesson.id} locale={locale} />
+          ) : (
             <p className="leading-8">
               {en
-                ? "The Academic assistant is an optional separate subscription. It is not available until its service is activated."
-                : "المساعد الأكاديمي إضافة اختيارية باشتراك منفصل، ولا يتاح حتى تفعيل خدمته."}
+                ? "The assistant for this course requires separate access and activation."
+                : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
             </p>
-          )}
+          ))}
         </section>
       </div>
     </>
   );
 }
+
