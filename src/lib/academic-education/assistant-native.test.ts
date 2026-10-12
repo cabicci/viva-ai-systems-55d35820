@@ -31,6 +31,7 @@ it("uses verified admin identity with no learner quota and can cite another cour
   const r=await runAcademicAssistant(input,context);
   expect(r.status).toBe(200);expect(r.sources?.[0].lessonId).toBe("AC-BUS-M02-L03");
   expect(state.quotaCall).not.toHaveBeenCalled();expect(state.answer).toHaveBeenCalledOnce();
+  expect(state.answer).toHaveBeenCalledWith(expect.objectContaining({model:"openai/gpt-4.1-mini-2025-04-14"}));
 });
 it("denies a learner without the course add-on before either provider",async()=>{
   state.mode="none";expect((await runAcademicAssistant(input,context)).status).toBe(403);

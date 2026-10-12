@@ -17,7 +17,7 @@ Learner quota resolves the current published Pro Plus policy: currently 150 ques
 
 1. Confirm merged main and target database `abyqqeboyrkkwhjpwmtd` in project `658adce0-747d-4c8e-90e3-d22225070b94`.
 2. Rehearse then apply `scripts/academic-education/assistant-native-candidate.sql` once. It depends on the earlier applied assistant candidate. Flags default off.
-3. Reuse existing server `OPENAI_API_KEY` for embeddings and `LOVABLE_API_KEY` for the Gemini answer model; never expose or copy values into code.
+3. Owner approved OpenAI for both embeddings and answers on 2026-10-13. Reuse existing server `OPENAI_API_KEY` for `text-embedding-3-small` and pinned `gpt-4.1-mini-2025-04-14` answers through the existing provider adapter; never expose or copy values into code. This explicit Academic-only decision supersedes the earlier Gemini answer policy for this assistant.
 4. Set AC-BUS review flags for the admin indexing session. Via the native `indexAcademicAssistant` server function, process batches until `nextOffset:null`; retain counts. Source mismatch blocks embeddings. Retry skips unchanged chunks.
 5. Verify exact-source coverage of all 160 packages, live answer, course/locale isolation, base-only denial, paid-add-on success, quota, revocation/refund and deletion. The rollback-only SQL smoke script exercises pricing/paid grants/quota without sending messages or charging a provider.
 6. Only after these checks, enable `academic_assistant_policy.runtime_enabled`, `sales_enabled` and `academic_courses.assistant_enabled` for AC-BUS. The owner publishes the website. A merged commit, schema application or mocked test alone is not activation.
