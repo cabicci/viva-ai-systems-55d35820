@@ -63,6 +63,7 @@ const selection = z.object({
   billing_interval: z.enum(["month", "year"]),
   code: z.string().max(64).optional(),
   renewal: z.boolean().optional(),
+  academicAssistant: z.boolean().optional(),
 });
 export const commandSchemas = {
   offer_catalogue: z.object({}),
@@ -197,9 +198,14 @@ export function parseCommand(input: unknown) {
     .object({ action: z.string(), data: z.unknown().default({}) })
     .parse(input);
   if (!(action in commandSchemas)) throw new Error("Invalid commerce action");
+  const parsed = commandSchemas[action as CommerceAction].parse(data);
+  if ((action === "quote" || action === "create_order") &&
+    "academicAssistant" in parsed && parsed.academicAssistant === true &&
+    (!("package" in parsed) || parsed.package !== "academic"))
+    throw new Error("Academic assistant requires the Academic package");
   return {
     action: action as CommerceAction,
-    data: commandSchemas[action as CommerceAction].parse(data),
+    data: parsed,
   };
 }
 export interface PaymentMethod {
@@ -336,3 +342,4 @@ export interface UnifiedPaymentProvider {
     idempotencyKey: string,
   ): Promise<{ reference: string; state: string }>;
 }
+

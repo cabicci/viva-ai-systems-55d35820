@@ -68,6 +68,7 @@ type Context = {
   gateway_product_id: string | null;
   gateway_price_id: string | null;
   email: string;
+  includes_assistant?: boolean;
 };
 async function ensureCustomer(context: Context, user: { id: string; email: string }) {
   if (context.gateway_customer_id) return context.gateway_customer_id;
@@ -90,7 +91,7 @@ async function ensurePrice(context: Context): Promise<string> {
     productParams,
     "catalog-product-academic-test-v1",
   );
-  const variant = `${context.market_code.toLowerCase()}_${context.billing_interval}_${context.amount_minor}_standard`;
+  const variant = `${context.market_code.toLowerCase()}_${context.billing_interval}_${context.amount_minor}_${context.includes_assistant ? "assistant" : "standard"}`;
   const priceParams = new URLSearchParams({
     product: product.id,
     currency: context.currency_code,
@@ -106,7 +107,7 @@ async function ensurePrice(context: Context): Promise<string> {
     priceParams,
     `catalog-price-academic-${variant}-test-v1`,
   );
-  return rpc<string>("register_academic_stripe_price", {
+  return rpc<string>(context.includes_assistant ? "register_academic_assistant_stripe_price" : "register_academic_stripe_price", {
     p_market_code: context.market_code,
     p_billing_interval: context.billing_interval,
     p_discounted: context.discounted,
@@ -133,11 +134,13 @@ Deno.serve(async (request) => {
     const body = await request.json();
     if (
       !["EG", "INTL"].includes(body?.marketCode) ||
-      !["month", "year"].includes(body?.billingInterval)
+      !["month", "year"].includes(body?.billingInterval) ||
+      (body?.academicAssistant !== undefined && typeof body.academicAssistant !== "boolean")
     ) {
       return json({ error: "INVALID_ACADEMIC_SELECTION" }, 400, origin);
     }
-    const context = await rpc<Context>("get_academic_stripe_checkout_context", {
+    const context = await rpc<Context>(body.academicAssistant === true
+      ? "get_academic_assistant_stripe_checkout_context" : "get_academic_stripe_checkout_context", {
       p_user_id: user.id,
       p_market_code: body.marketCode,
       p_billing_interval: body.billingInterval,
@@ -181,6 +184,8 @@ Deno.serve(async (request) => {
       market_code: context.market_code,
       billing_interval: context.billing_interval,
       environment: "test",
+      academic_assistant: context.includes_assistant ? "true" : "false",
+      course_id: "AC-BUS",
     };
     for (const [key, value] of Object.entries(metadata)) {
       params.set(`metadata[${key}]`, value);
@@ -191,7 +196,7 @@ Deno.serve(async (request) => {
       begin: () =>
         rpc("lc09_begin_kids_checkout", {
           p_user_id: user.id,
-          p_key: `academic-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${context.discounted}-${windowId}`,
+          p_key: `academic-checkout-${user.id}-${context.market_code}-${context.billing_interval}-${context.amount_minor}-${context.includes_assistant ? "assistant" : "standard"}-${windowId}`,
           p_parameters: params.toString(),
         }),
       create: (key) => stripe("/checkout/sessions", params, key),
@@ -214,3 +219,4 @@ Deno.serve(async (request) => {
     return json({ error: "ACADEMIC_CHECKOUT_UNAVAILABLE" }, 503, origin);
   }
 });
+

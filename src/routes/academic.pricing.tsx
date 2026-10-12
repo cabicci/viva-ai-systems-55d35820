@@ -11,7 +11,7 @@ import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { supabase } from "@/integrations/supabase/client";
 import { PaymentMethods } from "@/components/commerce/PaymentMethods";
-import { commerceCopy } from "@/lib/commerce/copy";
+import { commerceCopy, formatAmount } from "@/lib/commerce/copy";
 import { academicCatalogue, academicCommand } from "@/lib/academic-education/client";
 import { useQuery } from "@tanstack/react-query";
 import { adminOfferCopy } from "@/lib/commerce/admin-offer-copy";
@@ -52,6 +52,9 @@ function AcademicPricing() {
   const hasStripe = !status.isError && status.data?.stripe;
   const [interval, setInterval] = useState<"month" | "year">("month");
   const [market, setMarket] = useState<"EG" | "INTL">("EG");
+  const [withAssistant, setWithAssistant] = useState(false);
+  const addonAmount = market === "EG" ? (interval === "month" ? 5000 : 60000)
+    : (interval === "month" ? 100 : 1200);
   const [busy, setBusy] = useState(false),
     [error, setError] = useState(false);
   async function portal() {
@@ -78,7 +81,7 @@ function AcademicPricing() {
     setError(false);
     try {
       const { data, error } = await supabase.functions.invoke("academic-stripe-checkout", {
-        body: { marketCode: market, billingInterval: interval, locale },
+        body: { marketCode: market, billingInterval: interval, locale, academicAssistant: withAssistant },
       });
       if (error || typeof data?.url !== "string") throw new Error("Unavailable");
       const url = new URL(data.url);
@@ -125,6 +128,20 @@ function AcademicPricing() {
                     <option value="INTL">{offers.international} — USD</option>
                   </select>
                 </label>
+                <label className="flex items-start gap-3 rounded-xl border p-4">
+                  <input type="checkbox" checked={withAssistant} disabled={busy}
+                    onChange={(event) => setWithAssistant(event.target.checked)} className="mt-1" />
+                  <span>
+                    {locale === "en" ? "Add the Academic course assistant" : "إضافة مساعد المنهج الأكاديمي"}
+                    {" — +"}{formatAmount(addonAmount, market === "EG" ? "EGP" : "USD", locale)}
+                    {" / "}{interval === "month" ? w.month : w.year}
+                    <span className="mt-1 block text-sm text-muted-foreground">
+                      {locale === "en"
+                        ? "Optional. Ask about the whole course in your selected language. 150 questions per month, up to 6 per lesson each month."
+                        : "اختياري. اسأل عن المنهج كاملًا بلغتك المختارة. ١٥٠ سؤالًا شهريًا، بحد ٦ أسئلة لكل درس خلال الشهر."}
+                    </span>
+                  </span>
+                </label>
                 <PaymentMethods
                   packageKey="academic"
                   interval={interval}
@@ -132,6 +149,7 @@ function AcademicPricing() {
                   stripe={() => void checkout()}
                   disabled={busy}
                   initialMethod="instapay"
+                  academicAssistant={withAssistant}
                 >
                   <Button className="w-full">{w.continue}</Button>
                 </PaymentMethods>
@@ -164,3 +182,4 @@ function AcademicPricing() {
     </div>
   );
 }
+

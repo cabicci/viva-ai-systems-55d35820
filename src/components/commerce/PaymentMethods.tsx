@@ -18,6 +18,7 @@ export function PaymentMethods({
   stripe,
   disabled = false,
   initialMethod = "stripe",
+  academicAssistant = false,
   children,
 }: {
   packageKey: PackageKey;
@@ -26,6 +27,7 @@ export function PaymentMethods({
   stripe: () => void;
   disabled?: boolean;
   initialMethod?: "stripe" | "instapay";
+  academicAssistant?: boolean;
   children: React.ReactNode;
 }) {
   const { locale } = useLocale(),
@@ -46,7 +48,7 @@ export function PaymentMethods({
     setQuote(undefined);
     setOrder(undefined);
     setRequestKey(crypto.randomUUID());
-  }, [packageKey, market, interval, code, method, renewal]);
+  }, [packageKey, market, interval, code, method, renewal, academicAssistant]);
   useEffect(() => {
     let live = true;
     command({ data: { action: "methods", data: {} } })
@@ -66,7 +68,8 @@ export function PaymentMethods({
         (await command({
           data: {
             action: "quote",
-            data: { package: packageKey, market, billing_interval: interval, code, renewal },
+            data: { package: packageKey, market, billing_interval: interval, code, renewal,
+              ...(academicAssistant ? { academicAssistant: true } : {}) },
           },
         })) as unknown as Quote,
       );
@@ -102,6 +105,7 @@ export function PaymentMethods({
               ...(quote?.phone_required ? { phone: normalizeOfferPhone(phone) } : {}),
               code,
               renewal,
+              ...(academicAssistant ? { academicAssistant: true } : {}),
               key: requestKey,
             },
           },
@@ -260,3 +264,4 @@ export function PaymentMethods({
     </div>
   );
 }
+
