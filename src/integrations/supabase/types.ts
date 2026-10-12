@@ -49,9 +49,56 @@ export type Database = {
           },
         ]
       }
+      academic_assistant_course_grants: {
+        Row: {
+          course_id: string
+          entitlement_id: string
+        }
+        Insert: {
+          course_id: string
+          entitlement_id: string
+        }
+        Update: {
+          course_id?: string
+          entitlement_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_assistant_course_grants_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_content_course_grants: {
+        Row: {
+          course_id: string
+          entitlement_id: string
+        }
+        Insert: {
+          course_id: string
+          entitlement_id: string
+        }
+        Update: {
+          course_id?: string
+          entitlement_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_content_course_grants_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       academic_courses: {
         Row: {
           assistant_enabled: boolean
+          assistant_review_enabled: boolean
           enabled: boolean
           id: string
           review_enabled: boolean
@@ -59,6 +106,7 @@ export type Database = {
         }
         Insert: {
           assistant_enabled?: boolean
+          assistant_review_enabled?: boolean
           enabled?: boolean
           id: string
           review_enabled?: boolean
@@ -66,6 +114,7 @@ export type Database = {
         }
         Update: {
           assistant_enabled?: boolean
+          assistant_review_enabled?: boolean
           enabled?: boolean
           id?: string
           review_enabled?: boolean
@@ -209,6 +258,57 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "academic_courses"
             referencedColumns: ["id"]
+          },
+        ]
+      }
+      academic_rag_chunks: {
+        Row: {
+          content: string
+          content_sha256: string
+          content_version: string
+          course_id: string
+          embedding: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          source_sha256: string
+        }
+        Insert: {
+          content: string
+          content_sha256: string
+          content_version: string
+          course_id: string
+          embedding: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          source_sha256: string
+        }
+        Update: {
+          content?: string
+          content_sha256?: string
+          content_version?: string
+          course_id?: string
+          embedding?: string
+          lesson_id?: string
+          locale?: string
+          section_id?: string
+          source_sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "academic_rag_chunks_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "academic_courses"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "academic_rag_chunks_course_id_lesson_id_locale_fkey"
+            columns: ["course_id", "lesson_id", "locale"]
+            isOneToOne: false
+            referencedRelation: "academic_lesson_content"
+            referencedColumns: ["course_id", "lesson_id", "locale"]
           },
         ]
       }
@@ -2248,6 +2348,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      academic_assistant_access: {
+        Args: { p_course: string; p_lesson: string; p_locale: string }
+        Returns: string
+      }
       academic_assistant_allowed: {
         Args: { p_course: string; p_lesson: string; p_locale: string }
         Returns: boolean
@@ -2270,6 +2374,22 @@ export type Database = {
       academic_mail_command: {
         Args: { p_action: string; p_data?: Json }
         Returns: Json
+      }
+      academic_rag_match: {
+        Args: {
+          p_course: string
+          p_embedding: string
+          p_limit?: number
+          p_locale: string
+        }
+        Returns: {
+          content: string
+          course_id: string
+          lesson_id: string
+          locale: string
+          section_id: string
+          similarity: number
+        }[]
       }
       academic_review_allowed: { Args: { p_course: string }; Returns: boolean }
       academic_storage_allowed: { Args: { p_path: string }; Returns: boolean }
