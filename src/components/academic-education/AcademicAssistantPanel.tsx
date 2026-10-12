@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { askAcademicAssistant } from "@/lib/academic-education/assistant.functions";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 type Answer = { answer: string; sources: { lessonId: string; sectionId: string }[] };
@@ -8,29 +9,31 @@ export function AcademicAssistantPanel({ courseId, lessonId, locale }: {
   courseId: string; lessonId: string; locale: SupportedLocale;
 }) {
   const en = locale === "en";
+  const askQuestion = useServerFn(askAcademicAssistant);
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState<Answer | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
   const [denied, setDenied] = useState(false);
+  const [limited, setLimited] = useState(false);
   async function ask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (busy || denied || question.trim().length < 2) return;
     setBusy(true);
     setError(false);
+    setLimited(false);
     setResponse(null);
     try {
-      const { data, error: invokeError } = await supabase.functions.invoke<Answer>(
-        "academic-assistant", { body: { courseId, lessonId, locale, query: question.trim() } },
-      );
-      if (invokeError || !data || typeof data.answer !== "string" || !Array.isArray(data.sources)) {
+      const data = await askQuestion({ data: { courseId: "AC-BUS", lessonId, locale,
+        query: question.trim(), requestId: crypto.randomUUID() } });
+      if (courseId !== "AC-BUS" || data.status !== 200 || typeof data.answer !== "string" || !Array.isArray(data.sources)) {
         // The server returns a fresh permission decision for each question.
-        const status = (invokeError as { context?: Response } | null)?.context?.status;
-        if (status === 403 || (data as { error?: string } | null)?.error === "ACADEMIC_ASSISTANT_ACCESS_REQUIRED")
+        if (data.status === 403 || data.error === "ACADEMIC_ASSISTANT_ACCESS_REQUIRED")
           setDenied(true);
+        if (data.status === 429) setLimited(true);
         throw new Error("ACADEMIC_ASSISTANT_UNAVAILABLE");
       }
-      setResponse(data);
+      setResponse({ answer: data.answer, sources: data.sources });
     } catch {
       setError(true);
     } finally {
@@ -53,7 +56,9 @@ export function AcademicAssistantPanel({ courseId, lessonId, locale }: {
             : (en ? "Ask" : "اسأل")}
         </Button>
       </form>}
-      {error && !denied && <p role="alert">{en ? "The assistant is unavailable right now. Try again later."
+      {limited && <p role="alert">{en ? "You have reached the question limit for this lesson or month."
+        : "وصلت إلى حد الأسئلة لهذا الدرس أو لهذا الشهر."}</p>}
+      {error && !denied && !limited && <p role="alert">{en ? "The assistant is unavailable right now. Try again later."
         : "المساعد غير متاح الآن. حاول لاحقًا."}</p>}
       {response && <div aria-live="polite" className="space-y-3 rounded-lg border p-4">
         <p className="whitespace-pre-wrap">{response.answer}</p>
@@ -69,3 +74,4 @@ export function AcademicAssistantPanel({ courseId, lessonId, locale }: {
     </div>
   );
 }
+

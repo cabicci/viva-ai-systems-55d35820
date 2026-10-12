@@ -37,11 +37,12 @@ beforeEach(() => {
       calls.push({ url: input, body });
       if (input.endsWith("/auth/v1/user"))
         return response({ id: "fixture-user", email: "member@example.test" });
-      if (input.endsWith("/get_academic_stripe_checkout_context"))
+      if (input.endsWith("/get_academic_stripe_checkout_context") || input.endsWith("/get_academic_assistant_stripe_checkout_context"))
         return released
           ? response({
               email: "member@example.test",
-              amount_minor: 30900,
+              amount_minor: input.endsWith("/get_academic_assistant_stripe_checkout_context") ? 35900 : 30900,
+              includes_assistant: input.endsWith("/get_academic_assistant_stripe_checkout_context"),
               currency_code: "egp",
               market_code: "EG",
               billing_interval: "month",
@@ -70,7 +71,7 @@ beforeEach(() => {
     }),
   );
 });
-const checkout = (auth = true) =>
+const checkout = (auth = true, academicAssistant = false) =>
   endpoint(
     new Request("https://edge.test", {
       method: "POST",
@@ -79,7 +80,7 @@ const checkout = (auth = true) =>
         Origin: "https://masaarat.ai",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ marketCode: "EG", billingInterval: "month", locale: "ar-Gulf" }),
+      body: JSON.stringify({ marketCode: "EG", billingInterval: "month", locale: "ar-Gulf", academicAssistant }),
     }),
   );
 it("rejects anonymous callers before database/provider calls", async () => {
@@ -109,3 +110,14 @@ it("uses the existing account/customer and independent Academic scope with local
   );
   expect(params.get("line_items[0][price]")).toBe("price_academic");
 });
+
+it("uses the server-priced optional assistant bundle in the same Academic checkout", async () => {
+  expect((await checkout(true, true)).status).toBe(200);
+  expect(calls.some(c=>c.url.endsWith("/get_academic_assistant_stripe_checkout_context"))).toBe(true);
+  const params = new URLSearchParams(calls.find(c=>c.url.endsWith("/checkout/sessions"))!.body as string);
+  expect(params.get("subscription_data[metadata][academic_assistant]")).toBe("true");
+  expect(params.get("subscription_data[metadata][course_id]")).toBe("AC-BUS");
+  const begin = JSON.parse(calls.find(c=>c.url.endsWith("/lc09_begin_kids_checkout"))!.body as string);
+  expect(begin.p_key).toContain("35900-assistant");
+});
+
