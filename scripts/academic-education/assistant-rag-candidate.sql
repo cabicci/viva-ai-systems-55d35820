@@ -2,6 +2,10 @@
 -- Dedicated Academic index; no query uses platform knowledge_chunks.
 BEGIN;
 
+-- Admin preview is explicit and remains off even when lesson review is enabled.
+ALTER TABLE public.academic_courses
+  ADD COLUMN assistant_review_enabled boolean NOT NULL DEFAULT false;
+
 CREATE TABLE public.academic_rag_chunks (
   course_id text NOT NULL REFERENCES public.academic_courses(id),
   lesson_id text NOT NULL,
@@ -41,24 +45,41 @@ ALTER TABLE public.academic_assistant_course_grants ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON public.academic_assistant_course_grants FROM PUBLIC, anon, authenticated;
 GRANT SELECT, INSERT, DELETE ON public.academic_assistant_course_grants TO service_role;
 
+-- Return the authoritative access mode in one authenticated call. The caller
+-- never supplies the role, and only the verified admin mode skips question quota.
+CREATE FUNCTION public.academic_assistant_access(p_course text,p_lesson text,p_locale text)
+RETURNS text LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
+  SELECT CASE WHEN NOT coalesce(public.academic_can_access(p_course,p_lesson,p_locale),false)
+    OR NOT EXISTS (SELECT 1 FROM public.academic_lesson_content l
+                   WHERE l.course_id=p_course AND l.lesson_id=p_lesson
+                     AND l.locale=p_locale AND l.approved)
+    THEN 'none'
+    WHEN EXISTS (SELECT 1 FROM public.academic_courses c WHERE c.id=p_course
+                 AND c.assistant_review_enabled AND public.academic_review_allowed(p_course))
+    THEN 'admin'
+    WHEN EXISTS (SELECT 1 FROM public.academic_courses c WHERE c.id=p_course
+                 AND c.enabled AND c.assistant_enabled)
+      AND EXISTS (SELECT 1 FROM billing.commerce_entitlements e
+                  JOIN public.academic_content_course_grants g ON g.entitlement_id=e.id
+                  WHERE e.user_id=auth.uid() AND e.package='academic'
+                    AND g.course_id=p_course AND e.revoked_at IS NULL
+                    AND e.starts_at<=now() AND e.ends_at>now()
+                    AND EXISTS (SELECT 1 FROM billing.commerce_control WHERE access_enabled))
+      AND EXISTS (SELECT 1 FROM billing.commerce_entitlements e
+                  JOIN public.academic_assistant_course_grants g ON g.entitlement_id=e.id
+                  WHERE e.user_id=auth.uid() AND e.package='academic_assistant'
+                    AND g.course_id=p_course AND e.revoked_at IS NULL
+                    AND e.starts_at<=now() AND e.ends_at>now()
+                    AND EXISTS (SELECT 1 FROM billing.commerce_control WHERE access_enabled))
+    THEN 'learner' ELSE 'none' END;
+$$;
+REVOKE ALL ON FUNCTION public.academic_assistant_access(text,text,text)
+  FROM PUBLIC, anon, service_role;
+GRANT EXECUTE ON FUNCTION public.academic_assistant_access(text,text,text) TO authenticated;
+
 CREATE OR REPLACE FUNCTION public.academic_assistant_allowed(p_course text,p_lesson text,p_locale text)
 RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path='' AS $$
-  SELECT public.academic_can_access(p_course,p_lesson,p_locale)
-    AND EXISTS (SELECT 1 FROM public.academic_courses c
-                WHERE c.id=p_course AND c.enabled AND c.assistant_enabled)
-    -- Introductory and admin lesson access cannot unlock all-course retrieval.
-    AND EXISTS (SELECT 1 FROM billing.commerce_entitlements e
-                JOIN public.academic_content_course_grants g ON g.entitlement_id=e.id
-                WHERE e.user_id=auth.uid() AND e.package='academic'
-                  AND g.course_id=p_course AND e.revoked_at IS NULL
-                  AND e.starts_at<=now() AND e.ends_at>now()
-                  AND EXISTS (SELECT 1 FROM billing.commerce_control WHERE access_enabled))
-    AND EXISTS (SELECT 1 FROM billing.commerce_entitlements e
-                JOIN public.academic_assistant_course_grants g ON g.entitlement_id=e.id
-                WHERE e.user_id=auth.uid() AND e.package='academic_assistant'
-                  AND g.course_id=p_course AND e.revoked_at IS NULL
-                  AND e.starts_at<=now() AND e.ends_at>now()
-                  AND EXISTS (SELECT 1 FROM billing.commerce_control WHERE access_enabled));
+  SELECT public.academic_assistant_access(p_course,p_lesson,p_locale) <> 'none';
 $$;
 REVOKE ALL ON FUNCTION public.academic_assistant_allowed(text,text,text) FROM PUBLIC, anon, service_role;
 GRANT EXECUTE ON FUNCTION public.academic_assistant_allowed(text,text,text) TO authenticated;
@@ -76,7 +97,8 @@ LANGUAGE sql STABLE SECURITY INVOKER SET search_path='' AS $$
   JOIN public.academic_lesson_content l
     ON l.course_id=r.course_id AND l.lesson_id=r.lesson_id AND l.locale=r.locale
    AND l.source_sha256=r.source_sha256 AND l.approved
-  JOIN public.academic_courses c ON c.id=r.course_id AND c.enabled AND c.assistant_enabled
+  JOIN public.academic_courses c ON c.id=r.course_id AND
+    ((c.enabled AND c.assistant_enabled) OR c.assistant_review_enabled)
   WHERE r.course_id=p_course AND r.locale=p_locale
     AND p_course IS NOT NULL AND p_locale IN ('ar-EG','ar-MSA','ar-Gulf','en')
     AND p_limit BETWEEN 1 AND 8

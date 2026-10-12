@@ -7,7 +7,7 @@ const openai = Deno.env.get("OPENAI_API_KEY") ?? "";
 const lovable = Deno.env.get("LOVABLE_API_KEY") ?? "";
 const monthlyLimit = Number(Deno.env.get("ACADEMIC_ASSISTANT_MONTHLY_LIMIT") ?? 0);
 const enabled = Deno.env.get("ACADEMIC_ASSISTANT_ENABLED") === "true" &&
-  Number.isSafeInteger(monthlyLimit) && monthlyLimit > 0 && monthlyLimit <= 10000 &&
+  Number.isSafeInteger(monthlyLimit) && monthlyLimit >= 0 && monthlyLimit <= 10000 &&
   !!url && !!publishable && !!service && !!openai && !!lovable;
 const origins = new Set((Deno.env.get("ACADEMIC_ASSISTANT_ALLOWED_ORIGINS") ??
   "https://masaarat.ai,https://www.masaarat.ai").split(",").map(s => s.trim()));
@@ -33,12 +33,13 @@ const deps: AcademicDeps = {
     return typeof user.id === "string" ? user.id : null;
   },
   async allowed(token, course, lesson, locale) {
-    const permitted = await rpc<boolean>("academic_assistant_allowed", {
+    const mode = await rpc<"admin" | "learner" | "none">("academic_assistant_access", {
       p_course: course, p_lesson: lesson, p_locale: locale,
     }, publishable, token);
-    return permitted === true;
+    return mode === "admin" || mode === "learner" ? mode : null;
   },
   async consumeLimit(user, course) {
+    if (monthlyLimit <= 0) return false;
     const result = await rpc<{ allowed: boolean }[] | { allowed: boolean }>("consume_rate_limit", {
       p_user_id: user, p_bucket_key: `academic-assistant:${course}`,
       p_max_calls: monthlyLimit, p_window_seconds: 2592000,

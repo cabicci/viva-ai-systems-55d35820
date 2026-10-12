@@ -11,7 +11,7 @@ function setup(overrides={}) {
   const deps={
     enabled:true,
     verifyUser:async()=>{calls.push('auth');return 'user-1'},
-    allowed:async()=>{calls.push('allowed');return true},
+    allowed:async()=>{calls.push('allowed');return 'learner'},
     consumeLimit:async()=>{calls.push('limit');return true},
     embed:async()=>{calls.push('embed');return vector},
     retrieve:async()=>{calls.push('retrieve');return [chunk()]},
@@ -37,7 +37,7 @@ test('browser supplied retrieval evidence and wrong course identity are rejected
   assert.deepEqual(x.calls,[]);
 });
 test('denial happens before rate limit and providers',async()=>{
-  const x=setup({allowed:async()=>{x.calls.push('allowed');return false}});
+  const x=setup({allowed:async()=>{x.calls.push('allowed');return null}});
   assert.equal((await handleAcademicAssistant(x.req(),x.deps)).status,403);
   assert.deepEqual(x.calls,['auth','allowed']);
 });
@@ -45,6 +45,15 @@ test('rate limit denial happens before embedding and retrieval',async()=>{
   const x=setup({consumeLimit:async()=>{x.calls.push('limit');return false}});
   assert.equal((await handleAcademicAssistant(x.req(),x.deps)).status,429);
   assert.deepEqual(x.calls,['auth','allowed','limit']);
+});
+test('verified admin mode bypasses question quota while retaining retrieval scope',async()=>{
+  const x=setup({allowed:async()=>{x.calls.push('allowed');return 'admin'},
+    consumeLimit:async()=>{throw Error('admin must not consume learner quota')},
+    retrieve:async()=>[chunk('AC-OTHER'),chunk()]});
+  const r=await handleAcademicAssistant(x.req(),x.deps);
+  assert.equal(r.status,200);
+  assert.deepEqual((await r.json()).sources,[{lessonId:'AC-BUS-M02-L03',sectionId:'section-1'}]);
+  assert.deepEqual(x.calls,['auth','allowed','embed','answer']);
 });
 test('same course all lessons allowed, cross course and cross locale excluded',async()=>{
   const x=setup({retrieve:async()=>[chunk('AC-OTHER'),chunk('AC-BUS','ar-EG'),chunk()]});

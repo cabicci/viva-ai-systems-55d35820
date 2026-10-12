@@ -10,7 +10,7 @@ export type Chunk = {
 };
 export type AcademicDeps = {
   verifyUser(token: string): Promise<string | null>;
-  allowed(token: string, course: string, lesson: string, locale: Locale): Promise<boolean>;
+  allowed(token: string, course: string, lesson: string, locale: Locale): Promise<"admin" | "learner" | null>;
   consumeLimit(user: string, course: string): Promise<boolean>;
   embed(query: string): Promise<number[] | null>;
   retrieve(course: string, locale: Locale, embedding: number[]): Promise<Chunk[]>;
@@ -52,9 +52,11 @@ export async function handleAcademicAssistant(req: Request, deps: AcademicDeps):
     const user = await deps.verifyUser(auth.slice(7));
     if (!user) return json(401, { error: "SIGN_IN_REQUIRED" });
     // This must be an authenticated RPC, checked before any paid provider call.
-    if (!await deps.allowed(auth.slice(7), courseId, lessonId, locale))
+    const access = await deps.allowed(auth.slice(7), courseId, lessonId, locale);
+    if (access !== "admin" && access !== "learner")
       return json(403, { error: "ACADEMIC_ASSISTANT_ACCESS_REQUIRED" });
-    if (!await deps.consumeLimit(user, courseId)) return json(429, { error: "ACADEMIC_ASSISTANT_LIMIT" });
+    if (access === "learner" && !await deps.consumeLimit(user, courseId))
+      return json(429, { error: "ACADEMIC_ASSISTANT_LIMIT" });
     const embedding = await deps.embed(query.trim());
     if (!embedding || embedding.length !== 1536 || embedding.some(x => !Number.isFinite(x)))
       return json(503, { error: "ACADEMIC_RETRIEVAL_UNAVAILABLE" });
