@@ -29,3 +29,7 @@ verify_jwt = false
 
 [functions.academic-stripe-checkout]
 verify_jwt = false # Handler verifies the caller with Auth before any operation.
+
+[functions.academic-assistant]
+verify_jwt = true # Signed-in user; handler checks exact course entitlement again.
+
