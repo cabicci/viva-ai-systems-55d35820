@@ -382,7 +382,8 @@ function AuthorizedLesson({
             </>
           )}
           {tab === "assistant" && (delivery.assistantAllowed ? (
-            <AcademicAssistantPanel courseId={courseId} lessonId={lesson.id} locale={locale} />
+            <AcademicAssistantPanel key={`${courseId}:${lesson.id}:${locale}`}
+              courseId={courseId} lessonId={lesson.id} locale={locale} />
           ) : (
             <p className="leading-8">
               {en
