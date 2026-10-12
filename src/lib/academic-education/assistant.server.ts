@@ -49,7 +49,7 @@ export async function runAcademicAssistant(data: {courseId:string; lessonId:stri
     }),
     answer: async (system,user) => {
       if (await access() === "none") throw new Error("ACADEMIC_ACCESS_REVOKED");
-      return (await callAI({model:"google/gemini-3-flash-preview",temperature:0.2,maxTokens:1800,
+      return (await callAI({model:"openai/gpt-4.1-mini-2025-04-14",temperature:0.2,maxTokens:1800,
         messages:[{role:"system",content:system},{role:"user",content:user}]})).content;
     },
   });
