@@ -1,5 +1,8 @@
 name: Soil coverage global confirmation and localization only
 on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [.github/workflows/soil-course-coverage-confirm.yml]
   workflow_dispatch:
     inputs:
       firstRun:
@@ -18,6 +21,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   gather:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-22.04
     timeout-minutes: 15
     steps:
