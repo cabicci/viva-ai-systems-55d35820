@@ -41,6 +41,7 @@ Only the supplied Honda owner's manual governs machine controls/operations. Diff
 No minors operate motorized machinery; supervised adult operator only after training. Minors can observe stopped/isolated machine with instructor.
 Never bypass guards or operator-presence controls, clean rotating tines, refuel hot/running engine, run engine indoors, tow trailer or ride machine.
 Machine illustrations: stopped machine overview only, never demonstrate exact safety-critical geometry via a generated close-up.
+Arabic texture terminology: use تربة مزيجية (Loam) for loam, طين for clay, and keep the full English class in parentheses when needed. Never call loam simply تربة طينية or تربة طينية رملية. Keep sandy clay loam distinct from loam. For 40% sand, 40% silt and 20% clay, the class is Loam.
 Explain identifying and verifying real controls with instructor; use correctly sourced textual sequence.
 Do not label the material institutionally accredited or expert/native reviewed. AI quality checks are not such approval.
 """
@@ -60,6 +61,14 @@ def polish_speech(data,key,english):
     for scene,reference in zip(data.get('scenes',[]),english.get('scenes',[])):
         if egyptian_speech(scene.get('narration','')):continue
         result=call('Edit this one spoken segment into natural Egyptian Arabic. Preserve all scientific meaning, conditions and 35-150 words. Use everyday Egyptian wording, never formal إذا كان/الذي/التي/ينبغي/سوف/قم ب. Return JSON with narration only. ENGLISH: '+reference['narration']+'\nDRAFT: '+scene.get('narration',''),key,'arabic-speech-polish')
+        scene['narration']=result['narration'];scene['caption']=result['narration']
+    return data
+
+def fit_spoken_segment(data,key,loc,english):
+    for scene,reference in zip(data.get('scenes',[]),english.get('scenes',[])):
+        if 35<=len(scene.get('narration','').split())<=150:continue
+        prompt='Revise only this spoken segment in '+loc+' to 45-100 whitespace-separated words. Preserve every fact, condition, number, unit and meaning of the English source. Expand reasoning already present, without adding advice or new claims. For ar-EG use natural Egyptian Arabic. Return JSON with narration only. ENGLISH: '+reference['narration']+'\nDRAFT: '+scene.get('narration','')
+        result=call(prompt,key,'fit-spoken-segment')
         scene['narration']=result['narration'];scene['caption']=result['narration']
     return data
 
@@ -186,6 +195,7 @@ def egyptian(data,english,key):
 def ensure(data,lesson,loc,key,prompt,english=None):
     for attempt in range(3):
         try:
+            if loc!='en' and english:data=fit_spoken_segment(data,key,loc,english)
             if loc=='ar-EG' and english:data=polish_speech(data,key,english)
             return validate(data,lesson,loc,english)
         except (AssertionError,KeyError,TypeError) as error:
@@ -194,7 +204,7 @@ def ensure(data,lesson,loc,key,prompt,english=None):
             data['locale']=loc
 
 def response_schema(tag):
-    if tag=='arabic-speech-polish':return {'type':'OBJECT','properties':{'narration':{'type':'STRING'}},'required':['narration']}
+    if tag in ('arabic-speech-polish','fit-spoken-segment'):return {'type':'OBJECT','properties':{'narration':{'type':'STRING'}},'required':['narration']}
     if tag=='arabic-display-polish':
         return {'type':'OBJECT','properties':{'title':{'type':'STRING'},'subtitle':{'type':'STRING'},'goal':{'type':'STRING'},'glossary':{'type':'ARRAY','minItems':6,'maxItems':6,'items':{'type':'ARRAY','minItems':2,'maxItems':2,'items':{'type':'STRING'}}}},'required':['title','subtitle','goal','glossary']}
     if 'audit' in tag:
