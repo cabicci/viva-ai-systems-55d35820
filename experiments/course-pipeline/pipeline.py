@@ -50,7 +50,30 @@ def engine_hash():
     paths = ['experiments/course-pipeline/pipeline.py', 'remotion/src/course-pipeline/index.tsx',
              'experiments/course-pipeline/src/Diagram.tsx', 'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
              'public/brand/masaarat-logo-lockup.png']
-    return digest({p: hashlib.sha256((REPO / p).read_bytes()).hexdigest() for p in paths})
+    hashes={p: hashlib.sha256((REPO / p).read_bytes()).hexdigest() for p in paths}
+    for path in [ROOT/'generate_visuals.py',ROOT/'course/visuals.json']:
+        if path.exists(): hashes[str(path.relative_to(ROOT))]=hashlib.sha256(path.read_bytes()).hexdigest()
+    return digest(hashes)
+
+def materialize_visuals():
+    plan_path=ROOT/'course/visuals.json'
+    if not plan_path.exists(): return {}, {}
+    plan=read(plan_path)
+    source=OUT/'visuals'
+    receipt=read(source/'receipt.json')
+    assert receipt.get('generated') and receipt.get('provider')=='gemini', 'Gemini visual generation is incomplete'
+    assert receipt['planHash']==digest(plan), 'Visuals were generated for a different plan'
+    target=REPO/'remotion/public/course-pipeline'
+    target.mkdir(parents=True,exist_ok=True)
+    mapping,hashes={},{}
+    for asset in receipt['assets']:
+        file=source/asset['filename']
+        actual=hashlib.sha256(file.read_bytes()).hexdigest()
+        assert actual==asset['sha256'], 'Visual asset integrity mismatch'
+        shutil.copyfile(file,target/asset['filename'])
+        hashes[asset['id']]=actual
+        for scene in asset['scenes']:mapping[scene]=f'course-pipeline/{asset["filename"]}'
+    return mapping,hashes
 
 def snapshot():
     return {'manifest': digest(read(ROOT / 'course/manifest.json')),
@@ -111,13 +134,17 @@ def request_json(url, key, payload=None):
             return json.load(response)
     except urllib.error.HTTPError as e:
         # Never echo provider URLs, payloads or credentials into logs.
-        raise ProviderError(e.code, e.headers.get('Retry-After')) from None
+        try:
+            detail=json.loads(e.read()).get('error',{}).get('message','').replace(key,'[redacted]')[:350]
+        except (ValueError,AttributeError):
+            detail=''
+        raise ProviderError(e.code, e.headers.get('Retry-After'),detail) from None
 
 class ProviderError(Exception):
-    def __init__(self, status, retry_after=None):
+    def __init__(self, status, retry_after=None, detail=''):
         self.status = status
         self.retry_after = retry_after
-        super().__init__(f'Provider returned HTTP {status}; request text was not changed.')
+        super().__init__(f'Provider returned HTTP {status}; request text was not changed. {detail}')
 
 def valid_wav(path):
     try:
@@ -167,7 +194,7 @@ def stamp(seconds):
     ms = round(seconds * 1000)
     return f'{ms//3600000:02}:{ms//60000%60:02}:{ms//1000%60:02}.{ms%1000:03}'
 
-def assemble(lesson, media, folder):
+def assemble(lesson, media, folder, visual_mapping=None):
     fps = media['fps']
     scenes, cues, cursor = [], [], 0
     with wave.open(str(folder / 'master.wav'), 'wb') as master:
@@ -192,7 +219,7 @@ def assemble(lesson, media, folder):
             cursor += duration
     (folder / 'captions.vtt').write_text('WEBVTT\n\n' + '\n'.join(cues), encoding='utf-8')
     (folder / 'transcript.txt').write_text('\n\n'.join(s['narration'] for s in scenes), encoding='utf-8')
-    props = {'locale': lesson['locale'], 'dir': lesson['dir'], 'title': lesson['subtitle'],
+    props = {'locale': lesson['locale'], 'dir': lesson['dir'], 'title': lesson['subtitle'], 'visuals':visual_mapping or {},
              'eyebrow': lesson['eyebrow'], 'scenes': scenes, 'durationInFrames': cursor}
     write(folder / 'props.json', props)
     return props
@@ -211,9 +238,9 @@ def verify_media(folder, expected_seconds):
     return {'video': 'h264', 'audio': 'aac', 'width':1920,'height':1080,
             'durationSeconds': float(data['format']['duration']), 'sha256': hashlib.sha256((folder / 'lesson.mp4').read_bytes()).hexdigest()}
 
-def produce(locale):
+def produce(locale, reuse_audio_only=False, request_file=None):
     validate()
-    request = read(ROOT / 'pilot-request.json')
+    request = read(request_file or ROOT / 'pilot-request.json')
     assert request['snapshot'] == snapshot(), 'Authorized request does not match current source/renderer'
     assert request['locales'] == list(LOCALES) and request['lessonId'] == read(ROOT/'course/manifest.json')['lessonId']
     assert request['action'] == 'generate-preview-only'
@@ -221,7 +248,9 @@ def produce(locale):
     folder.mkdir(parents=True, exist_ok=True)
     manifest = read(ROOT / 'course/manifest.json')
     lesson, media = content(locale), manifest['media']
+    visual_mapping,visual_hashes=materialize_visuals()
     render_key = digest({'content': lesson, 'engine': engine_hash(), 'media': media,
+                         'visuals':visual_hashes,
                          'audioKeys': [audio_key(s, locale, media) for s in lesson['scenes']]})
     previous = read(folder/'receipt.json') if (folder/'receipt.json').exists() else {}
     if previous.get('generated') and previous.get('renderKey') == render_key and (folder/'lesson.mp4').exists():
@@ -233,12 +262,14 @@ def produce(locale):
     key = next((k for k in keys if k), None)
     receipt = {'lessonId': lesson['lessonId'], 'locale': locale, 'snapshot': request['snapshot'],
                'renderKey': render_key,
+               'visualAssetHashes':visual_hashes,
                'generated': False, 'ownerAccepted': False, 'listeningReviewed': False, 'uploaded': False,
                'mapped': False, 'published': False, 'captionTiming': 'scene-aligned, proportional sentence timings',
                'audio': [], 'stage': 'started'}
     write(folder / 'receipt.json', receipt)
     try:
         missing = any(not valid_wav(folder/'audio'/(audio_key(s,locale,media)+'.wav')) for s in lesson['scenes'])
+        assert not (reuse_audio_only and missing), 'Required cached narration is missing; audio regeneration is disabled'
         if missing:
             assert key, 'GEMINI_API_KEY is required for missing audio; no key was found'
             model = request_json(f'https://generativelanguage.googleapis.com/v1beta/models/{media["model"]}', key)
@@ -252,7 +283,7 @@ def produce(locale):
             print(f'{locale} {scene["id"]}: {status}', flush=True)
             if status == 'generated' and i < len(lesson['scenes']) - 1:
                 time.sleep(media['requestGapSeconds'])
-        props = assemble(lesson, media, folder)
+        props = assemble(lesson, media, folder, visual_mapping)
         font_dest = REPO / 'remotion/public/course-pipeline'
         font_dest.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(REPO/'src/assets/fonts/Cairo.ttf', font_dest/'Cairo.ttf')
@@ -281,6 +312,8 @@ def main():
     parser.add_argument('--locale', choices=tuple(STYLE))
     parser.add_argument('--package', type=Path, default=ROOT, help='Course package containing course/manifest.json and locale JSON files')
     parser.add_argument('--batch-id', help='Unique owner-authorized batch identifier, required for request')
+    parser.add_argument('--reuse-audio-only', action='store_true', help='Refuse any new speech generation')
+    parser.add_argument('--request-file', type=Path, help='Explicit immutable request for this render')
     args = parser.parse_args()
     ROOT = args.package.resolve()
     OUT = ROOT/'output'
@@ -296,7 +329,7 @@ def main():
         print('Created bounded request from this exact course package.')
     elif args.command == 'produce':
         assert args.locale in LOCALES, '--locale must be in the course manifest'
-        produce(args.locale)
+        produce(args.locale, args.reuse_audio_only, args.request_file)
     elif args.command == 'preview':
         # Copy only rendered student media; receipts/answers never enter the media directory.
         available = []
@@ -307,5 +340,10 @@ def main():
                 if (src/name).exists(): shutil.copyfile(src/name,dest/name)
             if (dest/'lesson.mp4').exists(): available.append(locale)
         write(ROOT/'public/media/index.json', available)
+        if (OUT/'visuals/receipt.json').exists():
+            for asset in read(OUT/'visuals/receipt.json')['assets']:
+                dest=ROOT/'visuals-v2'/asset['filename']
+                dest.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(OUT/'visuals'/asset['filename'],dest)
 
 if __name__ == '__main__': main()

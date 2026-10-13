@@ -20,7 +20,7 @@ def asset_key(plan, asset):
                      'ratio':plan['aspectRatio'],'style':plan['style'],'subject':asset['subject']})
 
 def validate(plan):
-    assert plan['provider']=='gemini' and plan['apiVersion']=='v1'
+    assert plan['provider']=='gemini' and plan['apiVersion']=='v1beta'
     assert plan['model']=='gemini-nano-banana-2.1', 'No implicit model changes'
     assert len(plan['assets'])==5, 'The owner authorized five shared visual assets for one lesson'
     assert len({a['id'] for a in plan['assets']})==5
@@ -36,10 +36,10 @@ def generate(plan, asset, key, dest):
         prompt=plan['style']+'\n\nSUBJECT: '+asset['subject']
         body={'contents':[{'role':'user','parts':[{'text':prompt}]}],
               'generationConfig':{'responseModalities':['TEXT','IMAGE'],
-                                  'responseFormat':{'image':{'aspectRatio':plan['aspectRatio'],'imageSize':plan['imageSize']}}}}
+                                  'imageConfig':{'aspectRatio':plan['aspectRatio'],'imageSize':plan['imageSize']}}}
         for attempt in range(3):
             try:
-                result=p.request_json(f'https://generativelanguage.googleapis.com/v1/models/{plan["model"]}:generateContent',key,body)
+                result=p.request_json(f'https://generativelanguage.googleapis.com/{plan["apiVersion"]}/models/{plan["model"]}:generateContent',key,body)
                 break
             except p.ProviderError as error:
                 if error.status not in (429,500,502,503,504) or attempt==2: raise
@@ -81,7 +81,7 @@ def main():
     available=p.request_json('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000',key)
     names=[m['name'] for m in available.get('models',[]) if 'image' in m['name'].lower() or 'banana' in m['name'].lower()]
     print('Available image model names: '+', '.join(names),flush=True)
-    model=p.request_json(f'https://generativelanguage.googleapis.com/v1/models/{plan["model"]}',key)
+    model=p.request_json(f'https://generativelanguage.googleapis.com/{plan["apiVersion"]}/models/{plan["model"]}',key)
     assert 'generateContent' in model.get('supportedGenerationMethods',[])
     dest=ROOT/'output/visuals'
     dest.mkdir(parents=True,exist_ok=True)
