@@ -69,16 +69,19 @@ def main():
             ids=[x for x in teaching if x in ready][:4]
             state['initialIds']=ids;state['initialSha']=commit_request(payload(ids,state,'SOIL-FIRST'))
             save(state);log('initial-media-requested',lessons=ids)
-        for label in ['initial','full']:
+        attention=[]
+        for label in ['initial','full','repair']:
             if state.get(label+'Sha') and not state.get(label+'Run'):
                 run=run_for(state[label+'Sha'])
                 if run:state[label+'Run']=run['databaseId'];save(state)
             if state.get(label+'Run'):
-                script('sync.py','--run',str(state[label+'Run']),'--kind','media','--limit','2')
+                transfer=script('sync.py','--run',str(state[label+'Run']),'--kind','media','--limit','2')
+                received=json.loads(transfer.strip().splitlines()[-1])['newArtifacts']
                 media_status=gh('run','view',str(state[label+'Run']),'-R',REMOTE,'--json','status,conclusion')
                 state[label+'Status']=media_status
                 if media_status['status']=='completed' and media_status['conclusion']!='success':
-                    save(state);log('media-needs-attention',run=state[label+'Run'],status=media_status);return 2
+                    state[label+'NeedsRepair']=True
+                    if received==0:attention.append(state[label+'Run'])
         if status['status']=='completed':
             if status['conclusion']!='success':
                 successor=state.get('successorRun')
@@ -102,5 +105,8 @@ def main():
         state['verifiedLessons']=current[0];state['verifiedVideos']=current[1];state['arabicEditorialLessonsPassed']=report.get('arabicEditorialLessonsPassed',0);save(state)
         if report['status']=='complete':
             log('technical-production-complete',archive=a.archive);return 0
+        repair_active=state.get('repairSha') and state.get('repairStatus',{}).get('status')!='completed'
+        if attention and not repair_active:
+            log('media-needs-attention',runs=attention,archive=a.archive);return 2
         time.sleep(45)
 if __name__=='__main__':raise SystemExit(main())
