@@ -3,6 +3,8 @@ const locales=new Set(['ar-EG','en','it','de']);
 const style={'ar-EG':'Explain in natural Egyptian Arabic, never MSA or Gulf Arabic.',en:'Explain in clear English.',it:'Spiega in italiano naturale.',de:'Erkläre in natürlichem Deutsch.'};
 const json=(status,body)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
 const id=/^SOIL-(?:U[123]-L\d{2}|PILOT-01)$/;
+const sourceHash='d3ac9eb19a664c59f113754679fc73d3080148fc363de46651a2df9c9004bd36';
+function validLesson(value){if(value==='SOIL-PILOT-01')return true;const m=/^SOIL-U([123])-L(\d{2})$/.exec(value);return !!m&&Number(m[2])>=1&&Number(m[2])<=[0,7,13,14][Number(m[1])];}
 export function makeSoilAssistant(deps){
  return async function handle(req){
   if(req.method!=='POST')return json(405,{error:'METHOD_NOT_ALLOWED'});
@@ -12,7 +14,7 @@ export function makeSoilAssistant(deps){
    if(!actor)return json(401,{error:'SIGN_IN_REQUIRED'});
    const body=await req.json();
    if(!body||Object.keys(body).some(k=>!['courseId','lessonId','locale','query','requestId','conversationId'].includes(k))||
-     body.courseId!=='SOIL'||!id.test(body.lessonId)||!locales.has(body.locale)||
+     body.courseId!=='SOIL'||!validLesson(body.lessonId)||!locales.has(body.locale)||
      typeof body.query!=='string'||body.query.trim().length<2||body.query.length>1500||
      typeof body.requestId!=='string'||!/^[\w-]{16,80}$/.test(body.requestId)||
      typeof body.conversationId!=='string'||!/^[\w-]{16,80}$/.test(body.conversationId))
@@ -24,9 +26,9 @@ export function makeSoilAssistant(deps){
    const retrievalQuery=history.filter(m=>m.role==='user').slice(-2).map(m=>m.content).concat(body.query.trim()).join('\n');
    const rows=await deps.retrieve({...scope,lessonId:body.lessonId,query:retrievalQuery,limit:8});
    const chunks=rows.filter(c=>c.courseId==='SOIL'&&c.locale===body.locale&&c.releaseApproved===true&&
-     id.test(c.lessonId)&&/^[\w-]+$/.test(c.sectionId)&&c.audience==='learner'&&
+     validLesson(c.lessonId)&&/^[\w-]+$/.test(c.sectionId)&&c.audience==='learner'&&
      typeof c.content==='string'&&c.content.length<=10000&&Array.isArray(c.pages)&&c.pages.length&&
-     c.pages.every(n=>Number.isInteger(n)&&n>=3&&n<=146)&&/^[a-f0-9]{64}$/.test(c.sourceHash)).slice(0,8);
+     c.pages.every(n=>Number.isInteger(n)&&n>=3&&n<=146)&&c.sourceHash===sourceHash).slice(0,8);
    if(!chunks.length)return json(200,{answer:null,sources:[],status:'NO_GROUNDED_EVIDENCE'});
    const sources=chunks.map((c,i)=>({id:i+1,lessonId:c.lessonId,sectionId:c.sectionId,pages:c.pages,sourceHash:c.sourceHash}));
    const system='You are Masaarat soil-and-crops tutor. '+style[body.locale]+
@@ -41,7 +43,7 @@ export function makeSoilAssistant(deps){
    const raw=await deps.complete({system,history,question:body.query.trim(),
      evidence:chunks.map((c,i)=>({id:i+1,text:c.content,lessonId:c.lessonId,sectionId:c.sectionId,pages:c.pages}))});
    const answer=typeof raw==='string'?JSON.parse(raw):raw;
-   if(!answer||typeof answer.answer!=='string'||!answer.answer.trim()||answer.answer.length>12000||
+   if(!answer||typeof answer.answer!=='string'||!answer.answer.trim()||answer.answer.length>12000||/\bspark\b(?!\s+plug\b)|سبارك|international\s+school/i.test(answer.answer)||
      !Array.isArray(answer.citationIds)||!answer.citationIds.length||
      answer.citationIds.some(n=>!Number.isInteger(n)||n<1||n>sources.length))
     return json(503,{error:'INVALID_GROUNDED_ANSWER'});

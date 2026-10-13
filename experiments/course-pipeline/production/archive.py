@@ -19,7 +19,7 @@ def main():
             folder=pkg/'output'/locale
             if not (folder/'receipt.json').exists():continue
             receipt=p.read(folder/'receipt.json')
-            if not receipt.get('generated'):continue
+            if not receipt.get('generated') or not receipt.get('automatedAudioReview',{}).get('passed'):continue
             video=folder/'lesson.mp4'
             assert video.exists() and sha(video)==receipt['verification']['sha256'],'Video integrity mismatch'
             for f in folder.rglob('*'):

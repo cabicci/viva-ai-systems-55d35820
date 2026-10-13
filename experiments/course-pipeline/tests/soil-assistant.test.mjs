@@ -5,7 +5,7 @@ const body={courseId:'SOIL',lessonId:'SOIL-U1-L01',locale:'en',query:'Why does t
 const request=(b=body)=>new Request('https://local.invalid/assistant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
 function setup(extra={}){
  const calls=[];
- const chunk={courseId:'SOIL',lessonId:'SOIL-U2-L04',locale:'en',sectionId:'s01',releaseApproved:true,audience:'learner',pages:[45],sourceHash:'a'.repeat(64),content:'pH describes acidity under the specified measurement method.'};
+ const chunk={courseId:'SOIL',lessonId:'SOIL-U2-L04',locale:'en',sectionId:'s01',releaseApproved:true,audience:'learner',pages:[45],sourceHash:'d3ac9eb19a664c59f113754679fc73d3080148fc363de46651a2df9c9004bd36',content:'pH describes acidity under the specified measurement method.'};
  const deps={enabled:true,authenticate:async()=>({id:'learner-1'}),authorize:async()=>true,takeQuota:async()=>true,history:async()=>[],retrieve:async q=>{calls.push(q);return [chunk]},complete:async p=>{calls.push(p);return {answer:'Use the specified method.',citationIds:[1]}},save:async(...x)=>calls.push(x),...extra};
  return {deps,calls,chunk,handle:makeSoilAssistant(deps)};
 }
@@ -25,3 +25,6 @@ test('invented source identifier rejected',async()=>{const s=setup({complete:asy
 test('revoked access after model call is not delivered',async()=>{let n=0;const s=setup({authorize:async()=>++n<3});assert.equal((await s.handle(request())).status,403)});
 test('disabled remains off even with mocked provider',async()=>{const s=setup({enabled:false});assert.equal((await s.handle(request())).status,503);assert.equal(s.calls.length,0)});
 test('provider failure is not replaced by fake AI response',async()=>{const s=setup({complete:async()=>{throw Error('provider failure')}});assert.equal((await s.handle(request())).status,503)});
+
+test('unknown lesson denied',async()=>{const s=setup();assert.equal((await s.handle(request({...body,lessonId:'SOIL-U1-L99'}))).status,400)});
+test('wrong source version excluded',async()=>{const s=setup();s.deps.retrieve=async()=>[{...s.chunk,sourceHash:'b'.repeat(64)}];assert.equal((await(await s.handle(request())).json()).status,'NO_GROUNDED_EVIDENCE')});

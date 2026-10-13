@@ -22,11 +22,15 @@ def build():
             records.append({'id':lid,'order':spec['order'],'unit':int(str(spec['unit']).replace('U','')),'type':spec['type'],'reusedPilot':True,'ready':True,
                             'title':{loc:p.content(loc)['subtitle'] for loc in LANG}})
             continue
+        pending={'id':lid,'order':spec['order'],'unit':int(str(spec['unit']).replace('U','')),'type':spec['type'],'ready':False,'title':{'en':spec['en'],'ar-EG':spec['title']}}
         folder=ROOT/'output'/lid
-        if not (folder/'authoring-receipt.json').exists():continue
+        if not (folder/'authoring-receipt.json').exists():
+            records.append(pending);continue
         receipt=p.read(folder/'authoring-receipt.json')
-        if receipt.get('status')!='authored-and-automatically-checked':continue
-        if any(c['contentHash'] in blocked for c in receipt['locales'].values()):continue
+        if receipt.get('status')!='authored-and-automatically-checked':
+            records.append(pending);continue
+        if any(c['contentHash'] in blocked for c in receipt['locales'].values()):
+            records.append(pending);continue
         pkg=OUT/lid;course=pkg/'course';course.mkdir(parents=True,exist_ok=True)
         base=p.read(ROOT.parent/'course/manifest.json')
         base.update(lessonId=lid,scope='full-course-authorized-isolated-preview',scenario={'simulated':True,'context':spec['en']})
@@ -60,7 +64,26 @@ def build():
         p.write(pkg/'authoring-receipt.json',receipt)
         records.append({'id':lid,'order':spec['order'],'unit':spec['unit'],'type':spec['type'],'reusedPilot':False,
                         'ready':True,'title':titles,'sourcePages':base['source']['physicalPages'],'media':{}})
-    index={'courseId':'SOIL','locales':list(LANG),'lessons':records,'expected':34,'generated':len(records),'published':False}
+    for record in records:
+        if record.get('reusedPilot') or not record.get('ready'):continue
+        lid=record['id'];pkg=OUT/lid
+        record['media']={}
+        vr=pkg/'output/visuals/receipt.json'
+        if vr.exists() and p.read(vr).get('qualityPassed'):
+            record['images']=True;record['visualFiles']={}
+            for asset in p.read(vr)['assets']:
+                target=CAT/'media'/lid/'visuals'/asset['filename'];target.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(pkg/'output/visuals'/asset['filename'],target)
+                for scene in asset['scenes']:record['visualFiles'][scene]=asset['filename']
+        for loc in LANG:
+            media=pkg/'output'/loc;rp=media/'receipt.json'
+            if not rp.exists():continue
+            r=p.read(rp)
+            if not r.get('generated') or not r.get('automatedAudioReview',{}).get('passed'):continue
+            for name in ['lesson.mp4','master.wav','captions.vtt','transcript.txt']:
+                target=CAT/'media'/lid/loc/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(media/name,target)
+            record['media'][loc]={'generated':True,'sha256':r['verification']['sha256'],'duration':r['verification']['durationSeconds']}
+    index={'courseId':'SOIL','locales':list(LANG),'lessons':records,'expected':34,'generated':sum(bool(r.get('ready')) for r in records),'published':False}
     p.write(CAT/'index.json',index)
-    print(json.dumps({'completeLessons':len(records),'expected':34}))
+    print(json.dumps({'completeLessons':sum(bool(r.get('ready')) for r in records),'expected':34}))
 if __name__=='__main__':build()
