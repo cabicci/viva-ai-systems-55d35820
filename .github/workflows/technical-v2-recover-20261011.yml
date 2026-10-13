@@ -1,0 +1,29 @@
+name: Resume four preserved Technical videos
+on:
+  push:
+    branches: [review/cabinet-ai-style-20261010]
+    paths:
+      - .github/workflows/technical-v2-recover-20261011.yml
+      - .github/scripts/technical_v2_recover_20261011.py
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: technical-v2-four-cell-recovery-20261011
+  cancel-in-progress: false
+jobs:
+  resume:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check recovery boundaries
+        run: python3 -m unittest discover -s .github/scripts/tests -p test_technical_v2_recovery.py
+      - name: Verify preserved receipts, resume linking, and finalize confirmed originals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 .github/scripts/technical_v2_recover_20261011.py
