@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent))
 import pipeline as p
 PLAN=p.read(ROOT.parent/'planning/curriculum-map.json')
+BLUEPRINTS=p.read(ROOT/'blueprints.json')
 LOCALES=['en','ar-EG','it','de']
 POLICY="""CRITICAL EDITORIAL RULES OVERRIDE OVERGENERAL STATEMENTS IN THE SOURCE.
 Never prescribe cooling every soil sample to 4 C. Routine fertility samples are often air-dried; some biological/mineral-N tests require chilled fresh soil. The receiving laboratory specifies whether chilling, drying, freezing, moisture preservation, container and holding time apply. Any mention of 4 C is only a clearly labelled example for a test whose lab explicitly requests it.
@@ -76,9 +77,16 @@ def source_for(lesson):
     if lesson['id'] in ['SOIL-U3-L10','SOIL-U3-L11','SOIL-U3-L12']:
         chunks.append({'source':'HONDA-FQ650','text':p.read(ROOT/'machine-reference.json')['authoringNotes'],
                        'url':p.read(ROOT/'machine-reference.json')['manualUrl']})
+    notes=ROOT/'primary-reference-notes.json'
+    if notes.exists():
+        chunks.extend({'source':r['id'],'organization':r['organization'],'url':r['url'],'text':r['notes']} for r in p.read(notes) if lesson['id'] in r['lessons'])
     return chunks
 
 def validate(data,lesson,loc,english=None):
+    if loc=='en' and len(data.get('scenes',[]))==6:
+        for scene,narration in zip(data['scenes'],BLUEPRINTS[lesson['id']]):
+            scene['narration']=narration
+            scene['caption']=narration
     problems=[]
     for s in data.get('scenes',[]):
         label=s.get('id','unknown')
@@ -162,11 +170,13 @@ Visuals: specific drawable objects and before/after states, no text, digits, let
 Do not rely on color alone. Write all numbers, formulas, stages and labels in the overlay-ready text fields.
 SourcePages must be actual ORIGINAL-EN PDF pages within this lesson scope; describe any important source correction.
 The trainerAssessment is private. The formative quiz feedback is public.
-SHAPE:\n"""+json.dumps(SHAPE)
-    data=p.read(folder/'en.json') if (folder/'en.json').exists() else call(prompt,key,'en')
+SHAPE:\n"""+json.dumps(SHAPE)+'\nCANONICAL ENGLISH NARRATION: These six scripts were separately authored and checked by the lead author. Use each verbatim for its corresponding scene. The explanations, examples, activity and visual subjects MUST agree with them. They override overgeneralizations in the original reference. Do not reintroduce claims that the canonical scripts explicitly caution against.\n'+json.dumps(BLUEPRINTS[lesson['id']])
+    prior=p.read(folder/'authoring-receipt.json') if (folder/'authoring-receipt.json').exists() else {}
+    blueprint_hash=p.digest(BLUEPRINTS[lesson['id']])
+    data=p.read(folder/'en.json') if (folder/'en.json').exists() and prior.get('canonicalNarrationHash')==blueprint_hash else call(prompt,key,'en')
     data=ensure(data,lesson,'en',key,prompt)
     english=data
-    receipt={'lessonId':ARGS.lesson,'sourceHash':PLAN['source']['sha256'],'model':'gemini-2.5-flash',
+    receipt={'lessonId':ARGS.lesson,'canonicalNarrationHash':blueprint_hash,'sourceHash':PLAN['source']['sha256'],'model':'gemini-2.5-flash',
              'ownerAuthorized':True,'institutionalReview':False,'subjectExpertReview':False,'nativeReview':False,
              'locales':{},'mediaGenerated':False,'published':False}
     for loc in LOCALES:
@@ -185,7 +195,7 @@ Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
                     'and natural locale '+loc+'. Treat blanket 4 C chilling, bag lids, missing activity case materials, and generated printed labels/arrows as critical errors. '+'. For translations compare meaning/numbers with English. '
                     'Do not fail for stylistic preferences or lack of institutional review. '
                     'Return JSON {passed:boolean,issues:[{severity:"critical"|"minor",field:string,reason:string,correction:string}]}.\n'
-                    'SCOPE:'+json.dumps(lesson,ensure_ascii=False)+'\nREFERENCES:'+sourcejson+
+                    'CANONICAL MEANING (takes priority over source generalizations):'+json.dumps(BLUEPRINTS[lesson['id']])+'\nSCOPE:'+json.dumps(lesson,ensure_ascii=False)+'\nREFERENCES:'+sourcejson+
                     ('\nENGLISH:'+json.dumps(english,ensure_ascii=False) if loc!='en' else '')+
                     '\nLESSON:'+json.dumps(data,ensure_ascii=False),key,loc+'-audit')
         critical=[x for x in review.get('issues',[]) if x.get('severity')=='critical']

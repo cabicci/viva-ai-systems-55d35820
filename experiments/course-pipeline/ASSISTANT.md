@@ -35,3 +35,7 @@ Before releasing this course, verify real provider responses for:
 8. Denied course access, revoked access, usage limits and provider failure, without static answers being presented as AI output.
 
 Record live-test evidence separately from unit tests, mock responses and source preparation. Keep publication blocked until live assistant integration and these checks pass. The owner has not requested activation during the current preview review.
+
+## Full-course preparation
+
+`production/assistant.mjs` implements course-wide grounded follow-ups with authenticated server-owned history, entitlement checks, quotas, approved learner-only sources and validated citations. `production/platform-adapter.ts` connects to the existing server-side model provider. Fifteen mock-based contract tests cover four locales, denial, quota, history isolation, source isolation, revocation, fabricated citations and provider failure. No public route or production corpus is activated; real-provider acceptance remains outstanding.

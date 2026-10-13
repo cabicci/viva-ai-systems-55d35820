@@ -1,6 +1,6 @@
 # Isolated course production pilot
 
-This package is a separate Vite preview and a bounded media engine. It is not imported by the Masaarat application, does not alter global locales and has no production database connection. The owner authorized one new soil-sampling pilot in Egyptian Arabic, English, Italian and German on `work/soil-course-pipeline-20261013`; the remainder of the curriculum waits for review.
+This package is a separate Vite preview and a bounded media engine. It is not imported by the Masaarat application, does not alter global locales and has no production database connection. The owner authorized one new soil-sampling pilot in Egyptian Arabic, English, Italian and German on `work/soil-course-pipeline-20261013`; the full remaining curriculum was subsequently authorized on 13 October 2026. See [full-course production](production/README.md) and `/curriculum.html` for the separate production workflow and review player. The pilot instructions below remain scoped to the existing pilot.
 
 ## Run and review
 

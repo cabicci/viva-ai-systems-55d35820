@@ -109,7 +109,7 @@ def validate():
             assert scene['caption'] == scene['narration'], 'Captions must preserve spoken wording'
             assert len(scene['narration'].split()) >= 25, 'Unfinished narration'
         public = json.dumps(data, ensure_ascii=False)
-        assert not re.search(r'spark|international\s+school|المدرسة|سبارك', public, re.I), 'Source branding leaked'
+        assert not re.search(r'\bspark\b(?!\s+plug\b)|international\s+school|المدرسة|سبارك', public, re.I), 'Source branding leaked'
         if loc != 'ar-EG':
             assert not re.search('[\u0600-\u06ff]', public), 'Arabic leaked into another locale'
         structures.append((sorted(data['ui']), [s['id'] for s in data['scenes']],len(data['quiz']),len(data['glossary']),len(data['faq']),len(data.get('checklist',[]))))

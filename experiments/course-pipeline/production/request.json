@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "batchId": "SOIL-FULL-AUTHOR-20261013-03",
+  "batchId": "SOIL-FULL-AUTHOR-20261013-04",
   "action": "author-full-course-preview",
   "authorizedBy": "User requested full lessons, media and assistant; pilot approved",
   "locales": [
@@ -45,11 +45,13 @@
     "SOIL-U3-L14"
   ],
   "inputHashes": {
-    "production/author.py": "0cd485086ffeff23f2926dc49eb4ed35c5c215070d67b65a38ac09c9c80ec464",
+    "production/author.py": "420d2d9b3263ab986be8643408d9f9f4726ae0941c848129040054c32b96b943",
     "production/unseal.mjs": "b9410e4c5c5486df1acf76ed57fcf7c2014dbb2b136429893405d2afa221921f",
     "production/source.sealed.json": "c21210c39a978291ecbfa72a60708cdf1e05c0126ab260db369451796a7c2373",
     "production/machine-reference.json": "292762fb1a37e4209d24eeb4cdb4a7fb1caa59a7e9edbfe6acf537b23183aa87",
-    "planning/curriculum-map.json": "df656469eb6ee09039aac697d8c272cadae2390c1163d754654985abb9cffec4"
+    "planning/curriculum-map.json": "df656469eb6ee09039aac697d8c272cadae2390c1163d754654985abb9cffec4",
+    "production/blueprints.json": "bb64dfdd2b2b66676ddb0c3e30c3c7e208e0c0ca3d5becd13e578c39c050a77f",
+    "production/primary-reference-notes.json": "9f19d3a45c38ee1576b7262eeff98e696cb5215b861abd765bd0a6a4af5fbe7c"
   },
   "sourceModel": "gemini-2.5-flash",
   "publish": false,
