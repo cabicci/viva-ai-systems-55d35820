@@ -1,0 +1,75 @@
+name: Soil full-course source-grounded authoring
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/production/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: soil-authoring-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  scope:
+    runs-on: ubuntu-22.04
+    outputs:
+      lessons: ${{ steps.scope.outputs.lessons }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: scope
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          p=json.load(open('experiments/course-pipeline/production/request.json'))
+          assert p['action']=='author-full-course-preview'
+          assert len(p['lessons'])==33 and len(set(p['lessons']))==33
+          assert 'SOIL-U1-L03' not in p['lessons']
+          print('lessons='+json.dumps(p['lessons']))
+          PY
+  author:
+    needs: scope
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        lesson: ${{ fromJSON(needs.scope.outputs.lessons) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Restore exact source and prompt caches
+        uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/output/${{ matrix.lesson }}
+          key: soil-author-${{ matrix.lesson }}-${{ hashFiles('experiments/course-pipeline/production/request.json') }}
+          restore-keys: soil-author-${{ matrix.lesson }}-
+      - name: Unlock private source on runner
+        env:
+          SOIL_COURSE_SOURCE_KEY: ${{ secrets.SOIL_COURSE_SOURCE_KEY }}
+        run: node experiments/course-pipeline/production/unseal.mjs
+      - name: Author and independently check all four languages
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          LESSON: ${{ matrix.lesson }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/production/author.py --lesson "$LESSON"
+      - name: Preserve exact responses for safe resumption
+        if: always()
+        uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/output/${{ matrix.lesson }}
+          key: soil-author-${{ matrix.lesson }}-${{ hashFiles('experiments/course-pipeline/production/request.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Transfer authored lessons and review receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: soil-author-${{ matrix.lesson }}
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/production/output/${{ matrix.lesson }}/*.json
