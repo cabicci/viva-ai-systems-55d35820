@@ -52,7 +52,7 @@ def engine_hash():
              'public/brand/masaarat-logo-lockup.png']
     hashes={p: hashlib.sha256((REPO / p).read_bytes()).hexdigest() for p in paths}
     for path in [ROOT/'generate_visuals.py',ROOT/'visual_quality.py',ROOT/'course/visuals.json',ROOT/'course/visual-contract.json']:
-        if path.exists(): hashes[str(path.relative_to(ROOT))]=hashlib.sha256(path.read_bytes()).hexdigest()
+        if path.exists(): hashes[path.relative_to(ROOT).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
     return digest(hashes)
 
 def materialize_visuals():

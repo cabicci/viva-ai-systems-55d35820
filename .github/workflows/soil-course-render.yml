@@ -53,7 +53,7 @@ jobs:
         run: |
           python3 -m unittest discover -s experiments/course-pipeline/tests -p 'test_*.py'
           python3 experiments/course-pipeline/pipeline.py produce --locale "$LOCALE" --reuse-audio-only --request-file experiments/course-pipeline/render-request.json
-      - if: always()
+      - if: success()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: soil-final-${{ matrix.locale }}

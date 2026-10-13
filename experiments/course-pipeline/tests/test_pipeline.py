@@ -14,6 +14,13 @@ class PipelineTest(unittest.TestCase):
     def test_complete_locale_packages(self):
         self.assertEqual(p.validate()['scenes'],32)
 
+    def test_engine_identity_uses_portable_paths(self):
+        with patch.object(p,'digest',side_effect=lambda value: value):
+            hashes=p.engine_hash()
+        self.assertIn('course/visuals.json',hashes)
+        self.assertIn('course/visual-contract.json',hashes)
+        self.assertFalse(any('\\' in key for key in hashes))
+
     def test_visual_edit_does_not_regenerate_paid_audio(self):
         scene=p.content('en')['scenes'][0]
         media=p.read(p.ROOT/'course/manifest.json')['media']
