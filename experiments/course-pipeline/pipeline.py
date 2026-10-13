@@ -22,7 +22,7 @@ import wave
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
 OUT = ROOT / 'output'
-LOCALES = ('ar-EG', 'en', 'it', 'de')
+LOCALES = tuple(json.loads((ROOT / 'course/manifest.json').read_text(encoding='utf-8'))['locales'])
 STYLE = {
     'ar-EG': 'اقرأ بالمصري القاهري الطبيعي، مش فصحى ولا خليجي. ج زي G في gold وق همزة لما يكون طبيعي. شرح واضح وهادي لطلبة تعليم فني زراعي. اقرأ النص فقط من غير مقدمة أو تعليق.',
     'en': 'Read in clear natural English, as a calm agricultural vocational instructor. Moderate pace. Read the exact text only; do not add an introduction or commentary.',
@@ -59,16 +59,20 @@ def snapshot():
 def validate():
     manifest = read(ROOT / 'course/manifest.json')
     assert manifest['locales'] == list(LOCALES), 'Unexpected locale scope'
+    assert LOCALES and len(set(LOCALES)) == len(LOCALES) and set(LOCALES) <= set(STYLE), 'Unsupported or duplicate locale'
+    assert manifest['mode'] in ('technical','academic'), 'Unknown learning mode'
     assert manifest['production'] == {'uploadToBunny': False, 'modifyPlatform': False, 'modifyDatabase': False}
-    expected_ids = ['purpose', 'zones', 'tools', 'route', 'depth', 'mix', 'label', 'transfer']
+    expected_ids = [s['id'] for s in content(LOCALES[0])['scenes']]
+    assert expected_ids and len(set(expected_ids)) == len(expected_ids), 'Missing or duplicate scenes'
     structures = []
     for loc in LOCALES:
         data = content(loc)
         assert data['locale'] == loc and data['lessonId'] == manifest['lessonId']
         assert data['dir'] == ('rtl' if loc == 'ar-EG' else 'ltr')
         assert [s['id'] for s in data['scenes']] == expected_ids
-        assert len(data['quiz']) == 4 and len(data['checklist']) == 6
-        assert len(data['glossary']) == 6 and len(data['faq']) == 6
+        assert data['quiz'] and data['glossary'] and data['faq'], 'Missing learning components'
+        if manifest['mode'] == 'technical':
+            assert data['checklist'], 'Technical courses need observed performance criteria'
         assert all(q['answer'] in range(len(q['options'])) for q in data['quiz'])
         for scene in data['scenes']:
             assert all(scene.get(k) for k in ('id','title','lead','example','takeaway','labels','narration','caption'))
@@ -78,9 +82,9 @@ def validate():
         assert not re.search(r'spark|international\s+school|المدرسة|سبارك', public, re.I), 'Source branding leaked'
         if loc != 'ar-EG':
             assert not re.search('[\u0600-\u06ff]', public), 'Arabic leaked into another locale'
-        structures.append((sorted(data['ui']), [s['id'] for s in data['scenes']]))
+        structures.append((sorted(data['ui']), [s['id'] for s in data['scenes']],len(data['quiz']),len(data['glossary']),len(data['faq']),len(data.get('checklist',[]))))
     assert all(x == structures[0] for x in structures), 'Incomplete localization'
-    return {'status': 'passed', 'locales': list(LOCALES), 'scenes': 32, 'questions': 16}
+    return {'status': 'passed', 'locales': list(LOCALES), 'scenes': len(expected_ids)*len(LOCALES), 'questions': len(content(LOCALES[0])['quiz'])*len(LOCALES)}
 
 def audio_key(scene, locale, media):
     # Visual-only changes do not invalidate narration.
@@ -211,15 +215,24 @@ def produce(locale):
     validate()
     request = read(ROOT / 'pilot-request.json')
     assert request['snapshot'] == snapshot(), 'Authorized request does not match current source/renderer'
-    assert request['locales'] == list(LOCALES) and request['lessonId'] == 'SOIL-PILOT-01'
+    assert request['locales'] == list(LOCALES) and request['lessonId'] == read(ROOT/'course/manifest.json')['lessonId']
     assert request['action'] == 'generate-preview-only'
     folder = OUT / locale
     folder.mkdir(parents=True, exist_ok=True)
     manifest = read(ROOT / 'course/manifest.json')
     lesson, media = content(locale), manifest['media']
+    render_key = digest({'content': lesson, 'engine': engine_hash(), 'media': media,
+                         'audioKeys': [audio_key(s, locale, media) for s in lesson['scenes']]})
+    previous = read(folder/'receipt.json') if (folder/'receipt.json').exists() else {}
+    if previous.get('generated') and previous.get('renderKey') == render_key and (folder/'lesson.mp4').exists():
+        actual = hashlib.sha256((folder/'lesson.mp4').read_bytes()).hexdigest()
+        if actual == previous.get('verification',{}).get('sha256'):
+            print(json.dumps({'locale':locale,'status':'reused-verified-render'}))
+            return
     keys = [os.environ.get('GEMINI_API_KEY')] + [os.environ.get(f'GEMINI_API_KEY_{i}') for i in range(1,4)]
     key = next((k for k in keys if k), None)
     receipt = {'lessonId': lesson['lessonId'], 'locale': locale, 'snapshot': request['snapshot'],
+               'renderKey': render_key,
                'generated': False, 'ownerAccepted': False, 'listeningReviewed': False, 'uploaded': False,
                'mapped': False, 'published': False, 'captionTiming': 'scene-aligned, proportional sentence timings',
                'audio': [], 'stage': 'started'}
@@ -262,22 +275,37 @@ def produce(locale):
         raise
 
 def main():
+    global ROOT, OUT, LOCALES
     parser = argparse.ArgumentParser()
-    parser.add_argument('command', choices=['validate','plan','snapshot','produce','preview'])
-    parser.add_argument('--locale', choices=LOCALES)
+    parser.add_argument('command', choices=['validate','plan','snapshot','request','produce','preview'])
+    parser.add_argument('--locale', choices=tuple(STYLE))
+    parser.add_argument('--package', type=Path, default=ROOT, help='Course package containing course/manifest.json and locale JSON files')
+    parser.add_argument('--batch-id', help='Unique owner-authorized batch identifier, required for request')
     args = parser.parse_args()
+    ROOT = args.package.resolve()
+    OUT = ROOT/'output'
+    LOCALES = tuple(read(ROOT/'course/manifest.json')['locales'])
     if args.command == 'validate': print(json.dumps(validate()))
     elif args.command == 'plan': print(json.dumps(plan(), ensure_ascii=False, indent=2))
     elif args.command == 'snapshot': print(json.dumps(snapshot(), indent=2))
+    elif args.command == 'request':
+        assert args.batch_id, '--batch-id is required'
+        validate()
+        write(ROOT/'pilot-request.json', {'batchId':args.batch_id,'lessonId':read(ROOT/'course/manifest.json')['lessonId'],
+                                         'locales':list(LOCALES),'action':'generate-preview-only','snapshot':snapshot()})
+        print('Created bounded request from this exact course package.')
     elif args.command == 'produce':
-        assert args.locale, '--locale is required'
+        assert args.locale in LOCALES, '--locale must be in the course manifest'
         produce(args.locale)
     elif args.command == 'preview':
         # Copy only rendered student media; receipts/answers never enter the media directory.
+        available = []
         for locale in LOCALES:
             src, dest = OUT/locale, ROOT/'public/media'/locale
             dest.mkdir(parents=True, exist_ok=True)
             for name in ['lesson.mp4','master.wav','captions.vtt','transcript.txt']:
                 if (src/name).exists(): shutil.copyfile(src/name,dest/name)
+            if (dest/'lesson.mp4').exists(): available.append(locale)
+        write(ROOT/'public/media/index.json', available)
 
 if __name__ == '__main__': main()

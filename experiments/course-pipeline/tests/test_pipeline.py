@@ -62,4 +62,19 @@ class PipelineTest(unittest.TestCase):
                 with self.assertRaisesRegex(AssertionError,'snapshot|source/renderer'):
                     p.produce('en')
 
+    def test_reusable_package_respects_its_own_locale_and_mode(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            manifest=p.read(p.ROOT/'course/manifest.json')
+            manifest.update({'courseId':'ACADEMIC-EXAMPLE','lessonId':'ACADEMIC-01','locales':['en'],'mode':'academic'})
+            data=copy.deepcopy(p.content('en'))
+            data['lessonId']='ACADEMIC-01'
+            data['scenes']=data['scenes'][:2]
+            data['checklist']=[]
+            p.write(root/'course/manifest.json',manifest)
+            p.write(root/'course/en.json',data)
+            with patch.object(p,'ROOT',root),patch.object(p,'LOCALES',('en',)):
+                self.assertEqual(p.validate()['scenes'],2)
+                self.assertEqual(p.validate()['locales'],['en'])
+
 if __name__=='__main__': unittest.main()
