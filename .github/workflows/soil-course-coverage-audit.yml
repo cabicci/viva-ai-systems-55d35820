@@ -90,6 +90,26 @@ jobs:
           assert source['sourceSha256']==r['sourceSha256']
           print('Verified source batch and 136 actual content files. No lesson or media changes.')
           PY
+      - name: Reuse already validated audit inventories and evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for RUN in 38449914326 38449926951; do
+            gh run download "$RUN" -p 'soil-coverage-inventory-*' -D "experiments/course-pipeline/production/private/audit-resume/$RUN"
+            gh run download "$RUN" -p 'soil-coverage-match-*' -D "experiments/course-pipeline/production/private/audit-resume/$RUN"
+          done
+          python3 - <<'PY'
+          import shutil
+          from pathlib import Path
+          root=Path('experiments/course-pipeline/production/private')
+          dest=root/'coverage-audit/results';dest.mkdir(parents=True,exist_ok=True)
+          for file in (root/'audit-resume').rglob('*.json'):
+            if file.name.startswith(('inventory-','matches-')) and '.raw.' not in file.name:
+              target=dest/file.name
+              if target.exists():assert target.read_bytes()==file.read_bytes()
+              else:shutil.copyfile(file,target)
+          print('Reused completed evidence; failed bindings alone will be repaired.')
+          PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: soil-coverage-private-input

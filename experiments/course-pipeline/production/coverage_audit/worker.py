@@ -84,6 +84,60 @@ INVENTORY={'type':'OBJECT','properties':{'items':{'type':'ARRAY','items':ITEM},'
 MATCH={'type':'OBJECT','properties':{'itemId':{'type':'STRING'},'status':{'type':'STRING','enum':STATES},'reasonAR':{'type':'STRING'},'gapAR':{'type':'STRING'},'deviationAR':{'type':'STRING'},'evidence':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'fieldId':{'type':'STRING'},'quote':{'type':'STRING'}},'required':['fieldId','quote']}}},'required':['itemId','status','reasonAR','gapAR','deviationAR','evidence']}
 MATCH_SCHEMA={'type':'OBJECT','properties':{'rows':{'type':'ARRAY','items':MATCH}},'required':['rows']}
 
+def anchors(text,prefix):
+ """Bounded, overlapping verbatim spans. IDs refer to actual source, never model quotes."""
+ words=list(re.finditer(r'\S+',text));out={}
+ for start in range(0,len(words),45):
+  end=min(start+60,len(words))
+  out[prefix+':'+str(start)]={'text':text[words[start].start():words[end-1].end()]}
+ return out
+
+def repair_source_items(items,pages,lo,hi,tag):
+ bad=[];good=[]
+ for index,item in enumerate(items):
+  try:validate_items([item],pages,lo,hi);good.append(item)
+  except AssertionError:bad.append({'index':index,'item':item})
+ if not bad:return good
+ pool={}
+ for proposal in bad:
+  page=proposal['item']['page']
+  for n in range(max(lo,page-1),min(hi,page+1)+1):
+   for k,v in anchors(pages[n],'P'+str(n)).items():pool[k]={**v,'page':n}
+ schema={'type':'OBJECT','properties':{'bindings':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'index':{'type':'INTEGER'},'anchorIds':{'type':'ARRAY','items':{'type':'STRING'}},'reasonAR':{'type':'STRING'}},'required':['index','anchorIds','reasonAR']}}},'required':['bindings']}
+ result=model(tag,GUIDANCE+'\nRepair only exact source bindings for these requirements. PDF text may continue over a page boundary. Select one to three supplied anchor IDs that substantiate the proposed requirement, including its conditions; do not rewrite the requirement. Select no anchor only if unsupported, and explain why. No invented IDs. SOURCE ANCHORS:\n'+json.dumps(pool,ensure_ascii=False)+'\nPROPOSALS:\n'+json.dumps(bad,ensure_ascii=False),schema)
+ assert {x['index'] for x in result['bindings']}=={x['index'] for x in bad}
+ for binding in result['bindings']:
+  item=items[binding['index']]
+  assert binding['anchorIds'],'Unresolved source requirement: '+str(binding)
+  assert len(binding['anchorIds'])<=3 and all(k in pool for k in binding['anchorIds'])
+  source_evidence=[{'page':pool[k]['page'],'quote':pool[k]['text']} for k in binding['anchorIds']]
+  assert not any(re.search(r'spark|school|ISBN',e['quote'],re.I) for e in source_evidence),'Anchor includes original branding'
+  item.update(page=source_evidence[0]['page'],quote=source_evidence[0]['quote'],sourceEvidence=source_evidence,bindingRepairAR=binding['reasonAR'])
+  good.extend(validate_items([item],pages,lo,hi))
+ return good
+
+def repair_evidence(rows,items,pool,tag):
+ bad=[]
+ for row in rows:
+  for i,ev in enumerate(row['evidence']):
+   if ev['fieldId'] not in pool or not contains(pool[ev['fieldId']]['text'],ev['quote']) or len(ev['quote'].split())>100:
+    bad.append({'itemId':row['itemId'],'evidenceIndex':i,'evidence':ev})
+ if not bad:return validate_matches(rows,items,pool)
+ selected={e['evidence']['fieldId'] for e in bad if e['evidence']['fieldId'] in pool}
+ apool={}
+ for field in selected:
+  for k,v in anchors(pool[field]['text'],field).items():apool[k]={**v,'fieldId':field}
+ schema={'type':'OBJECT','properties':{'bindings':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'itemId':{'type':'STRING'},'evidenceIndex':{'type':'INTEGER'},'anchorId':{'type':'STRING'}},'required':['itemId','evidenceIndex','anchorId']}}},'required':['bindings']}
+ raw=model(tag,GUIDANCE+'\nRepair only invalid evidence quotations by selecting the supplied verbatim anchor ID for the SAME actual field. If the field cannot support it, return an empty anchorId. Do not change coverage statuses. REQUIREMENTS:\n'+json.dumps(items,ensure_ascii=False)+'\nINVALID BINDINGS:\n'+json.dumps(bad,ensure_ascii=False)+'\nACTUAL ANCHORS:\n'+json.dumps(apool,ensure_ascii=False),schema)
+ assert {(x['itemId'],x['evidenceIndex']) for x in raw['bindings']}=={(x['itemId'],x['evidenceIndex']) for x in bad}
+ byid={x['itemId']:x for x in rows}
+ for b in raw['bindings']:
+  assert b['anchorId'] in apool,'Unresolved actual evidence quotation'
+  ev=byid[b['itemId']]['evidence'][b['evidenceIndex']];a=apool[b['anchorId']]
+  assert ev['fieldId']==a['fieldId'],'Binding repair changed the evidence field'
+  ev['quote']=a['text'];ev['bindingRepaired']=True
+ return validate_matches(rows,items,pool)
+
 def validate_items(items,pages,lo,hi):
  result=[];seen=set()
  for item in items:
@@ -116,18 +170,12 @@ for EACH supplied page, including pages with no teaching items.\nSOURCE:\n'''+js
  raw=model('inventory '+str(block),prompt,INVENTORY)
  # Preserve every provider response before validating; invalid quotes never enter the table.
  p.write(OUT/f'inventory-{block:02}.raw.json',raw)
- try:items=validate_items(raw['items'],pages,lo,hi)
- except AssertionError as e:
-  raw=model('inventory binding repair '+str(block),prompt+'\nThe prior response contained an invalid exact source binding. Re-extract the inventory with exact short quotes, not paraphrases. Error: '+str(e),INVENTORY)
-  items=validate_items(raw['items'],pages,lo,hi)
+ items=repair_source_items(raw['items'],pages,lo,hi,'source anchor binding '+str(block))
  assert {x['page'] for x in raw['pageNotes']}==set(range(lo,hi+1)),'Incomplete page ledger'
  # Separate source-only pass checks for omitted details without knowing lesson content.
  review=model('source omission check '+str(block),GUIDANCE+'\nAudit this SOURCE-ONLY inventory for omitted substantive requirements. Return only additional items absent from INVENTORY, and a pageNote for each source page. Do not duplicate existing requirements or add decorative analogies. Exact short source quotes and the original physical page are mandatory. SOURCE:\n'+json.dumps(selected,ensure_ascii=False)+'\nINVENTORY:\n'+json.dumps(items,ensure_ascii=False),INVENTORY)
  p.write(OUT/f'omissions-{block:02}.raw.json',review)
- try:additions=validate_items(review['items'],pages,lo,hi)
- except AssertionError as e:
-  review=model('omission binding repair '+str(block),GUIDANCE+'\nCorrect only the source quote/page bindings of these proposed additional items. Omit any item not actually supported. Provide pageNotes for every source page. SOURCE:\n'+json.dumps(selected,ensure_ascii=False)+'\nPROPOSED:\n'+json.dumps(review,ensure_ascii=False)+'\nERROR:'+str(e),INVENTORY)
-  additions=validate_items(review['items'],pages,lo,hi)
+ additions=repair_source_items(review['items'],pages,lo,hi,'omission anchor binding '+str(block))
  unique={x['itemId']:x for x in items+additions}
  p.write(target,{'block':block,'pages':[lo,hi],'sourceSha256':req['sourceSha256'],'items':list(unique.values()),'pageNotes':raw['pageNotes'],'sourceOnlyOmissionPass':True,'humanReviewed':False})
  print(json.dumps({'block':block,'items':len(unique),'sourceOnlyAdditions':len(additions)}),flush=True)
@@ -179,14 +227,11 @@ The evidence is learner-facing written content or script, not proof of practical
 performance or actual video delivery. Empty gapAR/deviationAR is allowed only where
 not applicable.\nINVENTORY:\n'''+json.dumps(items,ensure_ascii=False)+'\nCORRECTIONS:\n'+json.dumps(corrections,ensure_ascii=False)+'\nACTUAL FIELDS:\n'+json.dumps(subset,ensure_ascii=False)
  raw=model('match '+str(block),prompt,MATCH_SCHEMA);p.write(OUT/f'matches-{block:02}.raw.json',raw)
- try:rows=validate_matches(raw['rows'],items,subset)
- except AssertionError as e:
-  raw=model('match binding repair '+str(block),prompt+'\nPrior response failed exact binding. Recheck every fieldId and literal quote; do not fabricate evidence. ERROR:'+str(e),MATCH_SCHEMA)
-  rows=validate_matches(raw['rows'],items,subset)
+ rows=repair_evidence(raw['rows'],items,subset,'actual evidence anchor binding '+str(block))
  # Independent evidence-only check cannot invent a new location or broaden the search.
  review=model('evidence review '+str(block),GUIDANCE+'\nIndependently assess whether each proposed status is supported by these source requirements and exact evidence. Correct inflated coverage, incomplete procedure coverage and exercise equivalence. Return one row per item, with only supplied fieldIds/quotes. Preserve genuine missing details.\nINVENTORY:\n'+json.dumps(items,ensure_ascii=False)+'\nPROPOSED:\n'+json.dumps(rows,ensure_ascii=False)+'\nEVIDENCE FIELDS:\n'+json.dumps({e['fieldId']:subset[e['fieldId']] for r in rows for e in r['evidence']},ensure_ascii=False),MATCH_SCHEMA)
  p.write(OUT/f'evidence-review-{block:02}.raw.json',review)
- rows=validate_matches(review['rows'],items,subset)
+ rows=repair_evidence(review['rows'],items,subset,'review evidence anchor binding '+str(block))
  p.write(target,{'block':block,'snapshotDigest':p.digest(req['contentHashes']),'rows':rows,'exactEvidenceValidated':True,'independentEvidencePass':True,'globalAbsenceChecked':False,'humanReviewed':False})
  print(json.dumps({'block':block,'states':dict(collections.Counter(x['status'] for x in rows))}),flush=True)
 
