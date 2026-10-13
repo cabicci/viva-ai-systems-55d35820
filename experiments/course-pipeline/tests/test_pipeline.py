@@ -32,6 +32,10 @@ class PipelineTest(unittest.TestCase):
             self.assertEqual(re.search(r'--'+name+r': ([^;]+);',platform).group(1),value)
             self.assertIn('--'+name+':'+value+';',stylesheet)
         self.assertIn('Tajawal',(p.ROOT/'src/style.css').read_text(encoding='utf-8'))
+        ai_theme=(p.REPO/'remotion/src/theme.ts').read_text(encoding='utf-8')
+        renderer=(p.REPO/'remotion/src/course-pipeline/index.tsx').read_text(encoding='utf-8')
+        self.assertIn('@remotion/google-fonts/Cairo',ai_theme)
+        self.assertIn("const font='Cairo, sans-serif'",renderer)
 
     def test_visual_edit_does_not_regenerate_paid_audio(self):
         scene=p.content('en')['scenes'][0]

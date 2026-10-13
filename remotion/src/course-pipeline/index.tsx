@@ -6,7 +6,8 @@ import {brand} from '../../../experiments/course-pipeline/src/brand';
 
 type Scene={id:string;title:string;lead:string;labels:string[];startFrame:number;durationInFrames:number};
 type Props={locale:string;dir:string;title:string;eyebrow:string;scenes:Scene[];durationInFrames:number;visuals:Record<string,string>};
-const font='Tajawal, Cairo, sans-serif';
+// Match the Cairo family used by AI lesson videos in remotion/src/theme.ts.
+const font='Cairo, sans-serif';
 function SceneView({scene,locale,dir,index,total,visual}: {scene:Scene;locale:string;dir:string;index:number;total:number;visual?:string}){
  const frame=useCurrentFrame();
  const fade=interpolate(frame,[0,14],[0,1],{extrapolateRight:'clamp'});

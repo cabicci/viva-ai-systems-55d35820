@@ -49,7 +49,7 @@ def content(locale):
 def engine_hash():
     paths = ['experiments/course-pipeline/pipeline.py', 'remotion/src/course-pipeline/index.tsx',
              'experiments/course-pipeline/src/Diagram.tsx', 'experiments/course-pipeline/src/Annotations.tsx',
-             'experiments/course-pipeline/src/brand.ts', 'src/styles.css',
+             'experiments/course-pipeline/src/brand.ts', 'src/styles.css', 'remotion/src/theme.ts',
              'src/lib/lesson-visuals/v1/fonts/Tajawal-Regular.ttf', 'src/lib/lesson-visuals/v1/fonts/Tajawal-Bold.ttf',
              'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
              'public/brand/masaarat-logo-lockup.png']
