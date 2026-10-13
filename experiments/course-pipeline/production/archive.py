@@ -35,14 +35,26 @@ def main():
                 if f.is_file():copy(f,dest/'media'/pkg.name/'lesson-visuals'/f.relative_to(pkg/'output/lesson-visuals'))
     for f in (ROOT/'private/assessments').rglob('*.json'):
         copy(f,dest/'trainer-only'/f.relative_to(ROOT/'private/assessments'))
+    pilot=Path('E:/Masaarat/Deliverables/soil-pilot-20261013-38384418819')
+    pilot_count=0
+    for locale in ('ar-EG','en','it','de'):
+        folder=pilot/locale
+        if not (folder/'receipt.json').exists():continue
+        receipt=p.read(folder/'receipt.json')
+        if not receipt.get('generated'):continue
+        assert sha(folder/'lesson.mp4')==receipt['verification']['sha256'],'Archived pilot integrity mismatch'
+        for name in ('lesson.mp4','master.wav','captions.vtt','transcript.txt','receipt.json','props.json'):
+            if (folder/name).exists():copy(folder/name,dest/'media/SOIL-U1-L03'/locale/name)
+        pilot_count+=1
+    for f in (pilot/'course').glob('*.json'):copy(f,dest/'lessons/SOIL-U1-L03'/f.name)
     for name in ('README.md','machine-reference.json','editorial-review.json','editorial-patches.json','primary-reference-notes.json','blueprints.json','activities.json','visual-blueprints.json','lesson-illustrations.json','illustration-review.json','verification.json'):
         copy(ROOT/name,dest/'reports'/name)
     for f in dest.rglob('*'):
         if f.is_file() and f.name!='archive-manifest.json':entries.append({'path':f.relative_to(dest).as_posix(),'bytes':f.stat().st_size,'sha256':sha(f)})
     art_count=sum(3 for lid in p.read(ROOT/'lesson-illustrations.json') if art_verified(lid))
-    result={'courseId':'SOIL','newVideos':count,'expectedNewVideos':116,'existingPilotVideos':4,
+    result={'courseId':'SOIL','newVideos':count,'expectedNewVideos':116,'existingPilotVideos':pilot_count,
             'independentIllustrationsVerified':art_count,'expectedIndependentIllustrations':90,
-            'status':'media-complete' if count==116 and art_count==90 else 'in-progress','published':False,
+            'status':'media-complete' if count==116 and art_count==90 and pilot_count==4 else 'in-progress','published':False,
             'institutionalApproval':False,'liveAssistantTested':False,'media':lessons,'files':entries}
     p.write(dest/'archive-manifest.json',result)
     print(json.dumps({'newVideos':count,'expected':116,'files':len(entries),'archive':str(dest)}))
