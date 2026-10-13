@@ -1,5 +1,15 @@
 name: Soil source coverage audit only
 on:
+  workflow_dispatch:
+    inputs:
+      sourcePayload:
+        description: Gzip/base64 of the verified full original PDF text; audit input only
+        required: true
+        type: string
+      auditBatch:
+        description: Source page batch identity
+        required: true
+        type: string
   push:
     branches: [work/soil-course-pipeline-20261013]
     paths: [experiments/course-pipeline/production/coverage-request.json]
@@ -7,7 +17,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: soil-coverage-audit-${{ github.ref }}
+  group: soil-coverage-audit-${{ github.ref }}-${{ inputs.auditBatch }}
   cancel-in-progress: false
 jobs:
   scope:
@@ -23,13 +33,20 @@ jobs:
       - id: scope
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json
+          import base64,gzip,json,os
           r=json.load(open('experiments/course-pipeline/production/coverage-request.json'))
           assert r['action']=='audit-source-coverage-only' and r['publish'] is False
           assert len(r['contentHashes'])==34 and set(r['locales'])=={'en','ar-EG','it','de'}
           pages={p for a,b in r['blocks'] for p in range(a,b+1)}
           assert pages==set(range(1,147)) and sum(b-a+1 for a,b in r['blocks'])==146
-          print('blocks='+json.dumps(list(range(1,len(r['blocks'])+1))))
+          event=json.load(open(os.environ['GITHUB_EVENT_PATH']))
+          source=json.loads(gzip.decompress(base64.b64decode(event['inputs']['sourcePayload'],validate=True)))
+          selected=source['auditBlocks']
+          assert selected and set(selected)<=set(range(1,len(r['blocks'])+1))
+          supplied={x['page'] for x in source['pages']}
+          expected={n for block in selected for n in range(r['blocks'][block-1][0],r['blocks'][block-1][1]+1)}
+          assert supplied==expected and len(supplied)==len(source['pages'])
+          print('blocks='+json.dumps(selected))
           PY
       - name: Retrieve the exact source-bound drafts without producing media
         env:
@@ -49,20 +66,19 @@ jobs:
             assert restore(root/'private/coverage-restore'/('soil-author-'+lid),lid), 'Invalid source-bound draft: '+lid
           PY
           python3 experiments/course-pipeline/production/build_packages.py
-      - name: Unlock original source for this private audit
-        env:
-          SOIL_COURSE_SOURCE_KEY: ${{ secrets.SOIL_COURSE_SOURCE_KEY }}
-        run: node experiments/course-pipeline/production/unseal.mjs
       - name: Freeze and verify the audit input
         run: |
           python3 - <<'PY'
-          import json,shutil,sys
+          import base64,gzip,json,os,shutil,sys
           from pathlib import Path
           sys.path.insert(0,'experiments/course-pipeline')
           import pipeline as p
           root=Path('experiments/course-pipeline/production');dest=root/'private/coverage-audit'
           dest.mkdir(parents=True,exist_ok=True)
-          source=p.read(root/'private/source.json')
+          event=p.read(os.environ['GITHUB_EVENT_PATH'])
+          encoded=event.get('inputs',{}).get('sourcePayload')
+          assert encoded, 'Dispatch requires the complete PDF-derived audit source; do not use authoring excerpts as the audit baseline'
+          source=json.loads(gzip.decompress(base64.b64decode(encoded,validate=True)))
           p.write(dest/'source-pages.json',source)
           r=p.read(root/'coverage-request.json')
           for lid,locales in r['contentHashes'].items():
@@ -71,8 +87,8 @@ jobs:
               assert p.digest(p.read(base/(loc+'.json')))==digest, 'Frozen content mismatch: '+lid+' '+loc
               target=dest/'snapshot'/lid/(loc+'.json');target.parent.mkdir(parents=True,exist_ok=True)
               shutil.copyfile(base/(loc+'.json'),target)
-          assert source['sourceSha256']==r['sourceSha256'] and len(source['pages'])==146
-          print('Original and 136 actual content files verified. No lesson or media changes.')
+          assert source['sourceSha256']==r['sourceSha256']
+          print('Verified source batch and 136 actual content files. No lesson or media changes.')
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

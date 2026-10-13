@@ -57,7 +57,9 @@ def fields():
 def configure():
  req=p.read(ROOT/'coverage-request.json');assert req['action']=='audit-source-coverage-only'
  source=p.read(PRIVATE/'source-pages.json');assert source['sourceSha256']==req['sourceSha256']
- assert len(source['pages'])==146 and {x['page'] for x in source['pages']}==set(range(1,147))
+ blocks=source.get('auditBlocks',list(range(1,len(req['blocks'])+1)))
+ expected={n for b in blocks for n in range(req['blocks'][b-1][0],req['blocks'][b-1][1]+1)}
+ assert {x['page'] for x in source['pages']}==expected and len(source['pages'])==len(expected)
  for lid,locales in req['contentHashes'].items():
   for loc,digest in locales.items():assert p.digest(p.read(PRIVATE/'snapshot'/lid/(loc+'.json')))==digest,'Snapshot differs from requested actual content: '+lid+' '+loc
  return req,source
