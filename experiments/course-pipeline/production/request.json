@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "batchId": "SOIL-FULL-AUTHOR-20261013-12",
+  "batchId": "SOIL-FULL-AUTHOR-20261013-13",
   "action": "author-full-course-preview",
   "authorizedBy": "User requested full lessons, media and assistant; pilot approved",
   "locales": [
@@ -45,7 +45,7 @@
     "SOIL-U3-L14"
   ],
   "inputHashes": {
-    "production/author.py": "0a86ece1ee55b5d05e2f7dd24855c64492b8055a289cde2224c7378064b13183",
+    "production/author.py": "9e2e5f74c3131aade2649250596b501d958aac8d3d6b40c155ff0d337dbdba6c",
     "production/unseal.mjs": "b9410e4c5c5486df1acf76ed57fcf7c2014dbb2b136429893405d2afa221921f",
     "production/source.sealed.json": "c21210c39a978291ecbfa72a60708cdf1e05c0126ab260db369451796a7c2373",
     "production/machine-reference.json": "292762fb1a37e4209d24eeb4cdb4a7fb1caa59a7e9edbfe6acf537b23183aa87",
@@ -60,6 +60,7 @@
   "phase": "full",
   "reuseRuns": [
     38396952622,
-    38397756419
+    38397756419,
+    38399519854
   ]
 }

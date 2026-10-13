@@ -51,6 +51,18 @@ CONTENT_POLICY+='\nThe canonical English scripts and activity are the separately
 def content_view(data):
     return {k:v for k,v in data.items() if k!='visuals'}
 
+def egyptian_speech(text):
+    colloquial=re.search(r'مش|عشان|إزاي|ازاي|اللي|\bده\b|\bدي\b|\bمات|\bهت|\bبت|\bبي|دلوقتي|إيه|لسه',text)
+    formal=re.search(r'\b(?:إذا كان|الذي|التي|ينبغي|سوف|قم ب)\b',text)
+    return bool(colloquial) and not formal
+
+def polish_speech(data,key,english):
+    for scene,reference in zip(data.get('scenes',[]),english.get('scenes',[])):
+        if egyptian_speech(scene.get('narration','')):continue
+        result=call('Edit this one spoken segment into natural Egyptian Arabic. Preserve all scientific meaning, conditions and 35-150 words. Use everyday Egyptian wording, never formal إذا كان/الذي/التي/ينبغي/سوف/قم ب. Return JSON with narration only. ENGLISH: '+reference['narration']+'\nDRAFT: '+scene.get('narration',''),key,'arabic-speech-polish')
+        scene['narration']=result['narration'];scene['caption']=result['narration']
+    return data
+
 def call(prompt,key,tag):
     cache=ROOT/'output'/ARGS.lesson/'cache'
     cache.mkdir(parents=True,exist_ok=True)
@@ -119,7 +131,7 @@ def validate(data,lesson,loc,english=None):
         if missing:problems.append(label+': missing non-empty fields '+str(missing)+'; sourcePages must contain actual allowed ORIGINAL-EN PDF page numbers')
         if loc=='ar-EG':
             speech=s.get('narration','')
-            if not re.search(r'مش|عشان|إزاي|ازاي|اللي|\bده\b|\bدي\b|هت[ء-ي]|بت[ء-ي]',speech) or re.search(r'إذا كان|الذي|التي|ينبغي|سوف|قم ب',speech):
+            if not egyptian_speech(speech):
                 problems.append(label+': narration must be natural Egyptian Arabic, not MSA. Use لو/مش/عشان/اللي/ده and natural Egyptian verb forms while preserving all meaning.')
         if not 35<=len(s.get('narration','').split())<=150: problems.append(label+': narration needs 35-150 words')
         if len(s.get('explanation','').split())<(55 if loc=='de' else 70): problems.append(label+': written explanation is too short; expand with concrete reasoning and an example')
@@ -174,6 +186,7 @@ def egyptian(data,english,key):
 def ensure(data,lesson,loc,key,prompt,english=None):
     for attempt in range(3):
         try:
+            if loc=='ar-EG' and english:data=polish_speech(data,key,english)
             return validate(data,lesson,loc,english)
         except (AssertionError,KeyError,TypeError) as error:
             if attempt==2: raise
@@ -181,6 +194,7 @@ def ensure(data,lesson,loc,key,prompt,english=None):
             data['locale']=loc
 
 def response_schema(tag):
+    if tag=='arabic-speech-polish':return {'type':'OBJECT','properties':{'narration':{'type':'STRING'}},'required':['narration']}
     if tag=='arabic-display-polish':
         return {'type':'OBJECT','properties':{'title':{'type':'STRING'},'subtitle':{'type':'STRING'},'goal':{'type':'STRING'},'glossary':{'type':'ARRAY','minItems':6,'maxItems':6,'items':{'type':'ARRAY','minItems':2,'maxItems':2,'items':{'type':'STRING'}}}},'required':['title','subtitle','goal','glossary']}
     if 'audit' in tag:
