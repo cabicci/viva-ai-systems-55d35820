@@ -55,11 +55,7 @@ jobs:
               target=results/file.name
               if target.exists():assert target.read_bytes()==file.read_bytes()
               else:shutil.copyfile(file,target)
-          # No invented complete result when one source block has failed.
-          for block in range(1,26):
-            assert (results/f'inventory-{block:02}.json').exists(), 'Missing source inventory '+str(block)
-            assert (results/f'matches-{block:02}.json').exists(), 'Missing exact evidence '+str(block)
-          print('Verified all 146 source pages, 136 frozen lessons and 25 evidence blocks.')
+          print('Verified all 146 source pages and 136 frozen lessons; reuse valid results and finish unresolved blocks.')
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
@@ -84,6 +80,16 @@ jobs:
       - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
         with:
           path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-resume-inventory-${{ matrix.block }}-${{ github.run_id }}
+          restore-keys: soil-coverage-inventory-${{ matrix.block }}-
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
+          key: soil-coverage-resume-match-${{ matrix.block }}-${{ github.run_id }}
+          restore-keys: soil-coverage-match-${{ matrix.block }}-
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/production/private/coverage-audit/cache
           key: soil-coverage-confirm-${{ matrix.block }}-${{ hashFiles('experiments/course-pipeline/production/coverage-request.json') }}
           restore-keys: soil-coverage-confirm-${{ matrix.block }}-
       - name: Search the entire course and compare actual translations
@@ -95,6 +101,8 @@ jobs:
           BLOCK: ${{ matrix.block }}
           PYTHONUNBUFFERED: '1'
         run: |
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py inventory --block "$BLOCK"
+          python3 experiments/course-pipeline/production/coverage_audit/worker.py match --block "$BLOCK"
           python3 experiments/course-pipeline/production/coverage_audit/worker.py confirm --block "$BLOCK"
           python3 experiments/course-pipeline/production/coverage_audit/worker.py localize --block "$BLOCK"
       - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
@@ -107,6 +115,8 @@ jobs:
         with:
           name: soil-coverage-confirmed-${{ matrix.block }}
           path: |
+            experiments/course-pipeline/production/private/coverage-audit/results/inventory-*.json
+            experiments/course-pipeline/production/private/coverage-audit/results/matches-*.json
             experiments/course-pipeline/production/private/coverage-audit/results/confirmed-*.json
             experiments/course-pipeline/production/private/coverage-audit/results/locales-*.json
             experiments/course-pipeline/production/private/coverage-audit/results/global-*.json
