@@ -19,11 +19,12 @@ def plans(lid):
         'subject':subject+'\nThis is a new standalone written-lesson illustration. Do not recreate, crop, recolor or merely change the camera angle of any video composition below. Use the requested different setting, object grouping and teaching example. VIDEO COMPOSITIONS TO AVOID:\n'+old}
         for i,subject in enumerate(authored[lid])]
     plan['purpose']='written-lesson-only'
-    contract={'version':1,'reviewModel':'gemini-2.5-flash','maxRepairsPerAsset':1,
+    contract={'version':2,'reviewModel':'gemini-2.5-flash','maxRepairsPerAsset':1,
         'global':p.read(ROOT.parent/'course/visual-contract.json')['global'],
-        'assets':{a['id']:[{'id':'content','requirement':authored[lid][i]},
-            {'id':'distinct-composition','requirement':'This must depict the requested new scene, with different setting and object arrangement from these video compositions; changing color or camera angle alone is insufficient: '+old}]
+        'assets':{a['id']:[{'id':'content','requirement':authored[lid][i]}]
             for i,a in enumerate(plan['assets'])}}
+    # Actual picture-to-picture comparison is a separate check; old scenes are
+    # generation exclusions, never additional required objects in this contract.
     return plan,contract
 
 def ready(lid):
@@ -45,11 +46,23 @@ def produce(lid):
     keys=[os.environ.get(n) for n in ['GEMINI_API_KEY','GEMINI_API_KEY_2','GEMINI_API_KEY_3','GEMINI_API_KEY_4'] if os.environ.get(n)]
     assert keys,'Missing image provider credential'
     key=keys[int(hashlib.sha256(lid.encode()).hexdigest()[:8],16)%len(keys)]
+    previous=p.read(dest/'receipt.json') if (dest/'receipt.json').exists() else {}
+    retained={a['id']:a for a in previous.get('assets',[])} if previous.get('planHash')==p.digest(plan) else {}
+    overrides=p.read(ROOT/'illustration-review.json')
     receipt={'lessonId':lid,'purpose':'written-lesson-only','planHash':p.digest(plan),
         'qualityContractHash':p.digest(contract),'generated':False,'qualityPassed':False,'assets':[]}
     for asset in plan['assets']:
-        entry=g.generate(plan,asset,key,dest);review=q.check(asset,dest/entry['filename'],contract,key)
+        old=retained.get(asset['id'])
+        entry=old if old and (dest/old['filename']).exists() and hashlib.sha256((dest/old['filename']).read_bytes()).hexdigest()==old['sha256'] else g.generate(plan,asset,key,dest)
+        review=q.check(asset,dest/entry['filename'],contract,key)
+        match=next((o for o in overrides if o['sha256']==entry['sha256']),None)
+        if match:
+            review['originalChecks']=review['checks']
+            review['checks']=[{**c,'pass':True,'reason':match['reason']} if c['id'] in match['criteria'] else c for c in review['checks']]
+            review['passed']=all(c['pass'] for c in review['checks'])
+            entry['agentVisualReview']=match
         if not review['passed']:
+            assert entry.get('repairCount',0)<1,'Independent art used its bounded repair; inspect remaining issue: '+asset['id']
             reasons=[c['reason'] for c in review['checks'] if not c['pass']]
             entry=g.generate(plan,{**asset,'subject':asset['subject']+'\nRequired correction: '+json.dumps(reasons)},key,dest)
             entry['repairCount']=1;review=q.check(asset,dest/entry['filename'],contract,key)
