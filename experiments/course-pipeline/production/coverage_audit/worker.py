@@ -235,8 +235,78 @@ not applicable.\nINVENTORY:\n'''+json.dumps(items,ensure_ascii=False)+'\nCORRECT
  p.write(target,{'block':block,'snapshotDigest':p.digest(req['contentHashes']),'rows':rows,'exactEvidenceValidated':True,'independentEvidencePass':True,'globalAbsenceChecked':False,'humanReviewed':False})
  print(json.dumps({'block':block,'states':dict(collections.Counter(x['status'] for x in rows))}),flush=True)
 
+def confirm(block):
+ req,_=configure();inv=p.read(OUT/f'inventory-{block:02}.json');previous=p.read(OUT/f'matches-{block:02}.json')
+ target=OUT/f'confirmed-{block:02}.json'
+ if target.exists():return
+ pool=fields();pending=[r for r in previous['rows'] if r['status'] in ['missing','partial']]
+ itemmap={x['itemId']:x for x in inv['items']}
+ if pending:
+  selected=[itemmap[r['itemId']] for r in pending]
+  prompt=GUIDANCE+'''\nFINAL GLOBAL SEARCH. The entire actual English learner field pool is supplied,
+including other stations. Recheck every proposed missing/partial item. A true absence
+must be searched across the whole course. Find complementary evidence wherever it
+actually exists, but do not confuse generic statements with a full procedure or the
+same exercise. Preserve source-specific conditions, quantities, examples and practice
+tasks. The owner requires faithful coverage of the original curriculum. Equivalent
+replacements and documented corrections must be identified as differences needing
+owner disposition; they are not silent permission to change the source. Do not count
+headings, objectives or references as taught evidence. Return one row per supplied
+item using actual fieldIds and literal quotes.\nREQUIREMENTS:\n'''+json.dumps(selected,ensure_ascii=False)+'\nPROVISIONAL RESULTS:\n'+json.dumps(pending,ensure_ascii=False)+'\nALL ACTUAL ENGLISH FIELDS:\n'+json.dumps(pool,ensure_ascii=False)
+  raw=model('global confirmation '+str(block),prompt,MATCH_SCHEMA);p.write(OUT/f'global-{block:02}.raw.json',raw)
+  checked=repair_evidence(raw['rows'],selected,pool,'global evidence binding '+str(block));byid={r['itemId']:r for r in checked}
+  rows=[byid.get(r['itemId'],r) for r in previous['rows']]
+ else:rows=previous['rows']
+ for row in rows:
+  row['sourceDifferenceNeedsDisposition']=row['status'] in ['equivalent','modified']
+  row['globalSearchPerformed']=row['itemId'] in {r['itemId'] for r in pending}
+ p.write(target,{'block':block,'rows':rows,'snapshotDigest':p.digest(req['contentHashes']),'globalAbsenceChecked':True,'humanReviewed':False})
+ print(json.dumps({'block':block,'globalRows':len(pending),'states':dict(collections.Counter(r['status'] for r in rows))}),flush=True)
+
+def localize(block):
+ configure();target=OUT/f'locales-{block:02}.json'
+ if target.exists():return
+ inv=p.read(OUT/f'inventory-{block:02}.json');rows=p.read(OUT/f'confirmed-{block:02}.json')['rows'];items={x['itemId']:x for x in inv['items']}
+ comparisons=[];apool={};automatic=[]
+ for row in rows:
+  for loc in ['ar-EG','it','de']:
+   english=[];keys=[]
+   for ev in row['evidence']:
+    english.append({'fieldId':ev['fieldId'],'text':pointer(p.read(PRIVATE/'snapshot'/ev['step']/'en.json'),ev['path'])})
+    try:text=pointer(p.read(PRIVATE/'snapshot'/ev['step']/(loc+'.json')),ev['path'])
+    except (KeyError,IndexError,TypeError):continue
+    if not isinstance(text,str):continue
+    prefix=loc+':'+ev['fieldId']
+    for k,a in anchors(text,prefix).items():apool[k]={**a,'locale':loc,'step':ev['step'],'path':ev['path']};keys.append(k)
+   if not row['evidence'] or not keys:
+    automatic.append({'itemId':row['itemId'],'locale':loc,'status':'not_assessed','reasonAR':'لا يوجد دليل إنجليزي مثبت أو حقل مقابل يسمح بمقارنة المعنى.','anchorIds':[]})
+   else:comparisons.append({'itemId':row['itemId'],'locale':loc,'requirementEN':items[row['itemId']]['requirementEN'],'englishStatus':row['status'],'englishEvidence':english,'allowedAnchorIds':list(dict.fromkeys(keys))})
+ schema={'type':'OBJECT','properties':{'checks':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'itemId':{'type':'STRING'},'locale':{'type':'STRING','enum':['ar-EG','it','de']},'status':{'type':'STRING','enum':['aligned','partial','mismatch','not_assessed']},'reasonAR':{'type':'STRING'},'anchorIds':{'type':'ARRAY','items':{'type':'STRING'}}},'required':['itemId','locale','status','reasonAR','anchorIds']}}},'required':['checks']}
+ if comparisons:
+  raw=model('localization meaning '+str(block),GUIDANCE+'''\nCheck semantic preservation of the supplied actual English evidence in Egyptian
+Arabic, Italian and German. Compare scientific meaning, negation, procedural order,
+conditions, quantities/units, examples and assessment requirements. Do not approve
+the whole curriculum when checking only an evidence field. English missing details
+remain missing even if its available fragment is aligned. Do not claim native-speaker
+review. Report literal-translation awkwardness only when it changes or obscures meaning.
+Select one or two EXACT supplied anchor IDs as evidence per check, never invent IDs.
+Return exactly one check for each itemId/locale comparison.\nCOMPARISONS:\n'''+json.dumps(comparisons,ensure_ascii=False)+'\nACTUAL LOCALIZED ANCHORS:\n'+json.dumps(apool,ensure_ascii=False),schema)
+  p.write(OUT/f'locales-{block:02}.raw.json',raw)
+  assert {(x['itemId'],x['locale']) for x in raw['checks']}=={(x['itemId'],x['locale']) for x in comparisons} and len(raw['checks'])==len(comparisons),'Incomplete locale check rows'
+  allowed={(x['itemId'],x['locale']):set(x['allowedAnchorIds']) for x in comparisons}
+  for check in raw['checks']:
+   assert len(check['anchorIds'])<=2 and all(k in allowed[(check['itemId'],check['locale'])] for k in check['anchorIds']),'Unknown localized evidence anchor'
+   if check['status']=='aligned':assert check['anchorIds'],'Aligned translation lacks actual evidence'
+   check['evidence']=[apool[k] for k in check['anchorIds']]
+  checks=raw['checks']+automatic
+ else:checks=automatic
+ p.write(target,{'block':block,'checks':checks,'scope':'semantic comparison of actual evidence fields; not native-speaker certification','humanReviewed':False})
+ print(json.dumps({'block':block,'localeChecks':len(checks)}),flush=True)
+
 def main():
- a=argparse.ArgumentParser();a.add_argument('command',choices=['inventory','match']);a.add_argument('--block',required=True,type=int);args=a.parse_args()
+ a=argparse.ArgumentParser();a.add_argument('command',choices=['inventory','match','confirm','localize']);a.add_argument('--block',required=True,type=int);args=a.parse_args()
  if args.command=='inventory':inventory(args.block)
- else:match(args.block)
+ elif args.command=='match':match(args.block)
+ elif args.command=='confirm':confirm(args.block)
+ else:localize(args.block)
 if __name__=='__main__':main()
