@@ -156,6 +156,8 @@ def ensure(data,lesson,loc,key,prompt,english=None):
             data['locale']=loc
 
 def response_schema(tag):
+    if tag=='arabic-display-polish':
+        return {'type':'OBJECT','properties':{'title':{'type':'STRING'},'subtitle':{'type':'STRING'},'goal':{'type':'STRING'},'glossary':{'type':'ARRAY','minItems':6,'maxItems':6,'items':{'type':'ARRAY','minItems':2,'maxItems':2,'items':{'type':'STRING'}}}},'required':['title','subtitle','goal','glossary']}
     if 'audit' in tag:
         return {'type':'OBJECT','properties':{'passed':{'type':'BOOLEAN'},'issues':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'severity':{'type':'STRING','enum':['critical','minor']},'field':{'type':'STRING'},'reason':{'type':'STRING'},'correction':{'type':'STRING'}},'required':['severity','field','reason']}}},'required':['passed','issues']}
     def infer(value,path=''):
@@ -216,6 +218,11 @@ In ar-EG do not leave English learner prose except internationally used units/mo
 Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
             data=call(lp,key,loc);data['locale']=loc
             data=ensure(data,lesson,loc,key,lp,english)
+        if loc=='ar-EG' and any(not re.search(r'[\u0600-\u06ff]',pair[0]) for pair in data['glossary']):
+            small={k:data[k] for k in ['title','subtitle','goal','glossary']}
+            polished=call('Polish ONLY these display strings into natural Egyptian Arabic. Glossary term labels MUST contain an Arabic term; optionally keep the original English in parentheses. Keep meanings and the six glossary pairs exactly. Do not add new facts. Return the same four keys as JSON. DATA: '+json.dumps(small,ensure_ascii=False),key,'arabic-display-polish')
+            assert len(polished['glossary'])==6 and all(re.search(r'[\u0600-\u06ff]',pair[0]) for pair in polished['glossary'])
+            for field in small:data[field]=polished[field]
         review=call(POLICY+'\nIndependently audit the complete lesson against the supplied reference and lesson scope. '
                     'Check scientific correctness, safety, simulation labels, worked-example arithmetic, assessment validity, source-page claims, '
                     'and natural locale '+loc+'. Treat blanket 4 C chilling, bag lids, missing activity case materials, and generated printed labels/arrows as critical errors. '+'. For translations compare meaning/numbers with English. '

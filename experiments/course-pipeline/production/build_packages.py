@@ -44,7 +44,7 @@ def build():
             private=authored.pop('trainerAssessment')
             p.write(ROOT/'private/assessments'/lid/(loc+'.json'),private)
             authored.pop('visuals')
-            ui=p.read(ROOT.parent/'course'/(loc+'.json'))['ui'];ui.update(GEN[loc])
+            ui=copy.deepcopy(GEN[loc])
             ui['protocolText']=authored['activity']['task']
             ui['minutes']=str(spec['onlineMinutes'][0])+'–'+str(spec['onlineMinutes'][1])+' '+GEN[loc]['minutes']
             ui['revisit']=authored['retrieval']['tomorrow']+' '+authored['retrieval']['week']
