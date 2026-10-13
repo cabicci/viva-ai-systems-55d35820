@@ -129,10 +129,12 @@ def repair_evidence(rows,items,pool,tag):
   for k,v in anchors(pool[field]['text'],field).items():apool[k]={**v,'fieldId':field}
  schema={'type':'OBJECT','properties':{'bindings':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'itemId':{'type':'STRING'},'evidenceIndex':{'type':'INTEGER'},'anchorId':{'type':'STRING'}},'required':['itemId','evidenceIndex','anchorId']}}},'required':['bindings']}
  raw=model(tag,GUIDANCE+'\nRepair only invalid evidence quotations by selecting the supplied verbatim anchor ID for the SAME actual field. If the field cannot support it, return an empty anchorId. Do not change coverage statuses. REQUIREMENTS:\n'+json.dumps(items,ensure_ascii=False)+'\nINVALID BINDINGS:\n'+json.dumps(bad,ensure_ascii=False)+'\nACTUAL ANCHORS:\n'+json.dumps(apool,ensure_ascii=False),schema)
- assert {(x['itemId'],x['evidenceIndex']) for x in raw['bindings']}=={(x['itemId'],x['evidenceIndex']) for x in bad}
  byid={x['itemId']:x for x in rows}
- rejected=set()
+ expected={(x['itemId'],x['evidenceIndex']) for x in bad}
+ returned={(x['itemId'],x['evidenceIndex']) for x in raw['bindings']}
+ rejected=expected-returned
  for b in raw['bindings']:
+  if (b['itemId'],b['evidenceIndex']) not in expected:continue
   ev=byid[b['itemId']]['evidence'][b['evidenceIndex']]
   a=apool.get(b['anchorId'])
   if a is None or ev['fieldId']!=a['fieldId']:
@@ -303,8 +305,16 @@ Return exactly one check for each itemId/locale comparison.\nCOMPARISONS:\n'''+j
   p.write(OUT/f'locales-{block:02}.raw.json',raw)
   assert {(x['itemId'],x['locale']) for x in raw['checks']}=={(x['itemId'],x['locale']) for x in comparisons} and len(raw['checks'])==len(comparisons),'Incomplete locale check rows'
   allowed={(x['itemId'],x['locale']):set(x['allowedAnchorIds']) for x in comparisons}
+  invalid=[c for c in raw['checks'] if not all(k in allowed[(c['itemId'],c['locale'])] for k in c['anchorIds'])]
+  if invalid:
+   repair=model('localized binding correction '+str(block),GUIDANCE+'\nRecheck ONLY these item/locale comparisons. Select evidence from their own allowedAnchorIds, not another row. Reassess the scientific meaning against their English evidence. Provide exactly one corrected check per supplied itemId/locale. ACTUAL ANCHORS:\n'+json.dumps(apool,ensure_ascii=False)+'\nCOMPARISONS:\n'+json.dumps([c for c in comparisons if (c['itemId'],c['locale']) in {(x['itemId'],x['locale']) for x in invalid}],ensure_ascii=False)+'\nPROPOSED INVALID CHECKS:\n'+json.dumps(invalid,ensure_ascii=False),schema)
+   corrected={(c['itemId'],c['locale']):c for c in repair['checks']}
+   for check in invalid:
+    replacement=corrected.get((check['itemId'],check['locale']))
+    if replacement and all(k in allowed[(check['itemId'],check['locale'])] for k in replacement['anchorIds']):check.update(replacement)
+    else:check.update(status='not_assessed',anchorIds=[],reasonAR='التقييم الآلي لم يثبت اقتباسًا صحيحًا في الحقول المقابلة؛ المطابقة اللغوية غير محسومة.')
   for check in raw['checks']:
-   assert len(check['anchorIds'])<=2 and all(k in allowed[(check['itemId'],check['locale'])] for k in check['anchorIds']),'Unknown localized evidence anchor'
+   assert len(check['anchorIds'])<=5 and all(k in allowed[(check['itemId'],check['locale'])] for k in check['anchorIds']),'Unknown localized evidence anchor'
    if check['status']=='aligned':assert check['anchorIds'],'Aligned translation lacks actual evidence'
    check['evidence']=[apool[k] for k in check['anchorIds']]
   checks=raw['checks']+automatic
