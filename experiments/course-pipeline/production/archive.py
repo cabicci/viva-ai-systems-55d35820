@@ -35,6 +35,8 @@ def main():
                 if f.is_file():copy(f,dest/'media'/pkg.name/'lesson-visuals'/f.relative_to(pkg/'output/lesson-visuals'))
     for f in (ROOT/'private/assessments').rglob('*.json'):
         copy(f,dest/'trainer-only'/f.relative_to(ROOT/'private/assessments'))
+    for f in (ROOT/'arabic-review').glob('*.json'):
+        copy(f,dest/'reports/arabic-editorial'/f.name)
     pilot=Path('E:/Masaarat/Deliverables/soil-pilot-20261013-38384418819')
     pilot_count=0
     for locale in ('ar-EG','en','it','de'):
@@ -55,7 +57,9 @@ def main():
     result={'courseId':'SOIL','newVideos':count,'expectedNewVideos':116,'existingPilotVideos':pilot_count,
             'independentIllustrationsVerified':art_count,'expectedIndependentIllustrations':90,
             'status':'media-complete' if count==116 and art_count==90 and pilot_count==4 else 'in-progress','published':False,
-            'institutionalApproval':False,'liveAssistantTested':False,'media':lessons,'files':entries}
+            'institutionalApproval':False,'liveAssistantTested':False,
+            'arabicEditorial':p.read(ROOT/'verification.json').get('arabicEditorialLessonsPassed',0),
+            'expectedArabicEditorial':34,'humanArabicReview':False,'media':lessons,'files':entries}
     p.write(dest/'archive-manifest.json',result)
     print(json.dumps({'newVideos':count,'expected':116,'files':len(entries),'archive':str(dest)}))
 if __name__=='__main__':main()

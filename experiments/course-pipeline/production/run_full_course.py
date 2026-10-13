@@ -43,6 +43,11 @@ def main():
     teaching=[x['id'] for x in plan['lessons'] if x['type']=='lesson' and x['id']!='SOIL-U1-L03']
     last=None
     while True:
+        arabic_file=ROOT/'private/arabic-review-run.json'
+        if arabic_file.exists():
+            state['arabicReviewRun']=json.loads(arabic_file.read_text(encoding='utf-8'))['run']
+            script('sync.py','--run',str(state['arabicReviewRun']),'--kind','arabic-editorial','--limit','4')
+            state['arabicReviewStatus']=gh('run','view',str(state['arabicReviewRun']),'-R',REMOTE,'--json','status,conclusion')
         art_file=ROOT/'private/illustration-run.json'
         if art_file.exists():
             state['illustrationRun']=json.loads(art_file.read_text(encoding='utf-8'))['run']
@@ -89,7 +94,7 @@ def main():
         report=json.loads(script('verify_course.py'))
         current=(len(ready),report['newVideosVerified'],report.get('independentIllustrationsVerified',0))
         if current!=last:log('progress',lessons=current[0],videos=current[1],illustrations=current[2]);last=current
-        state['verifiedLessons']=current[0];state['verifiedVideos']=current[1];save(state)
+        state['verifiedLessons']=current[0];state['verifiedVideos']=current[1];state['arabicEditorialLessonsPassed']=report.get('arabicEditorialLessonsPassed',0);save(state)
         if report['status']=='complete':
             log('technical-production-complete',archive=a.archive);return 0
         time.sleep(45)

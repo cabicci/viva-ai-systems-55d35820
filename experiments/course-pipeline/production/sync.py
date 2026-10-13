@@ -21,7 +21,7 @@ def download(run,name,target):
             if attempt==2:raise
             time.sleep(2*(attempt+1))
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--run',required=True);ap.add_argument('--kind',choices=['author','media','illustrations'],required=True);ap.add_argument('--limit',type=int);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--run',required=True);ap.add_argument('--kind',choices=['author','media','illustrations','arabic-editorial'],required=True);ap.add_argument('--limit',type=int);a=ap.parse_args()
     result=json.loads(call(['api',f'repos/{REPO}/actions/runs/{a.run}/artifacts','--paginate']))
     count=0
     for artifact in result['artifacts']:
@@ -32,6 +32,7 @@ def main():
         if marker.exists():continue
         download(a.run,name,target)
         dest=ROOT/('output' if a.kind=='author' else 'packages')/lid
+        if a.kind=='arabic-editorial':dest=ROOT/'arabic-review'
         if a.kind=='illustrations':dest=dest/'output/lesson-visuals'
         if a.kind=='author':
             from restore_author import accepted
