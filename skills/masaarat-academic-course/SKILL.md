@@ -27,6 +27,10 @@ Run validation and a dry plan before a bounded request for authorized scope. The
 
 Reuse speech by its content/voice/model key and preserve partial work. Verify timing and rendered media. Distinguish generation, language review, subject review and owner acceptance. Temporary Actions artifacts are not a permanent archive.
 
+Where the owner requests generated 3D-style infographics, use the shared Gemini image stage under Actions. Keep localized text and exact numeric labels in Remotion, and preserve image and speech caches separately. A technical course's five visual subjects are not reusable academic content.
+
+Before generating the batch, define explicit visual and subject-accuracy criteria. Inspect outputs automatically against that contract, bound corrective attempts and report unresolved exceptions. Do not require manual approval for every image; the reviewable complete pilot remains the intended owner checkpoint.
+
 ## Evidence and handoff
 
 Explain the design with named references and actual applications. The example uses FAO e-learning design, IES worked examples/retrieval/spacing, and CAST UDL; judge applicability and evidence strength for new learners and disciplines. Do not claim endorsement or accreditation.

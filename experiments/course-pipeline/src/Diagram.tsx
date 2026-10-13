@@ -1,8 +1,9 @@
 import React from 'react';
 
-type Props={kind:string;labels:string[];progress?:number;locale?:string};
+type Props={kind:string;labels:string[];progress?:number;locale?:string;photo?:string};
 const ink='#263f36', green='#498969', sand='#d4aa71', pink='#d49090';
-export function Diagram({kind,labels,progress=1,locale='en'}:Props){
+export function Diagram({kind,labels,progress=1,locale='en',photo}:Props){
+ if(photo)return <figure style={{margin:0,width:'100%'}}><img src={photo} alt={labels.join(' · ')} style={{width:'100%',display:'block',borderRadius:14,objectFit:'contain'}}/><figcaption style={{display:'flex',justifyContent:'space-around',gap:16,fontSize:13,fontWeight:700,padding:'16px 10px',textAlign:'center'}}>{labels.map((l,i)=><span key={i}>{l}</span>)}</figcaption></figure>;
  const rtl=locale==='ar-EG';
  const text=(x:number,y:number,value:string,size=25)=>{
   const lines:string[]=[];let line='';

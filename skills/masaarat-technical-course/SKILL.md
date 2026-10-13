@@ -29,6 +29,10 @@ Keep source branding out of student content when instructed, while retaining law
 
 Create visuals explaining the actual skill. The soil Diagram component is not universal: extend it or supply suitable compositions for another trade.
 
+The current visual direction is stylized 3D with realistic materials. GitHub Actions orchestrates Gemini image generation as well as Gemini speech. Generate text-free illustrations, then add exact localized text, numbers and progressive callouts in Remotion. Preserve separate image prompt/model hashes and speech hashes so a visual correction never causes fresh TTS calls. Do not replace the requested Gemini production stage with manually generated images from another provider; exploratory images must be identified as such.
+
+Specify the batch's visual/scientific contract before generation, including the condition of each object at its procedural stage. Use that contract for automated inspection, with at most one targeted repair per asset and a clear failure report. Do not build a workflow that depends on the owner manually reviewing every image. Review the completed pilot and escalate only unresolved exceptions; preserve the user's final pilot review gate.
+
 ## Execute the shared engine
 
 Use python experiments/course-pipeline/pipeline.py validate --package <package>, then plan. A package contains a manifest and complete locale JSON files. Use request --batch-id <unique-id> --package <package> only for scope already authorized by the user.
