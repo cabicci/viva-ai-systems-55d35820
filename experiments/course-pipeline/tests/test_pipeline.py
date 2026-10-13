@@ -1,4 +1,6 @@
 import copy
+import http.client
+import io
 import json
 import re
 import importlib.util
@@ -13,6 +15,11 @@ p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
 
 class PipelineTest(unittest.TestCase):
+    def test_incomplete_provider_transport_retries_without_accepting_partial_data(self):
+        failures=[http.client.IncompleteRead(b'{'),http.client.IncompleteRead(b'{}'),io.BytesIO(b'{"complete":true}')]
+        with patch.object(p.urllib.request,'urlopen',side_effect=failures) as request,patch.object(p.time,'sleep'):
+            self.assertEqual(p.request_json('https://example.invalid','test-key',{'example':True}),{'complete':True})
+            self.assertEqual(request.call_count,3)
     def test_complete_locale_packages(self):
         self.assertEqual(p.validate()['scenes'],32)
 

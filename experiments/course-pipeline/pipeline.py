@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import base64
 import hashlib
+import http.client
 import json
 import math
 import os
@@ -136,16 +137,20 @@ def plan():
 def request_json(url, key, payload=None):
     req = urllib.request.Request(url, data=json.dumps(payload, ensure_ascii=False).encode() if payload else None,
                                  headers={'x-goog-api-key': key, 'Content-Type': 'application/json'})
-    try:
-        with urllib.request.urlopen(req, timeout=180) as response:
-            return json.load(response)
-    except urllib.error.HTTPError as e:
-        # Never echo provider URLs, payloads or credentials into logs.
+    for attempt in range(3):
         try:
-            detail=json.loads(e.read()).get('error',{}).get('message','').replace(key,'[redacted]')[:350]
-        except (ValueError,AttributeError):
-            detail=''
-        raise ProviderError(e.code, e.headers.get('Retry-After'),detail) from None
+            with urllib.request.urlopen(req, timeout=180) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as e:
+            # Never echo provider URLs, payloads or credentials into logs.
+            try:
+                detail=json.loads(e.read()).get('error',{}).get('message','').replace(key,'[redacted]')[:350]
+            except (ValueError,AttributeError):
+                detail=''
+            raise ProviderError(e.code, e.headers.get('Retry-After'),detail) from None
+        except (http.client.IncompleteRead,urllib.error.URLError,TimeoutError,ConnectionError,json.JSONDecodeError):
+            if attempt==2:raise RuntimeError('Provider transport incomplete after three attempts; no partial asset accepted') from None
+            time.sleep(2*(attempt+1))
 
 class ProviderError(Exception):
     def __init__(self, status, retry_after=None, detail=''):
