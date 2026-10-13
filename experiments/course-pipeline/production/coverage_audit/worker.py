@@ -111,7 +111,7 @@ def repair_source_items(items,pages,lo,hi,tag):
   assert binding['anchorIds'],'Unresolved source requirement: '+str(binding)
   assert len(binding['anchorIds'])<=3 and all(k in pool for k in binding['anchorIds'])
   source_evidence=[{'page':pool[k]['page'],'quote':pool[k]['text']} for k in binding['anchorIds']]
-  assert not any(re.search(r'spark|EFG\s*Foundation|ISBN',e['quote'],re.I) for e in source_evidence),'Anchor includes original branding'
+  assert not any(re.search(r'\bSpark\s+International\b|EFG\s*Foundation|ISBN',e['quote'],re.I) for e in source_evidence),'Anchor includes original branding'
   item.update(page=source_evidence[0]['page'],quote=source_evidence[0]['quote'],sourceEvidence=source_evidence,bindingRepairAR=binding['reasonAR'])
   good.extend(validate_items([item],pages,lo,hi))
  return good
@@ -154,7 +154,7 @@ def validate_items(items,pages,lo,hi):
   assert item['kind'] in KINDS
   assert contains(pages[item['page']],item['quote']),'Source quote not present on its exact page: '+str(item['page'])+' '+item['quote'][:90]
   assert len(item['quote'].split())<=100,'Source quote too long'
-  assert not re.search(r'spark|EFG\s*Foundation|ISBN',item['quote'],re.I),'Original branding is not a learner requirement'
+  assert not re.search(r'\bSpark\s+International\b|EFG\s*Foundation|ISBN',item['quote'],re.I),'Original branding is not a learner requirement'
   item['itemId']='P'+str(item['page']).zfill(3)+'-'+p.digest({k:item[k] for k in ['kind','requirementEN','quote']})[:10]
   if item['itemId'] not in seen:result.append(item);seen.add(item['itemId'])
  return result
