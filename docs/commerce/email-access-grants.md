@@ -14,14 +14,14 @@ The specified duration starts at activation. Permanent means a null internal exp
 
 ## Scope and composition
 
-| Catalogue | Lesson scope |
-| --- | --- |
-| AI Pro | Existing canonical 71-lesson contract, excludes Builder |
-| AI Pro Plus | Existing canonical 100-lesson contract |
-| Kids | Approved lessons, with released country, guardian declaration, child profile and current profile consent still required |
-| Technical — furniture | Released furniture lessons only |
-| Academic course | Enabled course and approved lesson in the requested locale only |
-| All published | All of the above, including future published catalogues; unpublished/unapproved content stays closed |
+| Catalogue             | Lesson scope                                                                                                            |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| AI Pro                | Existing canonical 71-lesson contract, excludes Builder                                                                 |
+| AI Pro Plus           | Existing canonical 100-lesson contract                                                                                  |
+| Kids                  | Approved lessons, with released country, guardian declaration, child profile and current profile consent still required |
+| Technical — furniture | Released furniture lessons only                                                                                         |
+| Academic course       | Enabled course and approved lesson in the requested locale only                                                         |
+| All published         | All of the above, including future published catalogues; unpublished/unapproved content stays closed                    |
 
 Scopes never imply administrator privileges. AI core grants reuse published policy limits (Pro 50/month, 3/lesson; Pro Plus 150/month, 6/lesson in the current fixture). Overlaps use the largest applicable existing allowance, never a sum or unlimited usage. Course lesson access does not grant the separately purchased Academic assistant add-on. Nothing writes Stripe subscriptions, coupons, prices or payment entitlements. Expiring/revoking a grant composes with still-valid paid sources.
 
@@ -41,3 +41,12 @@ The SQL is deliberately a review candidate outside the auto-applied migration di
 
 Browser-based Supabase signup/confirmation and an owner-operated admin smoke test remain release acceptance steps after an authorized rehearsal/deployment. Current tests exercise the real SQL verification trigger in synthetic Auth tables and React interactions; they do not claim a live Supabase Auth/UI rollout.
 
+## Invitation and recipient controls — 2026-10-14
+
+The grant form now has a separate four-locale invitation-language selector; changing it does not require changing the administrator's interface language. The existing validated locale is saved with the opt-in mail request.
+
+New grant emails link to `/signup?locale=...&email=...`. The worker obtains the prefilled email from the stored recipient, not arbitrary template payload data. The email is a form hint only: verified Auth identity and the existing grant activation transaction still determine access. Both signup and the existing-account login accept an editable validated email hint. No account or grant is created by opening the link. HTML links escape query separators.
+
+Both Grant access by email and Coupons and invitations reuse the existing admin-only paginated Auth directory through a registered-email picker. It supports search through later pages, single-recipient replacement, group additions without duplicates, loading/retry states, and manual entry of an unregistered address. The query cache is partitioned by the current administrator and discarded after unmount. No email-directory endpoint or table is exposed to anonymous users.
+
+No database migration or change to duration, activation, quotas, Stripe, or paid entitlement composition is required. Release requires the updated existing `account-welcome-job` dependency bundle plus owner publication of the website. Historical deployment receipts and database acceptance remain independent of this source change. Validation commands include the commerce and auth regression suites, TypeScript, lint, the application build, and `scripts/commerce/invitation-browser-check.mjs` with synthetic local responses only.

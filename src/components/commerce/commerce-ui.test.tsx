@@ -19,6 +19,16 @@ const mock = vi.hoisted(() => ({
   read: vi.fn(),
 }));
 vi.mock("@tanstack/react-start", () => ({ useServerFn: (fn: unknown) => fn }));
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({ user: { id: "synthetic-admin" }, loading: false }),
+}));
+vi.mock("@/lib/admin.functions", () => ({
+  listUsers: async () => ({
+    users: [{ id: "registered", email: "registered@example.test" }],
+    page: 1,
+    hasMore: false,
+  }),
+}));
 vi.mock("@/lib/commerce/commerce.functions", () => ({
   commerceCommand: mock.command,
   uploadCommerceReceipt: mock.upload,
@@ -522,6 +532,16 @@ describe("simple administrator offers", () => {
     );
     return { run, s: adminOfferCopy(locale), w: commerceCopy(locale) };
   }
+  it("adds a registered recipient to a group without replacing manually entered emails", async () => {
+    const { s } = setup("en");
+    fireEvent.click(screen.getByRole("radio", { name: s.group }));
+    fireEvent.change(screen.getByLabelText(s.emails), { target: { value: "manual@example.test" } });
+    fireEvent.click(await screen.findByRole("button", { name: "registered@example.test" }));
+    expect(screen.getByLabelText(s.emails)).toHaveValue(
+      "manual@example.test\nregistered@example.test",
+    );
+    expect(screen.getByRole("button", { name: /registered@example.test/ })).toBeDisabled();
+  });
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const)(
     "creates a 100 percent email-only coupon after review in %s",
     async (locale) => {

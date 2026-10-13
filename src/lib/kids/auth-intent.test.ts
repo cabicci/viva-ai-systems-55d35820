@@ -4,6 +4,18 @@ import { isSafeAuthReturn, kidsSignupRedirect, parseAuthIntentSearch } from "./a
 const lesson = "/learn/builder/builder-m1-l1-what-is-llm";
 
 describe("safe learner authentication destinations", () => {
+  it("retains a valid invitation email for signup and existing-account login", () => {
+    expect(
+      parseAuthIntentSearch({ locale: "ar-Gulf", email: "  Learner+invite@example.test  " }),
+    ).toMatchObject({ locale: "ar-Gulf", email: "Learner+invite@example.test" });
+    for (const email of [
+      "not-an-email",
+      "a@example.test\nBcc: injected@example.test",
+      ["a@example.test"],
+    ]) {
+      expect(parseAuthIntentSearch({ email })).not.toHaveProperty("email");
+    }
+  });
   it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     "retains a lesson through signup in %s",
     (locale) => {

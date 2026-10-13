@@ -7,6 +7,8 @@ import { PaymentMethods } from "@/components/commerce/PaymentMethods";
 import { AdminGroups } from "@/components/commerce/AdminGroups";
 import { AdminPayments } from "@/components/commerce/AdminPayments";
 import { AdminSettings } from "@/components/commerce/AdminSettings";
+import { AdminEmailAccess } from "@/components/commerce/AdminEmailAccess";
+import { AdminOffers } from "@/components/commerce/AdminOffers";
 import type { AdminData } from "@/lib/commerce/contracts";
 const data: AdminData = {
   groups: [{ id: "00000000-0000-4000-8000-000000000001", name: "Synthetic", send_state: "paused" }],
@@ -74,7 +76,7 @@ export function Preview() {
           ))}
         </select>
         <nav className="flex flex-wrap gap-3">
-          {["payments", "groups", "settings", "review"].map((x) => (
+          {["payments", "groups", "settings", "review", "email-access", "offers"].map((x) => (
             <button className="min-h-11 rounded border px-3" key={x} onClick={() => setTab(x)}>
               {x}
             </button>
@@ -110,6 +112,10 @@ export function Preview() {
                 : { id: data.groups[0].id }
             }
           />
+        ) : tab === "email-access" ? (
+          <AdminEmailAccess key={locale} />
+        ) : tab === "offers" ? (
+          <AdminOffers key={locale} data={data} busy={false} run={async () => ({})} />
         ) : tab === "review" ? (
           <AdminPayments
             key={locale}

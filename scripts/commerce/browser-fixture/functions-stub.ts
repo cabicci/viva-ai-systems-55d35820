@@ -3,6 +3,16 @@ export const commerceCommand = async ({
 }: {
   data: { action: string; data: Record<string, unknown> };
 }) => {
+  if (data.action === "offer_catalogue")
+    return [
+      {
+        package: "pro",
+        market: "EG",
+        billing_interval: "month",
+        original_minor: 16900,
+        currency: "EGP",
+      },
+    ];
   if (data.action === "methods")
     return [
       {

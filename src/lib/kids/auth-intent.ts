@@ -1,3 +1,4 @@
+import { z } from "zod";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 
 export const SAFE_LINE_RETURNS = [
@@ -40,13 +41,16 @@ export function isSafeAuthReturn(value: unknown): value is SafeReturn {
 
 export type AuthIntentSearch = {
   locale?: string;
+  email?: string;
   intent?: "kids";
   returnTo?: SafeReturn;
 };
 
 export function parseAuthIntentSearch(raw: Record<string, unknown>): AuthIntentSearch {
+  const email = z.string().trim().email().max(254).safeParse(raw.email);
   return {
     ...parseLocaleSearchParam(raw),
+    ...(email.success ? { email: email.data } : {}),
     intent: raw.intent === "kids" ? "kids" : undefined,
     ...(isSafeAuthReturn(raw.returnTo) ? { returnTo: raw.returnTo } : {}),
   };

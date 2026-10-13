@@ -31,7 +31,7 @@ function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
   const search: AuthIntentSearch & ReturnType<typeof parsePaymentLoginSearch> = Route.useSearch();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(search.email ?? "");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [failure, setFailure] = useState<ReturnType<typeof loginErrorPresentation> | null>(null);
