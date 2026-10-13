@@ -78,6 +78,9 @@ def main():
     assert request['action']=='generate-visuals-only' and request['lessonId']=='SOIL-PILOT-01'
     key=next((os.environ.get(k) for k in ['GEMINI_API_KEY','GEMINI_API_KEY_1','GEMINI_API_KEY_2','GEMINI_API_KEY_3'] if os.environ.get(k)),None)
     assert key, 'Gemini credential is required'
+    available=p.request_json('https://generativelanguage.googleapis.com/v1beta/models?pageSize=1000',key)
+    names=[m['name'] for m in available.get('models',[]) if 'image' in m['name'].lower() or 'banana' in m['name'].lower()]
+    print('Available image model names: '+', '.join(names),flush=True)
     model=p.request_json(f'https://generativelanguage.googleapis.com/v1/models/{plan["model"]}',key)
     assert 'generateContent' in model.get('supportedGenerationMethods',[])
     dest=ROOT/'output/visuals'
