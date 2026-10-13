@@ -4,6 +4,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent))
 import pipeline as p
+from media_current import current
+from lesson_art import ready as art_ready
 PLAN=p.read(ROOT.parent/'planning/curriculum-map.json')
 OUT=ROOT/'packages'
 CAT=ROOT.parent/'public/curriculum'
@@ -78,26 +80,28 @@ def build():
         p.write(course/'visuals.json',vp);p.write(course/'visual-contract.json',contract)
         p.write(pkg/'authoring-receipt.json',receipt)
         records.append({'id':lid,'order':spec['order'],'unit':spec['unit'],'type':spec['type'],'reusedPilot':False,
-                        'ready':True,'revision':receipt['locales']['en']['contentHash'],'title':titles,'sourcePages':base['source']['physicalPages'],'media':{}})
+                        'ready':True,'revision':p.digest({'content':receipt['locales']['en']['contentHash'],'patches':base['editorialPatchHash']}),'title':titles,'sourcePages':base['source']['physicalPages'],'media':{}})
     for record in records:
         if record.get('reusedPilot') or not record.get('ready'):continue
         lid=record['id'];pkg=OUT/lid
         record['media']={}
-        vr=pkg/'output/visuals/receipt.json'
-        if vr.exists() and p.read(vr).get('qualityPassed'):
-            record['images']=True;record['visualFiles']={}
-            for asset in p.read(vr)['assets']:
-                target=CAT/'media'/lid/'visuals'/asset['filename'];target.parent.mkdir(parents=True,exist_ok=True)
-                shutil.copyfile(pkg/'output/visuals'/asset['filename'],target)
-                for scene in asset['scenes']:record['visualFiles'][scene]=asset['filename']
         for loc in LANG:
             media=pkg/'output'/loc;rp=media/'receipt.json'
             if not rp.exists():continue
             r=p.read(rp)
-            if not r.get('generated') or not r.get('automatedAudioReview',{}).get('passed'):continue
+            if not current(pkg,loc):continue
             for name in ['lesson.mp4','master.wav','captions.vtt','transcript.txt']:
                 target=CAT/'media'/lid/loc/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(media/name,target)
             record['media'][loc]={'generated':True,'sha256':r['verification']['sha256'],'duration':r['verification']['durationSeconds']}
+    for record in records:
+        lid=record['id']
+        if lid not in p.read(ROOT/'lesson-illustrations.json') or not art_ready(lid):continue
+        folder=OUT/lid/'output/lesson-visuals'
+        record['lessonIllustrations']=True;record['lessonVisualFiles']={}
+        for asset in p.read(folder/'receipt.json')['assets']:
+            target=CAT/'media'/lid/'lesson-visuals'/asset['filename'];target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(folder/asset['filename'],target)
+            for scene in asset['scenes']:record['lessonVisualFiles'][scene]=asset['filename']
     index={'courseId':'SOIL','locales':list(LANG),'lessons':records,'expected':34,'generated':sum(bool(r.get('ready')) for r in records),'published':False}
     p.write(CAT/'index.json',index)
     print(json.dumps({'completeLessons':sum(bool(r.get('ready')) for r in records),'expected':34}))

@@ -7,7 +7,7 @@ REPO='cabicci/viva-ai-systems-55d35820'
 def call(args):
     return subprocess.check_output([GH,*args],cwd=ROOT.parents[2],text=True,encoding='utf-8')
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--run',required=True);ap.add_argument('--kind',choices=['author','media'],required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--run',required=True);ap.add_argument('--kind',choices=['author','media','illustrations'],required=True);a=ap.parse_args()
     result=json.loads(call(['api',f'repos/{REPO}/actions/runs/{a.run}/artifacts','--paginate']))
     count=0
     for artifact in result['artifacts']:
@@ -18,6 +18,7 @@ def main():
         if marker.exists():continue
         subprocess.run([GH,'run','download',a.run,'-R',REPO,'-n',name,'-D',str(target)],cwd=ROOT,check=True)
         dest=ROOT/('output' if a.kind=='author' else 'packages')/lid
+        if a.kind=='illustrations':dest=dest/'output/lesson-visuals'
         shutil.copytree(target,dest,dirs_exist_ok=True)
         marker.write_text(name,encoding='utf-8');count+=1
     print(json.dumps({'run':a.run,'kind':a.kind,'newArtifacts':count}))

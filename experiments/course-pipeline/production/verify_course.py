@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent))
 import pipeline as p
+from media_current import current
 def main():
     plan=p.read(ROOT.parent/'planning/curriculum-map.json');blueprints=p.read(ROOT/'blueprints.json');activities=p.read(ROOT/'activities.json')
     results=[];video_count=0;errors=[]
@@ -35,7 +36,7 @@ def main():
                     assert 'trainerAssessment' not in public and 'visuals' not in public
                 if (pkg/'output'/loc/'receipt.json').exists():
                     mr=p.read(pkg/'output'/loc/'receipt.json')
-                    if mr.get('generated') and mr.get('automatedAudioReview',{}).get('passed'):
+                    if current(pkg,loc):
                         video=pkg/'output'/loc/'lesson.mp4'
                         assert hashlib.sha256(video.read_bytes()).hexdigest()==mr['verification']['sha256']
                         video_count+=1

@@ -4,6 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT.parent))
 import pipeline as p
+from media_current import current
 def sha(file):return hashlib.sha256(file.read_bytes()).hexdigest()
 def copy(source,dest):
     dest.parent.mkdir(parents=True,exist_ok=True)
@@ -19,7 +20,7 @@ def main():
             folder=pkg/'output'/locale
             if not (folder/'receipt.json').exists():continue
             receipt=p.read(folder/'receipt.json')
-            if not receipt.get('generated') or not receipt.get('automatedAudioReview',{}).get('passed'):continue
+            if not current(pkg,locale):continue
             video=folder/'lesson.mp4'
             assert video.exists() and sha(video)==receipt['verification']['sha256'],'Video integrity mismatch'
             for f in folder.rglob('*'):
