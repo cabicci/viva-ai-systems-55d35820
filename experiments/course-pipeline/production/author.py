@@ -258,10 +258,10 @@ Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
                       'Return corrected JSON only.\nISSUES:'+json.dumps(critical,ensure_ascii=False)+'\nREFERENCES:'+sourcejson+
                       '\nLESSON:'+json.dumps(data,ensure_ascii=False),key,loc+'-critical-repair')
             data['locale']=loc;data=ensure(data,lesson,loc,key,POLICY,english if loc!='en' else None)
-            review=call(POLICY+'\nVerify these critical issues were fully fixed without new factual or safety errors. '
+            review=call(CONTENT_POLICY+'\nVerify these critical issues were fully fixed without new factual or safety errors. '
                          'Return JSON {passed:boolean,issues:[{severity:"critical"|"minor",field:string,reason:string}]}.\n'
                          'Ignore visual-prompt wording and stylistic preferences; visual quality has a separate stage. ISSUES:'+json.dumps(critical,ensure_ascii=False)+'\nREFERENCES:'+sourcejson+
-                         '\nLESSON:'+json.dumps(data,ensure_ascii=False),key,loc+'-re-audit')
+                         '\nLESSON:'+json.dumps(content_view(data),ensure_ascii=False),key,loc+'-re-audit')
         assert not [x for x in review.get('issues',[]) if x.get('severity')=='critical'], 'Critical content review unresolved'
         if loc=='en':english=copy.deepcopy(data)
         p.write(folder/(loc+'.json'),data)

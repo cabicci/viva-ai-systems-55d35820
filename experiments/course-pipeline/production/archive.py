@@ -29,7 +29,7 @@ def main():
             if f.is_file():copy(f,dest/'media'/pkg.name/'visuals'/f.relative_to(pkg/'output/visuals'))
     for f in (ROOT/'private/assessments').rglob('*.json'):
         copy(f,dest/'trainer-only'/f.relative_to(ROOT/'private/assessments'))
-    for name in ('README.md','machine-reference.json','editorial-review.json'):
+    for name in ('README.md','machine-reference.json','editorial-review.json','editorial-patches.json','primary-reference-notes.json','blueprints.json','activities.json','visual-blueprints.json','verification.json'):
         copy(ROOT/name,dest/'reports'/name)
     for f in dest.rglob('*'):
         if f.is_file() and f.name!='archive-manifest.json':entries.append({'path':f.relative_to(dest).as_posix(),'bytes':f.stat().st_size,'sha256':sha(f)})
