@@ -41,13 +41,13 @@ Only the supplied Honda owner's manual governs machine controls/operations. Diff
 No minors operate motorized machinery; supervised adult operator only after training. Minors can observe stopped/isolated machine with instructor.
 Never bypass guards or operator-presence controls, clean rotating tines, refuel hot/running engine, run engine indoors, tow trailer or ride machine.
 Machine illustrations: stopped machine overview only, never demonstrate exact safety-critical geometry via a generated close-up.
-Arabic texture terminology: use تربة مزيجية (Loam) for loam, طين for clay, and keep the full English class in parentheses when needed. Never call loam simply تربة طينية or تربة طينية رملية. Keep sandy clay loam distinct from loam. For 40% sand, 40% silt and 20% clay, the class is Loam.
 Explain identifying and verifying real controls with instructor; use correctly sourced textual sequence.
 Do not label the material institutionally accredited or expert/native reviewed. AI quality checks are not such approval.
 """
 
 CONTENT_POLICY='\n'.join(line for line in POLICY.splitlines() if not line.startswith('Any depicted labels') and not line.startswith('Machine illustrations:'))
 CONTENT_POLICY+='\nThe canonical English scripts and activity are the separately lead-authored semantic contract. Audit generated additions for concrete scientific/safety errors or contradictions, and translations for changed meaning. Do not demand rewrites of the canonical activity based on editorial preference. The supplied text descriptions ARE the complete simulated case data, not references to missing physical samples or missing worksheets. Qualitative comparisons need no invented numeric result. Public formative feedback may explicitly explain the correct answer; it is not a private trainer assessment key. A warning not to invent a missing measurement is not a contradiction. A question about further evidence does not require that future evidence already exist.'
+AR_TERMS='\nArabic-only terminology: use تربة مزيجية (Loam) for loam and طين for clay. Never call loam simply تربة طينية or تربة طينية رملية. Keep sandy clay loam distinct from loam. For 40% sand, 40% silt and 20% clay, the class is Loam.'
 
 def content_view(data):
     return {k:v for k,v in data.items() if k!='visuals'}
@@ -188,7 +188,7 @@ SHAPE={
 }
 
 def egyptian(data,english,key):
-    prompt='You are an Egyptian agricultural instructor. Rewrite the ENTIRE supplied Arabic lesson into natural Egyptian Arabic, not MSA or Gulf. This includes narration, explanations, examples, feedback, goals, activities and glossary. Keep scientific terminology accurate and optionally keep English terms only in parentheses after Arabic. Use natural grammar such as لو، مش، عشان، اللي، ده، دي، إزاي، هتعمل، ماتعملش. Do not use إذا كان، الذي، التي، ينبغي، سوف or formal imperative قم. Preserve every fact, safety condition, number, unit, ID, sourcePages and quiz answer index exactly. Do not simplify away conditions. Treat the English lesson as the semantic reference, not wording to translate formally. Return full lesson JSON only. ENGLISH: '+json.dumps(english,ensure_ascii=False)+'\nARABIC DRAFT: '+json.dumps(data,ensure_ascii=False)
+    prompt='You are an Egyptian agricultural instructor. Rewrite the ENTIRE supplied Arabic lesson into natural Egyptian Arabic, not MSA or Gulf. This includes narration, explanations, examples, feedback, goals, activities and glossary. Keep scientific terminology accurate and optionally keep English terms only in parentheses after Arabic. Use natural grammar such as لو، مش، عشان، اللي، ده، دي، إزاي، هتعمل، ماتعملش. Do not use إذا كان، الذي، التي، ينبغي، سوف or formal imperative قم. Preserve every fact, safety condition, number, unit, ID, sourcePages and quiz answer index exactly. Do not simplify away conditions. Treat the English lesson as the semantic reference, not wording to translate formally. Return full lesson JSON only.'+AR_TERMS+' ENGLISH: '+json.dumps(english,ensure_ascii=False)+'\nARABIC DRAFT: '+json.dumps(data,ensure_ascii=False)
     out=call(prompt,key,'ar-EG-colloquial');out['locale']='ar-EG';return out
 
 
@@ -284,7 +284,7 @@ Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
             polished=call('Polish ONLY these display strings into natural Egyptian Arabic. Glossary term labels MUST contain an Arabic term; optionally keep the original English in parentheses. Keep meanings and the six glossary pairs exactly. Do not add new facts. Return the same four keys as JSON. DATA: '+json.dumps(small,ensure_ascii=False),key,'arabic-display-polish')
             assert len(polished['glossary'])==6 and all(re.search(r'[\u0600-\u06ff]',pair[0]) for pair in polished['glossary'])
             for field in small:data[field]=polished[field]
-        review=call(CONTENT_POLICY+'\nIndependently audit the complete lesson against the supplied reference and lesson scope. '
+        review=call(CONTENT_POLICY+(AR_TERMS if loc=='ar-EG' else '')+'\nIndependently audit the complete lesson against the supplied reference and lesson scope. '
                     'Check scientific correctness, safety, simulation labels, worked-example arithmetic, assessment validity, source-page claims, '
                     'and natural locale '+loc+'. Treat blanket 4 C chilling, bag lids, missing activity case materials, and generated printed labels/arrows as critical errors. '+'. For translations compare meaning/numbers with English. '
                     'Audit only learner/trainer text; visual prompts are verified separately against rendered pixels and must not be flagged here. Do not fail for stylistic preferences, exact wording, negative feedback or lack of institutional review. Only concrete scientific/safety mistakes or information genuinely required for the stated task are critical. '

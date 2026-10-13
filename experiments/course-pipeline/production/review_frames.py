@@ -2,6 +2,7 @@
 import argparse,hashlib,json,os,subprocess,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'private/qa-deps'))
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--ffmpeg',default='ffmpeg');ap.add_argument('--lesson');a=ap.parse_args()
     out=ROOT.parent/'review-evidence/full-course';out.mkdir(parents=True,exist_ok=True)
@@ -20,7 +21,11 @@ def main():
                 seconds=(scene['startFrame']+scene['durationInFrames']*.8)/30
                 subprocess.run([a.ffmpeg,'-hide_banner','-loglevel','error','-y','-ss',str(seconds),'-i',str(video),'-frames:v','1','-vf','scale=480:270',str(dest/('frame-%02d.png'%i))],check=True)
             rows=(len(props['scenes'])+1)//2
-            subprocess.run([a.ffmpeg,'-hide_banner','-loglevel','error','-y','-framerate','1','-start_number','1','-i',str(dest/'frame-%02d.png'),'-vf','tile=2x'+str(rows),'-frames:v','1',str(sheet)],check=True)
+            from PIL import Image
+            with Image.new('RGB',(960,270*rows),'white') as canvas:
+                for i in range(len(props['scenes'])):
+                    with Image.open(dest/('frame-%02d.png'%(i+1))) as frame:canvas.paste(frame,(480*(i%2),270*(i//2)))
+                canvas.save(sheet)
             marker.write_text(digest)
             done.append({'lesson':pkg.name,'locale':locale,'sheet':str(sheet)})
     print(json.dumps(done))

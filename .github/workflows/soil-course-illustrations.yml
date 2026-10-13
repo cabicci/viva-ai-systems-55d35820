@@ -67,4 +67,7 @@ jobs:
         with:
           name: soil-illustrations-${{ matrix.lesson }}
           retention-days: 30
-          path: experiments/course-pipeline/production/packages/${{ matrix.lesson }}/output/lesson-visuals
+          path: |
+            experiments/course-pipeline/production/packages/${{ matrix.lesson }}/output/lesson-visuals/*.png
+            experiments/course-pipeline/production/packages/${{ matrix.lesson }}/output/lesson-visuals/receipt.json
+            experiments/course-pipeline/production/packages/${{ matrix.lesson }}/output/lesson-visuals/qa/*.json

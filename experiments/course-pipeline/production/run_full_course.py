@@ -46,7 +46,7 @@ def main():
         art_file=ROOT/'private/illustration-run.json'
         if art_file.exists():
             state['illustrationRun']=json.loads(art_file.read_text(encoding='utf-8'))['run']
-            script('sync.py','--run',str(state['illustrationRun']),'--kind','illustrations')
+            script('sync.py','--run',str(state['illustrationRun']),'--kind','illustrations','--limit','2')
             state['illustrationStatus']=gh('run','view',str(state['illustrationRun']),'-R',REMOTE,'--json','status,conclusion')
         successor_file=ROOT/'private/successor.json'
         if successor_file.exists():state['successorRun']=json.loads(successor_file.read_text(encoding='utf-8'))['run']
@@ -64,7 +64,7 @@ def main():
                 run=run_for(state[label+'Sha'])
                 if run:state[label+'Run']=run['databaseId'];save(state)
             if state.get(label+'Run'):
-                script('sync.py','--run',str(state[label+'Run']),'--kind','media')
+                script('sync.py','--run',str(state[label+'Run']),'--kind','media','--limit','2')
                 media_status=gh('run','view',str(state[label+'Run']),'-R',REMOTE,'--json','status,conclusion')
                 state[label+'Status']=media_status
                 if media_status['status']=='completed' and media_status['conclusion']!='success':
