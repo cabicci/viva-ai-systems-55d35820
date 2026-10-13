@@ -29,7 +29,7 @@ def build():
         if not (folder/'authoring-receipt.json').exists():
             records.append(pending);continue
         receipt=p.read(folder/'authoring-receipt.json')
-        if receipt.get('status')!='authored-and-automatically-checked':
+        if receipt.get('status')!='authored-and-automatically-checked' or receipt.get('arEGNarrationStyle')!='egyptian-validated':
             records.append(pending);continue
         if receipt.get('canonicalActivityHash')!=p.digest(activities[lid]) or receipt.get('canonicalNarrationHash')!=p.digest(blueprints[lid]) or any(c['contentHash'] in blocked for c in receipt['locales'].values()):
             records.append(pending);continue

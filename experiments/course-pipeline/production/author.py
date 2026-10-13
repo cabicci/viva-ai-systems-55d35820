@@ -106,6 +106,10 @@ def validate(data,lesson,loc,english=None):
         label=s.get('id','unknown')
         missing=[k for k in ['title','lead','example','takeaway','narration','explanation','labels','sourcePages'] if not s.get(k)]
         if missing:problems.append(label+': missing non-empty fields '+str(missing)+'; sourcePages must contain actual allowed ORIGINAL-EN PDF page numbers')
+        if loc=='ar-EG':
+            speech=s.get('narration','')
+            if not re.search(r'مش|عشان|إزاي|ازاي|اللي|\bده\b|\bدي\b|هت[ء-ي]|بت[ء-ي]',speech) or re.search(r'إذا كان|الذي|التي|ينبغي|سوف|قم ب',speech):
+                problems.append(label+': narration must be natural Egyptian Arabic, not MSA. Use لو/مش/عشان/اللي/ده and natural Egyptian verb forms while preserving all meaning.')
         if not 35<=len(s.get('narration','').split())<=150: problems.append(label+': narration needs 35-150 words')
         if len(s.get('explanation','').split())<(55 if loc=='de' else 70): problems.append(label+': written explanation is too short; expand with concrete reasoning and an example')
         if len(s.get('labels',[]))!=3 or any(len(x)>=85 for x in s.get('labels',[])): problems.append(label+': exactly 3 labels under 85 characters each')
@@ -150,6 +154,11 @@ SHAPE={
    'criticalErrors':['unsafe actions causing stop'],'reassessment':'target deficient criteria, never automatic pass'},
  'visuals':[{'id':'v1','scenes':['s01','s02'],'subject':'precise text-free 3D illustration brief','checks':['2-3 visible factual conditions']}]
 }
+
+def egyptian(data,english,key):
+    prompt='You are an Egyptian agricultural instructor. Rewrite the ENTIRE supplied Arabic lesson into natural Egyptian Arabic, not MSA or Gulf. This includes narration, explanations, examples, feedback, goals, activities and glossary. Keep scientific terminology accurate and optionally keep English terms only in parentheses after Arabic. Use natural grammar such as لو، مش، عشان، اللي، ده، دي، إزاي، هتعمل، ماتعملش. Do not use إذا كان، الذي، التي، ينبغي، سوف or formal imperative قم. Preserve every fact, safety condition, number, unit, ID, sourcePages and quiz answer index exactly. Do not simplify away conditions. Treat the English lesson as the semantic reference, not wording to translate formally. Return full lesson JSON only. ENGLISH: '+json.dumps(english,ensure_ascii=False)+'\nARABIC DRAFT: '+json.dumps(data,ensure_ascii=False)
+    out=call(prompt,key,'ar-EG-colloquial');out['locale']='ar-EG';return out
+
 
 def ensure(data,lesson,loc,key,prompt,english=None):
     for attempt in range(3):
@@ -223,6 +232,7 @@ Localize scientific terminology accurately. Preserve numerical meaning, units, o
 In ar-EG do not leave English learner prose except internationally used units/model names; visuals remain internal English.
 Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
             data=call(lp,key,loc);data['locale']=loc
+            if loc=='ar-EG':data=egyptian(data,english,key)
             data=ensure(data,lesson,loc,key,lp,english)
         if loc=='ar-EG' and any(not re.search(r'[\u0600-\u06ff]',pair[0]) for pair in data['glossary']):
             small={k:data[k] for k in ['title','subtitle','goal','glossary']}
@@ -254,6 +264,7 @@ Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
                                 'nativeReview':False,'subjectExpertReview':False}
         p.write(folder/'authoring-receipt.json',receipt)
     assert set(receipt['locales'])==set(LOCALES)
+    receipt['arEGNarrationStyle']='egyptian-validated'
     receipt['status']='authored-and-automatically-checked'
     p.write(folder/'authoring-receipt.json',receipt)
     print(ARGS.lesson+': four locales authored; not institutionally approved.',flush=True)

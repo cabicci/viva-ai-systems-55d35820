@@ -15,7 +15,7 @@ def main():
         if not (folder/'authoring-receipt.json').exists():
             results.append({'lessonId':lid,'status':'pending'});continue
         receipt=p.read(folder/'authoring-receipt.json')
-        if receipt.get('status')!='authored-and-automatically-checked' or receipt.get('canonicalActivityHash')!=p.digest(activities[lid]) or receipt.get('canonicalNarrationHash')!=p.digest(blueprints[lid]):
+        if receipt.get('status')!='authored-and-automatically-checked' or receipt.get('arEGNarrationStyle')!='egyptian-validated' or receipt.get('canonicalActivityHash')!=p.digest(activities[lid]) or receipt.get('canonicalNarrationHash')!=p.digest(blueprints[lid]):
             results.append({'lessonId':lid,'status':'pending-current-revision'});continue
         try:
             en=p.read(folder/'en.json')
