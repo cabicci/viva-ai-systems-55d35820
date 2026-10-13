@@ -7,6 +7,7 @@ import pipeline as p
 from media_current import current
 from illustration_distinct import verified as art_verified
 from lesson_art import ready as art_ready
+from arabic_review import reviewed as arabic_reviewed
 def main():
     plan=p.read(ROOT.parent/'planning/curriculum-map.json');blueprints=p.read(ROOT/'blueprints.json');activities=p.read(ROOT/'activities.json')
     results=[];video_count=0;errors=[]
@@ -48,10 +49,12 @@ def main():
     done=sum(x['status']=='authoring-verified' for x in results)
     art_ids=list(p.read(ROOT/'lesson-illustrations.json'))
     art_count=sum(3 for lid in art_ids if art_verified(lid))
-    report={'status':'complete' if done==33 and video_count==116 and art_count==90 and not errors else 'in-progress',
+    arabic_count=sum(arabic_reviewed(x['id']) for x in plan['lessons'])
+    report={'status':'complete' if done==33 and video_count==116 and art_count==90 and arabic_count==34 and not errors else 'in-progress',
       'newLessonsVerified':done,'expectedNewLessons':33,'newVideosVerified':video_count,'expectedNewVideos':116,
       'independentIllustrationsGenerated':sum(3 for lid in art_ids if art_ready(lid)),
       'independentIllustrationsVerified':art_count,'expectedIndependentIllustrations':90,
+      'arabicEditorialLessonsPassed':arabic_count,'expectedArabicEditorialLessons':34,'humanArabicReview':False,
       'pilotReused':True,'liveAssistantVerified':False,'institutionallyApproved':False,'errors':errors,'lessons':results}
     p.write(ROOT/'verification.json',report)
     print(json.dumps({k:v for k,v in report.items() if k not in ['lessons']}))

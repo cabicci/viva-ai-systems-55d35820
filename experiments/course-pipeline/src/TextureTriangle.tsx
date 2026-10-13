@@ -1,39 +1,38 @@
 import React from 'react';
 import {brand} from './brand';
-const labels={
- 'ar-EG':{sand:'رمل',silt:'غرين',clay:'طين',loam:'تربة مزيجية (Loam)',example:'مثال تعليمي: مش قياس من الحقل'},
- en:{sand:'Sand',silt:'Silt',clay:'Clay',loam:'Loam',example:'Worked example, not field measurements'},
- it:{sand:'Sabbia',silt:'Limo',clay:'Argilla',loam:'Franco',example:'Esempio didattico, non misure sul campo'},
- de:{sand:'Sand',silt:'Schluff',clay:'Ton',loam:'Lehm',example:'Rechenbeispiel, keine Feldmesswerte'}
+import model from './assets/texture-solid.png';
+import projection from './assets/texture-solid.json';
+
+const copy={
+ 'ar-EG':{sand:'رمل',silt:'غرين',clay:'طين',loam:'تربة مزيجية',example:'مثال للتعلّم — مش نتيجة عيّنة من الحقل'},
+ en:{sand:'Sand',silt:'Silt',clay:'Clay',loam:'Loam',example:'Worked example — not a field sample result'},
+ it:{sand:'Sabbia',silt:'Limo',clay:'Argilla',loam:'Franco',example:'Esempio didattico — non il risultato di un campione reale'},
+ de:{sand:'Sand',silt:'Schluff',clay:'Ton',loam:'Lehm',example:'Rechenbeispiel — kein Ergebnis einer Feldprobe'},
 };
-const vertices=[[80,440],[720,440],[400,60]];
-function point(sand:number,silt:number,clay:number){return [sand*80+silt*720+clay*400,sand*440+silt*440+clay*60]}
-function line(a:number[],b:number[]){return {x1:a[0],y1:a[1],x2:b[0],y2:b[1]}}
-/** Exact barycentric guide for the one source-checked 40/40/20 example; no invented class regions. */
-export function TextureTriangle({locale}:{locale:string}){
- const t=labels[locale as keyof typeof labels]||labels.en;
- return <svg viewBox="0 0 800 620" role="img" aria-label={`${t.sand} 40%, ${t.silt} 40%, ${t.clay} 20%: ${t.loam}`} style={{width:'100%',height:'100%',fontFamily:'inherit'}}>
-  <rect width="800" height="620" rx="20" fill={brand.background}/>
-  <polygon points={vertices.map(p=>p.join(',')).join(' ')} fill={brand.card} stroke={brand.foreground} strokeWidth="3"/>
-  {Array.from({length:9},(_,i)=>(i+1)/10).flatMap(v=>[
-   <line key={'c'+v} {...line(point(1-v,0,v),point(0,1-v,v))} stroke={brand.border}/>,
-   <line key={'s'+v} {...line(point(v,1-v,0),point(v,0,1-v))} stroke={brand.border}/>,
-   <line key={'i'+v} {...line(point(1-v,v,0),point(0,v,1-v))} stroke={brand.border}/>
-  ])}
-  <line {...line(point(.8,0,.2),point(0,.8,.2))} stroke="#ba7419" strokeWidth="3"/>
-  <line {...line(point(.4,0,.6),point(.4,.6,0))} stroke="#3c8c80" strokeWidth="3"/>
-  <line {...line(point(0,.4,.6),point(.6,.4,0))} stroke="#637aad" strokeWidth="3"/>
-  <circle cx="400" cy="364" r="10" fill={brand.primary} stroke="white" strokeWidth="3"/>
-  <rect x="230" y="290" width="340" height="48" rx="12" fill={brand.background} stroke={brand.primary}/>
-  <text x="400" y="322" textAnchor="middle" fill={brand.foreground} fontSize="25" fontWeight="700">{t.loam}</text>
-  <g fill={brand.foreground} fontSize="23" fontWeight="700" textAnchor="middle">
-   <text x="400" y="23">{t.clay}</text><text x="400" y="48" direction="ltr">100%</text>
-   <text x="110" y="475">{t.sand}</text><text x="110" y="500" direction="ltr">100%</text>
-   <text x="690" y="475">{t.silt}</text><text x="690" y="500" direction="ltr">100%</text>
-   <text x="230" y="535">{t.sand}</text><text x="230" y="563" direction="ltr">40%</text>
-   <text x="400" y="535">{t.silt}</text><text x="400" y="563" direction="ltr">40%</text>
-   <text x="570" y="535">{t.clay}</text><text x="570" y="563" direction="ltr">20%</text>
-  </g>
-  <text x="400" y="600" textAnchor="middle" fill={brand.foreground} fontSize="18">{t.example}</text>
- </svg>
+
+/** The image is a real, reproducible 3D mesh render. Labels use its projected coordinates. */
+export function TextureTriangle({locale,imageComponent:Image='img'}:{locale:string;imageComponent?:React.ElementType}){
+ const t=copy[locale as keyof typeof copy]||copy.en;
+ const {width,height,vertices,hit,specimens}=projection;
+ const text=(x:number,y:number,label:string,size=32,color:string=brand.foreground)=><text x={x} y={y} textAnchor="middle" fill={color} fontSize={size} fontWeight="700" direction={/[\u0600-\u06ff]/.test(label)?'rtl':'ltr'}>{label}</text>;
+ return <div role="img" aria-label={`${t.sand} 40%, ${t.silt} 40%, ${t.clay} 20%: ${t.loam}`} data-graphics-version={projection.version} style={{position:'relative',width:'100%',aspectRatio:`${width}/${height}`,borderRadius:22,overflow:'hidden',fontFamily:'inherit'}}>
+  <Image src={model} alt="" style={{display:'block',width:'100%',height:'100%'}}/>
+  <svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true" style={{position:'absolute',inset:0,width:'100%',height:'100%'}}>
+   {text(vertices[2][0],vertices[2][1]-76,t.clay)}
+   {text(vertices[2][0],vertices[2][1]-38,'100%',27,'#8b5d48')}
+   {text(vertices[0][0]-176,vertices[0][1]-13,t.sand)}
+   {text(vertices[0][0]-176,vertices[0][1]+25,'100%',27,'#916827')}
+   {text(vertices[1][0]+160,vertices[1][1]-8,t.silt)}
+   {text(vertices[1][0]+160,vertices[1][1]+30,'100%',27,'#4c7361')}
+   <path d={`M${hit[0]+28} ${hit[1]-12}L1215 360`} stroke="#71939a" strokeWidth="2.5"/>
+   <rect x="1170" y="259" width="360" height="106" rx="25" fill="white" fillOpacity=".94" stroke="#d6e0dc"/>
+   {text(1350,304,t.loam,locale==='ar-EG'?31:34)}
+   {text(1350,341,locale==='en'?'40 / 40 / 20':'Loam · 40 / 40 / 20',24,'#537580')}
+   {(['sand','silt','clay'] as const).map((kind,i)=><g key={kind}>
+    {text(specimens[i][0],specimens[i][1]+111,t[kind],31)}
+    {text(specimens[i][0],specimens[i][1]+150,i===2?'20%':'40%',32,['#916827','#4c7361','#8b5d48'][i])}
+   </g>)}
+   {text(800,1031,t.example,23,brand['muted-foreground'])}
+  </svg>
+ </div>;
 }

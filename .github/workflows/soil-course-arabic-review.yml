@@ -1,0 +1,66 @@
+name: Soil Egyptian Arabic editorial review
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/production/arabic-review-request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-arabic-editorial-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  scope:
+    runs-on: ubuntu-22.04
+    outputs:
+      lessons: ${{ steps.scope.outputs.lessons }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: scope
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          r=json.load(open('experiments/course-pipeline/production/arabic-review-request.json'))
+          p=json.load(open('experiments/course-pipeline/planning/curriculum-map.json'))
+          assert r['action']=='audit-egyptian-learner-language'
+          allowed={x['id'] for x in p['lessons']}
+          assert 0<len(r['lessons'])<=34 and len(set(r['lessons']))==len(r['lessons'])
+          assert set(r['lessons'])<=allowed
+          print('lessons='+json.dumps(r['lessons']))
+          PY
+  review:
+    needs: scope
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        lesson: ${{ fromJSON(needs.scope.outputs.lessons) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Restore reviewed source-bound text
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LESSON: ${{ matrix.lesson }}
+        run: |
+          if [ "$LESSON" != 'SOIL-U1-L03' ]; then
+            RUN=$(python3 -c "import json; print(json.load(open('experiments/course-pipeline/production/arabic-review-request.json'))['authorRun'])")
+            gh run download "$RUN" -n "soil-author-$LESSON" -D "experiments/course-pipeline/production/output/$LESSON"
+            python3 experiments/course-pipeline/production/build_packages.py
+          fi
+      - name: Review Egyptian phrasing and semantic fidelity
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+          LESSON: ${{ matrix.lesson }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/production/arabic_review.py --lesson "$LESSON"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-arabic-editorial-${{ matrix.lesson }}
+          path: experiments/course-pipeline/production/arabic-review/${{ matrix.lesson }}.json
+          retention-days: 30

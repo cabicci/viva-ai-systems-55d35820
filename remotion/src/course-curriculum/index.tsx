@@ -16,7 +16,7 @@ function SceneView({scene,index,total,visual,dir,locale,lessonId}:{scene:Scene;i
   </div>
   <h1 style={{position:'absolute',left:100,right:100,top:115,margin:0,textAlign:'center',fontSize:size,lineHeight:1.35,fontWeight:800}}>{scene.title}</h1>
   <div style={{position:'absolute',top:250,left:320,width:1280,height:600,opacity:fade,transform:'scale('+(1+progress*.018)+')'}}>
-   {lessonId==='SOIL-U2-L10'&&['s03','s04'].includes(scene.id)?<TextureTriangle locale={locale}/>:visual?<Img src={staticFile(visual)} style={{width:'100%',height:'100%',objectFit:'contain'}}/>:
+   {lessonId==='SOIL-U2-L10'&&['s03','s04'].includes(scene.id)?<TextureTriangle locale={locale} imageComponent={Img}/>:visual?<Img src={staticFile(visual)} style={{width:'100%',height:'100%',objectFit:'contain'}}/>:
     <div style={{padding:90,fontSize:40,lineHeight:1.8,textAlign:'center'}}>{scene.lead}</div>}
   </div>
   <div style={{position:'absolute',left:90,right:90,bottom:100,display:'flex',gap:24}}>

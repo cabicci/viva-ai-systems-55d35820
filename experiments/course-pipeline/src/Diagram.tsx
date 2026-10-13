@@ -1,29 +1,14 @@
 import React from 'react';
 
 type Props={kind:string;labels:string[];progress?:number;locale?:string;photo?:string};
-const ink='#263f36', green='#498969', sand='#d4aa71', pink='#d49090';
-export function Diagram({kind,labels,progress=1,locale='en',photo}:Props){
- if(photo)return <figure style={{margin:0,width:'100%'}}><img src={photo} alt={labels.join(' · ')} style={{width:'100%',display:'block',borderRadius:14,objectFit:'contain'}}/><figcaption style={{display:'flex',justifyContent:'space-around',gap:16,fontSize:13,fontWeight:700,padding:'16px 10px',textAlign:'center'}}>{labels.map((l,i)=><span key={i}>{l}</span>)}</figcaption></figure>;
- const rtl=locale==='ar-EG';
- const text=(x:number,y:number,value:string,size=25)=>{
-  const lines:string[]=[];let line='';
-  for(const word of value.split(' ')){if(line.length+word.length>25){lines.push(line);line=''}line+=(line?' ':'')+word;}if(line)lines.push(line);
-  return <text x={x} y={y} textAnchor="middle" fill={ink} fontFamily="Tajawal, Cairo, sans-serif" fontSize={size} fontWeight="700" direction={/[\u0600-\u06ff]/.test(value)?'rtl':'ltr'}>{lines.map((line,i)=><tspan key={i} x={x} dy={i?size*1.35:0}>{line}</tspan>)}</text>
- };
- const reveal=(at:number)=>({opacity:Math.max(0,Math.min(1,(progress-at)*7)),transform:`translateY(${Math.max(0,1-(progress-at)*7)*10}px)`});
- const arrow=(x:number,y:number)=><path d={`M${x} ${y}h92m-22-18 22 18-22 18`} stroke={green} strokeWidth="7" fill="none" strokeLinecap="round" strokeLinejoin="round"/>;
- const bucket=(x:number,y:number)=><g transform={`translate(${x} ${y})`}><path d="M-90-90Q0-190 90-90" fill="none" stroke={ink} strokeWidth="12"/><path d="M-115-95 115-95 90 100-90 100Z" fill="#efddae" stroke={ink} strokeWidth="5"/><ellipse cy="-95" rx="115" ry="28" fill="#805b3d" stroke={ink} strokeWidth="5"/>{[[-55,-50],[20,-60],[65,-45],[-20,-35]].map(([a,b],i)=><circle key={i} cx={a} cy={b} r="12" fill={sand}/>)}</g>;
- const bag=(x:number,y:number)=><g transform={`translate(${x} ${y})`}><path d="M-72-100H72L90 115H-90Z" fill="#faf7eb" stroke={ink} strokeWidth="5"/><path d="M-70-80H70" stroke={green} strokeWidth="8"/><rect x="-61" y="-20" width="122" height="72" rx="9" fill="#dce9df"/>{text(0,26,'A-01',30)}</g>;
- const sites=[[130,100],[255,100],[385,100],[515,100],[590,185],[770,230],[650,260],[520,245],[390,185],[260,185],[145,255],[290,295],[420,355],[555,365],[710,350]];
- const field=<g><rect x="80" y="65" width="740" height="360" rx="35" fill="#cfe0b7" stroke={green} strokeWidth="5"/>{[130,200,270,340].map(y=><path key={y} d={`M105 ${y}H795`} stroke="#a5c28d" strokeWidth="18" strokeLinecap="round"/>)}<ellipse cx="690" cy="120" rx="83" ry="45" fill="#a7cedb" stroke="#5b8c9e" strokeDasharray="8 8" strokeWidth="4"/><ellipse cx="145" cy="363" rx="46" ry="35" fill="#9c7755" stroke={ink} strokeDasharray="6 7" strokeWidth="4"/><path d={'M'+sites.map(p=>p.join(' ')).join(' ')} pathLength="1" stroke={ink} strokeWidth="5" strokeDasharray="1" strokeDashoffset={1-progress} fill="none" strokeLinecap="round"/>{sites.map(([x,y],i)=><g key={i} opacity={progress>i/sites.length?1:.14}><circle cx={x} cy={y} r="18" fill={ink}/><text x={x} y={y+6} textAnchor="middle" fill="white" fontSize="18" fontFamily="sans-serif" direction="ltr">{i+1}</text></g>)}</g>;
- return <svg viewBox="0 0 900 560" role="img" aria-label={labels.join(' · ')} style={{width:'100%',height:'100%',overflow:'visible'}}>
- <defs><pattern id="soil-grain" width="35" height="35" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2" fill="#805b3d" opacity=".38"/></pattern></defs>
- {(kind==='route'||kind==='zones')&&<>{field}{text(210,493,labels[0],22)}{text(470,493,labels[1],22)}{text(730,493,labels[2],22)}</>}
- {kind==='purpose'&&<><g style={reveal(0)}><rect x="70" y="85" width="325" height="280" rx="26" fill="#cfe0b7" stroke={green} strokeWidth="4"/>{[120,180,240,300].map((y,i)=><g key={i}><path d={`M92 ${y}H370`} stroke="#96b581" strokeWidth="13"/>{[130,240,330].map((x,j)=><circle key={j} cx={x} cy={y} r="10" fill={ink}/>)}</g>)}{text(225,465,labels[0],25)}</g><g style={reveal(.25)}>{arrow(418,220)}</g><g style={reveal(.45)}>{bag(650,220)}{text(650,465,labels[2],25)}</g></>}
- {kind==='tools'&&<><g style={reveal(0)}><g transform="translate(150 125)"><path d="M-50 0H50M0 0V225" stroke={ink} strokeWidth="16" strokeLinecap="round"/><path d="M0 205V260" stroke={sand} strokeWidth="26"/><path d="M-33 262H33L0 307Z" fill={ink}/></g>{text(155,485,labels[0],23)}</g><g style={reveal(.25)}>{bucket(440,260)}{text(445,485,labels[1],23)}</g><g style={reveal(.5)}>{bag(735,270)}{text(725,485,labels[2],23)}</g></>}
- {kind==='depth'&&<><rect x="100" y="135" width="600" height="275" fill={sand} rx="8"/><rect x="100" y="135" width="600" height="275" fill="url(#soil-grain)"/><path d="M90 132H720" stroke={green} strokeWidth="13"/><g style={reveal(.2)}><rect x="310" y="137" width="62" height="265" fill="#886449"/><path d="M750 137V403m-17-247 17-19 17 19m-34 228 17 19 17-19" stroke={ink} strokeWidth="5" fill="none"/>{text(800,276,'20 cm',22)}</g><g style={reveal(.5)}><rect x="455" y="137" width="62" height="265" fill="#886449"/></g>{text(400,475,labels[0],25)}{text(400,535,labels[1],23)}</>}
- {kind==='mix'&&<><g style={reveal(0)}>{bucket(255,265)}{text(245,490,labels[1],28)}</g><g style={reveal(.2)}><path d="M185 253Q245 160 335 241m-21-28 21 28-36 9" fill="none" stroke={green} strokeWidth="8"/></g><g style={reveal(.5)}>{arrow(440,260)}{bag(680,255)}{text(680,490,labels[2],25)}</g></>}
- {kind==='label'&&<>{bag(185,270)}<g><rect x="360" y="92" width="435" height="336" rx="22" fill="#fffdf6" stroke={green} strokeWidth="4"/><g style={reveal(0)}>{text(580,155,'A-01',42)}<path d="M395 185H760" stroke="#cadbcf" strokeWidth="3"/></g><g style={reveal(.2)}>{text(580,238,'A · 0–20 cm',30)}</g><g style={reveal(.4)}>{text(580,300,'2026-10-13',30)}</g><g style={reveal(.6)}>{text(580,368,'15',32)}</g></g>{text(450,502,labels[1],28)}</>}
- {kind==='transfer'&&<>{[170,450,730].map((x,i)=><g key={i} style={reveal(i*.25)}><circle cx={x} cy="230" r="83" fill={['#d6e6cb','#eee2bd','#e1dcef'][i]} stroke={green} strokeWidth="4"/>{text(x,250,String(i+1),58)}{text(x,385,labels[i],23)}</g>)}<g style={reveal(.2)}>{arrow(273,230)}</g><g style={reveal(.45)}>{arrow(553,230)}</g></>}
- </svg>
+
+// A missing approved illustration must never silently fall back to flat artwork.
+export function Diagram({labels,photo}:Props){
+ if(!photo)return null;
+ return <figure style={{margin:0,width:'100%'}}>
+  <img src={photo} alt={labels.join(' · ')} style={{width:'100%',display:'block',borderRadius:14,objectFit:'contain'}}/>
+  <figcaption style={{display:'flex',justifyContent:'space-around',gap:16,fontSize:13,fontWeight:700,padding:'16px 10px',textAlign:'center'}}>
+   {labels.map((label,i)=><span key={i}>{label}</span>)}
+  </figcaption>
+ </figure>;
 }

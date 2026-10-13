@@ -4,6 +4,10 @@ Scope authorized by the owner on 13 October 2026: all 34 curriculum stations in 
 
 ## Production stages
 
+The 13 October visual clarification covers every educational illustration, including geometric shapes and scientific diagrams: a consistent stylized 3D appearance, realistic materials, deliberate lighting and visible volume. Exact localized text and values remain editable overlays. Flat diagrams do not pass merely because other images in the lesson are 3D. See graphics/README.md for the exact texture-triangle model and its pending owner preview.
+
+Arabic is a separately authored Egyptian teaching version. English controls scientific meaning, not sentence order. All headings, explanations, spoken passages, activities and feedback need natural Egyptian phrasing and a consistent scientific glossary. Dialect-word detection is only a preliminary check, not proof of naturalness. The current generated Arabic has not passed the additional editorial review raised by the owner on 13 October; preserve this limitation in delivery reports.
+
 1. A version-bound request selects the 33 new stations. The original 146-page English PDF is represented by its previously verified extraction, encrypted with AES-GCM. The decryption key exists in the repository's GitHub secret; plaintext is ignored and never copied to the learner bundle.
 2. Authoring uses Gemini 2.5 Flash against each station's exact source pages and editorial corrections. English is written first, followed by complete course-local localization. Original school branding, source model answers and unnecessary source quotations must not enter public content.
 3. Structural checks, an independent model review, targeted correction and re-review precede media. Model reviews do not establish expert, native-speaker, owner or institutional acceptance. Rejected exact content hashes are excluded.

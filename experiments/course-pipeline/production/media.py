@@ -13,7 +13,7 @@ def engine_hash():
                      'imageGenerator':hashlib.sha256(Path(g.__file__).read_bytes()).hexdigest(),
                      'imageQA':hashlib.sha256(Path(q.__file__).read_bytes()).hexdigest(),
                      'renderer':hashlib.sha256((p.REPO/'remotion/src/course-curriculum/index.tsx').read_bytes()).hexdigest(),
-                     'graphics':hashlib.sha256((p.REPO/'experiments/course-pipeline/src/TextureTriangle.tsx').read_bytes()).hexdigest()})
+                     'graphics':p.digest({name:hashlib.sha256((p.REPO/'experiments/course-pipeline/src'/name).read_bytes()).hexdigest() for name in ['TextureTriangle.tsx','assets/texture-solid.png','assets/texture-solid.json']})})
 def run(command,**kwargs):
     command=['src/course-curriculum/index.tsx' if str(x)=='src/course-pipeline/index.tsx' else x for x in command]
     return base_run(command,**kwargs)

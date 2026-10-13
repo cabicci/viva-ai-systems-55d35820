@@ -48,6 +48,19 @@ Do not label the material institutionally accredited or expert/native reviewed. 
 CONTENT_POLICY='\n'.join(line for line in POLICY.splitlines() if not line.startswith('Any depicted labels') and not line.startswith('Machine illustrations:'))
 CONTENT_POLICY+='\nThe canonical English scripts and activity are the separately lead-authored semantic contract. Audit generated additions for concrete scientific/safety errors or contradictions, and translations for changed meaning. Do not demand rewrites of the canonical activity based on editorial preference. The supplied text descriptions ARE the complete simulated case data, not references to missing physical samples or missing worksheets. Qualitative comparisons need no invented numeric result. Public formative feedback may explicitly explain the correct answer; it is not a private trainer assessment key. A warning not to invent a missing measurement is not a contradiction. A question about further evidence does not require that future evidence already exist.'
 AR_TERMS='\nArabic-only terminology: use تربة مزيجية (Loam) for loam and طين for clay. Never call loam simply تربة طينية or تربة طينية رملية. Keep sandy clay loam distinct from loam. For 40% sand, 40% silt and 20% clay, the class is Loam.'
+AR_EDITORIAL_STYLE='''
+Write the Arabic lesson as an Egyptian vocational instructor explaining the idea directly to students.
+The English lesson supplies facts and constraints, not sentence structure or idioms to mirror.
+Rebuild sentences naturally in Egyptian Arabic; do not just swap MSA words for colloquial ones.
+Prefer a concrete action and its purpose over literal abstract phrasing. For example, explain
+that the three percentages must come from the same sample, rather than "القيم دي لازم تمثل نفس المجموع الكلي".
+Headings should sound natural too: "اتأكد إن مجموع النسب 100%" instead of "التحقق من مجموع النسب المئوية".
+Keep necessary scientific terms, explain them at first use and use one consistent term for each concept.
+Do not replace scientific terms with slang, add filler such as يا بطل, or imply measured results that are absent.
+Short, connected spoken sentences are preferable to translated English clause order.
+Preserve every safety qualifier, negation, numerical value, unit, causal relationship and assessment answer.
+Natural Egyptian delivery is a separate acceptance criterion; dialect keywords alone do not prove it.
+'''
 
 def content_view(data):
     return {k:v for k,v in data.items() if k!='visuals'}
@@ -188,7 +201,7 @@ SHAPE={
 }
 
 def egyptian(data,english,key):
-    prompt='You are an Egyptian agricultural instructor. Rewrite the ENTIRE supplied Arabic lesson into natural Egyptian Arabic, not MSA or Gulf. This includes narration, explanations, examples, feedback, goals, activities and glossary. Keep scientific terminology accurate and optionally keep English terms only in parentheses after Arabic. Use natural grammar such as لو، مش، عشان، اللي، ده، دي، إزاي، هتعمل، ماتعملش. Do not use إذا كان، الذي، التي، ينبغي، سوف or formal imperative قم. Preserve every fact, safety condition, number, unit, ID, sourcePages and quiz answer index exactly. Do not simplify away conditions. Treat the English lesson as the semantic reference, not wording to translate formally. Return full lesson JSON only.'+AR_TERMS+' ENGLISH: '+json.dumps(english,ensure_ascii=False)+'\nARABIC DRAFT: '+json.dumps(data,ensure_ascii=False)
+    prompt='You are an Egyptian agricultural instructor. Rewrite the ENTIRE supplied Arabic lesson into natural Egyptian Arabic, not MSA or Gulf. This includes narration, explanations, examples, feedback, goals, activities and glossary. Keep scientific terminology accurate and optionally keep English terms only in parentheses after Arabic. Use natural grammar such as لو، مش، عشان، اللي، ده، دي، إزاي، هتعمل، ماتعملش. Do not use إذا كان، الذي، التي، ينبغي، سوف or formal imperative قم. Preserve every fact, safety condition, number, unit, ID, sourcePages and quiz answer index exactly. Do not simplify away conditions. Treat the English lesson as the semantic reference, not wording to translate formally. Return full lesson JSON only.'+AR_TERMS+AR_EDITORIAL_STYLE+' ENGLISH: '+json.dumps(english,ensure_ascii=False)+'\nARABIC DRAFT: '+json.dumps(data,ensure_ascii=False)
     out=call(prompt,key,'ar-EG-colloquial');out['locale']='ar-EG';return out
 
 
