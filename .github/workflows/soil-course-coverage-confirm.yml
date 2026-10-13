@@ -26,7 +26,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: soil-coverage-confirm-${{ github.ref }}
+  group: soil-coverage-confirm-${{ github.ref }}-${{ inputs.blocks }}
   cancel-in-progress: false
 jobs:
   gather:
