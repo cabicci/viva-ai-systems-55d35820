@@ -27,6 +27,53 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
       ).toBe(false);
     });
 
+    it("resumes Academic question erasure while retaining the unknown-table guard and other learners", () => {
+      const user = randomUUID(), other = randomUUID();
+      const candidate = readFileSync("scripts/academic-education/assistant-native-candidate.sql", "utf8");
+      const table = candidate.match(/CREATE TABLE public\.academic_assistant_questions \([\s\S]*?\n\);/)?.[0];
+      const patchFile = readFileSync("scripts/academic-education/assistant-deletion-inventory-fix.sql", "utf8");
+      const patch = patchFile.slice(patchFile.indexOf("DO $academic_deletion_inventory$"), patchFile.lastIndexOf("COMMIT;")).trim();
+      expect(table).toBeTruthy();
+      expect(candidate).toContain(patch);
+      const out = psql(`BEGIN; ${service} ${enable} ${seed(user)} ${seed(other)}
+        ${table}
+        INSERT INTO public.academic_assistant_questions(user_id,course_id,request_id,lesson_id,locale,period_key)
+          VALUES('${user}','AC-BUS','${randomUUID()}','AC-BUS-M03-L03','en','2026-10'),
+                ('${other}','AC-BUS','${randomUUID()}','AC-BUS-M03-L03','en','2026-10');
+        CREATE TEMP TABLE academic_deletion_claim AS SELECT public.lc09_claim_deletion('${user}') AS claim;
+        SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM academic_deletion_claim),'provider_reconciled');
+        DO $$ BEGIN
+          BEGIN
+            PERFORM public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM academic_deletion_claim),'learner_erased');
+            RAISE EXCEPTION 'EXPECTED_UNCLASSIFIED_ACADEMIC_TABLE';
+          EXCEPTION WHEN OTHERS THEN
+            IF SQLERRM <> 'LC09_UNCLASSIFIED_USER_TABLE: academic_assistant_questions' THEN RAISE; END IF;
+          END;
+        END $$;
+        ${patch}
+        ${patch}
+        CREATE TABLE public.unclassified_academic_probe(user_id uuid);
+        DO $$ BEGIN
+          BEGIN
+            PERFORM public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM academic_deletion_claim),'learner_erased');
+            RAISE EXCEPTION 'EXPECTED_UNKNOWN_TABLE_GUARD';
+          EXCEPTION WHEN OTHERS THEN
+            IF SQLERRM <> 'LC09_UNCLASSIFIED_USER_TABLE: unclassified_academic_probe' THEN RAISE; END IF;
+          END;
+        END $$;
+        SELECT json_build_object('own_before',(SELECT count(*) FROM public.academic_assistant_questions WHERE user_id='${user}'));
+        DROP TABLE public.unclassified_academic_probe;
+        SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM academic_deletion_claim),'learner_erased');
+        SELECT json_build_object('own_questions',(SELECT count(*) FROM public.academic_assistant_questions WHERE user_id='${user}'),
+          'other_questions',(SELECT count(*) FROM public.academic_assistant_questions WHERE user_id='${other}'));
+        DELETE FROM auth.users WHERE id='${user}';
+        SELECT public.lc09_advance_deletion('${user}',(SELECT (claim->>'lease_token')::uuid FROM academic_deletion_claim),'complete');
+        ROLLBACK;`);
+      expect(out).toContain('"own_before" : 1');
+      expect(out).toContain('"own_questions" : 0, "other_questions" : 1');
+      expect(out).toContain('"stage": "complete"');
+    });
+
     it("erases the family on the complete cumulative schema without deleting another family's progress or financial receipts", () => {
       const user = randomUUID(),
         other = randomUUID(),
@@ -211,3 +258,4 @@ describe.skipIf(process.env.LC09_DISPOSABLE_DB !== "1")(
     });
   },
 );
+
