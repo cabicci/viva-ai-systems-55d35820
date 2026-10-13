@@ -63,6 +63,10 @@ def main():
                     save(state);log('media-needs-attention',run=state[label+'Run'],status=media_status);return 2
         if status['status']=='completed':
             if status['conclusion']!='success':
+                successor=state.get('successorRun')
+                if successor and str(successor)!=a.author_run:
+                    state['priorAuthorRun']=a.author_run;a.author_run=str(successor);state['authorRun']=a.author_run;state.pop('successorRun',None)
+                    save(state);log('resuming-cached-completion-pass',run=a.author_run);continue
                 save(state);log('authoring-needs-attention',run=a.author_run,status=status);return 2
             if len(ready)!=33:raise RuntimeError('Successful authoring run has incomplete verified content')
             if not state.get('fullSha'):
