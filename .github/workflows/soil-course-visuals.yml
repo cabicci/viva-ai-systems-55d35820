@@ -31,6 +31,14 @@ jobs:
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           PYTHONUNBUFFERED: '1'
         run: python3 experiments/course-pipeline/generate_visuals.py generate
+      - name: Check the upfront visual contract and repair at most once
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          PYTHONUNBUFFERED: '1'
+        run: python3 experiments/course-pipeline/visual_quality.py
       - if: always()
         uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
         with:
@@ -45,3 +53,4 @@ jobs:
             experiments/course-pipeline/output/visuals/*.png
             experiments/course-pipeline/output/visuals/receipt.json
             experiments/course-pipeline/output/visuals/cache/*.png
+            experiments/course-pipeline/output/visuals/qa/*.json

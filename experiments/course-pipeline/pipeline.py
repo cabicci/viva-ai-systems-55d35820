@@ -48,10 +48,10 @@ def content(locale):
 
 def engine_hash():
     paths = ['experiments/course-pipeline/pipeline.py', 'remotion/src/course-pipeline/index.tsx',
-             'experiments/course-pipeline/src/Diagram.tsx', 'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
+             'experiments/course-pipeline/src/Diagram.tsx', 'experiments/course-pipeline/src/Annotations.tsx', 'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
              'public/brand/masaarat-logo-lockup.png']
     hashes={p: hashlib.sha256((REPO / p).read_bytes()).hexdigest() for p in paths}
-    for path in [ROOT/'generate_visuals.py',ROOT/'course/visuals.json']:
+    for path in [ROOT/'generate_visuals.py',ROOT/'visual_quality.py',ROOT/'course/visuals.json',ROOT/'course/visual-contract.json']:
         if path.exists(): hashes[str(path.relative_to(ROOT))]=hashlib.sha256(path.read_bytes()).hexdigest()
     return digest(hashes)
 
@@ -63,6 +63,10 @@ def materialize_visuals():
     receipt=read(source/'receipt.json')
     assert receipt.get('generated') and receipt.get('provider')=='gemini', 'Gemini visual generation is incomplete'
     assert receipt['planHash']==digest(plan), 'Visuals were generated for a different plan'
+    contract=ROOT/'course/visual-contract.json'
+    if contract.exists():
+        assert receipt.get('qualityPassed'), 'Visual quality contract has not passed'
+        assert receipt.get('qualityContractHash')==digest(read(contract)), 'Visual quality contract changed'
     target=REPO/'remotion/public/course-pipeline'
     target.mkdir(parents=True,exist_ok=True)
     mapping,hashes={},{}
