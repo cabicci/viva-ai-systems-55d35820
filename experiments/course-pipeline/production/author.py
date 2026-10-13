@@ -101,6 +101,8 @@ def validate(data,lesson,loc,english=None):
     problems=[]
     for s in data.get('scenes',[]):
         label=s.get('id','unknown')
+        missing=[k for k in ['title','lead','example','takeaway','narration','explanation','labels','sourcePages'] if not s.get(k)]
+        if missing:problems.append(label+': missing non-empty fields '+str(missing)+'; sourcePages must contain actual allowed ORIGINAL-EN PDF page numbers')
         if not 35<=len(s.get('narration','').split())<=150: problems.append(label+': narration needs 35-150 words')
         if len(s.get('explanation','').split())<(55 if loc=='de' else 70): problems.append(label+': written explanation is too short; expand with concrete reasoning and an example')
         if len(s.get('labels',[]))!=3 or any(len(x)>=85 for x in s.get('labels',[])): problems.append(label+': exactly 3 labels under 85 characters each')
@@ -164,7 +166,7 @@ def response_schema(tag):
         if isinstance(value,dict):return {'type':'OBJECT','properties':{k:infer(v,path+'.'+k) for k,v in value.items()},'required':list(value)}
         if isinstance(value,list):
             result={'type':'ARRAY','items':infer(value[0],path+'[]')}
-            counts={'.scenes':6,'.quiz':4,'.checklist':5,'.glossary':6,'.faq':4,'.visuals':3}
+            counts={'.scenes':6,'.quiz':4,'.checklist':5,'.glossary':6,'.faq':4,'.visuals':3,'.quiz[].options':4,'.activity.steps':4,'.visuals[].scenes':2}
             count=counts.get(path,3 if path.endswith('.labels') else 2 if path in ('.glossary[]','.faq[]') else None)
             if count:result.update(minItems=count,maxItems=count)
             return result
