@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "provider": "gemini",
+  "model": "gemini-nano-banana-2.1",
+  "apiVersion": "v1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "style": "Create a premium educational 3D CARTOON infographic illustration for adult agricultural vocational students. Clearly stylized, not a photograph: sculpted rounded forms, simplified larger soil clumps and leaves, clean silhouettes, slightly exaggerated friendly proportions. Retain realistic physically based materials: tactile earth, brushed stainless steel, matte plastic, soft woven fabric. Polished animated-feature quality with studio global illumination, soft contact shadows and ambient occlusion. Warm off-white background, natural sage/grass greens, rich brown soil, warm cream. One coherent staged scene, generous spacing, 3D depth immediately obvious at mobile size. No flat vector illustration, no flat icons, no photographic clutter, no faces, no branding. NO TEXT, letters, labels, numbers or arrows anywhere; all precise labels will be added separately in code. Keep all objects fully inside the image with margin.",
+  "assets": [
+    {
+      "id": "soil-core",
+      "scenes": [
+        "purpose",
+        "depth"
+      ],
+      "subject": "A compact raised rectangular cutaway of cultivated soil topped by a few orderly rows of young stylized maize plants. Visible simplified rootlets in rich crumbly topsoil. A realistic functional slender stainless steel T-handle soil probe with a narrow open-sided sampling cylinder holds an intact soil core beside a matching narrow vertical sample hole in the cutaway. Realistic tool construction, no power drill. Emphasize consistent vertical sampling through a defined layer, no dramatic deep geological strata. The block and probe are arranged at a clear three-quarter isometric view. This should look like an expertly sculpted 3D cartoon learning model, more stylized than product photography."
+    },
+    {
+      "id": "sampling-kit",
+      "scenes": [
+        "tools",
+        "transfer"
+      ],
+      "subject": "A coherent soil-sampling kit in three-quarter isometric view: one clean rounded sage-green PLASTIC bucket with a practical thin carry handle, one functional slender stainless-steel T-handle soil probe with open-sided sampling tube, one matte cream laboratory sample pouch with a completely BLANK front label, black marker and clean pair of sturdy fabric work gloves. Arrange separate readable silhouettes, sensible relative sizes and clearly recognizable materials. Rounded cartoon modeling but realistic fabric and metal detail. No soil landscape in this image."
+    },
+    {
+      "id": "field-zone",
+      "scenes": [
+        "zones",
+        "route"
+      ],
+      "subject": "A stylized 3D rectangular miniature cultivated field in a clear elevated three-quarter isometric view, with tidy rows of small green crops on rich brown soil. Show two distinct anomalous areas separated from the normal crop area: one small blue-brown waterlogged patch near the far right edge and a small old dark manure patch near the near left edge. Normal crop area occupies most of the field. The boundaries and terrain depth are easy to read. Leave open ground between crop rows for later digital route overlays; do not draw route lines, symbols or sample counts. No buildings or people."
+    },
+    {
+      "id": "mixing",
+      "scenes": [
+        "mix"
+      ],
+      "subject": "A rounded sage-green plastic bucket viewed from a slightly elevated three-quarter angle, containing a believable crumbly mixed soil sample. A simple clean small scoop rests in the loose soil, with a second small mound of the same soil on the surface beside the bucket and a matte cream sample pouch with a fully BLANK label nearby, ready to receive the mixed sample. Emphasize tactile homogeneous mixed soil and distinct practical objects. No hands, no pouring stream, no flying particles, no impossible floating tools."
+    },
+    {
+      "id": "sample-record",
+      "scenes": [
+        "label"
+      ],
+      "subject": "A matte cream stand-up laboratory soil sample pouch with a large COMPLETELY BLANK rectangular front label, a neat black marker and a simple field clipboard with an entirely BLANK cream sheet. Subtle small visible soil texture through a tiny clear lower window on the pouch. Compose at a clean three-quarter isometric angle; pouch dominates and its front face is close to straight-on, so code can later position a digital label clearly. Rounded stylized 3D cartoon modeling, realistic paper, plastic and metal materials. No prewritten handwriting or printing."
+    }
+  ]
+}
