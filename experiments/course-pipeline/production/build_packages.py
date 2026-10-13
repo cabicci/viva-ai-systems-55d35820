@@ -16,6 +16,7 @@ GEN={
 def build():
     CAT.mkdir(parents=True,exist_ok=True);records=[]
     blueprints=p.read(ROOT/'blueprints.json');activities=p.read(ROOT/'activities.json')
+    patches=p.read(ROOT/'editorial-patches.json')
     blocked={x['hash'] for x in p.read(ROOT/'editorial-review.json')['rejectedContentHashes']}
     for spec in PLAN['lessons']:
         lid=spec['id']
@@ -36,6 +37,7 @@ def build():
         base=p.read(ROOT.parent/'course/manifest.json')
         base.update(lessonId=lid,scope='full-course-authorized-isolated-preview',scenario={'simulated':True,'context':spec['en']})
         base['source']['physicalPages']=[n for a,b in spec['pageRanges'] for n in range(a,b+1)]
+        base['editorialPatchHash']=p.digest([x for x in patches if x['lesson']==lid])
         p.write(course/'manifest.json',base)
         titles={}
         for loc in LANG:
@@ -44,6 +46,13 @@ def build():
             private=authored.pop('trainerAssessment')
             p.write(ROOT/'private/assessments'/lid/(loc+'.json'),private)
             authored.pop('visuals')
+            for patch in patches:
+                if patch['lesson']!=lid:continue
+                assert patch['field'] not in ['narration','caption'], 'Display patches must not alter narration'
+                matches=[x for x in authored[patch['collection']] if x['id']==patch['item']]
+                assert len(matches)==1, 'Editorial patch target missing'
+                matches[0][patch['field']]=patch['values'][loc]
+            authored['editorialPatches']=[x['id'] for x in patches if x['lesson']==lid]
             ui=copy.deepcopy(GEN[loc])
             ui['protocolText']=authored['activity']['task']
             ui['minutes']=str(spec['onlineMinutes'][0])+'–'+str(spec['onlineMinutes'][1])+' '+GEN[loc]['minutes']
