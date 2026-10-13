@@ -181,7 +181,8 @@ def main():
         assert hashlib.sha256((ROOT.parent/file).read_bytes()).hexdigest()==sha, 'Stale production request: '+file
     lesson=next(x for x in PLAN['lessons'] if x['id']==ARGS.lesson)
     assert lesson['id']!='SOIL-U1-L03','Existing pilot must be reused'
-    key=next((os.environ.get(n) for n in ['GEMINI_API_KEY','GEMINI_API_KEY_1','GEMINI_API_KEY_2','GEMINI_API_KEY_3'] if os.environ.get(n)),None)
+    keys=[os.environ.get(n) for n in ['GEMINI_API_KEY','GEMINI_API_KEY_1','GEMINI_API_KEY_2','GEMINI_API_KEY_3','GEMINI_API_KEY_4'] if os.environ.get(n)]
+    key=keys[int(hashlib.sha256(ARGS.lesson.encode()).hexdigest()[:8],16)%len(keys)] if keys else None
     assert key,'Missing authoring provider credential'
     folder=ROOT/'output'/ARGS.lesson;folder.mkdir(parents=True,exist_ok=True)
     source=source_for(lesson)
