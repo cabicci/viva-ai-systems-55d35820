@@ -69,3 +69,7 @@ The preview UI uses the platform's primary Tajawal font with Cairo fallback. The
 ## Required live assistant before publication
 
 The owner deferred live activation during preview review, but requires a real conversational, curriculum-grounded assistant when this course is integrated into the platform. Follow [ASSISTANT.md](ASSISTANT.md) and complete its live acceptance checks before publication. The local reference guide is temporary; it is not the production assistant or evidence that live integration passed.
+
+## Curriculum map for review
+
+The proposed whole-course map is in `planning/curriculum-map.json`, with its rationale and source-review register in `planning/README.ar.md`. Open `/curriculum-map.html` in this preview for filters, lesson details, source coverage and CSV export. It proposes 30 teaching lessons and four assessment/reflection stations. This is planning data, not a new media request. Run `node planning/validate-map.mjs` and `node planning/build-map.mjs` after edits; live assistant activation remains deferred until platform integration.
