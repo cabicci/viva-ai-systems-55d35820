@@ -12,6 +12,7 @@ import { dayInput, instant } from "@/lib/commerce/admin-ui";
 import type { AdminData, Offer, PackageKey } from "@/lib/commerce/contracts";
 import { Button } from "@/components/ui/button";
 import { Field, Select, Panel, type RunCommand } from "./AdminShared";
+import { RegisteredEmailPicker } from "./RegisteredEmailPicker";
 
 type Price = {
   package: PackageKey;
@@ -136,7 +137,8 @@ export function AdminOffers({
     setMessage("");
     try {
       const queued = (await run("send_offer_invitations", { id: offer.id })) as
-        { group_id: string } | undefined;
+        | { group_id: string }
+        | undefined;
       if (!queued) return;
       setMessage(s.queued);
       const result = await dispatch({ data: { groupId: queued.group_id } });
@@ -297,6 +299,25 @@ export function AdminOffers({
               </div>
               {audience !== "public" && (
                 <>
+                  <RegisteredEmailPicker
+                    disabled={busy}
+                    selected={emails.split(/[\s,;]+/).filter(Boolean)}
+                    onSelect={(email) =>
+                      setEmails((current) =>
+                        audience === "individual"
+                          ? email
+                          : [
+                              ...new Set([
+                                ...current
+                                  .split(/[\s,;]+/)
+                                  .filter(Boolean)
+                                  .map((value) => value.toLowerCase()),
+                                email,
+                              ]),
+                            ].join("\n"),
+                      )
+                    }
+                  />
                   <label className="grid gap-1">
                     {s.emails}
                     <textarea

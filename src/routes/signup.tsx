@@ -27,7 +27,7 @@ function SignupPage() {
   const { locale } = useLocale();
   const navigate = useNavigate();
   const search = Route.useSearch();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(search.email ?? "");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
@@ -71,8 +71,15 @@ function SignupPage() {
           />
         </div>
         <div className="space-y-2">
-          <Label>{t("auth.field.email")}</Label>
-          <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <Label htmlFor="signup-email">{t("auth.field.email")}</Label>
+          <Input
+            id="signup-email"
+            autoComplete="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
         <div className="space-y-2">
           <Label>{t("auth.field.password")}</Label>
