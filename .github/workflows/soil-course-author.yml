@@ -5,6 +5,7 @@ on:
     paths: [experiments/course-pipeline/production/request.json]
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: soil-authoring-${{ github.ref }}
   cancel-in-progress: false
@@ -46,6 +47,17 @@ jobs:
           path: experiments/course-pipeline/production/output/${{ matrix.lesson }}
           key: soil-author-${{ matrix.lesson }}-${{ hashFiles('experiments/course-pipeline/production/request.json') }}
           restore-keys: soil-author-${{ matrix.lesson }}-
+      - name: Recover previously completed source-bound package
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LESSON: ${{ matrix.lesson }}
+        run: |
+          for OLD_RUN in $(python3 -c "import json; print(' '.join(str(x) for x in json.load(open('experiments/course-pipeline/production/request.json')).get('reuseRuns',[])))"); do
+            TARGET="experiments/course-pipeline/production/private/restore-$OLD_RUN-$LESSON"
+            if gh run download "$OLD_RUN" -n "soil-author-$LESSON" -D "$TARGET"; then
+              python3 experiments/course-pipeline/production/restore_author.py --lesson "$LESSON" --from-folder "$TARGET"
+            fi
+          done
       - name: Unlock private source on runner
         env:
           SOIL_COURSE_SOURCE_KEY: ${{ secrets.SOIL_COURSE_SOURCE_KEY }}

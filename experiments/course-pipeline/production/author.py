@@ -46,6 +46,7 @@ Do not label the material institutionally accredited or expert/native reviewed. 
 """
 
 CONTENT_POLICY='\n'.join(line for line in POLICY.splitlines() if not line.startswith('Any depicted labels') and not line.startswith('Machine illustrations:'))
+CONTENT_POLICY+='\nThe canonical English scripts and activity are the separately lead-authored semantic contract. Audit generated additions for concrete scientific/safety errors or contradictions, and translations for changed meaning. Do not demand rewrites of the canonical activity based on editorial preference. The supplied text descriptions ARE the complete simulated case data, not references to missing physical samples or missing worksheets. Qualitative comparisons need no invented numeric result. Public formative feedback may explicitly explain the correct answer; it is not a private trainer assessment key. A warning not to invent a missing measurement is not a contradiction. A question about further evidence does not require that future evidence already exist.'
 
 def content_view(data):
     return {k:v for k,v in data.items() if k!='visuals'}
@@ -55,7 +56,10 @@ def call(prompt,key,tag):
     cache.mkdir(parents=True,exist_ok=True)
     digest=p.digest({'prompt':prompt,'model':'gemini-2.5-flash','contract':3})
     path=cache/(digest+'.json')
-    if path.exists(): return p.read(path)
+    if path.exists():
+        data=p.read(path);print(tag+': reused '+digest,flush=True)
+        if 'audit' in tag:print(json.dumps(data,ensure_ascii=False),flush=True)
+        return data
     for attempt in range(3):
         try:
             result=p.request_json('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',key,{
@@ -71,7 +75,9 @@ def call(prompt,key,tag):
                 (cache/(digest+'.response.txt')).write_text(text,encoding='utf-8')
                 cleaned=re.sub(r',\s*([}\]])',r'\1',text)
                 data=json.loads(cleaned)
-            p.write(path,data);print(tag+': received complete JSON',flush=True);return data
+            p.write(path,data);print(tag+': received complete JSON '+digest,flush=True)
+            if 'audit' in tag:print(json.dumps(data,ensure_ascii=False),flush=True)
+            return data
         except p.ProviderError as e:
             if e.status not in (429,500,502,503,504) or attempt==2:raise
             time.sleep(30*(attempt+1))
@@ -221,6 +227,16 @@ The trainerAssessment is private. The formative quiz feedback is public.
 SHAPE:\n"""+json.dumps(SHAPE)+'\nCANONICAL ENGLISH NARRATION: These six scripts were separately authored and checked by the lead author. Use each verbatim for its corresponding scene. The explanations, examples, activity and visual subjects MUST agree with them. They override overgeneralizations in the original reference. Do not reintroduce claims that the canonical scripts explicitly caution against.\n'+json.dumps(BLUEPRINTS[lesson['id']])+'\nCANONICAL ACTIVITY: Use this supplied case activity verbatim in English. It distinguishes online simulation from real supervised observation.\n'+json.dumps(ACTIVITIES[lesson['id']])
     prior=p.read(folder/'authoring-receipt.json') if (folder/'authoring-receipt.json').exists() else {}
     blueprint_hash=p.digest(BLUEPRINTS[lesson['id']])
+    if (prior.get('status')=='authored-and-automatically-checked'
+        and prior.get('arEGNarrationStyle')=='egyptian-validated'
+        and prior.get('sourceHash')==PLAN['source']['sha256']
+        and prior.get('canonicalNarrationHash')==blueprint_hash
+        and prior.get('canonicalActivityHash')==p.digest(ACTIVITIES[lesson['id']])
+        and set(prior.get('locales',{}))==set(LOCALES)):
+        saved={loc:p.read(folder/(loc+'.json')) for loc in LOCALES}
+        if all(p.digest(saved[loc])==prior['locales'][loc]['contentHash'] for loc in LOCALES):
+            for loc in LOCALES:validate(copy.deepcopy(saved[loc]),lesson,loc,saved['en'] if loc!='en' else None)
+            print(lesson['id']+': reuse complete source-bound four-language package',flush=True);return
     data=p.read(folder/'en.json') if (folder/'en.json').exists() and prior.get('canonicalNarrationHash')==blueprint_hash else call(prompt,key,'en')
     data=ensure(data,lesson,'en',key,prompt)
     english=data

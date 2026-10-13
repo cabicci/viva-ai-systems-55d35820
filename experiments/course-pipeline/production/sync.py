@@ -19,7 +19,12 @@ def main():
         subprocess.run([GH,'run','download',a.run,'-R',REPO,'-n',name,'-D',str(target)],cwd=ROOT,check=True)
         dest=ROOT/('output' if a.kind=='author' else 'packages')/lid
         if a.kind=='illustrations':dest=dest/'output/lesson-visuals'
-        shutil.copytree(target,dest,dirs_exist_ok=True)
+        if a.kind=='author':
+            from restore_author import accepted
+            if accepted(dest,lid) and not accepted(target,lid):
+                if (target/'cache').exists():shutil.copytree(target/'cache',dest/'cache',dirs_exist_ok=True)
+            else:shutil.copytree(target,dest,dirs_exist_ok=True)
+        else:shutil.copytree(target,dest,dirs_exist_ok=True)
         marker.write_text(name,encoding='utf-8');count+=1
     print(json.dumps({'run':a.run,'kind':a.kind,'newArtifacts':count}))
 if __name__=='__main__':main()
