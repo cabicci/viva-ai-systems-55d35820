@@ -65,7 +65,7 @@ def build():
         p.write(course/'visuals.json',vp);p.write(course/'visual-contract.json',contract)
         p.write(pkg/'authoring-receipt.json',receipt)
         records.append({'id':lid,'order':spec['order'],'unit':spec['unit'],'type':spec['type'],'reusedPilot':False,
-                        'ready':True,'title':titles,'sourcePages':base['source']['physicalPages'],'media':{}})
+                        'ready':True,'revision':receipt['locales']['en']['contentHash'],'title':titles,'sourcePages':base['source']['physicalPages'],'media':{}})
     for record in records:
         if record.get('reusedPilot') or not record.get('ready'):continue
         lid=record['id'];pkg=OUT/lid

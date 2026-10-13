@@ -40,3 +40,5 @@ Learner release requires review of scientific content, terminology, audible deli
 - build_packages.py materializes only complete, non-rejected reviewed drafts.
 - media.py prepare/produce runs one explicitly listed teaching lesson in the separate media workflow.
 - Nothing here deploys, merges, indexes production data, uploads to Bunny or activates billing.
+
+The lead-authored controls now include 198 canonical English narration segments, 33 complete simulated activity cases and 87 text-free visual briefs. These take precedence over inconsistent source generalizations and are enforced before localization and media. The run coordinator can transfer completed artifacts, request only the bounded teaching cells and preserve an incremental archive; it stops for failed stages rather than publishing incomplete work.

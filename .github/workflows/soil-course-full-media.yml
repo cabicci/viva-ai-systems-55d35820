@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 8
       matrix:
         lesson: ${{ fromJSON(needs.scope.outputs.lessons) }}
     steps:
@@ -78,6 +78,7 @@ jobs:
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
           LESSON: ${{ matrix.lesson }}
           PYTHONUNBUFFERED: '1'
         run: python3 experiments/course-pipeline/production/media.py produce --lesson "$LESSON"

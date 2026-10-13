@@ -20,9 +20,9 @@ function App(){
  function refresh(){fetch('/curriculum/index.json').then(r=>r.json()).then(setIndex).catch(()=>setIndex(null))}
  useEffect(refresh,[]);
  useEffect(()=>{document.documentElement.lang=loc;document.documentElement.dir=loc==='ar-EG'?'rtl':'ltr';const u=new URL(location.href);u.searchParams.set('lang',loc);u.searchParams.set('lesson',id);history.replaceState(null,'',u);setCaption('');setTab('learn');setLesson(null);const c=new AbortController();
- if(id!=='SOIL-U1-L03')fetch('/curriculum/'+id+'/'+loc+'.json',{signal:c.signal}).then(r=>r.ok?r.json():null).then(setLesson).catch(()=>{});
+ if(spec?.ready&&id!=='SOIL-U1-L03')fetch('/curriculum/'+id+'/'+loc+'.json',{signal:c.signal}).then(r=>r.ok?r.json():null).then(setLesson).catch(()=>{});
  try{const s=JSON.parse(localStorage.getItem('soil-full:'+id+':'+loc)||'{}');setAnswers(s.answers||{});setChecks(s.checks||{});setNotes(s.notes||'');setPractice(s.practice||'')}catch{}
- return()=>c.abort()},[id,loc]);
+ return()=>c.abort()},[id,loc,spec?.ready,spec?.revision]);
  useEffect(()=>{localStorage.setItem('soil-full:'+id+':'+loc,JSON.stringify({answers,checks,notes,practice}))},[answers,checks,notes,practice,id,loc]);
  function download(){const data={courseId:'SOIL',lessonId:id,locale:loc,recordedAt:new Date().toISOString(),status:'unverified learner record',observations:checks,notes,practice};
  const u=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download=id+'-'+loc+'-practice.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),500)}

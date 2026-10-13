@@ -83,6 +83,8 @@ def main():
     a=ap.parse_args()
     request=p.read(ROOT/'media-request.json')
     assert a.lesson in request['lessons'] and request['action']=='produce-full-course-preview'
+    keys=[os.environ.get(n) for n in ['GEMINI_API_KEY','GEMINI_API_KEY_1','GEMINI_API_KEY_2','GEMINI_API_KEY_3','GEMINI_API_KEY_4'] if os.environ.get(n)]
+    if keys:os.environ['GEMINI_API_KEY']=keys[int(hashlib.sha256(a.lesson.encode()).hexdigest()[:8],16)%len(keys)]
     configure(a.lesson)
     reviewed=p.read(p.ROOT/'authoring-receipt.json')
     assert {loc:reviewed['locales'][loc]['contentHash'] for loc in reviewed['locales']}==request['contentHashes'][a.lesson], 'Unexpected authored content'
