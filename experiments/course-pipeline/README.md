@@ -65,3 +65,7 @@ The current Actions request generates only the pilot; editing a README does not 
 ## Platform identity
 
 The preview UI uses the platform's primary Tajawal font with Cairo fallback. The video uses Cairo to match the AI lesson videos, as explicitly requested by the owner; `remotion/src/theme.ts` is its reference. Both use the unchanged approved logo and exact light-theme tokens from `src/styles.css`. `src/brand.ts` and `src/platform-brand.css` are checked against that source. Render fingerprints include the font files, palette module and platform stylesheet. The natural colors of soil, plants and tools remain in the illustrations. Text is authored separately from pictures; a display-only correction rerenders the MP4 without new image or speech calls.
+
+## Required live assistant before publication
+
+The owner deferred live activation during preview review, but requires a real conversational, curriculum-grounded assistant when this course is integrated into the platform. Follow [ASSISTANT.md](ASSISTANT.md) and complete its live acceptance checks before publication. The local reference guide is temporary; it is not the production assistant or evidence that live integration passed.
