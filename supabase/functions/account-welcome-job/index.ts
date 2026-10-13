@@ -9,6 +9,7 @@ import { readImmediateMailTarget } from "../_shared/immediate-mail-request.ts";
 import { runCommercePaymentMailJob } from "../_shared/commerce-payment-mail-worker.ts";
 import { runAcademicMailJob } from "../_shared/academic-mail-worker.ts";
 import { runTechnicalMailJob } from "../_shared/technical-mail-worker.ts";
+import { runEmailAccessMailJob } from "../_shared/email-access-mail-worker.ts";
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response(null, { status: 405 });
   if (!(await authorizedWelcomeJob(request, Deno.env.get("ACCOUNT_WELCOME_JOB_SECRET"))))
@@ -52,7 +53,7 @@ Deno.serve(async (request) => {
       const active =
         immediate.stream === "welcome"
           ? welcomeEnabled
-          : immediate.stream === "commerce" || immediate.stream === "commerce_receipt"
+          : immediate.stream === "commerce" || immediate.stream === "commerce_receipt" || immediate.stream === "email_access"
             ? subscriptionEnabled
             : contactEnabled;
       if (!active) return Response.json({ enabled: false });
@@ -61,6 +62,8 @@ Deno.serve(async (request) => {
       const stats =
         immediate.stream === "welcome"
           ? await runWelcomeJob(db, send, immediate.id)
+          : immediate.stream === "email_access"
+            ? await runEmailAccessMailJob(db, send, immediate.id)
           : immediate.stream === "commerce"
             ? await runCommercePaymentMailJob(db, send, immediate.id)
             : immediate.stream === "commerce_receipt"
@@ -75,6 +78,7 @@ Deno.serve(async (request) => {
     }
     const result = await runMailStreams({
       commerce: subscriptionEnabled ? () => runCommercePaymentMailJob(db, send) : null,
+      email_access: subscriptionEnabled ? () => runEmailAccessMailJob(db, send) : null,
       welcome: welcomeEnabled
         ? () => {
             if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
@@ -120,3 +124,4 @@ Deno.serve(async (request) => {
     return Response.json({ error: "welcome_job_failed" }, { status: 503 });
   }
 });
+

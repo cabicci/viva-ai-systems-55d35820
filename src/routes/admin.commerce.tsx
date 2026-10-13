@@ -15,6 +15,8 @@ import { AdminSettings } from "@/components/commerce/AdminSettings";
 import { AdminOffers } from "@/components/commerce/AdminOffers";
 import { adminOfferCopy, offerError } from "@/lib/commerce/admin-offer-copy";
 import { AdminGroups } from "@/components/commerce/AdminGroups";
+import { AdminEmailAccess } from "@/components/commerce/AdminEmailAccess";
+import { emailAccessCopy } from "@/lib/commerce/email-access";
 import { Select } from "@/components/commerce/AdminShared";
 import { exportCommerce } from "@/lib/commerce/report";
 export const Route = createFileRoute("/admin/commerce")({
@@ -92,6 +94,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
           {[
             ["payments", w.payments],
             ["groups", adminOfferCopy(locale).title],
+            ["email-access", emailAccessCopy(locale).title],
             ["settings", w.settings],
             ["audit", w.audit],
           ].map(([id, title]) => (
@@ -110,7 +113,7 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             {w.refresh}
           </Button>
         </nav>
-        {tab !== "groups" && (
+        {tab !== "groups" && tab !== "email-access" && (
           <div className="flex flex-wrap gap-3">
             <input
               aria-label={w.search}
@@ -156,12 +159,13 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
             </Button>
           </div>
         )}
-        {(error || result.error) && (
+        {tab !== "email-access" && (error || result.error) && (
           <p role="alert" className="text-destructive">
             {error || w.disabled}
           </p>
         )}
         {notice && <p role="status">{notice}</p>}
+        {tab === "email-access" && <AdminEmailAccess />}
         {data && tab === "payments" && (
           <div className="flex items-center gap-3">
             <Button variant="outline" disabled={page === 0} onClick={() => setPage(page - 1)}>
@@ -260,3 +264,4 @@ function CommerceAdmin({ targetOrderId }: { targetOrderId?: string }) {
     </div>
   );
 }
+

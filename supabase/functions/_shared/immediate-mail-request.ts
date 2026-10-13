@@ -1,5 +1,5 @@
 export type ImmediateMailTarget = {
-  stream: "welcome" | "contact" | "commerce" | "commerce_receipt";
+  stream: "welcome" | "contact" | "commerce" | "commerce_receipt" | "email_access";
   id: string;
 };
 
@@ -11,6 +11,7 @@ export function isImmediateMailTarget(value: unknown): value is ImmediateMailTar
     (target.stream === "welcome" ||
       target.stream === "contact" ||
       target.stream === "commerce" ||
+      target.stream === "email_access" ||
       target.stream === "commerce_receipt") &&
     typeof target.id === "string" &&
     /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(target.id)
@@ -31,3 +32,4 @@ export async function readImmediateMailTarget(
   if (!isImmediateMailTarget(body.immediate)) throw new Error("invalid_mail_target");
   return body.immediate;
 }
+
