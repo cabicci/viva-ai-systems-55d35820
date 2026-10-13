@@ -36,7 +36,7 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
        UPDATE public.kids_release_control SET accepts_child_data=true,lesson_access_enabled=true;
        INSERT INTO public.kids_content_approvals VALUES('level-1',3,'en',now(),'synthetic-only');`);
     });
-    afterEach(async () => { await getDb().exec("RESET ROLE; ROLLBACK"); });
+    afterEach(async () => { await getDb().exec("ROLLBACK"); await getDb().exec("RESET ROLE"); });
     it("stores pending without an Auth account, then activates in verification transaction before initial access", async () => {
       const id = (await create({ email: "  Future@Example.test " })).id, newUser = randomUUID();
       expect((await row(id)).status).toBe("pending_registration");

@@ -108,13 +108,13 @@ BEGIN
  IF p_action='list' THEN
   RETURN jsonb_build_object('catalogues',billing.email_access_catalogues(),'grants',coalesce(
    (SELECT jsonb_agg(to_jsonb(x) ORDER BY x.created_at DESC) FROM (
-    SELECT g.id,g.recipient_email,g.scope_mode,g.catalogues,g.duration_days,g.user_id,g.activated_at,g.ends_at,g.revoked_at,g.created_at,
-    CASE WHEN g.revoked_at IS NOT NULL THEN 'revoked' WHEN g.user_id IS NULL THEN 'pending_registration'
-     WHEN g.ends_at<=now() THEN 'expired' ELSE 'active' END AS status,
-    (SELECT m.status FROM billing.email_access_mail m WHERE m.id=g.id) AS invitation_status,
+    SELECT listed.id,listed.recipient_email,listed.scope_mode,listed.catalogues,listed.duration_days,listed.user_id,listed.activated_at,listed.ends_at,listed.revoked_at,listed.created_at,
+    CASE WHEN listed.revoked_at IS NOT NULL THEN 'revoked' WHEN listed.user_id IS NULL THEN 'pending_registration'
+     WHEN listed.ends_at<=now() THEN 'expired' ELSE 'active' END AS status,
+    (SELECT m.status FROM billing.email_access_mail m WHERE m.id=listed.id) AS invitation_status,
     coalesce((SELECT jsonb_agg(jsonb_build_object('id',a.id,'actor',a.actor,'action',a.action,'details',a.details,'created_at',a.created_at) ORDER BY a.created_at,a.id)
-     FROM billing.email_access_audit a WHERE a.grant_id=g.id),'[]'::jsonb) AS audit
-    FROM billing.email_access_grants g) x),'[]'::jsonb));
+     FROM billing.email_access_audit a WHERE a.grant_id=listed.id),'[]'::jsonb) AS audit
+    FROM billing.email_access_grants listed) x),'[]'::jsonb));
  END IF;
  v_key:=(p_data->>'key')::uuid;
  IF v_key IS NULL THEN RAISE EXCEPTION 'EMAIL_ACCESS_KEY_REQUIRED'; END IF;
@@ -296,6 +296,14 @@ BEGIN
   DELETE FROM billing.email_access_grants WHERE user_id=p_user_id OR recipient_email=v_email;
  END IF;
  RETURN result;
+END $$;
+-- Nonfinancial grants are erased at learner_erased, before the 15-day purge.
+-- Classify the owned table in the existing fail-closed inventory, retaining
+-- its checks that no owned records remain and every other table is classified.
+DO $$ DECLARE d text; needle text:='''account_deletion_requests'',''account_deletion_lifecycle'''; BEGIN
+ d:=pg_get_functiondef('public.commerce_previous_lc09_complete_financial_purge(uuid,uuid,boolean)'::regprocedure);
+ IF position(needle IN d)=0 THEN RAISE EXCEPTION 'EMAIL_ACCESS_ERASURE_INVENTORY_CHANGED'; END IF;
+ EXECUTE replace(d,needle,needle||',''email_access_grants''');
 END $$;
 -- Every new private helper has explicit ACLs, including cloned functions.
 DO $$ DECLARE r record; BEGIN
