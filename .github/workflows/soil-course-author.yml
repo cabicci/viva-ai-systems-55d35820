@@ -23,7 +23,7 @@ jobs:
           assert p['action']=='author-full-course-preview'
           assert len(p['lessons'])==33 and len(set(p['lessons']))==33
           assert 'SOIL-U1-L03' not in p['lessons']
-          print('lessons='+json.dumps(p['lessons']))
+          print('lessons='+json.dumps(p['lessons'][:4] if p.get('phase')=='smoke' else p['lessons']))
           PY
   author:
     needs: scope
@@ -72,4 +72,4 @@ jobs:
           name: soil-author-${{ matrix.lesson }}
           retention-days: 30
           path: |
-            experiments/course-pipeline/production/output/${{ matrix.lesson }}/*.json
+            experiments/course-pipeline/production/output/${{ matrix.lesson }}/**/*.json

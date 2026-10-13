@@ -76,14 +76,14 @@ def source_for(lesson):
 def validate(data,lesson,loc,english=None):
     assert data['locale']==loc and data['lessonId']==lesson['id']
     assert len(data['scenes'])==6 and [s['id'] for s in data['scenes']]==['s01','s02','s03','s04','s05','s06']
-    assert len(data['quiz'])==4 and len(data['checklist'])==5 and len(data['glossary'])==6 and len(data['faq'])==4
+    assert len(data['quiz'])==4 and len(data['checklist'])==5 and len(data['glossary'])==6 and len(data['faq'])==4, 'Need exactly 4 quiz, 5 checklist, 6 glossary, 4 FAQ entries'
     assert len(data['activity']['steps'])>=4 and len(data['trainerAssessment']['criteria'])>=4
     assert data['activity']['task'] and data['activity']['evidence'] and data['retrieval']['tomorrow'] and data['retrieval']['week']
     for s in data['scenes']:
         assert all(s.get(k) for k in ['title','lead','example','takeaway','narration','explanation','labels','sourcePages'])
-        assert 40<=len(s['narration'].split())<=130, 'Narration length out of bounds'
-        assert len(s['explanation'].split())>=70,'Thin written lesson'
-        assert len(s['labels'])==3 and all(len(x)<85 for x in s['labels'])
+        assert 40<=len(s['narration'].split())<=130, 'Scene '+s['id']+' narration must be 40-130 whitespace-separated words; found '+str(len(s['narration'].split()))
+        assert len(s['explanation'].split())>=70,'Scene '+s['id']+' needs at least 70 words of substantive written explanation'
+        assert len(s['labels'])==3 and all(len(x)<85 for x in s['labels']), 'Scene '+s['id']+' must have exactly 3 short labels, each under 85 characters; found '+str(len(s['labels']))+' labels with lengths '+str([len(x) for x in s['labels']])
         assert all(any(a<=n<=b for a,b in lesson['pageRanges']) for n in s['sourcePages']),'Invented source page'
         s['caption']=s['narration']
     for q in data['quiz']:
