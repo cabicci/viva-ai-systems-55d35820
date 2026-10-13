@@ -14,6 +14,7 @@ def current(package,locale):
         expected=[{'scene':s['id'],'key':p.audio_key(s,locale,manifest['media'])} for s in lesson['scenes']]
         if [{'scene':a['scene'],'key':a['key']} for a in receipt['audio']]!=expected:return False
         props=p.read(folder/'props.json')
+        if lesson.get('lessonId')=='SOIL-U2-L10' and props.get('graphicsVersion')!='texture-triangle-v1':return False
         for actual,source in zip(props['scenes'],lesson['scenes'],strict=True):
             if any(actual[k]!=source[k] for k in ('id','title','lead','labels')):return False
         visuals=p.read(package/'output/visuals/receipt.json')

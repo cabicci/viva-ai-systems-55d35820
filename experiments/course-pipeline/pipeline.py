@@ -232,6 +232,8 @@ def assemble(lesson, media, folder, visual_mapping=None):
     (folder / 'captions.vtt').write_text('WEBVTT\n\n' + '\n'.join(cues), encoding='utf-8')
     (folder / 'transcript.txt').write_text('\n\n'.join(s['narration'] for s in scenes), encoding='utf-8')
     props = {'locale': lesson['locale'], 'dir': lesson['dir'], 'title': lesson['subtitle'], 'visuals':visual_mapping or {},
+             'lessonId':lesson.get('lessonId'),
+             'graphicsVersion':'texture-triangle-v1' if lesson.get('lessonId')=='SOIL-U2-L10' else None,
              'eyebrow': lesson['eyebrow'], 'scenes': scenes, 'durationInFrames': cursor}
     write(folder / 'props.json', props)
     return props
