@@ -62,5 +62,5 @@ jobs:
         if: always()
         with:
           name: soil-arabic-editorial-${{ matrix.lesson }}
-          path: experiments/course-pipeline/production/arabic-review/${{ matrix.lesson }}.json
+          path: experiments/course-pipeline/production/arabic-review/${{ matrix.lesson }}*.json
           retention-days: 30
