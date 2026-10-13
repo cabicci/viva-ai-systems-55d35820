@@ -51,6 +51,10 @@ def build():
             authored.update(name=LANG[loc],dir='rtl' if loc=='ar-EG' else 'ltr',ui=ui,
                             eyebrow='MASAARAT · SOIL',sourcePages=base['source']['physicalPages'],
                             status='automatically-checked-draft',institutionallyApproved=False)
+            authored['references']=[{'title':r['title'],'url':r['url']} for r in PLAN['references']]
+            authored['references'] += [{'title':r['organization'],'url':r['url']} for r in p.read(ROOT/'primary-reference-notes.json') if lid in r['lessons']]
+            if lid in ['SOIL-U3-L10','SOIL-U3-L11','SOIL-U3-L12']:
+                authored['references'].append({'title':'Honda FQ650 owner manual','url':p.read(ROOT/'machine-reference.json')['manualUrl']})
             p.write(course/(loc+'.json'),authored)
             p.write(CAT/lid/(loc+'.json'),authored)
             titles[loc]=authored['subtitle']
