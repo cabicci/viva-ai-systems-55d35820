@@ -111,7 +111,7 @@ def repair_source_items(items,pages,lo,hi,tag):
   assert binding['anchorIds'],'Unresolved source requirement: '+str(binding)
   assert len(binding['anchorIds'])<=3 and all(k in pool for k in binding['anchorIds'])
   source_evidence=[{'page':pool[k]['page'],'quote':pool[k]['text']} for k in binding['anchorIds']]
-  assert not any(re.search(r'spark|school|ISBN',e['quote'],re.I) for e in source_evidence),'Anchor includes original branding'
+  assert not any(re.search(r'spark|EFG\s*Foundation|ISBN',e['quote'],re.I) for e in source_evidence),'Anchor includes original branding'
   item.update(page=source_evidence[0]['page'],quote=source_evidence[0]['quote'],sourceEvidence=source_evidence,bindingRepairAR=binding['reasonAR'])
   good.extend(validate_items([item],pages,lo,hi))
  return good
@@ -131,11 +131,20 @@ def repair_evidence(rows,items,pool,tag):
  raw=model(tag,GUIDANCE+'\nRepair only invalid evidence quotations by selecting the supplied verbatim anchor ID for the SAME actual field. If the field cannot support it, return an empty anchorId. Do not change coverage statuses. REQUIREMENTS:\n'+json.dumps(items,ensure_ascii=False)+'\nINVALID BINDINGS:\n'+json.dumps(bad,ensure_ascii=False)+'\nACTUAL ANCHORS:\n'+json.dumps(apool,ensure_ascii=False),schema)
  assert {(x['itemId'],x['evidenceIndex']) for x in raw['bindings']}=={(x['itemId'],x['evidenceIndex']) for x in bad}
  byid={x['itemId']:x for x in rows}
+ rejected=set()
  for b in raw['bindings']:
-  assert b['anchorId'] in apool,'Unresolved actual evidence quotation'
-  ev=byid[b['itemId']]['evidence'][b['evidenceIndex']];a=apool[b['anchorId']]
-  assert ev['fieldId']==a['fieldId'],'Binding repair changed the evidence field'
+  ev=byid[b['itemId']]['evidence'][b['evidenceIndex']]
+  a=apool.get(b['anchorId'])
+  if a is None or ev['fieldId']!=a['fieldId']:
+   rejected.add((b['itemId'],b['evidenceIndex']));continue
   ev['quote']=a['text'];ev['bindingRepaired']=True
+ for row in rows:
+  invalid=[e for i,e in enumerate(row['evidence']) if (row['itemId'],i) in rejected]
+  if invalid:
+   row.setdefault('rejectedEvidence',[]).extend(invalid)
+   row['evidence']=[e for i,e in enumerate(row['evidence']) if (row['itemId'],i) not in rejected]
+   if row['status'] in ['covered','equivalent','modified']:row['status']='partial' if row['evidence'] else 'missing'
+   row['gapAR']=(row.get('gapAR','')+' اقتباس مقترح لم يثبت في الحقل المحدد؛ يلزم العثور على دليل فعلي قبل اعتماد التغطية.').strip()
  return validate_matches(rows,items,pool)
 
 def validate_items(items,pages,lo,hi):
@@ -145,7 +154,7 @@ def validate_items(items,pages,lo,hi):
   assert item['kind'] in KINDS
   assert contains(pages[item['page']],item['quote']),'Source quote not present on its exact page: '+str(item['page'])+' '+item['quote'][:90]
   assert len(item['quote'].split())<=100,'Source quote too long'
-  assert not re.search(r'spark|school|ISBN',item['quote'],re.I),'Original branding is not a learner requirement'
+  assert not re.search(r'spark|EFG\s*Foundation|ISBN',item['quote'],re.I),'Original branding is not a learner requirement'
   item['itemId']='P'+str(item['page']).zfill(3)+'-'+p.digest({k:item[k] for k in ['kind','requirementEN','quote']})[:10]
   if item['itemId'] not in seen:result.append(item);seen.add(item['itemId'])
  return result
