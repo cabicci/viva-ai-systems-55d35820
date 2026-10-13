@@ -37,7 +37,7 @@ def write(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + '.tmp')
-    tmp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    tmp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     tmp.replace(path)
 
 def digest(value):
@@ -48,7 +48,10 @@ def content(locale):
 
 def engine_hash():
     paths = ['experiments/course-pipeline/pipeline.py', 'remotion/src/course-pipeline/index.tsx',
-             'experiments/course-pipeline/src/Diagram.tsx', 'experiments/course-pipeline/src/Annotations.tsx', 'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
+             'experiments/course-pipeline/src/Diagram.tsx', 'experiments/course-pipeline/src/Annotations.tsx',
+             'experiments/course-pipeline/src/brand.ts', 'src/styles.css',
+             'src/lib/lesson-visuals/v1/fonts/Tajawal-Regular.ttf', 'src/lib/lesson-visuals/v1/fonts/Tajawal-Bold.ttf',
+             'remotion/bun.lock', 'src/assets/fonts/Cairo.ttf',
              'public/brand/masaarat-logo-lockup.png']
     hashes={p: hashlib.sha256((REPO / p).read_bytes()).hexdigest() for p in paths}
     for path in [ROOT/'generate_visuals.py',ROOT/'visual_quality.py',ROOT/'course/visuals.json',ROOT/'course/visual-contract.json']:
@@ -291,6 +294,8 @@ def produce(locale, reuse_audio_only=False, request_file=None):
         font_dest = REPO / 'remotion/public/course-pipeline'
         font_dest.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(REPO/'src/assets/fonts/Cairo.ttf', font_dest/'Cairo.ttf')
+        for name in ('Tajawal-Regular.ttf','Tajawal-Bold.ttf'):
+            shutil.copyfile(REPO/'src/lib/lesson-visuals/v1/fonts'/name,font_dest/name)
         shutil.copyfile(REPO/'public/brand/masaarat-logo-lockup.png', font_dest/'logo.png')
         receipt['stage'] = 'render'
         write(folder / 'receipt.json', receipt)

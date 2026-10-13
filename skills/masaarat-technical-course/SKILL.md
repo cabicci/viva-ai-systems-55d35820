@@ -5,6 +5,8 @@ description: Author and produce Masaarat technical or vocational course lessons 
 
 # Masaarat technical course production
 
+If the current workspace does not contain the production entry points, read [the saved workspace locations](references/workspace.md) first.
+
 Treat the current user's course decisions as authoritative. The soil pilot is an example, not a mandatory structure for every trade.
 
 ## Establish scope
@@ -50,3 +52,7 @@ Use REPORT.ar.md as an example: named educational methods, primary links, where 
 Keep generated, reviewed, uploaded, mapped, merged, published and playback-verified states separate. Describe the local lesson guide honestly if the authenticated OpenAI assistant is not integrated. Database, indexing and deployment through the existing Lovable project are separate integration steps.
 
 Show the pilot before extending the curriculum when requested. Preserve existing Bunny identities. Skill invocation does not supply missing permission to publish, merge, send messages or operate equipment.
+
+## Platform identity and editable overlays
+
+Before rendering, inspect the actual platform brand source and approved logo. Use the primary Tajawal font (Cairo fallback) and the exact theme tokens from `src/styles.css` for text, controls and overlays. Natural subject colors in the illustrations can remain distinct from UI branding. Bind font, logo and palette sources into the render fingerprint. Keep visible text separate from generated images: display-only edits rerender the video without regenerating pictures or narration; spoken edits regenerate only affected speech segments. An exported MP4 still requires rendering after its baked-in text changes.

@@ -11,6 +11,7 @@ const visualReceipt=JSON.parse(await readFile(path.join(root,'output/visuals/rec
 if(!visualReceipt.generated)throw new Error('Complete Gemini visuals are required for current style review');
 const visuals={};
 await mkdir(path.join(repo,'remotion/public/course-pipeline'),{recursive:true});
+for(const name of ['Tajawal-Regular.ttf','Tajawal-Bold.ttf']) await copyFile(path.join(repo,'src/lib/lesson-visuals/v1/fonts',name),path.join(repo,'remotion/public/course-pipeline',name));
 for(const asset of visualReceipt.assets){
  await copyFile(path.join(root,'output/visuals',asset.filename),path.join(repo,'remotion/public/course-pipeline',asset.filename));
  for(const scene of asset.scenes)visuals[scene]=`course-pipeline/${asset.filename}`;

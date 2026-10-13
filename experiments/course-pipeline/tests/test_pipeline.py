@@ -1,4 +1,6 @@
 import copy
+import json
+import re
 import importlib.util
 from pathlib import Path
 import tempfile
@@ -20,6 +22,16 @@ class PipelineTest(unittest.TestCase):
         self.assertIn('course/visuals.json',hashes)
         self.assertIn('course/visual-contract.json',hashes)
         self.assertFalse(any('\\' in key for key in hashes))
+
+    def test_course_brand_matches_platform_tokens(self):
+        platform=(p.REPO/'src/styles.css').read_text(encoding='utf-8')
+        module=(p.ROOT/'src/brand.ts').read_text(encoding='utf-8')
+        palette=json.loads(module[module.index('{'):module.rindex('}')+1])
+        stylesheet=(p.ROOT/'src/platform-brand.css').read_text(encoding='utf-8')
+        for name,value in palette.items():
+            self.assertEqual(re.search(r'--'+name+r': ([^;]+);',platform).group(1),value)
+            self.assertIn('--'+name+':'+value+';',stylesheet)
+        self.assertIn('Tajawal',(p.ROOT/'src/style.css').read_text(encoding='utf-8'))
 
     def test_visual_edit_does_not_regenerate_paid_audio(self):
         scene=p.content('en')['scenes'][0]

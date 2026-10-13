@@ -8,7 +8,7 @@ export function Diagram({kind,labels,progress=1,locale='en',photo}:Props){
  const text=(x:number,y:number,value:string,size=25)=>{
   const lines:string[]=[];let line='';
   for(const word of value.split(' ')){if(line.length+word.length>25){lines.push(line);line=''}line+=(line?' ':'')+word;}if(line)lines.push(line);
-  return <text x={x} y={y} textAnchor="middle" fill={ink} fontFamily="Cairo, sans-serif" fontSize={size} fontWeight="700" direction={/[\u0600-\u06ff]/.test(value)?'rtl':'ltr'}>{lines.map((line,i)=><tspan key={i} x={x} dy={i?size*1.35:0}>{line}</tspan>)}</text>
+  return <text x={x} y={y} textAnchor="middle" fill={ink} fontFamily="Tajawal, Cairo, sans-serif" fontSize={size} fontWeight="700" direction={/[\u0600-\u06ff]/.test(value)?'rtl':'ltr'}>{lines.map((line,i)=><tspan key={i} x={x} dy={i?size*1.35:0}>{line}</tspan>)}</text>
  };
  const reveal=(at:number)=>({opacity:Math.max(0,Math.min(1,(progress-at)*7)),transform:`translateY(${Math.max(0,1-(progress-at)*7)*10}px)`});
  const arrow=(x:number,y:number)=><path d={`M${x} ${y}h92m-22-18 22 18-22 18`} stroke={green} strokeWidth="7" fill="none" strokeLinecap="round" strokeLinejoin="round"/>;

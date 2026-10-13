@@ -5,6 +5,8 @@ description: Author Masaarat academic course lessons with conceptual prerequisit
 
 # Masaarat academic course production
 
+If the current workspace does not contain the production entry points, read [the saved workspace locations](references/workspace.md) first.
+
 Use the same provenance, localization and media machinery as technical courses, but design evidence for academic learning. The generic package path is smoke-tested; a complete academic curriculum still requires its own pilot.
 
 Read AGENTS instructions, docs/production/README.md, docs/production/ACADEMIC.md and experiments/course-pipeline/README.md. Inspect existing IDs and preserve accepted media. Follow the user's branch, preview and publication boundaries.
@@ -38,3 +40,7 @@ Explain the design with named references and actual applications. The example us
 Show a reviewable pilot before bulk production when required. Integrate authenticated assistant, storage, indexing or deployment only within authorized scope and through the existing project. Never call a static reference guide a live AI assistant.
 
 Report completed outputs, checks, unresolved claims and remaining decisions. Preserve accepted course IDs, Bunny media and source history.
+
+## Platform identity and editable overlays
+
+Before rendering, inspect the actual platform brand source and approved logo. Use the primary Tajawal font (Cairo fallback) and the exact theme tokens from `src/styles.css` for text, controls and overlays. Natural subject colors in the illustrations can remain distinct from UI branding. Bind font, logo and palette sources into the render fingerprint. Keep visible text separate from generated images: display-only edits rerender the video without regenerating pictures or narration; spoken edits regenerate only affected speech segments. An exported MP4 still requires rendering after its baked-in text changes.

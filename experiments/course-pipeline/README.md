@@ -61,3 +61,7 @@ The same contract drives visual_quality.py inside Actions. Gemini checks the act
 No Bunny uploads, production mappings, database writes, indexing, merges or deployments occur here. Future integration must use the existing Masaarat/Lovable project and existing authenticated course-assistant access rules. Any new assistant adapter must scope retrieval by this course and selected locale and exclude private answer keys. Existing course IDs, videos and audio remain unchanged.
 
 The current Actions request generates only the pilot; editing a README does not trigger it. Re-running a changed source requires a new matching snapshot. Never update a snapshot mechanically to expand scope without the owner's corresponding instruction.
+
+## Platform identity
+
+The preview and video use the platform's primary Tajawal font with Cairo fallback, its unchanged approved logo, and exact light-theme tokens from `src/styles.css`. `src/brand.ts` and `src/platform-brand.css` are checked against that source. Render fingerprints include the font files, palette module and platform stylesheet. The natural colors of soil, plants and tools remain in the illustrations. Text is authored separately from pictures; a display-only correction rerenders the MP4 without new image or speech calls.
