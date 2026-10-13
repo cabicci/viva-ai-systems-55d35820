@@ -6,8 +6,11 @@ sys.path.insert(0,str(ROOT.parent))
 import pipeline as p
 PLAN=p.read(ROOT.parent/'planning/curriculum-map.json')
 BLUEPRINTS=p.read(ROOT/'blueprints.json')
+VISUALS=p.read(ROOT/'visual-blueprints.json')
+ACTIVITIES=p.read(ROOT/'activities.json')
 LOCALES=['en','ar-EG','it','de']
 POLICY="""CRITICAL EDITORIAL RULES OVERRIDE OVERGENERAL STATEMENTS IN THE SOURCE.
+Adult-only powered operation is this course safety policy, not a statement of universal law. Never require a learner to invent an observation in a simulated activity.
 Never prescribe cooling every soil sample to 4 C. Routine fertility samples are often air-dried; some biological/mineral-N tests require chilled fresh soil. The receiving laboratory specifies whether chilling, drying, freezing, moisture preservation, container and holding time apply. Any mention of 4 C is only a clearly labelled example for a test whose lab explicitly requests it.
 Bags do not have detachable lids. For containers label the body, not only a detachable lid; for bags label their body or laboratory-approved tag.
 Every online activity MUST contain the actual simulated case records/data needed to do it. Do not tell learners to receive an unspecified worksheet or sample records. Include at least two concrete mini-cases in activity.steps.
@@ -83,10 +86,13 @@ def source_for(lesson):
     return chunks
 
 def validate(data,lesson,loc,english=None):
+    if loc=='en':data['activity']=copy.deepcopy(ACTIVITIES[lesson['id']])
     if loc=='en' and len(data.get('scenes',[]))==6:
         for scene,narration in zip(data['scenes'],BLUEPRINTS[lesson['id']]):
             scene['narration']=narration
             scene['caption']=narration
+    if lesson['id'] in VISUALS:
+        data['visuals']=[{'id':'v'+str(i+1),'scenes':['s'+str(i*2+1).zfill(2),'s'+str(i*2+2).zfill(2)],'subject':subject,'checks':['Depicts the intended objects in their stated conditions: '+subject]} for i,subject in enumerate(VISUALS[lesson['id']])]
     problems=[]
     for s in data.get('scenes',[]):
         label=s.get('id','unknown')
@@ -170,13 +176,13 @@ Visuals: specific drawable objects and before/after states, no text, digits, let
 Do not rely on color alone. Write all numbers, formulas, stages and labels in the overlay-ready text fields.
 SourcePages must be actual ORIGINAL-EN PDF pages within this lesson scope; describe any important source correction.
 The trainerAssessment is private. The formative quiz feedback is public.
-SHAPE:\n"""+json.dumps(SHAPE)+'\nCANONICAL ENGLISH NARRATION: These six scripts were separately authored and checked by the lead author. Use each verbatim for its corresponding scene. The explanations, examples, activity and visual subjects MUST agree with them. They override overgeneralizations in the original reference. Do not reintroduce claims that the canonical scripts explicitly caution against.\n'+json.dumps(BLUEPRINTS[lesson['id']])
+SHAPE:\n"""+json.dumps(SHAPE)+'\nCANONICAL ENGLISH NARRATION: These six scripts were separately authored and checked by the lead author. Use each verbatim for its corresponding scene. The explanations, examples, activity and visual subjects MUST agree with them. They override overgeneralizations in the original reference. Do not reintroduce claims that the canonical scripts explicitly caution against.\n'+json.dumps(BLUEPRINTS[lesson['id']])+'\nCANONICAL ACTIVITY: Use this supplied case activity verbatim in English. It distinguishes online simulation from real supervised observation.\n'+json.dumps(ACTIVITIES[lesson['id']])
     prior=p.read(folder/'authoring-receipt.json') if (folder/'authoring-receipt.json').exists() else {}
     blueprint_hash=p.digest(BLUEPRINTS[lesson['id']])
     data=p.read(folder/'en.json') if (folder/'en.json').exists() and prior.get('canonicalNarrationHash')==blueprint_hash else call(prompt,key,'en')
     data=ensure(data,lesson,'en',key,prompt)
     english=data
-    receipt={'lessonId':ARGS.lesson,'canonicalNarrationHash':blueprint_hash,'sourceHash':PLAN['source']['sha256'],'model':'gemini-2.5-flash',
+    receipt={'lessonId':ARGS.lesson,'canonicalActivityHash':p.digest(ACTIVITIES[lesson['id']]),'canonicalNarrationHash':blueprint_hash,'sourceHash':PLAN['source']['sha256'],'model':'gemini-2.5-flash',
              'ownerAuthorized':True,'institutionalReview':False,'subjectExpertReview':False,'nativeReview':False,
              'locales':{},'mediaGenerated':False,'published':False}
     for loc in LOCALES:

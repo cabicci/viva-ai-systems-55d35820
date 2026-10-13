@@ -15,6 +15,7 @@ GEN={
  'de':{'learn':'Lernen','practice':'Anwenden','check':'Verständnis prüfen','field':'Mit der Lehrkraft','assistant':'Kursassistent','protocol':'Deine Aufgabe','review':'Kursprüfung','minutes':'Min.','revisit':'Erkläre morgen die zentrale Entscheidung aus dem Gedächtnis und wende sie nächste Woche auf ein neues Beispiel an.'}}
 def build():
     CAT.mkdir(parents=True,exist_ok=True);records=[]
+    blueprints=p.read(ROOT/'blueprints.json');activities=p.read(ROOT/'activities.json')
     blocked={x['hash'] for x in p.read(ROOT/'editorial-review.json')['rejectedContentHashes']}
     for spec in PLAN['lessons']:
         lid=spec['id']
@@ -29,7 +30,7 @@ def build():
         receipt=p.read(folder/'authoring-receipt.json')
         if receipt.get('status')!='authored-and-automatically-checked':
             records.append(pending);continue
-        if any(c['contentHash'] in blocked for c in receipt['locales'].values()):
+        if receipt.get('canonicalActivityHash')!=p.digest(activities[lid]) or receipt.get('canonicalNarrationHash')!=p.digest(blueprints[lid]) or any(c['contentHash'] in blocked for c in receipt['locales'].values()):
             records.append(pending);continue
         pkg=OUT/lid;course=pkg/'course';course.mkdir(parents=True,exist_ok=True)
         base=p.read(ROOT.parent/'course/manifest.json')
@@ -53,7 +54,8 @@ def build():
             p.write(course/(loc+'.json'),authored)
             p.write(CAT/lid/(loc+'.json'),authored)
             titles[loc]=authored['subtitle']
-        visuals=p.read(folder/'en.json')['visuals']
+        controlled=p.read(ROOT/'visual-blueprints.json')
+        visuals=[{'id':'v'+str(i+1),'scenes':['s'+str(i*2+1).zfill(2),'s'+str(i*2+2).zfill(2)],'subject':subject,'checks':['Depicts the intended objects in their stated conditions: '+subject]} for i,subject in enumerate(controlled[lid])] if lid in controlled else p.read(folder/'en.json')['visuals']
         assert len(visuals)==3
         vp=p.read(ROOT.parent/'course/visuals.json')
         vp['assets']=[{'id':lid.lower()+'-'+a['id'],'scenes':a['scenes'],'subject':a['subject']} for a in visuals]
