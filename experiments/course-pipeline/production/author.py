@@ -45,6 +45,11 @@ Explain identifying and verifying real controls with instructor; use correctly s
 Do not label the material institutionally accredited or expert/native reviewed. AI quality checks are not such approval.
 """
 
+CONTENT_POLICY='\n'.join(line for line in POLICY.splitlines() if not line.startswith('Any depicted labels') and not line.startswith('Machine illustrations:'))
+
+def content_view(data):
+    return {k:v for k,v in data.items() if k!='visuals'}
+
 def call(prompt,key,tag):
     cache=ROOT/'output'/ARGS.lesson/'cache'
     cache.mkdir(parents=True,exist_ok=True)
@@ -239,14 +244,14 @@ Return entire JSON only:\n"""+json.dumps(english,ensure_ascii=False)
             polished=call('Polish ONLY these display strings into natural Egyptian Arabic. Glossary term labels MUST contain an Arabic term; optionally keep the original English in parentheses. Keep meanings and the six glossary pairs exactly. Do not add new facts. Return the same four keys as JSON. DATA: '+json.dumps(small,ensure_ascii=False),key,'arabic-display-polish')
             assert len(polished['glossary'])==6 and all(re.search(r'[\u0600-\u06ff]',pair[0]) for pair in polished['glossary'])
             for field in small:data[field]=polished[field]
-        review=call(POLICY+'\nIndependently audit the complete lesson against the supplied reference and lesson scope. '
+        review=call(CONTENT_POLICY+'\nIndependently audit the complete lesson against the supplied reference and lesson scope. '
                     'Check scientific correctness, safety, simulation labels, worked-example arithmetic, assessment validity, source-page claims, '
                     'and natural locale '+loc+'. Treat blanket 4 C chilling, bag lids, missing activity case materials, and generated printed labels/arrows as critical errors. '+'. For translations compare meaning/numbers with English. '
                     'Audit only learner/trainer text; visual prompts are verified separately against rendered pixels and must not be flagged here. Do not fail for stylistic preferences, exact wording, negative feedback or lack of institutional review. Only concrete scientific/safety mistakes or information genuinely required for the stated task are critical. '
                     'Return JSON {passed:boolean,issues:[{severity:"critical"|"minor",field:string,reason:string,correction:string}]}.\n'
                     'CANONICAL MEANING (takes priority over source generalizations):'+json.dumps(BLUEPRINTS[lesson['id']])+'\nSCOPE:'+json.dumps(lesson,ensure_ascii=False)+'\nREFERENCES:'+sourcejson+
-                    ('\nENGLISH:'+json.dumps(english,ensure_ascii=False) if loc!='en' else '')+
-                    '\nLESSON:'+json.dumps(data,ensure_ascii=False),key,loc+'-audit')
+                    ('\nENGLISH:'+json.dumps(content_view(english),ensure_ascii=False) if loc!='en' else '')+
+                    '\nLESSON:'+json.dumps(content_view(data),ensure_ascii=False),key,loc+'-audit')
         critical=[x for x in review.get('issues',[]) if x.get('severity')=='critical']
         if critical:
             data=call(POLICY+'\nCorrect only the identified critical problems in the full lesson JSON. Preserve IDs and schema. '
