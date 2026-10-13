@@ -42,6 +42,8 @@ def main():
     teaching=[x['id'] for x in plan['lessons'] if x['type']=='lesson' and x['id']!='SOIL-U1-L03']
     last=None
     while True:
+        successor_file=ROOT/'private/successor.json'
+        if successor_file.exists():state['successorRun']=json.loads(successor_file.read_text(encoding='utf-8'))['run']
         status=gh('run','view',a.author_run,'-R',REMOTE,'--json','status,conclusion')
         script('sync.py','--run',a.author_run,'--kind','author')
         script('build_packages.py')

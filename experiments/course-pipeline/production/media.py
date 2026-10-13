@@ -75,7 +75,37 @@ def check_audio(locale):
     receipt=p.read(folder/'receipt.json');receipt['automatedAudioReview']=result
     receipt['stage']='ready-for-owner-review' if result['passed'] else 'audio-review-needed'
     p.write(folder/'receipt.json',receipt)
-    assert result['passed'], 'Narration needs targeted review: '+locale
+    return result
+
+
+def repair_audio(locale,review):
+    folder=p.OUT/locale;lesson=p.content(locale);media=p.read(p.ROOT/'course/manifest.json')['media']
+    context=p.digest([p.audio_key(s,locale,media) for s in lesson['scenes']])
+    history_file=folder/'audio-repairs.json'
+    history=p.read(history_file) if history_file.exists() else {'context':context,'rounds':[]}
+    if history.get('context')!=context:history={'context':context,'rounds':[]}
+    assert not history['rounds'], 'Narration still needs review after one quality repair: '+locale
+    critical=[i for i in review['issues'] if i.get('severity')=='critical']
+    ids={i.get('scene') for i in critical}
+    scenes=[s for s in lesson['scenes'] if s['id'] in ids]
+    assert critical and len(scenes)==len(ids), 'Audio review needs human interpretation: '+locale
+    key=os.environ.get('GEMINI_API_KEY');assert key
+    repaired=[]
+    for scene in scenes:
+        wav=folder/'audio'/(p.audio_key(scene,locale,media)+'.wav')
+        oldhash=hashlib.sha256(wav.read_bytes()).hexdigest()
+        retained=folder/'rejected-audio'/(wav.stem+'-'+oldhash+'.wav');retained.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(wav,retained)
+        wav.unlink()
+        p.synthesize(scene,locale,media,key,wav)
+        repaired.append({'scene':scene['id'],'originalSha256':oldhash,'replacementSha256':hashlib.sha256(wav.read_bytes()).hexdigest(),'scriptUnchanged':True})
+    history['rounds'].append({'issues':critical,'repaired':repaired});p.write(history_file,history)
+    receipt=p.read(folder/'receipt.json');receipt['generated']=False;receipt['stage']='audio-quality-repair';p.write(folder/'receipt.json',receipt)
+    silent=folder/'silent.mp4'
+    if silent.exists():silent.unlink()
+    p.produce(locale)
+    result=check_audio(locale)
+    receipt=p.read(folder/'receipt.json');receipt['audioQualityRepairs']=history;p.write(folder/'receipt.json',receipt)
+    assert result['passed'], 'Narration needs review after one quality repair: '+locale
 
 
 def main():
@@ -95,7 +125,8 @@ def main():
     images()
     for locale in p.LOCALES:
         p.produce(locale)
-        check_audio(locale)
+        audio_review=check_audio(locale)
+        if not audio_review['passed']:repair_audio(locale,audio_review)
         silent=p.OUT/locale/'silent.mp4'
         if silent.exists():silent.unlink()
     print(a.lesson+': all four media cells completed',flush=True)
