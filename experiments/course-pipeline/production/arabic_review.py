@@ -35,6 +35,31 @@ def reviewed(lid):
         return r['fingerprint']==fingerprint(lid) and r['passed'] and not r['issues']
     except (OSError,KeyError,ValueError):return False
 
+def normalize(lid,result):
+    ar=p.read(files(lid)/'ar-EG.json')
+    records={f'f{i:04d}':field for i,field in enumerate(fields(ar))}
+    assert type(result['passed']) is bool and isinstance(result['issues'],list)
+    seen=set();issues=[];ignored=[]
+    for item in result['issues']:
+        issue=dict(item)
+        assert issue['id'] in records,'Unknown field id'
+        original=records[issue['id']]
+        issue['path']=original['path'];issue['before']=original['text']
+        assert pointer(ar,issue['path'])==issue['before'],'Original field binding failed'
+        assert isinstance(issue['after'],str) and issue['after'].strip()
+        issue['category']=str(issue['category']).lower()
+        issue['severity']=str(issue['severity']).lower()
+        assert issue['category'] in ['naturalness','clarity','terminology','meaning']
+        assert issue['severity'] in ['major','minor']
+        if issue['after']==issue['before']:
+            ignored.append({'id':issue['id'],'reason':'Proposal repeats the exact current text'});continue
+        assert issue['id'] not in seen,'Duplicate actionable field id'
+        seen.add(issue['id']);issues.append(issue)
+    # No-op proposals cannot fail a job or change content. Preserve them as audit evidence.
+    return {'passed':not issues,'issues':issues,'ignoredNoopProposals':ignored,
+        'lessonId':lid,'fingerprint':fingerprint(lid),'provider':'gemini','model':'gemini-2.5-flash',
+        'reviewType':'automated-editorial-proposals','applied':False,'humanReviewed':False}
+
 def audit(lid):
     root=files(lid);en=p.read(root/'en.json');ar=p.read(root/'ar-EG.json')
     target=ROOT/'arabic-review'/(lid+'.json');fp=fingerprint(lid)
@@ -69,21 +94,13 @@ after,category,severity,reason}]}.''' + AR_EDITORIAL_STYLE+AR_TERMS
     candidate=raw['candidates'][0];assert candidate.get('finishReason')=='STOP','Incomplete review'
     result=json.loads(''.join(x.get('text','') for x in candidate['content']['parts'] if not x.get('thought')))
     p.write(target.with_suffix('.raw.json'),result)
-    assert type(result['passed']) is bool and isinstance(result['issues'],list)
-    seen=set()
-    for issue in result['issues']:
-        assert issue['id'] in records,'Unknown field id'
-        assert issue['id'] not in seen,'Duplicate field id'
-        seen.add(issue['id']);original=records[issue['id']]
-        issue['path']=original['path'];issue['before']=original['text']
-        assert pointer(ar,issue['path'])==issue['before'],'Original field binding failed'
-        assert isinstance(issue['after'],str) and issue['after'].strip() and issue['after']!=issue['before']
-        assert issue['category'] in ['naturalness','clarity','terminology','meaning']
-        assert issue['severity'] in ['major','minor']
-    assert result['passed']==(len(result['issues'])==0),'Inconsistent review outcome'
-    result.update(lessonId=lid,fingerprint=fp,provider='gemini',model='gemini-2.5-flash',reviewType='automated-editorial-proposals',applied=False,humanReviewed=False)
+    result=normalize(lid,result)
     p.write(target,result)
     print(json.dumps({'lessonId':lid,'issues':len(result['issues']),'passed':result['passed']}))
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('--lesson',required=True);args=a.parse_args();audit(args.lesson)
+    a=argparse.ArgumentParser();a.add_argument('--lesson',required=True);a.add_argument('--normalize-only',type=Path);args=a.parse_args()
+    if args.normalize_only:
+        result=normalize(args.lesson,p.read(args.normalize_only));p.write(ROOT/'arabic-review'/(args.lesson+'.json'),result)
+        print(json.dumps({'lessonId':args.lesson,'issues':len(result['issues']),'ignoredNoops':len(result['ignoredNoopProposals'])}))
+    else:audit(args.lesson)

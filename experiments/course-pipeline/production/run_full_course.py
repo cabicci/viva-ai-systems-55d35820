@@ -48,6 +48,11 @@ def main():
             state['arabicReviewRun']=json.loads(arabic_file.read_text(encoding='utf-8'))['run']
             script('sync.py','--run',str(state['arabicReviewRun']),'--kind','arabic-editorial','--limit','4')
             state['arabicReviewStatus']=gh('run','view',str(state['arabicReviewRun']),'-R',REMOTE,'--json','status,conclusion')
+            for raw in (ROOT/'arabic-review').glob('*.raw.json'):
+                lid=raw.name.removesuffix('.raw.json')
+                if (raw.parent/(lid+'.json')).exists():continue
+                try:script('arabic_review.py','--lesson',lid,'--normalize-only',str(raw))
+                except subprocess.CalledProcessError:log('editorial-report-needs-attention',lesson=lid)
         art_file=ROOT/'private/illustration-run.json'
         if art_file.exists():
             state['illustrationRun']=json.loads(art_file.read_text(encoding='utf-8'))['run']
