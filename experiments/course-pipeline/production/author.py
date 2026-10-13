@@ -55,11 +55,16 @@ def call(prompt,key,tag):
             result=p.request_json('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',key,{
                 'contents':[{'role':'user','parts':[{'text':prompt}]}],
                 'generationConfig':{'temperature':0.25,'responseMimeType':'application/json','maxOutputTokens':30000,
-                    'thinkingConfig':{'thinkingBudget':1024}}})
+                    'thinkingConfig':{'thinkingBudget':1024},'responseSchema':response_schema(tag)}})
             candidate=(result.get('candidates')or[{}])[0]
             if candidate.get('finishReason')!='STOP': raise ValueError('Incomplete authoring response: '+str(candidate.get('finishReason')))
             text=''.join(x.get('text','') for x in candidate['content']['parts'] if not x.get('thought'))
-            data=json.loads(text)
+            try:
+                data=json.loads(text)
+            except json.JSONDecodeError:
+                (cache/(digest+'.response.txt')).write_text(text,encoding='utf-8')
+                cleaned=re.sub(r',\s*([}\]])',r'\1',text)
+                data=json.loads(cleaned)
             p.write(path,data);print(tag+': received complete JSON',flush=True);return data
         except p.ProviderError as e:
             if e.status not in (429,500,502,503,504) or attempt==2:raise
@@ -149,6 +154,21 @@ def ensure(data,lesson,loc,key,prompt,english=None):
             if attempt==2: raise
             data=call(prompt+'\nReturn the COMPLETE corrected JSON. All human-readable fields must be in '+loc+'. Keep exactly three short labels per scene and fix EVERY issue listed.\nVALIDATION: '+str(error)+'\nPREVIOUS JSON:\n'+json.dumps(data,ensure_ascii=False),key,loc+'-structure-repair-'+str(attempt))
             data['locale']=loc
+
+def response_schema(tag):
+    if 'audit' in tag:
+        return {'type':'OBJECT','properties':{'passed':{'type':'BOOLEAN'},'issues':{'type':'ARRAY','items':{'type':'OBJECT','properties':{'severity':{'type':'STRING','enum':['critical','minor']},'field':{'type':'STRING'},'reason':{'type':'STRING'},'correction':{'type':'STRING'}},'required':['severity','field','reason']}}},'required':['passed','issues']}
+    def infer(value,path=''):
+        if isinstance(value,dict):return {'type':'OBJECT','properties':{k:infer(v,path+'.'+k) for k,v in value.items()},'required':list(value)}
+        if isinstance(value,list):
+            result={'type':'ARRAY','items':infer(value[0],path+'[]')}
+            counts={'.scenes':6,'.quiz':4,'.checklist':5,'.glossary':6,'.faq':4,'.visuals':3}
+            count=counts.get(path,3 if path.endswith('.labels') else 2 if path in ('.glossary[]','.faq[]') else None)
+            if count:result.update(minItems=count,maxItems=count)
+            return result
+        return {'type':'INTEGER'} if type(value) is int else {'type':'STRING'}
+    return infer(SHAPE)
+
 
 def main():
     global ARGS
