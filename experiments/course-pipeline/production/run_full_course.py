@@ -77,10 +77,11 @@ def main():
                     save(state);log('resuming-cached-completion-pass',run=a.author_run);continue
                 save(state);log('authoring-needs-attention',run=a.author_run,status=status);return 2
             if len(ready)!=33:raise RuntimeError('Successful authoring run has incomplete verified content')
+            if not state.get('corpusBuilt'):
+                script('build_corpus.py');state['corpusBuilt']=True;save(state)
             if not state.get('fullSha'):
                 if state.get('illustrationStatus',{}).get('status')!='completed':
                     save(state);log('waiting-for-independent-illustrations');time.sleep(45);continue
-                script('build_corpus.py')
                 state['fullSha']=commit_request(payload(teaching,state,'SOIL-FULL'))
                 save(state);log('full-media-requested',lessons=len(teaching))
         script('build_packages.py')
