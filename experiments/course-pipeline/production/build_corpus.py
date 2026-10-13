@@ -7,6 +7,7 @@ import pipeline as p
 def build():
     records=[]
     for package in sorted((ROOT/'packages').glob('SOIL-*')):
+        if package.name=='SOIL-U1-L03':continue
         receipt=p.read(package/'authoring-receipt.json')
         if receipt.get('status')!='authored-and-automatically-checked':continue
         manifest=p.read(package/'course/manifest.json')
@@ -25,6 +26,8 @@ def build():
               'audience':'learner','content':text,'pages':[4,5,6,7,8,9],
               'sourceHash':p.read(ROOT.parent/'course/manifest.json')['source']['sha256'],
               'contentHash':hashlib.sha256(text.encode()).hexdigest(),'releaseApproved':False})
+    assert len(records)==824,'The complete course must contribute exactly 824 learner sections'
+    assert len({(r['lessonId'],r['locale'],r['sectionId']) for r in records})==824,'Duplicate learner section'
     out={'courseId':'SOIL','status':'prepared-not-indexed','expectedChunks':824,'chunks':records,
          'includesTrainerAnswers':False,'includesLearnerData':False,'liveEnabled':False}
     p.write(ROOT/'private/assistant-corpus.json',out)
