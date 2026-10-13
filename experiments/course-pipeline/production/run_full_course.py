@@ -23,8 +23,9 @@ def commit_request(payload):
     shell(['git','push','origin','work/soil-course-pipeline-20261013'])
     return sha
 def run_for(sha):
-    for r in gh('run','list','-R',REMOTE,'-w','soil-course-full-media.yml','--limit','20','--json','databaseId,headSha,status,conclusion'):
-        if r['headSha']==sha:return r
+    runs=gh('api',f'repos/{REMOTE}/actions/runs?head_sha={sha}&per_page=100')['workflow_runs']
+    for r in runs:
+        if r['head_sha']==sha and r['name']=='Soil full-course four-language media':return {'databaseId':r['id'],'status':r['status'],'conclusion':r['conclusion']}
 def payload(ids,state,kind):
     hashes={}
     for lid in ids:
