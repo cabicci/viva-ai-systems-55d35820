@@ -123,6 +123,9 @@ def main():
     reviewed=p.read(p.ROOT/'authoring-receipt.json')
     assert reviewed['status']=='authored-and-automatically-checked'
     images()
+    if request.get('illustrationRun'):
+        from illustration_distinct import compare
+        compare(a.lesson)
     for locale in p.LOCALES:
         p.produce(locale)
         audio_review=check_audio(locale)

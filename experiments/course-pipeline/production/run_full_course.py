@@ -33,6 +33,7 @@ def payload(ids,state,kind):
         hashes[lid]={loc:x['contentHash'] for loc,x in r['locales'].items()}
     return {'action':'produce-full-course-preview','batchId':kind+'-'+state['authorRun'],
       'authorRun':int(state['authorRun']),'lessons':ids,'contentHashes':hashes,
+      **({'illustrationRun':state['illustrationRun']} if state.get('illustrationRun') else {}),
       'locales':['ar-EG','en','it','de'],'publish':False}
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--author-run',required=True);ap.add_argument('--archive',required=True);a=ap.parse_args()
@@ -42,6 +43,11 @@ def main():
     teaching=[x['id'] for x in plan['lessons'] if x['type']=='lesson' and x['id']!='SOIL-U1-L03']
     last=None
     while True:
+        art_file=ROOT/'private/illustration-run.json'
+        if art_file.exists():
+            state['illustrationRun']=json.loads(art_file.read_text(encoding='utf-8'))['run']
+            script('sync.py','--run',str(state['illustrationRun']),'--kind','illustrations')
+            state['illustrationStatus']=gh('run','view',str(state['illustrationRun']),'-R',REMOTE,'--json','status,conclusion')
         successor_file=ROOT/'private/successor.json'
         if successor_file.exists():state['successorRun']=json.loads(successor_file.read_text(encoding='utf-8'))['run']
         status=gh('run','view',a.author_run,'-R',REMOTE,'--json','status,conclusion')
@@ -72,14 +78,16 @@ def main():
                 save(state);log('authoring-needs-attention',run=a.author_run,status=status);return 2
             if len(ready)!=33:raise RuntimeError('Successful authoring run has incomplete verified content')
             if not state.get('fullSha'):
+                if state.get('illustrationStatus',{}).get('conclusion')!='success':
+                    save(state);log('waiting-for-independent-illustrations');time.sleep(45);continue
                 script('build_corpus.py')
                 state['fullSha']=commit_request(payload(teaching,state,'SOIL-FULL'))
                 save(state);log('full-media-requested',lessons=len(teaching))
         script('build_packages.py')
         script('archive.py','--dest',a.archive)
         report=json.loads(script('verify_course.py'))
-        current=(len(ready),report['newVideosVerified'])
-        if current!=last:log('progress',lessons=current[0],videos=current[1]);last=current
+        current=(len(ready),report['newVideosVerified'],report.get('independentIllustrationsVerified',0))
+        if current!=last:log('progress',lessons=current[0],videos=current[1],illustrations=current[2]);last=current
         state['verifiedLessons']=current[0];state['verifiedVideos']=current[1];save(state)
         if report['status']=='complete':
             log('technical-production-complete',archive=a.archive);return 0

@@ -58,6 +58,9 @@ def produce(lid):
         print(asset['id']+': passed',flush=True)
     assert len({a['sha256'] for a in receipt['assets']})==3
     receipt.update(generated=True,qualityPassed=True);p.write(dest/'receipt.json',receipt)
+    if lid=='SOIL-U1-L03':
+        from illustration_distinct import compare
+        compare(lid)
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--lesson',required=True);a=ap.parse_args()

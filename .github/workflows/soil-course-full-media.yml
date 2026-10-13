@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     outputs:
       lessons: ${{ steps.scope.outputs.lessons }}
+      illustrationRun: ${{ steps.scope.outputs.illustrationRun }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - id: scope
@@ -25,7 +26,41 @@ jobs:
           assert 0<len(p['lessons'])<=29 and len(set(p['lessons']))==len(p['lessons'])
           assert 'SOIL-U1-L03' not in p['lessons']
           print('lessons='+json.dumps(p['lessons']))
+          print('illustrationRun='+str(p.get('illustrationRun','')))
           PY
+  pilot-illustrations:
+    needs: scope
+    if: needs.scope.outputs.illustrationRun != ''
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install Pillow==11.3.0
+      - name: Compare the pilot's new illustrations with its existing video pictures
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ART_RUN: ${{ needs.scope.outputs.illustrationRun }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          GEMINI_API_KEY_4: ${{ secrets.GEMINI_API_KEY_4 }}
+        run: |
+          gh run download "$ART_RUN" -n soil-illustrations-SOIL-U1-L03 -D experiments/course-pipeline/production/packages/SOIL-U1-L03/output/lesson-visuals
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0,'experiments/course-pipeline/production')
+          from illustration_distinct import compare
+          compare('SOIL-U1-L03')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-media-SOIL-U1-L03
+          path: experiments/course-pipeline/production/packages/SOIL-U1-L03
+          retention-days: 30
   media:
     needs: scope
     if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
@@ -55,6 +90,10 @@ jobs:
           AUTHOR_RUN=$(python3 -c "import json; print(json.load(open('experiments/course-pipeline/production/media-request.json'))['authorRun'])")
           gh run download "$AUTHOR_RUN" -n "soil-author-$LESSON" -D "experiments/course-pipeline/production/output/$LESSON"
           python3 experiments/course-pipeline/production/build_packages.py
+          ART_RUN=$(python3 -c "import json; print(json.load(open('experiments/course-pipeline/production/media-request.json')).get('illustrationRun',''))")
+          if [ -n "$ART_RUN" ]; then
+            gh run download "$ART_RUN" -n "soil-illustrations-$LESSON" -D "experiments/course-pipeline/production/packages/$LESSON/output/lesson-visuals"
+          fi
       - name: Prepare renderer and image verification
         run: |
           sudo apt-get update -qq
