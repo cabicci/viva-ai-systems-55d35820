@@ -135,6 +135,8 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
     });
     it("all-published actually covers AI, Technical and Academic with release/approval/locale gates", async () => {
       await create({ duration_days: null }); await caller(user);
+      await getDb().exec("UPDATE public.academic_courses SET assistant_enabled=true");
+      expect(await val("SELECT public.academic_assistant_allowed('AC-BUS','AC-BUS-M01-L02','en') AS value")).toBe(false);
       expect(await val("SELECT public.technical_can_access('M01-L02') AS value")).toBe(true);
       expect(await val("SELECT public.academic_can_access('AC-BUS','AC-BUS-M01-L02','en') AS value")).toBe(true);
       expect(await val("SELECT public.academic_can_access('AC-BUS','AC-BUS-M01-L02','ar-EG') AS value")).toBe(false);
@@ -162,7 +164,7 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
       await query("INSERT INTO public.kids_profiles(id,parent_id,display_name,level_id) VALUES($1,$2,'Synthetic','level-1')", [profile, user]);
       const can = () => val("SELECT public.kids_can_access_lesson($1,'level-1',3,'en') AS value", [profile]);
       expect(await can()).toBe(false);
-      await getDb().exec("UPDATE public.kids_market_release SET accepts_child_data=true WHERE country_code='EG'");
+      await getDb().exec("UPDATE public.kids_market_release SET accepts_child_data=true,reviewed_at=now(),review_reference='synthetic-only' WHERE country_code='EG'");
       await query("INSERT INTO public.kids_consent_policies(id,country_code,version,locale,notice_text,consent_text,review_reference,enabled) VALUES($1,'EG','synthetic','en',repeat('x',80),repeat('x',20),'synthetic-only',true)", [policy]);
       await query("INSERT INTO public.kids_parent_access_requests(parent_id,parent_email,status,country_code,adult_confirmed) VALUES($1,'member@example.test','approved','EG',true)", [user]);
       await query("INSERT INTO public.kids_parent_attestations(parent_id,policy_id,country_code) VALUES($1,$2,'EG')", [user, policy]);
@@ -199,7 +201,7 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
       expect(await val("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
       expect(await val("SELECT access_state AS value FROM billing.subscriptions WHERE user_id=$1", [user])).toBe("paid_active");
       await caller(admin);
-      await getDb().exec("UPDATE billing.commerce_control SET access_enabled=true");
+      await getDb().exec("UPDATE billing.commerce_control SET enabled=true,access_enabled=true");
       const old = await val<{ id: string }>("SELECT public.commerce_command('grant',$1::jsonb) AS value", [JSON.stringify({ user_id: other, package: "pro", duration_days: 30, reason: "Synthetic", key: randomUUID() })]);
       const second = (await create({ email: "other@example.test" })).id;
       await command("revoke", { id: second, key: randomUUID() }); await caller(other);
@@ -211,6 +213,18 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
       await query("INSERT INTO billing.subscriptions(user_id,access_state,billing_state,market_code,currency_code,billing_interval,idempotency_key) VALUES($1,'suspended','canceled','EG','EGP','month','email-suspended')", [user]);
       await caller(user); expect(await val("SELECT public.get_my_billing_access_tier() AS value")).toBe("free");
       expect(await val("SELECT public.technical_can_access('M01-L02') AS value")).toBe(false);
+    });
+    it("preserves separately valid Academic, Technical and Kids access after email-grant revocation", async () => {
+      const id = (await create()).id;
+      await query("INSERT INTO billing.academic_stripe_subscriptions(user_id,subscription_id,customer_id,price_id,status,last_event_at,starts_at,ends_at) VALUES($1,'synthetic-academic','synthetic-customer','synthetic-price','active',now(),now(),now()+interval '30 days')", [user]);
+      await query("INSERT INTO billing.technical_stripe_subscriptions(user_id,subscription_id,customer_id,price_id,status,last_event_at,starts_at,ends_at) VALUES($1,'synthetic-technical','synthetic-customer','synthetic-price','active',now(),now(),now()+interval '30 days')", [user]);
+      await query("INSERT INTO public.kids_family_entitlements(parent_id,active_from,active_until,entitlement_reference) VALUES($1,now(),now()+interval '30 days','stripe-test:synthetic')", [user]);
+      await command("revoke", { id, key: randomUUID() }); await caller(user);
+      expect(await val("SELECT public.academic_can_access('AC-BUS','AC-BUS-M01-L02','en') AS value")).toBe(true);
+      expect(await val("SELECT public.technical_can_access('M01-L02') AS value")).toBe(true);
+      expect((await query<{ access_source: string }>("SELECT * FROM public.get_my_kids_access_status()")).rows[0].access_source).toBe("stripe_test");
+      expect(await val("SELECT status AS value FROM billing.academic_stripe_subscriptions WHERE user_id=$1", [user])).toBe("active");
+      expect(await val("SELECT status AS value FROM billing.technical_stripe_subscriptions WHERE user_id=$1", [user])).toBe("active");
     });
     it("queues optional invitations without sending; mail leases, retries, revocation and service ACL are guarded", async () => {
       const silent = (await create({ email: "silent@example.test" })).id;

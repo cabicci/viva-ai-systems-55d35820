@@ -11,6 +11,7 @@ import * as contact from "../../../supabase/functions/_shared/contact-mail-worke
 import * as commerce from "../../../supabase/functions/_shared/commerce-payment-mail-worker";
 import * as academic from "../../../supabase/functions/_shared/academic-mail-worker";
 import * as technical from "../../../supabase/functions/_shared/technical-mail-worker";
+import * as emailAccess from "../../../supabase/functions/_shared/email-access-mail-worker";
 const send = vi.fn();
 
 const compiled = ts.transpileModule(
@@ -56,6 +57,7 @@ beforeEach(() => {
       if (name.endsWith("/commerce-payment-mail-worker.ts")) return commerce;
       if (name.endsWith("/technical-mail-worker.ts")) return technical;
       if (name.endsWith("/academic-mail-worker.ts")) return academic;
+      if (name.endsWith("/email-access-mail-worker.ts")) return emailAccess;
       if (name.endsWith("/resend.ts")) return { sendTransactionalEmail: send };
       if (name.endsWith("/account-lifecycle-worker.ts"))
         return { createAccountLifecycleWorker: () => ({ runBatch: batch }) };
@@ -101,6 +103,7 @@ describe("packaged lifecycle dependency boundary", () => {
     inspect(resolve("supabase/functions/_shared/contact-mail-worker.ts"));
     inspect(resolve("supabase/functions/_shared/commerce-payment-mail-worker.ts"));
     inspect(resolve("supabase/functions/_shared/technical-mail-worker.ts"));
+    inspect(resolve("supabase/functions/_shared/email-access-mail-worker.ts"));
   });
 });
 
@@ -181,6 +184,16 @@ describe("target-only immediate worker entrypoint", () => {
       p_block: false,
     });
     expect(batch).not.toHaveBeenCalled();
+  });
+  it("claims only the requested email grant invitation through existing scheduler authorization", async () => {
+    const response = await call(undefined, request("email_access"));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ email_access: { accepted: 0, deferred: 0 } });
+    expect(rpc).toHaveBeenCalledExactlyOnceWith("email_access_mail", { p_action: "claim", p_data: { id } });
+    expect(batch).not.toHaveBeenCalled(); expect(send).not.toHaveBeenCalled();
+    rpc.mockClear(); environment.SUBSCRIPTION_MAIL_ENABLED = "false";
+    expect(await (await call(undefined, request("email_access"))).json()).toEqual({ enabled: false });
+    expect(rpc).not.toHaveBeenCalled();
   });
   it.each([
     request("lifecycle"),
@@ -273,3 +286,4 @@ describe("lifecycle through the existing protected scheduled entrypoint", () => 
     },
   );
 });
+
