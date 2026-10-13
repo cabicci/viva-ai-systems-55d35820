@@ -259,6 +259,22 @@ export function emailAccessDbCases(getDb: () => Db, ids: { admin: string; user: 
     });
   });
   // True concurrent transactions on PostgreSQL 16; no simulated concurrency.
+  it.skipIf(!process.env.COMMERCE_NATIVE_DATABASE_URL)("concurrent admin creation and email verification leave access ready exactly once", async () => {
+    const url = process.env.COMMERCE_NATIVE_DATABASE_URL!;
+    const clients = [postgres(url, { max: 1 }), postgres(url, { max: 1 })];
+    const newUser = randomUUID(), email = "admin-race-" + newUser + "@example.test";
+    try {
+      await query("INSERT INTO auth.users(id,email) VALUES($1,$2)", [newUser, email]);
+      await clients[0].unsafe("SELECT set_config('request.jwt.claim.sub',$1,false)", [admin]);
+      await Promise.all([
+        clients[0].unsafe("SELECT public.email_access_command('create',$1::jsonb)", [clients[0].json({ email, scope_mode: "all_published", catalogues: [], duration_days: 3, invitation: false, locale: "en", key: randomUUID() })]),
+        clients[1].unsafe("UPDATE auth.users SET email_confirmed_at=now() WHERE id=$1", [newUser]),
+      ]);
+      await caller(newUser);
+      expect(await val("SELECT public.get_my_billing_access_tier() AS value")).toBe("pro_plus");
+      expect(await val("SELECT count(*)::int AS value FROM billing.email_access_audit a JOIN billing.email_access_grants g ON g.id=a.grant_id WHERE g.user_id=$1 AND a.action='activated'", [newUser])).toBe(1);
+    } finally { await query("DELETE FROM auth.users WHERE id=$1", [newUser]); await Promise.all(clients.map(c => c.end())); }
+  });
   it.skipIf(!process.env.COMMERCE_NATIVE_DATABASE_URL)("concurrent verification/claim retries activate exactly once", async () => {
     const url = process.env.COMMERCE_NATIVE_DATABASE_URL!;
     const clients = [postgres(url, { max: 1 }), postgres(url, { max: 1 })];

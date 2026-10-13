@@ -48,7 +48,7 @@ describe("administrator pre-registration email grants", () => {
       { ...base, id: "revoked", recipient_email: "revoked@example.test", status: "revoked" }];
     mock.command.mockImplementation(async ({ data: input }) => input.action === "list" ? { ...data, grants } : { id: "synthetic" });
     setup(); await screen.findByText("pending@example.test");
-    expect(screen.getByRole("heading", { name: /pending@example.test.*Pending registration/ })).toBeTruthy(); expect(screen.getAllByText("Created")).toHaveLength(4);
+    expect(screen.getByRole("heading", { name: /pending@example.test.*Pending registration/ })).toBeTruthy(); expect(screen.getAllByText(/^Created/)).toHaveLength(4);
     fireEvent.click(screen.getAllByRole("button", { name: "Revoke" })[0]);
     await waitFor(() => expect(mock.command).toHaveBeenCalledWith({ data: { action: "revoke", data: expect.objectContaining({ id: "pending" }) } }));
     await waitFor(() => expect(screen.getByRole("button", { name: "Extend" })).toBeEnabled());
