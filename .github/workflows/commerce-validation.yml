@@ -6,6 +6,10 @@ on:
       - "src/components/commerce/**"
       - "src/routes/*commerce*"
       - "supabase/migrations/20261004*commerce*"
+      - "scripts/email-access/**"
+      - "supabase/functions/_shared/email-access-mail-worker.ts"
+      - "src/components/kids/KidsConsentControl.tsx"
+      - "src/components/kids/KidsConsentControl.test.tsx"
       - ".github/workflows/commerce-validation.yml"
   workflow_dispatch:
 permissions:
@@ -29,6 +33,7 @@ jobs:
         with:
           bun-version: "1.3.9"
       - run: bun install --frozen-lockfile
-      - run: bun run test:run -- src/lib/commerce src/components/commerce/commerce-ui.test.tsx
+      - run: bun run test:run -- src/lib/commerce src/components/commerce src/components/kids/KidsConsentControl.test.tsx
         env:
           COMMERCE_NATIVE_DATABASE_URL: postgresql://postgres:disposable@127.0.0.1:5432/commerce_test
+

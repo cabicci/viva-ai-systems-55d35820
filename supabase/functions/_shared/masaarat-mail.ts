@@ -1,5 +1,19 @@
 /** Server-owned account templates; all metadata is constrained before HTML interpolation. */
 export type MailLocale = "ar-EG" | "ar-MSA" | "ar-Gulf" | "en";
+export function emailAccessInvitationContent(grant: {
+  locale: unknown; scope_mode: string; catalogues: string[]; duration_days: number | null;
+}) {
+  const locale = mailLocale(grant.locale), english = locale === "en";
+  const scope = grant.scope_mode === "all_published"
+    ? (english ? "all published lessons, including future publications" : "كل الدروس المنشورة، بما فيها ما يُنشر لاحقًا")
+    : grant.catalogues.join(", ");
+  const duration = grant.duration_days === null ? (english ? "permanent" : "دائمة") : grant.duration_days + (english ? " days from activation" : " يومًا من التفعيل");
+  const subject = english ? "Your Masaarat lesson access invitation" : "دعوتك للوصول إلى دروس مسارات";
+  const body = english
+    ? "An administrator granted you access to " + scope + " (" + duration + "). Register using this recipient email and verify it, or sign in to your existing verified account. Access activates automatically, without payment or a coupon. Kids guardian consent and child profiles remain required. AI usage limits and separate assistant add-ons still apply."
+    : "منحك المسؤول وصولًا إلى " + scope + " (" + duration + "). سجّل بنفس البريد المستلم وتحقق منه، أو ادخل حسابك الحالي الذي تم التحقق من بريده. يتفعّل الوصول تلقائيًا دون دفع أو كود. تظل موافقة ولي الأمر وملف الطفل مطلوبة في Kids، وحدود الذكاء الاصطناعي وإضافات المساعد المنفصلة كما هي.";
+  return { subject, ...personalized(locale, null, subject, body, english ? "Sign in or register" : "دخول أو تسجيل", "/login") };
+}
 export function mailLocale(value: unknown): MailLocale {
   return value === "ar-MSA" || value === "ar-Gulf" || value === "en" ? value : "ar-EG";
 }
@@ -366,3 +380,4 @@ export function invitationContent(input: {
     ),
   };
 }
+

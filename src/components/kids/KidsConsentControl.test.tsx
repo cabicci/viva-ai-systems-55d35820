@@ -40,6 +40,17 @@ beforeEach(() => {
   queries();
 });
 describe("Child consent control", () => {
+  it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])("describes permanent email-granted Kids access accurately in %s", async locale => {
+    mock.locale = locale;
+    const original = mock.rpc.getMockImplementation()!;
+    mock.rpc.mockImplementation(name => name === "get_my_kids_access_status"
+      ? Promise.resolve({ data: [{ access_source: "complimentary_email", active_until: "9999-12-31T00:00:00Z" }], error: null })
+      : original(name));
+    render(<KidsConsentControl />);
+    expect(await screen.findByText(locale === "en" ? /Permanent access.*email access grant/ : /وصول دائم.*منحة وصول بالبريد/)).toBeInTheDocument();
+    expect(screen.queryByText(/9999/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/separate test grant/)).not.toBeInTheDocument();
+  });
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
     "shows the saved consent and policy link in account settings without repeating the notice in %s",
     async (locale) => {
@@ -105,3 +116,4 @@ describe("Child consent control", () => {
     expect(screen.queryByText(/Last paid period through/)).not.toBeInTheDocument();
   });
 });
+

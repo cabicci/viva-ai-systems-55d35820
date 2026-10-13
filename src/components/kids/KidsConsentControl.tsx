@@ -85,7 +85,7 @@ export function KidsConsentControl() {
     paid_through: string | null;
   } | null>(null);
   const [access, setAccess] = useState<{
-    access_source: "stripe_test" | "test_grant";
+    access_source: "stripe_test" | "test_grant" | "complimentary_email";
     active_until: string;
   } | null>(null);
   const [accessError, setAccessError] = useState(false);
@@ -188,11 +188,15 @@ export function KidsConsentControl() {
               ? "Could not verify"
               : "تعذر التحقق"
             : access
-              ? `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)} (${
+              ? `${access.access_source === "complimentary_email" && access.active_until.startsWith("9999-")
+                  ? locale === "en" ? "Permanent access" : "وصول دائم"
+                  : `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)}`} (${
                   access.access_source === "stripe_test"
                     ? locale === "en"
                       ? "Stripe test payment"
                       : "دفع Stripe التجريبي"
+                    : access.access_source === "complimentary_email"
+                      ? locale === "en" ? "email access grant" : "منحة وصول بالبريد"
                     : locale === "en"
                       ? "separate test grant"
                       : "منحة اختبار منفصلة"
@@ -235,3 +239,4 @@ export function KidsConsentControl() {
     </div>
   );
 }
+

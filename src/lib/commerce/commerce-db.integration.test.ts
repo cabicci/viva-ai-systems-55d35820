@@ -9,6 +9,7 @@ import {
 } from "../__tests__/fixtures/account-deletion-db";
 
 import type { Order, Invitation } from "./contracts";
+import { emailAccessDbCases } from "./email-access-db-cases";
 type CommandResult = Order & {
   enabled: boolean;
   [index: number]: Invitation & { error: string; enabled: boolean };
@@ -24,6 +25,7 @@ let nativeClient: ReturnType<typeof postgres> | undefined;
 const admin = randomUUID(),
   user = randomUUID(),
   other = randomUUID();
+emailAccessDbCases(() => db, { admin, user, other });
 const command = async (action: string, data: unknown = {}) =>
   (
     await db.query<{ value: CommandResult }>(
@@ -85,6 +87,12 @@ beforeAll(async () => {
     "20261005100000_technical_education_integration.sql",
     "20261005101000_technical_stripe_test.sql",
     "20261005102000_technical_subscription_mail.sql",
+    "20261005110000_admin_kids_lesson_review.sql",
+    "20261006110000_academic_commerce.sql",
+    "20261006111000_academic_content.sql",
+    "20261006112000_academic_stripe_test.sql",
+    "20261006113000_academic_mail_retention.sql",
+    "20261006120000_academic_admin_review.sql",
   ])
     try {
       await db.exec(readFileSync(`supabase/migrations/${name}`, "utf8"));
@@ -92,6 +100,7 @@ beforeAll(async () => {
       console.error(name, (error as { message: string }).message);
       throw error;
     }
+  await db.exec(readFileSync("scripts/email-access/email-access-candidate.sql", "utf8"));
   await db.exec(`INSERT INTO auth.users(id,email,email_confirmed_at) VALUES('${admin}','admin@example.test',now()),('${user}','member@example.test',now()),('${other}','other@example.test',now());
       INSERT INTO public.user_roles VALUES('${admin}','admin');`);
 }, 30000);
@@ -1643,3 +1652,4 @@ it.skipIf(!nativeUrl)(
     }
   },
 );
+
