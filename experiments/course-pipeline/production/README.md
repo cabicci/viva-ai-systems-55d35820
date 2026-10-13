@@ -42,3 +42,10 @@ Learner release requires review of scientific content, terminology, audible deli
 - Nothing here deploys, merges, indexes production data, uploads to Bunny or activates billing.
 
 The lead-authored controls now include 198 canonical English narration segments, 33 complete simulated activity cases and 87 text-free visual briefs. These take precedence over inconsistent source generalizations and are enforced before localization and media. The run coordinator can transfer completed artifacts, request only the bounded teaching cells and preserve an incremental archive; it stops for failed stages rather than publishing incomplete work.
+
+
+## Owner-requested final walkthrough
+
+After the course is complete, produce a shareable walkthrough recorded from the actual learner interface. Use Egyptian Arabic explanation, a clearly visible mouse pointer, deliberate clicks, numbered callouts, circles/arrows and short highlights showing where to look and what to press. Cover selecting a language and lesson, video controls, the independent written-lesson illustrations, glossary, the activity answer field and feedback, formative questions, supervised practice records and later review. Demonstrate the assistant only in its actual available state; the live question-and-follow-up flow belongs after its publication acceptance. Do not imply that deferred functionality is already active. Use simulated learner entries. Deliver the recording as a shareable video file; no recipient has been specified or messaged.
+
+Written-lesson artwork is a separate 90-image collection for the 30 teaching lessons, including the reused pilot. It shares the stylized 3D material style, while using different subjects/compositions from video art. The independent artwork workflow generates and checks it, and a real image-to-image comparison is required before final acceptance. The student page does not reuse video art as lesson illustrations.
