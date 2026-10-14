@@ -30,5 +30,23 @@ class MediaTests(unittest.TestCase):
   media=m.p.read(m.HERE/'course/manifest.json')['media'];scene=m.p.content('en')['scenes'][0]
   edited={**scene,'labels':['new visual labels'],'title':'New visual title'}
   self.assertEqual(m.p.audio_key(scene,'en',media),m.p.audio_key(edited,'en',media))
+ def test_image_failure_is_limited_to_initial_plus_three_repairs(self):
+  plan={'model':'fake','assets':[{'id':'bad','subject':'original','scenes':['s101-test'],'role':'video'}]}
+  contract={'reviewModel':'fake-review','maxRepairsPerAsset':3}
+  original=m.p.read
+  def read(path):
+   if Path(path).name=='visuals.json':return plan
+   if Path(path).name=='visual-contract.json':return contract
+   return original(path)
+  def generate(plan,asset,key,dest):
+   (dest/'bad.png').write_bytes(b'fake-image')
+   return {'id':'bad','filename':'bad.png','sha256':m.sha(dest/'bad.png')}
+  quality={'passed':False,'checks':[{'id':'required','pass':False,'reason':'missing object'}]}
+  with tempfile.TemporaryDirectory() as td,patch.object(m,'authorize'),patch.object(m,'key_for',return_value='fake'),patch.object(m.p,'OUT',Path(td)),patch.object(m.p,'read',side_effect=read),patch.object(m.g,'asset_key',return_value='same'),patch.object(m.g,'generate',side_effect=generate) as gen,patch.object(m.v,'check',return_value=quality):
+   with self.assertRaises(AssertionError):m.images()
+   self.assertEqual(gen.call_count,4)
+   # Resuming an exhausted item cannot quietly buy four more attempts.
+   with self.assertRaises(AssertionError):m.images()
+   self.assertEqual(gen.call_count,4)
 
 if __name__=='__main__':unittest.main()

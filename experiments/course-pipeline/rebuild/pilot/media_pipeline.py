@@ -16,7 +16,7 @@ p.LOCALES=tuple(p.read(HERE/'course/manifest.json')['locales'])
 
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def fingerprint():
- paths=[Path(__file__),ENGINE/'generate_visuals.py',ENGINE/'visual_quality.py',HERE/'course/audio-contract.json',p.REPO/'.github/workflows/soil-rebuild-s1-01-media.yml']
+ paths=[Path(__file__),ENGINE/'generate_visuals.py',ENGINE/'visual_quality.py',HERE/'course/audio-contract.json',HERE/'course/authoring-review.json',p.REPO/'.github/workflows/soil-rebuild-s1-01-media.yml']
  return {'package':p.snapshot(),'additional':{str(x.relative_to(p.REPO)).replace('\\','/'):sha(x) for x in paths}}
 
 def validate():
@@ -42,6 +42,10 @@ def validate():
    assert lesson['scenes'][i]['narration']=='\n\n'.join(section['paragraphs']), 'Reading content dropped from narration'
   for i,example in enumerate(draft['examples']):
    assert lesson['scenes'][i+8]['narration']=='\n\n'.join([example['situation'],*example['reasoning'],example['takeaway']]), 'Worked reasoning dropped'
+ review=p.read(HERE/'course/authoring-review.json')
+ assert review['status']=='reviewed-for-pilot-production'
+ assert review['contentHashes']=={loc:p.digest(p.content(loc)) for loc in p.LOCALES}, 'Authoring changed after source review'
+ assert review['independentSpecialistReview'] is False, 'Do not confuse author review with independent accreditation'
  return result
 
 def authorize():
