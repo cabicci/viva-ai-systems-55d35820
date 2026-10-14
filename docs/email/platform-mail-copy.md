@@ -4,7 +4,7 @@ General welcome and authentication emails describe the account action only. They
 
 Auth invite, magic-link, email-change and reauthentication templates use the same signed-recipient profile lookup as signup and recovery. Unknown or unavailable profile data yields a bilingual fallback. Original Auth verification URLs and tokens are passed through unchanged.
 
-Lesson grants display friendly catalogue labels. Academic labels are resolved from the existing read-only `academic_catalogue` RPC after grant authorization, cached per locale within the invocation. Failed metadata lookup uses a neutral translated description rather than exposing an internal catalogue identifier or blocking mail. The stored recipient remains authoritative. Guardian requirements appear only for Kids or all-published grants. No entitlement, duration, payment or database-schema policy changes are introduced.
+Lesson grants display friendly catalogue labels. Academic labels are resolved from the existing service-authorized `academic_courses` metadata (only requested enabled course IDs and titles) after grant authorization, cached per locale within the invocation. Failed metadata lookup uses a neutral translated description rather than exposing an internal catalogue identifier or blocking mail. The stored recipient remains authoritative. Guardian requirements appear only for Kids or all-published grants. No entitlement, duration, payment or database-schema policy changes are introduced.
 
 Checks cover four locales, both email representations, verification data preservation, scoped guardian wording, package-specific notices and metadata failures/authorization. Browser previews use synthetic content and blocked network requests; they do not demonstrate real inbox delivery.
 

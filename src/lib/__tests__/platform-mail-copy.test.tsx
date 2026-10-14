@@ -93,18 +93,12 @@ describe("localized neutral platform emails", () => {
     }));
     const rpc = vi.fn(async (name: string, args: Record<string, unknown>) => ({
       error: null,
-      data:
-        name === "academic_catalogue"
-          ? [{ id: "course-1", title: "Project management" }]
-          : args.p_action === "claim"
-            ? rows
-            : true,
+      data: args.p_action === "claim" ? rows : true,
     }));
     const send = vi.fn(async () => ({ ok: true as const, emailId: "synthetic" }));
-    await runEmailAccessMailJob({ rpc }, send);
-    expect(rpc.mock.calls.filter(([name]) => name === "academic_catalogue")).toEqual([
-      ["academic_catalogue", { p_locale: "en" }],
-    ]);
+    const loadTitles = vi.fn(async () => ({ "academic:course-1": "Project management" }));
+    await runEmailAccessMailJob({ rpc }, send, undefined, loadTitles);
+    expect(loadTitles).toHaveBeenCalledExactlyOnceWith(["course-1"], "en");
     expect(send).toHaveBeenCalledWith(
       expect.objectContaining({
         to: "recipient@example.test",
@@ -122,9 +116,42 @@ describe("localized neutral platform emails", () => {
           : false,
     }));
     const send = vi.fn();
-    await runEmailAccessMailJob({ rpc }, send);
+    const loadTitles = vi.fn();
+    await runEmailAccessMailJob({ rpc }, send, undefined, loadTitles);
+    expect(loadTitles).not.toHaveBeenCalled();
     expect(send).not.toHaveBeenCalled();
     expect(rpc.mock.calls).toHaveLength(2);
+  });
+  it("delivers a neutral label when academic metadata is unavailable", async () => {
+    const rpc = vi.fn(async (_name: string, args: Record<string, unknown>) => ({
+      error: null,
+      data:
+        args.p_action === "claim"
+          ? [
+              {
+                id: "1",
+                claim_token: "claim",
+                recipient: "recipient@example.test",
+                payload: {
+                  locale: "en",
+                  scope_mode: "selected",
+                  catalogues: ["academic:course-1"],
+                  duration_days: 30,
+                },
+              },
+            ]
+          : true,
+    }));
+    const send = vi.fn(async () => ({ ok: true as const, emailId: "synthetic" }));
+    await runEmailAccessMailJob({ rpc }, send, undefined, async () => {
+      throw new Error("metadata unavailable");
+    });
+    expect(send).toHaveBeenCalledWith(
+      expect.objectContaining({
+        text: expect.stringContaining("Academic course included in your invitation"),
+      }),
+    );
+    expect(send.mock.calls[0]).not.toContain("academic:course-1");
   });
   it("keeps package details on financial and package-specific invitations", () => {
     for (const packageName of ["pro", "pro_plus", "kids", "technical", "academic"]) {
