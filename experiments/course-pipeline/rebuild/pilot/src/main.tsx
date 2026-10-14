@@ -4,7 +4,7 @@ import {BookOpen,PlayCircle,Layers3,Box,ClipboardCheck,Shovel,Download,MessagesS
 import en from './content/en.json';import ar from './content/ar-EG.json';import it from './content/it.json';import de from './content/de.json';
 import {Site3D} from './Site3D';
 import {useMedia,LessonVideo,LessonIllustration} from './Media';
-import {evaluateDecisions,emptyState,restoreState,freshAttempt,escapeHtml} from './logic.mjs';
+import {evaluateDecisions,emptyState,restoreState,freshAttempt} from './logic.mjs';
 import './style.css';
 
 const packs:any={'ar-EG':ar,en,it,de}, ids=['reading','video','examples','training','assessment','practical','downloads','assistant'];
@@ -31,11 +31,11 @@ function App(){
  function revisit(id:string){move('reading');setTimeout(()=>document.getElementById(`read-${id}`)?.scrollIntoView({block:'start',behavior:'smooth'}),80);}
  function submitTest(){if(result.answered!==p.points.length){setNote(u.testMissing);return;}setState((s:any)=>({...s,testSubmitted:true}));setNote('');}
  function startTest(){setState((s:any)=>freshAttempt(s));move('assessment');setSelected(0);}
- function download(kind:string){
-  const esc=escapeHtml;
+ async function download(kind:string){
+  const {worksheetHtml}=await import('./printables');
   const title=kind==='field'?u.practical:u.selfCheck;
   const rows=kind==='field'?p.practical:p.checklistLabels;
-  const html=`<!doctype html><html lang="${locale}" dir="${p.dir}"><meta charset="utf-8"><title>${esc(title)}</title><style>body{font-family:Arial,sans-serif;line-height:1.8;max-width:800px;margin:40px auto;padding:24px;color:#263748}h1{font-size:26px}li{margin:18px 0}.blank{height:65px;border-bottom:1px solid #bac7cb}small{color:#556b70}@media print{body{margin:0}}</style><body><small>Masaarat · ${esc(p.path)} · ${esc(p.step)}</small><h1>${esc(p.title)}</h1><h2>${esc(title)}</h2><p>${esc(kind==='field'?u.practicalIntro:u.write)}</p><ol>${rows.map((x:string)=>`<li>${esc(x)}<div class="blank"></div></li>`).join('')}</ol><p>${esc(u.unobserved)}</p></body></html>`;
+  const html=worksheetHtml(p,title,rows,kind==='field'?u.practicalIntro:u.write);
   const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=`Masaarat-S1-01-${kind}-${locale}.html`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  }
  const current=p.points[selected], chosen=test?state.test[current.id]:pending;
