@@ -1,5 +1,5 @@
 {
-  "batchId": "s101-four-language-pilot-20261014-v4-independent-render",
+  "batchId": "s101-arabic-authorized-repair-20261014-v5",
   "lessonId": "SOIL-REBUILD-S1-01",
   "locales": [
     "ar-EG",
@@ -11,23 +11,33 @@
   "maxRepairsAfterInitial": 3,
   "fingerprint": {
     "package": {
-      "manifest": "115e6ac1eec29617374bbe437761389924edec8b2901a3cc5d96298a8ffc1278",
+      "manifest": "a428cb9631a6b6a6d2cf01618a63b3897a3ad6430d3f1a7f8fe97a3a76471a75",
       "content": {
-        "ar-EG": "9f6dc125079fd1148ed6a36230cf9941c5cb15021f2bbf4cbb929392864dc3ff",
+        "ar-EG": "77c62280b983e551f62109244dd683f3f0bb15f1dd3dab2041f31b646522fd10",
         "en": "c2a2906b1c7393e58a9348574132aeda011dc6e365f7678ee17f76db4bc8ed97",
         "it": "a510ddebdd99b7fb6f8e8d4125477055301f0b7bf0296e1b5c2bc6e7b17aa3f5",
         "de": "2267faff19cb629201351dc9bccd455221a659754fb898ec762104902f2994dd"
       },
-      "engine": "faa463232866379398fc0d777915b2c2a3d1de59bbb4556e2cbb8e85e544b90c"
+      "engine": "97e2bb1ef5334af539006d95ef85d1e82babe569bb6b74c47ec0f8e086e18e1b"
     },
     "additional": {
-      "experiments/course-pipeline/rebuild/pilot/media_pipeline.py": "ad92f698c7df0fb48a948f39407a44e3fc193012aaa34d6099ca83391602a57d",
+      "experiments/course-pipeline/rebuild/pilot/media_pipeline.py": "b1d5a7e9b207401249cbae0b313a24f8b20106e58f2caed89c3ef91a71aa13ba",
       "experiments/course-pipeline/generate_visuals.py": "21ff0d555adb3ef851ad75abd02cc0c0accc177886ac382e215dbf66ad065006",
       "experiments/course-pipeline/visual_quality.py": "14420aa13456ef762855ed1e9e6e1b8f169efdab1764d17aa8eb10d01b6fe604",
       "experiments/course-pipeline/rebuild/pilot/course/audio-contract.json": "522dc835453a654b1d0f7a7e48d30f5eeef3cfbc4f984ff0a37e978d5a4e192b",
-      "experiments/course-pipeline/rebuild/pilot/course/authoring-review.json": "06fac3957c175073c1705ec69432986219eb5614c78312b1f862716a9023e5db",
+      "experiments/course-pipeline/rebuild/pilot/course/authoring-review.json": "b9608961f183d9f8c8b5b4d36d13e4f930fe86a13aa59d6d9e35097db228149a",
       "experiments/course-pipeline/rebuild/pilot/course/visual-review.json": "652a3b9cbedbc7b507d514b1a86d9cca2aa1e46f38e09acb2ef7974adbdf2a35",
-      ".github/workflows/soil-rebuild-s1-01-media.yml": "8dcb05b52a7ce14e067bf61c9676914dc44de853a4fca207eded143199b42b9b"
+      ".github/workflows/soil-rebuild-s1-01-media.yml": "143c5795c10e0f8c4d1fee964c08225b259dd3fd85691a0ab4ed2bcfcad030b2"
     }
+  },
+  "audioRepair": {
+    "locale": "ar-EG",
+    "scene": "s101-chemical",
+    "decision": "owner-approved-in-chat-20261014",
+    "additionalAttempts": 1,
+    "previousAttemptCount": 4,
+    "previousAudioKey": "f10116361bf5d7f7cf4ec834e6a56d71abdeebbe79c64ecbf3de63e6ac0ce432",
+    "previousStateSha256": "89f7fbc6b2e8a4412d8ac5928d2efbbdddb494131c87869023ffea4c75f15aff",
+    "newAudioKey": "6b9f8e6de87d3dc91b0f290578ae670761933f03d8958c482dda83fd0b69eaff"
   }
 }

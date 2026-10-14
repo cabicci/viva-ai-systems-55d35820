@@ -1,10 +1,32 @@
-import json, sys, tempfile, unittest
+import json, sys, tempfile, unittest, urllib.error
 from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import media_pipeline as m
 
 class MediaTests(unittest.TestCase):
+ def test_single_repair_cannot_retry_or_regenerate_other_segments(self):
+  media=m.p.read(m.HERE/'course/manifest.json')['media'];contract=m.p.read(m.HERE/'course/audio-contract.json')
+  lesson=m.p.content('ar-EG');chemical=next(s for s in lesson['scenes'] if s['id']=='s101-chemical');other=lesson['scenes'][0]
+  new_key=m.p.audio_key(chemical,'ar-EG',media)
+  with tempfile.TemporaryDirectory() as td:
+   folder=Path(td)/'ar-EG';old=folder/'audio-attempts'/f'old-{m.p.digest(contract)}.json'
+   m.p.write(old,{'attempts':[{'attempt':i,'status':'reviewed'} for i in range(4)]});old_bytes=old.read_bytes()
+   request={'audioRepair':{'locale':'ar-EG','scene':'s101-chemical','additionalAttempts':1,'previousAttemptCount':4,'previousAudioKey':'old','previousStateSha256':m.sha(old),'newAudioKey':new_key}}
+   def generate(scene,loc,settings,key,path):
+    self.assertEqual(scene['id'],'s101-chemical');self.assertEqual(settings['maxAttempts'],1);self.assertEqual(settings['transportAttempts'],1)
+    path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(b'fake failed audio');return 'generated'
+   with patch.object(m,'authorize',return_value=request),patch.object(m,'key_for',return_value='fake'),patch.object(m.p,'OUT',Path(td)),patch.object(m.p,'content',return_value={'scenes':[other,chemical]}),patch.object(m.p,'synthesize',side_effect=generate) as gen,patch.object(m,'review_audio',return_value={'passed':False}),patch.object(m.time,'sleep'):
+    with self.assertRaisesRegex(AssertionError,'require review'):m.audio('ar-EG')
+    self.assertEqual(gen.call_count,1)
+    with self.assertRaisesRegex(AssertionError,'require review'):m.audio('ar-EG')
+    self.assertEqual(gen.call_count,1)
+   self.assertEqual(old.read_bytes(),old_bytes)
+   self.assertEqual(len(list((folder/'audio-history').glob('*.wav'))),1)
+ def test_single_transport_attempt_has_no_hidden_retry(self):
+  with patch.object(m.p.urllib.request,'urlopen',side_effect=urllib.error.URLError('test transport failure')) as call,patch.object(m.p.time,'sleep'):
+   with self.assertRaises(RuntimeError):m.p.request_json('https://example.test','fake',{'data':'test'},max_attempts=1)
+   self.assertEqual(call.call_count,1)
  def test_visual_rejection_preserves_budget_and_unaffected_assets(self):
   entry={'sha256':'bad'};state={'accepted':entry,'attempts':[{'attempt':0},{'attempt':1}]}
   feedback={'rejectedSha256':['bad'],'reason':'wrong radio'}

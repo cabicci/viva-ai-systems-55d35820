@@ -151,10 +151,11 @@ def plan():
                        'status': 'planned', 'ownerAccepted': False})
     return result
 
-def request_json(url, key, payload=None):
+def request_json(url, key, payload=None, max_attempts=3):
     req = urllib.request.Request(url, data=json.dumps(payload, ensure_ascii=False).encode() if payload else None,
                                  headers={'x-goog-api-key': key, 'Content-Type': 'application/json'})
-    for attempt in range(3):
+    assert 1 <= max_attempts <= 3
+    for attempt in range(max_attempts):
         try:
             with urllib.request.urlopen(req, timeout=180) as response:
                 return json.load(response)
@@ -166,7 +167,7 @@ def request_json(url, key, payload=None):
                 detail=''
             raise ProviderError(e.code, e.headers.get('Retry-After'),detail) from None
         except (http.client.IncompleteRead,urllib.error.URLError,TimeoutError,ConnectionError,json.JSONDecodeError):
-            if attempt==2:raise RuntimeError('Provider transport incomplete after three attempts; no partial asset accepted') from None
+            if attempt+1==max_attempts:raise RuntimeError('Provider transport incomplete; no partial asset accepted and no further authorized transport attempt') from None
             time.sleep(2*(attempt+1))
 
 class ProviderError(Exception):
@@ -192,7 +193,7 @@ def synthesize(scene, locale, media, key, path):
                    'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': resolved_voice(scene, media)}}}}}
     for attempt in range(media['maxAttempts']):
         try:
-            response = request_json(url, key, payload)
+            response = request_json(url, key, payload, max_attempts=media.get('transportAttempts',3))
             parts = ((response.get('candidates') or [{}])[0].get('content') or {}).get('parts', [])
             inline = next((p['inlineData'] for p in parts if 'inlineData' in p), None)
             if not inline:

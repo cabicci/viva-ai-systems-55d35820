@@ -56,7 +56,42 @@ def authorize():
  assert request['lessonId']=='SOIL-REBUILD-S1-01'
  assert request['locales']==list(p.LOCALES)
  assert request['maxRepairsAfterInitial']==3
+ repair=request.get('audioRepair')
+ if repair:
+  assert repair['locale']=='ar-EG' and repair['scene']=='s101-chemical'
+  assert repair['additionalAttempts']==1 and repair['previousAttemptCount']==4
+  assert repair['decision']=='owner-approved-in-chat-20261014'
+  media=p.read(HERE/'course/manifest.json')['media']
+  scene=next(s for s in p.content(repair['locale'])['scenes'] if s['id']==repair['scene'])
+  assert p.audio_key(scene,repair['locale'],media)==repair['newAudioKey']
+  assert repair['newAudioKey']!=repair['previousAudioKey']
  return request
+
+def cached_images():
+ """Verify the exact accepted images without contacting a provider."""
+ authorize()
+ receipt=p.read(p.OUT/'visuals/receipt.json')
+ plan=p.read(HERE/'course/visuals.json'); review=p.read(HERE/'course/visual-review.json')
+ assert receipt['qualityPassed'] and receipt['planHash']==p.digest(plan)
+ assert receipt['visualReviewHash']==p.digest(review)
+ assert {a['id'] for a in receipt['assets']}=={a['id'] for a in plan['assets']}
+ for a in receipt['assets']:
+  assert sha(p.OUT/'visuals'/a['filename'])==a['sha256']
+  assert a['sha256'] not in review['assets'].get(a['id'],{}).get('rejectedSha256',[])
+ print('All ten accepted images reused without provider calls')
+
+def repair_attempt_limit(request,locale,scene,cache_key,folder,contract):
+ repair=request.get('audioRepair')
+ if not repair:return 1+contract['maxRepairsPerSegment']
+ assert locale==repair['locale'], 'Repair request cannot generate another locale'
+ if scene['id']!=repair['scene']:return 0
+ assert cache_key==repair['newAudioKey'], 'Repair text differs from owner-approved wording'
+ old=folder/'audio-attempts'/f'{repair["previousAudioKey"]}-{p.digest(contract)}.json'
+ assert old.exists(), 'Prior attempt history must be restored before a repair'
+ assert sha(old)==repair['previousStateSha256'], 'Prior attempt history changed'
+ prior=p.read(old)
+ assert len(prior['attempts'])==repair['previousAttemptCount'] and not prior.get('accepted')
+ return repair['additionalAttempts']
 
 def key_for(models):
  key=next((os.environ.get(n) for n in ['GEMINI_API_KEY','GEMINI_API_KEY_1','GEMINI_API_KEY_2','GEMINI_API_KEY_3'] if os.environ.get(n)),None)
@@ -149,7 +184,7 @@ def review_audio(path,scene,locale,contract,key):
  p.write(cache,parsed);return parsed
 
 def audio(locale):
- authorize();assert locale in p.LOCALES
+ request=authorize();assert locale in p.LOCALES
  media=p.read(HERE/'course/manifest.json')['media'];contract=p.read(HERE/'course/audio-contract.json');lesson=p.content(locale)
  key=key_for([media['model'],contract['reviewModel']]);folder=p.OUT/locale;folder.mkdir(parents=True,exist_ok=True)
  receipt={'locale':locale,'allPassed':False,'humanListeningReviewed':False,'segments':[],'failures':[]}
@@ -159,10 +194,16 @@ def audio(locale):
   state=p.read(state_path) if state_path.exists() else {'attempts':[]}
   if state.get('accepted') and p.valid_wav(path) and sha(path)==state['accepted']['audioSha256']:
    receipt['segments'].append({'scene':scene['id'],'key':cache_key,'quality':state['accepted']});continue
-  while len(state['attempts'])<=contract['maxRepairsPerSegment']:
+  limit=repair_attempt_limit(request,locale,scene,cache_key,folder,contract)
+  generation_media=media
+  if request.get('audioRepair'):
+   generation_media={**media,'maxAttempts':1,'transportAttempts':1}
+   if scene['id']==request['audioRepair']['scene']:
+    state['repairAuthorization']=request['audioRepair']
+  while len(state['attempts'])<limit:
    attempt=len(state['attempts']);record={'attempt':attempt,'status':'started'};state['attempts'].append(record);p.write(state_path,state)
    try:
-    record['generation']=p.synthesize(scene,locale,media,key,path)
+    record['generation']=p.synthesize(scene,locale,generation_media,key,path)
     quality=review_audio(path,scene,locale,contract,key);record.update({'status':'reviewed','quality':quality})
     if quality['passed']:
      state['accepted']=quality;p.write(state_path,state);break
@@ -195,11 +236,15 @@ def render(locale):
  p.produce(locale,reuse_audio_only=True,request_file=request_path)
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('command',choices=['validate','request','images','audio','render']);parser.add_argument('--locale',choices=p.LOCALES);parser.add_argument('--batch-id');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('command',choices=['validate','request','images','cached-images','audio','render']);parser.add_argument('--locale',choices=p.LOCALES);parser.add_argument('--batch-id');parser.add_argument('--audio-repair');args=parser.parse_args()
  if args.command=='validate':print(json.dumps(validate()))
  elif args.command=='request':
-  assert args.batch_id;validate();p.write(HERE/'media-request.json',{'batchId':args.batch_id,'lessonId':'SOIL-REBUILD-S1-01','locales':list(p.LOCALES),'action':'generate-S1-01-preview-only','maxRepairsAfterInitial':3,'fingerprint':fingerprint()});print('Bounded media request created')
+  assert args.batch_id;validate()
+  request={'batchId':args.batch_id,'lessonId':'SOIL-REBUILD-S1-01','locales':list(p.LOCALES),'action':'generate-S1-01-preview-only','maxRepairsAfterInitial':3,'fingerprint':fingerprint()}
+  if args.audio_repair:request['audioRepair']=p.read(Path(args.audio_repair))
+  p.write(HERE/'media-request.json',request);authorize();print('Bounded media request created')
  elif args.command=='images':images()
+ elif args.command=='cached-images':cached_images()
  elif args.command=='audio':audio(args.locale)
  elif args.command=='render':render(args.locale)
 
