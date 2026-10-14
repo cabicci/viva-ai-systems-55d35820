@@ -92,6 +92,8 @@ jobs:
           path: experiments/course-pipeline/rebuild/pilot/output/
   render:
     needs: [visuals, narration]
+    # One rejected locale must not block rendering other checked locales.
+    if: always() && needs.visuals.result == 'success' && (needs.narration.result == 'success' || needs.narration.result == 'failure')
     runs-on: ubuntu-22.04
     timeout-minutes: 50
     strategy:
@@ -116,6 +118,11 @@ jobs:
           sudo apt-get install -y ffmpeg
           cd remotion
           bun install --frozen-lockfile
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}
+          key: soil-rebuild-s101-render-${{ matrix.locale }}-${{ github.run_id }}
+          restore-keys: soil-rebuild-s101-render-${{ matrix.locale }}-
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           pattern: s101-working-*
@@ -125,6 +132,11 @@ jobs:
         env:
           LOCALE: ${{ matrix.locale }}
         run: python "$PACKAGE/media_pipeline.py" render --locale "$LOCALE"
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: success()
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}
+          key: soil-rebuild-s101-render-${{ matrix.locale }}-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
