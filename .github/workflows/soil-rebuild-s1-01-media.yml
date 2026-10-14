@@ -1,0 +1,140 @@
+name: Soil rebuild S1-01 bounded preview media
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/pilot/media-request.json]
+permissions:
+  contents: read
+concurrency:
+  group: soil-rebuild-s1-01-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/pilot
+  PYTHONUNBUFFERED: '1'
+jobs:
+  visuals:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python "$PACKAGE/media_pipeline.py" validate
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/visuals
+          key: soil-rebuild-s101-images-${{ hashFiles('experiments/course-pipeline/rebuild/pilot/course/visual*.json') }}-${{ github.run_id }}
+          restore-keys: soil-rebuild-s101-images-
+      - name: Generate and inspect ten bounded images
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/media_pipeline.py" images
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: always()
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/visuals
+          key: soil-rebuild-s101-images-${{ hashFiles('experiments/course-pipeline/rebuild/pilot/course/visual*.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-working-images
+          retention-days: 30
+          path: experiments/course-pipeline/rebuild/pilot/output/
+  narration:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: [ar-EG, en, it, de]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow==11.3.0
+      - run: |
+          python "$PACKAGE/media_pipeline.py" validate
+          python -m unittest discover -s experiments/course-pipeline/tests -p 'test_*.py'
+          python -m unittest discover -s "$PACKAGE/tests" -p 'test_*.py'
+      - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}
+          key: soil-rebuild-s101-audio-${{ matrix.locale }}-${{ hashFiles('experiments/course-pipeline/rebuild/pilot/course/*.json') }}-${{ github.run_id }}
+          restore-keys: soil-rebuild-s101-audio-${{ matrix.locale }}-
+      - name: Generate and inspect ten narration segments
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          LOCALE: ${{ matrix.locale }}
+        run: python "$PACKAGE/media_pipeline.py" audio --locale "$LOCALE"
+      - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+        if: always()
+        with:
+          path: experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}
+          key: soil-rebuild-s101-audio-${{ matrix.locale }}-${{ hashFiles('experiments/course-pipeline/rebuild/pilot/course/*.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-working-audio-${{ matrix.locale }}
+          retention-days: 30
+          compression-level: 0
+          path: experiments/course-pipeline/rebuild/pilot/output/
+  render:
+    needs: [visuals, narration]
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: [ar-EG, en, it, de]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: '1.4.2'
+      - run: |
+          python -m pip install Pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          cd remotion
+          bun install --frozen-lockfile
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: s101-working-*
+          merge-multiple: true
+          path: experiments/course-pipeline/rebuild/pilot/output/
+      - name: Render preview using only checked cached speech
+        env:
+          LOCALE: ${{ matrix.locale }}
+        run: python "$PACKAGE/media_pipeline.py" render --locale "$LOCALE"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-preview-${{ matrix.locale }}
+          retention-days: 30
+          compression-level: 0
+          path: |
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/lesson.mp4
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/master.wav
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/captions.vtt
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/transcript.txt
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/props.json
+            experiments/course-pipeline/rebuild/pilot/output/${{ matrix.locale }}/receipt.json

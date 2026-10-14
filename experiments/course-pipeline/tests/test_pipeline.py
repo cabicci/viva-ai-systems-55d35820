@@ -15,6 +15,29 @@ p = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(p)
 
 class PipelineTest(unittest.TestCase):
+    def test_two_voice_cache_preserves_legacy_and_invalidates_only_affected_speaker(self):
+        scene=copy.deepcopy(p.content('en')['scenes'][0])
+        legacy=p.read(p.ROOT/'course/manifest.json')['media']
+        a={**scene,'speakerId':'A'}
+        b={**scene,'speakerId':'B'}
+        media={**legacy,'voices':{'A':'Charon','B':'Kore'}}
+        self.assertEqual(p.audio_key(scene,'en',legacy),p.audio_key(a,'en',media))
+        self.assertNotEqual(p.audio_key(a,'en',media),p.audio_key(b,'en',media))
+        changed={**media,'voices':{'A':'Charon','B':'Aoede'}}
+        self.assertEqual(p.audio_key(a,'en',media),p.audio_key(a,'en',changed))
+        self.assertNotEqual(p.audio_key(b,'en',media),p.audio_key(b,'en',changed))
+        for invalid in (scene,{**scene,'speakerId':'C'}):
+            with self.assertRaises(AssertionError):p.audio_key(invalid,'en',media)
+
+    def test_synthesis_sends_explicit_scene_voice(self):
+        import base64
+        media={'model':'test-model','voices':{'A':'Charon','B':'Kore'},'maxAttempts':1}
+        response={'candidates':[{'content':{'parts':[{'inlineData':{'mimeType':'audio/L16;rate=24000','data':base64.b64encode(bytes(48000)).decode()}}]}}]}
+        with tempfile.TemporaryDirectory() as temp,patch.object(p,'request_json',return_value=response) as request:
+            p.synthesize({'narration':'A complete test utterance.','speakerId':'B'},'en',media,'test-key',Path(temp)/'b.wav')
+            payload=request.call_args.args[2]
+            self.assertEqual(payload['generationConfig']['speechConfig']['voiceConfig']['prebuiltVoiceConfig']['voiceName'],'Kore')
+
     def test_incomplete_provider_transport_retries_without_accepting_partial_data(self):
         failures=[http.client.IncompleteRead(b'{'),http.client.IncompleteRead(b'{}'),io.BytesIO(b'{"complete":true}')]
         with patch.object(p.urllib.request,'urlopen',side_effect=failures) as request,patch.object(p.time,'sleep'):

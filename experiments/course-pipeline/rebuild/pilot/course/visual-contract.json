@@ -1,0 +1,148 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {
+      "id": "3d",
+      "criterion": "Coherent rounded three-dimensional illustration with realistic materials, depth and contact shadows; not flat line art."
+    },
+    {
+      "id": "no-text",
+      "criterion": "No readable or invented text, logos, numbers, watermarks, arrows or check marks."
+    },
+    {
+      "id": "no-people",
+      "criterion": "No visible people, characters, faces or detached human body parts."
+    },
+    {
+      "id": "legible",
+      "criterion": "Relevant objects are readable, intact where required, sensibly proportioned and uncropped."
+    }
+  ],
+  "assets": {
+    "s101-overview": [
+      {
+        "id": "s101-overview-1",
+        "criterion": "Field, accessible route and preparation bench are distinct."
+      },
+      {
+        "id": "s101-overview-2",
+        "criterion": "Tractor is separated from the walking route."
+      },
+      {
+        "id": "s101-overview-3",
+        "criterion": "No depicted casualty, spill or unsafe action."
+      }
+    ],
+    "s101-site": [
+      {
+        "id": "s101-site-1",
+        "criterion": "Burrow and sprinkler head are distinct obstacles."
+      },
+      {
+        "id": "s101-site-2",
+        "criterion": "Buried pipe and cable conduit visible below a soil cutaway."
+      },
+      {
+        "id": "s101-site-3",
+        "criterion": "Probe is resting and does not penetrate the ground."
+      }
+    ],
+    "s101-contact": [
+      {
+        "id": "s101-contact-1",
+        "criterion": "Two sets of equipment, phone or radio, and access route identifiable."
+      },
+      {
+        "id": "s101-contact-2",
+        "criterion": "Screens contain no text or numbers."
+      }
+    ],
+    "s101-tools": [
+      {
+        "id": "s101-tools-1",
+        "criterion": "Sound spade has a secure continuous handle and intact blade."
+      },
+      {
+        "id": "s101-tools-2",
+        "criterion": "Broken handle is isolated and unmistakably unusable."
+      },
+      {
+        "id": "s101-tools-3",
+        "criterion": "Reagent is closed; no bare hand or handling action."
+      }
+    ],
+    "s101-weather": [
+      {
+        "id": "s101-weather-1",
+        "criterion": "Usable shade, drinking water and sun hat are visible."
+      },
+      {
+        "id": "s101-weather-2",
+        "criterion": "Insects remain at a separate bush away from the rest area."
+      }
+    ],
+    "s101-protection": [
+      {
+        "id": "s101-protection-1",
+        "criterion": "Safety spectacles and sealed-rim splash goggles are separate and visibly different."
+      },
+      {
+        "id": "s101-protection-2",
+        "criterion": "Boots, long clothing, hat and gloves are identifiable."
+      },
+      {
+        "id": "s101-protection-3",
+        "criterion": "No damaged protective equipment."
+      }
+    ],
+    "s101-compatibility": [
+      {
+        "id": "s101-compatibility-1",
+        "criterion": "Fabric gloves visibly woven and chemical glove pair visibly non-porous with longer cuffs."
+      },
+      {
+        "id": "s101-compatibility-2",
+        "criterion": "Closed reagent and information booklet are visible."
+      },
+      {
+        "id": "s101-compatibility-3",
+        "criterion": "No chemical handling or implied compatibility verdict."
+      }
+    ],
+    "s101-checks": [
+      {
+        "id": "s101-checks-1",
+        "criterion": "Five distinct preparation groups are visible without text."
+      },
+      {
+        "id": "s101-checks-2",
+        "criterion": "Tool rests safely; no unsafe work depicted."
+      }
+    ],
+    "s101-lesson-route": [
+      {
+        "id": "s101-lesson-route-1",
+        "criterion": "Low perspective along path; no soil cutaway."
+      },
+      {
+        "id": "s101-lesson-route-2",
+        "criterion": "Sprinkler, burrow and separated tractor visible."
+      }
+    ],
+    "s101-lesson-gloves": [
+      {
+        "id": "s101-lesson-gloves-1",
+        "criterion": "Distinct compartmented storage composition, not flat workbench."
+      },
+      {
+        "id": "s101-lesson-gloves-2",
+        "criterion": "Glove materials and separate splash goggles are recognizable."
+      },
+      {
+        "id": "s101-lesson-gloves-3",
+        "criterion": "Reagent closed and no compatibility verdict."
+      }
+    ]
+  }
+}

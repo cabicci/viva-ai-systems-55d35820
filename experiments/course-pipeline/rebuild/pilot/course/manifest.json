@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "courseId": "SOIL-REBUILD",
+  "lessonId": "SOIL-REBUILD-S1-01",
+  "mode": "technical",
+  "sourceLanguage": "en",
+  "locales": [
+    "ar-EG",
+    "en",
+    "it",
+    "de"
+  ],
+  "scope": "one-owner-authorized-rebuild-pilot-only",
+  "source": {
+    "sha256": "0aad4965702d2f1bcd5fd2e2d7cab56c9f2c62fc636b9ff4f72a51ce177dd270",
+    "role": "teacher edition; provenance retained privately"
+  },
+  "media": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voices": {
+      "A": "Charon",
+      "B": "Kore"
+    },
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "maxAttempts": 3,
+    "requestGapSeconds": 5
+  },
+  "acceptance": {
+    "ownerReview": "complete-pilot-pending",
+    "listeningReview": "pending",
+    "nativeLanguageReview": "pending",
+    "practicalCompetence": "requires trainer observation",
+    "publish": false
+  },
+  "production": {
+    "uploadToBunny": false,
+    "modifyPlatform": false,
+    "modifyDatabase": false
+  }
+}

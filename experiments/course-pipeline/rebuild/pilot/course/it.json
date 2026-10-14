@@ -1,0 +1,325 @@
+{
+  "lessonId": "SOIL-REBUILD-S1-01",
+  "locale": "it",
+  "dir": "ltr",
+  "subtitle": "Sicurezza e preparazione del luogo di lavoro",
+  "eyebrow": "Passo 1 di 44",
+  "ui": {
+    "reading": "Spiegazione",
+    "video": "Video",
+    "examples": "Esempi svolti",
+    "training": "Pratica 3D",
+    "assessment": "Verifica",
+    "practical": "Attività pratica",
+    "downloads": "Schede di lavoro",
+    "assistant": "Assistente",
+    "preview": "Anteprima del passo pilota",
+    "goals": "Cosa saprai dimostrare",
+    "open": "Esplora il sito in 3D",
+    "drag": "Trascina per ruotare · rotella o due dita per lo zoom · seleziona un numero",
+    "accessible": "Puoi esplorare tutti i punti anche con i pulsanti qui sotto.",
+    "resetView": "Ripristina vista",
+    "inspect": "Scegli un punto da esaminare",
+    "choose": "Scegli l'azione e la sua motivazione",
+    "check": "Controlla la decisione",
+    "retry": "Riprova questo punto",
+    "right": "Decisione corretta",
+    "wrong": "Rivedi il ragionamento",
+    "completed": "decisioni dimostrate",
+    "trainingNote": "La pratica fornisce spiegazioni immediate. Non certifica la competenza pratica.",
+    "testStart": "Inizia un nuovo tentativo",
+    "testSubmit": "Consegna le decisioni",
+    "testNote": "Rispondi a tutti gli otto punti prima di consegnare. Le risposte della pratica non vengono copiate.",
+    "testMissing": "Rispondi prima a tutti i punti.",
+    "result": "Decisioni sul sito",
+    "pass": "Tutte le decisioni sul sito sono corrette in questo tentativo.",
+    "notPass": "Alcune decisioni richiedono una revisione. Rileggi la spiegazione collegata e inizia un altro tentativo.",
+    "unlimited": "I tentativi sono illimitati. Ogni nuovo tentativo parte senza risposte.",
+    "readMore": "Rivedi la spiegazione",
+    "unobserved": "Prestazione pratica: non ancora osservata dal formatore",
+    "seen": "Segna la spiegazione come letta",
+    "seenDone": "Spiegazione letta",
+    "videoPending": "Il nuovo video è in preparazione con due voci alternate. Non viene sostituito con un video di una lezione precedente.",
+    "assistantPending": "Le domande libere saranno disponibili quando l'assistente del corso sarà collegato alla piattaforma. Non è attivo in questa anteprima.",
+    "list": "Punti del sito",
+    "simulation": "Simulazione didattica · non è un sopralluogo reale",
+    "selfCheck": "Checklist di sicurezza in cinque punti",
+    "write": "Scrivi cosa controllerà la squadra e quando dovrà fermarsi.",
+    "save": "Salva la checklist su questo dispositivo",
+    "saved": "Salvata localmente. Scrivere una risposta non comporta il superamento automatico del criterio.",
+    "model": "Confronta con una checklist di esempio",
+    "exampleOnly": "Usala per rivedere il ragionamento; i dettagli del sito reale sono forniti dal formatore.",
+    "quizTitle": "Verifica i principi di sicurezza",
+    "quizSubmit": "Controlla le risposte",
+    "downloadPractice": "Scarica la scheda di esercitazione",
+    "downloadField": "Scarica le istruzioni pratiche",
+    "downloadHint": "File stampabili nella lingua selezionata, senza i documenti originali del programma.",
+    "next": "Sezione successiva",
+    "back": "Indietro",
+    "progress": "Progressi di apprendimento",
+    "local": "Memorizzato solo su questo dispositivo",
+    "allRead": "Lettura delle sezioni",
+    "reviewChecklist": "Criterio checklist: la risposta scritta richiede una revisione",
+    "fieldLabel": "Le evidenze pratiche sono separate dai risultati online",
+    "unavailable3d": "La visualizzazione 3D non è disponibile. Usa le descrizioni equivalenti e i pulsanti delle decisioni qui sotto.",
+    "decisionCount": "Otto decisioni sul sito",
+    "attempt": "Tentativo di verifica",
+    "continue": "Continua a esplorare",
+    "simulationTitle": "La squadra può iniziare?",
+    "practiceTitle": "Esamina il sito prima di iniziare",
+    "practicalIntro": "Svolgi questa attività in un sito reale scelto e controllato dal formatore. La simulazione non autorizza scavi, uso di sostanze chimiche o azionamento di macchine.",
+    "reflection": "Con parole tue",
+    "reflectionPrompt": "In che modo prepararsi protegge te e il tuo compagno? Puoi usare un incidente immaginario anziché un'esperienza personale.",
+    "glossary": "Termini utili",
+    "stop": "Fermati e chiedi al formatore"
+  },
+  "scenes": [
+    {
+      "id": "s101-purpose",
+      "speakerId": "A",
+      "title": "La sicurezza comincia prima del problema",
+      "lead": "Un campione è utile solo se raccoglierlo non provoca lesioni. Prevenire significa riconoscere e controllare i pericoli prima del lavoro. Rispondere a un'emergenza significa agire in modo organizzato se qualcosa va storto. Questo passo riguarda prevenzione e preparazione; i due successivi affrontano lesioni, disturbi da calore, sversamenti ed evacuazione.",
+      "example": "Spiega lo scopo del lavoro con parole tue. Se hai assistito a un'emergenza, puoi riflettere sulle azioni corrette e sulle omissioni. Puoi anche usare un esempio inventato: raccontare un'esperienza personale è facoltativo.",
+      "takeaway": "Rispetta la formazione",
+      "labels": [
+        "Riconosci i pericoli",
+        "Preparati prima del lavoro",
+        "Rispetta la formazione"
+      ],
+      "narration": "Un campione è utile solo se raccoglierlo non provoca lesioni. Prevenire significa riconoscere e controllare i pericoli prima del lavoro. Rispondere a un'emergenza significa agire in modo organizzato se qualcosa va storto. Questo passo riguarda prevenzione e preparazione; i due successivi affrontano lesioni, disturbi da calore, sversamenti ed evacuazione.\n\nImmagina che un compagno abbia capogiri e confusione in un campo isolato, oppure che si rovesci un contenitore di fertilizzante. Chi conosce la vostra posizione? Come date l'allarme? Dove potete spostarvi in sicurezza? Sono domande di preparazione, non un invito a soccorrere o pulire uno sversamento oltre i limiti della formazione ricevuta.\n\nSpiega lo scopo del lavoro con parole tue. Se hai assistito a un'emergenza, puoi riflettere sulle azioni corrette e sulle omissioni. Puoi anche usare un esempio inventato: raccontare un'esperienza personale è facoltativo.",
+      "caption": "Un campione è utile solo se raccoglierlo non provoca lesioni. Prevenire significa riconoscere e controllare i pericoli prima del lavoro. Rispondere a un'emergenza significa agire in modo organizzato se qualcosa va storto. Questo passo riguarda prevenzione e preparazione; i due successivi affrontano lesioni, disturbi da calore, sversamenti ed evacuazione.\n\nImmagina che un compagno abbia capogiri e confusione in un campo isolato, oppure che si rovesci un contenitore di fertilizzante. Chi conosce la vostra posizione? Come date l'allarme? Dove potete spostarvi in sicurezza? Sono domande di preparazione, non un invito a soccorrere o pulire uno sversamento oltre i limiti della formazione ricevuta.\n\nSpiega lo scopo del lavoro con parole tue. Se hai assistito a un'emergenza, puoi riflettere sulle azioni corrette e sulle omissioni. Puoi anche usare un esempio inventato: raccontare un'esperienza personale è facoltativo."
+    },
+    {
+      "id": "s101-site",
+      "speakerId": "B",
+      "title": "1. Osserva anche ciò che potrebbe essere nascosto",
+      "lead": "Prima di partire, ascolta il breve briefing del formatore, che sceglie un sito sicuro e accessibile e indica dove è consentito campionare. Controlla il percorso: terreno irregolare, buche, tane e ostacoli. Gli irrigatori sul bordo del campo possono causare inciampi o danni all'impianto.",
+      "example": "Tubazioni irrigue, condotte del gas e cavi elettrici possono essere interrati. Una superficie libera non dimostra che si possa scavare. Non inserire sonda, trivella o vanga finché il formatore non ha confermato la sicurezza di quel punto rispetto ai sottoservizi. Se mancano indicazioni o hai dubbi, fermati e chiedi. Un disegno didattico non localizza le reti reali.",
+      "takeaway": "Verifica i sottoservizi",
+      "labels": [
+        "Controlla il percorso",
+        "Resta lontano dalle macchine",
+        "Verifica i sottoservizi"
+      ],
+      "narration": "Prima di partire, ascolta il breve briefing del formatore, che sceglie un sito sicuro e accessibile e indica dove è consentito campionare. Controlla il percorso: terreno irregolare, buche, tane e ostacoli. Gli irrigatori sul bordo del campo possono causare inciampi o danni all'impianto.\n\nOsserva le macchine, gli allarmi di retromarcia e le linee elettriche aeree. Guardare il telefono mentre un trattore si muove riduce l'attenzione necessaria. Rimani fuori dalla zona operativa e segui il percorso concordato; non presumere che il conducente ti abbia visto.\n\nTubazioni irrigue, condotte del gas e cavi elettrici possono essere interrati. Una superficie libera non dimostra che si possa scavare. Non inserire sonda, trivella o vanga finché il formatore non ha confermato la sicurezza di quel punto rispetto ai sottoservizi. Se mancano indicazioni o hai dubbi, fermati e chiedi. Un disegno didattico non localizza le reti reali.",
+      "caption": "Prima di partire, ascolta il breve briefing del formatore, che sceglie un sito sicuro e accessibile e indica dove è consentito campionare. Controlla il percorso: terreno irregolare, buche, tane e ostacoli. Gli irrigatori sul bordo del campo possono causare inciampi o danni all'impianto.\n\nOsserva le macchine, gli allarmi di retromarcia e le linee elettriche aeree. Guardare il telefono mentre un trattore si muove riduce l'attenzione necessaria. Rimani fuori dalla zona operativa e segui il percorso concordato; non presumere che il conducente ti abbia visto.\n\nTubazioni irrigue, condotte del gas e cavi elettrici possono essere interrati. Una superficie libera non dimostra che si possa scavare. Non inserire sonda, trivella o vanga finché il formatore non ha confermato la sicurezza di quel punto rispetto ai sottoservizi. Se mancano indicazioni o hai dubbi, fermati e chiedi. Un disegno didattico non localizza le reti reali."
+    },
+    {
+      "id": "s101-communication",
+      "speakerId": "A",
+      "title": "2. Fai in modo che i soccorsi possano trovarti",
+      "lead": "Comunica al responsabile la destinazione della squadra e l'orario previsto di rientro. Nelle zone isolate lavora con un compagno e concorda le comunicazioni. Porta un telefono carico, o il dispositivo previsto per il sito, con i contatti di emergenza disponibili.",
+      "example": "Il telefono non sostituisce il compagno: può mancare il segnale, esaurirsi la batteria o la persona ferita può non riuscire a chiamare. Concordate cosa fare se si perde il contatto o qualcuno non rientra. Conosci l'accesso e il punto di ritrovo per dare indicazioni utili ai soccorsi.",
+      "takeaway": "Prevedi problemi di contatto",
+      "labels": [
+        "Comunica luogo e rientro",
+        "Concorda il lavoro in coppia",
+        "Prevedi problemi di contatto"
+      ],
+      "narration": "Comunica al responsabile la destinazione della squadra e l'orario previsto di rientro. Nelle zone isolate lavora con un compagno e concorda le comunicazioni. Porta un telefono carico, o il dispositivo previsto per il sito, con i contatti di emergenza disponibili.\n\nIl telefono non sostituisce il compagno: può mancare il segnale, esaurirsi la batteria o la persona ferita può non riuscire a chiamare. Concordate cosa fare se si perde il contatto o qualcuno non rientra. Conosci l'accesso e il punto di ritrovo per dare indicazioni utili ai soccorsi.",
+      "caption": "Comunica al responsabile la destinazione della squadra e l'orario previsto di rientro. Nelle zone isolate lavora con un compagno e concorda le comunicazioni. Porta un telefono carico, o il dispositivo previsto per il sito, con i contatti di emergenza disponibili.\n\nIl telefono non sostituisce il compagno: può mancare il segnale, esaurirsi la batteria o la persona ferita può non riuscire a chiamare. Concordate cosa fare se si perde il contatto o qualcuno non rientra. Conosci l'accesso e il punto di ritrovo per dare indicazioni utili ai soccorsi."
+    },
+    {
+      "id": "s101-limits",
+      "speakerId": "B",
+      "title": "3. Conosci attrezzi e limiti della tua preparazione",
+      "lead": "Non azionare una macchina perché i comandi sembrano semplici. Servono formazione, autorizzazione e supervisione adeguata. Controlla gli attrezzi manuali: manico saldo, parte operativa integra e pulita; segnala ogni difetto e non usare un attrezzo danneggiato.",
+      "example": "Prima di usare fertilizzanti, pesticidi, ammendanti o reagenti, leggi l'etichetta e la scheda di dati di sicurezza aggiornata, SDS; nei documenti più vecchi può comparire MSDS. Cerca pericoli, manipolazione, protezioni ed emergenze. Il colore del contenitore e la scala cromatica del test non identificano i pericoli chimici.",
+      "takeaway": "Leggi etichetta e SDS",
+      "labels": [
+        "Controlla e segnala i difetti",
+        "Punte verso il basso",
+        "Leggi etichetta e SDS"
+      ],
+      "narration": "Non azionare una macchina perché i comandi sembrano semplici. Servono formazione, autorizzazione e supervisione adeguata. Controlla gli attrezzi manuali: manico saldo, parte operativa integra e pulita; segnala ogni difetto e non usare un attrezzo danneggiato.\n\nTrasporta gli attrezzi taglienti con punta o lama rivolte in basso e lontano dalle persone, lasciando spazio intorno a te. Segui la dimostrazione per quello specifico attrezzo. Non agitarlo, non appoggiarlo sulla spalla vicino ad altri e non lasciarlo sul passaggio. Attrezzi puliti e guanti puliti adatti aiutano anche a non contaminare il campione.\n\nPrima di usare fertilizzanti, pesticidi, ammendanti o reagenti, leggi l'etichetta e la scheda di dati di sicurezza aggiornata, SDS; nei documenti più vecchi può comparire MSDS. Cerca pericoli, manipolazione, protezioni ed emergenze. Il colore del contenitore e la scala cromatica del test non identificano i pericoli chimici.",
+      "caption": "Non azionare una macchina perché i comandi sembrano semplici. Servono formazione, autorizzazione e supervisione adeguata. Controlla gli attrezzi manuali: manico saldo, parte operativa integra e pulita; segnala ogni difetto e non usare un attrezzo danneggiato.\n\nTrasporta gli attrezzi taglienti con punta o lama rivolte in basso e lontano dalle persone, lasciando spazio intorno a te. Segui la dimostrazione per quello specifico attrezzo. Non agitarlo, non appoggiarlo sulla spalla vicino ad altri e non lasciarlo sul passaggio. Attrezzi puliti e guanti puliti adatti aiutano anche a non contaminare il campione.\n\nPrima di usare fertilizzanti, pesticidi, ammendanti o reagenti, leggi l'etichetta e la scheda di dati di sicurezza aggiornata, SDS; nei documenti più vecchi può comparire MSDS. Cerca pericoli, manipolazione, protezioni ed emergenze. Il colore del contenitore e la scala cromatica del test non identificano i pericoli chimici."
+    },
+    {
+      "id": "s101-environment",
+      "speakerId": "A",
+      "title": "4. Considera organismi viventi e condizioni meteo",
+      "lead": "Fai attenzione a serpenti, insetti pungenti e piante dannose senza avvicinarti o disturbarli. Segnala il pericolo e segui il percorso concordato. Questi pericoli non sono sempre visibili da lontano.",
+      "example": "Valuta caldo, sole e cambiamenti del tempo. Organizza acqua potabile, abbigliamento adeguato, ombra e pause. Avvisa il formatore se cambiano le condizioni o il tuo stato di salute. Cappello e acqua non giustificano ignorare capogiri o confusione. Le azioni dettagliate per i disturbi da calore sono nel passo successivo: qui contano prevenzione e segnalazione tempestiva.",
+      "takeaway": "Segnala i cambiamenti",
+      "labels": [
+        "Segnala i rischi biologici",
+        "Acqua, ombra e pause",
+        "Segnala i cambiamenti"
+      ],
+      "narration": "Fai attenzione a serpenti, insetti pungenti e piante dannose senza avvicinarti o disturbarli. Segnala il pericolo e segui il percorso concordato. Questi pericoli non sono sempre visibili da lontano.\n\nValuta caldo, sole e cambiamenti del tempo. Organizza acqua potabile, abbigliamento adeguato, ombra e pause. Avvisa il formatore se cambiano le condizioni o il tuo stato di salute. Cappello e acqua non giustificano ignorare capogiri o confusione. Le azioni dettagliate per i disturbi da calore sono nel passo successivo: qui contano prevenzione e segnalazione tempestiva.",
+      "caption": "Fai attenzione a serpenti, insetti pungenti e piante dannose senza avvicinarti o disturbarli. Segnala il pericolo e segui il percorso concordato. Questi pericoli non sono sempre visibili da lontano.\n\nValuta caldo, sole e cambiamenti del tempo. Organizza acqua potabile, abbigliamento adeguato, ombra e pause. Avvisa il formatore se cambiano le condizioni o il tuo stato di salute. Cappello e acqua non giustificano ignorare capogiri o confusione. Le azioni dettagliate per i disturbi da calore sono nel passo successivo: qui contano prevenzione e segnalazione tempestiva."
+    },
+    {
+      "id": "s101-ppe",
+      "speakerId": "B",
+      "title": "Scegli i DPI in base al pericolo, non all'abitudine",
+      "lead": "I dispositivi di protezione individuale, DPI, riducono l'esposizione ai pericoli. Completano un metodo sicuro, ma non rendono accettabile un luogo insicuro o un'attività non autorizzata. La combinazione dipende da lavoro, sostanza e condizioni.",
+      "example": "Scegli la protezione degli occhi in base al pericolo: gli occhiali per particelle non sostituiscono automaticamente gli occhiali a mascherina per spruzzi chimici. Guanti adatti al terreno proteggono le mani e possono limitare la contaminazione del campione, ma non sono necessariamente adatti ai prodotti chimici.",
+      "takeaway": "Guanti da terra ≠ guanti chimici",
+      "labels": [
+        "DPI adatti al compito",
+        "Proteggi piedi e occhi",
+        "Guanti da terra ≠ guanti chimici"
+      ],
+      "narration": "I dispositivi di protezione individuale, DPI, riducono l'esposizione ai pericoli. Completano un metodo sicuro, ma non rendono accettabile un luogo insicuro o un'attività non autorizzata. La combinazione dipende da lavoro, sostanza e condizioni.\n\nCalzature da lavoro robuste aiutano la presa e proteggono i piedi. Se c'è rischio di urto o schiacciamento, il formatore indica puntali protettivi adatti, per esempio in acciaio. Maniche e pantaloni lunghi riducono graffi, sole e contatto con insetti; un cappello a tesa larga aiuta contro il sole. L'abbigliamento deve essere adatto anche al caldo e alla mansione.\n\nScegli la protezione degli occhi in base al pericolo: gli occhiali per particelle non sostituiscono automaticamente gli occhiali a mascherina per spruzzi chimici. Guanti adatti al terreno proteggono le mani e possono limitare la contaminazione del campione, ma non sono necessariamente adatti ai prodotti chimici.",
+      "caption": "I dispositivi di protezione individuale, DPI, riducono l'esposizione ai pericoli. Completano un metodo sicuro, ma non rendono accettabile un luogo insicuro o un'attività non autorizzata. La combinazione dipende da lavoro, sostanza e condizioni.\n\nCalzature da lavoro robuste aiutano la presa e proteggono i piedi. Se c'è rischio di urto o schiacciamento, il formatore indica puntali protettivi adatti, per esempio in acciaio. Maniche e pantaloni lunghi riducono graffi, sole e contatto con insetti; un cappello a tesa larga aiuta contro il sole. L'abbigliamento deve essere adatto anche al caldo e alla mansione.\n\nScegli la protezione degli occhi in base al pericolo: gli occhiali per particelle non sostituiscono automaticamente gli occhiali a mascherina per spruzzi chimici. Guanti adatti al terreno proteggono le mani e possono limitare la contaminazione del campione, ma non sono necessariamente adatti ai prodotti chimici."
+    },
+    {
+      "id": "s101-chemical",
+      "speakerId": "A",
+      "title": "Verifica la compatibilità con la sostanza",
+      "lead": "Il materiale dei guanti deve essere compatibile con la sostanza e l'esposizione prevista. Nitrile e neoprene sono esempi di materiali, non garanzie universali. Consulta SDS e informazioni del fabbricante con il formatore. Tessuto e cuoio possono assorbire il liquido e trattenerlo contro la pelle.",
+      "example": "L'alta visibilità aiuta gli altri a vederti vicino alle macchine, ma non sostituisce la separazione dalle loro zone di movimento. Vicino a motori rumorosi può servire protezione dell'udito. Segui protezioni e modalità operative indicate per il sito reale.",
+      "takeaway": "Visibilità ≠ separazione",
+      "labels": [
+        "Verifica la compatibilità",
+        "Usa attrezzature integre",
+        "Visibilità ≠ separazione"
+      ],
+      "narration": "Il materiale dei guanti deve essere compatibile con la sostanza e l'esposizione prevista. Nitrile e neoprene sono esempi di materiali, non garanzie universali. Consulta SDS e informazioni del fabbricante con il formatore. Tessuto e cuoio possono assorbire il liquido e trattenerlo contro la pelle.\n\nConfronta un guanto da giardinaggio in tessuto, pulito, con uno resistente e compatibile, usando solo oggetti puliti per la dimostrazione. Spiega perché aspetto e spessore non provano la resistenza chimica. Prima di indossarli, controlla integrità e idoneità dei dispositivi.\n\nLa valutazione del rischio può richiedere anche tuta o grembiule resistente alla sostanza. La protezione respiratoria va scelta per contaminante e attività, con filtro o cartuccia adeguati e formazione. I dispositivi aderenti richiedono una prova di adattabilità al viso. La foto di una maschera, o una maschera antipolvere usata per il pericolo sbagliato, non dimostra protezione.\n\nL'alta visibilità aiuta gli altri a vederti vicino alle macchine, ma non sostituisce la separazione dalle loro zone di movimento. Vicino a motori rumorosi può servire protezione dell'udito. Segui protezioni e modalità operative indicate per il sito reale.",
+      "caption": "Il materiale dei guanti deve essere compatibile con la sostanza e l'esposizione prevista. Nitrile e neoprene sono esempi di materiali, non garanzie universali. Consulta SDS e informazioni del fabbricante con il formatore. Tessuto e cuoio possono assorbire il liquido e trattenerlo contro la pelle.\n\nConfronta un guanto da giardinaggio in tessuto, pulito, con uno resistente e compatibile, usando solo oggetti puliti per la dimostrazione. Spiega perché aspetto e spessore non provano la resistenza chimica. Prima di indossarli, controlla integrità e idoneità dei dispositivi.\n\nLa valutazione del rischio può richiedere anche tuta o grembiule resistente alla sostanza. La protezione respiratoria va scelta per contaminante e attività, con filtro o cartuccia adeguati e formazione. I dispositivi aderenti richiedono una prova di adattabilità al viso. La foto di una maschera, o una maschera antipolvere usata per il pericolo sbagliato, non dimostra protezione.\n\nL'alta visibilità aiuta gli altri a vederti vicino alle macchine, ma non sostituisce la separazione dalle loro zone di movimento. Vicino a motori rumorosi può servire protezione dell'udito. Segui protezioni e modalità operative indicate per il sito reale."
+    },
+    {
+      "id": "s101-checklist",
+      "speakerId": "B",
+      "title": "Riunisci i controlli prima di iniziare",
+      "lead": "Scrivi cinque punti di controllo, non solo nomi di attrezzature: sito e percorso sicuri, autorizzazione e verifica dei sottoservizi; attrezzi integri, puliti e trasportati bene; protezioni adatte alla mansione e alle sostanze; responsabile informato su posizione e rientro, compagno e comunicazioni; contatti, accesso di emergenza, ritrovo, acqua e precauzioni meteo.",
+      "example": "Preparazione, attenzione e rispetto dei limiti aiutano a non peggiorare una situazione. Completare questo passo non ti qualifica al primo soccorso e non certifica la prestazione pratica, che il formatore osserva separatamente.",
+      "takeaway": "La pratica richiede osservazione",
+      "labels": [
+        "Cinque controlli prima di iniziare",
+        "Definisci quando fermarti",
+        "La pratica richiede osservazione"
+      ],
+      "narration": "Scrivi cinque punti di controllo, non solo nomi di attrezzature: sito e percorso sicuri, autorizzazione e verifica dei sottoservizi; attrezzi integri, puliti e trasportati bene; protezioni adatte alla mansione e alle sostanze; responsabile informato su posizione e rientro, compagno e comunicazioni; contatti, accesso di emergenza, ritrovo, acqua e precauzioni meteo.\n\nPer ogni punto indica quando fermarti: sottoservizi incerti, manico allentato, informazioni chimiche mancanti, comunicazioni inadeguate o macchina che blocca il percorso. Segnala e attendi una soluzione sicura: spuntare una casella non elimina il pericolo.\n\nPreparazione, attenzione e rispetto dei limiti aiutano a non peggiorare una situazione. Completare questo passo non ti qualifica al primo soccorso e non certifica la prestazione pratica, che il formatore osserva separatamente.",
+      "caption": "Scrivi cinque punti di controllo, non solo nomi di attrezzature: sito e percorso sicuri, autorizzazione e verifica dei sottoservizi; attrezzi integri, puliti e trasportati bene; protezioni adatte alla mansione e alle sostanze; responsabile informato su posizione e rientro, compagno e comunicazioni; contatti, accesso di emergenza, ritrovo, acqua e precauzioni meteo.\n\nPer ogni punto indica quando fermarti: sottoservizi incerti, manico allentato, informazioni chimiche mancanti, comunicazioni inadeguate o macchina che blocca il percorso. Segnala e attendi una soluzione sicura: spuntare una casella non elimina il pericolo.\n\nPreparazione, attenzione e rispetto dei limiti aiutano a non peggiorare una situazione. Completare questo passo non ti qualifica al primo soccorso e non certifica la prestazione pratica, che il formatore osserva separatamente."
+    },
+    {
+      "id": "s101-example-route",
+      "speakerId": "A",
+      "title": "Una scorciatoia vicino al trattore",
+      "lead": "Sul percorso più breve ci sono una buca e un irrigatore. Un trattore fa retromarcia. Un compagno dice: «Abbiamo scarpe robuste e telefono, andiamo». Cambia qualcosa?",
+      "example": "Le scarpe riducono alcuni rischi, ma non rimuovono buca, irrigatore o macchina in movimento.",
+      "takeaway": "Prima rendi sicuri percorso e lavoro. L'attrezzatura da sola non autorizza a procedere.",
+      "labels": [
+        "Controlla il percorso",
+        "Resta lontano dalle macchine",
+        "Verifica i sottoservizi"
+      ],
+      "narration": "Sul percorso più breve ci sono una buca e un irrigatore. Un trattore fa retromarcia. Un compagno dice: «Abbiamo scarpe robuste e telefono, andiamo». Cambia qualcosa?\n\nLe scarpe riducono alcuni rischi, ma non rimuovono buca, irrigatore o macchina in movimento.\n\nLa squadra resta fuori dalla zona operativa, segnala gli ostacoli e aspetta un percorso sicuro concordato con il formatore.\n\nConferma punto di prelievo, sottoservizi, rientro e comunicazioni prima di trasportare gli attrezzi con le punte in basso e lontano dagli altri.\n\nPrima rendi sicuri percorso e lavoro. L'attrezzatura da sola non autorizza a procedere.",
+      "caption": "Sul percorso più breve ci sono una buca e un irrigatore. Un trattore fa retromarcia. Un compagno dice: «Abbiamo scarpe robuste e telefono, andiamo». Cambia qualcosa?\n\nLe scarpe riducono alcuni rischi, ma non rimuovono buca, irrigatore o macchina in movimento.\n\nLa squadra resta fuori dalla zona operativa, segnala gli ostacoli e aspetta un percorso sicuro concordato con il formatore.\n\nConferma punto di prelievo, sottoservizi, rientro e comunicazioni prima di trasportare gli attrezzi con le punte in basso e lontano dagli altri.\n\nPrima rendi sicuri percorso e lavoro. L'attrezzatura da sola non autorizza a procedere."
+    },
+    {
+      "id": "s101-example-gloves",
+      "speakerId": "B",
+      "title": "Due paia di guanti sul banco",
+      "lead": "Per un reagente liquido sono disponibili guanti di tessuto e di nitrile, ma mancano SDS aggiornata e informazioni di compatibilità.",
+      "example": "Il tessuto può assorbire lo sversamento e trattenerlo contro la mano.",
+      "takeaway": "La decisione giusta può essere fermarsi per ottenere informazioni, non scegliere l'oggetto che sembra più resistente.",
+      "labels": [
+        "Verifica la compatibilità",
+        "Usa attrezzature integre",
+        "Visibilità ≠ separazione"
+      ],
+      "narration": "Per un reagente liquido sono disponibili guanti di tessuto e di nitrile, ma mancano SDS aggiornata e informazioni di compatibilità.\n\nIl tessuto può assorbire lo sversamento e trattenerlo contro la mano.\n\nIl nitrile è un materiale possibile, ma il nome non prova la compatibilità con quel reagente.\n\nInterrompi la manipolazione e chiedi SDS, informazioni sui guanti e istruzioni. Controlla anche le altre protezioni, compresi gli occhi.\n\nLa decisione giusta può essere fermarsi per ottenere informazioni, non scegliere l'oggetto che sembra più resistente.",
+      "caption": "Per un reagente liquido sono disponibili guanti di tessuto e di nitrile, ma mancano SDS aggiornata e informazioni di compatibilità.\n\nIl tessuto può assorbire lo sversamento e trattenerlo contro la mano.\n\nIl nitrile è un materiale possibile, ma il nome non prova la compatibilità con quel reagente.\n\nInterrompi la manipolazione e chiedi SDS, informazioni sui guanti e istruzioni. Controlla anche le altre protezioni, compresi gli occhi.\n\nLa decisione giusta può essere fermarsi per ottenere informazioni, non scegliere l'oggetto che sembra più resistente."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Qual è una regola fondamentale prima del lavoro in campo?",
+      "options": [
+        "Lavorare il più velocemente possibile.",
+        "Usare il telefono solo nelle pause, qualunque sia l'attività.",
+        "Comunicare posizione e orario previsto di rientro.",
+        "Azionare una macchina se sembra semplice."
+      ],
+      "answer": 2,
+      "feedback": "Posizione e rientro rendono utile il piano di contatto. Velocità e semplicità apparente non provano la sicurezza."
+    },
+    {
+      "id": "q2",
+      "question": "Con rischio di urto ai piedi, quale opzione è adatta quando indicata dal formatore?",
+      "options": [
+        "Scarpe da corsa.",
+        "Calzature robuste con puntali protettivi adeguati, per esempio in acciaio.",
+        "Sandali aperti.",
+        "Qualsiasi stivale di gomma, senza verificarne la protezione."
+      ],
+      "answer": 1,
+      "feedback": "La calzatura deve corrispondere al pericolo. Nome o materiale da soli non bastano."
+    },
+    {
+      "id": "q3",
+      "question": "Come scegli i guanti per un pesticida liquido?",
+      "options": [
+        "Qualsiasi guanto di cuoio.",
+        "Qualsiasi guanto di cotone.",
+        "Guanti resistenti verificati compatibili, per esempio nitrile adatto se indicato.",
+        "Nessun guanto se fai attenzione."
+      ],
+      "answer": 2,
+      "feedback": "Controlla il prodotto specifico. Il nitrile è un esempio, non una garanzia universale; tessuto e cuoio possono assorbire liquidi."
+    },
+    {
+      "id": "q4",
+      "question": "Con terreno potenzialmente contaminato o reagenti, cosa protegge specificamente le mani se scelto per il pericolo valutato?",
+      "options": [
+        "Calzature con puntale.",
+        "Guanti chimicamente resistenti adatti.",
+        "Casco.",
+        "Gilet ad alta visibilità."
+      ],
+      "answer": 1,
+      "feedback": "I guanti adatti proteggono le mani, ma non sostituiscono gli altri controlli o DPI necessari."
+    },
+    {
+      "id": "q5",
+      "question": "Dove trovi pericoli e misure di primo soccorso dettagliate per i reagenti del kit?",
+      "options": [
+        "Sullo scaffale.",
+        "Nella SDS aggiornata, chiamata anche MSDS nei documenti più vecchi.",
+        "Soltanto nel manuale generale dell'azienda.",
+        "Nella scala cromatica dei risultati."
+      ],
+      "answer": 1,
+      "feedback": "Usa le informazioni di sicurezza del reagente, non la tabella per interpretare i risultati."
+    }
+  ],
+  "glossary": [
+    [
+      "Pericolo",
+      "Qualcosa con il potenziale di causare danni."
+    ],
+    [
+      "DPI",
+      "Dispositivi di protezione individuale scelti per attività e pericolo reali."
+    ],
+    [
+      "SDS",
+      "Scheda di dati di sicurezza di una sostanza: pericoli, uso, protezioni ed emergenze."
+    ],
+    [
+      "Lavoro in coppia",
+      "Lavorare con un compagno secondo accordi di contatto e supporto."
+    ],
+    [
+      "Verifica dei sottoservizi",
+      "Conferma della sicurezza di uno specifico punto di lavoro rispetto alle reti interrate."
+    ]
+  ],
+  "checklist": [
+    "Conferma percorso, autorizzazione e sottoservizi; fermati in caso di incertezza.",
+    "Controlla integrità, pulizia e trasporto degli attrezzi; segnala manici allentati e difetti.",
+    "Adatta i DPI a mansione, etichetta e SDS; fermati se compatibilità o protezioni sono sconosciute.",
+    "Comunica posizione e rientro; concorda compagno, contatti e azioni se il collegamento manca.",
+    "Verifica accesso, ritrovo, contatti, acqua, ombra e pause; segnala subito pericoli o sintomi."
+  ],
+  "faq": [
+    {
+      "question": "So spiegare le regole di sicurezza e scegliere i DPI adatti?",
+      "answer": "È un’autovalutazione, non una certificazione di competenza."
+    }
+  ]
+}

@@ -98,6 +98,12 @@ def validate():
     structures = []
     for loc in LOCALES:
         data = content(loc)
+        if 'voices' in manifest['media']:
+            voices = manifest['media']['voices']
+            assert isinstance(voices, dict) and len(voices) == 2 and len(set(voices.values())) == 2, 'New pilot requires two distinct voices'
+            assert {s.get('speakerId') for s in data['scenes']} == set(voices), 'Every configured speaker must be used; no implicit voice fallback'
+            for scene in data['scenes']:
+                resolved_voice(scene, manifest['media'])
         assert data['locale'] == loc and data['lessonId'] == manifest['lessonId']
         assert data['dir'] == ('rtl' if loc == 'ar-EG' else 'ltr')
         assert [s['id'] for s in data['scenes']] == expected_ids
@@ -117,10 +123,21 @@ def validate():
     assert all(x == structures[0] for x in structures), 'Incomplete localization'
     return {'status': 'passed', 'locales': list(LOCALES), 'scenes': len(expected_ids)*len(LOCALES), 'questions': len(content(LOCALES[0])['quiz'])*len(LOCALES)}
 
+def resolved_voice(scene, media):
+    if 'voices' in media:
+        speaker = scene.get('speakerId')
+        assert speaker in media['voices'], 'Scene has no valid explicit speakerId'
+        voice = media['voices'][speaker]
+        assert isinstance(voice, str) and voice.strip(), 'Empty voice configuration'
+        return voice
+    assert 'speakerId' not in scene, 'Explicit speaker requires a voice map'
+    return media['voice']
+
+
 def audio_key(scene, locale, media):
     # Visual-only changes do not invalidate narration.
     return digest({'text': scene['narration'], 'locale': locale, 'style': STYLE[locale],
-                   'model': media['model'], 'voice': media['voice'], 'format': 'pcm-s16le-24000-mono-v1'})
+                   'model': media['model'], 'voice': resolved_voice(scene, media), 'format': 'pcm-s16le-24000-mono-v1'})
 
 def plan():
     validate()
@@ -172,7 +189,7 @@ def synthesize(scene, locale, media, key, path):
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{media["model"]}:generateContent'
     payload = {'contents': [{'parts': [{'text': STYLE[locale] + '\n\n' + scene['narration']}]}],
                'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {
-                   'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': media['voice']}}}}}
+                   'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': resolved_voice(scene, media)}}}}}
     for attempt in range(media['maxAttempts']):
         try:
             response = request_json(url, key, payload)
