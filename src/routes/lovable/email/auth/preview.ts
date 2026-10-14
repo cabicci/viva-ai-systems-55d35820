@@ -18,7 +18,7 @@ const EMAIL_TEMPLATES: Record<string, React.ElementType> = {
 };
 
 // Configuration
-const SITE_NAME = "Remix of AI Canvas";
+const SITE_NAME = "مسارات | Masaarat";
 const ROOT_DOMAIN = "masaarat.ai";
 
 // Sample data for preview mode ONLY (not used in actual email sending).
@@ -36,6 +36,7 @@ const SAMPLE_DATA: Record<string, object> = {
     locale: "ar-EG",
   },
   magiclink: {
+    locale: "ar-EG",
     siteName: SITE_NAME,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
@@ -45,11 +46,13 @@ const SAMPLE_DATA: Record<string, object> = {
     locale: "ar-EG",
   },
   invite: {
+    locale: "ar-EG",
     siteName: SITE_NAME,
     siteUrl: SAMPLE_PROJECT_URL,
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   email_change: {
+    locale: "ar-EG",
     siteName: SITE_NAME,
     oldEmail: SAMPLE_EMAIL,
     email: SAMPLE_EMAIL,
@@ -57,6 +60,7 @@ const SAMPLE_DATA: Record<string, object> = {
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   reauthentication: {
+    locale: "ar-EG",
     token: "123456",
   },
 };

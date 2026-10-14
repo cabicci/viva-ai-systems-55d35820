@@ -50,11 +50,7 @@ export const MasaaratShell = ({
         <Container dir={direction} style={{ ...container, ...flow }}>
           <Section dir={direction}>
             <Row>
-              <Column
-                dir={direction}
-                align={align}
-                style={{ ...header, ...flow }}
-              >
+              <Column dir={direction} align={align} style={{ ...header, ...flow }}>
                 <Img
                   src={LOGO_URL}
                   width="165"
@@ -68,11 +64,7 @@ export const MasaaratShell = ({
               </Column>
             </Row>
             <Row>
-              <Column
-                dir={direction}
-                align={align}
-                style={{ ...content, ...flow }}
-              >
+              <Column dir={direction} align={align} style={{ ...content, ...flow }}>
                 <Heading dir={direction} style={{ ...h1, ...flow }}>
                   {title}
                 </Heading>
@@ -88,14 +80,10 @@ export const MasaaratShell = ({
               </Column>
             </Row>
             <Row>
-              <Column
-                dir={direction}
-                align={align}
-                style={{ ...footerBar, ...flow }}
-              >
+              <Column dir={direction} align={align} style={{ ...footerBar, ...flow }}>
                 <Text dir={direction} style={{ ...footerText, ...flow }}>
                   {locale === "en" ? "Need help? " : "تحتاج مساعدة؟ "}
-                  <Link href={CONTACT_URL} style={footerLink}>
+                  <Link href={`${CONTACT_URL}?locale=${locale}`} style={footerLink}>
                     {locale === "en" ? "Contact Masaarat" : "تواصل مع مسارات"}
                   </Link>
                 </Text>
@@ -129,10 +117,7 @@ export const RecipientName = ({ name }: { name: string | null }) =>
   name ? (
     <>
       {" "}
-      <span
-        dir="auto"
-        style={{ display: "inline-block", unicodeBidi: "isolate" }}
-      >
+      <span dir="auto" style={{ display: "inline-block", unicodeBidi: "isolate" }}>
         {name}
       </span>
     </>

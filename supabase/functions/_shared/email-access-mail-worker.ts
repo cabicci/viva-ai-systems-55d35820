@@ -1,4 +1,4 @@
-import { emailAccessInvitationContent } from "./masaarat-mail.ts";
+import { emailAccessInvitationContent, mailLocale } from "./masaarat-mail.ts";
 import type { ResendResult, TransactionalEmail } from "./resend.ts";
 type Db = {
   rpc(name: string, args: Record<string, unknown>): PromiseLike<{ data: unknown; error: unknown }>;
@@ -16,6 +16,7 @@ export async function runEmailAccessMailJob(
   const rows = await rpc("claim", id ? { id } : {});
   if (!Array.isArray(rows)) throw new Error("email_access_mail_claim_failed");
   const stats = { accepted: 0, deferred: 0 };
+  const catalogues = new Map<string, Record<string, string>>();
   for (const row of rows as {
     id: string;
     claim_token: string;
@@ -28,11 +29,34 @@ export async function runEmailAccessMailJob(
       stats.deferred++;
       continue;
     }
+    const locale = mailLocale(row.payload.locale);
+    if (
+      row.payload.catalogues.some((key) => key.startsWith("academic:")) &&
+      !catalogues.has(locale)
+    ) {
+      const names: Record<string, string> = {};
+      try {
+        const response = await db.rpc("academic_catalogue", { p_locale: locale });
+        if (!response.error && Array.isArray(response.data)) {
+          for (const course of response.data) {
+            if (typeof course?.id === "string" && typeof course?.title === "string")
+              names["academic:" + course.id] = course.title;
+          }
+        }
+      } catch {
+        /* A metadata outage must not prevent the invitation; use a neutral label. */
+      }
+      catalogues.set(locale, names);
+    }
     let result: ResendResult;
     try {
       result = await send({
         to: row.recipient,
-        ...emailAccessInvitationContent({ ...row.payload, recipient_email: row.recipient }),
+        ...emailAccessInvitationContent({
+          ...row.payload,
+          recipient_email: row.recipient,
+          catalogue_titles: catalogues.get(locale),
+        }),
         idempotencyKey: "email-access/" + row.id,
       });
     } catch {

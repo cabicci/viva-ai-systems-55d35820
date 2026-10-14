@@ -77,25 +77,17 @@ describe("transactional account welcome", () => {
     expect(welcomeContent("خليل", "ar-Gulf").text).toContain("خليل");
     expect(welcomeContent("خليل", "unknown").html).toContain('lang="ar" dir="rtl"');
   });
-  it("explains the learning paths and approved plan boundaries in the selected language", () => {
-    const arabic = welcomeContent("خليل", "ar-MSA");
-    const mixedName = welcomeContent("khalil wahi", "ar-MSA");
-    expect(mixedName.html).toContain('<bdi dir="auto">khalil wahi</bdi>');
-    expect(mixedName.html).toContain("background:#fdfefe");
-    expect(mixedName.html).toContain('<table role="presentation" dir="rtl"');
-    expect(arabic.html).toContain("الدرس الأول من كل مسار");
-    expect(arabic.html).toContain("باستثناء مسار Builder (٧١ درسًا)");
-    expect(arabic.html).toContain("بما فيها مسار Builder");
-    expect(arabic.html).toContain("https://masaarat.ai/pricing");
-    expect(arabic.text).toContain("دروس ومهام عملية");
-    expect(arabic.html).toContain("https://masaarat.ai/dashboard");
-    const english = welcomeContent("Khalil", "en");
-    expect(english.html).toContain("Free: the introduction and first lesson of every path.");
-    expect(english.html).toContain("Pro Plus: all 100 lessons, including Builder.");
-    expect(subscriptionContent("pro", "activated", "Khalil", "en").html).not.toContain(
-      "Choose your plan",
-    );
-  });
+  it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
+    "keeps the %s welcome neutral and links to localized learning",
+    (locale) => {
+      const content = welcomeContent("Test", locale);
+      expect(content.html).toContain("/my-learning?locale=" + locale);
+      expect(content.html).toContain("/contact?locale=" + locale);
+      expect(content.text).not.toMatch(/Pro|Builder|71|100|٧١|١٠٠|pricing|Kids/);
+      expect(content.html).not.toContain("Choose your plan");
+      expect(content.html).toContain("background:#fdfefe");
+    },
+  );
   it("keeps the subscription notice distinct from a payment receipt", () => {
     expect(subscriptionContent("pro_plus", "renewed", "Khalil", "en").text).toContain(
       "not a payment receipt",
