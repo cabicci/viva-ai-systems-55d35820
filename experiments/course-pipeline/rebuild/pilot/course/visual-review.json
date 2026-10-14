@@ -1,0 +1,15 @@
+{
+  "reviewer": "assistant visual inspection of actual generated pixels",
+  "assets": {
+    "s101-contact": {
+      "rejectedSha256": ["8b52f99a308092a84d897fe25f5bcb7a2e59e02876c773c1b529de13abf5104c"],
+      "reason": "Replace the household broadcast receiver with a clearly recognizable handheld two-way walkie-talkie: upright narrow body, short antenna, speaker grille and side push-to-talk button. Keep the smartphone, paired work kits and access route. No broadcast receiver, tuning dial, writing or screen digits.",
+      "criterion": "The communication equipment includes a recognizable two-way handheld walkie-talkie and smartphone, not a household broadcast radio receiver."
+    },
+    "s101-checks": {
+      "rejectedSha256": ["2580e6c3bf258bed55b9a5227c2f78eccf31d2e360800709978e81d0c41c5074"],
+      "reason": "Replace the household broadcast receiver in the communication group with a clearly recognizable handheld two-way walkie-talkie: upright narrow body, short antenna, speaker grille and side push-to-talk button. Preserve all five preparation groups. No broadcast receiver, tuning dial, writing or screen digits.",
+      "criterion": "The communication group uses a recognizable handheld two-way walkie-talkie, not a household broadcast radio receiver."
+    }
+  }
+}

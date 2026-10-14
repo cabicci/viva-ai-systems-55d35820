@@ -16,7 +16,7 @@ p.LOCALES=tuple(p.read(HERE/'course/manifest.json')['locales'])
 
 def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def fingerprint():
- paths=[Path(__file__),ENGINE/'generate_visuals.py',ENGINE/'visual_quality.py',HERE/'course/audio-contract.json',HERE/'course/authoring-review.json',p.REPO/'.github/workflows/soil-rebuild-s1-01-media.yml']
+ paths=[Path(__file__),ENGINE/'generate_visuals.py',ENGINE/'visual_quality.py',HERE/'course/audio-contract.json',HERE/'course/authoring-review.json',HERE/'course/visual-review.json',p.REPO/'.github/workflows/soil-rebuild-s1-01-media.yml']
  return {'package':p.snapshot(),'additional':{str(x.relative_to(p.REPO)).replace('\\','/'):sha(x) for x in paths}}
 
 def validate():
@@ -66,15 +66,27 @@ def key_for(models):
   assert 'generateContent' in status.get('supportedGenerationMethods',[]), 'Required model unavailable: '+model
  return key
 
+def apply_visual_review(state,feedback):
+ """Reject exact reviewed pixels without resetting the existing repair budget."""
+ if not feedback:return
+ entry=state.get('accepted')
+ if entry and entry['sha256'] in feedback['rejectedSha256']:
+  state.setdefault('manualRejections',[]).append({'entry':entry,'reason':feedback['reason']})
+  del state['accepted']
+
 def images():
  authorize()
  plan=p.read(HERE/'course/visuals.json'); contract=p.read(HERE/'course/visual-contract.json')
+ review=p.read(HERE/'course/visual-review.json')
  key=key_for([plan['model'],contract['reviewModel']]); dest=p.OUT/'visuals'; dest.mkdir(parents=True,exist_ok=True)
- receipt={'provider':'gemini','model':plan['model'],'planHash':p.digest(plan),'qualityContractHash':p.digest(contract),'generated':False,'qualityPassed':False,'ownerAccepted':False,'assets':[],'failures':[]}
+ receipt={'provider':'gemini','model':plan['model'],'planHash':p.digest(plan),'qualityContractHash':p.digest(contract),'visualReviewHash':p.digest(review),'generated':False,'qualityPassed':False,'ownerAccepted':False,'assets':[],'failures':[]}
  for asset in plan['assets']:
   job_key=p.digest({'asset':g.asset_key(plan,asset),'contract':contract})
   state_path=dest/'attempts'/f'{job_key}.json'
   state=p.read(state_path) if state_path.exists() else {'attempts':[]}
+  feedback=review['assets'].get(asset['id'])
+  apply_visual_review(state,feedback)
+  p.write(state_path,state)
   entry=state.get('accepted')
   if entry and (dest/entry['filename']).exists() and sha(dest/entry['filename'])==entry['sha256']:
    receipt['assets'].append(entry);p.write(dest/'receipt.json',receipt);continue
@@ -84,11 +96,15 @@ def images():
   while len(state['attempts'])<=contract['maxRepairsPerAsset']:
    attempt=len(state['attempts'])
    record={'attempt':attempt,'status':'started'};state['attempts'].append(record);p.write(state_path,state)
-   modified={**asset,'subject':asset['subject']+(('\nCorrect these visible defects without changing the scientific meaning: '+json.dumps(reasons)) if reasons else '')}
+   corrections=([feedback['reason']] if feedback else [])+reasons
+   modified={**asset,'subject':asset['subject']+(('\nCorrect these visible defects without changing the scientific meaning: '+json.dumps(corrections)) if corrections else '')}
    try:
     entry=g.generate(plan,modified,key,dest)
     # Every generation remains in its content-addressed cache, even after rejection.
-    quality=v.check(asset,dest/entry['filename'],contract,key)
+    check_contract=contract
+    if feedback:
+     check_contract={**contract,'assets':{**contract['assets'],asset['id']:contract['assets'][asset['id']]+[{'id':asset['id']+'-manual','criterion':feedback['criterion']}]}}
+    quality=v.check(asset,dest/entry['filename'],check_contract,key)
     entry.update({'role':asset['role'],'automatedQuality':quality,'repairCount':attempt})
     record.update({'status':'reviewed','entry':entry})
     reasons=[c['reason'] for c in quality['checks'] if not c['pass']]
@@ -165,6 +181,10 @@ def audio(locale):
 def render(locale):
  request=authorize();review=p.read(p.OUT/locale/'audio-review.json')
  assert review['allPassed']
+ image_review=p.read(HERE/'course/visual-review.json');images_receipt=p.read(p.OUT/'visuals/receipt.json')
+ assert images_receipt.get('visualReviewHash')==p.digest(image_review), 'Visual review was not applied'
+ for asset in images_receipt['assets']:
+  assert asset['sha256'] not in image_review['assets'].get(asset['id'],{}).get('rejectedSha256',[]), 'Rejected image cannot be rendered'
  # Produce cannot silently repair/recreate speech in a later rendering stage.
  for scene in p.content(locale)['scenes']:
   key=p.audio_key(scene,locale,p.read(HERE/'course/manifest.json')['media'])

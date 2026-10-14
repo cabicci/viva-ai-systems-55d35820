@@ -5,6 +5,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import media_pipeline as m
 
 class MediaTests(unittest.TestCase):
+ def test_visual_rejection_preserves_budget_and_unaffected_assets(self):
+  entry={'sha256':'bad'};state={'accepted':entry,'attempts':[{'attempt':0},{'attempt':1}]}
+  feedback={'rejectedSha256':['bad'],'reason':'wrong radio'}
+  m.apply_visual_review(state,feedback)
+  self.assertNotIn('accepted',state);self.assertEqual(len(state['attempts']),2)
+  self.assertEqual(state['manualRejections'][0]['entry'],entry)
+  m.apply_visual_review(state,feedback)
+  self.assertEqual(len(state['manualRejections']),1)
+  good={'accepted':{'sha256':'good'},'attempts':[{'attempt':0}]}
+  m.apply_visual_review(good,feedback)
+  self.assertIn('accepted',good)
  def test_source_complete_and_bounded(self):
   self.assertEqual(m.validate()['scenes'],40)
  def test_dropping_a_source_sentence_is_rejected(self):

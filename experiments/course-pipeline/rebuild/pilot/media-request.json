@@ -1,5 +1,5 @@
 {
-  "batchId": "s101-four-language-pilot-20261014-v2",
+  "batchId": "s101-four-language-pilot-20261014-v3-visual-repair",
   "lessonId": "SOIL-REBUILD-S1-01",
   "locales": [
     "ar-EG",
@@ -21,11 +21,12 @@
       "engine": "faa463232866379398fc0d777915b2c2a3d1de59bbb4556e2cbb8e85e544b90c"
     },
     "additional": {
-      "experiments/course-pipeline/rebuild/pilot/media_pipeline.py": "350acefb95c0b5cdaaba70b68e952c969fccb39d4f38c2a27eda4e3434fe8ac0",
+      "experiments/course-pipeline/rebuild/pilot/media_pipeline.py": "ad92f698c7df0fb48a948f39407a44e3fc193012aaa34d6099ca83391602a57d",
       "experiments/course-pipeline/generate_visuals.py": "21ff0d555adb3ef851ad75abd02cc0c0accc177886ac382e215dbf66ad065006",
       "experiments/course-pipeline/visual_quality.py": "14420aa13456ef762855ed1e9e6e1b8f169efdab1764d17aa8eb10d01b6fe604",
       "experiments/course-pipeline/rebuild/pilot/course/audio-contract.json": "522dc835453a654b1d0f7a7e48d30f5eeef3cfbc4f984ff0a37e978d5a4e192b",
       "experiments/course-pipeline/rebuild/pilot/course/authoring-review.json": "06fac3957c175073c1705ec69432986219eb5614c78312b1f862716a9023e5db",
+      "experiments/course-pipeline/rebuild/pilot/course/visual-review.json": "652a3b9cbedbc7b507d514b1a86d9cca2aa1e46f38e09acb2ef7974adbdf2a35",
       ".github/workflows/soil-rebuild-s1-01-media.yml": "5c994528226a6d73586a93992b7201a5b6d942a5058bc8c60847ba60d2fc4477"
     }
   }
