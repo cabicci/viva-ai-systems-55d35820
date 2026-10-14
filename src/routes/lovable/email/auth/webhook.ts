@@ -8,6 +8,7 @@ import { MagicLinkEmail } from "@/lib/email-templates/magic-link";
 import { RecoveryEmail } from "@/lib/email-templates/recovery";
 import { recoveryCopy } from "@/lib/email-templates/recovery-copy";
 import { EmailChangeEmail } from "@/lib/email-templates/email-change";
+import { accountActionCopy } from "@/lib/email-templates/account-action-copy";
 import { ReauthenticationEmail } from "@/lib/email-templates/reauthentication";
 
 // Configuration
@@ -58,22 +59,28 @@ export const Route = createFileRoute("/lovable/email/auth/webhook")({
                 }),
               };
             },
-            invite: {
-              subject: "دعوتك إلى مسارات | Your Masaarat invite",
-              render: (data) =>
-                React.createElement(InviteEmail, {
+            invite: async (data) => {
+              const profile = await resolveRecipientProfile(data.email);
+              return {
+                subject: accountActionCopy("invite", profile.locale).subject,
+                element: React.createElement(InviteEmail, {
                   siteName: SITE_NAME,
                   siteUrl: SITE_URL,
                   confirmationUrl: data.url,
+                  ...profile,
                 }),
+              };
             },
-            magiclink: {
-              subject: "رابط تسجيل الدخول | Your login link",
-              render: (data) =>
-                React.createElement(MagicLinkEmail, {
+            magiclink: async (data) => {
+              const profile = await resolveRecipientProfile(data.email);
+              return {
+                subject: accountActionCopy("magiclink", profile.locale).subject,
+                element: React.createElement(MagicLinkEmail, {
                   siteName: SITE_NAME,
                   confirmationUrl: data.url,
+                  ...profile,
                 }),
+              };
             },
             recovery: async (data) => {
               const profile = await resolveRecipientProfile(data.email);
@@ -87,21 +94,29 @@ export const Route = createFileRoute("/lovable/email/auth/webhook")({
                 }),
               };
             },
-            email_change: {
-              subject: "تأكيد بريدك الجديد | Confirm your new email",
-              render: (data) =>
-                React.createElement(EmailChangeEmail, {
+            email_change: async (data) => {
+              const profile = await resolveRecipientProfile(data.email);
+              return {
+                subject: accountActionCopy("email_change", profile.locale).subject,
+                element: React.createElement(EmailChangeEmail, {
                   siteName: SITE_NAME,
                   oldEmail: data.old_email ?? "",
                   email: data.email,
                   newEmail: data.new_email ?? "",
                   confirmationUrl: data.url,
+                  ...profile,
                 }),
+              };
             },
-            reauthentication: {
-              subject: "رمز التحقق | Your verification code",
-              render: (data) =>
-                React.createElement(ReauthenticationEmail, { token: data.token ?? "" }),
+            reauthentication: async (data) => {
+              const profile = await resolveRecipientProfile(data.email);
+              return {
+                subject: accountActionCopy("reauthentication", profile.locale).subject,
+                element: React.createElement(ReauthenticationEmail, {
+                  token: data.token ?? "",
+                  ...profile,
+                }),
+              };
             },
           },
         });

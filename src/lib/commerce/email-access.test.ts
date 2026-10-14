@@ -59,7 +59,7 @@ describe("email access contracts and isolated invitation delivery", () => {
       });
       expect(content.html).toContain(`https://masaarat.ai/signup?locale=${locale}`);
       expect(content.html).toContain(locale === "en" ? 'dir="ltr"' : 'dir="rtl"');
-      expect(content.html).toContain("Kids");
+      expect(content.html).toContain(locale === "en" ? "Kids" : "الأطفال");
       const permanent = emailAccessInvitationContent({
         locale,
         scope_mode: "selected",
@@ -67,7 +67,8 @@ describe("email access contracts and isolated invitation delivery", () => {
         duration_days: null,
       });
       expect(permanent.html).not.toContain("<script>");
-      expect(permanent.html).toContain("&lt;script&gt;");
+      expect(permanent.html).not.toContain("&lt;script&gt;");
+      expect(permanent.html).not.toContain("Kids");
     },
   );
   it("targets only a stored opt-in invitation and persists delivery outcome with stable provider key", async () => {

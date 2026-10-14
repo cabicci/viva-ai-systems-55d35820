@@ -40,6 +40,20 @@ Deno.serve(async (request) => {
   if (!url || !key) return new Response(null, { status: 503 });
   try {
     const db = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
+    const loadAcademicTitles = async (ids: string[], locale: string) => {
+      const response = await db
+        .from("academic_courses")
+        .select("id,titles")
+        .in("id", ids)
+        .eq("enabled", true);
+      if (response.error) throw new Error("academic_mail_titles_unavailable");
+      const titles: Record<string, string> = {};
+      for (const course of response.data ?? []) {
+        if (typeof course.id === "string" && typeof course.titles?.[locale] === "string")
+          titles["academic:" + course.id] = course.titles[locale];
+      }
+      return titles;
+    };
     const send = (message: Parameters<typeof sendTransactionalEmail>[1]) => {
       if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
       return sendTransactionalEmail(
@@ -53,7 +67,9 @@ Deno.serve(async (request) => {
       const active =
         immediate.stream === "welcome"
           ? welcomeEnabled
-          : immediate.stream === "commerce" || immediate.stream === "commerce_receipt" || immediate.stream === "email_access"
+          : immediate.stream === "commerce" ||
+              immediate.stream === "commerce_receipt" ||
+              immediate.stream === "email_access"
             ? subscriptionEnabled
             : contactEnabled;
       if (!active) return Response.json({ enabled: false });
@@ -63,22 +79,24 @@ Deno.serve(async (request) => {
         immediate.stream === "welcome"
           ? await runWelcomeJob(db, send, immediate.id)
           : immediate.stream === "email_access"
-            ? await runEmailAccessMailJob(db, send, immediate.id)
-          : immediate.stream === "commerce"
-            ? await runCommercePaymentMailJob(db, send, immediate.id)
-            : immediate.stream === "commerce_receipt"
-              ? await runCommercePaymentMailJob(db, send, undefined, immediate.id)
-              : await runContactMailJob(
-                  db,
-                  (message, sender) =>
-                    sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
-                  immediate.id,
-                );
+            ? await runEmailAccessMailJob(db, send, immediate.id, loadAcademicTitles)
+            : immediate.stream === "commerce"
+              ? await runCommercePaymentMailJob(db, send, immediate.id)
+              : immediate.stream === "commerce_receipt"
+                ? await runCommercePaymentMailJob(db, send, undefined, immediate.id)
+                : await runContactMailJob(
+                    db,
+                    (message, sender) =>
+                      sendTransactionalEmail({ apiKey, ...sender, enabled: true }, message),
+                    immediate.id,
+                  );
       return Response.json({ [immediate.stream]: stats });
     }
     const result = await runMailStreams({
       commerce: subscriptionEnabled ? () => runCommercePaymentMailJob(db, send) : null,
-      email_access: subscriptionEnabled ? () => runEmailAccessMailJob(db, send) : null,
+      email_access: subscriptionEnabled
+        ? () => runEmailAccessMailJob(db, send, undefined, loadAcademicTitles)
+        : null,
       welcome: welcomeEnabled
         ? () => {
             if (!apiKey || !from) throw new Error("mail_sender_unconfigured");
@@ -124,4 +142,3 @@ Deno.serve(async (request) => {
     return Response.json({ error: "welcome_job_failed" }, { status: 503 });
   }
 });
-
