@@ -23,5 +23,5 @@ export function LessonIllustration({id,p,available}:{id:string;p:any;available:s
  const name=id==='site'?'s101-lesson-route':id==='chemical'?'s101-lesson-gloves':null;
  if(!name||!available.includes(name))return null;
  const ex=p.examples[id==='site'?0:1];
- return <figure className="lesson-illustration"><img src={`./media/illustrations/${name}.png`} alt={`${ex.title}. ${ex.situation}`} loading="lazy"/><figcaption>{ex.takeaway}</figcaption></figure>;
+ return <figure className="lesson-illustration"><img src={`./media/illustrations/${name}.png`} alt={p.illustrations[name].alt} loading="lazy"/><figcaption>{ex.takeaway}</figcaption></figure>;
 }
