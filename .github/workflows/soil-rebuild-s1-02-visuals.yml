@@ -1,5 +1,8 @@
 name: Soil rebuild S1-02 bounded draft visuals
 on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/s102-visuals/request.json]
   workflow_dispatch:
     inputs:
       request_sha256:
@@ -28,7 +31,12 @@ jobs:
       - name: Verify the exact bounded S1-02 visual request
         env:
           REQUEST_SHA: ${{ inputs.request_sha256 }}
-        run: python "$PACKAGE/produce.py" validate --request-sha "$REQUEST_SHA"
+        run: |
+          if [ -n "$REQUEST_SHA" ]; then
+            python "$PACKAGE/produce.py" validate --request-sha "$REQUEST_SHA"
+          else
+            python "$PACKAGE/produce.py" validate
+          fi
       - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
         with:
           path: experiments/course-pipeline/rebuild/s102-visuals/output
@@ -41,7 +49,12 @@ jobs:
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
-        run: python "$PACKAGE/produce.py" produce --request-sha "$REQUEST_SHA"
+        run: |
+          if [ -n "$REQUEST_SHA" ]; then
+            python "$PACKAGE/produce.py" produce --request-sha "$REQUEST_SHA"
+          else
+            python "$PACKAGE/produce.py" produce
+          fi
       - uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
         if: always()
         with:
