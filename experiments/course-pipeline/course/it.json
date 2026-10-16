@@ -1,0 +1,289 @@
+{
+  "name": "Italiano",
+  "title": "Un piccolo campione. Una decisione fondata.",
+  "subtitle": "Prelevare un campione rappresentativo di terreno",
+  "eyebrow": "SUOLO E COLTURE · COMPETENZE PRATICHE",
+  "goal": "Pianificare e raccogliere un campione composito tracciabile da una sola zona, seguendo il protocollo del laboratorio.",
+  "ui": {
+    "learn": "Impara",
+    "practice": "Pianifica in campo",
+    "check": "Verifica",
+    "field": "Con il formatore",
+    "assistant": "Guida alla lezione",
+    "glossary": "Termini chiave",
+    "watch": "Guarda la lezione",
+    "listen": "Ascolta",
+    "read": "Leggi la spiegazione",
+    "next": "Avanti",
+    "prev": "Indietro",
+    "step": "Parte",
+    "of": "di",
+    "begin": "Inizia",
+    "minutes": "12–18 min + pratica supervisionata",
+    "review": "Versione pilota da valutare",
+    "protocol": "Consegna dell’esercitazione",
+    "protocolText": "Richiesta di laboratorio simulata: zona A, analisi ordinaria della fertilità, 15 sottocampioni da 0–20 cm, volumi comparabili, miscelazione accurata. Quantità, confezionamento e trasporto seguono le indicazioni del laboratorio ricevente. Questi numeri valgono solo per questa esercitazione.",
+    "mapTitle": "Da dove inizieresti?",
+    "mapText": "Scegli quattro punti iniziali distribuiti nella zona A. È un esercizio di pianificazione: il protocollo richiede comunque 15 sottocampioni. Escludi dal campione ordinario l’area bagnata e il vecchio cumulo di letame.",
+    "mapLabel": "Schema semplificato della zona A, divisa in quattro settori per la pianificazione",
+    "point": "Punto",
+    "wet": "Area bagnata",
+    "manure": "Vecchio letamaio",
+    "selected": "selezionati",
+    "reset": "Ricomincia",
+    "validate": "Controlla il piano",
+    "mapOk": "Buona copertura. I quattro punti iniziali coprono i quattro settori ed evitano le aree anomale. Prosegui fino a raccogliere tutti i 15 sottocampioni.",
+    "mapBad": "Scegli esattamente quattro punti, uno per settore. Evita le aree segnalate. Concentrarsi vicino all’ingresso lascia gran parte della zona senza rappresentazione.",
+    "quizIntro": "Rispondi, leggi la spiegazione e riprova se necessario. Questa verifica non certifica la competenza pratica.",
+    "correct": "Esatto.",
+    "retry": "Rivedi la spiegazione e riprova.",
+    "results": "risposte verificate",
+    "practicalIntro": "Lavora con il formatore in un’area consentita e sicura, seguendo le indicazioni effettive del laboratorio. Il formatore osserva il processo: una spunta qui non è una certificazione.",
+    "checklist": "Scheda di osservazione",
+    "notes": "Evidenze e osservazioni del formatore",
+    "notesHint": "Codice del campione, data, profondità osservata, numero di prelievi, deviazioni, riscontro del formatore… Non inventare osservazioni.",
+    "download": "Scarica il registro pratico",
+    "saved": "Salvato solo su questo dispositivo.",
+    "terms": "Un linguaggio comune",
+    "ask": "Fai una domanda sulla lezione",
+    "askHint": "Esempio: perché non mescolare l’area bagnata?",
+    "askButton": "Cerca una spiegazione",
+    "guideInfo": "Questa guida pilota recupera spiegazioni dalla lezione. Non è un consulente IA in tempo reale. Per condizioni nuove, consulta il formatore o il laboratorio.",
+    "noAnswer": "Non ho trovato una corrispondenza abbastanza sicura. Scegli un argomento qui sotto o chiedi al formatore. Non formulerò ipotesi.",
+    "sources": "Riferimenti didattici",
+    "revisit": "Domani: spiega perché un solo prelievo all’ingresso non basta. Ripeti la spiegazione dopo una settimana.",
+    "complete": "L’apprendimento prosegue in campo",
+    "videoPending": "Il video è in preparazione. Tutte le spiegazioni illustrate sono disponibili qui sotto.",
+    "captions": "Sottotitoli",
+    "record": "Registro pratico",
+    "notObserved": "Non ancora osservato",
+    "observed": "Osservato",
+    "needsPractice": "Da esercitare ancora",
+    "label": "Identità del campione",
+    "qLabel": "Domanda",
+    "finish": "Rivedi le risposte"
+  },
+  "scenes": [
+    {
+      "id": "purpose",
+      "title": "Perché conta un buon campione",
+      "lead": "Il laboratorio analizza ciò che gli invii. Un prelievo vicino all’ingresso può descrivere quel punto, non l’intera zona.",
+      "example": "Immagina un campo uniforme al centro e una fascia diversa vicino a un vecchio cumulo di letame. Mescolare tutto può nascondere differenze da indagare separatamente.",
+      "takeaway": "Il compito è rappresentare un’area definita, non scegliere il terreno più bello o più comodo da raggiungere.",
+      "labels": [
+        "Una zona",
+        "Più punti",
+        "Un campione tracciabile"
+      ],
+      "narration": "Il laboratorio analizza una piccola quantità di terreno. Il risultato è utile se il campione rappresenta l’area che intendi gestire. Un solo prelievo comodo, vicino all’ingresso, non basta. In questa lezione pianificherai i punti, manterrai una profondità coerente e conserverai l’identità del campione.",
+      "caption": "Il laboratorio analizza una piccola quantità di terreno. Il risultato è utile se il campione rappresenta l’area che intendi gestire. Un solo prelievo comodo, vicino all’ingresso, non basta. In questa lezione pianificherai i punti, manterrai una profondità coerente e conserverai l’identità del campione."
+    },
+    {
+      "id": "zones",
+      "title": "Definisci prima l’area",
+      "lead": "Raggruppa terreni con una storia di gestione simile e condizioni generalmente omogenee. Segna le differenze importanti prima di scegliere i punti.",
+      "example": "Una zona persistentemente bagnata o un vecchio letamaio può richiedere un’indagine separata. Non unirla senza spiegazioni al campione ordinario.",
+      "takeaway": "Segna l’area esclusa sulla mappa e concorda con il formatore come trattarla.",
+      "labels": [
+        "Confini chiari",
+        "Aree anomale visibili",
+        "Identità separate"
+      ],
+      "narration": "Parti dalla mappa del campo e definisci l’area che il campione deve rappresentare. Una gestione diversa o condizioni chiaramente differenti possono richiedere campioni separati. Non mescolare senza spiegazioni una zona bagnata o un vecchio letamaio con il resto. Segna queste aree e concorda il piano con il formatore.",
+      "caption": "Parti dalla mappa del campo e definisci l’area che il campione deve rappresentare. Una gestione diversa o condizioni chiaramente differenti possono richiedere campioni separati. Non mescolare senza spiegazioni una zona bagnata o un vecchio letamaio con il resto. Segna queste aree e concorda il piano con il formatore."
+    },
+    {
+      "id": "tools",
+      "title": "Attrezzi puliti, risultati più affidabili",
+      "lead": "Prepara una sonda da terreno o una vanga adatta, un secchio di plastica pulito, un contenitore approvato dal laboratorio, un pennarello e un registro.",
+      "example": "Residui di terra o fertilizzante sugli attrezzi possono influire sul campione successivo. Pulisci l’attrezzatura tra una zona e l’altra secondo il protocollo.",
+      "takeaway": "Usa calzature e protezioni indicate dal formatore. Fermati se l’accesso o l’uso degli attrezzi non è sicuro.",
+      "labels": [
+        "Controlla la pulizia",
+        "Prepara gli attrezzi",
+        "Verifica la sicurezza"
+      ],
+      "narration": "Prepara l’attrezzatura prima di entrare nell’area di prelievo. Servono una sonda o una vanga adatta, un secchio di plastica pulito, un contenitore, un pennarello e una scheda. Controlla i residui e pulisci gli attrezzi tra le zone. Il formatore verifica accesso, calzature e uso sicuro degli strumenti.",
+      "caption": "Prepara l’attrezzatura prima di entrare nell’area di prelievo. Servono una sonda o una vanga adatta, un secchio di plastica pulito, un contenitore, un pennarello e una scheda. Controlla i residui e pulisci gli attrezzi tra le zone. Il formatore verifica accesso, calzature e uso sicuro degli strumenti."
+    },
+    {
+      "id": "route",
+      "title": "Distribuisci i punti nella zona",
+      "lead": "Un percorso a zigzag può distribuire i sottocampioni in una zona abbastanza uniforme. Aiuta a pianificare, ma da solo non garantisce la rappresentatività.",
+      "example": "Non concentrare tutti i punti vicino all’ingresso. Verifica la copertura della zona e la gestione separata delle aree anomale.",
+      "takeaway": "La richiesta simulata prevede 15 sottocampioni. Altri scopi o laboratori possono richiedere un piano diverso.",
+      "labels": [
+        "Copri la zona",
+        "Evita la comodità come criterio",
+        "Rispetta il numero concordato"
+      ],
+      "narration": "Pianifica un percorso che copra la zona, invece di prelevare solo nei punti più facili. Uno zigzag può aiutarti a distribuire i prelievi. Nella nostra esercitazione raccoglierai quindici sottocampioni. È il numero previsto da questa consegna, non una regola universale. Nel lavoro reale segui le istruzioni del laboratorio.",
+      "caption": "Pianifica un percorso che copra la zona, invece di prelevare solo nei punti più facili. Uno zigzag può aiutarti a distribuire i prelievi. Nella nostra esercitazione raccoglierai quindici sottocampioni. È il numero previsto da questa consegna, non una regola universale. Nel lavoro reale segui le istruzioni del laboratorio."
+    },
+    {
+      "id": "depth",
+      "title": "Mantieni la profondità indicata",
+      "lead": "In questa esercitazione si preleva dalla superficie fino a 20 cm. Rimuovi i residui vegetali sciolti senza asportare il terreno da campionare.",
+      "example": "Con la sonda, o con una fetta abbastanza uniforme, preleva lungo tutta la profondità richiesta. Raccogli volumi comparabili in ogni punto.",
+      "takeaway": "La profondità dipende dall’analisi e dal sistema colturale. Verificala prima di iniziare.",
+      "labels": [
+        "0–20 cm in questa consegna",
+        "Volumi comparabili",
+        "Controlla ogni punto"
+      ],
+      "narration": "Controlla ora la profondità. La richiesta simulata indica da zero a venti centimetri. Rimuovi i residui superficiali sciolti e preleva lungo lo strato definito. Raccogli volumi comparabili: non unire una grande palata superficiale a un piccolo prelievo profondo. Analisi diverse possono richiedere profondità diverse; verifica sempre le istruzioni.",
+      "caption": "Controlla ora la profondità. La richiesta simulata indica da zero a venti centimetri. Rimuovi i residui superficiali sciolti e preleva lungo lo strato definito. Raccogli volumi comparabili: non unire una grande palata superficiale a un piccolo prelievo profondo. Analisi diverse possono richiedere profondità diverse; verifica sempre le istruzioni."
+    },
+    {
+      "id": "mix",
+      "title": "Prepara il campione composito",
+      "lead": "Unisci i sottocampioni della stessa zona nel secchio pulito e mescola accuratamente. Preleva dal terreno miscelato la porzione da inviare al laboratorio.",
+      "example": "Non inviare soltanto l’ultimo prelievo né una manciata da un angolo non mescolato: annulleresti la cura usata in campo.",
+      "takeaway": "Quantità, eventuale essiccazione, contenitore e trasporto dipendono dal laboratorio e dall’analisi.",
+      "labels": [
+        "Una sola zona",
+        "Mescola bene",
+        "Segui il laboratorio"
+      ],
+      "narration": "Dopo i prelievi, mescola accuratamente nel secchio pulito i sottocampioni della stessa zona. Preleva la porzione per il laboratorio dalla miscela, non dall’ultimo punto o da un angolo non mescolato. Controlla quantità, contenitore, essiccazione e trasporto. Non tutte le analisi richiedono lo stesso trattamento.",
+      "caption": "Dopo i prelievi, mescola accuratamente nel secchio pulito i sottocampioni della stessa zona. Preleva la porzione per il laboratorio dalla miscela, non dall’ultimo punto o da un angolo non mescolato. Controlla quantità, contenitore, essiccazione e trasporto. Non tutte le analisi richiedono lo stesso trattamento."
+    },
+    {
+      "id": "label",
+      "title": "Conserva l’identità del campione",
+      "lead": "Assegna un codice univoco e registra campo, zona, data, profondità, operatore e analisi richiesta. Verifica la corrispondenza fra contenitore e registro.",
+      "example": "Solo come esempio: A-01, zona A, 13 ottobre 2026, 0–20 cm, 15 sottocampioni, fertilità ordinaria. Nel lavoro reale registra le osservazioni effettive.",
+      "takeaway": "Anche un’analisi corretta, se associata al campo sbagliato, non sostiene una decisione affidabile.",
+      "labels": [
+        "Codice univoco",
+        "Etichetta e registro coerenti",
+        "Dati reali"
+      ],
+      "narration": "Etichetta il campione per evitare scambi. Registra codice, campo, zona, data effettiva, profondità, operatore e analisi richiesta. Controlla che contenitore e registro corrispondano. I valori dell’esempio sono simulati. Nel lavoro reale annota ciò che è avvenuto, comprese le deviazioni, senza inventare i dati mancanti.",
+      "caption": "Etichetta il campione per evitare scambi. Registra codice, campo, zona, data effettiva, profondità, operatore e analisi richiesta. Controlla che contenitore e registro corrispondano. I valori dell’esempio sono simulati. Nel lavoro reale annota ciò che è avvenuto, comprese le deviazioni, senza inventare i dati mancanti."
+    },
+    {
+      "id": "transfer",
+      "title": "Spiega, esercitati, migliora",
+      "lead": "Prima di lasciare il campo, spiega come percorso, profondità e trattamento rappresentano la zona concordata. Il formatore osserva l’intero processo.",
+      "example": "Se il piano non è applicabile, fermati e annota il motivo. Concorda una correzione prima dell’invio.",
+      "takeaway": "Domani spiega il metodo senza leggere. Dopo una settimana applicalo a un campo con zone diverse.",
+      "labels": [
+        "Motiva le scelte",
+        "Raccogli evidenze osservate",
+        "Riprendi il metodo"
+      ],
+      "narration": "Ora puoi esercitarti con il formatore. Spiega come il percorso copre la zona, come controlli la profondità e come conservi l’identità del campione. Se le condizioni impediscono di seguire il piano, fermati e concorda una correzione. Una risposta online non dimostra da sola la competenza pratica. Riprendi il metodo domani e applicalo poi a un campo diverso.",
+      "caption": "Ora puoi esercitarti con il formatore. Spiega come il percorso copre la zona, come controlli la profondità e come conservi l’identità del campione. Se le condizioni impediscono di seguire il piano, fermati e concorda una correzione. Una risposta online non dimostra da sola la competenza pratica. Riprendi il metodo domani e applicalo poi a un campo diverso."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "Q1",
+      "question": "Trovi un’area persistentemente bagnata nella zona A. Che cosa fai?",
+      "options": [
+        "La mescolo con tutto il resto.",
+        "La segno e concordo se campionarla separatamente.",
+        "Raccolgo tutti i sottocampioni lì."
+      ],
+      "answer": 1,
+      "explanation": "Il campione ordinario deve riferirsi a un’area definita. Un’area diversa può richiedere un’indagine separata; mescolarla può nascondere la differenza."
+    },
+    {
+      "id": "Q2",
+      "question": "A quale profondità si prelevano tutti i campioni reali?",
+      "options": [
+        "Sempre 20 cm.",
+        "Fino alla fine dell’attrezzo.",
+        "Alla profondità richiesta dall’analisi e dal laboratorio."
+      ],
+      "answer": 2,
+      "explanation": "0–20 cm vale per la nostra richiesta simulata. La profondità reale dipende dallo scopo e dalle istruzioni del laboratorio."
+    },
+    {
+      "id": "Q3",
+      "question": "Quale scelta mantiene valido il piano?",
+      "options": [
+        "Sottocampioni di volume comparabile, dalla stessa zona, ben mescolati.",
+        "Inviare solo l’ultimo prelievo.",
+        "Unire zone diverse per risparmiare un contenitore."
+      ],
+      "answer": 0,
+      "explanation": "Volumi comparabili e miscelazione aiutano la porzione inviata a rappresentare la zona prevista. Mantieni separate le identità."
+    },
+    {
+      "id": "Q4",
+      "question": "Manca la profondità nel registro. Che cosa fai?",
+      "options": [
+        "Scrivo 20 cm, come nell’esempio.",
+        "Segnalo il dato mancante e verifico con operatore o formatore.",
+        "Elimino la voce profondità."
+      ],
+      "answer": 1,
+      "explanation": "Il registro deve descrivere il lavoro reale. Un valore inventato compromette l’interpretazione."
+    }
+  ],
+  "glossary": [
+    [
+      "Sottocampione",
+      "Terreno raccolto in un singolo punto della zona concordata."
+    ],
+    [
+      "Campione composito",
+      "Miscela accurata di sottocampioni provenienti dalla stessa zona."
+    ],
+    [
+      "Zona di gestione",
+      "Area trattata come un’unità ai fini del campionamento."
+    ],
+    [
+      "Rappresentativo",
+      "Descrive l’area definita, senza scegliere solo i punti comodi."
+    ],
+    [
+      "Profondità di prelievo",
+      "Strato di terreno specificato dal protocollo."
+    ],
+    [
+      "Tracciabilità",
+      "Possibilità di collegare il campione a luogo, data e metodo effettivi."
+    ]
+  ],
+  "checklist": [
+    "Definisce la zona e segna le aree anomale.",
+    "Controlla pulizia e uso sicuro degli attrezzi.",
+    "Copre la zona con percorso e numero concordati.",
+    "Preleva volumi comparabili alla profondità indicata.",
+    "Miscela una sola zona e segue le indicazioni del laboratorio.",
+    "Abbina il contenitore etichettato a un registro accurato."
+  ],
+  "faq": [
+    [
+      "Perché non mescolare l’area bagnata?",
+      "zones"
+    ],
+    [
+      "La profondità è sempre 20 cm?",
+      "depth"
+    ],
+    [
+      "Perché mescolare i sottocampioni?",
+      "mix"
+    ],
+    [
+      "Che cosa scrivere sull’etichetta?",
+      "label"
+    ],
+    [
+      "Quali attrezzi servono?",
+      "tools"
+    ],
+    [
+      "Come scelgo il percorso?",
+      "route"
+    ]
+  ],
+  "locale": "it",
+  "dir": "ltr",
+  "lessonId": "SOIL-PILOT-01"
+}

@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": "reviewed",
+      "generation": "generated",
+      "quality": {
+        "transcript": "زميلك بيعرق بغزاره وعنده صداع وغثيان بعد شغل في الشمس. عربيه الشغل بعيده. هو واعي تماما ويقدر يبلع طبيعي. وقف الشغل وتعامل مع الحاله كاحتمال اجهاد حراري. استخدم اقرب ضل امن وما تخليهوش يكمل شغل او يمشي مسافه طويله للعربيه. بلغ المشرف بالمكان والاعراض ونظم تقييما طبيا. خلي حد يفضل معاه. فك اللبس الزياده وبرده بفوط مبلوله على الراس والرقبه وتحت الابط وبالتهويه. وقدم رشفات صغيره من ميه بارده طول ما هو واعي ويبلع بامان. لو تشوش او وقع او حالته ساءت اتصل بالاسعاف على 123 فورا وكمل تبريد. ما تستناش العرق يقف وما تديهوش شرب لو البلع مش امن. خليك متابع الحاله. العرق الغزير ممكن يستمر حتى لو الموقف اتحول لطوارئ.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and final words are audible and complete, with no cuts or repetitions."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "All numbers, negations, conditions, technical terms, and emergency actions are accurately preserved without adding any advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech uses natural Egyptian Arabic dialect, consistent with the specified locale."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, natural, and easily intelligible, with no clipping, garbling, abrupt endings, or prolonged silences."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The recording contains only the requested content, with no introduction, music, prompt response, or commentary."
+          }
+        ],
+        "passed": true,
+        "audioSha256": "6c77a679406e545bd291891b751b966d2cbe645439cb55f7771a228a7da3032e",
+        "qaKey": "0bad002daf0ef113a1ea2ad9dd90e2ab4f14e8baa19865adeb31b1eaef4ef00b",
+        "durationSeconds": 53.45095833333333,
+        "humanListeningReviewed": false,
+        "independentNativeReview": false
+      }
+    }
+  ],
+  "accepted": {
+    "transcript": "زميلك بيعرق بغزاره وعنده صداع وغثيان بعد شغل في الشمس. عربيه الشغل بعيده. هو واعي تماما ويقدر يبلع طبيعي. وقف الشغل وتعامل مع الحاله كاحتمال اجهاد حراري. استخدم اقرب ضل امن وما تخليهوش يكمل شغل او يمشي مسافه طويله للعربيه. بلغ المشرف بالمكان والاعراض ونظم تقييما طبيا. خلي حد يفضل معاه. فك اللبس الزياده وبرده بفوط مبلوله على الراس والرقبه وتحت الابط وبالتهويه. وقدم رشفات صغيره من ميه بارده طول ما هو واعي ويبلع بامان. لو تشوش او وقع او حالته ساءت اتصل بالاسعاف على 123 فورا وكمل تبريد. ما تستناش العرق يقف وما تديهوش شرب لو البلع مش امن. خليك متابع الحاله. العرق الغزير ممكن يستمر حتى لو الموقف اتحول لطوارئ.",
+    "checks": [
+      {
+        "id": "complete",
+        "pass": true,
+        "reason": "All sentences and final words are audible and complete, with no cuts or repetitions."
+      },
+      {
+        "id": "faithful",
+        "pass": true,
+        "reason": "All numbers, negations, conditions, technical terms, and emergency actions are accurately preserved without adding any advice."
+      },
+      {
+        "id": "locale",
+        "pass": true,
+        "reason": "The speech uses natural Egyptian Arabic dialect, consistent with the specified locale."
+      },
+      {
+        "id": "intelligible",
+        "pass": true,
+        "reason": "The speech is clear, natural, and easily intelligible, with no clipping, garbling, abrupt endings, or prolonged silences."
+      },
+      {
+        "id": "no-extra",
+        "pass": true,
+        "reason": "The recording contains only the requested content, with no introduction, music, prompt response, or commentary."
+      }
+    ],
+    "passed": true,
+    "audioSha256": "6c77a679406e545bd291891b751b966d2cbe645439cb55f7771a228a7da3032e",
+    "qaKey": "0bad002daf0ef113a1ea2ad9dd90e2ab4f14e8baa19865adeb31b1eaef4ef00b",
+    "durationSeconds": 53.45095833333333,
+    "humanListeningReviewed": false,
+    "independentNativeReview": false
+  }
+}

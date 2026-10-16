@@ -1,0 +1,13 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createDecipheriv,createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('./',import.meta.url));
+const sealed=JSON.parse(await readFile(root+'source.sealed.json','utf8'));
+const key=process.env.SOIL_COURSE_SOURCE_KEY;
+if(!key)throw Error('Private source credential unavailable');
+const d=createDecipheriv('aes-256-gcm',Buffer.from(key,'base64'),Buffer.from(sealed.iv,'base64'));
+d.setAuthTag(Buffer.from(sealed.tag,'base64'));
+const plain=Buffer.concat([d.update(Buffer.from(sealed.data,'base64')),d.final()]);
+if(createHash('sha256').update(plain).digest('hex')!==sealed.sha256)throw Error('Source integrity mismatch');
+await mkdir(root+'private',{recursive:true});await writeFile(root+'private/source.json',plain);
+console.log('Private source integrity verified.');

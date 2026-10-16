@@ -1,0 +1,29 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {"id": "pilot-style", "criterion": "Clearly sculpted compact 3D CARTOON educational diorama on warm off-white with believable metal, soil, wood and plastic material texture and generous margins; not a photoreal scene or flat drawing."},
+    {"id": "no-text-brand", "criterion": "No words, letters, numbers, arrows, logos, emblems, labels, watermark or pseudo-writing on any surface."},
+    {"id": "no-people-action", "criterion": "No human, hand, face, toy character or visible operation; the tools are separate stationary teaching props on a clean table."}
+  ],
+  "assets": {
+    "s1-04-tool-layout-still": [
+      {"id": "four-distinct-tools", "criterion": "A clearly hollow straight sampling push tube, separate spiral hand auger, flat spade and small hand trowel are all complete and visibly different; the probe is not a solid rod and the auger is not an undisturbed core tube."},
+      {"id": "sample-geometry", "criterion": "A narrow probe portion and separate thin even vertical spade slice are visible without implying a full shovel load or that ordinary augering preserves undisturbed soil structure."},
+      {"id": "clean-plastic-bucket", "criterion": "A clearly plastic clean empty mixing bucket is present and separate from the soil portions; there is no galvanized bucket or residue."},
+      {"id": "scientific-boundary", "criterion": "No tool is depicted contacting underground utilities, being forced into the field or as a universal instruction for every soil and laboratory method."}
+    ],
+    "s1-04-representation-still": [
+      {"id": "separate-zones", "criterion": "One yellow/stunted and one healthy area contain the same crop type and remain visibly separate, with no illustrated conclusion that a nutrient deficiency or fertilizer choice caused the contrast."},
+      {"id": "within-zone-portions", "criterion": "Several small soil portions are distributed within each defined zone and its separate bowl/bag; the two zones' samples are not mixed together."},
+      {"id": "one-point-limit", "criterion": "A single isolated convenient gate-side plug is visibly separate from the distributed within-zone portions, without implying a universal subsample count or depth."},
+      {"id": "still-composition", "criterion": "An overhead spatial model shows two zones and their sample relationships, rather than a field-level video frame or a photoreal scene."}
+    ],
+    "s1-04-contamination-still": [
+      {"id": "container-contrast", "criterion": "Clean empty plastic bucket on one side and a distinct galvanized metal bucket with plausible coating wear on the other side, without implying all metal tools are forbidden."},
+      {"id": "residue-routes", "criterion": "Old fertilizer granules near the metal bucket and soil in a different probe groove show plausible carryover paths; the clean station remains visibly uncontaminated."},
+      {"id": "between-area-separation", "criterion": "A separate clean new-area station or blank bag is present without contact with the worn bucket or dirty probe; no unsafe or unapproved chemical cleaning is depicted."},
+      {"id": "still-composition", "criterion": "Static controlled side-by-side comparison, unlike a sequential eye-level cleaning demonstration, with no text, arrows, logos or person."}
+    ]
+  }
+}

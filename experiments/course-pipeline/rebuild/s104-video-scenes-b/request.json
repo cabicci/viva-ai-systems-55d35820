@@ -1,0 +1,31 @@
+{
+  "action": "s104-video-prepare-targeted-repair-1",
+  "stepId": "S1-04",
+  "batchId": "s104-prepare-no-liquid-repair1-20261016",
+  "targetAssetIds": [
+    "s104-video-prepare"
+  ],
+  "priorPrepareSha256": "0255ae27a064a82a2cab2847f19d2849c7b48eb5dd2a11885b7f55299d2add87",
+  "repairCallNumber": 1,
+  "protectedAcceptedBHashes": {
+    "s104-video-structure": "01e65fa6b7850477047687b33c2de7330db3d1605276ea585cecba3b1182bed9",
+    "s104-video-contamination": "45f6bf3405b672efab551b682583ed49939ebd9ff548401699ec751497a8d893"
+  },
+  "protectedStillHashes": {
+    "s1-04-representation-still": "2a9c09f4d2c6df2620f411e9e2dc58ff745a15f3541475714e4404a5482292e0",
+    "s1-04-tool-layout-still": "c65f5ffcefecdeeff9ec1433c2e506b09817060c3c02906f5e75f237fdb62356",
+    "s1-04-contamination-still": "361e75b9439b2c91a489c1531b6cdcd4a0c2a11327388e7546fcb6b48ca86a0d"
+  },
+  "protectedVideoHashes": {
+    "s104-video-purpose": "e37f45f06201e397659e128e16826f5b271dbe6733562fd540b41f58a3550167",
+    "s104-video-representation": "3e8009cf3083530c05768fafa5a78a894a7bf899fffd42d3c81af293aee65490",
+    "s104-video-tools": "1aab06da6570acb44e41f1e434ca65682b4b2ac1b942e14ca3eb7a4c4edc1e29"
+  },
+  "priorRunId": 38838557775,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "c129803986c24bf20ec79f067fa344bd6e1225f0aba5005173301ceca58d6398",
+  "contractHash": "94f373ed7a9b8a20917ac576494ffced77cf7d213be6e951c061b3a63c4acebe",
+  "scriptHash": "f28a721ee762ea13808fc8d2664e1b175b63e6679eb9b8fd56a0775e55ecbbd9",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+}

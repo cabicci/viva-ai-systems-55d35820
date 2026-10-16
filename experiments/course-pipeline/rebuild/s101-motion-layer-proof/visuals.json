@@ -1,0 +1,18 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "style": "Premium educational 3D cartoon diorama with softly rounded geometry and credible physical materials: grainy soil, brushed metal, woven cloth, translucent glass and matte plastic. Clear natural daylight, soft self-shading with NO cast shadow onto the magenta backdrop, restrained natural greens and warm soil tones, solid pure saturated magenta (#FF00FF) chroma-key backdrop. Match one coherent family of 3D assets across images. Objects must be recognizable, correctly proportioned and spatially separated. Absolutely no people, faces, characters, writing, letters, numbers, logos, watermarks, fake text, tick marks or arrows. No flat vector icons. Leave breathing room. Entire relevant objects visible, wide 16:9 composition, no embedded labels; localized labels are added separately later.",
+  "assets": [
+    {
+      "id": "s101-ppe-motion-sprite",
+      "role": "video-motion-layer-source",
+      "scenes": [
+        "s101-ppe"
+      ],
+      "subject": "Use the attached approved PPE illustration as the exact style/material reference, but rebuild it as a SIX-CELL SPRITE SHEET for element-by-element animation. Three equal columns and two equal rows on one absolutely uniform, pure saturated magenta #FF00FF background. No visible grid, dividers, floor, plinth, scenery, soil tray, potted plant, cards, text, symbols or cast shadows. Every cell has generous magenta margins and one complete opaque object group, fully inside its own cell, with NO contact or overlap with any other cell. TOP LEFT: the same complete pair of brown ankle-high work boots, both entire soles visible. TOP CENTRE: the same folded long-sleeve green work shirt and tan trousers as ONE group. TOP RIGHT: the same complete broad-brim beige sun hat and its entire cord. BOTTOM LEFT: the same complete pair of beige woven gardening gloves, fingers and cuffs intact. BOTTOM CENTRE: the same separate sealed-rim chemical splash goggles with their complete strap, neutral transparent lenses, no magenta-tinted material; magenta visible through clear lens areas is only the background. BOTTOM RIGHT: the same open-sided safety spectacles with complete yellow temples and neutral transparent lenses. Keep the goggles and spectacles visually distinct. Match rounded cartoon-like geometry and credible leather, woven fabric, rubber and transparent plastic from the reference. No photoreal human, hands, face or mannequin. No logo. View each object at a matching elevated three-quarter angle and scale large enough to inspect. This is a visual asset sheet, not a claim that all this PPE is required for every task."
+    }
+  ]
+}
