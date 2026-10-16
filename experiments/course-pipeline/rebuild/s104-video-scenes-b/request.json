@@ -1,0 +1,27 @@
+{
+  "action": "s104-three-source-linked-video-scenes-b-initial",
+  "stepId": "S1-04",
+  "batchId": "s104-source-linked-video-b-20261016",
+  "targetAssetIds": [
+    "s104-video-structure",
+    "s104-video-contamination",
+    "s104-video-prepare"
+  ],
+  "protectedStillHashes": {
+    "s1-04-representation-still": "2a9c09f4d2c6df2620f411e9e2dc58ff745a15f3541475714e4404a5482292e0",
+    "s1-04-tool-layout-still": "c65f5ffcefecdeeff9ec1433c2e506b09817060c3c02906f5e75f237fdb62356",
+    "s1-04-contamination-still": "361e75b9439b2c91a489c1531b6cdcd4a0c2a11327388e7546fcb6b48ca86a0d"
+  },
+  "protectedVideoHashes": {
+    "s104-video-purpose": "e37f45f06201e397659e128e16826f5b271dbe6733562fd540b41f58a3550167",
+    "s104-video-representation": "3e8009cf3083530c05768fafa5a78a894a7bf899fffd42d3c81af293aee65490",
+    "s104-video-tools": "1aab06da6570acb44e41f1e434ca65682b4b2ac1b942e14ca3eb7a4c4edc1e29"
+  },
+  "priorRunId": 38836980647,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "255ac262218a8662fb243157f8b34a3351942c1fcc9c9432d00b9efd066c39ff",
+  "contractHash": "89830e15313438765344e1989ba55b79f0ca1c9f595c567f8fd750557651b6b5",
+  "scriptHash": "0ecd39e0a103478aef70f7a592a2536d0a57d37d82f0e0a825213900fdf41029",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+}

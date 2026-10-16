@@ -1,0 +1,24 @@
+{
+  "reviewModel":"gemini-2.5-flash","maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-cartoon","criterion":"Compact sculpted 3D cartoon educational miniature on warm off-white with plausible materials and blank margins, not photoreal broad scenes or toy faces."},
+    {"id":"no-text-brand","criterion":"No words, numerals, arrows, fake writing, labels, source school or Spark identity, logos, brands or watermarks in image pixels."},
+    {"id":"no-people-action","criterion":"No people, hands, presenter, face, character, active digging, chemical application or actual sample treatment."}
+  ],
+  "assets":{
+    "s104-video-structure":[
+      {"id":"physical-difference","criterion":"Purpose-designed sleeve holds a continuous relatively intact core, while separate ordinary spiral auger side produces visibly loose soil aggregates; no auger-preserved undisturbed core."},
+      {"id":"different-from-tools","criterion":"Macro paired sample cut faces/structure differs from the earlier four-tool working-end image and static overhead tool still."}
+    ],
+    "s104-video-contamination":[
+      {"id":"distinct-contact-paths","criterion":"Clean empty plastic bucket, separately worn zinc-coated bucket and a probe groove with tiny old-soil trace are physically apart, with no transfer or real contamination event; any fertilizer prop is untouched and distant."},
+      {"id":"no-metal-ban","criterion":"Image does not declare every metal sampling tool forbidden; it illustrates unsuitable worn coating and material/cleanliness checks."},
+      {"id":"different-from-still","criterion":"Close rim/groove contact-path emphasis is compositionally distinct from the accepted broad contamination still."}
+    ],
+    "s104-video-prepare":[
+      {"id":"inspection-not-treatment","criterion":"Clean bucket rim, old-soil probe groove, unsuitable damaged tool and separate untouched next-field station are clear; no active cleaning, invented solvent or transfer."},
+      {"id":"conditional-method","criterion":"No pictured material implies a universal cleaning recipe; actual lab method remains an external condition."},
+      {"id":"different-from-contamination","criterion":"Three-stage tabletop inspection-route composition differs from both static contamination still and prior close contact-path scene."}
+    ]
+  }
+}
