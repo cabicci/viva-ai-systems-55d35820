@@ -1,0 +1,56 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsAfterInitial": 3,
+  "automaticRepair": false,
+  "purpose": "Short silent procedure-style proof; not a completed S1-10 lesson or replacement for S1-01.",
+  "ownerDecision": "Owner rejected merely arranging PPE objects and requested assembly that explains a practical procedure.",
+  "source": {
+    "stepId": "S1-10",
+    "sourcePages": [
+      44,
+      45
+    ],
+    "sourceRecords": [
+      "TE-U1-T4-D012",
+      "TE-U1-T4-D013",
+      "QB-U1-T4-PROCESS-01"
+    ],
+    "review": "Private/soil-rebuild-20261014/authoring/S1-10/review.private.json",
+    "correction": "SRC-005; container and preservation follow receiving-laboratory method"
+  },
+  "criteria": [
+    {
+      "id": "six",
+      "criterion": "Exactly six whole isolated groups in the requested 3x2 order: empty/open bag, filled/open bag, same filled/sealed bag, loaded trowel, loose soil mound, blank label."
+    },
+    {
+      "id": "consistency",
+      "criterion": "The first three cells show the same ivory bag, identical proportions/projection/closure position; contents and closure are the only intended differences."
+    },
+    {
+      "id": "states",
+      "criterion": "Both open bag mouths and the third fully closed mouth are visibly distinct; soil remains inside filled bags."
+    },
+    {
+      "id": "key",
+      "criterion": "Pure saturated magenta background, no ground/grid/shadow; no translucent magenta bag tint, generous isolation margins."
+    },
+    {
+      "id": "tool",
+      "criterion": "Complete stainless steel trowel with green handle on right and loaded blade on left, no broken or clipped handle."
+    },
+    {
+      "id": "label",
+      "criterion": "Single plain cream blank rectangular label, without ink or generated lettering."
+    },
+    {
+      "id": "style",
+      "criterion": "Rounded cartoon 3D with credible soil, metal, matte bag materials, coherent reference style."
+    },
+    {
+      "id": "no-text-people",
+      "criterion": "No text, numbers, logo, watermark, icons, arrows, hands or people."
+    }
+  ],
+  "compositorGate": "Inspect actual states and motion continuity, transfer into the mouth, no tool/container intersection, closure before body label, six editable label groups and matching field record, no invented measured quantity/temperature. No audio or full-video acceptance from this proof."
+}
