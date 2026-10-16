@@ -14,7 +14,7 @@ def validate():
  assert [s['id'] for s in r['scenes']]==TARGETS and r['sixOtherArabicCellsProtected'] and r['otherLocalesProtected']
  for s in r['scenes']:
   assert s['caption']==s['narration'] and s['newAudioKey']==p.audio_key(s,'ar-EG',m) and s['newAudioKey']!=s['priorAudioKey']
-  prior=p.read(HERE/f'prior/{s["id"]}.json');assert sha(HERE/f'prior/{s["id"]}.json')==s['priorStateByteSha256'] and prior.get('accepted') and len(prior['attempts'])==s['priorAttemptCount']==1
+  prior=p.read(HERE/f'prior/{s["id"]}.json');assert p.digest(prior)==s['priorStateCanonicalSha256'] and prior.get('accepted') and len(prior['attempts'])==s['priorAttemptCount']==1
   assert 1+s['priorAttemptCount']<=4
  return dict(status='passed five same-meaning Arabic repair cells; one call each, cumulative2of4maximum')
 def authorize():
