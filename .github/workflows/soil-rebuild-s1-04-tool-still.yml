@@ -4,7 +4,11 @@ on:
     branches: [work/soil-course-pipeline-20261013]
     paths: [experiments/course-pipeline/rebuild/s104-visuals/request.json]
 permissions:
+  actions: read
   contents: read
+concurrency:
+  group: soil-rebuild-s104-tool-still-${{ github.ref }}-${{ hashFiles('experiments/course-pipeline/rebuild/s104-visuals/request.json') }}
+  cancel-in-progress: false
 jobs:
   tool-still:
     if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013'
@@ -20,7 +24,22 @@ jobs:
           python-version: '3.11'
       - run: python -m pip install Pillow==11.3.0
       - run: python "$PACKAGE/produce.py" validate
+      - name: Refuse a duplicate push run for the same request commit
+        id: dedupe
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          first_run=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" \
+            --jq '[.workflow_runs[] | select(.name == "Soil rebuild S1-04 bounded tool still") | .id] | min')
+          test -n "$first_run" && test "$first_run" != "null"
+          if [ "$GITHUB_RUN_ID" != "$first_run" ]; then
+            echo "Duplicate request run; no provider call. Earliest run: $first_run"
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Generate exactly one draft still and review its pixels automatically
+        if: steps.dedupe.outputs.should_run == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
@@ -28,7 +47,7 @@ jobs:
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
         run: python "$PACKAGE/produce.py" produce
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: always()
+        if: ${{ always() && steps.dedupe.outputs.should_run == 'true' }}
         with:
           name: s104-tool-still-draft
           retention-days: 30
