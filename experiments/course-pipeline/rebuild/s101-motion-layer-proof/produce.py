@@ -30,18 +30,22 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def text_sha(path):
+    return hashlib.sha256(Path(path).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
 
 
 def load(expected):
     plan, contract, request = (read(HERE / name) for name in ("visuals.json", "contract.json", "request.json"))
-    assert not expected or expected == sha(HERE / "request.json"), "Request hash mismatch"
+    assert not expected or expected == text_sha(HERE / "request.json"), "Request hash mismatch"
     assert request["action"] == "one-s101-motion-sprite-initial-only"
     assert request["stepId"] == "S1-01" and request["maxGenerationCalls"] == 1
     assert request["noTts"] and request["noAutomaticRepair"] and request["noPublication"]
     assert request["planHash"] == digest(plan) and request["contractHash"] == digest(contract)
-    assert request["scriptHash"] == sha(__file__)
+    assert request["scriptHash"] == text_sha(__file__)
     assert plan["provider"] == "gemini" and plan["model"] == "gemini-nano-banana-2.1"
     assert len(plan["assets"]) == 1 and plan["assets"][0]["id"] == "s101-ppe-motion-sprite"
     assert contract["reviewModel"] == "gemini-2.5-flash"
@@ -73,7 +77,7 @@ def produce(reference_dir, expected):
     out = HERE / "output"
     state_path = out / "state.json"
     assert not state_path.exists(), "This initial request already started; inspect its artifact instead of repeating"
-    state = {"action": request["action"], "requestSha256": sha(HERE / "request.json"),
+    state = {"action": request["action"], "requestSha256": text_sha(HERE / "request.json"),
              "referenceImageSha256": sha(reference), "generationCallsAttempted": 1,
              "automaticRepairs": 0, "ownerAccepted": False, "status": "initial-call-started"}
     write(state_path, state)

@@ -33,19 +33,19 @@ jobs:
       - run: python -m pip install Pillow==11.3.0
       - name: Validate bounded request
         env:
-          REQUEST_SHA: ${{ inputs.request_sha256 || '534ec72fe685bdb9f0ca5b3b6af8aa4522193b981fa50fb2d64e5ef3374a605e' }}
+          REQUEST_SHA: ${{ inputs.request_sha256 || 'ea1ccb138e87335beaf09556504a7adfea268f2761ec8203c904422fcde58174' }}
         run: python "$PACKAGE/produce.py" validate --request-sha "$REQUEST_SHA"
       - uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
         with:
           path: experiments/course-pipeline/rebuild/s101-motion-layer-proof/output
-          key: s101-motion-initial-534ec72fe685bdb9f0ca5b3b6af8aa4522193b981fa50fb2d64e5ef3374a605e
+          key: s101-motion-initial-ea1ccb138e87335beaf09556504a7adfea268f2761ec8203c904422fcde58174
       - name: Retrieve accepted image reference without committing artwork
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh run download 38557018355 --repo cabicci/viva-ai-systems-55d35820 --name s101-working-images --dir _motion_reference
       - name: Generate one motion sprite and inspect explicit criteria
         env:
-          REQUEST_SHA: ${{ inputs.request_sha256 || '534ec72fe685bdb9f0ca5b3b6af8aa4522193b981fa50fb2d64e5ef3374a605e' }}
+          REQUEST_SHA: ${{ inputs.request_sha256 || 'ea1ccb138e87335beaf09556504a7adfea268f2761ec8203c904422fcde58174' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
@@ -55,7 +55,7 @@ jobs:
         if: always()
         with:
           path: experiments/course-pipeline/rebuild/s101-motion-layer-proof/output
-          key: s101-motion-initial-534ec72fe685bdb9f0ca5b3b6af8aa4522193b981fa50fb2d64e5ef3374a605e
+          key: s101-motion-initial-ea1ccb138e87335beaf09556504a7adfea268f2761ec8203c904422fcde58174
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
