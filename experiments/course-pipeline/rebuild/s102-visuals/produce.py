@@ -30,7 +30,7 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one")
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -39,6 +39,11 @@ def load() -> tuple[dict, dict, dict]:
         assert request["targetAssetId"] == "s102-video-assess"
         assert request["priorRunId"] == 38824862958
         assert request["priorRequestSha256"] == "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146"
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
+    if request["action"] == "repair-s102-assess-no-figure":
+        assert request["targetAssetId"] == "s102-video-assess"
+        assert request["priorRunId"] == 38827595401
+        assert request["priorCandidateSha256"] == "58788c93ce1e7d201bc3e598f8f7b4408ffb1f6b33f281abcfd115925cb03b73"
         assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
 
@@ -162,6 +167,60 @@ def style_proof() -> None:
     print(f"One S1-02 style proof saved; automated passed={result['passed']}; manual review required", flush=True)
 
 
+def assess_repair2() -> None:
+    """One further assess-only repair after the first style candidate failed manual safety review."""
+    plan, contract, request = load()
+    dest = HERE / "output"
+    previous = core.read(dest / "style-proof/state.json")
+    assert previous["status"] == "candidate" and previous["repairCallNumber"] == 1
+    assert previous["entry"]["sha256"] == request["priorCandidateSha256"]
+    assert sha(dest / "style-proof/s102-video-assess.png") == request["priorCandidateSha256"]
+    proof_dest = dest / "style-proof/assess-repair2"
+    proof_dest.mkdir(parents=True, exist_ok=True)
+    state_path = proof_dest / "state.json"
+    assert not state_path.exists(), "Second assess repair already attempted; never spend a blind retry"
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    source, = [item for item in plan["assets"] if item["id"] == request["targetAssetId"]]
+    subject = (
+        "A compact raised field-access teaching diorama from an elevated three-quarter view, on the same warm "
+        "off-white background and premium rounded 3D CARTOON form as the accepted pilot. A solid generic blank "
+        "barrier COMPLETELY spans the near entrance to an empty track; the camera/viewer remains clearly on "
+        "the safe near side. Far beyond the barrier, show an empty stationary generic unbranded farm utility "
+        "vehicle on solid ground, and a separate clearly recessed hole plus uneven ground within the blocked "
+        "area. The vehicle is NOT over the hole or tipping into it. The scene teaches pause and inspect before "
+        "entering, never a rescue or crossing. NO person, mannequin, toy figure, face, body, silhouette or "
+        "character anywhere. No text, numbers, arrows, markings, logos, manufacturer grille or badges. "
+        "Sculpted miniature with tactile soil and metal textures; generous margin around every object."
+    )
+    state = {"stepId": "S1-02", "assetId": source["id"], "requestHash": sha(HERE / "request.json"),
+             "priorCandidateSha256": previous["entry"]["sha256"], "repairCallNumber": 2,
+             "status": "started", "manualAcceptance": False, "scope": "assess image only"}
+    core.write(state_path, state)
+    try:
+        token = credential()
+        model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+        assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+        entry = generator.generate({**plan, "style": pilot_style}, {**source, "subject": subject}, token, proof_dest)
+        strict_global = [
+            {**item, "criterion": "No person, mannequin, toy figure, face, hand, body, silhouette or character appears anywhere."}
+            if item["id"] == "no-people" else item for item in contract["global"]
+        ]
+        checks = {**contract, "global": strict_global, "assets": {**contract["assets"], source["id"]: [
+            {"id": "pilot-cartoon-parity", "criterion": "Compact stylized 3D CARTOON miniature on warm off-white like the accepted pilot; not photoreal full-scene photography."},
+            {"id": "barrier-and-hole", "criterion": "An empty stationary unbranded vehicle and recessed ground hole are beyond a barrier that fully blocks the track; the near camera side is safe, with no vehicle over the hole."}
+        ]}}
+        result = quality.check(source, proof_dest / entry["filename"], checks, token)
+        state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                      "manualAcceptance": False, "message": "Inspect actual pixels before accepting this repaired asset."})
+    except Exception as error:
+        state.update({"status": "error", "error": str(error)[:300], "manualAcceptance": False})
+        core.write(state_path, state)
+        raise
+    core.write(state_path, state)
+    print(f"S1-02 assess repair 2 saved; automated passed={result['passed']}; manual pixel review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -174,5 +233,7 @@ if __name__ == "__main__":
     if args.command == "produce":
         if request["action"] == "repair-s102-style-proof-one":
             style_proof()
+        elif request["action"] == "repair-s102-assess-no-figure":
+            assess_repair2()
         else:
             produce()
