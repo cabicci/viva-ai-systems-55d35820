@@ -1,4 +1,4 @@
-"""One bounded initial call for each missing S1-02 example scene; no repair or publication."""
+"""One bounded call per selected S1-02 scene, with pinned repair history; no publication."""
 from __future__ import annotations
 
 import argparse
@@ -42,8 +42,20 @@ def load():
     assert set(contract["assets"]) == set(TARGETS)
     assert contract["maxRepairsPerAsset"] == 3
     assert contract["reviewModel"] == "gemini-2.5-flash"
-    assert request["action"] == "s102-four-remaining-example-scenes-initial"
-    assert request["stepId"] == "S1-02" and request["targetAssetIds"] == TARGETS
+    assert request["action"] in ("s102-four-remaining-example-scenes-initial", "s102-ankle-case-targeted-repair-1")
+    assert request["stepId"] == "S1-02"
+    if request["action"] == "s102-ankle-case-targeted-repair-1":
+        assert request["targetAssetIds"] == ["s102-video-ankle-case"]
+        assert request["priorRunId"] == 38834215716
+        assert request["priorAnkleSha256"] == "7f84f350bbe0ffeda80fec77126dbe1e0e1d9dfca917a957ee3f69389072402e"
+        assert request["repairCallNumber"] == 1
+        assert request["protectedInitialAcceptedHashes"] == {
+            "s102-video-dizzy-case": "6e7a71b39f3550d22ba09161f0d5006e8e94f86f491aaa38d46d3a74e8c15b75",
+            "s102-video-eye-case": "814c313c374135488ff5e34cdd51ee52b26b844b691a5c4129e96eb866273a9d",
+            "s102-video-kit-case": "5df674b6605f025daf9a19cc2ee390c9c396f4b5254cfe230e7bd2154434498f",
+        }
+    else:
+        assert request["targetAssetIds"] == TARGETS
     assert request["protectedAcceptedAssetIds"] == PROTECTED
     assert request["priorFinalAcceptedRunId"] == 38830498735
     assert request["noPublication"] is True and request["noAutomaticRepair"] is True
@@ -67,14 +79,16 @@ def produce() -> None:
     output = HERE / "output"
     output.mkdir(parents=True, exist_ok=True)
     provider_errors = []
-    for asset in plan["assets"]:
+    for asset in (a for a in plan["assets"] if a["id"] in request["targetAssetIds"]):
         asset_id = asset["id"]
         asset_output = output / asset_id
         asset_output.mkdir(parents=True, exist_ok=True)
         state_path = asset_output / "state.json"
         assert not state_path.exists(), f"Asset {asset_id} already began; never repeat blindly"
         state = {"stepId": "S1-02", "assetId": asset_id, "requestHash": sha(HERE / "request.json"),
-                 "initialCallNumber": 1, "repairCallsUsed": 0, "status": "started",
+                 "callKind": request["action"], "initialCallNumber": 1,
+                 "repairCallsUsed": request.get("repairCallNumber", 0),
+                 "priorCandidateSha256": request.get("priorAnkleSha256"), "status": "started",
                  "manualAcceptance": False, "ownerAcceptedAsLesson": False, "noPublication": True}
         core.write(state_path, state)
         try:
@@ -100,4 +114,4 @@ if __name__ == "__main__":
     if args.command == "produce":
         produce()
     else:
-        print("Verified four bounded S1-02 example-scene requests; seven accepted scenes protected")
+        print("Verified bounded S1-02 scene request:", ", ".join(load()[2]["targetAssetIds"]))
