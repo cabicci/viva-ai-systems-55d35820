@@ -40,10 +40,21 @@ def load():
     assert all(a["role"] == "lesson" and a["sourceRecordIds"] and a["scenes"] for a in plan["assets"])
     assert set(contract["assets"]) == set(TARGETS)
     assert contract["reviewModel"] == "gemini-2.5-flash" and contract["maxRepairsPerAsset"] == 3
-    assert request["action"] == "s103-three-distinct-reading-stills-initial"
-    assert request["stepId"] == "S1-03" and request["targetAssetIds"] == TARGETS
+    assert request["action"] in ("s103-three-distinct-reading-stills-initial", "s103-still-route-targeted-repair-1")
+    assert request["stepId"] == "S1-03"
+    if request["action"] == "s103-still-route-targeted-repair-1":
+        assert request["targetAssetIds"] == ["s103-still-route"]
+        assert request["priorRunId"] == 38843130838
+        assert request["priorRouteSha256"] == "ef7849e2398642b0431b16ad161a33be4ba712d9e2d3338712308dceb3a6c4a5"
+        assert request["repairCallNumber"] == 1
+        assert request["protectedStills"] == {
+            "s103-still-decision": "ccf3634c5235c57ba6ce899c4b3b1532f66df187e1b2260fa99e22c6ec39edf7",
+            "s103-still-absorbent": "1f147de6facb9f242fb7712c95f6499746ca20d55dc8febcb38239eeee3695d6",
+        }
+    else:
+        assert request["targetAssetIds"] == TARGETS
+        assert request["priorRunId"] == 38842255536
     assert request["sourcePreflight"] == "authoring/S1-03/reading-stills-preflight.private.json"
-    assert request["priorRunId"] == 38842255536
     assert request["protectedVideoHashes"] == PROTECTED_VIDEO
     assert request["noPublication"] is True and request["noAutomaticRepair"] is True
     assert request["planHash"] == core.digest(plan)
@@ -66,14 +77,15 @@ def produce() -> None:
     output = HERE / "output"
     output.mkdir(parents=True, exist_ok=True)
     errors = []
-    for asset in plan["assets"]:
+    for asset in (a for a in plan["assets"] if a["id"] in request["targetAssetIds"]):
         asset_output = output / asset["id"]
         asset_output.mkdir(parents=True, exist_ok=True)
         state_path = asset_output / "state.json"
         assert not state_path.exists(), f"Asset {asset['id']} already began; never repeat blindly"
         state = {"stepId": "S1-03", "assetId": asset["id"], "requestHash": sha(HERE / "request.json"),
                  "callKind": request["action"], "initialCallNumber": 1,
-                 "repairCallsUsed": 0,
+                 "repairCallsUsed": request.get("repairCallNumber", 0),
+                 "priorCandidateSha256": request.get("priorRouteSha256"),
                  "status": "started", "manualAcceptance": False, "ownerAcceptedAsLesson": False,
                  "protectedVideoHashes": PROTECTED_VIDEO, "noPublication": True}
         core.write(state_path, state)
@@ -100,4 +112,4 @@ if __name__ == "__main__":
     if args.command == "produce":
         produce()
     else:
-        print("Verified three bounded S1-03 reading-still requests; five video-scene drafts protected")
+        print("Verified bounded S1-03 reading-still request; previous drafts protected")
