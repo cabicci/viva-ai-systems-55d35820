@@ -1,10 +1,14 @@
 {
-  "action": "generate-s102-images-only",
+  "action": "repair-s102-style-proof-one",
   "stepId": "S1-02",
-  "batchId": "s102-draft-visuals-20261016",
+  "batchId": "s102-pilot-style-proof-assess-20261016",
   "maxRepairsAfterInitial": 3,
   "planHash": "2b9dd7f2fe0fc72d8d856e1adfde185507dac30d6419ceda7b8920febd73419a",
   "contractHash": "48c1ab209636ba0573f4732e70630b147cf22a9d4020c7c2d135217022628d28",
-  "scriptHash": "40d8326dc23127f3d7299a45ce8f35f3d852e75abe802b03e28d041cd81ab73a",
-  "noPublication": true
+  "scriptHash": "9f44d98f975c17e3ec63c2543e2ab70ea91f0a8a5db36ccc47086886951a60d6",
+  "noPublication": true,
+  "targetAssetId": "s102-video-assess",
+  "priorRunId": 38824862958,
+  "priorRequestSha256": "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146",
+  "styleReferenceHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
 }

@@ -41,8 +41,10 @@ jobs:
         with:
           path: experiments/course-pipeline/rebuild/s102-visuals/output
           key: soil-rebuild-s102-images-${{ hashFiles('experiments/course-pipeline/rebuild/s102-visuals/request.json') }}-${{ github.run_id }}
-          restore-keys: soil-rebuild-s102-images-${{ hashFiles('experiments/course-pipeline/rebuild/s102-visuals/request.json') }}-
-      - name: Generate and inspect only fourteen S1-02 draft images
+          restore-keys: |
+            soil-rebuild-s102-images-${{ hashFiles('experiments/course-pipeline/rebuild/s102-visuals/request.json') }}-
+            soil-rebuild-s102-images-fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146-
+      - name: Run the bounded S1-02 visual request
         env:
           REQUEST_SHA: ${{ inputs.request_sha256 }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

@@ -30,11 +30,16 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] == "generate-s102-images-only"
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
     assert request["scriptHash"] == sha(Path(__file__))
+    if request["action"] == "repair-s102-style-proof-one":
+        assert request["targetAssetId"] == "s102-video-assess"
+        assert request["priorRunId"] == 38824862958
+        assert request["priorRequestSha256"] == "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146"
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
 
 
@@ -108,6 +113,55 @@ def produce() -> None:
     print("Fourteen S1-02 images passed automated checks; actual pixel review still required", flush=True)
 
 
+def style_proof() -> None:
+    """One bounded targeted style repair; preserve all old images and require manual acceptance."""
+    plan, contract, request = load()
+    token = credential()
+    model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+    assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+    dest = HERE / "output"
+    prior = core.read(dest / "receipt.json")
+    assert prior["requestHash"] == request["priorRequestSha256"] and len(prior["assets"]) == 6
+    original, = [row for row in prior["assets"] if row["id"] == request["targetAssetId"]]
+    assert original["repairCount"] == 0 and (dest / original["filename"]).exists()
+    assert sha(dest / original["filename"]) == original["sha256"]
+    proof_dest = dest / "style-proof"
+    proof_dest.mkdir(parents=True, exist_ok=True)
+    state_path = proof_dest / "state.json"
+    assert not state_path.exists(), "Style proof already attempted; do not spend another call"
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    source, = [item for item in plan["assets"] if item["id"] == request["targetAssetId"]]
+    subject = (
+        "A SMALL raised miniature field-access diorama seen from an elevated three-quarter isometric angle. "
+        "At the near edge, a generic blank barrier marks a safe pause. A distinct simplified unbranded farm "
+        "service-vehicle route and uneven ground are visible; a distant unmistakably synthetic faceless "
+        "training mannequin is on the protected side of the miniature. The scene communicates assess the "
+        "site before entering. Sculpted rounded CARTOON forms on warm off-white, clearly not photography; "
+        "realistic earth, metal and fabric textures only. No letters, numbers, markings, car badge, logos, "
+        "human figures, actual injury or text in pixels. Keep all props inside the frame with generous margin."
+    )
+    state = {"stepId": "S1-02", "assetId": source["id"], "requestHash": sha(HERE / "request.json"),
+             "priorImageSha256": original["sha256"], "repairCallNumber": 1,
+             "status": "started", "manualAcceptance": False, "scope": "one style proof only"}
+    core.write(state_path, state)
+    try:
+        entry = generator.generate({**plan, "style": pilot_style}, {**source, "subject": subject}, token, proof_dest)
+        checks = {**contract, "assets": {**contract["assets"], source["id"]: [
+            {"id": "pilot-cartoon-parity", "criterion": "Clearly a compact stylized 3D CARTOON diorama on warm off-white like the accepted pilot, not photoreal full-scene photography."},
+            {"id": "safe-scan", "criterion": "Raised miniature shows a safe barrier, distinct vehicle route, uneven ground and only a synthetic faceless training mannequin, with no letters or manufacturer badge."}
+        ]}}
+        result = quality.check(source, proof_dest / entry["filename"], checks, token)
+        state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                      "manualAcceptance": False, "message": "Actual pixels must be compared with S1-01 before broader generation."})
+    except Exception as error:
+        state.update({"status": "error", "error": str(error)[:300], "manualAcceptance": False})
+        core.write(state_path, state)
+        raise
+    core.write(state_path, state)
+    print(f"One S1-02 style proof saved; automated passed={result['passed']}; manual review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -118,4 +172,7 @@ if __name__ == "__main__":
     plan, contract, request = load()
     print(f"Verified bounded request for {len(plan['assets'])} S1-02 images")
     if args.command == "produce":
-        produce()
+        if request["action"] == "repair-s102-style-proof-one":
+            style_proof()
+        else:
+            produce()
