@@ -1,0 +1,25 @@
+{
+  "provider":"gemini",
+  "apiVersion":"v1beta",
+  "model":"gemini-nano-banana-2.1",
+  "imageSize":"2K",
+  "aspectRatio":"16:9",
+  "styleReference":"course/visuals.json",
+  "assets":[
+    {
+      "id":"s104-video-purpose","role":"video","scenes":["s104-reading-purpose"],
+      "sourceRecordIds":["TE-U1-T1-D001","TE-U1-T1-D008","TE-U1-T1-D009"],
+      "subject":"One compact sculpted 3D CARTOON agricultural teaching diorama on a clean warm off-white studio background, matching owner-accepted S1-01: rounded precise miniature geometry, soft contact shadows, plausible soil and leaf materials, no photoreal wide landscape. LOW THREE-QUARTER FIELD-LEVEL camera along two separate short miniature crop strips, unlike the accepted overhead representation still. One strip has yellow weak-looking crop leaves and the other greener growth, divided by a conspicuous intact neutral separator; two totally BLANK unused sample holders sit separately outside the growing strips. The image poses a comparison question, not a diagnosis: no fertilizer, nutrient symbol, pH reading, treatment, inferred disease or success claim. Keep blank upper and lower margins for later editable four-language narration callouts. No person, hand, character, school identity, Spark, brand, words, numbers, arrows, fake text, marks or logo."
+    },
+    {
+      "id":"s104-video-representation","role":"video","scenes":["s104-reading-representation"],
+      "sourceRecordIds":["TE-U1-T1-D010","TE-U1-T1-D011","TE-U1-T1-D055","TE-U1-T1-D056","TE-U1-T1-D045"],
+      "subject":"Compact sculpted 3D CARTOON miniature on warm off-white in accepted S1-01 style, realistic dry soil and clean plastic materials, NOT photoreal. CLOSE LOW CUTAWAY camera focused on ONE near rectangular management zone of soil. Show several small separate shallow sampling plugs at different horizontal positions WITHIN THE SAME clearly indicated layer, and a clean EMPTY plastic mixing bowl just beside that zone. A second contrasting soil zone is far in the background physically separated by a solid gap and has its own unused blank bowl, so samples from unlike zones are NEVER combined. Preserve geometry of a planned series of sub-samples, without implying that three or any drawn number is a universal count; the exact exercise count and depth are editable overlays later. Do not show soil already transferred or mixed, real tools, hands, a gate-only sample, fixed depth numerals, crop diagnosis or fertilizer treatment. Deliberately differ from the accepted overhead two-zone still by close ground cutaway, foreground layer and unmixed specimen positions. No words, numerals, arrows, fake writing, brands, school identity, Spark, logo or people."
+    },
+    {
+      "id":"s104-video-tools","role":"video","scenes":["s104-reading-tools"],
+      "sourceRecordIds":["TE-U1-T1-D004","TE-U1-T1-D034","TE-U1-T1-D035","TE-U1-T1-D036","TE-U1-T1-D037","TE-U1-T1-D045"],
+      "subject":"A compact sculpted 3D CARTOON close educational tool-end study on warm off-white, accepted S1-01 miniature style with believable steel and wood texture, no photorealism. LOW SIDE THREE-QUARTER camera of four physically separate short stations: (1) a hollow cylindrical push-tube SOIL SAMPLING PROBE with its clearly open sampling mouth and narrow extracted soil core beside it, not a solid rod; (2) a separate unmistakably SPIRAL ROTATING AUGER cutting head with visibly loosened crumbs, not a smooth core; (3) a spade with broad planar blade beside a thin even soil slice, not a full shovel load; (4) a small hand TROWEL beside soft garden soil. Make each tool geometry different and its working end easy to distinguish. Tools rest unused, no hands or people, no active digging, no implied auger preservation of soil structure. This close side study must differ from the accepted S1-04 static overhead tool-layout still in camera and focus. Leave clear blank margins for editable localized labels and motion callouts. No rendered words, digits, arrows, marks, fake writing, school or Spark branding, logos or watermarks."
+    }
+  ]
+}
