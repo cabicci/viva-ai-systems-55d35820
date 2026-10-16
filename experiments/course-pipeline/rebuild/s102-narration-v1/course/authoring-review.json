@@ -1,0 +1,46 @@
+{
+  "status": "assistant-reviewed-for-internal-narration-draft",
+  "checkedAt": "2026-10-16T12:12:07.550634+00:00",
+  "contentHashes": {
+    "en": "070025b5c97cce6548ff588fa83432972b1758481b2516a1d95eda870c45535c",
+    "ar-EG": "3d36dd968482907529f0da902e576036823f26892f3d115cbba1c7065597c71b",
+    "it": "0c0d46be61815b1482b1e16414c2ab615ff8d268717f1567655341280c6e14a5",
+    "de": "2e11ace6dc908426d9c29424cfe3144a1d9020e23defda7dd821345032ca4632"
+  },
+  "sourceDraftHashes": {
+    "en": "6b5296ce96e6e858ec8779bf44b2d01f746d3d03f10d3885cd48b5d4991355fb",
+    "ar-EG": "7adc9f4af04fcf026027949481062bb1f217cbef32c386c869ad76794feefada",
+    "it": "aaa5968dd8911f268e53046df71f6d3a67f0c8490de2c6a710b7a317476e456c",
+    "de": "55739455dcd21eac912420b9cbffa0e4696f3ceb25ec5979d77d45ecb405625f"
+  },
+  "sourceRecordRows": 19,
+  "primaryEvidence": [
+    {
+      "url": "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+      "checked": "2026-10-16",
+      "supports": "Heatstroke can include profuse sweating; urgent help and cooling. Heat exhaustion medical assessment, cooling, frequent water sips."
+    },
+    {
+      "url": "https://www.cdc.gov/niosh/npg/firstaid.html",
+      "checked": "2026-10-16",
+      "supports": "Product-dependent eye and skin flushing; immediate irrigation for relevant exposure."
+    },
+    {
+      "url": "https://www.osha.gov/sites/default/files/publications/OSHA3514.pdf",
+      "checked": "2026-10-16",
+      "supports": "SDS section4 routes/firstaid/urgent care, section8task-specific PPE."
+    },
+    {
+      "url": "https://lms.ehc.gov.eg/lms/mod/book/view.php?chapterid=2482&id=454&lang=ar",
+      "checked": "2026-10-16",
+      "supports": "Egyptian ambulance123, exact location/access, incident, observed casualties and hazards."
+    }
+  ],
+  "sourceContractSha256": "d04cdc8584c1dc1896a79b0eda662117555f9b766e4ebcb09a5319043d758efb",
+  "sourceCorrectionEvidenceSha256": "63cf9a8b2033c17e567cc8c78ccf4f3187a7f43327d154f98566cf82c46f4a2b",
+  "independentSpecialistReview": false,
+  "independentNativeReview": false,
+  "learnerReleaseApproved": false,
+  "scope": "Generic synthetic-prop teaching media only. No real treatment/site approval, no clinical accreditation. Four-locale text structure and targeted safety conditions reviewed; unchanged24paragraphs and5worked cases retained.",
+  "remaining": "Actual native listening, independent first-aid review, site chemical/SDS/eyewash and trainer evidence before learner release/physical training. Full motion video still pending."
+}
