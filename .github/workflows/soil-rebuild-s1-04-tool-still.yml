@@ -7,7 +7,7 @@ permissions:
   actions: read
   contents: read
 concurrency:
-  group: soil-rebuild-s104-tool-still-${{ github.ref }}-${{ hashFiles('experiments/course-pipeline/rebuild/s104-visuals/request.json') }}
+  group: soil-rebuild-s104-draft-stills-${{ github.sha }}
   cancel-in-progress: false
 jobs:
   tool-still:
