@@ -30,7 +30,7 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier", "repair-s102-style-batch-a")
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier", "repair-s102-style-batch-a", "repair-s102-style-batch-b")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -56,6 +56,14 @@ def load() -> tuple[dict, dict, dict]:
         assert request["priorImageHashes"] == {
             "s102-video-alert": "343ed9d2a5f89531f4f0b9675057f892979f7e0dcdd7956d5af149c2d974c36c",
             "s102-video-chemical": "c6643995050b14f63aafd3f252627e4f406757e2ba2363f3a2e02127b8978ae5",
+        }
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
+    if request["action"] == "repair-s102-style-batch-b":
+        assert request["priorRunId"] == 38828984686
+        assert request["targetAssetIds"] == ["s102-video-injury", "s102-video-heat"]
+        assert request["priorImageHashes"] == {
+            "s102-video-injury": "5f7ef0d8f1d341bbf8fd8e85ac7e1aaacfc504b9e7f65f9d251308cdbf9acd7e",
+            "s102-video-heat": "ddb00367f252676fd4b67d4f6cfe54ff23f1f096778217720a903c8e54435d19",
         }
         assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
@@ -376,6 +384,97 @@ def style_batch_a() -> None:
         print(f"{asset_id}: first pilot-style repair saved; automated passed={result['passed']}; manual review required", flush=True)
 
 
+def style_batch_b() -> None:
+    """Two first style repairs for injury and heat props; keep earlier pixels and limits."""
+    plan, contract, request = load()
+    dest = HERE / "output"
+    prior = core.read(dest / "receipt.json")
+    assert prior["requestHash"] == "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146"
+    assert len(prior["assets"]) == 6
+    assess = core.read(dest / "style-proof/assess-repair3/state.json")
+    assert assess["status"] == "candidate" and assess["repairCallNumber"] == 3
+    assert sha(dest / "style-proof/assess-repair3/s102-video-assess.png") == assess["entry"]["sha256"]
+    for asset_id in ("s102-video-alert", "s102-video-chemical"):
+        saved = core.read(dest / "style-batch-a" / asset_id / "state.json")
+        assert saved["status"] == "candidate" and saved["repairCallNumber"] == 1
+        assert sha(dest / "style-batch-a" / asset_id / saved["entry"]["filename"]) == saved["entry"]["sha256"]
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    specifications = {
+        "s102-video-injury": {
+            "subject": "Compact, clearly stylized 3D CARTOON safety-training diorama on warm off-white, "
+                       "raised small field-shelter model with realistic cloth, earth and plastic textures. "
+                       "ONE unmistakably synthetic jointed FACELESS training dummy is resting in a "
+                       "supported stable position under shelter after a simulated ankle incident. The "
+                       "ankle stays untouched in its found position; do not depict any movement, test, "
+                       "splinting, massage, lifting, rescue, injection or treatment. Sealed clean gauze "
+                       "and unused gloves rest on a separate safe side table. The dummy must read as an "
+                       "inert neutral training prop, not a real human, toy character or animated presenter. "
+                       "No helper, face, blood, injury marks, text, brand, arrows or pseudo-writing. "
+                       "Three-quarter composition with all objects fully in frame and clean margins.",
+            "checks": [
+                {"id": "training-dummy-only", "criterion": "Exactly one visibly synthetic faceless inert jointed training dummy lies supported under shelter, with no real human or character appearance."},
+                {"id": "do-not-move-limb", "criterion": "No hand, helper or tool touches or manipulates the ankle; no testing, splinting, lifting or walking is suggested."},
+                {"id": "unused-supplies", "criterion": "Sealed clean gauze and unused gloves are separate nearby props, not applied to the dummy."},
+            ],
+        },
+        "s102-video-heat": {
+            "subject": "Compact warm off-white 3D CARTOON field-shade training diorama matching the "
+                       "accepted pilot style, with tactile woven shade and matte plastic materials. "
+                       "ONE visibly synthetic jointed FACELESS inert training dummy is resting in the "
+                       "shade; a fan and clean cooling cloth are READY nearby, not forcefully applied. "
+                       "Small illustrative moisture beads on the dummy's surface show that sweating may "
+                       "still occur in a serious heat-illness scenario; do not depict dry skin or stopped "
+                       "sweating as a required sign. A blank unlit phone on a separate table represents "
+                       "a simulated urgent call. No real person, presenter, helper, character, drink, "
+                       "medicine, actual call, text, numbers, logos or pseudo-writing. All props in frame.",
+            "checks": [
+                {"id": "shaded-training-prop", "criterion": "Exactly one clearly synthetic faceless inert training mannequin rests under adequate shade, not a real patient or character."},
+                {"id": "sweat-can-remain", "criterion": "Small visible moisture beads make clear that sweating may remain; dry skin or stopped sweating is not portrayed as necessary."},
+                {"id": "safe-cooling-props", "criterion": "A fan, unused cooling cloth and blank phone are separate props; no forced drink, medication, actual call or risky treatment appears."},
+            ],
+        },
+    }
+    token = credential()
+    model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+    assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+    batch = dest / "style-batch-b"
+    batch.mkdir(parents=True, exist_ok=True)
+    for asset_id in request["targetAssetIds"]:
+        old, = [row for row in prior["assets"] if row["id"] == asset_id]
+        source, = [row for row in plan["assets"] if row["id"] == asset_id]
+        assert old["sha256"] == request["priorImageHashes"][asset_id] and old["repairCount"] == 0
+        assert sha(dest / old["filename"]) == old["sha256"]
+        asset_dest = batch / asset_id
+        asset_dest.mkdir(parents=True, exist_ok=True)
+        state_path = asset_dest / "state.json"
+        assert not state_path.exists(), f"Style repair already attempted for {asset_id}; no blind retry"
+        state = {"stepId": "S1-02", "assetId": asset_id, "priorImageSha256": old["sha256"],
+                 "requestHash": sha(HERE / "request.json"), "repairCallNumber": 1,
+                 "status": "started", "manualAcceptance": False}
+        core.write(state_path, state)
+        try:
+            entry = generator.generate({**plan, "style": pilot_style},
+                                       {**source, "subject": specifications[asset_id]["subject"]}, token, asset_dest)
+            strict_global = [
+                {**item, "criterion": "No real human, face, hand, helper, toy character or presenter; allow only the one clearly synthetic faceless inert jointed training mannequin specified for this scene."}
+                if item["id"] == "no-people" else item for item in contract["global"]
+            ]
+            checks = {**contract, "global": strict_global, "assets": {**contract["assets"], asset_id: [
+                {"id": "pilot-cartoon-parity", "criterion": "Compact clearly sculpted 3D CARTOON diorama on warm off-white like the accepted pilot, not photoreal full-scene photography."},
+                *specifications[asset_id]["checks"],
+            ]}}
+            result = quality.check(source, asset_dest / entry["filename"], checks, token)
+            state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                          "manualAcceptance": False, "message": "Actual pixel and safety inspection required before asset acceptance."})
+        except Exception as error:
+            state.update({"status": "error", "error": str(error)[:300]})
+            core.write(state_path, state)
+            raise
+        core.write(state_path, state)
+        print(f"{asset_id}: first pilot-style repair saved; automated passed={result['passed']}; manual review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -394,5 +493,7 @@ if __name__ == "__main__":
             assess_repair3()
         elif request["action"] == "repair-s102-style-batch-a":
             style_batch_a()
+        elif request["action"] == "repair-s102-style-batch-b":
+            style_batch_b()
         else:
             produce()

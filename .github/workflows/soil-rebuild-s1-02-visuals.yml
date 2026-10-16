@@ -50,7 +50,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p "$PACKAGE/output"
-          gh run download 38828325464 --repo cabicci/viva-ai-systems-55d35820 \
+          gh run download 38828984686 --repo cabicci/viva-ai-systems-55d35820 \
             --name s102-draft-image-outputs --dir "$PACKAGE/output"
       - name: Run the bounded S1-02 visual request
         env:

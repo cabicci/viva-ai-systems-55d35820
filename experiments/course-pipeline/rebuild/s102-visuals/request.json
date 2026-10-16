@@ -1,20 +1,20 @@
 {
-  "action": "repair-s102-style-batch-a",
+  "action": "repair-s102-style-batch-b",
   "stepId": "S1-02",
-  "batchId": "s102-alert-chemical-style-repair1-20261016",
+  "batchId": "s102-injury-heat-style-repair1-20261016",
   "maxRepairsAfterInitial": 3,
   "planHash": "2b9dd7f2fe0fc72d8d856e1adfde185507dac30d6419ceda7b8920febd73419a",
   "contractHash": "48c1ab209636ba0573f4732e70630b147cf22a9d4020c7c2d135217022628d28",
-  "scriptHash": "c2aa23ed5ddcb870f9a24e46bbf7a71e32ad78b17d78dd8eeb1952aaea9370c5",
+  "scriptHash": "cfb37eb352f863abad009afcf20e9b1d40d3b137325b1bee9fff3c4e86f1be20",
   "noPublication": true,
-  "priorRunId": 38828325464,
+  "priorRunId": 38828984686,
   "styleReferenceHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f",
   "targetAssetIds": [
-    "s102-video-alert",
-    "s102-video-chemical"
+    "s102-video-injury",
+    "s102-video-heat"
   ],
   "priorImageHashes": {
-    "s102-video-alert": "343ed9d2a5f89531f4f0b9675057f892979f7e0dcdd7956d5af149c2d974c36c",
-    "s102-video-chemical": "c6643995050b14f63aafd3f252627e4f406757e2ba2363f3a2e02127b8978ae5"
+    "s102-video-injury": "5f7ef0d8f1d341bbf8fd8e85ac7e1aaacfc504b9e7f65f9d251308cdbf9acd7e",
+    "s102-video-heat": "ddb00367f252676fd4b67d4f6cfe54ff23f1f096778217720a903c8e54435d19"
   }
 }
