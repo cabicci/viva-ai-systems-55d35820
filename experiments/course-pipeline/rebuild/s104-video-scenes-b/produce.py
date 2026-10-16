@@ -25,6 +25,10 @@ PROTECTED_VIDEO = {
     "s104-video-representation": "3e8009cf3083530c05768fafa5a78a894a7bf899fffd42d3c81af293aee65490",
     "s104-video-tools": "1aab06da6570acb44e41f1e434ca65682b4b2ac1b942e14ca3eb7a4c4edc1e29",
 }
+PROTECTED_ACCEPTED_B = {
+    "s104-video-structure": "01e65fa6b7850477047687b33c2de7330db3d1605276ea585cecba3b1182bed9",
+    "s104-video-contamination": "45f6bf3405b672efab551b682583ed49939ebd9ff548401699ec751497a8d893",
+}
 
 
 def sha(path: Path) -> str:
@@ -43,11 +47,19 @@ def load():
     assert all(a["role"] == "video" and a["sourceRecordIds"] and a["scenes"] for a in plan["assets"])
     assert set(contract["assets"]) == set(TARGETS)
     assert contract["reviewModel"] == "gemini-2.5-flash" and contract["maxRepairsPerAsset"] == 3
-    assert request["action"] == "s104-three-source-linked-video-scenes-b-initial"
-    assert request["stepId"] == "S1-04" and request["targetAssetIds"] == TARGETS
+    assert request["action"] in ("s104-three-source-linked-video-scenes-b-initial", "s104-video-prepare-targeted-repair-1")
+    assert request["stepId"] == "S1-04"
+    if request["action"] == "s104-video-prepare-targeted-repair-1":
+        assert request["targetAssetIds"] == ["s104-video-prepare"]
+        assert request["priorRunId"] == 38838557775
+        assert request["priorPrepareSha256"] == "0255ae27a064a82a2cab2847f19d2849c7b48eb5dd2a11885b7f55299d2add87"
+        assert request["repairCallNumber"] == 1
+        assert request["protectedAcceptedBHashes"] == PROTECTED_ACCEPTED_B
+    else:
+        assert request["targetAssetIds"] == TARGETS
+        assert request["priorRunId"] == 38836980647
     assert request["protectedStillHashes"] == PROTECTED_STILLS
     assert request["protectedVideoHashes"] == PROTECTED_VIDEO
-    assert request["priorRunId"] == 38836980647
     assert request["noPublication"] is True and request["noAutomaticRepair"] is True
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -69,13 +81,15 @@ def produce() -> None:
     output = HERE / "output"
     output.mkdir(parents=True, exist_ok=True)
     errors = []
-    for asset in plan["assets"]:
+    for asset in (a for a in plan["assets"] if a["id"] in request["targetAssetIds"]):
         asset_output = output / asset["id"]
         asset_output.mkdir(parents=True, exist_ok=True)
         state_path = asset_output / "state.json"
         assert not state_path.exists(), f"Asset {asset['id']} already began; never repeat blindly"
         state = {"stepId": "S1-04", "assetId": asset["id"], "requestHash": sha(HERE / "request.json"),
-                 "callKind": request["action"], "initialCallNumber": 1, "repairCallsUsed": 0,
+                 "callKind": request["action"], "initialCallNumber": 1,
+                 "repairCallsUsed": request.get("repairCallNumber", 0),
+                 "priorCandidateSha256": request.get("priorPrepareSha256"),
                  "status": "started", "manualAcceptance": False, "ownerAcceptedAsLesson": False,
                  "protectedStillHashes": PROTECTED_STILLS, "protectedVideoHashes": PROTECTED_VIDEO, "noPublication": True}
         core.write(state_path, state)
