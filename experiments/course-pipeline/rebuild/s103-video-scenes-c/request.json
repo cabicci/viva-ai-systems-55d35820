@@ -1,0 +1,22 @@
+{
+  "action": "s103-two-source-linked-video-scenes-c-initial",
+  "stepId": "S1-03",
+  "batchId": "s103-simulated-video-scenes-c-20261016",
+  "targetAssetIds": [
+    "s103-video-evacuate",
+    "s103-video-cases"
+  ],
+  "sourcePreflight": "authoring/S1-03/video-scenes-c-preflight.private.json",
+  "protectedPreviousHashes": {
+    "s103-video-decide": "e6e8fae62f67c745df872bbc70ad3d347b4f1bfdf32d1de6241d780f71fa340e",
+    "s103-video-prepare": "63740ecd0e89c2408b47f1300bb90feab9ed9413d4cf029f6f7a1890726393fb",
+    "s103-video-response": "d636c827028959213e020743e31dcf565f57e3c3f2abe986a4c02c62ea841ec8"
+  },
+  "priorRunId": 38841145763,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "73bdc255a4b1c7117d3e0c66c3bdafed9cc89a68cca0aae90c045d86d40044fb",
+  "contractHash": "604bc77389deaeb77f66ecf454fd601c49703fa3c5255da5349060e0a1d83c6a",
+  "scriptHash": "d73dfd4e04e3506bc762efadd4e39c1c72fe255943592a179f7f408ffb37fb0c",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+}
