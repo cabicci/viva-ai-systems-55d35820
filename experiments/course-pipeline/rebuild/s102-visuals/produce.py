@@ -30,7 +30,7 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure")
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -44,6 +44,11 @@ def load() -> tuple[dict, dict, dict]:
         assert request["targetAssetId"] == "s102-video-assess"
         assert request["priorRunId"] == 38827595401
         assert request["priorCandidateSha256"] == "58788c93ce1e7d201bc3e598f8f7b4408ffb1f6b33f281abcfd115925cb03b73"
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
+    if request["action"] == "repair-s102-assess-continuous-barrier":
+        assert request["targetAssetId"] == "s102-video-assess"
+        assert request["priorRunId"] == 38827990678
+        assert request["priorCandidateSha256"] == "083ed57f1cdc5cb57b88414df09e36f3876076f1b03108e5bee95189fae3c739"
         assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
 
@@ -221,6 +226,63 @@ def assess_repair2() -> None:
     print(f"S1-02 assess repair 2 saved; automated passed={result['passed']}; manual pixel review required", flush=True)
 
 
+def assess_repair3() -> None:
+    """Final authorized assess-image repair; preserve attempt history and require pixel inspection."""
+    plan, contract, request = load()
+    dest = HERE / "output"
+    previous = core.read(dest / "style-proof/assess-repair2/state.json")
+    assert previous["status"] == "candidate" and previous["repairCallNumber"] == 2
+    assert previous["entry"]["sha256"] == request["priorCandidateSha256"]
+    assert sha(dest / "style-proof/assess-repair2/s102-video-assess.png") == request["priorCandidateSha256"]
+    proof_dest = dest / "style-proof/assess-repair3"
+    proof_dest.mkdir(parents=True, exist_ok=True)
+    state_path = proof_dest / "state.json"
+    assert not state_path.exists(), "Third assess repair already attempted; no further provider calls"
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    source, = [item for item in plan["assets"] if item["id"] == request["targetAssetId"]]
+    subject = (
+        "Compact raised agricultural field-access safety diorama, premium rounded 3D CARTOON on warm off-white. "
+        "The dominant FOREGROUND object is ONE UNBROKEN solid waist-high barrier/fence that stretches all the "
+        "way from the LEFT OUTER EDGE to the RIGHT OUTER EDGE of the miniature across the ENTIRE entrance. "
+        "Every possible path into the field crosses this continuous barrier; NO side gap, half barrier, opening "
+        "or walk-around route. A generous EMPTY SAFE OBSERVATION AREA is in front of the barrier closest to "
+        "the camera. Behind the barrier only, far from the viewer: an empty parked generic unbranded farm "
+        "utility vehicle on solid ground at left, and a clearly recessed soil hole with uneven surface at "
+        "right, separated from the vehicle. The vehicle is NOT tipping into the hole. This is a static hazard "
+        "scan, with NO people, mannequins, toy figures, faces, bodies, characters, hands or silhouettes. "
+        "No letters, symbols, numbers, arrows, logos, stripes, badges or pseudo-writing. Realistic soil and "
+        "metal materials within simplified sculpted cartoon shapes; all objects inside frame with margin."
+    )
+    state = {"stepId": "S1-02", "assetId": source["id"], "requestHash": sha(HERE / "request.json"),
+             "priorCandidateSha256": previous["entry"]["sha256"], "repairCallNumber": 3,
+             "status": "started", "manualAcceptance": False, "scope": "final assess image repair only"}
+    core.write(state_path, state)
+    try:
+        token = credential()
+        model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+        assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+        entry = generator.generate({**plan, "style": pilot_style}, {**source, "subject": subject}, token, proof_dest)
+        strict_global = [
+            {**item, "criterion": "No person, mannequin, toy figure, face, hand, body, silhouette or character appears anywhere."}
+            if item["id"] == "no-people" else item for item in contract["global"]
+        ]
+        checks = {**contract, "global": strict_global, "assets": {**contract["assets"], source["id"]: [
+            {"id": "pilot-cartoon-parity", "criterion": "Compact clearly stylized 3D CARTOON miniature on warm off-white matching the accepted pilot, not a photograph."},
+            {"id": "unbroken-front-barrier", "criterion": "A single solid UNBROKEN barrier goes from left outer edge to right outer edge across the FULL NEAR entrance, with no walk-around side gap; an empty safe observation area is in front and all hazards including vehicle and hole are behind it."},
+            {"id": "vehicle-hole-separation", "criterion": "The empty generic vehicle is on intact ground well apart from the clearly recessed hole, not poised above or tipping into it; no brand badge or text."}
+        ]}}
+        result = quality.check(source, proof_dest / entry["filename"], checks, token)
+        state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                      "manualAcceptance": False, "message": "This was the final authorized repair; inspect actual pixels and log any exception."})
+    except Exception as error:
+        state.update({"status": "error", "error": str(error)[:300], "manualAcceptance": False})
+        core.write(state_path, state)
+        raise
+    core.write(state_path, state)
+    print(f"Final S1-02 assess repair saved; automated passed={result['passed']}; manual review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -235,5 +297,7 @@ if __name__ == "__main__":
             style_proof()
         elif request["action"] == "repair-s102-assess-no-figure":
             assess_repair2()
+        elif request["action"] == "repair-s102-assess-continuous-barrier":
+            assess_repair3()
         else:
             produce()
