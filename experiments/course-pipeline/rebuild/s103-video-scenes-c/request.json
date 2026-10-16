@@ -1,9 +1,8 @@
 {
-  "action": "s103-two-source-linked-video-scenes-c-initial",
+  "action": "s103-video-cases-targeted-repair-1",
   "stepId": "S1-03",
-  "batchId": "s103-simulated-video-scenes-c-20261016",
+  "batchId": "s103-cases-shallow-route-repair1-20261016",
   "targetAssetIds": [
-    "s103-video-evacuate",
     "s103-video-cases"
   ],
   "sourcePreflight": "authoring/S1-03/video-scenes-c-preflight.private.json",
@@ -12,11 +11,14 @@
     "s103-video-prepare": "63740ecd0e89c2408b47f1300bb90feab9ed9413d4cf029f6f7a1890726393fb",
     "s103-video-response": "d636c827028959213e020743e31dcf565f57e3c3f2abe986a4c02c62ea841ec8"
   },
-  "priorRunId": 38841145763,
+  "priorRunId": 38841621715,
   "noPublication": true,
   "noAutomaticRepair": true,
-  "planHash": "73bdc255a4b1c7117d3e0c66c3bdafed9cc89a68cca0aae90c045d86d40044fb",
-  "contractHash": "604bc77389deaeb77f66ecf454fd601c49703fa3c5255da5349060e0a1d83c6a",
-  "scriptHash": "d73dfd4e04e3506bc762efadd4e39c1c72fe255943592a179f7f408ffb37fb0c",
-  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+  "planHash": "5bebcaa5c7148772775710bd37467ea339b36ea7a16e133fe3578ae2a55c535f",
+  "contractHash": "67516424f74dc4509faf8d8544f9da698285d939173d1fbe83ba79ab9eadb2bd",
+  "scriptHash": "b71df21cedecc92d114b245e604fc2c30eb4ddfe96edc53f84088ac09d89ef79",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f",
+  "priorCasesSha256": "f322f893b3f6c8d75a74151579150583808edeb26dae843326b316fd2a06c20a",
+  "repairCallNumber": 1,
+  "protectedEvacuateSha256": "0c9db26dc05442ab5d5c8db6655ba4ad5abf9d3fa8bf6cd7227d5324dec8da89"
 }

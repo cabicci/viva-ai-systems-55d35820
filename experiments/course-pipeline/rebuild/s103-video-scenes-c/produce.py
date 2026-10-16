@@ -20,6 +20,7 @@ PROTECTED_PREVIOUS = {
     "s103-video-prepare": "63740ecd0e89c2408b47f1300bb90feab9ed9413d4cf029f6f7a1890726393fb",
     "s103-video-response": "d636c827028959213e020743e31dcf565f57e3c3f2abe986a4c02c62ea841ec8",
 }
+PROTECTED_EVACUATE = "0c9db26dc05442ab5d5c8db6655ba4ad5abf9d3fa8bf6cd7227d5324dec8da89"
 
 
 def sha(path: Path) -> str:
@@ -38,10 +39,18 @@ def load():
     assert all(a["role"] == "video" and a["sourceRecordIds"] and a["scenes"] for a in plan["assets"])
     assert set(contract["assets"]) == set(TARGETS)
     assert contract["reviewModel"] == "gemini-2.5-flash" and contract["maxRepairsPerAsset"] == 3
-    assert request["action"] == "s103-two-source-linked-video-scenes-c-initial"
-    assert request["stepId"] == "S1-03" and request["targetAssetIds"] == TARGETS
+    assert request["action"] in ("s103-two-source-linked-video-scenes-c-initial", "s103-video-cases-targeted-repair-1")
+    assert request["stepId"] == "S1-03"
     assert request["sourcePreflight"] == "authoring/S1-03/video-scenes-c-preflight.private.json"
-    assert request["priorRunId"] == 38841145763
+    if request["action"] == "s103-video-cases-targeted-repair-1":
+        assert request["targetAssetIds"] == ["s103-video-cases"]
+        assert request["priorRunId"] == 38841621715
+        assert request["priorCasesSha256"] == "f322f893b3f6c8d75a74151579150583808edeb26dae843326b316fd2a06c20a"
+        assert request["repairCallNumber"] == 1
+        assert request["protectedEvacuateSha256"] == PROTECTED_EVACUATE
+    else:
+        assert request["targetAssetIds"] == TARGETS
+        assert request["priorRunId"] == 38841145763
     assert request["protectedPreviousHashes"] == PROTECTED_PREVIOUS
     assert request["noPublication"] is True and request["noAutomaticRepair"] is True
     assert request["planHash"] == core.digest(plan)
@@ -64,16 +73,18 @@ def produce() -> None:
     output = HERE / "output"
     output.mkdir(parents=True, exist_ok=True)
     errors = []
-    for asset in plan["assets"]:
+    for asset in (a for a in plan["assets"] if a["id"] in request["targetAssetIds"]):
         asset_output = output / asset["id"]
         asset_output.mkdir(parents=True, exist_ok=True)
         state_path = asset_output / "state.json"
         assert not state_path.exists(), f"Asset {asset['id']} already began; never repeat blindly"
         state = {"stepId": "S1-03", "assetId": asset["id"], "requestHash": sha(HERE / "request.json"),
                  "callKind": request["action"], "initialCallNumber": 1,
-                 "repairCallsUsed": 0,
+                 "repairCallsUsed": request.get("repairCallNumber", 0),
+                 "priorCandidateSha256": request.get("priorCasesSha256"),
                  "status": "started", "manualAcceptance": False, "ownerAcceptedAsLesson": False,
-                 "protectedPreviousHashes": PROTECTED_PREVIOUS, "noPublication": True}
+                 "protectedPreviousHashes": PROTECTED_PREVIOUS,
+                 "protectedEvacuateSha256": request.get("protectedEvacuateSha256"), "noPublication": True}
         core.write(state_path, state)
         try:
             entry = generator.generate({**plan, "style": pilot_style}, asset, token, asset_output)
@@ -98,4 +109,4 @@ if __name__ == "__main__":
     if args.command == "produce":
         produce()
     else:
-        print("Verified two bounded S1-03 simulated video-scene requests; three earlier drafts protected")
+        print("Verified bounded S1-03 scene request and protected accepted drafts")
