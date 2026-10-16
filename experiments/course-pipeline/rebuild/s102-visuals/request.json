@@ -1,14 +1,20 @@
 {
-  "action": "repair-s102-assess-continuous-barrier",
+  "action": "repair-s102-style-batch-a",
   "stepId": "S1-02",
-  "batchId": "s102-assess-final-targeted-repair-20261016",
+  "batchId": "s102-alert-chemical-style-repair1-20261016",
   "maxRepairsAfterInitial": 3,
   "planHash": "2b9dd7f2fe0fc72d8d856e1adfde185507dac30d6419ceda7b8920febd73419a",
   "contractHash": "48c1ab209636ba0573f4732e70630b147cf22a9d4020c7c2d135217022628d28",
-  "scriptHash": "5f7c8cdd56b7f2f187783a6a64f27e28abab41256fc6ffce5724b6d580958f63",
+  "scriptHash": "c2aa23ed5ddcb870f9a24e46bbf7a71e32ad78b17d78dd8eeb1952aaea9370c5",
   "noPublication": true,
-  "targetAssetId": "s102-video-assess",
-  "priorRunId": 38827990678,
+  "priorRunId": 38828325464,
   "styleReferenceHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f",
-  "priorCandidateSha256": "083ed57f1cdc5cb57b88414df09e36f3876076f1b03108e5bee95189fae3c739"
+  "targetAssetIds": [
+    "s102-video-alert",
+    "s102-video-chemical"
+  ],
+  "priorImageHashes": {
+    "s102-video-alert": "343ed9d2a5f89531f4f0b9675057f892979f7e0dcdd7956d5af149c2d974c36c",
+    "s102-video-chemical": "c6643995050b14f63aafd3f252627e4f406757e2ba2363f3a2e02127b8978ae5"
+  }
 }

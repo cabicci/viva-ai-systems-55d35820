@@ -30,7 +30,7 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier")
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier", "repair-s102-style-batch-a")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -49,6 +49,14 @@ def load() -> tuple[dict, dict, dict]:
         assert request["targetAssetId"] == "s102-video-assess"
         assert request["priorRunId"] == 38827990678
         assert request["priorCandidateSha256"] == "083ed57f1cdc5cb57b88414df09e36f3876076f1b03108e5bee95189fae3c739"
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
+    if request["action"] == "repair-s102-style-batch-a":
+        assert request["priorRunId"] == 38828325464
+        assert request["targetAssetIds"] == ["s102-video-alert", "s102-video-chemical"]
+        assert request["priorImageHashes"] == {
+            "s102-video-alert": "343ed9d2a5f89531f4f0b9675057f892979f7e0dcdd7956d5af149c2d974c36c",
+            "s102-video-chemical": "c6643995050b14f63aafd3f252627e4f406757e2ba2363f3a2e02127b8978ae5",
+        }
         assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
 
@@ -283,6 +291,91 @@ def assess_repair3() -> None:
     print(f"Final S1-02 assess repair saved; automated passed={result['passed']}; manual review required", flush=True)
 
 
+def style_batch_a() -> None:
+    """Two separate first style repairs; do not revisit the completed assess asset."""
+    plan, contract, request = load()
+    dest = HERE / "output"
+    prior = core.read(dest / "receipt.json")
+    assert prior["requestHash"] == "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146"
+    assert len(prior["assets"]) == 6
+    assess = core.read(dest / "style-proof/assess-repair3/state.json")
+    assert assess["status"] == "candidate" and assess["repairCallNumber"] == 3
+    assert sha(dest / "style-proof/assess-repair3/s102-video-assess.png") == assess["entry"]["sha256"]
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    specifications = {
+        "s102-video-alert": {
+            "subject": "Compact raised emergency-communication training diorama viewed three-quarter isometric, "
+                       "same warm off-white 3D CARTOON look as the accepted pilot. On a simple safe-side "
+                       "table: ONE blank-screen phone, ONE completely blank site information card and a "
+                       "plain unmarked pencil. A low physical boundary separates this clean station from "
+                       "a small empty farm work zone; a distinct CLEAR OPEN ACCESS PATH for authorized "
+                       "responders remains to one side of the boundary. Keep the foreground table and "
+                       "safe route readable, with realistic matte plastic, wood and earth textures in "
+                       "simplified sculpted forms. No people, toy figures, hands, actual call, text, "
+                       "numbers, logos, screen icons, writing lines or pseudo-writing. All props in frame.",
+            "checks": [
+                {"id": "blank-call-props", "criterion": "A phone with fully blank screen and completely blank information card are prominent on the safe-side table; no call, number, text or pseudo-writing appears."},
+                {"id": "responder-route", "criterion": "An empty clear responder access path is visibly separate from the clean communication station and not blocked by the low boundary or a hazard."},
+            ],
+        },
+        "s102-video-chemical": {
+            "subject": "Compact raised chemical-exposure TRAINING PROPS diorama, three-quarter isometric, "
+                       "same warm off-white 3D CARTOON style as accepted pilot with tactile metal and "
+                       "plastic materials. On the far-left safe table is ONE closed blank harmless practice "
+                       "bottle and unused splash goggles. A clear unobstructed floor route leads to a "
+                       "distinct FULL-SIZE FIXED eyewash facility on the right: two outward-angled "
+                       "eyewash nozzles over a broad basin, connected to visible fixed water pipe and "
+                       "drain support, not a small handheld rinse bottle or eyewash cup. The station is "
+                       "present for scenario explanation, not running on a person. No liquid splash, "
+                       "person, mannequin, hands, face, active treatment, text, signs, symbols, logos "
+                       "or pseudo-writing anywhere; all props inside frame with margin.",
+            "checks": [
+                {"id": "full-eyewash", "criterion": "A recognizable fixed plumbed full eyewash facility with two nozzles and a broad basin appears, not just a small bottle or cup; no actual treatment or person."},
+                {"id": "clean-route", "criterion": "A closed blank practice bottle is separate from the facility, and an unobstructed route between table and eyewash is clear, with no discharge or real spill."},
+            ],
+        },
+    }
+    token = credential()
+    model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+    assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+    batch = dest / "style-batch-a"
+    batch.mkdir(parents=True, exist_ok=True)
+    for asset_id in request["targetAssetIds"]:
+        old, = [row for row in prior["assets"] if row["id"] == asset_id]
+        source, = [row for row in plan["assets"] if row["id"] == asset_id]
+        assert old["sha256"] == request["priorImageHashes"][asset_id] and old["repairCount"] == 0
+        assert sha(dest / old["filename"]) == old["sha256"]
+        asset_dest = batch / asset_id
+        asset_dest.mkdir(parents=True, exist_ok=True)
+        state_path = asset_dest / "state.json"
+        assert not state_path.exists(), f"Style repair already attempted for {asset_id}; no blind retry"
+        state = {"stepId": "S1-02", "assetId": asset_id, "priorImageSha256": old["sha256"],
+                 "requestHash": sha(HERE / "request.json"), "repairCallNumber": 1,
+                 "status": "started", "manualAcceptance": False}
+        core.write(state_path, state)
+        try:
+            entry = generator.generate({**plan, "style": pilot_style},
+                                       {**source, "subject": specifications[asset_id]["subject"]}, token, asset_dest)
+            strict_global = [
+                {**item, "criterion": "No person, mannequin, toy figure, face, hand, body, silhouette or character appears."}
+                if item["id"] == "no-people" else item for item in contract["global"]
+            ]
+            checks = {**contract, "global": strict_global, "assets": {**contract["assets"], asset_id: [
+                {"id": "pilot-cartoon-parity", "criterion": "Compact clearly sculpted 3D CARTOON diorama on warm off-white like the accepted pilot, not photoreal full-scene photography."},
+                *specifications[asset_id]["checks"],
+            ]}}
+            result = quality.check(source, asset_dest / entry["filename"], checks, token)
+            state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                          "manualAcceptance": False, "message": "Actual pixel inspection required before asset acceptance."})
+        except Exception as error:
+            state.update({"status": "error", "error": str(error)[:300]})
+            core.write(state_path, state)
+            raise
+        core.write(state_path, state)
+        print(f"{asset_id}: first pilot-style repair saved; automated passed={result['passed']}; manual review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -299,5 +392,7 @@ if __name__ == "__main__":
             assess_repair2()
         elif request["action"] == "repair-s102-assess-continuous-barrier":
             assess_repair3()
+        elif request["action"] == "repair-s102-style-batch-a":
+            style_batch_a()
         else:
             produce()
