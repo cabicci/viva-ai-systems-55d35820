@@ -1,4 +1,4 @@
-name: Soil rebuild S1-04 bounded tool still
+name: Soil rebuild S1-04 bounded draft stills
 on:
   push:
     branches: [work/soil-course-pipeline-20261013]
@@ -30,7 +30,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           first_run=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${GITHUB_SHA}&per_page=100" \
-            --jq '[.workflow_runs[] | select(.name == "Soil rebuild S1-04 bounded tool still") | .id] | min')
+            --jq '[.workflow_runs[] | select(.name == "Soil rebuild S1-04 bounded draft stills") | .id] | min')
           test -n "$first_run" && test "$first_run" != "null"
           if [ "$GITHUB_RUN_ID" != "$first_run" ]; then
             echo "Duplicate request run; no provider call. Earliest run: $first_run"
@@ -38,7 +38,7 @@ jobs:
           else
             echo "should_run=true" >> "$GITHUB_OUTPUT"
           fi
-      - name: Generate exactly one draft still and review its pixels automatically
+      - name: Generate exactly two draft stills and review their pixels automatically
         if: steps.dedupe.outputs.should_run == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -49,6 +49,6 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: ${{ always() && steps.dedupe.outputs.should_run == 'true' }}
         with:
-          name: s104-tool-still-draft
+          name: s104-two-stills-draft
           retention-days: 30
           path: experiments/course-pipeline/rebuild/s104-visuals/output/

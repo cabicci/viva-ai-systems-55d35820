@@ -1,11 +1,13 @@
 {
-  "action": "s104-tool-still-proof-one",
+  "action": "s104-two-other-stills-initial",
   "stepId": "S1-04",
-  "batchId": "s104-source-tools-still-proof-20261016",
-  "targetAssetId": "s1-04-tool-layout-still",
+  "batchId": "s104-representation-contamination-stills-20261016",
+  "targetAssetIds": ["s1-04-representation-still", "s1-04-contamination-still"],
+  "priorToolStillRunId": 38831233080,
+  "priorToolStillSha256": "c65f5ffcefecdeeff9ec1433c2e506b09817060c3c02906f5e75f237fdb62356",
   "noPublication": true,
-  "planHash": "7b93851d59327d85eb38231b18adb3e17229b21bea135dcc4f6d54434f91d69a",
-  "contractHash": "9b28e20d9a4b5dbc8c40f5ff1072077fd03fd3b81bd2f24e388cd64cebd76839",
-  "scriptHash": "ee38d0131c9976cde1e01adcb1c241c1c5062512d6332a8edd4bb8be85790652",
+  "planHash": "7b27e391b6bfd79b0e912611f67bd3a217a5eaa9b21057e116e317a50f294784",
+  "contractHash": "9261b90e2fb90350a6bdc151432d3d7136b3d1f3d128cc2bf1594bdbc46d2ca1",
+  "scriptHash": "14639574fbf594ab55f41b0198330eed858986782da88a8b734c71258f60a609",
   "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
 }
