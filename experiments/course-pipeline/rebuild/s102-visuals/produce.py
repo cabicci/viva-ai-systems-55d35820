@@ -30,7 +30,7 @@ def load() -> tuple[dict, dict, dict]:
     assert len(plan["assets"]) == 14 and len({a["id"] for a in plan["assets"]}) == 14
     assert {a["id"] for a in plan["assets"]} == set(contract["assets"])
     assert all(a["scenes"] and a["subject"] and a["role"] in ("video", "lesson") for a in plan["assets"])
-    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier", "repair-s102-style-batch-a", "repair-s102-style-batch-b")
+    assert request["action"] in ("generate-s102-images-only", "repair-s102-style-proof-one", "repair-s102-assess-no-figure", "repair-s102-assess-continuous-barrier", "repair-s102-style-batch-a", "repair-s102-style-batch-b", "repair-s102-style-batch-c-final")
     assert request["stepId"] == "S1-02" and request["maxRepairsAfterInitial"] == 3
     assert request["planHash"] == core.digest(plan)
     assert request["contractHash"] == core.digest(contract)
@@ -64,6 +64,14 @@ def load() -> tuple[dict, dict, dict]:
         assert request["priorImageHashes"] == {
             "s102-video-injury": "5f7ef0d8f1d341bbf8fd8e85ac7e1aaacfc504b9e7f65f9d251308cdbf9acd7e",
             "s102-video-heat": "ddb00367f252676fd4b67d4f6cfe54ff23f1f096778217720a903c8e54435d19",
+        }
+        assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
+    if request["action"] == "repair-s102-style-batch-c-final":
+        assert request["priorRunId"] == 38829613603
+        assert request["targetAssetIds"] == ["s102-video-kit", "s102-video-road-case"]
+        assert request["priorImageHashes"] == {
+            "s102-video-kit": "0706186421842f2dfdfafe3d1ed74f7f89a2bfdd7b5f29787182bc593a315874",
+            "s102-video-road-case": "fe50191e57abe58bc5d356fd940431e14ccc0b72de54f8e060420c3b0289f1d6",
         }
         assert request["styleReferenceHash"] == core.digest(core.read(ENGINE / "course/visuals.json")["style"])
     return plan, contract, request
@@ -475,6 +483,109 @@ def style_batch_b() -> None:
         print(f"{asset_id}: first pilot-style repair saved; automated passed={result['passed']}; manual review required", flush=True)
 
 
+def style_batch_c_final() -> None:
+    """The last owner-authorized repair calls for the kit and road case only."""
+    plan, contract, request = load()
+    dest = HERE / "output"
+    prior = core.read(dest / "receipt.json")
+    assert prior["requestHash"] == "fa9dd442a48bcc5c3caa132e8752643fdab5905a311da69f395128d4fe355146"
+    assert len(prior["assets"]) == 6
+    for batch_name, ids in (("style-batch-a", ("s102-video-alert", "s102-video-chemical")),
+                            ("style-batch-b", ("s102-video-injury", "s102-video-heat"))):
+        for asset_id in ids:
+            saved = core.read(dest / batch_name / asset_id / "state.json")
+            assert saved["status"] == "candidate" and saved["repairCallNumber"] == 1
+            assert sha(dest / batch_name / asset_id / saved["entry"]["filename"]) == saved["entry"]["sha256"]
+    assess = core.read(dest / "style-proof/assess-repair3/state.json")
+    assert assess["status"] == "candidate" and assess["repairCallNumber"] == 3
+    assert sha(dest / "style-proof/assess-repair3/s102-video-assess.png") == assess["entry"]["sha256"]
+    assert sha(dest / "s102-video-kit.png") == request["priorImageHashes"]["s102-video-kit"]
+    assert sha(dest / "s102-video-road-case.png") == request["priorImageHashes"]["s102-video-road-case"]
+    original_kit, = [row for row in prior["assets"] if row["id"] == "s102-video-kit"]
+    assert original_kit["repairCount"] == 2
+    attempts = [core.read(p) for p in (dest / "attempts").glob("*.json")]
+    road_attempts, = [row["attempts"] for row in attempts if len(row.get("attempts", [])) == 4 and
+                     row["attempts"][0].get("entry", {}).get("id") == "s102-video-road-case"]
+    assert [x["status"] for x in road_attempts] == ["reviewed", "error", "reviewed", "error"]
+    assert road_attempts[2]["entry"]["sha256"] == request["priorImageHashes"]["s102-video-road-case"]
+    pilot_style = core.read(ENGINE / "course/visuals.json")["style"]
+    assert core.digest(pilot_style) == request["styleReferenceHash"]
+    specifications = {
+        "s102-video-kit": {
+            "subject": "Compact, elevated three-quarter 3D CARTOON first-aid TRAINING station on warm "
+                       "off-white, matching the accepted pilot miniature and realistic soft material "
+                       "textures. ONE open unbranded plain kit on a clean small table visibly contains "
+                       "separate UNUSED sealed gauze pads, clean gloves and a folded blanket. A fully "
+                       "BLANK contact card is separate and has absolutely no lines, writing, icons, "
+                       "numbers or print-like marks. In the background but plainly recognizable is a "
+                       "separate FULL-SIZE FIXED plumbed eyewash basin with two nozzles and water pipe. "
+                       "Do not show a small eye-rinse bottle as the eyewash facility. No person, dummy, "
+                       "character, actual care, brand, logo, label, emblem, text, pseudo-writing or "
+                       "cropped object. Keep the scene clean and teaching props distinct.",
+            "checks": [
+                {"id": "distinct-unused-kit", "criterion": "One open unbranded kit shows separate unused sealed gauze, gloves and folded blanket; no treatment or person."},
+                {"id": "truly-blank-card", "criterion": "The contact card is entirely blank without writing lines, symbols, pseudo-writing or numbers."},
+                {"id": "full-fixed-eyewash", "criterion": "A separate full fixed plumbed dual-nozzle eyewash basin is recognizable, not just a small bottle or cup."},
+            ],
+        },
+        "s102-video-road-case": {
+            "subject": "Compact raised three-quarter 3D CARTOON field-road incident TRAINING diorama "
+                       "on warm off-white, visibly the same miniature style as the owner-approved pilot, "
+                       "with tactile earth, cloth and matte metal textures. A generic stationary boxy "
+                       "work vehicle sits on the LEFT vehicle track behind a SINGLE continuous solid "
+                       "barrier running lengthwise along the track; its front must be a completely "
+                       "PLAIN undecorated slab, with no oval badge, grille emblem, license plate, "
+                       "letters, numbers, brand shape or logo. On the protected RIGHT side of that "
+                       "barrier, exactly ONE faceless neutral-color visibly jointed SYNTHETIC inert "
+                       "training mannequin rests still on the ground. A clear open pedestrian access "
+                       "path on this protected side reaches the mannequin without crossing the vehicle "
+                       "track or barrier. No person, helper, toy character, actual rescue, lifting, "
+                       "blood, treatment, text, arrows, symbols or pseudo-writing. Frame all parts with "
+                       "wide margins, no photoreal forest or real-world photo aesthetic.",
+            "checks": [
+                {"id": "plain-unbranded-vehicle", "criterion": "The stationary boxy work vehicle has a plain empty front with no badge, grille emblem, license plate, letters, logo or brand-like mark."},
+                {"id": "protected-dummy", "criterion": "Exactly one clearly synthetic faceless inert jointed dummy rests on the protected side of a continuous solid barrier and remains untouched."},
+                {"id": "safe-approach", "criterion": "A clear pedestrian route to the dummy stays entirely on the protected side, never crossing an active vehicle lane or barrier."},
+            ],
+        },
+    }
+    token = credential()
+    model = core.request_json(f"https://generativelanguage.googleapis.com/v1beta/models/{plan['model']}", token)
+    assert "generateContent" in model.get("supportedGenerationMethods", []), "Image model unavailable"
+    batch = dest / "style-batch-c-final"
+    batch.mkdir(parents=True, exist_ok=True)
+    for asset_id in request["targetAssetIds"]:
+        source, = [row for row in plan["assets"] if row["id"] == asset_id]
+        asset_dest = batch / asset_id
+        asset_dest.mkdir(parents=True, exist_ok=True)
+        state_path = asset_dest / "state.json"
+        assert not state_path.exists(), f"Final repair already attempted for {asset_id}; never retry blindly"
+        state = {"stepId": "S1-02", "assetId": asset_id, "priorImageSha256": request["priorImageHashes"][asset_id],
+                 "requestHash": sha(HERE / "request.json"), "repairCallNumber": 3,
+                 "status": "started", "manualAcceptance": False}
+        core.write(state_path, state)
+        try:
+            entry = generator.generate({**plan, "style": pilot_style},
+                                       {**source, "subject": specifications[asset_id]["subject"]}, token, asset_dest)
+            strict_global = [
+                {**item, "criterion": "No real human, face, hand, helper, toy character or presenter; the road case alone may show its one clearly synthetic faceless inert jointed training mannequin."}
+                if item["id"] == "no-people" else item for item in contract["global"]
+            ]
+            checks = {**contract, "global": strict_global, "assets": {**contract["assets"], asset_id: [
+                {"id": "pilot-cartoon-parity", "criterion": "Compact clearly sculpted 3D CARTOON diorama on warm off-white like the accepted pilot, not photoreal full-scene photography."},
+                *specifications[asset_id]["checks"],
+            ]}}
+            result = quality.check(source, asset_dest / entry["filename"], checks, token)
+            state.update({"status": "candidate", "entry": entry, "automatedQuality": result,
+                          "manualAcceptance": False, "message": "Final repair budget used; inspect actual pixels and escalate any failed asset without another paid call."})
+        except Exception as error:
+            state.update({"status": "error", "error": str(error)[:300]})
+            core.write(state_path, state)
+            raise
+        core.write(state_path, state)
+        print(f"{asset_id}: final repair call saved; automated passed={result['passed']}; human review required", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=("validate", "produce"))
@@ -495,5 +606,7 @@ if __name__ == "__main__":
             style_batch_a()
         elif request["action"] == "repair-s102-style-batch-b":
             style_batch_b()
+        elif request["action"] == "repair-s102-style-batch-c-final":
+            style_batch_c_final()
         else:
             produce()
