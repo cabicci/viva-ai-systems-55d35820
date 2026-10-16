@@ -1,0 +1,52 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "automaticRepair": false,
+  "global": [
+    {
+      "id": "style",
+      "criterion": "Coherent rounded sculpted cartoon3D with credible earth/plant/materials and warm off-white background; consistent with supplied reference."
+    },
+    {
+      "id": "no-text",
+      "criterion": "No letters, text, numbers, arrows, logos or fake writing; all exact overlays will be separate."
+    },
+    {
+      "id": "complete",
+      "criterion": "All relevant objects complete inside frame, generous readable spacing, no people or dangerous operation."
+    }
+  ],
+  "assets": {
+    "s105-still-zones": [
+      {
+        "id": "terrain",
+        "criterion": "One connected field has a genuinely lower damp/standing-water area and a higher slope, not arbitrary equal strips."
+      },
+      {
+        "id": "patch",
+        "criterion": "A small isolated bare patch remains separate; no contamination or fertility diagnosis is claimed."
+      }
+    ],
+    "s105-still-plan": [
+      {
+        "id": "plan",
+        "criterion": "Near-overhead shallow 3D plan, a large clear central uniform training area, no baked route or point marks."
+      },
+      {
+        "id": "exclusions",
+        "criterion": "Gate/gathering corner and edge strip at far left/bottom-left plus bare patch at far top-right leave the main central area unobstructed."
+      }
+    ],
+    "s105-still-depth": [
+      {
+        "id": "depth",
+        "criterion": "Shallow selected surface layer and core distinguish sampling interval from complete roots; no exact generated ruler or unit."
+      },
+      {
+        "id": "cards",
+        "criterion": "Exactly three separated blank comparison cards beside the soil cutaway, no marks or baked numbers."
+      }
+    ]
+  },
+  "overlayGate": "Pixel inspect before mapping. Deterministic point IDs P01–P10 must be ten distinct locations within intended zone and outside excluded features; W is not randomization. Separate example counts at least8,10–15,training10/0–15cm;20acres≈8.09ha, no feddan substitution."
+}
