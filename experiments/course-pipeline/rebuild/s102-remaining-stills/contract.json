@@ -10,7 +10,8 @@
     "s1-02-scene-safety-still":[
       {"id":"boundary","criterion":"Empty near-side observation area is continuously divided from stationary unbadged vehicle route and a separate off-route ground hole; no tempting gap into traffic."},
       {"id":"spatial-route","criterion":"A protected open access route is spatially clear without drawn arrows or a person walking; vehicle is on intact ground separate from hole."},
-      {"id":"different-view","criterion":"Near-orthographic top-down map composition is not the lower video hazard scan or diagonal road-case scene."}
+      {"id":"different-view","criterion":"Exactly perpendicular overhead orthographic map; no visible side faces of slab, fence or vehicle; clearly distinct from lower oblique video hazard scans."},
+      {"id":"shallow-hole","criterion":"Off-route ground depression is small, shallow and partly grass-concealed, with no giant open excavation, crater, pit or cliff."}
     ],
     "s1-02-heat-comparison-still":[
       {"id":"two-distinct-vignettes","criterion":"Two separate shade settings each have a clearly synthetic supported faceless full mannequin and unused cooling props, with a blank mock-call phone only in the urgent-warning vignette."},

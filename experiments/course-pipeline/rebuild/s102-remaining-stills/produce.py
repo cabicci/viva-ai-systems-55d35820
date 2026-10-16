@@ -39,8 +39,19 @@ def load():
     assert all(a["role"] == "lesson" and a["sourceRecordIds"] and a["scenes"] for a in plan["assets"])
     assert set(contract["assets"]) == set(TARGETS)
     assert contract["reviewModel"] == "gemini-2.5-flash" and contract["maxRepairsPerAsset"] == 3
-    assert request["action"] == "s102-three-distinct-reading-stills-initial"
-    assert request["stepId"] == "S1-02" and request["targetAssetIds"] == TARGETS
+    assert request["action"] in ("s102-three-distinct-reading-stills-initial", "s102-scene-safety-still-targeted-repair-1")
+    assert request["stepId"] == "S1-02"
+    if request["action"] == "s102-scene-safety-still-targeted-repair-1":
+        assert request["targetAssetIds"] == ["s1-02-scene-safety-still"]
+        assert request["priorRunId"] == 38835345260
+        assert request["priorSafetySha256"] == "ada32a0559b43245872582dabda208973a544c5d77635d73d5277458ecaa63f0"
+        assert request["repairCallNumber"] == 1
+        assert request["protectedAcceptedHashes"] == {
+            "s1-02-heat-comparison-still": "157c56f29f3fef8356f66ab6ccb8a648a838d3c4494d4be58cb28c213cd464c6",
+            "s1-02-aid-kit-still": "2505108e675e14a39fe12f76a881bbe55e5ecb596e62810b582876c9bef8564e",
+        }
+    else:
+        assert request["targetAssetIds"] == TARGETS
     assert request["excludedVideoSceneIds"] == EXCLUDED_VIDEO_SCENES
     assert request["referenceExampleRunId"] == 38834215716
     assert request["noPublication"] is True and request["noAutomaticRepair"] is True
@@ -64,13 +75,15 @@ def produce():
     output = HERE / "output"
     output.mkdir(parents=True, exist_ok=True)
     errors = []
-    for asset in plan["assets"]:
+    for asset in (a for a in plan["assets"] if a["id"] in request["targetAssetIds"]):
         asset_output = output / asset["id"]
         asset_output.mkdir(parents=True, exist_ok=True)
         state_path = asset_output / "state.json"
         assert not state_path.exists(), f"Asset {asset['id']} already began; never repeat blindly"
         state = {"stepId": "S1-02", "assetId": asset["id"], "requestHash": sha(HERE / "request.json"),
-                 "initialCallNumber": 1, "repairCallsUsed": 0, "status": "started",
+                 "callKind": request["action"], "initialCallNumber": 1,
+                 "repairCallsUsed": request.get("repairCallNumber", 0),
+                 "priorCandidateSha256": request.get("priorSafetySha256"), "status": "started",
                  "manualAcceptance": False, "ownerAcceptedAsLesson": False, "noPublication": True}
         core.write(state_path, state)
         try:

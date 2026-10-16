@@ -1,14 +1,35 @@
 {
-  "action":"s102-three-distinct-reading-stills-initial",
-  "stepId":"S1-02",
-  "batchId":"s102-source-linked-distinct-stills-20261016",
-  "targetAssetIds":["s1-02-scene-safety-still","s1-02-heat-comparison-still","s1-02-aid-kit-still"],
-  "excludedVideoSceneIds":["s102-video-assess","s102-video-alert","s102-video-injury","s102-video-heat","s102-video-chemical","s102-video-kit","s102-video-road-case","s102-video-dizzy-case","s102-video-ankle-case","s102-video-eye-case","s102-video-kit-case"],
-  "referenceExampleRunId":38834215716,
-  "noPublication":true,
-  "noAutomaticRepair":true,
-  "planHash":"75eac9f224f8f6d178ef1fdd6cb6858e601b3f26780027245755db1f703aa2e6",
-  "contractHash":"f565c9d6fb2f689bc6eebaefb41bfa66885ec0a227389ead59cdda63ba9d1ae1",
-  "scriptHash":"947c39f5edf7c064dde6b853b5c7ca4889567d990c18f10a9c1567f78ba25d0f",
-  "styleHash":"351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+  "action": "s102-scene-safety-still-targeted-repair-1",
+  "stepId": "S1-02",
+  "batchId": "s102-overhead-shallow-safety-map-repair1-20261016",
+  "targetAssetIds": [
+    "s1-02-scene-safety-still"
+  ],
+  "priorRunId": 38835345260,
+  "priorSafetySha256": "ada32a0559b43245872582dabda208973a544c5d77635d73d5277458ecaa63f0",
+  "repairCallNumber": 1,
+  "protectedAcceptedHashes": {
+    "s1-02-heat-comparison-still": "157c56f29f3fef8356f66ab6ccb8a648a838d3c4494d4be58cb28c213cd464c6",
+    "s1-02-aid-kit-still": "2505108e675e14a39fe12f76a881bbe55e5ecb596e62810b582876c9bef8564e"
+  },
+  "excludedVideoSceneIds": [
+    "s102-video-assess",
+    "s102-video-alert",
+    "s102-video-injury",
+    "s102-video-heat",
+    "s102-video-chemical",
+    "s102-video-kit",
+    "s102-video-road-case",
+    "s102-video-dizzy-case",
+    "s102-video-ankle-case",
+    "s102-video-eye-case",
+    "s102-video-kit-case"
+  ],
+  "referenceExampleRunId": 38834215716,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "cb5af2bc2947b02daf604c56120f15beaafc8ca442eaf192c16309847ab74270",
+  "contractHash": "8c0e184c79d5f515a4f647c0470b79b1a9951b1d00bcbd67ec9eaa598f502f1e",
+  "scriptHash": "14f49c970bf453036e72eac6fedd5930a08067d7422071cc83513c7dfa9dc055",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
 }
