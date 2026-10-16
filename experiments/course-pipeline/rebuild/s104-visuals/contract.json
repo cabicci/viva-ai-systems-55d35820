@@ -1,0 +1,17 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {"id": "pilot-style", "criterion": "Clearly sculpted compact 3D CARTOON educational diorama on warm off-white with believable metal, soil, wood and plastic material texture and generous margins; not a photoreal scene or flat drawing."},
+    {"id": "no-text-brand", "criterion": "No words, letters, numbers, arrows, logos, emblems, labels, watermark or pseudo-writing on any surface."},
+    {"id": "no-people-action", "criterion": "No human, hand, face, toy character or visible operation; the tools are separate stationary teaching props on a clean table."}
+  ],
+  "assets": {
+    "s1-04-tool-layout-still": [
+      {"id": "four-distinct-tools", "criterion": "A clearly hollow straight sampling push tube, separate spiral hand auger, flat spade and small hand trowel are all complete and visibly different; the probe is not a solid rod and the auger is not an undisturbed core tube."},
+      {"id": "sample-geometry", "criterion": "A narrow probe portion and separate thin even vertical spade slice are visible without implying a full shovel load or that ordinary augering preserves undisturbed soil structure."},
+      {"id": "clean-plastic-bucket", "criterion": "A clearly plastic clean empty mixing bucket is present and separate from the soil portions; there is no galvanized bucket or residue."},
+      {"id": "scientific-boundary", "criterion": "No tool is depicted contacting underground utilities, being forced into the field or as a universal instruction for every soil and laboratory method."}
+    ]
+  }
+}
