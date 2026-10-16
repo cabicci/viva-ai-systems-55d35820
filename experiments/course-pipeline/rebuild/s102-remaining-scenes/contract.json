@@ -1,0 +1,32 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {"id":"pilot-cartoon","criterion":"Compact clearly sculpted 3D cartoon educational miniature on warm off-white, credible material textures, no photoreal full scene or toy-faced character; coherent with S1-01 accepted pilot."},
+    {"id":"no-writing-brand","criterion":"No words, numerals, printed card lines, arrows, symbols, labels, logos, brand-like emblems, watermark or pseudo-writing anywhere."},
+    {"id":"no-real-care","criterion":"No real or rendered person, face, helper, hands, detached body part, real injury, chemical release or treatment. A synthetic full faceless display mannequin is allowed only in the two scenes that request one."}
+  ],
+  "assets": {
+    "s102-video-dizzy-case": [
+      {"id":"nearby-shade","criterion":"Synthetic full training mannequin is seated safely under nearby shade, not expected to walk to a distant vehicle; props are still and unused."},
+      {"id":"sweat-possible","criterion":"Moisture beads are plausible on the mannequin, without any graphic inference that stopped sweating is required or that a diagnosis has been proven."},
+      {"id":"no-drink-or-treatment","criterion":"Fan, cloths and blank phone are visible, but no oral drink, medicine, helper or performed care is depicted."},
+      {"id":"different-heat-scene","criterion":"A worked-case composition in elevated field shelter differs from the previously accepted single eye-level heat-reading tableau."}
+    ],
+    "s102-video-ankle-case": [
+      {"id":"hazard-isolation","criterion":"Concealed shallow hole and a continuous boundary are clear, with a safe approach route away from the edge."},
+      {"id":"mannequin-still","criterion":"Clearly synthetic full faceless mannequin rests supported beside the hole, with ankle left in the found position; no lifting or limb manipulation."},
+      {"id":"no-diagnosis","criterion":"No blood, real injury, fracture assertion or visible helper; blank call card is only a prop."}
+    ],
+    "s102-video-eye-case": [
+      {"id":"full-eyewash","criterion":"Full dual-nozzle fixed eyewash station with visible pipe connection is separate from unopened plain training bottle; a small portable bottle is not the sole provision."},
+      {"id":"clear-route","criterion":"Safe unobstructed route between station and prop is readable at a different angle from the prior chemical-reading scene."},
+      {"id":"no-exposure","criterion":"No actual discharge, eye, person, helper, running water or performed washing; no fixed duration is visually implied."}
+    ],
+    "s102-video-kit-case": [
+      {"id":"reasoned-props","criterion":"Clean unused gauze, tape, blanket, blank card and phone are distinguishable, with a closed background kit rather than a duplicate open-kit inventory."},
+      {"id":"separate-full-eyewash","criterion":"Fixed plumbed full eyewash unit is separate and more substantial than a small sealed starter rinse bottle."},
+      {"id":"no-treatment","criterion":"No care, person, body part, medicine or tweezers use; card and phone are truly blank."}
+    ]
+  }
+}
