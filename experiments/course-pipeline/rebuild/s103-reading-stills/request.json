@@ -1,0 +1,25 @@
+{
+  "action": "s103-three-distinct-reading-stills-initial",
+  "stepId": "S1-03",
+  "batchId": "s103-reading-stills-20261016",
+  "targetAssetIds": [
+    "s103-still-decision",
+    "s103-still-absorbent",
+    "s103-still-route"
+  ],
+  "sourcePreflight": "authoring/S1-03/reading-stills-preflight.private.json",
+  "protectedVideoHashes": {
+    "s103-video-decide": "e6e8fae62f67c745df872bbc70ad3d347b4f1bfdf32d1de6241d780f71fa340e",
+    "s103-video-prepare": "63740ecd0e89c2408b47f1300bb90feab9ed9413d4cf029f6f7a1890726393fb",
+    "s103-video-response": "d636c827028959213e020743e31dcf565f57e3c3f2abe986a4c02c62ea841ec8",
+    "s103-video-evacuate": "0c9db26dc05442ab5d5c8db6655ba4ad5abf9d3fa8bf6cd7227d5324dec8da89",
+    "s103-video-cases": "55f93b29a6e21c05a3a81829eff537bddd332a8a7f4763ecb68c954aceb208ff"
+  },
+  "priorRunId": 38842255536,
+  "noPublication": true,
+  "noAutomaticRepair": true,
+  "planHash": "0aadaba4b49c9c858493f756867788645a37e2c1eeab2027a40c052df5bd0a33",
+  "contractHash": "e5a186809ec3904341da6a22a57e76242125e833648d0d426ce5bed0abfd2dde",
+  "scriptHash": "64e479e9e834349a0ea71791ca1aa4f6512caf9e00f3db6b0c2f746690199046",
+  "styleHash": "351b775af21bd4100101f8a910bbfd266b5cd9f01632f58a63ce7f5a4512c85f"
+}
