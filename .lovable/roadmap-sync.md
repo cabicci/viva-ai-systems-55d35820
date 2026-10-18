@@ -376,3 +376,10 @@ source: direct owner authorization to continue audited corrections
 scope: exact English and Gulf Systems View lesson visual cells only
 summary: Preserve the pinned original images and captions. Transcribe all three visible cards/examples into responsive live text in locale reading order. Offer a localized Radix dialog with original-resolution image, zoom controls, bounded overflow pan/keyboard focus area, Escape close and trigger focus return. Other lesson/locale cells receive no new aid from this scoped change.
 sync_status: Both original 1900x1000 images visually inspected from shared drive; no image generation/edit or source-manifest change. Text-order and dialog/zoom/focus tests added. CI pending; 319/390 physical/browser viewport and touch acceptance remain pending.
+## 2026-10-18 — academic arithmetic source revision (items 8, 9, 10, 40)
+
+[roadmap:local-batch-academic-arithmetic-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact four reported Academic locale/lesson identities and their written-source fingerprints
+summary: Correct percentage-point versus relative growth, separate zero/negative contribution effects, include the monthly logo software subscription inside the stated fixed cost, and accept the cash scenario's 550/1800 closing balances with risk/preventive-action reasoning. Preserve unrelated source, original PDF identities, approvals and media mappings. Record exact reversible changed fields and before/after payload hashes.
+sync_status: Offline exact-source reconstruction and independent arithmetic checks passed; CI source-import validation pending. Generated transaction SQL is a review artifact only, requiring independent acceptance and the existing inactive-course/unapproved-payload guards. No database change, served-content correction, PDF/media acceptance, merge or publication is claimed.
