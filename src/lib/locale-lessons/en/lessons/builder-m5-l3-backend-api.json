@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** **API (Application Programming Interface / Mail Carrier)** connects what the client sees to the work happening behind the scenes.\n- **Why now?** **Without a 'Mail Carrier' between the interface and the backend** — **no application works**.\n- **What after the lesson?** **You will map out**: **Button → What happens in the backend**.",
+      "contentMarkdown": "- What will you understand? In this AI app, server APIs connect the interface to backend processing and account data.\n- Why now? Sending a question to AI or fetching saved account conversations needs server work in this design. Opening a menu or changing a local color can happen entirely in the browser.\n- What after this step? Classify each action as local or server-dependent, then map only the server requests it needs.",
       "bullets": [
-        "**What will you understand?** **API (Application Programming Interface / Mail Carrier)** connects what the client sees to the work happening behind the scenes.",
-        "**Why now?** **Without a 'Mail Carrier' between the interface and the backend** — **no application works**.",
-        "**What after the lesson?** **You will map out**: **Button → What happens in the backend**."
+        "What will you understand? In this AI app, server APIs connect the interface to backend processing and account data.",
+        "Why now? Sending a question to AI or fetching saved account conversations needs server work in this design. Opening a menu or changing a local color can happen entirely in the browser.",
+        "What after this step? Classify each action as local or server-dependent, then map only the server requests it needs."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core idea — API connects the visible to the hidden",
       "subtitle": "API connects the visible to the hidden",
-      "contentMarkdown": "- **The client types in the interface and clicks a button** — **this is what they see**.\n- **The backend receives the request, talks to AI, and returns the response** — **this is what they don't see**.\n- **API = the language that transfers requests and responses between the two**.\n- **Every button in your app = at least one API request**.",
+      "contentMarkdown": "- A button click is a UI event. Its handler may update local interface state, call a server API, or do both.\n- Local example: open a menu or change its color in the browser; no server request is needed for that display change.\n- Server example in this app: send a question through the API to the backend for AI processing, then display the returned answer; fetch account conversations through the server when they are not already loaded.\n- A new conversation can start as a local empty draft until its first save or send. Explain when persistence begins; do not invent a backend call for every button.",
       "bullets": [
-        "**The client types in the interface and clicks a button** — **this is what they see**.",
-        "**The backend receives the request, talks to AI, and returns the response** — **this is what they don't see**.",
-        "**API = the language that transfers requests and responses between the two**.",
-        "**Every button in your app = at least one API request**."
+        "A button click is a UI event. Its handler may update local interface state, call a server API, or do both.",
+        "Local example: open a menu or change its color in the browser; no server request is needed for that display change.",
+        "Server example in this app: send a question through the API to the backend for AI processing, then display the returned answer; fetch account conversations through the server when they are not already loaded.",
+        "A new conversation can start as a local empty draft until its first save or send. Explain when persistence begins; do not invent a backend call for every button."
       ],
       "tables": []
     },
@@ -130,7 +130,7 @@
       "role": "Mission",
       "heading": "Mission — Map it out: Button → What happens?",
       "subtitle": "Map it out: Button → What happens?",
-      "contentMarkdown": "**Introduction:** **Planning mission — not coding**. **5–10 minutes is enough**.\n\n**Delivery:** **For each action, write the API path (Interface → Backend → Returns):**\n\n1. 'Send Question'\n2. 'Open Old Conversation'\n3. 'New Conversation'\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Path | 60% | **Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'** |\n| Logical | 40% | **The response on the screen is linked to the request**. **No 'magic' step without explanation** |",
+      "contentMarkdown": "Planning only — no coding or real requests. Allow 5–10 minutes. First classify each action as local or server-dependent and state your assumptions. For a local action, explain the browser state change and visible result. Only where server work is needed, map interface → API/backend → response.\n\n**Delivery:**\n\n1. Send Question: in this app, describe the server request for AI processing and the answer displayed.\n2. Open Old Conversation: distinguish an already-loaded local conversation from fetching a saved account conversation through the server.\n3. New Conversation: an empty draft may remain local until its first save or send; explain that transition.\n4. Open Menu or Change Color: describe a local browser state update with no server request for this display change.\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Clear Path | 60% | Correct local/server classification and a clear state/result path. Include backend processing or data retrieval only where required; accept a local new-conversation draft until first save or send. |\n| Logical | 40% | The visible result follows from the stated action and assumptions. Accept valid local behavior without inventing an API call. |",
       "bullets": [],
       "tables": [
         {
@@ -143,47 +143,48 @@
             [
               "Clear Path",
               "60%",
-              "**Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'**."
+              "Correct local/server classification and a clear state/result path. Include backend processing or data retrieval only where required; accept a local new-conversation draft until first save or send."
             ],
             [
               "Logical",
               "40%",
-              "**The response on the screen is linked to the request**. **No 'magic' step without explanation**."
+              "The visible result follows from the stated action and assumptions. Accept valid local behavior without inventing an API call."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Planning mission — not coding**. **5–10 minutes is enough**.",
+        "intro": "Planning only — no coding or real requests. Allow 5–10 minutes. First classify each action as local or server-dependent and state your assumptions. For a local action, explain the browser state change and visible result. Only where server work is needed, map interface → API/backend → response.",
         "delivery": [
-          "'Send Question'",
-          "'Open Old Conversation'",
-          "'New Conversation'"
+          "Send Question: in this app, describe the server request for AI processing and the answer displayed.",
+          "Open Old Conversation: distinguish an already-loaded local conversation from fetching a saved account conversation through the server.",
+          "New Conversation: an empty draft may remain local until its first save or send; explain that transition.",
+          "Open Menu or Change Color: describe a local browser state update with no server request for this display change."
         ],
         "rubric": [
           {
             "dimension": "Clear Path",
             "weight": 60,
-            "criteria": "**Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'**."
+            "criteria": "Correct local/server classification and a clear state/result path. Include backend processing or data retrieval only where required; accept a local new-conversation draft until first save or send."
           },
           {
             "dimension": "Logical",
             "weight": 40,
-            "criteria": "**The response on the screen is linked to the request**. **No 'magic' step without explanation**."
+            "criteria": "The visible result follows from the stated action and assumptions. Accept valid local behavior without inventing an API call."
           }
         ],
-        "yamlIntent": "Map API path for 3 actions in an AI app — UI → backend → return — ~5–10 min",
+        "yamlIntent": "Classify local/server actions and map server requests only where needed — planning only",
         "yamlType": "practice"
       }
     },
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **I understood:** **API connects the visible to the hidden** — **every button = a request**.\n- **You can:** **Map button → API action for 3 actions**.\n- **Next:** **Database (the storage)** — **why the application needs 'memory'**.\n\n---",
+      "contentMarkdown": "- I understood: a UI event is not automatically a server request; server APIs are used when the action needs backend processing or data.\n- I can classify actions first and explain a local state update or the necessary interface → backend → response flow.\n- Next: Database — why the application needs stored memory.",
       "bullets": [
-        "**I understood:** **API connects the visible to the hidden** — **every button = a request**.",
-        "**You can:** **Map button → API action for 3 actions**.",
-        "**Next:** **Database (the storage)** — **why the application needs 'memory'**."
+        "I understood: a UI event is not automatically a server request; server APIs are used when the action needs backend processing or data.",
+        "I can classify actions first and explain a local state update or the necessary interface → backend → response flow.",
+        "Next: Database — why the application needs stored memory."
       ],
       "tables": []
     }

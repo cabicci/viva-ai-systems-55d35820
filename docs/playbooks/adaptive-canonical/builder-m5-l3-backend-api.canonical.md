@@ -42,7 +42,7 @@
 
 | Element | Production value |
 |---------|------------------|
-| **Learning objective** | API connects Frontend to Backend; every button = at least one API request |
+| **Learning objective** | Classify UI events as local or server-dependent; map backend requests only when needed |
 | **Mission rubric** | 60% clear path · 40% logical |
 | **Quiz intent** | Backend talks to AI on client's behalf (correctIndex 1) |
 | **Concepts locked** | Backend, API |
@@ -95,11 +95,11 @@ concepts:
 
 blocks:
   - role: orientation
-    intent: API connects visible to hidden; map button flow after lesson
+    intent: Server APIs connect UI to backend work; classify local/server actions first
   - role: tension
     intent: Send clicked but nothing happens — no link to backend
   - role: core
-    intent: API = waiter; every button = API request
+    intent: A UI event may update local state, request server work, or both
   - role: comparison
     intent: Menu without waiter vs working restaurant
   - role: glossary
@@ -111,20 +111,20 @@ blocks:
   - role: quiz
     intent: Backend talks to AI (correctIndex 1)
   - role: mission
-    intent: Map 3 actions through API path
+    intent: Classify four actions; map local state or required server flow
   - role: confidence_close
-    intent: Every button = request; next = Database
+    intent: UI event is not automatically a server request; next = Database
 
 mission:
   type: practice
-  intent: Map API path for 3 actions in an AI app — UI → backend → return — ~5–10 min
+  intent: Classify local/server actions and map server requests only when needed — ~5–10 min
   rubricIntent:
     - dimension: clear_path
       weight: 60
-      criteria: Each action has 3 steps — UI → backend → return; backend includes talk to AI or fetch data
+      criteria: Correct local/server classification and clear state/result path; accept local drafts until first save or send
     - dimension: logical
       weight: 40
-      criteria: Screen response tied to request; no magic step without explanation
+      criteria: Visible result follows from action and assumptions; accept correct local behavior without inventing API calls
   forbiddenAssistantBehaviors:
     - write_full_submission
     - auto_pass_mission
@@ -154,9 +154,10 @@ slugValidation:
 
 ### Orientation — بداية الدرس
 
-- **ماذا ستفهم؟** **API (واجهة برمجة التطبيقات / ساعي البريد)** **تربط ما يراه العميل بالعمل الذي يحدث خلف الشاشة**.
-- **لماذا الآن؟** **بدون «ساعي بريد» بين الواجهة والكواليس** — **لا يعمل أي تطبيق**.
-- **ماذا بعد الدرس؟** **سترسم خريطة**: **زر → ماذا يحدث في الكواليس**.
+- ماذا ستفهم؟ في تطبيق الذكاء الاصطناعي هذا، تربط واجهات الخادم الواجهة بمعالجة الخلفية وبيانات الحساب.
+- لماذا الآن؟ إرسال سؤال للذكاء الاصطناعي أو جلب محادثات الحساب المحفوظة يحتاج إلى الخادم في هذا التصميم. أما فتح قائمة أو تغيير لون محلي فيمكن تنفيذه بالكامل داخل المتصفح.
+- ماذا بعد هذه الخطوة؟ صنّف كل إجراء إلى محلي أو معتمد على الخادم، ثم ارسم طلبات الخادم اللازمة فقط.
+
 
 ### Tension — تنقر «إرسال» — ولا شيء يحدث
 
@@ -166,10 +167,11 @@ slugValidation:
 
 ### Core idea — API تربط الظاهر بالمخفي
 
-- **العميل يكتب في الواجهة وينقر زرًا** — **هذا ما يراه**.
-- **الكواليس تستقبل الطلب، تكلّم AI، وترجع الرد** — **هذا ما لا يراه**.
-- **API = اللغة التي تنقل الطلب والرد بين الاثنين**.
-- **كل زر في تطبيقك = طلب API واحد على الأقل**.
+- النقر على زر حدث في الواجهة. قد يغيّر معالج الحدث الحالة المحلية، أو يطلب خدمة من الخادم، أو ينفّذ الأمرين.
+- مثال محلي: فتح قائمة أو تغيير لونها في المتصفح؛ لا يحتاج هذا التغيير المرئي إلى طلب للخادم.
+- مثال يحتاج إلى الخادم في هذا التطبيق: إرسال سؤال عبر API إلى الخلفية لمعالجة الذكاء الاصطناعي ثم عرض الرد؛ وجلب محادثات الحساب من الخادم إن لم تكن محمّلة بالفعل.
+- قد تبدأ المحادثة الجديدة بمسودة محلية فارغة حتى أول حفظ أو إرسال. وضّح متى يبدأ الحفظ الدائم، ولا تفترض طلبًا للخادم لكل زر.
+
 
 ### Comparison — منيو بدون جرسون vs مطعم يعمل
 
@@ -206,26 +208,27 @@ slugValidation:
 
 ### Mission — ارسم خريطة: زر → ماذا يحدث؟
 
-**المقدمة:** **مهمة تخطيط — ليست كودًا**. **٥–١٠ دقائق كافية**.
+مهمة تخطيط فقط — دون كتابة كود أو إرسال طلبات فعلية. تكفي ٥–١٠ دقائق. صنّف كل إجراء أولًا إلى محلي أو معتمد على الخادم واذكر افتراضاتك. اشرح تغيير حالة المتصفح ونتيجته للإجراء المحلي. وعند الحاجة إلى الخادم فقط، ارسم: الواجهة → API/الخلفية → الرد.
 
-**التسليم:** **لكل action اكتب مسار API (واجهة → كواليس → يرجع):**
+**التسليم:**
 
-1. «إرسال سؤال»
-2. «فتح محادثة قديمة»
-3. «محادثة جديدة»
-
-**معايير التقييم:**
+1. إرسال سؤال: اشرح في هذا التطبيق طلب الخادم لمعالجة الذكاء الاصطناعي والرد المعروض.
+2. فتح محادثة قديمة: ميّز بين محادثة محمّلة محليًا بالفعل وجلب محادثة الحساب المحفوظة من الخادم.
+3. محادثة جديدة: يجوز بقاء المسودة الفارغة محلية حتى أول حفظ أو إرسال؛ اشرح هذا الانتقال.
+4. فتح قائمة أو تغيير لون: اشرح تغيير الحالة المحلية في المتصفح دون طلب للخادم لهذا التغيير المرئي.
 
 | البعد | الوزن | المعيار |
-|-------|-------|---------|
-| مسار واضح | 60% | **كل action فيها ٣ خطوات: واجهة → كواليس → رد**. **الكواليس فيها «تكلّم AI» أو «جلب بيانات»** |
-| منطقي | 40% | **الرد على الشاشة مربوط بالطلب**. **لا خطوة «سحر» بلا تفسير** |
+|---|---|---|
+| مسار واضح | 60% | تصنيف صحيح للإجراء المحلي أو المعتمد على الخادم ومسار واضح للحالة والنتيجة. تُطلب معالجة الخلفية أو بياناتها عند الحاجة فقط؛ تُقبل مسودة المحادثة المحلية حتى أول حفظ أو إرسال. |
+| منطقي | 40% | تتبع النتيجة المرئية الإجراء والافتراضات المذكورة. يُقبل السلوك المحلي الصحيح دون اختراع طلب API. |
+
 
 ### Confidence close
 
-- **فهمت:** **API تربط الظاهر بالمخفي** — **كل زر = طلب**.
-- **تستطيع:** **خريطة button → API action لـ ٣ actions**.
-- **التالي:** **Database (المخزن)** — **لماذا التطبيق يحتاج «ذاكرة»**.
+- فهمت: حدث الواجهة لا يعني تلقائيًا طلبًا للخادم؛ نستخدم API عندما يحتاج الإجراء إلى معالجة الخلفية أو بياناتها.
+- أستطيع تصنيف الإجراءات أولًا، وشرح تغيير الحالة المحلية أو مسار الواجهة → الخلفية → الرد عند الحاجة.
+- التالي: قاعدة البيانات — لماذا يحتاج التطبيق إلى ذاكرة محفوظة.
+
 
 ---
 
@@ -334,3 +337,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit111 scoped correction (2026-10-18): distinguish local UI events from server requests. Agent-reviewed draft; human language/live acceptance pending. Application architecture, quiz key1 and rubric60/40 preserved.
