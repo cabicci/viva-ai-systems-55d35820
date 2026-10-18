@@ -70,6 +70,9 @@ jobs:
       - name: Analytics and optional start localization (mocked clients, no AI calls)
         run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
 
+      - name: Localized educational section identity
+        run: bunx vitest run src/lib/__tests__/localized-section-role-alignment.test.ts
+
       - name: Exact editorial source provenance (no image regeneration)
         run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts src/lib/__tests__/automation-payback-source.test.ts src/lib/__tests__/lesson-metric-examples.test.ts src/lib/__tests__/contextual-audit-asset-revision.test.ts src/lib/__tests__/weekly-review-video-title.test.ts
 
