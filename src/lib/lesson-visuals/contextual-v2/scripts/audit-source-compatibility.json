@@ -587,6 +587,58 @@
           "after": "\"شرح لخطة جلسة مراجعة أسبوعية مدتها ٣٠ دقيقة — ٤ أرقام، ٣ أسئلة AI، قرار واحد. الـ٣٠ دقيقة مدة جلسة المراجعة، مش مدة الفيديو أو وقت قراءة الدرس. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.\""
         }
       ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+      "auditItems": [
+        61
+      ],
+      "currentSha256": "9954d4a367e3f89c079b4dc8e2b57148078acf5f6c60d4326e3e2547f01bed61",
+      "currentBlob": "07698ae24e13448516767a554d96c186505a9a89",
+      "generationSourceSha256": "20646d02310f919d9d2c65b4df5499110820a6bf272e169524a15587c528d586",
+      "generationSourceBlob": "63a0eca434aac9da05042e3af13d674d2885971b",
+      "replacements": [
+        {
+          "field": "sections.0.contentMarkdown",
+          "before": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
+          "after": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
+        },
+        {
+          "field": "sections.0.bullets.2",
+          "before": "\"**What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
+          "after": "\"**What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
+        },
+        {
+          "field": "sections.7.contentMarkdown",
+          "before": "\"**Introduction:** Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation filter · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\"",
+          "after": "\"**Introduction:** Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation candidate · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\""
+        },
+        {
+          "field": "sections.7.tables.0.rows.0.2",
+          "before": "              \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
+          "after": "              \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
+        },
+        {
+          "field": "sections.7.mission.intro",
+          "before": "\"Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\"",
+          "after": "\"Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\""
+        },
+        {
+          "field": "sections.7.mission.rubric.0.criteria",
+          "before": "            \"criteria\": \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
+          "after": "            \"criteria\": \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
+        },
+        {
+          "field": "sections.8.contentMarkdown",
+          "before": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation filter — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\"",
+          "after": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation candidate — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\""
+        },
+        {
+          "field": "sections.8.bullets.1",
+          "before": "\"**You can:** You have a chosen tool for your first automation filter — ready for design.\"",
+          "after": "\"**You can:** You have a chosen tool for your first automation candidate — ready for design.\""
+        }
+      ]
     }
   ]
 }
