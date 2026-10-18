@@ -199,15 +199,16 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
-> **Quiz key (unchanged):** correctIndex: 1
+**السؤال:** حصل المنشور على مرات ظهور لجمهور مناسب، لكن نسبة النقر من الظهور أقل من منشور قابل للمقارنة خلال الفترة نفسها. أي تجربة لمدخل المحتوى تبدأ بها؟
 
-**السؤال:** **محتواك مفيد** **لكن الوصول ضعيف** — **أي اختيار يُحسّن باب الدخول بسرعة؟**
+1. أزيد طول الكابشن جدًا لأشرح كل التفاصيل.
+2. أكتب ٣ بدايات Hook للكابشن وأختبر أقواهم مع نص Thumbnail مختصر.
+3. أترك نفس الصورة والكابشن وأغيّر الموسيقى فقط.
 
-- خيار ١: **أزيد طول الكابشن جدًا** **لأشرح كل التفاصيل**.
-- **الإجابة الصحيحة (خيار ٢):** **أكتب ٣ بدايات Hook للكابشن** **وأختبر أقواهم** **مع نص Thumbnail مختصر**.
-- خيار ٣: **أترك نفس الصورة والكابشن** **وأغيّر الموسيقى فقط**.
+**التفسير:** افتتاحية أوضح ونص موجز للصورة المصغرة تجربة معقولة لمدخل المحتوى. اختبر نسخة دخول واحدة في كل مرة مع جمهور ومرات ظهور وفترة قابلة للمقارنة، وقارن نسبة النقر. لا يثبت الفرق سببًا ولا يضمن التحسن.
 
-**التفسير:** **اختبار بدايات الكابشن** **مع Thumbnail واضح** **يُعطي أسرع تحسين** **في قرار النقر**.
+**correctIndex:** 1 (unchanged)
+
 
 ### Mission — اكتب ٣ افتتاحيات كابشن أو نصوص Thumbnail
 
@@ -335,3 +336,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit92/95/96 scoped correction (2026-10-18): quiz evidence, text delivery or promise criterion clarified as applicable; IDs, keys and weights preserved. Agent-reviewed draft; human language/live acceptance pending.

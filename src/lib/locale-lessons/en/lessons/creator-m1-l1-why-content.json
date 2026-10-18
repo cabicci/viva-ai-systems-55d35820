@@ -131,7 +131,7 @@
       "role": "Mission",
       "heading": "Mission — Write Your Content Promise",
       "subtitle": "Write Your Content Promise",
-      "contentMarkdown": "**Introduction:** This mission is a practical exercise — not a test. Write a content promise that specifies: who, the problem, and the type of content you will repeat.\n\n**Submission:** (1) I am talking to: [Audience] · (2) The main problem: [Problem] · (3) The repeatable content type: [Type] · (4) My promise in one sentence: [Sentence]\n\n**Evaluation Criteria (from production — unchanged weights):**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clarity of Promise | 60% | The audience is specific; the problem is clear |\n| Repeatability | 40% | The content type is consistently repeatable |",
+      "contentMarkdown": "This mission is a practical exercise — not a test. Write a content promise that specifies: who, the problem, and the type of content you will repeat.\n\nWrite one sentence that links a specific audience and problem to a concrete benefit your repeatable content format can deliver, without exaggerated guarantees.\n\n**Delivery:**\n\n1. Specific audience: [who]\n2. Main problem: [one problem]\n3. Repeatable content format: [format]\n4. One-sentence promise: [audience + problem + specific benefit consistent with that format; no exaggerated guarantees]\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Clarity of Promise | 60% | The audience is specific and the problem is clear; one sentence connects both to a specific deliverable benefit consistent with the repeatable content format, without exaggerated guarantees. |\n| Repeatability | 40% | The content type is consistently repeatable |",
       "bullets": [],
       "tables": [
         {
@@ -144,7 +144,7 @@
             [
               "Clarity of Promise",
               "60%",
-              "The audience is specific; the problem is clear"
+              "The audience is specific and the problem is clear; one sentence connects both to a specific deliverable benefit consistent with the repeatable content format, without exaggerated guarantees."
             ],
             [
               "Repeatability",
@@ -155,13 +155,18 @@
         }
       ],
       "mission": {
-        "intro": "This mission is a practical exercise — not a test. Write a content promise that specifies: who, the problem, and the type of content you will repeat.",
-        "delivery": [],
+        "intro": "This mission is a practical exercise — not a test. Write a content promise that specifies: who, the problem, and the type of content you will repeat.\n\nWrite one sentence that links a specific audience and problem to a concrete benefit your repeatable content format can deliver, without exaggerated guarantees.",
+        "delivery": [
+          "Specific audience: [who]",
+          "Main problem: [one problem]",
+          "Repeatable content format: [format]",
+          "One-sentence promise: [audience + problem + specific benefit consistent with that format; no exaggerated guarantees]"
+        ],
         "rubric": [
           {
             "dimension": "Clarity of Promise",
             "weight": 60,
-            "criteria": "The audience is specific; the problem is clear"
+            "criteria": "The audience is specific and the problem is clear; one sentence connects both to a specific deliverable benefit consistent with the repeatable content format, without exaggerated guarantees."
           },
           {
             "dimension": "Repeatability",

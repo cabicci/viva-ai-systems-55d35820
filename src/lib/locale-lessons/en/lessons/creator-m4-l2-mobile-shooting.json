@@ -133,7 +133,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Record a 60-second video or write its script",
-      "contentMarkdown": "**Introduction:** **Choose one path:** **Record an actual 60-second video**, **or write a shooting script ready for execution** **following the same rules**.\n\n**Submission:** Hook · Light setup · Sound setup · Framing description · Content or recording description\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Basics Commitment | 60% | **The recording or script path is complete** — **light, sound, and framing are clearly described** |\n| Strong Start | 40% | **A clear Hook** **serves the idea from the first seconds** |",
+      "contentMarkdown": "**Choose one path:** **Record an actual 60-second video**, **or write a shooting script ready for execution** **following the same rules**.\n\n**Delivery:**\n\n1. Choose one option; the answer field accepts text and does not upload a video file.\n2. Recording option: record about 60 seconds, then type the opening Hook, lighting setup, sound setup and framing. Provide a link the intended reviewer can access or describe the recorded outcome; either is acceptable.\n3. Script option: type a 60-second script including its Hook, plus the same lighting, sound and framing setup. A recording is not required for this option.\n4. Assessment uses the text you provide. Do not assume an automatic evaluator opened a link, watched the video or heard its audio.\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Basics Commitment | 60% | One option is complete: the chosen recording description or 60-second script explains light, sound and framing in text. A usable link or outcome description is accepted for recording; no file upload is required. |\n| Strong Start | 40% | **A clear Hook** **serves the idea from the first seconds** |",
       "bullets": [],
       "tables": [
         {
@@ -146,7 +146,7 @@
             [
               "Basics Commitment",
               "60%",
-              "**The recording or script path is complete** — **light, sound, and framing are clearly described**"
+              "One option is complete: the chosen recording description or 60-second script explains light, sound and framing in text. A usable link or outcome description is accepted for recording; no file upload is required."
             ],
             [
               "Strong Start",
@@ -158,12 +158,17 @@
       ],
       "mission": {
         "intro": "**Choose one path:** **Record an actual 60-second video**, **or write a shooting script ready for execution** **following the same rules**.",
-        "delivery": [],
+        "delivery": [
+          "Choose one option; the answer field accepts text and does not upload a video file.",
+          "Recording option: record about 60 seconds, then type the opening Hook, lighting setup, sound setup and framing. Provide a link the intended reviewer can access or describe the recorded outcome; either is acceptable.",
+          "Script option: type a 60-second script including its Hook, plus the same lighting, sound and framing setup. A recording is not required for this option.",
+          "Assessment uses the text you provide. Do not assume an automatic evaluator opened a link, watched the video or heard its audio."
+        ],
         "rubric": [
           {
             "dimension": "Basics Commitment",
             "weight": 60,
-            "criteria": "**The recording or script path is complete** — **light, sound, and framing are clearly described**"
+            "criteria": "One option is complete: the chosen recording description or 60-second script explains light, sound and framing in text. A usable link or outcome description is accepted for recording; no file upload is required."
           },
           {
             "dimension": "Strong Start",

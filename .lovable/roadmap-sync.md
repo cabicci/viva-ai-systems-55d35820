@@ -472,3 +472,8 @@ Recovered the original navigation ZIP from the report's decision-ledger referenc
 ### Audit111 — local UI events and server requests (2026-10-18)
 
 All four Backend & API lessons distinguish browser state changes from server work. Classify menu/color, send question, loaded/saved conversation and new local draft before drawing any server route. Update mission delivery, rubric and Egyptian prompt/template; keep weights60/40, quiz key1 and application architecture. Synchronize MSA canonical metadata and text. All four original diagrams already qualify backend-triggering buttons and remain byte-identical. Exact editorial reversals preserve generation source provenance. Draft source only; language/live acceptance pending. Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events
+
+
+### Audit92/95/96 — creator quiz evidence and text delivery (2026-10-18)
+
+Hook questions now specify early retention loss among suitable viewers; thumbnail questions specify low impression-to-click rate against a comparable post. Preserve all eight correct indices/options and frame the answer as a first experiment. Restore both filming delivery choices in three translated lessons: text field, recording link or outcome description, or60-second script/setup; do not assume automated video/audio inspection. Content-promise guidance and existing60% dimension assess an audience/problem/benefit sentence consistent with repeatable format, preserving40% repeatability. Synchronize Egyptian authoring and MSA canonical text. Draft source only, live/language acceptance pending; no real publication, upload or submission.
