@@ -141,10 +141,10 @@ function PricingPage() {
             </article>
 
             <article className="glass min-w-0 rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8 flex flex-col relative overflow-hidden">
-              <div className="absolute top-4 start-4">
+              <div className="mb-4 flex min-w-0 flex-wrap">
                 <Badge
                   variant="outline"
-                  className="border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
+                  className="max-w-full whitespace-normal break-words border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
                 >
                   {t("pricing.badge.testMode")}
                 </Badge>
@@ -168,10 +168,10 @@ function PricingPage() {
             </article>
 
             <article className="glass min-w-0 rounded-2xl border border-accent/40 bg-accent/[0.04] p-6 md:p-8 flex flex-col relative overflow-hidden">
-              <div className="absolute top-4 start-4">
+              <div className="mb-4 flex min-w-0 flex-wrap">
                 <Badge
                   variant="outline"
-                  className="border-accent/40 bg-accent/10 text-accent text-[11px] font-semibold"
+                  className="max-w-full whitespace-normal break-words border-accent/40 bg-accent/10 text-accent text-[11px] font-semibold"
                 >
                   {t("pricing.badge.testMode")}
                 </Badge>

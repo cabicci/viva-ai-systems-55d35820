@@ -203,7 +203,7 @@ function PathBlock({
 
   return (
     <section
-      className={`rounded-3xl p-6 md:p-8 border border-border/60 ${isOpen ? "" : "opacity-70"}`}
+      className={`min-w-0 max-w-full break-words rounded-3xl p-4 sm:p-6 md:p-8 border border-border/60 ${isOpen ? "" : "opacity-70"}`}
       style={{ background: pastel }}
     >
       {isIntro && (
@@ -217,7 +217,7 @@ function PathBlock({
         </div>
       )}
       {/* Path header */}
-      <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 sm:gap-5 mb-6">
+      <div className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] sm:grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 sm:gap-5 mb-6">
         <div
           className="grid h-14 w-14 place-items-center rounded-xl shrink-0"
           style={{ background: pastel }}
@@ -236,7 +236,7 @@ function PathBlock({
           <p className="text-sm text-muted-foreground mt-1">{pathTagline}</p>
         </div>
         {!isOpen && (
-          <span className="text-xs glass rounded-full px-3 py-1 text-muted-foreground shrink-0">
+          <span className="col-span-2 sm:col-span-1 max-w-full break-words text-xs glass rounded-full px-3 py-1 text-muted-foreground">
             {t("curriculum.path.comingSoon")}
           </span>
         )}
@@ -260,7 +260,9 @@ function PathBlock({
           {t("curriculum.path.emptyModule")}
         </div>
       ) : (
-        <div className={`grid gap-4 ${isIntro ? "md:grid-cols-1" : "md:grid-cols-2"}`}>
+        <div
+          className={`grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4 ${isIntro ? "md:grid-cols-1" : "md:grid-cols-2"}`}
+        >
           {path.modules.map((m, mi) => {
             const prev = path.modules[mi - 1];
             const status = getModuleStatus(
@@ -296,9 +298,11 @@ function PathBlock({
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-lg leading-tight">{moduleTitle}</h3>
+                      <h3 className="min-w-0 max-w-full break-words font-bold text-lg leading-tight">
+                        {moduleTitle}
+                      </h3>
                       {m.level === "technical" && (
-                        <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-accent-warning/40 text-accent-warning-foreground border border-accent-warning/40">
+                        <span className="max-w-full whitespace-normal break-words text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-accent-warning/40 text-accent-warning-foreground border border-accent-warning/40">
                           {t("curriculum.module.technicalBadge")}
                         </span>
                       )}
@@ -431,7 +435,7 @@ function LessonRow({
         {badge}
       </span>
       <span
-        className={`flex-1 truncate ${accessible ? "text-foreground" : "text-muted-foreground"}`}
+        className={`min-w-0 flex-1 break-words ${accessible ? "text-foreground" : "text-muted-foreground"}`}
       >
         {lessonTitle}
       </span>

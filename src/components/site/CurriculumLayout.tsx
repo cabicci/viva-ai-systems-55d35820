@@ -7,9 +7,9 @@ import { getLineCopy, type LearningLine } from "@/lib/learning-lines";
 import { useLocale } from "@/lib/locale/locale-context";
 
 export const CURRICULUM_MODULE_CLASS =
-  "rounded-2xl p-5 flex flex-col gap-4 transition border border-border/40 bg-background/40";
+  "min-w-0 max-w-full break-words rounded-2xl p-5 flex flex-col gap-4 transition border border-border/40 bg-background/40";
 export const CURRICULUM_ROW_CLASS =
-  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition border border-transparent";
+  "flex min-w-0 max-w-full flex-wrap items-center gap-3 rounded-lg px-3 py-2 text-sm transition border border-transparent";
 
 export function CurriculumLayout({
   line,

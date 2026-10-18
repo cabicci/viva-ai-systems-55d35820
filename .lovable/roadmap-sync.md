@@ -341,3 +341,10 @@ source: direct owner authorization to continue audited corrections
 scope: local contact field validation, five-character minimum, field/error association and focus
 summary: Show localized first-name/email/message/phone/consent errors, associate descriptions and invalid state, focus the first invalid field and provide selectable error summary entries. Display the five-character minimum before submission. Preserve uncontrolled field values and keep service-wide failures separate. Existing submit command, CAPTCHA requirements and server validation remain.
 sync_status: Four-locale invalid-form and mocked service-failure tests added; no actual contact submission, CAPTCHA solving, email send, merge or publication.
+## 2026-10-18 — price badge flow and narrow curriculum sizing (items 51, 52)
+
+[roadmap:local-batch-responsive-pricing-curriculum-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Pro/Pro Plus test badge positioning and shared curriculum card sizing/wrapping
+summary: Move the existing test-mode badges to separate in-flow rows with wrapping. Use a shrinkable single-column module grid, shrinkable shared cards/rows, wrapped headings/badges and full lesson-title text. Keep all content, links, access decisions, prices, checkout paths and badge visibility unchanged.
+sync_status: Existing route/locale regressions and build will run in CI. Browser layout measurement remains pending: local Windows UNC Vite startup failed; no claimed viewport acceptance or production publication.
