@@ -327,3 +327,10 @@ source: direct owner authorization to continue audited corrections
 scope: shared admin beforeLoad redirect context and the exact /build-logs authentication destination
 summary: Consume route context, validate supported locale, and retain it for login/dashboard denial redirects. Only an exact /build-logs request receives that fixed return destination; query-supplied return values are ignored. Login re-enters the unchanged mandatory server admin check. Every existing protected payload/action still asserts server authorization.
 sync_status: Added mocked server-outcome tests and existing SSR admin suite to CI; no live session expiry, role/account change, merge or publication.
+## 2026-10-18 — distinct payment read states (item 117)
+
+[roadmap:local-batch-payment-read-states-20261018]
+source: direct owner authorization to continue audited corrections
+scope: customer order/access list loading, successful-empty, failed-read retry and requested-order states
+summary: Distinguish loading and read failures from successful empty lists in four locales. Explain unavailable requested orders, retry reads explicitly, and avoid presenting an unknown entitlement lookup as confirmed paid-wait state. Empty access copy does not establish subscription loss. Existing order commands, authorization and receipt flows are preserved.
+sync_status: Added mocked-query renderer regressions with command non-invocation assertions; CI pending. No actual order read/write, payment, role change, merge or publication.

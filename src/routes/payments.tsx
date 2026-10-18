@@ -13,6 +13,7 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
 import { RedeemOffer } from "@/components/commerce/RedeemOffer";
 import { ReceiptUpload, ReceiptView } from "@/components/commerce/ReceiptUpload";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 export const Route = createFileRoute("/payments")({
   head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
   validateSearch: parsePaymentSearch,
@@ -28,6 +29,7 @@ function PaymentRoute() {
   );
 }
 function Payments() {
+  const t = useUiString();
   const { order: targetOrderId } = Route.useSearch();
   const { locale } = useLocale(),
     w = commerceCopy(locale),
@@ -101,10 +103,33 @@ function Payments() {
             {w.all}
           </Link>
         )}
-        {(error || rows.error || target.error) && (
+        {error && (
           <p role="alert" className="text-destructive">
-            {error || w.disabled}
+            {error}
           </p>
+        )}
+        {(rows.isError || (targetOrderId && target.isError)) && (
+          <div role="alert" className="space-y-2 text-destructive">
+            <p>
+              {t(
+                targetOrderId && target.isError
+                  ? "payments.state.requestedError"
+                  : "payments.state.readError",
+              )}
+            </p>
+            <Button
+              variant="outline"
+              onClick={() => {
+                void rows.refetch();
+                if (targetOrderId) void target.refetch();
+              }}
+            >
+              {t("payments.state.retry")}
+            </Button>
+          </div>
+        )}
+        {(rows.isLoading || (targetOrderId && target.isLoading)) && (
+          <p role="status">{t("payments.state.loading")}</p>
         )}
         {!targetOrderId && (
           <>
@@ -112,6 +137,9 @@ function Payments() {
             <MailPreferences />
             <section>
               <h2 className="text-xl font-bold">{w.access}</h2>
+              {rows.isSuccess && rows.data.entitlements.length === 0 && (
+                <p>{t("payments.state.noEntitlements")}</p>
+              )}
               <div className="grid gap-3 sm:grid-cols-2">
                 {rows.data?.entitlements.map((e) => (
                   <article key={e.id} className="rounded-xl border p-4">
@@ -128,6 +156,12 @@ function Payments() {
           </>
         )}
         <section className="space-y-4">
+          {!targetOrderId && rows.isSuccess && rows.data.orders.length === 0 && (
+            <p>{t("payments.state.noOrders")}</p>
+          )}
+          {targetOrderId && target.isSuccess && !target.data && (
+            <p role="status">{t("payments.state.requestedMissing")}</p>
+          )}
           {orders?.map((o) => (
             <article key={o.id} className="rounded-xl border p-4 space-y-3">
               <h2 className="font-bold">
@@ -140,7 +174,7 @@ function Payments() {
                   : (w[o.review_status as "pending"] ?? o.review_status)}
               </p>
               <p>{o.review_reason}</p>
-              {o.review_status === "confirmed" && !o.entitlement && (
+              {o.review_status === "confirmed" && !o.entitlement && rows.isSuccess && (
                 <p>
                   {w.paidWait}
                   {o.package === "kids" && (

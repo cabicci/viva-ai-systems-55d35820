@@ -73,6 +73,9 @@ jobs:
       - name: Exact editorial source provenance (no image regeneration)
         run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts
 
+      - name: Payment read states (mocked queries, no orders changed)
+        run: bunx vitest run src/lib/__tests__/payments-read-states.test.tsx
+
       - name: Build and storage watcher compatibility
         run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
 
