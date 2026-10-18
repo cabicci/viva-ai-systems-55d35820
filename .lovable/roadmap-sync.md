@@ -477,3 +477,8 @@ All four Backend & API lessons distinguish browser state changes from server wor
 ### Audit92/95/96 — creator quiz evidence and text delivery (2026-10-18)
 
 Hook questions now specify early retention loss among suitable viewers; thumbnail questions specify low impression-to-click rate against a comparable post. Preserve all eight correct indices/options and frame the answer as a first experiment. Restore both filming delivery choices in three translated lessons: text field, recording link or outcome description, or60-second script/setup; do not assume automated video/audio inspection. Content-promise guidance and existing60% dimension assess an audience/problem/benefit sentence consistent with repeatable format, preserving40% repeatability. Synchronize Egyptian authoring and MSA canonical text. Draft source only, live/language acceptance pending; no real publication, upload or submission.
+
+
+### Audit91 — reality-check test plans (2026-10-18)
+
+Retain five-idea screening and two selections. Each selected idea now has metric/unit, period, comparison and actual values or labeled fictional/data-gap evidence, then one change for a weak signal and a comparable retest of the same idea. No publication required. Preserve60/40 weights and quiz options/key1. Core, glossary and canonical structured intents qualify signals/small data as provisional guidance rather than proven usefulness; synchronize Egyptian prompt/template. Draft source only; language/live acceptance pending.
