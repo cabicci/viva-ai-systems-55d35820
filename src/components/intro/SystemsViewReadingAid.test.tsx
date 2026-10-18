@@ -49,7 +49,7 @@ it("opens the original with zoom, a keyboard-focusable scroll area and Escape fo
       url="/reviewed-original.webp"
     />,
   );
-  const trigger = screen.getByRole("button", { name: "Expand Systems View diagram" });
+  const trigger = screen.getByRole("button", { name: "Expand original diagram" });
   trigger.focus();
   fireEvent.click(trigger);
   const dialog = await screen.findByRole("dialog", { name: "Systems View — original diagram" });
