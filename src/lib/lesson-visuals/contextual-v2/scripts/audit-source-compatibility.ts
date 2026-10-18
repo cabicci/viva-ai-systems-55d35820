@@ -10,8 +10,8 @@ const blob = (bytes: Buffer) =>
     .digest("hex");
 
 /**
- * Reconstruct only the exact original generation-source bytes for three
- * reviewed editorial edits. This never changes a lesson, image or manifest.
+ * Reconstruct only the exact original generation-source bytes for the
+ * explicitly recorded reviewed edits. This never changes a lesson, image or manifest.
  * Every current hash, unique replacement and reconstructed hash must match;
  * any further source edit remains subject to the normal failing verifier.
  */

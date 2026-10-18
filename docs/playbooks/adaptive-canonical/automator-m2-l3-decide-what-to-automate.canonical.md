@@ -45,7 +45,7 @@
 | **Learning objective** | Prioritize first automation: repeating + simple + low risk; rank 5 tasks on easy/hard × high/low frequency matrix |
 | **Mission rubric** | 60% matrix + 5 tasks · 40% decision + rule |
 | **Quiz intent** | Form-to-sheet copy (40×/month, 3 steps) beats creative report or personal partner email |
-| **Concepts locked** | Task Candidate, ROI |
+| **Concepts locked** | Task Candidate, Build-effort payback period |
 | **Prerequisites** | `automator-m2-l2-spot-patterns` |
 | **Next lesson** | `automator-m3-l1-tools-landscape` |
 
@@ -88,9 +88,9 @@ concepts:
     definition: Task screened for repeat, simplicity, and low risk before automation.
     mustPreserve: true
   - id: concept-roi
-    term: ROI
-    termEn: ROI
-    definition: Time saved ÷ build time — worth it if payback under ~two months.
+    term: Build-effort payback period
+    termEn: Build-effort payback period
+    definition: Build time (hours) ÷ net monthly time saved (hours/month) = build-effort payback period (months). Example: 0.5 ÷ 2 = 0.25 month, assuming the 2 hours/month is net of oversight and maintenance. Under two months is a teaching assumption, not a universal rule; retain risk and maintenance checks.
     mustPreserve: true
 
 blocks:
@@ -103,7 +103,7 @@ blocks:
   - role: comparison
     intent: First Flow = hardest vs first Flow = easiest repeating
   - role: glossary
-    intent: Task Candidate (مرشّح أتمتة); ROI (العائد على الجهد)
+    intent: Task Candidate (مرشّح أتمتة); مدة استرداد جهد البناء (Build-effort payback period)
   - role: video
     intent: Optional — rank automation candidates — production Bunny unchanged
   - role: screenshot
@@ -130,7 +130,7 @@ mission:
     - auto_pass_mission
     - invent_tasks_or_matrix_placement_for_learner
 
-termsLocked: [Task Candidate, ROI, Flow]
+termsLocked: [Task Candidate, Build-effort payback period, Flow]
 
 links:
   nextLessonId: automator-m3-l1-tools-landscape
@@ -183,7 +183,7 @@ slugValidation:
 | المصطلح | المعنى | مثال |
 |---------|--------|------|
 | **Task Candidate (مرشّح أتمتة)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |
-| **ROI (العائد على الجهد)** | الوقت الذي ستوفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق | ٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز |
+| **مدة استرداد جهد البناء (Build-effort payback period)** | وقت بناء الأتمتة بالساعات ÷ صافي الوقت الموفّر شهرياً بالساعات/شهر = مدة الاسترداد بالشهور. حد أقل من شهرين افتراض تعليمي لهذا المثال، وليس قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة. | ٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض توفير ساعتين شهرياً صافياً بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر. |
 
 ### Video block (production reference only)
 
@@ -274,7 +274,7 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 | Dimension | Score (/5) | Notes |
 |-----------|------------|-------|
 | Objective preservation | 4 | Pending human review |
-| Concept preservation | 5 | Task Candidate, ROI locked |
+| Concept preservation | 5 | Task Candidate, Build-effort payback period locked |
 | Beginner clarity | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | MSA simplicity | 4 | Pending dialect scan |
 | Mission consistency | 5 | 60/40 rubric matches production |
@@ -335,3 +335,8 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+## 2026-10-18 — approved audit correction 55
+
+Owner-authorized correction supersedes the original ROI preservation entry only for this dimensional-error fix. Use build time divided by net monthly time saving, with the 0.25-month example and explicit oversight/maintenance assumption. The two-month limit is illustrative. Egyptian authoring and four generated glossary overlays are synchronized; mission/quiz/rubric and risk checks are preserved. This update does not fabricate the pending human sign-off or authorize media generation.

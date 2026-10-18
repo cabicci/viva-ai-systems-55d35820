@@ -1,6 +1,6 @@
 {
   "role": "exact-reviewed-editorial-source-compatibility",
-  "scope": "Only the three approved item-6 editorial changes. Original image manifest and assets remain unchanged.",
+  "scope": "Only exact reviewed source changes for audit items 6 and 55. Original generation manifest and image bytes remain unchanged.",
   "entries": [
     {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
@@ -75,6 +75,139 @@
           "field": "Diagram editorial identifier",
           "before": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for. (Production ID: `audience-persona`.)",
           "after": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for."
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "auditItems": [
+        55
+      ],
+      "currentSha256": "16370a58f4bdc672a01fc7b38379e5f518008c00aff568b29b43587d689e7426",
+      "currentBlob": "a8034612210cba9dd1640dbc8cd8a3e7d5c2b43d",
+      "generationSourceSha256": "25746d8ca91690a5b5e16b9bc7d5ab9dccba8c1506d7861d4e6ccf30f83c4626",
+      "generationSourceBlob": "1e8671232f50d9e8888e6cdaaffce685bbc412c3",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"Task Candidate (مرشّح أتمتة): مهمة بنفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ («إيميل ترحيب بعد حجز» — مرشّح قوي.)\\n\\nROI (العائد على الجهد): الوقت اللي هتوفره ÷ وقت بناء الأتمتة — لو أقل من شهرين، يستاهل. (٣٠ دقيقة بناء → توفر ساعتين/شهر = ROI ممتاز.)\"",
+          "after": "\"Task Candidate (مرشّح أتمتة): مهمة بنفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ («إيميل ترحيب بعد حجز» — مرشّح قوي.)\\n\\nمدة استرداد مجهود البناء (Build-effort payback period): وقت بناء الأتمتة بالساعات ÷ صافي الوقت المتوفّر كل شهر بالساعات/شهر = مدة الاسترداد بالشهور. أقل من شهرين افتراض تعليمي للمثال، مش قاعدة عامة؛ راجع المخاطر والصيانة والمتابعة. (٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.)\""
+        },
+        {
+          "field": "sections.4.bullets.1",
+          "before": "\"ROI (العائد على الجهد): الوقت اللي هتوفره ÷ وقت بناء الأتمتة — لو أقل من شهرين، يستاهل. (٣٠ دقيقة بناء → توفر ساعتين/شهر = ROI ممتاز.)\"",
+          "after": "\"مدة استرداد مجهود البناء (Build-effort payback period): وقت بناء الأتمتة بالساعات ÷ صافي الوقت المتوفّر كل شهر بالساعات/شهر = مدة الاسترداد بالشهور. أقل من شهرين افتراض تعليمي للمثال، مش قاعدة عامة؛ راجع المخاطر والصيانة والمتابعة. (٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.)\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.0",
+          "before": "\"ROI (العائد على الجهد)\"",
+          "after": "\"مدة استرداد مجهود البناء (Build-effort payback period)\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"الوقت اللي هتوفره ÷ وقت بناء الأتمتة — لو أقل من شهرين، يستاهل.\"",
+          "after": "\"وقت بناء الأتمتة بالساعات ÷ صافي الوقت المتوفّر كل شهر بالساعات/شهر = مدة الاسترداد بالشهور. أقل من شهرين افتراض تعليمي للمثال، مش قاعدة عامة؛ راجع المخاطر والصيانة والمتابعة.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"٣٠ دقيقة بناء → توفر ساعتين/شهر = ROI ممتاز.\"",
+          "after": "\"٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "auditItems": [
+        55
+      ],
+      "currentSha256": "bd8e7260c5bcefa5a75dc440e56097989f9a5065c9ddf365328fef9d5b0cc9a7",
+      "currentBlob": "fd176c0392bb20294ee46b4abd915d4c31624958",
+      "generationSourceSha256": "c3970eebd4e7aebca4967e75aa2acfeef5874b0c23b4c2bbdc9678f81ea41484",
+      "generationSourceBlob": "7ea0060d1cc78b5f235ee40ed79e5074ce106471",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Task Candidate (مرشّح أتمتة)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |\\n| **ROI (العائد على الجهد)** | الوقت الذي ستوفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق | ٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Task Candidate (مرشّح أتمتة)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |\\n| **مدة استرداد جهد البناء (Build-effort payback period)** | وقت بناء الأتمتة بالساعات ÷ صافي الوقت الموفّر شهرياً بالساعات/شهر = مدة الاسترداد بالشهور. حد أقل من شهرين افتراض تعليمي لهذا المثال، وليس قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة. | ٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض توفير ساعتين شهرياً صافياً بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.0",
+          "before": "\"**ROI (العائد على الجهد)**\"",
+          "after": "\"**مدة استرداد جهد البناء (Build-effort payback period)**\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"الوقت الذي ستوفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق\"",
+          "after": "\"وقت بناء الأتمتة بالساعات ÷ صافي الوقت الموفّر شهرياً بالساعات/شهر = مدة الاسترداد بالشهور. حد أقل من شهرين افتراض تعليمي لهذا المثال، وليس قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز\"",
+          "after": "\"٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض توفير ساعتين شهرياً صافياً بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "auditItems": [
+        55
+      ],
+      "currentSha256": "a77b28f72de80090d45dd022cc1f78ba81496ab425d7dead64a10bf114533a53",
+      "currentBlob": "0cd37691fc33ade889d7994b337b806bdef28a98",
+      "generationSourceSha256": "78ec9a85eab87ad801d44972a663307c6c1af99f1ebc1badbad9ea906ac7a59d",
+      "generationSourceBlob": "0e70951eb0b1503e0a4741a92e1603b909e0d2e7",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **مرشّح أتمتة (Task Candidate)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |\\n| **العائد على الجهد (ROI)** | الوقت الذي راح توفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق | ٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **مرشّح أتمتة (Task Candidate)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |\\n| **مدة استرداد جهد البناء (Build-effort payback period)** | وقت بناء الأتمتة بالساعات ÷ صافي الوقت اللي توفّره كل شهر بالساعات/شهر = مدة الاسترداد بالشهور. أقل من شهرين افتراض تعليمي لهالمثال، مو قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة. | ٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.0",
+          "before": "\"**العائد على الجهد (ROI)**\"",
+          "after": "\"**مدة استرداد جهد البناء (Build-effort payback period)**\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"الوقت الذي راح توفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق\"",
+          "after": "\"وقت بناء الأتمتة بالساعات ÷ صافي الوقت اللي توفّره كل شهر بالساعات/شهر = مدة الاسترداد بالشهور. أقل من شهرين افتراض تعليمي لهالمثال، مو قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز\"",
+          "after": "\"٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "auditItems": [
+        55
+      ],
+      "currentSha256": "b96e0dcd1c211f4527ab52dd5599e9ae02f2692087e0c57ad79719d31841c418",
+      "currentBlob": "1f61b53903cc33479bda54ac2f985918e69650b5",
+      "generationSourceSha256": "d52ff452ab27dc8f695c479ef0ed61bfc9a3c1e8c4fc89196da9a9941991a0ea",
+      "generationSourceBlob": "e9cf8eadf5baa65196b9776d657accd5454dee7a",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| Term | Meaning | Example |\\n|---------|--------|------|\\n| **Task Candidate** | A task we examine: Is it repetitive? Simple? Low risk? | \\\"Welcome email after booking\\\" — a strong candidate |\\n| **ROI (Return on Investment)** | Time saved ÷ Time to build automation — if less than two months, it’s worth it | 30 minutes to build → saves 2 hours/month = excellent return |\"",
+          "after": "\"| Term | Meaning | Example |\\n|---------|--------|------|\\n| **Task Candidate** | A task we examine: Is it repetitive? Simple? Low risk? | \\\"Welcome email after booking\\\" — a strong candidate |\\n| **Build-effort payback period** | Build time in hours ÷ net monthly time saved in hours/month = payback period in months. Under two months is a teaching assumption for this example, not a universal feasibility rule; review risk, maintenance and oversight. | 30 minutes to build = 0.5 hour. Assume 2 hours/month of net saving after ongoing oversight and maintenance: 0.5 ÷ 2 = 0.25 month. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.0",
+          "before": "\"**ROI (Return on Investment)**\"",
+          "after": "\"**Build-effort payback period**\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"Time saved ÷ Time to build automation — if less than two months, it’s worth it\"",
+          "after": "\"Build time in hours ÷ net monthly time saved in hours/month = payback period in months. Under two months is a teaching assumption for this example, not a universal feasibility rule; review risk, maintenance and oversight.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"30 minutes to build → saves 2 hours/month = excellent return\"",
+          "after": "\"30 minutes to build = 0.5 hour. Assume 2 hours/month of net saving after ongoing oversight and maintenance: 0.5 ÷ 2 = 0.25 month.\""
         }
       ]
     }

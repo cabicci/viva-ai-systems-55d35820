@@ -383,3 +383,10 @@ source: direct owner authorization to continue audited corrections
 scope: exact four reported Academic locale/lesson identities and their written-source fingerprints
 summary: Correct percentage-point versus relative growth, separate zero/negative contribution effects, include the monthly logo software subscription inside the stated fixed cost, and accept the cash scenario's 550/1800 closing balances with risk/preventive-action reasoning. Preserve unrelated source, original PDF identities, approvals and media mappings. Record exact reversible changed fields and before/after payload hashes.
 sync_status: Offline exact-source reconstruction and independent arithmetic checks passed; CI source-import validation pending. Generated transaction SQL is a review artifact only, requiring independent acceptance and the existing inactive-course/unapproved-payload guards. No database change, served-content correction, PDF/media acceptance, merge or publication is claimed.
+## 2026-10-18 — automation build-effort payback units (item 55)
+
+[roadmap:local-batch-automation-payback-20261018]
+source: direct owner authorization to continue audited corrections; overrides the old canonical ROI-preservation note for this exact dimensional correction
+scope: Egyptian primary authoring concepts, its four generated glossary overlays and corresponding MSA canonical definition
+summary: Name the duration build-effort payback period and divide build hours by net monthly time saved. Explain 0.5 hour / 2 net hours per month = 0.25 month, after oversight/maintenance. The two-month threshold is an illustrative teaching assumption, with risk and maintenance checks retained. Synchronize Markdown, bullets and table cells without changing other sections, quiz, mission or weights.
+sync_status: Exact original generation-source bytes reconstructed for all four edited overlays and pinned in the scoped source-compatibility ledger; image bytes/original manifest unchanged. Egyptian authoring parity and four-locale unit tests added. Offline payload preservation check passed; CI pending. No workflow/AI generation, indexing, database write, merge or publication.
