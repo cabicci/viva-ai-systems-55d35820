@@ -73,6 +73,9 @@ jobs:
       - name: Reviewed quiz actions and risk-qualified mission contracts
         run: bunx vitest run src/lib/__tests__/reviewed-quiz-actions.test.ts src/lib/__tests__/adapt-package-to-live-quiz.test.ts
 
+      - name: Reviewed module outcome ownership and legacy routes
+        run: bunx vitest run src/components/intro/value-hooks.test.ts
+
       - name: Restored guided missions (isolated clients, no submissions)
         run: bunx vitest run src/lib/__tests__/restored-guided-missions.test.tsx
 
