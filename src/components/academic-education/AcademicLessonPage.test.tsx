@@ -73,14 +73,14 @@ it("reveals a changed section hidden above the header and keeps practice drafts"
     setup();
     await screen.findByText("Paid lesson explanation");
     expect(scroll).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: "Downloads" }));
     await waitFor(() => expect(scroll).toHaveBeenCalledWith({ block: "start", behavior: "auto" }));
-    fireEvent.click(screen.getByRole("button", { name: "Practice", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: "Practice" }));
     fireEvent.change(screen.getByRole("textbox"), {
       target: { value: "Unsent preserved practice" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
-    fireEvent.click(screen.getByRole("button", { name: "Practice", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: "Downloads" }));
+    fireEvent.click(screen.getByRole("button", { name: "Practice" }));
     expect(screen.getByRole("textbox")).toHaveValue("Unsent preserved practice");
     expect(
       state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action)),
@@ -100,7 +100,7 @@ it("does not scroll an already visible section on navigation", async () => {
   try {
     setup();
     await screen.findByText("Paid lesson explanation");
-    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: "Downloads" }));
     expect(scroll).not.toHaveBeenCalled();
   } finally {
     rect.mockRestore();

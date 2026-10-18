@@ -20,7 +20,7 @@ function setup() {
   return render(<FurniturePilotLesson locale="en" copy={copy} video="" files={[]} />);
 }
 function openQuiz() {
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.quiz, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.quiz }));
 }
 function answerAll() {
   for (const group of screen.getAllByRole("group")) {
@@ -54,7 +54,7 @@ it("shows three consistent saved completion marks without sending an attempt", (
 it("explains incomplete input and never sends it, including direct form submission", () => {
   setup();
   openQuiz();
-  const submit = screen.getByRole("button", { name: copy.labels.check, exact: true });
+  const submit = screen.getByRole("button", { name: copy.labels.check });
   expect(submit).toBeDisabled();
   expect(screen.getByText(copy.labels.quizMissing)).toBeTruthy();
   fireEvent.submit(submit.closest("form")!);
@@ -70,11 +70,11 @@ it("clears the previous storage failure on answer change and a successful later 
   setup();
   openQuiz();
   answerAll();
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.check, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.check }));
   expect(await screen.findByRole("alert")).toHaveTextContent("Could not save");
   fireEvent.click(screen.getAllByRole("radio")[1]);
   expect(screen.queryByRole("alert")).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.check, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.check }));
   await screen.findByText(copy.labels.quizPassed);
   expect(screen.queryByRole("alert")).toBeNull();
   expect(state.command).toHaveBeenCalledTimes(2);
@@ -84,14 +84,14 @@ it("clears the old failure after a successful practice without inventing a quiz 
   setup();
   openQuiz();
   answerAll();
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.check, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.check }));
   await screen.findByRole("alert");
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.assignment, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.assignment }));
   for (const field of screen.getAllByRole("spinbutton")) {
     fireEvent.change(field, { target: { value: "100" } });
   }
   expect(screen.queryByRole("alert")).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: copy.labels.check, exact: true }));
+  fireEvent.click(screen.getByRole("button", { name: copy.labels.check }));
   await screen.findByText(copy.labels.practicalDone);
   expect(screen.queryByRole("alert")).toBeNull();
   expect(state.command).toHaveBeenLastCalledWith("practice", "M04-L02", "en", {
@@ -108,7 +108,7 @@ it("does not send duplicate quiz requests while the current save is pending", as
   setup();
   openQuiz();
   answerAll();
-  const submit = screen.getByRole("button", { name: copy.labels.check, exact: true });
+  const submit = screen.getByRole("button", { name: copy.labels.check });
   fireEvent.click(submit);
   expect(submit).toBeDisabled();
   fireEvent.click(submit);
