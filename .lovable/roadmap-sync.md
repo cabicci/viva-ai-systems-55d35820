@@ -291,3 +291,10 @@ source: direct owner authorization to continue audited corrections
 scope: existing cabinet lesson quiz/practice UI and academic section navigation
 summary: Block incomplete technical quiz submissions with completion guidance, clear stale UI errors on edits and successful retries, and prevent duplicate pending submissions. Use trusted saved activity success consistently in counts and sidebar marks without inventing scores or answers. Reveal an academic section hidden above the sticky header after navigation, leave already visible content in place, and preserve the controlled practice draft.
 sync_status: Isolated component regressions and CI validation in progress. No production activity submitted, no database schema or server grading change, and no merge/publication. Responsive live verification remains pending the owner's publication.
+## 2026-10-18 — restricted learner text formatting (items 14, 159)
+
+[roadmap:local-batch-lesson-formatting-20261018]
+source: direct owner authorization to continue the audited corrections
+scope: Intro terminology/comparison inline fields and the separate Academic assignment text renderer
+summary: Render paired emphasis in the specified Intro paths, keeping ordinary text and HTML inert. Use the Academic safe text renderer for assignment prompts, grouping authored bullet lines into lists and preserving paragraphs, arithmetic, raw source numbers, rubric and five controlled answer fields. Preserve unmatched literal asterisks; do not rewrite the source lesson or its FAQ.
+sync_status: Component and existing regression validation in progress; no learner answer, database row, merge or publication changed. Separate Intro and Academic coverage is required before closing these items.

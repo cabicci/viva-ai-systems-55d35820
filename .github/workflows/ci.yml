@@ -64,6 +64,9 @@ jobs:
           src/lib/__tests__/mission-feedback-grounding.test.ts
           src/lib/__tests__/mission-ai-prompts.test.ts
 
+      - name: Restricted lesson inline formatting (isolated renderer)
+        run: bunx vitest run src/components/intro/IntroLessonRenderer.formatting.test.tsx
+
       - name: Build and storage watcher compatibility
         run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
 

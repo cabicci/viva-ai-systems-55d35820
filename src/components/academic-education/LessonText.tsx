@@ -16,7 +16,7 @@ function MathText({ text }: { text: string }) {
 /** Safe inline emphasis and arithmetic; never raw HTML or links. */
 export function LessonInlineText({ text }: { text: string }) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith("**") && part.endsWith("**") ? (
+    i % 2 === 1 ? (
       <strong key={i}>
         <MathText text={part.slice(2, -2)} />
       </strong>
@@ -26,13 +26,38 @@ export function LessonInlineText({ text }: { text: string }) {
   );
 }
 export function LessonText({ text, className = "" }: { text: string; className?: string }) {
+  const blocks: Array<{ kind: "paragraph" | "list"; lines: string[] }> = [];
+  let current: (typeof blocks)[number] | null = null;
+  for (const line of text.split(/\r?\n/)) {
+    if (!line.trim()) {
+      current = null;
+      continue;
+    }
+    const bullet = line.match(/^\s*[*-]\s+(.+)$/);
+    const kind = bullet ? "list" : "paragraph";
+    if (!current || current.kind !== kind) {
+      current = { kind, lines: [] };
+      blocks.push(current);
+    }
+    current.lines.push(bullet ? bullet[1] : line);
+  }
   return (
     <div className={`space-y-4 leading-8 ${className}`}>
-      {text.split(/\n\s*\n/).map((paragraph, i) => (
-        <p key={i} className="whitespace-pre-line">
-          <LessonInlineText text={paragraph} />
-        </p>
-      ))}
+      {blocks.map((block, i) =>
+        block.kind === "list" ? (
+          <ul key={i} className="list-disc space-y-2 ps-6">
+            {block.lines.map((line, index) => (
+              <li key={index}>
+                <LessonInlineText text={line} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p key={i} className="whitespace-pre-line">
+            <LessonInlineText text={block.lines.join("\n")} />
+          </p>
+        ),
+      )}
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AcademicLessonPage } from "./AcademicLessonPage";
@@ -106,6 +108,42 @@ it("does not scroll an already visible section on navigation", async () => {
     rect.mockRestore();
     Element.prototype.scrollIntoView = originalScroll;
   }
+});
+it("renders the authored two-period assignment while preserving all five fields and their draft", async () => {
+  const lessons = JSON.parse(
+    readFileSync(resolve(process.cwd(), "experiments/academic/course/expanded/en.json"), "utf8"),
+  );
+  const source = lessons.find((lesson: { id: string }) => lesson.id === "AC-BUS-M01-L04");
+  const assignment = source.assignment as typeof delivery.lesson.assignment;
+  state.command.mockImplementation(async (action: string) =>
+    action === "lesson"
+      ? { ...delivery, lesson: { ...delivery.lesson, assignment } }
+      : { progress: {} },
+  );
+  const { container } = setup();
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getByText("Period 1 (Last Quarter):").tagName).toBe("STRONG");
+  expect(screen.getByText("Period 2 (Current Quarter):").tagName).toBe("STRONG");
+  for (const text of [
+    "Total Orders: 500",
+    "Product Returns: 25",
+    "Total Orders: 800",
+    "Product Returns: 32",
+  ]) {
+    expect(screen.getByText(text).closest("li")).toBeTruthy();
+  }
+  expect(container.textContent).not.toContain("**Period");
+  expect(screen.getAllByRole("textbox")).toHaveLength(5);
+  fireEvent.change(screen.getAllByRole("textbox")[0], {
+    target: { value: "My unsent calculation" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Downloads" }));
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  expect(screen.getAllByRole("textbox")[0]).toHaveValue("My unsent calculation");
+  expect(state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action))).toBe(
+    true,
+  );
 });
 it("does not fetch lesson bodies when signed out", async () => {
   state.user = null;

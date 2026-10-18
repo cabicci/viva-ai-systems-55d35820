@@ -327,7 +327,7 @@ function AuthorizedLesson({
           )}
           {tab === "practice" && (
             <>
-              <p className="leading-8">{lesson.assignment.prompt}</p>
+              <LessonText text={lesson.assignment.prompt} />
               {lesson.assignment.fields.map((label, i) => (
                 <label className="block font-bold" key={label}>
                   {label}

@@ -13,10 +13,7 @@ import { IntroSection } from "./IntroSection";
 import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
 import { QuizBlock } from "./QuizBlock";
-import {
-  getBunnyEmbedUrl,
-  getLocalizedBunnyEmbedUrl,
-} from "@/lib/bunny-videos";
+import { getBunnyEmbedUrl, getLocalizedBunnyEmbedUrl } from "@/lib/bunny-videos";
 import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -91,12 +88,7 @@ function StrictLocaleVideoSlot({
           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
           className="h-full w-full"
-          title={
-            getStrictVisualUiString(
-              locale,
-              VIDEO_UI_KEYS.videoMissingTitle,
-            ) ?? ""
-          }
+          title={getStrictVisualUiString(locale, VIDEO_UI_KEYS.videoMissingTitle) ?? ""}
         />
       </div>
       {caption ? (
@@ -108,17 +100,10 @@ function StrictLocaleVideoSlot({
   );
 }
 
-function VideoSkipNotice({
-  strictLocale,
-}: {
-  strictLocale?: LessonPackageLocale;
-}) {
+function VideoSkipNotice({ strictLocale }: { strictLocale?: LessonPackageLocale }) {
   const { locale, dir } = useLocale();
   const badge = strictLocale
-    ? strictVisualUiOrEmpty(
-        strictLocale,
-        VIDEO_UI_KEYS.videoOptionalBadge,
-      )
+    ? strictVisualUiOrEmpty(strictLocale, VIDEO_UI_KEYS.videoOptionalBadge)
     : getUiString(locale, "intro.video.optionalBadge");
   const body = strictLocale
     ? strictVisualUiOrEmpty(strictLocale, VIDEO_UI_KEYS.videoSkipBody)
@@ -128,9 +113,7 @@ function VideoSkipNotice({
       <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/[0.06] px-2.5 py-1 text-[11px] text-muted-foreground">
         {badge}
       </span>
-      <p className="text-xs text-muted-foreground/90 leading-relaxed px-2">
-        {body}
-      </p>
+      <p className="text-xs text-muted-foreground/90 leading-relaxed px-2">{body}</p>
     </div>
   );
 }
@@ -140,7 +123,10 @@ function VideoSkipNotice({
  * to a Bunny Stream iframe embed when we have a GUID for that lesson slug.
  * Falls back to the original URL so legacy explicit URLs still work.
  */
-function resolveVideoSource(url: string | undefined, lessonId?: string): {
+function resolveVideoSource(
+  url: string | undefined,
+  lessonId?: string,
+): {
   embed?: string;
   direct?: string;
 } {
@@ -182,7 +168,7 @@ function linkify(text: string): React.ReactNode {
         className="text-primary underline underline-offset-2 hover:opacity-80"
       >
         {raw}
-      </a>
+      </a>,
     );
     last = m.index + raw.length;
   }
@@ -234,9 +220,7 @@ function ContextualLessonVisual({
         data-locale-lesson-visual="fail-closed"
         data-contextual-v2-error={visual.reason}
       >
-        <p className="text-sm text-destructive">
-          {LESSON_VISUAL_COPY[locale].unavailable}
-        </p>
+        <p className="text-sm text-destructive">{LESSON_VISUAL_COPY[locale].unavailable}</p>
         {supportingCaption ? (
           <p
             className="mt-2 text-xs leading-relaxed text-muted-foreground"
@@ -320,8 +304,7 @@ export function IntroLessonRenderer({
     ? resolveContextualV2Visual({ lessonId, locale: activeLocale })
     : null;
   const firstLegacyVisualIndex = content.findIndex(
-    (section) =>
-      section.block.kind === "screenshot" || section.block.kind === "diagram",
+    (section) => section.block.kind === "screenshot" || section.block.kind === "diagram",
   );
   const legacyVisualSection =
     firstLegacyVisualIndex >= 0 ? content[firstLegacyVisualIndex] : undefined;
@@ -330,18 +313,14 @@ export function IntroLessonRenderer({
     legacyVisualSection?.block.kind === "diagram"
       ? legacyVisualSection.block.caption
       : undefined;
-  const lessonVideoIndex = content.findIndex(
-    (section) => section.block.kind === "lessonVideo",
-  );
+  const lessonVideoIndex = content.findIndex((section) => section.block.kind === "lessonVideo");
   const injectedVisualAnchor = lessonVideoIndex >= 0 ? lessonVideoIndex : 0;
-  const injectedVisualEyebrow =
-    contextualVisual?.ok
-      ? LESSON_VISUAL_COPY[activeLocale][contextualVisual.sourceType]
-      : LESSON_VISUAL_COPY[activeLocale].infographic;
-  const injectedVisualTitle =
-    contextualVisual?.ok
-      ? contextualVisual.title
-      : (lessonTitle ?? LESSON_VISUAL_COPY[activeLocale].unavailable);
+  const injectedVisualEyebrow = contextualVisual?.ok
+    ? LESSON_VISUAL_COPY[activeLocale][contextualVisual.sourceType]
+    : LESSON_VISUAL_COPY[activeLocale].infographic;
+  const injectedVisualTitle = contextualVisual?.ok
+    ? contextualVisual.title
+    : (lessonTitle ?? LESSON_VISUAL_COPY[activeLocale].unavailable);
 
   return (
     <article className="space-y-4 md:space-y-7">
@@ -358,9 +337,7 @@ export function IntroLessonRenderer({
             <p className="text-[10px] font-mono tracking-widest text-accent">
               {getUiString(locale, "intro.valueHook.label")}
             </p>
-            <p className="text-[15px] leading-[1.7] font-semibold text-foreground">
-              {hook}
-            </p>
+            <p className="text-[15px] leading-[1.7] font-semibold text-foreground">{hook}</p>
           </div>
         </aside>
       )}
@@ -398,10 +375,7 @@ export function IntroLessonRenderer({
             <IntroSection
               key={i}
               index={i + 1}
-              icon={resolveLearnerLessonIcon(
-                section.icon,
-                section.block.kind,
-              )}
+              icon={resolveLearnerLessonIcon(section.icon, section.block.kind)}
               eyebrow={section.eyebrow}
               title={section.title}
               tone={section.tone}
@@ -415,22 +389,12 @@ export function IntroLessonRenderer({
         }
 
         const sectionIndex =
-          i +
-          1 +
-          (lessonId &&
-          firstLegacyVisualIndex === -1 &&
-          i > injectedVisualAnchor
-            ? 1
-            : 0);
+          i + 1 + (lessonId && firstLegacyVisualIndex === -1 && i > injectedVisualAnchor ? 1 : 0);
         const sectionNode =
           section.block.kind === "lessonVideo" &&
           !lessonVideoHasSource(section.block, lessonId, videoLocale) ? (
             <VideoSkipNotice
-              strictLocale={
-                usesStrictLocalizedVideoPolicy(videoLocale)
-                  ? videoLocale
-                  : undefined
-              }
+              strictLocale={usesStrictLocalizedVideoPolicy(videoLocale) ? videoLocale : undefined}
             />
           ) : (
             <IntroSection
@@ -449,9 +413,7 @@ export function IntroLessonRenderer({
             </IntroSection>
           );
         const insertContextualAfter =
-          Boolean(lessonId) &&
-          firstLegacyVisualIndex === -1 &&
-          i === injectedVisualAnchor;
+          Boolean(lessonId) && firstLegacyVisualIndex === -1 && i === injectedVisualAnchor;
         return (
           <React.Fragment key={i}>
             {sectionNode}
@@ -475,6 +437,19 @@ export function IntroLessonRenderer({
       })}
     </article>
   );
+}
+
+/** Restricted inline emphasis; ordinary text, HTML and unmatched markers stay literal. */
+function InlineEmphasis({ text }: { text: string }) {
+  return text
+    .split(/(\*\*[^*\n]+\*\*)/g)
+    .map((part, index) =>
+      index % 2 === 1 ? (
+        <strong key={index}>{part.slice(2, -2)}</strong>
+      ) : (
+        <React.Fragment key={index}>{part}</React.Fragment>
+      ),
+    );
 }
 
 function BlockBody({
@@ -505,15 +480,19 @@ function BlockBody({
         <div className="grid sm:grid-cols-2 gap-3">
           <div className="rounded-xl border border-border bg-foreground/5 p-3">
             <p className="text-[11px] font-mono text-muted-foreground mb-1">
-              {block.left.label}
+              <InlineEmphasis text={block.left.label} />
             </p>
-            <p>{block.left.body}</p>
+            <p>
+              <InlineEmphasis text={block.left.body} />
+            </p>
           </div>
           <div className="rounded-xl border border-accent/20 bg-accent/[0.05] p-3">
             <p className="text-[11px] font-mono text-accent mb-1">
-              {block.right.label}
+              <InlineEmphasis text={block.right.label} />
             </p>
-            <p>{block.right.body}</p>
+            <p>
+              <InlineEmphasis text={block.right.body} />
+            </p>
           </div>
         </div>
       );
@@ -588,11 +567,7 @@ function BlockBody({
       if (!block.url) {
         return (
           <VideoSkipNotice
-            strictLocale={
-              usesStrictLocalizedVideoPolicy(videoLocale)
-                ? videoLocale
-                : undefined
-            }
+            strictLocale={usesStrictLocalizedVideoPolicy(videoLocale) ? videoLocale : undefined}
           />
         );
       }
@@ -609,12 +584,7 @@ function BlockBody({
                 className="h-full w-full"
               />
             ) : (
-              <video
-                src={src.direct}
-                poster={block.poster}
-                controls
-                className="h-full w-full"
-              />
+              <video src={src.direct} poster={block.poster} controls className="h-full w-full" />
             )}
           </div>
           {block.caption && (
@@ -629,11 +599,7 @@ function BlockBody({
     case "lessonVideo": {
       if (usesStrictLocalizedVideoPolicy(videoLocale) && lessonId) {
         return (
-          <StrictLocaleVideoSlot
-            locale={videoLocale}
-            lessonId={lessonId}
-            caption={block.caption}
-          />
+          <StrictLocaleVideoSlot locale={videoLocale} lessonId={lessonId} caption={block.caption} />
         );
       }
       // Canonical lesson video — slot #2 in the unified lesson rhythm.
@@ -737,9 +703,7 @@ function BlockBody({
             decoding="async"
           />
           {block.caption ? (
-            <figcaption className="text-xs text-muted-foreground">
-              {block.caption}
-            </figcaption>
+            <figcaption className="text-xs text-muted-foreground">{block.caption}</figcaption>
           ) : null}
         </figure>
       );
@@ -755,13 +719,17 @@ function BlockBody({
             {block.items.map((it, i) => (
               <li key={i} className="border-s-2 border-primary/30 ps-3">
                 <p className="font-semibold leading-snug">
-                  <span className="font-mono text-primary">{it.term}</span>
+                  <span className="font-mono text-primary">
+                    <InlineEmphasis text={it.term} />
+                  </span>
                   <span className="text-muted-foreground mx-1.5">·</span>
-                  <span>{it.meaning}</span>
+                  <span>
+                    <InlineEmphasis text={it.meaning} />
+                  </span>
                 </p>
                 {it.example && (
                   <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                    {it.example}
+                    <InlineEmphasis text={it.example} />
                   </p>
                 )}
               </li>
@@ -789,7 +757,8 @@ function BlockBody({
         <div className="rounded-2xl border border-accent/30 border-e-4 bg-accent/[0.05] p-4 sm:p-5 space-y-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <p className="text-[11px] font-mono text-accent flex items-center gap-1.5">
-              <BookOpen className="h-3.5 w-3.5" /> {getUiString(locale, "intro.block.caseStudyHeader")}
+              <BookOpen className="h-3.5 w-3.5" />{" "}
+              {getUiString(locale, "intro.block.caseStudyHeader")}
             </p>
             {block.pathAngle && (
               <span className="text-[10px] font-mono rounded-md border border-accent/30 bg-accent/10 px-1.5 py-0.5 text-accent">
