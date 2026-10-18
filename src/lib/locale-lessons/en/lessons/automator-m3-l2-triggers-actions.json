@@ -105,21 +105,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** I want a WhatsApp message with the access link to be sent immediately when a customer buys a course. What is the correct design?\n\nTrigger: Webhook from the payment gateway (new purchase). Action: Send WhatsApp.\n- **Explanation:** The purchase = an immediate event → **Webhook**. \"When they buy → send WhatsApp\" — this is the design of the automation.\n\n*(Incorrect options preserved from production: Schedule every hour to check for purchases; Manual for each customer.)*",
+      "contentMarkdown": "**Question:** The provider supports purchase webhooks. After a confirmed course purchase, you want an event-driven workflow that sends the customer's access link. Which trigger/action design fits?\n\n1. Trigger: Webhook from the payment gateway (new purchase). Action: Send WhatsApp.\n2. Trigger: an hourly schedule. Action: search for new purchases.\n3. Trigger: a manual button pressed by a staff member for each customer.\n\n**Explanation:** The purchase event starts the provider webhook; sending the access message is the action. Event-driven delivery is not a guarantee of execution in the same second.",
       "bullets": [
         "Trigger: Webhook from the payment gateway (new purchase). Action: Send WhatsApp.",
-        "Explanation: The purchase = an immediate event → Webhook. \"When they buy → send WhatsApp\" — this is the design of the automation."
+        "Trigger: an hourly schedule. Action: search for new purchases.",
+        "Trigger: a manual button pressed by a staff member for each customer."
       ],
       "tables": [],
       "quiz": {
-        "question": "I want a WhatsApp message with the access link to be sent immediately when a customer buys a course. What is the correct design?",
+        "question": "The provider supports purchase webhooks. After a confirmed course purchase, you want an event-driven workflow that sends the customer's access link. Which trigger/action design fits?",
         "correctIndex": 0,
         "options": [
           "Trigger: Webhook from the payment gateway (new purchase). Action: Send WhatsApp.",
-          "An unsuitable option; it ignores the basic data in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Trigger: an hourly schedule. Action: search for new purchases.",
+          "Trigger: a manual button pressed by a staff member for each customer."
         ],
-        "explanation": "The purchase = an immediate event → **Webhook**. \"When they buy → send WhatsApp\" — this is the design of the automation."
+        "explanation": "The purchase event starts the provider webhook; sending the access message is the action. Event-driven delivery is not a guarantee of execution in the same second."
       }
     },
     {

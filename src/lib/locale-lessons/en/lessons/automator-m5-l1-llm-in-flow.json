@@ -78,21 +78,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Classifying the message and extracting the name and request in an organized way.\n- **Explanation:** The AI step adds understanding — not just speed of transfer.",
+      "contentMarkdown": "**Question:** A long customer message arrives in your table each day and the team reads it manually. Which AI step best prepares structured information for the next workflow step?\n\n1. Classifying the message and extracting the name and request in an organized way.\n2. Move the full message into the table faster without extracting its meaning.\n3. Send the same prepared reply to every incoming message.\n\n**Explanation:** Classification and extracting the name and request turn the message into structured information. Faster copying alone does not add understanding; one prepared reply does not use the customer's actual request.",
       "bullets": [
         "Classifying the message and extracting the name and request in an organized way.",
-        "Explanation: The AI step adds understanding — not just speed of transfer."
+        "Move the full message into the table faster without extracting its meaning.",
+        "Send the same prepared reply to every incoming message."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 0,
         "options": [
           "Classifying the message and extracting the name and request in an organized way.",
-          "An unsuitable option; it ignores the key details in the section above.",
-          "A partial answer that misses the context and ignores the next step for decision-making."
+          "Move the full message into the table faster without extracting its meaning.",
+          "Send the same prepared reply to every incoming message."
         ],
-        "explanation": "The AI step adds understanding — not just speed of transfer.",
-        "question": "Quick Confirmation: What is the most suitable option?"
+        "explanation": "Classification and extracting the name and request turn the message into structured information. Faster copying alone does not add understanding; one prepared reply does not use the customer's actual request.",
+        "question": "A long customer message arrives in your table each day and the team reads it manually. Which AI step best prepares structured information for the next workflow step?"
       }
     },
     {

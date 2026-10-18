@@ -108,10 +108,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** A new **workflow** sends a welcome message. What is the best step before going live?\n\nTest data + 3 edge cases + manual review\n- **Explanation:** The error stays with you — not with the customer.",
+      "contentMarkdown": "**Question:** A new **workflow** sends a welcome message. What is the best step before going live?\n\n1. Test data + 3 edge cases + manual review\n2. Launch with real customers and wait for them to report problems.\n3. Test only the sending step and assume the rest of the workflow works.\n\n**Explanation:** The error stays with you — not with the customer.",
       "bullets": [
         "Test data + 3 edge cases + manual review",
-        "Explanation: The error stays with you — not with the customer."
+        "Launch with real customers and wait for them to report problems.",
+        "Test only the sending step and assume the rest of the workflow works."
       ],
       "tables": [],
       "quiz": {
@@ -119,8 +120,8 @@
         "correctIndex": 0,
         "options": [
           "Test data + 3 edge cases + manual review",
-          "An inappropriate choice; it ignores the basic data in the section above.",
-          "A partial answer misses the context and ignores the next step in the decision."
+          "Launch with real customers and wait for them to report problems.",
+          "Test only the sending step and assume the rest of the workflow works."
         ],
         "explanation": "The error stays with you — not with the customer."
       }

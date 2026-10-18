@@ -108,10 +108,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\n\nCount the task, its time, and frequency per week — to know this is a priority.\n- **Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.",
+      "contentMarkdown": "**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\n\n1. Count the task, its time, and frequency per week — to know this is a priority.\n2. Open Make and build a flow before measuring the task's time or frequency.\n3. Stop sending welcome emails to new clients to save time.\n\n**Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.",
       "bullets": [
         "Count the task, its time, and frequency per week — to know this is a priority.",
-        "Explanation: Audit first — when you know «welcome email» = 30 minutes daily, you will know this is the first task for the virtual worker."
+        "Open Make and build a flow before measuring the task's time or frequency.",
+        "Stop sending welcome emails to new clients to save time."
       ],
       "tables": [],
       "quiz": {
@@ -119,8 +120,8 @@
         "correctIndex": 0,
         "options": [
           "Count the task, its time, and frequency per week — to know this is a priority.",
-          "An unsuitable option; it ignores the basic data in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Open Make and build a flow before measuring the task's time or frequency.",
+          "Stop sending welcome emails to new clients to save time."
         ],
         "explanation": "**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker."
       }

@@ -108,10 +108,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 2\n\n**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\n\nWhere exactly do customers drop off in the purchase process (funnel drop-off)?\n- **Explanation:** A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough.",
+      "contentMarkdown": "**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\n\n1. Where exactly do customers drop off in the purchase process (funnel drop-off)?\n2. How many visits does the website receive each day?\n3. What is the average age of customers who add items to the cart but do not buy?\n\n**Explanation:** A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough.",
       "bullets": [
         "Where exactly do customers drop off in the purchase process (funnel drop-off)?",
-        "Explanation: A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough."
+        "How many visits does the website receive each day?",
+        "What is the average age of customers who add items to the cart but do not buy?"
       ],
       "tables": [],
       "quiz": {
@@ -119,8 +120,8 @@
         "correctIndex": 0,
         "options": [
           "Where exactly do customers drop off in the purchase process (funnel drop-off)?",
-          "An irrelevant option; it ignores the key data from the section above.",
-          "A partial answer that misses the context and ignores the next step for the decision."
+          "How many visits does the website receive each day?",
+          "What is the average age of customers who add items to the cart but do not buy?"
         ],
         "explanation": "A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough."
       }

@@ -109,10 +109,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\n\nRouter differentiates based on purchase value — two different paths\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.",
+      "contentMarkdown": "**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\n\n1. Router differentiates based on purchase value — two different paths\n2. Use a Filter to stop emails to customers below the threshold.\n3. Use one path and the same email for every purchase value.\n\n**Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.",
       "bullets": [
         "Router differentiates based on purchase value — two different paths",
-        "Explanation: You need two different paths based on the condition — this is a Router. Filter stops or passes, but does not distribute."
+        "Use a Filter to stop emails to customers below the threshold.",
+        "Use one path and the same email for every purchase value."
       ],
       "tables": [],
       "quiz": {
@@ -120,8 +121,8 @@
         "correctIndex": 0,
         "options": [
           "Router differentiates based on purchase value — two different paths",
-          "An unsuitable choice; it ignores the basic data in the section above.",
-          "A partial answer that misses the context and ignores the next decision step."
+          "Use a Filter to stop emails to customers below the threshold.",
+          "Use one path and the same email for every purchase value."
         ],
         "explanation": "You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute."
       }
