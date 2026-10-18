@@ -1,0 +1,105 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    23
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 23,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L05",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "2e28f842dd99035d51aea78b9b7e3075ff4e5be25c7754aefabc500da88ae7cb",
+      "afterSha256": "178d5972dd212a0d157a9d58540e3386483d0d8333c3dd546f6378d805f99a6a",
+      "changedFields": [
+        {
+          "path": "example.text",
+          "beforeExists": true,
+          "before": "هذي حالة افتراضية للتعلّم. شركة 'الرواد' لتصنيع الأجهزة الإلكترونية تحتاج لشراء 1000 وحدة من قطعة إلكترونية معينة شهرياً. المورد الحالي يعرض سعر 10 ريال للوحدة. جاء مورد جديد وعرض خصم 10% إذا اشترت الشركة 3000 وحدة دفعة واحدة (كمية تكفي لثلاثة أشهر). الشركة تفكر في قبول العرض للحصول على الخصم. لكن، قبل اتخاذ القرار، لازم نقيم العرض بشكل شامل.",
+          "after": "هذي حالة افتراضية للتعلّم. شركة 'الرواد' لتصنيع الأجهزة الإلكترونية تحتاج لشراء 1000 وحدة من قطعة إلكترونية معينة شهرياً. المورد الحالي يعرض سعر 10 ريال للوحدة. جاء مورد جديد وعرض خصم 10% إذا اشترت الشركة 3000 وحدة دفعة واحدة (كمية تكفي لثلاثة أشهر). الشركة تفكر في قبول العرض للحصول على الخصم. لكن، قبل اتخاذ القرار، لازم نقيم العرض بشكل شامل. نفترض إن الشراء والدفع والاستهلاك لـ 1000 وحدة يصير في بداية كل شهر؛ نقارن الشراء المجمع بهذا الجدول الشهري نفسه."
+        },
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "لا يعتبر الخصم مكسبًا تلقائيًا. يجب تقييم التكلفة الكلية والسيولة ومخاطر المخزون قبل اتخاذ القرار.",
+          "after": "وفق التوقيت والتكاليف المفترضة، صافي التوفير التقديري 1080 ريال. قارن هذا مع السيولة المتاحة والمخاطر الفعلية؛ الخصم وحده أو هذا التقدير المشروط لا يحسم القرار."
+        },
+        {
+          "path": "example.steps.1",
+          "beforeExists": true,
+          "before": "تقدير تكلفة التخزين: شراء 3000 وحدة يعني تخزين 2000 وحدة إضافية (3000 - 1000 استهلاك الشهر الأول) لمدة شهرين. تكلفة التخزين تشمل إيجار المستودع، التأمين، الكهرباء للتبريد (إذا لزم)، وتكاليف المناولة. لنفترض أن تكلفة تخزين الوحدة الواحدة شهرياً هي 0.5 ريال. إذن، تكلفة تخزين 2000 وحدة لمدة شهرين = 2000 وحدة × 0.5 ريال/وحدة/شهر × 2 شهر = 2000 ريال.",
+          "after": "حساب التخزين حسب المخزون المتناقص: بعد استهلاك 1000 وحدة في بداية الشهر الأول يبقى 2000، وبعد استهلاك بداية الثاني يبقى 1000، وبعد استهلاك بداية الثالث يبقى 0. بتكلفة 0.5 ريال للوحدة في الشهر، التخزين الإضافي =(2000 +1000) ×0.5 =1500 ريال، مو 2000 وحدة لشهرين كاملين."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "تقدير تكلفة رأس المال (السيولة المطلوبة): شراء 3000 وحدة دفعة واحدة يعني تجميد مبلغ أكبر من المال. السعر بعد الخصم هو 9 ريال للوحدة. إذن، تكلفة الشراء الكلية = 3000 وحدة × 9 ريال/وحدة = 27000 ريال. لو كانت الشركة تشتري شهرياً، كانت ستدفع 1000 وحدة × 10 ريال/وحدة = 10000 ريال شهرياً. الفرق هو 17000 ريال (27000 - 10000) يتم تجميدها لمدة شهرين. لو كان للشركة تكلفة فرصة بديلة لاستثمار هذا المال (مثلاً، عائد 1% شهرياً)، فإن تكلفة تجميد 17000 ريال لمدة شهرين = 17000 × 0.01 × 2 = 340 ريال.",
+          "after": "حساب السيولة مقارنة بمواعيد الدفع الشهري: الشراء المجمع 27000 ريال بدل 10000 في بداية كل شهر. الرصيد الإضافي المدفوع 17000 ريال بعد شراء الشهر الأول، ثم 7000 بعد موعد شراء الثاني، وينتهي الرصيد الإضافي الموجب عند موعد الثالث. تكلفة فرصة بسيطة مفترضة 1% على الرصيد الموجب =(17000 +7000) ×0.01 =240 ريال؛ مو 17000 مجمّدة لشهرين."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "تقييم مخاطر المخزون: المخاطر تشمل تلف المواد، تقادمها (تصبح قديمة أو تظهر نسخة أحدث)، أو سرقتها. لنفترض أن هناك خطر تقادم بنسبة 1% على المخزون الزائد (2000 وحدة) خلال الشهرين. قيمة المخزون الزائد 2000 وحدة × 9 ريال/وحدة = 18000 ريال. إذن، الخسارة المحتملة من التقادم = 18000 ريال × 0.01 = 180 ريال.",
+          "after": "تقييم مخاطر المخزون: المخاطر تشمل تلف المواد، تقادمها (تصبح قديمة أو تظهر نسخة أحدث)، أو سرقتها. لنفترض أن هناك خطر تقادم بنسبة 1% على المخزون الزائد (2000 وحدة) خلال الشهرين. قيمة المخزون الزائد 2000 وحدة × 9 ريال/وحدة = 18000 ريال. إذن، الخسارة المحتملة من التقادم = 18000 ريال × 0.01 = 180 ريال. مبلغ 180 ريال تقدير خطر مفترض منفصل عن التخزين وتكلفة الفرصة، وليس تكلفة مؤكدة أو خسارة تحققت."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "المقارنة النهائية: التوفير الظاهري = 3000 ريال. التكاليف الإضافية (التخزين + رأس المال + المخاطر) = 2000 + 340 + 180 = 2520 ريال. صافي التوفير الحقيقي = 3000 - 2520 = 480 ريال. بناءً على هذا التحليل، الخصم لا يزال يوفر مبلغاً، لكنه أقل بكثير من التوفير الظاهري. الشركة يجب أن تقرر ما إذا كان هذا التوفير البسيط يستحق المخاطر وتجميد السيولة، أو إذا كان من الأفضل الاستمرار في الشراء الشهري لتجنب هذه التكاليف والمخاطر. قد يكون هناك عوامل أخرى مثل ضمان توفر القطع في السوق أو علاقات الموردين التي يجب أخذها في الاعتبار.",
+          "after": "المقارنة المشروطة بالافتراضات: الخصم 3000 ريال، والتخزين 1500، وتكلفة الفرصة 240، وتقدير الخطر 180؛ الصافي =3000 −1500 −240 −180 =1080 ريال. هذا تقدير مشروط بمواعيد الشراء والدفع والاستهلاك ومعدل الفرصة والخطر المفترضين؛ تحقّق من السيولة والمخاطر الفعلية قبل القرار، ولا تعتبر 1080 وفرًا مضمونًا."
+        }
+      ]
+    },
+    {
+      "item": 23,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L05",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "9c40d2fc997c363e0732ce71e8127c9a2bb7b5225d501f61aae98787cec20833",
+      "afterSha256": "10eab2f014870c8781168db36b9e73f47266482ebaa26ef45ec6500ed9657d68",
+      "changedFields": [
+        {
+          "path": "example.text",
+          "beforeExists": true,
+          "before": "A fictional company, 'Bright Future Electronics,' needs to purchase 1,000 specialized circuit boards per month for its production line. Their current supplier, 'TechParts Co.,' offers these boards at $12 per unit. TechParts Co. has now offered Bright Future Electronics a special bulk discount: if they commit to buying 3,000 units upfront (a three-month supply), the price per unit will drop to $10. This seems like a great deal, saving $2 per unit. However, Bright Future Electronics needs to evaluate this offer carefully, considering more than just the immediate discount.",
+          "after": "A fictional company, 'Bright Future Electronics,' needs to purchase 1,000 specialized circuit boards per month for its production line. Their current supplier, 'TechParts Co.,' offers these boards at $12 per unit. TechParts Co. has now offered Bright Future Electronics a special bulk discount: if they commit to buying 3,000 units upfront (a three-month supply), the price per unit will drop to $10. This seems like a great deal, saving $2 per unit. However, Bright Future Electronics needs to evaluate this offer carefully, considering more than just the immediate discount. Assume purchase, payment and consumption of 1000 units at the start of each month under both options; compare cash against those scheduled monthly purchase dates."
+        },
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "Bright Future Electronics should decline the bulk discount offer at this time, as the total cost analysis reveals that the potential savings are outweighed by the increased storage costs, cash flow strain, and inventory risks associated with the larger purchase.",
+          "after": "Under the stated timing and cost assumptions, the offer has an estimated$4060 net saving. It cannot be rejected on the claim that those costs exceed the discount. Decide only after checking actual liquidity and risk; do not invent a cash constraint or treat the estimate as guaranteed."
+        },
+        {
+          "path": "example.steps.1",
+          "beforeExists": true,
+          "before": "Estimate the additional storage costs. Bright Future Electronics currently stores 1,000 units per month. Buying 3,000 units upfront means storing an extra 2,000 units for two months. Their warehouse costs $0.50 per unit per month for storage (including space, insurance, and handling). The additional storage cost would be 2,000 units * $0.50/unit/month * 2 months = $2,000. This directly reduces the perceived savings.",
+          "after": "Calculate storage on declining extra stock: after consuming 1000 units at the first month's start,2000 remain; after the second month's consumption,1000 remain; after the third,0 remain. At$0.50 per unit-month, extra storage =(2000 +1000) ×$0.50 =$1500, rather than 2000 units for two complete months."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "Assess the impact on cash flow. Instead of paying $12,000 per month for three months ($36,000 total), Bright Future Electronics would pay $30,000 upfront. This ties up an additional $18,000 ($30,000 - $12,000) in the first month that could have been used for other operational needs or investments. If Bright Future Electronics has a cost of capital (the cost of using money) of 1% per month, tying up $18,000 for two months (the average extra holding period) costs approximately $18,000 * 1% * 2 months = $360. This is an 'opportunity cost' of the cash.",
+          "after": "Compare cash with monthly purchase dates: bulk payment is$30000, versus$12000 at each month's start. Positive additional cash paid is$18000 after the first purchase date and$6000 after the second; it ends at the third purchase date. At a simple assumed 1% monthly opportunity cost, cost =($18000 +$6000) ×1% =$240. Do not hold the initial$18000 extra balance unchanged for two months."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Evaluate inventory risks. Holding a larger inventory increases the risk of obsolescence (if the circuit board technology changes), damage, or theft. While difficult to quantify precisely, Bright Future Electronics estimates a 1% risk of loss or obsolescence on the excess 2,000 units over two months. This potential loss is 2,000 units * $10/unit * 1% = $200. This is a potential cost, not a guaranteed one, but it's a real risk to consider.",
+          "after": "Evaluate inventory risks. Holding a larger inventory increases the risk of obsolescence (if the circuit board technology changes), damage, or theft. While difficult to quantify precisely, Bright Future Electronics estimates a 1% risk of loss or obsolescence on the excess 2,000 units over two months. This potential loss is 2,000 units * $10/unit * 1% = $200. This is a potential cost, not a guaranteed one, but it's a real risk to consider. Keep the$200 assumed risk estimate separate: it is not a certain cost or a measured loss."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Calculate the total adjusted cost and compare. The initial savings were $6,000. Subtracting the additional costs: $6,000 (savings) - $2,000 (storage) - $360 (cash flow opportunity cost) - $200 (inventory risk estimate) = $3,440. While there are still savings, they are significantly less than the initial $6,000. Given the potential for higher actual risks (e.g., if obsolescence risk is higher than 1%), and the strain on cash flow, Bright Future Electronics decides that the reduced savings do not justify the increased operational complexity and risk. They will continue purchasing monthly at $12 per unit, maintaining flexibility and lower inventory holding costs.",
+          "after": "Compare the stated assumptions: discount saving$6000 −storage$1500 −opportunity cost$240 −assumed inventory risk$200 =$4060. These assumed costs do not outweigh the saving. The result is conditional on the declared timing and estimates; actual liquidity, risk and operational constraints still need verification. Declining would require an explicit additional constraint or risk, not the incorrect claim that these stated costs exceed savings."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/video identities preserved; source changes await scoped served-payload and attachment acceptance"
+}

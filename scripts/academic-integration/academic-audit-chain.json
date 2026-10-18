@@ -94,6 +94,26 @@
     {
       "path": "scripts/academic-integration/audit-revision-66-88-review.json",
       "sha256": "24321526be25f09b0ce34b332b8fc699379f9537509cb8ce37496b2105fd008f"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-153.json",
+      "sha256": "469d6d832c597f8593f487486f4a4b62be2b656e2f42e749eee1da80b2aa787e"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-3.json",
+      "sha256": "3c90aacaa477626dc3be29c86bdfe53df422ea20b087853041449f711b708023"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-23.json",
+      "sha256": "6abc0331c5c9859a7d6851684ba5cf1aefbc23e622d1bed98e908f4c77338547"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-24.json",
+      "sha256": "d50d7407d93020d2549411257b46498f3addd3b6adfeb79736cbe3ff089acea4"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-25.json",
+      "sha256": "68399cb64103ff8dc4b115f75fc65716a303e6fdc2506ec0327257dacaaca881"
     }
   ],
   "policy": "Append reviewed immutable receipts; never rewrite historical payload revisions or infer arbitrary peer states."
