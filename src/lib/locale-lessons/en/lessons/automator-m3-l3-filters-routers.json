@@ -109,14 +109,14 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\n\nRouter differentiates based on purchase value — two different paths\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.",
+      "contentMarkdown": "**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\n\nRouter differentiates based on purchase value — two different paths\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.",
       "bullets": [
         "Router differentiates based on purchase value — two different paths",
         "Explanation: You need two different paths based on the condition — this is a Router. Filter stops or passes, but does not distribute."
       ],
       "tables": [],
       "quiz": {
-        "question": "A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?",
+        "question": "A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?",
         "correctIndex": 0,
         "options": [
           "Router differentiates based on purchase value — two different paths",

@@ -1,6 +1,6 @@
 {
   "role": "exact-reviewed-editorial-source-compatibility",
-  "scope": "Only exact reviewed source changes recorded per entry for audit items 6, 46, 50, 55 and 63. Original generation manifest and image bytes remain unchanged.",
+  "scope": "Only exact reviewed source changes recorded per entry for audit items 6, 46, 50, 55, 56, 58, 59 and 63. Original generation manifest and image bytes remain unchanged.",
   "entries": [
     {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
@@ -269,6 +269,295 @@
           "field": "sections.7.subtitle",
           "before": "\"Observe 5 Contents in the Feed\"",
           "after": "\"Observe 5 Posts in the Feed\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/automator-m3-l3-filters-routers.json",
+      "auditItems": [
+        56
+      ],
+      "currentSha256": "25ef38cc6c9f2f3bc723de7ba3ead3bb4e3625aad4118ad99cf83b07dd373042",
+      "currentBlob": "aedb6f9c34f7fd51d6590694deacc1d597d9af26",
+      "generationSourceSha256": "814023487d65dc5fa2bda91c7934a38d20bdcc320b160443994d891c0ce9e1ce",
+      "generationSourceBlob": "fc07217c5065a59967297f2fc8f6686a440b75b9",
+      "replacements": [
+        {
+          "field": "sections.7.contentMarkdown",
+          "before": "\"عميل اشترى فوق ٥٠٠٠ جنيه → إيميل شكر خاص. تحت ٥٠٠٠ → إيميل عادي. إيه الأنسب؟\\n\\n1. Router يفرّق حسب قيمة الشراء — مسارين مختلفين.\\n\\n2. Filter يوقّف الإيميلات للعملاء العاديين.\\n\\n3. مسار واحد للكل — الإيميل واحد.\\n\\nمحتاج مسارين مختلفين حسب الشرط — ده Router. Filter يوقّف أو يمرّر، مش يوزّع.\"",
+          "after": "\"عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → إيميل شكر خاص. أقل من ٥٠٠٠ جنيه → إيميل عادي. إيه الأنسب؟\\n\\n1. Router يفرّق حسب قيمة الشراء — مسارين مختلفين.\\n\\n2. Filter يوقّف الإيميلات للعملاء العاديين.\\n\\n3. مسار واحد للكل — الإيميل واحد.\\n\\nمحتاج مسارين مختلفين حسب الشرط — ده Router. Filter يوقّف أو يمرّر، مش يوزّع.\""
+        },
+        {
+          "field": "sections.7.quiz.question",
+          "before": "\"عميل اشترى فوق ٥٠٠٠ جنيه → إيميل شكر خاص. تحت ٥٠٠٠ → إيميل عادي. إيه الأنسب؟\"",
+          "after": "\"عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → إيميل شكر خاص. أقل من ٥٠٠٠ جنيه → إيميل عادي. إيه الأنسب؟\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l3-filters-routers.json",
+      "auditItems": [
+        56
+      ],
+      "currentSha256": "2698899158288a525feb64480b881fe58bd0be4789b41dca719d315627975d7c",
+      "currentBlob": "2a279a4bfe30507c8271c36b6e756abaf1b1666f",
+      "generationSourceSha256": "3cb8d9952dc60ce52c26aa2f91ade8754ee3c1095718298a6e9401f5e40ce402",
+      "generationSourceBlob": "f53a9b02f89583af15517007b8f1e85caa6d107c",
+      "replacements": [
+        {
+          "field": "sections.6.contentMarkdown",
+          "before": "\"**السؤال:** عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. ما الأنسب؟\\n\\nRouter يفرّق حسب قيمة الشراء — مساران مختلفان\\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.\"",
+          "after": "\"**السؤال:** عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → بريد شكر خاص. أقل من ٥٠٠٠ جنيه → بريد عادي. ما الأنسب؟\\n\\nRouter يفرّق حسب قيمة الشراء — مساران مختلفان\\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.\""
+        },
+        {
+          "field": "sections.6.quiz.question",
+          "before": "\"عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. ما الأنسب؟\"",
+          "after": "\"عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → بريد شكر خاص. أقل من ٥٠٠٠ جنيه → بريد عادي. ما الأنسب؟\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l3-filters-routers.json",
+      "auditItems": [
+        56
+      ],
+      "currentSha256": "e04f5d6a31837168939a188c8113b27c75aeaeadf9b95467dc33d5ebcfc6a29e",
+      "currentBlob": "c3317f6eadd290245ba0e034fc2fa4f0525e97ac",
+      "generationSourceSha256": "2346795a2b14af94710ba340bcefdab2c901dc324099430aa433833b7be1b102",
+      "generationSourceBlob": "bf02d726bfae824154485229bf6801e1d12e202f",
+      "replacements": [
+        {
+          "field": "sections.6.contentMarkdown",
+          "before": "\"**السؤال:** عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. وش الأنسب؟\\n\\nموزّع يفرّق حسب قيمة الشراء — مساران مختلفان\\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **موزّع**. **فلتر** يوقف أو يمرّر، ولا يوزّع.\"",
+          "after": "\"**السؤال:** عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → بريد شكر خاص. أقل من ٥٠٠٠ جنيه → بريد عادي. وش الأنسب؟\\n\\nموزّع يفرّق حسب قيمة الشراء — مساران مختلفان\\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **موزّع**. **فلتر** يوقف أو يمرّر، ولا يوزّع.\""
+        },
+        {
+          "field": "sections.6.quiz.question",
+          "before": "\"عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. وش الأنسب؟\"",
+          "after": "\"عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → بريد شكر خاص. أقل من ٥٠٠٠ جنيه → بريد عادي. وش الأنسب؟\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l3-filters-routers.json",
+      "auditItems": [
+        56
+      ],
+      "currentSha256": "ae2d42f3f4d8a65144c14fa0fa8ba3b4a358f7a2f5aadbfd431f0f20d9d37f52",
+      "currentBlob": "4340a8d7750ef4a71ece13f41d33c089942ba496",
+      "generationSourceSha256": "17e6b657cf62a44d655bce4421d8fc0bcaad5b71a4fbaffd6fbd180e3a5da482",
+      "generationSourceBlob": "f55b0daf9f2f9c65f75a6a5329f18d005754525f",
+      "replacements": [
+        {
+          "field": "sections.6.contentMarkdown",
+          "before": "\"**Question:** A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\"",
+          "after": "\"**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\""
+        },
+        {
+          "field": "sections.6.quiz.question",
+          "before": "\"A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\"",
+          "after": "\"A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/analyst-m2-l1-feeling-to-question.json",
+      "auditItems": [
+        58
+      ],
+      "currentSha256": "0256fb8f7a1fc1785d0aca5af9529655270bfef61dee6736c90a535cb2a00c9e",
+      "currentBlob": "244498f51fa3a007292411abd4e9a8abfcc56b28",
+      "generationSourceSha256": "f5e58f1a5c0825b854feba73a8fe143e2f3731728e759a0456e636061a0a7956",
+      "generationSourceBlob": "42696f362f10e06b48e0961e5e66b1d7c4f7580f",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"Feeling (شعور): إحساس عام من غير أرقام — مش هيحرّكك لقرار واضح. («أنا حاسس إن مبيعاتي قليلة» — ده شعور، مش سؤال.)\\n\\nBaseline (خط الأساس): الرقم العادي اللي بتقارن عليه — عشان تعرف إنت تمام ولا لأ. («مبيعاتي ١٠٠ ألف — المتوسط بتاعي ١٥٠» — الـ ١٥٠ baseline.)\"",
+          "after": "\"Feeling (شعور): إحساس عام من غير أرقام — مش هيحرّكك لقرار واضح. («أنا حاسس إن مبيعاتي قليلة» — ده شعور، مش سؤال.)\\n\\nBaseline (خط الأساس): قيمة مرجعية لفترة ووحدة محدّدتين بتقارن بيها نفس المؤشر، مش حكم مطلق على جودة الأداء. (مثال افتراضي: مبيعات الشهر ده ١٠٠ ألف جنيه، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف جنيه في الشهر. المتوسط ده خط الأساس للمقارنة هنا، مش هدف للقطاع أو حكم مطلق على الأداء. الفرق ٥٠ ألف جنيه أقل من المتوسط، يعني انخفاض حوالي ٣٣٫٣٣٪.)\""
+        },
+        {
+          "field": "sections.4.bullets.1",
+          "before": "\"Baseline (خط الأساس): الرقم العادي اللي بتقارن عليه — عشان تعرف إنت تمام ولا لأ. («مبيعاتي ١٠٠ ألف — المتوسط بتاعي ١٥٠» — الـ ١٥٠ baseline.)\"",
+          "after": "\"Baseline (خط الأساس): قيمة مرجعية لفترة ووحدة محدّدتين بتقارن بيها نفس المؤشر، مش حكم مطلق على جودة الأداء. (مثال افتراضي: مبيعات الشهر ده ١٠٠ ألف جنيه، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف جنيه في الشهر. المتوسط ده خط الأساس للمقارنة هنا، مش هدف للقطاع أو حكم مطلق على الأداء. الفرق ٥٠ ألف جنيه أقل من المتوسط، يعني انخفاض حوالي ٣٣٫٣٣٪.)\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"الرقم العادي اللي بتقارن عليه — عشان تعرف إنت تمام ولا لأ.\"",
+          "after": "\"قيمة مرجعية لفترة ووحدة محدّدتين بتقارن بيها نفس المؤشر، مش حكم مطلق على جودة الأداء.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«مبيعاتي ١٠٠ ألف — المتوسط بتاعي ١٥٠» — الـ ١٥٠ baseline.\"",
+          "after": "\"مثال افتراضي: مبيعات الشهر ده ١٠٠ ألف جنيه، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف جنيه في الشهر. المتوسط ده خط الأساس للمقارنة هنا، مش هدف للقطاع أو حكم مطلق على الأداء. الفرق ٥٠ ألف جنيه أقل من المتوسط، يعني انخفاض حوالي ٣٣٫٣٣٪.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+      "auditItems": [
+        58
+      ],
+      "currentSha256": "34dd9a08db7560e3aca15e90116ccccfd3d033974bc1ff184581f92ef3587099",
+      "currentBlob": "88dc5a101af6ee406202b3f59e1a00a83f664205",
+      "generationSourceSha256": "396bf394d7d3d0b3b64f7685d7678757a7ba8547de4f4621f93d23730a935922",
+      "generationSourceBlob": "7843af4d30339080b7f0a028f059c6d40bda3f00",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Feeling (شعور)** | إحساس **عام** **بلا أرقام** — **لا** يحرّكك لقرار واضح | «أشعر أن مبيعاتي قليلة» — **شعور**، **ليس** سؤالًا |\\n| **Baseline (خط الأساس)** | **الرقم العادي** الذي **تقارن** عليه — لتعرف: هل أنت **بخير** أم **لا** | «مبيعاتي ١٠٠ ألف — **متوسطي ١٥٠**» — **١٥٠** هي **Baseline** |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Feeling (شعور)** | إحساس **عام** **بلا أرقام** — **لا** يحرّكك لقرار واضح | «أشعر أن مبيعاتي قليلة» — **شعور**، **ليس** سؤالًا |\\n| **Baseline (خط الأساس)** | قيمة مرجعية لفترة ووحدة محدّدتين للمقارنة بالمؤشر نفسه، وليست حكماً مطلقاً على جودة الأداء. | مثال افتراضي: مبيعات هذا الشهر ١٠٠ ألف وحدة نقدية، ومتوسط الأشهر الثلاثة السابقة ١٥٠ ألف وحدة نقدية شهرياً. هذا المتوسط خط الأساس للمثال، وليس هدفاً عاماً للقطاع أو حكماً مطلقاً على الأداء. الفرق انخفاض ٥٠ ألف وحدة نقدية، أي نحو ٣٣٫٣٣٪. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"**الرقم العادي** الذي **تقارن** عليه — لتعرف: هل أنت **بخير** أم **لا**\"",
+          "after": "\"قيمة مرجعية لفترة ووحدة محدّدتين للمقارنة بالمؤشر نفسه، وليست حكماً مطلقاً على جودة الأداء.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«مبيعاتي ١٠٠ ألف — **متوسطي ١٥٠**» — **١٥٠** هي **Baseline**\"",
+          "after": "\"مثال افتراضي: مبيعات هذا الشهر ١٠٠ ألف وحدة نقدية، ومتوسط الأشهر الثلاثة السابقة ١٥٠ ألف وحدة نقدية شهرياً. هذا المتوسط خط الأساس للمثال، وليس هدفاً عاماً للقطاع أو حكماً مطلقاً على الأداء. الفرق انخفاض ٥٠ ألف وحدة نقدية، أي نحو ٣٣٫٣٣٪.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+      "auditItems": [
+        58
+      ],
+      "currentSha256": "1603b73c495e4d3474ffded330bb85583d9ffcb8d985fd051cc6045adb1ecbae",
+      "currentBlob": "e4b071562b290efb41fd9f1795e634e4be3d106b",
+      "generationSourceSha256": "3e0e7192f9d90693f1c1741dbd508e52fe12793c6b293229fe4d488496fb1a97",
+      "generationSourceBlob": "3b17578f077faa819345a31189d76b4e23e2473d",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Feeling (شعور)** | إحساس **عام** **بلا أرقام** — **ما** يحركك لقرار واضح | «أشعر أن مبيعاتي قليلة» — **شعور**، **مو** سؤال |\\n| **Baseline (خط الأساس)** | **الرقم العادي** اللي **تقارن** عليه — لتعرف: هل أنت **بخير** أم **لا** | «مبيعاتي ١٠٠ ألف — **متوسطي ١٥٠**» — **١٥٠** هي **Baseline** |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Feeling (شعور)** | إحساس **عام** **بلا أرقام** — **ما** يحركك لقرار واضح | «أشعر أن مبيعاتي قليلة» — **شعور**، **مو** سؤال |\\n| **Baseline (خط الأساس)** | قيمة مرجعية لفترة ووحدة محدّدتين تقارن فيها نفس المؤشر، مو حكم مطلق على جودة الأداء. | مثال افتراضي: مبيعات هالشهر ١٠٠ ألف ريال، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف ريال بالشهر. هالمتوسط خط الأساس للمثال، مو هدف عام للقطاع أو حكم مطلق على الأداء. الفرق أقل بـ٥٠ ألف ريال، يعني انخفاض حوالي ٣٣٫٣٣٪. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"**الرقم العادي** اللي **تقارن** عليه — لتعرف: هل أنت **بخير** أم **لا**\"",
+          "after": "\"قيمة مرجعية لفترة ووحدة محدّدتين تقارن فيها نفس المؤشر، مو حكم مطلق على جودة الأداء.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«مبيعاتي ١٠٠ ألف — **متوسطي ١٥٠**» — **١٥٠** هي **Baseline**\"",
+          "after": "\"مثال افتراضي: مبيعات هالشهر ١٠٠ ألف ريال، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف ريال بالشهر. هالمتوسط خط الأساس للمثال، مو هدف عام للقطاع أو حكم مطلق على الأداء. الفرق أقل بـ٥٠ ألف ريال، يعني انخفاض حوالي ٣٣٫٣٣٪.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+      "auditItems": [
+        58
+      ],
+      "currentSha256": "fe6d16994435f5407973783bf6fb9539f25f257142b4e2dbe1d1beaf917d4de5",
+      "currentBlob": "d642615b983eca3c81f11714e5c8cd72d015833c",
+      "generationSourceSha256": "2f860aec7ebf7333a2794cbbe9959fb153e45585d0e91fd38fd4dc6e46cde46e",
+      "generationSourceBlob": "9e7f4e6f774855ed5ed08a72ec2af4cd1f96486c",
+      "replacements": [
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"The **normal number** you **compare** against — to know: are you **doing well** or **not**.\"",
+          "after": "\"A reference value for a stated period and unit, used to compare the same metric; it is not an absolute quality judgment.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"'My sales are 100k — **average is 150**' — **150** is the **Baseline**.\"",
+          "after": "\"Fictional example: this month's sales are 100 thousand currency units; the average of the previous three months is 150 thousand currency units per month. That average is this example's baseline, not a sector-wide target or an absolute quality judgment. The shortfall is 50 thousand currency units, a decline of about 33.33%.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/automator-m7-l1-closing-loop.json",
+      "auditItems": [
+        59
+      ],
+      "currentSha256": "0d985019de66ac1a2ab9442bf8fa1ebb39afd996a84912a9e100216e0015f419",
+      "currentBlob": "1ea76702e5e8e608395637f7ddba9ca19ca71104",
+      "generationSourceSha256": "b4a881b2c0229958c1e58b93ad897141f914dae117b17038984351f456e6680b",
+      "generationSourceBlob": "491252906bcc4de84c7f5512c9eade2a1dfb5e4e",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"Customer Journey (رحلة العميل): المسار الكامل من أول اهتمام لحد متابعة أو شراء — مش خطوة واحدة. (إعلان → فورم → ترحيب → متابعة → مكالمة مبيعات.)\\n\\nFeedback Loop (حلقة تحسين): البيانات اللي الأوتوميشن يسجّلها ترجع تقولك إيه يتحسّن. («متابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ إيميل فتح ١٠٪».)\"",
+          "after": "\"Customer Journey (رحلة العميل): المسار الكامل من أول اهتمام لحد متابعة أو شراء — مش خطوة واحدة. (إعلان → فورم → ترحيب → متابعة → مكالمة مبيعات.)\\n\\nFeedback Loop (حلقة تحسين): البيانات اللي الأوتوميشن يسجّلها ترجع تقولك إيه يتحسّن. (مثال افتراضي: متابعة واتساب في يوم ٢ جالها ٤٠ رد من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪). إيميل يوم ٥ جاله ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). بنقيس الردود مش فتح الرسائل. الفرق لوحده ما يثبتش أثر القناة؛ لازم نضبط توقيت المتابعة والجمهور.)\""
+        },
+        {
+          "field": "sections.4.bullets.1",
+          "before": "\"Feedback Loop (حلقة تحسين): البيانات اللي الأوتوميشن يسجّلها ترجع تقولك إيه يتحسّن. («متابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ إيميل فتح ١٠٪».)\"",
+          "after": "\"Feedback Loop (حلقة تحسين): البيانات اللي الأوتوميشن يسجّلها ترجع تقولك إيه يتحسّن. (مثال افتراضي: متابعة واتساب في يوم ٢ جالها ٤٠ رد من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪). إيميل يوم ٥ جاله ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). بنقيس الردود مش فتح الرسائل. الفرق لوحده ما يثبتش أثر القناة؛ لازم نضبط توقيت المتابعة والجمهور.)\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«متابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ إيميل فتح ١٠٪».\"",
+          "after": "\"مثال افتراضي: متابعة واتساب في يوم ٢ جالها ٤٠ رد من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪). إيميل يوم ٥ جاله ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). بنقيس الردود مش فتح الرسائل. الفرق لوحده ما يثبتش أثر القناة؛ لازم نضبط توقيت المتابعة والجمهور.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+      "auditItems": [
+        59
+      ],
+      "currentSha256": "7f03b80ff05391b3506877d11f2d3ca8cba30257d3ee0a01e3f320027c09235e",
+      "currentBlob": "134c1a9f6944ea179e4f5cf88afb069e62180677",
+      "generationSourceSha256": "df97e1478aa0ea0110c150da08c9c88a86da8990f64b20e727a888e21475363f",
+      "generationSourceBlob": "d3ea1a600c2fee7ad16ccb15e80664190d07dd1e",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Customer Journey (رحلة العميل)** | المسار الكامل من أول اهتمام حتى متابعة أو شراء — وليس خطوة واحدة | إعلان → نموذج → ترحيب → متابعة → مكالمة مبيعات |\\n| **Feedback Loop (حلقة تحسين)** | البيانات التي تسجّلها الأتمتة تعود لتخبرك بما يُحسَّن | «متابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ بريد فتح ١٠٪» |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **Customer Journey (رحلة العميل)** | المسار الكامل من أول اهتمام حتى متابعة أو شراء — وليس خطوة واحدة | إعلان → نموذج → ترحيب → متابعة → مكالمة مبيعات |\\n| **Feedback Loop (حلقة تحسين)** | البيانات التي تسجّلها الأتمتة تعود لتخبرك بما يُحسَّن | مثال افتراضي: تلقت متابعة واتساب في اليوم الثاني ٤٠ رداً من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪)، وتلقى بريد اليوم الخامس ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). المقياس هو الردود لا فتح الرسائل. لا تثبت المقارنة أثر القناة وحدها؛ يجب ضبط توقيت المتابعة والجمهور. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«متابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ بريد فتح ١٠٪»\"",
+          "after": "\"مثال افتراضي: تلقت متابعة واتساب في اليوم الثاني ٤٠ رداً من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪)، وتلقى بريد اليوم الخامس ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). المقياس هو الردود لا فتح الرسائل. لا تثبت المقارنة أثر القناة وحدها؛ يجب ضبط توقيت المتابعة والجمهور.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+      "auditItems": [
+        59
+      ],
+      "currentSha256": "7a71431da61076a2667a8cd7d619e839d06d87d48d1e3c3cdb56e9a5aba7be6b",
+      "currentBlob": "612e3e95e70ed70ec3f31f5d98f67bbda6b763c3",
+      "generationSourceSha256": "a75e05de460f543891c6055f47993266beab6ea22bbdac3229b4c8c508f8fe08",
+      "generationSourceBlob": "27a6a5fa3d50da161d4f5c49b49864de8601f721",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **رحلة العميل** | المسار الكامل من أول اهتمام حتى متابعة أو شراء — مو خطوة واحدة | إعلان → نموذج → ترحيب → متابعة → مكالمة مبيعات |\\n| **حلقة تحسين** | البيانات اللي تسجلها الأتمتة ترجع تخبرك بما يحتاج تحسين | «المتابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ بريد فتح ١٠٪» |\"",
+          "after": "\"| المصطلح | المعنى | مثال |\\n|---------|--------|------|\\n| **رحلة العميل** | المسار الكامل من أول اهتمام حتى متابعة أو شراء — مو خطوة واحدة | إعلان → نموذج → ترحيب → متابعة → مكالمة مبيعات |\\n| **حلقة تحسين** | البيانات اللي تسجلها الأتمتة ترجع تخبرك بما يحتاج تحسين | مثال افتراضي: متابعة واتساب في يوم ٢ جاها ٤٠ رد من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪). بريد يوم ٥ جاه ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). نقيس الردود، مو فتح الرسائل. الفرق ما يثبت أثر القناة وحدها؛ لازم نضبط توقيت المتابعة والجمهور. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"«المتابعة يوم ٢ على واتساب فتحت ٤٠٪ رد — يوم ٥ بريد فتح ١٠٪»\"",
+          "after": "\"مثال افتراضي: متابعة واتساب في يوم ٢ جاها ٤٠ رد من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (٤٠٪). بريد يوم ٥ جاه ١٠ ردود من ١٠٠ رسالة مُسلّمة خلال ٤٨ ساعة من التسليم (١٠٪). نقيس الردود، مو فتح الرسائل. الفرق ما يثبت أثر القناة وحدها؛ لازم نضبط توقيت المتابعة والجمهور.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+      "auditItems": [
+        59
+      ],
+      "currentSha256": "50b0d5125aad888aa482338303de1ace59842a0881eac0eb736d674885c44a68",
+      "currentBlob": "3f9f388ab8f0b80452569d35a50c24ef6dbf4603",
+      "generationSourceSha256": "40f208508ad4bcf7884f4f0a77eb4be8ec20b86064de64b41f52ce79b7cb5f79",
+      "generationSourceBlob": "a16a18600f33be24fe67990eaae94c86b02140a8",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"| Term | Meaning | Example |\\n|------|---------|---------|\\n| **Customer Journey** | The complete path from initial interest to follow-up or purchase — not just one step | Ad → Form → Welcome → Follow-up → Sales Call |\\n| **Feedback Loop** | The data recorded by the automation returns to inform you on what to improve | \\\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\\\" |\"",
+          "after": "\"| Term | Meaning | Example |\\n|------|---------|---------|\\n| **Customer Journey** | The complete path from initial interest to follow-up or purchase — not just one step | Ad → Form → Welcome → Follow-up → Sales Call |\\n| **Feedback Loop** | The data recorded by the automation returns to inform you on what to improve | Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled. |\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"\\\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\\\"\"",
+          "after": "\"Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled.\""
         }
       ]
     }

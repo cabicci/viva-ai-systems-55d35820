@@ -71,7 +71,7 @@ jobs:
         run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
 
       - name: Exact editorial source provenance (no image regeneration)
-        run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts src/lib/__tests__/automation-payback-source.test.ts
+        run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts src/lib/__tests__/automation-payback-source.test.ts src/lib/__tests__/lesson-metric-examples.test.ts
 
       - name: Payment read states (mocked queries, no orders changed)
         run: bunx vitest run src/lib/__tests__/payments-read-states.test.tsx
