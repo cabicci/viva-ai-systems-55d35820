@@ -87,7 +87,10 @@ function formatDuration(totalSeconds: number, t: (key: UiStringKey) => string) {
 }
 
 function formatDays(count: number, t: (key: UiStringKey) => string) {
-  return t("account.stats.daysUnit").replace("{count}", String(count));
+  return t(count === 1 ? "account.stats.daysUnitOne" : "account.stats.daysUnit").replace(
+    "{count}",
+    String(count),
+  );
 }
 
 function AccountPage() {

@@ -43,8 +43,14 @@ function ForgotPasswordPage() {
       ) : (
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label>{t("auth.field.email")}</Label>
-            <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <Label htmlFor="forgot-email">{t("auth.field.email")}</Label>
+            <Input
+              id="forgot-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
             {loading ? t("auth.forgot.submitting") : t("auth.forgot.submit")}

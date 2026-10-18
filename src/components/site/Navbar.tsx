@@ -189,6 +189,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
               </Button>
             </SheetTrigger>
             <SheetContent
+              closeLabel={t("common.close")}
               side={dir === "rtl" ? "left" : "right"}
               className="w-[min(88vw,360px)] overflow-y-auto"
             >

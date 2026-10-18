@@ -277,3 +277,10 @@ source: owner instruction to continue the remaining audited corrections in chat 
 scope: existing mission display/provider normalization and four-locale evaluation instructions; no schema change
 summary: Render structured model answers as readable text before persistence and on restoration, preserve existing learner answers and cached payloads, and explain irrecoverable historical object-coercion text without regenerating automatically. Ground feedback in the actual submission, distinguish hypothetical exercises from observed activity, and remove mandatory praise while retaining rubric weights and the pass threshold.
 sync_status: Local implementation checkpoint. No production roadmap row claimed. Deterministic synthetic fixtures and mocked provider/client tests are being verified; final results belong in the drive implementation receipt. No merge, deployment or live grading authorized by this checkpoint.
+## 2026-10-18 — account accessibility and signup clarity (items 15, 47, 48, 118, 120)
+
+[roadmap:local-batch-account-ui-20261018]
+source: direct owner authorization to continue the remaining audited corrections
+scope: signup/recovery label associations, mobile menu close label, account day wording and signup context/policy navigation
+summary: Associate only the two affected labels; localize the shared menu close control through its caller; use the singular day key for count 1 while preserving other values; expose same-locale policy links in separate tabs so form state remains; explain the platform-wide account without promising paid content access.
+sync_status: Local implementation only. Existing authentication and submission handlers are preserved. No new consent requirement, recovery message, registration, account-value change, merge or publication. Validation and review records are retained on the shared drive.
