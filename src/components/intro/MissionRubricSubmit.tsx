@@ -435,27 +435,32 @@ function MissionRubricSession({
         </>
       )}
 
-      {!skipped && !reveal && !result && attemptCount >= 2 && lastSubmissionId && (
-        <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={onReveal}
-            disabled={revealing}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
-          >
-            {revealing ? (
-              <>
-                <Loader2 className="h-3 w-3 animate-spin" />{" "}
-                {getUiString(locale, "mission.reveal.generating")}
-              </>
-            ) : (
-              <>
-                <Lightbulb className="h-3 w-3" /> {getUiString(locale, "mission.reveal.cta")}
-              </>
-            )}
-          </button>
-        </div>
-      )}
+      {!skipped &&
+        savedSubmission?.status !== "passed" &&
+        !reveal &&
+        !result &&
+        attemptCount >= 2 &&
+        lastSubmissionId && (
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={onReveal}
+              disabled={revealing}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
+            >
+              {revealing ? (
+                <>
+                  <Loader2 className="h-3 w-3 animate-spin" />{" "}
+                  {getUiString(locale, "mission.reveal.generating")}
+                </>
+              ) : (
+                <>
+                  <Lightbulb className="h-3 w-3" /> {getUiString(locale, "mission.reveal.cta")}
+                </>
+              )}
+            </button>
+          </div>
+        )}
 
       {reveal && !skipped && (
         <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2">

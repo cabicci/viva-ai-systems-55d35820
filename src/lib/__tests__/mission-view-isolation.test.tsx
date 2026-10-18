@@ -236,6 +236,7 @@ describe("mission answer ownership and saved result restoration", () => {
     render(mission());
     expect(await screen.findByRole("textbox")).toHaveAttribute("readonly");
     expect(screen.queryByText(result.summary)).toBeNull();
+    expect(screen.queryByRole("button", { name: "See a helpful example" })).toBeNull();
     expect(screen.queryByRole("button", { name: /Submit and get feedback/i })).toBeNull();
   });
 
