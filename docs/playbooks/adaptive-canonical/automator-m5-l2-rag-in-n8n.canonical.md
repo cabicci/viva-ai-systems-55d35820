@@ -181,8 +181,23 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission — مصدر FAQ واحد
 
-| مصدر حقيقي | 60% |
-| ربط سؤال بمصدر | 40% |
+صمّم سيرًا من سؤال العميل إلى المصدر ثم الرد. هذا تمرين تصميم مكتوب؛ لا يتطلب بناء n8n أو نشر قاعدة متجهات أو إرسال رسائل فعلية.
+
+**التسليم:**
+
+1. حدّد قناة وصول سؤال العميل: واتساب أو إيميل أو نموذج.
+2. سمِّ مصدرًا محددًا واحدًا: FAQ أو مستند أو جدول.
+3. اكتب ثلاثة أسئلة عملاء واربط كل سؤال بمقتطف محدد في المصدر.
+4. اكتب الرد البديل عندما لا توجد إجابة مدعومة في المصدر.
+5. وضّح خطوة الرد النهائية ولمن تُوجَّه ضمن رسمك أو وصفك النصي.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| مصدر محدد | 60% | سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة. |
+| ربط السؤال بالمصدر | 40% | اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم. |
+
 
 ### Confidence close
 
@@ -304,3 +319,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

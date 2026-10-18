@@ -174,8 +174,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| هدف وأدوات | 60% |
-| حد وتحويل | 40% |
+صمّم ضوابط لوكيل يعمل على مهمة تتغير خطواتها. اكتب الهدف والأدوات المسموحة وحدًا واضحًا؛ لا يلزم كود أو نشر أو تشغيل أدوات.
+
+**التسليم:**
+
+1. اكتب هدف الوكيل في جملة واحدة.
+2. سمِّ الأداة الأولى المسموحة ووظيفتها.
+3. سمِّ الأداة الثانية المسموحة ووظيفتها.
+4. حدّد حدًا قابلًا للتطبيق: ما الخارج عن النطاق أو متى يجب التوقف؟
+5. حدّد الشخص أو الدور الذي يستلم إذا فشل الوكيل أو وصل إلى الحد.
+6. اشرح أهمية هذا الحد في عملك.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| هدف وأدوات | 60% | هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة. |
+| حد وتحويل | 40% | حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه. |
+
 
 ### Confidence close
 
@@ -297,3 +313,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

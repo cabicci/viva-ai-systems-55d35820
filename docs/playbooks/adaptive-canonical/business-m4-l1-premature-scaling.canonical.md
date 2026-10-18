@@ -164,8 +164,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| فحص صادق | 60% |
-| قرار واضح | 40% |
+قيّم فكرة توسع فعلية، كفرع أو حملة أكبر أو منتج جديد أو توظيف متعدد، على أربعة محاور جاهزية. المطلوب حكم مبرر وليس تنفيذ التوسع.
+
+**التسليم:**
+
+1. صف فكرة التوسع.
+2. هل العملية جاهزة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.
+3. هل النقد المتاح جاهز؟ أجب بنعم أو لا أو جزئيًا مع تفسير.
+4. هل الجودة ثابتة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.
+5. هل الطلب حقيقي؟ أجب بنعم أو لا أو جزئيًا مع تفسير.
+6. اختر التوسع أو التأجيل أو التوسع الجزئي، واربط السبب بنتائج الفحص.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| فحص صادق | 60% | فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي. |
+| قرار واضح | 40% | قرار توسع أو تأجيل بسبب مرتبط بالفحص. |
+
 
 ### Confidence close
 
@@ -287,3 +303,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

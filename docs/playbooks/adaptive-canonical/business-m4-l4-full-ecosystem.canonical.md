@@ -170,8 +170,23 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| هدف حقيقي | 50% |
-| ربط منطقي | 50% |
+اكتب هدف عملك الحالي للشهرين المقبلين. اختر المسارين الأكثر صلة من المسارات الخمسة، واشرح كل اختيار في جملتين أو ثلاث؛ لا يُشترط إكمال أي مسار في هذا التمرين.
+
+**التسليم:**
+
+1. اكتب هدف العمل الحالي في جملة أو جملتين.
+2. سمِّ المسار المساند الأول.
+3. اشرح صلة المسار الأول بالهدف في جملتين أو ثلاث.
+4. سمِّ المسار المساند الثاني.
+5. اشرح صلة المسار الثاني بالهدف في جملتين أو ثلاث.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| هدف حقيقي | 50% | هدف مرتبط بسياق عملك، لا فضول عام. |
+| ربط منطقي | 50% | مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع. |
+
 
 ### Confidence close
 
@@ -293,3 +308,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

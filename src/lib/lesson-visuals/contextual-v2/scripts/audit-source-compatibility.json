@@ -719,33 +719,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
-      "auditItems": [
-        116
-      ],
-      "currentSha256": "c3342d85403827ca97cefcd20ca942b15ef1bbb9a3a852d7381f01bcd791d471",
-      "currentBlob": "7e0189521c7bb51905ea735f70bd74d5ed3c4d0a",
-      "generationSourceSha256": "e8d111eb1d1301479cb422a26c7ad7a922ca4d66e0279f4b5afb3f925708c20b",
-      "generationSourceBlob": "dc59a469c535f44fd050431e3a57b6e1cadcd792",
-      "replacements": [
-        {
-          "field": "sections.2.contentMarkdown",
-          "before": "\"> **Quiz key:** \\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** The correct answer is Automator because it focuses on automating repetitive tasks.\"",
-          "after": "\"**Question:** Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
-        },
-        {
-          "field": "sections.2.quiz.explanation",
-          "before": "\"The correct answer is Automator because it focuses on automating repetitive tasks.\"",
-          "after": "\"Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
-        },
-        {
-          "field": "sections.2.quiz.question",
-          "before": "\"Which option is most suitable based on the section above?\"",
-          "after": "\"Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\""
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
       "auditItems": [
         143
@@ -969,6 +942,634 @@
           "field": "sections.4.tables.0.rows.1.2",
           "before": "\"«مبيعاتي ١٠٠ ألف — **متوسطي ١٥٠**» — **١٥٠** هي **Baseline**\"",
           "after": "\"مثال افتراضي: مبيعات هالشهر ١٠٠ ألف ريال، ومتوسط الشهور الثلاثة السابقة ١٥٠ ألف ريال بالشهر. هالمتوسط خط الأساس للمثال، مو هدف عام للقطاع أو حكم مطلق على الأداء. الفرق أقل بـ٥٠ ألف ريال، يعني انخفاض حوالي ٣٣٫٣٣٪.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "84e71d2c0a81d3247e058ab2e58d0eec45ce31252466cd7dc04987da6196bd4f",
+      "currentBlob": "534001d5511dfb788ae8ab5c9baf9399e6c885ad",
+      "generationSourceSha256": "ebf1d22c3e32ba40d18423babc964dfec889a12d42832cdb3deaae30032102fb",
+      "generationSourceBlob": "fbe53782e268df86e22554eedfd07c5661374da9",
+      "replacements": [
+        {
+          "field": "sections.5: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — مصدر FAQ واحد\",\n      \"subtitle\": \"مصدر FAQ واحد\",\n      \"contentMarkdown\": \"| مصدر حقيقي | 60% |\\n| ربط سؤال بمصدر | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — مصدر FAQ واحد\",\n      \"subtitle\": \"مصدر FAQ واحد\",\n      \"contentMarkdown\": \"صمّم سيرًا من سؤال العميل إلى المصدر ثم الرد. هذا تمرين تصميم مكتوب؛ لا يتطلب بناء n8n أو نشر قاعدة متجهات أو إرسال رسائل فعلية.\\n\\n**التسليم:**\\n\\n1. حدّد قناة وصول سؤال العميل: واتساب أو إيميل أو نموذج.\\n2. سمِّ مصدرًا محددًا واحدًا: FAQ أو مستند أو جدول.\\n3. اكتب ثلاثة أسئلة عملاء واربط كل سؤال بمقتطف محدد في المصدر.\\n4. اكتب الرد البديل عندما لا توجد إجابة مدعومة في المصدر.\\n5. وضّح خطوة الرد النهائية ولمن تُوجَّه ضمن رسمك أو وصفك النصي.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| مصدر محدد | 60% | سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة. |\\n| ربط السؤال بالمصدر | 40% | اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"مصدر محدد\",\n              \"60%\",\n              \"سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة.\"\n            ],\n            [\n              \"ربط السؤال بالمصدر\",\n              \"40%\",\n              \"اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم سيرًا من سؤال العميل إلى المصدر ثم الرد. هذا تمرين تصميم مكتوب؛ لا يتطلب بناء n8n أو نشر قاعدة متجهات أو إرسال رسائل فعلية.\",\n        \"delivery\": [\n          \"حدّد قناة وصول سؤال العميل: واتساب أو إيميل أو نموذج.\",\n          \"سمِّ مصدرًا محددًا واحدًا: FAQ أو مستند أو جدول.\",\n          \"اكتب ثلاثة أسئلة عملاء واربط كل سؤال بمقتطف محدد في المصدر.\",\n          \"اكتب الرد البديل عندما لا توجد إجابة مدعومة في المصدر.\",\n          \"وضّح خطوة الرد النهائية ولمن تُوجَّه ضمن رسمك أو وصفك النصي.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"مصدر محدد\",\n            \"weight\": 60,\n            \"criteria\": \"سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة.\"\n          },\n          {\n            \"dimension\": \"ربط السؤال بالمصدر\",\n            \"weight\": 40,\n            \"criteria\": \"اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "b64228b0b4be4e314aaf1aef5e4eb68f4f811ea59f31251eff61db9bf64e36a5",
+      "currentBlob": "5a589bf9efa2f37f23bdabf3edfc7f969e30dc5e",
+      "generationSourceSha256": "d636b8dd402267ddabc60e3b595548e850574b36823942d8c4f88cc0d15a8723",
+      "generationSourceBlob": "9b5ab5caaa1daccf2a27984526df327ea51b86fa",
+      "replacements": [
+        {
+          "field": "sections.5: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — مصدر أسئلة شائعة واحد\",\n      \"subtitle\": \"مصدر أسئلة شائعة واحد\",\n      \"contentMarkdown\": \"| مصدر حقيقي | 60% |\\n| ربط سؤال بمصدر | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — مصدر أسئلة شائعة واحد\",\n      \"subtitle\": \"مصدر أسئلة شائعة واحد\",\n      \"contentMarkdown\": \"ارسم مسار سؤال العميل إلى المصدر ثم الرد. هذا تصميم مكتوب، مو بناء تقني؛ ما تحتاج تشغّل n8n أو قاعدة متجهات أو ترسل رسائل فعلية.\\n\\n**التسليم:**\\n\\n1. حدّد قناة وصول سؤال العميل: واتساب أو إيميل أو نموذج.\\n2. سمِّ مصدرًا محددًا واحدًا: FAQ أو مستند أو جدول.\\n3. اكتب ثلاثة أسئلة عملاء واربط كل سؤال بمقتطف محدد في المصدر.\\n4. اكتب الرد البديل عندما لا توجد إجابة مدعومة في المصدر.\\n5. وضّح خطوة الرد النهائية ولمن تُوجَّه ضمن رسمك أو وصفك النصي.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| مصدر محدد | 60% | سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة. |\\n| ربط السؤال بالمصدر | 40% | اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"مصدر محدد\",\n              \"60%\",\n              \"سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة.\"\n            ],\n            [\n              \"ربط السؤال بالمصدر\",\n              \"40%\",\n              \"اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"ارسم مسار سؤال العميل إلى المصدر ثم الرد. هذا تصميم مكتوب، مو بناء تقني؛ ما تحتاج تشغّل n8n أو قاعدة متجهات أو ترسل رسائل فعلية.\",\n        \"delivery\": [\n          \"حدّد قناة وصول سؤال العميل: واتساب أو إيميل أو نموذج.\",\n          \"سمِّ مصدرًا محددًا واحدًا: FAQ أو مستند أو جدول.\",\n          \"اكتب ثلاثة أسئلة عملاء واربط كل سؤال بمقتطف محدد في المصدر.\",\n          \"اكتب الرد البديل عندما لا توجد إجابة مدعومة في المصدر.\",\n          \"وضّح خطوة الرد النهائية ولمن تُوجَّه ضمن رسمك أو وصفك النصي.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"مصدر محدد\",\n            \"weight\": 60,\n            \"criteria\": \"سمِّ مصدرًا يمكن تحديده، لا مجموعة ملفات غير محددة.\"\n          },\n          {\n            \"dimension\": \"ربط السؤال بالمصدر\",\n            \"weight\": 40,\n            \"criteria\": \"اربط الأسئلة الثلاثة بمقتطفات، وحدّد ردًا بديلًا للسؤال غير المدعوم.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "8c9e623f42cdf2c0f80b8015a1d565e83110d095f6c3f44148ef4c5e2bef3e98",
+      "currentBlob": "6afdf58830ea707a08754a4d0038d63586e0d4c8",
+      "generationSourceSha256": "0aea7908c9b9bb0715f4179b6551df65837a5e60511156e58fe3b94a4ba4baa0",
+      "generationSourceBlob": "e342d8b472cdbd8c3852206739956308d5eb8696",
+      "replacements": [
+        {
+          "field": "sections.5: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"subtitle\": \"One FAQ Source\",\n      \"contentMarkdown\": \"| Real Source | 60% |\\n| Linking Question to Source | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"subtitle\": \"One FAQ Source\",\n      \"contentMarkdown\": \"Design a question-to-source-to-response workflow. This is a written design exercise; do not build n8n, deploy a vector database or send real messages.\\n\\n**Submission:**\\n\\n1. Name the channel that receives the customer's question: WhatsApp, email or a form.\\n2. Identify one specific FAQ, document or sheet to use as the source.\\n3. Write three customer questions; connect each question to a specific source excerpt.\\n4. Write the fallback response when the source has no supported answer.\\n5. Describe the final response step and intended recipient in your diagram or text.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Specific source | 60% | Name one identifiable source rather than an unspecified collection of files. |\\n| Question-to-source mapping | 40% | Connect all three questions to excerpts and give a fallback for an unsupported question. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Specific source\",\n              \"60%\",\n              \"Name one identifiable source rather than an unspecified collection of files.\"\n            ],\n            [\n              \"Question-to-source mapping\",\n              \"40%\",\n              \"Connect all three questions to excerpts and give a fallback for an unsupported question.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Design a question-to-source-to-response workflow. This is a written design exercise; do not build n8n, deploy a vector database or send real messages.\",\n        \"delivery\": [\n          \"Name the channel that receives the customer's question: WhatsApp, email or a form.\",\n          \"Identify one specific FAQ, document or sheet to use as the source.\",\n          \"Write three customer questions; connect each question to a specific source excerpt.\",\n          \"Write the fallback response when the source has no supported answer.\",\n          \"Describe the final response step and intended recipient in your diagram or text.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Specific source\",\n            \"weight\": 60,\n            \"criteria\": \"Name one identifiable source rather than an unspecified collection of files.\"\n          },\n          {\n            \"dimension\": \"Question-to-source mapping\",\n            \"weight\": 40,\n            \"criteria\": \"Connect all three questions to excerpts and give a fallback for an unsupported question.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "1b48c9a64fb1bc5f7250f65dc45ee487c2097d425cc36d320d451672e6b3f8a0",
+      "currentBlob": "acb1fac33088f2c34c1f87533ea474656d2c1cc9",
+      "generationSourceSha256": "02cba64e8e85419352d202245d3692b026b511176b2a6f4ee3f27765204c07c6",
+      "generationSourceBlob": "3121817ef81c12ac7f1d53548247294a3fae5a8f",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| هدف وأدوات | 60% |\\n| حد وتحويل | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"صمّم ضوابط لوكيل يعمل على مهمة تتغير خطواتها. اكتب الهدف والأدوات المسموحة وحدًا واضحًا؛ لا يلزم كود أو نشر أو تشغيل أدوات.\\n\\n**التسليم:**\\n\\n1. اكتب هدف الوكيل في جملة واحدة.\\n2. سمِّ الأداة الأولى المسموحة ووظيفتها.\\n3. سمِّ الأداة الثانية المسموحة ووظيفتها.\\n4. حدّد حدًا قابلًا للتطبيق: ما الخارج عن النطاق أو متى يجب التوقف؟\\n5. حدّد الشخص أو الدور الذي يستلم إذا فشل الوكيل أو وصل إلى الحد.\\n6. اشرح أهمية هذا الحد في عملك.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف وأدوات | 60% | هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة. |\\n| حد وتحويل | 40% | حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف وأدوات\",\n              \"60%\",\n              \"هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة.\"\n            ],\n            [\n              \"حد وتحويل\",\n              \"40%\",\n              \"حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم ضوابط لوكيل يعمل على مهمة تتغير خطواتها. اكتب الهدف والأدوات المسموحة وحدًا واضحًا؛ لا يلزم كود أو نشر أو تشغيل أدوات.\",\n        \"delivery\": [\n          \"اكتب هدف الوكيل في جملة واحدة.\",\n          \"سمِّ الأداة الأولى المسموحة ووظيفتها.\",\n          \"سمِّ الأداة الثانية المسموحة ووظيفتها.\",\n          \"حدّد حدًا قابلًا للتطبيق: ما الخارج عن النطاق أو متى يجب التوقف؟\",\n          \"حدّد الشخص أو الدور الذي يستلم إذا فشل الوكيل أو وصل إلى الحد.\",\n          \"اشرح أهمية هذا الحد في عملك.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف وأدوات\",\n            \"weight\": 60,\n            \"criteria\": \"هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة.\"\n          },\n          {\n            \"dimension\": \"حد وتحويل\",\n            \"weight\": 40,\n            \"criteria\": \"حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "bec0a1f2b4323e6edabd552be7eed9e0b8176c55cbdfb406e2f6e7b9fbb6cc2c",
+      "currentBlob": "816c019660995af58f886ecfe952d8d5d54dc802",
+      "generationSourceSha256": "381498deb35e4dde22790064db7bd3d2ccc644613c4e41610085dbe44536fece",
+      "generationSourceBlob": "689cfd509da08f9cdfed42ff98c239561c8c6c73",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| هدف وأدوات | 60% |\\n| حد وتحويل | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"صمّم ضوابط لوكيل يتعامل مع شغل خطواته مو ثابتة. اكتب الهدف والأدوات المسموحة وحدًا واضحًا؛ ما تحتاج كود أو نشر أو تشغيل أدوات.\\n\\n**التسليم:**\\n\\n1. اكتب هدف الوكيل في جملة واحدة.\\n2. سمِّ الأداة الأولى المسموحة ووظيفتها.\\n3. سمِّ الأداة الثانية المسموحة ووظيفتها.\\n4. حدّد حدًا قابلًا للتطبيق: ما الخارج عن النطاق أو متى يجب التوقف؟\\n5. حدّد الشخص أو الدور الذي يستلم إذا فشل الوكيل أو وصل إلى الحد.\\n6. اشرح أهمية هذا الحد في عملك.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف وأدوات | 60% | هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة. |\\n| حد وتحويل | 40% | حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف وأدوات\",\n              \"60%\",\n              \"هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة.\"\n            ],\n            [\n              \"حد وتحويل\",\n              \"40%\",\n              \"حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم ضوابط لوكيل يتعامل مع شغل خطواته مو ثابتة. اكتب الهدف والأدوات المسموحة وحدًا واضحًا؛ ما تحتاج كود أو نشر أو تشغيل أدوات.\",\n        \"delivery\": [\n          \"اكتب هدف الوكيل في جملة واحدة.\",\n          \"سمِّ الأداة الأولى المسموحة ووظيفتها.\",\n          \"سمِّ الأداة الثانية المسموحة ووظيفتها.\",\n          \"حدّد حدًا قابلًا للتطبيق: ما الخارج عن النطاق أو متى يجب التوقف؟\",\n          \"حدّد الشخص أو الدور الذي يستلم إذا فشل الوكيل أو وصل إلى الحد.\",\n          \"اشرح أهمية هذا الحد في عملك.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف وأدوات\",\n            \"weight\": 60,\n            \"criteria\": \"هدف محدد وأداتان بوظيفتين واضحتين، لا صلاحيات مفتوحة.\"\n          },\n          {\n            \"dimension\": \"حد وتحويل\",\n            \"weight\": 40,\n            \"criteria\": \"حد قابل للتطبيق ومسار واضح للتحويل عند الفشل أو تجاوزه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "805ba72a52c0ad1188423767b41da03935c2ce3ac3ed639b81431993ac2772b2",
+      "currentBlob": "78d23e0b39c740e51ffaab1112577fc34e55eaaf",
+      "generationSourceSha256": "241d305ef3e17f2a0271414735bc8b11f23a0d6d2a52181bfa87bf8e542f1e1e",
+      "generationSourceBlob": "0e3a40bbe5ba164c43f847f9b62f8173f1d91439",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Goal and Tools | 60% |\\n| Limit and Transformation | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.\\n\\n**Submission:**\\n\\n1. State the agent's goal in one sentence.\\n2. Name allowed tool 1 and what it may do.\\n3. Name allowed tool 2 and what it may do.\\n4. Define one enforceable boundary: what is out of scope or when the agent must stop.\\n5. Name the person or role that takes over if the agent fails or reaches the boundary.\\n6. Explain why this boundary matters in your work.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Goal and tools | 60% | Give a specific goal and two tools with clear functions, rather than unlimited capabilities. |\\n| Boundary and escalation | 40% | Give an applicable boundary and a clear handoff path when the agent fails or exceeds it. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Goal and tools\",\n              \"60%\",\n              \"Give a specific goal and two tools with clear functions, rather than unlimited capabilities.\"\n            ],\n            [\n              \"Boundary and escalation\",\n              \"40%\",\n              \"Give an applicable boundary and a clear handoff path when the agent fails or exceeds it.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.\",\n        \"delivery\": [\n          \"State the agent's goal in one sentence.\",\n          \"Name allowed tool 1 and what it may do.\",\n          \"Name allowed tool 2 and what it may do.\",\n          \"Define one enforceable boundary: what is out of scope or when the agent must stop.\",\n          \"Name the person or role that takes over if the agent fails or reaches the boundary.\",\n          \"Explain why this boundary matters in your work.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Goal and tools\",\n            \"weight\": 60,\n            \"criteria\": \"Give a specific goal and two tools with clear functions, rather than unlimited capabilities.\"\n          },\n          {\n            \"dimension\": \"Boundary and escalation\",\n            \"weight\": 40,\n            \"criteria\": \"Give an applicable boundary and a clear handoff path when the agent fails or exceeds it.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "08b8bc71f2e85d4cc5db23c8546b6dab489751481ea9e04036ab61cffd994e3c",
+      "currentBlob": "92fee7809e810ef0fdbce63e14fcc2766e4b97b4",
+      "generationSourceSha256": "d2cedc4dcf8412044359719720909e5d1ed2224d123e16aee7bfdac480152ad0",
+      "generationSourceBlob": "46333581eff638eff4acf94717aa10fbff50d199",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| سير كامل | 60% |\\n| واقعية | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"صمّم سير استقبال عميل محتمل لقناة تستخدمها فعلًا. وضّح المُشغّل والحفظ والرد والتنبيه؛ لا تنشر أتمتة ولا ترسل رسالة فعلية.\\n\\n**التسليم:**\\n\\n1. سمِّ القناة: نموذج أو واتساب أو حجز أو قناة فعلية أخرى.\\n2. حدّد الحدث الذي يبدأ استقبال البيانات.\\n3. حدّد مكان تسجيل العميل والحقول المطلوبة.\\n4. اكتب نموذج الرد الأول للتصميم فقط.\\n5. حدّد من يصله التنبيه ومتى.\\n6. اشرح ما الذي كان يضيع قبل هذا السير.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| سير كامل | 60% | ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه. |\\n| تصميم واقعي | 40% | استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"سير كامل\",\n              \"60%\",\n              \"ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه.\"\n            ],\n            [\n              \"تصميم واقعي\",\n              \"40%\",\n              \"استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم سير استقبال عميل محتمل لقناة تستخدمها فعلًا. وضّح المُشغّل والحفظ والرد والتنبيه؛ لا تنشر أتمتة ولا ترسل رسالة فعلية.\",\n        \"delivery\": [\n          \"سمِّ القناة: نموذج أو واتساب أو حجز أو قناة فعلية أخرى.\",\n          \"حدّد الحدث الذي يبدأ استقبال البيانات.\",\n          \"حدّد مكان تسجيل العميل والحقول المطلوبة.\",\n          \"اكتب نموذج الرد الأول للتصميم فقط.\",\n          \"حدّد من يصله التنبيه ومتى.\",\n          \"اشرح ما الذي كان يضيع قبل هذا السير.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"سير كامل\",\n            \"weight\": 60,\n            \"criteria\": \"ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه.\"\n          },\n          {\n            \"dimension\": \"تصميم واقعي\",\n            \"weight\": 40,\n            \"criteria\": \"استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "375c86e645d217db464f6cdb2a603c7607da6cc7e1a199c90696c419c43c19b4",
+      "currentBlob": "45e086443868ecadf40717326b3498c1f59cb9c8",
+      "generationSourceSha256": "159b72cca5cbabfe3d9cb281060bea822453d9fc54fe6b178d3a5f7ba931e8bb",
+      "generationSourceBlob": "a202e36504b0d1cd483a2c40d25e97c199c956a5",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| سير كامل | 60% |\\n| واقعية | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"صمّم مسار استقبال lead لقناة تستخدمها فعلًا. وضّح المُشغّل والحفظ والرد والتنبيه؛ المطلوب تصميم، مو تشغيل أتمتة أو إرسال رسالة.\\n\\n**التسليم:**\\n\\n1. سمِّ القناة: نموذج أو واتساب أو حجز أو قناة فعلية أخرى.\\n2. حدّد الحدث الذي يبدأ استقبال البيانات.\\n3. حدّد مكان تسجيل العميل والحقول المطلوبة.\\n4. اكتب نموذج الرد الأول للتصميم فقط.\\n5. حدّد من يصله التنبيه ومتى.\\n6. اشرح ما الذي كان يضيع قبل هذا السير.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| سير كامل | 60% | ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه. |\\n| تصميم واقعي | 40% | استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"سير كامل\",\n              \"60%\",\n              \"ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه.\"\n            ],\n            [\n              \"تصميم واقعي\",\n              \"40%\",\n              \"استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم مسار استقبال lead لقناة تستخدمها فعلًا. وضّح المُشغّل والحفظ والرد والتنبيه؛ المطلوب تصميم، مو تشغيل أتمتة أو إرسال رسالة.\",\n        \"delivery\": [\n          \"سمِّ القناة: نموذج أو واتساب أو حجز أو قناة فعلية أخرى.\",\n          \"حدّد الحدث الذي يبدأ استقبال البيانات.\",\n          \"حدّد مكان تسجيل العميل والحقول المطلوبة.\",\n          \"اكتب نموذج الرد الأول للتصميم فقط.\",\n          \"حدّد من يصله التنبيه ومتى.\",\n          \"اشرح ما الذي كان يضيع قبل هذا السير.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"سير كامل\",\n            \"weight\": 60,\n            \"criteria\": \"ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه.\"\n          },\n          {\n            \"dimension\": \"تصميم واقعي\",\n            \"weight\": 40,\n            \"criteria\": \"استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "d644fb4ad5ca48362c9b89b4bbef85533c65aff093f176d8d1008a446a62e9ab",
+      "currentBlob": "27bf8dabfa7a9380a69c09b66b4d093ba52230de",
+      "generationSourceSha256": "bb6eff3d69c151dd040724342c799c687af5a42724f24a4e2f71a69b99f8cd0a",
+      "generationSourceBlob": "52ce5ade7087220b0b3425f747c2e291beaf743b",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Full Flow | 60% |\\n| Realism | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Design a lead intake workflow for one channel you actually use. Describe the trigger, storage, response and alert; do not deploy an automation or send a message.\\n\\n**Submission:**\\n\\n1. Name the channel: a form, WhatsApp, booking or another real channel.\\n2. State the event that triggers intake.\\n3. Specify where the lead is recorded and the fields to store.\\n4. Draft the first response as an example only.\\n5. Name who receives the alert and when.\\n6. Explain what used to be lost before this workflow.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Complete workflow | 60% | Include all four steps: trigger, storage, response and alert. |\\n| Realistic design | 40% | Use a real channel from your context and identify the alert recipient. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Complete workflow\",\n              \"60%\",\n              \"Include all four steps: trigger, storage, response and alert.\"\n            ],\n            [\n              \"Realistic design\",\n              \"40%\",\n              \"Use a real channel from your context and identify the alert recipient.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Design a lead intake workflow for one channel you actually use. Describe the trigger, storage, response and alert; do not deploy an automation or send a message.\",\n        \"delivery\": [\n          \"Name the channel: a form, WhatsApp, booking or another real channel.\",\n          \"State the event that triggers intake.\",\n          \"Specify where the lead is recorded and the fields to store.\",\n          \"Draft the first response as an example only.\",\n          \"Name who receives the alert and when.\",\n          \"Explain what used to be lost before this workflow.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Complete workflow\",\n            \"weight\": 60,\n            \"criteria\": \"Include all four steps: trigger, storage, response and alert.\"\n          },\n          {\n            \"dimension\": \"Realistic design\",\n            \"weight\": 40,\n            \"criteria\": \"Use a real channel from your context and identify the alert recipient.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "e1ee5154f15ee661f718c9386fc70bc217efe864342827dbc6eeb28075e9abd9",
+      "currentBlob": "208a5b95ea72e92142edcd228995bbbeb071aa90",
+      "generationSourceSha256": "f865786745e3a47519acd5bc403f0e5bd682ed072f7d63f5c044264f0c7b74a1",
+      "generationSourceBlob": "97edfc579e0479f1a8ea2c3c20eccb3e776cb2d1",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Flow واضح | 60% |\\n| ثقة وموافقة | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"صمّم محادثة واتساب واحدة برد آلي وقاعدة تحويل إلى موظف. لا يلزم ربط API أو إرسال أي رسالة فعلية.\\n\\n**التسليم:**\\n\\n1. حدّد سيناريو واحدًا، مثل تأكيد طلب أو سؤال متكرر.\\n2. اكتب مثال رسالة العميل التي تبدأ المحادثة.\\n3. اكتب نموذج الرد الآلي.\\n4. حدّد الشرط الذي يحوّل المحادثة إلى موظف.\\n5. سمِّ من يستلم التحويل.\\n6. اشرح كيف بدأ العميل المحادثة أو وافق عليها وكيف يتجنب التصميم الرسائل المزعجة غير المطلوبة.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| سير محادثة واضح | 60% | سيناريو ورد آلي وشرط محدد للتحويل البشري. |\\n| ثقة وموافقة | 40% | بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"سير محادثة واضح\",\n              \"60%\",\n              \"سيناريو ورد آلي وشرط محدد للتحويل البشري.\"\n            ],\n            [\n              \"ثقة وموافقة\",\n              \"40%\",\n              \"بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم محادثة واتساب واحدة برد آلي وقاعدة تحويل إلى موظف. لا يلزم ربط API أو إرسال أي رسالة فعلية.\",\n        \"delivery\": [\n          \"حدّد سيناريو واحدًا، مثل تأكيد طلب أو سؤال متكرر.\",\n          \"اكتب مثال رسالة العميل التي تبدأ المحادثة.\",\n          \"اكتب نموذج الرد الآلي.\",\n          \"حدّد الشرط الذي يحوّل المحادثة إلى موظف.\",\n          \"سمِّ من يستلم التحويل.\",\n          \"اشرح كيف بدأ العميل المحادثة أو وافق عليها وكيف يتجنب التصميم الرسائل المزعجة غير المطلوبة.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"سير محادثة واضح\",\n            \"weight\": 60,\n            \"criteria\": \"سيناريو ورد آلي وشرط محدد للتحويل البشري.\"\n          },\n          {\n            \"dimension\": \"ثقة وموافقة\",\n            \"weight\": 40,\n            \"criteria\": \"بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "9e6f9576d43e2c8460fc507fe2237d346d315f7b17dcfe92bdc3f00837a0a85a",
+      "currentBlob": "331e92499fe85d813c142d1561dd6f50ce4dea37",
+      "generationSourceSha256": "fce75fd088a4a7bff6cddda1a5be2832b1903853849a2afc85680bbcfb8d8a55",
+      "generationSourceBlob": "cc4db98a199f2b9e30ee1cbc5a84a219bad06e1b",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| تدفق واضح | 60% |\\n| ثقة وموافقة | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"صمّم محادثة واتساب واحدة فيها رد آلي وشرط تحويل لموظف. ما تحتاج ربط API أو إرسال رسائل فعلية؛ المطلوب وصف المحادثة وضوابطها.\\n\\n**التسليم:**\\n\\n1. حدّد سيناريو واحدًا، مثل تأكيد طلب أو سؤال متكرر.\\n2. اكتب مثال رسالة العميل التي تبدأ المحادثة.\\n3. اكتب نموذج الرد الآلي.\\n4. حدّد الشرط الذي يحوّل المحادثة إلى موظف.\\n5. سمِّ من يستلم التحويل.\\n6. اشرح كيف بدأ العميل المحادثة أو وافق عليها وكيف يتجنب التصميم الرسائل المزعجة غير المطلوبة.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| سير محادثة واضح | 60% | سيناريو ورد آلي وشرط محدد للتحويل البشري. |\\n| ثقة وموافقة | 40% | بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"سير محادثة واضح\",\n              \"60%\",\n              \"سيناريو ورد آلي وشرط محدد للتحويل البشري.\"\n            ],\n            [\n              \"ثقة وموافقة\",\n              \"40%\",\n              \"بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم محادثة واتساب واحدة فيها رد آلي وشرط تحويل لموظف. ما تحتاج ربط API أو إرسال رسائل فعلية؛ المطلوب وصف المحادثة وضوابطها.\",\n        \"delivery\": [\n          \"حدّد سيناريو واحدًا، مثل تأكيد طلب أو سؤال متكرر.\",\n          \"اكتب مثال رسالة العميل التي تبدأ المحادثة.\",\n          \"اكتب نموذج الرد الآلي.\",\n          \"حدّد الشرط الذي يحوّل المحادثة إلى موظف.\",\n          \"سمِّ من يستلم التحويل.\",\n          \"اشرح كيف بدأ العميل المحادثة أو وافق عليها وكيف يتجنب التصميم الرسائل المزعجة غير المطلوبة.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"سير محادثة واضح\",\n            \"weight\": 60,\n            \"criteria\": \"سيناريو ورد آلي وشرط محدد للتحويل البشري.\"\n          },\n          {\n            \"dimension\": \"ثقة وموافقة\",\n            \"weight\": 40,\n            \"criteria\": \"بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "a2c816ac1bc0ac181b1a30f898b114f77da2202ea5cf33a60432e53f157b5ac2",
+      "currentBlob": "0fe8f1917ef78ed37e30386c8a08a2219dce9f6e",
+      "generationSourceSha256": "30342c6642d621329e71432cbab6e85fad3e3c3d8f00f9fe204e4074e10b7830",
+      "generationSourceBlob": "f52cb858b13409c40213f611e7feb658861d05c1",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Clear Flow | 60% |\\n| Trust and Consent | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Design one WhatsApp conversation with an automated response and a human-handoff rule. No API integration or actual message sending is required.\\n\\n**Submission:**\\n\\n1. Name one scenario, such as order confirmation or an FAQ.\\n2. Write a sample customer message that starts the conversation.\\n3. Draft the automated response.\\n4. Specify the condition that transfers the conversation to a human.\\n5. Name who receives the handoff.\\n6. Explain how the customer initiated or consented to the conversation and how the design avoids unsolicited spam.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Clear conversation flow | 60% | Give a scenario, response and specific human-handoff condition. |\\n| Trust and consent | 40% | Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Clear conversation flow\",\n              \"60%\",\n              \"Give a scenario, response and specific human-handoff condition.\"\n            ],\n            [\n              \"Trust and consent\",\n              \"40%\",\n              \"Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Design one WhatsApp conversation with an automated response and a human-handoff rule. No API integration or actual message sending is required.\",\n        \"delivery\": [\n          \"Name one scenario, such as order confirmation or an FAQ.\",\n          \"Write a sample customer message that starts the conversation.\",\n          \"Draft the automated response.\",\n          \"Specify the condition that transfers the conversation to a human.\",\n          \"Name who receives the handoff.\",\n          \"Explain how the customer initiated or consented to the conversation and how the design avoids unsolicited spam.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Clear conversation flow\",\n            \"weight\": 60,\n            \"criteria\": \"Give a scenario, response and specific human-handoff condition.\"\n          },\n          {\n            \"dimension\": \"Trust and consent\",\n            \"weight\": 40,\n            \"criteria\": \"Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "fbca4ad832f78087bb4d5c671945b3be0522ce39dfdbd7e05e98a25880d3fd35",
+      "currentBlob": "d501c1f54002c1b5bb4a6bad318928805d5359fc",
+      "generationSourceSha256": "e43c8c09a36137d0d9d1c0ee9e2bc4fdee25e0d2fc4964fc854439050ac9a6f7",
+      "generationSourceBlob": "4c81d02cb86bf0692381711a0f414d665f5ce628",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| ٣ خطوات متنوعة | 60% |\\n| توقف ذكي | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"سجّل عميل محتمل ولم يرد على الرسالة الأولى. صمّم ثلاث متابعات مختلفة بأوقاتها وشرط توقف؛ لا تُعِد CRM ولا ترسلها فعليًا.\\n\\n**التسليم:**\\n\\n1. اكتب سياق العميل والرسالة الأولى التي لم يُجب عنها.\\n2. اليوم صفر: القناة ونموذج الرسالة والهدف.\\n3. اليوم الثاني: القناة ونموذج رسالة مختلف والهدف.\\n4. اليوم الخامس: القناة ونموذج رسالة مختلف والهدف.\\n5. حدّد متى يتوقف التسلسل، مثل الرد أو الشراء أو طلب إلغاء المتابعة.\\n6. اشرح اختلاف كل خطوة عن السابقة.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| ثلاث خطوات متنوعة | 60% | تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها. |\\n| توقف واضح | 40% | شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"ثلاث خطوات متنوعة\",\n              \"60%\",\n              \"تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها.\"\n            ],\n            [\n              \"توقف واضح\",\n              \"40%\",\n              \"شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"سجّل عميل محتمل ولم يرد على الرسالة الأولى. صمّم ثلاث متابعات مختلفة بأوقاتها وشرط توقف؛ لا تُعِد CRM ولا ترسلها فعليًا.\",\n        \"delivery\": [\n          \"اكتب سياق العميل والرسالة الأولى التي لم يُجب عنها.\",\n          \"اليوم صفر: القناة ونموذج الرسالة والهدف.\",\n          \"اليوم الثاني: القناة ونموذج رسالة مختلف والهدف.\",\n          \"اليوم الخامس: القناة ونموذج رسالة مختلف والهدف.\",\n          \"حدّد متى يتوقف التسلسل، مثل الرد أو الشراء أو طلب إلغاء المتابعة.\",\n          \"اشرح اختلاف كل خطوة عن السابقة.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"ثلاث خطوات متنوعة\",\n            \"weight\": 60,\n            \"criteria\": \"تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها.\"\n          },\n          {\n            \"dimension\": \"توقف واضح\",\n            \"weight\": 40,\n            \"criteria\": \"شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "199044948781291ccf2f85958a7153a206c9848c408bd287d64f322d17b4286f",
+      "currentBlob": "e73fa660664858b68c67809592bec55bedce6786",
+      "generationSourceSha256": "129feaaa14fbf88a8f64c79827f37eec5873ea320e30209c9134d335747db82b",
+      "generationSourceBlob": "2eb40e6818be25471f8d4950ec809b90dc7a484b",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| ٣ خطوات متنوعة | 60% |\\n| توقف ذكي | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"Lead سجّل وما رد على الرسالة الأولى. صمّم ثلاث متابعات مختلفة بأوقاتها وشرط توقف؛ ما تحتاج إعداد CRM أو إرسال فعلي.\\n\\n**التسليم:**\\n\\n1. اكتب سياق العميل والرسالة الأولى التي لم يُجب عنها.\\n2. اليوم صفر: القناة ونموذج الرسالة والهدف.\\n3. اليوم الثاني: القناة ونموذج رسالة مختلف والهدف.\\n4. اليوم الخامس: القناة ونموذج رسالة مختلف والهدف.\\n5. حدّد متى يتوقف التسلسل، مثل الرد أو الشراء أو طلب إلغاء المتابعة.\\n6. اشرح اختلاف كل خطوة عن السابقة.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| ثلاث خطوات متنوعة | 60% | تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها. |\\n| توقف واضح | 40% | شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"ثلاث خطوات متنوعة\",\n              \"60%\",\n              \"تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها.\"\n            ],\n            [\n              \"توقف واضح\",\n              \"40%\",\n              \"شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Lead سجّل وما رد على الرسالة الأولى. صمّم ثلاث متابعات مختلفة بأوقاتها وشرط توقف؛ ما تحتاج إعداد CRM أو إرسال فعلي.\",\n        \"delivery\": [\n          \"اكتب سياق العميل والرسالة الأولى التي لم يُجب عنها.\",\n          \"اليوم صفر: القناة ونموذج الرسالة والهدف.\",\n          \"اليوم الثاني: القناة ونموذج رسالة مختلف والهدف.\",\n          \"اليوم الخامس: القناة ونموذج رسالة مختلف والهدف.\",\n          \"حدّد متى يتوقف التسلسل، مثل الرد أو الشراء أو طلب إلغاء المتابعة.\",\n          \"اشرح اختلاف كل خطوة عن السابقة.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"ثلاث خطوات متنوعة\",\n            \"weight\": 60,\n            \"criteria\": \"تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها.\"\n          },\n          {\n            \"dimension\": \"توقف واضح\",\n            \"weight\": 40,\n            \"criteria\": \"شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "c562108926e91b21d5b0a74b5b06cd5ff2815cb340588a6d9a80cabc73048eb9",
+      "currentBlob": "c54b79bae2a6aa4840e7acb95b4cf2f2276eba75",
+      "generationSourceSha256": "f0b4c9c1e8dd6ad64a28e057afb5d8030f20f827253692327e111c522291841a",
+      "generationSourceBlob": "7dc2a1dcf65c76c040517bda9f1fa54d72d32f87",
+      "replacements": [
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| 3 diverse steps | 60% |\\n| Smart Stop | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\\n\\n**Submission:**\\n\\n1. State the lead context and the unanswered first message.\\n2. Day 0: specify channel, draft message and goal.\\n3. Day 2: specify channel, a different draft message and goal.\\n4. Day 5: specify channel, a different draft message and goal.\\n5. State when the sequence stops: for example, a reply, purchase or opt-out.\\n6. Explain why each step differs from the previous one.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Three distinct steps | 60% | Each follow-up includes a channel, message and goal, rather than repeating the same step. |\\n| Clear stopping rule | 40% | Give an explicit stop condition such as a reply, purchase or request to unsubscribe. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Three distinct steps\",\n              \"60%\",\n              \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n            ],\n            [\n              \"Clear stopping rule\",\n              \"40%\",\n              \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\",\n        \"delivery\": [\n          \"State the lead context and the unanswered first message.\",\n          \"Day 0: specify channel, draft message and goal.\",\n          \"Day 2: specify channel, a different draft message and goal.\",\n          \"Day 5: specify channel, a different draft message and goal.\",\n          \"State when the sequence stops: for example, a reply, purchase or opt-out.\",\n          \"Explain why each step differs from the previous one.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Three distinct steps\",\n            \"weight\": 60,\n            \"criteria\": \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n          },\n          {\n            \"dimension\": \"Clear stopping rule\",\n            \"weight\": 40,\n            \"criteria\": \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "8eb21c21b6c0d6b68f5fe2d7243ed35d61284ecf9060b438077b133328f9440d",
+      "currentBlob": "c3dda88ec6f712ef50fd0f9e1641575fb363951f",
+      "generationSourceSha256": "e50994a49e1343e6f49797e97f6f79bfa82d46950103b177ae920cfcf5ba8a31",
+      "generationSourceBlob": "74755c5f123154917d220f0a630a6b0a82911a6a",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| ٤ أرقام + ٣ أسئلة | 60% |\\n| قرار واحد | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"خطّط لمراجعة أسبوعية مدتها ثلاثون دقيقة، دون اشتراط تنفيذها الآن. يكفي جدول بأربعة مقاييس إن لم تتوفر لوحة متابعة؛ لا يلزم استدعاء الذكاء الاصطناعي في التمرين.\\n\\n**التسليم:**\\n\\n1. حدّد يوم المراجعة ووقتها ومدتها: ثلاثون دقيقة.\\n2. سمِّ أربعة مقاييس ومصادرها.\\n3. اكتب ثلاثة أسئلة عملية ستطرحها على الذكاء الاصطناعي، مثل أكبر تغير وأول تجربة وما يمكن تجاهله.\\n4. اقترح قرارًا واحدًا يتضمن الإجراء والمسؤول والموعد النهائي.\\n5. اشرح كيف ستراجع أثر القرار في الأسبوع التالي.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| أربعة مقاييس وثلاثة أسئلة | 60% | أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي. |\\n| قرار واحد | 40% | قرار يتضمن الإجراء والمسؤول والموعد النهائي. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"أربعة مقاييس وثلاثة أسئلة\",\n              \"60%\",\n              \"أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي.\"\n            ],\n            [\n              \"قرار واحد\",\n              \"40%\",\n              \"قرار يتضمن الإجراء والمسؤول والموعد النهائي.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"خطّط لمراجعة أسبوعية مدتها ثلاثون دقيقة، دون اشتراط تنفيذها الآن. يكفي جدول بأربعة مقاييس إن لم تتوفر لوحة متابعة؛ لا يلزم استدعاء الذكاء الاصطناعي في التمرين.\",\n        \"delivery\": [\n          \"حدّد يوم المراجعة ووقتها ومدتها: ثلاثون دقيقة.\",\n          \"سمِّ أربعة مقاييس ومصادرها.\",\n          \"اكتب ثلاثة أسئلة عملية ستطرحها على الذكاء الاصطناعي، مثل أكبر تغير وأول تجربة وما يمكن تجاهله.\",\n          \"اقترح قرارًا واحدًا يتضمن الإجراء والمسؤول والموعد النهائي.\",\n          \"اشرح كيف ستراجع أثر القرار في الأسبوع التالي.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"أربعة مقاييس وثلاثة أسئلة\",\n            \"weight\": 60,\n            \"criteria\": \"أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي.\"\n          },\n          {\n            \"dimension\": \"قرار واحد\",\n            \"weight\": 40,\n            \"criteria\": \"قرار يتضمن الإجراء والمسؤول والموعد النهائي.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "c84375909f239b49a36ae5281a274407a7e5826301056ef2782532ef80576292",
+      "currentBlob": "9b21e6fcca90d7e0d7e18f3207431d8ef1f711ec",
+      "generationSourceSha256": "59e317ca2ef2392b6da0db71d8e0409bd9e54f0d4235f57c95c826b2ad57f8ac",
+      "generationSourceBlob": "6ce99cb46151d970578565c28a23cdd279af4819",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| ٤ أرقام + ٣ أسئلة | 60% |\\n| قرار واحد | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"خطّط لريفيو أسبوعي مدته ثلاثون دقيقة؛ مو لازم تنفّذه الآن. يكفي جدول بأربعة مقاييس لو ما عندك لوحة متابعة، وما تحتاج تستدعي AI في التمرين.\\n\\n**التسليم:**\\n\\n1. حدّد يوم المراجعة ووقتها ومدتها: ثلاثون دقيقة.\\n2. سمِّ أربعة مقاييس ومصادرها.\\n3. اكتب ثلاثة أسئلة عملية ستطرحها على الذكاء الاصطناعي، مثل أكبر تغير وأول تجربة وما يمكن تجاهله.\\n4. اقترح قرارًا واحدًا يتضمن الإجراء والمسؤول والموعد النهائي.\\n5. اشرح كيف ستراجع أثر القرار في الأسبوع التالي.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| أربعة مقاييس وثلاثة أسئلة | 60% | أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي. |\\n| قرار واحد | 40% | قرار يتضمن الإجراء والمسؤول والموعد النهائي. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"أربعة مقاييس وثلاثة أسئلة\",\n              \"60%\",\n              \"أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي.\"\n            ],\n            [\n              \"قرار واحد\",\n              \"40%\",\n              \"قرار يتضمن الإجراء والمسؤول والموعد النهائي.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"خطّط لريفيو أسبوعي مدته ثلاثون دقيقة؛ مو لازم تنفّذه الآن. يكفي جدول بأربعة مقاييس لو ما عندك لوحة متابعة، وما تحتاج تستدعي AI في التمرين.\",\n        \"delivery\": [\n          \"حدّد يوم المراجعة ووقتها ومدتها: ثلاثون دقيقة.\",\n          \"سمِّ أربعة مقاييس ومصادرها.\",\n          \"اكتب ثلاثة أسئلة عملية ستطرحها على الذكاء الاصطناعي، مثل أكبر تغير وأول تجربة وما يمكن تجاهله.\",\n          \"اقترح قرارًا واحدًا يتضمن الإجراء والمسؤول والموعد النهائي.\",\n          \"اشرح كيف ستراجع أثر القرار في الأسبوع التالي.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"أربعة مقاييس وثلاثة أسئلة\",\n            \"weight\": 60,\n            \"criteria\": \"أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي.\"\n          },\n          {\n            \"dimension\": \"قرار واحد\",\n            \"weight\": 40,\n            \"criteria\": \"قرار يتضمن الإجراء والمسؤول والموعد النهائي.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "2e5b0e1e8da6fc5862e67eeee522b1f32772196d35871d5524601c2a60a6341a",
+      "currentBlob": "7b8476c86ebc1cf6d5f405dc3e8c4b333d5995fc",
+      "generationSourceSha256": "ecc2793814c6a06b55f03ebe7c428a85c47c7baf131f89519e9fcc913ccd0b1d",
+      "generationSourceBlob": "7d11bad64d631db1cb75af2102515a435a8322e6",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| 4 Numbers + 3 Questions | 60% |\\n| One Decision | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Plan a 30-minute weekly review, rather than carrying out a full review now. A sheet with four metrics is enough if you have no dashboard; no AI call is required for this exercise.\\n\\n**Submission:**\\n\\n1. Set the review day, time and 30-minute duration.\\n2. Name four metrics and their sources.\\n3. Write three practical questions you would ask AI, such as what changed most, what to test first and what to ignore.\\n4. Propose one decision with action, owner and deadline.\\n5. Explain how you will review its effect the following week.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Four metrics and three questions | 60% | Name four specific metrics and three practical AI questions. |\\n| One decision | 40% | Give one decision containing an action, owner and deadline. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Four metrics and three questions\",\n              \"60%\",\n              \"Name four specific metrics and three practical AI questions.\"\n            ],\n            [\n              \"One decision\",\n              \"40%\",\n              \"Give one decision containing an action, owner and deadline.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Plan a 30-minute weekly review, rather than carrying out a full review now. A sheet with four metrics is enough if you have no dashboard; no AI call is required for this exercise.\",\n        \"delivery\": [\n          \"Set the review day, time and 30-minute duration.\",\n          \"Name four metrics and their sources.\",\n          \"Write three practical questions you would ask AI, such as what changed most, what to test first and what to ignore.\",\n          \"Propose one decision with action, owner and deadline.\",\n          \"Explain how you will review its effect the following week.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Four metrics and three questions\",\n            \"weight\": 60,\n            \"criteria\": \"Name four specific metrics and three practical AI questions.\"\n          },\n          {\n            \"dimension\": \"One decision\",\n            \"weight\": 40,\n            \"criteria\": \"Give one decision containing an action, owner and deadline.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "1315c5b964dd59a0e3c9bd0f629b2c3ade1eb47a59119f42beafbbc3b7472b2e",
+      "currentBlob": "50d42969bbfe5761b248dc7a3b8297109ca19a40",
+      "generationSourceSha256": "37070150a420b5280a11278468b2f4c165c6c14760d4d70516d91cd289995c94",
+      "generationSourceBlob": "2499d50fd23a5a26d36e87e8a09a275a1d881401",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| هدف + أرقام | 60% |\\n| ربط أسبوعي | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"اربط هدفًا واحدًا لستة أشهر بثلاثة مقاييس تقدم وقرار أسبوعي. اختر سياقًا شخصيًا أو لفريق أو لعمل؛ يمكن للذكاء الاصطناعي اقتراح الصياغة وأنت تختار الهدف النهائي.\\n\\n**التسليم:**\\n\\n1. اكتب هدف الستة أشهر في جملة وحدّد سياقه.\\n2. سمِّ ثلاثة مقاييس تقدم وسبب اختيار كل منها.\\n3. حدّد قرارًا واحدًا من المراجعة الأسبوعية يخدم الهدف.\\n4. حدّد مسؤول القرار وموعده النهائي.\\n5. اشرح كيف ستراجع التقدم كل شهر.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف ومقاييس | 60% | هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به. |\\n| ربط أسبوعي | 40% | قرار أسبوعي يخدم الهدف ولا ينفصل عنه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف ومقاييس\",\n              \"60%\",\n              \"هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به.\"\n            ],\n            [\n              \"ربط أسبوعي\",\n              \"40%\",\n              \"قرار أسبوعي يخدم الهدف ولا ينفصل عنه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"اربط هدفًا واحدًا لستة أشهر بثلاثة مقاييس تقدم وقرار أسبوعي. اختر سياقًا شخصيًا أو لفريق أو لعمل؛ يمكن للذكاء الاصطناعي اقتراح الصياغة وأنت تختار الهدف النهائي.\",\n        \"delivery\": [\n          \"اكتب هدف الستة أشهر في جملة وحدّد سياقه.\",\n          \"سمِّ ثلاثة مقاييس تقدم وسبب اختيار كل منها.\",\n          \"حدّد قرارًا واحدًا من المراجعة الأسبوعية يخدم الهدف.\",\n          \"حدّد مسؤول القرار وموعده النهائي.\",\n          \"اشرح كيف ستراجع التقدم كل شهر.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف ومقاييس\",\n            \"weight\": 60,\n            \"criteria\": \"هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به.\"\n          },\n          {\n            \"dimension\": \"ربط أسبوعي\",\n            \"weight\": 40,\n            \"criteria\": \"قرار أسبوعي يخدم الهدف ولا ينفصل عنه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "ed8b6343bdbba2fa12a373753f10f2290b17d9ca0a57d81b4ebe6d4805f3239d",
+      "currentBlob": "e6e53c606fc49b637abde5552c51e81dfa550bc5",
+      "generationSourceSha256": "f9e6e81f4c1090ef9f261273181d53ca3cdd7fd30e77e11b1b23d2389d61d278",
+      "generationSourceBlob": "65876e548bd673a4d26f7aeea608deb228273365",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| هدف + أرقام | 60% |\\n| ربط أسبوعي | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"اربط هدفًا واحدًا لستة أشهر بثلاثة مقاييس تقدم وقرار أسبوعي. اختر سياقك الشخصي أو فريقك أو شغلك؛ AI يقدر يقترح صياغة، وأنت تختار النهائي.\\n\\n**التسليم:**\\n\\n1. اكتب هدف الستة أشهر في جملة وحدّد سياقه.\\n2. سمِّ ثلاثة مقاييس تقدم وسبب اختيار كل منها.\\n3. حدّد قرارًا واحدًا من المراجعة الأسبوعية يخدم الهدف.\\n4. حدّد مسؤول القرار وموعده النهائي.\\n5. اشرح كيف ستراجع التقدم كل شهر.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف ومقاييس | 60% | هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به. |\\n| ربط أسبوعي | 40% | قرار أسبوعي يخدم الهدف ولا ينفصل عنه. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف ومقاييس\",\n              \"60%\",\n              \"هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به.\"\n            ],\n            [\n              \"ربط أسبوعي\",\n              \"40%\",\n              \"قرار أسبوعي يخدم الهدف ولا ينفصل عنه.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"اربط هدفًا واحدًا لستة أشهر بثلاثة مقاييس تقدم وقرار أسبوعي. اختر سياقك الشخصي أو فريقك أو شغلك؛ AI يقدر يقترح صياغة، وأنت تختار النهائي.\",\n        \"delivery\": [\n          \"اكتب هدف الستة أشهر في جملة وحدّد سياقه.\",\n          \"سمِّ ثلاثة مقاييس تقدم وسبب اختيار كل منها.\",\n          \"حدّد قرارًا واحدًا من المراجعة الأسبوعية يخدم الهدف.\",\n          \"حدّد مسؤول القرار وموعده النهائي.\",\n          \"اشرح كيف ستراجع التقدم كل شهر.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف ومقاييس\",\n            \"weight\": 60,\n            \"criteria\": \"هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به.\"\n          },\n          {\n            \"dimension\": \"ربط أسبوعي\",\n            \"weight\": 40,\n            \"criteria\": \"قرار أسبوعي يخدم الهدف ولا ينفصل عنه.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "630ed8dd710268ff379126459a7d8f8dceea041e466d05f4a8d9871f60126023",
+      "currentBlob": "55af010139de72c276868bdebd43f5babe3b49d0",
+      "generationSourceSha256": "2e8d16a1f5fd9422ca9afe65a38d427ce05234a93464bd266877326f01f082f0",
+      "generationSourceBlob": "31a3413998fe847bec5560c69789e9c677c080a0",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Goal + Numbers | 60% |\\n| Weekly Connection | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Connect one six-month goal to three progress metrics and a weekly decision. Use a personal, team or business context; AI may suggest wording, but you choose the final goal.\\n\\n**Submission:**\\n\\n1. State your six-month goal in one sentence and identify its context.\\n2. Name three progress metrics and explain why you chose each.\\n3. Name one weekly review decision that supports the goal.\\n4. Give the decision's owner and deadline.\\n5. Explain how you will review progress each month.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Goal and metrics | 60% | Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics. |\\n| Weekly connection | 40% | The weekly decision supports the goal rather than being unrelated to it. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Goal and metrics\",\n              \"60%\",\n              \"Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics.\"\n            ],\n            [\n              \"Weekly connection\",\n              \"40%\",\n              \"The weekly decision supports the goal rather than being unrelated to it.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Connect one six-month goal to three progress metrics and a weekly decision. Use a personal, team or business context; AI may suggest wording, but you choose the final goal.\",\n        \"delivery\": [\n          \"State your six-month goal in one sentence and identify its context.\",\n          \"Name three progress metrics and explain why you chose each.\",\n          \"Name one weekly review decision that supports the goal.\",\n          \"Give the decision's owner and deadline.\",\n          \"Explain how you will review progress each month.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Goal and metrics\",\n            \"weight\": 60,\n            \"criteria\": \"Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics.\"\n          },\n          {\n            \"dimension\": \"Weekly connection\",\n            \"weight\": 40,\n            \"criteria\": \"The weekly decision supports the goal rather than being unrelated to it.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "f83021167e7e47fcd6740b273c2c7f08755b712299f3c53ffa884f17e0d7eadb",
+      "currentBlob": "75d3444f7d02ac07e3202efe5d46633596dee1bf",
+      "generationSourceSha256": "226dcd485da8073cf014ce65e4b741f3ac25aaef9287e7af572e06aa71b732bb",
+      "generationSourceBlob": "839b90f2569d900adf15215f007005b5d4aaaef7",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| تشخيص | 50% |\\n| صياغة تخدم قرار | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"أصلح ثلاثة أسئلة معيبة من عملك أو من أمثلة الدرس. شخّص المشكلة واكتب السؤال المصحح؛ يمكن للذكاء الاصطناعي اقتراح صياغة وأنت تختار النهائي.\\n\\n**التسليم:**\\n\\n1. كرّر النموذج الآتي لكل واحد من الأسئلة الثلاثة.\\n2. انسخ السؤال الأصلي.\\n3. سمِّ الخطأ: عام أو متحيز أو لا تجيب عنه البيانات المتاحة.\\n4. حدّد الناقص: المقياس أو الفترة أو المقارنة.\\n5. اكتب السؤال المصحح القابل للقياس.\\n6. سمِّ القرار الذي يخدمه السؤال المصحح.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| تشخيص صحيح | 50% | حدّد نوع الخطأ وما ينقص كل سؤال. |\\n| صياغة تخدم القرار | 50% | كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"تشخيص صحيح\",\n              \"50%\",\n              \"حدّد نوع الخطأ وما ينقص كل سؤال.\"\n            ],\n            [\n              \"صياغة تخدم القرار\",\n              \"50%\",\n              \"كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"أصلح ثلاثة أسئلة معيبة من عملك أو من أمثلة الدرس. شخّص المشكلة واكتب السؤال المصحح؛ يمكن للذكاء الاصطناعي اقتراح صياغة وأنت تختار النهائي.\",\n        \"delivery\": [\n          \"كرّر النموذج الآتي لكل واحد من الأسئلة الثلاثة.\",\n          \"انسخ السؤال الأصلي.\",\n          \"سمِّ الخطأ: عام أو متحيز أو لا تجيب عنه البيانات المتاحة.\",\n          \"حدّد الناقص: المقياس أو الفترة أو المقارنة.\",\n          \"اكتب السؤال المصحح القابل للقياس.\",\n          \"سمِّ القرار الذي يخدمه السؤال المصحح.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"تشخيص صحيح\",\n            \"weight\": 50,\n            \"criteria\": \"حدّد نوع الخطأ وما ينقص كل سؤال.\"\n          },\n          {\n            \"dimension\": \"صياغة تخدم القرار\",\n            \"weight\": 50,\n            \"criteria\": \"كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l1-question-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "aba729bdc0f28be8f00b6649d131739f70468c03a3632ba691e2fd3d7753c7c9",
+      "currentBlob": "dc99b60f76bdd3ad549d73b4a58d924c928c795d",
+      "generationSourceSha256": "328fc377ab983fd287c0f93c4b22b3c82081f4cb05858cb3f9e8252eb1ae5efc",
+      "generationSourceBlob": "420e9c4306b1671ae45faa25623ad67bbedbce66",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| التشخيص | 50% |\\n| صياغة تخدم القرار | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"صلّح ثلاثة أسئلة معيبة من شغلك أو أمثلة الدرس. شخّص المشكلة واكتب السؤال المصحح؛ AI يقدر يقترح صياغة، وأنت تختار النهائي.\\n\\n**التسليم:**\\n\\n1. كرّر النموذج الآتي لكل واحد من الأسئلة الثلاثة.\\n2. انسخ السؤال الأصلي.\\n3. سمِّ الخطأ: عام أو متحيز أو لا تجيب عنه البيانات المتاحة.\\n4. حدّد الناقص: المقياس أو الفترة أو المقارنة.\\n5. اكتب السؤال المصحح القابل للقياس.\\n6. سمِّ القرار الذي يخدمه السؤال المصحح.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| تشخيص صحيح | 50% | حدّد نوع الخطأ وما ينقص كل سؤال. |\\n| صياغة تخدم القرار | 50% | كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"تشخيص صحيح\",\n              \"50%\",\n              \"حدّد نوع الخطأ وما ينقص كل سؤال.\"\n            ],\n            [\n              \"صياغة تخدم القرار\",\n              \"50%\",\n              \"كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صلّح ثلاثة أسئلة معيبة من شغلك أو أمثلة الدرس. شخّص المشكلة واكتب السؤال المصحح؛ AI يقدر يقترح صياغة، وأنت تختار النهائي.\",\n        \"delivery\": [\n          \"كرّر النموذج الآتي لكل واحد من الأسئلة الثلاثة.\",\n          \"انسخ السؤال الأصلي.\",\n          \"سمِّ الخطأ: عام أو متحيز أو لا تجيب عنه البيانات المتاحة.\",\n          \"حدّد الناقص: المقياس أو الفترة أو المقارنة.\",\n          \"اكتب السؤال المصحح القابل للقياس.\",\n          \"سمِّ القرار الذي يخدمه السؤال المصحح.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"تشخيص صحيح\",\n            \"weight\": 50,\n            \"criteria\": \"حدّد نوع الخطأ وما ينقص كل سؤال.\"\n          },\n          {\n            \"dimension\": \"صياغة تخدم القرار\",\n            \"weight\": 50,\n            \"criteria\": \"كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m6-l1-question-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "ad9f4f63d5cddda0eff7781e9c40754c92d7f9810d970ddcc1cb4aced80919ac",
+      "currentBlob": "331a41efd8fb238c9cc504ce3e00a0b2e95b3299",
+      "generationSourceSha256": "540ce7728c383a3d88f2835a3085b1c92164b5c7e6c226a77bf787efa47e122e",
+      "generationSourceBlob": "dce94be8fd3ea5c207017c5b9b334d06c71341c5",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Diagnosis | 50% |\\n| Formulating for Decision | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.\\n\\n**Submission:**\\n\\n1. Repeat the following template for each of three questions.\\n2. Copy the original question.\\n3. Name the error: too general, biased or unsupported by available data.\\n4. Identify what is missing: metric, time window or comparator.\\n5. Write the corrected, measurable question.\\n6. Name the decision the corrected question supports.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Correct diagnosis | 50% | For every question, identify the error and what is missing. |\\n| Decision-focused wording | 50% | Each corrected question is specific, measurable and tied to a decision. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Correct diagnosis\",\n              \"50%\",\n              \"For every question, identify the error and what is missing.\"\n            ],\n            [\n              \"Decision-focused wording\",\n              \"50%\",\n              \"Each corrected question is specific, measurable and tied to a decision.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.\",\n        \"delivery\": [\n          \"Repeat the following template for each of three questions.\",\n          \"Copy the original question.\",\n          \"Name the error: too general, biased or unsupported by available data.\",\n          \"Identify what is missing: metric, time window or comparator.\",\n          \"Write the corrected, measurable question.\",\n          \"Name the decision the corrected question supports.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Correct diagnosis\",\n            \"weight\": 50,\n            \"criteria\": \"For every question, identify the error and what is missing.\"\n          },\n          {\n            \"dimension\": \"Decision-focused wording\",\n            \"weight\": 50,\n            \"criteria\": \"Each corrected question is specific, measurable and tied to a decision.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "71921a4579600d88981448588ce9aa03f096e3181fba800107695ab6cae01345",
+      "currentBlob": "f1dda53f7052439ed73b57d73cca91d8aa103b0d",
+      "generationSourceSha256": "c40d7b5e317985b57f3ec698814bc583a76611d5bbb1e88dc4c934272c4eb50d",
+      "generationSourceBlob": "28565b3b7d2cfc1ba7215002e6fa9ca0537e17ac",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — ٣ scenarios\",\n      \"subtitle\": \"٣ scenarios\",\n      \"contentMarkdown\": \"| تشخيص الفخ | 50% |\\n| قرار أصح | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — ٣ scenarios\",\n      \"subtitle\": \"٣ scenarios\",\n      \"contentMarkdown\": \"شخّص ثلاثة مواقف قصيرة تتضمن أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. يمكن للذكاء الاصطناعي مساعدتك في الصياغة وأنت تختار الحكم النهائي.\\n\\n**التسليم:**\\n\\n1. اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\\n2. لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\\n3. حدّد خطأ التفسير.\\n4. اشرح كيف تتجنب الخطأ.\\n5. اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| تشخيص الفخ | 50% | حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة. |\\n| قرار أفضل | 50% | اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"تشخيص الفخ\",\n              \"50%\",\n              \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n            ],\n            [\n              \"قرار أفضل\",\n              \"50%\",\n              \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"شخّص ثلاثة مواقف قصيرة تتضمن أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. يمكن للذكاء الاصطناعي مساعدتك في الصياغة وأنت تختار الحكم النهائي.\",\n        \"delivery\": [\n          \"اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\",\n          \"لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\",\n          \"حدّد خطأ التفسير.\",\n          \"اشرح كيف تتجنب الخطأ.\",\n          \"اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"تشخيص الفخ\",\n            \"weight\": 50,\n            \"criteria\": \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n          },\n          {\n            \"dimension\": \"قرار أفضل\",\n            \"weight\": 50,\n            \"criteria\": \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "ca8167e5de522c6220169abdefffb5bbcaeb6d5247ed3fea93d36e79d2beaf03",
+      "currentBlob": "cac34bef5d8ba2c385c502ab4f26aa7c373b596b",
+      "generationSourceSha256": "248c60d6ecb50b3d35a02235cf28cbd4f346737013789d497a2f6a9ee35b98cc",
+      "generationSourceBlob": "1a3d206fdfd3175200cd29536b112c4c63e3db5e",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — ٣ سيناريوهات\",\n      \"subtitle\": \"٣ سيناريوهات\",\n      \"contentMarkdown\": \"| تشخيص الفخ | 50% |\\n| قرار أصح | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — ٣ سيناريوهات\",\n      \"subtitle\": \"٣ سيناريوهات\",\n      \"contentMarkdown\": \"شخّص ثلاثة مواقف قصيرة فيها أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. AI يساعدك في الصياغة، وأنت تختار الحكم النهائي.\\n\\n**التسليم:**\\n\\n1. اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\\n2. لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\\n3. حدّد خطأ التفسير.\\n4. اشرح كيف تتجنب الخطأ.\\n5. اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| تشخيص الفخ | 50% | حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة. |\\n| قرار أفضل | 50% | اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"تشخيص الفخ\",\n              \"50%\",\n              \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n            ],\n            [\n              \"قرار أفضل\",\n              \"50%\",\n              \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"شخّص ثلاثة مواقف قصيرة فيها أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. AI يساعدك في الصياغة، وأنت تختار الحكم النهائي.\",\n        \"delivery\": [\n          \"اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\",\n          \"لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\",\n          \"حدّد خطأ التفسير.\",\n          \"اشرح كيف تتجنب الخطأ.\",\n          \"اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"تشخيص الفخ\",\n            \"weight\": 50,\n            \"criteria\": \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n          },\n          {\n            \"dimension\": \"قرار أفضل\",\n            \"weight\": 50,\n            \"criteria\": \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "35cd374004cb0711536c4cdd615d6a8672c63341a398a467b7e76221969ddda2",
+      "currentBlob": "e6d64538da271b910155ade56ad00ae067310da3",
+      "generationSourceSha256": "484158be947cd87fb3d22c2fbc5c14e879ad4ed400b49180299921f5d3e8cc57",
+      "generationSourceBlob": "daf1b5fad99ac8ae2ef19e76642e456e3f27620b",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"| Trap Diagnosis | 50% |\\n| Better Decision | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\\n\\n**Submission:**\\n\\n1. Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\\n2. For each of the three scenarios, describe the situation or copy the relevant lesson example.\\n3. Name the interpretation error.\\n4. Explain how to avoid that error.\\n5. Propose a better small decision or experiment rather than an unsupported generalization.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Diagnose the trap | 50% | Identify a clear interpretation error in each of the three scenarios. |\\n| Better decision | 50% | Propose a small decision or experiment supported by the situation, not a generalization without evidence. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Diagnose the trap\",\n              \"50%\",\n              \"Identify a clear interpretation error in each of the three scenarios.\"\n            ],\n            [\n              \"Better decision\",\n              \"50%\",\n              \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\",\n        \"delivery\": [\n          \"Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\",\n          \"For each of the three scenarios, describe the situation or copy the relevant lesson example.\",\n          \"Name the interpretation error.\",\n          \"Explain how to avoid that error.\",\n          \"Propose a better small decision or experiment rather than an unsupported generalization.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Diagnose the trap\",\n            \"weight\": 50,\n            \"criteria\": \"Identify a clear interpretation error in each of the three scenarios.\"\n          },\n          {\n            \"dimension\": \"Better decision\",\n            \"weight\": 50,\n            \"criteria\": \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "a59c263eaa71b63d39bdf022a0f766d58c5fd294442223ac1c9059babefd3901",
+      "currentBlob": "b82eba7a0b4d0cbe66c6cd4d52bef1c3ad8fa720",
+      "generationSourceSha256": "069d94f3a1ab9b6d23a8a951829848bce399b661f944ddf957f7d771dd9dc34d",
+      "generationSourceBlob": "701b43cf982fd9934e1010d6cb9a571a7a87aece",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| فحص صادق | 60% |\\n| قرار واضح | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"قيّم فكرة توسع فعلية، كفرع أو حملة أكبر أو منتج جديد أو توظيف متعدد، على أربعة محاور جاهزية. المطلوب حكم مبرر وليس تنفيذ التوسع.\\n\\n**التسليم:**\\n\\n1. صف فكرة التوسع.\\n2. هل العملية جاهزة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n3. هل النقد المتاح جاهز؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n4. هل الجودة ثابتة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n5. هل الطلب حقيقي؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n6. اختر التوسع أو التأجيل أو التوسع الجزئي، واربط السبب بنتائج الفحص.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| فحص صادق | 60% | فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي. |\\n| قرار واضح | 40% | قرار توسع أو تأجيل بسبب مرتبط بالفحص. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"فحص صادق\",\n              \"60%\",\n              \"فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي.\"\n            ],\n            [\n              \"قرار واضح\",\n              \"40%\",\n              \"قرار توسع أو تأجيل بسبب مرتبط بالفحص.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"قيّم فكرة توسع فعلية، كفرع أو حملة أكبر أو منتج جديد أو توظيف متعدد، على أربعة محاور جاهزية. المطلوب حكم مبرر وليس تنفيذ التوسع.\",\n        \"delivery\": [\n          \"صف فكرة التوسع.\",\n          \"هل العملية جاهزة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل النقد المتاح جاهز؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل الجودة ثابتة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل الطلب حقيقي؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"اختر التوسع أو التأجيل أو التوسع الجزئي، واربط السبب بنتائج الفحص.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"فحص صادق\",\n            \"weight\": 60,\n            \"criteria\": \"فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي.\"\n          },\n          {\n            \"dimension\": \"قرار واضح\",\n            \"weight\": 40,\n            \"criteria\": \"قرار توسع أو تأجيل بسبب مرتبط بالفحص.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "28aa3577cda33e262b238fb90f156b39f4e080fd511541c3d75d40e6d4400127",
+      "currentBlob": "1be5f1c2448b3ecd6db3e82660f231fa66e4466d",
+      "generationSourceSha256": "3cf9fd460e08a301f779c0b66d3dfb3ae89ed7c65f504be5b0dac875fa03f4ac",
+      "generationSourceBlob": "c9cdbcb7fb3b0010ba314b5a335b246dd1409e1a",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| فحص صادق | 60% |\\n| قرار واضح | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"قيّم فكرة توسع فعلية عندك، مثل فرع أو حملة أكبر أو منتج جديد أو توظيف متعدد، على أربعة محاور. المطلوب حكم مع سببه، مو تنفيذ التوسع.\\n\\n**التسليم:**\\n\\n1. صف فكرة التوسع.\\n2. هل العملية جاهزة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n3. هل النقد المتاح جاهز؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n4. هل الجودة ثابتة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n5. هل الطلب حقيقي؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\\n6. اختر التوسع أو التأجيل أو التوسع الجزئي، واربط السبب بنتائج الفحص.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| فحص صادق | 60% | فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي. |\\n| قرار واضح | 40% | قرار توسع أو تأجيل بسبب مرتبط بالفحص. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"فحص صادق\",\n              \"60%\",\n              \"فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي.\"\n            ],\n            [\n              \"قرار واضح\",\n              \"40%\",\n              \"قرار توسع أو تأجيل بسبب مرتبط بالفحص.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"قيّم فكرة توسع فعلية عندك، مثل فرع أو حملة أكبر أو منتج جديد أو توظيف متعدد، على أربعة محاور. المطلوب حكم مع سببه، مو تنفيذ التوسع.\",\n        \"delivery\": [\n          \"صف فكرة التوسع.\",\n          \"هل العملية جاهزة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل النقد المتاح جاهز؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل الجودة ثابتة؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"هل الطلب حقيقي؟ أجب بنعم أو لا أو جزئيًا مع تفسير.\",\n          \"اختر التوسع أو التأجيل أو التوسع الجزئي، واربط السبب بنتائج الفحص.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"فحص صادق\",\n            \"weight\": 60,\n            \"criteria\": \"فكرة فعلية مع إجابة المحاور الأربعة، لا تسويق ذاتي.\"\n          },\n          {\n            \"dimension\": \"قرار واضح\",\n            \"weight\": 40,\n            \"criteria\": \"قرار توسع أو تأجيل بسبب مرتبط بالفحص.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m4-l1-premature-scaling.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "df56d39792a6199d6e46f8c59818f034dbc9b1a3f4c2a59577cefc242a45ffab",
+      "currentBlob": "bb16848ba6ffd3720f8a8c3a99c9943800faf8cc",
+      "generationSourceSha256": "ee7773e3dcd49ec542bfa993202807cac46797f6872f491424e7f33b74bdbac6",
+      "generationSourceBlob": "4daa45a14554801aed7fc298372c1f9699357a8c",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Honest Check | 60% |\\n| Clear Decision | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Evaluate one real expansion idea, such as a branch, larger campaign, new product or several hires, against four readiness areas. This is a judgment exercise, not an instruction to execute the expansion.\\n\\n**Submission:**\\n\\n1. Describe the expansion idea.\\n2. Operations ready? Answer yes, no or partly and explain.\\n3. Cash ready? Answer yes, no or partly and explain.\\n4. Quality stable? Answer yes, no or partly and explain.\\n5. Demand real? Answer yes, no or partly and explain.\\n6. Choose expand, postpone or expand partially; explain how your readiness review supports the choice.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Honest readiness review | 60% | Use a real idea and answer all four readiness areas rather than presenting self-promotion. |\\n| Clear decision | 40% | Choose expansion or postponement with a reason linked to the review. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Honest readiness review\",\n              \"60%\",\n              \"Use a real idea and answer all four readiness areas rather than presenting self-promotion.\"\n            ],\n            [\n              \"Clear decision\",\n              \"40%\",\n              \"Choose expansion or postponement with a reason linked to the review.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Evaluate one real expansion idea, such as a branch, larger campaign, new product or several hires, against four readiness areas. This is a judgment exercise, not an instruction to execute the expansion.\",\n        \"delivery\": [\n          \"Describe the expansion idea.\",\n          \"Operations ready? Answer yes, no or partly and explain.\",\n          \"Cash ready? Answer yes, no or partly and explain.\",\n          \"Quality stable? Answer yes, no or partly and explain.\",\n          \"Demand real? Answer yes, no or partly and explain.\",\n          \"Choose expand, postpone or expand partially; explain how your readiness review supports the choice.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Honest readiness review\",\n            \"weight\": 60,\n            \"criteria\": \"Use a real idea and answer all four readiness areas rather than presenting self-promotion.\"\n          },\n          {\n            \"dimension\": \"Clear decision\",\n            \"weight\": 40,\n            \"criteria\": \"Choose expansion or postponement with a reason linked to the review.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "7c44abdcc6f750bbf820ecf14af424fd189d6da075bd9c1c6055b0e7ae86f5b0",
+      "currentBlob": "91d7c796d6380cd157780bd646342ca0398c1485",
+      "generationSourceSha256": "9f7fcee662cf88b79dc69ab6d6fa1f4b7746fdf9638ae7d97df843c783e38753",
+      "generationSourceBlob": "4e50d9ab474254d90936460baefa32a2b7db0400",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| طقس كامل | 60% |\\n| قرار قابل للتسجيل | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"صمّم مراجعة أسبوعية للعمل مدتها ثلاثون دقيقة، بثلاثة مقاييس وثلاثة أسئلة للذكاء الاصطناعي وقرار مسجل. المطلوب تصميم الطقس؛ لا تُشترط بيانات دقيقة اليوم أو استدعاء فعلي للذكاء الاصطناعي.\\n\\n**التسليم:**\\n\\n1. حدّد يومًا ووقتًا ثابتين للمراجعة.\\n2. سمِّ المقياس الأول وأهميته.\\n3. سمِّ المقياس الثاني وأهميته.\\n4. سمِّ المقياس الثالث وأهميته.\\n5. اكتب السؤال الأول للذكاء الاصطناعي.\\n6. اكتب السؤال الثاني للذكاء الاصطناعي.\\n7. اكتب السؤال الثالث للذكاء الاصطناعي.\\n8. قدّم مثال قرار ستسجله في الأسبوع الأول.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| طقس كامل | 60% | ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت. |\\n| قرار قابل للتسجيل | 40% | مثال واضح لقرار أسبوعي، لا نية عامة. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"طقس كامل\",\n              \"60%\",\n              \"ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت.\"\n            ],\n            [\n              \"قرار قابل للتسجيل\",\n              \"40%\",\n              \"مثال واضح لقرار أسبوعي، لا نية عامة.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم مراجعة أسبوعية للعمل مدتها ثلاثون دقيقة، بثلاثة مقاييس وثلاثة أسئلة للذكاء الاصطناعي وقرار مسجل. المطلوب تصميم الطقس؛ لا تُشترط بيانات دقيقة اليوم أو استدعاء فعلي للذكاء الاصطناعي.\",\n        \"delivery\": [\n          \"حدّد يومًا ووقتًا ثابتين للمراجعة.\",\n          \"سمِّ المقياس الأول وأهميته.\",\n          \"سمِّ المقياس الثاني وأهميته.\",\n          \"سمِّ المقياس الثالث وأهميته.\",\n          \"اكتب السؤال الأول للذكاء الاصطناعي.\",\n          \"اكتب السؤال الثاني للذكاء الاصطناعي.\",\n          \"اكتب السؤال الثالث للذكاء الاصطناعي.\",\n          \"قدّم مثال قرار ستسجله في الأسبوع الأول.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"طقس كامل\",\n            \"weight\": 60,\n            \"criteria\": \"ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت.\"\n          },\n          {\n            \"dimension\": \"قرار قابل للتسجيل\",\n            \"weight\": 40,\n            \"criteria\": \"مثال واضح لقرار أسبوعي، لا نية عامة.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "fef59587555560e893462b83e9722247274ba7dabe70ac505d3872f98c59dae4",
+      "currentBlob": "deb7059b3fe5ea16fe58de2ee6542b85fac8f5f2",
+      "generationSourceSha256": "1751f7e16064a2e7d75b52015994a1dcfa14ab6a2081d5c6487586b14fcd754b",
+      "generationSourceBlob": "1233b39e7244bc15cb5e87a7cb38f931f5b11031",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| طقس كامل | 60% |\\n| قرار قابل للتسجيل | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"صمّم مراجعة أسبوعية لشغلك مدتها ثلاثون دقيقة: ثلاثة مقاييس وثلاثة أسئلة AI وقرار تسجّله. المطلوب تصميم الطقس، مو بيانات دقيقة اليوم أو استدعاء فعلي لـAI.\\n\\n**التسليم:**\\n\\n1. حدّد يومًا ووقتًا ثابتين للمراجعة.\\n2. سمِّ المقياس الأول وأهميته.\\n3. سمِّ المقياس الثاني وأهميته.\\n4. سمِّ المقياس الثالث وأهميته.\\n5. اكتب السؤال الأول للذكاء الاصطناعي.\\n6. اكتب السؤال الثاني للذكاء الاصطناعي.\\n7. اكتب السؤال الثالث للذكاء الاصطناعي.\\n8. قدّم مثال قرار ستسجله في الأسبوع الأول.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| طقس كامل | 60% | ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت. |\\n| قرار قابل للتسجيل | 40% | مثال واضح لقرار أسبوعي، لا نية عامة. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"طقس كامل\",\n              \"60%\",\n              \"ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت.\"\n            ],\n            [\n              \"قرار قابل للتسجيل\",\n              \"40%\",\n              \"مثال واضح لقرار أسبوعي، لا نية عامة.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"صمّم مراجعة أسبوعية لشغلك مدتها ثلاثون دقيقة: ثلاثة مقاييس وثلاثة أسئلة AI وقرار تسجّله. المطلوب تصميم الطقس، مو بيانات دقيقة اليوم أو استدعاء فعلي لـAI.\",\n        \"delivery\": [\n          \"حدّد يومًا ووقتًا ثابتين للمراجعة.\",\n          \"سمِّ المقياس الأول وأهميته.\",\n          \"سمِّ المقياس الثاني وأهميته.\",\n          \"سمِّ المقياس الثالث وأهميته.\",\n          \"اكتب السؤال الأول للذكاء الاصطناعي.\",\n          \"اكتب السؤال الثاني للذكاء الاصطناعي.\",\n          \"اكتب السؤال الثالث للذكاء الاصطناعي.\",\n          \"قدّم مثال قرار ستسجله في الأسبوع الأول.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"طقس كامل\",\n            \"weight\": 60,\n            \"criteria\": \"ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت.\"\n          },\n          {\n            \"dimension\": \"قرار قابل للتسجيل\",\n            \"weight\": 40,\n            \"criteria\": \"مثال واضح لقرار أسبوعي، لا نية عامة.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "49163c1dcbb7fa38e9fd827c3f10e51d57f92179cc56d85af7430a8ca40f55c5",
+      "currentBlob": "9a146f9e51d4598ca9cdace3a9b208119a574c03",
+      "generationSourceSha256": "0b0e4e6e5e5a436698969c2b1eed70b4ec8a804cfd643d28dac8e05a74e8f2bb",
+      "generationSourceBlob": "ea92b8c383bfab77514930c744a089318e72f488",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Full Weather | 60% |\\n| Recordable Decision | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"Design a 30-minute weekly business review with three metrics, three AI questions and one recorded decision. You are designing the routine; precise data or an actual AI call are not required today.\\n\\n**Submission:**\\n\\n1. Set a fixed review day and time.\\n2. Name metric 1 and why it matters.\\n3. Name metric 2 and why it matters.\\n4. Name metric 3 and why it matters.\\n5. Write AI question 1.\\n6. Write AI question 2.\\n7. Write AI question 3.\\n8. Give an example decision to record for the first week.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Complete routine | 60% | Include three metrics, three questions and a fixed appointment. |\\n| Recordable decision | 40% | Give a clear example of a weekly decision rather than a vague intention. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Complete routine\",\n              \"60%\",\n              \"Include three metrics, three questions and a fixed appointment.\"\n            ],\n            [\n              \"Recordable decision\",\n              \"40%\",\n              \"Give a clear example of a weekly decision rather than a vague intention.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Design a 30-minute weekly business review with three metrics, three AI questions and one recorded decision. You are designing the routine; precise data or an actual AI call are not required today.\",\n        \"delivery\": [\n          \"Set a fixed review day and time.\",\n          \"Name metric 1 and why it matters.\",\n          \"Name metric 2 and why it matters.\",\n          \"Name metric 3 and why it matters.\",\n          \"Write AI question 1.\",\n          \"Write AI question 2.\",\n          \"Write AI question 3.\",\n          \"Give an example decision to record for the first week.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Complete routine\",\n            \"weight\": 60,\n            \"criteria\": \"Include three metrics, three questions and a fixed appointment.\"\n          },\n          {\n            \"dimension\": \"Recordable decision\",\n            \"weight\": 40,\n            \"criteria\": \"Give a clear example of a weekly decision rather than a vague intention.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l4-full-ecosystem.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "af72278f0b3bab2a0186519f9c64f5ac76c0b0341f5c74652e9f2d95c2f2d3bf",
+      "currentBlob": "525a469f44f3c000b89d49f4aab365cc491fbddf",
+      "generationSourceSha256": "0073efd01ca810117d3b2723119a980b26997dc5c9dfeee22f878132c9721614",
+      "generationSourceBlob": "aa1558b8ac073ec6a2191a94fafd5efdbf6b900f",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| هدف حقيقي | 50% |\\n| ربط منطقي | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"اكتب هدف عملك الحالي للشهرين المقبلين. اختر المسارين الأكثر صلة من المسارات الخمسة، واشرح كل اختيار في جملتين أو ثلاث؛ لا يُشترط إكمال أي مسار في هذا التمرين.\\n\\n**التسليم:**\\n\\n1. اكتب هدف العمل الحالي في جملة أو جملتين.\\n2. سمِّ المسار المساند الأول.\\n3. اشرح صلة المسار الأول بالهدف في جملتين أو ثلاث.\\n4. سمِّ المسار المساند الثاني.\\n5. اشرح صلة المسار الثاني بالهدف في جملتين أو ثلاث.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف حقيقي | 50% | هدف مرتبط بسياق عملك، لا فضول عام. |\\n| ربط منطقي | 50% | مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف حقيقي\",\n              \"50%\",\n              \"هدف مرتبط بسياق عملك، لا فضول عام.\"\n            ],\n            [\n              \"ربط منطقي\",\n              \"50%\",\n              \"مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"اكتب هدف عملك الحالي للشهرين المقبلين. اختر المسارين الأكثر صلة من المسارات الخمسة، واشرح كل اختيار في جملتين أو ثلاث؛ لا يُشترط إكمال أي مسار في هذا التمرين.\",\n        \"delivery\": [\n          \"اكتب هدف العمل الحالي في جملة أو جملتين.\",\n          \"سمِّ المسار المساند الأول.\",\n          \"اشرح صلة المسار الأول بالهدف في جملتين أو ثلاث.\",\n          \"سمِّ المسار المساند الثاني.\",\n          \"اشرح صلة المسار الثاني بالهدف في جملتين أو ثلاث.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف حقيقي\",\n            \"weight\": 50,\n            \"criteria\": \"هدف مرتبط بسياق عملك، لا فضول عام.\"\n          },\n          {\n            \"dimension\": \"ربط منطقي\",\n            \"weight\": 50,\n            \"criteria\": \"مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l4-full-ecosystem.json",
+      "auditItems": [
+        62
+      ],
+      "currentSha256": "13b727aac55d87e1d2977844b000e9614d116297f44785d3e6d9061679898eb9",
+      "currentBlob": "68c333a66bcff5cf92dfc701c32847e07d8e389d",
+      "generationSourceSha256": "b0efddbbfc412aac95bc4cf25504d2737705b18d91cd83302f4ac95475fe5035",
+      "generationSourceBlob": "5bbc37fef73c7ff2a1e9232567ce6db525239612",
+      "replacements": [
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"| هدف حقيقي | 50% |\\n| ربط منطقي | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة\",\n      \"contentMarkdown\": \"اكتب هدف شغلك الحالي للشهرين الجايين. اختر أنسب مسارين من الخمسة، واشرح كل اختيار في جملتين أو ثلاث؛ مو مطلوب تخلّص أي مسار في هذا التمرين.\\n\\n**التسليم:**\\n\\n1. اكتب هدف العمل الحالي في جملة أو جملتين.\\n2. سمِّ المسار المساند الأول.\\n3. اشرح صلة المسار الأول بالهدف في جملتين أو ثلاث.\\n4. سمِّ المسار المساند الثاني.\\n5. اشرح صلة المسار الثاني بالهدف في جملتين أو ثلاث.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| هدف حقيقي | 50% | هدف مرتبط بسياق عملك، لا فضول عام. |\\n| ربط منطقي | 50% | مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"هدف حقيقي\",\n              \"50%\",\n              \"هدف مرتبط بسياق عملك، لا فضول عام.\"\n            ],\n            [\n              \"ربط منطقي\",\n              \"50%\",\n              \"مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"اكتب هدف شغلك الحالي للشهرين الجايين. اختر أنسب مسارين من الخمسة، واشرح كل اختيار في جملتين أو ثلاث؛ مو مطلوب تخلّص أي مسار في هذا التمرين.\",\n        \"delivery\": [\n          \"اكتب هدف العمل الحالي في جملة أو جملتين.\",\n          \"سمِّ المسار المساند الأول.\",\n          \"اشرح صلة المسار الأول بالهدف في جملتين أو ثلاث.\",\n          \"سمِّ المسار المساند الثاني.\",\n          \"اشرح صلة المسار الثاني بالهدف في جملتين أو ثلاث.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"هدف حقيقي\",\n            \"weight\": 50,\n            \"criteria\": \"هدف مرتبط بسياق عملك، لا فضول عام.\"\n          },\n          {\n            \"dimension\": \"ربط منطقي\",\n            \"weight\": 50,\n            \"criteria\": \"مساران مع سبب واضح لكل اختيار؛ Builder ليس افتراضيًا للجميع.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
+      "auditItems": [
+        62,
+        116
+      ],
+      "currentSha256": "e8de3373b7cc2fb6b12ddc2c54280e5e2ec6b3149dab6a1ddd06752cbf06930a",
+      "currentBlob": "d319e11e1fb2652adb20362e912cdf293ba7b7d0",
+      "generationSourceSha256": "e8d111eb1d1301479cb422a26c7ad7a922ca4d66e0279f4b5afb3f925708c20b",
+      "generationSourceBlob": "dc59a469c535f44fd050431e3a57b6e1cadcd792",
+      "replacements": [
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"> **Quiz key:** \\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** The correct answer is Automator because it focuses on automating repetitive tasks.\"",
+          "after": "\"**Question:** Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
+        },
+        {
+          "field": "sections.2.quiz.explanation",
+          "before": "\"The correct answer is Automator because it focuses on automating repetitive tasks.\"",
+          "after": "\"Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
+        },
+        {
+          "field": "sections.2.quiz.question",
+          "before": "\"Which option is most suitable based on the section above?\"",
+          "after": "\"Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\""
+        },
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Real Goal | 50% |\\n| Logical Connection | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.\\n\\n**Submission:**\\n\\n1. State the current business goal in one or two sentences.\\n2. Name the first supporting path.\\n3. Explain why the first path fits the goal in two or three sentences.\\n4. Name the second supporting path.\\n5. Explain why the second path fits the goal in two or three sentences.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Real goal | 50% | Tie the goal to your business context rather than general curiosity. |\\n| Logical connection | 50% | Choose two paths with clear reasons; Builder is not the default requirement for everyone. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Real goal\",\n              \"50%\",\n              \"Tie the goal to your business context rather than general curiosity.\"\n            ],\n            [\n              \"Logical connection\",\n              \"50%\",\n              \"Choose two paths with clear reasons; Builder is not the default requirement for everyone.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.\",\n        \"delivery\": [\n          \"State the current business goal in one or two sentences.\",\n          \"Name the first supporting path.\",\n          \"Explain why the first path fits the goal in two or three sentences.\",\n          \"Name the second supporting path.\",\n          \"Explain why the second path fits the goal in two or three sentences.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Real goal\",\n            \"weight\": 50,\n            \"criteria\": \"Tie the goal to your business context rather than general curiosity.\"\n          },\n          {\n            \"dimension\": \"Logical connection\",\n            \"weight\": 50,\n            \"criteria\": \"Choose two paths with clear reasons; Builder is not the default requirement for everyone.\"\n          }\n        ]\n      }\n    }"
         }
       ]
     }

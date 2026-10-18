@@ -69,9 +69,52 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Full Flow | 60% |\n| Realism | 40% |",
+      "contentMarkdown": "Design a lead intake workflow for one channel you actually use. Describe the trigger, storage, response and alert; do not deploy an automation or send a message.\n\n**Submission:**\n\n1. Name the channel: a form, WhatsApp, booking or another real channel.\n2. State the event that triggers intake.\n3. Specify where the lead is recorded and the fields to store.\n4. Draft the first response as an example only.\n5. Name who receives the alert and when.\n6. Explain what used to be lost before this workflow.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Complete workflow | 60% | Include all four steps: trigger, storage, response and alert. |\n| Realistic design | 40% | Use a real channel from your context and identify the alert recipient. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Complete workflow",
+              "60%",
+              "Include all four steps: trigger, storage, response and alert."
+            ],
+            [
+              "Realistic design",
+              "40%",
+              "Use a real channel from your context and identify the alert recipient."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design a lead intake workflow for one channel you actually use. Describe the trigger, storage, response and alert; do not deploy an automation or send a message.",
+        "delivery": [
+          "Name the channel: a form, WhatsApp, booking or another real channel.",
+          "State the event that triggers intake.",
+          "Specify where the lead is recorded and the fields to store.",
+          "Draft the first response as an example only.",
+          "Name who receives the alert and when.",
+          "Explain what used to be lost before this workflow."
+        ],
+        "rubric": [
+          {
+            "dimension": "Complete workflow",
+            "weight": 60,
+            "criteria": "Include all four steps: trigger, storage, response and alert."
+          },
+          {
+            "dimension": "Realistic design",
+            "weight": 40,
+            "criteria": "Use a real channel from your context and identify the alert recipient."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

@@ -172,8 +172,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| Flow واضح | 60% |
-| ثقة وموافقة | 40% |
+صمّم محادثة واتساب واحدة برد آلي وقاعدة تحويل إلى موظف. لا يلزم ربط API أو إرسال أي رسالة فعلية.
+
+**التسليم:**
+
+1. حدّد سيناريو واحدًا، مثل تأكيد طلب أو سؤال متكرر.
+2. اكتب مثال رسالة العميل التي تبدأ المحادثة.
+3. اكتب نموذج الرد الآلي.
+4. حدّد الشرط الذي يحوّل المحادثة إلى موظف.
+5. سمِّ من يستلم التحويل.
+6. اشرح كيف بدأ العميل المحادثة أو وافق عليها وكيف يتجنب التصميم الرسائل المزعجة غير المطلوبة.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| سير محادثة واضح | 60% | سيناريو ورد آلي وشرط محدد للتحويل البشري. |
+| ثقة وموافقة | 40% | بيّن كيف بدأ العميل أو وافق؛ لا تقترح بثًا عشوائيًا. |
+
 
 ### Confidence close
 
@@ -295,3 +311,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

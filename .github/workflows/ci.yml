@@ -70,6 +70,9 @@ jobs:
       - name: Analytics and optional start localization (mocked clients, no AI calls)
         run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
 
+      - name: Restored guided missions (isolated clients, no submissions)
+        run: bunx vitest run src/lib/__tests__/restored-guided-missions.test.tsx
+
       - name: Localized educational section identity
         run: bunx vitest run src/lib/__tests__/localized-section-role-alignment.test.ts src/lib/__tests__/localized-numbered-explanations.test.ts
 

@@ -162,8 +162,26 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| طقس كامل | 60% |
-| قرار قابل للتسجيل | 40% |
+صمّم مراجعة أسبوعية للعمل مدتها ثلاثون دقيقة، بثلاثة مقاييس وثلاثة أسئلة للذكاء الاصطناعي وقرار مسجل. المطلوب تصميم الطقس؛ لا تُشترط بيانات دقيقة اليوم أو استدعاء فعلي للذكاء الاصطناعي.
+
+**التسليم:**
+
+1. حدّد يومًا ووقتًا ثابتين للمراجعة.
+2. سمِّ المقياس الأول وأهميته.
+3. سمِّ المقياس الثاني وأهميته.
+4. سمِّ المقياس الثالث وأهميته.
+5. اكتب السؤال الأول للذكاء الاصطناعي.
+6. اكتب السؤال الثاني للذكاء الاصطناعي.
+7. اكتب السؤال الثالث للذكاء الاصطناعي.
+8. قدّم مثال قرار ستسجله في الأسبوع الأول.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| طقس كامل | 60% | ثلاثة مقاييس وثلاثة أسئلة وموعد ثابت. |
+| قرار قابل للتسجيل | 40% | مثال واضح لقرار أسبوعي، لا نية عامة. |
+
 
 ### Confidence close
 
@@ -285,3 +303,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

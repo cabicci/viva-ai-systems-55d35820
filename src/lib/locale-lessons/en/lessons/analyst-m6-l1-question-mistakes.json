@@ -58,9 +58,52 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Diagnosis | 50% |\n| Formulating for Decision | 50% |",
+      "contentMarkdown": "Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.\n\n**Submission:**\n\n1. Repeat the following template for each of three questions.\n2. Copy the original question.\n3. Name the error: too general, biased or unsupported by available data.\n4. Identify what is missing: metric, time window or comparator.\n5. Write the corrected, measurable question.\n6. Name the decision the corrected question supports.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Correct diagnosis | 50% | For every question, identify the error and what is missing. |\n| Decision-focused wording | 50% | Each corrected question is specific, measurable and tied to a decision. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Correct diagnosis",
+              "50%",
+              "For every question, identify the error and what is missing."
+            ],
+            [
+              "Decision-focused wording",
+              "50%",
+              "Each corrected question is specific, measurable and tied to a decision."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.",
+        "delivery": [
+          "Repeat the following template for each of three questions.",
+          "Copy the original question.",
+          "Name the error: too general, biased or unsupported by available data.",
+          "Identify what is missing: metric, time window or comparator.",
+          "Write the corrected, measurable question.",
+          "Name the decision the corrected question supports."
+        ],
+        "rubric": [
+          {
+            "dimension": "Correct diagnosis",
+            "weight": 50,
+            "criteria": "For every question, identify the error and what is missing."
+          },
+          {
+            "dimension": "Decision-focused wording",
+            "weight": 50,
+            "criteria": "Each corrected question is specific, measurable and tied to a decision."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

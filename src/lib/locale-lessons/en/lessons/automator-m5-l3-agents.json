@@ -70,9 +70,52 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Goal and Tools | 60% |\n| Limit and Transformation | 40% |",
+      "contentMarkdown": "Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.\n\n**Submission:**\n\n1. State the agent's goal in one sentence.\n2. Name allowed tool 1 and what it may do.\n3. Name allowed tool 2 and what it may do.\n4. Define one enforceable boundary: what is out of scope or when the agent must stop.\n5. Name the person or role that takes over if the agent fails or reaches the boundary.\n6. Explain why this boundary matters in your work.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Goal and tools | 60% | Give a specific goal and two tools with clear functions, rather than unlimited capabilities. |\n| Boundary and escalation | 40% | Give an applicable boundary and a clear handoff path when the agent fails or exceeds it. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Goal and tools",
+              "60%",
+              "Give a specific goal and two tools with clear functions, rather than unlimited capabilities."
+            ],
+            [
+              "Boundary and escalation",
+              "40%",
+              "Give an applicable boundary and a clear handoff path when the agent fails or exceeds it."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.",
+        "delivery": [
+          "State the agent's goal in one sentence.",
+          "Name allowed tool 1 and what it may do.",
+          "Name allowed tool 2 and what it may do.",
+          "Define one enforceable boundary: what is out of scope or when the agent must stop.",
+          "Name the person or role that takes over if the agent fails or reaches the boundary.",
+          "Explain why this boundary matters in your work."
+        ],
+        "rubric": [
+          {
+            "dimension": "Goal and tools",
+            "weight": 60,
+            "criteria": "Give a specific goal and two tools with clear functions, rather than unlimited capabilities."
+          },
+          {
+            "dimension": "Boundary and escalation",
+            "weight": 40,
+            "criteria": "Give an applicable boundary and a clear handoff path when the agent fails or exceeds it."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

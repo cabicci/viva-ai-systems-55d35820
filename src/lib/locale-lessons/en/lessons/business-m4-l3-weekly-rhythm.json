@@ -57,9 +57,54 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Full Weather | 60% |\n| Recordable Decision | 40% |",
+      "contentMarkdown": "Design a 30-minute weekly business review with three metrics, three AI questions and one recorded decision. You are designing the routine; precise data or an actual AI call are not required today.\n\n**Submission:**\n\n1. Set a fixed review day and time.\n2. Name metric 1 and why it matters.\n3. Name metric 2 and why it matters.\n4. Name metric 3 and why it matters.\n5. Write AI question 1.\n6. Write AI question 2.\n7. Write AI question 3.\n8. Give an example decision to record for the first week.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Complete routine | 60% | Include three metrics, three questions and a fixed appointment. |\n| Recordable decision | 40% | Give a clear example of a weekly decision rather than a vague intention. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Complete routine",
+              "60%",
+              "Include three metrics, three questions and a fixed appointment."
+            ],
+            [
+              "Recordable decision",
+              "40%",
+              "Give a clear example of a weekly decision rather than a vague intention."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design a 30-minute weekly business review with three metrics, three AI questions and one recorded decision. You are designing the routine; precise data or an actual AI call are not required today.",
+        "delivery": [
+          "Set a fixed review day and time.",
+          "Name metric 1 and why it matters.",
+          "Name metric 2 and why it matters.",
+          "Name metric 3 and why it matters.",
+          "Write AI question 1.",
+          "Write AI question 2.",
+          "Write AI question 3.",
+          "Give an example decision to record for the first week."
+        ],
+        "rubric": [
+          {
+            "dimension": "Complete routine",
+            "weight": 60,
+            "criteria": "Include three metrics, three questions and a fixed appointment."
+          },
+          {
+            "dimension": "Recordable decision",
+            "weight": 40,
+            "criteria": "Give a clear example of a weekly decision rather than a vague intention."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

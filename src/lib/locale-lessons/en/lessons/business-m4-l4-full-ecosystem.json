@@ -60,9 +60,51 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Real Goal | 50% |\n| Logical Connection | 50% |",
+      "contentMarkdown": "State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.\n\n**Submission:**\n\n1. State the current business goal in one or two sentences.\n2. Name the first supporting path.\n3. Explain why the first path fits the goal in two or three sentences.\n4. Name the second supporting path.\n5. Explain why the second path fits the goal in two or three sentences.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Real goal | 50% | Tie the goal to your business context rather than general curiosity. |\n| Logical connection | 50% | Choose two paths with clear reasons; Builder is not the default requirement for everyone. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Real goal",
+              "50%",
+              "Tie the goal to your business context rather than general curiosity."
+            ],
+            [
+              "Logical connection",
+              "50%",
+              "Choose two paths with clear reasons; Builder is not the default requirement for everyone."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.",
+        "delivery": [
+          "State the current business goal in one or two sentences.",
+          "Name the first supporting path.",
+          "Explain why the first path fits the goal in two or three sentences.",
+          "Name the second supporting path.",
+          "Explain why the second path fits the goal in two or three sentences."
+        ],
+        "rubric": [
+          {
+            "dimension": "Real goal",
+            "weight": 50,
+            "criteria": "Tie the goal to your business context rather than general curiosity."
+          },
+          {
+            "dimension": "Logical connection",
+            "weight": 50,
+            "criteria": "Choose two paths with clear reasons; Builder is not the default requirement for everyone."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

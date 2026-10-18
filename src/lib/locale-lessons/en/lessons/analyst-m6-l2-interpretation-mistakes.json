@@ -60,9 +60,51 @@
       "role": "Mission",
       "heading": "Mission — 3 Scenarios",
       "subtitle": "3 Scenarios",
-      "contentMarkdown": "| Trap Diagnosis | 50% |\n| Better Decision | 50% |",
+      "contentMarkdown": "Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\n\n**Submission:**\n\n1. Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\n2. For each of the three scenarios, describe the situation or copy the relevant lesson example.\n3. Name the interpretation error.\n4. Explain how to avoid that error.\n5. Propose a better small decision or experiment rather than an unsupported generalization.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Diagnose the trap | 50% | Identify a clear interpretation error in each of the three scenarios. |\n| Better decision | 50% | Propose a small decision or experiment supported by the situation, not a generalization without evidence. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Diagnose the trap",
+              "50%",
+              "Identify a clear interpretation error in each of the three scenarios."
+            ],
+            [
+              "Better decision",
+              "50%",
+              "Propose a small decision or experiment supported by the situation, not a generalization without evidence."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.",
+        "delivery": [
+          "Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.",
+          "For each of the three scenarios, describe the situation or copy the relevant lesson example.",
+          "Name the interpretation error.",
+          "Explain how to avoid that error.",
+          "Propose a better small decision or experiment rather than an unsupported generalization."
+        ],
+        "rubric": [
+          {
+            "dimension": "Diagnose the trap",
+            "weight": 50,
+            "criteria": "Identify a clear interpretation error in each of the three scenarios."
+          },
+          {
+            "dimension": "Better decision",
+            "weight": 50,
+            "criteria": "Propose a small decision or experiment supported by the situation, not a generalization without evidence."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

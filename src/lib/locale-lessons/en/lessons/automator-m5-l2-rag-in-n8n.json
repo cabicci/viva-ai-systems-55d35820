@@ -92,9 +92,51 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "One FAQ Source",
-      "contentMarkdown": "| Real Source | 60% |\n| Linking Question to Source | 40% |",
+      "contentMarkdown": "Design a question-to-source-to-response workflow. This is a written design exercise; do not build n8n, deploy a vector database or send real messages.\n\n**Submission:**\n\n1. Name the channel that receives the customer's question: WhatsApp, email or a form.\n2. Identify one specific FAQ, document or sheet to use as the source.\n3. Write three customer questions; connect each question to a specific source excerpt.\n4. Write the fallback response when the source has no supported answer.\n5. Describe the final response step and intended recipient in your diagram or text.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Specific source | 60% | Name one identifiable source rather than an unspecified collection of files. |\n| Question-to-source mapping | 40% | Connect all three questions to excerpts and give a fallback for an unsupported question. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Specific source",
+              "60%",
+              "Name one identifiable source rather than an unspecified collection of files."
+            ],
+            [
+              "Question-to-source mapping",
+              "40%",
+              "Connect all three questions to excerpts and give a fallback for an unsupported question."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design a question-to-source-to-response workflow. This is a written design exercise; do not build n8n, deploy a vector database or send real messages.",
+        "delivery": [
+          "Name the channel that receives the customer's question: WhatsApp, email or a form.",
+          "Identify one specific FAQ, document or sheet to use as the source.",
+          "Write three customer questions; connect each question to a specific source excerpt.",
+          "Write the fallback response when the source has no supported answer.",
+          "Describe the final response step and intended recipient in your diagram or text."
+        ],
+        "rubric": [
+          {
+            "dimension": "Specific source",
+            "weight": 60,
+            "criteria": "Name one identifiable source rather than an unspecified collection of files."
+          },
+          {
+            "dimension": "Question-to-source mapping",
+            "weight": 40,
+            "criteria": "Connect all three questions to excerpts and give a fallback for an unsupported question."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",
