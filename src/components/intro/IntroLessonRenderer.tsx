@@ -239,6 +239,7 @@ function ContextualLessonVisual({
       data-locale-lesson-visual="asset"
       data-contextual-v2-cell={visual.cellId}
       data-contextual-v2-source-type={visual.sourceType}
+      data-contextual-v2-revision={visual.assetRevision?.id}
     >
       <img
         src={visual.url}

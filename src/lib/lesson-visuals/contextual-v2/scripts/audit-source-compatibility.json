@@ -1,6 +1,6 @@
 {
   "role": "exact-reviewed-editorial-source-compatibility",
-  "scope": "Only exact reviewed source changes recorded per entry for audit items 6, 46, 50, 55, 56, 58, 59 and 63. Original generation manifest and image bytes remain unchanged.",
+  "scope": "Only exact reviewed source changes recorded per entry. Original generation manifest and original image bytes remain unchanged; separately versioned asset revisions have their own ledger.",
   "entries": [
     {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
@@ -558,6 +558,33 @@
           "field": "sections.4.tables.0.rows.1.2",
           "before": "\"\\\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\\\"\"",
           "after": "\"Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "auditItems": [
+        60
+      ],
+      "currentSha256": "fbe72df0ffdcef63f62e8137ad8d0b55a1891dc89c16c10480ba9bfef60034b9",
+      "currentBlob": "ac14b8a1e12c8030d9e574f5ead14065baaa9ce8",
+      "generationSourceSha256": "44e9bb704a1d078ff3e8adbdc8f5666d6cc789e493a7445174b7417876e3e3c8",
+      "generationSourceBlob": "2f4f94dab1c152132567f806d9f8fa377abcb773",
+      "replacements": [
+        {
+          "field": "title",
+          "before": "\"Review أسبوعي = ١٥ دقيقة\"",
+          "after": "\"Review أسبوعي = ٣٠ دقيقة\""
+        },
+        {
+          "field": "sections.5.heading",
+          "before": "\"اتفرّج — ريفيو ٣٠ دقيقة\"",
+          "after": "\"اتفرّج — خطة جلسة ريفيو ٣٠ دقيقة\""
+        },
+        {
+          "field": "sections.5.contentMarkdown",
+          "before": "\"إزاي تعمل ريفيو أسبوعي في ٣٠ دقيقة — ٤ أرقام، ٣ أسئلة AI، قرار واحد. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.\"",
+          "after": "\"شرح لخطة جلسة مراجعة أسبوعية مدتها ٣٠ دقيقة — ٤ أرقام، ٣ أسئلة AI، قرار واحد. الـ٣٠ دقيقة مدة جلسة المراجعة، مش مدة الفيديو أو وقت قراءة الدرس. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.\""
         }
       ]
     }

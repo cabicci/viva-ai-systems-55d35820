@@ -1,5 +1,6 @@
 /** Browser-only resolver for verified contextual-v2 public assets. */
 import browserManifest from "./contextualV2BrowserManifest.json";
+import { resolveAuditedContextualRevision } from "./contextualV2AuditRevisionResolver";
 
 export type ContextualV2Locale = "ar-EG" | "ar-MSA" | "ar-Gulf" | "en";
 
@@ -34,10 +35,23 @@ type ResolveErrorReason =
   | "missing_lesson"
   | "missing_locale"
   | "duplicate_mapping"
-  | "unverified_asset";
+  | "unverified_asset"
+  | "unverified_asset_revision";
+
+type ResolvedEntry = Omit<ContextualV2ManifestEntry, "width" | "height"> & {
+  width: number;
+  height: number;
+  assetRevision?: {
+    id: string;
+    basePublicPath: string;
+    baseAssetSha256: string;
+    baseSourceSha256: string;
+    currentSourceSha256: string;
+  };
+};
 
 export type ContextualV2ResolveResult =
-  | ({ ok: true; url: string } & ContextualV2ManifestEntry)
+  | ({ ok: true; url: string } & ResolvedEntry)
   | {
       ok: false;
       reason: ResolveErrorReason;
@@ -46,12 +60,7 @@ export type ContextualV2ResolveResult =
       cellId?: string;
     };
 
-const SUPPORTED = new Set<ContextualV2Locale>([
-  "ar-EG",
-  "ar-MSA",
-  "ar-Gulf",
-  "en",
-]);
+const SUPPORTED = new Set<ContextualV2Locale>(["ar-EG", "ar-MSA", "ar-Gulf", "en"]);
 const manifestIsVerified =
   browserManifest.manifestVersion === "lesson-visuals-contextual-v2/runtime-v1" &&
   browserManifest.integrationStatus === "VERIFIED_400";
@@ -110,6 +119,37 @@ export function resolveContextualV2Visual(input: {
       lessonId,
       locale,
       cellId: entry.cellId,
+    };
+  }
+  const audited = resolveAuditedContextualRevision(entry);
+  if (!audited.ok)
+    return {
+      ok: false,
+      reason: "unverified_asset_revision",
+      lessonId,
+      locale,
+      cellId: entry.cellId,
+    };
+  if (audited.revision) {
+    const revision = audited.revision;
+    return {
+      ok: true,
+      ...entry,
+      title: revision.title,
+      publicPath: revision.publicPath,
+      url: revision.publicPath,
+      assetSha256: revision.assetSha256,
+      assetBytes: revision.assetBytes,
+      actualFormat: "png",
+      width: revision.width,
+      height: revision.height,
+      assetRevision: {
+        id: revision.revisionId,
+        basePublicPath: entry.publicPath,
+        baseAssetSha256: entry.assetSha256,
+        baseSourceSha256: entry.sourceSha256,
+        currentSourceSha256: revision.currentSourceSha256,
+      },
     };
   }
   return { ok: true, ...entry, url: entry.publicPath };
