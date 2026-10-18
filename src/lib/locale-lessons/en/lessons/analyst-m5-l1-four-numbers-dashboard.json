@@ -108,10 +108,10 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** **Leads increased by 20%** — **Conversion dropped** from **12%** to **8%** — **Revenue stable**. **Which number** should you focus on **first** **from the 4**?\n\nLeads** — **because they increased.\n**Conversion** — **because it dropped** **despite** **the increase in leads**, **and this affects** **Revenue**.\nRevenue** — **because it’s stable** **so there’s no issue.\n\n**Explanation:** **Leads** and **Conversion** **together** **clarify** the picture. **Conversion dropped** = **a conversion issue** — **this is a decision number**.",
+      "contentMarkdown": "**Question:** **Leads increased by 20%** — **Conversion dropped** from **12%** to **8%** — **Revenue stable**. **Which number** should you focus on **first** **from the 4**?\n\n1. Leads — because they increased.\n2. Investigate Conversion: it fell despite more Leads and may signal a risk to future revenue.\n3. Revenue — because it’s stable so there’s no issue.\n\n**Explanation:** Falling conversion is a signal to investigate, not proof of a confirmed cause or current revenue loss. Current revenue is unchanged: check comparable periods, which customers were counted, how conversion is calculated, prices and sales mix before explaining why.",
       "bullets": [
         "Leads — because they increased.",
-        "Conversion — because it dropped despite the increase in leads, and this affects Revenue.",
+        "Investigate Conversion: it fell despite more Leads and may signal a risk to future revenue.",
         "Revenue — because it’s stable so there’s no issue."
       ],
       "tables": [],
@@ -120,10 +120,10 @@
         "correctIndex": 1,
         "options": [
           "Leads — because they increased.",
-          "Conversion — because it dropped despite the increase in leads, and this affects Revenue.",
+          "Investigate Conversion: it fell despite more Leads and may signal a risk to future revenue.",
           "Revenue — because it’s stable so there’s no issue."
         ],
-        "explanation": "**Leads** and **Conversion** **together** **clarify** the picture. **Conversion dropped** = **a conversion issue** — **this is a decision number**."
+        "explanation": "Falling conversion is a signal to investigate, not proof of a confirmed cause or current revenue loss. Current revenue is unchanged: check comparable periods, which customers were counted, how conversion is calculated, prices and sales mix before explaining why."
       }
     },
     {

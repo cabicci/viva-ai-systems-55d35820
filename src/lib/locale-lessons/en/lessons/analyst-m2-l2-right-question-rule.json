@@ -68,7 +68,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two terms for questions",
       "subtitle": "Two terms for questions",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Threshold** | The **number** at which you **decide** what to do — **not** a random number | \"If sales are **less than 10** — stop advertising\" — **10** is the **Threshold** |\n| **Actionable** | A question whose **answer** makes you **take action** — **not** just information for knowledge | \"**How much** do we spend on advertising?\" — its answer makes you **spend** or **save** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---|---|---|\n| **Threshold** | The **number** at which you **decide** what to do — **not** a random number | Hypothetical rule agreed before a pilot: budget 1,000 currency units, target 10 confirmed orders over 7 days. If there are fewer than 10 confirmed orders at the end of day 7, pause the test and review acquisition and conversion before further spending. This is not a universal business rule. |\n| **Actionable** | A question whose **answer** makes you **take action** — **not** just information for knowledge | \"**How much** do we spend on advertising?\" — its answer makes you **spend** or **save** |",
       "bullets": [],
       "tables": [
         {
@@ -81,7 +81,7 @@
             [
               "**Threshold**",
               "The **number** at which you **decide** what to do — **not** a random number",
-              "\"If sales are **less than 10** — stop advertising\" — **10** is the **Threshold**"
+              "Hypothetical rule agreed before a pilot: budget 1,000 currency units, target 10 confirmed orders over 7 days. If there are fewer than 10 confirmed orders at the end of day 7, pause the test and review acquisition and conversion before further spending. This is not a universal business rule."
             ],
             [
               "**Actionable**",
@@ -103,9 +103,9 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** A restaurant owner asked **AI**: «**What affected** the restaurant's sales **last month**?» What is the **best improvement** for the question?\n\n«**Based on the data from the last 30 days** — **how many customers** **decreased** **compared to the previous month** **from each branch**?» \n«Are there new ads that can be done to increase sales **next month**?» \n«What are the **most popular dishes** among people?» \n\n**Explanation:** The **improved question** is **specific** + **measurable** + **related to a decision**. If the answer appears — **you will know** how to **take action**.",
+      "contentMarkdown": "**Question:** A restaurant owner asked **AI**: «**What affected** the restaurant's sales **last month**?» What is the **best improvement** for the question?\n\n1. How did customer numbers change at each branch over the last 30 days compared with the previous comparable 30-day period?\n2. «Are there new ads that can be done to increase sales **next month**?»\n3. «What are the **most popular dishes** among people?»\n\n**Explanation:** This asks for a defined measure and comparable periods without assuming the direction of change. It supports investigation; customer counts alone do not establish what caused sales to change.",
       "bullets": [
-        "«**Based on the data from the last 30 days** — **how many customers** **decreased** **compared to the previous month** **from each branch**?»",
+        "How did customer numbers change at each branch over the last 30 days compared with the previous comparable 30-day period?",
         "«Are there new ads that can be done to increase sales **next month**?»",
         "«What are the **most popular dishes** among people?»"
       ],
@@ -114,11 +114,11 @@
         "question": "A restaurant owner asked **AI**: «**What affected** the restaurant's sales **last month**?» What is the **best improvement** for the question?",
         "correctIndex": 0,
         "options": [
-          "«**Based on the data from the last 30 days** — **how many customers** **decreased** **compared to the previous month** **from each branch**?»",
+          "How did customer numbers change at each branch over the last 30 days compared with the previous comparable 30-day period?",
           "«Are there new ads that can be done to increase sales **next month**?»",
           "«What are the **most popular dishes** among people?»"
         ],
-        "explanation": "The **improved question** is **specific** + **measurable** + **related to a decision**. If the answer appears — **you will know** how to **take action**."
+        "explanation": "This asks for a defined measure and comparable periods without assuming the direction of change. It supports investigation; customer counts alone do not establish what caused sales to change."
       }
     },
     {
