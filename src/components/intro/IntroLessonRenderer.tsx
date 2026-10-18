@@ -10,6 +10,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { IntroSection } from "./IntroSection";
+import { ToolsVendorReferences } from "./ToolsVendorReferences";
 import { SystemsViewReadingAid } from "./SystemsViewReadingAid";
 import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
@@ -438,6 +439,7 @@ export function IntroLessonRenderer({
           </React.Fragment>
         );
       })}
+      <ToolsVendorReferences lessonId={lessonId} />
     </article>
   );
 }

@@ -339,28 +339,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l3-filters-routers.json",
-      "auditItems": [
-        56
-      ],
-      "currentSha256": "ae2d42f3f4d8a65144c14fa0fa8ba3b4a358f7a2f5aadbfd431f0f20d9d37f52",
-      "currentBlob": "4340a8d7750ef4a71ece13f41d33c089942ba496",
-      "generationSourceSha256": "17e6b657cf62a44d655bce4421d8fc0bcaad5b71a4fbaffd6fbd180e3a5da482",
-      "generationSourceBlob": "f55b0daf9f2f9c65f75a6a5329f18d005754525f",
-      "replacements": [
-        {
-          "field": "sections.6.contentMarkdown",
-          "before": "\"**Question:** A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\"",
-          "after": "\"**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\""
-        },
-        {
-          "field": "sections.6.quiz.question",
-          "before": "\"A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\"",
-          "after": "\"A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\""
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
       "auditItems": [
         58
@@ -504,58 +482,6 @@
           "field": "sections.5.contentMarkdown",
           "before": "\"إزاي تعمل ريفيو أسبوعي في ٣٠ دقيقة — ٤ أرقام، ٣ أسئلة AI، قرار واحد. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.\"",
           "after": "\"شرح لخطة جلسة مراجعة أسبوعية مدتها ٣٠ دقيقة — ٤ أرقام، ٣ أسئلة AI، قرار واحد. الـ٣٠ دقيقة مدة جلسة المراجعة، مش مدة الفيديو أو وقت قراءة الدرس. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.\""
-        }
-      ]
-    },
-    {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
-      "auditItems": [
-        61
-      ],
-      "currentSha256": "9954d4a367e3f89c079b4dc8e2b57148078acf5f6c60d4326e3e2547f01bed61",
-      "currentBlob": "07698ae24e13448516767a554d96c186505a9a89",
-      "generationSourceSha256": "20646d02310f919d9d2c65b4df5499110820a6bf272e169524a15587c528d586",
-      "generationSourceBlob": "63a0eca434aac9da05042e3af13d674d2885971b",
-      "replacements": [
-        {
-          "field": "sections.0.contentMarkdown",
-          "before": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
-          "after": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
-        },
-        {
-          "field": "sections.0.bullets.2",
-          "before": "\"**What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
-          "after": "\"**What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
-        },
-        {
-          "field": "sections.7.contentMarkdown",
-          "before": "\"**Introduction:** Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation filter · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\"",
-          "after": "\"**Introduction:** Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation candidate · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\""
-        },
-        {
-          "field": "sections.7.tables.0.rows.0.2",
-          "before": "              \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
-          "after": "              \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
-        },
-        {
-          "field": "sections.7.mission.intro",
-          "before": "\"Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\"",
-          "after": "\"Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\""
-        },
-        {
-          "field": "sections.7.mission.rubric.0.criteria",
-          "before": "            \"criteria\": \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
-          "after": "            \"criteria\": \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
-        },
-        {
-          "field": "sections.8.contentMarkdown",
-          "before": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation filter — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\"",
-          "after": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation candidate — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\""
-        },
-        {
-          "field": "sections.8.bullets.1",
-          "before": "\"**You can:** You have a chosen tool for your first automation filter — ready for design.\"",
-          "after": "\"**You can:** You have a chosen tool for your first automation candidate — ready for design.\""
         }
       ]
     },
@@ -1570,6 +1496,192 @@
           "field": "sections.3: restore complete localized mission (audit62)",
           "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| Real Goal | 50% |\\n| Logical Connection | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
           "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.\\n\\n**Submission:**\\n\\n1. State the current business goal in one or two sentences.\\n2. Name the first supporting path.\\n3. Explain why the first path fits the goal in two or three sentences.\\n4. Name the second supporting path.\\n5. Explain why the second path fits the goal in two or three sentences.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Real goal | 50% | Tie the goal to your business context rather than general curiosity. |\\n| Logical connection | 50% | Choose two paths with clear reasons; Builder is not the default requirement for everyone. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Real goal\",\n              \"50%\",\n              \"Tie the goal to your business context rather than general curiosity.\"\n            ],\n            [\n              \"Logical connection\",\n              \"50%\",\n              \"Choose two paths with clear reasons; Builder is not the default requirement for everyone.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"State your current business goal for the next two months. Choose the two most relevant paths from the five and explain each choice in two or three sentences; you do not need to complete any path for this exercise.\",\n        \"delivery\": [\n          \"State the current business goal in one or two sentences.\",\n          \"Name the first supporting path.\",\n          \"Explain why the first path fits the goal in two or three sentences.\",\n          \"Name the second supporting path.\",\n          \"Explain why the second path fits the goal in two or three sentences.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Real goal\",\n            \"weight\": 50,\n            \"criteria\": \"Tie the goal to your business context rather than general curiosity.\"\n          },\n          {\n            \"dimension\": \"Logical connection\",\n            \"weight\": 50,\n            \"criteria\": \"Choose two paths with clear reasons; Builder is not the default requirement for everyone.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+      "auditItems": [
+        57,
+        61,
+        122
+      ],
+      "currentSha256": "9a34be8c7870bc7dbf9acb1a55e80896f29b254ceeeacf4b3ebe830c827d660b",
+      "currentBlob": "78e6be5466ac04030a859138b7651e0efee42be1",
+      "generationSourceSha256": "20646d02310f919d9d2c65b4df5499110820a6bf272e169524a15587c528d586",
+      "generationSourceBlob": "63a0eca434aac9da05042e3af13d674d2885971b",
+      "replacements": [
+        {
+          "field": "sections.0.contentMarkdown",
+          "before": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
+          "after": "\"- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\\n- **What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
+        },
+        {
+          "field": "sections.0.bullets.2",
+          "before": "\"**What after the lesson?** You will choose one tool for your automation filter — and explain why.\"",
+          "after": "\"**What after the lesson?** You will choose one tool for your automation candidate — and explain why.\""
+        },
+        {
+          "field": "sections.7.contentMarkdown",
+          "before": "\"**Introduction:** Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation filter · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\"",
+          "after": "\"**Introduction:** Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\\n\\n**Submission:** Automation candidate · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Justified Choice | 60% | Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\" |\\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |\""
+        },
+        {
+          "field": "sections.7.tables.0.rows.0.2",
+          "before": "              \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
+          "after": "              \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
+        },
+        {
+          "field": "sections.7.mission.intro",
+          "before": "\"Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\"",
+          "after": "\"Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\""
+        },
+        {
+          "field": "sections.7.mission.rubric.0.criteria",
+          "before": "            \"criteria\": \"Tool linked to a specific filter; two practical reasons — not just \\\"easiest\\\".\"",
+          "after": "            \"criteria\": \"Tool linked to a specific automation candidate; two practical reasons — not just \\\"easiest\\\".\""
+        },
+        {
+          "field": "sections.8.contentMarkdown",
+          "before": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation filter — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\"",
+          "after": "\"- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\\n- **You can:** You have a chosen tool for your first automation candidate — ready for design.\\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\\n\\n---\""
+        },
+        {
+          "field": "sections.8.bullets.1",
+          "before": "\"**You can:** You have a chosen tool for your first automation filter — ready for design.\"",
+          "after": "\"**You can:** You have a chosen tool for your first automation candidate — ready for design.\""
+        },
+        {
+          "field": "sections.2: audit 57,122",
+          "before": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core Idea\",\n      \"subtitle\": \"Tools Differ — Thought Process is the Same\",\n      \"contentMarkdown\": \"- **Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.\\n- **Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.\\n- **n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.\\n- **Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools.\",\n      \"bullets\": [\n        \"**Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.\",\n        \"**Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.\",\n        \"**n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.\",\n        \"**Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core Idea\",\n      \"subtitle\": \"Tools Differ — Thought Process is the Same\",\n      \"contentMarkdown\": \"- **Zapier** — ready integrations; check required features and plan limits. Price depends on plan and usage.\\n- **Make** — visual scenarios; compare features, limits and usage rather than assuming a lower price.\\n- **n8n** — source-available under fair-code licensing; self-hosting depends on the edition and applicable license terms.\\n- **Rule:** Choose for your task, volume and complexity. Compare current Free and paid plans, including connector availability. Zapier tasks and Make credits use different definitions; one task is not automatically one credit.\",\n      \"bullets\": [\n        \"**Zapier** — ready integrations; check required features and plan limits. Price depends on plan and usage.\",\n        \"**Make** — visual scenarios; compare features, limits and usage rather than assuming a lower price.\",\n        \"**n8n** — source-available under fair-code licensing; self-hosting depends on the edition and applicable license terms.\",\n        \"**Rule:** Choose for your task, volume and complexity. Compare current Free and paid plans, including connector availability. Zapier tasks and Make credits use different definitions; one task is not automatically one credit.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.3: audit 57,122",
+          "before": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"Comparison\",\n      \"subtitle\": \"Choosing by Popularity vs. Choosing by Size\",\n      \"contentMarkdown\": \"| \\\"Zapier because it’s popular\\\" | \\\"Make because the size is medium\\\" |\\n|---------------------|------------------------|\\n| Noor used Zapier for \\\"Form → Email\\\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed. | Noor used Make's free tier — same \\\"Form → Email\\\" — 30 minutes setup. Saved money and learned the thought process. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"\\\"Zapier because it’s popular\\\"\",\n            \"\\\"Make because the size is medium\\\"\"\n          ],\n          \"rows\": [\n            [\n              \"Noor used Zapier for \\\"Form → Email\\\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed.\",\n              \"Noor used Make's free tier — same \\\"Form → Email\\\" — 30 minutes setup. Saved money and learned the thought process.\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"Comparison\",\n      \"subtitle\": \"Choosing by Popularity vs. Choosing by Size\",\n      \"contentMarkdown\": \"| Popularity-first choice | Requirements-first choice |\\n|---|---|\\n| Illustrative example: Noor chooses a hypothetical $20/month paid plan for five Form → Email runs without checking whether its paid features are needed. This is a plan choice, not an unavoidable price. | Noor first checks both Zapier and Make Free plans against the required connector, steps, frequency and volume, then compares paid plans only if needed. No connector or plan was tested in this example. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Popularity-first choice\",\n            \"Requirements-first choice\"\n          ],\n          \"rows\": [\n            [\n              \"Illustrative example: Noor chooses a hypothetical $20/month paid plan for five Form → Email runs without checking whether its paid features are needed. This is a plan choice, not an unavoidable price.\",\n              \"Noor first checks both Zapier and Make Free plans against the required connector, steps, frequency and volume, then compares paid plans only if needed. No connector or plan was tested in this example.\"\n            ]\n          ]\n        }\n      ]\n    }"
+        },
+        {
+          "field": "sections.6: audit 57,122",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** At the start, you have one simple **Workflow**: \\\"Form → Welcome Email\\\" — 20 times/month. Your budget is limited. What is the best tool?\\n\\nMake — free tier is sufficient, clear visual interface, suitable for beginners\\n- **Explanation:** Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size.\",\n      \"bullets\": [\n        \"Make — free tier is sufficient, clear visual interface, suitable for beginners\",\n        \"Explanation: Starting + simple Workflow + budget = Make. The thought process is the same — the tool serves the size.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"At the start, you have one simple **Workflow**: \\\"Form → Welcome Email\\\" — 20 times/month. Your budget is limited. What is the best tool?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Make — free tier is sufficient, clear visual interface, suitable for beginners\",\n          \"An unsuitable choice; ignores the key data from the section above.\",\n          \"A partial answer that misses the context and ignores the next step in the decision.\"\n        ],\n        \"explanation\": \"Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** You need a simple Form → Welcome Email workflow about 20 times per month with a limited budget. Before selecting a tool, which action is best supported?\\n\\n1. Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.\\n2. Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.\\n3. Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed.\\n\\n**Explanation:** Requirements determine the choice. Check both Free plans and their limits; pay only if needed. The run count alone does not prove that one tool is cheapest or the only free option.\",\n      \"bullets\": [\n        \"Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.\",\n        \"Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.\",\n        \"Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"You need a simple Form → Welcome Email workflow about 20 times per month with a limited budget. Before selecting a tool, which action is best supported?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.\",\n          \"Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.\",\n          \"Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed.\"\n        ],\n        \"explanation\": \"Requirements determine the choice. Check both Free plans and their limits; pay only if needed. The run count alone does not prove that one tool is cheapest or the only free option.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/automator-m3-l1-tools-landscape.json",
+      "auditItems": [
+        57,
+        122
+      ],
+      "currentSha256": "ece4d9c7e487cddd24ab8cf55f1e81f7bcfdbcc6104549c4ec03593088f0af47",
+      "currentBlob": "040bc2b0032f4a088c9a8505a41e8de224399d0c",
+      "generationSourceSha256": "c2e6722730ae4ed79126640c186945ee762f4c9d209c3e0ebb1d1ef29fee8530",
+      "generationSourceBlob": "0128fcb14a8fac2f304b1953c0f5176f091d15e6",
+      "replacements": [
+        {
+          "field": "sections.2: audit 57,122",
+          "before": "{\n      \"role\": \"الفكرة الأساسية\",\n      \"heading\": \"الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الفكرة الأساسية\",\n      \"contentMarkdown\": \"Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا.\\n\\nMake — توازن: visual واضح، scenarios متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.\\n\\nn8n — أقوى، open-source، self-hosted ممكن. محتاج مجهود أكتر — مناسب لـ workflows كتير أو معقّدة.\\n\\nالقاعدة: اختار حسب حجمك وتعقيدك — مش حسب يوتيوب. التفكير (مُشغّل → خطوات → نتيجة) ثابت في كل أداة.\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"الفكرة الأساسية\",\n      \"heading\": \"الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الفكرة الأساسية\",\n      \"contentMarkdown\": \"Zapier — ربط جاهز؛ راجع المزايا وحدود الخطة المطلوبة. التكلفة حسب الخطة والاستخدام.\\n\\nMake — سيناريوهات مرئية؛ قارن المزايا والحدود والاستخدام بدل ما تفترض إنه أرخص.\\n\\nn8n — الكود متاح بنموذج fair-code؛ الاستضافة عندك حسب الإصدار وشروط الترخيص المطبقة، مش وصف open-source.\\n\\nالقاعدة: اختار حسب مهمتك وحجمك وتعقيدك. قارن خطط Free والمدفوعة والربط المطلوب. تعريف task في Zapier مختلف عن credit في Make؛ ما تفترضش إن كل task يساوي credit.\",\n      \"bullets\": [],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.3: audit 57,122",
+          "before": "{\n      \"role\": \"مثال من الحياة\",\n      \"heading\": \"اختيار بالشهرة vs اختيار بالحجم\",\n      \"subtitle\": \"مثال من الحياة\",\n      \"contentMarkdown\": \"| «Zapier لأنه مشهور» | «Make لأن الحجم متوسط» |\\n\\n| نور فتحت Zapier لـ «فورم → إيميل» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة. | نور استخدمت Make free tier — نفس «فورم → إيميل» — ٣٠ دقيقة setup. وفّرت فلوس وتعلّمت التفكير. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"«Zapier لأنه مشهور»\",\n            \"«Make لأن الحجم متوسط»\"\n          ],\n          \"rows\": [\n            [\n              \"نور فتحت Zapier لـ «فورم → إيميل» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.\",\n              \"نور استخدمت Make free tier — نفس «فورم → إيميل» — ٣٠ دقيقة setup. وفّرت فلوس وتعلّمت التفكير.\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"مثال من الحياة\",\n      \"heading\": \"اختيار بالشهرة vs اختيار بالحجم\",\n      \"subtitle\": \"مثال من الحياة\",\n      \"contentMarkdown\": \"| اختيار بالشهرة | اختيار حسب الاحتياج |\\n|---|---|\\n| مثال افتراضي: نور اختارت خطة مدفوعة بـ٢٠ دولار/شهر لخمس مرات «فورم → إيميل» من غير ما تتأكد إنها محتاجة المزايا المدفوعة. ده اختيار خطة، مش سعر إجباري للمهمة. | نور بتراجع الأول خطتي Free في Zapier وMake حسب الربط والخطوات والتكرار والحجم، وبعدها تقارن المدفوع لو محتاجاه. المثال مش اختبار فعلي لأي ربط أو خطة. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"اختيار بالشهرة\",\n            \"اختيار حسب الاحتياج\"\n          ],\n          \"rows\": [\n            [\n              \"مثال افتراضي: نور اختارت خطة مدفوعة بـ٢٠ دولار/شهر لخمس مرات «فورم → إيميل» من غير ما تتأكد إنها محتاجة المزايا المدفوعة. ده اختيار خطة، مش سعر إجباري للمهمة.\",\n              \"نور بتراجع الأول خطتي Free في Zapier وMake حسب الربط والخطوات والتكرار والحجم، وبعدها تقارن المدفوع لو محتاجاه. المثال مش اختبار فعلي لأي ربط أو خطة.\"\n            ]\n          ]\n        }\n      ]\n    }"
+        },
+        {
+          "field": "sections.7: audit 57,122",
+          "before": "{\n      \"role\": \"تأكيد سريع\",\n      \"heading\": \"سؤال واحد — مش امتحان\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"لسه في البداية، عندك workflow واحد بسيط: «فورم → إيميل ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\\n\\n1. Make — free tier كافي، visual واضح، مناسب للبداية.\\n\\n2. n8n self-hosted — أقوى حتى لو محتاج أسبوع setup.\\n\\n3. Zapier Pro — أغلى بس أشهر.\\n\\nبداية + workflow بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\",\n      \"bullets\": [],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"لسه في البداية، عندك workflow واحد بسيط: «فورم → إيميل ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Make — free tier كافي، visual واضح، مناسب للبداية.\",\n          \"n8n self-hosted — أقوى حتى لو محتاج أسبوع setup.\",\n          \"Zapier Pro — أغلى بس أشهر.\"\n        ],\n        \"explanation\": \"بداية + workflow بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"تأكيد سريع\",\n      \"heading\": \"سؤال واحد — مش امتحان\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"**السؤال:** محتاج workflow بسيط «فورم → إيميل ترحيب» حوالي ٢٠ مرة في الشهر بميزانية محدودة. أنسب تصرف قبل اختيار الأداة؟\\n\\n1. قارن خطتي Free حسب الربط والخطوات والتكرار وتعريف الاستخدام، وبعدها اختار خطة تغطي المطلوب.\\n2. ابدأ بـn8n على استضافة ذاتية لمجرد إن الكود متاح، قبل ما تراجع الإعداد والصيانة.\\n3. اشتري خطة Zapier مدفوعة عشان الاسم مشهور، قبل ما تتأكد إنك محتاج المزايا المدفوعة.\\n\\n**التفسير:** الاحتياج هو اللي يحدد الاختيار. راجع خطتي Free وحدودهما، وادفع لو محتاج. عدد مرات التشغيل لوحده مش دليل إن أداة أرخص دائمًا أو الوحيدة المجانية.\",\n      \"bullets\": [],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"محتاج workflow بسيط «فورم → إيميل ترحيب» حوالي ٢٠ مرة في الشهر بميزانية محدودة. أنسب تصرف قبل اختيار الأداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"قارن خطتي Free حسب الربط والخطوات والتكرار وتعريف الاستخدام، وبعدها اختار خطة تغطي المطلوب.\",\n          \"ابدأ بـn8n على استضافة ذاتية لمجرد إن الكود متاح، قبل ما تراجع الإعداد والصيانة.\",\n          \"اشتري خطة Zapier مدفوعة عشان الاسم مشهور، قبل ما تتأكد إنك محتاج المزايا المدفوعة.\"\n        ],\n        \"explanation\": \"الاحتياج هو اللي يحدد الاختيار. راجع خطتي Free وحدودهما، وادفع لو محتاج. عدد مرات التشغيل لوحده مش دليل إن أداة أرخص دائمًا أو الوحيدة المجانية.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+      "auditItems": [
+        57,
+        122
+      ],
+      "currentSha256": "ffe93b27ec35e2c3f097c6a804d3a7f3f8a3238268e39c480d8f9bd17939240f",
+      "currentBlob": "6c121b80ad6b56f92aac3fe75fa8b92bf9e5637f",
+      "generationSourceSha256": "ccf6c8bb21ce7ba23c55e4629ccc29420adb8a751f1bd263817a5cf10201a173",
+      "generationSourceBlob": "63ce93e8340f11385e1b1b3b8e07ab42a99fb6fd",
+      "replacements": [
+        {
+          "field": "sections.2: audit 57,122",
+          "before": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core idea — الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الأدوات مختلفة — التفكير واحد\",\n      \"contentMarkdown\": \"- **Zapier** — الأسهل، **ربط (Integration)** جاهز كثير، مناسب لـ **مسارات عمل (workflows)** بسيطة وقليلة. أغلى نسبيًا.\\n- **Make** — توازن: مرئي واضح، سيناريوهات متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.\\n- **n8n** — أقوى، مفتوح المصدر، يمكن استضافته ذاتيًا. يحتاج مجهودًا أكبر — مناسب لـ **مسارات عمل** كثيرة أو معقّدة.\\n- **القاعدة:** اختر حسب حجمك وتعقيدك — وليس حسب يوتيوب. التفكير (**مُشغّل → خطوات → نتيجة**) ثابت في كل أداة.\",\n      \"bullets\": [\n        \"**Zapier** — الأسهل، **ربط (Integration)** جاهز كثير، مناسب لـ **مسارات عمل (workflows)** بسيطة وقليلة. أغلى نسبيًا.\",\n        \"**Make** — توازن: مرئي واضح، سيناريوهات متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.\",\n        \"**n8n** — أقوى، مفتوح المصدر، يمكن استضافته ذاتيًا. يحتاج مجهودًا أكبر — مناسب لـ **مسارات عمل** كثيرة أو معقّدة.\",\n        \"**القاعدة:** اختر حسب حجمك وتعقيدك — وليس حسب يوتيوب. التفكير (**مُشغّل → خطوات → نتيجة**) ثابت في كل أداة.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core idea — الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الأدوات مختلفة — التفكير واحد\",\n      \"contentMarkdown\": \"- **Zapier** — ربط جاهز؛ راجع المزايا المطلوبة وحدود الخطة. تعتمد التكلفة على الخطة والاستخدام.\\n- **Make** — سيناريوهات مرئية؛ قارن المزايا والحدود والاستخدام بدل افتراض أنه أقل تكلفة.\\n- **n8n** — الكود متاح بنموذج fair-code؛ تخضع الاستضافة الذاتية للإصدار وشروط الترخيص المطبقة، ولا يوصف هنا بأنه مفتوح المصدر.\\n- **القاعدة:** اختر وفق المهمة والحجم والتعقيد. قارن خطط Free والمدفوعة والربط المطلوب. يختلف تعريف task في Zapier عن credit في Make؛ لا تفترض تساويهما.\",\n      \"bullets\": [\n        \"**Zapier** — ربط جاهز؛ راجع المزايا المطلوبة وحدود الخطة. تعتمد التكلفة على الخطة والاستخدام.\",\n        \"**Make** — سيناريوهات مرئية؛ قارن المزايا والحدود والاستخدام بدل افتراض أنه أقل تكلفة.\",\n        \"**n8n** — الكود متاح بنموذج fair-code؛ تخضع الاستضافة الذاتية للإصدار وشروط الترخيص المطبقة، ولا يوصف هنا بأنه مفتوح المصدر.\",\n        \"**القاعدة:** اختر وفق المهمة والحجم والتعقيد. قارن خطط Free والمدفوعة والربط المطلوب. يختلف تعريف task في Zapier عن credit في Make؛ لا تفترض تساويهما.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.3: audit 57,122",
+          "before": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"Comparison — اختيار بالشهرة vs اختيار بالحجم\",\n      \"subtitle\": \"اختيار بالشهرة vs اختيار بالحجم\",\n      \"contentMarkdown\": \"| «Zapier لأنه مشهور» | «Make لأن الحجم متوسط» |\\n|---------------------|------------------------|\\n| نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة. | نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مالًا وتعلّمت التفكير. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"«Zapier لأنه مشهور»\",\n            \"«Make لأن الحجم متوسط»\"\n          ],\n          \"rows\": [\n            [\n              \"نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.\",\n              \"نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مالًا وتعلّمت التفكير.\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"Comparison — اختيار بالشهرة vs اختيار بالحجم\",\n      \"subtitle\": \"اختيار بالشهرة vs اختيار بالحجم\",\n      \"contentMarkdown\": \"| اختيار بالشهرة | اختيار حسب المتطلبات |\\n|---|---|\\n| مثال افتراضي: اختارت نور خطة مدفوعة بقيمة٢٠ دولارًا شهريًا لخمس مرات «نموذج → بريد» دون فحص الحاجة للمزايا المدفوعة. هذا اختيار خطة وليس سعرًا لازمًا للمهمة. | تفحص نور أولًا خطتي Free في Zapier وMake وفق الربط والخطوات والتكرار والحجم، ثم تقارن المدفوع عند الحاجة. لا يمثل المثال اختبارًا فعليًا لأي ربط أو خطة. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"اختيار بالشهرة\",\n            \"اختيار حسب المتطلبات\"\n          ],\n          \"rows\": [\n            [\n              \"مثال افتراضي: اختارت نور خطة مدفوعة بقيمة٢٠ دولارًا شهريًا لخمس مرات «نموذج → بريد» دون فحص الحاجة للمزايا المدفوعة. هذا اختيار خطة وليس سعرًا لازمًا للمهمة.\",\n              \"تفحص نور أولًا خطتي Free في Zapier وMake وفق الربط والخطوات والتكرار والحجم، ثم تقارن المدفوع عند الحاجة. لا يمثل المثال اختبارًا فعليًا لأي ربط أو خطة.\"\n            ]\n          ]\n        }\n      ]\n    }"
+        },
+        {
+          "field": "sections.6: audit 57,122",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — تأكيد سريع\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"**السؤال:** في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\\n\\nMake — free tier كافٍ، مرئي واضح، مناسب للبداية\\n- **التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\",\n      \"bullets\": [\n        \"Make — free tier كافٍ، مرئي واضح، مناسب للبداية\",\n        \"خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.\",\n        \"إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Make — free tier كافٍ، مرئي واضح، مناسب للبداية\",\n          \"خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.\",\n          \"إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.\"\n        ],\n        \"explanation\": \"بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — تأكيد سريع\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"**السؤال:** تحتاج مسار «نموذج → بريد ترحيب» بسيطًا نحو٢٠ مرة شهريًا بميزانية محدودة. ما التصرف الأنسب قبل اختيار الأداة؟\\n\\n1. قارن خطتي Free وفق الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تلبي المتطلبات.\\n2. ابدأ باستضافة n8n ذاتيًا لمجرد إتاحة الكود، قبل فحص الإعداد والصيانة.\\n3. اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل فحص الحاجة للمزايا المدفوعة.\\n\\n**التفسير:** تحدد المتطلبات الاختيار. افحص خطتي Free وحدودهما وادفع عند الحاجة. لا يثبت عدد التشغيلات وحده أن أداة أقل تكلفة دائمًا أو الوحيدة المجانية.\",\n      \"bullets\": [\n        \"قارن خطتي Free وفق الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تلبي المتطلبات.\",\n        \"ابدأ باستضافة n8n ذاتيًا لمجرد إتاحة الكود، قبل فحص الإعداد والصيانة.\",\n        \"اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل فحص الحاجة للمزايا المدفوعة.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"تحتاج مسار «نموذج → بريد ترحيب» بسيطًا نحو٢٠ مرة شهريًا بميزانية محدودة. ما التصرف الأنسب قبل اختيار الأداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"قارن خطتي Free وفق الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تلبي المتطلبات.\",\n          \"ابدأ باستضافة n8n ذاتيًا لمجرد إتاحة الكود، قبل فحص الإعداد والصيانة.\",\n          \"اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل فحص الحاجة للمزايا المدفوعة.\"\n        ],\n        \"explanation\": \"تحدد المتطلبات الاختيار. افحص خطتي Free وحدودهما وادفع عند الحاجة. لا يثبت عدد التشغيلات وحده أن أداة أقل تكلفة دائمًا أو الوحيدة المجانية.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+      "auditItems": [
+        57,
+        122
+      ],
+      "currentSha256": "88019efb7ae4b6e9a3079dbb0e0411d738cb46c17b9f6eeefe1d7d03f36f801a",
+      "currentBlob": "6590e9490c2aa48c2e4132030c2e68633d300452",
+      "generationSourceSha256": "4642d41fe52eb8fca3a75686446b679cd92fc04d5407758c2ad9e21ffb88f4e1",
+      "generationSourceBlob": "b59c4bd968f837e86aa2c3faad9953eee1fd1e9b",
+      "replacements": [
+        {
+          "field": "sections.2: audit 57,122",
+          "before": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"الفكرة الأساسية — الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الأدوات مختلفة — التفكير واحد\",\n      \"contentMarkdown\": \"- **Zapier** — الأسهل، **ربط (Integration)** جاهز كثير، مناسب لـ **مسارات عمل (workflows)** بسيطة وقليلة. أغلى نسبيًا.\\n- **Make** — توازن: مرئي واضح، سيناريوهات متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.\\n- **n8n** — أقوى، مفتوح المصدر، يمكن استضافته ذاتيًا. يحتاج مجهود أكبر — مناسب لـ **مسارات عمل** كثيرة أو معقّدة.\\n- **القاعدة:** اختر حسب حجمك وتعقيدك — مو حسب يوتيوب. التفكير (**مُشغّل → خطوات → نتيجة**) ثابت في كل أداة.\",\n      \"bullets\": [\n        \"**Zapier** — الأسهل، **ربط (Integration)** جاهز كثير، مناسب لـ **مسارات عمل (workflows)** بسيطة وقليلة. أغلى نسبيًا.\",\n        \"**Make** — توازن: مرئي واضح، سيناريوهات متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.\",\n        \"**n8n** — أقوى، مفتوح المصدر، يمكن استضافته ذاتيًا. يحتاج مجهود أكبر — مناسب لـ **مسارات عمل** كثيرة أو معقّدة.\",\n        \"**القاعدة:** اختر حسب حجمك وتعقيدك — مو حسب يوتيوب. التفكير (**مُشغّل → خطوات → نتيجة**) ثابت في كل أداة.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"الفكرة الأساسية — الأدوات مختلفة — التفكير واحد\",\n      \"subtitle\": \"الأدوات مختلفة — التفكير واحد\",\n      \"contentMarkdown\": \"- **Zapier** — ربط جاهز؛ راجع المزايا المطلوبة وحدود الخطة. التكلفة حسب الخطة والاستخدام.\\n- **Make** — سيناريوهات مرئية؛ قارن المزايا والحدود والاستخدام بدل ما تفترض إنه أرخص.\\n- **n8n** — الكود متاح بنموذج fair-code؛ الاستضافة عندك حسب الإصدار وشروط الترخيص المطبقة، مو وصف مفتوح المصدر.\\n- **القاعدة:** اختر حسب المهمة والحجم والتعقيد. قارن خطط Free والمدفوعة والربط المطلوب. تعريف task في Zapier يختلف عن credit في Make؛ لا تفترض إنهما متساويان.\",\n      \"bullets\": [\n        \"**Zapier** — ربط جاهز؛ راجع المزايا المطلوبة وحدود الخطة. التكلفة حسب الخطة والاستخدام.\",\n        \"**Make** — سيناريوهات مرئية؛ قارن المزايا والحدود والاستخدام بدل ما تفترض إنه أرخص.\",\n        \"**n8n** — الكود متاح بنموذج fair-code؛ الاستضافة عندك حسب الإصدار وشروط الترخيص المطبقة، مو وصف مفتوح المصدر.\",\n        \"**القاعدة:** اختر حسب المهمة والحجم والتعقيد. قارن خطط Free والمدفوعة والربط المطلوب. تعريف task في Zapier يختلف عن credit في Make؛ لا تفترض إنهما متساويان.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.3: audit 57,122",
+          "before": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"المقارنة — اختيار بالشهرة مقابل اختيار بالحجم\",\n      \"subtitle\": \"اختيار بالشهرة مقابل اختيار بالحجم\",\n      \"contentMarkdown\": \"| «Zapier لأنه مشهور» | «Make لأن الحجم متوسط» |\\n|---------------------|------------------------|\\n| نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة. | نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مال وتعلّمت التفكير. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"«Zapier لأنه مشهور»\",\n            \"«Make لأن الحجم متوسط»\"\n          ],\n          \"rows\": [\n            [\n              \"نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.\",\n              \"نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مال وتعلّمت التفكير.\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"Comparison\",\n      \"heading\": \"المقارنة — اختيار بالشهرة مقابل اختيار بالحجم\",\n      \"subtitle\": \"اختيار بالشهرة مقابل اختيار بالحجم\",\n      \"contentMarkdown\": \"| اختيار بالشهرة | اختيار حسب الاحتياج |\\n|---|---|\\n| مثال افتراضي: نور اختارت خطة مدفوعة بـ٢٠ دولارًا في الشهر لخمس مرات «نموذج → بريد» بدون ما تفحص حاجتها للمزايا المدفوعة. هذا اختيار خطة، مو سعر لازم للمهمة. | نور تراجع أولًا خطتي Free في Zapier وMake حسب الربط والخطوات والتكرار والحجم، وبعدها تقارن المدفوع لو احتاجته. المثال مو اختبار فعلي لأي ربط أو خطة. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"اختيار بالشهرة\",\n            \"اختيار حسب الاحتياج\"\n          ],\n          \"rows\": [\n            [\n              \"مثال افتراضي: نور اختارت خطة مدفوعة بـ٢٠ دولارًا في الشهر لخمس مرات «نموذج → بريد» بدون ما تفحص حاجتها للمزايا المدفوعة. هذا اختيار خطة، مو سعر لازم للمهمة.\",\n              \"نور تراجع أولًا خطتي Free في Zapier وMake حسب الربط والخطوات والتكرار والحجم، وبعدها تقارن المدفوع لو احتاجته. المثال مو اختبار فعلي لأي ربط أو خطة.\"\n            ]\n          ]\n        }\n      ]\n    }"
+        },
+        {
+          "field": "sections.6: audit 57,122",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"اختبار — تأكيد سريع\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"**السؤال:** في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\\n\\nMake — free tier كافٍ، مرئي واضح، مناسب للبداية\\n- **التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\",\n      \"bullets\": [\n        \"Make — free tier كافٍ، مرئي واضح، مناسب للبداية\",\n        \"التفسير: بداية + مسار عمل بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Make — free tier كافٍ، مرئي واضح، مناسب للبداية\",\n          \"خيار غير مناسب؛ يتجاهل المعطيات الأساسية في القسم اللي فوق.\",\n          \"إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.\"\n        ],\n        \"explanation\": \"بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"اختبار — تأكيد سريع\",\n      \"subtitle\": \"تأكيد سريع\",\n      \"contentMarkdown\": \"**السؤال:** تحتاج مسار «نموذج → بريد ترحيب» بسيطًا حوالي٢٠ مرة في الشهر بميزانية محدودة. وش أنسب تصرف قبل اختيار الأداة؟\\n\\n1. قارن خطتي Free حسب الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تغطي المطلوب.\\n2. ابدأ باستضافة n8n عندك لمجرد إن الكود متاح، قبل فحص الإعداد والصيانة.\\n3. اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل ما تفحص حاجتك للمزايا المدفوعة.\\n\\n**التفسير:** الاحتياج يحدد الاختيار. راجع خطتي Free وحدودهما وادفع عند الحاجة. عدد التشغيلات لحاله ما يثبت إن أداة أرخص دائمًا أو الوحيدة المجانية.\",\n      \"bullets\": [\n        \"قارن خطتي Free حسب الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تغطي المطلوب.\",\n        \"ابدأ باستضافة n8n عندك لمجرد إن الكود متاح، قبل فحص الإعداد والصيانة.\",\n        \"اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل ما تفحص حاجتك للمزايا المدفوعة.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"تحتاج مسار «نموذج → بريد ترحيب» بسيطًا حوالي٢٠ مرة في الشهر بميزانية محدودة. وش أنسب تصرف قبل اختيار الأداة؟\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"قارن خطتي Free حسب الربط والخطوات والتكرار وتعريف الاستخدام، ثم اختر خطة تغطي المطلوب.\",\n          \"ابدأ باستضافة n8n عندك لمجرد إن الكود متاح، قبل فحص الإعداد والصيانة.\",\n          \"اشترِ خطة Zapier مدفوعة لشهرة الاسم، قبل ما تفحص حاجتك للمزايا المدفوعة.\"\n        ],\n        \"explanation\": \"الاحتياج يحدد الاختيار. راجع خطتي Free وحدودهما وادفع عند الحاجة. عدد التشغيلات لحاله ما يثبت إن أداة أرخص دائمًا أو الوحيدة المجانية.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l3-filters-routers.json",
+      "auditItems": [
+        56,
+        98
+      ],
+      "currentSha256": "f676e06e9a28599f68653786c1ed3700b450b380d5c7db2204bc3e27e23ed966",
+      "currentBlob": "7d1c7395713fa94bf5005b989d39a50634e4b65c",
+      "generationSourceSha256": "17e6b657cf62a44d655bce4421d8fc0bcaad5b71a4fbaffd6fbd180e3a5da482",
+      "generationSourceBlob": "f55b0daf9f2f9c65f75a6a5329f18d005754525f",
+      "replacements": [
+        {
+          "field": "sections.6.contentMarkdown",
+          "before": "\"**Question:** A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\"",
+          "after": "\"**Question:** A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\\n\\nRouter differentiates based on purchase value — two different paths\\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.\""
+        },
+        {
+          "field": "sections.6.quiz.question",
+          "before": "\"A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\"",
+          "after": "\"A customer buys for 5000 EGP or more → special thank-you email. Less than 5000 EGP → regular email. What is the best approach?\""
+        },
+        {
+          "field": "sections.2: audit 98",
+          "before": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core Idea\",\n      \"subtitle\": \"Filter = Gate. Router = Fork\",\n      \"contentMarkdown\": \"- **Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \\\"If a phone number is present → continue.\\\"\\n- **Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.\\n- One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\\n- Start with one clear condition — not 10 branches from day one.\",\n      \"bullets\": [\n        \"**Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \\\"If a phone number is present → continue.\\\"\",\n        \"**Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.\",\n        \"One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\",\n        \"Start with one clear condition — not 10 branches from day one.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Core idea\",\n      \"heading\": \"Core Idea\",\n      \"subtitle\": \"Filter = Gate. Router = Fork\",\n      \"contentMarkdown\": \"- **Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \\\"If a phone number is present → continue.\\\"\\n- **Router:** After the same trigger, a router routes the incoming data to different paths based on conditions. Example: Price → Sales path; Complaint → Support path. The Trigger starts the workflow; the Router chooses routes.\\n- One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\\n- Start with one clear condition — not 10 branches from day one.\",\n      \"bullets\": [\n        \"**Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \\\"If a phone number is present → continue.\\\"\",\n        \"**Router:** After the same trigger, a router routes the incoming data to different paths based on conditions. Example: Price → Sales path; Complaint → Support path. The Trigger starts the workflow; the Router chooses routes.\",\n        \"One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\",\n        \"Start with one clear condition — not 10 branches from day one.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.4: audit 98",
+          "before": "{\n      \"role\": \"Glossary\",\n      \"heading\": \"Glossary\",\n      \"subtitle\": \"Terms for Paths\",\n      \"contentMarkdown\": \"| Term | Meaning | Example |\\n|---------|--------|------|\\n| **Filter** | Gate: Condition met → passes. If not → stops | If there is no email in the form → do not complete registration |\\n| **Router** | Fork: Same as **Trigger**, different paths based on conditions | VIP → special message. New customer → welcome message |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Term\",\n            \"Meaning\",\n            \"Example\"\n          ],\n          \"rows\": [\n            [\n              \"**Filter**\",\n              \"Gate: Condition met → passes. If not → stops.\",\n              \"If there is no email in the form → do not complete registration.\"\n            ],\n            [\n              \"**Router**\",\n              \"Fork: Same as **Trigger**, different paths based on conditions.\",\n              \"VIP → special message. New customer → welcome message.\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"Glossary\",\n      \"heading\": \"Glossary\",\n      \"subtitle\": \"Terms for Paths\",\n      \"contentMarkdown\": \"| Term | Meaning | Example |\\n|---|---|---|\\n| **Filter** | Gate: Condition met → passes. If not → stops. | If there is no email in the form → do not complete registration. |\\n| **Router** | After the same trigger, a router routes the incoming data to different paths based on conditions. | VIP → special message. New customer → welcome message. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Term\",\n            \"Meaning\",\n            \"Example\"\n          ],\n          \"rows\": [\n            [\n              \"**Filter**\",\n              \"Gate: Condition met → passes. If not → stops.\",\n              \"If there is no email in the form → do not complete registration.\"\n            ],\n            [\n              \"**Router**\",\n              \"After the same trigger, a router routes the incoming data to different paths based on conditions.\",\n              \"VIP → special message. New customer → welcome message.\"\n            ]\n          ]\n        }\n      ]\n    }"
         }
       ]
     }

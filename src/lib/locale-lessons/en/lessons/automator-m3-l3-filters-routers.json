@@ -40,10 +40,10 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Filter = Gate. Router = Fork",
-      "contentMarkdown": "- **Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \"If a phone number is present → continue.\"\n- **Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.\n- One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\n- Start with one clear condition — not 10 branches from day one.",
+      "contentMarkdown": "- **Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \"If a phone number is present → continue.\"\n- **Router:** After the same trigger, a router routes the incoming data to different paths based on conditions. Example: Price → Sales path; Complaint → Support path. The Trigger starts the workflow; the Router chooses routes.\n- One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\n- Start with one clear condition — not 10 branches from day one.",
       "bullets": [
         "**Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \"If a phone number is present → continue.\"",
-        "**Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.",
+        "**Router:** After the same trigger, a router routes the incoming data to different paths based on conditions. Example: Price → Sales path; Complaint → Support path. The Trigger starts the workflow; the Router chooses routes.",
         "One if/then condition changes the customer experience — from a general response to a situation-appropriate response.",
         "Start with one clear condition — not 10 branches from day one."
       ],
@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Terms for Paths",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Filter** | Gate: Condition met → passes. If not → stops | If there is no email in the form → do not complete registration |\n| **Router** | Fork: Same as **Trigger**, different paths based on conditions | VIP → special message. New customer → welcome message |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---|---|---|\n| **Filter** | Gate: Condition met → passes. If not → stops. | If there is no email in the form → do not complete registration. |\n| **Router** | After the same trigger, a router routes the incoming data to different paths based on conditions. | VIP → special message. New customer → welcome message. |",
       "bullets": [],
       "tables": [
         {
@@ -91,7 +91,7 @@
             ],
             [
               "**Router**",
-              "Fork: Same as **Trigger**, different paths based on conditions.",
+              "After the same trigger, a router routes the incoming data to different paths based on conditions.",
               "VIP → special message. New customer → welcome message."
             ]
           ]

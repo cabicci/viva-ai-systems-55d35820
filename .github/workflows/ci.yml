@@ -65,7 +65,7 @@ jobs:
           src/lib/__tests__/mission-ai-prompts.test.ts
 
       - name: Restricted lesson inline formatting (isolated renderer)
-        run: bunx vitest run src/components/intro/IntroLessonRenderer.formatting.test.tsx src/components/intro/SystemsViewReadingAid.test.tsx
+        run: bunx vitest run src/components/intro/IntroLessonRenderer.formatting.test.tsx src/components/intro/SystemsViewReadingAid.test.tsx src/components/intro/ToolsVendorReferences.test.tsx
 
       - name: Analytics and optional start localization (mocked clients, no AI calls)
         run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
