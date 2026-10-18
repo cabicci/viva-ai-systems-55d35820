@@ -334,3 +334,10 @@ source: direct owner authorization to continue audited corrections
 scope: customer order/access list loading, successful-empty, failed-read retry and requested-order states
 summary: Distinguish loading and read failures from successful empty lists in four locales. Explain unavailable requested orders, retry reads explicitly, and avoid presenting an unknown entitlement lookup as confirmed paid-wait state. Empty access copy does not establish subscription loss. Existing order commands, authorization and receipt flows are preserved.
 sync_status: Added mocked-query renderer regressions with command non-invocation assertions; CI pending. No actual order read/write, payment, role change, merge or publication.
+## 2026-10-18 — accessible contact validation (item 121)
+
+[roadmap:local-batch-contact-field-errors-20261018]
+source: direct owner authorization to continue audited corrections
+scope: local contact field validation, five-character minimum, field/error association and focus
+summary: Show localized first-name/email/message/phone/consent errors, associate descriptions and invalid state, focus the first invalid field and provide selectable error summary entries. Display the five-character minimum before submission. Preserve uncontrolled field values and keep service-wide failures separate. Existing submit command, CAPTCHA requirements and server validation remain.
+sync_status: Four-locale invalid-form and mocked service-failure tests added; no actual contact submission, CAPTCHA solving, email send, merge or publication.

@@ -1,10 +1,4 @@
-import {
-  useMemo,
-  useRef,
-  useState,
-  type FormEvent,
-  type ReactNode,
-} from "react";
+import { useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { getCountries, type CountryCode } from "libphonenumber-js";
@@ -20,10 +14,7 @@ import {
   normalizePhoneNumber,
   resolvePhoneCountry,
 } from "@/lib/contact-form";
-import {
-  submitContactForm,
-  type ContactSubmitResult,
-} from "@/lib/contact-form.functions";
+import { submitContactForm, type ContactSubmitResult } from "@/lib/contact-form.functions";
 import { contactMailLabels } from "@/lib/contact-form";
 import { trackAcceptedContactOnce } from "@/lib/analytics";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -46,6 +37,9 @@ function resultErrorKey(result: ContactSubmitResult): UiStringKey {
   return "contact.error.service";
 }
 
+type ContactField = "firstName" | "email" | "message" | "phone" | "consentToProcess";
+type FieldErrors = Partial<Record<ContactField, UiStringKey>>;
+
 export function ContactForm() {
   const t = useUiString();
   const { locale, lang, countryCode } = useLocale();
@@ -57,6 +51,8 @@ export function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [errorKey, setErrorKey] = useState<UiStringKey | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const formRef = useRef<HTMLFormElement>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const leadKey = useRef({});
@@ -72,9 +68,7 @@ export function ContactForm() {
         name: displayNames.of(code) ?? code,
         callingCode: getCallingCode(code),
       }))
-      .sort((left, right) =>
-        left.name.localeCompare(right.name, countryLanguage),
-      );
+      .sort((left, right) => left.name.localeCompare(right.name, countryLanguage));
   }, [countryLanguage]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -90,23 +84,17 @@ export function ContactForm() {
     const message = String(data.get("message") ?? "").trim();
     const consentToProcess = data.get("consentToProcess") === "on";
 
-    if (!firstName || !email || message.length < 5) {
-      setErrorKey("contact.error.required");
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setErrorKey("contact.error.email");
-      return;
-    }
-    const phone = rawPhone
-      ? normalizePhoneNumber(rawPhone, selectedCountry)
-      : "";
-    if (rawPhone && !phone) {
-      setErrorKey("contact.error.phone");
-      return;
-    }
-    if (!consentToProcess) {
-      setErrorKey("contact.error.consent");
+    const errors: FieldErrors = {};
+    if (!firstName) errors.firstName = "contact.error.firstName";
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = "contact.error.email";
+    if (message.length < 5) errors.message = "contact.error.messageLength";
+    const phone = rawPhone ? normalizePhoneNumber(rawPhone, selectedCountry) : "";
+    if (rawPhone && !phone) errors.phone = "contact.error.phone";
+    if (!consentToProcess) errors.consentToProcess = "contact.error.consent";
+    setFieldErrors(errors);
+    const firstInvalid = Object.keys(errors)[0];
+    if (firstInvalid) {
+      formRef.current?.querySelector<HTMLElement>(`[name="${firstInvalid}"]`)?.focus();
       return;
     }
     if (!turnstileToken) {
@@ -118,8 +106,7 @@ export function ContactForm() {
     try {
       const result = await submit({
         data: {
-          requestType:
-            data.get("requestType") === "sales" ? "sales" : "support",
+          requestType: data.get("requestType") === "sales" ? "sales" : "support",
           firstName,
           lastName,
           email,
@@ -134,7 +121,12 @@ export function ContactForm() {
         },
       });
       if (!result.success) {
-        setErrorKey(resultErrorKey(result));
+        if (result.error === "invalid_phone") {
+          setFieldErrors({ phone: "contact.error.phone" });
+          formRef.current?.querySelector<HTMLElement>('[name="phone"]')?.focus();
+        } else {
+          setErrorKey(resultErrorKey(result));
+        }
         setTurnstileToken("");
         setTurnstileResetKey((value) => value + 1);
         return;
@@ -151,6 +143,15 @@ export function ContactForm() {
     }
   }
 
+  function fieldAttributes(field: ContactField, id: string, helper?: string) {
+    return {
+      "aria-invalid": fieldErrors[field] ? true : undefined,
+      "aria-describedby":
+        [helper, fieldErrors[field] ? id + "-error" : undefined].filter(Boolean).join(" ") ||
+        undefined,
+    };
+  }
+
   if (submitted) {
     return (
       <div
@@ -160,12 +161,8 @@ export function ContactForm() {
         <span className="mb-6 grid h-16 w-16 place-items-center rounded-2xl bg-emerald-100 text-emerald-700">
           <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
         </span>
-        <h2 className="text-2xl font-black md:text-3xl">
-          {t("contact.success.title")}
-        </h2>
-        <p className="mt-3 max-w-md leading-7 text-muted-foreground">
-          {t("contact.success.body")}
-        </p>
+        <h2 className="text-2xl font-black md:text-3xl">{t("contact.success.title")}</h2>
+        <p className="mt-3 max-w-md leading-7 text-muted-foreground">{t("contact.success.body")}</p>
       </div>
     );
   }
@@ -174,20 +171,20 @@ export function ContactForm() {
     <form
       className="rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-[0_24px_80px_-36px_rgba(60,46,124,0.42)] backdrop-blur md:p-8"
       onSubmit={handleSubmit}
+      ref={formRef}
+      onChange={(event) => {
+        const field = (event.target as HTMLInputElement).name as ContactField;
+        if (fieldErrors[field]) setFieldErrors((previous) => ({ ...previous, [field]: undefined }));
+      }}
       noValidate
     >
       <div className="mb-7">
         <h2 className="text-2xl font-black">{t("contact.form.title")}</h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          {t("contact.form.subtitle")}
-        </p>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">{t("contact.form.subtitle")}</p>
       </div>
 
       <div className="mb-5">
-        <Field
-          label={contactMailLabels[locale][0]}
-          htmlFor="contact-request-type"
-        >
+        <Field label={contactMailLabels[locale][0]} htmlFor="contact-request-type">
           <select
             id="contact-request-type"
             name="requestType"
@@ -204,9 +201,11 @@ export function ContactForm() {
         <Field
           label={t("contact.field.firstName")}
           htmlFor="contact-first-name"
+          error={fieldErrors.firstName ? t(fieldErrors.firstName!) : undefined}
         >
           <Input
             id="contact-first-name"
+            {...fieldAttributes("firstName", "contact-first-name")}
             name="firstName"
             autoComplete="given-name"
             required
@@ -217,19 +216,19 @@ export function ContactForm() {
           label={`${t("contact.field.lastName")} (${t("contact.optional")})`}
           htmlFor="contact-last-name"
         >
-          <Input
-            id="contact-last-name"
-            name="lastName"
-            autoComplete="family-name"
-            maxLength={80}
-          />
+          <Input id="contact-last-name" name="lastName" autoComplete="family-name" maxLength={80} />
         </Field>
       </div>
 
       <div className="mt-5">
-        <Field label={t("contact.field.email")} htmlFor="contact-email">
+        <Field
+          label={t("contact.field.email")}
+          htmlFor="contact-email"
+          error={fieldErrors.email ? t(fieldErrors.email!) : undefined}
+        >
           <Input
             id="contact-email"
+            {...fieldAttributes("email", "contact-email")}
             name="email"
             type="email"
             autoComplete="email"
@@ -246,12 +245,7 @@ export function ContactForm() {
           label={`${t("contact.field.company")} (${t("contact.optional")})`}
           htmlFor="contact-company"
         >
-          <Input
-            id="contact-company"
-            name="company"
-            autoComplete="organization"
-            maxLength={160}
-          />
+          <Input id="contact-company" name="company" autoComplete="organization" maxLength={160} />
         </Field>
       </div>
 
@@ -262,15 +256,12 @@ export function ContactForm() {
             name="country"
             value={selectedCountry}
             required
-            onChange={(event) =>
-              setSelectedCountry(event.target.value as CountryCode)
-            }
+            onChange={(event) => setSelectedCountry(event.target.value as CountryCode)}
             className="flex h-10 w-full rounded-md border border-input bg-white px-3 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-primary/30"
           >
             {countries.map((country) => (
               <option key={country.code} value={country.code}>
-                {countryFlag(country.code)} {country.name} (
-                {country.callingCode})
+                {countryFlag(country.code)} {country.name} ({country.callingCode})
               </option>
             ))}
           </select>
@@ -278,6 +269,7 @@ export function ContactForm() {
         <Field
           label={`${t("contact.field.phone")} (${t("contact.optional")})`}
           htmlFor="contact-phone"
+          error={fieldErrors.phone ? t(fieldErrors.phone!) : undefined}
         >
           <div className="relative" dir="ltr">
             <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center border-r border-border pr-3 text-sm font-semibold text-foreground/70">
@@ -285,6 +277,7 @@ export function ContactForm() {
             </span>
             <Input
               id="contact-phone"
+              {...fieldAttributes("phone", "contact-phone")}
               name="phone"
               type="tel"
               autoComplete="tel-national"
@@ -296,16 +289,20 @@ export function ContactForm() {
         </Field>
       </div>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        {isCountryCode(countryCode)
-          ? t("contact.phone.detected")
-          : t("contact.phone.helper")}
+        {isCountryCode(countryCode) ? t("contact.phone.detected") : t("contact.phone.helper")}
       </p>
 
       <div className="mt-5">
-        <Field label={t("contact.field.message")} htmlFor="contact-message">
+        <Field
+          label={t("contact.field.message")}
+          htmlFor="contact-message"
+          error={fieldErrors.message ? t(fieldErrors.message!) : undefined}
+        >
           <Textarea
             id="contact-message"
+            {...fieldAttributes("message", "contact-message", "contact-message-hint")}
             name="message"
+            minLength={5}
             rows={6}
             required
             maxLength={4_000}
@@ -313,8 +310,14 @@ export function ContactForm() {
         </Field>
       </div>
 
+      <p id="contact-message-hint" className="mt-2 text-xs text-muted-foreground">
+        {t("contact.message.minimum")}
+      </p>
+
       <label className="mt-6 flex cursor-pointer items-start gap-3 rounded-2xl bg-muted/45 p-4 text-sm leading-6">
         <input
+          id="contact-consent"
+          {...fieldAttributes("consentToProcess", "contact-consent")}
           name="consentToProcess"
           type="checkbox"
           required
@@ -332,6 +335,12 @@ export function ContactForm() {
         </span>
       </label>
 
+      {fieldErrors.consentToProcess && (
+        <p id="contact-consent-error" className="text-sm text-destructive">
+          {t(fieldErrors.consentToProcess)}
+        </p>
+      )}
+
       <div className="mt-6 overflow-hidden rounded-xl">
         <TurnstileWidget
           key={locale}
@@ -344,6 +353,31 @@ export function ContactForm() {
         />
       </div>
 
+      {Object.values(fieldErrors).some(Boolean) && (
+        <div
+          role="alert"
+          className="mt-4 rounded-xl border border-destructive/20 p-4 text-sm text-destructive"
+        >
+          <p className="font-semibold">{t("contact.error.summary")}</p>
+          <ul className="list-disc ps-5">
+            {Object.entries(fieldErrors)
+              .filter(([, key]) => key)
+              .map(([field, key]) => (
+                <li key={field}>
+                  <button
+                    type="button"
+                    className="underline"
+                    onClick={() =>
+                      formRef.current?.querySelector<HTMLElement>(`[name="${field}"]`)?.focus()
+                    }
+                  >
+                    {t(key!)}
+                  </button>
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
       {errorKey ? (
         <p
           className="mt-4 rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-sm font-medium text-destructive"
@@ -353,12 +387,7 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button
-        type="submit"
-        size="lg"
-        className="mt-6 h-12 w-full rounded-xl"
-        disabled={submitting}
-      >
+      <Button type="submit" size="lg" className="mt-6 h-12 w-full rounded-xl" disabled={submitting}>
         {submitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
@@ -379,7 +408,9 @@ function Field({
   label,
   htmlFor,
   children,
+  error,
 }: {
+  error?: string;
   label: string;
   htmlFor: string;
   children: ReactNode;
@@ -390,6 +421,11 @@ function Field({
         {label}
       </label>
       {children}
+      {error && (
+        <p id={htmlFor + "-error"} className="text-sm text-destructive">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
