@@ -97,7 +97,6 @@ function StrictLocaleVideoSlot({
           <PlayCircle className="h-3.5 w-3.5" /> {caption}
         </figcaption>
       ) : null}
-      <SystemsViewReadingAid cellId={visual.cellId} url={visual.url} />
     </figure>
   );
 }
@@ -277,6 +276,7 @@ function ContextualLessonVisual({
           ) : null}
         </figcaption>
       ) : null}
+      <SystemsViewReadingAid cellId={visual.cellId} url={visual.url} />
     </figure>
   );
 }
