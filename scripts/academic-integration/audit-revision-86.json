@@ -1,0 +1,46 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    86
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 86,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "4e16eb823ccf4be0d503873f5ccd9cf8846ac49634b9d12abda9ea5f65fcfd23",
+      "afterSha256": "45ccc913d3ceb6f8a23d13042874ffcc60250cf7367b105c5225a8719887072e",
+      "changedFields": [
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "**Step 1: Formulate the Value Proposition.** The service helps university students save time and avoid stress by proactively checking their print files for errors, ensuring a perfect print on the first attempt and eliminating costly reworks and delays.",
+          "after": "**Step1: Formulate the Value Proposition.** Help students reduce common file errors, rework and waiting through early checks within a declared scope. Test the effect in a limited pilot; do not promise a perfect first print or the elimination of every error and delay."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "**Step 3: Add Assumptions and Tests for Key Relationships.** For 'Online submission portal' (Channel), assume students prefer digital submission; test by surveying students. For 'Specialized software' (Resource), assume it can automate most checks; test by piloting with a sample of diverse student files. For 'Per-page fee' (Revenue), assume students will pay a small premium for error-free prints; test by offering a trial period.",
+          "after": "**Step 3: Add Assumptions and Tests for Key Relationships.** For 'Online submission portal' (Channel), assume students prefer digital submission; test by surveying students. For 'Specialized software' (Resource), assume it can automate most checks; test by piloting with a sample of diverse student files. For 'Per-page fee' (Revenue), assume students will pay a small premium for the scoped checking service; test by offering a trial period."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "**Step 4: Identify an Inconsistency.** Upon review, the value proposition promises 'proactively checking files' and 'eliminating costly reworks.' However, if the 'file checking' is primarily manual and time-consuming, it might contradict the 'eliminating delays' part of the value proposition, especially during peak periods. Manual checking could introduce new delays.",
+          "after": "**Step4: Identify an Inconsistency.** Early checking aims to reduce rework and waiting, but manual checking can add a queue during peak demand. A promise to eliminate every delay or rework case would conflict with that operational limit; define scope, capacity and realistic turnaround before promising a benefit."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "**Step 5: Repair the Inconsistency.** To resolve the conflict between manual checking and speed, the business model needs adjustment. The 'Key Resources' should explicitly include 'automated file analysis software' to handle common checks quickly. 'Key Activities' would then shift to 'automated initial checks' followed by 'manual review of flagged issues,' ensuring both speed and accuracy. This change impacts 'Cost Structure' (software acquisition) but reinforces the value proposition.",
+          "after": "**Step5: Repair and Test the Inconsistency.** Pilot automated checks for supported common issues followed by manual review of flagged or unsupported files. Automation speed and coverage are assumptions to test, not guarantees of accuracy. Measure file errors, rework, review time and waiting against a consistent baseline, then revise scope, resources and turnaround before scaling."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

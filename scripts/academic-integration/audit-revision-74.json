@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    74
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 74,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "4ddbb9b4adca1b69ac267cf8061eb54a8142cbdd4d51dcd30496c020b2905170",
+      "afterSha256": "d2b0b60404086b1d7c9b684be0eff92f33c7a5fc7020e5d4499534bdab1bd168",
+      "changedFields": [
+        {
+          "path": "quiz.4.question",
+          "beforeExists": true,
+          "before": "A new teaching method is implemented in one classroom, while another classroom continues with the old method. Both classes are taught by the same teacher. If the new method class performs better, what is a potential confounding variable?",
+          "after": "Two classes have equal prior student attainment, class size and teaching time. The same teacher uses a new method in one and the old method in the other, but explicitly shows greater enthusiasm and effort with the new method. If that class performs better, which listed factor remains uncontrolled?"
+        },
+        {
+          "path": "quiz.4.explanation",
+          "beforeExists": true,
+          "before": "The teacher's enthusiasm for the new method could unconsciously influence their teaching style, effort, or interaction with students in that specific class, leading to better performance regardless of the method's inherent effectiveness. This 'experimenter effect' acts as a confounding variable. While other factors might also be relevant, the teacher's differential enthusiasm is a direct and common confounding factor in such scenarios.",
+          "after": "Differential teacher enthusiasm and effort is the remaining uncontrolled factor in this stated scenario, so improvement cannot be attributed solely to the method. Prior attainment, class size and timing are held equal here; they can be confounders in other scenarios and are not generally irrelevant."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

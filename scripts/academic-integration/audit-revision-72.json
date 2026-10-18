@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    72
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 72,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "260a0abf9953ccc8faaaabafc854b0dc3da7061a02072ec2c3384b02232a3d5c",
+      "afterSha256": "d85de7ab59a13cffcb5ce46ec14f9ab7afda02d5fe893edd04d2ecaaf5391b22",
+      "changedFields": [
+        {
+          "path": "quiz.3.options.1",
+          "beforeExists": true,
+          "before": "The degree to which the experiment measures what it intends to measure.",
+          "after": "The extent to which observed changes can be attributed to the intervention rather than other factors."
+        },
+        {
+          "path": "quiz.3.explanation",
+          "beforeExists": true,
+          "before": "Internal validity refers to whether the observed changes in an experiment are truly caused by the intervention being tested, meaning the experiment accurately measures the intended cause-and-effect relationship. Generalizability relates to external validity, consistency to reliability, and replication to reproducibility.",
+          "after": "Internal validity concerns causal attribution: whether the intervention rather than other factors explains the observed change. Measuring the intended construct is a different measurement-quality question; consistency is reliability, and generalizing to other populations is external validity. The correct option remains1."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

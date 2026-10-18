@@ -1,0 +1,28 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    81
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 81,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "346594c64878e91ddf00a6a720c1ac96e2ecdd211954dc8d4a2207833e520413",
+      "afterSha256": "c88b60c34d9168c99bf9a22cd62c95020cb53933c361e665ae65cb644e5536e9",
+      "changedFields": [
+        {
+          "path": "faq.0.answer",
+          "beforeExists": true,
+          "before": "In a truly sequential process, there can only be one primary bottleneck at any given time, which is the step with the absolute lowest capacity. However, if you improve that bottleneck, the next slowest step will then become the new bottleneck. It's a continuous process of identification and improvement.",
+          "after": "A sequential process can have one bottleneck stage or several stages tied at the lowest capacity. With capacities8,8 and12 orders per hour, overall output cannot exceed8 per hour. Improving only one8-per-hour stage leaves the other limiting output to8; both tied constraints must be addressed before that limit rises. Reassess the limiting stages after each change."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

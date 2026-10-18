@@ -1,0 +1,46 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    73
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 73,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "d85de7ab59a13cffcb5ce46ec14f9ab7afda02d5fe893edd04d2ecaaf5391b22",
+      "afterSha256": "4ddbb9b4adca1b69ac267cf8061eb54a8142cbdd4d51dcd30496c020b2905170",
+      "changedFields": [
+        {
+          "path": "sections.1.text",
+          "beforeExists": true,
+          "before": "Bias is a systematic error that can skew your results in a particular direction, making them inaccurate. One common source is 'selection bias,' where the participants in your experiment aren't representative of the larger group you want to understand. If you only test a new app feature on tech-savvy young adults, you can't assume it will be popular with all age groups. Another is 'timing bias,' where the period an experiment runs influences the outcome. For instance, testing a new ice cream flavor during a heatwave might show artificially high demand compared to testing it in winter. 'Observer bias' occurs when the expectations of the experimenter unconsciously influence the results, perhaps by interpreting ambiguous data in a way that supports their hypothesis. Finally, 'simultaneous changes' (also known as confounding variables) are when multiple things change at once, making it impossible to isolate the effect of your specific intervention. Identifying and mitigating these biases is key to drawing reliable conclusions.",
+          "after": "Bias is a systematic error that can skew your results in a particular direction, making them inaccurate. One common source is 'selection bias,' where the participants in your experiment aren't representative of the larger group you want to understand. If you only test a new app feature on tech-savvy young adults, you can't assume it will be popular with all age groups. Another is 'timing bias,' where the period an experiment runs influences the outcome. For instance, testing a new ice cream flavor during a heatwave might show artificially high demand compared to testing it in winter. 'Observer bias' occurs when the expectations of the experimenter unconsciously influence the results, perhaps by interpreting ambiguous data in a way that supports their hypothesis. Finally, 'simultaneous changes' (also known as confounding variables) are when multiple things change at once, making it impossible to isolate the effect of your specific intervention. Identifying and mitigating these biases is key to drawing reliable conclusions. Distinguish sample selection from treatment allocation: selecting participants determines how well the sample fits the target population; random assignment allocates those already selected between alternatives. Assignment does not repair an unrepresentative sample or guarantee broader generalization."
+        },
+        {
+          "path": "sections.2.text",
+          "beforeExists": true,
+          "before": "Minimizing bias requires careful planning. First, 'random assignment' is a powerful tool against selection bias. This means participants are assigned to different groups (e.g., one receiving the intervention, one not) purely by chance, like flipping a coin. This helps ensure groups are similar on average, so any differences in outcomes are more likely due to your intervention. Second, 'consistent measurement' across all groups is vital. Use the same tools, procedures, and observers for everyone to avoid 'measurement bias.' Third, consider 'blinding' where possible. In a 'single-blind' experiment, participants don't know if they're receiving the intervention or a control. In a 'double-blind' experiment, neither participants nor the researchers interacting with them know, which helps combat observer bias. Lastly, 'controlling for variables' means trying to keep everything else constant except for the one thing you're testing. If you're testing a new advertising campaign, make sure pricing, product availability, and competitor actions remain stable during the test period.",
+          "after": "Minimizing bias requires careful planning. First, select a sample suitable for the target population and state its coverage limits. Separately, use random assignment within that selected sample to reduce systematic differences between comparison groups. This means participants are assigned to different groups (e.g., one receiving the intervention, one not) purely by chance, like flipping a coin. This balances groups on average and supports attribution within the sample; it neither guarantees identical groups nor makes the sample representative of every customer. Second, 'consistent measurement' across all groups is vital. Use the same tools, procedures, and observers for everyone to avoid 'measurement bias.' Third, consider 'blinding' where possible. In a 'single-blind' experiment, participants don't know if they're receiving the intervention or a control. In a 'double-blind' experiment, neither participants nor the researchers interacting with them know, which helps combat observer bias. Lastly, 'controlling for variables' means trying to keep everything else constant except for the one thing you're testing. If you're testing a new advertising campaign, make sure pricing, product availability, and competitor actions remain stable during the test period."
+        },
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "To minimize selection bias when comparing two different marketing emails, what is the best approach?",
+          "after": "When comparing two marketing emails within the current customer list, which approach best reduces systematic differences between the two comparison groups?"
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "Randomly dividing the customer list ensures that, on average, both groups are similar in their characteristics (e.g., demographics, past purchasing behavior). This minimizes selection bias, making it more likely that any difference in response is due to the email content itself. The other options introduce systematic differences between the groups (city, new vs. existing customers, or timing effects on the same customers), which would confound the results.",
+          "after": "Randomly splitting the current customer list balances the comparison groups on average, supporting attribution of response differences to the email under the test's other conditions. It does not guarantee exact balance or that this customer list represents all current or potential customers. City, new/existing status and different timing can otherwise differ systematically between the alternatives."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

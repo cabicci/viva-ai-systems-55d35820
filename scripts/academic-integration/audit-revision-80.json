@@ -1,0 +1,28 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    80
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 80,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L06",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "f89d39c9d1730265992a25964583e3dd26fada2ef1ce85b815b8b707767b72a7",
+      "afterSha256": "437ee6195ada80ee56af76eb814373f24deb1ab85a32ebd74ba6bcfde208b416",
+      "changedFields": [
+        {
+          "path": "readingVisuals.2.columns.2",
+          "beforeExists": true,
+          "before": "التكاليف الثابتة (900 جنيه)",
+          "after": "صافي الربح = إجمالي المساهمة −900 جنيه"
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

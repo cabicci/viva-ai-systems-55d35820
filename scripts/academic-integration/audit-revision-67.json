@@ -1,0 +1,58 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    67
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 67,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M01-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "b68a28b7d13f60c8fe8f467857333a47288c691e2dfdf2538d4c47f56cd90a2f",
+      "afterSha256": "b40b4153c6cc4e740288ed0d56d826e2f1021030591c56467d21c87587aaaa99",
+      "changedFields": [
+        {
+          "path": "example.text",
+          "beforeExists": true,
+          "before": "A fictional scenario: The Sales team for 'QuickPrint Services' just secured a large order for 30 custom brochures, promising delivery by the end of today. However, the Operations manager knows that the printing machines and staff can only realistically produce 20 such orders in a single day, given current commitments. This creates a direct conflict between the sales promise and operational capacity. Simply increasing advertising won't solve the immediate delivery gap; it would only bring in more orders that can't be fulfilled.",
+          "after": "A fictional scenario: The Sales team for 'QuickPrint Services' just secured a job for 30 custom booklets, promising delivery by the end of today. However, the Operations manager knows that the printing machines and staff can only realistically produce 20 booklets in a single day, given current commitments. This creates a direct conflict between the sales promise and operational capacity. Simply increasing advertising won't solve the immediate delivery gap; it would only bring in more booklets that can't be fulfilled."
+        },
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "How can QuickPrint Services resolve the immediate conflict of promising 30 orders when only 20 can be delivered today, while minimizing negative impact?",
+          "after": "How can QuickPrint Services resolve the immediate conflict of promising 30 booklets when only 20 can be delivered today, while minimizing negative impact?"
+        },
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "**Step 1: Identify the Gap and Root Cause.** The gap is 10 orders (30 promised - 20 capacity). The root cause is a lack of real-time capacity information sharing between Sales and Operations before the promise was made. Sales made a commitment without verifying if Operations could deliver.",
+          "after": "**Step 1: Identify the Gap and Root Cause.** The gap is 10 booklets (30 promised - 20 capacity). The root cause is a lack of real-time capacity information sharing between Sales and Operations before the promise was made. Sales made a commitment without verifying if Operations could deliver."
+        },
+        {
+          "path": "example.steps.1",
+          "beforeExists": true,
+          "before": "**Step 2: Explore Immediate Options.** Two primary options emerge: \n    a) Renegotiate the delivery date with the customer for some or all orders. \n    b) Increase operational capacity for today. Increasing capacity might involve overtime for staff, bringing in temporary help, or using a backup printer (if available and verified).",
+          "after": "**Step 2: Explore Immediate Options.** Two primary options emerge: \n    a) Renegotiate the delivery date with the customer for some or all booklets. \n    b) Increase operational capacity for today. Increasing capacity might involve overtime for staff, bringing in temporary help, or using a backup printer (if available and verified)."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "**Step 4: Evaluate Option B: Increase Capacity.** \n    *   **Customer Impact:** Positive, as the original promise is met. \n    *   **Cost Impact:** High. Overtime pay, potential rush fees for materials, or costs for temporary staff. This needs to be calculated precisely to ensure profitability isn't eroded. For example, if overtime costs an extra $500 and the profit on 10 orders is $300, it's a net loss. \n    *   **Capacity Impact:** Strains existing resources, potentially leading to burnout or quality issues if rushed. Requires verification that extra capacity (e.g., staff, machines) is genuinely available and reliable for today.",
+          "after": "**Step 4: Evaluate Option B: Increase Capacity.** \n    *   **Customer Impact:** Positive, as the original promise is met. \n    *   **Cost Impact:** High. Overtime pay, potential rush fees for materials, or costs for temporary staff. This needs to be calculated precisely to ensure profitability isn't eroded. For example, if overtime costs an extra $500 and the profit on 10 booklets is $300, it's a net loss. \n    *   **Capacity Impact:** Strains existing resources, potentially leading to burnout or quality issues if rushed. Requires verification that extra capacity (e.g., staff, machines) is genuinely available and reliable for today."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "**Step 5: Make a Decision and Implement.** Based on the evaluation, QuickPrint Services decides to contact the customer immediately. They explain the situation transparently, offer to deliver 20 orders today and the remaining 10 tomorrow morning with a 10% discount on the delayed portion. This balances customer satisfaction with cost control and avoids overstraining Operations. Simultaneously, they initiate a process change: Sales must now check a real-time capacity dashboard before confirming large orders.",
+          "after": "**Step 5: Make a Decision and Implement.** Based on the evaluation, QuickPrint Services decides to contact the customer immediately. They explain the situation transparently, offer to deliver 20 booklets today and the remaining 10 tomorrow morning with a 10% discount on the delayed portion. This balances customer satisfaction with cost control and avoids overstraining Operations. Simultaneously, they initiate a process change: Sales must now check a real-time capacity dashboard before confirming large print jobs."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

@@ -1,0 +1,40 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    71
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 71,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L08",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "6aece97e3e7061f15742e688e42cf69a60f32a58243fd532332bf13560c3a236",
+      "afterSha256": "3a1d6f38443562ef8a9d8fef355c034006921bf5f361879743b97f2eef68db63",
+      "changedFields": [
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "Alex first classifies the claim: 'Implementing the Smart Office system will reduce our monthly energy costs by 25% across all departments.' This is a **calculation** based on an **assumption** about the system's effectiveness and a **decision** to implement it. The 25% reduction is a calculated projection, but the certainty of it applying 'across all departments' is an assumption.",
+          "after": "Classify the25% as an external vendor claim from a case study in another industry, not an internally calculated or verified saving. Applying it across this business's departments is an untested assumption."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "He formulates a more accurate and defensible claim. Instead of a blanket statement, he decides to say: 'Based on vendor case studies, the Smart Office system has demonstrated potential for up to a 25% reduction in energy costs in similar installations. We project a potential 15-20% reduction for our facility, pending internal validation.' He lowers the percentage to be more conservative and adds a crucial caveat.",
+          "after": "Use an evidence-bounded claim: 'The vendor reports a25% saving in a case study in another industry. Our own savings are unknown; we have not established comparability or run an internal comparative trial.' A smaller precautionary percentage would still need a source or calculation, so do not invent a15–20% forecast."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Finally, Alex defines the next test. To address the assumption and validate the projection, he adds to his plan: 'Our next step is to implement the Smart Office system in a pilot department for three months to collect actual energy consumption data and validate the projected savings before a full-scale rollout.' This shows a clear path to verify the claim and mitigate risk.",
+          "after": "Plan a limited three-month comparative pilot before scaling. Define a consistent energy-use/cost baseline, comparable periods and conditions, the comparison method and measurement limits; account for occupancy, weather or price changes where relevant. Measure the local result and uncertainty before making a savings claim or rollout decision."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

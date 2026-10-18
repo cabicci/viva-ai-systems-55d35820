@@ -1,0 +1,244 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    66,
+    68,
+    69,
+    71,
+    72,
+    81,
+    84,
+    85,
+    86
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "review": "Candidate review removes a numeric answer-key statement from learner explanation and polishes spacing in newly revised fields only; earlier receipt bytes remain immutable.",
+  "changes": [
+    {
+      "item": 66,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "d36282979e2ea753c47b721cd39214ad85ba7e3d491f6f9584c32c620acc693c",
+      "afterSha256": "e632a09e7c5802f7408cd6b957ceb7a48b83e0c0e5cbab4038fb64f2060804e1",
+      "changedFields": [
+        {
+          "path": "example.text",
+          "beforeExists": true,
+          "before": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance? The stated20-minute baseline and15-minute new average measure first-pass processing only; they exclude additional rework. For the calculation below, assume exactly20 additional minutes per rework order.",
+          "after": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance? The stated 20-minute baseline and 15-minute new average measure first-pass processing only; they exclude additional rework. For the calculation below, assume exactly 20 additional minutes per rework order."
+        },
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "Under the stated first-pass and20-minute additional rework assumptions, total time saves380 minutes per100 orders, while rework quality worsens from2% to8%. The overall decision remains conditional on an explicit quality threshold and actual rework and other costs; this calculation alone does not justify wider rollout.",
+          "after": "Under the stated first-pass and 20-minute additional rework assumptions, total time saves 380 minutes per 100 orders, while rework quality worsens from 2% to 8%. The overall decision remains conditional on an explicit quality threshold and actual rework and other costs; this calculation alone does not justify wider rollout."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "Analyze quality and time separately: first-pass time falls by5 minutes per order, while rework rises from2 to8 per100 orders. Quality worsens. The effect on total time must include rework, rather than assuming the extra work cancels every saving.",
+          "after": "Analyze quality and time separately: first-pass time falls by 5 minutes per order, while rework rises from 2 to 8 per 100 orders. Quality worsens. The effect on total time must include rework, rather than assuming the extra work cancels every saving."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Calculate total time for100 orders, assuming20 additional minutes per rework: before =100×20 +2×20 =2040 minutes; after =100×15 +8×20 =1660 minutes. The stated assumptions imply a saving of380 minutes per100 orders. Measure actual rework time and costs before relying on this estimate.",
+          "after": "Calculate total time for 100 orders, assuming 20 additional minutes per rework: before =100×20 +2×20 =2040 minutes; after =100×15 +8×20 =1660 minutes. The stated assumptions imply a saving of 380 minutes per 100 orders. Measure actual rework time and costs before relying on this estimate."
+        }
+      ]
+    },
+    {
+      "item": 68,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "73c8ad4465f16cb3554721abfb630ca437a90c6bd83ec6cfbe6263821213fb0d",
+      "afterSha256": "71ff1c0de1cc7296a1702177f139b4550e46ea1182a55d86edb44987d450d2fd",
+      "changedFields": [
+        {
+          "path": "sections.4.text",
+          "beforeExists": true,
+          "before": "أحد الأخطاء الشائعة عند قياس أداء القنوات هو استخدام المقام الخاطئ عند حساب نسب التحويل. نسبة التحويل هي عدد العملاء الذين أكملوا إجراءً معينًا مقسومًا على العدد الإجمالي للعملاء الذين بدأوا تلك المرحلة. على سبيل المثال، إذا كان لدينا 100 زيارة لموقع إلكتروني، ونتج عنها 20 استفسارًا، و5 طلبات، فإن نسبة التحويل من الزيارة إلى الطلب هي 5% (5 طلبات ÷ 100 زيارة). بينما نسبة التحويل من الاستفسار إلى الطلب هي 25% (5 طلبات ÷ 20 استفسارًا). استخدام مقام مختلف يغير معنى النسبة بشكل جذري، ولا يعكس أداء الخدمة نفسه بشكل خاطئ. المقام يمثل بداية الانتقال اللي تسمّيه، مو لازم المرحلة السابقة مباشرة: من الزيارة إلى الطلب نحسب5 ÷100 =5%، ومن الاستفسار إلى الطلب نحسب5 ÷20 =25%. النسبتان صحيحتان لمعنيين مختلفين، بشرط نفس المجموعة والفترة وتعريف الوحدة. قبل المقارنة، حدّد هل تقيس أشخاصًا فريدين أو زيارات متكررة، وهل الطلبات تخص نفس الفترة ونفس المجموعة. اختلاف تعريف المقام يغيّر النسبة، حتى لو ما تغيّرت تجربة العميل نفسها.",
+          "after": "أحد الأخطاء الشائعة عند قياس أداء القنوات هو استخدام المقام الخاطئ عند حساب نسب التحويل. نسبة التحويل هي عدد العملاء الذين أكملوا إجراءً معينًا مقسومًا على العدد الإجمالي للعملاء الذين بدأوا تلك المرحلة. على سبيل المثال، إذا كان لدينا 100 زيارة لموقع إلكتروني، ونتج عنها 20 استفسارًا، و 5 طلبات، فإن نسبة التحويل من الزيارة إلى الطلب هي 5% (5 طلبات ÷ 100 زيارة). بينما نسبة التحويل من الاستفسار إلى الطلب هي 25% (5 طلبات ÷ 20 استفسارًا). استخدام مقام مختلف يغير معنى النسبة بشكل جذري، ولا يعكس أداء الخدمة نفسه بشكل خاطئ. المقام يمثل بداية الانتقال اللي تسمّيه، مو لازم المرحلة السابقة مباشرة: من الزيارة إلى الطلب نحسب 5 ÷100 =5%، ومن الاستفسار إلى الطلب نحسب 5 ÷20 =25%. النسبتان صحيحتان لمعنيين مختلفين، بشرط نفس المجموعة والفترة وتعريف الوحدة. قبل المقارنة، حدّد هل تقيس أشخاصًا فريدين أو زيارات متكررة، وهل الطلبات تخص نفس الفترة ونفس المجموعة. اختلاف تعريف المقام يغيّر النسبة، حتى لو ما تغيّرت تجربة العميل نفسها."
+        }
+      ]
+    },
+    {
+      "item": 69,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L03",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "2b79a947df1ef12d3c84d551896ee883f02fae0e33d7c828b18bb283a7845ade",
+      "afterSha256": "8bd4c9977c1d86fba5e5b10e9342bd5d88ed71742a3aaaacfffae43029f1db5f",
+      "changedFields": [
+        {
+          "path": "sections.4.text",
+          "beforeExists": true,
+          "before": "أحد الأخطاء الشائعة هو التركيز على تسريع الخطوات التي ليست عنق الزجاجة. إذا كانت خطوة الطباعة تستوعب 12 طلبًا في الساعة وعنق الزجاجة هو الفحص الذي يستوعب 8 طلبات في الساعة، فإن تسريع الطباعة إلى 15 طلبًا في الساعة لن يزيد من الإنتاج الكلي للنظام. في هذا التسلسل يأتي الفحص قبل الطباعة؛ يظل الخرج عند8 طلبات في الساعة، وقد يزداد وقت خمول الطابعة. لا يسبب تسريع الطباعة اللاحقة طابورًا في الفحص السابق. قد تتراكم الطلبات أمام الفحص إذا زاد معدل وصولها على8 طلبات في الساعة، ويكون السبب حينها معدل الوصول لا سرعة الطباعة. خطأ آخر هو افتراض أن جميع الموظفين أو الآلات يعملون بكامل طاقتهم طوال الوقت المتاح. هذا يتجاهل الواقع العملي للأعطال، والصيانة، وفترات الراحة، والتغيرات في الطلب. كما أن عدم التمييز بين وقت المعالجة ووقت الانتظار يمكن أن يخفي مشكلات حقيقية في الكفاءة. على سبيل المثال، قد يعتقد المدير أن عملية ما تستغرق ساعة، بينما في الواقع، 10 دقائق فقط هي وقت معالجة فعلي، و50 دقيقة هي وقت انتظار. تصحيح هذه المفاهيم الخاطئة أمر حيوي لتحسين الأداء بشكل فعال.",
+          "after": "أحد الأخطاء الشائعة هو التركيز على تسريع الخطوات التي ليست عنق الزجاجة. إذا كانت خطوة الطباعة تستوعب 12 طلبًا في الساعة وعنق الزجاجة هو الفحص الذي يستوعب 8 طلبات في الساعة، فإن تسريع الطباعة إلى 15 طلبًا في الساعة لن يزيد من الإنتاج الكلي للنظام. في هذا التسلسل يأتي الفحص قبل الطباعة؛ يظل الخرج عند 8 طلبات في الساعة، وقد يزداد وقت خمول الطابعة. لا يسبب تسريع الطباعة اللاحقة طابورًا في الفحص السابق. قد تتراكم الطلبات أمام الفحص إذا زاد معدل وصولها على 8 طلبات في الساعة، ويكون السبب حينها معدل الوصول لا سرعة الطباعة. خطأ آخر هو افتراض أن جميع الموظفين أو الآلات يعملون بكامل طاقتهم طوال الوقت المتاح. هذا يتجاهل الواقع العملي للأعطال، والصيانة، وفترات الراحة، والتغيرات في الطلب. كما أن عدم التمييز بين وقت المعالجة ووقت الانتظار يمكن أن يخفي مشكلات حقيقية في الكفاءة. على سبيل المثال، قد يعتقد المدير أن عملية ما تستغرق ساعة، بينما في الواقع، 10 دقائق فقط هي وقت معالجة فعلي، و 50 دقيقة هي وقت انتظار. تصحيح هذه المفاهيم الخاطئة أمر حيوي لتحسين الأداء بشكل فعال."
+        }
+      ]
+    },
+    {
+      "item": 71,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L08",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "3a1d6f38443562ef8a9d8fef355c034006921bf5f361879743b97f2eef68db63",
+      "afterSha256": "41c95e91bfb06b5c9126ac3c283def989ec4f475c4586c056c0b3c5e6861e9f7",
+      "changedFields": [
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "Classify the25% as an external vendor claim from a case study in another industry, not an internally calculated or verified saving. Applying it across this business's departments is an untested assumption.",
+          "after": "Classify the 25% as an external vendor claim from a case study in another industry, not an internally calculated or verified saving. Applying it across this business's departments is an untested assumption."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Use an evidence-bounded claim: 'The vendor reports a25% saving in a case study in another industry. Our own savings are unknown; we have not established comparability or run an internal comparative trial.' A smaller precautionary percentage would still need a source or calculation, so do not invent a15–20% forecast.",
+          "after": "Use an evidence-bounded claim: 'The vendor reports a 25% saving in a case study in another industry. Our own savings are unknown; we have not established comparability or run an internal comparative trial.' A smaller precautionary percentage would still need a source or calculation, so do not invent a 15–20% forecast."
+        }
+      ]
+    },
+    {
+      "item": 72,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "d2b0b60404086b1d7c9b684be0eff92f33c7a5fc7020e5d4499534bdab1bd168",
+      "afterSha256": "f276deca81007757518a18673debc04752cf175856795d55cfa50dc6cabed2c5",
+      "changedFields": [
+        {
+          "path": "quiz.3.explanation",
+          "beforeExists": true,
+          "before": "Internal validity concerns causal attribution: whether the intervention rather than other factors explains the observed change. Measuring the intended construct is a different measurement-quality question; consistency is reliability, and generalizing to other populations is external validity. The correct option remains1.",
+          "after": "Internal validity concerns causal attribution: whether the intervention rather than other factors explains the observed change. Measuring the intended construct is a different measurement-quality question; consistency is reliability, and generalizing to other populations is external validity."
+        }
+      ]
+    },
+    {
+      "item": 81,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "c88b60c34d9168c99bf9a22cd62c95020cb53933c361e665ae65cb644e5536e9",
+      "afterSha256": "eaafeba517f0faa73baccc001258d123bebfc539a99fbd0d907f8a7dfe096e70",
+      "changedFields": [
+        {
+          "path": "faq.0.answer",
+          "beforeExists": true,
+          "before": "A sequential process can have one bottleneck stage or several stages tied at the lowest capacity. With capacities8,8 and12 orders per hour, overall output cannot exceed8 per hour. Improving only one8-per-hour stage leaves the other limiting output to8; both tied constraints must be addressed before that limit rises. Reassess the limiting stages after each change.",
+          "after": "A sequential process can have one bottleneck stage or several stages tied at the lowest capacity. With capacities 8,8 and 12 orders per hour, overall output cannot exceed 8 per hour. Improving only one 8-per-hour stage leaves the other limiting output to 8; both tied constraints must be addressed before that limit rises. Reassess the limiting stages after each change."
+        }
+      ]
+    },
+    {
+      "item": 84,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "0254acaf5019280801c43c7a214722b31f40545c9c39e3619aa8bb40e9a6b40f",
+      "afterSha256": "229a45f9f8e7f9dc164f62fd0d195c47ba4e70375c61f173b27bd2653afd6ac4",
+      "changedFields": [
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "حدّد شرط القبول قبل الاختبار: كل محاولة حجز في ظروف الاختبار العادية المعلنة لازم تنجح خلال10 ثواني أو أقل. وضّح الجهاز والشبكة والحمل وخطوات البداية والنهاية عشان القياس يبقى قابل للمقارنة؛ ده حد لكل محاولة، مش للمتوسط.",
+          "after": "حدّد شرط القبول قبل الاختبار: كل محاولة حجز في ظروف الاختبار العادية المعلنة لازم تنجح خلال 10 ثواني أو أقل. وضّح الجهاز والشبكة والحمل وخطوات البداية والنهاية عشان القياس يبقى قابل للمقارنة؛ ده حد لكل محاولة، مش للمتوسط."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "صمّم اختبارًا يطابق الشرط: نفّذ100 محاولة حجز في الظروف المعلنة، وقِس وسجّل زمن كل محاولة ونجاحها أو خطأها. اختبر فشل الاتصال بشكل منفصل أثناء الإدخال والإرسال، وراقب حفظ البيانات ورسالة إعادة المحاولة.",
+          "after": "صمّم اختبارًا يطابق الشرط: نفّذ 100 محاولة حجز في الظروف المعلنة، وقِس وسجّل زمن كل محاولة ونجاحها أو خطأها. اختبر فشل الاتصال بشكل منفصل أثناء الإدخال والإرسال، وراقب حفظ البيانات ورسالة إعادة المحاولة."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "وثّق النتائج من غير افتراض نجاح: اذكر عدد ونسبة المحاولات اللي تجاوزت10 ثواني، وأقصى زمن، وعدد الأخطاء؛ المتوسط معلومة إضافية بس. اجتياز شرط الزمن في العينة يتطلب صفر محاولات فوق الحد، مع مراجعة نجاح الحجز وأي أخطاء وفق المعايير المحددة.",
+          "after": "وثّق النتائج من غير افتراض نجاح: اذكر عدد ونسبة المحاولات اللي تجاوزت 10 ثواني، وأقصى زمن، وعدد الأخطاء؛ المتوسط معلومة إضافية بس. اجتياز شرط الزمن في العينة يتطلب صفر محاولات فوق الحد، مع مراجعة نجاح الحجز وأي أخطاء وفق المعايير المحددة."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "اعرض التقرير على صاحب القبول، وقارن أدلة كل معيار بشرطه قبل قرار القبول أو إعادة العمل. متوسط أقل من10 ثواني لوحده مش دليل إن كل محاولة نجحت؛ وحتى لو كل المحاولات المئة اجتازت، النتيجة تخص العينة والظروف المعلنة ومش ضمان لكل استخدام مستقبلي.",
+          "after": "اعرض التقرير على صاحب القبول، وقارن أدلة كل معيار بشرطه قبل قرار القبول أو إعادة العمل. متوسط أقل من 10 ثواني لوحده مش دليل إن كل محاولة نجحت؛ وحتى لو كل المحاولات المئة اجتازت، النتيجة تخص العينة والظروف المعلنة ومش ضمان لكل استخدام مستقبلي."
+        }
+      ]
+    },
+    {
+      "item": 85,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "15e0df615dc2259a39e682d460a4c31e35d1cf889c6aea18e3ea7922e5dc534e",
+      "afterSha256": "d21c48f60822484872027fa7f5823d53d1169ca0380e49b8901864893c523a99",
+      "changedFields": [
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Step4: Evaluate Alternatives and Set Criteria. In the ten observed delayed orders,3/10 were classified as packing backlog and7/10 as supplier or address issues. These are cause shares in this small sample, not a forecast that a machine fixes all three packing cases or two other changes remove all seven. Compare supplier communication, address checks, temporary packing staff, a machine and doing nothing against cost, implementation time and customer impact.",
+          "after": "Step 4: Evaluate Alternatives and Set Criteria. In the ten observed delayed orders,3/10 were classified as packing backlog and 7/10 as supplier or address issues. These are cause shares in this small sample, not a forecast that a machine fixes all three packing cases or two other changes remove all seven. Compare supplier communication, address checks, temporary packing staff, a machine and doing nothing against cost, implementation time and customer impact."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Step5: Implement a Bounded Trial. Try supplier communication and address checking on a limited scale and measure new delay counts and rates with a consistent denominator and period. Retain the proposed review condition: if delays attributed to those causes do not decrease by50% within a month, re-evaluate the options. This is a test target, not an achieved result; neither the ten-case cause distribution nor the solutions' effectiveness is guaranteed to generalize.",
+          "after": "Step 5: Implement a Bounded Trial. Try supplier communication and address checking on a limited scale and measure new delay counts and rates with a consistent denominator and period. Retain the proposed review condition: if delays attributed to those causes do not decrease by 50% within a month, re-evaluate the options. This is a test target, not an achieved result; neither the ten-case cause distribution nor the solutions' effectiveness is guaranteed to generalize."
+        },
+        {
+          "path": "readingVisuals.2.columns.1",
+          "beforeExists": true,
+          "before": "Alternative1: New Supplier",
+          "after": "Alternative 1: New Supplier"
+        },
+        {
+          "path": "readingVisuals.2.columns.2",
+          "beforeExists": true,
+          "before": "Alternative2: Increase Inventory",
+          "after": "Alternative 2: Increase Inventory"
+        }
+      ]
+    },
+    {
+      "item": 86,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "45ccc913d3ceb6f8a23d13042874ffcc60250cf7367b105c5225a8719887072e",
+      "afterSha256": "3bfa0f9d95fc708c1ca501bf166d6881d22333a96ebfe252588de00ff57b67bc",
+      "changedFields": [
+        {
+          "path": "example.steps.0",
+          "beforeExists": true,
+          "before": "**Step1: Formulate the Value Proposition.** Help students reduce common file errors, rework and waiting through early checks within a declared scope. Test the effect in a limited pilot; do not promise a perfect first print or the elimination of every error and delay.",
+          "after": "**Step 1: Formulate the Value Proposition.** Help students reduce common file errors, rework and waiting through early checks within a declared scope. Test the effect in a limited pilot; do not promise a perfect first print or the elimination of every error and delay."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "**Step4: Identify an Inconsistency.** Early checking aims to reduce rework and waiting, but manual checking can add a queue during peak demand. A promise to eliminate every delay or rework case would conflict with that operational limit; define scope, capacity and realistic turnaround before promising a benefit.",
+          "after": "**Step 4: Identify an Inconsistency.** Early checking aims to reduce rework and waiting, but manual checking can add a queue during peak demand. A promise to eliminate every delay or rework case would conflict with that operational limit; define scope, capacity and realistic turnaround before promising a benefit."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "**Step5: Repair and Test the Inconsistency.** Pilot automated checks for supported common issues followed by manual review of flagged or unsupported files. Automation speed and coverage are assumptions to test, not guarantees of accuracy. Measure file errors, rework, review time and waiting against a consistent baseline, then revise scope, resources and turnaround before scaling.",
+          "after": "**Step 5: Repair and Test the Inconsistency.** Pilot automated checks for supported common issues followed by manual review of flagged or unsupported files. Automation speed and coverage are assumptions to test, not guarantees of accuracy. Measure file errors, rework, review time and waiting against a consistent baseline, then revise scope, resources and turnaround before scaling."
+        }
+      ]
+    }
+  ]
+}
