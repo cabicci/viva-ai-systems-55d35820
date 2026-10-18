@@ -40,7 +40,7 @@
       "role": "Core idea",
       "heading": "Core idea — the question opens the door — the feeling closes it",
       "subtitle": "The question opens the door — the feeling closes it",
-      "contentMarkdown": "1. Write **Feeling** as it is: 'Customers are dissatisfied'.\n2. Ask: **Who?** **How many?** **When?** **Compared to what?** — 'How many customers complained **this month**?'\n3. **Be more specific:** 'What are the **top 3 complaints** that repeated?'\n4. The more precise the question becomes — the more actionable the answer is — turning **complaints** into **management**.",
+      "contentMarkdown": "1. Write **Feeling** as it is: 'Customers are dissatisfied'.\n2. Define the metric and comparison: What is the complaint rate per 100 customer contacts this month versus last month?\n3. Final model: What is the complaint rate per 100 customer contacts this month versus last month, and what are the three most repeated complaint reasons in each of those periods?\n4. Use the same definitions of a complaint and a contact in both periods. A precise question supports review; it does not by itself establish a cause or guarantee the decision.",
       "bullets": [],
       "tables": []
     },
@@ -48,7 +48,7 @@
       "role": "Comparison",
       "heading": "Comparison — Feeling vs. Question",
       "subtitle": "Feeling vs. Question",
-      "contentMarkdown": "| Feeling | Question |\n|------|------|\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition** | 'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret** |",
+      "contentMarkdown": "| Feeling | Question |\n|---|---|\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**. | How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision. |",
       "bullets": [],
       "tables": [
         {
@@ -59,7 +59,7 @@
           "rows": [
             [
               "'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**.",
-              "'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret**."
+              "How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision."
             ]
           ]
         }

@@ -375,9 +375,11 @@ function takeQueuedSection(
   canonical: IntroLessonSection,
 ): IntroLessonSection | null {
   const kind = canonical.block.kind;
-  const role = kind === "paragraphs" ? canonicalParagraphRole(canonical) : null;
-  if (kind !== "paragraphs" || role) {
-    const queue = queues.get(role ? kind + ":" + role : kind);
+  const paragraphSlot = kind === "paragraphs" || kind === "numberedList";
+  const role = paragraphSlot ? canonicalParagraphRole(canonical) : null;
+  const sourceKind = paragraphSlot ? "paragraphs" : kind;
+  if (!paragraphSlot || role) {
+    const queue = queues.get(role ? sourceKind + ":" + role : sourceKind);
     return queue?.shift() ?? null;
   }
   // Nonstandard paragraph slots require an exact section identity. Never borrow
@@ -580,6 +582,21 @@ function mergeCanonicalSection(
         label: canonShot?.label,
         caption: localizedCaption ?? canonShot?.caption,
       },
+    };
+  }
+
+  if (kind === "numberedList" && localized?.block.kind === "paragraphs") {
+    const items = localized.block.paragraphs
+      .flatMap((paragraph) => paragraph.split(/\r?\n(?=\s*[0-9٠-٩]+[.)]\s)/))
+      .map((line) => line.replace(/^\s*[0-9٠-٩]+[.)]\s*/, "").trim())
+      .filter(Boolean);
+    if (!items.length) return null;
+    return {
+      icon: localized.icon,
+      eyebrow: localized.eyebrow,
+      title: localized.title,
+      tone: localized.tone ?? canonSection.tone,
+      block: { kind: "numberedList", items },
     };
   }
 
