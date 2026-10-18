@@ -94,7 +94,7 @@ function getFeedbackState(result: AIEvaluationResult): FeedbackStateKeys {
 export function buildMissionTemplate(prompt: string, writeHere: string): string {
   if (!prompt || !writeHere) return "";
   const lines = prompt.split(/\r?\n/);
-  const sectionRegex = /^\s*([٠-٩\d]+)\s*[\)\.\-]\s*(.+?)\s*:\s*$/;
+  const sectionRegex = /^\s*([٠-٩\d]+)\s*[).-]\s*(.+?)\s*:\s*$/;
   const sections: string[] = [];
   for (const line of lines) {
     const m = line.match(sectionRegex);
