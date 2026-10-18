@@ -197,10 +197,7 @@ function MissionRubricSession({
           setResult(restoreMissionEvaluation(sub));
         }
         const meta = sub.submission_metadata ?? {};
-        if (
-          sub.status !== "passed" &&
-          meta.revealed === true
-        ) {
+        if (sub.status !== "passed" && meta.revealed === true) {
           setReveal({
             modelAnswer: normalizeMissionModelAnswer(meta.modelAnswer) ?? "",
             note:

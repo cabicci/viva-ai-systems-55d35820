@@ -319,18 +319,21 @@ describe("mission answer ownership and saved result restoration", () => {
   it.each([
     [{ answer: "A readable structured answer" }, "answer: A readable structured answer"],
     ['{"answer":"A JSON-encoded answer"}', "answer: A JSON-encoded answer"],
-  ])("restores a structured example without touching the learner answer: %j", async (modelAnswer, display) => {
-    const metadata = { revealed: true, modelAnswer, note: "An original learning note" };
-    const original = row({ status: "needs_revision", submission_metadata: metadata });
-    mocks.active.mockResolvedValue(original);
-    render(mission());
-    expect(await screen.findByText(String(display))).toBeTruthy();
-    expect(await answerField()).toHaveValue(original.submission_text);
-    expect(screen.queryByText("[object Object]")).toBeNull();
-    expect(original.submission_metadata).toEqual(metadata);
-    expect(mocks.prepare).not.toHaveBeenCalled();
-    expect(mocks.reveal).not.toHaveBeenCalled();
-  });
+  ])(
+    "restores a structured example without touching the learner answer: %j",
+    async (modelAnswer, display) => {
+      const metadata = { revealed: true, modelAnswer, note: "An original learning note" };
+      const original = row({ status: "needs_revision", submission_metadata: metadata });
+      mocks.active.mockResolvedValue(original);
+      render(mission());
+      expect(await screen.findByText(String(display))).toBeTruthy();
+      expect(await answerField()).toHaveValue(original.submission_text);
+      expect(screen.queryByText("[object Object]")).toBeNull();
+      expect(original.submission_metadata).toEqual(metadata);
+      expect(mocks.prepare).not.toHaveBeenCalled();
+      expect(mocks.reveal).not.toHaveBeenCalled();
+    },
+  );
 
   it("explains irrecoverable old example text without inventing or regenerating an answer", async () => {
     const original = row({

@@ -8,7 +8,7 @@ export function normalizeMissionModelAnswer(value: unknown): string | null {
       const text = input.trim();
       if (!text || /^(?:\[object Object\](?:\s*,\s*)?)+$/i.test(text)) return "";
       // Older providers sometimes returned JSON inside the text field.
-      if (/^[\[{]/.test(text)) {
+      if (text.startsWith("{") || text.startsWith("[")) {
         try {
           const parsed: unknown = JSON.parse(text);
           if (parsed && typeof parsed === "object") return format(parsed, depth + 1);
@@ -23,13 +23,19 @@ export function normalizeMissionModelAnswer(value: unknown): string | null {
     if (typeof input !== "object" || seen.has(input)) return "";
     seen.add(input);
     if (Array.isArray(input)) {
-      return input.map((part) => format(part, depth + 1)).filter(Boolean)
-        .map((part, index) => `${index + 1}. ${part}`).join("\n");
+      return input
+        .map((part) => format(part, depth + 1))
+        .filter(Boolean)
+        .map((part, index) => `${index + 1}. ${part}`)
+        .join("\n");
     }
-    return Object.entries(input).map(([label, part]) => {
-      const text = format(part, depth + 1);
-      return text ? `${label}: ${text}` : "";
-    }).filter(Boolean).join("\n\n");
+    return Object.entries(input)
+      .map(([label, part]) => {
+        const text = format(part, depth + 1);
+        return text ? `${label}: ${text}` : "";
+      })
+      .filter(Boolean)
+      .join("\n\n");
   }
   // A primitive number/flag alone is not a useful model answer.
   if (typeof value !== "string" && (value == null || typeof value !== "object")) return null;
