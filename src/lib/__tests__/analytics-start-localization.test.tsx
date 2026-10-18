@@ -133,7 +133,10 @@ it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"] as const)(
     expect(container.querySelector(locale === "en" ? '[dir="ltr"]' : '[dir="rtl"]')).toBeTruthy();
     expect(state.run).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole("button", { name: getUiString(locale, "start.skip") }));
-    expect(state.navigate).toHaveBeenCalledWith({ to: "/dashboard", search: { locale } });
+    expect(state.navigate).toHaveBeenCalledWith({
+      to: "/dashboard",
+      search: locale === "ar-EG" ? {} : { locale },
+    });
     expect(state.run).not.toHaveBeenCalled();
   },
 );
