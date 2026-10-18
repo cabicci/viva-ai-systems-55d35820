@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import manifest from "../runtime/contextualV2BrowserManifest.json";
+import { restoreExactEditorialGenerationSource } from "./audit-source-compatibility";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../../../../..");
 const publicRoot = join(repo, "public/lesson-visuals/contextual-v2");
@@ -198,6 +199,8 @@ const imageGenerationSourceBytes = (
   entry: { sourcePath: string; sourceSha256: string; sourceBlob: string },
   bytes: Buffer,
 ): Buffer => {
+  const editorialRestored = restoreExactEditorialGenerationSource(entry, bytes);
+  if (!editorialRestored.equals(bytes)) return editorialRestored;
   const boldRestored = imageGenerationBoldSourceBytes(entry, bytes);
   if (!boldRestored.equals(bytes)) return boldRestored;
   return imageGenerationQuizSourceBytes(entry, bytes);

@@ -1,0 +1,82 @@
+{
+  "role": "exact-reviewed-editorial-source-compatibility",
+  "scope": "Only the three approved item-6 editorial changes. Original image manifest and assets remain unchanged.",
+  "entries": [
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
+      "auditItems": [
+        6
+      ],
+      "currentSha256": "f3a8a205c335ead63c72386254b0208d224a9fe9f57442a584cc99ad6e17a804",
+      "currentBlob": "7c34e7c6f8e7ea702679b11a6a57343389868c6e",
+      "generationSourceSha256": "07ce0bf1130d19edd5d60b0cef6e91d8e61c0307867ff098e1f6896b0e9aa82a",
+      "generationSourceBlob": "2c57e4076d8fbbc4945dee45e0a6f11145f78ea2",
+      "replacements": [
+        {
+          "field": "Mission heading",
+          "before": "\"heading\": \"Mission — مهمتك (intent + MSA draft labels)\"",
+          "after": "\"heading\": \"جرّب الذكاء الاصطناعي في مهمة بسيطة من يومك\""
+        },
+        {
+          "field": "Mission subtitle",
+          "before": "\"subtitle\": \"مهمتك (intent + MSA draft labels)\"",
+          "after": "\"subtitle\": \"جرّب الذكاء الاصطناعي في مهمة بسيطة من يومك\""
+        },
+        {
+          "field": "Mission editorial rubric label",
+          "before": "معايير التقييم (من الإنتاج — unchanged weights):",
+          "after": "معايير التقييم:"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "auditItems": [
+        6
+      ],
+      "currentSha256": "ef4c61760afd0714a85e07468760a796c37d7131b8f69e39723afec84ee66649",
+      "currentBlob": "173dc79e7a51e889740734b1068f427a21a2e8eb",
+      "generationSourceSha256": "908562218afa462ffb0dc0656de0bc9f292c95764500eaa2d55beba05e46182d",
+      "generationSourceBlob": "0ec66f38df5f39d15bd1c014bf859eec8934ee57",
+      "replacements": [
+        {
+          "field": "Mission heading",
+          "before": "\"heading\": \"Mission — مهمتك (intent + MSA draft labels)\"",
+          "after": "\"heading\": \"صنّف مهامك واختر ما يساعدك فيه الذكاء الاصطناعي\""
+        },
+        {
+          "field": "Mission subtitle",
+          "before": "\"subtitle\": \"مهمتك (intent + MSA draft labels)\"",
+          "after": "\"subtitle\": \"صنّف مهامك واختر ما يساعدك فيه الذكاء الاصطناعي\""
+        },
+        {
+          "field": "Mission editorial rubric label",
+          "before": "معايير التقييم (من الإنتاج — unchanged weights):",
+          "after": "معايير التقييم:"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+      "auditItems": [
+        6
+      ],
+      "currentSha256": "e1f63ceedac93cbd030058ae3cca9825895f60d49c784f91561de5431afc3ba2",
+      "currentBlob": "19a461ec66e7d6765afbd1de2f40e9e96962569a",
+      "generationSourceSha256": "75a6a8e0c0d7264be9536e69c3f0a2be32bc0133a754db97e9bd39c8a65093d5",
+      "generationSourceBlob": "3c1ed2d145bb39aeefd25e8926c3f36d0921a815",
+      "replacements": [
+        {
+          "field": "Diagram heading",
+          "before": "\"heading\": \"Diagram Block\"",
+          "after": "\"heading\": \"Audience Persona Map\""
+        },
+        {
+          "field": "Diagram editorial identifier",
+          "before": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for. (Production ID: `audience-persona`.)",
+          "after": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for."
+        }
+      ]
+    }
+  ]
+}
