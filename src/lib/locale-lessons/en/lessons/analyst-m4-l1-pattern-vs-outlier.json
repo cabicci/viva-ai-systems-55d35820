@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core idea — Pattern = plan — Exception = understand",
       "subtitle": "Pattern = plan — Exception = understand",
-      "contentMarkdown": "- **Pattern:** Something that **repeats** over **different periods** — **worth** planning for (budget, SOP, forecast).\n- **Outlier:** Something that **happened once or twice** **far from the usual** — **understand its cause** before making **any major decision**.\n- **Not enough data:** **One point** or **two days** — **do not make** a strategic decision. **Gather more** or **wait**.\n- **Practical rule:** **3 times** in **3 different periods** = a **pattern** you can **trust**.",
+      "contentMarkdown": "- Pattern: repeated behavior under comparable conditions can support a provisional plan, checked against a baseline and normal variability; it does not guarantee the future.\n- Outlier: an observation far from the usual baseline. Check recording quality and context before interpreting it; it is not defined merely by occurring once or twice.\n- Insufficient data: missing context, comparison or suitable periods can prevent a sound conclusion even when you have several points. Collect the needed data or design a small reversible experiment.\n- Three observations across three periods are an initial signal to investigate, not a guaranteed reliable pattern. Compare equivalent periods, seasonality and normal variability before generalizing.",
       "bullets": [
-        "**Pattern:** Something that **repeats** over **different periods** — **worth** planning for (budget, SOP, forecast).",
-        "**Outlier:** Something that **happened once or twice** **far from the usual** — **understand its cause** before making **any major decision**.",
-        "**Not enough data:** **One point** or **two days** — **do not make** a strategic decision. **Gather more** or **wait**.",
-        "**Practical rule:** **3 times** in **3 different periods** = a **pattern** you can **trust**."
+        "Pattern: repeated behavior under comparable conditions can support a provisional plan, checked against a baseline and normal variability; it does not guarantee the future.",
+        "Outlier: an observation far from the usual baseline. Check recording quality and context before interpreting it; it is not defined merely by occurring once or twice.",
+        "Insufficient data: missing context, comparison or suitable periods can prevent a sound conclusion even when you have several points. Collect the needed data or design a small reversible experiment.",
+        "Three observations across three periods are an initial signal to investigate, not a guaranteed reliable pattern. Compare equivalent periods, seasonality and normal variability before generalizing."
       ],
       "tables": []
     },
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two terms to distinguish",
       "subtitle": "Two terms to distinguish",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Pattern** | **Regular repetition** you can **expect** and **plan** for | Sales of **cakes** **double every Friday** for **6 months** |\n| **Outlier** | **A number far** from the usual — **happened once or twice** only | **One day** I sold **50,000** and the average is **500** — due to a **wholesale client** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---|---|---|\n| **Pattern** | Repeated behavior under comparable conditions that may support a provisional plan with continued review. | Sales of **cakes** **double every Friday** for **6 months** |\n| **Outlier** | An observation far from the usual baseline that needs a data-quality and context check. | **One day** I sold **50,000** and the average is **500** — due to a **wholesale client** |",
       "bullets": [],
       "tables": [
         {
@@ -85,12 +85,12 @@
           "rows": [
             [
               "**Pattern**",
-              "**Regular repetition** you can **expect** and **plan** for",
+              "Repeated behavior under comparable conditions that may support a provisional plan with continued review.",
               "Sales of **cakes** **double every Friday** for **6 months**"
             ],
             [
               "**Outlier**",
-              "**A number far** from the usual — **happened once or twice** only",
+              "An observation far from the usual baseline that needs a data-quality and context check.",
               "**One day** I sold **50,000** and the average is **500** — due to a **wholesale client**"
             ]
           ]
@@ -130,7 +130,7 @@
       "role": "Mission",
       "heading": "Mission — Classify 5 numbers or days",
       "subtitle": "Classify 5 numbers or days",
-      "contentMarkdown": "**Introduction:** A practical **distinction task** — **not** a graph. Take **5 numbers or 5 days** from **your work** (real or imagined) and **classify** each one. **Goal:** You learn to **pause** before **changing a decision** based on a **strange number**.\n\n**Delivery:**\n\n1. The **Metric** you track (sales, orders, complaints…)\n2. **5 values** — each on a line (number + day/week)\n3. For each value: **Pattern / Exception / Not enough data + why**\n4. **One decision** you will make **based on the pattern only** (**not** the exception)\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Correct classification | 60% | Each value **classified** **for a clear reason**; **exceptions** **not treated** as patterns |\n| Decision from the pattern | 40% | The decision **based on repetition** — **not** on **one point** |",
+      "contentMarkdown": "Classify five observations with context, not five isolated numbers. Use your own permitted data or the explicitly fictional sample below. For each value, state the metric/unit, period, comparable baseline and relevant conditions, or declare what is missing. 'Insufficient data' is a valid conclusion. No complex chart, statistical test or real experiment is required.\n\nFictional teaching case: completed orders per Friday for one shop, with the same opening hours and counting rule. The eight prior comparable Fridays ranged from 90 to 110 orders; this is the supplied baseline, not a forecast. No broader seasonal record is supplied. For the fifth Friday, the fictional order log records 60 orders from one bulk customer within the total. Assess the evidence limits rather than assuming five values prove a future pattern.\n\n| Friday | Completed orders | Comparable baseline | Recorded context |\n|---|---|---|---|\n| 2026-09-04 | 100 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-11 | 102 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-18 | 98 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-25 | 101 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-10-02 | 160 | 90–110 | One bulk customer accounts for 60 of the 160 orders. |\n\n**Delivery:**\n\n1. Name the metric and unit or denominator, the source, and whether the data are real, fictional or incomplete.\n2. For each of five observations: value, day/week and scope, comparable baseline/period and relevant context; explicitly mark missing comparisons.\n3. Give a provisional classification for each: pattern, unusual observation or insufficient data, with a reason tied to the comparison and normal variability.\n4. Explain whether equivalent periods and seasonality have been checked and what remains unknown; do not treat three occurrences as an automatic reliability rule.\n5. Choose one justified next step. A provisional plan may follow suitable evidence; 'insufficient data' with a specific collection plan or small reversible experiment is equally valid. Do not invent a pattern.\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Context and classification | 60% | All five values include metric/unit, period, context and comparison or explicit gaps. Classifications explain comparable periods and variability; isolated values are not automatically patterns. |\n| Evidence-based next step | 40% | The next step follows the available evidence and its limits. Accept insufficient data with a collection plan or small reversible experiment; no forced pattern, guaranteed result or real execution. |",
       "bullets": [],
       "tables": [
         {
@@ -141,39 +141,40 @@
           ],
           "rows": [
             [
-              "Correct classification",
+              "Context and classification",
               "60%",
-              "Each value **classified** **for a clear reason**; **exceptions** **not treated** as patterns."
+              "All five values include metric/unit, period, context and comparison or explicit gaps. Classifications explain comparable periods and variability; isolated values are not automatically patterns."
             ],
             [
-              "Decision from the pattern",
+              "Evidence-based next step",
               "40%",
-              "The decision **based on repetition** — **not** on **one point**."
+              "The next step follows the available evidence and its limits. Accept insufficient data with a collection plan or small reversible experiment; no forced pattern, guaranteed result or real execution."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "A practical **distinction task** — **not** a graph. Take **5 numbers or 5 days** from **your work** (real or imagined) and **classify** each one. **Goal:** You learn to **pause** before **changing a decision** based on a **strange number**.",
+        "intro": "Classify five observations with context, not five isolated numbers. Use your own permitted data or the explicitly fictional sample below. For each value, state the metric/unit, period, comparable baseline and relevant conditions, or declare what is missing. 'Insufficient data' is a valid conclusion. No complex chart, statistical test or real experiment is required.\n\nFictional teaching case: completed orders per Friday for one shop, with the same opening hours and counting rule. The eight prior comparable Fridays ranged from 90 to 110 orders; this is the supplied baseline, not a forecast. No broader seasonal record is supplied. For the fifth Friday, the fictional order log records 60 orders from one bulk customer within the total. Assess the evidence limits rather than assuming five values prove a future pattern.\n\n| Friday | Completed orders | Comparable baseline | Recorded context |\n|---|---|---|---|\n| 2026-09-04 | 100 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-11 | 102 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-18 | 98 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-09-25 | 101 | 90–110 | No additional event recorded; seasonal information missing. |\n| 2026-10-02 | 160 | 90–110 | One bulk customer accounts for 60 of the 160 orders. |",
         "delivery": [
-          "The **Metric** you track (sales, orders, complaints…)",
-          "**5 values** — each on a line (number + day/week)",
-          "For each value: **Pattern / Exception / Not enough data + why**",
-          "**One decision** you will make **based on the pattern only** (**not** the exception)"
+          "Name the metric and unit or denominator, the source, and whether the data are real, fictional or incomplete.",
+          "For each of five observations: value, day/week and scope, comparable baseline/period and relevant context; explicitly mark missing comparisons.",
+          "Give a provisional classification for each: pattern, unusual observation or insufficient data, with a reason tied to the comparison and normal variability.",
+          "Explain whether equivalent periods and seasonality have been checked and what remains unknown; do not treat three occurrences as an automatic reliability rule.",
+          "Choose one justified next step. A provisional plan may follow suitable evidence; 'insufficient data' with a specific collection plan or small reversible experiment is equally valid. Do not invent a pattern."
         ],
         "rubric": [
           {
-            "dimension": "Correct classification",
+            "dimension": "Context and classification",
             "weight": 60,
-            "criteria": "Each value **classified** **for a clear reason**; **exceptions** **not treated** as patterns."
+            "criteria": "All five values include metric/unit, period, context and comparison or explicit gaps. Classifications explain comparable periods and variability; isolated values are not automatically patterns."
           },
           {
-            "dimension": "Decision from the pattern",
+            "dimension": "Evidence-based next step",
             "weight": 40,
-            "criteria": "The decision **based on repetition** — **not** on **one point**."
+            "criteria": "The next step follows the available evidence and its limits. Accept insufficient data with a collection plan or small reversible experiment; no forced pattern, guaranteed result or real execution."
           }
         ],
-        "yamlIntent": "Practical classification — 5 numbers or days from work; stop before changing decision on one odd point",
+        "yamlIntent": "Classify five contextual observations; allow insufficient data and a collection plan or small reversible test",
         "yamlType": "practice"
       }
     },

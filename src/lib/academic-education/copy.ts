@@ -27,6 +27,12 @@ const msa = {
   saved: "تم الحفظ في حسابك.",
   backToCurriculum: "العودة إلى المنهج",
   sections: "أقسام الخطوة",
+  navigation: "التنقل بين الخطوات",
+  previous: "الخطوة السابقة",
+  next: "الخطوة التالية",
+  navigationLoading: "جارٍ التحقق من الخطوات المجاورة…",
+  navigationUnavailable: "تعذّر التحقق من الخطوات المجاورة. يمكنك العودة إلى المنهج.",
+  navigationRetry: "إعادة المحاولة",
 };
 const copy: Record<SupportedLocale, typeof msa> = {
   "ar-MSA": msa,
@@ -87,6 +93,12 @@ const copy: Record<SupportedLocale, typeof msa> = {
     saved: "Saved to your account.",
     backToCurriculum: "Back to curriculum",
     sections: "Step sections",
+    navigation: "Step navigation",
+    previous: "Previous step",
+    next: "Next step",
+    navigationLoading: "Checking adjacent steps…",
+    navigationUnavailable: "Adjacent steps could not be checked. You can return to the curriculum.",
+    navigationRetry: "Retry",
   },
 };
 export const getAcademicCopy = (locale: SupportedLocale) => copy[locale];

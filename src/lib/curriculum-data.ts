@@ -531,7 +531,7 @@ function analystModules(): CurriculumModule[] {
       lessons: [
         analystShipped(1, "analyst-m5-l1-four-numbers-dashboard", "٤ أرقام بس"),
         analystShipped(2, "analyst-m4-automated-dashboard", "رقم واحد يتحدّث لوحده"),
-        analystShipped(3, "analyst-m5-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
+        analystShipped(3, "analyst-m5-l2-weekly-review-ritual", "Review أسبوعي = ٣٠ دقيقة"),
       ],
     },
     {

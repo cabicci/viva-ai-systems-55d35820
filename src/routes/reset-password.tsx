@@ -7,14 +7,25 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { authReturnNavigation, parseRecoveryIntentSearch } from "@/lib/auth-return";
 
 export const Route = createFileRoute("/reset-password")({
-  head: () => ({ meta: [{ title: "تعيين كلمة مرور جديدة — مسارات" }] }),
+  validateSearch: parseRecoveryIntentSearch,
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
+    return { meta: [{ title: getUiString(locale, "auth.reset.title") + " — Masaarat" }] };
+  },
   component: ResetPasswordPage,
 });
 
 function ResetPasswordPage() {
   const t = useUiString();
+  const { locale } = useLocale();
+  const rawSearch = Route.useSearch();
+  const search = parseRecoveryIntentSearch({ ...rawSearch, locale: rawSearch.locale ?? locale });
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -40,7 +51,7 @@ function ResetPasswordPage() {
     setLoading(false);
     if (error) return toast.error(error.message);
     toast.success(t("auth.reset.toast.success"));
-    navigate({ to: "/dashboard" });
+    navigate(authReturnNavigation(search));
   }
 
   return (
@@ -51,11 +62,21 @@ function ResetPasswordPage() {
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label>{t("auth.field.passwordNew")}</Label>
-            <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
           <div className="space-y-2">
             <Label>{t("auth.field.passwordConfirm")}</Label>
-            <Input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} required />
+            <Input
+              type="password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              required
+            />
           </div>
           <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
             {loading ? t("auth.reset.submitting") : t("auth.reset.submit")}

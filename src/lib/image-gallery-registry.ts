@@ -1,15 +1,10 @@
 import {
   getContextualV2BrowserManifestEntries,
+  resolveContextualV2Visual,
   type ContextualV2Locale,
 } from "@/lib/lesson-visuals/contextual-v2/runtime/contextualV2BrowserResolver";
 
-export type GalleryPath =
-  | "intro"
-  | "business"
-  | "creator"
-  | "analyst"
-  | "automator"
-  | "builder";
+export type GalleryPath = "intro" | "business" | "creator" | "analyst" | "automator" | "builder";
 
 export type GalleryItem = {
   number: number;
@@ -27,10 +22,23 @@ export const GALLERY_PATHS: {
   description: string;
 }[] = [
   { id: "intro", label: "الإنترو", description: "دروس تأسيسية للبداية مع الـ AI." },
-  { id: "business", label: "البيزنس", description: "دروس الـ AI للبيزنس — قيادة، عملاء، تفويض، توسع." },
-  { id: "creator", label: "الكرييتور", description: "دروس صناعة المحتوى — Hook, Script, CTA, تصوير ومونتاج، Brand." },
+  {
+    id: "business",
+    label: "البيزنس",
+    description: "دروس الـ AI للبيزنس — قيادة، عملاء، تفويض، توسع.",
+  },
+  {
+    id: "creator",
+    label: "الكرييتور",
+    description: "دروس صناعة المحتوى — Hook, Script, CTA, تصوير ومونتاج، Brand.",
+  },
   { id: "analyst", label: "الأناليست", description: "دروس تحليل البيانات بالـ AI." },
-  { id: "automator", label: "الأوتوميتور", description: "دروس الأتمتة — n8n, Triggers/Actions, Webhooks, LLM في الـ Flow، Agents، Lead Capture و WhatsApp." },
+  {
+    id: "automator",
+    label: "الأوتوميتور",
+    description:
+      "دروس الأتمتة — n8n, Triggers/Actions, Webhooks, LLM في الـ Flow، Agents، Lead Capture و WhatsApp.",
+  },
   { id: "builder", label: "البليدر", description: "دروس بناء أول تطبيق بـ Lovable." },
 ];
 
@@ -38,7 +46,9 @@ const entries = getContextualV2BrowserManifestEntries();
 const titlesByLesson = new Map<string, Partial<Record<ContextualV2Locale, string>>>();
 for (const entry of entries) {
   const titles = titlesByLesson.get(entry.lessonId) ?? {};
-  titles[entry.locale] = entry.title;
+  const current = resolveContextualV2Visual({ lessonId: entry.lessonId, locale: entry.locale });
+  if (!current.ok) continue;
+  titles[entry.locale] = current.title;
   titlesByLesson.set(entry.lessonId, titles);
 }
 

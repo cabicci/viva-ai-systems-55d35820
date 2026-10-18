@@ -47,30 +47,73 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Creating a WhatsApp Flow",
-      "contentMarkdown": "> **Quiz:**\n\nThe bot continues trying to answer from the FAQ.\nImmediate handoff to a staff member — this is a clear handoff condition.\nSend a message saying 'wait 24 hours'.\n\n**Explanation:** The correct answer is an immediate handoff to a staff member, which is a clear condition for handoff.",
+      "contentMarkdown": "**Question:** In a WhatsApp conversation, a customer says: 'I have a complaint and want to speak to an employee.' The workflow includes a human-handoff route. What should the bot do?\n\n1. Continue replying from the FAQ without responding to the request for an employee.\n2. Start the handoff to a staff member using the defined route.\n3. Send only a message telling the customer to wait 24 hours.\n\n**Explanation:** The customer's explicit request to speak to an employee triggers the defined handoff condition. Routine FAQ messages do not all require handoff; this complaint includes a direct human request that continuing FAQ replies or an arbitrary waiting message would not address.",
       "bullets": [
-        "The bot continues trying to answer from the FAQ.",
-        "Immediate handoff to a staff member — this is a clear handoff condition.",
-        "Send a message saying 'wait 24 hours'."
+        "Continue replying from the FAQ without responding to the request for an employee.",
+        "Start the handoff to a staff member using the defined route.",
+        "Send only a message telling the customer to wait 24 hours."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 1,
         "options": [
-          "The bot continues trying to answer from the FAQ.",
-          "Immediate handoff to a staff member — this is a clear handoff condition.",
-          "Send a message saying 'wait 24 hours'."
+          "Continue replying from the FAQ without responding to the request for an employee.",
+          "Start the handoff to a staff member using the defined route.",
+          "Send only a message telling the customer to wait 24 hours."
         ],
-        "explanation": "The correct answer is an immediate handoff to a staff member, which is a clear condition for handoff.",
-        "question": "What is the most appropriate option based on the section above?"
+        "explanation": "The customer's explicit request to speak to an employee triggers the defined handoff condition. Routine FAQ messages do not all require handoff; this complaint includes a direct human request that continuing FAQ replies or an arbitrary waiting message would not address.",
+        "question": "In a WhatsApp conversation, a customer says: 'I have a complaint and want to speak to an employee.' The workflow includes a human-handoff route. What should the bot do?"
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Clear Flow | 60% |\n| Trust and Consent | 40% |",
+      "contentMarkdown": "Design one WhatsApp conversation with an automated response and a human-handoff rule. No API integration or actual message sending is required.\n\n**Submission:**\n\n1. Name one scenario, such as order confirmation or an FAQ.\n2. Write a sample customer message that starts the conversation.\n3. Draft the automated response.\n4. Specify the condition that transfers the conversation to a human.\n5. Name who receives the handoff.\n6. Explain how the customer initiated or consented to the conversation and how the design avoids unsolicited spam.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Clear conversation flow | 60% | Give a scenario, response and specific human-handoff condition. |\n| Trust and consent | 40% | Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Clear conversation flow",
+              "60%",
+              "Give a scenario, response and specific human-handoff condition."
+            ],
+            [
+              "Trust and consent",
+              "40%",
+              "Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design one WhatsApp conversation with an automated response and a human-handoff rule. No API integration or actual message sending is required.",
+        "delivery": [
+          "Name one scenario, such as order confirmation or an FAQ.",
+          "Write a sample customer message that starts the conversation.",
+          "Draft the automated response.",
+          "Specify the condition that transfers the conversation to a human.",
+          "Name who receives the handoff.",
+          "Explain how the customer initiated or consented to the conversation and how the design avoids unsolicited spam."
+        ],
+        "rubric": [
+          {
+            "dimension": "Clear conversation flow",
+            "weight": 60,
+            "criteria": "Give a scenario, response and specific human-handoff condition."
+          },
+          {
+            "dimension": "Trust and consent",
+            "weight": 40,
+            "criteria": "Explain how the customer initiated or agreed to the conversation; do not propose random broadcasting."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

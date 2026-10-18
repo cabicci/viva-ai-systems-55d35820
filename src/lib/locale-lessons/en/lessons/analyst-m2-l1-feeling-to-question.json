@@ -13,8 +13,8 @@
   "sections": [
     {
       "role": "Orientation",
-      "heading": "Orientation — Beginning of the Lesson",
-      "subtitle": "Beginning of the Lesson",
+      "heading": "Orientation — Beginning of the Step",
+      "subtitle": "Beginning of the Step",
       "contentMarkdown": "- **What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.\n- **Why now?** Now that you know that **numbers** need a **question** — the next step is to turn «**I feel that...**» into a **specific question**.\n- **What after the lesson?** You will convert **3 sentences** «I feel that...** into **answerable questions**.**»",
       "bullets": [
         "**What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.",
@@ -40,7 +40,7 @@
       "role": "Core idea",
       "heading": "Core idea — the question opens the door — the feeling closes it",
       "subtitle": "The question opens the door — the feeling closes it",
-      "contentMarkdown": "1. Write **Feeling** as it is: 'Customers are dissatisfied'.\n2. Ask: **Who?** **How many?** **When?** **Compared to what?** — 'How many customers complained **this month**?'\n3. **Be more specific:** 'What are the **top 3 complaints** that repeated?'\n4. The more precise the question becomes — the more actionable the answer is — turning **complaints** into **management**.",
+      "contentMarkdown": "1. Write **Feeling** as it is: 'Customers are dissatisfied'.\n2. Define the metric and comparison: What is the complaint rate per 100 customer contacts this month versus last month?\n3. Final model: What is the complaint rate per 100 customer contacts this month versus last month, and what are the three most repeated complaint reasons in each of those periods?\n4. Use the same definitions of a complaint and a contact in both periods. A precise question supports review; it does not by itself establish a cause or guarantee the decision.",
       "bullets": [],
       "tables": []
     },
@@ -48,7 +48,7 @@
       "role": "Comparison",
       "heading": "Comparison — Feeling vs. Question",
       "subtitle": "Feeling vs. Question",
-      "contentMarkdown": "| Feeling | Question |\n|------|------|\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition** | 'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret** |",
+      "contentMarkdown": "| Feeling | Question |\n|---|---|\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**. | How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision. |",
       "bullets": [],
       "tables": [
         {
@@ -59,7 +59,7 @@
           "rows": [
             [
               "'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**.",
-              "'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret**."
+              "How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision."
             ]
           ]
         }
@@ -86,8 +86,8 @@
             ],
             [
               "**Baseline**",
-              "The **normal number** you **compare** against — to know: are you **doing well** or **not**.",
-              "'My sales are 100k — **average is 150**' — **150** is the **Baseline**."
+              "A reference value for a stated period and unit, used to compare the same metric; it is not an absolute quality judgment.",
+              "Fictional example: this month's sales are 100 thousand currency units; the average of the previous three months is 150 thousand currency units per month. That average is this example's baseline, not a sector-wide target or an absolute quality judgment. The shortfall is 50 thousand currency units, a decline of about 33.33%."
             ]
           ]
         }
@@ -95,8 +95,8 @@
     },
     {
       "role": "Diagram block (intent)",
-      "heading": "Diagram block (intent)",
-      "contentMarkdown": "**4 examples — from feeling to decision** (ID: `feeling-to-question-table`): for each feeling — a **specific question**, **Baseline** for comparison, **clear action**. Use it in the mission.",
+      "heading": "From Feeling to a Decision",
+      "contentMarkdown": "Four steps for one example: start with the feeling, define the scope and period, choose a baseline, and name the action.",
       "bullets": [],
       "tables": []
     },

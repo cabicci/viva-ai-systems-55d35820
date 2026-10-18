@@ -14,7 +14,7 @@
     {
       "role": "Orientation",
       "heading": "Orientation",
-      "subtitle": "Lesson Start",
+      "subtitle": "Step Start",
       "contentMarkdown": "- **What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.",
       "bullets": [
         "**What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly."
@@ -38,31 +38,73 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Common Errors in Interpretation",
-      "contentMarkdown": "> **Quiz:**\n\nCorrelation ≠ Causation — there could be a third reason (time of day, type of customers).\nAnalysis Paralysis — delays in decision-making.\nVanity Metric — likes are not important.\n\n**Explanation:** The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
+      "contentMarkdown": "**Question:** A café notices higher morning sales on days with quiet music. The manager concludes that the music caused the rise and decides to play it permanently, without checking other differences. Which interpretation trap is present?\n\n1. Treating an observed association between music and sales as proven causation.\n2. Delaying a decision because the team keeps requesting more analysis.\n3. Replacing sales outcomes with a count of social-media likes.\n\n**Explanation:** Music and sales varied together, but morning timing or customer mix may explain the association. Sales are an outcome here, not a likes metric, and the manager acted rather than delaying. Compare equivalent conditions or plan a small controlled test before attributing the change to music.",
       "bullets": [
-        "Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
-        "Analysis Paralysis — delays in decision-making.",
-        "Vanity Metric — likes are not important."
+        "Treating an observed association between music and sales as proven causation.",
+        "Delaying a decision because the team keeps requesting more analysis.",
+        "Replacing sales outcomes with a count of social-media likes."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 0,
         "options": [
-          "Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
-          "Analysis Paralysis — delays in decision-making.",
-          "Vanity Metric — likes are not important."
+          "Treating an observed association between music and sales as proven causation.",
+          "Delaying a decision because the team keeps requesting more analysis.",
+          "Replacing sales outcomes with a count of social-media likes."
         ],
-        "explanation": "The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
-        "question": "What is the most appropriate option based on the section above?"
+        "explanation": "Music and sales varied together, but morning timing or customer mix may explain the association. Sales are an outcome here, not a likes metric, and the manager acted rather than delaying. Compare equivalent conditions or plan a small controlled test before attributing the change to music.",
+        "question": "A café notices higher morning sales on days with quiet music. The manager concludes that the music caused the rise and decides to play it permanently, without checking other differences. Which interpretation trap is present?"
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — 3 Scenarios",
       "subtitle": "3 Scenarios",
-      "contentMarkdown": "| Trap Diagnosis | 50% |\n| Better Decision | 50% |",
+      "contentMarkdown": "Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\n\n**Submission:**\n\n1. Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\n2. For each of the three scenarios, describe the situation or copy the relevant lesson example.\n3. Name the interpretation error.\n4. Explain how to avoid that error.\n5. Propose a better small decision or experiment rather than an unsupported generalization.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Diagnose the trap | 50% | Identify a clear interpretation error in each of the three scenarios. |\n| Better decision | 50% | Propose a small decision or experiment supported by the situation, not a generalization without evidence. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Diagnose the trap",
+              "50%",
+              "Identify a clear interpretation error in each of the three scenarios."
+            ],
+            [
+              "Better decision",
+              "50%",
+              "Propose a small decision or experiment supported by the situation, not a generalization without evidence."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.",
+        "delivery": [
+          "Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.",
+          "For each of the three scenarios, describe the situation or copy the relevant lesson example.",
+          "Name the interpretation error.",
+          "Explain how to avoid that error.",
+          "Propose a better small decision or experiment rather than an unsupported generalization."
+        ],
+        "rubric": [
+          {
+            "dimension": "Diagnose the trap",
+            "weight": 50,
+            "criteria": "Identify a clear interpretation error in each of the three scenarios."
+          },
+          {
+            "dimension": "Better decision",
+            "weight": 50,
+            "criteria": "Propose a small decision or experiment supported by the situation, not a generalization without evidence."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

@@ -14,14 +14,16 @@ const mocks = vi.hoisted(() => ({
 vi.mock("@tanstack/react-start", () => ({
   createServerFn: () => {
     let validate = (input: unknown) => input;
-    const chain: any = {};
+    const chain: Record<string, unknown> = {};
     chain.middleware = () => chain;
     chain.inputValidator = (next: (input: unknown) => unknown) => {
       validate = next;
       return chain;
     };
-    chain.handler = (handler: (args: any) => unknown) =>
-      async (args: any) => handler({ ...args, data: validate(args.data) });
+    chain.handler =
+      (handler: (args: { data: unknown; context: { userId: string } }) => unknown) =>
+      async (args: { data: unknown; context: { userId: string } }) =>
+        handler({ ...args, data: validate(args.data) });
     return chain;
   },
 }));
@@ -46,7 +48,8 @@ const canonicalSource = {
 };
 const submissionId = "11111111-1111-4111-8111-111111111111";
 const callReveal = revealModelMissionAnswer as unknown as (args: {
-  data: Record<string, unknown>; context: { userId: string };
+  data: Record<string, unknown>;
+  context: { userId: string };
 }) => Promise<{ modelAnswer: string; note: string }>;
 const request = (extra: Record<string, unknown> = {}) => ({
   context: { userId: "user-1" },
@@ -59,23 +62,35 @@ beforeEach(() => {
   mocks.eqCalls.length = 0;
   mocks.updateError = null;
   mocks.row = {
-    id: submissionId, user_id: "user-1", mission_id: canonicalSource.missionId,
-    lesson_id: canonicalSource.lessonId, attempt_count: 2, status: "needs_revision",
+    id: submissionId,
+    user_id: "user-1",
+    mission_id: canonicalSource.missionId,
+    lesson_id: canonicalSource.lessonId,
+    attempt_count: 2,
+    status: "needs_revision",
     submission_metadata: { nextStep: "Preserve me" },
   };
   mocks.from.mockImplementation(() => {
-    const q: any = {};
+    const q: Record<string, unknown> = {};
     q.select = vi.fn(() => q);
-    q.eq = vi.fn((key: string, value: unknown) => { mocks.eqCalls.push([key, value]); return q; });
+    q.eq = vi.fn((key: string, value: unknown) => {
+      mocks.eqCalls.push([key, value]);
+      return q;
+    });
     q.maybeSingle = vi.fn(async () => ({ data: mocks.row, error: null }));
-    q.update = vi.fn((payload: Record<string, unknown>) => { mocks.updates.push(payload); return q; });
+    q.update = vi.fn((payload: Record<string, unknown>) => {
+      mocks.updates.push(payload);
+      return q;
+    });
     q.then = (resolve: (value: unknown) => unknown, reject?: (error: unknown) => unknown) =>
       Promise.resolve({ error: mocks.updateError }).then(resolve, reject);
     return q;
   });
   mocks.resolveSource.mockResolvedValue(canonicalSource);
   mocks.enforceRateLimit.mockResolvedValue(undefined);
-  mocks.callAI.mockResolvedValue({ content: JSON.stringify({ modelAnswer: "Answer", note: "Note" }) });
+  mocks.callAI.mockResolvedValue({
+    content: JSON.stringify({ modelAnswer: "Answer", note: "Note" }),
+  });
 });
 
 describe("revealModelMissionAnswer canonical locale contract", () => {
@@ -84,37 +99,67 @@ describe("revealModelMissionAnswer canonical locale contract", () => {
     ["ar-MSA", "Modern Standard Arabic"],
     ["ar-Gulf", "Gulf Arabic"],
     ["en", "simple English"],
-  ])("uses owned canonical %s source and ignores client prompt tampering", async (locale, language) => {
-    await callReveal(request({ locale, lessonTitle: "TAMPERED", missionPrompt: "TAMPERED", lessonId: "TAMPERED" }));
-    expect(mocks.resolveSource).toHaveBeenCalledExactlyOnceWith({
-      locale, lessonId: canonicalSource.lessonId, missionId: canonicalSource.missionId,
-    });
-    const messages = mocks.callAI.mock.calls[0]![0].messages as Array<{ content: string }>;
-    expect(messages[0]!.content).toContain(language);
-    expect(messages[1]!.content).toContain(canonicalSource.lessonTitle);
-    expect(messages[1]!.content).toContain(canonicalSource.missionPrompt);
-    expect(JSON.stringify(messages)).not.toContain("TAMPERED");
-    expect(mocks.eqCalls).toEqual(expect.arrayContaining([
-      ["id", submissionId], ["user_id", "user-1"], ["mission_id", canonicalSource.missionId],
-    ]));
-    expect(mocks.updates).toEqual([{
-      submission_metadata: { nextStep: "Preserve me", revealed: true, modelAnswer: "Answer", note: "Note" },
-    }]);
-    expect(mocks.enforceRateLimit).toHaveBeenCalledTimes(3);
-  });
+  ])(
+    "uses owned canonical %s source and ignores client prompt tampering",
+    async (locale, language) => {
+      await callReveal(
+        request({
+          locale,
+          lessonTitle: "TAMPERED",
+          missionPrompt: "TAMPERED",
+          lessonId: "TAMPERED",
+        }),
+      );
+      expect(mocks.resolveSource).toHaveBeenCalledExactlyOnceWith({
+        locale,
+        lessonId: canonicalSource.lessonId,
+        missionId: canonicalSource.missionId,
+      });
+      const messages = mocks.callAI.mock.calls[0]![0].messages as Array<{ content: string }>;
+      expect(messages[0]!.content).toContain(language);
+      expect(messages[1]!.content).toContain(canonicalSource.lessonTitle);
+      expect(messages[1]!.content).toContain(canonicalSource.missionPrompt);
+      expect(JSON.stringify(messages)).not.toContain("TAMPERED");
+      expect(mocks.eqCalls).toEqual(
+        expect.arrayContaining([
+          ["id", submissionId],
+          ["user_id", "user-1"],
+          ["mission_id", canonicalSource.missionId],
+        ]),
+      );
+      expect(mocks.updates).toEqual([
+        {
+          submission_metadata: {
+            nextStep: "Preserve me",
+            revealed: true,
+            modelAnswer: "Answer",
+            note: "Note",
+          },
+        },
+      ]);
+      expect(mocks.enforceRateLimit).toHaveBeenCalledTimes(3);
+    },
+  );
 
-  it.each(["invalid", undefined])("rejects unsupported or missing locale %s before DB/provider", async (locale) => {
-    await expect(callReveal(request({ locale }))).rejects.toThrow();
-    expect(mocks.from).not.toHaveBeenCalled();
-    expect(mocks.callAI).not.toHaveBeenCalled();
-  });
+  it.each(["invalid", undefined])(
+    "rejects unsupported or missing locale %s before DB/provider",
+    async (locale) => {
+      await expect(callReveal(request({ locale }))).rejects.toThrow();
+      expect(mocks.from).not.toHaveBeenCalled();
+      expect(mocks.callAI).not.toHaveBeenCalled();
+    },
+  );
 
   it("rejects an unowned or mismatched submission before source/provider", async () => {
     mocks.row = null;
     await expect(callReveal(request())).rejects.toThrow();
-    expect(mocks.eqCalls).toEqual(expect.arrayContaining([
-      ["id", submissionId], ["user_id", "user-1"], ["mission_id", canonicalSource.missionId],
-    ]));
+    expect(mocks.eqCalls).toEqual(
+      expect.arrayContaining([
+        ["id", submissionId],
+        ["user_id", "user-1"],
+        ["mission_id", canonicalSource.missionId],
+      ]),
+    );
     expect(mocks.resolveSource).not.toHaveBeenCalled();
     expect(mocks.callAI).not.toHaveBeenCalled();
     expect(mocks.updates).toEqual([]);
@@ -153,9 +198,14 @@ describe("revealModelMissionAnswer canonical locale contract", () => {
   it("preserves legacy cache verbatim across locale switches without regeneration or invented locale", async () => {
     mocks.row!.lesson_id = null;
     mocks.row!.attempt_count = 0;
-    mocks.row!.submission_metadata = { revealed: true, modelAnswer: "Historical answer", note: "Historical note" };
+    mocks.row!.submission_metadata = {
+      revealed: true,
+      modelAnswer: "Historical answer",
+      note: "Historical note",
+    };
     expect(await callReveal(request({ locale: "en" }))).toEqual({
-      modelAnswer: "Historical answer", note: "Historical note",
+      modelAnswer: "Historical answer",
+      note: "Historical note",
     });
     expect(mocks.resolveSource).not.toHaveBeenCalled();
     expect(mocks.callAI).not.toHaveBeenCalled();
@@ -169,12 +219,73 @@ describe("revealModelMissionAnswer canonical locale contract", () => {
     );
   });
 
+  it("formats and persists a structured provider answer without replacing the learner submission", async () => {
+    mocks.callAI.mockResolvedValue({
+      content: JSON.stringify({
+        modelAnswer: { response: "Ask for the missing date", steps: ["Read", "Confirm"] },
+        note: "Compare with your attempt",
+      }),
+    });
+    const answer = await callReveal(request());
+    expect(answer.modelAnswer).toBe(
+      "response: Ask for the missing date\n\nsteps: 1. Read\n2. Confirm",
+    );
+    expect(mocks.updates[0]).toEqual({
+      submission_metadata: {
+        nextStep: "Preserve me",
+        revealed: true,
+        modelAnswer: answer.modelAnswer,
+        note: "Compare with your attempt",
+      },
+    });
+    expect(mocks.updates[0]).not.toHaveProperty("submission_text");
+    expect(mocks.updates[0]).not.toHaveProperty("attempt_count");
+  });
+
+  it("reads structured historical cache without rewriting the stored original or note", async () => {
+    const original = {
+      revealed: true,
+      modelAnswer: { answer: "Historical structured answer" },
+      note: "Original note",
+    };
+    mocks.row!.submission_metadata = original;
+    expect(await callReveal(request())).toEqual({
+      modelAnswer: "answer: Historical structured answer",
+      note: "Original note",
+    });
+    expect(mocks.row!.submission_metadata).toBe(original);
+    expect(mocks.updates).toEqual([]);
+    expect(mocks.callAI).not.toHaveBeenCalled();
+  });
+
+  it.each(["[object Object]", "", null, {}])(
+    "rejects unreadable generated answer %j without persisting it",
+    async (modelAnswer) => {
+      mocks.callAI.mockResolvedValue({ content: JSON.stringify({ modelAnswer }) });
+      await expect(callReveal(request())).rejects.toThrow();
+      expect(mocks.updates).toEqual([]);
+    },
+  );
+
+  it("does not regenerate or rewrite an irrecoverable historical answer", async () => {
+    mocks.row!.submission_metadata = {
+      revealed: true,
+      modelAnswer: "[object Object]",
+      note: "Original note",
+    };
+    await expect(callReveal(request())).rejects.toThrow();
+    expect(mocks.updates).toEqual([]);
+    expect(mocks.callAI).not.toHaveBeenCalled();
+  });
+
   it("does not report success when persistence fails", async () => {
     mocks.updateError = { message: "Mock persistence failure" };
     const errorLog = vi.spyOn(console, "error").mockImplementation(() => {});
     try {
       await expect(callReveal(request())).rejects.toThrow();
-      expect(mocks.updates[0]).toEqual(expect.objectContaining({ submission_metadata: expect.any(Object) }));
+      expect(mocks.updates[0]).toEqual(
+        expect.objectContaining({ submission_metadata: expect.any(Object) }),
+      );
       expect(mocks.updates[0]).not.toHaveProperty("status");
       expect(mocks.updates[0]).not.toHaveProperty("score");
     } finally {

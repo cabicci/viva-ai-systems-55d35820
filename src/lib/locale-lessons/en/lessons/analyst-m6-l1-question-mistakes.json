@@ -37,30 +37,73 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Common Mistakes in Questions",
-      "contentMarkdown": "> **Quiz:**\n\nLeading — assumed the reason for drop before seeing the data.\nVague — the question is just general.\nNo Data — there is no data at all.\n\n**Explanation:** The correct answer is Leading — it assumes the reason for drop before seeing the data.",
+      "contentMarkdown": "**Question:** The team has defined cart-abandonment rates and the last 30 days versus the previous comparable 30 days, and has the event data. Without evidence about causes, someone asks: 'Why is the high price causing cart abandonment?' What is the main problem?\n\n1. The question assumes price causes abandonment before that cause has been tested.\n2. The team has not defined any time window.\n3. There are no cart-abandonment data available.\n\n**Explanation:** The cause is assumed even though it has not been established. The metric, periods and data are already defined. Ask the abandonment rate, the stage where people leave and which possible factors to investigate; treat price as a hypothesis.",
       "bullets": [
-        "Leading — assumed the reason for drop before seeing the data.",
-        "Vague — the question is just general.",
-        "No Data — there is no data at all."
+        "The question assumes price causes abandonment before that cause has been tested.",
+        "The team has not defined any time window.",
+        "There are no cart-abandonment data available."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 0,
         "options": [
-          "Leading — assumed the reason for drop before seeing the data.",
-          "Vague — the question is just general.",
-          "No Data — there is no data at all."
+          "The question assumes price causes abandonment before that cause has been tested.",
+          "The team has not defined any time window.",
+          "There are no cart-abandonment data available."
         ],
-        "explanation": "The correct answer is Leading — it assumes the reason for drop before seeing the data.",
-        "question": "What is the most appropriate option based on the section above?"
+        "explanation": "The cause is assumed even though it has not been established. The metric, periods and data are already defined. Ask the abandonment rate, the stage where people leave and which possible factors to investigate; treat price as a hypothesis.",
+        "question": "The team has defined cart-abandonment rates and the last 30 days versus the previous comparable 30 days, and has the event data. Without evidence about causes, someone asks: 'Why is the high price causing cart abandonment?' What is the main problem?"
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Diagnosis | 50% |\n| Formulating for Decision | 50% |",
+      "contentMarkdown": "Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.\n\n**Submission:**\n\n1. Repeat the following template for each of three questions.\n2. Copy the original question.\n3. Name the error: too general, biased or unsupported by available data.\n4. Identify what is missing: metric, time window or comparator.\n5. Write the corrected, measurable question.\n6. Name the decision the corrected question supports.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Correct diagnosis | 50% | For every question, identify the error and what is missing. |\n| Decision-focused wording | 50% | Each corrected question is specific, measurable and tied to a decision. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Correct diagnosis",
+              "50%",
+              "For every question, identify the error and what is missing."
+            ],
+            [
+              "Decision-focused wording",
+              "50%",
+              "Each corrected question is specific, measurable and tied to a decision."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Repair three flawed questions from your work or the lesson. For each, diagnose the problem and write a corrected question; AI can suggest wording, but you make the final choice.",
+        "delivery": [
+          "Repeat the following template for each of three questions.",
+          "Copy the original question.",
+          "Name the error: too general, biased or unsupported by available data.",
+          "Identify what is missing: metric, time window or comparator.",
+          "Write the corrected, measurable question.",
+          "Name the decision the corrected question supports."
+        ],
+        "rubric": [
+          {
+            "dimension": "Correct diagnosis",
+            "weight": 50,
+            "criteria": "For every question, identify the error and what is missing."
+          },
+          {
+            "dimension": "Decision-focused wording",
+            "weight": 50,
+            "criteria": "Each corrected question is specific, measurable and tied to a decision."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

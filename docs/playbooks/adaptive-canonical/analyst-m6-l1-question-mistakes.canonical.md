@@ -168,8 +168,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| تشخيص | 50% |
-| صياغة تخدم قرار | 50% |
+أصلح ثلاثة أسئلة معيبة من عملك أو من أمثلة الدرس. شخّص المشكلة واكتب السؤال المصحح؛ يمكن للذكاء الاصطناعي اقتراح صياغة وأنت تختار النهائي.
+
+**التسليم:**
+
+1. كرّر النموذج الآتي لكل واحد من الأسئلة الثلاثة.
+2. انسخ السؤال الأصلي.
+3. سمِّ الخطأ: عام أو متحيز أو لا تجيب عنه البيانات المتاحة.
+4. حدّد الناقص: المقياس أو الفترة أو المقارنة.
+5. اكتب السؤال المصحح القابل للقياس.
+6. سمِّ القرار الذي يخدمه السؤال المصحح.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| تشخيص صحيح | 50% | حدّد نوع الخطأ وما ينقص كل سؤال. |
+| صياغة تخدم القرار | 50% | كل سؤال مصحح محدد وقابل للقياس ومرتبط بقرار. |
+
 
 ### Confidence close
 
@@ -291,3 +307,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

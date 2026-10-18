@@ -168,8 +168,23 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| ٤ أرقام + ٣ أسئلة | 60% |
-| قرار واحد | 40% |
+خطّط لمراجعة أسبوعية مدتها ثلاثون دقيقة، دون اشتراط تنفيذها الآن. يكفي جدول بأربعة مقاييس إن لم تتوفر لوحة متابعة؛ لا يلزم استدعاء الذكاء الاصطناعي في التمرين.
+
+**التسليم:**
+
+1. حدّد يوم المراجعة ووقتها ومدتها: ثلاثون دقيقة.
+2. سمِّ أربعة مقاييس ومصادرها.
+3. اكتب ثلاثة أسئلة عملية ستطرحها على الذكاء الاصطناعي، مثل أكبر تغير وأول تجربة وما يمكن تجاهله.
+4. اقترح قرارًا واحدًا يتضمن الإجراء والمسؤول والموعد النهائي.
+5. اشرح كيف ستراجع أثر القرار في الأسبوع التالي.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| أربعة مقاييس وثلاثة أسئلة | 60% | أربعة مقاييس محددة وثلاثة أسئلة عملية للذكاء الاصطناعي. |
+| قرار واحد | 40% | قرار يتضمن الإجراء والمسؤول والموعد النهائي. |
+
 
 ### Confidence close
 
@@ -291,3 +306,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

@@ -15,6 +15,7 @@ export const SAFE_LINE_RETURNS = [
   "/technical",
   "/technical/pricing",
   "/technical/curriculum",
+  "/build-logs",
 ] as const;
 type LearnerReturn =
   `/learn/${"intro" | "business" | "creator" | "analyst" | "automator" | "builder"}/${string}`;
@@ -30,7 +31,9 @@ export function isLearnerAuthReturn(value: unknown): value is LearnerReturn {
   );
 }
 
-/** Only fixed catalogue paths or plain lesson paths; never URLs, queries or encoded redirects. */
+/** Only fixed local paths or plain lesson paths; never URLs, queries or encoded redirects.
+ * /build-logs always re-enters its mandatory server admin guard; it grants no access.
+ */
 export function isSafeAuthReturn(value: unknown): value is SafeReturn {
   return (
     typeof value === "string" &&

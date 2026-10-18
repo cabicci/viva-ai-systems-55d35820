@@ -1,0 +1,20 @@
+{
+  "role": "academic-audit-revision-chain",
+  "version": 1,
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "receipts": [
+    {
+      "path": "scripts/academic-integration/audit-revision-8-9-10-40.json",
+      "sha256": "0149923f20a995076ae97579b3a98c13c754aa0e6adda301e362335062a38a96"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-17-30.json",
+      "sha256": "4e315c47bf733cda58bb98c5cbc5fff798a4ef36deb3cdd1659e569700d41cbc"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-22.json",
+      "sha256": "2fe654d9e449eaf9c4cbe2f4ff2d24bfe36b171343f07b174549efda2e804632"
+    }
+  ],
+  "policy": "Append reviewed immutable receipts; never rewrite historical payload revisions or infer arbitrary peer states."
+}

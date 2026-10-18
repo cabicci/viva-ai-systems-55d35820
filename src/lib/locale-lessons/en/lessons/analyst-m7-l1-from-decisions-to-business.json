@@ -56,9 +56,51 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Goal + Numbers | 60% |\n| Weekly Connection | 40% |",
+      "contentMarkdown": "Connect one six-month goal to three progress metrics and a weekly decision. Use a personal, team or business context; AI may suggest wording, but you choose the final goal.\n\n**Submission:**\n\n1. State your six-month goal in one sentence and identify its context.\n2. Name three progress metrics and explain why you chose each.\n3. Name one weekly review decision that supports the goal.\n4. Give the decision's owner and deadline.\n5. Explain how you will review progress each month.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Goal and metrics | 60% | Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics. |\n| Weekly connection | 40% | The weekly decision supports the goal rather than being unrelated to it. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Goal and metrics",
+              "60%",
+              "Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics."
+            ],
+            [
+              "Weekly connection",
+              "40%",
+              "The weekly decision supports the goal rather than being unrelated to it."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Connect one six-month goal to three progress metrics and a weekly decision. Use a personal, team or business context; AI may suggest wording, but you choose the final goal.",
+        "delivery": [
+          "State your six-month goal in one sentence and identify its context.",
+          "Name three progress metrics and explain why you chose each.",
+          "Name one weekly review decision that supports the goal.",
+          "Give the decision's owner and deadline.",
+          "Explain how you will review progress each month."
+        ],
+        "rubric": [
+          {
+            "dimension": "Goal and metrics",
+            "weight": 60,
+            "criteria": "Give a clear six-month goal tied to your real personal, team or business context and three related progress metrics."
+          },
+          {
+            "dimension": "Weekly connection",
+            "weight": 40,
+            "criteria": "The weekly decision supports the goal rather than being unrelated to it."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

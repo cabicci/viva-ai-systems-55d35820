@@ -7,7 +7,7 @@
   "productionRoute": "/learn/creator/creator-m6-l3-analytics",
   "titleEn": "Simple Analytics Reading",
   "title": "Simple Analytics Reading",
-  "summary": "Views alone can be misleading — check Watch Time, Save Rate, and Action Metric weekly.",
+  "summary": "Views alone can mislead — compare Average View Duration, Save Rate and a goal-relevant action metric with clear units, periods and baselines.",
   "estimatedMinutes": 12,
   "nextLessonId": "creator-m6-l4-leads",
   "sections": [
@@ -39,11 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Read the Post with Three Signals",
-      "contentMarkdown": "- **Focus on 3 indicators:** **Watch Time**, **Save Rate**, **Follow/Action Rate** — **Action Metric**.\n- **Watch Time** **indicates if the start was engaging**. **Save Rate** **shows if the value is worth returning**. **Action Metric** **indicates if trust has increased**.\n- **Every week**, **review the last 3 posts** — **and write down just one improvement decision**. **Regular small improvements** **are better than random large changes**.",
+      "contentMarkdown": "- Choose signals for the goal: Average View Duration, Save Rate and a clearly defined action count/rate. Record each platform's counting rule and denominator; these are clues, not proof of quality or trust.\n- Average View Duration is average time watched per eligible playback under the platform's definition, in seconds, whether completed or not. Total Watch Time sums viewing time; completion rate/percentage measures finishing and is a different metric.\n- Compare videos of similar length, or use an appropriate platform-defined proportional metric such as average percentage viewed. An average alone cannot locate an early drop: inspect the retention curve before diagnosing the opening.\n- Each week, review three posts with values, units, periods and a relevant comparison. Choose one next step tied to a specific signal, or declare missing data and plan measurement.",
       "bullets": [
-        "**Focus on 3 indicators:** **Watch Time**, **Save Rate**, **Follow/Action Rate** — **Action Metric**.",
-        "**Watch Time** **indicates if the start was engaging**. **Save Rate** **shows if the value is worth returning**. **Action Metric** **indicates if trust has increased**.",
-        "**Every week**, **review the last 3 posts** — **and write down just one improvement decision**. **Regular small improvements** **are better than random large changes**."
+        "Choose signals for the goal: Average View Duration, Save Rate and a clearly defined action count/rate. Record each platform's counting rule and denominator; these are clues, not proof of quality or trust.",
+        "Average View Duration is average time watched per eligible playback under the platform's definition, in seconds, whether completed or not. Total Watch Time sums viewing time; completion rate/percentage measures finishing and is a different metric.",
+        "Compare videos of similar length, or use an appropriate platform-defined proportional metric such as average percentage viewed. An average alone cannot locate an early drop: inspect the retention curve before diagnosing the opening.",
+        "Each week, review three posts with values, units, periods and a relevant comparison. Choose one next step tied to a specific signal, or declare missing data and plan measurement."
       ],
       "tables": []
     },
@@ -51,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Superficial Reading or Smart Reading?",
-      "contentMarkdown": "| Superficial Reading | Smart Reading |\n|--------------------|---------------|\n| **A post that got high views is great** — **without understanding Watch Time and Save Rate** | **I review 3 key indicators before judging** — **I know what to repeat** **for long-term growth** |",
+      "contentMarkdown": "| Superficial Reading | Smart Reading |\n|---|---|\n| High views alone decide success, without checking Average View Duration, Save Rate or the post's goal. | Compare goal-relevant metrics with values, units, equivalent periods and suitable video lengths before choosing a provisional next step. |",
       "bullets": [],
       "tables": [
         {
@@ -61,8 +62,8 @@
           ],
           "rows": [
             [
-              "**A post that got high views is great** — **without understanding Watch Time and Save Rate**",
-              "**I review 3 key indicators before judging** — **I know what to repeat** **for long-term growth**"
+              "High views alone decide success, without checking Average View Duration, Save Rate or the post's goal.",
+              "Compare goal-relevant metrics with values, units, equivalent periods and suitable video lengths before choosing a provisional next step."
             ]
           ]
         }
@@ -72,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Simple Analytics Terms",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|--------|---------|\n| **Watch Time** | **Average time** **that people completed the content** | **If the start is weak** **you will see the number drop quickly** |\n| **Save Rate** | **The save rate** **compared to the number of views** | **The more practical the value** **the higher the save rate tends to be** |\n| **Action Metric** | **An indicator of a real action** **after viewing** | **A post with fewer views** **but got serious messages = a stronger metric** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---|---|---|\n| Average View Duration | Average time watched per eligible playback under the platform's definition, in seconds, whether completed or not; not total viewing time or completion rate. | A 30-second video with an 18-second average was not necessarily completed by every viewer; inspect the retention curve to locate drop-off. |\n| **Save Rate** | **The save rate** **compared to the number of views** | **The more practical the value** **the higher the save rate tends to be** |\n| **Action Metric** | **An indicator of a real action** **after viewing** | **A post with fewer views** **but got serious messages = a stronger metric** |",
       "bullets": [],
       "tables": [
         {
@@ -83,9 +84,9 @@
           ],
           "rows": [
             [
-              "**Watch Time**",
-              "**Average time** **that people completed the content**",
-              "**If the start is weak** **you will see the number drop quickly**"
+              "Average View Duration",
+              "Average time watched per eligible playback under the platform's definition, in seconds, whether completed or not; not total viewing time or completion rate.",
+              "A 30-second video with an 18-second average was not necessarily completed by every viewer; inspect the retention curve to locate drop-off."
             ],
             [
               "**Save Rate**",
@@ -103,8 +104,8 @@
     },
     {
       "role": "Diagram block (intent)",
-      "heading": "Diagram Block",
-      "contentMarkdown": "Visual diagram — **Triangle of Key Indicators**. **Balance the three signals** **instead of relying on views alone** — **to make your judgment more accurate**. (The visual original remains unchanged.)",
+      "heading": "Three Analytics Signals",
+      "contentMarkdown": "Three cards group viewing time, saves and actions. Here, duration is reported as Average View Duration, separately from total time and completion; checking a weak opening needs the retention curve, not the average alone.",
       "bullets": [],
       "tables": []
     },
@@ -112,29 +113,29 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** **You have two posts:** **the first has higher views but a weak Save Rate** — **and the second has fewer views but better Watch Time and Save**. **Which one do you rely on** **as a signal to improve the next content?**\n\nthe first** **because it has higher views.\n**the second** **because it is stronger in quality and intent**.\nneither** — **I choose based on mood.\n\n**Explanation:** **The indicators that reflect true value** **are more important than the raw view number** — **because they lead to stronger growth**.",
+      "contentMarkdown": "The goal is retention and useful return visits. Compare two videos of similar length, audience and reporting period: the first has more views but a lower Save Rate; the second has fewer views but higher Average View Duration and Save Rate. Which is the better first signal for this goal?\n\n1. the first because it has higher views.\n2. The second as a provisional duration-and-save signal for this stated goal, to investigate.\n3. neither — I choose based on mood.\n\nFor this stated goal and comparable context, the second post's duration and saves are useful signals to investigate and test. They do not prove trust, an opening problem or guaranteed future growth; use the retention curve before changing the opening.",
       "bullets": [
         "the first because it has higher views.",
-        "the second because it is stronger in quality and intent.",
+        "The second as a provisional duration-and-save signal for this stated goal, to investigate.",
         "neither — I choose based on mood."
       ],
       "tables": [],
       "quiz": {
-        "question": "**You have two posts:** **the first has higher views but a weak Save Rate** — **and the second has fewer views but better Watch Time and Save**. **Which one do you rely on** **as a signal to improve the next content?**",
+        "question": "The goal is retention and useful return visits. Compare two videos of similar length, audience and reporting period: the first has more views but a lower Save Rate; the second has fewer views but higher Average View Duration and Save Rate. Which is the better first signal for this goal?",
         "correctIndex": 1,
         "options": [
           "the first because it has higher views.",
-          "the second because it is stronger in quality and intent.",
+          "The second as a provisional duration-and-save signal for this stated goal, to investigate.",
           "neither — I choose based on mood."
         ],
-        "explanation": "**The indicators that reflect true value** **are more important than the raw view number** — **because they lead to stronger growth**."
+        "explanation": "For this stated goal and comparable context, the second post's duration and saves are useful signals to investigate and test. They do not prove trust, an opening problem or guaranteed future growth; use the retention curve before changing the opening."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Identify the Most Important Metric for Each Post",
-      "contentMarkdown": "**Introduction:** **Choose 3 posts** — **decide on the most important metric** **that truly reflects its success**.\n\n**Submission:** For each post — goal · most important metric · reason · **one decision for next week**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Metric Selection | 50% | **Each post has a clear and justified metric** — **no general selection** |\n| Executive Decision | 50% | **One improvement decision** **directly related to the analysis** |",
+      "contentMarkdown": "Analyze three posts and choose one goal-relevant metric for each. Use permitted actual data when available. Otherwise label a fictional teaching sample and its conclusions as provisional, or explicitly state the missing data and a measurement plan. Do not invent an analysis of unavailable results.\n\n**Delivery:**\n\n1. For each of three posts: post identifier/description, goal and data status — actual, explicitly fictional, or unavailable.\n2. For each: metric name and value, unit and denominator where applicable; include the platform's relevant metric definition.\n3. For each: measurement period and scope. For viewing duration, give video length and use a comparable-length video or suitable proportional metric.\n4. For each: relevant baseline/comparison and its value, explaining the specific difference. If unavailable, name the gap and how it will be measured.\n5. Choose one next-week decision tied to a stated difference/signal or a specific data-collection step. Keep conclusions provisional for fictional or incomplete data; no publication or actual experiment is required.\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Metric Selection | 50% | Each of three posts has a goal-linked justified metric, value/unit/denominator, period and relevant comparison, or a clearly declared data gap with measurement plan. Distinguish actual and fictional data. |\n| Executive Decision | 50% | One next step is traceable to a specific difference/signal or data gap and its limits, with reasoning. Do not require invented values, a proven cause, guaranteed improvement or real publication. |",
       "bullets": [],
       "tables": [
         {
@@ -147,32 +148,38 @@
             [
               "Metric Selection",
               "50%",
-              "**Each post has a clear and justified metric** — **no general selection**"
+              "Each of three posts has a goal-linked justified metric, value/unit/denominator, period and relevant comparison, or a clearly declared data gap with measurement plan. Distinguish actual and fictional data."
             ],
             [
               "Executive Decision",
               "50%",
-              "**One improvement decision** **directly related to the analysis**"
+              "One next step is traceable to a specific difference/signal or data gap and its limits, with reasoning. Do not require invented values, a proven cause, guaranteed improvement or real publication."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Choose 3 posts** — **decide on the most important metric** **that truly reflects its success**.",
-        "delivery": [],
+        "intro": "Analyze three posts and choose one goal-relevant metric for each. Use permitted actual data when available. Otherwise label a fictional teaching sample and its conclusions as provisional, or explicitly state the missing data and a measurement plan. Do not invent an analysis of unavailable results.",
+        "delivery": [
+          "For each of three posts: post identifier/description, goal and data status — actual, explicitly fictional, or unavailable.",
+          "For each: metric name and value, unit and denominator where applicable; include the platform's relevant metric definition.",
+          "For each: measurement period and scope. For viewing duration, give video length and use a comparable-length video or suitable proportional metric.",
+          "For each: relevant baseline/comparison and its value, explaining the specific difference. If unavailable, name the gap and how it will be measured.",
+          "Choose one next-week decision tied to a stated difference/signal or a specific data-collection step. Keep conclusions provisional for fictional or incomplete data; no publication or actual experiment is required."
+        ],
         "rubric": [
           {
             "dimension": "Metric Selection",
             "weight": 50,
-            "criteria": "**Each post has a clear and justified metric** — **no general selection**"
+            "criteria": "Each of three posts has a goal-linked justified metric, value/unit/denominator, period and relevant comparison, or a clearly declared data gap with measurement plan. Distinguish actual and fictional data."
           },
           {
             "dimension": "Executive Decision",
             "weight": 50,
-            "criteria": "**One improvement decision** **directly related to the analysis**"
+            "criteria": "One next step is traceable to a specific difference/signal or data gap and its limits, with reasoning. Do not require invented values, a proven cause, guaranteed improvement or real publication."
           }
         ],
-        "yamlIntent": "Three posts with goal, key metric, reason, plus one next-week decision",
+        "yamlIntent": "Three posts with goal, metric value/unit/denominator, period and comparison or declared data gaps; one reasoned next step",
         "yamlType": "practice"
       }
     },

@@ -354,7 +354,7 @@ export function KidsLessonPage() {
                   search={localeSearch()}
                   className="rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary"
                 >
-                  {copy.lesson} {lessonNumber - 1}
+                  {copy.previous}
                 </Link>
               )}
               {lessonNumber < 12 && (
@@ -364,7 +364,7 @@ export function KidsLessonPage() {
                   search={localeSearch()}
                   className="rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary"
                 >
-                  {copy.lesson} {lessonNumber + 1}
+                  {copy.next}
                 </Link>
               )}
             </nav>

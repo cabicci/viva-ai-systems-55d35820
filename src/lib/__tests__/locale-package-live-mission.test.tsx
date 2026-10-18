@@ -63,7 +63,7 @@ describe("LocalePackageLessonRenderer live mission", () => {
     await waitFor(() => {
       expect(screen.getByText(intro)).toBeTruthy();
     });
-    expect(screen.getByRole("textbox")).toBeTruthy();
+    expect(await screen.findByRole("textbox")).toBeTruthy();
     expect(screen.getByRole("button", { name: /Submit and get feedback/i })).toBeTruthy();
     expect(screen.getAllByText("Clear Request").length).toBeGreaterThan(0);
   });

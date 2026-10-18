@@ -1,0 +1,81 @@
+{
+  "role": "reviewed-contextual-asset-revisions",
+  "originalManifestPreserved": true,
+  "entries": [
+    {
+      "revisionId": "audit-60-session-30-20261018",
+      "auditItems": [
+        60
+      ],
+      "cellId": "analyst-m5-l2-weekly-review-ritual__ar-EG",
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "locale": "ar-EG",
+      "basePublicPath": "/lesson-visuals/contextual-v2/ar-EG/analyst-m5-l2-weekly-review-ritual.webp",
+      "baseAssetSha256": "d4debee115854bb674b01fd58de7630bb315a087dade6c1e9e5ad92ebad51182",
+      "baseSourceSha256": "44e9bb704a1d078ff3e8adbdc8f5666d6cc789e493a7445174b7417876e3e3c8",
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "currentSourceSha256": "fbe72df0ffdcef63f62e8137ad8d0b55a1891dc89c16c10480ba9bfef60034b9",
+      "currentSourceBlob": "ac14b8a1e12c8030d9e574f5ead14065baaa9ce8",
+      "publicPath": "/lesson-visuals/audit-revisions/2026-10-18/analyst-m5-l2-weekly-review-ritual__ar-EG__audit-60-session-30-20261018.png",
+      "title": "Review أسبوعي = ٣٠ دقيقة",
+      "assetSha256": "7b19d61632208e9ae7ed8a697e0a125f4d459c7f84003eeff2ee06258d464856",
+      "assetBytes": 1348657,
+      "actualFormat": "png",
+      "width": 1729,
+      "height": 910,
+      "reviewStatus": "agent-reviewed-draft",
+      "method": "built-in image_gen edit of original; non-destructive versioned sibling",
+      "visualCheck": "Header reads ٣٠; three cards, examples, 1-right/2-center/3-left order, logo and footer preserved. No video runtime assertion."
+    },
+    {
+      "revisionId": "audit-99-event-notification-20261018",
+      "auditItems": [
+        99
+      ],
+      "cellId": "automator-m4-l2-webhooks-api__en",
+      "lessonId": "automator-m4-l2-webhooks-api",
+      "locale": "en",
+      "basePublicPath": "/lesson-visuals/contextual-v2/en/automator-m4-l2-webhooks-api.webp",
+      "baseAssetSha256": "54a3bab0de5143474455bec5fc8cdb10c6cda6b5a65723c6faeedf25ec02d21b",
+      "baseSourceSha256": "78af6656e67d9992aab6c78fb08a1da5468f887bf75bbdbebaec2e2cb81a4925",
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+      "currentSourceSha256": "d66ef7bf5c44ff0cec2098c219bbcda610d77215ab6ca9a2275157d3c8a04260",
+      "currentSourceBlob": "4a2e416d65ef1f83b4ee84f0c26a6da8a1ce584e",
+      "publicPath": "/lesson-visuals/audit-revisions/2026-10-18/automator-m4-l2-webhooks-api__en__audit-99-event-notification-20261018.png",
+      "title": "Webhooks & APIs",
+      "assetSha256": "3bfa34df3c623335c64ef1b7e4e7484b89430ee12c5cba4f92c16c3c93adec86",
+      "assetBytes": 1323666,
+      "actualFormat": "png",
+      "width": 1729,
+      "height": 910,
+      "reviewStatus": "agent-reviewed-draft",
+      "method": "built-in image_gen edit of original; non-destructive versioned sibling",
+      "visualCheck": "Webhook card says 'Event notification; delivery can be delayed'; API card, logo, header and footer retained."
+    },
+    {
+      "revisionId": "audit-100-bounded-retries-20261018",
+      "auditItems": [
+        100
+      ],
+      "cellId": "automator-m4-l3-error-handling__en",
+      "lessonId": "automator-m4-l3-error-handling",
+      "locale": "en",
+      "basePublicPath": "/lesson-visuals/contextual-v2/en/automator-m4-l3-error-handling.webp",
+      "baseAssetSha256": "0300fd2642893e86a55d71805cebfc7c68ddb58b59ee310086baa9dad2cac6b1",
+      "baseSourceSha256": "8233ca16a880a3338d024846449428235b0a292388a61a9f0064e34026275b11",
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+      "currentSourceSha256": "6ffd5c557e03b949c1004db037a075790d3f0b27565ef41f81ac628ede62c142",
+      "currentSourceBlob": "8fb1a71fc1af09aa13af1ba0379bee614b30d2b4",
+      "publicPath": "/lesson-visuals/audit-revisions/2026-10-18/automator-m4-l3-error-handling__en__audit-100-bounded-retries-20261018.png",
+      "title": "Error Handling",
+      "assetSha256": "d793cdf9acefae80518a347073bec9bb6c19133a5889058c5cdee4d7f7efc7a0",
+      "assetBytes": 1389615,
+      "actualFormat": "png",
+      "width": 1728,
+      "height": 910,
+      "reviewStatus": "agent-reviewed-draft",
+      "method": "built-in image_gen edit of original; non-destructive versioned sibling",
+      "visualCheck": "Retry card says 'Bounded retries, only when safe'; other three cards, arrows, numbering, logo, header and footer retained."
+    }
+  ]
+}

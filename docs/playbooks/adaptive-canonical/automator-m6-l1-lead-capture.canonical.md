@@ -173,8 +173,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| سير كامل | 60% |
-| واقعية | 40% |
+صمّم سير استقبال عميل محتمل لقناة تستخدمها فعلًا. وضّح المُشغّل والحفظ والرد والتنبيه؛ لا تنشر أتمتة ولا ترسل رسالة فعلية.
+
+**التسليم:**
+
+1. سمِّ القناة: نموذج أو واتساب أو حجز أو قناة فعلية أخرى.
+2. حدّد الحدث الذي يبدأ استقبال البيانات.
+3. حدّد مكان تسجيل العميل والحقول المطلوبة.
+4. اكتب نموذج الرد الأول للتصميم فقط.
+5. حدّد من يصله التنبيه ومتى.
+6. اشرح ما الذي كان يضيع قبل هذا السير.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| سير كامل | 60% | ضمّن الخطوات الأربع: المُشغّل والحفظ والرد والتنبيه. |
+| تصميم واقعي | 40% | استخدم قناة فعلية من سياقك وحدّد متلقي التنبيه. |
+
 
 ### Confidence close
 
@@ -296,3 +312,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

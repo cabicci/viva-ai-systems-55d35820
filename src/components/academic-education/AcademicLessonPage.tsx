@@ -1,5 +1,5 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -18,6 +18,9 @@ import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-educat
 import { ReadingVisual } from "./ReadingVisual";
 import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
 import { LessonText, LessonInlineText } from "./LessonText";
+import { withoutMatchingStepPrefix } from "./example-step";
+import { AcademicAdjacentNavigation } from "./AcademicAdjacentNavigation";
+import { normalizeAcademicPracticeValues } from "./practice-fields";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -102,6 +105,20 @@ function AuthorizedLesson({
     [busy, setBusy] = useState(false),
     [error, setError] = useState(false),
     [saved, setSaved] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const previousTab = useRef(tab);
+  useEffect(() => {
+    if (previousTab.current === tab) return;
+    previousTab.current = tab;
+    const section = sectionRef.current;
+    if (!section) return;
+    const top = section.getBoundingClientRect().top;
+    // Leave an already visible panel in place; long-reading transitions may
+    // otherwise keep its new instructions above the sticky site header.
+    if (top < 96 || top > window.innerHeight - 80) {
+      section.scrollIntoView?.({ block: "start", behavior: "auto" });
+    }
+  }, [tab]);
   const progress = useQuery({
     queryKey: ["academic-progress", user?.id, courseId, lesson.id, locale],
     queryFn: () =>
@@ -118,6 +135,9 @@ function AuthorizedLesson({
       ["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const
     ).map((key) => [key, c[key]]),
   );
+  const practiceFields =
+    normalizeAcademicPracticeValues(lesson.id, locale, lesson.assignment.fields.length, fields) ??
+    fields;
   const record = progress.data?.progress[lesson.id];
   const completed = [record?.read, record?.quizPassed, record?.practiceSubmitted].filter(
     Boolean,
@@ -136,7 +156,7 @@ function AuthorizedLesson({
     setResult(null);
     try {
       const data =
-        action === "quiz" ? { answers } : action === "practice" ? { values: fields } : {};
+        action === "quiz" ? { answers } : action === "practice" ? { values: practiceFields } : {};
       const response = await academicCommand<AcademicQuizResult>(
         action,
         courseId,
@@ -192,6 +212,7 @@ function AuthorizedLesson({
                     setError(false);
                   }}
                   aria-pressed={key === tab}
+                  aria-controls="academic-lesson-section"
                   className={`rounded-xl p-3 text-start font-bold ${key === tab ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
                 >
                   {label}
@@ -200,12 +221,14 @@ function AuthorizedLesson({
           </nav>
           <section className="mt-6 space-y-3 border-t pt-5">
             <h2 className="font-bold">{c.progress}</h2>
-            <Progress value={(completed / 3) * 100} />
+            <Progress value={(completed / 3) * 100} aria-label={c.progress} />
             <p className="text-sm leading-7 text-muted-foreground">{c.progressNote}</p>
           </section>
         </aside>
         <section
-          className="min-w-0 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
+          ref={sectionRef}
+          id="academic-lesson-section"
+          className="min-w-0 scroll-mt-24 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
           aria-label={labels[tab]}
         >
           {error && (
@@ -242,10 +265,16 @@ function AuthorizedLesson({
             <>
               <h2 className="text-xl font-bold">{lesson.example.title}</h2>
               <LessonText text={lesson.example.text} />
-              <ol className="list-inside list-decimal space-y-4 leading-8">
+              <ol className="list-none space-y-4 leading-8" role="list">
                 {lesson.example.steps?.map((s, i) => (
-                  <li key={i}>
-                    <LessonText text={s} />
+                  <li key={i} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3">
+                    <span
+                      aria-hidden="true"
+                      className="grid h-8 w-8 place-items-center rounded-full bg-primary/10 font-bold"
+                    >
+                      {i + 1}
+                    </span>
+                    <LessonText text={withoutMatchingStepPrefix(s, i + 1)} />
                   </li>
                 ))}
               </ol>
@@ -270,9 +299,13 @@ function AuthorizedLesson({
                     <LessonInlineText text={q.question} />
                   </legend>
                   {q.options.map((option, i) => (
-                    <label key={i} className="my-3 flex gap-3 rounded-lg bg-muted/30 p-3 leading-7">
+                    <label
+                      key={i}
+                      className="my-3 flex items-start gap-3 rounded-lg bg-muted/30 p-3 leading-7"
+                    >
                       <input
                         type="radio"
+                        className="mt-2 h-4 w-4 shrink-0"
                         name={q.id}
                         disabled={busy}
                         checked={answers[q.id] === i}
@@ -281,7 +314,9 @@ function AuthorizedLesson({
                           setResult(null);
                         }}
                       />
-                      <LessonInlineText text={option} />
+                      <span className="min-w-0 flex-1">
+                        <LessonInlineText text={option} />
+                      </span>
                     </label>
                   ))}
                   {result?.feedback.find((f) => f.id === q.id) && (
@@ -310,16 +345,18 @@ function AuthorizedLesson({
           )}
           {tab === "practice" && (
             <>
-              <p className="leading-8">{lesson.assignment.prompt}</p>
+              <LessonText text={lesson.assignment.prompt} />
               {lesson.assignment.fields.map((label, i) => (
                 <label className="block font-bold" key={label}>
                   {label}
                   <textarea
                     rows={4}
                     maxLength={5000}
-                    value={fields[i]}
+                    value={practiceFields[i] ?? ""}
                     onChange={(event) =>
-                      setFields(fields.map((value, j) => (i === j ? event.target.value : value)))
+                      setFields(
+                        practiceFields.map((value, j) => (i === j ? event.target.value : value)),
+                      )
                     }
                     className="mt-3 w-full rounded-xl border bg-background p-3 font-normal leading-7"
                   />
@@ -329,7 +366,13 @@ function AuthorizedLesson({
                 variant="outline"
                 onClick={() => {
                   const draft = progress.data?.progress[lesson.id]?.drafts[locale];
-                  if (draft?.length === fields.length) setFields(draft);
+                  const restored = normalizeAcademicPracticeValues(
+                    lesson.id,
+                    locale,
+                    lesson.assignment.fields.length,
+                    draft,
+                  );
+                  if (restored) setFields(restored);
                 }}
               >
                 {c.restore}
@@ -343,7 +386,11 @@ function AuthorizedLesson({
                 </details>
               ))}
               <Button
-                disabled={busy || fields.some((f) => !f.trim())}
+                disabled={
+                  busy ||
+                  practiceFields.length !== lesson.assignment.fields.length ||
+                  practiceFields.some((f) => !f.trim())
+                }
                 onClick={() => void save("practice")}
               >
                 {c.save}
@@ -381,19 +428,29 @@ function AuthorizedLesson({
               )}
             </>
           )}
-          {tab === "assistant" && (delivery.assistantAllowed ? (
-            <AcademicAssistantPanel key={`${courseId}:${lesson.id}:${locale}`}
-              courseId={courseId} lessonId={lesson.id} locale={locale} />
-          ) : (
-            <p className="leading-8">
-              {en
-                ? "The assistant for this course requires separate access and activation."
-                : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
-            </p>
-          ))}
+          {tab === "assistant" &&
+            (delivery.assistantAllowed ? (
+              <AcademicAssistantPanel
+                key={`${courseId}:${lesson.id}:${locale}`}
+                courseId={courseId}
+                lessonId={lesson.id}
+                locale={locale}
+              />
+            ) : (
+              <p className="leading-8">
+                {en
+                  ? "The assistant for this course requires separate access and activation."
+                  : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
+              </p>
+            ))}
         </section>
       </div>
+      <AcademicAdjacentNavigation
+        userId={user?.id}
+        courseId={courseId}
+        lessonId={lesson.id}
+        locale={locale}
+      />
     </>
   );
 }
-

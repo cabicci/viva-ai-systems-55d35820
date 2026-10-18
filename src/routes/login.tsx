@@ -10,12 +10,10 @@ import { AuthShell } from "@/components/auth/AuthShell";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import {
-  isLearnerAuthReturn,
-  parseAuthIntentSearch,
-  type AuthIntentSearch,
-} from "@/lib/kids/auth-intent";
+import { parseAuthIntentSearch, type AuthIntentSearch } from "@/lib/kids/auth-intent";
 import { parsePaymentLoginSearch } from "@/lib/commerce/payment-links";
+import { authReturnNavigation, parseRecoveryIntentSearch } from "@/lib/auth-return";
+import { useLocale } from "@/lib/locale/locale-context";
 import { loginErrorPresentation } from "@/lib/login-error";
 
 export const Route = createFileRoute("/login")({
@@ -30,7 +28,9 @@ export const Route = createFileRoute("/login")({
 function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
+  const { locale } = useLocale();
   const search: AuthIntentSearch & ReturnType<typeof parsePaymentLoginSearch> = Route.useSearch();
+  const recoverySearch = parseRecoveryIntentSearch({ ...search, locale: search.locale ?? locale });
   const [email, setEmail] = useState(search.email ?? "");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -60,18 +60,8 @@ function LoginPage() {
         search: { order: search.order, locale: search.locale },
         replace: true,
       });
-    } else if (isLearnerAuthReturn(search.returnTo)) {
-      const [, , pathId, lessonId] = search.returnTo.split("/");
-      navigate({
-        to: "/learn/$pathId/$lessonId",
-        params: { pathId, lessonId },
-        search: { locale: search.locale },
-        replace: true,
-      });
-    } else if (search.returnTo) {
-      navigate({ to: search.returnTo, search: () => ({ locale: search.locale }), replace: true });
     } else {
-      navigate({ to: "/dashboard", replace: true });
+      navigate(authReturnNavigation({ ...search, locale: search.locale ?? locale }));
     }
   }
 
@@ -123,7 +113,11 @@ function LoginPage() {
         >
           <p className="mb-2">{t(failure.key)}</p>
           {failure.canReset && (
-            <Link to="/forgot-password" className="text-primary hover:underline font-medium">
+            <Link
+              to="/forgot-password"
+              search={recoverySearch}
+              className="text-primary hover:underline font-medium"
+            >
               {t("auth.link.resetPassword")}
             </Link>
           )}
@@ -135,7 +129,11 @@ function LoginPage() {
           {t("auth.link.signup")}
         </Link>
         <span className="mx-2">·</span>
-        <Link to="/forgot-password" className="text-primary hover:underline">
+        <Link
+          to="/forgot-password"
+          search={recoverySearch}
+          className="text-primary hover:underline"
+        >
           {t("auth.link.forgotPassword")}
         </Link>
       </p>

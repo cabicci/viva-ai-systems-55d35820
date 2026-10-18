@@ -194,15 +194,16 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
-> **Quiz key (unchanged):** correctIndex: 1
-
 **السؤال:** **Leads زادت ٢٠٪** — **Conversion نزل** من **١٢٪** إلى **٨٪** — **Revenue ثابت**. **على أي رقم** **تركّز أولًا** **من الـ ٤**؟
 
-- خيار ١: **Leads** — **لأنها زادت**.
-- **الإجابة الصحيحة (خيار ٢):** **Conversion** — **لأنه نزل** **رغم** **زيادة الطلبات**، **وهذا يؤثّر** على **Revenue**.
-- خيار ٣: **Revenue** — **لأنه ثابت** **فلا مشكلة**.
+1. Leads — لأنها زادت.
+2. افحص Conversion: انخفض رغم زيادة العملاء المحتملين (Leads)، وقد يشير إلى خطر على الإيراد مستقبلًا.
+3. Revenue — لأنه ثابت فلا مشكلة.
 
-**التفسير:** **Leads** و**Conversion** **معًا** **يوضّحان** الصورة. **Conversion نزل** = **مشكلة في التحويل** — **هذا رقم قرار**.
+**التفسير:** انخفاض التحويل إشارة للتحقيق، وليس إثباتًا لسبب مؤكد أو خسارة في الإيراد الحالي. الإيراد الحالي ثابت؛ افحص الفترات القابلة للمقارنة والمجموعة وطريقة حساب نسبة التحويل والأسعار ومزيج المبيعات قبل تفسير ذلك.
+
+**correctIndex:** 1 (unchanged)
+
 
 ### Mission — ارسم Dashboard من ٤ أرقام
 
@@ -336,3 +337,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit106/107/108 scoped correction (2026-10-18): exercise-data guidance or hypothetical decision assumptions clarified for this lesson; keys/weights preserved. Agent-reviewed draft; human language/live acceptance pending.

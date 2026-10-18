@@ -169,8 +169,23 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission — ٣ scenarios
 
-| تشخيص الفخ | 50% |
-| قرار أصح | 50% |
+شخّص ثلاثة مواقف قصيرة تتضمن أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. يمكن للذكاء الاصطناعي مساعدتك في الصياغة وأنت تختار الحكم النهائي.
+
+**التسليم:**
+
+1. اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.
+2. لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.
+3. حدّد خطأ التفسير.
+4. اشرح كيف تتجنب الخطأ.
+5. اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| تشخيص الفخ | 50% | حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة. |
+| قرار أفضل | 50% | اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند. |
+
 
 ### Confidence close
 
@@ -292,3 +307,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

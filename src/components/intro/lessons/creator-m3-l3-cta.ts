@@ -108,13 +108,13 @@ export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
   {
     icon: ImageIcon,
     eyebrow: "مثال بصري",
-    title: "لقطة CTA واضح",
+    title: "٣ خطوات لاختيار CTA",
     tone: "primary",
     block: {
       kind: "screenshot",
-      alt: "مثال عملي على CTA محدد داخل محتوى قصير",
+      alt: "رسم لخطوات اختيار CTA: الهدف، فعل واحد، وفايدة للمشاهد.",
       caption:
-        "لاحظ إن الطلب واضح ومحدد: خطوة واحدة فقط، ومكتوبة بلغة بسيطة يفهمها أي مشاهد بسرعة.",
+        "الرسم بيوضح ٣ خطوات لاختيار CTA: حدّد الهدف، اطلب فعل واحد، واربطه بفايدة واضحة للمشاهد.",
       label: "cta.jpg",
     },
   },

@@ -3,6 +3,10 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import manifest from "../runtime/contextualV2BrowserManifest.json";
+import { restoreExactEditorialGenerationSource } from "./audit-source-compatibility";
+import revisions from "../runtime/contextualV2AuditRevisions.json";
+import { resolveAuditedContextualRevision } from "../runtime/contextualV2AuditRevisionResolver";
+import type { ContextualV2ManifestEntry } from "../runtime/contextualV2BrowserResolver";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../../../../..");
 const publicRoot = join(repo, "public/lesson-visuals/contextual-v2");
@@ -198,6 +202,8 @@ const imageGenerationSourceBytes = (
   entry: { sourcePath: string; sourceSha256: string; sourceBlob: string },
   bytes: Buffer,
 ): Buffer => {
+  const editorialRestored = restoreExactEditorialGenerationSource(entry, bytes);
+  if (!editorialRestored.equals(bytes)) return editorialRestored;
   const boldRestored = imageGenerationBoldSourceBytes(entry, bytes);
   if (!boldRestored.equals(bytes)) return boldRestored;
   return imageGenerationQuizSourceBytes(entry, bytes);
@@ -300,8 +306,64 @@ for (const entry of manifest.entries) {
   }
 }
 
+// Versioned derivatives are verified separately; all 400 original assets and
+// their accepted integration manifest above remain immutable and checked.
+const revisionCells = new Set<string>();
+const revisionPaths = new Set<string>();
+for (const revision of revisions.entries) {
+  if (revisionCells.has(revision.cellId)) errors.push(`${revision.cellId}: duplicate revision`);
+  revisionCells.add(revision.cellId);
+  const original = manifest.entries.find((entry) => entry.cellId === revision.cellId);
+  if (!original || !resolveAuditedContextualRevision(original as ContextualV2ManifestEntry).ok) {
+    errors.push(`${revision.cellId}: invalid revision binding`);
+    continue;
+  }
+  const assetPath = join(repo, "public", revision.publicPath);
+  revisionPaths.add(assetPath);
+  if (!existsSync(assetPath)) {
+    errors.push(`${revision.cellId}: missing revised asset`);
+    continue;
+  }
+  const bytes = readFileSync(assetPath);
+  if (bytes.length !== revision.assetBytes || sha256(bytes) !== revision.assetSha256)
+    errors.push(`${revision.cellId}: revised asset digest mismatch`);
+  if (
+    bytes.length < 24 ||
+    !bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) ||
+    bytes.readUInt32BE(16) !== revision.width ||
+    bytes.readUInt32BE(20) !== revision.height
+  )
+    errors.push(`${revision.cellId}: revised PNG format/dimensions mismatch`);
+  const sourceBytes = canonicalizeCheckoutLineEndings(
+    readFileSync(join(repo, revision.sourcePath)),
+  );
+  if (
+    sha256(sourceBytes) !== revision.currentSourceSha256 ||
+    gitBlob(sourceBytes) !== revision.currentSourceBlob
+  )
+    errors.push(`${revision.cellId}: revised source fingerprint mismatch`);
+  const source = JSON.parse(sourceBytes.toString("utf8"));
+  if (
+    source.title !== revision.title ||
+    source.lessonId !== revision.lessonId ||
+    source.locale !== revision.locale
+  )
+    errors.push(`${revision.cellId}: revised source identity/title mismatch`);
+}
+const revisedRoot = join(repo, "public/lesson-visuals/audit-revisions");
+function checkRevisionFiles(directory: string) {
+  if (!existsSync(directory)) return;
+  for (const item of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, item.name);
+    if (item.isDirectory()) checkRevisionFiles(path);
+    else if (!revisionPaths.has(path)) errors.push(`Unrecorded revised asset: ${path}`);
+  }
+}
+checkRevisionFiles(revisedRoot);
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
 console.log("contextual-v2: verified 400 assets, 100 lessons, 4 locales");
+console.log(`contextual-v2: separately verified ${revisionCells.size} versioned asset revision(s)`);

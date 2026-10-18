@@ -58,9 +58,51 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| 4 Numbers + 3 Questions | 60% |\n| One Decision | 40% |",
+      "contentMarkdown": "Plan a 30-minute weekly review, rather than carrying out a full review now. A sheet with four metrics is enough if you have no dashboard; no AI call is required for this exercise.\n\n**Submission:**\n\n1. Set the review day, time and 30-minute duration.\n2. Name four metrics and their sources.\n3. Write three practical questions you would ask AI, such as what changed most, what to test first and what to ignore.\n4. Propose one decision with action, owner and deadline.\n5. Explain how you will review its effect the following week.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Four metrics and three questions | 60% | Name four specific metrics and three practical AI questions. |\n| One decision | 40% | Give one decision containing an action, owner and deadline. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Four metrics and three questions",
+              "60%",
+              "Name four specific metrics and three practical AI questions."
+            ],
+            [
+              "One decision",
+              "40%",
+              "Give one decision containing an action, owner and deadline."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Plan a 30-minute weekly review, rather than carrying out a full review now. A sheet with four metrics is enough if you have no dashboard; no AI call is required for this exercise.",
+        "delivery": [
+          "Set the review day, time and 30-minute duration.",
+          "Name four metrics and their sources.",
+          "Write three practical questions you would ask AI, such as what changed most, what to test first and what to ignore.",
+          "Propose one decision with action, owner and deadline.",
+          "Explain how you will review its effect the following week."
+        ],
+        "rubric": [
+          {
+            "dimension": "Four metrics and three questions",
+            "weight": 60,
+            "criteria": "Name four specific metrics and three practical AI questions."
+          },
+          {
+            "dimension": "One decision",
+            "weight": 40,
+            "criteria": "Give one decision containing an action, owner and deadline."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

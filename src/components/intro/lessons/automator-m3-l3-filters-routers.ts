@@ -128,7 +128,7 @@ export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
           id: "apply1",
           bloom: "apply",
           question:
-            "عميل اشترى فوق ٥٠٠٠ جنيه → إيميل شكر خاص. تحت ٥٠٠٠ → إيميل عادي. إيه الأنسب؟",
+            "عميل اشترى بقيمة ٥٠٠٠ جنيه أو أكثر → إيميل شكر خاص. أقل من ٥٠٠٠ جنيه → إيميل عادي. إيه الأنسب؟",
           options: [
             "Router يفرّق حسب قيمة الشراء — مسارين مختلفين.",
             "Filter يوقّف الإيميلات للعملاء العاديين.",
@@ -160,18 +160,12 @@ export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
         {
           label: "شرط واضح",
           weight: 50,
-          criteria: [
-            "if/then واحد محدّد — مش كلام عام.",
-            "الشرط قابل للاختبار (نعم/لأ).",
-          ],
+          criteria: ["if/then واحد محدّد — مش كلام عام.", "الشرط قابل للاختبار (نعم/لأ)."],
         },
         {
           label: "مسارات مختلفة",
           weight: 50,
-          criteria: [
-            "then وelse بيعملوا حاجة مختلفة فعلًا.",
-            "مثال input لكل مسار.",
-          ],
+          criteria: ["then وelse بيعملوا حاجة مختلفة فعلًا.", "مثال input لكل مسار."],
         },
       ],
     },

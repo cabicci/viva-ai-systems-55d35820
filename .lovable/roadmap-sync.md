@@ -269,3 +269,246 @@ source: direct owner instruction in receiving chat 01a1443d-497a-7a52-9baf-667fb
 scope: ui, existing authenticated read adapter; no schema or production operations
 summary: Isolate mission state and tab-scoped unsent drafts by user/lesson/mission/locale; ignore late responses after navigation; restore saved evaluated answers/feedback without regrading; isolate quiz selection/reveal by owner and locale. Preserve stored answers, pass status, attempts, rubric and grading behavior.
 sync_status: Local source checkpoint only. No production roadmap row was created or claimed. Twelve pure draft/feedback assertions passed. Component regressions, TypeScript, lint and build are being verified; final results are recorded in the drive-resident implementation receipt. No push, merge, deploy, website publication or live-account activity.
+
+## 2026-10-18 — readable mission examples and grounded feedback (items 2, 147)
+
+[roadmap:local-batch-2-147-20261018]
+source: owner instruction to continue the remaining audited corrections in chat 01a1443d-497a-7a52-9baf-667fb1b2deb0
+scope: existing mission display/provider normalization and four-locale evaluation instructions; no schema change
+summary: Render structured model answers as readable text before persistence and on restoration, preserve existing learner answers and cached payloads, and explain irrecoverable historical object-coercion text without regenerating automatically. Ground feedback in the actual submission, distinguish hypothetical exercises from observed activity, and remove mandatory praise while retaining rubric weights and the pass threshold.
+sync_status: Local implementation checkpoint. No production roadmap row claimed. Deterministic synthetic fixtures and mocked provider/client tests are being verified; final results belong in the drive implementation receipt. No merge, deployment or live grading authorized by this checkpoint.
+## 2026-10-18 — account accessibility and signup clarity (items 15, 47, 48, 118, 120)
+
+[roadmap:local-batch-account-ui-20261018]
+source: direct owner authorization to continue the remaining audited corrections
+scope: signup/recovery label associations, mobile menu close label, account day wording and signup context/policy navigation
+summary: Associate only the two affected labels; localize the shared menu close control through its caller; use the singular day key for count 1 while preserving other values; expose same-locale policy links in separate tabs so form state remains; explain the platform-wide account without promising paid content access.
+sync_status: Local implementation only. Existing authentication and submission handlers are preserved. No new consent requirement, recovery message, registration, account-value change, merge or publication. Validation and review records are retained on the shared drive.
+## 2026-10-18 — technical activity state and academic section visibility (items 124, 125, 156)
+
+[roadmap:local-batch-technical-academic-ui-20261018]
+source: direct owner authorization to continue audited corrections
+scope: existing cabinet lesson quiz/practice UI and academic section navigation
+summary: Block incomplete technical quiz submissions with completion guidance, clear stale UI errors on edits and successful retries, and prevent duplicate pending submissions. Use trusted saved activity success consistently in counts and sidebar marks without inventing scores or answers. Reveal an academic section hidden above the sticky header after navigation, leave already visible content in place, and preserve the controlled practice draft.
+sync_status: Isolated component regressions and CI validation in progress. No production activity submitted, no database schema or server grading change, and no merge/publication. Responsive live verification remains pending the owner's publication.
+## 2026-10-18 — restricted learner text formatting (items 14, 159)
+
+[roadmap:local-batch-lesson-formatting-20261018]
+source: direct owner authorization to continue the audited corrections
+scope: Intro terminology/comparison inline fields and the separate Academic assignment text renderer
+summary: Render paired emphasis in the specified Intro paths, keeping ordinary text and HTML inert. Use the Academic safe text renderer for assignment prompts, grouping authored bullet lines into lists and preserving paragraphs, arithmetic, raw source numbers, rubric and five controlled answer fields. Preserve unmatched literal asterisks; do not rewrite the source lesson or its FAQ.
+sync_status: Component and existing regression validation in progress; no learner answer, database row, merge or publication changed. Separate Intro and Academic coverage is required before closing these items.
+## 2026-10-18 — learner-facing scope and terminology (items 4, 6, 31, 32, 45, 53)
+
+[roadmap:local-batch-learner-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Egyptian introductory model definition/value hook, three specifically listed editorial-note locations, technical progress/read-complete wording, and optional Builder invitation in four locales
+summary: Distinguish the underlying trained model from its chat application using the recorded OpenAI Academy models resource; remove only specified editorial notes while preserving mission tasks/weights. State account-backed technical progress accurately, separate reading completion from quiz correctness, avoid first-attempt accuracy promises, and present Builder as a goal-dependent option without changing access, order or prerequisites.
+reference: https://academy.openai.com/public/clubs/work-users-ynjqu/resources/models (read 2026-10-18; conceptual definition only, no model-version/default claims)
+sync_status: Scoped source edits and JSON preservation checks complete; CI review pending. No content-generation request, indexing operation, learner-data change, merge or publication.
+## 2026-10-18 — analytics and optional start locale (items 1, 154)
+
+[roadmap:local-batch-analytics-start-20261018]
+source: direct owner authorization to continue audited corrections
+scope: locale-aware learner analytics and optional five-stage start UI in four locales
+summary: Translate UI, metadata, loading/errors, duration/count labels and known path/event labels; preserve locale through dashboard navigation. Preserve analytics queries/calculations and unknown event identifiers. Start generation remains behind the explicit run button with the same ordered five calls and arguments; generated text is preserved as returned.
+sync_status: Added isolated renderer coverage using mocked queries and generation functions; CI pending. No live AI request, learner write, merge or publication.
+## 2026-10-18 — safe password recovery return (item 119)
+
+[roadmap:local-batch-recovery-context-20261018]
+source: direct owner authorization to continue audited corrections
+scope: login recovery links, reset-email redirect context, recovery login links and successful reset return
+summary: Reuse one validated local navigation boundary after login/reset; preserve supported locale and exact allowed lesson/catalogue destination. Carry only navigation context, excluding email/payment hints from links. Keep Kids-family intent and existing payment login priority. Invalid/external destinations fall back to dashboard. Recovery titles use active locale.
+sync_status: Synthetic email/password clients and renderer regressions added to CI; no real email request, password change, merge or publication.
+## 2026-10-18 — admin locale and exact build-log return (item 155)
+
+[roadmap:local-batch-admin-locale-return-20261018]
+source: direct owner authorization to continue audited corrections
+scope: shared admin beforeLoad redirect context and the exact /build-logs authentication destination
+summary: Consume route context, validate supported locale, and retain it for login/dashboard denial redirects. Only an exact /build-logs request receives that fixed return destination; query-supplied return values are ignored. Login re-enters the unchanged mandatory server admin check. Every existing protected payload/action still asserts server authorization.
+sync_status: Added mocked server-outcome tests and existing SSR admin suite to CI; no live session expiry, role/account change, merge or publication.
+## 2026-10-18 — distinct payment read states (item 117)
+
+[roadmap:local-batch-payment-read-states-20261018]
+source: direct owner authorization to continue audited corrections
+scope: customer order/access list loading, successful-empty, failed-read retry and requested-order states
+summary: Distinguish loading and read failures from successful empty lists in four locales. Explain unavailable requested orders, retry reads explicitly, and avoid presenting an unknown entitlement lookup as confirmed paid-wait state. Empty access copy does not establish subscription loss. Existing order commands, authorization and receipt flows are preserved.
+sync_status: Added mocked-query renderer regressions with command non-invocation assertions; CI pending. No actual order read/write, payment, role change, merge or publication.
+## 2026-10-18 — accessible contact validation (item 121)
+
+[roadmap:local-batch-contact-field-errors-20261018]
+source: direct owner authorization to continue audited corrections
+scope: local contact field validation, five-character minimum, field/error association and focus
+summary: Show localized first-name/email/message/phone/consent errors, associate descriptions and invalid state, focus the first invalid field and provide selectable error summary entries. Display the five-character minimum before submission. Preserve uncontrolled field values and keep service-wide failures separate. Existing submit command, CAPTCHA requirements and server validation remain.
+sync_status: Four-locale invalid-form and mocked service-failure tests added; no actual contact submission, CAPTCHA solving, email send, merge or publication.
+## 2026-10-18 — price badge flow and narrow curriculum sizing (items 51, 52)
+
+[roadmap:local-batch-responsive-pricing-curriculum-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Pro/Pro Plus test badge positioning and shared curriculum card sizing/wrapping
+summary: Move the existing test-mode badges to separate in-flow rows with wrapping. Use a shrinkable single-column module grid, shrinkable shared cards/rows, wrapped headings/badges and full lesson-title text. Keep all content, links, access decisions, prices, checkout paths and badge visibility unchanged.
+sync_status: Existing route/locale regressions and build will run in CI. Browser layout measurement remains pending: local Windows UNC Vite startup failed; no claimed viewport acceptance or production publication.
+## 2026-10-18 — announced progress and inline numeric quiz options (items 41, 138)
+
+[roadmap:local-batch-progress-inline-options-20261018]
+source: direct owner authorization to continue audited corrections
+scope: shared Progress root value, localized progress names at existing callers and Academic quiz option layout
+summary: Forward the numerical value to Radix Root so determinate progress is announced consistently; retain indeterminate loading when no value is supplied. Name the previously unnamed Academic, Technical, curriculum and lesson bars with existing localized copy. Keep each Academic option in one shrinkable inline text span beside a fixed-size top-aligned radio, retaining internal BDI and source/key content.
+sync_status: Added determinate/indeterminate progress tests and Academic range-option DOM regression. No progress write or quiz selection outside synthetic tests; CI pending and physical screen-reader/viewport checks not claimed.
+## 2026-10-18 — completed versus published and narrow account cards (items 140, 158)
+
+[roadmap:local-batch-progress-copy-account-sizing-20261018]
+source: direct owner authorization to continue audited corrections
+scope: four-locale curriculum progress labels and account profile/subscription card sizing
+summary: Explicitly label completed versus published map steps, preserving all placeholder variables and calculations. Constrain the account grid/cards with minmax(0,1fr) and min-w-0, preserve email/ID ellipsis, wrap date/subscription values and stack field rows on narrow screens. No account/email/subscription data changed.
+sync_status: Existing localization placeholder expectations updated; no new tests mirror copy/CSS. CI pending; 319/390 viewport and independent long-email fixture acceptance remain pending until a working preview is available.
+## 2026-10-18 — one example step number (item 139)
+
+[roadmap:local-batch-academic-step-number-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Academic worked-example list presentation only
+summary: Render one visible list-position badge beside each full step body. Remove only a matching leading Step N, Arabic localized step N or numeric-list prefix equal to the actual position; preserve leading emphasis, paragraphs, quantities, decimals and calculation numbers. Original lesson sources and calculations are unchanged.
+sync_status: Prefix safety cases and a formatted two-step DOM regression added to the existing Academic suite; CI pending. No saved data or source lesson rewrite, merge or publication.
+## 2026-10-18 — readable Systems View original and text (item 160)
+
+[roadmap:local-batch-systems-view-reading-aid-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact English and Gulf Systems View lesson visual cells only
+summary: Preserve the pinned original images and captions. Transcribe all three visible cards/examples into responsive live text in locale reading order. Offer a localized Radix dialog with original-resolution image, zoom controls, bounded overflow pan/keyboard focus area, Escape close and trigger focus return. Other lesson/locale cells receive no new aid from this scoped change.
+sync_status: Both original 1900x1000 images visually inspected from shared drive; no image generation/edit or source-manifest change. Text-order and dialog/zoom/focus tests added. CI pending; 319/390 physical/browser viewport and touch acceptance remain pending.
+## 2026-10-18 — academic arithmetic source revision (items 8, 9, 10, 40)
+
+[roadmap:local-batch-academic-arithmetic-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact four reported Academic locale/lesson identities and their written-source fingerprints
+summary: Correct percentage-point versus relative growth, separate zero/negative contribution effects, include the monthly logo software subscription inside the stated fixed cost, and accept the cash scenario's 550/1800 closing balances with risk/preventive-action reasoning. Preserve unrelated source, original PDF identities, approvals and media mappings. Record exact reversible changed fields and before/after payload hashes.
+sync_status: Offline exact-source reconstruction and independent arithmetic checks passed; CI source-import validation pending. Generated transaction SQL is a review artifact only, requiring independent acceptance and the existing inactive-course/unapproved-payload guards. No database change, served-content correction, PDF/media acceptance, merge or publication is claimed.
+## 2026-10-18 — automation build-effort payback units (item 55)
+
+[roadmap:local-batch-automation-payback-20261018]
+source: direct owner authorization to continue audited corrections; overrides the old canonical ROI-preservation note for this exact dimensional correction
+scope: Egyptian primary authoring concepts, its four generated glossary overlays and corresponding MSA canonical definition
+summary: Name the duration build-effort payback period and divide build hours by net monthly time saved. Explain 0.5 hour / 2 net hours per month = 0.25 month, after oversight/maintenance. The two-month threshold is an illustrative teaching assumption, with risk and maintenance checks retained. Synchronize Markdown, bullets and table cells without changing other sections, quiz, mission or weights.
+sync_status: Exact original generation-source bytes reconstructed for all four edited overlays and pinned in the scoped source-compatibility ledger; image bytes/original manifest unchanged. Egyptian authoring parity and four-locale unit tests added. Offline payload preservation check passed; CI pending. No workflow/AI generation, indexing, database write, merge or publication.
+## 2026-10-18 — directional Kids navigation (item 11)
+
+[roadmap:local-batch-kids-directional-navigation-20261018]
+source: direct owner authorization to continue audited corrections
+scope: existing previous/next labels and four journey copy sets only
+summary: Label the existing links Previous/Next in English and السابق/التالي in each Arabic copy set. Preserve the exact routes, locale search, visible-result access gate and first/last number boundaries. No child progress API or destination logic changed.
+sync_status: Existing nested/direct Kids route and localization regressions run in CI; no new tests mirror these labels. No child/account mutation, merge or publication.
+## 2026-10-18 — honest Pro scope and Intro continuity (items 5, 16)
+
+[roadmap:local-batch-continuity-pricing-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: four pricing FAQ answer-3 strings and the seven Intro continuity-card review
+summary: Align Pro FAQ with its package card: listed paths excluding Builder, listed video/RAG and assistant allowances. Review the actual seven-step Intro order; use the approved first-card literal and correct four further stale bridge descriptions to their real next destinations. Last two bridges already align. Preserve all ordering, destinations, learning bodies, entitlement/price and checkout behavior.
+sync_status: Scoped copy/order review recorded on the shared drive; existing locale/routing regressions run in CI. No new tests mirror wording. No external send, data write, merge or publication.
+## 2026-10-18 — complete English example copy (items 46, 50, 63)
+
+[roadmap:local-batch-english-example-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact English style-control delivery example, leads glossary CTA and attention-economy mission subtitle
+summary: Demonstrate replacing purchase with buy for a simple direct voice in both delivery and Markdown. Complete the CTA keyword/action/channel/benefit in its table and broken parallel Markdown. Name the mission Observe 5 Posts in the Feed, preserving the five observations and rubric. Exact leaf-level changes are recorded in the source-provenance ledger; unrelated sections, image bytes and original generation manifest are unchanged.
+sync_status: Offline scope/reversal/weight checks passed; existing source-provenance and mission/runtime regressions run in CI. No new tests mirror these copy edits. No message/lead service connection, learner write, merge or publication.
+## 2026-10-18 — server-scoped adjacent Academic steps (item 13)
+
+[roadmap:local-batch-academic-adjacent-navigation-20261018]
+source: direct owner authorization to continue audited corrections
+scope: authorized Academic lesson navigation, actual runtime catalogue order and existing read-only server access RPC
+summary: Find adjacent accessible steps within the exact current course/locale runtime list, scanning outward only until the nearest server-allowed candidate on each side. Never guess numeric course order or infer access from a published title. Preserve localized first/last boundaries, display loading/read failure with retry and keep identity-scoped query keys. Destination lesson delivery rechecks its existing server authorization; navigation calls no progress or submission writer.
+sync_status: Added runtime-order/denial/boundary/error and four-locale renderer tests with mocked read clients, plus existing page fixtures remain isolated. CI pending. No schema change, live protected fetch, learner update, merge or publication.
+## 2026-10-18 — complete route boundary and comparable metrics (items 56, 58, 59)
+
+[roadmap:local-batch-metric-examples-20261018]
+source: direct owner authorization to continue audited corrections
+scope: three Egyptian primary-authoring examples, corresponding MSA canonical fields and twelve locale overlays
+summary: Cover 5000 exactly with complementary >=5000 and <5000 wording, keeping each existing currency and Router key. State a fictional current-month 100-thousand sales value versus the prior-three-month average of 150 thousand in the same unit; distinguish a reference from a sector/quality target. Compare 40/100 WhatsApp replies and 10/100 email replies within 48 hours after each delivery; distinguish replies from opens and avoid attributing the difference to channel alone while retaining day-two/day-five timing.
+sync_status: Exact source reversals, preserved other sections/key/options/weights and independent boundary/metric calculations recorded offline. English source diagrams inspected and contain no conflicting numerical example; all image bytes/original manifest retained. Egyptian authoring parity and four-locale source regressions added; CI pending. No workflow, message, live data write, media generation, merge or publication.
+## 2026-10-18 — 30-minute weekly-review session and derived visual (item 60)
+
+[roadmap:local-batch-weekly-review-session-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Egyptian weekly-review curriculum/source title, plan/video labels, one separately versioned diagram and exact Bunny title proposal
+summary: Adopt a 30-minute review session while preserving the detailed timeline/task and distinguishing session duration from reading/video runtime. The original image unexpectedly still said 15; a built-in image_gen edit now says 30 and preserves the three-card text/order. Keep the original manifest/image intact and verify/select the new PNG through a hash-bound audited revision ledger. Align gallery/title metadata with the effective asset. The live Bunny poster was read paused and already says 30, with actual runtime 167 seconds; its player title still says 15.
+sync_status: Original/new asset and source hashes recorded; image visual check complete. Added original/revision/source/locale-binding tests and a metadata-only Bunny title tool with mocked GET/POST/verification tests. No provider write, video generation/upload, progress write, merge or publication. Bunny title application remains a separate reviewed delivery step; do not close the item as a deployed correction yet.
+### Audit 61 — selected automation task terminology
+English tools-landscape Orientation/Mission/Confidence close now uses automation candidate, including the specific-candidate rubric criterion. Parallel Markdown/structured fields agree; delivery remains empty and weights remain 60/40. Technical Filter terminology and the Filters/Routers lesson remain unchanged. The original tools diagram was visually inspected and retained. Exact source compatibility preserves the immutable generation manifest. Draft source proposal; no merge or publication.
+
+### Audit 65 — localized educational section identity
+The adapter excludes Diagram/Video descriptions from explanation paragraphs and retains package role metadata internally. Canonical paragraph slots select Orientation/Tension/Core idea/Confidence close by educational identity, not shared paragraph position; nonstandard slots require exact title/eyebrow identity. The original diagram caption retains its dedicated slot. Tests cover Audience, Creator Leads, Lead Capture and Tools Landscape in three translated locales, reordering, missing roles and standalone packages; source and Egyptian canonical content are not mutated. Draft implementation, no publication or live acceptance.
+
+### Audit 112–116 — complete examples and explicit learning goals
+112 separates cached images/files from cookies/site data and server-held account data, following https://support.google.com/chrome/answer/2392709?hl=en (read-only reference; no data deletion). 113 uses the recipe heading, ingredient input, Suggest Recipe button and three recipe cards in both comparison representations. 114 completes the exact Send-button edit and explains reviewing one bounded change. 115 replaces unsupported 10/90 percentages qualitatively in all four locales plus Egyptian primary/MSA canonical authoring. 116 states repeated post-sale customer follow-up and reduced manual time before choosing Automator; key 1/options unchanged and Builder remains optional. Exact source reversals retain original image manifest, image bytes and prior B021 Wireframe mission formatting. Draft source corrections; no publication or account-data changes.
+
+### Audit 143–144 — distinguish stored leads from follow-up and show four design steps
+143 English Connect Database comparison now records the first email and organized lead record separately from subsequent automated follow-up, which needs its own trigger/schedule and status checks. 144 English/Egyptian/Gulf Systems View written examples explicitly give four process steps, incoming-inquiry trigger and response/record outputs, with a design-only instruction. Egyptian primary authoring is synchronized; existing mission structures/weights and aggregate diagrams are retained. Exact source provenance records these text changes. Draft source corrections; no automation run, message, merge or publication.
+
+### Audit 145 — complete period/comparison models and render numbered explanations
+Egyptian/English/Gulf complaint models now ask complaints per100 contacts this month versus last month plus three reasons in each period. Advertising comparison asks leads and cost per lead over30 days versus a comparable previous30 days or a declared target, with data/context/decision-rule review and no regret-free guarantee. Original images were visually inspected and retained. Prior audit58 glossary arithmetic remains unchanged; exact provenance entries compose58+145. The role-aware adapter now maps localized explanation paragraphs into canonical numbered-list slots with explicit ordinal parsing, so these four written steps render. Three focused locale cases verify four steps/order/source nonmutation, alongside the role-alignment suite. No quiz, mission, ad or business action changed; draft source implementation awaiting integration and live acceptance.
+
+### Audit 62 — restore structured guided missions
+Restores twelve existing Egyptian task functions in English, Gulf and MSA:36 missing mission cells. The27 report cells were confirmed; nine corresponding MSA cells also lacked mission objects and are corrected in the same adapter contract. Adds localized intro/delivery/rubric structures, preserving each task's50/50 or60/40 weights, titles and existing packageMissionId rule. Synchronizes twelve MSA canonical Mission sections, retaining pending human review. Tasks are design/writing exercises; no deployment, real messages or evaluator submission required. Scoped receipts prove only Mission sections changed; exact provenance retains original image sources and the prior item116 quiz correction. Adds36 adapter/id/weight cases, scope integrity and three real answer-field rendering checks with isolated clients. Saved progress is not rewritten; existing isolation suites remain required. Draft source implementation; independent language/live acceptance pending.
+
+### Audit 57/98/122 — license, routing identity and plan-dependent tool choice
+57 describes n8n as source-available/fair-code with self-hosting subject to edition/license terms in all four locales. 122 removes absolute cost rankings, makes the20-dollar choice explicitly hypothetical, checks both Free plans and distinct task/credit definitions, and rewrites the quiz around requirements with key0 retained. Egyptian primary/MSA canonical content is synchronized. Official license, plans and usage links are visible only on Tools Landscape, localized with new-tab notices. 98 distinguishes Router routing after a shared Trigger from the Trigger itself, preserving Filter pass/stop and the prior56 boundary correction. All four tools diagrams were inspected and retained. Vendor references checked2026-10-18; no connector, plan, purchase, deployment or live account tested. Draft source implementation; CI and later live acceptance required.
+
+### Audit 99–100 — event delivery and bounded retry plans
+99 English Webhook summary/core/comparison/glossary/quiz now distinguishes event-driven notification from guaranteed same-second delivery, with delays/retries/duplicate-event handling. 100 gives an explicitly provider-permitted safe-read example: initial attempt plus at most two retries, waits2s/8s, max3 total attempts and10s waiting excluding request time; provider/Retry-After rules override example intervals. Stop/log/alert and previous-outcome checks or idempotency/deduplication guard repeated effects; mission timing/stop/duplicate criteria remain weighted40/60. Quiz keys0 unchanged. Two built-in image_gen edits replace the misleading Webhook and Retry card captions in versioned PNGs; originals remain intact. Separate hash-bound revision ledger verifies original assets, current sources and derivative bytes/dimensions; immutable400-asset manifest unchanged. Official Stripe/GitHub/AWS/HTTP references reviewed. No requests, retries, payment, sending or workflow execution took place. Draft implementation; owner visual/live acceptance pending.
+
+### Audit 7/97 — concrete choices and explicit risk checks
+7 verifies all18 listed quiz cells: fifteen still had descriptive verdict alternatives and are corrected here, while Tools/Webhooks/Retry were already corrected by122/99/100. Alternatives now describe concrete actions or questions; actual localized keys and deterministic IDs are preserved despite differing Egyptian keys. The incomplete English LLM-step question receives its Egyptian scenario; trigger/action wording avoids a same-second guarantee. 97 clarifies all four priority lessons: synthetic data copied to an isolated rebuildable draft with review and no outgoing messages/authoritative writes. Each of five mission candidates now needs error impact, reviewability and reversibility; risk is separate from the frequency/complexity quadrant and can veto a simple frequent task. Egyptian primary prompt/template/criteria and MSA canonical sections synchronize;60/40 weights and prior55 glossary unchanged. New layered exact provenance reverses newest edits before earlier overlapping sections. Adds18 key/id/choice checks, scope integrity and four stable mission contracts. No answer, workflow or message executed; draft implementation awaiting integration/live acceptance.
+
+### Audit12 — exact NAV-002 heading scope and Arabic agreement
+Recovered the original navigation ZIP from the report's decision-ledger references and verified all six internal SHA256/byte checks. Six NAV-002 IDs identify27 recorded cases. Updates13 heading/subtitle fields across nine English packages, with all educational body fields/identifiers preserved. Shared package Video block labels now Step video / فيديو الخطوة; fixes only technical MSA next/previous and the eleven specified Arabic UI fields, including Egyptian فيديو الخطوة دي. The unrelated Gulf technical previous label is outside the scoped MSA correction. Existing strict visual fallback assertions use the new approved Step video label and the full existing hardening suite joins CI. Exact source compatibility composes metadata edits with earlier source revisions. Archive hashes, IDs, cases and fields are in the scoped receipt. No global prose replacement, link/order change or live browser action. Draft source correction; affected live cases require acceptance after integration/publication.
+
+### Audit102–105/123 — grounded quiz scenarios and explicit time assumptions
+102 English/Gulf leading-question cases now define available data, periods and unproven price causation; remove the Gulf visible key from heading/subtitle/choice text. 103 English cafe/music scenario distinguishes correlation from cause, timing/customer mix and action paralysis/vanity alternatives. 104 English/Gulf agent cases state changing steps, a goal, two allowed tools, consent/approval and the limits of safeguards. 105 English WhatsApp explicitly requests an employee for a complaint; routine messages do not all require handoff. Preserve actual localized keys0/0/0/1/1/1 and all mission structures. 123 English source uses Trigger→Process→Output and Time Audit, with five-workday theoretical gross savings before monitoring/maintenance/residual manual work; net savings must be measured. Original map diagram inspected and retained. Existing quiz adapter suite now checks all300 packages in CI. Exact source reversals preserve prior guided missions, risk checks and NAV metadata. No answer, submission, AI call, workflow or message executed; draft source implementation.
+
+### Audit106–108 — safe teaching samples, stated thresholds and funnel interpretation
+106 all four matching sources now offer10 fictional support notes and exercise-specific removal of names/contact/account/private contents; submit question/context/sanitized prompt template rather than unneeded customer content. Egyptian prompt/template and MSA canonical source synchronize;50/50 rubric unchanged. 107 all four matching sources state a hypothetical pre-agreed1000-unit budget,10 confirmed-order target over7 days and end-of-pilot pause/review rule; quiz asks neutral branch customer change over comparable30-day periods, key0 retained. 108 uses Leads rather than orders and treats conversion decline as an investigation signal/possible future revenue risk; stable current revenue needs period/customer/base/price/mix checks, key1 retained. Three matching MSA omissions were independently read before extension. Egyptian primary/parser and MSA authoring sources synchronize. Preserve the exact prior B021 English mission-format splice through original/current digest reconstruction; immutable image manifest stays unchanged. English diagrams inspected and retained as separate illustrations. No private data, AI request, advertising spend, answer or submission used. Draft source implementation; live/language acceptance pending.
+
+
+### Audit111 — local UI events and server requests (2026-10-18)
+
+All four Backend & API lessons distinguish browser state changes from server work. Classify menu/color, send question, loaded/saved conversation and new local draft before drawing any server route. Update mission delivery, rubric and Egyptian prompt/template; keep weights60/40, quiz key1 and application architecture. Synchronize MSA canonical metadata and text. All four original diagrams already qualify backend-triggering buttons and remain byte-identical. Exact editorial reversals preserve generation source provenance. Draft source only; language/live acceptance pending. Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events
+
+
+### Audit92/95/96 — creator quiz evidence and text delivery (2026-10-18)
+
+Hook questions now specify early retention loss among suitable viewers; thumbnail questions specify low impression-to-click rate against a comparable post. Preserve all eight correct indices/options and frame the answer as a first experiment. Restore both filming delivery choices in three translated lessons: text field, recording link or outcome description, or60-second script/setup; do not assume automated video/audio inspection. Content-promise guidance and existing60% dimension assess an audience/problem/benefit sentence consistent with repeatable format, preserving40% repeatability. Synchronize Egyptian authoring and MSA canonical text. Draft source only, live/language acceptance pending; no real publication, upload or submission.
+
+
+### Audit91 — reality-check test plans (2026-10-18)
+
+Retain five-idea screening and two selections. Each selected idea now has metric/unit, period, comparison and actual values or labeled fictional/data-gap evidence, then one change for a weak signal and a comparable retest of the same idea. No publication required. Preserve60/40 weights and quiz options/key1. Core, glossary and canonical structured intents qualify signals/small data as provisional guidance rather than proven usefulness; synchronize Egyptian prompt/template. Draft source only; language/live acceptance pending.
+
+
+### Academic audit17–21/26–30 — eleven written content revisions (2026-10-18)
+
+Complete scoped Gulf/EG/MSA/English paragraphs, worked examples and FAQ fields. Restore Gulf evidence-review steps without generalizing3-of5 interviews, supply eight explicitly fictional MSA observations with supporting case records without completed classifications, fix the prevention option while preserving key1, correct stakeholder harm perspective, and show fixed-volume price/profit/collection arithmetic. Keep all unrelated lesson fields and first four audit arithmetic corrections. Eleven exact before/after records and manifest fingerprints; original PDF/workstream identities preserved. Seven isolated PGlite tests pass for atomic/idempotent guarded SQL, inactive-course/assistant requirements and mismatch/approval/missing-row refusal. No actual database write; independent content/workbook/media/live acceptance pending.
+
+
+### Audit149 — twenty diagram captions and headings (2026-10-18)
+
+Visually inspect all twenty specified original WebP assets and verify their exact recorded SHA256/Git identities. Replace the scoped captions/headings so they describe the actual cards or comparisons, remove production identifiers/preservation notes from those descriptions, and synchronize three Egyptian authoring sources including CTA alt text. Keep images, quiz/mission sections and stable IDs. Preserve the separate automation matrix/five-task/risk exercise and dashboard two-week/threshold exercise; the diagrams do not claim to depict all exercise data. Existing role-based diagram-caption selection uses the same updated source and excludes it from paragraph queues. Draft source only; live/language acceptance pending.
+
+
+### Audit101 — contextual signals, not a three-point guarantee (2026-10-18)
+
+All four matching Pattern vs Outlier lessons now treat three observations as an initial signal, require comparable periods/baseline/seasonality/variability and accept insufficient data. Give each of five observations context and comparison; an explicitly fictional five-Friday sample provides dates, counts, baseline range and a recorded bulk-customer component while declaring missing seasonal information. Update the existing60/40 rubric to accept a collection plan or small reversible experiment without forcing a pattern or real execution. Synchronize Egyptian prompt/template and MSA text/structured intent. Original quiz keys/options and all four inspected illustrative images remain unchanged. Draft source only; language/live acceptance pending.
+
+
+### Audit93/94 — viewing-duration definitions and evidence-bearing analysis (2026-10-18)
+
+Use Average View Duration as average seconds per eligible playback, distinct from total viewing time and completion. Compare suitable video lengths or proportional metrics; an opening diagnosis needs a retention curve. All four three-post missions request goal, metric/value/unit/denominator, period and comparison or an explicit data gap/measurement plan, with one decision tied to evidence. Preserve50/50 weights, key1 and both distractors; qualify the correct answer as a provisional signal rather than proof of quality/intent. Synchronize Egyptian prompt/template and MSA canonical text/metadata, including the canonical visual description; two existing runtime visual captions clarify the four inspected original illustrations, without inserting absent diagram sections. Original image bytes retained. Official reference checked2026-10-18: https://developers.google.com/youtube/analytics/metrics. No actual analytics access, AI request, experiment, publication or submission. Draft source only; language/live acceptance pending.
+
+
+### Audit49 — current module outcome ownership (2026-10-18)
+
+Re-read the core and mission objectives of all twelve named Creator lessons. Align M2 audience/pillars, M3 hook/script/CTA, M5 editing/repurposed versions/cover-title text, M6 platform/schedule/metrics/interested-customer next step, and Analyst M5 metrics/dashboard/review/decision. Remove the unsupported ten-minute/result promises from these replacement outcomes. Explicitly map legacy creator-m4-repurposing to M5 and analyst-m4-automated-dashboard to M5. Give the legacy analyst-m5-ab-testing route its own actual test-planning hook so the new M5 card cannot introduce a Dashboard promise there. Add26 mapping/precedence/locale/unknown-ID regressions tied to current curriculum ownership. Keep routes, curriculum order, learner progress and other-locale suppression. Draft source only; live/language acceptance pending.
+
+
+### Audit22 — five-task field and exact overlapping delivery (2026-10-18)
+
+Append Task5 after title/Tasks1–4, clarify all role entries and where absence/fallback answers go, preserving quiz/rubric/scoring. Normalize only the known English five-to-six positional draft shape locally; preserve unsent values during a same-lesson content update and save six values only on the learner's explicit action. Add13 pure shape guards and2 mocked restore/save/update tests. Preserve the prior audit21 paragraph using an immutable receipt chain; historical checks reconstruct their exact stages while a current SQL proposal accepts only recorded original/intermediate/latest payload states. Native23 chain/historical SQL tests passed; both historical source checkers and160-package importer check passed. No actual database/activity write; independent written/contextual/workbook/media and live acceptance pending.

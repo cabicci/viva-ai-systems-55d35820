@@ -14,7 +14,7 @@
     {
       "role": "Orientation",
       "heading": "Orientation",
-      "subtitle": "Beginning of the Lesson",
+      "subtitle": "Beginning of the Step",
       "contentMarkdown": "- **What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\n- **Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\n- **What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.",
       "bullets": [
         "**What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.",
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Trigger → Process → Output",
-      "contentMarkdown": "- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\n- **Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\n- When you break down the task this way, the virtual worker knows exactly where to work.",
+      "contentMarkdown": "- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\n- **Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\n- When you break down the task this way, the virtual worker knows exactly where to work.",
       "bullets": [
         "**Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.",
         "**Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.",
         "**Output:** What comes out in the end? — Response to the client, entry in a table, reminder.",
-        "**Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.",
+        "**Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.",
         "When you break down the task this way, the virtual worker knows exactly where to work."
       ],
       "tables": []
@@ -109,10 +109,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?\n\nThe new client message\n- **Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).",
+      "contentMarkdown": "**Question:** A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?\n\n1. The new client message\n2. Look up the price list used to prepare the response.\n3. Record the customer's details in the CRM after replying.\n\n**Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).",
       "bullets": [
         "The new client message",
-        "Explanation: Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
+        "Look up the price list used to prepare the response.",
+        "Record the customer's details in the CRM after replying."
       ],
       "tables": [],
       "quiz": {
@@ -120,8 +121,8 @@
         "correctIndex": 0,
         "options": [
           "The new client message",
-          "An irrelevant option; it ignores the basic data in the section above.",
-          "A partial answer that misses the context and ignores the next step for the decision."
+          "Look up the price list used to prepare the response.",
+          "Record the customer's details in the CRM after replying."
         ],
         "explanation": "**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
       }
@@ -130,7 +131,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Break Down a Repeated Task into a System",
-      "contentMarkdown": "**Introduction:** Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.\n\n**Submission:** Task name · Trigger (what starts it, when/from whom) · Process (at least 4 steps in order) · Output (what comes out and for whom) · If you will automate only one step — which one and why?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| System Breakdown | 70% | A specific and repeated task from your work; Trigger + 4 process steps + clear output |\n| Automation Step | 30% | You chose one step because of (repetition / time / errors) |",
+      "contentMarkdown": "**Introduction:** Choose one task you do every week (from **Time Audit**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.\n\n**Submission:** Task name · Trigger (what starts it, when/from whom) · Process (at least 4 steps in order) · Output (what comes out and for whom) · If you will automate only one step — which one and why?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| System Breakdown | 70% | A specific and repeated task from your work; Trigger + 4 process steps + clear output |\n| Automation Step | 30% | You chose one step because of (repetition / time / errors) |",
       "bullets": [],
       "tables": [
         {
@@ -154,7 +155,7 @@
         }
       ],
       "mission": {
-        "intro": "Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
+        "intro": "Choose one task you do every week (from **Time Audit**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
         "delivery": [],
         "rubric": [
           {

@@ -105,14 +105,14 @@ export const ANALYST_M1_L1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS: IntroLessonContent
   {
     icon: ImageIcon,
     eyebrow: "شوفها ببساطة",
-    title: "حلقة القرار — ٥ مراحل",
+    title: "حلقة القرار — ٤ بطاقات",
     tone: "primary",
     block: {
       kind: "diagram",
       id: "decision-loop",
       label: "Decision Loop",
       caption:
-        "Dashboard بدون سؤال = ديكور. سؤال محدّد → إجابة → قرار → تنفيذ → مراجعة. ابدأ من السؤال في المهمة.",
+        "الرسم بيوضح ٤ بطاقات: البيانات اتجمّعت، اسأل سؤال واحد، خُد قرار، وراجع النتيجة. إجابة السؤال بتوجّه القرار، وتنفيذه بيسبق مراجعة النتيجة.",
     },
   },
   {

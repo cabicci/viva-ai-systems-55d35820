@@ -82,8 +82,9 @@ function SignupPage() {
           />
         </div>
         <div className="space-y-2">
-          <Label>{t("auth.field.password")}</Label>
+          <Label htmlFor="signup-password">{t("auth.field.password")}</Label>
           <Input
+            id="signup-password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -91,6 +92,29 @@ function SignupPage() {
             minLength={6}
           />
         </div>
+        <nav
+          aria-label={t("auth.signup.policies")}
+          className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm"
+        >
+          <a
+            href={`/terms?locale=${locale}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline focus-visible:outline focus-visible:outline-2"
+          >
+            {t("footer.terms")}
+            <span className="sr-only"> — {t("auth.signup.policyNewTab")}</span>
+          </a>
+          <a
+            href={`/privacy?locale=${locale}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary underline focus-visible:outline focus-visible:outline-2"
+          >
+            {t("footer.privacy")}
+            <span className="sr-only"> — {t("auth.signup.policyNewTab")}</span>
+          </a>
+        </nav>
         <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
           {loading ? (
             t("auth.signup.submitting")

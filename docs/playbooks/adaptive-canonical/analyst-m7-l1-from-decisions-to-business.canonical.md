@@ -167,8 +167,23 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| هدف + أرقام | 60% |
-| ربط أسبوعي | 40% |
+اربط هدفًا واحدًا لستة أشهر بثلاثة مقاييس تقدم وقرار أسبوعي. اختر سياقًا شخصيًا أو لفريق أو لعمل؛ يمكن للذكاء الاصطناعي اقتراح الصياغة وأنت تختار الهدف النهائي.
+
+**التسليم:**
+
+1. اكتب هدف الستة أشهر في جملة وحدّد سياقه.
+2. سمِّ ثلاثة مقاييس تقدم وسبب اختيار كل منها.
+3. حدّد قرارًا واحدًا من المراجعة الأسبوعية يخدم الهدف.
+4. حدّد مسؤول القرار وموعده النهائي.
+5. اشرح كيف ستراجع التقدم كل شهر.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| هدف ومقاييس | 60% | هدف واضح لستة أشهر مرتبط بسياقك الفعلي وثلاثة مقاييس تقدم مرتبطة به. |
+| ربط أسبوعي | 40% | قرار أسبوعي يخدم الهدف ولا ينفصل عنه. |
+
 
 ### Confidence close
 
@@ -290,3 +305,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

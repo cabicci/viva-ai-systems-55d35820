@@ -53,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Email Only vs Organized Record",
-      "contentMarkdown": "| Email Only | Record + Email |\n|----------|------------|\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic.",
+      "contentMarkdown": "| Email Only | Record + Email |\n|---|---|\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence. |",
       "bullets": [],
       "tables": [
         {
@@ -64,7 +64,7 @@
           "rows": [
             [
               "Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows.",
-              "The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic."
+              "The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence."
             ]
           ]
         }
@@ -109,10 +109,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** Automation records new clients every day. Sales needs a report with their names. What is most important?\n\nThe workflow writes each client in an organized table with fixed fields — and reads from it for the report.\n- **Explanation:** An organized record = the memory of automation. An email without a table = repetitive work returns to manual.",
+      "contentMarkdown": "**Question:** Automation records new clients every day. Sales needs a report with their names. What is most important?\n\n1. The workflow writes each client in an organized table with fixed fields — and reads from it for the report.\n2. Email sales about each registration without maintaining a central record.\n3. Keep registration notes separately on different phones.\n\n**Explanation:** An organized record = the memory of automation. An email without a table = repetitive work returns to manual.",
       "bullets": [
         "The workflow writes each client in an organized table with fixed fields — and reads from it for the report.",
-        "Explanation: An organized record = the memory of automation. An email without a table = repetitive work returns to manual."
+        "Email sales about each registration without maintaining a central record.",
+        "Keep registration notes separately on different phones."
       ],
       "tables": [],
       "quiz": {
@@ -120,8 +121,8 @@
         "correctIndex": 0,
         "options": [
           "The workflow writes each client in an organized table with fixed fields — and reads from it for the report.",
-          "An unsuitable option; it ignores the key data in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Email sales about each registration without maintaining a central record.",
+          "Keep registration notes separately on different phones."
         ],
         "explanation": "An organized record = the memory of automation. An email without a table = repetitive work returns to manual."
       }

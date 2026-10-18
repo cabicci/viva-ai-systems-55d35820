@@ -126,7 +126,7 @@ mission:
   rubricIntent:
     - dimension: basics_commitment
       weight: 60
-      criteria: Record or script path complete — light, sound, framing described clearly
+      criteria: One text-delivered recording description/link or sixty-second script is complete; light, sound and framing are explained; no file upload or assumed automated media inspection
     - dimension: strong_opening
       weight: 40
       criteria: Clear Hook serving the idea from first seconds
@@ -210,16 +210,20 @@ slugValidation:
 
 ### Mission — سجّل فيديو ٦٠ ثانية أو اكتب سكريبته
 
-**المقدمة:** **اختر مسارًا واحدًا:** **تسجيل فيديو ٦٠ ثانية فعلي**، **أو كتابة سكريبت تصوير جاهز للتنفيذ** **بنفس القواعد**.
+**اختر مسارًا واحدًا:** **تسجيل فيديو ٦٠ ثانية فعلي**، **أو كتابة سكريبت تصوير جاهز للتنفيذ** **بنفس القواعد**.
 
-**التسليم:** Hook · إعداد النور · إعداد الصوت · وصف الكادر · المحتوى أو وصف التسجيل
+**التسليم:**
 
-**معايير التقييم:**
+1. اختر مسارًا واحدًا؛ حقل الإجابة يقبل النص ولا يرفع ملف فيديو.
+2. مسار التسجيل: سجّل نحو ٦٠ ثانية، ثم اكتب الخطاف الافتتاحي وإعداد الإضاءة والصوت ووصف الكادر. أرفق رابطًا يستطيع المراجع المقصود فتحه أو صف نتيجة التسجيل؛ كلاهما مقبول.
+3. مسار السكريبت: اكتب نصًا لفيديو ٦٠ ثانية يتضمن الخطاف، مع إعداد الإضاءة والصوت والكادر نفسه. لا يلزم تسجيل لهذا المسار.
+4. يعتمد التقييم على النص الذي تقدمه. لا تفترض أن مقيّمًا آليًا فتح الرابط أو شاهد الفيديو أو استمع إلى صوته.
 
 | البعد | الوزن | المعيار |
-|-------|-------|---------|
-| التزام الأساسيات | 60% | **مسار التسجيل أو السكريبت مكتمل** — **النور والصوت والكادر موصوفون بوضوح** |
+|---|---|---|
+| التزام الأساسيات | 60% | يكتمل مسار واحد: يصف نص التسجيل المختار أو سكريبت ٦٠ ثانية الإضاءة والصوت والكادر. يُقبل رابط متاح للمراجع أو وصف النتيجة لمسار التسجيل، ولا يلزم رفع ملف. |
 | بداية قوية | 40% | **Hook واضح** **يخدم الفكرة من أول ثوانٍ** |
+
 
 ### Confidence close
 
@@ -334,3 +338,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit92/95/96 scoped correction (2026-10-18): quiz evidence, text delivery or promise criterion clarified as applicable; IDs, keys and weights preserved. Agent-reviewed draft; human language/live acceptance pending.

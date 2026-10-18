@@ -40,12 +40,13 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Repetitive + Simple + Low Risk = Priority",
-      "contentMarkdown": "- **3 Criteria for Priority:** Repetition (how often/week?), Simplicity (2-3 fixed steps?), Risk (if you make a mistake — what is the damage?).\n- **Simple Matrix:** Horizontal axis = Easy ↔ Hard. Vertical axis = High Frequency ↔ Low Frequency. The upper left corner = first automation.\n- **Winning Example:** \"Copying form data to a table\" — 30 times/month, 3 steps, if you make a mistake, you can fix it manually.\n- **Counter Example:** \"Personal email to a partner\" — once every two months, needs a human touch. Leave it manual.",
+      "contentMarkdown": "- **3 Criteria for Priority:** Repetition (how often/week?), Simplicity (2-3 fixed steps?), Risk (if you make a mistake — what is the damage?).\n- **Simple Matrix:** Horizontal axis = Easy ↔ Hard; vertical axis = High ↔ Low Frequency. Easy and frequent identifies a candidate, not automatic approval: risk can rule it out.\n- **Worked example:** Copy synthetic form data to an isolated draft table — 40 times/month, 3 steps. A person reviews the result; the draft can be rebuilt. No automatic messages or changes to the authoritative record.\n- **Counter Example:** \"Personal email to a partner\" — once every two months, needs a human touch. Leave it manual.\n- **Risk check for every candidate:** State error impact, whether a person can review before use, and whether the result can be reversed. A frequent, simple task can still be unsuitable if the harm is high.",
       "bullets": [
         "**3 Criteria for Priority:** Repetition (how often/week?), Simplicity (2-3 fixed steps?), Risk (if you make a mistake — what is the damage?).",
-        "**Simple Matrix:** Horizontal axis = Easy ↔ Hard. Vertical axis = High Frequency ↔ Low Frequency. The upper left corner = first automation.",
-        "**Winning Example:** \"Copying form data to a table\" — 30 times/month, 3 steps, if you make a mistake, you can fix it manually.",
-        "**Counter Example:** \"Personal email to a partner\" — once every two months, needs a human touch. Leave it manual."
+        "**Simple Matrix:** Horizontal axis = Easy ↔ Hard; vertical axis = High ↔ Low Frequency. Easy and frequent identifies a candidate, not automatic approval: risk can rule it out.",
+        "**Worked example:** Copy synthetic form data to an isolated draft table — 40 times/month, 3 steps. A person reviews the result; the draft can be rebuilt. No automatic messages or changes to the authoritative record.",
+        "**Counter Example:** \"Personal email to a partner\" — once every two months, needs a human touch. Leave it manual.",
+        "**Risk check for every candidate:** State error impact, whether a person can review before use, and whether the result can be reversed. A frequent, simple task can still be unsuitable if the harm is high."
       ],
       "tables": []
     },
@@ -53,7 +54,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Enthusiastic Automation vs. Ordered Automation",
-      "contentMarkdown": "| First Workflow = Hardest | First Workflow = Easiest Repetitive |\n|-------------------|---------------------------|\n| Kareem automated complex AI responses — 5 hours to build — happens 3 times/month. Low return and high risk if he makes a mistake. | Kareem automated \"Form → Table\" — 30 minutes to build — 30 times/month. Quick win and the virtual worker gains confidence. |",
+      "contentMarkdown": "| First Workflow = Hardest | First Workflow = Easiest Repetitive |\n|---|---|\n| Kareem automated complex AI responses — 5 hours to build — happens 3 times/month. Low return and high risk if he makes a mistake. | **Risk check for every candidate:** State error impact, whether a person can review before use, and whether the result can be reversed. A frequent, simple task can still be unsuitable if the harm is high. |",
       "bullets": [],
       "tables": [
         {
@@ -64,7 +65,7 @@
           "rows": [
             [
               "Kareem automated complex AI responses — 5 hours to build — happens 3 times/month. Low return and high risk if he makes a mistake.",
-              "Kareem automated \"Form → Table\" — 30 minutes to build — 30 times/month. Quick win and the virtual worker gains confidence."
+              "**Risk check for every candidate:** State error impact, whether a person can review before use, and whether the result can be reversed. A frequent, simple task can still be unsuitable if the harm is high."
             ]
           ]
         }
@@ -74,7 +75,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Terms to Choose From",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Task Candidate** | A task we examine: Is it repetitive? Simple? Low risk? | \"Welcome email after booking\" — a strong candidate |\n| **ROI (Return on Investment)** | Time saved ÷ Time to build automation — if less than two months, it’s worth it | 30 minutes to build → saves 2 hours/month = excellent return |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Task Candidate** | A task we examine: Is it repetitive? Simple? Low risk? | \"Welcome email after booking\" — a strong candidate |\n| **Build-effort payback period** | Build time in hours ÷ net monthly time saved in hours/month = payback period in months. Under two months is a teaching assumption for this example, not a universal feasibility rule; review risk, maintenance and oversight. | 30 minutes to build = 0.5 hour. Assume 2 hours/month of net saving after ongoing oversight and maintenance: 0.5 ÷ 2 = 0.25 month. |",
       "bullets": [],
       "tables": [
         {
@@ -90,9 +91,9 @@
               "\"Welcome email after booking\" — a strong candidate"
             ],
             [
-              "**ROI (Return on Investment)**",
-              "Time saved ÷ Time to build automation — if less than two months, it’s worth it",
-              "30 minutes to build → saves 2 hours/month = excellent return"
+              "**Build-effort payback period**",
+              "Build time in hours ÷ net monthly time saved in hours/month = payback period in months. Under two months is a teaching assumption for this example, not a universal feasibility rule; review risk, maintenance and oversight.",
+              "30 minutes to build = 0.5 hour. Assume 2 hours/month of net saving after ongoing oversight and maintenance: 0.5 ÷ 2 = 0.25 month."
             ]
           ]
         }
@@ -100,8 +101,8 @@
     },
     {
       "role": "Screenshot block (intent)",
-      "heading": "Screenshot Block",
-      "contentMarkdown": "Decision matrix — horizontal axis = easy or hard. Vertical axis = high or low frequency. The corner \"Easy + High Frequency\" = the virtual worker's priority. Use it in the task.",
+      "heading": "Three Criteria for Your First Automation",
+      "contentMarkdown": "Three criteria for choosing a first automation: frequent, simple, and low risk.",
       "bullets": [],
       "tables": []
     },
@@ -109,28 +110,29 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** You have 3 candidates: (A) Copying a form to a table — 40 times/month, 3 steps. (B) Weekly creative report — once/week, 10 steps. (C) Partner email — once every two months. What is the best first automation?\n\n(A) — Repetitive + Simple + Low Risk\n- **Explanation:** The first automation = a quick win. (A) meets the criteria of repetition and simplicity. (B) is complex. (C) is rare and personal.",
+      "contentMarkdown": "**Question:** Which is the best first automation? (A) Copy synthetic form rows to a separate draft table, 40 times/month in 3 steps; a person reviews before use, the draft is rebuildable, and there are no messages or authoritative-record updates. (B) Draft a creative weekly report in 10 steps; wrong interpretation can affect decisions, so a reviewer approves before distribution. (C) Send a personal partner email once every two months; it needs approval and cannot be fully undone after sending.\n\n1. Automate (A): copying synthetic rows to the reviewed draft table.\n2. Automate (B): preparing the weekly creative report.\n3. Automate (C): sending the personal partner email.\n\n**Explanation:** A combines repetition and simple steps with stated safeguards: synthetic data, an isolated reversible draft and review before use. B needs more complex judgment; C is rare and externally consequential. Risk is a separate constraint, not a consequence of the matrix quadrant.",
       "bullets": [
-        "(A) — Repetitive + Simple + Low Risk",
-        "Explanation: The first automation = a quick win. (A) meets the criteria of repetition and simplicity. (B) is complex. (C) is rare and personal."
+        "Automate (A): copying synthetic rows to the reviewed draft table.",
+        "Automate (B): preparing the weekly creative report.",
+        "Automate (C): sending the personal partner email."
       ],
       "tables": [],
       "quiz": {
-        "question": "You have 3 candidates: (A) Copying a form to a table — 40 times/month, 3 steps. (B) Weekly creative report — once/week, 10 steps. (C) Partner email — once every two months. What is the best first automation?",
+        "question": "Which is the best first automation? (A) Copy synthetic form rows to a separate draft table, 40 times/month in 3 steps; a person reviews before use, the draft is rebuildable, and there are no messages or authoritative-record updates. (B) Draft a creative weekly report in 10 steps; wrong interpretation can affect decisions, so a reviewer approves before distribution. (C) Send a personal partner email once every two months; it needs approval and cannot be fully undone after sending.",
         "correctIndex": 0,
         "options": [
-          "(A) — Repetitive + Simple + Low Risk",
-          "An unsuitable choice; it ignores the key data in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Automate (A): copying synthetic rows to the reviewed draft table.",
+          "Automate (B): preparing the weekly creative report.",
+          "Automate (C): sending the personal partner email."
         ],
-        "explanation": "The first automation = a quick win. (A) meets the criteria of repetition and simplicity. (B) is complex. (C) is rare and personal."
+        "explanation": "A combines repetition and simple steps with stated safeguards: synthetic data, an isolated reversible draft and review before use. B needs more complex judgment; C is rare and externally consequential. Risk is a separate constraint, not a consequence of the matrix quadrant."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Rank 5 Tasks on the Matrix",
-      "contentMarkdown": "**Introduction:** Take 5 tasks from your **Time Inventory** or patterns — place each one on the matrix (Easy/Hard × High/Low Frequency). 10-15 minutes is enough.\n\n**Submission:** The matrix · 5 tasks (name, quadrant, frequency, steps) · First automation from \"Easy + High Frequency\" · A task you leave manual and why · One rule for future tasks\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Matrix + 5 Tasks | 60% | Each task in a clear quadrant with frequency and steps; the matrix is logical |\n| Decision + Rule | 40% | Choosing the first automation from \"Easy + High Frequency\"; a manual exception with a reason + an applicable rule |",
+      "contentMarkdown": "Take 5 tasks from your **Time Audit** or patterns — place each one on the matrix (Easy/Hard × High/Low Frequency). 10-15 minutes is enough.\n\n**Submission:**\n\n1. For each of five tasks, give the name, quadrant, weekly frequency and number of steps.\n2. For every candidate, state error impact, review before use and reversibility.\n3. Choose a first candidate only if it is simple, frequent and passes the risk check; explain any reason to exclude it.\n4. Name one task to keep manual, even if frequent, and explain why.\n5. Write one rule you will apply to future candidates. This is a design exercise; do not run an automation.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Matrix + 5 Tasks | 60% | Each of five tasks has a logical quadrant, frequency, steps, error impact, reviewability and reversibility. |\n| Decision + Rule | 40% | The choice passes a separate risk check; high-risk work may be excluded despite frequency and simplicity. Include a reasoned manual exception and a future rule. |",
       "bullets": [],
       "tables": [
         {
@@ -143,29 +145,35 @@
             [
               "Matrix + 5 Tasks",
               "60%",
-              "Each task in a clear quadrant with frequency and steps; the matrix is logical"
+              "Each of five tasks has a logical quadrant, frequency, steps, error impact, reviewability and reversibility."
             ],
             [
               "Decision + Rule",
               "40%",
-              "Choosing the first automation from \"Easy + High Frequency\"; a manual exception with a reason + an applicable rule"
+              "The choice passes a separate risk check; high-risk work may be excluded despite frequency and simplicity. Include a reasoned manual exception and a future rule."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Take 5 tasks from your **Time Inventory** or patterns — place each one on the matrix (Easy/Hard × High/Low Frequency). 10-15 minutes is enough.",
-        "delivery": [],
+        "intro": "Take 5 tasks from your **Time Audit** or patterns — place each one on the matrix (Easy/Hard × High/Low Frequency). 10-15 minutes is enough.",
+        "delivery": [
+          "For each of five tasks, give the name, quadrant, weekly frequency and number of steps.",
+          "For every candidate, state error impact, review before use and reversibility.",
+          "Choose a first candidate only if it is simple, frequent and passes the risk check; explain any reason to exclude it.",
+          "Name one task to keep manual, even if frequent, and explain why.",
+          "Write one rule you will apply to future candidates. This is a design exercise; do not run an automation."
+        ],
         "rubric": [
           {
             "dimension": "Matrix + 5 Tasks",
             "weight": 60,
-            "criteria": "Each task in a clear quadrant with frequency and steps; the matrix is logical"
+            "criteria": "Each of five tasks has a logical quadrant, frequency, steps, error impact, reviewability and reversibility."
           },
           {
             "dimension": "Decision + Rule",
             "weight": 40,
-            "criteria": "Choosing the first automation from \"Easy + High Frequency\"; a manual exception with a reason + an applicable rule"
+            "criteria": "The choice passes a separate risk check; high-risk work may be excluded despite frequency and simplicity. Include a reasoned manual exception and a future rule."
           }
         ],
         "yamlIntent": "Take 5 tasks from audit or patterns; place each on matrix (easy/hard × high/low frequency); pick first automation from easy+high quadrant + one manual exception + one rule — 10–15 min design",

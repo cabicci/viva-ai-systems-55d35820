@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\n- **What after the lesson?** You will choose one tool for your automation filter — and explain why.",
+      "contentMarkdown": "- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\n- **What after the lesson?** You will choose one tool for your automation candidate — and explain why.",
       "bullets": [
         "**What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.",
         "**Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.",
-        "**What after the lesson?** You will choose one tool for your automation filter — and explain why."
+        "**What after the lesson?** You will choose one tool for your automation candidate — and explain why."
       ],
       "tables": []
     },
@@ -40,12 +40,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Tools Differ — Thought Process is the Same",
-      "contentMarkdown": "- **Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.\n- **Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.\n- **n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.\n- **Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools.",
+      "contentMarkdown": "- **Zapier** — ready integrations; check required features and plan limits. Price depends on plan and usage.\n- **Make** — visual scenarios; compare features, limits and usage rather than assuming a lower price.\n- **n8n** — source-available under fair-code licensing; self-hosting depends on the edition and applicable license terms.\n- **Rule:** Choose for your task, volume and complexity. Compare current Free and paid plans, including connector availability. Zapier tasks and Make credits use different definitions; one task is not automatically one credit.",
       "bullets": [
-        "**Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.",
-        "**Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.",
-        "**n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.",
-        "**Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools."
+        "**Zapier** — ready integrations; check required features and plan limits. Price depends on plan and usage.",
+        "**Make** — visual scenarios; compare features, limits and usage rather than assuming a lower price.",
+        "**n8n** — source-available under fair-code licensing; self-hosting depends on the edition and applicable license terms.",
+        "**Rule:** Choose for your task, volume and complexity. Compare current Free and paid plans, including connector availability. Zapier tasks and Make credits use different definitions; one task is not automatically one credit."
       ],
       "tables": []
     },
@@ -53,18 +53,18 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Choosing by Popularity vs. Choosing by Size",
-      "contentMarkdown": "| \"Zapier because it’s popular\" | \"Make because the size is medium\" |\n|---------------------|------------------------|\n| Noor used Zapier for \"Form → Email\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed. | Noor used Make's free tier — same \"Form → Email\" — 30 minutes setup. Saved money and learned the thought process. |",
+      "contentMarkdown": "| Popularity-first choice | Requirements-first choice |\n|---|---|\n| Illustrative example: Noor chooses a hypothetical $20/month paid plan for five Form → Email runs without checking whether its paid features are needed. This is a plan choice, not an unavoidable price. | Noor first checks both Zapier and Make Free plans against the required connector, steps, frequency and volume, then compares paid plans only if needed. No connector or plan was tested in this example. |",
       "bullets": [],
       "tables": [
         {
           "headers": [
-            "\"Zapier because it’s popular\"",
-            "\"Make because the size is medium\""
+            "Popularity-first choice",
+            "Requirements-first choice"
           ],
           "rows": [
             [
-              "Noor used Zapier for \"Form → Email\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed.",
-              "Noor used Make's free tier — same \"Form → Email\" — 30 minutes setup. Saved money and learned the thought process."
+              "Illustrative example: Noor chooses a hypothetical $20/month paid plan for five Form → Email runs without checking whether its paid features are needed. This is a plan choice, not an unavoidable price.",
+              "Noor first checks both Zapier and Make Free plans against the required connector, steps, frequency and volume, then compares paid plans only if needed. No connector or plan was tested in this example."
             ]
           ]
         }
@@ -109,28 +109,29 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** At the start, you have one simple **Workflow**: \"Form → Welcome Email\" — 20 times/month. Your budget is limited. What is the best tool?\n\nMake — free tier is sufficient, clear visual interface, suitable for beginners\n- **Explanation:** Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size.",
+      "contentMarkdown": "**Question:** You need a simple Form → Welcome Email workflow about 20 times per month with a limited budget. Before selecting a tool, which action is best supported?\n\n1. Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.\n2. Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.\n3. Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed.\n\n**Explanation:** Requirements determine the choice. Check both Free plans and their limits; pay only if needed. The run count alone does not prove that one tool is cheapest or the only free option.",
       "bullets": [
-        "Make — free tier is sufficient, clear visual interface, suitable for beginners",
-        "Explanation: Starting + simple Workflow + budget = Make. The thought process is the same — the tool serves the size."
+        "Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.",
+        "Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.",
+        "Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed."
       ],
       "tables": [],
       "quiz": {
-        "question": "At the start, you have one simple **Workflow**: \"Form → Welcome Email\" — 20 times/month. Your budget is limited. What is the best tool?",
+        "question": "You need a simple Form → Welcome Email workflow about 20 times per month with a limited budget. Before selecting a tool, which action is best supported?",
         "correctIndex": 0,
         "options": [
-          "Make — free tier is sufficient, clear visual interface, suitable for beginners",
-          "An unsuitable choice; ignores the key data from the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Compare both Free plans with the required connector, steps, frequency and usage definitions, then choose a plan that meets the requirements.",
+          "Start with self-hosted n8n solely because its source code is available, before checking setup and maintenance needs.",
+          "Buy a paid Zapier plan because the brand is well known, before checking whether paid features are needed."
         ],
-        "explanation": "Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size."
+        "explanation": "Requirements determine the choice. Check both Free plans and their limits; pay only if needed. The run count alone does not prove that one tool is cheapest or the only free option."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Choose One Tool — and Why",
-      "contentMarkdown": "**Introduction:** Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\n\n**Submission:** Automation filter · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Justified Choice | 60% | Tool linked to a specific filter; two practical reasons — not just \"easiest\" |\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |",
+      "contentMarkdown": "**Introduction:** Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\n\n**Submission:** Automation candidate · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Justified Choice | 60% | Tool linked to a specific automation candidate; two practical reasons — not just \"easiest\" |\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |",
       "bullets": [],
       "tables": [
         {
@@ -143,7 +144,7 @@
             [
               "Justified Choice",
               "60%",
-              "Tool linked to a specific filter; two practical reasons — not just \"easiest\"."
+              "Tool linked to a specific automation candidate; two practical reasons — not just \"easiest\"."
             ],
             [
               "Understanding the Thought Process",
@@ -154,13 +155,13 @@
         }
       ],
       "mission": {
-        "intro": "Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.",
+        "intro": "Take the first automation candidate from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "Justified Choice",
             "weight": 60,
-            "criteria": "Tool linked to a specific filter; two practical reasons — not just \"easiest\"."
+            "criteria": "Tool linked to a specific automation candidate; two practical reasons — not just \"easiest\"."
           },
           {
             "dimension": "Understanding the Thought Process",
@@ -175,10 +176,10 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\n- **You can:** You have a chosen tool for your first automation filter — ready for design.\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\n\n---",
+      "contentMarkdown": "- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\n- **You can:** You have a chosen tool for your first automation candidate — ready for design.\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\n\n---",
       "bullets": [
         "**You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.",
-        "**You can:** You have a chosen tool for your first automation filter — ready for design.",
+        "**You can:** You have a chosen tool for your first automation candidate — ready for design.",
         "**Next:** **Triggers + Actions** — the building blocks of any **Flow**."
       ],
       "tables": []

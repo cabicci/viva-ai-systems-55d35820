@@ -983,7 +983,7 @@
       {
         "id": "sec2",
         "title": "The Power of Clear Roles",
-        "text": "Ambiguity in roles is a common cause of project delays and frustration. When responsibilities are unclear, team members may wait for others to initiate action, leading to bottlenecks. For instance, if multiple people believe they need to approve a step, or if no one knows who has the final say, progress grinds to a halt. Clearly defining who is responsible for executing a task (the executor), who has the authority to make a final decision (the decision owner), and who reviews the work (the reviewer) creates a streamlined process. This clarity doesn't eliminate collaboration; instead, it empowers individuals to act confidently within their defined scope, knowing exactly when and how to engage others. It prevents the ",
+        "text": "Ambiguity in roles is a common cause of project delays and frustration. When responsibilities are unclear, team members may wait for others to initiate action, leading to bottlenecks. For instance, if multiple people believe they need to approve a step, or if no one knows who has the final say, progress grinds to a halt. Clearly defining who is responsible for executing a task (the executor), who has the authority to make a final decision (the decision owner), and who reviews the work (the reviewer) creates a streamlined process. This clarity doesn't eliminate collaboration; instead, it empowers individuals to act confidently within their defined scope, knowing exactly when and how to engage others. It prevents the delay caused by waiting for an unspecified approval or receiving conflicting approvals, while preserving a clear decision owner and review responsibilities.",
         "reflection": "Consider a time when a project stalled due to unclear roles. How might clear definitions of executor, decision owner, and reviewer have changed the outcome?"
       },
       {
@@ -1098,13 +1098,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Choose a project you are familiar with (e.g., planning an event, developing a small product, organizing a team initiative). Identify five key tasks within this project. For each task, clearly assign an Executor, a Decision Owner, and a Reviewer. Then, test your arrangement by considering a scenario where a Decision Owner is unexpectedly unavailable. Finally, define a fallback rule for this specific project that respects sensitive permissions while ensuring progress.",
+      "prompt": "Choose a project you are familiar with (e.g., planning an event, developing a small product, organizing a team initiative). Identify five key tasks within this project. For each task, clearly assign an Executor, a Decision Owner, and a Reviewer. Then, test your arrangement by considering a scenario where a Decision Owner is unexpectedly unavailable. Finally, define a fallback rule for this specific project that respects sensitive permissions while ensuring progress.\n\nSubmission layout: In the first field, write the project title, then clearly label the Decision Owner absence scenario and the fallback rule, including which sensitive decisions still require authorization. Complete all five task fields. In each one, provide the task description, Executor, Decision Owner and Reviewer.",
       "fields": [
-        "Project Title",
-        "Task 1: [Description]",
-        "Task 2: [Description]",
-        "Task 3: [Description]",
-        "Task 4: [Description]"
+        "Project Title + Absence Scenario + Fallback Rule",
+        "Task 1: Description + Executor + Decision Owner + Reviewer",
+        "Task 2: Description + Executor + Decision Owner + Reviewer",
+        "Task 3: Description + Executor + Decision Owner + Reviewer",
+        "Task 4: Description + Executor + Decision Owner + Reviewer",
+        "Task 5: Description + Executor + Decision Owner + Reviewer"
       ],
       "criteria": [
         "Clarity of Task Descriptions: Are the five tasks clearly defined and distinct?",

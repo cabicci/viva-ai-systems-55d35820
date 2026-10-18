@@ -1,0 +1,61 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    22
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 22,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L01",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "0ea860edf359abeaa2be272087db8b58a97c7102285bfec9ab1576385d842133",
+      "afterSha256": "b311ac31c4c3de4e5d00647c471c42d29596651a14349a3daf8967e83fe60aba",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Choose a project you are familiar with (e.g., planning an event, developing a small product, organizing a team initiative). Identify five key tasks within this project. For each task, clearly assign an Executor, a Decision Owner, and a Reviewer. Then, test your arrangement by considering a scenario where a Decision Owner is unexpectedly unavailable. Finally, define a fallback rule for this specific project that respects sensitive permissions while ensuring progress.",
+          "after": "Choose a project you are familiar with (e.g., planning an event, developing a small product, organizing a team initiative). Identify five key tasks within this project. For each task, clearly assign an Executor, a Decision Owner, and a Reviewer. Then, test your arrangement by considering a scenario where a Decision Owner is unexpectedly unavailable. Finally, define a fallback rule for this specific project that respects sensitive permissions while ensuring progress.\n\nSubmission layout: In the first field, write the project title, then clearly label the Decision Owner absence scenario and the fallback rule, including which sensitive decisions still require authorization. Complete all five task fields. In each one, provide the task description, Executor, Decision Owner and Reviewer."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Project Title",
+            "Task 1: [Description]",
+            "Task 2: [Description]",
+            "Task 3: [Description]",
+            "Task 4: [Description]"
+          ],
+          "after": [
+            "Project Title + Absence Scenario + Fallback Rule",
+            "Task 1: Description + Executor + Decision Owner + Reviewer",
+            "Task 2: Description + Executor + Decision Owner + Reviewer",
+            "Task 3: Description + Executor + Decision Owner + Reviewer",
+            "Task 4: Description + Executor + Decision Owner + Reviewer",
+            "Task 5: Description + Executor + Decision Owner + Reviewer"
+          ]
+        }
+      ]
+    }
+  ],
+  "fieldMigration": {
+    "legacyCount": 5,
+    "currentCount": 6,
+    "indexMapping": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "appendedIndex": 5,
+    "scope": "AC-BUS-M02-L01/en only",
+    "automaticWrites": false
+  },
+  "pdfAssets": "Original workbook hashes retained; revised written delivery/contextual acceptance pending"
+}

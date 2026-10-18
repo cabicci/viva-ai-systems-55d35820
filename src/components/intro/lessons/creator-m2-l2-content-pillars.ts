@@ -105,14 +105,14 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
   {
     icon: ImageIcon,
     eyebrow: "رسم توضيحي",
-    title: "شكل توزيع الأعمدة",
+    title: "٣ بطاقات لأعمدة المحتوى",
     tone: "primary",
     block: {
       kind: "diagram",
       id: "content-pillars",
       label: "content-pillars",
       caption:
-        "الرسم يوضح إزاي العمود الواحد يتفرع لأفكار متعددة من غير ما تضيع هوية المحتوى.",
+        "الرسم بيعرض ٣ بطاقات لتحديد أعمدة المحتوى، وتثبيت ربط كل فكرة بعمود واحد واضح.",
     },
   },
   {

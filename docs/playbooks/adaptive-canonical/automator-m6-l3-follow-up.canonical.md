@@ -172,8 +172,24 @@ slugValidation:
 **التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.
 ### Mission
 
-| ٣ خطوات متنوعة | 60% |
-| توقف ذكي | 40% |
+سجّل عميل محتمل ولم يرد على الرسالة الأولى. صمّم ثلاث متابعات مختلفة بأوقاتها وشرط توقف؛ لا تُعِد CRM ولا ترسلها فعليًا.
+
+**التسليم:**
+
+1. اكتب سياق العميل والرسالة الأولى التي لم يُجب عنها.
+2. اليوم صفر: القناة ونموذج الرسالة والهدف.
+3. اليوم الثاني: القناة ونموذج رسالة مختلف والهدف.
+4. اليوم الخامس: القناة ونموذج رسالة مختلف والهدف.
+5. حدّد متى يتوقف التسلسل، مثل الرد أو الشراء أو طلب إلغاء المتابعة.
+6. اشرح اختلاف كل خطوة عن السابقة.
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|---|---|---|
+| ثلاث خطوات متنوعة | 60% | تحتوي كل متابعة على قناة ورسالة وهدف، ولا تكرر الخطوة نفسها. |
+| توقف واضح | 40% | شرط توقف صريح مثل الرد أو الشراء أو طلب الإلغاء. |
+
 
 ### Confidence close
 
@@ -295,3 +311,6 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit62 restoration (2026-10-18): the complete task above follows the current Egyptian mission's function and exact weights. This source correction is an agent-reviewed draft; existing human review and production gates remain pending.

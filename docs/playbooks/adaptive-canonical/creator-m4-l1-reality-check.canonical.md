@@ -90,12 +90,12 @@ concepts:
   - id: concept-signal
     term: Signal
     termEn: Signal
-    definition: A small sign that content is genuinely useful.
+    definition: A possible clue relevant to the goal that still needs checking; not proof of usefulness or cause.
     mustPreserve: true
   - id: concept-small-data
     term: Small Data
     termEn: Small Data
-    definition: Few data points but enough for a simple decision.
+    definition: Few observations may guide a provisional low-cost experiment, without settling the result.
     mustPreserve: true
 
 blocks:
@@ -116,20 +116,20 @@ blocks:
   - role: quiz
     intent: Trend vs real problem — test real problem idea (correctIndex 1)
   - role: mission
-    intent: Review 5 ideas for real audience problem — pick 2 to test
+    intent: Review five ideas and choose two; plan metric, period, comparison and one-change retests
   - role: confidence_close
     intent: Measure with mind not emotion; every try makes decisions clearer
 
 mission:
   type: practice
-  intent: Pick 5 ideas and rate each for real audience problem — choose 2 to test this week with reason
+  intent: Screen five ideas; choose two; plan comparable metric/period tests and one-change retests; no publication required
   rubricIntent:
     - dimension: problem_clarity
       weight: 60
-      criteria: Each idea tied to understandable problem for specific audience
+      criteria: Five audience/problem screens; two test plans with metric/unit, period and comparison; declare actual, fictional or missing data
     - dimension: practical_decision
       weight: 40
-      criteria: Two ideas chosen for testing with clear reason
+      criteria: Two reasoned selections linked to signal or data gap, one revision and a comparable retest; no publication or invented actual results
   forbiddenAssistantBehaviors:
     - write_full_submission
     - auto_pass_mission
@@ -172,9 +172,10 @@ slugValidation:
 ### Core idea — اشتغل بتجارب صغيرة وبيانات بسيطة
 
 - بدل «الفيديو **فشل**» — اسأل: **ماذا تعلّمت** من **أول ٥ ثوانٍ**؟
-- **ركّز** على **مؤشرات سهلة:** **نسبة إكمال**، **حفظ**، **رسائل خاصة**، أو **تعليق له معنى** — هذه **Signal (إشارة)** أن المحتوى **مفيد فعلًا**.
+- قد تكون نسبة الإكمال والحفظ والرسائل والتعليقات المفيدة إشارات مناسبة وفق الهدف والجمهور والفترة؛ لا تثبت عينة صغيرة واحدة منفعة المحتوى.
 - **التقدم الحقيقي** يظهر عندما **تكرّر** المحاولة **بنفس الفكرة** مع **تعديل واحد** كل مرة — **Iteration (تكرار محسّن)**.
-- **هدفك** في هذه المرحلة **بناء نظام شغل ثابت** — **لا ملاحقة رقم كبير** بسرعة. **Small Data (بيانات صغيرة)** **كافية** لقرار **بسيط**.
+- ابنِ سير عمل ثابتًا. قد تقترح البيانات القليلة تجربة أولية منخفضة التكلفة؛ وضّح المقارنة وعدم اليقين بدل اعتبار النتيجة محسومة.
+
 
 ### Comparison — حكم سريع أم اختبار ذكي؟
 
@@ -185,10 +186,11 @@ slugValidation:
 ### Glossary — ٣ مفاتيح قياس
 
 | المصطلح | المعنى | مثال |
-|---------|--------|------|
+|---|---|---|
 | **Iteration (تكرار محسّن)** | **إعادة تنفيذ** **نفس الفكرة** مع **تعديل محدّد** **للتعلّم** | **نفس الموضوع** — لكن **Hook (خطاف)** **مختلف** |
-| **Signal (إشارة)** | **إشارة صغيرة** تقول إن المحتوى **مفيد فعلًا** | تعليق: «**جرّبتها** **ونجحت**» |
-| **Small Data (بيانات صغيرة)** | **بيانات قليلة** — لكنها **كافية** **لاتخاذ قرار بسيط** | **أفضل ٢** من **٥ أفكار** من حيث **الإكمال** |
+| **Signal (إشارة)** | قرينة محتملة مرتبطة بالهدف وتحتاج إلى تحقق؛ ليست إثباتًا للمنفعة أو السبب. | تعليق يذكر نتيجة مفيدة؛ تحقّق منه وفق الهدف المعلن وبقية الأدلة. |
+| **Small Data (بيانات صغيرة)** | قد توجّه ملاحظات قليلة تجربة تالية مبدئية ومنخفضة التكلفة؛ لا تحسم النتيجة. | قارن نسب الإكمال لمنشورات متقاربة الطول خلال فترات قابلة للمقارنة، مع أعداد المشاهدات وعدم اليقين. |
+
 
 ### Video block (production reference only)
 
@@ -200,28 +202,33 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
-> **Quiz key (unchanged):** correctIndex: 1
+عندك **فكرتان:** **واحدة ترند** **لكن** **لا مشكلة واضحة** فيها — **والثانية** **بحث أقل** **لكن** **تحل وجعًا حقيقيًا** **لجمهورك**. **أيهما** **تختار** **للاختبار الأول**؟
 
-**السؤال:** عندك **فكرتان:** **واحدة ترند** **لكن** **لا مشكلة واضحة** فيها — **والثانية** **بحث أقل** **لكن** **تحل وجعًا حقيقيًا** **لجمهورك**. **أيهما** **تختار** **للاختبار الأول**؟
+1. الترند — لأنه يضمن مشاهدة أعلى.
+2. الفكرة التي تحل مشكلة حقيقية — حتى لو الأرقام أقل.
+3. أترك الاثنتين حتى يأتي إلهام جديد.
 
-- خيار ١: **الترند** — لأنه **يضمن مشاهدة أعلى**.
-- **الإجابة الصحيحة (خيار ٢):** **الفكرة** التي **تحل مشكلة حقيقية** — **حتى لو** **الأرقام أقل**.
-- خيار ٣: **أترك الاثنتين** **حتى** **يأتي إلهام جديد**.
+اختر مشكلة الجمهور فرضيةً لبدء الاختبار الأول، ثم قِس إشارة مناسبة. لا تضمن الشعبية أو ملاءمة المشكلة وحدها الأداء.
 
-**التفسير:** في **Reality Check (مراجعة الواقع)** **نبني** على **المنفعة الحقيقية** — لأن ذلك **يعطيك إشارات مفيدة** **على المدى الطويل**.
+**correctIndex:** 1 (unchanged)
+
 
 ### Mission — راجع ٥ أفكار وحدّد المشكلة الحقيقية
 
-**المقدمة:** اختر **٥ أفكار** من التي **في ذهنك** — **قيّم** **كل واحدة** **بسرعة:** هل **تحل مشكلة حقيقية** **لجمهور واضح**؟
+راجع خمس أفكار من حيث المشكلة الحقيقية والجمهور المحدد، ثم اختر فكرتين بسبب واضح. خطط لتجربة صغيرة لكل فكرة مختارة؛ لا يلزم نشر فعلي. استخدم القيم الفعلية عند توافرها. وإلا فسمِّ السيناريو التعليمي خياليًا والقرار مبدئيًا، أو وضّح نقص البيانات وخطة قياسها.
 
-**التسليم:** لكل فكرة (١–٥): الفكرة + المشكلة + نعم/لا · في الآخر: **فكرتان** **ستجربهما** **هذا الأسبوع** **ولماذا**
+**التسليم:**
 
-**معايير التقييم:**
+1. لكل فكرة من الخمس: الفكرة والجمهور المحدد والمشكلة ونعم/لا لملاءمة المشكلة، مع سبب موجز.
+2. اختر فكرتين. لكل منهما حدّد مؤشرًا ووحدته أو مقامه وفترة القياس ومنشورًا قابلًا للمقارنة أو خط أساس مناسبًا.
+3. سجّل قيمة المؤشر وقيمة المقارنة ومصدرهما عند توافرهما. وإلا فسمِّ أرقام التدريب خيالية والقرار مبدئيًا، أو حدّد البيانات الناقصة وكيفية جمعها.
+4. لكل فكرة مختارة، حدّد الإشارة الضعيفة قياسًا بالمقارنة وسبب اختيارها. خطط لتعديل واحد ثم أعد اختبار الفكرة نفسها مع تثبيت الظروف المهمة الأخرى، واذكر ما ستقيسه مجددًا.
 
 | البعد | الوزن | المعيار |
-|-------|-------|---------|
-| وضوح المشكلة | 60% | **كل فكرة** **مرتبطة** **بمشكلة مفهومة** **لجمهور محدّد** |
-| قرار عملي | 40% | **اختيار فكرتين** **للتجربة** **مع سبب واضح** |
+|---|---|---|
+| وضوح المشكلة | 60% | للأفكار الخمس جمهور محدد ومشكلة مفهومة؛ تتضمن خطتا الفكرتين المختارتين مؤشرًا ووحدة أو مقامًا وفترة ومقارنة مناسبة، مع تمييز البيانات الفعلية أو الخيالية أو الناقصة. |
+| قرار عملي | 40% | اختيار فكرتين بسبب مرتبط بالإشارة أو نقص البيانات، وشرح تعديل واحد عند ضعف الإشارة وإعادة اختبار للفكرة نفسها في ظروف قابلة للمقارنة. لا يُشترط النشر ولا تُدّعى نتائج فعلية لأفكار لم تُختبر. |
+
 
 ### Confidence close
 
@@ -336,3 +343,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit91 (2026-10-18): retain five-idea screening and two selections, add metric/period/comparison and one-change retest planning. No actual publication required. Key1 and weights60/40 preserved; language/live acceptance pending.

@@ -124,7 +124,7 @@ export function TechnicalLessonView({
           </nav>
           <section className={`${panel} !p-5`}>
             <h2 className="font-bold">{copy.progress}</h2>
-            <Progress className="mt-3" value={(completed / 3) * 100} />
+            <Progress className="mt-3" value={(completed / 3) * 100} aria-label={copy.progress} />
             <p className="mt-3 text-sm leading-7 text-muted-foreground">{copy.local}</p>
           </section>
         </aside>
@@ -173,7 +173,7 @@ export function TechnicalLessonView({
                 </article>
               ))}
               <Button onClick={() => persist("read")}>
-                {record?.read ? copy.correct : copy.markRead}
+                {record?.read ? copy.readDone : copy.markRead}
               </Button>
             </>
           )}

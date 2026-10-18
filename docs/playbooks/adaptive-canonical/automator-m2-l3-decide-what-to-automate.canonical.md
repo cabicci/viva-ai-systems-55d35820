@@ -45,7 +45,7 @@
 | **Learning objective** | Prioritize first automation: repeating + simple + low risk; rank 5 tasks on easy/hard × high/low frequency matrix |
 | **Mission rubric** | 60% matrix + 5 tasks · 40% decision + rule |
 | **Quiz intent** | Form-to-sheet copy (40×/month, 3 steps) beats creative report or personal partner email |
-| **Concepts locked** | Task Candidate, ROI |
+| **Concepts locked** | Task Candidate, Build-effort payback period |
 | **Prerequisites** | `automator-m2-l2-spot-patterns` |
 | **Next lesson** | `automator-m3-l1-tools-landscape` |
 
@@ -88,9 +88,9 @@ concepts:
     definition: Task screened for repeat, simplicity, and low risk before automation.
     mustPreserve: true
   - id: concept-roi
-    term: ROI
-    termEn: ROI
-    definition: Time saved ÷ build time — worth it if payback under ~two months.
+    term: Build-effort payback period
+    termEn: Build-effort payback period
+    definition: Build time (hours) ÷ net monthly time saved (hours/month) = build-effort payback period (months). Example: 0.5 ÷ 2 = 0.25 month, assuming the 2 hours/month is net of oversight and maintenance. Under two months is a teaching assumption, not a universal rule; retain risk and maintenance checks.
     mustPreserve: true
 
 blocks:
@@ -103,7 +103,7 @@ blocks:
   - role: comparison
     intent: First Flow = hardest vs first Flow = easiest repeating
   - role: glossary
-    intent: Task Candidate (مرشّح أتمتة); ROI (العائد على الجهد)
+    intent: Task Candidate (مرشّح أتمتة); مدة استرداد جهد البناء (Build-effort payback period)
   - role: video
     intent: Optional — rank automation candidates — production Bunny unchanged
   - role: screenshot
@@ -130,7 +130,7 @@ mission:
     - auto_pass_mission
     - invent_tasks_or_matrix_placement_for_learner
 
-termsLocked: [Task Candidate, ROI, Flow]
+termsLocked: [Task Candidate, Build-effort payback period, Flow]
 
 links:
   nextLessonId: automator-m3-l1-tools-landscape
@@ -168,22 +168,25 @@ slugValidation:
 ### Core idea — متكرّر + بسيط + مخاطرة قليلة = أولوية
 
 - **٣ معايير للأولوية:** التكرار (كم مرة/أسبوع؟)، البساطة (٢–٣ خطوات ثابتة؟)، المخاطرة (إذا أخطأت — ما الضرر؟).
-- **مصفوفة بسيطة:** محور أفقي = سهل ↔ صعب. محور رأسي = تكرار عالي ↔ منخفض. الزاوية العليا اليسار = أول أتمتة.
-- **مثال فوز:** «نسخ بيانات نموذج لجدول» — ٣٠ مرة/شهر، ٣ خطوات، إذا أخطأت تصلّح يدويًا.
+- **مصفوفة بسيطة:** أفقي = سهل ↔ صعب، ورأسي = تكرار عالٍ ↔ منخفض. السهل والمتكرر مرشح وليس موافقة تلقائية؛ قد تستبعده المخاطرة.
+- **مثال توضيحي:** نسخ بيانات نموذج مصطنعة إلى جدول مسودة منفصل —٤٠ مرة/شهر وثلاث خطوات. يراجع شخص النتيجة قبل استخدامها ويمكن إعادة بناء المسودة؛ لا رسائل آلية ولا تعديل للسجل المعتمد.
 - **مثال مضاد:** «بريد شخصي لشريك» — مرة كل شهرين، يحتاج لمسة بشرية. اتركه يدويًا.
+- **فحص مخاطرة لكل مرشح:** حدّد أثر الخطأ وإمكانية المراجعة قبل الاستخدام وإمكانية التراجع. قد تُستبعد مهمة سهلة ومتكررة إذا كان ضررها مرتفعًا.
+
 
 ### Comparison — أتمتة بالحماس vs أتمتة بالترتيب
 
 | أول Flow = الأصعب | أول Flow = الأسهل المتكرّر |
-|-------------------|---------------------------|
-| كريم أتمت ردود ذكاء اصطناعي معقّدة — ٥ ساعات بناء — يحدث ٣ مرات/شهر. عائد ضعيف ومخاطرة عالية إذا أخطأ. | كريم أتمت «نموذج → جدول» — ٣٠ دقيقة بناء — ٣٠ مرة/شهر. فوز سريع والعامل الافتراضي يثبت ثقة. |
+|---|---|
+| كريم أتمت ردود ذكاء اصطناعي معقّدة — ٥ ساعات بناء — يحدث ٣ مرات/شهر. عائد ضعيف ومخاطرة عالية إذا أخطأ. | **فحص مخاطرة لكل مرشح:** حدّد أثر الخطأ وإمكانية المراجعة قبل الاستخدام وإمكانية التراجع. قد تُستبعد مهمة سهلة ومتكررة إذا كان ضررها مرتفعًا. |
+
 
 ### Glossary — مصطلحان للاختيار
 
 | المصطلح | المعنى | مثال |
 |---------|--------|------|
 | **Task Candidate (مرشّح أتمتة)** | مهمة نفحصها: متكرّرة؟ بسيطة؟ مخاطرة قليلة؟ | «بريد ترحيب بعد حجز» — مرشّح قوي |
-| **ROI (العائد على الجهد)** | الوقت الذي ستوفره ÷ وقت بناء الأتمتة — إذا أقل من شهرين، يستحق | ٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز |
+| **مدة استرداد جهد البناء (Build-effort payback period)** | وقت بناء الأتمتة بالساعات ÷ صافي الوقت الموفّر شهرياً بالساعات/شهر = مدة الاسترداد بالشهور. حد أقل من شهرين افتراض تعليمي لهذا المثال، وليس قاعدة جدوى عامة؛ راجع المخاطر والصيانة والمتابعة. | ٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض توفير ساعتين شهرياً صافياً بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر. |
 
 ### Video block (production reference only)
 
@@ -195,23 +198,36 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
-**السؤال:** عندك ٣ مرشّحين: (أ) نسخ نموذج لجدول — ٤٠ مرة/شهر، ٣ خطوات. (ب) تقرير إبداعي أسبوعي — مرة/أسبوع، ١٠ خطوات. (ج) بريد شريك — مرة/شهرين. أفضل أول أتمتة؟
+**السؤال:** أي مرشح أنسب لأول أتمتة؟ (أ) نسخ بيانات نموذج مصطنعة لمسودة منفصلة،٤٠ مرة/شهر وثلاث خطوات؛ مراجعة قبل الاستخدام وإعادة بناء ممكنة، دون إرسال أو تعديل للسجل المعتمد. (ب) مسودة تقرير إبداعي أسبوعي من عشر خطوات؛ قد يضر التفسير الخاطئ بالقرار وتلزم مراجعة قبل التوزيع. (ج) بريد شخصي لشريك مرة كل شهرين؛ يحتاج موافقة ولا يمكن محو أثره بالكامل بعد الإرسال.
 
-- **الإجابة الصحيحة (correctIndex: 0):** **(أ) — متكرّر + بسيط + مخاطرة قليلة**
-- **التفسير:** أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.
+1. أتمتة (أ): نسخ البيانات المصطنعة إلى المسودة الخاضعة للمراجعة.
+2. أتمتة (ب): إعداد التقرير الإبداعي الأسبوعي.
+3. أتمتة (ج): إرسال البريد الشخصي للشريك.
+
+**التفسير:** يجمع (أ) التكرار والبساطة مع ضوابط معلنة: بيانات مصطنعة ومسودة منفصلة قابلة لإعادة البناء ومراجعة قبل الاستخدام. يتطلب (ب) حكمًا أعقد، و(ج) نادر وله أثر خارجي. المخاطرة قيد مستقل عن ربع المصفوفة.
+
+**correctIndex:** 0 (unchanged)
+
 
 ### Mission — رتّب ٥ مهام على المصفوفة
 
-**المقدمة:** خذ ٥ مهام من **جرد الوقت** أو الأنماط — وضع كل واحدة على المصفوفة (سهل/صعب × تكرار عالي/منخفض). ١٠–١٥ دقيقة كافية.
+خذ ٥ مهام من **جرد الوقت** أو الأنماط — وضع كل واحدة على المصفوفة (سهل/صعب × تكرار عالي/منخفض). ١٠–١٥ دقيقة كافية.
 
-**التسليم:** المصفوفة · ٥ مهام (اسم، ربع، تكرار، خطوات) · أول أتمتة من «سهل + تكرار عالي» · مهمة تتركها يدويًا ولماذا · قاعدة واحدة للمهام القادمة
+**التسليم:**
+
+1. لكل مهمة من الخمس، اكتب الاسم والربع والتكرار الأسبوعي وعدد الخطوات.
+2. لكل مرشح، حدّد أثر الخطأ وإمكانية المراجعة قبل الاستخدام والتراجع.
+3. اختر المرشح الأول إذا كان سهلًا ومتكررًا واجتاز فحص المخاطرة، وفسّر أي سبب لاستبعاده.
+4. سمِّ مهمة تبقى يدوية حتى لو تكررت، مع السبب.
+5. اكتب قاعدة للمهام القادمة. هذا تصميم ولا يتطلب تشغيل أتمتة.
 
 **معايير التقييم:**
 
 | البعد | الوزن | المعيار |
-|-------|-------|---------|
-| مصفوفة + ٥ مهام | 60% | كل مهمة في ربع واضح مع تكرار وخطوات؛ المصفوفة منطقية |
-| قرار + قاعدة | 40% | اختيار أول أتمتة من «سهل + تكرار عالي»؛ استثناء يدوي له سبب + قاعدة قابلة للتطبيق |
+|---|---|---|
+| مصفوفة + ٥ مهام | 60% | لكل مهمة من الخمس ربع منطقي وتكرار وخطوات وأثر خطأ وإمكانية مراجعة وتراجع. |
+| قرار + قاعدة | 40% | يجتاز الاختيار فحص مخاطرة مستقلًا؛ قد يستبعد الضرر المرتفع مهمة سهلة ومتكررة. يتضمن استثناءً يدويًا مبررًا وقاعدة مستقبلية. |
+
 
 ### Confidence close
 
@@ -274,7 +290,7 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 | Dimension | Score (/5) | Notes |
 |-----------|------------|-------|
 | Objective preservation | 4 | Pending human review |
-| Concept preservation | 5 | Task Candidate, ROI locked |
+| Concept preservation | 5 | Task Candidate, Build-effort payback period locked |
 | Beginner clarity | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | MSA simplicity | 4 | Pending dialect scan |
 | Mission consistency | 5 | 60/40 rubric matches production |
@@ -335,3 +351,11 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+## 2026-10-18 — approved audit correction 55
+
+Owner-authorized correction supersedes the original ROI preservation entry only for this dimensional-error fix. Use build time divided by net monthly time saving, with the 0.25-month example and explicit oversight/maintenance assumption. The two-month limit is illustrative. Egyptian authoring and four generated glossary overlays are synchronized; mission/quiz/rubric and risk checks are preserved. This update does not fabricate the pending human sign-off or authorize media generation.
+
+
+Audit97 correction (2026-10-18): explicit synthetic-data/review/reversibility assumptions and a separate risk gate. Prior audit55 payback glossary is preserved. Agent-reviewed draft; human/live acceptance pending.

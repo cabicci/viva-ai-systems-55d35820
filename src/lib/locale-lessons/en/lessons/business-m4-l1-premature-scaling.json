@@ -59,9 +59,52 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Honest Check | 60% |\n| Clear Decision | 40% |",
+      "contentMarkdown": "Evaluate one real expansion idea, such as a branch, larger campaign, new product or several hires, against four readiness areas. This is a judgment exercise, not an instruction to execute the expansion.\n\n**Submission:**\n\n1. Describe the expansion idea.\n2. Operations ready? Answer yes, no or partly and explain.\n3. Cash ready? Answer yes, no or partly and explain.\n4. Quality stable? Answer yes, no or partly and explain.\n5. Demand real? Answer yes, no or partly and explain.\n6. Choose expand, postpone or expand partially; explain how your readiness review supports the choice.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Honest readiness review | 60% | Use a real idea and answer all four readiness areas rather than presenting self-promotion. |\n| Clear decision | 40% | Choose expansion or postponement with a reason linked to the review. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Honest readiness review",
+              "60%",
+              "Use a real idea and answer all four readiness areas rather than presenting self-promotion."
+            ],
+            [
+              "Clear decision",
+              "40%",
+              "Choose expansion or postponement with a reason linked to the review."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Evaluate one real expansion idea, such as a branch, larger campaign, new product or several hires, against four readiness areas. This is a judgment exercise, not an instruction to execute the expansion.",
+        "delivery": [
+          "Describe the expansion idea.",
+          "Operations ready? Answer yes, no or partly and explain.",
+          "Cash ready? Answer yes, no or partly and explain.",
+          "Quality stable? Answer yes, no or partly and explain.",
+          "Demand real? Answer yes, no or partly and explain.",
+          "Choose expand, postpone or expand partially; explain how your readiness review supports the choice."
+        ],
+        "rubric": [
+          {
+            "dimension": "Honest readiness review",
+            "weight": 60,
+            "criteria": "Use a real idea and answer all four readiness areas rather than presenting self-promotion."
+          },
+          {
+            "dimension": "Clear decision",
+            "weight": 40,
+            "criteria": "Choose expansion or postponement with a reason linked to the review."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

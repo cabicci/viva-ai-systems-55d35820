@@ -85,12 +85,12 @@ concepts:
   - id: concept-pattern
     term: Pattern
     termEn: Pattern
-    definition: Something that repeats across different periods — worth planning on (budget, SOP, forecast).
+    definition: Repeated behavior under comparable conditions may support a provisional plan after baseline and variability checks.
     mustPreserve: true
   - id: concept-outlier
     term: Outlier
     termEn: Outlier
-    definition: A number far from normal — happened once or twice; understand cause before big decision.
+    definition: An observation far from the usual baseline; check data quality and context before interpreting.
     mustPreserve: true
 
 blocks:
@@ -99,7 +99,7 @@ blocks:
   - role: tension
     intent: One triple sales day → doubled ads; next week back to normal — strategic mistake
   - role: core
-    intent: Pattern = plan; Outlier = understand; insufficient data = wait; 3 times in 3 periods = pattern
+    intent: Three observations are an initial signal; compare baseline, equivalent periods, seasonality and variability
   - role: comparison
     intent: React to one number vs read 8 weeks — Friday spike as pattern
   - role: glossary
@@ -111,7 +111,7 @@ blocks:
   - role: quiz
     intent: Friday pattern + big client outlier — plan inventory for Thursday (correctIndex 1)
   - role: mission
-    intent: Classify 5 values; one decision from pattern only
+    intent: Classify five contextual values and choose a justified next step, including a data-collection plan or small reversible test
   - role: confidence_close
     intent: Pause before strategy change; next = decision rule
 
@@ -121,10 +121,10 @@ mission:
   rubricIntent:
     - dimension: correct_classification
       weight: 60
-      criteria: Each value classified with clear reason; outliers not treated as patterns
+      criteria: Each value has context, unit, period, comparison or explicit gaps and a reasoned provisional classification
     - dimension: decision_from_pattern
       weight: 40
-      criteria: Decision built on repetition — not on one point
+      criteria: Accept insufficient data with a collection plan or small reversible test; never force a pattern
   forbiddenAssistantBehaviors:
     - write_full_submission
     - auto_pass_mission
@@ -166,10 +166,11 @@ slugValidation:
 
 ### Core idea — نمط = خطّط — استثناء = افهم
 
-- **Pattern (نمط):** شيء **يتكرّر** في **فترات مختلفة** — **يستحق** أن **تخطّط** عليه (ميزانية، SOP، توقّع).
-- **Outlier (استثناء):** شيء **حدث مرّة أو مرتين** **بعيدًا عن المعتاد** — **افهم سببه** قبل **أي قرار كبير**.
-- **لا بيانات كافية:** **نقطة واحدة** أو **يومان** — **لا تتخذ** قرارًا استراتيجيًا. **اجمع أكثر** أو **انتظر**.
-- **قاعدة عملية:** **٣ مرات** في **٣ فترات مختلفة** = **نمط** يمكنك **الثقة** به.
+- النمط: سلوك متكرر في ظروف قابلة للمقارنة قد يدعم خطة مبدئية، بعد مقارنته بخط أساس والتذبذب المعتاد؛ لا يضمن المستقبل.
+- القيمة الشاذة: ملاحظة بعيدة عن خط الأساس المعتاد. افحص جودة التسجيل وسياقها قبل تفسيرها؛ لا تُعرّف بمجرد حدوثها مرة أو مرتين.
+- البيانات غير كافية: قد يمنع نقص السياق أو المقارنة أو الفترات المناسبة استنتاجًا سليمًا رغم وجود عدة نقاط. اجمع البيانات الناقصة أو صمّم تجربة صغيرة قابلة للتراجع.
+- ثلاث ملاحظات في ثلاث فترات إشارة أولية للفحص، وليست ضمانًا لنمط موثوق. قارن فترات متكافئة وافحص الموسمية والتذبذب الطبيعي قبل التعميم.
+
 
 ### Comparison — ردّ فعل على رقم مقابل قراءة صحيحة
 
@@ -180,9 +181,10 @@ slugValidation:
 ### Glossary — مصطلحان للتمييز
 
 | المصطلح | المعنى | مثال |
-|---------|--------|------|
-| **Pattern (نمط)** | **تكرار منتظم** يمكنك **توقّعه** و**التخطيط** عليه | مبيعات **التورتات** **تتضاعف كل جمعة** من **٦ شهور** |
-| **Outlier (استثناء)** | **رقم بعيد** عن المعتاد — **حدث مرّة أو مرتين** فقط | **يوم واحد** بعت **٥٠ ألف جنيه** والمتوسط **٥٠٠** — بسبب **عميل جملة** |
+|---|---|---|
+| **Pattern (نمط)** | سلوك متكرر في ظروف قابلة للمقارنة قد يدعم خطة مبدئية مع مراجعة مستمرة. | مبيعات **التورتات** **تتضاعف كل جمعة** من **٦ شهور** |
+| **Outlier (استثناء)** | ملاحظة بعيدة عن خط الأساس المعتاد تتطلب فحص جودة البيانات والسياق. | **يوم واحد** بعت **٥٠ ألف جنيه** والمتوسط **٥٠٠** — بسبب **عميل جملة** |
+
 
 ### Video block (production reference only)
 
@@ -206,21 +208,31 @@ slugValidation:
 
 ### Mission — صنّف ٥ أرقام أو أيام
 
-**المقدمة:** مهمة **تمييز عملي** — **ليس** رسمًا بيانيًا. خذ **٥ أرقام أو ٥ أيام** من **عملك** (حقيقي أو تخيلي) و**صنّف** كل واحد. **الهدف:** تتعلّم **التوقّف** قبل أن **تغيّر قرارًا** بسبب **رقم غريب**.
+صنّف خمس ملاحظات بسياقها، لا خمسة أرقام منفصلة. استخدم بيانات مسموحة أو العينة الخيالية المعلنة أدناه. حدّد لكل قيمة المقياس ووحدته والفترة وخط الأساس المقارن والظروف المهمة، أو اذكر ما ينقص. «البيانات غير كافية» استنتاج صحيح ومقبول. لا يلزم رسم معقد أو اختبار إحصائي أو تنفيذ تجربة فعلية.
+
+حالة تعليمية خيالية: عدد الطلبات المكتملة كل جمعة لمتجر واحد مع ثبات ساعات العمل وتعريف العد. تراوحت الجمعات الثمانية السابقة القابلة للمقارنة بين ٩٠ و ١١٠ طلب؛ هذا خط الأساس المعطى وليس توقعًا. لا يتوافر سجل موسمي أوسع. في الجمعة الخامسة، يسجّل سجل الطلبات الخيالي ٦٠ طلبًا لعميل جملة واحد ضمن الإجمالي. قيّم حدود الدليل بدل افتراض أن خمس قيم تثبت نمطًا مستقبليًا.
+
+| الجمعة | الطلبات المكتملة | خط الأساس المقارن | السياق المسجّل |
+|---|---|---|---|
+| 2026-09-04 | 100 | 90–110 | لا حدث إضافي مسجّل؛ المعلومات الموسمية ناقصة. |
+| 2026-09-11 | 102 | 90–110 | لا حدث إضافي مسجّل؛ المعلومات الموسمية ناقصة. |
+| 2026-09-18 | 98 | 90–110 | لا حدث إضافي مسجّل؛ المعلومات الموسمية ناقصة. |
+| 2026-09-25 | 101 | 90–110 | لا حدث إضافي مسجّل؛ المعلومات الموسمية ناقصة. |
+| 2026-10-02 | 160 | 90–110 | عميل جملة واحد يمثل ٦٠ من إجمالي ١٦٠ طلبًا. |
 
 **التسليم:**
 
-1. **Metric (المقياس)** الذي تتابعه (مبيعات، طلبات، شكاوى…)
-2. **٥ قيم** — كل واحدة في سطر (رقم + يوم/أسبوع)
-3. لكل قيمة: **نمط / استثناء / لا بيانات كافية + لماذا**
-4. **قرار واحد** ستتخذه **بناءً على النمط فقط** (**ليس** الاستثناء)
-
-**معايير التقييم:**
+1. اذكر المقياس ووحدته أو مقامه ومصدره، وبيّن إن كانت البيانات فعلية أو خيالية أو ناقصة.
+2. لكل ملاحظة من الخمس: القيمة واليوم/الأسبوع والنطاق وخط الأساس أو الفترة المقارنة والسياق؛ صرّح بالمقارنات الناقصة.
+3. قدّم لكل قيمة تصنيفًا مبدئيًا: نمط أو ملاحظة غير معتادة أو بيانات غير كافية، مع سبب مرتبط بالمقارنة والتذبذب المعتاد.
+4. بيّن هل فُحص تكافؤ الفترات والموسمية وما بقي مجهولًا؛ لا تجعل ثلاث مرات قاعدة آلية للثقة.
+5. اختر خطوة تالية مبررة. يجوز اقتراح خطة مبدئية بدليل مناسب، ويُقبل بالقدر نفسه نقص البيانات مع خطة جمع محددة أو تجربة صغيرة قابلة للتراجع. لا تختلق نمطًا.
 
 | البعد | الوزن | المعيار |
-|-------|-------|---------|
-| تصنيف صحيح | 60% | كل قيمة **مصنّفة** **بسبب واضح**؛ **الاستثناءات** **لم تُعامل** كنمط |
-| قرار من النمط | 40% | القرار **مبني على التكرار** — **ليس** على **نقطة واحدة** |
+|---|---|---|
+| السياق والتصنيف | 60% | تتضمن القيم الخمس المقياس والوحدة والفترة والسياق والمقارنة أو نواقص صريحة. يراعي التصنيف تكافؤ الفترات والتذبذب؛ لا تُعد الأرقام المنفصلة أنماطًا تلقائيًا. |
+| خطوة تالية مبنية على دليل | 40% | ترتبط الخطوة التالية بالدليل وحدوده. يُقبل نقص البيانات مع خطة جمع أو تجربة صغيرة قابلة للتراجع، دون فرض نمط أو ضمان نتيجة أو اشتراط تنفيذ فعلي. |
+
 
 ### Confidence close
 
@@ -335,3 +347,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit101 (2026-10-18): three observations are an initial signal, not a reliability guarantee. Contextual fictional five-Friday sample and explicit missing seasonal data supplied. Insufficient data with a collection plan or reversible experiment is accepted. Key1/weights60/40 and images retained. Human language/live acceptance pending.

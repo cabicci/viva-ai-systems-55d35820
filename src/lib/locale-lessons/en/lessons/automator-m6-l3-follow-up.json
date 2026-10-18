@@ -14,7 +14,7 @@
     {
       "role": "Orientation",
       "heading": "Orientation",
-      "subtitle": "Beginning of the Lesson",
+      "subtitle": "Beginning of the Step",
       "contentMarkdown": "- **What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.\n- **Why Now?** After the reception and WhatsApp — don’t leave anyone silent.",
       "bullets": [
         "**What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.",
@@ -68,9 +68,52 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| 3 diverse steps | 60% |\n| Smart Stop | 40% |",
+      "contentMarkdown": "A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\n\n**Submission:**\n\n1. State the lead context and the unanswered first message.\n2. Day 0: specify channel, draft message and goal.\n3. Day 2: specify channel, a different draft message and goal.\n4. Day 5: specify channel, a different draft message and goal.\n5. State when the sequence stops: for example, a reply, purchase or opt-out.\n6. Explain why each step differs from the previous one.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Three distinct steps | 60% | Each follow-up includes a channel, message and goal, rather than repeating the same step. |\n| Clear stopping rule | 40% | Give an explicit stop condition such as a reply, purchase or request to unsubscribe. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Three distinct steps",
+              "60%",
+              "Each follow-up includes a channel, message and goal, rather than repeating the same step."
+            ],
+            [
+              "Clear stopping rule",
+              "40%",
+              "Give an explicit stop condition such as a reply, purchase or request to unsubscribe."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.",
+        "delivery": [
+          "State the lead context and the unanswered first message.",
+          "Day 0: specify channel, draft message and goal.",
+          "Day 2: specify channel, a different draft message and goal.",
+          "Day 5: specify channel, a different draft message and goal.",
+          "State when the sequence stops: for example, a reply, purchase or opt-out.",
+          "Explain why each step differs from the previous one."
+        ],
+        "rubric": [
+          {
+            "dimension": "Three distinct steps",
+            "weight": 60,
+            "criteria": "Each follow-up includes a channel, message and goal, rather than repeating the same step."
+          },
+          {
+            "dimension": "Clear stopping rule",
+            "weight": 40,
+            "criteria": "Give an explicit stop condition such as a reply, purchase or request to unsubscribe."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

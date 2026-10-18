@@ -198,15 +198,16 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
-> **Quiz key (unchanged):** correctIndex: 1
+**السؤال:** وصل الفيديو إلى مشاهدين مناسبين، لكن منحنى الاحتفاظ يُظهر مغادرة كثيرين في الثواني الأولى. أي تعديل أول تختبره مع ثبات الفكرة وجمهور قابل للمقارنة؟
 
-**السؤال:** إذا كان **نفس المحتوى** يُشاهَد **قليلًا** — أي **تعديل** غالبًا **يرفع** فرصة المشاهدة؟
+1. زيادة طول الفيديو.
+2. إعادة كتابة أول جملة بشكل أوضح وأقوى.
+3. تغيير اسم الحساب.
 
-- خيار ١: **زيادة طول** الفيديو.
-- **الإجابة الصحيحة (خيار ٢):** **إعادة كتابة أول جملة** بشكل **أوضح** و**أقوى**.
-- خيار ٣: **تغيير اسم الحساب**.
+**التفسير:** يدعم الانخفاض المبكر اختبار جملة افتتاحية أوضح. أعد اختبار الفكرة نفسها بتعديل واحد في البداية وقارن الاحتفاظ المبكر؛ هذه تجربة أولى وليست إثباتًا للسبب أو ضمانًا للتحسن.
 
-**التفسير:** **أول جملة** تحدّد قرار المشاهد: **يكمل** أم **لا** — فتعزيزها **يؤثر مباشرة** على **Retention Start (بداية الاحتفاظ)**.
+**correctIndex:** 1 (unchanged)
+
 
 ### Mission — اكتب ٣ خطافات لنفس الموضوع
 
@@ -334,3 +335,6 @@ All Gulf / English / other locales derive from this MSA canonical script — **n
 ---
 
 *Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*
+
+
+Audit92/95/96 scoped correction (2026-10-18): quiz evidence, text delivery or promise criterion clarified as applicable; IDs, keys and weights preserved. Agent-reviewed draft; human language/live acceptance pending.

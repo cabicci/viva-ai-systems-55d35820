@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — 'Build an Interface' vs 'I have 7 boxes'",
       "subtitle": "'Build an Interface' vs 'I have 7 boxes'",
-      "contentMarkdown": "| Without Wireframe | With Wireframe |\n|----------------|--------------|\n| '**Build an AI Interface and Features**' — **AI guesses. 5 attempts. Still not accurate** | '**Header + text box + button “Suggest” + 3 cards of features**' — **AI builds what you described. Closer from the first time** |",
+      "contentMarkdown": "| Without Wireframe | With Wireframe |\n|---|---|\n| \"Build a recipe suggestion interface\" leaves the layout and primary action unspecified. | Recipe Suggestions heading + ingredient input + Suggest Recipe button + three recipe cards. These labeled boxes give the AI a specific layout to build and you a structure to review. |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "«**Build an AI Interface and Attributes**» — **AI guesses. 5 attempts. Still not accurate**",
-              "«**Header + Text Box + 'Suggest' Button + 3 Attribute Cards**» — **AI builds what you described. Closer than the first time**"
+              "\"Build a recipe suggestion interface\" leaves the layout and primary action unspecified.",
+              "Recipe Suggestions heading + ingredient input + Suggest Recipe button + three recipe cards. These labeled boxes give the AI a specific layout to build and you a structure to review."
             ]
           ]
         }

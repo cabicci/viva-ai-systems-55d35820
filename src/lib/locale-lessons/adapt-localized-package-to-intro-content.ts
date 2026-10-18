@@ -253,7 +253,10 @@ function buildIntroBlockFromSection(
     return null;
   }
 
-  if (normalizeRole(role).includes("video")) {
+  if (
+    normalizeRole(role).includes("video") ||
+    normalizeRole(role).includes("diagram")
+  ) {
     return null;
   }
 
@@ -303,10 +306,12 @@ function buildIntroBlockFromSection(
   return null;
 }
 
+type PackageIntroSection = IntroLessonSection & { packageRole: string };
+
 function buildPackageIntroSections(
   pkg: LocalizedPackageInput,
-): IntroLessonSection[] {
-  const sections: IntroLessonSection[] = [];
+): PackageIntroSection[] {
+  const sections: PackageIntroSection[] = [];
   const counters = { quiz: 0, mission: 0 };
 
   for (const section of pkg.sections) {
@@ -314,6 +319,7 @@ function buildPackageIntroSections(
     if (!block) continue;
 
     sections.push({
+      packageRole: normalizeRole(section.role),
       icon: sectionIcon(section.role),
       eyebrow: sectionEyebrow(section, pkg.locale),
       title: sectionTitle(section, block, pkg.locale),
@@ -325,16 +331,38 @@ function buildPackageIntroSections(
   return sections;
 }
 
-function blockKindKey(block: IntroBlock): string {
-  return block.kind;
+// Canonical paragraph slots use their educational identity, not a shared queue.
+function canonicalParagraphRole(section: IntroLessonSection): string | null {
+  const eyebrow = normalizeRole(section.eyebrow);
+  if (
+    /^(orientation|getting started|بداية الدرس|بداية المسار|بداية واضحة)$/.test(
+      eyebrow,
+    )
+  )
+    return "orientation";
+  if (
+    /^(tension|relatable moment|موقف مألوف|المشكلة|المشكلة الشائعة|مشكلة شائعة|واقع متكرر|نقطة الألم)$/.test(
+      eyebrow,
+    )
+  )
+    return "tension";
+  if (/^(core idea|الفكرة الأساسية)$/.test(eyebrow)) return "core idea";
+  if (
+    /confidence|wrap-up|^خلّصت|إقفال الدرس|قفلة واثقة|إغلاق واثق|الخلاصة|ختام المسار/.test(
+      eyebrow,
+    )
+  )
+    return "confidence close";
+  return null;
 }
 
 function queueSectionsByKind(
-  sections: IntroLessonSection[],
-): Map<string, IntroLessonSection[]> {
-  const queues = new Map<string, IntroLessonSection[]>();
+  sections: PackageIntroSection[],
+): Map<string, PackageIntroSection[]> {
+  const queues = new Map<string, PackageIntroSection[]>();
   for (const section of sections) {
-    const key = blockKindKey(section.block);
+    const kind = section.block.kind;
+    const key = kind === "paragraphs" ? kind + ":" + section.packageRole : kind;
     const queue = queues.get(key) ?? [];
     queue.push(section);
     queues.set(key, queue);
@@ -343,12 +371,29 @@ function queueSectionsByKind(
 }
 
 function takeQueuedSection(
-  queues: Map<string, IntroLessonSection[]>,
-  kind: IntroBlock["kind"],
+  queues: Map<string, PackageIntroSection[]>,
+  canonical: IntroLessonSection,
 ): IntroLessonSection | null {
-  const queue = queues.get(kind);
-  if (!queue?.length) return null;
-  return queue.shift() ?? null;
+  const kind = canonical.block.kind;
+  const paragraphSlot = kind === "paragraphs" || kind === "numberedList";
+  const role = paragraphSlot ? canonicalParagraphRole(canonical) : null;
+  const sourceKind = paragraphSlot ? "paragraphs" : kind;
+  if (!paragraphSlot || role) {
+    const queue = queues.get(role ? sourceKind + ":" + role : sourceKind);
+    return queue?.shift() ?? null;
+  }
+  // Nonstandard paragraph slots require an exact section identity. Never borrow
+  // another educational role merely because it also renders paragraphs.
+  for (const [key, queue] of queues) {
+    if (!key.startsWith("paragraphs:")) continue;
+    const index = queue.findIndex(
+      (section) =>
+        normalizeRole(section.title) === normalizeRole(canonical.title) &&
+        normalizeRole(section.eyebrow) === normalizeRole(canonical.eyebrow),
+    );
+    if (index >= 0) return queue.splice(index, 1)[0] ?? null;
+  }
+  return null;
 }
 
 function findVideoCaption(pkg: LocalizedPackageInput): string | undefined {
@@ -397,7 +442,9 @@ function findVideoSectionMeta(
 
 function findDiagramSectionMeta(
   pkg: LocalizedPackageInput,
-): (Pick<IntroLessonSection, "title" | "eyebrow"> & { caption?: string }) | null {
+):
+  | (Pick<IntroLessonSection, "title" | "eyebrow"> & { caption?: string })
+  | null {
   for (const section of pkg.sections) {
     if (!normalizeRole(section.role).includes("diagram")) continue;
     return {
@@ -538,8 +585,26 @@ function mergeCanonicalSection(
     };
   }
 
+  if (kind === "numberedList" && localized?.block.kind === "paragraphs") {
+    const items = localized.block.paragraphs
+      .flatMap((paragraph) => paragraph.split(/\r?\n(?=\s*[0-9٠-٩]+[.)]\s)/))
+      .map((line) => line.replace(/^\s*[0-9٠-٩]+[.)]\s*/, "").trim())
+      .filter(Boolean);
+    if (!items.length) return null;
+    return {
+      icon: localized.icon,
+      eyebrow: localized.eyebrow,
+      title: localized.title,
+      tone: localized.tone ?? canonSection.tone,
+      block: { kind: "numberedList", items },
+    };
+  }
+
   if (!localized) {
-    if (kind === "paragraphs" && /خلّصت|wrap-up|confidence/i.test(canonSection.eyebrow)) {
+    if (
+      kind === "paragraphs" &&
+      /خلّصت|wrap-up|confidence/i.test(canonSection.eyebrow)
+    ) {
       return null;
     }
     return null;
@@ -555,7 +620,7 @@ function mergeCanonicalSection(
 }
 
 function alignPackageToCanonicalStructure(
-  packageSections: IntroLessonSection[],
+  packageSections: PackageIntroSection[],
   canonical: IntroLessonContent,
   pkg: LocalizedPackageInput,
 ): IntroLessonContent {
@@ -567,7 +632,7 @@ function alignPackageToCanonicalStructure(
     const localized =
       kind === "lessonVideo" || kind === "diagram" || kind === "caseStudy"
         ? null
-        : takeQueuedSection(queues, kind);
+        : takeQueuedSection(queues, canonSection);
     const merged = mergeCanonicalSection(canonSection, localized, pkg);
     if (merged) aligned.push(merged);
   }
@@ -594,5 +659,5 @@ export function adaptLocalizedPackageToIntroContent(
   if (canonical?.length) {
     return alignPackageToCanonicalStructure(packageSections, canonical, pkg);
   }
-  return packageSections;
+  return packageSections.map(({ packageRole: _role, ...section }) => section);
 }

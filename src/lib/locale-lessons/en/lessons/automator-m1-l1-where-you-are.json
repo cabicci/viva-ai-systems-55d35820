@@ -14,7 +14,7 @@
     {
       "role": "Orientation",
       "heading": "Orientation",
-      "subtitle": "Lesson Start",
+      "subtitle": "Step Start",
       "contentMarkdown": "- **What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.\n- **Why now?** After **Builder** (the product) and **Creator** (the audience), **Automator** is the «**virtual worker**» that makes repetitive tasks run on their own.\n- **What after the lesson?** You will identify **5 repetitive tasks** and calculate the time you waste on them weekly.",
       "bullets": [
         "**What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.",
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Building Tools vs. Knowing Where Time Goes",
-      "contentMarkdown": "| Building Without Audit | Audit First |\n|-------------------|-------------|\n| Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time | Count: Welcome email × 20 clients × 3 minutes = 1 hour daily. First **Flow** = automatic welcome email. Save 5 hours weekly |",
+      "contentMarkdown": "| Building Without Audit | Audit First |\n|---|---|\n| Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time | Illustrative count: 20 clients × 3 minutes = 60 minutes of work per day. Assuming five workdays, that is 5 hours/week of theoretically replaceable work before monitoring, maintenance, exceptions and remaining manual steps. Measure the realized net saving rather than promising the full five hours. |",
       "bullets": [],
       "tables": [
         {
@@ -63,7 +63,7 @@
           "rows": [
             [
               "Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time",
-              "Count: Welcome email × 20 clients × 3 minutes = 1 hour daily. First **Flow** = automatic welcome email. Save 5 hours weekly"
+              "Illustrative count: 20 clients × 3 minutes = 60 minutes of work per day. Assuming five workdays, that is 5 hours/week of theoretically replaceable work before monitoring, maintenance, exceptions and remaining manual steps. Measure the realized net saving rather than promising the full five hours."
             ]
           ]
         }
@@ -99,8 +99,8 @@
     },
     {
       "role": "Screenshot block (intent)",
-      "heading": "Screenshot Block",
-      "contentMarkdown": "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**.",
+      "heading": "Three Steps for Your First Automation",
+      "contentMarkdown": "Three steps for your first automation: audit your time, calculate the time cost, and choose one clear task to hand off.",
       "bullets": [],
       "tables": []
     },
@@ -108,10 +108,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\n\nCount the task, its time, and frequency per week — to know this is a priority.\n- **Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.",
+      "contentMarkdown": "**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\n\n1. Count the task, its time, and frequency per week — to know this is a priority.\n2. Open Make and build a flow before measuring the task's time or frequency.\n3. Stop sending welcome emails to new clients to save time.\n\n**Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.",
       "bullets": [
         "Count the task, its time, and frequency per week — to know this is a priority.",
-        "Explanation: Audit first — when you know «welcome email» = 30 minutes daily, you will know this is the first task for the virtual worker."
+        "Open Make and build a flow before measuring the task's time or frequency.",
+        "Stop sending welcome emails to new clients to save time."
       ],
       "tables": [],
       "quiz": {
@@ -119,8 +120,8 @@
         "correctIndex": 0,
         "options": [
           "Count the task, its time, and frequency per week — to know this is a priority.",
-          "An unsuitable option; it ignores the basic data in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Open Make and build a flow before measuring the task's time or frequency.",
+          "Stop sending welcome emails to new clients to save time."
         ],
         "explanation": "**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker."
       }
@@ -174,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.\n- **You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.\n- **Next:** **Systems View** — how any repetitive task turns into a system (Operator → Process → Outcome).",
+      "contentMarkdown": "- **Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.\n- **You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.\n- **Next:** **Systems View** — how any repetitive task turns into a system (Trigger → Process → Output).",
       "bullets": [
         "**Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.",
         "**You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.",
-        "**Next:** **Systems View** — how any repetitive task turns into a system (Operator → Process → Outcome)."
+        "**Next:** **Systems View** — how any repetitive task turns into a system (Trigger → Process → Output)."
       ],
       "tables": []
     }

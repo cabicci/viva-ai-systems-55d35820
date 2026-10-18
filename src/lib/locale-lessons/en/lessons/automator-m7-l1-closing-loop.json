@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two Terms for Linking",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Customer Journey** | The complete path from initial interest to follow-up or purchase — not just one step | Ad → Form → Welcome → Follow-up → Sales Call |\n| **Feedback Loop** | The data recorded by the automation returns to inform you on what to improve | \"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\" |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Customer Journey** | The complete path from initial interest to follow-up or purchase — not just one step | Ad → Form → Welcome → Follow-up → Sales Call |\n| **Feedback Loop** | The data recorded by the automation returns to inform you on what to improve | Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled. |",
       "bullets": [],
       "tables": [
         {
@@ -92,7 +92,7 @@
             [
               "**Feedback Loop**",
               "The data recorded by the automation returns to inform you on what to improve",
-              "\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\""
+              "Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled."
             ]
           ]
         }
@@ -109,10 +109,11 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** You have leads from 3 channels and follow-ups are working — but you don’t know which channel brings in customers who buy. What is the best question to ask the data?\n\nWhich channel brought in leads that converted at the highest rate?\n- **Explanation:** **The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**.",
+      "contentMarkdown": "**Question:** You have leads from 3 channels and follow-ups are working — but you don’t know which channel brings in customers who buy. What is the best question to ask the data?\n\n1. Which channel brought in leads that converted at the highest rate?\n2. How many leads arrived today?\n3. Which staff member answered the most messages?\n\n**Explanation:** **The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**.",
       "bullets": [
         "Which channel brought in leads that converted at the highest rate?",
-        "Explanation: The connected journey allows you decision-making questions — not just counting. Channel + conversion = Analyst."
+        "How many leads arrived today?",
+        "Which staff member answered the most messages?"
       ],
       "tables": [],
       "quiz": {
@@ -120,8 +121,8 @@
         "correctIndex": 0,
         "options": [
           "Which channel brought in leads that converted at the highest rate?",
-          "An irrelevant option; it ignores the key data from the section above.",
-          "A partial answer that misses the context and ignores the next step for decision-making."
+          "How many leads arrived today?",
+          "Which staff member answered the most messages?"
         ],
         "explanation": "**The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**."
       }

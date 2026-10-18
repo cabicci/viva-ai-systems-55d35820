@@ -49,30 +49,73 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Understanding Agents",
-      "contentMarkdown": "> **Quiz key:**\n\nFixed Workflow with many conditions for every possibility.\nAn Agent with a clear goal and specific tools, with a limit that prevents sending without approval.\nAn **Agent** open with all tools to be 'smart'.\n\n**Explanation:** The correct answer is based on the context provided.",
+      "contentMarkdown": "**Question:** Support requests require a changing sequence of lookups as new details emerge. The goal is to draft a useful reply using only FAQ lookup and read-only order-status lookup. The draft must not be sent without customer consent and human approval. Which design fits this goal-directed choice of steps?\n\n1. Make every request follow the same predetermined sequence, regardless of new details.\n2. Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.\n3. Give an agent access to all tools and let it send replies without the stated approvals.\n\n**Explanation:** The bounded agent can choose changing steps toward the stated goal. A fixed workflow fits a known route but this option ignores changing details; opening all tools violates the stated permissions and sending rule. These boundaries still need validation and oversight and do not guarantee absolute safety.",
       "bullets": [
-        "Fixed Workflow with many conditions for every possibility.",
-        "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval.",
-        "An Agent open with all tools to be 'smart'."
+        "Make every request follow the same predetermined sequence, regardless of new details.",
+        "Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.",
+        "Give an agent access to all tools and let it send replies without the stated approvals."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 1,
         "options": [
-          "Fixed Workflow with many conditions for every possibility.",
-          "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval.",
-          "An Agent open with all tools to be 'smart'."
+          "Make every request follow the same predetermined sequence, regardless of new details.",
+          "Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.",
+          "Give an agent access to all tools and let it send replies without the stated approvals."
         ],
-        "explanation": "The correct answer is based on the context provided.",
-        "question": "What is the most suitable option according to the section above?"
+        "explanation": "The bounded agent can choose changing steps toward the stated goal. A fixed workflow fits a known route but this option ignores changing details; opening all tools violates the stated permissions and sending rule. These boundaries still need validation and oversight and do not guarantee absolute safety.",
+        "question": "Support requests require a changing sequence of lookups as new details emerge. The goal is to draft a useful reply using only FAQ lookup and read-only order-status lookup. The draft must not be sent without customer consent and human approval. Which design fits this goal-directed choice of steps?"
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Goal and Tools | 60% |\n| Limit and Transformation | 40% |",
+      "contentMarkdown": "Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.\n\n**Submission:**\n\n1. State the agent's goal in one sentence.\n2. Name allowed tool 1 and what it may do.\n3. Name allowed tool 2 and what it may do.\n4. Define one enforceable boundary: what is out of scope or when the agent must stop.\n5. Name the person or role that takes over if the agent fails or reaches the boundary.\n6. Explain why this boundary matters in your work.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|---|---|---|\n| Goal and tools | 60% | Give a specific goal and two tools with clear functions, rather than unlimited capabilities. |\n| Boundary and escalation | 40% | Give an applicable boundary and a clear handoff path when the agent fails or exceeds it. |",
       "bullets": [],
-      "tables": []
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Goal and tools",
+              "60%",
+              "Give a specific goal and two tools with clear functions, rather than unlimited capabilities."
+            ],
+            [
+              "Boundary and escalation",
+              "40%",
+              "Give an applicable boundary and a clear handoff path when the agent fails or exceeds it."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design safeguards for an agent handling work with variable steps. Write the goal, allowed tools and a clear boundary; no code, deployment or tool execution is required.",
+        "delivery": [
+          "State the agent's goal in one sentence.",
+          "Name allowed tool 1 and what it may do.",
+          "Name allowed tool 2 and what it may do.",
+          "Define one enforceable boundary: what is out of scope or when the agent must stop.",
+          "Name the person or role that takes over if the agent fails or reaches the boundary.",
+          "Explain why this boundary matters in your work."
+        ],
+        "rubric": [
+          {
+            "dimension": "Goal and tools",
+            "weight": 60,
+            "criteria": "Give a specific goal and two tools with clear functions, rather than unlimited capabilities."
+          },
+          {
+            "dimension": "Boundary and escalation",
+            "weight": 40,
+            "criteria": "Give an applicable boundary and a clear handoff path when the agent fails or exceeds it."
+          }
+        ]
+      }
     },
     {
       "role": "Confidence close",

@@ -10,6 +10,7 @@ import {
   setControlledV1AssetUrlMapForTests,
 } from "../../../src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver";
 import { getContextualV2BrowserManifestEntries } from "../../../src/lib/lesson-visuals/contextual-v2/runtime/contextualV2BrowserResolver";
+import auditRevisions from "../../../src/lib/lesson-visuals/contextual-v2/runtime/contextualV2AuditRevisions.json";
 import { LocaleProvider } from "../../../src/lib/locale/locale-context";
 import type { SupportedLocale } from "../../../src/lib/locale/types";
 import { IMAGE_GALLERY } from "../../../src/lib/image-gallery-registry";
@@ -53,16 +54,12 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
   it("mounts exactly one contextual image for all 100 lessons in all four locales", () => {
     const entries = getContextualV2BrowserManifestEntries();
     expect(entries).toHaveLength(400);
-    expect(
-      new Set(entries.map((entry) => entry.lessonId)).has(
-        "builder-m5-l5-mini-win",
-      ),
-    ).toBe(true);
-    expect(
-      new Set(entries.map((entry) => entry.lessonId)).has(
-        "creator-m4-repurposing",
-      ),
-    ).toBe(true);
+    expect(new Set(entries.map((entry) => entry.lessonId)).has("builder-m5-l5-mini-win")).toBe(
+      true,
+    );
+    expect(new Set(entries.map((entry) => entry.lessonId)).has("creator-m4-repurposing")).toBe(
+      true,
+    );
 
     for (const entry of entries) {
       const { container, unmount } = render(
@@ -76,13 +73,14 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
       );
       const images = container.querySelectorAll("img[data-contextual-v2-img='1']");
       expect(images, entry.cellId).toHaveLength(1);
-      expect(images[0].getAttribute("src"), entry.cellId).toBe(entry.publicPath);
+      const revision = auditRevisions.entries.find((item) => item.cellId === entry.cellId);
+      expect(images[0].getAttribute("src"), entry.cellId).toBe(
+        revision?.publicPath ?? entry.publicPath,
+      );
       expect(images[0].getAttribute("loading")).toBe("lazy");
       expect(images[0].getAttribute("decoding")).toBe("async");
       expect(
-        images[0]
-          .closest("figure")
-          ?.getAttribute("data-contextual-v2-source-type"),
+        images[0].closest("figure")?.getAttribute("data-contextual-v2-source-type"),
         entry.cellId,
       ).toBe(entry.sourceType);
       expect(images[0].closest("section"), entry.cellId).not.toBeNull();
@@ -90,7 +88,7 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
         container.querySelector("[data-contextual-v2-manifest-title]"),
         entry.cellId,
       ).toBeNull();
-      expect(container.textContent?.split(entry.title)).toHaveLength(2);
+      expect(container.textContent?.split(revision?.title ?? entry.title)).toHaveLength(2);
       expect(container.querySelector("[data-controlled-v1]")).toBeNull();
       expect(container.querySelector('[data-locale-diagram="placeholder"]')).toBeNull();
       expect(container.innerHTML).not.toContain("/assets/lessons/");
@@ -114,10 +112,12 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
     expect(getByText("Audience")).toBeTruthy();
     expect(getByText("Audience flow")).toBeTruthy();
     expect(container.querySelectorAll("section")).toHaveLength(1);
-    expect(container.querySelector("[data-contextual-v2-type-label]"))
-      .toHaveTextContent("Lesson visual");
-    expect(container.querySelector("[data-contextual-v2-manifest-title]"))
-      .toHaveTextContent("Know Your Audience");
+    expect(container.querySelector("[data-contextual-v2-type-label]")).toHaveTextContent(
+      "Lesson visual",
+    );
+    expect(container.querySelector("[data-contextual-v2-manifest-title]")).toHaveTextContent(
+      "Know Your Audience",
+    );
   });
 
   it("keeps optional-ID direct screenshot content usable without activating a legacy resolver", () => {
@@ -197,9 +197,7 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
       expect(getByLabelText(expected[locale].enlarge)).toBeTruthy();
       expect(getByText(expected[locale].cta)).toBeTruthy();
       expect(
-        getByLabelText(
-          `${locale === "en" ? "Open lesson" : "افتح درس"} ${item.titles[locale]}`,
-        ),
+        getByLabelText(`${locale === "en" ? "Open lesson" : "افتح درس"} ${item.titles[locale]}`),
       ).toBeTruthy();
       fireEvent.click(getByLabelText(expected[locale].enlarge));
       expect(getByText(`${expected[locale].close} ✕`)).toBeTruthy();
@@ -210,8 +208,7 @@ describe("contextual-v2 product wiring with controlled-v1 archive preserved", ()
   it("keeps the frozen controlled-v1 resolver independently available", () => {
     const entry = getControlledV1BrowserManifestEntries().find(
       (candidate) =>
-        candidate.lessonId === "builder-m7-l1-tables-columns" &&
-        candidate.locale === "ar-EG",
+        candidate.lessonId === "builder-m7-l1-tables-columns" && candidate.locale === "ar-EG",
     );
     expect(entry).toBeDefined();
     if (!entry) return;

@@ -3,6 +3,8 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
+import { normalizeMissionModelAnswer } from "./mission-model-answer";
+import { getUiString } from "./locale/ui-strings";
 import {
   buildMissionEvaluationPrompts,
   buildMissionRevealPrompts,
@@ -77,117 +79,133 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
     };
 
     try {
-    // Verify the submission belongs to the caller AND matches the claimed
-    // missionId. Without the mission_id check an authed user could pair
-    // their own submissionId with an attacker-controlled prompt (prompt-
-    // injection vector into the AI evaluator).
-    const { data: row, error: rowErr } = await supabaseAdmin
-      .from("mission_submissions")
-      .update({ status: "evaluating" })
-      .eq("id", data.submissionId)
-      .eq("user_id", userId)
-      .eq("mission_id", data.missionId)
-      .eq("status", "submitted")
-      .select("id, user_id, mission_id, lesson_id, submission_text, updated_at")
-      .maybeSingle();
-    if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
-    if (!row) {
-      throw new Error("التسليم غير متاح للتقييم.");
-    }
-    // Keep the database timestamp verbatim: it is the version of this claim.
-    // A reset/resubmission must not let this evaluator write to a newer claim.
-    claimedUpdatedAt = row.updated_at;
+      // Verify the submission belongs to the caller AND matches the claimed
+      // missionId. Without the mission_id check an authed user could pair
+      // their own submissionId with an attacker-controlled prompt (prompt-
+      // injection vector into the AI evaluator).
+      const { data: row, error: rowErr } = await supabaseAdmin
+        .from("mission_submissions")
+        .update({ status: "evaluating" })
+        .eq("id", data.submissionId)
+        .eq("user_id", userId)
+        .eq("mission_id", data.missionId)
+        .eq("status", "submitted")
+        .select("id, user_id, mission_id, lesson_id, submission_text, updated_at")
+        .maybeSingle();
+      if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
+      if (!row) {
+        throw new Error("التسليم غير متاح للتقييم.");
+      }
+      // Keep the database timestamp verbatim: it is the version of this claim.
+      // A reset/resubmission must not let this evaluator write to a newer claim.
+      claimedUpdatedAt = row.updated_at;
 
-    // Claim first so a rate-limit failure can safely release this submission.
-    // Rate limit: hourly + daily + monthly cost caps per user.
-    // Hourly: burst protection. Daily/monthly: cost cap.
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission", maxCalls: 10, windowSeconds: 3600 });
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:daily", maxCalls: 40, windowSeconds: 86400 });
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:monthly", maxCalls: 500, windowSeconds: 2592000 });
+      // Claim first so a rate-limit failure can safely release this submission.
+      // Rate limit: hourly + daily + monthly cost caps per user.
+      // Hourly: burst protection. Daily/monthly: cost cap.
+      await enforceRateLimit({
+        userId,
+        bucketKey: "ai:evaluate-mission",
+        maxCalls: 10,
+        windowSeconds: 3600,
+      });
+      await enforceRateLimit({
+        userId,
+        bucketKey: "ai:evaluate-mission:daily",
+        maxCalls: 40,
+        windowSeconds: 86400,
+      });
+      await enforceRateLimit({
+        userId,
+        bucketKey: "ai:evaluate-mission:monthly",
+        maxCalls: 500,
+        windowSeconds: 2592000,
+      });
 
-    const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
-    const submissionText = z.string().min(1).max(8000).parse(row.submission_text);
-    const { resolveCanonicalMissionEvaluationSource } = await import(
-      "./mission-evaluation-source.server"
-    );
-    const source = await resolveCanonicalMissionEvaluationSource({
-      locale: data.locale,
-      lessonId,
-      missionId: data.missionId,
-    });
+      const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
+      const submissionText = z.string().min(1).max(8000).parse(row.submission_text);
+      const { resolveCanonicalMissionEvaluationSource } =
+        await import("./mission-evaluation-source.server");
+      const source = await resolveCanonicalMissionEvaluationSource({
+        locale: data.locale,
+        lessonId,
+        missionId: data.missionId,
+      });
 
-    const { systemPrompt, userPrompt } = buildMissionEvaluationPrompts({
-      locale: data.locale,
-      passThreshold: MISSION_PASS_THRESHOLD,
-      lessonTitle: source.lessonTitle,
-      missionPrompt: source.missionPrompt,
-      rubric: source.rubric,
-      submissionText,
-    });
+      const { systemPrompt, userPrompt } = buildMissionEvaluationPrompts({
+        locale: data.locale,
+        passThreshold: MISSION_PASS_THRESHOLD,
+        lessonTitle: source.lessonTitle,
+        missionPrompt: source.missionPrompt,
+        rubric: source.rubric,
+        submissionText,
+      });
 
-    const { content: raw } = await callAI({
-      model: "google/gemini-2.5-flash",
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt },
-      ],
-      responseFormat: { type: "json_object" },
-      timeoutMs: 30_000,
-    });
+      const { content: raw } = await callAI({
+        model: "google/gemini-2.5-flash",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt },
+        ],
+        responseFormat: { type: "json_object" },
+        timeoutMs: 30_000,
+      });
 
-    let parsed: AIEvaluationResult;
-    try {
-      parsed = JSON.parse(raw);
-    } catch {
-      console.error("[evaluateMissionWithAI] non-JSON content", raw);
-      throw new Error("تعذّر قراءة نتيجة التقييم.");
-    }
+      let parsed: AIEvaluationResult;
+      try {
+        parsed = JSON.parse(raw);
+      } catch {
+        console.error("[evaluateMissionWithAI] non-JSON content", raw);
+        throw new Error("تعذّر قراءة نتيجة التقييم.");
+      }
 
-    // Sanitize / defensive defaults
-    const result: AIEvaluationResult = {
-      overallScore: clamp(Number(parsed.overallScore ?? 0), 0, 100),
-      // Server is source of truth for the pass threshold — ignore the model's flag.
-      passed: clamp(Number(parsed.overallScore ?? 0), 0, 100) >= MISSION_PASS_THRESHOLD,
-      perCriterion: Array.isArray(parsed.perCriterion)
-        ? parsed.perCriterion.slice(0, 6).map((c) => ({
-            label: String(c?.label ?? ""),
-            score: clamp(Number(c?.score ?? 0), 0, 100),
-            feedback: String(c?.feedback ?? ""),
-          }))
-        : [],
-      summary: String(parsed.summary ?? ""),
-      nextStep: String(parsed.nextStep ?? ""),
-      socraticQuestion: String((parsed as { socraticQuestion?: unknown }).socraticQuestion ?? "").slice(0, 400),
-    };
+      // Sanitize / defensive defaults
+      const result: AIEvaluationResult = {
+        overallScore: clamp(Number(parsed.overallScore ?? 0), 0, 100),
+        // Server is source of truth for the pass threshold — ignore the model's flag.
+        passed: clamp(Number(parsed.overallScore ?? 0), 0, 100) >= MISSION_PASS_THRESHOLD,
+        perCriterion: Array.isArray(parsed.perCriterion)
+          ? parsed.perCriterion.slice(0, 6).map((c) => ({
+              label: String(c?.label ?? ""),
+              score: clamp(Number(c?.score ?? 0), 0, 100),
+              feedback: String(c?.feedback ?? ""),
+            }))
+          : [],
+        summary: String(parsed.summary ?? ""),
+        nextStep: String(parsed.nextStep ?? ""),
+        socraticQuestion: String(
+          (parsed as { socraticQuestion?: unknown }).socraticQuestion ?? "",
+        ).slice(0, 400),
+      };
 
-    // Persist authoritative result with service-role (bypasses the
-    // user-protection trigger that blocks writes to score/feedback/status).
-    const { data: persisted, error: updErr } = await supabaseAdmin
-      .from("mission_submissions")
-      .update({
-        status: result.passed ? "passed" : "needs_revision",
-        score: result.overallScore,
-        feedback: result.summary,
-        evaluated_at: new Date().toISOString(),
-        submission_metadata: {
-          perCriterion: result.perCriterion,
-          nextStep: result.nextStep,
-          socraticQuestion: result.socraticQuestion,
-        },
-      })
-      .eq("id", data.submissionId)
-      .eq("user_id", userId)
-      .eq("mission_id", data.missionId)
-      .eq("status", "evaluating")
-      .eq("updated_at", claimedUpdatedAt)
-      .select("id")
-      .maybeSingle();
-    if (updErr || !persisted) {
-      console.error("[evaluateMissionWithAI] persist failed", updErr);
-      throw new Error("تم التقييم لكن تعذّر حفظ النتيجة.");
-    }
+      // Persist authoritative result with service-role (bypasses the
+      // user-protection trigger that blocks writes to score/feedback/status).
+      const { data: persisted, error: updErr } = await supabaseAdmin
+        .from("mission_submissions")
+        .update({
+          status: result.passed ? "passed" : "needs_revision",
+          score: result.overallScore,
+          feedback: result.summary,
+          evaluated_at: new Date().toISOString(),
+          submission_metadata: {
+            perCriterion: result.perCriterion,
+            nextStep: result.nextStep,
+            socraticQuestion: result.socraticQuestion,
+          },
+        })
+        .eq("id", data.submissionId)
+        .eq("user_id", userId)
+        .eq("mission_id", data.missionId)
+        .eq("status", "evaluating")
+        .eq("updated_at", claimedUpdatedAt)
+        .select("id")
+        .maybeSingle();
+      if (updErr || !persisted) {
+        console.error("[evaluateMissionWithAI] persist failed", updErr);
+        throw new Error("تم التقييم لكن تعذّر حفظ النتيجة.");
+      }
 
-    return result;
+      return result;
     } catch (err) {
       await releaseClaimedRow();
       throw err;
@@ -221,12 +239,25 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     const userId = context.userId;
     const supabaseAdmin = await loadSupabaseAdmin();
 
-
-
     // Rate limit: hourly + daily + monthly caps for the escape-hatch reveal.
-    await enforceRateLimit({ userId, bucketKey: "ai:reveal-answer", maxCalls: 30, windowSeconds: 3600 });
-    await enforceRateLimit({ userId, bucketKey: "ai:reveal-answer:daily", maxCalls: 60, windowSeconds: 86400 });
-    await enforceRateLimit({ userId, bucketKey: "ai:reveal-answer:monthly", maxCalls: 300, windowSeconds: 2592000 });
+    await enforceRateLimit({
+      userId,
+      bucketKey: "ai:reveal-answer",
+      maxCalls: 30,
+      windowSeconds: 3600,
+    });
+    await enforceRateLimit({
+      userId,
+      bucketKey: "ai:reveal-answer:daily",
+      maxCalls: 60,
+      windowSeconds: 86400,
+    });
+    await enforceRateLimit({
+      userId,
+      bucketKey: "ai:reveal-answer:monthly",
+      maxCalls: 300,
+      windowSeconds: 2592000,
+    });
 
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
@@ -238,8 +269,7 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
     if (!row) throw new Error("التسليم غير موجود.");
 
-    const existingMeta =
-      (row.submission_metadata as Record<string, unknown> | null) ?? {};
+    const existingMeta = (row.submission_metadata as Record<string, unknown> | null) ?? {};
 
     // Legacy rows: passed + revealed still count as done — do not re-reveal.
     if (row.status === "passed") {
@@ -250,15 +280,15 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     }
 
     // Idempotent: return stored model answer without re-unlocking or re-scoring.
-    if (
-      existingMeta.revealed === true &&
-      typeof existingMeta.modelAnswer === "string"
-    ) {
+    if (existingMeta.revealed === true) {
+      const cachedAnswer = normalizeMissionModelAnswer(existingMeta.modelAnswer);
+      if (!cachedAnswer)
+        throw new Error(getUiString(data.locale, "mission.reveal.unavailableSaved"));
       return {
-        modelAnswer: String(existingMeta.modelAnswer).slice(0, 4000),
-        note: String(
-          existingMeta.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك.",
-        ),
+        modelAnswer: cachedAnswer,
+        note:
+          normalizeMissionModelAnswer(existingMeta.note) ??
+          getUiString(data.locale, "mission.reveal.defaultNote"),
       };
     }
 
@@ -268,9 +298,8 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     }
 
     const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
-    const { resolveCanonicalMissionEvaluationSource } = await import(
-      "./mission-evaluation-source.server"
-    );
+    const { resolveCanonicalMissionEvaluationSource } =
+      await import("./mission-evaluation-source.server");
     const source = await resolveCanonicalMissionEvaluationSource({
       locale: data.locale,
       lessonId,
@@ -299,9 +328,11 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
       throw new Error("تعذّر قراءة نموذج الإجابة.");
     }
 
+    const modelAnswer = normalizeMissionModelAnswer(parsed?.modelAnswer);
+    if (!modelAnswer) throw new Error(getUiString(data.locale, "mission.reveal.invalidResponse"));
     const result: RevealAnswerResult = {
-      modelAnswer: String(parsed.modelAnswer ?? "").slice(0, 4000),
-      note: String(parsed.note ?? defaultNote),
+      modelAnswer,
+      note: normalizeMissionModelAnswer(parsed?.note) ?? defaultNote,
     };
 
     // Persist model answer only — do not pass/unlock; learner must resubmit.

@@ -60,6 +60,36 @@ jobs:
           src/lib/__tests__/mission-ai-evaluation-authority.test.ts
           src/lib/__tests__/mission-ai-reveal-authority.test.ts
           src/lib/__tests__/mission-evaluation-source.test.ts
+          src/lib/__tests__/mission-model-answer.test.ts
+          src/lib/__tests__/mission-feedback-grounding.test.ts
+          src/lib/__tests__/mission-ai-prompts.test.ts
+
+      - name: Restricted lesson inline formatting (isolated renderer)
+        run: bunx vitest run src/components/intro/IntroLessonRenderer.formatting.test.tsx src/components/intro/SystemsViewReadingAid.test.tsx src/components/intro/ToolsVendorReferences.test.tsx
+
+      - name: Analytics and optional start localization (mocked clients, no AI calls)
+        run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
+
+      - name: Reviewed quiz actions and risk-qualified mission contracts
+        run: bunx vitest run src/lib/__tests__/reviewed-quiz-actions.test.ts src/lib/__tests__/adapt-package-to-live-quiz.test.ts
+
+      - name: Reviewed module outcome ownership and legacy routes
+        run: bunx vitest run src/components/intro/value-hooks.test.ts
+
+      - name: Restored guided missions (isolated clients, no submissions)
+        run: bunx vitest run src/lib/__tests__/restored-guided-missions.test.tsx
+
+      - name: Localized educational section identity
+        run: bunx vitest run src/lib/__tests__/localized-section-role-alignment.test.ts src/lib/__tests__/localized-numbered-explanations.test.ts src/lib/__tests__/locale-strict-visual-hardening.test.tsx
+
+      - name: Exact editorial source provenance (no image regeneration)
+        run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts src/lib/__tests__/automation-payback-source.test.ts src/lib/__tests__/lesson-metric-examples.test.ts src/lib/__tests__/contextual-audit-asset-revision.test.ts src/lib/__tests__/weekly-review-video-title.test.ts
+
+      - name: Payment read states (mocked queries, no orders changed)
+        run: bunx vitest run src/lib/__tests__/payments-read-states.test.tsx
+
+      - name: Accessible progress values
+        run: bunx vitest run src/components/ui/progress.test.tsx
 
       - name: Build and storage watcher compatibility
         run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
@@ -69,6 +99,9 @@ jobs:
           bunx vitest run
           src/lib/__tests__/central1-auth-integration.test.tsx
           src/lib/__tests__/invitation-auth-forms.test.tsx
+          src/lib/__tests__/recovery-return-context.test.tsx
+          src/lib/__tests__/admin-locale-return.test.ts
+          src/lib/__tests__/ssr-admin-auth.test.ts
           src/lib/__tests__/learner-route-guard.test.ts
           src/lib/kids/auth-intent.test.ts
           src/lib/__tests__/locale-auth.test.ts
@@ -77,6 +110,10 @@ jobs:
         run: |
           bunx vitest run src/lib/academic-education src/components/academic-education
           bunx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck --allowImportingTsExtensions scripts/billing/account-edge-runtime.d.ts supabase/functions/academic-stripe-checkout/index.ts
+          node scripts/academic-integration/check-audit-revision.mjs --check
+          node scripts/academic-integration/check-completion-revision.mjs --check
+          node scripts/academic-integration/check-academic-audit-chain.mjs --check
+          node --test scripts/academic-integration/completion-revision.test.mjs scripts/academic-integration/academic-audit-chain.test.mjs
           bun run scripts/academic-integration/import.ts --check-source
 
       - name: Learning lines and shared navigation (isolated clients)
@@ -200,6 +237,7 @@ jobs:
           src/lib/__tests__/marketing-foundation.test.ts
           src/lib/__tests__/marketing-conversions.test.ts
           src/lib/__tests__/contact-conversion.test.tsx
+          src/lib/__tests__/contact-field-errors.test.tsx
           src/lib/__tests__/marketing-route-head.test.tsx
           src/lib/__tests__/locale-public-pages.test.ts
           src/lib/__tests__/locale-route-meta.test.ts
