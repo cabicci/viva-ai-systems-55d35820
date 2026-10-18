@@ -7,14 +7,25 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { parseRecoveryIntentSearch, recoveryRedirectUrl } from "@/lib/auth-return";
 
 export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "إعادة تعيين كلمة المرور — مسارات" }] }),
+  validateSearch: parseRecoveryIntentSearch,
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
+    return { meta: [{ title: getUiString(locale, "auth.forgot.title") + " — Masaarat" }] };
+  },
   component: ForgotPasswordPage,
 });
 
 function ForgotPasswordPage() {
   const t = useUiString();
+  const { locale } = useLocale();
+  const rawSearch = Route.useSearch();
+  const search = parseRecoveryIntentSearch({ ...rawSearch, locale: rawSearch.locale ?? locale });
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -23,7 +34,7 @@ function ForgotPasswordPage() {
     e.preventDefault();
     setLoading(true);
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + "/reset-password",
+      redirectTo: recoveryRedirectUrl(window.location.origin, search),
     });
     setLoading(false);
     if (error) return toast.error(error.message);
@@ -36,7 +47,7 @@ function ForgotPasswordPage() {
       {sent ? (
         <div className="text-center space-y-4">
           <p className="text-sm text-muted-foreground">{t("auth.forgot.sentMessage")}</p>
-          <Link to="/login" className="text-primary hover:underline">
+          <Link to="/login" search={search} className="text-primary hover:underline">
             {t("auth.link.backToLogin")}
           </Link>
         </div>
@@ -56,7 +67,7 @@ function ForgotPasswordPage() {
             {loading ? t("auth.forgot.submitting") : t("auth.forgot.submit")}
           </Button>
           <p className="text-center text-sm text-muted-foreground">
-            <Link to="/login" className="text-primary hover:underline">
+            <Link to="/login" search={search} className="text-primary hover:underline">
               {t("auth.link.backToLogin")}
             </Link>
           </p>

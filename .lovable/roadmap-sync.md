@@ -313,3 +313,10 @@ source: direct owner authorization to continue audited corrections
 scope: locale-aware learner analytics and optional five-stage start UI in four locales
 summary: Translate UI, metadata, loading/errors, duration/count labels and known path/event labels; preserve locale through dashboard navigation. Preserve analytics queries/calculations and unknown event identifiers. Start generation remains behind the explicit run button with the same ordered five calls and arguments; generated text is preserved as returned.
 sync_status: Added isolated renderer coverage using mocked queries and generation functions; CI pending. No live AI request, learner write, merge or publication.
+## 2026-10-18 — safe password recovery return (item 119)
+
+[roadmap:local-batch-recovery-context-20261018]
+source: direct owner authorization to continue audited corrections
+scope: login recovery links, reset-email redirect context, recovery login links and successful reset return
+summary: Reuse one validated local navigation boundary after login/reset; preserve supported locale and exact allowed lesson/catalogue destination. Carry only navigation context, excluding email/payment hints from links. Keep Kids-family intent and existing payment login priority. Invalid/external destinations fall back to dashboard. Recovery titles use active locale.
+sync_status: Synthetic email/password clients and renderer regressions added to CI; no real email request, password change, merge or publication.
