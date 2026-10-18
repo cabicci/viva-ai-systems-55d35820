@@ -397,3 +397,10 @@ source: direct owner authorization to continue audited corrections
 scope: existing previous/next labels and four journey copy sets only
 summary: Label the existing links Previous/Next in English and السابق/التالي in each Arabic copy set. Preserve the exact routes, locale search, visible-result access gate and first/last number boundaries. No child progress API or destination logic changed.
 sync_status: Existing nested/direct Kids route and localization regressions run in CI; no new tests mirror these labels. No child/account mutation, merge or publication.
+## 2026-10-18 — honest Pro scope and Intro continuity (items 5, 16)
+
+[roadmap:local-batch-continuity-pricing-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: four pricing FAQ answer-3 strings and the seven Intro continuity-card review
+summary: Align Pro FAQ with its package card: listed paths excluding Builder, listed video/RAG and assistant allowances. Review the actual seven-step Intro order; use the approved first-card literal and correct four further stale bridge descriptions to their real next destinations. Last two bridges already align. Preserve all ordering, destinations, learning bodies, entitlement/price and checkout behavior.
+sync_status: Scoped copy/order review recorded on the shared drive; existing locale/routing regressions run in CI. No new tests mirror wording. No external send, data write, merge or publication.

@@ -8,15 +8,15 @@
 export const LESSON_CONTINUITY: Record<string, string> = {
   /* ---------------- Intro path (7) ---------------- */
   "intro-m1-l3-setup-your-ai":
-    "فتحت أول AI ليك. الدرس الجاي بيشرحلك إيه هو الـ AI ده فعلًا — ليه مش سحر ومش وحش.",
+    "فتحت أول AI ليك. في الدرس الجاي هتعرف إيه اللي الـ AI يقدر يعمله بأمان — وإيه اللي لازم تتأكد منه بنفسك.",
   "intro-m1-l1-what-is-ai":
-    "بعد ما فهمت إيه هو الـ AI، الدرس الجاي بيوضّحلك إزاي بيختلف عن أي برنامج عادي عرفته قبل كده.",
+    "بعد ما فهمت فكرة الـAI، الدرس الجاي هتتعلم تكتب أول Prompt واضح فيه الدور والسياق والمهمة وشكل الرد",
   "intro-m1-l5-ai-vs-software":
-    "عرفت الفرق بين AI والبرمجيات. دلوقتي محتاج تعرف بالظبط بيقدر يعمل إيه ومبيقدرش يعمل إيه.",
+    "عرفت الفرق بين AI والبرامج العادية. الدرس الجاي بيشيل رهبة التعلّم — تبدأ وتمارس من غير خوف أو خلفية برمجية.",
   "intro-m1-l4-ai-can-cannot":
-    "خلصت توقّعاتك من الـ AI. الدرس الجاي عملي: ٤ قواعد لأي Prompt تكتبه — اللي بتفرق بين رد ضعيف ورد قابل للنشر.",
+    "عرفت حدود الـ AI. في الدرس الجاي هتعرف إمتى تستخدم AI — وإمتى تستخدم برنامج عادي — عشان تختار الأداة الصح لكل مهمة.",
   "intro-m1-l2-first-prompt":
-    "اتعلّمت تكتب Prompt صح. الدرس الجاي بيشيل الرهبة من التعلّم نفسه — إزاي تتقن AI من غير ما تكون مبرمج.",
+    "كتبت أول Prompt واضح. في الدرس الجاي هتفتح أول AI وتبعت رسالة بسيطة بأمان — تطبّق اللي كتبته هنا عمليًا.",
   "intro-m1-l6-learn-without-fear":
     "جاهز نفسيًا. آخر درس في المقدمة بيساعدك تختار المسار الصح — Business ولا Creator ولا Analyst ولا Automator ولا Builder.",
   "intro-m1-l7-choose-your-path":
@@ -53,18 +53,14 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "عرفت تركيب الـ App. الموديول الجاي عن حماية المستخدمين: Sessions و RLS.",
   "builder-m8-l1-sessions-jwt":
     "فهمت إزاي المستخدم بيدخل. الدرس الجاي عن إزاي بياناته بتفضل خاصة بيه: RLS.",
-  "builder-m8-l2-rls":
-    "أمّنت بياناتك. الموديول الجاي بيدخّلك في تصميم الـ Database بشكل احترافي.",
-  "builder-m7-l1-tables-columns":
-    "صمّمت الجداول. لازم تعرف إزاي تربطهم ببعض: Relations.",
-  "builder-m7-l2-relations":
-    "ربطت الجداول. الدرس الجاي بيعلّمك تجيب البيانات منهم: Queries.",
+  "builder-m8-l2-rls": "أمّنت بياناتك. الموديول الجاي بيدخّلك في تصميم الـ Database بشكل احترافي.",
+  "builder-m7-l1-tables-columns": "صمّمت الجداول. لازم تعرف إزاي تربطهم ببعض: Relations.",
+  "builder-m7-l2-relations": "ربطت الجداول. الدرس الجاي بيعلّمك تجيب البيانات منهم: Queries.",
   "builder-m7-l3-queries":
     "خلصت تصميم الـ Database. الموديول الجاي بيدخّل الـ AI جوّه تطبيقك: Embeddings و RAG و Agents.",
   "builder-m9-l2-embeddings":
     "فهمت لغة الـ AI الرقمية. الدرس الجاي بيخلّي الـ AI يرد من بياناتك إنت: RAG.",
-  "builder-m9-l1-rag":
-    "بنيت RAG. آخر درس في الموديول: Agents — AI بياخد قرارات بنفسه.",
+  "builder-m9-l1-rag": "بنيت RAG. آخر درس في الموديول: Agents — AI بياخد قرارات بنفسه.",
   "builder-m9-l3-agents":
     "خلصت طبقة الذكاء. الموديول الأخير: تنشر تطبيقك على دومين حقيقي وتجيب أول مستخدمين.",
   "builder-m10-l1-deploy-domain":
@@ -77,30 +73,19 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "بعد ما حدّدت ليه بتعمل محتوى، الدرس الجاي بيوريك ليه الانتباه نفسه بقى عملة نادرة.",
   "creator-m1-l2-attention-economy":
     "بعد ما فهمت اقتصاد الانتباه، هتتعلّم تصطاد الثواني الأولى بـ Hook قوي.",
-  "creator-m3-l1-hook":
-    "Hook لوحده مش كفاية — محتاج هيكل سكربت كامل يمسك المتابع للنهاية.",
-  "creator-m3-l2-script-structure":
-    "أي سكربت بدون CTA = فرصة ضايعة. الدرس الجاي عن دعوة الفعل.",
-  "creator-m3-l3-cta":
-    "خلصت أدوات السكربت. الدرس الجاي بيدخّلك في فهم جمهورك الحقيقي.",
-  "creator-m2-l1-know-audience":
-    "عرفت جمهورك — دلوقتي محتاج Pillars محتوى تبني عليها كل أسبوع.",
+  "creator-m3-l1-hook": "Hook لوحده مش كفاية — محتاج هيكل سكربت كامل يمسك المتابع للنهاية.",
+  "creator-m3-l2-script-structure": "أي سكربت بدون CTA = فرصة ضايعة. الدرس الجاي عن دعوة الفعل.",
+  "creator-m3-l3-cta": "خلصت أدوات السكربت. الدرس الجاي بيدخّلك في فهم جمهورك الحقيقي.",
+  "creator-m2-l1-know-audience": "عرفت جمهورك — دلوقتي محتاج Pillars محتوى تبني عليها كل أسبوع.",
   "creator-m2-l2-content-pillars":
     "Pillars جاهزة. الدرس الجاي بيخليك تستخدم AI ككاتب يساعدك تنفّذ أسرع.",
-  "creator-m4-l3-ai-writing":
-    "AI بيكتب — بس Reality Check بيوضّحلك حدود الأداة وحدودك انت.",
-  "creator-m4-l1-reality-check":
-    "خلاص اتفقنا على الحدود. الدرس الجاي عملي: تصوّر إزاي بموبايلك.",
-  "creator-m4-l2-mobile-shooting":
-    "عندك سكربت + تصوير. الدرس الجاي بيقولك تنزل على فين بالظبط.",
-  "creator-m6-l1-platforms":
-    "اخترت المنصات. دلوقتي محتاج تنظّم وقتك بـ Scheduling.",
-  "creator-m6-l2-scheduling":
-    "بتنشر بانتظام — الدرس الجاي يعلّمك تقرأ الأرقام صح.",
-  "creator-m6-l3-analytics":
-    "الأرقام بتقولك ايه شغّال. آخر درس: تحوّل المتابعين لـ Leads حقيقية.",
-  "creator-m6-l4-leads":
-    "خلصت مسار Creator كامل. ارجع للخريطة واكمل في مسار تاني.",
+  "creator-m4-l3-ai-writing": "AI بيكتب — بس Reality Check بيوضّحلك حدود الأداة وحدودك انت.",
+  "creator-m4-l1-reality-check": "خلاص اتفقنا على الحدود. الدرس الجاي عملي: تصوّر إزاي بموبايلك.",
+  "creator-m4-l2-mobile-shooting": "عندك سكربت + تصوير. الدرس الجاي بيقولك تنزل على فين بالظبط.",
+  "creator-m6-l1-platforms": "اخترت المنصات. دلوقتي محتاج تنظّم وقتك بـ Scheduling.",
+  "creator-m6-l2-scheduling": "بتنشر بانتظام — الدرس الجاي يعلّمك تقرأ الأرقام صح.",
+  "creator-m6-l3-analytics": "الأرقام بتقولك ايه شغّال. آخر درس: تحوّل المتابعين لـ Leads حقيقية.",
+  "creator-m6-l4-leads": "خلصت مسار Creator كامل. ارجع للخريطة واكمل في مسار تاني.",
 
   /* ---------------- Automator path (17) ---------------- */
   "automator-m1-l1-where-you-are":
@@ -111,8 +96,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "لقيت الـ Patterns. دلوقتي محتاج تقرّر إيه اللي يستاهل تأتمته فعلًا.",
   "automator-m2-l3-decide-what-to-automate":
     "عندك Backlog أتمتة. الموديول الجاي بيقدّملك أدوات السوق: n8n، Zapier، Make.",
-  "automator-m3-l1-tools-landscape":
-    "اخترت أداتك. اللبنة الأولى في أي Flow: Triggers و Actions.",
+  "automator-m3-l1-tools-landscape": "اخترت أداتك. اللبنة الأولى في أي Flow: Triggers و Actions.",
   "automator-m3-l2-triggers-actions":
     "بتقدر تشغّل وتنفّذ. الدرس الجاي بيعلّمك توجّه البيانات بـ Filters و Routers.",
   "automator-m3-l3-filters-routers":
@@ -125,18 +109,14 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "Flow صلب ومقاوم للأخطاء. الموديول الجاي بيدخّل الـ AI داخل الـ Flow.",
   "automator-m5-l1-llm-in-flow":
     "الـ LLM في الـ Flow. الدرس الجاي بيخلّي الـ Flow يستخدم بياناتك: RAG.",
-  "automator-m5-l2-rag-in-n8n":
-    "RAG بيشتغل. آخر درس في الموديول: Agents — Flows بتاخد قرارات.",
-  "automator-m5-l3-agents":
-    "خلصت طبقة الذكاء. الموديول الجاي بيركّب أول Flow حقيقي للـ Leads.",
-  "automator-m6-l1-lead-capture":
-    "بتجمع Leads. الدرس الجاي بينقل المحادثة على WhatsApp تلقائيًا.",
+  "automator-m5-l2-rag-in-n8n": "RAG بيشتغل. آخر درس في الموديول: Agents — Flows بتاخد قرارات.",
+  "automator-m5-l3-agents": "خلصت طبقة الذكاء. الموديول الجاي بيركّب أول Flow حقيقي للـ Leads.",
+  "automator-m6-l1-lead-capture": "بتجمع Leads. الدرس الجاي بينقل المحادثة على WhatsApp تلقائيًا.",
   "automator-m6-l2-whatsapp-flow":
     "WhatsApp Flow شغّال. آخر درس: متابعة العميل تلقائيًا (Follow-up).",
   "automator-m6-l3-follow-up":
     "خلصت نظام Leads كامل. الموديول الأخير بيقفل الـ Loop وبيوصّل كل حاجة ببعضها.",
-  "automator-m7-l1-closing-loop":
-    "خلصت مسار Automator كامل 🎉 — اختار مسار تاني من الخريطة.",
+  "automator-m7-l1-closing-loop": "خلصت مسار Automator كامل 🎉 — اختار مسار تاني من الخريطة.",
 
   /* ---------------- Analyst path (12) ---------------- */
   "analyst-m1-l1-from-automation-to-insight":
@@ -195,11 +175,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
  * ar-EG continuity bridge — used by getContinuityForLocale for locale "ar-EG" only.
  * Learn routes must call getContinuityForLocale from resolve-continuity.ts instead.
  */
-export function getContinuity(
-  lessonId: string,
-  nextTitle?: string,
-  pathTitle?: string,
-): string {
+export function getContinuity(lessonId: string, nextTitle?: string, pathTitle?: string): string {
   const explicit = LESSON_CONTINUITY[lessonId];
   if (explicit) return explicit;
   if (nextTitle) return `بعد ما تخلّص المهمة دي، كمّل لدرس «${nextTitle}».`;
