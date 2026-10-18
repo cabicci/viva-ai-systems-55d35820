@@ -47,7 +47,7 @@ it.each(["ar-EG", "ar-MSA", "ar-Gulf", "en"])(
     expect(question).toContain(locale === "en" ? "5000 EGP or more" : "5000 جنيه أو أكثر");
     expect(question).toContain(locale === "en" ? "Less than 5000 EGP" : "أقل من 5000 جنيه");
     expect(quiz.correctIndex).toBe(0);
-    expect(quiz.options[quiz.correctIndex]).toContain("Router");
+  expect(quiz.options[quiz.correctIndex]).toContain(locale === "ar-Gulf" ? "موزّع" : "Router");
     for (const value of [4999, 5000, 5001])
       expect(Number(value >= 5000) + Number(value < 5000)).toBe(1);
   },
