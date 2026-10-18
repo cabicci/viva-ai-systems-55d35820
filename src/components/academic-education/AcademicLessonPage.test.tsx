@@ -191,3 +191,40 @@ it("removes previously displayed protected content when a mutation reports lost 
   await screen.findByText("This lesson requires an active Academic subscription.");
   await waitFor(() => expect(screen.queryByText("Paid lesson explanation")).toBeNull());
 });
+
+it("names activity progress and keeps an age-range option in one inline text container", async () => {
+  state.command.mockImplementation(async (action: string) =>
+    action === "lesson"
+      ? {
+          ...delivery,
+          lesson: {
+            ...delivery.lesson,
+            quiz: [
+              {
+                id: "range",
+                question: "Which audience?",
+                options: ["People aged 25–35 with a weekly need", "A different audience"],
+              },
+            ],
+          },
+        }
+      : { progress: {} },
+  );
+  setup();
+  await screen.findByText("Paid lesson explanation");
+  const progress = screen.getByRole("progressbar");
+  expect(progress.getAttribute("aria-label")).toBeTruthy();
+  expect(progress).toHaveAttribute("aria-valuenow", "0");
+  fireEvent.click(screen.getByRole("button", { name: "Quiz" }));
+  const radio = screen.getByRole("radio", { name: "People aged 25–35 with a weekly need" });
+  const label = radio.closest("label")!;
+  expect(label.children).toHaveLength(2);
+  const text = label.children[1];
+  expect(text.tagName).toBe("SPAN");
+  expect(text).toHaveClass("min-w-0", "flex-1");
+  expect(text.querySelector("bdi")).toHaveTextContent("25–35");
+  expect(radio).not.toBeChecked();
+  expect(state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action))).toBe(
+    true,
+  );
+});

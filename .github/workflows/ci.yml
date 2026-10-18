@@ -76,6 +76,9 @@ jobs:
       - name: Payment read states (mocked queries, no orders changed)
         run: bunx vitest run src/lib/__tests__/payments-read-states.test.tsx
 
+      - name: Accessible progress values
+        run: bunx vitest run src/components/ui/progress.test.tsx
+
       - name: Build and storage watcher compatibility
         run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
 

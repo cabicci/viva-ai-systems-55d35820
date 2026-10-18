@@ -471,7 +471,10 @@ function UnifiedLessonPage() {
               </span>
               <span className="text-end">{progressStats}</span>
             </div>
-            <Progress value={pct} />
+            <Progress
+              value={pct}
+              aria-label={t("learn.progress.path").replace("{path}", pathLabel)}
+            />
           </div>
         </header>
 

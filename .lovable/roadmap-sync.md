@@ -348,3 +348,10 @@ source: direct owner authorization to continue audited corrections
 scope: Pro/Pro Plus test badge positioning and shared curriculum card sizing/wrapping
 summary: Move the existing test-mode badges to separate in-flow rows with wrapping. Use a shrinkable single-column module grid, shrinkable shared cards/rows, wrapped headings/badges and full lesson-title text. Keep all content, links, access decisions, prices, checkout paths and badge visibility unchanged.
 sync_status: Existing route/locale regressions and build will run in CI. Browser layout measurement remains pending: local Windows UNC Vite startup failed; no claimed viewport acceptance or production publication.
+## 2026-10-18 — announced progress and inline numeric quiz options (items 41, 138)
+
+[roadmap:local-batch-progress-inline-options-20261018]
+source: direct owner authorization to continue audited corrections
+scope: shared Progress root value, localized progress names at existing callers and Academic quiz option layout
+summary: Forward the numerical value to Radix Root so determinate progress is announced consistently; retain indeterminate loading when no value is supplied. Name the previously unnamed Academic, Technical, curriculum and lesson bars with existing localized copy. Keep each Academic option in one shrinkable inline text span beside a fixed-size top-aligned radio, retaining internal BDI and source/key content.
+sync_status: Added determinate/indeterminate progress tests and Academic range-option DOM regression. No progress write or quiz selection outside synthetic tests; CI pending and physical screen-reader/viewport checks not claimed.

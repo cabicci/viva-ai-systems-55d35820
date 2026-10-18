@@ -215,7 +215,7 @@ function AuthorizedLesson({
           </nav>
           <section className="mt-6 space-y-3 border-t pt-5">
             <h2 className="font-bold">{c.progress}</h2>
-            <Progress value={(completed / 3) * 100} />
+            <Progress value={(completed / 3) * 100} aria-label={c.progress} />
             <p className="text-sm leading-7 text-muted-foreground">{c.progressNote}</p>
           </section>
         </aside>
@@ -287,9 +287,13 @@ function AuthorizedLesson({
                     <LessonInlineText text={q.question} />
                   </legend>
                   {q.options.map((option, i) => (
-                    <label key={i} className="my-3 flex gap-3 rounded-lg bg-muted/30 p-3 leading-7">
+                    <label
+                      key={i}
+                      className="my-3 flex items-start gap-3 rounded-lg bg-muted/30 p-3 leading-7"
+                    >
                       <input
                         type="radio"
+                        className="mt-2 h-4 w-4 shrink-0"
                         name={q.id}
                         disabled={busy}
                         checked={answers[q.id] === i}
@@ -298,7 +302,9 @@ function AuthorizedLesson({
                           setResult(null);
                         }}
                       />
-                      <LessonInlineText text={option} />
+                      <span className="min-w-0 flex-1">
+                        <LessonInlineText text={option} />
+                      </span>
                     </label>
                   ))}
                   {result?.feedback.find((f) => f.id === q.id) && (

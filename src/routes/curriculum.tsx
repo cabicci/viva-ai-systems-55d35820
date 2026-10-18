@@ -104,7 +104,7 @@ function CurriculumPage() {
             <span>{t("curriculum.progress.label")}</span>
             <span className="text-end">{progressLessons}</span>
           </div>
-          <Progress value={pct} />
+          <Progress value={pct} aria-label={t("curriculum.progress.label")} />
           <p className="text-[11px] text-muted-foreground mt-2 font-mono">{progressFooter}</p>
         </div>
       }
@@ -250,7 +250,10 @@ function PathBlock({
               {completed}/{totalIn} · {pct}%
             </span>
           </div>
-          <Progress value={pct} />
+          <Progress
+            value={pct}
+            aria-label={pathTitle + ": " + t("curriculum.path.progressLabel")}
+          />
         </div>
       )}
 
