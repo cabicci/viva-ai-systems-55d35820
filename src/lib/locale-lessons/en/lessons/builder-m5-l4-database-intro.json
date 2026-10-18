@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Client Browser vs. Server Storage",
       "subtitle": "Client Browser vs. Server Storage",
-      "contentMarkdown": "| Storage in the browser only | Storage on the server |\n|----------------------|-------------------|\n| **Conversations on the client device**. **Opening from another phone = empty**. **Clearing cache = everything is gone** | **Data is stored outside the client device**. **Returns from any phone — finds their conversations**. **This is the Database** |",
+      "contentMarkdown": "| Storage in the browser only | Storage on the server |\n|---|---|\n| Conversations stored only in this browser are not automatically available on another device. Clearing cached images/files differs from deleting cookies and site data. Selected deletion categories and settings determine whether LocalStorage or IndexedDB data are removed. Deleting cookies may require signing in again; clearing cache alone does not delete account data held on a server. | **Data is stored outside the client device**. **Returns from any phone — finds its conversations**. **This is a Database**. |",
       "bullets": [],
       "tables": [
         {
@@ -62,7 +62,7 @@
           ],
           "rows": [
             [
-              "**Conversations on the Client Device**. **Open from another phone = empty**. **Clear cache = everything is gone**.",
+              "Conversations stored only in this browser are not automatically available on another device. Clearing cached images/files differs from deleting cookies and site data. Selected deletion categories and settings determine whether LocalStorage or IndexedDB data are removed. Deleting cookies may require signing in again; clearing cache alone does not delete account data held on a server.",
               "**Data is stored outside the client device**. **Returns from any phone — finds its conversations**. **This is a Database**."
             ]
           ]

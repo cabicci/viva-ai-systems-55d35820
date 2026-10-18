@@ -51,7 +51,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "'Change it' vs Surgical Edit",
-      "contentMarkdown": "| Wrong — 'The interface looks bad' | Right — One specific edit |\n|---------------------------|----------------------|\n| **AI does not understand 'bad'**. **It guesses and changes randomly** — **it may break what was working** | **'On the chat page, make the color of the **",
+      "contentMarkdown": "| Wrong — 'The interface looks bad' | Right — One specific edit |\n|---|---|\n| **AI does not understand 'bad'**. **It guesses and changes randomly** — **it may break what was working** | On the chat page, change only the Send button background to blue; keep its size, label, and layout unchanged. Review this one specified element so you can check the effect without mixing several changes. |",
       "bullets": [],
       "tables": [
         {
@@ -62,7 +62,7 @@
           "rows": [
             [
               "**AI does not understand 'bad'**. **It guesses and changes randomly** — **it may break what was working**",
-              "**'On the chat page, make the color of the **"
+              "On the chat page, change only the Send button background to blue; keep its size, label, and layout unchanged. Review this one specified element so you can check the effect without mixing several changes."
             ]
           ]
         }

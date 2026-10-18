@@ -639,6 +639,192 @@
           "after": "\"**You can:** You have a chosen tool for your first automation candidate — ready for design.\""
         }
       ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+      "auditItems": [
+        112
+      ],
+      "currentSha256": "6257c9b4ffa513ecb702766bd778873b17f28d201f7cb4d57e72255f8ec8b98f",
+      "currentBlob": "196c3798eb3589980eee97b5f94164772a3478c9",
+      "generationSourceSha256": "9d39ece34ce6cc689e2503e0456cc869cbb75992da61a49ecc7b184ba480ac20",
+      "generationSourceBlob": "caaaf782e3606b97ac0a1063f1efe3228ddbaa5d",
+      "replacements": [
+        {
+          "field": "sections.3.contentMarkdown",
+          "before": "\"| Storage in the browser only | Storage on the server |\\n|----------------------|-------------------|\\n| **Conversations on the client device**. **Opening from another phone = empty**. **Clearing cache = everything is gone** | **Data is stored outside the client device**. **Returns from any phone — finds their conversations**. **This is the Database** |\"",
+          "after": "\"| Storage in the browser only | Storage on the server |\\n|---|---|\\n| Conversations stored only in this browser are not automatically available on another device. Clearing cached images/files differs from deleting cookies and site data. Selected deletion categories and settings determine whether LocalStorage or IndexedDB data are removed. Deleting cookies may require signing in again; clearing cache alone does not delete account data held on a server. | **Data is stored outside the client device**. **Returns from any phone — finds its conversations**. **This is a Database**. |\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.0",
+          "before": "\"**Conversations on the Client Device**. **Open from another phone = empty**. **Clear cache = everything is gone**.\"",
+          "after": "\"Conversations stored only in this browser are not automatically available on another device. Clearing cached images/files differs from deleting cookies and site data. Selected deletion categories and settings determine whether LocalStorage or IndexedDB data are removed. Deleting cookies may require signing in again; clearing cache alone does not delete account data held on a server.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+      "auditItems": [
+        113
+      ],
+      "currentSha256": "75c6d715c9fc7af91f3e26b3b54e8137ec1f3556838fc06e4edb15847f8368e0",
+      "currentBlob": "dafa5e4446b535957271124be94f641028da3ee9",
+      "generationSourceSha256": "b101b84d27a3d53c27582d8cf6e73f9f7beeb780c40f9e6095de15bd4845bb9e",
+      "generationSourceBlob": "4ffcf82dcf58b4844568b4ce93f515bed1d1e188",
+      "replacements": [
+        {
+          "field": "sections.3.contentMarkdown",
+          "before": "\"| Without Wireframe | With Wireframe |\\n|----------------|--------------|\\n| '**Build an AI Interface and Features**' — **AI guesses. 5 attempts. Still not accurate** | '**Header + text box + button “Suggest” + 3 cards of features**' — **AI builds what you described. Closer from the first time** |\"",
+          "after": "\"| Without Wireframe | With Wireframe |\\n|---|---|\\n| \\\"Build a recipe suggestion interface\\\" leaves the layout and primary action unspecified. | Recipe Suggestions heading + ingredient input + Suggest Recipe button + three recipe cards. These labeled boxes give the AI a specific layout to build and you a structure to review. |\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.0",
+          "before": "\"«**Build an AI Interface and Attributes**» — **AI guesses. 5 attempts. Still not accurate**\"",
+          "after": "\"\\\"Build a recipe suggestion interface\\\" leaves the layout and primary action unspecified.\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.1",
+          "before": "\"«**Header + Text Box + 'Suggest' Button + 3 Attribute Cards**» — **AI builds what you described. Closer than the first time**\"",
+          "after": "\"Recipe Suggestions heading + ingredient input + Suggest Recipe button + three recipe cards. These labeled boxes give the AI a specific layout to build and you a structure to review.\""
+        },
+        {
+          "field": "sections.7.mission.intro",
+          "before": "\"**Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.\"",
+          "after": "\"**Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.**\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+      "auditItems": [
+        114
+      ],
+      "currentSha256": "04cfcbc2409d03590b52f5a0a6650d12609fd1d084ea5a1f23f94addec1999fa",
+      "currentBlob": "e3d39739f6b53d2e29b2f1017dd9e4aa7e8bef5e",
+      "generationSourceSha256": "c7e49682f52b719bc39406cee5fd3a7b01dee3ef016fdbe2c8067bed7368c18b",
+      "generationSourceBlob": "055939df7d0606b1878a2f454226cf2ec8d035f4",
+      "replacements": [
+        {
+          "field": "sections.3.contentMarkdown",
+          "before": "\"| Wrong — 'The interface looks bad' | Right — One specific edit |\\n|---------------------------|----------------------|\\n| **AI does not understand 'bad'**. **It guesses and changes randomly** — **it may break what was working** | **'On the chat page, make the color of the **\"",
+          "after": "\"| Wrong — 'The interface looks bad' | Right — One specific edit |\\n|---|---|\\n| **AI does not understand 'bad'**. **It guesses and changes randomly** — **it may break what was working** | On the chat page, change only the Send button background to blue; keep its size, label, and layout unchanged. Review this one specified element so you can check the effect without mixing several changes. |\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.1",
+          "before": "\"**'On the chat page, make the color of the **\"",
+          "after": "\"On the chat page, change only the Send button background to blue; keep its size, label, and layout unchanged. Review this one specified element so you can check the effect without mixing several changes.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "auditItems": [
+        115
+      ],
+      "currentSha256": "113a271cfdbcc31fa023cb11332051553e29899154fa4563f3aa9c3e21f81cdb",
+      "currentBlob": "20d063c16cf6a03d99c83ad6c6e1db1f354d0218",
+      "generationSourceSha256": "4adc530a3ffe8585856b185477e6aa0c167f12f6b4c37238afe880ecad2e2be5",
+      "generationSourceBlob": "d323d76844860487da1a85c5d93caa2295cb4c78",
+      "replacements": [
+        {
+          "field": "sections.1.contentMarkdown",
+          "before": "\"لو كل قرار صغير لازم يعدّي عليك — رد واتساب، موافقة سعر، متابعة مورد — إنت مش قائد، إنت عنق الزجاجة.\\n\\nكتير بيستخدموا الـ AI عشان يكتبوا إيميل أسرع. ده مفيد — بس ١٠٪ من القيمة. الـ ٩٠٪ الباقيين لما الـ AI يساعدك تفكّر في القرار، وتشوف التكرار، وتبني نظام يشتغل من غيرك.\\n\\nالسؤال مش «هل أنا ذكي كفاية؟» — السؤال: «إيه اللي بيتكرر كل أسبوع ويأكل وقتي، وإزاي الـ AI يخفّفه عشان أبني نظام؟»\"",
+          "after": "\"لو كل قرار صغير لازم يعدّي عليك — رد واتساب، موافقة سعر، متابعة مورد — إنت مش قائد، إنت عنق الزجاجة.\\n\\nكتير بيستخدموا الـ AI عشان يكتبوا إيميل أسرع. ده مفيد، وفايدته ممكن تمتد لترتيب القرارات، وملاحظة الشغل اللي بيتكرر، وبناء نظام يساعدك في الشغل. الاستفادة بتختلف حسب المهمة وطريقة استخدامك.\\n\\nالسؤال مش «هل أنا ذكي كفاية؟» — السؤال: «إيه اللي بيتكرر كل أسبوع ويأكل وقتي، وإزاي الـ AI يخفّفه عشان أبني نظام؟»\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "auditItems": [
+        115
+      ],
+      "currentSha256": "c06e2826aa3ca9e79abbe5af77099fc178eb392276e634b4c9f59354a25a1b86",
+      "currentBlob": "7d0f43a150a646aa979972ff5d42406f48d4aae9",
+      "generationSourceSha256": "16efba297fc53b4febced71308a5037cdd7f0dc91752606bb096fb36b11dae32",
+      "generationSourceBlob": "e8ed3dc70fbd47328c35c6b3c4ead756d3782138",
+      "replacements": [
+        {
+          "field": "sections.1.contentMarkdown",
+          "before": "\"- إذا كان كل قرار صغير يمرّ عليك — رد واتساب، موافقة سعر، متابعة مورد — فأنت لست قائدًا، أنت عنق الزجاجة.\\n- كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية عندما يساعدك الذكاء الاصطناعي في التفكير في القرار، ورؤية التكرار، وبناء نظام يعمل من دونك.\\n- السؤال ليس «هل أنا ذكي بما يكفي؟» — السؤال: «ما الذي يتكرر كل أسبوع ويأكل وقتي، وكيف يخفّفه الذكاء الاصطناعي حتى أبني نظامًا؟»\"",
+          "after": "\"- إذا كان كل قرار صغير يمرّ عليك — رد واتساب، موافقة سعر، متابعة مورد — فأنت لست قائدًا، أنت عنق الزجاجة.\\n- كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد، وقد تمتد فائدته إلى تنظيم القرارات، وملاحظة العمل المتكرر، وبناء نظام يدعم العمل. تختلف الفائدة حسب المهمة وطريقة الاستخدام.\\n- السؤال ليس «هل أنا ذكي بما يكفي؟» — السؤال: «ما الذي يتكرر كل أسبوع ويأكل وقتي، وكيف يخفّفه الذكاء الاصطناعي حتى أبني نظامًا؟»\""
+        },
+        {
+          "field": "sections.1.bullets.1",
+          "before": "\"كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية عندما يساعدك الذكاء الاصطناعي في التفكير في القرار، ورؤية التكرار، وبناء نظام يعمل من دونك.\"",
+          "after": "\"كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد، وقد تمتد فائدته إلى تنظيم القرارات، وملاحظة العمل المتكرر، وبناء نظام يدعم العمل. تختلف الفائدة حسب المهمة وطريقة الاستخدام.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "auditItems": [
+        115
+      ],
+      "currentSha256": "98583ed7331ad3717a0d59c5f21ec53baea527da4a7a66a5d0f4acb4309ecbde",
+      "currentBlob": "3d6ee887f76e8080ff7fc5dad52964e5e6a02563",
+      "generationSourceSha256": "df7a1b39f8be3f2c261016b99c1534ee942f23aa8f9043530fb635cdd479b047",
+      "generationSourceBlob": "0b43cf96157b778ccd4a851a3749576d86a58182",
+      "replacements": [
+        {
+          "field": "sections.1.contentMarkdown",
+          "before": "\"- إذا كل قرار صغير يمرّ عليك — رد على واتساب، موافقة سعر، متابعة مورد — فأنت مو قائد، أنت عنق الزجاجة.\\n- كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية لما يساعدك الذكاء الاصطناعي في التفكير في القرار، ورؤية التكرار، وبناء نظام يعمل من دونك.\\n- السؤال مو «هل أنا ذكي بما يكفي؟» — السؤال: «وش اللي يتكرر كل أسبوع ويأكل وقتي، وكيف يخفّفه الذكاء الاصطناعي حتى أبني نظام؟»\"",
+          "after": "\"- إذا كل قرار صغير يمرّ عليك — رد على واتساب، موافقة سعر، متابعة مورد — فأنت مو قائد، أنت عنق الزجاجة.\\n- كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد، وممكن تمتد فائدته لترتيب القرارات، وملاحظة الشغل المتكرر، وبناء نظام يساعدك في العمل. الفائدة تختلف حسب المهمة وطريقة الاستخدام.\\n- السؤال مو «هل أنا ذكي بما يكفي؟» — السؤال: «وش اللي يتكرر كل أسبوع ويأكل وقتي، وكيف يخفّفه الذكاء الاصطناعي حتى أبني نظام؟»\""
+        },
+        {
+          "field": "sections.1.bullets.1",
+          "before": "\"كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية لما يساعدك الذكاء الاصطناعي في التفكير في القرار، ورؤية التكرار، وبناء نظام يعمل من دونك.\"",
+          "after": "\"كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد، وممكن تمتد فائدته لترتيب القرارات، وملاحظة الشغل المتكرر، وبناء نظام يساعدك في العمل. الفائدة تختلف حسب المهمة وطريقة الاستخدام.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "auditItems": [
+        115
+      ],
+      "currentSha256": "89f043012d9cf03454a974408a50d9dc42e8d740934420957885d8f6a9a1a3db",
+      "currentBlob": "baa5d7d9af162fa1bd15a7a7b82e923ce3fdfa55",
+      "generationSourceSha256": "7aa8265eaf89fdba16df01f6112e14e6412b7a14091e8d8a2d7a2618797eaef5",
+      "generationSourceBlob": "1d6f3d7a9fb2d282d46f29797eb5cc41f0ef6029",
+      "replacements": [
+        {
+          "field": "sections.1.contentMarkdown",
+          "before": "\"- If every small decision comes your way — responding to WhatsApp, approving prices, following up with suppliers — then you are not a leader; you are the bottleneck.\\n- Many use AI to write emails faster. This is helpful — but it's only 10% of the value. The remaining 90% comes when AI helps you think through decisions, see patterns, and build a system that works without you.\\n- The question is not 'Am I smart enough?' — the question is: 'What recurs every week and consumes my time, and how can AI alleviate it so I can build a system?'\"",
+          "after": "\"- If every small decision comes your way — responding to WhatsApp, approving prices, following up with suppliers — then you are not a leader; you are the bottleneck.\\n- Many use AI to write emails faster. That is useful, and its benefits can also extend to organizing decisions, noticing repetitive work, and building a system that supports your work. The benefit depends on the task and how you use it.\\n- The question is not 'Am I smart enough?' — the question is: 'What recurs every week and consumes my time, and how can AI alleviate it so I can build a system?'\""
+        },
+        {
+          "field": "sections.1.bullets.1",
+          "before": "\"Many use AI to write emails faster. This is helpful — but it's only 10% of the value. The remaining 90% comes when AI helps you think through decisions, see patterns, and build a system that works without you.\"",
+          "after": "\"Many use AI to write emails faster. That is useful, and its benefits can also extend to organizing decisions, noticing repetitive work, and building a system that supports your work. The benefit depends on the task and how you use it.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
+      "auditItems": [
+        116
+      ],
+      "currentSha256": "c3342d85403827ca97cefcd20ca942b15ef1bbb9a3a852d7381f01bcd791d471",
+      "currentBlob": "7e0189521c7bb51905ea735f70bd74d5ed3c4d0a",
+      "generationSourceSha256": "e8d111eb1d1301479cb422a26c7ad7a922ca4d66e0279f4b5afb3f925708c20b",
+      "generationSourceBlob": "dc59a469c535f44fd050431e3a57b6e1cadcd792",
+      "replacements": [
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"> **Quiz key:** \\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** The correct answer is Automator because it focuses on automating repetitive tasks.\"",
+          "after": "\"**Question:** Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\\n\\nBuilder — Builds an application immediately.\\nAutomator — Automates repetitive follow-ups.\\nCreator — Just content.\\n\\n**Explanation:** Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
+        },
+        {
+          "field": "sections.2.quiz.explanation",
+          "before": "\"The correct answer is Automator because it focuses on automating repetitive tasks.\"",
+          "after": "\"Automator fits repeated customer follow-ups because the task is automation. Builder is an optional later choice if you need a custom application, not a requirement for everyone.\""
+        },
+        {
+          "field": "sections.2.quiz.question",
+          "before": "\"Which option is most suitable based on the section above?\"",
+          "after": "\"Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\""
+        }
+      ]
     }
   ]
 }
