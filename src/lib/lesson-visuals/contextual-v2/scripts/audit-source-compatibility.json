@@ -1,6 +1,6 @@
 {
   "role": "exact-reviewed-editorial-source-compatibility",
-  "scope": "Only exact reviewed source changes for audit items 6 and 55. Original generation manifest and image bytes remain unchanged.",
+  "scope": "Only exact reviewed source changes recorded per entry for audit items 6, 46, 50, 55 and 63. Original generation manifest and image bytes remain unchanged.",
   "entries": [
     {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
@@ -208,6 +208,67 @@
           "field": "sections.4.tables.0.rows.1.2",
           "before": "\"30 minutes to build → saves 2 hours/month = excellent return\"",
           "after": "\"30 minutes to build = 0.5 hour. Assume 2 hours/month of net saving after ongoing oversight and maintenance: 0.5 ÷ 2 = 0.25 month.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+      "auditItems": [
+        46
+      ],
+      "currentSha256": "573a8586f6231eba01f9b57a6b800f04c94385a26c27df4aee52d9a05401607b",
+      "currentBlob": "c555b16b0ef30322aef14516823315714a506b22",
+      "generationSourceSha256": "ab9e259f604da11fbb51ac00feca59ff4967c2ffc4291c7191c925cd29b01b6a",
+      "generationSourceBlob": "d501f4b55005612ce62d660542515faa36b1f744",
+      "replacements": [
+        {
+          "field": "sections.7.contentMarkdown",
+          "before": "\"**Introduction:** **Write a short Voice Profile** for an assistant or your product content. **10–15 minutes**.\\n\\n**Delivery:**\\n\\n1. **Tone in 3 words** (e.g., friendly, direct, simple)\\n2. **A word to avoid + alternative** (e.g., replace ‘you’ with ‘you’)\\n3. **Before/After example:**\\n   - **General AI response** (one line)\\n   - **Same response in your voice** (one line)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Clear Voice Profile | 60% | **Tone is defined** — **not** just «professional»; **includes a word + alternative** |\\n| Before / After | 40% | **The examples are truly different**; **the second matches the Profile** |\"",
+          "after": "\"**Introduction:** **Write a short Voice Profile** for an assistant or your product content. **10–15 minutes**.\\n\\n**Delivery:**\\n\\n1. **Tone in 3 words** (e.g., friendly, direct, simple)\\n2. **A word to avoid + alternative** (e.g., replace ‘purchase’ with ‘buy’ for a simple direct voice)\\n3. **Before/After example:**\\n   - **General AI response** (one line)\\n   - **Same response in your voice** (one line)\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|-------|-------|---------|\\n| Clear Voice Profile | 60% | **Tone is defined** — **not** just «professional»; **includes a word + alternative** |\\n| Before / After | 40% | **The examples are truly different**; **the second matches the Profile** |\""
+        },
+        {
+          "field": "sections.7.mission.delivery.1",
+          "before": "\"**A word to avoid + alternative** (e.g., replace ‘you’ with ‘you’)\"",
+          "after": "\"**A word to avoid + alternative** (e.g., replace ‘purchase’ with ‘buy’ for a simple direct voice)\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+      "auditItems": [
+        50
+      ],
+      "currentSha256": "a5f1166243d8f5e892a2383344625f91e715a233c5d6759ae0e684f585c53353",
+      "currentBlob": "bfbc9d5d031c2c668f11323ad848ce45a598ebcc",
+      "generationSourceSha256": "e9e5fa2f0c6018e2dcc61eded898111fe39e494f6322d2332b405611dc124cee",
+      "generationSourceBlob": "3ba7a7597cee6ba38f041961e0c3831d30d03cc5",
+      "replacements": [
+        {
+          "field": "sections.4.contentMarkdown",
+          "before": "\"to receive the file**»**\"",
+          "after": "\"**CTA example:** Send the word GUIDE in a DM to receive the checklist.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.2.2",
+          "before": "\"«**Send the word **»\"",
+          "after": "\"Send the word GUIDE in a DM to receive the checklist.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+      "auditItems": [
+        63
+      ],
+      "currentSha256": "ef48fcdb1af88d86ff8039e69b606ab3df9a1abbb5bfa6016297395f6071384b",
+      "currentBlob": "67a7641f192d7d79bab8bc643cdbcfc7b15d1c91",
+      "generationSourceSha256": "506209127a90d76a500da9bbec575bb2ac99a2f55b2a6e70e4f7abc1082d516e",
+      "generationSourceBlob": "b2e275d835ef68bca86c793d58f01a1e1b243c41",
+      "replacements": [
+        {
+          "field": "sections.7.subtitle",
+          "before": "\"Observe 5 Contents in the Feed\"",
+          "after": "\"Observe 5 Posts in the Feed\""
         }
       ]
     }

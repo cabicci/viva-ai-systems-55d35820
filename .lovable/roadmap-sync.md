@@ -404,3 +404,10 @@ source: direct owner authorization to continue audited corrections
 scope: four pricing FAQ answer-3 strings and the seven Intro continuity-card review
 summary: Align Pro FAQ with its package card: listed paths excluding Builder, listed video/RAG and assistant allowances. Review the actual seven-step Intro order; use the approved first-card literal and correct four further stale bridge descriptions to their real next destinations. Last two bridges already align. Preserve all ordering, destinations, learning bodies, entitlement/price and checkout behavior.
 sync_status: Scoped copy/order review recorded on the shared drive; existing locale/routing regressions run in CI. No new tests mirror wording. No external send, data write, merge or publication.
+## 2026-10-18 — complete English example copy (items 46, 50, 63)
+
+[roadmap:local-batch-english-example-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact English style-control delivery example, leads glossary CTA and attention-economy mission subtitle
+summary: Demonstrate replacing purchase with buy for a simple direct voice in both delivery and Markdown. Complete the CTA keyword/action/channel/benefit in its table and broken parallel Markdown. Name the mission Observe 5 Posts in the Feed, preserving the five observations and rubric. Exact leaf-level changes are recorded in the source-provenance ledger; unrelated sections, image bytes and original generation manifest are unchanged.
+sync_status: Offline scope/reversal/weight checks passed; existing source-provenance and mission/runtime regressions run in CI. No new tests mirror these copy edits. No message/lead service connection, learner write, merge or publication.
