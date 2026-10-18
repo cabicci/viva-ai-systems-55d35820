@@ -10,7 +10,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 
 const COPY = {
   en: {
-    open: "Expand Systems View diagram",
+    open: "Expand original diagram",
     close: "Close",
     title: "Systems View — original diagram",
     instructions:
@@ -27,7 +27,7 @@ const COPY = {
     ],
   },
   "ar-Gulf": {
-    open: "كبّر مخطط نظرة على الأنظمة",
+    open: "كبّر المخطط الأصلي",
     close: "إغلاق",
     title: "نظرة على الأنظمة — المخطط الأصلي",
     instructions:
