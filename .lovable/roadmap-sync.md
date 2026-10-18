@@ -369,3 +369,10 @@ source: direct owner authorization to continue audited corrections
 scope: Academic worked-example list presentation only
 summary: Render one visible list-position badge beside each full step body. Remove only a matching leading Step N, Arabic localized step N or numeric-list prefix equal to the actual position; preserve leading emphasis, paragraphs, quantities, decimals and calculation numbers. Original lesson sources and calculations are unchanged.
 sync_status: Prefix safety cases and a formatted two-step DOM regression added to the existing Academic suite; CI pending. No saved data or source lesson rewrite, merge or publication.
+## 2026-10-18 — readable Systems View original and text (item 160)
+
+[roadmap:local-batch-systems-view-reading-aid-20261018]
+source: direct owner authorization to continue audited corrections
+scope: exact English and Gulf Systems View lesson visual cells only
+summary: Preserve the pinned original images and captions. Transcribe all three visible cards/examples into responsive live text in locale reading order. Offer a localized Radix dialog with original-resolution image, zoom controls, bounded overflow pan/keyboard focus area, Escape close and trigger focus return. Other lesson/locale cells receive no new aid from this scoped change.
+sync_status: Both original 1900x1000 images visually inspected from shared drive; no image generation/edit or source-manifest change. Text-order and dialog/zoom/focus tests added. CI pending; 319/390 physical/browser viewport and touch acceptance remain pending.

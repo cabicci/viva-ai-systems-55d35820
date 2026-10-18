@@ -10,6 +10,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { IntroSection } from "./IntroSection";
+import { SystemsViewReadingAid } from "./SystemsViewReadingAid";
 import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
 import { QuizBlock } from "./QuizBlock";
@@ -96,6 +97,7 @@ function StrictLocaleVideoSlot({
           <PlayCircle className="h-3.5 w-3.5" /> {caption}
         </figcaption>
       ) : null}
+      <SystemsViewReadingAid cellId={visual.cellId} url={visual.url} />
     </figure>
   );
 }
