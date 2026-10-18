@@ -1,3 +1,4 @@
+import { readAcademicAuditChain } from "./academic-audit-chain.mjs";
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import { after, before, beforeEach, test } from "node:test";
@@ -8,9 +9,13 @@ const receipt = JSON.parse(
   readFileSync("scripts/academic-integration/audit-revision-17-30.json", "utf8"),
 );
 const { sql, report } = checkAcademicCompletionRevision();
+const chain = readAcademicAuditChain();
 const originals = receipt.changes.map((change) => {
-  const source = JSON.parse(readFileSync(change.sourcePath, "utf8"));
-  const after = Array.isArray(source) ? source.find((row) => row.id === change.lessonId) : source;
+  const after = chain.stageAfter(
+    "scripts/academic-integration/audit-revision-17-30.json",
+    change.lessonId,
+    change.locale,
+  ).payload;
   const before = structuredClone(after);
   for (const field of [...change.changedFields].reverse()) {
     const keys = field.path.split(".");

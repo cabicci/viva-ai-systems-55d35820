@@ -1,3 +1,4 @@
+import { readAcademicAuditChain } from "./academic-audit-chain.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -8,6 +9,7 @@ export function checkAcademicCompletionRevision() {
   const base = "scripts/academic-integration/";
   const revision = JSON.parse(readFileSync(base + "audit-revision-17-30.json", "utf8"));
   const manifest = JSON.parse(readFileSync(base + "manifest.json", "utf8"));
+  const chain = readAcademicAuditChain();
   const canonical = (value) =>
     JSON.stringify(value, (_key, child) =>
       child && typeof child === "object" && !Array.isArray(child)
@@ -129,10 +131,11 @@ export function checkAcademicCompletionRevision() {
         Object.entries(expected[index]).every(([key, value]) => change[key] === value),
       "Unexpected revision identity",
     );
-    const source = JSON.parse(readFileSync(change.sourcePath, "utf8"));
-    const after = Array.isArray(source)
-      ? source.find((lesson) => lesson.id === change.lessonId)
-      : source;
+    const { payload: after, latestSha256 } = chain.stageAfter(
+      "scripts/academic-integration/audit-revision-17-30.json",
+      change.lessonId,
+      change.locale,
+    );
     assert(
       after &&
         after.id === change.lessonId &&
@@ -144,7 +147,7 @@ export function checkAcademicCompletionRevision() {
       (row) => row.lesson_id === change.lessonId && row.locale === change.locale,
     );
     assert(
-      entry?.source_sha256 === change.afterSha256 &&
+      entry?.source_sha256 === latestSha256 &&
         entry.approved === false &&
         entry.video_guid === null &&
         entry.video_ready === false,

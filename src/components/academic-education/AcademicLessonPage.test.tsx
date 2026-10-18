@@ -1,7 +1,7 @@
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { act, render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AcademicLessonPage } from "./AcademicLessonPage";
 const state = vi.hoisted(() => ({
@@ -50,15 +50,16 @@ const delivery = {
     summary: [],
   },
 };
-function setup() {
+function setup(lessonId = "AC-BUS-M01-L02") {
   const client = new QueryClient({
     defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
   });
-  return render(
+  const view = render(
     <QueryClientProvider client={client}>
-      <AcademicLessonPage courseId="AC-BUS" lessonId="AC-BUS-M01-L02" />
+      <AcademicLessonPage courseId="AC-BUS" lessonId={lessonId} />
     </QueryClientProvider>,
   );
+  return { ...view, queryClient: client };
 }
 beforeEach(() => {
   state.user = { id: "learner-1" };
@@ -269,4 +270,118 @@ it("renders one presentation step number beside a complete formatted heading and
   expect(list.children[1]).toHaveTextContent("Compare both options.");
   expect(list.children[1]).toHaveTextContent("Keep the context.");
   expect(screen.getByText("Preserved decision")).toBeTruthy();
+});
+
+it("restores the old five values into six fields and saves the new fifth task without shifting answers", async () => {
+  const lessonId = "AC-BUS-M02-L01";
+  const lessons = JSON.parse(
+    readFileSync(resolve(process.cwd(), "experiments/academic/course/expanded/en.json"), "utf8"),
+  );
+  const source = lessons.find((lesson: { id: string }) => lesson.id === lessonId);
+  const assignment = source.assignment as typeof delivery.lesson.assignment;
+  expect(assignment.fields).toHaveLength(6);
+  const oldValues = [
+    "Original project title",
+    "Old task one",
+    "Old task two",
+    "Old task three",
+    "Old task four",
+  ];
+  const progress = {
+    progress: {
+      [lessonId]: {
+        read: false,
+        quizPassed: false,
+        practiceSubmitted: false,
+        drafts: { en: oldValues },
+      },
+    },
+  };
+  state.command.mockImplementation(async (action: string) => {
+    if (action === "lesson")
+      return { ...delivery, lesson: { ...delivery.lesson, id: lessonId, assignment } };
+    if (action === "status") return progress;
+    return { allowed: true };
+  });
+  const { queryClient } = setup(lessonId);
+  await screen.findByText("Paid lesson explanation");
+  await waitFor(() =>
+    expect(
+      queryClient.getQueryState(["academic-progress", "learner-1", "AC-BUS", lessonId, "en"])
+        ?.status,
+    ).toBe("success"),
+  );
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  fireEvent.click(screen.getByRole("button", { name: "Restore saved response" }));
+  const inputs = screen.getAllByRole("textbox");
+  expect(inputs).toHaveLength(6);
+  for (let i = 0; i < oldValues.length; i++) expect(inputs[i]).toHaveValue(oldValues[i]);
+  expect(inputs[5]).toHaveValue("");
+  expect(screen.getByRole("button", { name: "Save practice submission" })).toBeDisabled();
+  expect(state.command.mock.calls.some(([action]) => action === "practice")).toBe(false);
+  fireEvent.change(inputs[5], { target: { value: "New fifth task with its roles" } });
+  fireEvent.click(screen.getByRole("button", { name: "Save practice submission" }));
+  await waitFor(() =>
+    expect(state.command).toHaveBeenCalledWith("practice", "AC-BUS", lessonId, "en", {
+      values: [...oldValues, "New fifth task with its roles"],
+    }),
+  );
+  expect(oldValues).toHaveLength(5);
+});
+
+it("keeps unsent values when the same lesson receives the appended-field content revision", async () => {
+  const lessonId = "AC-BUS-M02-L01";
+  const lessons = JSON.parse(
+    readFileSync(resolve(process.cwd(), "experiments/academic/course/expanded/en.json"), "utf8"),
+  );
+  const source = lessons.find((lesson: { id: string }) => lesson.id === lessonId);
+  const revision = JSON.parse(
+    readFileSync(
+      resolve(process.cwd(), "scripts/academic-integration/audit-revision-22.json"),
+      "utf8",
+    ),
+  );
+  const changedFields = revision.changes[0].changedFields as Array<{
+    path: string;
+    before: unknown;
+  }>;
+  const oldAssignment = {
+    ...source.assignment,
+    fields: changedFields.find((field) => field.path === "assignment.fields")!.before,
+    prompt: changedFields.find((field) => field.path === "assignment.prompt")!.before,
+  };
+  let currentAssignment = oldAssignment;
+  state.command.mockImplementation(async (action: string) =>
+    action === "lesson"
+      ? { ...delivery, lesson: { ...delivery.lesson, id: lessonId, assignment: currentAssignment } }
+      : { progress: {} },
+  );
+  const { queryClient } = setup(lessonId);
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Practice" }));
+  const values = [
+    "Unsent title",
+    "Unsent task one",
+    "Unsent task two",
+    "Unsent task three",
+    "Unsent task four",
+  ];
+  const before = screen.getAllByRole("textbox");
+  expect(before).toHaveLength(5);
+  before.forEach((input, i) => fireEvent.change(input, { target: { value: values[i] } }));
+  currentAssignment = source.assignment;
+  await act(async () => {
+    await queryClient.invalidateQueries({
+      queryKey: ["academic", "learner-1", "AC-BUS", lessonId, "en"],
+    });
+  });
+  await waitFor(() => expect(screen.getAllByRole("textbox")).toHaveLength(6));
+  const after = screen.getAllByRole("textbox");
+  values.forEach((value, i) => expect(after[i]).toHaveValue(value));
+  expect(after[5]).toHaveValue("");
+  fireEvent.change(after[5], { target: { value: "Unsent new fifth task" } });
+  expect(screen.getAllByRole("textbox")[5]).toHaveValue("Unsent new fifth task");
+  expect(state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action))).toBe(
+    true,
+  );
 });

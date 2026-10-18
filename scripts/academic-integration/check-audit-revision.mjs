@@ -1,3 +1,4 @@
+import { readAcademicAuditChain } from "./academic-audit-chain.mjs";
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -8,6 +9,7 @@ export function checkAcademicAuditRevision() {
   const base = "scripts/academic-integration/";
   const revision = JSON.parse(readFileSync(base + "audit-revision-8-9-10-40.json", "utf8"));
   const manifest = JSON.parse(readFileSync(base + "manifest.json", "utf8"));
+  const chain = readAcademicAuditChain();
   const canonical = (value) =>
     JSON.stringify(value, (_key, child) =>
       child && typeof child === "object" && !Array.isArray(child)
@@ -49,10 +51,11 @@ export function checkAcademicAuditRevision() {
         ["ar-EG", "ar-Gulf"].includes(change.locale),
       "Unexpected revision identity",
     );
-    const source = JSON.parse(
-      readFileSync(`experiments/academic/course/expanded/${change.locale}.json`, "utf8"),
+    const { payload: after, latestSha256 } = chain.stageAfter(
+      "scripts/academic-integration/audit-revision-8-9-10-40.json",
+      change.lessonId,
+      change.locale,
     );
-    const after = source.find((lesson) => lesson.id === change.lessonId);
     assert(
       after && after.locale === change.locale && sha(after) === change.afterSha256,
       "Revised source fingerprint differs",
@@ -61,7 +64,7 @@ export function checkAcademicAuditRevision() {
       (row) => row.lesson_id === change.lessonId && row.locale === change.locale,
     );
     assert(
-      entry?.source_sha256 === change.afterSha256 &&
+      entry?.source_sha256 === latestSha256 &&
         entry.approved === false &&
         entry.video_guid === null &&
         entry.video_ready === false,

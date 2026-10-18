@@ -1,3 +1,4 @@
+import { readAcademicAuditChain } from "../../../scripts/academic-integration/academic-audit-chain.mjs";
 // @vitest-environment node
 import { readFileSync } from "node:fs";
 import { afterAll, beforeAll, beforeEach, expect, it } from "vitest";
@@ -16,11 +17,13 @@ const receipt = JSON.parse(
   readFileSync("scripts/academic-integration/audit-revision-8-9-10-40.json", "utf8"),
 ) as { changes: Change[] };
 const { sql, report } = checkAcademicAuditRevision();
+const chain = readAcademicAuditChain();
 const originals = receipt.changes.map((change) => {
-  const lessons = JSON.parse(
-    readFileSync(`experiments/academic/course/expanded/${change.locale}.json`, "utf8"),
-  ) as Array<Payload>;
-  const after = lessons.find((lesson) => lesson.id === change.lessonId)!;
+  const after = chain.stageAfter(
+    "scripts/academic-integration/audit-revision-8-9-10-40.json",
+    change.lessonId,
+    change.locale,
+  ).payload as Payload;
   const before = structuredClone(after);
   for (const field of [...change.changedFields].reverse()) {
     const keys = field.path.split(".");

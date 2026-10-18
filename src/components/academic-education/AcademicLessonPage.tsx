@@ -20,6 +20,7 @@ import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
 import { LessonText, LessonInlineText } from "./LessonText";
 import { withoutMatchingStepPrefix } from "./example-step";
 import { AcademicAdjacentNavigation } from "./AcademicAdjacentNavigation";
+import { normalizeAcademicPracticeValues } from "./practice-fields";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -134,6 +135,9 @@ function AuthorizedLesson({
       ["reading", "example", "video", "quiz", "practice", "faq", "downloads", "assistant"] as const
     ).map((key) => [key, c[key]]),
   );
+  const practiceFields =
+    normalizeAcademicPracticeValues(lesson.id, locale, lesson.assignment.fields.length, fields) ??
+    fields;
   const record = progress.data?.progress[lesson.id];
   const completed = [record?.read, record?.quizPassed, record?.practiceSubmitted].filter(
     Boolean,
@@ -152,7 +156,7 @@ function AuthorizedLesson({
     setResult(null);
     try {
       const data =
-        action === "quiz" ? { answers } : action === "practice" ? { values: fields } : {};
+        action === "quiz" ? { answers } : action === "practice" ? { values: practiceFields } : {};
       const response = await academicCommand<AcademicQuizResult>(
         action,
         courseId,
@@ -348,9 +352,11 @@ function AuthorizedLesson({
                   <textarea
                     rows={4}
                     maxLength={5000}
-                    value={fields[i]}
+                    value={practiceFields[i] ?? ""}
                     onChange={(event) =>
-                      setFields(fields.map((value, j) => (i === j ? event.target.value : value)))
+                      setFields(
+                        practiceFields.map((value, j) => (i === j ? event.target.value : value)),
+                      )
                     }
                     className="mt-3 w-full rounded-xl border bg-background p-3 font-normal leading-7"
                   />
@@ -360,7 +366,13 @@ function AuthorizedLesson({
                 variant="outline"
                 onClick={() => {
                   const draft = progress.data?.progress[lesson.id]?.drafts[locale];
-                  if (draft?.length === fields.length) setFields(draft);
+                  const restored = normalizeAcademicPracticeValues(
+                    lesson.id,
+                    locale,
+                    lesson.assignment.fields.length,
+                    draft,
+                  );
+                  if (restored) setFields(restored);
                 }}
               >
                 {c.restore}
@@ -374,7 +386,11 @@ function AuthorizedLesson({
                 </details>
               ))}
               <Button
-                disabled={busy || fields.some((f) => !f.trim())}
+                disabled={
+                  busy ||
+                  practiceFields.length !== lesson.assignment.fields.length ||
+                  practiceFields.some((f) => !f.trim())
+                }
                 onClick={() => void save("practice")}
               >
                 {c.save}
