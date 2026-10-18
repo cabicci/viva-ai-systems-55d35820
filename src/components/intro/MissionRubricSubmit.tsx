@@ -24,9 +24,17 @@ import {
 import { skipMissionServer } from "@/lib/mission-skip.functions";
 import {
   getActiveSubmissionForMission,
+  getLatestEvaluatedSubmissionForMission,
+  type MissionSubmission,
   prepareSubmissionForAttempt,
   submitForEvaluation,
 } from "@/lib/mission-evaluation";
+import {
+  readMissionDraft,
+  writeMissionDraft,
+  clearMissionDraft,
+  restoreMissionEvaluation,
+} from "@/lib/mission-view-state";
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
 import { logLearnerEvent } from "@/lib/learner-events";
@@ -86,7 +94,7 @@ function getFeedbackState(result: AIEvaluationResult): FeedbackStateKeys {
 export function buildMissionTemplate(prompt: string, writeHere: string): string {
   if (!prompt || !writeHere) return "";
   const lines = prompt.split(/\r?\n/);
-  const sectionRegex = /^\s*([٠-٩\d]+)\s*[\)\.\-]\s*(.+?)\s*:\s*$/;
+  const sectionRegex = /^\s*([٠-٩\d]+)\s*[).-]\s*(.+?)\s*:\s*$/;
   const sections: string[] = [];
   for (const line of lines) {
     const m = line.match(sectionRegex);
@@ -100,24 +108,35 @@ export function buildMissionTemplate(prompt: string, writeHere: string): string 
   return sections.join("\n\n");
 }
 
-export function MissionRubricSection({
-  rubric,
-  lessonId,
-  missionId,
-  lessonTitle,
-  missionPrompt,
-  template,
-}: {
+type MissionRubricSectionProps = {
   rubric: MissionRubric;
   lessonId: string;
   missionId: string;
   lessonTitle: string;
   missionPrompt: string;
   template?: string;
-}) {
+};
+
+export function MissionRubricSection(props: MissionRubricSectionProps) {
+  const { user } = useAuth();
+  const { locale } = useLocale();
+  const identity = JSON.stringify([user?.id ?? null, props.lessonId, props.missionId, locale]);
+  // A new owner must never paint the preceding owner's local state.
+  return <MissionRubricSession key={identity} {...props} identity={identity} />;
+}
+
+function MissionRubricSession({
+  rubric,
+  lessonId,
+  missionId,
+  missionPrompt,
+  template,
+  identity,
+}: MissionRubricSectionProps & { identity: string }) {
   const { locale, dir } = useLocale();
   const [open, setOpen] = React.useState(false);
-  const [text, setText] = React.useState("");
+  const [initialDraft] = React.useState(() => readMissionDraft(identity));
+  const [text, setText] = React.useState(initialDraft ?? "");
   const [submitting, setSubmitting] = React.useState(false);
   const [result, setResult] = React.useState<AIEvaluationResult | null>(null);
   const [attemptCount, setAttemptCount] = React.useState(0);
@@ -125,6 +144,7 @@ export function MissionRubricSection({
   const [reveal, setReveal] = React.useState<RevealAnswerResult | null>(null);
   const [revealing, setRevealing] = React.useState(false);
   const { user } = useAuth();
+  const userId = user?.id;
   const evaluate = useServerFn(evaluateMissionWithAI);
   const revealAnswer = useServerFn(revealModelMissionAnswer);
   const skipServer = useServerFn(skipMissionServer);
@@ -133,42 +153,83 @@ export function MissionRubricSection({
 
   const writeHereLabel = getUiString(locale, "mission.template.writeHere");
 
+  const alive = React.useRef(false);
+  const [restoring, setRestoring] = React.useState(Boolean(user));
+  const [restoreFailed, setRestoreFailed] = React.useState(false);
+  const [restoreAttempt, setRestoreAttempt] = React.useState(0);
+  const [savedSubmission, setSavedSubmission] = React.useState<MissionSubmission | null>(null);
+  const answerId = React.useId();
+
   React.useEffect(() => {
     let cancelled = false;
-    if (!user) return;
-    void getActiveSubmissionForMission(missionId, lessonId)
-      .then((sub) => {
-        if (cancelled || !sub) return;
-        if (sub.status === "passed") {
-          return;
+    alive.current = true;
+    const cleanup = () => {
+      cancelled = true;
+      alive.current = false;
+    };
+    if (!userId) return cleanup;
+    setRestoring(true);
+    setRestoreFailed(false);
+    void Promise.all([
+      getActiveSubmissionForMission(missionId, lessonId),
+      getLatestEvaluatedSubmissionForMission(missionId, lessonId),
+    ])
+      .then(([active, evaluated]) => {
+        if (cancelled) return;
+        for (const row of [active, evaluated]) {
+          if (
+            row &&
+            (row.user_id !== userId || row.mission_id !== missionId || row.lesson_id !== lessonId)
+          ) {
+            throw new Error("Mismatched mission submission owner");
+          }
         }
+        const sub = evaluated?.status === "passed" ? evaluated : (active ?? evaluated);
+        if (!sub) return;
         setAttemptCount(Number(sub.attempt_count ?? 0));
         setLastSubmissionId(sub.id);
-        if (sub.submission_text) setText(sub.submission_text);
-
+        // Unsent work wins over an older editable server row.
+        if (sub.status !== "passed" && initialDraft !== null) return;
+        setText(sub.submission_text ?? "");
+        if (evaluated?.id === sub.id) {
+          setSavedSubmission(sub);
+          setResult(restoreMissionEvaluation(sub));
+        }
         const meta = sub.submission_metadata ?? {};
-        if (meta.revealed === true && typeof meta.modelAnswer === "string") {
+        if (
+          sub.status !== "passed" &&
+          meta.revealed === true &&
+          typeof meta.modelAnswer === "string"
+        ) {
           setReveal({
-            modelAnswer: String(meta.modelAnswer),
-            note: String(
-              meta.note ?? getUiString(locale, "mission.reveal.defaultNote"),
-            ),
+            modelAnswer: meta.modelAnswer,
+            note:
+              typeof meta.note === "string"
+                ? meta.note
+                : getUiString(locale, "mission.reveal.defaultNote"),
           });
         }
       })
       .catch(() => {
-        /* silent — telemetry must not break the page */
+        if (!cancelled) setRestoreFailed(true);
+      })
+      .finally(() => {
+        if (!cancelled) setRestoring(false);
       });
-    return () => {
-      cancelled = true;
-    };
-  }, [user, missionId, lessonId, locale]);
+    return cleanup;
+  }, [userId, missionId, lessonId, locale, initialDraft, restoreAttempt]);
+
+  function changeText(value: string) {
+    setText(value);
+    writeMissionDraft(identity, value);
+  }
 
   async function skipMission() {
-    if (skipping) return;
+    if (skipping || restoring || restoreFailed) return;
     setSkipping(true);
     try {
       await skipServer({ data: { missionId, lessonId } });
+      if (!alive.current) return;
       emitMissionPassed(missionId);
       setSkipped(true);
       void logLearnerEvent({
@@ -181,30 +242,26 @@ export function MissionRubricSection({
       });
       toast.success(getUiString(locale, "mission.skip.successToast"));
     } catch (e) {
-      toast.error(
-        e instanceof Error ? e.message : getUiString(locale, "mission.skip.errorToast"),
-      );
+      if (!alive.current) return;
+      toast.error(e instanceof Error ? e.message : getUiString(locale, "mission.skip.errorToast"));
     } finally {
-      setSkipping(false);
+      if (alive.current) setSkipping(false);
     }
   }
 
   const templateText = React.useMemo(
-    () =>
-      template?.trim()
-        ? template
-        : buildMissionTemplate(missionPrompt, writeHereLabel),
+    () => (template?.trim() ? template : buildMissionTemplate(missionPrompt, writeHereLabel)),
     [template, missionPrompt, writeHereLabel],
   );
 
   function loadTemplate() {
     if (!templateText) return;
-    setText(templateText);
+    changeText(templateText);
     toast.success(getUiString(locale, "mission.template.loadedToast"));
   }
 
   async function submit() {
-    if (!user) return;
+    if (!user || submitting || restoring || restoreFailed) return;
     if (text.trim().length < 20) {
       toast.error(getUiString(locale, "mission.submit.tooShort"));
       return;
@@ -216,8 +273,10 @@ export function MissionRubricSection({
         lessonId,
         submissionText: text,
       });
+      if (!alive.current) return;
       setLastSubmissionId(submission.id);
       const submitted = await submitForEvaluation(submission.id);
+      if (!alive.current) return;
       setAttemptCount(submitted.attempt_count);
 
       const [pathId, moduleId] = lessonId.split("-");
@@ -240,6 +299,9 @@ export function MissionRubricSection({
           locale,
         },
       });
+      if (!alive.current) return;
+      clearMissionDraft(identity);
+      setSavedSubmission(null);
       setResult(r);
       const state = getFeedbackState(r);
       toast.success(
@@ -253,11 +315,12 @@ export function MissionRubricSection({
         emitMissionPassed(missionId);
       }
     } catch (err) {
+      if (!alive.current) return;
       toast.error(
         err instanceof Error ? err.message : getUiString(locale, "mission.submit.errorToast"),
       );
     } finally {
-      setSubmitting(false);
+      if (alive.current) setSubmitting(false);
     }
   }
 
@@ -272,15 +335,17 @@ export function MissionRubricSection({
           locale,
         },
       });
+      if (!alive.current) return;
       setReveal(r);
       setResult(null);
       toast.success(getUiString(locale, "mission.reveal.toastSuccess"));
     } catch (err) {
+      if (!alive.current) return;
       toast.error(
         err instanceof Error ? err.message : getUiString(locale, "mission.reveal.toastError"),
       );
     } finally {
-      setRevealing(false);
+      if (alive.current) setRevealing(false);
     }
   }
 
@@ -294,8 +359,56 @@ export function MissionRubricSection({
     return hints;
   }, [rubric]);
 
+  if (restoring) {
+    return (
+      <p role="status" className="py-3 text-sm text-muted-foreground">
+        {getUiString(locale, "mission.restore.loading")}
+      </p>
+    );
+  }
+  if (restoreFailed) {
+    return (
+      <div role="alert" className="space-y-2 py-3">
+        <p>{getUiString(locale, "mission.restore.error")}</p>
+        <button type="button" onClick={() => setRestoreAttempt((n) => n + 1)}>
+          {getUiString(locale, "mission.restore.retry")}
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-3 pt-3 border-t border-primary/15">
+      {savedSubmission && (
+        <section className="space-y-2" aria-label={getUiString(locale, "mission.restore.saved")}>
+          <p className="text-sm font-semibold">{getUiString(locale, "mission.restore.saved")}</p>
+          <textarea
+            aria-label={getUiString(locale, "mission.answer.label")}
+            value={savedSubmission.submission_text ?? ""}
+            readOnly
+            dir={dir}
+            rows={5}
+            className="w-full rounded-lg border p-3 text-sm leading-relaxed"
+          />
+          <p className="text-xs text-muted-foreground">
+            {getUiString(locale, "mission.restore.reference")} {savedSubmission.id}
+            {savedSubmission.evaluated_at && (
+              <>
+                {" "}
+                ·{" "}
+                <time dateTime={savedSubmission.evaluated_at}>{savedSubmission.evaluated_at}</time>
+              </>
+            )}
+            {typeof savedSubmission.submission_metadata?.evaluationVersion === "string" && (
+              <> · {savedSubmission.submission_metadata.evaluationVersion}</>
+            )}
+          </p>
+          {!result && savedSubmission.status === "passed" && (
+            <p>{getUiString(locale, "mission.feedback.passed.label")}</p>
+          )}
+          {!result && savedSubmission.feedback && <p>{savedSubmission.feedback}</p>}
+        </section>
+      )}
       {checklistHints.length > 0 && (
         <>
           <button
@@ -307,19 +420,12 @@ export function MissionRubricSection({
               <ListChecks className="h-3.5 w-3.5" />{" "}
               {getUiString(locale, "mission.checklist.toggle")}
             </span>
-            {open ? (
-              <ChevronUp className="h-3.5 w-3.5" />
-            ) : (
-              <ChevronDown className="h-3.5 w-3.5" />
-            )}
+            {open ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
           </button>
           {open && (
             <ul className="rounded-lg border border-primary/15 bg-primary/[0.03] p-3 space-y-2">
               {checklistHints.map((hint, i) => (
-                <li
-                  key={i}
-                  className="text-xs text-muted-foreground leading-relaxed flex gap-2"
-                >
+                <li key={i} className="text-xs text-muted-foreground leading-relaxed flex gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-primary/70 mt-0.5 shrink-0" />
                   <span>{hint}</span>
                 </li>
@@ -329,28 +435,32 @@ export function MissionRubricSection({
         </>
       )}
 
-      {!skipped && !reveal && !result && attemptCount >= 2 && lastSubmissionId && (
-        <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={onReveal}
-            disabled={revealing}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
-          >
-            {revealing ? (
-              <>
-                <Loader2 className="h-3 w-3 animate-spin" />{" "}
-                {getUiString(locale, "mission.reveal.generating")}
-              </>
-            ) : (
-              <>
-                <Lightbulb className="h-3 w-3" />{" "}
-                {getUiString(locale, "mission.reveal.cta")}
-              </>
-            )}
-          </button>
-        </div>
-      )}
+      {!skipped &&
+        savedSubmission?.status !== "passed" &&
+        !reveal &&
+        !result &&
+        attemptCount >= 2 &&
+        lastSubmissionId && (
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={onReveal}
+              disabled={revealing}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
+            >
+              {revealing ? (
+                <>
+                  <Loader2 className="h-3 w-3 animate-spin" />{" "}
+                  {getUiString(locale, "mission.reveal.generating")}
+                </>
+              ) : (
+                <>
+                  <Lightbulb className="h-3 w-3" /> {getUiString(locale, "mission.reveal.cta")}
+                </>
+              )}
+            </button>
+          </div>
+        )}
 
       {reveal && !skipped && (
         <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2">
@@ -360,18 +470,16 @@ export function MissionRubricSection({
           <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
             {reveal.modelAnswer}
           </pre>
-          <p className="text-[11px] text-muted-foreground leading-relaxed">
-            {reveal.note}
-          </p>
+          <p className="text-[11px] text-muted-foreground leading-relaxed">{reveal.note}</p>
           <p className="text-sm leading-relaxed text-foreground/90 border-t border-primary/15 pt-2">
             {getUiString(locale, "mission.reveal.instruction")}
           </p>
         </div>
       )}
 
-      {!skipped && (!result || reveal) && (
+      {!skipped && savedSubmission?.status !== "passed" && (!result || reveal) && (
         <div className="space-y-2">
-          <label className="text-xs text-muted-foreground">
+          <label htmlFor={answerId} className="text-xs text-muted-foreground">
             {getUiString(locale, "mission.answer.label")}
           </label>
           {templateText && text.trim().length === 0 && (
@@ -385,8 +493,10 @@ export function MissionRubricSection({
             </button>
           )}
           <textarea
+            id={answerId}
+            disabled={submitting}
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => changeText(e.target.value)}
             placeholder={
               templateText
                 ? getUiString(locale, "mission.placeholder.withTemplate")
@@ -442,8 +552,7 @@ export function MissionRubricSection({
                   </>
                 ) : (
                   <>
-                    <SkipForward className="h-3 w-3" />{" "}
-                    {getUiString(locale, "mission.skip.cta")}
+                    <SkipForward className="h-3 w-3" /> {getUiString(locale, "mission.skip.cta")}
                   </>
                 )}
               </button>
@@ -456,7 +565,10 @@ export function MissionRubricSection({
         <EvaluationResultCard
           result={result}
           attemptCount={attemptCount}
-          onRetry={() => setResult(null)}
+          onRetry={() => {
+            setSavedSubmission(null);
+            setResult(null);
+          }}
           onReveal={onReveal}
           revealing={revealing}
           onSkip={skipMission}
@@ -512,18 +624,14 @@ function EvaluationResultCard({
           {result.perCriterion.map((c, i) => (
             <li key={i} className="space-y-1">
               <p className="text-xs font-semibold">{c.label}</p>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {c.feedback}
-              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed">{c.feedback}</p>
             </li>
           ))}
         </ul>
       )}
 
       {result.summary && (
-        <p className="text-sm leading-relaxed border-t border-accent/15 pt-3">
-          {result.summary}
-        </p>
+        <p className="text-sm leading-relaxed border-t border-accent/15 pt-3">{result.summary}</p>
       )}
 
       {result.nextStep && (
@@ -544,9 +652,7 @@ function EvaluationResultCard({
             <HelpCircle className="h-3.5 w-3.5" />{" "}
             {getUiString(locale, "mission.result.socraticTitle")}
           </p>
-          <p className="text-sm leading-relaxed text-foreground/90">
-            {result.socraticQuestion}
-          </p>
+          <p className="text-sm leading-relaxed text-foreground/90">{result.socraticQuestion}</p>
           {!result.passed && (
             <p className="text-[10px] text-muted-foreground leading-relaxed">
               {getUiString(locale, "mission.result.socraticHint")}

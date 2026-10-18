@@ -47,6 +47,20 @@ jobs:
       - name: TypeScript check
         run: bunx tsc --noEmit
 
+      - name: Mission answer restoration and quiz ownership (isolated clients)
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/mission-view-isolation.test.tsx
+          src/lib/__tests__/quiz-view-isolation.test.tsx
+          src/lib/__tests__/mission-saved-evaluation.test.ts
+          src/lib/__tests__/mission-submission-recovery.test.ts
+          src/lib/__tests__/quiz-block-trusted-writer.test.tsx
+          src/lib/__tests__/locale-package-live-mission.test.tsx
+          src/lib/__tests__/locale-package-live-quiz.test.tsx
+          src/lib/__tests__/mission-ai-evaluation-authority.test.ts
+          src/lib/__tests__/mission-ai-reveal-authority.test.ts
+          src/lib/__tests__/mission-evaluation-source.test.ts
+
       - name: Build and storage watcher compatibility
         run: bunx vitest run src/lib/__tests__/dependency-watchers.test.ts
 
