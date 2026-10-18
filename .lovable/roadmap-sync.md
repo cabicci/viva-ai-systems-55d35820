@@ -298,3 +298,11 @@ source: direct owner authorization to continue the audited corrections
 scope: Intro terminology/comparison inline fields and the separate Academic assignment text renderer
 summary: Render paired emphasis in the specified Intro paths, keeping ordinary text and HTML inert. Use the Academic safe text renderer for assignment prompts, grouping authored bullet lines into lists and preserving paragraphs, arithmetic, raw source numbers, rubric and five controlled answer fields. Preserve unmatched literal asterisks; do not rewrite the source lesson or its FAQ.
 sync_status: Component and existing regression validation in progress; no learner answer, database row, merge or publication changed. Separate Intro and Academic coverage is required before closing these items.
+## 2026-10-18 — learner-facing scope and terminology (items 4, 6, 31, 32, 45, 53)
+
+[roadmap:local-batch-learner-copy-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Egyptian introductory model definition/value hook, three specifically listed editorial-note locations, technical progress/read-complete wording, and optional Builder invitation in four locales
+summary: Distinguish the underlying trained model from its chat application using the recorded OpenAI Academy models resource; remove only specified editorial notes while preserving mission tasks/weights. State account-backed technical progress accurately, separate reading completion from quiz correctness, avoid first-attempt accuracy promises, and present Builder as a goal-dependent option without changing access, order or prerequisites.
+reference: https://academy.openai.com/public/clubs/work-users-ynjqu/resources/models (read 2026-10-18; conceptual definition only, no model-version/default claims)
+sync_status: Scoped source edits and JSON preservation checks complete; CI review pending. No content-generation request, indexing operation, learner-data change, merge or publication.

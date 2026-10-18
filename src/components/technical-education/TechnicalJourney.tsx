@@ -173,7 +173,7 @@ export function TechnicalLessonView({
                 </article>
               ))}
               <Button onClick={() => persist("read")}>
-                {record?.read ? copy.correct : copy.markRead}
+                {record?.read ? copy.readDone : copy.markRead}
               </Button>
             </>
           )}
