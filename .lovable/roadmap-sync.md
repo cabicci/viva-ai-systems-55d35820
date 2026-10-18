@@ -390,3 +390,10 @@ source: direct owner authorization to continue audited corrections; overrides th
 scope: Egyptian primary authoring concepts, its four generated glossary overlays and corresponding MSA canonical definition
 summary: Name the duration build-effort payback period and divide build hours by net monthly time saved. Explain 0.5 hour / 2 net hours per month = 0.25 month, after oversight/maintenance. The two-month threshold is an illustrative teaching assumption, with risk and maintenance checks retained. Synchronize Markdown, bullets and table cells without changing other sections, quiz, mission or weights.
 sync_status: Exact original generation-source bytes reconstructed for all four edited overlays and pinned in the scoped source-compatibility ledger; image bytes/original manifest unchanged. Egyptian authoring parity and four-locale unit tests added. Offline payload preservation check passed; CI pending. No workflow/AI generation, indexing, database write, merge or publication.
+## 2026-10-18 — directional Kids navigation (item 11)
+
+[roadmap:local-batch-kids-directional-navigation-20261018]
+source: direct owner authorization to continue audited corrections
+scope: existing previous/next labels and four journey copy sets only
+summary: Label the existing links Previous/Next in English and السابق/التالي in each Arabic copy set. Preserve the exact routes, locale search, visible-result access gate and first/last number boundaries. No child progress API or destination logic changed.
+sync_status: Existing nested/direct Kids route and localization regressions run in CI; no new tests mirror these labels. No child/account mutation, merge or publication.
