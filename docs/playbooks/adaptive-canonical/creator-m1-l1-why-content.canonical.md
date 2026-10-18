@@ -131,7 +131,7 @@ mission:
   rubricIntent:
     - dimension: promise_clarity
       weight: 60
-      criteria: Specific audience; clear understandable problem
+      criteria: Specific audience and clear problem; one sentence links both to a concrete deliverable benefit consistent with the repeatable format, without exaggerated guarantees
     - dimension: repeatability
       weight: 40
       criteria: Chosen content type is repeatable consistently

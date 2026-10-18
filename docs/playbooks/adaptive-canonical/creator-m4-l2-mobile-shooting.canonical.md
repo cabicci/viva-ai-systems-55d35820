@@ -126,7 +126,7 @@ mission:
   rubricIntent:
     - dimension: basics_commitment
       weight: 60
-      criteria: Record or script path complete — light, sound, framing described clearly
+      criteria: One text-delivered recording description/link or sixty-second script is complete; light, sound and framing are explained; no file upload or assumed automated media inspection
     - dimension: strong_opening
       weight: 40
       criteria: Clear Hook serving the idea from first seconds
