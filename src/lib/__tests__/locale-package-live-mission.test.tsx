@@ -9,13 +9,18 @@ vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: "user-1" }, loading: false }),
 }));
 
+// This renderer fixture has no backend session. Saved-history behavior is
+// exercised separately with scoped rows in mission-view-isolation.test.tsx.
+vi.mock("@/lib/mission-evaluation", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/mission-evaluation")>()),
+  getActiveSubmissionForMission: vi.fn().mockResolvedValue(null),
+  getLatestEvaluatedSubmissionForMission: vi.fn().mockResolvedValue(null),
+}));
+
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const VALID_LESSON_ID = "intro-m1-l2-first-prompt";
 
-function readPackage(
-  locale: "en",
-  lessonId: string,
-): LocalizedLessonPackage {
+function readPackage(locale: "en", lessonId: string): LocalizedLessonPackage {
   const filePath = path.join(
     REPO_ROOT,
     "src/lib/locale-lessons",
@@ -40,14 +45,10 @@ describe("LocalePackageLessonRenderer live mission", () => {
     });
 
     expect(container.querySelector('[data-locale-mission="live"]')).toBeNull();
-    expect(
-      container.querySelector('[data-locale-mission-evaluation="mock-disabled"]'),
-    ).toBeNull();
+    expect(container.querySelector('[data-locale-mission-evaluation="mock-disabled"]')).toBeNull();
     expect(container.querySelector('[data-locale-mission="readonly"]')).toBeNull();
     expect(container.querySelector('[data-locale-mission-submit="mock"]')).toBeNull();
-    expect(
-      container.querySelector('[data-locale-mission-rubric="readonly"]'),
-    ).toBeNull();
+    expect(container.querySelector('[data-locale-mission-rubric="readonly"]')).toBeNull();
   });
 
   it("shows localized intro, prompt, rubric, textarea, and submit", async () => {
@@ -63,9 +64,7 @@ describe("LocalePackageLessonRenderer live mission", () => {
       expect(screen.getByText(intro)).toBeTruthy();
     });
     expect(screen.getByRole("textbox")).toBeTruthy();
-    expect(
-      screen.getByRole("button", { name: /Submit and get feedback/i }),
-    ).toBeTruthy();
+    expect(screen.getByRole("button", { name: /Submit and get feedback/i })).toBeTruthy();
     expect(screen.getAllByText("Clear Request").length).toBeGreaterThan(0);
   });
 
@@ -76,11 +75,7 @@ describe("LocalePackageLessonRenderer live mission", () => {
       expect(screen.getByRole("textbox")).toBeTruthy();
     });
 
-    expect(
-      document.querySelector('[data-locale-mission-feedback="mock"]'),
-    ).toBeNull();
-    expect(
-      screen.getByRole("button", { name: /Submit and get feedback/i }),
-    ).toBeTruthy();
+    expect(document.querySelector('[data-locale-mission-feedback="mock"]')).toBeNull();
+    expect(screen.getByRole("button", { name: /Submit and get feedback/i })).toBeTruthy();
   });
 });

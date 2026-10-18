@@ -29,14 +29,9 @@ const BLOOM_KEY: Record<QuizItem["bloom"], UiStringKey> = {
   apply: "intro.quiz.bloom.apply",
 };
 
-export function QuizBlock({
-  lessonId,
-  items,
-}: {
-  lessonId: string;
-  items: readonly QuizItem[];
-}) {
+export function QuizBlock({ lessonId, items }: { lessonId: string; items: readonly QuizItem[] }) {
   const { locale } = useLocale();
+  const { user } = useAuth();
   if (!items?.length) return null;
 
   const header =
@@ -54,20 +49,18 @@ export function QuizBlock({
       </div>
       <div className="space-y-3">
         {items.map((q) => (
-          <QuizQuestion key={q.id} lessonId={lessonId} item={q} />
+          <QuizQuestion
+            key={JSON.stringify([user?.id ?? null, lessonId, q.id, locale])}
+            lessonId={lessonId}
+            item={q}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function QuizQuestion({
-  lessonId,
-  item,
-}: {
-  lessonId: string;
-  item: QuizItem;
-}) {
+function QuizQuestion({ lessonId, item }: { lessonId: string; item: QuizItem }) {
   const { locale } = useLocale();
   const { user } = useAuth();
   const submitAttempt = useServerFn(submitQuizAttempt);
@@ -197,17 +190,10 @@ function QuizQuestion({
 
       {submitted && (
         <div className="space-y-2 border-t border-accent/15 pt-3">
-          <p
-            className={
-              "text-xs font-mono " +
-              (isCorrect ? "text-emerald-300" : "text-red-300")
-            }
-          >
+          <p className={"text-xs font-mono " + (isCorrect ? "text-emerald-300" : "text-red-300")}>
             {getUiString(locale, isCorrect ? "intro.quiz.correct" : "intro.quiz.incorrect")}
           </p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {item.explanation}
-          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground">{item.explanation}</p>
           <button
             type="button"
             onClick={reset}

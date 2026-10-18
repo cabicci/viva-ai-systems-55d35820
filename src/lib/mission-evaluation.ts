@@ -58,15 +58,9 @@ export interface UpdateSubmissionInput {
 const TABLE = "mission_submissions" as const;
 
 /** Statuses eligible for in-place retry (no new row). */
-const REUSABLE_STATUSES: MissionSubmissionStatus[] = [
-  "draft",
-  "needs_revision",
-  "failed",
-];
+const REUSABLE_STATUSES: MissionSubmissionStatus[] = ["draft", "needs_revision", "failed"];
 
-export function isReusableSubmissionStatus(
-  status: MissionSubmissionStatus,
-): boolean {
+export function isReusableSubmissionStatus(status: MissionSubmissionStatus): boolean {
   return REUSABLE_STATUSES.includes(status);
 }
 
@@ -81,9 +75,7 @@ async function requireUserId(): Promise<string> {
 /**
  * Create a new submission row in `draft` status. Returns the inserted row.
  */
-export async function createSubmission(
-  input: CreateSubmissionInput,
-): Promise<MissionSubmission> {
+export async function createSubmission(input: CreateSubmissionInput): Promise<MissionSubmission> {
   const userId = await requireUserId();
   const { data, error } = await supabase
     .from(TABLE)
@@ -103,9 +95,7 @@ export async function createSubmission(
   return data as unknown as MissionSubmission;
 }
 
-export async function getSubmission(
-  submissionId: string,
-): Promise<MissionSubmission | null> {
+export async function getSubmission(submissionId: string): Promise<MissionSubmission | null> {
   const { data, error } = await supabase
     .from(TABLE)
     .select("*")
@@ -188,15 +178,36 @@ export async function getActiveSubmissionForMission(
 }
 
 /**
+ * Read saved evaluation history independently of rows eligible for editing.
+ * Reading never submits/regrades an answer or changes its attempt count.
+ */
+export async function getLatestEvaluatedSubmissionForMission(
+  missionId: string,
+  lessonId: string,
+): Promise<MissionSubmission | null> {
+  const userId = await requireUserId();
+  const { data, error } = await supabase
+    .from(TABLE)
+    .select("*")
+    .eq("user_id", userId)
+    .eq("mission_id", missionId)
+    .eq("lesson_id", lessonId)
+    .in("status", ["passed", "needs_revision", "failed"])
+    .order("evaluated_at", { ascending: false, nullsFirst: false })
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return (data as unknown as MissionSubmission) ?? null;
+}
+
+/**
  * Reuse an open submission row when possible; otherwise create a new draft.
  */
 export async function prepareSubmissionForAttempt(
   input: CreateSubmissionInput,
 ): Promise<MissionSubmission> {
-  const reusable = await getReusableSubmissionForMission(
-    input.missionId,
-    input.lessonId,
-  );
+  const reusable = await getReusableSubmissionForMission(input.missionId, input.lessonId);
   if (reusable) {
     return updateSubmission(reusable.id, {
       submissionText: input.submissionText ?? null,
@@ -211,12 +222,9 @@ export async function updateSubmission(
 ): Promise<MissionSubmission> {
   const userId = await requireUserId();
   const update: Record<string, unknown> = {};
-  if (patch.submissionText !== undefined)
-    update.submission_text = patch.submissionText;
-  if (patch.submissionUrl !== undefined)
-    update.submission_url = patch.submissionUrl;
-  if (patch.submissionMetadata !== undefined)
-    update.submission_metadata = patch.submissionMetadata;
+  if (patch.submissionText !== undefined) update.submission_text = patch.submissionText;
+  if (patch.submissionUrl !== undefined) update.submission_url = patch.submissionUrl;
+  if (patch.submissionMetadata !== undefined) update.submission_metadata = patch.submissionMetadata;
   if (patch.status !== undefined) update.status = patch.status;
   if (patch.feedback !== undefined) update.feedback = patch.feedback;
   if (patch.score !== undefined) update.score = patch.score;
@@ -240,9 +248,7 @@ export async function updateSubmission(
  * increments `attempt_count` + flips status in one statement, preventing
  * TOCTOU when two requests race on the same draft.
  */
-export async function submitForEvaluation(
-  submissionId: string,
-): Promise<MissionSubmission> {
+export async function submitForEvaluation(submissionId: string): Promise<MissionSubmission> {
   const { data, error } = await supabase.rpc("submit_mission_for_evaluation", {
     p_submission_id: submissionId,
   });

@@ -260,3 +260,12 @@ source: user
 scope: ui
 summary: Owner explicitly authorized merging and publishing the reviewed My journey and original-logo social card. PR163 merged at e1f270b9; social-card candidate synchronizes that base and its exact migration inventory. Preserve payments, entitlements and Academic media production. The branded promotional video is a delivered standalone creative, not a new homepage feature or social post.
 sync_status: controlled release in progress; apply the reviewed journey migration before frontend deployment, verify current-head checks and live output, then reconcile both continuation registers. This supersedes the earlier no-publication hold only for this release.
+
+
+## 2026-10-18 — lesson answers and quiz ownership (items 44, 146, 64)
+
+[roadmap:local-batch-44-146-64-20261018]
+source: direct owner instruction in receiving chat 01a1443d-497a-7a52-9baf-667fb1b2deb0
+scope: ui, existing authenticated read adapter; no schema or production operations
+summary: Isolate mission state and tab-scoped unsent drafts by user/lesson/mission/locale; ignore late responses after navigation; restore saved evaluated answers/feedback without regrading; isolate quiz selection/reveal by owner and locale. Preserve stored answers, pass status, attempts, rubric and grading behavior.
+sync_status: Local source checkpoint only. No production roadmap row was created or claimed. Twelve pure draft/feedback assertions passed. Component regressions, TypeScript, lint and build are being verified; final results are recorded in the drive-resident implementation receipt. No push, merge, deploy, website publication or live-account activity.
