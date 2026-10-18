@@ -492,3 +492,8 @@ Complete scoped Gulf/EG/MSA/English paragraphs, worked examples and FAQ fields. 
 ### Audit149 — twenty diagram captions and headings (2026-10-18)
 
 Visually inspect all twenty specified original WebP assets and verify their exact recorded SHA256/Git identities. Replace the scoped captions/headings so they describe the actual cards or comparisons, remove production identifiers/preservation notes from those descriptions, and synchronize three Egyptian authoring sources including CTA alt text. Keep images, quiz/mission sections and stable IDs. Preserve the separate automation matrix/five-task/risk exercise and dashboard two-week/threshold exercise; the diagrams do not claim to depict all exercise data. Existing role-based diagram-caption selection uses the same updated source and excludes it from paragraph queues. Draft source only; live/language acceptance pending.
+
+
+### Audit101 — contextual signals, not a three-point guarantee (2026-10-18)
+
+All four matching Pattern vs Outlier lessons now treat three observations as an initial signal, require comparable periods/baseline/seasonality/variability and accept insufficient data. Give each of five observations context and comparison; an explicitly fictional five-Friday sample provides dates, counts, baseline range and a recorded bulk-customer component while declaring missing seasonal information. Update the existing60/40 rubric to accept a collection plan or small reversible experiment without forcing a pattern or real execution. Synchronize Egyptian prompt/template and MSA text/structured intent. Original quiz keys/options and all four inspected illustrative images remain unchanged. Draft source only; language/live acceptance pending.
