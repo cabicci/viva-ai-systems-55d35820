@@ -362,3 +362,10 @@ source: direct owner authorization to continue audited corrections
 scope: four-locale curriculum progress labels and account profile/subscription card sizing
 summary: Explicitly label completed versus published map steps, preserving all placeholder variables and calculations. Constrain the account grid/cards with minmax(0,1fr) and min-w-0, preserve email/ID ellipsis, wrap date/subscription values and stack field rows on narrow screens. No account/email/subscription data changed.
 sync_status: Existing localization placeholder expectations updated; no new tests mirror copy/CSS. CI pending; 319/390 viewport and independent long-email fixture acceptance remain pending until a working preview is available.
+## 2026-10-18 — one example step number (item 139)
+
+[roadmap:local-batch-academic-step-number-20261018]
+source: direct owner authorization to continue audited corrections
+scope: Academic worked-example list presentation only
+summary: Render one visible list-position badge beside each full step body. Remove only a matching leading Step N, Arabic localized step N or numeric-list prefix equal to the actual position; preserve leading emphasis, paragraphs, quantities, decimals and calculation numbers. Original lesson sources and calculations are unchanged.
+sync_status: Prefix safety cases and a formatted two-step DOM regression added to the existing Academic suite; CI pending. No saved data or source lesson rewrite, merge or publication.

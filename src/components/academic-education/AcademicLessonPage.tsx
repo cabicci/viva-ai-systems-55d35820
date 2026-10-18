@@ -18,6 +18,7 @@ import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-educat
 import { ReadingVisual } from "./ReadingVisual";
 import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
 import { LessonText, LessonInlineText } from "./LessonText";
+import { withoutMatchingStepPrefix } from "./example-step";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -259,10 +260,16 @@ function AuthorizedLesson({
             <>
               <h2 className="text-xl font-bold">{lesson.example.title}</h2>
               <LessonText text={lesson.example.text} />
-              <ol className="list-inside list-decimal space-y-4 leading-8">
+              <ol className="list-none space-y-4 leading-8" role="list">
                 {lesson.example.steps?.map((s, i) => (
-                  <li key={i}>
-                    <LessonText text={s} />
+                  <li key={i} className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-3">
+                    <span
+                      aria-hidden="true"
+                      className="grid h-8 w-8 place-items-center rounded-full bg-primary/10 font-bold"
+                    >
+                      {i + 1}
+                    </span>
+                    <LessonText text={withoutMatchingStepPrefix(s, i + 1)} />
                   </li>
                 ))}
               </ol>

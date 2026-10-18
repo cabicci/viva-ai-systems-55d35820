@@ -228,3 +228,39 @@ it("names activity progress and keeps an age-range option in one inline text con
     true,
   );
 });
+
+it("renders one presentation step number beside a complete formatted heading and explanation", async () => {
+  state.command.mockImplementation(async (action: string) =>
+    action === "lesson"
+      ? {
+          ...delivery,
+          lesson: {
+            ...delivery.lesson,
+            example: {
+              title: "Numbered example",
+              text: "Worked explanation",
+              decision: "Preserved decision",
+              steps: [
+                "**Step 1: Identify the gap.**\n\n30 - 20 = 10 orders.",
+                "2. Compare both options.\n\nKeep the context.",
+              ],
+            },
+          },
+        }
+      : { progress: {} },
+  );
+  const { container } = setup();
+  await screen.findByText("Paid lesson explanation");
+  fireEvent.click(screen.getByRole("button", { name: "Worked example" }));
+  const list = container.querySelector("ol")!;
+  expect(list.children).toHaveLength(2);
+  expect(list.children[0].children).toHaveLength(2);
+  expect(list.children[0].children[0]).toHaveTextContent("1");
+  expect(list.children[0].children[0]).toHaveAttribute("aria-hidden", "true");
+  expect(list.children[0].querySelector("strong")).toHaveTextContent("Identify the gap.");
+  expect(list.children[0]).not.toHaveTextContent("Step 1");
+  expect(list.children[0]).toHaveTextContent("30 - 20 = 10 orders.");
+  expect(list.children[1]).toHaveTextContent("Compare both options.");
+  expect(list.children[1]).toHaveTextContent("Keep the context.");
+  expect(screen.getByText("Preserved decision")).toBeTruthy();
+});
