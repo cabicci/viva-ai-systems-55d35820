@@ -3,6 +3,8 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
+import { normalizeMissionModelAnswer } from "./mission-model-answer";
+import { getUiString } from "./locale/ui-strings";
 import {
   buildMissionEvaluationPrompts,
   buildMissionRevealPrompts,
@@ -251,14 +253,14 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
 
     // Idempotent: return stored model answer without re-unlocking or re-scoring.
     if (
-      existingMeta.revealed === true &&
-      typeof existingMeta.modelAnswer === "string"
+      existingMeta.revealed === true
     ) {
+      const cachedAnswer = normalizeMissionModelAnswer(existingMeta.modelAnswer);
+      if (!cachedAnswer) throw new Error(getUiString(data.locale, "mission.reveal.unavailableSaved"));
       return {
-        modelAnswer: String(existingMeta.modelAnswer).slice(0, 4000),
-        note: String(
-          existingMeta.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك.",
-        ),
+        modelAnswer: cachedAnswer,
+        note: normalizeMissionModelAnswer(existingMeta.note) ??
+          getUiString(data.locale, "mission.reveal.defaultNote"),
       };
     }
 
@@ -299,9 +301,11 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
       throw new Error("تعذّر قراءة نموذج الإجابة.");
     }
 
+    const modelAnswer = normalizeMissionModelAnswer(parsed?.modelAnswer);
+    if (!modelAnswer) throw new Error(getUiString(data.locale, "mission.reveal.invalidResponse"));
     const result: RevealAnswerResult = {
-      modelAnswer: String(parsed.modelAnswer ?? "").slice(0, 4000),
-      note: String(parsed.note ?? defaultNote),
+      modelAnswer,
+      note: normalizeMissionModelAnswer(parsed?.note) ?? defaultNote,
     };
 
     // Persist model answer only — do not pass/unlock; learner must resubmit.

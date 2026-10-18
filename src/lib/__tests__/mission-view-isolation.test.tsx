@@ -316,6 +316,38 @@ describe("mission answer ownership and saved result restoration", () => {
     expect(mocks.evaluate).not.toHaveBeenCalled();
   });
 
+  it.each([
+    [{ answer: "A readable structured answer" }, "answer: A readable structured answer"],
+    ['{"answer":"A JSON-encoded answer"}', "answer: A JSON-encoded answer"],
+  ])("restores a structured example without touching the learner answer: %j", async (modelAnswer, display) => {
+    const metadata = { revealed: true, modelAnswer, note: "An original learning note" };
+    const original = row({ status: "needs_revision", submission_metadata: metadata });
+    mocks.active.mockResolvedValue(original);
+    render(mission());
+    expect(await screen.findByText(String(display))).toBeTruthy();
+    expect(await answerField()).toHaveValue(original.submission_text);
+    expect(screen.queryByText("[object Object]")).toBeNull();
+    expect(original.submission_metadata).toEqual(metadata);
+    expect(mocks.prepare).not.toHaveBeenCalled();
+    expect(mocks.reveal).not.toHaveBeenCalled();
+  });
+
+  it("explains irrecoverable old example text without inventing or regenerating an answer", async () => {
+    const original = row({
+      status: "needs_revision",
+      submission_metadata: { revealed: true, modelAnswer: "[object Object]", note: "Old note" },
+    });
+    mocks.active.mockResolvedValue(original);
+    render(mission());
+    expect(await screen.findByRole("alert")).toHaveTextContent("cannot be displayed");
+    expect(await answerField()).toHaveValue(original.submission_text);
+    expect(screen.queryByText("[object Object]")).toBeNull();
+    expect(screen.queryByRole("button", { name: "See a helpful example" })).toBeNull();
+    expect(mocks.reveal).not.toHaveBeenCalled();
+    expect(mocks.evaluate).not.toHaveBeenCalled();
+    expect(original.submission_metadata?.modelAnswer).toBe("[object Object]");
+  });
+
   it("blocks editing during evaluation and sends the current identity exactly once", async () => {
     const pending = deferred<typeof result>();
     mocks.evaluate.mockReturnValue(pending.promise);

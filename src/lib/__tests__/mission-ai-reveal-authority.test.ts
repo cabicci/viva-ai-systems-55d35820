@@ -169,6 +169,45 @@ describe("revealModelMissionAnswer canonical locale contract", () => {
     );
   });
 
+  it("formats and persists a structured provider answer without replacing the learner submission", async () => {
+    mocks.callAI.mockResolvedValue({ content: JSON.stringify({
+      modelAnswer: { response: "Ask for the missing date", steps: ["Read", "Confirm"] },
+      note: "Compare with your attempt",
+    }) });
+    const answer = await callReveal(request());
+    expect(answer.modelAnswer).toBe("response: Ask for the missing date\n\nsteps: 1. Read\n2. Confirm");
+    expect(mocks.updates[0]).toEqual({ submission_metadata: {
+      nextStep: "Preserve me", revealed: true, modelAnswer: answer.modelAnswer,
+      note: "Compare with your attempt",
+    } });
+    expect(mocks.updates[0]).not.toHaveProperty("submission_text");
+    expect(mocks.updates[0]).not.toHaveProperty("attempt_count");
+  });
+
+  it("reads structured historical cache without rewriting the stored original or note", async () => {
+    const original = { revealed: true, modelAnswer: { answer: "Historical structured answer" }, note: "Original note" };
+    mocks.row!.submission_metadata = original;
+    expect(await callReveal(request())).toEqual({
+      modelAnswer: "answer: Historical structured answer", note: "Original note",
+    });
+    expect(mocks.row!.submission_metadata).toBe(original);
+    expect(mocks.updates).toEqual([]);
+    expect(mocks.callAI).not.toHaveBeenCalled();
+  });
+
+  it.each(["[object Object]", "", null, {}])("rejects unreadable generated answer %j without persisting it", async (modelAnswer) => {
+    mocks.callAI.mockResolvedValue({ content: JSON.stringify({ modelAnswer }) });
+    await expect(callReveal(request())).rejects.toThrow();
+    expect(mocks.updates).toEqual([]);
+  });
+
+  it("does not regenerate or rewrite an irrecoverable historical answer", async () => {
+    mocks.row!.submission_metadata = { revealed: true, modelAnswer: "[object Object]", note: "Original note" };
+    await expect(callReveal(request())).rejects.toThrow();
+    expect(mocks.updates).toEqual([]);
+    expect(mocks.callAI).not.toHaveBeenCalled();
+  });
+
   it("does not report success when persistence fails", async () => {
     mocks.updateError = { message: "Mock persistence failure" };
     const errorLog = vi.spyOn(console, "error").mockImplementation(() => {});

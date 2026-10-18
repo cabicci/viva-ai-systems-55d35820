@@ -36,6 +36,7 @@ import {
   restoreMissionEvaluation,
 } from "@/lib/mission-view-state";
 import { useAuth } from "@/lib/auth-context";
+import { normalizeMissionModelAnswer } from "@/lib/mission-model-answer";
 import { emitMissionPassed } from "@/lib/mission-gate";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -198,15 +199,13 @@ function MissionRubricSession({
         const meta = sub.submission_metadata ?? {};
         if (
           sub.status !== "passed" &&
-          meta.revealed === true &&
-          typeof meta.modelAnswer === "string"
+          meta.revealed === true
         ) {
           setReveal({
-            modelAnswer: meta.modelAnswer,
+            modelAnswer: normalizeMissionModelAnswer(meta.modelAnswer) ?? "",
             note:
-              typeof meta.note === "string"
-                ? meta.note
-                : getUiString(locale, "mission.reveal.defaultNote"),
+              normalizeMissionModelAnswer(meta.note) ??
+              getUiString(locale, "mission.reveal.defaultNote"),
           });
         }
       })
@@ -467,13 +466,23 @@ function MissionRubricSession({
           <p className="text-xs text-primary inline-flex items-center gap-1.5">
             <Lightbulb className="h-3.5 w-3.5" /> {getUiString(locale, "mission.reveal.title")}
           </p>
-          <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
-            {reveal.modelAnswer}
-          </pre>
-          <p className="text-[11px] text-muted-foreground leading-relaxed">{reveal.note}</p>
-          <p className="text-sm leading-relaxed text-foreground/90 border-t border-primary/15 pt-2">
-            {getUiString(locale, "mission.reveal.instruction")}
-          </p>
+          {reveal.modelAnswer ? (
+            <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
+              {reveal.modelAnswer}
+            </pre>
+          ) : (
+            <p role="alert" className="text-sm leading-relaxed">
+              {getUiString(locale, "mission.reveal.unavailableSaved")}
+            </p>
+          )}
+          {reveal.modelAnswer && (
+            <>
+              <p className="text-[11px] text-muted-foreground leading-relaxed">{reveal.note}</p>
+              <p className="text-sm leading-relaxed text-foreground/90 border-t border-primary/15 pt-2">
+                {getUiString(locale, "mission.reveal.instruction")}
+              </p>
+            </>
+          )}
         </div>
       )}
 

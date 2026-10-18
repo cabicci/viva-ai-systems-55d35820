@@ -269,3 +269,11 @@ source: direct owner instruction in receiving chat 01a1443d-497a-7a52-9baf-667fb
 scope: ui, existing authenticated read adapter; no schema or production operations
 summary: Isolate mission state and tab-scoped unsent drafts by user/lesson/mission/locale; ignore late responses after navigation; restore saved evaluated answers/feedback without regrading; isolate quiz selection/reveal by owner and locale. Preserve stored answers, pass status, attempts, rubric and grading behavior.
 sync_status: Local source checkpoint only. No production roadmap row was created or claimed. Twelve pure draft/feedback assertions passed. Component regressions, TypeScript, lint and build are being verified; final results are recorded in the drive-resident implementation receipt. No push, merge, deploy, website publication or live-account activity.
+
+## 2026-10-18 — readable mission examples and grounded feedback (items 2, 147)
+
+[roadmap:local-batch-2-147-20261018]
+source: owner instruction to continue the remaining audited corrections in chat 01a1443d-497a-7a52-9baf-667fb1b2deb0
+scope: existing mission display/provider normalization and four-locale evaluation instructions; no schema change
+summary: Render structured model answers as readable text before persistence and on restoration, preserve existing learner answers and cached payloads, and explain irrecoverable historical object-coercion text without regenerating automatically. Ground feedback in the actual submission, distinguish hypothetical exercises from observed activity, and remove mandatory praise while retaining rubric weights and the pass threshold.
+sync_status: Local implementation checkpoint. No production roadmap row claimed. Deterministic synthetic fixtures and mocked provider/client tests are being verified; final results belong in the drive implementation receipt. No merge, deployment or live grading authorized by this checkpoint.
