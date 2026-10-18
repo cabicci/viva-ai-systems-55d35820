@@ -108,6 +108,8 @@ jobs:
           bunx vitest run src/lib/academic-education src/components/academic-education
           bunx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --lib ES2022,DOM --skipLibCheck --allowImportingTsExtensions scripts/billing/account-edge-runtime.d.ts supabase/functions/academic-stripe-checkout/index.ts
           node scripts/academic-integration/check-audit-revision.mjs --check
+          node scripts/academic-integration/check-completion-revision.mjs --check
+          node --test scripts/academic-integration/completion-revision.test.mjs
           bun run scripts/academic-integration/import.ts --check-source
 
       - name: Learning lines and shared navigation (isolated clients)

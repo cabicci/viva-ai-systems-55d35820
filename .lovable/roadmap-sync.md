@@ -482,3 +482,8 @@ Hook questions now specify early retention loss among suitable viewers; thumbnai
 ### Audit91 — reality-check test plans (2026-10-18)
 
 Retain five-idea screening and two selections. Each selected idea now has metric/unit, period, comparison and actual values or labeled fictional/data-gap evidence, then one change for a weak signal and a comparable retest of the same idea. No publication required. Preserve60/40 weights and quiz options/key1. Core, glossary and canonical structured intents qualify signals/small data as provisional guidance rather than proven usefulness; synchronize Egyptian prompt/template. Draft source only; language/live acceptance pending.
+
+
+### Academic audit17–21/26–30 — eleven written content revisions (2026-10-18)
+
+Complete scoped Gulf/EG/MSA/English paragraphs, worked examples and FAQ fields. Restore Gulf evidence-review steps without generalizing3-of5 interviews, supply eight explicitly fictional MSA observations with supporting case records without completed classifications, fix the prevention option while preserving key1, correct stakeholder harm perspective, and show fixed-volume price/profit/collection arithmetic. Keep all unrelated lesson fields and first four audit arithmetic corrections. Eleven exact before/after records and manifest fingerprints; original PDF/workstream identities preserved. Seven isolated PGlite tests pass for atomic/idempotent guarded SQL, inactive-course/assistant requirements and mismatch/approval/missing-row refusal. No actual database write; independent content/workbook/media/live acceptance pending.
