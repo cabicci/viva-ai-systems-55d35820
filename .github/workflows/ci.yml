@@ -82,6 +82,8 @@ jobs:
           src/lib/__tests__/central1-auth-integration.test.tsx
           src/lib/__tests__/invitation-auth-forms.test.tsx
           src/lib/__tests__/recovery-return-context.test.tsx
+          src/lib/__tests__/admin-locale-return.test.ts
+          src/lib/__tests__/ssr-admin-auth.test.ts
           src/lib/__tests__/learner-route-guard.test.ts
           src/lib/kids/auth-intent.test.ts
           src/lib/__tests__/locale-auth.test.ts

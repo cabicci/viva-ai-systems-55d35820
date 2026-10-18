@@ -320,3 +320,10 @@ source: direct owner authorization to continue audited corrections
 scope: login recovery links, reset-email redirect context, recovery login links and successful reset return
 summary: Reuse one validated local navigation boundary after login/reset; preserve supported locale and exact allowed lesson/catalogue destination. Carry only navigation context, excluding email/payment hints from links. Keep Kids-family intent and existing payment login priority. Invalid/external destinations fall back to dashboard. Recovery titles use active locale.
 sync_status: Synthetic email/password clients and renderer regressions added to CI; no real email request, password change, merge or publication.
+## 2026-10-18 — admin locale and exact build-log return (item 155)
+
+[roadmap:local-batch-admin-locale-return-20261018]
+source: direct owner authorization to continue audited corrections
+scope: shared admin beforeLoad redirect context and the exact /build-logs authentication destination
+summary: Consume route context, validate supported locale, and retain it for login/dashboard denial redirects. Only an exact /build-logs request receives that fixed return destination; query-supplied return values are ignored. Login re-enters the unchanged mandatory server admin check. Every existing protected payload/action still asserts server authorization.
+sync_status: Added mocked server-outcome tests and existing SSR admin suite to CI; no live session expiry, role/account change, merge or publication.

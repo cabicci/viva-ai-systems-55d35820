@@ -1,6 +1,24 @@
 import { redirect } from "@tanstack/react-router";
 import { assertAdminAccess } from "@/lib/admin.functions";
 import { isRedirect } from "@/lib/auth-route-guard";
+import { parseRecoveryIntentSearch } from "@/lib/auth-return";
+
+type AdminRouteContext = {
+  location?: { pathname?: string; search?: unknown };
+};
+
+function adminRedirectSearch(context?: AdminRouteContext, login = false) {
+  const raw = context?.location?.search;
+  const { locale } = parseRecoveryIntentSearch(
+    raw && typeof raw === "object" ? (raw as Record<string, unknown>) : {},
+  );
+  return {
+    ...(locale ? { locale } : {}),
+    ...(login && context?.location?.pathname === "/build-logs"
+      ? { returnTo: "/build-logs" as const }
+      : {}),
+  };
+}
 
 export type AdminBeforeLoadDecision =
   | { type: "allow" }
@@ -23,9 +41,16 @@ export function decideAdminBeforeLoad(
   return { type: "allow" };
 }
 
-function applyAdminBeforeLoadDecision(decision: AdminBeforeLoadDecision): void {
+function applyAdminBeforeLoadDecision(
+  decision: AdminBeforeLoadDecision,
+  context?: AdminRouteContext,
+): void {
   if (decision.type === "redirect") {
-    throw redirect({ to: decision.to, replace: true });
+    throw redirect({
+      to: decision.to,
+      search: adminRedirectSearch(context, decision.to === "/login"),
+      replace: true,
+    });
   }
 }
 
@@ -40,15 +65,16 @@ function applyAdminBeforeLoadDecision(decision: AdminBeforeLoadDecision): void {
  * - Missing / invalid / expired identity → /login
  * Client AdminGate remains defense in depth only.
  */
-export async function requireAdminBeforeLoad() {
+export async function requireAdminBeforeLoad(context?: AdminRouteContext) {
   try {
     const res = await assertAdminAccess();
     applyAdminBeforeLoadDecision(
       decideAdminBeforeLoad({ status: "authorized", isAdmin: res.isAdmin }),
+      context,
     );
   } catch (err) {
     if (isRedirect(err)) throw err;
-    applyAdminBeforeLoadDecision(decideAdminBeforeLoad({ status: "unauthorized" }));
+    applyAdminBeforeLoadDecision(decideAdminBeforeLoad({ status: "unauthorized" }), context);
   }
 }
 
