@@ -173,7 +173,9 @@ export function ContactForm() {
       onSubmit={handleSubmit}
       ref={formRef}
       onChange={(event) => {
-        const field = (event.target as HTMLInputElement).name as ContactField;
+        const target = event.target;
+        if (!(target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target instanceof HTMLSelectElement)) return;
+        const field = target.name as ContactField;
         if (fieldErrors[field]) setFieldErrors((previous) => ({ ...previous, [field]: undefined }));
       }}
       noValidate
