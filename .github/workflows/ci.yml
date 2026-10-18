@@ -71,7 +71,7 @@ jobs:
         run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
 
       - name: Reviewed quiz actions and risk-qualified mission contracts
-        run: bunx vitest run src/lib/__tests__/reviewed-quiz-actions.test.ts
+        run: bunx vitest run src/lib/__tests__/reviewed-quiz-actions.test.ts src/lib/__tests__/adapt-package-to-live-quiz.test.ts
 
       - name: Restored guided missions (isolated clients, no submissions)
         run: bunx vitest run src/lib/__tests__/restored-guided-missions.test.tsx

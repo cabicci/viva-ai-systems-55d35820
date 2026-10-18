@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Building Tools vs. Knowing Where Time Goes",
-      "contentMarkdown": "| Building Without Audit | Audit First |\n|-------------------|-------------|\n| Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time | Count: Welcome email × 20 clients × 3 minutes = 1 hour daily. First **Flow** = automatic welcome email. Save 5 hours weekly |",
+      "contentMarkdown": "| Building Without Audit | Audit First |\n|---|---|\n| Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time | Illustrative count: 20 clients × 3 minutes = 60 minutes of work per day. Assuming five workdays, that is 5 hours/week of theoretically replaceable work before monitoring, maintenance, exceptions and remaining manual steps. Measure the realized net saving rather than promising the full five hours. |",
       "bullets": [],
       "tables": [
         {
@@ -63,7 +63,7 @@
           "rows": [
             [
               "Opening Make and building 3 **Flows** — but **still** sending welcome emails manually for an hour daily — automation is not about the task that wastes time",
-              "Count: Welcome email × 20 clients × 3 minutes = 1 hour daily. First **Flow** = automatic welcome email. Save 5 hours weekly"
+              "Illustrative count: 20 clients × 3 minutes = 60 minutes of work per day. Assuming five workdays, that is 5 hours/week of theoretically replaceable work before monitoring, maintenance, exceptions and remaining manual steps. Measure the realized net saving rather than promising the full five hours."
             ]
           ]
         }
@@ -175,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.\n- **You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.\n- **Next:** **Systems View** — how any repetitive task turns into a system (Operator → Process → Outcome).",
+      "contentMarkdown": "- **Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.\n- **You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.\n- **Next:** **Systems View** — how any repetitive task turns into a system (Trigger → Process → Output).",
       "bullets": [
         "**Understood:** **Automator** = virtual worker that saves time — but you need to know **which repetitive tasks** take up your time first.",
         "**You can:** List 5 tasks with their weekly time — ready to choose the **first automation**.",
-        "**Next:** **Systems View** — how any repetitive task turns into a system (Operator → Process → Outcome)."
+        "**Next:** **Systems View** — how any repetitive task turns into a system (Trigger → Process → Output)."
       ],
       "tables": []
     }

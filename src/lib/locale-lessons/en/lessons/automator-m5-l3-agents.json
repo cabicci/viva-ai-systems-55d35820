@@ -49,22 +49,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Understanding Agents",
-      "contentMarkdown": "> **Quiz key:**\n\nFixed Workflow with many conditions for every possibility.\nAn Agent with a clear goal and specific tools, with a limit that prevents sending without approval.\nAn **Agent** open with all tools to be 'smart'.\n\n**Explanation:** The correct answer is based on the context provided.",
+      "contentMarkdown": "**Question:** Support requests require a changing sequence of lookups as new details emerge. The goal is to draft a useful reply using only FAQ lookup and read-only order-status lookup. The draft must not be sent without customer consent and human approval. Which design fits this goal-directed choice of steps?\n\n1. Make every request follow the same predetermined sequence, regardless of new details.\n2. Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.\n3. Give an agent access to all tools and let it send replies without the stated approvals.\n\n**Explanation:** The bounded agent can choose changing steps toward the stated goal. A fixed workflow fits a known route but this option ignores changing details; opening all tools violates the stated permissions and sending rule. These boundaries still need validation and oversight and do not guarantee absolute safety.",
       "bullets": [
-        "Fixed Workflow with many conditions for every possibility.",
-        "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval.",
-        "An Agent open with all tools to be 'smart'."
+        "Make every request follow the same predetermined sequence, regardless of new details.",
+        "Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.",
+        "Give an agent access to all tools and let it send replies without the stated approvals."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 1,
         "options": [
-          "Fixed Workflow with many conditions for every possibility.",
-          "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval.",
-          "An Agent open with all tools to be 'smart'."
+          "Make every request follow the same predetermined sequence, regardless of new details.",
+          "Use an agent with the stated goal, the two allowed tools and the consent/approval boundary.",
+          "Give an agent access to all tools and let it send replies without the stated approvals."
         ],
-        "explanation": "The correct answer is based on the context provided.",
-        "question": "What is the most suitable option according to the section above?"
+        "explanation": "The bounded agent can choose changing steps toward the stated goal. A fixed workflow fits a known route but this option ignores changing details; opening all tools violates the stated permissions and sending rule. These boundaries still need validation and oversight and do not guarantee absolute safety.",
+        "question": "Support requests require a changing sequence of lookups as new details emerge. The goal is to draft a useful reply using only FAQ lookup and read-only order-status lookup. The draft must not be sent without customer consent and human approval. Which design fits this goal-directed choice of steps?"
       }
     },
     {

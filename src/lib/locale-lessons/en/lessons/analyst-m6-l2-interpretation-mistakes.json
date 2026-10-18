@@ -38,22 +38,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Common Errors in Interpretation",
-      "contentMarkdown": "> **Quiz:**\n\nCorrelation ≠ Causation — there could be a third reason (time of day, type of customers).\nAnalysis Paralysis — delays in decision-making.\nVanity Metric — likes are not important.\n\n**Explanation:** The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
+      "contentMarkdown": "**Question:** A café notices higher morning sales on days with quiet music. The manager concludes that the music caused the rise and decides to play it permanently, without checking other differences. Which interpretation trap is present?\n\n1. Treating an observed association between music and sales as proven causation.\n2. Delaying a decision because the team keeps requesting more analysis.\n3. Replacing sales outcomes with a count of social-media likes.\n\n**Explanation:** Music and sales varied together, but morning timing or customer mix may explain the association. Sales are an outcome here, not a likes metric, and the manager acted rather than delaying. Compare equivalent conditions or plan a small controlled test before attributing the change to music.",
       "bullets": [
-        "Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
-        "Analysis Paralysis — delays in decision-making.",
-        "Vanity Metric — likes are not important."
+        "Treating an observed association between music and sales as proven causation.",
+        "Delaying a decision because the team keeps requesting more analysis.",
+        "Replacing sales outcomes with a count of social-media likes."
       ],
       "tables": [],
       "quiz": {
         "correctIndex": 0,
         "options": [
-          "Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
-          "Analysis Paralysis — delays in decision-making.",
-          "Vanity Metric — likes are not important."
+          "Treating an observed association between music and sales as proven causation.",
+          "Delaying a decision because the team keeps requesting more analysis.",
+          "Replacing sales outcomes with a count of social-media likes."
         ],
-        "explanation": "The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
-        "question": "What is the most appropriate option based on the section above?"
+        "explanation": "Music and sales varied together, but morning timing or customer mix may explain the association. Sales are an outcome here, not a likes metric, and the manager acted rather than delaying. Compare equivalent conditions or plan a small controlled test before attributing the change to music.",
+        "question": "A café notices higher morning sales on days with quiet music. The manager concludes that the music caused the rise and decides to play it permanently, without checking other differences. Which interpretation trap is present?"
       }
     },
     {
