@@ -7,7 +7,7 @@
   "productionRoute": "/learn/automator/automator-m4-l2-webhooks-api",
   "titleEn": "Webhooks & APIs",
   "title": "Webhooks & APIs",
-  "summary": "API = you ask; Webhook = they notify you — instant events require webhooks.",
+  "summary": "API = you request data; Webhook = an event-driven notification, with possible delivery and processing delay.",
   "estimatedMinutes": 12,
   "nextLessonId": "automator-m4-l3-error-handling",
   "sections": [
@@ -40,20 +40,21 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "API = You Ask. Webhook = They Notify You",
-      "contentMarkdown": "- **API:** You send a request — \"Give me today's requests.\" You initiate it.\n- **Webhook:** The other application sends — \"New request now!\" — as soon as the event occurs.\n- **Payload** = the data inside the message: name, amount, date.\n- In Make and n8n, there are ready-made **nodes** — no coding required.",
+      "contentMarkdown": "- **API:** You send a request — \"Give me today's requests.\" You initiate it.\n- **Webhook:** The provider sends an event notification instead of waiting for repeated polling. Delivery is often fast, but network and processing delays can occur.\n- **Payload** = the data inside the message: name, amount, date.\n- In Make and n8n, there are ready-made **nodes** — no coding required.\n- A notification can be delayed, retried or delivered more than once. Record its event ID, check the previous outcome and avoid repeating an already completed effect.",
       "bullets": [
         "**API:** You send a request — \"Give me today's requests.\" You initiate it.",
-        "**Webhook:** The other application sends — \"New request now!\" — as soon as the event occurs.",
+        "**Webhook:** The provider sends an event notification instead of waiting for repeated polling. Delivery is often fast, but network and processing delays can occur.",
         "**Payload** = the data inside the message: name, amount, date.",
-        "In Make and n8n, there are ready-made **nodes** — no coding required."
+        "In Make and n8n, there are ready-made **nodes** — no coding required.",
+        "A notification can be delayed, retried or delivered more than once. Record its event ID, check the previous outcome and avoid repeating an already completed effect."
       ],
       "tables": []
     },
     {
       "role": "Comparison",
       "heading": "Comparison",
-      "subtitle": "Polling Every Minute vs. Instant Notification",
-      "contentMarkdown": "| Polling — Asks Every Minute | Webhook — Notifies You |\n|-------------------------|-------------------|\n| Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed. | The site sends immediately upon payment: name + amount + email. **Workflow** operates in the same second. |",
+      "subtitle": "Polling vs. Event-Driven Notification",
+      "contentMarkdown": "| Polling — Asks Every Minute | Webhook — Notifies You |\n|---|---|\n| Polling checks at a chosen interval; detection may wait until the next check. | When supported, the payment provider sends an event notification. Delivery or processing may be delayed, retried or duplicated; the workflow is not guaranteed to run in the same second. |",
       "bullets": [],
       "tables": [
         {
@@ -63,8 +64,8 @@
           ],
           "rows": [
             [
-              "Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed.",
-              "The site sends immediately upon payment: name + amount + email. **Workflow** operates in the same second."
+              "Polling checks at a chosen interval; detection may wait until the next check.",
+              "When supported, the payment provider sends an event notification. Delivery or processing may be delayed, retried or duplicated; the workflow is not guaranteed to run in the same second."
             ]
           ]
         }
@@ -74,7 +75,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two Terms for Communication",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Webhook** | Instant notification when an event occurs | Customer paid → the site sends a webhook to automation |\n| **Payload** | The data inside the message | `{ name, amount, email }` |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---|---|---|\n| **Webhook** | Event-driven notification; delivery time is not guaranteed. | Customer paid → the site sends a webhook to automation |\n| **Payload** | The data inside the message | `{ name, amount, email }` |",
       "bullets": [],
       "tables": [
         {
@@ -86,7 +87,7 @@
           "rows": [
             [
               "**Webhook**",
-              "Instant notification when an event occurs",
+              "Event-driven notification; delivery time is not guaranteed.",
               "Customer paid → the site sends a webhook to automation"
             ],
             [
@@ -109,21 +110,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** You want a welcome message immediately when the customer pays. What is the best option?\n\nWebhook from the payment gateway — notifies you at the moment of payment.\n- **Explanation:** An instant event requires a webhook. Polling is slow and costly.",
+      "contentMarkdown": "**Question:** The payment provider supports event webhooks. You want to react to a successful payment without waiting for periodic polling. Which design best fits?\n\n1. Use the provider's payment webhook and handle delayed, retried or duplicate events.\n2. Check for payments once a day, even though the design needs event-driven responses.\n3. Wait for a staff member to review all payments at the end of each week.\n\n**Explanation:** The supported webhook is preferred for event-driven notification. It does not guarantee same-second delivery or execution; handle retries and duplicates.",
       "bullets": [
-        "Webhook from the payment gateway — notifies you at the moment of payment.",
-        "Explanation: An instant event requires a webhook. Polling is slow and costly."
+        "Use the provider's payment webhook and handle delayed, retried or duplicate events.",
+        "Check for payments once a day, even though the design needs event-driven responses.",
+        "Wait for a staff member to review all payments at the end of each week."
       ],
       "tables": [],
       "quiz": {
-        "question": "You want a welcome message immediately when the customer pays. What is the best option?",
+        "question": "The payment provider supports event webhooks. You want to react to a successful payment without waiting for periodic polling. Which design best fits?",
         "correctIndex": 0,
         "options": [
-          "Webhook from the payment gateway — notifies you at the moment of payment.",
-          "An unsuitable option; ignores the key details from the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Use the provider's payment webhook and handle delayed, retried or duplicate events.",
+          "Check for payments once a day, even though the design needs event-driven responses.",
+          "Wait for a staff member to review all payments at the end of each week."
         ],
-        "explanation": "An instant event requires a webhook. Polling is slow and costly."
+        "explanation": "The supported webhook is preferred for event-driven notification. It does not guarantee same-second delivery or execution; handle retries and duplicates."
       }
     },
     {
