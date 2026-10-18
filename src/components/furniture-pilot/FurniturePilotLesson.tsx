@@ -70,6 +70,7 @@ export function FurniturePilotLesson({
   const journeyCopy = getTechnicalCopy(locale);
   const { progress, update: save } = useTechnicalProgress();
   const [error, setError] = useState(false);
+  const [busy, setBusy] = useState(false);
   const [quizResult, setQuizResult] = useState<QuizResult | null>(null);
   const [practicePassed, setPracticePassed] = useState(false);
   const stored = progress["M04-L02"];
@@ -106,10 +107,14 @@ export function FurniturePilotLesson({
   const taskResults = checkAssignment(task);
   const taskPassed = taskSubmitted && practicePassed;
   const quizPassed = quizSubmitted && quiz.passed;
+  const effectiveQuizPassed = quizPassed || stored?.quizPassed === true;
+  const effectivePracticePassed = taskPassed || stored?.practiceReviewed === true;
+  const allQuizAnswered = copy.quiz.every((question) => {
+    const answer = answers[question.id];
+    return Number.isInteger(answer) && answer >= 0 && answer < question.options.length;
+  });
   const completed =
-    Number(stored?.read === true) +
-    Number(quizPassed || stored?.quizPassed === true) +
-    Number(taskPassed || stored?.practiceReviewed === true);
+    Number(stored?.read === true) + Number(effectiveQuizPassed) + Number(effectivePracticePassed);
   const update = (
     _id: string,
     patch: { read?: boolean; quizPassed?: boolean; practiceReviewed?: boolean },
@@ -122,17 +127,27 @@ export function FurniturePilotLesson({
     void save({ id: "M04-L02", locale, action }).catch(() => setError(true));
   };
   const submitQuiz = async () => {
+    if (busy) return;
+    setError(false);
+    if (!allQuizAnswered) return;
+    setBusy(true);
     try {
       const result = await technicalCommand<QuizResult>("quiz", "M04-L02", locale, { answers });
       if (!result.allowed) throw new Error("Access");
       setQuizResult(result);
       setQuizSubmitted(true);
       await save({ id: "M04-L02", locale, action: "refresh" });
+      setError(false);
     } catch {
       setError(true);
+    } finally {
+      setBusy(false);
     }
   };
   const submitPractice = async () => {
+    if (busy) return;
+    setBusy(true);
+    setError(false);
     try {
       const result = await technicalCommand<{ allowed: boolean; passed: boolean }>(
         "practice",
@@ -144,8 +159,11 @@ export function FurniturePilotLesson({
       setPracticePassed(result.passed);
       setTaskSubmitted(true);
       await save({ id: "M04-L02", locale, action: "refresh" });
+      setError(false);
     } catch {
       setError(true);
+    } finally {
+      setBusy(false);
     }
   };
   const [taskEdited, setTaskEdited] = useState(false);
@@ -227,10 +245,10 @@ export function FurniturePilotLesson({
                 {stored?.read ? "✓" : "○"} {c.reading}
               </li>
               <li>
-                {quizPassed ? "✓" : "○"} {c.quiz}
+                {effectiveQuizPassed ? "✓" : "○"} {c.quiz}
               </li>
               <li>
-                {taskPassed ? "✓" : "○"} {c.assignment}
+                {effectivePracticePassed ? "✓" : "○"} {c.assignment}
               </li>
             </ul>
             <p className="mt-4 text-xs leading-6 text-muted-foreground">{c.progressNote}</p>
@@ -499,10 +517,12 @@ export function FurniturePilotLesson({
                       >
                         <input
                           type="radio"
+                          disabled={busy}
                           name={question.id}
                           value={optionIndex}
                           checked={answers[question.id] === optionIndex}
                           onChange={() => {
+                            setError(false);
                             setAnswers((previous) => ({ ...previous, [question.id]: optionIndex }));
                             setQuizSubmitted(false);
                             setQuizResult(null);
@@ -520,7 +540,14 @@ export function FurniturePilotLesson({
                   )}
                 </fieldset>
               ))}
-              <Button type="submit">{c.check}</Button>
+              {!allQuizAnswered && <p id="pilot-quiz-completion">{c.quizMissing}</p>}
+              <Button
+                type="submit"
+                disabled={busy || !allQuizAnswered}
+                aria-describedby={!allQuizAnswered ? "pilot-quiz-completion" : undefined}
+              >
+                {c.check}
+              </Button>
               {quizSubmitted && (
                 <p role="status" className="rounded-xl bg-accent/20 p-4">
                   {!quiz.answered
@@ -553,7 +580,9 @@ export function FurniturePilotLesson({
                       step="any"
                       inputMode="decimal"
                       value={task[key]}
+                      disabled={busy}
                       onChange={(event) => {
+                        setError(false);
                         setTask((previous) => ({ ...previous, [key]: event.target.value }));
                         setTaskSubmitted(false);
                         setTaskEdited(true);
@@ -570,7 +599,9 @@ export function FurniturePilotLesson({
                   </label>
                 ))}
               </div>
-              <Button type="submit">{c.check}</Button>
+              <Button type="submit" disabled={busy}>
+                {c.check}
+              </Button>
               {taskPassed && (
                 <p role="status" className="rounded-xl bg-accent/20 p-4">
                   {c.practicalDone}

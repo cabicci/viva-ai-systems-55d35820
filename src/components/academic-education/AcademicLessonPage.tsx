@@ -1,5 +1,5 @@
 import { JourneyVisitRecorder } from "@/components/journey/JourneyVisitRecorder";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
@@ -102,6 +102,20 @@ function AuthorizedLesson({
     [busy, setBusy] = useState(false),
     [error, setError] = useState(false),
     [saved, setSaved] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const previousTab = useRef(tab);
+  useEffect(() => {
+    if (previousTab.current === tab) return;
+    previousTab.current = tab;
+    const section = sectionRef.current;
+    if (!section) return;
+    const top = section.getBoundingClientRect().top;
+    // Leave an already visible panel in place; long-reading transitions may
+    // otherwise keep its new instructions above the sticky site header.
+    if (top < 96 || top > window.innerHeight - 80) {
+      section.scrollIntoView?.({ block: "start", behavior: "auto" });
+    }
+  }, [tab]);
   const progress = useQuery({
     queryKey: ["academic-progress", user?.id, courseId, lesson.id, locale],
     queryFn: () =>
@@ -192,6 +206,7 @@ function AuthorizedLesson({
                     setError(false);
                   }}
                   aria-pressed={key === tab}
+                  aria-controls="academic-lesson-section"
                   className={`rounded-xl p-3 text-start font-bold ${key === tab ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
                 >
                   {label}
@@ -205,7 +220,9 @@ function AuthorizedLesson({
           </section>
         </aside>
         <section
-          className="min-w-0 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
+          ref={sectionRef}
+          id="academic-lesson-section"
+          className="min-w-0 scroll-mt-24 space-y-6 rounded-3xl border bg-card p-5 md:p-8"
           aria-label={labels[tab]}
         >
           {error && (
@@ -381,19 +398,23 @@ function AuthorizedLesson({
               )}
             </>
           )}
-          {tab === "assistant" && (delivery.assistantAllowed ? (
-            <AcademicAssistantPanel key={`${courseId}:${lesson.id}:${locale}`}
-              courseId={courseId} lessonId={lesson.id} locale={locale} />
-          ) : (
-            <p className="leading-8">
-              {en
-                ? "The assistant for this course requires separate access and activation."
-                : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
-            </p>
-          ))}
+          {tab === "assistant" &&
+            (delivery.assistantAllowed ? (
+              <AcademicAssistantPanel
+                key={`${courseId}:${lesson.id}:${locale}`}
+                courseId={courseId}
+                lessonId={lesson.id}
+                locale={locale}
+              />
+            ) : (
+              <p className="leading-8">
+                {en
+                  ? "The assistant for this course requires separate access and activation."
+                  : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
+              </p>
+            ))}
         </section>
       </div>
     </>
   );
 }
-

@@ -62,6 +62,51 @@ beforeEach(() => {
   );
 });
 afterEach(() => cleanup());
+it("reveals a changed section hidden above the header and keeps practice drafts", async () => {
+  const originalScroll = Element.prototype.scrollIntoView;
+  const scroll = vi.fn();
+  Element.prototype.scrollIntoView = scroll;
+  const rect = vi
+    .spyOn(Element.prototype, "getBoundingClientRect")
+    .mockReturnValue(new DOMRect(0, -3000, 800, 900));
+  try {
+    setup();
+    await screen.findByText("Paid lesson explanation");
+    expect(scroll).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
+    await waitFor(() => expect(scroll).toHaveBeenCalledWith({ block: "start", behavior: "auto" }));
+    fireEvent.click(screen.getByRole("button", { name: "Practice", exact: true }));
+    fireEvent.change(screen.getByRole("textbox"), {
+      target: { value: "Unsent preserved practice" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: "Practice", exact: true }));
+    expect(screen.getByRole("textbox")).toHaveValue("Unsent preserved practice");
+    expect(
+      state.command.mock.calls.every(([action]) => ["lesson", "status"].includes(action)),
+    ).toBe(true);
+  } finally {
+    rect.mockRestore();
+    Element.prototype.scrollIntoView = originalScroll;
+  }
+});
+it("does not scroll an already visible section on navigation", async () => {
+  const originalScroll = Element.prototype.scrollIntoView;
+  const scroll = vi.fn();
+  Element.prototype.scrollIntoView = scroll;
+  const rect = vi
+    .spyOn(Element.prototype, "getBoundingClientRect")
+    .mockReturnValue(new DOMRect(0, 200, 800, 300));
+  try {
+    setup();
+    await screen.findByText("Paid lesson explanation");
+    fireEvent.click(screen.getByRole("button", { name: "Downloads", exact: true }));
+    expect(scroll).not.toHaveBeenCalled();
+  } finally {
+    rect.mockRestore();
+    Element.prototype.scrollIntoView = originalScroll;
+  }
+});
 it("does not fetch lesson bodies when signed out", async () => {
   state.user = null;
   setup();

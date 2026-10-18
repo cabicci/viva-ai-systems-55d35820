@@ -284,3 +284,10 @@ source: direct owner authorization to continue the remaining audited corrections
 scope: signup/recovery label associations, mobile menu close label, account day wording and signup context/policy navigation
 summary: Associate only the two affected labels; localize the shared menu close control through its caller; use the singular day key for count 1 while preserving other values; expose same-locale policy links in separate tabs so form state remains; explain the platform-wide account without promising paid content access.
 sync_status: Local implementation only. Existing authentication and submission handlers are preserved. No new consent requirement, recovery message, registration, account-value change, merge or publication. Validation and review records are retained on the shared drive.
+## 2026-10-18 — technical activity state and academic section visibility (items 124, 125, 156)
+
+[roadmap:local-batch-technical-academic-ui-20261018]
+source: direct owner authorization to continue audited corrections
+scope: existing cabinet lesson quiz/practice UI and academic section navigation
+summary: Block incomplete technical quiz submissions with completion guidance, clear stale UI errors on edits and successful retries, and prevent duplicate pending submissions. Use trusted saved activity success consistently in counts and sidebar marks without inventing scores or answers. Reveal an academic section hidden above the sticky header after navigation, leave already visible content in place, and preserve the controlled practice draft.
+sync_status: Isolated component regressions and CI validation in progress. No production activity submitted, no database schema or server grading change, and no merge/publication. Responsive live verification remains pending the owner's publication.
