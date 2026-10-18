@@ -825,6 +825,89 @@
           "after": "\"Your goal is to reduce manual time spent on repeated post-sale customer follow-ups. Which supporting path best fits this goal?\""
         }
       ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+      "auditItems": [
+        143
+      ],
+      "currentSha256": "a7920dd5938fee24c5fa6e37b87012158289483468abd47b6166fc47ea419bee",
+      "currentBlob": "46fbe2971c3388485bddeba2918a46afdf38365c",
+      "generationSourceSha256": "c74dd814fb8b1414e43725e3624f5f5eccf4de40c107b5674e5205d28e8d5e3d",
+      "generationSourceBlob": "ab62cb16c9ac2d14a17ba555e52e675f9798840c",
+      "replacements": [
+        {
+          "field": "sections.3.contentMarkdown",
+          "before": "\"| Email Only | Record + Email |\\n|----------|------------|\\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic.\"",
+          "after": "\"| Email Only | Record + Email |\\n|---|---|\\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence. |\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.1",
+          "before": "\"The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic.\"",
+          "after": "\"The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+      "auditItems": [
+        144
+      ],
+      "currentSha256": "2b755c9917044f4429a158ad12413c93396a953b6b9e80f470382887f5e5ae36",
+      "currentBlob": "d3a6d603ed933b61a7ee040ada92311da02c6d33",
+      "generationSourceSha256": "13533a2ec8328a7321fd550da53147204188ed962e365a247ac8c271e706a786",
+      "generationSourceBlob": "21ea5c4386e982762f474d23fcc81da031ffd099",
+      "replacements": [
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\"",
+          "after": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\""
+        },
+        {
+          "field": "sections.2.bullets.3",
+          "before": "\"**Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\"",
+          "after": "\"**Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/automator-m2-l1-systems-view.json",
+      "auditItems": [
+        144
+      ],
+      "currentSha256": "2f0d62c6eb88827608611b5e3be2f5de01171a4785358f0868ecd99c87927655",
+      "currentBlob": "bfffaf8f5ec6ab20782b8a111a703368a48ca6c3",
+      "generationSourceSha256": "2438e1070d91a22e481d2a0c741b6bc2fe72bcf3e66acdb58201e5994851f9ca",
+      "generationSourceBlob": "7c27f0a73b26dd5d55b9a0393bb697b97855f19a",
+      "replacements": [
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد.\\n\\nالعملية (Process): إيه الخطوات اللي بتمشي كل مرة؟ — تفهم الطلب، تدوّر السعر، تاخد قرار.\\n\\nالنتيجة (Output): إيه اللي بيطلع في الآخر؟ — رد للعميل، صف في شيت، تذكير.\\n\\nمثال: «رد على استفسار واتساب» = مُشغّل: رسالة → عملية: فهم + بحث سعر → نتيجة: رد + تسجيل.\\n\\nلما تفكّك المهمة كده، العامل الافتراضي يعرف يشتغل فين بالظبط.\"",
+          "after": "\"المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد.\\n\\nالعملية (Process): إيه الخطوات اللي بتمشي كل مرة؟ — تفهم الطلب، تدوّر السعر، تاخد قرار.\\n\\nالنتيجة (Output): إيه اللي بيطلع في الآخر؟ — رد للعميل، صف في شيت، تذكير.\\n\\nمثال مكتوب — تصميم بس: المُشغّل: استفسار واتساب داخل. العملية: ١) افهم الاستفسار؛ ٢) اتأكد من البيانات المطلوبة؛ ٣) راجع السعر المعتمد؛ ٤) ابعت الرد المتفق عليه وسجّل النتيجة. المخرجات: الرد للعميل وسجل النتيجة. اكتب تصميم الأربع خطوات؛ التمرين مش محتاج تشغيل أتمتة أو إرسال رسالة حقيقية.\\n\\nلما تفكّك المهمة كده، العامل الافتراضي يعرف يشتغل فين بالظبط.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+      "auditItems": [
+        144
+      ],
+      "currentSha256": "7420c91d44c6c839786e733030789934f37544733b0fe94438eef1a5b16e530d",
+      "currentBlob": "c09bb37d804e10f5c2a69697cecf6c667b9be83e",
+      "generationSourceSha256": "836d7663ec31f6b533b44e4779df39e0904c63b370d5c7ee138a9b5e61798c71",
+      "generationSourceBlob": "bb150c2eff6ba7bc08d9edd3490b3bf143475e3b",
+      "replacements": [
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"- **المُشغّل (Trigger):** وش اللي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدد.\\n- **العملية (Process):** وش الخطوات اللي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرار.\\n- **النتيجة (Output):** وش اللي يخرج في النهاية؟ — رد للعميل، صف في جدول، تذكير.\\n- **مثال:** «رد على استفسار واتساب» = مُشغّل: رسالة → عملية: فهم + بحث سعر → نتيجة: رد + تسجيل.\\n- لما تفكك المهمة كذا، يعرف العامل الافتراضي وين يشتغل بالضبط.\"",
+          "after": "\"- **المُشغّل (Trigger):** وش اللي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدد.\\n- **العملية (Process):** وش الخطوات اللي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرار.\\n- **النتيجة (Output):** وش اللي يخرج في النهاية؟ — رد للعميل، صف في جدول، تذكير.\\n- **مثال مكتوب — تصميم فقط:** المُشغّل: استفسار وارد على واتساب. العملية: ١) افهم الاستفسار؛ ٢) تحقق من البيانات المطلوبة؛ ٣) راجع السعر المعتمد؛ ٤) أرسل الرد المتفق عليه وسجّل النتيجة. المخرجات: رد العميل وسجل النتيجة. اكتب تصميم الخطوات الأربع؛ التمرين ما يحتاج تشغيل أتمتة أو إرسال رسالة فعلية.\\n- لما تفكك المهمة كذا، يعرف العامل الافتراضي وين يشتغل بالضبط.\""
+        },
+        {
+          "field": "sections.2.bullets.3",
+          "before": "\"**مثال:** «رد على استفسار واتساب» = مُشغّل: رسالة → عملية: فهم + بحث سعر → نتيجة: رد + تسجيل.\"",
+          "after": "\"**مثال مكتوب — تصميم فقط:** المُشغّل: استفسار وارد على واتساب. العملية: ١) افهم الاستفسار؛ ٢) تحقق من البيانات المطلوبة؛ ٣) راجع السعر المعتمد؛ ٤) أرسل الرد المتفق عليه وسجّل النتيجة. المخرجات: رد العميل وسجل النتيجة. اكتب تصميم الخطوات الأربع؛ التمرين ما يحتاج تشغيل أتمتة أو إرسال رسالة فعلية.\""
+        }
+      ]
     }
   ]
 }

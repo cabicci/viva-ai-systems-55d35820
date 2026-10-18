@@ -53,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Email Only vs Organized Record",
-      "contentMarkdown": "| Email Only | Record + Email |\n|----------|------------|\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic.",
+      "contentMarkdown": "| Email Only | Record + Email |\n|---|---|\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence. |",
       "bullets": [],
       "tables": [
         {
@@ -64,7 +64,7 @@
           "rows": [
             [
               "Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows.",
-              "The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic."
+              "The automation records a row (Name, Phone, Date) and sends the first email. The record is ready for organized follow-up. Later automated follow-ups need their own trigger or schedule and a status check before each send; saving the record and sending the first email do not create that recurring sequence."
             ]
           ]
         }
