@@ -306,3 +306,10 @@ scope: Egyptian introductory model definition/value hook, three specifically lis
 summary: Distinguish the underlying trained model from its chat application using the recorded OpenAI Academy models resource; remove only specified editorial notes while preserving mission tasks/weights. State account-backed technical progress accurately, separate reading completion from quiz correctness, avoid first-attempt accuracy promises, and present Builder as a goal-dependent option without changing access, order or prerequisites.
 reference: https://academy.openai.com/public/clubs/work-users-ynjqu/resources/models (read 2026-10-18; conceptual definition only, no model-version/default claims)
 sync_status: Scoped source edits and JSON preservation checks complete; CI review pending. No content-generation request, indexing operation, learner-data change, merge or publication.
+## 2026-10-18 — analytics and optional start locale (items 1, 154)
+
+[roadmap:local-batch-analytics-start-20261018]
+source: direct owner authorization to continue audited corrections
+scope: locale-aware learner analytics and optional five-stage start UI in four locales
+summary: Translate UI, metadata, loading/errors, duration/count labels and known path/event labels; preserve locale through dashboard navigation. Preserve analytics queries/calculations and unknown event identifiers. Start generation remains behind the explicit run button with the same ordered five calls and arguments; generated text is preserved as returned.
+sync_status: Added isolated renderer coverage using mocked queries and generation functions; CI pending. No live AI request, learner write, merge or publication.

@@ -15,18 +15,26 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Sidebar } from "@/components/dashboard/Sidebar";
+import { useLocale } from "@/lib/locale/locale-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import type { PathId } from "@/lib/curriculum-data";
+import type { SupportedLocale } from "@/lib/locale/types";
 
 export const Route = createFileRoute("/analytics")({
   beforeLoad: requireAuthBeforeLoad,
-  head: () => ({
-    meta: [
-      { title: "تحليلاتي — مسارات" },
-      {
-        name: "description",
-        content: "إحصائيات رحلتك التعليمية: التقدم، الـ streak، والمهام.",
-      },
-    ],
-  }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
+    return {
+      meta: [
+        { title: getUiString(locale, "analytics.meta.title") },
+        { name: "description", content: getUiString(locale, "analytics.meta.description") },
+      ],
+    };
+  },
   component: AnalyticsPage,
 });
 
@@ -40,37 +48,40 @@ function AnalyticsPage() {
 
 type CountMap = Record<string, number>;
 
-function fmtMinutes(totalSeconds: number) {
+function fmtMinutes(totalSeconds: number, t: (key: UiStringKey) => string) {
   const mins = Math.round(totalSeconds / 60);
-  if (mins < 60) return `${mins} د`;
+  if (mins < 60) return t("account.stats.durationMinutes").replace("{minutes}", String(mins));
   const h = Math.floor(mins / 60);
   const m = mins % 60;
-  return `${h} س ${m ? `${m} د` : ""}`.trim();
+  return t("account.stats.durationHoursMinutes")
+    .replace("{hours}", String(h))
+    .replace("{minutes}", String(m));
 }
 
-const PATH_DISPLAY_LABELS: Record<string, string> = {
-  intro: "المقدمة",
-  business: "الأعمال",
-  creator: "صناعة المحتوى",
-  analyst: "تحليل البيانات",
-  automator: "الأتمتة",
-  builder: "البناء بالـ AI",
+const DISPLAY_PATHS = new Set(["intro", "business", "creator", "analyst", "automator", "builder"]);
+
+const EVENT_DISPLAY_LABELS: Record<string, UiStringKey> = {
+  lesson_opened: "analytics.event.lessonOpened",
+  lesson_completed: "analytics.event.lessonCompleted",
+  mission_submitted: "analytics.event.missionSubmitted",
+  mission_skipped: "analytics.event.missionSkipped",
+  quiz_predicted: "analytics.event.quizPredicted",
 };
 
-const EVENT_DISPLAY_LABELS: Record<string, string> = {
-  lesson_opened: "فتح درس",
-  lesson_completed: "إكمال درس",
-  mission_submitted: "تسليم مهمة",
-  mission_skipped: "تخطي مهمة",
-  quiz_predicted: "توقع كويز",
-};
-
-function pathDisplayLabel(pathId: string) {
-  return PATH_DISPLAY_LABELS[pathId] ?? pathId;
+function pathDisplayLabel(pathId: string, locale: SupportedLocale) {
+  return DISPLAY_PATHS.has(pathId)
+    ? getCurriculumPathLabel(locale, pathId as PathId, "title")
+    : pathId;
 }
 
-function eventDisplayLabel(eventType: string) {
-  return EVENT_DISPLAY_LABELS[eventType] ?? eventType;
+function eventDisplayLabel(eventType: string, t: (key: UiStringKey) => string) {
+  return EVENT_DISPLAY_LABELS[eventType] ? t(EVENT_DISPLAY_LABELS[eventType]) : eventType;
+}
+function eventCount(count: number, t: (key: UiStringKey) => string) {
+  return t(count === 1 ? "analytics.eventCountOne" : "analytics.eventCount").replace(
+    "{count}",
+    String(count),
+  );
 }
 
 function StatCard({
@@ -96,6 +107,9 @@ function StatCard({
 }
 
 function AnalyticsContent() {
+  const { locale, dir } = useLocale();
+  const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
   const { user } = useAuth();
   const userId = user!.id;
 
@@ -105,35 +119,24 @@ function AnalyticsContent() {
     queryFn: async () => {
       const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
-      const [
-        eventsRes,
-        lessonStatusRes,
-        missionRes,
-        quizRes,
-        streakRes,
-        timeRes,
-      ] = await Promise.all([
-        supabase
-          .from("learner_events")
-          .select("event_type, path_id, created_at")
-          .gte("created_at", since),
-        supabase.from("user_lesson_status").select("status, lesson_id"),
-        supabase
-          .from("mission_submissions")
-          .select("status, mission_id, score"),
-        supabase
-          .from("lesson_quiz_attempts")
-          .select("is_correct, bloom_level, attempted_at")
-          .gte("attempted_at", since),
-        supabase
-          .from("user_streaks")
-          .select("current_streak, longest_streak, last_activity_date")
-          .maybeSingle(),
-        supabase
-          .from("user_activity_time")
-          .select("total_seconds")
-          .maybeSingle(),
-      ]);
+      const [eventsRes, lessonStatusRes, missionRes, quizRes, streakRes, timeRes] =
+        await Promise.all([
+          supabase
+            .from("learner_events")
+            .select("event_type, path_id, created_at")
+            .gte("created_at", since),
+          supabase.from("user_lesson_status").select("status, lesson_id"),
+          supabase.from("mission_submissions").select("status, mission_id, score"),
+          supabase
+            .from("lesson_quiz_attempts")
+            .select("is_correct, bloom_level, attempted_at")
+            .gte("attempted_at", since),
+          supabase
+            .from("user_streaks")
+            .select("current_streak, longest_streak, last_activity_date")
+            .maybeSingle(),
+          supabase.from("user_activity_time").select("total_seconds").maybeSingle(),
+        ]);
 
       return {
         events: eventsRes.data ?? [],
@@ -181,7 +184,10 @@ function AnalyticsContent() {
       const key = d.toISOString().slice(0, 10);
       const count = data.events.filter((e) => e.created_at?.slice(0, 10) === key).length;
       days.push({
-        label: d.toLocaleDateString("ar-EG", { day: "numeric", month: "short" }),
+        label: d.toLocaleDateString(
+          locale === "ar-MSA" ? "ar" : locale === "ar-Gulf" ? "ar-AE" : locale,
+          { day: "numeric", month: "short" },
+        ),
         count,
       });
     }
@@ -198,34 +204,33 @@ function AnalyticsContent() {
       days,
       dayMax,
     };
-  }, [data]);
+  }, [data, locale]);
 
   const currentStreak = data?.streak?.current_streak ?? 0;
   const longestStreak = data?.streak?.longest_streak ?? 0;
   const totalSeconds = Number(data?.time?.total_seconds ?? 0);
 
   return (
-    <div className="min-h-dvh bg-background flex flex-col overflow-x-clip" dir="rtl">
+    <div className="min-h-dvh bg-background flex flex-col overflow-x-clip" dir={dir}>
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-5xl mx-auto w-full min-w-0">
         <div className="mb-6">
           <Link
             to="/dashboard"
+            search={localeSearch()}
             className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground mb-3"
           >
-            <ArrowLeft className="h-3.5 w-3.5" /> رجوع للوحة
+            <ArrowLeft className="h-3.5 w-3.5" /> {t("analytics.back")}
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold mb-1 flex items-center gap-2">
-            <BarChart3 className="h-6 w-6 text-primary" /> تحليلاتي
+            <BarChart3 className="h-6 w-6 text-primary" /> {t("analytics.title")}
           </h1>
-          <p className="text-sm text-muted-foreground">
-            صورة سريعة عن رحلتك آخر ٣٠ يوم.
-          </p>
+          <p className="text-sm text-muted-foreground">{t("analytics.intro")}</p>
         </div>
 
         {isLoading || !stats ? (
           <div className="glass rounded-2xl p-8 text-center text-sm text-muted-foreground">
-            جارٍ تحميل تحليلاتك...
+            {t("analytics.loading")}
           </div>
         ) : (
           <>
@@ -233,27 +238,38 @@ function AnalyticsContent() {
             <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               <StatCard
                 icon={Flame}
-                label="السلسلة الحالية"
+                label={t("analytics.currentStreak")}
                 value={currentStreak}
-                hint={`الأطول: ${longestStreak} يوم`}
+                hint={t("analytics.longestStreak").replace(
+                  "{duration}",
+                  t(
+                    longestStreak === 1 ? "account.stats.daysUnitOne" : "account.stats.daysUnit",
+                  ).replace("{count}", String(longestStreak)),
+                )}
               />
               <StatCard
                 icon={Clock}
-                label="وقت التعلّم"
-                value={fmtMinutes(totalSeconds)}
-                hint="إجمالي تراكمي"
+                label={t("analytics.learningTime")}
+                value={fmtMinutes(totalSeconds, t)}
+                hint={t("analytics.cumulative")}
               />
               <StatCard
                 icon={BookCheck}
-                label="دروس خلّصتها"
+                label={t("analytics.completedLessons")}
                 value={stats.lessonCounts["completed"] ?? 0}
-                hint={`قيد التقدّم: ${stats.lessonCounts["in_progress"] ?? 0}`}
+                hint={t("analytics.inProgress").replace(
+                  "{count}",
+                  String(stats.lessonCounts["in_progress"] ?? 0),
+                )}
               />
               <StatCard
                 icon={Target}
-                label="المهام المنجزة"
+                label={t("analytics.completedMissions")}
                 value={stats.missionCounts["passed"] ?? 0}
-                hint={`في التقييم: ${stats.missionCounts["submitted"] ?? 0}`}
+                hint={t("analytics.evaluating").replace(
+                  "{count}",
+                  String(stats.missionCounts["submitted"] ?? 0),
+                )}
               />
             </section>
 
@@ -261,7 +277,7 @@ function AnalyticsContent() {
             <section className="glass rounded-2xl p-4 sm:p-5 border border-border/50 mb-6">
               <div className="flex items-center gap-2 mb-4">
                 <CalendarDays className="h-4 w-4 text-primary" />
-                <h2 className="text-sm font-semibold">نشاطك آخر ١٤ يوم</h2>
+                <h2 className="text-sm font-semibold">{t("analytics.activityTitle")}</h2>
               </div>
               <div className="flex items-end gap-1.5 h-32">
                 {stats.days.map((d, i) => {
@@ -271,7 +287,9 @@ function AnalyticsContent() {
                       <div
                         className="w-full rounded-t-md bg-[image:var(--gradient-primary)] transition-all"
                         style={{ height: `${Math.max(h, 4)}%`, opacity: d.count ? 1 : 0.2 }}
-                        title={`${d.label}: ${d.count} حدث`}
+                        title={t("analytics.activityTooltip")
+                          .replace("{date}", d.label)
+                          .replace("{events}", eventCount(d.count, t))}
                       />
                     </div>
                   );
@@ -289,17 +307,19 @@ function AnalyticsContent() {
               <section className="glass rounded-2xl p-4 sm:p-5 border border-border/50">
                 <div className="flex items-center gap-2 mb-3">
                   <TrendingUp className="h-4 w-4 text-primary" />
-                  <h2 className="text-sm font-semibold">دقة الكويزات (٣٠ يوم)</h2>
+                  <h2 className="text-sm font-semibold">{t("analytics.quizTitle")}</h2>
                 </div>
                 {stats.quizTotal === 0 ? (
-                  <p className="text-xs text-muted-foreground">لسه مفيش محاولات كويز.</p>
+                  <p className="text-xs text-muted-foreground">{t("analytics.noQuizzes")}</p>
                 ) : (
                   <>
                     <div className="text-3xl font-bold text-gradient mb-1">
                       {stats.quizAccuracy}%
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      {stats.quizCorrect} صح من {stats.quizTotal} محاولة
+                      {t(stats.quizTotal === 1 ? "analytics.quizResultOne" : "analytics.quizResult")
+                        .replace("{correct}", String(stats.quizCorrect))
+                        .replace("{total}", String(stats.quizTotal))}
                     </p>
                     <div className="mt-3 h-2 rounded-full bg-white/5 overflow-hidden">
                       <div
@@ -315,26 +335,27 @@ function AnalyticsContent() {
               <section className="glass rounded-2xl p-4 sm:p-5 border border-border/50">
                 <div className="flex items-center gap-2 mb-3">
                   <BarChart3 className="h-4 w-4 text-primary" />
-                  <h2 className="text-sm font-semibold">أكثر مسار نشّطت فيه</h2>
+                  <h2 className="text-sm font-semibold">{t("analytics.pathTitle")}</h2>
                 </div>
                 {Object.keys(stats.eventsByPath).length === 0 ? (
-                  <p className="text-xs text-muted-foreground">لسه مفيش نشاط مرتبط بمسار.</p>
+                  <p className="text-xs text-muted-foreground">{t("analytics.noPathActivity")}</p>
                 ) : (
                   <ul className="space-y-2">
                     {Object.entries(stats.eventsByPath)
                       .sort((a, b) => b[1] - a[1])
                       .slice(0, 5)
                       .map(([pathId, count]) => {
-                        const total = Object.values(stats.eventsByPath).reduce(
-                          (a, b) => a + b,
-                          0,
-                        );
+                        const total = Object.values(stats.eventsByPath).reduce((a, b) => a + b, 0);
                         const pct = total ? Math.round((count / total) * 100) : 0;
                         return (
                           <li key={pathId}>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="font-medium">{pathDisplayLabel(pathId)}</span>
-                              <span className="text-muted-foreground">{count} حدث · {pct}%</span>
+                              <span className="font-medium">
+                                {pathDisplayLabel(pathId, locale)}
+                              </span>
+                              <span className="text-muted-foreground">
+                                {eventCount(count, t)} · {pct}%
+                              </span>
                             </div>
                             <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                               <div
@@ -352,9 +373,9 @@ function AnalyticsContent() {
 
             {/* Event breakdown */}
             <section className="glass rounded-2xl p-4 sm:p-5 border border-border/50 mb-6">
-              <h2 className="text-sm font-semibold mb-3">تفصيل الأحداث (٣٠ يوم)</h2>
+              <h2 className="text-sm font-semibold mb-3">{t("analytics.eventTitle")}</h2>
               {Object.keys(stats.eventCounts).length === 0 ? (
-                <p className="text-xs text-muted-foreground">لسه مفيش أحداث مسجّلة.</p>
+                <p className="text-xs text-muted-foreground">{t("analytics.noEvents")}</p>
               ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                   {Object.entries(stats.eventCounts)
@@ -364,7 +385,7 @@ function AnalyticsContent() {
                         key={type}
                         className="flex justify-between rounded-lg bg-white/5 px-3 py-2"
                       >
-                        <span className="text-muted-foreground">{eventDisplayLabel(type)}</span>
+                        <span className="text-muted-foreground">{eventDisplayLabel(type, t)}</span>
                         <span className="font-semibold">{count}</span>
                       </div>
                     ))}
@@ -372,9 +393,7 @@ function AnalyticsContent() {
               )}
             </section>
 
-            <p className="text-[11px] text-muted-foreground text-center">
-              الأرقام بتتحدّث تلقائي مع كل نشاط جديد. مفيش بيانات بتتشارك مع حد تاني.
-            </p>
+            <p className="text-[11px] text-muted-foreground text-center">{t("analytics.footer")}</p>
           </>
         )}
       </main>

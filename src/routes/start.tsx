@@ -3,28 +3,43 @@ import { useState, useEffect, useRef } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, ArrowLeft, Loader2, Trophy, Route as RouteIcon } from "lucide-react";
-import { runWowPath } from "@/lib/wow-experience.functions";
 import {
-  logLearnerEvent,
-  markWowExperienceSeen,
-} from "@/lib/learner-events";
+  Hammer,
+  Palette,
+  Cog,
+  BarChart3,
+  Briefcase,
+  Compass,
+  BookOpen,
+  Check,
+  ArrowLeft,
+  Loader2,
+  Trophy,
+  Route as RouteIcon,
+} from "lucide-react";
+import { runWowPath } from "@/lib/wow-experience.functions";
+import { logLearnerEvent, markWowExperienceSeen } from "@/lib/learner-events";
 import { useAuth } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { toast } from "sonner";
+import { useLocale } from "@/lib/locale/locale-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 
 export const Route = createFileRoute("/start")({
   beforeLoad: requireAuthBeforeLoad,
-  head: () => ({
-    meta: [
-      { title: "ابدأ — تجربة سريعة | مسارات" },
-      {
-        name: "description",
-        content:
-          "تجربة اختيارية: اكتشف ما تستطيع المنصة فعله في دقيقتين قبل أن تبدأ التعلّم.",
-      },
-    ],
-  }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
+    return {
+      meta: [
+        { title: getUiString(locale, "start.meta.title") },
+        { name: "description", content: getUiString(locale, "start.meta.description") },
+      ],
+    };
+  },
   component: StartPage,
 });
 
@@ -33,11 +48,11 @@ type Step = "welcome" | "input" | "running" | "before-after" | "victory";
 // Order MUST follow the dashboard PATH_ORDER (single source of truth in curriculum-data).
 // Dashboard order: Business → Creator → Analyst → Automator → Builder
 const PATHS = [
-  { id: "business" as const,  name: "Business",  icon: Briefcase, label: "قرار + Breakdown",     manual: "أسابيع بحث", withAi: "ساعات" },
-  { id: "creator" as const,   name: "Creator",   icon: Palette,   label: "٣ Hooks ريلز",         manual: "٣–٤ أسابيع", withAi: "يوم واحد" },
-  { id: "analyst" as const,   name: "Analyst",   icon: BarChart3, label: "Insight + تقرير",      manual: "٢–٣ أسابيع", withAi: "ساعات" },
-  { id: "automator" as const, name: "Automator", icon: Cog,       label: "Workflow أتمتة",        manual: "شهر شغل",    withAi: "يومين" },
-  { id: "builder" as const,   name: "Builder",   icon: Hammer,    label: "Mini App / موقع",      manual: "٢–٣ شهور", withAi: "أيام قليلة" },
+  { id: "business" as const, icon: Briefcase },
+  { id: "creator" as const, icon: Palette },
+  { id: "analyst" as const, icon: BarChart3 },
+  { id: "automator" as const, icon: Cog },
+  { id: "builder" as const, icon: Hammer },
 ];
 
 function StartPage() {
@@ -49,33 +64,39 @@ function StartPage() {
 }
 
 function StartContent() {
+  const t = useUiString();
+  const { dir } = useLocale();
+  const localeSearch = useLocaleLinkSearch();
   const navigate = useNavigate();
   const { user } = useAuth();
   const runFn = useServerFn(runWowPath);
 
   const [step, setStep] = useState<Step>("welcome");
   const [idea, setIdea] = useState("");
-  const [results, setResults] = useState<Record<string, { status: "pending" | "loading" | "done" | "error"; text: string; error?: string }>>(
-    Object.fromEntries(PATHS.map((p) => [p.id, { status: "pending", text: "" }])) as never,
-  );
+  const [results, setResults] = useState<
+    Record<
+      string,
+      { status: "pending" | "loading" | "done" | "error"; text: string; error?: string }
+    >
+  >(Object.fromEntries(PATHS.map((p) => [p.id, { status: "pending", text: "" }])) as never);
 
-  const userName = (user?.user_metadata?.full_name as string) || (user?.email?.split("@")[0]) || "";
+  const userName = (user?.user_metadata?.full_name as string) || user?.email?.split("@")[0] || "";
 
   function skip() {
     markWowExperienceSeen();
     void logLearnerEvent({ type: "wow_skipped" });
-    navigate({ to: "/dashboard" });
+    navigate({ to: "/dashboard", search: localeSearch() });
   }
 
   function finish() {
     markWowExperienceSeen();
     void logLearnerEvent({ type: "wow_completed", metadata: { idea } });
-    navigate({ to: "/dashboard" });
+    navigate({ to: "/dashboard", search: localeSearch() });
   }
 
   async function startRunning() {
     if (idea.trim().length < 2) {
-      toast.error("اكتب فكرة قصيرة أولاً (مثال: محل ورد).");
+      toast.error(t("start.input.error"));
       return;
     }
     setStep("running");
@@ -90,25 +111,27 @@ function StartContent() {
           setResults((prev) => ({
             ...prev,
             [p.id]: out.error
-              ? { status: "error", text: "", error: out.error }
+              ? { status: "error", text: "", error: t("start.error.noResponse") }
               : { status: "done", text: out.text },
           }));
         } catch (err) {
           console.error(p.id, err);
           setResults((prev) => ({
             ...prev,
-            [p.id]: { status: "error", text: "", error: "لم يصل رد من المساعد." },
+            [p.id]: { status: "error", text: "", error: t("start.error.noResponse") },
           }));
         }
       }),
     );
   }
 
-  const allDone = PATHS.every((p) => results[p.id]?.status === "done" || results[p.id]?.status === "error");
+  const allDone = PATHS.every(
+    (p) => results[p.id]?.status === "done" || results[p.id]?.status === "error",
+  );
   const successCount = PATHS.filter((p) => results[p.id]?.status === "done").length;
 
   return (
-    <div dir="rtl" className="min-h-dvh grid-bg relative overflow-hidden">
+    <div dir={dir} className="min-h-dvh grid-bg relative overflow-hidden">
       <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
       <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-accent/20 blur-[120px] animate-pulse-glow" />
 
@@ -118,66 +141,77 @@ function StartContent() {
           onClick={skip}
           className="absolute top-4 left-4 z-20 text-sm text-muted-foreground hover:text-foreground transition"
         >
-          تخطّى →
+          {t("start.skip")}
         </button>
       )}
 
       <div className="relative z-10 container mx-auto px-4 py-8 md:py-16 max-w-5xl">
-        {step === "welcome" && (
-          <WelcomeStep name={userName} onContinue={() => setStep("input")} />
-        )}
-        {step === "input" && (
-          <InputStep idea={idea} setIdea={setIdea} onContinue={startRunning} />
-        )}
+        {step === "welcome" && <WelcomeStep name={userName} onContinue={() => setStep("input")} />}
+        {step === "input" && <InputStep idea={idea} setIdea={setIdea} onContinue={startRunning} />}
         {step === "running" && (
-          <RunningStep idea={idea} results={results} allDone={allDone} onNext={() => setStep("before-after")} />
+          <RunningStep
+            idea={idea}
+            results={results}
+            allDone={allDone}
+            onNext={() => setStep("before-after")}
+          />
         )}
-        {step === "before-after" && (
-          <BeforeAfterStep onNext={() => setStep("victory")} />
-        )}
-        {step === "victory" && (
-          <VictoryStep successCount={successCount} onFinish={finish} />
-        )}
+        {step === "before-after" && <BeforeAfterStep onNext={() => setStep("victory")} />}
+        {step === "victory" && <VictoryStep successCount={successCount} onFinish={finish} />}
       </div>
     </div>
   );
 }
 
 function WelcomeStep({ name, onContinue }: { name: string; onContinue: () => void }) {
+  const t = useUiString();
   return (
     <div className="text-center py-12 md:py-24 animate-fade-up">
       <div className="inline-grid h-20 w-20 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] glow-primary mb-8">
         <Compass className="h-10 w-10 text-primary-foreground" />
       </div>
       <h1 className="text-4xl md:text-6xl font-black leading-tight">
-        أهلاً {name ? <span className="text-gradient">{name}</span> : "بك"} 👋
+        {t("start.welcome.greeting")}{" "}
+        {name ? <span className="text-gradient">{name}</span> : t("start.welcome.fallback")} 👋
       </h1>
       <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-        قبل أن تبدأ التعلّم، اعرض لك ما تفعله المنصة فعلاً.
+        {t("start.welcome.body")}
         <br />
-        <span className="text-foreground font-semibold">في أقل من دقيقتين.</span>
+        <span className="text-foreground font-semibold">{t("start.welcome.duration")}</span>
       </p>
       <Button variant="hero" size="xl" className="mt-10" onClick={onContinue}>
-        لنبدأ <ArrowLeft className="h-5 w-5" />
+        {t("start.welcome.begin")} <ArrowLeft className="h-5 w-5" />
       </Button>
-      <p className="mt-4 text-xs text-muted-foreground">
-        تجربة اختيارية — المساعد يعمل فقط بعد ضغطك أنت.
-      </p>
+      <p className="mt-4 text-xs text-muted-foreground">{t("start.welcome.optional")}</p>
     </div>
   );
 }
 
-function InputStep({ idea, setIdea, onContinue }: { idea: string; setIdea: (v: string) => void; onContinue: () => void }) {
-  const examples = ["محل ورد", "كورس انجليزي اونلاين", "تطبيق توصيل أكل", "قناة يوتيوب عن السفر"];
+function InputStep({
+  idea,
+  setIdea,
+  onContinue,
+}: {
+  idea: string;
+  setIdea: (v: string) => void;
+  onContinue: () => void;
+}) {
+  const t = useUiString();
+  const examples = [
+    t("start.example.flowers"),
+    t("start.example.course"),
+    t("start.example.delivery"),
+    t("start.example.travel"),
+  ];
   return (
     <div className="py-12 md:py-20 animate-fade-up max-w-2xl mx-auto">
-      <p className="text-primary text-sm font-bold tracking-widest text-center">السؤال الوحيد</p>
-      <h2 className="text-3xl md:text-5xl font-black text-center mt-3 leading-tight">
-        ما المشروع الذي يدور في ذهنك؟
-      </h2>
-      <p className="text-center text-muted-foreground mt-4">
-        اكتب فكرة في سطر واحد — ثم شغّل المسارات الخمسة عندما تكون جاهزاً.
+      <p className="text-primary text-sm font-bold tracking-widest text-center">
+        {t("start.input.eyebrow")}
       </p>
+      <h2 className="text-3xl md:text-5xl font-black text-center mt-3 leading-tight">
+        {t("start.input.title")}
+      </h2>
+      <p className="text-center text-muted-foreground mt-4">{t("start.input.body")}</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -189,7 +223,8 @@ function InputStep({ idea, setIdea, onContinue }: { idea: string; setIdea: (v: s
           autoFocus
           value={idea}
           onChange={(e) => setIdea(e.target.value)}
-          placeholder="مثال: محل ورد"
+          placeholder={t("start.input.placeholder")}
+          aria-label={t("start.input.title")}
           className="h-16 text-lg text-center"
           maxLength={200}
         />
@@ -205,8 +240,14 @@ function InputStep({ idea, setIdea, onContinue }: { idea: string; setIdea: (v: s
             </button>
           ))}
         </div>
-        <Button type="submit" variant="hero" size="xl" className="w-full" disabled={idea.trim().length < 2}>
-          شغّل المسارات الخمسة
+        <Button
+          type="submit"
+          variant="hero"
+          size="xl"
+          className="w-full"
+          disabled={idea.trim().length < 2}
+        >
+          {t("start.input.run")}
         </Button>
       </form>
     </div>
@@ -220,17 +261,22 @@ function RunningStep({
   onNext,
 }: {
   idea: string;
-  results: Record<string, { status: "pending" | "loading" | "done" | "error"; text: string; error?: string }>;
+  results: Record<
+    string,
+    { status: "pending" | "loading" | "done" | "error"; text: string; error?: string }
+  >;
   allDone: boolean;
   onNext: () => void;
 }) {
+  const t = useUiString();
   return (
     <div className="py-8 animate-fade-up">
       <div className="text-center mb-8">
-        <p className="text-primary text-sm font-bold tracking-widest">جاري التنفيذ</p>
+        <p className="text-primary text-sm font-bold tracking-widest">
+          {t("start.running.eyebrow")}
+        </p>
         <h2 className="text-2xl md:text-4xl font-black mt-2">
-          المسارات الخمسة تعمل على{" "}
-          <span className="text-gradient">&quot;{idea}&quot;</span>
+          {t("start.running.title")} <span className="text-gradient">&quot;{idea}&quot;</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -240,7 +286,13 @@ function RunningStep({
       </div>
       <div className="mt-10 text-center">
         <Button variant="hero" size="xl" disabled={!allDone} onClick={onNext}>
-          {allDone ? <>متابعة <ArrowLeft className="h-5 w-5" /></> : "جاري المعالجة..."}
+          {allDone ? (
+            <>
+              {t("start.continue")} <ArrowLeft className="h-5 w-5" />
+            </>
+          ) : (
+            t("start.running.processing")
+          )}
         </Button>
       </div>
     </div>
@@ -254,6 +306,8 @@ function ResultCard({
   path: (typeof PATHS)[number];
   result: { status: "pending" | "loading" | "done" | "error"; text: string; error?: string };
 }) {
+  const t = useUiString();
+  const { locale } = useLocale();
   const Icon = path.icon;
   const text = useTypewriter(result.status === "done" ? result.text : "", 12);
   return (
@@ -267,8 +321,10 @@ function ResultCard({
           <Icon className="h-5 w-5 text-primary-foreground" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-bold text-sm">{path.name}</p>
-          <p className="text-xs text-muted-foreground truncate">{path.label}</p>
+          <p className="font-bold text-sm">{getCurriculumPathLabel(locale, path.id, "title")}</p>
+          <p className="text-xs text-muted-foreground truncate">
+            {t(`start.path.${path.id}.label`)}
+          </p>
         </div>
         <div className="shrink-0">
           {result.status === "loading" && <Loader2 className="h-5 w-5 animate-spin text-primary" />}
@@ -290,16 +346,18 @@ function ResultCard({
         )}
         {result.status === "done" && text}
         {result.status === "error" && (
-          <p className="text-xs text-muted-foreground">{result.error || "حصلت مشكلة."}</p>
+          <p className="text-xs text-muted-foreground">
+            {result.error || t("start.error.generic")}
+          </p>
         )}
       </div>
       {result.status === "done" && (
         <div className="mt-4 pt-3 border-t border-border/40 flex flex-wrap items-center gap-2 text-[11px]">
           <span className="px-2 py-1 rounded-full bg-destructive/10 text-destructive font-bold">
-            يدوي: {path.manual}
+            {t("start.result.manual")}: {t(`start.path.${path.id}.manual`)}
           </span>
           <span className="px-2 py-1 rounded-full bg-primary/15 text-primary font-bold">
-            بالمنصة: {path.withAi}
+            {t("start.result.platform")}: {t(`start.path.${path.id}.withAi`)}
           </span>
         </div>
       )}
@@ -325,63 +383,72 @@ function useTypewriter(target: string, msPerChar: number) {
 }
 
 function BeforeAfterStep({ onNext }: { onNext: () => void }) {
+  const t = useUiString();
   return (
     <div className="py-12 md:py-20 animate-fade-up text-center">
-      <p className="text-primary text-sm font-bold tracking-widest">مقارنة توضيحية</p>
-      <h2 className="text-3xl md:text-5xl font-black mt-3">
-        ما شاهدته يختصر خطواتاً كثيرة
-      </h2>
+      <p className="text-primary text-sm font-bold tracking-widest">
+        {t("start.comparison.eyebrow")}
+      </p>
+      <h2 className="text-3xl md:text-5xl font-black mt-3">{t("start.comparison.title")}</h2>
       <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl mx-auto">
         <div className="glass rounded-2xl p-8 border border-destructive/30">
-          <p className="text-xs font-bold tracking-widest text-destructive">يدوياً</p>
-          <p className="text-3xl md:text-4xl font-black mt-4">أسابيع من التنسيق</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            قرار، محتوى، أتمتة، تقارير — خطوات متتابعة بجهد أكبر.
+          <p className="text-xs font-bold tracking-widest text-destructive">
+            {t("start.result.manual")}
           </p>
+          <p className="text-3xl md:text-4xl font-black mt-4">
+            {t("start.comparison.manualTitle")}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">{t("start.comparison.manualBody")}</p>
         </div>
         <div className="glass rounded-2xl p-8 border border-primary/50 glow-primary">
-          <p className="text-xs font-bold tracking-widest text-primary">مع المنصة</p>
-          <p className="text-3xl md:text-4xl font-black mt-4 text-gradient">مسودات أولى أسرع</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            خمسة اتجاهات على فكرتك — ثم تعمّق عبر 100 درساً نشطاً.
+          <p className="text-xs font-bold tracking-widest text-primary">
+            {t("start.result.platform")}
           </p>
+          <p className="text-3xl md:text-4xl font-black mt-4 text-gradient">
+            {t("start.comparison.platformTitle")}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">{t("start.comparison.platformBody")}</p>
         </div>
       </div>
       <Button variant="hero" size="xl" className="mt-12" onClick={onNext}>
-        متابعة <ArrowLeft className="h-5 w-5" />
+        {t("start.continue")} <ArrowLeft className="h-5 w-5" />
       </Button>
     </div>
   );
 }
 
 function VictoryStep({ successCount, onFinish }: { successCount: number; onFinish: () => void }) {
+  const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
   return (
     <div className="py-12 md:py-24 text-center animate-fade-up">
       <div className="inline-grid h-28 w-28 place-items-center rounded-full bg-[image:var(--gradient-primary)] glow-primary mb-6 animate-pulse-glow">
         <Trophy className="h-14 w-14 text-primary-foreground" />
       </div>
-      <p className="text-primary text-sm font-bold tracking-widest">خطوتك الأولى</p>
+      <p className="text-primary text-sm font-bold tracking-widest">{t("start.victory.eyebrow")}</p>
       <h1 className="text-4xl md:text-6xl font-black mt-3 leading-tight">
-        جرّبت <span className="text-gradient">المنصة</span> عملياً
+        {t("start.victory.title")}
       </h1>
       <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
         {successCount === 5
-          ? "المسارات الخمسة أنتجت مخرجات أمامك."
-          : `${successCount} من 5 مسارات أنتجت مخرجات.`}{" "}
-        هذه لمحة سريعة — المنصة تضم 100 درساً نشطاً لتتعلّم وتطوّر بنفسك.
+          ? t("start.victory.allDone")
+          : t("start.victory.partial").replace("{count}", String(successCount))}{" "}
+        {t("start.victory.body")}
       </p>
 
       <div className="grid sm:grid-cols-3 gap-3 max-w-xl mx-auto mt-10">
-        <Stat icon={RouteIcon} label="مسارات" value="5" />
-        <Stat icon={BookOpen} label="دروس نشطة" value="100" />
-        <Stat icon={Trophy} label="الخطوة التالية" value="→" />
+        <Stat icon={RouteIcon} label={t("start.victory.paths")} value="5" />
+        <Stat icon={BookOpen} label={t("start.victory.lessons")} value="100" />
+        <Stat icon={Trophy} label={t("start.victory.next")} value="→" />
       </div>
 
       <Button variant="hero" size="xl" className="mt-12" onClick={onFinish}>
-        إلى لوحة التحكم <ArrowLeft className="h-5 w-5" />
+        {t("start.victory.dashboard")} <ArrowLeft className="h-5 w-5" />
       </Button>
       <p className="mt-4 text-xs text-muted-foreground">
-        <Link to="/" className="hover:text-foreground transition">للصفحة الرئيسية</Link>
+        <Link to="/" search={localeSearch()} className="hover:text-foreground transition">
+          {t("start.victory.home")}
+        </Link>
       </p>
     </div>
   );

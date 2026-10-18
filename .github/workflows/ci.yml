@@ -67,6 +67,9 @@ jobs:
       - name: Restricted lesson inline formatting (isolated renderer)
         run: bunx vitest run src/components/intro/IntroLessonRenderer.formatting.test.tsx
 
+      - name: Analytics and optional start localization (mocked clients, no AI calls)
+        run: bunx vitest run src/lib/__tests__/analytics-start-localization.test.tsx
+
       - name: Exact editorial source provenance (no image regeneration)
         run: bunx vitest run src/lib/__tests__/audit-source-compatibility.test.ts
 
