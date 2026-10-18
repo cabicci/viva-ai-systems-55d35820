@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AcademicLessonPage } from "./AcademicLessonPage";
 const state = vi.hoisted(() => ({
   command: vi.fn(),
+  catalogue: vi.fn(),
+  canAccess: vi.fn(),
   user: { id: "learner-1" } as { id: string } | null,
 }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: state.user, loading: false }) }));
@@ -17,6 +19,8 @@ vi.mock("@/components/journey/JourneyVisitRecorder", () => ({
 vi.mock("@/components/site/Footer", () => ({ Footer: () => <footer>Masaarat</footer> }));
 vi.mock("@/lib/academic-education/client", () => ({
   academicCommand: state.command,
+  academicCatalogue: state.catalogue,
+  academicCanAccess: state.canAccess,
   academicDownload: vi.fn(),
   academicQueryKey: (...args: unknown[]) => ["academic", ...args],
 }));
@@ -59,6 +63,8 @@ function setup() {
 beforeEach(() => {
   state.user = { id: "learner-1" };
   state.command.mockReset();
+  state.catalogue.mockReset().mockResolvedValue([]);
+  state.canAccess.mockReset().mockResolvedValue(false);
   state.command.mockImplementation(async (action: string) =>
     action === "lesson" ? delivery : { progress: {} },
   );

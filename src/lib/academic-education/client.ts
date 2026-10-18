@@ -14,6 +14,24 @@ export type AcademicProgress = {
   practiceSubmitted: boolean;
   drafts: Partial<Record<SupportedLocale, string[]>>;
 };
+
+/** Read-only authorization check; delivery still rechecks on the destination page. */
+export async function academicCanAccess(
+  courseId: string,
+  lessonId: string,
+  locale: SupportedLocale,
+): Promise<boolean> {
+  const response = await supabase.rpc(
+    "academic_can_access" as never,
+    {
+      p_course: courseId,
+      p_lesson: lessonId,
+      p_locale: locale,
+    } as never,
+  );
+  if (response.error) throw new Error("ACADEMIC_NAVIGATION_UNAVAILABLE");
+  return response.data === true;
+}
 export type AcademicAction = "status" | "lesson" | "read" | "quiz" | "practice" | "reset_quiz";
 export const academicQueryKey = (
   userId: string | undefined,

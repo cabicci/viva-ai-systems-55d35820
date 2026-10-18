@@ -19,6 +19,7 @@ import { ReadingVisual } from "./ReadingVisual";
 import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
 import { LessonText, LessonInlineText } from "./LessonText";
 import { withoutMatchingStepPrefix } from "./example-step";
+import { AcademicAdjacentNavigation } from "./AcademicAdjacentNavigation";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 /** Production delivery: no static lesson bodies, answer keys or review persona imports. */
@@ -428,6 +429,12 @@ function AuthorizedLesson({
             ))}
         </section>
       </div>
+      <AcademicAdjacentNavigation
+        userId={user?.id}
+        courseId={courseId}
+        lessonId={lesson.id}
+        locale={locale}
+      />
     </>
   );
 }

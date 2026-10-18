@@ -411,3 +411,10 @@ source: direct owner authorization to continue audited corrections
 scope: exact English style-control delivery example, leads glossary CTA and attention-economy mission subtitle
 summary: Demonstrate replacing purchase with buy for a simple direct voice in both delivery and Markdown. Complete the CTA keyword/action/channel/benefit in its table and broken parallel Markdown. Name the mission Observe 5 Posts in the Feed, preserving the five observations and rubric. Exact leaf-level changes are recorded in the source-provenance ledger; unrelated sections, image bytes and original generation manifest are unchanged.
 sync_status: Offline scope/reversal/weight checks passed; existing source-provenance and mission/runtime regressions run in CI. No new tests mirror these copy edits. No message/lead service connection, learner write, merge or publication.
+## 2026-10-18 — server-scoped adjacent Academic steps (item 13)
+
+[roadmap:local-batch-academic-adjacent-navigation-20261018]
+source: direct owner authorization to continue audited corrections
+scope: authorized Academic lesson navigation, actual runtime catalogue order and existing read-only server access RPC
+summary: Find adjacent accessible steps within the exact current course/locale runtime list, scanning outward only until the nearest server-allowed candidate on each side. Never guess numeric course order or infer access from a published title. Preserve localized first/last boundaries, display loading/read failure with retry and keep identity-scoped query keys. Destination lesson delivery rechecks its existing server authorization; navigation calls no progress or submission writer.
+sync_status: Added runtime-order/denial/boundary/error and four-locale renderer tests with mocked read clients, plus existing page fixtures remain isolated. CI pending. No schema change, live protected fetch, learner update, merge or publication.
