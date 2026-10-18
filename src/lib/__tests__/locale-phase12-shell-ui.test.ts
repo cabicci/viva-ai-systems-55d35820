@@ -109,12 +109,12 @@ describe("Phase 12 shell UI localization", () => {
       .replace("{completed}", "3")
       .replace("{available}", "10")
       .replace("{pct}", "30");
-    expect(lessons).toBe("3/10 lessons available · 30%");
+    expect(lessons).toBe("Completed 3 of 10 steps · 30%");
 
     const footer = getUiString("en", "curriculum.progress.footer")
       .replace("{available}", "10")
       .replace("{upcoming}", "5");
-    expect(footer).toBe("10 lessons available now · 5 coming soon");
+    expect(footer).toBe("10 published steps in the map · 5 coming soon");
 
     const copyright = getUiString("en", "footer.copyright").replace("{year}", "2026");
     expect(copyright).toContain("2026");

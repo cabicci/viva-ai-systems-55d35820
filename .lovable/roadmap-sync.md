@@ -355,3 +355,10 @@ source: direct owner authorization to continue audited corrections
 scope: shared Progress root value, localized progress names at existing callers and Academic quiz option layout
 summary: Forward the numerical value to Radix Root so determinate progress is announced consistently; retain indeterminate loading when no value is supplied. Name the previously unnamed Academic, Technical, curriculum and lesson bars with existing localized copy. Keep each Academic option in one shrinkable inline text span beside a fixed-size top-aligned radio, retaining internal BDI and source/key content.
 sync_status: Added determinate/indeterminate progress tests and Academic range-option DOM regression. No progress write or quiz selection outside synthetic tests; CI pending and physical screen-reader/viewport checks not claimed.
+## 2026-10-18 — completed versus published and narrow account cards (items 140, 158)
+
+[roadmap:local-batch-progress-copy-account-sizing-20261018]
+source: direct owner authorization to continue audited corrections
+scope: four-locale curriculum progress labels and account profile/subscription card sizing
+summary: Explicitly label completed versus published map steps, preserving all placeholder variables and calculations. Constrain the account grid/cards with minmax(0,1fr) and min-w-0, preserve email/ID ellipsis, wrap date/subscription values and stack field rows on narrow screens. No account/email/subscription data changed.
+sync_status: Existing localization placeholder expectations updated; no new tests mirror copy/CSS. CI pending; 319/390 viewport and independent long-email fixture acceptance remain pending until a working preview is available.

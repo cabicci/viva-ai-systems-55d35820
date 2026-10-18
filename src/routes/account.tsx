@@ -226,7 +226,7 @@ function AccountContent() {
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
       <Sidebar />
-      <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
+      <main className="min-w-0 flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
           <div className="min-w-0">
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
@@ -240,8 +240,8 @@ function AccountContent() {
           </Button>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 mb-5">
-          <section className="glass rounded-2xl p-6 border border-border/50">
+        <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-2 mb-5">
+          <section className="glass min-w-0 max-w-full rounded-2xl p-6 border border-border/50">
             <div className="flex min-w-0 items-center gap-4">
               <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-2xl font-black text-primary-foreground glow-primary">
                 {avatarLetter}
@@ -258,23 +258,23 @@ function AccountContent() {
             </div>
             <div className="mt-5 space-y-2 text-sm">
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-4 w-4" />
-                <span className="truncate">{email || "—"}</span>
+                <Mail className="h-4 w-4 shrink-0" />
+                <span className="min-w-0 truncate">{email || "—"}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                <span>{joinedLabel}</span>
+                <Calendar className="h-4 w-4 shrink-0" />
+                <span className="min-w-0 break-words">{joinedLabel}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
-                <UserIcon className="h-4 w-4" />
-                <span className="font-mono text-xs truncate">{userId ?? "—"}</span>
+                <UserIcon className="h-4 w-4 shrink-0" />
+                <span className="min-w-0 font-mono text-xs truncate">{userId ?? "—"}</span>
               </div>
             </div>
           </section>
 
-          <section className="glass rounded-2xl p-6 border border-border/50 flex flex-col">
+          <section className="glass min-w-0 max-w-full break-words rounded-2xl p-6 border border-border/50 flex flex-col">
             <div className="flex items-start justify-between gap-3">
-              <div>
+              <div className="min-w-0 flex-1">
                 <p className="text-xs text-muted-foreground">{t("account.subscription.label")}</p>
                 <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
                   <h2 className="text-2xl font-black">{planLabel}</h2>
@@ -303,21 +303,21 @@ function AccountContent() {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
                     <span className="min-w-0">{t("account.subscription.field.status")}</span>
-                    <span className="max-w-[55%] break-words text-end text-foreground">
+                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
                       {sub?.status ?? (isPro ? "active" : "—")}
                     </span>
                   </div>
-                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
                     <span className="min-w-0">{t("account.subscription.field.renewal")}</span>
-                    <span className="max-w-[55%] break-words text-end text-foreground">
+                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
                       {formatDate(sub?.current_period_end, locale)}
                     </span>
                   </div>
-                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start gap-x-3 gap-y-1 text-muted-foreground">
                     <span className="min-w-0">{t("account.subscription.field.provider")}</span>
-                    <span className="max-w-[55%] break-words text-end text-foreground">
+                    <span className="min-w-0 max-w-full break-words sm:text-end text-foreground">
                       {sub?.provider ?? "—"}
                     </span>
                   </div>
