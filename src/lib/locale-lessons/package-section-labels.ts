@@ -40,7 +40,7 @@ const EYEBROWS_EN: Record<string, string> = {
   "Screenshot block (intent)": "Inside the platform",
   "Screenshot block": "Inside the platform",
   "Diagram block (intent)": "Visual guide",
-  "Video block": "Lesson video",
+  "Video block": "Step video",
 };
 
 const EYEBROWS_AR: Record<string, string> = {
@@ -55,7 +55,7 @@ const EYEBROWS_AR: Record<string, string> = {
   "Screenshot block (intent)": "من المنصة",
   "Screenshot block": "من المنصة",
   "Diagram block (intent)": "رسم توضيحي",
-  "Video block": "فيديو الدرس",
+  "Video block": "فيديو الخطوة",
 };
 
 export type ParsedInternalHeading = {

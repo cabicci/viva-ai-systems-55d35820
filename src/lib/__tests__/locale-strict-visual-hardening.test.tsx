@@ -370,8 +370,8 @@ describe("strict learner-visible text filtering", () => {
       expect(video.block.poster).toBeUndefined();
       expect(video.block.durationLabel).toBeUndefined();
       expect(video.block.caption).toBeUndefined();
-      expect(video.title).toBe("Lesson video");
-      expect(video.eyebrow).toBe("Lesson video");
+      expect(video.title).toBe("Step video");
+      expect(video.eyebrow).toBe("Step video");
       expect(video.title).not.toContain("عنوان");
       expect(video.block.caption).not.toBe("تعليق مصري");
     }

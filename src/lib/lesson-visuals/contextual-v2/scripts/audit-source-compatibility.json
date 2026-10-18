@@ -529,44 +529,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
-      "auditItems": [
-        58,
-        145
-      ],
-      "currentSha256": "452bfe08c9c719d7b7b6933c6909652b47bb34c4529e8b0a1210e882ad368176",
-      "currentBlob": "d733b463a9da251d27967113a91d6258b285f95b",
-      "generationSourceSha256": "2f860aec7ebf7333a2794cbbe9959fb153e45585d0e91fd38fd4dc6e46cde46e",
-      "generationSourceBlob": "9e7f4e6f774855ed5ed08a72ec2af4cd1f96486c",
-      "replacements": [
-        {
-          "field": "sections.2.contentMarkdown",
-          "before": "\"1. Write **Feeling** as it is: 'Customers are dissatisfied'.\\n2. Ask: **Who?** **How many?** **When?** **Compared to what?** — 'How many customers complained **this month**?'\\n3. **Be more specific:** 'What are the **top 3 complaints** that repeated?'\\n4. The more precise the question becomes — the more actionable the answer is — turning **complaints** into **management**.\"",
-          "after": "\"1. Write **Feeling** as it is: 'Customers are dissatisfied'.\\n2. Define the metric and comparison: What is the complaint rate per 100 customer contacts this month versus last month?\\n3. Final model: What is the complaint rate per 100 customer contacts this month versus last month, and what are the three most repeated complaint reasons in each of those periods?\\n4. Use the same definitions of a complaint and a contact in both periods. A precise question supports review; it does not by itself establish a cause or guarantee the decision.\""
-        },
-        {
-          "field": "sections.3.contentMarkdown",
-          "before": "\"| Feeling | Question |\\n|------|------|\\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition** | 'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret** |\"",
-          "after": "\"| Feeling | Question |\\n|---|---|\\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**. | How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision. |\""
-        },
-        {
-          "field": "sections.3.tables.0.rows.0.1",
-          "before": "\"'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret**.\"",
-          "after": "\"How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision.\""
-        },
-        {
-          "field": "sections.4.tables.0.rows.1.1",
-          "before": "\"The **normal number** you **compare** against — to know: are you **doing well** or **not**.\"",
-          "after": "\"A reference value for a stated period and unit, used to compare the same metric; it is not an absolute quality judgment.\""
-        },
-        {
-          "field": "sections.4.tables.0.rows.1.2",
-          "before": "\"'My sales are 100k — **average is 150**' — **150** is the **Baseline**.\"",
-          "after": "\"Fictional example: this month's sales are 100 thousand currency units; the average of the previous three months is 150 thousand currency units per month. That average is this example's baseline, not a sector-wide target or an absolute quality judgment. The shortfall is 50 thousand currency units, a decline of about 33.33%.\""
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/ar-EG/lessons/analyst-m2-l1-feeling-to-question.json",
       "auditItems": [
         58,
@@ -911,23 +873,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
-      "auditItems": [
-        62
-      ],
-      "currentSha256": "c562108926e91b21d5b0a74b5b06cd5ff2815cb340588a6d9a80cabc73048eb9",
-      "currentBlob": "c54b79bae2a6aa4840e7acb95b4cf2f2276eba75",
-      "generationSourceSha256": "f0b4c9c1e8dd6ad64a28e057afb5d8030f20f827253692327e111c522291841a",
-      "generationSourceBlob": "7dc2a1dcf65c76c040517bda9f1fa54d72d32f87",
-      "replacements": [
-        {
-          "field": "sections.4: restore complete localized mission (audit62)",
-          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| 3 diverse steps | 60% |\\n| Smart Stop | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
-          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\\n\\n**Submission:**\\n\\n1. State the lead context and the unanswered first message.\\n2. Day 0: specify channel, draft message and goal.\\n3. Day 2: specify channel, a different draft message and goal.\\n4. Day 5: specify channel, a different draft message and goal.\\n5. State when the sequence stops: for example, a reply, purchase or opt-out.\\n6. Explain why each step differs from the previous one.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Three distinct steps | 60% | Each follow-up includes a channel, message and goal, rather than repeating the same step. |\\n| Clear stopping rule | 40% | Give an explicit stop condition such as a reply, purchase or request to unsubscribe. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Three distinct steps\",\n              \"60%\",\n              \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n            ],\n            [\n              \"Clear stopping rule\",\n              \"40%\",\n              \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\",\n        \"delivery\": [\n          \"State the lead context and the unanswered first message.\",\n          \"Day 0: specify channel, draft message and goal.\",\n          \"Day 2: specify channel, a different draft message and goal.\",\n          \"Day 5: specify channel, a different draft message and goal.\",\n          \"State when the sequence stops: for example, a reply, purchase or opt-out.\",\n          \"Explain why each step differs from the previous one.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Three distinct steps\",\n            \"weight\": 60,\n            \"criteria\": \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n          },\n          {\n            \"dimension\": \"Clear stopping rule\",\n            \"weight\": 40,\n            \"criteria\": \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n          }\n        ]\n      }\n    }"
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
       "auditItems": [
         62
@@ -1111,23 +1056,6 @@
           "field": "sections.3: restore complete localized mission (audit62)",
           "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — ٣ سيناريوهات\",\n      \"subtitle\": \"٣ سيناريوهات\",\n      \"contentMarkdown\": \"| تشخيص الفخ | 50% |\\n| قرار أصح | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
           "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"المهمة — ٣ سيناريوهات\",\n      \"subtitle\": \"٣ سيناريوهات\",\n      \"contentMarkdown\": \"شخّص ثلاثة مواقف قصيرة فيها أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. AI يساعدك في الصياغة، وأنت تختار الحكم النهائي.\\n\\n**التسليم:**\\n\\n1. اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\\n2. لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\\n3. حدّد خطأ التفسير.\\n4. اشرح كيف تتجنب الخطأ.\\n5. اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\\n\\n**معايير التقييم:**\\n\\n| البعد | الوزن | المعيار |\\n|---|---|---|\\n| تشخيص الفخ | 50% | حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة. |\\n| قرار أفضل | 50% | اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"البعد\",\n            \"الوزن\",\n            \"المعيار\"\n          ],\n          \"rows\": [\n            [\n              \"تشخيص الفخ\",\n              \"50%\",\n              \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n            ],\n            [\n              \"قرار أفضل\",\n              \"50%\",\n              \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"شخّص ثلاثة مواقف قصيرة فيها أخطاء تفسير، واقترح قرارًا أفضل أو تجربة صغيرة. AI يساعدك في الصياغة، وأنت تختار الحكم النهائي.\",\n        \"delivery\": [\n          \"اختر موقفًا عن الارتباط والسببية، وآخر عن عينة صغيرة، وثالثًا عن مقياس شكلي أو انحياز للحدث الأحدث.\",\n          \"لكل موقف من الثلاثة، صف الوضع أو انسخ المثال المناسب من الدرس.\",\n          \"حدّد خطأ التفسير.\",\n          \"اشرح كيف تتجنب الخطأ.\",\n          \"اقترح قرارًا صغيرًا أفضل أو تجربة، بدل تعميم بلا دليل.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"تشخيص الفخ\",\n            \"weight\": 50,\n            \"criteria\": \"حدّد خطأ تفسير واضحًا في كل واحد من المواقف الثلاثة.\"\n          },\n          {\n            \"dimension\": \"قرار أفضل\",\n            \"weight\": 50,\n            \"criteria\": \"اقترح قرارًا صغيرًا أو تجربة يدعمها الموقف، لا تعميمًا غير مسند.\"\n          }\n        ]\n      }\n    }"
-        }
-      ]
-    },
-    {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
-      "auditItems": [
-        62
-      ],
-      "currentSha256": "35cd374004cb0711536c4cdd615d6a8672c63341a398a467b7e76221969ddda2",
-      "currentBlob": "e6d64538da271b910155ade56ad00ae067310da3",
-      "generationSourceSha256": "484158be947cd87fb3d22c2fbc5c14e879ad4ed400b49180299921f5d3e8cc57",
-      "generationSourceBlob": "daf1b5fad99ac8ae2ef19e76642e456e3f27620b",
-      "replacements": [
-        {
-          "field": "sections.3: restore complete localized mission (audit62)",
-          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"| Trap Diagnosis | 50% |\\n| Better Decision | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
-          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\\n\\n**Submission:**\\n\\n1. Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\\n2. For each of the three scenarios, describe the situation or copy the relevant lesson example.\\n3. Name the interpretation error.\\n4. Explain how to avoid that error.\\n5. Propose a better small decision or experiment rather than an unsupported generalization.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Diagnose the trap | 50% | Identify a clear interpretation error in each of the three scenarios. |\\n| Better decision | 50% | Propose a small decision or experiment supported by the situation, not a generalization without evidence. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Diagnose the trap\",\n              \"50%\",\n              \"Identify a clear interpretation error in each of the three scenarios.\"\n            ],\n            [\n              \"Better decision\",\n              \"50%\",\n              \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\",\n        \"delivery\": [\n          \"Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\",\n          \"For each of the three scenarios, describe the situation or copy the relevant lesson example.\",\n          \"Name the interpretation error.\",\n          \"Explain how to avoid that error.\",\n          \"Propose a better small decision or experiment rather than an unsupported generalization.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Diagnose the trap\",\n            \"weight\": 50,\n            \"criteria\": \"Identify a clear interpretation error in each of the three scenarios.\"\n          },\n          {\n            \"dimension\": \"Better decision\",\n            \"weight\": 50,\n            \"criteria\": \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n          }\n        ]\n      }\n    }"
         }
       ]
     },
@@ -1545,51 +1473,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
-      "auditItems": [
-        7
-      ],
-      "currentSha256": "598fdd5c0a373cd3e106f793718080414b4a444822d179825be290251d9cc21b",
-      "currentBlob": "3a23524dd4176e6494e04806536176bf7ff9b3fc",
-      "generationSourceSha256": "d55228bb368650706598f7c2d357034874de7fd52031cc7661b5a741b1eb5420",
-      "generationSourceBlob": "fe9531ffc7cc6452add7008d11d3dc868b5bafaa",
-      "replacements": [
-        {
-          "field": "sections.6: audit 7",
-          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 0\\n\\n**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\\n\\nCount the task, its time, and frequency per week — to know this is a priority.\\n- **Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\",\n      \"bullets\": [\n        \"Count the task, its time, and frequency per week — to know this is a priority.\",\n        \"Explanation: Audit first — when you know «welcome email» = 30 minutes daily, you will know this is the first task for the virtual worker.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Count the task, its time, and frequency per week — to know this is a priority.\",\n          \"An unsuitable option; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step in the decision.\"\n        ],\n        \"explanation\": \"**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\"\n      }\n    }",
-          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\\n\\n1. Count the task, its time, and frequency per week — to know this is a priority.\\n2. Open Make and build a flow before measuring the task's time or frequency.\\n3. Stop sending welcome emails to new clients to save time.\\n\\n**Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\",\n      \"bullets\": [\n        \"Count the task, its time, and frequency per week — to know this is a priority.\",\n        \"Open Make and build a flow before measuring the task's time or frequency.\",\n        \"Stop sending welcome emails to new clients to save time.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Count the task, its time, and frequency per week — to know this is a priority.\",\n          \"Open Make and build a flow before measuring the task's time or frequency.\",\n          \"Stop sending welcome emails to new clients to save time.\"\n        ],\n        \"explanation\": \"**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\"\n      }\n    }"
-        }
-      ]
-    },
-    {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
-      "auditItems": [
-        7,
-        144
-      ],
-      "currentSha256": "89ccaf804eb947988f3ee1ce05e810a5bd61855f2c26f9a236f6d19de8e69ee0",
-      "currentBlob": "de79747eac3f21a344c065730c041ffdf9994c6b",
-      "generationSourceSha256": "13533a2ec8328a7321fd550da53147204188ed962e365a247ac8c271e706a786",
-      "generationSourceBlob": "21ea5c4386e982762f474d23fcc81da031ffd099",
-      "replacements": [
-        {
-          "field": "sections.6: audit 7",
-          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key:** correctIndex: 0\\n\\n**Question:** A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\\n\\nThe new client message\\n- **Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\",\n      \"bullets\": [\n        \"The new client message\",\n        \"Explanation: Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"The new client message\",\n          \"An irrelevant option; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step for the decision.\"\n        ],\n        \"explanation\": \"**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      }\n    }",
-          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\\n\\n1. The new client message\\n2. Look up the price list used to prepare the response.\\n3. Record the customer's details in the CRM after replying.\\n\\n**Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\",\n      \"bullets\": [\n        \"The new client message\",\n        \"Look up the price list used to prepare the response.\",\n        \"Record the customer's details in the CRM after replying.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"The new client message\",\n          \"Look up the price list used to prepare the response.\",\n          \"Record the customer's details in the CRM after replying.\"\n        ],\n        \"explanation\": \"**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      }\n    }"
-        },
-        {
-          "field": "sections.2.contentMarkdown",
-          "before": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\"",
-          "after": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\""
-        },
-        {
-          "field": "sections.2.bullets.3",
-          "before": "\"**Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\"",
-          "after": "\"**Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\""
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l3-filters-routers.json",
       "auditItems": [
         7,
@@ -1657,23 +1540,6 @@
       ]
     },
     {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
-      "auditItems": [
-        7
-      ],
-      "currentSha256": "599d38b8861dad68ebba5465a1ebbf895e7ffdb08a05617421339f1c1327fc17",
-      "currentBlob": "eef3044a6a5c40b1018776b688ec2d96b18c1ea4",
-      "generationSourceSha256": "a9fb35548826f50f79bdbcefa9340fc6bd5f044bd17892c112a0c88ce5d93885",
-      "generationSourceBlob": "1350c50c9ed1f55e909db23da146716a21827e73",
-      "replacements": [
-        {
-          "field": "sections.6: audit 7",
-          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — One Application Question\",\n      \"subtitle\": \"One Application Question\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 1\\n\\n**Question:** A person posts daily but each post is different and without direction — what is the closest step to correct the course?\\n\\nDefine a clear Content Promise and choose a Repeatable Format.\\n- **Explanation:** Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\",\n      \"bullets\": [\n        \"Define a clear Content Promise and choose a Repeatable Format.\",\n        \"Explanation: Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A person posts daily but each post is different and without direction — what is the closest step to correct the course?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Define a clear Content Promise and choose a Repeatable Format.\",\n          \"An unsuitable choice; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step in decision-making.\"\n        ],\n        \"explanation\": \"Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      }\n    }",
-          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — One Application Question\",\n      \"subtitle\": \"One Application Question\",\n      \"contentMarkdown\": \"**Question:** A person posts daily but each post is different and without direction — what is the closest step to correct the course?\\n\\n1. Define a clear Content Promise and choose a Repeatable Format.\\n2. Increase the number of posts published each day.\\n3. Switch the publishing platform every week.\\n\\n**Explanation:** Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\",\n      \"bullets\": [\n        \"Define a clear Content Promise and choose a Repeatable Format.\",\n        \"Increase the number of posts published each day.\",\n        \"Switch the publishing platform every week.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A person posts daily but each post is different and without direction — what is the closest step to correct the course?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Define a clear Content Promise and choose a Repeatable Format.\",\n          \"Increase the number of posts published each day.\",\n          \"Switch the publishing platform every week.\"\n        ],\n        \"explanation\": \"Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      }\n    }"
-        }
-      ]
-    },
-    {
       "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
       "auditItems": [
         7
@@ -1732,23 +1598,6 @@
           "field": "sections.4.tables.0.rows.1.2",
           "before": "\"\\\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\\\"\"",
           "after": "\"Fictional example: a day-two WhatsApp follow-up receives 40 replies from 100 delivered messages within 48 hours after delivery (40%). A day-five email receives 10 replies from 100 delivered emails within 48 hours after delivery (10%). These are replies, not opens. The comparison does not isolate a channel effect; follow-up timing and audience also need to be controlled.\""
-        }
-      ]
-    },
-    {
-      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
-      "auditItems": [
-        7
-      ],
-      "currentSha256": "e7d0a08f00ee4f2bfcdb73e759dadd7eaefb5df1a241c99bdc43b70cdd3094a7",
-      "currentBlob": "0db2ed67c45bc084e1950fbf05aa9eab4ce8f632",
-      "generationSourceSha256": "4844b43fb54ee6023d886273d9997a3acfa0c1a8c9d0b344c9dbebf3935f6835",
-      "generationSourceBlob": "3ccff8f27c6a29a9f974afa246f03a0a19bbb03f",
-      "replacements": [
-        {
-          "field": "sections.6: audit 7",
-          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 2\\n\\n**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\\n\\nWhere exactly do customers drop off in the purchase process (funnel drop-off)?\\n- **Explanation:** A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\",\n      \"bullets\": [\n        \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n        \"Explanation: A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n          \"An irrelevant option; it ignores the key data from the section above.\",\n          \"A partial answer that misses the context and ignores the next step for the decision.\"\n        ],\n        \"explanation\": \"A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      }\n    }",
-          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\\n\\n1. Where exactly do customers drop off in the purchase process (funnel drop-off)?\\n2. How many visits does the website receive each day?\\n3. What is the average age of customers who add items to the cart but do not buy?\\n\\n**Explanation:** A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\",\n      \"bullets\": [\n        \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n        \"How many visits does the website receive each day?\",\n        \"What is the average age of customers who add items to the cart but do not buy?\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n          \"How many visits does the website receive each day?\",\n          \"What is the average age of customers who add items to the cart but do not buy?\"\n        ],\n        \"explanation\": \"A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      }\n    }"
         }
       ]
     },
@@ -2019,6 +1868,238 @@
           "field": "sections.4.tables.0.rows.1.2",
           "before": "\"٣٠ دقيقة بناء → توفر ساعتين/شهر = عائد ممتاز\"",
           "after": "\"٣٠ دقيقة بناء = ٠٫٥ ساعة؛ نفترض صافي توفير ساعتين/شهر بعد وقت المتابعة والصيانة: ٠٫٥ ÷ ٢ = ٠٫٢٥ شهر.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "auditItems": [
+        12,
+        62
+      ],
+      "currentSha256": "17357fbf438948deaa40963f39892f4fb599d03650a4eb804b681a8b487b21bd",
+      "currentBlob": "dbcccd1e1572b95385138802dfcb6265d69d13fc",
+      "generationSourceSha256": "484158be947cd87fb3d22c2fbc5c14e879ad4ed400b49180299921f5d3e8cc57",
+      "generationSourceBlob": "daf1b5fad99ac8ae2ef19e76642e456e3f27620b",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Lesson Start\",\n      \"contentMarkdown\": \"- **What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.\",\n      \"bullets\": [\n        \"**What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Step Start\",\n      \"contentMarkdown\": \"- **What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.\",\n      \"bullets\": [\n        \"**What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.3: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"| Trap Diagnosis | 50% |\\n| Better Decision | 50% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission — 3 Scenarios\",\n      \"subtitle\": \"3 Scenarios\",\n      \"contentMarkdown\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\\n\\n**Submission:**\\n\\n1. Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\\n2. For each of the three scenarios, describe the situation or copy the relevant lesson example.\\n3. Name the interpretation error.\\n4. Explain how to avoid that error.\\n5. Propose a better small decision or experiment rather than an unsupported generalization.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Diagnose the trap | 50% | Identify a clear interpretation error in each of the three scenarios. |\\n| Better decision | 50% | Propose a small decision or experiment supported by the situation, not a generalization without evidence. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Diagnose the trap\",\n              \"50%\",\n              \"Identify a clear interpretation error in each of the three scenarios.\"\n            ],\n            [\n              \"Better decision\",\n              \"50%\",\n              \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"Diagnose three short interpretation scenarios and propose a better decision or small test. AI may help phrase the diagnosis; you make the final judgment.\",\n        \"delivery\": [\n          \"Use one scenario about correlation versus causation, one about a small sample, and one about a vanity metric or recency bias.\",\n          \"For each of the three scenarios, describe the situation or copy the relevant lesson example.\",\n          \"Name the interpretation error.\",\n          \"Explain how to avoid that error.\",\n          \"Propose a better small decision or experiment rather than an unsupported generalization.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Diagnose the trap\",\n            \"weight\": 50,\n            \"criteria\": \"Identify a clear interpretation error in each of the three scenarios.\"\n          },\n          {\n            \"dimension\": \"Better decision\",\n            \"weight\": 50,\n            \"criteria\": \"Propose a small decision or experiment supported by the situation, not a generalization without evidence.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+      "auditItems": [
+        12,
+        62
+      ],
+      "currentSha256": "0210240aac1b984c10ccc4c038529a4333ce3db2747af5a68b3f7f77e0fa2dec",
+      "currentBlob": "3ab3cff8d687f3ab51b045f979d7d23ea705a88a",
+      "generationSourceSha256": "f0b4c9c1e8dd6ad64a28e057afb5d8030f20f827253692327e111c522291841a",
+      "generationSourceBlob": "7dc2a1dcf65c76c040517bda9f1fa54d72d32f87",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Beginning of the Lesson\",\n      \"contentMarkdown\": \"- **What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.\\n- **Why Now?** After the reception and WhatsApp — don’t leave anyone silent.\",\n      \"bullets\": [\n        \"**What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.\",\n        \"**Why Now?** After the reception and WhatsApp — don’t leave anyone silent.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Beginning of the Step\",\n      \"contentMarkdown\": \"- **What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.\\n- **Why Now?** After the reception and WhatsApp — don’t leave anyone silent.\",\n      \"bullets\": [\n        \"**What Will You Understand?** **Follow-up** is where sales can be lost — automation makes it systematic.\",\n        \"**Why Now?** After the reception and WhatsApp — don’t leave anyone silent.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.4: restore complete localized mission (audit62)",
+          "before": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"| 3 diverse steps | 60% |\\n| Smart Stop | 40% |\",\n      \"bullets\": [],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Mission\",\n      \"heading\": \"Mission\",\n      \"contentMarkdown\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\\n\\n**Submission:**\\n\\n1. State the lead context and the unanswered first message.\\n2. Day 0: specify channel, draft message and goal.\\n3. Day 2: specify channel, a different draft message and goal.\\n4. Day 5: specify channel, a different draft message and goal.\\n5. State when the sequence stops: for example, a reply, purchase or opt-out.\\n6. Explain why each step differs from the previous one.\\n\\n**Evaluation Criteria:**\\n\\n| Dimension | Weight | Criteria |\\n|---|---|---|\\n| Three distinct steps | 60% | Each follow-up includes a channel, message and goal, rather than repeating the same step. |\\n| Clear stopping rule | 40% | Give an explicit stop condition such as a reply, purchase or request to unsubscribe. |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Dimension\",\n            \"Weight\",\n            \"Criteria\"\n          ],\n          \"rows\": [\n            [\n              \"Three distinct steps\",\n              \"60%\",\n              \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n            ],\n            [\n              \"Clear stopping rule\",\n              \"40%\",\n              \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n            ]\n          ]\n        }\n      ],\n      \"mission\": {\n        \"intro\": \"A lead registered but did not answer the first message. Design three distinct follow-ups with timing and a stop condition; do not configure a CRM or send them.\",\n        \"delivery\": [\n          \"State the lead context and the unanswered first message.\",\n          \"Day 0: specify channel, draft message and goal.\",\n          \"Day 2: specify channel, a different draft message and goal.\",\n          \"Day 5: specify channel, a different draft message and goal.\",\n          \"State when the sequence stops: for example, a reply, purchase or opt-out.\",\n          \"Explain why each step differs from the previous one.\"\n        ],\n        \"rubric\": [\n          {\n            \"dimension\": \"Three distinct steps\",\n            \"weight\": 60,\n            \"criteria\": \"Each follow-up includes a channel, message and goal, rather than repeating the same step.\"\n          },\n          {\n            \"dimension\": \"Clear stopping rule\",\n            \"weight\": 40,\n            \"criteria\": \"Give an explicit stop condition such as a reply, purchase or request to unsubscribe.\"\n          }\n        ]\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+      "auditItems": [
+        12
+      ],
+      "currentSha256": "ad6d6faa5d2cb5852798278cbdd09d0f30716f393f8533ba7b30b315cc892ea0",
+      "currentBlob": "d3f5c4303a53eaa2235ceece47437f41a2475972",
+      "generationSourceSha256": "17ff0f2c3418b7e5e7f86d2fa1c6736780e9e216d520602282f746ca4436a24b",
+      "generationSourceBlob": "a2e8406ddfd710eff310e3a4e7c7b6551b43b376",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Lesson Start\",\n      \"contentMarkdown\": \"- **What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?\\n- **Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.\\n- **What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**.\",\n      \"bullets\": [\n        \"**What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?\",\n        \"**Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.\",\n        \"**What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Step Start\",\n      \"contentMarkdown\": \"- **What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?\\n- **Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.\\n- **What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**.\",\n      \"bullets\": [\n        \"**What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?\",\n        \"**Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.\",\n        \"**What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**.\"\n      ],\n      \"tables\": []\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+      "auditItems": [
+        12
+      ],
+      "currentSha256": "294cecde023589e62d8bb230b51cca0c9174aa280a324b0b1d5c374eb7c74f98",
+      "currentBlob": "99d29b7ba08677af24750d849ca54fb06d3df5a9",
+      "generationSourceSha256": "36902de22c2d77d94aa29cea92cb7c8fce6bc5c9f087a987d66bd0715c44a91b",
+      "generationSourceBlob": "e38c71f00eb06b655749915f06693c99cf75efc1",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Introduction to the Lesson\",\n      \"contentMarkdown\": \"- **What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.\\n- **Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.\\n- **What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.\",\n      \"bullets\": [\n        \"**What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.\",\n        \"**Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.\",\n        \"**What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Introduction to the Step\",\n      \"contentMarkdown\": \"- **What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.\\n- **Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.\\n- **What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.\",\n      \"bullets\": [\n        \"**What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.\",\n        \"**Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.\",\n        \"**What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.\"\n      ],\n      \"tables\": []\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+      "auditItems": [
+        12,
+        58,
+        145
+      ],
+      "currentSha256": "fb2d7e24bef2c1915cbb87ae385bd42570d706dd3b863732827771decd075a2e",
+      "currentBlob": "f47eb1d72a51279abf6a42c3a1c3e8506d4188d5",
+      "generationSourceSha256": "2f860aec7ebf7333a2794cbbe9959fb153e45585d0e91fd38fd4dc6e46cde46e",
+      "generationSourceBlob": "9e7f4e6f774855ed5ed08a72ec2af4cd1f96486c",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation — Beginning of the Lesson\",\n      \"subtitle\": \"Beginning of the Lesson\",\n      \"contentMarkdown\": \"- **What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.\\n- **Why now?** Now that you know that **numbers** need a **question** — the next step is to turn «**I feel that...**» into a **specific question**.\\n- **What after the lesson?** You will convert **3 sentences** «I feel that...** into **answerable questions**.**»\",\n      \"bullets\": [\n        \"**What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.\",\n        \"**Why now?** Now that you know that **numbers** need a **question** — the next step is to turn «**I feel that...**» into a **specific question**.\",\n        \"**What after the lesson?** You will convert **3 sentences** «I feel that...** into **answerable questions**.**»\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation — Beginning of the Step\",\n      \"subtitle\": \"Beginning of the Step\",\n      \"contentMarkdown\": \"- **What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.\\n- **Why now?** Now that you know that **numbers** need a **question** — the next step is to turn «**I feel that...**» into a **specific question**.\\n- **What after the lesson?** You will convert **3 sentences** «I feel that...** into **answerable questions**.**»\",\n      \"bullets\": [\n        \"**What will you understand?** General feelings about work **are not enough** — they must **turn into** a **question** answered by **data**.\",\n        \"**Why now?** Now that you know that **numbers** need a **question** — the next step is to turn «**I feel that...**» into a **specific question**.\",\n        \"**What after the lesson?** You will convert **3 sentences** «I feel that...** into **answerable questions**.**»\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"1. Write **Feeling** as it is: 'Customers are dissatisfied'.\\n2. Ask: **Who?** **How many?** **When?** **Compared to what?** — 'How many customers complained **this month**?'\\n3. **Be more specific:** 'What are the **top 3 complaints** that repeated?'\\n4. The more precise the question becomes — the more actionable the answer is — turning **complaints** into **management**.\"",
+          "after": "\"1. Write **Feeling** as it is: 'Customers are dissatisfied'.\\n2. Define the metric and comparison: What is the complaint rate per 100 customer contacts this month versus last month?\\n3. Final model: What is the complaint rate per 100 customer contacts this month versus last month, and what are the three most repeated complaint reasons in each of those periods?\\n4. Use the same definitions of a complaint and a contact in both periods. A precise question supports review; it does not by itself establish a cause or guarantee the decision.\""
+        },
+        {
+          "field": "sections.3.contentMarkdown",
+          "before": "\"| Feeling | Question |\\n|------|------|\\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition** | 'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret** |\"",
+          "after": "\"| Feeling | Question |\\n|---|---|\\n| 'I **feel that the ad is not working**' — **no number**, **no period**, **no comparison**. Decision **based on intuition**. | How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision. |\""
+        },
+        {
+          "field": "sections.3.tables.0.rows.0.1",
+          "before": "\"'How many leads came from this ad **in the last 30 days** **and how much**?' — the number tells you: stop it or **scale it**. Decision **without regret**.\"",
+          "after": "\"How many leads did this ad generate, and what was its cost per lead, during the last 30 days versus a comparable previous 30-day period or a declared target? Check data quality and business context, then review a stated decision rule before stopping, adjusting or scaling. These figures do not guarantee a regret-free decision.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.1",
+          "before": "\"The **normal number** you **compare** against — to know: are you **doing well** or **not**.\"",
+          "after": "\"A reference value for a stated period and unit, used to compare the same metric; it is not an absolute quality judgment.\""
+        },
+        {
+          "field": "sections.4.tables.0.rows.1.2",
+          "before": "\"'My sales are 100k — **average is 150**' — **150** is the **Baseline**.\"",
+          "after": "\"Fictional example: this month's sales are 100 thousand currency units; the average of the previous three months is 150 thousand currency units per month. That average is this example's baseline, not a sector-wide target or an absolute quality judgment. The shortfall is 50 thousand currency units, a decline of about 33.33%.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+      "auditItems": [
+        7,
+        12,
+        144
+      ],
+      "currentSha256": "7684cf59451c03d755e96101091bdb0911b7f5dbf94352750b41c53e55656255",
+      "currentBlob": "da1c1181aea996e0dcdb1b66d3a5a38e5deb0765",
+      "generationSourceSha256": "13533a2ec8328a7321fd550da53147204188ed962e365a247ac8c271e706a786",
+      "generationSourceBlob": "21ea5c4386e982762f474d23fcc81da031ffd099",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Beginning of the Lesson\",\n      \"contentMarkdown\": \"- **What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\\n- **Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\\n- **What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.\",\n      \"bullets\": [\n        \"**What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\",\n        \"**Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\",\n        \"**What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Beginning of the Step\",\n      \"contentMarkdown\": \"- **What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\\n- **Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\\n- **What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.\",\n      \"bullets\": [\n        \"**What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\",\n        \"**Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\",\n        \"**What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.6: audit 7",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key:** correctIndex: 0\\n\\n**Question:** A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\\n\\nThe new client message\\n- **Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\",\n      \"bullets\": [\n        \"The new client message\",\n        \"Explanation: Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"The new client message\",\n          \"An irrelevant option; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step for the decision.\"\n        ],\n        \"explanation\": \"**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\\n\\n1. The new client message\\n2. Look up the price list used to prepare the response.\\n3. Record the customer's details in the CRM after replying.\\n\\n**Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\",\n      \"bullets\": [\n        \"The new client message\",\n        \"Look up the price list used to prepare the response.\",\n        \"Record the customer's details in the CRM after replying.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A client sends a message on Facebook asking about the price of a product. In the \\\"Response System,\\\" what is the **Trigger**?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"The new client message\",\n          \"Look up the price list used to prepare the response.\",\n          \"Record the customer's details in the CRM after replying.\"\n        ],\n        \"explanation\": \"**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).\"\n      }\n    }"
+        },
+        {
+          "field": "sections.2.contentMarkdown",
+          "before": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\"",
+          "after": "\"- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\\n- **Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\\n- When you break down the task this way, the virtual worker knows exactly where to work.\""
+        },
+        {
+          "field": "sections.2.bullets.3",
+          "before": "\"**Example:** \\\"Respond to a WhatsApp inquiry\\\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\"",
+          "after": "\"**Written example — design only:** Trigger: an incoming WhatsApp inquiry. Process: 1) Understand the inquiry; 2) Verify the required data; 3) Check the approved price; 4) Send the agreed response and record the outcome. Outputs: the customer response and outcome record. Describe these four steps; do not run an automation or send a real message for this exercise.\""
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+      "auditItems": [
+        7,
+        12
+      ],
+      "currentSha256": "5136636df2af0693fb7b072e99a8e7b1c19c518d916e0d250f54e48780892cdc",
+      "currentBlob": "6aa12be9b4e7fc6ab889da2bb9e6f01e7cbce122",
+      "generationSourceSha256": "a9fb35548826f50f79bdbcefa9340fc6bd5f044bd17892c112a0c88ce5d93885",
+      "generationSourceBlob": "1350c50c9ed1f55e909db23da146716a21827e73",
+      "replacements": [
+        {
+          "field": "sections.4: audit 12",
+          "before": "{\n      \"role\": \"Glossary\",\n      \"heading\": \"Glossary — 3 Terms for the Lesson\",\n      \"subtitle\": \"3 Terms for the Lesson\",\n      \"contentMarkdown\": \"| Term | Meaning | Example |\\n|---------|--------|------|\\n| **Content System** | Specific audience + clear problem + repeatable content type | The same type of practical tips every week for the same group |\\n| **Content Promise** | What people expect from you every time | With me, you will get simple actionable steps — no vague statements |\\n| **Repeatable Format** | A content format that you can easily reproduce without starting from scratch | Fixed post: Problem → 3 steps → Quick summary |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Term\",\n            \"Meaning\",\n            \"Example\"\n          ],\n          \"rows\": [\n            [\n              \"**Content System**\",\n              \"Specific audience + clear problem + repeatable content type\",\n              \"The same type of practical tips every week for the same group\"\n            ],\n            [\n              \"**Content Promise**\",\n              \"What people expect from you every time\",\n              \"With me, you will get simple actionable steps — no vague statements\"\n            ],\n            [\n              \"**Repeatable Format**\",\n              \"A content format that you can easily reproduce without starting from scratch\",\n              \"Fixed post: Problem → 3 steps → Quick summary\"\n            ]\n          ]\n        }\n      ]\n    }",
+          "after": "{\n      \"role\": \"Glossary\",\n      \"heading\": \"Glossary — 3 Terms for the Step\",\n      \"subtitle\": \"3 Terms for the Step\",\n      \"contentMarkdown\": \"| Term | Meaning | Example |\\n|---------|--------|------|\\n| **Content System** | Specific audience + clear problem + repeatable content type | The same type of practical tips every week for the same group |\\n| **Content Promise** | What people expect from you every time | With me, you will get simple actionable steps — no vague statements |\\n| **Repeatable Format** | A content format that you can easily reproduce without starting from scratch | Fixed post: Problem → 3 steps → Quick summary |\",\n      \"bullets\": [],\n      \"tables\": [\n        {\n          \"headers\": [\n            \"Term\",\n            \"Meaning\",\n            \"Example\"\n          ],\n          \"rows\": [\n            [\n              \"**Content System**\",\n              \"Specific audience + clear problem + repeatable content type\",\n              \"The same type of practical tips every week for the same group\"\n            ],\n            [\n              \"**Content Promise**\",\n              \"What people expect from you every time\",\n              \"With me, you will get simple actionable steps — no vague statements\"\n            ],\n            [\n              \"**Repeatable Format**\",\n              \"A content format that you can easily reproduce without starting from scratch\",\n              \"Fixed post: Problem → 3 steps → Quick summary\"\n            ]\n          ]\n        }\n      ]\n    }"
+        },
+        {
+          "field": "sections.8: audit 12",
+          "before": "{\n      \"role\": \"Confidence close\",\n      \"heading\": \"Confidence Close — Lesson Wrap-Up\",\n      \"subtitle\": \"Lesson Wrap-Up\",\n      \"contentMarkdown\": \"- You now see the difference between random posting and a true **Content System**.\\n- **Next:** Attention economy — how people decide to continue or skip.\",\n      \"bullets\": [\n        \"You now see the difference between random posting and a true **Content System**.\",\n        \"**Next:** Attention economy — how people decide to continue or skip.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Confidence close\",\n      \"heading\": \"Confidence Close — Step Wrap-Up\",\n      \"subtitle\": \"Step Wrap-Up\",\n      \"contentMarkdown\": \"- You now see the difference between random posting and a true **Content System**.\\n- **Next:** Attention economy — how people decide to continue or skip.\",\n      \"bullets\": [\n        \"You now see the difference between random posting and a true **Content System**.\",\n        \"**Next:** Attention economy — how people decide to continue or skip.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.6: audit 7",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — One Application Question\",\n      \"subtitle\": \"One Application Question\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 1\\n\\n**Question:** A person posts daily but each post is different and without direction — what is the closest step to correct the course?\\n\\nDefine a clear Content Promise and choose a Repeatable Format.\\n- **Explanation:** Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\",\n      \"bullets\": [\n        \"Define a clear Content Promise and choose a Repeatable Format.\",\n        \"Explanation: Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A person posts daily but each post is different and without direction — what is the closest step to correct the course?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Define a clear Content Promise and choose a Repeatable Format.\",\n          \"An unsuitable choice; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step in decision-making.\"\n        ],\n        \"explanation\": \"Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz — One Application Question\",\n      \"subtitle\": \"One Application Question\",\n      \"contentMarkdown\": \"**Question:** A person posts daily but each post is different and without direction — what is the closest step to correct the course?\\n\\n1. Define a clear Content Promise and choose a Repeatable Format.\\n2. Increase the number of posts published each day.\\n3. Switch the publishing platform every week.\\n\\n**Explanation:** Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\",\n      \"bullets\": [\n        \"Define a clear Content Promise and choose a Repeatable Format.\",\n        \"Increase the number of posts published each day.\",\n        \"Switch the publishing platform every week.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"A person posts daily but each post is different and without direction — what is the closest step to correct the course?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Define a clear Content Promise and choose a Repeatable Format.\",\n          \"Increase the number of posts published each day.\",\n          \"Switch the publishing platform every week.\"\n        ],\n        \"explanation\": \"Real improvement starts from clarity of promise and a repeatable pattern — not from increasing quantity.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "auditItems": [
+        7,
+        12
+      ],
+      "currentSha256": "4f47733bf1222c0e50daed8f7b6cf1c889c54099a7240ea0a18355e9c910a158",
+      "currentBlob": "d18259585b6025b97ab3fe950b62c1e8f520280d",
+      "generationSourceSha256": "4844b43fb54ee6023d886273d9997a3acfa0c1a8c9d0b344c9dbebf3935f6835",
+      "generationSourceBlob": "3ccff8f27c6a29a9f974afa246f03a0a19bbb03f",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Introduction to the Lesson\",\n      \"contentMarkdown\": \"- **What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.\\n- **Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.\\n- **What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it.\",\n      \"bullets\": [\n        \"**What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.\",\n        \"**Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.\",\n        \"**What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Introduction to the Step\",\n      \"contentMarkdown\": \"- **What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.\\n- **Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.\\n- **What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it.\",\n      \"bullets\": [\n        \"**What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.\",\n        \"**Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.\",\n        \"**What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.6: audit 7",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 2\\n\\n**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\\n\\nWhere exactly do customers drop off in the purchase process (funnel drop-off)?\\n- **Explanation:** A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\",\n      \"bullets\": [\n        \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n        \"Explanation: A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n          \"An irrelevant option; it ignores the key data from the section above.\",\n          \"A partial answer that misses the context and ignores the next step for the decision.\"\n        ],\n        \"explanation\": \"A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\\n\\n1. Where exactly do customers drop off in the purchase process (funnel drop-off)?\\n2. How many visits does the website receive each day?\\n3. What is the average age of customers who add items to the cart but do not buy?\\n\\n**Explanation:** A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\",\n      \"bullets\": [\n        \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n        \"How many visits does the website receive each day?\",\n        \"What is the average age of customers who add items to the cart but do not buy?\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Where exactly do customers drop off in the purchase process (funnel drop-off)?\",\n          \"How many visits does the website receive each day?\",\n          \"What is the average age of customers who add items to the cart but do not buy?\"\n        ],\n        \"explanation\": \"A specific question identifies \\\"where the problem is\\\" — leading you to a decision about the purchase path. General numbers are not enough.\"\n      }\n    }"
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+      "auditItems": [
+        7,
+        12
+      ],
+      "currentSha256": "fd715d8f15634d5f3805856d8deb771e27db2496d844f94efeb313924c5eb18a",
+      "currentBlob": "e85c119bc7de4e07b85d272460b9a13d2e862a73",
+      "generationSourceSha256": "d55228bb368650706598f7c2d357034874de7fd52031cc7661b5a741b1eb5420",
+      "generationSourceBlob": "fe9531ffc7cc6452add7008d11d3dc868b5bafaa",
+      "replacements": [
+        {
+          "field": "sections.0: audit 12",
+          "before": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Lesson Start\",\n      \"contentMarkdown\": \"- **What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.\\n- **Why now?** After **Builder** (the product) and **Creator** (the audience), **Automator** is the «**virtual worker**» that makes repetitive tasks run on their own.\\n- **What after the lesson?** You will identify **5 repetitive tasks** and calculate the time you waste on them weekly.\",\n      \"bullets\": [\n        \"**What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.\",\n        \"**Why now?** After **Builder** (the product) and **Creator** (the audience), **Automator** is the «**virtual worker**» that makes repetitive tasks run on their own.\",\n        \"**What after the lesson?** You will identify **5 repetitive tasks** and calculate the time you waste on them weekly.\"\n      ],\n      \"tables\": []\n    }",
+          "after": "{\n      \"role\": \"Orientation\",\n      \"heading\": \"Orientation\",\n      \"subtitle\": \"Step Start\",\n      \"contentMarkdown\": \"- **What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.\\n- **Why now?** After **Builder** (the product) and **Creator** (the audience), **Automator** is the «**virtual worker**» that makes repetitive tasks run on their own.\\n- **What after the lesson?** You will identify **5 repetitive tasks** and calculate the time you waste on them weekly.\",\n      \"bullets\": [\n        \"**What will you understand?** Before building any automation, you need to know **which repetitive tasks** take up your time each week.\",\n        \"**Why now?** After **Builder** (the product) and **Creator** (the audience), **Automator** is the «**virtual worker**» that makes repetitive tasks run on their own.\",\n        \"**What after the lesson?** You will identify **5 repetitive tasks** and calculate the time you waste on them weekly.\"\n      ],\n      \"tables\": []\n    }"
+        },
+        {
+          "field": "sections.6: audit 7",
+          "before": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"> **Quiz key (unchanged):** correctIndex: 0\\n\\n**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\\n\\nCount the task, its time, and frequency per week — to know this is a priority.\\n- **Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\",\n      \"bullets\": [\n        \"Count the task, its time, and frequency per week — to know this is a priority.\",\n        \"Explanation: Audit first — when you know «welcome email» = 30 minutes daily, you will know this is the first task for the virtual worker.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Count the task, its time, and frequency per week — to know this is a priority.\",\n          \"An unsuitable option; it ignores the basic data in the section above.\",\n          \"A partial answer that misses the context and ignores the next step in the decision.\"\n        ],\n        \"explanation\": \"**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\"\n      }\n    }",
+          "after": "{\n      \"role\": \"Quiz\",\n      \"heading\": \"Quiz\",\n      \"subtitle\": \"Quick Confirmation\",\n      \"contentMarkdown\": \"**Question:** Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\\n\\n1. Count the task, its time, and frequency per week — to know this is a priority.\\n2. Open Make and build a flow before measuring the task's time or frequency.\\n3. Stop sending welcome emails to new clients to save time.\\n\\n**Explanation:** **Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\",\n      \"bullets\": [\n        \"Count the task, its time, and frequency per week — to know this is a priority.\",\n        \"Open Make and build a flow before measuring the task's time or frequency.\",\n        \"Stop sending welcome emails to new clients to save time.\"\n      ],\n      \"tables\": [],\n      \"quiz\": {\n        \"question\": \"Sarah sends a welcome email to each new client manually — 30 minutes daily. What is the best step **before** opening any automation tool?\",\n        \"correctIndex\": 0,\n        \"options\": [\n          \"Count the task, its time, and frequency per week — to know this is a priority.\",\n          \"Open Make and build a flow before measuring the task's time or frequency.\",\n          \"Stop sending welcome emails to new clients to save time.\"\n        ],\n        \"explanation\": \"**Audit** first — when you know «welcome email» = 30 minutes daily, you will know this is the **first task** for the virtual worker.\"\n      }\n    }"
         }
       ]
     }
