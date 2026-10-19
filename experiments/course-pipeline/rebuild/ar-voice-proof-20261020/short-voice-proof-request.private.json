@@ -1,0 +1,44 @@
+{
+  "recordedUTC": "2026-10-19T22:59:53.925918+00:00",
+  "status": "PREPARED_NOT_GENERATED_NOT_OWNER_LISTENED",
+  "scope": "One short two-voice natural Egyptian pronunciation/listening proof only; excerpts are not a replacement for the complete lesson.",
+  "provider": "Gemini via existing Actions convention; no substituted provider authorized",
+  "segments": [
+    {
+      "speakerId": "A",
+      "existingVoiceCandidate": "Charon",
+      "text": "قبل ما تستخدم الأداة، بص على المقبض واتأكد إنه ثابت، وإن الجزء اللي هتشتغل بيه سليم ونضيف. لو لقيت عيب، بلّغ المدرّب وما تستخدمهاش.",
+      "sourceScene": "s101-limits",
+      "sourceMeaning": "Inspect stable handle and sound clean working part; report defects and do not use defective equipment."
+    },
+    {
+      "speakerId": "B",
+      "existingVoiceCandidate": "Kore",
+      "text": "ولما تشيل أداة حادة، خلّي السن لتحت وبعيد عن الناس، وسيب مسافة حواليك. واتبع الطريقة اللي المدرّب ورّاهالك للأداة دي.",
+      "sourceScene": "s101-limits",
+      "sourceMeaning": "Carry sharp edge down and away from people; maintain clearance and follow tool-specific trainer instruction."
+    }
+  ],
+  "voiceDelivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّب بيشرح لطلبة في الورشة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللي المصريين بينطقوها كده. انطق «بص»، «اتأكد»، «نضيف»، «ما تستخدمهاش»، «خلّي» و«ورّاهالك» بالنطق المصري اليومي. حافظ على الوقفات الطبيعية والمعنى وشروط الأمان. اقرأ نص الإلقاء بس، من غير قراءة التعليمات أو أسماء المتكلمين، ومن غير مقدمة أو تعليق. بلاش نبرة نشرات الأخبار، وبلاش فصحى أو لهجة خليجية، وبلاش تمثيل مبالغ فيه أو تطويل الحروف.",
+  "pronunciationChecks": [
+    "بص",
+    "اتأكد",
+    "اللي هتشتغل بيه",
+    "ونضيف",
+    "ما تستخدمهاش",
+    "خلّي",
+    "المدرّب ورّاهالك"
+  ],
+  "duration": "Measure actual generated WAV; do not fit speech into an invented fixed duration.",
+  "acceptance": [
+    "Complete source-faithful spoken excerpt",
+    "Owner hears and accepts natural Egyptian pronunciation in both voices",
+    "No clipped/repeated/invented speech",
+    "Audio-based measured anchors independently checked before motion",
+    "Short synced action preview reviewed before any full movie or44step rollout"
+  ],
+  "nextRemoteRequest": "A new bounded request is required; the old14October one-additional-chemical-segment authorization is not a reusable request for these new segments.",
+  "generationCallsPerformed": 0,
+  "newAudioFiles": [],
+  "fullLessonSourceUntouched": true
+}
