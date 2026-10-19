@@ -3434,13 +3434,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.",
+      "prompt": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.\n\nFor each of the five displayed elements, include one plausible assumption and a specific test, as the rubric requires. Keep the element itself in its existing field and add the assumption/test beneath it. Use the final field for one contradiction between elements and its coherent proposed resolution. These are plans for tests, not a requirement to run an external experiment.",
       "fields": [
         "Value Proposition (2 sentences)",
         "Customer Segment",
         "Key Activities",
         "Key Resources",
-        "Revenue Streams"
+        "Revenue Streams",
+        "Contradiction between model elements and proposed resolution"
       ],
       "criteria": [
         "Value proposition is clear, concise, and customer-centric.",
@@ -3760,13 +3761,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.",
+      "prompt": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.\n\nFor each named stage, include the customer's question, friction, owner and metric with its numerator/denominator, unit, cohort and period. In the added field identify and justify one leakage point, propose one change and show the before/after measurement using the same conversion definition, cohort, units and comparable periods. Fictional numbers must be labelled as assumptions; no real analytics collection is required.",
       "fields": [
-        "Customer Journey Stage 1: [Name]",
-        "Customer Journey Stage 2: [Name]",
-        "Customer Journey Stage 3: [Name]",
-        "Customer Journey Stage 4: [Name]",
-        "Customer Journey Stage 5: [Name]"
+        "Customer Journey Stage 1: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 2: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 3: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 4: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 5: name, customer question, friction, owner and metric definition",
+        "Leakage point and reason, proposed change and measurement with the same conversion definition"
       ],
       "criteria": [
         "Clear identification of five distinct customer journey stages.",
@@ -6770,13 +6772,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.",
+      "prompt": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.\n\nAfter selecting the priority, use the named postponement field to identify one deferred activity and explain why deferring it frees the capability or budget needed for the selected priority.",
       "fields": [
         "Business Name and Industry",
         "Eight Observations (4 Internal, 4 External) with Evidence",
         "Classification of Each Observation (Strength, Weakness, Opportunity, Threat)",
         "Three Potential Strategic Priorities",
-        "Selected Priority with Rationale (Impact, Capability, Cost Analysis)"
+        "Selected Priority with Rationale (Impact, Capability, Cost Analysis)",
+        "Deferred activity and reason for postponement"
       ],
       "criteria": [
         "All eight observations are clearly stated and supported by evidence.",
@@ -7431,13 +7434,13 @@
       }
     ],
     "assignment": {
-      "prompt": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.",
+      "prompt": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.\n\nFor each of the four weeks, use this repeatable row: demand units; required and available staff hours; required and available materials; cash received and paid with amounts/dates; available cash. State fictional inputs and assumptions. Quantify required-minus-available capacity gaps and any cash shortfall at its payment date. In Revised Plan Notes, show the gap-resolution plan and the service/cost trade-offs; no external spreadsheet or actual payment is required.",
       "fields": [
-        "Week 1 Demand (Units)",
-        "Week 2 Demand (Units)",
-        "Week 3 Demand (Units)",
-        "Week 4 Demand (Units)",
-        "Revised Plan Notes"
+        "Week 1 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 2 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 3 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 4 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Revised Plan Notes: quantified capacity/cash gaps, resolution and service-cost trade-offs"
       ],
       "criteria": [
         "Clearly links projected demand to required staff hours and materials.",
@@ -8095,13 +8098,16 @@
       }
     ],
     "assignment": {
-      "prompt": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.",
+      "prompt": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.\n\nFor each assumption field, record its original value, the one changed value, the result of changing it alone and the result's unit. Keep the conservative scenario coherent. Then complete the separate preventive-action, warning-indicator and review-date fields. A hypothetical plan with declared assumptions is sufficient.",
       "fields": [
         "Plan Title",
-        "Assumption 1 (and its original value)",
-        "Assumption 2 (and its original value)",
-        "Assumption 3 (and its original value)",
-        "Conservative Scenario Description"
+        "Assumption 1: original value, tested value and result of changing it alone",
+        "Assumption 2: original value, tested value and result of changing it alone",
+        "Assumption 3: original value, tested value and result of changing it alone",
+        "Conservative Scenario Description",
+        "Preventive action for the conservative scenario",
+        "Measurable warning indicator: definition, unit and trigger",
+        "Review date and what will be reviewed"
       ],
       "criteria": [
         "Identifies three distinct and relevant assumptions.",
@@ -8424,13 +8430,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.",
+      "prompt": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.\n\nPrepare eight numbered educational verification rows covering activity, location, workers, data and invoicing. The first five fields are the log's columns: repeat entries 1–8 in every field, with matching row numbers. For each row record the question, authority to verify or explicitly unknown, Unverified status, N/A applicability pending verification, and the draft/review date clearly distinguished from a completed check. No legal answer, authorization or actual filing is required. In the final field, identify three question numbers and explain the possible effect of delaying each check; do not invent legal requirements.",
       "fields": [
         "Question",
         "Competent Authority",
         "Verification Status (Verified/Unverified)",
         "Applies to My Business (Yes/No/N/A)",
-        "Date Checked/Updated"
+        "Date Checked/Updated",
+        "Effect of delaying three unverified items: question number, possible impact and next verification step"
       ],
       "criteria": [
         "Eight relevant questions covering activity, location, workers, data, and invoicing are formulated.",
@@ -10133,13 +10140,15 @@
       }
     ],
     "assignment": {
-      "prompt": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.",
+      "prompt": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.\n\nUse ten numbered rows. Repeat entries 1–10 in each of the first five fields so each condition has matching evidence, owner, initial status and critical/deferrable classification. Then give a justified launch-or-defer decision and a first-week monitoring plan with indicators, owner, review timing and response to a critical failure. Use a fictional readiness exercise; no real portal launch is required.",
       "fields": [
         "Readiness Condition (10 items)",
         "Evidence Required",
         "Owner/Team Responsible",
         "Initial Status (Not Started, In Progress, Complete)",
-        "Criticality (Critical, Deferrable)"
+        "Criticality (Critical, Deferrable)",
+        "Launch or defer decision and justification from readiness evidence",
+        "First-week monitoring plan: indicators, owner, review timing and critical-failure response"
       ],
       "criteria": [
         "Ten distinct readiness conditions are identified, covering operations, quality, finance, and local verification.",
@@ -10810,13 +10819,13 @@
       }
     ],
     "assignment": {
-      "prompt": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.",
+      "prompt": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.\n\nRepeat tasks 1–6 in each of the first four fields, keeping matching task numbers: name, duration, dependencies and owner. In Impact of Delay/Conflict, explicitly show the initial critical path and earliest finish, then the revised critical path and earliest finish after the resource conflict and one-day delay. Show the delay-cost calculation and separate effort from waiting. Text lists or a table here are sufficient; no external scheduling tool is required.",
       "fields": [
         "Task Name",
         "Estimated Duration (Days)",
         "Dependencies (Preceding Task)",
         "Assigned Owner",
-        "Impact of Delay/Conflict"
+        "Impact of Delay/Conflict: critical path and earliest finish before/after, delay cost, effort versus waiting"
       ],
       "criteria": [
         "All six tasks are clearly defined with realistic durations.",
@@ -11826,13 +11835,14 @@
       }
     ],
     "assignment": {
-      "prompt": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.",
+      "prompt": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.\n\nAfter completing the criteria, tests and handover details, record the self-review result in its named field: what is complete, what evidence/information is missing, and the next action needed for the new owner. Distinguish evidence actually supplied in the fictional case from an unverified assumption.",
       "fields": [
         "Project Title",
         "Acceptance Criteria (5) and corresponding Test for each",
         "Handover Document Version",
         "New Owner (Name/Role)",
-        "Known Deferred Defects (2)"
+        "Known Deferred Defects (2)",
+        "Self-review results, missing evidence/information and next action"
       ],
       "criteria": [
         "Five distinct and verifiable acceptance criteria are provided.",
@@ -12156,13 +12166,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.",
+      "prompt": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.\n\nUse the first three fields for the short closure report (approximately 200–300 words in total). Complete all three distinct lesson fields using the same template: evidence, possible cause, actionable change, owner and measurable outcome. Separate established facts from interpretations needing verification.",
       "fields": [
         "Project Overview (brief summary, objectives, outcome)",
         "Deliverables Acceptance Status",
         "Financial Summary (actual vs. budget)",
         "Lesson Learned 1 (Evidence, Cause, Action, Owner, Measure)",
-        "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)"
+        "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)",
+        "Lesson Learned 3 (Evidence, Cause, Action, Owner, Measure)"
       ],
       "criteria": [
         "The closure report provides a clear overview of the project's outcome.",
@@ -12513,13 +12524,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.",
+      "prompt": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.\n\nRepeat the five-column claim log for ten numbered claims: put entries 1–10 with matching numbers in the statement, type, traceability, challenging-question and answer fields. Mark missing evidence rather than inventing it. In the final field show one overstated claim before and after correction, why the evidence supports the revision, and the next verification step.",
       "fields": [
         "Claim Statement (from your proposal)",
         "Claim Type (Observation, Calculation, Assumption, Decision)",
         "Evidence/Traceability (Where does this claim come from?)",
         "Potential Challenging Question (A question a stakeholder might ask)",
-        "Prepared Answer (How you would defend it, acknowledging limits)"
+        "Prepared Answer (How you would defend it, acknowledging limits)",
+        "Overstated claim: original/corrected wording, evidence limits and next verification step"
       ],
       "criteria": [
         "All ten claims are correctly classified into one of the four types.",

@@ -1,0 +1,36 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    89
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 89,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L02",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "0b2110690b65c7c78238d04f305ee1ebe3485d9fb550161b3fbaadb8bf1557f7",
+      "afterSha256": "fa8218224118c0ffc586d8e012075b165896b65719ba916aeeaa509b6f996311",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل أنك مسؤول عن تخطيط مشروع صغير لافتتاح مقهى جديد. يتكون المشروع من 6 مهام رئيسية. قم بإنشاء شبكة مهام، وحدد الاعتماديات، والمدد، والمسؤولين. ثم قم بحساب أقرب موعد للانتهاء. بعد ذلك، أدخل تعارضًا في الموارد وتأخيرًا في مهمة واحدة، وقم بتحديث الجدول الزمني والتكلفة، مع شرح الفرق بين الجهد والانتظار في سياق التعديلات.",
+          "after": "تخيل أنك مسؤول عن تخطيط مشروع صغير لافتتاح مقهى جديد. يتكون المشروع من 6 مهام رئيسية. قم بإنشاء شبكة مهام، وحدد الاعتماديات، والمدد، والمسؤولين. ثم قم بحساب أقرب موعد للانتهاء. بعد ذلك، أدخل تعارضًا في الموارد وتأخيرًا مدته يوم واحد في مهمة واحدة، وقم بتحديث الجدول الزمني والتكلفة، مع شرح الفرق بين الجهد والانتظار في سياق التعديلات.\n\nأدخل تأخيرًا مدته يوم واحد في مهمة واحدة، إلى جانب تعارض المورد؛ استخدم اليوم الواحد نفسه عند تحديث المدة والتكلفة."
+        },
+        {
+          "path": "assignment.fields.3",
+          "beforeExists": true,
+          "before": "تحديد تعارض الموارد والتأخير الجديد",
+          "after": "تحديد تعارض مورد واحد وتأخير مهمة واحدة لمدة يوم واحد"
+        }
+      ]
+    }
+  ],
+  "fieldMigrations": [],
+  "fieldIdentity": "Existing positions are preserved. Expanded labels add required detail to the same subject; original values are never shifted or reinterpreted as appended outputs.",
+  "pdfAssets": "Original workbook/media identities preserved; scoped written delivery and independent attachment acceptance pending"
+}

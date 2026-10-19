@@ -1,0 +1,36 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    90
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 90,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L08",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "7421ebd14f779f6d59ae8e1095ff938bc0d896127d47a4d8de95e024c0b61ab0",
+      "afterSha256": "dc40f4e3691982a2583cd0151f2cb1aed5d63287f5480bf07b7ffa29c455ad9a",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "راجع عشرة ادعاءات من خطة عمل حالية أو افتراضية لديك. صنف كل ادعاء، ثم جهز خمسة أسئلة اعتراض محتملة وإجابات تستند إلى دليل أو تعترف بحدوده. صحح ادعاءً واحداً مبالغاً فيه وحدد التجربة التالية للتحقق منه.",
+          "after": "راجع عشرة ادعاءات من خطة عمل حالية أو افتراضية لديك. صنف كل ادعاء، ثم جهز خمسة أسئلة اعتراض إجمالًا حول ادعاءات مختارة من العشرة وإجابات تستند إلى دليل أو تعترف بحدوده. صحح ادعاءً واحداً مبالغاً فيه وحدد التجربة التالية للتحقق منه.\n\nالمطلوب خمسة أسئلة اعتراض إجمالًا موزعة على ادعاءات مختارة من العشرة، مو خمسة لكل ادعاء. رقّم الادعاءات 1–10، واربط كل سؤال برقم الادعاء اللي يناقشه، ثم قدّم جوابه مع الدليل أو حدوده."
+        },
+        {
+          "path": "assignment.fields.1",
+          "beforeExists": true,
+          "before": "خمسة أسئلة اعتراض محتملة لكل ادعاء.",
+          "after": "خمسة أسئلة اعتراض إجمالًا حول ادعاءات مختارة، مع رقم الادعاء لكل سؤال"
+        }
+      ]
+    }
+  ],
+  "fieldMigrations": [],
+  "fieldIdentity": "Existing positions are preserved. Expanded labels add required detail to the same subject; original values are never shifted or reinterpreted as appended outputs.",
+  "pdfAssets": "Original workbook/media identities preserved; scoped written delivery and independent attachment acceptance pending"
+}
