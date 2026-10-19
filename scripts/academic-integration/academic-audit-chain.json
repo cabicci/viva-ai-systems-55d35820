@@ -214,6 +214,10 @@
     {
       "path": "scripts/academic-integration/audit-revision-109.json",
       "sha256": "d127f82106c8ad3f123a6fa488c58d3c97bc1660bc9b084a8822c0d8ed7df9b3"
+    },
+    {
+      "path": "scripts/academic-integration/audit-revision-141.json",
+      "sha256": "926207f862f1fa924de0ab38839619579c2616732ef86ae1ce3fa6f501496d9c"
     }
   ],
   "policy": "Append reviewed immutable receipts; never rewrite historical payload revisions or infer arbitrary peer states."

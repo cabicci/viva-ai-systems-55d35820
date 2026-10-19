@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import specification from "./audit-source-compatibility.json";
 import revision42 from "./audit-source-revision-42-20261019.json";
+import revisionCopy from "./audit-source-revision-43-54-141-142-20261019.json";
 
 type SourceIdentity = { sourcePath: string; sourceSha256: string; sourceBlob: string };
 const sha256 = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
@@ -17,7 +18,7 @@ export function restoreReviewedEditorialParentSource(
   bytes: Buffer,
 ): Buffer {
   let current = bytes;
-  const stages = [revision42];
+  const stages = [revision42, revisionCopy];
   const seen = new Set<string>();
   for (let depth = 0; depth < stages.length; depth += 1) {
     const matches = stages.flatMap((stage) =>

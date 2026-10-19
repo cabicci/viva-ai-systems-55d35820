@@ -217,7 +217,7 @@ function creatorModules(): CurriculumModule[] {
         lesson(
           1,
           "creator-m5-l1-editing",
-          "المونتاج — Cut, Caption, Pace",
+          "التحرير — القص والإيقاع",
           "available",
           "/learn/creator/creator-m5-l1-editing",
         ),
@@ -258,7 +258,7 @@ function creatorModules(): CurriculumModule[] {
         lesson(
           1,
           "creator-m7-l1-brand-basics",
-          "Brand Basics — Colors, Fonts, Logo",
+          "أساسيات الهوية — وجهة نظرك",
           "available",
           "/learn/creator/creator-m7-l1-brand-basics",
         ),

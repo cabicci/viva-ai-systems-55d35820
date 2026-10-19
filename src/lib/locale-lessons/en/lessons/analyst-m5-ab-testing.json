@@ -39,12 +39,13 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "A vs B — One Variable — Metric Before Starting",
-      "contentMarkdown": "- **A/B** = version **A** (as is) **versus** version **B** (only **one** change). **Everything else stays the same**.\n- Define the **metric** **before** starting: **Conversion**, **Clicks**, **Revenue** — **not** \"let's see what happens.\"\n- **Beginner's warning:** **Small sample** = **unreliable** result. **2–4 weeks** of observation is **better** than just **3 days**.\n- **AI** helps you formulate the hypothesis and interpretation — **but don't exaggerate**: don't say \"we proved 100%\" from just **20 visitors**.",
+      "contentMarkdown": "- **A/B** = version **A** (as is) **versus** version **B** (only **one** change). **Everything else stays the same**.\n- Define the **metric** **before** starting: **Conversion**, **Clicks**, **Revenue** — **not** \"let's see what happens.\"\n- **Beginner's warning:** **Small sample** = **unreliable** result. **2–4 weeks** of observation is **better** than just **3 days**.\n- **AI** helps you formulate the hypothesis and interpretation — **but don't exaggerate**: don't say \"we proved 100%\" from just **20 visitors**.\n\nAssign comparable eligible visitors concurrently to A or B using suitable random allocation (for example, a planned 50/50 split). Keep each participant in the same variant where possible. Define the metric, counting period and decision rule before starting; hold other factors constant. Two to four weeks, 20 visitors or any fixed count alone do not guarantee enough evidence. An inconclusive result is allowed; this task designs the test and does not require a real run.",
       "bullets": [
         "**A/B** = version **A** (as is) **versus** version **B** (only **one** change). **Everything else stays the same**.",
         "Define the **metric** **before** starting: **Conversion**, **Clicks**, **Revenue** — **not** \"let's see what happens.\"",
         "**Beginner's warning:** **Small sample** = **unreliable** result. **2–4 weeks** of observation is **better** than just **3 days**.",
-        "**AI** helps you formulate the hypothesis and interpretation — **but don't exaggerate**: don't say \"we proved 100%\" from just **20 visitors**."
+        "**AI** helps you formulate the hypothesis and interpretation — **but don't exaggerate**: don't say \"we proved 100%\" from just **20 visitors**.",
+        "Assign comparable eligible visitors concurrently to A or B using suitable random allocation (for example, a planned 50/50 split). Keep each participant in the same variant where possible. Define the metric, counting period and decision rule before starting; hold other factors constant. Two to four weeks, 20 visitors or any fixed count alone do not guarantee enough evidence. An inconclusive result is allowed; this task designs the test and does not require a real run."
       ],
       "tables": []
     },
@@ -52,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Random Experiments vs Organized A/B",
-      "contentMarkdown": "| \"We tried everything\" (chaos) | One A/B (organized) |\n|------------------------|------------------|\n| **3 changes** in a week — **we don't know** what worked. **Decision** based on **guessing** | **Title A** vs **Title B** — **same page**, **same price** — **two weeks** — **Conversion %** |",
+      "contentMarkdown": "| \"We tried everything\" (chaos) | One A/B (organized) |\n|------------------------|------------------|\n| **3 changes** in a week — **we don't know** what worked. **Decision** based on **guessing** | **Title A** vs **Title B** — **same page**, **same price** — **two weeks** — **Conversion %** Concurrent comparable audiences, random stable allocation, and a decision rule defined before observation; two weeks is an example, not evidence of adequate sample size. |",
       "bullets": [],
       "tables": [
         {
@@ -63,7 +64,7 @@
           "rows": [
             [
               "**3 changes** in a week — **we don't know** what worked. **Decision** based on **guessing**",
-              "**Title A** vs **Title B** — **same page**, **same price** — **two weeks** — **Conversion %**"
+              "**Title A** vs **Title B** — **same page**, **same price** — **two weeks** — **Conversion %** Concurrent comparable audiences, random stable allocation, and a decision rule defined before observation; two weeks is an example, not evidence of adequate sample size."
             ]
           ]
         }
@@ -130,7 +131,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Design a Simple A/B Test",
-      "contentMarkdown": "**Introduction:** This is a **design** task — **not** a mandatory run. Write an **A/B test**: what you are comparing, what the variable is, the metric, and the observation duration. **AI may suggest** wording — **you** choose the final version.\n\n**Delivery:**\n\n1. What you are comparing (**A** vs **B** — brief description)\n2. The **one variable** that changed\n3. The **metric** — defined **before** starting\n4. Duration of **observation** + where to measure\n5. **Potential decision** if **B** succeeds — and if it fails\n\n**Mission template:**\n\n```\nA vs B:\nA: [current version]\nB: [the only change]\n\nThe one variable:\n[What changed — title / price / CTA…]\n\nThe metric:\n[Metric — e.g., Conversion %]\n\nObservation:\n[Duration — e.g., two weeks] + [Where — page / email…]\n\nDecision if B succeeds:\n[Then I will…]\n\nDecision if B fails:\n[Then I will…]\n```\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Variable + Metric | 60% | **One variable** + **metric defined before starting** |\n| Observation + Decision | 40% | **Realistic duration** + **potential decision** for success and failure |",
+      "contentMarkdown": "**Introduction:** This is a **design** task — **not** a mandatory run. Write an **A/B test**: what you are comparing, what the variable is, the metric, and the observation duration. **AI may suggest** wording — **you** choose the final version.\n\n**Delivery:**\n\n1. What you are comparing (**A** vs **B** — brief description)\n2. The **one variable** that changed\n3. The **metric** — defined **before** starting\n4. Duration of **observation** + where to measure\n5. **Potential decision** if **B** succeeds — and if it fails\n\n**Mission template:**\n\n```\nA vs B:\nA: [current version]\nB: [the only change]\n\nThe one variable:\n[What changed — title / price / CTA…]\n\nThe metric:\n[Metric — e.g., Conversion %]\n\nObservation:\n[Duration — e.g., two weeks] + [Where — page / email…]\n\nDecision if B succeeds:\n[Then I will…]\n\nDecision if B fails:\n[Then I will…]\n```\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Variable + Metric | 60% | **One variable** + **metric defined before starting** |\n| Observation + Decision | 40% | **Realistic duration** + **potential decision** for success and failure |\n\nAudience and allocation: who is eligible, random A/B split during the same period, stable assignment per participant; predefined decision rule and what makes the evidence insufficient.\n\nAssign comparable eligible visitors concurrently to A or B using suitable random allocation (for example, a planned 50/50 split). Keep each participant in the same variant where possible. Define the metric, counting period and decision rule before starting; hold other factors constant. Two to four weeks, 20 visitors or any fixed count alone do not guarantee enough evidence. An inconclusive result is allowed; this task designs the test and does not require a real run.",
       "bullets": [],
       "tables": [
         {
@@ -143,12 +144,12 @@
             [
               "Variable + Metric",
               "60%",
-              "**One variable** + **metric defined before starting**"
+              "One variable and predefined metric; comparable concurrent audiences with random, stable participant allocation where possible."
             ],
             [
               "Observation + Decision",
               "40%",
-              "**Realistic duration** + **potential decision** for success and failure"
+              "Observation period and decision rule set in advance, including an inconclusive outcome; no fixed duration or visitor count guarantees a result."
             ]
           ]
         }
@@ -160,18 +161,19 @@
           "The **one variable** that changed",
           "The **metric** — defined **before** starting",
           "Duration of **observation** + where to measure",
-          "**Potential decision** if **B** succeeds — and if it fails"
+          "**Potential decision** if **B** succeeds — and if it fails",
+          "Audience and allocation: who is eligible, random A/B split during the same period, stable assignment per participant; predefined decision rule and what makes the evidence insufficient."
         ],
         "rubric": [
           {
             "dimension": "Variable + Metric",
             "weight": 60,
-            "criteria": "**One variable** + **metric defined before starting**"
+            "criteria": "One variable and predefined metric; comparable concurrent audiences with random, stable participant allocation where possible."
           },
           {
             "dimension": "Observation + Decision",
             "weight": 40,
-            "criteria": "**Realistic duration** + **potential decision** for success and failure"
+            "criteria": "Observation period and decision rule set in advance, including an inconclusive outcome; no fixed duration or visitor count guarantees a result."
           }
         ],
         "yamlIntent": "Design simple A/B: one variable, metric, observation window, decisions",

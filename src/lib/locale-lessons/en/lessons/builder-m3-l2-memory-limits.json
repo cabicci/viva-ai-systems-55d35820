@@ -25,13 +25,13 @@
     },
     {
       "role": "Tension",
-      "heading": "Tension",
+      "heading": "You agreed — then the reply changed",
       "subtitle": "You agreed — and after 10 messages, it forgot",
-      "contentMarkdown": "- **You explained an idea**, **you agreed on a plan** — **and soon** **the AI** **started suggesting the opposite of what you said**.\n- **It’s not you** — **the AI really forgets**. **This isn’t a personal flaw** — **it’s a design limitation**.\n- When **building an AI feature** — **don’t expect** that ‘**the conversation**’ **will remember everything** — **the app must remember what is important**.",
+      "contentMarkdown": "You explained an idea and agreed a plan, then a reply contradicted it.\n\nThat is a reason to inspect the context sent with the request, not a diagnosis that the context window is full.\n\nThe app stores important state separately and selects the relevant information for each request.",
       "bullets": [
-        "**You explained an idea**, **you agreed on a plan** — **and soon** **the AI** **started suggesting the opposite of what you said**.",
-        "**It’s not you** — **the AI really forgets**. **This isn’t a personal flaw** — **it’s a design limitation**.",
-        "When **building an AI feature** — **don’t expect** that ‘**the conversation**’ **will remember everything** — **the app must remember what is important**."
+        "You explained an idea and agreed a plan, then a reply contradicted it.",
+        "That is a reason to inspect the context sent with the request, not a diagnosis that the context window is full.",
+        "The app stores important state separately and selects the relevant information for each request."
       ],
       "tables": []
     },
@@ -39,12 +39,13 @@
       "role": "Core idea",
       "heading": "Core idea",
       "subtitle": "AI does not remember forever",
-      "contentMarkdown": "- **Context Window** = ‘**memory window**’ — **the AI only sees the last few words**. **What came before** **is lost**.\n- **Signs you’ve gone beyond the window**: **it repeats itself**, **forgets your name**, **contradicts decisions**, **makes up details**.\n- **The solution in the product**: **the app remembers 3–5 fixed facts** (name, preferences, decisions) **and passes them with each request**.\n- **In conversation**: **a short summary every 15–20 messages** — ‘**Status summary: 1)... 2)...**’.",
+      "contentMarkdown": "A Context Window has a capacity measured in tokens, which depends on the model. It is not a fixed number of messages or weeks.\n\nThe model works with the context the app sends for the current request. The app may select messages, summarize them, or retrieve stored information.\n\nOmitting or summarizing information in a request does not mean it was erased from application storage. Persisting state and sending context are separate functions.\n\nRepetition, a missing name or a contradicted decision are signals to investigate, not proof of a single cause. Inspect the current request before diagnosing context overflow.\n\nStore and review the facts and decisions the feature needs. Reviewing a summary every 15–20 messages is only a rough reminder that depends on message length, not a technical limit or a guarantee of recall.",
       "bullets": [
-        "**Context Window** = ‘**memory window**’ — **the AI only sees the last few words**. **What came before** **is lost**.",
-        "**Signs you’ve gone beyond the window**: **it repeats itself**, **forgets your name**, **contradicts decisions**, **makes up details**.",
-        "**The solution in the product**: **the app remembers 3–5 fixed facts** (name, preferences, decisions) **and passes them with each request**.",
-        "**In conversation**: **a short summary every 15–20 messages** — ‘**Status summary: 1)... 2)...**’."
+        "A Context Window has a capacity measured in tokens, which depends on the model. It is not a fixed number of messages or weeks.",
+        "The model works with the context the app sends for the current request. The app may select messages, summarize them, or retrieve stored information.",
+        "Omitting or summarizing information in a request does not mean it was erased from application storage. Persisting state and sending context are separate functions.",
+        "Repetition, a missing name or a contradicted decision are signals to investigate, not proof of a single cause. Inspect the current request before diagnosing context overflow.",
+        "Store and review the facts and decisions the feature needs. Reviewing a summary every 15–20 messages is only a rough reminder that depends on message length, not a technical limit or a guarantee of recall."
       ],
       "tables": []
     },
@@ -52,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Rambling and waiting vs summarizing and passing",
-      "contentMarkdown": "| ‘Continue from the beginning’ | Summary + passing from the app |\n|----------------|---------------------------|\n| **30-message conversation** — ‘**Continue from what I told you.**’ **It forgot**. **It will start guessing** — **and you will build on incorrect information** | ‘**Summary: 1) project... 2) decisions... 3) open...**’ + **the app passes the username and preferences each time** |",
+      "contentMarkdown": "| ‘Continue from the beginning’ | Summary + passing from the app |\n| --- | --- |\n| Asking to continue without checking that the name and decisions were sent can leave context missing even when the app has stored those facts. | The app stores state, retrieves what is needed or reviews a summary, and sends it with the request instead of assuming the model sees the entire archive. |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +63,8 @@
           ],
           "rows": [
             [
-              "**30-message conversation** — ‘**Continue from what I told you.**’ **It forgot**. **It will start guessing** — **and you will build on incorrect information**.",
-              "‘**Summary: 1) project... 2) decisions... 3) open...**’ + **the app passes the username and preferences each time**."
+              "Asking to continue without checking that the name and decisions were sent can leave context missing even when the app has stored those facts.",
+              "The app stores state, retrieves what is needed or reviews a summary, and sends it with the request instead of assuming the model sees the entire archive."
             ]
           ]
         }
@@ -73,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two terms to start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Context Window** | **The maximum amount of text the AI sees in the conversation** — **not a permanent archive** | **After 50 messages** — **the first message** **is deleted from its temporary memory** |\n| **State Snapshot** | **A short summary of the current state** — **to give back to the AI** when **the conversation gets long** | ‘**We decided: blue color, young audience, open: pricing page.**’ |",
+      "contentMarkdown": "| Term | Meaning | Example |\n| --- | --- | --- |\n| **Context Window** | The model's token budget for context in a request, depending on the model and supplied content; it is not the conversation archive. | Longer messages consume more tokens; there is no general rule that the first message is deleted after 50 messages. |\n| **State Snapshot** | **A short summary of the current state** — **to give back to the AI** when **the conversation gets long**. | ‘**We decided: blue color, young audience, open: pricing page.**’ |",
       "bullets": [],
       "tables": [
         {
@@ -85,8 +86,8 @@
           "rows": [
             [
               "**Context Window**",
-              "**The maximum amount of text the AI sees in the conversation** — **not a permanent archive**.",
-              "**After 50 messages** — **the first message** **is deleted from its temporary memory**."
+              "The model's token budget for context in a request, depending on the model and supplied content; it is not the conversation archive.",
+              "Longer messages consume more tokens; there is no general rule that the first message is deleted after 50 messages."
             ],
             [
               "**State Snapshot**",
@@ -108,22 +109,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **After a week of conversation** — **the AI forgot your name** **and contradicted a decision you both agreed on**. **What is the closest reason?**\n\n**You went beyond the Context Window** — **the information fell out of the window**.\nThe AI had a sudden hallucination** **not related to memory.\nThe problem is in your tone.\n\n**Explanation:** When **it forgets the basics** — **often the information is not in the window**. **The solution:** **the app saves and passes**.",
+      "contentMarkdown": "The app has stored your name and a project decision, but inspection confirms that neither is in the context sent for the current request. What preparation defect is established?\n\n1. The name and decision were not supplied in the current context; review selection and forwarding.\n\n2. The AI had a sudden hallucination not related to memory.\n\n3. The problem is in your tone.\n\nInspection establishes missing request context, not erased storage or a fixed message limit. Review retrieval, summarization and forwarding. Forgetting alone does not establish that the context window is full.",
       "bullets": [
-        "You went beyond the Context Window — the information fell out of the window.",
+        "The name and decision were not supplied in the current context; review selection and forwarding.",
         "The AI had a sudden hallucination not related to memory.",
         "The problem is in your tone."
       ],
       "tables": [],
       "quiz": {
-        "question": "**After a week of conversation** — **the AI forgot your name** **and contradicted a decision you both agreed on**. **What is the closest reason?**",
+        "question": "The app has stored your name and a project decision, but inspection confirms that neither is in the context sent for the current request. What preparation defect is established?",
         "correctIndex": 0,
         "options": [
-          "You went beyond the Context Window — the information fell out of the window.",
+          "The name and decision were not supplied in the current context; review selection and forwarding.",
           "The AI had a sudden hallucination not related to memory.",
           "The problem is in your tone."
         ],
-        "explanation": "When **it forgets the basics** — **often the information is not in the window**. **The solution:** **the app saves and passes**."
+        "explanation": "Inspection establishes missing request context, not erased storage or a fixed message limit. Review retrieval, summarization and forwarding. Forgetting alone does not establish that the context window is full."
       }
     },
     {
@@ -183,9 +184,9 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **I understand:** **the AI forgets** — **the app is the one that remembers**. **Context Window** **is a limit** **not a feature**.\n- **You can:** **identify 3 facts + Snapshot** **for any conversation feature**.\n- **Next:** **Temperature** — **stability vs creativity**.",
+      "contentMarkdown": "You understood: persisted application state differs from the context supplied to the model; review both.\n- **You can:** **identify 3 facts + Snapshot** **for any conversation feature**.\n- **Next:** **Temperature** — **stability vs creativity**.",
       "bullets": [
-        "**I understand:** **the AI forgets** — **the app is the one that remembers**. **Context Window** **is a limit** **not a feature**.",
+        "You understood: persisted application state differs from the context supplied to the model; review both.",
         "**You can:** **identify 3 facts + Snapshot** **for any conversation feature**.",
         "**Next:** **Temperature** — **stability vs creativity**."
       ],

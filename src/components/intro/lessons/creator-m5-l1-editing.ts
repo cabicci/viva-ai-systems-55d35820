@@ -15,7 +15,7 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
     eyebrow: "بداية الدرس",
-    title: "المونتاج بيوضح رسالتك مش بس يجمّلها",
+    title: "التحرير — القص والإيقاع",
     tone: "primary",
     block: {
       kind: "paragraphs",

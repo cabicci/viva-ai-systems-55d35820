@@ -15,7 +15,7 @@ export const CREATOR_M6_BRAND_BASICS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
     eyebrow: "بداية الدرس",
-    title: "الناس تفتكرك من موقفك مش من ألوانك",
+    title: "أساسيات الهوية — وجهة نظرك",
     tone: "primary",
     block: {
       kind: "paragraphs",

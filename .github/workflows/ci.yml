@@ -117,7 +117,7 @@ jobs:
           bun run scripts/academic-integration/import.ts --check-source
 
       - name: Technical and localized teaching copy contracts
-        run: node --test scripts/technical-education/audit-copy-contracts.test.mjs
+        run: node --test scripts/technical-education/audit-copy-contracts.test.mjs scripts/locale-lessons/audit-learning-logic.test.mjs
 
       - name: Learning lines and shared navigation (isolated clients)
         run: >-
