@@ -44,7 +44,7 @@
         "Keep using the old release"
       ],
       "correct": 1,
-      "explanation": "Decision: do not release the revision for production until all affected deliverables have been reviewed."
+      "explanation": "Record the width change, identify affected drawings/lists and revision references, and recheck every affected output before release. Changing only a picture or continuing with the old release leaves inconsistent instructions."
     }
   ],
   "assignment": {
@@ -63,7 +63,7 @@
   "faq": [
     {
       "question": "How do I know the practice is complete?",
-      "answer": "Decision: do not release the revision for production until all affected deliverables have been reviewed.",
+      "answer": "Submit the stages with deliverables and reviewers, review/approval gates and open items, plus a change record identifying the revised width, affected outputs, revision references and recheck evidence. Trace the same change through every affected output before requesting release; the exercise itself does not authorize production.",
       "sectionId": "step-3"
     }
   ],

@@ -398,6 +398,7 @@ export function getPilotCopy(locale: SupportedLocale) {
         : "المهارات الفنية · الأثاث · M04 · الدرس 2",
     labels: {
       ...copy.labels,
+      panelThickness: locale === "en" ? "Thickness (mm)" : "السمك (مم)",
       progress: locale === "en" ? "Your progress" : "تقدمك",
       progressNote:
         locale === "en"
