@@ -1,0 +1,46 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    130
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 130,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "0f64885b7810de7f3509f4f732cb6effa87ba29ef1bf34cd59057162c669aaf0",
+      "afterSha256": "bc2ba7999505ef218fb12e343db44612a4546fa45d449d750ccde136d7d3b7c8",
+      "changedFields": [
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "The booking form is NOT ready for acceptance. While it functions correctly on success paths, its failure to handle common real-world scenarios (like connection issues) means it does not meet the implied, but unstated, expectation of robustness and user experience. The initial acceptance criterion was too vague and incomplete.",
+          "after": "The success-path criterion was met, but the connection-failure case exposes a launch-readiness risk omitted from the original agreement. The team and acceptance owner must explicitly agree a change covering the new failure criteria and its scope, time and cost effects, then verify it before release. This is not evidence that the team violated previously agreed failure criteria."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "Refine into specific, verifiable acceptance criteria: Based on the identified problem, new criteria are needed. These should address the failure scenario directly. For example: \n1. 'If a user experiences a temporary connection failure after entering data but before confirmation, the form must preserve all entered data upon connection restoration.' \n2. 'If data cannot be preserved, the user must receive a clear, actionable notification explaining the issue and suggesting next steps (e.g., 'Please check your connection and try again').' These criteria are specific, measurable (you can test if data is preserved or if a notification appears), and directly address the user's pain point.",
+          "after": "Agree a change with the acceptance owner: document the newly discovered failure scenario, the proposed criteria, their scope/time/cost effects, and approval. Proposed criteria include preserving entered data after a temporary connection failure, or providing a clear actionable notification where recovery is not supported. Define which failures and data are covered, recovery limits, and the expected behaviour before testing. These criteria were not part of the original success-path agreement."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Determine acceptance/rejection and required fixes: Since the current form loses data on connection failure and doesn't provide clear notification, it fails the newly defined acceptance criteria. Therefore, the form is rejected. The development team must now implement features to either preserve data locally or provide robust user feedback during connection issues, and then re-submit the form for testing against the refined criteria before it can be accepted.",
+          "after": "Decide launch readiness against the approved change: record that the original success-path criterion was met and that a newly discovered failure risk remains. Once the acceptance owner approves the new criteria and impacts, implement and test the agreed handling before release. Record test evidence and any unresolved limits; do not retrospectively claim the prototype broke an earlier agreement that never included these criteria."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

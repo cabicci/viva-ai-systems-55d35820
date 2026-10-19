@@ -135,13 +135,13 @@
       }
     ],
     "assignment": {
-      "prompt": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity.",
+      "prompt": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity. In each solution field, describe the action and its effects on all three areas. Finish the second field with a brief comparison of the trade-offs; retain the five fields in their existing order.",
       "fields": [
         "Order Details (Customer Name, Item, Quantity)",
         "Information Handoffs (What info, From whom, To whom, Expected Time)",
         "Identified Conflict Point",
-        "Solution 1 (Description)",
-        "Solution 2 (Description)"
+        "Solution 1: description and effects on the customer, cost, and capacity",
+        "Solution 2: description and effects on the customer, cost, and capacity; compare trade-offs with Solution 1"
       ],
       "criteria": [
         "Accurate mapping of order flow through Sales, Operations, and Finance.",
@@ -442,7 +442,7 @@
       },
       {
         "id": "Q5",
-        "question": "A company decides to offer financial compensation to employees who volunteer for mandatory overtime during a busy period. While this addresses the financial aspect, what other ethical consideration might still be overlooked?",
+        "question": "A company offers voluntary overtime during a busy period with the compensation stated in advance. Employees may decline. Beyond compensation, what other ethical consideration should still be reviewed?",
         "options": [
           "The company's quarterly revenue targets.",
           "The impact on employee work-life balance and potential burnout.",
@@ -450,7 +450,7 @@
           "The efficiency of their production line."
         ],
         "correct": 1,
-        "explanation": "The correct answer is 'The impact on employee work-life balance and potential burnout.' While financial compensation addresses one aspect, mandatory overtime can still lead to stress, fatigue, and a negative impact on employees' personal lives, which are crucial ethical considerations related to fairness and employee well-being. The other options are business metrics or external factors, not overlooked ethical considerations related to the employees themselves."
+        "explanation": "Index 1 addresses work-life balance and potential burnout. Review fatigue, adequate rest, safety, and whether employees can freely decline without pressure or penalty even when overtime is paid and described as voluntary. Revenue, product prices, and production efficiency do not answer this employee-well-being question."
       },
       {
         "id": "Q6",
@@ -2398,7 +2398,7 @@
       },
       {
         "id": "Q5",
-        "question": "What is a common misconception when evaluating a bulk discount?",
+        "question": "Which error specifically evaluates a bulk offer using only its advertised discount percentage?",
         "options": [
           "That the discount percentage is the only factor to consider.",
           "That bulk purchases always lead to higher quality products.",
@@ -2406,7 +2406,7 @@
           "That cash flow is unaffected by upfront payments."
         ],
         "correct": 0,
-        "explanation": "A common misconception is to only look at the discount percentage. A comprehensive evaluation requires considering total cost, including storage, cash flow impact, and inventory risks. Options B, C, and D are also misconceptions, but the primary and most common error is focusing solely on the discount percentage itself."
+        "explanation": "Option A explicitly reduces the evaluation to the discount percentage alone. Compare total purchase and storage costs, cash tied up, and inventory risks. The other statements can also be mistaken but describe different errors; the question asks for this specific discount-only error."
       },
       {
         "id": "Q6",
@@ -2711,7 +2711,7 @@
       },
       {
         "id": "Q2",
-        "question": "A company is developing a new educational tablet for children. Who is most likely the 'Approver' in this scenario?",
+        "question": "A school is purchasing educational tablets for classroom use. Its principal holds final approval authority for this institutional purchase. Who is the Approver?",
         "options": [
           "The child who will play games and learn on the tablet.",
           "The parent who researches features and makes the purchase.",
@@ -2719,19 +2719,19 @@
           "The toy store manager who stocks the tablet on their shelves."
         ],
         "correct": 2,
-        "explanation": "The correct answer is 'The school principal who decides if the tablet meets curriculum standards for classroom use.' The Approver is the one who gives permission or budget clearance, especially in an institutional context. The child is the User. The parent is the Buyer. The store manager is a distributor, not an approver in the customer's decision-making process."
+        "explanation": "The principal (index 2) has final approval authority in this school purchase. The child uses the tablet, a parent researching features may influence a choice, and the store supplies it. A parent can approve a household purchase; this question specifies an institutional decision."
       },
       {
         "id": "Q3",
-        "question": "A new online grocery delivery service states its problem as: 'People don't have enough time to go to the supermarket.' What is a potential flaw in this problem statement?",
+        "question": "A grocery delivery team starts with 'People don't have enough time to go to the supermarket.' Which action would define a specific customer segment and its need context?",
         "options": [
-          "It doesn't mention the specific type of groceries being delivered.",
-          "It focuses on a solution (online delivery) rather than the underlying customer pain.",
-          "It assumes all people are busy, which might not be true.",
-          "It's too broad and doesn't define a specific customer segment."
+          "List supermarket products in alphabetical order.",
+          "Choose the delivery app's colour scheme.",
+          "Offer the same advertisement to every resident.",
+          "Identify working parents with young children who struggle to shop after their workday."
         ],
         "correct": 3,
-        "explanation": "The correct answer is 'It's too broad and doesn't define a specific customer segment.' While the statement identifies a general issue, 'people' is too vague. A stronger problem statement would specify *which* people (e.g., 'Busy working parents with young children') and *why* they lack time, allowing for a more targeted solution. Option 1 is a detail that might come later. Option 2 is incorrect; the statement describes a problem ('not enough time'), not a solution. Option 3 is an assumption, but the primary flaw is the lack of specificity for a segment."
+        "explanation": "Index 3 identifies a particular group and when its shopping difficulty occurs. Product lists, visual styling and advertising to everyone do not define a group and its need context. The group remains a hypothesis to investigate, not a proven market."
       },
       {
         "id": "Q4",
@@ -3871,7 +3871,7 @@
       },
       {
         "id": "rv2",
-        "title": "Channel vs. Delivery vs. Support",
+        "title": "Channel vs. Delivery",
         "kind": "comparison",
         "columns": [
           "Aspect",
@@ -4715,7 +4715,7 @@
       },
       {
         "id": "q2",
-        "question": "A new coffee shop opens in a business district. Which of the following is an 'alternative' for a customer, beyond another coffee shop?",
+        "question": "Which option is specifically a do-it-yourself alternative: preparing coffee at home rather than buying it ready to drink?",
         "options": [
           "Buying coffee beans to brew at home.",
           "Visiting a different coffee shop across the street.",
@@ -4723,7 +4723,7 @@
           "Deciding to drink water instead of coffee."
         ],
         "correct": 0,
-        "explanation": "The correct answer is 'Buying coffee beans to brew at home.' This represents a 'doing it yourself' alternative, where the customer fulfills the need (coffee) without using a commercial service. Visiting a different coffee shop (option B) is a direct competitor. Ordering a different drink (option C) is a choice within the same provider. Deciding to drink water (option D) is a form of 'postponement' or choosing a completely different need, but DIY is a more direct alternative to the service itself."
+        "explanation": "Buying beans and brewing at home is DIY/self-service (index 0). A different coffee shop is a direct competitor; a different drink within one shop is a product choice. Water can be another way to meet a broader refreshment need. These can all be alternatives depending on the need; the question asks specifically for home preparation."
       },
       {
         "id": "q3",
@@ -9721,7 +9721,7 @@
         "**Step 2: Establish a temporary manual process for new orders.** To continue taking new orders, staff will use a pre-prepared paper form. This form will *only* include fields for the book title(s), quantity, customer name, and a single contact method (e.g., email or phone number). It will explicitly *exclude* payment details, shipping addresses (since it's pickup only), or any sensitive personal information. This adheres to data minimisation by collecting only what's essential for a new pickup order.",
         "**Step 3: Implement a controlled data entry and reconciliation plan.** Once the digital system is restored, a designated staff member will be responsible for accurately entering all manual orders into the system. To prevent duplicates, each paper form will be assigned a unique temporary ID upon creation, and this ID will be cross-referenced during digital entry. The original paper forms will be securely stored until reconciliation is complete, then shredded.",
         "**Step 4: Develop a communication strategy for customers.** Customers attempting to place new orders online will see a clear message explaining the system issue and directing them to call the store to place a manual order. For customers arriving for pickup, staff will clearly explain the temporary process for verifying existing orders. Transparency helps manage customer expectations and maintains trust during the disruption.",
-        "**Step 5: Plan for system restoration and backup verification.** The IT team will work to restore the primary order system. Crucially, before bringing the system back online, they will perform a documented restoration test using a recent backup. This test will verify that all existing order data is intact and accessible, and that customer contact details and order numbers are correctly displayed without any corruption or missing records. The test will use dummy customer data to ensure the process works without exposing real sensitive customer information during the testing phase."
+        "**Step 5: Separate a dummy restore test from real-backup verification.** First test the restore mechanism using fictional records in an isolated test environment; this shows whether the tested procedure works, not whether every real order is backed up. In an authorized protected environment, the responsible team must separately verify the actual backup: compare expected and restored record counts and identifiers, check integrity samples and relevant relationships, and reconcile orders created or changed while the system was down. Record discrepancies and resolve them before reopening the service. Use access controls and report aggregate results without exposing customer data. A dummy-data test alone cannot prove real-record completeness."
       ]
     },
     "quiz": [
@@ -10471,7 +10471,7 @@
       },
       {
         "id": "Q6",
-        "question": "You are creating a WBS for a 'New Employee Onboarding Program.' Which of the following is the most appropriate work package for the 'Welcome Kit' deliverable?",
+        "question": "In a New Employee Onboarding Program, the current approved deliverable is the Welcome Kit contents-and-packaging design, before purchasing or distributing the kits. Which work package fits this design deliverable?",
         "options": [
           "Order welcome kit items.",
           "Design welcome kit contents and packaging.",
@@ -10479,7 +10479,7 @@
           "Hold a meeting about welcome kit ideas."
         ],
         "correct": 1,
-        "explanation": "The correct answer is 'Design welcome kit contents and packaging.' A work package should be a discrete, assignable piece of work that contributes to the deliverable. Designing the contents and packaging is a specific, tangible step towards creating the 'Welcome Kit.' 'Order items' and 'Distribute kits' are subsequent activities, and 'Hold a meeting' is an activity, not a work package representing a component of the deliverable itself."
+        "explanation": "Index 1 produces the design specified for this deliverable. Purchasing and distribution may belong elsewhere in the overall project, but they do not produce this approved design output. A discussion alone also does not deliver it."
       }
     ],
     "assignment": {
@@ -11066,12 +11066,12 @@
     "example": {
       "title": "From Risk to Issue: The 'Circuit Board Supplier' Scenario",
       "text": "This is a fictional learning case. Our project involves developing a new smart home device. A critical component is a custom circuit board, sourced from 'ElectroTech Solutions'. We identified a risk: 'Potential delay in custom circuit board delivery from ElectroTech Solutions due to their single specialized production line.' Our planned response was to identify a secondary, albeit more expensive, supplier ('CircuitMasters') and build a 2-week buffer into the project schedule. The trigger for this risk becoming an issue was 'ElectroTech Solutions formally notifies us of a production delay exceeding 1 week.'\n\nToday, we received an email from ElectroTech Solutions stating they've had an unexpected equipment malfunction, causing a 3-week delay in our order. This has now become an issue. We need to prepare a change request to address this, considering two alternatives: using CircuitMasters or absorbing the delay.",
-      "decision": "The project team decided to proceed with 'Alternative 1: Engage CircuitMasters for the custom circuit boards' after evaluating its impact on cost, time, and quality, and communicating with key stakeholders.",
+      "decision": "CircuitMasters is a candidate response, subject to a confirmed arrival date measured from the change decision and approval, a schedule-impact calculation, and sponsor approval. A lead time shorter than the original supplier's full lead time does not prove that launch can be maintained.",
       "steps": [
         "Identify the transition from Risk to Issue: The email from ElectroTech Solutions confirming a 3-week delay means the 'potential delay' risk has now materialized into a confirmed 'issue'. The trigger ('formal notification of delay exceeding 1 week') has been met. This requires immediate action, not just monitoring.",
-        "Assess the Issue's Impact: The 3-week delay from ElectroTech Solutions directly impacts the project timeline. Our existing 2-week buffer is insufficient, meaning the project will be delayed by at least 1 week if we wait for ElectroTech. This affects the project's overall completion date and potentially market launch.",
-        "Formulate Alternatives for the Change Request: Based on our pre-planned risk response, we have two main alternatives. \n*   **Alternative 1:** Engage 'CircuitMasters' (our secondary supplier). This would avoid the 3-week delay, but CircuitMasters' boards are 15% more expensive, and their lead time is 1 week shorter than ElectroTech's original lead time. \n*   **Alternative 2:** Absorb the 3-week delay. This means waiting for ElectroTech, incurring no additional component cost, but delaying the project by 1 week (after using the 2-week buffer).",
-        "Evaluate Alternatives against Scope, Time, Cost, Quality: \n*   **Alternative 1 (CircuitMasters):** \n    *   *Scope:* No change to product features or functionality. \n    *   *Time:* Project timeline maintained (or even slightly improved due to shorter lead time). \n    *   *Cost:* Increase in component cost by 15% for the circuit boards. \n    *   *Quality:* CircuitMasters' boards meet all specifications, so no quality impact. \n*   **Alternative 2 (Absorb Delay):** \n    *   *Scope:* No change. \n    *   *Time:* Project timeline delayed by 1 week. \n    *   *Cost:* No change to component cost. \n    *   *Quality:* No change.",
+        "Assess impact against actual dates: record the change-decision date, the original component need-by date, any buffer still available, manufacturing duration and planned launch. A three-week slip would exceed a fully available two-week buffer by one week only if those assumptions and the affected critical path hold. The case does not supply the remaining dates, so a final launch delay is not yet established.",
+        "Formulate alternatives: CircuitMasters quotes 15% higher component cost and a lead time one week shorter than ElectroTech's original full lead time. Ask when that clock starts, the expected approval/order date and the confirmed arrival date. Compare arrival with the need-by date from today's decision, not with an old order's start. Waiting for ElectroTech also requires an updated arrival commitment. Record remaining supply time and manufacturing effects for both options.",
+        "Evaluate scope, time, cost and quality: CircuitMasters may reduce delay, but the schedule effect remains unverified until approval time, arrival, need-by date, available buffer and manufacturing/launch dependencies are calculated. Its stated cost is 15% higher and specifications must be confirmed. Waiting avoids the quoted component-price increase but requires a dated schedule calculation too. Neither 'timeline maintained' nor an exact launch delay is proven by comparing full supplier lead times alone.",
         "Determine Approver and Communication Plan: The project sponsor, given the cost increase in Alternative 1 or the schedule delay in Alternative 2, is the primary approver. For communication, the core project team (engineering, production, marketing) needs to be informed immediately of the issue and proposed solution. The client/customer should be informed about the potential impact on the launch date (if Alternative 2 is chosen) or the cost implications (if Alternative 1 is chosen) after the sponsor's approval. The procurement team needs to execute the new order with CircuitMasters if Alternative 1 is approved. Communication should happen within 24 hours of the sponsor's decision."
       ]
     },
@@ -11751,13 +11751,13 @@
     "example": {
       "title": "The Unreliable Booking Form",
       "text": "This is a fictional learning case. A small online travel agency is developing a new booking form for its website. The development team proudly announces, 'The booking form is ready!' They demonstrate that a user can successfully select a destination, dates, and number of travelers, and then proceed to a confirmation page. This works perfectly when the internet connection is stable. However, a critical issue arises: if the user experiences a temporary internet connection failure *after* filling out the form but *before* confirming, all the entered data is lost, forcing the user to start over. The initial acceptance criterion was simply 'The booking form allows users to make a booking.' This criterion was met under ideal conditions, but it didn't account for real-world challenges.",
-      "decision": "The booking form is NOT ready for acceptance. While it functions correctly on success paths, its failure to handle common real-world scenarios (like connection issues) means it does not meet the implied, but unstated, expectation of robustness and user experience. The initial acceptance criterion was too vague and incomplete.",
+      "decision": "The success-path criterion was met, but the connection-failure case exposes a launch-readiness risk omitted from the original agreement. The team and acceptance owner must explicitly agree a change covering the new failure criteria and its scope, time and cost effects, then verify it before release. This is not evidence that the team violated previously agreed failure criteria.",
       "steps": [
         "Identify the core problem: The initial acceptance criterion, 'The booking form allows users to make a booking,' is too broad. It only covers the 'happy path' (successful booking) and ignores potential failure points that significantly impact user experience. The specific problem identified is data loss upon connection failure.",
         "Formulate a vague initial criterion: The development team's statement, 'The form is ready,' is a subjective declaration. Even the initial written criterion, 'The booking form allows users to make a booking,' while better, still lacks the necessary detail to ensure a robust solution. It doesn't specify *how* it should allow bookings or under what conditions.",
-        "Refine into specific, verifiable acceptance criteria: Based on the identified problem, new criteria are needed. These should address the failure scenario directly. For example: \n1. 'If a user experiences a temporary connection failure after entering data but before confirmation, the form must preserve all entered data upon connection restoration.' \n2. 'If data cannot be preserved, the user must receive a clear, actionable notification explaining the issue and suggesting next steps (e.g., 'Please check your connection and try again').' These criteria are specific, measurable (you can test if data is preserved or if a notification appears), and directly address the user's pain point.",
+        "Agree a change with the acceptance owner: document the newly discovered failure scenario, the proposed criteria, their scope/time/cost effects, and approval. Proposed criteria include preserving entered data after a temporary connection failure, or providing a clear actionable notification where recovery is not supported. Define which failures and data are covered, recovery limits, and the expected behaviour before testing. These criteria were not part of the original success-path agreement.",
         "Develop a test for the new criteria: For the first criterion, the test would involve filling out the form, simulating a connection drop (e.g., by disabling Wi-Fi), re-enabling the connection, and verifying if the data is still present. For the second, the test would involve simulating a connection drop and observing the exact message displayed to the user. These tests provide objective evidence.",
-        "Determine acceptance/rejection and required fixes: Since the current form loses data on connection failure and doesn't provide clear notification, it fails the newly defined acceptance criteria. Therefore, the form is rejected. The development team must now implement features to either preserve data locally or provide robust user feedback during connection issues, and then re-submit the form for testing against the refined criteria before it can be accepted."
+        "Decide launch readiness against the approved change: record that the original success-path criterion was met and that a newly discovered failure risk remains. Once the acceptance owner approves the new criteria and impacts, implement and test the agreed handling before release. Record test evidence and any unresolved limits; do not retrospectively claim the prototype broke an earlier agreement that never included these criteria."
       ]
     },
     "quiz": [

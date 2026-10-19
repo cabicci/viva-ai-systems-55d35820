@@ -113,7 +113,7 @@ jobs:
           node scripts/academic-integration/check-audit-revision.mjs --check
           node scripts/academic-integration/check-completion-revision.mjs --check
           node scripts/academic-integration/check-academic-audit-chain.mjs --check
-          node --test scripts/academic-integration/completion-revision.test.mjs scripts/academic-integration/academic-audit-chain.test.mjs scripts/academic-integration/academic-corrections-66-88.test.mjs scripts/academic-integration/academic-cost-capacity.test.mjs scripts/academic-integration/academic-assignment-completion.test.mjs
+          node --test scripts/academic-integration/completion-revision.test.mjs scripts/academic-integration/academic-audit-chain.test.mjs scripts/academic-integration/academic-corrections-66-88.test.mjs scripts/academic-integration/academic-cost-capacity.test.mjs scripts/academic-integration/academic-assignment-completion.test.mjs scripts/academic-integration/academic-editorial-contracts.test.mjs
           bun run scripts/academic-integration/import.ts --check-source
 
       - name: Learning lines and shared navigation (isolated clients)

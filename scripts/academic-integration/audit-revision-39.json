@@ -1,0 +1,38 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    39
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 39,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L05",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "7816cdae6f6eccd8847ca5c43a409b87b3af92bb145266b521a89a505e72e9d7",
+      "afterSha256": "30b7363531cb9aa9c17cb27622aaa4b8d9bbd45cf05d9649930159872262db06",
+      "changedFields": [
+        {
+          "path": "faq.0.answer",
+          "beforeExists": true,
+          "before": "الحد الأدنى من البيانات هو مبدأ محدد ضمن مفهوم أوسع يسمى 'الخصوصية حسب التصميم'. الخصوصية حسب التصميم تعني دمج اعتبارات الخصوصية في جميع مراحل تصميم وتطوير الأنظمة والعمليات. الحد الأدنى من البيانات هو أحد المبادئ السبعة للخصوصية حسب التصميم، ويركز بشكل خاص على جمع وتخزين أقل قدر ممكن من البيانات الشخصية.",
+          "after": "تقليل البيانات ممارسة تدعم الخصوصية حسب التصميم؛ فهو يعني جمع البيانات اللازمة لغرض محدد فقط، وتقييد استخدامها ومدة الاحتفاظ بها. لكنه ليس مبدأً مستقلاً باسمه ضمن المبادئ السبعة الأصلية. الخصوصية حسب التصميم إطار أوسع يدمج حماية الخصوصية افتراضياً في تصميم النظام والعملية، بصورة استباقية وعبر دورة حياة البيانات، مع الشفافية واحترام المستخدم. لذلك نحدد الغرض والبيانات والصلاحيات والاحتفاظ منذ البداية، ولا نكتفي بتقليل عدد الحقول."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable",
+  "references": [
+    "https://www.ipc.on.ca/en/media/1467/download?attachment=",
+    "https://www.ipc.on.ca/en/media/1769/download?attachment="
+  ]
+}

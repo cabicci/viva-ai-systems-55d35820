@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    152
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 152,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L02",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "6beaa5da2c1a20fa6b2189250b608f5de385e8d13c3bf1bc2cc35987fd8618e9",
+      "afterSha256": "69957778d9d6b6977de84873ccedf6a9933556299650e29d1bdf879faf87e44c",
+      "changedFields": [
+        {
+          "path": "example.steps.1",
+          "beforeExists": true,
+          "before": "**2. استخلاص الأولويات المحتملة:** بناءً على التحليل، تم استخلاص ثلاث أولويات: أ) تطوير خدمة استشارية متخصصة للشركات الصغيرة والمتوسطة. ب) تحسين كفاءة العمليات الداخلية للتعامل مع الضغط الموسمي. ج) التوسع في أسواق جديدة لتقليل الاعتماد على الموسمية.",
+          "after": "**2. استخلاص الأولويات المحتملة:** أ) تطوير خدمة الحجز المبكر للاستشارات التحليلية للشركات الصغيرة والمتوسطة؛ الحجز ينظم مواعيد الطلب ضمن القدرة المتاحة ويخفف ضغط الموسم، ولا يخلق قدرة إضافية. ب) تحسين كفاءة العمليات الداخلية للتعامل مع الضغط الموسمي. ج) التوسع في أسواق جديدة لتقليل الاعتماد على الموسمية."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

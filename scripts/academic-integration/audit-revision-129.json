@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    129
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 129,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L05",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "73f9c23fbc192eedb145b526cfec0d879f73fef24c1e88e287ef402f725b7594",
+      "afterSha256": "244c7e2f2023bbce98cda63132a46b1a40091c702b6a4743d9f5deaab2b56629",
+      "changedFields": [
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "**Step 5: Plan for system restoration and backup verification.** The IT team will work to restore the primary order system. Crucially, before bringing the system back online, they will perform a documented restoration test using a recent backup. This test will verify that all existing order data is intact and accessible, and that customer contact details and order numbers are correctly displayed without any corruption or missing records. The test will use dummy customer data to ensure the process works without exposing real sensitive customer information during the testing phase.",
+          "after": "**Step 5: Separate a dummy restore test from real-backup verification.** First test the restore mechanism using fictional records in an isolated test environment; this shows whether the tested procedure works, not whether every real order is backed up. In an authorized protected environment, the responsible team must separately verify the actual backup: compare expected and restored record counts and identifiers, check integrity samples and relevant relationships, and reconcile orders created or changed while the system was down. Record discrepancies and resolve them before reopening the service. Use access controls and report aggregate results without exposing customer data. A dummy-data test alone cannot prove real-record completeness."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

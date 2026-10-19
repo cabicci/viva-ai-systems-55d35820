@@ -1,0 +1,40 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    110
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 110,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L07",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "62750c8fabae8b192499550f087fe372a01f4898e287f270a987e8e3e470b420",
+      "afterSha256": "94b0bae871c85c1322d29e566cf72d7f4aa32c2f2ebc2c37e874b908daa615bc",
+      "changedFields": [
+        {
+          "path": "quiz.3.options.3",
+          "beforeExists": true,
+          "before": "لماذا لم يتم استخدام أداة جمع المتطلبات الجديدة؟",
+          "after": "ما الذي جعل عملية جمع ومراجعة المتطلبات تفشل في كشف الغموض قبل التنفيذ؟"
+        },
+        {
+          "path": "quiz.3.explanation",
+          "beforeExists": true,
+          "before": "السؤال 'ما هي الخطوات التي يمكننا اتخاذها لضمان فهم أفضل لمتطلبات العملاء في المستقبل؟' يركز على الحلول والإجراءات المستقبلية لمعالجة المشكلة، وهو جوهر عملية الدروس المستفادة. السؤال الأول يركز على اللوم، والثاني على الدليل فقط دون السبب، والرابع يفترض سببًا معينًا دون استكشاف أوسع.",
+          "after": "الخيار 3 يستكشف سبب فشل العملية في كشف الغموض قبل التنفيذ دون افتراض أداة لم تُستخدم أو تحميل شخص اللوم. عدد مرات إعادة العمل يصف الأثر، والخطوات المستقبلية تبحث العلاج، أما السؤال المفتوح عن العملية فيقود إلى جمع أدلة عن السبب الجذري أولاً."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

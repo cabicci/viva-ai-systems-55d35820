@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    150
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 150,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "aa5b79b006a8b7d711f97d6e71c1f81eb6d1a325f0210a3978399d919717ab6a",
+      "afterSha256": "34d412adff7c6be5b62acccb01bda7c53f089580abf7a1c57c4baf5976111dc0",
+      "changedFields": [
+        {
+          "path": "faq.0.question",
+          "beforeExists": true,
+          "before": "ماذا يعني ",
+          "after": "ماذا يعني خط الأساس؟"
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

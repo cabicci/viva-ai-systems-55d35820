@@ -1,0 +1,52 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    136
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 136,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "14dfa7a95e68e1b0d5600364aa21abad01816fc972c1817067601864435a7729",
+      "afterSha256": "ac6f0b6d004e62291b5d423ea2acfa6b7e4fc0d6244e7d708e1c6d77f8717002",
+      "changedFields": [
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "The project team decided to proceed with 'Alternative 1: Engage CircuitMasters for the custom circuit boards' after evaluating its impact on cost, time, and quality, and communicating with key stakeholders.",
+          "after": "CircuitMasters is a candidate response, subject to a confirmed arrival date measured from the change decision and approval, a schedule-impact calculation, and sponsor approval. A lead time shorter than the original supplier's full lead time does not prove that launch can be maintained."
+        },
+        {
+          "path": "example.steps.1",
+          "beforeExists": true,
+          "before": "Assess the Issue's Impact: The 3-week delay from ElectroTech Solutions directly impacts the project timeline. Our existing 2-week buffer is insufficient, meaning the project will be delayed by at least 1 week if we wait for ElectroTech. This affects the project's overall completion date and potentially market launch.",
+          "after": "Assess impact against actual dates: record the change-decision date, the original component need-by date, any buffer still available, manufacturing duration and planned launch. A three-week slip would exceed a fully available two-week buffer by one week only if those assumptions and the affected critical path hold. The case does not supply the remaining dates, so a final launch delay is not yet established."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "Formulate Alternatives for the Change Request: Based on our pre-planned risk response, we have two main alternatives. \n*   **Alternative 1:** Engage 'CircuitMasters' (our secondary supplier). This would avoid the 3-week delay, but CircuitMasters' boards are 15% more expensive, and their lead time is 1 week shorter than ElectroTech's original lead time. \n*   **Alternative 2:** Absorb the 3-week delay. This means waiting for ElectroTech, incurring no additional component cost, but delaying the project by 1 week (after using the 2-week buffer).",
+          "after": "Formulate alternatives: CircuitMasters quotes 15% higher component cost and a lead time one week shorter than ElectroTech's original full lead time. Ask when that clock starts, the expected approval/order date and the confirmed arrival date. Compare arrival with the need-by date from today's decision, not with an old order's start. Waiting for ElectroTech also requires an updated arrival commitment. Record remaining supply time and manufacturing effects for both options."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Evaluate Alternatives against Scope, Time, Cost, Quality: \n*   **Alternative 1 (CircuitMasters):** \n    *   *Scope:* No change to product features or functionality. \n    *   *Time:* Project timeline maintained (or even slightly improved due to shorter lead time). \n    *   *Cost:* Increase in component cost by 15% for the circuit boards. \n    *   *Quality:* CircuitMasters' boards meet all specifications, so no quality impact. \n*   **Alternative 2 (Absorb Delay):** \n    *   *Scope:* No change. \n    *   *Time:* Project timeline delayed by 1 week. \n    *   *Cost:* No change to component cost. \n    *   *Quality:* No change.",
+          "after": "Evaluate scope, time, cost and quality: CircuitMasters may reduce delay, but the schedule effect remains unverified until approval time, arrival, need-by date, available buffer and manufacturing/launch dependencies are calculated. Its stated cost is 15% higher and specifications must be confirmed. Waiting avoids the quoted component-price increase but requires a dated schedule calculation too. Neither 'timeline maintained' nor an exact launch delay is proven by comparing full supplier lead times alone."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}
