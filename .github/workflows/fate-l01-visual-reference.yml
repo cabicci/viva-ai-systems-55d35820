@@ -1,0 +1,34 @@
+name: Fate L01 realistic Gemini visual reference
+on:
+  push:
+    branches: [work/fate-l01-visual-reference-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-visual-reference-20261020/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: fate-l01-visual-reference-20261020
+  cancel-in-progress: false
+jobs:
+  reference:
+    if: github.ref == 'refs/heads/work/fate-l01-visual-reference-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-visual-reference-20261020
+      EXPECTED_REQUEST_SHA256: 2ec8659d5824f3cb97341f1f5e2abe9e08aa7bee31c93dd196b1294e8a65a90c
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Generate exactly two text-free reference compositions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-visual-reference
+          retention-days: 30
+          path: ${{ env.PACKAGE }}/output/

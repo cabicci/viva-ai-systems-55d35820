@@ -1,0 +1,25 @@
+{
+  "id": "fate-L01-realistic-reference-20261020",
+  "purpose": "Two text-free realistic 3D-appearance reference compositions for owner visual approval, replacing rejected wireframe treatment. Not a full image batch, motion render or speech request.",
+  "provider": "gemini",
+  "model": "gemini-nano-banana-2.1",
+  "model_source": "Existing shared Gemini image engine at origin/work/soil-course-pipeline-20261013:experiments/course-pipeline/generate_visuals.py; verify configured service availability before generation; no fallback.",
+  "apiVersion": "v1beta",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "maxGenerationCalls": 2,
+  "automaticRetries": 0,
+  "style": "Create a premium university-level scientific educational 3D-rendered illustration, physically plausible realistic materials, carefully modeled recognizable objects, restrained elegant composition, soft natural studio lighting from upper left, convincing contact shadows, detailed but readable geometry, pale near-white cool neutral environment compatible with Masaarat soft blue and mint overlays. Adult scientific visualization, not children's illustration, not toy-like, no cartoon faces or characters, no excessive glossy plastic, no glow or magical toxicity. Deliberately composed negative space for later editable labels. NO text, words, letters, numerals, logos, watermarks, arrows, diagram symbols or charts baked into the image. This is a reconstructed teaching visualization, not photographic evidence. Keep important geometry sharp. 16:9 landscape.",
+  "assets": [
+    {
+      "id": "field-pathways",
+      "scenes": ["L01-S03", "L01-S09"],
+      "subject": "One coherent landscape as a realistic scientific cutaway land block, viewed from a fixed elevated three-quarter perspective. A modest plot of mature tomato plants grows on the HIGHER LEFT terrain, with a few realistically sized ripe tomatoes visible among leaves. A continuous gentle ground slope runs DOWN toward a clear shallow watercourse at the LOWER RIGHT edge. Reveal believable dark topsoil and layered subsoil on the front cut face. Watercourse is an actual connected low depression, not a floating blue ribbon or a pipe. Small irregular surface runoff rivulets can join the stream without impossible uphill flow; keep them subtle and water naturally clear, no visible colored pesticide, no foam, no pollution cloud. Soil, vegetation and stream form one connected environmental space. No pesticide bottles, spraying operators, faces, laboratories, birds or fish inserted at incompatible scales. Leave the upper right quarter as clean pale open space, and bottom 12 percent quiet for later editable source labels and captions. Main land block occupies central-left and lower-center, with crop and water destination both clearly legible. This will support separate future vector route overlays, animated water/residue markers and cropped detail insets; do not draw those overlays now."
+    },
+    {
+      "id": "sample-analysis",
+      "scenes": ["L01-S01", "L01-S05", "L01-S07"],
+      "subject": "A premium realistic 3D scientific still life for food residue interpretation, consistent upper-left lighting and pale cool background. On the LEFT HALF, three botanically plausible ripe red tomatoes with natural calyxes, one modest transparent food-sample container, and a small clear screw-cap analytical vial, properly proportioned and resting on one light laboratory bench. The vial contains a small amount of nearly colorless liquid and NO graduations or label text. Arrange tomatoes in foreground, sample container slightly behind, vial toward center, all separated enough to become individually reusable layers later. No pipette piercing a whole tomato, no syringe, no implausible equipment, no hazmat drama. Do not suggest that a vial color proves residue detection. The RIGHT HALF is elegant uncluttered pale negative space for later editable report, concentration and unit overlays. Perspective moderate, scientifically plausible materials, no cartoon appearance, no embedded report or card. This visual introduces a sample and the need to interpret a laboratory result; it is NOT a validated sampling or extraction procedure."
+    }
+  ]
+}
