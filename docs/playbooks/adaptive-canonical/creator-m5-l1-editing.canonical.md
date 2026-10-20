@@ -8,7 +8,7 @@
 | **lessonId** | `creator-m5-l1-editing` |
 | **pathId** | `creator` |
 | **moduleId** | `creator-m5-polish` |
-| **productionTitle (ar-EG)** | المونتاج — Cut, Caption, Pace |
+| **productionTitle (ar-EG)** | التحرير — القص والإيقاع |
 | **productionRoute** | `/learn/creator/creator-m5-l1-editing` |
 | **productionFile (read-only)** | `src/components/intro/lessons/creator-m5-l1-editing.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
@@ -67,7 +67,7 @@ derivedFrom:
   derivationMethod: read-only extraction + MSA normalization
 
 meta:
-  title: Editing — Cut, Caption, Pace
+  title: Editing — Cutting and Pacing
   oneAha: "Editing clarifies the message — cut what does not serve the core idea"
   difficulty: intro
   estimatedMinutes: 12

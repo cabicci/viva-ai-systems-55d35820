@@ -1,0 +1,477 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    109
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L05",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "10eab2f014870c8781168db36b9e73f47266482ebaa26ef45ec6500ed9657d68",
+      "afterSha256": "566b9ffd83ce6747a6d736cc7a83e4a5a93a8657797aee3b01c33d969bfba766",
+      "changedFields": [
+        {
+          "path": "quiz.4.question",
+          "beforeExists": true,
+          "before": "What is a common misconception when evaluating a bulk discount?",
+          "after": "Which error specifically evaluates a bulk offer using only its advertised discount percentage?"
+        },
+        {
+          "path": "quiz.4.explanation",
+          "beforeExists": true,
+          "before": "A common misconception is to only look at the discount percentage. A comprehensive evaluation requires considering total cost, including storage, cash flow impact, and inventory risks. Options B, C, and D are also misconceptions, but the primary and most common error is focusing solely on the discount percentage itself.",
+          "after": "Option A explicitly reduces the evaluation to the discount percentage alone. Compare total purchase and storage costs, cash tied up, and inventory risks. The other statements can also be mistaken but describe different errors; the question asks for this specific discount-only error."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L01",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "0513d4b2ebc67edc0a7082b8060883174d65056f177e3e075231e11252accb84",
+      "afterSha256": "f987b6f1af2fbfca8dc6fe74cabcfb4d9c891a97fd9f4c7a2c9ad922ea49bd69",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "A company is developing a new educational tablet for children. Who is most likely the 'Approver' in this scenario?",
+          "after": "A school is purchasing educational tablets for classroom use. Its principal holds final approval authority for this institutional purchase. Who is the Approver?"
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "The correct answer is 'The school principal who decides if the tablet meets curriculum standards for classroom use.' The Approver is the one who gives permission or budget clearance, especially in an institutional context. The child is the User. The parent is the Buyer. The store manager is a distributor, not an approver in the customer's decision-making process.",
+          "after": "The principal (index 2) has final approval authority in this school purchase. The child uses the tablet, a parent researching features may influence a choice, and the store supplies it. A parent can approve a household purchase; this question specifies an institutional decision."
+        },
+        {
+          "path": "quiz.2.question",
+          "beforeExists": true,
+          "before": "A new online grocery delivery service states its problem as: 'People don't have enough time to go to the supermarket.' What is a potential flaw in this problem statement?",
+          "after": "A grocery delivery team starts with 'People don't have enough time to go to the supermarket.' Which action would define a specific customer segment and its need context?"
+        },
+        {
+          "path": "quiz.2.options",
+          "beforeExists": true,
+          "before": [
+            "It doesn't mention the specific type of groceries being delivered.",
+            "It focuses on a solution (online delivery) rather than the underlying customer pain.",
+            "It assumes all people are busy, which might not be true.",
+            "It's too broad and doesn't define a specific customer segment."
+          ],
+          "after": [
+            "List supermarket products in alphabetical order.",
+            "Choose the delivery app's colour scheme.",
+            "Offer the same advertisement to every resident.",
+            "Identify working parents with young children who struggle to shop after their workday."
+          ]
+        },
+        {
+          "path": "quiz.2.explanation",
+          "beforeExists": true,
+          "before": "The correct answer is 'It's too broad and doesn't define a specific customer segment.' While the statement identifies a general issue, 'people' is too vague. A stronger problem statement would specify *which* people (e.g., 'Busy working parents with young children') and *why* they lack time, allowing for a more targeted solution. Option 1 is a detail that might come later. Option 2 is incorrect; the statement describes a problem ('not enough time'), not a solution. Option 3 is an assumption, but the primary flaw is the lack of specificity for a segment.",
+          "after": "Index 3 identifies a particular group and when its shopping difficulty occurs. Product lists, visual styling and advertising to everyone do not define a group and its need context. The group remains a hypothesis to investigate, not a proven market."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L01",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "90da5f1d5315f64452e052bb21bb8ba6d4c972846a4b1dec71fefba5a3b19afd",
+      "afterSha256": "94441fc034fcc77a98555f1c96000945d4c00977d1590e7465718829fe795c45",
+      "changedFields": [
+        {
+          "path": "quiz.2.question",
+          "beforeExists": true,
+          "before": "في شركة 'الأفق'، 'ليلى' مسؤولة عن إعداد تقارير المبيعات الشهرية. 'أحمد' هو مديرها، وهو الذي يوافق على هذه التقارير قبل إرسالها للإدارة العليا. إذا كان التقرير يحتوي على خطأ كبير، من هو 'المساءل' عن هذا الخطأ؟",
+          "after": "ليلى مسؤولة عن إعداد تقرير المبيعات، وأحمد يراجعه ويملك اعتماد نسخته النهائية قبل إرسالها للإدارة. مع بقاء مسؤولية ليلى عن الإعداد والدقة، من صاحب المساءلة النهائية عن قرار الاعتماد والإرسال؟"
+        },
+        {
+          "path": "quiz.2.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي (أحمد، لأنه صاحب الصلاحية الذي وافق على التقرير). المساءلة تكون للشخص الذي يملك صلاحية اتخاذ القرار النهائي ويتحمل تبعاته. ليلى مسؤولة عن التنفيذ، لكن أحمد هو المساءل عن نتيجة القرار بالموافقة على التقرير. هذا لا يعني أن ليلى لا تتحمل جزءًا من المسؤولية، لكن المساءلة النهائية تقع على صاحب القرار.",
+          "after": "أحمد هو صاحب المساءلة النهائية عن قرار الاعتماد والإرسال لأنه يملكه. ليلى تحتفظ بمسؤوليتها عن إعداد التقرير ودقته وتصحيح الأخطاء؛ السؤال لا ينسب كل خطأ لشخص واحد ولا يلغي مسؤولية المنفذ."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L04",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "ef8b4f4a7755a85fb39edffd434db6f59cad3e4d9dabe59f37a993057fc8275c",
+      "afterSha256": "c12935fa6c51049fe7c2840e0f75376dad2301ca89909a531de82f96fd787b07",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "مدير فريق بيلاحظ إن فريقه بدأ يفقد حماسه رغم إن المرتبات كويسة. إيه من دول ممكن يكون سبب لقلة الحماس دي؟",
+          "after": "مرتبات الفريق كويسة وساعات الشغل معقولة، لكن الأعضاء بيقولوا إن المهام وحدود الصلاحية مش واضحة لهم وحماسهم قل. أي سبب من الاختيارات بتدعمه المعلومة دي مباشرة؟"
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي 'عدم وضوح المهام المطلوبة من كل فرد'. وضوح العمل هو أحد العوامل الرئيسية للتحفيز غير المادي. لو الموظف مش فاهم إيه المطلوب منه، هيحس بالإحباط حتى لو مرتبه كويس. زيادة ساعات العمل ممكن تكون سبب، لكن السؤال بيركز على عوامل التحفيز غير المادية. المنافسة الصحية ممكن تكون إيجابية، وعدم وجود مكافآت إضافية قد يؤثر لكن وضوح المهام أهم في سياق التحفيز الأساسي.",
+          "after": "عدم وضوح المهام هو السبب المدعوم بشكوى الفريق (الخيار 1). يوضح المدير المطلوب وحدود الصلاحية ويتابع الأثر. الإرهاق أو الأجر والحوافز ممكن يأثروا في حالات تانية؛ المعلومات هنا ما تبررش استبعادهم عموماً."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L04",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "bd40004718d8b9de34a8355c9bc7c84ea05d05569270850a75c72c8aa64d7ed1",
+      "afterSha256": "767602fa952c406b6415455d540622d12c65a72fdd8dbf6ab61d2d67b6be582e",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "لو عندك فجوة في القدرة التشغيلية (يعني محتاج وقت شغل أكتر من المتاح)، إيه من دول يعتبر 'مقايضة بين الخدمة والتكلفة'؟",
+          "after": "فيه فجوة في القدرة، والميزانية ما تسمحش بأجور إضافية، لكن تقدر تتفاوض مع العميل على تأجيل جزء من التسليم. إيه الاختيار اللي يقلل تكلفة معالجة الفجوة مقابل مستوى خدمة أقل يوافق عليه العميل؟"
+        },
+        {
+          "path": "quiz.5.options.2",
+          "beforeExists": true,
+          "before": "تأجيل تسليم جزء من الطلبات لتقليل الضغط على العمال.",
+          "after": "الاتفاق مع العميل على تأجيل جزء من الطلبات بدل دفع أجور إضافية."
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي (تأجيل تسليم جزء من الطلبات لتقليل الضغط على العمال). دي مقايضة واضحة: بتقلل من جودة الخدمة (التأخير في التسليم) عشان تقلل التكلفة (متدفعش أجور إضافية أو توظف عمال زيادة). توظيف عمال زيادة بيزود التكلفة عشان تحافظ على الخدمة. شراء مواد أرخص ممكن يأثر على الجودة مش الخدمة المباشرة. تغيير لون المنتج ملوش علاقة مباشرة بالمقايضة دي.",
+          "after": "الخيار 2 يبدّل سرعة التسليم بتكلفة أقل لمعالجة الفجوة بعد موافقة العميل. توظيف عمال بأجر إضافي مقايضة ممكنة لو الميزانية اتغيرت، لكنه لا يحقق قيد خفض التكلفة هنا. المواد الأرخص تغيّر الجودة، وتغيير اللون لا يعالج فجوة الوقت."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L06",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "59b020af6d6ae4ce1c2c328299ec13c048c38bd3472af94f4c2af557c4d33b5f",
+      "afterSha256": "299af89154d4dd4dab35ffce817180991021969eb233197b4dc21964a4673e9c",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "أي من الأمثلة التالية يعتبر 'مؤشر إنذار' لمشروع توصيل طلبات؟",
+          "after": "خطة توصيل تتوقع 50 طلباً يومياً على الأقل. أي اختيار يعرّف إنذاراً مبكراً محدداً بعدد الطلبات ومدة انخفاضه عن الخطة؟"
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "مؤشر الإنذار هو علامة أو مقياس محدد وواضح، يخبرنا بأن شيئاً ما بدأ يتغير عن المتوقع ويستدعي الانتباه أو تفعيل خطة الطوارئ. 'انخفاض عدد الطلبات اليومية عن 50 طلب لمدة 3 أيام متتالية' هو مؤشر كمي ومحدد يمكن مراقبته. الخيارات الأخرى تمثل قراراً وقائياً، أو حدثاً محتملاً، أو تاريخ مراجعة، وليست مؤشرات إنذار بحد ذاتها.",
+          "after": "الخيار 1 يجمع حد الطلبات (أقل من 50 يومياً) ومدة التجاوز (3 أيام متتالية). ارتفاع الوقود قد يكون إنذاراً في خطة تكاليف أخرى، لكنه لا يقيس عدد الطلبات ومدته. تعيين سائقين إجراء، وموعد المراجعة ليس حد إنذار."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L02",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "4ed30c8360973a887c6dc854e7d35a958b52bbfeeafee8c7f6a580abf60a6215",
+      "afterSha256": "720aad731ec3c7eca1984767c1447a9b8fd224b2bce760af90978889ca9f1277",
+      "changedFields": [
+        {
+          "path": "quiz.4.options",
+          "beforeExists": true,
+          "before": [
+            "المورد 'س' لأنه سعره للوحدة أقل.",
+            "المورد 'ص' لأنه يقدم شحنًا مجانيًا.",
+            "المورد 'س' بتكلفة كلية 10500 وحدة نقدية.",
+            "المورد 'ص' بتكلفة كلية 10200 وحدة نقدية."
+          ],
+          "after": [
+            "المورد س بتكلفة كلية 10000 وحدة نقدية.",
+            "المورد ص بتكلفة كلية 10000 وحدة نقدية.",
+            "المورد س بتكلفة كلية 10500 وحدة نقدية.",
+            "المورد ص بتكلفة كلية 10200 وحدة نقدية."
+          ]
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L05",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "30b7363531cb9aa9c17cb27622aaa4b8d9bbd45cf05d9649930159872262db06",
+      "afterSha256": "7d89137423159ba6b9d32e69304447c96b80dbb3c721ece28dfd8bb60aadec79",
+      "changedFields": [
+        {
+          "path": "quiz.2.question",
+          "beforeExists": true,
+          "before": "تعمل شركة 'الأفق' على تطوير تطبيق جديد. يطلب التطبيق من المستخدمين إدخال اسمهم الكامل، وعنوان بريدهم الإلكتروني، وتاريخ ميلادهم، ورقم هاتفهم، وصورة شخصية، ومعلومات حسابهم البنكي، وتفضيلاتهم الموسيقية. ما هي البيانات التي من المرجح أن تتعارض مع مبدأ الحد الأدنى من البيانات إذا كان الغرض الوحيد للتطبيق هو تقديم توصيات موسيقية؟",
+          "after": "الغرض الوحيد لتطبيق هو تقديم توصيات موسيقية، ويطلب أنواع الموسيقى والأغاني والفنانين المفضلين، وصورة شخصية ومعلومات الحساب البنكي. أي مجموعة لا تلزم لهذا الغرض وتخالف تقليل البيانات؟"
+        },
+        {
+          "path": "quiz.2.options",
+          "beforeExists": true,
+          "before": [
+            "الاسم الكامل وعنوان البريد الإلكتروني.",
+            "تاريخ الميلاد ورقم الهاتف.",
+            "صورة شخصية ومعلومات الحساب البنكي.",
+            "تفضيلاتهم الموسيقية."
+          ],
+          "after": [
+            "أنواع الموسيقى المفضلة.",
+            "الأغاني المفضلة.",
+            "صورة شخصية ومعلومات الحساب البنكي.",
+            "الفنانون المفضلون."
+          ]
+        },
+        {
+          "path": "quiz.2.explanation",
+          "beforeExists": true,
+          "before": "الخيار الصحيح هو 'صورة شخصية ومعلومات الحساب البنكي'. إذا كان الغرض الوحيد هو توصيات موسيقية، فإن هذه البيانات ليست ضرورية على الإطلاق. الاسم والبريد الإلكتروني قد يكونان ضروريين لإنشاء حساب وتلقي التوصيات، وتاريخ الميلاد ورقم الهاتف قد يكونان مفيدين لأغراض التحقق أو التخصيص المحدود، ولكن الصورة ومعلومات البنك لا علاقة لهما بالغرض المعلن.",
+          "after": "الخيار 2 لا يلزم لتوصية موسيقية: الصورة الشخصية ومعلومات البنك لا يخدمان الغرض المعلن. الأنواع والأغاني والفنانون تفضيلات مرتبطة به. لا نفترض حاجة إلى تاريخ ميلاد أو هاتف أو بيانات حساب إضافية دون غرض محدد ومبرر."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L06",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "6ab21825d2f9077d7fac1c665ca5ea34a59923bbdc1bf12f5bc8d6b02c6d46f7",
+      "afterSha256": "7ecdd82edfeac425c99ffe0a4ab33b915f56ed0b75c68c26976f2d6e9f918c51",
+      "changedFields": [
+        {
+          "path": "quiz.1.options.1",
+          "beforeExists": true,
+          "before": "لأ، ده تحسين ممكن يتأجل لأن الموقع لسه هيتطور.",
+          "after": "احذف صفحة «من نحن» بالكامل من غير ما تراجع أثر حذفها."
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي 'لأ، ده تحسين ممكن يتأجل لأنه لا يمنع تقديم الخدمة الأساسية بأمان'. الخطأ الإملائي، وإن كان غير مرغوب فيه، لا يمنع الموقع من العمل أو تقديم خدماته الأساسية. يمكن تصحيحه في تحديث لاحق. العيب الحرج هو ما يمنع الخدمة أو يسبب ضررًا كبيرًا.",
+          "after": "الخيار 3 هو الأنسب: الخطأ الإملائي لا يمنع تقديم الخدمة الأساسية بأمان، فيتسجل للإصلاح في تحديث لاحق. حذف الصفحة كلها من غير تقييم مش علاج متناسب. لو العيب يمس الأمان أو يمنع الخدمة الأساسية، يتراجع قرار الإطلاق."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L01",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "d63de915ca11ada8c08806f4bbd1efa57b16230ba7270da61fa54483a48e363f",
+      "afterSha256": "d3cccad9f6496cc9e1974d37035ec6f11313d75c1bb44b73cb691a28794bcb46",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "You are creating a WBS for a 'New Employee Onboarding Program.' Which of the following is the most appropriate work package for the 'Welcome Kit' deliverable?",
+          "after": "In a New Employee Onboarding Program, the current approved deliverable is the Welcome Kit contents-and-packaging design, before purchasing or distributing the kits. Which work package fits this design deliverable?"
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "The correct answer is 'Design welcome kit contents and packaging.' A work package should be a discrete, assignable piece of work that contributes to the deliverable. Designing the contents and packaging is a specific, tangible step towards creating the 'Welcome Kit.' 'Order items' and 'Distribute kits' are subsequent activities, and 'Hold a meeting' is an activity, not a work package representing a component of the deliverable itself.",
+          "after": "Index 1 produces the design specified for this deliverable. Purchasing and distribution may belong elsewhere in the overall project, but they do not produce this approved design output. A discussion alone also does not deliver it."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "34d412adff7c6be5b62acccb01bda7c53f089580abf7a1c57c4baf5976111dc0",
+      "afterSha256": "c6da5c8dd7ed0b350da5dbe5731dc8b0ed29045028f1cab8425c60b7f132f939",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "فريق التسويق أطلق حملة إعلانية جديدة بهدف زيادة عدد الزوار للموقع الإلكتروني. بعد أسبوع، لاحظوا زيادة كبيرة في عدد الزوار، لكن نسبة التحويل (عدد الزوار الذين يشترون منتجاً) انخفضت بشكل ملحوظ. ما هو التفسير المحتمل لهذا الانحراف؟",
+          "after": "بعد حملة جديدة زاد الزوار وانخفض التحويل. اختبارات مسار الشراء لم تتغير ونجحت مثل السابق، وبيانات الحملة أظهرت إضافة جمهور غير مستهدف مقارنة بالحملة السابقة. أي تفسير تدعمه هذه الأدلة أكثر؟"
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "الخيار الصحيح هو أن المحتوى الإعلاني جذب زواراً غير مهتمين بالمنتج. زيادة الزوار مع انخفاض نسبة التحويل تشير إلى أن الحملة ربما كانت واسعة جداً أو استهدفت جمهوراً غير مناسب، مما جلب عدداً كبيراً من الزوار الذين ليس لديهم نية شراء. هذا يوضح أهمية التمييز بين مؤشرات النشاط (عدد الزوار) ومؤشرات النتائج (نسبة التحويل). الخيارات الأخرى قد تكون أسباباً محتملة لكنها لا تفسر التناقض المباشر بين زيادة الزوار وانخفاض التحويل.",
+          "after": "الخيار 1 تدعمه بيانات إضافة جمهور غير مستهدف مع ثبات مسار الشراء واختباراته، فيفسر انخفاض جودة الزيارات في هذه الحالة. زيادة الزوار وحدها لا تثبت هذا السبب ولا تستبعد عيباً تقنياً؛ عند غياب الأدلة الإضافية نحتاج فحص المسار والجمهور وغيرهما."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L05",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "6cae47d24eb7b26e5b1968b9793661c38abc141660e1dd238b4a06f53c81a1eb",
+      "afterSha256": "a670b9b39db7ee7120d52c3df120a7e0bbcfd6b54ebac548e4d510988f9b977f",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "لو قررت تزود تكاليف التسويق عشان توصل لعدد أكبر من العملاء، إيه الأقسام اللي لازم تراجعها وتحدثها في خطة مشروعك؟",
+          "after": "لو زودت إنفاق التسويق ومتوقع طلبات أكتر، أي اختيار يشمل مراجعة الأقسام المرتبطة في الخطة، بما فيها القدرة والسيولة؟"
+        },
+        {
+          "path": "quiz.1.options",
+          "beforeExists": true,
+          "before": [
+            "قسم التسويق فقط.",
+            "قسم التسويق وقسم المالية (المصروفات والأرباح).",
+            "قسم التسويق وقسم المالية وقسم التشغيل (لأن زيادة العملاء تحتاج تشغيل أكبر).",
+            "قسم التسويق وقسم المالية وقسم الإيرادات (لتوقعات المبيعات) وقسم نقطة التعادل."
+          ],
+          "after": [
+            "التسويق فقط، مع تجاهل باقي الخطة.",
+            "التسويق والمصروفات فقط من غير الإيرادات أو التشغيل.",
+            "التسويق والقدرة فقط من غير المصروفات أو السيولة.",
+            "التسويق والمصروفات والإيرادات ونقطة التعادل والقدرة التشغيلية والسيولة."
+          ]
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "زيادة تكاليف التسويق هتأثر على المصروفات في القسم المالي، وبالتالي على الأرباح. لو التسويق نجح، هيزود عدد العملاء والمبيعات، وده هيأثر على توقعات الإيرادات. زيادة المبيعات هتغير نقطة التعادل، وممكن كمان تتطلب مراجعة القدرة التشغيلية. لذلك، التحديث لازم يشمل كل هذه الأقسام المترابطة.",
+          "after": "الخيار 3 يجمع الأقسام المطلوبة والباقي ناقص. زيادة المبيعات وحدها ما تغيّرش نقطة التعادل؛ لازم تعيد حسابها لو التكاليف الثابتة أو هامش المساهمة اتغيروا. راجع القدرة وتوقيت التحصيل والدفع كمان، من غير افتراض إن الحملة هتجيب المبيعات المتوقعة أكيد."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L01",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "9c9ec6491df3c9452e90d6a282839b8f6f70e54b47d4e5cd9f2875c1283fd947",
+      "afterSha256": "f1d7a2ca43ca7a45e38dbb0dcd4f57cfe2a3a7a845010430d336fa4d7f11e83a",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "لديك تطبيق جديد لمساعدة الطلاب على تنظيم دراستهم. من هو 'صاحب الموافقة' المحتمل في هذه الحالة؟",
+          "after": "مدرسة بتشتري تطبيقاً لتنظيم الدراسة ضمن تجهيزها المؤسسي. المدير يملك الموافقة النهائية، والمعلمون يوصون به والطلاب يستخدمونه. من صاحب الموافقة في هذا القرار؟"
+        },
+        {
+          "path": "quiz.5.options.1",
+          "beforeExists": true,
+          "before": "المعلمون الذين يوصون بالتطبيق لطلابهم.",
+          "after": "مدير المدرسة الذي يملك سلطة الموافقة النهائية."
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "صاحب الموافقة هو من يملك سلطة اتخاذ القرار النهائي. في سياق تعليمي، قد يكون المعلم أو إدارة المدرسة هم من يوافقون على استخدام تطبيق معين للطلاب، حتى لو كان الطلاب هم المستخدمين وأولياء الأمور هم المشترين.",
+          "after": "مدير المدرسة صاحب الموافقة لأن الحالة تنص على سلطته النهائية. الطلاب مستخدمون، والمعلمون مؤثرون بالتوصية، والمطورون يبنون التطبيق. الدور يتحدد بالقرار الفعلي، ولا نفترض أن كل معلم يملك هذه السلطة."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "52433efe909978cb225ca33dc249a64e0ccc7e1ba0c296408591a896c3385097",
+      "afterSha256": "835a0865decb65572af8bce6c660cceea0319d9ab5ed7c4974123c0dcc336753",
+      "changedFields": [
+        {
+          "path": "quiz.5.question",
+          "beforeExists": true,
+          "before": "ما هو أحد الأخطاء الشائعة عند حساب نسب التحويل؟",
+          "after": "خلال الفترة نفسها: 500 زيارة، و50 إضافة للسلة، و10 طلبات. ما طريقة حساب التحويل من الزيارة إلى الطلب، وما نتيجتها؟"
+        },
+        {
+          "path": "quiz.5.options",
+          "beforeExists": true,
+          "before": [
+            "استخدام مقام يمثل المرحلة التالية في رحلة العميل.",
+            "استخدام مقام يمثل المرحلة السابقة مباشرة للإجراء المقاس.",
+            "استخدام مقام يمثل إجمالي عدد العملاء في كل القنوات.",
+            "استخدام مقام خاطئ لا يمثل المرحلة الصحيحة في رحلة العميل."
+          ],
+          "after": [
+            "(500 ÷ 10) × 100% = 5000%.",
+            "(50 ÷ 10) × 100% = 500%.",
+            "(10 ÷ 50) × 100% = 20%.",
+            "(10 ÷ 500) × 100% = 2%."
+          ]
+        },
+        {
+          "path": "quiz.5.explanation",
+          "beforeExists": true,
+          "before": "الخطأ الشائع هو استخدام مقام خاطئ لا يمثل المرحلة الصحيحة في رحلة العميل، مما يؤدي إلى نتائج مضللة. يجب دائمًا استخدام المقام الذي يمثل المرحلة السابقة مباشرة للإجراء الذي نقيسه.",
+          "after": "الخيار 3 صحيح: 10 طلبات من 500 زيارة = 2%. المقام هنا زيارات بداية الانتقال المطلوب، وليس إضافات السلة. 10÷50=20% يقيس السلة إلى الطلب، وهو انتقال مختلف. لا يشترط أن يكون المقام المرحلة المجاورة؛ يحدده الانتقال والفترة ووحدة العد."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M01-L04",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "4f537ee09680f17ca0faf045df52d4cb14ec91943291c4ad6680f7d707645a84",
+      "afterSha256": "2ffedc29a1dd8bd4e5f940c3218030c125ac3b04b8b7e581723fbd285185b7d6",
+      "changedFields": [
+        {
+          "path": "quiz.3.question",
+          "beforeExists": true,
+          "before": "تم الإبلاغ عن أن 70% من الطلاب الذين استخدموا طريقة تدريس جديدة قد تحسنت درجاتهم. ما هو السؤال الذي يجب أن تطرحه لفهم حدود هذا الاستنتاج؟",
+          "after": "أُعلن أن 70% من الطلاب الذين جربوا طريقة تدريس تحسنت درجاتهم. ما المعلومة الكمية الناقصة عن حجم العينة التي نحتاجها لتقييم استقرار هذه النسبة؟"
+        },
+        {
+          "path": "quiz.3.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي 'كم عدد الطلاب الذين شاركوا في التجربة؟' حجم العينة (عدد الطلاب) هو عامل حاسم في تحديد مدى موثوقية وقابلية تعميم النتيجة. إذا كان عدد الطلاب قليلاً جدًا، فإن نسبة 70% قد لا تكون ذات دلالة إحصائية. الخيارات الأخرى هي تفاصيل مهمة ولكنها لا تتعلق مباشرة بحدود الاستنتاج من النسبة المعلنة.",
+          "after": "عدد الطلاب المشاركين هو معلومة حجم العينة الناقصة (الخيار 1). يساعد العدد في تقييم التباين وعدم اليقين، لكنه وحده لا يثبت تمثيل جميع الطلاب أو أن الطريقة سببت التحسن. المواد والتدريب قد يهمان أسئلة أخرى، ولا يجيبان سؤال حجم العينة هنا."
+        }
+      ]
+    },
+    {
+      "item": 109,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M01-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "eb7f7981d364afc654b7c551ea27d62793cda5cfe4eb35c094d250686e42666e",
+      "afterSha256": "afee36f16d2c4b38819687f25851ee1c9d36112c318427c5886eceb867da5610",
+      "changedFields": [
+        {
+          "path": "quiz.3.question",
+          "beforeExists": true,
+          "before": "تم الإبلاغ عن أن 70% من الطلاب الذين استخدموا طريقة تدريس جديدة قد تحسنت درجاتهم. ما هو السؤال الذي يجب أن تطرحه لفهم حدود هذا الاستنتاج؟",
+          "after": "أُعلن أن 70% من الطلاب الذين جربوا طريقة تدريس تحسنت درجاتهم. ما المعلومة الكمية الناقصة عن حجم العينة التي نحتاجها لتقييم استقرار هذه النسبة؟"
+        },
+        {
+          "path": "quiz.3.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي 'كم عدد الطلاب الذين شاركوا في التجربة؟' حجم العينة (عدد الطلاب) هو عامل حاسم في تحديد مدى موثوقية وقابلية تعميم النتيجة. إذا كان عدد الطلاب قليلاً جدًا، فإن نسبة 70% قد لا تكون ذات دلالة إحصائية. الخيارات الأخرى هي تفاصيل مهمة ولكنها لا تتعلق مباشرة بحدود الاستنتاج من النسبة المعلنة.",
+          "after": "عدد الطلاب المشاركين هو معلومة حجم العينة الناقصة (الخيار 1). يساعد العدد في تقييم التباين وعدم اليقين، لكنه وحده لا يثبت تمثيل جميع الطلاب أو أن الطريقة سببت التحسن. المواد والتدريب قد يهمان أسئلة أخرى، ولا يجيبان سؤال حجم العينة هنا."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

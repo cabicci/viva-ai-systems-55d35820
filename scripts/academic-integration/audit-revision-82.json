@@ -1,0 +1,28 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    82
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 82,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L06",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "071693647d9f252b3c2353b1c1e993d971c5446955869908babca1a1e78e082c",
+      "afterSha256": "59b020af6d6ae4ce1c2c328299ec13c048c38bd3472af94f4c2af557c4d33b5f",
+      "changedFields": [
+        {
+          "path": "readingVisuals.2.rows.3.2",
+          "beforeExists": true,
+          "before": "-34.91%",
+          "after": "-35.00%"
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

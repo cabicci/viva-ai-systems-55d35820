@@ -1,0 +1,46 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    36
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 36,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M01-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "b40b4153c6cc4e740288ed0d56d826e2f1021030591c56467d21c87587aaaa99",
+      "afterSha256": "c811f14fa0d220b7261ff43352162c82a0a321843c6284bc52cc4f9a012bc988",
+      "changedFields": [
+        {
+          "path": "assignment.fields.3",
+          "beforeExists": true,
+          "before": "Solution 1 (Description)",
+          "after": "Solution 1: description and effects on the customer, cost, and capacity"
+        },
+        {
+          "path": "assignment.fields.4",
+          "beforeExists": true,
+          "before": "Solution 2 (Description)",
+          "after": "Solution 2: description and effects on the customer, cost, and capacity; compare trade-offs with Solution 1"
+        },
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity.",
+          "after": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity. In each solution field, describe the action and its effects on all three areas. Finish the second field with a brief comparison of the trade-offs; retain the five fields in their existing order."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

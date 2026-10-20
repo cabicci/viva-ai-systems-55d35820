@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    85
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 85,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "8b48daa0ab4279f66ec8e939a460befd9259b030446787db4772272199649a47",
+      "afterSha256": "2570997582380c6f68576f4014dbcb220f1b29fda368354fc461d60398662b87",
+      "changedFields": [
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Step 4: Evaluate Alternatives and Set Criteria. Based on the evidence, Aisha saw that a new packing machine would only address 30% of the delays. She brainstormed alternatives: (1) improve supplier communication, (2) implement address verification software, (3) hire temporary packing staff, (4) do nothing. Her criteria were cost, speed of implementation, and impact on customer satisfaction.",
+          "after": "Step4: Evaluate Alternatives and Set Criteria. In the ten observed delayed orders,3/10 were classified as packing backlog and7/10 as supplier or address issues. These are cause shares in this small sample, not a forecast that a machine fixes all three packing cases or two other changes remove all seven. Compare supplier communication, address checks, temporary packing staff, a machine and doing nothing against cost, implementation time and customer impact."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Step 5: Implement a Bounded Trial. Aisha decided to first focus on supplier communication and address verification, as these addressed 70% of the issues. She implemented a new supplier check-in process for two weeks and integrated a free address verification tool. Her stop condition was if late deliveries due to these two causes did not decrease by 50% within a month, she would re-evaluate and consider other options like temporary staff or a new machine.",
+          "after": "Step5: Implement a Bounded Trial. Try supplier communication and address checking on a limited scale and measure new delay counts and rates with a consistent denominator and period. Retain the proposed review condition: if delays attributed to those causes do not decrease by50% within a month, re-evaluate the options. This is a test target, not an achieved result; neither the ten-case cause distribution nor the solutions' effectiveness is guaranteed to generalize."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

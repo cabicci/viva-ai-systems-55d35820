@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    137
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 137,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "e0681f41f670cdcdbc20529fbf723ed131e4b3dcbc27ab0edfbd5fa9b20530e3",
+      "afterSha256": "28d3855590c13e2a9c06079b250df698bbd8b726c54662731f4827d80983649a",
+      "changedFields": [
+        {
+          "path": "readingVisuals.1.title",
+          "beforeExists": true,
+          "before": "Channel vs. Delivery vs. Support",
+          "after": "Channel vs. Delivery"
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

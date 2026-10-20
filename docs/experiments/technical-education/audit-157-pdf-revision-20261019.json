@@ -1,0 +1,150 @@
+{
+  "role": "technical-audit-pdf-revision",
+  "auditItems": [
+    157
+  ],
+  "revision": "2026-10-19",
+  "state": "source-only-not-uploaded-to-live-storage",
+  "canonicalParts": [
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "C1",
+    "D1"
+  ],
+  "dimensionsAndQuantities": [
+    {
+      "ids": [
+        "A1",
+        "A2"
+      ],
+      "quantity": 2,
+      "length": 600,
+      "width": 294,
+      "thickness": 18
+    },
+    {
+      "ids": [
+        "B1",
+        "B2"
+      ],
+      "quantity": 2,
+      "length": 564,
+      "width": 294,
+      "thickness": 18
+    },
+    {
+      "ids": [
+        "C1"
+      ],
+      "quantity": 1,
+      "length": 564,
+      "width": 294,
+      "thickness": 18
+    },
+    {
+      "ids": [
+        "D1"
+      ],
+      "quantity": 1,
+      "length": 600,
+      "width": 600,
+      "thickness": 6
+    }
+  ],
+  "pdfs": [
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/en/workbook.pdf",
+      "locale": "en",
+      "beforeSha256": "898097c1633d4fa06c01a5673c999cbb9a7a27d55901c22b40ccfee9aab454dc",
+      "sha256": "5a486954f4576b96717f8d37f4009ba3714e97c1149ca7883efa39aed4ed5ad1",
+      "bytes": 68179,
+      "pages": 7,
+      "changedPages": [
+        4
+      ],
+      "otherSixPagesTextExact": true,
+      "oldIdsRemovedFromText": true,
+      "visualReview": "Agent inspected all four rendered page-4 PNGs plus enlarged list/review details; no clipping or overlap; identifiers and quantities agree with canonical model."
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-EG/workbook.pdf",
+      "locale": "ar-EG",
+      "beforeSha256": "3b8d0ef96dd6a8f31b694ac30ad6675db55830250cfbd057cabd95730e542eeb",
+      "sha256": "48e77167a4f8ce8ca09030d02bea72aa5b5085b3431338da5e8a90ac28c688a2",
+      "bytes": 77818,
+      "pages": 7,
+      "changedPages": [
+        4
+      ],
+      "otherSixPagesTextExact": true,
+      "oldIdsRemovedFromText": true,
+      "visualReview": "Agent inspected all four rendered page-4 PNGs plus enlarged list/review details; no clipping or overlap; identifiers and quantities agree with canonical model."
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-MSA/workbook.pdf",
+      "locale": "ar-MSA",
+      "beforeSha256": "091ea8595d8707b873a29658f2314f5572d6f2663a306d19dc8ac42f88e0860d",
+      "sha256": "f9592fccfddcfeb32e33c755a652b4a73b393f187fd6149858519ac9483c24a6",
+      "bytes": 77594,
+      "pages": 7,
+      "changedPages": [
+        4
+      ],
+      "otherSixPagesTextExact": true,
+      "oldIdsRemovedFromText": true,
+      "visualReview": "Agent inspected all four rendered page-4 PNGs plus enlarged list/review details; no clipping or overlap; identifiers and quantities agree with canonical model."
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-Gulf/workbook.pdf",
+      "locale": "ar-Gulf",
+      "beforeSha256": "965ce03e5031dddda5ab912bb72df2c1fc1df3b81f19bf46bd557f0d29615eaf",
+      "sha256": "a27ba8edcbf0076d5ad10f48a94c4ba551953579795247906055ea8928109a81",
+      "bytes": 77220,
+      "pages": 7,
+      "changedPages": [
+        4
+      ],
+      "otherSixPagesTextExact": true,
+      "oldIdsRemovedFromText": true,
+      "visualReview": "Agent inspected all four rendered page-4 PNGs plus enlarged list/review details; no clipping or overlap; identifiers and quantities agree with canonical model."
+    }
+  ],
+  "unchangedAssets": [
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/en/drawings.pdf",
+      "sha256": "b63b6cb90e05edd00c0f15586f205c4feef28b5559409f2be6020ff08385608f"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/en/cut-list.pdf",
+      "sha256": "370b7f18aff9a3fd299553ddd30b2a1e296dc342a1a0cd1e08edd47768611571"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-EG/drawings.pdf",
+      "sha256": "abeaba0e95a8a665ed3d01b4c8f7f0d6834bba1cf71eefdcf27012b1c24a4e48"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-EG/cut-list.pdf",
+      "sha256": "c3716bc44ae14dba129ce5a91c17fbef5929652f7f80fc01a96990ed2537179d"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-MSA/drawings.pdf",
+      "sha256": "abeaba0e95a8a665ed3d01b4c8f7f0d6834bba1cf71eefdcf27012b1c24a4e48"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-MSA/cut-list.pdf",
+      "sha256": "36049539434cf7b234171c8d2a432fb0af176fd31aa9a7843b7abdf196526684"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-Gulf/drawings.pdf",
+      "sha256": "abeaba0e95a8a665ed3d01b4c8f7f0d6834bba1cf71eefdcf27012b1c24a4e48"
+    },
+    {
+      "path": "scripts/technical-education/assets/furniture-pilot/ar-Gulf/cut-list.pdf",
+      "sha256": "192ca20adc51515cb058769d10db0b55852ac77551ae6e8c4ba0e2bf8c4d9b0a"
+    }
+  ],
+  "originalSourceHashesPreserved": true,
+  "liveStorageUpdated": false
+}

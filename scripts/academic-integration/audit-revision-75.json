@@ -1,0 +1,40 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    75
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 75,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L06",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "c9207f6a50819f45c0b4abb362cc8eb559586473db7be832e5cb2afe8417dd09",
+      "afterSha256": "8c8bec726818b4db8bc402b722d82f5366bde827d4e595dce1a27b515a9bd499",
+      "changedFields": [
+        {
+          "path": "readingVisuals.2.rows.1.1",
+          "beforeExists": true,
+          "before": "نعم (بشكل عام)",
+          "after": "محتملة؛ لا تثبت من الارتباط وحده"
+        },
+        {
+          "path": "readingVisuals.2.rows.1.2",
+          "beforeExists": true,
+          "before": "زيادة الجهد المبذول في الدراسة تؤدي عادة إلى فهم أفضل وبالتالي درجات أعلى.",
+          "after": "قد تكون الدراسة سببًا معقولًا لتحسن الدرجات، لكن الارتباط وحده لا يعزل أثر التحصيل السابق أو الدافعية أو العوامل الأخرى؛ يلزم تصميم مقارنة مناسب لإسناد السببية."
+        },
+        {
+          "path": "readingVisuals.2.caption",
+          "beforeExists": true,
+          "before": "يوضح هذا الجدول أمثلة شائعة للارتباطات وكيفية التمييز بينها وبين العلاقات السببية الحقيقية.",
+          "after": "هذه أمثلة لارتباطات وتفسيرات محتملة؛ التزامن وحده لا يثبت السببية ولا يعزل العوامل الأخرى، حتى عندما تبدو الفرضية السببية معقولة."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

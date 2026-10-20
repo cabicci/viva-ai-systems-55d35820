@@ -16,7 +16,7 @@ export function resolveAuditedContextualRevision(
   if (matches.length === 0) return { ok: true };
   if (matches.length !== 1) return { ok: false };
   const revision = matches[0];
-  const exactPath = `/lesson-visuals/audit-revisions/2026-10-18/${entry.lessonId}__${entry.locale}__${revision.revisionId}.png`;
+  const exactPath = `/lesson-visuals/audit-revisions/${revision.assetDate}/${entry.lessonId}__${entry.locale}__${revision.revisionId}.png`;
   if (
     revision.lessonId !== entry.lessonId ||
     revision.locale !== entry.locale ||
@@ -27,6 +27,7 @@ export function resolveAuditedContextualRevision(
     revision.reviewStatus !== "agent-reviewed-draft" ||
     revision.actualFormat !== "png" ||
     !/^[a-z0-9-]+$/.test(revision.revisionId) ||
+    !/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(revision.assetDate) ||
     revision.publicPath !== exactPath ||
     !/^[a-f0-9]{64}$/.test(revision.assetSha256) ||
     !/^[a-f0-9]{64}$/.test(revision.currentSourceSha256) ||

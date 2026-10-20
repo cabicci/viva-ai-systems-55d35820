@@ -50,14 +50,14 @@
     ],
     "example": {
       "title": "Resolving a Capacity Conflict",
-      "text": "A fictional scenario: The Sales team for 'QuickPrint Services' just secured a large order for 30 custom brochures, promising delivery by the end of today. However, the Operations manager knows that the printing machines and staff can only realistically produce 20 such orders in a single day, given current commitments. This creates a direct conflict between the sales promise and operational capacity. Simply increasing advertising won't solve the immediate delivery gap; it would only bring in more orders that can't be fulfilled.",
-      "decision": "How can QuickPrint Services resolve the immediate conflict of promising 30 orders when only 20 can be delivered today, while minimizing negative impact?",
+      "text": "A fictional scenario: The Sales team for 'QuickPrint Services' just secured a job for 30 custom booklets, promising delivery by the end of today. However, the Operations manager knows that the printing machines and staff can only realistically produce 20 booklets in a single day, given current commitments. This creates a direct conflict between the sales promise and operational capacity. Simply increasing advertising won't solve the immediate delivery gap; it would only bring in more booklets that can't be fulfilled.",
+      "decision": "How can QuickPrint Services resolve the immediate conflict of promising 30 booklets when only 20 can be delivered today, while minimizing negative impact?",
       "steps": [
-        "**Step 1: Identify the Gap and Root Cause.** The gap is 10 orders (30 promised - 20 capacity). The root cause is a lack of real-time capacity information sharing between Sales and Operations before the promise was made. Sales made a commitment without verifying if Operations could deliver.",
-        "**Step 2: Explore Immediate Options.** Two primary options emerge: \n    a) Renegotiate the delivery date with the customer for some or all orders. \n    b) Increase operational capacity for today. Increasing capacity might involve overtime for staff, bringing in temporary help, or using a backup printer (if available and verified).",
+        "**Step 1: Identify the Gap and Root Cause.** The gap is 10 booklets (30 promised - 20 capacity). The root cause is a lack of real-time capacity information sharing between Sales and Operations before the promise was made. Sales made a commitment without verifying if Operations could deliver.",
+        "**Step 2: Explore Immediate Options.** Two primary options emerge: \n    a) Renegotiate the delivery date with the customer for some or all booklets. \n    b) Increase operational capacity for today. Increasing capacity might involve overtime for staff, bringing in temporary help, or using a backup printer (if available and verified).",
         "**Step 3: Evaluate Option A: Renegotiate with Customer.** \n    *   **Customer Impact:** Potential disappointment, but transparency can build trust. Offering a small discount for the delay might mitigate frustration. \n    *   **Cost Impact:** Low direct cost, potentially a small discount. Avoids overtime costs. \n    *   **Capacity Impact:** Aligns promise with existing capacity, reducing stress on Operations. Requires clear communication from Sales to the customer.",
-        "**Step 4: Evaluate Option B: Increase Capacity.** \n    *   **Customer Impact:** Positive, as the original promise is met. \n    *   **Cost Impact:** High. Overtime pay, potential rush fees for materials, or costs for temporary staff. This needs to be calculated precisely to ensure profitability isn't eroded. For example, if overtime costs an extra $500 and the profit on 10 orders is $300, it's a net loss. \n    *   **Capacity Impact:** Strains existing resources, potentially leading to burnout or quality issues if rushed. Requires verification that extra capacity (e.g., staff, machines) is genuinely available and reliable for today.",
-        "**Step 5: Make a Decision and Implement.** Based on the evaluation, QuickPrint Services decides to contact the customer immediately. They explain the situation transparently, offer to deliver 20 orders today and the remaining 10 tomorrow morning with a 10% discount on the delayed portion. This balances customer satisfaction with cost control and avoids overstraining Operations. Simultaneously, they initiate a process change: Sales must now check a real-time capacity dashboard before confirming large orders."
+        "**Step 4: Evaluate Option B: Increase Capacity.** \n    *   **Customer Impact:** Positive, as the original promise is met. \n    *   **Cost Impact:** High. Overtime pay, potential rush fees for materials, or costs for temporary staff. This needs to be calculated precisely to ensure profitability isn't eroded. For example, if overtime costs an extra $500 and the profit on 10 booklets is $300, it's a net loss. \n    *   **Capacity Impact:** Strains existing resources, potentially leading to burnout or quality issues if rushed. Requires verification that extra capacity (e.g., staff, machines) is genuinely available and reliable for today.",
+        "**Step 5: Make a Decision and Implement.** Based on the evaluation, QuickPrint Services decides to contact the customer immediately. They explain the situation transparently, offer to deliver 20 booklets today and the remaining 10 tomorrow morning with a 10% discount on the delayed portion. This balances customer satisfaction with cost control and avoids overstraining Operations. Simultaneously, they initiate a process change: Sales must now check a real-time capacity dashboard before confirming large print jobs."
       ]
     },
     "quiz": [
@@ -135,13 +135,13 @@
       }
     ],
     "assignment": {
-      "prompt": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity.",
+      "prompt": "Imagine you are managing a small custom furniture workshop, 'WoodCraft Creations.' A customer places an order for a unique dining table. Map the journey of this order through the Sales, Operations (Design & Production), and Finance departments. Identify one specific point of potential conflict or miscommunication, propose two distinct solutions, and compare their effects on the customer, cost, and capacity. In each solution field, describe the action and its effects on all three areas. Finish the second field with a brief comparison of the trade-offs; retain the five fields in their existing order.",
       "fields": [
         "Order Details (Customer Name, Item, Quantity)",
         "Information Handoffs (What info, From whom, To whom, Expected Time)",
         "Identified Conflict Point",
-        "Solution 1 (Description)",
-        "Solution 2 (Description)"
+        "Solution 1: description and effects on the customer, cost, and capacity",
+        "Solution 2: description and effects on the customer, cost, and capacity; compare trade-offs with Solution 1"
       ],
       "criteria": [
         "Accurate mapping of order flow through Sales, Operations, and Finance.",
@@ -442,7 +442,7 @@
       },
       {
         "id": "Q5",
-        "question": "A company decides to offer financial compensation to employees who volunteer for mandatory overtime during a busy period. While this addresses the financial aspect, what other ethical consideration might still be overlooked?",
+        "question": "A company offers voluntary overtime during a busy period with the compensation stated in advance. Employees may decline. Beyond compensation, what other ethical consideration should still be reviewed?",
         "options": [
           "The company's quarterly revenue targets.",
           "The impact on employee work-life balance and potential burnout.",
@@ -450,7 +450,7 @@
           "The efficiency of their production line."
         ],
         "correct": 1,
-        "explanation": "The correct answer is 'The impact on employee work-life balance and potential burnout.' While financial compensation addresses one aspect, mandatory overtime can still lead to stress, fatigue, and a negative impact on employees' personal lives, which are crucial ethical considerations related to fairness and employee well-being. The other options are business metrics or external factors, not overlooked ethical considerations related to the employees themselves."
+        "explanation": "Index 1 addresses work-life balance and potential burnout. Review fatigue, adequate rest, safety, and whether employees can freely decline without pressure or penalty even when overtime is paid and described as voluntary. Revenue, product prices, and production efficiency do not answer this employee-well-being question."
       },
       {
         "id": "Q6",
@@ -1356,8 +1356,8 @@
         "Step 1: Define the Problem Gap. Aisha identified the problem as 'customer orders are not consistently delivered within the promised 3-5 business days.' The desired state is 'all orders delivered within 3-5 business days.' This clearly defines the gap between actual and desired performance, moving beyond the vague 'late orders' symptom.",
         "Step 2: Separate Symptoms from Causes. Aisha realized that 'late deliveries' was a symptom. She needed to find the root causes. She hypothesized potential causes like 'missing inventory items,' 'incorrect shipping labels,' or 'production delays.' She avoided immediately assuming a lack of machinery was the cause.",
         "Step 3: Gather Evidence. To test her hypotheses, Aisha decided to track the next ten delayed orders. For each order, she noted the specific reason for the delay: 4 were due to missing components from suppliers, 3 were due to errors in customer shipping addresses, and 3 were due to a backlog at the packing station. This data provided concrete evidence.",
-        "Step 4: Evaluate Alternatives and Set Criteria. Based on the evidence, Aisha saw that a new packing machine would only address 30% of the delays. She brainstormed alternatives: (1) improve supplier communication, (2) implement address verification software, (3) hire temporary packing staff, (4) do nothing. Her criteria were cost, speed of implementation, and impact on customer satisfaction.",
-        "Step 5: Implement a Bounded Trial. Aisha decided to first focus on supplier communication and address verification, as these addressed 70% of the issues. She implemented a new supplier check-in process for two weeks and integrated a free address verification tool. Her stop condition was if late deliveries due to these two causes did not decrease by 50% within a month, she would re-evaluate and consider other options like temporary staff or a new machine."
+        "Step 4: Evaluate Alternatives and Set Criteria. In the ten observed delayed orders,3/10 were classified as packing backlog and 7/10 as supplier or address issues. These are cause shares in this small sample, not a forecast that a machine fixes all three packing cases or two other changes remove all seven. Compare supplier communication, address checks, temporary packing staff, a machine and doing nothing against cost, implementation time and customer impact.",
+        "Step 5: Implement a Bounded Trial. Try supplier communication and address checking on a limited scale and measure new delay counts and rates with a consistent denominator and period. Retain the proposed review condition: if delays attributed to those causes do not decrease by 50% within a month, re-evaluate the options. This is a test target, not an achieved result; neither the ten-case cause distribution nor the solutions' effectiveness is guaranteed to generalize."
       ]
     },
     "quiz": [
@@ -1570,8 +1570,8 @@
         "kind": "table",
         "columns": [
           "Criteria (Weight)",
-          "Alternative 1: New Supplier (Cost: 3)",
-          "Alternative 2: Increase Inventory (Cost: 2)"
+          "Alternative 1: New Supplier",
+          "Alternative 2: Increase Inventory"
         ],
         "rows": [
           [
@@ -2337,14 +2337,14 @@
     ],
     "example": {
       "title": "Evaluating a Bulk Discount Offer",
-      "text": "A fictional company, 'Bright Future Electronics,' needs to purchase 1,000 specialized circuit boards per month for its production line. Their current supplier, 'TechParts Co.,' offers these boards at $12 per unit. TechParts Co. has now offered Bright Future Electronics a special bulk discount: if they commit to buying 3,000 units upfront (a three-month supply), the price per unit will drop to $10. This seems like a great deal, saving $2 per unit. However, Bright Future Electronics needs to evaluate this offer carefully, considering more than just the immediate discount.",
-      "decision": "Bright Future Electronics should decline the bulk discount offer at this time, as the total cost analysis reveals that the potential savings are outweighed by the increased storage costs, cash flow strain, and inventory risks associated with the larger purchase.",
+      "text": "A fictional company, 'Bright Future Electronics,' needs to purchase 1,000 specialized circuit boards per month for its production line. Their current supplier, 'TechParts Co.,' offers these boards at $12 per unit. TechParts Co. has now offered Bright Future Electronics a special bulk discount: if they commit to buying 3,000 units upfront (a three-month supply), the price per unit will drop to $10. This seems like a great deal, saving $2 per unit. However, Bright Future Electronics needs to evaluate this offer carefully, considering more than just the immediate discount. Assume purchase, payment and consumption of 1000 units at the start of each month under both options; compare cash against those scheduled monthly purchase dates.",
+      "decision": "Under the stated timing and cost assumptions, the offer has an estimated$4060 net saving. It cannot be rejected on the claim that those costs exceed the discount. Decide only after checking actual liquidity and risk; do not invent a cash constraint or treat the estimate as guaranteed.",
       "steps": [
         "Calculate the immediate savings from the discount. Current price for 3,000 units (3 months supply) would be 3,000 units * $12/unit = $36,000. The discounted price for 3,000 units is 3,000 units * $10/unit = $30,000. The direct saving is $36,000 - $30,000 = $6,000. This is the 'face value' of the discount.",
-        "Estimate the additional storage costs. Bright Future Electronics currently stores 1,000 units per month. Buying 3,000 units upfront means storing an extra 2,000 units for two months. Their warehouse costs $0.50 per unit per month for storage (including space, insurance, and handling). The additional storage cost would be 2,000 units * $0.50/unit/month * 2 months = $2,000. This directly reduces the perceived savings.",
-        "Assess the impact on cash flow. Instead of paying $12,000 per month for three months ($36,000 total), Bright Future Electronics would pay $30,000 upfront. This ties up an additional $18,000 ($30,000 - $12,000) in the first month that could have been used for other operational needs or investments. If Bright Future Electronics has a cost of capital (the cost of using money) of 1% per month, tying up $18,000 for two months (the average extra holding period) costs approximately $18,000 * 1% * 2 months = $360. This is an 'opportunity cost' of the cash.",
-        "Evaluate inventory risks. Holding a larger inventory increases the risk of obsolescence (if the circuit board technology changes), damage, or theft. While difficult to quantify precisely, Bright Future Electronics estimates a 1% risk of loss or obsolescence on the excess 2,000 units over two months. This potential loss is 2,000 units * $10/unit * 1% = $200. This is a potential cost, not a guaranteed one, but it's a real risk to consider.",
-        "Calculate the total adjusted cost and compare. The initial savings were $6,000. Subtracting the additional costs: $6,000 (savings) - $2,000 (storage) - $360 (cash flow opportunity cost) - $200 (inventory risk estimate) = $3,440. While there are still savings, they are significantly less than the initial $6,000. Given the potential for higher actual risks (e.g., if obsolescence risk is higher than 1%), and the strain on cash flow, Bright Future Electronics decides that the reduced savings do not justify the increased operational complexity and risk. They will continue purchasing monthly at $12 per unit, maintaining flexibility and lower inventory holding costs."
+        "Calculate storage on declining extra stock: after consuming 1000 units at the first month's start,2000 remain; after the second month's consumption,1000 remain; after the third,0 remain. At$0.50 per unit-month, extra storage =(2000 +1000) ×$0.50 =$1500, rather than 2000 units for two complete months.",
+        "Compare cash with monthly purchase dates: bulk payment is$30000, versus$12000 at each month's start. Positive additional cash paid is$18000 after the first purchase date and$6000 after the second; it ends at the third purchase date. At a simple assumed 1% monthly opportunity cost, cost =($18000 +$6000) ×1% =$240. Do not hold the initial$18000 extra balance unchanged for two months.",
+        "Evaluate inventory risks. Holding a larger inventory increases the risk of obsolescence (if the circuit board technology changes), damage, or theft. While difficult to quantify precisely, Bright Future Electronics estimates a 1% risk of loss or obsolescence on the excess 2,000 units over two months. This potential loss is 2,000 units * $10/unit * 1% = $200. This is a potential cost, not a guaranteed one, but it's a real risk to consider. Keep the$200 assumed risk estimate separate: it is not a certain cost or a measured loss.",
+        "Compare the stated assumptions: discount saving$6000 −storage$1500 −opportunity cost$240 −assumed inventory risk$200 =$4060. These assumed costs do not outweigh the saving. The result is conditional on the declared timing and estimates; actual liquidity, risk and operational constraints still need verification. Declining would require an explicit additional constraint or risk, not the incorrect claim that these stated costs exceed savings."
       ]
     },
     "quiz": [
@@ -2398,7 +2398,7 @@
       },
       {
         "id": "Q5",
-        "question": "What is a common misconception when evaluating a bulk discount?",
+        "question": "Which error specifically evaluates a bulk offer using only its advertised discount percentage?",
         "options": [
           "That the discount percentage is the only factor to consider.",
           "That bulk purchases always lead to higher quality products.",
@@ -2406,7 +2406,7 @@
           "That cash flow is unaffected by upfront payments."
         ],
         "correct": 0,
-        "explanation": "A common misconception is to only look at the discount percentage. A comprehensive evaluation requires considering total cost, including storage, cash flow impact, and inventory risks. Options B, C, and D are also misconceptions, but the primary and most common error is focusing solely on the discount percentage itself."
+        "explanation": "Option A explicitly reduces the evaluation to the discount percentage alone. Compare total purchase and storage costs, cash tied up, and inventory risks. The other statements can also be mistaken but describe different errors; the question asks for this specific discount-only error."
       },
       {
         "id": "Q6",
@@ -2711,7 +2711,7 @@
       },
       {
         "id": "Q2",
-        "question": "A company is developing a new educational tablet for children. Who is most likely the 'Approver' in this scenario?",
+        "question": "A school is purchasing educational tablets for classroom use. Its principal holds final approval authority for this institutional purchase. Who is the Approver?",
         "options": [
           "The child who will play games and learn on the tablet.",
           "The parent who researches features and makes the purchase.",
@@ -2719,19 +2719,19 @@
           "The toy store manager who stocks the tablet on their shelves."
         ],
         "correct": 2,
-        "explanation": "The correct answer is 'The school principal who decides if the tablet meets curriculum standards for classroom use.' The Approver is the one who gives permission or budget clearance, especially in an institutional context. The child is the User. The parent is the Buyer. The store manager is a distributor, not an approver in the customer's decision-making process."
+        "explanation": "The principal (index 2) has final approval authority in this school purchase. The child uses the tablet, a parent researching features may influence a choice, and the store supplies it. A parent can approve a household purchase; this question specifies an institutional decision."
       },
       {
         "id": "Q3",
-        "question": "A new online grocery delivery service states its problem as: 'People don't have enough time to go to the supermarket.' What is a potential flaw in this problem statement?",
+        "question": "A grocery delivery team starts with 'People don't have enough time to go to the supermarket.' Which action would define a specific customer segment and its need context?",
         "options": [
-          "It doesn't mention the specific type of groceries being delivered.",
-          "It focuses on a solution (online delivery) rather than the underlying customer pain.",
-          "It assumes all people are busy, which might not be true.",
-          "It's too broad and doesn't define a specific customer segment."
+          "List supermarket products in alphabetical order.",
+          "Choose the delivery app's colour scheme.",
+          "Offer the same advertisement to every resident.",
+          "Identify working parents with young children who struggle to shop after their workday."
         ],
         "correct": 3,
-        "explanation": "The correct answer is 'It's too broad and doesn't define a specific customer segment.' While the statement identifies a general issue, 'people' is too vague. A stronger problem statement would specify *which* people (e.g., 'Busy working parents with young children') and *why* they lack time, allowing for a more targeted solution. Option 1 is a detail that might come later. Option 2 is incorrect; the statement describes a problem ('not enough time'), not a solution. Option 3 is an assumption, but the primary flaw is the lack of specificity for a segment."
+        "explanation": "Index 3 identifies a particular group and when its shopping difficulty occurs. Product lists, visual styling and advertising to everyone do not define a group and its need context. The group remains a hypothesis to investigate, not a proven market."
       },
       {
         "id": "Q4",
@@ -3352,11 +3352,11 @@
       "text": "This is a fictional learning case. A new service aims to help university students avoid common printing errors and delays. Students often submit files for printing only to find formatting issues, incorrect page sizes, or missing fonts, leading to wasted time, money, and missed deadlines. This service proposes to receive student files in advance, perform a thorough check for common issues, and confirm their print-readiness before the actual printing process begins.",
       "decision": "To develop a coherent business model that delivers on the value proposition of reducing rework and waiting for student printing, while ensuring operational feasibility and profitability.",
       "steps": [
-        "**Step 1: Formulate the Value Proposition.** The service helps university students save time and avoid stress by proactively checking their print files for errors, ensuring a perfect print on the first attempt and eliminating costly reworks and delays.",
+        "**Step 1: Formulate the Value Proposition.** Help students reduce common file errors, rework and waiting through early checks within a declared scope. Test the effect in a limited pilot; do not promise a perfect first print or the elimination of every error and delay.",
         "**Step 2: Connect Value Proposition to Business Model Elements.** Identify the core elements: Customer Segment (University Students), Channels (Online submission portal, campus kiosks), Key Activities (File checking, communication, printing), Key Resources (Specialized software, trained staff, printing equipment), Revenue Streams (Per-page fee, subscription options), Cost Structure (Software licenses, staff salaries, equipment maintenance).",
-        "**Step 3: Add Assumptions and Tests for Key Relationships.** For 'Online submission portal' (Channel), assume students prefer digital submission; test by surveying students. For 'Specialized software' (Resource), assume it can automate most checks; test by piloting with a sample of diverse student files. For 'Per-page fee' (Revenue), assume students will pay a small premium for error-free prints; test by offering a trial period.",
-        "**Step 4: Identify an Inconsistency.** Upon review, the value proposition promises 'proactively checking files' and 'eliminating costly reworks.' However, if the 'file checking' is primarily manual and time-consuming, it might contradict the 'eliminating delays' part of the value proposition, especially during peak periods. Manual checking could introduce new delays.",
-        "**Step 5: Repair the Inconsistency.** To resolve the conflict between manual checking and speed, the business model needs adjustment. The 'Key Resources' should explicitly include 'automated file analysis software' to handle common checks quickly. 'Key Activities' would then shift to 'automated initial checks' followed by 'manual review of flagged issues,' ensuring both speed and accuracy. This change impacts 'Cost Structure' (software acquisition) but reinforces the value proposition."
+        "**Step 3: Add Assumptions and Tests for Key Relationships.** For 'Online submission portal' (Channel), assume students prefer digital submission; test by surveying students. For 'Specialized software' (Resource), assume it can automate most checks; test by piloting with a sample of diverse student files. For 'Per-page fee' (Revenue), assume students will pay a small premium for the scoped checking service; test by offering a trial period.",
+        "**Step 4: Identify an Inconsistency.** Early checking aims to reduce rework and waiting, but manual checking can add a queue during peak demand. A promise to eliminate every delay or rework case would conflict with that operational limit; define scope, capacity and realistic turnaround before promising a benefit.",
+        "**Step 5: Repair and Test the Inconsistency.** Pilot automated checks for supported common issues followed by manual review of flagged or unsupported files. Automation speed and coverage are assumptions to test, not guarantees of accuracy. Measure file errors, rework, review time and waiting against a consistent baseline, then revise scope, resources and turnaround before scaling."
       ]
     },
     "quiz": [
@@ -3434,13 +3434,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.",
+      "prompt": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.\n\nFor each of the five displayed elements, include one plausible assumption and a specific test, as the rubric requires. Keep the element itself in its existing field and add the assumption/test beneath it. Use the final field for one contradiction between elements and its coherent proposed resolution. These are plans for tests, not a requirement to run an external experiment.",
       "fields": [
         "Value Proposition (2 sentences)",
         "Customer Segment",
         "Key Activities",
         "Key Resources",
-        "Revenue Streams"
+        "Revenue Streams",
+        "Contradiction between model elements and proposed resolution"
       ],
       "criteria": [
         "Value proposition is clear, concise, and customer-centric.",
@@ -3760,13 +3761,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.",
+      "prompt": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.\n\nFor each named stage, include the customer's question, friction, owner and metric with its numerator/denominator, unit, cohort and period. In the added field identify and justify one leakage point, propose one change and show the before/after measurement using the same conversion definition, cohort, units and comparable periods. Fictional numbers must be labelled as assumptions; no real analytics collection is required.",
       "fields": [
-        "Customer Journey Stage 1: [Name]",
-        "Customer Journey Stage 2: [Name]",
-        "Customer Journey Stage 3: [Name]",
-        "Customer Journey Stage 4: [Name]",
-        "Customer Journey Stage 5: [Name]"
+        "Customer Journey Stage 1: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 2: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 3: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 4: name, customer question, friction, owner and metric definition",
+        "Customer Journey Stage 5: name, customer question, friction, owner and metric definition",
+        "Leakage point and reason, proposed change and measurement with the same conversion definition"
       ],
       "criteria": [
         "Clear identification of five distinct customer journey stages.",
@@ -3869,7 +3871,7 @@
       },
       {
         "id": "rv2",
-        "title": "Channel vs. Delivery vs. Support",
+        "title": "Channel vs. Delivery",
         "kind": "comparison",
         "columns": [
           "Aspect",
@@ -4713,7 +4715,7 @@
       },
       {
         "id": "q2",
-        "question": "A new coffee shop opens in a business district. Which of the following is an 'alternative' for a customer, beyond another coffee shop?",
+        "question": "Which option is specifically a do-it-yourself alternative: preparing coffee at home rather than buying it ready to drink?",
         "options": [
           "Buying coffee beans to brew at home.",
           "Visiting a different coffee shop across the street.",
@@ -4721,7 +4723,7 @@
           "Deciding to drink water instead of coffee."
         ],
         "correct": 0,
-        "explanation": "The correct answer is 'Buying coffee beans to brew at home.' This represents a 'doing it yourself' alternative, where the customer fulfills the need (coffee) without using a commercial service. Visiting a different coffee shop (option B) is a direct competitor. Ordering a different drink (option C) is a choice within the same provider. Deciding to drink water (option D) is a form of 'postponement' or choosing a completely different need, but DIY is a more direct alternative to the service itself."
+        "explanation": "Buying beans and brewing at home is DIY/self-service (index 0). A different coffee shop is a direct competitor; a different drink within one shop is a product choice. Water can be another way to meet a broader refreshment need. These can all be alternatives depending on the need; the question asks specifically for home preparation."
       },
       {
         "id": "q3",
@@ -5155,7 +5157,7 @@
     "faq": [
       {
         "question": "What if my process has multiple bottlenecks?",
-        "answer": "In a truly sequential process, there can only be one primary bottleneck at any given time, which is the step with the absolute lowest capacity. However, if you improve that bottleneck, the next slowest step will then become the new bottleneck. It's a continuous process of identification and improvement."
+        "answer": "A sequential process can have one bottleneck stage or several stages tied at the lowest capacity. With capacities 8,8 and 12 orders per hour, overall output cannot exceed 8 per hour. Improving only one 8-per-hour stage leaves the other limiting output to 8; both tied constraints must be addressed before that limit rises. Reassess the limiting stages after each change."
       },
       {
         "question": "Can a bottleneck change over time?",
@@ -5991,13 +5993,13 @@
       {
         "id": "S2",
         "title": "Sources of Bias in Experiments",
-        "text": "Bias is a systematic error that can skew your results in a particular direction, making them inaccurate. One common source is 'selection bias,' where the participants in your experiment aren't representative of the larger group you want to understand. If you only test a new app feature on tech-savvy young adults, you can't assume it will be popular with all age groups. Another is 'timing bias,' where the period an experiment runs influences the outcome. For instance, testing a new ice cream flavor during a heatwave might show artificially high demand compared to testing it in winter. 'Observer bias' occurs when the expectations of the experimenter unconsciously influence the results, perhaps by interpreting ambiguous data in a way that supports their hypothesis. Finally, 'simultaneous changes' (also known as confounding variables) are when multiple things change at once, making it impossible to isolate the effect of your specific intervention. Identifying and mitigating these biases is key to drawing reliable conclusions.",
+        "text": "Bias is a systematic error that can skew your results in a particular direction, making them inaccurate. One common source is 'selection bias,' where the participants in your experiment aren't representative of the larger group you want to understand. If you only test a new app feature on tech-savvy young adults, you can't assume it will be popular with all age groups. Another is 'timing bias,' where the period an experiment runs influences the outcome. For instance, testing a new ice cream flavor during a heatwave might show artificially high demand compared to testing it in winter. 'Observer bias' occurs when the expectations of the experimenter unconsciously influence the results, perhaps by interpreting ambiguous data in a way that supports their hypothesis. Finally, 'simultaneous changes' (also known as confounding variables) are when multiple things change at once, making it impossible to isolate the effect of your specific intervention. Identifying and mitigating these biases is key to drawing reliable conclusions. Distinguish sample selection from treatment allocation: selecting participants determines how well the sample fits the target population; random assignment allocates those already selected between alternatives. Assignment does not repair an unrepresentative sample or guarantee broader generalization.",
         "reflection": "Can you recall a situation where you or someone you know made a decision based on information that might have been affected by bias? What kind of bias do you think it was?"
       },
       {
         "id": "S3",
         "title": "Practical Steps to Minimize Bias",
-        "text": "Minimizing bias requires careful planning. First, 'random assignment' is a powerful tool against selection bias. This means participants are assigned to different groups (e.g., one receiving the intervention, one not) purely by chance, like flipping a coin. This helps ensure groups are similar on average, so any differences in outcomes are more likely due to your intervention. Second, 'consistent measurement' across all groups is vital. Use the same tools, procedures, and observers for everyone to avoid 'measurement bias.' Third, consider 'blinding' where possible. In a 'single-blind' experiment, participants don't know if they're receiving the intervention or a control. In a 'double-blind' experiment, neither participants nor the researchers interacting with them know, which helps combat observer bias. Lastly, 'controlling for variables' means trying to keep everything else constant except for the one thing you're testing. If you're testing a new advertising campaign, make sure pricing, product availability, and competitor actions remain stable during the test period.",
+        "text": "Minimizing bias requires careful planning. First, select a sample suitable for the target population and state its coverage limits. Separately, use random assignment within that selected sample to reduce systematic differences between comparison groups. This means participants are assigned to different groups (e.g., one receiving the intervention, one not) purely by chance, like flipping a coin. This balances groups on average and supports attribution within the sample; it neither guarantees identical groups nor makes the sample representative of every customer. Second, 'consistent measurement' across all groups is vital. Use the same tools, procedures, and observers for everyone to avoid 'measurement bias.' Third, consider 'blinding' where possible. In a 'single-blind' experiment, participants don't know if they're receiving the intervention or a control. In a 'double-blind' experiment, neither participants nor the researchers interacting with them know, which helps combat observer bias. Lastly, 'controlling for variables' means trying to keep everything else constant except for the one thing you're testing. If you're testing a new advertising campaign, make sure pricing, product availability, and competitor actions remain stable during the test period.",
         "reflection": "Imagine you're testing two different ways to teach a new skill. How would you apply random assignment and consistent measurement to make your test fair?"
       },
       {
@@ -6073,16 +6075,16 @@
         "question": "Which of the following best describes 'internal validity' in an experiment?",
         "options": [
           "The extent to which the results can be generalized to other populations.",
-          "The degree to which the experiment measures what it intends to measure.",
+          "The extent to which observed changes can be attributed to the intervention rather than other factors.",
           "The consistency of the measurement tools used in the experiment.",
           "The ability to replicate the experiment's results in different settings."
         ],
         "correct": 1,
-        "explanation": "Internal validity refers to whether the observed changes in an experiment are truly caused by the intervention being tested, meaning the experiment accurately measures the intended cause-and-effect relationship. Generalizability relates to external validity, consistency to reliability, and replication to reproducibility."
+        "explanation": "Internal validity concerns causal attribution: whether the intervention rather than other factors explains the observed change. Measuring the intended construct is a different measurement-quality question; consistency is reliability, and generalizing to other populations is external validity."
       },
       {
         "id": "Q5",
-        "question": "A new teaching method is implemented in one classroom, while another classroom continues with the old method. Both classes are taught by the same teacher. If the new method class performs better, what is a potential confounding variable?",
+        "question": "Two classes have equal prior student attainment, class size and teaching time. The same teacher uses a new method in one and the old method in the other, but explicitly shows greater enthusiasm and effort with the new method. If that class performs better, which listed factor remains uncontrolled?",
         "options": [
           "The students' prior knowledge.",
           "The teacher's enthusiasm for the new method.",
@@ -6090,11 +6092,11 @@
           "The time of day the classes are held."
         ],
         "correct": 1,
-        "explanation": "The teacher's enthusiasm for the new method could unconsciously influence their teaching style, effort, or interaction with students in that specific class, leading to better performance regardless of the method's inherent effectiveness. This 'experimenter effect' acts as a confounding variable. While other factors might also be relevant, the teacher's differential enthusiasm is a direct and common confounding factor in such scenarios."
+        "explanation": "Differential teacher enthusiasm and effort is the remaining uncontrolled factor in this stated scenario, so improvement cannot be attributed solely to the method. Prior attainment, class size and timing are held equal here; they can be confounders in other scenarios and are not generally irrelevant."
       },
       {
         "id": "Q6",
-        "question": "To minimize selection bias when comparing two different marketing emails, what is the best approach?",
+        "question": "When comparing two marketing emails within the current customer list, which approach best reduces systematic differences between the two comparison groups?",
         "options": [
           "Send Email A to all customers in one city and Email B to all customers in another city.",
           "Send Email A to new customers and Email B to existing customers.",
@@ -6102,7 +6104,7 @@
           "Send both Email A and Email B to the same customers at different times."
         ],
         "correct": 2,
-        "explanation": "Randomly dividing the customer list ensures that, on average, both groups are similar in their characteristics (e.g., demographics, past purchasing behavior). This minimizes selection bias, making it more likely that any difference in response is due to the email content itself. The other options introduce systematic differences between the groups (city, new vs. existing customers, or timing effects on the same customers), which would confound the results."
+        "explanation": "Randomly splitting the current customer list balances the comparison groups on average, supporting attribution of response differences to the email under the test's other conditions. It does not guarantee exact balance or that this customer list represents all current or potential customers. City, new/existing status and different timing can otherwise differ systematically between the alternatives."
       }
     ],
     "assignment": {
@@ -6770,13 +6772,14 @@
       }
     ],
     "assignment": {
-      "prompt": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.",
+      "prompt": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.\n\nAfter selecting the priority, use the named postponement field to identify one deferred activity and explain why deferring it frees the capability or budget needed for the selected priority.",
       "fields": [
         "Business Name and Industry",
         "Eight Observations (4 Internal, 4 External) with Evidence",
         "Classification of Each Observation (Strength, Weakness, Opportunity, Threat)",
         "Three Potential Strategic Priorities",
-        "Selected Priority with Rationale (Impact, Capability, Cost Analysis)"
+        "Selected Priority with Rationale (Impact, Capability, Cost Analysis)",
+        "Deferred activity and reason for postponement"
       ],
       "criteria": [
         "All eight observations are clearly stated and supported by evidence.",
@@ -7431,13 +7434,13 @@
       }
     ],
     "assignment": {
-      "prompt": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.",
+      "prompt": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.\n\nFor each of the four weeks, use this repeatable row: demand units; required and available staff hours; required and available materials; cash received and paid with amounts/dates; available cash. State fictional inputs and assumptions. Quantify required-minus-available capacity gaps and any cash shortfall at its payment date. In Revised Plan Notes, show the gap-resolution plan and the service/cost trade-offs; no external spreadsheet or actual payment is required.",
       "fields": [
-        "Week 1 Demand (Units)",
-        "Week 2 Demand (Units)",
-        "Week 3 Demand (Units)",
-        "Week 4 Demand (Units)",
-        "Revised Plan Notes"
+        "Week 1 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 2 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 3 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Week 4 demand, required/available staff hours and materials, cash amounts/payment dates",
+        "Revised Plan Notes: quantified capacity/cash gaps, resolution and service-cost trade-offs"
       ],
       "criteria": [
         "Clearly links projected demand to required staff hours and materials.",
@@ -8095,13 +8098,16 @@
       }
     ],
     "assignment": {
-      "prompt": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.",
+      "prompt": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.\n\nFor each assumption field, record its original value, the one changed value, the result of changing it alone and the result's unit. Keep the conservative scenario coherent. Then complete the separate preventive-action, warning-indicator and review-date fields. A hypothetical plan with declared assumptions is sufficient.",
       "fields": [
         "Plan Title",
-        "Assumption 1 (and its original value)",
-        "Assumption 2 (and its original value)",
-        "Assumption 3 (and its original value)",
-        "Conservative Scenario Description"
+        "Assumption 1: original value, tested value and result of changing it alone",
+        "Assumption 2: original value, tested value and result of changing it alone",
+        "Assumption 3: original value, tested value and result of changing it alone",
+        "Conservative Scenario Description",
+        "Preventive action for the conservative scenario",
+        "Measurable warning indicator: definition, unit and trigger",
+        "Review date and what will be reviewed"
       ],
       "criteria": [
         "Identifies three distinct and relevant assumptions.",
@@ -8424,13 +8430,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.",
+      "prompt": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.\n\nPrepare eight numbered educational verification rows covering activity, location, workers, data and invoicing. The first five fields are the log's columns: repeat entries 1–8 in every field, with matching row numbers. For each row record the question, authority to verify or explicitly unknown, Unverified status, N/A applicability pending verification, and the draft/review date clearly distinguished from a completed check. No legal answer, authorization or actual filing is required. In the final field, identify three question numbers and explain the possible effect of delaying each check; do not invent legal requirements.",
       "fields": [
         "Question",
         "Competent Authority",
         "Verification Status (Verified/Unverified)",
         "Applies to My Business (Yes/No/N/A)",
-        "Date Checked/Updated"
+        "Date Checked/Updated",
+        "Effect of delaying three unverified items: question number, possible impact and next verification step"
       ],
       "criteria": [
         "Eight relevant questions covering activity, location, workers, data, and invoicing are formulated.",
@@ -9714,7 +9721,7 @@
         "**Step 2: Establish a temporary manual process for new orders.** To continue taking new orders, staff will use a pre-prepared paper form. This form will *only* include fields for the book title(s), quantity, customer name, and a single contact method (e.g., email or phone number). It will explicitly *exclude* payment details, shipping addresses (since it's pickup only), or any sensitive personal information. This adheres to data minimisation by collecting only what's essential for a new pickup order.",
         "**Step 3: Implement a controlled data entry and reconciliation plan.** Once the digital system is restored, a designated staff member will be responsible for accurately entering all manual orders into the system. To prevent duplicates, each paper form will be assigned a unique temporary ID upon creation, and this ID will be cross-referenced during digital entry. The original paper forms will be securely stored until reconciliation is complete, then shredded.",
         "**Step 4: Develop a communication strategy for customers.** Customers attempting to place new orders online will see a clear message explaining the system issue and directing them to call the store to place a manual order. For customers arriving for pickup, staff will clearly explain the temporary process for verifying existing orders. Transparency helps manage customer expectations and maintains trust during the disruption.",
-        "**Step 5: Plan for system restoration and backup verification.** The IT team will work to restore the primary order system. Crucially, before bringing the system back online, they will perform a documented restoration test using a recent backup. This test will verify that all existing order data is intact and accessible, and that customer contact details and order numbers are correctly displayed without any corruption or missing records. The test will use dummy customer data to ensure the process works without exposing real sensitive customer information during the testing phase."
+        "**Step 5: Separate a dummy restore test from real-backup verification.** First test the restore mechanism using fictional records in an isolated test environment; this shows whether the tested procedure works, not whether every real order is backed up. In an authorized protected environment, the responsible team must separately verify the actual backup: compare expected and restored record counts and identifiers, check integrity samples and relevant relationships, and reconcile orders created or changed while the system was down. Record discrepancies and resolve them before reopening the service. Use access controls and report aggregate results without exposing customer data. A dummy-data test alone cannot prove real-record completeness."
       ]
     },
     "quiz": [
@@ -10133,13 +10140,15 @@
       }
     ],
     "assignment": {
-      "prompt": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.",
+      "prompt": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.\n\nUse ten numbered rows. Repeat entries 1–10 in each of the first five fields so each condition has matching evidence, owner, initial status and critical/deferrable classification. Then give a justified launch-or-defer decision and a first-week monitoring plan with indicators, owner, review timing and response to a critical failure. Use a fictional readiness exercise; no real portal launch is required.",
       "fields": [
         "Readiness Condition (10 items)",
         "Evidence Required",
         "Owner/Team Responsible",
         "Initial Status (Not Started, In Progress, Complete)",
-        "Criticality (Critical, Deferrable)"
+        "Criticality (Critical, Deferrable)",
+        "Launch or defer decision and justification from readiness evidence",
+        "First-week monitoring plan: indicators, owner, review timing and critical-failure response"
       ],
       "criteria": [
         "Ten distinct readiness conditions are identified, covering operations, quality, finance, and local verification.",
@@ -10462,7 +10471,7 @@
       },
       {
         "id": "Q6",
-        "question": "You are creating a WBS for a 'New Employee Onboarding Program.' Which of the following is the most appropriate work package for the 'Welcome Kit' deliverable?",
+        "question": "In a New Employee Onboarding Program, the current approved deliverable is the Welcome Kit contents-and-packaging design, before purchasing or distributing the kits. Which work package fits this design deliverable?",
         "options": [
           "Order welcome kit items.",
           "Design welcome kit contents and packaging.",
@@ -10470,7 +10479,7 @@
           "Hold a meeting about welcome kit ideas."
         ],
         "correct": 1,
-        "explanation": "The correct answer is 'Design welcome kit contents and packaging.' A work package should be a discrete, assignable piece of work that contributes to the deliverable. Designing the contents and packaging is a specific, tangible step towards creating the 'Welcome Kit.' 'Order items' and 'Distribute kits' are subsequent activities, and 'Hold a meeting' is an activity, not a work package representing a component of the deliverable itself."
+        "explanation": "Index 1 produces the design specified for this deliverable. Purchasing and distribution may belong elsewhere in the overall project, but they do not produce this approved design output. A discussion alone also does not deliver it."
       }
     ],
     "assignment": {
@@ -10810,13 +10819,13 @@
       }
     ],
     "assignment": {
-      "prompt": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.",
+      "prompt": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.\n\nRepeat tasks 1–6 in each of the first four fields, keeping matching task numbers: name, duration, dependencies and owner. In Impact of Delay/Conflict, explicitly show the initial critical path and earliest finish, then the revised critical path and earliest finish after the resource conflict and one-day delay. Show the delay-cost calculation and separate effort from waiting. Text lists or a table here are sufficient; no external scheduling tool is required.",
       "fields": [
         "Task Name",
         "Estimated Duration (Days)",
         "Dependencies (Preceding Task)",
         "Assigned Owner",
-        "Impact of Delay/Conflict"
+        "Impact of Delay/Conflict: critical path and earliest finish before/after, delay cost, effort versus waiting"
       ],
       "criteria": [
         "All six tasks are clearly defined with realistic durations.",
@@ -11057,12 +11066,12 @@
     "example": {
       "title": "From Risk to Issue: The 'Circuit Board Supplier' Scenario",
       "text": "This is a fictional learning case. Our project involves developing a new smart home device. A critical component is a custom circuit board, sourced from 'ElectroTech Solutions'. We identified a risk: 'Potential delay in custom circuit board delivery from ElectroTech Solutions due to their single specialized production line.' Our planned response was to identify a secondary, albeit more expensive, supplier ('CircuitMasters') and build a 2-week buffer into the project schedule. The trigger for this risk becoming an issue was 'ElectroTech Solutions formally notifies us of a production delay exceeding 1 week.'\n\nToday, we received an email from ElectroTech Solutions stating they've had an unexpected equipment malfunction, causing a 3-week delay in our order. This has now become an issue. We need to prepare a change request to address this, considering two alternatives: using CircuitMasters or absorbing the delay.",
-      "decision": "The project team decided to proceed with 'Alternative 1: Engage CircuitMasters for the custom circuit boards' after evaluating its impact on cost, time, and quality, and communicating with key stakeholders.",
+      "decision": "CircuitMasters is a candidate response, subject to a confirmed arrival date measured from the change decision and approval, a schedule-impact calculation, and sponsor approval. A lead time shorter than the original supplier's full lead time does not prove that launch can be maintained.",
       "steps": [
         "Identify the transition from Risk to Issue: The email from ElectroTech Solutions confirming a 3-week delay means the 'potential delay' risk has now materialized into a confirmed 'issue'. The trigger ('formal notification of delay exceeding 1 week') has been met. This requires immediate action, not just monitoring.",
-        "Assess the Issue's Impact: The 3-week delay from ElectroTech Solutions directly impacts the project timeline. Our existing 2-week buffer is insufficient, meaning the project will be delayed by at least 1 week if we wait for ElectroTech. This affects the project's overall completion date and potentially market launch.",
-        "Formulate Alternatives for the Change Request: Based on our pre-planned risk response, we have two main alternatives. \n*   **Alternative 1:** Engage 'CircuitMasters' (our secondary supplier). This would avoid the 3-week delay, but CircuitMasters' boards are 15% more expensive, and their lead time is 1 week shorter than ElectroTech's original lead time. \n*   **Alternative 2:** Absorb the 3-week delay. This means waiting for ElectroTech, incurring no additional component cost, but delaying the project by 1 week (after using the 2-week buffer).",
-        "Evaluate Alternatives against Scope, Time, Cost, Quality: \n*   **Alternative 1 (CircuitMasters):** \n    *   *Scope:* No change to product features or functionality. \n    *   *Time:* Project timeline maintained (or even slightly improved due to shorter lead time). \n    *   *Cost:* Increase in component cost by 15% for the circuit boards. \n    *   *Quality:* CircuitMasters' boards meet all specifications, so no quality impact. \n*   **Alternative 2 (Absorb Delay):** \n    *   *Scope:* No change. \n    *   *Time:* Project timeline delayed by 1 week. \n    *   *Cost:* No change to component cost. \n    *   *Quality:* No change.",
+        "Assess impact against actual dates: record the change-decision date, the original component need-by date, any buffer still available, manufacturing duration and planned launch. A three-week slip would exceed a fully available two-week buffer by one week only if those assumptions and the affected critical path hold. The case does not supply the remaining dates, so a final launch delay is not yet established.",
+        "Formulate alternatives: CircuitMasters quotes 15% higher component cost and a lead time one week shorter than ElectroTech's original full lead time. Ask when that clock starts, the expected approval/order date and the confirmed arrival date. Compare arrival with the need-by date from today's decision, not with an old order's start. Waiting for ElectroTech also requires an updated arrival commitment. Record remaining supply time and manufacturing effects for both options.",
+        "Evaluate scope, time, cost and quality: CircuitMasters may reduce delay, but the schedule effect remains unverified until approval time, arrival, need-by date, available buffer and manufacturing/launch dependencies are calculated. Its stated cost is 15% higher and specifications must be confirmed. Waiting avoids the quoted component-price increase but requires a dated schedule calculation too. Neither 'timeline maintained' nor an exact launch delay is proven by comparing full supplier lead times alone.",
         "Determine Approver and Communication Plan: The project sponsor, given the cost increase in Alternative 1 or the schedule delay in Alternative 2, is the primary approver. For communication, the core project team (engineering, production, marketing) needs to be informed immediately of the issue and proposed solution. The client/customer should be informed about the potential impact on the launch date (if Alternative 2 is chosen) or the cost implications (if Alternative 1 is chosen) after the sponsor's approval. The procurement team needs to execute the new order with CircuitMasters if Alternative 1 is approved. Communication should happen within 24 hours of the sponsor's decision."
       ]
     },
@@ -11401,14 +11410,14 @@
     ],
     "example": {
       "title": "Fictional Case: Order Processing Speed vs. Quality",
-      "text": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance?",
-      "decision": "No, QuickShip did not achieve a true improvement. While order fulfillment speed increased, the significant rise in rework indicates a decline in quality and overall efficiency, negating the benefits of faster processing.",
+      "text": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance? The stated 20-minute baseline and 15-minute new average measure first-pass processing only; they exclude additional rework. For the calculation below, assume exactly 20 additional minutes per rework order.",
+      "decision": "Under the stated first-pass and 20-minute additional rework assumptions, total time saves 380 minutes per 100 orders, while rework quality worsens from 2% to 8%. The overall decision remains conditional on an explicit quality threshold and actual rework and other costs; this calculation alone does not justify wider rollout.",
       "steps": [
         "Identify the primary goal and its baseline: The primary goal was to reduce 'average order fulfillment time.' The baseline was 20 minutes. The new performance is 15 minutes. This shows a positive variance of -5 minutes (a reduction).",
         "Identify the guardrail metric and its baseline: The guardrail metric is 'rework rate.' The baseline was 2 out of 100 orders (2%). The new performance is 8 out of 100 orders (8%). This shows a negative variance of +6 orders per 100 (a 300% increase in rework).",
-        "Analyze the trade-off: The improvement in speed (5 minutes faster per order) came at a significant cost in quality (6 additional rework orders per 100). Each rework order likely takes more than 5 minutes to fix, involving re-picking, re-packing, re-shipping, and customer service time. This suggests the 'speed' improvement is superficial and potentially costly.",
-        "Calculate the impact of rework: If 100 orders are processed, 8 need rework. Assuming each rework takes at least the original 20 minutes (or more, due to investigation and re-processing), the total time spent on those 8 orders is significantly higher than if they were correct the first time. The 'average' speed is misleading because it doesn't account for the extra work on failed orders.",
-        "Formulate a conclusion and next steps: The reduction in average order time is an activity measure that, when viewed in isolation, appears positive. However, the substantial increase in rework rate, an outcome measure directly tied to quality and overall efficiency, indicates that the 'improvement' is detrimental. The next steps should involve investigating the specific process changes that led to the increased rework, potentially revising the new system, or even reverting to the old system if the quality issues cannot be resolved without sacrificing speed."
+        "Analyze quality and time separately: first-pass time falls by 5 minutes per order, while rework rises from 2 to 8 per 100 orders. Quality worsens. The effect on total time must include rework, rather than assuming the extra work cancels every saving.",
+        "Calculate total time for 100 orders, assuming 20 additional minutes per rework: before =100×20 +2×20 =2040 minutes; after =100×15 +8×20 =1660 minutes. The stated assumptions imply a saving of 380 minutes per 100 orders. Measure actual rework time and costs before relying on this estimate.",
+        "Make a bounded decision: do not approve wider rollout from time savings alone. Investigate the increased errors, compare quality with an explicit pre-agreed quality threshold, and measure actual rework, customer and other costs. Revise or roll back when those criteria require it; faster processing alone does not establish an acceptable overall improvement."
       ]
     },
     "quiz": [
@@ -11742,13 +11751,13 @@
     "example": {
       "title": "The Unreliable Booking Form",
       "text": "This is a fictional learning case. A small online travel agency is developing a new booking form for its website. The development team proudly announces, 'The booking form is ready!' They demonstrate that a user can successfully select a destination, dates, and number of travelers, and then proceed to a confirmation page. This works perfectly when the internet connection is stable. However, a critical issue arises: if the user experiences a temporary internet connection failure *after* filling out the form but *before* confirming, all the entered data is lost, forcing the user to start over. The initial acceptance criterion was simply 'The booking form allows users to make a booking.' This criterion was met under ideal conditions, but it didn't account for real-world challenges.",
-      "decision": "The booking form is NOT ready for acceptance. While it functions correctly on success paths, its failure to handle common real-world scenarios (like connection issues) means it does not meet the implied, but unstated, expectation of robustness and user experience. The initial acceptance criterion was too vague and incomplete.",
+      "decision": "The success-path criterion was met, but the connection-failure case exposes a launch-readiness risk omitted from the original agreement. The team and acceptance owner must explicitly agree a change covering the new failure criteria and its scope, time and cost effects, then verify it before release. This is not evidence that the team violated previously agreed failure criteria.",
       "steps": [
         "Identify the core problem: The initial acceptance criterion, 'The booking form allows users to make a booking,' is too broad. It only covers the 'happy path' (successful booking) and ignores potential failure points that significantly impact user experience. The specific problem identified is data loss upon connection failure.",
         "Formulate a vague initial criterion: The development team's statement, 'The form is ready,' is a subjective declaration. Even the initial written criterion, 'The booking form allows users to make a booking,' while better, still lacks the necessary detail to ensure a robust solution. It doesn't specify *how* it should allow bookings or under what conditions.",
-        "Refine into specific, verifiable acceptance criteria: Based on the identified problem, new criteria are needed. These should address the failure scenario directly. For example: \n1. 'If a user experiences a temporary connection failure after entering data but before confirmation, the form must preserve all entered data upon connection restoration.' \n2. 'If data cannot be preserved, the user must receive a clear, actionable notification explaining the issue and suggesting next steps (e.g., 'Please check your connection and try again').' These criteria are specific, measurable (you can test if data is preserved or if a notification appears), and directly address the user's pain point.",
+        "Agree a change with the acceptance owner: document the newly discovered failure scenario, the proposed criteria, their scope/time/cost effects, and approval. Proposed criteria include preserving entered data after a temporary connection failure, or providing a clear actionable notification where recovery is not supported. Define which failures and data are covered, recovery limits, and the expected behaviour before testing. These criteria were not part of the original success-path agreement.",
         "Develop a test for the new criteria: For the first criterion, the test would involve filling out the form, simulating a connection drop (e.g., by disabling Wi-Fi), re-enabling the connection, and verifying if the data is still present. For the second, the test would involve simulating a connection drop and observing the exact message displayed to the user. These tests provide objective evidence.",
-        "Determine acceptance/rejection and required fixes: Since the current form loses data on connection failure and doesn't provide clear notification, it fails the newly defined acceptance criteria. Therefore, the form is rejected. The development team must now implement features to either preserve data locally or provide robust user feedback during connection issues, and then re-submit the form for testing against the refined criteria before it can be accepted."
+        "Decide launch readiness against the approved change: record that the original success-path criterion was met and that a newly discovered failure risk remains. Once the acceptance owner approves the new criteria and impacts, implement and test the agreed handling before release. Record test evidence and any unresolved limits; do not retrospectively claim the prototype broke an earlier agreement that never included these criteria."
       ]
     },
     "quiz": [
@@ -11826,13 +11835,14 @@
       }
     ],
     "assignment": {
-      "prompt": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.",
+      "prompt": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.\n\nAfter completing the criteria, tests and handover details, record the self-review result in its named field: what is complete, what evidence/information is missing, and the next action needed for the new owner. Distinguish evidence actually supplied in the fictional case from an unverified assumption.",
       "fields": [
         "Project Title",
         "Acceptance Criteria (5) and corresponding Test for each",
         "Handover Document Version",
         "New Owner (Name/Role)",
-        "Known Deferred Defects (2)"
+        "Known Deferred Defects (2)",
+        "Self-review results, missing evidence/information and next action"
       ],
       "criteria": [
         "Five distinct and verifiable acceptance criteria are provided.",
@@ -12156,13 +12166,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.",
+      "prompt": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.\n\nUse the first three fields for the short closure report (approximately 200–300 words in total). Complete all three distinct lesson fields using the same template: evidence, possible cause, actionable change, owner and measurable outcome. Separate established facts from interpretations needing verification.",
       "fields": [
         "Project Overview (brief summary, objectives, outcome)",
         "Deliverables Acceptance Status",
         "Financial Summary (actual vs. budget)",
         "Lesson Learned 1 (Evidence, Cause, Action, Owner, Measure)",
-        "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)"
+        "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)",
+        "Lesson Learned 3 (Evidence, Cause, Action, Owner, Measure)"
       ],
       "criteria": [
         "The closure report provides a clear overview of the project's outcome.",
@@ -12431,11 +12442,11 @@
       "text": "This is a fictional learning case. A project manager, Alex, is presenting a proposal for a new 'Smart Office' system. One of the key claims in his proposal is: \"Implementing the Smart Office system will reduce our monthly energy costs by 25% across all departments.\" Alex needs to audit this claim before his presentation to senior management.",
       "decision": "Alex decides to rephrase the claim to accurately reflect the evidence and acknowledge limitations, while also outlining a plan for further validation.",
       "steps": [
-        "Alex first classifies the claim: 'Implementing the Smart Office system will reduce our monthly energy costs by 25% across all departments.' This is a **calculation** based on an **assumption** about the system's effectiveness and a **decision** to implement it. The 25% reduction is a calculated projection, but the certainty of it applying 'across all departments' is an assumption.",
+        "Classify the 25% as an external vendor claim from a case study in another industry, not an internally calculated or verified saving. Applying it across this business's departments is an untested assumption.",
         "Next, Alex checks for traceability. He finds that the 25% figure comes from a vendor's marketing brochure, which cited a case study from a different company in a different industry. He also has internal energy bills for the past year. The 'across all departments' part has no specific internal data to support it, as no pilot has been run.",
         "Alex identifies the limitations. The 25% reduction is an external claim, not validated internally. The 'across all departments' is a generalization without specific evidence. He realizes presenting this as a guaranteed fact is risky and could undermine his credibility if challenged.",
-        "He formulates a more accurate and defensible claim. Instead of a blanket statement, he decides to say: 'Based on vendor case studies, the Smart Office system has demonstrated potential for up to a 25% reduction in energy costs in similar installations. We project a potential 15-20% reduction for our facility, pending internal validation.' He lowers the percentage to be more conservative and adds a crucial caveat.",
-        "Finally, Alex defines the next test. To address the assumption and validate the projection, he adds to his plan: 'Our next step is to implement the Smart Office system in a pilot department for three months to collect actual energy consumption data and validate the projected savings before a full-scale rollout.' This shows a clear path to verify the claim and mitigate risk."
+        "Use an evidence-bounded claim: 'The vendor reports a 25% saving in a case study in another industry. Our own savings are unknown; we have not established comparability or run an internal comparative trial.' A smaller precautionary percentage would still need a source or calculation, so do not invent a 15–20% forecast.",
+        "Plan a limited three-month comparative pilot before scaling. Define a consistent energy-use/cost baseline, comparable periods and conditions, the comparison method and measurement limits; account for occupancy, weather or price changes where relevant. Measure the local result and uncertainty before making a savings claim or rollout decision."
       ]
     },
     "quiz": [
@@ -12513,13 +12524,14 @@
       }
     ],
     "assignment": {
-      "prompt": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.",
+      "prompt": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.\n\nRepeat the five-column claim log for ten numbered claims: put entries 1–10 with matching numbers in the statement, type, traceability, challenging-question and answer fields. Mark missing evidence rather than inventing it. In the final field show one overstated claim before and after correction, why the evidence supports the revision, and the next verification step.",
       "fields": [
         "Claim Statement (from your proposal)",
         "Claim Type (Observation, Calculation, Assumption, Decision)",
         "Evidence/Traceability (Where does this claim come from?)",
         "Potential Challenging Question (A question a stakeholder might ask)",
-        "Prepared Answer (How you would defend it, acknowledging limits)"
+        "Prepared Answer (How you would defend it, acknowledging limits)",
+        "Overstated claim: original/corrected wording, evidence limits and next verification step"
       ],
       "criteria": [
         "All ten claims are correctly classified into one of the four types.",

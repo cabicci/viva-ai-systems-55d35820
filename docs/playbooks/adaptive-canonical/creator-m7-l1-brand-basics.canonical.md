@@ -8,7 +8,7 @@
 | **lessonId** | `creator-m7-l1-brand-basics` |
 | **pathId** | `creator` |
 | **moduleId** | `creator-m7-identity` |
-| **productionTitle (ar-EG)** | Brand Basics — Colors, Fonts, Logo |
+| **productionTitle (ar-EG)** | Brand Basics — Point of View |
 | **productionRoute** | `/learn/creator/creator-m7-l1-brand-basics` |
 | **productionFile (read-only)** | `src/components/intro/lessons/creator-m7-l1-brand-basics.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
@@ -67,7 +67,7 @@ derivedFrom:
   derivationMethod: read-only extraction + MSA normalization
 
 meta:
-  title: Brand Basics — Colors, Fonts, Logo
+  title: Brand Basics — Point of View
   oneAha: "People remember your stance before your colors — POV first, design supports it"
   difficulty: intro
   estimatedMinutes: 12

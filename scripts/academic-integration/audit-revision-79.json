@@ -1,0 +1,1250 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    79
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L01",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "180dcf5c098fa5d4c603579769efde29b7fdbea8a070ecda08b1858d0ac02b0d",
+      "afterSha256": "764353ecca65f26707ada5c974eb7e33015e8d6474338efeae48841a6b690a1b",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل إنك بتبدأ مشروع جديد (ممكن يكون مطعم صغير، تطبيق موبايل، أو خدمة تعليمية). اكتب الرؤية والرسالة للمشروع ده، وبعدين حدد 3 أهداف قابلة للقياس للمشروع. لكل هدف، لازم تحدد خط الأساس والمقياس المستهدف والموعد النهائي والمسؤول عن تحقيقه، ومؤشر حماية الجودة.",
+          "after": "تخيل إنك بتبدأ مشروع جديد (ممكن يكون مطعم صغير، تطبيق موبايل، أو خدمة تعليمية). اكتب الرؤية والرسالة للمشروع ده، وبعدين حدد 3 أهداف قابلة للقياس للمشروع. لكل هدف، لازم تحدد خط الأساس والمقياس المستهدف والموعد النهائي والمسؤول عن تحقيقه، ومؤشر حماية الجودة.\n\nكمّل الأهداف الثلاثة. لكل هدف اكتب النتيجة المطلوبة، خط الأساس وقيمته، المقياس وقيمته المستهدفة، الموعد النهائي، المسؤول، ومؤشر حماية الجودة. الهدف الثالث له خانة بنفس تفاصيل الأول والتاني."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "اسم المشروع:",
+            "الرؤية:",
+            "الرسالة:",
+            "الهدف الأول (مع كل تفاصيله):",
+            "الهدف الثاني (مع كل تفاصيله):"
+          ],
+          "after": [
+            "اسم المشروع:",
+            "الرؤية:",
+            "الرسالة:",
+            "الهدف الأول (مع كل تفاصيله):",
+            "الهدف الثاني (مع كل تفاصيله):",
+            "الهدف الثالث: النتيجة، خط الأساس، المقياس والمستهدف، الموعد، المسؤول، مؤشر حماية الجودة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "6068af097a62ebb442ac870131b9a765403b75f41c296a82293e517b76b24068",
+      "afterSha256": "89e6b3338e28dbd8b8c2fc98fa341f2a47ca0b0d02f4b47c03505a0490bce3c9",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.",
+          "after": "Conduct a strategic analysis for a fictional small business. Identify eight observations (four internal, four external), classify them, and provide evidence. Then, derive three potential strategic priorities, select one based on impact, capability, and cost, and identify one activity to postpone to ensure the chosen priority's feasibility.\n\nAfter selecting the priority, use the named postponement field to identify one deferred activity and explain why deferring it frees the capability or budget needed for the selected priority."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Business Name and Industry",
+            "Eight Observations (4 Internal, 4 External) with Evidence",
+            "Classification of Each Observation (Strength, Weakness, Opportunity, Threat)",
+            "Three Potential Strategic Priorities",
+            "Selected Priority with Rationale (Impact, Capability, Cost Analysis)"
+          ],
+          "after": [
+            "Business Name and Industry",
+            "Eight Observations (4 Internal, 4 External) with Evidence",
+            "Classification of Each Observation (Strength, Weakness, Opportunity, Threat)",
+            "Three Potential Strategic Priorities",
+            "Selected Priority with Rationale (Impact, Capability, Cost Analysis)",
+            "Deferred activity and reason for postponement"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L03",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "e7a565b74644daf9fa7254471384162ca6fb519f44a16ad5db807425871ca5ee",
+      "afterSha256": "f5cc61368a6f9bcdf63d123c1e82f235a0bde1ff62c2c09ed6c6fb6fecd9ffd5",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل إنك بتبدأ مشروع جديد لـ 'خدمة تنظيف منازل صديقة للبيئة'. مطلوب منك تعمل خطة عمل مبدئية لمدة أسبوعين، بناءً على اللي اتعلمته في الدرس ده. لازم تحدد تموضعك، وتصيغ رسالة عرض وإعلان، وتضع خطة تسويق ومبيعات، وتحدد قاعدة لإيقاف الحملة.",
+          "after": "تخيل إنك بتبدأ مشروع جديد لـ 'خدمة تنظيف منازل صديقة للبيئة'. مطلوب منك تعمل خطة عمل مبدئية لمدة أسبوعين، بناءً على اللي اتعلمته في الدرس ده. لازم تحدد تموضعك، وتصيغ رسالة عرض وإعلان، وتضع خطة تسويق ومبيعات، وتحدد قاعدة لإيقاف الحملة.\n\nحدّد قدرة استقبال وتسليم الطلبات والفترة اللي بتنطبق عليها، وراجع إجمالي الطلبات المؤكدة من كل القنوات. في خانة قاعدة الإيقاف اكتب متى تقلل أو توقف الحملة قبل قبول طلب يتجاوز القدرة المتحقق منها، وإزاي تعرض قائمة انتظار أو ميعاد بديل يوافق عليه العميل. عدد الاستفسارات أو وقف إعلان واحد لوحده مش ضمان لحماية قدرة التسليم."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "التموضع المقترح لخدمة تنظيف المنازل الصديقة للبيئة (الوعد والدليل).",
+            "رسالة عرض قصيرة للخدمة.",
+            "إعلان قصير (جملة واحدة) للخدمة.",
+            "خطة تسويق لمدة أسبوعين (نشاطين، ميزانية تقديرية، مسؤول، مقياس).",
+            "خطة بيع مبدئية (التعامل مع استفسار، التعامل مع اعتراض 'السعر غالي'، خطوة متابعة)."
+          ],
+          "after": [
+            "التموضع المقترح لخدمة تنظيف المنازل الصديقة للبيئة (الوعد والدليل).",
+            "رسالة عرض قصيرة للخدمة.",
+            "إعلان قصير (جملة واحدة) للخدمة.",
+            "خطة تسويق لمدة أسبوعين (نشاطين، ميزانية تقديرية، مسؤول، مقياس).",
+            "خطة بيع مبدئية (التعامل مع استفسار، التعامل مع اعتراض 'السعر غالي'، خطوة متابعة).",
+            "قاعدة إيقاف/خفض الحملة: قدرة التسليم والفترة، حد الطلبات المؤكدة، إدارة كل القنوات والموعد البديل"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L04",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "e0038bb06771906cfe1fc27ff22ab9864c3ba9882d7f7ae8daaa27c5ff582fad",
+      "afterSha256": "e32ac95912175d300a24eb1c98dd5ba72bcbd2e3495e6fef573f17e01cfb5b90",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.",
+          "after": "Develop a four-week operational plan for a fictional small business that connects expected demand, staff hours, material requirements, and payment schedules. Calculate any identified capacity or cash gaps, and then propose a revised plan, documenting the trade-offs between service levels and costs.\n\nFor each of the four weeks, use this repeatable row: demand units; required and available staff hours; required and available materials; cash received and paid with amounts/dates; available cash. State fictional inputs and assumptions. Quantify required-minus-available capacity gaps and any cash shortfall at its payment date. In Revised Plan Notes, show the gap-resolution plan and the service/cost trade-offs; no external spreadsheet or actual payment is required."
+        },
+        {
+          "path": "assignment.fields.0",
+          "beforeExists": true,
+          "before": "Week 1 Demand (Units)",
+          "after": "Week 1 demand, required/available staff hours and materials, cash amounts/payment dates"
+        },
+        {
+          "path": "assignment.fields.1",
+          "beforeExists": true,
+          "before": "Week 2 Demand (Units)",
+          "after": "Week 2 demand, required/available staff hours and materials, cash amounts/payment dates"
+        },
+        {
+          "path": "assignment.fields.2",
+          "beforeExists": true,
+          "before": "Week 3 Demand (Units)",
+          "after": "Week 3 demand, required/available staff hours and materials, cash amounts/payment dates"
+        },
+        {
+          "path": "assignment.fields.3",
+          "beforeExists": true,
+          "before": "Week 4 Demand (Units)",
+          "after": "Week 4 demand, required/available staff hours and materials, cash amounts/payment dates"
+        },
+        {
+          "path": "assignment.fields.4",
+          "beforeExists": true,
+          "before": "Revised Plan Notes",
+          "after": "Revised Plan Notes: quantified capacity/cash gaps, resolution and service-cost trade-offs"
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L04",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "3d3ed955c77e5c6c064123a8977a9eff93c000027b6a9c7498e1e8968262de16",
+      "afterSha256": "bd40004718d8b9de34a8355c9bc7c84ea05d05569270850a75c72c8aa64d7ed1",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل إنك صاحب مشروع صغير لبيع هدايا يدوية. مطلوب منك تعمل خطة تشغيل وميزانية لشهر واحد (4 أسابيع) عشان تحقق هدف مبيعات 200 هدية. لازم تحدد الموارد اللي محتاجها، وتكتشف أي فجوات، وتقترح حلول مع توثيق المقايضات.",
+          "after": "تخيل إنك صاحب مشروع صغير لبيع هدايا يدوية. مطلوب منك تعمل خطة تشغيل وميزانية لشهر واحد (4 أسابيع) عشان تحقق هدف مبيعات 200 هدية. لازم تحدد الموارد اللي محتاجها، وتكتشف أي فجوات، وتقترح حلول مع توثيق المقايضات.\n\nاستخدم المدخلات الخمس لبناء جدول تدريبي لأربع أسابيع: الطلب المتوقع، الدقائق والساعات المطلوبة والمتاحة، كميات المواد وتكلفتها، والمتحصلات والمدفوعات بمواعيدها والرصيد النقدي. حدّد افتراضاتك الخيالية بوضوح. احسب فجوة الساعات/المواد وأي نقص نقدي عند مواعيد الدفع، ثم اكتب حل الفجوات والمقايضة بين الخدمة والتكلفة؛ لا يلزم ملف خارجي أو تنفيذ دفع."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "هدف المبيعات الشهري (عدد الهدايا).",
+            "الوقت المطلوب لكل هدية (بالدقائق).",
+            "عدد ساعات العمل المتاحة للموظفين (إجمالي الساعات).",
+            "تكلفة المواد الخام لكل هدية (بالجنيه المصري).",
+            "التكاليف الثابتة الشهرية (إيجار، مرتبات ثابتة)."
+          ],
+          "after": [
+            "هدف المبيعات الشهري (عدد الهدايا).",
+            "الوقت المطلوب لكل هدية (بالدقائق).",
+            "عدد ساعات العمل المتاحة للموظفين (إجمالي الساعات).",
+            "تكلفة المواد الخام لكل هدية (بالجنيه المصري).",
+            "التكاليف الثابتة الشهرية (إيجار، مرتبات ثابتة).",
+            "حسابات الأسابيع الأربعة: الطلب، الساعات المطلوبة/المتاحة، المواد، النقد ومواعيد الدفع",
+            "فجوات الموارد/القدرة/النقد وخطة الحل والمقايضات بين الخدمة والتكلفة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M05-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "fcbdf2925f4e3cfce5c93a4090dda60b96c4f52310ccc0592ca220f7dee94e4e",
+      "afterSha256": "819b42d795e6f867dde9605c006c7f4f653291db18aca2237fbff4e370166329",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.",
+          "after": "Choose three key assumptions from a personal or professional plan you are currently working on (or a hypothetical one). For each assumption, perform a sensitivity test by varying it individually. Then, develop one coherent conservative scenario that combines plausible, related changes. Finally, for this scenario, identify a specific preventive action, a measurable warning measure, and a review date.\n\nFor each assumption field, record its original value, the one changed value, the result of changing it alone and the result's unit. Keep the conservative scenario coherent. Then complete the separate preventive-action, warning-indicator and review-date fields. A hypothetical plan with declared assumptions is sufficient."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Plan Title",
+            "Assumption 1 (and its original value)",
+            "Assumption 2 (and its original value)",
+            "Assumption 3 (and its original value)",
+            "Conservative Scenario Description"
+          ],
+          "after": [
+            "Plan Title",
+            "Assumption 1: original value, tested value and result of changing it alone",
+            "Assumption 2: original value, tested value and result of changing it alone",
+            "Assumption 3: original value, tested value and result of changing it alone",
+            "Conservative Scenario Description",
+            "Preventive action for the conservative scenario",
+            "Measurable warning indicator: definition, unit and trigger",
+            "Review date and what will be reviewed"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L01",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "f58b69945998752be416748552497a6075e89fb8b8040698176a1eabd2904488",
+      "afterSha256": "8aca366a5dbac284f318e75e704c1adbb4da8dda06a585cb940222b42d97f2da",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.",
+          "after": "You are planning to launch a small business that offers custom-designed t-shirts. You will operate primarily online, but you also want to occasionally sell at local weekend markets. Create a verification record for your business, focusing on key regulatory areas.\n\nPrepare eight numbered educational verification rows covering activity, location, workers, data and invoicing. The first five fields are the log's columns: repeat entries 1–8 in every field, with matching row numbers. For each row record the question, authority to verify or explicitly unknown, Unverified status, N/A applicability pending verification, and the draft/review date clearly distinguished from a completed check. No legal answer, authorization or actual filing is required. In the final field, identify three question numbers and explain the possible effect of delaying each check; do not invent legal requirements."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Question",
+            "Competent Authority",
+            "Verification Status (Verified/Unverified)",
+            "Applies to My Business (Yes/No/N/A)",
+            "Date Checked/Updated"
+          ],
+          "after": [
+            "Question",
+            "Competent Authority",
+            "Verification Status (Verified/Unverified)",
+            "Applies to My Business (Yes/No/N/A)",
+            "Date Checked/Updated",
+            "Effect of delaying three unverified items: question number, possible impact and next verification step"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L03",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "1664b9f41b0019ccfdf90fb8d858afd240cd56c40c55fceb04e95e8da449b511",
+      "afterSha256": "c115347c4149cf586540b0d305a80b4115d280cfdf7cb64626924b36d4675f36",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "بناءً على ما تعلمته، صمم إجراء عمل من سبع خطوات لعملية 'معالجة طلب استبدال منتج' في متجر إلكتروني. يجب أن يتضمن الإجراء نقطة لمنع الخطأ، ونقطة قبول، واستثناءين محتملين، بالإضافة إلى صياغة رد احترافي على شكوى عميل بخصوص تأخر الاستبدال.",
+          "after": "بناءً على ما تعلمته، صمم إجراء عمل من سبع خطوات لعملية 'معالجة طلب استبدال منتج' في متجر إلكتروني. يجب أن يتضمن الإجراء نقطة لمنع الخطأ، ونقطة قبول، واستثناءين محتملين، بالإضافة إلى صياغة رد احترافي على شكوى عميل بخصوص تأخر الاستبدال.\n\nاحتفظ بالإجراء ذي الخطوات السبع ونقطتي منع الخطأ والقبول. أضف الاستثناءين في حقليهما، مع وصف ما يحدث والإجراء والمسؤول في كل حالة. ضع الرد الكامل على شكوى التأخير في خانته: اعتذار، ما هو معلوم وحدوده، حل واقعي وخطوة متابعة؛ هذا نص تدريبي ولا يُرسل إلى عميل."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "عنوان الإجراء:",
+            "المحفز:",
+            "الخطوات (7 خطوات):",
+            "نقطة منع الخطأ:",
+            "نقطة قبول:"
+          ],
+          "after": [
+            "عنوان الإجراء:",
+            "المحفز:",
+            "الخطوات (7 خطوات):",
+            "نقطة منع الخطأ:",
+            "نقطة قبول:",
+            "الاستثناء الأول: الحالة والإجراء والمسؤول",
+            "الاستثناء الثاني: الحالة والإجراء والمسؤول",
+            "الرد الكامل على شكوى تأخر الاستبدال: الاعتذار، الشفافية، الحل والمتابعة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L04",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "3480036eeb79be1af220947058f88394ee3c64eee0f104b732090cf02eff1426",
+      "afterSha256": "57a7a2f6bd7e6f916913ac4f257173afbe5e31ad3ddabe4ff557542dd542b118",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "المطلوب منك هو تقييم أداتين رقميتين مقترحتين لإدارة المهام في فريق عملك، وتصميم خطة تجربة تشغيل مبدئية لعملية 'تسليم مهمة جديدة' باستخدام إحدى الأداتين. يجب أن تتضمن خطتك حالات اختبار متنوعة.",
+          "after": "المطلوب منك هو تقييم أداتين رقميتين مقترحتين لإدارة المهام في فريق عملك، وتصميم خطة تجربة تشغيل مبدئية لعملية 'تسليم مهمة جديدة' باستخدام إحدى الأداتين. يجب أن تتضمن خطتك حالات اختبار متنوعة.\n\nفي خانة منع الإطلاق حدّد إيه الفشل الحرج في تجربة تسليم المهمة اللي يمنع الإطلاق، ودليل اكتشافه، ومن يراجع الإصلاح وإعادة الاختبار قبل قرار جديد. ما تعتبرش نجاح بعض الحالات كفاية لو الفشل الحرج ما اتحلش."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "اسم الأداة الأولى المقترحة",
+            "اسم الأداة الثانية المقترحة",
+            "معايير المقارنة (5 معايير)",
+            "الأداة المختارة لتجربة التشغيل",
+            "ست حالات اختبار لتسليم مهمة جديدة (تشمل نجاح، فشل، تكرار، صلاحية)"
+          ],
+          "after": [
+            "اسم الأداة الأولى المقترحة",
+            "اسم الأداة الثانية المقترحة",
+            "معايير المقارنة (5 معايير)",
+            "الأداة المختارة لتجربة التشغيل",
+            "ست حالات اختبار لتسليم مهمة جديدة (تشمل نجاح، فشل، تكرار، صلاحية)",
+            "شرط منع الإطلاق عند فشل حرج: الفشل، الدليل، الإصلاح وإعادة الاختبار وصاحب القرار"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L05",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "25775252318e190de9b4427d6ede453e15898de1273f93120eddaea5e6cfa2f5",
+      "afterSha256": "16c7b894ffee323c59a0b0e3df9f78231aaeed87f170500086bf81a05bc1e33e",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "صمم خريطة بيانات وصلاحيات لعملية 'تسجيل عميل جديد' في شركة خدمات إنترنت وهمية اسمها 'نت بلس'. بعدين، اكتب سيناريو تعطل لنظام تسجيل العملاء، وخطوات استعادة، واختبار يثبت اكتمال السجلات بدون عرض بيانات حساسة.",
+          "after": "صمم خريطة بيانات وصلاحيات لعملية 'تسجيل عميل جديد' في شركة خدمات إنترنت وهمية اسمها 'نت بلس'. بعدين، اكتب سيناريو تعطل لنظام تسجيل العملاء، وخطوات استعادة، واختبار يثبت اكتمال السجلات بدون عرض بيانات حساسة.\n\nاستخدم أنواع بيانات ومعرّفات خيالية فقط. كرر صف الصلاحيات لكل نوع بيانات ضروري: نوع البيانات، دور من يشوفها، دور من يعدّلها، ودور من يستعيدها عند التعطل، مع سبب كل صلاحية وحدودها. اكتب الخطة والاختبار كنص تعليمي؛ لا تدخل بيانات عملاء أو بيانات دخول حقيقية ولا تنفّذ استعادة فعلية."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "اسم العملية: تسجيل عميل جديد",
+            "البيانات المطلوبة للعملية (مع ذكر السبب لكل بيان)",
+            "البيانات غير المطلوبة (مع ذكر السبب للحذف)",
+            "سيناريو تعطل نظام تسجيل العملاء",
+            "خطوات استعادة النظام واختبار اكتمال السجلات"
+          ],
+          "after": [
+            "اسم العملية: تسجيل عميل جديد",
+            "البيانات المطلوبة للعملية (مع ذكر السبب لكل بيان)",
+            "البيانات غير المطلوبة (مع ذكر السبب للحذف)",
+            "سيناريو تعطل نظام تسجيل العملاء",
+            "خطوات استعادة النظام واختبار اكتمال السجلات",
+            "جدول صلاحيات لكل نوع بيانات خيالي: من يشاهد، من يعدّل، من يستعيد، والسبب/الحدود"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "3f200bb860fec73d276b8880e6577a0d0f9bee79bfe9d465430adefc4cc5bee8",
+      "afterSha256": "f093246a5cdcac1e5eda5b353f82b9b45a9881230c693be5311a6788be246a46",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.",
+          "after": "You are tasked with preparing for the launch of a new internal company portal designed to streamline HR requests (e.g., vacation requests, expense reports). Develop a readiness plan that ensures a smooth and reliable launch.\n\nUse ten numbered rows. Repeat entries 1–10 in each of the first five fields so each condition has matching evidence, owner, initial status and critical/deferrable classification. Then give a justified launch-or-defer decision and a first-week monitoring plan with indicators, owner, review timing and response to a critical failure. Use a fictional readiness exercise; no real portal launch is required."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Readiness Condition (10 items)",
+            "Evidence Required",
+            "Owner/Team Responsible",
+            "Initial Status (Not Started, In Progress, Complete)",
+            "Criticality (Critical, Deferrable)"
+          ],
+          "after": [
+            "Readiness Condition (10 items)",
+            "Evidence Required",
+            "Owner/Team Responsible",
+            "Initial Status (Not Started, In Progress, Complete)",
+            "Criticality (Critical, Deferrable)",
+            "Launch or defer decision and justification from readiness evidence",
+            "First-week monitoring plan: indicators, owner, review timing and critical-failure response"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M06-L06",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "cf608791d4dd089c9201afa9fc659b85c88dc645e11f39c86adcff838177ff56",
+      "afterSha256": "dffee99f07b5abc7d2b1c90815ed1a19efe18b476bb774092f86f35fb3223254",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "أنت مسؤول عن فريق إطلاق منتج جديد. قم بإعداد قائمة من عشرة شروط جاهزية تغطي جوانب التشغيل والجودة والمالية والتحقق المحلي. لكل شرط، صنف ما إذا كان عيبًا حرجًا (يمنع الإطلاق) أو تحسينًا مؤجلاً (يمكن تأجيله). بناءً على هذه القائمة، اكتب مذكرة إطلاق أو تأجيل من صفحة واحدة، بالإضافة إلى خطة متابعة لأول أسبوع بعد الإطلاق (إذا تم الإطلاق).",
+          "after": "أنت مسؤول عن فريق إطلاق منتج جديد. قم بإعداد قائمة من عشرة شروط جاهزية تغطي جوانب التشغيل والجودة والمالية والتحقق المحلي. لكل شرط، صنف ما إذا كان عيبًا حرجًا (يمنع الإطلاق) أو تحسينًا مؤجلاً (يمكن تأجيله). بناءً على هذه القائمة، اكتب مذكرة إطلاق أو تأجيل من صفحة واحدة، بالإضافة إلى خطة متابعة لأول أسبوع بعد الإطلاق (إذا تم الإطلاق).\n\nكرّر قالب شرط الجاهزية عشر مرات بأرقام متطابقة: وصف الشرط، الدليل المطلوب وحالته، المسؤول، وحالة التنفيذ. أدرج هذه العناصر في حقل قائمة الشروط، ثم صنّف كل شرط بالرقم نفسه في حقل التصنيف. احتفظ بمذكرة القرار ومبرراته وخطة متابعة الأسبوع الأول؛ لا تُعامل الدليل الناقص كشرط مكتمل."
+        },
+        {
+          "path": "assignment.fields.0",
+          "beforeExists": true,
+          "before": "قائمة شروط الجاهزية (10 شروط)",
+          "after": "شروط الجاهزية العشرة: لكل شرط الوصف، الدليل وحالته، المسؤول، حالة التنفيذ"
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "5609276851dd6fbe630bcc2066896a02cf4451d0bb263eabf045d30eac005ad5",
+      "afterSha256": "a5ac240f30535814f17e2c2d5b15a91a95c019ddf8df2567de91b90c1b74588f",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.",
+          "after": "You are tasked with planning a small community event. Create a project plan that includes six key tasks, their estimated durations, dependencies, and assigned owners. Then, identify the initial critical path and calculate the earliest completion date. Finally, introduce a resource conflict and a one-day external delay, and explain how these impact your schedule and potential costs.\n\nRepeat tasks 1–6 in each of the first four fields, keeping matching task numbers: name, duration, dependencies and owner. In Impact of Delay/Conflict, explicitly show the initial critical path and earliest finish, then the revised critical path and earliest finish after the resource conflict and one-day delay. Show the delay-cost calculation and separate effort from waiting. Text lists or a table here are sufficient; no external scheduling tool is required."
+        },
+        {
+          "path": "assignment.fields.4",
+          "beforeExists": true,
+          "before": "Impact of Delay/Conflict",
+          "after": "Impact of Delay/Conflict: critical path and earliest finish before/after, delay cost, effort versus waiting"
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "8dfd252514b00d4286d8d0061f2f89e3038f8b940a8332939c35a9578f44caa9",
+      "afterSha256": "aa5b79b006a8b7d711f97d6e71c1f81eb6d1a325f0210a3978399d919717ab6a",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل أنك مسؤول عن تحسين أداء قسم خدمة العملاء في شركة. أنشئ لوحة متابعة لأربعة مؤشرات رئيسية لهذا القسم، مع تحديد تعريف كل مؤشر ومصدر بياناته وخط أساسه. ثم، حلل انحرافاً افتراضياً في أحد المؤشرات، واقترح تجربة تحسين لهذا الانحراف، مع تحديد مؤشر حماية وقرار رجوع محتمل. أخيراً، اكتب تقرير متابعة يميز بوضوح بين الحقائق الملاحظة والتفسيرات المقترحة.",
+          "after": "تخيل أنك مسؤول عن تحسين أداء قسم خدمة العملاء في شركة. أنشئ لوحة متابعة لأربعة مؤشرات رئيسية لهذا القسم، مع تحديد تعريف كل مؤشر ومصدر بياناته وخط أساسه. ثم، حلل انحرافاً افتراضياً في أحد المؤشرات، واقترح تجربة تحسين لهذا الانحراف، مع تحديد مؤشر حماية وقرار رجوع محتمل. أخيراً، اكتب تقرير متابعة يميز بوضوح بين الحقائق الملاحظة والتفسيرات المقترحة.\n\nكرّر بطاقة المؤشر أربع مرات بأرقام 1–4: الاسم، التعريف ووحدته، مصدر البيانات وخط الأساس. استخدم الأرقام نفسها في حقول البطاقة. حلّل انحرافًا افتراضيًا في مؤشر واحد، ثم اكتب تجربة التحسين ومؤشر الحماية وشروط الرجوع في حقولها. في تقرير المتابعة افصل الملاحظات المعطاة أو المفترضة المعلنة عن التفسيرات اللي تحتاج تحقق؛ مو مطلوب جمع بيانات عملاء حقيقية."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "اسم المؤشر",
+            "تعريف المؤشر",
+            "مصدر البيانات",
+            "خط الأساس",
+            "تحليل الانحراف المقترح"
+          ],
+          "after": [
+            "اسم المؤشر",
+            "تعريف المؤشر",
+            "مصدر البيانات",
+            "خط الأساس",
+            "تحليل الانحراف المقترح",
+            "تجربة التحسين المقترحة ومؤشر الحماية وتعريف قياسه",
+            "شروط الرجوع والإجراء وصاحب القرار",
+            "تقرير المتابعة: الملاحظات، التفسيرات، الأدلة الناقصة وخطوة التحقق"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L05",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "07b32cc11a22e2240e8ad790fd2f4501015142ec11506ab88e0164801311d981",
+      "afterSha256": "e16e51fe493795b5c686fe1787a0577a665d5ce9a4b99bdf7f8d9b6e4e3e2c08",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "قم بإعداد مسودة لخطة مشروع متكاملة لمبادرة صغيرة (مثل إطلاق منتج جديد بسيط، أو تنظيم حدث مجتمعي، أو تطوير خدمة محلية). بعد إعداد المسودة، قم بمراجعتها بدقة لضمان الاتساق المنطقي والعددي بين جميع الأقسام. ثم، اختر أحد الافتراضات الأساسية (مثل السعر، التكلفة الرئيسية، أو حجم الطلب المتوقع) وقم بتغييره، ثم سجل التغييرات التي أجريتها في الأقسام الأخرى من الخطة لضمان بقائها متكاملة ومتسقة.",
+          "after": "قم بإعداد مسودة لخطة مشروع متكاملة لمبادرة صغيرة (مثل إطلاق منتج جديد بسيط، أو تنظيم حدث مجتمعي، أو تطوير خدمة محلية). بعد إعداد المسودة، قم بمراجعتها بدقة لضمان الاتساق المنطقي والعددي بين جميع الأقسام. ثم، اختر أحد الافتراضات الأساسية (مثل السعر، التكلفة الرئيسية، أو حجم الطلب المتوقع) وقم بتغييره، ثم سجل التغييرات التي أجريتها في الأقسام الأخرى من الخطة لضمان بقائها متكاملة ومتسقة.\n\nأكمل سجل التغيير في الحقل المخصص. لكل افتراض تغيّر، اكتب قيمته قبل التغيير وبعده، الأقسام المتأثرة، التعديلات العددية/النصية في كل قسم، وأسبابها. اربط كل تعديل بالافتراض نفسه حتى يمكن تتبّع الاتساق بين الأقسام."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "ملخص تنفيذي (صفحة واحدة).",
+            "وصف المشكلة والعميل وعرض القيمة.",
+            "خطة التشغيل والجدول الزمني.",
+            "الجدوى المالية (تتضمن الإيرادات، التكاليف، نقطة التعادل).",
+            "تحليل المخاطر والافتراضات الرئيسية."
+          ],
+          "after": [
+            "ملخص تنفيذي (صفحة واحدة).",
+            "وصف المشكلة والعميل وعرض القيمة.",
+            "خطة التشغيل والجدول الزمني.",
+            "الجدوى المالية (تتضمن الإيرادات، التكاليف، نقطة التعادل).",
+            "تحليل المخاطر والافتراضات الرئيسية.",
+            "سجل التغيير: الافتراض وقيمته قبل/بعد، الأقسام المتأثرة، تعديلات كل قسم وأسبابها"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "faa81caabe6a1cb9ed4b65a8779120796cfb37f3c0cabbc53eeaab0d181ab161",
+      "afterSha256": "0f64885b7810de7f3509f4f732cb6effa87ba29ef1bf34cd59057162c669aaf0",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.",
+          "after": "For a fictional project of your choice (e.g., building a simple website, organizing a community event, creating a new recipe book), write five specific acceptance criteria and a test for each. Then, prepare a handover document that includes the version of your output, identifies the new owner, and lists at least two known deferred defects. Finally, conduct a self-review of your handover document and record any missing evidence or information that would make it more complete for the new owner.\n\nAfter completing the criteria, tests and handover details, record the self-review result in its named field: what is complete, what evidence/information is missing, and the next action needed for the new owner. Distinguish evidence actually supplied in the fictional case from an unverified assumption."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Project Title",
+            "Acceptance Criteria (5) and corresponding Test for each",
+            "Handover Document Version",
+            "New Owner (Name/Role)",
+            "Known Deferred Defects (2)"
+          ],
+          "after": [
+            "Project Title",
+            "Acceptance Criteria (5) and corresponding Test for each",
+            "Handover Document Version",
+            "New Owner (Name/Role)",
+            "Known Deferred Defects (2)",
+            "Self-review results, missing evidence/information and next action"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "d0f20e43dc3baf96e300f571cc021962cb233229a8c786a44a630a688d2cc076",
+      "afterSha256": "340c4dc32e3d10e9b903094c4eca16ea395a0d90db9ebe2e793fe30e1188b21d",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "اكتب خمسة معايير قبول لمخرجك النهائي واختبارًا لكل معيار. أنشئ محضر تسليم يوضح الإصدار والمسؤول والعيوب المؤجلة، ثم نفذ مراجعة ذاتية ودوّن الأدلة الناقصة.",
+          "after": "اكتب خمسة معايير قبول لمخرجك النهائي واختبارًا لكل معيار. أنشئ محضر تسليم يوضح الإصدار والمسؤول والعيوب المؤجلة، ثم نفذ مراجعة ذاتية ودوّن الأدلة الناقصة.\n\nأكمل خمسة معايير واختبارًا مستقلًا لكل واحد: الحقول تكمل اختبار المعيار الثالث ثم المعيارين الرابع والخامس واختباراتهما. في محضر التسليم اذكر الإصدار والمسؤول وثلاثة عيوب مؤجلة على الأقل، ثم اكتب نتيجة المراجعة الذاتية والأدلة الناقصة. النص داخل الحقول يكفي؛ لا يلزم ملف تسليم خارجي."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "معيار القبول 1: (الوصف)",
+            "اختبار المعيار 1: (الخطوات والنتيجة المتوقعة)",
+            "معيار القبول 2: (الوصف)",
+            "اختبار المعيار 2: (الخطوات والنتيجة المتوقعة)",
+            "معيار القبول 3: (الوصف)"
+          ],
+          "after": [
+            "معيار القبول 1: (الوصف)",
+            "اختبار المعيار 1: (الخطوات والنتيجة المتوقعة)",
+            "معيار القبول 2: (الوصف)",
+            "اختبار المعيار 2: (الخطوات والنتيجة المتوقعة)",
+            "معيار القبول 3: (الوصف)",
+            "اختبار المعيار 3: الخطوات والنتيجة المتوقعة",
+            "معيار القبول 4: الوصف",
+            "اختبار المعيار 4: الخطوات والنتيجة المتوقعة",
+            "معيار القبول 5: الوصف",
+            "اختبار المعيار 5: الخطوات والنتيجة المتوقعة",
+            "محضر التسليم: الإصدار، المسؤول، ثلاثة عيوب مؤجلة على الأقل",
+            "المراجعة الذاتية ونتيجتها والأدلة/المعلومات الناقصة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L07",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "2e7360bf60f823661deaac0ad6a3946b0435605b248d4119c4e014eb89d11b72",
+      "afterSha256": "5cdabaf3e80e775c0ec0312cf8f08fbcf3966b9c11b187f79fc5b808832e7234",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.",
+          "after": "You have just completed a small internal project to upgrade your team's collaboration software. Write a short closure report (approximately 200-300 words) and identify three distinct lessons learned from this project. For each lesson, ensure you provide: evidence, a possible cause, a specific actionable change, an owner for that change, and a measurable outcome. Separate established facts from interpretations that need verification.\n\nUse the first three fields for the short closure report (approximately 200–300 words in total). Complete all three distinct lesson fields using the same template: evidence, possible cause, actionable change, owner and measurable outcome. Separate established facts from interpretations needing verification."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Project Overview (brief summary, objectives, outcome)",
+            "Deliverables Acceptance Status",
+            "Financial Summary (actual vs. budget)",
+            "Lesson Learned 1 (Evidence, Cause, Action, Owner, Measure)",
+            "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)"
+          ],
+          "after": [
+            "Project Overview (brief summary, objectives, outcome)",
+            "Deliverables Acceptance Status",
+            "Financial Summary (actual vs. budget)",
+            "Lesson Learned 1 (Evidence, Cause, Action, Owner, Measure)",
+            "Lesson Learned 2 (Evidence, Cause, Action, Owner, Measure)",
+            "Lesson Learned 3 (Evidence, Cause, Action, Owner, Measure)"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L07",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "4c592e87a9ffa67aa61210003f9d20c7f38e148332310682f74f8b62303a8e08",
+      "afterSha256": "3d9b494e0eeb7f0bfc035d71c9f8bc0dbcff5947dca6a34b205cad9fe7383bfe",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل إنك مدير مشروع خلصت مشروع 'تطوير موقع إلكتروني لشركة عقارات'. واجهت في المشروع ده مشكلتين رئيسيتين: الأولى، تأخير في استلام المحتوى من العميل. والثانية، صعوبة في دمج نظام دفع إلكتروني جديد. اكتب تقرير إغلاق مختصر للمشروع، وسجل 3 دروس مستفادة بناءً على المشكلتين دول، مع التركيز على تحويلها لإجراءات عملية للمشاريع الجاية.",
+          "after": "تخيل إنك مدير مشروع خلصت مشروع 'تطوير موقع إلكتروني لشركة عقارات'. واجهت في المشروع ده مشكلتين رئيسيتين: الأولى، تأخير في استلام المحتوى من العميل. والثانية، صعوبة في دمج نظام دفع إلكتروني جديد. اكتب تقرير إغلاق مختصر للمشروع، وسجل 3 دروس مستفادة بناءً على المشكلتين دول، مع التركيز على تحويلها لإجراءات عملية للمشاريع الجاية.\n\nكرّر قالب الدرس المستفاد ثلاث مرات بأرقام 1–3. اكتب ثلاث مداخلات مرقمة في كل حقل من حقول العنوان والدليل والسبب والإجراء والمسؤول/القياس، بنفس أرقام الدروس عشان كل درس يفضل كامل. اكتب تقرير الإغلاق المختصر في خانته الإضافية، وافصل الوقائع عن تفسير السبب اللي محتاج تحقق."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "عنوان الدرس المستفاد",
+            "الدليل على المشكلة",
+            "السبب المحتمل للمشكلة",
+            "الإجراء المقترح للمشاريع القادمة",
+            "المسؤول عن تطبيق الإجراء وطريقة قياسه"
+          ],
+          "after": [
+            "عنوان الدرس المستفاد",
+            "الدليل على المشكلة",
+            "السبب المحتمل للمشكلة",
+            "الإجراء المقترح للمشاريع القادمة",
+            "المسؤول عن تطبيق الإجراء وطريقة قياسه",
+            "تقرير الإغلاق المختصر للمشروع: النتيجة، حالة التسليم وما يحتاج متابعة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L08",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "41c95e91bfb06b5c9126ac3c283def989ec4f475c4586c056c0b3c5e6861e9f7",
+      "afterSha256": "b24bae5cb524d632e19f218b7fc026b17771b97cc5dccc0ed6e0a1442ef658f6",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.",
+          "after": "You are developing a proposal for a new internal training program. Review ten claims from your draft proposal. For each claim, classify it, identify its evidence (or lack thereof), and prepare to defend it. Then, select one overstated claim and revise it, outlining the next step to validate it.\n\nRepeat the five-column claim log for ten numbered claims: put entries 1–10 with matching numbers in the statement, type, traceability, challenging-question and answer fields. Mark missing evidence rather than inventing it. In the final field show one overstated claim before and after correction, why the evidence supports the revision, and the next verification step."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Claim Statement (from your proposal)",
+            "Claim Type (Observation, Calculation, Assumption, Decision)",
+            "Evidence/Traceability (Where does this claim come from?)",
+            "Potential Challenging Question (A question a stakeholder might ask)",
+            "Prepared Answer (How you would defend it, acknowledging limits)"
+          ],
+          "after": [
+            "Claim Statement (from your proposal)",
+            "Claim Type (Observation, Calculation, Assumption, Decision)",
+            "Evidence/Traceability (Where does this claim come from?)",
+            "Potential Challenging Question (A question a stakeholder might ask)",
+            "Prepared Answer (How you would defend it, acknowledging limits)",
+            "Overstated claim: original/corrected wording, evidence limits and next verification step"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "439815ec68cc8903b3f1fcdaeb70c770a4e75ad168271b14a83cce2e18e95519",
+      "afterSha256": "e0681f41f670cdcdbc20529fbf723ed131e4b3dcbc27ab0edfbd5fa9b20530e3",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.",
+          "after": "Imagine you are launching a new online course. Map out a five-stage customer journey for this course, from initial awareness to post-course engagement. For each stage, identify the customer's question, potential friction points, the team or person responsible, and a key metric to measure success. Then, identify one stage with the highest 'leakage' (where most customers drop off), propose a specific change to reduce this leakage, and explain how you would measure the impact of this change without altering the definition of your conversion rate.\n\nFor each named stage, include the customer's question, friction, owner and metric with its numerator/denominator, unit, cohort and period. In the added field identify and justify one leakage point, propose one change and show the before/after measurement using the same conversion definition, cohort, units and comparable periods. Fictional numbers must be labelled as assumptions; no real analytics collection is required."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Customer Journey Stage 1: [Name]",
+            "Customer Journey Stage 2: [Name]",
+            "Customer Journey Stage 3: [Name]",
+            "Customer Journey Stage 4: [Name]",
+            "Customer Journey Stage 5: [Name]"
+          ],
+          "after": [
+            "Customer Journey Stage 1: name, customer question, friction, owner and metric definition",
+            "Customer Journey Stage 2: name, customer question, friction, owner and metric definition",
+            "Customer Journey Stage 3: name, customer question, friction, owner and metric definition",
+            "Customer Journey Stage 4: name, customer question, friction, owner and metric definition",
+            "Customer Journey Stage 5: name, customer question, friction, owner and metric definition",
+            "Leakage point and reason, proposed change and measurement with the same conversion definition"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "71ff1c0de1cc7296a1702177f139b4550e46ea1182a55d86edb44987d450d2fd",
+      "afterSha256": "52433efe909978cb225ca33dc249a64e0ccc7e1ba0c296408591a896c3385097",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل أنك مستشار لشركة 'حلويات الجدّة' التي تبيع الحلويات التقليدية عبر متجرها الفعلي وخدمة التوصيل. مهمتك هي رسم رحلة عميل من خمس مراحل لعملية شراء عبر خدمة التوصيل، وتحديد سؤال العميل، العائق، والمسؤول عن كل مرحلة، والمؤشر الذي يقيس الأداء. بعد ذلك، اختر نقطة تسرب واحدة (أكبر عائق) في هذه الرحلة، واقترح تغييرًا واحدًا لتحسينها، وحدد كيف ستقيس تأثير هذا التغيير دون تغيير تعريف النسبة.",
+          "after": "تخيل أنك مستشار لشركة 'حلويات الجدّة' التي تبيع الحلويات التقليدية عبر متجرها الفعلي وخدمة التوصيل. مهمتك هي رسم رحلة عميل من خمس مراحل لعملية شراء عبر خدمة التوصيل، وتحديد سؤال العميل، العائق، والمسؤول عن كل مرحلة، والمؤشر الذي يقيس الأداء. بعد ذلك، اختر نقطة تسرب واحدة (أكبر عائق) في هذه الرحلة، واقترح تغييرًا واحدًا لتحسينها، وحدد كيف ستقيس تأثير هذا التغيير دون تغيير تعريف النسبة.\n\nاستخدم حقول الرحلة كأعمدة لجدول خمس مراحل: كرّر صفوف 1–5 بأرقام متطابقة في كل حقل عشان كل مرحلة تشمل الاسم وسؤال العميل والعائق والمسؤول والمؤشر وتعريفه. بعدها كمّل خانة نقطة التسرب والتغيير والقياس، مع تثبيت تعريف نسبة التحويل وبداية الانتقال والمجموعة والفترة والوحدة قبل/بعد. تقدر تستخدم أرقامًا تدريبية معلنة بدل جمع بيانات فعلية."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "مرحلة رحلة العميل (5 مراحل)",
+            "سؤال العميل في هذه المرحلة",
+            "العائق المحتمل في هذه المرحلة",
+            "القسم المسؤول عن هذه المرحلة",
+            "المؤشر الرئيسي لقياس الأداء في هذه المرحلة"
+          ],
+          "after": [
+            "مرحلة رحلة العميل (5 مراحل)",
+            "سؤال العميل في هذه المرحلة",
+            "العائق المحتمل في هذه المرحلة",
+            "القسم المسؤول عن هذه المرحلة",
+            "المؤشر الرئيسي لقياس الأداء في هذه المرحلة",
+            "نقطة التسرب وتبريرها، التغيير الواحد وطريقة قياس أثره بنفس تعريف النسبة"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "3bfa0f9d95fc708c1ca501bf166d6881d22333a96ebfe252588de00ff57b67bc",
+      "afterSha256": "1d97a63ecea522d67e6a011a4a2b75c562b2b96efacaa0f33b9ac92ee56496c7",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.",
+          "after": "Develop a value proposition and a simplified business model for a new fictional service or product. Identify one potential inconsistency and propose a solution.\n\nFor each of the five displayed elements, include one plausible assumption and a specific test, as the rubric requires. Keep the element itself in its existing field and add the assumption/test beneath it. Use the final field for one contradiction between elements and its coherent proposed resolution. These are plans for tests, not a requirement to run an external experiment."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "Value Proposition (2 sentences)",
+            "Customer Segment",
+            "Key Activities",
+            "Key Resources",
+            "Revenue Streams"
+          ],
+          "after": [
+            "Value Proposition (2 sentences)",
+            "Customer Segment",
+            "Key Activities",
+            "Key Resources",
+            "Revenue Streams",
+            "Contradiction between model elements and proposed resolution"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "d7ebea395bbb5b2ec257078da60fab7b918c93e147cd078f16399e2db5d4be12",
+      "afterSha256": "42a285f985682ec6b14c192184ebfd8da52ae3b5cdd5a1bc67eb0ac96613ec03",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل أنك تطلق مشروعاً جديداً لـ 'توصيل وجبات صحية مخصصة حسب احتياجات العميل (مثلاً: بدون سكر، قليلة الدهون، خالية من الجلوتين)'. قم بإنشاء عرض قيمة لهذا المشروع، ثم اربطه بنموذج عمل مبسط. بعد ذلك، اكتشف تناقضاً واحداً في نموذج عملك واقترح حلاً له.",
+          "after": "تخيل أنك تطلق مشروعاً جديداً لـ 'توصيل وجبات صحية مخصصة حسب احتياجات العميل (مثلاً: بدون سكر، قليلة الدهون، خالية من الجلوتين)'. قم بإنشاء عرض قيمة لهذا المشروع، ثم اربطه بنموذج عمل مبسط. بعد ذلك، اكتشف تناقضاً واحداً في نموذج عملك واقترح حلاً له.\n\nاحتفظ بعرض القيمة وفكرة المشروع والعملاء والقنوات والأنشطة والموارد في حقولها. في خانة التناقض اذكر عنصرين غير متوافقين ووش التعارض بينهما، ثم التعديل اللي يحله وأثره على بقية النموذج؛ خطة مكتوبة تكفي."
+        },
+        {
+          "path": "assignment.fields",
+          "beforeExists": true,
+          "before": [
+            "عرض القيمة (جملتان)",
+            "العملاء المستهدفون",
+            "القنوات الرئيسية",
+            "الأنشطة الرئيسية",
+            "الموارد الرئيسية"
+          ],
+          "after": [
+            "عرض القيمة (جملتان)",
+            "العملاء المستهدفون",
+            "القنوات الرئيسية",
+            "الأنشطة الرئيسية",
+            "الموارد الرئيسية",
+            "التناقض المكتشف بين عناصر النموذج، الحل المقترح وأثره"
+          ]
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L05",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "3a1eb7d09288b34aac77d5fe8c1502ca8aa99f9b399470686177ae5d3774358c",
+      "afterSha256": "caa606296af33c11be9bebd5ed12bca06b3906e7c44521c0bc3a294ef250030d",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل إنك صاحب شركة صغيرة بتصنع منتجات يدوية، ومحتاج تشتري كمية من الخامات الأساسية من مورد جديد. المورد ده عرض عليك أسعار كويسة، لكنك محتاج تتفاوض معاه على شروط التسليم والدفع والجودة. جهز ورقة استعداد للتفاوض، وبعدين اكتب محضر اتفاق مبدئي.",
+          "after": "تخيل إنك صاحب شركة صغيرة بتصنع منتجات يدوية، ومحتاج تشتري كمية من الخامات الأساسية من مورد جديد. المورد ده عرض عليك أسعار كويسة، لكنك محتاج تتفاوض معاه على شروط التسليم والدفع والجودة. جهز ورقة استعداد للتفاوض، وبعدين اكتب محضر اتفاق مبدئي.\n\nضمن محضر الاتفاق، سمّي الافتراضات اللي لسه ما اتتحققتش، واكتب لكل افتراض إزاي ومنين هتتحقق منه قبل أي التزام نهائي. احتفظ بباقي عناصر المحضر ومكانها؛ ده محضر تعليمي مبدئي، مش تنفيذ اتفاق أو شراء."
+        },
+        {
+          "path": "assignment.fields.4",
+          "beforeExists": true,
+          "before": "محضر اتفاق مبدئي يوضح الكمية، المواصفة، الميعاد، القبول، وآلية التعديل.",
+          "after": "محضر اتفاق مبدئي: الكمية، المواصفة، الميعاد، القبول، آلية التعديل، والافتراضات وطريقة التحقق قبل الالتزام"
+        }
+      ]
+    },
+    {
+      "item": 79,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M03-L01",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "22303bb151466c8e095c8d00a7d6dc69578bd09d25c938dec895b120f13cc018",
+      "afterSha256": "9c9ec6491df3c9452e90d6a282839b8f6f70e54b47d4e5cd9f2875c1283fd947",
+      "changedFields": [
+        {
+          "path": "assignment.prompt",
+          "beforeExists": true,
+          "before": "تخيل أنك تخطط لإطلاق خدمة جديدة أو منتج جديد في مدينتك. حدد مشكلة معينة تواجهها شريحة من الناس، ثم قارن بين شريحتين محتملتين يمكن أن تستهدفهما لحل هذه المشكلة. اختر إحدى الشريحتين كشريحة اختبار أولية، واذكر دليلًا ناقصًا قد يدفعك لتغيير اختيارك.",
+          "after": "تخيل أنك تخطط لإطلاق خدمة جديدة أو منتج جديد في مدينتك. حدد مشكلة معينة تواجهها شريحة من الناس، ثم قارن بين شريحتين محتملتين يمكن أن تستهدفهما لحل هذه المشكلة. اختر إحدى الشريحتين كشريحة اختبار أولية، واذكر دليلًا ناقصًا قد يدفعك لتغيير اختيارك.\n\nفي وصف كل شريحة سمّ المستخدم والمشتري والموافق على القرار والسياق. في الحقل الأخير قارن الشريحتين حسب تكرار المشكلة والبدائل ومعايير الاختيار، ثم سجّل قرار شريحة الاختبار وسببه والدليل الناقص اللي ممكن يغيّره. تبقى معلومات كل شريحة وقرارها في نفس حقولها."
+        },
+        {
+          "path": "assignment.fields.2",
+          "beforeExists": true,
+          "before": "الشريحة الأولى المقترحة (وصف المستخدم، المشتري، الموقف)",
+          "after": "الشريحة الأولى: المستخدم، المشتري، الموافق على القرار والسياق"
+        },
+        {
+          "path": "assignment.fields.3",
+          "beforeExists": true,
+          "before": "الشريحة الثانية المقترحة (وصف المستخدم، المشتري، الموقف)",
+          "after": "الشريحة الثانية: المستخدم، المشتري، الموافق على القرار والسياق"
+        },
+        {
+          "path": "assignment.fields.4",
+          "beforeExists": true,
+          "before": "الشريحة المختارة للاختبار الأولي والدليل الناقص",
+          "after": "مقارنة التكرار والبدائل ومعايير الاختيار؛ الشريحة المختارة وسببها والدليل الناقص"
+        }
+      ]
+    }
+  ],
+  "fieldMigrations": [
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M05-L01",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M05-L02",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M05-L03",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M05-L04",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 7,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M05-L06",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 8,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M06-L01",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M06-L03",
+      "locale": "ar-MSA",
+      "fromCount": 5,
+      "toCount": 8,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M06-L04",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M06-L05",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M06-L06",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 7,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "ar-Gulf",
+      "fromCount": 5,
+      "toCount": 8,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L05",
+      "locale": "ar-MSA",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "ar-Gulf",
+      "fromCount": 5,
+      "toCount": 12,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L07",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L07",
+      "locale": "ar-EG",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M07-L08",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M03-L04",
+      "locale": "ar-Gulf",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "en",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    },
+    {
+      "item": 79,
+      "lessonId": "AC-BUS-M03-L03",
+      "locale": "ar-Gulf",
+      "fromCount": 5,
+      "toCount": 6,
+      "indexMapping": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "automaticWrites": false
+    }
+  ],
+  "fieldIdentity": "Existing positions are preserved. Expanded labels add required detail to the same subject; original values are never shifted or reinterpreted as appended outputs.",
+  "pdfAssets": "Original workbook/media identities preserved; scoped written delivery and independent attachment acceptance pending"
+}

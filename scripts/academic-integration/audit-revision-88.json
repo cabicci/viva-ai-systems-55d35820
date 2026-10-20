@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    88
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 88,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M02-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "2570997582380c6f68576f4014dbcb220f1b29fda368354fc461d60398662b87",
+      "afterSha256": "15e0df615dc2259a39e682d460a4c31e35d1cf889c6aea18e3ea7922e5dc534e",
+      "changedFields": [
+        {
+          "path": "readingVisuals.2.columns.1",
+          "beforeExists": true,
+          "before": "Alternative 1: New Supplier (Cost: 3)",
+          "after": "Alternative1: New Supplier"
+        },
+        {
+          "path": "readingVisuals.2.columns.2",
+          "beforeExists": true,
+          "before": "Alternative 2: Increase Inventory (Cost: 2)",
+          "after": "Alternative2: Increase Inventory"
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

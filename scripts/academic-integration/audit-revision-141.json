@@ -1,0 +1,34 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    141
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 141,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L06",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "229a45f9f8e7f9dc164f62fd0d195c47ba4e70375c61f173b27bd2653afd6ac4",
+      "afterSha256": "71fb9ba081a870a45703e315cad69f9a86007696b89f8b83fa717d7324d07c9d",
+      "changedFields": [
+        {
+          "path": "quiz.4.options.3",
+          "beforeExists": true,
+          "before": "'يجب أن يكون الموقع الإلكتروني سهل الاستخدام'. و",
+          "after": "'يجب أن يكون الموقع الإلكتروني سهل الاستخدام'."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

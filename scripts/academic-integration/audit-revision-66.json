@@ -1,0 +1,52 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    66
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 66,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M07-L04",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "536cf0582b25bde6dcd6d38e1569bfabc1f244f96dab4493360a733633e8c5d8",
+      "afterSha256": "d36282979e2ea753c47b721cd39214ad85ba7e3d491f6f9584c32c620acc693c",
+      "changedFields": [
+        {
+          "path": "example.text",
+          "beforeExists": true,
+          "before": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance?",
+          "after": "This is a fictional learning case. A small online retailer, 'QuickShip,' implemented a new order processing system designed to drastically reduce the time it takes to fulfill customer orders. Before the change, the average order fulfillment time was 20 minutes. After implementing the new system, this average dropped to an impressive 15 minutes. This looked like a clear success. However, a less prominent metric, 'rework rate' (orders that needed to be re-picked, re-packed, or resent due to errors), also changed. Before the system, the rework rate was 2 out of 100 orders. After the change, it climbed to 8 out of 100 orders. The initial focus was solely on the 'average order time' metric, leading the team to believe they had achieved a significant improvement. The increase in rework was initially overlooked or dismissed as a minor issue. The question is, did QuickShip truly improve its performance? The stated20-minute baseline and15-minute new average measure first-pass processing only; they exclude additional rework. For the calculation below, assume exactly20 additional minutes per rework order."
+        },
+        {
+          "path": "example.decision",
+          "beforeExists": true,
+          "before": "No, QuickShip did not achieve a true improvement. While order fulfillment speed increased, the significant rise in rework indicates a decline in quality and overall efficiency, negating the benefits of faster processing.",
+          "after": "Under the stated first-pass and20-minute additional rework assumptions, total time saves380 minutes per100 orders, while rework quality worsens from2% to8%. The overall decision remains conditional on an explicit quality threshold and actual rework and other costs; this calculation alone does not justify wider rollout."
+        },
+        {
+          "path": "example.steps.2",
+          "beforeExists": true,
+          "before": "Analyze the trade-off: The improvement in speed (5 minutes faster per order) came at a significant cost in quality (6 additional rework orders per 100). Each rework order likely takes more than 5 minutes to fix, involving re-picking, re-packing, re-shipping, and customer service time. This suggests the 'speed' improvement is superficial and potentially costly.",
+          "after": "Analyze quality and time separately: first-pass time falls by5 minutes per order, while rework rises from2 to8 per100 orders. Quality worsens. The effect on total time must include rework, rather than assuming the extra work cancels every saving."
+        },
+        {
+          "path": "example.steps.3",
+          "beforeExists": true,
+          "before": "Calculate the impact of rework: If 100 orders are processed, 8 need rework. Assuming each rework takes at least the original 20 minutes (or more, due to investigation and re-processing), the total time spent on those 8 orders is significantly higher than if they were correct the first time. The 'average' speed is misleading because it doesn't account for the extra work on failed orders.",
+          "after": "Calculate total time for100 orders, assuming20 additional minutes per rework: before =100×20 +2×20 =2040 minutes; after =100×15 +8×20 =1660 minutes. The stated assumptions imply a saving of380 minutes per100 orders. Measure actual rework time and costs before relying on this estimate."
+        },
+        {
+          "path": "example.steps.4",
+          "beforeExists": true,
+          "before": "Formulate a conclusion and next steps: The reduction in average order time is an activity measure that, when viewed in isolation, appears positive. However, the substantial increase in rework rate, an outcome measure directly tied to quality and overall efficiency, indicates that the 'improvement' is detrimental. The next steps should involve investigating the specific process changes that led to the increased rework, potentially revising the new system, or even reverting to the old system if the quality issues cannot be resolved without sacrificing speed.",
+          "after": "Make a bounded decision: do not approve wider rollout from time savings alone. Investigate the increased errors, compare quality with an explicit pre-agreed quality threshold, and measure actual rework, customer and other costs. Revise or roll back when those criteria require it; faster processing alone does not establish an acceptable overall improvement."
+        }
+      ]
+    }
+  ],
+  "pdfAssets": "Original workbook/media identities unchanged; independent alignment and delivery acceptance pending"
+}

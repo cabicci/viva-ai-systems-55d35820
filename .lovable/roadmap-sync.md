@@ -512,3 +512,12 @@ Re-read the core and mission objectives of all twelve named Creator lessons. Ali
 ### Audit22 — five-task field and exact overlapping delivery (2026-10-18)
 
 Append Task5 after title/Tasks1–4, clarify all role entries and where absence/fallback answers go, preserving quiz/rubric/scoring. Normalize only the known English five-to-six positional draft shape locally; preserve unsent values during a same-lesson content update and save six values only on the learner's explicit action. Add13 pure shape guards and2 mocked restore/save/update tests. Preserve the prior audit21 paragraph using an immutable receipt chain; historical checks reconstruct their exact stages while a current SQL proposal accepts only recorded original/intermediate/latest payload states. Native23 chain/historical SQL tests passed; both historical source checkers and160-package importer check passed. No actual database/activity write; independent written/contextual/workbook/media and live acceptance pending.
+
+
+## 2026-10-19 — Academic audit batch46: calculations and evidence limits
+
+[roadmap:273daf9e-a21c-4794-a807-249955cb726d]
+scope: lessons
+source: user
+summary: Implement items66–75 and80–88 with explicit first-pass/rework arithmetic, consistent booklet units, named conversion denominators, upstream capacity and tied bottlenecks, threshold equality, causal attribution and bounded evidence. Correct profit/sensitivity/breakeven labels and per-attempt tests; preserve quiz keys and source-specific scope. Append immutable academic receipts, retain earlier payload stages and PDF/media identities, and add19 independent calculation/interpretation checks to CI.
+sync_status: roadmap row in_progress; source candidate only, CI and served-payload acceptance pending. Earlier96 publication remains a distinct verified revision; remaining61 work continues. No learner answers or course release flags changed.

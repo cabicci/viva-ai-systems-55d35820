@@ -1,0 +1,109 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    127
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 127,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L02",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "30b23457b8723ee70cb09784aad8051707fe756722903bed2b689cde1decd5b4",
+      "afterSha256": "13fed0cb1eb05b4cb6f1ab68b83d8826d42d240cc2e3e39d389639d8be5a0ee5",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "A new coffee shop opens in a business district. Which of the following is an 'alternative' for a customer, beyond another coffee shop?",
+          "after": "Which option is specifically a do-it-yourself alternative: preparing coffee at home rather than buying it ready to drink?"
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "The correct answer is 'Buying coffee beans to brew at home.' This represents a 'doing it yourself' alternative, where the customer fulfills the need (coffee) without using a commercial service. Visiting a different coffee shop (option B) is a direct competitor. Ordering a different drink (option C) is a choice within the same provider. Deciding to drink water (option D) is a form of 'postponement' or choosing a completely different need, but DIY is a more direct alternative to the service itself.",
+          "after": "Buying beans and brewing at home is DIY/self-service (index 0). A different coffee shop is a direct competitor; a different drink within one shop is a product choice. Water can be another way to meet a broader refreshment need. These can all be alternatives depending on the need; the question asks specifically for home preparation."
+        }
+      ]
+    },
+    {
+      "item": 127,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L02",
+      "locale": "ar-Gulf",
+      "sourcePath": "experiments/academic/course/expanded/ar-Gulf.json",
+      "beforeSha256": "25b350a0ce43cb865f32d21b319691ee27f47f9a4f9af2ee1f04dcbfa7ee204b",
+      "afterSha256": "f097279faabc2f7420b81e160e87d2cf3a1c777d5ef3b772be8020480e3ea141",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "أي من الأمثلة التالية يُعد بديلاً لخدمة توصيل الطعام، ولكنه ليس منافساً مباشراً؟",
+          "after": "أي اختيار يصف شراء المكونات ثم إعداد الوجبة في البيت كحل ذاتي، بدلاً من شراء وجبة جاهزة؟"
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "الإجابة الصحيحة هي الخيار الثاني. الذهاب إلى السوبر ماركت والطهي في المنزل هو بديل لأنه يحل نفس مشكلة الجوع دون أن يكون منافساً مباشراً في مجال توصيل الطعام. الخيارات الأخرى هي إما منافسون مباشرون (مطعم آخر يوصل، تطبيق توصيل آخر) أو لا يحلون مشكلة توصيل الطعام (مطعم لتناول الطعام في الموقع فقط).",
+          "after": "الخيار 1 يجمع شراء المكونات والطهي في البيت، فهو حل ذاتي. مطعم يوصل أو تطبيق توصيل آخر منافس مباشر، وتناول وجبة بالمطعم طريقة أخرى لتلبية الحاجة. كل هذه بدائل محتملة؛ المطلوب هنا نوع محدد هو شراء المكونات ثم التحضير الذاتي."
+        }
+      ]
+    },
+    {
+      "item": 127,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L02",
+      "locale": "ar-MSA",
+      "sourcePath": "experiments/academic/course/expanded/ar-MSA.json",
+      "beforeSha256": "979a37f0605e48d5840f4495fdec84b58d0f7fe5cff7f8ea07e4ffb63c99e5b4",
+      "afterSha256": "5760f4653475fc5d923547b80037d1259fffddb23bf1d7a3b1c0e0f8e5460abb",
+      "changedFields": [
+        {
+          "path": "quiz.1.question",
+          "beforeExists": true,
+          "before": "أي من الأمثلة التالية لا يعتبر بديلاً مباشرًا لخدمة توصيل الطعام من المطاعم؟",
+          "after": "أي اختيار يصف مرحلة شراء مكونات لإعداد الوجبة ذاتياً، بدلاً من شراء وجبة جاهزة أو تحضير طعام موجود بالفعل في المنزل؟"
+        },
+        {
+          "path": "quiz.1.explanation",
+          "beforeExists": true,
+          "before": "الخيار الصحيح هو (شراء مكونات الطعام من متجر بقالة). هذا يعتبر بديلاً غير مباشر لأنه يتطلب جهدًا إضافيًا من العميل (الطهي). الخيارات الأخرى هي بدائل مباشرة لأنها تلبي نفس الحاجة (الحصول على طعام جاهز) بطرق مختلفة، سواء من خلال خدمة توصيل أخرى، أو تحضير ذاتي، أو تناول الطعام في المطعم نفسه.",
+          "after": "الخيار 2 هو شراء المكونات تمهيداً للتحضير الذاتي. تحضير الطعام في المنزل حل ذاتي أيضاً، لكنه لا يذكر خطوة شراء المكونات المطلوبة في السؤال. مطعم آخر يقدم الخدمة نفسها منافس مباشر، وتناول الطعام بالمطعم بديل آخر. لا نستبعد شراء المكونات من البدائل التي تلبي حاجة الوجبة."
+        }
+      ]
+    },
+    {
+      "item": 127,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M04-L02",
+      "locale": "ar-EG",
+      "sourcePath": "experiments/academic/course/expanded/ar-EG.json",
+      "beforeSha256": "a8e3dd97171cc4c9fc11eb7d54fbe4ebac6ff566f6221310a18febd8d6344f7e",
+      "afterSha256": "4b0d8c37fcd75d67322ac69ebd70efa438f6075859fde9b12b6c7ce5b71ca1ce",
+      "changedFields": [
+        {
+          "path": "quiz.2.question",
+          "beforeExists": true,
+          "before": "أي من التالي لا يعتبر منافساً لخدمة توصيل الطعام السريع؟",
+          "after": "لو الحاجة وجبة، أي اختيار هو خدمة لشراء المكونات تمهيداً للطهي، بدل خدمة توصيل وجبة جاهزة؟"
+        },
+        {
+          "path": "quiz.2.explanation",
+          "beforeExists": true,
+          "before": "الاجابة الصحيحة هي 'خدمة توصيل بقالة تسمح بشراء المكونات'. المنافسة تشمل البدائل المباشرة (مطعم آخر)، والحلول الذاتية (الطهي في المنزل)، وتأجيل أو إلغاء الحاجة (تأجيل الوجبة). خدمة توصيل البقالة لا تحل مشكلة 'توصيل الطعام السريع' بشكل مباشر، بل هي خطوة سابقة لإعداد الطعام.",
+          "after": "الخيار 2 خدمة توصيل بقالة لشراء المكونات. دي بديل لتلبية حاجة الوجبة، وبعدها العميل بيطبخ بنفسه. مطعم بيقدم نفس الخدمة منافس مباشر، والطهي في البيت حل ذاتي، وتأجيل الوجبة أو الاستغناء عنها اختيار تاني. السؤال بيطلب نوع البديل، مش بيقول إن شراء المكونات خارج المنافسة تماماً."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}

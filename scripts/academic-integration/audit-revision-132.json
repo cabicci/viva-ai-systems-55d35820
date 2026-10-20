@@ -1,0 +1,40 @@
+{
+  "role": "academic-audit-source-revision",
+  "items": [
+    132
+  ],
+  "state": "source-only-not-applied-to-database",
+  "originalWorkstream": "7b93d7d707c382c3b2ffc654ece60d43701733c1",
+  "changes": [
+    {
+      "item": 132,
+      "courseId": "AC-BUS",
+      "lessonId": "AC-BUS-M01-L03",
+      "locale": "en",
+      "sourcePath": "experiments/academic/course/expanded/en.json",
+      "beforeSha256": "3a6d35f9002d8af161cb2c13478a1f71f1de41300626835cd990603348b927bf",
+      "afterSha256": "0e036e4f6894259447b97f29a4c2824cc2425010461bd7874d1e10403aa37454",
+      "changedFields": [
+        {
+          "path": "quiz.4.question",
+          "beforeExists": true,
+          "before": "A company decides to offer financial compensation to employees who volunteer for mandatory overtime during a busy period. While this addresses the financial aspect, what other ethical consideration might still be overlooked?",
+          "after": "A company offers voluntary overtime during a busy period with the compensation stated in advance. Employees may decline. Beyond compensation, what other ethical consideration should still be reviewed?"
+        },
+        {
+          "path": "quiz.4.explanation",
+          "beforeExists": true,
+          "before": "The correct answer is 'The impact on employee work-life balance and potential burnout.' While financial compensation addresses one aspect, mandatory overtime can still lead to stress, fatigue, and a negative impact on employees' personal lives, which are crucial ethical considerations related to fairness and employee well-being. The other options are business metrics or external factors, not overlooked ethical considerations related to the employees themselves.",
+          "after": "Index 1 addresses work-life balance and potential burnout. Review fatigue, adequate rest, safety, and whether employees can freely decline without pressure or penalty even when overtime is paid and described as voluntary. Revenue, product prices, and production efficiency do not answer this employee-well-being question."
+        }
+      ]
+    }
+  ],
+  "preserved": [
+    "quiz question IDs and correct indices",
+    "existing saved-field positions and count",
+    "media identities and original downloads",
+    "historical learner attempts; no regrading"
+  ],
+  "pdfAssets": "Dependent download alignment remains separately reviewable"
+}
