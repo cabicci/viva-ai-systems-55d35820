@@ -13,7 +13,7 @@ p.add_argument("--stills",action="store_true")
 p.add_argument("--engine",choices=["cycles","eevee"],default="eevee")
 p.add_argument("--output",default="output")
 args=p.parse_args(sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else None)
-out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
+out=Path(args.output).resolve();out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc=bpy.context.scene
 sc.render.engine="CYCLES" if args.engine=="cycles" else "BLENDER_EEVEE_NEXT"
@@ -21,7 +21,7 @@ sc.cycles.device="CPU"
 sc.cycles.samples=32;sc.cycles.use_denoising=True
 sc.cycles.max_bounces=6;sc.cycles.diffuse_bounces=3;sc.cycles.glossy_bounces=4
 if hasattr(sc,"eevee"):
- sc.eevee.taa_render_samples=64
+ sc.eevee.taa_render_samples=16
 sc.render.resolution_x=1920;sc.render.resolution_y=1080;sc.render.resolution_percentage=100
 sc.render.fps=30;sc.frame_start=1;sc.frame_end=420
 sc.render.image_settings.file_format="PNG";sc.render.image_settings.color_mode="RGB"
@@ -29,10 +29,10 @@ sc.render.use_file_extension=True
 sc.render.threads_mode="FIXED";sc.render.threads=max(1,os.cpu_count() or 4)
 sc.render.film_transparent=False
 sc.view_settings.view_transform="AgX"
-sc.view_settings.look="AgX - Medium High Contrast";sc.view_settings.exposure=0.35
+sc.view_settings.look="AgX - Medium High Contrast";sc.view_settings.exposure=0
 sc.world=bpy.data.worlds.new("Soft studio environment");sc.world.use_nodes=True
 sc.world.node_tree.nodes["Background"].inputs[0].default_value=(0.68,0.78,0.84,1)
-sc.world.node_tree.nodes["Background"].inputs[1].default_value=.35
+sc.world.node_tree.nodes["Background"].inputs[1].default_value=.15
 
 def mat(name,color,metal=0,rough=.4):
  m=bpy.data.materials.new(name);m.use_nodes=True
@@ -48,13 +48,13 @@ noise=n.new("ShaderNodeTexNoise");noise.inputs["Scale"].default_value=3.5;noise.
 l.new(mapping.outputs["Vector"],noise.inputs["Vector"])
 ramp=n.new("ShaderNodeValToRGB")
 ramp.color_ramp.elements[0].position=.25;ramp.color_ramp.elements[0].color=(.13,.035,.009,1)
-ramp.color_ramp.elements[1].position=.78;ramp.color_ramp.elements[1].color=(.69,.34,.12,1)
+ramp.color_ramp.elements[1].position=.78;ramp.color_ramp.elements[1].color=(.52,.235,.065,1)
 e=ramp.color_ramp.elements.new(.50);e.color=(.39,.145,.036,1)
 l.new(noise.outputs["Fac"],ramp.inputs[0]);l.new(ramp.outputs[0],b.inputs["Base Color"])
 bump=n.new("ShaderNodeBump");bump.inputs["Strength"].default_value=.20;bump.inputs["Distance"].default_value=.022
 l.new(noise.outputs["Fac"],bump.inputs["Height"]);l.new(bump.outputs[0],b.inputs["Normal"])
 b.inputs["Coat Weight"].default_value=.22;b.inputs["Coat Roughness"].default_value=.28
-steel=mat("Satin stainless steel • fine brushed surface",(.55,.60,.62),.9,.29)
+steel=mat("Satin stainless steel • fine brushed surface",(.55,.58,.60),.72,.32)
 n=steel.node_tree.nodes;l=steel.node_tree.links;b=n.get("Principled BSDF")
 tc=n.new("ShaderNodeTexCoord");mapping=n.new("ShaderNodeVectorMath");mapping.operation="MULTIPLY"
 mapping.inputs[1].default_value=(55,55,2);l.new(tc.outputs["Generated"],mapping.inputs[0])
@@ -62,6 +62,9 @@ noise=n.new("ShaderNodeTexNoise");noise.inputs["Scale"].default_value=9;noise.in
 l.new(mapping.outputs[0],noise.inputs[0])
 bump=n.new("ShaderNodeBump");bump.inputs["Strength"].default_value=.13;bump.inputs["Distance"].default_value=.006
 l.new(noise.outputs["Fac"],bump.inputs["Height"]);l.new(bump.outputs[0],b.inputs["Normal"])
+mr=n.new("ShaderNodeValToRGB")
+mr.color_ramp.elements[0].color=(.39,.42,.44,1);mr.color_ramp.elements[1].color=(.64,.66,.68,1)
+l.new(noise.outputs["Fac"],mr.inputs[0]);l.new(mr.outputs[0],b.inputs["Base Color"])
 edge=mat("Polished rolled edge",(.66,.70,.72),.95,.20)
 dark=mat("Recess in socket",(.09,.11,.12),.75,.34)
 
@@ -92,15 +95,15 @@ def lathe(name,profile,material,parent,sides=96,hollow=False):
  return mesh(name,v,f,material,parent)
 
 # Lathed, gently ergonomic handle. Fine grain remains procedural and editable.
-profile=[(-.05,.143),(.05,.145),(.35,.15),(.54,.16),(.59,.17),(.63,.205),(.78,.225),(1.03,.245),(1.35,.285),(1.70,.30),(1.98,.29),(2.17,.26),(2.29,.20),(2.36,.11),(2.39,.015)]
+profile=[(-.05,.10),(.05,.13),(.35,.15),(.54,.16),(.59,.17),(.63,.205),(.78,.225),(1.03,.245),(1.35,.285),(1.70,.30),(1.98,.29),(2.17,.26),(2.29,.20),(2.36,.11),(2.39,.015)]
 handle=lathe("Rounded solid wooden grip",profile,wood,groups["Handle"])
 sub=handle.modifiers.new("Continuous grip curvature","SUBSURF");sub.levels=2
 
 # Concave blade; no rectangular planes, spoon bowl or photographic billboard.
 v=[];f=[];nx=32;nz=52
 for iz in range(nz+1):
- t=iz/nz;z=-2.12+2.02*t
- width=(.035+.65*(math.sin(math.pi*t*.85)**.65))*(1-.20*t)
+ t=iz/nz;z=-2.30+2.20*t
+ width=.014+.52*(math.sin(math.pi*t*.92)**.85)
  for ix in range(nx+1):
   u=2*ix/nx-1
   x=u*width
@@ -139,16 +142,17 @@ tex=n.new("ShaderNodeTexNoise");tex.inputs["Scale"].default_value=.19;tex.inputs
 coord=n.new("ShaderNodeTexCoord");l.new(coord.outputs["Object"],tex.inputs[0])
 r=n.new("ShaderNodeValToRGB");r.color_ramp.elements[0].color=(.57,.75,.68,1);r.color_ramp.elements[1].color=(.83,.75,.89,1)
 l.new(tex.outputs["Fac"],r.inputs[0]);l.new(r.outputs[0],b.inputs["Base Color"])
+l.new(r.outputs[0],b.inputs["Emission Color"]);b.inputs["Emission Strength"].default_value=.24
 bpy.ops.mesh.primitive_plane_add(size=200,location=(0,0,-2.75))
 plane=bpy.context.object;plane.name="Continuous pastel studio";plane.data.materials.append(floor)
 def area(name,loc,power,size,color,target=(0,0,.4),shape="DISK"):
  bpy.ops.object.light_add(type="AREA",location=loc)
  o=bpy.context.object;o.name=name;o.data.energy=power;o.data.shape=shape;o.data.size=size;o.data.color=color
  o.rotation_euler=(Vector(target)-o.location).to_track_quat("-Z","Y").to_euler()
-area("Large warm key",(-4,-5,7),1000,5.0,(1,.84,.67))
-area("Cool soft fill",(5,-1,4),800,4,(.72,.86,1))
-area("Tall edge reflection",(-2,4,4),1200,3,(1,1,1))
-area("Front metal reflection",(0,-6,0),280,3,(1,.96,.85))
+area("Large warm key",(-4,-5,7),700,5.0,(1,.84,.67))
+area("Cool soft fill",(5,-1,4),350,4,(.72,.86,1))
+area("Tall edge reflection",(-2,4,4),700,3,(1,1,1))
+area("Front metal reflection",(0,-6,0),550,5,(1,.98,.94))
 bpy.ops.object.camera_add()
 cam=bpy.context.object;cam.name="Continuous inspection camera";cam.data.lens=52;cam.data.clip_end=300
 cam.data.dof.use_dof=True;cam.data.dof.aperture_fstop=7.1
@@ -170,12 +174,12 @@ def state(t):
  groups["Blade"].location=(0,0,-.72*seat)
  groups["Rivet"].location=(.1*pin_return,-.88*pin_return,.1*pin_return)
  # A continuous orbit rather than screen-space image movement.
- az=math.radians(lerp(-67,-110,smooth(0,14,t)))
+ az=math.radians(lerp(-95,-130,smooth(0,14,t)))
  macro=smooth(8.8,10.3,t)*(1-smooth(11.4,13.5,t))
- distance=lerp(11.6+2.3*explode,6.8,macro)
- target=Vector((.12,0,.20+.38*explode))
+ distance=lerp(13.2+3.0*explode,6.8,macro)
+ target=Vector((.05,0,.20*explode))
  target=target.lerp(root.matrix_world @ Vector((0,0,.43)),macro)
- cam.location=target+Vector((math.cos(az)*distance,math.sin(az)*distance,distance*.46))
+ cam.location=target+Vector((math.cos(az)*distance,math.sin(az)*distance,distance*.30))
  cam.rotation_euler=(target-cam.location).to_track_quat("-Z","Y").to_euler()
  focus.location=target
  return {"explosion":explode,"macro":macro,"camera":list(cam.location)}

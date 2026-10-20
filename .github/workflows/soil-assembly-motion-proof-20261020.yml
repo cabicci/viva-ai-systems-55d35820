@@ -31,7 +31,7 @@ jobs:
           assert hashlib.sha256((p/'scene.py').read_bytes()).hexdigest()==d['sceneSHA256']
           assert d['mode'] in ['preview','animation']
           m=[{'name':'preview','args':'--stills'}] if d['mode']=='preview' else [
-            {'name':f'part{i}','args':f'--start {i*70+1} --end {(i+1)*70}'} for i in range(6)]
+            {'name':f'part{i:02d}','args':f'--start {i*21+1} --end {(i+1)*21}'} for i in range(20)]
           with open(os.environ['GITHUB_OUTPUT'],'a') as f:
             f.write('matrix='+json.dumps({'include':m})+'\n')
             f.write('mode='+d['mode']+'\n')
@@ -42,7 +42,7 @@ jobs:
     timeout-minutes: 50
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 20
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
