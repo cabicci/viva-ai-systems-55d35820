@@ -1,0 +1,8 @@
+{
+  "model": "gemini-2.5-flash",
+  "purpose": "timing_analysis_only_not_speech_generation",
+  "audioSHA256": "1ec576831f4c9e79a59f946b5cb7fb195c47e498e819962848d60d4811e575c4",
+  "instruction": "Listen to the attached actual Egyptian Arabic recording. Produce audio-grounded approximate word timestamps, in seconds relative to the start of this recording. Do not distribute time by text length, assume constant word speed, or invent precision. The reference below is expected speech, not a substitute for listening. Report omissions/repetitions/disagreements. Preserve negations and units. A word can have diacritics omitted in your transcription.\nReturn JSON: {\"transcript\":string,\"words\":[{\"word\":string,\"start\":number,\"end\":number,\"confidence\":\"high|medium|low\"}],\"phrases\":[{\"id\":string,\"text\":string,\"start\":number,\"end\":number,\"uncertaintySeconds\":number}],\"disagreements\":[],\"methodLimitations\":string}.\nRequired phrase IDs: hypothetical (المثال ده افتراضي بالكامل), measured (التركيز المقاس هو), value (صفر فاصلة صفر تمانية), unit (مليجرام لكل كيلوجرام غذاء), focus_food (ركز في آخر كلمة غذاء), not_body_weight (الرقم مش لكل كيلوجرام من وزن الإنسان), not_amount (ومش هو الكمية اللي أكلها).\nUse actual audible phrase/word boundaries, including intervening pauses, and state uncertainty honestly. This is estimated multimodal audio timing, not guaranteed forced alignment. Never certify accent correctness.\nReference speech:\nالمثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها.",
+  "maxCalls": 1,
+  "automaticRetries": 0
+}
