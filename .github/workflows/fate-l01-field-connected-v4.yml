@@ -1,0 +1,41 @@
+name: Fate L01 field pronunciation connected v4
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/field-connected-v4/request.json]
+permissions:
+  contents: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/field-connected-v4
+  EXPECTED_REQUEST_SHA256: 3bccc18af50ec50a677c6f531c185b73fbf34673e9702d6fcb47f307e000e8aa
+jobs:
+  field:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: One connected Kore field passage
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "L01-S03-connected-v4"
+      - name: Deliver original recording immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-field-v4-audio
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Actual audio blind and targeted review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "L01-S03-connected-v4"
+      - name: Deliver review evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-field-v4-review
+          path: |
+            ${{ env.PACKAGE }}/output/review/
+            ${{ env.PACKAGE }}/output/review-summary.json
+          retention-days: 30
