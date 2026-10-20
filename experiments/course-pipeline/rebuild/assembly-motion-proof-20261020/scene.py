@@ -10,14 +10,18 @@ p=argparse.ArgumentParser()
 p.add_argument("--start",type=int,default=1)
 p.add_argument("--end",type=int,default=420)
 p.add_argument("--stills",action="store_true")
+p.add_argument("--engine",choices=["cycles","eevee"],default="eevee")
 p.add_argument("--output",default="output")
 args=p.parse_args(sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else None)
 out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc=bpy.context.scene
-sc.render.engine="CYCLES";sc.cycles.device="CPU"
+sc.render.engine="CYCLES" if args.engine=="cycles" else "BLENDER_EEVEE_NEXT"
+sc.cycles.device="CPU"
 sc.cycles.samples=32;sc.cycles.use_denoising=True
 sc.cycles.max_bounces=6;sc.cycles.diffuse_bounces=3;sc.cycles.glossy_bounces=4
+if hasattr(sc,"eevee"):
+ sc.eevee.taa_render_samples=64
 sc.render.resolution_x=1920;sc.render.resolution_y=1080;sc.render.resolution_percentage=100
 sc.render.fps=30;sc.frame_start=1;sc.frame_end=420
 sc.render.image_settings.file_format="PNG";sc.render.image_settings.color_mode="RGB"
@@ -71,7 +75,7 @@ def mesh(name,verts,faces,material,parent):
  o=bpy.data.objects.new(name,me);sc.collection.objects.link(o);o.parent=parent;o.data.materials.append(material)
  for f in me.polygons:f.use_smooth=True
  return o
-def lathe(name,profile,material,parent,sides=96):
+def lathe(name,profile,material,parent,sides=96,hollow=False):
  v=[];f=[]
  for z,r in profile:
   for j in range(sides):
@@ -80,11 +84,15 @@ def lathe(name,profile,material,parent,sides=96):
   for j in range(sides):
    a=i*sides+j;b=i*sides+(j+1)%sides
    f.append((a,b,b+sides,a+sides))
- f.extend([tuple(reversed(range(sides))),tuple((len(profile)-1)*sides+j for j in range(sides))])
+ if hollow:
+  end=(len(profile)-1)*sides
+  for j in range(sides):f.append((end+j,end+(j+1)%sides,(j+1)%sides,j))
+ else:
+  f.extend([tuple(reversed(range(sides))),tuple((len(profile)-1)*sides+j for j in range(sides))])
  return mesh(name,v,f,material,parent)
 
 # Lathed, gently ergonomic handle. Fine grain remains procedural and editable.
-profile=[(.42,.17),(.46,.195),(.57,.21),(.78,.225),(1.03,.245),(1.35,.285),(1.70,.30),(1.98,.29),(2.17,.26),(2.29,.20),(2.36,.11),(2.39,.015)]
+profile=[(-.05,.143),(.05,.145),(.35,.15),(.54,.16),(.59,.17),(.63,.205),(.78,.225),(1.03,.245),(1.35,.285),(1.70,.30),(1.98,.29),(2.17,.26),(2.29,.20),(2.36,.11),(2.39,.015)]
 handle=lathe("Rounded solid wooden grip",profile,wood,groups["Handle"])
 sub=handle.modifiers.new("Continuous grip curvature","SUBSURF");sub.levels=2
 
@@ -110,9 +118,9 @@ sub=blade.modifiers.new("Blade continuity","SUBSURF");sub.levels=1
 
 # Tubular socket with an actual inner bore visible in the exploded state.
 profile=[(-.34,.095),(-.20,.13),(.04,.19),(.34,.225),(.56,.225),(.58,.215),(.58,.174),(.34,.174),(.04,.145),(-.20,.075),(-.34,.07)]
-socket=lathe("Formed metal ferrule and socket",profile,steel,groups["Socket"])
+socket=lathe("Formed metal ferrule and socket",profile,steel,groups["Socket"],hollow=True)
 be=socket.modifiers.new("Manufactured rim bevel","BEVEL");be.width=.012;be.segments=3
-lathe("Polished socket lip",[(.545,.227),(.575,.227),(.584,.216),(.575,.21),(.545,.21)],edge,groups["Socket"])
+lathe("Polished socket lip",[(.545,.227),(.575,.227),(.584,.216),(.575,.21),(.545,.21)],edge,groups["Socket"],hollow=True)
 lathe("Inner tang shown only in construction view",[(-.38,.065),(.48,.065)],dark,groups["Blade"],48)
 
 # Rivet cap and shank, entering the front of the socket radially.
@@ -152,16 +160,20 @@ def smooth(a,b,t):
 def lerp(a,b,x):return a+(b-a)*x
 def state(t):
  # Separate -> hold -> reunite. Each part has stable identity and real geometry.
- explode=smooth(1.9,4.4,t)*(1-smooth(6.1,8.8,t))
+ opened=smooth(1.9,4.4,t)
+ explode=opened*(1-smooth(6.1,8.3,t))
+ # Socket/blade seat first, then wooden grip, then the radial retaining rivet.
+ seat=opened*(1-smooth(5.8,7.3,t))
+ pin_return=opened*(1-smooth(8.3,9.1,t))
  groups["Handle"].location=(0,0,1.28*explode)
- groups["Socket"].location=(0,0,.22*explode)
- groups["Blade"].location=(0,0,-.20*explode)
- groups["Rivet"].location=(.1*explode,-.88*explode,.1*explode)
+ groups["Socket"].location=(0,0,.22*seat)
+ groups["Blade"].location=(0,0,-.72*seat)
+ groups["Rivet"].location=(.1*pin_return,-.88*pin_return,.1*pin_return)
  # A continuous orbit rather than screen-space image movement.
  az=math.radians(lerp(-67,-110,smooth(0,14,t)))
  macro=smooth(8.8,10.3,t)*(1-smooth(11.4,13.5,t))
- distance=lerp(10.4+2.3*explode,6.2,macro)
- target=Vector((.26,0,.48+.38*explode))
+ distance=lerp(11.6+2.3*explode,6.8,macro)
+ target=Vector((.12,0,.20+.38*explode))
  target=target.lerp(root.matrix_world @ Vector((0,0,.43)),macro)
  cam.location=target+Vector((math.cos(az)*distance,math.sin(az)*distance,distance*.46))
  cam.rotation_euler=(target-cam.location).to_track_quat("-Z","Y").to_euler()
@@ -180,9 +192,10 @@ for o in [*groups.values(),cam,focus]:
   for fc in o.animation_data.action.fcurves:
    for kp in fc.keyframe_points:kp.interpolation="LINEAR"
 sc.frame_set(1)
-if args.stills:
+if args.stills or (args.start==1 and args.end>0):
  bpy.ops.wm.save_as_mainfile(filepath=str(out/"assembly-proof.blend"))
- frames=[1,61,121,166,226,286,346,420]
+if args.stills:
+ frames=[1,166,286,420]
 else:frames=list(range(args.start,args.end+1))
 (out/"scene-contract.json").write_text(json.dumps({
  "kind":"construction visualization, not dismantling instruction",
