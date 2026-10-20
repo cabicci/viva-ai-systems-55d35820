@@ -1,0 +1,1 @@
+One new B/Kore Gemini call for targeted shadda only; frozen existing vendor engine, maxAttempts/transportAttempts1. Preserve A and oldB. Separate dependent B-only ASR job uses pinned successful package/model. Candidate requires owner listening; no fullvideo.
