@@ -1,0 +1,39 @@
+name: Fate L01 Arabic full pronunciation review
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pronunciation-review-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        scene: ["L01-S01", "L01-S02", "L01-S03", "L01-S04", "L01-S05", "L01-S06", "L01-S07", "L01-S08", "L01-S09", "L01-S10"]
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pronunciation-review-v1
+      GH_TOKEN: ${{ github.token }}
+      EXPECTED_REQUEST_SHA256: 6d600bd0b2cd1848a4ecc4715c8762996be995175d6e6375d5e8b1ecb27aa1c9
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Receive exact current final Arabic video
+        run: gh run download 39406430592 --repo "$GITHUB_REPOSITORY" --name fate-l01-complete-ar --dir "$PACKAGE/source"
+      - name: Decode actual audio and review both ways
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/worker.py" "${{ matrix.scene }}"
+      - name: Deliver this scene review immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pronunciation-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
