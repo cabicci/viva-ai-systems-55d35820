@@ -1,0 +1,64 @@
+name: Fate L01 tomato calculation listening v2
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/listening-v2/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/listening-v2
+  EXPECTED_REQUEST_SHA256: 025881d4e05b4b9885b473cca6d8a421fd10f56af643a90c5376f79259c0939c
+jobs:
+  speech:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        part: [C01, C02, C03]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Generate one short complete passage without retries
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Deliver finished original audio immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-listening-v2-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Screen actual audio for words numbers negation and uncertainty
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - name: Deliver actual automatic review evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-listening-v2-review-${{ matrix.part }}
+          path: |
+            ${{ env.PACKAGE }}/output/review/
+            ${{ env.PACKAGE }}/output/review-summary.json
+          retention-days: 30
+  assemble:
+    needs: speech
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Reuse exact accepted audio and assemble listening sample only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/assemble.py"
+      - name: Deliver combined listening sample
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-listening-v2-sample
+          path: ${{ env.PACKAGE }}/assembled/
+          retention-days: 30

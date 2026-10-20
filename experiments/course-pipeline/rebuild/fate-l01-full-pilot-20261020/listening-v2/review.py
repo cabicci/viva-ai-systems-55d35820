@@ -1,0 +1,8 @@
+from pathlib import Path
+import json,os,sys,shutil,subprocess,hashlib
+R=Path(__file__).parent;M=json.loads((R/'request.json').read_text(encoding='utf-8'));sid=sys.argv[1];C=next(s for s in M['segments'] if s['id']==sid);O=R/'output';v=json.loads((O/'verification.json').read_text());Q=O/'review';(Q/'source').mkdir(parents=True,exist_ok=True)
+shutil.copyfile(O/(sid+'.wav'),Q/'source'/(sid+'.wav'));shutil.copyfile(R/'audio_review_worker.py',Q/'audio_review_worker.py')
+m={'id':M['id']+'-'+sid,'sourceMode':'generated_wav','sourceSHA256':v['wavSHA256'],'model':M['analysisModel'],'automaticRetries':0,'speechCalls':0,'coreSeconds':v['durationSeconds'],'contextSeconds':0,'analysisPasses':['blind','reference'],'maxAnalysisCalls':2,'scenes':[{'id':sid,'voice':C['voice'],'start':0,'duration':v['durationSeconds'],'text':C['spokenText'],'chunks':1,'sourceAudioSHA256':v['wavSHA256']}]}
+f=Q/'review-request.json';f.write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');env=dict(os.environ,EXPECTED_REQUEST_SHA256=hashlib.sha256(f.read_bytes()).hexdigest());r=subprocess.run([sys.executable,str(Q/'audio_review_worker.py'),sid],env=env)
+summary={'status':'AUTOMATED_SCREEN_COMPLETE_REQUIRES_LISTENING' if r.returncode==0 else 'AUTOMATED_SCREEN_INCOMPLETE_HOLD','reviewExitCode':r.returncode,'humanListeningApproved':False,'renderAllowed':False,'sourceAudioSHA256':v['wavSHA256'],'limits':'ASR agreement is not native accent approval. Original complete audio and all reviewer findings preserved.'};(O/'review-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+print(json.dumps(summary))

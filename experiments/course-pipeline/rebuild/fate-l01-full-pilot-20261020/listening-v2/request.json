@@ -1,0 +1,75 @@
+{
+  "id": "L01-tomato-calculation-listening-v2",
+  "scope": "Owner-authorized bounded Arabic listening repair sample only, no full lesson/video replacement",
+  "model": "gemini-2.5-flash-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "voices": {
+    "A": "Charon",
+    "B": "Kore"
+  },
+  "automaticRetries": 0,
+  "maxSpeechCalls": 3,
+  "maxAnalysisCalls": 6,
+  "humanListeningApproved": false,
+  "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.",
+  "segments": [
+    {
+      "id": "C01",
+      "voice": "Charon",
+      "spokenText": "طيب، لو شخص أكل ميتين جرام من الطّماطم دي؟ نحَوّل الوزن لكيلوجرام: ميتين جرام يعني صفر فاصلة اتنين كيلوجرام.",
+      "captionText": "طيب، لو شخص أكل ميتين جرام من الطّماطم دي؟ نحَوّل الوزن لكيلوجرام: ميتين جرام يعني صفر فاصلة اتنين كيلوجرام.",
+      "displayText": "200 g = 0.2 kg",
+      "sourceMeaning": "200 g = 0.2 kg; hypothetical consumption, not a recommended serving.",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nالطّماطم: نطق مصري طبيعي اِطّماطِم، et-ta-MAA-tem. ميتين جرام معناها 200 جرام. صفر فاصلة اتنين معناها 0.2. دي تعليمات، ما تقراهاش.",
+      "textSHA256": "05bfa4a3a0f62b9300adc446b4b4a09e2e38cce3c0bd4ca2b29f1691dea0bba8",
+      "deliverySHA256": "97b3f10243c27ea9a2e21201d38c78875f6a6950559abba3062f454fc06686fc"
+    },
+    {
+      "id": "C02",
+      "voice": "Charon",
+      "spokenText": "نضرب التّركيز في الوزن: صفر فاصلة صفر تمانية، في صفر فاصلة اتنين. يطلع صفر فاصلة صفر واحد ستّة مِلّيجرام من متبقّي المبيد.",
+      "captionText": "نضرب التّركيز في الوزن: صفر فاصلة صفر تمانية، في صفر فاصلة اتنين. يطلع صفر فاصلة صفر واحد ستّة مِلّيجرام من متبقّي المبيد.",
+      "displayText": "0.08 mg/kg × 0.2 kg = 0.016 mg",
+      "sourceMeaning": "0.08 mg/kg * 0.2 kg = 0.016 mg in the consumed portion.",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nالمقصود بالأرقام: 0.08 ثم 0.2 ثم الناتج 0.016. انطق كلّ صفر وكلّ رقم مكتوب في النصّ؛ ما تختصرش وما تضيفش رقم. «مِلّيجرام» فيها لام مشدّدة، و«ستّة» فيها تاء مشدّدة. دي تعليمات، ما تقراهاش.",
+      "textSHA256": "bb713763c47deacc8e388dc019b6c0f5370f9ada793d08553349282cf20934d9",
+      "deliverySHA256": "72e95878a1897670677cdb155b176f99d3e71fee59699f5bc2de61761eb09adf"
+    },
+    {
+      "id": "C03",
+      "voice": "Charon",
+      "spokenText": "دي الكمّيّة الموجودة في الجزء اللّي اتاكل. مش بالضّرورة الكمّيّة اللّي الجسم امتصّها، ومش دليل لوحدها إنّ الشخص حصل له ضرر.",
+      "captionText": "دي الكمّيّة الموجودة في الجزء اللّي اتاكل. مش بالضّرورة الكمّيّة اللّي الجسم امتصّها، ومش دليل لوحدها إنّ الشخص حصل له ضرر.",
+      "displayText": "Ingested residue ≠ absorbed amount; calculation alone does not establish harm.",
+      "sourceMeaning": "Ingested residue is not necessarily absorbed amount; this calculation alone does not establish harm.",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nخلّي «مش بالضّرورة» و«مش دليل لوحدها» واضحين، وراعي الشدّة في «الكمّيّة» و«امتصّها». دي تعليمات، ما تقراهاش.",
+      "textSHA256": "52c8d3983c4b4aa7ffb7584c4e3a8428cca1af75e74e911ae1d50eb07b79667a",
+      "deliverySHA256": "e5b02619c7d2c0c5f80f79392d5696bdd898ab3cf60b362cc534caa2e38fc9d8"
+    }
+  ],
+  "reuse": [
+    {
+      "id": "tomato-prefix",
+      "run": 39436069856,
+      "artifact": "fate-l01-tomato-prefix-v1",
+      "file": "L01-S05-prefix-candidate.wav",
+      "sha256": "6fc23d7e8a362cc79d172925096298e970c5448c2ad0958ee22d92fa53d0cf5c",
+      "text": "نرجع لتقرير الطّماطم.",
+      "voice": "Kore",
+      "ownerAccepted": false
+    },
+    {
+      "id": "accepted-concentration",
+      "run": 39395373281,
+      "artifact": "fate-l01-kore-qaf-repair",
+      "file": "voice-B.wav",
+      "sha256": "1ec576831f4c9e79a59f946b5cb7fb195c47e498e819962848d60d4811e575c4",
+      "text": "المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها.",
+      "voice": "Kore",
+      "ownerAccepted": true
+    }
+  ],
+  "scientificReference": "Existing accepted L01 S05 and S07 fictional educational example. No new regulatory/medical claim.",
+  "captionPolicy": "Separate script/caption files; captions are text only pending accepted recording timings. No timing from text length.",
+  "approvalPolicy": "Automatic analysis is a screen for omissions/numbers/repeats/uncertainty, never native accent certification."
+}
