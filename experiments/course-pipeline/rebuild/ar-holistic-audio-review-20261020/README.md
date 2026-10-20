@@ -1,0 +1,3 @@
+# Actual-audio diagnostic
+
+One Gemini audio-understanding call per unchanged A/B WAV. No TTS, ASR, image generation, render, retry, fallback, or production acceptance. Exact artifact/head/hash checks precede model access. Source B run has successful b-voice and failed downstream ASR; the successful voice job is checked. Output retains prompts, raw responses, model metadata and per-clip ledgers. Intended text is a comparison target, not proof of audible pronunciation. All judgments and timestamps require human review. Stable gemini-2.5-flash supports audio input/text output; account availability is checked before diagnostics.
