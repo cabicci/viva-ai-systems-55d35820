@@ -1,0 +1,80 @@
+name: Fate L01 connected Arabic v5
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/arabic-connected-v5/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/arabic-connected-v5
+  EXPECTED_REQUEST_SHA256: c21fb18559339f9cd2fba2c4e402e0f0170ab8ebfd5af05be3f9f56a956849ad
+jobs:
+  audio:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["L01-S01-connected-v5", "L01-S02-connected-v5", "L01-S04-connected-v5", "L01-S05-connected-v5", "L01-S06-connected-v5", "L01-S07-intro-connected-v5", "L01-S07-outro-connected-v5", "L01-S08-connected-v5", "L01-S09-connected-v5", "L01-S10-connected-v5"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Generate complete passage
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Deliver each original immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-connected-v5-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Review actual pronunciation and completeness
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - name: Compare voice with actual accepted recording
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/continuity.py" "${{ matrix.part }}"
+      - name: Deliver actual review evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-connected-v5-review-${{ matrix.part }}
+          path: |
+            ${{ env.PACKAGE }}/output/review/
+            ${{ env.PACKAGE }}/output/continuity/
+            ${{ env.PACKAGE }}/output/review-summary.json
+          retention-days: 30
+  assemble:
+    needs: audio
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Assemble without trimming accepted PCM
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/assemble.py"
+      - name: Deliver complete recording immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-connected-v5-complete
+          path: ${{ env.PACKAGE }}/assembled/
+          retention-days: 30
+      - name: Listen automatically to actual internal joins
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/continuity.py" joins
+      - name: Deliver join evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-connected-v5-joins
+          path: ${{ env.PACKAGE }}/assembled/join-reviews/
+          retention-days: 30
