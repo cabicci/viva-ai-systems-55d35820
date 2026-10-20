@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "requestId": "ar-two-approved-excerpts-word-timing-20261020",
+  "scope": "ASR-only two existing owner-approved short voice excerpts; no speech/images/video generation",
+  "source": {
+    "repository": "cabicci/viva-ai-systems-55d35820",
+    "runId": 39339540357,
+    "headSha": "90a196b1ac801469b15dd58fd3b412983f49c96a",
+    "artifactName": "soil-egyptian-two-voice-listening-proof",
+    "expectedRunAttempt": 1
+  },
+  "clips": [
+    {
+      "id": "A",
+      "sha256": "0d8bae78d3cafbe31b5b173eddb8686b87afa7e7f7cc1f32b13705a673ed67e5",
+      "durationSeconds": 12.130958
+    },
+    {
+      "id": "B",
+      "sha256": "939baa6cd376f9df76687d03476d0e57d1880953ac9a41b176bccb72ce2a2080",
+      "durationSeconds": 9.210958
+    }
+  ],
+  "asr": {
+    "package": "faster-whisper",
+    "version": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "device": "cpu",
+    "computeType": "int8",
+    "cpuThreads": 2,
+    "numWorkers": 1,
+    "language": "ar",
+    "wordTimestamps": true,
+    "beamSize": 5,
+    "vadFilter": false,
+    "conditionOnPreviousText": false
+  },
+  "provenance": [
+    "https://github.com/SYSTRAN/faster-whisper",
+    "https://pypi.org/project/faster-whisper/1.2.1/"
+  ],
+  "limitations": [
+    "ASR-estimated words/times/probabilities, not guaranteed forced alignment or human listening.",
+    "No proportional text timing, invented anchors, retries or full-movie launch.",
+    "Unrecognized/mistranscribed words remain uncertain."
+  ],
+  "maximumAsrAttempts": 1
+}
