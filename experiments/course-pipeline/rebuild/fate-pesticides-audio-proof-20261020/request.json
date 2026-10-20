@@ -1,0 +1,30 @@
+{
+  "status": "TWO_SHORT_LISTENING_SAMPLES_ONLY_NOT_OWNER_APPROVED",
+  "course": "Masaarat — Fate of Pesticides in the Environment",
+  "sourceLesson": "L07",
+  "sourcePages": [19, 22],
+  "locale": "ar-EG",
+  "provider": "Gemini TTS through GitHub Actions",
+  "model": "gemini-2.5-flash-preview-tts",
+  "voiceA": "Charon",
+  "voiceB": "Kore",
+  "deliveryInstruction": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرس بيشرح لطلبة جامعة عندهم أساس في الكيمياء والأحياء بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللي المصريين بينطقوها كده. انطق «بص» و«بتنجرف» و«الميّه» و«علشان» بالنطق المصري اليومي. حافظ على الوقفات الطبيعية والمعنى العلمي. اقرأ نص الإلقاء بس، من غير قراءة التعليمات أو أسماء المتكلمين، ومن غير مقدمة أو تعليق. بلاش نبرة نشرات الأخبار، وبلاش فصحى أو لهجة خليجية، وبلاش تمثيل مبالغ فيه أو تطويل الحروف.",
+  "segments": [
+    {
+      "speaker": "A",
+      "voice": "Charon",
+      "spokenText": "بص على مسار نقطة الرش: بتخرج من الفوّهة، وتتحرك ناحية الورقة. بعدها يا تترسّب عليها، يا تنجرف بعيد. اختفاء المبيد من مكان الرش ما يثبتش إنه اتحلّل؛ ممكن يكون انتقل للتربة أو الميّه.",
+      "sourceMeaning": "Atomization, transport, deposition and drift in source p22; disappearance at application site does not prove transformation."
+    },
+    {
+      "speaker": "B",
+      "voice": "Kore",
+      "spokenText": "ولو الضوء غيّر تركيب الجزيء، ده تحوّل كيميائي. علشان نحكم على الخطر، لازم نعرف التركيز، وطريق التعرّض، والكائن اللي وصلته المادة.",
+      "sourceMeaning": "Phototransformation and source p19 mobility/persistence factor diagram; risk needs exposure context."
+    }
+  ],
+  "maxGenerationCalls": 2,
+  "automaticRetries": 0,
+  "ownerListeningApproved": false,
+  "fullLessonGenerationAuthorized": false
+}
