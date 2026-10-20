@@ -1,0 +1,289 @@
+{
+  "id": "L01-ar-connected-v7",
+  "scope": "One bounded retry of unaccepted S10 after blind/reference disagreement between عينة and عيانة; rephrase as report of bean analysis preserving quantities, task and scientific meaning. Reuse all remaining accepted and corrected audio unchanged.",
+  "model": "gemini-2.5-flash-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 1,
+  "maxAnalysisCalls": 9,
+  "segments": [
+    {
+      "id": "L01-S10-connected-v7",
+      "scene": "L01-S10",
+      "voice": "Charon",
+      "spokenText": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. معانا تقرير تحليل للفاصوليا. تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي.",
+      "captionText": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. معانا تقرير تحليل للفاصوليا. تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي.",
+      "delivery": "DIRECTOR NOTES, NOT SPOKEN: Adult Egyptian male narrator, natural mid register, warm lightly nasal resonance, conversational clarity. Avoid a deep chesty announcer tone. Use one steady voice throughout. Natural Cairo Egyptian Arabic, G as in gold, everyday Egyptian glottal qaf where appropriate. Medium conversational pace; complete sentence endings and natural breathing pauses. No role play, introductions, repetitions or spoken instructions. Speak ONLY the Arabic TRANSCRIPT that follows.\nتعليمات نطق فقط، لا تُقرأ: مصري طبيعي، من غير فصحى أو لهجة خليجية. حافظ على الأرقام والوحدات والنفي والشدّات.  «ميّة وخمسين» هنا العدد 150، مش مياه؛ انطق الأرقام كاملة بدقّة.",
+      "textSHA256": "66532ff1486f5b9bb0cfabdfb9763eb17b9e2c01bac30eb508d21e1bfc6e4110",
+      "deliverySHA256": "cf1a7e80eec59590074f8c18b9d3b2dd56424f58bb5fb6eda0469f16456b6322",
+      "sourceParts": [
+        "L01-S10"
+      ]
+    }
+  ],
+  "retained": [],
+  "reuse": [
+    {
+      "id": "accepted-B",
+      "file": "voice-B-tomato-concentration.wav",
+      "sha256": "a7fbccb078f3431e1d0dc0f85cd800d49db04aab4b33d0192eb664fc34c2cd81",
+      "run": 39451369321,
+      "artifact": "fate-l01-listening-v2-sample",
+      "ownerAccepted": true
+    },
+    {
+      "id": "accepted-A",
+      "file": "voice-A-calculation.wav",
+      "sha256": "91189cdd29d736ab6c7112f90e512e08299066370134d6f7efb83a80bede4bd4",
+      "run": 39451369321,
+      "artifact": "fate-l01-listening-v2-sample",
+      "ownerAccepted": true
+    },
+    {
+      "id": "accepted-field",
+      "file": "L01-S03-connected-v4.wav",
+      "sha256": "0a0de71b55c99deeae38d776c10e5350a721f12c49b4808b07aeaa3f6c977010",
+      "run": 39478160657,
+      "artifact": "fate-l01-field-v4-audio",
+      "ownerAccepted": true
+    },
+    {
+      "id": "L01-S05-connected-v5",
+      "file": "L01-S05-connected-v5.wav",
+      "sha256": "0880f543be437db4b0d5ffc1c924dc99feb7182cd55bfa19ce8a3ee2ebae6cbf",
+      "run": 39479309957,
+      "artifact": "fate-l01-connected-v5-L01-S05-connected-v5",
+      "ownerAccepted": false,
+      "reuseBasis": "Actual audio checks reviewed; no confirmed defect. Preserved unchanged, pending full owner listening."
+    },
+    {
+      "id": "L01-S06-connected-v5",
+      "file": "L01-S06-connected-v5.wav",
+      "sha256": "c740f9d7ab09eeb98d0055a8b6e00d967673aea284714cacea0ef23e325505a9",
+      "run": 39479309957,
+      "artifact": "fate-l01-connected-v5-L01-S06-connected-v5",
+      "ownerAccepted": false,
+      "reuseBasis": "Actual audio checks reviewed; no confirmed defect. Preserved unchanged, pending full owner listening."
+    },
+    {
+      "id": "L01-S07-intro-connected-v5",
+      "file": "L01-S07-intro-connected-v5.wav",
+      "sha256": "505935c67497c8041d1dd84e4a98aca78304754acf19768cdd4709668194d947",
+      "run": 39479309957,
+      "artifact": "fate-l01-connected-v5-L01-S07-intro-connected-v5",
+      "ownerAccepted": false,
+      "reuseBasis": "Actual audio checks reviewed; no confirmed defect. Preserved unchanged, pending full owner listening."
+    },
+    {
+      "id": "L01-S07-outro-connected-v5",
+      "file": "L01-S07-outro-connected-v5.wav",
+      "sha256": "9967240621a75047276c7e4f7e13923dbd788647e2f1e2d981f39cf4df56d296",
+      "run": 39479309957,
+      "artifact": "fate-l01-connected-v5-L01-S07-outro-connected-v5",
+      "ownerAccepted": false,
+      "reuseBasis": "Actual audio checks reviewed; no confirmed defect. Preserved unchanged, pending full owner listening."
+    },
+    {
+      "id": "L01-S08-connected-v5",
+      "file": "L01-S08-connected-v5.wav",
+      "sha256": "2689278e175d67073540b936c0478b18227df2470b8bf4c68fd736f84bca6e77",
+      "run": 39479309957,
+      "artifact": "fate-l01-connected-v5-L01-S08-connected-v5",
+      "ownerAccepted": false,
+      "reuseBasis": "Actual audio checks reviewed; no confirmed defect. Preserved unchanged, pending full owner listening."
+    },
+    {
+      "id": "L01-S01-connected-v6",
+      "file": "L01-S01-connected-v6.wav",
+      "sha256": "985317e9a8d90e4a4fde2e859ed80f7d8bfa01f8726e19c402eb14690e1a3aa5",
+      "run": 39480237836,
+      "artifact": "fate-l01-connected-v6-L01-S01-connected-v6",
+      "ownerAccepted": false,
+      "reuseBasis": "Preserve existing corrected recording, review must be inspected before presentation."
+    },
+    {
+      "id": "L01-S02-connected-v6",
+      "file": "L01-S02-connected-v6.wav",
+      "sha256": "d092cd1aee11f9afa0325e76616788fd9943e566678daa08ef270d801eee51a8",
+      "run": 39480237836,
+      "artifact": "fate-l01-connected-v6-L01-S02-connected-v6",
+      "ownerAccepted": false,
+      "reuseBasis": "Preserve existing corrected recording, review must be inspected before presentation."
+    },
+    {
+      "id": "L01-S04-connected-v6",
+      "file": "L01-S04-connected-v6.wav",
+      "sha256": "f4c8dd7920c46f42b96c30276e50b9c38b695989f0608cccb4f43ca518a3b7fe",
+      "run": 39480237836,
+      "artifact": "fate-l01-connected-v6-L01-S04-connected-v6",
+      "ownerAccepted": false,
+      "reuseBasis": "Preserve existing corrected recording, review must be inspected before presentation."
+    },
+    {
+      "id": "L01-S09-connected-v6",
+      "file": "L01-S09-connected-v6.wav",
+      "sha256": "69eb52151e4e3bd54e6036e7572952440e9de7e1c3d009d178c2bd180b730f76",
+      "run": 39480237836,
+      "artifact": "fate-l01-connected-v6-L01-S09-connected-v6",
+      "ownerAccepted": false,
+      "reuseBasis": "Preserve existing corrected recording, review must be inspected before presentation."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "title": "نتيجة تحليل… نقدر نستنتج منها إيه؟",
+      "parts": [
+        "L01-S01-connected-v6"
+      ],
+      "sourceClaim": "A residue detection alone does not establish an individual health outcome.",
+      "sourceReferences": [
+        "PDF p3: food residues and human exposure",
+        "Invented tomato case"
+      ],
+      "voice": "Kore"
+    },
+    {
+      "id": "L01-S02",
+      "title": "المتبقي مش لازم يكون ظاهرًا",
+      "parts": [
+        "L01-S02-connected-v6"
+      ],
+      "sourceClaim": "Residues may include specified parent and relevant derivative substances; report and reference must use compatible definitions.",
+      "sourceReferences": [
+        "PDF pp3–4: residue context",
+        "Codex glossary: pesticide residue"
+      ],
+      "voice": "Charon"
+    },
+    {
+      "id": "L01-S03",
+      "title": "نتتبع الطريق من الحقل",
+      "parts": [
+        "accepted-field"
+      ],
+      "sourceClaim": "Different transport routes can connect one application source with food, water, soil and non-target organisms; none alone proves injury.",
+      "sourceReferences": [
+        "PDF p4: environment and life-forms figure",
+        "EPA exposure characterization: possible transport/contact pathways"
+      ],
+      "voice": "Kore"
+    },
+    {
+      "id": "L01-S04",
+      "title": "قدرة على الضرر، تعرّض، مخاطر",
+      "parts": [
+        "L01-S04-connected-v6"
+      ],
+      "sourceClaim": "Effect evidence and exposure information answer different questions and must be integrated for a case-specific risk assessment.",
+      "sourceReferences": [
+        "PDF pp3–6: exposure and effects",
+        "Scientific clarification of inference"
+      ],
+      "voice": "Charon"
+    },
+    {
+      "id": "L01-S05",
+      "title": "نقرأ التقرير قبل المقارنة",
+      "parts": [
+        "accepted-B",
+        "L01-S05-connected-v5"
+      ],
+      "sourceClaim": "A food concentration must be interpreted using the matching analyte, residue definition, commodity, sample basis and units.",
+      "sourceReferences": [
+        "PDF p3: residues and standards",
+        "Codex glossary: MRL",
+        "Invented tomato case"
+      ],
+      "voice": "Kore"
+    },
+    {
+      "id": "L01-S06",
+      "title": "النتيجة وحدودها",
+      "parts": [
+        "L01-S06-connected-v5"
+      ],
+      "sourceClaim": "Below the illustrative concentration limit is the supported numerical conclusion; the difference is not a personal safety allowance.",
+      "sourceReferences": [
+        "PDF p3: standard-setting context",
+        "Scientific clarification",
+        "Invented arithmetic"
+      ],
+      "voice": "Charon"
+    },
+    {
+      "id": "L01-S07",
+      "title": "من التركيز إلى كمية في حصة",
+      "parts": [
+        "L01-S07-intro-connected-v5",
+        "accepted-A",
+        "L01-S07-outro-connected-v5"
+      ],
+      "sourceClaim": "Concentration times food mass estimates residue amount in the portion, not absorbed dose or risk.",
+      "sourceReferences": [
+        "Author-created quantitative bridge to L02",
+        "Dimensional arithmetic"
+      ],
+      "voice": "Charon"
+    },
+    {
+      "id": "L01-S08",
+      "title": "نفكك ادعاءً من جدول الأضرار",
+      "parts": [
+        "L01-S08-connected-v5"
+      ],
+      "sourceClaim": "A listed effect cannot be applied to a new consumer exposure without checking chemical identity, evidence, endpoint, dose, route and duration.",
+      "sourceReferences": [
+        "PDF pp4–6: Table 1; no row-level validation claimed"
+      ],
+      "voice": "Kore"
+    },
+    {
+      "id": "L01-S09",
+      "title": "التقييم والممارسة الزراعية",
+      "parts": [
+        "L01-S09-connected-v6"
+      ],
+      "sourceClaim": "Scientific assessment informs standards and management; a sample result does not prescribe application or harvest decisions.",
+      "sourceReferences": [
+        "PDF p3 and p4 continuation: FAO/WHO, JMPR, standards, GAP and lifecycle"
+      ],
+      "voice": "Kore"
+    },
+    {
+      "id": "L01-S10",
+      "title": "دورك: حالة جديدة",
+      "parts": [
+        "L01-S10-connected-v7"
+      ],
+      "sourceClaim": "Learners must independently distinguish concentration comparison, ingested amount and unsupported health inference.",
+      "sourceReferences": [
+        "Author-created transfer task aligned to L01 objectives"
+      ],
+      "voice": "Charon"
+    }
+  ],
+  "voiceReferences": {
+    "Kore": {
+      "id": "accepted-field",
+      "file": "L01-S03-connected-v4.wav",
+      "sha256": "0a0de71b55c99deeae38d776c10e5350a721f12c49b4808b07aeaa3f6c977010",
+      "run": 39478160657,
+      "artifact": "fate-l01-field-v4-audio",
+      "ownerAccepted": true
+    },
+    "Charon": {
+      "id": "accepted-A",
+      "file": "voice-A-calculation.wav",
+      "sha256": "91189cdd29d736ab6c7112f90e512e08299066370134d6f7efb83a80bede4bd4",
+      "run": 39451369321,
+      "artifact": "fate-l01-listening-v2-sample",
+      "ownerAccepted": true
+    }
+  },
+  "ownerListeningApproved": false,
+  "renderAllowed": false,
+  "acceptedSampleSHA256": "774662095891f3ff429f78302e1f37f3cad5a142840ae36b0a2bbc905336532c",
+  "joinPolicy": "Preserve all source PCM. Add only measured missing low-energy separation toward 0.22s within scene / 0.32s between scenes. Never trim, stretch, normalize or crossfade approved sources.",
+  "additionalReview": "S09 prior blind request timed out (unknown outcome, not retried). Make new shorter overlapping blind windows against exact existing WAV, maximum three calls, to fill coverage and triage unsupported 0.299-second rash allegation. No S09 TTS."
+}
