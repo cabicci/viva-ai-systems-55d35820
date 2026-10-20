@@ -1,0 +1,34 @@
+name: Fate of Pesticides Egyptian Gemini two-voice proof
+on:
+  push:
+    branches: [work/fate-pesticides-audio-proof-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-pesticides-audio-proof-20261020/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: fate-pesticides-egyptian-voice-proof-20261020
+  cancel-in-progress: false
+jobs:
+  proof:
+    if: github.ref == 'refs/heads/work/fate-pesticides-audio-proof-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-pesticides-audio-proof-20261020
+      EXPECTED_REQUEST_SHA256: 731926e761445e4c69cd0f48a0489893fb9b6f9c74050d23778b5d21b2fb4fd8
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Generate only two separate Gemini samples
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/voice-proof.py"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-pesticides-egyptian-two-voice-proof
+          retention-days: 30
+          path: ${{ env.PACKAGE }}/output/
