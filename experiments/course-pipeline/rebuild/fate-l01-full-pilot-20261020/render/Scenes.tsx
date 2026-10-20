@@ -61,8 +61,8 @@ function Scene({scene}:{scene:any}){
     <path d="M580 330 C820 190 1030 230 1290 410" fill="none" stroke={gold} strokeWidth={5} strokeDasharray="10 9" opacity={p(3)}/>
    </svg>
    <div style={{...right,top:245,left:1330,width:480,height:540,fontSize:29}}>
-    {label(T('غذاء → تناول','Food → consumption'),0)}
-    {label(T('تربة → جريان → مياه','Soil → runoff → water'),1)}
+    {label(T('غذاء ← تناول','Food → consumption'),0)}
+    {label(T('تربة ← جريان ← مياه','Soil → runoff → water'),1)}
     {label(T('هل وصلت؟ وبأي تركيز؟','Did it arrive? At what concentration?'),2)}
     {label(T('انجراف رذاذ خارج الهدف','Spray drift beyond the target'),3)}
     <div style={{...reveal(4),fontWeight:800,background:mint,padding:16,marginTop:25,borderRadius:12}}>{T('سهم الانتقال ≠ دليل ضرر','Movement arrow ≠ evidence of harm')}</div>

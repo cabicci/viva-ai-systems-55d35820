@@ -17,29 +17,7 @@ jobs:
       matrix:
         include:
           - lang: ar
-            scene: "01"
-          - lang: ar
-            scene: "02"
-          - lang: ar
             scene: "03"
-          - lang: ar
-            scene: "04"
-          - lang: ar
-            scene: "05"
-          - lang: ar
-            scene: "06"
-          - lang: ar
-            scene: "07"
-          - lang: ar
-            scene: "08"
-          - lang: ar
-            scene: "09"
-          - lang: ar
-            scene: "10"
-          - lang: en
-            scene: "04"
-          - lang: en
-            scene: "07"
     env:
       PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
       GH_TOKEN: ${{ github.token }}
@@ -79,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        lang: [ar, en]
+        lang: [ar]
     env:
       PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
       GH_TOKEN: ${{ github.token }}
