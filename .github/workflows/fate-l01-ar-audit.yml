@@ -1,0 +1,34 @@
+name: Fate L01 Arabic timing review without regenerating speech
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/audit/request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        scene: ['01', '03', '04', '08', '10']
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/audit
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar --dir "$PACKAGE/base"
+      - name: Analyze short actual audio windows
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/audit-ar.py" "${{ matrix.scene }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-ar-audit-S${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
