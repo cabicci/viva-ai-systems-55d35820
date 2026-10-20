@@ -7,7 +7,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: soil-ar-word-timing-20261020-e52bb3dd549ce03a5d398c111ff6dc65b511e95a0c304b878d786b2fbccd739e
+  group: soil-ar-word-timing-20261020-b68754054ccd4da339791843450073e91bd54cbb601001bf0451454325c18b56
   cancel-in-progress: false
 jobs:
   word-timing:
@@ -16,8 +16,8 @@ jobs:
     timeout-minutes: 15
     env:
       PACKAGE: experiments/course-pipeline/rebuild/ar-word-timing-20261020
-      REQUEST_SHA: e52bb3dd549ce03a5d398c111ff6dc65b511e95a0c304b878d786b2fbccd739e
-      SCRIPT_SHA: 3e7df525dc6040784292197d8fd5c15c230a2898ac18599a8858d196c4bb750f
+      REQUEST_SHA: b68754054ccd4da339791843450073e91bd54cbb601001bf0451454325c18b56
+      SCRIPT_SHA: 5f0a3df7ece6849cd5549d7e537fec466a36c969b4c87518df5f3b41b6ad9f23
       PYTHONUNBUFFERED: '1'
       HF_HUB_DISABLE_TELEMETRY: '1'
       OMP_NUM_THREADS: '2'
@@ -30,6 +30,10 @@ jobs:
         run: |
           echo "$REQUEST_SHA  $PACKAGE/request.json" | sha256sum -c -
           echo "$SCRIPT_SHA  $PACKAGE/word_timing.py" | sha256sum -c -
+      - name: Verify and fetch only the retained source artifact before package install
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/word_timing.py" fetch-only
       - name: Download and verify pinned faster-whisper package
         run: |
           python -m pip download --no-deps --dest "$PACKAGE/wheels" faster-whisper==1.2.1
@@ -37,8 +41,6 @@ jobs:
       - name: Install pinned package and record resolved dependencies
         run: python -m pip install --disable-pip-version-check --report "$PACKAGE/output/pip-install-report.private.json" "$PACKAGE"/wheels/faster_whisper-1.2.1-*.whl
       - name: Estimate words on only the two verified existing excerpts
-        env:
-          GH_TOKEN: ${{ secrets.Githubtoken }}
         run: python "$PACKAGE/word_timing.py" transcribe
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

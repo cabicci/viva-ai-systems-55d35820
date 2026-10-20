@@ -48,8 +48,13 @@
   "maximumAsrAttempts": 1,
   "transportCorrection": {
     "canonicalTextBytes": "UTF-8 LF",
-    "previousPreflightRun": 39381258294,
+    "previousZeroAsrRuns": [
+      39381258294,
+      39381498152
+    ],
     "previousAsrCalls": 0,
-    "reason": "Hash committed bytes; previous WindowsCRLF request guard stopped before package/input/model/ASR. One corrected launch authorized, no waveform or semantic ASR setting change."
+    "authentication": "same-repository github.token with actions:read; no secret credential dependency",
+    "verifyArtifactBeforeInstall": true,
+    "reason": "Root authorized setup-only transport repair; no waveform or ASR/model semantic change."
   }
 }

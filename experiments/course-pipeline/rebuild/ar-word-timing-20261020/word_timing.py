@@ -65,7 +65,11 @@ def transcribe():
  from faster_whisper import WhisperModel
  from huggingface_hub import HfApi,snapshot_download
  if importlib.metadata.version('faster-whisper')!=req['asr']['version']:raise RuntimeError('Installed version differs')
- original,matched=fetch_artifact();asr=req['asr'];modelinfo=HfApi().model_info(asr['modelRepo']);revision=modelinfo.sha
+ original=ROOT/'input';proof=json.loads((OUT/'input-provenance.private.json').read_text(encoding='utf-8'));matched=proof['clips']
+ if proof['sourceRun']['id']!=req['source']['runId']or proof['sourceRun']['head_sha']!=req['source']['headSha']:raise RuntimeError('Prefetched source provenance differs')
+ for clip in req['clips']:
+  if digest(original/(clip['id']+'.wav'))!=clip['sha256']:raise RuntimeError('Prefetched WAV bytes changed')
+ asr=req['asr'];modelinfo=HfApi().model_info(asr['modelRepo']);revision=modelinfo.sha
  if not revision or len(revision)!=40:raise RuntimeError('Model revision unresolved')
  modelpath=Path(snapshot_download(repo_id=asr['modelRepo'],revision=revision,cache_dir=str(ROOT/'model-cache'),allow_patterns=['config.json','model.bin','tokenizer.json','vocabulary.*','preprocessor_config.json']))
  files=[{'name':str(p.relative_to(modelpath)),'bytes':p.stat().st_size,'sha256':digest(p)}for p in sorted(modelpath.rglob('*'))if p.is_file()]
@@ -85,7 +89,8 @@ def transcribe():
  dump('summary.private.json',{'atUTC':now(),'status':'ASR_ONLY_COMPLETE_REVIEW_REQUIRED','clips':results,'newSpeechCalls':0,'newImageCalls':0,'fullVideoRenders':0,'attempts':1,'notForcedAlignment':True,'noInventedAnchors':True})
 if __name__=='__main__':
  try:
-  if sys.argv[1]=='verify-wheel':package_phase()
+  if sys.argv[1]=='fetch-only':fetch_artifact()
+  elif sys.argv[1]=='verify-wheel':package_phase()
   elif sys.argv[1]=='transcribe':transcribe()
   else:raise RuntimeError('Unknown action')
  except Exception as e:
