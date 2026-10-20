@@ -1,0 +1,10 @@
+{
+  "scope": [
+    "L01-S06 timing only",
+    "L01-S09 speech and timing"
+  ],
+  "maxSpeechCalls": 1,
+  "maxAnalysisCalls": 2,
+  "automaticRetries": 0,
+  "review": "Original S06 valid WAV retained. S09 HTTP400 produced no audio. Recover only these failed stages."
+}

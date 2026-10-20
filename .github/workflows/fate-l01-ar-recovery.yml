@@ -1,0 +1,54 @@
+name: Fate L01 recover two failed Arabic stages
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/recovery/request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        scene: ['06', '09']
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/recovery
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar --dir "$PACKAGE/base"
+      - name: One reviewed recovery attempt
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/recover.py" "${{ matrix.scene }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-ar-recovery-S${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  combine:
+    needs: recover
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Preserve original successful media and apply only recovered stages
+        run: |
+          gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar --dir merged
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name fate-l01-ar-recovery-S06 --dir patch06
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name fate-l01-ar-recovery-S09 --dir patch09
+          cp patch06/L01-* merged/
+          cp patch09/L01-* merged/
+          cp patch06/recovery.json merged/recovery-S06.json
+          cp patch09/recovery.json merged/recovery-S09.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-full-ar-repaired-v1
+          path: merged/
+          retention-days: 30
