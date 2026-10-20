@@ -1,0 +1,36 @@
+name: Fate L01 contextual Arabic pronunciation review
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pronunciation-review-v1/context-review/request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  review:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        scene: ["L01-S01", "L01-S02", "L01-S03", "L01-S04", "L01-S05", "L01-S06", "L01-S07", "L01-S08", "L01-S09", "L01-S10"]
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pronunciation-review-v1/context-review
+      GH_TOKEN: ${{ github.token }}
+      EXPECTED_REQUEST_SHA256: 4d11ad38a365698fe21e68a9b511ff748817a58445ba72bc0ee4d174abf3092f
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: gh run download 39437226694 --repo "$GITHUB_REPOSITORY" --name "fate-l01-pronunciation-${{ matrix.scene }}" --dir "$PACKAGE/base"
+      - name: Verify Pro availability and review whole-scene context once
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.scene }}"
+      - name: Deliver this review immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-context-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
