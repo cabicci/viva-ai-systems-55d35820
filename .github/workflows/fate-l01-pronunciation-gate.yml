@@ -1,0 +1,33 @@
+name: Fate L01 pronunciation gate verification
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/review-system-v1/gate-request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  validate:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/review-system-v1
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Gate regression tests
+        run: |
+          cd "$PACKAGE"
+          mkdir -p output
+          python -B -m unittest test_gate -v 2>&1 | tee output/gate-tests.txt
+      - name: Receive existing source audio without regeneration
+        run: gh run download 39403882526 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar-repaired-v1 --dir "$PACKAGE/audio"
+      - name: Verify current audio is rejected before rendering
+        run: python "$PACKAGE/check_actual.py"
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pronunciation-gate-verification
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

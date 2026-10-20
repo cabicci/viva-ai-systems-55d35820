@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "reviewID": "L01-ar-pronunciation-review-v1",
+  "projectID": "82922e08-4caf-48f5-b72e-ab2e6a87c51c",
+  "locale": "ar",
+  "sourceSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+  "sourceVideo": "../../media/L01-full-v1/final/L01-ar.mp4",
+  "duration": 459.438,
+  "renderAllowed": false,
+  "automatedCoverage": "10/10 complete scene soundtracks; 29 overlapping windows, 58 Flash passes plus 10 full-context Pro passes.",
+  "analysisCalls": 68,
+  "sceneCount": 10,
+  "runIDs": [
+    39437226694,
+    39438372570
+  ],
+  "createdUTC": "2026-10-20T14:27:14.659854+00:00",
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "voice": "Kore",
+      "start": 0,
+      "duration": 39.19,
+      "text": "تخيّل إنّ معاك تقرير تحليل لعيّنة طماطم، ومكتوب فيه إنّ المعمل قاس متبقّي لمبيد. أوّل ردّ فعل ممكن يكون: يبقى الطّماطم دي سبّبت تسمّم. بسّ استنى لحظة. التّقرير قال لنا إيه بالضّبط؟ قال إنّ مادّة محدّدة اتقاست في عيّنة. لسّه ما قالش مين أكل منها، وأكل قدّ إيه، ولا إيه التّأثير اللّي حصل له. في الدّرس ده، هنمشي من مكان استخدام المبيد لحدّ نتيجة التّحليل، ونتعلّم نكتب استنتاج على قدّ الدّليل اللّي معانا. السّؤال اللّي هنرجع له طول الوقت هو: إيه اللّي عرفناه، وإيه اللّي لسّه محتاجين نعرفه؟",
+      "audioSHA256": "7f92f94de823d93861ee87f50083c4af2a6fbb0fe3665e783a609b7da78060ba",
+      "reviewedDecodedAudioSHA256": "95cc169d85a9e43a55b7c928104afbbdf34d368e57a55fb7dd93ee13c01e4768",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "adf7102050f2e327096d5aa4f26f03d7147f4e0c720ae1933697071c7be7578c",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 5,
+      "successfulCalls": 5,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "7f92f94de823d93861ee87f50083c4af2a6fbb0fe3665e783a609b7da78060ba",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F002"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "2730f357b6c05a52fcaa156063313fcf02e26500ae1a8ffb9e7baae629fafe40",
+        "inputRecordSHA256": "33c115a73870b3b8c014ffc8bd76693c700ec473d632691d8f604ad638d4fe63"
+      }
+    },
+    {
+      "id": "L01-S02",
+      "voice": "Charon",
+      "start": 39.19,
+      "duration": 41.387,
+      "text": "قبل ما نكمّل، إيه هو متبقّي المبيد؟ ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش كفاية. لازم نعرف المعمل كان بيدوّر على إيه بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه إنّنا هنشوف طبقة بعيننا. العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟",
+      "audioSHA256": "8a3f4fb87eef8a511f06c683b13905e194faf852e9cb4f9ebe1bcc9981fdcbaa",
+      "reviewedDecodedAudioSHA256": "ed298782326ca5355449f2465e16c9c0eb4fde3e2162982a4cdc8054a8dd9132",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "b166a600a35e6f2c95a16b8d85a56f01ad49db88d4d2518a804af5330915d361",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "8a3f4fb87eef8a511f06c683b13905e194faf852e9cb4f9ebe1bcc9981fdcbaa",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "b61b88c747507e6a284dd239f4635501d67971a206b04ad0731346d81f23de6b",
+        "inputRecordSHA256": "eef6ed24d5f98be9b71ecefe1c9a8657ffb395b0f62401c9f4e25f5990fe7b0e"
+      }
+    },
+    {
+      "id": "L01-S03",
+      "voice": "Kore",
+      "start": 80.577,
+      "duration": 47.659,
+      "text": "دلوقتي نوسّع الصّورة ونرجع للحقل. بعد الاستخدام، جزء من المادّة ممكن يبقى على المحصول أو جوّاه. لو المتبقّي موجود في الغذاء اللّي اتاكل، يبقى عندنا طريق للتّعرّض عن طريق الأكل. وفي مسار تاني، مادّة وصلت للتّربة ممكن تتحرّك مع مياه جارية على السّطح لحدّ مجرى مياه. هنا نسأل: هل وصلت فعلًا؟ وبأيّ تركيز؟ وممكن أثناء الرّش يحصل انجراف لرذاذ خارج المكان المستهدف، فيلامس كائنات تانية. والحشرات النّافعة ممكن تتعرّض من نبات عليه متبقّيات، بحسب طريقة التّلامس أو التّغذية. كلّ طريق من دول احتمال محتاج بيانات، مش حاجة بتحصل بنفس الشّكل مع كلّ مبيد. السّهم بيوضّح الانتقال؛ مش بيقول إنّ الضّرر حصل.",
+      "audioSHA256": "3e5e4a99025ded2f6e0f6d18dbca9717fc684d6fb87a2ac7fc9a96a9d1787ddb",
+      "reviewedDecodedAudioSHA256": "93668ea9ca496e686fdb38129707ff5da1787024fa6f7252a9739f458bcd1eaf",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "b587d25bdd104fef8abed25562453f15c89c5704e8820c4d46608463236083f3",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "3e5e4a99025ded2f6e0f6d18dbca9717fc684d6fb87a2ac7fc9a96a9d1787ddb",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F003"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39406430592",
+        "sceneExportSHA256": "b89260013e2b0b48aaf293777a4e338da190c6dd9bcfd6dce960a7ca50e05e8d",
+        "inputRecordSHA256": "7e602283beb3f086d9ed83bb8176b7a2111ef75cdb46f2f85fcaa1384f6f488e"
+      }
+    },
+    {
+      "id": "L01-S04",
+      "voice": "Charon",
+      "start": 128.236,
+      "duration": 48.128,
+      "text": "خلّينا نفصل تلات أفكار. أوّل فكرة: المادّة تقدر تعمل ضرر من نوع إيه، وتحت أنهي ظروف؟ ده سؤال عن قدرتها على إحداث الضّرر. تاني فكرة: المادّة وصلت للكائن إزاي، وقدّ إيه، ولمدّة قدّ إيه؟ ده سؤال عن التّعرّض. أمّا المخاطر، فالسّؤال فيها عن احتمال حدوث الأثر وشدّته في الظّروف اللّي بندرسها. يعني لو دراسة لقت أثرًا عند جرعة معيّنة، لسّه محتاجين نعرف هل ظروف التّعرّض في حالتنا تسمح باستخدام النّتيجة دي. وجود المادّة لوحده مش كفاية للحكم. وعدم وجود أعراض فوريّة، برضه، مش دليل إنّ كلّ تأثير محتمل مستبعد. إحنا بنجمّع أدلّة ونفهم حدودها، مش بنختار لون يطمّنّا أو يخوّفنا.",
+      "audioSHA256": "87b59a68da35b58eca0e84bb9f9d39d3be31f68193ff47bfeeb56608a62ae87d",
+      "reviewedDecodedAudioSHA256": "6c5e4fb75962d665edc936ff16804d56e06336546d73a18b6f2ef1fee2d159ab",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "3bc289711e6c3cfde521d16d22531f3cab7c4f03393f7aaf0c439f81357b7da7",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 1,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "87b59a68da35b58eca0e84bb9f9d39d3be31f68193ff47bfeeb56608a62ae87d",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "d81f112910ff60222f9d71afc6d545f724c625799396a17e8d897ee5365ff973",
+        "inputRecordSHA256": "3c43f5fcfecb6a7612337cae84c86af229bd396444b58fe25e799a4861271069"
+      }
+    },
+    {
+      "id": "L01-S05",
+      "voice": "Kore",
+      "start": 176.36399999999998,
+      "duration": 48.982,
+      "text": "نرجع لتقرير الطّماطم. المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها. ومعانا حدّ افتراضيّ قيمته صفر فاصلة واحد مِلّيجرام لكلّ كيلوجرام غذاء. قبل المقارنة، لازم نتأكّد إنّ المادّة وتعريف المتبقّي والسّلعة والجزء اللّي اتحلّل والوحدة متطابقين. لو الرّقم المرجعيّ يخصّ التّفاح، ما ينفعش ننقله للطّماطم. في تدريبنا هنفترض إنّ البيانات متطابقة والقياس صالح. كده نقدر نقارن، من غير ما ندّعي إنّنا بنصدر قرارًا قانونيًّا على شحنة حقيقيّة.",
+      "audioSHA256": "488a48569d068927b0388102c4633d174707bc5b1319cd16f40a1b4011601580",
+      "reviewedDecodedAudioSHA256": "600b5e69ef6da4ab09b4c39eb5ecbe157d94ed3fc5b282cc1a76c65fafcbf2b3",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "4e56fe5e04361d416c6503342f67f344daf43e8959f1ad96abdea5a0c0f81d2a",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": true,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "488a48569d068927b0388102c4633d174707bc5b1319cd16f40a1b4011601580",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F001",
+        "F004",
+        "F005",
+        "F006",
+        "F013"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "4631eb28dc3bba57410431bf5ca206cad0c1a609e243292a7e7d89f44ca8a8b8",
+        "inputRecordSHA256": "118eee6c9c6da218573b4ab085522e6a57f316425a18d312d4c289c9035e90ed"
+      }
+    },
+    {
+      "id": "L01-S06",
+      "voice": "Charon",
+      "start": 225.34599999999998,
+      "duration": 45.483,
+      "text": "دلوقتي نحطّ الرّقمين على نفس المقياس. صفر فاصلة صفر تمانية أقلّ من صفر فاصلة واحد. والفرق بينهم اتنين من ميّة مِلّيجرام لكلّ كيلوجرام غذاء. نكتب الاستنتاج بدقّة: القيمة أقلّ من الحدّ الافتراضيّ المستخدم في المثال. بسّ الفرق ده مش هامش أمان لشخص، ومش كمّيّة مسموح له ياكلها. الحدّ الأقصى للمتبقّي بيتعلّق بتركيز محدّد في سلعة محدّدة، ووضعه له بيانات استخدام وتقييم علميّ. مش هو الجرعة اللّي دخلت جسم إنسان. ولو القيمة كانت أعلى من الحدّ، ده برضه ما يثبتش لوحده إنّ شخصًا اتسمّم. تجاوز الحدّ وتقييم الأثر الصّحّيّ سؤالان مرتبطان، لكن كلّ واحد محتاج أدلّته المناسبة.",
+      "audioSHA256": "38861ba9e65cc3f1749b02d9639797ebf7db2b6bcdd1f5772b8999914a06c9b2",
+      "reviewedDecodedAudioSHA256": "b1d26f7e34bbb60f3c27fa51542191d1be92406a643ed62a9dbfc15f2a32ea1b",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "3e1ff8da26ed1e802d64b7333155fe0a4057a8ed8000a3b330a8abecab99a9e7",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "38861ba9e65cc3f1749b02d9639797ebf7db2b6bcdd1f5772b8999914a06c9b2",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "241eac524febbdb79175b92029617a6e463e685543f72f77367627efc796a9d4",
+        "inputRecordSHA256": "10b69ae1c6ad61a14d51972e270b95ee77152759ddd8b3152d4108e8e72c0b1b"
+      }
+    },
+    {
+      "id": "L01-S07",
+      "voice": "Kore",
+      "start": 270.82899999999995,
+      "duration": 48.043,
+      "text": "طيب نعرف الكمّيّة الموجودة في حصّة أكل إزاي؟ هنفترض إنّ شخصًا أكل ميتين جرام من نفس الطّماطم، وإنّ التّركيز في الحصّة هو نفسه في المثال. نحوّل الأوّل: ميتين جرام يساووا صفر فاصلة اتنين كيلوجرام. بعد كده نضرب تركيز المتبقّي في كتلة الغذاء. وحدة كيلوجرام الغذاء بتُختصر، ويتبقّى عندنا مِلّيجرام. النّاتج ستّاشر من ألف مِلّيجرام في الحصّة. كده حسبنا كمّيّة متناولة في سيناريو محدّد؛ ما حسبناش الكمّيّة اللّي امتصّها الجسم، ولا احتمال الضّرر. ولو حجم الحصّة زاد والتّركيز ثابت، الكمّيّة المتناولة هتزيد. علشان نكمّل تقييم التّعرّض، محتاجين بيانات تانية، منها وزن الجسم وتكرار الأكل وباقي المصادر المهمّة.",
+      "audioSHA256": "fcf210c1bffe77955b5eaa7bcd00474133bb52f2d8e67fa0a9bcc0efe793d655",
+      "reviewedDecodedAudioSHA256": "becc8bad1b66a1f5965fc52f673fd5c331a26a3141386e78c4d9e2055a6232ed",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "db69e6926c09b0a661057a7759891e1467e81862ded5b0d401ef71d853d56d1b",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 1,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "fcf210c1bffe77955b5eaa7bcd00474133bb52f2d8e67fa0a9bcc0efe793d655",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F007"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "04dccaf1230fec7697653d5d85c901f8c735e23b25f427c92fac542823b9cd33",
+        "inputRecordSHA256": "a6329bf8fb8de54c3cf8fa955b884de0c53b1a159170444c2f22f91fa0cad266"
+      }
+    },
+    {
+      "id": "L01-S08",
+      "voice": "Charon",
+      "start": 318.87199999999996,
+      "duration": 46.294,
+      "text": "في ملفّ المنهج جدول بيجمّع أسماء مبيدات وآثار صحّيّة وبيئيّة. المشكلة إنّ الصّفّ لوحده ما بيدّيناش كلّ تفاصيل الدّليل. لو حدّ قال: المادّة مرتبطة بأثر على الجهاز العصبيّ، يبقى أيّ غذاء نلاقيها فيه هيسبّب الأثر ده؛ نوقّف عند كلمة أيّ. نسأل: الأثر اتقاس في أنهي دراسة؟ وعلى أنهي كائن؟ وعند جرعة أو تركيز قدّ إيه؟ وبأيّ طريق ولمدّة قدّ إيه؟ وكمان نراجع هويّة المادّة، لأنّ أيّ خطأ في الاسم أو الصّيغة يغيّر اللّي بندرسه. إحنا مش بنلغي احتمال الضّرر. إحنا بنرفض القفزة من معلومة ناقصة لحكم مؤكّد. الجدول هنا نقطة بداية للبحث، مش تشخيصًا جاهزًا نحطّه على نتيجة التّحليل.",
+      "audioSHA256": "aadc4c781664b68c0a999bbc15119d91d9a0bd0d72c96b9a9e4c0520de30c0eb",
+      "reviewedDecodedAudioSHA256": "9e960c90740ada98446c5b2df5fae20edf7cdcfbf3c2a5771e5fe8b2a6169baf",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "d8f861d5ec3ecc31d4c2b649cff56e50c96013600fd5ba01b009c7809b7bff03",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "aadc4c781664b68c0a999bbc15119d91d9a0bd0d72c96b9a9e4c0520de30c0eb",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F008",
+        "F009"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "57500ccf4a01612e27a4c8e63cecd8da62ba1b148dead430ff6f9de80fc8556f",
+        "inputRecordSHA256": "3b8a7ca4caae3bee44bce4629464e98dec4a6e36581255f900686a677e236822"
+      }
+    },
+    {
+      "id": "L01-S09",
+      "voice": "Kore",
+      "start": 365.16599999999994,
+      "duration": 48.384,
+      "text": "وده يفسّر ليه صفحة تلاتة بتتكلّم عن دور خبراء منظّمة الأغذية والزّراعة ومنظّمة الصّحّة العالميّة. تقييم الدّراسات العلميّة غير اتخاذ القرار التّنظيميّ، حتّى لو الاتنين مرتبطين. جهات وضع المعايير والحكومات بتستخدم تقييمات علميّة وبيانات عن الاستخدام والمتبقّيات. وعلى مستوى المزرعة، الممارسة الزّراعيّة الجيّدة بتبدأ بالاستخدام المصرّح به وشروطه المناسبة للمبيد والمحصول. ما ناخدش من رقم التّحليل جرعة رشّ، ولا نخترع منه موعد حصاد. المعلومات دي لازم ترجع للمُنتَج والاستخدام والمتطلّبات المعتمدة. دورنا هنا إنّنا نعرف نطلب المعلومات الصّحيحة ونفهمها، من غير ما نحوّل مثال تعليميّ لتوصية استخدام.",
+      "audioSHA256": "2247727a4be9eb17c0119b76ddfa654f4f87a134b1e57263c539e6102565192b",
+      "reviewedDecodedAudioSHA256": "de46b071df193904fd39fcd391385f7e3e9b98069ccc81b4d6591f16e9eafbc0",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "fec551c57185a47c7fb3aa29138915b06da3f7bb0f643dd0f611e390762705e5",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "2247727a4be9eb17c0119b76ddfa654f4f87a134b1e57263c539e6102565192b",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [
+        "F010",
+        "F011",
+        "F012"
+      ],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "8b4c9cbbf8dde93ce8d69140c749d8549d570df686aaecfd99af3c817ae1d3bc",
+        "inputRecordSHA256": "49518f13ef1d5770c3f1386cf1fcb53bb2f771693a8efe19268b44267ca2c042"
+      }
+    },
+    {
+      "id": "L01-S10",
+      "voice": "Charon",
+      "start": 413.54999999999995,
+      "duration": 45.888,
+      "text": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. عيّنة فاصوليا تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي.",
+      "audioSHA256": "0229837172f76c238d302a302625940361bd8d1743d3fcfeb507251adc69e6f7",
+      "reviewedDecodedAudioSHA256": "0aac8e99e11ddc3786a4e6acc22b65ff7a34b101ae2798da4c4a20b220b31377",
+      "sourceVideoSHA256": "cc3a5a4b181951fbffb92ce3afb24ada32c22fa6282a611aa471f9acda7b8c71",
+      "scriptSHA256": "aa15e67a6825015105e1292d633997b065e5056b2f78db703b7ca554222256e8",
+      "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
+      "model": "gemini-2.5-flash-preview-tts",
+      "automatedComplete": true,
+      "expectedCalls": 7,
+      "successfulCalls": 7,
+      "preliminaryInvalidTimestamps": 0,
+      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "pending",
+        "audioSHA256": "0229837172f76c238d302a302625940361bd8d1743d3fcfeb507251adc69e6f7",
+        "evidence": null
+      },
+      "unresolvedFindingIds": [],
+      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "productionChainEvidence": {
+        "renderRun": "39405090946",
+        "sceneExportSHA256": "57c453ac1f5681086b16feeb77a38a29a81fbc574021d3833b65e49818420e0c",
+        "inputRecordSHA256": "44d29e98e0a7b193b97542410c6f7f6156a4623ae9c7b2701196c036dab3ed0d"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "start": 0,
+      "end": 2.371,
+      "category": "pronunciation",
+      "heard": "نطق «طماطم» مرفوض من صاحب المنهج",
+      "expected": "نرجع لتقرير الطّماطم.",
+      "heardPhonetics": "لا يوجد اعتماد سمعي للنطق البديل بعد",
+      "reason": "ملاحظة مباشرة على الفيديو بعد ٢:٥٧؛ لها الأولوية حتى لو الفاحص الآلي لم يكتشفها.",
+      "suggestion": "راجع الجملة البديلة المحفوظة أولًا، ثم أعد فحصها قبل استبدال الأصل.",
+      "severity": "major",
+      "certainty": "owner_confirmed",
+      "id": "F001",
+      "scene": "L01-S05",
+      "origin": "owner",
+      "evidence": [
+        "../../media/L01-tomato-pronunciation-v1/review.json"
+      ],
+      "statusLabel": "مرفوضة بالسماع؛ البديل لم يُعتمد"
+    },
+    {
+      "start": 1.99,
+      "end": 2.51,
+      "category": "pause_join",
+      "heard": "تحليل لعيّنة",
+      "expected": "تحليل لعيّنة",
+      "heardPhonetics": "taħ.liːl.la.ʕaj.ji.na",
+      "suggestion": "راجع وضوح «تحليل لعيّنة» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: اللام في آخر كلمة 'تحليل' اندمجت مع اللام في أول كلمة 'لعيّنة' بشكل سريع، وده قلل من وضوح الكلمتين.",
+      "severity": "minor",
+      "certainty": "possible",
+      "id": "F002",
+      "scene": "L01-S01",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S01/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 39.75,
+      "end": 40.65,
+      "category": "omission",
+      "heard": "",
+      "expected": "محتاج بيانات",
+      "heardPhonetics": "",
+      "suggestion": "تدقيق التسجيل في السياق قبل أي إعادة تسجيل؛ لا تعتمد التفريغ الذي أكمل الكلام من السكريبت.",
+      "reason": "المراجعات الآلية اختلفت على المسموع. تم حذف كلمتي 'محتاج بيانات' بين 'احتمال' و 'مش حاجة'.",
+      "severity": "major",
+      "certainty": "uncertain",
+      "id": "F003",
+      "scene": "L01-S03",
+      "origin": "automated_disagreement",
+      "evidence": [
+        "scenes/L01-S03/L01-S03-01-reference.analysis.json",
+        "context/L01-S03/analysis.json"
+      ],
+      "statusLabel": "تعارض بين المراجعين؛ لا يُعدّ خطأ مؤكّدًا"
+    },
+    {
+      "start": 3.485,
+      "end": 4.105,
+      "category": "pronunciation",
+      "heard": "افتراضي",
+      "expected": "افتراضيّ",
+      "heardPhonetics": "/ʔeftɪrɑːdi/",
+      "suggestion": "راجع وضوح «افتراضيّ» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: نطق حرف الضاد كأنه دال، وهو خطأ شائع يؤثر على فصاحة النطق.",
+      "severity": "major",
+      "certainty": "possible",
+      "id": "F004",
+      "scene": "L01-S05",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S05/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 18.658,
+      "end": 19.318,
+      "category": "pronunciation",
+      "heard": "افتراضي",
+      "expected": "افتراضيّ",
+      "heardPhonetics": "/ʔeftɪrɑːdi/",
+      "suggestion": "راجع وضوح «افتراضيّ» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: نطق حرف الضاد كأنه دال، وهو نفس الخطأ الذي ارتكبته المتحدثة الأولى.",
+      "severity": "major",
+      "certainty": "possible",
+      "id": "F005",
+      "scene": "L01-S05",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S05/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 38.718,
+      "end": 39.378,
+      "category": "pronunciation",
+      "heard": "هنفترض",
+      "expected": "هنفترض",
+      "heardPhonetics": "/hanefˈtered/",
+      "suggestion": "راجع وضوح «هنفترض» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: نطق حرف الضاد كأنه دال، مما يضعف من جودة النطق.",
+      "severity": "major",
+      "certainty": "possible",
+      "id": "F006",
+      "scene": "L01-S05",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S05/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 25.25,
+      "end": 25.950000000000003,
+      "category": "omission",
+      "heard": "",
+      "expected": "من 1000",
+      "heardPhonetics": "uncertain",
+      "suggestion": "تدقيق التسجيل في السياق قبل أي إعادة تسجيل؛ لا تعتمد التفريغ الذي أكمل الكلام من السكريبت.",
+      "reason": "المراجعات الآلية اختلفت على المسموع. تم حذف كلمة 'من ألف' التي كان يجب أن تأتي بعد الرقم '16' لتوضيح القيمة.",
+      "severity": "critical",
+      "certainty": "uncertain",
+      "id": "F007",
+      "scene": "L01-S07",
+      "origin": "automated_disagreement",
+      "evidence": [
+        "scenes/L01-S07/L01-S07-01-blind.analysis.json",
+        "context/L01-S07/analysis.json"
+      ],
+      "statusLabel": "تعارض بين المراجعين؛ لا يُعدّ خطأ مؤكّدًا"
+    },
+    {
+      "start": 24.95,
+      "end": 26.25,
+      "category": "substitution",
+      "heard": "طريقه",
+      "expected": "طريق",
+      "heardPhonetics": "/tˤaˈriːʔa/",
+      "suggestion": "تدقيق التسجيل في السياق قبل أي إعادة تسجيل؛ لا تعتمد التفريغ الذي أكمل الكلام من السكريبت.",
+      "reason": "المراجعات الآلية اختلفت على المسموع. تم استبدال كلمة \"طريق\" بـ \"طريقة\".",
+      "severity": "major",
+      "certainty": "uncertain",
+      "id": "F008",
+      "scene": "L01-S08",
+      "origin": "automated_disagreement",
+      "evidence": [
+        "scenes/L01-S08/L01-S08-01-reference.analysis.json",
+        "context/L01-S08/analysis.json"
+      ],
+      "statusLabel": "تعارض بين المراجعين؛ لا يُعدّ خطأ مؤكّدًا"
+    },
+    {
+      "start": 37.81,
+      "end": 38.31,
+      "category": "pronunciation",
+      "heard": "ناقصة",
+      "expected": "ناقصة",
+      "heardPhonetics": "[ˈnɑʔ.sˤɑ]",
+      "suggestion": "راجع وضوح «ناقصة» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: نطق القاف كهمزة ضعيفة جدًا وغير واضحة، مما يجعل الكلمة تبدو قريبة من \"ناصة\" ويقلل من وضوحها.",
+      "severity": "minor",
+      "certainty": "possible",
+      "id": "F009",
+      "scene": "L01-S08",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S08/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 4.17,
+      "end": 4.8,
+      "category": "pronunciation",
+      "heard": "منظّمة",
+      "expected": "منظّمة",
+      "heardPhonetics": "monazzemet",
+      "suggestion": "راجع وضوح «منظّمة» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: نطق حرف الظاء ضعيف وقريب من حرف الزاي، مع إنه مسموع بشكل أوضح في المرة التانية في نفس الجملة.",
+      "severity": "minor",
+      "certainty": "possible",
+      "id": "F010",
+      "scene": "L01-S09",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S09/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 18.55,
+      "end": 19.05,
+      "category": "pronunciation",
+      "heard": "وبينات",
+      "expected": "وبيانات",
+      "heardPhonetics": "we-bæ-næːt",
+      "suggestion": "راجع وضوح «وبيانات» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: تم حذف أو إدغام صوت الياء في كلمة \"وبيانات\"، فكانت مسموعة كأنها \"وبينات\" أو \"وباءنات\".",
+      "severity": "major",
+      "certainty": "possible",
+      "id": "F011",
+      "scene": "L01-S09",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S09/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 25.89,
+      "end": 26.58,
+      "category": "pronunciation",
+      "heard": "المصرَح",
+      "expected": "المصرّح",
+      "heardPhonetics": "el-mosarah",
+      "suggestion": "راجع وضوح «المصرّح» في الجملة؛ لو ثبت العيب أعد الجملة فقط بنفس الصوت، مع الحفاظ على المعنى.",
+      "reason": "تنبيه آلي وليس حكمًا سمعيًا نهائيًا: الشدة على حرف الراء في كلمة \"المصرّح\" غير مسموعة، مما يغير نطق الكلمة.",
+      "severity": "major",
+      "certainty": "possible",
+      "id": "F012",
+      "scene": "L01-S09",
+      "origin": "automated_context",
+      "evidence": [
+        "context/L01-S09/analysis.json"
+      ],
+      "statusLabel": "تنبيه آلي غير معتمد بالسماع"
+    },
+    {
+      "start": 1.4,
+      "end": 4.7,
+      "category": "pause_join",
+      "heard": "الفاحص وصف اختلافًا في النبرة بين أجزاء نفس المشهد",
+      "expected": "Kore واحدة عبر الجمل المتصلة",
+      "heardPhonetics": "غير محسوم؛ إعدادات كل الأجزاء Kore",
+      "reason": "تقرير Pro وصف صوتين رغم أن سجل التوليد يثبت استخدام Kore؛ قد يكون تغير نبرة أو خطأ من الفاحص.",
+      "suggestion": "فحص الوصلة بين الجملة الافتتاحية والمقطع المعتمد؛ لا تجدد المقطع الجيد بسبب وصف آلي وحده.",
+      "severity": "uncertain",
+      "certainty": "uncertain",
+      "id": "F013",
+      "scene": "L01-S05",
+      "origin": "automated_disagreement",
+      "evidence": [
+        "context/L01-S05/analysis.json"
+      ],
+      "statusLabel": "اتساق النبرة يحتاج تدقيقًا"
+    }
+  ],
+  "dismissedCount": 34,
+  "evidence": [
+    {
+      "scene": "L01-S01",
+      "blindReferenceCalls": 4,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "95cc169d85a9e43a55b7c928104afbbdf34d368e57a55fb7dd93ee13c01e4768",
+      "rawReviewSHA256": "102e2bb3c4ffce993a5657b21f28d797169c92d84b3ec1dc90f7a387e858c589",
+      "contextReviewSHA256": "9104097acf5a51b5e46697d797ad7d04d44e26267759461adbf3b983c6440900"
+    },
+    {
+      "scene": "L01-S02",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "ed298782326ca5355449f2465e16c9c0eb4fde3e2162982a4cdc8054a8dd9132",
+      "rawReviewSHA256": "24e01e055fb809ecb5b648fe8bfd230e04c3e02cd954e797c15f8a4167d746b3",
+      "contextReviewSHA256": "e3608a1694a7f6640a057c6d0b4b3750b2238bd811d34bfe9b831ad1c4065ac6"
+    },
+    {
+      "scene": "L01-S03",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "93668ea9ca496e686fdb38129707ff5da1787024fa6f7252a9739f458bcd1eaf",
+      "rawReviewSHA256": "ff711b8d92e57ae08816826d1155cbbc1d4be0467a15ea21d0c281d8a3eb81c1",
+      "contextReviewSHA256": "bcde267f4240827960ad80c2ae7a8848949a297edb42c823841c3c0b2e0c5ce8"
+    },
+    {
+      "scene": "L01-S04",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "6c5e4fb75962d665edc936ff16804d56e06336546d73a18b6f2ef1fee2d159ab",
+      "rawReviewSHA256": "463bdeb7c13f952cf08c355d2e35bd857fde3404487f39a3f33305c9bf7169f3",
+      "contextReviewSHA256": "b800daaa9ed8a31710dc4449e4286dc4c277c2dba9e3e19ef835fbd8e94c6cb6"
+    },
+    {
+      "scene": "L01-S05",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "600b5e69ef6da4ab09b4c39eb5ecbe157d94ed3fc5b282cc1a76c65fafcbf2b3",
+      "rawReviewSHA256": "a147b11f464026eb11a67340459eea11bf1b73cae49e057c0b7fae330db662ec",
+      "contextReviewSHA256": "10a256e974285ae56cebdd780ed70a52c184b0997f1eac6cffa78f2f49aa2d36"
+    },
+    {
+      "scene": "L01-S06",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "b1d26f7e34bbb60f3c27fa51542191d1be92406a643ed62a9dbfc15f2a32ea1b",
+      "rawReviewSHA256": "f970944bb8f9587e9c9ffa15e9294e0398e4050ed2827ad722cb205c2460fd0d",
+      "contextReviewSHA256": "4f755489a7d2a5c7c5ef5ae619a393ced31edbae57dd8049946867abdfb6225d"
+    },
+    {
+      "scene": "L01-S07",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "becc8bad1b66a1f5965fc52f673fd5c331a26a3141386e78c4d9e2055a6232ed",
+      "rawReviewSHA256": "d027d49c1b94128909695f9127a0d03450e19782a606bcf156dd90b92a610e25",
+      "contextReviewSHA256": "ff9fbaf31971a6402ae1a82e590347b0120dc8e93e81860c46f4c1100f9a7044"
+    },
+    {
+      "scene": "L01-S08",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "9e960c90740ada98446c5b2df5fae20edf7cdcfbf3c2a5771e5fe8b2a6169baf",
+      "rawReviewSHA256": "f753330a67a506be136664533b260dee73454efb7fffb2bfcf9a3a177b78f666",
+      "contextReviewSHA256": "4a1e12f642c5b6ad486b19fcf4e22e1343667c2ee643dd4ca38d2decd8f4ea85"
+    },
+    {
+      "scene": "L01-S09",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "de46b071df193904fd39fcd391385f7e3e9b98069ccc81b4d6591f16e9eafbc0",
+      "rawReviewSHA256": "13dec763122d28e861f96b27a885deb06f3c8b2a31bbf15b5f1c8a8b84ed442c",
+      "contextReviewSHA256": "348774a7977e64265a11a0e0d34b8f25a8e738d2efe5587253e9bb0262962908"
+    },
+    {
+      "scene": "L01-S10",
+      "blindReferenceCalls": 6,
+      "contextCalls": 1,
+      "decodedAudioSHA256": "0aac8e99e11ddc3786a4e6acc22b65ff7a34b101ae2798da4c4a20b220b31377",
+      "rawReviewSHA256": "6d80fb12f3653c3b69733759345135dff33e154b03094b78b84edb0272289031",
+      "contextReviewSHA256": "cb95be5f4a79596d0d52296aaacc6530d828dcf61651e7653087eba60b1990e3"
+    }
+  ],
+  "limitations": [
+    "الملاحظات الآلية احتمالات وليست شهادة بصحة اللهجة. ملاحظة صاحب المنهج تتقدّم عليها.",
+    "تم فحص صوت الفيديو الحالي كاملًا؛ النسخة البديلة لكلمة طماطم لم تُركّب فيه ولم تُعتمد بعد.",
+    "استُبعدت إنذارات التنوين والفروق المصرية المعتادة وحدود المقاطع من قائمة الإصلاح، مع حفظها في السجل.",
+    "تعارض الفاحصين في الأرقام أو الكلام الناقص يوقف التمرير؛ لا نعتبره حذفًا مؤكّدًا ولا نصححه عشوائيًا.",
+    "لم يتم توليد صوت أو رندر جديد ضمن هذه المراجعة."
+  ]
+}

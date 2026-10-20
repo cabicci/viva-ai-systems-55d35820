@@ -3,6 +3,10 @@ const {bundle}=require('@remotion/bundler'),{selectComposition,renderStill,rende
 const {execFileSync}=require('child_process');
 async function main(){
  const root=__dirname,data=JSON.parse(fs.readFileSync(path.join(root,'render-data.json'),'utf8')),scene=data.scenes[0],out=path.join(root,'output');
+ if(scene.locale==='ar'){
+  const result=execFileSync('python',['-B',path.join(root,'pronunciation-gate.py'),'--report',path.join(root,'pronunciation-gate.json'),'--audio',path.join(root,'public',scene.audio),'--manifest',path.join(root,'manifest.json'),'--scene',scene.id],{encoding:'utf8'});
+  const decision=JSON.parse(result);if(!decision.allowed)throw Error('Pronunciation review blocks this exact audio');
+ }
  const serveUrl=await bundle({entryPoint:path.join(root,'Scenes.tsx'),publicDir:path.join(root,'public')});
  const composition=await selectComposition({serveUrl,id:scene.id});
  const moments=[Math.min(composition.durationInFrames-2,Math.ceil((scene.anchors[1].time+.65)*30)),Math.min(composition.durationInFrames-2,Math.ceil((Math.max(...scene.anchors.map(a=>a.time))+.65)*30))];
