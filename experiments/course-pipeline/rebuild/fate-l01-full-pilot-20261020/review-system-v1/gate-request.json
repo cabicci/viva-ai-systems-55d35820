@@ -1,6 +1,7 @@
 {
-  "id": "L01-ar-pronunciation-gate-verification-v1",
+  "id": "L01-ar-pronunciation-gate-verification-v2",
   "scope": "Validate fail-closed policy and actual current source hashes; no audio generation or rendering",
   "sourceRun": 39403882526,
-  "reportSHA256": "2c3241e2c44e6a42cd201b990490fdec64466f88a83ba69fb77440e0269ee13d"
+  "reportSHA256": "a0320b5a6c7013eec82be5fd09d84c9e3dca6a2759ab81838d055cd9ac8e37b9",
+  "reason": "Retain invalid preliminary timing holds even after contextual review; test conservative alert assessment."
 }

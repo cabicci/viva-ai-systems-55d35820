@@ -16,6 +16,7 @@ else:
  video=R/'source'/M['sourceFile'];assert sha(video.read_bytes())==M['sourceSHA256']
  subprocess.run(['ffmpeg','-v','error','-i',str(video),'-vn','-af',f"atrim=start={C['start']}:duration={C['duration']},asetpts=PTS-STARTPTS",'-ar','24000','-ac','1','-c:a','pcm_s16le',str(scene)],check=True)
 with wave.open(str(scene),'rb') as f:params=f.getparams();raw=f.readframes(f.getnframes());duration=f.getnframes()/f.getframerate()
+assert (params.nchannels,params.sampwidth,params.framerate)==(1,2,24000),'Unsupported source format; no silent conversion'
 assert abs(duration-C['duration'])<.025
 rate=24000;width=2
 samples=array.array('h',raw)

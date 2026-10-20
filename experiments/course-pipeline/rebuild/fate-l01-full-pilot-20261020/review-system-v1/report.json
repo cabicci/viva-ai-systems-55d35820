@@ -14,7 +14,7 @@
     39437226694,
     39438372570
   ],
-  "createdUTC": "2026-10-20T14:27:14.659854+00:00",
+  "createdUTC": "2026-10-20T14:36:56.317279+00:00",
   "scenes": [
     {
       "id": "L01-S01",
@@ -32,7 +32,7 @@
       "expectedCalls": 5,
       "successfulCalls": 5,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -65,7 +65,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -96,7 +96,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -125,11 +125,11 @@
       "scriptSHA256": "3bc289711e6c3cfde521d16d22531f3cab7c4f03393f7aaf0c439f81357b7da7",
       "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
       "model": "gemini-2.5-flash-preview-tts",
-      "automatedComplete": true,
+      "automatedComplete": false,
       "expectedCalls": 7,
-      "successfulCalls": 7,
+      "successfulCalls": 6,
       "preliminaryInvalidTimestamps": 1,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -137,7 +137,7 @@
         "evidence": null
       },
       "unresolvedFindingIds": [],
-      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "reviewStatus": "الصوت اتفحص كاملًا، لكن بعض توقيتات الفاحص الأول غير صالحة؛ التمرير موقوف",
       "productionChainEvidence": {
         "renderRun": "39405090946",
         "sceneExportSHA256": "d81f112910ff60222f9d71afc6d545f724c625799396a17e8d897ee5365ff973",
@@ -160,7 +160,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": true,
       "listeningApproval": {
         "status": "pending",
@@ -197,7 +197,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -224,11 +224,11 @@
       "scriptSHA256": "db69e6926c09b0a661057a7759891e1467e81862ded5b0d401ef71d853d56d1b",
       "deliverySHA256": "6499e0a6ab1dc5fdc72abbf7bbf9eb53048a1b8e1cb864a77d048e0c7a2283b6",
       "model": "gemini-2.5-flash-preview-tts",
-      "automatedComplete": true,
+      "automatedComplete": false,
       "expectedCalls": 7,
-      "successfulCalls": 7,
+      "successfulCalls": 6,
       "preliminaryInvalidTimestamps": 1,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -238,7 +238,7 @@
       "unresolvedFindingIds": [
         "F007"
       ],
-      "reviewStatus": "الفحص الآلي مكتمل؛ اعتماد النطق بالسماع لم يتم",
+      "reviewStatus": "الصوت اتفحص كاملًا، لكن بعض توقيتات الفاحص الأول غير صالحة؛ التمرير موقوف",
       "productionChainEvidence": {
         "renderRun": "39405090946",
         "sceneExportSHA256": "04dccaf1230fec7697653d5d85c901f8c735e23b25f427c92fac542823b9cd33",
@@ -261,7 +261,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -295,7 +295,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",
@@ -330,7 +330,7 @@
       "expectedCalls": 7,
       "successfulCalls": 7,
       "preliminaryInvalidTimestamps": 0,
-      "validationResolution": "Whole-scene Pro context pass has valid timestamps and exact same decoded audio hash; invalid preliminary findings are retained and excluded, disagreements stay blocked.",
+      "validationResolution": "Whole-scene Pro context pass covers the exact same audio, but does not silently turn invalid preliminary timestamps into successful checks. S04/S07 retain an analysis-validation hold.",
       "ownerRejected": false,
       "listeningApproval": {
         "status": "pending",

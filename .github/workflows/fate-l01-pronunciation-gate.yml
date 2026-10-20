@@ -20,7 +20,7 @@ jobs:
         run: |
           cd "$PACKAGE"
           mkdir -p output
-          python -B -m unittest test_gate -v 2>&1 | tee output/gate-tests.txt
+          python -B -m unittest test_gate test_assessment -v 2>&1 | tee output/gate-tests.txt
       - name: Receive existing source audio without regeneration
         run: gh run download 39403882526 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar-repaired-v1 --dir "$PACKAGE/audio"
       - name: Verify current audio is rejected before rendering
