@@ -70,7 +70,7 @@ function Scene({scene}:{scene:any}){
    <div style={{...note,top:826,width:1080,fontSize:22}}>{T('الأزرق لحركة المياه؛ الدائرة علامة تتبّع افتراضية. المسارات محتملة، مش قياسات فعلية.','Blue shows water motion; the circle is a schematic tracer. Routes are possibilities, not measurements.')}</div>
   </>}
   {n===3&&<>
-   <div style={{...right,left:480,width:1310,top:245,height:560}}>
+   <div style={{...right,left:480,width:1310,top:245,height:650}}>
     <div style={{display:'flex',gap:30,direction:'ltr',marginTop:25}}>
      {[{a:'القدرة على إحداث ضرر',e:'Hazard',b:'نوع الأثر وظروفه',f:'Effect and conditions'},{a:'التعرّض',e:'Exposure',b:'المقدار · الطريق · المدة',f:'Amount · route · duration'},{a:'المخاطر',e:'Risk',b:'احتمال الأثر وشدّته في الحالة',f:'Likelihood and severity in this case'}].map((x,i)=><div key={i} style={{...reveal(i),flex:1,padding:25,border:`2px solid ${blue}`,borderRadius:20,textAlign:'center',direction:ar?'rtl':'ltr'}}><div style={{fontSize:62,color:blue}}>{['◉','↗','?'][i]}</div><h2 style={{fontSize:32,margin:'12px 0'}}>{T(x.a,x.e)}</h2><p style={{fontSize:27,margin:0}}>{T(x.b,x.f)}</p></div>)}
     </div>
@@ -106,10 +106,10 @@ function Scene({scene}:{scene:any}){
   {n===6&&<>
    <div style={right}>
     <div style={{...reveal(0),fontSize:31}}>{T('حصة من نفس الطماطم','A portion of the same tomatoes')}</div>
-    <div style={{...reveal(1),marginTop:20,padding:16,textAlign:'center',background:mint,borderRadius:15}}>{num('200 g = 0.20 kg',48)}</div>
-    <div dir="ltr" style={{...reveal(2),display:'flex',gap:16,alignItems:'center',justifyContent:'center',marginTop:35,fontSize:42}}><div style={{textAlign:'center'}}><div>0.08 mg</div><div style={{height:3,background:blue}}/><div style={{textDecoration:p(3)?'line-through':'none',textDecorationColor:gold}}>kg food</div></div><div>×</div><div>0.20 <span style={{textDecoration:p(3)?'line-through':'none',textDecorationColor:gold}}>kg food</span></div></div>
-    <div style={{...reveal(4),textAlign:'center',marginTop:25}}>{num('= 0.016 mg',66)}<div style={{fontSize:28}}>{T('في الحصة','in the portion')}</div></div>
-    <div style={{...reveal(4),fontSize:26,marginTop:22,borderTop:'1px solid #c4d6df',paddingTop:18}}>{T('كمية متناولة ≠ كمية ممتصة ≠ تقدير مخاطر','Ingested amount ≠ absorbed amount ≠ risk assessment')}</div>
+    <div style={{...reveal(1),marginTop:12,padding:12,textAlign:'center',background:mint,borderRadius:15}}>{num('200 g = 0.20 kg',42)}</div>
+    <div dir="ltr" style={{...reveal(2),display:'flex',gap:16,alignItems:'center',justifyContent:'center',marginTop:20,fontSize:36}}><div style={{textAlign:'center'}}><div>0.08 mg</div><div style={{height:3,background:blue}}/><div style={{textDecoration:p(3)?'line-through':'none',textDecorationColor:gold}}>kg food</div></div><div>×</div><div>0.20 <span style={{textDecoration:p(3)?'line-through':'none',textDecorationColor:gold}}>kg food</span></div></div>
+    <div style={{...reveal(4),textAlign:'center',marginTop:12}}>{num('= 0.016 mg',54)}<div style={{fontSize:28}}>{T('في الحصة','in the portion')}</div></div>
+    <div style={{...reveal(4),fontSize:24,marginTop:12,borderTop:'1px solid #c4d6df',paddingTop:12}}>{T('كمية متناولة ≠ كمية ممتصة ≠ تقدير مخاطر','Ingested amount ≠ absorbed amount ≠ risk assessment')}</div>
    </div>
    <div style={note}>{T('نفترض ثبات التركيز في الحصة — الأرقام تعليمية','Assume the portion has the example concentration — teaching values')}</div>
   </>}

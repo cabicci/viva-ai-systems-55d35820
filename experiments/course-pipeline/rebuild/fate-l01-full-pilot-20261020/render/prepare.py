@@ -1,7 +1,7 @@
 from pathlib import Path
 import json,re,hashlib,shutil,sys,math,difflib,wave
 R=Path(__file__).parent;lang=sys.argv[1];index=int(sys.argv[2])-1;D=R/'downloads'/lang;I=R/'downloads'/'images';O=R/'public';O.mkdir(exist_ok=True)
-M=json.loads((R/'manifest.json').read_text(encoding='utf-8-sig'));spec=json.loads((R/'scene-spec.json').read_text(encoding='utf-8-sig'));row=M['locales'][lang][index];sid=row['id'];meta=json.loads((D/(sid+'.audio.json')).read_text());timing=json.loads((D/(sid+'.timing.json')).read_text())
+M=json.loads((R/'manifest.json').read_text(encoding='utf-8-sig'));spec=json.loads((R/'scene-spec.json').read_text(encoding='utf-8-sig'));row=M['locales'][lang][index];sid=row['id'];meta=json.loads((D/(sid+'.audio.json')).read_text(encoding='utf-8'));timing=json.loads((D/(sid+'.timing.json')).read_text(encoding='utf-8'))
 sha=lambda b:hashlib.sha256(b).hexdigest()
 assert sha((D/(sid+'.wav')).read_bytes())==meta['wavSHA256']==timing['provenance']['actualAudioSHA256']
 assert meta['textSHA256']==row['textSHA256'];assert not timing['provenance']['structuralIssues'],timing['provenance']['structuralIssues']
@@ -11,12 +11,24 @@ if candidates:shutil.copyfile(candidates[0],O/candidates[0].name);image=candidat
 else:image=asset+'.jpg';assert (O/image).exists()
 shutil.copyfile(D/(sid+'.wav'),O/(lang+'-'+sid+'.wav'))
 def norm(s):
- s=re.sub('[\u064b-\u065f\u0670\u0640]','',str(s)).lower();s=s.translate(str.maketrans('أإآى','اااي'));return re.sub(r'[^\w\s.]',' ',s).strip()
+ s=re.sub('[\u064b-\u065f\u0670\u0640]','',str(s)).lower();s=s.translate(str.maketrans('أإآىة','ااايه'));return re.sub(r'[^\w\s.]',' ',s).strip()
 # These are exact spoken semantic cues; alternatives cover transcript spelling and numeric notation only.
 alts={
  ('en',4,4):['apple limit'],('en',5,4):['diagnose poisoning'],('en',7,1):['whenever'],('en',8,0):['scientific experts'],('en',8,1):['evaluating studies'],('en',9,0):['bean sample'],
  ('en',4,0):['zero point zero eight','0.08'],('en',6,0):['two hundred','200 grams'],('en',6,4):['zero point zero one six','0.016'],('en',9,1):['zero point zero six','0.06'],('en',9,2):['zero point zero five','0.05'],('en',9,3):['hundred and fifty','150 grams'],
- ('ar',9,1):['صفر فاصلة صفر ستة','0.06','٠٫٠٦'],('ar',9,2):['صفر فاصلة صفر خمسة','0.05','٠٫٠٥'],('ar',6,4):['ستاشر','ستاشر من الف','0.016','٠٫٠١٦'],('ar',0,0):['مادة محددة'],('ar',3,0):['إحداث الضرر'],('ar',4,0):['التركيز المقاس','التركيز المئاس']}
+ ('ar',9,3):['خمسين جرام','150 جرام','مية وخمسين','مئة وخمسين'],('ar',9,1):['صفر فاصلة صفر ستة','0.06','٠٫٠٦'],('ar',9,2):['صفر فاصلة صفر خمسة','0.05','٠٫٠٥'],('ar',6,4):['ستاشر','ستاشر من الف','0.016','٠٫٠١٦'],('ar',0,0):['مادة محددة'],('ar',3,0):['إحداث الضرر'],('ar',4,0):['التركيز المقاس','التركيز المئاس']}
+dedup=[]
+if '16-second' in timing['provenance'].get('method',''):
+ cleaned=[]
+ for word in timing['words']:
+  prev=cleaned[-1] if cleaned else None
+  if prev and norm(prev['word'])==norm(word['word']) and word['start']-prev['end']<.7 and any(abs(word['start']-x)<.9 for x in [16,32,48]):
+   dedup.append({'first':dict(prev),'duplicate':word,'reason':'Overlapping analysis windows duplicated one boundary word; full-clip transcript has one occurrence'})
+   prev['end']=max(prev['end'],word['end'])
+  else:cleaned.append(dict(word))
+ timing['words']=cleaned;timing['captions']=[]
+ for pos in range(0,len(cleaned),8):
+  g=cleaned[pos:pos+8];timing['captions'].append({'text':' '.join(x['word'] for x in g),'start':g[0]['start'],'end':g[-1]['end']})
 words=timing['words'];anchors=[]
 for k,cue in enumerate(spec['cues'][lang][index]):
  options=alts.get((lang,index,k),[cue]);best=None
@@ -33,6 +45,6 @@ for k,cue in enumerate(spec['cues'][lang][index]):
    if any(norm(x) in norm(c['text']) for x in options):best={'cue':cue,'matchedText':c['text'],'time':c['start'],'end':c['end'],'matchScore':None,'method':'Actual-recording caption span; coarse estimate'};break
  assert best is not None,f'{lang} {sid} missing cue {k}: {options}'
  anchors.append(best)
-scene={'id':lang+'-'+sid,'locale':lang,'index':index,'title':row['title'],'audio':lang+'-'+sid+'.wav','image':image,'frames':math.ceil(meta['durationSeconds']*30)+18,'durationSeconds':meta['durationSeconds'],'anchors':anchors,'captions':timing['captions'],'wordTimings':words,'audioSHA256':meta['wavSHA256'],'speechReview':'Generated full passage; no human accent certification','timingMethod':timing['provenance']}
+scene={'id':lang+'-'+sid,'locale':lang,'index':index,'title':row['title'],'audio':lang+'-'+sid+'.wav','image':image,'frames':math.ceil(meta['durationSeconds']*30)+18,'durationSeconds':meta['durationSeconds'],'anchors':anchors,'captions':timing['captions'],'wordTimings':words,'timingCorrections':dedup,'audioSHA256':meta['wavSHA256'],'speechReview':'Generated full passage; no human accent certification','timingMethod':timing['provenance']}
 (R/'render-data.json').write_text(json.dumps({'scenes':[scene]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8');out=R/'output';out.mkdir(exist_ok=True);(out/'timing-and-inputs.json').write_text(json.dumps(scene,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('Verified inputs and actual-audio anchors for '+scene['id'])

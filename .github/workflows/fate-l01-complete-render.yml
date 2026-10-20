@@ -16,26 +16,30 @@ jobs:
       max-parallel: 6
       matrix:
         include:
-          - lang: en
+          - lang: ar
             scene: "01"
-          - lang: en
+          - lang: ar
             scene: "02"
-          - lang: en
+          - lang: ar
             scene: "03"
+          - lang: ar
+            scene: "04"
+          - lang: ar
+            scene: "05"
+          - lang: ar
+            scene: "06"
+          - lang: ar
+            scene: "07"
+          - lang: ar
+            scene: "08"
+          - lang: ar
+            scene: "09"
+          - lang: ar
+            scene: "10"
           - lang: en
             scene: "04"
           - lang: en
-            scene: "05"
-          - lang: en
-            scene: "06"
-          - lang: en
             scene: "07"
-          - lang: en
-            scene: "08"
-          - lang: en
-            scene: "09"
-          - lang: en
-            scene: "10"
     env:
       PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
       GH_TOKEN: ${{ github.token }}
@@ -43,7 +47,15 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Receive generated assets without regenerating media
         run: |
-          gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name "fate-l01-full-${{ matrix.lang }}" --dir "$PACKAGE/downloads/${{ matrix.lang }}"
+          if [ "${{ matrix.lang }}" = "ar" ]; then
+            gh run download 39403882526 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-ar-repaired-v1 --dir "$PACKAGE/downloads/ar"
+            for scene in 01 03 04 08 10; do
+              gh run download 39404211889 --repo "$GITHUB_REPOSITORY" --name "fate-l01-ar-audit-S$scene" --dir "$PACKAGE/audit-$scene"
+              cp "$PACKAGE/audit-$scene/L01-S$scene.timing.json" "$PACKAGE/downloads/ar/"
+            done
+          else
+            gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-en --dir "$PACKAGE/downloads/en"
+          fi
           gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-images --dir "$PACKAGE/downloads/images"
       - name: Install locked render dependencies
         working-directory: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
@@ -67,7 +79,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        lang: [en]
+        lang: [ar, en]
     env:
       PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
       GH_TOKEN: ${{ github.token }}
