@@ -1,0 +1,38 @@
+name: Fate L01 complete pilot media
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/manifest.json]
+permissions:
+  contents: read
+concurrency:
+  group: fate-l01-full-pilot-media-20261020
+  cancel-in-progress: false
+jobs:
+  media:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [ar, en, images]
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020
+      EXPECTED_MANIFEST_SHA256: ab0974ee24776d8bff1aa1f1d6fa72fc78edbb0f1f703c00d01e76d200f529c7
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Generate bounded L01 assets and actual-recording timings
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.mode }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-full-${{ matrix.mode }}
+          retention-days: 30
+          path: ${{ env.PACKAGE }}/output/${{ matrix.mode }}/
