@@ -1,0 +1,61 @@
+name: Soil owner requested true 3D assembly proof
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/assembly-motion-proof-20261020/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-assembly-proof-${{ github.sha }}
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/assembly-motion-proof-20261020
+jobs:
+  plan:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: plan
+        run: |
+          python - <<'PY'
+          import json,os,hashlib
+          from pathlib import Path
+          p=Path(os.environ['PACKAGE'])
+          d=json.loads((p/'request.json').read_text())
+          assert d['scope']=='one14secondAssemblyProof'
+          assert hashlib.sha256((p/'scene.py').read_bytes()).hexdigest()==d['sceneSHA256']
+          assert d['mode'] in ['preview','animation']
+          m=[{'name':'preview','args':'--stills'}] if d['mode']=='preview' else [
+            {'name':f'part{i}','args':f'--start {i*70+1} --end {(i+1)*70}'} for i in range(6)]
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('matrix='+json.dumps({'include':m})+'\n')
+          PY
+  render:
+    needs: plan
+    runs-on: ubuntu-22.04
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install pinned Blender Python runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libegl1 libgl1 libxrender1 libxi6 libxfixes3 libxxf86vm1 libxkbcommon0
+          python -m pip install bpy==4.5.3
+      - name: Render actual meshes and procedural materials
+        run: python "$PACKAGE/scene.py" ${{ matrix.args }} --output "output/${{ matrix.name }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: assembly-${{ matrix.name }}
+          retention-days: 30
+          path: output/
