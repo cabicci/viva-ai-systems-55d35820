@@ -10,7 +10,7 @@ assert sha((R/'review-request.json').read_bytes())==os.environ['EXPECTED_REQUEST
 assert not (O/'review.json').exists(),'No repeated ambiguous requests'
 scene=O/(sid+'.wav')
 if M.get('sourceMode','rendered_video')=='generated_wav':
- source=R/'source'/(sid+'.wav');assert sha(source.read_bytes())==C['sourceAudioSHA256']
+ source=R/'source'/C.get('sourceFile',sid+'.wav');assert source.name==C.get('sourceFile',sid+'.wav');assert sha(source.read_bytes())==C['sourceAudioSHA256']
  scene.write_bytes(source.read_bytes())
 else:
  video=R/'source'/M['sourceFile'];assert sha(video.read_bytes())==M['sourceSHA256']

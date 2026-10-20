@@ -1,0 +1,42 @@
+{
+  "id": "L01-S05-prefix-candidate-direct-review-v1",
+  "schemaVersion": 1,
+  "scope": "First actual end-to-end run of the direct-WAV automatic review on the existing unapproved tomato replacement; no generation or render",
+  "sourceRun": 39436069856,
+  "sourceArtifact": "fate-l01-tomato-prefix-v1",
+  "sourceFile": null,
+  "sourceSHA256": null,
+  "sourceDuration": 2.1709583333333335,
+  "model": "gemini-2.5-flash",
+  "analysisPasses": [
+    "blind",
+    "reference"
+  ],
+  "coreSeconds": 20,
+  "contextSeconds": 0.7,
+  "maxAnalysisCalls": 2,
+  "automaticRetries": 0,
+  "speechCalls": 0,
+  "scenes": [
+    {
+      "id": "L01-S05",
+      "voice": "Kore",
+      "start": 0,
+      "duration": 2.1709583333333335,
+      "text": "نرجع لتقرير الطّماطم.",
+      "textSHA256": "d2c625311132a488711ce2ef44fdbd5057fe174e64c4cd3e07ab4f1a935313b0",
+      "chunks": 1,
+      "sourceAudioSHA256": "6fc23d7e8a362cc79d172925096298e970c5448c2ad0958ee22d92fa53d0cf5c",
+      "sourceFile": "L01-S05-prefix-candidate.wav"
+    }
+  ],
+  "manualAcceptance": "Required; two separate passes of the same automated model are not independent human reviewers.",
+  "sourceMode": "generated_wav",
+  "termChecks": {
+    "L01-S05": [
+      "الطماطم",
+      "نرجع لتقرير"
+    ]
+  },
+  "ownerRejections": []
+}

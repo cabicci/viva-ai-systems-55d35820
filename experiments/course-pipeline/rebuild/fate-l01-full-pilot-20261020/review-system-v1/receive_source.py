@@ -6,4 +6,5 @@ assert M['speechCalls']==0 and M['automaticRetries']==0 and 1<=len(M['scenes'])<
 assert all(re.fullmatch(r'L01-S(?:0[1-9]|10)',s['id']) for s in M['scenes'])
 assert type(M['sourceRun']) is int and M['sourceRun']>0 and re.fullmatch(r'[A-Za-z0-9_.-]+',M['sourceArtifact'])
 assert M.get('sourceMode')=='generated_wav' and all(re.fullmatch('[0-9a-f]{64}',s['sourceAudioSHA256']) for s in M['scenes'])
+assert all(re.fullmatch(r'[A-Za-z0-9_.-]+\.wav',s.get('sourceFile',s['id']+'.wav')) for s in M['scenes'])
 subprocess.run(['gh','run','download',str(M['sourceRun']),'--repo',os.environ['GITHUB_REPOSITORY'],'--name',M['sourceArtifact'],'--dir',str(R/'source')],check=True)
