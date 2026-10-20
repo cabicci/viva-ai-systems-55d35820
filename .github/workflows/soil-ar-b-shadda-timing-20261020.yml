@@ -1,0 +1,55 @@
+name: Soil B shadda candidate ASR only
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/timing-request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-b-shadda-asr-1149f8c6a557239aaef98ec1c39083df183a59d441120f3ccf5eb6f02e94acc8
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020
+  REQUEST_SHA: 102576d8d5552d40c6059f182932ee12ab2f42a06520d27c3f31e5bb89fb3600
+  TIMING_REQUEST_SHA: 1149f8c6a557239aaef98ec1c39083df183a59d441120f3ccf5eb6f02e94acc8
+  SCRIPT_SHA: 73b047c90ee906e4eaed33e2d6d23f4e46656dc20411ad0c8720eba956c3a473
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  b-only-asr:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate exact ASR-only request and code
+        run: |
+          echo "$TIMING_REQUEST_SHA  $PACKAGE/timing-request.json" | sha256sum -c -
+          echo "$SCRIPT_SHA  $PACKAGE/repair.py" | sha256sum -c -
+          python "$PACKAGE/repair.py" validate
+      - name: Fetch only the successful current B voice artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run view 39383512430 --repo "$GITHUB_REPOSITORY" --json headSha --jq .headSha > "$PACKAGE/source-head.txt"
+          python -c "import os,pathlib; assert (pathlib.Path(os.environ['PACKAGE'])/'source-head.txt').read_text().strip() == 'a29ebfec0db27087e72de688526a7f56a0406b00'"
+          gh run download 39383512430 --repo "$GITHUB_REPOSITORY" --name soil-ar-b-shadda-candidate --dir "$PACKAGE/voice-input"
+      - name: Install verified pinned ASR
+        run: |
+          python -m pip download --no-deps --dest "$PACKAGE/wheels" faster-whisper==1.2.1
+          python "$PACKAGE/repair.py" verify-wheel
+          python -m pip install --disable-pip-version-check --report "$PACKAGE/asr-output/pip-install-report.private.json" "$PACKAGE"/wheels/faster_whisper-1.2.1-*.whl
+      - name: Time only existing B, never call speech provider
+        run: python "$PACKAGE/repair.py" asr
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-b-shadda-word-timing
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/asr-output/
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/failure.private.json

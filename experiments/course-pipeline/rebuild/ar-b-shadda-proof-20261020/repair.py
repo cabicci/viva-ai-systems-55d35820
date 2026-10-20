@@ -56,7 +56,10 @@ def asr():
  from faster_whisper import WhisperModel
  from huggingface_hub import snapshot_download
  assert importlib.metadata.version('faster-whisper')=='1.2.1'
- inp=HERE/'voice-input';state=read(inp/'attempt-state.private.json');audio=inp/state['file']
+ inp=HERE/'voice-input';states=list(inp.rglob('attempt-state.private.json'));assert len(states)==1,'Expected one candidate ledger'
+ state=read(states[0]);audio=states[0].parent/state['file']
+ timing=read(HERE/'timing-request.json');assert sha(HERE/'timing-request.json')==os.environ.get('TIMING_REQUEST_SHA')
+ assert sha(audio)==timing['expectedWavSha256'],'Exact new B waveform differs'
  assert state['requestSha256']==sha(HERE/'request.json')and state['state']=='GENERATED_B_CANDIDATE_NOT_OWNER_LISTENED'and state['providerCalls']==1 and sha(audio)==state['sha256']
  cfg=req['asr'];modelpath=Path(snapshot_download(repo_id=cfg['modelRepo'],revision=cfg['modelRevision'],cache_dir=str(HERE/'model-cache'),allow_patterns=['config.json','model.bin','tokenizer.json','vocabulary.*','preprocessor_config.json']))
  out=HERE/'asr-output';write(out/'resolved-runtime-model.private.json',{'atUTC':now(),'packageVersions':{d.metadata['Name']:d.version for d in importlib.metadata.distributions()},'modelRepo':cfg['modelRepo'],'modelRevision':cfg['modelRevision'],'files':[{'name':str(p.relative_to(modelpath)),'sha256':sha(p),'bytes':p.stat().st_size}for p in sorted(modelpath.rglob('*'))if p.is_file()],'method':'ASR_ESTIMATES_NOT_FORCED_ALIGNMENT_OR_HUMAN_LISTENING'})
