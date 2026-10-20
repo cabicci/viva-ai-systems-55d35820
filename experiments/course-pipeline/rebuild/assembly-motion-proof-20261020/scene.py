@@ -10,7 +10,7 @@ p=argparse.ArgumentParser()
 p.add_argument("--start",type=int,default=1)
 p.add_argument("--end",type=int,default=420)
 p.add_argument("--stills",action="store_true")
-p.add_argument("--engine",choices=["cycles","eevee"],default="eevee")
+p.add_argument("--engine",choices=["cycles","eevee"],default="cycles")
 p.add_argument("--output",default="output")
 args=p.parse_args(sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else None)
 out=Path(args.output).resolve();out.mkdir(parents=True,exist_ok=True)
@@ -18,8 +18,8 @@ bpy.ops.wm.read_factory_settings(use_empty=True)
 sc=bpy.context.scene
 sc.render.engine="CYCLES" if args.engine=="cycles" else "BLENDER_EEVEE_NEXT"
 sc.cycles.device="CPU"
-sc.cycles.samples=32;sc.cycles.use_denoising=True
-sc.cycles.max_bounces=6;sc.cycles.diffuse_bounces=3;sc.cycles.glossy_bounces=4
+sc.cycles.samples=16;sc.cycles.use_denoising=True
+sc.cycles.max_bounces=4;sc.cycles.diffuse_bounces=2;sc.cycles.glossy_bounces=3
 if hasattr(sc,"eevee"):
  sc.eevee.taa_render_samples=16
 sc.render.resolution_x=1920;sc.render.resolution_y=1080;sc.render.resolution_percentage=100
