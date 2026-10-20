@@ -7,7 +7,7 @@ permissions:
   contents: read
   actions: read
 concurrency:
-  group: soil-ar-word-timing-20261020-347f0f16d37283375d23266557b5576807d351e5433d598c1990686826050c18
+  group: soil-ar-word-timing-20261020-e52bb3dd549ce03a5d398c111ff6dc65b511e95a0c304b878d786b2fbccd739e
   cancel-in-progress: false
 jobs:
   word-timing:
@@ -16,8 +16,8 @@ jobs:
     timeout-minutes: 15
     env:
       PACKAGE: experiments/course-pipeline/rebuild/ar-word-timing-20261020
-      REQUEST_SHA: 347f0f16d37283375d23266557b5576807d351e5433d598c1990686826050c18
-      SCRIPT_SHA: a9fdbccaf26d23407271bc09c68481f00dc37f9f5d7a70d3a3cff312af788998
+      REQUEST_SHA: e52bb3dd549ce03a5d398c111ff6dc65b511e95a0c304b878d786b2fbccd739e
+      SCRIPT_SHA: 3e7df525dc6040784292197d8fd5c15c230a2898ac18599a8858d196c4bb750f
       PYTHONUNBUFFERED: '1'
       HF_HUB_DISABLE_TELEMETRY: '1'
       OMP_NUM_THREADS: '2'

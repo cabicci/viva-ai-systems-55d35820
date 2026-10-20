@@ -45,5 +45,11 @@
     "No proportional text timing, invented anchors, retries or full-movie launch.",
     "Unrecognized/mistranscribed words remain uncertain."
   ],
-  "maximumAsrAttempts": 1
+  "maximumAsrAttempts": 1,
+  "transportCorrection": {
+    "canonicalTextBytes": "UTF-8 LF",
+    "previousPreflightRun": 39381258294,
+    "previousAsrCalls": 0,
+    "reason": "Hash committed bytes; previous WindowsCRLF request guard stopped before package/input/model/ASR. One corrected launch authorized, no waveform or semantic ASR setting change."
+  }
 }
