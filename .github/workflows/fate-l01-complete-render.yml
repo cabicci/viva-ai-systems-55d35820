@@ -1,0 +1,85 @@
+name: Fate L01 scene renders and complete video
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/render-request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  scene:
+    if: github.ref == 'refs/heads/work/fate-l01-full-pilot-20261020' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - lang: en
+            scene: "01"
+          - lang: en
+            scene: "02"
+          - lang: en
+            scene: "03"
+          - lang: en
+            scene: "04"
+          - lang: en
+            scene: "05"
+          - lang: en
+            scene: "06"
+          - lang: en
+            scene: "07"
+          - lang: en
+            scene: "08"
+          - lang: en
+            scene: "09"
+          - lang: en
+            scene: "10"
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Receive generated assets without regenerating media
+        run: |
+          gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name "fate-l01-full-${{ matrix.lang }}" --dir "$PACKAGE/downloads/${{ matrix.lang }}"
+          gh run download 39401485629 --repo "$GITHUB_REPOSITORY" --name fate-l01-full-images --dir "$PACKAGE/downloads/images"
+      - name: Install locked render dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
+        run: npm ci --no-audit --no-fund
+      - name: Verify actual recording and prepare semantic timings
+        run: python "$PACKAGE/prepare.py" "${{ matrix.lang }}" "${{ matrix.scene }}"
+      - name: Render and decode-verify this scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-render-${{ matrix.lang }}-L01-S${{ format('{0}', matrix.scene) }}
+          retention-days: 30
+          path: ${{ env.PACKAGE }}/output/
+  combine:
+    needs: scene
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        lang: [en]
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Assemble completed scenes and captions
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/merge.py" "${{ matrix.lang }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-l01-complete-${{ matrix.lang }}
+          retention-days: 30
+          path: ${{ env.PACKAGE }}/final/

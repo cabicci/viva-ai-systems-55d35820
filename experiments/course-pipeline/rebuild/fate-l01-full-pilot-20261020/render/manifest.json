@@ -1,0 +1,555 @@
+{
+  "id": "fate-L01-full-v1",
+  "scope": "L01 only; Arabic and English representative pilot; no publication or course rollout",
+  "ttsModel": "gemini-2.5-flash-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "imageModel": "gemini-nano-banana-2.1",
+  "voices": {
+    "A": "Charon",
+    "B": "Kore"
+  },
+  "automaticRetries": 0,
+  "maxNewTTSCalls": 21,
+  "maxAnalysisCalls": 20,
+  "maxImageCalls": 4,
+  "renderExecution": "GitHub Actions after generated inputs and scene implementation are verified",
+  "review": "Owner accepted corrected B and synchronized style sample; full recording review remains pending",
+  "delivery": {
+    "ar": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة عندهم أساس في الكيمياء والأحياء بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. انطق «تتحرّك» و«تمانية» و«مِلّيجرام» و«لكلّ» بالنطق المصري اليومي. راعي الشدّات في النصّ من غير مبالغة في تطويل الحروف، ومن غير تحويل الكلام لفصحى. حافظ على الوقفات الطبيعية والمعنى العلمي والأرقام ووحدات القياس. اقرأ نصّ الإلقاء بسّ، من غير قراءة التعليمات أو أسماء المتكلّمين، ومن غير مقدّمة أو تعليق. بلاش نبرة نشرات الأخبار، وبلاش فصحى أو لهجة خليجية، وبلاش تمثيل مبالغ فيه أو تطويل الحروف. تصحيح نطق محدّد: كلمة «المقاس» في عبارة «التّركيز المقاس» معناها measured، وانطقها بالمصري «المِئاس»: القاف هنا وقفة همزية /ʔ/، مش قاف فصحى /q/، ومش كاف /k/. النطق التقريبي el-me-'aas، زي كلمة «مقاس» في الكلام المصري اليومي. احتفظ بمعنى الكلمة وكلّ الكلمات والأرقام زي ما هي. ده توجيه أداء فقط؛ ما تقراش الشرح ده ولا النطق المكتوب للتوضيح.",
+    "en": "Read the narration only in natural, clear conversational English for university students with chemistry and biology prerequisites. Explain rather than announce. Preserve every scientific qualification, negation, number and unit. Use calm purposeful pacing and natural sentence pauses. No introductory remarks, role names, sound effects or extra text."
+  },
+  "sourceHashes": {
+    "curriculum/rebuild/L01/pronunciation-v2/narration.json": "6f964424b4872250099e5cf02fe32926d36e0823dcfb72e0a0932de85adc87b6",
+    "curriculum/rebuild/L01/scenes.json": "04921c65003be447a78aeee931364613a752fd603eaf3d3c93400da1c102173c",
+    "sources/Fate-Pesticides-Dr E. Swelam.pdf": "52b9570a1959bc4a7465b211f67a2ed6ef8039be6b78edfcc60ae1f3da8bb71e"
+  },
+  "locales": {
+    "ar": [
+      {
+        "id": "L01-S01",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "تخيّل إنّ معاك تقرير تحليل لعيّنة طماطم، ومكتوب فيه إنّ المعمل قاس متبقّي لمبيد. أوّل ردّ فعل ممكن يكون: يبقى الطّماطم دي سبّبت تسمّم. بسّ استنى لحظة. التّقرير قال لنا إيه بالضّبط؟ قال إنّ مادّة محدّدة اتقاست في عيّنة. لسّه ما قالش مين أكل منها، وأكل قدّ إيه، ولا إيه التّأثير اللّي حصل له. في الدّرس ده، هنمشي من مكان استخدام المبيد لحدّ نتيجة التّحليل، ونتعلّم نكتب استنتاج على قدّ الدّليل اللّي معانا. السّؤال اللّي هنرجع له طول الوقت هو: إيه اللّي عرفناه، وإيه اللّي لسّه محتاجين نعرفه؟",
+        "textSHA256": "adf7102050f2e327096d5aa4f26f03d7147f4e0c720ae1933697071c7be7578c",
+        "title": "نتيجة تحليل… نقدر نستنتج منها إيه؟",
+        "labels": [
+          "عينة غذاء",
+          "مادة محددة",
+          "نتيجة تحليل ≠ تشخيص"
+        ],
+        "source": [
+          "PDF p3: food residues and human exposure",
+          "Invented tomato case"
+        ],
+        "claim": "A residue detection alone does not establish an individual health outcome.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "تخيّل إنّ معاك تقرير تحليل لعيّنة طماطم، ومكتوب فيه إنّ المعمل قاس متبقّي لمبيد. أوّل ردّ فعل ممكن يكون: يبقى الطّماطم دي سبّبت تسمّم. بسّ استنى لحظة. التّقرير قال لنا إيه بالضّبط؟ قال إنّ مادّة محدّدة اتقاست في عيّنة. لسّه ما قالش مين أكل منها، وأكل قدّ إيه، ولا إيه التّأثير اللّي حصل له. في الدّرس ده، هنمشي من مكان استخدام المبيد لحدّ نتيجة التّحليل، ونتعلّم نكتب استنتاج على قدّ الدّليل اللّي معانا. السّؤال اللّي هنرجع له طول الوقت هو: إيه اللّي عرفناه، وإيه اللّي لسّه محتاجين نعرفه؟"
+          }
+        ]
+      },
+      {
+        "id": "L01-S02",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "قبل ما نكمّل، إيه هو متبقّي المبيد؟ ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش كفاية. لازم نعرف المعمل كان بيدوّر على إيه بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه إنّنا هنشوف طبقة بعيننا. العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟",
+        "textSHA256": "b166a600a35e6f2c95a16b8d85a56f01ad49db88d4d2518a804af5330915d361",
+        "title": "المتبقي مش لازم يكون ظاهرًا",
+        "labels": [
+          "مادة أصلية",
+          "ناتج تحوّل محدد",
+          "تعريف المتبقي",
+          "رموز توضيحية"
+        ],
+        "source": [
+          "PDF pp3–4: residue context",
+          "Codex glossary: pesticide residue"
+        ],
+        "claim": "Residues may include specified parent and relevant derivative substances; report and reference must use compatible definitions.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "قبل ما نكمّل، إيه هو متبقّي المبيد؟ ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش كفاية. لازم نعرف المعمل كان بيدوّر على إيه بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه إنّنا هنشوف طبقة بعيننا. العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟"
+          }
+        ]
+      },
+      {
+        "id": "L01-S03",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "دلوقتي نوسّع الصّورة ونرجع للحقل. بعد الاستخدام، جزء من المادّة ممكن يبقى على المحصول أو جوّاه. لو المتبقّي موجود في الغذاء اللّي اتاكل، يبقى عندنا طريق للتّعرّض عن طريق الأكل. وفي مسار تاني، مادّة وصلت للتّربة ممكن تتحرّك مع مياه جارية على السّطح لحدّ مجرى مياه. هنا نسأل: هل وصلت فعلًا؟ وبأيّ تركيز؟ وممكن أثناء الرّش يحصل انجراف لرذاذ خارج المكان المستهدف، فيلامس كائنات تانية. والحشرات النّافعة ممكن تتعرّض من نبات عليه متبقّيات، بحسب طريقة التّلامس أو التّغذية. كلّ طريق من دول احتمال محتاج بيانات، مش حاجة بتحصل بنفس الشّكل مع كلّ مبيد. السّهم بيوضّح الانتقال؛ مش بيقول إنّ الضّرر حصل.",
+        "textSHA256": "b587d25bdd104fef8abed25562453f15c89c5704e8820c4d46608463236083f3",
+        "title": "نتتبع الطريق من الحقل",
+        "labels": [
+          "مسارات محتملة",
+          "غذاء ← تناول",
+          "تربة ← جريان سطحي ← مياه",
+          "انجراف رذاذ",
+          "كائن غير مستهدف"
+        ],
+        "source": [
+          "PDF p4: environment and life-forms figure",
+          "EPA exposure characterization: possible transport/contact pathways"
+        ],
+        "claim": "Different transport routes can connect one application source with food, water, soil and non-target organisms; none alone proves injury.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "دلوقتي نوسّع الصّورة ونرجع للحقل. بعد الاستخدام، جزء من المادّة ممكن يبقى على المحصول أو جوّاه. لو المتبقّي موجود في الغذاء اللّي اتاكل، يبقى عندنا طريق للتّعرّض عن طريق الأكل. وفي مسار تاني، مادّة وصلت للتّربة ممكن تتحرّك مع مياه جارية على السّطح لحدّ مجرى مياه. هنا نسأل: هل وصلت فعلًا؟ وبأيّ تركيز؟ وممكن أثناء الرّش يحصل انجراف لرذاذ خارج المكان المستهدف، فيلامس كائنات تانية. والحشرات النّافعة ممكن تتعرّض من نبات عليه متبقّيات، بحسب طريقة التّلامس أو التّغذية. كلّ طريق من دول احتمال محتاج بيانات، مش حاجة بتحصل بنفس الشّكل مع كلّ مبيد. السّهم بيوضّح الانتقال؛ مش بيقول إنّ الضّرر حصل."
+          }
+        ]
+      },
+      {
+        "id": "L01-S04",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "خلّينا نفصل تلات أفكار. أوّل فكرة: المادّة تقدر تعمل ضرر من نوع إيه، وتحت أنهي ظروف؟ ده سؤال عن قدرتها على إحداث الضّرر. تاني فكرة: المادّة وصلت للكائن إزاي، وقدّ إيه، ولمدّة قدّ إيه؟ ده سؤال عن التّعرّض. أمّا المخاطر، فالسّؤال فيها عن احتمال حدوث الأثر وشدّته في الظّروف اللّي بندرسها. يعني لو دراسة لقت أثرًا عند جرعة معيّنة، لسّه محتاجين نعرف هل ظروف التّعرّض في حالتنا تسمح باستخدام النّتيجة دي. وجود المادّة لوحده مش كفاية للحكم. وعدم وجود أعراض فوريّة، برضه، مش دليل إنّ كلّ تأثير محتمل مستبعد. إحنا بنجمّع أدلّة ونفهم حدودها، مش بنختار لون يطمّنّا أو يخوّفنا.",
+        "textSHA256": "3bc289711e6c3cfde521d16d22531f3cab7c4f03393f7aaf0c439f81357b7da7",
+        "title": "قدرة على الضرر، تعرّض، مخاطر",
+        "labels": [
+          "دليل التأثير",
+          "المقدار • الطريق • المدة",
+          "تقدير مخاطر الحالة"
+        ],
+        "source": [
+          "PDF pp3–6: exposure and effects",
+          "Scientific clarification of inference"
+        ],
+        "claim": "Effect evidence and exposure information answer different questions and must be integrated for a case-specific risk assessment.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "خلّينا نفصل تلات أفكار. أوّل فكرة: المادّة تقدر تعمل ضرر من نوع إيه، وتحت أنهي ظروف؟ ده سؤال عن قدرتها على إحداث الضّرر. تاني فكرة: المادّة وصلت للكائن إزاي، وقدّ إيه، ولمدّة قدّ إيه؟ ده سؤال عن التّعرّض. أمّا المخاطر، فالسّؤال فيها عن احتمال حدوث الأثر وشدّته في الظّروف اللّي بندرسها. يعني لو دراسة لقت أثرًا عند جرعة معيّنة، لسّه محتاجين نعرف هل ظروف التّعرّض في حالتنا تسمح باستخدام النّتيجة دي. وجود المادّة لوحده مش كفاية للحكم. وعدم وجود أعراض فوريّة، برضه، مش دليل إنّ كلّ تأثير محتمل مستبعد. إحنا بنجمّع أدلّة ونفهم حدودها، مش بنختار لون يطمّنّا أو يخوّفنا."
+          }
+        ]
+      },
+      {
+        "id": "L01-S05",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "نرجع لتقرير الطّماطم. المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها. ومعانا حدّ افتراضيّ قيمته صفر فاصلة واحد مِلّيجرام لكلّ كيلوجرام غذاء. قبل المقارنة، لازم نتأكّد إنّ المادّة وتعريف المتبقّي والسّلعة والجزء اللّي اتحلّل والوحدة متطابقين. لو الرّقم المرجعيّ يخصّ التّفاح، ما ينفعش ننقله للطّماطم. في تدريبنا هنفترض إنّ البيانات متطابقة والقياس صالح. كده نقدر نقارن، من غير ما ندّعي إنّنا بنصدر قرارًا قانونيًّا على شحنة حقيقيّة.",
+        "textSHA256": "4e56fe5e04361d416c6503342f67f344daf43e8959f1ad96abdea5a0c0f81d2a",
+        "title": "نقرأ التقرير قبل المقارنة",
+        "labels": [
+          "مثال افتراضي",
+          "0.08 mg/kg غذاء",
+          "حد مطابق: 0.10 mg/kg غذاء",
+          "المادة • التعريف • السلعة • الجزء • الوحدة"
+        ],
+        "source": [
+          "PDF p3: residues and standards",
+          "Codex glossary: MRL",
+          "Invented tomato case"
+        ],
+        "claim": "A food concentration must be interpreted using the matching analyte, residue definition, commodity, sample basis and units.",
+        "parts": [
+          {
+            "id": "prefix",
+            "text": "نرجع لتقرير الطّماطم."
+          },
+          {
+            "id": "accepted",
+            "reuse": "accepted-B.wav",
+            "sha256": "1ec576831f4c9e79a59f946b5cb7fb195c47e498e819962848d60d4811e575c4",
+            "text": "المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها."
+          },
+          {
+            "id": "suffix",
+            "text": "ومعانا حدّ افتراضيّ قيمته صفر فاصلة واحد مِلّيجرام لكلّ كيلوجرام غذاء. قبل المقارنة، لازم نتأكّد إنّ المادّة وتعريف المتبقّي والسّلعة والجزء اللّي اتحلّل والوحدة متطابقين. لو الرّقم المرجعيّ يخصّ التّفاح، ما ينفعش ننقله للطّماطم. في تدريبنا هنفترض إنّ البيانات متطابقة والقياس صالح. كده نقدر نقارن، من غير ما ندّعي إنّنا بنصدر قرارًا قانونيًّا على شحنة حقيقيّة."
+          }
+        ]
+      },
+      {
+        "id": "L01-S06",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "دلوقتي نحطّ الرّقمين على نفس المقياس. صفر فاصلة صفر تمانية أقلّ من صفر فاصلة واحد. والفرق بينهم اتنين من ميّة مِلّيجرام لكلّ كيلوجرام غذاء. نكتب الاستنتاج بدقّة: القيمة أقلّ من الحدّ الافتراضيّ المستخدم في المثال. بسّ الفرق ده مش هامش أمان لشخص، ومش كمّيّة مسموح له ياكلها. الحدّ الأقصى للمتبقّي بيتعلّق بتركيز محدّد في سلعة محدّدة، ووضعه له بيانات استخدام وتقييم علميّ. مش هو الجرعة اللّي دخلت جسم إنسان. ولو القيمة كانت أعلى من الحدّ، ده برضه ما يثبتش لوحده إنّ شخصًا اتسمّم. تجاوز الحدّ وتقييم الأثر الصّحّيّ سؤالان مرتبطان، لكن كلّ واحد محتاج أدلّته المناسبة.",
+        "textSHA256": "3e1ff8da26ed1e802d64b7333155fe0a4057a8ed8000a3b330a8abecab99a9e7",
+        "title": "النتيجة وحدودها",
+        "labels": [
+          "0.08 < 0.10",
+          "الفرق: 0.02 mg/kg",
+          "أقل من الحد الافتراضي",
+          "ليست جرعة شخص"
+        ],
+        "source": [
+          "PDF p3: standard-setting context",
+          "Scientific clarification",
+          "Invented arithmetic"
+        ],
+        "claim": "Below the illustrative concentration limit is the supported numerical conclusion; the difference is not a personal safety allowance.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "دلوقتي نحطّ الرّقمين على نفس المقياس. صفر فاصلة صفر تمانية أقلّ من صفر فاصلة واحد. والفرق بينهم اتنين من ميّة مِلّيجرام لكلّ كيلوجرام غذاء. نكتب الاستنتاج بدقّة: القيمة أقلّ من الحدّ الافتراضيّ المستخدم في المثال. بسّ الفرق ده مش هامش أمان لشخص، ومش كمّيّة مسموح له ياكلها. الحدّ الأقصى للمتبقّي بيتعلّق بتركيز محدّد في سلعة محدّدة، ووضعه له بيانات استخدام وتقييم علميّ. مش هو الجرعة اللّي دخلت جسم إنسان. ولو القيمة كانت أعلى من الحدّ، ده برضه ما يثبتش لوحده إنّ شخصًا اتسمّم. تجاوز الحدّ وتقييم الأثر الصّحّيّ سؤالان مرتبطان، لكن كلّ واحد محتاج أدلّته المناسبة."
+          }
+        ]
+      },
+      {
+        "id": "L01-S07",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "طيب نعرف الكمّيّة الموجودة في حصّة أكل إزاي؟ هنفترض إنّ شخصًا أكل ميتين جرام من نفس الطّماطم، وإنّ التّركيز في الحصّة هو نفسه في المثال. نحوّل الأوّل: ميتين جرام يساووا صفر فاصلة اتنين كيلوجرام. بعد كده نضرب تركيز المتبقّي في كتلة الغذاء. وحدة كيلوجرام الغذاء بتُختصر، ويتبقّى عندنا مِلّيجرام. النّاتج ستّاشر من ألف مِلّيجرام في الحصّة. كده حسبنا كمّيّة متناولة في سيناريو محدّد؛ ما حسبناش الكمّيّة اللّي امتصّها الجسم، ولا احتمال الضّرر. ولو حجم الحصّة زاد والتّركيز ثابت، الكمّيّة المتناولة هتزيد. علشان نكمّل تقييم التّعرّض، محتاجين بيانات تانية، منها وزن الجسم وتكرار الأكل وباقي المصادر المهمّة.",
+        "textSHA256": "db69e6926c09b0a661057a7759891e1467e81862ded5b0d401ef71d853d56d1b",
+        "title": "من التركيز إلى كمية في حصة",
+        "labels": [
+          "200 g = 0.20 kg",
+          "0.08 mg/kg × 0.20 kg = 0.016 mg",
+          "كمية في الحصة ≠ كمية ممتصة"
+        ],
+        "source": [
+          "Author-created quantitative bridge to L02",
+          "Dimensional arithmetic"
+        ],
+        "claim": "Concentration times food mass estimates residue amount in the portion, not absorbed dose or risk.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "طيب نعرف الكمّيّة الموجودة في حصّة أكل إزاي؟ هنفترض إنّ شخصًا أكل ميتين جرام من نفس الطّماطم، وإنّ التّركيز في الحصّة هو نفسه في المثال. نحوّل الأوّل: ميتين جرام يساووا صفر فاصلة اتنين كيلوجرام. بعد كده نضرب تركيز المتبقّي في كتلة الغذاء. وحدة كيلوجرام الغذاء بتُختصر، ويتبقّى عندنا مِلّيجرام. النّاتج ستّاشر من ألف مِلّيجرام في الحصّة. كده حسبنا كمّيّة متناولة في سيناريو محدّد؛ ما حسبناش الكمّيّة اللّي امتصّها الجسم، ولا احتمال الضّرر. ولو حجم الحصّة زاد والتّركيز ثابت، الكمّيّة المتناولة هتزيد. علشان نكمّل تقييم التّعرّض، محتاجين بيانات تانية، منها وزن الجسم وتكرار الأكل وباقي المصادر المهمّة."
+          }
+        ]
+      },
+      {
+        "id": "L01-S08",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "في ملفّ المنهج جدول بيجمّع أسماء مبيدات وآثار صحّيّة وبيئيّة. المشكلة إنّ الصّفّ لوحده ما بيدّيناش كلّ تفاصيل الدّليل. لو حدّ قال: المادّة مرتبطة بأثر على الجهاز العصبيّ، يبقى أيّ غذاء نلاقيها فيه هيسبّب الأثر ده؛ نوقّف عند كلمة أيّ. نسأل: الأثر اتقاس في أنهي دراسة؟ وعلى أنهي كائن؟ وعند جرعة أو تركيز قدّ إيه؟ وبأيّ طريق ولمدّة قدّ إيه؟ وكمان نراجع هويّة المادّة، لأنّ أيّ خطأ في الاسم أو الصّيغة يغيّر اللّي بندرسه. إحنا مش بنلغي احتمال الضّرر. إحنا بنرفض القفزة من معلومة ناقصة لحكم مؤكّد. الجدول هنا نقطة بداية للبحث، مش تشخيصًا جاهزًا نحطّه على نتيجة التّحليل.",
+        "textSHA256": "d8f861d5ec3ecc31d4c2b649cff56e50c96013600fd5ba01b009c7809b7bff03",
+        "title": "نفكك ادعاءً من جدول الأضرار",
+        "labels": [
+          "ادعاء يحتاج تحققًا",
+          "دراسة • كائن • أثر مقاس",
+          "جرعة • طريق • مدة",
+          "هوية المادة"
+        ],
+        "source": [
+          "PDF pp4–6: Table 1; no row-level validation claimed"
+        ],
+        "claim": "A listed effect cannot be applied to a new consumer exposure without checking chemical identity, evidence, endpoint, dose, route and duration.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "في ملفّ المنهج جدول بيجمّع أسماء مبيدات وآثار صحّيّة وبيئيّة. المشكلة إنّ الصّفّ لوحده ما بيدّيناش كلّ تفاصيل الدّليل. لو حدّ قال: المادّة مرتبطة بأثر على الجهاز العصبيّ، يبقى أيّ غذاء نلاقيها فيه هيسبّب الأثر ده؛ نوقّف عند كلمة أيّ. نسأل: الأثر اتقاس في أنهي دراسة؟ وعلى أنهي كائن؟ وعند جرعة أو تركيز قدّ إيه؟ وبأيّ طريق ولمدّة قدّ إيه؟ وكمان نراجع هويّة المادّة، لأنّ أيّ خطأ في الاسم أو الصّيغة يغيّر اللّي بندرسه. إحنا مش بنلغي احتمال الضّرر. إحنا بنرفض القفزة من معلومة ناقصة لحكم مؤكّد. الجدول هنا نقطة بداية للبحث، مش تشخيصًا جاهزًا نحطّه على نتيجة التّحليل."
+          }
+        ]
+      },
+      {
+        "id": "L01-S09",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "وده يفسّر ليه صفحة تلاتة بتتكلّم عن دور خبراء منظّمة الأغذية والزّراعة ومنظّمة الصّحّة العالميّة. تقييم الدّراسات العلميّة غير اتخاذ القرار التّنظيميّ، حتّى لو الاتنين مرتبطين. جهات وضع المعايير والحكومات بتستخدم تقييمات علميّة وبيانات عن الاستخدام والمتبقّيات. وعلى مستوى المزرعة، الممارسة الزّراعيّة الجيّدة بتبدأ بالاستخدام المصرّح به وشروطه المناسبة للمبيد والمحصول. ما ناخدش من رقم التّحليل جرعة رشّ، ولا نخترع منه موعد حصاد. المعلومات دي لازم ترجع للمُنتَج والاستخدام والمتطلّبات المعتمدة. دورنا هنا إنّنا نعرف نطلب المعلومات الصّحيحة ونفهمها، من غير ما نحوّل مثال تعليميّ لتوصية استخدام.",
+        "textSHA256": "fec551c57185a47c7fb3aa29138915b06da3f7bb0f643dd0f611e390762705e5",
+        "title": "التقييم والممارسة الزراعية",
+        "labels": [
+          "تقييم علمي",
+          "معايير وقرارات تنظيمية",
+          "استخدام مصرّح به وشروطه"
+        ],
+        "source": [
+          "PDF p3 and p4 continuation: FAO/WHO, JMPR, standards, GAP and lifecycle"
+        ],
+        "claim": "Scientific assessment informs standards and management; a sample result does not prescribe application or harvest decisions.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "وده يفسّر ليه صفحة تلاتة بتتكلّم عن دور خبراء منظّمة الأغذية والزّراعة ومنظّمة الصّحّة العالميّة. تقييم الدّراسات العلميّة غير اتخاذ القرار التّنظيميّ، حتّى لو الاتنين مرتبطين. جهات وضع المعايير والحكومات بتستخدم تقييمات علميّة وبيانات عن الاستخدام والمتبقّيات. وعلى مستوى المزرعة، الممارسة الزّراعيّة الجيّدة بتبدأ بالاستخدام المصرّح به وشروطه المناسبة للمبيد والمحصول. ما ناخدش من رقم التّحليل جرعة رشّ، ولا نخترع منه موعد حصاد. المعلومات دي لازم ترجع للمُنتَج والاستخدام والمتطلّبات المعتمدة. دورنا هنا إنّنا نعرف نطلب المعلومات الصّحيحة ونفهمها، من غير ما نحوّل مثال تعليميّ لتوصية استخدام."
+          }
+        ]
+      },
+      {
+        "id": "L01-S10",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. عيّنة فاصوليا تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي.",
+        "textSHA256": "aa15e67a6825015105e1292d633997b065e5056b2f78db703b7ca554222256e8",
+        "title": "دورك: حالة جديدة",
+        "labels": [
+          "حالة جديدة — افتراضية",
+          "النتيجة: 0.06 mg/kg",
+          "الحد: 0.05 mg/kg",
+          "الحصة: 150 g",
+          "قارن • احسب • حدّد ما لا يثبته الدليل"
+        ],
+        "source": [
+          "Author-created transfer task aligned to L01 objectives"
+        ],
+        "claim": "Learners must independently distinguish concentration comparison, ingested amount and unsupported health inference.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. عيّنة فاصوليا تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي."
+          }
+        ]
+      }
+    ],
+    "en": [
+      {
+        "id": "L01-S01",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "Imagine you have a laboratory report for a tomato sample. It says a pesticide residue was measured. Your first reaction might be that the tomatoes caused poisoning. Pause there. What did the report actually establish? A specified substance was measured in a sample. It has not told us who ate the food, how much they ate, or what happened to them. In this lesson we will trace the journey from pesticide use to a laboratory result, then make a conclusion that fits the evidence. Our recurring question is: what do we know, and what is still missing?",
+        "textSHA256": "098774dcf545442afc7e34aa1b5353a4565ad3ad9a4256bc77cff607bf867f88",
+        "title": "A result: what does it establish?",
+        "labels": [
+          "Food sample",
+          "Specified substance",
+          "Laboratory result ≠ diagnosis"
+        ],
+        "source": [
+          "PDF p3: food residues and human exposure",
+          "Invented tomato case"
+        ],
+        "claim": "A residue detection alone does not establish an individual health outcome.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Imagine you have a laboratory report for a tomato sample. It says a pesticide residue was measured. Your first reaction might be that the tomatoes caused poisoning. Pause there. What did the report actually establish? A specified substance was measured in a sample. It has not told us who ate the food, how much they ate, or what happened to them. In this lesson we will trace the journey from pesticide use to a laboratory result, then make a conclusion that fits the evidence. Our recurring question is: what do we know, and what is still missing?"
+          }
+        ]
+      },
+      {
+        "id": "L01-S02",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "First, what is a pesticide residue? It may be the parent substance present on or within food. Depending on the definition, it may also include particular products formed when that substance changes. So the pesticide name alone is not enough. We need to know exactly what the laboratory measured. If it measured only the parent, but our comparison includes the parent and a particular transformation product, we have a mismatch to resolve. A residue also need not be a coating you can see. The markers in our diagram are explanatory symbols, not actual molecular shapes. Ask: which substance was measured, where, and by what method?",
+        "textSHA256": "6091b6d1900691bb54ef69d0261539eacb6893bad6b9da646c7a0bb8a9b391f0",
+        "title": "A residue need not be visible",
+        "labels": [
+          "Parent substance",
+          "Specified transformation product",
+          "Residue definition",
+          "Schematic markers"
+        ],
+        "source": [
+          "PDF pp3–4: residue context",
+          "Codex glossary: pesticide residue"
+        ],
+        "claim": "Residues may include specified parent and relevant derivative substances; report and reference must use compatible definitions.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "First, what is a pesticide residue? It may be the parent substance present on or within food. Depending on the definition, it may also include particular products formed when that substance changes. So the pesticide name alone is not enough. We need to know exactly what the laboratory measured. If it measured only the parent, but our comparison includes the parent and a particular transformation product, we have a mismatch to resolve. A residue also need not be a coating you can see. The markers in our diagram are explanatory symbols, not actual molecular shapes. Ask: which substance was measured, where, and by what method?"
+          }
+        ]
+      },
+      {
+        "id": "L01-S03",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "Now zoom out to the field. After use, some material may remain on or within the crop. If a residue is in food that is eaten, we have a dietary exposure route. In another pathway, material reaching soil may travel with surface runoff into a watercourse. We must ask whether it actually arrived and at what concentration. Spray can also drift beyond the intended target and contact other organisms. Beneficial insects may encounter residues on plants through contact or feeding, depending on the situation. Each pathway is a possibility requiring evidence, not a fixed outcome for every pesticide. An arrow explains movement; it does not establish harm.",
+        "textSHA256": "a449a5e728b07de82c6c834cda08c67857bf6c271acbcb071c3f4de33d64f387",
+        "title": "Trace a pathway from the field",
+        "labels": [
+          "Possible pathways",
+          "Food → consumption",
+          "Soil → runoff → water",
+          "Spray drift",
+          "Non-target organism"
+        ],
+        "source": [
+          "PDF p4: environment and life-forms figure",
+          "EPA exposure characterization: possible transport/contact pathways"
+        ],
+        "claim": "Different transport routes can connect one application source with food, water, soil and non-target organisms; none alone proves injury.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Now zoom out to the field. After use, some material may remain on or within the crop. If a residue is in food that is eaten, we have a dietary exposure route. In another pathway, material reaching soil may travel with surface runoff into a watercourse. We must ask whether it actually arrived and at what concentration. Spray can also drift beyond the intended target and contact other organisms. Beneficial insects may encounter residues on plants through contact or feeding, depending on the situation. Each pathway is a possibility requiring evidence, not a fixed outcome for every pesticide. An arrow explains movement; it does not establish harm."
+          }
+        ]
+      },
+      {
+        "id": "L01-S04",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "Separate three ideas. First: what adverse effect can the substance cause, and under which conditions? That is a hazard question. Second: how does the organism encounter it, how much, and for how long? That is an exposure question. Risk concerns the likelihood and severity of an effect in the situation we are assessing. If a study reports an effect at a particular dose, we still need to decide whether its evidence applies to our exposure conditions. Presence alone is not enough for a health conclusion. Nor does the absence of immediate symptoms rule out every possible effect. We are evaluating evidence and its limits, not choosing a reassuring or alarming color.",
+        "textSHA256": "0b6d6c0ae10649fddbbf00125510b04826be0f5eaef2f89fa3f7b50997dee4ad",
+        "title": "Hazard, exposure and risk",
+        "labels": [
+          "Effect evidence",
+          "Amount • route • duration",
+          "Case-specific risk assessment"
+        ],
+        "source": [
+          "PDF pp3–6: exposure and effects",
+          "Scientific clarification of inference"
+        ],
+        "claim": "Effect evidence and exposure information answer different questions and must be integrated for a case-specific risk assessment.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Separate three ideas. First: what adverse effect can the substance cause, and under which conditions? That is a hazard question. Second: how does the organism encounter it, how much, and for how long? That is an exposure question. Risk concerns the likelihood and severity of an effect in the situation we are assessing. If a study reports an effect at a particular dose, we still need to decide whether its evidence applies to our exposure conditions. Presence alone is not enough for a health conclusion. Nor does the absence of immediate symptoms rule out every possible effect. We are evaluating evidence and its limits, not choosing a reassuring or alarming color."
+          }
+        ]
+      },
+      {
+        "id": "L01-S05",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "Return to the tomato report. This entire example is hypothetical. The measured concentration is zero point zero eight milligrams per kilogram of food. Focus on that last word: food. It is not per kilogram of a person's body mass, and it is not the amount they ate. Our illustrative limit is zero point one milligrams per kilogram of food. Before comparing, match the substance, residue definition, commodity, analyzed portion and units. An apple limit cannot simply be transferred to tomatoes. For this exercise, assume those details match and the measurement is valid. We can then compare the numbers without claiming a legal decision about an actual shipment.",
+        "textSHA256": "6634bc35948fe788df82a87de5565f5854b6d49166131cef4215d352cb2bc5c9",
+        "title": "Read the report before comparing",
+        "labels": [
+          "Hypothetical example",
+          "0.08 mg/kg food",
+          "Matching limit: 0.10 mg/kg food",
+          "Substance • definition • commodity • portion • unit"
+        ],
+        "source": [
+          "PDF p3: residues and standards",
+          "Codex glossary: MRL",
+          "Invented tomato case"
+        ],
+        "claim": "A food concentration must be interpreted using the matching analyte, residue definition, commodity, sample basis and units.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Return to the tomato report. This entire example is hypothetical. The measured concentration is zero point zero eight milligrams per kilogram of food. Focus on that last word: food. It is not per kilogram of a person's body mass, and it is not the amount they ate. Our illustrative limit is zero point one milligrams per kilogram of food. Before comparing, match the substance, residue definition, commodity, analyzed portion and units. An apple limit cannot simply be transferred to tomatoes. For this exercise, assume those details match and the measurement is valid. We can then compare the numbers without claiming a legal decision about an actual shipment."
+          }
+        ]
+      },
+      {
+        "id": "L01-S06",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "Place both numbers on the same scale. Zero point zero eight is less than zero point one. The difference is zero point zero two milligrams per kilogram of food. State the conclusion precisely: the value is below the illustrative limit in this exercise. That difference is not a personal safety allowance or an amount someone is permitted to eat. A maximum residue limit concerns a defined concentration in a particular commodity, supported by use data and scientific assessment. It is not the dose that entered a person's body. A value above a limit would not, on its own, diagnose poisoning either. Exceedance and health effects are related questions, but each needs appropriate evidence.",
+        "textSHA256": "3859cce44ae7cbb13d4a79714f927222eda096a5fb61c46584604ac006d652dc",
+        "title": "The comparison and its boundary",
+        "labels": [
+          "0.08 < 0.10",
+          "Difference: 0.02 mg/kg",
+          "Below the illustrative limit",
+          "Not a person's dose"
+        ],
+        "source": [
+          "PDF p3: standard-setting context",
+          "Scientific clarification",
+          "Invented arithmetic"
+        ],
+        "claim": "Below the illustrative concentration limit is the supported numerical conclusion; the difference is not a personal safety allowance.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Place both numbers on the same scale. Zero point zero eight is less than zero point one. The difference is zero point zero two milligrams per kilogram of food. State the conclusion precisely: the value is below the illustrative limit in this exercise. That difference is not a personal safety allowance or an amount someone is permitted to eat. A maximum residue limit concerns a defined concentration in a particular commodity, supported by use data and scientific assessment. It is not the dose that entered a person's body. A value above a limit would not, on its own, diagnose poisoning either. Exceedance and health effects are related questions, but each needs appropriate evidence."
+          }
+        ]
+      },
+      {
+        "id": "L01-S07",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "How can we estimate the amount in a portion? Suppose someone eats two hundred grams of those tomatoes, and the portion has the same concentration as the example. Convert first: two hundred grams is zero point two kilograms. Then multiply residue concentration by food mass. Kilograms of food cancel, leaving milligrams. The result is zero point zero one six milligrams in the portion. We have estimated ingested amount in a specified scenario, not the amount absorbed or the probability of harm. A larger portion at the same concentration contains more residue. Continuing the exposure assessment needs further information, including body mass, consumption frequency and other relevant sources.",
+        "textSHA256": "2e2e2ebff2a4ab28dac58aee4226c2bad129648106914a39c037ad584f61129d",
+        "title": "From concentration to amount in a portion",
+        "labels": [
+          "200 g = 0.20 kg",
+          "0.08 mg/kg × 0.20 kg = 0.016 mg",
+          "Amount in portion ≠ absorbed amount"
+        ],
+        "source": [
+          "Author-created quantitative bridge to L02",
+          "Dimensional arithmetic"
+        ],
+        "claim": "Concentration times food mass estimates residue amount in the portion, not absorbed dose or risk.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "How can we estimate the amount in a portion? Suppose someone eats two hundred grams of those tomatoes, and the portion has the same concentration as the example. Convert first: two hundred grams is zero point two kilograms. Then multiply residue concentration by food mass. Kilograms of food cancel, leaving milligrams. The result is zero point zero one six milligrams in the portion. We have estimated ingested amount in a specified scenario, not the amount absorbed or the probability of harm. A larger portion at the same concentration contains more residue. Continuing the exposure assessment needs further information, including body mass, consumption frequency and other relevant sources."
+          }
+        ]
+      },
+      {
+        "id": "L01-S08",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "The source contains a table of pesticide names and reported health or environmental effects. A row alone does not provide all the evidence needed to interpret a claim. Suppose someone argues that a substance linked to a nervous-system effect must cause that effect whenever it is detected in food. Stop at the word whenever. Which study measured the effect? In which organism, at what dose or concentration, by which route and for how long? Also verify the chemical identity: a mistaken name or formula changes what is being assessed. We are not dismissing possible harm. We are challenging a jump from incomplete evidence to certainty. The table is a starting point for investigation, not a ready-made diagnosis.",
+        "textSHA256": "88d83ae7da6c57c4937bd4e4d43ac607ed20154ac306d3febf57e2d3b34e9f1b",
+        "title": "Examine an effects-table claim",
+        "labels": [
+          "Claim requiring verification",
+          "Study • organism • endpoint",
+          "Dose • route • duration",
+          "Chemical identity"
+        ],
+        "source": [
+          "PDF pp4–6: Table 1; no row-level validation claimed"
+        ],
+        "claim": "A listed effect cannot be applied to a new consumer exposure without checking chemical identity, evidence, endpoint, dose, route and duration.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "The source contains a table of pesticide names and reported health or environmental effects. A row alone does not provide all the evidence needed to interpret a claim. Suppose someone argues that a substance linked to a nervous-system effect must cause that effect whenever it is detected in food. Stop at the word whenever. Which study measured the effect? In which organism, at what dose or concentration, by which route and for how long? Also verify the chemical identity: a mistaken name or formula changes what is being assessed. We are not dismissing possible harm. We are challenging a jump from incomplete evidence to certainty. The table is a starting point for investigation, not a ready-made diagnosis."
+          }
+        ]
+      },
+      {
+        "id": "L01-S09",
+        "voice": "B",
+        "voiceName": "Kore",
+        "text": "That explains why page three introduces scientific experts working through FAO and WHO. Evaluating studies and making regulatory decisions are distinct but connected activities. Standards bodies and governments use scientific assessments together with use and residue evidence. At farm level, good agricultural practice starts with authorized use and the conditions appropriate to the pesticide and crop. We cannot derive an application rate or invent a harvest interval from our laboratory example. Such decisions require the approved product and use information and applicable requirements. Our task here is to identify and interpret the right information, without turning teaching data into an application recommendation.",
+        "textSHA256": "22da07c2f520f336e605f6622872d7e8720da4e5ebb0868b942d9a4885eadf73",
+        "title": "Assessment and agricultural practice",
+        "labels": [
+          "Scientific evaluation",
+          "Standards and regulatory decisions",
+          "Authorized use and conditions"
+        ],
+        "source": [
+          "PDF p3 and p4 continuation: FAO/WHO, JMPR, standards, GAP and lifecycle"
+        ],
+        "claim": "Scientific assessment informs standards and management; a sample result does not prescribe application or harvest decisions.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "That explains why page three introduces scientific experts working through FAO and WHO. Evaluating studies and making regulatory decisions are distinct but connected activities. Standards bodies and governments use scientific assessments together with use and residue evidence. At farm level, good agricultural practice starts with authorized use and the conditions appropriate to the pesticide and crop. We cannot derive an application rate or invent a harvest interval from our laboratory example. Such decisions require the approved product and use information and applicable requirements. Our task here is to identify and interpret the right information, without turning teaching data into an application recommendation."
+          }
+        ]
+      },
+      {
+        "id": "L01-S10",
+        "voice": "A",
+        "voiceName": "Charon",
+        "text": "Now try a different case. Every value is hypothetical. A bean sample has a residue concentration of zero point zero six milligrams per kilogram of food. The matching illustrative limit is zero point zero five, and the portion is one hundred and fifty grams. Pause at the question. Write three things: the comparison with the limit, the residue amount in the portion after converting units, and a health conclusion that these data alone cannot support. After answering, review your reasoning, not just the final number. Distinguishing food concentration, ingested amount and risk assessment gives you the foundation for the next lesson.",
+        "textSHA256": "9550caba6b701b9a961933be0b5d3843cfaff27210979f418dc9cd766b894b36",
+        "title": "Your turn: a new case",
+        "labels": [
+          "New hypothetical case",
+          "Result: 0.06 mg/kg",
+          "Limit: 0.05 mg/kg",
+          "Portion: 150 g",
+          "Compare • calculate • state the evidence boundary"
+        ],
+        "source": [
+          "Author-created transfer task aligned to L01 objectives"
+        ],
+        "claim": "Learners must independently distinguish concentration comparison, ingested amount and unsupported health inference.",
+        "parts": [
+          {
+            "id": "whole",
+            "text": "Now try a different case. Every value is hypothetical. A bean sample has a residue concentration of zero point zero six milligrams per kilogram of food. The matching illustrative limit is zero point zero five, and the portion is one hundred and fifty grams. Pause at the question. Write three things: the comparison with the limit, the residue amount in the portion after converting units, and a health conclusion that these data alone cannot support. After answering, review your reasoning, not just the final number. Distinguishing food concentration, ingested amount and risk assessment gives you the foundation for the next lesson."
+          }
+        ]
+      }
+    ]
+  },
+  "imageStyle": "Create a premium university-level scientific educational 3D-rendered illustration, physically plausible realistic materials, carefully modeled recognizable objects, restrained elegant composition, soft natural studio lighting from upper left, convincing contact shadows, detailed but readable geometry, pale near-white cool neutral environment compatible with Masaarat soft blue and mint overlays. Adult scientific visualization, not children's illustration, not toy-like, no cartoon faces or characters, no excessive glossy plastic, no glow or magical toxicity. Deliberately composed negative space for later editable labels. NO text, words, letters, numerals, logos, watermarks, arrows, diagram symbols or charts baked into the image. This is a reconstructed teaching visualization, not photographic evidence. Keep important geometry sharp. 16:9 landscape.",
+  "images": [
+    {
+      "id": "tomato-cutaway",
+      "subject": "A scientifically plausible ripe tomato shown as a carefully cut half in the LEFT half of the frame, juicy seed chambers and skin visible, beside one intact tomato. A neutral pale laboratory tabletop, elegant macro view with physically credible scale. The RIGHT half is quiet near-white empty space for editable explanation. The cutaway is anatomical, not showing pesticide: no colored dots, stains, molecules, arrows, symbols or simulated damage. Tomato structure and seeds must be botanically plausible. No utensils or hands. Bottom 15 percent quiet for captions."
+    },
+    {
+      "id": "portion-scale",
+      "subject": "On the LEFT half, a modest white ceramic plate containing sliced ripe tomato, resting on a believable compact kitchen balance with its small rectangular digital display completely BLANK. Natural materials and accurate contact shadows, elevated three-quarter perspective. The RIGHT half is clean empty near-white space for editable mass conversion and dimensional reasoning. No printed numbers, unit labels, imaginary weight reading or pesticide visualization. No hands, knives, decorative plants. Bottom 15 percent quiet."
+    },
+    {
+      "id": "evidence-desk",
+      "subject": "On the LEFT half, a premium realistic scientific study desk with a few entirely BLANK white sheets clipped at the top, a simple graphite pencil and a transparent magnifier resting beside the sheets. Gentle upper-left light and believable paper texture. RIGHT half entirely uncluttered pale space for later editable evidence questions. No letters, charts, fake citations, logos, equations, writing or text of any kind on the sheets. No person or character. Bottom 15 percent quiet."
+    },
+    {
+      "id": "beans-portion",
+      "subject": "On the LEFT half, a modest white plate of botanically plausible fresh green bean pods on a clean pale food-analysis worktop, with a few separated pods adjacent for recognition. Realistic materials, natural green, restrained lighting, no glow, no visible residue, no exaggerated damage. The RIGHT half is clean pale empty space reserved for editable case data and student questions. No labels, numbers, instruments, faces, text or symbols. Bottom 15 percent quiet."
+    }
+  ]
+}
