@@ -1,0 +1,64 @@
+name: Fate L01 automatic pre-render audio review
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/review-system-v1/review-request.json]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  plan:
+    runs-on: ubuntu-22.04
+    outputs:
+      scenes: ${{ steps.plan.outputs.scenes }}
+      request_sha: ${{ steps.plan.outputs.request_sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: plan
+        run: |
+          python - <<'PY'
+          import json,hashlib,os
+          from pathlib import Path
+          b=Path('experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/review-system-v1/review-request.json').read_bytes();m=json.loads(b)
+          assert m['id']!='EXAMPLE_ONLY_DO_NOT_REPLAY_COMPLETED_AUDIO'
+          assert 1<=len(m['scenes'])<=10 and m['automaticRetries']==0 and m['speechCalls']==0
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+            f.write('scenes='+json.dumps([x['id'] for x in m['scenes']])+'\n')
+            f.write('request_sha='+hashlib.sha256(b).hexdigest()+'\n')
+          PY
+  review:
+    needs: plan
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        scene: ${{ fromJSON(needs.plan.outputs.scenes) }}
+    env:
+      PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/review-system-v1
+      GH_TOKEN: ${{ github.token }}
+      EXPECTED_REQUEST_SHA256: ${{ needs.plan.outputs.request_sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: python "$PACKAGE/receive_source.py"
+      - name: Blind and reference actual-audio checks
+        id: preliminary
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/audio_review_worker.py" "${{ matrix.scene }}"
+      - name: Full-context pronunciation and scientific-value review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/context_review_worker.py" "${{ matrix.scene }}"
+      - name: Assess automatic hold conditions
+        if: always()
+        run: python "$PACKAGE/assess_scene.py" "${{ matrix.scene }}"
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-audio-review-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

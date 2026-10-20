@@ -1,12 +1,12 @@
 """Bounded actual-rendered-audio review. Never synthesize or certify human accent approval."""
 from pathlib import Path
 import os,sys,json,hashlib,subprocess,wave,io,math,array,base64,urllib.request,urllib.error,datetime
-R=Path(__file__).parent;M=json.loads((R/'request.json').read_text(encoding='utf-8'));sid=sys.argv[1];C=next(x for x in M['scenes'] if x['id']==sid);O=R/'output';O.mkdir(exist_ok=True)
+R=Path(__file__).parent;M=json.loads((R/'review-request.json').read_text(encoding='utf-8'));sid=sys.argv[1];C=next(x for x in M['scenes'] if x['id']==sid);O=R/'output'/'flash';O.mkdir(parents=True,exist_ok=True)
 sha=lambda b:hashlib.sha256(b).hexdigest()
 now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
 def save(n,v):(O/n).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 assert os.environ['GITHUB_RUN_ATTEMPT']=='1' and M['automaticRetries']==0 and M['speechCalls']==0 and M['model']=='gemini-2.5-flash'
-assert sha((R/'request.json').read_bytes())==os.environ['EXPECTED_REQUEST_SHA256']
+assert sha((R/'review-request.json').read_bytes())==os.environ['EXPECTED_REQUEST_SHA256']
 assert not (O/'review.json').exists(),'No repeated ambiguous requests'
 scene=O/(sid+'.wav')
 if M.get('sourceMode','rendered_video')=='generated_wav':
