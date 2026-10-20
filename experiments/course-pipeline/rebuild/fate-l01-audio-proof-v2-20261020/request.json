@@ -1,0 +1,33 @@
+{
+  "status": "PREPARED_NOT_SUBMITTED_SHARED_RESOURCE_BUSY",
+  "course": "Masaarat — Fate of Pesticides in the Environment",
+  "sourceLesson": "L01",
+  "sourcePages": [
+    3,
+    4
+  ],
+  "locale": "ar-EG",
+  "provider": "Gemini TTS through GitHub Actions",
+  "model": "gemini-2.5-flash-preview-tts",
+  "voiceA": "Charon",
+  "voiceB": "Kore",
+  "deliveryInstruction": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة عندهم أساس في الكيمياء والأحياء بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. انطق «تتحرّك» و«تمانية» و«مِلّيجرام» و«لكلّ» بالنطق المصري اليومي. راعي الشدّات في النصّ من غير مبالغة في تطويل الحروف، ومن غير تحويل الكلام لفصحى. حافظ على الوقفات الطبيعية والمعنى العلمي والأرقام ووحدات القياس. اقرأ نصّ الإلقاء بسّ، من غير قراءة التعليمات أو أسماء المتكلّمين، ومن غير مقدّمة أو تعليق. بلاش نبرة نشرات الأخبار، وبلاش فصحى أو لهجة خليجية، وبلاش تمثيل مبالغ فيه أو تطويل الحروف.",
+  "segments": [
+    {
+      "speaker": "A",
+      "voice": "Charon",
+      "spokenText": "مادّة وصلت للتّربة ممكن تتحرّك مع مياه جارية على السّطح لحدّ مجرى مياه. هنا نسأل: هل وصلت فعلًا؟ وبأيّ تركيز؟",
+      "sourceMeaning": "Exact complete sentences from accepted marked L01-S03. A possible environmental route does not establish measured arrival or harm."
+    },
+    {
+      "speaker": "B",
+      "voice": "Kore",
+      "spokenText": "المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها.",
+      "sourceMeaning": "Exact complete sentences from accepted marked L01-S05. Invented educational concentration; concentration is not ingested amount or body-weight dose."
+    }
+  ],
+  "maxGenerationCalls": 2,
+  "automaticRetries": 0,
+  "ownerListeningApproved": false,
+  "fullLessonGenerationAuthorized": false
+}
