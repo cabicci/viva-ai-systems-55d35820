@@ -1,0 +1,42 @@
+name: Soil owner requested blind Arabic pronunciation audit
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/ar-owner-blind-audit-20261020/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-owner-blind-audit-26c5de024df1a723d6fc9b84aa88f4f4ec0f851843f85e9d9c205918d6899a17
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/ar-owner-blind-audit-20261020
+  REQUEST_SHA: 26c5de024df1a723d6fc9b84aa88f4f4ec0f851843f85e9d9c205918d6899a17
+  SCRIPT_SHA: a1a980fdbdae4cf06b47beed15a2821b6764ffed818ec0e414dc8be0d4eee143
+jobs:
+  audit:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Retrieve and verify existing audio only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/audit.py" prepare
+      - name: Blind acoustic diagnostic without TTS or retries
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/audit.py" audit
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-owner-blind-audit
+          retention-days: 30
+          path: experiments/course-pipeline/rebuild/ar-owner-blind-audit-20261020/output/
