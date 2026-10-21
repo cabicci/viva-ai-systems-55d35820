@@ -1,0 +1,299 @@
+{
+  "status": "AUDIO_DERIVED_TIMELINE_READY_FOR_SHORT_REVIEW",
+  "fps": 30,
+  "frames": 697,
+  "voiceBOffsetSeconds": 12.433333333333334,
+  "anchors": {
+    "intro": {
+      "start": 0.0,
+      "end": 2.02
+    },
+    "handle": {
+      "start": 2.02,
+      "end": 3.18
+    },
+    "steady": {
+      "start": 3.18,
+      "end": 4.94
+    },
+    "blade": {
+      "start": 4.94,
+      "end": 5.76
+    },
+    "defect": {
+      "start": 8.52,
+      "end": 9.58
+    },
+    "report": {
+      "start": 9.58,
+      "end": 10.6
+    },
+    "noUse": {
+      "start": 10.6,
+      "end": 11.86
+    },
+    "carry": {
+      "start": 12.433333333333334,
+      "end": 14.213333333333333
+    },
+    "edgeDown": {
+      "start": 14.213333333333333,
+      "end": 16.313333333333333
+    },
+    "away": {
+      "start": 16.313333333333333,
+      "end": 18.03333333333333
+    },
+    "clearance": {
+      "start": 18.03333333333333,
+      "end": 19.53333333333333
+    },
+    "trainer": {
+      "start": 19.833333333333336,
+      "end": 22.513333333333335
+    }
+  },
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 2.02,
+      "text": "قبل ما تستخدم الأداة"
+    },
+    {
+      "start": 2.02,
+      "end": 3.18,
+      "text": "بص على المقبض"
+    },
+    {
+      "start": 3.18,
+      "end": 4.94,
+      "text": "واتأكد إنه ثابت"
+    },
+    {
+      "start": 4.94,
+      "end": 8.52,
+      "text": "وإن الجزء اللي هتشتغل بيه سليم ونضيف"
+    },
+    {
+      "start": 8.52,
+      "end": 9.58,
+      "text": "لو لقيت عيب"
+    },
+    {
+      "start": 9.58,
+      "end": 10.6,
+      "text": "بلّغ المدرّب"
+    },
+    {
+      "start": 10.6,
+      "end": 11.86,
+      "text": "وما تستخدمهاش"
+    },
+    {
+      "start": 12.433333333333334,
+      "end": 14.213333333333333,
+      "text": "ولما تشيل أداة حادّة"
+    },
+    {
+      "start": 14.213333333333333,
+      "end": 16.313333333333333,
+      "text": "خلّي الطرف الحاد لتحت"
+    },
+    {
+      "start": 16.313333333333333,
+      "end": 18.03333333333333,
+      "text": "وبعيد عن الناس"
+    },
+    {
+      "start": 18.03333333333333,
+      "end": 19.53333333333333,
+      "text": "وسيب مسافة حواليك"
+    },
+    {
+      "start": 19.833333333333336,
+      "end": 22.513333333333335,
+      "text": "شيلها بالطريقة اللي المدرّب قالك عليها"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "intro",
+      "clip": "A",
+      "wordIndices": [
+        0,
+        3
+      ],
+      "caption": "قبل ما تستخدم الأداة",
+      "start": 0.0,
+      "end": 2.02,
+      "rawASRText": "أبل ما تستخدم الأداة،",
+      "minimumASRWordProbability": 0.6383345276117325
+    },
+    {
+      "id": "handle",
+      "clip": "A",
+      "wordIndices": [
+        4,
+        6
+      ],
+      "caption": "بص على المقبض",
+      "start": 2.02,
+      "end": 3.18,
+      "rawASRText": "بص على المأبض",
+      "minimumASRWordProbability": 0.7755809128284454
+    },
+    {
+      "id": "steady",
+      "clip": "A",
+      "wordIndices": [
+        7,
+        9
+      ],
+      "caption": "واتأكد إنه ثابت",
+      "start": 3.18,
+      "end": 4.94,
+      "rawASRText": "وتأكد أن نسابت،",
+      "minimumASRWordProbability": 0.33272626996040344
+    },
+    {
+      "id": "blade",
+      "clip": "A",
+      "wordIndices": [
+        10,
+        16
+      ],
+      "caption": "وإن الجزء اللي هتشتغل بيه سليم ونضيف",
+      "actionEndWord": 11,
+      "start": 4.94,
+      "end": 8.52,
+      "rawASRText": "وأن الجزء اللي هتشتغل به سليم ونظيف،",
+      "minimumASRWordProbability": 0.5898025035858154
+    },
+    {
+      "id": "defect",
+      "clip": "A",
+      "wordIndices": [
+        17,
+        19
+      ],
+      "caption": "لو لقيت عيب",
+      "start": 8.52,
+      "end": 9.58,
+      "rawASRText": "لو لأيت عيب،",
+      "minimumASRWordProbability": 0.5572091341018677
+    },
+    {
+      "id": "report",
+      "clip": "A",
+      "wordIndices": [
+        20,
+        21
+      ],
+      "caption": "بلّغ المدرّب",
+      "start": 9.58,
+      "end": 10.6,
+      "rawASRText": "بلغ المدرب",
+      "minimumASRWordProbability": 0.8360949357350668
+    },
+    {
+      "id": "noUse",
+      "clip": "A",
+      "wordIndices": [
+        22,
+        24
+      ],
+      "caption": "وما تستخدمهاش",
+      "start": 10.6,
+      "end": 11.86,
+      "rawASRText": "وما تستخدم هاش.",
+      "minimumASRWordProbability": 0.9015203416347504
+    },
+    {
+      "id": "carry",
+      "clip": "B",
+      "wordIndices": [
+        0,
+        3
+      ],
+      "caption": "ولما تشيل أداة حادّة",
+      "start": 12.433333333333334,
+      "end": 14.213333333333333,
+      "rawASRText": "ولما تشيل أداء حادة",
+      "minimumASRWordProbability": 0.6273669600486755
+    },
+    {
+      "id": "edgeDown",
+      "clip": "B",
+      "wordIndices": [
+        4,
+        7
+      ],
+      "caption": "خلّي الطرف الحاد لتحت",
+      "start": 14.213333333333333,
+      "end": 16.313333333333333,
+      "rawASRText": "خلي الطرف الحادة لتحت",
+      "minimumASRWordProbability": 0.4857300668954849
+    },
+    {
+      "id": "away",
+      "clip": "B",
+      "wordIndices": [
+        8,
+        10
+      ],
+      "caption": "وبعيد عن الناس",
+      "start": 16.313333333333333,
+      "end": 18.03333333333333,
+      "rawASRText": "وبعيد عن الناس",
+      "minimumASRWordProbability": 0.9216387867927551
+    },
+    {
+      "id": "clearance",
+      "clip": "B",
+      "wordIndices": [
+        11,
+        13
+      ],
+      "caption": "وسيب مسافة حواليك",
+      "start": 18.03333333333333,
+      "end": 19.53333333333333,
+      "rawASRText": "وصيب مسافة حواليك",
+      "minimumASRWordProbability": 0.6789015829563141
+    },
+    {
+      "id": "trainer",
+      "clip": "B",
+      "wordIndices": [
+        14,
+        20
+      ],
+      "caption": "شيلها بالطريقة اللي المدرّب قالك عليها",
+      "start": 19.833333333333336,
+      "end": 22.513333333333335,
+      "rawASRText": "شلها بالطريقة اللي المدرب قال لك عليها",
+      "minimumASRWordProbability": 0.34491434693336487
+    }
+  ],
+  "sourceAudioAndTiming": {
+    "A": {
+      "wav": "Deliverables/Arabic-voice-proof-20261020/voice-A.wav",
+      "timing": "Private/soil-rebuild-20261014/delivery-20261020/arabic-word-timing/artifact/A-word-timestamps.json",
+      "wavSHA256": "0d8bae78d3cafbe31b5b173eddb8686b87afa7e7f7cc1f32b13705a673ed67e5",
+      "timingSHA256": "91f7557330af4b433224938820eb085dd893869ac8eb15010cee901a33d7a5fd",
+      "durationSeconds": 12.130958333333334
+    },
+    "B": {
+      "wav": "Deliverables/Owner-wording-voice-motion-proof-20261020/public/audio/B-owner-composite.wav",
+      "wavSHA256": "17f06502c1e916b8e2201eb91e9ab51e39b7b1be690eede1965e26ab22040257",
+      "timing": "Deliverables/Owner-wording-voice-motion-proof-20261020/B-composite-timing.private.json",
+      "timingMethod": "DETERMINISTIC_COMPOSITE_OF_TWO_ACTUAL_ASR_PARTS_NOT_ASR_OF_COMPOSITE",
+      "timingSHA256": "456f8777335074fc447eea2970e5eeb25a31126b1885be9d9b6e690690aa2f34",
+      "durationSeconds": 10.290958333333334
+    }
+  },
+  "method": "Explicit inspected ASR phrase ranges from actual recordings; not character proportions.",
+  "forcedAlignment": false,
+  "humanExactAlignmentVerified": false,
+  "ownerMotionApproval": false,
+  "audioReviewEvidence": "Deliverables/Owner-wording-voice-motion-proof-20261020/tail-review-disposition.private.json"
+}
