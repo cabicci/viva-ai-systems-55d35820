@@ -235,7 +235,8 @@ export function createOpenAiEmbeddingFetcher(apiKey: string): EmbeddingFetcher {
       }),
     });
     if (!resp.ok) {
-      throw new Error("PROVIDER_FAILED");
+      await resp.body?.cancel().catch(() => undefined);
+      throw new Error(`PROVIDER_FAILED:HTTP_${resp.status}`);
     }
     const json = (await resp.json()) as {
       data?: Array<{ index: number; embedding: number[] }>;

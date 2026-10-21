@@ -14,6 +14,10 @@ beforeEach(()=>{
  state.rpcs.mockResolvedValue({data:{executionId:null,state:null},error:null});
 });
 describe('current release server boundary',()=>{
+ it('keeps a database SQLSTATE while discarding sensitive row/message details',async()=>{
+  state.rpcs.mockResolvedValue({data:null,error:{code:'23514',message:'private row and service-key details'}});
+  await expect(invoke(getCurrentRagRelease)).rejects.toThrow('CURRENT_DATABASE_23514');
+ });
  it.each([false,null,'true',1])('requires an exact trusted admin grant %j',async role=>{
   state.role=role;
   await expect(invoke(getCurrentRagRelease)).rejects.toThrow('FORBIDDEN');
