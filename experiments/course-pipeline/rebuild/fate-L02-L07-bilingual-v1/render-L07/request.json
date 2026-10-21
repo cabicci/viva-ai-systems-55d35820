@@ -1,0 +1,1649 @@
+{
+  "id": "fate-render-L07",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L07-S01",
+      "layout": "wheel",
+      "title": {
+        "ar": "أربع أسئلة… مش معادلة مخاطر",
+        "en": "Four questions, not a risk equation"
+      },
+      "visualContract": "Four independently revealed wheel sectors: persistence, mobility, non-target toxicity, use volume. No numeric risk scale. Context icons connect to sectors as questions.",
+      "actions": [
+        {
+          "id": "L07-S01-A1",
+          "label": {
+            "ar": "الثبات",
+            "en": "Persistence"
+          },
+          "semanticTrigger": "Persistence"
+        },
+        {
+          "id": "L07-S01-A2",
+          "label": {
+            "ar": "الحركة",
+            "en": "Mobility"
+          },
+          "semanticTrigger": "Mobility"
+        },
+        {
+          "id": "L07-S01-A3",
+          "label": {
+            "ar": "سمية لغير المستهدف",
+            "en": "Non-target toxicity"
+          },
+          "semanticTrigger": "Non-target toxicity"
+        },
+        {
+          "id": "L07-S01-A4",
+          "label": {
+            "ar": "حجم الاستخدام",
+            "en": "Use volume"
+          },
+          "semanticTrigger": "Use volume"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "المادّة ممكن تفضل قدّ إيه؟ تتحرّك بسهولة قدّ إيه؟ تؤثّر على كائنات غير مستهدفة إزاي؟ وكمية استخدامها قدّ إيه؟ دول أربع محاور موجودين في شكل المصدر. هنستخدمهم كأسئلة لجمع الدليل، مش نضربهم في بعض ونطلع رقم مخاطر. نفس الخاصيّة ممكن تتفاعل مع ظروف مختلفة: مطر وحرارة وتربة ونوع كائن. ترتيب الخواص يساعدنا نفهم الاحتمالات، لكن توقّع التعرّض الفعليّ محتاج سياق وبيانات.",
+        "en": "How long might the substance persist? How readily can it move? What effects can it have on non-target organisms? How much is used? These are four prompts in the source figure. Use them to organize evidence, not multiply them into an invented risk score. Properties interact with rainfall, temperature, soil and organisms. Organizing them helps explain plausible pathways, while predicting actual exposure requires context and data."
+      },
+      "timing": null,
+      "sceneID": "L07-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "d01dbbc067ac9ae991fdd1c0e0843ecd7545bffc37caf4a8c76a42f78d73e137",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S01-ar-v1",
+        "file": "L07-S01-ar-v1.wav",
+        "sha256": "179e821fc8835cf5bf9b035df42b2e31027430e1267c75458d03fd7183a3b0e4"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S01-ar-v1",
+        "file": "timing.json",
+        "sha256": "9e22ac7a057eff6f9b5871c2c0e49fa4932862bcb1ed5080fe363512d28ef3b8"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S01",
+        "file": "L07-S01.jpg",
+        "sha256": "0ad547c0fc944e4ee71039b683899fda48bf006cbbec9b6f8753f6e9c32da638"
+      },
+      "imageDisposition": {
+        "scene": "L07-S01",
+        "imageSHA256": "0ad547c0fc944e4ee71039b683899fda48bf006cbbec9b6f8753f6e9c32da638",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 982343,
+      "durationSeconds": 40.930958333333336,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1228
+    },
+    {
+      "id": "ar-L07-S02",
+      "layout": "evidence",
+      "title": {
+        "ar": "هوية المادة وظروف القياس",
+        "en": "Chemical identity and measurement conditions"
+      },
+      "visualContract": "Property cards require identity/form/purity plus temperature/pH/method. Distinct stereoisomer shapes schematic, not invented molecular structures. No universal molecular-weight cutoffs taught.",
+      "actions": [
+        {
+          "id": "L07-S02-A1",
+          "label": {
+            "ar": "هوية وصورة المادة",
+            "en": "Identity and form"
+          },
+          "semanticTrigger": "Identity and form"
+        },
+        {
+          "id": "L07-S02-A2",
+          "label": {
+            "ar": "النقاوة",
+            "en": "Purity"
+          },
+          "semanticTrigger": "Purity"
+        },
+        {
+          "id": "L07-S02-A3",
+          "label": {
+            "ar": "حرارة وحموضة",
+            "en": "Temperature and pH"
+          },
+          "semanticTrigger": "Temperature and pH"
+        },
+        {
+          "id": "L07-S02-A4",
+          "label": {
+            "ar": "طريقة القياس",
+            "en": "Measurement method"
+          },
+          "semanticTrigger": "Measurement method"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "قبل قراءة جدول الخواص، نثبت هوية المادّة وصورتها ونقاوتها. المتماكبات ممكن تختلف في السلوك والنشاط، والمستحضر مش بالضرورة نفس المادّة النقيّة في تجربة معملية. قيمة الذوبان لازم نعرف معاها الحرارة ودرجة الحموضة والطريقة. والضغط البخاريّ يساعد في فهم قابلية التطاير تحت شروط محدّدة. الوزن الجزيئيّ أو خاصيّة واحدة لوحدها ما يكفيش لتوقّع المصير كله. كلّ قيمة محتاجة بطاقة ظروف، مش رقم منفصل.",
+        "en": "Before reading a property table, establish chemical identity, form and purity. Stereochemical forms may differ in behavior or activity, and a formulation is not necessarily equivalent to a pure substance in a laboratory test. Solubility values need temperature, pH and method information. Vapour pressure informs volatility under stated conditions. Molecular weight or any single property cannot predict the entire environmental fate. Every value needs its measurement context."
+      },
+      "timing": null,
+      "sceneID": "L07-S02",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "5f6d7121deab004994da5428a32c6e4ef21f05368d8fc04cd28e11614dac9b8d",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S02-ar-v1",
+        "file": "L07-S02-ar-v1.wav",
+        "sha256": "9f6ae2b21391cf424294fb2ad8179926faaf188c3286ad678926562c4321c3c1"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S02-ar-v1",
+        "file": "timing.json",
+        "sha256": "18ecf98c6a758436ee8687d146bf20a399e6902dd4d8cae3b83a6749da0c229e"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S02",
+        "file": "L07-S02.jpg",
+        "sha256": "18d298f4da808513bca74af3c72e176f699e628d322b5867d9925254456aefa4"
+      },
+      "imageDisposition": {
+        "scene": "L07-S02",
+        "imageSHA256": "18d298f4da808513bca74af3c72e176f699e628d322b5867d9925254456aefa4",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 799943,
+      "durationSeconds": 33.330958333333335,
+      "globalStartAudioFrame": 982343,
+      "globalStartVideoFrame": 1228,
+      "globalEndVideoFrame": 2228
+    },
+    {
+      "id": "ar-L07-S03",
+      "layout": "sorption",
+      "title": {
+        "ar": "على السطح ولا جوه الوسط؟",
+        "en": "On a surface or inside a phase?"
+      },
+      "visualContract": "Independent molecule marker moves to particle surface for adsorption and inside phase for absorption. Identity retained. Reversible arrows qualitative; label sorption as umbrella rather than synonym for surface-only adsorption.",
+      "actions": [
+        {
+          "id": "L07-S03-A1",
+          "label": {
+            "ar": "على السطح",
+            "en": "At the surface"
+          },
+          "semanticTrigger": "At the surface"
+        },
+        {
+          "id": "L07-S03-A2",
+          "label": {
+            "ar": "داخل الطور",
+            "en": "Inside the phase"
+          },
+          "semanticTrigger": "Inside the phase"
+        },
+        {
+          "id": "L07-S03-A3",
+          "label": {
+            "ar": "الهوية لم تتغير",
+            "en": "Identity unchanged"
+          },
+          "semanticTrigger": "Identity unchanged"
+        },
+        {
+          "id": "L07-S03-A4",
+          "label": {
+            "ar": "مصطلح أشمل",
+            "en": "Umbrella term"
+          },
+          "semanticTrigger": "Umbrella term"
+        }
+      ],
+      "equations": [
+        "Adsorption",
+        "Absorption",
+        "Sorption"
+      ],
+      "spoken": {
+        "ar": "لما الجزيء يرتبط بسطح حبيبة تربة، بنتكلم عن امتزاز. لو دخل جوّه وسط أو نسيج، ده امتصاص. وكلمة السوربشن أوسع، وممكن تشمل عمليّات ارتباط مختلفة. في الرسم، هنخلّي علامة الجزيء على السطح في حالة، وجوّه الوسط في الحالة التانية. الارتباط بالتربة ممكن يأثّر على الحركة والتوافر، لكنه مش دليل إنّ المادّة اتحطّمت. وممكن يحصل انتقال عكسيّ حسب الخواص والظروف.",
+        "en": "Association with a soil-particle surface is adsorption. Entry into the bulk of a phase or tissue is absorption. Sorption is a broader term that can encompass different association processes. Our diagram keeps the marker on the surface in one case and inside the phase in the other. Soil association can affect mobility and availability, but does not establish chemical destruction. Reverse transfer may occur depending on properties and conditions."
+      },
+      "timing": null,
+      "sceneID": "L07-S03",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "5014fd532153921f103efb13f742d975fc944e87e31f14c59487ff7818cee08a",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "audio": {
+        "run": 39605466024,
+        "artifact": "fate-next-audio-L07-S03-ar-v2",
+        "file": "L07-S03-ar-v2.wav",
+        "sha256": "6cb5179a3658801b1227eef2631375a4556a5cb3785ab9602e9319693dabebbc"
+      },
+      "alignment": {
+        "run": 39606480922,
+        "artifact": "fate-next-align-L07-S03-ar-v2",
+        "file": "timing.json",
+        "sha256": "611b17af8daa532b2b7abaf14a73c52e7ebff52560650a2cdfd950e6985b9950"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S03",
+        "file": "L07-S03.jpg",
+        "sha256": "6f1828bec0f4ad46aac85847190057af04b4dd38b947c3dae58349a997e53a9a"
+      },
+      "imageDisposition": {
+        "scene": "L07-S03",
+        "imageSHA256": "6f1828bec0f4ad46aac85847190057af04b4dd38b947c3dae58349a997e53a9a",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 806663,
+      "durationSeconds": 33.610958333333336,
+      "globalStartAudioFrame": 1782286,
+      "globalStartVideoFrame": 2228,
+      "globalEndVideoFrame": 3236
+    },
+    {
+      "id": "ar-L07-S04",
+      "layout": "pathway",
+      "title": {
+        "ar": "اتنقلت ولا اتغيّرت؟",
+        "en": "Did it move or change identity?"
+      },
+      "visualContract": "Split-screen: unchanged marker follows runoff/leaching/air paths; transformation produces a new labeled marker. Parent decline bar separates transport and transformation contributions qualitatively, never fabricating fractions.",
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+        "en": "Runoff, leaching, spray drift and volatilization can move a substance between locations or phases. Hydrolysis, photolysis and biological transformation can change chemical identity. A transported marker therefore keeps its identity, while a transformed marker becomes a distinct product symbol. Declining parent concentration in a field sample can reflect several processes together. Do not assume every transformation reaches carbon dioxide and water or produces substances without effects."
+      },
+      "timing": null,
+      "sceneID": "L07-S04",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "7d43fc66ede90f1377d302ab63cb90d0f5a2bfa422678b2162c426853467a20c",
+      "deliverySHA256": "559b11e60a34db766c3ef0233cdf54c454e5bbdd14cce41c4a6f038ce82b8b9d",
+      "audio": {
+        "run": 39605466024,
+        "artifact": "fate-next-audio-L07-S04-ar-v2",
+        "file": "L07-S04-ar-v2.wav",
+        "sha256": "4e0120145c0a64b4d0ddfefafcd3a336b8d04f7a664f7e232c361b50531236c7"
+      },
+      "alignment": {
+        "run": 39606480922,
+        "artifact": "fate-next-align-L07-S04-ar-v2",
+        "file": "timing.json",
+        "sha256": "d624cbdc96922a4e1a7dac2994802eabe4addb5b341faab2b85613bb4226af0a"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S04",
+        "file": "L07-S04.jpg",
+        "sha256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880"
+      },
+      "imageDisposition": {
+        "scene": "L07-S04",
+        "imageSHA256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 892103,
+      "durationSeconds": 37.17095833333333,
+      "globalStartAudioFrame": 2588949,
+      "globalStartVideoFrame": 3236,
+      "globalEndVideoFrame": 4351
+    },
+    {
+      "id": "ar-L07-S05",
+      "layout": "spray",
+      "title": {
+        "ar": "من القطرات للترسيب",
+        "en": "From droplets to deposition"
+      },
+      "visualContract": "Independent droplets atomize, travel, impact, retain/reflect, spread and dry. Side branches for drift and evaporation. No nozzle settings, efficiencies or fabricated percentages. Preserve causally consistent object states.",
+      "actions": [
+        {
+          "id": "L07-S05-A1",
+          "label": {
+            "ar": "تكوين قطرات",
+            "en": "Droplet formation"
+          },
+          "semanticTrigger": "Droplet formation"
+        },
+        {
+          "id": "L07-S05-A2",
+          "label": {
+            "ar": "انتقال واصطدام",
+            "en": "Transport and impact"
+          },
+          "semanticTrigger": "Transport and impact"
+        },
+        {
+          "id": "L07-S05-A3",
+          "label": {
+            "ar": "احتفاظ أو ارتداد",
+            "en": "Retention or reflection"
+          },
+          "semanticTrigger": "Retention or reflection"
+        },
+        {
+          "id": "L07-S05-A4",
+          "label": {
+            "ar": "انتشار وجفاف",
+            "en": "Spreading and drying"
+          },
+          "semanticTrigger": "Spreading and drying"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "نتابع مخطط العمليات الموجود في المصدر. القطرات بتتكوّن، وتتحرّك ناحية الهدف، وتوصل لسطح وتتصادم معاه. جزء ممكن يفضل عليه، وجزء ممكن يرتدّ. وفي الطريق ممكن يحصل انجراف أو تبخّر. القطرات اللي احتفظ بيها السطح ممكن تنتشر ويتكوّن منها ترسيب بعد الجفاف. خواص الرذاذ والسطح والجوّ بتأثّر في الخطوات دي. ده تفسير للمسارات، مش توصية بحجم قطرة أو ضغط أو إعداد رشّ معيّن.",
+        "en": "Follow the source process diagram. Droplets form, travel toward a target and impact a surface. Some material may be retained, while some may reflect. Drift or evaporation can occur during transport. Retained droplets may spread, with deposits forming as drying occurs. Spray, surface and atmospheric properties influence these steps. This explains pathways; it does not prescribe a droplet size, pressure or application setting."
+      },
+      "timing": null,
+      "sceneID": "L07-S05",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "4d2fb5ededfbc9750ad6e8417d037785cccb76163096c7dcdf95ac45b3653819",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S05-ar-v1",
+        "file": "L07-S05-ar-v1.wav",
+        "sha256": "0aba490a480866730d6e9b883297aa072b390ae1827865c88f5afaaf3e2e0d9d"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S05-ar-v1",
+        "file": "timing.json",
+        "sha256": "4210cf80a204a55720973764bd333af5900eb26cf67b5867f27a809c92e7b515"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S05",
+        "file": "L07-S05.jpg",
+        "sha256": "e6bc241a993f8b04b49cc06636b564646029d7919cccf2c3a1fc2eac31b212cd"
+      },
+      "imageDisposition": {
+        "scene": "L07-S05",
+        "imageSHA256": "e6bc241a993f8b04b49cc06636b564646029d7919cccf2c3a1fc2eac31b212cd",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 721223,
+      "durationSeconds": 30.050958333333334,
+      "globalStartAudioFrame": 3481052,
+      "globalStartVideoFrame": 4351,
+      "globalEndVideoFrame": 5253
+    },
+    {
+      "id": "ar-L07-S06",
+      "layout": "pathway",
+      "title": {
+        "ar": "بعد الترسيب… أكتر من مسار",
+        "en": "After deposition, several pathways remain"
+      },
+      "visualContract": "Same deposited objects branch into surface movement, uptake and weathering. Biological-effect endpoint stays a separate evidence node. No universal systemic transport asserted.",
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "بعد الترسيب، المادّة ممكن تتحرّك على السطح أو جوّه النبات حسب خواصها وظروفه. وممكن يحصل امتصاص أو إعادة توزيع أو فقد مع التجوية. الوصول للسطح مش نفس الدخول للأنسجة، والدخول مش نفس حدوث أثر بيولوجيّ. المخطط بيساعدنا نحدد الخطوة اللي نحتاج نقيسها. مثلًا، عشان نفهم فقد بعد المطر، نراجع ما تبقّى على السطح وما انتقل، بدل ما نفترض إنّ كلّ النقص تحلّل كيميائيّ.",
+        "en": "After deposition, material may move on the surface or within a plant, depending on its properties and the conditions. Uptake, redistribution and weathering losses are possible. Reaching a surface differs from entering tissue, and entry differs from a biological effect. The process map identifies which step needs measurement. To understand loss after rain, examine surface residues and transported material instead of assuming that every decrease represents chemical degradation."
+      },
+      "timing": null,
+      "sceneID": "L07-S06",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "9e61a9eb2cee5f4f3bd92015cf35d55cd76efcc686607323d479ba29aa2c41dd",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S06-ar-v1",
+        "file": "L07-S06-ar-v1.wav",
+        "sha256": "bdbb0c6a1d0983cb7aae4f0263be6a41c17f20ff8ea6311fe89399bb40f9e5ab"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S06-ar-v1",
+        "file": "timing.json",
+        "sha256": "39a0fd0c78522de0d2f40d87a48fa505b731cd4be03d7e2d47ecc39473ce3453"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S06",
+        "file": "L07-S06.jpg",
+        "sha256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda"
+      },
+      "imageDisposition": {
+        "scene": "L07-S06",
+        "imageSHA256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 753863,
+      "durationSeconds": 31.410958333333333,
+      "globalStartAudioFrame": 4202275,
+      "globalStartVideoFrame": 5253,
+      "globalEndVideoFrame": 6195
+    },
+    {
+      "id": "ar-L07-S07",
+      "layout": "decay",
+      "title": {
+        "ar": "نصف الباقي كل مرة",
+        "en": "Half of what remains each time"
+      },
+      "visualContract": "Editable decay curve at0,10,20days and8,4,2mg/kg. Halve remaining markers, not fixed subtraction. Display C=C0(1/2)^(t/tHalf), tHalf=ln2/k with units days and1/day; illustrative-model badge.",
+      "actions": [
+        {
+          "id": "L07-S07-A1",
+          "label": {
+            "ar": "تركيز البداية",
+            "en": "Initial concentration"
+          },
+          "semanticTrigger": "Initial concentration"
+        },
+        {
+          "id": "L07-S07-A2",
+          "label": {
+            "ar": "بعد نصف عمر",
+            "en": "After one half-life"
+          },
+          "semanticTrigger": "After one half-life"
+        },
+        {
+          "id": "L07-S07-A3",
+          "label": {
+            "ar": "بعد نصفي عمر",
+            "en": "After two half-lives"
+          },
+          "semanticTrigger": "After two half-lives"
+        },
+        {
+          "id": "L07-S07-A4",
+          "label": {
+            "ar": "نصف الباقي كل مرة",
+            "en": "Half of what remains"
+          },
+          "semanticTrigger": "Half of what remains"
+        }
+      ],
+      "equations": [
+        "0 d: 8 mg/kg",
+        "10 d: 4 mg/kg",
+        "20 d: 2 mg/kg",
+        "C = C0 (1/2)^(t/t½)"
+      ],
+      "spoken": {
+        "ar": "نستخدم نموذجًا افتراضيًّا من الرتبة الأولى، وتركيز البداية تمانية ملّيجرام لكلّ كيلوجرام. لو عمر النصف عشرة أيّام في ظروف النموذج، بعد عشرة أيّام يبقى أربعة، وبعد عشرين يوم يبقى اتنين. في كلّ مرة بننصّف الباقي، مش بنطرح أربعة للأبد. المعادلة تمانية في نصّ مرفوع لعدد فترات عمر النصف. ولو استخدمنا ثابت المعدّل، عمر النصف يساوي اللوغاريتم الطبيعيّ لاتنين مقسوم على الثابت. النموذج لازم يناسب البيانات والظروف.",
+        "en": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions."
+      },
+      "timing": null,
+      "sceneID": "L07-S07",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "765207600383cfe07bae19d9656111c0daa6b19cb37cfcc459005e8de8152577",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S07-ar-v1",
+        "file": "L07-S07-ar-v1.wav",
+        "sha256": "8c2859fe8d79b064744ae9401c5615e553c67f55830c6618342ca10dc0d4b298"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S07-ar-v1",
+        "file": "timing.json",
+        "sha256": "a8ba66b9eabc9a2d4c597d2e38ee7b6444eedfeec19e64f0f0da4fe86ebb3481"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39603295493,
+        "artifact": "fate-next-image-v2-L07-S07",
+        "file": "L07-S07.jpg",
+        "sha256": "b2bebf61185a56bef5481ec99f0d647461fa04d5bc023a1cd3438d7271ab63ce"
+      },
+      "imageDisposition": {
+        "scene": "L07-S07",
+        "imageSHA256": "42a813875e6333b13f0a83bc3fab140d9a1745dc6e3ee09f610d46fe4c94a54d",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Concrete visual correction queued; preserve original.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed.",
+        "reason": "Inspected corrected pixels: three empty dishes, no miscounted stones. Exact 8/4/2 examples will be separate labeled overlays.",
+        "agentPixelReview": true,
+        "ownerApprovalClaimed": false,
+        "priorDisposition": {
+          "scene": "L07-S07",
+          "imageSHA256": "42a813875e6333b13f0a83bc3fab140d9a1745dc6e3ee09f610d46fe4c94a54d",
+          "status": "hold_correction",
+          "automatedStatus": "reject",
+          "agentViewedPixels": true,
+          "disposition": "Concrete visual correction queued; preserve original.",
+          "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+        },
+        "currentImage": {
+          "run": 39603295493,
+          "artifact": "fate-next-image-v2-L07-S07",
+          "file": "L07-S07.jpg",
+          "sha256": "b2bebf61185a56bef5481ec99f0d647461fa04d5bc023a1cd3438d7271ab63ce"
+        }
+      },
+      "audioFrames": 859463,
+      "durationSeconds": 35.81095833333333,
+      "globalStartAudioFrame": 4956138,
+      "globalStartVideoFrame": 6195,
+      "globalEndVideoFrame": 7270
+    },
+    {
+      "id": "ar-L07-S08",
+      "layout": "comparison",
+      "title": {
+        "ar": "النموذج مش موعد حصاد",
+        "en": "A model is not a harvest date"
+      },
+      "visualContract": "Decay graph stays separate from label/calendar decision. Cross unsupported link from20days toharvest approval. No actual PHI or dose supplied.",
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "انخفاض المتبقّي",
+            "en": "Residue decline"
+          },
+          "semanticTrigger": "Residue decline"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "التبدّد: انتقال وتحول",
+            "en": "Dissipation: transport and transformation"
+          },
+          "semanticTrigger": "Dissipation: transport and transformation"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد المعتمد",
+            "en": "Authorized harvest date"
+          },
+          "semanticTrigger": "Authorized harvest date"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "الالتزام ببطاقة المنتج",
+            "en": "Follow the product label"
+          },
+          "semanticTrigger": "Follow the product label"
+        }
+      ],
+      "equations": [
+        "20 days ≠ harvest authorization"
+      ],
+      "spoken": {
+        "ar": "النصّ في المصدر يربط الانتظار بانخفاض المتبقّي. بسّ حساب عمر النصف لوحده ما يحدّدش موعد حصاد مسموح. لازم بطاقة المنتج والمحصول والاستخدام المحليّ المعتمد، وتعريف المتبقّي والنواتج والحدّ الساري. كمان نصف عمر التبدّد الحقليّ ممكن يشمل انتقالًا وتحولًا مع بعض، مش التحلّل وحده. وتقليل الجرعة باجتهاد شخصيّ ما يحلّش محلّ البطاقة. نفصل النتيجة الرياضيّة عن القرار التطبيقيّ.",
+        "en": "The source links waiting with residue decline, but a half-life calculation alone cannot establish an authorized harvest date. The product label, crop, locally authorized use, residue definition, products and applicable limit must be considered. A field dissipation half-life may combine transport and transformation rather than describe degradation alone. Independently reducing a dose is not a substitute for label compliance. Keep the mathematical result separate from the application decision."
+      },
+      "timing": null,
+      "sceneID": "L07-S08",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "96fe0c8ae9b169b14f8a0fc1f8100eb54f16a4b1d1c88fd86117500fde94bd67",
+      "deliverySHA256": "6f14ecafcb0918b3faf979b9189d0bb1718e60d211b458f648484e0e886fd17f",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S08-ar-v1",
+        "file": "L07-S08-ar-v1.wav",
+        "sha256": "9f3405fd7aed100dc3d08ae1254430755e6bfaa95a688df779c0e94f14a06317"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L07-S08-ar-v1",
+        "file": "timing.json",
+        "sha256": "4ee713dcac13033459e52740865e7eb9fc4a5f369c43ab23939b8068388e8ac5"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S08",
+        "file": "L07-S08.jpg",
+        "sha256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62"
+      },
+      "imageDisposition": {
+        "scene": "L07-S08",
+        "imageSHA256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 774023,
+      "durationSeconds": 32.25095833333334,
+      "globalStartAudioFrame": 5815601,
+      "globalStartVideoFrame": 7270,
+      "globalEndVideoFrame": 8237
+    },
+    {
+      "id": "ar-L07-S09",
+      "layout": "flow",
+      "title": {
+        "ar": "توقّع قابل للاختبار",
+        "en": "A prediction that can be tested"
+      },
+      "visualContract": "QSAR input/domain/validation/output flow with out-of-domain case held. Final rainfall pathway task uses runoff/leaching hypotheses and missing-property cards; no invented groundwater prediction.",
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "equations": [
+        "QSAR"
+      ],
+      "spoken": {
+        "ar": "العلاقة الكمّيّة بين التركيب والنشاط بتحاول تربط خواص وتركيب المادّة باستجابة ضمن بيانات ونموذج محدّدين. عشان نستخدمها، نحتاج نعرف مجال الصلاحية وطريقة التحقق وعدم اليقين. مش كلّ مادّة جديدة ينفع ندخلها في أيّ معادلة. في التطبيق الأخير، مطر نزل على تربة رمليّة بعد استخدام مبيد: اكتب مسارين محتملين، والبيانات اللي تميّز بينهم. وبعدها فرّق بين توقع النموذج، والقياس الحقيقيّ، والقرار اللي لسه محتاج دليل.",
+        "en": "A quantitative structure-activity relationship connects chemical structure or properties with an endpoint within a defined dataset and model. Application requires an applicability domain, validation and uncertainty information. An arbitrary new substance cannot be inserted into any available equation. For the final case, rain falls on sandy soil after pesticide use. Propose two plausible pathways and the evidence that would distinguish them. Separate model prediction, actual measurement and a decision that still needs evidence."
+      },
+      "timing": null,
+      "sceneID": "L07-S09",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "d3ab04bc248883956e5b4cb96c26f796173e785ef8f0ad63a7a64828812358c6",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S09-ar-v1",
+        "file": "L07-S09-ar-v1.wav",
+        "sha256": "79b0bac1016fc71b1fe8e49e22696071d24a47676fed270373472aed015eef44"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S09-ar-v1",
+        "file": "timing.json",
+        "sha256": "caeb6ac8ca454bee456675501758b6809481f993f431bf53db46de3f65f0ca02"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S09",
+        "file": "L07-S09.jpg",
+        "sha256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5"
+      },
+      "imageDisposition": {
+        "scene": "L07-S09",
+        "imageSHA256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 872903,
+      "durationSeconds": 36.370958333333334,
+      "globalStartAudioFrame": 6589624,
+      "globalStartVideoFrame": 8237,
+      "globalEndVideoFrame": 9328
+    },
+    {
+      "id": "en-L07-S01",
+      "layout": "wheel",
+      "title": {
+        "ar": "أربع أسئلة… مش معادلة مخاطر",
+        "en": "Four questions, not a risk equation"
+      },
+      "visualContract": "Four independently revealed wheel sectors: persistence, mobility, non-target toxicity, use volume. No numeric risk scale. Context icons connect to sectors as questions.",
+      "actions": [
+        {
+          "id": "L07-S01-A1",
+          "label": {
+            "ar": "الثبات",
+            "en": "Persistence"
+          },
+          "semanticTrigger": "Persistence"
+        },
+        {
+          "id": "L07-S01-A2",
+          "label": {
+            "ar": "الحركة",
+            "en": "Mobility"
+          },
+          "semanticTrigger": "Mobility"
+        },
+        {
+          "id": "L07-S01-A3",
+          "label": {
+            "ar": "سمية لغير المستهدف",
+            "en": "Non-target toxicity"
+          },
+          "semanticTrigger": "Non-target toxicity"
+        },
+        {
+          "id": "L07-S01-A4",
+          "label": {
+            "ar": "حجم الاستخدام",
+            "en": "Use volume"
+          },
+          "semanticTrigger": "Use volume"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "المادّة ممكن تفضل قدّ إيه؟ تتحرّك بسهولة قدّ إيه؟ تؤثّر على كائنات غير مستهدفة إزاي؟ وكمية استخدامها قدّ إيه؟ دول أربع محاور موجودين في شكل المصدر. هنستخدمهم كأسئلة لجمع الدليل، مش نضربهم في بعض ونطلع رقم مخاطر. نفس الخاصيّة ممكن تتفاعل مع ظروف مختلفة: مطر وحرارة وتربة ونوع كائن. ترتيب الخواص يساعدنا نفهم الاحتمالات، لكن توقّع التعرّض الفعليّ محتاج سياق وبيانات.",
+        "en": "How long might the substance persist? How readily can it move? What effects can it have on non-target organisms? How much is used? These are four prompts in the source figure. Use them to organize evidence, not multiply them into an invented risk score. Properties interact with rainfall, temperature, soil and organisms. Organizing them helps explain plausible pathways, while predicting actual exposure requires context and data."
+      },
+      "timing": null,
+      "sceneID": "L07-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "21e81ebb6e6b05a2accb7a25b4f918a60840ab80b1a3351c5e57738dfbd57dd4",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S01-en-v1",
+        "file": "L07-S01-en-v1.wav",
+        "sha256": "3dfd6801e2661bdfeb991d46255db75751b77801f56e7db5312e33f4f191f7ab"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "8b101929f3efb4a686983decb35c9c98d9d885db8d49307d124b326082d06b2c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S01",
+        "file": "L07-S01.jpg",
+        "sha256": "0ad547c0fc944e4ee71039b683899fda48bf006cbbec9b6f8753f6e9c32da638"
+      },
+      "imageDisposition": {
+        "scene": "L07-S01",
+        "imageSHA256": "0ad547c0fc944e4ee71039b683899fda48bf006cbbec9b6f8753f6e9c32da638",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 809543,
+      "durationSeconds": 33.730958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1012
+    },
+    {
+      "id": "en-L07-S02",
+      "layout": "evidence",
+      "title": {
+        "ar": "هوية المادة وظروف القياس",
+        "en": "Chemical identity and measurement conditions"
+      },
+      "visualContract": "Property cards require identity/form/purity plus temperature/pH/method. Distinct stereoisomer shapes schematic, not invented molecular structures. No universal molecular-weight cutoffs taught.",
+      "actions": [
+        {
+          "id": "L07-S02-A1",
+          "label": {
+            "ar": "هوية وصورة المادة",
+            "en": "Identity and form"
+          },
+          "semanticTrigger": "Identity and form"
+        },
+        {
+          "id": "L07-S02-A2",
+          "label": {
+            "ar": "النقاوة",
+            "en": "Purity"
+          },
+          "semanticTrigger": "Purity"
+        },
+        {
+          "id": "L07-S02-A3",
+          "label": {
+            "ar": "حرارة وحموضة",
+            "en": "Temperature and pH"
+          },
+          "semanticTrigger": "Temperature and pH"
+        },
+        {
+          "id": "L07-S02-A4",
+          "label": {
+            "ar": "طريقة القياس",
+            "en": "Measurement method"
+          },
+          "semanticTrigger": "Measurement method"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "قبل قراءة جدول الخواص، نثبت هوية المادّة وصورتها ونقاوتها. المتماكبات ممكن تختلف في السلوك والنشاط، والمستحضر مش بالضرورة نفس المادّة النقيّة في تجربة معملية. قيمة الذوبان لازم نعرف معاها الحرارة ودرجة الحموضة والطريقة. والضغط البخاريّ يساعد في فهم قابلية التطاير تحت شروط محدّدة. الوزن الجزيئيّ أو خاصيّة واحدة لوحدها ما يكفيش لتوقّع المصير كله. كلّ قيمة محتاجة بطاقة ظروف، مش رقم منفصل.",
+        "en": "Before reading a property table, establish chemical identity, form and purity. Stereochemical forms may differ in behavior or activity, and a formulation is not necessarily equivalent to a pure substance in a laboratory test. Solubility values need temperature, pH and method information. Vapour pressure informs volatility under stated conditions. Molecular weight or any single property cannot predict the entire environmental fate. Every value needs its measurement context."
+      },
+      "timing": null,
+      "sceneID": "L07-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "8d4f8a53a454abbcacdd3fc3cbb59a28729da1385163e50290a87186b6e46c3c",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S02-en-v1",
+        "file": "L07-S02-en-v1.wav",
+        "sha256": "39c0b4e8d07d7115471847862c1ed7264ddc392d09825c735c2f332af3387a6d"
+      },
+      "alignment": {
+        "run": 39606480962,
+        "artifact": "fate-next-timing-v4-L07-S02-en-v1",
+        "file": "timing.json",
+        "sha256": "97633ea6568953a16d3fe7f93e82e4e867bae94872b12f4411dbbdb49478f01b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S02",
+        "file": "L07-S02.jpg",
+        "sha256": "18d298f4da808513bca74af3c72e176f699e628d322b5867d9925254456aefa4"
+      },
+      "imageDisposition": {
+        "scene": "L07-S02",
+        "imageSHA256": "18d298f4da808513bca74af3c72e176f699e628d322b5867d9925254456aefa4",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 934343,
+      "durationSeconds": 38.930958333333336,
+      "globalStartAudioFrame": 809543,
+      "globalStartVideoFrame": 1012,
+      "globalEndVideoFrame": 2180
+    },
+    {
+      "id": "en-L07-S03",
+      "layout": "sorption",
+      "title": {
+        "ar": "على السطح ولا جوه الوسط؟",
+        "en": "On a surface or inside a phase?"
+      },
+      "visualContract": "Independent molecule marker moves to particle surface for adsorption and inside phase for absorption. Identity retained. Reversible arrows qualitative; label sorption as umbrella rather than synonym for surface-only adsorption.",
+      "actions": [
+        {
+          "id": "L07-S03-A1",
+          "label": {
+            "ar": "على السطح",
+            "en": "At the surface"
+          },
+          "semanticTrigger": "At the surface"
+        },
+        {
+          "id": "L07-S03-A2",
+          "label": {
+            "ar": "داخل الطور",
+            "en": "Inside the phase"
+          },
+          "semanticTrigger": "Inside the phase"
+        },
+        {
+          "id": "L07-S03-A3",
+          "label": {
+            "ar": "الهوية لم تتغير",
+            "en": "Identity unchanged"
+          },
+          "semanticTrigger": "Identity unchanged"
+        },
+        {
+          "id": "L07-S03-A4",
+          "label": {
+            "ar": "مصطلح أشمل",
+            "en": "Umbrella term"
+          },
+          "semanticTrigger": "Umbrella term"
+        }
+      ],
+      "equations": [
+        "Adsorption",
+        "Absorption",
+        "Sorption"
+      ],
+      "spoken": {
+        "ar": "لما الجزيء يرتبط بسطح حبيبة تربة، بنتكلم عن امتزاز. لو دخل جوّه وسط أو نسيج، ده امتصاص. وكلمة السوربشن أوسع، وممكن تشمل عمليّات ارتباط مختلفة. في الرسم، هنخلّي علامة الجزيء على السطح في حالة، وجوّه الوسط في الحالة التانية. الارتباط بالتربة ممكن يأثّر على الحركة والتوافر، لكنه مش دليل إنّ المادّة اتحطّمت. وممكن يحصل انتقال عكسيّ حسب الخواص والظروف.",
+        "en": "Association with a soil-particle surface is adsorption. Entry into the bulk of a phase or tissue is absorption. Sorption is a broader term that can encompass different association processes. Our diagram keeps the marker on the surface in one case and inside the phase in the other. Soil association can affect mobility and availability, but does not establish chemical destruction. Reverse transfer may occur depending on properties and conditions."
+      },
+      "timing": null,
+      "sceneID": "L07-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "731dba712ef7a68ec39663c05f3ce9673bd88e03d04c0bc1f15e6c01115af7b5",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S03-en-v1",
+        "file": "L07-S03-en-v1.wav",
+        "sha256": "7a4d7cc2d4ea6eaf68a29465500bf18aaf079c125ba284803242bc0362371284"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L07-S03-en-v1",
+        "file": "timing.json",
+        "sha256": "4e18cf085ec7236a4821b2bd698140e126e364cb6946fcd61d345f31aafb9697"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S03",
+        "file": "L07-S03.jpg",
+        "sha256": "6f1828bec0f4ad46aac85847190057af04b4dd38b947c3dae58349a997e53a9a"
+      },
+      "imageDisposition": {
+        "scene": "L07-S03",
+        "imageSHA256": "6f1828bec0f4ad46aac85847190057af04b4dd38b947c3dae58349a997e53a9a",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 797063,
+      "durationSeconds": 33.21095833333333,
+      "globalStartAudioFrame": 1743886,
+      "globalStartVideoFrame": 2180,
+      "globalEndVideoFrame": 3176
+    },
+    {
+      "id": "en-L07-S04",
+      "layout": "pathway",
+      "title": {
+        "ar": "اتنقلت ولا اتغيّرت؟",
+        "en": "Did it move or change identity?"
+      },
+      "visualContract": "Split-screen: unchanged marker follows runoff/leaching/air paths; transformation produces a new labeled marker. Parent decline bar separates transport and transformation contributions qualitatively, never fabricating fractions.",
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+        "en": "Runoff, leaching, spray drift and volatilization can move a substance between locations or phases. Hydrolysis, photolysis and biological transformation can change chemical identity. A transported marker therefore keeps its identity, while a transformed marker becomes a distinct product symbol. Declining parent concentration in a field sample can reflect several processes together. Do not assume every transformation reaches carbon dioxide and water or produces substances without effects."
+      },
+      "timing": null,
+      "sceneID": "L07-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "8e430cddac544e8c8f05c1d4588b7d52e353202150cc9faf08387321308f4108",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S04-en-v1",
+        "file": "L07-S04-en-v1.wav",
+        "sha256": "3c3a19770012e9405ec82269edb51a678db0610acfc79bc863e65a052fafb7d5"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S04-en-v1",
+        "file": "timing.json",
+        "sha256": "d3b9a31b377b99a7ff79db04da14c58092c3656e1ada35de5097f88c9d05b76b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S04",
+        "file": "L07-S04.jpg",
+        "sha256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880"
+      },
+      "imageDisposition": {
+        "scene": "L07-S04",
+        "imageSHA256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 916103,
+      "durationSeconds": 38.17095833333333,
+      "globalStartAudioFrame": 2540949,
+      "globalStartVideoFrame": 3176,
+      "globalEndVideoFrame": 4321
+    },
+    {
+      "id": "en-L07-S05",
+      "layout": "spray",
+      "title": {
+        "ar": "من القطرات للترسيب",
+        "en": "From droplets to deposition"
+      },
+      "visualContract": "Independent droplets atomize, travel, impact, retain/reflect, spread and dry. Side branches for drift and evaporation. No nozzle settings, efficiencies or fabricated percentages. Preserve causally consistent object states.",
+      "actions": [
+        {
+          "id": "L07-S05-A1",
+          "label": {
+            "ar": "تكوين قطرات",
+            "en": "Droplet formation"
+          },
+          "semanticTrigger": "Droplet formation"
+        },
+        {
+          "id": "L07-S05-A2",
+          "label": {
+            "ar": "انتقال واصطدام",
+            "en": "Transport and impact"
+          },
+          "semanticTrigger": "Transport and impact"
+        },
+        {
+          "id": "L07-S05-A3",
+          "label": {
+            "ar": "احتفاظ أو ارتداد",
+            "en": "Retention or reflection"
+          },
+          "semanticTrigger": "Retention or reflection"
+        },
+        {
+          "id": "L07-S05-A4",
+          "label": {
+            "ar": "انتشار وجفاف",
+            "en": "Spreading and drying"
+          },
+          "semanticTrigger": "Spreading and drying"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "نتابع مخطط العمليات الموجود في المصدر. القطرات بتتكوّن، وتتحرّك ناحية الهدف، وتوصل لسطح وتتصادم معاه. جزء ممكن يفضل عليه، وجزء ممكن يرتدّ. وفي الطريق ممكن يحصل انجراف أو تبخّر. القطرات اللي احتفظ بيها السطح ممكن تنتشر ويتكوّن منها ترسيب بعد الجفاف. خواص الرذاذ والسطح والجوّ بتأثّر في الخطوات دي. ده تفسير للمسارات، مش توصية بحجم قطرة أو ضغط أو إعداد رشّ معيّن.",
+        "en": "Follow the source process diagram. Droplets form, travel toward a target and impact a surface. Some material may be retained, while some may reflect. Drift or evaporation can occur during transport. Retained droplets may spread, with deposits forming as drying occurs. Spray, surface and atmospheric properties influence these steps. This explains pathways; it does not prescribe a droplet size, pressure or application setting."
+      },
+      "timing": null,
+      "sceneID": "L07-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "a4eb08f9694d595ef68ddee72f4ebc67636515d37b76d40189cf528d7ee76c26",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S05-en-v1",
+        "file": "L07-S05-en-v1.wav",
+        "sha256": "3c638d4f1a12f926593c3adf5fdfb1d03acb8c2dbf9511676cdd334f58849d59"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S05-en-v1",
+        "file": "timing.json",
+        "sha256": "dd3f2c550a6453a119cf6e536a46acfa3f56daba88f4717049578b6a8abca41f"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S05",
+        "file": "L07-S05.jpg",
+        "sha256": "e6bc241a993f8b04b49cc06636b564646029d7919cccf2c3a1fc2eac31b212cd"
+      },
+      "imageDisposition": {
+        "scene": "L07-S05",
+        "imageSHA256": "e6bc241a993f8b04b49cc06636b564646029d7919cccf2c3a1fc2eac31b212cd",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 817223,
+      "durationSeconds": 34.050958333333334,
+      "globalStartAudioFrame": 3457052,
+      "globalStartVideoFrame": 4321,
+      "globalEndVideoFrame": 5343
+    },
+    {
+      "id": "en-L07-S06",
+      "layout": "pathway",
+      "title": {
+        "ar": "بعد الترسيب… أكتر من مسار",
+        "en": "After deposition, several pathways remain"
+      },
+      "visualContract": "Same deposited objects branch into surface movement, uptake and weathering. Biological-effect endpoint stays a separate evidence node. No universal systemic transport asserted.",
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "بعد الترسيب، المادّة ممكن تتحرّك على السطح أو جوّه النبات حسب خواصها وظروفه. وممكن يحصل امتصاص أو إعادة توزيع أو فقد مع التجوية. الوصول للسطح مش نفس الدخول للأنسجة، والدخول مش نفس حدوث أثر بيولوجيّ. المخطط بيساعدنا نحدد الخطوة اللي نحتاج نقيسها. مثلًا، عشان نفهم فقد بعد المطر، نراجع ما تبقّى على السطح وما انتقل، بدل ما نفترض إنّ كلّ النقص تحلّل كيميائيّ.",
+        "en": "After deposition, material may move on the surface or within a plant, depending on its properties and the conditions. Uptake, redistribution and weathering losses are possible. Reaching a surface differs from entering tissue, and entry differs from a biological effect. The process map identifies which step needs measurement. To understand loss after rain, examine surface residues and transported material instead of assuming that every decrease represents chemical degradation."
+      },
+      "timing": null,
+      "sceneID": "L07-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "0f8c544a09a7856e07990ec0f1de25683afa6e8ef1efb427e56f77a433085ed3",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S06-en-v1",
+        "file": "L07-S06-en-v1.wav",
+        "sha256": "547e6548403c2b36ef2a37dcc7cd365ef3c92fa1d1e4cc6c8b22f90476654dbf"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S06-en-v1",
+        "file": "timing.json",
+        "sha256": "82863aa113c843c93f99e11dd5336992e4077637c57cabeed72aef064e78d03c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S06",
+        "file": "L07-S06.jpg",
+        "sha256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda"
+      },
+      "imageDisposition": {
+        "scene": "L07-S06",
+        "imageSHA256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 860423,
+      "durationSeconds": 35.85095833333333,
+      "globalStartAudioFrame": 4274275,
+      "globalStartVideoFrame": 5343,
+      "globalEndVideoFrame": 6418
+    },
+    {
+      "id": "en-L07-S07",
+      "layout": "decay",
+      "title": {
+        "ar": "نصف الباقي كل مرة",
+        "en": "Half of what remains each time"
+      },
+      "visualContract": "Editable decay curve at0,10,20days and8,4,2mg/kg. Halve remaining markers, not fixed subtraction. Display C=C0(1/2)^(t/tHalf), tHalf=ln2/k with units days and1/day; illustrative-model badge.",
+      "actions": [
+        {
+          "id": "L07-S07-A1",
+          "label": {
+            "ar": "تركيز البداية",
+            "en": "Initial concentration"
+          },
+          "semanticTrigger": "Initial concentration"
+        },
+        {
+          "id": "L07-S07-A2",
+          "label": {
+            "ar": "بعد نصف عمر",
+            "en": "After one half-life"
+          },
+          "semanticTrigger": "After one half-life"
+        },
+        {
+          "id": "L07-S07-A3",
+          "label": {
+            "ar": "بعد نصفي عمر",
+            "en": "After two half-lives"
+          },
+          "semanticTrigger": "After two half-lives"
+        },
+        {
+          "id": "L07-S07-A4",
+          "label": {
+            "ar": "نصف الباقي كل مرة",
+            "en": "Half of what remains"
+          },
+          "semanticTrigger": "Half of what remains"
+        }
+      ],
+      "equations": [
+        "0 d: 8 mg/kg",
+        "10 d: 4 mg/kg",
+        "20 d: 2 mg/kg",
+        "C = C0 (1/2)^(t/t½)"
+      ],
+      "spoken": {
+        "ar": "نستخدم نموذجًا افتراضيًّا من الرتبة الأولى، وتركيز البداية تمانية ملّيجرام لكلّ كيلوجرام. لو عمر النصف عشرة أيّام في ظروف النموذج، بعد عشرة أيّام يبقى أربعة، وبعد عشرين يوم يبقى اتنين. في كلّ مرة بننصّف الباقي، مش بنطرح أربعة للأبد. المعادلة تمانية في نصّ مرفوع لعدد فترات عمر النصف. ولو استخدمنا ثابت المعدّل، عمر النصف يساوي اللوغاريتم الطبيعيّ لاتنين مقسوم على الثابت. النموذج لازم يناسب البيانات والظروف.",
+        "en": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions."
+      },
+      "timing": null,
+      "sceneID": "L07-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "063902ce1807f8a4f53644a7658ab35a47d1b54b1bf91c4c7a7be7edf78a3209",
+      "deliverySHA256": "1cd6dc6135b20283f5db280b62f8743177c45c35cf1dff70f1ade647be6126ad",
+      "audio": {
+        "run": 39606481005,
+        "artifact": "fate-next-audio-L07-S07-en-v3",
+        "file": "L07-S07-en-v3.wav",
+        "sha256": "c7748bdec959331773af0065c4219918c698b99ebccb524fcd5e8112510e432f"
+      },
+      "alignment": {
+        "run": 39607024846,
+        "artifact": "fate-next-align-L07-S07-en-v3",
+        "file": "timing.json",
+        "sha256": "a5b67d04bdea510fb252fa1d81e2e5d9fb4ef3167f4bc8d8c64ce2c552bd2831"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39603295493,
+        "artifact": "fate-next-image-v2-L07-S07",
+        "file": "L07-S07.jpg",
+        "sha256": "b2bebf61185a56bef5481ec99f0d647461fa04d5bc023a1cd3438d7271ab63ce"
+      },
+      "imageDisposition": {
+        "scene": "L07-S07",
+        "imageSHA256": "42a813875e6333b13f0a83bc3fab140d9a1745dc6e3ee09f610d46fe4c94a54d",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Concrete visual correction queued; preserve original.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed.",
+        "reason": "Inspected corrected pixels: three empty dishes, no miscounted stones. Exact 8/4/2 examples will be separate labeled overlays.",
+        "agentPixelReview": true,
+        "ownerApprovalClaimed": false,
+        "priorDisposition": {
+          "scene": "L07-S07",
+          "imageSHA256": "42a813875e6333b13f0a83bc3fab140d9a1745dc6e3ee09f610d46fe4c94a54d",
+          "status": "hold_correction",
+          "automatedStatus": "reject",
+          "agentViewedPixels": true,
+          "disposition": "Concrete visual correction queued; preserve original.",
+          "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+        },
+        "currentImage": {
+          "run": 39603295493,
+          "artifact": "fate-next-image-v2-L07-S07",
+          "file": "L07-S07.jpg",
+          "sha256": "b2bebf61185a56bef5481ec99f0d647461fa04d5bc023a1cd3438d7271ab63ce"
+        }
+      },
+      "audioFrames": 815303,
+      "durationSeconds": 33.970958333333336,
+      "globalStartAudioFrame": 5134698,
+      "globalStartVideoFrame": 6418,
+      "globalEndVideoFrame": 7438
+    },
+    {
+      "id": "en-L07-S08",
+      "layout": "comparison",
+      "title": {
+        "ar": "النموذج مش موعد حصاد",
+        "en": "A model is not a harvest date"
+      },
+      "visualContract": "Decay graph stays separate from label/calendar decision. Cross unsupported link from20days toharvest approval. No actual PHI or dose supplied.",
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "انخفاض المتبقّي",
+            "en": "Residue decline"
+          },
+          "semanticTrigger": "Residue decline"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "التبدّد: انتقال وتحول",
+            "en": "Dissipation: transport and transformation"
+          },
+          "semanticTrigger": "Dissipation: transport and transformation"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد المعتمد",
+            "en": "Authorized harvest date"
+          },
+          "semanticTrigger": "Authorized harvest date"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "الالتزام ببطاقة المنتج",
+            "en": "Follow the product label"
+          },
+          "semanticTrigger": "Follow the product label"
+        }
+      ],
+      "equations": [
+        "20 days ≠ harvest authorization"
+      ],
+      "spoken": {
+        "ar": "النصّ في المصدر يربط الانتظار بانخفاض المتبقّي. بسّ حساب عمر النصف لوحده ما يحدّدش موعد حصاد مسموح. لازم بطاقة المنتج والمحصول والاستخدام المحليّ المعتمد، وتعريف المتبقّي والنواتج والحدّ الساري. كمان نصف عمر التبدّد الحقليّ ممكن يشمل انتقالًا وتحولًا مع بعض، مش التحلّل وحده. وتقليل الجرعة باجتهاد شخصيّ ما يحلّش محلّ البطاقة. نفصل النتيجة الرياضيّة عن القرار التطبيقيّ.",
+        "en": "The source links waiting with residue decline, but a half-life calculation alone cannot establish an authorized harvest date. The product label, crop, locally authorized use, residue definition, products and applicable limit must be considered. A field dissipation half-life may combine transport and transformation rather than describe degradation alone. Independently reducing a dose is not a substitute for label compliance. Keep the mathematical result separate from the application decision."
+      },
+      "timing": null,
+      "sceneID": "L07-S08",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "fd7d30911a9ab118eccb58817a124d72484a87f508546e3a1ba29efab68d33d9",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S08-en-v1",
+        "file": "L07-S08-en-v1.wav",
+        "sha256": "12c54a2b46d9e6e3703bf02af73a5fa2a642ec6f659d945b153acccad0412d04"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L07-S08-en-v1",
+        "file": "timing.json",
+        "sha256": "689b5e163a857db5934e08e6a76a72b5f9dfe1f40ddea7c8187e3ea94c1bb04b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S08",
+        "file": "L07-S08.jpg",
+        "sha256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62"
+      },
+      "imageDisposition": {
+        "scene": "L07-S08",
+        "imageSHA256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 831623,
+      "durationSeconds": 34.650958333333335,
+      "globalStartAudioFrame": 5950001,
+      "globalStartVideoFrame": 7438,
+      "globalEndVideoFrame": 8477
+    },
+    {
+      "id": "en-L07-S09",
+      "layout": "flow",
+      "title": {
+        "ar": "توقّع قابل للاختبار",
+        "en": "A prediction that can be tested"
+      },
+      "visualContract": "QSAR input/domain/validation/output flow with out-of-domain case held. Final rainfall pathway task uses runoff/leaching hypotheses and missing-property cards; no invented groundwater prediction.",
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "equations": [
+        "QSAR"
+      ],
+      "spoken": {
+        "ar": "العلاقة الكمّيّة بين التركيب والنشاط بتحاول تربط خواص وتركيب المادّة باستجابة ضمن بيانات ونموذج محدّدين. عشان نستخدمها، نحتاج نعرف مجال الصلاحية وطريقة التحقق وعدم اليقين. مش كلّ مادّة جديدة ينفع ندخلها في أيّ معادلة. في التطبيق الأخير، مطر نزل على تربة رمليّة بعد استخدام مبيد: اكتب مسارين محتملين، والبيانات اللي تميّز بينهم. وبعدها فرّق بين توقع النموذج، والقياس الحقيقيّ، والقرار اللي لسه محتاج دليل.",
+        "en": "A quantitative structure-activity relationship connects chemical structure or properties with an endpoint within a defined dataset and model. Application requires an applicability domain, validation and uncertainty information. An arbitrary new substance cannot be inserted into any available equation. For the final case, rain falls on sandy soil after pesticide use. Propose two plausible pathways and the evidence that would distinguish them. Separate model prediction, actual measurement and a decision that still needs evidence."
+      },
+      "timing": null,
+      "sceneID": "L07-S09",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "e861fc35446abf6ab63ee9dcd5218bae3b6312e9fbbb1270867e21a8ea6f20b0",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S09-en-v1",
+        "file": "L07-S09-en-v1.wav",
+        "sha256": "ef4a107509d88ba4b05e248c97e388f5cebc0b8edc73543d1450bea0378e2192"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S09-en-v1",
+        "file": "timing.json",
+        "sha256": "dc24f0e07700ae9bae13cfd887cece84b246c9eafb9ae9bb3e48ce12d9073e80"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S09",
+        "file": "L07-S09.jpg",
+        "sha256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5"
+      },
+      "imageDisposition": {
+        "scene": "L07-S09",
+        "imageSHA256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 948743,
+      "durationSeconds": 39.53095833333333,
+      "globalStartAudioFrame": 6781624,
+      "globalStartVideoFrame": 8477,
+      "globalEndVideoFrame": 9663
+    }
+  ]
+}

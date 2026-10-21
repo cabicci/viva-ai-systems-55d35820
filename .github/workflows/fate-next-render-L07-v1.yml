@@ -1,0 +1,49 @@
+name: Fate verified scene render L07
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L07/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L07
+  EXPECTED_REQUEST_SHA256: 01e3c985ab5bea2cb212342b3cb75b02a9544c2ad6226d69c1ca2cd88470f2b8
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        scene: ["ar-L07-S01", "ar-L07-S02", "ar-L07-S03", "ar-L07-S04", "ar-L07-S05", "ar-L07-S06", "ar-L07-S07", "ar-L07-S08", "ar-L07-S09", "en-L07-S01", "en-L07-S02", "en-L07-S03", "en-L07-S04", "en-L07-S05", "en-L07-S06", "en-L07-S07", "en-L07-S08", "en-L07-S09"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify actual sources and acoustic evidence
+        run: python "$PACKAGE/prepare.py" "${{ matrix.scene }}"
+      - name: Install exact renderer dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L07
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver each checkpoint set immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-stills-${{ matrix.scene }}-L07
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and decode-verify scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify.py" scene
+      - name: Deliver finished scene immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-scene-${{ matrix.scene }}-L07
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
