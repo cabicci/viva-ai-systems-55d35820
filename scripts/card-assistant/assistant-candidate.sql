@@ -162,7 +162,9 @@ GRANT EXECUTE ON FUNCTION public.card_assistant_chunk_json(public.card_assistant
 -- runs. Preserve the existing classifications. Academic's historical native
 -- candidate, if needed for this deployment, is a prerequisite and runs first.
 DO $card_deletion_inventory$
-DECLARE targets oid[]; definition text; old_prefix text:='c.table_name NOT IN (';
+DECLARE targets oid[]; definition text;
+ old_prefix text:='c.table_name NOT IN (''academic_assistant_questions'',''lesson_progress''';
+ new_prefix text:='c.table_name NOT IN (''card_assistant_question_windows'',''academic_assistant_questions'',''lesson_progress''';
 BEGIN
  SELECT array_agg(p.oid) INTO targets FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
  WHERE n.nspname='public' AND p.pronargs=3 AND p.prosrc LIKE '%LC09_UNCLASSIFIED_USER_TABLE%';
@@ -171,7 +173,9 @@ BEGIN
  IF strpos(definition,'''card_assistant_question_windows''')>0 THEN RETURN; END IF;
  IF (length(definition)-length(replace(definition,old_prefix,'')))/length(old_prefix)<>1
  THEN RAISE EXCEPTION 'CARD_DELETION_INVENTORY_DEFINITION_MISMATCH'; END IF;
- EXECUTE replace(definition,old_prefix,old_prefix||'''card_assistant_question_windows'',');
+ -- Pin the reviewed public user inventory, not the separate Kids family
+ -- inventory in the same installed function. Any changed anchor fails closed.
+ EXECUTE replace(definition,old_prefix,new_prefix);
 END $card_deletion_inventory$;
 ALTER FUNCTION public.lc09_advance_deletion(uuid,uuid,text) RENAME TO card_assistant_previous_advance;
 REVOKE ALL ON FUNCTION public.card_assistant_previous_advance(uuid,uuid,text) FROM PUBLIC,anon,authenticated,service_role;

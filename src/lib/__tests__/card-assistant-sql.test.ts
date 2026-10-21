@@ -7,6 +7,7 @@ import { CARD_REGISTRY } from "../card-assistant/registry";
 import { sourceChunks, type SourceDocument } from "../card-assistant/corpus";
 
 const user = "11111111-1111-4111-8111-111111111111", child = "22222222-2222-4222-8222-222222222222";
+const candidateSql = readFileSync(new URL("../../../scripts/card-assistant/assistant-candidate.sql", import.meta.url), "utf8");
 let db: PGlite;
 beforeAll(async () => {
   db = new PGlite({ extensions: { vector } });
@@ -27,14 +28,19 @@ beforeAll(async () => {
       AND EXISTS(SELECT 1 FROM public.kids_content_approvals WHERE level_id=requested_level AND lesson_number=requested_lesson AND locale=requested_locale) $$;
     CREATE FUNCTION public.technical_can_access(p_lesson text) RETURNS boolean LANGUAGE sql AS $$ SELECT EXISTS(SELECT 1 FROM public.fixture_permissions
       WHERE product='technical' AND step=p_lesson AND allowed) $$;
-    CREATE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text)
+    CREATE FUNCTION public.commerce_previous_lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text)
     RETURNS jsonb LANGUAGE plpgsql SECURITY DEFINER SET search_path='' AS $$ BEGIN
       IF p_lease_token<>'55555555-5555-4555-8555-555555555555'::uuid THEN RAISE EXCEPTION 'BAD_LEASE'; END IF;
+      IF EXISTS(SELECT 1 FROM information_schema.columns c WHERE c.table_schema='public' AND c.column_name='parent_id'
+        AND c.table_name NOT IN ('kids_profiles')) THEN RAISE EXCEPTION 'LC09_UNCLASSIFIED_FAMILY_TABLE'; END IF;
       IF EXISTS(SELECT 1 FROM information_schema.columns c WHERE c.table_schema='public' AND c.column_name='user_id'
-        AND c.table_name NOT IN ('lesson_progress')) THEN RAISE EXCEPTION 'LC09_UNCLASSIFIED_USER_TABLE'; END IF;
+        AND c.table_name NOT IN ('academic_assistant_questions','lesson_progress')) THEN RAISE EXCEPTION 'LC09_UNCLASSIFIED_USER_TABLE'; END IF;
       RETURN jsonb_build_object('stage',p_next_stage);
-    END $$;`);
-  await db.exec(readFileSync(new URL("../../../scripts/card-assistant/assistant-candidate.sql", import.meta.url), "utf8"));
+    END $$;
+    CREATE FUNCTION public.lc09_advance_deletion(p_user_id uuid,p_lease_token uuid,p_next_stage text)
+    RETURNS jsonb LANGUAGE sql SECURITY DEFINER SET search_path='' AS $$
+      SELECT public.commerce_previous_lc09_advance_deletion(p_user_id,p_lease_token,p_next_stage) $$;`);
+  await db.exec(candidateSql);
   await db.exec(readFileSync(new URL("../../../scripts/card-assistant/assistant-registry-seed.sql", import.meta.url), "utf8"));
 }, 60000);
 afterAll(async () => { await db?.close(); });
@@ -104,5 +110,30 @@ describe("candidate SQL executed only in isolated PGlite", () => {
     expect(result.rows[0].result).toEqual({stage:"learner_erased"});
     expect((await db.query("SELECT * FROM card_assistant_question_windows")).rows).toHaveLength(0);
     expect((await db.query<{allowed:boolean}>("SELECT has_function_privilege('authenticated','public.card_assistant_previous_advance(uuid,uuid,text)','EXECUTE') allowed")).rows[0].allowed).toBe(false);
+  });
+  it("preserves the separate family inventory and rejects unrelated new user tables through the installed wrapper chain", async () => {
+    const definition = (await db.query<{definition:string}>("SELECT pg_get_functiondef('public.commerce_previous_lc09_advance_deletion(uuid,uuid,text)'::regprocedure) definition")).rows[0].definition;
+    expect(definition).toContain("c.table_name NOT IN ('kids_profiles')");
+    expect(definition).toContain("c.table_name NOT IN ('card_assistant_question_windows','academic_assistant_questions','lesson_progress')");
+    const advance = () => db.query("SELECT lc09_advance_deletion($1,'55555555-5555-4555-8555-555555555555','learner_erased')", [user]);
+    await db.exec("CREATE TABLE public.kids_unclassified_fixture(parent_id uuid)");
+    try { await expect(advance()).rejects.toThrow('LC09_UNCLASSIFIED_FAMILY_TABLE'); }
+    finally { await db.exec("DROP TABLE public.kids_unclassified_fixture"); }
+    await db.exec("CREATE TABLE public.user_unclassified_fixture(user_id uuid)");
+    try { await expect(advance()).rejects.toThrow('LC09_UNCLASSIFIED_USER_TABLE'); }
+    finally { await db.exec("DROP TABLE public.user_unclassified_fixture"); }
+  });
+  it("refuses a changed user inventory without modifying either inventory", async () => {
+    const inventoryPatch = candidateSql.match(/DO \$card_deletion_inventory\$[\s\S]*?END \$card_deletion_inventory\$;/)![0];
+    const readDefinition = async () => (await db.query<{definition:string}>("SELECT pg_get_functiondef('public.commerce_previous_lc09_advance_deletion(uuid,uuid,text)'::regprocedure) definition")).rows[0].definition;
+    const original = await readDefinition();
+    const changed = original.replace("'card_assistant_question_windows','academic_assistant_questions','lesson_progress'", "'academic_assistant_questions','unexpected_reviewed_table'");
+    expect(changed).not.toBe(original);
+    await db.exec(changed);
+    try {
+      const before = await readDefinition();
+      await expect(db.exec(inventoryPatch)).rejects.toThrow('CARD_DELETION_INVENTORY_DEFINITION_MISMATCH');
+      expect(await readDefinition()).toBe(before);
+    } finally { await db.exec(original); }
   });
 });
