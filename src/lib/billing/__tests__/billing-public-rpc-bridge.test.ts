@@ -187,6 +187,7 @@ describe("public billing RPC bridge — static", () => {
       "20261006113000_academic_mail_retention.sql",
       "20261006120000_academic_admin_review.sql",
       "20261007072809_unified_learning_journey.sql",
+      "20261021120000_assistant_card_content_access.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
