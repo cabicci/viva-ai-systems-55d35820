@@ -1,0 +1,925 @@
+{
+  "id": "fate-next-analysis-L03",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 12,
+  "maxAdjudicationCalls": 5,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L03-S01-ar-v1",
+      "sceneID": "L03-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "c85af44a13229cdbb50de9ca30cac8fe5dcde0be3469dde9eeba077541c03cbb",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S01-ar-v1",
+        "file": "L03-S01-ar-v1.wav",
+        "sha256": "2938da36501fd35ef1eb867db36bba915aea5183916e6d99edce7e92e1726d3c"
+      },
+      "durationSeconds": 33.57095833333333,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 6.5,
+                "end": 16.6,
+                "category": "speaking_style",
+                "observation": "The delivery in this section exhibits a slightly less natural flow and intonation compared to the reference. The pacing feels somewhat deliberate or segmented, particularly when listing conditions, which detracts from the overall fluidity of narration.",
+                "certainty": "certain"
+              },
+              {
+                "start": 17.3,
+                "end": 24.8,
+                "category": "speaking_style",
+                "observation": "Similar to the previous section, the narration here has a slightly robotic or less organic feel, especially in the articulation of conjunctions and the listed items. The emphasis on certain words feels less natural for a narrative context.",
+                "certainty": "certain"
+              },
+              {
+                "start": 29.3,
+                "end": 33.57,
+                "category": "speaking_style",
+                "observation": "The phrase 'وجود رسم مقنع' sounds somewhat flat and lacks the natural intonation and emphasis present in the reference voice's delivery style.",
+                "certainty": "certain"
+              }
+            ],
+            "notes": "The candidate audio maintains a good match in audible timbre, register, and vocal weight with the owner-accepted voice reference. However, the primary area of concern lies in the speaking style and within-candidate consistency of naturalness. While clear and understandable, the candidate's delivery occasionally lacks the organic fluidity and natural pacing observed in the reference. There are subtle instances where the intonation and rhythm feel less human-like, leading to a slightly segmented or robotic cadence in certain phrases, particularly in longer sentences or when listing items. This is not a 'chopped delivery' in terms of abrupt cuts, but rather a less smooth and naturally flowing speech pattern."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S02-ar-v1",
+      "sceneID": "L03-S02",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "المصير بيشرح انتقال المادّة وتحولها. التعرّض بيشرح مين لامسها، من أنهي طريق، وبكمية ومدّة قدّ إيه. والأثر استجابة بيولوجيّة بنقيسها، زي النمو أو التكاثر أو البقاء. العلوم هنا بتتكامل: الكيمياء تساعدنا نعرف المادّة، والأحياء تفسّر الاستجابة، والبيئة تدرس العلاقات بين الكائنات. كلمة ملوّث لوحدها ما تحدّدش نوع الأثر. وحتى قياس تركيز في الميّه ما يساويش قياس كمية وصلت لأنسجة السمكة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "812b6937395e130496ec24053181a636351feb970902b4b9312094f2add79290",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S02-ar-v1",
+        "file": "L03-S02-ar-v1.wav",
+        "sha256": "fab3d1ea3553e94e2a019ed06e3731cce6ace4474da9f580a0eadb1af733c9f7"
+      },
+      "durationSeconds": 37.77095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L03-S02-A1",
+          "label": {
+            "ar": "مصير المادة",
+            "en": "Chemical fate"
+          },
+          "semanticTrigger": "Chemical fate"
+        },
+        {
+          "id": "L03-S02-A2",
+          "label": {
+            "ar": "التعرّض للكائن",
+            "en": "Organism exposure"
+          },
+          "semanticTrigger": "Organism exposure"
+        },
+        {
+          "id": "L03-S02-A3",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L03-S02-A4",
+          "label": {
+            "ar": "كل استنتاج له دليله",
+            "en": "Evidence for each claim"
+          },
+          "semanticTrigger": "Evidence for each claim"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S03-ar-v1",
+      "sceneID": "L03-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "لو قسنا بقاء السمك خلال فترة قصيرة، يبقى عندنا نتيجة عن البقاء في ظروف الاختبار. ما ينفعش نبدّلها باستنتاج عن التكاثر خلال موسم كامل. وكمان نتيجة على مستوى فرد غير نتيجة عن تعداد جماعة، وغير تغيّر تركيب المجتمع البيئيّ. مرحلة العمر والحرارة والأكسجين والغذاء ممكن تأثّر على النتيجة. علشان ننسب أثر للمادّة، لازم تصميم مناسب ومقارنة وضوابط، مش مجرد إنّ التعرّض والأثر ظهروا في نفس الوقت.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "0c153e47e9436ef678f36e46f300d45018ceb234bbd0ea039441d94148d01fc8",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S03-ar-v1",
+        "file": "L03-S03-ar-v1.wav",
+        "sha256": "36ef55081137889b21b58beb15e265ab5e1c3c9ecc0a035e7862ea438f31768a"
+      },
+      "durationSeconds": 32.650958333333335,
+      "reviewConcerns": [
+        {
+          "source": "L03-S03-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 1.32,
+              "end": 1.78,
+              "category": "pronunciation",
+              "heard": "بقاع",
+              "expected": "بقاء",
+              "heardPhonetics": "baˈqaːʕ",
+              "suggestion": "يُفضل نطق الهمزة في نهاية الكلمة لتجنب تغيير المعنى، لتصبح 'بقاء' (baqaːʔ).",
+              "reason": "تم نطق كلمة 'بقاء' (survival/remaining) كـ 'بقاع' (bottoms/depths) عن طريق استبدال الهمزة (ء) بحرف العين (ع). هذا التغيير يغير معنى الجملة بشكل كبير، حيث أن 'بقاع السمك' ليس لها معنى في هذا السياق، بينما 'بقاء السمك' هو المعنى المقصود.",
+              "severity": "major",
+              "certainty": "clear"
+            },
+            {
+              "start": 4.4,
+              "end": 4.86,
+              "category": "pronunciation",
+              "heard": "البقاع",
+              "expected": "البقاء",
+              "heardPhonetics": "ilbaˈqaːʕ",
+              "suggestion": "يُفضل نطق الهمزة في نهاية الكلمة لتجنب تغيير المعنى، لتصبح 'البقاء' (ilbaqaːʔ).",
+              "reason": "تم نطق كلمة 'البقاء' (survival/remaining) كـ 'البقاع' (bottoms/depths) عن طريق استبدال الهمزة (ء) بحرف العين (ع). هذا التغيير يغير معنى الجملة بشكل كبير، حيث أن 'البقاع في ظروف الاختبار' ليس لها معنى في هذا السياق، بينما 'البقاء في ظروف الاختبار' هو المعنى المقصود.",
+              "severity": "major",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L03-S03-A1",
+          "label": {
+            "ar": "المدة والكائن",
+            "en": "Duration and organism"
+          },
+          "semanticTrigger": "Duration and organism"
+        },
+        {
+          "id": "L03-S03-A2",
+          "label": {
+            "ar": "البقاء",
+            "en": "Survival"
+          },
+          "semanticTrigger": "Survival"
+        },
+        {
+          "id": "L03-S03-A3",
+          "label": {
+            "ar": "النمو والتكاثر",
+            "en": "Growth and reproduction"
+          },
+          "semanticTrigger": "Growth and reproduction"
+        },
+        {
+          "id": "L03-S03-A4",
+          "label": {
+            "ar": "من الفرد للمجتمع",
+            "en": "Individual to community"
+          },
+          "semanticTrigger": "Individual to community"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S04-ar-v1",
+      "sceneID": "L03-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "عينة قبل المطر غير عينة أثناء ذروة الجريان، وغير عينة بعدها بيوم. وعينة ميّه غير عينة رواسب أو أنسجة. في سجلّ القياس، اكتب المكان والوقت والوسط والمادّة المقاسة والطريقة، ومعاهم حدود الكشف والتقدير وعدم اليقين. التركيز المتوقّع من نموذج مش نفس التركيز المقاس بعينة. الملف ذكر القياسات في الفهرس من غير بيانات كاملة؛ علشان كده مثالنا تعليميّ، ومش هننسب أيّ رقم لحقل حقيقيّ.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "94f62406d01970bdc638edace5a52bf609ec78d5edd8a13c268d30d5e23dca05",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S04-ar-v1",
+        "file": "L03-S04-ar-v1.wav",
+        "sha256": "cb755d4969e2f4e733a61b1e367017ded85230f6bd6c7d7c3a8f104896d02b85"
+      },
+      "durationSeconds": 35.050958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L03-S04-A1",
+          "label": {
+            "ar": "قبل الحدث",
+            "en": "Before event"
+          },
+          "semanticTrigger": "Before event"
+        },
+        {
+          "id": "L03-S04-A2",
+          "label": {
+            "ar": "أثناء الحدث",
+            "en": "During event"
+          },
+          "semanticTrigger": "During event"
+        },
+        {
+          "id": "L03-S04-A3",
+          "label": {
+            "ar": "بعد الحدث",
+            "en": "After event"
+          },
+          "semanticTrigger": "After event"
+        },
+        {
+          "id": "L03-S04-A4",
+          "label": {
+            "ar": "قياس أم توقع؟",
+            "en": "Measured or predicted?"
+          },
+          "semanticTrigger": "Measured or predicted?"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S05-ar-v1",
+      "sceneID": "L03-S05",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نفترض طريقة حدّ الكشف فيها اتنين من ألف ملّيجرام لكلّ لتر، وحدّ التقدير الكمّي ستّة من ألف. تقرير أقلّ من حدّ الكشف ما بيقولش إنّ التركيز صفر؛ بيقول إنّ الطريقة ما كشفتوش بالشروط دي. وعند أربعة من ألف ممكن يتسجّل كشف، لكن أقلّ من مستوى التقدير بالدقّة المطلوبة. ما ينفعش نمسح الوصف ونستخدم الرقم كأنّه قياس دقيق. العلامات والقواعد بتختلف حسب الطريقة، فلازم نقرأ تعريف المعمل لها.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "c53d79c1ebd7bcebf62ff15637d4cf4777be909298eac74a9c49811c632c06a6",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S05-ar-v1",
+        "file": "L03-S05-ar-v1.wav",
+        "sha256": "968f9ac757d20f4de471194d101d5c5f5f471086b79f15f9e03b2e81a72b1c23"
+      },
+      "durationSeconds": 37.930958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L03-S05-A1",
+          "label": {
+            "ar": "حد الكشف",
+            "en": "Detection limit"
+          },
+          "semanticTrigger": "Detection limit"
+        },
+        {
+          "id": "L03-S05-A2",
+          "label": {
+            "ar": "حد التقدير الكمي",
+            "en": "Quantitation limit"
+          },
+          "semanticTrigger": "Quantitation limit"
+        },
+        {
+          "id": "L03-S05-A3",
+          "label": {
+            "ar": "نتيجة بين الحدين",
+            "en": "Between the limits"
+          },
+          "semanticTrigger": "Between the limits"
+        },
+        {
+          "id": "L03-S05-A4",
+          "label": {
+            "ar": "أقل من الكشف لا يعني صفر",
+            "en": "Below detection is not zero"
+          },
+          "semanticTrigger": "Below detection is not zero"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S06-ar-v1",
+      "sceneID": "L03-S06",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "دلوقتي عندك نتيجة أقلّ من حدّ التقدير، وعايز تقارنها بمرجع قريب جدًا منها. التصرّف العلميّ مش إنّنا نعلن تجاوز أو عدم تجاوز بدقّة وهميّة. نراجع طريقة التقرير وعدم اليقين، ونحدّد القياس الإضافيّ اللي يخدم السؤال. جرّب تبني مسار جديد بدل الجريان: انجراف رذاذ للهواء أو لنبات خارج الهدف. اختار الوسط والكائن والأثر المناسبين، واكتب جنب كلّ خطوة: إيه المقاس فعلًا، وإيه اللي لسه فرضيّة؟",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "3f397ec01b382aca3b68bba8ce816c368f4f0798e0b4db6d0e2477ce6e945e6f",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L03-S06-ar-v1",
+        "file": "L03-S06-ar-v1.wav",
+        "sha256": "aacf10ef8684cd3d7923796946c75cee28c547092a0d2ff2f3b37e7e78a75147"
+      },
+      "durationSeconds": 36.17095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L03-S06-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 22.6,
+              "end": 23.3,
+              "category": "substitution",
+              "heard": "اللي مقاس",
+              "expected": "المقاس",
+              "heardPhonetics": "/el.li ma.ˈʔaːs/",
+              "suggestion": "استخدام كلمة 'المقاس' بدلاً من 'اللي مقاس'.",
+              "reason": "تم استبدال كلمة 'المقاس' في النص المكتوب بعبارة 'اللي مقاس' وهي صيغة عامية.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L03-S06-A1",
+          "label": {
+            "ar": "مقاس بالفعل",
+            "en": "Actually measured"
+          },
+          "semanticTrigger": "Actually measured"
+        },
+        {
+          "id": "L03-S06-A2",
+          "label": {
+            "ar": "فرضية ممكنة",
+            "en": "Plausible hypothesis"
+          },
+          "semanticTrigger": "Plausible hypothesis"
+        },
+        {
+          "id": "L03-S06-A3",
+          "label": {
+            "ar": "دليل ناقص",
+            "en": "Missing evidence"
+          },
+          "semanticTrigger": "Missing evidence"
+        },
+        {
+          "id": "L03-S06-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S01-en-v1",
+      "sceneID": "L03-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "A field lies beside a pond, and rain falls after pesticide use. Can we conclude that fish were harmed? Not yet. We have a possible source and pathway, but need evidence of arrival, concentration, exposure duration and biological response. Organize the question into four elements: source, pathway, exposed organism and measured endpoint. Each arrow in the model represents a hypothesis to test. A convincing diagram does not establish that every step actually occurred.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "be6368795b08b90a7889e3a49eb23fedd86b27729d0a1164e13e978e422c33f9",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S01-en-v1",
+        "file": "L03-S01-en-v1.wav",
+        "sha256": "49234f6b348a1aa43d448b621b457374f22537e59220be7c7f1be4b5b667c547"
+      },
+      "durationSeconds": 40.730958333333334,
+      "reviewConcerns": [
+        {
+          "source": "L03-S01-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 4.4,
+              "end": 5.0,
+              "category": "pronunciation",
+              "heard": "pesticide",
+              "expected": "pesticide",
+              "heardPhonetics": "pes-ti-side (with a very soft final 's' sound)",
+              "suggestion": "pes-ti-side (with a clear final 's' sound)",
+              "reason": "The final 's' sound in 'pesticide' is significantly reduced, almost omitted.",
+              "severity": "minor",
+              "certainty": "possible"
+            },
+            {
+              "start": 9.0,
+              "end": 9.5,
+              "category": "delivery",
+              "heard": "Not yet",
+              "expected": "Not yet",
+              "heardPhonetics": "not yet (clipped and abrupt)",
+              "suggestion": "not yet (smoother delivery)",
+              "reason": "The phrase 'Not yet' is delivered very abruptly and clipped, sounding unnatural in the context of the narration.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 23.2,
+              "end": 23.7,
+              "category": "pronunciation",
+              "heard": "elements",
+              "expected": "elements",
+              "heardPhonetics": "el-uh-men (missing the final 'ts' sound)",
+              "suggestion": "el-uh-ments (with a clear final 'ts' sound)",
+              "reason": "The final 'ts' sound in 'elements' is significantly reduced, almost omitted.",
+              "severity": "minor",
+              "certainty": "possible"
+            },
+            {
+              "start": 28.3,
+              "end": 28.8,
+              "category": "pronunciation",
+              "heard": "measured",
+              "expected": "measured",
+              "heardPhonetics": "mez-herd (with a very soft final 'd' sound)",
+              "suggestion": "mez-herd (with a clear final 'd' sound)",
+              "reason": "The final 'd' sound in 'measured' is significantly reduced, almost omitted.",
+              "severity": "minor",
+              "certainty": "possible"
+            },
+            {
+              "start": 29.0,
+              "end": 29.6,
+              "category": "pronunciation",
+              "heard": "endpoint",
+              "expected": "endpoint",
+              "heardPhonetics": "end-poin (missing the final 't' sound)",
+              "suggestion": "end-point (with a clear final 't' sound)",
+              "reason": "The final 't' sound in 'endpoint' is significantly reduced, almost omitted.",
+              "severity": "minor",
+              "certainty": "possible"
+            },
+            {
+              "start": 39.3,
+              "end": 39.8,
+              "category": "pronunciation",
+              "heard": "actually",
+              "expected": "actually",
+              "heardPhonetics": "ak-shoo-lee (with a very soft 't' sound, almost omitted)",
+              "suggestion": "ak-choo-uh-lee (with a clearer 't' sound)",
+              "reason": "The 't' sound in 'actually' is significantly reduced, almost omitted, making it sound like 'acually'.",
+              "severity": "minor",
+              "certainty": "possible"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S02-en-v1",
+      "sceneID": "L03-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Fate describes transport and transformation. Exposure describes who contacts a substance, by which route, and at what amount and duration. An effect is a measured biological response, such as growth, reproduction or survival. Chemistry helps identify the substance, biology explains responses, and ecology examines relationships among organisms. Calling something a contaminant does not specify its effect. Even a measured water concentration is different from a measured amount reaching fish tissues.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "5316535255880876f3c9a1bacad07d11b0fa956093b2a66e47ee040ace68455d",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S02-en-v1",
+        "file": "L03-S02-en-v1.wav",
+        "sha256": "e82940bf1cdaf1cd961e652ed0e06fe97ce537054fcfa50dc31aea8691d97994"
+      },
+      "durationSeconds": 40.13095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L03-S02-A1",
+          "label": {
+            "ar": "مصير المادة",
+            "en": "Chemical fate"
+          },
+          "semanticTrigger": "Chemical fate"
+        },
+        {
+          "id": "L03-S02-A2",
+          "label": {
+            "ar": "التعرّض للكائن",
+            "en": "Organism exposure"
+          },
+          "semanticTrigger": "Organism exposure"
+        },
+        {
+          "id": "L03-S02-A3",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L03-S02-A4",
+          "label": {
+            "ar": "كل استنتاج له دليله",
+            "en": "Evidence for each claim"
+          },
+          "semanticTrigger": "Evidence for each claim"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S03-en-v1",
+      "sceneID": "L03-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "A short test of fish survival provides a survival result under its test conditions. It cannot be substituted for a conclusion about reproduction over an entire season. Individual responses also differ from population abundance or community composition. Life stage, temperature, oxygen and food can influence results. Attributing an effect to a substance requires an appropriate design, comparisons and controls, not merely the observation that exposure and an effect occurred at the same time.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "3ad20d6c26be7fa9d6144c20fd48fed6996f0f7389b05142dddf36c1c0facff5",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S03-en-v1",
+        "file": "L03-S03-en-v1.wav",
+        "sha256": "83e764eb2b6504bd34f48f5a9da14aa2a2922fb163d7d33d989203c2456d097b"
+      },
+      "durationSeconds": 32.81095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L03-S03-A1",
+          "label": {
+            "ar": "المدة والكائن",
+            "en": "Duration and organism"
+          },
+          "semanticTrigger": "Duration and organism"
+        },
+        {
+          "id": "L03-S03-A2",
+          "label": {
+            "ar": "البقاء",
+            "en": "Survival"
+          },
+          "semanticTrigger": "Survival"
+        },
+        {
+          "id": "L03-S03-A3",
+          "label": {
+            "ar": "النمو والتكاثر",
+            "en": "Growth and reproduction"
+          },
+          "semanticTrigger": "Growth and reproduction"
+        },
+        {
+          "id": "L03-S03-A4",
+          "label": {
+            "ar": "من الفرد للمجتمع",
+            "en": "Individual to community"
+          },
+          "semanticTrigger": "Individual to community"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S04-en-v1",
+      "sceneID": "L03-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A sample collected before rain differs from one taken at peak runoff or a day later. Water, sediment and tissue samples also answer different questions. Record the location, time, medium, analyte, method, detection and quantitation limits, and uncertainty. A concentration predicted by a model is not the same as a concentration measured in a sample. The handout lists measurement topics without a complete dataset, so our example is educational and no number is attributed to a real field.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "947170bf5e87838b8b9693b19e335b6cd441c6399fccea30c53a5fca74eeaaec",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S04-en-v1",
+        "file": "L03-S04-en-v1.wav",
+        "sha256": "0e0b85469c0708ca140855158c33ae7ee793fc9d017025750a914a1f80875418"
+      },
+      "durationSeconds": 36.050958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L03-S04-A1",
+          "label": {
+            "ar": "قبل الحدث",
+            "en": "Before event"
+          },
+          "semanticTrigger": "Before event"
+        },
+        {
+          "id": "L03-S04-A2",
+          "label": {
+            "ar": "أثناء الحدث",
+            "en": "During event"
+          },
+          "semanticTrigger": "During event"
+        },
+        {
+          "id": "L03-S04-A3",
+          "label": {
+            "ar": "بعد الحدث",
+            "en": "After event"
+          },
+          "semanticTrigger": "After event"
+        },
+        {
+          "id": "L03-S04-A4",
+          "label": {
+            "ar": "قياس أم توقع؟",
+            "en": "Measured or predicted?"
+          },
+          "semanticTrigger": "Measured or predicted?"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S05-en-v1",
+      "sceneID": "L03-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Assume a method with a detection limit of two thousandths of a milligram per litre and a quantitation limit of six thousandths. A below-detection report does not establish zero concentration; it reports a limitation under those measurement conditions. Four thousandths may be qualified as detected but below the required quantitation level. Do not remove the qualifier and treat the number as precise. Reporting codes vary by method, so consult the laboratory’s definitions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "a8dca1cb2060f85460041c04b0c248af8c1a749d5ceb130a4237e2a09c7e2d1f",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S05-en-v1",
+        "file": "L03-S05-en-v1.wav",
+        "sha256": "6048dc99e7384b9bf32f2195971944eec79b0554c71667158350e0e7fa172050"
+      },
+      "durationSeconds": 34.77095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L03-S05-en-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 34.7,
+              "end": 34.770958,
+              "category": "omission",
+              "heard": "definition",
+              "expected": "definitions",
+              "heardPhonetics": "/ˌdɛfɪˈnɪʃən/",
+              "suggestion": "definitions",
+              "reason": "The final 's' sound of 'definitions' is omitted due to the audio clip ending abruptly.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L03-S05-A1",
+          "label": {
+            "ar": "حد الكشف",
+            "en": "Detection limit"
+          },
+          "semanticTrigger": "Detection limit"
+        },
+        {
+          "id": "L03-S05-A2",
+          "label": {
+            "ar": "حد التقدير الكمي",
+            "en": "Quantitation limit"
+          },
+          "semanticTrigger": "Quantitation limit"
+        },
+        {
+          "id": "L03-S05-A3",
+          "label": {
+            "ar": "نتيجة بين الحدين",
+            "en": "Between the limits"
+          },
+          "semanticTrigger": "Between the limits"
+        },
+        {
+          "id": "L03-S05-A4",
+          "label": {
+            "ar": "أقل من الكشف لا يعني صفر",
+            "en": "Below detection is not zero"
+          },
+          "semanticTrigger": "Below detection is not zero"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S06-en-v1",
+      "sceneID": "L03-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "You now have a result below quantitation and want to compare it with a nearby benchmark. A scientific response avoids a falsely precise exceedance or non-exceedance claim. Review the reporting method and uncertainty, then identify an additional measurement suited to the question. Replace runoff with spray drift toward air or a non-target plant. Select the relevant medium, organism and endpoint, and label every step as actually measured or still hypothetical.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "4522c6fc03600547512c285067328d334b25bcf6c25b6c3e1e51c5cad221f22a",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S06-en-v1",
+        "file": "L03-S06-en-v1.wav",
+        "sha256": "27b0334c9b3fef2575b227a2d01d5bf9d0276ff2414d4634dde650d0bc2c3338"
+      },
+      "durationSeconds": 33.330958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L03-S06-A1",
+          "label": {
+            "ar": "مقاس بالفعل",
+            "en": "Actually measured"
+          },
+          "semanticTrigger": "Actually measured"
+        },
+        {
+          "id": "L03-S06-A2",
+          "label": {
+            "ar": "فرضية ممكنة",
+            "en": "Plausible hypothesis"
+          },
+          "semanticTrigger": "Plausible hypothesis"
+        },
+        {
+          "id": "L03-S06-A3",
+          "label": {
+            "ar": "دليل ناقص",
+            "en": "Missing evidence"
+          },
+          "semanticTrigger": "Missing evidence"
+        },
+        {
+          "id": "L03-S06-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}
