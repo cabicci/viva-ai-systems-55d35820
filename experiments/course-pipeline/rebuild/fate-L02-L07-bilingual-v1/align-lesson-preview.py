@@ -121,6 +121,9 @@ css = '''
     @media(max-width:480px){#masaarat-course-review .ms-top strong{display:none}#masaarat-course-review .ms-picker{grid-template-columns:1fr}#masaarat-course-review .ms-lesson-header{padding:20px}#masaarat-course-review select{min-width:0;width:100%}#masaarat-course-review .ms-top select{width:auto}#masaarat-course-review .ms-action{max-width:100%;white-space:normal}}
 '''
 s = s.replace('  </style>', css + '\n  </style>', 1)
+# The platform lesson page has no step chooser above the lesson header.
+s, removed_pickers = re.subn(r'<div class="ms-picker">.*?</div>', '', s, count=1, flags=re.S)
+assert removed_pickers == 1
 s = s.replace('<div class="ms-layout">', '<p class="ms-preview-note" data-preview-note></p><header class="ms-lesson-header"><p data-academic-label></p><h1 data-main-title></h1><div class="ms-intro" data-intro></div></header><div class="ms-layout">', 1)
 s = s.replace('<nav class="ms-nav" role="tablist" aria-label="أقسام الدرس" data-tabs></nav>', '<aside class="ms-aside"><nav class="ms-nav" role="tablist" aria-label="أقسام الخطوة" data-tabs></nav><section class="ms-progress"><strong data-progress-label></strong><progress max="3" value="0" data-progress></progress><p data-progress-note></p></section></aside>',1)
 js = r'''
@@ -137,9 +140,9 @@ js = r'''
       function render(){
         const l=data.lessons.find(x=>x.id===state.lesson),t=copy[state.locale],v=l[state.locale],index=data.lessons.indexOf(l);
         root.dir=state.locale==='ar'?'rtl':'ltr';root.lang=state.locale==='ar'?'ar-EG':'en';
-        qs('[data-course-title]').textContent=t.course;qs('[data-crumb]').textContent=t.crumb+' — '+t.course;qs('[data-lesson-title]').textContent=t.step+' '+(index+1)+' '+t.of+' 7';
+        qs('[data-course-title]').textContent=t.course;qs('[data-crumb]').textContent=t.crumb+' — '+t.course;
         qs('[data-main-title]').textContent=v.title;qs('[data-intro]').textContent=t.course;qs('[data-academic-label]').textContent=t.academic;qs('[data-preview-note]').textContent=t.preview;qs('[data-progress-label]').textContent=t.progress;qs('[data-progress-note]').textContent=t.progressNote;qs('[data-tabs]').setAttribute('aria-label',t.sections);
-        qs('[data-picker-label]').textContent=t.picker;qs('[data-locale]').value=state.locale;qs('[data-lesson]').innerHTML=data.lessons.map(x=>`<option value="${x.id}" ${state.lesson===x.id?'selected':''}>${Number(x.id.slice(1))} — ${esc(x[state.locale].title)}</option>`).join('');
+        qs('[data-locale]').value=state.locale;
         const tabs=order.filter(id=>id!=='video'||v.videoPath);if(!tabs.includes(state.tab))state.tab='reading';
         qs('[data-tabs]').innerHTML=tabs.map(id=>`<button type="button" class="ms-tab cursor-interaction" role="tab" id="ms-tab-${id}" data-tab="${id}" aria-selected="${id===state.tab}" aria-controls="ms-course-panel">${t[id]}</button>`).join('');
         const panel=qs('[data-panel]');panel.setAttribute('aria-labelledby','ms-tab-'+state.tab);panel.setAttribute('aria-label',t[state.tab]);
@@ -154,7 +157,7 @@ js = r'''
         qs('[data-adjacent]').innerHTML=(index?`<button type="button" class="ms-action secondary" data-lesson-target="${data.lessons[index-1].id}">${t.previous}</button>`:'<span></span>')+(index<6?`<button type="button" class="ms-action secondary" data-lesson-target="${data.lessons[index+1].id}">${t.next}</button>`:'');
         progress();
       }
-      root.addEventListener('change',e=>{if(e.target.matches('[data-locale]')){state.locale=e.target.value;render()}if(e.target.matches('[data-lesson]')){state.lesson=e.target.value;state.tab='reading';render()}if(e.target.dataset.choice)choices[e.target.dataset.choice]=e.target.value});
+      root.addEventListener('change',e=>{if(e.target.matches('[data-locale]')){state.locale=e.target.value;render()}if(e.target.dataset.choice)choices[e.target.dataset.choice]=e.target.value});
       root.addEventListener('input',e=>{if(e.target.dataset.draft)drafts[e.target.dataset.draft]=e.target.value});
       root.addEventListener('click',e=>{const tab=e.target.closest('[data-tab]');if(tab){state.tab=tab.dataset.tab;render();const panel=qs('[data-panel]'),top=panel.getBoundingClientRect().top;if(top<96||top>innerHeight-80)panel.scrollIntoView?.({block:'start',behavior:'auto'})}const nav=e.target.closest('[data-lesson-target]');if(nav){state.lesson=nav.dataset.lessonTarget;state.tab='reading';render();qs('.ms-lesson-header').scrollIntoView?.({block:'start'})}const action=e.target.closest('[data-action]');if(!action)return;const t=copy[state.locale],a=action.dataset.action;activity[key()]??={};if(a==='read'){activity[key()].read=true;qs('[role=status]').textContent=t.saved}if(a==='quiz')qs('[role=status]').textContent=t.quizNote;if(a==='practice'){savedDrafts[key()]={...drafts};activity[key()].practice=true;qs('[role=status]').textContent=t.saved}if(a==='restore'){Object.assign(drafts,savedDrafts[key()]||{});render()}progress()});
       render();
