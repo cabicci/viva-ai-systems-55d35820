@@ -60,6 +60,15 @@ async function seedPrior(){
  VALUES('locale_lesson','prior-chunk','preserved',$1,'prior','active',$2::extensions.vector,false)`,['b'.repeat(40),JSON.stringify(vec())]);
 }
 describe('current source lifecycle in real disposable PostgreSQL with vectors',()=>{
+ it('gives bounded maintenance operations time to finish without widening learner access or role timeouts',async()=>{
+  const rows=(await db.query<{proname:string;proconfig:string[]}>(`SELECT proname,proconfig FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public' AND proname LIKE 'rag_current_%'`)).rows;
+  expect(rows.filter(r=>r.proconfig?.includes('statement_timeout=60s')).map(r=>r.proname).sort()).toEqual(['rag_current_activate','rag_current_commit','rag_current_rollback']);
+  expect((await db.query(`SELECT rolname FROM pg_roles WHERE rolname IN ('anon','authenticated','service_role') AND rolconfig IS NOT NULL`)).rows).toEqual([]);
+  for(const name of ['rag_current_commit','rag_current_activate','rag_current_rollback']){
+   const access=(await db.query<{anonymous:boolean;learner:boolean}>(`SELECT has_function_privilege('anon',p.oid,'EXECUTE') AS anonymous,has_function_privilege('authenticated',p.oid,'EXECUTE') AS learner FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public' AND proname=$1`,[name])).rows[0];
+   expect(access).toEqual({anonymous:false,learner:false});
+  }
+ });
  it('registers immutable content, rejects forged digest and keeps registration idempotent',async()=>{
   const first=await init();expect(first).toMatchObject({state:'staging',providerAttempts:0});
   expect(await run('initialize')).toMatchObject({executionId});

@@ -244,6 +244,14 @@ BEGIN
  RETURN result;
 END $$;
 
+-- Bounded owner operations can exceed the API role's default 8 seconds while
+-- writing vectors or atomically validating/swapping complete index versions.
+-- Keep the exception on these service-only functions; do not change role or
+-- database timeouts, provider budgets, leases, or content/provenance checks.
+ALTER FUNCTION public.rag_current_commit(text,uuid,uuid,uuid,jsonb) SET statement_timeout TO '60s';
+ALTER FUNCTION public.rag_current_activate(text,uuid,uuid,text) SET statement_timeout TO '60s';
+ALTER FUNCTION public.rag_current_rollback(text,uuid,uuid,text) SET statement_timeout TO '60s';
+
 DO $$ DECLARE f record; BEGIN
  FOR f IN SELECT p.oid::regprocedure signature FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
   WHERE n.nspname='public' AND p.proname LIKE 'rag_current_%' LOOP
