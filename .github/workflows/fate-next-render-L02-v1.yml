@@ -1,0 +1,49 @@
+name: Fate verified scene render L02
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L02/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L02
+  EXPECTED_REQUEST_SHA256: 0e0c36125945ba74ce75025d0e7e2691cf4a16131fa5a1e131e8016f49fde665
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        scene: ["ar-L02-S01", "ar-L02-S02", "ar-L02-S03", "ar-L02-S05", "ar-L02-S06", "ar-L02-S07", "ar-L02-S08", "en-L02-S01", "en-L02-S02", "en-L02-S03", "en-L02-S05", "en-L02-S06", "en-L02-S07", "en-L02-S08"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify actual sources and acoustic evidence
+        run: python "$PACKAGE/prepare.py" "${{ matrix.scene }}"
+      - name: Install exact renderer dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-L02
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver each checkpoint set immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-stills-${{ matrix.scene }}-L02
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and decode-verify scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify.py" scene
+      - name: Deliver finished scene immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-scene-${{ matrix.scene }}-L02
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

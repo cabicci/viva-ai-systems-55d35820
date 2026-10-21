@@ -1,0 +1,1329 @@
+{
+  "id": "fate-render-L02",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L02-S01",
+      "layout": "comparison",
+      "title": {
+        "ar": "رقمين… بس سؤالين مختلفين",
+        "en": "Two numbers, two different questions"
+      },
+      "visualContract": "Two independent cards: mg/kg FOOD and mg/kg BODY MASS/day. Move food icon to first denominator and body/time icons to second. A raw-number comparison connector breaks; no traffic-light safety claim.",
+      "actions": [
+        {
+          "id": "L02-S01-A1",
+          "label": {
+            "ar": "تركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S01-A2",
+          "label": {
+            "ar": "مدخول بالنسبة للجسم",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S01-A3",
+          "label": {
+            "ar": "وحدتان مختلفتان",
+            "en": "Different dimensions"
+          },
+          "semanticTrigger": "Different dimensions"
+        },
+        {
+          "id": "L02-S01-A4",
+          "label": {
+            "ar": "حدّد السؤال",
+            "en": "Define the question"
+          },
+          "semanticTrigger": "Define the question"
+        }
+      ],
+      "equations": [
+        "mg/kg food",
+        "mg/kg body mass/day",
+        "≠"
+      ],
+      "spoken": {
+        "ar": "تخيّل قدّامك تقرير متبقّيات، وجنبه قيمة اسمها المدخول اليوميّ المقبول. واحد بيقارن الرقمين وبيقول: الأصغر يبقى آمن. المشكلة إنّ الرقمين مش بيقيسوا نفس الحاجة. حدّ المتبقّيات بيتكلم عن تركيز في الغذاء. إنّما المدخول اليوميّ المقبول بيتكلم عن كمية بالنسبة لوزن الجسم، على مقياس زمنيّ معيّن. قبل أيّ مقارنة، هنكتب الوحدة كاملة، ونحدّد السؤال: بنراجع الغذاء، ولا بنقدّر تعرّض الشخص؟",
+        "en": "Imagine a residue report beside a value called the acceptable daily intake. Someone compares the two numbers and declares the smaller one safe. The quantities describe different things. A maximum residue limit concerns concentration in a specified food. An acceptable daily intake concerns intake relative to body mass over a particular time scale. Before comparing numbers, write the complete units and decide whether the question concerns the food or the person’s exposure."
+      },
+      "timing": null,
+      "sceneID": "L02-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "86e2378e93dca36a5048d1e6105e8397927a1233a41c7133604f9cf7060ad205",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S01-ar-v1",
+        "file": "L02-S01-ar-v1.wav",
+        "sha256": "7bcb07139aca6731aafde42d5177b3a312261706530443b6c254e484f78a9707"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S01-ar-v1",
+        "file": "timing.json",
+        "sha256": "801aeb7a445c7b9caee176820035f54b6df0e531d2e144cd6499d8ccaca2df50"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S01",
+        "file": "L02-S01.jpg",
+        "sha256": "99e52c5d80edfa34665fde7759236e856f3a3181050362bdad0ba05aae16c27e"
+      },
+      "imageDisposition": {
+        "scene": "L02-S01",
+        "imageSHA256": "99e52c5d80edfa34665fde7759236e856f3a3181050362bdad0ba05aae16c27e",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 771143,
+      "durationSeconds": 32.13095833333333,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 964
+    },
+    {
+      "id": "ar-L02-S02",
+      "layout": "flow",
+      "title": {
+        "ar": "الحدّ بيتبني على إيه؟",
+        "en": "What supports a residue limit?"
+      },
+      "visualContract": "Separate trial records, authorized-use card and dietary assessment feed a proposed limit. Editable commodity/analyte/unit tags must align. Use realistic laboratory and crop imagery with no invented real pesticide limit.",
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الحدّ الأقصى للمتبقّيات بيخصّ مادّة ومحصول وتعريف متبقّي محدّدين. مش رقم بيتطلّع من السميّة وحدها. بنحتاج تجارب متبقّيات تحت استخدامات زراعيّة مصرح بيها، ومعاها تقييم للمتبقّيات والتعرّض الغذائيّ. والتعريف ممكن يشمل المادّة الأصليّة ونواتج معيّنة. علشان كده ما ينفعش ننقل حدّ من تفّاح لطماطم، أو نقارن تحليل لمادّة واحدة بحدّ بيشمل أكتر منها. اتّفاق الاسم مش كفاية؛ لازم اتّفاق أساس القياس.",
+        "en": "A maximum residue limit belongs to a particular substance, commodity and residue definition. It is not derived from toxicity alone. Supervised residue trials under authorized agricultural uses contribute evidence, alongside residue and dietary safety evaluations. A definition can include the parent compound and specified products. Therefore an apple limit cannot simply be transferred to tomatoes, and a parent-only measurement cannot automatically be compared with a broader residue definition. Matching names is insufficient; the measurement basis must match."
+      },
+      "timing": null,
+      "sceneID": "L02-S02",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "8789e168168ddfa3609d29f2e8751c9d2cc9da5ba3eb5961be067e715a6ef385",
+      "deliverySHA256": "43e135829a88d11d6a34488ac2d1b13f7f00370f20f107109cf18c28180231ef",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S02-ar-v1",
+        "file": "L02-S02-ar-v1.wav",
+        "sha256": "4e3d7f568b470e831ffe85515209b02a84eae4565b8f053d6fd20c0fea52c02c"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S02-ar-v1",
+        "file": "timing.json",
+        "sha256": "346585946d1ba175adb91fa2ffb522e07e853d26428bbedce614c4c61f2d30f6"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S02",
+        "file": "L02-S02.jpg",
+        "sha256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486"
+      },
+      "imageDisposition": {
+        "scene": "L02-S02",
+        "imageSHA256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 885383,
+      "durationSeconds": 36.89095833333333,
+      "globalStartAudioFrame": 771143,
+      "globalStartVideoFrame": 964,
+      "globalEndVideoFrame": 2071
+    },
+    {
+      "id": "ar-L02-S03",
+      "layout": "flow",
+      "title": {
+        "ar": "مين يقيّم ومين يعتمد؟",
+        "en": "Who evaluates and who adopts?"
+      },
+      "visualContract": "Reveal JMPR → CCPR → CAC cards on corresponding spoken phrases; separate domestic-law branch. Environmental-source arrow reaches an EMRL card without depicting unauthorized use as proven.",
+      "actions": [
+        {
+          "id": "L02-S03-A1",
+          "label": {
+            "ar": "تقييم علمي",
+            "en": "Scientific evaluation"
+          },
+          "semanticTrigger": "Scientific evaluation"
+        },
+        {
+          "id": "L02-S03-A2",
+          "label": {
+            "ar": "مناقشة المقترح",
+            "en": "Proposal discussion"
+          },
+          "semanticTrigger": "Proposal discussion"
+        },
+        {
+          "id": "L02-S03-A3",
+          "label": {
+            "ar": "اعتماد المعيار",
+            "en": "Standard adoption"
+          },
+          "semanticTrigger": "Standard adoption"
+        },
+        {
+          "id": "L02-S03-A4",
+          "label": {
+            "ar": "القانون المحلي",
+            "en": "Domestic law"
+          },
+          "semanticTrigger": "Domestic law"
+        },
+        {
+          "id": "L02-S03-A5",
+          "label": {
+            "ar": "مصدر بيئي",
+            "en": "Environmental source"
+          },
+          "semanticTrigger": "Environmental source"
+        }
+      ],
+      "equations": [
+        "JMPR",
+        "CCPR",
+        "CAC",
+        "EMRL"
+      ],
+      "spoken": {
+        "ar": "على المستوى الدوليّ، الاجتماع المشترك لخبراء الفاو ومنظّمة الصحّة العالميّة بيقيّم بيانات المتبقّيات والسميّة. لجنة متبقّيات المبيدات في الكودكس بتناقش التوصيات، وهيئة الكودكس بتعتمد المعايير. ده مسار مختلف عن القانون المحليّ اللي ينطبق على شحنة بعينها. وفيه حدّ لمتبقّيات جاية من تلوّث بيئيّ أو استخدامات قديمة، مش من استخدام حاليّ على المحصول. هنا مصدر المتبقّي جزء من السؤال، مش مجرد اسم جديد لنفس الحالة.",
+        "en": "Internationally, the Joint FAO/WHO Meeting on Pesticide Residues evaluates residue and toxicology evidence. The Codex Committee on Pesticide Residues considers recommendations, and the Codex Alimentarius Commission adopts standards. This process is distinct from the domestic law applicable to a particular consignment. Extraneous maximum residue limits address residues from environmental sources, including former uses, rather than current use on that commodity. The residue’s origin is part of the question, not merely a different label."
+      },
+      "timing": null,
+      "sceneID": "L02-S03",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "51d6e1b77a708cfc8dfd084b3b7e62f80470f94b5dfa5646cc3f04947d396d65",
+      "deliverySHA256": "ab41cead0c73d153d36e40095651dc5a0a235578de61661992d765c3ae7836f5",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S03-ar-v1",
+        "file": "L02-S03-ar-v1.wav",
+        "sha256": "c93e7e85be84b315931a32b90e2ea3b9349d23044cef78af8175db86e880a783"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S03-ar-v1",
+        "file": "timing.json",
+        "sha256": "77650852897a8fb306b82a166225b1ba2940b5d99aba248d2bd3b815acb4eabe"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S03",
+        "file": "L02-S03.jpg",
+        "sha256": "81298ddd91f9176044aabc251babbcb79eabb8c18b922a796b9506c01c02d123"
+      },
+      "imageDisposition": {
+        "scene": "L02-S03",
+        "imageSHA256": "81298ddd91f9176044aabc251babbcb79eabb8c18b922a796b9506c01c02d123",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 829703,
+      "durationSeconds": 34.57095833333333,
+      "globalStartAudioFrame": 1656526,
+      "globalStartVideoFrame": 2071,
+      "globalEndVideoFrame": 3108
+    },
+    {
+      "id": "ar-L02-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "وزن الجسم بيغيّر الوحدة",
+        "en": "Body mass changes the denominator"
+      },
+      "visualContract": "Continue prior quantity without changing value. Show 0.016 mg/day ÷ 60 kg = 0.000267 mg/kg body mass/day; then ratio to hypothetical ADI 0.01. Highlight single-food scope and separate compliance card.",
+      "actions": [
+        {
+          "id": "L02-S05-A1",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        },
+        {
+          "id": "L02-S05-A2",
+          "label": {
+            "ar": "وزن الجسم",
+            "en": "Body mass"
+          },
+          "semanticTrigger": "Body mass"
+        },
+        {
+          "id": "L02-S05-A3",
+          "label": {
+            "ar": "المدخول بالنسبة للوزن",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S05-A4",
+          "label": {
+            "ar": "مساهمة غذاء واحد",
+            "en": "Single-food contribution"
+          },
+          "semanticTrigger": "Single-food contribution"
+        }
+      ],
+      "equations": [
+        "0.016 mg/day",
+        "60 kg",
+        "0.016 mg/day ÷ 60 kg ≈ 0.000267 mg/kg/day",
+        "0.000267 ÷ 0.01 × 100 ≈ 2.67%"
+      ],
+      "spoken": {
+        "ar": "دلوقتي نفترض وزن الجسم ستّين كيلوجرام. نقسم الكمية اليوميّة، ستّاشر من ألف ملّيجرام، على ستّين. الناتج بالتقريب صفر فاصلة صفر صفر صفر اتنين ستّة سبعة ملّيجرام لكلّ كيلوجرام وزن جسم في اليوم. لو المدخول المقبول الافتراضيّ واحد من مية بنفس الوحدة، فمساهمة الغذاء ده حوالي اتنين فاصلة سبعة في المية منه. النسبة بتخصّ المسار المحسوب بسّ. ما تثبتش إنّ كلّ التعرّض مقبول، ولا إنّ الغذاء مطابق لحدّ المتبقّيات.",
+        "en": "Now assume a body mass of sixty kilograms. Divide the daily intake, sixteen thousandths of a milligram, by sixty. The result is approximately zero point zero zero zero two six seven milligrams per kilogram of body mass per day. If a hypothetical acceptable daily intake is one hundredth in the same units, this food contributes about two point seven percent. That percentage covers only the calculated pathway. It establishes neither acceptable total exposure nor residue-limit compliance."
+      },
+      "timing": null,
+      "sceneID": "L02-S05",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "845ec6b328d704f5c938588ad01d48d920f32b56ef1767c2c33b986d5afc6d03",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S05-ar-v1",
+        "file": "L02-S05-ar-v1.wav",
+        "sha256": "b40bb59eef9298cf90fa87b14eb53c3d8f2a2ce61a5d99e0e63034a569a2bd8d"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S05-ar-v1",
+        "file": "timing.json",
+        "sha256": "8547540fed5a1427f129239827ba56fc43ccfb1f3181c877a1ba7c868dd64aec"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S05",
+        "file": "L02-S05.jpg",
+        "sha256": "580a82b221ecd2f0cb529e4db3b1b88920acc609a778b99d3048d09fa23f391a"
+      },
+      "imageDisposition": {
+        "scene": "L02-S05",
+        "imageSHA256": "580a82b221ecd2f0cb529e4db3b1b88920acc609a778b99d3048d09fa23f391a",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 1011143,
+      "durationSeconds": 42.13095833333333,
+      "globalStartAudioFrame": 3435932,
+      "globalStartVideoFrame": 4295,
+      "globalEndVideoFrame": 5559
+    },
+    {
+      "id": "ar-L02-S06",
+      "layout": "timeline",
+      "title": {
+        "ar": "زمن التعرّض جزء من السؤال",
+        "en": "Exposure duration is part of the question"
+      },
+      "visualContract": "Continuous repeated-day timeline versus one-day pulse. Keep ADI and acute-reference cards separate. Reveal body mass, consumption distribution and uncertainty as missing inputs, not numerical predictions.",
+      "actions": [
+        {
+          "id": "L02-S06-A1",
+          "label": {
+            "ar": "تعرّض متكرر",
+            "en": "Repeated exposure"
+          },
+          "semanticTrigger": "Repeated exposure"
+        },
+        {
+          "id": "L02-S06-A2",
+          "label": {
+            "ar": "تعرّض قصير",
+            "en": "Short exposure"
+          },
+          "semanticTrigger": "Short exposure"
+        },
+        {
+          "id": "L02-S06-A3",
+          "label": {
+            "ar": "مرجع مناسب للمدة",
+            "en": "Duration-matched reference"
+          },
+          "semanticTrigger": "Duration-matched reference"
+        },
+        {
+          "id": "L02-S06-A4",
+          "label": {
+            "ar": "بيانات وعدم يقين",
+            "en": "Data and uncertainty"
+          },
+          "semanticTrigger": "Data and uncertainty"
+        }
+      ],
+      "equations": [
+        "ADI",
+        "Acute reference"
+      ],
+      "spoken": {
+        "ar": "المدخول اليوميّ المقبول مرجع للتعرّض المتكرّر على مدى العمر، مش تصريح بجرعة كبيرة في يوم واحد. تقييم التعرّض الحادّ له مقياس زمنيّ مختلف وقيمة مرجعيّة مناسبة لما تكون محدّدة للمادّة. ومش كلّ الناس نفس الوزن أو استهلاك الغذاء. في التقييم الحقيقيّ، بنراجع توزيعات الاستهلاك والفئات الحسّاسة وتعريف المتبقّي وعدم اليقين. المثال البسيط علّمنا ترتيب الحساب، لكن ما استبدلش التقييم الكامل.",
+        "en": "The acceptable daily intake is a reference for repeated intake over a lifetime, not permission for a large dose on one day. Acute exposure assessment uses a different time scale and an appropriate acute reference value when established for the substance. People also differ in body mass and food consumption. Real assessments consider consumption distributions, sensitive groups, residue definitions and uncertainty. The simple example teaches the calculation sequence; it does not replace a complete assessment."
+      },
+      "timing": null,
+      "sceneID": "L02-S06",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "7c2048ad23c3d918e74498f75e61ca78d3b8b94a7e4ec484b0ff0c2fabf2c22b",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S06-ar-v1",
+        "file": "L02-S06-ar-v1.wav",
+        "sha256": "c608082ade783e48e476420b97db98ebe8a576fbdb6496b9c0696b3fd5ad2d6e"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S06-ar-v1",
+        "file": "timing.json",
+        "sha256": "9ecadf1d974270b11111b1f457b5e7363e63fbf6ec5889a4b0fdb48642516d70"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S06",
+        "file": "L02-S06.jpg",
+        "sha256": "57763848d0d536865bac637734f86947126b111f7d94411a2451eef22e4f314f"
+      },
+      "imageDisposition": {
+        "scene": "L02-S06",
+        "imageSHA256": "57763848d0d536865bac637734f86947126b111f7d94411a2451eef22e4f314f",
+        "status": "usable_background",
+        "automatedStatus": "uncertain",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 806663,
+      "durationSeconds": 33.610958333333336,
+      "globalStartAudioFrame": 4447075,
+      "globalStartVideoFrame": 5559,
+      "globalEndVideoFrame": 6567
+    },
+    {
+      "id": "ar-L02-S07",
+      "layout": "network",
+      "title": {
+        "ar": "مادّة واحدة ولا مواد مختلفة؟",
+        "en": "One substance or several substances?"
+      },
+      "visualContract": "One chemical identity with three incoming routes; switch to two distinct chemicals connected only when shared mechanism evidence appears. No invented additive-effect calculation.",
+      "actions": [
+        {
+          "id": "L02-S07-A1",
+          "label": {
+            "ar": "مادة واحدة",
+            "en": "One substance"
+          },
+          "semanticTrigger": "One substance"
+        },
+        {
+          "id": "L02-S07-A2",
+          "label": {
+            "ar": "غذاء ومياه وطرق أخرى",
+            "en": "Food, water and other routes"
+          },
+          "semanticTrigger": "Food, water and other routes"
+        },
+        {
+          "id": "L02-S07-A3",
+          "label": {
+            "ar": "عدة مواد",
+            "en": "Several substances"
+          },
+          "semanticTrigger": "Several substances"
+        },
+        {
+          "id": "L02-S07-A4",
+          "label": {
+            "ar": "دليل آلية مشتركة",
+            "en": "Common-mechanism evidence"
+          },
+          "semanticTrigger": "Common-mechanism evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "لو نفس المبيد موجود في أكتر من غذاء، وفي ميّه الشرب، وفي تعرّض منزليّ مناسب للحالة، ده سؤال عن التعرّض المجمّع للمادّة الواحدة. أمّا التقييم التراكميّ في سياق المبيدات، فبيحتاج النظر لمواد تشترك في آليّة سميّة، مع بيانات التعرّض المناسبة. وجود اسمين في تقرير مش دليل إنّنا نجمع الرقمين مباشرة. الوحدات والطرق والتوقيت وقوّة التأثير لازم تدخل في الطريقة العلميّة. مجرّد الجمع الحسابيّ ما يعملش تقييم مخاطر.",
+        "en": "If the same pesticide occurs in several foods, drinking water and relevant residential exposure, the question concerns aggregate exposure to one substance. Cumulative pesticide assessment considers substances sharing a common toxicity mechanism, using appropriate exposure information. Finding two names on a report does not justify adding their concentrations directly. Units, routes, timing and relative potency must be handled within an appropriate method. Arithmetic addition alone is not a risk assessment."
+      },
+      "timing": null,
+      "sceneID": "L02-S07",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "68da1f337842bf6ba80549f0e92365ea56c6c6fcf66234aab7fc9ea131d15da0",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S07-ar-v1",
+        "file": "L02-S07-ar-v1.wav",
+        "sha256": "b121ee53c3a3cca14a1916ec07b8818007366f469190d3a89afd5eb402308e94"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S07-ar-v1",
+        "file": "timing.json",
+        "sha256": "448c17a40d5de2ddd0f88968306b4c78da86f82a4395472151bfc9102f688167"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S07",
+        "file": "L02-S07.jpg",
+        "sha256": "e2600862d91a806d25a8ba9e0386081bb6ad4daf0bed2fb1b2b536329a864cc3"
+      },
+      "imageDisposition": {
+        "scene": "L02-S07",
+        "imageSHA256": "e2600862d91a806d25a8ba9e0386081bb6ad4daf0bed2fb1b2b536329a864cc3",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 864263,
+      "durationSeconds": 36.010958333333335,
+      "globalStartAudioFrame": 5253738,
+      "globalStartVideoFrame": 6567,
+      "globalEndVideoFrame": 7648
+    },
+    {
+      "id": "ar-L02-S08",
+      "layout": "evidence",
+      "title": {
+        "ar": "القانون والحالة الجديدة",
+        "en": "Regulation and a new case"
+      },
+      "visualContract": "Historical 1996 marker; current-role cards with jurisdiction label USA. End with two-column blank evidence checklist. No answer or actual legal limit fabricated.",
+      "actions": [
+        {
+          "id": "L02-S08-A1",
+          "label": {
+            "ar": "السياق الأمريكي",
+            "en": "US context"
+          },
+          "semanticTrigger": "US context"
+        },
+        {
+          "id": "L02-S08-A2",
+          "label": {
+            "ar": "التعرّض المجمّع",
+            "en": "Aggregate exposure"
+          },
+          "semanticTrigger": "Aggregate exposure"
+        },
+        {
+          "id": "L02-S08-A3",
+          "label": {
+            "ar": "بيانات المطابقة",
+            "en": "Evidence for compliance"
+          },
+          "semanticTrigger": "Evidence for compliance"
+        },
+        {
+          "id": "L02-S08-A4",
+          "label": {
+            "ar": "بيانات تقييم المخاطر",
+            "en": "Evidence for risk assessment"
+          },
+          "semanticTrigger": "Evidence for risk assessment"
+        }
+      ],
+      "equations": [
+        "1996"
+      ],
+      "spoken": {
+        "ar": "الملف فيه تاريخ للقانون الأمريكيّ. هنفصل التاريخ عن الأدوار الحاليّة: وكالة حماية البيئة بتحدّد حدود متبقّيات الغذاء الأمريكيّة، مع أدوار رقابيّة لجهات زي هيئة الغذاء والدواء ووزارة الزراعة. تعديلات سنة ألف تسعمية ستّة وتسعين أكّدت التعرّض المجمّع والتراكميّ وحماية الأطفال. دلوقتي دورك: تقرير فيه مبيدين على تفّاحة. قبل حكم المطابقة أو المخاطر، اكتب بيانات الحدّ والتعريف والوحدة، وبعدها الاستهلاك والوزن والآليّة وطرق التعرّض. افصل السؤالين في إجابتك.",
+        "en": "The handout includes the history of United States regulation. Separate that history from current roles: the Environmental Protection Agency establishes pesticide food tolerances, while agencies including the Food and Drug Administration and Department of Agriculture have monitoring or enforcement responsibilities. The nineteen ninety-six amendments emphasized aggregate exposure, cumulative effects and child protection. Now consider two pesticide residues on an apple. List the limit, definition and unit evidence needed for compliance, then the consumption, body mass, mechanism and exposure information needed for risk assessment. Keep the two questions separate."
+      },
+      "timing": null,
+      "sceneID": "L02-S08",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "591225c11a658b712610292731b442e01bcbee0b451c8897414529cba0c5ebef",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S08-ar-v1",
+        "file": "L02-S08-ar-v1.wav",
+        "sha256": "32d228da9c4f01f23aed7fd65c7c8d5cb5ada605aaadac72a3e26b087508bc99"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S08-ar-v1",
+        "file": "timing.json",
+        "sha256": "6d1eb292cb696d9a1ba2bec95d3157f1095ab9acb62acd2e61a6174c9ea97ff0"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39603295493,
+        "artifact": "fate-next-image-v2-L02-S08",
+        "file": "L02-S08.jpg",
+        "sha256": "c3851553fbb4d400890044b53b8c1059a23b53fd7b0bcc0eb5e27c618a418660"
+      },
+      "imageDisposition": {
+        "scene": "L02-S08",
+        "imageSHA256": "16891d3886a75778b16f502cff7c2c3c553fcea2a58dd33eade0c37a351e7f5d",
+        "status": "usable_background",
+        "automatedStatus": "uncertain",
+        "agentViewedPixels": true,
+        "disposition": "Concrete visual correction queued; preserve original.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed.",
+        "reason": "Inspected corrected pixels: plain covers; no pseudo-seals, logos or lettering.",
+        "agentPixelReview": true,
+        "ownerApprovalClaimed": false,
+        "priorDisposition": {
+          "scene": "L02-S08",
+          "imageSHA256": "16891d3886a75778b16f502cff7c2c3c553fcea2a58dd33eade0c37a351e7f5d",
+          "status": "hold_correction",
+          "automatedStatus": "uncertain",
+          "agentViewedPixels": true,
+          "disposition": "Concrete visual correction queued; preserve original.",
+          "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+        },
+        "currentImage": {
+          "run": 39603295493,
+          "artifact": "fate-next-image-v2-L02-S08",
+          "file": "L02-S08.jpg",
+          "sha256": "c3851553fbb4d400890044b53b8c1059a23b53fd7b0bcc0eb5e27c618a418660"
+        }
+      },
+      "audioFrames": 1006343,
+      "durationSeconds": 41.930958333333336,
+      "globalStartAudioFrame": 6118001,
+      "globalStartVideoFrame": 7648,
+      "globalEndVideoFrame": 8905
+    },
+    {
+      "id": "en-L02-S01",
+      "layout": "comparison",
+      "title": {
+        "ar": "رقمين… بس سؤالين مختلفين",
+        "en": "Two numbers, two different questions"
+      },
+      "visualContract": "Two independent cards: mg/kg FOOD and mg/kg BODY MASS/day. Move food icon to first denominator and body/time icons to second. A raw-number comparison connector breaks; no traffic-light safety claim.",
+      "actions": [
+        {
+          "id": "L02-S01-A1",
+          "label": {
+            "ar": "تركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S01-A2",
+          "label": {
+            "ar": "مدخول بالنسبة للجسم",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S01-A3",
+          "label": {
+            "ar": "وحدتان مختلفتان",
+            "en": "Different dimensions"
+          },
+          "semanticTrigger": "Different dimensions"
+        },
+        {
+          "id": "L02-S01-A4",
+          "label": {
+            "ar": "حدّد السؤال",
+            "en": "Define the question"
+          },
+          "semanticTrigger": "Define the question"
+        }
+      ],
+      "equations": [
+        "mg/kg food",
+        "mg/kg body mass/day",
+        "≠"
+      ],
+      "spoken": {
+        "ar": "تخيّل قدّامك تقرير متبقّيات، وجنبه قيمة اسمها المدخول اليوميّ المقبول. واحد بيقارن الرقمين وبيقول: الأصغر يبقى آمن. المشكلة إنّ الرقمين مش بيقيسوا نفس الحاجة. حدّ المتبقّيات بيتكلم عن تركيز في الغذاء. إنّما المدخول اليوميّ المقبول بيتكلم عن كمية بالنسبة لوزن الجسم، على مقياس زمنيّ معيّن. قبل أيّ مقارنة، هنكتب الوحدة كاملة، ونحدّد السؤال: بنراجع الغذاء، ولا بنقدّر تعرّض الشخص؟",
+        "en": "Imagine a residue report beside a value called the acceptable daily intake. Someone compares the two numbers and declares the smaller one safe. The quantities describe different things. A maximum residue limit concerns concentration in a specified food. An acceptable daily intake concerns intake relative to body mass over a particular time scale. Before comparing numbers, write the complete units and decide whether the question concerns the food or the person’s exposure."
+      },
+      "timing": null,
+      "sceneID": "L02-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "0155e9e9b903e63142ef154481ba34f14b8ff5acdec7bdabecf28e5ae6501239",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S01-en-v1",
+        "file": "L02-S01-en-v1.wav",
+        "sha256": "05cd83fbacaeeb78c51b3ec85f4d5486b669f9691718be19fef80691b4be1541"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "76d01be4d042362745720806b1767505273b4b827d33f851498c30821c82d9cb"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S01",
+        "file": "L02-S01.jpg",
+        "sha256": "99e52c5d80edfa34665fde7759236e856f3a3181050362bdad0ba05aae16c27e"
+      },
+      "imageDisposition": {
+        "scene": "L02-S01",
+        "imageSHA256": "99e52c5d80edfa34665fde7759236e856f3a3181050362bdad0ba05aae16c27e",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 872903,
+      "durationSeconds": 36.370958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1091
+    },
+    {
+      "id": "en-L02-S02",
+      "layout": "flow",
+      "title": {
+        "ar": "الحدّ بيتبني على إيه؟",
+        "en": "What supports a residue limit?"
+      },
+      "visualContract": "Separate trial records, authorized-use card and dietary assessment feed a proposed limit. Editable commodity/analyte/unit tags must align. Use realistic laboratory and crop imagery with no invented real pesticide limit.",
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الحدّ الأقصى للمتبقّيات بيخصّ مادّة ومحصول وتعريف متبقّي محدّدين. مش رقم بيتطلّع من السميّة وحدها. بنحتاج تجارب متبقّيات تحت استخدامات زراعيّة مصرح بيها، ومعاها تقييم للمتبقّيات والتعرّض الغذائيّ. والتعريف ممكن يشمل المادّة الأصليّة ونواتج معيّنة. علشان كده ما ينفعش ننقل حدّ من تفّاح لطماطم، أو نقارن تحليل لمادّة واحدة بحدّ بيشمل أكتر منها. اتّفاق الاسم مش كفاية؛ لازم اتّفاق أساس القياس.",
+        "en": "A maximum residue limit belongs to a particular substance, commodity and residue definition. It is not derived from toxicity alone. Supervised residue trials under authorized agricultural uses contribute evidence, alongside residue and dietary safety evaluations. A definition can include the parent compound and specified products. Therefore an apple limit cannot simply be transferred to tomatoes, and a parent-only measurement cannot automatically be compared with a broader residue definition. Matching names is insufficient; the measurement basis must match."
+      },
+      "timing": null,
+      "sceneID": "L02-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "44e0f6cea509a8db3eca1ea374d3d8797b50a4ff17c8c6a4346a2ae01f9b7837",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S02-en-v1",
+        "file": "L02-S02-en-v1.wav",
+        "sha256": "e1da848a127d6e0e4bfd300a8d163b5ed74c9f367ee4e301266c9f7d875f2162"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S02-en-v1",
+        "file": "timing.json",
+        "sha256": "df0dff225d8624108540d770de21ddf55a44743daa03e2de8f9e1088d19dfcdb"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S02",
+        "file": "L02-S02.jpg",
+        "sha256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486"
+      },
+      "imageDisposition": {
+        "scene": "L02-S02",
+        "imageSHA256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 1000583,
+      "durationSeconds": 41.690958333333334,
+      "globalStartAudioFrame": 872903,
+      "globalStartVideoFrame": 1091,
+      "globalEndVideoFrame": 2342
+    },
+    {
+      "id": "en-L02-S03",
+      "layout": "flow",
+      "title": {
+        "ar": "مين يقيّم ومين يعتمد؟",
+        "en": "Who evaluates and who adopts?"
+      },
+      "visualContract": "Reveal JMPR → CCPR → CAC cards on corresponding spoken phrases; separate domestic-law branch. Environmental-source arrow reaches an EMRL card without depicting unauthorized use as proven.",
+      "actions": [
+        {
+          "id": "L02-S03-A1",
+          "label": {
+            "ar": "تقييم علمي",
+            "en": "Scientific evaluation"
+          },
+          "semanticTrigger": "Scientific evaluation"
+        },
+        {
+          "id": "L02-S03-A2",
+          "label": {
+            "ar": "مناقشة المقترح",
+            "en": "Proposal discussion"
+          },
+          "semanticTrigger": "Proposal discussion"
+        },
+        {
+          "id": "L02-S03-A3",
+          "label": {
+            "ar": "اعتماد المعيار",
+            "en": "Standard adoption"
+          },
+          "semanticTrigger": "Standard adoption"
+        },
+        {
+          "id": "L02-S03-A4",
+          "label": {
+            "ar": "القانون المحلي",
+            "en": "Domestic law"
+          },
+          "semanticTrigger": "Domestic law"
+        },
+        {
+          "id": "L02-S03-A5",
+          "label": {
+            "ar": "مصدر بيئي",
+            "en": "Environmental source"
+          },
+          "semanticTrigger": "Environmental source"
+        }
+      ],
+      "equations": [
+        "JMPR",
+        "CCPR",
+        "CAC",
+        "EMRL"
+      ],
+      "spoken": {
+        "ar": "على المستوى الدوليّ، الاجتماع المشترك لخبراء الفاو ومنظّمة الصحّة العالميّة بيقيّم بيانات المتبقّيات والسميّة. لجنة متبقّيات المبيدات في الكودكس بتناقش التوصيات، وهيئة الكودكس بتعتمد المعايير. ده مسار مختلف عن القانون المحليّ اللي ينطبق على شحنة بعينها. وفيه حدّ لمتبقّيات جاية من تلوّث بيئيّ أو استخدامات قديمة، مش من استخدام حاليّ على المحصول. هنا مصدر المتبقّي جزء من السؤال، مش مجرد اسم جديد لنفس الحالة.",
+        "en": "Internationally, the Joint FAO/WHO Meeting on Pesticide Residues evaluates residue and toxicology evidence. The Codex Committee on Pesticide Residues considers recommendations, and the Codex Alimentarius Commission adopts standards. This process is distinct from the domestic law applicable to a particular consignment. Extraneous maximum residue limits address residues from environmental sources, including former uses, rather than current use on that commodity. The residue’s origin is part of the question, not merely a different label."
+      },
+      "timing": null,
+      "sceneID": "L02-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "6051bfe6c274c6e276d8ddb1fdd018847005372cc843b3e0a40b808f3c6d2238",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S03-en-v1",
+        "file": "L02-S03-en-v1.wav",
+        "sha256": "10d44606e2b0c6523a7f5c13c49166a84088009923314bd07e8de5ee2e54db59"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S03-en-v1",
+        "file": "timing.json",
+        "sha256": "f024e795407992d1ee516981a0cfd2cd862eacb71b26bd867158f549c464c2f8"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S03",
+        "file": "L02-S03.jpg",
+        "sha256": "81298ddd91f9176044aabc251babbcb79eabb8c18b922a796b9506c01c02d123"
+      },
+      "imageDisposition": {
+        "scene": "L02-S03",
+        "imageSHA256": "81298ddd91f9176044aabc251babbcb79eabb8c18b922a796b9506c01c02d123",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 873863,
+      "durationSeconds": 36.41095833333333,
+      "globalStartAudioFrame": 1873486,
+      "globalStartVideoFrame": 2342,
+      "globalEndVideoFrame": 3434
+    },
+    {
+      "id": "en-L02-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "وزن الجسم بيغيّر الوحدة",
+        "en": "Body mass changes the denominator"
+      },
+      "visualContract": "Continue prior quantity without changing value. Show 0.016 mg/day ÷ 60 kg = 0.000267 mg/kg body mass/day; then ratio to hypothetical ADI 0.01. Highlight single-food scope and separate compliance card.",
+      "actions": [
+        {
+          "id": "L02-S05-A1",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        },
+        {
+          "id": "L02-S05-A2",
+          "label": {
+            "ar": "وزن الجسم",
+            "en": "Body mass"
+          },
+          "semanticTrigger": "Body mass"
+        },
+        {
+          "id": "L02-S05-A3",
+          "label": {
+            "ar": "المدخول بالنسبة للوزن",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S05-A4",
+          "label": {
+            "ar": "مساهمة غذاء واحد",
+            "en": "Single-food contribution"
+          },
+          "semanticTrigger": "Single-food contribution"
+        }
+      ],
+      "equations": [
+        "0.016 mg/day",
+        "60 kg",
+        "0.016 mg/day ÷ 60 kg ≈ 0.000267 mg/kg/day",
+        "0.000267 ÷ 0.01 × 100 ≈ 2.67%"
+      ],
+      "spoken": {
+        "ar": "دلوقتي نفترض وزن الجسم ستّين كيلوجرام. نقسم الكمية اليوميّة، ستّاشر من ألف ملّيجرام، على ستّين. الناتج بالتقريب صفر فاصلة صفر صفر صفر اتنين ستّة سبعة ملّيجرام لكلّ كيلوجرام وزن جسم في اليوم. لو المدخول المقبول الافتراضيّ واحد من مية بنفس الوحدة، فمساهمة الغذاء ده حوالي اتنين فاصلة سبعة في المية منه. النسبة بتخصّ المسار المحسوب بسّ. ما تثبتش إنّ كلّ التعرّض مقبول، ولا إنّ الغذاء مطابق لحدّ المتبقّيات.",
+        "en": "Now assume a body mass of sixty kilograms. Divide the daily intake, sixteen thousandths of a milligram, by sixty. The result is approximately zero point zero zero zero two six seven milligrams per kilogram of body mass per day. If a hypothetical acceptable daily intake is one hundredth in the same units, this food contributes about two point seven percent. That percentage covers only the calculated pathway. It establishes neither acceptable total exposure nor residue-limit compliance."
+      },
+      "timing": null,
+      "sceneID": "L02-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "63e81d71f6c1825bc05f5a03362c6b61f9d3b947c908858e946ddeac4a71c156",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S05-en-v1",
+        "file": "L02-S05-en-v1.wav",
+        "sha256": "3d6f6408ed40e8e0f1e3e2943ffe5f7ea48747b74d04a049f185ad727d0bd4c0"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S05-en-v1",
+        "file": "timing.json",
+        "sha256": "79c7a59821253fbf8e29c919ad1fbd07a78fba6eb310bcb83ed24f3389f6e746"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S05",
+        "file": "L02-S05.jpg",
+        "sha256": "580a82b221ecd2f0cb529e4db3b1b88920acc609a778b99d3048d09fa23f391a"
+      },
+      "imageDisposition": {
+        "scene": "L02-S05",
+        "imageSHA256": "580a82b221ecd2f0cb529e4db3b1b88920acc609a778b99d3048d09fa23f391a",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 1019783,
+      "durationSeconds": 42.49095833333333,
+      "globalStartAudioFrame": 3612572,
+      "globalStartVideoFrame": 4516,
+      "globalEndVideoFrame": 5790
+    },
+    {
+      "id": "en-L02-S06",
+      "layout": "timeline",
+      "title": {
+        "ar": "زمن التعرّض جزء من السؤال",
+        "en": "Exposure duration is part of the question"
+      },
+      "visualContract": "Continuous repeated-day timeline versus one-day pulse. Keep ADI and acute-reference cards separate. Reveal body mass, consumption distribution and uncertainty as missing inputs, not numerical predictions.",
+      "actions": [
+        {
+          "id": "L02-S06-A1",
+          "label": {
+            "ar": "تعرّض متكرر",
+            "en": "Repeated exposure"
+          },
+          "semanticTrigger": "Repeated exposure"
+        },
+        {
+          "id": "L02-S06-A2",
+          "label": {
+            "ar": "تعرّض قصير",
+            "en": "Short exposure"
+          },
+          "semanticTrigger": "Short exposure"
+        },
+        {
+          "id": "L02-S06-A3",
+          "label": {
+            "ar": "مرجع مناسب للمدة",
+            "en": "Duration-matched reference"
+          },
+          "semanticTrigger": "Duration-matched reference"
+        },
+        {
+          "id": "L02-S06-A4",
+          "label": {
+            "ar": "بيانات وعدم يقين",
+            "en": "Data and uncertainty"
+          },
+          "semanticTrigger": "Data and uncertainty"
+        }
+      ],
+      "equations": [
+        "ADI",
+        "Acute reference"
+      ],
+      "spoken": {
+        "ar": "المدخول اليوميّ المقبول مرجع للتعرّض المتكرّر على مدى العمر، مش تصريح بجرعة كبيرة في يوم واحد. تقييم التعرّض الحادّ له مقياس زمنيّ مختلف وقيمة مرجعيّة مناسبة لما تكون محدّدة للمادّة. ومش كلّ الناس نفس الوزن أو استهلاك الغذاء. في التقييم الحقيقيّ، بنراجع توزيعات الاستهلاك والفئات الحسّاسة وتعريف المتبقّي وعدم اليقين. المثال البسيط علّمنا ترتيب الحساب، لكن ما استبدلش التقييم الكامل.",
+        "en": "The acceptable daily intake is a reference for repeated intake over a lifetime, not permission for a large dose on one day. Acute exposure assessment uses a different time scale and an appropriate acute reference value when established for the substance. People also differ in body mass and food consumption. Real assessments consider consumption distributions, sensitive groups, residue definitions and uncertainty. The simple example teaches the calculation sequence; it does not replace a complete assessment."
+      },
+      "timing": null,
+      "sceneID": "L02-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "1766ddd046a1a40fae117830c9b97cdc4b44ad0268e181921b6ed325af9146d7",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S06-en-v1",
+        "file": "L02-S06-en-v1.wav",
+        "sha256": "a1fd5ff6509c4d39c496a5cc4450a61309aff74b4787543947d9ce1f1b99f088"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S06-en-v1",
+        "file": "timing.json",
+        "sha256": "bc8c99337c193aa705e582710b59dadc7df3fa70fc88c54b15f3ac68021dc4d2"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S06",
+        "file": "L02-S06.jpg",
+        "sha256": "57763848d0d536865bac637734f86947126b111f7d94411a2451eef22e4f314f"
+      },
+      "imageDisposition": {
+        "scene": "L02-S06",
+        "imageSHA256": "57763848d0d536865bac637734f86947126b111f7d94411a2451eef22e4f314f",
+        "status": "usable_background",
+        "automatedStatus": "uncertain",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 892103,
+      "durationSeconds": 37.17095833333333,
+      "globalStartAudioFrame": 4632355,
+      "globalStartVideoFrame": 5790,
+      "globalEndVideoFrame": 6906
+    },
+    {
+      "id": "en-L02-S07",
+      "layout": "network",
+      "title": {
+        "ar": "مادّة واحدة ولا مواد مختلفة؟",
+        "en": "One substance or several substances?"
+      },
+      "visualContract": "One chemical identity with three incoming routes; switch to two distinct chemicals connected only when shared mechanism evidence appears. No invented additive-effect calculation.",
+      "actions": [
+        {
+          "id": "L02-S07-A1",
+          "label": {
+            "ar": "مادة واحدة",
+            "en": "One substance"
+          },
+          "semanticTrigger": "One substance"
+        },
+        {
+          "id": "L02-S07-A2",
+          "label": {
+            "ar": "غذاء ومياه وطرق أخرى",
+            "en": "Food, water and other routes"
+          },
+          "semanticTrigger": "Food, water and other routes"
+        },
+        {
+          "id": "L02-S07-A3",
+          "label": {
+            "ar": "عدة مواد",
+            "en": "Several substances"
+          },
+          "semanticTrigger": "Several substances"
+        },
+        {
+          "id": "L02-S07-A4",
+          "label": {
+            "ar": "دليل آلية مشتركة",
+            "en": "Common-mechanism evidence"
+          },
+          "semanticTrigger": "Common-mechanism evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "لو نفس المبيد موجود في أكتر من غذاء، وفي ميّه الشرب، وفي تعرّض منزليّ مناسب للحالة، ده سؤال عن التعرّض المجمّع للمادّة الواحدة. أمّا التقييم التراكميّ في سياق المبيدات، فبيحتاج النظر لمواد تشترك في آليّة سميّة، مع بيانات التعرّض المناسبة. وجود اسمين في تقرير مش دليل إنّنا نجمع الرقمين مباشرة. الوحدات والطرق والتوقيت وقوّة التأثير لازم تدخل في الطريقة العلميّة. مجرّد الجمع الحسابيّ ما يعملش تقييم مخاطر.",
+        "en": "If the same pesticide occurs in several foods, drinking water and relevant residential exposure, the question concerns aggregate exposure to one substance. Cumulative pesticide assessment considers substances sharing a common toxicity mechanism, using appropriate exposure information. Finding two names on a report does not justify adding their concentrations directly. Units, routes, timing and relative potency must be handled within an appropriate method. Arithmetic addition alone is not a risk assessment."
+      },
+      "timing": null,
+      "sceneID": "L02-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "deef087cdb69f981b916fe96537567ff5f1f6300ba2122c00bac3aabe7f685ee",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S07-en-v1",
+        "file": "L02-S07-en-v1.wav",
+        "sha256": "200c2ac9d6afda131ecf2e5fd212f7e617c0c1c58bba14127490499d5532d74b"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S07-en-v1",
+        "file": "timing.json",
+        "sha256": "e2ac8c98c7d1eb1b5192e672e7e9808a542c4a2b0851b930439f5992eba9108c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S07",
+        "file": "L02-S07.jpg",
+        "sha256": "e2600862d91a806d25a8ba9e0386081bb6ad4daf0bed2fb1b2b536329a864cc3"
+      },
+      "imageDisposition": {
+        "scene": "L02-S07",
+        "imageSHA256": "e2600862d91a806d25a8ba9e0386081bb6ad4daf0bed2fb1b2b536329a864cc3",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 940103,
+      "durationSeconds": 39.17095833333333,
+      "globalStartAudioFrame": 5524458,
+      "globalStartVideoFrame": 6906,
+      "globalEndVideoFrame": 8081
+    },
+    {
+      "id": "en-L02-S08",
+      "layout": "evidence",
+      "title": {
+        "ar": "القانون والحالة الجديدة",
+        "en": "Regulation and a new case"
+      },
+      "visualContract": "Historical 1996 marker; current-role cards with jurisdiction label USA. End with two-column blank evidence checklist. No answer or actual legal limit fabricated.",
+      "actions": [
+        {
+          "id": "L02-S08-A1",
+          "label": {
+            "ar": "السياق الأمريكي",
+            "en": "US context"
+          },
+          "semanticTrigger": "US context"
+        },
+        {
+          "id": "L02-S08-A2",
+          "label": {
+            "ar": "التعرّض المجمّع",
+            "en": "Aggregate exposure"
+          },
+          "semanticTrigger": "Aggregate exposure"
+        },
+        {
+          "id": "L02-S08-A3",
+          "label": {
+            "ar": "بيانات المطابقة",
+            "en": "Evidence for compliance"
+          },
+          "semanticTrigger": "Evidence for compliance"
+        },
+        {
+          "id": "L02-S08-A4",
+          "label": {
+            "ar": "بيانات تقييم المخاطر",
+            "en": "Evidence for risk assessment"
+          },
+          "semanticTrigger": "Evidence for risk assessment"
+        }
+      ],
+      "equations": [
+        "1996"
+      ],
+      "spoken": {
+        "ar": "الملف فيه تاريخ للقانون الأمريكيّ. هنفصل التاريخ عن الأدوار الحاليّة: وكالة حماية البيئة بتحدّد حدود متبقّيات الغذاء الأمريكيّة، مع أدوار رقابيّة لجهات زي هيئة الغذاء والدواء ووزارة الزراعة. تعديلات سنة ألف تسعمية ستّة وتسعين أكّدت التعرّض المجمّع والتراكميّ وحماية الأطفال. دلوقتي دورك: تقرير فيه مبيدين على تفّاحة. قبل حكم المطابقة أو المخاطر، اكتب بيانات الحدّ والتعريف والوحدة، وبعدها الاستهلاك والوزن والآليّة وطرق التعرّض. افصل السؤالين في إجابتك.",
+        "en": "The handout includes the history of United States regulation. Separate that history from current roles: the Environmental Protection Agency establishes pesticide food tolerances, while agencies including the Food and Drug Administration and Department of Agriculture have monitoring or enforcement responsibilities. The nineteen ninety-six amendments emphasized aggregate exposure, cumulative effects and child protection. Now consider two pesticide residues on an apple. List the limit, definition and unit evidence needed for compliance, then the consumption, body mass, mechanism and exposure information needed for risk assessment. Keep the two questions separate."
+      },
+      "timing": null,
+      "sceneID": "L02-S08",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "091a67bc6dce30fd6c99650da4c0c07921c21907221288954e15b4b451a9de20",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S08-en-v1",
+        "file": "L02-S08-en-v1.wav",
+        "sha256": "19ef8f619764b3ce8fa7304968e111d2f4f551a7ce370dfdf1986e5934cb511c"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S08-en-v1",
+        "file": "timing.json",
+        "sha256": "fb5bc7507ebd736f3fef2bf288a29abac0c5014cd25429be7e965ce520fe8c9a"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39603295493,
+        "artifact": "fate-next-image-v2-L02-S08",
+        "file": "L02-S08.jpg",
+        "sha256": "c3851553fbb4d400890044b53b8c1059a23b53fd7b0bcc0eb5e27c618a418660"
+      },
+      "imageDisposition": {
+        "scene": "L02-S08",
+        "imageSHA256": "16891d3886a75778b16f502cff7c2c3c553fcea2a58dd33eade0c37a351e7f5d",
+        "status": "usable_background",
+        "automatedStatus": "uncertain",
+        "agentViewedPixels": true,
+        "disposition": "Concrete visual correction queued; preserve original.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed.",
+        "reason": "Inspected corrected pixels: plain covers; no pseudo-seals, logos or lettering.",
+        "agentPixelReview": true,
+        "ownerApprovalClaimed": false,
+        "priorDisposition": {
+          "scene": "L02-S08",
+          "imageSHA256": "16891d3886a75778b16f502cff7c2c3c553fcea2a58dd33eade0c37a351e7f5d",
+          "status": "hold_correction",
+          "automatedStatus": "uncertain",
+          "agentViewedPixels": true,
+          "disposition": "Concrete visual correction queued; preserve original.",
+          "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+        },
+        "currentImage": {
+          "run": 39603295493,
+          "artifact": "fate-next-image-v2-L02-S08",
+          "file": "L02-S08.jpg",
+          "sha256": "c3851553fbb4d400890044b53b8c1059a23b53fd7b0bcc0eb5e27c618a418660"
+        }
+      },
+      "audioFrames": 1206023,
+      "durationSeconds": 50.25095833333334,
+      "globalStartAudioFrame": 6464561,
+      "globalStartVideoFrame": 8081,
+      "globalEndVideoFrame": 9588
+    }
+  ]
+}

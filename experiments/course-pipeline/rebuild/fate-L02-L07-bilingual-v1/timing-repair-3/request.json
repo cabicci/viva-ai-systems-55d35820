@@ -1,0 +1,352 @@
+{
+  "id": "fate-timing-repair-3",
+  "timingModel": "gemini-2.5-pro",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 4,
+  "maxAdjudicationCalls": 0,
+  "automaticRetries": 0,
+  "scope": "Four bounded actual-recording timing corrections; no speech calls.",
+  "parts": [
+    {
+      "id": "L03-S01-ar-v2",
+      "sceneID": "L03-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nKeep the list items connected naturally within each sentence. No staccato listing or exaggerated pauses; explain the whole idea conversationally.",
+      "textSHA256": "c85af44a13229cdbb50de9ca30cac8fe5dcde0be3469dde9eeba077541c03cbb",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "previousId": "L03-S01-ar-v1",
+      "repairReason": "Two actual-audio checks corroborated segmented/robotic delivery. Record complete passage naturally, preserving words.",
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L03-S01-ar-v2",
+        "file": "L03-S01-ar-v2.wav",
+        "sha256": "bd7abae4afd51abe87792ff7feecd5286800e900997eba8b0b63dc9cfec2306b"
+      },
+      "durationSeconds": 34.970958333333336,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts",
+      "actualDuration": 34.970958333333336,
+      "priorDisposition": {
+        "status": "clear",
+        "basis": "Completed blind and reference actual-audio review plus same-voice comparison with no alerts",
+        "humanListeningApproval": false
+      },
+      "priorEvidence": {
+        "run": 39605465926,
+        "artifact": "fate-next-align-L03-S01-ar-v2",
+        "dispositionSHA256": "dd51e711027385fd84995c020c3f90c44eae2c4c4b7518e06cd7e9090af81322",
+        "reason": "Missing uncertainty or out-of-range timing fields; no speech defect."
+      }
+    },
+    {
+      "id": "L04-S04-en-v2",
+      "sceneID": "L04-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A predator may consume many prey over its life. Efficient uptake combined with removal that is slow relative to intake can produce a higher tissue concentration. But not every chemical behaves this way. Chemical form, metabolism, diet and tissue basis all matter. There is no universal rule that residues increase by ten percent at every trophic level. Energy transfer is not a fixed equation for predicting a chemical concentration.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.\nKeep the warm conversational mid-register of the approved Charon sample. Avoid a lowered bass announcer register or heavier vocal weight.",
+      "textSHA256": "bf23dcfddb6da34b95d802557e576af871121f6d938419de7017356e2375dec3",
+      "deliverySHA256": "1767a937295d629368cc8fe0d2998e26ec5ef07a3120ff297c4d74874ccbbc3c",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L04-S04-en-v1",
+      "repairReason": "Two actual-audio comparisons flagged material voice timbre/register mismatch against accepted Charon.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L04-S04-en-v2",
+        "file": "L04-S04-en-v2.wav",
+        "sha256": "93713225a26e6efde79e40f9fee30ad47ca24b6dce72eccda7023b10b82edc43"
+      },
+      "durationSeconds": 32.17095833333333,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L04-S04-A1",
+          "label": {
+            "ar": "غذاء يدخل",
+            "en": "Diet enters"
+          },
+          "semanticTrigger": "Diet enters"
+        },
+        {
+          "id": "L04-S04-A2",
+          "label": {
+            "ar": "جزء يخرج",
+            "en": "Some material leaves"
+          },
+          "semanticTrigger": "Some material leaves"
+        },
+        {
+          "id": "L04-S04-A3",
+          "label": {
+            "ar": "تغيّر التركيز",
+            "en": "Concentration changes"
+          },
+          "semanticTrigger": "Concentration changes"
+        },
+        {
+          "id": "L04-S04-A4",
+          "label": {
+            "ar": "لا معامل عام لانتقال المادة",
+            "en": "No universal transfer multiplier"
+          },
+          "semanticTrigger": "No universal transfer multiplier"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts",
+      "actualDuration": 32.17095833333333,
+      "priorDisposition": {
+        "status": "clear",
+        "basis": "Completed blind and reference actual-audio review plus same-voice comparison with no alerts",
+        "humanListeningApproval": false
+      },
+      "priorEvidence": {
+        "run": 39605465926,
+        "artifact": "fate-next-align-L04-S04-en-v2",
+        "dispositionSHA256": "dd51e711027385fd84995c020c3f90c44eae2c4c4b7518e06cd7e9090af81322",
+        "reason": "Missing uncertainty or out-of-range timing fields; no speech defect."
+      }
+    },
+    {
+      "id": "L07-S02-en-v1",
+      "sceneID": "L07-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Before reading a property table, establish chemical identity, form and purity. Stereochemical forms may differ in behavior or activity, and a formulation is not necessarily equivalent to a pure substance in a laboratory test. Solubility values need temperature, pH and method information. Vapour pressure informs volatility under stated conditions. Molecular weight or any single property cannot predict the entire environmental fate. Every value needs its measurement context.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "8d4f8a53a454abbcacdd3fc3cbb59a28729da1385163e50290a87186b6e46c3c",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S02-en-v1",
+        "file": "L07-S02-en-v1.wav",
+        "sha256": "39c0b4e8d07d7115471847862c1ed7264ddc392d09825c735c2f332af3387a6d"
+      },
+      "durationSeconds": 38.930958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L07-S02-A1",
+          "label": {
+            "ar": "هوية وصورة المادة",
+            "en": "Identity and form"
+          },
+          "semanticTrigger": "Identity and form"
+        },
+        {
+          "id": "L07-S02-A2",
+          "label": {
+            "ar": "النقاوة",
+            "en": "Purity"
+          },
+          "semanticTrigger": "Purity"
+        },
+        {
+          "id": "L07-S02-A3",
+          "label": {
+            "ar": "حرارة وحموضة",
+            "en": "Temperature and pH"
+          },
+          "semanticTrigger": "Temperature and pH"
+        },
+        {
+          "id": "L07-S02-A4",
+          "label": {
+            "ar": "طريقة القياس",
+            "en": "Measurement method"
+          },
+          "semanticTrigger": "Measurement method"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts",
+      "actualDuration": 38.930958333333336,
+      "priorDisposition": {
+        "status": "clear",
+        "ownerListeningAcceptance": {
+          "status": "owner_listening_accepted",
+          "reason": "Owner explicitly accepted this exact candidate after hearing it; the subjective timbre alert is resolved for this recording.",
+          "ownerReply": "اعتمده كما هو",
+          "acceptedUTC": "2026-10-21T13:12:48.586600+00:00",
+          "audioSHA256": "39c0b4e8d07d7115471847862c1ed7264ddc392d09825c735c2f332af3387a6d",
+          "originalReview": {
+            "run": 39603724411,
+            "artifact": "fate-next-align-L07-S02-en-v1",
+            "file": "review-disposition.json",
+            "sha256": "ad123237d630b6a229ebf4abe8e423c6ed1f4cd290b3bc102675364042b7235b"
+          }
+        },
+        "humanListeningApproval": true
+      },
+      "priorEvidence": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S02-en-v1",
+        "dispositionSHA256": "ad123237d630b6a229ebf4abe8e423c6ed1f4cd290b3bc102675364042b7235b",
+        "reason": "Missing uncertainty or out-of-range timing fields; no speech defect."
+      }
+    },
+    {
+      "id": "L06-S07-en-v1",
+      "sceneID": "L06-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "The exercise presents short-test survival and longer-exposure reproduction results. Match each to the question it can answer and state what it does not establish. Revisit the geometric mean: which values were tested, and which was estimated? If someone uses the result to prescribe a discharge concentration or application rate, identify the missing evidence and regulatory method. Success means interpreting a number within its evidence, rather than merely memorizing abbreviations.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "73216c14a42aa971cde020c60820d411b7bc350640e5b7ad32664eca0a6bc147",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S07-en-v1",
+        "file": "L06-S07-en-v1.wav",
+        "sha256": "e8f23a39218e18e52c955b1c60daecb2852b6acb61886b224892ca26adf5850b"
+      },
+      "durationSeconds": 34.650958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L06-S07-A1",
+          "label": {
+            "ar": "نوع نقطة القياس",
+            "en": "Endpoint type"
+          },
+          "semanticTrigger": "Endpoint type"
+        },
+        {
+          "id": "L06-S07-A2",
+          "label": {
+            "ar": "مختبر أم مقدر؟",
+            "en": "Tested or estimated?"
+          },
+          "semanticTrigger": "Tested or estimated?"
+        },
+        {
+          "id": "L06-S07-A3",
+          "label": {
+            "ar": "وحدات وسياق متطابقان",
+            "en": "Matched units and context"
+          },
+          "semanticTrigger": "Matched units and context"
+        },
+        {
+          "id": "L06-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts",
+      "actualDuration": 34.650958333333335,
+      "priorDisposition": {
+        "status": "clear",
+        "dispositions": [
+          {
+            "priorIssue": "{\"start\": 5.2, \"end\": 5.6, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'results'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "The pause between 'reproduction' and 'results' is a natural prosodic break at the end of a complex noun phrase. It is not a defect."
+          },
+          {
+            "priorIssue": "{\"start\": 8.5, \"end\": 8.8, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'and state'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "This is a standard syntactic pause before a coordinating conjunction ('and') that joins two verb phrases. It is a normal feature of speech."
+          },
+          {
+            "priorIssue": "{\"start\": 10.8, \"end\": 11.1, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'establish'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "The slight pause after 'not' is a natural way to add emphasis and clarity to the negative construction. It is not a delivery flaw."
+          },
+          {
+            "priorIssue": "{\"start\": 14.3, \"end\": 14.6, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'which values'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "The pause occurs after 'mean', which is followed by a colon in the transcript. This is a perfectly normal and expected pause to introduce the subsequent question."
+          },
+          {
+            "priorIssue": "{\"start\": 17.4, \"end\": 17.7, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'If someone'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "This is a standard pause at a sentence boundary, following the question ending in 'estimated?'. It is required for proper punctuation and flow."
+          },
+          {
+            "priorIssue": "{\"start\": 22.7, \"end\": 23.0, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'rate'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "The pause after 'rate' corresponds to a comma in the transcript, separating a subordinate clause from the main clause. This is a normal and correct pause."
+          },
+          {
+            "priorIssue": "{\"start\": 26.7, \"end\": 27.0, \"category\": \"speaking_style\", \"observation\": \"Slight, brief pause affecting natural flow before 'method'.\", \"certainty\": \"high\"}",
+            "decision": "dismissed",
+            "acousticReason": "This is a standard pause at the end of a sentence, after the word 'method'. It is a necessary part of speech."
+          }
+        ],
+        "actualIssues": [],
+        "notes": "The candidate voice is a clear match to the reference. All prior automated alerts flagged normal, syntactically appropriate pauses that are part of natural speech rhythm. These are not defects and have all been dismissed. No new issues were found in the recording."
+      },
+      "priorEvidence": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S07-en-v1",
+        "dispositionSHA256": "10b8ee11ae4d7e2d98e52e494ab7bba8612c23d1ed0522ccffe445ed0165409d",
+        "reason": "Missing uncertainty or out-of-range timing fields; no speech defect."
+      }
+    }
+  ]
+}

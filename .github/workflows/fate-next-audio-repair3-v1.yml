@@ -1,0 +1,58 @@
+name: Fate one confirmed English register correction v3
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/audio-repair3/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-next-audio-repair3-v1
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/audio-repair3
+  EXPECTED_REQUEST_SHA256: 277a106573d670b636aa978641738954d03c2348096e53b0c528fdaec0b0d455
+  PYTHONUNBUFFERED: '1'
+jobs:
+  audio:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        part: ["L07-S07-en-v3"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Generate one complete passage after model availability check
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Deliver each original immediately before review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-audio-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Blind and reference actual-audio checks
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - name: Compare new English passage with accepted same-voice reference
+        if: success() && !startsWith(matrix.part, 'EN-')
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/continuity.py" "${{ matrix.part }}"
+      - name: Deliver each actual review immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-review-${{ matrix.part }}
+          path: |
+            ${{ env.PACKAGE }}/output/review/
+            ${{ env.PACKAGE }}/output/continuity/
+            ${{ env.PACKAGE }}/output/review-summary.json
+          retention-days: 30

@@ -1,0 +1,82 @@
+{
+  "id": "fate-next-audio-repair3-v1",
+  "scope": "One bounded complete-passage repairs after specific observed failure/defect; preserve all originals and good recordings.",
+  "model": "gemini-2.5-pro-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "maxSpeechCalls": 1,
+  "maxAnalysisCalls": 3,
+  "automaticRetries": 0,
+  "segments": [
+    {
+      "id": "L07-S07-en-v3",
+      "sceneID": "L07-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.\nMaintain the light, clear conversational Kore register of the approved English sample. Avoid a lowered, heavy or metallic announcer sound. Keep natural full sentences and every quantity exactly.\n",
+      "textSHA256": "063902ce1807f8a4f53644a7658ab35a47d1b54b1bf91c4c7a7be7edf78a3209",
+      "deliverySHA256": "1cd6dc6135b20283f5db280b62f8743177c45c35cf1dff70f1ade647be6126ad",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L07-S07-en-v2",
+      "repairReason": "Two actual-audio comparisons found a materially heavier and lower-register Kore voice than the owner-approved reference; first targeted delivery correction after the successful second generation attempt.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      }
+    }
+  ],
+  "retained": [],
+  "voiceReferences": {
+    "Charon": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+      "file": "voice-A-Charon-Pro.wav",
+      "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+    },
+    "Kore": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+      "file": "voice-B-Kore-Pro.wav",
+      "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+    }
+  },
+  "cacheDecision": "No matching recordings for these new scripts; preserve all old media. One attempt per identity, no blind retries.",
+  "ownerAuthorization": [
+    "العربي والإنجليزي",
+    "كمّل إنتاج الدروس الستة بالعربي والإنجليزي على جيت هب أكشن، وكل مشهد يخلص نزّله على طول."
+  ],
+  "renderAllowed": false,
+  "submissionRevision": 1,
+  "voiceReferencesByLocale": {
+    "ar-EG": {
+      "Charon": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "Kore": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      }
+    },
+    "en": {
+      "Charon": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "Kore": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      }
+    }
+  }
+}

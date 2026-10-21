@@ -1,0 +1,35 @@
+name: Fate actual-audio timing correction batch 3
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/timing-repair-3/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/timing-repair-3
+  EXPECTED_REQUEST_SHA256: d14ed3864ff077d6090e25d63d476312c4870a8a5bf318379db7725cdedb4f0e
+jobs:
+  analyze:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        part: ["L03-S01-ar-v2", "L04-S04-en-v2", "L07-S02-en-v1", "L06-S07-en-v1"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Resolve actual alerts and derive acoustic scene cues
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/worker.py" request "${{ matrix.part }}"
+      - name: Deliver each result immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-timing-v4-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

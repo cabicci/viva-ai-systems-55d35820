@@ -1,0 +1,134 @@
+{
+  "id": "fate-next-analysis-repairs2",
+  "timingModel": "gemini-2.5-pro",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 2,
+  "maxAdjudicationCalls": 0,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L07-S03-ar-v2",
+      "sceneID": "L07-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "لما الجزيء يرتبط بسطح حبيبة تربة، بنتكلم عن امتزاز. لو دخل جوّه وسط أو نسيج، ده امتصاص. وكلمة السوربشن أوسع، وممكن تشمل عمليّات ارتباط مختلفة. في الرسم، هنخلّي علامة الجزيء على السطح في حالة، وجوّه الوسط في الحالة التانية. الارتباط بالتربة ممكن يأثّر على الحركة والتوافر، لكنه مش دليل إنّ المادّة اتحطّمت. وممكن يحصل انتقال عكسيّ حسب الخواص والظروف.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nKeep the list items connected naturally within each sentence. No staccato listing or exaggerated pauses; explain the whole idea conversationally.",
+      "textSHA256": "5014fd532153921f103efb13f742d975fc944e87e31f14c59487ff7818cee08a",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "previousId": "L07-S03-ar-v1",
+      "repairReason": "Two actual-audio checks corroborated disjointed robotic passage delivery; re-record coherent full passage.",
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "audio": {
+        "run": 39605466024,
+        "artifact": "fate-next-audio-L07-S03-ar-v2",
+        "file": "L07-S03-ar-v2.wav",
+        "sha256": "6cb5179a3658801b1227eef2631375a4556a5cb3785ab9602e9319693dabebbc"
+      },
+      "durationSeconds": 33.610958333333336,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L07-S03-A1",
+          "label": {
+            "ar": "على السطح",
+            "en": "At the surface"
+          },
+          "semanticTrigger": "At the surface"
+        },
+        {
+          "id": "L07-S03-A2",
+          "label": {
+            "ar": "داخل الطور",
+            "en": "Inside the phase"
+          },
+          "semanticTrigger": "Inside the phase"
+        },
+        {
+          "id": "L07-S03-A3",
+          "label": {
+            "ar": "الهوية لم تتغير",
+            "en": "Identity unchanged"
+          },
+          "semanticTrigger": "Identity unchanged"
+        },
+        {
+          "id": "L07-S03-A4",
+          "label": {
+            "ar": "مصطلح أشمل",
+            "en": "Umbrella term"
+          },
+          "semanticTrigger": "Umbrella term"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S04-ar-v2",
+      "sceneID": "L07-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nانطق «انجراف رذاذ» كتركيب واحد متصل، من غير إضافة واو بين الكلمتين.\n",
+      "textSHA256": "7d43fc66ede90f1377d302ab63cb90d0f5a2bfa422678b2162c426853467a20c",
+      "deliverySHA256": "559b11e60a34db766c3ef0233cdf54c454e5bbdd14cce41c4a6f038ce82b8b9d",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "previousId": "L07-S04-ar-v1",
+      "repairReason": "Confirmed inserted conjunction splits the scientific compound spray drift; preserve connected انجراف رذاذ.",
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "audio": {
+        "run": 39605466024,
+        "artifact": "fate-next-audio-L07-S04-ar-v2",
+        "file": "L07-S04-ar-v2.wav",
+        "sha256": "4e0120145c0a64b4d0ddfefafcd3a336b8d04f7a664f7e232c361b50531236c7"
+      },
+      "durationSeconds": 37.17095833333333,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}
