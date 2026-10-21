@@ -50,7 +50,9 @@ export function CurrentRagReleasePanel() {
     } catch (error) {
       const code = error instanceof Error ? error.message : "";
       const status = /^CURRENT_PROVIDER_HTTP_([45][0-9]{2})$/.exec(code);
-      const detail = status ? `مزود الفهرسة رفض الطلب (${status[1]}).${status[1] === "429" ? " انتظر انتهاء حد الاستخدام قبل أي استكمال." : " راجع حالة الربط والخدمة."} ` : "";
+      const database = /^CURRENT_DATABASE_([0-9A-Z]{5})$/.exec(code);
+      const detail = status ? `مزود الفهرسة رفض الطلب (${status[1]}).${status[1] === "429" ? " انتظر انتهاء حد الاستخدام قبل أي استكمال." : " راجع حالة الربط والخدمة."} `
+        : database ? `توقف إجراء قاعدة البيانات (رمز ${database[1]}). ` : "";
       setMessage(detail + "توقف الإجراء. حدّث الحالة وراجع الطلب الجاري قبل الاستكمال؛ لم يتم تشغيل إعادة محاولة تلقائية.");
     } finally { setBusy(false); }
   }
