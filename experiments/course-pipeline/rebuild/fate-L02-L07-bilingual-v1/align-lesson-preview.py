@@ -33,6 +33,26 @@ if not preimage.exists():
     preimage.write_bytes(raw)
 match = re.search(r'(<script[^>]*id="masaarat-course-review-data"[^>]*>)(.*?)(</script>)', s, re.S)
 data = json.loads(match[2])
+# Use the owner's path/station/step terminology in the learner preview.
+# Source-PDF references remain references to a file rather than a second product type.
+def display_terminology(value):
+    if isinstance(value, str):
+        return value.replace('ملف المنهج', 'الملف المصدر').replace('صفحات المنهج', 'صفحات الملف')
+    if isinstance(value, list):
+        return [display_terminology(item) for item in value]
+    if isinstance(value, dict):
+        return {key: display_terminology(item) for key, item in value.items()}
+    return value
+data = display_terminology(data)
+# Preserve the existing complete seven-step station map from curriculum/L0*.md.
+station_specs = [
+    ('residues', 'المتبقيات وسلامة الغذاء', 'Residues and food safety', ['L01','L02']),
+    ('exposure', 'التعرّض والأثر', 'Exposure and effects', ['L03']),
+    ('biota', 'انتقال المواد في الأحياء', 'Chemical transfer in organisms', ['L04','L05']),
+    ('effects', 'قياس الأثر', 'Measuring effects', ['L06']),
+    ('fate', 'الحركة والتحول', 'Transport and transformation', ['L07']),
+]
+data['stations'] = [{'id':i,'ar':ar,'en':en,'steps':steps} for i,ar,en,steps in station_specs]
 manifest = json.loads((P / 'production/L02-L07-bilingual-v1/delivery/manifest.json').read_text(encoding='utf-8'))
 for lesson in data['lessons']:
     for lang in ('ar', 'en'):
@@ -117,6 +137,26 @@ css = '''
     #masaarat-course-review .ms-progress p,#masaarat-course-review .ms-preview-note{font-size:14px;line-height:1.75;color:var(--ms-muted)}
     #masaarat-course-review .ms-adjacent{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:24px}
     #masaarat-course-review .ms-state{color:var(--ms-muted);font-size:14px;line-height:1.75;margin-top:16px}
+    #masaarat-course-review [hidden]{display:none!important}
+    #masaarat-course-review [data-hub]{max-width:1152px;margin:32px auto;padding:0 8px}
+    #masaarat-course-review .ms-hub-header{border-radius:28px;padding:32px;margin-bottom:40px;background:var(--ms-accent)}
+    #masaarat-course-review .ms-hub-header h1{font-size:36px;line-height:1.4;font-weight:900;margin:0 0 12px;overflow-wrap:anywhere}
+    #masaarat-course-review .ms-hub-header p{color:var(--ms-muted);margin:0}
+    #masaarat-course-review .ms-path-card{display:flex;width:100%;align-items:center;gap:24px;flex-wrap:wrap;border:1px solid var(--ms-line);background:var(--ms-card);border-radius:28px;padding:32px;text-decoration:none;color:var(--ms-ink)}
+    #masaarat-course-review .ms-path-card:hover{border-color:var(--ms-blue)}
+    #masaarat-course-review .ms-card-name{flex:1;min-width:0}
+    #masaarat-course-review .ms-path-card h2{font-size:30px;font-weight:900;line-height:1.5;margin:0;overflow-wrap:anywhere}
+    #masaarat-course-review .ms-path-card p{font-size:14px;color:var(--ms-muted);font-weight:600;display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 0}
+    #masaarat-course-review .ms-open-path{font-weight:700;color:var(--ms-blue);min-height:44px;display:inline-flex;align-items:center}
+    #masaarat-course-review .ms-back-link{display:inline-block;font-weight:700;color:var(--ms-blue);text-decoration:none;margin-bottom:24px}
+    #masaarat-course-review .ms-station{border:1px solid var(--ms-line);border-radius:24px;padding:20px;margin-bottom:24px;min-width:0}
+    #masaarat-course-review .ms-station h2{font-size:26px;font-weight:900;line-height:1.5;margin:0 0 20px;border-bottom:1px solid var(--ms-line);padding-bottom:12px}
+    #masaarat-course-review .ms-step-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;min-height:44px;border-radius:16px;padding:8px 12px;font-size:14px;text-decoration:none;color:var(--ms-ink)}
+    #masaarat-course-review .ms-step-row:hover{background:var(--ms-muted-bg)}
+    #masaarat-course-review .ms-step-row span:first-child{flex:1;min-width:0;overflow-wrap:anywhere}
+    #masaarat-course-review .ms-step-row span:last-child{color:var(--ms-blue);font-weight:700}
+    #masaarat-course-review a.ms-crumb{display:block;text-decoration:none}
+    @media(max-width:640px){#masaarat-course-review .ms-hub-header{padding:20px}#masaarat-course-review .ms-hub-header h1{font-size:28px}#masaarat-course-review .ms-path-card{padding:24px}#masaarat-course-review .ms-path-card h2{font-size:24px}#masaarat-course-review .ms-station h2{font-size:22px}}
     @media(max-width:1023px){#masaarat-course-review .ms-layout{grid-template-columns:1fr}#masaarat-course-review .ms-aside{position:static}#masaarat-course-review .ms-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#masaarat-course-review .ms-panel{padding:20px}#masaarat-course-review .ms-lesson-header h1{font-size:26px}}
     @media(max-width:480px){#masaarat-course-review .ms-top strong{display:none}#masaarat-course-review .ms-picker{grid-template-columns:1fr}#masaarat-course-review .ms-lesson-header{padding:20px}#masaarat-course-review select{min-width:0;width:100%}#masaarat-course-review .ms-top select{width:auto}#masaarat-course-review .ms-action{max-width:100%;white-space:normal}}
 '''
@@ -126,23 +166,37 @@ s, removed_pickers = re.subn(r'<div class="ms-picker">.*?</div>', '', s, count=1
 assert removed_pickers == 1
 s = s.replace('<div class="ms-layout">', '<p class="ms-preview-note" data-preview-note></p><header class="ms-lesson-header"><p data-academic-label></p><h1 data-main-title></h1><div class="ms-intro" data-intro></div></header><div class="ms-layout">', 1)
 s = s.replace('<nav class="ms-nav" role="tablist" aria-label="أقسام الدرس" data-tabs></nav>', '<aside class="ms-aside"><nav class="ms-nav" role="tablist" aria-label="أقسام الخطوة" data-tabs></nav><section class="ms-progress"><strong data-progress-label></strong><progress max="3" value="0" data-progress></progress><p data-progress-note></p></section></aside>',1)
+# Catalogue -> stations with nested steps -> existing lesson page, in the same preview.
+crumb = s.index('<p class="ms-crumb"')
+s = s[:crumb] + '<main data-hub></main><div data-lesson-view hidden>' + s[crumb:]
+s = re.sub(r'<p class="ms-crumb"([^>]*)>(.*?)</p>', r'<a class="ms-crumb" href="#path"\1>\2</a>', s, count=1, flags=re.S)
+json_start = s.index('<script', s.index('<div data-lesson-view'))
+s = s[:json_start] + '</div>' + s[json_start:]
 js = r'''
     (()=>{
       const root=document.getElementById('masaarat-course-review'),data=JSON.parse(document.getElementById('masaarat-course-review-data').textContent);
       const qs=s=>root.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
       const order=['reading','example','video','quiz','practice','faq','downloads','assistant'];
-      const copy={ar:{course:'مصير المبيدات في البيئة',crumb:'ارجع للمنهج',picker:'اختار الخطوة',academic:'مسارات أكاديمي',reading:'الشرح',example:'مثال محلول',video:'الفيديو',quiz:'اختبر فهمك',practice:'طبّق بنفسك',faq:'أسئلة شائعة',downloads:'التحميلات',assistant:'المساعد الذكي',progress:'تقدم الأنشطة',preview:'معاينة محلية لشكل الدرس. التقدم والإجابات هنا للتجربة، ومش مرتبطة بحسابك على المنصة.',progressNote:'التقدم الظاهر خاص بالمعاينة الحالية بس.',markRead:'خلصت قراءة الشرح',submit:'راجع الإجابات',save:'احفظ التطبيق',restore:'رجّع الإجابة المحفوظة',saved:'اتحفظ في المعاينة الحالية فقط.',quizNote:'مراجعة الإجابات وحساب الدرجة على المنصة محتاجين الربط بخدمة التقييم. إجابتك هنا للتجربة فقط.',pre:'قبل ما تبدأ',post:'اختبار بعد الدرس',bank:'بنك الأسئلة',worksheet:'ورقة العمل',print:'افتح النسخة القابلة للطباعة',answer:'اكتب إجابتك ووضّح تفكيرك',assistantNote:'مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة.',previous:'الخطوة السابقة',next:'الخطوة التالية',step:'الخطوة',of:'من',sections:'أقسام الخطوة',localVideo:'الفيديو المحفوظ للمعاينة المحلية.'},en:{course:'Fate of Pesticides in the Environment',crumb:'Back to curriculum',picker:'Choose a step',academic:'Masaarat Academic',reading:'Reading',example:'Worked example',video:'Video',quiz:'Check understanding',practice:'Practice',faq:'FAQ',downloads:'Downloads',assistant:'AI assistant',progress:'Activity progress',preview:'Local lesson preview. Progress and responses here are for demonstration and are not connected to your platform account.',progressNote:'Progress applies only to this preview session.',markRead:'Mark reading complete',submit:'Submit answers',save:'Save practice submission',restore:'Restore saved response',saved:'Saved in this preview session only.',quizNote:'Answer review and grading require the platform assessment service. These responses are for demonstration only.',pre:'Before you start',post:'After-lesson test',bank:'Question bank',worksheet:'Worksheet',print:'Open printable version',answer:'Write your response and reasoning',assistantNote:'The assistant for this course requires separate access and activation.',previous:'Previous step',next:'Next step',step:'Step',of:'of',sections:'Step sections',localVideo:'Saved video for local preview.'}};
-      let state={lesson:'L02',locale:'ar',tab:'reading'},drafts={},choices={},savedDrafts={},activity={};
+      const copy={ar:{course:'مصير المبيدات في البيئة',crumb:'ارجع للمسار',picker:'اختار الخطوة',academic:'مسارات أكاديمي',reading:'الشرح',example:'مثال محلول',video:'الفيديو',quiz:'اختبر فهمك',practice:'طبّق بنفسك',faq:'أسئلة شائعة',downloads:'التحميلات',assistant:'المساعد الذكي',progress:'تقدم الأنشطة',preview:'معاينة محلية لشكل الدرس. التقدم والإجابات هنا للتجربة، ومش مرتبطة بحسابك على المنصة.',progressNote:'التقدم الظاهر خاص بالمعاينة الحالية بس.',markRead:'خلصت قراءة الشرح',submit:'راجع الإجابات',save:'احفظ التطبيق',restore:'رجّع الإجابة المحفوظة',saved:'اتحفظ في المعاينة الحالية فقط.',quizNote:'مراجعة الإجابات وحساب الدرجة على المنصة محتاجين الربط بخدمة التقييم. إجابتك هنا للتجربة فقط.',pre:'قبل ما تبدأ',post:'اختبار بعد الدرس',bank:'بنك الأسئلة',worksheet:'ورقة العمل',print:'افتح النسخة القابلة للطباعة',answer:'اكتب إجابتك ووضّح تفكيرك',assistantNote:'مساعد المسار ده يحتاج صلاحية مستقلة وتفعيل الخدمة.',previous:'الخطوة السابقة',next:'الخطوة التالية',step:'الخطوة',of:'من',sections:'أقسام الخطوة',localVideo:'الفيديو المحفوظ للمعاينة المحلية.'},en:{course:'Fate of Pesticides in the Environment',crumb:'Back to path',picker:'Choose a step',academic:'Masaarat Academic',reading:'Reading',example:'Worked example',video:'Video',quiz:'Check understanding',practice:'Practice',faq:'FAQ',downloads:'Downloads',assistant:'AI assistant',progress:'Activity progress',preview:'Local lesson preview. Progress and responses here are for demonstration and are not connected to your platform account.',progressNote:'Progress applies only to this preview session.',markRead:'Mark reading complete',submit:'Submit answers',save:'Save practice submission',restore:'Restore saved response',saved:'Saved in this preview session only.',quizNote:'Answer review and grading require the platform assessment service. These responses are for demonstration only.',pre:'Before you start',post:'After-lesson test',bank:'Question bank',worksheet:'Worksheet',print:'Open printable version',answer:'Write your response and reasoning',assistantNote:'The assistant for this path requires separate access and activation.',previous:'Previous step',next:'Next step',step:'Step',of:'of',sections:'Step sections',localVideo:'Saved video for local preview.'}};
+      Object.assign(copy.ar,{paths:'المسارات — مسارات أكاديمي',path:'مسار',openPath:'افتح المسار',contents:'محطات المسار',stations:'محطات',steps:'خطوات',openStep:'افتح الخطوة',station:'المحطة',backPaths:'ارجع للمسارات'});
+      Object.assign(copy.en,{paths:'Paths — Masaarat Academic',path:'Path',openPath:'Open path',contents:'Path stations',stations:'stations',steps:'steps',openStep:'Open step',station:'Station',backPaths:'All paths'});
+      let state={view:'catalogue',lesson:'L01',locale:'ar',tab:'reading'},drafts={},choices={},savedDrafts={},activity={};
       const key=()=>state.lesson+'-'+state.locale;
       const draftKey=(group,i)=>key()+'-'+group+'-'+i;
       function questions(items,group){return items.map((q,i)=>`<fieldset class="ms-question"><legend>${esc(q.q)}</legend>${q.options?`<div class="ms-options">${q.options.map((o,j)=>`<label><input type="radio" data-choice="${draftKey(group,i)}" name="${draftKey(group,i)}" value="${j}" ${choices[draftKey(group,i)]===String(j)?'checked':''}><span>${esc(o)}</span></label>`).join('')}</div>`:`<textarea rows="4" maxlength="5000" data-draft="${draftKey(group,i)}" aria-label="${esc(q.q)}" placeholder="${esc(copy[state.locale].answer)}">${esc(drafts[draftKey(group,i)]||'')}</textarea>`}</fieldset>`).join('')}
       function progress(){const a=activity[key()]||{};qs('[data-progress]').value=Number(!!a.read)+Number(!!a.practice)}
+      function renderHub(){const t=copy[state.locale],hub=qs('[data-hub]');
+        if(state.view==='catalogue')hub.innerHTML=`<header class="ms-hub-header"><h1>${t.paths}</h1></header><a class="ms-path-card" href="#path" data-path-card><div class="ms-card-name"><h2>${t.path} ${t.course}</h2><p><span>7 ${t.steps}</span><span>${data.stations.length} ${t.stations}</span></p></div><span class="ms-open-path">${t.openPath}</span></a>`;
+        else hub.innerHTML=`<header class="ms-hub-header"><h1>${t.contents}</h1><p>${t.course}</p></header><a href="#paths" class="ms-back-link">${t.backPaths}</a>`+data.stations.map(station=>`<section class="ms-station" data-station="${station.id}"><h2>${t.station} — ${esc(station[state.locale])}</h2>${station.steps.map(id=>{const step=data.lessons.find(x=>x.id===id);return `<a class="ms-step-row" href="#step/${id}" data-step="${id}"><span>${esc(step[state.locale].title)}</span><span>${t.openStep}</span></a>`}).join('')}</section>`).join('');
+      }
       function render(){
         const l=data.lessons.find(x=>x.id===state.lesson),t=copy[state.locale],v=l[state.locale],index=data.lessons.indexOf(l);
         root.dir=state.locale==='ar'?'rtl':'ltr';root.lang=state.locale==='ar'?'ar-EG':'en';
-        qs('[data-course-title]').textContent=t.course;qs('[data-crumb]').textContent=t.crumb+' — '+t.course;
+        qs('[data-course-title]').textContent=t.course;qs('[data-crumb]').textContent=t.crumb;
         qs('[data-main-title]').textContent=v.title;qs('[data-intro]').textContent=t.course;qs('[data-academic-label]').textContent=t.academic;qs('[data-preview-note]').textContent=t.preview;qs('[data-progress-label]').textContent=t.progress;qs('[data-progress-note]').textContent=t.progressNote;qs('[data-tabs]').setAttribute('aria-label',t.sections);
         qs('[data-locale]').value=state.locale;
+        qs('[data-lesson-view]').hidden=state.view!=='lesson';qs('[data-adjacent]').hidden=state.view!=='lesson';qs('[data-hub]').hidden=state.view==='lesson';
+        if(state.view!=='lesson'){renderHub();return}
         const tabs=order.filter(id=>id!=='video'||v.videoPath);if(!tabs.includes(state.tab))state.tab='reading';
         qs('[data-tabs]').innerHTML=tabs.map(id=>`<button type="button" class="ms-tab cursor-interaction" role="tab" id="ms-tab-${id}" data-tab="${id}" aria-selected="${id===state.tab}" aria-controls="ms-course-panel">${t[id]}</button>`).join('');
         const panel=qs('[data-panel]');panel.setAttribute('aria-labelledby','ms-tab-'+state.tab);panel.setAttribute('aria-label',t[state.tab]);
@@ -159,8 +213,9 @@ js = r'''
       }
       root.addEventListener('change',e=>{if(e.target.matches('[data-locale]')){state.locale=e.target.value;render()}if(e.target.dataset.choice)choices[e.target.dataset.choice]=e.target.value});
       root.addEventListener('input',e=>{if(e.target.dataset.draft)drafts[e.target.dataset.draft]=e.target.value});
-      root.addEventListener('click',e=>{const tab=e.target.closest('[data-tab]');if(tab){state.tab=tab.dataset.tab;render();const panel=qs('[data-panel]'),top=panel.getBoundingClientRect().top;if(top<96||top>innerHeight-80)panel.scrollIntoView?.({block:'start',behavior:'auto'})}const nav=e.target.closest('[data-lesson-target]');if(nav){state.lesson=nav.dataset.lessonTarget;state.tab='reading';render();qs('.ms-lesson-header').scrollIntoView?.({block:'start'})}const action=e.target.closest('[data-action]');if(!action)return;const t=copy[state.locale],a=action.dataset.action;activity[key()]??={};if(a==='read'){activity[key()].read=true;qs('[role=status]').textContent=t.saved}if(a==='quiz')qs('[role=status]').textContent=t.quizNote;if(a==='practice'){savedDrafts[key()]={...drafts};activity[key()].practice=true;qs('[role=status]').textContent=t.saved}if(a==='restore'){Object.assign(drafts,savedDrafts[key()]||{});render()}progress()});
-      render();
+      root.addEventListener('click',e=>{const tab=e.target.closest('[data-tab]');if(tab){state.tab=tab.dataset.tab;render();const panel=qs('[data-panel]'),top=panel.getBoundingClientRect().top;if(top<96||top>innerHeight-80)panel.scrollIntoView?.({block:'start',behavior:'auto'})}const nav=e.target.closest('[data-lesson-target]');if(nav){location.hash='#step/'+nav.dataset.lessonTarget}const action=e.target.closest('[data-action]');if(!action)return;const t=copy[state.locale],a=action.dataset.action;activity[key()]??={};if(a==='read'){activity[key()].read=true;qs('[role=status]').textContent=t.saved}if(a==='quiz')qs('[role=status]').textContent=t.quizNote;if(a==='practice'){savedDrafts[key()]={...drafts};activity[key()].practice=true;qs('[role=status]').textContent=t.saved}if(a==='restore'){Object.assign(drafts,savedDrafts[key()]||{});render()}progress()});
+      function route(){const match=location.hash.match(/^#step\/(L0[1-7])$/);if(match){state.view='lesson';state.lesson=match[1];state.tab='reading'}else state.view=location.hash==='#path'?'contents':'catalogue';render()}
+      addEventListener('hashchange',route);route();
     })();
 '''
 start=s.rfind('  <script>')
