@@ -1,0 +1,41 @@
+{
+  "id": "L01-pro-tts-proof-v1",
+  "scope": "Owner-requested higher Gemini TTS model audition only. Two complete Egyptian passages. No accepted audio replacement, full lesson regeneration, timing, rendering or publication.",
+  "ownerRequest": "عايزيم نموذج اعلي في جيماي لتوليد الكلام في غلطات ومش هاعقد اصلح كلمه كلمه",
+  "model": "gemini-2.5-pro-preview-tts",
+  "previousModel": "gemini-2.5-flash-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "locale": "ar-EG",
+  "format": "mono PCM16 24000Hz",
+  "maxSpeechCalls": 2,
+  "maxAnalysisCalls": 4,
+  "automaticRetries": 0,
+  "retained": [],
+  "segments": [
+    {
+      "id": "voice-A-Charon-Pro",
+      "voice": "Charon",
+      "spokenText": "لو المَيّه اتحرّكت من الحقل، ممكن تنقل معاها جزء من المبيد. ده مسار محتمل لانتقاله، مش دليل إنّ المَحْصول اتلوّث فعلًا. محتاجين قياس عشان نعرف اللّي حصل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Relevant cues only: المَيّه is field water, el-MAY-ya, not the number one hundred. المَحْصول is el-mah-SOOL with clear emphatic ص, never س.",
+      "textSHA256": "8a085a215abab08c7ba5d868909ff24d0e1514310598474d204def312ed4391a",
+      "deliverySHA256": "0086a8ee11c4e550e5538ac8ba27f5d508cba8c790c4c91f690392609e331039",
+      "wordCount": 27
+    },
+    {
+      "id": "voice-B-Kore-Pro",
+      "voice": "Kore",
+      "spokenText": "معانا تقرير تحليل لعيّنة طماطم. التّركيز المقاس يوضّح كمّيّة المتبقّي بالنسبة لوزن الغذاء. وجود المتبقّي لوحده مش دليل على التّسمّم، ومش معناه إنّ الجسم امتصّ الكمّيّة دي كلّها.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Relevant cues only: طماطم is ta-MAA-tem in Egyptian Arabic. عيّنة is AY-ye-na (a sample), not ay-YAA-na (ill). المقاس here is el-me-AAS with a glottal stop for qaf; do not pronounce a hard q/k. Do not exaggerate any consonant.",
+      "textSHA256": "0f33137553d3d136cd43067fe8510e20e42a71bc6332378f5dd34129bfeabef8",
+      "deliverySHA256": "3ba3b424334d3686b7ac9e49db428447a9fd859cdc73868cfa8244b5e10c7600",
+      "wordCount": 28
+    }
+  ],
+  "humanListeningApproved": false,
+  "renderAllowed": false,
+  "priorFullV8Status": "Owner reports remaining pronunciation errors; not accepted. Previously accepted clips remain accepted and unchanged.",
+  "officialReferences": [
+    "https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro-preview-tts",
+    "https://ai.google.dev/gemini-api/docs/generate-content/speech-generation?hl=en"
+  ]
+}
