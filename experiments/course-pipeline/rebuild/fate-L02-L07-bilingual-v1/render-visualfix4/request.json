@@ -1,0 +1,199 @@
+{
+  "id": "fate-render-visualfix4",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L07-S08",
+      "layout": "comparison",
+      "title": {
+        "ar": "النموذج مش موعد حصاد",
+        "en": "A model is not a harvest date"
+      },
+      "visualContract": "Decay graph stays separate from label/calendar decision. Cross unsupported link from20days toharvest approval. No actual PHI or dose supplied.",
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "انخفاض المتبقّي",
+            "en": "Residue decline"
+          },
+          "semanticTrigger": "Residue decline"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "التبدّد: انتقال وتحول",
+            "en": "Dissipation: transport and transformation"
+          },
+          "semanticTrigger": "Dissipation: transport and transformation"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد المعتمد",
+            "en": "Authorized harvest date"
+          },
+          "semanticTrigger": "Authorized harvest date"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "الالتزام ببطاقة المنتج",
+            "en": "Follow the product label"
+          },
+          "semanticTrigger": "Follow the product label"
+        }
+      ],
+      "equations": [
+        "20 days ≠ harvest authorization"
+      ],
+      "spoken": {
+        "ar": "النصّ في المصدر يربط الانتظار بانخفاض المتبقّي. بسّ حساب عمر النصف لوحده ما يحدّدش موعد حصاد مسموح. لازم بطاقة المنتج والمحصول والاستخدام المحليّ المعتمد، وتعريف المتبقّي والنواتج والحدّ الساري. كمان نصف عمر التبدّد الحقليّ ممكن يشمل انتقالًا وتحولًا مع بعض، مش التحلّل وحده. وتقليل الجرعة باجتهاد شخصيّ ما يحلّش محلّ البطاقة. نفصل النتيجة الرياضيّة عن القرار التطبيقيّ.",
+        "en": "The source links waiting with residue decline, but a half-life calculation alone cannot establish an authorized harvest date. The product label, crop, locally authorized use, residue definition, products and applicable limit must be considered. A field dissipation half-life may combine transport and transformation rather than describe degradation alone. Independently reducing a dose is not a substitute for label compliance. Keep the mathematical result separate from the application decision."
+      },
+      "timing": null,
+      "sceneID": "L07-S08",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "96fe0c8ae9b169b14f8a0fc1f8100eb54f16a4b1d1c88fd86117500fde94bd67",
+      "deliverySHA256": "6f14ecafcb0918b3faf979b9189d0bb1718e60d211b458f648484e0e886fd17f",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S08-ar-v1",
+        "file": "L07-S08-ar-v1.wav",
+        "sha256": "9f3405fd7aed100dc3d08ae1254430755e6bfaa95a688df779c0e94f14a06317"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L07-S08-ar-v1",
+        "file": "timing.json",
+        "sha256": "4ee713dcac13033459e52740865e7eb9fc4a5f369c43ab23939b8068388e8ac5"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S08",
+        "file": "L07-S08.jpg",
+        "sha256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62"
+      },
+      "imageDisposition": {
+        "scene": "L07-S08",
+        "imageSHA256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 774023,
+      "durationSeconds": 32.25095833333334,
+      "globalStartAudioFrame": 5815601,
+      "globalStartVideoFrame": 7270,
+      "globalEndVideoFrame": 8237
+    },
+    {
+      "id": "en-L07-S08",
+      "layout": "comparison",
+      "title": {
+        "ar": "النموذج مش موعد حصاد",
+        "en": "A model is not a harvest date"
+      },
+      "visualContract": "Decay graph stays separate from label/calendar decision. Cross unsupported link from20days toharvest approval. No actual PHI or dose supplied.",
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "انخفاض المتبقّي",
+            "en": "Residue decline"
+          },
+          "semanticTrigger": "Residue decline"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "التبدّد: انتقال وتحول",
+            "en": "Dissipation: transport and transformation"
+          },
+          "semanticTrigger": "Dissipation: transport and transformation"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد المعتمد",
+            "en": "Authorized harvest date"
+          },
+          "semanticTrigger": "Authorized harvest date"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "الالتزام ببطاقة المنتج",
+            "en": "Follow the product label"
+          },
+          "semanticTrigger": "Follow the product label"
+        }
+      ],
+      "equations": [
+        "20 days ≠ harvest authorization"
+      ],
+      "spoken": {
+        "ar": "النصّ في المصدر يربط الانتظار بانخفاض المتبقّي. بسّ حساب عمر النصف لوحده ما يحدّدش موعد حصاد مسموح. لازم بطاقة المنتج والمحصول والاستخدام المحليّ المعتمد، وتعريف المتبقّي والنواتج والحدّ الساري. كمان نصف عمر التبدّد الحقليّ ممكن يشمل انتقالًا وتحولًا مع بعض، مش التحلّل وحده. وتقليل الجرعة باجتهاد شخصيّ ما يحلّش محلّ البطاقة. نفصل النتيجة الرياضيّة عن القرار التطبيقيّ.",
+        "en": "The source links waiting with residue decline, but a half-life calculation alone cannot establish an authorized harvest date. The product label, crop, locally authorized use, residue definition, products and applicable limit must be considered. A field dissipation half-life may combine transport and transformation rather than describe degradation alone. Independently reducing a dose is not a substitute for label compliance. Keep the mathematical result separate from the application decision."
+      },
+      "timing": null,
+      "sceneID": "L07-S08",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "fd7d30911a9ab118eccb58817a124d72484a87f508546e3a1ba29efab68d33d9",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S08-en-v1",
+        "file": "L07-S08-en-v1.wav",
+        "sha256": "12c54a2b46d9e6e3703bf02af73a5fa2a642ec6f659d945b153acccad0412d04"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L07-S08-en-v1",
+        "file": "timing.json",
+        "sha256": "689b5e163a857db5934e08e6a76a72b5f9dfe1f40ddea7c8187e3ea94c1bb04b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S08",
+        "file": "L07-S08.jpg",
+        "sha256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62"
+      },
+      "imageDisposition": {
+        "scene": "L07-S08",
+        "imageSHA256": "848155eff9e243adfb3900001a9afdf8ad1e6166edf4f9cbbff73d86bb4f8c62",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 831623,
+      "durationSeconds": 34.650958333333335,
+      "globalStartAudioFrame": 5950001,
+      "globalStartVideoFrame": 7438,
+      "globalEndVideoFrame": 8477
+    }
+  ]
+}
