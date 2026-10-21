@@ -1,0 +1,206 @@
+{
+  "id": "L06-ar",
+  "locale": "ar",
+  "newSpeechCalls": 0,
+  "maxJoinReviewCalls": 1,
+  "automaticRetries": 0,
+  "scope": "Assemble only these verified scenes and unchanged PCM; one actual-join listening check. No publication.",
+  "scenes": [
+    {
+      "id": "ar-L06-S01",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S01-ar-v1",
+        "file": "L06-S01-ar-v1.wav",
+        "sha256": "b77af14a691acc8308a1efb2bf5ed6a91165ce9d46ea947cab80e08c660039f4"
+      },
+      "audioFrames": 824903,
+      "render": {
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S01-L06",
+        "file": "visual.mp4",
+        "sha256": "174c999fa2e0adbe4fed012a4040b3683c460e1a510769df6b01dd5ac692e6b9"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S01-L06",
+        "audioSHA256": "b77af14a691acc8308a1efb2bf5ed6a91165ce9d46ea947cab80e08c660039f4",
+        "silentVisualSHA256": "174c999fa2e0adbe4fed012a4040b3683c460e1a510769df6b01dd5ac692e6b9",
+        "timingInputsSHA256": "edd12a414dec22ebe0dab02fe15aa30738a90d12ff15c08a39252ca1a4d3052a",
+        "viewedFrame": "frame-03.png",
+        "viewedFrameSHA256": "744481153eb065ff4a2b0e19a21a2c7c746568aa81952cf23d49b08af157d9ad",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch3 sheets for labels, layout, units and scientific relationships. Model-derived timing and decoded soundtrack separately checked; no claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:31:41.402405+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S02",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S02-ar-v1",
+        "file": "L06-S02-ar-v1.wav",
+        "sha256": "888f0024946dbe699cbe230c4bbba8783086c6c0b787367f405b758f8973b7bf"
+      },
+      "audioFrames": 819143,
+      "render": {
+        "run": 39608522951,
+        "artifact": "fate-next-scene-ar-L06-S02-visualfix1r2",
+        "file": "visual.mp4",
+        "sha256": "b191f897a783a0a6785047486fcd5d29bc3b33563c0bdf9df589b58b0ee0621f"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39608522951,
+        "artifact": "fate-next-scene-ar-L06-S02-visualfix1r2",
+        "audioSHA256": "888f0024946dbe699cbe230c4bbba8783086c6c0b787367f405b758f8973b7bf",
+        "silentVisualSHA256": "b191f897a783a0a6785047486fcd5d29bc3b33563c0bdf9df589b58b0ee0621f",
+        "timingInputsSHA256": "40fc7caf02c7571ea9f5d485156d12c3484d6443de24647481c56448fd469665",
+        "viewedFrame": "frame-04.png",
+        "viewedFrameSHA256": "13806008b67d0fa901b0fcf848e1b22c702ebe296a3dfa429a4e0ad2f43454d6",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch4-01; checked readable Arabic/English labels, numeric direction and scientific distinctions. Not a claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:39:04.756183+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S03",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S03-ar-v1",
+        "file": "L06-S03-ar-v1.wav",
+        "sha256": "6fa73b5cb0264ef6e22c1aac6cad1ccdda8c9371e5d874c3b9fdf8531985fec8"
+      },
+      "audioFrames": 758663,
+      "render": {
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S03-L06",
+        "file": "visual.mp4",
+        "sha256": "06f608d752838683603e3b862ef1a7f4d51b63940a66b43c0de18c5837279aaa"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S03-L06",
+        "audioSHA256": "6fa73b5cb0264ef6e22c1aac6cad1ccdda8c9371e5d874c3b9fdf8531985fec8",
+        "silentVisualSHA256": "06f608d752838683603e3b862ef1a7f4d51b63940a66b43c0de18c5837279aaa",
+        "timingInputsSHA256": "0feca5fd7fb05e9167f4dbccb2fa7750d7ebe3d4ad6c0bc1a8bf6236757dfe1b",
+        "viewedFrame": "frame-03.png",
+        "viewedFrameSHA256": "9e479eb4def03ba4dbcc15cf0c6239f0f1ffeb513c5f201ddb898fe26d0e1da6",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch3 sheets for labels, layout, units and scientific relationships. Model-derived timing and decoded soundtrack separately checked; no claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:31:41.404476+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S04",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S04-ar-v1",
+        "file": "L06-S04-ar-v1.wav",
+        "sha256": "258399bb0f90cca854d9f29f4070a632a7835491b5a8a097cb339aa8a3d40608"
+      },
+      "audioFrames": 738503,
+      "render": {
+        "run": 39609045900,
+        "artifact": "fate-next-scene-ar-L06-S04-visualfix3",
+        "file": "visual.mp4",
+        "sha256": "adbd4b91201026c626eaadf2606ebd9ef4533f1e61b53cf9670d805df05019f6"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39609045900,
+        "artifact": "fate-next-scene-ar-L06-S04-visualfix3",
+        "audioSHA256": "258399bb0f90cca854d9f29f4070a632a7835491b5a8a097cb339aa8a3d40608",
+        "silentVisualSHA256": "adbd4b91201026c626eaadf2606ebd9ef4533f1e61b53cf9670d805df05019f6",
+        "timingInputsSHA256": "92b631fb817571038dcb040ec2ee4a697f3cf60c52fcccf68e7fbee20bd24ef1",
+        "viewedFrame": "frame-04.png",
+        "viewedFrameSHA256": "4e7a5bd75edbf15ba7104e35d1b00078d01befa40f015be08993d13bbaf2f506",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch5-00; checked readable Arabic/English labels, numeric direction and scientific distinctions. Not a claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:40:14.180789+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S05",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S05-ar-v1",
+        "file": "L06-S05-ar-v1.wav",
+        "sha256": "dc94f05a16d15c354a7fd7f05e3d3fc0d4e21a019706ec3742175e904d8826e4"
+      },
+      "audioFrames": 854663,
+      "render": {
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S05-L06",
+        "file": "visual.mp4",
+        "sha256": "5413829fee60ee7bf2177c34d4639a2e86f14b3375c52395136ed84686ec0d6e"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S05-L06",
+        "audioSHA256": "dc94f05a16d15c354a7fd7f05e3d3fc0d4e21a019706ec3742175e904d8826e4",
+        "silentVisualSHA256": "5413829fee60ee7bf2177c34d4639a2e86f14b3375c52395136ed84686ec0d6e",
+        "timingInputsSHA256": "6feb7c998f7f400c9974da0dc00b1dfb94c6c45fc659b8c805547377caf7a45f",
+        "viewedFrame": "frame-04.png",
+        "viewedFrameSHA256": "73f8e0239b90cd3437cc5b44bb1740d4c46e4eb033663158417e1491486bfb6e",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch3 sheets for labels, layout, units and scientific relationships. Model-derived timing and decoded soundtrack separately checked; no claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:31:41.405468+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S06",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S06-ar-v1",
+        "file": "L06-S06-ar-v1.wav",
+        "sha256": "6e6621b0f45aa466e6a6ec6d82b9900498ae4107854fa99494116f5bcefe9711"
+      },
+      "audioFrames": 893063,
+      "render": {
+        "run": 39609045900,
+        "artifact": "fate-next-scene-ar-L06-S06-visualfix3",
+        "file": "visual.mp4",
+        "sha256": "a4b3657ff8927960b2841d2443756176cb26de94efd695737a83ba59cba9446a"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39609045900,
+        "artifact": "fate-next-scene-ar-L06-S06-visualfix3",
+        "audioSHA256": "6e6621b0f45aa466e6a6ec6d82b9900498ae4107854fa99494116f5bcefe9711",
+        "silentVisualSHA256": "a4b3657ff8927960b2841d2443756176cb26de94efd695737a83ba59cba9446a",
+        "timingInputsSHA256": "3c83d0539a2d4ae7d4ddfde261d6c217a417cb707b0699cb9a9a3d639d7635c7",
+        "viewedFrame": "frame-04.png",
+        "viewedFrameSHA256": "00a18ec7f3daa4ff6f4b3e2aeedb990e87b04605dbd27e6fc6119d6173d5ab6d",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch5-01; checked readable Arabic/English labels, numeric direction and scientific distinctions. Not a claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:40:14.180789+00:00"
+      }
+    },
+    {
+      "id": "ar-L06-S07",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S07-ar-v1",
+        "file": "L06-S07-ar-v1.wav",
+        "sha256": "cf3a1d0f5c0ed22f250edf03e84c98c18313cc2e935ad2a162a6df0b4a5f634b"
+      },
+      "audioFrames": 839303,
+      "render": {
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S07-L06",
+        "file": "visual.mp4",
+        "sha256": "32ba358855a67311ee0a81a3810b9825df9af4934292f7c0fc6e9320fee63fe1"
+      },
+      "visualReview": {
+        "status": "reviewed",
+        "run": 39607024752,
+        "artifact": "fate-next-scene-ar-L06-S07-L06",
+        "audioSHA256": "cf3a1d0f5c0ed22f250edf03e84c98c18313cc2e935ad2a162a6df0b4a5f634b",
+        "silentVisualSHA256": "32ba358855a67311ee0a81a3810b9825df9af4934292f7c0fc6e9320fee63fe1",
+        "timingInputsSHA256": "ec9837e6e4285c0670bb2ac7774fdc2691fe966278778eefba81dd40ea2168f6",
+        "viewedFrame": "frame-04.png",
+        "viewedFrameSHA256": "d3eea1ab022a48d17983f75ec3c40853abf72e7385f2ae40cb2a2e3680bc457f",
+        "reviewMethod": "Agent inspected actual rendered checkpoint pixels in batch3 sheets for labels, layout, units and scientific relationships. Model-derived timing and decoded soundtrack separately checked; no claim of full human playback.",
+        "reviewedUTC": "2026-10-21T13:31:41.407413+00:00"
+      }
+    }
+  ]
+}

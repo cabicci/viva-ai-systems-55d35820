@@ -1,0 +1,32 @@
+name: Fate complete verified lesson L04-en
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/assemble-L04-en/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/assemble-L04-en
+  EXPECTED_REQUEST_SHA256: e25eb2d3c69c0dbbabb33e9c0740ab42e1a3c76285e71f30caeff5a08cb751bd
+jobs:
+  assemble:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Assemble exact PCM and inspect actual joins
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/worker.py"
+      - name: Receive complete lesson or preserved review evidence immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-complete-L04-en
+          path: ${{ env.PACKAGE }}/final/
+          retention-days: 30
