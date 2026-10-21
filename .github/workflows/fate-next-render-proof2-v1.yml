@@ -1,0 +1,49 @@
+name: Fate verified scene render proof2
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-proof2/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-proof2
+  EXPECTED_REQUEST_SHA256: 472061cd4099f21a3fe279c357f1a1dd94c4e48297c6e3242391ebc94721d951
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        scene: ["ar-L02-S04", "en-L02-S04"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify actual sources and acoustic evidence
+        run: python "$PACKAGE/prepare.py" "${{ matrix.scene }}"
+      - name: Install exact renderer dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/render-proof2
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver each checkpoint set immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-stills-${{ matrix.scene }}-proof2
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and decode-verify scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify.py" scene
+      - name: Deliver finished scene immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-scene-${{ matrix.scene }}-proof2
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
