@@ -1,0 +1,1360 @@
+{
+  "id": "fate-next-analysis-L07",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 17,
+  "maxAdjudicationCalls": 8,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L07-S01-ar-v1",
+      "sceneID": "L07-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "المادّة ممكن تفضل قدّ إيه؟ تتحرّك بسهولة قدّ إيه؟ تؤثّر على كائنات غير مستهدفة إزاي؟ وكمية استخدامها قدّ إيه؟ دول أربع محاور موجودين في شكل المصدر. هنستخدمهم كأسئلة لجمع الدليل، مش نضربهم في بعض ونطلع رقم مخاطر. نفس الخاصيّة ممكن تتفاعل مع ظروف مختلفة: مطر وحرارة وتربة ونوع كائن. ترتيب الخواص يساعدنا نفهم الاحتمالات، لكن توقّع التعرّض الفعليّ محتاج سياق وبيانات.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "d01dbbc067ac9ae991fdd1c0e0843ecd7545bffc37caf4a8c76a42f78d73e137",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S01-ar-v1",
+        "file": "L07-S01-ar-v1.wav",
+        "sha256": "179e821fc8835cf5bf9b035df42b2e31027430e1267c75458d03fd7183a3b0e4"
+      },
+      "durationSeconds": 40.930958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L07-S01-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 39.9,
+              "end": 40.3,
+              "category": "omission",
+              "heard": "وبيان",
+              "expected": "وبينات",
+              "heardPhonetics": "/wæbæjaːn/",
+              "suggestion": "نطق الكلمة كاملة \"وبينات\"",
+              "reason": "تم حذف لاحقة الجمع \"ات\" من كلمة \"بيانات\". في سياق الجملة \"سياق وبيانات\"، الكلمة المتوقعة هي بصيغة الجمع.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L07-S01-A1",
+          "label": {
+            "ar": "الثبات",
+            "en": "Persistence"
+          },
+          "semanticTrigger": "Persistence"
+        },
+        {
+          "id": "L07-S01-A2",
+          "label": {
+            "ar": "الحركة",
+            "en": "Mobility"
+          },
+          "semanticTrigger": "Mobility"
+        },
+        {
+          "id": "L07-S01-A3",
+          "label": {
+            "ar": "سمية لغير المستهدف",
+            "en": "Non-target toxicity"
+          },
+          "semanticTrigger": "Non-target toxicity"
+        },
+        {
+          "id": "L07-S01-A4",
+          "label": {
+            "ar": "حجم الاستخدام",
+            "en": "Use volume"
+          },
+          "semanticTrigger": "Use volume"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S02-ar-v1",
+      "sceneID": "L07-S02",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "قبل قراءة جدول الخواص، نثبت هوية المادّة وصورتها ونقاوتها. المتماكبات ممكن تختلف في السلوك والنشاط، والمستحضر مش بالضرورة نفس المادّة النقيّة في تجربة معملية. قيمة الذوبان لازم نعرف معاها الحرارة ودرجة الحموضة والطريقة. والضغط البخاريّ يساعد في فهم قابلية التطاير تحت شروط محدّدة. الوزن الجزيئيّ أو خاصيّة واحدة لوحدها ما يكفيش لتوقّع المصير كله. كلّ قيمة محتاجة بطاقة ظروف، مش رقم منفصل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "5f6d7121deab004994da5428a32c6e4ef21f05368d8fc04cd28e11614dac9b8d",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S02-ar-v1",
+        "file": "L07-S02-ar-v1.wav",
+        "sha256": "9f6ae2b21391cf424294fb2ad8179926faaf188c3286ad678926562c4321c3c1"
+      },
+      "durationSeconds": 33.330958333333335,
+      "reviewConcerns": [
+        {
+          "source": "L07-S02-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 5.0,
+              "end": 5.8,
+              "category": "substitution",
+              "heard": "المتمكبات",
+              "expected": "المتراكبات",
+              "heardPhonetics": "el-mo-ta-mak-ka-bat",
+              "suggestion": "النطق الصحيح هو 'المتراكبات' بـ 'ر' بدل 'م'.",
+              "reason": "تم استبدال صوت الراء (r) بصوت الميم (m) في كلمة 'المتراكبات'.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 30.8,
+              "end": 31.8,
+              "category": "pronunciation",
+              "heard": "بطاقة ظروف",
+              "expected": "بطاقة ظروف",
+              "heardPhonetics": "bi-ta-ʔit ẓu-ruf",
+              "suggestion": "يُفضل نطق حرف الطاء (ط) بشكل أوضح وأكثر تفخيماً.",
+              "reason": "تم نطق حرف الطاء (ط) في كلمة 'بطاقة' بشكل خفيف وغير مفخم بما يكفي، مما يجعله أقرب لصوت التاء (ت) في بعض الأحيان.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L07-S02-A1",
+          "label": {
+            "ar": "هوية وصورة المادة",
+            "en": "Identity and form"
+          },
+          "semanticTrigger": "Identity and form"
+        },
+        {
+          "id": "L07-S02-A2",
+          "label": {
+            "ar": "النقاوة",
+            "en": "Purity"
+          },
+          "semanticTrigger": "Purity"
+        },
+        {
+          "id": "L07-S02-A3",
+          "label": {
+            "ar": "حرارة وحموضة",
+            "en": "Temperature and pH"
+          },
+          "semanticTrigger": "Temperature and pH"
+        },
+        {
+          "id": "L07-S02-A4",
+          "label": {
+            "ar": "طريقة القياس",
+            "en": "Measurement method"
+          },
+          "semanticTrigger": "Measurement method"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S03-ar-v1",
+      "sceneID": "L07-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "لما الجزيء يرتبط بسطح حبيبة تربة، بنتكلم عن امتزاز. لو دخل جوّه وسط أو نسيج، ده امتصاص. وكلمة السوربشن أوسع، وممكن تشمل عمليّات ارتباط مختلفة. في الرسم، هنخلّي علامة الجزيء على السطح في حالة، وجوّه الوسط في الحالة التانية. الارتباط بالتربة ممكن يأثّر على الحركة والتوافر، لكنه مش دليل إنّ المادّة اتحطّمت. وممكن يحصل انتقال عكسيّ حسب الخواص والظروف.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "5014fd532153921f103efb13f742d975fc944e87e31f14c59487ff7818cee08a",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S03-ar-v1",
+        "file": "L07-S03-ar-v1.wav",
+        "sha256": "6842fefd0eaefbfc9ac09be86e5d7f5eed2f19b9f2efeb5ea50aed721c5c7a72"
+      },
+      "durationSeconds": 32.290958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L07-S03-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 19.0,
+              "end": 19.4,
+              "category": "pronunciation",
+              "heard": "وجوه",
+              "expected": "جوه",
+              "heardPhonetics": "/wuguːh/",
+              "suggestion": "يُفضل نطق الكلمة 'جوه' (gawwa) بمعنى 'داخل' لتتناسب مع السياق العلمي.",
+              "reason": "الكلمة المنطوقة 'وجوه' (بمعنى 'faces') لا تتناسب مع السياق الذي يقارن بين وجود الجزيء على السطح ووجوده داخل الوسط. الكلمة المقصودة على الأرجح هي 'جوه' (بمعنى 'inside')، وقد حدث تغيير كبير في النطق من /gawwa/ إلى /wuguːh/.",
+              "severity": "major",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.01,
+                "end": 0.02,
+                "category": "Speaking Style",
+                "observation": "Slight unnatural connection between words 'يرتبط بسطح'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.04,
+                "end": 0.05,
+                "category": "Speaking Style",
+                "observation": "The word 'امتزاز' sounds slightly cut or pieced together.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.09,
+                "end": 0.1,
+                "category": "Speaking Style",
+                "observation": "Unnatural pause/break in the phrase 'كلمة السوربشن'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.14,
+                "end": 0.15,
+                "category": "Speaking Style",
+                "observation": "Noticeable break in flow between 'مختلفة' and 'في الرسم'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.2,
+                "end": 0.21,
+                "category": "Speaking Style",
+                "observation": "Noticeable break in flow between 'الثانية' and 'الارتباط'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.25,
+                "end": 0.26,
+                "category": "Speaking Style",
+                "observation": "Slight unnatural connection between words 'التوافر لكنه'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.28,
+                "end": 0.29,
+                "category": "Speaking Style",
+                "observation": "Slight unnatural connection between words 'تحطمت وممكن'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.0,
+                "end": 0.32,
+                "category": "Vocal Weight",
+                "observation": "The overall vocal weight is slightly lighter/thinner compared to the reference voice.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.0,
+                "end": 0.32,
+                "category": "Speaking Style",
+                "observation": "Some phrases lack natural intonation, occasionally sounding a bit flat or robotic.",
+                "certainty": "medium"
+              }
+            ],
+            "notes": "The candidate voice generally matches the reference in timbre and register. However, there are consistent issues with the speaking style, including frequent unnatural pauses, chopped delivery between words and phrases, and a slightly lighter vocal weight. The intonation, while mostly following Egyptian Arabic patterns, occasionally lacks the natural fluidity and expressiveness of the reference, contributing to a less natural overall delivery."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L07-S03-A1",
+          "label": {
+            "ar": "على السطح",
+            "en": "At the surface"
+          },
+          "semanticTrigger": "At the surface"
+        },
+        {
+          "id": "L07-S03-A2",
+          "label": {
+            "ar": "داخل الطور",
+            "en": "Inside the phase"
+          },
+          "semanticTrigger": "Inside the phase"
+        },
+        {
+          "id": "L07-S03-A3",
+          "label": {
+            "ar": "الهوية لم تتغير",
+            "en": "Identity unchanged"
+          },
+          "semanticTrigger": "Identity unchanged"
+        },
+        {
+          "id": "L07-S03-A4",
+          "label": {
+            "ar": "مصطلح أشمل",
+            "en": "Umbrella term"
+          },
+          "semanticTrigger": "Umbrella term"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S04-ar-v1",
+      "sceneID": "L07-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "7d43fc66ede90f1377d302ab63cb90d0f5a2bfa422678b2162c426853467a20c",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S04-ar-v1",
+        "file": "L07-S04-ar-v1.wav",
+        "sha256": "7be176f52e45b153a3e4e9fcfe9b96841ad54e03d5caf8a5d6feb2a30d0f8504"
+      },
+      "durationSeconds": 38.85095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L07-S04-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 0.03,
+              "end": 0.035,
+              "category": "substitution",
+              "heard": "ورذاذ",
+              "expected": "رذاذ",
+              "heardPhonetics": "/wɑrɑˈðæːð/",
+              "suggestion": "انطق 'رذاذ' مباشرة بعد 'انجراف' بدون حرف الواو.",
+              "reason": "تم إضافة حرف الواو قبل كلمة 'رذاذ' في النطق، وهو غير موجود في النص الأصلي.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 38.850958,
+                "category": "timbre",
+                "observation": "The candidate's voice exhibits a slightly brighter and less resonant timbre compared to the reference, which presents a warmer and fuller quality. This difference is subtle but consistently audible.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate's register, vocal weight, and overall speaking style (including intonation and articulation) are well-matched to the reference. The pace of the candidate is slightly faster than the reference but remains natural. Within-candidate consistency is excellent, with no unnatural chopped delivery or internal inconsistencies observed."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S05-ar-v1",
+      "sceneID": "L07-S05",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نتابع مخطط العمليات الموجود في المصدر. القطرات بتتكوّن، وتتحرّك ناحية الهدف، وتوصل لسطح وتتصادم معاه. جزء ممكن يفضل عليه، وجزء ممكن يرتدّ. وفي الطريق ممكن يحصل انجراف أو تبخّر. القطرات اللي احتفظ بيها السطح ممكن تنتشر ويتكوّن منها ترسيب بعد الجفاف. خواص الرذاذ والسطح والجوّ بتأثّر في الخطوات دي. ده تفسير للمسارات، مش توصية بحجم قطرة أو ضغط أو إعداد رشّ معيّن.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "4d2fb5ededfbc9750ad6e8417d037785cccb76163096c7dcdf95ac45b3653819",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S05-ar-v1",
+        "file": "L07-S05-ar-v1.wav",
+        "sha256": "0aba490a480866730d6e9b883297aa072b390ae1827865c88f5afaaf3e2e0d9d"
+      },
+      "durationSeconds": 30.050958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L07-S05-A1",
+          "label": {
+            "ar": "تكوين قطرات",
+            "en": "Droplet formation"
+          },
+          "semanticTrigger": "Droplet formation"
+        },
+        {
+          "id": "L07-S05-A2",
+          "label": {
+            "ar": "انتقال واصطدام",
+            "en": "Transport and impact"
+          },
+          "semanticTrigger": "Transport and impact"
+        },
+        {
+          "id": "L07-S05-A3",
+          "label": {
+            "ar": "احتفاظ أو ارتداد",
+            "en": "Retention or reflection"
+          },
+          "semanticTrigger": "Retention or reflection"
+        },
+        {
+          "id": "L07-S05-A4",
+          "label": {
+            "ar": "انتشار وجفاف",
+            "en": "Spreading and drying"
+          },
+          "semanticTrigger": "Spreading and drying"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S06-ar-v1",
+      "sceneID": "L07-S06",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "بعد الترسيب، المادّة ممكن تتحرّك على السطح أو جوّه النبات حسب خواصها وظروفه. وممكن يحصل امتصاص أو إعادة توزيع أو فقد مع التجوية. الوصول للسطح مش نفس الدخول للأنسجة، والدخول مش نفس حدوث أثر بيولوجيّ. المخطط بيساعدنا نحدد الخطوة اللي نحتاج نقيسها. مثلًا، عشان نفهم فقد بعد المطر، نراجع ما تبقّى على السطح وما انتقل، بدل ما نفترض إنّ كلّ النقص تحلّل كيميائيّ.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "9e61a9eb2cee5f4f3bd92015cf35d55cd76efcc686607323d479ba29aa2c41dd",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S06-ar-v1",
+        "file": "L07-S06-ar-v1.wav",
+        "sha256": "bdbb0c6a1d0983cb7aae4f0263be6a41c17f20ff8ea6311fe89399bb40f9e5ab"
+      },
+      "durationSeconds": 31.410958333333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S07-ar-v1",
+      "sceneID": "L07-S07",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نستخدم نموذجًا افتراضيًّا من الرتبة الأولى، وتركيز البداية تمانية ملّيجرام لكلّ كيلوجرام. لو عمر النصف عشرة أيّام في ظروف النموذج، بعد عشرة أيّام يبقى أربعة، وبعد عشرين يوم يبقى اتنين. في كلّ مرة بننصّف الباقي، مش بنطرح أربعة للأبد. المعادلة تمانية في نصّ مرفوع لعدد فترات عمر النصف. ولو استخدمنا ثابت المعدّل، عمر النصف يساوي اللوغاريتم الطبيعيّ لاتنين مقسوم على الثابت. النموذج لازم يناسب البيانات والظروف.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "765207600383cfe07bae19d9656111c0daa6b19cb37cfcc459005e8de8152577",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S07-ar-v1",
+        "file": "L07-S07-ar-v1.wav",
+        "sha256": "8c2859fe8d79b064744ae9401c5615e553c67f55830c6618342ca10dc0d4b298"
+      },
+      "durationSeconds": 35.81095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L07-S07-A1",
+          "label": {
+            "ar": "تركيز البداية",
+            "en": "Initial concentration"
+          },
+          "semanticTrigger": "Initial concentration"
+        },
+        {
+          "id": "L07-S07-A2",
+          "label": {
+            "ar": "بعد نصف عمر",
+            "en": "After one half-life"
+          },
+          "semanticTrigger": "After one half-life"
+        },
+        {
+          "id": "L07-S07-A3",
+          "label": {
+            "ar": "بعد نصفي عمر",
+            "en": "After two half-lives"
+          },
+          "semanticTrigger": "After two half-lives"
+        },
+        {
+          "id": "L07-S07-A4",
+          "label": {
+            "ar": "نصف الباقي كل مرة",
+            "en": "Half of what remains"
+          },
+          "semanticTrigger": "Half of what remains"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S08-ar-v1",
+      "sceneID": "L07-S08",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "النصّ في المصدر يربط الانتظار بانخفاض المتبقّي. بسّ حساب عمر النصف لوحده ما يحدّدش موعد حصاد مسموح. لازم بطاقة المنتج والمحصول والاستخدام المحليّ المعتمد، وتعريف المتبقّي والنواتج والحدّ الساري. كمان نصف عمر التبدّد الحقليّ ممكن يشمل انتقالًا وتحولًا مع بعض، مش التحلّل وحده. وتقليل الجرعة باجتهاد شخصيّ ما يحلّش محلّ البطاقة. نفصل النتيجة الرياضيّة عن القرار التطبيقيّ.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: المَحْصول: el-mah-SOOL, clear emphatic ص, not س.",
+      "textSHA256": "96fe0c8ae9b169b14f8a0fc1f8100eb54f16a4b1d1c88fd86117500fde94bd67",
+      "deliverySHA256": "6f14ecafcb0918b3faf979b9189d0bb1718e60d211b458f648484e0e886fd17f",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S08-ar-v1",
+        "file": "L07-S08-ar-v1.wav",
+        "sha256": "9f3405fd7aed100dc3d08ae1254430755e6bfaa95a688df779c0e94f14a06317"
+      },
+      "durationSeconds": 32.25095833333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "منحنى توضيحي",
+            "en": "Illustrative curve"
+          },
+          "semanticTrigger": "Illustrative curve"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "ظروف وحدود النموذج",
+            "en": "Model assumptions and limits"
+          },
+          "semanticTrigger": "Model assumptions and limits"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد يحتاج مرجعًا",
+            "en": "Harvest date requires authority"
+          },
+          "semanticTrigger": "Harvest date requires authority"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "لا فترة أمان مستنتجة",
+            "en": "No inferred pre-harvest interval"
+          },
+          "semanticTrigger": "No inferred pre-harvest interval"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S09-ar-v1",
+      "sceneID": "L07-S09",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "العلاقة الكمّيّة بين التركيب والنشاط بتحاول تربط خواص وتركيب المادّة باستجابة ضمن بيانات ونموذج محدّدين. عشان نستخدمها، نحتاج نعرف مجال الصلاحية وطريقة التحقق وعدم اليقين. مش كلّ مادّة جديدة ينفع ندخلها في أيّ معادلة. في التطبيق الأخير، مطر نزل على تربة رمليّة بعد استخدام مبيد: اكتب مسارين محتملين، والبيانات اللي تميّز بينهم. وبعدها فرّق بين توقع النموذج، والقياس الحقيقيّ، والقرار اللي لسه محتاج دليل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "d3ab04bc248883956e5b4cb96c26f796173e785ef8f0ad63a7a64828812358c6",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S09-ar-v1",
+        "file": "L07-S09-ar-v1.wav",
+        "sha256": "79b0bac1016fc71b1fe8e49e22696071d24a47676fed270373472aed015eef44"
+      },
+      "durationSeconds": 36.370958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S01-en-v1",
+      "sceneID": "L07-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "How long might the substance persist? How readily can it move? What effects can it have on non-target organisms? How much is used? These are four prompts in the source figure. Use them to organize evidence, not multiply them into an invented risk score. Properties interact with rainfall, temperature, soil and organisms. Organizing them helps explain plausible pathways, while predicting actual exposure requires context and data.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "21e81ebb6e6b05a2accb7a25b4f918a60840ab80b1a3351c5e57738dfbd57dd4",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S01-en-v1",
+        "file": "L07-S01-en-v1.wav",
+        "sha256": "3dfd6801e2661bdfeb991d46255db75751b77801f56e7db5312e33f4f191f7ab"
+      },
+      "durationSeconds": 33.730958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L07-S01-A1",
+          "label": {
+            "ar": "الثبات",
+            "en": "Persistence"
+          },
+          "semanticTrigger": "Persistence"
+        },
+        {
+          "id": "L07-S01-A2",
+          "label": {
+            "ar": "الحركة",
+            "en": "Mobility"
+          },
+          "semanticTrigger": "Mobility"
+        },
+        {
+          "id": "L07-S01-A3",
+          "label": {
+            "ar": "سمية لغير المستهدف",
+            "en": "Non-target toxicity"
+          },
+          "semanticTrigger": "Non-target toxicity"
+        },
+        {
+          "id": "L07-S01-A4",
+          "label": {
+            "ar": "حجم الاستخدام",
+            "en": "Use volume"
+          },
+          "semanticTrigger": "Use volume"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S02-en-v1",
+      "sceneID": "L07-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Before reading a property table, establish chemical identity, form and purity. Stereochemical forms may differ in behavior or activity, and a formulation is not necessarily equivalent to a pure substance in a laboratory test. Solubility values need temperature, pH and method information. Vapour pressure informs volatility under stated conditions. Molecular weight or any single property cannot predict the entire environmental fate. Every value needs its measurement context.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "8d4f8a53a454abbcacdd3fc3cbb59a28729da1385163e50290a87186b6e46c3c",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S02-en-v1",
+        "file": "L07-S02-en-v1.wav",
+        "sha256": "39c0b4e8d07d7115471847862c1ed7264ddc392d09825c735c2f332af3387a6d"
+      },
+      "durationSeconds": 38.930958333333336,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 38.93,
+                "category": "timbre",
+                "observation": "The candidate voice exhibits a subtle but consistent difference in timbre compared to the reference. While very close, it possesses a slightly less resonant or 'full' quality, with a hint of a processed characteristic that makes it sound marginally less natural than the reference voice.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice maintains a very similar register, vocal weight, and speaking style (deliberate, clear, university narration) to the reference. There are no signs of unnatural chopped delivery or significant deviations in speaking rhythm or articulation. The overall consistency within the candidate audio is high. The primary distinction lies in the subtle timbral characteristics, which, while not a drastic departure, are audibly different enough to warrant a 'concern' status."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L07-S02-A1",
+          "label": {
+            "ar": "هوية وصورة المادة",
+            "en": "Identity and form"
+          },
+          "semanticTrigger": "Identity and form"
+        },
+        {
+          "id": "L07-S02-A2",
+          "label": {
+            "ar": "النقاوة",
+            "en": "Purity"
+          },
+          "semanticTrigger": "Purity"
+        },
+        {
+          "id": "L07-S02-A3",
+          "label": {
+            "ar": "حرارة وحموضة",
+            "en": "Temperature and pH"
+          },
+          "semanticTrigger": "Temperature and pH"
+        },
+        {
+          "id": "L07-S02-A4",
+          "label": {
+            "ar": "طريقة القياس",
+            "en": "Measurement method"
+          },
+          "semanticTrigger": "Measurement method"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S03-en-v1",
+      "sceneID": "L07-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Association with a soil-particle surface is adsorption. Entry into the bulk of a phase or tissue is absorption. Sorption is a broader term that can encompass different association processes. Our diagram keeps the marker on the surface in one case and inside the phase in the other. Soil association can affect mobility and availability, but does not establish chemical destruction. Reverse transfer may occur depending on properties and conditions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "731dba712ef7a68ec39663c05f3ce9673bd88e03d04c0bc1f15e6c01115af7b5",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S03-en-v1",
+        "file": "L07-S03-en-v1.wav",
+        "sha256": "7a4d7cc2d4ea6eaf68a29465500bf18aaf079c125ba284803242bc0362371284"
+      },
+      "durationSeconds": 33.21095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L07-S03-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 29.5,
+              "end": 30.0,
+              "category": "delivery",
+              "heard": "transf-er",
+              "expected": "transfer",
+              "heardPhonetics": "tɹænsf ɜːɹ",
+              "suggestion": "Ensure smooth articulation of multi-syllabic words.",
+              "reason": "There is a slight, unnatural break or hesitation in the middle of the word 'transfer', making it sound like two distinct parts rather than a single fluid word.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 3.0,
+                "end": 4.5,
+                "category": "speaking_style",
+                "observation": "The word 'adsorption' sounds slightly isolated and less naturally integrated into the sentence flow, exhibiting a minor choppiness.",
+                "certainty": "high"
+              },
+              {
+                "start": 8.0,
+                "end": 9.5,
+                "category": "speaking_style",
+                "observation": "Similar to 'adsorption', the word 'absorption' feels slightly detached and less fluid in its delivery.",
+                "certainty": "high"
+              },
+              {
+                "start": 10.5,
+                "end": 12.0,
+                "category": "speaking_style",
+                "observation": "The transition from 'Sorption' to 'is a broader term' has a slight unnaturalness in its rhythm and connection, making it sound less fluid.",
+                "certainty": "high"
+              },
+              {
+                "start": 19.5,
+                "end": 21.5,
+                "category": "speaking_style",
+                "observation": "The phrase 'inside the phase' exhibits a minor unnaturalness in its rhythm and connection, departing from the smooth flow of the reference.",
+                "certainty": "high"
+              },
+              {
+                "start": 29.0,
+                "end": 30.5,
+                "category": "speaking_style",
+                "observation": "The word 'transfer' in 'reverse transfer' sounds slightly stilted and less naturally articulated.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice generally maintains the audible timbre, register, and vocal weight of the owner-accepted reference. The overall speaking style is consistent with academic narration and clear enunciation. However, there are several subtle but audible instances where the candidate's delivery exhibits minor departures from the natural, fluid speech of the reference. These include slight choppiness, less natural phrasing, and less smooth transitions between words, particularly noticeable around technical terms and phrase boundaries. While not severe, these issues contribute to a slightly less organic listening experience compared to the reference."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L07-S03-A1",
+          "label": {
+            "ar": "على السطح",
+            "en": "At the surface"
+          },
+          "semanticTrigger": "At the surface"
+        },
+        {
+          "id": "L07-S03-A2",
+          "label": {
+            "ar": "داخل الطور",
+            "en": "Inside the phase"
+          },
+          "semanticTrigger": "Inside the phase"
+        },
+        {
+          "id": "L07-S03-A3",
+          "label": {
+            "ar": "الهوية لم تتغير",
+            "en": "Identity unchanged"
+          },
+          "semanticTrigger": "Identity unchanged"
+        },
+        {
+          "id": "L07-S03-A4",
+          "label": {
+            "ar": "مصطلح أشمل",
+            "en": "Umbrella term"
+          },
+          "semanticTrigger": "Umbrella term"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S04-en-v1",
+      "sceneID": "L07-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Runoff, leaching, spray drift and volatilization can move a substance between locations or phases. Hydrolysis, photolysis and biological transformation can change chemical identity. A transported marker therefore keeps its identity, while a transformed marker becomes a distinct product symbol. Declining parent concentration in a field sample can reflect several processes together. Do not assume every transformation reaches carbon dioxide and water or produces substances without effects.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "8e430cddac544e8c8f05c1d4588b7d52e353202150cc9faf08387321308f4108",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S04-en-v1",
+        "file": "L07-S04-en-v1.wav",
+        "sha256": "3c3a19770012e9405ec82269edb51a678db0610acfc79bc863e65a052fafb7d5"
+      },
+      "durationSeconds": 38.17095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L07-S04-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 0.225,
+              "end": 0.229,
+              "category": "substitution",
+              "heard": "simple",
+              "expected": "sample",
+              "heardPhonetics": "/sɪmpəl/",
+              "suggestion": "sample",
+              "reason": "The speaker articulated 'simple' instead of the contextually expected 'sample'. The vowel sound /ɪ/ and the final consonant /l/ are distinct from /æ/ and /əl/ in 'sample'.",
+              "severity": "major",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S05-en-v1",
+      "sceneID": "L07-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Follow the source process diagram. Droplets form, travel toward a target and impact a surface. Some material may be retained, while some may reflect. Drift or evaporation can occur during transport. Retained droplets may spread, with deposits forming as drying occurs. Spray, surface and atmospheric properties influence these steps. This explains pathways; it does not prescribe a droplet size, pressure or application setting.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "a4eb08f9694d595ef68ddee72f4ebc67636515d37b76d40189cf528d7ee76c26",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S05-en-v1",
+        "file": "L07-S05-en-v1.wav",
+        "sha256": "3c638d4f1a12f926593c3adf5fdfb1d03acb8c2dbf9511676cdd334f58849d59"
+      },
+      "durationSeconds": 34.050958333333334,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.078,
+                "end": 0.082,
+                "category": "delivery_flow",
+                "observation": "Slight abruptness in the transition between 'surface' and 'Some', creating a minor chopped effect.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.124,
+                "end": 0.128,
+                "category": "delivery_flow",
+                "observation": "Slight abruptness in the transition between 'reflect' and 'Drift', creating a minor chopped effect.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.285,
+                "end": 0.289,
+                "category": "delivery_flow",
+                "observation": "Slight abruptness in the transition between 'pathways' and 'It', creating a minor chopped effect.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate audio demonstrates a very good match in audible timbre, register, and vocal weight compared to the reference. The overall speaking style, including enunciation and pace, is also consistent. However, there are recurring, subtle instances of slightly abrupt transitions between phrases and sentences throughout the candidate audio. While not a major departure, these moments create a minor 'chopped' effect in the delivery flow, making it slightly less fluid and natural than the reference voice's consistently smooth narration. The voice characteristics themselves remain highly consistent within the candidate audio."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L07-S05-A1",
+          "label": {
+            "ar": "تكوين قطرات",
+            "en": "Droplet formation"
+          },
+          "semanticTrigger": "Droplet formation"
+        },
+        {
+          "id": "L07-S05-A2",
+          "label": {
+            "ar": "انتقال واصطدام",
+            "en": "Transport and impact"
+          },
+          "semanticTrigger": "Transport and impact"
+        },
+        {
+          "id": "L07-S05-A3",
+          "label": {
+            "ar": "احتفاظ أو ارتداد",
+            "en": "Retention or reflection"
+          },
+          "semanticTrigger": "Retention or reflection"
+        },
+        {
+          "id": "L07-S05-A4",
+          "label": {
+            "ar": "انتشار وجفاف",
+            "en": "Spreading and drying"
+          },
+          "semanticTrigger": "Spreading and drying"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S06-en-v1",
+      "sceneID": "L07-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "After deposition, material may move on the surface or within a plant, depending on its properties and the conditions. Uptake, redistribution and weathering losses are possible. Reaching a surface differs from entering tissue, and entry differs from a biological effect. The process map identifies which step needs measurement. To understand loss after rain, examine surface residues and transported material instead of assuming that every decrease represents chemical degradation.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "0f8c544a09a7856e07990ec0f1de25683afa6e8ef1efb427e56f77a433085ed3",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S06-en-v1",
+        "file": "L07-S06-en-v1.wav",
+        "sha256": "547e6548403c2b36ef2a37dcc7cd365ef3c92fa1d1e4cc6c8b22f90476654dbf"
+      },
+      "durationSeconds": 35.85095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S08-en-v1",
+      "sceneID": "L07-S08",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "The source links waiting with residue decline, but a half-life calculation alone cannot establish an authorized harvest date. The product label, crop, locally authorized use, residue definition, products and applicable limit must be considered. A field dissipation half-life may combine transport and transformation rather than describe degradation alone. Independently reducing a dose is not a substitute for label compliance. Keep the mathematical result separate from the application decision.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "fd7d30911a9ab118eccb58817a124d72484a87f508546e3a1ba29efab68d33d9",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S08-en-v1",
+        "file": "L07-S08-en-v1.wav",
+        "sha256": "12c54a2b46d9e6e3703bf02af73a5fa2a642ec6f659d945b153acccad0412d04"
+      },
+      "durationSeconds": 34.650958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L07-S08-A1",
+          "label": {
+            "ar": "منحنى توضيحي",
+            "en": "Illustrative curve"
+          },
+          "semanticTrigger": "Illustrative curve"
+        },
+        {
+          "id": "L07-S08-A2",
+          "label": {
+            "ar": "ظروف وحدود النموذج",
+            "en": "Model assumptions and limits"
+          },
+          "semanticTrigger": "Model assumptions and limits"
+        },
+        {
+          "id": "L07-S08-A3",
+          "label": {
+            "ar": "موعد الحصاد يحتاج مرجعًا",
+            "en": "Harvest date requires authority"
+          },
+          "semanticTrigger": "Harvest date requires authority"
+        },
+        {
+          "id": "L07-S08-A4",
+          "label": {
+            "ar": "لا فترة أمان مستنتجة",
+            "en": "No inferred pre-harvest interval"
+          },
+          "semanticTrigger": "No inferred pre-harvest interval"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S09-en-v1",
+      "sceneID": "L07-S09",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "A quantitative structure-activity relationship connects chemical structure or properties with an endpoint within a defined dataset and model. Application requires an applicability domain, validation and uncertainty information. An arbitrary new substance cannot be inserted into any available equation. For the final case, rain falls on sandy soil after pesticide use. Propose two plausible pathways and the evidence that would distinguish them. Separate model prediction, actual measurement and a decision that still needs evidence.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "e861fc35446abf6ab63ee9dcd5218bae3b6312e9fbbb1270867e21a8ea6f20b0",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S09-en-v1",
+        "file": "L07-S09-en-v1.wav",
+        "sha256": "ef4a107509d88ba4b05e248c97e388f5cebc0b8edc73543d1450bea0378e2192"
+      },
+      "durationSeconds": 39.53095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}

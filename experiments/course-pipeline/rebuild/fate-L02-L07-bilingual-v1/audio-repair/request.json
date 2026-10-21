@@ -1,0 +1,139 @@
+{
+  "id": "fate-next-audio-repair-v1",
+  "scope": "Four bounded complete-passage repairs after specific observed failure/defect; preserve all originals and good recordings.",
+  "model": "gemini-2.5-pro-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "maxSpeechCalls": 4,
+  "maxAnalysisCalls": 12,
+  "automaticRetries": 0,
+  "segments": [
+    {
+      "id": "L03-S01-ar-v2",
+      "sceneID": "L03-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nKeep the list items connected naturally within each sentence. No staccato listing or exaggerated pauses; explain the whole idea conversationally.",
+      "textSHA256": "c85af44a13229cdbb50de9ca30cac8fe5dcde0be3469dde9eeba077541c03cbb",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "previousId": "L03-S01-ar-v1",
+      "repairReason": "Two actual-audio checks corroborated segmented/robotic delivery. Record complete passage naturally, preserving words.",
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      }
+    },
+    {
+      "id": "L03-S05-en-v2",
+      "sceneID": "L03-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Assume a method with a detection limit of two thousandths of a milligram per litre and a quantitation limit of six thousandths. A below-detection report does not establish zero concentration; it reports a limitation under those measurement conditions. Four thousandths may be qualified as detected but below the required quantitation level. Do not remove the qualifier and treat the number as precise. Reporting codes vary by method, so consult the laboratory’s definitions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.\nComplete every final consonant, especially the final word definitions, then let a natural short final pause finish the recording.",
+      "textSHA256": "a8dca1cb2060f85460041c04b0c248af8c1a749d5ceb130a4237e2a09c7e2d1f",
+      "deliverySHA256": "045bf339438e63ccc87c0e1c46e0ef9c4f371500ff0dd5adcf6026a60d1878a1",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L03-S05-en-v1",
+      "repairReason": "Actual-audio adjudication found clipped final consonant. Preserve entire passage and complete final word.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      }
+    },
+    {
+      "id": "L04-S04-en-v2",
+      "sceneID": "L04-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A predator may consume many prey over its life. Efficient uptake combined with removal that is slow relative to intake can produce a higher tissue concentration. But not every chemical behaves this way. Chemical form, metabolism, diet and tissue basis all matter. There is no universal rule that residues increase by ten percent at every trophic level. Energy transfer is not a fixed equation for predicting a chemical concentration.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.\nKeep the warm conversational mid-register of the approved Charon sample. Avoid a lowered bass announcer register or heavier vocal weight.",
+      "textSHA256": "bf23dcfddb6da34b95d802557e576af871121f6d938419de7017356e2375dec3",
+      "deliverySHA256": "1767a937295d629368cc8fe0d2998e26ec5ef07a3120ff297c4d74874ccbbc3c",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L04-S04-en-v1",
+      "repairReason": "Two actual-audio comparisons flagged material voice timbre/register mismatch against accepted Charon.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      }
+    },
+    {
+      "id": "L07-S07-en-v2",
+      "sceneID": "L07-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "063902ce1807f8a4f53644a7658ab35a47d1b54b1bf91c4c7a7be7edf78a3209",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L07-S07-en-v1",
+      "repairReason": "Original service returned explicit HTTP 500 and no audio artifact. One reviewed bounded second attempt; not an ambiguous transport replay.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      }
+    }
+  ],
+  "retained": [],
+  "voiceReferences": {
+    "Charon": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+      "file": "voice-A-Charon-Pro.wav",
+      "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+    },
+    "Kore": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+      "file": "voice-B-Kore-Pro.wav",
+      "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+    }
+  },
+  "cacheDecision": "No matching recordings for these new scripts; preserve all old media. One attempt per identity, no blind retries.",
+  "ownerAuthorization": [
+    "العربي والإنجليزي",
+    "كمّل إنتاج الدروس الستة بالعربي والإنجليزي على جيت هب أكشن، وكل مشهد يخلص نزّله على طول."
+  ],
+  "renderAllowed": false,
+  "submissionRevision": 1,
+  "voiceReferencesByLocale": {
+    "ar-EG": {
+      "Charon": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "Kore": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      }
+    },
+    "en": {
+      "Charon": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "Kore": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      }
+    }
+  }
+}
