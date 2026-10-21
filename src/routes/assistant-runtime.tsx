@@ -36,6 +36,7 @@ import {
   type SeedReport,
 } from "@/lib/assistant-seed.functions";
 import { RagLovableNativeImportPanel } from "@/components/admin/RagLovableNativeImportPanel";
+import { CurrentRagReleasePanel } from "@/components/admin/CurrentRagReleasePanel";
 import { useServerFn } from "@tanstack/react-start";
 
 export const Route = createFileRoute("/assistant-runtime")({
@@ -542,7 +543,8 @@ function AssistantRuntimePage() {
           </div>
         </section>
         {/* 6 — Admin-only: Lovable-native RAG resumable importer */}
-        <RagLovableNativeImportPanel />
+        <CurrentRagReleasePanel />
+        <details><summary>سجل الاستيراد السابق</summary><RagLovableNativeImportPanel /></details>
 
         {/* 7 — Admin-only: Knowledge seed (P0) */}
         <AssistantSeedPanel />

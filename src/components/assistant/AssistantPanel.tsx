@@ -1,123 +1,60 @@
-import { useEffect, useMemo } from "react";
-import { Link } from "@tanstack/react-router";
+import { useId, useMemo, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/lib/auth-context";
 import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import { AssistantAnswer, AssistantInline } from "./AssistantAnswer";
-import {
-  buildAssistantRuntimePayload,
-  resolveAssistantLearnerContext,
-  type AssistantContextOverride,
-} from "@/lib/assistant/resolve-assistant-learner-context";
+import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import { buildAssistantRuntimePayload, resolveAssistantLearnerContext,
+  type AssistantContextOverride } from "@/lib/assistant/resolve-assistant-learner-context";
 import { callAssistantRuntime } from "@/lib/assistant-runtime";
-import {
-  appendAssistantTurn,
-  clearAssistantHistory,
-  getAssistantSessionVersion,
-  loadAssistantHistory,
-  setAssistantSession,
-  useAssistantSession,
-  type AssistantCitation,
-  type AssistantTurn,
-} from "@/lib/assistant-session-store";
+import { AssistantConversationPanel } from "./AssistantConversationPanel";
+import type { AssistantAdapter } from "@/lib/card-assistant/types";
 
-interface Props {
-  /** When true, hides the Context Status Card (e.g. when used inside a lesson sheet). */
-  compact?: boolean;
-  /** Localized package page override — titles and mission from active JSON package. */
-  contextOverride?: AssistantContextOverride | null;
-}
+interface Props { compact?: boolean; contextOverride?: AssistantContextOverride | null }
 
+/** Area adapter only. Every card uses the shared conversation and history implementation. */
 export function AssistantPanel({ compact = false, contextOverride = null }: Props) {
   const ctx = useLearnerContext();
   const { user } = useAuth();
   const { locale, dir } = useLocale();
-  const { query, loading, error, response, turns = [] } = useAssistantSession();
-
-  const resolvedContext = useMemo(
-    () => resolveAssistantLearnerContext(locale, ctx, contextOverride),
-    [locale, ctx, contextOverride],
-  );
-
-  useEffect(() => {
-    if (!compact && user?.id) loadAssistantHistory(user.id, locale);
-  }, [compact, user?.id, locale]);
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const q = query.trim();
-    if (!q || loading) return;
-    const version = getAssistantSessionVersion();
-    setAssistantSession({ loading: true, error: null });
-    try {
-      const history = compact
-        ? []
-        : turns.slice(-3).map((turn) => ({
-            question: turn.query.slice(0, 500),
-            answer: turn.answer.slice(0, 1200),
-          }));
-      const res = await callAssistantRuntime(
-        buildAssistantRuntimePayload(q, resolvedContext, history),
-      );
-      if (version !== getAssistantSessionVersion()) return;
-      setAssistantSession({ response: res, query: "" });
-      if (!compact && user?.id) {
-        const seenLessons = new Set<string>();
-        const citations: AssistantCitation[] = (res.citations ?? [])
-          .filter(
-            (citation) =>
-              typeof citation.lessonId === "string" &&
-              typeof citation.title === "string" &&
-              typeof citation.excerpt === "string",
-          )
-          .filter((citation) => {
-            if (seenLessons.has(citation.lessonId)) return false;
-            seenLessons.add(citation.lessonId);
-            return true;
-          })
-          .map((citation) => ({
-            lessonId: citation.lessonId,
-            title: citation.title,
-            excerpt: citation.excerpt,
-            productionRoute: citation.productionRoute,
-          }));
-        appendAssistantTurn(user.id, locale, {
-          query: q,
-          answer: res.answer ?? res.message,
-          citations,
-        });
-      }
-    } catch (err) {
-      if (version !== getAssistantSessionVersion()) return;
-      setAssistantSession({
-        error:
-          err instanceof Error
-            ? err.message
-            : getUiString(locale, "assistant.panel.error.connection"),
-      });
-    } finally {
-      if (version === getAssistantSessionVersion()) setAssistantSession({ loading: false });
-    }
-  }
-
+  const [selectedCardId, setSelectedCardId] = useState<string>(ctx.currentPath?.id ?? "");
+  const cardSelectId = useId();
+  const resolvedContext = useMemo(() => {
+    const resolved = resolveAssistantLearnerContext(locale, ctx, contextOverride);
+    if (compact || contextOverride) return resolved;
+    const path = PATHS.find(item => item.id === selectedCardId && item.status === "open");
+    return { ...resolved, currentPath: path?.id ?? null,
+      currentPathTitle: path ? getCurriculumPathLabel(locale, path.id, "title") : null,
+      currentModule: null, currentModuleTitle: null, currentLesson: null, currentLessonTitle: null,
+      currentMission: null, nextLessonTitle: null, preferPathId: path?.id ?? null, preferLessonId: null };
+  }, [locale, ctx, contextOverride, compact, selectedCardId]);
+  const ask: AssistantAdapter = async ({ query, history }) => {
+    if (!resolvedContext.currentPath) return { status: 403 };
+    const reply = await callAssistantRuntime(buildAssistantRuntimePayload(query, resolvedContext, history));
+    if (reply.ok === false) return { status: 503 };
+    return { status: 200, answer: reply.answer ?? reply.message,
+      citations: (reply.citations ?? []).map(citation => ({
+        id: citation.lessonId, label: citation.title, stepId: citation.lessonId, sourceId: citation.lessonId,
+        ...(citation.productionRoute && /^\/learn\/[a-z0-9-]+\/[a-z0-9-]+$/.test(citation.productionRoute)
+          ? { href: `${citation.productionRoute}?locale=${locale}` } : {}),
+      })) };
+  };
   const completedLabel = getUiString(locale, "assistant.panel.context.completedValue")
     .replace("{completed}", String(resolvedContext.completedLessonsCount))
     .replace("{total}", String(resolvedContext.totalLessonsCount));
-  const nextLesson = !compact ? ctx.overallNextLesson : null;
-  const nextPath = nextLesson
-    ? PATHS.find((path) =>
-        path.modules.some((module) => module.lessons.some((lesson) => lesson.id === nextLesson.id)),
-      )
-    : null;
-
-  return (
-    <div dir={dir} className="space-y-6">
+  return <div dir={dir} className="space-y-6">
+    {!compact && !contextOverride && <div className="space-y-2">
+      <label htmlFor={cardSelectId} className="block text-sm font-medium">{getUiString(locale, "assistant.panel.scope.choose")}</label>
+      <select id={cardSelectId} value={selectedCardId} onChange={event => setSelectedCardId(event.target.value)}
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-base">
+        <option value="">{getUiString(locale, "assistant.panel.scope.empty")}</option>
+        {PATHS.filter(path => path.status === "open").map(path => <option key={path.id} value={path.id}>
+          {getCurriculumPathLabel(locale, path.id, "title")}</option>)}
+      </select>
+    </div>}
       {!compact && (
         <Card className="p-5 space-y-3">
           <div className="flex items-center justify-between">
@@ -164,18 +101,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
                   {getUiString(locale, "assistant.panel.context.next")}
                 </dt>
                 <dd className="mt-0.5">
-                  {nextLesson && nextPath ? (
-                    <Link
-                      to="/learn/$pathId/$lessonId"
-                      params={{ pathId: nextPath.id, lessonId: nextLesson.id }}
-                      search={{ locale }}
-                      className="text-primary underline"
-                    >
-                      {resolvedContext.nextLessonTitle}
-                    </Link>
-                  ) : (
-                    resolvedContext.nextLessonTitle
-                  )}
+                  {resolvedContext.nextLessonTitle}
                 </dd>
               </div>
             )}
@@ -198,150 +124,16 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
         </div>
       )}
 
-      <form onSubmit={onSubmit} className="space-y-3">
-        <label htmlFor="assistant-query" className="block text-sm font-medium">
-          {getUiString(locale, "assistant.panel.query.label")}
-        </label>
-        <Textarea
-          id="assistant-query"
-          value={query}
-          onChange={(e) => setAssistantSession({ query: e.target.value })}
-          placeholder={getUiString(locale, "assistant.panel.query.placeholder")}
-          rows={compact ? 3 : 4}
-          className="resize-none text-base"
-          dir={dir}
-        />
-        <div className="flex justify-end">
-          <Button type="submit" variant="hero" disabled={loading || !query.trim()}>
-            {loading
-              ? getUiString(locale, "assistant.panel.submit.loading")
-              : getUiString(locale, "assistant.panel.submit.cta")}
-          </Button>
-        </div>
-      </form>
-
-      {error && (
-        <Card className="p-4 border-destructive/40 bg-destructive/5 text-sm text-destructive">
-          {error}
-        </Card>
-      )}
-
-      {!compact && turns.length > 0 && (
-        <section
-          aria-label={getUiString(locale, "assistant.panel.history.title")}
-          className="space-y-4"
-        >
-          <div className="flex items-center justify-between gap-4">
-            <h2 className="font-semibold">
-              {getUiString(locale, "assistant.panel.history.title")}
-            </h2>
-            {user?.id && (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={() => clearAssistantHistory(user.id)}
-              >
-                {getUiString(locale, "assistant.panel.history.clear")}
-              </Button>
-            )}
-          </div>
-          <p className="text-xs text-muted-foreground">
-            {getUiString(locale, "assistant.panel.history.independent")}
-          </p>
-          {turns.map((turn, index) => (
-            <AssistantTurnCard key={index} turn={turn} locale={locale} />
-          ))}
-        </section>
-      )}
-
-      {compact && response && (
-        <Card className="p-5 space-y-4">
-          <h2 className="text-sm font-semibold text-muted-foreground">
-            {getUiString(locale, "assistant.panel.response.title")}
-          </h2>
-
-          {response.answer ? (
-            <div className="rounded-md bg-muted/30 p-4">
-              <AssistantAnswer text={response.answer} />
-            </div>
-          ) : (
-            <div className="text-sm text-muted-foreground">{response.message}</div>
-          )}
-          <AssistantSources citations={response.citations ?? []} locale={locale} />
-        </Card>
-      )}
-
-      <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-6">
-        {getUiString(locale, "assistant.panel.footer.note")}
-      </p>
-    </div>
-  );
-}
-
-function AssistantTurnCard({
-  turn,
-  locale,
-}: {
-  turn: AssistantTurn;
-  locale: import("@/lib/locale/types").SupportedLocale;
-}) {
-  return (
-    <Card className="p-5 space-y-4">
-      <p className="rounded-md bg-muted/30 p-3 text-sm whitespace-pre-wrap">{turn.query}</p>
-      <div aria-label={getUiString(locale, "assistant.panel.response.title")}>
-        <AssistantAnswer text={turn.answer} />
-      </div>
-      <AssistantSources citations={turn.citations} locale={locale} />
-    </Card>
-  );
-}
-
-function AssistantSources({
-  citations,
-  locale,
-}: {
-  citations: AssistantCitation[];
-  locale: import("@/lib/locale/types").SupportedLocale;
-}) {
-  if (citations.length === 0) return null;
-  return (
-    <div className="border-t border-border pt-3 space-y-2">
-      <h3 className="text-sm font-semibold">
-        {getUiString(locale, "assistant.panel.response.sources")}
-      </h3>
-      <ul className="space-y-2 text-sm">
-        {citations.map((citation, index) => {
-          const route = citation.productionRoute;
-          const href =
-            route && /^\/learn\/[a-z0-9-]+\/[a-z0-9-]+$/.test(route)
-              ? `${route}?locale=${locale}`
-              : null;
-          return (
-            <li key={`${citation.lessonId}-${index}`}>
-              {href ? (
-                <a className="text-primary underline" href={href}>
-                  {citation.title}
-                </a>
-              ) : (
-                <span>{citation.title}</span>
-              )}
-              <p className="text-xs text-muted-foreground line-clamp-2">
-                <AssistantInline text={citation.excerpt} />
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+    <AssistantConversationPanel scope={{ area: "ai", cardId: resolvedContext.currentPath ?? "",
+      stepId: resolvedContext.currentLesson ?? undefined, locale }} accountId={user?.id}
+      cardTitle={resolvedContext.currentPathTitle ?? undefined} compact={compact} ask={ask}
+      disabledReason={resolvedContext.currentPath ? undefined : getUiString(locale, "assistant.panel.scope.open")} />
+    <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-6">
+      {getUiString(locale, "assistant.panel.footer.note")}</p>
+  </div>;
 }
 
 function ContextRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</dt>
-      <dd className="mt-0.5 text-foreground">{value}</dd>
-    </div>
-  );
+  return <div><dt className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</dt>
+    <dd className="mt-0.5 text-foreground">{value}</dd></div>;
 }

@@ -100,6 +100,8 @@ export interface StagingChunkInsert {
 
 export interface SqlExecutor {
   query: (sql: string) => string;
+  /** Test/local adapter seam; callers still validate every row's provenance. */
+  readReusableEmbeddingRows?: (request: EmbeddingReuseRequest) => ReusableEmbeddingRow[];
   /** Optional structured insert used by memory/tests to avoid SQL text parsing. */
   insertStagingChunk?: (row: StagingChunkInsert) => void;
   begin?: () => void;
@@ -107,6 +109,27 @@ export interface SqlExecutor {
   rollback?: () => void;
   /** Redacted identifier for reports */
   redactedTargetId: string;
+}
+
+export interface EmbeddingReuseRequest {
+  locale: string;
+  checksums: string[];
+  model: string;
+  dimensions: number;
+}
+
+export interface ReusableEmbeddingRow {
+  content: string;
+  chunkChecksum: string;
+  embedding: number[] | string;
+  locale: string;
+  model: string;
+  dimensions: number;
+  sourceSha: string;
+  registrySourceSha: string;
+  indexState: string;
+  versionStatus: string;
+  indexingFailed: boolean;
 }
 
 export interface EmbeddingProvider {
@@ -122,6 +145,8 @@ export interface EmbeddingProvider {
 export interface RowProgress {
   inserted: number;
   skippedExact: number;
+  /** New staging rows whose unchanged input reused an approved active vector. */
+  reusedEmbeddings?: number;
   conflicting: number;
   failed: number;
 }

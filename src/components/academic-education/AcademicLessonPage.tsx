@@ -440,7 +440,7 @@ function AuthorizedLesson({
               <p className="leading-8">
                 {en
                   ? "The assistant for this course requires separate access and activation."
-                  : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
+                  : "مساعد هذا المسار يحتاج صلاحية مستقلة وتفعيل الخدمة."}
               </p>
             ))}
         </section>

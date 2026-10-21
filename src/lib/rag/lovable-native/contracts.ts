@@ -60,6 +60,7 @@ export type SanitizedErrorCode =
   | "CLAIM_FAILED"
   | "FORBIDDEN"
   | "UNAUTHORIZED"
+  | "EMBEDDING_REUSE_UNAVAILABLE"
   | "INTERNAL";
 
 export interface RagImportStatusView {

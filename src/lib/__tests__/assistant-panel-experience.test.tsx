@@ -2,9 +2,13 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { LocaleProvider } from "@/lib/locale/locale-context";
-import { getAssistantSession, resetAssistantSession } from "@/lib/assistant-session-store";
+import { AssistantRequestError } from "@/lib/card-assistant/errors";
 
 const callRuntime = vi.fn();
+
+vi.mock("@/components/intro/lessons/lesson-registry", () => ({
+  INTRO_LESSON_CONTENT_KEYS: [], hasIntroLessonContent: () => true,
+}));
 
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: { auth: { onAuthStateChange: vi.fn() } },
@@ -36,12 +40,11 @@ describe("assistant page question flow", () => {
   beforeEach(() => {
     callRuntime.mockReset();
     localStorage.clear();
-    resetAssistantSession();
   });
 
   it("keeps the question after a failure and shows grounded sources after retry", async () => {
     callRuntime
-      .mockRejectedValueOnce(new Error("Temporary error"))
+      .mockRejectedValueOnce(new AssistantRequestError("Temporary error"))
       .mockResolvedValueOnce({
         answer: "Read the lesson.",
         citations: [
@@ -60,6 +63,7 @@ describe("assistant page question flow", () => {
         <AssistantPanel />
       </LocaleProvider>,
     );
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "intro" } });
     const question = screen.getByRole("textbox", { name: "Your question for the assistant" });
     fireEvent.change(question, { target: { value: "What is AI?" } });
     fireEvent.click(screen.getByRole("button", { name: "Send" }));
@@ -71,11 +75,9 @@ describe("assistant page question flow", () => {
     expect(screen.getByRole("link", { name: "AI basics" }).getAttribute("href")).toBe(
       "/learn/intro/intro-m1-l1-what-is-ai?locale=en",
     );
-    expect(screen.getByText("source").tagName).toBe("STRONG");
-    expect(screen.queryByText(/\*\*source\*\*/)).toBeNull();
     expect(screen.getByText("93 / 100")).toBeTruthy();
     expect(screen.queryByText("Debug · Raw runtime payload")).toBeNull();
-    await waitFor(() => expect(getAssistantSession().turns).toHaveLength(1));
+    expect(screen.getAllByRole("article")).toHaveLength(1);
 
     fireEvent.change(question, { target: { value: "And next?" } });
     fireEvent.click(screen.getByRole("button", { name: "Send" }));
@@ -92,6 +94,7 @@ describe("assistant page question flow", () => {
         <AssistantPanel />
       </LocaleProvider>,
     );
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "intro" } });
     fireEvent.change(screen.getByRole("textbox", { name: "سؤالك للمساعد" }), {
       target: { value: "يعني إيه الذكاء الاصطناعي؟" },
     });

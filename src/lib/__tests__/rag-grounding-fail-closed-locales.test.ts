@@ -22,6 +22,8 @@ import {
 } from "@/lib/rag/assistant-grounding-security";
 import { CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "@/lib/rag/constants";
 import { sha256CanonicalHex } from "@/lib/rag/canonical-checksum";
+import cardMembership from "../../../supabase/functions/assistant-runtime/current-card-membership.json";
+import { currentSample, CURRENT_CHUNKS } from "./helpers/current-assistant-corpus";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const FIXED_NOW = new Date("2026-01-01T00:00:00.000Z");
@@ -53,52 +55,17 @@ type PackageEntry = {
 };
 
 function loadRegisteredSampleForLocale(locale: (typeof LOCALES)[number]): SemanticChunk {
-  const chunks = JSON.parse(
-    readFileSync(path.join(REPO_ROOT, "artifacts/rag/chunks.json"), "utf8"),
-  ) as ChunkArtifact[];
-  const packages = (
-    JSON.parse(
-      readFileSync(path.join(REPO_ROOT, "artifacts/rag/package-manifest.json"), "utf8"),
-    ) as { packages: PackageEntry[] }
-  ).packages;
-  const hit = chunks.find((c) => c.locale === locale);
-  if (!hit) throw new Error(`missing chunk for locale ${locale}`);
-  const pkg = packages.find((p) => p.packagePath === hit.packagePath);
-  if (!pkg) throw new Error(`missing package for ${hit.chunkId}`);
-  const recomputed = sha256CanonicalHex(hit.displayText);
-  if (recomputed !== hit.textChecksum) {
-    throw new Error(`artifact content checksum drift for ${hit.chunkId}`);
-  }
-  return {
-    id: `id-${locale}`,
-    sourceId: hit.chunkId,
-    locale: hit.locale,
-    lessonId: hit.lessonId,
-    moduleId: hit.moduleId,
-    pathId: hit.trackId,
-    title: hit.lessonId,
-    content: hit.displayText,
-    similarity: 0.88,
-    packagePath: hit.packagePath,
-    sourceSha: CONTENT_FREEZE_SHA,
-    packageChecksum: pkg.packageChecksum,
-    chunkChecksum: hit.textChecksum,
-    contentVersion: null,
-    indexVersion: RAG_INDEX_VERSION,
-    sectionIndex: hit.sectionIndex,
-    sectionRole: hit.sectionRole,
-    chunkPosition: hit.chunkIndex,
-    contentType: hit.contentType,
-    productionRoute: hit.productionRoute,
-    indexState: "active",
-    sameLessonRank: 0,
-  };
+  const chunk = CURRENT_CHUNKS.find(record => record.locale === locale);
+  if (!chunk) throw new Error(`Missing current fixture: ${locale}`);
+  return currentSample(chunk.chunkId);
 }
 
 function createBillingRpc(): AssistantRuntimeDeps["billingRpc"] {
   let attemptIndex = 0;
   return vi.fn(async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
     switch (fnName) {
+      case "assistant_card_content_access":
+        return { ok: true, data: { card_id: body.p_card_id, admin_review: false, lessons: { entitled_lesson_ids: Object.values(cardMembership.records).map((r) => r.lessonId) } } };
       case "reserve_learner_ai_access":
         return { ok: true, data: { reservation_id: RESERVATION_ID } };
       case "register_provider_attempt":
@@ -150,7 +117,7 @@ function request(locale: string, query = "what is AI in the curriculum?") {
       "Content-Type": "application/json",
       Authorization: "Bearer test-token",
     },
-    body: JSON.stringify({ query, learnerContext: { locale } }),
+    body: JSON.stringify({ query, learnerContext: { locale, currentPath: loadRegisteredSampleForLocale(locale as typeof LOCALES[number]).pathId } }),
   });
 }
 

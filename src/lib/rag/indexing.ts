@@ -6,7 +6,7 @@ import {
   buildPackageManifest,
 } from "./manifests";
 import { MockRagIndexStore, defaultVersionKey } from "./mock-index-store";
-import { planReindex } from "./reindex-planning";
+import { loadReindexBaseline, planReindex, type ReindexBaselineOptions } from "./reindex-planning";
 import type { RagChunkRecord } from "./types";
 
 export interface MockIndexingReport {
@@ -137,12 +137,13 @@ export function runMockIndexingFlow(
 /** Reindex planning wrapper for CLI. */
 export function runReindexPlan(
   repoRoot: string,
-  options?: { retryOnlyFailed?: boolean; failedUnits?: string[] },
+  options: ReindexBaselineOptions & { retryOnlyFailed?: boolean; failedUnits?: string[] } = {},
 ) {
+  const previous = loadReindexBaseline(repoRoot, options);
   const packages = discoverApprovedPackages(repoRoot);
   const chunks = generateAllChunks(repoRoot, packages);
   const current = buildPackageManifest(repoRoot, packages, chunks);
-  return planReindex(current, current, {
+  return planReindex(current, previous, {
     dryRun: true,
     retryOnlyFailed: options?.retryOnlyFailed,
     failedUnits: options?.failedUnits,

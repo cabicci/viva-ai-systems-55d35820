@@ -11,6 +11,7 @@ import {
   SOURCE_TYPE_LOCALE_LESSON,
 } from "./constants";
 import { assertProviderMatchesEnvironment } from "./embeddings";
+import { loadReusableEmbeddings } from "./embedding-reuse";
 import { formatVectorLiteral, sqlLiteral, sqlNullableText } from "./sql";
 import type { EmbeddingProvider, RowProgress, SqlExecutor } from "./types";
 
@@ -162,8 +163,8 @@ async function embedPackageChunks(
 }
 
 /**
- * Import one package transactionally. Exact matching rows are skipped;
- * conflicts fail the package.
+ * Import one package transactionally. Exact target rows are skipped; unchanged
+ * inputs reuse verified active vectors with fresh metadata. Conflicts still fail.
  */
 export async function importPackageUnit(options: {
   sql: SqlExecutor;
@@ -182,7 +183,7 @@ export async function importPackageUnit(options: {
     throw new ImportEngineError("MIXED_SOURCE", "Package sourceSha mismatch");
   }
 
-  const toEmbed: RagChunkRecord[] = [];
+  const toInsert: RagChunkRecord[] = [];
   for (const chunk of chunks) {
     if (chunk.packagePath !== pkg.packagePath) {
       throw new ImportEngineError("PACKAGE_IDENTITY", "Chunk packagePath mismatch");
@@ -195,7 +196,7 @@ export async function importPackageUnit(options: {
     }
     const existing = existingBySourceId.get(chunk.chunkId) ?? null;
     if (!existing) {
-      toEmbed.push(chunk);
+      toInsert.push(chunk);
       continue;
     }
     const [, chunkChecksum, packageChecksum, sourceSha, indexState, dims, failed] =
@@ -215,15 +216,20 @@ export async function importPackageUnit(options: {
     throw new ImportEngineError("CONFLICTING_ROW", `Conflicting existing row for ${chunk.chunkId}`);
   }
 
-  if (toEmbed.length === 0) return;
+  if (toInsert.length === 0) return;
 
-  const vectors = await embedPackageChunks(provider, toEmbed, attemptState);
+  const vectors = loadReusableEmbeddings(sql, toInsert, provider);
+  const reusedCount = vectors.size;
+  const toEmbed = toInsert.filter((chunk) => !vectors.has(chunk.chunkId));
+  for (const [chunkId, vector] of await embedPackageChunks(provider, toEmbed, attemptState)) {
+    vectors.set(chunkId, vector);
+  }
 
   const useStructured = typeof sql.insertStagingChunk === "function";
   try {
     if (useStructured) {
       sql.begin?.();
-      for (const chunk of toEmbed) {
+      for (const chunk of toInsert) {
         const vec = vectors.get(chunk.chunkId);
         if (!vec) {
           throw new ImportEngineError("MISSING_VECTOR", chunk.chunkId);
@@ -251,15 +257,11 @@ export async function importPackageUnit(options: {
           productionRoute: chunk.productionRoute,
           indexingFailed: false,
         });
-        existingBySourceId.set(
-          chunk.chunkId,
-          `${chunk.chunkId}|${chunk.textChecksum}|${pkg.packageChecksum}|${EXPECTED_SOURCE_SHA}|${INDEX_STATE_STAGING}|${EXPECTED_EMBEDDING_DIMENSIONS}|false`,
-        );
       }
       sql.commit?.();
     } else {
       const statements: string[] = ["BEGIN"];
-      for (const chunk of toEmbed) {
+      for (const chunk of toInsert) {
         const vec = vectors.get(chunk.chunkId);
         if (!vec) {
           throw new ImportEngineError("MISSING_VECTOR", chunk.chunkId);
@@ -295,15 +297,19 @@ export async function importPackageUnit(options: {
              false
            )`,
         );
-        existingBySourceId.set(
-          chunk.chunkId,
-          `${chunk.chunkId}|${chunk.textChecksum}|${pkg.packageChecksum}|${EXPECTED_SOURCE_SHA}|${INDEX_STATE_STAGING}|${EXPECTED_EMBEDDING_DIMENSIONS}|false`,
-        );
       }
       statements.push("COMMIT");
       sql.query(`${statements.join(";\n")};`);
     }
-    progress.inserted += toEmbed.length;
+    // Publish resume bookkeeping only after the package transaction commits.
+    for (const chunk of toInsert) {
+      existingBySourceId.set(
+        chunk.chunkId,
+        `${chunk.chunkId}|${chunk.textChecksum}|${pkg.packageChecksum}|${EXPECTED_SOURCE_SHA}|${INDEX_STATE_STAGING}|${EXPECTED_EMBEDDING_DIMENSIONS}|false`,
+      );
+    }
+    progress.inserted += toInsert.length;
+    progress.reusedEmbeddings = (progress.reusedEmbeddings ?? 0) + reusedCount;
   } catch (err) {
     try {
       if (useStructured) sql.rollback?.();
@@ -311,7 +317,7 @@ export async function importPackageUnit(options: {
     } catch {
       /* ignore */
     }
-    progress.failed += toEmbed.length;
+    progress.failed += toInsert.length;
     throw err;
   }
 }

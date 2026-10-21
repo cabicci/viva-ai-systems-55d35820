@@ -14,6 +14,10 @@ import { TechnicalLessonView } from "@/components/technical-education/TechnicalJ
 import { FurniturePilotLesson } from "@/components/furniture-pilot/FurniturePilotLesson";
 import type { TechnicalLesson } from "@/lib/technical-education/types";
 import type { PilotCopy } from "../../scripts/technical-education/source/furniture-pilot/content";
+import { CardPathAssistant } from "@/components/assistant/CardPathAssistant";
+import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
+import { sourceOwner } from "@/lib/card-assistant/registry";
+import { getUiString } from "@/lib/locale/ui-strings";
 
 export const Route = createFileRoute("/technical/learn/$lessonId")({
   validateSearch: parseLocaleSearchParam,
@@ -99,6 +103,11 @@ export function TechnicalLessonPage() {
               />
             </main>
           )}
+          <FloatingAssistantLauncher fabLabel={getUiString(locale, "learn.assistant.fab")}
+            fabAriaLabel={getUiString(locale, "learn.assistant.fabAria")} panelTitle={getUiString(locale, "sidebar.assistant")}>
+            <CardPathAssistant area="technical" cardId={sourceOwner({ adapter: "technical", lessonId }).id}
+              stepId={lessonId} locale={locale} compact />
+          </FloatingAssistantLauncher>
           <nav
             aria-label={c.back}
             className="mx-auto flex max-w-7xl justify-between gap-4 px-4 py-8"

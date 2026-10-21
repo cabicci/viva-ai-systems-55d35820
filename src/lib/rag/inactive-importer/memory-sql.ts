@@ -3,7 +3,7 @@
  * Supports the subset of statements used by the inactive importer.
  */
 
-import type { SqlExecutor } from "./types";
+import type { EmbeddingReuseRequest, ReusableEmbeddingRow, SqlExecutor } from "./types";
 import {
   EXPECTED_EMBEDDING_DIMENSIONS,
   INDEX_STATE_STAGING,
@@ -73,6 +73,20 @@ export class MemorySqlExecutor implements SqlExecutor {
   activeFingerprintSeed = "seed-active|0|";
   private idSeq = 0;
   private txn: ChunkRow[] | null = null;
+
+  readReusableEmbeddingRows(request: EmbeddingReuseRequest): ReusableEmbeddingRow[] {
+    return this.chunks.flatMap((row) => {
+      const version = this.registry.get(row.index_version);
+      if (!version || row.source_type !== SOURCE_TYPE_LOCALE_LESSON ||
+        row.locale !== request.locale || !request.checksums.includes(row.chunk_checksum)) return [];
+      return [{
+        content: row.content, chunkChecksum: row.chunk_checksum, embedding: [...row.embedding],
+        locale: row.locale, model: version.embedding_model, dimensions: row.embedding.length,
+        sourceSha: row.source_sha, registrySourceSha: version.source_sha,
+        indexState: row.index_state, versionStatus: version.status, indexingFailed: row.indexing_failed,
+      }];
+    });
+  }
 
   begin(): void {
     this.txn = [];

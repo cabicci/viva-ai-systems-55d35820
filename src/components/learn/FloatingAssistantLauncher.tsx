@@ -6,17 +6,22 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import { MessageCircle, X } from "lucide-react";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { cn } from "@/lib/utils";
+import {
+  clampAssistantLauncher,
+  positionAssistantPanel,
+  type AssistantPanelPosition,
+  type AssistantViewport,
+} from "./assistant-launcher-position";
 
 export const LEARN_ASSISTANT_LAUNCHER_POSITION_KEY =
   "masaarat:learn-assistant-launcher-position";
 
 const DRAG_THRESHOLD_PX = 8;
-const VIEWPORT_PAD_PX = 8;
-const PANEL_GAP_PX = 12;
 const DEFAULT_MARGIN_END_PX = 16;
 const DEFAULT_MARGIN_END_SM_PX = 24;
 const DEFAULT_MARGIN_BOTTOM_PX = 24;
@@ -54,45 +59,39 @@ function readStoredPosition(): StoredPosition | null {
   return null;
 }
 
-function defaultLauncherPosition(width: number, height: number): StoredPosition {
-  const marginEnd =
-    window.innerWidth >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
+function visibleViewport(): AssistantViewport {
+  const viewport = window.visualViewport;
   return {
-    x: window.innerWidth - width - marginEnd,
-    y: window.innerHeight - height - DEFAULT_MARGIN_BOTTOM_PX,
+    left: viewport?.offsetLeft ?? 0,
+    top: viewport?.offsetTop ?? 0,
+    width: viewport?.width ?? window.innerWidth,
+    height: viewport?.height ?? window.innerHeight,
   };
 }
 
-function clampLauncherPosition(
-  x: number,
-  y: number,
+function defaultLauncherPosition(
   width: number,
   height: number,
+  viewport: AssistantViewport,
 ): StoredPosition {
-  const maxX = Math.max(VIEWPORT_PAD_PX, window.innerWidth - width - VIEWPORT_PAD_PX);
-  const maxY = Math.max(VIEWPORT_PAD_PX, window.innerHeight - height - VIEWPORT_PAD_PX);
+  const marginEnd =
+    viewport.width >= 640 ? DEFAULT_MARGIN_END_SM_PX : DEFAULT_MARGIN_END_PX;
   return {
-    x: Math.min(Math.max(VIEWPORT_PAD_PX, x), maxX),
-    y: Math.min(Math.max(VIEWPORT_PAD_PX, y), maxY),
+    x: viewport.left + viewport.width - width - marginEnd,
+    y: viewport.top + viewport.height - height - DEFAULT_MARGIN_BOTTOM_PX,
   };
 }
 
-function clampPanelLeft(
-  launcherX: number,
-  launcherWidth: number,
-  panelWidth: number,
-): number {
-  const centeredX = launcherX + launcherWidth / 2 - panelWidth / 2;
-  const maxPanelWidth = Math.min(window.innerWidth - VIEWPORT_PAD_PX * 2, 448);
-  const width = panelWidth || maxPanelWidth;
-  return Math.min(
-    Math.max(VIEWPORT_PAD_PX, centeredX),
-    Math.max(VIEWPORT_PAD_PX, window.innerWidth - width - VIEWPORT_PAD_PX),
+function samePanelPosition(
+  a: AssistantPanelPosition | null,
+  b: AssistantPanelPosition,
+) {
+  return (
+    a?.left === b.left &&
+    a.top === b.top &&
+    a.width === b.width &&
+    a.maxHeight === b.maxHeight
   );
-}
-
-function panelBottomOffset(launcherY: number): number {
-  return window.innerHeight - launcherY + PANEL_GAP_PX;
 }
 
 export function FloatingAssistantLauncher({
@@ -105,6 +104,7 @@ export function FloatingAssistantLauncher({
   const { dir, locale } = useLocale();
   const launcherRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const panelContentRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{
     pointerId: number;
     startX: number;
@@ -113,24 +113,34 @@ export function FloatingAssistantLauncher({
     originY: number;
     moved: boolean;
   } | null>(null);
+  const suppressPointerClickRef = useRef(false);
 
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState<StoredPosition | null>(null);
-  const [panelLeft, setPanelLeft] = useState<number | null>(null);
-  const [panelBottom, setPanelBottom] = useState<number | null>(null);
+  const [panelPosition, setPanelPosition] = useState<AssistantPanelPosition | null>(null);
+
+  useEffect(() => {
+    setPortalRoot(document.body);
+  }, []);
 
   const syncLauncherPosition = useCallback(() => {
     const el = launcherRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
+    const viewport = visibleViewport();
     const stored = readStoredPosition();
-    const next = clampLauncherPosition(
-      stored?.x ?? defaultLauncherPosition(rect.width, rect.height).x,
-      stored?.y ?? defaultLauncherPosition(rect.width, rect.height).y,
+    const initial = defaultLauncherPosition(rect.width, rect.height, viewport);
+    const next = clampAssistantLauncher(
+      stored?.x ?? initial.x,
+      stored?.y ?? initial.y,
       rect.width,
       rect.height,
+      viewport,
     );
-    setPosition(next);
+    setPosition((current) =>
+      current?.x === next.x && current.y === next.y ? current : next,
+    );
     try {
       window.localStorage.setItem(
         LEARN_ASSISTANT_LAUNCHER_POSITION_KEY,
@@ -143,42 +153,77 @@ export function FloatingAssistantLauncher({
 
   useLayoutEffect(() => {
     syncLauncherPosition();
-  }, [syncLauncherPosition]);
+  }, [portalRoot, fabLabel, syncLauncherPosition]);
+
+  const syncPanelPosition = useCallback(() => {
+    const launcher = launcherRef.current;
+    const panel = panelRef.current;
+    if (!launcher || !panel) return;
+    const borderHeight = panel.offsetHeight - panel.clientHeight;
+    const contentHeight = Math.max(
+      panel.scrollHeight + borderHeight,
+      panel.getBoundingClientRect().height,
+    );
+    const next = positionAssistantPanel(
+      launcher.getBoundingClientRect(),
+      contentHeight,
+      visibleViewport(),
+    );
+    setPanelPosition((current) =>
+      samePanelPosition(current, next) ? current : next,
+    );
+  }, []);
 
   useEffect(() => {
-    const onResize = () => syncLauncherPosition();
+    const onResize = () => {
+      syncLauncherPosition();
+      syncPanelPosition();
+    };
+    const viewport = window.visualViewport;
     window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [syncLauncherPosition]);
+    viewport?.addEventListener("resize", onResize);
+    viewport?.addEventListener("scroll", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      viewport?.removeEventListener("resize", onResize);
+      viewport?.removeEventListener("scroll", onResize);
+    };
+  }, [syncLauncherPosition, syncPanelPosition]);
 
   useLayoutEffect(() => {
     if (!open) {
-      setPanelLeft(null);
-      setPanelBottom(null);
+      setPanelPosition(null);
       return;
     }
-    const launcher = launcherRef.current;
-    const panel = panelRef.current;
-    if (!launcher || !panel || position == null) return;
-    const launcherRect = launcher.getBoundingClientRect();
-    const panelRect = panel.getBoundingClientRect();
-    setPanelLeft(
-      clampPanelLeft(launcherRect.x, launcherRect.width, panelRect.width),
-    );
-    setPanelBottom(panelBottomOffset(launcherRect.y));
-  }, [open, position, panelTitle]);
+    syncPanelPosition();
+  }, [open, position, panelTitle, children, syncPanelPosition]);
+
+  useEffect(() => {
+    if (!open || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(syncPanelPosition);
+    if (panelRef.current) observer.observe(panelRef.current);
+    if (panelContentRef.current) observer.observe(panelContentRef.current);
+    if (launcherRef.current) observer.observe(launcherRef.current);
+    return () => observer.disconnect();
+  }, [open, syncPanelPosition]);
+
+  const closePanel = useCallback(() => {
+    setOpen(false);
+    launcherRef.current?.focus({ preventScroll: true });
+  }, []);
 
   useEffect(() => {
     if (!open) return;
+    panelRef.current?.focus({ preventScroll: true });
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setOpen(false);
-        launcherRef.current?.focus();
+        event.preventDefault();
+        closePanel();
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, closePanel]);
 
   const persistPosition = useCallback((next: StoredPosition) => {
     setPosition(next);
@@ -193,8 +238,8 @@ export function FloatingAssistantLauncher({
   }, []);
 
   const onLauncherPointerDown = (event: React.PointerEvent<HTMLButtonElement>) => {
-    if (position == null) return;
-    event.currentTarget.setPointerCapture(event.pointerId);
+    if (position == null || event.button !== 0 || event.isPrimary === false) return;
+    suppressPointerClickRef.current = false;
     dragRef.current = {
       pointerId: event.pointerId,
       startX: event.clientX,
@@ -203,6 +248,12 @@ export function FloatingAssistantLauncher({
       originY: position.y,
       moved: false,
     };
+    // Unsupported/lost pointer capture must not disable the button's normal click.
+    try {
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    } catch {
+      /* the pointer may already have ended */
+    }
   };
 
   const onLauncherPointerMove = (event: React.PointerEvent<HTMLButtonElement>) => {
@@ -215,26 +266,45 @@ export function FloatingAssistantLauncher({
     if (Math.hypot(dx, dy) > DRAG_THRESHOLD_PX) {
       drag.moved = true;
     }
+    if (!drag.moved) return;
 
     const rect = el.getBoundingClientRect();
     persistPosition(
-      clampLauncherPosition(drag.originX + dx, drag.originY + dy, rect.width, rect.height),
+      clampAssistantLauncher(
+        drag.originX + dx,
+        drag.originY + dy,
+        rect.width,
+        rect.height,
+        visibleViewport(),
+      ),
     );
   };
 
-  const finishLauncherPointer = (event: React.PointerEvent<HTMLButtonElement>) => {
+  const finishLauncherPointer = (
+    event: React.PointerEvent<HTMLButtonElement>,
+    cancelled = false,
+  ) => {
     const drag = dragRef.current;
     if (!drag || drag.pointerId !== event.pointerId) return;
 
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
-
-    if (!drag.moved) {
-      setOpen((current) => !current);
-    }
-
+    suppressPointerClickRef.current = cancelled || drag.moved;
     dragRef.current = null;
+    try {
+      if (event.currentTarget.hasPointerCapture?.(event.pointerId)) {
+        event.currentTarget.releasePointerCapture(event.pointerId);
+      }
+    } catch {
+      /* capture may have been released by the browser */
+    }
+  };
+
+  const onLauncherClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const suppress = suppressPointerClickRef.current;
+    suppressPointerClickRef.current = false;
+    // Keyboard and assistive-technology activation use detail=0, even after a drag.
+    if (suppress && event.detail !== 0) return;
+    if (open) closePanel();
+    else setOpen(true);
   };
 
   const launcherStyle =
@@ -245,7 +315,9 @@ export function FloatingAssistantLauncher({
           top: `${position.y}px`,
         } as const);
 
-  return (
+  if (!portalRoot) return null;
+
+  return createPortal(
     <>
       {open ? (
         <div
@@ -254,20 +326,22 @@ export function FloatingAssistantLauncher({
           role="dialog"
           aria-modal="false"
           aria-labelledby={`${panelId}-title`}
+          tabIndex={-1}
           dir={dir}
           className={cn(
-            "fixed z-40 w-[min(calc(100vw-2rem),28rem)] max-h-[min(70vh,32rem)] overflow-y-auto",
+            "fixed z-50 w-[min(calc(100vw-1rem),28rem)] max-h-[min(70vh,32rem)] overflow-y-auto",
             "rounded-2xl border border-border/60 bg-background/95 backdrop-blur-md shadow-xl",
-            panelLeft == null && "opacity-0 pointer-events-none",
+            panelPosition == null && "opacity-0 pointer-events-none",
           )}
           style={
-            panelLeft != null && panelBottom != null
+            panelPosition != null
               ? {
-                  left: `${panelLeft}px`,
-                  bottom: `${panelBottom}px`,
-                  transform: "translateY(-100%)",
+                  left: `${panelPosition.left}px`,
+                  top: `${panelPosition.top}px`,
+                  width: `${panelPosition.width}px`,
+                  maxHeight: `${panelPosition.maxHeight}px`,
                 }
-              : { left: `${position?.x ?? VIEWPORT_PAD_PX}px`, bottom: "6rem" }
+              : { left: 8, top: 8 }
           }
         >
           <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border/60 bg-background/95 px-4 py-3 backdrop-blur-md">
@@ -279,17 +353,14 @@ export function FloatingAssistantLauncher({
             </h2>
             <button
               type="button"
-              onClick={() => {
-                setOpen(false);
-                launcherRef.current?.focus();
-              }}
+              onClick={closePanel}
               className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
               aria-label={getUiString(locale, "dashboard.hint.close")}
             >
               <X className="h-4 w-4" />
             </button>
           </div>
-          <div className="p-4">{children}</div>
+          <div ref={panelContentRef} className="p-4">{children}</div>
         </div>
       ) : null}
 
@@ -299,13 +370,17 @@ export function FloatingAssistantLauncher({
         aria-label={fabAriaLabel}
         aria-controls={panelId}
         aria-expanded={open}
+        aria-haspopup="dialog"
+        dir={dir}
+        onClick={onLauncherClick}
         onPointerDown={onLauncherPointerDown}
         onPointerMove={onLauncherPointerMove}
-        onPointerUp={finishLauncherPointer}
-        onPointerCancel={finishLauncherPointer}
+        onPointerUp={(event) => finishLauncherPointer(event)}
+        onPointerCancel={(event) => finishLauncherPointer(event, true)}
+        onLostPointerCapture={(event) => finishLauncherPointer(event, true)}
         style={launcherStyle}
         className={cn(
-          "fixed z-40 inline-flex min-h-[44px] max-w-[calc(100vw-2rem)] touch-none select-none",
+          "fixed z-50 inline-flex min-h-[44px] max-w-[calc(100vw-2rem)] touch-none select-none",
           "items-center gap-2 rounded-full border border-border/60 bg-background/80 px-4 py-3",
           "text-sm font-medium text-foreground/90 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.15)]",
           "backdrop-blur-md transition hover:border-primary/30 hover:bg-background/95 hover:text-foreground",
@@ -317,6 +392,7 @@ export function FloatingAssistantLauncher({
         <MessageCircle className="h-4 w-4 shrink-0 text-primary" />
         <span>{fabLabel}</span>
       </button>
-    </>
+    </>,
+    portalRoot,
   );
 }

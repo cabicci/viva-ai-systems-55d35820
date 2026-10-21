@@ -6,6 +6,9 @@ import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import type { KidsLesson } from "@/lib/kids/lesson-client";
 import type { KidsLevelId } from "@/lib/kids/catalogue";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { CardPathAssistant } from "@/components/assistant/CardPathAssistant";
+import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
+import { getUiString } from "@/lib/locale/ui-strings";
 
 type Props = {
   lesson: KidsLesson;
@@ -311,6 +314,10 @@ export function KidsLessonBody({
         lesson={lessonNumber}
         locale={locale}
       />
+      <FloatingAssistantLauncher fabLabel={getUiString(locale, "learn.assistant.fab")}
+        fabAriaLabel={getUiString(locale, "learn.assistant.fabAria")} panelTitle={getUiString(locale, "sidebar.assistant")}>
+        <CardPathAssistant area="kids" cardId={levelId} stepId={String(lessonNumber)} locale={locale} profileId={profileId} compact />
+      </FloatingAssistantLauncher>
     </div>
   );
 }

@@ -21,6 +21,7 @@ import {
   type SanitizedErrorCode,
 } from "./contracts";
 import { loadLockedCorpus } from "./corpus.server";
+import { loadNativeReusableEmbeddings } from "./embedding-reuse.server";
 import {
   ACTIVATION_CONFIRMATION,
   AUTHORIZED_BATCH_COUNT,
@@ -95,6 +96,7 @@ function sanitizeCode(
     "CLAIM_FAILED",
     "FORBIDDEN",
     "UNAUTHORIZED",
+    "EMBEDDING_REUSE_UNAVAILABLE",
     "INTERNAL",
     "WRONG_VERSION",
     "WRONG_CONFIRMATION",
@@ -349,11 +351,6 @@ export async function executeNextImportBatch(options: {
 }): Promise<Record<string, unknown>> {
   await assertImportMutationAllowed(options.admin);
   const corpus = await loadLockedCorpus();
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey && !options.embed) {
-    throw new Error("MISSING_OPENAI_KEY");
-  }
-  const embed = options.embed ?? createOpenAiEmbeddingFetcher(apiKey!);
 
   const claimRes = await options.admin.rpc("rag_claim_next_import_batch");
   if (claimRes.error) {
@@ -382,9 +379,26 @@ export async function executeNextImportBatch(options: {
   }
 
   let vectors: number[][];
+  let providerCalls = 0;
+  let reusedChunkCount = 0;
   try {
-    const result = await embed(slice.map((c) => c.displayText));
-    vectors = result.vectors;
+    const reused = await loadNativeReusableEmbeddings(options.admin, slice);
+    reusedChunkCount = reused.size;
+    const missing = slice.filter(chunk => !reused.has(chunk.chunkId));
+    if (missing.length) {
+      const apiKey = process.env.OPENAI_API_KEY;
+      if (!apiKey && !options.embed) throw new Error("MISSING_OPENAI_KEY");
+      const embed = options.embed ?? createOpenAiEmbeddingFetcher(apiKey!);
+      const result = await embed(missing.map(chunk => chunk.displayText));
+      providerCalls = 1;
+      if (result.vectors.length !== missing.length || result.vectors.some(vector =>
+        !Array.isArray(vector) || vector.length !== LOCKED_EMBEDDING_DIMENSIONS ||
+        vector.some(value => typeof value !== "number" || !Number.isFinite(value)))) {
+        throw new Error("PROVIDER_RESPONSE_INVALID");
+      }
+      missing.forEach((chunk, index) => reused.set(chunk.chunkId, result.vectors[index]!));
+    }
+    vectors = slice.map(chunk => reused.get(chunk.chunkId)!);
   } catch (err) {
     const code = sanitizeCode(err instanceof Error ? err.message : undefined, "PROVIDER_FAILED");
     await options.admin.rpc("rag_fail_import_batch", {
@@ -416,7 +430,10 @@ export async function executeNextImportBatch(options: {
   return {
     ok: true,
     done: false,
-    providerCalls: 1,
+    // The SQL claim ledger remains a conservative bound on batch attempts.
+    providerCalls,
+    reusedChunkCount,
+    embeddedChunkCount: count - reusedChunkCount,
     batchOrdinal: claim.batchOrdinal,
     acceptedRowCount: count,
     executionId: claim.executionId,

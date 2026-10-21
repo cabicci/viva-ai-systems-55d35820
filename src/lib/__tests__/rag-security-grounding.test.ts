@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  admitsAuthoritativeChunk,
   assertUntrustedBoundaryInPrompt,
   buildUntrustedEvidenceBlockFromAuthoritative,
   hasRequiredAuthoritativeMetadata,
@@ -16,6 +17,7 @@ import {
   validateRuntimeLocale,
   type AuthoritativeGroundingCandidate,
 } from "@/lib/rag/assistant-grounding-security";
+import { currentSample, legacySample } from "./helpers/current-assistant-corpus";
 import { CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "@/lib/rag/constants";
 import { sha256CanonicalHex } from "@/lib/rag/canonical-checksum";
 import {
@@ -54,41 +56,7 @@ type ChunkArtifact = {
 
 function loadRegisteredCandidate(chunkId = SAMPLE_CHUNK_ID): AuthoritativeGroundingCandidate {
   resetDefaultAuthoritativeLookupCache();
-  const chunks = JSON.parse(
-    readFileSync(path.join(REPO_ROOT, "artifacts/rag/chunks.json"), "utf8"),
-  ) as ChunkArtifact[];
-  const packages = (
-    JSON.parse(
-      readFileSync(path.join(REPO_ROOT, "artifacts/rag/package-manifest.json"), "utf8"),
-    ) as {
-      packages: Array<{ packagePath: string; packageChecksum: string }>;
-    }
-  ).packages;
-  const hit = chunks.find((c) => c.chunkId === chunkId);
-  if (!hit) throw new Error(`missing ${chunkId}`);
-  const pkg = packages.find((p) => p.packagePath === hit.packagePath);
-  if (!pkg) throw new Error(`missing package for ${chunkId}`);
-  return {
-    sourceId: hit.chunkId,
-    locale: hit.locale,
-    lessonId: hit.lessonId,
-    moduleId: hit.moduleId,
-    pathId: hit.trackId,
-    title: hit.lessonId,
-    content: hit.displayText,
-    similarity: 0.82,
-    packagePath: hit.packagePath,
-    sourceSha: CONTENT_FREEZE_SHA,
-    packageChecksum: pkg.packageChecksum,
-    chunkChecksum: hit.textChecksum,
-    contentVersion: "2026-06-18.1-polished",
-    indexVersion: RAG_INDEX_VERSION,
-    sectionIndex: hit.sectionIndex,
-    sectionRole: hit.sectionRole,
-    chunkPosition: hit.chunkIndex,
-    contentType: hit.contentType,
-    productionRoute: hit.productionRoute,
-  };
+  return currentSample(chunkId);
 }
 
 describe("locale validation fail-closed", () => {
@@ -160,13 +128,14 @@ describe("retrievalResults property presence fails closed", () => {
 describe("cryptographic authoritative admission", () => {
   const lookup = loadAuthoritativeLookupFromRepo(REPO_ROOT);
   const sample = loadRegisteredCandidate();
+  const scope = { lookup, pathId: sample.pathId!, entitledLessonIds: new Set([sample.lessonId!]) };
 
   it("admits a fully registered chunk into the single evidence+citation subset", () => {
     const { authoritative, citations, nonAuthoritativeExcluded } = normalizeAuthoritativeChunks(
       "en",
       null,
       [sample],
-      { lookup },
+      scope,
     );
     expect(nonAuthoritativeExcluded).toBe(0);
     expect(authoritative).toHaveLength(1);
@@ -181,7 +150,7 @@ describe("cryptographic authoritative admission", () => {
       matchesAuthoritativeIndexVersion(deployedVersion, RAG_INDEX_VERSION, CONTENT_FREEZE_SHA),
     ).toBe(true);
     expect(
-      hasRequiredAuthoritativeMetadata({ ...sample, indexVersion: deployedVersion }, "en", {
+      hasRequiredAuthoritativeMetadata({ ...legacySample(), indexVersion: deployedVersion }, "en", {
         lookup,
       }),
     ).toBe(true);
@@ -228,7 +197,7 @@ describe("cryptographic authoritative admission", () => {
       "en",
       null,
       cases,
-      { lookup },
+      scope,
     );
     expect(authoritative).toHaveLength(0);
     expect(citations).toHaveLength(0);
@@ -241,6 +210,40 @@ describe("cryptographic authoritative admission", () => {
     });
     expect(cross.crossLocaleLeakage).toBe(1);
     expect(cross.citations).toHaveLength(0);
+  });
+
+  it("fails closed without explicit card and content access", () => {
+    expect(normalizeAuthoritativeChunks("en", null, [sample], { lookup }).authoritative).toEqual([]);
+    expect(normalizeAuthoritativeChunks("en", null, [sample], { ...scope, entitledLessonIds: new Set() }).unentitledExcluded).toBe(1);
+    expect(normalizeAuthoritativeChunks("en", null, [sample], { ...scope, pathId: "builder" }).crossCardLeakage).toBe(1);
+  });
+
+  it("admits entitled other steps in the card and derives citation routes from membership", () => {
+    const result = normalizeAuthoritativeChunks("en", "analyst-other-step", [{ ...sample, productionRoute: "/learn/builder/forged" }], scope);
+    expect(result.authoritative).toHaveLength(1);
+    expect(result.citations[0].sameLesson).toBe(false);
+    expect(result.citations[0].productionRoute).toBe(sample.productionRoute);
+    for (const forged of [{ ...sample, pathId: "builder" }, { ...sample, moduleId: "analyst-m99" }, { ...sample, indexState: "superseded" }]) {
+      expect(normalizeAuthoritativeChunks("en", null, [forged], scope).nonAuthoritativeExcluded).toBe(1);
+    }
+  });
+
+  it("admits the current release without relying on the historical frozen lookup", () => {
+    expect(admitsAuthoritativeChunk(sample, "en", null)).toBe(true);
+  });
+
+  it("rejects historical rows after the approved package changes", () => {
+    expect(admitsAuthoritativeChunk(legacySample(true), "en", lookup)).toBe(false);
+    expect(admitsAuthoritativeChunk(legacySample(), "en", lookup)).toBe(true);
+  });
+
+  it("requires the membership map and content approval to describe the same release", () => {
+    const membership = JSON.parse(readFileSync(path.join(REPO_ROOT,
+      "supabase/functions/assistant-runtime/current-card-membership.json"), "utf8"));
+    const changed = { ...membership, sourceSha: "a".repeat(64) };
+    expect(admitsAuthoritativeChunk(sample, "en", null, { membership: changed })).toBe(false);
+    membership.records[`en|${sample.lessonId}`].productionRoute = "/learn/builder/forged";
+    expect(admitsAuthoritativeChunk(sample, "en", null, { membership })).toBe(false);
   });
 
   it("fails closed on duplicate manifest registration", () => {

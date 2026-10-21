@@ -175,7 +175,7 @@ describe("callAssistantRuntime invoke boundary", () => {
     });
     await expect(
       callAssistantRuntime(buildAssistantRuntimePayload("hello", resolvedFor("en"))),
-    ).rejects.toThrow(/lesson content/i);
+    ).rejects.toThrow(/evidence in this path/i);
   });
 
   it("fails before session acquisition when locale is missing", async () => {
@@ -270,10 +270,10 @@ describe("shared production builder and transport wiring", () => {
     expect(source).toContain("callAssistantRuntime");
     expect(source).not.toContain("searchPlatformContent");
     expect(source).toMatch(
-      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*history\s*\)/,
     );
     expect(source).not.toMatch(
-      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*retrievalResults\s*\)/,
+      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*retrievalResults\s*\)/,
     );
   });
 
@@ -300,9 +300,9 @@ describe("shared production builder and transport wiring", () => {
   it("uses only server-authoritative citations for display", () => {
     const panel = read("src/components/assistant/AssistantPanel.tsx");
     expect(panel).not.toContain("searchPlatformContent");
-    expect(panel).toContain("res.citations");
+    expect(panel).toContain("reply.citations");
     expect(panel).toMatch(
-      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+      /buildAssistantRuntimePayload\(\s*query\s*,\s*resolvedContext\s*,\s*history\s*\)/,
     );
 
     const builder = read("src/lib/assistant/resolve-assistant-learner-context.ts");
@@ -310,3 +310,8 @@ describe("shared production builder and transport wiring", () => {
     expect(builder).not.toMatch(/retrievalResults/);
   });
 });
+
+// These tests exercise assistant requests and locale rendering, not lazy lesson bodies.
+vi.mock("@/components/intro/lessons/lesson-registry", () => ({
+  INTRO_LESSON_CONTENT_KEYS: [], hasIntroLessonContent: () => true,
+}));

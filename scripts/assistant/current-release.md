@@ -1,0 +1,21 @@
+# Unified assistant content release
+
+The learner hierarchy is area → card (مسار) → station → step. Shared conversation UI and access adapters are mandatory. New cards must register canonical ownership and content; `assistant:verify` fails on missing or inconsistent integration. The assistant can explain and create labeled examples only inside the current entitled card's concepts. Client history never establishes permission or content authority.
+
+## Preparing a change
+
+1. Register current AI source packages for all four locales under their canonical card/station/step identities. Keep historical corpus files and completed import locks unchanged.
+2. Run `bun run rag:generate-current`, review `artifacts/rag/current/change-report.json`, then run `bun run assistant:verify`, `bun run test:assistant` and TypeScript/build checks. Generated current snapshots must be committed with the sources. No provider is called by generation or these tests.
+3. Review `scripts/rag/incremental-embedding-reuse-candidate.sql` and `scripts/rag/current-release-candidate.sql` for the target database before applying them. They are candidate scripts, not automatically executed migrations. The runtime's service-only retrieval and existing locale-version schema are prerequisites. Apply schema changes only as part of an authorized production release.
+4. Deploy matching server and Edge admission files together. In the administrator assistant page, refresh **تحديث محتوى مساعد مسارات**, approve preparation cost and prepare/resume. Each request processes at most 64 chunks. Exact active text/model/dimension/provenance inputs reuse vectors. New or changed text is embedded once per durable request. A missing reuse RPC fails closed instead of silently embedding everything.
+5. Review completed status and approve activation explicitly. The database verifies actual stored content, metadata, vector dimensions and complete coverage in one transaction, comparing the exact previously displayed active version. Activation preserves predecessor rows. Rollback requires that exact current version and its recorded, still-complete predecessor. No production operation is performed by a build or test.
+
+## Other areas and readiness
+
+Kids, Tech and Academy use the same learner panel with their source/access adapters. Their candidate SQL and source registry seeds must be reviewed and installed with approved live content. Keep their runtime flags disabled until indexing and live permission checks succeed. A build can validate checked-in contracts; live publication additionally requires the protected `assistant-publication-v1` snapshot described by the verifier. Never upload learner data or credentials in this snapshot.
+
+Changed/deleted source is rejected immediately by current admission, even if an old database index remains active. Unchanged historical rows continue to require the frozen legacy proof as well as the current source proof. This prevents stale explanations while a release is being prepared. If a provider/commit response is lost, inspect status and the durable request before a new action; never replay provider work blindly. A batch lease lasts 15 minutes, request IDs remain permanently consumed, and attempts are capped at the planned batch count plus eight. Previous activation can be restored without new embedding calls.
+
+## Cleanup
+
+Delete replaced live imports and their unused implementation only after checking references. Preserve historical frozen artifacts, migrations, compatibility checks and previous active vectors while they are still required for admission/rollback. Generated development bundles and local test dependencies are excluded from publication. The retired per-card session store is replaced by shared account/card/profile/locale-scoped history.

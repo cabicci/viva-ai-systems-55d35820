@@ -19,6 +19,40 @@ function loadManifestFile<T>(filePath: string): T | null {
   return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
 }
 
+export interface ReindexBaselineOptions {
+  /** Previously deployed manifest, supplied explicitly; relative to repoRoot. */
+  baselinePath?: string;
+  /** Explicitly opt into first-time indexing when no baseline exists. */
+  initialIndex?: boolean;
+}
+
+export function loadReindexBaseline(repoRoot: string, options: ReindexBaselineOptions): PackageManifest | null {
+  if (options.initialIndex === true) {
+    if (options.baselinePath !== undefined) throw new Error("Choose a baseline manifest or initial indexing, not both");
+    return null;
+  }
+  if (!options.baselinePath?.trim()) {
+    throw new Error("An explicit --baseline manifest is required; use --initial-index only for first-time indexing");
+  }
+  const baselinePath = path.resolve(repoRoot, options.baselinePath);
+  if (!fs.existsSync(baselinePath)) throw new Error(`Reindex baseline not found: ${baselinePath}`);
+  const baseline = JSON.parse(fs.readFileSync(baselinePath, "utf8")) as PackageManifest;
+  if (baseline?.schemaVersion !== "package-manifest-v1" || !Array.isArray(baseline.packages)) {
+    throw new Error("Invalid reindex baseline package manifest");
+  }
+  const paths = new Set<string>();
+  for (const pkg of baseline.packages) {
+    if (!pkg || typeof pkg.packagePath !== "string" || !pkg.packagePath ||
+      typeof pkg.lessonId !== "string" || !pkg.lessonId ||
+      typeof pkg.packageChecksum !== "string" || !/^[a-f0-9]{64}$/.test(pkg.packageChecksum) ||
+      !(APPROVED_LOCALES as readonly string[]).includes(pkg.locale) || paths.has(pkg.packagePath)) {
+      throw new Error("Invalid or duplicate package identity in reindex baseline");
+    }
+    paths.add(pkg.packagePath);
+  }
+  return baseline;
+}
+
 /** Diff current vs previous package manifests for incremental reindex planning. */
 export function planReindex(
   current: PackageManifest,
@@ -53,12 +87,17 @@ export function planReindex(
     } else if (!prev) {
       action = "reindex";
       reason = "New package not in previous manifest";
-    } else if (prev.packageChecksum === pkg.packageChecksum) {
+    } else if (prev.packageChecksum === pkg.packageChecksum &&
+      prev.lessonId === pkg.lessonId && prev.locale === pkg.locale &&
+      prev.trackId === pkg.trackId && prev.moduleId === pkg.moduleId &&
+      prev.productionRoute === pkg.productionRoute && prev.canonicalVersion === pkg.canonicalVersion) {
       action = "skip";
       reason = "Package checksum unchanged";
     } else {
       action = "reindex";
-      reason = "Package checksum changed";
+      reason = prev.packageChecksum === pkg.packageChecksum
+        ? "Package membership or route metadata changed; reuse unchanged content embeddings"
+        : "Package checksum changed";
     }
 
     entries.push({
