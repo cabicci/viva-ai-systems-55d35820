@@ -1,0 +1,1471 @@
+{
+  "id": "fate-next-analysis-L02",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 16,
+  "maxAdjudicationCalls": 8,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L02-S01-ar-v1",
+      "sceneID": "L02-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "تخيّل قدّامك تقرير متبقّيات، وجنبه قيمة اسمها المدخول اليوميّ المقبول. واحد بيقارن الرقمين وبيقول: الأصغر يبقى آمن. المشكلة إنّ الرقمين مش بيقيسوا نفس الحاجة. حدّ المتبقّيات بيتكلم عن تركيز في الغذاء. إنّما المدخول اليوميّ المقبول بيتكلم عن كمية بالنسبة لوزن الجسم، على مقياس زمنيّ معيّن. قبل أيّ مقارنة، هنكتب الوحدة كاملة، ونحدّد السؤال: بنراجع الغذاء، ولا بنقدّر تعرّض الشخص؟",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "86e2378e93dca36a5048d1e6105e8397927a1233a41c7133604f9cf7060ad205",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S01-ar-v1",
+        "file": "L02-S01-ar-v1.wav",
+        "sha256": "7bcb07139aca6731aafde42d5177b3a312261706530443b6c254e484f78a9707"
+      },
+      "durationSeconds": 32.13095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L02-S01-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 24.0,
+              "end": 24.4,
+              "category": "pronunciation",
+              "heard": "بنقدر",
+              "expected": "بنقدّر",
+              "heardPhonetics": "[bɪnˈʔɑdɑr]",
+              "suggestion": "يجب نطق حرف الدال مشددًا (مضعفًا) ليصبح 'بنقدّر' [bɪnˈʔɑddɑr].",
+              "reason": "نطق حرف الدال في كلمة 'بنقدّر' بدون تشديد، بينما الكلمة الأصلية تتطلب تشديد الدال.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 2.0,
+                "end": 5.0,
+                "category": "speaking_style",
+                "observation": "The pace is noticeably rushed, and the intonation feels less natural, particularly on the phrase 'المدخول اليومي المقبول'.",
+                "certainty": "high"
+              },
+              {
+                "start": 9.0,
+                "end": 10.5,
+                "category": "speaking_style",
+                "observation": "An abrupt pause is followed by a quick, slightly unnatural restart on the word 'المشكله'.",
+                "certainty": "high"
+              },
+              {
+                "start": 12.5,
+                "end": 13.5,
+                "category": "speaking_style",
+                "observation": "There is an abrupt transition between 'الحاجه' and 'حد', affecting the natural flow.",
+                "certainty": "high"
+              },
+              {
+                "start": 23.5,
+                "end": 24.5,
+                "category": "speaking_style",
+                "observation": "An abrupt transition occurs between 'معين' and 'قبل', disrupting the natural rhythm.",
+                "certainty": "high"
+              },
+              {
+                "start": 28.0,
+                "end": 32.0,
+                "category": "speaking_style",
+                "observation": "The intonation in this segment feels somewhat flat and less dynamic compared to the reference, contributing to a less natural overall flow, especially towards the end of the sentence.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The audible timbre, register, and vocal weight of the candidate voice are a very strong match to the owner-accepted reference. The primary areas of concern relate to the speaking style, specifically the pacing, intonation patterns, and transitions between phrases. These elements occasionally lead to a less natural or somewhat 'chopped' delivery compared to the smooth and consistent flow of the reference, even though the underlying voice identity is well preserved."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L02-S01-A1",
+          "label": {
+            "ar": "تركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S01-A2",
+          "label": {
+            "ar": "مدخول بالنسبة للجسم",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S01-A3",
+          "label": {
+            "ar": "وحدتان مختلفتان",
+            "en": "Different dimensions"
+          },
+          "semanticTrigger": "Different dimensions"
+        },
+        {
+          "id": "L02-S01-A4",
+          "label": {
+            "ar": "حدّد السؤال",
+            "en": "Define the question"
+          },
+          "semanticTrigger": "Define the question"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S02-ar-v1",
+      "sceneID": "L02-S02",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "الحدّ الأقصى للمتبقّيات بيخصّ مادّة ومحصول وتعريف متبقّي محدّدين. مش رقم بيتطلّع من السميّة وحدها. بنحتاج تجارب متبقّيات تحت استخدامات زراعيّة مصرح بيها، ومعاها تقييم للمتبقّيات والتعرّض الغذائيّ. والتعريف ممكن يشمل المادّة الأصليّة ونواتج معيّنة. علشان كده ما ينفعش ننقل حدّ من تفّاح لطماطم، أو نقارن تحليل لمادّة واحدة بحدّ بيشمل أكتر منها. اتّفاق الاسم مش كفاية؛ لازم اتّفاق أساس القياس.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts. المَحْصول: el-mah-SOOL, clear emphatic ص, not س. طماطم: ta-MAA-tem, ordinary Egyptian pronunciation.",
+      "textSHA256": "8789e168168ddfa3609d29f2e8751c9d2cc9da5ba3eb5961be067e715a6ef385",
+      "deliverySHA256": "43e135829a88d11d6a34488ac2d1b13f7f00370f20f107109cf18c28180231ef",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S02-ar-v1",
+        "file": "L02-S02-ar-v1.wav",
+        "sha256": "4e3d7f568b470e831ffe85515209b02a84eae4565b8f053d6fd20c0fea52c02c"
+      },
+      "durationSeconds": 36.89095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L02-S02-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 21.0,
+              "end": 21.25,
+              "category": "substitution",
+              "heard": "المد",
+              "expected": "المادة",
+              "heardPhonetics": "/el.mæd/",
+              "suggestion": "يُفضل نطق 'المادة' بوضوح مع التاء المربوطة لتجنب اللبس.",
+              "reason": "نطق كلمة 'المادة' كـ 'المد' (بدون صوت التاء المربوطة) يغير الكلمة إلى معنى آخر ('المد' بمعنى المد والجزر أو الامتداد) مما قد يسبب التباساً في سياق الحديث عن 'المادة الأصلية'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S03-ar-v1",
+      "sceneID": "L02-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "على المستوى الدوليّ، الاجتماع المشترك لخبراء الفاو ومنظّمة الصحّة العالميّة بيقيّم بيانات المتبقّيات والسميّة. لجنة متبقّيات المبيدات في الكودكس بتناقش التوصيات، وهيئة الكودكس بتعتمد المعايير. ده مسار مختلف عن القانون المحليّ اللي ينطبق على شحنة بعينها. وفيه حدّ لمتبقّيات جاية من تلوّث بيئيّ أو استخدامات قديمة، مش من استخدام حاليّ على المحصول. هنا مصدر المتبقّي جزء من السؤال، مش مجرد اسم جديد لنفس الحالة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts. المَحْصول: el-mah-SOOL, clear emphatic ص, not س.",
+      "textSHA256": "51d6e1b77a708cfc8dfd084b3b7e62f80470f94b5dfa5646cc3f04947d396d65",
+      "deliverySHA256": "ab41cead0c73d153d36e40095651dc5a0a235578de61661992d765c3ae7836f5",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S03-ar-v1",
+        "file": "L02-S03-ar-v1.wav",
+        "sha256": "c93e7e85be84b315931a32b90e2ea3b9349d23044cef78af8175db86e880a783"
+      },
+      "durationSeconds": 34.57095833333333,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 0.01,
+                "category": "speaking_style",
+                "observation": "Slightly robotic delivery and unnatural emphasis on 'الدولي'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.02,
+                "end": 0.025,
+                "category": "speaking_style",
+                "observation": "The word 'لخبراء' sounds somewhat clipped.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.055,
+                "end": 0.06,
+                "category": "register",
+                "observation": "Unnatural intonation on 'بيقيم'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.075,
+                "end": 0.085,
+                "category": "timbre",
+                "observation": "The word 'والسميه' sounds somewhat flat and lacks natural vocal warmth.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.095,
+                "end": 0.105,
+                "category": "register",
+                "observation": "Slight unnatural dip in pitch on 'المبيدات'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.11,
+                "end": 0.115,
+                "category": "speaking_style",
+                "observation": "The word 'الكودكس' sounds a bit forced.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.115,
+                "end": 0.125,
+                "category": "timbre",
+                "observation": "The word 'بتناقش' sounds slightly artificial.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.14,
+                "end": 0.145,
+                "category": "speaking_style",
+                "observation": "Unnatural emphasis on 'بتعتمد'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.165,
+                "end": 0.17,
+                "category": "register",
+                "observation": "Intonation on 'مختلف' sounds slightly off.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.175,
+                "end": 0.18,
+                "category": "timbre",
+                "observation": "The word 'المحلي' has a slight robotic quality.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.19,
+                "end": 0.195,
+                "category": "speaking_style",
+                "observation": "The word 'ينطبق' sounds somewhat unnatural.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.2,
+                "end": 0.205,
+                "category": "speaking_style",
+                "observation": "The word 'بعينها' is slightly clipped.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.21,
+                "end": 0.255,
+                "category": "speaking_style",
+                "observation": "Multiple small unnatural pauses and intonation shifts, making the phrase 'وفي حد لمتبقيات جايه من تلوث بيئي او استخدامات قديمه' sound less fluid and somewhat choppy.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.265,
+                "end": 0.27,
+                "category": "register",
+                "observation": "The word 'حالي' sounds slightly off in intonation.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.275,
+                "end": 0.28,
+                "category": "speaking_style",
+                "observation": "Slightly unnatural emphasis on 'المحصول'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.295,
+                "end": 0.31,
+                "category": "speaking_style",
+                "observation": "The phrase 'مصدر المتبقي جزء من السؤال' sounds somewhat disjointed and has a slightly robotic cadence.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.325,
+                "end": 0.335,
+                "category": "timbre",
+                "observation": "The phrase 'مجرد اسم جديد' sounds a bit flat.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.335,
+                "end": 0.345,
+                "category": "speaking_style",
+                "observation": "Slightly unnatural ending to the phrase 'لنفس الحاله'.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice generally attempts to match the timbre, register, and vocal weight of the reference. However, it frequently exhibits minor issues with naturalness in intonation, pacing, and phrasing. This leads to a somewhat choppy and artificial delivery in several places, lacking the smooth, natural flow of the reference. The overall speaking style is inconsistent, with some parts sounding acceptable while others clearly show signs of unnatural processing or 'stitching' of words/phrases. The timbre, while generally close, occasionally lacks the warmth and naturalness of the human reference."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L02-S03-A1",
+          "label": {
+            "ar": "تقييم علمي",
+            "en": "Scientific evaluation"
+          },
+          "semanticTrigger": "Scientific evaluation"
+        },
+        {
+          "id": "L02-S03-A2",
+          "label": {
+            "ar": "مناقشة المقترح",
+            "en": "Proposal discussion"
+          },
+          "semanticTrigger": "Proposal discussion"
+        },
+        {
+          "id": "L02-S03-A3",
+          "label": {
+            "ar": "اعتماد المعيار",
+            "en": "Standard adoption"
+          },
+          "semanticTrigger": "Standard adoption"
+        },
+        {
+          "id": "L02-S03-A4",
+          "label": {
+            "ar": "القانون المحلي",
+            "en": "Domestic law"
+          },
+          "semanticTrigger": "Domestic law"
+        },
+        {
+          "id": "L02-S03-A5",
+          "label": {
+            "ar": "مصدر بيئي",
+            "en": "Environmental source"
+          },
+          "semanticTrigger": "Environmental source"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S04-ar-v1",
+      "sceneID": "L02-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "نشتغل على مثال افتراضيّ، مش نتيجة تحليل حقيقيّة. التركيز صفر فاصلة صفر تمانية ملّيجرام لكلّ كيلوجرام غذاء. والشخص بياكل ميتين جرام في اليوم، يعني صفر فاصلة اتنين كيلوجرام في اليوم. نضرب التركيز في كمية الغذاء. وحدة كيلوجرام الغذاء بتختصر، ويتبقّى صفر فاصلة صفر واحد ستّة ملّيجرام في اليوم. دي كمية داخلة من الغذاء ده في النموذج. لسه ما قسمناش على وزن الجسم، ولسه ما جمعناش بقيّة مصادر التعرّض.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "4e5cbbfcf7421720c673f2b14a88868db0a95904be76a17ff9bcf1a9b2acf12c",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S04-ar-v1",
+        "file": "L02-S04-ar-v1.wav",
+        "sha256": "70995c738ec0f78ccb1156c348e671ac58cd8ed5019581b00151b49302392e2e"
+      },
+      "durationSeconds": 39.57095833333333,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 0.045,
+                "category": "speaking_style",
+                "observation": "The initial delivery feels slightly less natural and a bit segmented compared to the reference, lacking some fluidity.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.08,
+                "end": 0.105,
+                "category": "speaking_style",
+                "observation": "The rhythm and connection between words feel somewhat stilted, impacting the natural flow of narration.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.185,
+                "end": 0.215,
+                "category": "speaking_style",
+                "observation": "The delivery exhibits a slightly choppy quality, making the phrase less smooth than expected for narration.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.215,
+                "end": 0.245,
+                "category": "speaking_style",
+                "observation": "The flow of the sentence feels somewhat unnatural and segmented.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.3,
+                "end": 0.335,
+                "category": "speaking_style",
+                "observation": "The phrase delivery is a bit choppy, affecting the overall fluidity.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.335,
+                "end": 0.3957,
+                "category": "speaking_style",
+                "observation": "The extended phrase exhibits a somewhat choppy flow and inconsistent emphasis, departing from the natural narrative style of the reference.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice largely maintains the intended identity in terms of timbre, register, and vocal weight. However, the primary area of concern is the speaking style and overall flow. The delivery frequently sounds less fluid and more segmented or 'choppy' compared to the smooth, natural narration of the reference. There are also subtle inconsistencies in rhythm and emphasis that contribute to a less natural listening experience. These issues are audible throughout the candidate audio, though not severe enough to completely obscure the voice identity."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L02-S04-A1",
+          "label": {
+            "ar": "التركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S04-A2",
+          "label": {
+            "ar": "كمية الغذاء في اليوم",
+            "en": "Daily food consumption"
+          },
+          "semanticTrigger": "Daily food consumption"
+        },
+        {
+          "id": "L02-S04-A3",
+          "label": {
+            "ar": "توحيد الوحدات",
+            "en": "Match units"
+          },
+          "semanticTrigger": "Match units"
+        },
+        {
+          "id": "L02-S04-A4",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S05-ar-v1",
+      "sceneID": "L02-S05",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "دلوقتي نفترض وزن الجسم ستّين كيلوجرام. نقسم الكمية اليوميّة، ستّاشر من ألف ملّيجرام، على ستّين. الناتج بالتقريب صفر فاصلة صفر صفر صفر اتنين ستّة سبعة ملّيجرام لكلّ كيلوجرام وزن جسم في اليوم. لو المدخول المقبول الافتراضيّ واحد من مية بنفس الوحدة، فمساهمة الغذاء ده حوالي اتنين فاصلة سبعة في المية منه. النسبة بتخصّ المسار المحسوب بسّ. ما تثبتش إنّ كلّ التعرّض مقبول، ولا إنّ الغذاء مطابق لحدّ المتبقّيات.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "845ec6b328d704f5c938588ad01d48d920f32b56ef1767c2c33b986d5afc6d03",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S05-ar-v1",
+        "file": "L02-S05-ar-v1.wav",
+        "sha256": "b40bb59eef9298cf90fa87b14eb53c3d8f2a2ce61a5d99e0e63034a569a2bd8d"
+      },
+      "durationSeconds": 42.13095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L02-S05-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 40.8,
+              "end": 41.8,
+              "category": "pronunciation",
+              "heard": "المتتبقيات",
+              "expected": "المتبقيات",
+              "heardPhonetics": "/al-mu-ta-tab-ba-qi-yāt/",
+              "suggestion": "يُفضل نطق الكلمة 'المتبقيات' بـ 'باء' بدلاً من 'تاء' في المقطع الأول، و'قاف' بدلاً من 'باء' في المقطع الثاني.",
+              "reason": "نطق 'المتبقيات' بـ 'المتتبقيات' هو تغيير صوتي شائع في بعض اللهجات المصرية، حيث يتم إبدال حرف 'الباء' الأول بـ 'تاء' وحرف 'القاف' بـ 'باء'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L02-S05-A1",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        },
+        {
+          "id": "L02-S05-A2",
+          "label": {
+            "ar": "وزن الجسم",
+            "en": "Body mass"
+          },
+          "semanticTrigger": "Body mass"
+        },
+        {
+          "id": "L02-S05-A3",
+          "label": {
+            "ar": "المدخول بالنسبة للوزن",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S05-A4",
+          "label": {
+            "ar": "مساهمة غذاء واحد",
+            "en": "Single-food contribution"
+          },
+          "semanticTrigger": "Single-food contribution"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S06-ar-v1",
+      "sceneID": "L02-S06",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "المدخول اليوميّ المقبول مرجع للتعرّض المتكرّر على مدى العمر، مش تصريح بجرعة كبيرة في يوم واحد. تقييم التعرّض الحادّ له مقياس زمنيّ مختلف وقيمة مرجعيّة مناسبة لما تكون محدّدة للمادّة. ومش كلّ الناس نفس الوزن أو استهلاك الغذاء. في التقييم الحقيقيّ، بنراجع توزيعات الاستهلاك والفئات الحسّاسة وتعريف المتبقّي وعدم اليقين. المثال البسيط علّمنا ترتيب الحساب، لكن ما استبدلش التقييم الكامل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "7c2048ad23c3d918e74498f75e61ca78d3b8b94a7e4ec484b0ff0c2fabf2c22b",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S06-ar-v1",
+        "file": "L02-S06-ar-v1.wav",
+        "sha256": "c608082ade783e48e476420b97db98ebe8a576fbdb6496b9c0696b3fd5ad2d6e"
+      },
+      "durationSeconds": 33.610958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L02-S06-A1",
+          "label": {
+            "ar": "تعرّض متكرر",
+            "en": "Repeated exposure"
+          },
+          "semanticTrigger": "Repeated exposure"
+        },
+        {
+          "id": "L02-S06-A2",
+          "label": {
+            "ar": "تعرّض قصير",
+            "en": "Short exposure"
+          },
+          "semanticTrigger": "Short exposure"
+        },
+        {
+          "id": "L02-S06-A3",
+          "label": {
+            "ar": "مرجع مناسب للمدة",
+            "en": "Duration-matched reference"
+          },
+          "semanticTrigger": "Duration-matched reference"
+        },
+        {
+          "id": "L02-S06-A4",
+          "label": {
+            "ar": "بيانات وعدم يقين",
+            "en": "Data and uncertainty"
+          },
+          "semanticTrigger": "Data and uncertainty"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S07-ar-v1",
+      "sceneID": "L02-S07",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "لو نفس المبيد موجود في أكتر من غذاء، وفي ميّه الشرب، وفي تعرّض منزليّ مناسب للحالة، ده سؤال عن التعرّض المجمّع للمادّة الواحدة. أمّا التقييم التراكميّ في سياق المبيدات، فبيحتاج النظر لمواد تشترك في آليّة سميّة، مع بيانات التعرّض المناسبة. وجود اسمين في تقرير مش دليل إنّنا نجمع الرقمين مباشرة. الوحدات والطرق والتوقيت وقوّة التأثير لازم تدخل في الطريقة العلميّة. مجرّد الجمع الحسابيّ ما يعملش تقييم مخاطر.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "68da1f337842bf6ba80549f0e92365ea56c6c6fcf66234aab7fc9ea131d15da0",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S07-ar-v1",
+        "file": "L02-S07-ar-v1.wav",
+        "sha256": "b121ee53c3a3cca14a1916ec07b8818007366f469190d3a89afd5eb402308e94"
+      },
+      "durationSeconds": 36.010958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L02-S07-A1",
+          "label": {
+            "ar": "مادة واحدة",
+            "en": "One substance"
+          },
+          "semanticTrigger": "One substance"
+        },
+        {
+          "id": "L02-S07-A2",
+          "label": {
+            "ar": "غذاء ومياه وطرق أخرى",
+            "en": "Food, water and other routes"
+          },
+          "semanticTrigger": "Food, water and other routes"
+        },
+        {
+          "id": "L02-S07-A3",
+          "label": {
+            "ar": "عدة مواد",
+            "en": "Several substances"
+          },
+          "semanticTrigger": "Several substances"
+        },
+        {
+          "id": "L02-S07-A4",
+          "label": {
+            "ar": "دليل آلية مشتركة",
+            "en": "Common-mechanism evidence"
+          },
+          "semanticTrigger": "Common-mechanism evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S08-ar-v1",
+      "sceneID": "L02-S08",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "الملف فيه تاريخ للقانون الأمريكيّ. هنفصل التاريخ عن الأدوار الحاليّة: وكالة حماية البيئة بتحدّد حدود متبقّيات الغذاء الأمريكيّة، مع أدوار رقابيّة لجهات زي هيئة الغذاء والدواء ووزارة الزراعة. تعديلات سنة ألف تسعمية ستّة وتسعين أكّدت التعرّض المجمّع والتراكميّ وحماية الأطفال. دلوقتي دورك: تقرير فيه مبيدين على تفّاحة. قبل حكم المطابقة أو المخاطر، اكتب بيانات الحدّ والتعريف والوحدة، وبعدها الاستهلاك والوزن والآليّة وطرق التعرّض. افصل السؤالين في إجابتك.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "591225c11a658b712610292731b442e01bcbee0b451c8897414529cba0c5ebef",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S08-ar-v1",
+        "file": "L02-S08-ar-v1.wav",
+        "sha256": "32d228da9c4f01f23aed7fd65c7c8d5cb5ada605aaadac72a3e26b087508bc99"
+      },
+      "durationSeconds": 41.930958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L02-S08-A1",
+          "label": {
+            "ar": "السياق الأمريكي",
+            "en": "US context"
+          },
+          "semanticTrigger": "US context"
+        },
+        {
+          "id": "L02-S08-A2",
+          "label": {
+            "ar": "التعرّض المجمع",
+            "en": "Aggregate exposure"
+          },
+          "semanticTrigger": "Aggregate exposure"
+        },
+        {
+          "id": "L02-S08-A3",
+          "label": {
+            "ar": "آلية تأثير مشتركة",
+            "en": "Common mechanism"
+          },
+          "semanticTrigger": "Common mechanism"
+        },
+        {
+          "id": "L02-S08-A4",
+          "label": {
+            "ar": "البيانات الناقصة",
+            "en": "Missing evidence"
+          },
+          "semanticTrigger": "Missing evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S01-en-v1",
+      "sceneID": "L02-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Imagine a residue report beside a value called the acceptable daily intake. Someone compares the two numbers and declares the smaller one safe. The quantities describe different things. A maximum residue limit concerns concentration in a specified food. An acceptable daily intake concerns intake relative to body mass over a particular time scale. Before comparing numbers, write the complete units and decide whether the question concerns the food or the person’s exposure.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "0155e9e9b903e63142ef154481ba34f14b8ff5acdec7bdabecf28e5ae6501239",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S01-en-v1",
+        "file": "L02-S01-en-v1.wav",
+        "sha256": "05cd83fbacaeeb78c51b3ec85f4d5486b669f9691718be19fef80691b4be1541"
+      },
+      "durationSeconds": 36.370958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L02-S01-A1",
+          "label": {
+            "ar": "تركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S01-A2",
+          "label": {
+            "ar": "مدخول بالنسبة للجسم",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S01-A3",
+          "label": {
+            "ar": "وحدتان مختلفتان",
+            "en": "Different dimensions"
+          },
+          "semanticTrigger": "Different dimensions"
+        },
+        {
+          "id": "L02-S01-A4",
+          "label": {
+            "ar": "حدّد السؤال",
+            "en": "Define the question"
+          },
+          "semanticTrigger": "Define the question"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S02-en-v1",
+      "sceneID": "L02-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A maximum residue limit belongs to a particular substance, commodity and residue definition. It is not derived from toxicity alone. Supervised residue trials under authorized agricultural uses contribute evidence, alongside residue and dietary safety evaluations. A definition can include the parent compound and specified products. Therefore an apple limit cannot simply be transferred to tomatoes, and a parent-only measurement cannot automatically be compared with a broader residue definition. Matching names is insufficient; the measurement basis must match.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "44e0f6cea509a8db3eca1ea374d3d8797b50a4ff17c8c6a4346a2ae01f9b7837",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S02-en-v1",
+        "file": "L02-S02-en-v1.wav",
+        "sha256": "e1da848a127d6e0e4bfd300a8d163b5ed74c9f367ee4e301266c9f7d875f2162"
+      },
+      "durationSeconds": 41.690958333333334,
+      "reviewConcerns": [
+        {
+          "source": "L02-S02-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 26.4,
+              "end": 26.8,
+              "category": "substitution",
+              "heard": "apple",
+              "expected": "APL",
+              "heardPhonetics": "/ˈæpəl/",
+              "suggestion": "Consider using the technical acronym 'APL' if that was the intended term, or clarify 'apple limit'.",
+              "reason": "The speaker clearly pronounces 'apple' (the fruit). In the context of 'residue limit' and 'tomatoes' within a scientific narration, it is highly probable that a technical acronym such as 'APL' (e.g., Acceptable Pesticide Limit) was intended. This constitutes a substitution of a common word for a likely technical term, which could also be considered an aspect of unnatural delivery in this specific context.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "L02-S02-en-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 0.013,
+              "end": 0.014,
+              "category": "pronunciation",
+              "heard": "agricultural",
+              "expected": "agricultural",
+              "heardPhonetics": "The 't' in 'cultural' is pronounced as a very soft /tʃ/ sound, almost like a reduced /ʃ/.",
+              "suggestion": "Ensure a clear and distinct /tʃ/ sound for the 't' in 'cultural'.",
+              "reason": "The 't' sound in the 'cultural' part of the word is significantly softened, leading to a less distinct articulation of the syllable.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.019,
+              "end": 0.019,
+              "category": "pronunciation",
+              "heard": "evaluations",
+              "expected": "evaluations",
+              "heardPhonetics": "The final 's' is pronounced as a very weak /z/ sound, almost inaudible.",
+              "suggestion": "Articulate the final /z/ sound more clearly.",
+              "reason": "The final 's' sound, indicating plurality, is pronounced very weakly, almost inaudibly.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.028,
+              "end": 0.028,
+              "category": "pronunciation",
+              "heard": "transferred",
+              "expected": "transferred",
+              "heardPhonetics": "The 's' is pronounced as a very weak /s/ sound, almost inaudible.",
+              "suggestion": "Articulate the /s/ sound more clearly.",
+              "reason": "The 's' sound in the middle of the word is pronounced very weakly.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.032,
+              "end": 0.033,
+              "category": "pronunciation",
+              "heard": "automatically",
+              "expected": "automatically",
+              "heardPhonetics": "The 't' after 'ma' is pronounced as a very weak /t/ sound, almost like a glottal stop or completely omitted.",
+              "suggestion": "Articulate the /t/ sound more clearly.",
+              "reason": "The 't' sound in the middle of the word is pronounced very weakly.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 2,
+            "validForReview": false
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S03-en-v1",
+      "sceneID": "L02-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Internationally, the Joint FAO/WHO Meeting on Pesticide Residues evaluates residue and toxicology evidence. The Codex Committee on Pesticide Residues considers recommendations, and the Codex Alimentarius Commission adopts standards. This process is distinct from the domestic law applicable to a particular consignment. Extraneous maximum residue limits address residues from environmental sources, including former uses, rather than current use on that commodity. The residue’s origin is part of the question, not merely a different label.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "6051bfe6c274c6e276d8ddb1fdd018847005372cc843b3e0a40b808f3c6d2238",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S03-en-v1",
+        "file": "L02-S03-en-v1.wav",
+        "sha256": "10d44606e2b0c6523a7f5c13c49166a84088009923314bd07e8de5ee2e54db59"
+      },
+      "durationSeconds": 36.41095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L02-S03-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 32.2,
+              "end": 32.9,
+              "category": "delivery",
+              "heard": "residues origin",
+              "expected": "residue's origin",
+              "heardPhonetics": "rɛzɪduːz ˈɒrɪdʒɪn",
+              "suggestion": "The residue's origin",
+              "reason": "The phrasing 'residues origin' is grammatically unusual; typically, one would expect 'the residue's origin' (singular possessive) or 'the origin of the residues.' The speaker clearly articulates 'residues' (plural) followed by 'origin.'",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L02-S03-A1",
+          "label": {
+            "ar": "تقييم علمي",
+            "en": "Scientific evaluation"
+          },
+          "semanticTrigger": "Scientific evaluation"
+        },
+        {
+          "id": "L02-S03-A2",
+          "label": {
+            "ar": "مناقشة المقترح",
+            "en": "Proposal discussion"
+          },
+          "semanticTrigger": "Proposal discussion"
+        },
+        {
+          "id": "L02-S03-A3",
+          "label": {
+            "ar": "اعتماد المعيار",
+            "en": "Standard adoption"
+          },
+          "semanticTrigger": "Standard adoption"
+        },
+        {
+          "id": "L02-S03-A4",
+          "label": {
+            "ar": "القانون المحلي",
+            "en": "Domestic law"
+          },
+          "semanticTrigger": "Domestic law"
+        },
+        {
+          "id": "L02-S03-A5",
+          "label": {
+            "ar": "مصدر بيئي",
+            "en": "Environmental source"
+          },
+          "semanticTrigger": "Environmental source"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S04-en-v1",
+      "sceneID": "L02-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Use a hypothetical example, not a real monitoring result. The concentration is zero point zero eight milligrams per kilogram of food. Daily consumption is two hundred grams, or zero point two kilograms per day. Multiply concentration by food consumption. The food-mass units cancel, leaving zero point zero one six milligrams per day. This is the modeled intake from that food. We have not yet divided by body mass or included other exposure sources.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "f0fea81126a2dade7c29065774fd1bfc5b19badb6f145324b2d7784058cb87e6",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S04-en-v1",
+        "file": "L02-S04-en-v1.wav",
+        "sha256": "0ebefc52484a527470659f7ffa323dad737dac5e341c91761bdf303564550d75"
+      },
+      "durationSeconds": 36.050958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L02-S04-A1",
+          "label": {
+            "ar": "التركيز في الغذاء",
+            "en": "Food concentration"
+          },
+          "semanticTrigger": "Food concentration"
+        },
+        {
+          "id": "L02-S04-A2",
+          "label": {
+            "ar": "كمية الغذاء في اليوم",
+            "en": "Daily food consumption"
+          },
+          "semanticTrigger": "Daily food consumption"
+        },
+        {
+          "id": "L02-S04-A3",
+          "label": {
+            "ar": "توحيد الوحدات",
+            "en": "Match units"
+          },
+          "semanticTrigger": "Match units"
+        },
+        {
+          "id": "L02-S04-A4",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S05-en-v1",
+      "sceneID": "L02-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Now assume a body mass of sixty kilograms. Divide the daily intake, sixteen thousandths of a milligram, by sixty. The result is approximately zero point zero zero zero two six seven milligrams per kilogram of body mass per day. If a hypothetical acceptable daily intake is one hundredth in the same units, this food contributes about two point seven percent. That percentage covers only the calculated pathway. It establishes neither acceptable total exposure nor residue-limit compliance.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "63e81d71f6c1825bc05f5a03362c6b61f9d3b947c908858e946ddeac4a71c156",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S05-en-v1",
+        "file": "L02-S05-en-v1.wav",
+        "sha256": "3d6f6408ed40e8e0f1e3e2943ffe5f7ea48747b74d04a049f185ad727d0bd4c0"
+      },
+      "durationSeconds": 42.49095833333333,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 0.01,
+                "category": "delivery",
+                "observation": "Slight lack of fluid connection between 'Now' and 'assume'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.04,
+                "end": 0.05,
+                "category": "delivery",
+                "observation": "Intonation on 'daily' is slightly more pronounced than expected, affecting natural flow.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.07,
+                "end": 0.09,
+                "category": "delivery",
+                "observation": "Subtle abruptness in the transition from 'milligram' to 'by 60', slightly affecting natural flow.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.1,
+                "end": 0.11,
+                "category": "delivery",
+                "observation": "'The result' feels slightly disconnected from 'is approximately'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.21,
+                "end": 0.22,
+                "category": "delivery",
+                "observation": "'If a' sounds slightly stilted.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.24,
+                "end": 0.25,
+                "category": "delivery",
+                "observation": "Emphasis on 'hundredth' is a bit strong, and the 'th' sound is very pronounced, affecting naturalness.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.27,
+                "end": 0.28,
+                "category": "delivery",
+                "observation": "'this food' feels slightly disconnected from 'contributes'.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.31,
+                "end": 0.32,
+                "category": "delivery",
+                "observation": "'That percentage' feels slightly disconnected.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.35,
+                "end": 0.36,
+                "category": "delivery",
+                "observation": "'It establishes' sounds slightly stilted.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.41,
+                "end": 0.42,
+                "category": "delivery",
+                "observation": "The final word 'compliance' has a slightly less natural decay.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice maintains a strong match in timbre, register, and vocal weight to the reference. However, there are subtle but consistent instances of less fluid prosody and intonation, leading to moments where the delivery feels slightly stilted or disconnected between words/phrases, rather than a continuous natural speech stream. This results in a mild departure from the very natural and fluid speaking style of the reference."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L02-S05-A1",
+          "label": {
+            "ar": "الكمية المتناولة",
+            "en": "Ingested amount"
+          },
+          "semanticTrigger": "Ingested amount"
+        },
+        {
+          "id": "L02-S05-A2",
+          "label": {
+            "ar": "وزن الجسم",
+            "en": "Body mass"
+          },
+          "semanticTrigger": "Body mass"
+        },
+        {
+          "id": "L02-S05-A3",
+          "label": {
+            "ar": "المدخول بالنسبة للوزن",
+            "en": "Body-mass intake"
+          },
+          "semanticTrigger": "Body-mass intake"
+        },
+        {
+          "id": "L02-S05-A4",
+          "label": {
+            "ar": "مساهمة غذاء واحد",
+            "en": "Single-food contribution"
+          },
+          "semanticTrigger": "Single-food contribution"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S06-en-v1",
+      "sceneID": "L02-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "The acceptable daily intake is a reference for repeated intake over a lifetime, not permission for a large dose on one day. Acute exposure assessment uses a different time scale and an appropriate acute reference value when established for the substance. People also differ in body mass and food consumption. Real assessments consider consumption distributions, sensitive groups, residue definitions and uncertainty. The simple example teaches the calculation sequence; it does not replace a complete assessment.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "1766ddd046a1a40fae117830c9b97cdc4b44ad0268e181921b6ed325af9146d7",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S06-en-v1",
+        "file": "L02-S06-en-v1.wav",
+        "sha256": "a1fd5ff6509c4d39c496a5cc4450a61309aff74b4787543947d9ce1f1b99f088"
+      },
+      "durationSeconds": 37.17095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L02-S06-A1",
+          "label": {
+            "ar": "تعرّض متكرر",
+            "en": "Repeated exposure"
+          },
+          "semanticTrigger": "Repeated exposure"
+        },
+        {
+          "id": "L02-S06-A2",
+          "label": {
+            "ar": "تعرّض قصير",
+            "en": "Short exposure"
+          },
+          "semanticTrigger": "Short exposure"
+        },
+        {
+          "id": "L02-S06-A3",
+          "label": {
+            "ar": "مرجع مناسب للمدة",
+            "en": "Duration-matched reference"
+          },
+          "semanticTrigger": "Duration-matched reference"
+        },
+        {
+          "id": "L02-S06-A4",
+          "label": {
+            "ar": "بيانات وعدم يقين",
+            "en": "Data and uncertainty"
+          },
+          "semanticTrigger": "Data and uncertainty"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S07-en-v1",
+      "sceneID": "L02-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "If the same pesticide occurs in several foods, drinking water and relevant residential exposure, the question concerns aggregate exposure to one substance. Cumulative pesticide assessment considers substances sharing a common toxicity mechanism, using appropriate exposure information. Finding two names on a report does not justify adding their concentrations directly. Units, routes, timing and relative potency must be handled within an appropriate method. Arithmetic addition alone is not a risk assessment.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "deef087cdb69f981b916fe96537567ff5f1f6300ba2122c00bac3aabe7f685ee",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S07-en-v1",
+        "file": "L02-S07-en-v1.wav",
+        "sha256": "200c2ac9d6afda131ecf2e5fd212f7e617c0c1c58bba14127490499d5532d74b"
+      },
+      "durationSeconds": 39.17095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L02-S07-A1",
+          "label": {
+            "ar": "مادة واحدة",
+            "en": "One substance"
+          },
+          "semanticTrigger": "One substance"
+        },
+        {
+          "id": "L02-S07-A2",
+          "label": {
+            "ar": "غذاء ومياه وطرق أخرى",
+            "en": "Food, water and other routes"
+          },
+          "semanticTrigger": "Food, water and other routes"
+        },
+        {
+          "id": "L02-S07-A3",
+          "label": {
+            "ar": "عدة مواد",
+            "en": "Several substances"
+          },
+          "semanticTrigger": "Several substances"
+        },
+        {
+          "id": "L02-S07-A4",
+          "label": {
+            "ar": "دليل آلية مشتركة",
+            "en": "Common-mechanism evidence"
+          },
+          "semanticTrigger": "Common-mechanism evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L02-S08-en-v1",
+      "sceneID": "L02-S08",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "The handout includes the history of United States regulation. Separate that history from current roles: the Environmental Protection Agency establishes pesticide food tolerances, while agencies including the Food and Drug Administration and Department of Agriculture have monitoring or enforcement responsibilities. The nineteen ninety-six amendments emphasized aggregate exposure, cumulative effects and child protection. Now consider two pesticide residues on an apple. List the limit, definition and unit evidence needed for compliance, then the consumption, body mass, mechanism and exposure information needed for risk assessment. Keep the two questions separate.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "091a67bc6dce30fd6c99650da4c0c07921c21907221288954e15b4b451a9de20",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S08-en-v1",
+        "file": "L02-S08-en-v1.wav",
+        "sha256": "19ef8f619764b3ce8fa7304968e111d2f4f551a7ce370dfdf1986e5934cb511c"
+      },
+      "durationSeconds": 50.25095833333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L02-S08-A1",
+          "label": {
+            "ar": "السياق الأمريكي",
+            "en": "US context"
+          },
+          "semanticTrigger": "US context"
+        },
+        {
+          "id": "L02-S08-A2",
+          "label": {
+            "ar": "التعرّض المجمع",
+            "en": "Aggregate exposure"
+          },
+          "semanticTrigger": "Aggregate exposure"
+        },
+        {
+          "id": "L02-S08-A3",
+          "label": {
+            "ar": "آلية تأثير مشتركة",
+            "en": "Common mechanism"
+          },
+          "semanticTrigger": "Common mechanism"
+        },
+        {
+          "id": "L02-S08-A4",
+          "label": {
+            "ar": "البيانات الناقصة",
+            "en": "Missing evidence"
+          },
+          "semanticTrigger": "Missing evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}
