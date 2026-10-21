@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { SemanticChunk } from "../../../../supabase/functions/assistant-runtime/handler.ts";
+import type { AuthoritativeGroundingCandidate } from "../../rag/assistant-grounding-security";
 import type { CurrentAiApproval } from "../../rag/current-source-release";
 import type { PackageManifest, RagChunkRecord } from "../../rag/types";
 
@@ -12,7 +13,8 @@ const currentPackages = read<PackageManifest>("artifacts/rag/current/package-man
 const historicalPackages = read<PackageManifest>("artifacts/rag/package-manifest.json");
 const historicalChunks = read<RagChunkRecord[]>("artifacts/rag/chunks.json");
 
-function candidate(chunk: RagChunkRecord, manifest: PackageManifest): SemanticChunk {
+type GroundedFixture = SemanticChunk & AuthoritativeGroundingCandidate;
+function candidate(chunk: RagChunkRecord, manifest: PackageManifest): GroundedFixture {
   const pkg = manifest.packages.find(record => record.packagePath === chunk.packagePath);
   if (!pkg) throw new Error(`Missing fixture package: ${chunk.packagePath}`);
   return {
@@ -28,14 +30,14 @@ function candidate(chunk: RagChunkRecord, manifest: PackageManifest): SemanticCh
   };
 }
 
-export function currentSample(chunkId = "en/analyst-m1-l1-from-automation-to-insight/s0/c0"): SemanticChunk {
+export function currentSample(chunkId = "en/analyst-m1-l1-from-automation-to-insight/s0/c0"): GroundedFixture {
   const chunk = CURRENT_CHUNKS.find(record => record.chunkId === chunkId);
   if (!chunk) throw new Error(`Missing current fixture: ${chunkId}`);
   return candidate(chunk, currentPackages);
 }
 
 /** Real historical rows exercise compatibility separately from current rows. */
-export function legacySample(changedPackage = false): SemanticChunk {
+export function legacySample(changedPackage = false): GroundedFixture {
   const chunk = historicalChunks.find(record => {
     const pkg = historicalPackages.packages.find(p => p.packagePath === record.packagePath);
     const current = CURRENT_CORPUS.packages[`${record.locale}|${record.lessonId}`];

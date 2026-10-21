@@ -137,7 +137,7 @@ describe("incremental embedding reuse", () => {
 
   it("uses a read-only SQL join that authenticates the active registry model/source and validates returned text", () => {
     const row = candidate();
-    const query = vi.fn(() => JSON.stringify([{ ...row, embedding: JSON.stringify(row.embedding) }]));
+    const query = vi.fn((_sql: string) => JSON.stringify([{ ...row, embedding: JSON.stringify(row.embedding) }]));
     const vectors = loadReusableEmbeddings({ query, redactedTargetId: "test" }, [chunk("0", row.content)], provider());
     expect(vectors.size).toBe(1);
     expect(query.mock.calls[0][0]).toContain("JOIN public.rag_index_versions");

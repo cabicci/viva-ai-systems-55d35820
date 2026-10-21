@@ -71,7 +71,7 @@
     "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts",
     "assistant:verify": "bun run scripts/assistant/verify-card-integration.ts",
     "rag:generate-current": "bun run scripts/rag/generate-current-release.ts",
-    "test:assistant": "vitest run src/lib/__tests__/assistant- src/lib/__tests__/floating-assistant src/lib/__tests__/card-assistant- src/lib/__tests__/rag-card-membership src/lib/__tests__/rag-incremental src/lib/__tests__/rag-native-incremental src/lib/__tests__/rag-current src/lib/academic-education/assistant- src/lib/__tests__/locale-assistant-parity"
+    "test:assistant": "vitest run src/lib/__tests__/assistant- src/lib/__tests__/floating-assistant src/lib/__tests__/card-assistant- src/lib/__tests__/rag-card-membership src/lib/__tests__/rag-incremental src/lib/__tests__/rag-native-incremental src/lib/__tests__/rag-current src/lib/__tests__/rag-security-grounding src/lib/__tests__/rag-grounding-fail-closed-locales src/lib/academic-education/assistant- src/lib/__tests__/locale-assistant-parity"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
@@ -135,7 +135,7 @@
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^7.3.6",
+    "vite": "7.3.7",
     "vitest": "^4.1.11",
     "@electric-sql/pglite-pgvector": "0.0.9"
   },
@@ -153,6 +153,8 @@
     "shell-quote": "1.11.0",
     "esbuild": "0.28.1",
     "chokidar": "4.0.3",
-    "source-map-js": "1.2.2"
+    "source-map-js": "1.2.2",
+    "launch-editor": "2.14.2",
+    "vite": "7.3.7"
   }
 }
