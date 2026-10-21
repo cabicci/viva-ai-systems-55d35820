@@ -1,0 +1,321 @@
+{
+  "id": "fate-next-analysis-repairs",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 4,
+  "maxAdjudicationCalls": 2,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L03-S01-ar-v2",
+      "sceneID": "L03-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nKeep the list items connected naturally within each sentence. No staccato listing or exaggerated pauses; explain the whole idea conversationally.",
+      "textSHA256": "c85af44a13229cdbb50de9ca30cac8fe5dcde0be3469dde9eeba077541c03cbb",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "previousId": "L03-S01-ar-v1",
+      "repairReason": "Two actual-audio checks corroborated segmented/robotic delivery. Record complete passage naturally, preserving words.",
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L03-S01-ar-v2",
+        "file": "L03-S01-ar-v2.wav",
+        "sha256": "bd7abae4afd51abe87792ff7feecd5286800e900997eba8b0b63dc9cfec2306b"
+      },
+      "durationSeconds": 34.970958333333336,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L03-S05-en-v2",
+      "sceneID": "L03-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Assume a method with a detection limit of two thousandths of a milligram per litre and a quantitation limit of six thousandths. A below-detection report does not establish zero concentration; it reports a limitation under those measurement conditions. Four thousandths may be qualified as detected but below the required quantitation level. Do not remove the qualifier and treat the number as precise. Reporting codes vary by method, so consult the laboratory’s definitions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.\nComplete every final consonant, especially the final word definitions, then let a natural short final pause finish the recording.",
+      "textSHA256": "a8dca1cb2060f85460041c04b0c248af8c1a749d5ceb130a4237e2a09c7e2d1f",
+      "deliverySHA256": "045bf339438e63ccc87c0e1c46e0ef9c4f371500ff0dd5adcf6026a60d1878a1",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L03-S05-en-v1",
+      "repairReason": "Actual-audio adjudication found clipped final consonant. Preserve entire passage and complete final word.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L03-S05-en-v2",
+        "file": "L03-S05-en-v2.wav",
+        "sha256": "198f549ab0118b84430d59d3eab7795f99dd7086648c7f465fac7a168dbc0fea"
+      },
+      "durationSeconds": 34.610958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L03-S05-en-v2-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 18.9,
+              "end": 19.6,
+              "category": "number_unit",
+              "heard": "thousandth",
+              "expected": "thousandths",
+              "heardPhonetics": "ˈθaʊzəndθ",
+              "suggestion": "Ensure plural form 'thousandths' is used when referring to multiple parts of a thousand.",
+              "reason": "The word 'thousandth' was pronounced in its singular form, lacking the final 's' sound, despite the preceding number 'Four' suggesting a plural form 'thousandths' as heard with 'two thousandths' and 'six thousandths' earlier in the narration.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 34.61,
+                "category": "Timbre",
+                "observation": "The candidate's timbre exhibits a slightly more processed or metallic quality compared to the reference, particularly noticeable on sibilant sounds (e.g., 's', 'z'), which sound sharper. This characteristic is consistently present throughout the audio.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.0,
+                "end": 34.61,
+                "category": "Prosody",
+                "observation": "While articulation is clear, the candidate's delivery occasionally lacks the natural smoothness and subtle intonation variations observed in the reference. Some pauses feel slightly more abrupt, contributing to a less fluid, somewhat 'chopped' feel in places, such as '2000ths of a milligram per liter' (0:03-0:05) and 'below the required quantitation level' (0:22-0:24).",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The register and vocal weight of the candidate are generally well-matched to the reference. The primary concerns are the subtle but audible differences in timbre and the occasional lack of natural prosodic flow."
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "L03-S05-A1",
+          "label": {
+            "ar": "حد الكشف",
+            "en": "Detection limit"
+          },
+          "semanticTrigger": "Detection limit"
+        },
+        {
+          "id": "L03-S05-A2",
+          "label": {
+            "ar": "حد التقدير الكمي",
+            "en": "Quantitation limit"
+          },
+          "semanticTrigger": "Quantitation limit"
+        },
+        {
+          "id": "L03-S05-A3",
+          "label": {
+            "ar": "نتيجة بين الحدين",
+            "en": "Between the limits"
+          },
+          "semanticTrigger": "Between the limits"
+        },
+        {
+          "id": "L03-S05-A4",
+          "label": {
+            "ar": "أقل من الكشف لا يعني صفر",
+            "en": "Below detection is not zero"
+          },
+          "semanticTrigger": "Below detection is not zero"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L04-S04-en-v2",
+      "sceneID": "L04-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A predator may consume many prey over its life. Efficient uptake combined with removal that is slow relative to intake can produce a higher tissue concentration. But not every chemical behaves this way. Chemical form, metabolism, diet and tissue basis all matter. There is no universal rule that residues increase by ten percent at every trophic level. Energy transfer is not a fixed equation for predicting a chemical concentration.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.\nKeep the warm conversational mid-register of the approved Charon sample. Avoid a lowered bass announcer register or heavier vocal weight.",
+      "textSHA256": "bf23dcfddb6da34b95d802557e576af871121f6d938419de7017356e2375dec3",
+      "deliverySHA256": "1767a937295d629368cc8fe0d2998e26ec5ef07a3120ff297c4d74874ccbbc3c",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L04-S04-en-v1",
+      "repairReason": "Two actual-audio comparisons flagged material voice timbre/register mismatch against accepted Charon.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L04-S04-en-v2",
+        "file": "L04-S04-en-v2.wav",
+        "sha256": "93713225a26e6efde79e40f9fee30ad47ca24b6dce72eccda7023b10b82edc43"
+      },
+      "durationSeconds": 32.17095833333333,
+      "reviewConcerns": [],
+      "actions": [
+        {
+          "id": "L04-S04-A1",
+          "label": {
+            "ar": "غذاء يدخل",
+            "en": "Diet enters"
+          },
+          "semanticTrigger": "Diet enters"
+        },
+        {
+          "id": "L04-S04-A2",
+          "label": {
+            "ar": "جزء يخرج",
+            "en": "Some material leaves"
+          },
+          "semanticTrigger": "Some material leaves"
+        },
+        {
+          "id": "L04-S04-A3",
+          "label": {
+            "ar": "تغيّر التركيز",
+            "en": "Concentration changes"
+          },
+          "semanticTrigger": "Concentration changes"
+        },
+        {
+          "id": "L04-S04-A4",
+          "label": {
+            "ar": "لا معامل عام لانتقال المادة",
+            "en": "No universal transfer multiplier"
+          },
+          "semanticTrigger": "No universal transfer multiplier"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L07-S07-en-v2",
+      "sceneID": "L07-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "063902ce1807f8a4f53644a7658ab35a47d1b54b1bf91c4c7a7be7edf78a3209",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L07-S07-en-v1",
+      "repairReason": "Original service returned explicit HTTP 500 and no audio artifact. One reviewed bounded second attempt; not an ambiguous transport replay.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L07-S07-en-v2",
+        "file": "L07-S07-en-v2.wav",
+        "sha256": "4173d645169a03199523b297612fc625f50be94075ddccbc33db297f50acee62"
+      },
+      "durationSeconds": 38.010958333333335,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 38.01,
+                "category": "timbre_and_vocal_weight",
+                "observation": "The candidate voice exhibits a perceptibly different timbre and vocal weight compared to the reference. The timbre has a slightly less natural resonance, with a subtle processed or metallic undertone, and the vocal weight is heavier than the reference. While the speaking style and register are generally consistent, these differences are audibly distinct.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice maintains good articulation, pacing, and intonation throughout. The primary differences lie in the fundamental sound quality (timbre) and perceived vocal 'heaviness' (vocal weight) when compared to the provided reference. No unnatural chopped delivery was detected."
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "L07-S07-A1",
+          "label": {
+            "ar": "تركيز البداية",
+            "en": "Initial concentration"
+          },
+          "semanticTrigger": "Initial concentration"
+        },
+        {
+          "id": "L07-S07-A2",
+          "label": {
+            "ar": "بعد نصف عمر",
+            "en": "After one half-life"
+          },
+          "semanticTrigger": "After one half-life"
+        },
+        {
+          "id": "L07-S07-A3",
+          "label": {
+            "ar": "بعد نصفي عمر",
+            "en": "After two half-lives"
+          },
+          "semanticTrigger": "After two half-lives"
+        },
+        {
+          "id": "L07-S07-A4",
+          "label": {
+            "ar": "نصف الباقي كل مرة",
+            "en": "Half of what remains"
+          },
+          "semanticTrigger": "Half of what remains"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}

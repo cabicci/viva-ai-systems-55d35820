@@ -1,0 +1,35 @@
+name: Fate repairs actual-audio adjudication and timing v1
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/analysis-repairs/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/analysis-repairs
+  EXPECTED_REQUEST_SHA256: a0925422dc3d139f9fa48956c129f6ab4f93ab98c7df2f76e8ae0a4c8afe6029
+jobs:
+  analyze:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        part: ["L03-S01-ar-v2", "L03-S05-en-v2", "L04-S04-en-v2", "L07-S07-en-v2"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Resolve actual alerts and derive acoustic scene cues
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python "$PACKAGE/worker.py" request "${{ matrix.part }}"
+      - name: Deliver each result immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-align-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
