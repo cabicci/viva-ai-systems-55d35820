@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sha256": {
+    "worker.py": "b7ff0c03ecb5aaf4490a0d542e3c15924489af1c650412d78c3a6494d0a309fc",
+    "request.json": "f8a87ac086c8b449a65daefd1421dff6ed19fb6eaf0d92f7d6ce3cd0c0da297a",
+    "request.original-20261022.json": "5c6ad824568d18fbb1e3fe01340f18cdc459a8aa2740e50d93a405b7028a401c",
+    "runtime.json": "56e96dfe1bbb4a56af522438bd5003aa46982e39d939c7921fb82ac139d33e27",
+    "vendor/pipeline-engine.py": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+    "vendor/course/manifest.json": "4b87fe3f7d34af09a203f540c5028fde721f3d99ec4ee0205a6e8e493e77f7d0",
+    "offline_check.py": "ff921a14e0029fe8325eba67c25f03307414ff2080b1c1ab94f6885a30d9f794",
+    "README.en.md": "5f3bef90a9c0e003831a7f93f999d9d10afda7fac275087f427c520292b23e0e",
+    "model-evidence.json": "eff052dd29c036237a16f4f03c468f57dd68dc6c0290408fdbfbc74e16fb30f9",
+    "freeze_package.py": "f646ee96ff4f9d2d238b66f0b62809f313e11e9c9becb1d80a1c0e49d5418572",
+    ".gitignore": "ee969cd30de5b48a2bc4b930c0216bc3869916e5683e6132cbd00c4e7dd031c4"
+  },
+  "maximumTTSCalls": 5,
+  "maximumBlindAudioReviewCalls": 5,
+  "maximumASRInvocations": 5,
+  "maximumMetadataGETs": 2,
+  "automaticRetries": 0
+}

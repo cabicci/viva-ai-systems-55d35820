@@ -1,0 +1,294 @@
+name: S1-01 bounded five-unit audio repair highest Gemini
+on:
+  workflow_dispatch:
+  push:
+    branches: [work/soil-s101-audio-repair-20261022]
+    paths: [experiments/masaarat-media-review-job/audio-repair/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s101-audio-repair-f8a87ac086c8b449a65daefd1421dff6ed19fb6eaf0d92f7d6ce3cd0c0da297a
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/masaarat-media-review-job/audio-repair
+  REQUEST_SHA: f8a87ac086c8b449a65daefd1421dff6ed19fb6eaf0d92f7d6ce3cd0c0da297a
+  WORKER_SHA: b7ff0c03ecb5aaf4490a0d542e3c15924489af1c650412d78c3a6494d0a309fc
+  FREEZE_SHA: b01a00d2ba4be76c331bb7d4c8e219eadb22239f03f8fbeb22614069fff2b118
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  repair:
+    if: github.run_attempt == 1 && github.ref == 'refs/heads/work/soil-s101-audio-repair-20261022'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify exact frozen request and code offline
+        run: |
+          cd "$PACKAGE"
+          python worker.py validate
+      - name: Bounded preferred-model metadata preflight, no fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py preflight
+      - name: Install hash-verified Whisper wheel once
+        run: |
+          cd "$PACKAGE"
+          python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+          python worker.py verify-wheel
+          python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+      - name: One TTS request S1-01-ar-002
+        id: tts002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S1-01-ar-002
+      - name: Upload audio before review S1-01-ar-002
+        id: upload002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts002.outcome == 'success'
+        with:
+          name: s101-repair-S1-01-ar-002-audio
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record successful audio transfer S1-01-ar-002
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload002.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload002.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S1-01-ar-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One blind actual-audio Argon review S1-01-ar-002
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S1-01-ar-002
+      - name: One actual-audio Whisper transcription S1-01-ar-002
+        continue-on-error: true
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit S1-01-ar-002
+      - name: Preserve independent comparison and stop if diagnostics incomplete S1-01-ar-002
+        run: |
+          cd "$PACKAGE"
+          python worker.py compare --unit S1-01-ar-002
+      - name: Upload immediate review evidence S1-01-ar-002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-repair-S1-01-ar-002-review
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS request S1-01-ar-024
+        id: tts024
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S1-01-ar-024
+      - name: Upload audio before review S1-01-ar-024
+        id: upload024
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts024.outcome == 'success'
+        with:
+          name: s101-repair-S1-01-ar-024-audio
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-024/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record successful audio transfer S1-01-ar-024
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload024.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload024.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S1-01-ar-024 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One blind actual-audio Argon review S1-01-ar-024
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S1-01-ar-024
+      - name: One actual-audio Whisper transcription S1-01-ar-024
+        continue-on-error: true
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit S1-01-ar-024
+      - name: Preserve independent comparison and stop if diagnostics incomplete S1-01-ar-024
+        run: |
+          cd "$PACKAGE"
+          python worker.py compare --unit S1-01-ar-024
+      - name: Upload immediate review evidence S1-01-ar-024
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-repair-S1-01-ar-024-review
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-024/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS request S1-01-ar-026
+        id: tts026
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S1-01-ar-026
+      - name: Upload audio before review S1-01-ar-026
+        id: upload026
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts026.outcome == 'success'
+        with:
+          name: s101-repair-S1-01-ar-026-audio
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-026/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record successful audio transfer S1-01-ar-026
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload026.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload026.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S1-01-ar-026 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One blind actual-audio Argon review S1-01-ar-026
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S1-01-ar-026
+      - name: One actual-audio Whisper transcription S1-01-ar-026
+        continue-on-error: true
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit S1-01-ar-026
+      - name: Preserve independent comparison and stop if diagnostics incomplete S1-01-ar-026
+        run: |
+          cd "$PACKAGE"
+          python worker.py compare --unit S1-01-ar-026
+      - name: Upload immediate review evidence S1-01-ar-026
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-repair-S1-01-ar-026-review
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-026/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS request S1-01-ar-034
+        id: tts034
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S1-01-ar-034
+      - name: Upload audio before review S1-01-ar-034
+        id: upload034
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts034.outcome == 'success'
+        with:
+          name: s101-repair-S1-01-ar-034-audio
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-034/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record successful audio transfer S1-01-ar-034
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload034.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload034.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S1-01-ar-034 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One blind actual-audio Argon review S1-01-ar-034
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S1-01-ar-034
+      - name: One actual-audio Whisper transcription S1-01-ar-034
+        continue-on-error: true
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit S1-01-ar-034
+      - name: Preserve independent comparison and stop if diagnostics incomplete S1-01-ar-034
+        run: |
+          cd "$PACKAGE"
+          python worker.py compare --unit S1-01-ar-034
+      - name: Upload immediate review evidence S1-01-ar-034
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-repair-S1-01-ar-034-review
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-034/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS request S1-01-ar-035
+        id: tts035
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S1-01-ar-035
+      - name: Upload audio before review S1-01-ar-035
+        id: upload035
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts035.outcome == 'success'
+        with:
+          name: s101-repair-S1-01-ar-035-audio
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-035/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record successful audio transfer S1-01-ar-035
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload035.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload035.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S1-01-ar-035 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One blind actual-audio Argon review S1-01-ar-035
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S1-01-ar-035
+      - name: One actual-audio Whisper transcription S1-01-ar-035
+        continue-on-error: true
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit S1-01-ar-035
+      - name: Preserve independent comparison and stop if diagnostics incomplete S1-01-ar-035
+        run: |
+          cd "$PACKAGE"
+          python worker.py compare --unit S1-01-ar-035
+      - name: Upload immediate review evidence S1-01-ar-035
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-repair-S1-01-ar-035-review
+          path: ${{ env.PACKAGE }}/output/S1-01-ar-035/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve all partial attempts and input provenance
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s101-five-unit-repair-complete-evidence
+          retention-days: 30
+          path: |
+            ${{ env.PACKAGE }}/output/
+            ${{ env.PACKAGE }}/request.json
+            ${{ env.PACKAGE }}/request.original-20261022.json
+            ${{ env.PACKAGE }}/runtime.json
+            ${{ env.PACKAGE }}/freeze.json
+            ${{ env.PACKAGE }}/model-evidence.json
+            ${{ env.PACKAGE }}/worker.py
