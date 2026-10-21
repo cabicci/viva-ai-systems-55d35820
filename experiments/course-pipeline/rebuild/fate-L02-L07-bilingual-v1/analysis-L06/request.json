@@ -1,0 +1,1062 @@
+{
+  "id": "fate-next-analysis-L06",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 14,
+  "maxAdjudicationCalls": 5,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L06-S01-ar-v1",
+      "sceneID": "L06-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "عايز تعرف أثرًا على نموّ طحالب، ولا تكاثر كائن مائيّ، ولا بقاء كائن في التربة؟ السؤال هو اللي يوجّه اختيار الاختبار. شكل الملف بيقسّم كائنات مائيّة وبرّيّة: نباتات وطحالب وقشريّات وحشرات ورخويّات وديدان ومجموعات تانية. مش مطلوب نحفظ الصور كقائمة وخلاص. المطلوب نربط الوسط وطريق التعرّض ونوع الاستجابة بالكائن ومرحلة عمره. نتيجة نوع واحد ما تمثّلش كلّ الأنواع تلقائيًّا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "89f926768c821eadd8da4a5befdd77a56d6a6486239e0cbd52243d286cd579e3",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S01-ar-v1",
+        "file": "L06-S01-ar-v1.wav",
+        "sha256": "b77af14a691acc8308a1efb2bf5ed6a91165ce9d46ea947cab80e08c660039f4"
+      },
+      "durationSeconds": 34.370958333333334,
+      "reviewConcerns": [
+        {
+          "source": "L06-S01-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 0.194,
+              "end": 0.2,
+              "category": "substitution",
+              "heard": "مجمورات",
+              "expected": "مجموعات",
+              "heardPhonetics": "/mæɡmuːˈrɑːt/",
+              "suggestion": "نطق حرف العين بشكل صحيح في كلمة \"مجموعات\".",
+              "reason": "تم استبدال حرف العين (ع) بحرف الراء (ر) في كلمة \"مجموعات\".",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.252,
+              "end": 0.264,
+              "category": "omission",
+              "heard": "طريقه تعرض",
+              "expected": "طريقة التعرض",
+              "heardPhonetics": "/tˤɑˈriːʔet tɑˈʕɑrːodˤ/",
+              "suggestion": "إضافة أداة التعريف \"ال\" قبل كلمة \"تعرض\" لتصبح \"طريقة التعرض\".",
+              "reason": "تم حذف أداة التعريف \"ال\" من كلمة \"التعرض\". هذا شائع في العامية المصرية ولكنه يعتبر حذفًا.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "L06-S01-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 0.192,
+              "end": 0.2,
+              "category": "substitution",
+              "heard": "مجمورات",
+              "expected": "مجموعات",
+              "heardPhonetics": "/maɡmuːˈrɑːt/",
+              "suggestion": "يُفضل نطق حرف العين بشكل واضح في كلمة 'مجموعات'.",
+              "reason": "تم استبدال صوت حرف العين (ع) بصوت حرف الراء (ر) في كلمة 'مجموعات'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 0.02,
+                "category": "Speaking Style",
+                "observation": "Slightly stilted and robotic delivery, particularly in the phrase \"أثرا على نمو طحالب\".",
+                "certainty": "high"
+              },
+              {
+                "start": 0.02,
+                "end": 0.05,
+                "category": "Delivery",
+                "observation": "Minor choppiness and unnatural pauses in phrases like \"كائن مائي\" and \"بقاء كائن\".",
+                "certainty": "high"
+              },
+              {
+                "start": 0.13,
+                "end": 0.18,
+                "category": "Speaking Style",
+                "observation": "The list of items (\"نباتات وطحالب وقشريات وحشرات ورخويات وديدان\") is delivered with a somewhat monotonous and uniform rhythm, lacking natural human intonation for a list.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.24,
+                "end": 0.29,
+                "category": "Delivery",
+                "observation": "The longer sentence has minor choppiness and a slightly less natural rhythm, with the word \"تعرض\" sounding somewhat clipped.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.31,
+                "end": 0.34,
+                "category": "Speaking Style",
+                "observation": "The phrase \"ما تمثلش كل الأنواع تلقائيا\" sounds somewhat flat and lacks natural emphasis.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice exhibits a strong match in timbre, register, and vocal weight to the reference. However, the speaking style and delivery show several instances of unnaturalness. These include a slightly robotic or stilted quality in certain phrases, minor choppiness between words, and a tendency towards monotonous intonation, especially when listing items or delivering longer sentences. The overall flow and natural rhythm are not consistently maintained, leading to an audible departure from the naturalness of the reference voice."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L06-S01-A1",
+          "label": {
+            "ar": "اختبارات مائية",
+            "en": "Aquatic tests"
+          },
+          "semanticTrigger": "Aquatic tests"
+        },
+        {
+          "id": "L06-S01-A2",
+          "label": {
+            "ar": "اختبارات برية",
+            "en": "Terrestrial tests"
+          },
+          "semanticTrigger": "Terrestrial tests"
+        },
+        {
+          "id": "L06-S01-A3",
+          "label": {
+            "ar": "نوع الكائن",
+            "en": "Organism type"
+          },
+          "semanticTrigger": "Organism type"
+        },
+        {
+          "id": "L06-S01-A4",
+          "label": {
+            "ar": "الأثر المناسب للسؤال",
+            "en": "Question-matched endpoint"
+          },
+          "semanticTrigger": "Question-matched endpoint"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S02-ar-v1",
+      "sceneID": "L06-S02",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "في التجربة، بنختبر مجموعة تراكيز ونقيس استجابة محدّدة، مع ضوابط وتكرارات مناسبة. لو بنتكلم عن التركيز المرتبط بموت نصّ الكائنات، لازم نذكر النوع ومدّة الاختبار والطريقة. نصّ الكائنات دي نسبة استجابة في السياق المدروس؛ مش نصّ أنواع البيئة، ومش نصف حدّ أمان. وممكن مؤشّر تاني يقيس تثبيط النموّ بدل الموت. اسم المؤشّر لازم يمشي مع الأثر اللي اتقاس.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "56b1c3f64bd2a2566348f37a3a9cc4137d9f046a9efa969d8d9f1486f84e984c",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S02-ar-v1",
+        "file": "L06-S02-ar-v1.wav",
+        "sha256": "888f0024946dbe699cbe230c4bbba8783086c6c0b787367f405b758f8973b7bf"
+      },
+      "durationSeconds": 34.13095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L06-S02-A1",
+          "label": {
+            "ar": "تركيز التعرّض",
+            "en": "Exposure concentration"
+          },
+          "semanticTrigger": "Exposure concentration"
+        },
+        {
+          "id": "L06-S02-A2",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L06-S02-A3",
+          "label": {
+            "ar": "استجابة خمسين في المية",
+            "en": "Fifty-percent response"
+          },
+          "semanticTrigger": "Fifty-percent response"
+        },
+        {
+          "id": "L06-S02-A4",
+          "label": {
+            "ar": "النوع والمدة مهمين",
+            "en": "Species and duration matter"
+          },
+          "semanticTrigger": "Species and duration matter"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S03-ar-v1",
+      "sceneID": "L06-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "عدم رصد فرق إحصائيّ مش إثبات إنّ الأثر صفر. التركيز اللي بنسميه أعلى تركيز من غير أثر مرصود لازم يكون اتجرّب فعلًا، حسب تصميم الاختبار والتحليل. وأقلّ تركيز ظهر عنده أثر هو برضه نقطة مجرّبة. المسافة بين التراكيز وعدد التكرارات وتشتّت القياسات وقوّة الاختبار بتأثّر على النتيجة. لو تركيز ما اتجرّبش، ما ينفعش ندّعي إنّنا رصدنا عنده عدم تأثير.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "51a10de7d7f3335b5e1859f00e57873ebcf04d01948c3de092d1ad9b92dc6b85",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S03-ar-v1",
+        "file": "L06-S03-ar-v1.wav",
+        "sha256": "6fa73b5cb0264ef6e22c1aac6cad1ccdda8c9371e5d874c3b9fdf8531985fec8"
+      },
+      "durationSeconds": 31.610958333333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L06-S03-A1",
+          "label": {
+            "ar": "تركيزات تم اختبارها",
+            "en": "Tested concentrations"
+          },
+          "semanticTrigger": "Tested concentrations"
+        },
+        {
+          "id": "L06-S03-A2",
+          "label": {
+            "ar": "مقارنة إحصائية",
+            "en": "Statistical comparison"
+          },
+          "semanticTrigger": "Statistical comparison"
+        },
+        {
+          "id": "L06-S03-A3",
+          "label": {
+            "ar": "تركيز غير مختبر",
+            "en": "Untested concentration"
+          },
+          "semanticTrigger": "Untested concentration"
+        },
+        {
+          "id": "L06-S03-A4",
+          "label": {
+            "ar": "قوة الاختبار والتباعد",
+            "en": "Power and dose spacing"
+          },
+          "semanticTrigger": "Power and dose spacing"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S04-ar-v1",
+      "sceneID": "L06-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "نستخدم مثالًا افتراضيًّا: أعلى تركيز من غير أثر مرصود أربعة من عشرة ملّيجرام لكلّ لتر، وأقلّ تركيز ظهر عنده أثر تسعة من عشرة. في استخدام تاريخيّ لتقدير الحدّ المزمن بينهما، ناخد الجذر التربيعيّ لحاصل الضرب. أربعة من عشرة في تسعة من عشرة يساوي ستّة وتلاتين من مية. الجذر يطلع ستّة من عشرة ملّيجرام لكلّ لتر. ده متوسط هندسيّ مرتبط بالمثال، مش نقطة اتجرّبت بالفعل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "e0eb1c7f5f36a1b2967b2a7f9f5fde1ea05d97b3a800e365deb09c3b712d48fb",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S04-ar-v1",
+        "file": "L06-S04-ar-v1.wav",
+        "sha256": "258399bb0f90cca854d9f29f4070a632a7835491b5a8a097cb339aa8a3d40608"
+      },
+      "durationSeconds": 30.770958333333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L06-S04-A1",
+          "label": {
+            "ar": "أعلى تركيز دون أثر معنوي",
+            "en": "Highest tested no-significant-effect level"
+          },
+          "semanticTrigger": "Highest tested no-significant-effect level"
+        },
+        {
+          "id": "L06-S04-A2",
+          "label": {
+            "ar": "أقل تركيز بأثر معنوي",
+            "en": "Lowest tested significant-effect level"
+          },
+          "semanticTrigger": "Lowest tested significant-effect level"
+        },
+        {
+          "id": "L06-S04-A3",
+          "label": {
+            "ar": "الضرب ثم الجذر",
+            "en": "Multiply then square-root"
+          },
+          "semanticTrigger": "Multiply then square-root"
+        },
+        {
+          "id": "L06-S04-A4",
+          "label": {
+            "ar": "تقدير مرتبط بالدراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S05-ar-v1",
+      "sceneID": "L06-S05",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "لو عندنا قيمة حادّة مناسبة للمقارنة مقدارها ستّة ملّيجرام لكلّ لتر، وقسمناها على التقدير المزمن ستّة من عشرة، تطلع النسبة عشرة. الوحدات المتماثلة بتختصر. لكن صلاحية استخدام النسبة تعتمد على الكائن ونوع الأثر والمدة والطريقة. ما ناخدش أيّ رقمين من دراستين مختلفتين ونقول إنّ النسبة قابلة للنقل لكلّ الأنواع. الحساب سهل؛ الجزء العلميّ هو إثبات إنّ طرفي المقارنة مناسبين.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "4ec471f5209bfe48539491b3f48b4461a0d06112d034bfb6645b91b0433870d4",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S05-ar-v1",
+        "file": "L06-S05-ar-v1.wav",
+        "sha256": "dc94f05a16d15c354a7fd7f05e3d3fc0d4e21a019706ec3742175e904d8826e4"
+      },
+      "durationSeconds": 35.610958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L06-S05-A1",
+          "label": {
+            "ar": "قيمة حادة",
+            "en": "Acute value"
+          },
+          "semanticTrigger": "Acute value"
+        },
+        {
+          "id": "L06-S05-A2",
+          "label": {
+            "ar": "قيمة مزمنة",
+            "en": "Chronic value"
+          },
+          "semanticTrigger": "Chronic value"
+        },
+        {
+          "id": "L06-S05-A3",
+          "label": {
+            "ar": "نسبة بلا وحدة",
+            "en": "Dimensionless ratio"
+          },
+          "semanticTrigger": "Dimensionless ratio"
+        },
+        {
+          "id": "L06-S05-A4",
+          "label": {
+            "ar": "لا تعميم بين الأنواع",
+            "en": "No automatic cross-species transfer"
+          },
+          "semanticTrigger": "No automatic cross-species transfer"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S06-ar-v1",
+      "sceneID": "L06-S06",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "في المصدر، تقدير الحدّ المزمن مربوط بعبارة حماية خمسة وتسعين في المية. الحساب اللي عملناه ما يثبتش الجملة دي. بيانات دراسة واحدة ما تتحوّلش تلقائيًّا لتوزيع حساسيّة أنواع كتير، ولا لضمان حماية نسبة من الناس. معايير جودة المياه الحادّة والمزمنة لها طرق اشتقاق ومجموعات بيانات وشروط محدّدة. نحتفظ بالحساب كتمرين، ونوقف القفزة من رقم تجريبيّ محدود لحدّ تنظيميّ عام.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.",
+      "textSHA256": "250f99ae398111471c534330a4ae241e4b0306cc2d49f6a618529288599f7db5",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S06-ar-v1",
+        "file": "L06-S06-ar-v1.wav",
+        "sha256": "6e6621b0f45aa466e6a6ec6d82b9900498ae4107854fa99494116f5bcefe9711"
+      },
+      "durationSeconds": 37.21095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L06-S06-A1",
+          "label": {
+            "ar": "تقدير من دراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        },
+        {
+          "id": "L06-S06-A2",
+          "label": {
+            "ar": "ادعاء حماية غير مدعوم",
+            "en": "Unsupported protection claim"
+          },
+          "semanticTrigger": "Unsupported protection claim"
+        },
+        {
+          "id": "L06-S06-A3",
+          "label": {
+            "ar": "أدلة متعددة مطلوبة",
+            "en": "Multiple lines of evidence"
+          },
+          "semanticTrigger": "Multiple lines of evidence"
+        },
+        {
+          "id": "L06-S06-A4",
+          "label": {
+            "ar": "لا معيار جديد مخترع",
+            "en": "No invented replacement criterion"
+          },
+          "semanticTrigger": "No invented replacement criterion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S07-ar-v1",
+      "sceneID": "L06-S07",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "في التدريب، قدّامك نتيجتين: بقاء خلال اختبار قصير، وتكاثر خلال تعرّض أطول. اختار كلّ نتيجة للسؤال اللي تقدر تجاوب عليه، واكتب اللي ما تثبتوش. وبعدها راجع مثال المتوسط الهندسيّ: مين النقطتين المجرّبتين، ومين التقدير؟ لو حدّ استخدم النتيجة لتحديد تركيز صرف أو جرعة رش، وضّح البيانات والطريقة التنظيميّة الناقصة. النجاح هنا مش حفظ اختصارات؛ النجاح إنّك ما تحمّلش الرقم استنتاج أكبر من دليله.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "f7787db7cfa384ca00900a44cabd0cbc2af8c3d156ea93d5d3910add8bb0ee54",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S07-ar-v1",
+        "file": "L06-S07-ar-v1.wav",
+        "sha256": "cf3a1d0f5c0ed22f250edf03e84c98c18313cc2e935ad2a162a6df0b4a5f634b"
+      },
+      "durationSeconds": 34.970958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L06-S07-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 0.15,
+              "end": 0.16,
+              "category": "substitution",
+              "heard": "المقدر",
+              "expected": "",
+              "heardPhonetics": "/al-muqaddar/",
+              "suggestion": "حذف كلمة 'المقدر' لأنها غير موجودة في النص الأصلي.",
+              "reason": "إضافة كلمة 'المقدر' بعد 'الهندسيّ' وهي غير موجودة في النص المرجعي.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L06-S07-A1",
+          "label": {
+            "ar": "نوع نقطة القياس",
+            "en": "Endpoint type"
+          },
+          "semanticTrigger": "Endpoint type"
+        },
+        {
+          "id": "L06-S07-A2",
+          "label": {
+            "ar": "مختبر أم مقدر؟",
+            "en": "Tested or estimated?"
+          },
+          "semanticTrigger": "Tested or estimated?"
+        },
+        {
+          "id": "L06-S07-A3",
+          "label": {
+            "ar": "وحدات وسياق متطابقان",
+            "en": "Matched units and context"
+          },
+          "semanticTrigger": "Matched units and context"
+        },
+        {
+          "id": "L06-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S01-en-v1",
+      "sceneID": "L06-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Are you investigating algal growth, aquatic reproduction or survival of a soil organism? The question guides test selection. The handout distinguishes aquatic and terrestrial groups, including plants, algae, crustaceans, insects, molluscs, worms and other organisms. The aim is not simply to memorize a picture list. Connect the medium, exposure route and response with the organism and life stage. A result for one species does not automatically represent every species.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "de561b3b641d34f1bb54ba12223eb870e1102d9f1e614f87a5f63167611f4a7d",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S01-en-v1",
+        "file": "L06-S01-en-v1.wav",
+        "sha256": "f9483b1723779e79ea50f6ba2aa6da06880b80f556bc5ac387496905d10665c2"
+      },
+      "durationSeconds": 37.77095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L06-S01-A1",
+          "label": {
+            "ar": "اختبارات مائية",
+            "en": "Aquatic tests"
+          },
+          "semanticTrigger": "Aquatic tests"
+        },
+        {
+          "id": "L06-S01-A2",
+          "label": {
+            "ar": "اختبارات برية",
+            "en": "Terrestrial tests"
+          },
+          "semanticTrigger": "Terrestrial tests"
+        },
+        {
+          "id": "L06-S01-A3",
+          "label": {
+            "ar": "نوع الكائن",
+            "en": "Organism type"
+          },
+          "semanticTrigger": "Organism type"
+        },
+        {
+          "id": "L06-S01-A4",
+          "label": {
+            "ar": "الأثر المناسب للسؤال",
+            "en": "Question-matched endpoint"
+          },
+          "semanticTrigger": "Question-matched endpoint"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S02-en-v1",
+      "sceneID": "L06-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "A test uses specified concentrations and measures a defined response, with appropriate controls and replication. For a concentration associated with fifty percent mortality, state the organism, exposure duration and method. Fifty percent refers to the response in the studied context, not half of all environmental species or half of a safety limit. Another endpoint may describe growth inhibition instead of mortality. The metric must match the measured response.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "100dbba68ef615c0d4745408dd782d3d113b4f235122b3171b34f37a4e1d330c",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S02-en-v1",
+        "file": "L06-S02-en-v1.wav",
+        "sha256": "68c74caa499acf5e13093f51c8bdf34e25d2b593312c72c3cdee5845bae434c7"
+      },
+      "durationSeconds": 35.45095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L06-S02-A1",
+          "label": {
+            "ar": "تركيز التعرّض",
+            "en": "Exposure concentration"
+          },
+          "semanticTrigger": "Exposure concentration"
+        },
+        {
+          "id": "L06-S02-A2",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L06-S02-A3",
+          "label": {
+            "ar": "استجابة خمسين في المية",
+            "en": "Fifty-percent response"
+          },
+          "semanticTrigger": "Fifty-percent response"
+        },
+        {
+          "id": "L06-S02-A4",
+          "label": {
+            "ar": "النوع والمدة مهمين",
+            "en": "Species and duration matter"
+          },
+          "semanticTrigger": "Species and duration matter"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S03-en-v1",
+      "sceneID": "L06-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Failure to detect a statistically significant difference does not prove zero effect. A no-observed-effect concentration must be an actually tested concentration identified under the study design and analysis. The lowest-observed-effect concentration is also a tested point. Concentration spacing, replication, variability and statistical power influence these outcomes. An untested concentration cannot be described as an observed no-effect concentration.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "adba3e8686bdd433b86138fb73016ce959a3b98af9b76717a8f8d4908eee7aed",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S03-en-v1",
+        "file": "L06-S03-en-v1.wav",
+        "sha256": "f794d5658c1203f25ff357282acad0cd2b2add869797901301043d32baf662b0"
+      },
+      "durationSeconds": 32.050958333333334,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 20.0,
+                "end": 25.5,
+                "category": "speaking_style",
+                "observation": "The delivery exhibits a slight lack of natural fluidity and subtle rhythmic discontinuities, particularly noticeable in the enumeration of items ('replication, variability, and statistical power'). This creates a very minor 'chopped' feel compared to the smooth reference.",
+                "certainty": "medium"
+              },
+              {
+                "start": 25.9,
+                "end": 32.05,
+                "category": "speaking_style",
+                "observation": "Similar to the previous segment, there are subtle rhythmic discontinuities and a slight lack of natural flow in the phrasing, making the delivery less seamless than the reference audio.",
+                "certainty": "medium"
+              }
+            ],
+            "notes": "The candidate audio maintains a strong match in audible timbre, register, and vocal weight with the reference. The overall speaking style is consistent, with clear enunciation and appropriate pacing. However, the candidate exhibits very subtle instances of less fluid delivery, particularly in the latter half of the audio. These are not severe 'chops' but rather minor rhythmic discontinuities that slightly detract from the natural, seamless flow present in the reference voice. The core voice identity remains well-preserved."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L06-S03-A1",
+          "label": {
+            "ar": "تركيزات تم اختبارها",
+            "en": "Tested concentrations"
+          },
+          "semanticTrigger": "Tested concentrations"
+        },
+        {
+          "id": "L06-S03-A2",
+          "label": {
+            "ar": "مقارنة إحصائية",
+            "en": "Statistical comparison"
+          },
+          "semanticTrigger": "Statistical comparison"
+        },
+        {
+          "id": "L06-S03-A3",
+          "label": {
+            "ar": "تركيز غير مختبر",
+            "en": "Untested concentration"
+          },
+          "semanticTrigger": "Untested concentration"
+        },
+        {
+          "id": "L06-S03-A4",
+          "label": {
+            "ar": "قوة الاختبار والتباعد",
+            "en": "Power and dose spacing"
+          },
+          "semanticTrigger": "Power and dose spacing"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S04-en-v1",
+      "sceneID": "L06-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Use a hypothetical example: the no-observed-effect concentration is zero point four milligrams per litre, and the lowest-observed-effect concentration is zero point nine. A historical approach estimates a chronic value between them using the square root of their product. Zero point four times zero point nine equals zero point three six. Its square root is zero point six milligrams per litre. This is a geometric-mean estimate for the example, not an actually tested point.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "54e565d6b5c8f7e6ff2993dc25fc6436a054cdb2b24bc78f39f0b2162364a54d",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S04-en-v1",
+        "file": "L06-S04-en-v1.wav",
+        "sha256": "99aec391d98bd829571c9d9b03d8478179b57e648ef8e3fc27bb438abd6608f7"
+      },
+      "durationSeconds": 34.610958333333336,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L06-S04-A1",
+          "label": {
+            "ar": "أعلى تركيز دون أثر معنوي",
+            "en": "Highest tested no-significant-effect level"
+          },
+          "semanticTrigger": "Highest tested no-significant-effect level"
+        },
+        {
+          "id": "L06-S04-A2",
+          "label": {
+            "ar": "أقل تركيز بأثر معنوي",
+            "en": "Lowest tested significant-effect level"
+          },
+          "semanticTrigger": "Lowest tested significant-effect level"
+        },
+        {
+          "id": "L06-S04-A3",
+          "label": {
+            "ar": "الضرب ثم الجذر",
+            "en": "Multiply then square-root"
+          },
+          "semanticTrigger": "Multiply then square-root"
+        },
+        {
+          "id": "L06-S04-A4",
+          "label": {
+            "ar": "تقدير مرتبط بالدراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S05-en-v1",
+      "sceneID": "L06-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "If a suitable acute value is six milligrams per litre and the chronic estimate is zero point six, their ratio is ten. Matching units cancel. However, the usefulness of that ratio depends on the organism, endpoint, duration and method. Arbitrary values from unrelated studies do not produce a ratio transferable to every species. The arithmetic is simple; the scientific task is establishing that the two quantities are appropriately comparable.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "1f7615f037de6a7aa383f00dbdcb92f254ac629fcf2dc24038bbcb3e0d7fae39",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S05-en-v1",
+        "file": "L06-S05-en-v1.wav",
+        "sha256": "4b859ef35dc52937af359c717fbda316b90425c2df3a1db2fd66b21f4160e589"
+      },
+      "durationSeconds": 37.53095833333333,
+      "reviewConcerns": [
+        {
+          "source": "same-voice review gap",
+          "reason": "Incomplete or invalid original reviewer output; inspect actual candidate and accepted reference."
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L06-S05-A1",
+          "label": {
+            "ar": "قيمة حادة",
+            "en": "Acute value"
+          },
+          "semanticTrigger": "Acute value"
+        },
+        {
+          "id": "L06-S05-A2",
+          "label": {
+            "ar": "قيمة مزمنة",
+            "en": "Chronic value"
+          },
+          "semanticTrigger": "Chronic value"
+        },
+        {
+          "id": "L06-S05-A3",
+          "label": {
+            "ar": "نسبة بلا وحدة",
+            "en": "Dimensionless ratio"
+          },
+          "semanticTrigger": "Dimensionless ratio"
+        },
+        {
+          "id": "L06-S05-A4",
+          "label": {
+            "ar": "لا تعميم بين الأنواع",
+            "en": "No automatic cross-species transfer"
+          },
+          "semanticTrigger": "No automatic cross-species transfer"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S06-en-v1",
+      "sceneID": "L06-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "The source connects the chronic estimate with a ninety-five percent protection statement. Our calculation does not establish that claim. One study does not automatically become a distribution of sensitivities across species or a guarantee protecting a fraction of people. Acute and chronic aquatic-life criteria require defined derivation methods, broader datasets and conditions. Retain the calculation as an exercise while rejecting the leap from a limited study value to a universal regulatory threshold.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "b671556517f597260fc88a76820e1c1df6a4bcfacb70c9a02717a377741ce101",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S06-en-v1",
+        "file": "L06-S06-en-v1.wav",
+        "sha256": "6693a97b10a89aab35a231bbdc72c855fce926274565ad35a07693e9cc50696a"
+      },
+      "durationSeconds": 36.09095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L06-S06-A1",
+          "label": {
+            "ar": "تقدير من دراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        },
+        {
+          "id": "L06-S06-A2",
+          "label": {
+            "ar": "ادعاء حماية غير مدعوم",
+            "en": "Unsupported protection claim"
+          },
+          "semanticTrigger": "Unsupported protection claim"
+        },
+        {
+          "id": "L06-S06-A3",
+          "label": {
+            "ar": "أدلة متعددة مطلوبة",
+            "en": "Multiple lines of evidence"
+          },
+          "semanticTrigger": "Multiple lines of evidence"
+        },
+        {
+          "id": "L06-S06-A4",
+          "label": {
+            "ar": "لا معيار جديد مخترع",
+            "en": "No invented replacement criterion"
+          },
+          "semanticTrigger": "No invented replacement criterion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L06-S07-en-v1",
+      "sceneID": "L06-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "The exercise presents short-test survival and longer-exposure reproduction results. Match each to the question it can answer and state what it does not establish. Revisit the geometric mean: which values were tested, and which was estimated? If someone uses the result to prescribe a discharge concentration or application rate, identify the missing evidence and regulatory method. Success means interpreting a number within its evidence, rather than merely memorizing abbreviations.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "73216c14a42aa971cde020c60820d411b7bc350640e5b7ad32664eca0a6bc147",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S07-en-v1",
+        "file": "L06-S07-en-v1.wav",
+        "sha256": "e8f23a39218e18e52c955b1c60daecb2852b6acb61886b224892ca26adf5850b"
+      },
+      "durationSeconds": 34.650958333333335,
+      "reviewConcerns": [
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 5.2,
+                "end": 5.6,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'results'.",
+                "certainty": "high"
+              },
+              {
+                "start": 8.5,
+                "end": 8.8,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'and state'.",
+                "certainty": "high"
+              },
+              {
+                "start": 10.8,
+                "end": 11.1,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'establish'.",
+                "certainty": "high"
+              },
+              {
+                "start": 14.3,
+                "end": 14.6,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'which values'.",
+                "certainty": "high"
+              },
+              {
+                "start": 17.4,
+                "end": 17.7,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'If someone'.",
+                "certainty": "high"
+              },
+              {
+                "start": 22.7,
+                "end": 23.0,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'rate'.",
+                "certainty": "high"
+              },
+              {
+                "start": 26.7,
+                "end": 27.0,
+                "category": "speaking_style",
+                "observation": "Slight, brief pause affecting natural flow before 'method'.",
+                "certainty": "high"
+              }
+            ],
+            "notes": "The candidate voice exhibits a very close match to the reference in terms of audible timbre, register, and vocal weight. The overall speaking style is consistent with natural English university narration. However, there are several very subtle, brief pauses throughout the candidate audio that slightly disrupt the natural flow and rhythm compared to the exceptionally smooth delivery of the reference. These are not severe 'chopped delivery' but are minor audible departures in pacing and fluidity."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L06-S07-A1",
+          "label": {
+            "ar": "نوع نقطة القياس",
+            "en": "Endpoint type"
+          },
+          "semanticTrigger": "Endpoint type"
+        },
+        {
+          "id": "L06-S07-A2",
+          "label": {
+            "ar": "مختبر أم مقدر؟",
+            "en": "Tested or estimated?"
+          },
+          "semanticTrigger": "Tested or estimated?"
+        },
+        {
+          "id": "L06-S07-A3",
+          "label": {
+            "ar": "وحدات وسياق متطابقان",
+            "en": "Matched units and context"
+          },
+          "semanticTrigger": "Matched units and context"
+        },
+        {
+          "id": "L06-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}

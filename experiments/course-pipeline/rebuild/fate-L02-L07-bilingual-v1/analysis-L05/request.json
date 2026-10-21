@@ -1,0 +1,989 @@
+{
+  "id": "fate-next-analysis-L05",
+  "timingModel": "gemini-2.5-flash",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 12,
+  "maxAdjudicationCalls": 7,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L05-S01-ar-v1",
+      "sceneID": "L05-S01",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "تقرير فيه تركيز في السمكة وتركيز في الميّه. نقسم الأوّل على التاني، وخلاص سمّيناه معامل تركيز حيويّ؟ لازم نستنى. الرقم الحسابيّ ممكن يكون صحيح، لكن اسم المؤشّر محتاج تصميم تعرّض مناسب. هل المادّة دخلت من الميّه فقط؟ هل العينتين لنفس المادّة والوقت المناسب؟ هل وزن النسيج رطب ولا جافّ؟ هنبدأ من وصف القياس، وبعدها نحسب. المعادلة ما بتصلحش بيانات ناقصة أو تجربة مختلفة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "c685cb1426367dcbe0963baa05e83b68300649def3e21560e74de2dd8d5ab7da",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S01-ar-v1",
+        "file": "L05-S01-ar-v1.wav",
+        "sha256": "244b1853e76d402084f7a118bf5ee9dcc1930fce8bcc11b13c2ac9727f42a0a4"
+      },
+      "durationSeconds": 32.49095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L05-S01-A1",
+          "label": {
+            "ar": "تركيز في الكائن",
+            "en": "Organism concentration"
+          },
+          "semanticTrigger": "Organism concentration"
+        },
+        {
+          "id": "L05-S01-A2",
+          "label": {
+            "ar": "تركيز في المياه",
+            "en": "Water concentration"
+          },
+          "semanticTrigger": "Water concentration"
+        },
+        {
+          "id": "L05-S01-A3",
+          "label": {
+            "ar": "نفس المادة والأساس",
+            "en": "Same analyte and basis"
+          },
+          "semanticTrigger": "Same analyte and basis"
+        },
+        {
+          "id": "L05-S01-A4",
+          "label": {
+            "ar": "طريق التعرّض",
+            "en": "Exposure route"
+          },
+          "semanticTrigger": "Exposure route"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S02-ar-v1",
+      "sceneID": "L05-S02",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "في المثال المائيّ، البسط تركيز المادّة في النسيج بوحدة ملّيجرام لكلّ كيلوجرام. المقام تركيزها في الميّه بوحدة ملّيجرام لكلّ لتر. القسمة على كسر معناها الضرب في مقلوبه. الملّيجرام بيختصر، لكن اللتر والكيلوجرام بيفضلوا. يبقى الناتج لتر لكلّ كيلوجرام. لو كتبنا رقمًا من غير وحدة، ضيّعنا أساس المقارنة. ولو غيّرنا الوزن الرطب لوزن جافّ، لازم التحويل المناسب قبل مقارنة الدراستين.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "cb6e0549f384865f7b95add91d68dc3c7ee6e1ab5d64e2d3d66e422a385c1e4a",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S02-ar-v1",
+        "file": "L05-S02-ar-v1.wav",
+        "sha256": "67d0cb4ecd44b6bad855ea24cfa69be4b1d2f2b0bff059d19bbd97202b136eff"
+      },
+      "durationSeconds": 34.53095833333333,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L05-S02-A1",
+          "label": {
+            "ar": "وحدة تركيز الكائن",
+            "en": "Organism concentration unit"
+          },
+          "semanticTrigger": "Organism concentration unit"
+        },
+        {
+          "id": "L05-S02-A2",
+          "label": {
+            "ar": "وحدة تركيز المياه",
+            "en": "Water concentration unit"
+          },
+          "semanticTrigger": "Water concentration unit"
+        },
+        {
+          "id": "L05-S02-A3",
+          "label": {
+            "ar": "نلغي الوحدة المشتركة",
+            "en": "Cancel shared units"
+          },
+          "semanticTrigger": "Cancel shared units"
+        },
+        {
+          "id": "L05-S02-A4",
+          "label": {
+            "ar": "الوحدة الناتجة",
+            "en": "Resulting unit"
+          },
+          "semanticTrigger": "Resulting unit"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S03-ar-v1",
+      "sceneID": "L05-S03",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نفترض تركيز النسيج اتنين فاصلة أربعة ملّيجرام لكلّ كيلوجرام وزن رطب، وتركيز الميّه ستّة من ألف ملّيجرام لكلّ لتر. نقسم اتنين فاصلة أربعة على صفر فاصلة صفر صفر ستّة، فيطلع أربعمية لتر لكلّ كيلوجرام. نراجع الناتج بالضرب العكسيّ: أربعمية في ستّة من ألف يرجّع اتنين فاصلة أربعة. ولسه صلاحية وصفه كمعامل تركيز حيويّ مرتبطة بشروط التجربة، ومنها إنّ مصدر المادّة يكون الميّه، مع طريقة قياس وتوقيت مناسبين.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "f22a7dfa326624d3fc327b0be951e5148f2072e7708278ccd9e54f5a32468fb3",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S03-ar-v1",
+        "file": "L05-S03-ar-v1.wav",
+        "sha256": "44b660b71f78c354db41e53632614c04b8af8edbae50b2a097f5ab65fff9ff12"
+      },
+      "durationSeconds": 41.010958333333335,
+      "reviewConcerns": [
+        {
+          "source": "L05-S03-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 25.3,
+              "end": 26.0,
+              "category": "pronunciation",
+              "heard": "يرجع",
+              "expected": "يرجّع",
+              "heardPhonetics": "/jɪrˈɡaʕ/",
+              "suggestion": "يجب نطق حرف الجيم مشددًا (يرجّع).",
+              "reason": "نطق الكلمة بدون تشديد حرف الجيم يغير المعنى من 'يعيد' إلى 'يعود'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L05-S03-A1",
+          "label": {
+            "ar": "تركيز الكائن",
+            "en": "Organism concentration"
+          },
+          "semanticTrigger": "Organism concentration"
+        },
+        {
+          "id": "L05-S03-A2",
+          "label": {
+            "ar": "تركيز المياه",
+            "en": "Water concentration"
+          },
+          "semanticTrigger": "Water concentration"
+        },
+        {
+          "id": "L05-S03-A3",
+          "label": {
+            "ar": "القسمة بوحداتها",
+            "en": "Divide with units"
+          },
+          "semanticTrigger": "Divide with units"
+        },
+        {
+          "id": "L05-S03-A4",
+          "label": {
+            "ar": "تحقق عكسي",
+            "en": "Reverse check"
+          },
+          "semanticTrigger": "Reverse check"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S04-ar-v1",
+      "sceneID": "L05-S04",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "لو السمكة أكلت غذاء ملوّث، يبقى فيه طريق دخول تاني. النسبة المحسوبة ما تفضلش تلقائيًّا معامل تركيز من الميّه وحدها؛ هنا نحتاج إطار التراكم من الطرق المختلفة. ولو السؤال عن الرواسب وكائن قاعيّ، فيه معامل بيربط الاتنين بعد توحيد أسس القياس، زي تطبيع نسيج الكائن للدهون والرواسب للكربون العضويّ حسب الطريقة. ما نخلطش تركيزًا مطبّعًا بآخر خام. اختار المؤشّر من السؤال والتصميم، مش من اختصار شكله مألوف.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "d23adfde2bd65416f111f850882eb63097db55b5d66af3e224e3fb26dfb0b711",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S04-ar-v1",
+        "file": "L05-S04-ar-v1.wav",
+        "sha256": "8cdebbb2584873b17b857dd6ec14e99cf339cfc73aee3d629c18e449d76a364f"
+      },
+      "durationSeconds": 32.77095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L05-S04-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 25.508,
+              "end": 26.088,
+              "category": "pronunciation",
+              "heard": "تركيزان",
+              "expected": "تركيزين",
+              "heardPhonetics": "tarkizaːn",
+              "suggestion": "نطق 'تركيزين' بدلاً من 'تركيزان'.",
+              "reason": "الكلمة 'تركيزان' (بصيغة المثنى المرفوع) نُطقت هنا، بينما السياق (مفعول به للفعل 'ما نخلطش') يتطلب صيغة المثنى المنصوب أو المجرور 'تركيزين' في اللغة العربية الفصحى، وهي الأكثر شيوعًا في اللهجة المصرية أيضًا.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L05-S04-A1",
+          "label": {
+            "ar": "المياه فقط",
+            "en": "Water only"
+          },
+          "semanticTrigger": "Water only"
+        },
+        {
+          "id": "L05-S04-A2",
+          "label": {
+            "ar": "كل طرق التعرّض",
+            "en": "All exposure routes"
+          },
+          "semanticTrigger": "All exposure routes"
+        },
+        {
+          "id": "L05-S04-A3",
+          "label": {
+            "ar": "الكائن والرواسب",
+            "en": "Biota and sediment"
+          },
+          "semanticTrigger": "Biota and sediment"
+        },
+        {
+          "id": "L05-S04-A4",
+          "label": {
+            "ar": "التطبيع الصحيح",
+            "en": "Correct normalization"
+          },
+          "semanticTrigger": "Correct normalization"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S05-ar-v1",
+      "sceneID": "L05-S05",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "بعد بداية التعرّض، تركيز النسيج ممكن يتغيّر مع الوقت. نسبة اليوم الأوّل مش لازم تساوي نسبة بعد فترة أطول. وفي مرحلة الإزالة، بنقل الكائن لوسط نظيف وفق تصميم الاختبار ونتابع الانخفاض. البيانات دي ممكن تساعد على تقدير الدخول والإزالة بطريقة حركيّة. المهم نكتب المدة والحرارة ونوع التركيز المائيّ وأساس النسيج. كلمة اتّزان أو حالة مستقرة لازم تستند لطريقة وبيانات، مش لمجرّد إنّنا رسمنا خطًّا ثابتًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational.",
+      "textSHA256": "38ab3c4140eafb951416baf7d7825682cc7600d58f1a7908b2926318221f96fe",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S05-ar-v1",
+        "file": "L05-S05-ar-v1.wav",
+        "sha256": "106111d648550ef577263b5ce47abff7277fef0be4b61eda9335dbfdff2037ad"
+      },
+      "durationSeconds": 38.930958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L05-S05-ar-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 37.0,
+              "end": 37.3,
+              "category": "omission",
+              "heard": "خط",
+              "expected": "خطًّا",
+              "heardPhonetics": "[xɑtˤtˤ]",
+              "suggestion": "يجب نطق التنوين بالفتح على كلمة 'خطًّا' لتتوافق مع السياق ومع نطق كلمة 'ثابتًا' التي تليها.",
+              "reason": "تم حذف تنوين الفتح من كلمة 'خطًّا' بينما تم نطق التنوين في كلمة 'ثابتًا' التي تليها، مما يؤثر على الاتساق النحوي والصوتي للعبارة.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+        "file": "voice-B-Kore-Pro.wav",
+        "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+      },
+      "actions": [
+        {
+          "id": "L05-S05-A1",
+          "label": {
+            "ar": "مرحلة الامتصاص",
+            "en": "Uptake phase"
+          },
+          "semanticTrigger": "Uptake phase"
+        },
+        {
+          "id": "L05-S05-A2",
+          "label": {
+            "ar": "نقل لمياه نظيفة",
+            "en": "Transfer to clean water"
+          },
+          "semanticTrigger": "Transfer to clean water"
+        },
+        {
+          "id": "L05-S05-A3",
+          "label": {
+            "ar": "مرحلة التخلص",
+            "en": "Depuration phase"
+          },
+          "semanticTrigger": "Depuration phase"
+        },
+        {
+          "id": "L05-S05-A4",
+          "label": {
+            "ar": "الثبات أو الحركية",
+            "en": "Steady-state or kinetics"
+          },
+          "semanticTrigger": "Steady-state or kinetics"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S06-ar-v1",
+      "sceneID": "L05-S06",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "معامل توزيع الأوكتانول والميّه بيوصف التوزّع عند الاتّزان لصورة كيميائيّة محدّدة. اللوغاريتم بتاعه ممكن يفيد في فرز خواص بعض المواد العضويّة، لكن مش بيحسب التراكم وحده. التأيّن والتمثيل الحيويّ والنمو وظروف التعرّض بتفرق. معادلة الملف فيها معاملات اسمها ألف وباء من غير قيم ولا مجال صلاحية. ما نملأش الفراغ بتخمين. في التدريب، اكتب البيانات الناقصة، وبعدها قرّر إذا كانت القسمة بتجاوب السؤال أصلًا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational.\nRelevant cues only: For field water only, المَيّه is el-MAY-ya; preserve numbers like ميّة in numerical contexts.",
+      "textSHA256": "156d7cc1684791231827f3b808e37f7c76b6fdaf1ec79e1bea2705f9b1e720ae",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "listeningMethod": "Owner-approved Arabic Pro method; new recording still requires actual-audio review.",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L05-S06-ar-v1",
+        "file": "L05-S06-ar-v1.wav",
+        "sha256": "4a28987d2676c65c20b3906e236c2a8bd99b7898835aa0d8ddad6abb4d574445"
+      },
+      "durationSeconds": 34.370958333333334,
+      "reviewConcerns": [
+        {
+          "source": "L05-S06-ar-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 29.808,
+              "end": 30.298,
+              "category": "pronunciation",
+              "heard": "النقصى",
+              "expected": "الناقصة",
+              "heardPhonetics": "/an.naʔ.sˤa/",
+              "suggestion": "يُفضل نطق الكلمة 'الناقصة' بوضوح.",
+              "reason": "نطق الكلمة 'النقصى' بدلاً من 'الناقصة' (an-nāqiṣa) يغير من معناها ويجعلها غير صحيحة لغوياً. النطق الصحيح يتضمن صوت /i/ وصوت /sˤ/ بعد حرف القاف (التي تنطق همزة في المصرية).",
+              "severity": "major",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39571137579,
+        "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+        "file": "voice-A-Charon-Pro.wav",
+        "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+      },
+      "actions": [
+        {
+          "id": "L05-S06-A1",
+          "label": {
+            "ar": "أوكتانول ومياه",
+            "en": "Octanol and water"
+          },
+          "semanticTrigger": "Octanol and water"
+        },
+        {
+          "id": "L05-S06-A2",
+          "label": {
+            "ar": "توزيع عند الاتزان",
+            "en": "Equilibrium partitioning"
+          },
+          "semanticTrigger": "Equilibrium partitioning"
+        },
+        {
+          "id": "L05-S06-A3",
+          "label": {
+            "ar": "معادلة تجريبية",
+            "en": "Empirical equation"
+          },
+          "semanticTrigger": "Empirical equation"
+        },
+        {
+          "id": "L05-S06-A4",
+          "label": {
+            "ar": "المعاملات ومجال الصلاحية",
+            "en": "Coefficients and domain"
+          },
+          "semanticTrigger": "Coefficients and domain"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S01-en-v1",
+      "sceneID": "L05-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "A report gives concentrations in fish and water. Does dividing one by the other automatically produce a bioconcentration factor? The arithmetic may be correct while the interpretation is wrong. The metric requires an appropriate exposure design. Was uptake from water alone? Are the analyte and sampling times compatible? Is tissue reported on a wet- or dry-weight basis? Describe the measurements before calculating. An equation cannot repair missing data or an incompatible experiment.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "2b520c2901c640abd908fb9b4dcadb5c748f183c1675d5094d36ee0ce7ba0246",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S01-en-v1",
+        "file": "L05-S01-en-v1.wav",
+        "sha256": "01c4b996b95a4dd326f175c5987ba8b1a7361aeb1466727fe9a2aa01cb050ea3"
+      },
+      "durationSeconds": 35.650958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L05-S01-A1",
+          "label": {
+            "ar": "تركيز في الكائن",
+            "en": "Organism concentration"
+          },
+          "semanticTrigger": "Organism concentration"
+        },
+        {
+          "id": "L05-S01-A2",
+          "label": {
+            "ar": "تركيز في المياه",
+            "en": "Water concentration"
+          },
+          "semanticTrigger": "Water concentration"
+        },
+        {
+          "id": "L05-S01-A3",
+          "label": {
+            "ar": "نفس المادة والأساس",
+            "en": "Same analyte and basis"
+          },
+          "semanticTrigger": "Same analyte and basis"
+        },
+        {
+          "id": "L05-S01-A4",
+          "label": {
+            "ar": "طريق التعرّض",
+            "en": "Exposure route"
+          },
+          "semanticTrigger": "Exposure route"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S02-en-v1",
+      "sceneID": "L05-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "In the aquatic example, tissue concentration is measured in milligrams per kilogram, and water concentration in milligrams per litre. Dividing by a fraction is equivalent to multiplying by its reciprocal. Milligrams cancel, but litres and kilograms remain. The result is litres per kilogram. Omitting the unit hides the measurement basis. Changing from wet to dry tissue weight also requires an appropriate conversion before comparing studies.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "2064e5d8faf1a22cf51996119abf6c4f21185046d5d866cce2829073cb6d0695",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S02-en-v1",
+        "file": "L05-S02-en-v1.wav",
+        "sha256": "dc0f05d6615fe38425e1636e9872d316a36dcb7b029bac3784070df7ae962a99"
+      },
+      "durationSeconds": 32.650958333333335,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L05-S02-A1",
+          "label": {
+            "ar": "وحدة تركيز الكائن",
+            "en": "Organism concentration unit"
+          },
+          "semanticTrigger": "Organism concentration unit"
+        },
+        {
+          "id": "L05-S02-A2",
+          "label": {
+            "ar": "وحدة تركيز المياه",
+            "en": "Water concentration unit"
+          },
+          "semanticTrigger": "Water concentration unit"
+        },
+        {
+          "id": "L05-S02-A3",
+          "label": {
+            "ar": "نلغي الوحدة المشتركة",
+            "en": "Cancel shared units"
+          },
+          "semanticTrigger": "Cancel shared units"
+        },
+        {
+          "id": "L05-S02-A4",
+          "label": {
+            "ar": "الوحدة الناتجة",
+            "en": "Resulting unit"
+          },
+          "semanticTrigger": "Resulting unit"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S03-en-v1",
+      "sceneID": "L05-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Assume tissue concentration is two point four milligrams per kilogram wet weight, and water concentration is six thousandths of a milligram per litre. Dividing two point four by zero point zero zero six gives four hundred litres per kilogram. Check by multiplying back: four hundred times six thousandths returns two point four. Interpreting this as a bioconcentration factor still depends on the experimental conditions, including water as the chemical source and appropriate measurement and timing.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "6d09b7cad0774ef84da766e5048410cf5ec528cc34ebd39de26ea133d40d7c07",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S03-en-v1",
+        "file": "L05-S03-en-v1.wav",
+        "sha256": "27e843d5dc3facd6f4098c3d8140ba63181d56b630ec5220efb24fc22b1b6b74"
+      },
+      "durationSeconds": 35.17095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L05-S03-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 0.007,
+              "end": 0.009,
+              "category": "pronunciation",
+              "heard": "6000th",
+              "expected": "six thousandths",
+              "heardPhonetics": "/sɪks ˈθaʊzəndθ/",
+              "suggestion": "The speaker should use the plural form 'thousandths' when referring to a quantity of six parts per thousand.",
+              "reason": "The speaker uses the singular form 'thousandth' instead of the grammatically correct plural 'thousandths' when stating '6000th of a milligram'.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.02,
+              "end": 0.022,
+              "category": "pronunciation",
+              "heard": "6000th",
+              "expected": "six thousandths",
+              "heardPhonetics": "/sɪks ˈθaʊzəndθ/",
+              "suggestion": "The speaker should use the plural form 'thousandths' when referring to a quantity of six parts per thousand.",
+              "reason": "The speaker repeats the singular form 'thousandth' instead of the grammatically correct plural 'thousandths' when stating '400 * 6000th'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "L05-S03-en-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 12.7,
+              "end": 14.49,
+              "category": "omission",
+              "heard": "point zero zero six",
+              "expected": "zero point zero zero six",
+              "heardPhonetics": "/pɔɪnt ˈzɪəroʊ ˈzɪəroʊ sɪks/",
+              "suggestion": "Insert 'zero' before 'point'.",
+              "reason": "The word 'zero' was omitted before 'point' in the numerical value 'zero point zero zero six'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L05-S03-A1",
+          "label": {
+            "ar": "تركيز الكائن",
+            "en": "Organism concentration"
+          },
+          "semanticTrigger": "Organism concentration"
+        },
+        {
+          "id": "L05-S03-A2",
+          "label": {
+            "ar": "تركيز المياه",
+            "en": "Water concentration"
+          },
+          "semanticTrigger": "Water concentration"
+        },
+        {
+          "id": "L05-S03-A3",
+          "label": {
+            "ar": "القسمة بوحداتها",
+            "en": "Divide with units"
+          },
+          "semanticTrigger": "Divide with units"
+        },
+        {
+          "id": "L05-S03-A4",
+          "label": {
+            "ar": "تحقق عكسي",
+            "en": "Reverse check"
+          },
+          "semanticTrigger": "Reverse check"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S04-en-v1",
+      "sceneID": "L05-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Contaminated food adds another uptake route. The calculated ratio no longer automatically represents water-only bioconcentration; an all-route accumulation framework is needed. For sediment and a benthic organism, a biota-sediment accumulation factor relates appropriately normalized concentrations, commonly lipid-normalized tissue and organic-carbon-normalized sediment under the stated method. Do not mix a normalized value with an unnormalized one. Select the metric from the scientific question and design, rather than from a familiar abbreviation.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "44f0b00393b32f78dab3da191b56f2bfc3e614278c624043101d0a0afecedf6a",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S04-en-v1",
+        "file": "L05-S04-en-v1.wav",
+        "sha256": "fcb459f5f641c73f01f10f0aeaf8332635407aed3aed45f9cc09e1010f31534b"
+      },
+      "durationSeconds": 40.21095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L05-S04-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 29.706,
+              "end": 30.036,
+              "category": "delivery",
+              "heard": "mix",
+              "expected": "mix",
+              "heardPhonetics": "mɪksː",
+              "suggestion": "Pronounce 'mix' without elongating the final 'x' sound.",
+              "reason": "The speaker slightly elongates the final 'x' sound in 'mix', giving it a drawn-out quality.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 40.211,
+                "category": "Timbre/Vocal Weight",
+                "observation": "The candidate voice exhibits a slightly lighter vocal weight and a less rich timbre compared to the reference, giving it a subtly thinner quality. This characteristic is consistent throughout the candidate audio.",
+                "certainty": "certain"
+              },
+              {
+                "start": 0.0,
+                "end": 40.211,
+                "category": "Sibilance",
+                "observation": "Slightly more pronounced sibilance is audible in the candidate's speech compared to the reference.",
+                "certainty": "certain"
+              }
+            ],
+            "notes": "The candidate maintains a natural English university narration style with clear articulation and consistent pacing. No unnatural chopped delivery was detected. The register is generally consistent with the reference. The primary differences are subtle but consistent shifts in timbre and vocal weight, making the candidate sound slightly less resonant and a bit lighter, along with slightly increased sibilance."
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L05-S04-A1",
+          "label": {
+            "ar": "المياه فقط",
+            "en": "Water only"
+          },
+          "semanticTrigger": "Water only"
+        },
+        {
+          "id": "L05-S04-A2",
+          "label": {
+            "ar": "كل طرق التعرّض",
+            "en": "All exposure routes"
+          },
+          "semanticTrigger": "All exposure routes"
+        },
+        {
+          "id": "L05-S04-A3",
+          "label": {
+            "ar": "الكائن والرواسب",
+            "en": "Biota and sediment"
+          },
+          "semanticTrigger": "Biota and sediment"
+        },
+        {
+          "id": "L05-S04-A4",
+          "label": {
+            "ar": "التطبيع الصحيح",
+            "en": "Correct normalization"
+          },
+          "semanticTrigger": "Correct normalization"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S05-en-v1",
+      "sceneID": "L05-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "After exposure begins, tissue concentration may change over time. A first-day ratio need not match a later ratio. During a depuration phase, organisms are transferred to clean medium under the test design and declining concentrations are followed. Such data can support kinetic estimates of uptake and elimination. Report duration, temperature, water-concentration basis and tissue basis. Equilibrium or steady state must be supported by the method and data, not by drawing a flat line.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.",
+      "textSHA256": "337b6c9c2e3a1a7fd15c4ff850b02c9e91879daab9766434b5a24001a88c4f1d",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S05-en-v1",
+        "file": "L05-S05-en-v1.wav",
+        "sha256": "51bfd37031370d74ad250a8231a8d5ee00b186e1770597eae9e0ff436f71a513"
+      },
+      "durationSeconds": 36.050958333333334,
+      "reviewConcerns": [],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "actions": [
+        {
+          "id": "L05-S05-A1",
+          "label": {
+            "ar": "مرحلة الامتصاص",
+            "en": "Uptake phase"
+          },
+          "semanticTrigger": "Uptake phase"
+        },
+        {
+          "id": "L05-S05-A2",
+          "label": {
+            "ar": "نقل لمياه نظيفة",
+            "en": "Transfer to clean water"
+          },
+          "semanticTrigger": "Transfer to clean water"
+        },
+        {
+          "id": "L05-S05-A3",
+          "label": {
+            "ar": "مرحلة التخلص",
+            "en": "Depuration phase"
+          },
+          "semanticTrigger": "Depuration phase"
+        },
+        {
+          "id": "L05-S05-A4",
+          "label": {
+            "ar": "الثبات أو الحركية",
+            "en": "Steady-state or kinetics"
+          },
+          "semanticTrigger": "Steady-state or kinetics"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    },
+    {
+      "id": "L05-S06-en-v1",
+      "sceneID": "L05-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "The octanol-water partition coefficient describes equilibrium partitioning for a defined chemical form. Its logarithm can help screen properties of some organic substances, but it does not determine accumulation by itself. Ionization, metabolism, growth and exposure conditions matter. The handout’s regression contains unspecified coefficients and no established applicability domain. Do not fill those gaps with guesses. In the exercise, identify the missing evidence before deciding whether the available ratio answers the intended question.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable warm male mid-register voice.",
+      "textSHA256": "3fa82764666307c2742ab9ce8a1a1bfa1557deeb46e96d485d327dc1e89f10be",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L05-S06-en-v1",
+        "file": "L05-S06-en-v1.wav",
+        "sha256": "471da3c802dec1b58eacbeb65847001dc339727375eb6f26a0ff84a4148782b2"
+      },
+      "durationSeconds": 40.49095833333333,
+      "reviewConcerns": [
+        {
+          "source": "L05-S06-en-v1-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 21.8,
+              "end": 22.2,
+              "category": "pronunciation",
+              "heard": "handouts",
+              "expected": "handouts",
+              "heardPhonetics": "/hændˌaʊt(s)/",
+              "suggestion": "Articulate the plural 's' sound more distinctly for clarity.",
+              "reason": "The plural 's' in 'handouts' is pronounced very softly, making it acoustically ambiguous and potentially sounding like the singular 'handout'.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [
+            {
+              "start": 21.8,
+              "end": 22.2,
+              "text": "handouts",
+              "reason": "The plural 's' sound is very soft and almost inaudible, creating ambiguity with the singular 'handout'."
+            }
+          ],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "L05-S06-en-v1-00-reference.analysis.json",
+          "findings": [
+            {
+              "start": 0.001,
+              "end": 0.0025,
+              "category": "substitution",
+              "heard": "partitioning",
+              "expected": "partition",
+              "heardPhonetics": "/pɑːrˈtɪʃənɪŋ/",
+              "suggestion": "/pɑːrˈtɪʃən/",
+              "reason": "The speaker used the word 'partitioning' instead of the expected 'partition'.",
+              "severity": "minor",
+              "certainty": "clear"
+            },
+            {
+              "start": 0.0295,
+              "end": 0.03,
+              "category": "pronunciation",
+              "heard": "fill",
+              "expected": "fill",
+              "heardPhonetics": "/fiːl/",
+              "suggestion": "/fɪl/",
+              "reason": "The vowel sound in 'fill' was elongated, sounding closer to /fiːl/ rather than the standard short /fɪl/.",
+              "severity": "minor",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        }
+      ],
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Charon-v1",
+        "file": "EN-proof-Charon-v1.wav",
+        "sha256": "625eb027a0b24725cceb53f9d25e59c0b226435ff07fda8ef8a090c129948f47"
+      },
+      "actions": [
+        {
+          "id": "L05-S06-A1",
+          "label": {
+            "ar": "أوكتانول ومياه",
+            "en": "Octanol and water"
+          },
+          "semanticTrigger": "Octanol and water"
+        },
+        {
+          "id": "L05-S06-A2",
+          "label": {
+            "ar": "توزيع عند الاتزان",
+            "en": "Equilibrium partitioning"
+          },
+          "semanticTrigger": "Equilibrium partitioning"
+        },
+        {
+          "id": "L05-S06-A3",
+          "label": {
+            "ar": "معادلة تجريبية",
+            "en": "Empirical equation"
+          },
+          "semanticTrigger": "Empirical equation"
+        },
+        {
+          "id": "L05-S06-A4",
+          "label": {
+            "ar": "المعاملات ومجال الصلاحية",
+            "en": "Coefficients and domain"
+          },
+          "semanticTrigger": "Coefficients and domain"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}
