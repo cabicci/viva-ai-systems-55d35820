@@ -1,0 +1,84 @@
+name: Fate L01 approved Pro audio synchronization and one sample
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-v1
+  EXPECTED_REQUEST_SHA256: 6aa0e7761f4f320cfe939b6e59abec85053855e221c54cc8ad8f4e4b0f68def6
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  sample_timing:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Time accepted calculation recording
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/timing.py" L01-S07
+      - name: Deliver sample timing immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v1-timing-L01-S07
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  other_timings:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        scene: [L01-S01,L01-S02,L01-S03,L01-S04,L01-S05,L01-S06,L01-S08,L01-S09,L01-S10]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Derive actual-audio word and action timings
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/timing.py" "${{ matrix.scene }}"
+      - name: Deliver each completed timing immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v1-timing-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  sample_video:
+    needs: sample_timing
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Receive exact approved audio, existing image and measured timings
+        run: python "$PACKAGE/prepare-proof.py"
+      - name: Install locked render dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-v1
+        run: npm ci --no-audit --no-fund
+      - name: Render action checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver stills before video finishes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v1-stills
+          path: ${{ env.PACKAGE }}/proof/
+          retention-days: 30
+      - name: Render only the requested synchronization sample
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify-soundtrack.py"
+      - name: Deliver the sample and verification
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v1-proof
+          path: ${{ env.PACKAGE }}/proof/
+          retention-days: 30
