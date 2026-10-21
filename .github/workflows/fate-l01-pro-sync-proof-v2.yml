@@ -1,0 +1,45 @@
+name: Fate L01 synchronized proof layout correction
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-proof-v2/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-proof-v2
+  EXPECTED_REQUEST_SHA256: 8b65901f7a48fd8f4945a3ea51ecaa7c14914caeeaedac7c4b8a8057b5c03309
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  sample_video:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Receive exact approved audio, existing image and measured timings
+        run: python "$PACKAGE/prepare-proof.py"
+      - name: Install locked render dependencies
+        working-directory: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-sync-proof-v2
+        run: npm ci --no-audit --no-fund
+      - name: Render action checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver stills before video finishes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v2-stills
+          path: ${{ env.PACKAGE }}/proof/
+          retention-days: 30
+      - name: Render only the requested synchronization sample
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify-soundtrack.py"
+      - name: Deliver the sample and verification
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-sync-v2-proof
+          path: ${{ env.PACKAGE }}/proof/
+          retention-days: 30
