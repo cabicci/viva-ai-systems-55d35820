@@ -1,0 +1,217 @@
+{
+  "id": "L01-ar-pro-v1",
+  "scope": "Owner approves Pro listening method and explicitly requests all L01 Arabic narration with this model. New complete Pro version, including passages formerly approved under Flash; old accepted files and approvals remain intact. No new lessons, English production, timing, video render or publication.",
+  "model": "gemini-2.5-pro-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "locale": "ar-EG",
+  "format": "mono PCM16 24000Hz",
+  "maxSpeechCalls": 10,
+  "maxAnalysisCalls": 39,
+  "automaticRetries": 0,
+  "segments": [
+    {
+      "id": "L01-S01-pro-v1",
+      "sceneID": "L01-S01",
+      "voice": "Kore",
+      "spokenText": "تخيّل إنّ معاك تقرير من المعمل عن عيّنة طماطم. التّقرير بيقول إنّ فيه متبقّي لمبيد اتقاس في العيّنة. أوّل ردّ فعل ممكن يكون: يبقى الطّماطم دي سبّبت تسمّم. بسّ استنى لحظة. التّقرير قال لنا إيه بالضّبط؟ قال إنّ مادّة محدّدة اتقاست في عيّنة. لسّه ما قالش مين أكل منها، وأكل قدّ إيه، ولا إيه اللّي حصل له. في الدّرس ده، هنمشي من مكان استخدام المبيد لحدّ نتيجة التّحليل، ونتعلّم نكتب استنتاج على قدّ الدّليل اللّي معانا. السّؤال اللّي هنرجع له طول الوقت هو: إيه اللّي عرفناه، وإيه اللّي لسّه محتاجين نعرفه؟",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Relevant cues only: طماطم: ta-MAA-tem, ordinary Egyptian pronunciation. عيّنة: AY-ye-na (a sample), not ay-YAA-na (ill). Do not exaggerate any consonant.",
+      "textSHA256": "f0086e4013aa48ff0d7e5f3a006fe5956e52a603675a19097b8bf7d05c3b507d",
+      "deliverySHA256": "0481e40ae414cb7f69216c68d3ba9b998b71805dee37f111c68121f3c2f73cc1",
+      "wordCount": 91
+    },
+    {
+      "id": "L01-S02-pro-v1",
+      "sceneID": "L01-S02",
+      "voice": "Charon",
+      "spokenText": "قبل ما نكمّل، إيه هو متبقّي المبيد؟ ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش كفاية. لازم نعرف المعمل كان بيدوّر على إيه بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه إنّنا هنشوف طبقة بعيننا. العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Relevant cues only: عيّنة: AY-ye-na (a sample), not ay-YAA-na (ill). Do not exaggerate any consonant.",
+      "textSHA256": "b166a600a35e6f2c95a16b8d85a56f01ad49db88d4d2518a804af5330915d361",
+      "deliverySHA256": "991478908591277ea5315f35e2ba49c398c7e4ef37f45e8fe405c96d73456c91",
+      "wordCount": 89
+    },
+    {
+      "id": "L01-S03-pro-v1",
+      "sceneID": "L01-S03",
+      "voice": "Kore",
+      "spokenText": "نرجع للحقل. بعد استخدام المبيد، جزء من المادّة ممكن يفضل على المَحْصول أو جوّاه. ولو حدّ أكل غذاء فيه متبقّيات، ده طريق ممكن يحصل بيه تعرّض للمبيد. وفيه طرق تانية. مادّة وصلت للتّربة ممكن تتحرّك مع المَيّه الجارية على السّطح، وتوصل لمجرى مَيّه. هنا نسأل: وصلت فعلًا؟ وتركيزها قدّ إيه؟ وقت الرّشّ، الرّذاذ ممكن يتحرّك برّه المكان المستهدف ويلامس كائنات تانية. والحشرات النّافعة ممكن تتعرّض لمتبقّيات على النّبات، بالتّلامس أو وهي بتتغذّى عليه. كلّ دي احتمالات محتاجة بيانات. مش كلّ مبيد هيتحرّك بنفس الطّريقة، ولا كلّ تعرّض معناه إنّ ضرر حصل. السّهم بيوضّح طريق الانتقال، مش بيثبت حدوث الضّرر.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Relevant cues only: المَيّه: el-MAY-ya, field water, never the number one hundred. المَحْصول: el-mah-SOOL, clear emphatic ص, never س. Do not exaggerate any consonant.",
+      "textSHA256": "9341f61edec1f6c6bc2650bf4e13d8b9b6be870bee0773b43b904521c5a61bb5",
+      "deliverySHA256": "782325ce7838267ce97bce00a7d427c4ffdefe5dabeb8e3b3406bb46bc2179ce",
+      "wordCount": 99
+    },
+    {
+      "id": "L01-S04-pro-v1",
+      "sceneID": "L01-S04",
+      "voice": "Charon",
+      "spokenText": "خلّينا نفصل تلات أفكار. أوّل فكرة: المادّة تقدر تعمل ضرر من نوع إيه، وتحت أنهي ظروف؟ ده سؤال عن قدرتها على إحداث الضّرر. تاني فكرة: المادّة وصلت للكائن إزاي، وقدّ إيه، ولمدّة قدّ إيه؟ ده سؤال عن التّعرّض. أمّا المخاطر، فالسّؤال فيها عن احتمال حدوث الأثر وشدّته في الظّروف اللّي بندرسها. يعني لو دراسة لقت تأثير عند جرعة معيّنة، لسّه محتاجين نعرف هل ظروف التّعرّض في حالتنا تسمح باستخدام النّتيجة دي. وجود المادّة لوحده مش كفاية للحكم. وعدم وجود أعراض فوريّة، برضه، مش دليل إنّ كلّ تأثير محتمل مستبعد. إحنا بنجمّع أدلّة ونفهم حدودها، مش بنختار لون يطمّنّا أو يخوّفنا.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Relevant cues only: عيّنة: AY-ye-na (a sample), not ay-YAA-na (ill). Do not exaggerate any consonant.",
+      "textSHA256": "839f7966162713d924c3e74698c89778641b3b5bc2d417af82bad99d5746918e",
+      "deliverySHA256": "991478908591277ea5315f35e2ba49c398c7e4ef37f45e8fe405c96d73456c91",
+      "wordCount": 100
+    },
+    {
+      "id": "L01-S05-pro-v1",
+      "sceneID": "L01-S05",
+      "voice": "Kore",
+      "spokenText": "نرجع لتقرير الطّماطم. المثال ده افتراضيّ بالكامل. التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء. الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش هو الكمّيّة اللّي أكلها. ومعانا حدّ للمقارنة، اخترناه للتّدريب بسّ: صفر فاصلة واحد مِلّيجرام لكلّ كيلوجرام غذاء. عشان نقارن صحّ، لازم الأرقام تكون بتوصف نفس الحاجة. نتأكّد من المادّة، وتعريف المتبقّي، ونوع الغذاء، والجزء اللّي اتحلّل، ووحدة القياس. لو الحدّ خاصّ بالتّفّاح، ما ينفعش نستخدمه للطّماطم. في المثال ده، هنعتبر إنّ البيانات متطابقة وإنّ القياس صالح للمقارنة. دي مسألة تعليميّة بأرقام افتراضيّة، مش حكم قانونيّ على شحنة حقيقيّة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Relevant cues only: طماطم: ta-MAA-tem, ordinary Egyptian pronunciation. المقاس: el-me-AAS with a glottal stop, not hard q/k. Do not exaggerate any consonant.",
+      "textSHA256": "2b8ee267ddc1bebc71d1dc3f449ff2eaff9baa87d2a1f9b9859a13699ac30a02",
+      "deliverySHA256": "e8a119fc21e7110f4beea44c756f2b47b9fd4aae8de6a990a805ee3bd1ff6ada",
+      "wordCount": 99
+    },
+    {
+      "id": "L01-S06-pro-v1",
+      "sceneID": "L01-S06",
+      "voice": "Charon",
+      "spokenText": "دلوقتي نحطّ الرّقمين على نفس المقياس. صفر فاصلة صفر تمانية أقلّ من صفر فاصلة واحد. والفرق بينهم اتنين من ميّة مِلّيجرام لكلّ كيلوجرام غذاء. نكتب الاستنتاج بدقّة: القيمة أقلّ من الحدّ الافتراضيّ المستخدم في المثال. بسّ الفرق ده مش هامش أمان لشخص، ومش كمّيّة مسموح له ياكلها. الحدّ الأقصى للمتبقّي بيتعلّق بتركيز محدّد في سلعة محدّدة، ووضعه له بيانات استخدام وتقييم علميّ. مش هو الجرعة اللّي دخلت جسم إنسان. ولو القيمة كانت أعلى من الحدّ، ده برضه ما يثبتش لوحده إنّ شخص اتسمّم. تجاوز الحدّ وتقييم الأثر الصّحّيّ سؤالين مرتبطين، لكن كلّ واحد محتاج أدلّته المناسبة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Do not exaggerate any consonant.",
+      "textSHA256": "d113fbac6174f3fdbfc7f9435cf4dbd036c4e351e1eb46efd4c46c34a424ebfd",
+      "deliverySHA256": "62805be77aa4e0edf619be24d892cefb8bfe9a8a34fa4d9d3df5e9ed70db7f48",
+      "wordCount": 96
+    },
+    {
+      "id": "L01-S07-pro-v1",
+      "sceneID": "L01-S07",
+      "voice": "Charon",
+      "spokenText": "في الحساب الجاي، هنفترض إنّ تركيز المتبقّي في الجزء اللّي اتاكل هو نفس التّركيز في العيّنة. طيب، لو شخص أكل ميتين جرام من الطّماطم دي؟ نحَوّل الوزن لكيلوجرام: ميتين جرام يعني صفر فاصلة اتنين كيلوجرام. نضرب التّركيز في الوزن: صفر فاصلة صفر تمانية، في صفر فاصلة اتنين. يطلع صفر فاصلة صفر واحد ستّة مِلّيجرام من متبقّي المبيد. دي الكمّيّة الموجودة في الجزء اللّي اتاكل. مش بالضّرورة الكمّيّة اللّي الجسم امتصّها، ومش دليل لوحدها إنّ الشخص حصل له ضرر. ولاحظ الوحدة: مِلّيجرام لكلّ كيلوجرام، مضروبة في كيلوجرام. الكيلوجرام في البسط والمقام بيختصروا بعض، فالنّتيجة بتطلع بالمِلّيجرام. ولو حجم الحصّة زاد والتّركيز ثابت، كمّيّة المتبقّي اللّي اتاكلت هتزيد. وتقييم التّعرّض محتاج معلومات تانية، زي وزن الجسم، وتكرار الأكل، وباقي مصادر التّعرّض المهمّة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Relevant cues only: طماطم: ta-MAA-tem, ordinary Egyptian pronunciation. عيّنة: AY-ye-na (a sample), not ay-YAA-na (ill). صفر فاصلة صفر واحد ستّة means 0.016. Read every digit in order; never collapse the decimal digits into sixteen. Do not exaggerate any consonant.",
+      "textSHA256": "860d054f165d3c5a13b3216f100c962940fbd4bde065171ebef950b8e9372987",
+      "deliverySHA256": "1c565caa0cf2bd0db0b73f62a30cdf2b6372f5bd782042cd02d64ca089127452",
+      "wordCount": 120
+    },
+    {
+      "id": "L01-S08-pro-v1",
+      "sceneID": "L01-S08",
+      "voice": "Kore",
+      "spokenText": "في ملفّ المنهج، فيه جدول بيجمع أسماء مبيدات وآثار صحّيّة وبيئيّة. بسّ الصّفّ لوحده مش بيشرح لنا الدّراسة اللّي ورا المعلومة. لو حدّ قال إنّ مادّة مرتبطة بتأثير على الجهاز العصبيّ، فاستنتج إنّ أيّ غذاء فيه المادّة دي هيسبّب نفس التّأثير، يبقى محتاجين نراجع الاستنتاج ده. نسأل: الدّراسة اتعملت على أنهي كائن؟ وبجرعة أو تركيز قدّ إيه؟ والمادّة دخلت له إزّاي؟ والتّعرّض استمرّ قدّ إيه؟ ونراجع اسم المادّة وصيغتها، عشان ما نخلطش بين مادّتين. إحنا مش بننفي احتمال الضّرر. إحنا بنرفض نحكم من معلومات مش كفاية. الجدول بداية ندوّر منها على الدّليل، مش تشخيص جاهز نطبّقه على نتيجة التّحليل.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Do not exaggerate any consonant.",
+      "textSHA256": "72aea540a878cc7de8d0596f6ac3a598a2fea0cf4e453444f646bc59754b9d77",
+      "deliverySHA256": "35561191338a8e568b3b13f9ceb34b108dc3471c03c2241c52d563cf2ff0c810",
+      "wordCount": 99
+    },
+    {
+      "id": "L01-S09-pro-v1",
+      "sceneID": "L01-S09",
+      "voice": "Kore",
+      "spokenText": "وده مرتبط بالكلام في صفحة تلاتة عن خبراء منظّمة الأغذية والزّراعة ومنظّمة الصّحّة العالميّة. تقييم الدّراسات العلميّة حاجة، واتّخاذ القرار التّنظيميّ حاجة تانية، مع إنّهم مرتبطين. الجهات اللّي بتحطّ المعايير، والحكومات، بتستعين بالتّقييمات العلميّة وبيانات الاستخدام والمتبقّيات. وعلى مستوى المزرعة، الممارسة الزّراعيّة الجيّدة بتبدأ بالاستخدام المصرّح بيه، وبشروطه للمبيد والمَحْصول. رقم التّحليل ما يحدّدش كمّيّة المبيد اللّي تتستخدم، ولا يحدّد ميعاد الحصاد. نرجع لتعليمات المُنتَج، والاستخدام، والمتطلّبات المعتمدة اللّي بتنظّمه. المطلوب منّنا هنا نعرف نطلب المعلومات الصّحّ ونفهمها. المثال التّعليميّ يساعدنا نفكّر، لكن ما يتحوّلش لتوصية باستخدام مبيد أو تحديد جرعته.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable light warm female mid-register voice, conversational. Relevant cues only: المَحْصول: el-mah-SOOL, clear emphatic ص, never س. Do not exaggerate any consonant.",
+      "textSHA256": "148658f1f159dc3eef4b5c701a8c41cc9f8107257b72a2d5df478a2ffdeca960",
+      "deliverySHA256": "32735bdef642826f18c591a7d0b6fd0e6b884814d3c0f79df15a101dfbb99335",
+      "wordCount": 91
+    },
+    {
+      "id": "L01-S10-pro-v1",
+      "sceneID": "L01-S10",
+      "voice": "Charon",
+      "spokenText": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة. معانا تقرير تحليل للفاصوليا. تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام. وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات تفكيرك، مش الرّقم النّهائيّ بسّ. لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل عليه في الدّرس الجاي.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Do not exaggerate any consonant.",
+      "textSHA256": "66532ff1486f5b9bb0cfabdfb9763eb17b9e2c01bac30eb508d21e1bfc6e4110",
+      "deliverySHA256": "62805be77aa4e0edf619be24d892cefb8bfe9a8a34fa4d9d3df5e9ed70db7f48",
+      "wordCount": 93
+    }
+  ],
+  "retained": [],
+  "reuse": [],
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "title": "نتيجة تحليل… نقدر نستنتج منها إيه؟",
+      "voice": "Kore",
+      "parts": [
+        "L01-S01-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S02",
+      "title": "المتبقي مش لازم يكون ظاهرًا",
+      "voice": "Charon",
+      "parts": [
+        "L01-S02-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S03",
+      "title": "نتتبع الطريق من الحقل",
+      "voice": "Kore",
+      "parts": [
+        "L01-S03-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S04",
+      "title": "قدرة على الضرر، تعرّض، مخاطر",
+      "voice": "Charon",
+      "parts": [
+        "L01-S04-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S05",
+      "title": "نقرأ التقرير قبل المقارنة",
+      "voice": "Kore",
+      "parts": [
+        "L01-S05-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S06",
+      "title": "النتيجة وحدودها",
+      "voice": "Charon",
+      "parts": [
+        "L01-S06-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S07",
+      "title": "من التركيز إلى كمية في حصة",
+      "voice": "Charon",
+      "parts": [
+        "L01-S07-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S08",
+      "title": "نفكك ادعاءً من جدول الأضرار",
+      "voice": "Kore",
+      "parts": [
+        "L01-S08-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S09",
+      "title": "التقييم والممارسة الزراعية",
+      "voice": "Kore",
+      "parts": [
+        "L01-S09-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S10",
+      "title": "دورك: حالة جديدة",
+      "voice": "Charon",
+      "parts": [
+        "L01-S10-pro-v1"
+      ]
+    }
+  ],
+  "voiceReferences": {
+    "Charon": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+      "file": "voice-A-Charon-Pro.wav",
+      "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+    },
+    "Kore": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+      "file": "voice-B-Kore-Pro.wav",
+      "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+    }
+  },
+  "sourceScript": "media/L01-ar-connected-v8/spoken-script.md",
+  "sourceScriptSHA256": "9011e856770944ef60135da3e3cb168a9389d490edafc24d914234c73dacec63",
+  "generationUnit": "One complete scene per request; merge existing same-scene text paragraphs without omissions.",
+  "cacheDecision": "No identical approved Pro complete scene request exists. Previous Flash files preserved without replacement. Pro audition text does not exactly match full scenes.",
+  "humanListeningApproved": false,
+  "renderAllowed": false
+}
