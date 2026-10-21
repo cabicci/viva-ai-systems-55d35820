@@ -128,31 +128,5 @@ BEGIN
 END $$;
 REVOKE ALL ON FUNCTION public.academic_sync_chunks(text,jsonb,jsonb) FROM PUBLIC,anon,authenticated;
 GRANT EXECUTE ON FUNCTION public.academic_sync_chunks(text,jsonb,jsonb) TO service_role;
--- Retire the unused legacy importer; no CASCADE, so unexpected dependents stop
--- this change. Historical migration text is retained as an audit record.
-DROP FUNCTION public.academic_import_chunks(jsonb);
 
-CREATE OR REPLACE FUNCTION public.academic_rag_match(
- p_course text,p_locale text,p_embedding extensions.vector,p_limit integer DEFAULT 6
-) RETURNS TABLE(course_id text,lesson_id text,locale text,section_id text,content text,similarity double precision)
-LANGUAGE sql STABLE SECURITY INVOKER SET search_path='' AS $$
- SELECT r.course_id,r.lesson_id,r.locale,r.section_id,r.content,
-  (1-(r.embedding OPERATOR(extensions.<=>) p_embedding))::double precision
- FROM public.academic_rag_chunks r
- JOIN public.academic_lesson_content l ON l.course_id=r.course_id AND l.lesson_id=r.lesson_id
-  AND l.locale=r.locale AND l.approved AND l.source_sha256=r.source_sha256
-  AND coalesce(l.payload->>'version','1.0.0-pilot')=r.content_version
- JOIN public.academic_courses c ON c.id=r.course_id AND
-  ((c.enabled AND c.assistant_enabled) OR c.assistant_review_enabled)
- WHERE r.course_id=p_course AND r.locale=p_locale
-  AND p_course IS NOT NULL AND p_locale IN ('ar-EG','ar-MSA','ar-Gulf','en') AND p_limit BETWEEN 1 AND 8
-  AND r.embedding_model='text-embedding-3-small' AND r.embedding_dimensions=1536
-  AND r.content_sha256=encode(extensions.digest(convert_to(r.content,'UTF8'),'sha256'),'hex')
-  AND EXISTS(SELECT 1 FROM jsonb_array_elements(l.payload->'sections') s
-   WHERE s->>'id'=r.section_id AND (s->>'title')||E'\n'||(s->>'text')=r.content)
-  AND 1-(r.embedding OPERATOR(extensions.<=>) p_embedding)>=0.35
- ORDER BY r.embedding OPERATOR(extensions.<=>) p_embedding ASC LIMIT least(p_limit,8);
-$$;
-REVOKE ALL ON FUNCTION public.academic_rag_match(text,text,extensions.vector,integer) FROM PUBLIC,anon,authenticated;
-GRANT EXECUTE ON FUNCTION public.academic_rag_match(text,text,extensions.vector,integer) TO service_role;
 COMMIT;
