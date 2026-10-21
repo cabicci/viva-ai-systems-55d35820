@@ -1,0 +1,82 @@
+{
+  "id": "L01-pro-targeted-diagnostics-v1",
+  "scope": "Five bounded actual-audio adjudications: three specific transcript/voice disagreements and two actual central join alerts. No new speech.",
+  "model": "gemini-2.5-pro",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 0,
+  "maxAnalysisCalls": 5,
+  "targets": [
+    {
+      "id": "S02",
+      "sources": [
+        {
+          "run": 39571137579,
+          "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+          "file": "voice-A-Charon-Pro.wav",
+          "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+        },
+        {
+          "run": 39572192658,
+          "artifact": "fate-l01-pro-v1-L01-S02-pro-v1",
+          "file": "L01-S02-pro-v1.wav",
+          "sha256": "fb77cac94c9374a994532ebb0688798e681b6295bfdb8b706df699c055b3b38c"
+        }
+      ],
+      "question": "First recording is the owner-accepted Pro Charon sample; second is the candidate. BOTH are synthetic recordings. Compare actual vocal identity, register and connected delivery. Small content-dependent prosodic variation is normal; only flag a material change that sounds like a different speaker or clearly chopped/mispronounced speech. Prior automated observations are disputed and may be wrong: {\"status\": \"concern\", \"issues\": [{\"start\": 0.0, \"end\": 48.17, \"category\": \"Timbre/Vocal Weight\", \"observation\": \"The candidate's voice consistently presents a slightly lighter vocal weight and less resonance compared to the reference, resulting in a subtly 'thinner' overall timbre.\", \"certainty\": \"high\"}, {\"start\": 0.0, \"end\": 48.17, \"category\": \"Speaking Style\", \"observation\": \"The candidate's speaking style, while generally clear and well-paced, occasionally exhibits slight variations in prosodic naturalness and flow compared to the consistently smooth and fluid delivery of the reference speaker. This is a subtle departure from the reference's seamless narration.\", \"certainty\": \"high\"}, {\"start\": 22.4, \"end\": 22.8, \"category\": \"Pronunciation\", \"observation\": \"The word 'قاسي' (qasi) at this point sounds slightly unusual, almost like 'قاس' (qas) with a prolonged 's' or a very short 'i', differing from a typical clear pronunciation.\", \"certainty\": \"high\"}], \"notes\": \"The candidate voice maintains a similar register and overall speaking pace to the reference. However, there are consistent, albeit subtle, differences in the core vocal characteristics of timbre and vocal weight, with the candidate sounding slightly lighter and less resonant. The speaking style is generally good but lacks the absolute, consistent fluidity and naturalness of the reference speaker's prosody in some longer phrases. Within-candidate consistency is good.\"}. Actual intended candidate transcript: قبل ما نكمّل، إيه هو متبقّي المبيد؟ ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش كفاية. لازم نعرف المعمل كان بيدوّر على إيه بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه إنّنا هنشوف طبقة بعيننا. العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟. The S02 word is قاس (measured), not قاسي (harsh). Independently inspect the actual audio; do not invent that extra vowel. Ignore timestamps from the prior claim if not supported."
+    },
+    {
+      "id": "S06",
+      "sources": [
+        {
+          "run": 39572192658,
+          "artifact": "fate-l01-pro-v1-L01-S06-pro-v1",
+          "file": "L01-S06-pro-v1.wav",
+          "sha256": "2ad6d63bd799a34903c3a1868ad7f03dc342d6dce8e108ea2cc4d6c5a6d8aba1"
+        }
+      ],
+      "question": "Only one candidate recording is supplied. A blind transcript wrote the opening as دلوقتي نحقق رقمين but a reference-assisted transcript wrote دلوقتي نحط الرقمين. Listen independently and transcribe the actual first sentence, especially the verb and its following noun. Also check the later clause around ووضعه له بيانات استخدام وتقييم علمي for actual missing words or natural connected speech. Do not choose a transcript merely because supplied. Determine if the actual sound contains a material unclear/mispronounced word. For context the intended content compares 0.08 and 0.1, keeps 0.02 as concentration difference, not personal safety allowance. Preserve uncertainty."
+    },
+    {
+      "id": "S08",
+      "sources": [
+        {
+          "run": 39571137579,
+          "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+          "file": "voice-B-Kore-Pro.wav",
+          "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+        },
+        {
+          "run": 39572192658,
+          "artifact": "fate-l01-pro-v1-L01-S08-pro-v1",
+          "file": "L01-S08-pro-v1.wav",
+          "sha256": "3e186140a4566630be03d1ebbb9df6b0c8a09712cf60574a19c6768553375240"
+        }
+      ],
+      "question": "First recording is the owner-accepted Pro Kore sample; second is the candidate. BOTH are synthetic recordings. Compare actual vocal identity, register and connected delivery. Small content-dependent prosodic variation is normal; only flag a material change that sounds like a different speaker or clearly chopped/mispronounced speech. Prior automated observations are disputed and may be wrong: {\"status\": \"concern\", \"issues\": [{\"start\": 6.8, \"end\": 8.0, \"category\": \"speaking_style\", \"observation\": \"Slight artificiality in the flow of 'مش بيشرح لنا', lacking the natural smoothness of human speech.\", \"certainty\": \"medium\"}, {\"start\": 10.8, \"end\": 11.2, \"category\": \"speaking_style\", \"observation\": \"The word 'قال' sounds slightly abrupt in its ending.\", \"certainty\": \"medium\"}, {\"start\": 20.5, \"end\": 21.0, \"category\": \"speaking_style\", \"observation\": \"The word 'نحتاجين' sounds a bit clipped or rushed.\", \"certainty\": \"medium\"}, {\"start\": 29.5, \"end\": 30.5, \"category\": \"speaking_style\", \"observation\": \"Slight unnaturalness in the intonation and transition for 'دخلتله ازاي'.\", \"certainty\": \"medium\"}, {\"start\": 35.8, \"end\": 36.5, \"category\": \"speaking_style\", \"observation\": \"The pronunciation of 'ما نخلطش' has a subtle artificiality, lacking a natural blend.\", \"certainty\": \"medium\"}, {\"start\": 41.0, \"end\": 42.5, \"category\": \"speaking_style\", \"observation\": \"A subtle lack of natural prosody in 'نحكم من معلومات', giving a slightly robotic feel.\", \"certainty\": \"medium\"}], \"notes\": \"The candidate voice generally matches the reference in terms of gender, language, and narrative style. However, there are subtle differences in timbre and vocal weight, with the candidate sounding slightly brighter and lighter than the reference. Throughout the candidate audio, there are minor instances of less fluid prosody and slightly abrupt transitions between words, giving a subtle impression of unnaturalness or 'chopped' delivery, particularly noticeable in specific word sequences. These are not major disruptions but contribute to a less natural overall flow compared to the human reference.\"}. Actual intended candidate transcript: في ملفّ المنهج، فيه جدول بيجمع أسماء مبيدات وآثار صحّيّة وبيئيّة. بسّ الصّفّ لوحده مش بيشرح لنا الدّراسة اللّي ورا المعلومة. لو حدّ قال إنّ مادّة مرتبطة بتأثير على الجهاز العصبيّ، فاستنتج إنّ أيّ غذاء فيه المادّة دي هيسبّب نفس التّأثير، يبقى محتاجين نراجع الاستنتاج ده. نسأل: الدّراسة اتعملت على أنهي كائن؟ وبجرعة أو تركيز قدّ إيه؟ والمادّة دخلت له إزّاي؟ والتّعرّض استمرّ قدّ إيه؟ ونراجع اسم المادّة وصيغتها، عشان ما نخلطش بين مادّتين. إحنا مش بننفي احتمال الضّرر. إحنا بنرفض نحكم من معلومات مش كفاية. الجدول بداية ندوّر منها على الدّليل، مش تشخيص جاهز نطبّقه على نتيجة التّحليل.. The S02 word is قاس (measured), not قاسي (harsh). Independently inspect the actual audio; do not invent that extra vowel. Ignore timestamps from the prior claim if not supported."
+    },
+    {
+      "id": "join1",
+      "sources": [
+        {
+          "run": 39572192658,
+          "artifact": "fate-l01-pro-v1-complete",
+          "file": "join-1.wav",
+          "sha256": "4bba551e19b00009a6ec3860e3c2b03a9045a035b9d4de24a9d5c6d29c2edfef"
+        }
+      ],
+      "question": "Single recording is an excerpt of a real scene boundary. Examine ONLY the central boundary at 4.0 seconds (approximately 3.5 to 4.6 seconds). The first and last edges are intentionally cropped review windows, NOT production cuts; never flag those excerpt edges. Speaker change is intentional. The complete original speech on both sides is preserved PCM-exact. Measure/listen whether there is a real pop/click, clipped phoneme or unnatural transition at that central boundary, not merely the fact of a voice change. Measured combined existing/inserted low-energy gap is 0.32 seconds. A prior automated claim may be false: {\"status\": \"concern\", \"issues\": [{\"start\": 3.98, \"end\": 4.05, \"category\": \"abrupt_transition\", \"observation\": \"An abrupt, hard cut is present, marking a scene boundary. While the voice change is intentional, the transition itself is very sharp, indicating a splice.\", \"certainty\": \"high\"}, {\"start\": 7.8, \"end\": 8.039, \"category\": \"interrupted_word\", \"observation\": \"The audio ends abruptly mid-word, specifically during the pronunciation of 'الماده' (el-madda), truncating the final vowel sound.\", \"certainty\": \"high\"}], \"notes\": \"The excerpt features a clear, albeit abrupt, splice at approximately 4 seconds, transitioning from a male to a female narrator as expected. However, the audio ends mid-word during the female narration, indicating an artificial cut rather than a natural conclusion to the speech segment.\"}. Distinguish an ordinary sentence pause plus new speaker from an actual defect. Do not diagnose by repeating the previous claim."
+    },
+    {
+      "id": "join4",
+      "sources": [
+        {
+          "run": 39572192658,
+          "artifact": "fate-l01-pro-v1-complete",
+          "file": "join-4.wav",
+          "sha256": "bffa00f8ec8207191141e3c16618ced49e4a86d1dd52d33238ee28feea9b7658"
+        }
+      ],
+      "question": "Single recording is an excerpt of a real scene boundary. Examine ONLY the central boundary at 4.0 seconds (approximately 3.5 to 4.6 seconds). The first and last edges are intentionally cropped review windows, NOT production cuts; never flag those excerpt edges. Speaker change is intentional. The complete original speech on both sides is preserved PCM-exact. Measure/listen whether there is a real pop/click, clipped phoneme or unnatural transition at that central boundary, not merely the fact of a voice change. Measured combined existing/inserted low-energy gap is 0.44095833333333334 seconds. A prior automated claim may be false: {\"status\": \"concern\", \"issues\": [{\"start\": 4.0, \"end\": 4.05, \"category\": \"abrupt pitch/timbre or loudness jump\", \"observation\": \"A very subtle, almost inaudible, click or pop artifact is present exactly at the splice point.\", \"certainty\": \"high\"}, {\"start\": 7.0, \"end\": 7.5, \"category\": \"interrupted words/phrases, missing endings\", \"observation\": \"The speaker is abruptly cut off mid-phrase 'صفر فاصل' (zero point), with the audio ending suddenly.\", \"certainty\": \"high\"}], \"notes\": \"The voice change at 4 seconds is intentional and not flagged as an issue. The excerpt ends abruptly mid-phrase, indicating an artificial review cut.\"}. Distinguish an ordinary sentence pause plus new speaker from an actual defect. Do not diagnose by repeating the previous claim."
+    }
+  ]
+}
