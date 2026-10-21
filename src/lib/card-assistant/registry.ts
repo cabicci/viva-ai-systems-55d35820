@@ -1,5 +1,6 @@
 import { KIDS_LEVELS, KIDS_FREE_LESSONS_PER_LEVEL } from "@/lib/kids/catalogue";
 import technicalCatalogue from "@/lib/technical-education/catalog.json";
+import { assertPlatformOwnedCourse, normalizeCourse } from "@/lib/course-system/contract";
 export type SourceLocator = { adapter: "kids"; levelId: string; lessonNumber: number }
   | { adapter: "technical"; lessonId: string };
 export type RegisteredStep = { id: string; stationId: string; preview: boolean; source: SourceLocator };
@@ -13,6 +14,7 @@ export function validateCardRegistry(cards: RegisteredCard[]): RegisteredCard[] 
   const cardIds = new Set<string>();
   const sources = new Set<string>();
   for (const card of cards) {
+    assertPlatformOwnedCourse(card, `${card.area}:${card.id}`);
     const key = `${card.area}:${card.id}`;
     if (!["kids", "technical"].includes(card.area) || !/^[a-z0-9-]{1,80}$/.test(card.id) || cardIds.has(key) || !card.steps.length) throw new Error("CARD_REGISTRY_COLLISION");
     cardIds.add(key);
@@ -32,6 +34,8 @@ export function validateCardRegistry(cards: RegisteredCard[]): RegisteredCard[] 
       steps.add(step.id); sources.add(source);
     }
     if (!card.steps.some(step => !step.preview)) throw new Error("CARD_PAID_SCOPE_REQUIRED");
+    normalizeCourse({ area: card.area, id: card.id, stations: [...new Set(card.steps.map(step => step.stationId))]
+      .map(stationId => ({ id: stationId, steps: card.steps.filter(step => step.stationId === stationId).map(step => ({ id: step.id })) })) });
   }
   return cards;
 }

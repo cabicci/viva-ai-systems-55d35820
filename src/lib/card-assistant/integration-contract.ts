@@ -1,6 +1,7 @@
 import type { CardMembershipJson } from "../rag/card-membership";
 import type { PackageManifestEntry } from "../rag/types";
 import type { RegisteredCard } from "./registry";
+import { assertPlatformOwnedCourse, normalizeCourse, CourseIntegrationError } from "../course-system/contract";
 
 export const INTEGRATION_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
 export type IntegrationPath = { id: string; status: string; modules: { id: string; lessons: { id: string; state: string; route?: string }[] }[] };
@@ -19,6 +20,11 @@ export function verifyCardIntegration(input: {
   const expectedAI = new Map<string, { card: string; station: string; route: string }>();
   const cards = new Set<string>(), stations = new Set<string>(), sources = new Set<string>();
   const protectedSteps = new Set<string>();
+  const inherit = (value: unknown, native: unknown, location: string) => {
+    try { assertPlatformOwnedCourse(native, location); normalizeCourse(value); }
+    catch (error) { fail(error instanceof CourseIntegrationError ? error.code : "COURSE_CONTRACT", location,
+      error instanceof Error ? error.message : "Use the shared course data contract."); }
+  };
   const registerCard = (area: string, id: string) => {
     const key = `${area}:${id}`;
     if (!id || cards.has(key)) fail("DUPLICATE_CARD", key, "Use one unique card ID within its area.");
@@ -26,6 +32,10 @@ export function verifyCardIntegration(input: {
   };
   for (const card of input.paths) {
     registerCard("ai", card.id);
+    const courseStations = card.modules.map(station => ({ id: station.id,
+      steps: station.lessons.filter(step => step.state === "available").map(step => ({ id: step.id, route: step.route })) }))
+      .filter(station => station.steps.length);
+    if (courseStations.length) inherit({ area: "ai", id: card.id, stations: courseStations }, card, `ai:${card.id}`);
     let available = 0;
     for (const station of card.modules) {
       const key = `ai:${card.id}:${station.id}`;
@@ -70,6 +80,8 @@ export function verifyCardIntegration(input: {
   }
   for (const card of input.cards) {
     registerCard(card.area, card.id);
+    inherit({ area: card.area, id: card.id, stations: [...new Set(card.steps.map(step => step.stationId))]
+      .map(stationId => ({ id: stationId, steps: card.steps.filter(step => step.stationId === stationId).map(step => ({ id: step.id })) })) }, card, `${card.area}:${card.id}`);
     if (!["kids", "technical"].includes(card.area)) fail("ACCESS_ADAPTER", card.id, "Only the registered Kids or Technical source/access adapter can serve this card.");
     if (!card.steps.length) fail("EMPTY_CARD", `${card.area}:${card.id}`, "Register at least one step.");
     const seen = new Set<string>();
@@ -86,6 +98,9 @@ export function verifyCardIntegration(input: {
   }
   for (const card of input.academic ?? []) {
     registerCard("academic", card.id);
+    const stations = [...new Set(card.steps.map(id => id.replace(/-L\d{2}$/, "")))];
+    inherit({ area: "academic", id: card.id, stations: stations.map(id => ({ id,
+      steps: card.steps.filter(step => step.replace(/-L\d{2}$/, "") === id).map(id => ({ id })) })) }, card, `academic:${card.id}`);
     if (!/^AC-[A-Z0-9]+$/.test(card.id)) fail("ACADEMIC_ID", card.id, "Use the canonical AC-* course registration.");
     for (const locale of INTEGRATION_LOCALES) if (!card.titles[locale]?.trim()) fail("CARD_LOCALE", card.id, `Register the ${locale} title.`);
     const seen = new Set<string>();

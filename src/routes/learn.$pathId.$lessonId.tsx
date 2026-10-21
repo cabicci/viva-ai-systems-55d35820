@@ -43,8 +43,7 @@ import { LessonNotes } from "@/components/learn/LessonNotes";
 import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
-import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
-import { AssistantPanel } from "@/components/assistant/AssistantPanel";
+import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssistant";
 import { buildLocalizedAssistantContextOverride } from "@/lib/assistant/resolve-assistant-learner-context";
 import { LocalePackageLessonRenderer } from "@/components/locale/LocalePackageLessonRenderer";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
@@ -619,13 +618,7 @@ function UnifiedLessonPage() {
                 )}
               </div>
             </nav>
-            <FloatingAssistantLauncher
-              fabLabel={t("learn.assistant.fab")}
-              fabAriaLabel={t("learn.assistant.fabAria")}
-              panelTitle={t("learn.assistant.summary")}
-            >
-              <AssistantPanel compact contextOverride={assistantContextOverride} />
-            </FloatingAssistantLauncher>
+            <CourseLessonAssistant area="ai" locale={locale} contextOverride={assistantContextOverride} />
           </>
         )}
       </main>

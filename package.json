@@ -4,6 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "course:check": "bun run scripts/assistant/check-course.ts",
     "dev": "vite dev",
     "build": "bun run assistant:verify && bun run roadmap:guard && bun run contextual-visuals:verify && vite build",
     "build:dev": "bun run assistant:verify && bun run roadmap:guard && bun run contextual-visuals:verify && vite build --mode development",

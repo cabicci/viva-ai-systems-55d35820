@@ -13,7 +13,7 @@ import { sha256CanonicalHex, stableCanonicalStringify } from "../../src/lib/rag/
 import type { PackageManifest, ChunkManifest } from "../../src/lib/rag/types";
 import { approvedChunks, sha256 as academicHash, canonicalJson, type ApprovedLesson } from "../../src/lib/academic-education/assistant-corpus";
 import { sourceChunks, sha256, technicalSourceJson, type SourceDocument } from "../../src/lib/card-assistant/corpus";
-import { verifyAssistantWiring } from "./integration-wiring";
+import { verifyAssistantWiring, verifySharedLessonRoutes } from "./integration-wiring";
 import { parseAiCommerceRegistration, verifyAiCommerceRegistration, verifyAcademicPolicyRegistration, type AcademicPolicyCourse, type AcademicPolicyRow } from "./access-registration-contract";
 
 type PublicationSnapshot = {
@@ -91,6 +91,12 @@ export async function verifyRepository(repoRoot: string, snapshotFile?: string) 
   issues.push(...verifyCardIntegration({ paths: PATHS, cards: CARD_REGISTRY, packages: packages.packages, membership, academic, coverage }));
   issues.push(...verifyAiCommerceRegistration(PATHS, parseAiCommerceRegistration(read("supabase/migrations/20261004012000_commerce_access.sql"))));
   issues.push(...verifyAssistantWiring(read));
+  const listRoutes = (directory: string): string[] => fs.readdirSync(path.join(repoRoot, directory), { withFileTypes: true }).flatMap(entry => {
+    if (entry.isSymbolicLink()) throw new Error(`COURSE_ROUTE_LINK_UNSUPPORTED: ${directory}/${entry.name}`);
+    return entry.isDirectory() ? listRoutes(`${directory}/${entry.name}`) : /\.tsx?$/.test(entry.name) ? [`${directory}/${entry.name}`] : [];
+  });
+  const routeFiles = listRoutes("src/routes");
+  issues.push(...verifySharedLessonRoutes(read, routeFiles));
   return { issues, aiSteps: PATHS.flatMap(card => card.modules.flatMap(station => station.lessons.filter(step => step.state === "available"))).length,
     protectedCards: CARD_REGISTRY.length + (academic?.length ?? 0), protectedCoverageChecked: coverage !== undefined };
 }

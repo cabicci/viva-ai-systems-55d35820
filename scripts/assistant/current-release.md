@@ -2,6 +2,14 @@
 
 The learner hierarchy is area → card (مسار) → station → step. Shared conversation UI and access adapters are mandatory. New cards must register canonical ownership and content; `assistant:verify` fails on missing or inconsistent integration. The assistant can explain and create labeled examples only inside the current entitled card's concepts. Client history never establishes permission or content authority.
 
+## Mandatory course integration system
+
+Course packages contain data, not a custom React lesson page, assistant, stylesheet or authorization implementation. The platform supplies these through `normalizeCourse`, the shared per-area lesson engines and their `CourseLessonAssistant` mount. Adding a registered card to an existing engine automatically inherits its assistant transport and scoped conversation; no assistant field or course-specific assistant component is required. This does not enable an unprepared backend or grant an entitlement.
+
+`bun run course:check --input <course-data.json>` checks a data package from any local folder without modifying it, connecting to services, approving content or printing lesson bodies. The supported envelope has `area`, `id`, and `stations` containing `steps`. `cardId`/`courseId`, `modules`, and `lessons` are explicit alternative names. Step `content` is preserved as JSON for its existing area content adapter. Unknown wrapper fields or ambiguous aliases fail with their exact location; executable content and custom teaching routes are rejected. Native teaching payload validation, original-byte/canonical approval hashes, locale completeness and commercial access registration remain mandatory.
+
+Every normal build validates the native catalogues through the same course contract and scans route source files recursively. Course-specific lesson routes fail the build even when the submitting chat skips the intake command. Removing the shared assistant mount from a generic engine also fails the build. This enforces integration in code; it does not interpret arbitrary source formats, invent curriculum hierarchy, infer a subscription product, approve teaching content or prevent a developer from changing the enforcement code itself.
+
 ## Preparing a change
 
 1. Register current AI source packages for all four locales under their canonical card/station/step identities. Keep historical corpus files and completed import locks unchanged.

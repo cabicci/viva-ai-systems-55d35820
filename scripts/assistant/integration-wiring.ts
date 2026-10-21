@@ -13,9 +13,13 @@ export function verifyAssistantWiring(read: (file: string) => string): Integrati
     ["src/components/assistant/AssistantPanel.tsx", "src/components/assistant/AssistantConversationPanel", "AssistantConversationPanel"],
     ["src/components/assistant/CardPathAssistant.tsx", "src/components/assistant/AssistantConversationPanel", "AssistantConversationPanel"],
     ["src/components/academic-education/AcademicAssistantPanel.tsx", "src/components/assistant/AssistantConversationPanel", "AssistantConversationPanel"],
-    ["src/components/kids/KidsLessonBody.tsx", "src/components/assistant/CardPathAssistant", "CardPathAssistant"],
-    ["src/routes/technical.learn.$lessonId.tsx", "src/components/assistant/CardPathAssistant", "CardPathAssistant"],
-    ["src/components/academic-education/AcademicLessonPage.tsx", "src/components/academic-education/AcademicAssistantPanel", "AcademicAssistantPanel"],
+    ["src/components/assistant/CourseLessonAssistant.tsx", "src/components/assistant/AssistantPanel", "AssistantPanel"],
+    ["src/components/assistant/CourseLessonAssistant.tsx", "src/components/assistant/CardPathAssistant", "CardPathAssistant"],
+    ["src/components/assistant/CourseLessonAssistant.tsx", "src/components/academic-education/AcademicAssistantPanel", "AcademicAssistantPanel"],
+    ["src/routes/learn.$pathId.$lessonId.tsx", "src/components/assistant/CourseLessonAssistant", "CourseLessonAssistant"],
+    ["src/components/kids/KidsLessonBody.tsx", "src/components/assistant/CourseLessonAssistant", "CourseLessonAssistant"],
+    ["src/routes/technical.learn.$lessonId.tsx", "src/components/assistant/CourseLessonAssistant", "CourseLessonAssistant"],
+    ["src/components/academic-education/AcademicLessonPage.tsx", "src/components/assistant/CourseLessonAssistant", "CourseLessonAssistant"],
   ];
   for (const [file, target, exported] of edges) {
     try {
@@ -52,6 +56,34 @@ export function verifyAssistantWiring(read: (file: string) => string): Integrati
       visit(source);
       for (const name of required) if (!calls.has(name)) issues.push({ code: "ACCESS_ADAPTER", location: file, message: `Restore the authoritative ${name} call and rerun its authorization tests.` });
     } catch { issues.push({ code: "ACCESS_ADAPTER", location: file, message: "Restore the registered area access adapter." }); }
+  }
+  return issues;
+}
+
+/** Teaching URLs must use the shared engines. A new course-specific page is a
+ * build failure even when its author did not run the optional intake command. */
+export function verifySharedLessonRoutes(read: (file: string) => string, files: string[]): IntegrationIssue[] {
+  const allowed = new Set(["/learn/$pathId/$lessonId", "/kids/$levelId/$lessonNumber", "/technical/learn/$lessonId", "/academic/learn/$lessonId"]);
+  const issues: IntegrationIssue[] = [];
+  for (const file of files) {
+    const source = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+    const factories = new Set(["createFileRoute", "createLazyFileRoute"]);
+    for (const statement of source.statements) if (ts.isImportDeclaration(statement) && statement.importClause?.namedBindings &&
+      ts.isNamedImports(statement.importClause.namedBindings)) {
+      for (const specifier of statement.importClause.namedBindings.elements)
+        if (["createFileRoute", "createLazyFileRoute"].includes((specifier.propertyName ?? specifier.name).text)) factories.add(specifier.name.text);
+    }
+    const visit = (node: ts.Node) => {
+      if (ts.isCallExpression(node) && ts.isIdentifier(node.expression) && factories.has(node.expression.text) &&
+        node.arguments[0] && ts.isStringLiteral(node.arguments[0])) {
+        const route = node.arguments[0].text;
+        const teaching = /^\/(?:learn|technical\/learn|academic\/learn)\//.test(route) || /^\/kids\/[^/]+\/(?!contents(?:\/|$))[^/]+/.test(route);
+        if (teaching && !allowed.has(route)) issues.push({ code: "COURSE_CUSTOM_ROUTE", location: file,
+          message: `Course ${route} must register data in the existing shared lesson engine; do not add a per-course page or assistant copy.` });
+      }
+      ts.forEachChild(node, visit);
+    };
+    visit(source);
   }
   return issues;
 }

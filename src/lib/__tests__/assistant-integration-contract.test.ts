@@ -22,6 +22,12 @@ function fixture() {
 it("accepts data-only card registration without fixed course counts", () => {
   expect(verifyCardIntegration(fixture())).toEqual([]);
 });
+it.each(["ai", "kids", "academic"])("rejects an authored %s card assistant switch in the mandatory publication check", area => {
+  const data = { ...fixture(), academic: [{ id: "AC-NEW", titles: Object.fromEntries(INTEGRATION_LOCALES.map(locale => [locale, "New path"])), steps: ["AC-NEW-M01-L01"] }] };
+  const card = area === "ai" ? data.paths[0] : area === "kids" ? data.cards[0] : data.academic[0];
+  Object.assign(card, { assistant: false });
+  expect(verifyCardIntegration(data)).toContainEqual(expect.objectContaining({ code: "COURSE_PLATFORM_OVERRIDE" }));
+});
 it("blocks a new live step missing even one approved locale", () => {
   const data = fixture(); data.packages.pop();
   expect(verifyCardIntegration(data)).toContainEqual(expect.objectContaining({ code: "MISSING_LOCALE_SOURCE", location: "ai:new-card:one:en" }));
@@ -72,6 +78,6 @@ it("requires four-locale coverage of dynamically registered academic cards", () 
 });
 it("does not mistake comments or unused shared-template imports for an actual shared mount", () => {
   const issues = verifyAssistantWiring(() => `// <AssistantConversationPanel />\nimport {AssistantConversationPanel} from './AssistantConversationPanel';\nexport const Screen=()=> <form/>; // academic_assistant_access`);
-  expect(issues.filter(issue => issue.code === "SHARED_TEMPLATE")).toHaveLength(6);
+  expect(issues.filter(issue => issue.code === "SHARED_TEMPLATE")).toHaveLength(10);
   expect(issues.filter(issue => issue.code === "ACCESS_ADAPTER")).toHaveLength(6);
 });
