@@ -1,0 +1,118 @@
+{
+  "id": "fate-next-analysis-repairs3",
+  "timingModel": "gemini-2.5-pro",
+  "adjudicationModel": "gemini-2.5-pro",
+  "maxTimingCalls": 1,
+  "maxAdjudicationCalls": 1,
+  "automaticRetries": 0,
+  "parts": [
+    {
+      "id": "L07-S07-en-v3",
+      "sceneID": "L07-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions.",
+      "delivery": "Speak natural clear conversational English for university students. Warm, steady, medium-paced explanation with natural pauses, not an advertisement or news announcer. Speak the transcript only as one coherent passage; preserve all scientific meaning. Stable light warm female mid-register voice.\nMaintain the light, clear conversational Kore register of the approved English sample. Avoid a lowered, heavy or metallic announcer sound. Keep natural full sentences and every quantity exactly.\n",
+      "textSHA256": "063902ce1807f8a4f53644a7658ab35a47d1b54b1bf91c4c7a7be7edf78a3209",
+      "deliverySHA256": "1cd6dc6135b20283f5db280b62f8743177c45c35cf1dff70f1ade647be6126ad",
+      "listeningMethod": "Explicitly owner-approved English Pro proof delivery; actual new recording requires review.",
+      "previousId": "L07-S07-en-v2",
+      "repairReason": "Two actual-audio comparisons found a materially heavier and lower-register Kore voice than the owner-approved reference; first targeted delivery correction after the successful second generation attempt.",
+      "voiceReference": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-EN-proof-Kore-v1",
+        "file": "EN-proof-Kore-v1.wav",
+        "sha256": "052e4ed95eb58de3408bbc02ebfcd72aa1e2c14f4921c3d0537ed631a2486bf9"
+      },
+      "audio": {
+        "run": 39606481005,
+        "artifact": "fate-next-audio-L07-S07-en-v3",
+        "file": "L07-S07-en-v3.wav",
+        "sha256": "c7748bdec959331773af0065c4219918c698b99ebccb524fcd5e8112510e432f"
+      },
+      "durationSeconds": 33.970958333333336,
+      "reviewConcerns": [
+        {
+          "source": "L07-S07-en-v3-00-blind.analysis.json",
+          "findings": [
+            {
+              "start": 0.097,
+              "end": 0.102,
+              "category": "substitution",
+              "heard": "mains",
+              "expected": "remains",
+              "heardPhonetics": "/meɪnz/",
+              "suggestion": "remains",
+              "reason": "In the context of a first-order decay model where an initial concentration of 8 mg/kg reduces by half every 10 days, 'four mains after 10 days' is highly likely intended to mean 'four [mg/kg] remains after 10 days'. 'Mains' is a substitution that does not convey the intended meaning in this scientific context.",
+              "severity": "major",
+              "certainty": "clear"
+            }
+          ],
+          "uncertainSpans": [],
+          "validation": {
+            "invalidTimestampCount": 0,
+            "validForReview": true
+          }
+        },
+        {
+          "source": "same-voice comparison",
+          "result": {
+            "status": "concern",
+            "issues": [
+              {
+                "start": 0.0,
+                "end": 33.971,
+                "category": "timbre",
+                "observation": "The candidate voice exhibits a subtle 'processed' or 'digital' quality, with a slight metallic resonance that departs from the natural timbre of the reference voice. This characteristic is present throughout the audio.",
+                "certainty": "high"
+              },
+              {
+                "start": 0.0,
+                "end": 33.971,
+                "category": "speaking_style",
+                "observation": "While generally maintaining good pacing and register, the prosody occasionally lacks the natural dynamism and fluidity of the reference. This leads to moments where the delivery feels slightly artificial or 'flat', such as the articulation of 'haves' (0:13-0:15), the overly smooth quality of 'indefinitely' (0:16-0:18), and the cadence of 'natural logarithm' (0:27-0:28).",
+                "certainty": "medium"
+              }
+            ],
+            "notes": "The candidate voice generally matches the reference in register and vocal weight. However, there is a consistent, subtle 'processed' quality in the timbre, giving it a slightly less natural and occasionally metallic sound compared to the reference. The speaking style, while clear, sometimes lacks the natural prosodic variations and fluidity, resulting in a slightly artificial feel in certain phrases. There are no instances of unnatural chopped delivery, but rather a subtle lack of natural flow in specific articulations."
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "L07-S07-A1",
+          "label": {
+            "ar": "تركيز البداية",
+            "en": "Initial concentration"
+          },
+          "semanticTrigger": "Initial concentration"
+        },
+        {
+          "id": "L07-S07-A2",
+          "label": {
+            "ar": "بعد نصف عمر",
+            "en": "After one half-life"
+          },
+          "semanticTrigger": "After one half-life"
+        },
+        {
+          "id": "L07-S07-A3",
+          "label": {
+            "ar": "بعد نصفي عمر",
+            "en": "After two half-lives"
+          },
+          "semanticTrigger": "After two half-lives"
+        },
+        {
+          "id": "L07-S07-A4",
+          "label": {
+            "ar": "نصف الباقي كل مرة",
+            "en": "Half of what remains"
+          },
+          "semanticTrigger": "Half of what remains"
+        }
+      ],
+      "model": "gemini-2.5-pro-preview-tts"
+    }
+  ]
+}

@@ -1,0 +1,1290 @@
+{
+  "id": "fate-render-L06",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L06-S01",
+      "layout": "organisms",
+      "title": {
+        "ar": "نختار الاختبار حسب السؤال",
+        "en": "Choose the test for the question"
+      },
+      "visualContract": "Redraw aquatic/terrestrial chart with independent realistic organism cutouts; expandable endpoint tags. Label schematic grouping, not complete species representation.",
+      "actions": [
+        {
+          "id": "L06-S01-A1",
+          "label": {
+            "ar": "اختبارات مائية",
+            "en": "Aquatic tests"
+          },
+          "semanticTrigger": "Aquatic tests"
+        },
+        {
+          "id": "L06-S01-A2",
+          "label": {
+            "ar": "اختبارات برية",
+            "en": "Terrestrial tests"
+          },
+          "semanticTrigger": "Terrestrial tests"
+        },
+        {
+          "id": "L06-S01-A3",
+          "label": {
+            "ar": "نوع الكائن",
+            "en": "Organism type"
+          },
+          "semanticTrigger": "Organism type"
+        },
+        {
+          "id": "L06-S01-A4",
+          "label": {
+            "ar": "الأثر المناسب للسؤال",
+            "en": "Question-matched endpoint"
+          },
+          "semanticTrigger": "Question-matched endpoint"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عايز تعرف أثرًا على نموّ طحالب، ولا تكاثر كائن مائيّ، ولا بقاء كائن في التربة؟ السؤال هو اللي يوجّه اختيار الاختبار. شكل الملف بيقسّم كائنات مائيّة وبرّيّة: نباتات وطحالب وقشريّات وحشرات ورخويّات وديدان ومجموعات تانية. مش مطلوب نحفظ الصور كقائمة وخلاص. المطلوب نربط الوسط وطريق التعرّض ونوع الاستجابة بالكائن ومرحلة عمره. نتيجة نوع واحد ما تمثّلش كلّ الأنواع تلقائيًّا.",
+        "en": "Are you investigating algal growth, aquatic reproduction or survival of a soil organism? The question guides test selection. The handout distinguishes aquatic and terrestrial groups, including plants, algae, crustaceans, insects, molluscs, worms and other organisms. The aim is not simply to memorize a picture list. Connect the medium, exposure route and response with the organism and life stage. A result for one species does not automatically represent every species."
+      },
+      "timing": null,
+      "sceneID": "L06-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "89f926768c821eadd8da4a5befdd77a56d6a6486239e0cbd52243d286cd579e3",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S01-ar-v1",
+        "file": "L06-S01-ar-v1.wav",
+        "sha256": "b77af14a691acc8308a1efb2bf5ed6a91165ce9d46ea947cab80e08c660039f4"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L06-S01-ar-v1",
+        "file": "timing.json",
+        "sha256": "8b1cf23fd92652b28d4bd1e989e303d1601b06c7813931c0ce0e79f310d6edd2"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S01",
+        "file": "L06-S01.jpg",
+        "sha256": "a85e9613834a35dd9649b4419f01afa684d47800aa2d59bb9094a5a496d32c2f"
+      },
+      "imageDisposition": {
+        "scene": "L06-S01",
+        "imageSHA256": "a85e9613834a35dd9649b4419f01afa684d47800aa2d59bb9094a5a496d32c2f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 824903,
+      "durationSeconds": 34.370958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1031
+    },
+    {
+      "id": "ar-L06-S02",
+      "layout": "response",
+      "title": {
+        "ar": "التركيز والأثر مش نفس الحاجة",
+        "en": "Concentration and response are different"
+      },
+      "visualContract": "Editable response curve with axis labels and 50% response line. LC50 shown with species/duration fields. No real-data curve or safe concentration implied.",
+      "actions": [
+        {
+          "id": "L06-S02-A1",
+          "label": {
+            "ar": "تركيز التعرّض",
+            "en": "Exposure concentration"
+          },
+          "semanticTrigger": "Exposure concentration"
+        },
+        {
+          "id": "L06-S02-A2",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L06-S02-A3",
+          "label": {
+            "ar": "استجابة خمسين في المية",
+            "en": "Fifty-percent response"
+          },
+          "semanticTrigger": "Fifty-percent response"
+        },
+        {
+          "id": "L06-S02-A4",
+          "label": {
+            "ar": "النوع والمدة مهمين",
+            "en": "Species and duration matter"
+          },
+          "semanticTrigger": "Species and duration matter"
+        }
+      ],
+      "equations": [
+        "LC50",
+        "50%"
+      ],
+      "spoken": {
+        "ar": "في التجربة، بنختبر مجموعة تراكيز ونقيس استجابة محدّدة، مع ضوابط وتكرارات مناسبة. لو بنتكلم عن التركيز المرتبط بموت نصّ الكائنات، لازم نذكر النوع ومدّة الاختبار والطريقة. نصّ الكائنات دي نسبة استجابة في السياق المدروس؛ مش نصّ أنواع البيئة، ومش نصف حدّ أمان. وممكن مؤشّر تاني يقيس تثبيط النموّ بدل الموت. اسم المؤشّر لازم يمشي مع الأثر اللي اتقاس.",
+        "en": "A test uses specified concentrations and measures a defined response, with appropriate controls and replication. For a concentration associated with fifty percent mortality, state the organism, exposure duration and method. Fifty percent refers to the response in the studied context, not half of all environmental species or half of a safety limit. Another endpoint may describe growth inhibition instead of mortality. The metric must match the measured response."
+      },
+      "timing": null,
+      "sceneID": "L06-S02",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "56b1c3f64bd2a2566348f37a3a9cc4137d9f046a9efa969d8d9f1486f84e984c",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S02-ar-v1",
+        "file": "L06-S02-ar-v1.wav",
+        "sha256": "888f0024946dbe699cbe230c4bbba8783086c6c0b787367f405b758f8973b7bf"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S02-ar-v1",
+        "file": "timing.json",
+        "sha256": "b856add08d86808764936f1816fa599f8567093782945ac928a80e68a8edff1e"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S02",
+        "file": "L06-S02.jpg",
+        "sha256": "182f2c19a9c6857955b69be5e4181d13d61559cc59fd97601a77e26b5d5579f8"
+      },
+      "imageDisposition": {
+        "scene": "L06-S02",
+        "imageSHA256": "182f2c19a9c6857955b69be5e4181d13d61559cc59fd97601a77e26b5d5579f8",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 819143,
+      "durationSeconds": 34.13095833333333,
+      "globalStartAudioFrame": 824903,
+      "globalStartVideoFrame": 1031,
+      "globalEndVideoFrame": 2055
+    },
+    {
+      "id": "ar-L06-S03",
+      "layout": "doses",
+      "title": {
+        "ar": "أعلى تركيز من غير أثر مرصود",
+        "en": "The highest tested no-effect concentration"
+      },
+      "visualContract": "Tested dose cards with replicate marks and explicit significance qualifiers. Untested midpoint hollow; never presented as observed NOEC. Reveal dependence on spacing and power.",
+      "actions": [
+        {
+          "id": "L06-S03-A1",
+          "label": {
+            "ar": "تركيزات تم اختبارها",
+            "en": "Tested concentrations"
+          },
+          "semanticTrigger": "Tested concentrations"
+        },
+        {
+          "id": "L06-S03-A2",
+          "label": {
+            "ar": "مقارنة إحصائية",
+            "en": "Statistical comparison"
+          },
+          "semanticTrigger": "Statistical comparison"
+        },
+        {
+          "id": "L06-S03-A3",
+          "label": {
+            "ar": "تركيز غير مختبر",
+            "en": "Untested concentration"
+          },
+          "semanticTrigger": "Untested concentration"
+        },
+        {
+          "id": "L06-S03-A4",
+          "label": {
+            "ar": "قوة الاختبار والتباعد",
+            "en": "Power and dose spacing"
+          },
+          "semanticTrigger": "Power and dose spacing"
+        }
+      ],
+      "equations": [
+        "NOEC",
+        "LOEC"
+      ],
+      "spoken": {
+        "ar": "عدم رصد فرق إحصائيّ مش إثبات إنّ الأثر صفر. التركيز اللي بنسميه أعلى تركيز من غير أثر مرصود لازم يكون اتجرّب فعلًا، حسب تصميم الاختبار والتحليل. وأقلّ تركيز ظهر عنده أثر هو برضه نقطة مجرّبة. المسافة بين التراكيز وعدد التكرارات وتشتّت القياسات وقوّة الاختبار بتأثّر على النتيجة. لو تركيز ما اتجرّبش، ما ينفعش ندّعي إنّنا رصدنا عنده عدم تأثير.",
+        "en": "Failure to detect a statistically significant difference does not prove zero effect. A no-observed-effect concentration must be an actually tested concentration identified under the study design and analysis. The lowest-observed-effect concentration is also a tested point. Concentration spacing, replication, variability and statistical power influence these outcomes. An untested concentration cannot be described as an observed no-effect concentration."
+      },
+      "timing": null,
+      "sceneID": "L06-S03",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "51a10de7d7f3335b5e1859f00e57873ebcf04d01948c3de092d1ad9b92dc6b85",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S03-ar-v1",
+        "file": "L06-S03-ar-v1.wav",
+        "sha256": "6fa73b5cb0264ef6e22c1aac6cad1ccdda8c9371e5d874c3b9fdf8531985fec8"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S03-ar-v1",
+        "file": "timing.json",
+        "sha256": "f6c03b01e4e4f54288443f83fd3e10b3fdc6a3dab1cb60f1c486672d557633bb"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S03",
+        "file": "L06-S03.jpg",
+        "sha256": "7e83ce180cb9e170f08e881378a2fbee4fc00a95256b8d9c08476ac3760ce991"
+      },
+      "imageDisposition": {
+        "scene": "L06-S03",
+        "imageSHA256": "7e83ce180cb9e170f08e881378a2fbee4fc00a95256b8d9c08476ac3760ce991",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 758663,
+      "durationSeconds": 31.610958333333333,
+      "globalStartAudioFrame": 1644046,
+      "globalStartVideoFrame": 2055,
+      "globalEndVideoFrame": 3003
+    },
+    {
+      "id": "ar-L06-S04",
+      "layout": "equation",
+      "title": {
+        "ar": "الجذر الهندسي خطوة بخطوة",
+        "en": "The geometric mean, step by step"
+      },
+      "visualContract": "Animate NOEC0.4 and LOEC0.9 → product0.36 (mg/L)^2 → sqrt =0.6mg/L. Position hollow estimated midpoint between tested points. MATC label qualified as historical study-specific estimate.",
+      "actions": [
+        {
+          "id": "L06-S04-A1",
+          "label": {
+            "ar": "أعلى تركيز دون أثر معنوي",
+            "en": "Highest tested no-significant-effect level"
+          },
+          "semanticTrigger": "Highest tested no-significant-effect level"
+        },
+        {
+          "id": "L06-S04-A2",
+          "label": {
+            "ar": "أقل تركيز بأثر معنوي",
+            "en": "Lowest tested significant-effect level"
+          },
+          "semanticTrigger": "Lowest tested significant-effect level"
+        },
+        {
+          "id": "L06-S04-A3",
+          "label": {
+            "ar": "الضرب ثم الجذر",
+            "en": "Multiply then square-root"
+          },
+          "semanticTrigger": "Multiply then square-root"
+        },
+        {
+          "id": "L06-S04-A4",
+          "label": {
+            "ar": "تقدير مرتبط بالدراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        }
+      ],
+      "equations": [
+        "0.4 mg/L",
+        "0.9 mg/L",
+        "√(0.4 × 0.9) = √0.36",
+        "MATC = 0.6 mg/L"
+      ],
+      "spoken": {
+        "ar": "نستخدم مثالًا افتراضيًّا: أعلى تركيز من غير أثر مرصود أربعة من عشرة ملّيجرام لكلّ لتر، وأقلّ تركيز ظهر عنده أثر تسعة من عشرة. في استخدام تاريخيّ لتقدير الحدّ المزمن بينهما، ناخد الجذر التربيعيّ لحاصل الضرب. أربعة من عشرة في تسعة من عشرة يساوي ستّة وتلاتين من مية. الجذر يطلع ستّة من عشرة ملّيجرام لكلّ لتر. ده متوسط هندسيّ مرتبط بالمثال، مش نقطة اتجرّبت بالفعل.",
+        "en": "Use a hypothetical example: the no-observed-effect concentration is zero point four milligrams per litre, and the lowest-observed-effect concentration is zero point nine. A historical approach estimates a chronic value between them using the square root of their product. Zero point four times zero point nine equals zero point three six. Its square root is zero point six milligrams per litre. This is a geometric-mean estimate for the example, not an actually tested point."
+      },
+      "timing": null,
+      "sceneID": "L06-S04",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "e0eb1c7f5f36a1b2967b2a7f9f5fde1ea05d97b3a800e365deb09c3b712d48fb",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S04-ar-v1",
+        "file": "L06-S04-ar-v1.wav",
+        "sha256": "258399bb0f90cca854d9f29f4070a632a7835491b5a8a097cb339aa8a3d40608"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S04-ar-v1",
+        "file": "timing.json",
+        "sha256": "caf165a85eefac19fcc3654fc284360c913069ea17eca27427481ab3d629b43b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S04",
+        "file": "L06-S04.jpg",
+        "sha256": "d8fa72d3b080452d4aaf89660ccc1fdcfe250bc62b6fb337fa4be72edd828d39"
+      },
+      "imageDisposition": {
+        "scene": "L06-S04",
+        "imageSHA256": "d8fa72d3b080452d4aaf89660ccc1fdcfe250bc62b6fb337fa4be72edd828d39",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 738503,
+      "durationSeconds": 30.770958333333333,
+      "globalStartAudioFrame": 2402709,
+      "globalStartVideoFrame": 3003,
+      "globalEndVideoFrame": 3927
+    },
+    {
+      "id": "ar-L06-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "النسبة الحادة إلى المزمنة",
+        "en": "The acute-to-chronic ratio"
+      },
+      "visualContract": "6mg/L ÷0.6mg/L →10 with explicit matching-species/context checklist. Hypothetical acute/chronic values remain labeled; no application to another species automatically.",
+      "actions": [
+        {
+          "id": "L06-S05-A1",
+          "label": {
+            "ar": "قيمة حادة",
+            "en": "Acute value"
+          },
+          "semanticTrigger": "Acute value"
+        },
+        {
+          "id": "L06-S05-A2",
+          "label": {
+            "ar": "قيمة مزمنة",
+            "en": "Chronic value"
+          },
+          "semanticTrigger": "Chronic value"
+        },
+        {
+          "id": "L06-S05-A3",
+          "label": {
+            "ar": "نسبة بلا وحدة",
+            "en": "Dimensionless ratio"
+          },
+          "semanticTrigger": "Dimensionless ratio"
+        },
+        {
+          "id": "L06-S05-A4",
+          "label": {
+            "ar": "لا تعميم بين الأنواع",
+            "en": "No automatic cross-species transfer"
+          },
+          "semanticTrigger": "No automatic cross-species transfer"
+        }
+      ],
+      "equations": [
+        "6 mg/L",
+        "0.6 mg/L",
+        "6 ÷ 0.6 = 10",
+        "ACR = 10"
+      ],
+      "spoken": {
+        "ar": "لو عندنا قيمة حادّة مناسبة للمقارنة مقدارها ستّة ملّيجرام لكلّ لتر، وقسمناها على التقدير المزمن ستّة من عشرة، تطلع النسبة عشرة. الوحدات المتماثلة بتختصر. لكن صلاحية استخدام النسبة تعتمد على الكائن ونوع الأثر والمدة والطريقة. ما ناخدش أيّ رقمين من دراستين مختلفتين ونقول إنّ النسبة قابلة للنقل لكلّ الأنواع. الحساب سهل؛ الجزء العلميّ هو إثبات إنّ طرفي المقارنة مناسبين.",
+        "en": "If a suitable acute value is six milligrams per litre and the chronic estimate is zero point six, their ratio is ten. Matching units cancel. However, the usefulness of that ratio depends on the organism, endpoint, duration and method. Arbitrary values from unrelated studies do not produce a ratio transferable to every species. The arithmetic is simple; the scientific task is establishing that the two quantities are appropriately comparable."
+      },
+      "timing": null,
+      "sceneID": "L06-S05",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "4ec471f5209bfe48539491b3f48b4461a0d06112d034bfb6645b91b0433870d4",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S05-ar-v1",
+        "file": "L06-S05-ar-v1.wav",
+        "sha256": "dc94f05a16d15c354a7fd7f05e3d3fc0d4e21a019706ec3742175e904d8826e4"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L06-S05-ar-v1",
+        "file": "timing.json",
+        "sha256": "cb5bc905327250a1eca096d9d2bab42255bab8c9dcc3b6a9f44dd3507f1990c5"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S05",
+        "file": "L06-S05.jpg",
+        "sha256": "c3dcef46cf81dded86aec94af8f9d92ff90da05f4b7d9a95b192cd940ae20c19"
+      },
+      "imageDisposition": {
+        "scene": "L06-S05",
+        "imageSHA256": "c3dcef46cf81dded86aec94af8f9d92ff90da05f4b7d9a95b192cd940ae20c19",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 854663,
+      "durationSeconds": 35.610958333333336,
+      "globalStartAudioFrame": 3141212,
+      "globalStartVideoFrame": 3927,
+      "globalEndVideoFrame": 4995
+    },
+    {
+      "id": "ar-L06-S06",
+      "layout": "comparison",
+      "title": {
+        "ar": "تصحيح قفزة غير مبررة",
+        "en": "Correcting an unsupported inference"
+      },
+      "visualContract": "Break unsupported arrow from MATC0.6 to95% protection. Separate CMC/CCC cards behind missing multi-study evidence. Preserve original source claim privately; visibly teach correction without implying a replacement numerical criterion.",
+      "actions": [
+        {
+          "id": "L06-S06-A1",
+          "label": {
+            "ar": "تقدير من دراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        },
+        {
+          "id": "L06-S06-A2",
+          "label": {
+            "ar": "ادعاء حماية غير مدعوم",
+            "en": "Unsupported protection claim"
+          },
+          "semanticTrigger": "Unsupported protection claim"
+        },
+        {
+          "id": "L06-S06-A3",
+          "label": {
+            "ar": "أدلة متعددة مطلوبة",
+            "en": "Multiple lines of evidence"
+          },
+          "semanticTrigger": "Multiple lines of evidence"
+        },
+        {
+          "id": "L06-S06-A4",
+          "label": {
+            "ar": "لا معيار جديد مخترع",
+            "en": "No invented replacement criterion"
+          },
+          "semanticTrigger": "No invented replacement criterion"
+        }
+      ],
+      "equations": [
+        "MATC = 0.6 mg/L",
+        "≠ 95% ecosystem protection",
+        "CMC / CCC"
+      ],
+      "spoken": {
+        "ar": "في المصدر، تقدير الحدّ المزمن مربوط بعبارة حماية خمسة وتسعين في المية. الحساب اللي عملناه ما يثبتش الجملة دي. بيانات دراسة واحدة ما تتحوّلش تلقائيًّا لتوزيع حساسيّة أنواع كتير، ولا لضمان حماية نسبة من الناس. معايير جودة المياه الحادّة والمزمنة لها طرق اشتقاق ومجموعات بيانات وشروط محدّدة. نحتفظ بالحساب كتمرين، ونوقف القفزة من رقم تجريبيّ محدود لحدّ تنظيميّ عام.",
+        "en": "The source connects the chronic estimate with a ninety-five percent protection statement. Our calculation does not establish that claim. One study does not automatically become a distribution of sensitivities across species or a guarantee protecting a fraction of people. Acute and chronic aquatic-life criteria require defined derivation methods, broader datasets and conditions. Retain the calculation as an exercise while rejecting the leap from a limited study value to a universal regulatory threshold."
+      },
+      "timing": null,
+      "sceneID": "L06-S06",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "250f99ae398111471c534330a4ae241e4b0306cc2d49f6a618529288599f7db5",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S06-ar-v1",
+        "file": "L06-S06-ar-v1.wav",
+        "sha256": "6e6621b0f45aa466e6a6ec6d82b9900498ae4107854fa99494116f5bcefe9711"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S06-ar-v1",
+        "file": "timing.json",
+        "sha256": "6237767e3df3e5983fd7fb05ba35afc54bf9d20ef128c87f663fd50df867cd84"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S06",
+        "file": "L06-S06.jpg",
+        "sha256": "e98e3cdd34631bb8414479cc35eaf33692d5c21f7aebae2a5a532452f22a9651"
+      },
+      "imageDisposition": {
+        "scene": "L06-S06",
+        "imageSHA256": "e98e3cdd34631bb8414479cc35eaf33692d5c21f7aebae2a5a532452f22a9651",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 893063,
+      "durationSeconds": 37.21095833333333,
+      "globalStartAudioFrame": 3995875,
+      "globalStartVideoFrame": 4995,
+      "globalEndVideoFrame": 6111
+    },
+    {
+      "id": "ar-L06-S07",
+      "layout": "evidence",
+      "title": {
+        "ar": "اقرأ الدليل قبل الرقم",
+        "en": "Read the evidence before the number"
+      },
+      "visualContract": "Endpoint matching and tested-versus-estimated sorting with explanatory feedback. No operational prescription. Private key excluded from narration and learner export.",
+      "actions": [
+        {
+          "id": "L06-S07-A1",
+          "label": {
+            "ar": "نوع نقطة القياس",
+            "en": "Endpoint type"
+          },
+          "semanticTrigger": "Endpoint type"
+        },
+        {
+          "id": "L06-S07-A2",
+          "label": {
+            "ar": "مختبر أم مقدر؟",
+            "en": "Tested or estimated?"
+          },
+          "semanticTrigger": "Tested or estimated?"
+        },
+        {
+          "id": "L06-S07-A3",
+          "label": {
+            "ar": "وحدات وسياق متطابقان",
+            "en": "Matched units and context"
+          },
+          "semanticTrigger": "Matched units and context"
+        },
+        {
+          "id": "L06-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "في التدريب، قدّامك نتيجتين: بقاء خلال اختبار قصير، وتكاثر خلال تعرّض أطول. اختار كلّ نتيجة للسؤال اللي تقدر تجاوب عليه، واكتب اللي ما تثبتوش. وبعدها راجع مثال المتوسط الهندسيّ: مين النقطتين المجرّبتين، ومين التقدير؟ لو حدّ استخدم النتيجة لتحديد تركيز صرف أو جرعة رش، وضّح البيانات والطريقة التنظيميّة الناقصة. النجاح هنا مش حفظ اختصارات؛ النجاح إنّك ما تحمّلش الرقم استنتاج أكبر من دليله.",
+        "en": "The exercise presents short-test survival and longer-exposure reproduction results. Match each to the question it can answer and state what it does not establish. Revisit the geometric mean: which values were tested, and which was estimated? If someone uses the result to prescribe a discharge concentration or application rate, identify the missing evidence and regulatory method. Success means interpreting a number within its evidence, rather than merely memorizing abbreviations."
+      },
+      "timing": null,
+      "sceneID": "L06-S07",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "f7787db7cfa384ca00900a44cabd0cbc2af8c3d156ea93d5d3910add8bb0ee54",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L06-S07-ar-v1",
+        "file": "L06-S07-ar-v1.wav",
+        "sha256": "cf3a1d0f5c0ed22f250edf03e84c98c18313cc2e935ad2a162a6df0b4a5f634b"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S07-ar-v1",
+        "file": "timing.json",
+        "sha256": "733c07cc8f911f0fd098aa84a8fce36d9874095f175c29d10af094406f09ac91"
+      },
+      "semanticOverride": {
+        "status": "clear_semantic_variant",
+        "reason": "Extra المقدر describes the estimated geometric mean in a passage explicitly separating measured endpoints from an estimate. No numerical or inferential meaning change; keep actual variant in captions.",
+        "notHumanAccentCertification": true,
+        "originalReview": {
+          "run": 39602983127,
+          "artifact": "fate-next-align-L06-S07-ar-v1",
+          "file": "review-disposition.json",
+          "sha256": "f2eddd19560abb0257f75248ccf6e66c1de8c696e10a79f2da4fd4a7f5d97273"
+        },
+        "audioSHA256": "cf3a1d0f5c0ed22f250edf03e84c98c18313cc2e935ad2a162a6df0b4a5f634b"
+      },
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S07",
+        "file": "L06-S07.jpg",
+        "sha256": "75dd1aed28670f003c798c65206e42a41aa497435b359346d53a6e199a4672ae"
+      },
+      "imageDisposition": {
+        "scene": "L06-S07",
+        "imageSHA256": "75dd1aed28670f003c798c65206e42a41aa497435b359346d53a6e199a4672ae",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 839303,
+      "durationSeconds": 34.970958333333336,
+      "globalStartAudioFrame": 4888938,
+      "globalStartVideoFrame": 6111,
+      "globalEndVideoFrame": 7160
+    },
+    {
+      "id": "en-L06-S01",
+      "layout": "organisms",
+      "title": {
+        "ar": "نختار الاختبار حسب السؤال",
+        "en": "Choose the test for the question"
+      },
+      "visualContract": "Redraw aquatic/terrestrial chart with independent realistic organism cutouts; expandable endpoint tags. Label schematic grouping, not complete species representation.",
+      "actions": [
+        {
+          "id": "L06-S01-A1",
+          "label": {
+            "ar": "اختبارات مائية",
+            "en": "Aquatic tests"
+          },
+          "semanticTrigger": "Aquatic tests"
+        },
+        {
+          "id": "L06-S01-A2",
+          "label": {
+            "ar": "اختبارات برية",
+            "en": "Terrestrial tests"
+          },
+          "semanticTrigger": "Terrestrial tests"
+        },
+        {
+          "id": "L06-S01-A3",
+          "label": {
+            "ar": "نوع الكائن",
+            "en": "Organism type"
+          },
+          "semanticTrigger": "Organism type"
+        },
+        {
+          "id": "L06-S01-A4",
+          "label": {
+            "ar": "الأثر المناسب للسؤال",
+            "en": "Question-matched endpoint"
+          },
+          "semanticTrigger": "Question-matched endpoint"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عايز تعرف أثرًا على نموّ طحالب، ولا تكاثر كائن مائيّ، ولا بقاء كائن في التربة؟ السؤال هو اللي يوجّه اختيار الاختبار. شكل الملف بيقسّم كائنات مائيّة وبرّيّة: نباتات وطحالب وقشريّات وحشرات ورخويّات وديدان ومجموعات تانية. مش مطلوب نحفظ الصور كقائمة وخلاص. المطلوب نربط الوسط وطريق التعرّض ونوع الاستجابة بالكائن ومرحلة عمره. نتيجة نوع واحد ما تمثّلش كلّ الأنواع تلقائيًّا.",
+        "en": "Are you investigating algal growth, aquatic reproduction or survival of a soil organism? The question guides test selection. The handout distinguishes aquatic and terrestrial groups, including plants, algae, crustaceans, insects, molluscs, worms and other organisms. The aim is not simply to memorize a picture list. Connect the medium, exposure route and response with the organism and life stage. A result for one species does not automatically represent every species."
+      },
+      "timing": null,
+      "sceneID": "L06-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "de561b3b641d34f1bb54ba12223eb870e1102d9f1e614f87a5f63167611f4a7d",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S01-en-v1",
+        "file": "L06-S01-en-v1.wav",
+        "sha256": "f9483b1723779e79ea50f6ba2aa6da06880b80f556bc5ac387496905d10665c2"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L06-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "b844e04fc32b194c4219672938e55f78b714cc39d2ef8648aebfc4477d8cfdb9"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S01",
+        "file": "L06-S01.jpg",
+        "sha256": "a85e9613834a35dd9649b4419f01afa684d47800aa2d59bb9094a5a496d32c2f"
+      },
+      "imageDisposition": {
+        "scene": "L06-S01",
+        "imageSHA256": "a85e9613834a35dd9649b4419f01afa684d47800aa2d59bb9094a5a496d32c2f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 906503,
+      "durationSeconds": 37.77095833333333,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1133
+    },
+    {
+      "id": "en-L06-S02",
+      "layout": "response",
+      "title": {
+        "ar": "التركيز والأثر مش نفس الحاجة",
+        "en": "Concentration and response are different"
+      },
+      "visualContract": "Editable response curve with axis labels and 50% response line. LC50 shown with species/duration fields. No real-data curve or safe concentration implied.",
+      "actions": [
+        {
+          "id": "L06-S02-A1",
+          "label": {
+            "ar": "تركيز التعرّض",
+            "en": "Exposure concentration"
+          },
+          "semanticTrigger": "Exposure concentration"
+        },
+        {
+          "id": "L06-S02-A2",
+          "label": {
+            "ar": "الاستجابة المقاسة",
+            "en": "Measured response"
+          },
+          "semanticTrigger": "Measured response"
+        },
+        {
+          "id": "L06-S02-A3",
+          "label": {
+            "ar": "استجابة خمسين في المية",
+            "en": "Fifty-percent response"
+          },
+          "semanticTrigger": "Fifty-percent response"
+        },
+        {
+          "id": "L06-S02-A4",
+          "label": {
+            "ar": "النوع والمدة مهمين",
+            "en": "Species and duration matter"
+          },
+          "semanticTrigger": "Species and duration matter"
+        }
+      ],
+      "equations": [
+        "LC50",
+        "50%"
+      ],
+      "spoken": {
+        "ar": "في التجربة، بنختبر مجموعة تراكيز ونقيس استجابة محدّدة، مع ضوابط وتكرارات مناسبة. لو بنتكلم عن التركيز المرتبط بموت نصّ الكائنات، لازم نذكر النوع ومدّة الاختبار والطريقة. نصّ الكائنات دي نسبة استجابة في السياق المدروس؛ مش نصّ أنواع البيئة، ومش نصف حدّ أمان. وممكن مؤشّر تاني يقيس تثبيط النموّ بدل الموت. اسم المؤشّر لازم يمشي مع الأثر اللي اتقاس.",
+        "en": "A test uses specified concentrations and measures a defined response, with appropriate controls and replication. For a concentration associated with fifty percent mortality, state the organism, exposure duration and method. Fifty percent refers to the response in the studied context, not half of all environmental species or half of a safety limit. Another endpoint may describe growth inhibition instead of mortality. The metric must match the measured response."
+      },
+      "timing": null,
+      "sceneID": "L06-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "100dbba68ef615c0d4745408dd782d3d113b4f235122b3171b34f37a4e1d330c",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S02-en-v1",
+        "file": "L06-S02-en-v1.wav",
+        "sha256": "68c74caa499acf5e13093f51c8bdf34e25d2b593312c72c3cdee5845bae434c7"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S02-en-v1",
+        "file": "timing.json",
+        "sha256": "a015bf3a753c937ec506099d01a6f7d951ef694218d8ea76962bf5517fba3b8b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S02",
+        "file": "L06-S02.jpg",
+        "sha256": "182f2c19a9c6857955b69be5e4181d13d61559cc59fd97601a77e26b5d5579f8"
+      },
+      "imageDisposition": {
+        "scene": "L06-S02",
+        "imageSHA256": "182f2c19a9c6857955b69be5e4181d13d61559cc59fd97601a77e26b5d5579f8",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 850823,
+      "durationSeconds": 35.45095833333333,
+      "globalStartAudioFrame": 906503,
+      "globalStartVideoFrame": 1133,
+      "globalEndVideoFrame": 2197
+    },
+    {
+      "id": "en-L06-S03",
+      "layout": "doses",
+      "title": {
+        "ar": "أعلى تركيز من غير أثر مرصود",
+        "en": "The highest tested no-effect concentration"
+      },
+      "visualContract": "Tested dose cards with replicate marks and explicit significance qualifiers. Untested midpoint hollow; never presented as observed NOEC. Reveal dependence on spacing and power.",
+      "actions": [
+        {
+          "id": "L06-S03-A1",
+          "label": {
+            "ar": "تركيزات تم اختبارها",
+            "en": "Tested concentrations"
+          },
+          "semanticTrigger": "Tested concentrations"
+        },
+        {
+          "id": "L06-S03-A2",
+          "label": {
+            "ar": "مقارنة إحصائية",
+            "en": "Statistical comparison"
+          },
+          "semanticTrigger": "Statistical comparison"
+        },
+        {
+          "id": "L06-S03-A3",
+          "label": {
+            "ar": "تركيز غير مختبر",
+            "en": "Untested concentration"
+          },
+          "semanticTrigger": "Untested concentration"
+        },
+        {
+          "id": "L06-S03-A4",
+          "label": {
+            "ar": "قوة الاختبار والتباعد",
+            "en": "Power and dose spacing"
+          },
+          "semanticTrigger": "Power and dose spacing"
+        }
+      ],
+      "equations": [
+        "NOEC",
+        "LOEC"
+      ],
+      "spoken": {
+        "ar": "عدم رصد فرق إحصائيّ مش إثبات إنّ الأثر صفر. التركيز اللي بنسميه أعلى تركيز من غير أثر مرصود لازم يكون اتجرّب فعلًا، حسب تصميم الاختبار والتحليل. وأقلّ تركيز ظهر عنده أثر هو برضه نقطة مجرّبة. المسافة بين التراكيز وعدد التكرارات وتشتّت القياسات وقوّة الاختبار بتأثّر على النتيجة. لو تركيز ما اتجرّبش، ما ينفعش ندّعي إنّنا رصدنا عنده عدم تأثير.",
+        "en": "Failure to detect a statistically significant difference does not prove zero effect. A no-observed-effect concentration must be an actually tested concentration identified under the study design and analysis. The lowest-observed-effect concentration is also a tested point. Concentration spacing, replication, variability and statistical power influence these outcomes. An untested concentration cannot be described as an observed no-effect concentration."
+      },
+      "timing": null,
+      "sceneID": "L06-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "adba3e8686bdd433b86138fb73016ce959a3b98af9b76717a8f8d4908eee7aed",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S03-en-v1",
+        "file": "L06-S03-en-v1.wav",
+        "sha256": "f794d5658c1203f25ff357282acad0cd2b2add869797901301043d32baf662b0"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L06-S03-en-v1",
+        "file": "timing.json",
+        "sha256": "23b8efaa44e72c633aa8c629c55efac7120d8e925658608cda061c9df2e0574d"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S03",
+        "file": "L06-S03.jpg",
+        "sha256": "7e83ce180cb9e170f08e881378a2fbee4fc00a95256b8d9c08476ac3760ce991"
+      },
+      "imageDisposition": {
+        "scene": "L06-S03",
+        "imageSHA256": "7e83ce180cb9e170f08e881378a2fbee4fc00a95256b8d9c08476ac3760ce991",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 769223,
+      "durationSeconds": 32.050958333333334,
+      "globalStartAudioFrame": 1757326,
+      "globalStartVideoFrame": 2197,
+      "globalEndVideoFrame": 3158
+    },
+    {
+      "id": "en-L06-S04",
+      "layout": "equation",
+      "title": {
+        "ar": "الجذر الهندسي خطوة بخطوة",
+        "en": "The geometric mean, step by step"
+      },
+      "visualContract": "Animate NOEC0.4 and LOEC0.9 → product0.36 (mg/L)^2 → sqrt =0.6mg/L. Position hollow estimated midpoint between tested points. MATC label qualified as historical study-specific estimate.",
+      "actions": [
+        {
+          "id": "L06-S04-A1",
+          "label": {
+            "ar": "أعلى تركيز دون أثر معنوي",
+            "en": "Highest tested no-significant-effect level"
+          },
+          "semanticTrigger": "Highest tested no-significant-effect level"
+        },
+        {
+          "id": "L06-S04-A2",
+          "label": {
+            "ar": "أقل تركيز بأثر معنوي",
+            "en": "Lowest tested significant-effect level"
+          },
+          "semanticTrigger": "Lowest tested significant-effect level"
+        },
+        {
+          "id": "L06-S04-A3",
+          "label": {
+            "ar": "الضرب ثم الجذر",
+            "en": "Multiply then square-root"
+          },
+          "semanticTrigger": "Multiply then square-root"
+        },
+        {
+          "id": "L06-S04-A4",
+          "label": {
+            "ar": "تقدير مرتبط بالدراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        }
+      ],
+      "equations": [
+        "0.4 mg/L",
+        "0.9 mg/L",
+        "√(0.4 × 0.9) = √0.36",
+        "MATC = 0.6 mg/L"
+      ],
+      "spoken": {
+        "ar": "نستخدم مثالًا افتراضيًّا: أعلى تركيز من غير أثر مرصود أربعة من عشرة ملّيجرام لكلّ لتر، وأقلّ تركيز ظهر عنده أثر تسعة من عشرة. في استخدام تاريخيّ لتقدير الحدّ المزمن بينهما، ناخد الجذر التربيعيّ لحاصل الضرب. أربعة من عشرة في تسعة من عشرة يساوي ستّة وتلاتين من مية. الجذر يطلع ستّة من عشرة ملّيجرام لكلّ لتر. ده متوسط هندسيّ مرتبط بالمثال، مش نقطة اتجرّبت بالفعل.",
+        "en": "Use a hypothetical example: the no-observed-effect concentration is zero point four milligrams per litre, and the lowest-observed-effect concentration is zero point nine. A historical approach estimates a chronic value between them using the square root of their product. Zero point four times zero point nine equals zero point three six. Its square root is zero point six milligrams per litre. This is a geometric-mean estimate for the example, not an actually tested point."
+      },
+      "timing": null,
+      "sceneID": "L06-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "54e565d6b5c8f7e6ff2993dc25fc6436a054cdb2b24bc78f39f0b2162364a54d",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S04-en-v1",
+        "file": "L06-S04-en-v1.wav",
+        "sha256": "99aec391d98bd829571c9d9b03d8478179b57e648ef8e3fc27bb438abd6608f7"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S04-en-v1",
+        "file": "timing.json",
+        "sha256": "0f86441b3caac9610e2647a396c25e8d365707e373ae5d0c6febcb3e1edbf361"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S04",
+        "file": "L06-S04.jpg",
+        "sha256": "d8fa72d3b080452d4aaf89660ccc1fdcfe250bc62b6fb337fa4be72edd828d39"
+      },
+      "imageDisposition": {
+        "scene": "L06-S04",
+        "imageSHA256": "d8fa72d3b080452d4aaf89660ccc1fdcfe250bc62b6fb337fa4be72edd828d39",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 830663,
+      "durationSeconds": 34.610958333333336,
+      "globalStartAudioFrame": 2526549,
+      "globalStartVideoFrame": 3158,
+      "globalEndVideoFrame": 4197
+    },
+    {
+      "id": "en-L06-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "النسبة الحادة إلى المزمنة",
+        "en": "The acute-to-chronic ratio"
+      },
+      "visualContract": "6mg/L ÷0.6mg/L →10 with explicit matching-species/context checklist. Hypothetical acute/chronic values remain labeled; no application to another species automatically.",
+      "actions": [
+        {
+          "id": "L06-S05-A1",
+          "label": {
+            "ar": "قيمة حادة",
+            "en": "Acute value"
+          },
+          "semanticTrigger": "Acute value"
+        },
+        {
+          "id": "L06-S05-A2",
+          "label": {
+            "ar": "قيمة مزمنة",
+            "en": "Chronic value"
+          },
+          "semanticTrigger": "Chronic value"
+        },
+        {
+          "id": "L06-S05-A3",
+          "label": {
+            "ar": "نسبة بلا وحدة",
+            "en": "Dimensionless ratio"
+          },
+          "semanticTrigger": "Dimensionless ratio"
+        },
+        {
+          "id": "L06-S05-A4",
+          "label": {
+            "ar": "لا تعميم بين الأنواع",
+            "en": "No automatic cross-species transfer"
+          },
+          "semanticTrigger": "No automatic cross-species transfer"
+        }
+      ],
+      "equations": [
+        "6 mg/L",
+        "0.6 mg/L",
+        "6 ÷ 0.6 = 10",
+        "ACR = 10"
+      ],
+      "spoken": {
+        "ar": "لو عندنا قيمة حادّة مناسبة للمقارنة مقدارها ستّة ملّيجرام لكلّ لتر، وقسمناها على التقدير المزمن ستّة من عشرة، تطلع النسبة عشرة. الوحدات المتماثلة بتختصر. لكن صلاحية استخدام النسبة تعتمد على الكائن ونوع الأثر والمدة والطريقة. ما ناخدش أيّ رقمين من دراستين مختلفتين ونقول إنّ النسبة قابلة للنقل لكلّ الأنواع. الحساب سهل؛ الجزء العلميّ هو إثبات إنّ طرفي المقارنة مناسبين.",
+        "en": "If a suitable acute value is six milligrams per litre and the chronic estimate is zero point six, their ratio is ten. Matching units cancel. However, the usefulness of that ratio depends on the organism, endpoint, duration and method. Arbitrary values from unrelated studies do not produce a ratio transferable to every species. The arithmetic is simple; the scientific task is establishing that the two quantities are appropriately comparable."
+      },
+      "timing": null,
+      "sceneID": "L06-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "1f7615f037de6a7aa383f00dbdcb92f254ac629fcf2dc24038bbcb3e0d7fae39",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S05-en-v1",
+        "file": "L06-S05-en-v1.wav",
+        "sha256": "4b859ef35dc52937af359c717fbda316b90425c2df3a1db2fd66b21f4160e589"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S05-en-v1",
+        "file": "timing.json",
+        "sha256": "14a17b5a1e6a6cf58467e8bb682bc9311ea6e179362d8cddfbd3e895fe0e5d50"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S05",
+        "file": "L06-S05.jpg",
+        "sha256": "c3dcef46cf81dded86aec94af8f9d92ff90da05f4b7d9a95b192cd940ae20c19"
+      },
+      "imageDisposition": {
+        "scene": "L06-S05",
+        "imageSHA256": "c3dcef46cf81dded86aec94af8f9d92ff90da05f4b7d9a95b192cd940ae20c19",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 900743,
+      "durationSeconds": 37.53095833333333,
+      "globalStartAudioFrame": 3357212,
+      "globalStartVideoFrame": 4197,
+      "globalEndVideoFrame": 5322
+    },
+    {
+      "id": "en-L06-S06",
+      "layout": "comparison",
+      "title": {
+        "ar": "تصحيح قفزة غير مبررة",
+        "en": "Correcting an unsupported inference"
+      },
+      "visualContract": "Break unsupported arrow from MATC0.6 to95% protection. Separate CMC/CCC cards behind missing multi-study evidence. Preserve original source claim privately; visibly teach correction without implying a replacement numerical criterion.",
+      "actions": [
+        {
+          "id": "L06-S06-A1",
+          "label": {
+            "ar": "تقدير من دراسة",
+            "en": "Study-specific estimate"
+          },
+          "semanticTrigger": "Study-specific estimate"
+        },
+        {
+          "id": "L06-S06-A2",
+          "label": {
+            "ar": "ادعاء حماية غير مدعوم",
+            "en": "Unsupported protection claim"
+          },
+          "semanticTrigger": "Unsupported protection claim"
+        },
+        {
+          "id": "L06-S06-A3",
+          "label": {
+            "ar": "أدلة متعددة مطلوبة",
+            "en": "Multiple lines of evidence"
+          },
+          "semanticTrigger": "Multiple lines of evidence"
+        },
+        {
+          "id": "L06-S06-A4",
+          "label": {
+            "ar": "لا معيار جديد مخترع",
+            "en": "No invented replacement criterion"
+          },
+          "semanticTrigger": "No invented replacement criterion"
+        }
+      ],
+      "equations": [
+        "MATC = 0.6 mg/L",
+        "≠ 95% ecosystem protection",
+        "CMC / CCC"
+      ],
+      "spoken": {
+        "ar": "في المصدر، تقدير الحدّ المزمن مربوط بعبارة حماية خمسة وتسعين في المية. الحساب اللي عملناه ما يثبتش الجملة دي. بيانات دراسة واحدة ما تتحوّلش تلقائيًّا لتوزيع حساسيّة أنواع كتير، ولا لضمان حماية نسبة من الناس. معايير جودة المياه الحادّة والمزمنة لها طرق اشتقاق ومجموعات بيانات وشروط محدّدة. نحتفظ بالحساب كتمرين، ونوقف القفزة من رقم تجريبيّ محدود لحدّ تنظيميّ عام.",
+        "en": "The source connects the chronic estimate with a ninety-five percent protection statement. Our calculation does not establish that claim. One study does not automatically become a distribution of sensitivities across species or a guarantee protecting a fraction of people. Acute and chronic aquatic-life criteria require defined derivation methods, broader datasets and conditions. Retain the calculation as an exercise while rejecting the leap from a limited study value to a universal regulatory threshold."
+      },
+      "timing": null,
+      "sceneID": "L06-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "b671556517f597260fc88a76820e1c1df6a4bcfacb70c9a02717a377741ce101",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S06-en-v1",
+        "file": "L06-S06-en-v1.wav",
+        "sha256": "6693a97b10a89aab35a231bbdc72c855fce926274565ad35a07693e9cc50696a"
+      },
+      "alignment": {
+        "run": 39602983127,
+        "artifact": "fate-next-align-L06-S06-en-v1",
+        "file": "timing.json",
+        "sha256": "105949ef60e347990ab1e2d3c4841e92d639279ae44a539032594b55bc7bbb4c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S06",
+        "file": "L06-S06.jpg",
+        "sha256": "e98e3cdd34631bb8414479cc35eaf33692d5c21f7aebae2a5a532452f22a9651"
+      },
+      "imageDisposition": {
+        "scene": "L06-S06",
+        "imageSHA256": "e98e3cdd34631bb8414479cc35eaf33692d5c21f7aebae2a5a532452f22a9651",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 866183,
+      "durationSeconds": 36.09095833333333,
+      "globalStartAudioFrame": 4257955,
+      "globalStartVideoFrame": 5322,
+      "globalEndVideoFrame": 6405
+    },
+    {
+      "id": "en-L06-S07",
+      "layout": "evidence",
+      "title": {
+        "ar": "اقرأ الدليل قبل الرقم",
+        "en": "Read the evidence before the number"
+      },
+      "visualContract": "Endpoint matching and tested-versus-estimated sorting with explanatory feedback. No operational prescription. Private key excluded from narration and learner export.",
+      "actions": [
+        {
+          "id": "L06-S07-A1",
+          "label": {
+            "ar": "نوع نقطة القياس",
+            "en": "Endpoint type"
+          },
+          "semanticTrigger": "Endpoint type"
+        },
+        {
+          "id": "L06-S07-A2",
+          "label": {
+            "ar": "مختبر أم مقدر؟",
+            "en": "Tested or estimated?"
+          },
+          "semanticTrigger": "Tested or estimated?"
+        },
+        {
+          "id": "L06-S07-A3",
+          "label": {
+            "ar": "وحدات وسياق متطابقان",
+            "en": "Matched units and context"
+          },
+          "semanticTrigger": "Matched units and context"
+        },
+        {
+          "id": "L06-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدوده",
+            "en": "Qualified conclusion"
+          },
+          "semanticTrigger": "Qualified conclusion"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "في التدريب، قدّامك نتيجتين: بقاء خلال اختبار قصير، وتكاثر خلال تعرّض أطول. اختار كلّ نتيجة للسؤال اللي تقدر تجاوب عليه، واكتب اللي ما تثبتوش. وبعدها راجع مثال المتوسط الهندسيّ: مين النقطتين المجرّبتين، ومين التقدير؟ لو حدّ استخدم النتيجة لتحديد تركيز صرف أو جرعة رش، وضّح البيانات والطريقة التنظيميّة الناقصة. النجاح هنا مش حفظ اختصارات؛ النجاح إنّك ما تحمّلش الرقم استنتاج أكبر من دليله.",
+        "en": "The exercise presents short-test survival and longer-exposure reproduction results. Match each to the question it can answer and state what it does not establish. Revisit the geometric mean: which values were tested, and which was estimated? If someone uses the result to prescribe a discharge concentration or application rate, identify the missing evidence and regulatory method. Success means interpreting a number within its evidence, rather than merely memorizing abbreviations."
+      },
+      "timing": null,
+      "sceneID": "L06-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "73216c14a42aa971cde020c60820d411b7bc350640e5b7ad32664eca0a6bc147",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L06-S07-en-v1",
+        "file": "L06-S07-en-v1.wav",
+        "sha256": "e8f23a39218e18e52c955b1c60daecb2852b6acb61886b224892ca26adf5850b"
+      },
+      "alignment": {
+        "run": 39606480962,
+        "artifact": "fate-next-timing-v4-L06-S07-en-v1",
+        "file": "timing.json",
+        "sha256": "12e66697592df332cd53bf877bb66a5310a03a21ca56e984cc01d28d3314ffa6"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L06-S07",
+        "file": "L06-S07.jpg",
+        "sha256": "75dd1aed28670f003c798c65206e42a41aa497435b359346d53a6e199a4672ae"
+      },
+      "imageDisposition": {
+        "scene": "L06-S07",
+        "imageSHA256": "75dd1aed28670f003c798c65206e42a41aa497435b359346d53a6e199a4672ae",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 831623,
+      "durationSeconds": 34.650958333333335,
+      "globalStartAudioFrame": 5124138,
+      "globalStartVideoFrame": 6405,
+      "globalEndVideoFrame": 7445
+    }
+  ]
+}

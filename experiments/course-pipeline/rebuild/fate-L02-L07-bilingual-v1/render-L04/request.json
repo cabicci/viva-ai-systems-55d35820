@@ -1,0 +1,1255 @@
+{
+  "id": "fate-render-L04",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L04-S01",
+      "layout": "balance",
+      "title": {
+        "ar": "كائن واحد ولا شبكة غذائية؟",
+        "en": "One organism or a food web?"
+      },
+      "visualContract": "One fish expands into a time series; separate food-web branch. Independent mass and concentration counters distinguish amount from concentration. No real species data claimed.",
+      "actions": [
+        {
+          "id": "L04-S01-A1",
+          "label": {
+            "ar": "التراكم داخل كائن",
+            "en": "Accumulation in an organism"
+          },
+          "semanticTrigger": "Accumulation in an organism"
+        },
+        {
+          "id": "L04-S01-A2",
+          "label": {
+            "ar": "التغيّر مع الزمن",
+            "en": "Change over time"
+          },
+          "semanticTrigger": "Change over time"
+        },
+        {
+          "id": "L04-S01-A3",
+          "label": {
+            "ar": "الكمية والتركيز",
+            "en": "Amount and concentration"
+          },
+          "semanticTrigger": "Amount and concentration"
+        },
+        {
+          "id": "L04-S01-A4",
+          "label": {
+            "ar": "المقارنة في الشبكة الغذائية",
+            "en": "Food-web comparison"
+          },
+          "semanticTrigger": "Food-web comparison"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عندنا سمكة في ميّه فيها مادّة، وعندنا مفترس بياكل سمك أصغر. هل السؤالين واحد؟ لأ. الأوّل ممكن يتابع تغيّر كمية المادّة داخل كائن مع الوقت. التاني يقارن التركيز بين كائنات في مستويات غذائيّة مختلفة. قبل ما نقول تراكم أو تضخّم، لازم نحدّد بنقارن إيه بإيه. كمية المادّة في الجسم غير تركيزها لكلّ كيلوجرام نسيج. كائن أكبر ممكن يحتوي كمية أكبر، من غير ما تركيزه يكون أعلى.",
+        "en": "Consider a fish in contaminated water and a predator eating smaller fish. These are different questions. The first may track the amount within one organism over time; the second compares concentrations across organisms at different trophic positions. Before naming accumulation or magnification, identify the comparison. Total chemical amount in a body differs from concentration per kilogram of tissue. A larger organism can contain more chemical without having a higher concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "b695141a5ef26676ba46ef9018d327c81de12bba08b2033b5190223018e53190",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S01-ar-v1",
+        "file": "L04-S01-ar-v1.wav",
+        "sha256": "3df6161ca125dfc87b3a47d162ad71a445a7a06f7f4414f9784f6c08a2262522"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S01-ar-v1",
+        "file": "timing.json",
+        "sha256": "01a82c97a37a20c4ff5aef00e7416a1d3f64df52c07b57d532ff0f4c0bc281ba"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S01",
+        "file": "L04-S01.jpg",
+        "sha256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f"
+      },
+      "imageDisposition": {
+        "scene": "L04-S01",
+        "imageSHA256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 953543,
+      "durationSeconds": 39.730958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1192
+    },
+    {
+      "id": "ar-L04-S02",
+      "layout": "balance",
+      "title": {
+        "ar": "ميزان الدخول والخروج",
+        "en": "The uptake and removal balance"
+      },
+      "visualContract": "Separate water/diet input arrows and elimination/transformation exits. Transform circle into distinct product symbol rather than disappearance. Animate body growth separately from unchanged chemical count. All rates qualitative.",
+      "actions": [
+        {
+          "id": "L04-S02-A1",
+          "label": {
+            "ar": "دخول من المياه والغذاء",
+            "en": "Water and diet uptake"
+          },
+          "semanticTrigger": "Water and diet uptake"
+        },
+        {
+          "id": "L04-S02-A2",
+          "label": {
+            "ar": "خروج وتحول",
+            "en": "Elimination and transformation"
+          },
+          "semanticTrigger": "Elimination and transformation"
+        },
+        {
+          "id": "L04-S02-A3",
+          "label": {
+            "ar": "ناتج تحول مختلف",
+            "en": "Distinct product"
+          },
+          "semanticTrigger": "Distinct product"
+        },
+        {
+          "id": "L04-S02-A4",
+          "label": {
+            "ar": "نمو الجسم",
+            "en": "Body growth"
+          },
+          "semanticTrigger": "Body growth"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "نفكّر في كمية المادّة الأصليّة كميزان. فيه دخول من الميّه، وممكن دخول من الأكل. وفي المقابل فيه إخراج، وممكن تحوّل حيويّ يغيّر هوية المادّة. لو الدخول أعلى من إزالة المادّة الأصليّة، الكمية ممكن تزيد. ولو الاتنين اتعادلوا، الكمية ممكن تثبت رغم استمرار الدخول. والتحوّل مش لازم يلغي كلّ خطر؛ الناتج ممكن يحتاج تقييم لوحده. كمان نموّ الجسم ممكن يقلّل التركيز من غير ما نفس النسبة من الكمية تكون اتشالت.",
+        "en": "Think of the parent compound’s body amount as a balance. Uptake can occur from water and food. Removal includes elimination, while biotransformation changes the parent’s identity. If uptake exceeds parent removal, the amount can increase. Balanced rates can produce a stable amount even while uptake continues. Transformation does not necessarily eliminate every hazard because products may require separate evaluation. Growth can also lower concentration without removing the same proportion of total chemical amount."
+      },
+      "timing": null,
+      "sceneID": "L04-S02",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "ba3551f76420f380ba60a23330799e0d1cad0354afd4599298dff9e399d0364b",
+      "deliverySHA256": "0331d8df889f8b0056b4f0f28379223bcf4271e9d9ea75fb470f8175e53d0a8c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S02-ar-v1",
+        "file": "L04-S02-ar-v1.wav",
+        "sha256": "4b250ea1d0503ea46d30b961178919dd6937a425a6d8a892a9b4958a3df02b62"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S02-ar-v1",
+        "file": "timing.json",
+        "sha256": "4944c36b8dd799bd107a85fed0b9f6415c11868e97442587c3960360a7dc2b7b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S02",
+        "file": "L04-S02.jpg",
+        "sha256": "fe04c26264869bd408ff5176dcdc48bb103b84b796a324c4f96fa3862f64f32a"
+      },
+      "imageDisposition": {
+        "scene": "L04-S02",
+        "imageSHA256": "fe04c26264869bd408ff5176dcdc48bb103b84b796a324c4f96fa3862f64f32a",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 975623,
+      "durationSeconds": 40.650958333333335,
+      "globalStartAudioFrame": 953543,
+      "globalStartVideoFrame": 1192,
+      "globalEndVideoFrame": 2411
+    },
+    {
+      "id": "ar-L04-S03",
+      "layout": "network",
+      "title": {
+        "ar": "ماء فقط ولا كلّ الطرق؟",
+        "en": "Water only or all routes?"
+      },
+      "visualContract": "Toggle contaminated diet off/on. BCF context changes to all-route accumulation; third panel introduces prey-to-predator comparison. Separate editable labels and arrows, not interchangeable title changes.",
+      "actions": [
+        {
+          "id": "L04-S03-A1",
+          "label": {
+            "ar": "تعرض من المياه",
+            "en": "Water exposure"
+          },
+          "semanticTrigger": "Water exposure"
+        },
+        {
+          "id": "L04-S03-A2",
+          "label": {
+            "ar": "المياه والغذاء",
+            "en": "Water plus diet"
+          },
+          "semanticTrigger": "Water plus diet"
+        },
+        {
+          "id": "L04-S03-A3",
+          "label": {
+            "ar": "مقارنة الفريسة والمفترس",
+            "en": "Prey–predator comparison"
+          },
+          "semanticTrigger": "Prey–predator comparison"
+        },
+        {
+          "id": "L04-S03-A4",
+          "label": {
+            "ar": "وحّد أساس القياس",
+            "en": "Match measurement basis"
+          },
+          "semanticTrigger": "Match measurement basis"
+        }
+      ],
+      "equations": [
+        "BCF",
+        "BAF"
+      ],
+      "spoken": {
+        "ar": "التركيز الحيويّ في التجربة المائيّة بيعزل الدخول من الميّه، من غير مصدر غذائيّ للمادّة. التراكم الحيويّ أشمل: بيحسب أثر طرق الدخول المختلفة مع الإزالة عبر الزمن. الاتنين ممكن يوصفوا كائن واحد. أمّا التضخّم الحيويّ فالمقارنة فيه بين غذاء وكائن آكله، أو عبر مستويات شبكة غذائيّة. لو بدّلنا تصميم التعرّض، لازم نراجع اسم المؤشّر. مش كلّ نسبة بين تركيز السمكة والميّه ينفع نسميها معامل تركيز حيويّ.",
+        "en": "An aqueous bioconcentration experiment isolates uptake from water without a dietary source of the chemical. Bioaccumulation is broader, reflecting multiple uptake routes and removal over time. Both can describe one organism. Biomagnification instead compares an organism with its diet or examines concentrations across trophic positions. If the exposure design changes, reconsider the metric’s name. Not every ratio between fish and water concentrations can legitimately be called a bioconcentration factor."
+      },
+      "timing": null,
+      "sceneID": "L04-S03",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "da0373ed1a551056aa4eba4ba5e46ebb86a8888146caf0966993211826c0d024",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S03-ar-v1",
+        "file": "L04-S03-ar-v1.wav",
+        "sha256": "acb9f559e5ee5bc0946de9c8b0a1a6fdfe985bf8d95ada7b7a3525c962acda17"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L04-S03-ar-v1",
+        "file": "timing.json",
+        "sha256": "78d1c9057733f3cf9bac5ce5bf7c3ab68a633a8a063cc256443bb8b1044bc642"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S03",
+        "file": "L04-S03.jpg",
+        "sha256": "a1d77e24b7b7669b43bd564c1340f996c091819dc66fb826fb4a24dd0fdc39f8"
+      },
+      "imageDisposition": {
+        "scene": "L04-S03",
+        "imageSHA256": "a1d77e24b7b7669b43bd564c1340f996c091819dc66fb826fb4a24dd0fdc39f8",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 782663,
+      "durationSeconds": 32.610958333333336,
+      "globalStartAudioFrame": 1929166,
+      "globalStartVideoFrame": 2411,
+      "globalEndVideoFrame": 3390
+    },
+    {
+      "id": "ar-L04-S04",
+      "layout": "trophic",
+      "title": {
+        "ar": "ليه التركيز ممكن يعلى؟",
+        "en": "Why might concentration increase?"
+      },
+      "visualContract": "Prey portions enter predator separately; some markers exit. Do not imply total transfer efficiency. Cross out universal ten-percent chemical multiplier, not ecological energy concepts in general.",
+      "actions": [
+        {
+          "id": "L04-S04-A1",
+          "label": {
+            "ar": "غذاء يدخل",
+            "en": "Diet enters"
+          },
+          "semanticTrigger": "Diet enters"
+        },
+        {
+          "id": "L04-S04-A2",
+          "label": {
+            "ar": "جزء يخرج",
+            "en": "Some material leaves"
+          },
+          "semanticTrigger": "Some material leaves"
+        },
+        {
+          "id": "L04-S04-A3",
+          "label": {
+            "ar": "تغيّر التركيز",
+            "en": "Concentration changes"
+          },
+          "semanticTrigger": "Concentration changes"
+        },
+        {
+          "id": "L04-S04-A4",
+          "label": {
+            "ar": "لا معامل عام لانتقال المادة",
+            "en": "No universal transfer multiplier"
+          },
+          "semanticTrigger": "No universal transfer multiplier"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "المفترس ممكن ياكل فرائس كتير خلال حياته. لو امتصّ المادّة بكفاءة، وكانت إزالتها بطيئة بالنسبة للدخول، ممكن يبقى تركيزها أعلى في أنسجته. لكن مش كلّ مادّة بتعمل كده. نوع المادّة وشكلها الكيميائيّ والتمثيل الحيويّ والغذاء والأنسجة كلّها مؤثّرة. مفيش قاعدة بتقول إنّ المتبقّيات تزيد عشرة في المية عند كلّ مستوى. انتقال الطاقة مش معادلة ثابتة لحساب تركيز مادة كيميائيّة.",
+        "en": "A predator may consume many prey over its life. Efficient uptake combined with removal that is slow relative to intake can produce a higher tissue concentration. But not every chemical behaves this way. Chemical form, metabolism, diet and tissue basis all matter. There is no universal rule that residues increase by ten percent at every trophic level. Energy transfer is not a fixed equation for predicting a chemical concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S04",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "cf0d7d0d922b7010b55945f605f698c27e7d12ae4d09c5985d9e08621d76f8f7",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S04-ar-v1",
+        "file": "L04-S04-ar-v1.wav",
+        "sha256": "25fe3a1eef9fad1b2761c966ed6e41740ec9ae9c71bb6b79237a9723d7f26463"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S04-ar-v1",
+        "file": "timing.json",
+        "sha256": "e80d874503c4b4a95b6f8fd1d4b7e2cb289b64aa9cc7697e505c6b0bd887a943"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S04",
+        "file": "L04-S04.jpg",
+        "sha256": "30ba236c8f671a9e70e5c3cc4a70846874e6f8bedbf8dce6c43406e1ebd33158"
+      },
+      "imageDisposition": {
+        "scene": "L04-S04",
+        "imageSHA256": "30ba236c8f671a9e70e5c3cc4a70846874e6f8bedbf8dce6c43406e1ebd33158",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 750023,
+      "durationSeconds": 31.250958333333333,
+      "globalStartAudioFrame": 2711829,
+      "globalStartVideoFrame": 3390,
+      "globalEndVideoFrame": 4327
+    },
+    {
+      "id": "ar-L04-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "نسبة ثلاثة… تثبت إيه؟",
+        "en": "A ratio of three: what does it establish?"
+      },
+      "visualContract": "Comparable tissue cards 0.10 and 0.30 mg/kg wet weight flow into ratio 3. Evidence checklist appears around relationship. Separate ratio observation from causal or whole-web conclusion.",
+      "actions": [
+        {
+          "id": "L04-S05-A1",
+          "label": {
+            "ar": "عينة فريسة",
+            "en": "Prey sample"
+          },
+          "semanticTrigger": "Prey sample"
+        },
+        {
+          "id": "L04-S05-A2",
+          "label": {
+            "ar": "عينة مفترس",
+            "en": "Predator sample"
+          },
+          "semanticTrigger": "Predator sample"
+        },
+        {
+          "id": "L04-S05-A3",
+          "label": {
+            "ar": "نفس النسيج والأساس",
+            "en": "Matched tissue and basis"
+          },
+          "semanticTrigger": "Matched tissue and basis"
+        },
+        {
+          "id": "L04-S05-A4",
+          "label": {
+            "ar": "نسبة تحتاج تفسير",
+            "en": "A ratio needing interpretation"
+          },
+          "semanticTrigger": "A ratio needing interpretation"
+        }
+      ],
+      "equations": [
+        "0.10 mg/kg",
+        "0.30 mg/kg",
+        "0.30 ÷ 0.10 = 3",
+        "wet-weight basis"
+      ],
+      "spoken": {
+        "ar": "في مثال افتراضيّ، نفس المادّة اتقاست على نفس أساس الوزن الرطب: صفر فاصلة واحد ملّيجرام لكلّ كيلوجرام في سمك صغير، وصفر فاصلة تلاتة في مفترس. نقسم تلاتة من عشرة على واحد من عشرة، فتطلع النسبة تلاتة. ده وصف للعينات دي. عشان نفسّره كتضخّم غذائيّ، نراجع علاقة الأكل والنسيج والعمر والمكان والتوقيت وتباين العينات. زوج قياسات واحد ما يديش لوحده علاقة ثابتة للشبكة الغذائيّة كلها.",
+        "en": "In a hypothetical example, the same chemical is measured on the same wet-weight basis: zero point one milligrams per kilogram in small fish and zero point three in a predator. Dividing gives a ratio of three. That describes these samples. Interpreting it as dietary magnification requires evidence about diet, tissue, age, location, timing and sample variability. One measurement pair cannot establish a stable relationship for an entire food web."
+      },
+      "timing": null,
+      "sceneID": "L04-S05",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "ca4c9b083083b4cc3d06d9552c214bf040006dbe55a330bd736b95910d466a1f",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S05-ar-v1",
+        "file": "L04-S05-ar-v1.wav",
+        "sha256": "bffcab409b61dd56a016cb89fa765f5e1f515958409bd53323644c9b9de56131"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S05-ar-v1",
+        "file": "timing.json",
+        "sha256": "cf52a10647eebbf219057f1e559ade6b23cd746fb98666354377307f2d7885ba"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S05",
+        "file": "L04-S05.jpg",
+        "sha256": "f4d0731a437adf98d79bef3656c5f3975645ea6d0634115b05947edddecad0c1"
+      },
+      "imageDisposition": {
+        "scene": "L04-S05",
+        "imageSHA256": "f4d0731a437adf98d79bef3656c5f3975645ea6d0634115b05947edddecad0c1",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 820103,
+      "durationSeconds": 34.17095833333333,
+      "globalStartAudioFrame": 3461852,
+      "globalStartVideoFrame": 4327,
+      "globalEndVideoFrame": 5352
+    },
+    {
+      "id": "ar-L04-S06",
+      "layout": "comparison",
+      "title": {
+        "ar": "المثال مش تعميم",
+        "en": "An example is not a universal rule"
+      },
+      "visualContract": "Explicit non-pesticide analogy label for methylmercury. Tissue destinations stay schematic, not universal fat storage. Alternate lower-predator scenario with multiple hypotheses, none asserted as established.",
+      "actions": [
+        {
+          "id": "L04-S06-A1",
+          "label": {
+            "ar": "مثال غير مبيد",
+            "en": "Non-pesticide example"
+          },
+          "semanticTrigger": "Non-pesticide example"
+        },
+        {
+          "id": "L04-S06-A2",
+          "label": {
+            "ar": "الصورة الكيميائية مهمة",
+            "en": "Chemical form matters"
+          },
+          "semanticTrigger": "Chemical form matters"
+        },
+        {
+          "id": "L04-S06-A3",
+          "label": {
+            "ar": "النسيج المستهدف",
+            "en": "Target tissue"
+          },
+          "semanticTrigger": "Target tissue"
+        },
+        {
+          "id": "L04-S06-A4",
+          "label": {
+            "ar": "تفسيرات تحتاج اختبار",
+            "en": "Hypotheses need testing"
+          },
+          "semanticTrigger": "Hypotheses need testing"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الملف بيستخدم الزئبق كمثال. لازم نقول بوضوح: ميثيل الزئبق هنا مثال لملوّث، مش مبيد. وكمان مش صحيح إنّ التراكم لازم يكون في الدهون بسّ؛ الارتباط بالأنسجة بيختلف حسب المادّة وشكلها. لو لقينا تركيزًا أقلّ عند مستوى غذائيّ أعلى، ممكن ندرس التخفيف الحيويّ، أو اختلاف الأكل والنمو والقياس. المطلوب تفسير تدعمه البيانات، مش اختيار قصّة جاهزة لمجرّد إنّها مناسبة للرسم.",
+        "en": "The handout uses mercury as an example. Methylmercury is a contaminant example here, not a pesticide. Accumulation is also not restricted to fat; tissue associations depend on the substance and chemical form. Lower concentrations at a higher trophic position may motivate investigation of biodilution, diet, growth or measurement differences. The task is to develop an explanation supported by evidence, not to choose a convenient story simply because it fits a diagram."
+      },
+      "timing": null,
+      "sceneID": "L04-S06",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "c2de716482b5affd34ba605ceb3f5da7ac3ec58655980213611bb81b7b6b420f",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S06-ar-v1",
+        "file": "L04-S06-ar-v1.wav",
+        "sha256": "594f11746e42b34bc190d378445a25e903350461a38482194e85fcf45d53188f"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S06-ar-v1",
+        "file": "timing.json",
+        "sha256": "4aea9f983264e0bac24a3757b656db861aa23091e396f7bcd8cba89843fcb60f"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S06",
+        "file": "L04-S06.jpg",
+        "sha256": "5575accd8b45146ea225ca5eb2936d114bd88ee451a04c5832034aa7c5b6156b"
+      },
+      "imageDisposition": {
+        "scene": "L04-S06",
+        "imageSHA256": "5575accd8b45146ea225ca5eb2936d114bd88ee451a04c5832034aa7c5b6156b",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 828743,
+      "durationSeconds": 34.53095833333333,
+      "globalStartAudioFrame": 4281955,
+      "globalStartVideoFrame": 5352,
+      "globalEndVideoFrame": 6388
+    },
+    {
+      "id": "ar-L04-S07",
+      "layout": "evidence",
+      "title": {
+        "ar": "اختبر تفسيرك",
+        "en": "Test your explanation"
+      },
+      "visualContract": "Keyboard-accessible route toggles and comparable-sample sorting planned. End with unresolved-evidence fields, not automatic claim of ecosystem safety or harm.",
+      "actions": [
+        {
+          "id": "L04-S07-A1",
+          "label": {
+            "ar": "حدّد الطرق",
+            "en": "Identify routes"
+          },
+          "semanticTrigger": "Identify routes"
+        },
+        {
+          "id": "L04-S07-A2",
+          "label": {
+            "ar": "وحّد العينات",
+            "en": "Match samples"
+          },
+          "semanticTrigger": "Match samples"
+        },
+        {
+          "id": "L04-S07-A3",
+          "label": {
+            "ar": "تحقّق من العلاقة والعينات",
+            "en": "Check feeding relationship and samples"
+          },
+          "semanticTrigger": "Check feeding relationship and samples"
+        },
+        {
+          "id": "L04-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدود الدليل",
+            "en": "Conclusion within the evidence"
+          },
+          "semanticTrigger": "Conclusion within the evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "في التدريب، هتضيف سهم ميّه وسهم غذاء وسهم إخراج، وتختار المؤشّر المناسب لكلّ تصميم. وبعدها هتقارن عينات من شبكة غذائيّة. ابدأ بتوحيد المادة والوحدة وأساس وزن النسيج. اسأل إذا كانت العلاقة الغذائيّة مثبتة، وإذا كان عدد العينات كفاية. لو في معلومة ناقصة، سمّيها واقترح إزاي تقيسها. الاستنتاج الجيّد بيقول اللي البيانات بتدعمه، ويحافظ على الفرق بين احتمال التراكم، وإثبات التضخّم، وتقييم الضرر.",
+        "en": "In the exercise, add water, food and elimination arrows, then select the metric suited to each design. Next compare food-web samples. First match the chemical, units and tissue-weight basis. Ask whether the feeding relationship is demonstrated and whether sampling is sufficient. Name any missing information and propose how to obtain it. A sound conclusion distinguishes accumulation potential, evidence of magnification and assessment of biological harm."
+      },
+      "timing": null,
+      "sceneID": "L04-S07",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "25463226177918e97642a60fc94547a4e9a72eb3cef3eb7383c13ca2c43b239c",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S07-ar-v1",
+        "file": "L04-S07-ar-v1.wav",
+        "sha256": "4993e1cc3cde40242111385f8031f2395506918ca46a094b9c47ebd029306a7e"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L04-S07-ar-v1",
+        "file": "timing.json",
+        "sha256": "dd005e7b66658053ed4e5317e2fa31e8272ae113bd1556e10b75af6cd1f74754"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S07",
+        "file": "L04-S07.jpg",
+        "sha256": "84a5b32ce8c6dd750b7183fe2465dbb715142ebb113df6fda0ef6107cde7d5a5"
+      },
+      "imageDisposition": {
+        "scene": "L04-S07",
+        "imageSHA256": "84a5b32ce8c6dd750b7183fe2465dbb715142ebb113df6fda0ef6107cde7d5a5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 750983,
+      "durationSeconds": 31.290958333333332,
+      "globalStartAudioFrame": 5110698,
+      "globalStartVideoFrame": 6388,
+      "globalEndVideoFrame": 7327
+    },
+    {
+      "id": "en-L04-S01",
+      "layout": "balance",
+      "title": {
+        "ar": "كائن واحد ولا شبكة غذائية؟",
+        "en": "One organism or a food web?"
+      },
+      "visualContract": "One fish expands into a time series; separate food-web branch. Independent mass and concentration counters distinguish amount from concentration. No real species data claimed.",
+      "actions": [
+        {
+          "id": "L04-S01-A1",
+          "label": {
+            "ar": "التراكم داخل كائن",
+            "en": "Accumulation in an organism"
+          },
+          "semanticTrigger": "Accumulation in an organism"
+        },
+        {
+          "id": "L04-S01-A2",
+          "label": {
+            "ar": "التغيّر مع الزمن",
+            "en": "Change over time"
+          },
+          "semanticTrigger": "Change over time"
+        },
+        {
+          "id": "L04-S01-A3",
+          "label": {
+            "ar": "الكمية والتركيز",
+            "en": "Amount and concentration"
+          },
+          "semanticTrigger": "Amount and concentration"
+        },
+        {
+          "id": "L04-S01-A4",
+          "label": {
+            "ar": "المقارنة في الشبكة الغذائية",
+            "en": "Food-web comparison"
+          },
+          "semanticTrigger": "Food-web comparison"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عندنا سمكة في ميّه فيها مادّة، وعندنا مفترس بياكل سمك أصغر. هل السؤالين واحد؟ لأ. الأوّل ممكن يتابع تغيّر كمية المادّة داخل كائن مع الوقت. التاني يقارن التركيز بين كائنات في مستويات غذائيّة مختلفة. قبل ما نقول تراكم أو تضخّم، لازم نحدّد بنقارن إيه بإيه. كمية المادّة في الجسم غير تركيزها لكلّ كيلوجرام نسيج. كائن أكبر ممكن يحتوي كمية أكبر، من غير ما تركيزه يكون أعلى.",
+        "en": "Consider a fish in contaminated water and a predator eating smaller fish. These are different questions. The first may track the amount within one organism over time; the second compares concentrations across organisms at different trophic positions. Before naming accumulation or magnification, identify the comparison. Total chemical amount in a body differs from concentration per kilogram of tissue. A larger organism can contain more chemical without having a higher concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "f1073b0c20269b76b28b10f31e6ba45b9d7fec7b4437dd1b17abcf53f374ba2e",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S01-en-v1",
+        "file": "L04-S01-en-v1.wav",
+        "sha256": "732440264f2285343b58f725b4e0aed48af324a9dac4a5fb9f0f6d63b1c3a05b"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "14703289789704a7cc93eb93ca5d5c0d90181f5b96b2eacf30460fdcf2caa40c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S01",
+        "file": "L04-S01.jpg",
+        "sha256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f"
+      },
+      "imageDisposition": {
+        "scene": "L04-S01",
+        "imageSHA256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 918023,
+      "durationSeconds": 38.25095833333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1148
+    },
+    {
+      "id": "en-L04-S02",
+      "layout": "balance",
+      "title": {
+        "ar": "ميزان الدخول والخروج",
+        "en": "The uptake and removal balance"
+      },
+      "visualContract": "Separate water/diet input arrows and elimination/transformation exits. Transform circle into distinct product symbol rather than disappearance. Animate body growth separately from unchanged chemical count. All rates qualitative.",
+      "actions": [
+        {
+          "id": "L04-S02-A1",
+          "label": {
+            "ar": "دخول من المياه والغذاء",
+            "en": "Water and diet uptake"
+          },
+          "semanticTrigger": "Water and diet uptake"
+        },
+        {
+          "id": "L04-S02-A2",
+          "label": {
+            "ar": "خروج وتحول",
+            "en": "Elimination and transformation"
+          },
+          "semanticTrigger": "Elimination and transformation"
+        },
+        {
+          "id": "L04-S02-A3",
+          "label": {
+            "ar": "ناتج تحول مختلف",
+            "en": "Distinct product"
+          },
+          "semanticTrigger": "Distinct product"
+        },
+        {
+          "id": "L04-S02-A4",
+          "label": {
+            "ar": "نمو الجسم",
+            "en": "Body growth"
+          },
+          "semanticTrigger": "Body growth"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "نفكّر في كمية المادّة الأصليّة كميزان. فيه دخول من الميّه، وممكن دخول من الأكل. وفي المقابل فيه إخراج، وممكن تحوّل حيويّ يغيّر هوية المادّة. لو الدخول أعلى من إزالة المادّة الأصليّة، الكمية ممكن تزيد. ولو الاتنين اتعادلوا، الكمية ممكن تثبت رغم استمرار الدخول. والتحوّل مش لازم يلغي كلّ خطر؛ الناتج ممكن يحتاج تقييم لوحده. كمان نموّ الجسم ممكن يقلّل التركيز من غير ما نفس النسبة من الكمية تكون اتشالت.",
+        "en": "Think of the parent compound’s body amount as a balance. Uptake can occur from water and food. Removal includes elimination, while biotransformation changes the parent’s identity. If uptake exceeds parent removal, the amount can increase. Balanced rates can produce a stable amount even while uptake continues. Transformation does not necessarily eliminate every hazard because products may require separate evaluation. Growth can also lower concentration without removing the same proportion of total chemical amount."
+      },
+      "timing": null,
+      "sceneID": "L04-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "2c87d4504d63b216f781f449073e1103cf459639d6c1ddce3c2fe113b59b3ccf",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S02-en-v1",
+        "file": "L04-S02-en-v1.wav",
+        "sha256": "d939c1da8a16ce37166c4c70470ad8b1e79c36957d37538e5890534cca3d6ba9"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S02-en-v1",
+        "file": "timing.json",
+        "sha256": "ee05f3891445e5164604913df38e5ec18341a3f3931d52485e99f948b6a092c7"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S02",
+        "file": "L04-S02.jpg",
+        "sha256": "fe04c26264869bd408ff5176dcdc48bb103b84b796a324c4f96fa3862f64f32a"
+      },
+      "imageDisposition": {
+        "scene": "L04-S02",
+        "imageSHA256": "fe04c26264869bd408ff5176dcdc48bb103b84b796a324c4f96fa3862f64f32a",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 976583,
+      "durationSeconds": 40.690958333333334,
+      "globalStartAudioFrame": 918023,
+      "globalStartVideoFrame": 1148,
+      "globalEndVideoFrame": 2368
+    },
+    {
+      "id": "en-L04-S03",
+      "layout": "network",
+      "title": {
+        "ar": "ماء فقط ولا كلّ الطرق؟",
+        "en": "Water only or all routes?"
+      },
+      "visualContract": "Toggle contaminated diet off/on. BCF context changes to all-route accumulation; third panel introduces prey-to-predator comparison. Separate editable labels and arrows, not interchangeable title changes.",
+      "actions": [
+        {
+          "id": "L04-S03-A1",
+          "label": {
+            "ar": "تعرض من المياه",
+            "en": "Water exposure"
+          },
+          "semanticTrigger": "Water exposure"
+        },
+        {
+          "id": "L04-S03-A2",
+          "label": {
+            "ar": "المياه والغذاء",
+            "en": "Water plus diet"
+          },
+          "semanticTrigger": "Water plus diet"
+        },
+        {
+          "id": "L04-S03-A3",
+          "label": {
+            "ar": "مقارنة الفريسة والمفترس",
+            "en": "Prey–predator comparison"
+          },
+          "semanticTrigger": "Prey–predator comparison"
+        },
+        {
+          "id": "L04-S03-A4",
+          "label": {
+            "ar": "وحّد أساس القياس",
+            "en": "Match measurement basis"
+          },
+          "semanticTrigger": "Match measurement basis"
+        }
+      ],
+      "equations": [
+        "BCF",
+        "BAF"
+      ],
+      "spoken": {
+        "ar": "التركيز الحيويّ في التجربة المائيّة بيعزل الدخول من الميّه، من غير مصدر غذائيّ للمادّة. التراكم الحيويّ أشمل: بيحسب أثر طرق الدخول المختلفة مع الإزالة عبر الزمن. الاتنين ممكن يوصفوا كائن واحد. أمّا التضخّم الحيويّ فالمقارنة فيه بين غذاء وكائن آكله، أو عبر مستويات شبكة غذائيّة. لو بدّلنا تصميم التعرّض، لازم نراجع اسم المؤشّر. مش كلّ نسبة بين تركيز السمكة والميّه ينفع نسميها معامل تركيز حيويّ.",
+        "en": "An aqueous bioconcentration experiment isolates uptake from water without a dietary source of the chemical. Bioaccumulation is broader, reflecting multiple uptake routes and removal over time. Both can describe one organism. Biomagnification instead compares an organism with its diet or examines concentrations across trophic positions. If the exposure design changes, reconsider the metric’s name. Not every ratio between fish and water concentrations can legitimately be called a bioconcentration factor."
+      },
+      "timing": null,
+      "sceneID": "L04-S03",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "3d28d391a5187db3b41eab5c666650432b956e2f697944a9932faaebedee53b1",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S03-en-v1",
+        "file": "L04-S03-en-v1.wav",
+        "sha256": "247e751fb7b12fd2253c26ad083d8ef281543f1a05e1c61e74c9ef486fe48c90"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S03-en-v1",
+        "file": "timing.json",
+        "sha256": "3f19c1fdf814880607b84a395ff0754f758463adce4ad10fda1b6ee407f66faf"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S03",
+        "file": "L04-S03.jpg",
+        "sha256": "a1d77e24b7b7669b43bd564c1340f996c091819dc66fb826fb4a24dd0fdc39f8"
+      },
+      "imageDisposition": {
+        "scene": "L04-S03",
+        "imageSHA256": "a1d77e24b7b7669b43bd564c1340f996c091819dc66fb826fb4a24dd0fdc39f8",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 948743,
+      "durationSeconds": 39.53095833333333,
+      "globalStartAudioFrame": 1894606,
+      "globalStartVideoFrame": 2368,
+      "globalEndVideoFrame": 3554
+    },
+    {
+      "id": "en-L04-S04",
+      "layout": "trophic",
+      "title": {
+        "ar": "ليه التركيز ممكن يعلى؟",
+        "en": "Why might concentration increase?"
+      },
+      "visualContract": "Prey portions enter predator separately; some markers exit. Do not imply total transfer efficiency. Cross out universal ten-percent chemical multiplier, not ecological energy concepts in general.",
+      "actions": [
+        {
+          "id": "L04-S04-A1",
+          "label": {
+            "ar": "غذاء يدخل",
+            "en": "Diet enters"
+          },
+          "semanticTrigger": "Diet enters"
+        },
+        {
+          "id": "L04-S04-A2",
+          "label": {
+            "ar": "جزء يخرج",
+            "en": "Some material leaves"
+          },
+          "semanticTrigger": "Some material leaves"
+        },
+        {
+          "id": "L04-S04-A3",
+          "label": {
+            "ar": "تغيّر التركيز",
+            "en": "Concentration changes"
+          },
+          "semanticTrigger": "Concentration changes"
+        },
+        {
+          "id": "L04-S04-A4",
+          "label": {
+            "ar": "لا معامل عام لانتقال المادة",
+            "en": "No universal transfer multiplier"
+          },
+          "semanticTrigger": "No universal transfer multiplier"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "المفترس ممكن ياكل فرائس كتير خلال حياته. لو امتصّ المادّة بكفاءة، وكانت إزالتها بطيئة بالنسبة للدخول، ممكن يبقى تركيزها أعلى في أنسجته. لكن مش كلّ مادّة بتعمل كده. نوع المادّة وشكلها الكيميائيّ والتمثيل الحيويّ والغذاء والأنسجة كلّها مؤثّرة. مفيش قاعدة بتقول إنّ المتبقّيات تزيد عشرة في المية عند كلّ مستوى. انتقال الطاقة مش معادلة ثابتة لحساب تركيز مادة كيميائيّة.",
+        "en": "A predator may consume many prey over its life. Efficient uptake combined with removal that is slow relative to intake can produce a higher tissue concentration. But not every chemical behaves this way. Chemical form, metabolism, diet and tissue basis all matter. There is no universal rule that residues increase by ten percent at every trophic level. Energy transfer is not a fixed equation for predicting a chemical concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "bf23dcfddb6da34b95d802557e576af871121f6d938419de7017356e2375dec3",
+      "deliverySHA256": "1767a937295d629368cc8fe0d2998e26ec5ef07a3120ff297c4d74874ccbbc3c",
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L04-S04-en-v2",
+        "file": "L04-S04-en-v2.wav",
+        "sha256": "93713225a26e6efde79e40f9fee30ad47ca24b6dce72eccda7023b10b82edc43"
+      },
+      "alignment": {
+        "run": 39606480962,
+        "artifact": "fate-next-timing-v4-L04-S04-en-v2",
+        "file": "timing.json",
+        "sha256": "da02165ad8e4edbf783014b1f87546cc41e3552dc30deb2353f462fc357d2259"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S04",
+        "file": "L04-S04.jpg",
+        "sha256": "30ba236c8f671a9e70e5c3cc4a70846874e6f8bedbf8dce6c43406e1ebd33158"
+      },
+      "imageDisposition": {
+        "scene": "L04-S04",
+        "imageSHA256": "30ba236c8f671a9e70e5c3cc4a70846874e6f8bedbf8dce6c43406e1ebd33158",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 772103,
+      "durationSeconds": 32.17095833333333,
+      "globalStartAudioFrame": 2843349,
+      "globalStartVideoFrame": 3554,
+      "globalEndVideoFrame": 4519
+    },
+    {
+      "id": "en-L04-S05",
+      "layout": "equation",
+      "title": {
+        "ar": "نسبة ثلاثة… تثبت إيه؟",
+        "en": "A ratio of three: what does it establish?"
+      },
+      "visualContract": "Comparable tissue cards 0.10 and 0.30 mg/kg wet weight flow into ratio 3. Evidence checklist appears around relationship. Separate ratio observation from causal or whole-web conclusion.",
+      "actions": [
+        {
+          "id": "L04-S05-A1",
+          "label": {
+            "ar": "عينة فريسة",
+            "en": "Prey sample"
+          },
+          "semanticTrigger": "Prey sample"
+        },
+        {
+          "id": "L04-S05-A2",
+          "label": {
+            "ar": "عينة مفترس",
+            "en": "Predator sample"
+          },
+          "semanticTrigger": "Predator sample"
+        },
+        {
+          "id": "L04-S05-A3",
+          "label": {
+            "ar": "نفس النسيج والأساس",
+            "en": "Matched tissue and basis"
+          },
+          "semanticTrigger": "Matched tissue and basis"
+        },
+        {
+          "id": "L04-S05-A4",
+          "label": {
+            "ar": "نسبة تحتاج تفسير",
+            "en": "A ratio needing interpretation"
+          },
+          "semanticTrigger": "A ratio needing interpretation"
+        }
+      ],
+      "equations": [
+        "0.10 mg/kg",
+        "0.30 mg/kg",
+        "0.30 ÷ 0.10 = 3",
+        "wet-weight basis"
+      ],
+      "spoken": {
+        "ar": "في مثال افتراضيّ، نفس المادّة اتقاست على نفس أساس الوزن الرطب: صفر فاصلة واحد ملّيجرام لكلّ كيلوجرام في سمك صغير، وصفر فاصلة تلاتة في مفترس. نقسم تلاتة من عشرة على واحد من عشرة، فتطلع النسبة تلاتة. ده وصف للعينات دي. عشان نفسّره كتضخّم غذائيّ، نراجع علاقة الأكل والنسيج والعمر والمكان والتوقيت وتباين العينات. زوج قياسات واحد ما يديش لوحده علاقة ثابتة للشبكة الغذائيّة كلها.",
+        "en": "In a hypothetical example, the same chemical is measured on the same wet-weight basis: zero point one milligrams per kilogram in small fish and zero point three in a predator. Dividing gives a ratio of three. That describes these samples. Interpreting it as dietary magnification requires evidence about diet, tissue, age, location, timing and sample variability. One measurement pair cannot establish a stable relationship for an entire food web."
+      },
+      "timing": null,
+      "sceneID": "L04-S05",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "09aad7ea5aa1127cc6fba30e3db3a3811f5ab40c207208b7a05c2ebc3e7d965b",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S05-en-v1",
+        "file": "L04-S05-en-v1.wav",
+        "sha256": "7fc16c962b45735846b238a3f18811751262dcbf30acb553e3adf9de5dc2f22c"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S05-en-v1",
+        "file": "timing.json",
+        "sha256": "18945933370147728225b793fd1a7f2c221cda49e2792818a0dc6641ddeb217e"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S05",
+        "file": "L04-S05.jpg",
+        "sha256": "f4d0731a437adf98d79bef3656c5f3975645ea6d0634115b05947edddecad0c1"
+      },
+      "imageDisposition": {
+        "scene": "L04-S05",
+        "imageSHA256": "f4d0731a437adf98d79bef3656c5f3975645ea6d0634115b05947edddecad0c1",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 831623,
+      "durationSeconds": 34.650958333333335,
+      "globalStartAudioFrame": 3615452,
+      "globalStartVideoFrame": 4519,
+      "globalEndVideoFrame": 5559
+    },
+    {
+      "id": "en-L04-S06",
+      "layout": "comparison",
+      "title": {
+        "ar": "المثال مش تعميم",
+        "en": "An example is not a universal rule"
+      },
+      "visualContract": "Explicit non-pesticide analogy label for methylmercury. Tissue destinations stay schematic, not universal fat storage. Alternate lower-predator scenario with multiple hypotheses, none asserted as established.",
+      "actions": [
+        {
+          "id": "L04-S06-A1",
+          "label": {
+            "ar": "مثال غير مبيد",
+            "en": "Non-pesticide example"
+          },
+          "semanticTrigger": "Non-pesticide example"
+        },
+        {
+          "id": "L04-S06-A2",
+          "label": {
+            "ar": "الصورة الكيميائية مهمة",
+            "en": "Chemical form matters"
+          },
+          "semanticTrigger": "Chemical form matters"
+        },
+        {
+          "id": "L04-S06-A3",
+          "label": {
+            "ar": "النسيج المستهدف",
+            "en": "Target tissue"
+          },
+          "semanticTrigger": "Target tissue"
+        },
+        {
+          "id": "L04-S06-A4",
+          "label": {
+            "ar": "تفسيرات تحتاج اختبار",
+            "en": "Hypotheses need testing"
+          },
+          "semanticTrigger": "Hypotheses need testing"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الملف بيستخدم الزئبق كمثال. لازم نقول بوضوح: ميثيل الزئبق هنا مثال لملوّث، مش مبيد. وكمان مش صحيح إنّ التراكم لازم يكون في الدهون بسّ؛ الارتباط بالأنسجة بيختلف حسب المادّة وشكلها. لو لقينا تركيزًا أقلّ عند مستوى غذائيّ أعلى، ممكن ندرس التخفيف الحيويّ، أو اختلاف الأكل والنمو والقياس. المطلوب تفسير تدعمه البيانات، مش اختيار قصّة جاهزة لمجرّد إنّها مناسبة للرسم.",
+        "en": "The handout uses mercury as an example. Methylmercury is a contaminant example here, not a pesticide. Accumulation is also not restricted to fat; tissue associations depend on the substance and chemical form. Lower concentrations at a higher trophic position may motivate investigation of biodilution, diet, growth or measurement differences. The task is to develop an explanation supported by evidence, not to choose a convenient story simply because it fits a diagram."
+      },
+      "timing": null,
+      "sceneID": "L04-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "2ae2794c01eb8c0bacd180dd3dad65ed231e31ddc555ec80d4d5e3078a17c463",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S06-en-v1",
+        "file": "L04-S06-en-v1.wav",
+        "sha256": "154bf3a7218bff527d7c6b9453ca636d21aac6c5aca9eb60fed77734de10b82b"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S06-en-v1",
+        "file": "timing.json",
+        "sha256": "89a6089cb717854a5bee3b7a3fbbb805306360fbfcfe87b840f3f05d265fff8f"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S06",
+        "file": "L04-S06.jpg",
+        "sha256": "5575accd8b45146ea225ca5eb2936d114bd88ee451a04c5832034aa7c5b6156b"
+      },
+      "imageDisposition": {
+        "scene": "L04-S06",
+        "imageSHA256": "5575accd8b45146ea225ca5eb2936d114bd88ee451a04c5832034aa7c5b6156b",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 853703,
+      "durationSeconds": 35.57095833333333,
+      "globalStartAudioFrame": 4447075,
+      "globalStartVideoFrame": 5559,
+      "globalEndVideoFrame": 6626
+    },
+    {
+      "id": "en-L04-S07",
+      "layout": "evidence",
+      "title": {
+        "ar": "اختبر تفسيرك",
+        "en": "Test your explanation"
+      },
+      "visualContract": "Keyboard-accessible route toggles and comparable-sample sorting planned. End with unresolved-evidence fields, not automatic claim of ecosystem safety or harm.",
+      "actions": [
+        {
+          "id": "L04-S07-A1",
+          "label": {
+            "ar": "حدّد الطرق",
+            "en": "Identify routes"
+          },
+          "semanticTrigger": "Identify routes"
+        },
+        {
+          "id": "L04-S07-A2",
+          "label": {
+            "ar": "وحّد العينات",
+            "en": "Match samples"
+          },
+          "semanticTrigger": "Match samples"
+        },
+        {
+          "id": "L04-S07-A3",
+          "label": {
+            "ar": "تحقّق من العلاقة والعينات",
+            "en": "Check feeding relationship and samples"
+          },
+          "semanticTrigger": "Check feeding relationship and samples"
+        },
+        {
+          "id": "L04-S07-A4",
+          "label": {
+            "ar": "استنتاج بحدود الدليل",
+            "en": "Conclusion within the evidence"
+          },
+          "semanticTrigger": "Conclusion within the evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "في التدريب، هتضيف سهم ميّه وسهم غذاء وسهم إخراج، وتختار المؤشّر المناسب لكلّ تصميم. وبعدها هتقارن عينات من شبكة غذائيّة. ابدأ بتوحيد المادة والوحدة وأساس وزن النسيج. اسأل إذا كانت العلاقة الغذائيّة مثبتة، وإذا كان عدد العينات كفاية. لو في معلومة ناقصة، سمّيها واقترح إزاي تقيسها. الاستنتاج الجيّد بيقول اللي البيانات بتدعمه، ويحافظ على الفرق بين احتمال التراكم، وإثبات التضخّم، وتقييم الضرر.",
+        "en": "In the exercise, add water, food and elimination arrows, then select the metric suited to each design. Next compare food-web samples. First match the chemical, units and tissue-weight basis. Ask whether the feeding relationship is demonstrated and whether sampling is sufficient. Name any missing information and propose how to obtain it. A sound conclusion distinguishes accumulation potential, evidence of magnification and assessment of biological harm."
+      },
+      "timing": null,
+      "sceneID": "L04-S07",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "133e7c76af15834dc8b48f6e76c05deb311a70ee3cc64e85f77dd9227bbf2dba",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S07-en-v1",
+        "file": "L04-S07-en-v1.wav",
+        "sha256": "6c92df89ef23687185b4f24c09350d41d655652176181e899c92f9723880f084"
+      },
+      "alignment": {
+        "run": 39605465861,
+        "artifact": "fate-next-timing-v3-L04-S07-en-v1",
+        "file": "timing.json",
+        "sha256": "b072eee0e5bcfba4135663be332da9b6cc209951f7b3cf445a10ef645e93b1b6"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S07",
+        "file": "L04-S07.jpg",
+        "sha256": "84a5b32ce8c6dd750b7183fe2465dbb715142ebb113df6fda0ef6107cde7d5a5"
+      },
+      "imageDisposition": {
+        "scene": "L04-S07",
+        "imageSHA256": "84a5b32ce8c6dd750b7183fe2465dbb715142ebb113df6fda0ef6107cde7d5a5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 905543,
+      "durationSeconds": 37.730958333333334,
+      "globalStartAudioFrame": 5300778,
+      "globalStartVideoFrame": 6626,
+      "globalEndVideoFrame": 7758
+    }
+  ]
+}
