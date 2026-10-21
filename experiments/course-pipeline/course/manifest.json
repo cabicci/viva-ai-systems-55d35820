@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "courseId": "SOIL",
+  "lessonId": "SOIL-PILOT-01",
+  "mode": "technical",
+  "sourceLanguage": "en",
+  "locales": [
+    "ar-EG",
+    "en",
+    "it",
+    "de"
+  ],
+  "scope": "one-new-lesson-isolated-preview",
+  "title": "Fundamentals of Soil and Crops",
+  "source": {
+    "filename": "Fundamentals of Soil and Crops_4Printing.pdf",
+    "sha256": "d3ac9eb19a664c59f113754679fc73d3080148fc363de46651a2df9c9004bd36",
+    "physicalPages": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "role": "authoritative original curriculum, newly authored lesson"
+  },
+  "referenceIds": [
+    "UMD-SOIL",
+    "ILO-CBT",
+    "FAO-ELEARNING",
+    "IES-PRACTICE",
+    "CAST-UDL"
+  ],
+  "scenario": {
+    "simulated": true,
+    "zone": "A",
+    "purpose": "routine-fertility",
+    "depthCm": [
+      0,
+      20
+    ],
+    "subsamples": 15,
+    "quantity": "receiving laboratory requirement"
+  },
+  "media": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voice": "Charon",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "maxAttempts": 3,
+    "requestGapSeconds": 10
+  },
+  "acceptance": {
+    "ownerReview": "pending",
+    "agronomistReview": "pending",
+    "nativeLanguageReview": "pending",
+    "listeningReview": "pending",
+    "practicalCompetence": "requires trainer observation",
+    "publish": false
+  },
+  "production": {
+    "uploadToBunny": false,
+    "modifyPlatform": false,
+    "modifyDatabase": false
+  }
+}

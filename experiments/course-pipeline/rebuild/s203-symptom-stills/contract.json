@@ -1,0 +1,59 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "automaticRepair": false,
+  "global": [
+    {
+      "id": "style",
+      "criterion": "Rounded sculpted cartoon3D, credible maize leaf and soil materials, warm off-white scene, complete unclipped objects; no people."
+    },
+    {
+      "id": "no-text",
+      "criterion": "No generated text, letters, numbers, icons or answer badges."
+    },
+    {
+      "id": "maize",
+      "criterion": "Plants visibly maize: narrow elongated blades and parallel venation, not oval broadleaf/dicot plants."
+    }
+  ],
+  "assets": {
+    "s203-reading-comparison": [
+      {
+        "id": "four",
+        "criterion": "Exactly4separate comparison plant groups: healthy, older central-V leaf, young purple lower leaves, older yellow-margined leaf; crop and older/younger positions legible."
+      },
+      {
+        "id": "patterns",
+        "criterion": "N-like central V at pointed tip has green margins, K-like yellow margins have green centre; they are not exchanged. No wilt used as nutrient proof."
+      }
+    ],
+    "s203-reading-magnesium": [
+      {
+        "id": "stripes",
+        "criterion": "Affected long narrow maize leaf has multiple lengthwise yellow INTERVEINAL bands between visibly green parallel veins; not edge-only yellowing or one central V."
+      },
+      {
+        "id": "context",
+        "criterion": "Older/lower affected leaf and healthy comparison visible; upper leaves greener."
+      }
+    ],
+    "s203-station-a": [
+      {
+        "id": "observable",
+        "criterion": "Affected leaves and their older/lower versus younger/upper position are visibly attached and legible enough to describe; compare at least one apparently healthy reference. Do not infer nutrient diagnosis from this criterion."
+      }
+    ],
+    "s203-station-b": [
+      {
+        "id": "observable",
+        "criterion": "Affected leaves and their older/lower versus younger/upper position are visibly attached and legible enough to describe; compare at least one apparently healthy reference. Do not infer nutrient diagnosis from this criterion."
+      }
+    ],
+    "s203-station-c": [
+      {
+        "id": "observable",
+        "criterion": "Affected leaves and their older/lower versus younger/upper position are visibly attached and legible enough to describe; compare at least one apparently healthy reference. Do not infer nutrient diagnosis from this criterion."
+      }
+    ]
+  }
+}

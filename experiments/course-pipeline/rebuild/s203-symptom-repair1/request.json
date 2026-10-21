@@ -1,0 +1,22 @@
+{
+  "action": "s203-two-symptom-stills-targeted-repair1",
+  "stepId": "S2-03",
+  "maxImageCalls": 2,
+  "maxTtsCalls": 0,
+  "repairCallNumber": 1,
+  "automaticRepair": false,
+  "noPublication": true,
+  "priorRunId": 38893453253,
+  "priorCandidates": {
+    "s203-reading-comparison": "cd98bce026cba68516fe046dde5e7d3f26cbe42bec45465acabceefa4ca371e1",
+    "s203-station-b": "e10454965ba1006ec56142b5fd46cf21b1b7d04d52be2fc1674b678b2131049c"
+  },
+  "protected": {
+    "s203-station-a": "96698958f427c0d7cabda7996c3640c26ea2ac075989365dfb94c23633ec90aa",
+    "s203-station-c": "dc9f98cec6cde730172b03b3ee32e1a5b1bfd4207a31e3e357e61aa4ee55ebe7",
+    "s203-reading-magnesium": "866466f44674348ae4488c1abc5eb8d0ca1a0065feb9a67c2e48c22697cd2656"
+  },
+  "planHash": "e7132d0e4c3c082d466e7885e5624744f863709eb49e738613ed18b4318102a2",
+  "contractHash": "d20f9edecb7e7f15853d0e4956954aabba9896d07329b3e63c07c63dc8e3b002",
+  "scriptHash": "aaff9da1e3c73a83c0ca62ef9091bda51ccd7cabaea137ba9c3d01f90548f03c"
+}

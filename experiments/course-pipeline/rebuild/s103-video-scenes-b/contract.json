@@ -1,0 +1,22 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {"id":"pilot-cartoon","criterion":"Compact sculpted premium educational 3D cartoon miniature matching S1-01 on warm off-white with plausible material textures, clean margins; not photojournalism, full outdoor photograph or toy-faced character."},
+    {"id":"no-identity-or-text","criterion":"No embedded words, numerals, arrows, fake text, product label, source school/Spark identity, brand, logo or watermark."},
+    {"id":"simulation-only","criterion":"No people, hands, live release, actual corrosive chemical, dangerous exposure, rescue, neutralization, unapproved active cleanup or universal quantity threshold."}
+  ],
+  "assets": {
+    "s103-video-prepare": [
+      {"id":"dry-before-action","criterion":"Blank SDS/product-information holder and scenario cards, unused gloves, splash goggles, folded apron and closed simulated kit are separate dry inspection props; no active handling."},
+      {"id":"no-universal-ppe","criterion":"Picture does not show a specific respirator cartridge, product prescription or completed compatibility approval; exact suitability must remain conditional."},
+      {"id":"different-from-decision","criterion":"Close equipment-height tabletop composition differs clearly from prior split-site low decision scene and planned spatial reading map."}
+    ],
+    "s103-video-response": [
+      {"id":"three-positions","criterion":"Stable blank practice bottle, tiny harmless water patch completely bounded by absorbent perimeter, and separate closed mock-waste collection position are visually distinct in one sealed practice tray."},
+      {"id":"drain-isolated","criterion":"Drain-like channel is outside raised tray edge and has no depicted liquid or clean-up route into it."},
+      {"id":"no-live-instruction","criterion":"No active person/hand, real chemical, actual treatment, neutralizer, hose, size-based permission or arbitrary cleaner is depicted."},
+      {"id":"different-from-reading-still","criterion":"Low side cutaway staging is not the planned overhead instructional cross-section or accepted decision-route scene."}
+    ]
+  }
+}

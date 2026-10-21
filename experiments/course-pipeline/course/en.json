@@ -1,0 +1,289 @@
+{
+  "name": "English",
+  "title": "A small sample. A reliable decision.",
+  "subtitle": "Collecting a representative soil sample",
+  "eyebrow": "SOIL & CROPS · PRACTICAL SKILLS",
+  "goal": "Plan and collect a traceable composite sample from one management zone, following the laboratory protocol.",
+  "ui": {
+    "learn": "Learn",
+    "practice": "Field planner",
+    "check": "Check your understanding",
+    "field": "With your trainer",
+    "assistant": "Lesson guide",
+    "glossary": "Key terms",
+    "watch": "Watch the lesson",
+    "listen": "Listen",
+    "read": "Read the explanation",
+    "next": "Next",
+    "prev": "Previous",
+    "step": "Part",
+    "of": "of",
+    "begin": "Start learning",
+    "minutes": "12–18 min + supervised practice",
+    "review": "Pilot for review",
+    "protocol": "Training brief",
+    "protocolText": "Simulated laboratory request: zone A, routine fertility test, 15 subsamples from 0–20 cm, equal-volume cores, mix thoroughly. Follow the receiving laboratory’s requirements for quantity, packaging and transport. These numbers apply to this exercise only.",
+    "mapTitle": "Where would you start?",
+    "mapText": "Select four starting points spread across zone A. This is a planning exercise; the real protocol still calls for 15 subsamples. Keep the wet patch and former manure pile out of the routine composite sample.",
+    "mapLabel": "Simplified plan of zone A, divided into four planning quarters",
+    "point": "Point",
+    "wet": "Wet patch",
+    "manure": "Old manure pile",
+    "selected": "selected",
+    "reset": "Start again",
+    "validate": "Check my plan",
+    "mapOk": "Good coverage. Your four starting points cover the four quarters and avoid the unusual patches. Continue the route until all 15 subsamples have been collected.",
+    "mapBad": "Choose exactly four points: one in each quarter. Avoid the marked unusual patches. A row of convenient points near the entrance misses much of the zone.",
+    "quizIntro": "Answer, read the explanation, then try again if needed. This check does not certify practical competence.",
+    "correct": "That’s right.",
+    "retry": "Review the explanation and try again.",
+    "results": "answers checked",
+    "practicalIntro": "Work with your trainer in a permitted area. Use the laboratory’s actual instructions. The trainer observes the process; a tick on this page is not certification.",
+    "checklist": "Observation checklist",
+    "notes": "Evidence and trainer feedback",
+    "notesHint": "Sample ID, date, observed depth, number of cores, deviations, trainer feedback… Do not enter invented observations.",
+    "download": "Download practice record",
+    "saved": "Stored on this device only.",
+    "terms": "A shared vocabulary",
+    "ask": "Ask about this lesson",
+    "askHint": "Try: Why not mix the wet patch?",
+    "askButton": "Find an explanation",
+    "guideInfo": "This pilot guide retrieves explanations from the lesson. It is not a live AI adviser. For unfamiliar field conditions, ask the trainer or laboratory.",
+    "noAnswer": "I could not match that question confidently. Choose a topic below, or ask your trainer. I will not guess.",
+    "sources": "Learning references",
+    "revisit": "Tomorrow: explain why one sample at the gate is not enough. Repeat the explanation a week later.",
+    "complete": "Learning continues in the field",
+    "videoPending": "Video is being prepared. All illustrated explanations are available below.",
+    "captions": "Captions",
+    "record": "Practice record",
+    "notObserved": "Not observed yet",
+    "observed": "Observed",
+    "needsPractice": "Needs more practice",
+    "label": "Sample identity",
+    "qLabel": "Question",
+    "finish": "Review your answers"
+  },
+  "scenes": [
+    {
+      "id": "purpose",
+      "title": "Why a good sample matters",
+      "lead": "The laboratory only tests what you send. A sample taken beside the gate may tell the story of the gate, not the whole zone.",
+      "example": "Picture a field with a healthy centre and a pale strip by a former manure pile. Mixing every area together can hide differences that need separate investigation.",
+      "takeaway": "Your task is to represent one defined area—not to choose the best-looking or easiest soil.",
+      "labels": [
+        "One zone",
+        "Several locations",
+        "A traceable sample"
+      ],
+      "narration": "A laboratory tests a small amount of soil. That result can support a useful decision only when the sample represents the area you intend to manage. One convenient scoop beside the gate is not enough. In this lesson, you will plan where to sample, collect at a consistent depth, and preserve the identity of the sample.",
+      "caption": "A laboratory tests a small amount of soil. That result can support a useful decision only when the sample represents the area you intend to manage. One convenient scoop beside the gate is not enough. In this lesson, you will plan where to sample, collect at a consistent depth, and preserve the identity of the sample."
+    },
+    {
+      "id": "zones",
+      "title": "Define the area first",
+      "lead": "Group soil with a similar management history and broadly similar conditions. Mark meaningful differences before choosing points.",
+      "example": "A persistent wet patch or former manure pile may need separate investigation. Do not quietly blend it into the routine sample for the rest of the zone.",
+      "takeaway": "Record the excluded patch on your map and discuss it with the trainer.",
+      "labels": [
+        "Mark zone boundaries",
+        "Notice unusual areas",
+        "Keep identities separate"
+      ],
+      "narration": "Start with the field map. Decide which area the sample should represent. Areas with different management histories or clearly different conditions may need separate samples. A wet patch or former manure pile should not be silently mixed with the rest. Mark these features and agree the sampling plan with your trainer.",
+      "caption": "Start with the field map. Decide which area the sample should represent. Areas with different management histories or clearly different conditions may need separate samples. A wet patch or former manure pile should not be silently mixed with the rest. Mark these features and agree the sampling plan with your trainer."
+    },
+    {
+      "id": "tools",
+      "title": "Clean tools protect the result",
+      "lead": "Use a suitable soil probe or spade, a clean plastic bucket, laboratory-approved sample containers, a marker and a field record.",
+      "example": "Soil, fertiliser or other residue left on equipment can affect the next sample. Clean equipment between zones according to the laboratory protocol.",
+      "takeaway": "Wear suitable footwear and the protection specified by the trainer. Stop if the location or tool use is unsafe.",
+      "labels": [
+        "Check cleanliness",
+        "Check equipment",
+        "Check safe access"
+      ],
+      "narration": "Prepare the equipment before entering the sampling area. You need a suitable probe or spade, a clean plastic bucket, a sample container, a marker and a record sheet. Check for soil or fertiliser residues and clean equipment between zones. Your trainer checks safe access, footwear and safe tool handling before practical work begins.",
+      "caption": "Prepare the equipment before entering the sampling area. You need a suitable probe or spade, a clean plastic bucket, a sample container, a marker and a record sheet. Check for soil or fertiliser residues and clean equipment between zones. Your trainer checks safe access, footwear and safe tool handling before practical work begins."
+    },
+    {
+      "id": "route",
+      "title": "Spread the points across the zone",
+      "lead": "A zigzag route can help spread subsamples across a reasonably uniform zone. It is a planning aid, not a guarantee of representativeness.",
+      "example": "Do not cluster every point by the entrance. Check that all parts of the intended zone are covered and unusual patches are handled separately.",
+      "takeaway": "For this simulated request, collect 15 subsamples. Another laboratory or purpose may require a different plan.",
+      "labels": [
+        "Cover the zone",
+        "Avoid convenience bias",
+        "Follow the agreed count"
+      ],
+      "narration": "Plan a route that covers the zone instead of collecting all the soil where it is easiest to reach. A zigzag can help distribute the points. In our training request, you collect fifteen subsamples. That number is part of this exercise, not a universal rule. Use the laboratory instructions when working in a real field.",
+      "caption": "Plan a route that covers the zone instead of collecting all the soil where it is easiest to reach. A zigzag can help distribute the points. In our training request, you collect fifteen subsamples. That number is part of this exercise, not a universal rule. Use the laboratory instructions when working in a real field."
+    },
+    {
+      "id": "depth",
+      "title": "Use the same defined depth",
+      "lead": "This exercise specifies soil from the surface to 20 cm. Remove loose surface litter without scraping away the soil you intend to sample.",
+      "example": "Use a probe or take a reasonably uniform slice across the required depth. Collect comparable volumes at each location, rather than a large shallow scoop and a tiny deep one.",
+      "takeaway": "Depth depends on the test and crop system. Confirm it before starting; do not choose a number from memory.",
+      "labels": [
+        "0–20 cm in this brief",
+        "Comparable core volumes",
+        "Check every point"
+      ],
+      "narration": "Now control the depth. Our simulated laboratory request specifies zero to twenty centimetres. Remove loose surface litter, then collect soil across that defined layer. Take comparable volumes at each location. Do not combine a large shallow scoop with a small deep one. Different tests can require different depths, so confirm the instructions before sampling.",
+      "caption": "Now control the depth. Our simulated laboratory request specifies zero to twenty centimetres. Remove loose surface litter, then collect soil across that defined layer. Take comparable volumes at each location. Do not combine a large shallow scoop with a small deep one. Different tests can require different depths, so confirm the instructions before sampling."
+    },
+    {
+      "id": "mix",
+      "title": "Make one composite sample",
+      "lead": "Combine the subsamples from the same zone in the clean bucket and mix thoroughly. Take the laboratory portion from the well-mixed soil.",
+      "example": "Do not send just the final core or take a handful from one unmixed corner of the bucket. That would undo the care you took in the field.",
+      "takeaway": "The required amount, drying conditions, container and transport depend on the receiving laboratory and test.",
+      "labels": [
+        "Same zone only",
+        "Mix thoroughly",
+        "Follow laboratory handling"
+      ],
+      "narration": "After collecting the subsamples, mix the soil from the same zone thoroughly in the clean bucket. Take the laboratory portion from that mixture, not from the final core or one unmixed corner. Check the laboratory instructions for the required quantity, container, drying and transport. Do not assume that every kind of soil test uses the same handling.",
+      "caption": "After collecting the subsamples, mix the soil from the same zone thoroughly in the clean bucket. Take the laboratory portion from that mixture, not from the final core or one unmixed corner. Check the laboratory instructions for the required quantity, container, drying and transport. Do not assume that every kind of soil test uses the same handling."
+    },
+    {
+      "id": "label",
+      "title": "Keep the sample’s identity",
+      "lead": "Give the sample a unique ID and record the field, zone, collection date, depth, collector and requested test. Match the bag to the field record.",
+      "example": "Example only: sample A-01, zone A, 13 October 2026, 0–20 cm, 15 subsamples, routine fertility. In practice, enter the actual observations.",
+      "takeaway": "A correct analysis attached to the wrong field is still an unreliable basis for a decision.",
+      "labels": [
+        "Unique sample ID",
+        "Bag matches record",
+        "Real observations"
+      ],
+      "narration": "Label the sample so its origin cannot be confused. Record the sample ID, field and zone, actual date, depth, collector and requested test. Match the bag to the field record. The example values in this lesson are simulated. In real work, record what actually happened, including any deviation, rather than filling gaps with invented observations.",
+      "caption": "Label the sample so its origin cannot be confused. Record the sample ID, field and zone, actual date, depth, collector and requested test. Match the bag to the field record. The example values in this lesson are simulated. In real work, record what actually happened, including any deviation, rather than filling gaps with invented observations."
+    },
+    {
+      "id": "transfer",
+      "title": "Explain, practise, improve",
+      "lead": "Before you leave the field, explain why your route, depth and handling represent the agreed zone. Ask your trainer to observe the whole process.",
+      "example": "If the plan cannot be followed, stop and record the reason. Agree a correction before sending the sample.",
+      "takeaway": "Tomorrow, explain the method without looking. Return to it after a week and apply it to a field with different zones.",
+      "labels": [
+        "Explain your choices",
+        "Collect observed evidence",
+        "Revisit the method"
+      ],
+      "narration": "You are ready to practise with your trainer. Explain how the route covers the zone, how you will control depth, and how you will preserve sample identity. If conditions prevent you from following the plan, stop and agree a correction. An online answer alone does not demonstrate field competence. Revisit the method tomorrow, then apply it to a different field.",
+      "caption": "You are ready to practise with your trainer. Explain how the route covers the zone, how you will control depth, and how you will preserve sample identity. If conditions prevent you from following the plan, stop and agree a correction. An online answer alone does not demonstrate field competence. Revisit the method tomorrow, then apply it to a different field."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "Q1",
+      "question": "You find a persistent wet patch inside zone A. What is the best next step?",
+      "options": [
+        "Mix it in so nothing is left out.",
+        "Mark it and agree whether it needs separate sampling.",
+        "Take every subsample from that patch."
+      ],
+      "answer": 1,
+      "explanation": "The routine composite sample must have a clear target area. A distinct patch may require its own investigation; silently mixing it can hide the difference."
+    },
+    {
+      "id": "Q2",
+      "question": "How deep must every real soil sample be?",
+      "options": [
+        "Always 20 cm.",
+        "Always as deep as the tool reaches.",
+        "The depth required by the test and laboratory protocol."
+      ],
+      "answer": 2,
+      "explanation": "0–20 cm belongs to our simulated brief. Actual depth depends on the purpose and receiving laboratory."
+    },
+    {
+      "id": "Q3",
+      "question": "Which approach best preserves the field plan?",
+      "options": [
+        "Combine equal-volume subsamples from one zone and mix thoroughly.",
+        "Send only the last core.",
+        "Mix different zones to save a bag."
+      ],
+      "answer": 0,
+      "explanation": "Comparable subsamples and thorough mixing help the laboratory portion represent the intended zone. Keep separate sample identities."
+    },
+    {
+      "id": "Q4",
+      "question": "A record is missing the collection depth. What should you do?",
+      "options": [
+        "Enter 20 cm because the example used it.",
+        "Flag the missing observation and check with the collector or trainer.",
+        "Remove the depth field."
+      ],
+      "answer": 1,
+      "explanation": "Records must describe actual work. An invented value makes the sample harder to interpret."
+    }
+  ],
+  "glossary": [
+    [
+      "Subsample",
+      "Soil collected at one location within the agreed zone."
+    ],
+    [
+      "Composite sample",
+      "A thoroughly mixed combination of subsamples from one defined zone."
+    ],
+    [
+      "Management zone",
+      "An area treated as one unit for the sampling purpose."
+    ],
+    [
+      "Representative",
+      "Reflecting the defined area, without choosing only convenient locations."
+    ],
+    [
+      "Sampling depth",
+      "The soil layer specified by the protocol."
+    ],
+    [
+      "Traceability",
+      "Being able to connect the sample to its actual place, time and method."
+    ]
+  ],
+  "checklist": [
+    "Defines the zone and marks unusual areas.",
+    "Checks clean equipment and safe tool use.",
+    "Covers the zone using the agreed route and count.",
+    "Collects comparable volumes at the specified depth.",
+    "Mixes one zone correctly and follows laboratory handling.",
+    "Matches the labelled sample to an accurate field record."
+  ],
+  "faq": [
+    [
+      "Why not mix the wet patch?",
+      "zones"
+    ],
+    [
+      "Is the depth always 20 cm?",
+      "depth"
+    ],
+    [
+      "Why mix the subsamples?",
+      "mix"
+    ],
+    [
+      "What belongs on the label?",
+      "label"
+    ],
+    [
+      "What tools do I need?",
+      "tools"
+    ],
+    [
+      "How do I choose the route?",
+      "route"
+    ]
+  ],
+  "locale": "en",
+  "dir": "ltr",
+  "lessonId": "SOIL-PILOT-01"
+}
