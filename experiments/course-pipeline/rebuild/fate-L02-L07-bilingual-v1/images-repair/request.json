@@ -1,0 +1,60 @@
+{
+  "id": "fate-next-image-repairs-v1",
+  "imageModel": "gemini-nano-banana-2.1",
+  "reviewModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxImageCalls": 3,
+  "maxReviewCalls": 3,
+  "style": "Create a premium university-level scientific educational 3D-rendered illustration, physically plausible realistic materials, carefully modeled recognizable objects, restrained elegant composition, soft natural studio lighting from upper left, convincing contact shadows, detailed but readable geometry, pale near-white cool neutral environment compatible with Masaarat soft blue and mint overlays. Adult scientific visualization, not children's illustration, not toy-like, no cartoon faces or characters, no excessive glossy plastic, no glow or magical toxicity. Deliberately composed negative space for later editable labels. NO text, words, letters, numerals, logos, watermarks, arrows, diagram symbols or charts baked into the image. This is a reconstructed teaching visualization, not photographic evidence. Keep important geometry sharp. 16:9 landscape.",
+  "scenes": [
+    {
+      "id": "L02-S08",
+      "title": {
+        "ar": "القانون والحالة الجديدة",
+        "en": "Regulation and a new case"
+      },
+      "visualContract": "Historical 1996 marker; current-role cards with jurisdiction label USA. End with two-column blank evidence checklist. No answer or actual legal limit fabricated.",
+      "meaning": "The handout includes the history of United States regulation. Separate that history from current roles: the Environmental Protection Agency establishes pesticide food tolerances, while agencies including the Food and Drug Administration and Department of Agriculture have monitoring or enforcement responsibilities. The nineteen ninety-six amendments emphasized aggregate exposure, cumulative effects and child protection. Now consider two pesticide residues on an apple. List the limit, definition and unit evidence needed for compliance, then the consumption, body mass, mechanism and exposure information needed for risk assessment. Keep the two questions separate.",
+      "correction": "Remove all seals, emblems, logos and pseudo-lettering from every book and folder. Keep all covers completely plain. Preserve apple and blank checklist, realism, layout and lighting.",
+      "source": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S08",
+        "file": "L02-S08.jpg",
+        "sha256": "16891d3886a75778b16f502cff7c2c3c553fcea2a58dd33eade0c37a351e7f5d"
+      }
+    },
+    {
+      "id": "L05-S02",
+      "title": {
+        "ar": "وحدة الناتج من الوحدات الأصلية",
+        "en": "Derive the unit from the measurements"
+      },
+      "visualContract": "Animate (mg/kg)/(mg/L) → (mg/kg)×(L/mg) → L/kg. Separate crossed mg labels and retained L/kg. No claim that all concentration ratios universally carry the same units.",
+      "meaning": "In the aquatic example, tissue concentration is measured in milligrams per kilogram, and water concentration in milligrams per litre. Dividing by a fraction is equivalent to multiplying by its reciprocal. Milligrams cancel, but litres and kilograms remain. The result is litres per kilogram. Omitting the unit hides the measurement basis. Changing from wet to dry tissue weight also requires an appropriate conversion before comparing studies.",
+      "correction": "Remove all digits, letters and markings from the micropipette display and instruments; make the display a plain blank dark rectangle. Preserve fish, tissue, water and layout.",
+      "source": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L05-S02",
+        "file": "L05-S02.jpg",
+        "sha256": "d10c5e65de56f8fc91d6c783305ef9ee136f579d92eee6ee7199d49fc58c6aa0"
+      }
+    },
+    {
+      "id": "L07-S07",
+      "title": {
+        "ar": "نصف الباقي كل مرة",
+        "en": "Half of what remains each time"
+      },
+      "visualContract": "Editable decay curve at0,10,20days and8,4,2mg/kg. Halve remaining markers, not fixed subtraction. Display C=C0(1/2)^(t/tHalf), tHalf=ln2/k with units days and1/day; illustrative-model badge.",
+      "meaning": "Use a hypothetical first-order model with an initial concentration of eight milligrams per kilogram. If the half-life is ten days under those model conditions, four remains after ten days and two after twenty. Each interval halves the remaining amount; it does not subtract four indefinitely. The equation is eight times one-half raised to the number of half-life intervals. In rate-constant form, half-life equals the natural logarithm of two divided by the rate constant. The model must fit the data and conditions.",
+      "correction": "Replace all irregular stones in the three petri dishes with empty clean dishes. Keep the three dishes, realism, composition and lighting. Do not depict countable amounts: accurate changing quantities will be animated as separate editable markers. No text, digits or labels.",
+      "source": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S07",
+        "file": "L07-S07.jpg",
+        "sha256": "42a813875e6333b13f0a83bc3fab140d9a1745dc6e3ee09f610d46fe4c94a54d"
+      }
+    }
+  ],
+  "status": "Distinct scene illustrations for both locales; editable labels and causal animation remain separate."
+}

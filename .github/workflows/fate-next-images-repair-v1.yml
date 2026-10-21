@@ -1,0 +1,49 @@
+name: Fate L02-L07 targeted image corrections v1
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/images-repair/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-L02-L07-images-repair-v1
+  cancel-in-progress: false
+env:
+  GH_TOKEN: ${{ github.token }}
+  PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/images-repair
+  EXPECTED_REQUEST_SHA256: 84158ae68fbb25da2063fa0b0e69dc4aaac416a0649edad644362069aaade43c
+jobs:
+  image:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        scene: ["L02-S08", "L05-S02", "L07-S07"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Generate distinct scene illustration
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.scene }}" generate
+      - name: Deliver original before review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-image-v2-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Inspect actual image against scientific contract
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.scene }}" review
+      - name: Deliver review evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-next-image-review-v2-${{ matrix.scene }}
+          path: ${{ env.PACKAGE }}/output/review*.json
+          retention-days: 30
