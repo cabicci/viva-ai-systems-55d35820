@@ -3,12 +3,16 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
 const question = z.object({
-  courseId: z.literal("AC-BUS"),
-  lessonId: z.string().regex(/^AC-BUS-M[0-9]{2}-L[0-9]{2}$/),
+  courseId: z.string().regex(/^AC-[A-Z0-9]+$/),
+  lessonId: z.string().regex(/^AC-[A-Z0-9]+-M[0-9]{2}-L[0-9]{2}$/),
   locale: z.enum(["ar-EG", "ar-MSA", "ar-Gulf", "en"]),
   query: z.string().trim().min(2).max(1500),
   requestId: z.string().uuid(),
-}).strict();
+  history: z.array(z.object({ question: z.string().trim().min(1).max(500),
+    answer: z.string().max(1200) }).strict()).max(3).optional(),
+}).strict().refine((data) => data.lessonId.startsWith(`${data.courseId}-`), {
+  message: "ACADEMIC_INVALID_LESSON", path: ["lessonId"],
+});
 
 export const askAcademicAssistant = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
@@ -21,7 +25,8 @@ export const askAcademicAssistant = createServerFn({ method: "POST" })
 // Owner-operated indexing through Lovable; never exposed in the learner UI.
 export const indexAcademicAssistant = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .validator((input: unknown) => z.object({ offset: z.number().int().min(0).max(200),
+  .validator((input: unknown) => z.object({ courseId: z.string().regex(/^AC-[A-Z0-9]+$/),
+    offset: z.number().int().min(0).max(100000),
     batchSize: z.number().int().min(1).max(4).default(2) }).strict().parse(input))
   .handler(async ({ data, context }) => {
     const { indexAcademicBatch } = await import("./assistant.server");

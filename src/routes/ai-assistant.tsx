@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
-import { setAssistantSession } from "@/lib/assistant-session-store";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -37,11 +36,6 @@ function AIAssistantPage() {
 function AIAssistantContent() {
   const { dir } = useLocale();
   const t = useUiString();
-  const prompts = [
-    t("assistant.page.prompt.start"),
-    t("assistant.page.prompt.next"),
-    t("assistant.page.prompt.concept"),
-  ];
 
   return (
     <div
@@ -61,22 +55,6 @@ function AIAssistantContent() {
               {t("assistant.page.description")}
             </p>
           </header>
-
-          <section aria-label={t("assistant.page.suggestions")} className="space-y-2">
-            <p className="text-xs text-muted-foreground">{t("assistant.page.tryAsking")}</p>
-            <div className="flex flex-wrap gap-2">
-              {prompts.map((p) => (
-                <button
-                  key={p}
-                  type="button"
-                  onClick={() => setAssistantSession({ query: p })}
-                  className="text-xs md:text-sm rounded-full border border-border/60 bg-background/40 hover:bg-primary/10 hover:border-primary/40 px-3 py-1.5 transition"
-                >
-                  {p}
-                </button>
-              ))}
-            </div>
-          </section>
 
           <AssistantPanel />
         </div>

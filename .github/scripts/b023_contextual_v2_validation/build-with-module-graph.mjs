@@ -5,6 +5,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { runReviewedBuildGuards } from "./reviewed-build-sequence.mjs";
 import { candidate, localBuildEnvironment, requireValue, sha256File } from "./local-guards.mjs";
 
 const ACTIVE_ROOTS = [
@@ -103,10 +104,6 @@ async function main() {
   const bun = requireValue("B023_BUN_BIN");
   const requireRepo = createRequire(join(repo, "package.json"));
   const packageJson = requireRepo("./package.json");
-  const expectedBuild = "bun run roadmap:guard && bun run contextual-visuals:verify && vite build";
-  if (packageJson.scripts?.build !== expectedBuild) {
-    throw new Error("Build script differs from the reviewed B023 sequence; inspect rather than skipping a build step");
-  }
   const receipt = {
     result: "FAIL", head, localSupabaseOrigin,
     browserManifestSha256: sha256File(join(repo, MANIFEST)),
@@ -114,8 +111,9 @@ async function main() {
     productConfig: "vite.config.ts",
   };
   try {
-    execFileSync(bun, ["run", "roadmap:guard"], { cwd: repo, env: process.env, stdio: "inherit" });
-    execFileSync(bun, ["run", "contextual-visuals:verify"], { cwd: repo, env: process.env, stdio: "inherit" });
+    runReviewedBuildGuards(packageJson.scripts?.build, (script) => {
+      execFileSync(bun, ["run", script], { cwd: repo, env: process.env, stdio: "inherit" });
+    });
     const { createBuilder } = await import(pathToFileURL(requireRepo.resolve("vite")).href);
     const plugin = createModuleGraphObserver({ repo, receive: (graph) => {
       receipt.graph = graph;
@@ -135,3 +133,4 @@ async function main() {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await main();
+

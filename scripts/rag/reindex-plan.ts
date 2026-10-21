@@ -2,10 +2,12 @@
 import { resolveRepoRoot, runReindexPlan } from "../../src/lib/rag/indexing";
 
 const retryOnlyFailed = process.argv.includes("--retry-only-failed");
+const initialIndex = process.argv.includes("--initial-index");
+const baselinePath = process.argv.find((a) => a.startsWith("--baseline="))?.slice("--baseline=".length);
 const failedArg = process.argv.find((a) => a.startsWith("--failed="));
 const failedUnits = failedArg
   ? failedArg.replace("--failed=", "").split(",").filter(Boolean)
   : undefined;
 
-const plan = runReindexPlan(resolveRepoRoot(), { retryOnlyFailed, failedUnits });
+const plan = runReindexPlan(resolveRepoRoot(), { baselinePath, initialIndex, retryOnlyFailed, failedUnits });
 console.log(JSON.stringify(plan, null, 2));

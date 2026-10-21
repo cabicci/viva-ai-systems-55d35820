@@ -4,9 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "course:check": "bun run scripts/assistant/check-course.ts",
     "dev": "vite dev",
-    "build": "bun run roadmap:guard && bun run contextual-visuals:verify && vite build",
-    "build:dev": "bun run roadmap:guard && bun run contextual-visuals:verify && vite build --mode development",
+    "build": "bun run assistant:verify && bun run roadmap:guard && bun run contextual-visuals:verify && vite build",
+    "build:dev": "bun run assistant:verify && bun run roadmap:guard && bun run contextual-visuals:verify && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -68,7 +69,10 @@
     "controlled-visuals:test-render": "bun run controlled-visuals:ensure-chrome && bun run test:run -- tests/lesson-visuals/controlled-v1/instructionalComposition.test.ts",
     "controlled-visuals:test": "bun run controlled-visuals:test-static && bun run controlled-visuals:test-render",
     "controlled-visuals:test-runtime-integration": "bun run controlled-visuals:materialize-runtime-assets && bun run test:run -- tests/lesson-visuals/controlled-v1/runtimeIntegration.test.ts tests/lesson-visuals/controlled-v1/controlledV1ProductRenderer.test.tsx",
-    "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts"
+    "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts",
+    "assistant:verify": "bun run scripts/assistant/verify-card-integration.ts",
+    "rag:generate-current": "bun run scripts/rag/generate-current-release.ts",
+    "test:assistant": "vitest run src/lib/__tests__/assistant- src/lib/__tests__/floating-assistant src/lib/__tests__/card-assistant- src/lib/__tests__/rag-card-membership src/lib/__tests__/rag-incremental src/lib/__tests__/rag-native-incremental src/lib/__tests__/rag-current src/lib/__tests__/rag-security-grounding src/lib/__tests__/rag-grounding-fail-closed-locales src/lib/academic-education/assistant- src/lib/__tests__/locale-assistant-parity"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
@@ -116,7 +120,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.4",
-    "@vitest/ui": "^4.1.11",
+    "@vitest/ui": "^4.1.12",
     "drizzle-kit": "^0.31.11",
     "drizzle-orm": "^0.45.3",
     "eslint": "^9.32.0",
@@ -132,8 +136,9 @@
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^7.3.6",
-    "vitest": "^4.1.11"
+    "vite": "7.3.7",
+    "vitest": "^4.1.12",
+    "@electric-sql/pglite-pgvector": "0.0.9"
   },
   "pnpm": {
     "overrides": {
@@ -149,6 +154,8 @@
     "shell-quote": "1.11.0",
     "esbuild": "0.28.1",
     "chokidar": "4.0.3",
-    "source-map-js": "1.2.2"
+    "source-map-js": "1.2.2",
+    "launch-editor": "2.14.2",
+    "vite": "7.3.7"
   }
 }

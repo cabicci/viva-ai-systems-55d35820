@@ -2,7 +2,8 @@ import { supabase } from "@/integrations/supabase/client";
 import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { validateRuntimeLocale } from "@/lib/rag/assistant-grounding-security";
 import { getUiString } from "@/lib/locale/ui-strings";
-import type { AssistantCitation } from "@/lib/assistant-session-store";
+import { AssistantRequestError } from "@/lib/card-assistant/errors";
+export type AssistantCitation = { lessonId: string; title: string; productionRoute: string | null; excerpt: string };
 
 /**
  * Assistant Runtime — frontend service.
@@ -68,7 +69,7 @@ export async function callAssistantRuntime(
   const accessToken = session?.access_token;
   const locale = payload.learnerContext.locale;
   if (!accessToken) {
-    throw new Error(getUiString(locale, "assistant.panel.error.auth"));
+    throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.auth"));
   }
 
   const { data, error } = await supabase.functions.invoke<AssistantRuntimeResponsePayload>(
@@ -97,21 +98,24 @@ export async function callAssistantRuntime(
     }
     const status = (error as { context?: Response }).context?.status;
     if (status === 401 || code === "UNAUTHORIZED") {
-      throw new Error(getUiString(locale, "assistant.panel.error.auth"));
+      throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.auth"));
     }
     if (code === "AI_ACCESS_DENIED") {
-      throw new Error(getUiString(locale, "assistant.panel.error.access"));
+      throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.access"));
+    }
+    if (reason === "card_scope_required" || reason === "card_scope_invalid") {
+      throw new AssistantRequestError(getUiString(locale, "assistant.panel.scope.open"));
     }
     if (code?.includes("QUOTA_EXCEEDED") || status === 429) {
-      throw new Error(getUiString(locale, "assistant.panel.error.quota"));
+      throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.quota"));
     }
     if (reason === "insufficient_grounding") {
-      throw new Error(getUiString(locale, "assistant.panel.error.grounding"));
+      throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.grounding"));
     }
-    throw new Error(getUiString(locale, "assistant.panel.error.connection"));
+    throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.connection"));
   }
   if (!data) {
-    throw new Error(getUiString(locale, "assistant.panel.error.connection"));
+    throw new AssistantRequestError(getUiString(locale, "assistant.panel.error.connection"));
   }
   return data;
 }

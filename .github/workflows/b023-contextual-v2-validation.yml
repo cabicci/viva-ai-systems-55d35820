@@ -12,6 +12,8 @@ on:
       - 'src/lib/__tests__/locale-strict-visual*'
       - 'tests/lesson-visuals/**'
       - '.github/scripts/b023_contextual_v2_validation/**'
+      - 'package.json'
+      - '.github/workflows/b023-contextual-v2-validation.yml'
   workflow_dispatch:
     inputs:
       expected_product_sha:
@@ -57,6 +59,9 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: "20"
+
+      - name: Verify every reviewed build guard is enforced
+        run: node --test .github/scripts/b023_contextual_v2_validation/reviewed-build-sequence.test.mjs
 
       - name: Bind exact clean commit and allocate disposable directories
         run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs prepare
@@ -184,3 +189,4 @@ jobs:
             ${{ env.B023_RECEIPTS_ROOT }}/browser/gate.stderr.log
           if-no-files-found: warn
           retention-days: 14
+

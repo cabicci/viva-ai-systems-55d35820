@@ -44,6 +44,12 @@ jobs:
       - name: Backup key text conversion (synthetic keys only)
         run: python -m unittest discover -s scripts/recovery -p 'test_*.py'
 
+      - name: Unified card registration and assistant integration
+        run: bun run assistant:verify
+
+      - name: Shared assistant behavior and access (isolated clients, no paid calls)
+        run: bun run test:assistant
+
       - name: TypeScript check
         run: bunx tsc --noEmit
 

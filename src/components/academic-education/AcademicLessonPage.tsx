@@ -16,7 +16,7 @@ import {
 } from "@/lib/academic-education/client";
 import type { AcademicDelivery, AcademicQuizResult } from "@/lib/academic-education/types";
 import { ReadingVisual } from "./ReadingVisual";
-import { AcademicAssistantPanel } from "./AcademicAssistantPanel";
+import { CourseLessonAssistant } from "@/components/assistant/CourseLessonAssistant";
 import { LessonText, LessonInlineText } from "./LessonText";
 import { withoutMatchingStepPrefix } from "./example-step";
 import { AcademicAdjacentNavigation } from "./AcademicAdjacentNavigation";
@@ -430,17 +430,18 @@ function AuthorizedLesson({
           )}
           {tab === "assistant" &&
             (delivery.assistantAllowed ? (
-              <AcademicAssistantPanel
+              <CourseLessonAssistant
+                area="academic"
                 key={`${courseId}:${lesson.id}:${locale}`}
-                courseId={courseId}
-                lessonId={lesson.id}
+                cardId={courseId}
+                stepId={lesson.id}
                 locale={locale}
               />
             ) : (
               <p className="leading-8">
                 {en
                   ? "The assistant for this course requires separate access and activation."
-                  : "مساعد هذا المنهج يحتاج صلاحية مستقلة وتفعيل الخدمة."}
+                  : "مساعد هذا المسار يحتاج صلاحية مستقلة وتفعيل الخدمة."}
               </p>
             ))}
         </section>

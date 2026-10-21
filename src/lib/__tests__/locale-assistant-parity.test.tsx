@@ -32,20 +32,6 @@ vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: { id: "test-user" } }),
 }));
 
-vi.mock("@/lib/assistant-session-store", () => ({
-  useAssistantSession: () => ({
-    query: "",
-    loading: false,
-    error: null,
-    response: null,
-    matches: [],
-    turns: [],
-  }),
-  setAssistantSession: vi.fn(),
-  loadAssistantHistory: vi.fn(),
-  appendAssistantTurn: vi.fn(),
-  clearAssistantHistory: vi.fn(),
-}));
 
 function baseCtxProvider(): Pick<
   LearnerContext,
@@ -271,3 +257,12 @@ describe("AssistantPanel source hygiene", () => {
     expect(source).toContain("contextOverride");
   });
 });
+
+// These tests exercise assistant requests and locale rendering, not lazy lesson bodies.
+vi.mock("@/components/intro/lessons/lesson-registry", () => ({
+  INTRO_LESSON_CONTENT_KEYS: [], hasIntroLessonContent: () => true,
+}));
+vi.mock("@/components/intro/lessons", () => ({ loadIntroLessonContent: vi.fn(), hasIntroLessonContent: () => true }));
+vi.mock("@/lib/entitlements", () => ({ useEntitlement: vi.fn() }));
+
+vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { onAuthStateChange: vi.fn() } } }));
