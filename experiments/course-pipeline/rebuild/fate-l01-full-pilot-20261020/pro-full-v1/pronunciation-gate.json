@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "locale": "ar",
+  "reviewID": "Pro-v2-full-owner-accepted-current",
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "audioSHA256": "a28b85f3148296f354830ca9167416c50772a416783fee0df79d3bd5f8d1f2cc",
+      "scriptSHA256": "f0086e4013aa48ff0d7e5f3a006fe5956e52a603675a19097b8bf7d05c3b507d",
+      "deliverySHA256": "0481e40ae414cb7f69216c68d3ba9b998b71805dee37f111c68121f3c2f73cc1",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Kore",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "a28b85f3148296f354830ca9167416c50772a416783fee0df79d3bd5f8d1f2cc",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S02",
+      "audioSHA256": "fb77cac94c9374a994532ebb0688798e681b6295bfdb8b706df699c055b3b38c",
+      "scriptSHA256": "b166a600a35e6f2c95a16b8d85a56f01ad49db88d4d2518a804af5330915d361",
+      "deliverySHA256": "991478908591277ea5315f35e2ba49c398c7e4ef37f45e8fe405c96d73456c91",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Charon",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "fb77cac94c9374a994532ebb0688798e681b6295bfdb8b706df699c055b3b38c",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S03",
+      "audioSHA256": "131a9063dc5d165e3b6d0aa4f54d3c471849d64481e97f7b93a0541e76c87360",
+      "scriptSHA256": "9341f61edec1f6c6bc2650bf4e13d8b9b6be870bee0773b43b904521c5a61bb5",
+      "deliverySHA256": "782325ce7838267ce97bce00a7d427c4ffdefe5dabeb8e3b3406bb46bc2179ce",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Kore",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "131a9063dc5d165e3b6d0aa4f54d3c471849d64481e97f7b93a0541e76c87360",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S04",
+      "audioSHA256": "197a4dd2d80f277c55a0eb20f1d3d5768d04000ece2bd45fc504d375b8b7fe7f",
+      "scriptSHA256": "839f7966162713d924c3e74698c89778641b3b5bc2d417af82bad99d5746918e",
+      "deliverySHA256": "991478908591277ea5315f35e2ba49c398c7e4ef37f45e8fe405c96d73456c91",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Charon",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "197a4dd2d80f277c55a0eb20f1d3d5768d04000ece2bd45fc504d375b8b7fe7f",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S05",
+      "audioSHA256": "99c50a0859ec858f0553b6614b2e902f4932a011d52828f826a859db2fac21e3",
+      "scriptSHA256": "2b8ee267ddc1bebc71d1dc3f449ff2eaff9baa87d2a1f9b9859a13699ac30a02",
+      "deliverySHA256": "e8a119fc21e7110f4beea44c756f2b47b9fd4aae8de6a990a805ee3bd1ff6ada",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Kore",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "99c50a0859ec858f0553b6614b2e902f4932a011d52828f826a859db2fac21e3",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S06",
+      "audioSHA256": "8f2773f89145772d6636e4e74bb7400c3d4438f11d9e95c7f42e5b6634344d89",
+      "scriptSHA256": "c211204ddbe8eb78a777d6ddb10bcf60719b9fa4d2a7e8d072187eb0b7c702da",
+      "deliverySHA256": "62805be77aa4e0edf619be24d892cefb8bfe9a8a34fa4d9d3df5e9ed70db7f48",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Charon",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "8f2773f89145772d6636e4e74bb7400c3d4438f11d9e95c7f42e5b6634344d89",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S07",
+      "audioSHA256": "3d12d7413790ad369941483c664aa07cc0ec1ccfccd715b0a133d63d56da8f6a",
+      "scriptSHA256": "860d054f165d3c5a13b3216f100c962940fbd4bde065171ebef950b8e9372987",
+      "deliverySHA256": "1c565caa0cf2bd0db0b73f62a30cdf2b6372f5bd782042cd02d64ca089127452",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Charon",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "3d12d7413790ad369941483c664aa07cc0ec1ccfccd715b0a133d63d56da8f6a",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S08",
+      "audioSHA256": "3e186140a4566630be03d1ebbb9df6b0c8a09712cf60574a19c6768553375240",
+      "scriptSHA256": "72aea540a878cc7de8d0596f6ac3a598a2fea0cf4e453444f646bc59754b9d77",
+      "deliverySHA256": "35561191338a8e568b3b13f9ceb34b108dc3471c03c2241c52d563cf2ff0c810",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Kore",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "3e186140a4566630be03d1ebbb9df6b0c8a09712cf60574a19c6768553375240",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S09",
+      "audioSHA256": "052f3a38e1fdd1f5d538cce5b82e47e87ef0133ce94c1c5a84b1f9571a43a10e",
+      "scriptSHA256": "148658f1f159dc3eef4b5c701a8c41cc9f8107257b72a2d5df478a2ffdeca960",
+      "deliverySHA256": "32735bdef642826f18c591a7d0b6fd0e6b884814d3c0f79df15a101dfbb99335",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Kore",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "052f3a38e1fdd1f5d538cce5b82e47e87ef0133ce94c1c5a84b1f9571a43a10e",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    },
+    {
+      "id": "L01-S10",
+      "audioSHA256": "a7ffb7b83d4846197e0c0c149c1d874a48af062a3ba73808cd12e7ee35603e8a",
+      "scriptSHA256": "66532ff1486f5b9bb0cfabdfb9763eb17b9e2c01bac30eb508d21e1bfc6e4110",
+      "deliverySHA256": "62805be77aa4e0edf619be24d892cefb8bfe9a8a34fa4d9d3df5e9ed70db7f48",
+      "model": "gemini-2.5-pro-preview-tts",
+      "voice": "Charon",
+      "automatedComplete": true,
+      "expectedCalls": 3,
+      "successfulCalls": 3,
+      "unresolvedFindingIds": [],
+      "ownerRejected": false,
+      "listeningApproval": {
+        "status": "accepted",
+        "audioSHA256": "a7ffb7b83d4846197e0c0c149c1d874a48af062a3ba73808cd12e7ee35603e8a",
+        "evidence": "owner-acceptance.json: owner approved full audio; scene is verified exact PCM at recorded full-track offsets",
+        "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8"
+      },
+      "triageEvidence": "review-evidence.json contains original flags, diagnostic outcomes and exact final source mappings."
+    }
+  ]
+}

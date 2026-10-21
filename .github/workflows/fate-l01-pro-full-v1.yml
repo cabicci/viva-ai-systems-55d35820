@@ -1,0 +1,75 @@
+name: Fate L01 full approved Pro video
+on:
+  push:
+    branches: [work/fate-l01-full-pilot-20261020]
+    paths: [experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-full-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-full-v1
+  EXPECTED_REQUEST_SHA256: 48dbaaf87a3ab45544e0bf7d2d92b6cc545b8223dc83a9c8dd52de9fde3e5269
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        number: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify approved audio and actual-recording timing
+        run: |
+          python "$PACKAGE/prepare.py" ${{ matrix.number }}
+          echo "SID=$(printf 'L01-S%02d' ${{ matrix.number }})" >> "$GITHUB_ENV"
+      - name: Install locked renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/pro-full-v1
+        run: npm ci --no-audit --no-fund
+      - name: Render semantic checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - name: Deliver checkpoint images immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-full-stills-${{ env.SID }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render and verify scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+          python "$PACKAGE/verify.py" scene
+      - name: Deliver this finished scene immediately
+        if: always() && env.SID != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-full-scene-${{ env.SID }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  assemble:
+    needs: scene
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Receive rendered silent scenes
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: fate-l01-pro-full-scene-*
+          path: ${{ env.PACKAGE }}/downloads/scenes
+      - name: Assemble once with continuous approved master
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/prepare.py" full
+          python "$PACKAGE/assemble.py"
+          python "$PACKAGE/verify.py" full
+      - name: Deliver complete lesson and verification
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-l01-pro-full-final
+          path: ${{ env.PACKAGE }}/final/
+          retention-days: 30

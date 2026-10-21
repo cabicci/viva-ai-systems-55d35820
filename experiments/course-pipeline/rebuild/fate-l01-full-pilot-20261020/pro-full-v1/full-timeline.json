@@ -1,0 +1,7579 @@
+{
+  "role": "accepted-audio-visual-timeline",
+  "fullAudioSHA256": "ff08a99c4be6e5e91d53a8211434099a0345b8e2e04bc836f3b7b4d1c33724e8",
+  "fullAudioPath": "../L01-ar-pro-v2/complete/L01-ar-pro-v2.wav",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "title": "نتيجة تحليل… نقدر نستنتج منها إيه؟",
+      "index": 0,
+      "startSeconds": 0.0,
+      "endSeconds": 40.45095833333333,
+      "sourceAudioSHA256": "a28b85f3148296f354830ca9167416c50772a416783fee0df79d3bd5f8d1f2cc",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S01/timing.json",
+      "timingSHA256": "1a68cbc599530c51bffe4001ce54bb110123d4a6c7534f8422d836a1ce6ad004",
+      "maxTwoPassDifference": 0.4980000000000011,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "مادّة محدّدة اتقاست",
+          "matchedText": "مادّة محدّدة اتقاست",
+          "time": 17.488,
+          "end": 18.918,
+          "firstPassTime": 17.2,
+          "differenceSeconds": 0.28800000000000026,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal measured substance",
+          "sceneRelativeSeconds": 17.488,
+          "globalSeconds": 17.488,
+          "globalFrame": 525
+        },
+        {
+          "id": "1",
+          "cue": "مين أكل منها",
+          "matchedText": "مين أكل منها",
+          "time": 21.098,
+          "end": 21.838,
+          "firstPassTime": 20.7,
+          "differenceSeconds": 0.3979999999999997,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal consumer uncertainty",
+          "sceneRelativeSeconds": 21.098,
+          "globalSeconds": 21.098,
+          "globalFrame": 633
+        },
+        {
+          "id": "2",
+          "cue": "وأكل قدّ إيه",
+          "matchedText": "وأكل قدّ إيه",
+          "time": 22.088,
+          "end": 22.938,
+          "firstPassTime": 22.0,
+          "differenceSeconds": 0.08800000000000097,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal amount uncertainty",
+          "sceneRelativeSeconds": 22.088,
+          "globalSeconds": 22.088,
+          "globalFrame": 663
+        },
+        {
+          "id": "3",
+          "cue": "ولا إيه اللّي حصل له",
+          "matchedText": "ولا إيه اللّي حصل له",
+          "time": 23.258,
+          "end": 24.318,
+          "firstPassTime": 23.1,
+          "differenceSeconds": 0.1579999999999977,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal outcome uncertainty",
+          "sceneRelativeSeconds": 23.258,
+          "globalSeconds": 23.258,
+          "globalFrame": 698
+        },
+        {
+          "id": "4",
+          "cue": "استنتاج على قدّ الدّليل",
+          "matchedText": "استنتاج على قدّ الدّليل",
+          "time": 31.498,
+          "end": 33.118,
+          "firstPassTime": 31.0,
+          "differenceSeconds": 0.4980000000000011,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show evidence-limited conclusion",
+          "sceneRelativeSeconds": 31.498,
+          "globalSeconds": 31.498,
+          "globalFrame": 945
+        }
+      ]
+    },
+    {
+      "id": "L01-S02",
+      "title": "المتبقي مش لازم يكون ظاهرًا",
+      "index": 1,
+      "startSeconds": 40.45095833333333,
+      "endSeconds": 88.62191666666666,
+      "sourceAudioSHA256": "fb77cac94c9374a994532ebb0688798e681b6295bfdb8b706df699c055b3b38c",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S02/timing.json",
+      "timingSHA256": "05439d1eb4a5f0c11947277eff16341a679bdcb9bda78e14c42ce8c7f68da287",
+      "maxTwoPassDifference": 0.21799999999999997,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "المادّة الأصليّة",
+          "matchedText": "المادّة الأصليّة",
+          "time": 4.858,
+          "end": 5.708,
+          "firstPassTime": 4.64,
+          "differenceSeconds": 0.21799999999999997,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal parent markers",
+          "sceneRelativeSeconds": 4.858,
+          "globalSeconds": 45.30895833333333,
+          "globalFrame": 1359
+        },
+        {
+          "id": "1",
+          "cue": "نواتج معيّنة",
+          "matchedText": "نواتج معيّنة",
+          "time": 9.388,
+          "end": 10.208,
+          "firstPassTime": 9.21,
+          "differenceSeconds": 0.17799999999999905,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal transformation markers",
+          "sceneRelativeSeconds": 9.388,
+          "globalSeconds": 49.83895833333333,
+          "globalFrame": 1495
+        },
+        {
+          "id": "2",
+          "cue": "لو التّحليل قاس المادّة الأصليّة",
+          "matchedText": "لو التّحليل قاس المادّة الأصليّة",
+          "time": 22.018,
+          "end": 23.908,
+          "firstPassTime": 21.84,
+          "differenceSeconds": 0.17800000000000082,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal laboratory definition",
+          "sceneRelativeSeconds": 22.018,
+          "globalSeconds": 62.46895833333333,
+          "globalFrame": 1874
+        },
+        {
+          "id": "3",
+          "cue": "اختلاف لازم نحلّه",
+          "matchedText": "اختلاف لازم نحلّه",
+          "time": 29.248,
+          "end": 30.508,
+          "firstPassTime": 29.21,
+          "differenceSeconds": 0.038000000000000256,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal reference mismatch",
+          "sceneRelativeSeconds": 29.248,
+          "globalSeconds": 69.69895833333334,
+          "globalFrame": 2091
+        },
+        {
+          "id": "4",
+          "cue": "العلامات اللّي على الرّسم",
+          "matchedText": "العلامات اللّي على الرّسم",
+          "time": 36.298,
+          "end": 37.638,
+          "firstPassTime": 36.24,
+          "differenceSeconds": 0.05799999999999983,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Explain schematic markers",
+          "sceneRelativeSeconds": 36.298,
+          "globalSeconds": 76.74895833333333,
+          "globalFrame": 2302
+        }
+      ]
+    },
+    {
+      "id": "L01-S03",
+      "title": "نتتبع الطريق من الحقل",
+      "index": 2,
+      "startSeconds": 88.66095833333334,
+      "endSeconds": 137.55191666666667,
+      "sourceAudioSHA256": "131a9063dc5d165e3b6d0aa4f54d3c471849d64481e97f7b93a0541e76c87360",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S03/timing.json",
+      "timingSHA256": "3835fbab8cc1f1b1754fc3c650a1ce8aad1bf9df7de8b9143096cf630adfb539",
+      "maxTwoPassDifference": 0.548,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "ولو حدّ أكل غذاء",
+          "matchedText": "ولو حدّ أكل غذاء",
+          "time": 6.589,
+          "end": 7.759,
+          "firstPassTime": 6.51,
+          "differenceSeconds": 0.07900000000000063,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal ingestion route",
+          "sceneRelativeSeconds": 6.589,
+          "globalSeconds": 95.24995833333334,
+          "globalFrame": 2857
+        },
+        {
+          "id": "1",
+          "cue": "تتحرّك مع المَيّه",
+          "matchedText": "تتحرّك مع المَيّه",
+          "time": 16.058,
+          "end": 16.908,
+          "firstPassTime": 15.51,
+          "differenceSeconds": 0.548,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Animate runoff tracer",
+          "sceneRelativeSeconds": 16.058,
+          "globalSeconds": 104.71895833333335,
+          "globalFrame": 3142
+        },
+        {
+          "id": "2",
+          "cue": "وصلت فعلًا",
+          "matchedText": "وصلت فعلًا",
+          "time": 21.318,
+          "end": 22.018,
+          "firstPassTime": 21.21,
+          "differenceSeconds": 0.10800000000000054,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal measurement questions",
+          "sceneRelativeSeconds": 21.318,
+          "globalSeconds": 109.97895833333334,
+          "globalFrame": 3299
+        },
+        {
+          "id": "3",
+          "cue": "وقت الرّشّ",
+          "matchedText": "وقت الرّشّ",
+          "time": 24.118,
+          "end": 24.738,
+          "firstPassTime": 24.01,
+          "differenceSeconds": 0.10799999999999699,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal drift path",
+          "sceneRelativeSeconds": 24.118,
+          "globalSeconds": 112.77895833333334,
+          "globalFrame": 3383
+        },
+        {
+          "id": "4",
+          "cue": "السّهم بيوضّح",
+          "matchedText": "السّهم بيوضّح",
+          "time": 44.568,
+          "end": 45.538,
+          "firstPassTime": 44.36,
+          "differenceSeconds": 0.2079999999999984,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show movement is not proof of harm",
+          "sceneRelativeSeconds": 44.568,
+          "globalSeconds": 133.22895833333334,
+          "globalFrame": 3997
+        }
+      ]
+    },
+    {
+      "id": "L01-S04",
+      "title": "قدرة على الضرر، تعرّض، مخاطر",
+      "index": 3,
+      "startSeconds": 137.55191666666667,
+      "endSeconds": 187.962875,
+      "sourceAudioSHA256": "197a4dd2d80f277c55a0eb20f1d3d5768d04000ece2bd45fc504d375b8b7fe7f",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S04/timing.json",
+      "timingSHA256": "f1aea96cb9af72d4e0bb5f52eceef35973b797275aeda24be19c1721eeadd919",
+      "maxTwoPassDifference": 0.6980000000000004,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "إحداث الضّرر",
+          "matchedText": "إحداث الضّرر",
+          "time": 10.318,
+          "end": 11.218,
+          "firstPassTime": 9.62,
+          "differenceSeconds": 0.6980000000000004,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal hazard",
+          "sceneRelativeSeconds": 10.318,
+          "globalSeconds": 147.86991666666668,
+          "globalFrame": 4436
+        },
+        {
+          "id": "1",
+          "cue": "سؤال عن التّعرّض",
+          "matchedText": "سؤال عن التّعرّض",
+          "time": 18.348,
+          "end": 19.348,
+          "firstPassTime": 18.06,
+          "differenceSeconds": 0.28800000000000026,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal exposure",
+          "sceneRelativeSeconds": 18.348,
+          "globalSeconds": 155.89991666666668,
+          "globalFrame": 4677
+        },
+        {
+          "id": "2",
+          "cue": "أمّا المخاطر",
+          "matchedText": "أمّا المخاطر",
+          "time": 20.038,
+          "end": 20.888,
+          "firstPassTime": 19.96,
+          "differenceSeconds": 0.0779999999999994,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal risk",
+          "sceneRelativeSeconds": 20.038,
+          "globalSeconds": 157.58991666666668,
+          "globalFrame": 4728
+        },
+        {
+          "id": "3",
+          "cue": "جرعة معيّنة",
+          "matchedText": "جرعة معيّنة",
+          "time": 28.238,
+          "end": 29.118,
+          "firstPassTime": 28.3,
+          "differenceSeconds": 0.062000000000001165,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show applicability question",
+          "sceneRelativeSeconds": 28.238,
+          "globalSeconds": 165.78991666666667,
+          "globalFrame": 4974
+        },
+        {
+          "id": "4",
+          "cue": "عدم وجود أعراض فوريّة",
+          "matchedText": "عدم وجود أعراض فوريّة",
+          "time": 38.428,
+          "end": 39.948,
+          "firstPassTime": 38.16,
+          "differenceSeconds": 0.2680000000000007,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show immediate-symptom limitation",
+          "sceneRelativeSeconds": 38.428,
+          "globalSeconds": 175.97991666666667,
+          "globalFrame": 5279
+        }
+      ]
+    },
+    {
+      "id": "L01-S05",
+      "title": "نقرأ التقرير قبل المقارنة",
+      "index": 4,
+      "startSeconds": 187.962875,
+      "endSeconds": 242.61383333333333,
+      "sourceAudioSHA256": "99c50a0859ec858f0553b6614b2e902f4932a011d52828f826a859db2fac21e3",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S05/timing.json",
+      "timingSHA256": "53a629b291beb28f05b727917e2a2f3764375ce7a30831f4c64387568967ffba",
+      "maxTwoPassDifference": 0.1739999999999995,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "التّركيز المقاس",
+          "matchedText": "التّركيز المقاس",
+          "time": 4.93,
+          "end": 5.83,
+          "firstPassTime": 4.756,
+          "differenceSeconds": 0.1739999999999995,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal concentration",
+          "sceneRelativeSeconds": 4.93,
+          "globalSeconds": 192.892875,
+          "globalFrame": 5787
+        },
+        {
+          "id": "1",
+          "cue": "آخر كلمة",
+          "matchedText": "آخر كلمة",
+          "time": 12.44,
+          "end": 13.21,
+          "firstPassTime": 12.406,
+          "differenceSeconds": 0.03399999999999892,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Emphasize food denominator",
+          "sceneRelativeSeconds": 12.44,
+          "globalSeconds": 200.402875,
+          "globalFrame": 6012
+        },
+        {
+          "id": "2",
+          "cue": "ومعانا حدّ للمقارنة",
+          "matchedText": "ومعانا حدّ للمقارنة",
+          "time": 20.08,
+          "end": 21.62,
+          "firstPassTime": 20.006,
+          "differenceSeconds": 0.07399999999999807,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal illustrative limit",
+          "sceneRelativeSeconds": 20.08,
+          "globalSeconds": 208.04287499999998,
+          "globalFrame": 6241
+        },
+        {
+          "id": "3",
+          "cue": "عشان نقارن صحّ",
+          "matchedText": "عشان نقارن صحّ",
+          "time": 28.18,
+          "end": 29.23,
+          "firstPassTime": 28.106,
+          "differenceSeconds": 0.07399999999999807,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show comparison prerequisites",
+          "sceneRelativeSeconds": 28.18,
+          "globalSeconds": 216.142875,
+          "globalFrame": 6484
+        },
+        {
+          "id": "4",
+          "cue": "لو الحدّ خاصّ بالتّفّاح",
+          "matchedText": "لو الحدّ خاصّ بالتّفّاح",
+          "time": 39.28,
+          "end": 40.83,
+          "firstPassTime": 39.206,
+          "differenceSeconds": 0.07399999999999807,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show commodity mismatch",
+          "sceneRelativeSeconds": 39.28,
+          "globalSeconds": 227.242875,
+          "globalFrame": 6817
+        }
+      ]
+    },
+    {
+      "id": "L01-S06",
+      "title": "النتيجة وحدودها",
+      "index": 5,
+      "startSeconds": 242.61383333333333,
+      "endSeconds": 295.3047916666667,
+      "sourceAudioSHA256": "8f2773f89145772d6636e4e74bb7400c3d4438f11d9e95c7f42e5b6634344d89",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S06/timing.json",
+      "timingSHA256": "b16ec88b7a29c8b844fa126346744d0f196bdcd70df57e767b83c8d863705a46",
+      "maxTwoPassDifference": 0.79,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "نقارن بين الرّقمين",
+          "matchedText": "نقارن بين الرّقمين",
+          "time": 1.28,
+          "end": 2.21,
+          "firstPassTime": 0.49,
+          "differenceSeconds": 0.79,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show comparison axis",
+          "sceneRelativeSeconds": 1.28,
+          "globalSeconds": 243.89383333333333,
+          "globalFrame": 7317
+        },
+        {
+          "id": "1",
+          "cue": "والفرق بينهم",
+          "matchedText": "والفرق بينهم",
+          "time": 9.25,
+          "end": 9.93,
+          "firstPassTime": 9.21,
+          "differenceSeconds": 0.03999999999999915,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal concentration difference",
+          "sceneRelativeSeconds": 9.25,
+          "globalSeconds": 251.86383333333333,
+          "globalFrame": 7556
+        },
+        {
+          "id": "2",
+          "cue": "مش هامش أمان",
+          "matchedText": "مش هامش أمان",
+          "time": 21.99,
+          "end": 22.91,
+          "firstPassTime": 21.83,
+          "differenceSeconds": 0.16000000000000014,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reject personal allowance interpretation",
+          "sceneRelativeSeconds": 21.99,
+          "globalSeconds": 264.60383333333334,
+          "globalFrame": 7938
+        },
+        {
+          "id": "3",
+          "cue": "الحدّ الأقصى",
+          "matchedText": "الحدّ الأقصى",
+          "time": 26.24,
+          "end": 26.95,
+          "firstPassTime": 26.11,
+          "differenceSeconds": 0.129999999999999,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show commodity concentration reference",
+          "sceneRelativeSeconds": 26.24,
+          "globalSeconds": 268.85383333333334,
+          "globalFrame": 8066
+        },
+        {
+          "id": "4",
+          "cue": "شخص اتسمّم",
+          "matchedText": "شخص اتسمّم",
+          "time": 43.55,
+          "end": 44.31,
+          "firstPassTime": 43.32,
+          "differenceSeconds": 0.22999999999999687,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reject poisoning diagnosis",
+          "sceneRelativeSeconds": 43.55,
+          "globalSeconds": 286.16383333333334,
+          "globalFrame": 8585
+        }
+      ]
+    },
+    {
+      "id": "L01-S07",
+      "title": "من التركيز إلى كمية في حصة",
+      "index": 6,
+      "startSeconds": 295.3047916666667,
+      "endSeconds": 358.67575,
+      "sourceAudioSHA256": "3d12d7413790ad369941483c664aa07cc0ec1ccfccd715b0a133d63d56da8f6a",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S07/timing.json",
+      "timingSHA256": "ef7af0d07aea9db458f2e3eb7b864217e69a43d3cb49c3a5e118d0f191c3a69b",
+      "maxTwoPassDifference": 0.3899999999999988,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "ميتين جرام",
+          "matchedText": "ميتين جرام",
+          "time": 8.78,
+          "end": 9.38,
+          "firstPassTime": 8.39,
+          "differenceSeconds": 0.3899999999999988,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal portion mass",
+          "sceneRelativeSeconds": 8.78,
+          "globalSeconds": 304.08479166666666,
+          "globalFrame": 9123
+        },
+        {
+          "id": "1",
+          "cue": "نحوّل الوزن",
+          "matchedText": "نحَوّل الوزن",
+          "time": 10.85,
+          "end": 11.51,
+          "firstPassTime": 10.81,
+          "differenceSeconds": 0.03999999999999915,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Convert grams to kilograms",
+          "sceneRelativeSeconds": 10.85,
+          "globalSeconds": 306.1547916666667,
+          "globalFrame": 9185
+        },
+        {
+          "id": "2",
+          "cue": "نضرب التّركيز في الوزن",
+          "matchedText": "نضرب التّركيز في الوزن",
+          "time": 16.75,
+          "end": 18.12,
+          "firstPassTime": 16.76,
+          "differenceSeconds": 0.010000000000001563,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Assemble multiplication",
+          "sceneRelativeSeconds": 16.75,
+          "globalSeconds": 312.0547916666667,
+          "globalFrame": 9362
+        },
+        {
+          "id": "3",
+          "cue": "الكيلوجرام في البسط والمقام",
+          "matchedText": "الكيلوجرام في البسط والمقام",
+          "time": 43.69,
+          "end": 45.41,
+          "firstPassTime": 43.56,
+          "differenceSeconds": 0.12999999999999545,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Cancel matching units",
+          "sceneRelativeSeconds": 43.69,
+          "globalSeconds": 338.9947916666667,
+          "globalFrame": 10170
+        },
+        {
+          "id": "4",
+          "cue": "صفر فاصلة صفر واحد ستّة",
+          "matchedText": "صفر فاصلة صفر واحد ستّة",
+          "time": 23.88,
+          "end": 25.99,
+          "firstPassTime": 24.11,
+          "differenceSeconds": 0.23000000000000043,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal 0.016 mg result",
+          "sceneRelativeSeconds": 23.88,
+          "globalSeconds": 319.1847916666667,
+          "globalFrame": 9576
+        },
+        {
+          "id": "5",
+          "cue": "مش بالضّرورة الكمّيّة اللّي الجسم امتصّها",
+          "matchedText": "مش بالضّرورة الكمّيّة اللّي الجسم امتصّها",
+          "time": 32.11,
+          "end": 34.23,
+          "firstPassTime": 32.11,
+          "differenceSeconds": 0.0,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Distinguish ingested from absorbed amount",
+          "sceneRelativeSeconds": 32.11,
+          "globalSeconds": 327.4147916666667,
+          "globalFrame": 9822
+        },
+        {
+          "id": "6",
+          "cue": "ولو حجم الحصّة زاد",
+          "matchedText": "ولو حجم الحصّة زاد",
+          "time": 49.39,
+          "end": 50.81,
+          "firstPassTime": 49.31,
+          "differenceSeconds": 0.0799999999999983,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show larger-portion implication",
+          "sceneRelativeSeconds": 49.39,
+          "globalSeconds": 344.6947916666667,
+          "globalFrame": 10341
+        },
+        {
+          "id": "7",
+          "cue": "وتقييم التّعرّض محتاج",
+          "matchedText": "وتقييم التّعرّض محتاج",
+          "time": 55.35,
+          "end": 56.91,
+          "firstPassTime": 55.41,
+          "differenceSeconds": 0.05999999999999517,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal further exposure information",
+          "sceneRelativeSeconds": 55.35,
+          "globalSeconds": 350.6547916666667,
+          "globalFrame": 10520
+        }
+      ]
+    },
+    {
+      "id": "L01-S08",
+      "title": "نفكك ادعاءً من جدول الأضرار",
+      "index": 7,
+      "startSeconds": 358.6847916666667,
+      "endSeconds": 409.49575,
+      "sourceAudioSHA256": "3e186140a4566630be03d1ebbb9df6b0c8a09712cf60574a19c6768553375240",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S08/timing.json",
+      "timingSHA256": "ab9a4461eb67d7c8efc3b3400dd2e32fd5338ff8678b2d3bddeaafd7a9055b9c",
+      "maxTwoPassDifference": 0.2890000000000015,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "فيه جدول",
+          "matchedText": "فيه جدول",
+          "time": 1.459,
+          "end": 2.009,
+          "firstPassTime": 1.29,
+          "differenceSeconds": 0.16900000000000004,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Introduce source table",
+          "sceneRelativeSeconds": 1.459,
+          "globalSeconds": 360.1437916666667,
+          "globalFrame": 10804
+        },
+        {
+          "id": "1",
+          "cue": "أيّ غذاء",
+          "matchedText": "أيّ غذاء",
+          "time": 16.149,
+          "end": 16.719,
+          "firstPassTime": 15.91,
+          "differenceSeconds": 0.23900000000000077,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Expose unsupported any-food inference",
+          "sceneRelativeSeconds": 16.149,
+          "globalSeconds": 374.8337916666667,
+          "globalFrame": 11245
+        },
+        {
+          "id": "2",
+          "cue": "الدّراسة اتعملت",
+          "matchedText": "الدّراسة اتعملت",
+          "time": 23.649,
+          "end": 24.729,
+          "firstPassTime": 23.56,
+          "differenceSeconds": 0.08900000000000219,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal study/organism questions",
+          "sceneRelativeSeconds": 23.649,
+          "globalSeconds": 382.3337916666667,
+          "globalFrame": 11470
+        },
+        {
+          "id": "3",
+          "cue": "وبجرعة أو تركيز",
+          "matchedText": "وبجرعة أو تركيز",
+          "time": 26.289,
+          "end": 27.349,
+          "firstPassTime": 26.11,
+          "differenceSeconds": 0.17900000000000205,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal dose-route-duration questions",
+          "sceneRelativeSeconds": 26.289,
+          "globalSeconds": 384.97379166666667,
+          "globalFrame": 11549
+        },
+        {
+          "id": "4",
+          "cue": "نراجع اسم المادّة وصيغتها",
+          "matchedText": "نراجع اسم المادّة وصيغتها",
+          "time": 33.549,
+          "end": 35.649,
+          "firstPassTime": 33.26,
+          "differenceSeconds": 0.2890000000000015,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Verify chemical identity",
+          "sceneRelativeSeconds": 33.549,
+          "globalSeconds": 392.23379166666666,
+          "globalFrame": 11767
+        }
+      ]
+    },
+    {
+      "id": "L01-S09",
+      "title": "التقييم والممارسة الزراعية",
+      "index": 8,
+      "startSeconds": 409.49575,
+      "endSeconds": 464.4667083333333,
+      "sourceAudioSHA256": "052f3a38e1fdd1f5d538cce5b82e47e87ef0133ce94c1c5a84b1f9571a43a10e",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S09/timing.json",
+      "timingSHA256": "b56d6d3205b397d17fd6beeced8e6e2920129a54161b6c00ed21e14f73ba0044",
+      "maxTwoPassDifference": 0.6080000000000001,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "خبراء منظّمة الأغذية",
+          "matchedText": "خبراء منظمة الأغذية",
+          "time": 2.888,
+          "end": 4.218,
+          "firstPassTime": 2.28,
+          "differenceSeconds": 0.6080000000000001,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Introduce scientific expert context",
+          "sceneRelativeSeconds": 2.888,
+          "globalSeconds": 412.38374999999996,
+          "globalFrame": 12372
+        },
+        {
+          "id": "1",
+          "cue": "تقييم الدّراسات العلميّة",
+          "matchedText": "تقييم الدراسات العلمية",
+          "time": 7.498,
+          "end": 9.058,
+          "firstPassTime": 7.16,
+          "differenceSeconds": 0.3380000000000001,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal scientific assessment",
+          "sceneRelativeSeconds": 7.498,
+          "globalSeconds": 416.99375,
+          "globalFrame": 12510
+        },
+        {
+          "id": "2",
+          "cue": "الجهات اللّي بتحطّ المعايير",
+          "matchedText": "الجهات اللي بتحط المعايير",
+          "time": 14.688,
+          "end": 16.138,
+          "firstPassTime": 14.53,
+          "differenceSeconds": 0.15800000000000125,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal standards/government decision",
+          "sceneRelativeSeconds": 14.688,
+          "globalSeconds": 424.18375,
+          "globalFrame": 12726
+        },
+        {
+          "id": "3",
+          "cue": "الممارسة الزّراعيّة الجيّدة",
+          "matchedText": "الممارسة الزراعية الجيدة",
+          "time": 23.598,
+          "end": 25.548,
+          "firstPassTime": 23.9,
+          "differenceSeconds": 0.3019999999999996,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal authorized-use conditions",
+          "sceneRelativeSeconds": 23.598,
+          "globalSeconds": 433.09375,
+          "globalFrame": 12993
+        },
+        {
+          "id": "4",
+          "cue": "رقم التّحليل ما يحدّدش",
+          "matchedText": "رقم التحليل ما يحددش",
+          "time": 31.598,
+          "end": 33.148,
+          "firstPassTime": 31.28,
+          "differenceSeconds": 0.31799999999999784,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reject invented use/harvest instructions",
+          "sceneRelativeSeconds": 31.598,
+          "globalSeconds": 441.09375,
+          "globalFrame": 13233
+        }
+      ]
+    },
+    {
+      "id": "L01-S10",
+      "title": "دورك: حالة جديدة",
+      "index": 9,
+      "startSeconds": 464.4667083333333,
+      "endSeconds": 517.5176666666666,
+      "sourceAudioSHA256": "a7ffb7b83d4846197e0c0c149c1d874a48af062a3ba73808cd12e7ee35603e8a",
+      "timingFile": "media/L01-pro-sync-v1/timings/L01-S10/timing.json",
+      "timingSHA256": "06a9e06fa1212ccad1e5fd993192a69834cda04a91060ac4d3a322011f14645b",
+      "maxTwoPassDifference": 0.54,
+      "actions": [
+        {
+          "id": "0",
+          "cue": "تقرير تحليل للفاصوليا",
+          "matchedText": "تقرير تحليل للفاصوليا",
+          "time": 5.78,
+          "end": 7.13,
+          "firstPassTime": 5.24,
+          "differenceSeconds": 0.54,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Introduce beans case",
+          "sceneRelativeSeconds": 5.78,
+          "globalSeconds": 470.2467083333333,
+          "globalFrame": 14107
+        },
+        {
+          "id": "1",
+          "cue": "صفر فاصلة صفر ستّة",
+          "matchedText": "صفر فاصلة صفر ستة",
+          "time": 9.59,
+          "end": 11.11,
+          "firstPassTime": 9.18,
+          "differenceSeconds": 0.41000000000000014,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal concentration",
+          "sceneRelativeSeconds": 9.59,
+          "globalSeconds": 474.0567083333333,
+          "globalFrame": 14222
+        },
+        {
+          "id": "2",
+          "cue": "صفر فاصلة صفر خمسة",
+          "matchedText": "صفر فاصلة صفر خمسة",
+          "time": 16.88,
+          "end": 18.61,
+          "firstPassTime": 16.6,
+          "differenceSeconds": 0.2799999999999976,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal limit",
+          "sceneRelativeSeconds": 16.88,
+          "globalSeconds": 481.3467083333333,
+          "globalFrame": 14440
+        },
+        {
+          "id": "3",
+          "cue": "ميّة وخمسين جرام",
+          "matchedText": "مية وخمسين جرام",
+          "time": 20.44,
+          "end": 21.81,
+          "firstPassTime": 20.38,
+          "differenceSeconds": 0.060000000000002274,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Reveal portion mass",
+          "sceneRelativeSeconds": 20.44,
+          "globalSeconds": 484.9067083333333,
+          "globalFrame": 14547
+        },
+        {
+          "id": "4",
+          "cue": "وقّف الفيديو",
+          "matchedText": "وقف الفيديو",
+          "time": 22.85,
+          "end": 23.71,
+          "firstPassTime": 22.7,
+          "differenceSeconds": 0.15000000000000213,
+          "method": "Two actual-recording model passes; approximate acoustic timings, not forced alignment",
+          "action": "Show pause-and-reason prompt",
+          "sceneRelativeSeconds": 22.85,
+          "globalSeconds": 487.31670833333334,
+          "globalFrame": 14620
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": "تخيّل",
+      "start": 0.21,
+      "end": 0.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إنّ",
+      "start": 0.6,
+      "end": 0.75,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "معاك",
+      "start": 0.75,
+      "end": 1.06,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "تقرير",
+      "start": 1.06,
+      "end": 1.48,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "من",
+      "start": 1.48,
+      "end": 1.62,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "المعمل",
+      "start": 1.62,
+      "end": 2.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "عن",
+      "start": 2.1,
+      "end": 2.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "عيّنة",
+      "start": 2.3,
+      "end": 2.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "طماطم.",
+      "start": 2.7,
+      "end": 3.26,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "التّقرير",
+      "start": 3.9,
+      "end": 4.35,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "بيقول",
+      "start": 4.35,
+      "end": 4.72,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إنّ",
+      "start": 4.72,
+      "end": 4.88,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "فيه",
+      "start": 4.88,
+      "end": 5.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "متبقّي",
+      "start": 5.1,
+      "end": 5.69,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لمبيد",
+      "start": 5.69,
+      "end": 6.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اتقاس",
+      "start": 6.2,
+      "end": 6.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "في",
+      "start": 6.7,
+      "end": 6.82,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "العينة.",
+      "start": 6.82,
+      "end": 7.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "أوّل",
+      "start": 8.1,
+      "end": 8.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ردّ",
+      "start": 8.4,
+      "end": 8.62,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "فعل",
+      "start": 8.62,
+      "end": 8.96,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ممكن",
+      "start": 9.07,
+      "end": 9.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "يكون:",
+      "start": 9.4,
+      "end": 9.9,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "يبقى",
+      "start": 10.2,
+      "end": 10.5,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "الطّماطم",
+      "start": 10.5,
+      "end": 11.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "دي",
+      "start": 11.0,
+      "end": 11.18,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "سبّبت",
+      "start": 11.18,
+      "end": 11.68,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "تسمّم.",
+      "start": 11.68,
+      "end": 12.38,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "بسّ",
+      "start": 12.8,
+      "end": 13.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "استنى",
+      "start": 13.0,
+      "end": 13.38,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لحظة.",
+      "start": 13.38,
+      "end": 13.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "التّقرير",
+      "start": 14.5,
+      "end": 14.9,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قال",
+      "start": 14.9,
+      "end": 15.18,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لنا",
+      "start": 15.18,
+      "end": 15.38,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إيه",
+      "start": 15.38,
+      "end": 15.58,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "بالضّبط؟",
+      "start": 15.58,
+      "end": 16.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قال",
+      "start": 16.6,
+      "end": 16.88,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إنّ",
+      "start": 16.88,
+      "end": 17.08,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "مادّة",
+      "start": 17.2,
+      "end": 17.58,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "محدّدة",
+      "start": 17.58,
+      "end": 18.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اتقاست",
+      "start": 18.1,
+      "end": 18.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "في",
+      "start": 18.6,
+      "end": 18.78,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "عيّنة.",
+      "start": 18.78,
+      "end": 19.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لسّه",
+      "start": 19.9,
+      "end": 20.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ما",
+      "start": 20.2,
+      "end": 20.38,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قالش",
+      "start": 20.38,
+      "end": 20.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "مين",
+      "start": 20.7,
+      "end": 20.98,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "أكل",
+      "start": 20.98,
+      "end": 21.28,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "منها،",
+      "start": 21.28,
+      "end": 21.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "وأكل",
+      "start": 22.0,
+      "end": 22.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قدّ",
+      "start": 22.3,
+      "end": 22.5,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إيه،",
+      "start": 22.5,
+      "end": 22.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ولا",
+      "start": 23.1,
+      "end": 23.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إيه",
+      "start": 23.3,
+      "end": 23.48,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اللّي",
+      "start": 23.48,
+      "end": 23.68,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "حصل",
+      "start": 23.68,
+      "end": 24.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "له.",
+      "start": 24.0,
+      "end": 24.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "في",
+      "start": 24.7,
+      "end": 24.88,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "الدّرس",
+      "start": 24.88,
+      "end": 25.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ده،",
+      "start": 25.2,
+      "end": 25.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "هنمشي",
+      "start": 25.7,
+      "end": 26.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "من",
+      "start": 26.1,
+      "end": 26.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "مكان",
+      "start": 26.3,
+      "end": 26.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "استخدام",
+      "start": 26.7,
+      "end": 27.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "المبيد",
+      "start": 27.2,
+      "end": 27.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لحدّ",
+      "start": 28.0,
+      "end": 28.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "نتيجة",
+      "start": 28.4,
+      "end": 28.9,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "التّحليل،",
+      "start": 28.9,
+      "end": 29.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "ونتعلّم",
+      "start": 30.1,
+      "end": 30.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "نكتب",
+      "start": 30.6,
+      "end": 31.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "استنتاج",
+      "start": 31.0,
+      "end": 31.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "على",
+      "start": 31.6,
+      "end": 31.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قدّ",
+      "start": 31.8,
+      "end": 32.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "الدّليل",
+      "start": 32.0,
+      "end": 32.5,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اللّي",
+      "start": 32.5,
+      "end": 32.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "معانا.",
+      "start": 32.7,
+      "end": 33.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "السّؤال",
+      "start": 33.9,
+      "end": 34.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اللّي",
+      "start": 34.3,
+      "end": 34.5,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "هنرجع",
+      "start": 34.5,
+      "end": 34.9,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "له",
+      "start": 34.9,
+      "end": 35.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "طول",
+      "start": 35.1,
+      "end": 35.4,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "الوقت",
+      "start": 35.4,
+      "end": 35.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "هو:",
+      "start": 35.8,
+      "end": 36.2,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "إيه",
+      "start": 36.6,
+      "end": 36.8,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اللّي",
+      "start": 36.8,
+      "end": 37.0,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "عرفناه،",
+      "start": 37.0,
+      "end": 37.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "وإيه",
+      "start": 37.9,
+      "end": 38.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "اللّي",
+      "start": 38.1,
+      "end": 38.3,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "لسّه",
+      "start": 38.3,
+      "end": 38.6,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "محتاجين",
+      "start": 38.6,
+      "end": 39.1,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "نعرفه؟",
+      "start": 39.1,
+      "end": 39.7,
+      "scene": "L01-S01"
+    },
+    {
+      "word": "قبل",
+      "start": 40.45095833333333,
+      "end": 40.66095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "ما",
+      "start": 40.66095833333333,
+      "end": 40.81095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "نكمّل،",
+      "start": 40.81095833333333,
+      "end": 41.35095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "إيه",
+      "start": 41.49095833333333,
+      "end": 41.66095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "هو",
+      "start": 41.66095833333333,
+      "end": 41.84095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "متبقّي",
+      "start": 42.190958333333334,
+      "end": 42.650958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المبيد؟",
+      "start": 42.650958333333335,
+      "end": 43.440958333333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "ممكن",
+      "start": 44.39095833333333,
+      "end": 44.680958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "يكون",
+      "start": 44.680958333333336,
+      "end": 45.010958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المادّة",
+      "start": 45.09095833333333,
+      "end": 45.56095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الأصليّة",
+      "start": 45.56095833333333,
+      "end": 46.040958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الموجودة",
+      "start": 46.17095833333333,
+      "end": 46.59095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "على",
+      "start": 46.59095833333333,
+      "end": 46.790958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الغذاء",
+      "start": 46.95095833333333,
+      "end": 47.440958333333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "أو",
+      "start": 47.45095833333333,
+      "end": 47.61095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "جوّاه،",
+      "start": 47.61095833333333,
+      "end": 48.510958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "وممكن",
+      "start": 48.78095833333333,
+      "end": 49.14095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "يشمل",
+      "start": 49.150958333333335,
+      "end": 49.56095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "نواتج",
+      "start": 49.66095833333333,
+      "end": 50.080958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "معيّنة",
+      "start": 50.080958333333335,
+      "end": 50.46095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "من",
+      "start": 50.46095833333333,
+      "end": 50.64095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "تحوّلها،",
+      "start": 50.64095833333333,
+      "end": 51.61095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "حسب",
+      "start": 51.99095833333333,
+      "end": 52.290958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "التّعريف",
+      "start": 52.290958333333336,
+      "end": 52.81095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المستخدم.",
+      "start": 52.81095833333333,
+      "end": 53.63095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "علشان",
+      "start": 54.09095833333333,
+      "end": 54.39095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "كده،",
+      "start": 54.39095833333333,
+      "end": 54.690958333333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "اسم",
+      "start": 55.190958333333334,
+      "end": 55.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المبيد",
+      "start": 55.45095833333333,
+      "end": 55.88095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "لوحده",
+      "start": 56.010958333333335,
+      "end": 56.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "مش",
+      "start": 56.59095833333333,
+      "end": 56.82095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "كفاية.",
+      "start": 56.82095833333334,
+      "end": 57.510958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "لازم",
+      "start": 57.99095833333333,
+      "end": 58.32095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "نعرف",
+      "start": 58.32095833333334,
+      "end": 58.680958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المعمل",
+      "start": 58.81095833333333,
+      "end": 59.22095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "كان",
+      "start": 59.22095833333333,
+      "end": 59.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "بيدوّر",
+      "start": 59.61095833333333,
+      "end": 60.02095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "على",
+      "start": 60.02095833333333,
+      "end": 60.22095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "إيه",
+      "start": 60.22095833333333,
+      "end": 60.42095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "بالضّبط.",
+      "start": 60.45095833333333,
+      "end": 61.510958333333335,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "لو",
+      "start": 62.290958333333336,
+      "end": 62.44095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "التّحليل",
+      "start": 62.44095833333333,
+      "end": 63.00095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "قاس",
+      "start": 63.00095833333333,
+      "end": 63.31095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المادّة",
+      "start": 63.31095833333333,
+      "end": 63.78095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الأصليّة",
+      "start": 63.78095833333333,
+      "end": 64.40095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "بسّ،",
+      "start": 64.40095833333334,
+      "end": 64.75095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "والمقارنة",
+      "start": 65.15095833333334,
+      "end": 65.70095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المطلوبة",
+      "start": 65.70095833333333,
+      "end": 66.25095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "تشملها",
+      "start": 66.25095833333333,
+      "end": 66.74095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "مع",
+      "start": 66.74095833333334,
+      "end": 66.95095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "ناتج",
+      "start": 67.11095833333333,
+      "end": 67.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "تحوّل،",
+      "start": 67.45095833333333,
+      "end": 68.31095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "يبقى",
+      "start": 68.49095833333334,
+      "end": 68.74095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "لسّه",
+      "start": 68.74095833333334,
+      "end": 69.02095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "عندنا",
+      "start": 69.02095833333334,
+      "end": 69.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "اختلاف",
+      "start": 69.66095833333333,
+      "end": 70.08095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "لازم",
+      "start": 70.08095833333333,
+      "end": 70.39095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "نحلّه.",
+      "start": 70.39095833333333,
+      "end": 70.96095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "كمان،",
+      "start": 71.39095833333333,
+      "end": 71.99095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "وجود",
+      "start": 72.26095833333333,
+      "end": 72.61095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المتبقّي",
+      "start": 72.61095833333333,
+      "end": 73.28095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "مش",
+      "start": 73.36095833333333,
+      "end": 73.59095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "معناه",
+      "start": 73.59095833333333,
+      "end": 74.05095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "إنّنا",
+      "start": 74.05095833333334,
+      "end": 74.35095833333332,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "هنشوف",
+      "start": 74.35095833333332,
+      "end": 74.85095833333332,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "طبقة",
+      "start": 75.01095833333333,
+      "end": 75.38095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "بعيننا.",
+      "start": 75.38095833333333,
+      "end": 76.21095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "العلامات",
+      "start": 76.69095833333333,
+      "end": 77.09095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "اللّي",
+      "start": 77.09095833333333,
+      "end": 77.24095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "على",
+      "start": 77.24095833333334,
+      "end": 77.44095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الرّسم",
+      "start": 77.44095833333333,
+      "end": 78.06095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "مجرّد",
+      "start": 78.29095833333334,
+      "end": 78.68095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "وسيلة",
+      "start": 78.68095833333334,
+      "end": 79.15095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "للشّرح،",
+      "start": 79.15095833333334,
+      "end": 79.85095833333332,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "مش",
+      "start": 80.09095833333333,
+      "end": 80.30095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "شكل",
+      "start": 80.30095833333334,
+      "end": 80.63095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الجزيئات",
+      "start": 80.63095833333333,
+      "end": 81.33095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "الحقيقيّ.",
+      "start": 81.33095833333334,
+      "end": 82.25095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "خلّي",
+      "start": 82.69095833333333,
+      "end": 82.96095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "السّؤال",
+      "start": 82.96095833333334,
+      "end": 83.33095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "ده",
+      "start": 83.33095833333334,
+      "end": 83.49095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "معاك:",
+      "start": 83.49095833333334,
+      "end": 84.05095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "إيه",
+      "start": 84.49095833333334,
+      "end": 84.69095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "المادّة",
+      "start": 84.69095833333333,
+      "end": 85.11095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "اللّي",
+      "start": 85.11095833333333,
+      "end": 85.27095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "اتقاست،",
+      "start": 85.27095833333334,
+      "end": 86.13095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "وفين،",
+      "start": 86.45095833333333,
+      "end": 86.93095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "وبأيّ",
+      "start": 87.17095833333333,
+      "end": 87.51095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "طريقة؟",
+      "start": 87.51095833333333,
+      "end": 88.31095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "word": "نرجع",
+      "start": 88.84095833333335,
+      "end": 89.17095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "للحقل",
+      "start": 89.17095833333335,
+      "end": 89.57095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بعد",
+      "start": 89.97095833333334,
+      "end": 90.22095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "استخدام",
+      "start": 90.22095833333334,
+      "end": 90.72095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المبيد،",
+      "start": 90.72095833333334,
+      "end": 91.24095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "جزء",
+      "start": 91.59095833333335,
+      "end": 91.87095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "من",
+      "start": 91.87095833333333,
+      "end": 92.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المادّة",
+      "start": 92.02095833333334,
+      "end": 92.45095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ممكن",
+      "start": 92.45095833333335,
+      "end": 92.77095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "يفضل",
+      "start": 92.77095833333334,
+      "end": 93.14095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "على",
+      "start": 93.14095833333334,
+      "end": 93.35095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المَحْصول",
+      "start": 93.35095833333334,
+      "end": 93.97095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "أو",
+      "start": 93.97095833333334,
+      "end": 94.17095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "جوّاه",
+      "start": 94.17095833333335,
+      "end": 94.67095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ولو",
+      "start": 95.17095833333335,
+      "end": 95.41095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "حدّ",
+      "start": 95.41095833333334,
+      "end": 95.65095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "أكل",
+      "start": 95.65095833333334,
+      "end": 95.91095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "غذاء",
+      "start": 95.91095833333334,
+      "end": 96.29095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "فيه",
+      "start": 96.42095833333335,
+      "end": 96.64095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "متبقّيات،",
+      "start": 96.77095833333334,
+      "end": 97.47095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ده",
+      "start": 97.77095833333334,
+      "end": 97.94095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "طريق",
+      "start": 97.94095833333334,
+      "end": 98.35095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ممكن",
+      "start": 98.35095833333334,
+      "end": 98.69095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "يحصل",
+      "start": 98.69095833333334,
+      "end": 99.06095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بيه",
+      "start": 99.06095833333335,
+      "end": 99.27095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تعرّض",
+      "start": 99.27095833333334,
+      "end": 99.76095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "للمبيد",
+      "start": 99.76095833333333,
+      "end": 100.32095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وفيه",
+      "start": 101.02095833333334,
+      "end": 101.32095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "طرق",
+      "start": 101.32095833333334,
+      "end": 101.62095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تانية",
+      "start": 101.62095833333333,
+      "end": 102.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مادّة",
+      "start": 102.57095833333334,
+      "end": 102.97095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وصلت",
+      "start": 102.97095833333334,
+      "end": 103.37095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "للتّربة",
+      "start": 103.37095833333333,
+      "end": 103.84095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ممكن",
+      "start": 103.84095833333333,
+      "end": 104.17095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تتحرّك",
+      "start": 104.17095833333335,
+      "end": 104.67095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مع",
+      "start": 104.67095833333335,
+      "end": 104.87095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المَيّه",
+      "start": 104.87095833333333,
+      "end": 105.27095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الجارية",
+      "start": 105.27095833333334,
+      "end": 105.82095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "على",
+      "start": 105.82095833333334,
+      "end": 106.07095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "السّطح،",
+      "start": 106.07095833333334,
+      "end": 106.77095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وتوصل",
+      "start": 107.17095833333335,
+      "end": 107.62095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "لمجرى",
+      "start": 107.62095833333333,
+      "end": 108.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مَيّه",
+      "start": 108.02095833333334,
+      "end": 108.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "هنا",
+      "start": 108.87095833333333,
+      "end": 109.12095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "نسأل:",
+      "start": 109.12095833333333,
+      "end": 109.52095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وصلت",
+      "start": 109.87095833333333,
+      "end": 110.27095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "فعلًا؟",
+      "start": 110.27095833333334,
+      "end": 110.77095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وتركيزها",
+      "start": 111.17095833333335,
+      "end": 111.72095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "قدّ",
+      "start": 111.72095833333334,
+      "end": 111.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "إيه؟",
+      "start": 111.92095833333335,
+      "end": 112.22095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وقت",
+      "start": 112.67095833333335,
+      "end": 112.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الرّشّ،",
+      "start": 112.92095833333335,
+      "end": 113.37095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الرّذاذ",
+      "start": 113.62095833333333,
+      "end": 114.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ممكن",
+      "start": 114.02095833333334,
+      "end": 114.37095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "يتحرّك",
+      "start": 114.37095833333333,
+      "end": 114.82095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "برّه",
+      "start": 114.82095833333334,
+      "end": 115.17095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المكان",
+      "start": 115.17095833333335,
+      "end": 115.67095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "المستهدف",
+      "start": 115.67095833333335,
+      "end": 116.32095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ويلامس",
+      "start": 116.52095833333334,
+      "end": 116.97095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "كائنات",
+      "start": 116.97095833333334,
+      "end": 117.47095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تانية",
+      "start": 117.47095833333334,
+      "end": 117.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "والحشرات",
+      "start": 118.52095833333334,
+      "end": 119.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "النّافعة",
+      "start": 119.02095833333334,
+      "end": 119.52095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ممكن",
+      "start": 119.52095833333334,
+      "end": 119.87095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تتعرّض",
+      "start": 119.87095833333333,
+      "end": 120.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "لمتبقّيات",
+      "start": 120.42095833333335,
+      "end": 121.17095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "على",
+      "start": 121.17095833333335,
+      "end": 121.37095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "النّبات،",
+      "start": 121.37095833333333,
+      "end": 121.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بالتّلامس",
+      "start": 122.37095833333333,
+      "end": 123.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "أو",
+      "start": 123.02095833333334,
+      "end": 123.22095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "وهي",
+      "start": 123.22095833333334,
+      "end": 123.47095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بتتغذّى",
+      "start": 123.47095833333334,
+      "end": 123.97095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "عليه",
+      "start": 123.97095833333334,
+      "end": 124.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "كلّ",
+      "start": 124.97095833333334,
+      "end": 125.22095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "دي",
+      "start": 125.22095833333334,
+      "end": 125.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "احتمالات",
+      "start": 125.42095833333335,
+      "end": 126.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "محتاجة",
+      "start": 126.02095833333334,
+      "end": 126.47095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بيانات",
+      "start": 126.47095833333334,
+      "end": 127.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مش",
+      "start": 127.42095833333335,
+      "end": 127.62095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "كلّ",
+      "start": 127.62095833333333,
+      "end": 127.87095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مبيد",
+      "start": 127.87095833333333,
+      "end": 128.22095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "هيتحرّك",
+      "start": 128.22095833333333,
+      "end": 128.72095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بنفس",
+      "start": 128.72095833333333,
+      "end": 129.07095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الطّريقة،",
+      "start": 129.07095833333335,
+      "end": 129.67095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ولا",
+      "start": 130.02095833333334,
+      "end": 130.27095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "كلّ",
+      "start": 130.27095833333334,
+      "end": 130.47095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "تعرّض",
+      "start": 130.47095833333333,
+      "end": 130.97095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "معناه",
+      "start": 130.97095833333333,
+      "end": 131.47095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "إنّ",
+      "start": 131.47095833333333,
+      "end": 131.67095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "ضرر",
+      "start": 131.67095833333335,
+      "end": 132.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "حصل",
+      "start": 132.02095833333334,
+      "end": 132.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "السّهم",
+      "start": 133.02095833333334,
+      "end": 133.42095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بيوضّح",
+      "start": 133.42095833333335,
+      "end": 133.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "طريق",
+      "start": 133.92095833333335,
+      "end": 134.32095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الانتقال،",
+      "start": 134.32095833333335,
+      "end": 135.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "مش",
+      "start": 135.32095833333335,
+      "end": 135.52095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "بيثبت",
+      "start": 135.52095833333334,
+      "end": 135.92095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "حدوث",
+      "start": 135.92095833333335,
+      "end": 136.32095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "الضّرر",
+      "start": 136.32095833333335,
+      "end": 136.82095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "word": "خلّينا",
+      "start": 137.83191666666667,
+      "end": 138.23191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "نفصل",
+      "start": 138.23191666666668,
+      "end": 138.60191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تلات",
+      "start": 138.60191666666668,
+      "end": 138.91191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أفكار",
+      "start": 138.91191666666668,
+      "end": 139.44191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أوّل",
+      "start": 139.98191666666668,
+      "end": 140.27191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "فكرة",
+      "start": 140.27191666666667,
+      "end": 140.65191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "المادّة",
+      "start": 140.96191666666667,
+      "end": 141.41191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تقدر",
+      "start": 141.41191666666668,
+      "end": 141.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تعمل",
+      "start": 141.75191666666666,
+      "end": 142.09191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ضرر",
+      "start": 142.09191666666666,
+      "end": 142.43191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "من",
+      "start": 142.43191666666667,
+      "end": 142.59191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "نوع",
+      "start": 142.59191666666666,
+      "end": 142.87191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إيه",
+      "start": 142.87191666666666,
+      "end": 143.15191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وتحت",
+      "start": 143.78191666666666,
+      "end": 144.11191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أنهي",
+      "start": 144.11191666666667,
+      "end": 144.43191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ظروف",
+      "start": 144.43191666666667,
+      "end": 145.05191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ده",
+      "start": 145.55191666666667,
+      "end": 145.71191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "سؤال",
+      "start": 145.71191666666667,
+      "end": 146.14191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "عن",
+      "start": 146.14191666666667,
+      "end": 146.33191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "قدرتها",
+      "start": 146.33191666666667,
+      "end": 146.94191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "على",
+      "start": 146.94191666666666,
+      "end": 147.17191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إحداث",
+      "start": 147.17191666666668,
+      "end": 147.67191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "الضّرر",
+      "start": 147.67191666666668,
+      "end": 148.24191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تاني",
+      "start": 149.47191666666666,
+      "end": 149.77191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "فكرة",
+      "start": 149.77191666666667,
+      "end": 150.15191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "المادّة",
+      "start": 150.73191666666668,
+      "end": 151.17191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وصلت",
+      "start": 151.17191666666668,
+      "end": 151.59191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "للكائن",
+      "start": 151.59191666666666,
+      "end": 152.07191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إزاي",
+      "start": 152.07191666666668,
+      "end": 152.65191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وقدّ",
+      "start": 153.01191666666668,
+      "end": 153.27191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إيه",
+      "start": 153.27191666666667,
+      "end": 153.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ولمدّة",
+      "start": 153.91191666666668,
+      "end": 154.31191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "قدّ",
+      "start": 154.31191666666666,
+      "end": 154.51191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إيه",
+      "start": 154.51191666666668,
+      "end": 154.91191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ده",
+      "start": 155.43191666666667,
+      "end": 155.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "سؤال",
+      "start": 155.61191666666667,
+      "end": 156.03191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "عن",
+      "start": 156.03191666666666,
+      "end": 156.23191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "التّعرّض",
+      "start": 156.23191666666668,
+      "end": 157.04191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أمّا",
+      "start": 157.51191666666668,
+      "end": 157.79191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "المخاطر",
+      "start": 157.79191666666668,
+      "end": 158.43191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "فالسّؤال",
+      "start": 158.75191666666666,
+      "end": 159.23191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "فيها",
+      "start": 159.23191666666668,
+      "end": 159.53191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "عن",
+      "start": 159.53191666666666,
+      "end": 159.73191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "احتمال",
+      "start": 159.73191666666668,
+      "end": 160.23191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "حدوث",
+      "start": 160.23191666666668,
+      "end": 160.65191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "الأثر",
+      "start": 160.65191666666666,
+      "end": 161.13191666666665,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وشدّته",
+      "start": 161.13191666666665,
+      "end": 161.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "في",
+      "start": 161.75191666666666,
+      "end": 161.93191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "الظّروف",
+      "start": 161.93191666666667,
+      "end": 162.45191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "اللّي",
+      "start": 162.45191666666668,
+      "end": 162.65191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "بندرسها",
+      "start": 162.65191666666666,
+      "end": 163.38191666666665,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "يعني",
+      "start": 163.89191666666667,
+      "end": 164.17191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "لو",
+      "start": 164.17191666666668,
+      "end": 164.33191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "دراسة",
+      "start": 164.33191666666667,
+      "end": 164.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "لقت",
+      "start": 164.75191666666666,
+      "end": 165.09191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تأثير",
+      "start": 165.09191666666666,
+      "end": 165.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "عند",
+      "start": 165.61191666666667,
+      "end": 165.85191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "جرعة",
+      "start": 165.85191666666668,
+      "end": 166.19191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "معيّنة",
+      "start": 166.19191666666666,
+      "end": 166.81191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "لسّه",
+      "start": 167.21191666666667,
+      "end": 167.51191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "محتاجين",
+      "start": 167.51191666666668,
+      "end": 167.9719166666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "نعرف",
+      "start": 167.9719166666667,
+      "end": 168.33191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "هل",
+      "start": 168.33191666666667,
+      "end": 168.55191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ظروف",
+      "start": 168.55191666666667,
+      "end": 168.93191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "التّعرّض",
+      "start": 168.93191666666667,
+      "end": 169.45191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "في",
+      "start": 169.45191666666668,
+      "end": 169.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "حالتنا",
+      "start": 169.61191666666667,
+      "end": 170.11191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تسمح",
+      "start": 170.35191666666668,
+      "end": 170.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "باستخدام",
+      "start": 170.75191666666666,
+      "end": 171.35191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "النّتيجة",
+      "start": 171.35191666666668,
+      "end": 171.79191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "دي",
+      "start": 171.79191666666668,
+      "end": 172.12191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وجود",
+      "start": 172.73191666666668,
+      "end": 173.09191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "المادّة",
+      "start": 173.09191666666666,
+      "end": 173.51191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "لوحده",
+      "start": 173.51191666666668,
+      "end": 173.93191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "مش",
+      "start": 173.93191666666667,
+      "end": 174.15191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "كفاية",
+      "start": 174.15191666666666,
+      "end": 174.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "للحكم",
+      "start": 174.61191666666667,
+      "end": 175.2219166666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وعدم",
+      "start": 175.71191666666667,
+      "end": 176.05191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "وجود",
+      "start": 176.05191666666667,
+      "end": 176.39191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أعراض",
+      "start": 176.39191666666667,
+      "end": 176.85191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "فوريّة",
+      "start": 176.85191666666668,
+      "end": 177.55191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "برضه",
+      "start": 177.81191666666666,
+      "end": 178.21191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "مش",
+      "start": 178.21191666666667,
+      "end": 178.43191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "دليل",
+      "start": 178.43191666666667,
+      "end": 178.83191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إنّ",
+      "start": 178.83191666666667,
+      "end": 179.05191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "كلّ",
+      "start": 179.05191666666667,
+      "end": 179.33191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "تأثير",
+      "start": 179.33191666666667,
+      "end": 179.77191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "محتمل",
+      "start": 179.77191666666667,
+      "end": 180.29191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "مستبعد",
+      "start": 180.29191666666668,
+      "end": 180.98191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "إحنا",
+      "start": 181.49191666666667,
+      "end": 181.79191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "بنجمّع",
+      "start": 181.79191666666668,
+      "end": 182.29191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أدلّة",
+      "start": 182.29191666666668,
+      "end": 182.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "ونفهم",
+      "start": 183.11191666666667,
+      "end": 183.51191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "حدودها",
+      "start": 183.51191666666668,
+      "end": 184.25191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "مش",
+      "start": 184.63191666666665,
+      "end": 184.85191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "بنختار",
+      "start": 184.85191666666668,
+      "end": 185.31191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "لون",
+      "start": 185.31191666666666,
+      "end": 185.65191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "يطمّنّا",
+      "start": 185.65191666666666,
+      "end": 186.33191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "أو",
+      "start": 186.33191666666667,
+      "end": 186.51191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "يخوّفنا",
+      "start": 186.51191666666668,
+      "end": 187.24191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "word": "نرجع",
+      "start": 188.068875,
+      "end": 188.428875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لتقرير",
+      "start": 188.428875,
+      "end": 188.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الطّماطم.",
+      "start": 188.868875,
+      "end": 189.518875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "المثال",
+      "start": 190.068875,
+      "end": 190.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ده",
+      "start": 190.468875,
+      "end": 190.618875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "افتراضيّ",
+      "start": 190.618875,
+      "end": 191.218875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "بالكامل.",
+      "start": 191.218875,
+      "end": 191.818875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "التّركيز",
+      "start": 192.718875,
+      "end": 193.218875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "المقاس",
+      "start": 193.218875,
+      "end": 193.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "هو",
+      "start": 193.968875,
+      "end": 194.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "صفر",
+      "start": 194.368875,
+      "end": 194.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "فاصلة",
+      "start": 194.768875,
+      "end": 195.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "صفر",
+      "start": 195.368875,
+      "end": 195.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "تمانية",
+      "start": 195.768875,
+      "end": 196.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "مِلّيجرام",
+      "start": 196.768875,
+      "end": 197.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لكلّ",
+      "start": 197.468875,
+      "end": 197.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "كيلوجرام",
+      "start": 197.768875,
+      "end": 198.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "غذاء.",
+      "start": 198.468875,
+      "end": 199.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ركّز",
+      "start": 199.868875,
+      "end": 200.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "في",
+      "start": 200.16887499999999,
+      "end": 200.268875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "آخر",
+      "start": 200.368875,
+      "end": 200.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "كلمة:",
+      "start": 200.66887499999999,
+      "end": 201.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "غذاء.",
+      "start": 201.268875,
+      "end": 201.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الرّقم",
+      "start": 202.268875,
+      "end": 202.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "مش",
+      "start": 202.66887499999999,
+      "end": 202.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لكلّ",
+      "start": 203.068875,
+      "end": 203.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "كيلوجرام",
+      "start": 203.368875,
+      "end": 204.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "من",
+      "start": 204.068875,
+      "end": 204.268875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "وزن",
+      "start": 204.268875,
+      "end": 204.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الإنسان،",
+      "start": 204.568875,
+      "end": 205.268875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ومش",
+      "start": 205.568875,
+      "end": 205.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "هو",
+      "start": 205.868875,
+      "end": 206.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الكمّيّة",
+      "start": 206.068875,
+      "end": 206.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "اللّي",
+      "start": 206.568875,
+      "end": 206.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "أكلها.",
+      "start": 206.768875,
+      "end": 207.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ومعانا",
+      "start": 207.968875,
+      "end": 208.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "حدّ",
+      "start": 208.368875,
+      "end": 208.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "للمقارنة،",
+      "start": 208.66887499999999,
+      "end": 209.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "اخترناه",
+      "start": 209.568875,
+      "end": 210.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "للتّدريب",
+      "start": 210.068875,
+      "end": 210.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "بسّ:",
+      "start": 210.568875,
+      "end": 211.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "صفر",
+      "start": 211.568875,
+      "end": 211.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "فاصلة",
+      "start": 211.968875,
+      "end": 212.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "واحد",
+      "start": 212.768875,
+      "end": 213.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "مِلّيجرام",
+      "start": 213.16887499999999,
+      "end": 213.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لكلّ",
+      "start": 213.968875,
+      "end": 214.268875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "كيلوجرام",
+      "start": 214.268875,
+      "end": 214.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "غذاء.",
+      "start": 214.968875,
+      "end": 215.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "عشان",
+      "start": 216.068875,
+      "end": 216.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "نقارن",
+      "start": 216.368875,
+      "end": 216.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "صحّ،",
+      "start": 216.768875,
+      "end": 217.16887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لازم",
+      "start": 217.468875,
+      "end": 217.768875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الأرقام",
+      "start": 217.768875,
+      "end": 218.268875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "تكون",
+      "start": 218.268875,
+      "end": 218.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "بتوصف",
+      "start": 218.868875,
+      "end": 219.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "نفس",
+      "start": 219.368875,
+      "end": 219.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الحاجة.",
+      "start": 219.66887499999999,
+      "end": 220.26887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "نتأكّد",
+      "start": 220.76887499999998,
+      "end": 221.168875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "من",
+      "start": 221.168875,
+      "end": 221.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "المادّة،",
+      "start": 221.368875,
+      "end": 221.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "وتعريف",
+      "start": 222.068875,
+      "end": 222.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "المتبقّي،",
+      "start": 222.468875,
+      "end": 223.168875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ونوع",
+      "start": 223.468875,
+      "end": 223.76887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الغذاء،",
+      "start": 223.76887499999998,
+      "end": 224.26887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "والجزء",
+      "start": 224.468875,
+      "end": 224.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "اللّي",
+      "start": 224.868875,
+      "end": 224.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "اتحلّل،",
+      "start": 224.968875,
+      "end": 225.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ووحدة",
+      "start": 225.668875,
+      "end": 226.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "القياس.",
+      "start": 226.068875,
+      "end": 226.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "لو",
+      "start": 227.168875,
+      "end": 227.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "الحدّ",
+      "start": 227.368875,
+      "end": 227.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "خاصّ",
+      "start": 227.668875,
+      "end": 228.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "بالتّفّاح،",
+      "start": 228.068875,
+      "end": 228.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ما",
+      "start": 228.868875,
+      "end": 229.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ينفعش",
+      "start": 229.068875,
+      "end": 229.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "نستخدمه",
+      "start": 229.468875,
+      "end": 229.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "للطّماطم.",
+      "start": 229.968875,
+      "end": 230.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "في",
+      "start": 230.968875,
+      "end": 231.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "المثال",
+      "start": 231.068875,
+      "end": 231.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "ده،",
+      "start": 231.468875,
+      "end": 231.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "هنعتبر",
+      "start": 232.068875,
+      "end": 232.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "إنّ",
+      "start": 232.568875,
+      "end": 232.76887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "البيانات",
+      "start": 232.968875,
+      "end": 233.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "متطابقة",
+      "start": 233.468875,
+      "end": 234.168875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "وإنّ",
+      "start": 234.368875,
+      "end": 234.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "القياس",
+      "start": 234.76887499999998,
+      "end": 235.26887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "صالح",
+      "start": 235.468875,
+      "end": 235.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "للمقارنة.",
+      "start": 235.868875,
+      "end": 236.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "دي",
+      "start": 236.968875,
+      "end": 237.168875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "مسألة",
+      "start": 237.168875,
+      "end": 237.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "تعليميّة",
+      "start": 237.568875,
+      "end": 238.168875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "بأرقام",
+      "start": 238.26887499999998,
+      "end": 238.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "افتراضيّة،",
+      "start": 238.668875,
+      "end": 239.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "مش",
+      "start": 239.76887499999998,
+      "end": 239.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "حكم",
+      "start": 239.968875,
+      "end": 240.26887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "قانونيّ",
+      "start": 240.26887499999998,
+      "end": 240.76887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "على",
+      "start": 240.76887499999998,
+      "end": 240.968875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "شحنة",
+      "start": 240.968875,
+      "end": 241.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "حقيقيّة.",
+      "start": 241.368875,
+      "end": 242.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "word": "دلوقتي",
+      "start": 242.61383333333333,
+      "end": 243.10383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "نقارن",
+      "start": 243.10383333333334,
+      "end": 243.61383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بين",
+      "start": 243.61383333333333,
+      "end": 243.89383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الرقمين",
+      "start": 243.89383333333333,
+      "end": 244.61383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "باستخدام",
+      "start": 245.12383333333332,
+      "end": 245.76383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "نفس",
+      "start": 245.76383333333334,
+      "end": 246.09383333333332,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "وحده",
+      "start": 246.09383333333332,
+      "end": 246.44383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "القياس",
+      "start": 246.44383333333334,
+      "end": 247.11383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "صفر",
+      "start": 247.81383333333332,
+      "end": 248.14383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "فاصله",
+      "start": 248.14383333333333,
+      "end": 248.51383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "صفر",
+      "start": 248.51383333333334,
+      "end": 248.83383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "تمانيه",
+      "start": 248.83383333333333,
+      "end": 249.31383333333332,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اقل",
+      "start": 249.61383333333333,
+      "end": 249.97383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "من",
+      "start": 249.97383333333335,
+      "end": 250.14383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "صفر",
+      "start": 250.14383333333333,
+      "end": 250.44383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "فاصله",
+      "start": 250.44383333333334,
+      "end": 250.78383333333332,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "واحد",
+      "start": 250.78383333333332,
+      "end": 251.21383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "والفرق",
+      "start": 251.82383333333334,
+      "end": 252.26383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بينهم",
+      "start": 252.26383333333334,
+      "end": 252.64383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اتنين",
+      "start": 252.87383333333332,
+      "end": 253.24383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "من",
+      "start": 253.24383333333333,
+      "end": 253.43383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ميه",
+      "start": 253.43383333333333,
+      "end": 253.77383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "مليجرام",
+      "start": 253.77383333333333,
+      "end": 254.51383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "لكل",
+      "start": 254.87383333333332,
+      "end": 255.21383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "كيلوجرام",
+      "start": 255.21383333333333,
+      "end": 255.91383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "غذاء",
+      "start": 255.91383333333334,
+      "end": 256.47383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "نكتب",
+      "start": 257.17383333333333,
+      "end": 257.5638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الاستنتاج",
+      "start": 257.5638333333333,
+      "end": 258.2638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بدقه",
+      "start": 258.2638333333333,
+      "end": 258.7638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "القيمه",
+      "start": 259.33383333333336,
+      "end": 259.80383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اقل",
+      "start": 260.0738333333333,
+      "end": 260.41383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "من",
+      "start": 260.41383333333334,
+      "end": 260.59383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الحد",
+      "start": 260.59383333333335,
+      "end": 260.96383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الافتراضي",
+      "start": 260.96383333333335,
+      "end": 261.73383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "المستخدم",
+      "start": 261.73383333333334,
+      "end": 262.30383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "في",
+      "start": 262.30383333333333,
+      "end": 262.4338333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "المثال",
+      "start": 262.4338333333333,
+      "end": 263.0138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بس",
+      "start": 263.5038333333333,
+      "end": 263.77383333333336,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الفرق",
+      "start": 263.77383333333336,
+      "end": 264.1338333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ده",
+      "start": 264.1338333333333,
+      "end": 264.30383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "مش",
+      "start": 264.4438333333333,
+      "end": 264.7038333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "هامش",
+      "start": 264.7038333333333,
+      "end": 265.09383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "امان",
+      "start": 265.09383333333335,
+      "end": 265.4938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "لشخص",
+      "start": 265.4938333333333,
+      "end": 265.9938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ومش",
+      "start": 266.3138333333333,
+      "end": 266.5738333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "كميه",
+      "start": 266.5738333333333,
+      "end": 267.0638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "مسموح",
+      "start": 267.0638333333333,
+      "end": 267.5138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "له",
+      "start": 267.5138333333333,
+      "end": 267.67383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ياكلها",
+      "start": 267.67383333333333,
+      "end": 268.16383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الحد",
+      "start": 268.72383333333335,
+      "end": 269.0638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الاقصى",
+      "start": 269.0638333333333,
+      "end": 269.59383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "للمتبقي",
+      "start": 269.59383333333335,
+      "end": 270.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بيتعلق",
+      "start": 270.54383333333334,
+      "end": 271.10383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بتركيز",
+      "start": 271.29383333333334,
+      "end": 271.80383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "محدد",
+      "start": 271.80383333333333,
+      "end": 272.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "في",
+      "start": 272.3138333333333,
+      "end": 272.46383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "سلعه",
+      "start": 272.46383333333335,
+      "end": 272.90383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "محدده",
+      "start": 272.90383333333335,
+      "end": 273.5138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "وتحديده",
+      "start": 274.0038333333333,
+      "end": 274.5738333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بيعتمد",
+      "start": 274.80383333333333,
+      "end": 275.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "على",
+      "start": 275.3138333333333,
+      "end": 275.53383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "بيانات",
+      "start": 275.70383333333336,
+      "end": 276.21383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الاستخدام",
+      "start": 276.21383333333335,
+      "end": 277.0138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "والتقييم",
+      "start": 277.21383333333335,
+      "end": 277.71383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "العلمي",
+      "start": 277.71383333333335,
+      "end": 278.29383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "مش",
+      "start": 278.70383333333336,
+      "end": 278.9338333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "هو",
+      "start": 278.9338333333333,
+      "end": 279.11383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الجرعه",
+      "start": 279.11383333333333,
+      "end": 279.5638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اللي",
+      "start": 279.5638333333333,
+      "end": 279.79383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "دخلت",
+      "start": 279.79383333333334,
+      "end": 280.1938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "جسم",
+      "start": 280.1938333333333,
+      "end": 280.53383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "انسان",
+      "start": 280.53383333333335,
+      "end": 281.09383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ولو",
+      "start": 281.54383333333334,
+      "end": 281.8138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "القيمه",
+      "start": 281.8138333333333,
+      "end": 282.2738333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "كانت",
+      "start": 282.2738333333333,
+      "end": 282.61383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اعلى",
+      "start": 282.61383333333333,
+      "end": 282.9938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "من",
+      "start": 282.9938333333333,
+      "end": 283.16383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الحد",
+      "start": 283.16383333333334,
+      "end": 283.5638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ده",
+      "start": 283.86383333333333,
+      "end": 284.0638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "برضه",
+      "start": 284.0638333333333,
+      "end": 284.41383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ما",
+      "start": 284.41383333333334,
+      "end": 284.59383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "يثبتش",
+      "start": 284.59383333333335,
+      "end": 285.0638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "لوحده",
+      "start": 285.0638333333333,
+      "end": 285.5638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ان",
+      "start": 285.73383333333334,
+      "end": 285.9338333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "شخص",
+      "start": 285.9338333333333,
+      "end": 286.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "اتسمم",
+      "start": 286.3138333333333,
+      "end": 286.91383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "تجاوز",
+      "start": 287.4938333333333,
+      "end": 287.91383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الحد",
+      "start": 287.91383333333334,
+      "end": 288.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "وتقييم",
+      "start": 288.5638333333333,
+      "end": 289.0138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الاثر",
+      "start": 289.0138333333333,
+      "end": 289.41383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "الصحي",
+      "start": 289.41383333333334,
+      "end": 290.0138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "سؤالين",
+      "start": 290.3138333333333,
+      "end": 290.8138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "مرتبطين",
+      "start": 290.8138333333333,
+      "end": 291.5638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "لكن",
+      "start": 291.96383333333335,
+      "end": 292.2638333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "كل",
+      "start": 292.2638333333333,
+      "end": 292.4938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "واحد",
+      "start": 292.4938333333333,
+      "end": 292.8938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "محتاج",
+      "start": 293.09383333333335,
+      "end": 293.5138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "ادلته",
+      "start": 293.5138333333333,
+      "end": 294.11383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "المناسبه",
+      "start": 294.11383333333333,
+      "end": 294.8138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "word": "في",
+      "start": 295.4347916666667,
+      "end": 295.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الحساب",
+      "start": 295.5647916666667,
+      "end": 295.9947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الجاي،",
+      "start": 295.9947916666667,
+      "end": 296.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "هنفترض",
+      "start": 296.6647916666667,
+      "end": 297.1247916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "إنّ",
+      "start": 297.1247916666667,
+      "end": 297.2947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "تركيز",
+      "start": 297.3847916666667,
+      "end": 297.8047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "المتبقّي",
+      "start": 297.8047916666667,
+      "end": 298.3847916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 298.3847916666667,
+      "end": 298.5047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الجزء",
+      "start": 298.5047916666667,
+      "end": 298.8547916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اللّي",
+      "start": 298.8547916666667,
+      "end": 299.0347916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اتاكل",
+      "start": 299.0347916666667,
+      "end": 299.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "هو",
+      "start": 299.8147916666667,
+      "end": 300.0047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "نفس",
+      "start": 300.0047916666667,
+      "end": 300.32479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "التّركيز",
+      "start": 300.32479166666667,
+      "end": 300.9047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 300.9047916666667,
+      "end": 301.0347916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "العيّنة.",
+      "start": 301.0347916666667,
+      "end": 301.6947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "طيب،",
+      "start": 302.3047916666667,
+      "end": 302.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "لو",
+      "start": 302.89479166666666,
+      "end": 303.0547916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "شخص",
+      "start": 303.0547916666667,
+      "end": 303.4047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "أكل",
+      "start": 303.4047916666667,
+      "end": 303.6947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ميتين",
+      "start": 303.6947916666667,
+      "end": 304.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "جرام",
+      "start": 304.1147916666667,
+      "end": 304.5047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "من",
+      "start": 304.5047916666667,
+      "end": 304.70479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الطّماطم",
+      "start": 304.70479166666667,
+      "end": 305.2747916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "دي؟",
+      "start": 305.2747916666667,
+      "end": 305.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "نحَوّل",
+      "start": 306.1147916666667,
+      "end": 306.51479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الوزن",
+      "start": 306.51479166666667,
+      "end": 306.8847916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "لكيلوجرام:",
+      "start": 306.8847916666667,
+      "end": 307.6947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ميتين",
+      "start": 307.9647916666667,
+      "end": 308.3047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "جرام",
+      "start": 308.3047916666667,
+      "end": 308.6747916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "يعني",
+      "start": 308.6747916666667,
+      "end": 309.0247916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 309.3047916666667,
+      "end": 309.6547916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "فاصلة",
+      "start": 309.6547916666667,
+      "end": 310.0347916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اتنين",
+      "start": 310.0347916666667,
+      "end": 310.4647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "كيلوجرام.",
+      "start": 310.4647916666667,
+      "end": 311.3847916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "نضرب",
+      "start": 312.0647916666667,
+      "end": 312.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "التّركيز",
+      "start": 312.4147916666667,
+      "end": 312.9247916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 312.9247916666667,
+      "end": 313.0547916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الوزن:",
+      "start": 313.0547916666667,
+      "end": 313.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 313.9047916666667,
+      "end": 314.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "فاصلة",
+      "start": 314.26479166666667,
+      "end": 314.6247916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 314.6247916666667,
+      "end": 314.9647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "تمانية،",
+      "start": 314.9647916666667,
+      "end": 315.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 315.9647916666667,
+      "end": 316.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 316.4147916666667,
+      "end": 316.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "فاصلة",
+      "start": 316.76479166666667,
+      "end": 317.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اتنين.",
+      "start": 317.1147916666667,
+      "end": 317.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "يطلع",
+      "start": 318.4647916666667,
+      "end": 319.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 319.4147916666667,
+      "end": 319.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "فاصلة",
+      "start": 319.76479166666667,
+      "end": 320.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "صفر",
+      "start": 320.1147916666667,
+      "end": 320.4647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "واحد",
+      "start": 320.4647916666667,
+      "end": 320.8647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ستّة",
+      "start": 320.8647916666667,
+      "end": 321.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "مِلّيجرام",
+      "start": 321.6647916666667,
+      "end": 322.4647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "من",
+      "start": 322.4647916666667,
+      "end": 322.7147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "متبقّي",
+      "start": 322.7147916666667,
+      "end": 323.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "المبيد.",
+      "start": 323.26479166666667,
+      "end": 323.8147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "دي",
+      "start": 324.4147916666667,
+      "end": 324.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الكمّيّة",
+      "start": 324.6147916666667,
+      "end": 325.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الموجودة",
+      "start": 325.1147916666667,
+      "end": 325.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 325.6647916666667,
+      "end": 325.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الجزء",
+      "start": 325.76479166666667,
+      "end": 326.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اللّي",
+      "start": 326.1147916666667,
+      "end": 326.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اتاكل.",
+      "start": 326.26479166666667,
+      "end": 326.8647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "مش",
+      "start": 327.4147916666667,
+      "end": 327.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "بالضّرورة",
+      "start": 327.6647916666667,
+      "end": 328.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الكمّيّة",
+      "start": 328.1647916666667,
+      "end": 328.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اللّي",
+      "start": 328.5647916666667,
+      "end": 328.71479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الجسم",
+      "start": 328.71479166666666,
+      "end": 329.0647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "امتصّها،",
+      "start": 329.0647916666667,
+      "end": 329.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ومش",
+      "start": 329.96479166666666,
+      "end": 330.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "دليل",
+      "start": 330.21479166666666,
+      "end": 330.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "لوحدها",
+      "start": 330.5647916666667,
+      "end": 331.0647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "إنّ",
+      "start": 331.0647916666667,
+      "end": 331.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الشخص",
+      "start": 331.21479166666666,
+      "end": 331.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "حصل",
+      "start": 331.6647916666667,
+      "end": 332.01479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "له",
+      "start": 332.01479166666667,
+      "end": 332.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ضرر.",
+      "start": 332.1647916666667,
+      "end": 332.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ولاحظ",
+      "start": 333.3647916666667,
+      "end": 333.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الوحدة:",
+      "start": 333.76479166666667,
+      "end": 334.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "مِلّيجرام",
+      "start": 334.5647916666667,
+      "end": 335.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "لكلّ",
+      "start": 335.26479166666667,
+      "end": 335.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "كيلوجرام،",
+      "start": 335.6647916666667,
+      "end": 336.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "مضروبة",
+      "start": 336.9147916666667,
+      "end": 337.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 337.4147916666667,
+      "end": 337.5647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "كيلوجرام.",
+      "start": 337.5647916666667,
+      "end": 338.3147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الكيلوجرام",
+      "start": 338.8647916666667,
+      "end": 339.51479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 339.51479166666667,
+      "end": 339.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "البسط",
+      "start": 339.6147916666667,
+      "end": 340.01479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "والمقام",
+      "start": 340.01479166666667,
+      "end": 340.6847916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "بيختصروا",
+      "start": 340.8647916666667,
+      "end": 341.46479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "بعض،",
+      "start": 341.46479166666666,
+      "end": 341.8147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "فالنّتيجة",
+      "start": 342.1647916666667,
+      "end": 342.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "بتطلع",
+      "start": 342.6647916666667,
+      "end": 343.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "بالمِلّيجرام.",
+      "start": 343.1147916666667,
+      "end": 344.01479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ولو",
+      "start": 344.6147916666667,
+      "end": 344.8647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "حجم",
+      "start": 344.8647916666667,
+      "end": 345.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الحصّة",
+      "start": 345.1647916666667,
+      "end": 345.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "زاد",
+      "start": 345.6147916666667,
+      "end": 345.9147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "والتّركيز",
+      "start": 346.1647916666667,
+      "end": 346.71479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "ثابت،",
+      "start": 346.71479166666666,
+      "end": 347.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "كمّيّة",
+      "start": 347.6647916666667,
+      "end": 348.0647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "المتبقّي",
+      "start": 348.0647916666667,
+      "end": 348.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اللّي",
+      "start": 348.6647916666667,
+      "end": 348.8147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "اتاكلت",
+      "start": 348.8147916666667,
+      "end": 349.3647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "هتزيد.",
+      "start": 349.3647916666667,
+      "end": 349.8647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "وتقييم",
+      "start": 350.71479166666666,
+      "end": 351.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "التّعرّض",
+      "start": 351.1647916666667,
+      "end": 351.71479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "محتاج",
+      "start": 351.71479166666666,
+      "end": 352.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "معلومات",
+      "start": 352.26479166666667,
+      "end": 352.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "تانية،",
+      "start": 352.76479166666667,
+      "end": 353.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "زي",
+      "start": 353.5647916666667,
+      "end": 353.76479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "وزن",
+      "start": 353.76479166666667,
+      "end": 354.0647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الجسم،",
+      "start": 354.0647916666667,
+      "end": 354.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "وتكرار",
+      "start": 354.96479166666666,
+      "end": 355.4147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "الأكل،",
+      "start": 355.4147916666667,
+      "end": 355.9147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "وباقي",
+      "start": 356.1647916666667,
+      "end": 356.51479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "مصادر",
+      "start": 356.51479166666667,
+      "end": 356.96479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "التّعرّض",
+      "start": 356.96479166666666,
+      "end": 357.51479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "المهمّة.",
+      "start": 357.51479166666667,
+      "end": 358.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "word": "في",
+      "start": 358.8147916666667,
+      "end": 358.9247916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ملفّ",
+      "start": 358.9247916666667,
+      "end": 359.27479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "المنهج،",
+      "start": 359.27479166666666,
+      "end": 359.7847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "فيه",
+      "start": 359.9747916666667,
+      "end": 360.1847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "جدول",
+      "start": 360.1847916666667,
+      "end": 360.58479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بيجمع",
+      "start": 360.7847916666667,
+      "end": 361.21479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "أسماء",
+      "start": 361.21479166666666,
+      "end": 361.64479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مبيدات",
+      "start": 361.7447916666667,
+      "end": 362.27479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "وآثار",
+      "start": 362.3847916666667,
+      "end": 362.8447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "صحّيّة",
+      "start": 362.8447916666667,
+      "end": 363.3447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "وبيئيّة.",
+      "start": 363.4447916666667,
+      "end": 364.0447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بسّ",
+      "start": 364.57479166666667,
+      "end": 364.7847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الصّفّ",
+      "start": 364.7847916666667,
+      "end": 365.1647916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "لوحده",
+      "start": 365.1647916666667,
+      "end": 365.5447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مش",
+      "start": 365.5447916666667,
+      "end": 365.7447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بيشرح",
+      "start": 365.7447916666667,
+      "end": 366.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "لنا",
+      "start": 366.14479166666666,
+      "end": 366.3447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الدّراسة",
+      "start": 366.4947916666667,
+      "end": 366.9947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "اللّي",
+      "start": 366.9947916666667,
+      "end": 367.1847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ورا",
+      "start": 367.1847916666667,
+      "end": 367.4847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "المعلومة.",
+      "start": 367.4847916666667,
+      "end": 368.1847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "لو",
+      "start": 369.1147916666667,
+      "end": 369.2847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "حدّ",
+      "start": 369.2847916666667,
+      "end": 369.5447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "قال",
+      "start": 369.5447916666667,
+      "end": 369.8447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إنّ",
+      "start": 369.8447916666667,
+      "end": 370.0447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مادّة",
+      "start": 370.1747916666667,
+      "end": 370.57479166666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مرتبطة",
+      "start": 370.7447916666667,
+      "end": 371.2847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بتأثير",
+      "start": 371.4947916666667,
+      "end": 371.9947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "على",
+      "start": 371.9947916666667,
+      "end": 372.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الجهاز",
+      "start": 372.1947916666667,
+      "end": 372.5947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "العصبيّ،",
+      "start": 372.5947916666667,
+      "end": 373.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "فاستنتج",
+      "start": 373.7447916666667,
+      "end": 374.2847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إنّ",
+      "start": 374.2847916666667,
+      "end": 374.4447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "أيّ",
+      "start": 374.5947916666667,
+      "end": 374.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "غذاء",
+      "start": 374.7947916666667,
+      "end": 375.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "فيه",
+      "start": 375.1947916666667,
+      "end": 375.39479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "المادّة",
+      "start": 375.39479166666666,
+      "end": 375.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "دي",
+      "start": 375.7947916666667,
+      "end": 375.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "هيسبّب",
+      "start": 376.2447916666667,
+      "end": 376.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نفس",
+      "start": 376.7947916666667,
+      "end": 377.0947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "التّأثير،",
+      "start": 377.0947916666667,
+      "end": 377.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "يبقى",
+      "start": 378.2447916666667,
+      "end": 378.5447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "محتاجين",
+      "start": 378.7947916666667,
+      "end": 379.2947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نراجع",
+      "start": 379.4447916666667,
+      "end": 379.89479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الاستنتاج",
+      "start": 379.89479166666666,
+      "end": 380.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ده.",
+      "start": 380.4947916666667,
+      "end": 380.7447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نسأل:",
+      "start": 381.39479166666666,
+      "end": 381.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الدّراسة",
+      "start": 382.2447916666667,
+      "end": 382.7447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "اتعملت",
+      "start": 382.7447916666667,
+      "end": 383.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "على",
+      "start": 383.1947916666667,
+      "end": 383.39479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "أنهي",
+      "start": 383.39479166666666,
+      "end": 383.6947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "كائن؟",
+      "start": 383.6947916666667,
+      "end": 384.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "وبجرعة",
+      "start": 384.7947916666667,
+      "end": 385.2947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "أو",
+      "start": 385.2947916666667,
+      "end": 385.4447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "تركيز",
+      "start": 385.4447916666667,
+      "end": 385.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "قدّ",
+      "start": 385.9447916666667,
+      "end": 386.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إيه؟",
+      "start": 386.1947916666667,
+      "end": 386.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "والمادّة",
+      "start": 387.14479166666666,
+      "end": 387.5947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "دخلت",
+      "start": 387.8447916666667,
+      "end": 388.2447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "له",
+      "start": 388.2447916666667,
+      "end": 388.4447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إزّاي؟",
+      "start": 388.4447916666667,
+      "end": 388.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "والتّعرّض",
+      "start": 389.5947916666667,
+      "end": 390.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "استمرّ",
+      "start": 390.14479166666666,
+      "end": 390.64479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "قدّ",
+      "start": 390.64479166666666,
+      "end": 390.89479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إيه؟",
+      "start": 390.89479166666666,
+      "end": 391.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ونراجع",
+      "start": 391.9447916666667,
+      "end": 392.39479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "اسم",
+      "start": 392.39479166666666,
+      "end": 392.6947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "المادّة",
+      "start": 392.6947916666667,
+      "end": 393.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "وصيغتها،",
+      "start": 393.2447916666667,
+      "end": 393.89479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "عشان",
+      "start": 394.2447916666667,
+      "end": 394.5447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ما",
+      "start": 394.5447916666667,
+      "end": 394.6947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نخلطش",
+      "start": 394.6947916666667,
+      "end": 395.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بين",
+      "start": 395.14479166666666,
+      "end": 395.39479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مادّتين.",
+      "start": 395.39479166666666,
+      "end": 396.09479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إحنا",
+      "start": 396.5447916666667,
+      "end": 396.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مش",
+      "start": 396.7947916666667,
+      "end": 396.9947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بننفي",
+      "start": 396.9947916666667,
+      "end": 397.4447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "احتمال",
+      "start": 397.4447916666667,
+      "end": 397.89479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الضّرر.",
+      "start": 397.89479166666666,
+      "end": 398.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "إحنا",
+      "start": 399.09479166666665,
+      "end": 399.34479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بنرفض",
+      "start": 399.4447916666667,
+      "end": 399.89479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نحكم",
+      "start": 399.89479166666666,
+      "end": 400.2947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "من",
+      "start": 400.2947916666667,
+      "end": 400.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "معلومات",
+      "start": 400.4947916666667,
+      "end": 401.09479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مش",
+      "start": 401.09479166666665,
+      "end": 401.34479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "كفاية.",
+      "start": 401.34479166666665,
+      "end": 401.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الجدول",
+      "start": 402.59479166666665,
+      "end": 403.0447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "بداية",
+      "start": 403.1947916666667,
+      "end": 403.59479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "ندوّر",
+      "start": 403.7447916666667,
+      "end": 404.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "منها",
+      "start": 404.14479166666666,
+      "end": 404.4447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "على",
+      "start": 404.4447916666667,
+      "end": 404.64479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "الدّليل،",
+      "start": 404.64479166666666,
+      "end": 405.2447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "مش",
+      "start": 405.5447916666667,
+      "end": 405.7447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "تشخيص",
+      "start": 405.7447916666667,
+      "end": 406.2447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "جاهز",
+      "start": 406.2447916666667,
+      "end": 406.6947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نطبّقه",
+      "start": 406.84479166666665,
+      "end": 407.34479166666665,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "على",
+      "start": 407.34479166666665,
+      "end": 407.5447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "نتيجة",
+      "start": 407.5447916666667,
+      "end": 407.9947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "التّحليل.",
+      "start": 407.9947916666667,
+      "end": 408.64479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "word": "وده",
+      "start": 409.49575,
+      "end": 409.70574999999997,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "مرتبط",
+      "start": 409.70574999999997,
+      "end": 410.18575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بالكلام",
+      "start": 410.18575,
+      "end": 410.62575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "في",
+      "start": 410.62575,
+      "end": 410.74575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "صفحة",
+      "start": 410.74575,
+      "end": 411.15575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "تلاتة",
+      "start": 411.15575,
+      "end": 411.59575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "عن",
+      "start": 411.59575,
+      "end": 411.77574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "خبراء",
+      "start": 411.77574999999996,
+      "end": 412.19575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "منظّمة",
+      "start": 412.19575,
+      "end": 412.69575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الأغذية",
+      "start": 412.69575,
+      "end": 413.27574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والزّراعة",
+      "start": 413.27574999999996,
+      "end": 414.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ومنظّمة",
+      "start": 414.38575,
+      "end": 414.87575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الصّحّة",
+      "start": 414.87575,
+      "end": 415.27574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "العالميّة.",
+      "start": 415.27574999999996,
+      "end": 416.00575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "تقييم",
+      "start": 416.65575,
+      "end": 417.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الدّراسات",
+      "start": 417.09575,
+      "end": 417.68575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "العلميّة",
+      "start": 417.68575,
+      "end": 418.28575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "حاجة،",
+      "start": 418.28575,
+      "end": 418.79575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "واتّخاذ",
+      "start": 419.27574999999996,
+      "end": 419.72575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "القرار",
+      "start": 419.72575,
+      "end": 420.18575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "التّنظيميّ",
+      "start": 420.18575,
+      "end": 420.91575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "حاجة",
+      "start": 420.91575,
+      "end": 421.25575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "تانية،",
+      "start": 421.25575,
+      "end": 421.69575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "مع",
+      "start": 422.07574999999997,
+      "end": 422.28575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "إنّهم",
+      "start": 422.28575,
+      "end": 422.65575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "مرتبطين.",
+      "start": 422.65575,
+      "end": 423.39574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الجهات",
+      "start": 424.02574999999996,
+      "end": 424.43575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "اللّي",
+      "start": 424.43575,
+      "end": 424.58574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بتحطّ",
+      "start": 424.58574999999996,
+      "end": 424.94575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المعايير،",
+      "start": 424.94575,
+      "end": 425.65575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والحكومات،",
+      "start": 425.85575,
+      "end": 426.49575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بتستعين",
+      "start": 426.77575,
+      "end": 427.29575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بالتّقييمات",
+      "start": 427.29575,
+      "end": 427.95574999999997,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "العلميّة",
+      "start": 427.95574999999997,
+      "end": 428.58574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "وبيانات",
+      "start": 428.83574999999996,
+      "end": 429.29575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الاستخدام",
+      "start": 429.29575,
+      "end": 429.99575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والمتبقّيات.",
+      "start": 430.17575,
+      "end": 431.15575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "وعلى",
+      "start": 431.67575,
+      "end": 431.94575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "مستوى",
+      "start": 431.94575,
+      "end": 432.37575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المزرعة،",
+      "start": 432.37575,
+      "end": 433.07574999999997,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الممارسة",
+      "start": 433.39574999999996,
+      "end": 433.92575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الزّراعيّة",
+      "start": 433.92575,
+      "end": 434.55575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الجيّدة",
+      "start": 434.55575,
+      "end": 435.05575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بتبدأ",
+      "start": 435.23575,
+      "end": 435.65575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بالاستخدام",
+      "start": 435.65575,
+      "end": 436.33574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المصرّح",
+      "start": 436.33574999999996,
+      "end": 436.97575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بيه،",
+      "start": 436.97575,
+      "end": 437.29575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "وبشروطه",
+      "start": 437.79575,
+      "end": 438.43575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "للمبيد",
+      "start": 438.43575,
+      "end": 438.99575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والمَحْصول.",
+      "start": 438.99575,
+      "end": 439.79575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "رقم",
+      "start": 440.77575,
+      "end": 441.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "التّحليل",
+      "start": 441.09575,
+      "end": 441.67575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ما",
+      "start": 441.67575,
+      "end": 441.83574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "يحدّدش",
+      "start": 441.83574999999996,
+      "end": 442.39574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "كمّيّة",
+      "start": 442.39574999999996,
+      "end": 442.85575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المبيد",
+      "start": 442.85575,
+      "end": 443.27575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "اللّي",
+      "start": 443.27575,
+      "end": 443.43575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "تتستخدم،",
+      "start": 443.43575,
+      "end": 444.17575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ولا",
+      "start": 444.55575,
+      "end": 444.79575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "يحدّد",
+      "start": 444.79575,
+      "end": 445.19575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ميعاد",
+      "start": 445.19575,
+      "end": 445.59575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الحصاد.",
+      "start": 445.59575,
+      "end": 446.19575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "نرجع",
+      "start": 446.67575,
+      "end": 447.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "لتعليمات",
+      "start": 447.09575,
+      "end": 447.69575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المُنتَج،",
+      "start": 447.69575,
+      "end": 448.37575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والاستخدام،",
+      "start": 448.59575,
+      "end": 449.25575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "والمتطلّبات",
+      "start": 449.59575,
+      "end": 450.37575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المعتمدة",
+      "start": 450.37575,
+      "end": 451.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "اللّي",
+      "start": 451.09575,
+      "end": 451.25575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "بتنظّمه.",
+      "start": 451.25575,
+      "end": 451.97575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المطلوب",
+      "start": 452.59575,
+      "end": 453.07574999999997,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "منّنا",
+      "start": 453.07574999999997,
+      "end": 453.39574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "هنا",
+      "start": 453.39574999999996,
+      "end": 453.67575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "نعرف",
+      "start": 453.67575,
+      "end": 454.07574999999997,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "نطلب",
+      "start": 454.07574999999997,
+      "end": 454.47575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المعلومات",
+      "start": 454.47575,
+      "end": 455.09575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "الصّحّ",
+      "start": 455.09575,
+      "end": 455.49575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ونفهمها.",
+      "start": 455.67575,
+      "end": 456.37575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "المثال",
+      "start": 456.99575,
+      "end": 457.39574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "التّعليميّ",
+      "start": 457.39574999999996,
+      "end": 457.99575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "يساعدنا",
+      "start": 458.17575,
+      "end": 458.67575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "نفكّر،",
+      "start": 458.67575,
+      "end": 459.27575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "لكن",
+      "start": 459.59575,
+      "end": 459.87575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "ما",
+      "start": 459.87575,
+      "end": 460.03575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "يتحوّلش",
+      "start": 460.03575,
+      "end": 460.69575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "لتوصية",
+      "start": 460.69575,
+      "end": 461.27575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "باستخدام",
+      "start": 461.27575,
+      "end": 461.79575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "مبيد",
+      "start": 461.79575,
+      "end": 462.29575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "أو",
+      "start": 462.29575,
+      "end": 462.43575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "تحديد",
+      "start": 462.43575,
+      "end": 462.89574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "جرعته.",
+      "start": 462.89574999999996,
+      "end": 463.59575,
+      "scene": "L01-S09"
+    },
+    {
+      "word": "دلوقتي",
+      "start": 464.5967083333333,
+      "end": 465.0267083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "دورك",
+      "start": 465.06670833333334,
+      "end": 465.4167083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "مع",
+      "start": 465.4167083333333,
+      "end": 465.5867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "حالة",
+      "start": 465.5867083333333,
+      "end": 465.9167083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "مختلفة،",
+      "start": 465.9167083333333,
+      "end": 466.62670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وكلّ",
+      "start": 467.0467083333333,
+      "end": 467.3667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "أرقامها",
+      "start": 467.3667083333333,
+      "end": 467.8667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "افتراضيّة.",
+      "start": 467.8667083333333,
+      "end": 468.7667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "معانا",
+      "start": 469.3667083333333,
+      "end": 469.7067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تقرير",
+      "start": 469.7067083333333,
+      "end": 470.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تحليل",
+      "start": 470.1467083333333,
+      "end": 470.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "للفاصوليا.",
+      "start": 470.56670833333334,
+      "end": 471.3667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تركيز",
+      "start": 471.9667083333333,
+      "end": 472.3967083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "المتبقّي",
+      "start": 472.3967083333333,
+      "end": 472.9667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "فيها",
+      "start": 472.9667083333333,
+      "end": 473.2467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "صفر",
+      "start": 473.6467083333333,
+      "end": 474.06670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "فاصلة",
+      "start": 474.06670833333334,
+      "end": 474.50670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "صفر",
+      "start": 474.50670833333334,
+      "end": 474.9067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "ستّة",
+      "start": 474.9067083333333,
+      "end": 475.2667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "مِلّيجرام",
+      "start": 475.6667083333333,
+      "end": 476.3467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "لكلّ",
+      "start": 476.3467083333333,
+      "end": 476.7267083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "كيلوجرام",
+      "start": 476.7267083333333,
+      "end": 477.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "غذاء.",
+      "start": 477.4867083333333,
+      "end": 478.06670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الحدّ",
+      "start": 479.1467083333333,
+      "end": 479.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "المطابق",
+      "start": 479.4867083333333,
+      "end": 480.00670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "في",
+      "start": 480.00670833333334,
+      "end": 480.12670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "التّدريب",
+      "start": 480.12670833333334,
+      "end": 480.6667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "صفر",
+      "start": 481.06670833333334,
+      "end": 481.50670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "فاصلة",
+      "start": 481.50670833333334,
+      "end": 481.94670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "صفر",
+      "start": 481.94670833333333,
+      "end": 482.3467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "خمسة،",
+      "start": 482.3467083333333,
+      "end": 482.8667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وحجم",
+      "start": 483.6467083333333,
+      "end": 484.00670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الحصّة",
+      "start": 484.00670833333334,
+      "end": 484.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "ميّة",
+      "start": 484.8467083333333,
+      "end": 485.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وخمسين",
+      "start": 485.1467083333333,
+      "end": 485.62670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "جرام.",
+      "start": 485.62670833333334,
+      "end": 486.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وقّف",
+      "start": 487.1667083333333,
+      "end": 487.50670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الفيديو",
+      "start": 487.50670833333334,
+      "end": 487.9267083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "عند",
+      "start": 487.9267083333333,
+      "end": 488.1867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "السّؤال،",
+      "start": 488.1867083333333,
+      "end": 488.8067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "واكتب",
+      "start": 489.12670833333334,
+      "end": 489.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تلات",
+      "start": 489.4867083333333,
+      "end": 489.8067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "حاجات:",
+      "start": 489.8067083333333,
+      "end": 490.3467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "نتيجة",
+      "start": 491.12670833333334,
+      "end": 491.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "المقارنة",
+      "start": 491.56670833333334,
+      "end": 492.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "مع",
+      "start": 492.1467083333333,
+      "end": 492.3467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الحدّ؛",
+      "start": 492.3467083333333,
+      "end": 492.8067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وكمّيّة",
+      "start": 493.3667083333333,
+      "end": 493.8667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "المتبقّي",
+      "start": 493.8667083333333,
+      "end": 494.44670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "في",
+      "start": 494.44670833333333,
+      "end": 494.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الحصّة",
+      "start": 494.56670833333334,
+      "end": 495.0467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "بعد",
+      "start": 495.2667083333333,
+      "end": 495.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تحويل",
+      "start": 495.56670833333334,
+      "end": 496.00670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الوحدة؛",
+      "start": 496.00670833333334,
+      "end": 496.62670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "واستنتاج",
+      "start": 497.2667083333333,
+      "end": 497.8067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "صحّيّ",
+      "start": 497.8067083333333,
+      "end": 498.2667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "ما",
+      "start": 498.2667083333333,
+      "end": 498.44670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "ينفعش",
+      "start": 498.44670833333333,
+      "end": 498.8667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "نطلّعه",
+      "start": 498.8667083333333,
+      "end": 499.3667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "من",
+      "start": 499.3667083333333,
+      "end": 499.5467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "البيانات",
+      "start": 499.5467083333333,
+      "end": 500.06670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "دي",
+      "start": 500.06670833333334,
+      "end": 500.24670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "لوحدها.",
+      "start": 500.24670833333334,
+      "end": 500.9667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "بعد",
+      "start": 501.7667083333333,
+      "end": 502.06670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "ما",
+      "start": 502.06670833333334,
+      "end": 502.2267083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تجاوب،",
+      "start": 502.2267083333333,
+      "end": 502.7667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "راجع",
+      "start": 503.06670833333334,
+      "end": 503.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "خطوات",
+      "start": 503.4867083333333,
+      "end": 503.94670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تفكيرك،",
+      "start": 503.94670833333333,
+      "end": 504.6067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "مش",
+      "start": 504.94670833333333,
+      "end": 505.1667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الرّقم",
+      "start": 505.1667083333333,
+      "end": 505.5467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "النّهائيّ",
+      "start": 505.5467083333333,
+      "end": 506.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "بسّ.",
+      "start": 506.1467083333333,
+      "end": 506.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "لو",
+      "start": 507.12670833333334,
+      "end": 507.32670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "عرفت",
+      "start": 507.32670833333333,
+      "end": 507.6667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تفرّق",
+      "start": 507.6667083333333,
+      "end": 508.12670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "بين",
+      "start": 508.12670833333334,
+      "end": 508.4067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تركيز",
+      "start": 508.6667083333333,
+      "end": 509.1067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "في",
+      "start": 509.1067083333333,
+      "end": 509.24670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الغذاء،",
+      "start": 509.24670833333334,
+      "end": 509.8667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وكمّيّة",
+      "start": 510.3667083333333,
+      "end": 510.82670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "اتاكلت،",
+      "start": 510.82670833333333,
+      "end": 511.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "وتقييم",
+      "start": 511.8667083333333,
+      "end": 512.3467083333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "للمخاطر،",
+      "start": 512.3467083333334,
+      "end": 513.1267083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "تبقى",
+      "start": 513.5267083333333,
+      "end": 513.8467083333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "بنيت",
+      "start": 513.8467083333334,
+      "end": 514.2267083333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الأساس",
+      "start": 514.2267083333334,
+      "end": 514.7467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "اللّي",
+      "start": 514.7467083333333,
+      "end": 514.9667083333334,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "هنكمّل",
+      "start": 514.9667083333334,
+      "end": 515.5067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "عليه",
+      "start": 515.5067083333333,
+      "end": 515.8067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "في",
+      "start": 515.8067083333333,
+      "end": 515.9467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الدّرس",
+      "start": 515.9467083333333,
+      "end": 516.3067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "word": "الجاي.",
+      "start": 516.3067083333333,
+      "end": 516.7667083333333,
+      "scene": "L01-S10"
+    }
+  ],
+  "captions": [
+    {
+      "text": "تخيّل إنّ معاك تقرير من المعمل عن عيّنة",
+      "start": 0.21,
+      "end": 2.7,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "طماطم. التّقرير بيقول إنّ فيه متبقّي لمبيد اتقاس",
+      "start": 2.7,
+      "end": 6.7,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "في العينة. أوّل ردّ فعل ممكن يكون: يبقى",
+      "start": 6.7,
+      "end": 10.5,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "الطّماطم دي سبّبت تسمّم.",
+      "start": 10.5,
+      "end": 12.38,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "بسّ استنى لحظة. التّقرير قال لنا إيه بالضّبط؟",
+      "start": 12.8,
+      "end": 16.1,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "قال إنّ مادّة محدّدة اتقاست في عيّنة.",
+      "start": 16.6,
+      "end": 19.4,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "لسّه ما قالش مين أكل منها، وأكل قدّ",
+      "start": 19.9,
+      "end": 22.5,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "إيه، ولا إيه اللّي حصل له.",
+      "start": 22.5,
+      "end": 24.2,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "في الدّرس ده، هنمشي من مكان استخدام المبيد",
+      "start": 24.7,
+      "end": 27.8,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "لحدّ نتيجة التّحليل، ونتعلّم نكتب استنتاج على قدّ",
+      "start": 28.0,
+      "end": 32.0,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "الدّليل اللّي معانا. السّؤال اللّي هنرجع له طول",
+      "start": 32.0,
+      "end": 35.4,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "الوقت هو: إيه اللّي عرفناه، وإيه اللّي لسّه",
+      "start": 35.4,
+      "end": 38.6,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "محتاجين نعرفه؟",
+      "start": 38.6,
+      "end": 39.7,
+      "scene": "L01-S01"
+    },
+    {
+      "text": "قبل ما نكمّل، إيه هو متبقّي المبيد؟",
+      "start": 40.45095833333333,
+      "end": 43.440958333333334,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "ممكن يكون المادّة الأصليّة الموجودة على الغذاء أو",
+      "start": 44.39095833333333,
+      "end": 47.61095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "جوّاه، وممكن يشمل نواتج معيّنة من تحوّلها، حسب",
+      "start": 47.61095833333333,
+      "end": 52.290958333333336,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "التّعريف المستخدم. علشان كده، اسم المبيد لوحده مش",
+      "start": 52.290958333333336,
+      "end": 56.82095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "كفاية. لازم نعرف المعمل كان بيدوّر على إيه",
+      "start": 56.82095833333334,
+      "end": 60.42095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "بالضّبط. لو التّحليل قاس المادّة الأصليّة بسّ، والمقارنة",
+      "start": 60.45095833333333,
+      "end": 65.70095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "المطلوبة تشملها مع ناتج تحوّل، يبقى لسّه عندنا",
+      "start": 65.70095833333333,
+      "end": 69.45095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "اختلاف لازم نحلّه. كمان، وجود المتبقّي مش معناه",
+      "start": 69.66095833333333,
+      "end": 74.05095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "إنّنا هنشوف طبقة بعيننا.",
+      "start": 74.05095833333334,
+      "end": 76.21095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "العلامات اللّي على الرّسم مجرّد وسيلة للشّرح، مش",
+      "start": 76.69095833333333,
+      "end": 80.30095833333334,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "شكل الجزيئات الحقيقيّ. خلّي السّؤال ده معاك: إيه",
+      "start": 80.30095833333334,
+      "end": 84.69095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "المادّة اللّي اتقاست، وفين، وبأيّ طريقة؟",
+      "start": 84.69095833333333,
+      "end": 88.31095833333333,
+      "scene": "L01-S02"
+    },
+    {
+      "text": "نرجع للحقل بعد استخدام المبيد، جزء من المادّة",
+      "start": 88.84095833333335,
+      "end": 92.45095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "ممكن يفضل على المَحْصول أو جوّاه ولو حدّ",
+      "start": 92.45095833333335,
+      "end": 95.65095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "أكل غذاء فيه متبقّيات، ده طريق ممكن يحصل",
+      "start": 95.65095833333334,
+      "end": 99.06095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "بيه تعرّض للمبيد وفيه طرق تانية مادّة وصلت",
+      "start": 99.06095833333335,
+      "end": 103.37095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "للتّربة ممكن تتحرّك مع المَيّه الجارية على السّطح،",
+      "start": 103.37095833333333,
+      "end": 106.77095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "وتوصل لمجرى مَيّه هنا نسأل: وصلت فعلًا؟",
+      "start": 107.17095833333335,
+      "end": 110.77095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "وتركيزها قدّ إيه؟ وقت الرّشّ، الرّذاذ ممكن يتحرّك",
+      "start": 111.17095833333335,
+      "end": 114.82095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "برّه المكان المستهدف ويلامس كائنات تانية والحشرات النّافعة",
+      "start": 114.82095833333334,
+      "end": 119.52095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "ممكن تتعرّض لمتبقّيات على النّبات، بالتّلامس أو وهي",
+      "start": 119.52095833333334,
+      "end": 123.47095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "بتتغذّى عليه كلّ دي احتمالات محتاجة بيانات مش",
+      "start": 123.47095833333334,
+      "end": 127.62095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "كلّ مبيد هيتحرّك بنفس الطّريقة، ولا كلّ تعرّض",
+      "start": 127.62095833333333,
+      "end": 130.97095833333333,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "معناه إنّ ضرر حصل السّهم بيوضّح طريق الانتقال،",
+      "start": 130.97095833333333,
+      "end": 135.02095833333334,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "مش بيثبت حدوث الضّرر",
+      "start": 135.32095833333335,
+      "end": 136.82095833333335,
+      "scene": "L01-S03"
+    },
+    {
+      "text": "خلّينا نفصل تلات أفكار أوّل فكرة المادّة تقدر",
+      "start": 137.83191666666667,
+      "end": 141.75191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "تعمل ضرر من نوع إيه وتحت أنهي ظروف",
+      "start": 141.75191666666666,
+      "end": 145.05191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "ده سؤال عن قدرتها على إحداث الضّرر تاني",
+      "start": 145.55191666666667,
+      "end": 149.77191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "فكرة المادّة وصلت للكائن إزاي وقدّ إيه ولمدّة",
+      "start": 149.77191666666667,
+      "end": 154.31191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "قدّ إيه ده سؤال عن التّعرّض أمّا المخاطر",
+      "start": 154.31191666666666,
+      "end": 158.43191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "فالسّؤال فيها عن احتمال حدوث الأثر وشدّته في",
+      "start": 158.75191666666666,
+      "end": 161.93191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "الظّروف اللّي بندرسها يعني لو دراسة لقت تأثير",
+      "start": 161.93191666666667,
+      "end": 165.61191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "عند جرعة معيّنة لسّه محتاجين نعرف هل ظروف",
+      "start": 165.61191666666667,
+      "end": 168.93191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "التّعرّض في حالتنا تسمح باستخدام النّتيجة دي وجود",
+      "start": 168.93191666666667,
+      "end": 173.09191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "المادّة لوحده مش كفاية للحكم وعدم وجود أعراض",
+      "start": 173.09191666666666,
+      "end": 176.85191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "فوريّة برضه مش دليل إنّ كلّ تأثير محتمل",
+      "start": 176.85191666666668,
+      "end": 180.29191666666668,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "مستبعد إحنا بنجمّع أدلّة ونفهم حدودها مش بنختار",
+      "start": 180.29191666666668,
+      "end": 185.31191666666666,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "لون يطمّنّا أو يخوّفنا",
+      "start": 185.31191666666666,
+      "end": 187.24191666666667,
+      "scene": "L01-S04"
+    },
+    {
+      "text": "نرجع لتقرير الطّماطم. المثال ده افتراضيّ بالكامل.",
+      "start": 188.068875,
+      "end": 191.818875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "التّركيز المقاس هو صفر فاصلة صفر تمانية مِلّيجرام",
+      "start": 192.718875,
+      "end": 197.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "لكلّ كيلوجرام غذاء. ركّز في آخر كلمة: غذاء.",
+      "start": 197.468875,
+      "end": 201.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "الرّقم مش لكلّ كيلوجرام من وزن الإنسان، ومش",
+      "start": 202.268875,
+      "end": 205.868875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "هو الكمّيّة اللّي أكلها.",
+      "start": 205.868875,
+      "end": 207.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "ومعانا حدّ للمقارنة، اخترناه للتّدريب بسّ: صفر فاصلة",
+      "start": 207.968875,
+      "end": 212.368875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "واحد مِلّيجرام لكلّ كيلوجرام غذاء.",
+      "start": 212.768875,
+      "end": 215.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "عشان نقارن صحّ، لازم الأرقام تكون بتوصف نفس",
+      "start": 216.068875,
+      "end": 219.66887499999999,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "الحاجة. نتأكّد من المادّة، وتعريف المتبقّي، ونوع الغذاء،",
+      "start": 219.66887499999999,
+      "end": 224.26887499999998,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "والجزء اللّي اتحلّل، ووحدة القياس.",
+      "start": 224.468875,
+      "end": 226.668875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "لو الحدّ خاصّ بالتّفّاح، ما ينفعش نستخدمه للطّماطم.",
+      "start": 227.168875,
+      "end": 230.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "في المثال ده، هنعتبر إنّ البيانات متطابقة وإنّ",
+      "start": 230.968875,
+      "end": 234.568875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "القياس صالح للمقارنة. دي مسألة تعليميّة بأرقام افتراضيّة،",
+      "start": 234.76887499999998,
+      "end": 239.468875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "مش حكم قانونيّ على شحنة حقيقيّة.",
+      "start": 239.76887499999998,
+      "end": 242.068875,
+      "scene": "L01-S05"
+    },
+    {
+      "text": "دلوقتي نقارن بين الرقمين باستخدام نفس وحده القياس",
+      "start": 242.61383333333333,
+      "end": 247.11383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "صفر فاصله صفر تمانيه اقل من صفر فاصله",
+      "start": 247.81383333333332,
+      "end": 250.78383333333332,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "واحد والفرق بينهم اتنين من ميه مليجرام لكل",
+      "start": 250.78383333333332,
+      "end": 255.21383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "كيلوجرام غذاء نكتب الاستنتاج بدقه القيمه اقل من",
+      "start": 255.21383333333333,
+      "end": 260.59383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "الحد الافتراضي المستخدم في المثال بس الفرق ده",
+      "start": 260.59383333333335,
+      "end": 264.30383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "مش هامش امان لشخص ومش كميه مسموح له",
+      "start": 264.4438333333333,
+      "end": 267.67383333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "ياكلها الحد الاقصى للمتبقي بيتعلق بتركيز محدد في",
+      "start": 267.67383333333333,
+      "end": 272.46383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "سلعه محدده وتحديده بيعتمد على بيانات الاستخدام والتقييم",
+      "start": 272.46383333333335,
+      "end": 277.71383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "العلمي مش هو الجرعه اللي دخلت جسم انسان",
+      "start": 277.71383333333335,
+      "end": 281.09383333333335,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "ولو القيمه كانت اعلى من الحد ده برضه",
+      "start": 281.54383333333334,
+      "end": 284.41383333333334,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "ما يثبتش لوحده ان شخص اتسمم تجاوز الحد",
+      "start": 284.41383333333334,
+      "end": 288.3138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "وتقييم الاثر الصحي سؤالين مرتبطين لكن كل واحد",
+      "start": 288.5638333333333,
+      "end": 292.8938333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "محتاج ادلته المناسبه",
+      "start": 293.09383333333335,
+      "end": 294.8138333333333,
+      "scene": "L01-S06"
+    },
+    {
+      "text": "في الحساب الجاي، هنفترض إنّ تركيز المتبقّي في",
+      "start": 295.4347916666667,
+      "end": 298.5047916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "الجزء اللّي اتاكل هو نفس التّركيز في العيّنة.",
+      "start": 298.5047916666667,
+      "end": 301.6947916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "طيب، لو شخص أكل ميتين جرام من الطّماطم",
+      "start": 302.3047916666667,
+      "end": 305.2747916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "دي؟ نحَوّل الوزن لكيلوجرام: ميتين جرام يعني صفر",
+      "start": 305.2747916666667,
+      "end": 309.6547916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "فاصلة اتنين كيلوجرام. نضرب التّركيز في الوزن: صفر",
+      "start": 309.6547916666667,
+      "end": 314.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "فاصلة صفر تمانية، في صفر فاصلة اتنين.",
+      "start": 314.26479166666667,
+      "end": 317.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "يطلع صفر فاصلة صفر واحد ستّة مِلّيجرام من",
+      "start": 318.4647916666667,
+      "end": 322.7147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "متبقّي المبيد. دي الكمّيّة الموجودة في الجزء اللّي",
+      "start": 322.7147916666667,
+      "end": 326.26479166666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "اتاكل. مش بالضّرورة الكمّيّة اللّي الجسم امتصّها، ومش",
+      "start": 326.26479166666667,
+      "end": 330.21479166666666,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "دليل لوحدها إنّ الشخص حصل له ضرر.",
+      "start": 330.21479166666666,
+      "end": 332.6647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "ولاحظ الوحدة: مِلّيجرام لكلّ كيلوجرام، مضروبة في كيلوجرام.",
+      "start": 333.3647916666667,
+      "end": 338.3147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "الكيلوجرام في البسط والمقام بيختصروا بعض، فالنّتيجة بتطلع",
+      "start": 338.8647916666667,
+      "end": 343.1147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "بالمِلّيجرام. ولو حجم الحصّة زاد والتّركيز ثابت، كمّيّة",
+      "start": 343.1147916666667,
+      "end": 348.0647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "المتبقّي اللّي اتاكلت هتزيد.",
+      "start": 348.0647916666667,
+      "end": 349.8647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "وتقييم التّعرّض محتاج معلومات تانية، زي وزن الجسم،",
+      "start": 350.71479166666666,
+      "end": 354.6147916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "وتكرار الأكل، وباقي مصادر التّعرّض المهمّة.",
+      "start": 354.96479166666666,
+      "end": 358.1647916666667,
+      "scene": "L01-S07"
+    },
+    {
+      "text": "في ملفّ المنهج، فيه جدول بيجمع أسماء مبيدات",
+      "start": 358.8147916666667,
+      "end": 362.27479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "وآثار صحّيّة وبيئيّة. بسّ الصّفّ لوحده مش بيشرح",
+      "start": 362.3847916666667,
+      "end": 366.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "لنا الدّراسة اللّي ورا المعلومة.",
+      "start": 366.14479166666666,
+      "end": 368.1847916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "لو حدّ قال إنّ مادّة مرتبطة بتأثير على",
+      "start": 369.1147916666667,
+      "end": 372.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "الجهاز العصبيّ، فاستنتج إنّ أيّ غذاء فيه المادّة",
+      "start": 372.1947916666667,
+      "end": 375.7947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "دي هيسبّب نفس التّأثير، يبقى محتاجين نراجع الاستنتاج",
+      "start": 375.7947916666667,
+      "end": 380.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "ده. نسأل: الدّراسة اتعملت على أنهي كائن؟",
+      "start": 380.4947916666667,
+      "end": 384.14479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "وبجرعة أو تركيز قدّ إيه؟",
+      "start": 384.7947916666667,
+      "end": 386.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "والمادّة دخلت له إزّاي؟",
+      "start": 387.14479166666666,
+      "end": 388.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "والتّعرّض استمرّ قدّ إيه؟",
+      "start": 389.5947916666667,
+      "end": 391.1947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "ونراجع اسم المادّة وصيغتها، عشان ما نخلطش بين",
+      "start": 391.9447916666667,
+      "end": 395.39479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "مادّتين. إحنا مش بننفي احتمال الضّرر.",
+      "start": 395.39479166666666,
+      "end": 398.4947916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "إحنا بنرفض نحكم من معلومات مش كفاية.",
+      "start": 399.09479166666665,
+      "end": 401.9447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "الجدول بداية ندوّر منها على الدّليل، مش تشخيص",
+      "start": 402.59479166666665,
+      "end": 406.2447916666667,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "جاهز نطبّقه على نتيجة التّحليل.",
+      "start": 406.2447916666667,
+      "end": 408.64479166666666,
+      "scene": "L01-S08"
+    },
+    {
+      "text": "وده مرتبط بالكلام في صفحة تلاتة عن خبراء",
+      "start": 409.49575,
+      "end": 412.19575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "منظّمة الأغذية والزّراعة ومنظّمة الصّحّة العالميّة.",
+      "start": 412.19575,
+      "end": 416.00575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "تقييم الدّراسات العلميّة حاجة، واتّخاذ القرار التّنظيميّ حاجة",
+      "start": 416.65575,
+      "end": 421.25575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "تانية، مع إنّهم مرتبطين.",
+      "start": 421.25575,
+      "end": 423.39574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "الجهات اللّي بتحطّ المعايير، والحكومات، بتستعين بالتّقييمات العلميّة",
+      "start": 424.02574999999996,
+      "end": 428.58574999999996,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "وبيانات الاستخدام والمتبقّيات. وعلى مستوى المزرعة، الممارسة الزّراعيّة",
+      "start": 428.83574999999996,
+      "end": 434.55575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "الجيّدة بتبدأ بالاستخدام المصرّح بيه، وبشروطه للمبيد والمَحْصول.",
+      "start": 434.55575,
+      "end": 439.79575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "رقم التّحليل ما يحدّدش كمّيّة المبيد اللّي تتستخدم،",
+      "start": 440.77575,
+      "end": 444.17575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "ولا يحدّد ميعاد الحصاد.",
+      "start": 444.55575,
+      "end": 446.19575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "نرجع لتعليمات المُنتَج، والاستخدام، والمتطلّبات المعتمدة اللّي بتنظّمه.",
+      "start": 446.67575,
+      "end": 451.97575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "المطلوب منّنا هنا نعرف نطلب المعلومات الصّحّ ونفهمها.",
+      "start": 452.59575,
+      "end": 456.37575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "المثال التّعليميّ يساعدنا نفكّر، لكن ما يتحوّلش لتوصية",
+      "start": 456.99575,
+      "end": 461.27575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "باستخدام مبيد أو تحديد جرعته.",
+      "start": 461.27575,
+      "end": 463.59575,
+      "scene": "L01-S09"
+    },
+    {
+      "text": "دلوقتي دورك مع حالة مختلفة، وكلّ أرقامها افتراضيّة.",
+      "start": 464.5967083333333,
+      "end": 468.7667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "معانا تقرير تحليل للفاصوليا.",
+      "start": 469.3667083333333,
+      "end": 471.3667083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "تركيز المتبقّي فيها صفر فاصلة صفر ستّة مِلّيجرام",
+      "start": 471.9667083333333,
+      "end": 476.3467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "لكلّ كيلوجرام غذاء. الحدّ المطابق في التّدريب صفر",
+      "start": 476.3467083333333,
+      "end": 481.50670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "فاصلة صفر خمسة، وحجم الحصّة ميّة وخمسين جرام.",
+      "start": 481.50670833333334,
+      "end": 486.1467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "وقّف الفيديو عند السّؤال، واكتب تلات حاجات: نتيجة",
+      "start": 487.1667083333333,
+      "end": 491.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "المقارنة مع الحدّ؛ وكمّيّة المتبقّي في الحصّة بعد",
+      "start": 491.56670833333334,
+      "end": 495.56670833333334,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "تحويل الوحدة؛ واستنتاج صحّيّ ما ينفعش نطلّعه من",
+      "start": 495.56670833333334,
+      "end": 499.5467083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "البيانات دي لوحدها. بعد ما تجاوب، راجع خطوات",
+      "start": 499.5467083333333,
+      "end": 503.94670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "تفكيرك، مش الرّقم النّهائيّ بسّ.",
+      "start": 503.94670833333333,
+      "end": 506.4867083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "لو عرفت تفرّق بين تركيز في الغذاء، وكمّيّة",
+      "start": 507.12670833333334,
+      "end": 510.82670833333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "اتاكلت، وتقييم للمخاطر، تبقى بنيت الأساس اللّي هنكمّل",
+      "start": 510.82670833333333,
+      "end": 515.5067083333333,
+      "scene": "L01-S10"
+    },
+    {
+      "text": "عليه في الدّرس الجاي.",
+      "start": 515.5067083333333,
+      "end": 516.7667083333333,
+      "scene": "L01-S10"
+    }
+  ],
+  "wordAndCueMethod": "Actual audio analyzed on GitHub Actions in two separate prompts per scene. Approximate acoustic estimates, not phonetic forced alignment.",
+  "coordinateConversion": "Deterministic authoring from Actions timings plus exact PCM global source offsets; no text-length time estimates.",
+  "fullRenderAllowed": false,
+  "futureRenderInstruction": "When owner approves the sample, use the accepted full WAV ONCE as master soundtrack; place visuals using these global offsets. Do not concatenate independently padded scene videos/audio or reuse old timing. Re-render only visuals.",
+  "sample": "L01-S07"
+}

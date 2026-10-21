@@ -1,0 +1,10 @@
+from pathlib import Path
+import json,subprocess,hashlib,math,shutil
+R=Path(__file__).parent;M=json.loads((R/'request.json').read_text(encoding='utf-8'));Q=R/'final';Q.mkdir(exist_ok=True);sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();rows=[];end=0
+for c in M['scenes']:
+ d=R/'downloads/scenes'/('fate-l01-pro-full-scene-'+c['id']);meta=json.loads((d/'render.json').read_text());assert meta['audioSHA256']==c['audioSHA256'];assert sha(d/'visual.mp4')==meta['silentVisualSHA256'];assert meta['globalStartVideoFrame']==end;end=meta['globalEndVideoFrame'];rows.append({'id':c['id'],'visualSHA256':meta['silentVisualSHA256'],'frames':meta['frames']})
+(R/'concat.txt').write_text(''.join("file '"+str((R/'downloads/scenes'/('fate-l01-pro-full-scene-'+c['id'])/'visual.mp4').resolve())+"'\n" for c in M['scenes']))
+audio=R/'public'/M['source']['file'];assert sha(audio)==M['source']['sha256']
+subprocess.run(['ffmpeg','-v','error','-f','concat','-safe','0','-i',str(R/'concat.txt'),'-i',str(audio),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-movflags','+faststart',str(Q/'L01-ar.mp4')],check=True)
+probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-count_frames','-of','json',str(Q/'L01-ar.mp4')]));v=next(s for s in probe['streams'] if s['codec_type']=='video');a=next(s for s in probe['streams'] if s['codec_type']=='audio');assert int(v['nb_read_frames'])==end==round(M['fullAudioFrames']/24000*30);assert abs(float(a['duration'])-M['fullAudioFrames']/24000)<.1
+(Q/'probe.json').write_text(json.dumps(probe,indent=2));(Q/'assembly.json').write_text(json.dumps({'sourceAudioSHA256':sha(audio),'videoSHA256':sha(Q/'L01-ar.mp4'),'frames':end,'scenes':rows,'method':'Silent scene streams concatenated using rounded global frame boundaries. Approved full WAV encoded once as continuous audio master. No scene audio concatenation, TTS, speed or pitch changes.','humanPlaybackVerified':False},indent=2));shutil.copyfile(R/'L01-ar.vtt',Q/'L01-ar.vtt');shutil.copyfile(R/'full-timeline.json',Q/'full-timeline.json')
