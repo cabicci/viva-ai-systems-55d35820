@@ -1,0 +1,204 @@
+{
+  "id": "L01-ar-pro-v2",
+  "scope": "Correct one corroborated ambiguous/wrong opening verb in unaccepted Pro S06, clarify the limit-setting clause without changing scientific meaning. Reuse the other nine complete Pro recordings byte-exact. No video or publication.",
+  "model": "gemini-2.5-pro-preview-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "locale": "ar-EG",
+  "format": "mono PCM16 24000Hz",
+  "maxSpeechCalls": 1,
+  "maxAnalysisCalls": 5,
+  "automaticRetries": 0,
+  "segments": [
+    {
+      "id": "L01-S06-pro-v2",
+      "sceneID": "L01-S06",
+      "voice": "Charon",
+      "spokenText": "دلوقتي نقارن بين الرّقمين، باستخدام نفس وحدة القياس. صفر فاصلة صفر تمانية أقلّ من صفر فاصلة واحد. والفرق بينهم اتنين من ميّة مِلّيجرام لكلّ كيلوجرام غذاء. نكتب الاستنتاج بدقّة: القيمة أقلّ من الحدّ الافتراضيّ المستخدم في المثال. بسّ الفرق ده مش هامش أمان لشخص، ومش كمّيّة مسموح له ياكلها. الحدّ الأقصى للمتبقّي بيتعلّق بتركيز محدّد في سلعة محدّدة، وتحديده بيعتمد على بيانات الاستخدام والتّقييم العلميّ. مش هو الجرعة اللّي دخلت جسم إنسان. ولو القيمة كانت أعلى من الحدّ، ده برضه ما يثبتش لوحده إنّ شخص اتسمّم. تجاوز الحدّ وتقييم الأثر الصّحّيّ سؤالين مرتبطين، لكن كلّ واحد محتاج أدلّته المناسبة.",
+      "delivery": "### DIRECTOR NOTES — DO NOT SPEAK THESE NOTES:\nاتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ الأرقام والوحدات والنفي. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار.\nSpeak the transcript as one connected explanatory passage. Do not read any director notes, pronunciation cues or headings aloud.\nKeep a stable warm male mid-register voice, lightly nasal and conversational. Do not exaggerate any consonant.",
+      "textSHA256": "c211204ddbe8eb78a777d6ddb10bcf60719b9fa4d2a7e8d072187eb0b7c702da",
+      "deliverySHA256": "62805be77aa4e0edf619be24d892cefb8bfe9a8a34fa4d9d3df5e9ed70db7f48",
+      "wordCount": 99
+    }
+  ],
+  "retained": [],
+  "reuse": [
+    {
+      "id": "L01-S01-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S01-pro-v1",
+      "file": "L01-S01-pro-v1.wav",
+      "sha256": "a28b85f3148296f354830ca9167416c50772a416783fee0df79d3bd5f8d1f2cc",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S02-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S02-pro-v1",
+      "file": "L01-S02-pro-v1.wav",
+      "sha256": "fb77cac94c9374a994532ebb0688798e681b6295bfdb8b706df699c055b3b38c",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S03-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S03-pro-v1",
+      "file": "L01-S03-pro-v1.wav",
+      "sha256": "131a9063dc5d165e3b6d0aa4f54d3c471849d64481e97f7b93a0541e76c87360",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S04-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S04-pro-v1",
+      "file": "L01-S04-pro-v1.wav",
+      "sha256": "197a4dd2d80f277c55a0eb20f1d3d5768d04000ece2bd45fc504d375b8b7fe7f",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S05-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S05-pro-v1",
+      "file": "L01-S05-pro-v1.wav",
+      "sha256": "99c50a0859ec858f0553b6614b2e902f4932a011d52828f826a859db2fac21e3",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S07-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S07-pro-v1",
+      "file": "L01-S07-pro-v1.wav",
+      "sha256": "3d12d7413790ad369941483c664aa07cc0ec1ccfccd715b0a133d63d56da8f6a",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S08-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S08-pro-v1",
+      "file": "L01-S08-pro-v1.wav",
+      "sha256": "3e186140a4566630be03d1ebbb9df6b0c8a09712cf60574a19c6768553375240",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S09-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S09-pro-v1",
+      "file": "L01-S09-pro-v1.wav",
+      "sha256": "052f3a38e1fdd1f5d538cce5b82e47e87ef0133ce94c1c5a84b1f9571a43a10e",
+      "ownerAccepted": false
+    },
+    {
+      "id": "L01-S10-pro-v1",
+      "run": 39572192658,
+      "artifact": "fate-l01-pro-v1-L01-S10-pro-v1",
+      "file": "L01-S10-pro-v1.wav",
+      "sha256": "a7ffb7b83d4846197e0c0c149c1d874a48af062a3ba73808cd12e7ee35603e8a",
+      "ownerAccepted": false
+    }
+  ],
+  "scenes": [
+    {
+      "id": "L01-S01",
+      "title": "نتيجة تحليل… نقدر نستنتج منها إيه؟",
+      "voice": "Kore",
+      "parts": [
+        "L01-S01-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S02",
+      "title": "المتبقي مش لازم يكون ظاهرًا",
+      "voice": "Charon",
+      "parts": [
+        "L01-S02-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S03",
+      "title": "نتتبع الطريق من الحقل",
+      "voice": "Kore",
+      "parts": [
+        "L01-S03-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S04",
+      "title": "قدرة على الضرر، تعرّض، مخاطر",
+      "voice": "Charon",
+      "parts": [
+        "L01-S04-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S05",
+      "title": "نقرأ التقرير قبل المقارنة",
+      "voice": "Kore",
+      "parts": [
+        "L01-S05-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S06",
+      "title": "النتيجة وحدودها",
+      "voice": "Charon",
+      "parts": [
+        "L01-S06-pro-v2"
+      ]
+    },
+    {
+      "id": "L01-S07",
+      "title": "من التركيز إلى كمية في حصة",
+      "voice": "Charon",
+      "parts": [
+        "L01-S07-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S08",
+      "title": "نفكك ادعاءً من جدول الأضرار",
+      "voice": "Kore",
+      "parts": [
+        "L01-S08-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S09",
+      "title": "التقييم والممارسة الزراعية",
+      "voice": "Kore",
+      "parts": [
+        "L01-S09-pro-v1"
+      ]
+    },
+    {
+      "id": "L01-S10",
+      "title": "دورك: حالة جديدة",
+      "voice": "Charon",
+      "parts": [
+        "L01-S10-pro-v1"
+      ]
+    }
+  ],
+  "voiceReferences": {
+    "Charon": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-A-Charon-Pro",
+      "file": "voice-A-Charon-Pro.wav",
+      "sha256": "f6e33f7ded33ac5a1492bddf141fc0bc4e96daa246d34c29153be9b9acde1230"
+    },
+    "Kore": {
+      "run": 39571137579,
+      "artifact": "fate-l01-pro-proof-v1-voice-B-Kore-Pro",
+      "file": "voice-B-Kore-Pro.wav",
+      "sha256": "9aece2e00ecf3d67234b6fcb8d7ca58ac4a99d7eec17e7a7806064d065257b32"
+    }
+  },
+  "sourceScript": "media/L01-ar-connected-v8/spoken-script.md",
+  "sourceScriptSHA256": "9011e856770944ef60135da3e3cb168a9389d490edafc24d914234c73dacec63",
+  "generationUnit": "One complete scene per request; merge existing same-scene text paragraphs without omissions.",
+  "cacheDecision": "Other nine Pro scenes reuse exact PCM. Only S06 spoken text changes. Accepted proof references and old Flash files retained unchanged.",
+  "humanListeningApproved": false,
+  "renderAllowed": false,
+  "joinReviewIndices": [
+    4,
+    5
+  ]
+}
