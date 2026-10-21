@@ -9,19 +9,10 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: '22'
-          cache: npm
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - run: python3 verify.py
-      - run: npm run build
-      - name: Capture exactly 697 native-object frames
-        run: |
-          python3 -m http.server 5207 --bind 127.0.0.1 --directory dist > /tmp/preview.log 2>&1 &
-          node capture.cjs
+      - name: Verify and unpack the 697 captured native-object frames
+        run: python3 unpack_frames.py
       - name: Assemble accepted narration without TTS
         run: |
           ffmpeg -v error -framerate 30 -i frames/frame-%04d.png -i public/audio/accepted-tools-ar-EG.wav -map 0:v:0 -map 1:a:0 -c:v libx264 -crf 17 -preset slow -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart output/review.mp4

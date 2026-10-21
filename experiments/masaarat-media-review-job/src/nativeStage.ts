@@ -57,12 +57,12 @@ export async function stage(host:HTMLElement,key:string,opts:any={}){
   if(t>=12.433){loose.position.set(3.1,.15,.4);const q=T.MathUtils.smoothstep(t,12.433,14.213);sound.position.y=.01+1.6*q;const rot=new T.Quaternion().setFromUnitVectors(handleCenter.clone().sub(bladeCenter).normalize(),new T.Vector3(0,1,0));sound.quaternion.slerp(rot,q);const away=T.MathUtils.smoothstep(t,16.313,19.533);sound.position.x=-2.3-1.2*away;}
   camera.position.set(5,6,9);controls.target.set(0,.7,0);controls.update();renderer.render(scene,camera);
  }
- const smooth=(t:number,a:number,b:number)=>T.MathUtils.smoothstep(t,a,b);
+ const smooth=(t:number,a:number,b:number)=>T.MathUtils.smootherstep(t,a,b);
  const localCenter=(g:any,name:string)=>{g.updateMatrixWorld(true);const c=new T.Box3().setFromObject(g.getObjectByName(name)).getCenter(new T.Vector3());return g.worldToLocal(c);};
  const sound=groups['long-handled-spade'],loose=groups['STATE-LOOSE-JOINT'],tray=groups['defect-tool-isolation-tray'];
  const hc=sound?localCenter(sound,'Hardwood_crossbar_grip'):new T.Vector3();
  const bc=sound?localCenter(sound,'Steel_body_|_blade_neck_socket_continuous'):new T.Vector3();
- const joint=loose?.getObjectByName('STATE-LOOSE-JOINT_retained_shaft_pivot');const jointBase=joint?.quaternion.clone();
+ const joint=loose?.getObjectByName('STATE-LOOSE-JOINT_retained_shaft_pivot');const jointBase=joint?.quaternion.clone();const jc=joint?loose.worldToLocal(joint.getWorldPosition(new T.Vector3())):bc.clone();
  const clearance=new T.Mesh(new T.RingGeometry(1.48,1.51,96),new T.MeshBasicMaterial({color:0x009b83,side:T.DoubleSide,transparent:true,opacity:.65}));clearance.rotation.x=-Math.PI/2;clearance.position.y=.025;clearance.visible=false;scene.add(clearance);
  function filmTime(t:number){
   if(key!=='tools'||!sound||!loose||!tray)return;controls.enabled=false;
@@ -75,15 +75,31 @@ export async function stage(host:HTMLElement,key:string,opts:any={}){
    if(t>=2.02&&t<4.94){const k=smooth(t,2.02,2.38);aim.lerp(handle,k);eye.lerp(handle.clone().add(new T.Vector3(.65,1.25,2.25)),k);halo.position.copy(handle).add(new T.Vector3(0,.1,0));halo.rotation.set(-Math.PI/2,0,0);halo.scale.setScalar(.78);halo.visible=true;}
    if(t>=4.94){const k=smooth(t,4.94,5.4);aim.copy(sound.localToWorld(hc.clone())).lerp(blade,k);eye.copy(sound.localToWorld(hc.clone()).add(new T.Vector3(.65,1.25,2.25))).lerp(blade.clone().add(new T.Vector3(.6,1.9,2.4)),k);halo.position.copy(blade).add(new T.Vector3(0,.1,0));halo.rotation.set(-Math.PI/2,0,0);halo.scale.setScalar(1.1);halo.visible=k>.85;}
   } else if(t<12.433333333333334){
-   loose.visible=true;const k=smooth(t,10.9,11.35);tray.visible=t>=10.6;tray.position.set(1.8+(1-smooth(t,10.6,11.05))*2,.01,.25);loose.position.set(1.8*k,.01+smooth(t,10.6,10.9)-.86*smooth(t,11.35,11.7),.25*k);
+   loose.visible=true;const k=smooth(t,10.75,11.65);tray.visible=t>=10.6;tray.position.set(1.8+(1-smooth(t,10.6,11.05))*2,.01,.25);loose.position.set(1.8*k,.01+smooth(t,10.6,10.95)-.86*smooth(t,11.4,11.86),.25*k);
    if(t<10.6){if(joint)joint.rotateY(T.MathUtils.degToRad(.5)*Math.sin((t-8.52)*8));loose.updateMatrixWorld(true);const c=joint?joint.getWorldPosition(new T.Vector3()):new T.Box3().setFromObject(loose).getCenter(new T.Vector3());aim.copy(c);eye.copy(c).add(new T.Vector3(.45,.85,1.35));halo.position.copy(c).add(new T.Vector3(0,.07,0));halo.rotation.set(-Math.PI/2,0,0);halo.scale.setScalar(.4);halo.material.color.set(0xd66a38);halo.visible=true;}
    else {aim.set(1,.2,.2);eye.set(2.2,4.7,5.5);}
   } else {
-   sound.visible=true;const up=smooth(t,12.433333333333334,14.213333333333333);const rot=new T.Quaternion().setFromUnitVectors(hc.clone().sub(bc).normalize(),new T.Vector3(0,1,0));rot.premultiply(new T.Quaternion().setFromAxisAngle(new T.Vector3(0,1,0),-.9));sound.quaternion.slerp(rot,up);sound.updateMatrixWorld(true);const b=new T.Box3().setFromObject(sound);sound.position.y+=.14-b.min.y;const apart=smooth(t,16.313333333333333,17.5);sound.position.x=-.7*apart;aim.set(0,1.35,0);eye.set(2.5,2.9,6.7);
+   const exit=smooth(t,12.433333333333334,13.4);tray.visible=loose.visible=exit<1;tray.position.set(1.8+5*exit,.01,.25);loose.position.set(1.8+5*exit,.15,.25);
+   sound.visible=true;const up=smooth(t,12.433333333333334,14.213333333333333);const rot=new T.Quaternion().setFromUnitVectors(hc.clone().sub(bc).normalize(),new T.Vector3(0,1,0));rot.premultiply(new T.Quaternion().setFromAxisAngle(new T.Vector3(0,1,0),-.9));sound.quaternion.slerp(rot,up);sound.updateMatrixWorld(true);const b=new T.Box3().setFromObject(sound);sound.position.y+=.14-b.min.y;const apart=smooth(t,16.313333333333333,17.5);sound.position.x=-4*(1-smooth(t,12.433333333333334,13.5))-.7*apart;aim.set(0,1.35,0);eye.set(2.5,2.9,6.7);
    if(t>=14.213333333333333&&t<16.313333333333333){const c=sound.localToWorld(bc.clone());halo.position.copy(c);halo.rotation.set(0,0,0);halo.scale.setScalar(.8);halo.visible=true;}
    if(t>=18.03333333333333){clearance.visible=true;clearance.position.x=sound.position.x;clearance.scale.setScalar(smooth(t,18.03333333333333,18.7));}
   }
   if(!(t>=8.52&&t<10.6))halo.material.color.set(0x009b83);
+  // A deterministic, continuous camera path, independent of frame playback speed.
+  // Every transition starts at the measured spoken cue; no audio retiming.
+  const v=(x:number,y:number,z:number)=>new T.Vector3(x,y,z);
+  const socket=jc.clone().add(new T.Vector3(0,.01,0));
+  const poses=[
+   {start:0,end:0,target:v(0,.25,0),eye:v(1.5,4.3,5.7)},
+   {start:2.02,end:2.65,target:hc.clone(),eye:hc.clone().add(v(.65,1.25,2.25))},
+   {start:4.94,end:5.65,target:bc.clone(),eye:bc.clone().add(v(.6,1.9,2.4))},
+   {start:8.52,end:9.05,target:socket.clone(),eye:socket.clone().add(v(.45,.85,1.35))},
+   {start:9.58,end:10.6,target:v(1,.2,.2),eye:v(2.2,4.7,5.5)},
+   {start:12.433333333333334,end:13.35,target:v(0,1.35,0),eye:v(2.5,2.9,6.7)},
+  ];
+  let prior=poses[0];aim.copy(prior.target);eye.copy(prior.eye);
+  for(const pose of poses.slice(1)){if(t<pose.start)break;const blend=smooth(t,pose.start,pose.end);aim.copy(prior.target).lerp(pose.target,blend);eye.copy(prior.eye).lerp(pose.eye,blend);if(t<pose.end)break;prior=pose;}
+  if(halo.visible){let start=t<4.94?2.02:t<8.52?4.94:t<10.6?8.52:14.213333333333333;halo.scale.multiplyScalar(smooth(t,start,start+.28));}
   camera.position.copy(eye);camera.lookAt(aim);camera.updateMatrixWorld(true);renderer.render(scene,camera);
  }
  function render(){if(ended)return;if(!opts.film)controls.update();renderer.render(scene,camera);raf=requestAnimationFrame(render);}render();
