@@ -22,11 +22,15 @@ export function CurrentRagReleasePanel() {
     setBusy(true); setMessage(""); stop.current = false;
     const reviewed = view;
     try {
-      const call = (op: CurrentOperation, executionId?: string) => run({ data: {
+      const call = async (op: CurrentOperation, executionId?: string) => {
+        const response = await run({ data: {
         operation: op, requestId: crypto.randomUUID(), releaseId: reviewed.releaseId, executionId,
         confirmation: op === "status" ? undefined : confirmationFor(op, reviewed.releaseId),
         ...(op === "activate" || op === "rollback" ? { expectedActiveVersion: reviewed.status.currentActiveVersion } : {}),
-      } });
+        } });
+        if (response.errorCode) throw new Error(response.errorCode);
+        return response;
+      };
       if (operation === "initialize") {
         const initialized = await call("initialize");
         const executionId = String(initialized.executionId);
@@ -43,8 +47,11 @@ export function CurrentRagReleasePanel() {
         setMessage(operation === "activate" ? "تم تفعيل المحتوى المراجع." : "تم استرجاع الإصدار السابق.");
       }
       setPrepareConfirmed(false); setPublishConfirmed(false); await refresh();
-    } catch {
-      setMessage("توقف الإجراء. حدّث الحالة وراجع الطلب الجاري قبل الاستكمال؛ لم يتم تشغيل إعادة محاولة تلقائية.");
+    } catch (error) {
+      const code = error instanceof Error ? error.message : "";
+      const status = /^CURRENT_PROVIDER_HTTP_([45][0-9]{2})$/.exec(code);
+      const detail = status ? `مزود الفهرسة رفض الطلب (${status[1]}).${status[1] === "429" ? " انتظر انتهاء حد الاستخدام قبل أي استكمال." : " راجع حالة الربط والخدمة."} ` : "";
+      setMessage(detail + "توقف الإجراء. حدّث الحالة وراجع الطلب الجاري قبل الاستكمال؛ لم يتم تشغيل إعادة محاولة تلقائية.");
     } finally { setBusy(false); }
   }
   const currentActive = view?.status.currentActiveVersion === view?.indexVersion;

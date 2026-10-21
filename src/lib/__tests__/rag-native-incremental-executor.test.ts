@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { executeNextImportBatch } from "@/lib/rag/lovable-native/executor.server";
+import { executeNextImportBatch, createOpenAiEmbeddingFetcher } from "@/lib/rag/lovable-native/executor.server";
 import { LOCKED_EMBEDDING_DIMENSIONS, LOCKED_EMBEDDING_MODEL, LOCKED_SOURCE_SHA } from "@/lib/rag/lovable-native/contracts";
 import type { PackageManifest, RagChunkRecord } from "@/lib/rag/types";
 
@@ -41,7 +41,15 @@ beforeEach(() => {
   loader.mockResolvedValue({ chunks: fixtureChunks, packageManifest: manifest });
   vi.stubEnv("OPENAI_API_KEY", "");
 });
-afterEach(() => { vi.clearAllMocks(); vi.unstubAllEnvs(); });
+afterEach(() => { vi.clearAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
+
+it("reports a provider HTTP failure without response bodies or automatic retry", async () => {
+  const fetcher = vi.fn().mockResolvedValue(new Response("private provider response must not leave the server", { status: 429 }));
+  vi.stubGlobal("fetch", fetcher);
+  await expect(createOpenAiEmbeddingFetcher("synthetic-test-key")(["synthetic text"]))
+    .rejects.toThrow(/^PROVIDER_FAILED:HTTP_429$/);
+  expect(fetcher).toHaveBeenCalledTimes(1);
+});
 
 describe("native incremental executor with eight current fixtures and mocked providers", () => {
   it("uses zero provider calls for unchanged content, commits all rows with current metadata, and needs no provider key", async () => {

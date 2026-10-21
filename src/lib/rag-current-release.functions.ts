@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { currentReleaseFailureCode } from "@/lib/rag/current-release/contracts";
 
 type AuthContext = { userId: string; supabase: { rpc(name: "has_role", args: { _user_id: string; _role: "admin" }): PromiseLike<{ data: unknown; error: unknown }> } };
 async function authorize(context: AuthContext) {
@@ -50,12 +51,20 @@ export const runCurrentRagRelease = createServerFn({ method: "POST" }).middlewar
     await authorize(context);
     const { executeCurrentRelease } = await import("@/lib/rag/current-release/executor.server");
     // Errors expose no provider response, source payload or service credentials.
-    const result = await executeCurrentRelease(data, await dependencies());
-    return {
-      executionId: typeof result.executionId === "string" ? result.executionId : null,
-      done: result.done === true, replayed: result.replayed === true,
-      committed: result.committed === true, activated: result.activated === true, rolledBack: result.rolledBack === true,
-      providerCalls: typeof result.providerCalls === "number" ? result.providerCalls : 0,
-      reusedChunks: typeof result.reusedChunks === "number" ? result.reusedChunks : 0,
-    };
+    try {
+      const result = await executeCurrentRelease(data, await dependencies());
+      return {
+        executionId: typeof result.executionId === "string" ? result.executionId : null,
+        done: result.done === true, replayed: result.replayed === true,
+        committed: result.committed === true, activated: result.activated === true, rolledBack: result.rolledBack === true,
+        providerCalls: typeof result.providerCalls === "number" ? result.providerCalls : 0,
+        reusedChunks: typeof result.reusedChunks === "number" ? result.reusedChunks : 0,
+        errorCode: null,
+      };
+    } catch (error) {
+      // Auth was checked above. A failure never implies zero paid provider work.
+      return { executionId: null, done: false, replayed: false, committed: false,
+        activated: false, rolledBack: false, providerCalls: null, reusedChunks: null,
+        errorCode: currentReleaseFailureCode(error) };
+    }
   });

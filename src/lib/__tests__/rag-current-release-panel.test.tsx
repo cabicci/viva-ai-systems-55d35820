@@ -8,6 +8,15 @@ const view=()=>({releaseId:'a'.repeat(64),indexVersion:'current',packages:4,chun
  state:'staging',completedBatches:1,totalBatches:1,providerAttempts:1,currentActiveVersion:'prior',previousVersion:null}});
 beforeEach(()=>{vi.clearAllMocks();state.status.mockResolvedValue(view());state.run.mockResolvedValue({activated:true});});
 describe('current release administrator controls',()=>{
+ it('shows a sanitized provider limit and stops without reporting activation success',async()=>{
+  state.run.mockResolvedValue({activated:false,errorCode:'CURRENT_PROVIDER_HTTP_429'});
+  render(<CurrentRagReleasePanel/>);fireEvent.click(screen.getByRole('button',{name:'تحديث الحالة'}));
+  fireEvent.click(await screen.findByRole('checkbox',{name:/راجعت الإصدار/}));
+  fireEvent.click(screen.getByRole('button',{name:'تفعيل الإصدار المراجع'}));
+  await screen.findByText(/مزود الفهرسة رفض الطلب \(429\)/);
+  expect(screen.queryByText('تم تفعيل المحتوى المراجع.')).not.toBeInTheDocument();
+  expect(state.run).toHaveBeenCalledTimes(1);
+ });
  it('never initializes, embeds, activates or even reads status on mount',()=>{
   render(<CurrentRagReleasePanel/>);expect(state.status).not.toHaveBeenCalled();expect(state.run).not.toHaveBeenCalled();
  });
