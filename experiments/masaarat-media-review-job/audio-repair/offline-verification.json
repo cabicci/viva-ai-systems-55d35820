@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "request, worker and frozen vendor hashes",
+    "exact five IDs and spoken-text hashes",
+    "pinned voices/model and finite budgets",
+    "two exact preferred-model metadata GETs guarded and recorded before generation",
+    "Interactions adapter decoded five fake WAV responses using frozen validator",
+    "exact delivery/text/voice request payloads",
+    "pre-invocation ledgers observed by fake provider",
+    "duplicate TTS attempts refused",
+    "actual WAV format and PCM hashes",
+    "review blocked until artifact upload receipt",
+    "Argon inline actual-WAV-only payload, high reasoning, JSON parsing and pre-call ledger with fake response",
+    "diagnostic ledger duplicate and global-five caps",
+    "failure evidence excludes exception message",
+    "blind acoustic prompt contains no unit script or repaired term",
+    "local provider execution refused",
+    "YAML parse and exact scoped triggers/41 serial steps",
+    "workflow dispatch/run-attempt gate, five explicit calls and upload-before-review ordering"
+  ],
+  "count": 17,
+  "networkDenied": true,
+  "realProviderCalls": 0,
+  "realASRInvocations": 0,
+  "realAudioReviews": 0,
+  "syntheticPCMOnly": true,
+  "requestSha256": "f8a87ac086c8b449a65daefd1421dff6ed19fb6eaf0d92f7d6ce3cd0c0da297a",
+  "workerSha256": "b7ff0c03ecb5aaf4490a0d542e3c15924489af1c650412d78c3a6494d0a309fc",
+  "freezeSha256": "b01a00d2ba4be76c331bb7d4c8e219eadb22239f03f8fbeb22614069fff2b118",
+  "workflowSha256": "efef81e042a6963f800166a434bf0580ed0ed2531db75089442f728db6bf2124",
+  "humanListeningApproved": false
+}

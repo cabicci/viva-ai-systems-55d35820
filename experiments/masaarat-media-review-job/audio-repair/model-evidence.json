@@ -1,0 +1,18 @@
+{
+  "verifiedAtDate": "2026-10-22",
+  "authority": "Latest explicit owner instruction: use highest Gemini model; original repository selected.",
+  "preferredTTSModel": "gemini-3.8-flash-tts",
+  "preferredAudioReviewModel": "gemini-4-argon",
+  "sources": [
+    {"url": "https://ai.google.dev/gemini-api/docs/models", "observation": "Current index designates 3.8 Flash TTS as flagship speech and 4 Argon as flagship reasoning."},
+    {"url": "https://ai.google.dev/gemini-api/docs/speech-generation", "observation": "Interactions REST single-speaker request supplies transcript separately from speech_metadata style, voice config, and unary WAV response. Charon and Kore are listed. Default WAV is mono PCM16 at 24 kHz."},
+    {"url": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon", "observation": "Supported inputs include audio; output is text. It supports structured outputs and high thinking."},
+    {"url": "https://ai.google.dev/gemini-api/docs/latest-model", "observation": "Argon REST quickstart uses Interactions. Thinking configuration uses snake_case; maximum output includes reasoning. At least 32768 output tokens and a 15-minute HTTP timeout are recommended for existing applications."},
+    {"url": "https://ai.google.dev/gemini-api/docs/audio", "observation": "Inline audio content supplies type audio, base64 data and mime_type; entire request must be below 20 MB."},
+    {"url": "https://ai.google.dev/gemini-api/docs/structured-output", "observation": "Interactions response_format uses type text and mime_type application/json for JSON output."},
+    {"url": "https://ai.google.dev/api/models", "observation": "GET v1beta/models/{id} retrieves server model metadata, including supported generation methods."}
+  ],
+  "inference": "Combine documented Argon audio-input support with documented Interactions inline-audio and JSON response formats. No model call was made during preparation.",
+  "availability": "UNVERIFIED_UNTIL_SERVER_PREFLIGHT",
+  "fallback": "None. Missing preferred model or unresolved supported methods stops before generation."
+}

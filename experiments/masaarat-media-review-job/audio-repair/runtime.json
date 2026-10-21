@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "gemini-4-argon",
+  "maximumReviewCallsPerUnit": 1,
+  "maximumReviewCallsForBatch": 5,
+  "asr": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "language": "ar",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "maximumInvocationsPerUnit": 1,
+    "maximumInvocationsForBatch": 5,
+    "runtimeDependencies": "Resolved package versions, pip installation report and model file hashes are retained; transitive dependency lock is not claimed."
+  },
+  "acceptedAudio": {
+    "preservedMasterSha256": "4a204ed561b80f303d0fb9ceffe858a52aa6730882f6d142ad961a471d35d493",
+    "assemblyPerformedByThisWorker": false,
+    "overwriteAcceptedRecordings": false
+  },
+  "scope": "Only the five exact units in request.json. No media assembly, deployment or automatic retry."
+}
