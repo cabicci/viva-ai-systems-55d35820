@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 env:
   PACKAGE: experiments/course-pipeline/rebuild/fate-L02-L07-bilingual-v1/audio
-  EXPECTED_REQUEST_SHA256: fecf97ecbe726706d06515c7f31dff040c7b61cbdf7a6e9c4502889a9dcafa8b
+  EXPECTED_REQUEST_SHA256: d18b84b6b7a60e119bc27b70d391db51d0605108e82775dc67b4f97d3ea33b95
   PYTHONUNBUFFERED: '1'
 jobs:
   audio:
