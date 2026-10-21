@@ -1,0 +1,1069 @@
+{
+  "id": "fate-render-visualfix2",
+  "ownerAuthorizedFullScope": true,
+  "scope": "Authorized remaining six bilingual lessons; this manifest renders only the listed verified scenes. No publication.",
+  "speechModel": "gemini-2.5-pro-preview-tts",
+  "newSpeechCalls": 0,
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ar-L02-S02",
+      "layout": "flow",
+      "title": {
+        "ar": "الحدّ بيتبني على إيه؟",
+        "en": "What supports a residue limit?"
+      },
+      "visualContract": "Separate trial records, authorized-use card and dietary assessment feed a proposed limit. Editable commodity/analyte/unit tags must align. Use realistic laboratory and crop imagery with no invented real pesticide limit.",
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الحدّ الأقصى للمتبقّيات بيخصّ مادّة ومحصول وتعريف متبقّي محدّدين. مش رقم بيتطلّع من السميّة وحدها. بنحتاج تجارب متبقّيات تحت استخدامات زراعيّة مصرح بيها، ومعاها تقييم للمتبقّيات والتعرّض الغذائيّ. والتعريف ممكن يشمل المادّة الأصليّة ونواتج معيّنة. علشان كده ما ينفعش ننقل حدّ من تفّاح لطماطم، أو نقارن تحليل لمادّة واحدة بحدّ بيشمل أكتر منها. اتّفاق الاسم مش كفاية؛ لازم اتّفاق أساس القياس.",
+        "en": "A maximum residue limit belongs to a particular substance, commodity and residue definition. It is not derived from toxicity alone. Supervised residue trials under authorized agricultural uses contribute evidence, alongside residue and dietary safety evaluations. A definition can include the parent compound and specified products. Therefore an apple limit cannot simply be transferred to tomatoes, and a parent-only measurement cannot automatically be compared with a broader residue definition. Matching names is insufficient; the measurement basis must match."
+      },
+      "timing": null,
+      "sceneID": "L02-S02",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "8789e168168ddfa3609d29f2e8751c9d2cc9da5ba3eb5961be067e715a6ef385",
+      "deliverySHA256": "43e135829a88d11d6a34488ac2d1b13f7f00370f20f107109cf18c28180231ef",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L02-S02-ar-v1",
+        "file": "L02-S02-ar-v1.wav",
+        "sha256": "4e3d7f568b470e831ffe85515209b02a84eae4565b8f053d6fd20c0fea52c02c"
+      },
+      "alignment": {
+        "run": 39601977662,
+        "artifact": "fate-next-align-L02-S02-ar-v1",
+        "file": "timing.json",
+        "sha256": "346585946d1ba175adb91fa2ffb522e07e853d26428bbedce614c4c61f2d30f6"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S02",
+        "file": "L02-S02.jpg",
+        "sha256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486"
+      },
+      "imageDisposition": {
+        "scene": "L02-S02",
+        "imageSHA256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 885383,
+      "durationSeconds": 36.89095833333333,
+      "globalStartAudioFrame": 771143,
+      "globalStartVideoFrame": 964,
+      "globalEndVideoFrame": 2071
+    },
+    {
+      "id": "en-L02-S02",
+      "layout": "flow",
+      "title": {
+        "ar": "الحدّ بيتبني على إيه؟",
+        "en": "What supports a residue limit?"
+      },
+      "visualContract": "Separate trial records, authorized-use card and dietary assessment feed a proposed limit. Editable commodity/analyte/unit tags must align. Use realistic laboratory and crop imagery with no invented real pesticide limit.",
+      "actions": [
+        {
+          "id": "L02-S02-A1",
+          "label": {
+            "ar": "تجارب المتبقيات",
+            "en": "Residue trials"
+          },
+          "semanticTrigger": "Residue trials"
+        },
+        {
+          "id": "L02-S02-A2",
+          "label": {
+            "ar": "الاستخدام الزراعي",
+            "en": "Agricultural use"
+          },
+          "semanticTrigger": "Agricultural use"
+        },
+        {
+          "id": "L02-S02-A3",
+          "label": {
+            "ar": "تقييم التعرّض",
+            "en": "Exposure evaluation"
+          },
+          "semanticTrigger": "Exposure evaluation"
+        },
+        {
+          "id": "L02-S02-A4",
+          "label": {
+            "ar": "تعريف المتبقّي",
+            "en": "Residue definition"
+          },
+          "semanticTrigger": "Residue definition"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "الحدّ الأقصى للمتبقّيات بيخصّ مادّة ومحصول وتعريف متبقّي محدّدين. مش رقم بيتطلّع من السميّة وحدها. بنحتاج تجارب متبقّيات تحت استخدامات زراعيّة مصرح بيها، ومعاها تقييم للمتبقّيات والتعرّض الغذائيّ. والتعريف ممكن يشمل المادّة الأصليّة ونواتج معيّنة. علشان كده ما ينفعش ننقل حدّ من تفّاح لطماطم، أو نقارن تحليل لمادّة واحدة بحدّ بيشمل أكتر منها. اتّفاق الاسم مش كفاية؛ لازم اتّفاق أساس القياس.",
+        "en": "A maximum residue limit belongs to a particular substance, commodity and residue definition. It is not derived from toxicity alone. Supervised residue trials under authorized agricultural uses contribute evidence, alongside residue and dietary safety evaluations. A definition can include the parent compound and specified products. Therefore an apple limit cannot simply be transferred to tomatoes, and a parent-only measurement cannot automatically be compared with a broader residue definition. Matching names is insufficient; the measurement basis must match."
+      },
+      "timing": null,
+      "sceneID": "L02-S02",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "44e0f6cea509a8db3eca1ea374d3d8797b50a4ff17c8c6a4346a2ae01f9b7837",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L02-S02-en-v1",
+        "file": "L02-S02-en-v1.wav",
+        "sha256": "e1da848a127d6e0e4bfd300a8d163b5ed74c9f367ee4e301266c9f7d875f2162"
+      },
+      "alignment": {
+        "run": 39603295555,
+        "artifact": "fate-next-timing-v2-L02-S02-en-v1",
+        "file": "timing.json",
+        "sha256": "df0dff225d8624108540d770de21ddf55a44743daa03e2de8f9e1088d19dfcdb"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L02-S02",
+        "file": "L02-S02.jpg",
+        "sha256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486"
+      },
+      "imageDisposition": {
+        "scene": "L02-S02",
+        "imageSHA256": "bc97e34584f0724fb1252b8de8848ee42ae9055e96f695c635b2f6e0d44e1486",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 1000583,
+      "durationSeconds": 41.690958333333334,
+      "globalStartAudioFrame": 872903,
+      "globalStartVideoFrame": 1091,
+      "globalEndVideoFrame": 2342
+    },
+    {
+      "id": "ar-L03-S01",
+      "layout": "pathway",
+      "title": {
+        "ar": "المبيد راح فين؟ وإيه الدليل؟",
+        "en": "Where did it go, and what is the evidence?"
+      },
+      "visualContract": "Realistic field-to-pond scene. Independent runoff particles travel to sampling point. Four editable cards reveal source/pathway/receptor/endpoint; every link initially marked possible, not observed.",
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+        "en": "A field lies beside a pond, and rain falls after pesticide use. Can we conclude that fish were harmed? Not yet. We have a possible source and pathway, but need evidence of arrival, concentration, exposure duration and biological response. Organize the question into four elements: source, pathway, exposed organism and measured endpoint. Each arrow in the model represents a hypothesis to test. A convincing diagram does not establish that every step actually occurred."
+      },
+      "timing": null,
+      "sceneID": "L03-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "c85af44a13229cdbb50de9ca30cac8fe5dcde0be3469dde9eeba077541c03cbb",
+      "deliverySHA256": "47f4d5a1289a8597e558b0841ee1d208bc6a74ded7a76f44e1f2c0851ca797a0",
+      "audio": {
+        "run": 39603726855,
+        "artifact": "fate-next-audio-L03-S01-ar-v2",
+        "file": "L03-S01-ar-v2.wav",
+        "sha256": "bd7abae4afd51abe87792ff7feecd5286800e900997eba8b0b63dc9cfec2306b"
+      },
+      "alignment": {
+        "run": 39606480962,
+        "artifact": "fate-next-timing-v4-L03-S01-ar-v2",
+        "file": "timing.json",
+        "sha256": "c08501f8eaec9ce9df8f02f22cb3284c8dc2d0465e5cec72319467dbf86d19e7"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L03-S01",
+        "file": "L03-S01.jpg",
+        "sha256": "d252cacbc64f4bfb6e86ee562aba602cc9467a26915fdd62b518a2af4a2b71e0"
+      },
+      "imageDisposition": {
+        "scene": "L03-S01",
+        "imageSHA256": "d252cacbc64f4bfb6e86ee562aba602cc9467a26915fdd62b518a2af4a2b71e0",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 839303,
+      "durationSeconds": 34.970958333333336,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1049
+    },
+    {
+      "id": "en-L03-S01",
+      "layout": "pathway",
+      "title": {
+        "ar": "المبيد راح فين؟ وإيه الدليل؟",
+        "en": "Where did it go, and what is the evidence?"
+      },
+      "visualContract": "Realistic field-to-pond scene. Independent runoff particles travel to sampling point. Four editable cards reveal source/pathway/receptor/endpoint; every link initially marked possible, not observed.",
+      "actions": [
+        {
+          "id": "L03-S01-A1",
+          "label": {
+            "ar": "مصدر",
+            "en": "Source"
+          },
+          "semanticTrigger": "Source"
+        },
+        {
+          "id": "L03-S01-A2",
+          "label": {
+            "ar": "طريق انتقال محتمل",
+            "en": "Possible pathway"
+          },
+          "semanticTrigger": "Possible pathway"
+        },
+        {
+          "id": "L03-S01-A3",
+          "label": {
+            "ar": "كائن قد يتعرّض",
+            "en": "Potential receptor"
+          },
+          "semanticTrigger": "Potential receptor"
+        },
+        {
+          "id": "L03-S01-A4",
+          "label": {
+            "ar": "أثر يحتاج دليل",
+            "en": "Endpoint needs evidence"
+          },
+          "semanticTrigger": "Endpoint needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "فيه حقل جنب بركة، والمطر نزل بعد استخدام مبيد. ينفع نقول إنّ السمك اتضرّر؟ لسه. عندنا مصدر محتمل ومسار ممكن، لكن محتاجين دليل على وصول المادّة، وتركيزها، ومدّة التعرّض، والاستجابة البيولوجيّة. هنرتّب السؤال في أربع خانات: المصدر، وطريق الانتقال، والكائن المتعرّض، والأثر اللي هنقيسه. كلّ سهم في النموذج بيمثّل فرضيّة نختبرها. وجود رسم مقنع مش معناه إنّ كلّ خطواته حصلت فعلًا.",
+        "en": "A field lies beside a pond, and rain falls after pesticide use. Can we conclude that fish were harmed? Not yet. We have a possible source and pathway, but need evidence of arrival, concentration, exposure duration and biological response. Organize the question into four elements: source, pathway, exposed organism and measured endpoint. Each arrow in the model represents a hypothesis to test. A convincing diagram does not establish that every step actually occurred."
+      },
+      "timing": null,
+      "sceneID": "L03-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "be6368795b08b90a7889e3a49eb23fedd86b27729d0a1164e13e978e422c33f9",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L03-S01-en-v1",
+        "file": "L03-S01-en-v1.wav",
+        "sha256": "49234f6b348a1aa43d448b621b457374f22537e59220be7c7f1be4b5b667c547"
+      },
+      "alignment": {
+        "run": 39602132525,
+        "artifact": "fate-next-align-L03-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "319fc677b4bd031e9ac3c9ec9ae5d7d3072be578ef3b690b0d73b1e4f80cb87d"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L03-S01",
+        "file": "L03-S01.jpg",
+        "sha256": "d252cacbc64f4bfb6e86ee562aba602cc9467a26915fdd62b518a2af4a2b71e0"
+      },
+      "imageDisposition": {
+        "scene": "L03-S01",
+        "imageSHA256": "d252cacbc64f4bfb6e86ee562aba602cc9467a26915fdd62b518a2af4a2b71e0",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 977543,
+      "durationSeconds": 40.730958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1222
+    },
+    {
+      "id": "ar-L04-S01",
+      "layout": "balance",
+      "title": {
+        "ar": "كائن واحد ولا شبكة غذائية؟",
+        "en": "One organism or a food web?"
+      },
+      "visualContract": "One fish expands into a time series; separate food-web branch. Independent mass and concentration counters distinguish amount from concentration. No real species data claimed.",
+      "actions": [
+        {
+          "id": "L04-S01-A1",
+          "label": {
+            "ar": "التراكم داخل كائن",
+            "en": "Accumulation in an organism"
+          },
+          "semanticTrigger": "Accumulation in an organism"
+        },
+        {
+          "id": "L04-S01-A2",
+          "label": {
+            "ar": "التغيّر مع الزمن",
+            "en": "Change over time"
+          },
+          "semanticTrigger": "Change over time"
+        },
+        {
+          "id": "L04-S01-A3",
+          "label": {
+            "ar": "الكمية والتركيز",
+            "en": "Amount and concentration"
+          },
+          "semanticTrigger": "Amount and concentration"
+        },
+        {
+          "id": "L04-S01-A4",
+          "label": {
+            "ar": "المقارنة في الشبكة الغذائية",
+            "en": "Food-web comparison"
+          },
+          "semanticTrigger": "Food-web comparison"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عندنا سمكة في ميّه فيها مادّة، وعندنا مفترس بياكل سمك أصغر. هل السؤالين واحد؟ لأ. الأوّل ممكن يتابع تغيّر كمية المادّة داخل كائن مع الوقت. التاني يقارن التركيز بين كائنات في مستويات غذائيّة مختلفة. قبل ما نقول تراكم أو تضخّم، لازم نحدّد بنقارن إيه بإيه. كمية المادّة في الجسم غير تركيزها لكلّ كيلوجرام نسيج. كائن أكبر ممكن يحتوي كمية أكبر، من غير ما تركيزه يكون أعلى.",
+        "en": "Consider a fish in contaminated water and a predator eating smaller fish. These are different questions. The first may track the amount within one organism over time; the second compares concentrations across organisms at different trophic positions. Before naming accumulation or magnification, identify the comparison. Total chemical amount in a body differs from concentration per kilogram of tissue. A larger organism can contain more chemical without having a higher concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S01",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "b695141a5ef26676ba46ef9018d327c81de12bba08b2033b5190223018e53190",
+      "deliverySHA256": "2f600e3c11c45071a00dc12915aa88e7dddad423532b58505df7671476a354d1",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L04-S01-ar-v1",
+        "file": "L04-S01-ar-v1.wav",
+        "sha256": "3df6161ca125dfc87b3a47d162ad71a445a7a06f7f4414f9784f6c08a2262522"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S01-ar-v1",
+        "file": "timing.json",
+        "sha256": "01a82c97a37a20c4ff5aef00e7416a1d3f64df52c07b57d532ff0f4c0bc281ba"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S01",
+        "file": "L04-S01.jpg",
+        "sha256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f"
+      },
+      "imageDisposition": {
+        "scene": "L04-S01",
+        "imageSHA256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 953543,
+      "durationSeconds": 39.730958333333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1192
+    },
+    {
+      "id": "en-L04-S01",
+      "layout": "balance",
+      "title": {
+        "ar": "كائن واحد ولا شبكة غذائية؟",
+        "en": "One organism or a food web?"
+      },
+      "visualContract": "One fish expands into a time series; separate food-web branch. Independent mass and concentration counters distinguish amount from concentration. No real species data claimed.",
+      "actions": [
+        {
+          "id": "L04-S01-A1",
+          "label": {
+            "ar": "التراكم داخل كائن",
+            "en": "Accumulation in an organism"
+          },
+          "semanticTrigger": "Accumulation in an organism"
+        },
+        {
+          "id": "L04-S01-A2",
+          "label": {
+            "ar": "التغيّر مع الزمن",
+            "en": "Change over time"
+          },
+          "semanticTrigger": "Change over time"
+        },
+        {
+          "id": "L04-S01-A3",
+          "label": {
+            "ar": "الكمية والتركيز",
+            "en": "Amount and concentration"
+          },
+          "semanticTrigger": "Amount and concentration"
+        },
+        {
+          "id": "L04-S01-A4",
+          "label": {
+            "ar": "المقارنة في الشبكة الغذائية",
+            "en": "Food-web comparison"
+          },
+          "semanticTrigger": "Food-web comparison"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "عندنا سمكة في ميّه فيها مادّة، وعندنا مفترس بياكل سمك أصغر. هل السؤالين واحد؟ لأ. الأوّل ممكن يتابع تغيّر كمية المادّة داخل كائن مع الوقت. التاني يقارن التركيز بين كائنات في مستويات غذائيّة مختلفة. قبل ما نقول تراكم أو تضخّم، لازم نحدّد بنقارن إيه بإيه. كمية المادّة في الجسم غير تركيزها لكلّ كيلوجرام نسيج. كائن أكبر ممكن يحتوي كمية أكبر، من غير ما تركيزه يكون أعلى.",
+        "en": "Consider a fish in contaminated water and a predator eating smaller fish. These are different questions. The first may track the amount within one organism over time; the second compares concentrations across organisms at different trophic positions. Before naming accumulation or magnification, identify the comparison. Total chemical amount in a body differs from concentration per kilogram of tissue. A larger organism can contain more chemical without having a higher concentration."
+      },
+      "timing": null,
+      "sceneID": "L04-S01",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "f1073b0c20269b76b28b10f31e6ba45b9d7fec7b4437dd1b17abcf53f374ba2e",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L04-S01-en-v1",
+        "file": "L04-S01-en-v1.wav",
+        "sha256": "732440264f2285343b58f725b4e0aed48af324a9dac4a5fb9f0f6d63b1c3a05b"
+      },
+      "alignment": {
+        "run": 39602132449,
+        "artifact": "fate-next-align-L04-S01-en-v1",
+        "file": "timing.json",
+        "sha256": "14703289789704a7cc93eb93ca5d5c0d90181f5b96b2eacf30460fdcf2caa40c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L04-S01",
+        "file": "L04-S01.jpg",
+        "sha256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f"
+      },
+      "imageDisposition": {
+        "scene": "L04-S01",
+        "imageSHA256": "75255a35355950752595b6748bd9e6bf15c8555294414f61cbe767d471526c9f",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 918023,
+      "durationSeconds": 38.25095833333334,
+      "globalStartAudioFrame": 0,
+      "globalStartVideoFrame": 0,
+      "globalEndVideoFrame": 1148
+    },
+    {
+      "id": "ar-L07-S04",
+      "layout": "pathway",
+      "title": {
+        "ar": "اتنقلت ولا اتغيّرت؟",
+        "en": "Did it move or change identity?"
+      },
+      "visualContract": "Split-screen: unchanged marker follows runoff/leaching/air paths; transformation produces a new labeled marker. Parent decline bar separates transport and transformation contributions qualitatively, never fabricating fractions.",
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+        "en": "Runoff, leaching, spray drift and volatilization can move a substance between locations or phases. Hydrolysis, photolysis and biological transformation can change chemical identity. A transported marker therefore keeps its identity, while a transformed marker becomes a distinct product symbol. Declining parent concentration in a field sample can reflect several processes together. Do not assume every transformation reaches carbon dioxide and water or produces substances without effects."
+      },
+      "timing": null,
+      "sceneID": "L07-S04",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "7d43fc66ede90f1377d302ab63cb90d0f5a2bfa422678b2162c426853467a20c",
+      "deliverySHA256": "559b11e60a34db766c3ef0233cdf54c454e5bbdd14cce41c4a6f038ce82b8b9d",
+      "audio": {
+        "run": 39605466024,
+        "artifact": "fate-next-audio-L07-S04-ar-v2",
+        "file": "L07-S04-ar-v2.wav",
+        "sha256": "4e0120145c0a64b4d0ddfefafcd3a336b8d04f7a664f7e232c361b50531236c7"
+      },
+      "alignment": {
+        "run": 39606480922,
+        "artifact": "fate-next-align-L07-S04-ar-v2",
+        "file": "timing.json",
+        "sha256": "d624cbdc96922a4e1a7dac2994802eabe4addb5b341faab2b85613bb4226af0a"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S04",
+        "file": "L07-S04.jpg",
+        "sha256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880"
+      },
+      "imageDisposition": {
+        "scene": "L07-S04",
+        "imageSHA256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 892103,
+      "durationSeconds": 37.17095833333333,
+      "globalStartAudioFrame": 2588949,
+      "globalStartVideoFrame": 3236,
+      "globalEndVideoFrame": 4351
+    },
+    {
+      "id": "en-L07-S04",
+      "layout": "pathway",
+      "title": {
+        "ar": "اتنقلت ولا اتغيّرت؟",
+        "en": "Did it move or change identity?"
+      },
+      "visualContract": "Split-screen: unchanged marker follows runoff/leaching/air paths; transformation produces a new labeled marker. Parent decline bar separates transport and transformation contributions qualitatively, never fabricating fractions.",
+      "actions": [
+        {
+          "id": "L07-S04-A1",
+          "label": {
+            "ar": "انتقال بنفس الهوية",
+            "en": "Same-identity transport"
+          },
+          "semanticTrigger": "Same-identity transport"
+        },
+        {
+          "id": "L07-S04-A2",
+          "label": {
+            "ar": "جريان ورشح وهواء",
+            "en": "Runoff, leaching and air"
+          },
+          "semanticTrigger": "Runoff, leaching and air"
+        },
+        {
+          "id": "L07-S04-A3",
+          "label": {
+            "ar": "تحول لهوية جديدة",
+            "en": "Transformation to a new identity"
+          },
+          "semanticTrigger": "Transformation to a new identity"
+        },
+        {
+          "id": "L07-S04-A4",
+          "label": {
+            "ar": "نقص الأصل له أكثر من تفسير",
+            "en": "Parent decline has several causes"
+          },
+          "semanticTrigger": "Parent decline has several causes"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "جريان وترشيح وانجراف رذاذ وتطاير: دي طرق ممكن تنقل المادّة من مكان أو طور للتاني. التحلّل المائيّ والضوئيّ والتحوّل الحيويّ ممكن يغيّروا هويتها الكيميائيّة. علشان نفرّق بصريًّا، الجزيء المتنقّل يحتفظ بعلامته، والمتحوّل تظهر له علامة ناتج مختلفة. انخفاض المادّة الأصليّة في عينة حقل ممكن يجمع أكتر من عمليّة. وما ينفعش نفترض إنّ كلّ تحوّل انتهى لماء وثاني أكسيد الكربون أو لنواتج بلا تأثير.",
+        "en": "Runoff, leaching, spray drift and volatilization can move a substance between locations or phases. Hydrolysis, photolysis and biological transformation can change chemical identity. A transported marker therefore keeps its identity, while a transformed marker becomes a distinct product symbol. Declining parent concentration in a field sample can reflect several processes together. Do not assume every transformation reaches carbon dioxide and water or produces substances without effects."
+      },
+      "timing": null,
+      "sceneID": "L07-S04",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "8e430cddac544e8c8f05c1d4588b7d52e353202150cc9faf08387321308f4108",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S04-en-v1",
+        "file": "L07-S04-en-v1.wav",
+        "sha256": "3c3a19770012e9405ec82269edb51a678db0610acfc79bc863e65a052fafb7d5"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S04-en-v1",
+        "file": "timing.json",
+        "sha256": "d3b9a31b377b99a7ff79db04da14c58092c3656e1ada35de5097f88c9d05b76b"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S04",
+        "file": "L07-S04.jpg",
+        "sha256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880"
+      },
+      "imageDisposition": {
+        "scene": "L07-S04",
+        "imageSHA256": "6c50656c7376f2f7325bbf19479f0a57c93803e556a2e5acec124ba452c53880",
+        "status": "usable_background",
+        "automatedStatus": "reject",
+        "agentViewedPixels": true,
+        "disposition": "Missing labels, numbers, equations, curves and action arrows are intentionally separate editable layers; inspected background is usable with those layers.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 916103,
+      "durationSeconds": 38.17095833333333,
+      "globalStartAudioFrame": 2540949,
+      "globalStartVideoFrame": 3176,
+      "globalEndVideoFrame": 4321
+    },
+    {
+      "id": "ar-L07-S06",
+      "layout": "pathway",
+      "title": {
+        "ar": "بعد الترسيب… أكتر من مسار",
+        "en": "After deposition, several pathways remain"
+      },
+      "visualContract": "Same deposited objects branch into surface movement, uptake and weathering. Biological-effect endpoint stays a separate evidence node. No universal systemic transport asserted.",
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "بعد الترسيب، المادّة ممكن تتحرّك على السطح أو جوّه النبات حسب خواصها وظروفه. وممكن يحصل امتصاص أو إعادة توزيع أو فقد مع التجوية. الوصول للسطح مش نفس الدخول للأنسجة، والدخول مش نفس حدوث أثر بيولوجيّ. المخطط بيساعدنا نحدد الخطوة اللي نحتاج نقيسها. مثلًا، عشان نفهم فقد بعد المطر، نراجع ما تبقّى على السطح وما انتقل، بدل ما نفترض إنّ كلّ النقص تحلّل كيميائيّ.",
+        "en": "After deposition, material may move on the surface or within a plant, depending on its properties and the conditions. Uptake, redistribution and weathering losses are possible. Reaching a surface differs from entering tissue, and entry differs from a biological effect. The process map identifies which step needs measurement. To understand loss after rain, examine surface residues and transported material instead of assuming that every decrease represents chemical degradation."
+      },
+      "timing": null,
+      "sceneID": "L07-S06",
+      "locale": "ar",
+      "voice": "Charon",
+      "textSHA256": "9e61a9eb2cee5f4f3bd92015cf35d55cd76efcc686607323d479ba29aa2c41dd",
+      "deliverySHA256": "a4de0b475fd7674f6ac07dbef3c8d8be2c92c8b65d9f0a7f8dedf9c3beb9b786",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S06-ar-v1",
+        "file": "L07-S06-ar-v1.wav",
+        "sha256": "bdbb0c6a1d0983cb7aae4f0263be6a41c17f20ff8ea6311fe89399bb40f9e5ab"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S06-ar-v1",
+        "file": "timing.json",
+        "sha256": "39a0fd0c78522de0d2f40d87a48fa505b731cd4be03d7e2d47ecc39473ce3453"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S06",
+        "file": "L07-S06.jpg",
+        "sha256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda"
+      },
+      "imageDisposition": {
+        "scene": "L07-S06",
+        "imageSHA256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 753863,
+      "durationSeconds": 31.410958333333333,
+      "globalStartAudioFrame": 4202275,
+      "globalStartVideoFrame": 5253,
+      "globalEndVideoFrame": 6195
+    },
+    {
+      "id": "en-L07-S06",
+      "layout": "pathway",
+      "title": {
+        "ar": "بعد الترسيب… أكتر من مسار",
+        "en": "After deposition, several pathways remain"
+      },
+      "visualContract": "Same deposited objects branch into surface movement, uptake and weathering. Biological-effect endpoint stays a separate evidence node. No universal systemic transport asserted.",
+      "actions": [
+        {
+          "id": "L07-S06-A1",
+          "label": {
+            "ar": "ترسيب",
+            "en": "Deposition"
+          },
+          "semanticTrigger": "Deposition"
+        },
+        {
+          "id": "L07-S06-A2",
+          "label": {
+            "ar": "حركة على السطح",
+            "en": "Surface movement"
+          },
+          "semanticTrigger": "Surface movement"
+        },
+        {
+          "id": "L07-S06-A3",
+          "label": {
+            "ar": "دخول أو فقد بالتجوية",
+            "en": "Uptake or weathering loss"
+          },
+          "semanticTrigger": "Uptake or weathering loss"
+        },
+        {
+          "id": "L07-S06-A4",
+          "label": {
+            "ar": "الأثر يحتاج دليل",
+            "en": "Effect needs evidence"
+          },
+          "semanticTrigger": "Effect needs evidence"
+        }
+      ],
+      "equations": [],
+      "spoken": {
+        "ar": "بعد الترسيب، المادّة ممكن تتحرّك على السطح أو جوّه النبات حسب خواصها وظروفه. وممكن يحصل امتصاص أو إعادة توزيع أو فقد مع التجوية. الوصول للسطح مش نفس الدخول للأنسجة، والدخول مش نفس حدوث أثر بيولوجيّ. المخطط بيساعدنا نحدد الخطوة اللي نحتاج نقيسها. مثلًا، عشان نفهم فقد بعد المطر، نراجع ما تبقّى على السطح وما انتقل، بدل ما نفترض إنّ كلّ النقص تحلّل كيميائيّ.",
+        "en": "After deposition, material may move on the surface or within a plant, depending on its properties and the conditions. Uptake, redistribution and weathering losses are possible. Reaching a surface differs from entering tissue, and entry differs from a biological effect. The process map identifies which step needs measurement. To understand loss after rain, examine surface residues and transported material instead of assuming that every decrease represents chemical degradation."
+      },
+      "timing": null,
+      "sceneID": "L07-S06",
+      "locale": "en",
+      "voice": "Charon",
+      "textSHA256": "0f8c544a09a7856e07990ec0f1de25683afa6e8ef1efb427e56f77a433085ed3",
+      "deliverySHA256": "ea610c4d107e2c9f3e376899dd1122b5f59fff3c23b1857a7f02eac7b306424d",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S06-en-v1",
+        "file": "L07-S06-en-v1.wav",
+        "sha256": "547e6548403c2b36ef2a37dcc7cd365ef3c92fa1d1e4cc6c8b22f90476654dbf"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S06-en-v1",
+        "file": "timing.json",
+        "sha256": "82863aa113c843c93f99e11dd5336992e4077637c57cabeed72aef064e78d03c"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S06",
+        "file": "L07-S06.jpg",
+        "sha256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda"
+      },
+      "imageDisposition": {
+        "scene": "L07-S06",
+        "imageSHA256": "8a1dd93437800513431dd3a87f28068dbbcc8e9f2e7031e6559ff383e1ae1eda",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 860423,
+      "durationSeconds": 35.85095833333333,
+      "globalStartAudioFrame": 4274275,
+      "globalStartVideoFrame": 5343,
+      "globalEndVideoFrame": 6418
+    },
+    {
+      "id": "ar-L07-S09",
+      "layout": "flow",
+      "title": {
+        "ar": "توقّع قابل للاختبار",
+        "en": "A prediction that can be tested"
+      },
+      "visualContract": "QSAR input/domain/validation/output flow with out-of-domain case held. Final rainfall pathway task uses runoff/leaching hypotheses and missing-property cards; no invented groundwater prediction.",
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "equations": [
+        "QSAR"
+      ],
+      "spoken": {
+        "ar": "العلاقة الكمّيّة بين التركيب والنشاط بتحاول تربط خواص وتركيب المادّة باستجابة ضمن بيانات ونموذج محدّدين. عشان نستخدمها، نحتاج نعرف مجال الصلاحية وطريقة التحقق وعدم اليقين. مش كلّ مادّة جديدة ينفع ندخلها في أيّ معادلة. في التطبيق الأخير، مطر نزل على تربة رمليّة بعد استخدام مبيد: اكتب مسارين محتملين، والبيانات اللي تميّز بينهم. وبعدها فرّق بين توقع النموذج، والقياس الحقيقيّ، والقرار اللي لسه محتاج دليل.",
+        "en": "A quantitative structure-activity relationship connects chemical structure or properties with an endpoint within a defined dataset and model. Application requires an applicability domain, validation and uncertainty information. An arbitrary new substance cannot be inserted into any available equation. For the final case, rain falls on sandy soil after pesticide use. Propose two plausible pathways and the evidence that would distinguish them. Separate model prediction, actual measurement and a decision that still needs evidence."
+      },
+      "timing": null,
+      "sceneID": "L07-S09",
+      "locale": "ar",
+      "voice": "Kore",
+      "textSHA256": "d3ab04bc248883956e5b4cb96c26f796173e785ef8f0ad63a7a64828812358c6",
+      "deliverySHA256": "907928136a13859b15cc721879c744c739f8530e5aecba41e378584d3440305c",
+      "audio": {
+        "run": 39600607593,
+        "artifact": "fate-next-audio-L07-S09-ar-v1",
+        "file": "L07-S09-ar-v1.wav",
+        "sha256": "79b0bac1016fc71b1fe8e49e22696071d24a47676fed270373472aed015eef44"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S09-ar-v1",
+        "file": "timing.json",
+        "sha256": "caeb6ac8ca454bee456675501758b6809481f993f431bf53db46de3f65f0ca02"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S09",
+        "file": "L07-S09.jpg",
+        "sha256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5"
+      },
+      "imageDisposition": {
+        "scene": "L07-S09",
+        "imageSHA256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 872903,
+      "durationSeconds": 36.370958333333334,
+      "globalStartAudioFrame": 6589624,
+      "globalStartVideoFrame": 8237,
+      "globalEndVideoFrame": 9328
+    },
+    {
+      "id": "en-L07-S09",
+      "layout": "flow",
+      "title": {
+        "ar": "توقّع قابل للاختبار",
+        "en": "A prediction that can be tested"
+      },
+      "visualContract": "QSAR input/domain/validation/output flow with out-of-domain case held. Final rainfall pathway task uses runoff/leaching hypotheses and missing-property cards; no invented groundwater prediction.",
+      "actions": [
+        {
+          "id": "L07-S09-A1",
+          "label": {
+            "ar": "مدخلات النموذج",
+            "en": "Model inputs"
+          },
+          "semanticTrigger": "Model inputs"
+        },
+        {
+          "id": "L07-S09-A2",
+          "label": {
+            "ar": "مجال الصلاحية",
+            "en": "Applicability domain"
+          },
+          "semanticTrigger": "Applicability domain"
+        },
+        {
+          "id": "L07-S09-A3",
+          "label": {
+            "ar": "تحقق مستقل",
+            "en": "Independent validation"
+          },
+          "semanticTrigger": "Independent validation"
+        },
+        {
+          "id": "L07-S09-A4",
+          "label": {
+            "ar": "توقع قابل للاختبار",
+            "en": "Testable prediction"
+          },
+          "semanticTrigger": "Testable prediction"
+        }
+      ],
+      "equations": [
+        "QSAR"
+      ],
+      "spoken": {
+        "ar": "العلاقة الكمّيّة بين التركيب والنشاط بتحاول تربط خواص وتركيب المادّة باستجابة ضمن بيانات ونموذج محدّدين. عشان نستخدمها، نحتاج نعرف مجال الصلاحية وطريقة التحقق وعدم اليقين. مش كلّ مادّة جديدة ينفع ندخلها في أيّ معادلة. في التطبيق الأخير، مطر نزل على تربة رمليّة بعد استخدام مبيد: اكتب مسارين محتملين، والبيانات اللي تميّز بينهم. وبعدها فرّق بين توقع النموذج، والقياس الحقيقيّ، والقرار اللي لسه محتاج دليل.",
+        "en": "A quantitative structure-activity relationship connects chemical structure or properties with an endpoint within a defined dataset and model. Application requires an applicability domain, validation and uncertainty information. An arbitrary new substance cannot be inserted into any available equation. For the final case, rain falls on sandy soil after pesticide use. Propose two plausible pathways and the evidence that would distinguish them. Separate model prediction, actual measurement and a decision that still needs evidence."
+      },
+      "timing": null,
+      "sceneID": "L07-S09",
+      "locale": "en",
+      "voice": "Kore",
+      "textSHA256": "e861fc35446abf6ab63ee9dcd5218bae3b6312e9fbbb1270867e21a8ea6f20b0",
+      "deliverySHA256": "c7831b13b9e722a4b53b197d966f7d3e2aed393d6676db52abfc81fabd48a252",
+      "audio": {
+        "run": 39600950100,
+        "artifact": "fate-next-audio-L07-S09-en-v1",
+        "file": "L07-S09-en-v1.wav",
+        "sha256": "ef4a107509d88ba4b05e248c97e388f5cebc0b8edc73543d1450bea0378e2192"
+      },
+      "alignment": {
+        "run": 39603724411,
+        "artifact": "fate-next-align-L07-S09-en-v1",
+        "file": "timing.json",
+        "sha256": "dc24f0e07700ae9bae13cfd887cece84b246c9eafb9ae9bb3e48ce12d9073e80"
+      },
+      "semanticOverride": null,
+      "image": {
+        "run": 39601188159,
+        "artifact": "fate-next-image-L07-S09",
+        "file": "L07-S09.jpg",
+        "sha256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5"
+      },
+      "imageDisposition": {
+        "scene": "L07-S09",
+        "imageSHA256": "045741d71e86ce0dbda67ed3eca47e7789e686bb4e80227f9042ea80505c7cc5",
+        "status": "usable_background",
+        "automatedStatus": "usable",
+        "agentViewedPixels": false,
+        "disposition": "Automated background review usable; full composed scene still requires visual checks.",
+        "claim": "Generated conceptual illustration; no actual experiment or native geometry claimed."
+      },
+      "audioFrames": 948743,
+      "durationSeconds": 39.53095833333333,
+      "globalStartAudioFrame": 6781624,
+      "globalStartVideoFrame": 8477,
+      "globalEndVideoFrame": 9663
+    }
+  ]
+}
