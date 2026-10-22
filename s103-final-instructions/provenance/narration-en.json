@@ -1,0 +1,626 @@
+{
+  "locale": "en",
+  "source": {
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-03-en.json",
+    "sha256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26"
+  },
+  "units": [
+    {
+      "id": "S1-03-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A spill does not become safe simply because it looks small. Learn when to withdraw, how an authorized team controls a known spill, and how to account for everyone after an evacuation.",
+          "sha256": "b0ef6d56fb747c0a1d8d2b97c856be02241bab20d07ed594baafaf7ef8fcafb5"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Explain whether a spill is within the agreed training and equipment limits, and recognize when to withdraw and report it.",
+          "sha256": "a1ee65d7f67fe101d0c70d234b54d6d15dd8b76118797ad6f489dcc688830b23"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Demonstrate assessment, reporting, protection, containment, collection and cleanup using a harmless simulation under trainer observation.",
+          "sha256": "394feb6a0bb7f203c5edae7625aee230eb344aad1fce8c01e63d05af0e3ccb1a"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Follow the assigned evacuation route, account for people at the safe destination and explain how the response changes in four emergency scenarios.",
+          "sha256": "15b7ee73087279ba78cd6c1f3e46bae678bc071eed809a3aa6fd869259311b12"
+        }
+      ],
+      "scientificMeaning": "A spill does not become safe simply because it looks small. Learn when to withdraw, how an authorized team controls a known spill, and how to account for everyone after an evacuation.\n\nExplain whether a spill is within the agreed training and equipment limits, and recognize when to withdraw and report it.\n\nDemonstrate assessment, reporting, protection, containment, collection and cleanup using a harmless simulation under trainer observation.\n\nFollow the assigned evacuation route, account for people at the safe destination and explain how the response changes in four emergency scenarios.",
+      "displayText": "A spill does not become safe simply because it looks small. Learn when to withdraw, how an authorized team controls a known spill, and how to account for everyone after an evacuation.\n\nExplain whether a spill is within the agreed training and equipment limits, and recognize when to withdraw and report it.\n\nDemonstrate assessment, reporting, protection, containment, collection and cleanup using a harmless simulation under trainer observation.\n\nFollow the assigned evacuation route, account for people at the safe destination and explain how the response changes in four emergency scenarios.",
+      "captionText": "A spill does not become safe simply because it looks small. Learn when to withdraw, how an authorized team controls a known spill, and how to account for everyone after an evacuation.\n\nExplain whether a spill is within the agreed training and equipment limits, and recognize when to withdraw and report it.\n\nDemonstrate assessment, reporting, protection, containment, collection and cleanup using a harmless simulation under trainer observation.\n\nFollow the assigned evacuation route, account for people at the safe destination and explain how the response changes in four emergency scenarios.",
+      "spokenText": "A spill does not become safe simply because it looks small. Learn when to withdraw, how an authorized team controls a known spill, and how to account for everyone after an evacuation.\n\nExplain whether a spill is within the agreed training and equipment limits, and recognize when to withdraw and report it.\n\nDemonstrate assessment, reporting, protection, containment, collection and cleanup using a harmless simulation under trainer observation.\n\nFollow the assigned evacuation route, account for people at the safe destination and explain how the response changes in four emergency scenarios.",
+      "spokenTextSHA256": "a237bf2322fba8bf3f0e4dfe81b10cd84542bad5bb09e53aa7f9118758bc7b9e",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "a237bf2322fba8bf3f0e4dfe81b10cd84542bad5bb09e53aa7f9118758bc7b9e",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2351a2d732cb385327639415d9a1cd1fbeaa6c0ec0f123d5ba42d876cb17aab9",
+      "requestFingerprintSha256": "2351a2d732cb385327639415d9a1cd1fbeaa6c0ec0f123d5ba42d876cb17aab9",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-opening-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-P01-r1",
+      "locale": "en",
+      "semanticGroup": "P01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/scenario",
+          "text": "A five-litre liquid-fertilizer-concentrate container has been knocked over on a concrete storage floor. The trainer's scenario card supplies the represented product hazards, relevant SDS information and the conditions making this a response within your training. Use only a harmless substitute and training container.",
+          "sha256": "d7446a6b1731786365b167b19f5ed12a29895f5b322397dd67de6dd61fee9422"
+        },
+        {
+          "pointer": "/practicalTasks/0/safety",
+          "text": "No real fertilizer concentrate or other hazardous chemical is spilled for this assessment. The trainer confirms substitute compatibility, slip control, PPE fit, safe tools and mock waste arrangements. Stop if any actual hazard develops.",
+          "sha256": "565f87d274d16b51a7e2408aa2e9d4549973d32aff52a8774a8e782136d2eafe"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/0",
+          "text": "Assess immediate hazards and verify that the scenario remains within the permitted response limits; warn others and report as required.",
+          "sha256": "26159f9b0b59ff581a5517996822a8defd77a87e3494cb0e1f00ce60936ecad3"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/1",
+          "text": "Select the specified chemical-resistant gloves, splash goggles and apron.",
+          "sha256": "3721c36b5fc3e082ccb46b74164769e95f7e3f314ce99434edb4c9eaa1cde1c6"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/2",
+          "text": "Inspect and correctly put on the selected PPE before the hands-on response.",
+          "sha256": "930d2b75948ffbc6e6493a95d166b2af87e9a40afba74d035d919c08f019f4eb"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/3",
+          "text": "Control: safely return the training container upright without entering the represented spill.",
+          "sha256": "542bbe1ea81e49616c684f94f20aa4a9a573f819fdbfd979f83e1da01b6e34f0"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/4",
+          "text": "Contain: create a perimeter barrier with the specified compatible absorbent, protecting the represented route to any drain.",
+          "sha256": "d36c6b36f84b59b087a6af691c69616d5a086bf996ea0fa998dbdf867311f470"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Clean up: apply suitable absorbent to the contained liquid and allow it to absorb.",
+          "sha256": "32d4fc809dd3af4b1936afb10aa885d284828811822c63da5838a3bc600f322a"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/6",
+          "text": "Use the designated dustpan and brush or other specified tools to collect all used absorbent without scattering it.",
+          "sha256": "d8082537592d1ae386cac76fce9893c7c9f5dba855d65cbc375fb1348bad1e60"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/7",
+          "text": "Place the represented contaminated absorbent, pads and used disposable gloves into the designated compatible, identified mock chemical-waste container.",
+          "sha256": "37ff66bdb53892d51d1b9b269800368fd2659005b3dc8a19b443447527dbd281"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/8",
+          "text": "Maintain safe working position, awareness and protection throughout; report any change and stop if the plan no longer applies.",
+          "sha256": "0fbe53d6831c3b1b49108aa2ffe6172e220b4756a508d18229dbc8fc65d46b37"
+        },
+        {
+          "pointer": "/practicalTasks/0/evidence",
+          "text": "The trainer observes every item individually, records what was seen and records corrective action for any unsafe or incomplete step.",
+          "sha256": "12036dd42c64dc922b3908cfa87242bfb21957ab12e733f6226ad7c538de5132"
+        },
+        {
+          "pointer": "/practicalTasks/0/passRule",
+          "text": "All applicable items must be performed safely. The observation remains incomplete until the learner has personally demonstrated the corrected performance; a quiz or group demonstration cannot substitute.",
+          "sha256": "40e53c0a0593a0dc9fb7f499717cf0a21136e48d05d9d3f8ed358e0f8065f7a4"
+        }
+      ],
+      "scientificMeaning": "A five-litre liquid-fertilizer-concentrate container has been knocked over on a concrete storage floor. The trainer's scenario card supplies the represented product hazards, relevant SDS information and the conditions making this a response within your training. Use only a harmless substitute and training container.\n\nNo real fertilizer concentrate or other hazardous chemical is spilled for this assessment. The trainer confirms substitute compatibility, slip control, PPE fit, safe tools and mock waste arrangements. Stop if any actual hazard develops.\n\nAssess immediate hazards and verify that the scenario remains within the permitted response limits; warn others and report as required.\n\nSelect the specified chemical-resistant gloves, splash goggles and apron.\n\nInspect and correctly put on the selected PPE before the hands-on response.\n\nControl: safely return the training container upright without entering the represented spill.\n\nContain: create a perimeter barrier with the specified compatible absorbent, protecting the represented route to any drain.\n\nClean up: apply suitable absorbent to the contained liquid and allow it to absorb.\n\nUse the designated dustpan and brush or other specified tools to collect all used absorbent without scattering it.\n\nPlace the represented contaminated absorbent, pads and used disposable gloves into the designated compatible, identified mock chemical-waste container.\n\nMaintain safe working position, awareness and protection throughout; report any change and stop if the plan no longer applies.\n\nThe trainer observes every item individually, records what was seen and records corrective action for any unsafe or incomplete step.\n\nAll applicable items must be performed safely. The observation remains incomplete until the learner has personally demonstrated the corrected performance; a quiz or group demonstration cannot substitute.",
+      "displayText": "A five-litre liquid-fertilizer-concentrate container has been knocked over on a concrete storage floor. The trainer's scenario card supplies the represented product hazards, relevant SDS information and the conditions making this a response within your training. Use only a harmless substitute and training container.\n\nNo real fertilizer concentrate or other hazardous chemical is spilled for this assessment. The trainer confirms substitute compatibility, slip control, PPE fit, safe tools and mock waste arrangements. Stop if any actual hazard develops.\n\nAssess immediate hazards and verify that the scenario remains within the permitted response limits; warn others and report as required.\n\nSelect the specified chemical-resistant gloves, splash goggles and apron.\n\nInspect and correctly put on the selected PPE before the hands-on response.\n\nControl: safely return the training container upright without entering the represented spill.\n\nContain: create a perimeter barrier with the specified compatible absorbent, protecting the represented route to any drain.\n\nClean up: apply suitable absorbent to the contained liquid and allow it to absorb.\n\nUse the designated dustpan and brush or other specified tools to collect all used absorbent without scattering it.\n\nPlace the represented contaminated absorbent, pads and used disposable gloves into the designated compatible, identified mock chemical-waste container.\n\nMaintain safe working position, awareness and protection throughout; report any change and stop if the plan no longer applies.\n\nThe trainer observes every item individually, records what was seen and records corrective action for any unsafe or incomplete step.\n\nAll applicable items must be performed safely. The observation remains incomplete until the learner has personally demonstrated the corrected performance; a quiz or group demonstration cannot substitute.",
+      "captionText": "A five-litre liquid-fertilizer-concentrate container has been knocked over on a concrete storage floor. The trainer's scenario card supplies the represented product hazards, relevant SDS information and the conditions making this a response within your training. Use only a harmless substitute and training container.\n\nNo real fertilizer concentrate or other hazardous chemical is spilled for this assessment. The trainer confirms substitute compatibility, slip control, PPE fit, safe tools and mock waste arrangements. Stop if any actual hazard develops.\n\nAssess immediate hazards and verify that the scenario remains within the permitted response limits; warn others and report as required.\n\nSelect the specified chemical-resistant gloves, splash goggles and apron.\n\nInspect and correctly put on the selected PPE before the hands-on response.\n\nControl: safely return the training container upright without entering the represented spill.\n\nContain: create a perimeter barrier with the specified compatible absorbent, protecting the represented route to any drain.\n\nClean up: apply suitable absorbent to the contained liquid and allow it to absorb.\n\nUse the designated dustpan and brush or other specified tools to collect all used absorbent without scattering it.\n\nPlace the represented contaminated absorbent, pads and used disposable gloves into the designated compatible, identified mock chemical-waste container.\n\nMaintain safe working position, awareness and protection throughout; report any change and stop if the plan no longer applies.\n\nThe trainer observes every item individually, records what was seen and records corrective action for any unsafe or incomplete step.\n\nAll applicable items must be performed safely. The observation remains incomplete until the learner has personally demonstrated the corrected performance; a quiz or group demonstration cannot substitute.",
+      "spokenText": "A five-litre liquid-fertilizer-concentrate container has been knocked over on a concrete storage floor. The trainer's scenario card supplies the represented product hazards, relevant SDS information and the conditions making this a response within your training. Use only a harmless substitute and training container.\n\nNo real fertilizer concentrate or other hazardous chemical is spilled for this assessment. The trainer confirms substitute compatibility, slip control, PPE fit, safe tools and mock waste arrangements. Stop if any actual hazard develops.\n\nAssess immediate hazards and verify that the scenario remains within the permitted response limits; warn others and report as required.\n\nSelect the specified chemical-resistant gloves, splash goggles and apron.\n\nInspect and correctly put on the selected PPE before the hands-on response.\n\nControl: safely return the training container upright without entering the represented spill.\n\nContain: create a perimeter barrier with the specified compatible absorbent, protecting the represented route to any drain.\n\nClean up: apply suitable absorbent to the contained liquid and allow it to absorb.\n\nUse the designated dustpan and brush or other specified tools to collect all used absorbent without scattering it.\n\nPlace the represented contaminated absorbent, pads and used disposable gloves into the designated compatible, identified mock chemical-waste container.\n\nMaintain safe working position, awareness and protection throughout; report any change and stop if the plan no longer applies.\n\nThe trainer observes every item individually, records what was seen and records corrective action for any unsafe or incomplete step.\n\nAll applicable items must be performed safely. The observation remains incomplete until the learner has personally demonstrated the corrected performance; a quiz or group demonstration cannot substitute.",
+      "spokenTextSHA256": "f8479f6b6dd2dcb1dada81aa972ff0dbc55fe458a5edd3d34867f6607a238b43",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "f8479f6b6dd2dcb1dada81aa972ff0dbc55fe458a5edd3d34867f6607a238b43",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dac7c692ae4685255714808622757d3a2c06c9cf248302da7ba07ab7f1960bc9",
+      "requestFingerprintSha256": "dac7c692ae4685255714808622757d3a2c06c9cf248302da7ba07ab7f1960bc9",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-P01-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-P02-r1",
+      "locale": "en",
+      "semanticGroup": "P02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/1/scenario",
+          "text": "The trainer indicates that a bottle of pH-test reagent has spilled on a workbench. A harmless substitute represents the product. The scenario card confirms the compatible spill materials and that the final damp-wipe method is suitable for this represented reagent.",
+          "sha256": "bac984a11a87bd8ce77cac47daeb3d9bdf33e13fd28fac70c70f889e5bf586bf"
+        },
+        {
+          "pointer": "/practicalTasks/1/safety",
+          "text": "Use safe training props only. Do not use an unidentified real reagent, create airborne powder or mix cleaning chemicals.",
+          "sha256": "7123dd6aaf85d2c11c5a706fba997be31659308e40181d9f67f37bbe8b677f05"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/0",
+          "text": "Stay calm, immediately alert others and assess whether the simulated spill is within the permitted response.",
+          "sha256": "63f5ba831e66331591b6e2f430b694e9ebf6ed7dd6a2326ebad6d8db53fa36db"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/1",
+          "text": "Confirm the product-specific protection before approaching; for this splash scenario use the specified gloves and suitable eye protection.",
+          "sha256": "9193f822d9d9e368ba8bde233e7e9ea2d1baee0ca7b9976d8f7f15bf83370ef3"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/2",
+          "text": "Locate and correctly use the designated spill kit.",
+          "sha256": "b78ef516481d9497727bfc933d84b96d57b2bcfa768140ca5bcfa5dba8e12250"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/3",
+          "text": "Use the specified compatible pads or granules to contain and absorb the liquid.",
+          "sha256": "a4bc41614649bd0079ad12b58b5575fb0aa9f0b4b84b18aaec39f905869421dc"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/4",
+          "text": "Carefully collect the used material into the designated compatible mock waste container.",
+          "sha256": "31c071bd73cd762e8b74751ad2f4960b4a565b76ca06825ba1be1220a79d8d57"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/5",
+          "text": "Complete the scenario-authorized damp wipe; keep the used cloth with the chemical-waste stream.",
+          "sha256": "eb14890cdae3c526abe485b43fce719ae4c2100b0faca7e764f939174ed3afe0"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/6",
+          "text": "Place the mock waste container and used cloths in the correct designated chemical-waste collection location, with the required identification.",
+          "sha256": "bca8ff79c3c4813eb63584340d99896f1f5a68b4f737e85ecfbe0f653f51aa89"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/7",
+          "text": "Remove protection as trained and wash hands thoroughly after completing cleanup.",
+          "sha256": "af1add2e726cc08c14a24eae23acc375fe8293aff9e1ac3b30611b669df37b4b"
+        },
+        {
+          "pointer": "/practicalTasks/1/evidence",
+          "text": "An individual trainer record for all eight observed items, including the decision that cleanup is permitted and the product-specific final wipe.",
+          "sha256": "b692fcf2a93ff7a4fd868093ded7bcb7d9a4ced2f6878e30000360a3d7594ae0"
+        },
+        {
+          "pointer": "/practicalTasks/1/passRule",
+          "text": "Each applicable item must be demonstrated safely with any necessary correction and repeat. Finishing the earlier floor scenario alone does not complete this separate workbench task.",
+          "sha256": "253c69cf895c3265a4f36abe692415ebacadf66bb5b584e7b407a9168a5ae3fa"
+        }
+      ],
+      "scientificMeaning": "The trainer indicates that a bottle of pH-test reagent has spilled on a workbench. A harmless substitute represents the product. The scenario card confirms the compatible spill materials and that the final damp-wipe method is suitable for this represented reagent.\n\nUse safe training props only. Do not use an unidentified real reagent, create airborne powder or mix cleaning chemicals.\n\nStay calm, immediately alert others and assess whether the simulated spill is within the permitted response.\n\nConfirm the product-specific protection before approaching; for this splash scenario use the specified gloves and suitable eye protection.\n\nLocate and correctly use the designated spill kit.\n\nUse the specified compatible pads or granules to contain and absorb the liquid.\n\nCarefully collect the used material into the designated compatible mock waste container.\n\nComplete the scenario-authorized damp wipe; keep the used cloth with the chemical-waste stream.\n\nPlace the mock waste container and used cloths in the correct designated chemical-waste collection location, with the required identification.\n\nRemove protection as trained and wash hands thoroughly after completing cleanup.\n\nAn individual trainer record for all eight observed items, including the decision that cleanup is permitted and the product-specific final wipe.\n\nEach applicable item must be demonstrated safely with any necessary correction and repeat. Finishing the earlier floor scenario alone does not complete this separate workbench task.",
+      "displayText": "The trainer indicates that a bottle of pH-test reagent has spilled on a workbench. A harmless substitute represents the product. The scenario card confirms the compatible spill materials and that the final damp-wipe method is suitable for this represented reagent.\n\nUse safe training props only. Do not use an unidentified real reagent, create airborne powder or mix cleaning chemicals.\n\nStay calm, immediately alert others and assess whether the simulated spill is within the permitted response.\n\nConfirm the product-specific protection before approaching; for this splash scenario use the specified gloves and suitable eye protection.\n\nLocate and correctly use the designated spill kit.\n\nUse the specified compatible pads or granules to contain and absorb the liquid.\n\nCarefully collect the used material into the designated compatible mock waste container.\n\nComplete the scenario-authorized damp wipe; keep the used cloth with the chemical-waste stream.\n\nPlace the mock waste container and used cloths in the correct designated chemical-waste collection location, with the required identification.\n\nRemove protection as trained and wash hands thoroughly after completing cleanup.\n\nAn individual trainer record for all eight observed items, including the decision that cleanup is permitted and the product-specific final wipe.\n\nEach applicable item must be demonstrated safely with any necessary correction and repeat. Finishing the earlier floor scenario alone does not complete this separate workbench task.",
+      "captionText": "The trainer indicates that a bottle of pH-test reagent has spilled on a workbench. A harmless substitute represents the product. The scenario card confirms the compatible spill materials and that the final damp-wipe method is suitable for this represented reagent.\n\nUse safe training props only. Do not use an unidentified real reagent, create airborne powder or mix cleaning chemicals.\n\nStay calm, immediately alert others and assess whether the simulated spill is within the permitted response.\n\nConfirm the product-specific protection before approaching; for this splash scenario use the specified gloves and suitable eye protection.\n\nLocate and correctly use the designated spill kit.\n\nUse the specified compatible pads or granules to contain and absorb the liquid.\n\nCarefully collect the used material into the designated compatible mock waste container.\n\nComplete the scenario-authorized damp wipe; keep the used cloth with the chemical-waste stream.\n\nPlace the mock waste container and used cloths in the correct designated chemical-waste collection location, with the required identification.\n\nRemove protection as trained and wash hands thoroughly after completing cleanup.\n\nAn individual trainer record for all eight observed items, including the decision that cleanup is permitted and the product-specific final wipe.\n\nEach applicable item must be demonstrated safely with any necessary correction and repeat. Finishing the earlier floor scenario alone does not complete this separate workbench task.",
+      "spokenText": "The trainer indicates that a bottle of pH-test reagent has spilled on a workbench. A harmless substitute represents the product. The scenario card confirms the compatible spill materials and that the final damp-wipe method is suitable for this represented reagent.\n\nUse safe training props only. Do not use an unidentified real reagent, create airborne powder or mix cleaning chemicals.\n\nStay calm, immediately alert others and assess whether the simulated spill is within the permitted response.\n\nConfirm the product-specific protection before approaching; for this splash scenario use the specified gloves and suitable eye protection.\n\nLocate and correctly use the designated spill kit.\n\nUse the specified compatible pads or granules to contain and absorb the liquid.\n\nCarefully collect the used material into the designated compatible mock waste container.\n\nComplete the scenario-authorized damp wipe; keep the used cloth with the chemical-waste stream.\n\nPlace the mock waste container and used cloths in the correct designated chemical-waste collection location, with the required identification.\n\nRemove protection as trained and wash hands thoroughly after completing cleanup.\n\nAn individual trainer record for all eight observed items, including the decision that cleanup is permitted and the product-specific final wipe.\n\nEach applicable item must be demonstrated safely with any necessary correction and repeat. Finishing the earlier floor scenario alone does not complete this separate workbench task.",
+      "spokenTextSHA256": "a92680a069fbc329b5c32ad3037da5a1d644500496c1b6550fd9f15c8894dc8c",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "a92680a069fbc329b5c32ad3037da5a1d644500496c1b6550fd9f15c8894dc8c",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Read pH as the separate letters pee aitch, retaining the reagent-specific and harmless simulation conditions.",
+      "deliverySHA256": "29943d9fe5ca21ac673f1b0d089dfcd9b6f53a01838c0061afe9a0a2a1b9ee12",
+      "deliverySha256": "29943d9fe5ca21ac673f1b0d089dfcd9b6f53a01838c0061afe9a0a2a1b9ee12",
+      "pronunciationCues": [
+        "Read pH as the separate letters pee aitch, retaining the reagent-specific and harmless simulation conditions."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f49d3324b2de0a76b1128e121363398eb2fed42c31d3765c5c59901598f7f81d",
+      "requestFingerprintSha256": "f49d3324b2de0a76b1128e121363398eb2fed42c31d3765c5c59901598f7f81d",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-P02-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-P03-r1",
+      "locale": "en",
+      "semanticGroup": "P03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/2/scenario",
+          "text": "The trainer gives a hazard, an alarm instruction, a safe route and a destination. One attendance card is marked missing; nobody is actually hidden or placed in danger.",
+          "sha256": "3d4199ce0653802fb765aef4ab6ea61a23803dacaf670a306d37c736956ca819"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/0",
+          "text": "Stop work and secure equipment only when safe and without delaying escape.",
+          "sha256": "0a283373188c0132ce9f89a362328e5d9f9123ea937e4d66cd35adbddae787b9"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/1",
+          "text": "Follow the designated safe route and coordinator instructions, using the agreed alternative if directed.",
+          "sha256": "b7d4f8f2e27e948ef1a343ed8d6b05880651ea67a12a25a33150f8decdc58b68"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/2",
+          "text": "Gather at the destination appropriate for this hazard; do not assume every emergency uses the same outdoor point.",
+          "sha256": "ba99d7bfe802ee28b580b891bc3c12a2d82f3ad2adcda22c6a9783f063aa2c9f"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/3",
+          "text": "Account for each attendance card and immediately report the missing name and known last location to the coordinator.",
+          "sha256": "8a906f9afc841c2c6f22099f96798e11e5b109ac0466e104ae8e153b91bafd74"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/4",
+          "text": "Remain with the group and explain why you must not re-enter or restart work before permission.",
+          "sha256": "2f4981ff0769b1e9abe15149a8e1d5ab6d9b1acc30623f51a7276d79193857c7"
+        },
+        {
+          "pointer": "/practicalTasks/2/evidence",
+          "text": "Individual observation of the route, accountability report and no-re-entry decision.",
+          "sha256": "974812bb79d65912ba522c188049c7fcb5595009f29b5f767735f99ab683dc77"
+        },
+        {
+          "pointer": "/practicalTasks/2/passRule",
+          "text": "All five actions must be safe and complete. The written answer about a muster point does not replace this observed drill.",
+          "sha256": "db8c93448102cd8fce6a9ae3fc4cc74a56487e032c588cf4ae18c17c1dd72a08"
+        }
+      ],
+      "scientificMeaning": "The trainer gives a hazard, an alarm instruction, a safe route and a destination. One attendance card is marked missing; nobody is actually hidden or placed in danger.\n\nStop work and secure equipment only when safe and without delaying escape.\n\nFollow the designated safe route and coordinator instructions, using the agreed alternative if directed.\n\nGather at the destination appropriate for this hazard; do not assume every emergency uses the same outdoor point.\n\nAccount for each attendance card and immediately report the missing name and known last location to the coordinator.\n\nRemain with the group and explain why you must not re-enter or restart work before permission.\n\nIndividual observation of the route, accountability report and no-re-entry decision.\n\nAll five actions must be safe and complete. The written answer about a muster point does not replace this observed drill.",
+      "displayText": "The trainer gives a hazard, an alarm instruction, a safe route and a destination. One attendance card is marked missing; nobody is actually hidden or placed in danger.\n\nStop work and secure equipment only when safe and without delaying escape.\n\nFollow the designated safe route and coordinator instructions, using the agreed alternative if directed.\n\nGather at the destination appropriate for this hazard; do not assume every emergency uses the same outdoor point.\n\nAccount for each attendance card and immediately report the missing name and known last location to the coordinator.\n\nRemain with the group and explain why you must not re-enter or restart work before permission.\n\nIndividual observation of the route, accountability report and no-re-entry decision.\n\nAll five actions must be safe and complete. The written answer about a muster point does not replace this observed drill.",
+      "captionText": "The trainer gives a hazard, an alarm instruction, a safe route and a destination. One attendance card is marked missing; nobody is actually hidden or placed in danger.\n\nStop work and secure equipment only when safe and without delaying escape.\n\nFollow the designated safe route and coordinator instructions, using the agreed alternative if directed.\n\nGather at the destination appropriate for this hazard; do not assume every emergency uses the same outdoor point.\n\nAccount for each attendance card and immediately report the missing name and known last location to the coordinator.\n\nRemain with the group and explain why you must not re-enter or restart work before permission.\n\nIndividual observation of the route, accountability report and no-re-entry decision.\n\nAll five actions must be safe and complete. The written answer about a muster point does not replace this observed drill.",
+      "spokenText": "The trainer gives a hazard, an alarm instruction, a safe route and a destination. One attendance card is marked missing; nobody is actually hidden or placed in danger.\n\nStop work and secure equipment only when safe and without delaying escape.\n\nFollow the designated safe route and coordinator instructions, using the agreed alternative if directed.\n\nGather at the destination appropriate for this hazard; do not assume every emergency uses the same outdoor point.\n\nAccount for each attendance card and immediately report the missing name and known last location to the coordinator.\n\nRemain with the group and explain why you must not re-enter or restart work before permission.\n\nIndividual observation of the route, accountability report and no-re-entry decision.\n\nAll five actions must be safe and complete. The written answer about a muster point does not replace this observed drill.",
+      "spokenTextSHA256": "d8a4ad81cc5db908501ba291025a586e8bb71576c19e4fa0a6b125b0387ce7dc",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "d8a4ad81cc5db908501ba291025a586e8bb71576c19e4fa0a6b125b0387ce7dc",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b3b02e2633d12cf7aa0432de3a5cc467a0b93fc0e1d92c912029f45ceb625f88",
+      "requestFingerprintSha256": "b3b02e2633d12cf7aa0432de3a5cc467a0b93fc0e1d92c912029f45ceb625f88",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-P03-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-group-planning-r1",
+      "locale": "en",
+      "semanticGroup": "group-planning",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/groupActivity/instructions/0",
+          "text": "Work in groups of 3–4. Use one of the four scenario cards and spend 15 minutes planning Assess, Alert, Attend.",
+          "sha256": "3c547f3080e5a08b53b6acf239966ff8f136c696e01e2955510ecddcfeeee3d2"
+        },
+        {
+          "pointer": "/groupActivity/instructions/1",
+          "text": "Identify immediate actions, required protection and the exact information to give when calling for help. Use the three-box organizer if useful.",
+          "sha256": "91ba44b30f510484842f53bc6d04a14b14d510240edc619aba5e3632ceec2d26"
+        },
+        {
+          "pointer": "/groupActivity/instructions/2",
+          "text": "One spokesperson presents the plan in 2–3 minutes during the shared 15-minute presentation and discussion period.",
+          "sha256": "8e86b7f842f0138451d91929f85c96dcf2410a1e8acece3e13d526ebf0f944a8"
+        },
+        {
+          "pointer": "/groupActivity/instructions/3",
+          "text": "Compare all four cases: corrosive arm splash, dizzy partner, injured ankle and unknown airborne chemical. Explain why their responses differ.",
+          "sha256": "3192b7ce8b92ee161dd106b1ed69ceec22c6ab438be292c065aaf23840254cae"
+        },
+        {
+          "pointer": "/groupActivity/instructions/4",
+          "text": "If you finish early, test failure of the first plan or loss of mobile signal and describe the safe backup.",
+          "sha256": "8ef35d7bd30af939686a0bf04fb4f2f5c0c43c736ba9775266d700a5ddacced1"
+        },
+        {
+          "pointer": "/groupActivity/instructions/5",
+          "text": "After feedback, each learner must still demonstrate the relevant individual practical actions; membership in the group does not establish competence.",
+          "sha256": "1f94b6888e494d36255611cd480f7b83ab5afc8f4563a4c5f5bfe6864da841bb"
+        }
+      ],
+      "scientificMeaning": "Work in groups of 3–4. Use one of the four scenario cards and spend 15 minutes planning Assess, Alert, Attend.\n\nIdentify immediate actions, required protection and the exact information to give when calling for help. Use the three-box organizer if useful.\n\nOne spokesperson presents the plan in 2–3 minutes during the shared 15-minute presentation and discussion period.\n\nCompare all four cases: corrosive arm splash, dizzy partner, injured ankle and unknown airborne chemical. Explain why their responses differ.\n\nIf you finish early, test failure of the first plan or loss of mobile signal and describe the safe backup.\n\nAfter feedback, each learner must still demonstrate the relevant individual practical actions; membership in the group does not establish competence.",
+      "displayText": "Work in groups of 3–4. Use one of the four scenario cards and spend 15 minutes planning Assess, Alert, Attend.\n\nIdentify immediate actions, required protection and the exact information to give when calling for help. Use the three-box organizer if useful.\n\nOne spokesperson presents the plan in 2–3 minutes during the shared 15-minute presentation and discussion period.\n\nCompare all four cases: corrosive arm splash, dizzy partner, injured ankle and unknown airborne chemical. Explain why their responses differ.\n\nIf you finish early, test failure of the first plan or loss of mobile signal and describe the safe backup.\n\nAfter feedback, each learner must still demonstrate the relevant individual practical actions; membership in the group does not establish competence.",
+      "captionText": "Work in groups of 3–4. Use one of the four scenario cards and spend 15 minutes planning Assess, Alert, Attend.\n\nIdentify immediate actions, required protection and the exact information to give when calling for help. Use the three-box organizer if useful.\n\nOne spokesperson presents the plan in 2–3 minutes during the shared 15-minute presentation and discussion period.\n\nCompare all four cases: corrosive arm splash, dizzy partner, injured ankle and unknown airborne chemical. Explain why their responses differ.\n\nIf you finish early, test failure of the first plan or loss of mobile signal and describe the safe backup.\n\nAfter feedback, each learner must still demonstrate the relevant individual practical actions; membership in the group does not establish competence.",
+      "spokenText": "Work in groups of 3–4. Use one of the four scenario cards and spend 15 minutes planning Assess, Alert, Attend.\n\nIdentify immediate actions, required protection and the exact information to give when calling for help. Use the three-box organizer if useful.\n\nOne spokesperson presents the plan in 2–3 minutes during the shared 15-minute presentation and discussion period.\n\nCompare all four cases: corrosive arm splash, dizzy partner, injured ankle and unknown airborne chemical. Explain why their responses differ.\n\nIf you finish early, test failure of the first plan or loss of mobile signal and describe the safe backup.\n\nAfter feedback, each learner must still demonstrate the relevant individual practical actions; membership in the group does not establish competence.",
+      "spokenTextSHA256": "3a27a3b1e26706de801834e67f9eb17b9981f540b66405e763bbdfdc2d3caefb",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "3a27a3b1e26706de801834e67f9eb17b9981f540b66405e763bbdfdc2d3caefb",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Group size three to four; planning fifteen minutes; one spokesperson two to three minutes within a separate shared fifteen-minute presentation and discussion period. Preserve these distinct values.",
+      "deliverySHA256": "a858dda8070b7ddb1e10bb03a45103b473d0e37b9264756d2eb6863ebccd21e5",
+      "deliverySha256": "a858dda8070b7ddb1e10bb03a45103b473d0e37b9264756d2eb6863ebccd21e5",
+      "pronunciationCues": [
+        "Group size three to four; planning fifteen minutes; one spokesperson two to three minutes within a separate shared fifteen-minute presentation and discussion period. Preserve these distinct values."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a2b3dea568f3e23be2cb11180d265105d0214342867c6d35647cd5c591505493",
+      "requestFingerprintSha256": "a2b3dea568f3e23be2cb11180d265105d0214342867c6d35647cd5c591505493",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-group-planning-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Compare a known, authorised harmless training spill with an unknown airborne release and a person with chemical on the skin. Put assessment, reporting, urgent care, safe withdrawal, containment and accountability in a defensible order for each case.",
+          "sha256": "e968c26ae3429b3cf3a2c35d0071fc34b445941bdeff411a76bc92e73f624b55"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Identify the substance, spread, hazards, available protection and site-plan authority before choosing any cleanup.",
+          "sha256": "4a9af08dd1c950be4e20d6de20218bcecef2835c56dfe3e2abbd54d0abd133e2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Withdraw and alert others for an unknown or unmanageable release; do not approach to sniff it.",
+          "sha256": "c5564ee621144f4a41bff405f74b65a801a1045e27141833c825db78b7e1267b"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Prioritise the exposed person's appropriate flushing and urgent call over collecting material.",
+          "sha256": "5f07aed9a4df90d620c771234d5687ac6081a743926dd16aae0da500190e3b5f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Select the planned evacuation route and account for the team at the safe point.",
+          "sha256": "af803efdea3fe6edab664459c9cc5ca002ab14f2030981d07c6e2db1c41ea4ce"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The physical spill and evacuation drills use harmless substitutes and require trainer observation under the site plan.",
+          "sha256": "4c38c545831adbb5c36d257f9df62815e86b2d319aaba5dfdea29c0e374b64b7"
+        }
+      ],
+      "scientificMeaning": "Compare a known, authorised harmless training spill with an unknown airborne release and a person with chemical on the skin. Put assessment, reporting, urgent care, safe withdrawal, containment and accountability in a defensible order for each case.\n\nIdentify the substance, spread, hazards, available protection and site-plan authority before choosing any cleanup.\n\nWithdraw and alert others for an unknown or unmanageable release; do not approach to sniff it.\n\nPrioritise the exposed person's appropriate flushing and urgent call over collecting material.\n\nSelect the planned evacuation route and account for the team at the safe point.\n\nThe physical spill and evacuation drills use harmless substitutes and require trainer observation under the site plan.",
+      "displayText": "Compare a known, authorised harmless training spill with an unknown airborne release and a person with chemical on the skin. Put assessment, reporting, urgent care, safe withdrawal, containment and accountability in a defensible order for each case.\n\nIdentify the substance, spread, hazards, available protection and site-plan authority before choosing any cleanup.\n\nWithdraw and alert others for an unknown or unmanageable release; do not approach to sniff it.\n\nPrioritise the exposed person's appropriate flushing and urgent call over collecting material.\n\nSelect the planned evacuation route and account for the team at the safe point.\n\nThe physical spill and evacuation drills use harmless substitutes and require trainer observation under the site plan.",
+      "captionText": "Compare a known, authorised harmless training spill with an unknown airborne release and a person with chemical on the skin. Put assessment, reporting, urgent care, safe withdrawal, containment and accountability in a defensible order for each case.\n\nIdentify the substance, spread, hazards, available protection and site-plan authority before choosing any cleanup.\n\nWithdraw and alert others for an unknown or unmanageable release; do not approach to sniff it.\n\nPrioritise the exposed person's appropriate flushing and urgent call over collecting material.\n\nSelect the planned evacuation route and account for the team at the safe point.\n\nThe physical spill and evacuation drills use harmless substitutes and require trainer observation under the site plan.",
+      "spokenText": "Compare a known, authorised harmless training spill with an unknown airborne release and a person with chemical on the skin. Put assessment, reporting, urgent care, safe withdrawal, containment and accountability in a defensible order for each case.\n\nIdentify the substance, spread, hazards, available protection and site-plan authority before choosing any cleanup.\n\nWithdraw and alert others for an unknown or unmanageable release; do not approach to sniff it.\n\nPrioritise the exposed person's appropriate flushing and urgent call over collecting material.\n\nSelect the planned evacuation route and account for the team at the safe point.\n\nThe physical spill and evacuation drills use harmless substitutes and require trainer observation under the site plan.",
+      "spokenTextSHA256": "540739ede5374dce1759500f3ff5287fad27b9bc1e2e2d76a0593d46517c8d1e",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "GUIDED_PRACTICE_PROMPT_ONLY_NO_FEEDBACK_OR_ANSWER_KEYS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "540739ede5374dce1759500f3ff5287fad27b9bc1e2e2d76a0593d46517c8d1e",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "80167c87db607f2c9c41aaee51e18b00b1055d668021a8f0b55552e958660d8f",
+      "requestFingerprintSha256": "80167c87db607f2c9c41aaee51e18b00b1055d668021a8f0b55552e958660d8f",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-guided-practice-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I explain and demonstrate emergency response and evacuation within my training?",
+          "sha256": "8810f7d697d5c8171a82f0f5a87f07baec3eb22928b1466859252502cccd135b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Consider both this step and the injury-and-heat step. Use your answer to plan more practice; only observed evidence establishes practical competence.",
+          "sha256": "b86c9585dbad50635c623d77c858a13100007f8d2862cd881a00bc9cc9546940"
+        }
+      ],
+      "scientificMeaning": "Can I explain and demonstrate emergency response and evacuation within my training?\n\nConsider both this step and the injury-and-heat step. Use your answer to plan more practice; only observed evidence establishes practical competence.",
+      "displayText": "Can I explain and demonstrate emergency response and evacuation within my training?\n\nConsider both this step and the injury-and-heat step. Use your answer to plan more practice; only observed evidence establishes practical competence.",
+      "captionText": "Can I explain and demonstrate emergency response and evacuation within my training?\n\nConsider both this step and the injury-and-heat step. Use your answer to plan more practice; only observed evidence establishes practical competence.",
+      "spokenText": "Can I explain and demonstrate emergency response and evacuation within my training?\n\nConsider both this step and the injury-and-heat step. Use your answer to plan more practice; only observed evidence establishes practical competence.",
+      "spokenTextSHA256": "8acec5773e536e695499a5b7192dfdec4c5f50d2af404ba1086b9a943762c5fe",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "8acec5773e536e695499a5b7192dfdec4c5f50d2af404ba1086b9a943762c5fe",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5057dad195256246631aa7da23965a5f56d9cd0cb5154af38466a20fd5f15b0c",
+      "requestFingerprintSha256": "5057dad195256246631aa7da23965a5f56d9cd0cb5154af38466a20fd5f15b0c",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-reflection-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-03-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Control",
+          "sha256": "32d7e82082479b8cb546187ff0af11e4915e4d17bc28e02dca7425288b79badd"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Stop further release when it is safe and permitted to do so.",
+          "sha256": "c75fbd1122ed69bbb2ba147c400f90c6cef339c437d994417b64f104ae6e5560"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Contain",
+          "sha256": "e534a2c2b45663f4d1b7cc59986897ca52889cbb7a632e253f1621e43510b346"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Limit the spread using a method suitable for the product.",
+          "sha256": "d343d43fe32872b8a60faa320595cda69d139e8bbb623a9a1dba8008327bbd3f"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Clean up",
+          "sha256": "f938c3286fd72925a5ebf7dc7249fee0036304b113346b3abd05b4c4c1843e49"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Collect and manage contamination by the specified safe method.",
+          "sha256": "2b42959642577ac26eb7fea6ed0cc856501540aa1c5668153e49c6dc80c73a4f"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Compatible",
+          "sha256": "04c72ef3388c185b5db24dca4823f75254826840b764bd41315226f9fb5b8280"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Suitable for use together without an unsafe reaction or failure.",
+          "sha256": "7f9af9926bd33e9d089f4dbeb31451f2aea82061bf25f74e9ca883ceecdd5669"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Muster point",
+          "sha256": "0084bf5551c293fbd935eb14aaa9acab0faae3bcf60b5953ffa1e0542ef7d552"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A pre-agreed safe meeting place for accounting for people.",
+          "sha256": "4c493ff8b5af05c9032ce3f1cb4d0a6eea6c15f245f42115fcc273f412cd8db3"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Upwind",
+          "sha256": "9af84d25d5e439f291eb3122939a20a856923fefc144d6f0c3cd2540098910e7"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "On the side from which the wind is coming; a direction to seek only by a safe route.",
+          "sha256": "c6709f016584f7b12c44d9f9d2cc8aecb706a8fdb876eac08777567d8e86f4f7"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "SDS",
+          "sha256": "54b6b356d70e258999180cbb8bd30b2f7c9744a899b80baed209212ca04efdc1"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Safety data sheet containing product hazards and response information.",
+          "sha256": "cd34bb9661e5fc133e5b4dc004527fce2daeeb4005b6b577f902b514a43b2034"
+        }
+      ],
+      "scientificMeaning": "Control\n\nStop further release when it is safe and permitted to do so.\n\nContain\n\nLimit the spread using a method suitable for the product.\n\nClean up\n\nCollect and manage contamination by the specified safe method.\n\nCompatible\n\nSuitable for use together without an unsafe reaction or failure.\n\nMuster point\n\nA pre-agreed safe meeting place for accounting for people.\n\nUpwind\n\nOn the side from which the wind is coming; a direction to seek only by a safe route.\n\nSDS\n\nSafety data sheet containing product hazards and response information.",
+      "displayText": "Control\n\nStop further release when it is safe and permitted to do so.\n\nContain\n\nLimit the spread using a method suitable for the product.\n\nClean up\n\nCollect and manage contamination by the specified safe method.\n\nCompatible\n\nSuitable for use together without an unsafe reaction or failure.\n\nMuster point\n\nA pre-agreed safe meeting place for accounting for people.\n\nUpwind\n\nOn the side from which the wind is coming; a direction to seek only by a safe route.\n\nSDS\n\nSafety data sheet containing product hazards and response information.",
+      "captionText": "Control\n\nStop further release when it is safe and permitted to do so.\n\nContain\n\nLimit the spread using a method suitable for the product.\n\nClean up\n\nCollect and manage contamination by the specified safe method.\n\nCompatible\n\nSuitable for use together without an unsafe reaction or failure.\n\nMuster point\n\nA pre-agreed safe meeting place for accounting for people.\n\nUpwind\n\nOn the side from which the wind is coming; a direction to seek only by a safe route.\n\nSDS\n\nSafety data sheet containing product hazards and response information.",
+      "spokenText": "Control\n\nStop further release when it is safe and permitted to do so.\n\nContain\n\nLimit the spread using a method suitable for the product.\n\nClean up\n\nCollect and manage contamination by the specified safe method.\n\nCompatible\n\nSuitable for use together without an unsafe reaction or failure.\n\nMuster point\n\nA pre-agreed safe meeting place for accounting for people.\n\nUpwind\n\nOn the side from which the wind is coming; a direction to seek only by a safe route.\n\nSDS\n\nSafety data sheet containing product hazards and response information.",
+      "spokenTextSHA256": "d74498dc2259321c70f81321c6c481ca847b85851a8268beaf37284c2a7305bd",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "d74498dc2259321c70f81321c6c481ca847b85851a8268beaf37284c2a7305bd",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c748ab582146eacfc575d9b115edf49aca515a9b9218963c0c57ae493dbb1e6c",
+      "requestFingerprintSha256": "c748ab582146eacfc575d9b115edf49aca515a9b9218963c0c57ae493dbb1e6c",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-en-glossary-r1",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

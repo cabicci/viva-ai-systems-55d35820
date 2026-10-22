@@ -1,0 +1,626 @@
+{
+  "locale": "it",
+  "source": {
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-03-it.json",
+    "sha256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e"
+  },
+  "units": [
+    {
+      "id": "S1-03-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Uno sversamento non è sicuro solo perché sembra piccolo. Impara quando allontanarti, come un gruppo autorizzato gestisce una sostanza conosciuta e come verificare che tutti siano presenti dopo l'evacuazione.",
+          "sha256": "e3467db6b3de3a76ad9f7ee9af11e2c0fa9457c8293c5afce9ce3e67cdd7b1e0"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Spiegare se uno sversamento rientra nei limiti concordati di formazione e attrezzatura, e riconoscere quando allontanarsi e segnalarlo.",
+          "sha256": "3e10c1cabd3ab7b901f69084b7b85d30f7f8a2a381ed9e0ea1d8bb0c86062f74"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Sotto osservazione del formatore, dimostrare valutazione, segnalazione, protezione, contenimento, raccolta e pulizia con una simulazione innocua.",
+          "sha256": "2b7ec355bca93abfa658034074f0efee0013286ecc426a21c86b627892712bf1"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Seguire la via d'evacuazione assegnata, verificare la presenza delle persone nel luogo sicuro e spiegare come cambia la risposta in quattro scenari d'emergenza.",
+          "sha256": "ed8fa64193c4c16c2b4c7dddf935fa19c1241f8ddda17c43d7b7ed40ddcb7af5"
+        }
+      ],
+      "scientificMeaning": "Uno sversamento non è sicuro solo perché sembra piccolo. Impara quando allontanarti, come un gruppo autorizzato gestisce una sostanza conosciuta e come verificare che tutti siano presenti dopo l'evacuazione.\n\nSpiegare se uno sversamento rientra nei limiti concordati di formazione e attrezzatura, e riconoscere quando allontanarsi e segnalarlo.\n\nSotto osservazione del formatore, dimostrare valutazione, segnalazione, protezione, contenimento, raccolta e pulizia con una simulazione innocua.\n\nSeguire la via d'evacuazione assegnata, verificare la presenza delle persone nel luogo sicuro e spiegare come cambia la risposta in quattro scenari d'emergenza.",
+      "displayText": "Uno sversamento non è sicuro solo perché sembra piccolo. Impara quando allontanarti, come un gruppo autorizzato gestisce una sostanza conosciuta e come verificare che tutti siano presenti dopo l'evacuazione.\n\nSpiegare se uno sversamento rientra nei limiti concordati di formazione e attrezzatura, e riconoscere quando allontanarsi e segnalarlo.\n\nSotto osservazione del formatore, dimostrare valutazione, segnalazione, protezione, contenimento, raccolta e pulizia con una simulazione innocua.\n\nSeguire la via d'evacuazione assegnata, verificare la presenza delle persone nel luogo sicuro e spiegare come cambia la risposta in quattro scenari d'emergenza.",
+      "captionText": "Uno sversamento non è sicuro solo perché sembra piccolo. Impara quando allontanarti, come un gruppo autorizzato gestisce una sostanza conosciuta e come verificare che tutti siano presenti dopo l'evacuazione.\n\nSpiegare se uno sversamento rientra nei limiti concordati di formazione e attrezzatura, e riconoscere quando allontanarsi e segnalarlo.\n\nSotto osservazione del formatore, dimostrare valutazione, segnalazione, protezione, contenimento, raccolta e pulizia con una simulazione innocua.\n\nSeguire la via d'evacuazione assegnata, verificare la presenza delle persone nel luogo sicuro e spiegare come cambia la risposta in quattro scenari d'emergenza.",
+      "spokenText": "Uno sversamento non è sicuro solo perché sembra piccolo. Impara quando allontanarti, come un gruppo autorizzato gestisce una sostanza conosciuta e come verificare che tutti siano presenti dopo l'evacuazione.\n\nSpiegare se uno sversamento rientra nei limiti concordati di formazione e attrezzatura, e riconoscere quando allontanarsi e segnalarlo.\n\nSotto osservazione del formatore, dimostrare valutazione, segnalazione, protezione, contenimento, raccolta e pulizia con una simulazione innocua.\n\nSeguire la via d'evacuazione assegnata, verificare la presenza delle persone nel luogo sicuro e spiegare come cambia la risposta in quattro scenari d'emergenza.",
+      "spokenTextSHA256": "19c9d2176ff892a76abdb995d82e4adba75f42ae8b7bb2e8caa8351be4f9cd98",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "19c9d2176ff892a76abdb995d82e4adba75f42ae8b7bb2e8caa8351be4f9cd98",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5bfd907bb3ab12415cb025912be036644ca1bd973597332c1af14840186ddd08",
+      "requestFingerprintSha256": "5bfd907bb3ab12415cb025912be036644ca1bd973597332c1af14840186ddd08",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-opening-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-P01-r1",
+      "locale": "it",
+      "semanticGroup": "P01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/scenario",
+          "text": "Un contenitore di cinque litri di fertilizzante liquido concentrato è caduto sul pavimento in cemento del deposito. La scheda del formatore indica i pericoli del prodotto rappresentato, le informazioni SDS pertinenti e le condizioni che rendono la risposta compatibile con la tua formazione. Usa solo un sostituto innocuo e un contenitore didattico.",
+          "sha256": "52ccfafa6b70147f7e7eb7937abf9ea7dee51de845d3ec10bb66eb219c3b6b44"
+        },
+        {
+          "pointer": "/practicalTasks/0/safety",
+          "text": "Per questa valutazione non si versa fertilizzante concentrato reale né un'altra sostanza pericolosa. Il formatore verifica compatibilità del sostituto, controllo del rischio di scivolare, misura dei DPI, strumenti sicuri e gestione simulata dei rifiuti. Interrompi se compare un pericolo reale.",
+          "sha256": "00839495605c114390ad0025c742bffa34404c78ce2348868081cdd5ee903333"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/0",
+          "text": "Valuta i pericoli immediati e verifica che il caso resti entro i limiti consentiti; avvisa gli altri e segnala come richiesto.",
+          "sha256": "69b95aa73b79d150883ef47cf9e12e0816af19e622c066aa16bc2aee95569b10"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/1",
+          "text": "Seleziona i guanti resistenti al prodotto chimico, gli occhiali contro gli schizzi e il grembiule indicati.",
+          "sha256": "63f165d33b7b666770146fd61c2daeea2f05ef27d2a2d04d7ed68cd5669c67bd"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/2",
+          "text": "Controlla e indossa correttamente i DPI scelti prima della risposta pratica.",
+          "sha256": "17f580f870518b6bb079a991c02ca6a4b12fb15539b8d3a09495bcaad9c80164"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/3",
+          "text": "Blocca la fonte: rimetti in verticale il contenitore didattico senza entrare nello sversamento rappresentato.",
+          "sha256": "76622eaa46c8e21622f1d19ee5401715b6a9bb072df4beb15e24169e7b43635e"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/4",
+          "text": "Contieni: crea una barriera perimetrale con l'assorbente compatibile indicato, proteggendo il percorso rappresentato verso uno scarico.",
+          "sha256": "6198a0b8bc89ecab9c66ffbd09ebb6347f3aec3815be5c3cdb914ccb25b7c010"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Pulisci: applica un assorbente adatto al liquido contenuto e lascia che lo assorba.",
+          "sha256": "c8dbff9d5c8670a4d61ca44689ebaa21459bdd850294787f9514b91a9c160a89"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/6",
+          "text": "Usa la paletta e la scopa designate, o gli altri strumenti indicati, per raccogliere tutto l'assorbente usato senza spargerlo.",
+          "sha256": "e22acaa0067c65107e441e0a50fb62ea32dd4258b99cb41b585d3c3ba7075c29"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/7",
+          "text": "Metti l'assorbente contaminato rappresentato, i tamponi e i guanti monouso usati nel contenitore compatibile, designato e identificato per rifiuti chimici simulati.",
+          "sha256": "392ec189af98783889fd53853303a025c417a162d6b0e1ddaf127827321524af"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/8",
+          "text": "Mantieni una posizione di lavoro sicura, attenzione e protezione durante tutta la prova; segnala qualunque cambiamento e interrompi se il piano non si applica più.",
+          "sha256": "3fb6f824ea3d075c3d74617013620db4154fcb60ff51e82e9e5f079bc69c8b0a"
+        },
+        {
+          "pointer": "/practicalTasks/0/evidence",
+          "text": "Il formatore osserva individualmente ogni voce, registra ciò che ha visto e la correzione per un passaggio incompleto o non sicuro.",
+          "sha256": "232b6fbc0a1eeb152b1024a741936e0c191d2fb64357630b24ae5a55399bb94f"
+        },
+        {
+          "pointer": "/practicalTasks/0/passRule",
+          "text": "Ogni voce applicabile deve essere eseguita in sicurezza. La prova resta incompleta finché il partecipante non mostra personalmente l'esecuzione corretta; test online e dimostrazione di gruppo non la sostituiscono.",
+          "sha256": "6bc7d7a3bc9dd16b173832877b70e7cb3c3dcb1cc430737c48a8d98144e1679d"
+        }
+      ],
+      "scientificMeaning": "Un contenitore di cinque litri di fertilizzante liquido concentrato è caduto sul pavimento in cemento del deposito. La scheda del formatore indica i pericoli del prodotto rappresentato, le informazioni SDS pertinenti e le condizioni che rendono la risposta compatibile con la tua formazione. Usa solo un sostituto innocuo e un contenitore didattico.\n\nPer questa valutazione non si versa fertilizzante concentrato reale né un'altra sostanza pericolosa. Il formatore verifica compatibilità del sostituto, controllo del rischio di scivolare, misura dei DPI, strumenti sicuri e gestione simulata dei rifiuti. Interrompi se compare un pericolo reale.\n\nValuta i pericoli immediati e verifica che il caso resti entro i limiti consentiti; avvisa gli altri e segnala come richiesto.\n\nSeleziona i guanti resistenti al prodotto chimico, gli occhiali contro gli schizzi e il grembiule indicati.\n\nControlla e indossa correttamente i DPI scelti prima della risposta pratica.\n\nBlocca la fonte: rimetti in verticale il contenitore didattico senza entrare nello sversamento rappresentato.\n\nContieni: crea una barriera perimetrale con l'assorbente compatibile indicato, proteggendo il percorso rappresentato verso uno scarico.\n\nPulisci: applica un assorbente adatto al liquido contenuto e lascia che lo assorba.\n\nUsa la paletta e la scopa designate, o gli altri strumenti indicati, per raccogliere tutto l'assorbente usato senza spargerlo.\n\nMetti l'assorbente contaminato rappresentato, i tamponi e i guanti monouso usati nel contenitore compatibile, designato e identificato per rifiuti chimici simulati.\n\nMantieni una posizione di lavoro sicura, attenzione e protezione durante tutta la prova; segnala qualunque cambiamento e interrompi se il piano non si applica più.\n\nIl formatore osserva individualmente ogni voce, registra ciò che ha visto e la correzione per un passaggio incompleto o non sicuro.\n\nOgni voce applicabile deve essere eseguita in sicurezza. La prova resta incompleta finché il partecipante non mostra personalmente l'esecuzione corretta; test online e dimostrazione di gruppo non la sostituiscono.",
+      "displayText": "Un contenitore di cinque litri di fertilizzante liquido concentrato è caduto sul pavimento in cemento del deposito. La scheda del formatore indica i pericoli del prodotto rappresentato, le informazioni SDS pertinenti e le condizioni che rendono la risposta compatibile con la tua formazione. Usa solo un sostituto innocuo e un contenitore didattico.\n\nPer questa valutazione non si versa fertilizzante concentrato reale né un'altra sostanza pericolosa. Il formatore verifica compatibilità del sostituto, controllo del rischio di scivolare, misura dei DPI, strumenti sicuri e gestione simulata dei rifiuti. Interrompi se compare un pericolo reale.\n\nValuta i pericoli immediati e verifica che il caso resti entro i limiti consentiti; avvisa gli altri e segnala come richiesto.\n\nSeleziona i guanti resistenti al prodotto chimico, gli occhiali contro gli schizzi e il grembiule indicati.\n\nControlla e indossa correttamente i DPI scelti prima della risposta pratica.\n\nBlocca la fonte: rimetti in verticale il contenitore didattico senza entrare nello sversamento rappresentato.\n\nContieni: crea una barriera perimetrale con l'assorbente compatibile indicato, proteggendo il percorso rappresentato verso uno scarico.\n\nPulisci: applica un assorbente adatto al liquido contenuto e lascia che lo assorba.\n\nUsa la paletta e la scopa designate, o gli altri strumenti indicati, per raccogliere tutto l'assorbente usato senza spargerlo.\n\nMetti l'assorbente contaminato rappresentato, i tamponi e i guanti monouso usati nel contenitore compatibile, designato e identificato per rifiuti chimici simulati.\n\nMantieni una posizione di lavoro sicura, attenzione e protezione durante tutta la prova; segnala qualunque cambiamento e interrompi se il piano non si applica più.\n\nIl formatore osserva individualmente ogni voce, registra ciò che ha visto e la correzione per un passaggio incompleto o non sicuro.\n\nOgni voce applicabile deve essere eseguita in sicurezza. La prova resta incompleta finché il partecipante non mostra personalmente l'esecuzione corretta; test online e dimostrazione di gruppo non la sostituiscono.",
+      "captionText": "Un contenitore di cinque litri di fertilizzante liquido concentrato è caduto sul pavimento in cemento del deposito. La scheda del formatore indica i pericoli del prodotto rappresentato, le informazioni SDS pertinenti e le condizioni che rendono la risposta compatibile con la tua formazione. Usa solo un sostituto innocuo e un contenitore didattico.\n\nPer questa valutazione non si versa fertilizzante concentrato reale né un'altra sostanza pericolosa. Il formatore verifica compatibilità del sostituto, controllo del rischio di scivolare, misura dei DPI, strumenti sicuri e gestione simulata dei rifiuti. Interrompi se compare un pericolo reale.\n\nValuta i pericoli immediati e verifica che il caso resti entro i limiti consentiti; avvisa gli altri e segnala come richiesto.\n\nSeleziona i guanti resistenti al prodotto chimico, gli occhiali contro gli schizzi e il grembiule indicati.\n\nControlla e indossa correttamente i DPI scelti prima della risposta pratica.\n\nBlocca la fonte: rimetti in verticale il contenitore didattico senza entrare nello sversamento rappresentato.\n\nContieni: crea una barriera perimetrale con l'assorbente compatibile indicato, proteggendo il percorso rappresentato verso uno scarico.\n\nPulisci: applica un assorbente adatto al liquido contenuto e lascia che lo assorba.\n\nUsa la paletta e la scopa designate, o gli altri strumenti indicati, per raccogliere tutto l'assorbente usato senza spargerlo.\n\nMetti l'assorbente contaminato rappresentato, i tamponi e i guanti monouso usati nel contenitore compatibile, designato e identificato per rifiuti chimici simulati.\n\nMantieni una posizione di lavoro sicura, attenzione e protezione durante tutta la prova; segnala qualunque cambiamento e interrompi se il piano non si applica più.\n\nIl formatore osserva individualmente ogni voce, registra ciò che ha visto e la correzione per un passaggio incompleto o non sicuro.\n\nOgni voce applicabile deve essere eseguita in sicurezza. La prova resta incompleta finché il partecipante non mostra personalmente l'esecuzione corretta; test online e dimostrazione di gruppo non la sostituiscono.",
+      "spokenText": "Un contenitore di cinque litri di fertilizzante liquido concentrato è caduto sul pavimento in cemento del deposito. La scheda del formatore indica i pericoli del prodotto rappresentato, le informazioni SDS pertinenti e le condizioni che rendono la risposta compatibile con la tua formazione. Usa solo un sostituto innocuo e un contenitore didattico.\n\nPer questa valutazione non si versa fertilizzante concentrato reale né un'altra sostanza pericolosa. Il formatore verifica compatibilità del sostituto, controllo del rischio di scivolare, misura dei DPI, strumenti sicuri e gestione simulata dei rifiuti. Interrompi se compare un pericolo reale.\n\nValuta i pericoli immediati e verifica che il caso resti entro i limiti consentiti; avvisa gli altri e segnala come richiesto.\n\nSeleziona i guanti resistenti al prodotto chimico, gli occhiali contro gli schizzi e il grembiule indicati.\n\nControlla e indossa correttamente i DPI scelti prima della risposta pratica.\n\nBlocca la fonte: rimetti in verticale il contenitore didattico senza entrare nello sversamento rappresentato.\n\nContieni: crea una barriera perimetrale con l'assorbente compatibile indicato, proteggendo il percorso rappresentato verso uno scarico.\n\nPulisci: applica un assorbente adatto al liquido contenuto e lascia che lo assorba.\n\nUsa la paletta e la scopa designate, o gli altri strumenti indicati, per raccogliere tutto l'assorbente usato senza spargerlo.\n\nMetti l'assorbente contaminato rappresentato, i tamponi e i guanti monouso usati nel contenitore compatibile, designato e identificato per rifiuti chimici simulati.\n\nMantieni una posizione di lavoro sicura, attenzione e protezione durante tutta la prova; segnala qualunque cambiamento e interrompi se il piano non si applica più.\n\nIl formatore osserva individualmente ogni voce, registra ciò che ha visto e la correzione per un passaggio incompleto o non sicuro.\n\nOgni voce applicabile deve essere eseguita in sicurezza. La prova resta incompleta finché il partecipante non mostra personalmente l'esecuzione corretta; test online e dimostrazione di gruppo non la sostituiscono.",
+      "spokenTextSHA256": "bf41ba9f47d17247e41fc4d1af92602e674f0bc06b8635a7fdb4d004005999d2",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "bf41ba9f47d17247e41fc4d1af92602e674f0bc06b8635a7fdb4d004005999d2",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1472a8309b82a2b228c34579d86587335330fb29effbaae549a9da85daf8e0b3",
+      "requestFingerprintSha256": "1472a8309b82a2b228c34579d86587335330fb29effbaae549a9da85daf8e0b3",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-P01-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-P02-r1",
+      "locale": "it",
+      "semanticGroup": "P02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/1/scenario",
+          "text": "Il formatore segnala che un flacone di reagente per il pH si è rovesciato sul banco. Un sostituto innocuo rappresenta il prodotto. La scheda dello scenario conferma i materiali compatibili e che la passata finale con panno umido è adatta al reagente rappresentato.",
+          "sha256": "0bcd68e7b592a035610fb0c9c19c0e53d2c6b2d6ab06b4f9c2c1396b5c3702bf"
+        },
+        {
+          "pointer": "/practicalTasks/1/safety",
+          "text": "Usa soltanto supporti didattici sicuri. Non usare un reagente reale non identificato, non creare polvere dispersa nell'aria e non mescolare sostanze per la pulizia.",
+          "sha256": "0c52878dd0493a1601d72ccebce26761e3fe60d17c6b410e724704d9329fe4fa"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/0",
+          "text": "Mantieni la calma, avvisa subito gli altri e valuta se il caso simulato rientra nella risposta permessa.",
+          "sha256": "aeea3fa15db689a8296dd1dd404aee732ebb66570552887f1c42194320b930a7"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/1",
+          "text": "Conferma la protezione specifica prima di avvicinarti; per questo rischio di schizzi usa i guanti e la protezione per gli occhi indicati.",
+          "sha256": "3931ae4d4e11f3c4f9ba2bd94979114973940ec604d68f64a147d788cf2a5499"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/2",
+          "text": "Trova e usa correttamente il kit designato per gli sversamenti.",
+          "sha256": "80c5029b3583da458f8d3a4507c535a39cb79b0e4612001e6c42a8e6a8f615d8"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/3",
+          "text": "Usa tamponi o granuli compatibili indicati per contenere e assorbire il liquido.",
+          "sha256": "61fd6f898e6541fb2d4e2ab3fdadece03239d1758f24a61a07f8cc3cbb066cc8"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/4",
+          "text": "Raccogli con attenzione il materiale usato nel contenitore compatibile designato per i rifiuti simulati.",
+          "sha256": "ecb20054920601f8d0fb0c07ec61d7399c584bf28a3e2b7245fd06131c0d39be"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/5",
+          "text": "Esegui la passata umida autorizzata dallo scenario e metti il panno usato nel flusso dei rifiuti chimici.",
+          "sha256": "3a045322a333a58629e42155f7dfc47d7a24d1e79e79c18dc743709bd22834c2"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/6",
+          "text": "Porta il contenitore simulato e i panni usati al punto designato per i rifiuti chimici, con l'identificazione richiesta.",
+          "sha256": "3b06e755b2dc60bc808600fb5818c8b5e3a229aaa46e767a07fadac133d395af"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/7",
+          "text": "Rimuovi le protezioni come ti è stato insegnato e lava accuratamente le mani dopo la pulizia.",
+          "sha256": "3433f6c2b50996790a7e30ad91a1361699a36fae9602d0c196f3c7fead8473bb"
+        },
+        {
+          "pointer": "/practicalTasks/1/evidence",
+          "text": "Registrazione individuale del formatore per tutte le otto voci osservate, compresa la decisione che la pulizia è permessa e la passata finale specifica del prodotto.",
+          "sha256": "1d2ea2904ab790feb8a07957e4e441a04801dd25e26cbb6685e227ad1832efda"
+        },
+        {
+          "pointer": "/practicalTasks/1/passRule",
+          "text": "Ogni voce applicabile va dimostrata in sicurezza, con correzione e ripetizione quando servono. Completare il precedente caso sul pavimento non completa questa prova separata sul banco.",
+          "sha256": "46948950dfaa04ecb85d4e26c3848a7cd1c21538d3c6713e443c64710e47872c"
+        }
+      ],
+      "scientificMeaning": "Il formatore segnala che un flacone di reagente per il pH si è rovesciato sul banco. Un sostituto innocuo rappresenta il prodotto. La scheda dello scenario conferma i materiali compatibili e che la passata finale con panno umido è adatta al reagente rappresentato.\n\nUsa soltanto supporti didattici sicuri. Non usare un reagente reale non identificato, non creare polvere dispersa nell'aria e non mescolare sostanze per la pulizia.\n\nMantieni la calma, avvisa subito gli altri e valuta se il caso simulato rientra nella risposta permessa.\n\nConferma la protezione specifica prima di avvicinarti; per questo rischio di schizzi usa i guanti e la protezione per gli occhi indicati.\n\nTrova e usa correttamente il kit designato per gli sversamenti.\n\nUsa tamponi o granuli compatibili indicati per contenere e assorbire il liquido.\n\nRaccogli con attenzione il materiale usato nel contenitore compatibile designato per i rifiuti simulati.\n\nEsegui la passata umida autorizzata dallo scenario e metti il panno usato nel flusso dei rifiuti chimici.\n\nPorta il contenitore simulato e i panni usati al punto designato per i rifiuti chimici, con l'identificazione richiesta.\n\nRimuovi le protezioni come ti è stato insegnato e lava accuratamente le mani dopo la pulizia.\n\nRegistrazione individuale del formatore per tutte le otto voci osservate, compresa la decisione che la pulizia è permessa e la passata finale specifica del prodotto.\n\nOgni voce applicabile va dimostrata in sicurezza, con correzione e ripetizione quando servono. Completare il precedente caso sul pavimento non completa questa prova separata sul banco.",
+      "displayText": "Il formatore segnala che un flacone di reagente per il pH si è rovesciato sul banco. Un sostituto innocuo rappresenta il prodotto. La scheda dello scenario conferma i materiali compatibili e che la passata finale con panno umido è adatta al reagente rappresentato.\n\nUsa soltanto supporti didattici sicuri. Non usare un reagente reale non identificato, non creare polvere dispersa nell'aria e non mescolare sostanze per la pulizia.\n\nMantieni la calma, avvisa subito gli altri e valuta se il caso simulato rientra nella risposta permessa.\n\nConferma la protezione specifica prima di avvicinarti; per questo rischio di schizzi usa i guanti e la protezione per gli occhi indicati.\n\nTrova e usa correttamente il kit designato per gli sversamenti.\n\nUsa tamponi o granuli compatibili indicati per contenere e assorbire il liquido.\n\nRaccogli con attenzione il materiale usato nel contenitore compatibile designato per i rifiuti simulati.\n\nEsegui la passata umida autorizzata dallo scenario e metti il panno usato nel flusso dei rifiuti chimici.\n\nPorta il contenitore simulato e i panni usati al punto designato per i rifiuti chimici, con l'identificazione richiesta.\n\nRimuovi le protezioni come ti è stato insegnato e lava accuratamente le mani dopo la pulizia.\n\nRegistrazione individuale del formatore per tutte le otto voci osservate, compresa la decisione che la pulizia è permessa e la passata finale specifica del prodotto.\n\nOgni voce applicabile va dimostrata in sicurezza, con correzione e ripetizione quando servono. Completare il precedente caso sul pavimento non completa questa prova separata sul banco.",
+      "captionText": "Il formatore segnala che un flacone di reagente per il pH si è rovesciato sul banco. Un sostituto innocuo rappresenta il prodotto. La scheda dello scenario conferma i materiali compatibili e che la passata finale con panno umido è adatta al reagente rappresentato.\n\nUsa soltanto supporti didattici sicuri. Non usare un reagente reale non identificato, non creare polvere dispersa nell'aria e non mescolare sostanze per la pulizia.\n\nMantieni la calma, avvisa subito gli altri e valuta se il caso simulato rientra nella risposta permessa.\n\nConferma la protezione specifica prima di avvicinarti; per questo rischio di schizzi usa i guanti e la protezione per gli occhi indicati.\n\nTrova e usa correttamente il kit designato per gli sversamenti.\n\nUsa tamponi o granuli compatibili indicati per contenere e assorbire il liquido.\n\nRaccogli con attenzione il materiale usato nel contenitore compatibile designato per i rifiuti simulati.\n\nEsegui la passata umida autorizzata dallo scenario e metti il panno usato nel flusso dei rifiuti chimici.\n\nPorta il contenitore simulato e i panni usati al punto designato per i rifiuti chimici, con l'identificazione richiesta.\n\nRimuovi le protezioni come ti è stato insegnato e lava accuratamente le mani dopo la pulizia.\n\nRegistrazione individuale del formatore per tutte le otto voci osservate, compresa la decisione che la pulizia è permessa e la passata finale specifica del prodotto.\n\nOgni voce applicabile va dimostrata in sicurezza, con correzione e ripetizione quando servono. Completare il precedente caso sul pavimento non completa questa prova separata sul banco.",
+      "spokenText": "Il formatore segnala che un flacone di reagente per il pH si è rovesciato sul banco. Un sostituto innocuo rappresenta il prodotto. La scheda dello scenario conferma i materiali compatibili e che la passata finale con panno umido è adatta al reagente rappresentato.\n\nUsa soltanto supporti didattici sicuri. Non usare un reagente reale non identificato, non creare polvere dispersa nell'aria e non mescolare sostanze per la pulizia.\n\nMantieni la calma, avvisa subito gli altri e valuta se il caso simulato rientra nella risposta permessa.\n\nConferma la protezione specifica prima di avvicinarti; per questo rischio di schizzi usa i guanti e la protezione per gli occhi indicati.\n\nTrova e usa correttamente il kit designato per gli sversamenti.\n\nUsa tamponi o granuli compatibili indicati per contenere e assorbire il liquido.\n\nRaccogli con attenzione il materiale usato nel contenitore compatibile designato per i rifiuti simulati.\n\nEsegui la passata umida autorizzata dallo scenario e metti il panno usato nel flusso dei rifiuti chimici.\n\nPorta il contenitore simulato e i panni usati al punto designato per i rifiuti chimici, con l'identificazione richiesta.\n\nRimuovi le protezioni come ti è stato insegnato e lava accuratamente le mani dopo la pulizia.\n\nRegistrazione individuale del formatore per tutte le otto voci osservate, compresa la decisione che la pulizia è permessa e la passata finale specifica del prodotto.\n\nOgni voce applicabile va dimostrata in sicurezza, con correzione e ripetizione quando servono. Completare il precedente caso sul pavimento non completa questa prova separata sul banco.",
+      "spokenTextSHA256": "7132febce0375367f0029d7d606d7f06a694be6575085192d9fca1570dccfcdc",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "7132febce0375367f0029d7d606d7f06a694be6575085192d9fca1570dccfcdc",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Leggi pH pi acca, conservando le condizioni del reagente rappresentato e della simulazione innocua.",
+      "deliverySHA256": "4a4535f6a2ad865cec973bfeaee85871ad502e85a8839b9fcf3336e1377e358f",
+      "deliverySha256": "4a4535f6a2ad865cec973bfeaee85871ad502e85a8839b9fcf3336e1377e358f",
+      "pronunciationCues": [
+        "Leggi pH pi acca, conservando le condizioni del reagente rappresentato e della simulazione innocua."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b65735405b4705dc24ac74357ade96bc6390a4e7a741de451b552b0df460bca9",
+      "requestFingerprintSha256": "b65735405b4705dc24ac74357ade96bc6390a4e7a741de451b552b0df460bca9",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-P02-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-P03-r1",
+      "locale": "it",
+      "semanticGroup": "P03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/2/scenario",
+          "text": "Il formatore indica pericolo, allarme, via sicura e destinazione. Una scheda delle presenze è segnata come mancante; nessuno viene davvero nascosto o messo in pericolo.",
+          "sha256": "50267ef58a640b7f342c2058ef5ea1d42a878f67332aa55168cadff67a085fe7"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/0",
+          "text": "Interrompi il lavoro e metti al sicuro l'attrezzatura solo se non è pericoloso e non ritarda l'uscita.",
+          "sha256": "4b18bb4671cccd1fefcf808e3cb409f290f34472adfcf46e17babdfde505a434"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/1",
+          "text": "Segui la via sicura designata e le istruzioni del coordinatore, usando l'alternativa concordata se indicata.",
+          "sha256": "aa83fc100948ed7c56a5535a2b6e61e43ab4471309af40d553cb4c9152ab3550"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/2",
+          "text": "Raggiungi la destinazione adatta a quel pericolo; non presumere che ogni emergenza usi lo stesso punto all'aperto.",
+          "sha256": "915c1a48017e09a79be3d6d0612cd4c0760ebb4e5a933c9f273e46812d1c6512"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/3",
+          "text": "Verifica ogni scheda delle presenze e comunica subito al coordinatore il nome mancante e l'ultima posizione conosciuta.",
+          "sha256": "ec92e6358606aa1e03b3c43b01d7ea65171b396072f10c99f825e970d4f1e423"
+        },
+        {
+          "pointer": "/practicalTasks/2/checklist/4",
+          "text": "Resta con il gruppo e spiega perché non devi rientrare né riprendere il lavoro prima del permesso.",
+          "sha256": "6889d67cd3c6b3739ee763fda77c9ef6aff6bab677b01e819adfbd10809c8357"
+        },
+        {
+          "pointer": "/practicalTasks/2/evidence",
+          "text": "Osservazione individuale della via seguita, della comunicazione delle presenze e della decisione di non rientrare.",
+          "sha256": "5054cf9a2bb4b19c1791b1bddb2597bd9bb214ac203c802ded61af5d13b0e8c2"
+        },
+        {
+          "pointer": "/practicalTasks/2/passRule",
+          "text": "Tutte e cinque le azioni devono essere sicure e complete. La risposta scritta sul punto di raccolta non sostituisce questa prova osservata.",
+          "sha256": "d8f093d47844f7d97a82521c334003c4ad51cdb41ba4dfcd9960d490821b7db6"
+        }
+      ],
+      "scientificMeaning": "Il formatore indica pericolo, allarme, via sicura e destinazione. Una scheda delle presenze è segnata come mancante; nessuno viene davvero nascosto o messo in pericolo.\n\nInterrompi il lavoro e metti al sicuro l'attrezzatura solo se non è pericoloso e non ritarda l'uscita.\n\nSegui la via sicura designata e le istruzioni del coordinatore, usando l'alternativa concordata se indicata.\n\nRaggiungi la destinazione adatta a quel pericolo; non presumere che ogni emergenza usi lo stesso punto all'aperto.\n\nVerifica ogni scheda delle presenze e comunica subito al coordinatore il nome mancante e l'ultima posizione conosciuta.\n\nResta con il gruppo e spiega perché non devi rientrare né riprendere il lavoro prima del permesso.\n\nOsservazione individuale della via seguita, della comunicazione delle presenze e della decisione di non rientrare.\n\nTutte e cinque le azioni devono essere sicure e complete. La risposta scritta sul punto di raccolta non sostituisce questa prova osservata.",
+      "displayText": "Il formatore indica pericolo, allarme, via sicura e destinazione. Una scheda delle presenze è segnata come mancante; nessuno viene davvero nascosto o messo in pericolo.\n\nInterrompi il lavoro e metti al sicuro l'attrezzatura solo se non è pericoloso e non ritarda l'uscita.\n\nSegui la via sicura designata e le istruzioni del coordinatore, usando l'alternativa concordata se indicata.\n\nRaggiungi la destinazione adatta a quel pericolo; non presumere che ogni emergenza usi lo stesso punto all'aperto.\n\nVerifica ogni scheda delle presenze e comunica subito al coordinatore il nome mancante e l'ultima posizione conosciuta.\n\nResta con il gruppo e spiega perché non devi rientrare né riprendere il lavoro prima del permesso.\n\nOsservazione individuale della via seguita, della comunicazione delle presenze e della decisione di non rientrare.\n\nTutte e cinque le azioni devono essere sicure e complete. La risposta scritta sul punto di raccolta non sostituisce questa prova osservata.",
+      "captionText": "Il formatore indica pericolo, allarme, via sicura e destinazione. Una scheda delle presenze è segnata come mancante; nessuno viene davvero nascosto o messo in pericolo.\n\nInterrompi il lavoro e metti al sicuro l'attrezzatura solo se non è pericoloso e non ritarda l'uscita.\n\nSegui la via sicura designata e le istruzioni del coordinatore, usando l'alternativa concordata se indicata.\n\nRaggiungi la destinazione adatta a quel pericolo; non presumere che ogni emergenza usi lo stesso punto all'aperto.\n\nVerifica ogni scheda delle presenze e comunica subito al coordinatore il nome mancante e l'ultima posizione conosciuta.\n\nResta con il gruppo e spiega perché non devi rientrare né riprendere il lavoro prima del permesso.\n\nOsservazione individuale della via seguita, della comunicazione delle presenze e della decisione di non rientrare.\n\nTutte e cinque le azioni devono essere sicure e complete. La risposta scritta sul punto di raccolta non sostituisce questa prova osservata.",
+      "spokenText": "Il formatore indica pericolo, allarme, via sicura e destinazione. Una scheda delle presenze è segnata come mancante; nessuno viene davvero nascosto o messo in pericolo.\n\nInterrompi il lavoro e metti al sicuro l'attrezzatura solo se non è pericoloso e non ritarda l'uscita.\n\nSegui la via sicura designata e le istruzioni del coordinatore, usando l'alternativa concordata se indicata.\n\nRaggiungi la destinazione adatta a quel pericolo; non presumere che ogni emergenza usi lo stesso punto all'aperto.\n\nVerifica ogni scheda delle presenze e comunica subito al coordinatore il nome mancante e l'ultima posizione conosciuta.\n\nResta con il gruppo e spiega perché non devi rientrare né riprendere il lavoro prima del permesso.\n\nOsservazione individuale della via seguita, della comunicazione delle presenze e della decisione di non rientrare.\n\nTutte e cinque le azioni devono essere sicure e complete. La risposta scritta sul punto di raccolta non sostituisce questa prova osservata.",
+      "spokenTextSHA256": "d79939780459a708340bdb624b878dcddbc28058614b0387031b4490e2db07fb",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "EXPLAIN_HARMLESS_TRAINER_OBSERVED_PRACTICE_NOT_A_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "d79939780459a708340bdb624b878dcddbc28058614b0387031b4490e2db07fb",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ff46188edfff9ea62da962d72b2623bb3e0cbc811c5e9639aadb89b422f0df31",
+      "requestFingerprintSha256": "ff46188edfff9ea62da962d72b2623bb3e0cbc811c5e9639aadb89b422f0df31",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-P03-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-group-planning-r1",
+      "locale": "it",
+      "semanticGroup": "group-planning",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/groupActivity/instructions/0",
+          "text": "Lavora in gruppi di 3–4. Usa una delle quattro schede e dedica 15 minuti a pianificare Valuta, Avvisa, Assisti.",
+          "sha256": "60be0b51c965c77f57c2742518ba2537af71de68443490e13b3ae3a035b5aecd"
+        },
+        {
+          "pointer": "/groupActivity/instructions/1",
+          "text": "Individua azioni immediate, protezione richiesta e informazioni precise da comunicare quando chiedi aiuto. Se utile, usa lo schema dei tre riquadri.",
+          "sha256": "c2cf9af4467755cbff289391b8304edd4c63a6c34125920792ba92a57703a134"
+        },
+        {
+          "pointer": "/groupActivity/instructions/2",
+          "text": "Un portavoce presenta il piano in 2–3 minuti durante i 15 minuti comuni per presentazioni e discussione.",
+          "sha256": "c485d486bc5ab9352ac90e04f48be8e1d1c1d185a825a8d42bdc45ecd11d2709"
+        },
+        {
+          "pointer": "/groupActivity/instructions/3",
+          "text": "Confronta tutti e quattro i casi: corrosivo sul braccio, compagno con capogiri, caviglia ferita e sostanza chimica sconosciuta nell'aria. Spiega perché le risposte differiscono.",
+          "sha256": "0062209cadc525c2ee49eed76d13c565ce9bb8186a270224f9eae2b96a7c419a"
+        },
+        {
+          "pointer": "/groupActivity/instructions/4",
+          "text": "Se finite presto, immaginate che il primo piano fallisca o manchi il segnale del cellulare e descrivete un'alternativa sicura.",
+          "sha256": "2de305a352beed7ff560475ddf07bd6b578dc13f4168416e93cf391b1edb8af5"
+        },
+        {
+          "pointer": "/groupActivity/instructions/5",
+          "text": "Dopo il feedback, ciascuno deve comunque mostrare le azioni pratiche individuali pertinenti; far parte del gruppo non prova la competenza.",
+          "sha256": "cdb3acad889dbcb9b40c1cf4434bd4788729f4e9e9053ab08febdcadffdbb3aa"
+        }
+      ],
+      "scientificMeaning": "Lavora in gruppi di 3–4. Usa una delle quattro schede e dedica 15 minuti a pianificare Valuta, Avvisa, Assisti.\n\nIndividua azioni immediate, protezione richiesta e informazioni precise da comunicare quando chiedi aiuto. Se utile, usa lo schema dei tre riquadri.\n\nUn portavoce presenta il piano in 2–3 minuti durante i 15 minuti comuni per presentazioni e discussione.\n\nConfronta tutti e quattro i casi: corrosivo sul braccio, compagno con capogiri, caviglia ferita e sostanza chimica sconosciuta nell'aria. Spiega perché le risposte differiscono.\n\nSe finite presto, immaginate che il primo piano fallisca o manchi il segnale del cellulare e descrivete un'alternativa sicura.\n\nDopo il feedback, ciascuno deve comunque mostrare le azioni pratiche individuali pertinenti; far parte del gruppo non prova la competenza.",
+      "displayText": "Lavora in gruppi di 3–4. Usa una delle quattro schede e dedica 15 minuti a pianificare Valuta, Avvisa, Assisti.\n\nIndividua azioni immediate, protezione richiesta e informazioni precise da comunicare quando chiedi aiuto. Se utile, usa lo schema dei tre riquadri.\n\nUn portavoce presenta il piano in 2–3 minuti durante i 15 minuti comuni per presentazioni e discussione.\n\nConfronta tutti e quattro i casi: corrosivo sul braccio, compagno con capogiri, caviglia ferita e sostanza chimica sconosciuta nell'aria. Spiega perché le risposte differiscono.\n\nSe finite presto, immaginate che il primo piano fallisca o manchi il segnale del cellulare e descrivete un'alternativa sicura.\n\nDopo il feedback, ciascuno deve comunque mostrare le azioni pratiche individuali pertinenti; far parte del gruppo non prova la competenza.",
+      "captionText": "Lavora in gruppi di 3–4. Usa una delle quattro schede e dedica 15 minuti a pianificare Valuta, Avvisa, Assisti.\n\nIndividua azioni immediate, protezione richiesta e informazioni precise da comunicare quando chiedi aiuto. Se utile, usa lo schema dei tre riquadri.\n\nUn portavoce presenta il piano in 2–3 minuti durante i 15 minuti comuni per presentazioni e discussione.\n\nConfronta tutti e quattro i casi: corrosivo sul braccio, compagno con capogiri, caviglia ferita e sostanza chimica sconosciuta nell'aria. Spiega perché le risposte differiscono.\n\nSe finite presto, immaginate che il primo piano fallisca o manchi il segnale del cellulare e descrivete un'alternativa sicura.\n\nDopo il feedback, ciascuno deve comunque mostrare le azioni pratiche individuali pertinenti; far parte del gruppo non prova la competenza.",
+      "spokenText": "Lavora in gruppi di 3–4. Usa una delle quattro schede e dedica 15 minuti a pianificare Valuta, Avvisa, Assisti.\n\nIndividua azioni immediate, protezione richiesta e informazioni precise da comunicare quando chiedi aiuto. Se utile, usa lo schema dei tre riquadri.\n\nUn portavoce presenta il piano in 2–3 minuti durante i 15 minuti comuni per presentazioni e discussione.\n\nConfronta tutti e quattro i casi: corrosivo sul braccio, compagno con capogiri, caviglia ferita e sostanza chimica sconosciuta nell'aria. Spiega perché le risposte differiscono.\n\nSe finite presto, immaginate che il primo piano fallisca o manchi il segnale del cellulare e descrivete un'alternativa sicura.\n\nDopo il feedback, ciascuno deve comunque mostrare le azioni pratiche individuali pertinenti; far parte del gruppo non prova la competenza.",
+      "spokenTextSHA256": "31c3d33444f8cf3265f95ef549b7d6a69f6b3d1c95b86290cc728cce664efa42",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "31c3d33444f8cf3265f95ef549b7d6a69f6b3d1c95b86290cc728cce664efa42",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Gruppi da tre a quattro; pianificazione quindici minuti; portavoce due-tre minuti entro una distinta fase comune di quindici minuti per presentazioni e discussione.",
+      "deliverySHA256": "a9f410962d07018504a078c41e6072b469ee8884b9277a84d3037e678e4efef2",
+      "deliverySha256": "a9f410962d07018504a078c41e6072b469ee8884b9277a84d3037e678e4efef2",
+      "pronunciationCues": [
+        "Gruppi da tre a quattro; pianificazione quindici minuti; portavoce due-tre minuti entro una distinta fase comune di quindici minuti per presentazioni e discussione."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c155a84c9a9981a7b903563a2323c6218cb812ad3ddeb53c35875e254c49b7f3",
+      "requestFingerprintSha256": "c155a84c9a9981a7b903563a2323c6218cb812ad3ddeb53c35875e254c49b7f3",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-group-planning-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Confronta uno sversamento didattico conosciuto, innocuo e autorizzato con un rilascio sconosciuto nell'aria e con una persona che ha una sostanza chimica sulla pelle. Disponi valutazione, segnalazione, assistenza urgente, allontanamento sicuro, contenimento e verifica delle presenze in un ordine giustificabile per ogni caso.",
+          "sha256": "e76bc5b6f3ba661dcbc9ea13ba1172f7ea2682d2c7681bac94244262994c24a2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Individua sostanza, diffusione, pericoli, protezioni disponibili e autorizzazione del piano del sito prima di scegliere una pulizia.",
+          "sha256": "3bb126152acc2c0a97816c8192e77083b500b4a4d8c5680378ede94db4b26040"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Allontanati e avvisa gli altri per un rilascio sconosciuto o ingestibile; non avvicinarti per annusarlo.",
+          "sha256": "f900b74c9ebe925df0802bca29a635bdfc0c24857b872cc7615a20c3170ae330"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Dai priorità al lavaggio appropriato della persona esposta e alla chiamata urgente rispetto alla raccolta del materiale.",
+          "sha256": "ad8021299f1a1ddf6fde60d70ea67e3612fd6da93ae96e46199dffb71024dc64"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Scegli la via d'evacuazione prevista e verifica il gruppo nel punto sicuro.",
+          "sha256": "60aded3e1416748d032e454c8306169f1dd5ec31e02a6fcf07b20a4311b599d0"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le prove fisiche di sversamento ed evacuazione usano sostituti innocui e richiedono osservazione del formatore secondo il piano del sito.",
+          "sha256": "4e4fb58fc8a6b99db60f81b67e43d858c38c75684309fc390a11a1be5bba0fd9"
+        }
+      ],
+      "scientificMeaning": "Confronta uno sversamento didattico conosciuto, innocuo e autorizzato con un rilascio sconosciuto nell'aria e con una persona che ha una sostanza chimica sulla pelle. Disponi valutazione, segnalazione, assistenza urgente, allontanamento sicuro, contenimento e verifica delle presenze in un ordine giustificabile per ogni caso.\n\nIndividua sostanza, diffusione, pericoli, protezioni disponibili e autorizzazione del piano del sito prima di scegliere una pulizia.\n\nAllontanati e avvisa gli altri per un rilascio sconosciuto o ingestibile; non avvicinarti per annusarlo.\n\nDai priorità al lavaggio appropriato della persona esposta e alla chiamata urgente rispetto alla raccolta del materiale.\n\nScegli la via d'evacuazione prevista e verifica il gruppo nel punto sicuro.\n\nLe prove fisiche di sversamento ed evacuazione usano sostituti innocui e richiedono osservazione del formatore secondo il piano del sito.",
+      "displayText": "Confronta uno sversamento didattico conosciuto, innocuo e autorizzato con un rilascio sconosciuto nell'aria e con una persona che ha una sostanza chimica sulla pelle. Disponi valutazione, segnalazione, assistenza urgente, allontanamento sicuro, contenimento e verifica delle presenze in un ordine giustificabile per ogni caso.\n\nIndividua sostanza, diffusione, pericoli, protezioni disponibili e autorizzazione del piano del sito prima di scegliere una pulizia.\n\nAllontanati e avvisa gli altri per un rilascio sconosciuto o ingestibile; non avvicinarti per annusarlo.\n\nDai priorità al lavaggio appropriato della persona esposta e alla chiamata urgente rispetto alla raccolta del materiale.\n\nScegli la via d'evacuazione prevista e verifica il gruppo nel punto sicuro.\n\nLe prove fisiche di sversamento ed evacuazione usano sostituti innocui e richiedono osservazione del formatore secondo il piano del sito.",
+      "captionText": "Confronta uno sversamento didattico conosciuto, innocuo e autorizzato con un rilascio sconosciuto nell'aria e con una persona che ha una sostanza chimica sulla pelle. Disponi valutazione, segnalazione, assistenza urgente, allontanamento sicuro, contenimento e verifica delle presenze in un ordine giustificabile per ogni caso.\n\nIndividua sostanza, diffusione, pericoli, protezioni disponibili e autorizzazione del piano del sito prima di scegliere una pulizia.\n\nAllontanati e avvisa gli altri per un rilascio sconosciuto o ingestibile; non avvicinarti per annusarlo.\n\nDai priorità al lavaggio appropriato della persona esposta e alla chiamata urgente rispetto alla raccolta del materiale.\n\nScegli la via d'evacuazione prevista e verifica il gruppo nel punto sicuro.\n\nLe prove fisiche di sversamento ed evacuazione usano sostituti innocui e richiedono osservazione del formatore secondo il piano del sito.",
+      "spokenText": "Confronta uno sversamento didattico conosciuto, innocuo e autorizzato con un rilascio sconosciuto nell'aria e con una persona che ha una sostanza chimica sulla pelle. Disponi valutazione, segnalazione, assistenza urgente, allontanamento sicuro, contenimento e verifica delle presenze in un ordine giustificabile per ogni caso.\n\nIndividua sostanza, diffusione, pericoli, protezioni disponibili e autorizzazione del piano del sito prima di scegliere una pulizia.\n\nAllontanati e avvisa gli altri per un rilascio sconosciuto o ingestibile; non avvicinarti per annusarlo.\n\nDai priorità al lavaggio appropriato della persona esposta e alla chiamata urgente rispetto alla raccolta del materiale.\n\nScegli la via d'evacuazione prevista e verifica il gruppo nel punto sicuro.\n\nLe prove fisiche di sversamento ed evacuazione usano sostituti innocui e richiedono osservazione del formatore secondo il piano del sito.",
+      "spokenTextSHA256": "226fe2eba29fb5aa63c07d00d39f1bcccb50ae9b72f35a7d42222870480acf78",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "GUIDED_PRACTICE_PROMPT_ONLY_NO_FEEDBACK_OR_ANSWER_KEYS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "226fe2eba29fb5aa63c07d00d39f1bcccb50ae9b72f35a7d42222870480acf78",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5f4b471c88e2064051c05ec6c3ac7fef49a3fb76cca47c984de081f00391d474",
+      "requestFingerprintSha256": "5f4b471c88e2064051c05ec6c3ac7fef49a3fb76cca47c984de081f00391d474",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-guided-practice-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So spiegare e dimostrare risposta d'emergenza ed evacuazione entro i limiti della mia formazione?",
+          "sha256": "261dc50af037163451fa898cedde7298d5014690b75f9c82f11c7d514917d6ac"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Considera sia questa tappa sia quella sulle lesioni e sul caldo. Usa la risposta per programmare altra pratica; solo prove osservate dimostrano la competenza pratica.",
+          "sha256": "2962eb6b70d0602d1b00957dddeeaf7f21552351fb59ac81d68547d24b6a7845"
+        }
+      ],
+      "scientificMeaning": "So spiegare e dimostrare risposta d'emergenza ed evacuazione entro i limiti della mia formazione?\n\nConsidera sia questa tappa sia quella sulle lesioni e sul caldo. Usa la risposta per programmare altra pratica; solo prove osservate dimostrano la competenza pratica.",
+      "displayText": "So spiegare e dimostrare risposta d'emergenza ed evacuazione entro i limiti della mia formazione?\n\nConsidera sia questa tappa sia quella sulle lesioni e sul caldo. Usa la risposta per programmare altra pratica; solo prove osservate dimostrano la competenza pratica.",
+      "captionText": "So spiegare e dimostrare risposta d'emergenza ed evacuazione entro i limiti della mia formazione?\n\nConsidera sia questa tappa sia quella sulle lesioni e sul caldo. Usa la risposta per programmare altra pratica; solo prove osservate dimostrano la competenza pratica.",
+      "spokenText": "So spiegare e dimostrare risposta d'emergenza ed evacuazione entro i limiti della mia formazione?\n\nConsidera sia questa tappa sia quella sulle lesioni e sul caldo. Usa la risposta per programmare altra pratica; solo prove osservate dimostrano la competenza pratica.",
+      "spokenTextSHA256": "0cbdead76531073839d418d24abed78eb1a83232205bbbbd6ed403bbccfb7428",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "0cbdead76531073839d418d24abed78eb1a83232205bbbbd6ed403bbccfb7428",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "769a49c8bbdff971751ab586907ac6d1101e2b664d0fb312f48126488da13ad6",
+      "requestFingerprintSha256": "769a49c8bbdff971751ab586907ac6d1101e2b664d0fb312f48126488da13ad6",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-reflection-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-03-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Bloccare la fonte",
+          "sha256": "8220fd5626dd0f5bce1ff432ad59faf9522999fe890d94f84ccb22d1a7219967"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Impedire altro rilascio quando farlo è sicuro e permesso.",
+          "sha256": "4e77794ac52f57e9589e8e02574e3da497600e14867a46f536fdfcad6f8847a2"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Contenere",
+          "sha256": "585ad1b076ef652e7c1f44e4f04d8f006221bfc7c93d866152e5e4b03d2c01ac"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Limitare la diffusione con un metodo adatto al prodotto.",
+          "sha256": "cef0965edb09129dcdbdc8665d17bf9d313cc578aa0901e7b3e3ce0b2a7c8f4d"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Pulire",
+          "sha256": "feb09eae83ebfebfca7488f42108f6a5f85cf3138043c3c1f5c0d17dbca3e3e8"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Raccogliere e gestire la contaminazione con il metodo sicuro indicato.",
+          "sha256": "ac43bd59f93450e40b77774e1b8265ae50ae826a930237ac0e7f520a2d0df8b0"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Compatibile",
+          "sha256": "acdb5c3d8d837653a56391cdaaaa01c1d7fefd242038461723c90084f06365dd"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Adatto a un uso congiunto senza reazioni pericolose o insuccesso.",
+          "sha256": "5f3224976b92bfd08056ebbb9e0a17c143e39ed612c8211311e55b330a3349a7"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Punto di raccolta",
+          "sha256": "781d65940e60c1a4689730247db3a460baeb94d2b6a024fea6241f9ec8ff512f"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Luogo sicuro concordato prima per verificare la presenza delle persone.",
+          "sha256": "26e45bc9e7ceca370774c365471b35f5171a24f6119dc3b82bf182f93fd65a4d"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Sopravento",
+          "sha256": "c69c110ac07d247f406301701dfe72abf73199c71e2e8b15e872de0ed16aa623"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Sul lato da cui arriva il vento; direzione da cercare solo lungo una via sicura.",
+          "sha256": "4e7931388ac7128db212d3bb354c6930e25d2f4fa94c442d0936065659e68555"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "SDS",
+          "sha256": "54b6b356d70e258999180cbb8bd30b2f7c9744a899b80baed209212ca04efdc1"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Scheda di dati di sicurezza con i pericoli del prodotto e le misure di risposta.",
+          "sha256": "628dd4e1c48535ac702a4b8abb9c347925fe2ddba651ddf5260bc173840331fb"
+        }
+      ],
+      "scientificMeaning": "Bloccare la fonte\n\nImpedire altro rilascio quando farlo è sicuro e permesso.\n\nContenere\n\nLimitare la diffusione con un metodo adatto al prodotto.\n\nPulire\n\nRaccogliere e gestire la contaminazione con il metodo sicuro indicato.\n\nCompatibile\n\nAdatto a un uso congiunto senza reazioni pericolose o insuccesso.\n\nPunto di raccolta\n\nLuogo sicuro concordato prima per verificare la presenza delle persone.\n\nSopravento\n\nSul lato da cui arriva il vento; direzione da cercare solo lungo una via sicura.\n\nSDS\n\nScheda di dati di sicurezza con i pericoli del prodotto e le misure di risposta.",
+      "displayText": "Bloccare la fonte\n\nImpedire altro rilascio quando farlo è sicuro e permesso.\n\nContenere\n\nLimitare la diffusione con un metodo adatto al prodotto.\n\nPulire\n\nRaccogliere e gestire la contaminazione con il metodo sicuro indicato.\n\nCompatibile\n\nAdatto a un uso congiunto senza reazioni pericolose o insuccesso.\n\nPunto di raccolta\n\nLuogo sicuro concordato prima per verificare la presenza delle persone.\n\nSopravento\n\nSul lato da cui arriva il vento; direzione da cercare solo lungo una via sicura.\n\nSDS\n\nScheda di dati di sicurezza con i pericoli del prodotto e le misure di risposta.",
+      "captionText": "Bloccare la fonte\n\nImpedire altro rilascio quando farlo è sicuro e permesso.\n\nContenere\n\nLimitare la diffusione con un metodo adatto al prodotto.\n\nPulire\n\nRaccogliere e gestire la contaminazione con il metodo sicuro indicato.\n\nCompatibile\n\nAdatto a un uso congiunto senza reazioni pericolose o insuccesso.\n\nPunto di raccolta\n\nLuogo sicuro concordato prima per verificare la presenza delle persone.\n\nSopravento\n\nSul lato da cui arriva il vento; direzione da cercare solo lungo una via sicura.\n\nSDS\n\nScheda di dati di sicurezza con i pericoli del prodotto e le misure di risposta.",
+      "spokenText": "Bloccare la fonte\n\nImpedire altro rilascio quando farlo è sicuro e permesso.\n\nContenere\n\nLimitare la diffusione con un metodo adatto al prodotto.\n\nPulire\n\nRaccogliere e gestire la contaminazione con il metodo sicuro indicato.\n\nCompatibile\n\nAdatto a un uso congiunto senza reazioni pericolose o insuccesso.\n\nPunto di raccolta\n\nLuogo sicuro concordato prima per verificare la presenza delle persone.\n\nSopravento\n\nSul lato da cui arriva il vento; direzione da cercare solo lungo una via sicura.\n\nSDS\n\nScheda di dati di sicurezza con i pericoli del prodotto e le misure di risposta.",
+      "spokenTextSHA256": "ee559038729c2904bc998d8703fae320e375f0e6a40d1394f434685f63f41f98",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "TEACHING_ONLY",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "ee559038729c2904bc998d8703fae320e375f0e6a40d1394f434685f63f41f98",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a2c43128a52f2e53f43ffa1541627e14eb92f01335f3e2c8a27cb591dd3a1eb2",
+      "requestFingerprintSha256": "a2c43128a52f2e53f43ffa1541627e14eb92f01335f3e2c8a27cb591dd3a1eb2",
+      "status": "REVIEWABLE_COHERENT_INSTRUCTION_UNIT_NOT_PRODUCED",
+      "unitId": "S1-03-it-glossary-r1",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
