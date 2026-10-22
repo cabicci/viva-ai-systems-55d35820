@@ -1,0 +1,44 @@
+{
+  "atUTC": "2026-10-22T09:52:39.406950+00:00",
+  "state": "MODEL_DIAGNOSTIC_ONLY",
+  "unitId": "de-s101-chemical",
+  "callsReserved": 1,
+  "providerCallsStarted": 1,
+  "maximumPerUnit": 1,
+  "maximumForBatch": 4,
+  "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+  "requestSha256": "da132a3f6ccbfcb10d1434a6c6017af52bc051eb945593a4669ceeea27223df2",
+  "workerSha256": "1bce139748a20afcf59d75215801cd989c8c01627be875c82ffb684ac254ba54",
+  "githubRunId": "39758443990",
+  "humanListeningApproved": false,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "startedUTC": "2026-10-22T09:52:39.438216+00:00",
+  "finishedUTC": "2026-10-22T09:53:13.349061+00:00",
+  "invalidTimestampFindingIndexes": [],
+  "modelVersion": "gemini-4-argon",
+  "usage": {
+    "total_tokens": 5226,
+    "total_input_tokens": 2777,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 364
+      },
+      {
+        "modality": "audio",
+        "tokens": 2413
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 858,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 858
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1591
+  }
+}

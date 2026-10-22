@@ -1,0 +1,44 @@
+{
+  "atUTC": "2026-10-22T09:50:08.358538+00:00",
+  "state": "MODEL_DIAGNOSTIC_ONLY",
+  "unitId": "it-s101-checklist",
+  "callsReserved": 1,
+  "providerCallsStarted": 1,
+  "maximumPerUnit": 1,
+  "maximumForBatch": 4,
+  "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+  "requestSha256": "da132a3f6ccbfcb10d1434a6c6017af52bc051eb945593a4669ceeea27223df2",
+  "workerSha256": "1bce139748a20afcf59d75215801cd989c8c01627be875c82ffb684ac254ba54",
+  "githubRunId": "39758443990",
+  "humanListeningApproved": false,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "startedUTC": "2026-10-22T09:50:08.385624+00:00",
+  "finishedUTC": "2026-10-22T09:51:46.647922+00:00",
+  "invalidTimestampFindingIndexes": [],
+  "modelVersion": "gemini-4-argon",
+  "usage": {
+    "total_tokens": 4015,
+    "total_input_tokens": 2360,
+    "input_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 338
+      },
+      {
+        "modality": "audio",
+        "tokens": 2022
+      }
+    ],
+    "total_cached_tokens": 0,
+    "total_output_tokens": 488,
+    "output_tokens_by_modality": [
+      {
+        "modality": "text",
+        "tokens": 488
+      }
+    ],
+    "total_tool_use_tokens": 0,
+    "total_thought_tokens": 1167
+  }
+}

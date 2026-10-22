@@ -1,0 +1,30 @@
+{
+  "units": [
+    {
+      "unitId": "it-s101-checklist",
+      "state": "MODEL_DIAGNOSTIC_ONLY",
+      "providerCallsStarted": 1
+    },
+    {
+      "unitId": "de-s101-checklist",
+      "state": "MODEL_DIAGNOSTIC_ONLY",
+      "providerCallsStarted": 1
+    },
+    {
+      "unitId": "de-s101-chemical",
+      "state": "MODEL_DIAGNOSTIC_ONLY",
+      "providerCallsStarted": 1
+    },
+    {
+      "unitId": "de-s101-communication",
+      "state": "MODEL_DIAGNOSTIC_ONLY",
+      "providerCallsStarted": 1
+    }
+  ],
+  "maximumReviews": 4,
+  "callsStarted": 4,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "humanListeningApproved": false
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_FOUR_EXISTING_WAV_PUBLIC_BLIND_REVIEWS_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryVisibility": "public",
+  "branch": "refs/heads/work/soil-s101-locale-blind-review-20261022",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumBlindReviewCalls": 4,
+  "maximumPerUnit": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "units": [
+    {
+      "id": "it-s101-checklist",
+      "locale": "it",
+      "sceneId": "s101-checklist",
+      "path": "inputs/it-s101-checklist.wav",
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1613063,
+        "durationSeconds": 67.21095833333334,
+        "pcmSha256": "64634c7b6a7b5ce4fab1bb6824c6a43d6d81405a27d9e9496079504ccd9a9a38"
+      },
+      "bytes": 3226170,
+      "focusWindowSeconds": [
+        40.44,
+        42.36
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/it-s101-checklist.txt",
+      "promptSha256": "a728c4943ec7262a71e48927142ae0205d5ba584b7e1a3a99835d6e159467912"
+    },
+    {
+      "id": "de-s101-checklist",
+      "locale": "de",
+      "sceneId": "s101-checklist",
+      "path": "inputs/de-s101-checklist.wav",
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1641863,
+        "durationSeconds": 68.41095833333334,
+        "pcmSha256": "4e1b67a64680399e1c9933cc9393bd215a6361096c02a93b8e1e3846302db961"
+      },
+      "bytes": 3283770,
+      "focusWindowSeconds": [
+        37.76,
+        41.06
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-checklist.txt",
+      "promptSha256": "316aa0cb1670ac72eb2de7dfabb171a74aaba59a0e55ab58163f205d3c986cd4"
+    },
+    {
+      "id": "de-s101-chemical",
+      "locale": "de",
+      "sceneId": "s101-chemical",
+      "path": "inputs/de-s101-chemical.wav",
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1926023,
+        "durationSeconds": 80.25095833333333,
+        "pcmSha256": "0d8116d1635685ddaa61b1de08175fd94789df566c986a5b5bd1efe3d38c1ed1"
+      },
+      "bytes": 3852090,
+      "focusWindowSeconds": [
+        53.36,
+        58.98
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-chemical.txt",
+      "promptSha256": "6db1f3ed5121986f4677a23a1f4225e13ca6d41156ad9828091c7d91e887ded7"
+    },
+    {
+      "id": "de-s101-communication",
+      "locale": "de",
+      "sceneId": "s101-communication",
+      "path": "inputs/de-s101-communication.wav",
+      "audioSha256": "18d95bbac5527f31f717814c6c1be5de6148b706d82f56c48f67302cdc84278b",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1149383,
+        "durationSeconds": 47.89095833333333,
+        "pcmSha256": "5deb92de1cb21b6c2a38fbabf2244911e26504757ef35ba417674495048df643"
+      },
+      "bytes": 2298810,
+      "focusWindowSeconds": [
+        26.74,
+        30.52
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-communication.txt",
+      "promptSha256": "1713a6f759b62286d4af2eef288f14593863af3b2abd807688b2a60ed24c7811"
+    }
+  ],
+  "authorityPath": "owner-authority.json"
+}

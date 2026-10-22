@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_SIX_EXISTING_WAV_FOCUSED_DIAGNOSTICS_R2_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryVisibility": "public",
+  "branch": "refs/heads/work/soil-s101-locale-focused-review-20261022-r2",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumBlindReviewCalls": 6,
+  "maximumPerUnit": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "units": [
+    {
+      "id": "en-s101-checklist",
+      "locale": "en",
+      "sceneId": "s101-checklist",
+      "path": "inputs/en-s101-checklist.wav",
+      "audioSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1823303,
+        "durationSeconds": 75.97095833333333,
+        "pcmSha256": "00e1f05267c15845ed7be288189769d5b416fa2fa62e8e604048c7ca8304f5a5"
+      },
+      "bytes": 3646650,
+      "focusWindowSeconds": [
+        41.5,
+        53.1
+      ],
+      "focusWindowsSeconds": [
+        [
+          41.5,
+          53.1
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/en-s101-checklist.txt",
+      "promptSha256": "4575bd50945bd8b641eb4d397376f1e58f1d01bc39d7bb2258102eda4473586c"
+    },
+    {
+      "id": "de-s101-limits",
+      "locale": "de",
+      "sceneId": "s101-limits",
+      "path": "inputs/de-s101-limits.wav",
+      "audioSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "bytes": 3324090,
+      "focusWindowSeconds": [
+        29.9,
+        53.4
+      ],
+      "focusWindowsSeconds": [
+        [
+          29.9,
+          31.5
+        ],
+        [
+          43.4,
+          53.4
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-limits.txt",
+      "promptSha256": "ec21264f673fa9cb2a150c0eaefa867c6057c9660d480b9e4dfd46b76bd7fa41"
+    },
+    {
+      "id": "it-s101-example-gloves",
+      "locale": "it",
+      "sceneId": "s101-example-gloves",
+      "path": "inputs/it-s101-example-gloves.wav",
+      "audioSha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 977543,
+        "durationSeconds": 40.730958333333334,
+        "pcmSha256": "ada2a7cb2c3c874daed3176637dcabd8f6d1567b4f56388f2a81db780ccbac8c"
+      },
+      "bytes": 1955130,
+      "focusWindowSeconds": [
+        29.2,
+        33.3
+      ],
+      "focusWindowsSeconds": [
+        [
+          29.2,
+          33.3
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/it-s101-example-gloves.txt",
+      "promptSha256": "0ee92f957121a59c8d44c79e8dcfae8ccdce2389a7c503e161beaf1f5ff226d8"
+    },
+    {
+      "id": "it-s101-checklist",
+      "locale": "it",
+      "sceneId": "s101-checklist",
+      "path": "inputs/it-s101-checklist.wav",
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1613063,
+        "durationSeconds": 67.21095833333334,
+        "pcmSha256": "64634c7b6a7b5ce4fab1bb6824c6a43d6d81405a27d9e9496079504ccd9a9a38"
+      },
+      "bytes": 3226170,
+      "focusWindowSeconds": [
+        39.6,
+        42.6
+      ],
+      "focusWindowsSeconds": [
+        [
+          39.6,
+          42.6
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/it-s101-checklist.txt",
+      "promptSha256": "d619a593caa08e8f37e93cbb2b9d3604d1b0de0613b917e0a54069fb119b362b"
+    },
+    {
+      "id": "de-s101-chemical",
+      "locale": "de",
+      "sceneId": "s101-chemical",
+      "path": "inputs/de-s101-chemical.wav",
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1926023,
+        "durationSeconds": 80.25095833333333,
+        "pcmSha256": "0d8116d1635685ddaa61b1de08175fd94789df566c986a5b5bd1efe3d38c1ed1"
+      },
+      "bytes": 3852090,
+      "focusWindowSeconds": [
+        29.6,
+        32.2
+      ],
+      "focusWindowsSeconds": [
+        [
+          29.6,
+          32.2
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-chemical.txt",
+      "promptSha256": "edd3ce5c3db6b2523f6bf0481d7a71a4f48e1f892bb62083962f3941722d57be"
+    },
+    {
+      "id": "de-s101-checklist",
+      "locale": "de",
+      "sceneId": "s101-checklist",
+      "path": "inputs/de-s101-checklist.wav",
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1641863,
+        "durationSeconds": 68.41095833333334,
+        "pcmSha256": "4e1b67a64680399e1c9933cc9393bd215a6361096c02a93b8e1e3846302db961"
+      },
+      "bytes": 3283770,
+      "focusWindowSeconds": [
+        58.8,
+        62.2
+      ],
+      "focusWindowsSeconds": [
+        [
+          58.8,
+          62.2
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/de-s101-checklist.txt",
+      "promptSha256": "6c533b2c0574c5d66b296a1cd34c22683f8b8e35b149ac21a4cc35dc76e1a035"
+    }
+  ],
+  "authorityPath": "owner-authority.json",
+  "priorFourCallBudgetExhaustedAndImmutable": true,
+  "newBudgetOnlyForExplicitFocusedQuestions": true,
+  "providerExecutionByPreparation": false
+}

@@ -1,0 +1,40 @@
+{
+  "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+  "result": {
+    "transcript": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe, intakte, saubere Werkzeuge und sicheres Tragen, zur Tätigkeit und Chemikalieninformation passender Schutz, gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan, Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge. Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr. Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist [keine/k-reine] Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+    "focusWindowTranscript": "[37.30s-37.80s] fehlende [37.80s-39.25s] Stoffinformationen, [39.50s-40.35s] unzureichende [40.35s-41.40s] Kommunikation (within 37.76s-41.06s: \"...de Stoffinformationen, unzureichende Kommunika...\")",
+    "uncertainWords": [
+      {
+        "word": "keine (heard as glitched 'k-reine' / 'kr-eine')",
+        "startSeconds": 59.8,
+        "endSeconds": 60.45,
+        "reason": "Audible splice/articulation glitch inside the negation word between 'ist' and 'Erste-Hilfe-Qualifikation'."
+      }
+    ],
+    "findings": [
+      {
+        "startSeconds": 37.76,
+        "endSeconds": 41.06,
+        "heardText": "fehlende Stoffinformationen, unzureichende Kommunikation",
+        "issueType": "none_in_focus_window",
+        "observation": "In the requested inspection window (37.76s to 41.06s), speech is clearly articulated without dropped or clipped words: 'fehlende' (~37.30s-37.80s), 'Stoffinformationen' (~37.80s-39.25s), brief pause (~39.25s-39.50s), 'unzureichende' (~39.50s-40.35s), and 'Kommunikation' (~40.35s-41.40s).",
+        "certainty": "high"
+      },
+      {
+        "startSeconds": 59.8,
+        "endSeconds": 60.45,
+        "heardText": "k-reine / keine",
+        "issueType": "clipped_or_glitched_speech",
+        "observation": "In the sentence 'Dieser Schritt ist keine Erste-Hilfe-Qualifikation...', the negation word 'keine' exhibits an audible glitch/discontinuity mid-word (sounding like 'k-reine' or a spliced consonant intrusion), affecting a critical negation.",
+        "certainty": "high"
+      }
+    ],
+    "overall": "needs_review",
+    "limitations": "Automated audio inspection without a reference transcript; timestamps are approximate to within a few tenths of a second, and this output does not constitute human listening approval, phonetic certainty, or voice certification."
+  },
+  "invalidTimestampFindingIndexes": [],
+  "humanListeningApproved": false,
+  "sourceCriteriaSuppliedToModel": false,
+  "originalAudioUnchanged": true,
+  "reviewLimitations": "Model diagnostic only. Invalid finding times or uncertain wording are not proof of defective speech. No automatic repair, phonetic or human-listening certification."
+}

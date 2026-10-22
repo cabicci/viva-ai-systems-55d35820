@@ -1,0 +1,195 @@
+{
+  "timingReadyScenes": 24,
+  "timingHeldScenes": 6,
+  "verifiedExactRemainingClipIds": [
+    "en-s101-checklist",
+    "de-s101-limits",
+    "it-s101-example-gloves",
+    "it-s101-checklist",
+    "de-s101-chemical",
+    "de-s101-checklist"
+  ],
+  "currentSourceBoundRecords": [
+    {
+      "clipId": "en-s101-checklist",
+      "classification": "MACHINE_TRANSCRIPTS_CORROBORATE_MOTION_MODIFIER_OMISSION_CANDIDATE",
+      "concreteQuestion": "Transcribe the complete enumerated sentence in the focus interval exactly as heard, including any modifiers. Do not supply implied motion, location or hazard descriptions. Mark any word you cannot actually hear.",
+      "focusWindowsSeconds": [
+        [
+          41.5,
+          53.1
+        ]
+      ],
+      "diagnosisNotForModel": "Expected source has uncertain buried services and a moving machine blocking the route. Current ASR says varied services and omits moving; historical exact-WAV model-QA transcript retains buried but also omits moving despite its broad pass flags. The moving omission is stronger than a harmless spelling alert but is not represented as human listening confirmation.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "buried",
+        "moving"
+      ],
+      "audioSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\en\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "054cc13db87abc39d9acda96f7f3851ef5a9e6fa24fac759a229b52ff184bde8",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-en-s101-checklist\\word-timestamps.json",
+        "sha256": "78253d226c3e87ffb2581efe88a307b5d9d79c64ded21df4add7c6b85d02024f"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "de-s101-limits",
+      "classification": "ACTION_AND_DOCUMENT_TERM_WORDING_UNRESOLVED",
+      "concreteQuestion": "Transcribe the action command in the first focus interval and the complete document-related instruction in the second interval. Preserve actual action verbs, negations and technical nouns. Do not infer the expected safety instruction from context.",
+      "focusWindowsSeconds": [
+        [
+          29.9,
+          31.5
+        ],
+        [
+          43.4,
+          53.4
+        ]
+      ],
+      "diagnosisNotForModel": "Expected action Schwinge es nicht conflicts with current ASR Spinne es nicht. Expected document instruction Lies ... Reagenzien conflicts with ASR Les ... Reagenzchen. Original exact-WAV QA retains the complete source. Melde Mängel/Meldemengel is a joined-word spelling candidate, not independently timed words; it does not itself justify TTS.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Schwinge",
+        "Spinne",
+        "Lies",
+        "Reagenzien",
+        "Reagenzchen"
+      ],
+      "audioSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+      "sourcePlanSha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+        "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "it-s101-example-gloves",
+      "classification": "ONSET_ASR_RECOGNITION_OR_CLIPPING_CANDIDATE",
+      "concreteQuestion": "Transcribe the onset and the complete short instruction in the focus interval. Say whether any opening syllables are actually cut, absent or unintelligible, or whether connected speech remains intelligible. Do not reconstruct an opening verb from the topic.",
+      "focusWindowsSeconds": [
+        [
+          29.2,
+          33.3
+        ]
+      ],
+      "diagnosisNotForModel": "Expected Controlla anche le altre protezioni, compresi gli occhi has current ASR Prolla ... at onset30.00–30.20. Original exact-WAV QA retains Controlla. Quel/quelle is a grammatical inflection candidate inside the same negative compatibility sentence and should not trigger a whole-clip repair.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Controlla",
+        "Prolla"
+      ],
+      "audioSha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r21\\it\\s101-example-gloves\\renderer-plan.json",
+      "sourcePlanSha256": "c24f85a097594f9eeedb9759616b5878eb2956e66a272152f8e2f4c6ca6d1a46",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-example-gloves\\word-timestamps.json",
+        "sha256": "618beb41efa9c9b6f5e5cfefb935e678960cee40c6f37b002a53b869f253e46b"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "it-s101-checklist",
+      "classification": "SINGLE_PRIOR_MODEL_ARTICULATION_ALLEGATION_NOT_CONFIRMED_CONTENT_ERROR",
+      "concreteQuestion": "Transcribe the exact words in this focus interval. Assess only whether the articulated word sequence is intelligible natural connected speech or audibly clipped/compressed beyond recognition. Describe any actual audible evidence and its uncertainty; do not infer pronunciation from a spelling.",
+      "focusWindowsSeconds": [
+        [
+          39.6,
+          42.6
+        ]
+      ],
+      "diagnosisNotForModel": "Original negative inadeguate was corroborated by blind review. A new single-review allegation says comunicazioni is compressed; actual ASR recognizes comunicazioni40.44–41.10 and original same-WAV QA retains it. New focus question concerns that new articulation allegation, not a repeat of the resolved negative.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "comunicazioni",
+        "comcazioni",
+        "inadeguate"
+      ],
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\it\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "e2a4405efd7f79370774edae4db84cbf8065054393aa277563d9d9d533f1334f",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-checklist\\word-timestamps.json",
+        "sha256": "3b6b0e4ce42fb8a6655de2a431eb655e14fd570ac41dd5384dac511222684393"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "6ea199b6e6d9d7d395910a8482dd3e522c6605f9c501ad2e0216050df9df3ace",
+        "attemptSha256": "1035a3223885b72a7fc93631a45f461cd07d1cd799c11674eccba14e192decce",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    },
+    {
+      "clipId": "de-s101-chemical",
+      "classification": "SINGLE_PRIOR_MODEL_INTERNAL_CONSONANT_ALLEGATION_UNCERTAIN",
+      "concreteQuestion": "Transcribe the exact word sequence in the focus interval. Identify any clearly audible intrusive consonant or interrupted articulation only if supported by the recording. Distinguish an uncertain auditory impression from a confirmed substituted word; do not infer sound from orthography.",
+      "focusWindowsSeconds": [
+        [
+          29.6,
+          32.2
+        ]
+      ],
+      "diagnosisNotForModel": "Original respirator fit-test requirement was corroborated in actual blind review. A new isolated finding alleges Dickle for Dicke around30.5–31.1, while current ASR and original exact-WAV QA retain Dicke. This focused check addresses only the new local allegation, not the resolved fit requirement.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Dicke",
+        "Dickle"
+      ],
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\de\\s101-chemical\\renderer-plan.json",
+      "sourcePlanSha256": "bca6e272053278d86c91ee4d1e24a48e4b9b6b28bbef3316dfba5abd50a61396",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-chemical\\word-timestamps.json",
+        "sha256": "4b1bb713b1398e601b05498df9203513d5f07589bc05da6f73c4d67547b14529"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "ad3c15d27fd3c49d2bd29383bf54386a6c8688e3252df0bf4e79299b4793d9db",
+        "attemptSha256": "835cd7faedd983581716b8407c333eb5abe69fab965916e23bba9b898b050c75",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    },
+    {
+      "clipId": "de-s101-checklist",
+      "classification": "SINGLE_PRIOR_MODEL_NEGATIVE_WORD_GLITCH_ALLEGATION_UNCERTAIN",
+      "concreteQuestion": "Transcribe the exact words and any negation in the focus interval. Distinguish a clearly audible negative/qualifying word from a clipped or uncertain sound. If a transient noise is present, state whether it actually obscures intelligibility rather than assuming an omitted word.",
+      "focusWindowsSeconds": [
+        [
+          58.8,
+          62.2
+        ]
+      ],
+      "diagnosisNotForModel": "Original unzureichende Kommunikation was corroborated by actual blind review. A new isolated finding alleges a glitch on later keine59.8–60.45. Current actual ASR recognizes keine59.8–60.1 at probability.994 and original same-WAV QA retains it. No confirmed negative omission is established.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "keine",
+        "unzureichende"
+      ],
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\de\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "bef35e588806531afc121699f506811b34d3694660f9ffdddb57af9de59d4321",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-checklist\\word-timestamps.json",
+        "sha256": "fd2ebd50da96f99d82a1ca75134a1c8512f6d4891c53865a17d828866e4a26af"
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "364831e2f9e01c1ff5d8fb4e7c1207767826b89a061190cfd75677110b19d27a",
+        "attemptSha256": "b8d071256b4a1ee540a59c87ebec63099a0b6a4152ced011a6ffee66d016c0d0",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    }
+  ],
+  "phoneticOrHumanCertificationClaimed": false,
+  "separateVisualHolds": "Existing EN/DE glove comparison imagery requires bounded correction; captions repaired separately. Timing readiness is not final media release."
+}

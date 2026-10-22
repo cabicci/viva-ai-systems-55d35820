@@ -1,0 +1,40 @@
+{
+  "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+  "result": {
+    "transcript": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten. Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dickle allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden. Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz. Warnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+    "focusWindowTranscript": "[53.36–54.10] ...terweisung. [54.50–55.40] Dicht anliegender [55.40–56.15] Atemschutz [56.15–56.55] braucht [56.55–56.80] eine [56.80–57.40] geeignete [57.40–58.75] Anpassungsüberprüfung.",
+    "uncertainWords": [
+      {
+        "word": "Dickle",
+        "startSeconds": 30.5,
+        "endSeconds": 31.1,
+        "note": "Audibly pronounced as 'Dickle' (with an intrusive lateral /l/ sound) where context suggests 'Dicke'."
+      }
+    ],
+    "findings": [
+      {
+        "startSeconds": 30.5,
+        "endSeconds": 31.1,
+        "heardText": "Dickle",
+        "issueType": "substituted",
+        "observation": "In the phrase 'warum Aussehen und Dickle allein keine chemische Beständigkeit beweisen', the word is articulated as 'Dickle' rather than 'Dicke'.",
+        "certainty": "high"
+      },
+      {
+        "startSeconds": 53.36,
+        "endSeconds": 58.98,
+        "heardText": "...terweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung.",
+        "issueType": "none_in_focus_window",
+        "observation": "Within the requested focus window (53.36s–58.98s), the end of 'Unterweisung' (approx. 53.36s–54.10s) and the full sentence 'Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung.' (approx. 54.50s–58.75s) are clearly articulated without audible clipping, drops, or substitutions.",
+        "certainty": "high"
+      }
+    ],
+    "overall": "needs_review",
+    "limitations": "Automated audio inspection without a reference transcript; timestamps are approximate and this analysis does not constitute human listening approval, phonetic certainty, or voice certification."
+  },
+  "invalidTimestampFindingIndexes": [],
+  "humanListeningApproved": false,
+  "sourceCriteriaSuppliedToModel": false,
+  "originalAudioUnchanged": true,
+  "reviewLimitations": "Model diagnostic only. Invalid finding times or uncertain wording are not proof of defective speech. No automatic repair, phonetic or human-listening certification."
+}

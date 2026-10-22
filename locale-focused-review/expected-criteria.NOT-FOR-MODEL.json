@@ -1,0 +1,390 @@
+{
+  "scope": "S1_01_SIX_EXISTING_WAV_FOCUSED_DIAGNOSTICS_R2_ONLY",
+  "fedToProvider": false,
+  "criteria": [
+    {
+      "clipId": "en-s101-checklist",
+      "classification": "MACHINE_TRANSCRIPTS_CORROBORATE_MOTION_MODIFIER_OMISSION_CANDIDATE",
+      "concreteQuestion": "Transcribe the complete enumerated sentence in the focus interval exactly as heard, including any modifiers. Do not supply implied motion, location or hazard descriptions. Mark any word you cannot actually hear.",
+      "focusWindowsSeconds": [
+        [
+          41.5,
+          53.1
+        ]
+      ],
+      "diagnosisNotForModel": "Expected source has uncertain buried services and a moving machine blocking the route. Current ASR says varied services and omits moving; historical exact-WAV model-QA transcript retains buried but also omits moving despite its broad pass flags. The moving omission is stronger than a harmless spelling alert but is not represented as human listening confirmation.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "buried",
+        "moving"
+      ],
+      "audioSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\en\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "054cc13db87abc39d9acda96f7f3851ef5a9e6fa24fac759a229b52ff184bde8",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-en-s101-checklist\\word-timestamps.json",
+        "sha256": "78253d226c3e87ffb2581efe88a307b5d9d79c64ded21df4add7c6b85d02024f"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\en\\audio-qa\\6e3f23dfccc6988da7ee75bf6f5ff3ce9e61625321d082ecd3d97fadc5d178d6.json",
+        "sha256": "c7207e2bf2ede68f000878d8ae5dff203129c41b3b118365483b39fc73153ce9",
+        "audioSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+        "transcript": "Build a five-point checklist rather than a list of equipment names. First: the site and route are safe, with permission and utility clearance. Second: tools are sound, clean and carried safely. Third: protection matches the task and any chemical information. Fourth: the supervisor knows the location and return time, and the buddy and communication arrangements are clear. Fifth: emergency contacts, access, meeting point, water and weather precautions are known. For each point, state what would make you stop. Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a machine blocking the route. Report the problem and wait for a safe arrangement; ticking a box does not resolve a hazard. Preparation, awareness and limits reduce the chance of making a bad situation worse. Completing this step does not qualify you as a first aider or certify your physical performance. Your trainer observes the practical task separately.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences were spoken, and there were no cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The spoken content accurately preserves the expected meaning, including all negations, conditions, numbers, and technical terms, without omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in clear, natural English."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is audible, natural, and free from prolonged silence, clipping, garbling, or abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "There was no introduction, response to the prompt, music, or extra commentary."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "de-s101-limits",
+      "classification": "ACTION_AND_DOCUMENT_TERM_WORDING_UNRESOLVED",
+      "concreteQuestion": "Transcribe the action command in the first focus interval and the complete document-related instruction in the second interval. Preserve actual action verbs, negations and technical nouns. Do not infer the expected safety instruction from context.",
+      "focusWindowsSeconds": [
+        [
+          29.9,
+          31.5
+        ],
+        [
+          43.4,
+          53.4
+        ]
+      ],
+      "diagnosisNotForModel": "Expected action Schwinge es nicht conflicts with current ASR Spinne es nicht. Expected document instruction Lies ... Reagenzien conflicts with ASR Les ... Reagenzchen. Original exact-WAV QA retains the complete source. Melde Mängel/Meldemengel is a joined-word spelling candidate, not independently timed words; it does not itself justify TTS.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Schwinge",
+        "Spinne",
+        "Lies",
+        "Reagenzien",
+        "Reagenzchen"
+      ],
+      "audioSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+      "sourcePlanSha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+        "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\bf098fedbe52513c7dd3f51598bb3778863170eb1a90c326eb701f9919d09f22.json",
+        "sha256": "9f62dc72e4561d386b6e7bb8f2b55f57d9d665698550c1e5179c1d91c1252b11",
+        "audioSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+        "transcript": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht. Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and the end are spoken as expected, with no cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The recording preserves the expected meaning, including all negations, conditions, numbers, and technical terms. There are no omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural, fluent German with appropriate pronunciation and intonation."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, audible, and natural, without prolonged silence, clipping, garbling, or an abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "There is no introduction, response to the prompt, music, or extra commentary present in the recording."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "it-s101-example-gloves",
+      "classification": "ONSET_ASR_RECOGNITION_OR_CLIPPING_CANDIDATE",
+      "concreteQuestion": "Transcribe the onset and the complete short instruction in the focus interval. Say whether any opening syllables are actually cut, absent or unintelligible, or whether connected speech remains intelligible. Do not reconstruct an opening verb from the topic.",
+      "focusWindowsSeconds": [
+        [
+          29.2,
+          33.3
+        ]
+      ],
+      "diagnosisNotForModel": "Expected Controlla anche le altre protezioni, compresi gli occhi has current ASR Prolla ... at onset30.00–30.20. Original exact-WAV QA retains Controlla. Quel/quelle is a grammatical inflection candidate inside the same negative compatibility sentence and should not trigger a whole-clip repair.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Controlla",
+        "Prolla"
+      ],
+      "audioSha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r21\\it\\s101-example-gloves\\renderer-plan.json",
+      "sourcePlanSha256": "c24f85a097594f9eeedb9759616b5878eb2956e66a272152f8e2f4c6ca6d1a46",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-example-gloves\\word-timestamps.json",
+        "sha256": "618beb41efa9c9b6f5e5cfefb935e678960cee40c6f37b002a53b869f253e46b"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\it\\audio-qa\\b7541d258c7a5a2f83b0697eed66b38af128487ab420cd2dffcfe21f8d8d62d8.json",
+        "sha256": "4939529547444eb7b56784f29aa247883f452c7c8a0df16b86354ce16e9737c7",
+        "audioSha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+        "transcript": "Per un reagente liquido sono disponibili guanti di tessuto e di nitrile, ma mancano SDS aggiornata e informazioni di compatibilità. Il tessuto può assorbire lo sversamento e trattenerlo contro la mano. Il nitrile è un materiale possibile, ma il nome non prova la compatibilità con quel reagente. Interrompi la manipolazione e chiedi SDS, informazioni sui guanti e istruzioni. Controlla anche le altre protezioni, compresi gli occhi. La decisione giusta può essere fermarsi per ottenere informazioni, non scegliere l'oggetto che sembra più resistente.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences from the expected text are present and spoken completely without cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The spoken content accurately reflects the meaning, negations, conditions, numbers, and technical terms of the expected text without omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural, fluent Italian."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, audible, and free from intelligibility issues such as prolonged silence, clipping, garbling, or abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The recording contains only the expected content, without any additional introductions, responses, music, or commentary."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true
+    },
+    {
+      "clipId": "it-s101-checklist",
+      "classification": "SINGLE_PRIOR_MODEL_ARTICULATION_ALLEGATION_NOT_CONFIRMED_CONTENT_ERROR",
+      "concreteQuestion": "Transcribe the exact words in this focus interval. Assess only whether the articulated word sequence is intelligible natural connected speech or audibly clipped/compressed beyond recognition. Describe any actual audible evidence and its uncertainty; do not infer pronunciation from a spelling.",
+      "focusWindowsSeconds": [
+        [
+          39.6,
+          42.6
+        ]
+      ],
+      "diagnosisNotForModel": "Original negative inadeguate was corroborated by blind review. A new single-review allegation says comunicazioni is compressed; actual ASR recognizes comunicazioni40.44–41.10 and original same-WAV QA retains it. New focus question concerns that new articulation allegation, not a repeat of the resolved negative.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "comunicazioni",
+        "comcazioni",
+        "inadeguate"
+      ],
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\it\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "e2a4405efd7f79370774edae4db84cbf8065054393aa277563d9d9d533f1334f",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-checklist\\word-timestamps.json",
+        "sha256": "3b6b0e4ce42fb8a6655de2a431eb655e14fd570ac41dd5384dac511222684393"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\it\\audio-qa\\81dc74d3efe004b6f71cee153a7d11f3484aebf1120699705dc07efc8255381d.json",
+        "sha256": "11f6d684360ec6ac2876bdf5a8bf8cc4efc41cc3b415366b73d6a79541418a66",
+        "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+        "transcript": "Scrivi cinque punti di controllo, non solo nomi di attrezzature: sito e percorso sicuri, autorizzazione e verifica dei sottoservizi; attrezzi integri, puliti e trasportati bene; protezioni adatte alla mansione e alle sostanze; responsabile informato su posizione e rientro, compagno e comunicazioni; contatti, accesso di emergenza, ritrovo, acqua e precauzioni meteo. Per ogni punto indica quando fermarti: sottoservizi incerti, manico allentato, informazioni chimiche mancanti, comunicazioni inadeguate o macchina che blocca il percorso. Segnala e attendi una soluzione sicura: spuntare una casella non elimina il pericolo. Preparazione, attenzione e rispetto dei limiti aiutano a non peggiorare una situazione. Completare questo passo non ti qualifica al primo soccorso e non certifica la prestazione pratica, che il formatore osserva separatamente.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and the end of the text are spoken, with no cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The spoken content perfectly matches the expected text, preserving all details, negations, conditions, numbers, and technical terms without omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural and fluent Italian."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, audible, and natural, without prolonged silence, clipping, garbling, or abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The recording contains only the expected text, with no introduction, response to the prompt, music, or extra commentary."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "6ea199b6e6d9d7d395910a8482dd3e522c6605f9c501ad2e0216050df9df3ace",
+        "attemptSha256": "1035a3223885b72a7fc93631a45f461cd07d1cd799c11674eccba14e192decce",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    },
+    {
+      "clipId": "de-s101-chemical",
+      "classification": "SINGLE_PRIOR_MODEL_INTERNAL_CONSONANT_ALLEGATION_UNCERTAIN",
+      "concreteQuestion": "Transcribe the exact word sequence in the focus interval. Identify any clearly audible intrusive consonant or interrupted articulation only if supported by the recording. Distinguish an uncertain auditory impression from a confirmed substituted word; do not infer sound from orthography.",
+      "focusWindowsSeconds": [
+        [
+          29.6,
+          32.2
+        ]
+      ],
+      "diagnosisNotForModel": "Original respirator fit-test requirement was corroborated in actual blind review. A new isolated finding alleges Dickle for Dicke around30.5–31.1, while current ASR and original exact-WAV QA retain Dicke. This focused check addresses only the new local allegation, not the resolved fit requirement.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "Dicke",
+        "Dickle"
+      ],
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\de\\s101-chemical\\renderer-plan.json",
+      "sourcePlanSha256": "bca6e272053278d86c91ee4d1e24a48e4b9b6b28bbef3316dfba5abd50a61396",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-chemical\\word-timestamps.json",
+        "sha256": "4b1bb713b1398e601b05498df9203513d5f07589bc05da6f73c4d67547b14529"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\f511f0e45d2b1f9f25c6fe9fe8dbda9df134fe86f81dc9740a99ff3dcad24d24.json",
+        "sha256": "ed1c2faaaa71f0ff34a9a59fa4ce031c3da41a087c740207c7c5e3f70077efcf",
+        "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+        "transcript": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten. Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden. Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz. Warnkleidung hilft anderen, dich nahe Maschinen zu sehen. Sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and the end are spoken, no cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The recording preserves the expected meaning, every negation, condition, number, and technical term. There are no omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech is in natural German with appropriate pronunciation and intonation."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is audible and natural without prolonged silence, clipping, garbling, or abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "There is no introduction, response to the prompt, music, or extra commentary."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "ad3c15d27fd3c49d2bd29383bf54386a6c8688e3252df0bf4e79299b4793d9db",
+        "attemptSha256": "835cd7faedd983581716b8407c333eb5abe69fab965916e23bba9b898b050c75",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    },
+    {
+      "clipId": "de-s101-checklist",
+      "classification": "SINGLE_PRIOR_MODEL_NEGATIVE_WORD_GLITCH_ALLEGATION_UNCERTAIN",
+      "concreteQuestion": "Transcribe the exact words and any negation in the focus interval. Distinguish a clearly audible negative/qualifying word from a clipped or uncertain sound. If a transient noise is present, state whether it actually obscures intelligibility rather than assuming an omitted word.",
+      "focusWindowsSeconds": [
+        [
+          58.8,
+          62.2
+        ]
+      ],
+      "diagnosisNotForModel": "Original unzureichende Kommunikation was corroborated by actual blind review. A new isolated finding alleges a glitch on later keine59.8–60.45. Current actual ASR recognizes keine59.8–60.1 at probability.994 and original same-WAV QA retains it. No confirmed negative omission is established.",
+      "expectedOrPreviouslyAllegedWordsNotForModel": [
+        "keine",
+        "unzureichende"
+      ],
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "sourcePlanPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r11\\de\\s101-checklist\\renderer-plan.json",
+      "sourcePlanSha256": "bef35e588806531afc121699f506811b34d3694660f9ffdddb57af9de59d4321",
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-checklist\\word-timestamps.json",
+        "sha256": "fd2ebd50da96f99d82a1ca75134a1c8512f6d4891c53865a17d828866e4a26af"
+      },
+      "priorSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\928b536cae7beb1b2db63c2e580a8eaf58007b19bba15e71730afa4b37ada2f5.json",
+        "sha256": "dfe55e6c1a5280e4924cce47cd73a4904b2e0fa2cbdd49c07f4e2b486f7067f2",
+        "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+        "transcript": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge. Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr. Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences from the expected text were spoken, and there were no cuts or repeated stretches."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The spoken content perfectly preserves the expected meaning, including all negations, conditions, numbers, and technical terms, without omissions or invented advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech exhibits natural German pronunciation, intonation, and rhythm."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, audible, and natural throughout, with no prolonged silences, clipping, garbling, or abrupt ending."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "There was no introduction, response to the prompt, music, or extra commentary present in the recording."
+          }
+        ],
+        "qualification": "Historical actual-audio model QA had the expected script. Not a new blind review, precise alignment, human listening or phonetic certification."
+      },
+      "automaticRepairAuthorizedFromThisDiagnostic": false,
+      "uncertainOutcomeDoesNotAuthorizeRetry": true,
+      "priorActualBlindReview": {
+        "runId": "39758443990",
+        "resultSha256": "364831e2f9e01c1ff5d8fb4e7c1207767826b89a061190cfd75677110b19d27a",
+        "attemptSha256": "b8d071256b4a1ee540a59c87ebec63099a0b6a4152ced011a6ffee66d016c0d0",
+        "originalConcernResolved": true,
+        "newQuestionOnly": true
+      }
+    }
+  ],
+  "decisionPolicy": "Compare the new actual-audio finding with exact source/ASR/prior evidence. A single allegation, bad timestamp or uncertainty is not a confirmed defect and never authorizes automatic TTS or another review."
+}

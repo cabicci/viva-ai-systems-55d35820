@@ -1,0 +1,27 @@
+{
+  "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+  "result": {
+    "transcript": "Scrivi cinque punti di controllo, non solo nomi di attrezzature: sito e percorso sicuri, autorizzazione e verifica dei sottoservizi; attrezzi integri, puliti e trasportati bene; protezioni adatte alla mansione e alle sostanze; responsabile informato su posizione e rientro, compagno e comunicazioni; contatti, accesso di emergenza, ritrovo, acqua e precauzioni meteo. Per ogni punto indica quando fermarti: sottoservizi incerti, manico allentato, informazioni chimiche mancanti, comcazioni inadeguate, o macchina che blocca il percorso. Segnala e attendi una soluzione sicura: spuntare una casella non elimina il pericolo. Preparazione, attenzione e rispetto dei limiti aiutano a non peggiorare una situazione. Completare questo passo non ti qualifica al primo soccorso e non certifica la prestazione pratica, che il formatore osserva separatamente.",
+    "focusWindowTranscript": "[40.44s - 41.15s] comcazioni [41.15s - 42.05s] inadeguate, [42.10s - 42.36s] o",
+    "uncertainWords": [
+      "comcazioni (intended: comunicazioni, around 40.44s - 41.15s)"
+    ],
+    "findings": [
+      {
+        "startSeconds": 40.44,
+        "endSeconds": 41.15,
+        "heardText": "comcazioni",
+        "issueType": "clipped_or_dropped_syllable",
+        "observation": "The medial syllables ('-uni-') of 'comunicazioni' are compressed or dropped, making the word sound like 'comcazioni' or 'comncazioni' before 'inadeguate'.",
+        "certainty": "high"
+      }
+    ],
+    "overall": "needs_review",
+    "limitations": "Automated audio inspection without a reference script; does not constitute human listening approval, phonetic certainty, or voice certification. Timestamps are approximate."
+  },
+  "invalidTimestampFindingIndexes": [],
+  "humanListeningApproved": false,
+  "sourceCriteriaSuppliedToModel": false,
+  "originalAudioUnchanged": true,
+  "reviewLimitations": "Model diagnostic only. Invalid finding times or uncertain wording are not proof of defective speech. No automatic repair, phonetic or human-listening certification."
+}
