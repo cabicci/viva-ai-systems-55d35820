@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1-11_EN004_DAY_SITE_RECORD_ONLY",
+  "unitId": "S1-11-en-r3-004",
+  "locale": "en",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "work/soil-s111-daily-assembly-20261022-r1",
+  "fps": 30,
+  "frames": 2235,
+  "sampleCount": 1787520,
+  "sourcePcmSha256": "83da9ac8a015bf24a7b27b585b312d09561a5f07ddcc766dd0a34fbe8902d667",
+  "durationSeconds": 74.48,
+  "frameDurationSeconds": 74.5,
+  "explicitTrailingSilenceSamples": 480,
+  "sourceFrameQA": "ROOT_ACTUAL_ENCODED_IVF_QA_PASS_PENDING_MUX_OUTPUT_QA",
+  "sourceVisualReceiptSha256": "610cf8a2ae3bb45c126a726f9456af06256340c76ffd78d375a5a7c4014582f7",
+  "sourceEncodeReceiptSha256": "257be10c76f5d7b65530c96f17d3e4b90b43b27cb623d0a767152e24fcae1032",
+  "sourceTimingSha256": "8399a1cd57ecd3ac9f9bba88c59a89068ca456d9ab85457e04ce9b2c8836ece3",
+  "sourceMotionContractSha256": "8399a1cd57ecd3ac9f9bba88c59a89068ca456d9ab85457e04ce9b2c8836ece3",
+  "providerCalls": 0,
+  "automaticRetries": 0,
+  "completeLesson": false,
+  "usesOriginalPcm": true,
+  "ownerVideoAccepted": false,
+  "rootPackageReviewBeforeLaunchRequired": true,
+  "sourceRecapture": false,
+  "silencePolicy": "Exactly480 zero PCM samples after all1787520 original samples. No crop, gain, time stretch or crossfade.",
+  "inputs": {
+    "captions.json": {
+      "sha256": "cbc1b17fb76fd623a633ed833cc83551d0beaef472d23b4a918ae9ad40561f79",
+      "bytes": 7548
+    },
+    "encoded-verification.json": {
+      "sha256": "bd48d403c7141d29a5f443aacc5267bf1f4b35047a113ef0420538c8d436e8e4",
+      "bytes": 338
+    },
+    "encoding.json": {
+      "sha256": "60737241438de25029d63a7e53766a7cb2d9f942bbe30bf68019d5fb3860f484",
+      "bytes": 163658
+    },
+    "root-qa.json": {
+      "sha256": "d84ba07e073b4333478303b7b4201df172d3398082d2300ffe2e5efef99db6d7",
+      "bytes": 391
+    },
+    "video.ivf": {
+      "sha256": "eac83e2e06f34c34892ae4d3df161abb610befc238982fdc38f91b13a67bcf1e",
+      "bytes": 41985398
+    },
+    "voice.wav": {
+      "sha256": "d1c3bbb674598255881b2844d90665dd7f8cad46c4e9e9d882624abdbe8bc019",
+      "bytes": 3581158
+    }
+  },
+  "encodedFrameRequests": [
+    {
+      "requestedSeconds": 0.0,
+      "encodedFrameIndex": 0,
+      "sourcePreviewFile": "frame-01.png",
+      "sourcePreviewFrameSha256": "046533f35f0914e000418050991163eb5e1966e61a63bdd081f33b5ac6aca749"
+    },
+    {
+      "requestedSeconds": 2.5,
+      "encodedFrameIndex": 75,
+      "sourcePreviewFile": "frame-02.png",
+      "sourcePreviewFrameSha256": "126fd81374f3fd470e9ce06aa55f8d218ace1e694e1d90753a0775529f388489"
+    },
+    {
+      "requestedSeconds": 4.0,
+      "encodedFrameIndex": 120,
+      "sourcePreviewFile": "frame-03.png",
+      "sourcePreviewFrameSha256": "39df3ee83b364714bbdd2b6b6ae96a8b8895d54932f9d481142624c0cb795efc"
+    },
+    {
+      "requestedSeconds": 6.5,
+      "encodedFrameIndex": 195,
+      "sourcePreviewFile": "frame-04.png",
+      "sourcePreviewFrameSha256": "8df3fb16f7980b1649a895e5d58abc63d77290d81a2b986f36be1d55fa910329"
+    },
+    {
+      "requestedSeconds": 10.0,
+      "encodedFrameIndex": 300,
+      "sourcePreviewFile": "frame-05.png",
+      "sourcePreviewFrameSha256": "cf0b3334816191ff6d2b91499426c15584107592be6853b9da4ee025ed48095a"
+    },
+    {
+      "requestedSeconds": 15.0,
+      "encodedFrameIndex": 450,
+      "sourcePreviewFile": "frame-06.png",
+      "sourcePreviewFrameSha256": "48e1fcd724fc0986a11419238fbade385283f1d3227d211b7a703cb611ead20c"
+    },
+    {
+      "requestedSeconds": 19.0,
+      "encodedFrameIndex": 570,
+      "sourcePreviewFile": "frame-07.png",
+      "sourcePreviewFrameSha256": "d9ee0a44a9159e6a4deb4e75bc68a11c6114a5397ef5878da457be4492461242"
+    },
+    {
+      "requestedSeconds": 21.0,
+      "encodedFrameIndex": 630,
+      "sourcePreviewFile": "frame-08.png",
+      "sourcePreviewFrameSha256": "f2b2f04b8ab2d15ab326644fb1bce01def5d8941a93bbc4fc54c55fc117a8e28"
+    },
+    {
+      "requestedSeconds": 25.9,
+      "encodedFrameIndex": 777,
+      "sourcePreviewFile": "frame-09.png",
+      "sourcePreviewFrameSha256": "2aea1d6b0ad551d9e5df4e5ff2618a85dd3df556f96af2a536ddfeec7a44b6c1"
+    },
+    {
+      "requestedSeconds": 28.0,
+      "encodedFrameIndex": 840,
+      "sourcePreviewFile": "frame-10.png",
+      "sourcePreviewFrameSha256": "862742adcef8667e71f08d634eb515dad6582a81ae1a7415f6ee86676b133d44"
+    },
+    {
+      "requestedSeconds": 36.5,
+      "encodedFrameIndex": 1095,
+      "sourcePreviewFile": "frame-11.png",
+      "sourcePreviewFrameSha256": "28d66689462fefe227a5dd8e3b68d79f0b9512a1b2e03b4fade88b63aa243f1c"
+    },
+    {
+      "requestedSeconds": 39.0,
+      "encodedFrameIndex": 1170,
+      "sourcePreviewFile": "frame-12.png",
+      "sourcePreviewFrameSha256": "d616e96d42c2b46655b21deb203992f6cf826a81254215bd5e844eebe62735a2"
+    },
+    {
+      "requestedSeconds": 42.0,
+      "encodedFrameIndex": 1260,
+      "sourcePreviewFile": "frame-13.png",
+      "sourcePreviewFrameSha256": "76ac65279e0afaed12200fa4da159e03c15c4059797a9b95f7be47a81fd9aa81"
+    },
+    {
+      "requestedSeconds": 45.0,
+      "encodedFrameIndex": 1350,
+      "sourcePreviewFile": "frame-14.png",
+      "sourcePreviewFrameSha256": "97d8cd578b701a7851565a1a26c04a9ba0a99c7533ffd5cc0efeaef17337693c"
+    },
+    {
+      "requestedSeconds": 52.0,
+      "encodedFrameIndex": 1560,
+      "sourcePreviewFile": "frame-15.png",
+      "sourcePreviewFrameSha256": "31b3245b475a97bc094818f656997d8ee896a147a2ad1710656315acc5a343be"
+    },
+    {
+      "requestedSeconds": 55.5,
+      "encodedFrameIndex": 1665,
+      "sourcePreviewFile": "frame-16.png",
+      "sourcePreviewFrameSha256": "47d813f74917404519d140adf5a77e687fe2af79b8d5e8599b32b3dc853ab723"
+    },
+    {
+      "requestedSeconds": 59.0,
+      "encodedFrameIndex": 1770,
+      "sourcePreviewFile": "frame-17.png",
+      "sourcePreviewFrameSha256": "580cff6c59e0d1d47d92f64d9ffbf9e2fed84eeb9120e890b8735fb339f18243"
+    },
+    {
+      "requestedSeconds": 62.0,
+      "encodedFrameIndex": 1860,
+      "sourcePreviewFile": "frame-18.png",
+      "sourcePreviewFrameSha256": "6ce09cfe901347e3276b0f566f37e95e127e68dc94c40a9e1e69b32843b96af4"
+    },
+    {
+      "requestedSeconds": 69.0,
+      "encodedFrameIndex": 2070,
+      "sourcePreviewFile": "frame-19.png",
+      "sourcePreviewFrameSha256": "36765ffdb9c6b969d844ce8ff8fc0c67a17b242e5e1729761e04dd4a55b328db"
+    },
+    {
+      "requestedSeconds": 74.46666666666667,
+      "encodedFrameIndex": 2234,
+      "sourcePreviewFile": "frame-20.png",
+      "sourcePreviewFrameSha256": "ebba10278a943c5a35e6a10c9ea131d7a60185dc3d7891fbb03513b0f796dcff"
+    }
+  ],
+  "sourceRootEncodedQaSha256": "d84ba07e073b4333478303b7b4201df172d3398082d2300ffe2e5efef99db6d7"
+}

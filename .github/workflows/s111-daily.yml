@@ -1,0 +1,40 @@
+name: Bounded S111 English day/site record assembly
+on:
+  push:
+    branches: [work/soil-s111-daily-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: soil-s111-daily-assembly-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.repository_id == '1272666418' && github.ref == 'refs/heads/work/soil-s111-daily-assembly-20261022-r1' && github.event.created == true && github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MANIFEST_SHA: ec93312ffa6bf2749fb91b389b0d3a4280a1e1fee4003d457c685c92d17f9b0e
+      WORKER_SHA: a7a4589e2c58c27f3cc77b9e5cf0f1c8325dac8d6804f2e72ba7761db6855f20
+      FREEZE_SHA: 06209cb29acb7600693fdfa92e7d5527656ad6888b4771b84a00e8b33f93c5ec
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Ensure complete video codecs explicitly
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+          ffprobe -version
+      - name: Validate exact original PCM and every captured packet
+        run: python -B media/s111-daily/assemble.py validate
+      - name: Assemble once and verify exact PCM and packet grid
+        run: python -B media/s111-daily/assemble.py run
+      - name: Preserve output, attempts and diagnostic failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s111-en-daily-r1
+          path: media/s111-daily/output/
+          if-no-files-found: warn
+          retention-days: 7
