@@ -1,0 +1,51 @@
+{
+  "unitId": "S1-04-it-E02-r1",
+  "locale": "it",
+  "semanticGroup": "E02",
+  "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+  "sourceBindings": [
+    {
+      "pointer": "/examples/1/situation",
+      "text": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.",
+      "sha256": "e8b9fe81ce1dc1b268f1414dbd332b450ba1c466e911e8408bcc851aa08ac1e9"
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "text": "Per questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.",
+      "sha256": "bcdb467b3de09a96d6424d7297ed18231549c0a8c391d58d03adac73c8bbd14c"
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "text": "Spiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.",
+      "sha256": "f5df4a9dfec1d62c31c1e46ce29bd5879108e04f5aaf2fa5a64943b0af2ca0fe"
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "text": "Controlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.",
+      "sha256": "eb044300163bff0c5b4772f636469ddfe4a348eb5c9d12c19061b0c339875274"
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "text": "Materiale del recipiente e pulizia sono due verifiche da fare insieme.",
+      "sha256": "46f833fdde704f26828980e901152384f39d249f183d1832ed87bd72a1cbde87"
+    }
+  ],
+  "spokenText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+  "spokenTextSHA256": "2eb819061a25e45bd75be65a425ab67d4d3e1e4a5ed7a8d56e85e5ac9f42dce8",
+  "displayText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+  "captionText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+  "spokenAdaptationChanges": [],
+  "voice": "Charon",
+  "speakerId": "A",
+  "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+  "model": "gemini-3.8-flash-tts",
+  "delivery": "Spiega questo esempio in italiano naturale e chiaro. Leggi soltanto il testo continuo. Mantieni le condizioni, la possibilità di contaminazione e la distinzione tra materiale adatto e pulizia verificata. Non aggiungere risultati, divieti generali sugli strumenti metallici o riepiloghi.",
+  "requestFingerprintSHA256": "3d833e787186ba37207d33d6c6c5182d099f764baec347e0d6e30cb249139711",
+  "plannedMaximumTTSCalls": 1,
+  "plannedMaximumActualBlindReviewCalls": 1,
+  "plannedMaximumASRInvocations": 1,
+  "automaticRetries": 0,
+  "actualAudio": null,
+  "timings": null,
+  "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance."
+}

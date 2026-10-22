@@ -1,0 +1,18 @@
+{
+  "scope": "S104_E02_ONE_PER_LOCALE_ONLY",
+  "newBudget": {
+    "TTS": 4,
+    "blind": 4,
+    "ASR": 4,
+    "GET": 2,
+    "retry": 0
+  },
+  "perUnitMaximum": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1
+  },
+  "newCallsPerformed": 0,
+  "noAutomaticRerun": true,
+  "identityAuditRequired": true
+}

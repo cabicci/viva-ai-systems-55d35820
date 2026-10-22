@@ -1,0 +1,51 @@
+{
+  "unitId": "S1-04-en-E02-r1",
+  "locale": "en",
+  "semanticGroup": "E02",
+  "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+  "sourceBindings": [
+    {
+      "pointer": "/examples/1/situation",
+      "text": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.",
+      "sha256": "980feefadb949417e30b02331d0169fd341ec93be9d8236bfaf49ac8f7b56b99"
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "text": "Choose the verified clean plastic bucket for this nutrient-sampling task.",
+      "sha256": "b745d7938c7e067720fae7d6693ed95dd923fbb8ab36cfb267529cc4cd79d772"
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "text": "Explain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.",
+      "sha256": "b20bee1143c273138af54bf09d0b529010cde4c4e74d0783de55858bccc98ff3"
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "text": "Check the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.",
+      "sha256": "2bb84e4729b81c0804c3c32734050b2a68375e72669efffe74149c4172935cb1"
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "text": "Container choice and cleanliness are two checks, not alternatives.",
+      "sha256": "8684a4e1a074ef92622c1ea7e8f1fb38a0b51d2444c2ea85d08e5eb85d15336f"
+    }
+  ],
+  "spokenText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+  "spokenTextSHA256": "862370c9f22202aeff4256c85691b2e0cf7e83fce9ba8040505e33398c825162",
+  "displayText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+  "captionText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+  "spokenAdaptationChanges": [],
+  "voice": "Charon",
+  "speakerId": "A",
+  "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+  "model": "gemini-3.8-flash-tts",
+  "delivery": "Explain the supplied example naturally in clear English. Read only the connected spoken text. Preserve conditional choice, possible contamination and the distinction between suitable material and verified cleanliness. Do not add a result, universal ban on metal tools or extra summary.",
+  "requestFingerprintSHA256": "579bf4791937c177681397cf3aeff221a87482fd44f1d28886e44334827bae0e",
+  "plannedMaximumTTSCalls": 1,
+  "plannedMaximumActualBlindReviewCalls": 1,
+  "plannedMaximumASRInvocations": 1,
+  "automaticRetries": 0,
+  "actualAudio": null,
+  "timings": null,
+  "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance."
+}

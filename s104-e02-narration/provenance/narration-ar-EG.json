@@ -1,0 +1,82 @@
+{
+  "unitId": "S1-04-ar-EG-E02-r1",
+  "locale": "ar-EG",
+  "semanticGroup": "E02",
+  "sourceWholeFileSHA256": "3c08d5e32911768c76ece01e4a83f55c36baab06635a0ce15c7f6f8d039f69b6",
+  "sourceBindings": [
+    {
+      "pointer": "/examples/1/situation",
+      "text": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.",
+      "sha256": "4fb811dd08a1afe5e0fa64a18c30cdfd203cbd83be1fcb32a3a081fa643b14cb"
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "text": "اختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.",
+      "sha256": "81f120de708f0986e226b7cfdf51dc52a493229da34633883831957d0ac28514"
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "text": "اشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.",
+      "sha256": "92b4012003ef2d7f120c1405063b066df0e7e6a8b7474c5a3007b1fa5547936e"
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "text": "افحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.",
+      "sha256": "2d96b756d6a0fe91cf564d94f8a5e789d109b42bb3876da10cbff6f67438f43e"
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "text": "اختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+      "sha256": "679f1b5e1d6f761bc2179aceea2eed6dd5058c5e10fa4b9436c1fe98eb0a230e"
+    }
+  ],
+  "spokenText": "قدّامك جردل بلاستيك نضيف لجمع العيّنات، وجردل مجلفن سطحه من جوّه متآكل. الاتنين يسعوا كل العيّنات الجزئية.\n\nلمهمة تحليل العناصر دي، اختار الجردل البلاستيك اللي اتأكدت من نضافته.\n\nطبقة الجلفنة ممكن تدخل زنك في العيّنة، والصدأ أو شظايا المعدن ممكن كمان يغيّروا قياسات مهمة.\n\nوافحص الجردل البلاستيك نفسه: هل فيه بقايا تربة أو سماد أو كيماويات؟ كونه بلاستيك مش دليل لوحده إنه نضيف.\n\nيعني لازم تفحص حاجتين مع بعض: خامة الوعاء مناسبة للمهمة، وكمان نضافته متأكَّد منها.",
+  "spokenTextSHA256": "5a2d4ce77fe1b19f1537a5024a71399f2af40fa95c7a6c85253ed714b7e7786f",
+  "displayText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.\n\nاختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.\n\nاشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.\n\nافحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.\n\nاختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+  "captionText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.\n\nاختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.\n\nاشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.\n\nافحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.\n\nاختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+  "spokenAdaptationChanges": [
+    {
+      "pointer": "/examples/1/situation",
+      "displayText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.",
+      "spokenText": "قدّامك جردل بلاستيك نضيف لجمع العيّنات، وجردل مجلفن سطحه من جوّه متآكل. الاتنين يسعوا كل العيّنات الجزئية.",
+      "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "displayText": "اختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.",
+      "spokenText": "لمهمة تحليل العناصر دي، اختار الجردل البلاستيك اللي اتأكدت من نضافته.",
+      "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "displayText": "اشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.",
+      "spokenText": "طبقة الجلفنة ممكن تدخل زنك في العيّنة، والصدأ أو شظايا المعدن ممكن كمان يغيّروا قياسات مهمة.",
+      "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "displayText": "افحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.",
+      "spokenText": "وافحص الجردل البلاستيك نفسه: هل فيه بقايا تربة أو سماد أو كيماويات؟ كونه بلاستيك مش دليل لوحده إنه نضيف.",
+      "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "displayText": "اختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+      "spokenText": "يعني لازم تفحص حاجتين مع بعض: خامة الوعاء مناسبة للمهمة، وكمان نضافته متأكَّد منها.",
+      "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+    }
+  ],
+  "voice": "Charon",
+  "speakerId": "A",
+  "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+  "model": "gemini-3.8-flash-tts",
+  "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية.",
+  "requestFingerprintSHA256": "f1db112b6e1f9bc5b0093f8095a67805357d45f0ac70d69f899b35ce444922ea",
+  "plannedMaximumTTSCalls": 1,
+  "plannedMaximumActualBlindReviewCalls": 1,
+  "plannedMaximumASRInvocations": 1,
+  "automaticRetries": 0,
+  "actualAudio": null,
+  "timings": null,
+  "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance."
+}

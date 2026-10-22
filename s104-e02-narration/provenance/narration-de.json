@@ -1,0 +1,51 @@
+{
+  "unitId": "S1-04-de-E02-r1",
+  "locale": "de",
+  "semanticGroup": "E02",
+  "sourceWholeFileSHA256": "d5e836189fcb4e4f58a86e3a06236b18b06572bad7a287b2eec95c19a21c7ce2",
+  "sourceBindings": [
+    {
+      "pointer": "/examples/1/situation",
+      "text": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.",
+      "sha256": "e9578c3fe54260c5999d812a749bb633ab74a77d1ba3ec9fe9770e38f449feef"
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "text": "Wählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.",
+      "sha256": "074e8e328ca6c601ec6f60442f34ef04e7b6edd3ad03d5583dac4f46b1ec600a"
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "text": "Erklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.",
+      "sha256": "54aac2ca7873ad4176c0f84d3f6bcf5e4800455f4c280ef3c5e0521a064cf5e9"
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "text": "Prüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.",
+      "sha256": "d190973a960af5bdd2af2f9c95efbb8df661cf899f9eb7451e776fa547c67f2c"
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "text": "Behältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+      "sha256": "586b0bada42b7419c0e086021b1c40d6f91ebb3bf0aa7fcf4f6042df620394b2"
+    }
+  ],
+  "spokenText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+  "spokenTextSHA256": "0034b4bb96d477ae821b8acfd4eca982f360f5311bea80a138f24c41ba723cc1",
+  "displayText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+  "captionText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+  "spokenAdaptationChanges": [],
+  "voice": "Charon",
+  "speakerId": "A",
+  "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+  "model": "gemini-3.8-flash-tts",
+  "delivery": "Erkläre dieses Beispiel in natürlichem, klarem Deutsch. Lies nur den zusammenhängenden Sprechtext. Bewahre Bedingungen, mögliche Verunreinigung und die Unterscheidung zwischen geeignetem Material und geprüfter Sauberkeit. Keine zusätzlichen Ergebnisse, pauschalen Metallverbote oder Zusammenfassungen.",
+  "requestFingerprintSHA256": "909f186ca84e429c15f5cc5f53db5515ca53d07792611e4c6f65ee5df1d33dc2",
+  "plannedMaximumTTSCalls": 1,
+  "plannedMaximumActualBlindReviewCalls": 1,
+  "plannedMaximumASRInvocations": 1,
+  "automaticRetries": 0,
+  "actualAudio": null,
+  "timings": null,
+  "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance."
+}

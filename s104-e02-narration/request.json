@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "scope": "S104_E02_FOUR_LOCALE_ONE_COHERENT_WORKED_EXAMPLE_ONLY",
+  "stepId": "S1-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s104-e02-narration-20261022-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 4,
+  "maximumBlindAudioReviewCalls": 4,
+  "maximumASRInvocations": 4,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ALL_FOUR_TTS_AND_EACH_IMMEDIATE_UPLOAD_BEFORE_ISOLATED_DIAGNOSTICS",
+  "units": [
+    {
+      "unitId": "S1-04-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceWholeFileSHA256": "3c08d5e32911768c76ece01e4a83f55c36baab06635a0ce15c7f6f8d039f69b6",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.",
+          "sha256": "4fb811dd08a1afe5e0fa64a18c30cdfd203cbd83be1fcb32a3a081fa643b14cb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "اختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.",
+          "sha256": "81f120de708f0986e226b7cfdf51dc52a493229da34633883831957d0ac28514"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.",
+          "sha256": "92b4012003ef2d7f120c1405063b066df0e7e6a8b7474c5a3007b1fa5547936e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "افحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.",
+          "sha256": "2d96b756d6a0fe91cf564d94f8a5e789d109b42bb3876da10cbff6f67438f43e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "اختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+          "sha256": "679f1b5e1d6f761bc2179aceea2eed6dd5058c5e10fa4b9436c1fe98eb0a230e"
+        }
+      ],
+      "spokenText": "قدّامك جردل بلاستيك نضيف لجمع العيّنات، وجردل مجلفن سطحه من جوّه متآكل. الاتنين يسعوا كل العيّنات الجزئية.\n\nلمهمة تحليل العناصر دي، اختار الجردل البلاستيك اللي اتأكدت من نضافته.\n\nطبقة الجلفنة ممكن تدخل زنك في العيّنة، والصدأ أو شظايا المعدن ممكن كمان يغيّروا قياسات مهمة.\n\nوافحص الجردل البلاستيك نفسه: هل فيه بقايا تربة أو سماد أو كيماويات؟ كونه بلاستيك مش دليل لوحده إنه نضيف.\n\nيعني لازم تفحص حاجتين مع بعض: خامة الوعاء مناسبة للمهمة، وكمان نضافته متأكَّد منها.",
+      "spokenTextSHA256": "5a2d4ce77fe1b19f1537a5024a71399f2af40fa95c7a6c85253ed714b7e7786f",
+      "displayText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.\n\nاختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.\n\nاشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.\n\nافحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.\n\nاختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+      "captionText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.\n\nاختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.\n\nاشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.\n\nافحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.\n\nاختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+      "spokenAdaptationChanges": [
+        {
+          "pointer": "/examples/1/situation",
+          "displayText": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.",
+          "spokenText": "قدّامك جردل بلاستيك نضيف لجمع العيّنات، وجردل مجلفن سطحه من جوّه متآكل. الاتنين يسعوا كل العيّنات الجزئية.",
+          "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "displayText": "اختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.",
+          "spokenText": "لمهمة تحليل العناصر دي، اختار الجردل البلاستيك اللي اتأكدت من نضافته.",
+          "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "displayText": "اشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.",
+          "spokenText": "طبقة الجلفنة ممكن تدخل زنك في العيّنة، والصدأ أو شظايا المعدن ممكن كمان يغيّروا قياسات مهمة.",
+          "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "displayText": "افحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.",
+          "spokenText": "وافحص الجردل البلاستيك نفسه: هل فيه بقايا تربة أو سماد أو كيماويات؟ كونه بلاستيك مش دليل لوحده إنه نضيف.",
+          "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "displayText": "اختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+          "spokenText": "يعني لازم تفحص حاجتين مع بعض: خامة الوعاء مناسبة للمهمة، وكمان نضافته متأكَّد منها.",
+          "purpose": "Natural Egyptian connected explanation, with original condition, uncertainty and conclusion preserved; captions unchanged."
+        }
+      ],
+      "voice": "Charon",
+      "speakerId": "A",
+      "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية.",
+      "requestFingerprintSHA256": "f1db112b6e1f9bc5b0093f8095a67805357d45f0ac70d69f899b35ce444922ea",
+      "plannedMaximumTTSCalls": 1,
+      "plannedMaximumActualBlindReviewCalls": 1,
+      "plannedMaximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "actualAudio": null,
+      "timings": null,
+      "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance.",
+      "id": "S1-04-ar-EG-E02-r1",
+      "spokenTextSha256": "5a2d4ce77fe1b19f1537a5024a71399f2af40fa95c7a6c85253ed714b7e7786f",
+      "requestFingerprintSha256": "f1db112b6e1f9bc5b0093f8095a67805357d45f0ac70d69f899b35ce444922ea",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "scientificMeaning": "قدامك جردل جمع بلاستيك نضيف وجردل مجلفن سطحه الداخلي متآكل. الاتنين يسعوا كل العينات الجزئية.\n\nاختار الجردل البلاستيك اللي اتأكدت من نضافته لمهمة تحليل العناصر دي.\n\nاشرح إن طبقة الجلفنة ممكن تدخل زنك، والصدأ أو شظايا المعدن ممكن يشوهوا قياسات مهمة.\n\nافحص الجردل البلاستيك نفسه لبقايا تربة أو سماد أو كيماويات. كونه بلاستيك ما يثبتش لوحده إنه نضيف.\n\nاختيار خامة الوعاء ونضافته فحصين مطلوبين مع بعض.",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "releaseGate": {
+        "kind": "TEACHING_WORKED_EXAMPLE_ONLY",
+        "locale": "ar-EG"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "05d1808c7d38b3a87530f9146f005cb056d131abffeaa734804e47a8ac3ab035"
+    },
+    {
+      "unitId": "S1-04-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.",
+          "sha256": "980feefadb949417e30b02331d0169fd341ec93be9d8236bfaf49ac8f7b56b99"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Choose the verified clean plastic bucket for this nutrient-sampling task.",
+          "sha256": "b745d7938c7e067720fae7d6693ed95dd923fbb8ab36cfb267529cc4cd79d772"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Explain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.",
+          "sha256": "b20bee1143c273138af54bf09d0b529010cde4c4e74d0783de55858bccc98ff3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Check the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.",
+          "sha256": "2bb84e4729b81c0804c3c32734050b2a68375e72669efffe74149c4172935cb1"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Container choice and cleanliness are two checks, not alternatives.",
+          "sha256": "8684a4e1a074ef92622c1ea7e8f1fb38a0b51d2444c2ea85d08e5eb85d15336f"
+        }
+      ],
+      "spokenText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+      "spokenTextSHA256": "862370c9f22202aeff4256c85691b2e0cf7e83fce9ba8040505e33398c825162",
+      "displayText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+      "captionText": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+      "spokenAdaptationChanges": [],
+      "voice": "Charon",
+      "speakerId": "A",
+      "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain the supplied example naturally in clear English. Read only the connected spoken text. Preserve conditional choice, possible contamination and the distinction between suitable material and verified cleanliness. Do not add a result, universal ban on metal tools or extra summary.",
+      "requestFingerprintSHA256": "579bf4791937c177681397cf3aeff221a87482fd44f1d28886e44334827bae0e",
+      "plannedMaximumTTSCalls": 1,
+      "plannedMaximumActualBlindReviewCalls": 1,
+      "plannedMaximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "actualAudio": null,
+      "timings": null,
+      "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance.",
+      "id": "S1-04-en-E02-r1",
+      "spokenTextSha256": "862370c9f22202aeff4256c85691b2e0cf7e83fce9ba8040505e33398c825162",
+      "requestFingerprintSha256": "579bf4791937c177681397cf3aeff221a87482fd44f1d28886e44334827bae0e",
+      "deliverySha256": "251c33860c38178e2c033fadd56aec72f853c3a4bfc049e86a08747df55b2db5",
+      "scientificMeaning": "There is a clean plastic sampling bucket and a galvanized bucket with a worn inner surface. Both can hold all the subsamples.\n\nChoose the verified clean plastic bucket for this nutrient-sampling task.\n\nExplain that the galvanized coating can introduce zinc, and rust or metal flakes may also distort relevant measurements.\n\nCheck the plastic bucket for old soil, fertilizer or chemical residue too. Plastic material alone does not prove cleanliness.\n\nContainer choice and cleanliness are two checks, not alternatives.",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "releaseGate": {
+        "kind": "TEACHING_WORKED_EXAMPLE_ONLY",
+        "locale": "en"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "4d2d637752470354d2dc80d9838223e997c7f9c7158c705a87332835c9dcd4ab"
+    },
+    {
+      "unitId": "S1-04-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.",
+          "sha256": "e8b9fe81ce1dc1b268f1414dbd332b450ba1c466e911e8408bcc851aa08ac1e9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Per questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.",
+          "sha256": "bcdb467b3de09a96d6424d7297ed18231549c0a8c391d58d03adac73c8bbd14c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Spiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.",
+          "sha256": "f5df4a9dfec1d62c31c1e46ce29bd5879108e04f5aaf2fa5a64943b0af2ca0fe"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Controlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.",
+          "sha256": "eb044300163bff0c5b4772f636469ddfe4a348eb5c9d12c19061b0c339875274"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Materiale del recipiente e pulizia sono due verifiche da fare insieme.",
+          "sha256": "46f833fdde704f26828980e901152384f39d249f183d1832ed87bd72a1cbde87"
+        }
+      ],
+      "spokenText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+      "spokenTextSHA256": "2eb819061a25e45bd75be65a425ab67d4d3e1e4a5ed7a8d56e85e5ac9f42dce8",
+      "displayText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+      "captionText": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+      "spokenAdaptationChanges": [],
+      "voice": "Charon",
+      "speakerId": "A",
+      "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega questo esempio in italiano naturale e chiaro. Leggi soltanto il testo continuo. Mantieni le condizioni, la possibilità di contaminazione e la distinzione tra materiale adatto e pulizia verificata. Non aggiungere risultati, divieti generali sugli strumenti metallici o riepiloghi.",
+      "requestFingerprintSHA256": "3d833e787186ba37207d33d6c6c5182d099f764baec347e0d6e30cb249139711",
+      "plannedMaximumTTSCalls": 1,
+      "plannedMaximumActualBlindReviewCalls": 1,
+      "plannedMaximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "actualAudio": null,
+      "timings": null,
+      "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance.",
+      "id": "S1-04-it-E02-r1",
+      "spokenTextSha256": "2eb819061a25e45bd75be65a425ab67d4d3e1e4a5ed7a8d56e85e5ac9f42dce8",
+      "requestFingerprintSha256": "3d833e787186ba37207d33d6c6c5182d099f764baec347e0d6e30cb249139711",
+      "deliverySha256": "3dbb8a7cd08ef6d85f22dcd59e91f89339ad59e76522d8359a052a98939042df",
+      "scientificMeaning": "Ci sono un secchio di plastica pulito per i campioni e uno zincato con superficie interna consumata. Entrambi contengono tutti i sottocampioni.\n\nPer questa analisi dei nutrienti scegli il secchio di plastica di cui hai verificato la pulizia.\n\nSpiega che il rivestimento zincato può aggiungere zinco, mentre ruggine o scaglie metalliche possono alterare misurazioni pertinenti.\n\nControlla anche il secchio di plastica per residui di terreno, fertilizzante o prodotti chimici. Il solo materiale plastico non ne prova la pulizia.\n\nMateriale del recipiente e pulizia sono due verifiche da fare insieme.",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "releaseGate": {
+        "kind": "TEACHING_WORKED_EXAMPLE_ONLY",
+        "locale": "it"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "1c4fce11f9c018981223fc6d49ee517b01b880343d6d742805fc0bed86098bba"
+    },
+    {
+      "unitId": "S1-04-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceWholeFileSHA256": "d5e836189fcb4e4f58a86e3a06236b18b06572bad7a287b2eec95c19a21c7ce2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.",
+          "sha256": "e9578c3fe54260c5999d812a749bb633ab74a77d1ba3ec9fe9770e38f449feef"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Wählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.",
+          "sha256": "074e8e328ca6c601ec6f60442f34ef04e7b6edd3ad03d5583dac4f46b1ec600a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Erklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.",
+          "sha256": "54aac2ca7873ad4176c0f84d3f6bcf5e4800455f4c280ef3c5e0521a064cf5e9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Prüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.",
+          "sha256": "d190973a960af5bdd2af2f9c95efbb8df661cf899f9eb7451e776fa547c67f2c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Behältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+          "sha256": "586b0bada42b7419c0e086021b1c40d6f91ebb3bf0aa7fcf4f6042df620394b2"
+        }
+      ],
+      "spokenText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+      "spokenTextSHA256": "0034b4bb96d477ae821b8acfd4eca982f360f5311bea80a138f24c41ba723cc1",
+      "displayText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+      "captionText": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+      "spokenAdaptationChanges": [],
+      "voice": "Charon",
+      "speakerId": "A",
+      "voiceScope": "One coherent worked example; subsequent full lesson retains alternating voices without fixed roles.",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre dieses Beispiel in natürlichem, klarem Deutsch. Lies nur den zusammenhängenden Sprechtext. Bewahre Bedingungen, mögliche Verunreinigung und die Unterscheidung zwischen geeignetem Material und geprüfter Sauberkeit. Keine zusätzlichen Ergebnisse, pauschalen Metallverbote oder Zusammenfassungen.",
+      "requestFingerprintSHA256": "909f186ca84e429c15f5cc5f53db5515ca53d07792611e4c6f65ee5df1d33dc2",
+      "plannedMaximumTTSCalls": 1,
+      "plannedMaximumActualBlindReviewCalls": 1,
+      "plannedMaximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "actualAudio": null,
+      "timings": null,
+      "reuseStatus": "No dispatch until exact accepted recording/request inventory is checked. Filename absence alone is not cache clearance.",
+      "id": "S1-04-de-E02-r1",
+      "spokenTextSha256": "0034b4bb96d477ae821b8acfd4eca982f360f5311bea80a138f24c41ba723cc1",
+      "requestFingerprintSha256": "909f186ca84e429c15f5cc5f53db5515ca53d07792611e4c6f65ee5df1d33dc2",
+      "deliverySha256": "f5011c27c12f9d8b429d99f7b4c9a2144715255ad3ed9fef57b527eeda551e5c",
+      "scientificMeaning": "Zur Wahl stehen ein sauberer Plastikeimer für Proben und ein verzinkter Eimer mit abgenutzter Innenfläche. Beide fassen alle Einzelproben.\n\nWählen Sie für diese Nährstoffprobenahme den nachweislich sauberen Plastikeimer.\n\nErklären Sie, dass die Verzinkung Zink eintragen kann und Rost oder Metallsplitter ebenfalls Messungen verfälschen können.\n\nPrüfen Sie auch den Plastikeimer auf alte Boden-, Dünger- oder Chemikalienreste. Kunststoff allein beweist keine Sauberkeit.\n\nBehältermaterial und Sauberkeit sind zwei gemeinsame Prüfungen.",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "releaseGate": {
+        "kind": "TEACHING_WORKED_EXAMPLE_ONLY",
+        "locale": "de"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "382dc088eb9acf960ed83fc52a44e568ec586632a2c3c0ba0141cb563217f2ac"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false
+}
