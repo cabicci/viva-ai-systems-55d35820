@@ -1,0 +1,1 @@
+1fixed bounded exactPCM contextdiagnostics. Aggregate1blindPOST/0TTS/ASR/GET/retry. Generic unhintedprompt/factualexcerptboundaries, no sourcewords/allegations supplied. Sourcekind:APPROVED_THREE_SEGMENT_REPAIR_CANDIDATE_NOT_ORIGINAL_PROVIDER_WAV. Original files unchanged. Noautomaticrepair, extra audio gaps, assembly or adoption by this diagnostic.
