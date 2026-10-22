@@ -1,0 +1,33 @@
+{
+  "scope": "S1_05_EN004_TWO_COHERENT_PASSAGE_REPAIRS_ONLY",
+  "notForModel": true,
+  "criteria": [
+    {
+      "unitId": "S1-05-en004-repair-r1-001",
+      "exactExpectedSpokenText": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "preserve": [
+        "Ten points",
+        "old fertilizer band",
+        "a drainage line or an equipment track",
+        "consistently biased picture",
+        "helps cover more of its variation",
+        "does not solve the problem"
+      ]
+    },
+    {
+      "unitId": "S1-05-en004-repair-r1-002",
+      "exactExpectedSpokenText": "Sampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "preserve": [
+        "Sampling bias",
+        "systematic mismatch",
+        "collected material",
+        "area or layer",
+        "intended to represent"
+      ]
+    }
+  ],
+  "diagnosis": "Corroborated actual-audio vocal artifact after fertilizer band; valid second reviewer systematic false-start and collecting/collected concern. Prior invalid129s timestamp remains a reviewer defect. No human-listening certification.",
+  "voiceContinuity": "Actual candidate and preserved same-voice original attached without script. Same voice name is not perceptual identity approval.",
+  "boundaryStatus": "No cut bounds accepted. Paragraph onset has no positive original ASR word gap; lexical gaps elsewhere are not silence proof. Candidate and full-context joins require independent root review; original outsidePCM must remain exact.",
+  "adoptionApproved": false
+}

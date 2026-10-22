@@ -1,0 +1,271 @@
+name: S1-05 EN004 two English coherent passages with isolated diagnostics
+permissions:
+  contents: read
+concurrency:
+  group: s105-en004-repair-passages-06a3541adc0a31ca0cf6ba117757dd266e0b2cb7dccfae5419ed7caa7dd4b563
+  cancel-in-progress: false
+env:
+  PACKAGE: s105-en004-repair-passages
+  REQUEST_SHA: 06a3541adc0a31ca0cf6ba117757dd266e0b2cb7dccfae5419ed7caa7dd4b563
+  WORKER_SHA: 526dfccbdf52bb0f05b460ab566de4f2b5b8e485a0250adedc137c49f8d7959b
+  FREEZE_SHA: 6339d3980e6a14b952f120dce240d71ef18365a253be6d7a99a0a928bcf8a1a4
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+jobs:
+  repair:
+    if: github.run_attempt == 1 && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s105-en004-repair-passages-20261022-r1'
+      && github.event.created == true && github.event.repository.private == false && github.repository_id == '1272666418'
+      && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact finite request and preserved original PCM
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        python worker.py analyze-originals
+
+        '
+      id: validate
+    - name: Preserve original WAVs and exact byte identity record
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-originals-and-analysis
+        path: '${{ env.PACKAGE }}/originals/
+
+          ${{ env.PACKAGE }}/output/original-analysis.json
+
+          '
+        if-no-files-found: error
+        retention-days: 30
+      id: originals
+    - name: Verify both exact preferred models without fallback
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+      id: preflight
+    - name: Install hash-verified Whisper before any generation
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+      id: runtime
+    - name: One TTS candidate S1-05-en004-repair-r1-001
+      id: tts1
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-05-en004-repair-r1-001
+
+        '
+      if: always() && steps.validate.outcome == 'success' && steps.originals.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Upload completed candidate before diagnostics S1-05-en004-repair-r1-001
+      id: upload1
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-S1-05-en004-repair-r1-001-audio
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-repair-r1-001/
+        if-no-files-found: error
+        retention-days: 30
+      if: always() && steps.tts1.outcome == 'success'
+      continue-on-error: true
+    - name: Record exact upload S1-05-en004-repair-r1-001
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload1.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload1.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-en004-repair-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: receipt1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS candidate S1-05-en004-repair-r1-002
+      id: tts2
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-05-en004-repair-r1-002
+
+        '
+      if: always() && steps.validate.outcome == 'success' && steps.originals.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Upload completed candidate before diagnostics S1-05-en004-repair-r1-002
+      id: upload2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-S1-05-en004-repair-r1-002-audio
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-repair-r1-002/
+        if-no-files-found: error
+        retention-days: 30
+      if: always() && steps.tts2.outcome == 'success'
+      continue-on-error: true
+    - name: Record exact upload S1-05-en004-repair-r1-002
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload2.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload2.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-en004-repair-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: receipt2
+      if: always() && steps.tts2.outcome == 'success' && steps.upload2.outcome == 'success'
+      continue-on-error: true
+    - name: One blind new-original voice comparison S1-05-en004-repair-r1-001
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-05-en004-repair-r1-001
+
+        '
+      id: review1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+    - name: One independent unprompted English word ASR S1-05-en004-repair-r1-001
+      id: asr1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-05-en004-repair-r1-001
+
+        '
+    - name: Preserve offline source comparison and partial errors S1-05-en004-repair-r1-001
+      id: compare1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-05-en004-repair-r1-001
+
+        '
+    - name: Preserve finished or failed diagnostics S1-05-en004-repair-r1-001
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-S1-05-en004-repair-r1-001-review
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-repair-r1-001/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One blind new-original voice comparison S1-05-en004-repair-r1-002
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-05-en004-repair-r1-002
+
+        '
+      id: review2
+      if: always() && steps.tts2.outcome == 'success' && steps.upload2.outcome == 'success' && steps.receipt2.outcome == 'success'
+      continue-on-error: true
+    - name: One independent unprompted English word ASR S1-05-en004-repair-r1-002
+      id: asr2
+      if: always() && steps.tts2.outcome == 'success' && steps.upload2.outcome == 'success' && steps.receipt2.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-05-en004-repair-r1-002
+
+        '
+    - name: Preserve offline source comparison and partial errors S1-05-en004-repair-r1-002
+      id: compare2
+      if: always() && steps.tts2.outcome == 'success' && steps.upload2.outcome == 'success' && steps.receipt2.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-05-en004-repair-r1-002
+
+        '
+    - name: Preserve finished or failed diagnostics S1-05-en004-repair-r1-002
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-S1-05-en004-repair-r1-002-review
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-repair-r1-002/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: Summarize all outcomes and fail if any diagnostics are incomplete
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+      if: always()
+    - name: Preserve entire bounded attempt evidence
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-repair-r1-complete-evidence
+        retention-days: 30
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/source-unit-snapshot.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/originals/S1-05-en-r1-004.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          ${{ env.PACKAGE }}/s105-en004-repair-passages.yml'
+'on':
+  push:
+    branches:
+    - work/soil-s105-en004-repair-passages-20261022-r1
+    paths:
+    - s105-en004-repair-passages/request.json

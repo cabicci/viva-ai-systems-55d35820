@@ -1,0 +1,23 @@
+{
+  "atUTC": "2026-10-22T16:36:55.071076+00:00",
+  "scope": "S1_05_EN004_TWO_COHERENT_PASSAGE_REPAIRS_ONLY",
+  "matchingNewRequestIdentities": [],
+  "requestFingerprints": [
+    "d3f1e7097f8742e307b6b3f4ba149b0a335325c38dfbf00eda8582c37c7584d9",
+    "b470665de1c634c8c19cca9eaeeccac4d7015db2389dab7b1251b81a90de57f7"
+  ],
+  "existingAcceptedOriginalRetained": true,
+  "localScopeChecked": [
+    "en004-repair-passages-r1/originals",
+    "existing original diagnostic/source identity receipts"
+  ],
+  "localNewCandidateOutputsPresent": false,
+  "exactNewBranchLiveRead": {
+    "branch": "work/soil-s105-en004-repair-passages-20261022-r1",
+    "totalRuns": 0,
+    "readCommand": "gh run list --repo cabicci/viva-ai-systems-55d35820 --branch work/soil-s105-en004-repair-passages-20261022-r1 --json databaseId,headSha,status,conclusion,event --limit 10",
+    "result": []
+  },
+  "noProviderCallOrDispatchPerformed": true,
+  "publicationMustRecheckBranchAbsence": true
+}

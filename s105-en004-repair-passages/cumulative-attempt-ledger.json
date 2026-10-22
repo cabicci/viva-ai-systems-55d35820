@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "originalUnit": {
+    "id": "S1-05-en-r1-004",
+    "tts": 1,
+    "actualBlindReviews": 1,
+    "terminalASRSteps": 1,
+    "wavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+    "originalBatchRunId": 39761235675
+  },
+  "additionalExistingDiagnostic": {
+    "runId": 39812595952,
+    "blindReview": 1,
+    "metadataGET": 1,
+    "tts": 0,
+    "asr": 0,
+    "retries": 0,
+    "rootAuditSha256": "c2a3b80ded3e0b8616f15b5ec97ad10019fbaf87b8f6a689a9c9337f21becf1d"
+  },
+  "newBudget": {
+    "tts": 2,
+    "blindReview": 2,
+    "asr": 2,
+    "metadataGET": 2,
+    "retries": 0
+  },
+  "newCallsPerformed": 0,
+  "notAutomaticRetry": "New coherent-passage diagnosis and finite owner-authorized correction scope; preserves all original attempts and invalid historical review timing."
+}

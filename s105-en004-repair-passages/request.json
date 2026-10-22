@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_05_EN004_TWO_COHERENT_PASSAGE_REPAIRS_ONLY",
+  "stepId": "S1-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s105-en004-repair-passages-20261022-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 2,
+  "maximumBlindAudioReviewCalls": 2,
+  "maximumASRInvocations": 2,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "sourceSnapshot": "provenance/source-unit-snapshot.json",
+  "sourceSnapshotSha256": "06d5e27813ed4274075c4c04984af9d2c0b8b4fb89ec4f1863ee03725081dd2a",
+  "units": [
+    {
+      "id": "S1-05-en004-repair-r1-001",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "scientificMeaning": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "displayText": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "captionText": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "spokenText": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "spokenTextSha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text, as connected explanatory passages with natural pauses. Preserve every quantity, unit, negation, condition, example qualification and planning-versus-observed-practice distinction. No character voices, music, introductions or extra summaries. Keep the same stable delivery across this locale. The letter P identifies a planned point; the route shape is the letter W.",
+      "deliverySha256": "f0d725a19866ed0f5e0802eb74299617a1eff8408ceaca2172c9d7f3ba336fef",
+      "requestFingerprintSha256": "d3f1e7097f8742e307b6b3f4ba149b0a335325c38dfbf00eda8582c37c7584d9",
+      "criticalContentToPreserve": [
+        "Ten points",
+        "old fertilizer band",
+        "a drainage line or an equipment track",
+        "consistently biased picture",
+        "helps cover more of its variation",
+        "does not solve the problem"
+      ],
+      "originalUnitId": "S1-05-en-r1-004",
+      "originalPath": "originals/S1-05-en-r1-004.wav",
+      "originalWavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "sourcePassageBeforeCorrection": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "sourcePassageBeforeCorrectionSha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+          "sha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1"
+        }
+      ],
+      "sourceFileSHA256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0",
+      "approvedSpokenOnlyChange": null,
+      "visibleSourceUnchanged": true,
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "originalSelectedUnitScope": "COMPLETE_SOURCE_PARAGRAPH",
+      "cutsOrJoinsApproved": false,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "timingSource": null,
+      "actualAudio": null
+    },
+    {
+      "id": "S1-05-en004-repair-r1-002",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "scientificMeaning": "Sampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "displayText": "Sampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "captionText": "Sampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "spokenText": "Sampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "spokenTextSha256": "a43da6f7f384eb6a1e72cce2c8448e824d15cf6ee0ae9ae371cfbcc6f2d49da4",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text, as connected explanatory passages with natural pauses. Preserve every quantity, unit, negation, condition, example qualification and planning-versus-observed-practice distinction. No character voices, music, introductions or extra summaries. Keep the same stable delivery across this locale. The letter P identifies a planned point; the route shape is the letter W.",
+      "deliverySha256": "f0d725a19866ed0f5e0802eb74299617a1eff8408ceaca2172c9d7f3ba336fef",
+      "requestFingerprintSha256": "b470665de1c634c8c19cca9eaeeccac4d7015db2389dab7b1251b81a90de57f7",
+      "criticalContentToPreserve": [
+        "Sampling bias",
+        "systematic mismatch",
+        "collected material",
+        "area or layer",
+        "intended to represent"
+      ],
+      "originalUnitId": "S1-05-en-r1-004",
+      "originalPath": "originals/S1-05-en-r1-004.wav",
+      "originalWavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "sourcePassageBeforeCorrection": "Sampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "sourcePassageBeforeCorrectionSha256": "a43da6f7f384eb6a1e72cce2c8448e824d15cf6ee0ae9ae371cfbcc6f2d49da4",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Sampling bias",
+          "sha256": "1b7e67606638c24d6fd4567b366a336e71edf9371beedf1214f82732fce16fb7"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A systematic mismatch between collected material and the area or layer it is intended to represent.",
+          "sha256": "b50aa805761d00f5483970af51e85068302fe9843bceef9e2d87f8835302ea02"
+        }
+      ],
+      "sourceFileSHA256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0",
+      "approvedSpokenOnlyChange": null,
+      "visibleSourceUnchanged": true,
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "originalSelectedUnitScope": "COMPLETE_SOURCE_GLOSSARY_TERM_AND_DEFINITION",
+      "cutsOrJoinsApproved": false,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "timingSource": null,
+      "actualAudio": null
+    }
+  ],
+  "cutsAndJoinsAccepted": false,
+  "assemblyPerformed": false,
+  "originalOutsideSelectedPassagesMustRemainUnchanged": true,
+  "executionOrder": "ALL_TWO_TTS_AND_EACH_IMMEDIATE_UPLOAD_BEFORE_ISOLATED_DIAGNOSTICS"
+}

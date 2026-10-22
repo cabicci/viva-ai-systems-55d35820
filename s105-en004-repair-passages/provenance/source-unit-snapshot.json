@@ -1,0 +1,929 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_05_EN004_TWO_COHERENT_PASSAGE_REPAIRS_ONLY",
+  "model": "gemini-3.8-flash-tts",
+  "originalRequestSha256": "35b2cb870157a0d9dd0179f1e5ef5e33ef7f44b14a36edbd42ef46edf2ac5b63",
+  "originalFullUnit": {
+    "id": "S1-05-en-r1-004",
+    "locale": "en",
+    "speakerId": "B",
+    "voice": "Kore",
+    "semanticGroup": "R03",
+    "originalText": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+    "displayText": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+    "captionText": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+    "spokenText": "Draw a zigzag or double-U-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P zero one to P ten once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA double-U shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+    "spokenTextSha256": "4babbdb7bcea6e545860e6bc3e11d71d884d3f8784957491c6ee53793d6214ff",
+    "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text, as connected explanatory passages with natural pauses. Preserve every quantity, unit, negation, condition, example qualification and planning-versus-observed-practice distinction. No character voices, music, introductions or extra summaries. Keep the same stable delivery across this locale. The letter P identifies a planned point; the route shape is the letter W.",
+    "deliverySha256": "f0d725a19866ed0f5e0802eb74299617a1eff8408ceaca2172c9d7f3ba336fef",
+    "requestFingerprintSha256": "7ba2919b6d9006f2c18c71484201376c6683042d6c125c1f262c304552fddd26",
+    "sourceFileSHA256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0",
+    "sourceOriginalFileSHA256": "3f2931bfb18f3727bc1e7f881e60af09dca4c51c24412a7aeae768d08131affe",
+    "sourceBindings": [
+      {
+        "pointer": "/reading/2/paragraphs/0",
+        "text": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.",
+        "sha256": "7f65dbcc009b2d251e04840486890791d1a2e4c2bd78f4df9ba82875bbccee7c"
+      },
+      {
+        "pointer": "/reading/2/paragraphs/1",
+        "text": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+        "sha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1"
+      },
+      {
+        "pointer": "/reading/2/paragraphs/2",
+        "text": "A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.",
+        "sha256": "8a2c12629377ac3b0b49f50a89ee0cac8a265bee548c74e29f59c6dcebde328a"
+      },
+      {
+        "pointer": "/reading/2/paragraphs/3",
+        "text": "If drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.",
+        "sha256": "d0a5bda9762646e93fad1282991c69255e77ee8232d655057d8828e24dc3e430"
+      },
+      {
+        "pointer": "/glossary/1/0",
+        "text": "Sampling bias",
+        "sha256": "1b7e67606638c24d6fd4567b366a336e71edf9371beedf1214f82732fce16fb7"
+      },
+      {
+        "pointer": "/glossary/1/1",
+        "text": "A systematic mismatch between collected material and the area or layer it is intended to represent.",
+        "sha256": "b50aa805761d00f5483970af51e85068302fe9843bceef9e2d87f8835302ea02"
+      }
+    ],
+    "sourceSceneUnitIds": [
+      "S1-05-R03-tenLocations",
+      "S1-05-R03-biasedLine",
+      "S1-05-R03-randomness",
+      "S1-05-R03-supportedAndReplace"
+    ],
+    "spokenAdaptationChanges": [
+      {
+        "written": "Sampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+        "spoken": "Sampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+        "purpose": "Connect a source glossary term to its exact definition in the same coherent passage"
+      },
+      {
+        "written": "P01 to P10",
+        "spoken": "P zero one to P ten",
+        "occurrences": 1,
+        "purpose": "Source-preserving spoken notation or selective Egyptian pronunciation/wording"
+      },
+      {
+        "written": "W-shaped",
+        "spoken": "double-U-shaped",
+        "occurrences": 1,
+        "purpose": "Source-preserving spoken notation or selective Egyptian pronunciation/wording"
+      },
+      {
+        "written": "W shape",
+        "spoken": "double-U shape",
+        "occurrences": 1,
+        "purpose": "Source-preserving spoken notation or selective Egyptian pronunciation/wording"
+      }
+    ],
+    "maximumProviderCalls": 1,
+    "estimatedDuration": null,
+    "actualAudio": null,
+    "releaseGate": "Teaching/guided planning only. Assessment prompts, solutions, private rubrics and feedback excluded. No observed physical competency or practical pass."
+  },
+  "units": [
+    {
+      "candidateUnitId": "S1-05-en004-repair-r1-001",
+      "originalUnitId": "S1-05-en-r1-004",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "originalFullSpokenText": "Draw a zigzag or double-U-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P zero one to P ten once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA double-U shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "selectedSourcePassage": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "selectedSourcePassageSHA256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text, as connected explanatory passages with natural pauses. Preserve every quantity, unit, negation, condition, example qualification and planning-versus-observed-practice distinction. No character voices, music, introductions or extra summaries. Keep the same stable delivery across this locale. The letter P identifies a planned point; the route shape is the letter W.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+          "sha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1"
+        }
+      ],
+      "sourceOriginalFileSHA256": "3f2931bfb18f3727bc1e7f881e60af09dca4c51c24412a7aeae768d08131affe",
+      "sourceProjectionSHA256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0",
+      "diagnosis": "Two independent actual-audio reviewers describe vocal artifact after fertilizer band, within the complete paragraph. No human acoustic claim.",
+      "actualOriginalASRWordIndices": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116
+      ],
+      "actualOriginalASRWords": [
+        {
+          "actualWordIndex": 60,
+          "segmentId": 5,
+          "wordIndex": 0,
+          "word": " 10",
+          "start": 24.78,
+          "end": 26.04,
+          "probability": 0.33261626958847046
+        },
+        {
+          "actualWordIndex": 61,
+          "segmentId": 5,
+          "wordIndex": 1,
+          "word": " points",
+          "start": 26.04,
+          "end": 26.36,
+          "probability": 0.951197624206543
+        },
+        {
+          "actualWordIndex": 62,
+          "segmentId": 5,
+          "wordIndex": 2,
+          "word": " down",
+          "start": 26.36,
+          "end": 26.74,
+          "probability": 0.9956716299057007
+        },
+        {
+          "actualWordIndex": 63,
+          "segmentId": 5,
+          "wordIndex": 3,
+          "word": " one",
+          "start": 26.74,
+          "end": 27.04,
+          "probability": 0.9508381485939026
+        },
+        {
+          "actualWordIndex": 64,
+          "segmentId": 5,
+          "wordIndex": 4,
+          "word": " straight",
+          "start": 27.04,
+          "end": 27.34,
+          "probability": 0.9976000189781189
+        },
+        {
+          "actualWordIndex": 65,
+          "segmentId": 5,
+          "wordIndex": 5,
+          "word": " line",
+          "start": 27.34,
+          "end": 27.72,
+          "probability": 0.9910652041435242
+        },
+        {
+          "actualWordIndex": 66,
+          "segmentId": 5,
+          "wordIndex": 6,
+          "word": " may",
+          "start": 27.72,
+          "end": 28.14,
+          "probability": 0.9656860828399658
+        },
+        {
+          "actualWordIndex": 67,
+          "segmentId": 5,
+          "wordIndex": 7,
+          "word": " follow",
+          "start": 28.14,
+          "end": 28.52,
+          "probability": 0.9951474070549011
+        },
+        {
+          "actualWordIndex": 68,
+          "segmentId": 5,
+          "wordIndex": 8,
+          "word": " an",
+          "start": 28.52,
+          "end": 28.76,
+          "probability": 0.984984278678894
+        },
+        {
+          "actualWordIndex": 69,
+          "segmentId": 5,
+          "wordIndex": 9,
+          "word": " old",
+          "start": 28.76,
+          "end": 28.94,
+          "probability": 0.9968897700309753
+        },
+        {
+          "actualWordIndex": 70,
+          "segmentId": 5,
+          "wordIndex": 10,
+          "word": " fertilizer",
+          "start": 28.94,
+          "end": 29.36,
+          "probability": 0.9956560134887695
+        },
+        {
+          "actualWordIndex": 71,
+          "segmentId": 5,
+          "wordIndex": 11,
+          "word": " band,",
+          "start": 29.36,
+          "end": 29.88,
+          "probability": 0.9461231827735901
+        },
+        {
+          "actualWordIndex": 72,
+          "segmentId": 5,
+          "wordIndex": 12,
+          "word": " a",
+          "start": 30.2,
+          "end": 30.48,
+          "probability": 0.9657115340232849
+        },
+        {
+          "actualWordIndex": 73,
+          "segmentId": 5,
+          "wordIndex": 13,
+          "word": " drainage",
+          "start": 30.48,
+          "end": 30.88,
+          "probability": 0.9984667301177979
+        },
+        {
+          "actualWordIndex": 74,
+          "segmentId": 5,
+          "wordIndex": 14,
+          "word": " line,",
+          "start": 30.88,
+          "end": 31.32,
+          "probability": 0.9987126588821411
+        },
+        {
+          "actualWordIndex": 75,
+          "segmentId": 5,
+          "wordIndex": 15,
+          "word": " or",
+          "start": 31.46,
+          "end": 31.72,
+          "probability": 0.9959696531295776
+        },
+        {
+          "actualWordIndex": 76,
+          "segmentId": 5,
+          "wordIndex": 16,
+          "word": " an",
+          "start": 31.72,
+          "end": 31.86,
+          "probability": 0.9679214358329773
+        },
+        {
+          "actualWordIndex": 77,
+          "segmentId": 5,
+          "wordIndex": 17,
+          "word": " equipment",
+          "start": 31.86,
+          "end": 32.1,
+          "probability": 0.9941439032554626
+        },
+        {
+          "actualWordIndex": 78,
+          "segmentId": 5,
+          "wordIndex": 18,
+          "word": " track.",
+          "start": 32.1,
+          "end": 32.52,
+          "probability": 0.9565167427062988
+        },
+        {
+          "actualWordIndex": 79,
+          "segmentId": 6,
+          "wordIndex": 0,
+          "word": " Many",
+          "start": 32.96,
+          "end": 33.44,
+          "probability": 0.9046823978424072
+        },
+        {
+          "actualWordIndex": 80,
+          "segmentId": 6,
+          "wordIndex": 1,
+          "word": " points",
+          "start": 33.44,
+          "end": 33.8,
+          "probability": 0.9981529116630554
+        },
+        {
+          "actualWordIndex": 81,
+          "segmentId": 6,
+          "wordIndex": 2,
+          "word": " along",
+          "start": 33.8,
+          "end": 34.1,
+          "probability": 0.989887535572052
+        },
+        {
+          "actualWordIndex": 82,
+          "segmentId": 6,
+          "wordIndex": 3,
+          "word": " the",
+          "start": 34.1,
+          "end": 34.38,
+          "probability": 0.9947362542152405
+        },
+        {
+          "actualWordIndex": 83,
+          "segmentId": 6,
+          "wordIndex": 4,
+          "word": " same",
+          "start": 34.38,
+          "end": 34.7,
+          "probability": 0.9978734254837036
+        },
+        {
+          "actualWordIndex": 84,
+          "segmentId": 6,
+          "wordIndex": 5,
+          "word": " unusual",
+          "start": 34.7,
+          "end": 35.22,
+          "probability": 0.9809108376502991
+        },
+        {
+          "actualWordIndex": 85,
+          "segmentId": 6,
+          "wordIndex": 6,
+          "word": " feature",
+          "start": 35.22,
+          "end": 35.76,
+          "probability": 0.9923377633094788
+        },
+        {
+          "actualWordIndex": 86,
+          "segmentId": 6,
+          "wordIndex": 7,
+          "word": " can",
+          "start": 35.76,
+          "end": 36.24,
+          "probability": 0.9757807850837708
+        },
+        {
+          "actualWordIndex": 87,
+          "segmentId": 6,
+          "wordIndex": 8,
+          "word": " give",
+          "start": 36.24,
+          "end": 36.42,
+          "probability": 0.9976364374160767
+        },
+        {
+          "actualWordIndex": 88,
+          "segmentId": 6,
+          "wordIndex": 9,
+          "word": " a",
+          "start": 36.42,
+          "end": 36.6,
+          "probability": 0.9978349804878235
+        },
+        {
+          "actualWordIndex": 89,
+          "segmentId": 6,
+          "wordIndex": 10,
+          "word": " consistently",
+          "start": 36.6,
+          "end": 37.1,
+          "probability": 0.9961673617362976
+        },
+        {
+          "actualWordIndex": 90,
+          "segmentId": 6,
+          "wordIndex": 11,
+          "word": " biased",
+          "start": 37.1,
+          "end": 37.6,
+          "probability": 0.9941366910934448
+        },
+        {
+          "actualWordIndex": 91,
+          "segmentId": 6,
+          "wordIndex": 12,
+          "word": " picture.",
+          "start": 37.6,
+          "end": 38.06,
+          "probability": 0.9989866614341736
+        },
+        {
+          "actualWordIndex": 92,
+          "segmentId": 7,
+          "wordIndex": 0,
+          "word": " A",
+          "start": 38.78,
+          "end": 38.88,
+          "probability": 0.9952126741409302
+        },
+        {
+          "actualWordIndex": 93,
+          "segmentId": 7,
+          "wordIndex": 1,
+          "word": " route",
+          "start": 38.88,
+          "end": 39.14,
+          "probability": 0.9875730872154236
+        },
+        {
+          "actualWordIndex": 94,
+          "segmentId": 7,
+          "wordIndex": 2,
+          "word": " spread",
+          "start": 39.14,
+          "end": 39.58,
+          "probability": 0.9912022352218628
+        },
+        {
+          "actualWordIndex": 95,
+          "segmentId": 7,
+          "wordIndex": 3,
+          "word": " across",
+          "start": 39.58,
+          "end": 39.92,
+          "probability": 0.998722493648529
+        },
+        {
+          "actualWordIndex": 96,
+          "segmentId": 7,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 39.92,
+          "end": 40.42,
+          "probability": 0.9959653615951538
+        },
+        {
+          "actualWordIndex": 97,
+          "segmentId": 7,
+          "wordIndex": 5,
+          "word": " zone",
+          "start": 40.42,
+          "end": 40.8,
+          "probability": 0.9940548539161682
+        },
+        {
+          "actualWordIndex": 98,
+          "segmentId": 7,
+          "wordIndex": 6,
+          "word": " helps",
+          "start": 40.8,
+          "end": 41.34,
+          "probability": 0.9910629987716675
+        },
+        {
+          "actualWordIndex": 99,
+          "segmentId": 7,
+          "wordIndex": 7,
+          "word": " cover",
+          "start": 41.34,
+          "end": 41.64,
+          "probability": 0.9975416660308838
+        },
+        {
+          "actualWordIndex": 100,
+          "segmentId": 7,
+          "wordIndex": 8,
+          "word": " more",
+          "start": 41.64,
+          "end": 41.92,
+          "probability": 0.9989309906959534
+        },
+        {
+          "actualWordIndex": 101,
+          "segmentId": 7,
+          "wordIndex": 9,
+          "word": " of",
+          "start": 41.92,
+          "end": 42.06,
+          "probability": 0.9981422424316406
+        },
+        {
+          "actualWordIndex": 102,
+          "segmentId": 7,
+          "wordIndex": 10,
+          "word": " its",
+          "start": 42.06,
+          "end": 42.18,
+          "probability": 0.9879209995269775
+        },
+        {
+          "actualWordIndex": 103,
+          "segmentId": 7,
+          "wordIndex": 11,
+          "word": " variation.",
+          "start": 42.18,
+          "end": 42.66,
+          "probability": 0.9948721528053284
+        },
+        {
+          "actualWordIndex": 104,
+          "segmentId": 8,
+          "wordIndex": 0,
+          "word": " Taking",
+          "start": 43.26,
+          "end": 43.58,
+          "probability": 0.9947302341461182
+        },
+        {
+          "actualWordIndex": 105,
+          "segmentId": 8,
+          "wordIndex": 1,
+          "word": " more",
+          "start": 43.58,
+          "end": 44.0,
+          "probability": 0.9991201758384705
+        },
+        {
+          "actualWordIndex": 106,
+          "segmentId": 8,
+          "wordIndex": 2,
+          "word": " soil",
+          "start": 44.0,
+          "end": 44.38,
+          "probability": 0.9971056580543518
+        },
+        {
+          "actualWordIndex": 107,
+          "segmentId": 8,
+          "wordIndex": 3,
+          "word": " from",
+          "start": 44.38,
+          "end": 44.64,
+          "probability": 0.9985843896865845
+        },
+        {
+          "actualWordIndex": 108,
+          "segmentId": 8,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 44.64,
+          "end": 44.84,
+          "probability": 0.9859718680381775
+        },
+        {
+          "actualWordIndex": 109,
+          "segmentId": 8,
+          "wordIndex": 5,
+          "word": " same",
+          "start": 44.84,
+          "end": 45.14,
+          "probability": 0.9945540428161621
+        },
+        {
+          "actualWordIndex": 110,
+          "segmentId": 8,
+          "wordIndex": 6,
+          "word": " wrong",
+          "start": 45.14,
+          "end": 45.64,
+          "probability": 0.9011755585670471
+        },
+        {
+          "actualWordIndex": 111,
+          "segmentId": 8,
+          "wordIndex": 7,
+          "word": " strip",
+          "start": 45.64,
+          "end": 46.04,
+          "probability": 0.9874356985092163
+        },
+        {
+          "actualWordIndex": 112,
+          "segmentId": 8,
+          "wordIndex": 8,
+          "word": " does",
+          "start": 46.04,
+          "end": 46.56,
+          "probability": 0.987321674823761
+        },
+        {
+          "actualWordIndex": 113,
+          "segmentId": 8,
+          "wordIndex": 9,
+          "word": " not",
+          "start": 46.56,
+          "end": 46.78,
+          "probability": 0.999579131603241
+        },
+        {
+          "actualWordIndex": 114,
+          "segmentId": 8,
+          "wordIndex": 10,
+          "word": " solve",
+          "start": 46.78,
+          "end": 47.08,
+          "probability": 0.9981539845466614
+        },
+        {
+          "actualWordIndex": 115,
+          "segmentId": 8,
+          "wordIndex": 11,
+          "word": " the",
+          "start": 47.08,
+          "end": 47.2,
+          "probability": 0.998713493347168
+        },
+        {
+          "actualWordIndex": 116,
+          "segmentId": 8,
+          "wordIndex": 12,
+          "word": " problem.",
+          "start": 47.2,
+          "end": 47.58,
+          "probability": 0.9988284707069397
+        }
+      ],
+      "observedFirstWordStart": 24.78,
+      "observedLastWordEnd": 47.58,
+      "safePcmCutStartSample": null,
+      "safePcmCutEndSample": null,
+      "boundaryStatus": "UNRESOLVED_ASR_LEXICAL_BOUNDS_ARE_NOT_SAFE_PCM_CUTS",
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "allFutureCandidatePcmMustBePreserved": true,
+      "cutsOrJoinsApproved": false
+    },
+    {
+      "candidateUnitId": "S1-05-en004-repair-r1-002",
+      "originalUnitId": "S1-05-en-r1-004",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "originalFullSpokenText": "Draw a zigzag or double-U-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P zero one to P ten once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA double-U shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "selectedSourcePassage": "Sampling bias: A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "selectedSourcePassageSHA256": "a43da6f7f384eb6a1e72cce2c8448e824d15cf6ee0ae9ae371cfbcc6f2d49da4",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text, as connected explanatory passages with natural pauses. Preserve every quantity, unit, negation, condition, example qualification and planning-versus-observed-practice distinction. No character voices, music, introductions or extra summaries. Keep the same stable delivery across this locale. The letter P identifies a planned point; the route shape is the letter W.",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Sampling bias",
+          "sha256": "1b7e67606638c24d6fd4567b366a336e71edf9371beedf1214f82732fce16fb7"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A systematic mismatch between collected material and the area or layer it is intended to represent.",
+          "sha256": "b50aa805761d00f5483970af51e85068302fe9843bceef9e2d87f8835302ea02"
+        }
+      ],
+      "sourceOriginalFileSHA256": "3f2931bfb18f3727bc1e7f881e60af09dca4c51c24412a7aeae768d08131affe",
+      "sourceProjectionSHA256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0",
+      "diagnosis": "New actual-audio review gives valid89.4–93s false-start/systematic and collecting-versus-collected concerns; earlier129s finding remains an invalid review timestamp, never a cut position.",
+      "actualOriginalASRWordIndices": [
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235
+      ],
+      "actualOriginalASRWords": [
+        {
+          "actualWordIndex": 217,
+          "segmentId": 17,
+          "wordIndex": 0,
+          "word": " Sampling",
+          "start": 88.04,
+          "end": 88.54,
+          "probability": 0.9858428835868835
+        },
+        {
+          "actualWordIndex": 218,
+          "segmentId": 17,
+          "wordIndex": 1,
+          "word": " bias",
+          "start": 88.54,
+          "end": 88.84,
+          "probability": 0.6471028923988342
+        },
+        {
+          "actualWordIndex": 219,
+          "segmentId": 17,
+          "wordIndex": 2,
+          "word": " –",
+          "start": 88.84,
+          "end": 89.44,
+          "probability": 0.1460130512714386
+        },
+        {
+          "actualWordIndex": 220,
+          "segmentId": 17,
+          "wordIndex": 3,
+          "word": " a",
+          "start": 89.44,
+          "end": 89.56,
+          "probability": 0.6942492723464966
+        },
+        {
+          "actualWordIndex": 221,
+          "segmentId": 17,
+          "wordIndex": 4,
+          "word": " systematic",
+          "start": 89.56,
+          "end": 89.96,
+          "probability": 0.995002806186676
+        },
+        {
+          "actualWordIndex": 222,
+          "segmentId": 17,
+          "wordIndex": 5,
+          "word": " mismatch",
+          "start": 89.96,
+          "end": 90.78,
+          "probability": 0.9964250326156616
+        },
+        {
+          "actualWordIndex": 223,
+          "segmentId": 17,
+          "wordIndex": 6,
+          "word": " between",
+          "start": 90.78,
+          "end": 91.16,
+          "probability": 0.9990018010139465
+        },
+        {
+          "actualWordIndex": 224,
+          "segmentId": 17,
+          "wordIndex": 7,
+          "word": " collected",
+          "start": 91.16,
+          "end": 91.56,
+          "probability": 0.46091940999031067
+        },
+        {
+          "actualWordIndex": 225,
+          "segmentId": 17,
+          "wordIndex": 8,
+          "word": " material",
+          "start": 91.56,
+          "end": 92.1,
+          "probability": 0.9972965121269226
+        },
+        {
+          "actualWordIndex": 226,
+          "segmentId": 17,
+          "wordIndex": 9,
+          "word": " and",
+          "start": 92.1,
+          "end": 92.66,
+          "probability": 0.9859926104545593
+        },
+        {
+          "actualWordIndex": 227,
+          "segmentId": 17,
+          "wordIndex": 10,
+          "word": " the",
+          "start": 92.66,
+          "end": 92.8,
+          "probability": 0.9927922487258911
+        },
+        {
+          "actualWordIndex": 228,
+          "segmentId": 17,
+          "wordIndex": 11,
+          "word": " area",
+          "start": 92.8,
+          "end": 93.2,
+          "probability": 0.9951497912406921
+        },
+        {
+          "actualWordIndex": 229,
+          "segmentId": 17,
+          "wordIndex": 12,
+          "word": " or",
+          "start": 93.2,
+          "end": 93.48,
+          "probability": 0.9908334612846375
+        },
+        {
+          "actualWordIndex": 230,
+          "segmentId": 17,
+          "wordIndex": 13,
+          "word": " layer",
+          "start": 93.48,
+          "end": 93.74,
+          "probability": 0.9978267550468445
+        },
+        {
+          "actualWordIndex": 231,
+          "segmentId": 17,
+          "wordIndex": 14,
+          "word": " it",
+          "start": 93.74,
+          "end": 94.0,
+          "probability": 0.9950254559516907
+        },
+        {
+          "actualWordIndex": 232,
+          "segmentId": 17,
+          "wordIndex": 15,
+          "word": " is",
+          "start": 94.0,
+          "end": 94.12,
+          "probability": 0.9968826770782471
+        },
+        {
+          "actualWordIndex": 233,
+          "segmentId": 17,
+          "wordIndex": 16,
+          "word": " intended",
+          "start": 94.12,
+          "end": 94.46,
+          "probability": 0.9933991432189941
+        },
+        {
+          "actualWordIndex": 234,
+          "segmentId": 17,
+          "wordIndex": 17,
+          "word": " to",
+          "start": 94.46,
+          "end": 94.66,
+          "probability": 0.9979661703109741
+        },
+        {
+          "actualWordIndex": 235,
+          "segmentId": 17,
+          "wordIndex": 18,
+          "word": " represent.",
+          "start": 94.66,
+          "end": 95.08,
+          "probability": 0.9985384941101074
+        }
+      ],
+      "observedFirstWordStart": 88.04,
+      "observedLastWordEnd": 95.08,
+      "safePcmCutStartSample": null,
+      "safePcmCutEndSample": null,
+      "boundaryStatus": "UNRESOLVED_ASR_LEXICAL_BOUNDS_ARE_NOT_SAFE_PCM_CUTS",
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "allFutureCandidatePcmMustBePreserved": true,
+      "cutsOrJoinsApproved": false
+    }
+  ],
+  "originalASRSha256": "5adaaaa117044e90d3144cb07ecd14dc8f25f86e685c28a8dcf0a8188b9223ca",
+  "rootDiagnosticAuditSha256": "c2a3b80ded3e0b8616f15b5ec97ad10019fbaf87b8f6a689a9c9337f21becf1d",
+  "sourceSelectionPrivateReceiptSha256": "e24fc03fb0fabac462f673704c33a9986bcdff7c9cbc90f59646b85c0cdac116",
+  "visibleSourceChanged": false
+}
