@@ -1,0 +1,209 @@
+{
+  "stepId": "S1-05",
+  "stepNumber": 5,
+  "locale": "de",
+  "title": "Probenahmezonen und Entnahmeroute planen",
+  "intro": "Lege vor dem Betreten des Feldes fest, welche Fläche jede Probe vertreten soll. Eine gute Karte trennt unterschiedliche Bereiche, verteilt die Entnahmestellen in der vorgesehenen Zone und nennt Anzahl sowie Tiefe mit eindeutigen Einheiten.",
+  "goals": [
+    "Ein Feld in begründete Probenahmezonen einteilen und eine Problemstelle von der allgemeinen Mischprobe getrennt halten.",
+    "Eine Route mit verschiedenen Entnahmestellen zeichnen, Anzahl, Tiefe und Einheiten angeben und erklären, warum eine W-Form allein keine statistisch zufällige Auswahl darstellt.",
+    "Beispielzahlen von einem tatsächlichen Feldprotokoll unterscheiden und erklären, warum Tore, Düngerstreifen und andere atypische Stellen nicht in die allgemeine Probe gehören."
+  ],
+  "trainingCard": {
+    "purpose": "Die spätere beaufsichtigte Entnahme einer Mischprobe aus einer kleinen, einigermaßen einheitlichen Übungszone planen.",
+    "zoneCountOnPracticeMap": "Zwei oder drei anhand der Kartenmerkmale begründete Zonen; eine zugewiesene Zone pro Gruppe",
+    "subsampleCountPerAssignedZone": 10,
+    "depthCm": {
+      "from": 0,
+      "to": 15
+    },
+    "pointIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10"
+    ],
+    "boundary": "Diese Werte gelten für diese Übung. Bei einer realen Probenahme richten sich Anzahl, Zonengröße, Tiefe, Aufbereitung und Einsendemenge nach der Fragestellung und dem Protokoll des empfangenden Labors.",
+    "laterSubmission": "Gründlich mischen und den vom Labor zugelassenen Beutel bis zur markierten Fülllinie füllen; keine allgemein gültige Masse erfinden."
+  },
+  "reading": [
+    {
+      "id": "zones",
+      "title": "1. Unterschiedliche Bewirtschaftungsbereiche abgrenzen",
+      "paragraphs": [
+        "Eine Bewirtschaftungszone ist eine Fläche, die für die jeweilige Probenahmeentscheidung hinreichend einheitlich ist. Prüfe Bodenart, Hangneigung und Lage, Anbaugeschichte, frühere Bewirtschaftung und sichtbare Unterschiede im Pflanzenwachstum. Die äußere Feldgrenze allein beweist nicht, dass der Boden darin einheitlich ist.",
+        "Trenne einen tief liegenden, feuchten Bereich von einem höher gelegenen, gut entwässerten Hang, wenn sie unterschiedliche Bedingungen darstellen. Eine einzige Mischprobe aus beiden könnte den Unterschied verdecken und zu einer Empfehlung führen, die für keinen Bereich gut passt. Jede Zone erhält eine eigene Kennung, Route und einen eigenen Probenbeutel.",
+        "Bestimme auf der Übungskarte zwei oder drei begründete Zonen und bearbeite die deiner Gruppe zugewiesene Zone. Erkläre jede eingezeichnete Grenze. Teile eine einheitliche Fläche nicht nur für die gewünschte Anzahl willkürlich in Streifen auf; orientiere dich an den dargestellten Unterschieden.",
+        "Ist das Feld für die beabsichtigte Untersuchung ausreichend einheitlich, kann nach dem gewählten Protokoll eine definierte Probenahmezone geeignet sein. Unterscheiden sich die Bedingungen, teile es entsprechend auf. Die Entscheidung folgt den Informationen über die Fläche und dem Untersuchungszweck, nicht der Zahl verfügbarer Beutel."
+      ]
+    },
+    {
+      "id": "atypical",
+      "title": "2. Atypische Stellen von der allgemeinen Probe fernhalten",
+      "paragraphs": [
+        "Für eine Probe, die die Hauptzone vertreten soll, meide schmale Streifen an Zäunen, Tore, ehemalige Bauflächen, Sammelplätze von Nutztieren, Düngerstreifen sowie ungewöhnlich nasse oder erodierte Stellen. Verdichtung, Rückstände, Zusätze oder Wasserverhältnisse können dort anders sein als in der Hauptfläche.",
+        "Eine atypische Stelle aus der allgemeinen Mischprobe auszuschließen heißt nicht, ein echtes Problem zu ignorieren. Ist ein feuchter Abschnitt ein großer, eigenständiger Bewirtschaftungsbereich, bilde eine eigene Zone. Soll eine kahle oder schlecht wachsende Stelle untersucht werden, entnimm und kennzeichne sie nach dem Untersuchungsplan getrennt.",
+        "Bewahre die Probe der Problemstelle in einem eigenen Beutel auf und dokumentiere Lage und Zweck. Vergleiche sie bei Bedarf mit Befunden aus einem besser wachsenden Bereich, ohne die Böden zu vermischen. Du darfst Ergebnisunterschiede vermuten; kennzeichne die Vermutung aber als Hypothese, bis Laborwerte und weitere Beobachtungen sie stützen.",
+        "Unterscheide bei der Ortswahl eine berechtigte, getrennte Zone von einem isolierten Merkmal, das die allgemeine Probe verfälschen würde. Andere Bodenarten, Hanglagen und Wachstumsmuster können getrennte Proben erfordern; ein Tor oder eine Tränke ist nicht automatisch eine repräsentative Stelle irgendeiner Zone."
+      ]
+    },
+    {
+      "id": "route",
+      "title": "3. Die Entnahmestellen über die Zone verteilen",
+      "paragraphs": [
+        "Zeichne eine Zickzack- oder W-förmige Gehroute, die verschiedene Teile der zugewiesenen Zone erreicht. Markiere für diese Übung zehn verschiedene Entnahmestellen und beschrifte sie jeweils genau einmal von P01 bis P10. Die Punkte müssen innerhalb der beabsichtigten Zone und außerhalb erkannter atypischer Merkmale liegen. Die Routenlinie selbst ist keine Probe; entscheidend sind die markierten Entnahmeorte.",
+        "Zehn Punkte auf einer geraden Linie könnten einem alten Düngerstreifen, einer Drainagelinie oder einer Fahrspur folgen. Viele Punkte entlang desselben ungewöhnlichen Merkmals können systematisch ein verzerrtes Bild liefern. Eine über die Zone verteilte Route erfasst mehr ihrer Unterschiede; mehr Boden aus demselben falschen Streifen behebt das Problem nicht.",
+        "Eine W-Form garantiert keine statistische Zufälligkeit. Zufallsstichproben erfordern ein festgelegtes Verfahren zur Auswahl der Orte. Diese Route dient der praktischen räumlichen Abdeckung der Zone. Nenne den Plan nicht allein wegen der gebogenen Linie statistisch zufällig.",
+        "Wenn dir das Zeichnen der Route schwerfällt, verwende die Hilfskarte mit bereits eingezeichneter Linie und setze die zehn Entnahmemarkierungen selbst. Prüfe trotzdem Grenzen, Punktlagen, Ausschlüsse und Anzahl. Erweist sich ein geplanter Punkt vor Ort als unsicher oder ungeeignet, stoppe, wähle nach dem Plan der Lehrkraft einen geeigneten Ersatz und dokumentiere die Änderung."
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": "4. Anzahl, Tiefe und Fläche angeben, ohne Beispiele zu allgemeinen Regeln zu machen",
+      "paragraphs": [
+        "Die ausgearbeiteten Situationen enthalten verschiedene Zahlen. Eine Einführungsübung verlangt mindestens acht markierte Orte; ein allgemeines Beispiel verwendet 10–15 Teilproben. Die Karte für das kleine Übungsfeld setzt zehn Punkte fest, damit Karte, Entnahme und Bewertung übereinstimmen. Entnimm nicht acht Proben und gib eine Karte mit angeblich zehn ab.",
+        "Ein Beispiel beschreibt eine einheitliche Zone von höchstens 20 Acres. Ein Acre ist kein ägyptischer Feddan. Zwanzig Acres entsprechen ungefähr 8,09 Hektar; behalte beim Lesen oder Berichten die angegebene Flächeneinheit bei. Das Beispiel legt keine Obergrenze für jede Ackerfläche oder jedes Laborprotokoll fest.",
+        "Die Beispiele nennen auch sechs Zoll, ungefähr 15 Zentimeter. Bei dieser Übung entnimmst du im späteren beaufsichtigten Schritt aus der festgelegten Schicht 0–15 cm. Miss ab der Bodenoberfläche entsprechend dem Verfahren und erfasse die gesamte beabsichtigte Schicht gleichmäßig. Eine Tiefe ohne Einheit oder ohne Anfang und Ende ist unvollständig.",
+        "Die Entnahmetiefe hängt von der Anbaufrage, der Messgröße und dem Empfehlungssystem des Labors ab. Sechs Zoll sind nicht die gesamte Wurzeltiefe der meisten Kulturen und keine allgemeine Tiefe für Rasen, Gemüse oder Felder. Auch eine Aufgabe zu Salat oder Spinat muss das relevante Protokoll angeben; der Kulturpflanzenname allein reicht nicht als Anweisung."
+      ]
+    },
+    {
+      "id": "record",
+      "title": "5. Den Plan bis zur Entnahme und Verpackung nachvollziehbar machen",
+      "paragraphs": [
+        "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+        "Prüfe vor der Entnahme Sicherheit und Freigabe der Orte, wähle geeignete Werkzeuge und den Kunststoffeimer und reinige beides; benutze den vereinbarten Schutz. Sammle bei der Entnahme an jedem geplanten Punkt einen gleichmäßigen Anteil aus der vorgegebenen Schicht. Befolge das Verfahren des tatsächlich verwendeten Werkzeugs und füge keinen Boden aus einer anderen Zone hinzu.",
+        "Mische die Teilproben dieser Zone im sauberen Eimer gründlich, bevor du die einzusendende Portion nimmst. Zerkleinere geeignete Bodenklumpen wie angewiesen, damit das eingesandte Material nicht nur aus der zuletzt zugegebenen Teilprobe besteht. Verwende das laborzugelassene Gefäß und die Füllmarkierung und befolge Aufbereitungs- und Versandhinweise.",
+        "Beschrifte den Übungsbeutel mit Gruppenname, Feldname, Zonenkennung und Datum; die Kennung muss zur Karte passen. Lege Karte und Probe gemeinsam zur Kontrolle vor. Dieser Schritt bewertet deinen Plan und seine Begründung; tatsächlicher Werkzeugeinsatz, Entnahme, Mischen und Verpacken werden im folgenden Praxisschritt beobachtet."
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "two-zones",
+      "title": "Ein Feld mit zwei verschiedenen Bedingungen",
+      "situation": "Ein großes Feld enthält eine ebene, tiefe Fläche, die feucht bleibt, und einen höher gelegenen Hang mit guter Entwässerung.",
+      "reasoning": [
+        "Kennzeichne die Bereiche wegen ihrer unterschiedlichen Wasser- und Geländeverhältnisse als mögliche getrennte Probenahmezonen.",
+        "Plane in jeder Zone Punkte nach dem jeweils geltenden Protokoll und halte die Proben getrennt und eindeutig gekennzeichnet.",
+        "Erkläre, dass Vermischen wichtige Unterschiede verdecken kann. Vergleiche Ergebnisse mit den beobachteten Bedingungen, statt anzunehmen, ein Mittelwert beschreibe beides."
+      ],
+      "takeaway": "Ein Feldname bedeutet nicht zwangsläufig eine einzige Mischprobe."
+    },
+    {
+      "id": "straight-strip",
+      "title": "Zehn Punkte auf einem alten Düngerstreifen",
+      "situation": "Ein Lernender zeichnet zehn gleichmäßig verteilte Punkte in der Feldmitte; die Linie folgt einem alten Düngerstreifen.",
+      "reasoning": [
+        "Die Zahl passt zur Übungskarte, aber die Punktlagen sind verzerrt.",
+        "Verteile die Route in der vorgesehenen Zone und halte den atypischen Streifen aus der allgemeinen Probe heraus.",
+        "Prüfe zehn einzigartige Punktkennungen und begründe ihre neuen Lagen. Behaupte nicht, dass die W-Form allein eine statistische Zufallsauswahl erzeugt."
+      ],
+      "takeaway": "Eine richtige Anzahl gleicht eine verzerrte Standortwahl nicht aus."
+    },
+    {
+      "id": "problem-patch",
+      "title": "Eine kahle Stelle im zugewiesenen Bereich",
+      "situation": "Auf deiner Karte liegt eine kleine kahle Stelle, deren Ursache der Landwirt untersuchen möchte.",
+      "reasoning": [
+        "Halte die ungewöhnliche Stelle aus der allgemeinen Mischprobe heraus und dokumentiere die Entscheidung.",
+        "Plane nach Anweisung der Lehrkraft eine getrennte, gekennzeichnete diagnostische Probe der Stelle und bei Bedarf einen geeigneten Vergleichsbereich.",
+        "Formuliere eine Vorhersage über mögliche Unterschiede, aber behandle sie nicht als Laborergebnis."
+      ],
+      "takeaway": "Eine getrennte Problemprobe erhält die Information, statt sie zu verwässern."
+    }
+  ],
+  "planningTask": {
+    "title": "Erstelle eine Karte, der du im Feld folgen kannst",
+    "steps": [
+      "Lies die Übungskarte und markiere auf der abwechslungsreichen Karte zwei oder drei begründete Zonen sowie deine zugewiesene Zone.",
+      "Kennzeichne ausgeschlossene atypische Merkmale und gesondert untersuchte Stellen.",
+      "Zeichne die Route oder verwende die vorgegebene und setze genau zehn verschiedene Kennungen P01–P10 in deiner Zone.",
+      "Trage für diese Aufgabe die Schicht 0–15 cm sowie Feld- und Zonenkennung ein.",
+      "Prüfe Route, Zugang und Sicherheit; erkläre, wie ein Ersatzpunkt vereinbart und dokumentiert würde.",
+      "Erläutere den Plan der Lehrkraft einschließlich der Grenzen der Zahlen und der W-Form."
+    ],
+    "passRule": "Für alle drei Wissenskriterien ist eine richtige Begründung nötig. Fehlende oder doppelte Punkte, unklare Einheiten, vermischte Zonen oder unsichere Lagen werden nach gezielter Rückmeldung korrigiert. Diese Kartenaufgabe zertifiziert nicht die praktische Entnahme im nächsten Schritt."
+  },
+  "glossary": [
+    [
+      "Bewirtschaftungszone",
+      "Eine Fläche, die für die definierte Probenahme- und Bewirtschaftungsfrage hinreichend einheitlich ist."
+    ],
+    [
+      "Stichprobenverzerrung",
+      "Systematische Abweichung zwischen entnommenem Material und der Fläche oder Schicht, die es vertreten soll."
+    ],
+    [
+      "Atypische Stelle",
+      "Ort, der sich für die Untersuchungsfrage relevant von der Hauptfläche unterscheidet."
+    ],
+    [
+      "Acre",
+      "Flächeneinheit, die sich vom ägyptischen Feddan unterscheidet; 20 Acres entsprechen etwa 8,09 Hektar."
+    ],
+    [
+      "Entnahmeschicht",
+      "Anfangs- und Endtiefe des Bodens, der in die Probe einbezogen wird."
+    ],
+    [
+      "Hypothese",
+      "Mögliche Erklärung oder Vorhersage, die noch durch Befunde geprüft werden muss."
+    ]
+  ],
+  "studentDownloads": [
+    "Leere und unterstützte Probenahmekarten mit der Zehn-Punkte-Aufgabe",
+    "Übungsfragen zum vollständigen Vorgehen und zu unterschiedlichen Zonen"
+  ],
+  "selfReflection": {
+    "question": "Kann ich die Zonengrenzen, alle zehn Stellen und die Entnahmeschicht begründen, ohne das Beispiel zu einer allgemeinen Feldregel zu machen?",
+    "choices": [
+      "Ja",
+      "Noch nicht",
+      "Teilweise"
+    ],
+    "note": "Nutze die Antwort für deine Wiederholung. Die tatsächliche Bodenentnahme beobachtet die Lehrkraft erst im nächsten Schritt."
+  },
+  "practical": {
+    "title": "Erstelle eine Karte, der du im Feld folgen kannst",
+    "safety": "Dieser Schritt übt nur Kartenplanung und Begründung. Eine tatsächliche Bodenentnahme wurde noch nicht beobachtet oder als praktische Leistung bestanden.",
+    "steps": [
+      "Lies die Übungskarte und markiere auf der abwechslungsreichen Karte zwei oder drei begründete Zonen sowie deine zugewiesene Zone.",
+      "Kennzeichne ausgeschlossene atypische Merkmale und gesondert untersuchte Stellen.",
+      "Zeichne die Route oder verwende die vorgegebene und setze genau zehn verschiedene Kennungen P01–P10 in deiner Zone.",
+      "Trage für diese Aufgabe die Schicht 0–15 cm sowie Feld- und Zonenkennung ein.",
+      "Prüfe Route, Zugang und Sicherheit; erkläre, wie ein Ersatzpunkt vereinbart und dokumentiert würde.",
+      "Erläutere den Plan der Lehrkraft einschließlich der Grenzen der Zahlen und der W-Form."
+    ],
+    "evidence": [
+      "Lies die Übungskarte und markiere auf der abwechslungsreichen Karte zwei oder drei begründete Zonen sowie deine zugewiesene Zone.",
+      "Kennzeichne ausgeschlossene atypische Merkmale und gesondert untersuchte Stellen.",
+      "Zeichne die Route oder verwende die vorgegebene und setze genau zehn verschiedene Kennungen P01–P10 in deiner Zone.",
+      "Trage für diese Aufgabe die Schicht 0–15 cm sowie Feld- und Zonenkennung ein.",
+      "Prüfe Route, Zugang und Sicherheit; erkläre, wie ein Ersatzpunkt vereinbart und dokumentiert würde.",
+      "Erläutere den Plan der Lehrkraft einschließlich der Grenzen der Zahlen und der W-Form."
+    ],
+    "passRule": "Für alle drei Wissenskriterien ist eine richtige Begründung nötig. Fehlende oder doppelte Punkte, unklare Einheiten, vermischte Zonen oder unsichere Lagen werden nach gezielter Rückmeldung korrigiert. Diese Kartenaufgabe zertifiziert nicht die praktische Entnahme im nächsten Schritt."
+  },
+  "projectionDisclosure": {
+    "originalSourceSHA256": "0d8e0a481f9181dc0c7620fa83e661c9ac6aed34bd6a2b25b7315c1955b83130",
+    "projectionMethod": "Explicit allowlist of current teaching fields; source values and original JSON pointers preserved.",
+    "excludedFromRunnablePublicInputs": [
+      "comparison",
+      "guidedPractice",
+      "practicalTasks",
+      "quiz",
+      "reportFive",
+      "trainingDecisions",
+      "trainingQuestions",
+      "writtenTasks"
+    ],
+    "reason": "Assessment prompts, solutions, feedback and private review points remain protected; unused optional UI fields are omitted rather than guessed safe."
+  }
+}

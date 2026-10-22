@@ -1,0 +1,102 @@
+{
+  "schema": "masaarat.S1-05.r1-preservation.v1",
+  "checkedAtUTC": "2026-10-22T09:58:36.546043+00:00",
+  "r1Root": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-05\\narration-r1",
+  "r1RequestSHA256": "c74bb2e2b79c37fdced0a05650759e86c2d31aa22d9bc1dd109884ee2054f858",
+  "r1FreezeSHA256": "c5d136474f4a33262f7f7c0c7633ed507cf941308788de6cdbcb9b2e3a4cd4d0",
+  "allFrozenR1Files": [
+    {
+      "path": "worker.py",
+      "sha256": "4bb77553ead6f589fbc6710431398ca3335c7e2adeed19452c4e9246f7447d02"
+    },
+    {
+      "path": "request.json",
+      "sha256": "c74bb2e2b79c37fdced0a05650759e86c2d31aa22d9bc1dd109884ee2054f858"
+    },
+    {
+      "path": "runtime.json",
+      "sha256": "dbfec18434d5717cf1b138637e7b8e49d138521322b6de978cd0343f33a0066d"
+    },
+    {
+      "path": "source-coverage.json",
+      "sha256": "a1cf302a11a293de5c1bc293b79f2fb80e89f5a4ed2af41f64d5e70ddcb99ad6"
+    },
+    {
+      "path": "reuse-inventory.json",
+      "sha256": "cf88fbe74b97e4851e660b77257b4d5c977c509822e1255faeba6234371ea0a6"
+    },
+    {
+      "path": "PUBLIC-PROJECTION-PATTERN.en.md",
+      "sha256": "95d720406a81e1256d72869678608d496cde86d514e89855404baf97b0dfaca6"
+    },
+    {
+      "path": "worker-derivation.json",
+      "sha256": "f7a3e9e70dbe5d248509b184dbb90258d66a8eef6a3a8db278f09cfea827b2a4"
+    },
+    {
+      "path": "implementation-dependency-pins.json",
+      "sha256": "cef8dc7e2283c590ac15c0aef8239c571d0bb1a628adf048837fb9fe0b3c8c88"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "2d8dbde56cc6b748a75867590e9125bbaaa96995fdebb8db449fb12f9e1488c3"
+    },
+    {
+      "path": "offline_tests.py",
+      "sha256": "c452e758ac9893088d0f040935e8249061b5bbba41b917bb80526419b1af8566"
+    },
+    {
+      "path": "freeze_package.py",
+      "sha256": "fb63ec40dd97c3ec6de5b4d6b04c87f248cd3cd2499444d5f6c25aafc8708001"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "5bf7b8ce10fb579fe047efa70fa2df7504f40fb487832f8255de050ecbf1f285"
+    },
+    {
+      "path": "vendor/pipeline-engine.py",
+      "sha256": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595"
+    },
+    {
+      "path": "vendor/course/manifest.json",
+      "sha256": "9f3352fd2c0bf283617515f6169805cb4a6bf6520cb4e87d8a47a7727794806b"
+    },
+    {
+      "path": "narration-en.json",
+      "sha256": "ea8e8ec63f392010ee152b4285a9230d922250973031f9a17ae8a4bee743f8e9"
+    },
+    {
+      "path": "narration-ar-EG.json",
+      "sha256": "4b02e424e3c563702c1c999a92272ba2be00b7c32a2fa9c0b179cbf24c0f3886"
+    },
+    {
+      "path": "narration-it.json",
+      "sha256": "a1574af1616dbee9b0157b6f610962de6c674bb4fb884d3e416edebf12f2902e"
+    },
+    {
+      "path": "narration-de.json",
+      "sha256": "a3c557aaa8cf4c26583f5d989d7dee5a97290e29a0dd80d2a8513f56346c158a"
+    },
+    {
+      "path": "inputs/source-en.json",
+      "sha256": "3816c48be174ade1aa1aeaf735db9629ebd57fbc90104cabf9f4e25c980ec7d0"
+    },
+    {
+      "path": "inputs/source-ar-EG.json",
+      "sha256": "559c294e1a344140afc665e31058cff17a18ae6468ecc742c84ce1edb9e4ff73"
+    },
+    {
+      "path": "inputs/source-it.json",
+      "sha256": "865d18014989835849e153a28cb01560405a6156878d655b874df7e4e4d12410"
+    },
+    {
+      "path": "inputs/source-de.json",
+      "sha256": "5cb790ea277d707582bacd648e1f7497c42d2d026ef2ec227908630bac4d17e3"
+    }
+  ],
+  "unitsCanonicalSHA256": "a00a19bec80f5f601688f1237000c6f1aa3f2e4c905ba6f61dbc82a271a0c9d4",
+  "all40UnitObjectsPreservedExactly": true,
+  "IDsRetainedForUnchangedContentIdentity": true,
+  "narrationAndProjectionFilesByteExact": true,
+  "note": "Only r2 deployment/event/code/receipts change. No spoken/display/caption/delivery/request identity changed."
+}

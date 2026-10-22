@@ -1,0 +1,561 @@
+{
+  "scope": "All explanatory reading/example/glossary/planning text preserved; assessment is a separate protected release surface. Source-original files unchanged.",
+  "locales": [
+    {
+      "locale": "en",
+      "narratedPointers": [
+        "/examples/0/reasoning/0",
+        "/examples/0/reasoning/1",
+        "/examples/0/reasoning/2",
+        "/examples/0/situation",
+        "/examples/0/takeaway",
+        "/examples/1/reasoning/0",
+        "/examples/1/reasoning/1",
+        "/examples/1/reasoning/2",
+        "/examples/1/situation",
+        "/examples/1/takeaway",
+        "/examples/2/reasoning/0",
+        "/examples/2/reasoning/1",
+        "/examples/2/reasoning/2",
+        "/examples/2/situation",
+        "/examples/2/takeaway",
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/intro",
+        "/planningTask/passRule",
+        "/planningTask/steps/0",
+        "/planningTask/steps/1",
+        "/planningTask/steps/2",
+        "/planningTask/steps/3",
+        "/planningTask/steps/4",
+        "/planningTask/steps/5",
+        "/practical/safety",
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1",
+        "/reading/0/paragraphs/2",
+        "/reading/0/paragraphs/3",
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1",
+        "/reading/1/paragraphs/2",
+        "/reading/1/paragraphs/3",
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1",
+        "/reading/2/paragraphs/2",
+        "/reading/2/paragraphs/3",
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2",
+        "/reading/3/paragraphs/3",
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1",
+        "/reading/4/paragraphs/2",
+        "/reading/4/paragraphs/3",
+        "/selfReflection/note",
+        "/selfReflection/question",
+        "/trainingCard/boundary",
+        "/trainingCard/laterSubmission",
+        "/trainingCard/purpose",
+        "/trainingCard/zoneCountOnPracticeMap"
+      ],
+      "completeReadings": 5,
+      "completeWorkedExamples": 3,
+      "glossaryDefinitions": 6,
+      "guidanceAndTrainerBoundariesNarrated": true,
+      "assessmentIDsRetainedPrivately": {
+        "quiz": [
+          "depth",
+          "why-w",
+          "avoid-feature",
+          "hectare",
+          "gateway",
+          "leafy-depth"
+        ],
+        "writtenTasks": [
+          "twenty-acre",
+          "small-plot",
+          "contrasting-areas"
+        ]
+      },
+      "equivalentSourcePointersNotRepeated": {
+        "/practical/steps": "/planningTask/steps",
+        "/practical/evidence": "/planningTask/steps",
+        "/practical/passRule": "/planningTask/passRule"
+      },
+      "typedTrainingFacts": {
+        "purpose": "Plan the later supervised collection of a composite sample from one small, reasonably uniform training zone.",
+        "zoneCountOnPracticeMap": "2 or 3 zones, justified by the map features; one assigned zone per group",
+        "subsampleCountPerAssignedZone": 10,
+        "depthCm": {
+          "from": 0,
+          "to": 15
+        },
+        "pointIds": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09",
+          "P10"
+        ],
+        "boundary": "These values apply to this training task. Real sampling count, zone size, depth, preparation and submitted quantity follow the question and receiving laboratory's protocol.",
+        "laterSubmission": "Mix thoroughly and fill the laboratory-approved bag to its marked fill line; do not invent a universal mass."
+      },
+      "notNarrated": [
+        {
+          "pointer": "/quiz",
+          "reason": "Assessment remains separately gated; no prompts, answers or feedback in TTS/public projection."
+        },
+        {
+          "pointer": "/writtenTasks",
+          "reason": "Separate written assessment; no prompts or private review points in TTS/public projection."
+        },
+        {
+          "pointer": "/studentDownloads",
+          "reason": "Resource labels remain editable UI; no explanatory facts omitted."
+        },
+        {
+          "pointer": "/selfReflection/choices",
+          "reason": "Editable reflection choices, no prefilled learner result."
+        },
+        {
+          "pointer": "all identifiers, titles and step/localization metadata",
+          "reason": "Editable UI/binding metadata; complete explanatory prose is narrated."
+        }
+      ]
+    },
+    {
+      "locale": "ar-EG",
+      "narratedPointers": [
+        "/examples/0/reasoning/0",
+        "/examples/0/reasoning/1",
+        "/examples/0/reasoning/2",
+        "/examples/0/situation",
+        "/examples/0/takeaway",
+        "/examples/1/reasoning/0",
+        "/examples/1/reasoning/1",
+        "/examples/1/reasoning/2",
+        "/examples/1/situation",
+        "/examples/1/takeaway",
+        "/examples/2/reasoning/0",
+        "/examples/2/reasoning/1",
+        "/examples/2/reasoning/2",
+        "/examples/2/situation",
+        "/examples/2/takeaway",
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/intro",
+        "/planningTask/passRule",
+        "/planningTask/steps/0",
+        "/planningTask/steps/1",
+        "/planningTask/steps/2",
+        "/planningTask/steps/3",
+        "/planningTask/steps/4",
+        "/planningTask/steps/5",
+        "/practical/safety",
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1",
+        "/reading/0/paragraphs/2",
+        "/reading/0/paragraphs/3",
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1",
+        "/reading/1/paragraphs/2",
+        "/reading/1/paragraphs/3",
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1",
+        "/reading/2/paragraphs/2",
+        "/reading/2/paragraphs/3",
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2",
+        "/reading/3/paragraphs/3",
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1",
+        "/reading/4/paragraphs/2",
+        "/reading/4/paragraphs/3",
+        "/selfReflection/note",
+        "/selfReflection/question",
+        "/trainingCard/boundary",
+        "/trainingCard/laterSubmission",
+        "/trainingCard/purpose",
+        "/trainingCard/zoneCountOnPracticeMap"
+      ],
+      "completeReadings": 5,
+      "completeWorkedExamples": 3,
+      "glossaryDefinitions": 6,
+      "guidanceAndTrainerBoundariesNarrated": true,
+      "assessmentIDsRetainedPrivately": {
+        "quiz": [
+          "depth",
+          "why-w",
+          "avoid-feature",
+          "hectare",
+          "gateway",
+          "leafy-depth"
+        ],
+        "writtenTasks": [
+          "twenty-acre",
+          "small-plot",
+          "contrasting-areas"
+        ]
+      },
+      "equivalentSourcePointersNotRepeated": {
+        "/practical/steps": "/planningTask/steps",
+        "/practical/evidence": "/planningTask/steps",
+        "/practical/passRule": "/planningTask/passRule"
+      },
+      "typedTrainingFacts": {
+        "purpose": "خطّط للجمع العملي اللاحق لعينة مركبة من منطقة تدريب صغيرة ومتجانسة بشكل معقول تحت إشراف المدرّب.",
+        "zoneCountOnPracticeMap": "منطقتان أو تلاتة حسب الفروق الظاهرة على الخريطة؛ لكل مجموعة منطقة واحدة محددة",
+        "subsampleCountPerAssignedZone": 10,
+        "depthCm": {
+          "from": 0,
+          "to": 15
+        },
+        "pointIds": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09",
+          "P10"
+        ],
+        "boundary": "الأرقام دي لبطاقة التدريب دي فقط. في الجمع الحقيقي، العدد ومساحة المنطقة وعمقها وتجهيز العينة وكميتها المطلوبة تتبع السؤال وبروتوكول المعمل اللي هيستقبلها.",
+        "laterSubmission": "اخلط كويس واملأ الكيس المعتمد من المعمل لحد علامة الملء المحددة؛ ما تفترضش وزنًا عامًا لكل العينات."
+      },
+      "notNarrated": [
+        {
+          "pointer": "/quiz",
+          "reason": "Assessment remains separately gated; no prompts, answers or feedback in TTS/public projection."
+        },
+        {
+          "pointer": "/writtenTasks",
+          "reason": "Separate written assessment; no prompts or private review points in TTS/public projection."
+        },
+        {
+          "pointer": "/studentDownloads",
+          "reason": "Resource labels remain editable UI; no explanatory facts omitted."
+        },
+        {
+          "pointer": "/selfReflection/choices",
+          "reason": "Editable reflection choices, no prefilled learner result."
+        },
+        {
+          "pointer": "all identifiers, titles and step/localization metadata",
+          "reason": "Editable UI/binding metadata; complete explanatory prose is narrated."
+        }
+      ]
+    },
+    {
+      "locale": "it",
+      "narratedPointers": [
+        "/examples/0/reasoning/0",
+        "/examples/0/reasoning/1",
+        "/examples/0/reasoning/2",
+        "/examples/0/situation",
+        "/examples/0/takeaway",
+        "/examples/1/reasoning/0",
+        "/examples/1/reasoning/1",
+        "/examples/1/reasoning/2",
+        "/examples/1/situation",
+        "/examples/1/takeaway",
+        "/examples/2/reasoning/0",
+        "/examples/2/reasoning/1",
+        "/examples/2/reasoning/2",
+        "/examples/2/situation",
+        "/examples/2/takeaway",
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/intro",
+        "/planningTask/passRule",
+        "/planningTask/steps/0",
+        "/planningTask/steps/1",
+        "/planningTask/steps/2",
+        "/planningTask/steps/3",
+        "/planningTask/steps/4",
+        "/planningTask/steps/5",
+        "/practical/safety",
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1",
+        "/reading/0/paragraphs/2",
+        "/reading/0/paragraphs/3",
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1",
+        "/reading/1/paragraphs/2",
+        "/reading/1/paragraphs/3",
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1",
+        "/reading/2/paragraphs/2",
+        "/reading/2/paragraphs/3",
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2",
+        "/reading/3/paragraphs/3",
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1",
+        "/reading/4/paragraphs/2",
+        "/reading/4/paragraphs/3",
+        "/selfReflection/note",
+        "/selfReflection/question",
+        "/trainingCard/boundary",
+        "/trainingCard/laterSubmission",
+        "/trainingCard/purpose",
+        "/trainingCard/zoneCountOnPracticeMap"
+      ],
+      "completeReadings": 5,
+      "completeWorkedExamples": 3,
+      "glossaryDefinitions": 6,
+      "guidanceAndTrainerBoundariesNarrated": true,
+      "assessmentIDsRetainedPrivately": {
+        "quiz": [
+          "depth",
+          "why-w",
+          "avoid-feature",
+          "hectare",
+          "gateway",
+          "leafy-depth"
+        ],
+        "writtenTasks": [
+          "twenty-acre",
+          "small-plot",
+          "contrasting-areas"
+        ]
+      },
+      "equivalentSourcePointersNotRepeated": {
+        "/practical/steps": "/planningTask/steps",
+        "/practical/evidence": "/planningTask/steps",
+        "/practical/passRule": "/planningTask/passRule"
+      },
+      "typedTrainingFacts": {
+        "purpose": "Pianificare il successivo prelievo supervisionato di un campione composito da una piccola zona di esercitazione ragionevolmente uniforme.",
+        "zoneCountOnPracticeMap": "Due o tre zone motivate dalle caratteristiche della mappa; una zona assegnata a ciascun gruppo",
+        "subsampleCountPerAssignedZone": 10,
+        "depthCm": {
+          "from": 0,
+          "to": 15
+        },
+        "pointIds": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09",
+          "P10"
+        ],
+        "boundary": "Questi valori valgono solo per l'esercitazione. Nel campionamento reale, numero, dimensione della zona, profondità, preparazione e quantità inviata seguono il quesito e il protocollo del laboratorio ricevente.",
+        "laterSubmission": "Mescola accuratamente e riempi il sacchetto approvato dal laboratorio fino alla tacca indicata; non inventare una massa valida per tutti i campioni."
+      },
+      "notNarrated": [
+        {
+          "pointer": "/quiz",
+          "reason": "Assessment remains separately gated; no prompts, answers or feedback in TTS/public projection."
+        },
+        {
+          "pointer": "/writtenTasks",
+          "reason": "Separate written assessment; no prompts or private review points in TTS/public projection."
+        },
+        {
+          "pointer": "/studentDownloads",
+          "reason": "Resource labels remain editable UI; no explanatory facts omitted."
+        },
+        {
+          "pointer": "/selfReflection/choices",
+          "reason": "Editable reflection choices, no prefilled learner result."
+        },
+        {
+          "pointer": "all identifiers, titles and step/localization metadata",
+          "reason": "Editable UI/binding metadata; complete explanatory prose is narrated."
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "narratedPointers": [
+        "/examples/0/reasoning/0",
+        "/examples/0/reasoning/1",
+        "/examples/0/reasoning/2",
+        "/examples/0/situation",
+        "/examples/0/takeaway",
+        "/examples/1/reasoning/0",
+        "/examples/1/reasoning/1",
+        "/examples/1/reasoning/2",
+        "/examples/1/situation",
+        "/examples/1/takeaway",
+        "/examples/2/reasoning/0",
+        "/examples/2/reasoning/1",
+        "/examples/2/reasoning/2",
+        "/examples/2/situation",
+        "/examples/2/takeaway",
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/intro",
+        "/planningTask/passRule",
+        "/planningTask/steps/0",
+        "/planningTask/steps/1",
+        "/planningTask/steps/2",
+        "/planningTask/steps/3",
+        "/planningTask/steps/4",
+        "/planningTask/steps/5",
+        "/practical/safety",
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1",
+        "/reading/0/paragraphs/2",
+        "/reading/0/paragraphs/3",
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1",
+        "/reading/1/paragraphs/2",
+        "/reading/1/paragraphs/3",
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1",
+        "/reading/2/paragraphs/2",
+        "/reading/2/paragraphs/3",
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2",
+        "/reading/3/paragraphs/3",
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1",
+        "/reading/4/paragraphs/2",
+        "/reading/4/paragraphs/3",
+        "/selfReflection/note",
+        "/selfReflection/question",
+        "/trainingCard/boundary",
+        "/trainingCard/laterSubmission",
+        "/trainingCard/purpose",
+        "/trainingCard/zoneCountOnPracticeMap"
+      ],
+      "completeReadings": 5,
+      "completeWorkedExamples": 3,
+      "glossaryDefinitions": 6,
+      "guidanceAndTrainerBoundariesNarrated": true,
+      "assessmentIDsRetainedPrivately": {
+        "quiz": [
+          "depth",
+          "why-w",
+          "avoid-feature",
+          "hectare",
+          "gateway",
+          "leafy-depth"
+        ],
+        "writtenTasks": [
+          "twenty-acre",
+          "small-plot",
+          "contrasting-areas"
+        ]
+      },
+      "equivalentSourcePointersNotRepeated": {
+        "/practical/steps": "/planningTask/steps",
+        "/practical/evidence": "/planningTask/steps",
+        "/practical/passRule": "/planningTask/passRule"
+      },
+      "typedTrainingFacts": {
+        "purpose": "Die spätere beaufsichtigte Entnahme einer Mischprobe aus einer kleinen, einigermaßen einheitlichen Übungszone planen.",
+        "zoneCountOnPracticeMap": "Zwei oder drei anhand der Kartenmerkmale begründete Zonen; eine zugewiesene Zone pro Gruppe",
+        "subsampleCountPerAssignedZone": 10,
+        "depthCm": {
+          "from": 0,
+          "to": 15
+        },
+        "pointIds": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05",
+          "P06",
+          "P07",
+          "P08",
+          "P09",
+          "P10"
+        ],
+        "boundary": "Diese Werte gelten für diese Übung. Bei einer realen Probenahme richten sich Anzahl, Zonengröße, Tiefe, Aufbereitung und Einsendemenge nach der Fragestellung und dem Protokoll des empfangenden Labors.",
+        "laterSubmission": "Gründlich mischen und den vom Labor zugelassenen Beutel bis zur markierten Fülllinie füllen; keine allgemein gültige Masse erfinden."
+      },
+      "notNarrated": [
+        {
+          "pointer": "/quiz",
+          "reason": "Assessment remains separately gated; no prompts, answers or feedback in TTS/public projection."
+        },
+        {
+          "pointer": "/writtenTasks",
+          "reason": "Separate written assessment; no prompts or private review points in TTS/public projection."
+        },
+        {
+          "pointer": "/studentDownloads",
+          "reason": "Resource labels remain editable UI; no explanatory facts omitted."
+        },
+        {
+          "pointer": "/selfReflection/choices",
+          "reason": "Editable reflection choices, no prefilled learner result."
+        },
+        {
+          "pointer": "all identifiers, titles and step/localization metadata",
+          "reason": "Editable UI/binding metadata; complete explanatory prose is narrated."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "schema": "masaarat.S1-05.actual-worker-offline-verification.v1",
+  "checkedAtUTC": "2026-10-22T10:05:45.488384+00:00",
+  "status": "PASS_OFFLINE_ACTUAL_WORKER",
+  "requestSha256": "35b2cb870157a0d9dd0179f1e5ef5e33ef7f44b14a36edbd42ef46edf2ac5b63",
+  "workerSha256": "b30cd2ad4197cf0e815e4e92df5ffccb3a7d425dc37611896dcf9804fbd85e35",
+  "freezeSha256": "3f1c191650a03fbb8d9dae0c90fdb6481e49145c80a80cc23c8e1f64da0c3371",
+  "workflowSha256": "2f8d50b2767b14836c6690aa2f2ca4d658718c86ac51411e7dfa242835d9a54a",
+  "testScriptSha256": "e48fa365e9fc28e81fb1fb038bde209f7653e927538ea6fc08ced4a6b2b7cfe7",
+  "tests": [
+    {
+      "name": "actual_worker_validate",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_old_tts_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_call_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_automatic_retry",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_required_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_voice",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_speaker",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unit_id_outside_scope",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_file_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_spoken_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unrecorded_spoken_omission",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_display_or_caption_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_invented_duration",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_rubric_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_feedback_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_false_quiz_release_flag",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_binding_text",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_request_fingerprint_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_explanatory_binding",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_group_order",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_original_lineage_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_delivery_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_argon_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_asr_locale_fallback",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_review_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_asr_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_produce_rejects_local_execution_before_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_actions_rerun_attempt2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_other_lesson_output_unit",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_reserve_allows40_rejects41_and_duplicate",
+      "result": "PASS"
+    },
+    {
+      "name": "frozen_vendor_engine_imports_without_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_written_review_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unknown_public_projection_field",
+      "result": "PASS"
+    },
+    {
+      "name": "workflow_all40_once_fresh_push_run1_and_upload_before_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "name": "accept_exact_original_public_first_push_only",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_workflow_dispatch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_repository_dispatch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_schedule_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_later_push_created_false",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_created_string_true",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_nonzero_before_even_when_created_true",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_branch_deletion",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_force_push",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_runner_rerun2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_runner_repository",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_runner_repository_id",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_main_runner_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_main_event_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_r1_runner_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_tag_runner_ref_type",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_zero_runner_commit",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_event_commit_mismatch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_payload_repository_name",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_payload_repository_id",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_repo_payload",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fork_repo_payload",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_worker_requires_same_first_push_guard_in_production_and_validate",
+      "result": "PASS"
+    },
+    {
+      "name": "network_calls_remain_zero",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_worker_cli_validate",
+      "result": "PASS",
+      "exitCode": 0,
+      "stdout": "Frozen S1-05 first-push r2 package and unchanged40 r1 narration identities verified; zero provider calls."
+    }
+  ],
+  "testCount": 62,
+  "providerCalls": 0,
+  "networkCalls": 0,
+  "productionOutputCreated": false,
+  "finiteScope": {
+    "locales": 4,
+    "partsPerLocale": 10,
+    "TTS": 40,
+    "blindArgonReviews": 40,
+    "ASR": 40,
+    "metadataGETs": 2,
+    "automaticRetries": 0
+  },
+  "limits": [
+    "No provider metadata/TTS/audio-review/ASR production invocation ran.",
+    "Availability and actual audio quality are untested for this new batch.",
+    "Offline fixture reservations are synthetic tests, kept separately from production output.",
+    "Frozen manifest and workflow must be rederived if any frozen input changes."
+  ]
+}

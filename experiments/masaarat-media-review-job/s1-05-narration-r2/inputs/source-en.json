@@ -1,0 +1,209 @@
+{
+  "stepId": "S1-05",
+  "stepNumber": 5,
+  "locale": "en",
+  "title": "Plan the sampling zones and route",
+  "intro": "Decide what each sample will represent before walking into the field. A good map separates different areas, spreads collection points through the intended zone and states the count and depth clearly.",
+  "goals": [
+    "Divide a field into justified sampling zones and keep a problem patch separate from the general sample.",
+    "Draw a route with distinct collection points and state the count, depth and units; explain why a W shape alone does not make a statistical random sample.",
+    "Distinguish example numbers from a field protocol and explain why unrepresentative gateways, fertilizer bands and other unusual spots are kept out of the general sample."
+  ],
+  "trainingCard": {
+    "purpose": "Plan the later supervised collection of a composite sample from one small, reasonably uniform training zone.",
+    "zoneCountOnPracticeMap": "2 or 3 zones, justified by the map features; one assigned zone per group",
+    "subsampleCountPerAssignedZone": 10,
+    "depthCm": {
+      "from": 0,
+      "to": 15
+    },
+    "pointIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10"
+    ],
+    "boundary": "These values apply to this training task. Real sampling count, zone size, depth, preparation and submitted quantity follow the question and receiving laboratory's protocol.",
+    "laterSubmission": "Mix thoroughly and fill the laboratory-approved bag to its marked fill line; do not invent a universal mass."
+  },
+  "reading": [
+    {
+      "id": "zones",
+      "title": "1. Draw boundaries around different management areas",
+      "paragraphs": [
+        "A management zone is an area that is reasonably similar for the purpose of the sampling decision. Examine soil type, slope and position, crop history, previous management and visible differences in plant growth. A field boundary on its own does not prove that the soil inside is uniform.",
+        "Separate a low, damp area from a higher, well-drained slope when they represent different conditions. A single composite made by mixing both areas can hide the difference and lead to one recommendation that fits neither area well. Give each zone its own identity, route and eventual sample bag.",
+        "For the training map, identify two or three justified zones and work on your assigned zone. Explain why you put each boundary where it is. Do not split a uniform area into arbitrary strips simply to create the requested number; use the differences shown on the practice map.",
+        "If a field is reasonably uniform for the intended test, one defined sampling zone may be suitable under the chosen protocol. If its conditions differ, divide it appropriately. The decision is based on evidence about the area and the testing purpose, not simply the number of bags available."
+      ]
+    },
+    {
+      "id": "atypical",
+      "title": "2. Keep unusual spots from distorting the general sample",
+      "paragraphs": [
+        "For a sample intended to represent the main zone, avoid isolated fence-line strips, gateways, old building sites, places where livestock gather, fertilizer bands and unusually wet or eroded spots. These places may have different compaction, waste accumulation, amendments or water conditions from the main area.",
+        "Avoiding an unusual spot in the general composite does not mean ignoring a real problem. If a damp section is a substantial, distinct management area, give it its own zone. If a bare or poorly growing patch needs investigation, collect and identify it separately according to the investigation plan.",
+        "Keep the problem-patch sample in its own bag and record its location and purpose. Compare it with relevant evidence from a better-growing area without combining the two soils. Predict how the results might differ, but label that prediction as a hypothesis until the results and other observations support it.",
+        "When choosing between locations, distinguish a separate legitimate zone from an isolated feature that would bias the general sample. Different soil types, slopes and growth patterns may require separate sampling; a gateway or trough is not automatically a representative location for either zone."
+      ]
+    },
+    {
+      "id": "route",
+      "title": "3. Spread the points through the zone",
+      "paragraphs": [
+        "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.",
+        "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+        "A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.",
+        "If drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change."
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": "4. State the count, depth and area without turning examples into universal rules",
+      "paragraphs": [
+        "Different worked situations use different numbers. An introductory activity uses at least eight marked locations, while a general example uses 10–15 subsamples. The small-field training card here fixes ten points so that the map, collection and assessment all agree. Do not collect eight while handing in a map that claims ten.",
+        "A worked example describes a uniform zone of 20 acres or less. An acre is not an Egyptian feddan. Twenty acres are approximately 8.09 hectares; preserve the stated unit when reading or reporting that example. The example does not establish a maximum zone size for every farm or laboratory protocol.",
+        "The examples also refer to six inches, approximately 15 centimetres. In this training card, collect from the specified 0–15 cm layer when you reach the supervised collection step. Measure from the soil surface as the collection procedure directs, and include that whole intended layer consistently. A depth value without units or without a start and end is incomplete.",
+        "Sampling depth is chosen for the crop-management question, the measurement and the laboratory recommendation system. Six inches is not the full root depth of most crops and is not a universal depth for all lawns, vegetables or fields. A question about lettuce or spinach must still state the relevant sampling protocol rather than treating crop name alone as a complete instruction."
+      ]
+    },
+    {
+      "id": "record",
+      "title": "5. Make the plan traceable through collection and bagging",
+      "paragraphs": [
+        "On the map or field record, write the field name, zone identity, intended collection layer, ten point labels and the route. Mark the excluded areas and explain why they are excluded or sampled separately. Keep enough landmarks to connect the drawing to the actual training area; a neat W with no field identity cannot be traced later.",
+        "Before collection, confirm the safe site and authorized locations, select and clean suitable tools and the plastic bucket, and use the agreed protection. During collection, gather a consistent portion from the specified layer at every planned point. Follow the actual tool's method, and do not include soil from another zone.",
+        "Thoroughly mix the subsamples from that zone in the clean bucket before taking the submitted portion. Break up appropriate soil clods as instructed so the submitted material is not just the last subsample added. Use the laboratory-approved container and fill line, and follow the required preparation and shipping instructions.",
+        "Label the training bag with group name, field name, zone ID and date, and keep its identity consistent with the map. Present the map and sample together for review. This step assesses your plan and reasoning; actual tool use, collection, mixing and bagging will be observed in the following practical step."
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "two-zones",
+      "title": "One field, two different conditions",
+      "situation": "A large field has a flat, low-lying area that stays damp and a higher slope that drains well.",
+      "reasoning": [
+        "Mark the areas as separate candidate sampling zones because water condition and topography differ.",
+        "Plan points within each zone, using the applicable protocol. Keep their samples separate and identified.",
+        "Explain that mixing the two may conceal differences needed for management. Compare their results with the observed conditions instead of assuming the average describes both."
+      ],
+      "takeaway": "One field name does not require one composite sample."
+    },
+    {
+      "id": "straight-strip",
+      "title": "Ten points along an old fertilizer strip",
+      "situation": "A learner draws ten evenly spaced points down the middle of a field. The line follows an old fertilizer band.",
+      "reasoning": [
+        "The count is correct for the practice card but the positions are biased.",
+        "Spread the route through the intended zone while excluding the atypical band from the general sample.",
+        "Check ten unique point IDs and explain the reason for the new positions. Do not claim a W shape alone has made them statistically random."
+      ],
+      "takeaway": "A correct count cannot compensate for a biased location choice."
+    },
+    {
+      "id": "problem-patch",
+      "title": "A bare patch within the assigned area",
+      "situation": "Your map includes a small bare patch that the grower wants investigated.",
+      "reasoning": [
+        "Keep the unusual patch out of the general composite and record that decision.",
+        "Plan a separate identified diagnostic sample from the patch under the trainer's instructions, with a relevant comparison area if the investigation requires one.",
+        "Write a prediction about possible differences, but do not treat the prediction as a laboratory result."
+      ],
+      "takeaway": "Separating a problem sample preserves useful evidence instead of diluting it."
+    }
+  ],
+  "planningTask": {
+    "title": "Prepare a map you could follow in the field",
+    "steps": [
+      "Read the training card and mark two or three justified zones on the supplied varied practice map; identify your assigned zone.",
+      "Mark excluded unusual features and any separately investigated patch.",
+      "Draw or use the supplied route and add exactly ten distinct labels, P01–P10, within your assigned zone.",
+      "Write the collection layer as 0–15 cm for this task, along with field and zone identity.",
+      "Check the route against access and safety information. Explain how a replacement point would be agreed and recorded.",
+      "Explain the plan to the trainer, including the limits of the chosen numbers and W shape."
+    ],
+    "passRule": "All three knowledge criteria require accurate reasoning. Correct missing or repeated points, unclear units, mixed zones or unsafe positions through targeted revision. This map exercise does not certify the practical collection skill in the next step."
+  },
+  "glossary": [
+    [
+      "Management zone",
+      "An area sufficiently similar for the defined sampling and management question."
+    ],
+    [
+      "Sampling bias",
+      "A systematic mismatch between collected material and the area or layer it is intended to represent."
+    ],
+    [
+      "Atypical spot",
+      "A location that differs from the main area in a way relevant to the test."
+    ],
+    [
+      "Acre",
+      "An area unit distinct from the Egyptian feddan; 20 acres are about 8.09 hectares."
+    ],
+    [
+      "Collection layer",
+      "The stated start and end depths of soil included in the sample."
+    ],
+    [
+      "Hypothesis",
+      "A possible explanation or prediction that still needs evidence."
+    ]
+  ],
+  "studentDownloads": [
+    "Blank and supported sampling-map worksheets with the ten-point task card",
+    "Full-procedure and contrasting-zone practice questions"
+  ],
+  "selfReflection": {
+    "question": "Can I explain my zone boundary, all ten locations and the stated collection layer without treating the example as a universal field rule?",
+    "choices": [
+      "I can",
+      "Not yet",
+      "Partly"
+    ],
+    "note": "Use your answer to decide what to review. The trainer will observe actual soil collection in the following step."
+  },
+  "practical": {
+    "title": "Prepare a map you could follow in the field",
+    "safety": "This step rehearses the map and reasoning only. The trainer has not observed or passed physical soil collection.",
+    "steps": [
+      "Read the training card and mark two or three justified zones on the supplied varied practice map; identify your assigned zone.",
+      "Mark excluded unusual features and any separately investigated patch.",
+      "Draw or use the supplied route and add exactly ten distinct labels, P01–P10, within your assigned zone.",
+      "Write the collection layer as 0–15 cm for this task, along with field and zone identity.",
+      "Check the route against access and safety information. Explain how a replacement point would be agreed and recorded.",
+      "Explain the plan to the trainer, including the limits of the chosen numbers and W shape."
+    ],
+    "evidence": [
+      "Read the training card and mark two or three justified zones on the supplied varied practice map; identify your assigned zone.",
+      "Mark excluded unusual features and any separately investigated patch.",
+      "Draw or use the supplied route and add exactly ten distinct labels, P01–P10, within your assigned zone.",
+      "Write the collection layer as 0–15 cm for this task, along with field and zone identity.",
+      "Check the route against access and safety information. Explain how a replacement point would be agreed and recorded.",
+      "Explain the plan to the trainer, including the limits of the chosen numbers and W shape."
+    ],
+    "passRule": "All three knowledge criteria require accurate reasoning. Correct missing or repeated points, unclear units, mixed zones or unsafe positions through targeted revision. This map exercise does not certify the practical collection skill in the next step."
+  },
+  "projectionDisclosure": {
+    "originalSourceSHA256": "3f2931bfb18f3727bc1e7f881e60af09dca4c51c24412a7aeae768d08131affe",
+    "projectionMethod": "Explicit allowlist of current teaching fields; source values and original JSON pointers preserved.",
+    "excludedFromRunnablePublicInputs": [
+      "comparison",
+      "guidedPractice",
+      "practicalTasks",
+      "quiz",
+      "reportFive",
+      "trainingDecisions",
+      "trainingQuestions",
+      "writtenTasks"
+    ],
+    "reason": "Assessment prompts, solutions, feedback and private review points remain protected; unused optional UI fields are omitted rather than guessed safe."
+  }
+}

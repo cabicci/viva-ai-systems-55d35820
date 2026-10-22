@@ -1,0 +1,209 @@
+{
+  "stepId": "S1-05",
+  "stepNumber": 5,
+  "locale": "it",
+  "title": "Pianificare le zone e il percorso di campionamento",
+  "intro": "Prima di entrare nel campo, decidi quale area dovrà rappresentare ciascun campione. Una buona mappa separa le aree diverse, distribuisce i punti di prelievo nella zona prevista e indica chiaramente numero e profondità con le rispettive unità.",
+  "goals": [
+    "Suddividere un campo in zone di campionamento motivate e tenere una chiazza problematica separata dal campione generale.",
+    "Disegnare un percorso con punti di prelievo distinti e indicare numero, profondità e unità; spiegare perché la sola forma a W non costituisce un campionamento statisticamente casuale.",
+    "Distinguere i numeri degli esempi da un protocollo di campo e spiegare perché accessi, bande di concime e altri punti atipici restano fuori dal campione generale."
+  ],
+  "trainingCard": {
+    "purpose": "Pianificare il successivo prelievo supervisionato di un campione composito da una piccola zona di esercitazione ragionevolmente uniforme.",
+    "zoneCountOnPracticeMap": "Due o tre zone motivate dalle caratteristiche della mappa; una zona assegnata a ciascun gruppo",
+    "subsampleCountPerAssignedZone": 10,
+    "depthCm": {
+      "from": 0,
+      "to": 15
+    },
+    "pointIds": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10"
+    ],
+    "boundary": "Questi valori valgono solo per l'esercitazione. Nel campionamento reale, numero, dimensione della zona, profondità, preparazione e quantità inviata seguono il quesito e il protocollo del laboratorio ricevente.",
+    "laterSubmission": "Mescola accuratamente e riempi il sacchetto approvato dal laboratorio fino alla tacca indicata; non inventare una massa valida per tutti i campioni."
+  },
+  "reading": [
+    {
+      "id": "zones",
+      "title": "1. Delimita le aree con condizioni o gestione diverse",
+      "paragraphs": [
+        "Una zona di gestione è un'area abbastanza omogenea rispetto alla decisione di campionamento. Esamina tipo di suolo, pendenza e posizione, colture precedenti, gestione passata e differenze visibili nella crescita delle piante. Il solo confine del campo non dimostra che tutto il terreno al suo interno sia uniforme.",
+        "Se rappresentano condizioni diverse, separa una zona bassa e umida da un pendio più alto e ben drenato. Mescolarle in un unico campione composito potrebbe nascondere la differenza e portare a una raccomandazione inadatta a entrambe. Assegna a ogni zona identità, percorso e sacchetto propri.",
+        "Nella mappa di esercitazione individua due o tre zone giustificate e lavora sulla zona assegnata al tuo gruppo. Spiega il motivo di ogni confine. Non dividere un'area uniforme in strisce arbitrarie soltanto per raggiungere il numero richiesto: segui le differenze rappresentate sulla mappa.",
+        "Se il campo è ragionevolmente uniforme per l'analisi prevista, un'unica zona definita può essere adatta secondo il protocollo scelto. Se le condizioni differiscono, suddividilo in modo appropriato. La decisione dipende dalle prove disponibili sull'area e dallo scopo dell'analisi, non dal numero di sacchetti disponibili."
+      ]
+    },
+    {
+      "id": "atypical",
+      "title": "2. Evita che i punti atipici distorcano il campione generale",
+      "paragraphs": [
+        "Per rappresentare la zona principale, evita strette fasce lungo recinzioni, accessi, vecchi edifici, luoghi dove si radunano gli animali, bande di concime e punti insolitamente umidi o erosi. Compattazione, residui, ammendanti o condizioni idriche possono essere diversi rispetto all'area principale.",
+        "Escludere un punto atipico dal campione composito generale non significa ignorare un problema reale. Se una parte umida è un'ampia area di gestione distinta, assegnale una zona propria. Se una chiazza spoglia o con scarsa crescita richiede un'indagine, prelevala e identificala separatamente secondo il piano d'indagine.",
+        "Tieni il campione della chiazza problematica in un sacchetto distinto e annotane posizione e scopo. Confrontalo con evidenze provenienti da un'area dalla crescita migliore, se utile all'indagine, senza mescolare i terreni. Puoi prevedere differenze nei risultati, ma indica la previsione come ipotesi finché risultati e altre osservazioni non la sostengono.",
+        "Quando scegli i punti, distingui una legittima zona separata da un elemento isolato che altererebbe il campione generale. Suoli, pendenze e crescita differenti possono richiedere campioni distinti; un accesso o un abbeveratoio non rappresenta automaticamente nessuna delle due zone."
+      ]
+    },
+    {
+      "id": "route",
+      "title": "3. Distribuisci i punti nella zona",
+      "paragraphs": [
+        "Traccia un percorso a zigzag o a W che raggiunga parti diverse della zona assegnata. Per questa esercitazione segna dieci punti di prelievo distinti e numerali da P01 a P10, una sola volta ciascuno. Tienili all'interno della zona prevista e lontano dagli elementi non rappresentativi individuati. La linea del percorso non è un campione: contano i luoghi di prelievo segnati.",
+        "Dieci punti su un'unica linea retta potrebbero seguire una vecchia banda di concime, una linea di drenaggio o il passaggio di un mezzo. Molti prelievi lungo lo stesso elemento atipico possono fornire un quadro sistematicamente distorto. Un percorso distribuito nella zona aiuta a coprirne la variabilità; prelevare più terreno dalla stessa striscia sbagliata non risolve il problema.",
+        "Una forma a W non garantisce la casualità statistica. Il campionamento casuale richiede un metodo definito per selezionare i luoghi. Qui il percorso serve a coprire concretamente la zona. Non descrivere il piano come statisticamente casuale solo perché la linea cambia direzione.",
+        "Se disegnare il percorso è difficile, usa la mappa di supporto con la linea già tracciata e posiziona personalmente i dieci segni di prelievo. Devi comunque verificare confini, posizioni, esclusioni e numero. Se sul posto un punto pianificato risulta pericoloso o inadatto, fermati, segui il piano del formatore per sostituirlo e registra la modifica."
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": "4. Indica numero, profondità e superficie senza trasformare gli esempi in regole universali",
+      "paragraphs": [
+        "Gli esempi svolti usano numeri diversi. Un'attività introduttiva chiede almeno otto punti segnati; un esempio generale usa 10–15 sottocampioni. La scheda per il piccolo campo di esercitazione fissa dieci punti affinché mappa, prelievo e valutazione coincidano. Non prelevare otto campioni presentando una mappa che ne dichiara dieci.",
+        "Un esempio descrive una zona uniforme di 20 acri o meno. L'acro non è il feddan egiziano. Venti acri equivalgono a circa 8,09 ettari; conserva l'unità originale quando leggi o riporti l'esempio. Questo esempio non stabilisce la superficie massima di ogni zona agricola o di ogni protocollo di laboratorio.",
+        "Gli esempi citano anche sei pollici, circa 15 centimetri. In questa scheda di esercitazione, quando arriverai al prelievo supervisionato, raccogli dallo strato indicato di 0–15 cm. Misura dalla superficie del suolo secondo la procedura e includi in modo coerente l'intero strato previsto. Un valore di profondità senza unità, inizio e fine è incompleto.",
+        "La profondità si sceglie in base alla domanda agronomica, alla misura richiesta e al sistema di raccomandazioni del laboratorio. Sei pollici non sono tutta la profondità radicale della maggior parte delle colture e non sono una regola per prati, ortaggi o ogni campo. Anche per lattuga o spinaci occorre specificare il protocollo pertinente: il nome della coltura da solo non è un'istruzione completa."
+      ]
+    },
+    {
+      "id": "record",
+      "title": "5. Rendi il piano rintracciabile fino al prelievo e al sacchetto",
+      "paragraphs": [
+        "Sulla mappa o sul registro scrivi nome del campo, identità della zona, strato previsto, dieci codici dei punti e percorso. Segna le aree escluse e spiega perché lo sono o perché vengono campionate separatamente. Inserisci riferimenti sufficienti per collegare il disegno al luogo reale: una W ordinata senza identità del campo non è rintracciabile in seguito.",
+        "Prima del prelievo verifica che il sito sia sicuro e i punti autorizzati, scegli e pulisci strumenti adatti e il secchio di plastica, e usa le protezioni concordate. Durante il prelievo raccogli una porzione coerente dello strato specificato in ogni punto pianificato. Segui il metodo previsto per lo strumento effettivo e non aggiungere terreno da un'altra zona.",
+        "Mescola accuratamente nel secchio pulito i sottocampioni della stessa zona prima di prelevare la porzione da inviare. Rompi le zolle appropriate come indicato, affinché il materiale inviato non sia soltanto l'ultimo sottocampione aggiunto. Usa il contenitore e la tacca approvati dal laboratorio e segui le istruzioni di preparazione e spedizione.",
+        "Etichetta il sacchetto di esercitazione con nome del gruppo, campo, codice della zona e data, coerentemente con la mappa. Presenta insieme mappa e campione. Questa fase valuta piano e ragionamento; uso degli strumenti, prelievo, mescolamento e confezionamento effettivi saranno osservati nella fase pratica successiva."
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "id": "two-zones",
+      "title": "Un campo, due condizioni diverse",
+      "situation": "Un grande campo comprende un'area pianeggiante e bassa che rimane umida e un pendio più alto che drena bene.",
+      "reasoning": [
+        "Segna le due aree come possibili zone di campionamento separate, poiché acqua e topografia sono diverse.",
+        "Pianifica punti in ciascuna zona secondo il protocollo applicabile e tieni separati e identificati i campioni.",
+        "Spiega che mescolarli può nascondere differenze utili alla gestione. Confronta i risultati con le condizioni osservate invece di supporre che la media rappresenti entrambi."
+      ],
+      "takeaway": "Un solo nome di campo non richiede un unico campione composito."
+    },
+    {
+      "id": "straight-strip",
+      "title": "Dieci punti lungo una vecchia banda di concime",
+      "situation": "Uno studente disegna dieci punti equidistanti al centro del campo, lungo una vecchia banda di concime.",
+      "reasoning": [
+        "Il numero è corretto per la scheda di esercitazione, ma le posizioni sono distorte.",
+        "Distribuisci il percorso nella zona prevista, escludendo la banda atipica dal campione generale.",
+        "Verifica dieci codici dei punti unici e spiega le nuove posizioni. Non affermare che la sola W li renda statisticamente casuali."
+      ],
+      "takeaway": "Un numero corretto non compensa posizioni viziate."
+    },
+    {
+      "id": "problem-patch",
+      "title": "Una chiazza spoglia nell'area assegnata",
+      "situation": "La mappa comprende una piccola chiazza spoglia che l'agricoltore vuole indagare.",
+      "reasoning": [
+        "Tieni la chiazza atipica fuori dal campione composito generale e registra la scelta.",
+        "Pianifica un campione diagnostico distinto e identificato della chiazza secondo le istruzioni del formatore, con un'area di confronto pertinente se richiesta dall'indagine.",
+        "Formula una previsione sulle possibili differenze, senza trattarla come un risultato di laboratorio."
+      ],
+      "takeaway": "Separare il campione problematico conserva l'evidenza invece di diluirla."
+    }
+  ],
+  "planningTask": {
+    "title": "Prepara una mappa utilizzabile nel campo",
+    "steps": [
+      "Leggi la scheda di esercitazione e indica due o tre zone motivate sulla mappa variata; individua quella assegnata.",
+      "Segna gli elementi atipici esclusi e le eventuali chiazze da indagare separatamente.",
+      "Traccia il percorso o usa quello fornito e aggiungi esattamente dieci codici distinti, da P01 a P10, nella zona assegnata.",
+      "Scrivi lo strato 0–15 cm per questa attività, insieme a campo e zona.",
+      "Verifica percorso, accessibilità e sicurezza; spiega come concordare e registrare un punto sostitutivo.",
+      "Spiega il piano al formatore, compresi i limiti dei numeri e della forma a W."
+    ],
+    "passRule": "Tutti e tre i criteri di conoscenza richiedono un ragionamento corretto. Correggi con un ripasso mirato punti mancanti o ripetuti, unità poco chiare, zone mescolate o posizioni pericolose. L'esercizio sulla mappa non certifica la raccolta pratica della fase successiva."
+  },
+  "glossary": [
+    [
+      "Zona di gestione",
+      "Area sufficientemente simile rispetto al quesito di campionamento e gestione definito."
+    ],
+    [
+      "Distorsione del campionamento",
+      "Scostamento sistematico fra il materiale prelevato e l'area o lo strato che dovrebbe rappresentare."
+    ],
+    [
+      "Punto atipico",
+      "Luogo diverso dall'area principale in modo pertinente all'analisi."
+    ],
+    [
+      "Acro",
+      "Unità di superficie diversa dal feddan egiziano; 20 acri sono circa 8,09 ettari."
+    ],
+    [
+      "Strato di prelievo",
+      "Profondità iniziale e finale del terreno incluso nel campione."
+    ],
+    [
+      "Ipotesi",
+      "Possibile spiegazione o previsione ancora da verificare con evidenze."
+    ]
+  ],
+  "studentDownloads": [
+    "Schede mappa vuota e assistita con la consegna dei dieci punti",
+    "Domande di esercitazione sulla procedura completa e sulle zone contrastanti"
+  ],
+  "selfReflection": {
+    "question": "So motivare i confini delle zone, indicare tutte e dieci le posizioni e lo strato di prelievo senza trasformare l'esempio in una regola universale?",
+    "choices": [
+      "Sì",
+      "Non ancora",
+      "In parte"
+    ],
+    "note": "Usa la risposta per scegliere che cosa ripassare. Il formatore osserverà il prelievo reale nella tappa successiva."
+  },
+  "practical": {
+    "title": "Prepara una mappa utilizzabile nel campo",
+    "safety": "Questa tappa esercita solo la mappa e il ragionamento. Il formatore non ha ancora osservato né approvato il prelievo fisico del suolo.",
+    "steps": [
+      "Leggi la scheda di esercitazione e indica due o tre zone motivate sulla mappa variata; individua quella assegnata.",
+      "Segna gli elementi atipici esclusi e le eventuali chiazze da indagare separatamente.",
+      "Traccia il percorso o usa quello fornito e aggiungi esattamente dieci codici distinti, da P01 a P10, nella zona assegnata.",
+      "Scrivi lo strato 0–15 cm per questa attività, insieme a campo e zona.",
+      "Verifica percorso, accessibilità e sicurezza; spiega come concordare e registrare un punto sostitutivo.",
+      "Spiega il piano al formatore, compresi i limiti dei numeri e della forma a W."
+    ],
+    "evidence": [
+      "Leggi la scheda di esercitazione e indica due o tre zone motivate sulla mappa variata; individua quella assegnata.",
+      "Segna gli elementi atipici esclusi e le eventuali chiazze da indagare separatamente.",
+      "Traccia il percorso o usa quello fornito e aggiungi esattamente dieci codici distinti, da P01 a P10, nella zona assegnata.",
+      "Scrivi lo strato 0–15 cm per questa attività, insieme a campo e zona.",
+      "Verifica percorso, accessibilità e sicurezza; spiega come concordare e registrare un punto sostitutivo.",
+      "Spiega il piano al formatore, compresi i limiti dei numeri e della forma a W."
+    ],
+    "passRule": "Tutti e tre i criteri di conoscenza richiedono un ragionamento corretto. Correggi con un ripasso mirato punti mancanti o ripetuti, unità poco chiare, zone mescolate o posizioni pericolose. L'esercizio sulla mappa non certifica la raccolta pratica della fase successiva."
+  },
+  "projectionDisclosure": {
+    "originalSourceSHA256": "c6c873d0f84ea870b4fd4a1acbef10c5a4da7e0b960a9a48387405d106c0a641",
+    "projectionMethod": "Explicit allowlist of current teaching fields; source values and original JSON pointers preserved.",
+    "excludedFromRunnablePublicInputs": [
+      "comparison",
+      "guidedPractice",
+      "practicalTasks",
+      "quiz",
+      "reportFive",
+      "trainingDecisions",
+      "trainingQuestions",
+      "writtenTasks"
+    ],
+    "reason": "Assessment prompts, solutions, feedback and private review points remain protected; unused optional UI fields are omitted rather than guessed safe."
+  }
+}

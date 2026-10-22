@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "gemini-4-argon",
+  "maximumReviewCallsPerUnit": 1,
+  "maximumReviewCallsForBatch": 40,
+  "asr": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "maximumInvocationsPerUnit": 1,
+    "maximumInvocationsForBatch": 40,
+    "runtimeDependencies": "Resolved package versions, pip installation report and model file hashes are retained; transitive dependency lock is not claimed.",
+    "languageByLocale": {
+      "en": "en",
+      "ar-EG": "ar",
+      "it": "it",
+      "de": "de"
+    }
+  },
+  "acceptedAudio": {
+    "assemblyPerformedByThisWorker": false,
+    "overwriteAcceptedRecordings": false,
+    "reuseOnlyWhenExactRequestIdentityAndAcceptedPCMReceiptMatch": true
+  },
+  "scope": "Only S1-05 40 frozen source-bound units; zero provider calls in preparation, no overwrite, assembly, publication or retry."
+}

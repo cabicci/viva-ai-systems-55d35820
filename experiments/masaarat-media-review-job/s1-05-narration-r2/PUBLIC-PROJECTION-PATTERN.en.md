@@ -1,0 +1,11 @@
+# Reusable public teaching projection (S1-05 pattern)
+
+For a separate S1-11 r3, preserve frozen r2 unchanged. Read its complete current private source locally and pin the exact raw SHA256. Construct a new JSON projection by an explicit allowlist of teaching fields; never publish a generic full source copy or use a blacklist that assumes future fields are safe. Omit quiz and written-assessment prompts, keys, feedback, private review points and any unneeded optional surface. Keep authored instructional explanations even when they teach a fact later assessed.
+
+Preserve each included source value and its original JSON pointer. Add only projectionDisclosure with the raw original hash and a declaration of exclusions. Pin the projection's distinct SHA256. Per-unit sourceFileSHA256 refers to the runnable projection; sourceOriginalFileSHA256 refers to the protected full source. Validate the former bytes, the latter lineage, and every bound teaching pointer against the projection. Do not claim the original source can be reconstituted or verified from the projection alone; the local preparation receipt must separately compare original current files.
+
+Keep originalText/displayText/captionText separate from spokenText and its explicit adaptation list. Validate source-bound prose completeness against a lesson-specific required pointer set. Preserve typed facts and duplicate-equivalence checks. Require the request's complete coherent parts to equal the frozen narration script parts. Reject unknown projection fields and all assessment pointers. Include the coverage/disclosure contract in freeze.json.
+
+Public authority metadata may name excluded assessment IDs and raw hashes, but contains no answer content. A source title or filename match is not an audio reuse match. Existing accepted PCM remains protected from overwriting. The offline tests must mutate the real worker with quiz/private/unknown projection fields and demonstrate rejection, with network forbidden.
+
+S1-05 files to adapt: inputs/source-*.json, request.json sourceAuthority.originalSources and per-unit lineage fields, worker.py validate(), source-coverage.json, and offline_tests.py projection guards. Rebuild a fresh freeze/workflow and rerun tests; never edit the old frozen package or present its QA as current new-package evidence.
