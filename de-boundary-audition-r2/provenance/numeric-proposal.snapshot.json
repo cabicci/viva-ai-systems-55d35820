@@ -1,0 +1,197 @@
+{
+  "requestSha256": "f42c8bbc193e5db1cb4e623bd00c7be52c3294aeeb1ff0bee3d3679a5c52dc5d",
+  "workerSha256": "e7a841e4b48b579aadc4767cad709ce4ae096064883a124bb2c4a53938ebfa77",
+  "measurementsSha256": "8d6c1f339552ba5697c4df3cbb78f6f7049f583e65f83f1d426bf930da941d9f",
+  "candidates": [
+    {
+      "candidateId": "candidate-1",
+      "gain": {
+        "rawMedianPairedGainDb": 0.06563339039190019,
+        "pairedGainIqrDb": 5.363642360871305,
+        "maximumGainForPeakHeadroomDb": 0.4675599671337478,
+        "conditionalCandidateOnlyGainDb": null,
+        "status": "GAIN_UNRESOLVED_DO_NOT_APPLY",
+        "unresolvedReasons": [
+          "PAIRED_WORD_GAIN_VARIABILITY_REQUIRES_REVIEW"
+        ],
+        "originalGainDb": 0,
+        "rawCandidateWavMustRemainUnmodified": true,
+        "gainApplied": false,
+        "timbreBrightnessOrProsodyMatchNotEstablishedByRms": true
+      },
+      "boundaries": [
+        {
+          "edge": "start",
+          "wholeGapSamples": [
+            714720,
+            727680
+          ],
+          "protectedGapInteriorSamples": [
+            715440,
+            726960
+          ],
+          "rmsThresholdDbfs": -53.222312738920486,
+          "peakThresholdDbfs": -35,
+          "candidateIntervals": [
+            {
+              "sampleInterval": [
+                717600,
+                718560
+              ],
+              "secondsInterval": [
+                29.9,
+                29.94
+              ],
+              "medianRmsDbfs": -60.67892624815099,
+              "maxPeakDbfs": -44.91873981483603,
+              "previousCutInside": false,
+              "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+            },
+            {
+              "sampleInterval": [
+                724320,
+                726960
+              ],
+              "secondsInterval": [
+                30.18,
+                30.29
+              ],
+              "medianRmsDbfs": -59.27982848008138,
+              "maxPeakDbfs": -45.8028130646771,
+              "previousCutInside": false,
+              "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+            }
+          ],
+          "verifiedOrSelectedCutSample": null,
+          "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+          "rootAuditoryContextAndBreathContinuityRequired": true
+        },
+        {
+          "edge": "end",
+          "wholeGapSamples": [
+            862560,
+            880800
+          ],
+          "protectedGapInteriorSamples": [
+            863280,
+            880080
+          ],
+          "rmsThresholdDbfs": -61.44845919092987,
+          "peakThresholdDbfs": -35,
+          "candidateIntervals": [
+            {
+              "sampleInterval": [
+                867600,
+                880080
+              ],
+              "secondsInterval": [
+                36.15,
+                36.67
+              ],
+              "medianRmsDbfs": -66.93627844881692,
+              "maxPeakDbfs": -50.39629480724336,
+              "previousCutInside": true,
+              "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+            }
+          ],
+          "verifiedOrSelectedCutSample": null,
+          "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+          "rootAuditoryContextAndBreathContinuityRequired": true
+        }
+      ]
+    },
+    {
+      "candidateId": "candidate-2",
+      "gain": {
+        "rawMedianPairedGainDb": 1.1711714800791393,
+        "pairedGainIqrDb": 4.590896618976545,
+        "maximumGainForPeakHeadroomDb": 0.37421779251567977,
+        "conditionalCandidateOnlyGainDb": null,
+        "status": "GAIN_UNRESOLVED_DO_NOT_APPLY",
+        "unresolvedReasons": [
+          "MATCHING_GAIN_WOULD_VIOLATE_PEAK_HEADROOM",
+          "PAIRED_WORD_GAIN_VARIABILITY_REQUIRES_REVIEW"
+        ],
+        "originalGainDb": 0,
+        "rawCandidateWavMustRemainUnmodified": true,
+        "gainApplied": false,
+        "timbreBrightnessOrProsodyMatchNotEstablishedByRms": true
+      },
+      "boundaries": [
+        {
+          "edge": "start",
+          "wholeGapSamples": [
+            1023360,
+            1047360
+          ],
+          "protectedGapInteriorSamples": [
+            1024080,
+            1046640
+          ],
+          "rmsThresholdDbfs": -62.07290373071467,
+          "peakThresholdDbfs": -35,
+          "candidateIntervals": [
+            {
+              "sampleInterval": [
+                1027680,
+                1046640
+              ],
+              "secondsInterval": [
+                42.82,
+                43.61
+              ],
+              "medianRmsDbfs": -67.39820927133042,
+              "maxPeakDbfs": -54.74597369152149,
+              "previousCutInside": true,
+              "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+            }
+          ],
+          "verifiedOrSelectedCutSample": null,
+          "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+          "rootAuditoryContextAndBreathContinuityRequired": true
+        },
+        {
+          "edge": "end",
+          "wholeGapSamples": [
+            1266720,
+            1287360
+          ],
+          "protectedGapInteriorSamples": [
+            1267440,
+            1286640
+          ],
+          "rmsThresholdDbfs": -57.85330240568284,
+          "peakThresholdDbfs": -35,
+          "candidateIntervals": [
+            {
+              "sampleInterval": [
+                1281840,
+                1286640
+              ],
+              "secondsInterval": [
+                53.41,
+                53.61
+              ],
+              "medianRmsDbfs": -64.99921531468019,
+              "maxPeakDbfs": -48.37079843903324,
+              "previousCutInside": false,
+              "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+            }
+          ],
+          "verifiedOrSelectedCutSample": null,
+          "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+          "rootAuditoryContextAndBreathContinuityRequired": true
+        }
+      ]
+    }
+  ],
+  "onlyConditionalCandidateGainAndOriginalPauseBoundariesProposed": true,
+  "cutSamplesSelected": false,
+  "anyGainApplied": false,
+  "audioFilesWritten": false,
+  "rootReviewBeforeCorrectedAuditionRequired": true,
+  "actualCorrectedJoinsNotYetEvaluated": true,
+  "providerCalls": 0,
+  "ttsCalls": 0,
+  "asrCalls": 0
+}

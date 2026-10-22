@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_ONE_DE_BOUNDARY_ONLY_AUDITION_R2_ZERO_TTS",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "branch": "refs/heads/work/soil-s101-de-boundary-audition-20261022-r2",
+  "inputs": [
+    {
+      "id": "de-original",
+      "path": "inputs/de-original.wav",
+      "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc",
+      "sampleCount": 1662023,
+      "locale": "de",
+      "role": "preserved_original_full_scene"
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-1",
+      "path": "inputs/candidate-2.wav",
+      "sha256": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4",
+      "pcmSha256": "a6c9c908aa5d0198baef21d9a5dca2d17b5f82cb115468b8dc914e51f8066424",
+      "sampleCount": 145920,
+      "locale": "de",
+      "role": "complete_new_candidate_pcm_no_trim"
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-2",
+      "path": "inputs/candidate-3.wav",
+      "sha256": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac",
+      "pcmSha256": "bc920880d8efb623844e33339f3a1b62022e11f0b42bd0c12cfc067c65607cac",
+      "sampleCount": 242880,
+      "locale": "de",
+      "role": "complete_new_candidate_pcm_no_trim"
+    },
+    {
+      "id": "de-failed-r1",
+      "path": "inputs/de-failed-r1.wav",
+      "sha256": "b2d7d42c893631e158d32c712a01075946fb613964eae6ef5d426c0632ad14cc",
+      "pcmSha256": "b54e128a5e5c1d9009764fdff59d6e91508b5308a742dcbcbfe2351defa95a70",
+      "sampleCount": 1658663,
+      "locale": "de",
+      "role": "failed_r1_context_reference_not_assembled"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "de-s101-limits",
+      "locale": "de",
+      "originalInputId": "de-original",
+      "originalClipId": "de-s101-limits",
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "completeExpectedSpokenText": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.\n\nTrage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.\n\nLies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+      "replacements": [
+        {
+          "candidateId": "de-s101-limits-bounded-sentence-1",
+          "sourceSentence": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+          "sourceCharacterRange": [
+            408,
+            502
+          ],
+          "sourceFirstActualWordIndex": 53,
+          "sourceLastActualWordIndex": 69,
+          "proposedOriginalCutSamples": [
+            725640,
+            871680
+          ],
+          "proposedOriginalCutSeconds": [
+            30.235,
+            36.32
+          ],
+          "boundaryStatus": "UNRESOLVED_AUDITION_HYPOTHESIS_NOT_VERIFIED_SAFE_CUT",
+          "rationale": "Boundary-only audition hypothesis: retain all new candidate PCM at zero gain and preserve every original sample outside replacement spans. First/last original cuts move into measured low-energy ASR-gap intervals; inner cuts remain. Actual full-word/breath/prosody judgment is still required; low energy is not silence proof.",
+          "leftBoundaryEvidence": {
+            "precedingWord": {
+              "actualWordIndex": 52,
+              "segmentId": 7,
+              "wordIndexInSegment": 6,
+              "word": " Werkzeug.",
+              "start": 29.24,
+              "end": 29.78,
+              "probability": 0.9981788992881775
+            },
+            "firstReplacedObservedWord": {
+              "actualWordIndex": 53,
+              "segmentId": 8,
+              "wordIndexInSegment": 0,
+              "word": " Spinne",
+              "start": 30.32,
+              "end": 30.76,
+              "probability": 0.7511997818946838
+            },
+            "gapSeconds": [
+              29.78,
+              30.32
+            ]
+          },
+          "rightBoundaryEvidence": {
+            "lastReplacedObservedWord": {
+              "actualWordIndex": 69,
+              "segmentId": 8,
+              "wordIndexInSegment": 16,
+              "word": " Laufwege.",
+              "start": 35.34,
+              "end": 35.94,
+              "probability": 0.8796873688697815
+            },
+            "followingWord": {
+              "actualWordIndex": 70,
+              "segmentId": 9,
+              "wordIndexInSegment": 0,
+              "word": " Saubere",
+              "start": 36.7,
+              "end": 37.22,
+              "probability": 0.9561495383580526
+            },
+            "gapSeconds": [
+              35.94,
+              36.7
+            ]
+          },
+          "observedASREvidence": {
+            "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+            "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+          },
+          "newCandidateActualDiagnostics": [
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review.json",
+              "sha256": "ef2b296a5f12c4cad72a31d4613cea5c2c124426717157bb5b9e7eba72c898cf"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review-response.raw.json",
+              "sha256": "fd8f72bc842767e8b88147d7c7a39fe03a1f9a87206f87da870e06787c5dca93"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\asr-word-timestamps.json",
+              "sha256": "57d92410a58cdf6d30713d87ccb9514a49090c21dc5aa61ca57ca494bc8eb0b9"
+            }
+          ],
+          "allNewCandidatePcmMustBePreserved": true,
+          "verifiedSpliceSample": null,
+          "previousOriginalCutSamples": [
+            721200,
+            871680
+          ],
+          "candidateGainDb": 0,
+          "numericGainRejectionPreserved": {
+            "rawMedianPairedGainDb": 0.06563339039190019,
+            "pairedGainIqrDb": 5.363642360871305,
+            "maximumGainForPeakHeadroomDb": 0.4675599671337478,
+            "conditionalCandidateOnlyGainDb": null,
+            "status": "GAIN_UNRESOLVED_DO_NOT_APPLY",
+            "unresolvedReasons": [
+              "PAIRED_WORD_GAIN_VARIABILITY_REQUIRES_REVIEW"
+            ],
+            "originalGainDb": 0,
+            "rawCandidateWavMustRemainUnmodified": true,
+            "gainApplied": false,
+            "timbreBrightnessOrProsodyMatchNotEstablishedByRms": true
+          },
+          "numericBoundaryEvidence": [
+            {
+              "edge": "start",
+              "wholeGapSamples": [
+                714720,
+                727680
+              ],
+              "protectedGapInteriorSamples": [
+                715440,
+                726960
+              ],
+              "rmsThresholdDbfs": -53.222312738920486,
+              "peakThresholdDbfs": -35,
+              "candidateIntervals": [
+                {
+                  "sampleInterval": [
+                    717600,
+                    718560
+                  ],
+                  "secondsInterval": [
+                    29.9,
+                    29.94
+                  ],
+                  "medianRmsDbfs": -60.67892624815099,
+                  "maxPeakDbfs": -44.91873981483603,
+                  "previousCutInside": false,
+                  "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+                },
+                {
+                  "sampleInterval": [
+                    724320,
+                    726960
+                  ],
+                  "secondsInterval": [
+                    30.18,
+                    30.29
+                  ],
+                  "medianRmsDbfs": -59.27982848008138,
+                  "maxPeakDbfs": -45.8028130646771,
+                  "previousCutInside": false,
+                  "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+                }
+              ],
+              "verifiedOrSelectedCutSample": null,
+              "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+              "rootAuditoryContextAndBreathContinuityRequired": true
+            },
+            {
+              "edge": "end",
+              "wholeGapSamples": [
+                862560,
+                880800
+              ],
+              "protectedGapInteriorSamples": [
+                863280,
+                880080
+              ],
+              "rmsThresholdDbfs": -61.44845919092987,
+              "peakThresholdDbfs": -35,
+              "candidateIntervals": [
+                {
+                  "sampleInterval": [
+                    867600,
+                    880080
+                  ],
+                  "secondsInterval": [
+                    36.15,
+                    36.67
+                  ],
+                  "medianRmsDbfs": -66.93627844881692,
+                  "maxPeakDbfs": -50.39629480724336,
+                  "previousCutInside": true,
+                  "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+                }
+              ],
+              "verifiedOrSelectedCutSample": null,
+              "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+              "rootAuditoryContextAndBreathContinuityRequired": true
+            }
+          ],
+          "phoneticAndBreathStatus": "UNRESOLVED_UNTIL_ACTUAL_JOINED_CONTEXT_REVIEW"
+        },
+        {
+          "candidateId": "de-s101-limits-bounded-sentence-2",
+          "sourceSentence": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+          "sourceCharacterRange": [
+            602,
+            740
+          ],
+          "sourceFirstActualWordIndex": 83,
+          "sourceLastActualWordIndex": 97,
+          "proposedOriginalCutSamples": [
+            1035360,
+            1284240
+          ],
+          "proposedOriginalCutSeconds": [
+            43.14,
+            53.51
+          ],
+          "boundaryStatus": "UNRESOLVED_AUDITION_HYPOTHESIS_NOT_VERIFIED_SAFE_CUT",
+          "rationale": "Boundary-only audition hypothesis: retain all new candidate PCM at zero gain and preserve every original sample outside replacement spans. First/last original cuts move into measured low-energy ASR-gap intervals; inner cuts remain. Actual full-word/breath/prosody judgment is still required; low energy is not silence proof.",
+          "leftBoundaryEvidence": {
+            "precedingWord": {
+              "actualWordIndex": 82,
+              "segmentId": 9,
+              "wordIndexInSegment": 12,
+              "word": " verunreinigen.",
+              "start": 41.94,
+              "end": 42.64,
+              "probability": 0.9875085353851318
+            },
+            "firstReplacedObservedWord": {
+              "actualWordIndex": 83,
+              "segmentId": 10,
+              "wordIndexInSegment": 0,
+              "word": " Les",
+              "start": 43.64,
+              "end": 43.86,
+              "probability": 0.4963854253292084
+            },
+            "gapSeconds": [
+              42.64,
+              43.64
+            ]
+          },
+          "rightBoundaryEvidence": {
+            "lastReplacedObservedWord": {
+              "actualWordIndex": 97,
+              "segmentId": 11,
+              "wordIndexInSegment": 4,
+              "word": " SDS.",
+              "start": 52.44,
+              "end": 52.78,
+              "probability": 0.9694734811782837
+            },
+            "followingWord": {
+              "actualWordIndex": 98,
+              "segmentId": 11,
+              "wordIndexInSegment": 5,
+              "word": " Ältere",
+              "start": 53.64,
+              "end": 54.06,
+              "probability": 0.9707821408907572
+            },
+            "gapSeconds": [
+              52.78,
+              53.64
+            ]
+          },
+          "observedASREvidence": {
+            "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+            "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+          },
+          "newCandidateActualDiagnostics": [
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review.json",
+              "sha256": "fd3209d4deb4307fa30ecf2f6593e3212a5d0e6428d12d66cb3c0b671f0cecb9"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review-response.raw.json",
+              "sha256": "eb1cfe64e0f15f4d8a93c7f641dee68dc706d55e748f712c007f9162d06b0ce3"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\asr-word-timestamps.json",
+              "sha256": "83b22a5254d40060a6f4b295030c66d983d485e9bd4d142b8735d6ed48d9d44c"
+            }
+          ],
+          "allNewCandidatePcmMustBePreserved": true,
+          "verifiedSpliceSample": null,
+          "previousOriginalCutSamples": [
+            1035360,
+            1277040
+          ],
+          "candidateGainDb": 0,
+          "numericGainRejectionPreserved": {
+            "rawMedianPairedGainDb": 1.1711714800791393,
+            "pairedGainIqrDb": 4.590896618976545,
+            "maximumGainForPeakHeadroomDb": 0.37421779251567977,
+            "conditionalCandidateOnlyGainDb": null,
+            "status": "GAIN_UNRESOLVED_DO_NOT_APPLY",
+            "unresolvedReasons": [
+              "MATCHING_GAIN_WOULD_VIOLATE_PEAK_HEADROOM",
+              "PAIRED_WORD_GAIN_VARIABILITY_REQUIRES_REVIEW"
+            ],
+            "originalGainDb": 0,
+            "rawCandidateWavMustRemainUnmodified": true,
+            "gainApplied": false,
+            "timbreBrightnessOrProsodyMatchNotEstablishedByRms": true
+          },
+          "numericBoundaryEvidence": [
+            {
+              "edge": "start",
+              "wholeGapSamples": [
+                1023360,
+                1047360
+              ],
+              "protectedGapInteriorSamples": [
+                1024080,
+                1046640
+              ],
+              "rmsThresholdDbfs": -62.07290373071467,
+              "peakThresholdDbfs": -35,
+              "candidateIntervals": [
+                {
+                  "sampleInterval": [
+                    1027680,
+                    1046640
+                  ],
+                  "secondsInterval": [
+                    42.82,
+                    43.61
+                  ],
+                  "medianRmsDbfs": -67.39820927133042,
+                  "maxPeakDbfs": -54.74597369152149,
+                  "previousCutInside": true,
+                  "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+                }
+              ],
+              "verifiedOrSelectedCutSample": null,
+              "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+              "rootAuditoryContextAndBreathContinuityRequired": true
+            },
+            {
+              "edge": "end",
+              "wholeGapSamples": [
+                1266720,
+                1287360
+              ],
+              "protectedGapInteriorSamples": [
+                1267440,
+                1286640
+              ],
+              "rmsThresholdDbfs": -57.85330240568284,
+              "peakThresholdDbfs": -35,
+              "candidateIntervals": [
+                {
+                  "sampleInterval": [
+                    1281840,
+                    1286640
+                  ],
+                  "secondsInterval": [
+                    53.41,
+                    53.61
+                  ],
+                  "medianRmsDbfs": -64.99921531468019,
+                  "maxPeakDbfs": -48.37079843903324,
+                  "previousCutInside": false,
+                  "status": "LOW_ENERGY_ASR_GAP_INTERVAL_ONLY_NOT_VERIFIED_NON_SPEECH_OR_BREATH_SAFE"
+                }
+              ],
+              "verifiedOrSelectedCutSample": null,
+              "ifNone": "Keep boundary unresolved; do not widen into accepted speech or assume silence.",
+              "rootAuditoryContextAndBreathContinuityRequired": true
+            }
+          ],
+          "phoneticAndBreathStatus": "UNRESOLVED_UNTIL_ACTUAL_JOINED_CONTEXT_REVIEW"
+        }
+      ],
+      "sourceWavChanged": false,
+      "purpose": "Disposable full-scene PCM audition preview, not adopted lesson audio",
+      "actualAcousticContextReviewStatus": "NOT_YET_REVIEWED_FOR_PROPOSED_CUTS",
+      "rootAdoptionAllowed": false,
+      "failedReferenceInputId": "de-failed-r1"
+    }
+  ],
+  "maximumBlindReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "adoptionAllowed": false,
+  "acceptedAudioOverwriteAllowed": false,
+  "sourceCriteriaSuppliedToModel": false
+}

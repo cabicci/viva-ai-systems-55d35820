@@ -1,0 +1,107 @@
+{
+  "audioSha256": "b2d7d42c893631e158d32c712a01075946fb613964eae6ef5d426c0632ad14cc",
+  "result": {
+    "transcript": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht. Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg. Halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+    "joinWindowTranscripts": [
+      {
+        "joinTimeSeconds": 30.05,
+        "windowStartSeconds": 28.05,
+        "windowEndSeconds": 32.05,
+        "transcript": "führung für das jeweilige Werkzeug. Schwinge es nicht, trage"
+      },
+      {
+        "joinTimeSeconds": 36.13,
+        "windowStartSeconds": 34.13,
+        "windowEndSeconds": 38.13,
+        "transcript": "und lege es nicht in Laufwege. Saubere Werkzeuge und"
+      },
+      {
+        "joinTimeSeconds": 42.95,
+        "windowStartSeconds": 40.95,
+        "windowEndSeconds": 44.95,
+        "transcript": "die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger,"
+      },
+      {
+        "joinTimeSeconds": 53.07,
+        "windowStartSeconds": 51.07,
+        "windowEndSeconds": 55.07,
+        "transcript": "Sicherheitsdatenblatt, SDS. Ältere Unterlagen können"
+      }
+    ],
+    "joinAssessments": [
+      {
+        "joinTimeSeconds": 30.05,
+        "status": "needs_review",
+        "observations": "An inhalation begins after 'Werkzeug' around 29.85s and is abruptly cut/joined at 30.05s into another breath right before 'Schwinge es nicht', creating a noticeable clipped/double-breath artifact. In addition, the inserted pickup segment starting at 30.05s has a slightly brighter, more forward vocal timbre and firmer prosody than the preceding utterance.",
+        "leftSpeechIntact": true,
+        "rightSpeechIntact": true,
+        "pauseAndVoice": "Inter-sentence pause contains an audible breath splice at 30.05s; vocal timbre and presence shift noticeably on the following utterance."
+      },
+      {
+        "joinTimeSeconds": 36.13,
+        "status": "needs_review",
+        "observations": "The transition from the inserted pickup ('...in Laufwege.') back to the original recording ('Saubere Werkzeuge...') occurs in the pause prior to the speaker's inhalation. Word boundaries on both sides are intact, but there is a noticeable shift in vocal timbre and acoustic presence back to the softer original recording.",
+        "leftSpeechIntact": true,
+        "rightSpeechIntact": true,
+        "pauseAndVoice": "Pause duration is natural, with a slight room-tone/breath transition at 36.13s and a shift from the brighter pickup voice back to the softer baseline voice."
+      },
+      {
+        "joinTimeSeconds": 42.95,
+        "status": "needs_review",
+        "observations": "Following '...nicht zu verunreinigen.', the splice at 42.95s transitions into a pickup take ('Lies vor dem Umgang...'). While no syllables are clipped, there is an abrupt increase in vocal level, brightness, and prosodic energy starting immediately after the splice.",
+        "leftSpeechIntact": true,
+        "rightSpeechIntact": true,
+        "pauseAndVoice": "Pause timing is acceptable, but vocal loudness, brightness, and projection jump noticeably on the right side of the cut."
+      },
+      {
+        "joinTimeSeconds": 53.07,
+        "status": "needs_review",
+        "observations": "After '...Sicherheitsdatenblatt, SDS.', there is an audible edit transient/clipped breath artifact at 53.07s just before 'Ältere Unterlagen...', accompanied by an abrupt drop in vocal level, brightness, and energy as the audio returns from the louder pickup take to the softer original recording.",
+        "leftSpeechIntact": true,
+        "rightSpeechIntact": true,
+        "pauseAndVoice": "Audible breath/room-tone discontinuity at 53.07s and an abrupt drop in vocal loudness and timbre back to the baseline recording."
+      }
+    ],
+    "findings": [
+      {
+        "startSeconds": 29.8,
+        "endSeconds": 30.4,
+        "heardText": "Werkzeug. Schwinge",
+        "issueType": "breath_cut_and_timbre_shift",
+        "observation": "A breath starting after 'Werkzeug' is abruptly cut at 30.05s into the pickup take's breath before 'Schwinge', accompanied by a shift to a slightly brighter, firmer vocal delivery.",
+        "certainty": "high"
+      },
+      {
+        "startSeconds": 35.7,
+        "endSeconds": 36.8,
+        "heardText": "Laufwege. Saubere",
+        "issueType": "timbre_and_presence_shift",
+        "observation": "At 36.13s the audio transitions from the pickup segment back to the original recording, resulting in a subtle shift in vocal timbre and proximity between 'Laufwege.' and 'Saubere'.",
+        "certainty": "medium"
+      },
+      {
+        "startSeconds": 42.5,
+        "endSeconds": 44.0,
+        "heardText": "verunreinigen. Lies vor dem",
+        "issueType": "abrupt_level_timbre_prosody_change",
+        "observation": "Across the splice at 42.95s, the inserted take beginning with 'Lies vor dem Umgang...' is noticeably louder, brighter, and more forcefully projected than the preceding utterance.",
+        "certainty": "high"
+      },
+      {
+        "startSeconds": 52.5,
+        "endSeconds": 54.0,
+        "heardText": "SDS. Ältere Unterlagen",
+        "issueType": "splice_artifact_and_level_drop",
+        "observation": "At 53.07s there is an audible edit artifact / clipped breath noise in the pause before 'Ältere Unterlagen', followed by an immediate drop in vocal level and brightness back to the original take.",
+        "certainty": "high"
+      }
+    ],
+    "overall": "needs_review",
+    "voiceContinuity": "The recording appears to be spoken by the same voice throughout, but the two spliced-in pickup segments (30.05s–36.13s and especially 42.95s–53.07s) exhibit noticeable differences in vocal level, brightness/EQ, and prosodic energy compared to the surrounding baseline recording.",
+    "limitations": "Automated model-based acoustic analysis without human listening certification or biometric speaker verification; subtle room-tone and breath-edit judgments near low-energy boundaries retain inherent uncertainty."
+  },
+  "invalidTimestampFindingIndexes": [],
+  "humanListeningApproved": false,
+  "rootAdoptionApproved": false,
+  "actualJoinedAudioSupplied": true
+}

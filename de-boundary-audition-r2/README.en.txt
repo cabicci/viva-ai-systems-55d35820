@@ -1,0 +1,1 @@
+One DE boundary-only audition. Zero gains, TTS, EQ, stretch, fade, padding or raw candidate trimming. Preserve every retained original PCM slice and complete candidate PCM. One actual joined-context review hears NEW+ORIGINAL+FAILED r1. Low-energy boundaries and voice continuity remain unapproved until actual review; no automatic adoption.

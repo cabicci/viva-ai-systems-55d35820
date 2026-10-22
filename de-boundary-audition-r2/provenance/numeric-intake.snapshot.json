@@ -1,0 +1,108 @@
+{
+  "runId": 39777519141,
+  "commit": "b826ef3d7043f16df635aa4859d54cbe4ce6a2cd",
+  "status": "completed",
+  "conclusion": "success",
+  "records": [
+    {
+      "atUTC": "2026-10-22T12:22:51.409231+00:00",
+      "runId": 39777519141,
+      "commit": "b826ef3d7043f16df635aa4859d54cbe4ce6a2cd",
+      "artifactId": 12425057643,
+      "artifactName": "s101-de-join-numeric-measurements",
+      "artifactDigest": "sha256:45143dd6e1b4058089346ffddc69465207d23bc2023eac986d639e8c569b4f84",
+      "state": "EXACT_NUMERIC_EVIDENCE_RECEIVED_NO_AUDIO_CHANGED",
+      "files": [
+        {
+          "path": "measurement-attempt.json",
+          "sha256": "eebf82004ed6a733e76398202320348320e7faf6f7c7c005710951564551aab9",
+          "bytes": 475
+        },
+        {
+          "path": "measurements.json",
+          "sha256": "8d6c1f339552ba5697c4df3cbb78f6f7049f583e65f83f1d426bf930da941d9f",
+          "bytes": 730686
+        }
+      ]
+    },
+    {
+      "atUTC": "2026-10-22T12:22:56.066269+00:00",
+      "runId": 39777519141,
+      "commit": "b826ef3d7043f16df635aa4859d54cbe4ce6a2cd",
+      "artifactId": 12425067591,
+      "artifactName": "s101-de-join-numeric-complete",
+      "artifactDigest": "sha256:f03f149ecbfab383a8ccec804a485f63752fff0cb61d45d58f7718af4beeafb7",
+      "state": "EXACT_NUMERIC_EVIDENCE_RECEIVED_NO_AUDIO_CHANGED",
+      "files": [
+        {
+          "path": "correction-plan.NOT-SELECTED.json",
+          "sha256": "18f6b5d8c0bcc7eeede298aeb2d6aeabc4e08d155e81ec6bcca58bc64d8d0df3",
+          "bytes": 1145
+        },
+        {
+          "path": "freeze.json",
+          "sha256": "1f69342ef5ffa1c28ab3534c36c99403ae502fdc487fbf8653fd2198c07b3bc5",
+          "bytes": 1360
+        },
+        {
+          "path": "inputs/candidate-1.wav",
+          "sha256": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4",
+          "bytes": 297958
+        },
+        {
+          "path": "inputs/candidate-2.wav",
+          "sha256": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac",
+          "bytes": 491878
+        },
+        {
+          "path": "inputs/original.wav",
+          "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+          "bytes": 3324090
+        },
+        {
+          "path": "output/correction-proposal.json",
+          "sha256": "2a7f0a9659dd0cb1eb4f694a6243521846025a36bdd939135a57a58e46d66252",
+          "bytes": 6552
+        },
+        {
+          "path": "output/measurement-attempt.json",
+          "sha256": "eebf82004ed6a733e76398202320348320e7faf6f7c7c005710951564551aab9",
+          "bytes": 475
+        },
+        {
+          "path": "output/measurement-upload-receipt.json",
+          "sha256": "01e261ea01eeb3eee738d032a958590301cd07ed6861e422a34ce8a63052672b",
+          "bytes": 329
+        },
+        {
+          "path": "output/measurements.json",
+          "sha256": "8d6c1f339552ba5697c4df3cbb78f6f7049f583e65f83f1d426bf930da941d9f",
+          "bytes": 730686
+        },
+        {
+          "path": "output/proposal-attempt.json",
+          "sha256": "394983216abe5f591f3adba95277bfa31e0c1d1cd7c30a27879b20bf8604e88a",
+          "bytes": 354
+        },
+        {
+          "path": "owner-authority.json",
+          "sha256": "a8b302e83a688f98096c3f87b52410bfabf323eb7fa082cbb647dd0e2767bdaa",
+          "bytes": 579
+        },
+        {
+          "path": "request.json",
+          "sha256": "f42c8bbc193e5db1cb4e623bd00c7be52c3294aeeb1ff0bee3d3679a5c52dc5d",
+          "bytes": 23674
+        },
+        {
+          "path": "worker.py",
+          "sha256": "e7a841e4b48b579aadc4767cad709ce4ae096064883a124bb2c4a53938ebfa77",
+          "bytes": 14898
+        }
+      ]
+    }
+  ],
+  "providerCallsByReceiver": 0,
+  "gainsApplied": false,
+  "cutSelected": false
+}
