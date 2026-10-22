@@ -1,0 +1,40 @@
+name: Bounded S105 English atypical assembly
+on:
+  push:
+    branches: [work/soil-s105-atypical-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: soil-s105-atypical-assembly-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.repository_id == '1272666418' && github.ref == 'refs/heads/work/soil-s105-atypical-assembly-20261022-r1' && github.event.created == true && github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MANIFEST_SHA: 4a8e465ebca1514d1960555adac103801c5e177d7dba2f91c4fb948e75962909
+      WORKER_SHA: 544b9dda5aa1bfd8ae220034359375b5a928f6416cd38a1a828f001ebdf1d53a
+      FREEZE_SHA: e35bdf5e926aed97dce9cddf9ad4c4c404c9e00b300442c61a5fb629cedfd450
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Ensure complete video codecs explicitly
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+          ffprobe -version
+      - name: Validate exact original PCM and every captured packet
+        run: python -B media/s105-atypical/assemble.py validate
+      - name: Assemble once and verify exact PCM and packet grid
+        run: python -B media/s105-atypical/assemble.py run
+      - name: Preserve output, attempts and diagnostic failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s105-en-atypical-r1
+          path: media/s105-atypical/output/
+          if-no-files-found: warn
+          retention-days: 7

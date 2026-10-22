@@ -1,0 +1,174 @@
+{
+  "status": "PACKET_AND_FULL_DECODE_PASS_VISUAL_REVIEW_PENDING",
+  "frames": 2688,
+  "videoSha256": "c930257f7b6bc4613ae206901860e2bff2fa7e0b849fc741362061fded771963",
+  "sourceReceiptSha256": "ae066dfeedd5c354b480a495f3d465ec6fe98a34fcc947f74bd416cfa8616074",
+  "actualEncodedEventFrames": [
+    {
+      "eventId": "avoidFeatures",
+      "clauseId": "S1-05-en-r1-003-source1-clause1",
+      "sourcePointer": "/reading/1/paragraphs/0",
+      "frame": 221,
+      "time": 7.366666666666666,
+      "requestedSeconds": 7.39,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-0221.png",
+      "sha256": "7d22842a786db99a50d3f75b72aee8bb9bad43ce82c10c7a1ee7e785786708a1"
+    },
+    {
+      "eventId": "possibleDifferences",
+      "clauseId": "S1-05-en-r1-003-source1-clause2",
+      "sourcePointer": "/reading/1/paragraphs/0",
+      "frame": 551,
+      "time": 18.366666666666667,
+      "requestedSeconds": 18.37,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-0551.png",
+      "sha256": "f2a548beeecfc84c15441b227b50c030581647be01fbf12a6d5dd3fc6092a896"
+    },
+    {
+      "eventId": "notIgnore",
+      "clauseId": "S1-05-en-r1-003-source2-clause1",
+      "sourcePointer": "/reading/1/paragraphs/1",
+      "frame": 747,
+      "time": 24.9,
+      "requestedSeconds": 24.91,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-0747.png",
+      "sha256": "41db6a7cfbe643e5a13998682f50f82d9ee45f0de73300c67724d6edc59994e0"
+    },
+    {
+      "eventId": "dampZone",
+      "clauseId": "S1-05-en-r1-003-source2-clause2",
+      "sourcePointer": "/reading/1/paragraphs/1",
+      "frame": 917,
+      "time": 30.566666666666666,
+      "requestedSeconds": 30.59,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-0917.png",
+      "sha256": "24bbd55236bebaed09be5eae3817d2a76dddde4f46762feb29184447482662ff"
+    },
+    {
+      "eventId": "investigatePatch",
+      "clauseId": "S1-05-en-r1-003-source2-clause3",
+      "sourcePointer": "/reading/1/paragraphs/1",
+      "frame": 1127,
+      "time": 37.56666666666667,
+      "requestedSeconds": 37.58,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-1127.png",
+      "sha256": "e79b01e8ee71a2376b0f9e480dc2a8f40eca0bf76f8ec90855b07b8ff75a3fce"
+    },
+    {
+      "eventId": "patchIdentity",
+      "clauseId": "S1-05-en-r1-003-source3-clause1",
+      "sourcePointer": "/reading/1/paragraphs/2",
+      "frame": 1329,
+      "time": 44.3,
+      "requestedSeconds": 44.32,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-1329.png",
+      "sha256": "c112946d9dd0b639348a0105aeb202c1bf18dcf66b22bcc56057c38d8f69f3bf"
+    },
+    {
+      "eventId": "compareEvidence",
+      "clauseId": "S1-05-en-r1-003-source3-clause2",
+      "sourcePointer": "/reading/1/paragraphs/2",
+      "frame": 1493,
+      "time": 49.766666666666666,
+      "requestedSeconds": 49.78,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-1493.png",
+      "sha256": "b326208eec172fe5ccbaf9310ccb28be66b243c8ba19e342c80c3b311e55ccae"
+    },
+    {
+      "eventId": "hypothesis",
+      "clauseId": "S1-05-en-r1-003-source3-clause3",
+      "sourcePointer": "/reading/1/paragraphs/2",
+      "frame": 1693,
+      "time": 56.43333333333333,
+      "requestedSeconds": 56.45,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-1693.png",
+      "sha256": "eed97f30f327d72717cfe320e9fb14c94b9ddb0765f7825559cdac4107f67226"
+    },
+    {
+      "eventId": "zoneVsSpot",
+      "clauseId": "S1-05-en-r1-003-source4-clause1",
+      "sourcePointer": "/reading/1/paragraphs/3",
+      "frame": 1920,
+      "time": 64.0,
+      "requestedSeconds": 64.00999999999999,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-1920.png",
+      "sha256": "913fd43a85bd5409bd36ad5d85bbf678db9eeff9a03e6471a73d0aa2bcc07810"
+    },
+    {
+      "eventId": "differences",
+      "clauseId": "S1-05-en-r1-003-source4-clause2",
+      "sourcePointer": "/reading/1/paragraphs/3",
+      "frame": 2107,
+      "time": 70.23333333333333,
+      "requestedSeconds": 70.24,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2107.png",
+      "sha256": "a596e241d6a9f670624cddecf94942a3e65592ad183ed9967b4156f605e55eb8"
+    },
+    {
+      "eventId": "gatewayNotRepresentative",
+      "clauseId": "S1-05-en-r1-003-source4-clause3",
+      "sourcePointer": "/reading/1/paragraphs/3",
+      "frame": 2266,
+      "time": 75.53333333333333,
+      "requestedSeconds": 75.53999999999999,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2266.png",
+      "sha256": "5b6be903f5dcefdb71b19f0cd0c650edce32afb40b5305357835dafb61d1f028"
+    },
+    {
+      "eventId": "atypicalTerm",
+      "clauseId": "S1-05-en-r1-003-source5-clause1",
+      "sourcePointer": "/glossary/2/0",
+      "frame": 2370,
+      "time": 79.0,
+      "requestedSeconds": 79.02000000000001,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2370.png",
+      "sha256": "240c15fa14703db81de14b8fedbd40a3555f3a6b8a7e1c54e4252452abe1f8ee"
+    },
+    {
+      "eventId": "atypicalDefinition",
+      "clauseId": "S1-05-en-r1-003-source6-clause1",
+      "sourcePointer": "/glossary/2/1",
+      "frame": 2458,
+      "time": 81.93333333333334,
+      "requestedSeconds": 81.94,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2458.png",
+      "sha256": "40adbfaa13e445baddea8ede613e4daca467d1ad7806960e4373a94d4ff4e5d0"
+    },
+    {
+      "eventId": "hypothesisTerm",
+      "clauseId": "S1-05-en-r1-003-source7-clause1",
+      "sourcePointer": "/glossary/5/0",
+      "frame": 2550,
+      "time": 85.0,
+      "requestedSeconds": 85.02,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2550.png",
+      "sha256": "64eec5fa9eabf54e8747cdb224d29c2d7692c51b137fa6ae646b739f747b1724"
+    },
+    {
+      "eventId": "hypothesisDefinition",
+      "clauseId": "S1-05-en-r1-003-source8-clause1",
+      "sourcePointer": "/glossary/5/1",
+      "frame": 2629,
+      "time": 87.63333333333334,
+      "requestedSeconds": 87.66,
+      "sampleBasis": "Midpoint of existing display interval for visual inspection only; no inferred speech alignment",
+      "file": "frame-2629.png",
+      "sha256": "029e5215c90c8f9c5a44b54efcaf8af0c87c31463512ba89de57f46c436f35d9"
+    }
+  ],
+  "sourceVerificationReceiptSha256": "32b5344631f548540db5d014a0a275f882d97fe7638ebb9b5d69b830ddc56a6e"
+}
