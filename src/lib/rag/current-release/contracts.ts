@@ -26,6 +26,7 @@ export function currentReleaseFailureCode(error: unknown): string {
   if (/^CURRENT_[A-Z0-9_]{1,64}$/.test(message)) return message;
   const status = /^PROVIDER_FAILED:HTTP_([45][0-9]{2})$/.exec(message);
   if (status) return `CURRENT_PROVIDER_HTTP_${status[1]}`;
+  if (message === "PROVIDER_FAILED:TIMEOUT") return "CURRENT_PROVIDER_TIMEOUT";
   if (/^PROVIDER_RESPONSE_INVALID(?::[a-z_]{1,30})?$/.test(message)) return "CURRENT_PROVIDER_INVALID";
   if (message === "PROVIDER_FAILED") return "CURRENT_PROVIDER_UNAVAILABLE";
   return "CURRENT_OPERATION_UNAVAILABLE";

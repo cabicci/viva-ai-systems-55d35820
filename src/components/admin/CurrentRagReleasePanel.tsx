@@ -17,7 +17,7 @@ export function CurrentRagReleasePanel() {
     setPrepareConfirmed(false); setPublishConfirmed(false);
     return next;
   }
-  async function perform(operation: CurrentOperation) {
+  async function perform(operation: CurrentOperation, singleBatch = false) {
     if (!view || busy) return;
     setBusy(true); setMessage(""); stop.current = false;
     const reviewed = view;
@@ -35,13 +35,17 @@ export function CurrentRagReleasePanel() {
         const initialized = await call("initialize");
         const executionId = String(initialized.executionId);
         // No background job: each batch finishes before the next explicit preparation step.
-        for (let i = 0; i <= Math.ceil(reviewed.chunks / 64) && !stop.current; i++) {
+        let finished = false;
+        const limit = singleBatch ? 1 : Math.ceil(reviewed.chunks / 64) + 1;
+        for (let i = 0; i < limit && !stop.current; i++) {
           const result = await call("batch", executionId);
           await refresh();
           if (result.replayed === true && result.done !== true) throw new Error("pending-request");
-          if (result.done === true) break;
+          if (result.done === true) { finished = true; break; }
         }
-        setMessage(stop.current ? "توقف التجهيز بعد الدفعة الحالية. يمكنك استكماله لاحقًا." : "اكتمل تجهيز التحديث. راجع الحالة ثم فعّل الإصدار عندما تكون مستعدًا.");
+        setMessage(finished ? "اكتمل تجهيز التحديث. راجع الحالة ثم فعّل الإصدار عندما تكون مستعدًا."
+          : singleBatch ? "انتهت محاولة تجهيز دفعة واحدة. راجع الحالة قبل أي استكمال؛ لم يبدأ تجهيز دفعة أخرى."
+          : "توقف التجهيز بعد الدفعة الحالية. يمكنك استكماله لاحقًا.");
       } else {
         await call(operation, reviewed.status.executionId ?? undefined);
         setMessage(operation === "activate" ? "تم تفعيل المحتوى المراجع." : "تم استرجاع الإصدار السابق.");
@@ -52,7 +56,10 @@ export function CurrentRagReleasePanel() {
       const status = /^CURRENT_PROVIDER_HTTP_([45][0-9]{2})$/.exec(code);
       const database = /^CURRENT_DATABASE_([0-9A-Z]{5})$/.exec(code);
       const detail = status ? `مزود الفهرسة رفض الطلب (${status[1]}).${status[1] === "429" ? " انتظر انتهاء حد الاستخدام قبل أي استكمال." : " راجع حالة الربط والخدمة."} `
-        : database ? `توقف إجراء قاعدة البيانات (رمز ${database[1]}). ` : "";
+        : database ? `توقف إجراء قاعدة البيانات (رمز ${database[1]}). `
+        : code === "CURRENT_PROVIDER_TIMEOUT" ? "انتهت مهلة انتظار مزود الفهرسة. "
+        : code === "CURRENT_PROVIDER_UNAVAILABLE" ? "تعذر الاتصال بمزود الفهرسة. "
+        : code === "CURRENT_DATABASE_TRANSPORT_UNAVAILABLE" ? "انقطع الاتصال بقاعدة البيانات قبل تأكيد نتيجة الطلب. " : "";
       setMessage(detail + "توقف الإجراء. حدّث الحالة وراجع الطلب الجاري قبل الاستكمال؛ لم يتم تشغيل إعادة محاولة تلقائية.");
     } finally { setBusy(false); }
   }
@@ -67,6 +74,7 @@ export function CurrentRagReleasePanel() {
       <p>{currentActive ? "الإصدار الحالي مفعّل." : ready ? "التجهيز مكتمل، والإصدار بانتظار التفعيل." : "الإصدار يحتاج تجهيزًا."}</p>
       <label className="flex items-center gap-2"><input type="checkbox" checked={prepareConfirmed} disabled={busy || currentActive} onChange={e => setPrepareConfirmed(e.target.checked)} />أوافق على تجهيز النصوص الجديدة والمعدّلة وتكلفة فهرستها.</label>
       <Button disabled={busy || currentActive || ready || !prepareConfirmed} onClick={() => void perform("initialize")}>تجهيز التحديث أو استكماله</Button>
+      <Button variant="outline" disabled={busy || currentActive || ready || !prepareConfirmed} onClick={() => void perform("initialize", true)}>تجهيز دفعة واحدة</Button>
       {busy && <Button variant="outline" onClick={() => { stop.current = true; }}>إيقاف بعد الدفعة الحالية</Button>}
       <label className="flex items-center gap-2"><input type="checkbox" checked={publishConfirmed} disabled={busy} onChange={e => setPublishConfirmed(e.target.checked)} />راجعت الإصدار وأوافق على التفعيل أو الرجوع المحدد أدناه.</label>
       <div className="flex gap-2">
