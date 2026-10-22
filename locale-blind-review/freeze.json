@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "sha256": {
+    "worker.py": "1bce139748a20afcf59d75215801cd989c8c01627be875c82ffb684ac254ba54",
+    "offline_check.py": "2e819e8bb403566bea1a7de9b3a12c221e7d7df235efc70d7d972bcafa3712f6",
+    "freeze_package.py": "438812eef05267d8a792bc0d177c3a2ca9a241565ff7c9563f8f0bfb61dd46f1",
+    "request.json": "da132a3f6ccbfcb10d1434a6c6017af52bc051eb945593a4669ceeea27223df2",
+    "runtime.json": "5376e8c0440c95f4a878739524a21616b57f0051857730517f4b87a0a27e2961",
+    "owner-authority.json": "f1bc8b9d95f1a9d25b7e2d9a1a2defd680fba103bbc62da16227eeee7af3c887",
+    "expected-criteria.NOT-FOR-MODEL.json": "ed1af6c1f471be2731901b032ac31b4db32c1caa1782d31ffd5b47700f2c12ff",
+    "README.en.txt": "738785dd4bd3172f177ccf1de72e999102030e636c3a7cbbc7c0b9b398cd31b2",
+    ".gitignore": "66eab4c127d9eff8790df9aabf555456ff8037ac7f7a58730c644942d9e18c1a",
+    "provenance/existing-audio-repair-worker.snapshot.py": "b7ff0c03ecb5aaf4490a0d542e3c15924489af1c650412d78c3a6494d0a309fc",
+    "prompts/it-s101-checklist.txt": "a728c4943ec7262a71e48927142ae0205d5ba584b7e1a3a99835d6e159467912",
+    "prompts/de-s101-checklist.txt": "316aa0cb1670ac72eb2de7dfabb171a74aaba59a0e55ab58163f205d3c986cd4",
+    "prompts/de-s101-chemical.txt": "6db1f3ed5121986f4677a23a1f4225e13ca6d41156ad9828091c7d91e887ded7",
+    "prompts/de-s101-communication.txt": "1713a6f759b62286d4af2eef288f14593863af3b2abd807688b2a60ed24c7811"
+  },
+  "audioHashesInFrozenRequest": true,
+  "maximumBlindReviews": 4,
+  "maximumPerWav": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0
+}

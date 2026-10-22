@@ -1,0 +1,12 @@
+{
+  "model": "gemini-4-argon",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "modelMetadataEndpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-4-argon",
+  "thinkingLevel": "high",
+  "maxOutputTokens": 32768,
+  "maxInlineRequestBytes": 20000000,
+  "timeoutSeconds": 900,
+  "automaticRetries": 0,
+  "silentFallbackAllowed": false,
+  "protocol": "Exact successful existing audio-repair worker blind-review interactions schema; model availability must be checked fresh before review."
+}

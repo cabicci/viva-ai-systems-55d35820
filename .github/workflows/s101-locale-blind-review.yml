@@ -1,0 +1,160 @@
+name: S1-01 four existing WAV blind diagnostics
+on:
+  push:
+    branches: [work/soil-s101-locale-blind-review-20261022]
+    paths: [locale-blind-review/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s101-locale-blind-da132a3f6ccbfcb10d1434a6c6017af52bc051eb945593a4669ceeea27223df2
+  cancel-in-progress: false
+env:
+  REQUEST_SHA: da132a3f6ccbfcb10d1434a6c6017af52bc051eb945593a4669ceeea27223df2
+  WORKER_SHA: 1bce139748a20afcf59d75215801cd989c8c01627be875c82ffb684ac254ba54
+  FREEZE_SHA: 86da213f33fe99192916e6d68cb9c13546b429c0a76b7e3abd50de18a340c441
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.event_name == 'push' && github.event.created == true && github.run_attempt == 1 && github.event.repository.private == false && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s101-locale-blind-review-20261022'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 85
+    env:
+      REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+      BRANCH_CREATED: ${{ github.event.created }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify frozen scope and all four exact WAV byte and PCM hashes
+        run: python locale-blind-review/worker.py validate
+      - name: Verify preferred model availability once without fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python locale-blind-review/worker.py preflight
+      - name: Transfer exact source WAV before blind review it-s101-checklist
+        id: source0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-source-it-s101-checklist
+          path: locale-blind-review/inputs/it-s101-checklist.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt it-s101-checklist
+        run: >-
+          python locale-blind-review/worker.py uploaded --unit it-s101-checklist
+          --artifact-id "${{ steps.source0.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source0.outputs.artifact-digest }}"
+      - name: One terminal blind review it-s101-checklist
+        continue-on-error: true
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python locale-blind-review/worker.py blind-review --unit it-s101-checklist
+      - name: Transfer finished raw response or failure evidence it-s101-checklist
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-result-it-s101-checklist
+          path: locale-blind-review/output/it-s101-checklist/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Transfer exact source WAV before blind review de-s101-checklist
+        id: source1
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-source-de-s101-checklist
+          path: locale-blind-review/inputs/de-s101-checklist.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt de-s101-checklist
+        run: >-
+          python locale-blind-review/worker.py uploaded --unit de-s101-checklist
+          --artifact-id "${{ steps.source1.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source1.outputs.artifact-digest }}"
+      - name: One terminal blind review de-s101-checklist
+        continue-on-error: true
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python locale-blind-review/worker.py blind-review --unit de-s101-checklist
+      - name: Transfer finished raw response or failure evidence de-s101-checklist
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-result-de-s101-checklist
+          path: locale-blind-review/output/de-s101-checklist/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Transfer exact source WAV before blind review de-s101-chemical
+        id: source2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-source-de-s101-chemical
+          path: locale-blind-review/inputs/de-s101-chemical.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt de-s101-chemical
+        run: >-
+          python locale-blind-review/worker.py uploaded --unit de-s101-chemical
+          --artifact-id "${{ steps.source2.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source2.outputs.artifact-digest }}"
+      - name: One terminal blind review de-s101-chemical
+        continue-on-error: true
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python locale-blind-review/worker.py blind-review --unit de-s101-chemical
+      - name: Transfer finished raw response or failure evidence de-s101-chemical
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-result-de-s101-chemical
+          path: locale-blind-review/output/de-s101-chemical/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Transfer exact source WAV before blind review de-s101-communication
+        id: source3
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-source-de-s101-communication
+          path: locale-blind-review/inputs/de-s101-communication.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt de-s101-communication
+        run: >-
+          python locale-blind-review/worker.py uploaded --unit de-s101-communication
+          --artifact-id "${{ steps.source3.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source3.outputs.artifact-digest }}"
+      - name: One terminal blind review de-s101-communication
+        continue-on-error: true
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python locale-blind-review/worker.py blind-review --unit de-s101-communication
+      - name: Transfer finished raw response or failure evidence de-s101-communication
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-blind-result-de-s101-communication
+          path: locale-blind-review/output/de-s101-communication/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Summarize four bounded outcomes
+        if: always()
+        run: python locale-blind-review/worker.py summarize
+      - name: Preserve all evidence and exact request provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-four-existing-wav-blind-complete
+          retention-days: 30
+          path: |
+            locale-blind-review/output/
+            locale-blind-review/request.json
+            locale-blind-review/runtime.json
+            locale-blind-review/freeze.json
+            locale-blind-review/owner-authority.json
+            locale-blind-review/worker.py
+            locale-blind-review/prompts/
+            locale-blind-review/expected-criteria.NOT-FOR-MODEL.json

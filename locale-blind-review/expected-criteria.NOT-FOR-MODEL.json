@@ -1,0 +1,80 @@
+{
+  "criteria": [
+    {
+      "id": "it-s101-checklist",
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "expectedSourceTextForOfflineComparisonOnly": "comunicazioni inadeguate",
+      "criterion": "Determine whether the actual audible adjective retains the negative meaning of inadequate communication. Current ASR writes adeguate; earlier same-WAV expected-script QA retains inadeguate. Neither source nor earlier QA alone proves what is audible. Missing/reversed negative meaning is material if confirmed.",
+      "historicalQAPin": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/it/audio-qa/81dc74d3efe004b6f71cee153a7d11f3484aebf1120699705dc07efc8255381d.json",
+        "sha256": "11f6d684360ec6ac2876bdf5a8bf8cc4efc41cc3b415366b73d6a79541418a66",
+        "bytes": 2016
+      },
+      "sourceBindingSha256": "54cb0690d124f05b82cf2cd407d7865a1819c3acd0b44a99359e1e6a03a27065",
+      "notSentToBlindModel": true,
+      "humanListeningOrPhoneticCertificationClaimed": false,
+      "repairOnlyIfActualContentDefectConfirmed": true,
+      "noNegativeResolutionByInventedTiming": true,
+      "wholeLocaleRerunAuthorized": false
+    },
+    {
+      "id": "de-s101-checklist",
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "expectedSourceTextForOfflineComparisonOnly": "unzureichende Kommunikation",
+      "criterion": "Determine whether the actual audible communication condition is insufficient. Current ASR segments und+zu+reichende, while earlier same-WAV QA retains unzureichende. Do not resolve negative meaning through guessed timestamps or compound joining.",
+      "historicalQAPin": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/928b536cae7beb1b2db63c2e580a8eaf58007b19bba15e71730afa4b37ada2f5.json",
+        "sha256": "dfe55e6c1a5280e4924cce47cd73a4904b2e0fa2cbdd49c07f4e2b486f7067f2",
+        "bytes": 2075
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "notSentToBlindModel": true,
+      "humanListeningOrPhoneticCertificationClaimed": false,
+      "repairOnlyIfActualContentDefectConfirmed": true,
+      "noNegativeResolutionByInventedTiming": true,
+      "wholeLocaleRerunAuthorized": false
+    },
+    {
+      "id": "de-s101-chemical",
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "expectedSourceTextForOfflineComparisonOnly": "Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung.",
+      "criterion": "Check that the actual audible close-fitting respiratory-protection condition and suitable fit-test requirement are complete. Current ASR differs in adjective ending and splits the fit-check compound; earlier same-WAV QA retains the complete source. Mere ASR spelling/segmentation is not a confirmed defect.",
+      "historicalQAPin": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/f511f0e45d2b1f9f25c6fe9fe8dbda9df134fe86f81dc9740a99ff3dcad24d24.json",
+        "sha256": "ed1c2faaaa71f0ff34a9a59fa4ce031c3da41a087c740207c7c5e3f70077efcf",
+        "bytes": 2446
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "notSentToBlindModel": true,
+      "humanListeningOrPhoneticCertificationClaimed": false,
+      "repairOnlyIfActualContentDefectConfirmed": true,
+      "noNegativeResolutionByInventedTiming": true,
+      "wholeLocaleRerunAuthorized": false
+    },
+    {
+      "id": "de-s101-communication",
+      "audioSha256": "18d95bbac5527f31f717814c6c1be5de6148b706d82f56c48f67302cdc84278b",
+      "expectedSourceTextForOfflineComparisonOnly": "Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen.",
+      "criterion": "At the clause onset determine audible Empfang versus current ASR Empfangen, retaining uncertainty. Preserve the separate possibility and negation concerning an injured person being unable to call. Earlier exact-WAV QA contains Empfang but had the expected script and cannot prove precise onset or pronunciation.",
+      "historicalQAPin": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/340ba4bc7ab78de4cbef98698ffee389696d3472f1ab7ab1596c8bfb51f54512.json",
+        "sha256": "183f5827527118685b2be4e787e81b29d1f3896b55bb01b07eb5393e7a206aad",
+        "bytes": 1784
+      },
+      "notSentToBlindModel": true,
+      "humanListeningOrPhoneticCertificationClaimed": false,
+      "noAutomaticRepairOrRegeneration": true
+    }
+  ],
+  "additionalEnglishMovingCandidate": {
+    "disposition": "Separate unresolved candidate, outside this four-call preparation budget.",
+    "sourcePhrase": "a moving machine blocking the route",
+    "currentAndHistoricalTranscript": "a machine blocking the route",
+    "measuredListeningContextSeconds": [
+      51.02,
+      51.66
+    ],
+    "noRepairOrExtraReviewDispatched": true,
+    "isolateOnlyIfConfirmedAgainstActualAudio": true
+  }
+}
