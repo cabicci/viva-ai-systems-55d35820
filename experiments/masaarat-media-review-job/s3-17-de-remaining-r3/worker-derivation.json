@@ -1,0 +1,13 @@
+{
+  "parentWorkerSha256": "2db59cce3940cab208a3c969c6243c5ed77d7ea4d4891d9a535e0b4b84cdab82",
+  "currentWorkerSha256": "4bde9ade6e7e5c0beb75a99adcda643b95cb11971f143603d509a98fa7a50c6b",
+  "changedExistingFunctions": [
+    "validate",
+    "main"
+  ],
+  "addedFunction": "final_inventory",
+  "unchangedFunctions": 23,
+  "providerTtsBlindAsrPayloadsAndReservationFunctionsUnchanged": true,
+  "changes": "Only scoped validator path/ref changed fromr2. Provider TTS/diagnostic function bodies unchanged. Workflow typedfalse/int90 correction and typed-schema tests; all7TTS-first isolateddiagnostics/finalinventory retained.",
+  "prior61WavsExcluded": 61
+}

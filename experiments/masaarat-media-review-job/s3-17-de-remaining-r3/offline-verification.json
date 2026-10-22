@@ -1,0 +1,224 @@
+{
+  "atUTC": "2026-10-22T13:35:23.857442+00:00",
+  "status": "PASS_LOCAL_OFFLINE_SEVEN_ONLY_SCOPE_SOURCE_BINDING_PRIOR_AUDIO_PRESERVATION_PRIVACY_AND_GUARDS",
+  "tests": [
+    {
+      "name": "Exact seven source-complete unchanged German unit objects and fingerprints validate",
+      "pass": true
+    },
+    {
+      "name": "Seven complete unit objects byte-canonical equal frozen r2, including voice/delivery/quantities/conditions/negations",
+      "pass": true
+    },
+    {
+      "name": "All61 existing WAV originals and frozen r2 preimages preserved, DE010 excluded",
+      "pass": true
+    },
+    {
+      "name": "Reject nonremaining unit S3-17-de-r1-010",
+      "pass": true
+    },
+    {
+      "name": "Reject nonremaining unit S3-17-de-r1-001",
+      "pass": true
+    },
+    {
+      "name": "Reject nonremaining unit S3-17-en-r1-011",
+      "pass": true
+    },
+    {
+      "name": "Reject nonremaining unit S3-17-ar-EG-r1-011",
+      "pass": true
+    },
+    {
+      "name": "Reject nonremaining unit S3-17-it-r1-011",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request maximumTTSCalls",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request maximumBlindAudioReviewCalls",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request maximumASRInvocations",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request maximumMetadataGETs",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request automaticRetries",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request model",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request quizSolutionsIncludedBeforeAttempt",
+      "pass": true
+    },
+    {
+      "name": "Reject changed request units",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-011",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-012",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-013",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-014",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-015",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-016",
+      "pass": true
+    },
+    {
+      "name": "Reject changed full unit object S3-17-de-r1-017",
+      "pass": true
+    },
+    {
+      "name": "Exact synthetic first creation push allowed without running provider",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_ACTIONS",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_RUN_ATTEMPT",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_EVENT_NAME",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_REPOSITORY",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_REPOSITORY_ID",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_REF",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_REF_TYPE",
+      "pass": true
+    },
+    {
+      "name": "Reject trigger GITHUB_SHA",
+      "pass": true
+    },
+    {
+      "name": "Reject event created",
+      "pass": true
+    },
+    {
+      "name": "Reject event deleted",
+      "pass": true
+    },
+    {
+      "name": "Reject event forced",
+      "pass": true
+    },
+    {
+      "name": "Reject event before",
+      "pass": true
+    },
+    {
+      "name": "Reject event after",
+      "pass": true
+    },
+    {
+      "name": "Reject event ref",
+      "pass": true
+    },
+    {
+      "name": "Exhausted synthetic tts budget denies more reservation",
+      "pass": true
+    },
+    {
+      "name": "Exhausted synthetic blind-review budget denies more reservation",
+      "pass": true
+    },
+    {
+      "name": "Exhausted synthetic asr budget denies more reservation",
+      "pass": true
+    },
+    {
+      "name": "Safe teaching projections exclude private assessment bodies and workstation paths",
+      "pass": true
+    },
+    {
+      "name": "Workflow produces only seven missing IDs, no prior61 unit dispatch",
+      "pass": true
+    },
+    {
+      "name": "Workflow exact request/worker/freeze hashes match",
+      "pass": true
+    },
+    {
+      "name": "All7 independent TTS and immediate uploads precede isolated diagnostics; final explicit failure inventory always runs",
+      "pass": true
+    },
+    {
+      "name": "Final inventory without outputs fails explicitly and makes no provider call",
+      "pass": true
+    },
+    {
+      "name": "Final missing-diagnostic inventory enumerates all incomplete units without replacing61 existing WAVs",
+      "pass": true
+    },
+    {
+      "name": "Unlaunched additive parentr1 files preserved exactly",
+      "pass": true
+    },
+    {
+      "name": "Typed Actions scalars: boolean cancel/continue and integer timeout, explicit push mapping",
+      "pass": true
+    },
+    {
+      "name": "Published invalid-workflow r2 preserved exactly; zero jobs/artifacts evidenced separately",
+      "pass": true
+    }
+  ],
+  "testCount": 50,
+  "selectedUnitIds": [
+    "S3-17-de-r1-011",
+    "S3-17-de-r1-012",
+    "S3-17-de-r1-013",
+    "S3-17-de-r1-014",
+    "S3-17-de-r1-015",
+    "S3-17-de-r1-016",
+    "S3-17-de-r1-017"
+  ],
+  "unchangedFullUnitObjects": 7,
+  "priorAudioOriginalsRehashed": 61,
+  "sourceBindingsVerified": 72,
+  "syntheticReservationsOnlyNoProviders": true,
+  "providerCalls": 0,
+  "remoteMutations": 0,
+  "humanListeningClaimed": false,
+  "ownerAccepted": false
+}

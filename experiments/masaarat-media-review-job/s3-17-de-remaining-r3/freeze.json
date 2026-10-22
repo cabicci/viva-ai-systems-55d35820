@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 2,
+  "stepId": "S3-17",
+  "sha256": {
+    "worker.py": "4bde9ade6e7e5c0beb75a99adcda643b95cb11971f143603d509a98fa7a50c6b",
+    "request.json": "e95de2b69304feea25d0f33b63356e6b16319d49d59690c611a40145c024b9fe",
+    "runtime.json": "05e0cd1b077259e171cd8c283b18c9daf7a801c01e2fc63b98620c3d817ee9d8",
+    "narration-de.json": "1cde36270f5174be11998d0742d24422b7ed24ba07d438d7132e2bb3b28d1dec",
+    "inputs/source-de.json": "a4188d67560f14954fc1c2d71977ce064787f4b7ff14e145442b0dfc90bdb989",
+    "scientific-contract.json": "a7a6e9e46752f4bdda54503b3d4530a304c184b087ca67972ef981f27028c2fd",
+    "implementation-dependency-pins.json": "44f84f0d8da04ebcb188d5b7f499210551369f8ba495149239176bf51f5a4b7c",
+    "subset-provenance.json": "b7a4abcdea68da89cdf54177784d0a1a2f3d96821eed7687b4593b08c8fdeb55",
+    "content-identities.json": "3a49046ccdb5760b1af938fffaaa3e8cae8f8a234f6960601083248a4f10a0b4",
+    "source-coverage.json": "5f39cd031a6253f5a352dd6d1dbe80edf384cd1dedf29644e54359d98c12fbb4",
+    "README.en.md": "293d580f4db99f209f61f1825558d0ca06565b5c285f38149b7ddbe6634be532",
+    "trigger-policy.json": "8af0c06047363be55d2e225daaabbbdbccdd103d4f5447631404df976eddf766",
+    "remote-branch-check.json": "1365b00faec25ffb340f234186a8c83f32fdd8d3991622e1231119b7439ff826",
+    ".gitignore": "5bf7b8ce10fb579fe047efa70fa2df7504f40fb487832f8255de050ecbf1f285",
+    "vendor/pipeline-engine.py": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+    "vendor/course/manifest.json": "d1a9c0de53fd7b6cb064982288f65bc2ab109d140b993ae2d7df0a09596372d0",
+    "freeze_package.py": "cd8b092edbdf97b3cccd314be2c940cfa3e9870b57e14db41ad76dd273c29a1e",
+    "offline_tests.py": "090a912560995d04aa89ba8b25b54f15d2fa3ba6794d1bde6a105d33257dc688",
+    "worker-derivation.json": "beec9283af201c9c121f8b8296e984305351f883f32478acc521a74e53e25912",
+    "workflow.template.yml": "a9fcba12fa174fafc39727e5f5e679b98dfa20018f93dc4e05c4db9254236d57"
+  },
+  "maximumTTSCalls": 7,
+  "maximumBlindAudioReviewCalls": 7,
+  "maximumASRInvocations": 7,
+  "maximumMetadataGETs": 2,
+  "maximumPerPartPerKind": 1,
+  "automaticRetries": 0,
+  "all7SelectedPartsRequired": true
+}

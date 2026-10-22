@@ -1,0 +1,471 @@
+name: S3-17 seven German remaining parts r3 TTS-first isolated diagnostics
+'on':
+  push:
+    branches:
+    - work/soil-s317-de-remaining-20261022-r3
+permissions:
+  contents: read
+concurrency:
+  group: s317-de-remaining-r3-e95de2b69304feea25d0f33b63356e6b16319d49d59690c611a40145c024b9fe
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/masaarat-media-review-job/s3-17-de-remaining-r3
+  REQUEST_SHA: e95de2b69304feea25d0f33b63356e6b16319d49d59690c611a40145c024b9fe
+  WORKER_SHA: 4bde9ade6e7e5c0beb75a99adcda643b95cb11971f143603d509a98fa7a50c6b
+  FREEZE_SHA: 82b784fc2ba02fcf42d158c1e208f844b81d1379103929463dd6400855673dc7
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narration:
+    if: github.run_attempt == 1 && github.event_name == 'push' && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.event.repository.id == 1272666418 && github.event.repository.private ==
+      false && github.event.repository.fork == false && github.ref == 'refs/heads/work/soil-s317-de-remaining-20261022-r3' && github.ref_type == 'branch' && github.event.ref == github.ref && github.event.created
+      == true && github.event.deleted == false && github.event.forced == false && github.event.before == '0000000000000000000000000000000000000000' && github.event.after == github.sha
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate frozen complete source-bound request offline
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+      id: validate
+    - name: Exact preferred-model metadata preflight; no fallback
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+      id: preflight
+    - name: Install hash-verified Whisper runtime once
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+
+        '
+      id: asr_runtime
+    - name: One TTS attempt S3-17-de-r1-011
+      id: tts001
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-011
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-011
+      id: upload001
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts001.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-011-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-011/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-011
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload001.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload001.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind001
+      if: always() && steps.upload001.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-012
+      id: tts002
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-012
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-012
+      id: upload002
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts002.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-012-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-012/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-012
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload002.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload002.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind002
+      if: always() && steps.upload002.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-013
+      id: tts003
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-013
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-013
+      id: upload003
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts003.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-013-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-013/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-013
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload003.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload003.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind003
+      if: always() && steps.upload003.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-014
+      id: tts004
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-014
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-014
+      id: upload004
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts004.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-014-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-014/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-014
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload004.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload004.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind004
+      if: always() && steps.upload004.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-015
+      id: tts005
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-015
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-015
+      id: upload005
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts005.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-015-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-015/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-015
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload005.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload005.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind005
+      if: always() && steps.upload005.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-016
+      id: tts006
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-016
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-016
+      id: upload006
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts006.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-016-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-016/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-016
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload006.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload006.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind006
+      if: always() && steps.upload006.outcome == 'success'
+      continue-on-error: true
+    - name: One TTS attempt S3-17-de-r1-017
+      id: tts007
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-17-de-r1-017
+
+        '
+      if: always() && steps.preflight.outcome == 'success' && steps.asr_runtime.outcome == 'success'
+      continue-on-error: true
+    - name: Immediate audio upload before review S3-17-de-r1-017
+      id: upload007
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always() && steps.tts007.outcome == 'success'
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-017-audio
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-017/
+        if-no-files-found: error
+        retention-days: '30'
+      continue-on-error: true
+    - name: Bind audio transfer receipt S3-17-de-r1-017
+      env:
+        AUDIO_ARTIFACT_ID: ${{ steps.upload007.outputs.artifact-id }}
+        AUDIO_ARTIFACT_DIGEST: ${{ steps.upload007.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-17-de-r1-017 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+
+        '
+      id: bind007
+      if: always() && steps.upload007.outcome == 'success'
+      continue-on-error: true
+    - name: Independent actual-audio diagnostics S3-17-de-r1-011
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-011 || true
+
+        python worker.py asr --unit S3-17-de-r1-011 || true
+
+        python worker.py compare --unit S3-17-de-r1-011
+
+        '
+      if: always() && steps.bind001.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-011
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-011-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-011/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-012
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-012 || true
+
+        python worker.py asr --unit S3-17-de-r1-012 || true
+
+        python worker.py compare --unit S3-17-de-r1-012
+
+        '
+      if: always() && steps.bind002.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-012
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-012-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-012/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-013
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-013 || true
+
+        python worker.py asr --unit S3-17-de-r1-013 || true
+
+        python worker.py compare --unit S3-17-de-r1-013
+
+        '
+      if: always() && steps.bind003.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-013
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-013-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-013/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-014
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-014 || true
+
+        python worker.py asr --unit S3-17-de-r1-014 || true
+
+        python worker.py compare --unit S3-17-de-r1-014
+
+        '
+      if: always() && steps.bind004.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-014
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-014-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-014/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-015
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-015 || true
+
+        python worker.py asr --unit S3-17-de-r1-015 || true
+
+        python worker.py compare --unit S3-17-de-r1-015
+
+        '
+      if: always() && steps.bind005.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-015
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-015-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-015/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-016
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-016 || true
+
+        python worker.py asr --unit S3-17-de-r1-016 || true
+
+        python worker.py compare --unit S3-17-de-r1-016
+
+        '
+      if: always() && steps.bind006.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-016
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-016-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-016/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Independent actual-audio diagnostics S3-17-de-r1-017
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-17-de-r1-017 || true
+
+        python worker.py asr --unit S3-17-de-r1-017 || true
+
+        python worker.py compare --unit S3-17-de-r1-017
+
+        '
+      if: always() && steps.bind007.outcome == 'success'
+      continue-on-error: true
+    - name: Preserve immediate part review evidence S3-17-de-r1-017
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-S3-17-de-r1-017-review
+        path: ${{ env.PACKAGE }}/output/S3-17-de-r1-017/
+        if-no-files-found: warn
+        retention-days: '30'
+    - name: Final explicit missing-audio and diagnostic inventory; fail incomplete batch
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py inventory
+
+        '
+    - name: Preserve all partial attempts and frozen provenance
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      if: always()
+      with:
+        name: s317-de-remaining-r3-complete-evidence
+        if-no-files-found: warn
+        retention-days: '30'
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/worker-derivation.json
+
+          ${{ env.PACKAGE }}/offline-verification.json
+
+          '

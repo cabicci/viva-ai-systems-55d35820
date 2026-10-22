@@ -1,0 +1,62 @@
+{
+  "ownPlotCDataStartsBlank": true,
+  "suppliedModels": [
+    {
+      "pH": 6.8,
+      "texture": "loam",
+      "cropCandidates": [
+        "tomatoes",
+        "corn"
+      ]
+    },
+    {
+      "pH": 5.8,
+      "texture": "sandy loam",
+      "cropCandidates": [
+        "potatoes",
+        "strawberries"
+      ],
+      "ribbonInches": 0.5,
+      "exactRibbonConversionMillimetres": 12.7
+    }
+  ],
+  "sourceScheduleExampleOnly": {
+    "annualCompost": true,
+    "pHMonitoringYears": [
+      1,
+      2
+    ]
+  },
+  "conditionalIllustrativeTargetOnly": {
+    "from": 5.8,
+    "toward": 6.5,
+    "candidates": [
+      "corn",
+      "alfalfa"
+    ]
+  },
+  "limeDoseEstablished": false,
+  "universalTargetEstablished": false,
+  "finalTaskCounts": {
+    "multipleChoice": 32,
+    "written": 9,
+    "products": 4,
+    "processes": 4,
+    "total": 49
+  },
+  "assessmentAnswersIncluded": false,
+  "fourLocaleFinal49AssessmentReviewComplete": false,
+  "initialAssessment": {
+    "learnerObserved": false,
+    "trainerSignature": null,
+    "physicalPass": false,
+    "reportApproved": false,
+    "courseCompleted": false
+  },
+  "writingTimeExcludesActualDryingPreparationAndEquilibration": true,
+  "FieldBAndPaddock3SeparateFromPlotC": true,
+  "retryNeverAutomaticallyPasses": true,
+  "cropChoicesNeedIndependentSiteClimateWaterDrainageSalinityAndNutrientEvidence": true,
+  "sourceActiveWritingMinutes": 20,
+  "actualMeasuredWritingMinutes": null
+}
