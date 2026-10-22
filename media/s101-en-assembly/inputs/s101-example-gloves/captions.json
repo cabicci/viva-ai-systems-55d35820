@@ -1,0 +1,89 @@
+{
+  "sceneId": "s101-example-gloves",
+  "locale": "en",
+  "title": "Example: missing glove information",
+  "completeCaptionText": "The task involves a liquid reagent. There are fabric gloves and nitrile gloves, but no current SDS or compatibility information has been supplied.\n\nFabric can absorb a spill and hold it against the hand.\n\nNitrile is a possible material, but its name alone does not prove compatibility with this reagent.\n\nStop chemical handling and obtain the SDS, glove compatibility information and trainer's instructions. Select eye and other protection as well.\n\nThe correct action can be to stop for missing information, not choose the most convincing-looking item.",
+  "expectedNarrationSha256": "a936392eba0994fae544f9c88c86c583c777cea2c7b2675cb5a288825487aaf7",
+  "sourceNarrationSha256": "a936392eba0994fae544f9c88c86c583c777cea2c7b2675cb5a288825487aaf7",
+  "sourceBindingSha256": "ba6cd4e721c37c1489c625a870dc89dd19a36a4ea0380e9026d1a89718c24fef",
+  "runtimePlanSha256": "7466cab76031e6acd09b1771a02541802e67e845692e21cff1bd8cdee0655b72",
+  "captions": [
+    {
+      "index": 0,
+      "text": "The task involves a liquid reagent.",
+      "lines": [
+        "The task involves a liquid reagent."
+      ],
+      "start": 0.0,
+      "end": 3.02,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 1,
+      "text": "There are fabric gloves and nitrile gloves, but no current SDS or compatibility information has been supplied.",
+      "lines": [
+        "There are fabric gloves and nitrile gloves, but no current",
+        "SDS or compatibility information has been supplied."
+      ],
+      "start": 3.54,
+      "end": 11.68,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 2,
+      "text": "Fabric can absorb a spill and hold it against the hand.",
+      "lines": [
+        "Fabric can absorb a spill and hold it against the hand."
+      ],
+      "start": 12.6,
+      "end": 16.4,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 3,
+      "text": "Nitrile is a possible material, but its name alone does not prove compatibility with this reagent.",
+      "lines": [
+        "Nitrile is a possible material, but its name alone",
+        "does not prove compatibility with this reagent."
+      ],
+      "start": 17.14,
+      "end": 24.02,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 4,
+      "text": "Stop chemical handling and obtain the SDS, glove compatibility information and trainer's instructions.",
+      "lines": [
+        "Stop chemical handling and obtain the SDS, glove",
+        "compatibility information and trainer's instructions."
+      ],
+      "start": 24.84,
+      "end": 31.9,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 5,
+      "text": "Select eye and other protection as well.",
+      "lines": [
+        "Select eye and other protection as well."
+      ],
+      "start": 32.64,
+      "end": 35.14,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    },
+    {
+      "index": 6,
+      "text": "The correct action can be to stop for missing information, not choose the most convincing-looking item.",
+      "lines": [
+        "The correct action can be to stop for missing",
+        "information, not choose the most convincing-looking item."
+      ],
+      "start": 36.08,
+      "end": 42.46,
+      "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737"
+    }
+  ],
+  "audioSha256": "4d76a521a8d755174c5a81a321e66d831303c7fec886d824acd2fa6c4a4b8737",
+  "durationSeconds": 42.970958333333336,
+  "assessmentExcluded": true
+}
