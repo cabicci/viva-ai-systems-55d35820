@@ -1,0 +1,53 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S1-04-ar-EG-P01-r1",
+      "contextWavSHA256": "4bfcfb3aa856ae3576edb2b424e696f4390cfd5674a22bfc2394be48f6d7f631",
+      "contextPCMSHA256": "d13203c365cb88ddc45d92b419e134d435bff1cf64e531cc32e2dddeba54bec9",
+      "frames": 144000,
+      "sampleRate": 24000,
+      "durationSeconds": 6.0,
+      "originalWavSHA256": "b2ccf7b0b160799e3c87eed4137e9c0459958fd9d920e4f6133f89954fdbc631",
+      "originalPCMSHA256": "258f7296d43b962a84600e23cd68d1e5471cbc8c48bc6ebb15ad533a26e1cb93",
+      "originalFrames": 2198400,
+      "sourceFirstSample": 2054400,
+      "sourceEndSampleExclusive": 2198400,
+      "sourceOffsetSeconds": 85.6,
+      "sourceEndSeconds": 91.6,
+      "endsAtOriginalRecordingEnd": true,
+      "boundaryFact": "The excerpt ends at the exact end of its source recording; its start is an intentional interior cut.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    },
+    {
+      "id": "C02",
+      "inputPath": "inputs/C02.wav",
+      "sourceUnitId": "S1-04-en-E03-r1",
+      "contextWavSHA256": "2ca033dbc3747be5f2fd1b9daa000484e2122d483d75e27a47d0caba3ef8b170",
+      "contextPCMSHA256": "5c2c2140c39dbe157abc444772d943c0ce0ac207e5b6e63bb664653f69e42564",
+      "frames": 767040,
+      "sampleRate": 24000,
+      "durationSeconds": 31.96,
+      "originalWavSHA256": "b2210466f9174f6fdc1dfdb0612fc30037dd90c2c8f92777d682a4ba2a39b941",
+      "originalPCMSHA256": "5c2c2140c39dbe157abc444772d943c0ce0ac207e5b6e63bb664653f69e42564",
+      "originalFrames": 767040,
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 767040,
+      "sourceOffsetSeconds": 0,
+      "sourceEndSeconds": 31.96,
+      "endsAtOriginalRecordingEnd": true,
+      "boundaryFact": "This is the entire source recording from its exact beginning to its exact end.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
