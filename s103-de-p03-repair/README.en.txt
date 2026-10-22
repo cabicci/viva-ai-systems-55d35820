@@ -1,0 +1,1 @@
+Exactly ONE German P03 evidence sentence, faithful spoken-only attendance phrasing after confirmed malformed compound.1TTS1blind1ASR2GET/0retry, originalwholePCM/source/display untouched. Noautomaticjoin/adoption; actualrecordingQA first. Existingprefix/suffix hashes andquietwindows retained in privateproposal; optionalpostjoindiagnostic separateexplicitbudget, notautomatic.
