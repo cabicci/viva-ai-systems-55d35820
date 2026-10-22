@@ -1,0 +1,1925 @@
+{
+  "schemaVersion": 2,
+  "locale": "en",
+  "coherentParts": [
+    {
+      "id": "S2-15-en-r1-001",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "displayText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and calculate and report their arithmetic mean with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "captionText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and calculate and report their arithmetic mean with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain P H, nitrogen, phosphorus, potassium, O M and C E C accurately in language a farmer understands.\n\nPreserve Field B's five individual P H readings and calculate and report their arithmetic mean with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenTextSha256": "236de664b59a3d921953e488458136289cded65520d18de34337a44f61ac8484",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "bbffe44f865dbd49b4e337eb0770c6772de6afced1471e632560e7696483560b",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.",
+          "sha256": "fbd4eb5c69b3c4e35a7d375493574e6c918d61d6626997f5b1c2ac00abbfab9a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Write all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.",
+          "sha256": "d9511ac7f2bc679ae35d027ecc4aeac71bab2ca904fa32fa60d07636c3e697d3"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "sha256": "b8ce75e444708af2e35b5ba52187d50f2233c39767bec5c559c5cce3a0f40f34"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Prioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.",
+          "sha256": "6f55cbb91749d7152231a996637c0962c281240bd2b414a54b38f0b28607f694"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Review another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "sha256": "c8ebf7c028d78ef93237d68ce203461fc1ad90eb4b9db16f046c384f38fcab57"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 2,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "CEC",
+          "spoken": "C E C",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [
+        {
+          "sourcePointer": "/goals/1",
+          "written": "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "playbackText": "Preserve Field B's five individual pH readings and calculate and report their arithmetic mean with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "relocatedExactSourceUnit": "S2-15-en-r1-012"
+        }
+      ],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-001",
+        "spokenTextSha256": "431acdd9100b1a29a7b80ee2d028718be2eaf8aabdbc85aad7a520f4f7cb5f7c",
+        "requestFingerprintSha256": "74b318cc3a7a4478d6caee3045a1b7c46fd57d1fb65f4ad67133a0f3d97d78b3"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-002",
+      "locale": "en",
+      "semanticGroup": "S2-15-R01",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "displayText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "captionText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "spokenText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a sixty-minute active lesson: five minutes introduction and outcomes, ten minutes concept review, then thirty-five minutes group writing and ten minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods and observations and propose basic actions. A one to five confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "spokenTextSha256": "b2c36c2b03372353f34b545c74670b3bfe288e0937792c4bbc590dea47e43903",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "d4b660d41424177c9e981345331b07a1f05c991c4f22127805a74bb1f0c55a34",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.",
+          "sha256": "b04cab10ce07b78129b3a395e0d56d0596ce41db0bd3c9ac76b6658c4f4b4a64"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "This is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+          "sha256": "f993b55d58ff1ca3579f9c06633e7517c2face03bf8c158b5face10d299ce06b"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "1–5",
+          "spoken": "one to five",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "10",
+          "spoken": "ten",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])10(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "35",
+          "spoken": "thirty-five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])35(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "60",
+          "spoken": "sixty",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])60(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5",
+          "spoken": "five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "/",
+          "spoken": " and ",
+          "count": 1,
+          "kind": "source_pair_separator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-002",
+        "spokenTextSha256": "b2777373ceda8d0ea7b2c4f8927815bd7527b686b8b95565dcc4bb66a36796b6",
+        "requestFingerprintSha256": "d94c7090a2c0a46a30667a0406d7eebf6d1e11be193d31cb5ed0f3702165c442"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-003",
+      "locale": "en",
+      "semanticGroup": "S2-15-R02",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "displayText": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "captionText": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "spokenText": "one. Title and client information: client, field, sample, date and preparer. two. Introduction and objective: why the test was requested and the crop or decision. three. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. four. Results: a table of measurements, units, source and suitable reference. five. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "spokenTextSha256": "9f461f8d5e6903e0816147c6900e8c89d11575e4312118d043135ef7b82c7d6a",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "7496647c164668722d2905f6fefdf7d6e1089de9478cfcabc84d69682e1ad435",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.",
+          "sha256": "43af7016dd53cc23679c717ebd6033c92fa789bca84f2cdc35f3077f4d938c7d"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "The house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+          "sha256": "d7e80f6de2289cbcc588dfcca8edf45840078b213990ac272b829e02d497db5f"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "1",
+          "spoken": "one",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])1(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "2",
+          "spoken": "two",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "3",
+          "spoken": "three",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])3(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "4",
+          "spoken": "four",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])4(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5",
+          "spoken": "five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "/",
+          "spoken": " and ",
+          "count": 1,
+          "kind": "source_pair_separator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-003",
+        "spokenTextSha256": "15deebab2967f35ad0ee869bd04834f373c6940f97458ea3c65731fcc97f3c57",
+        "requestFingerprintSha256": "1d9bca1fc1b42e8eb0a9782ab694a8c7984084288816ae0d78b533b31a46a374"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-004",
+      "locale": "en",
+      "semanticGroup": "S2-15-R03",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "displayText": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "captionText": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "spokenText": "Instead of a string of chemical jargon, say: 'The measured P H is five point zero, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as ten to the power minus five moles per litre for P H five point zero; that is a simplified concentration example, not an exact P H definition. P H is formally based on hydrogen-ion activity. Around seven is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: nitrogen supports vegetative growth; phosphorus supports root and reproductive processes; potassium supports many plant functions. Low potassium can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. C E C describes soil capacity to retain exchangeable positive ions, including potassium, calcium and magnesium, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains O M to a new gardener and the other explains nitrogen, phosphorus, potassium, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating nitrogen, phosphorus or potassium as the sole cause of a crop symptom.",
+      "spokenTextSha256": "9c43b064046f300165641df321780cd273fa3a0835d58b34d9bd86a99d09eb7b",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "6bfe9afc177e834a7bf4101a7e4f38b235a8ac27b0a62b5b8117b59bac4bf910",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.",
+          "sha256": "0948913d92dc93dbd13a7e2b0abfd9798b13eb0f02d0d7fb2ce5d4b63bebe3e8"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Organic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+          "sha256": "0b00a930502c7a3d1b262363ff9eb871176eb8c69c037f15464ab8f8a9d49357"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "10^-5 mol/L",
+          "spoken": "ten to the power minus five moles per litre",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N-P-K",
+          "spoken": "nitrogen, phosphorus, potassium",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 4,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "CEC",
+          "spoken": "C E C",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 4,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "Ca",
+          "spoken": "calcium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)Ca(?!\\w)"
+        },
+        {
+          "written": "Mg",
+          "spoken": "magnesium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)Mg(?!\\w)"
+        },
+        {
+          "written": "5.0",
+          "spoken": "five point zero",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.0(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "7",
+          "spoken": "seven",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])7(?!\\d|\\.\\d)"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-004",
+        "spokenTextSha256": "3bcf9fad34d0a23841769bf1b5f42b79453b60247d56b637b206931dae25ca6c",
+        "requestFingerprintSha256": "02f72c0204fd15e7517e799b98d984352e0cafa603a45459636f5394793329a1"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-005",
+      "locale": "en",
+      "semanticGroup": "S2-15-R04",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "displayText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "captionText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "spokenText": "The source's teaching table reads P H five point two, O M two point one percent, nitrogen Low, phosphorus twenty-five parts per million and potassium one hundred eighty parts per million. It prints illustrative bands P H six point zero to seven point zero, O M three point zero to five point zero percent, nitrogen Optimum, phosphorus thirty to fifty parts per million and potassium one hundred fifty to two hundred fifty parts per million, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source and method, applicable reference and status, with 'unresolved' when support is missing. Units such as milligrams per litre, micrograms per litre and milligrams per kilogram do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, O M, nitrogen and phosphorus and potassium monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor potassium only if its reference justifies that status. Explain why the first action is first for this case.",
+      "spokenTextSha256": "024ce0dc3ffaf7476df73f83a0712016c22e322f29173fb3c69921d955dc88b8",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "6e10ec73787d72b033c28b74f4777125883d687cfd90dd722322eeb4a4348264",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+          "sha256": "44e35b4c2fd427aaaa4ae657daea7b1025eed32da47aae35ef7569280b7f9695"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Use a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+          "sha256": "2f4fb03c1c646fa969c31d789e86a1d6166115066cb0f5e94c7846dbfd61f376"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "mg/L",
+          "spoken": "milligrams per litre",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "µg/L",
+          "spoken": "micrograms per litre",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "mg/kg",
+          "spoken": "milligrams per kilogram",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N/P",
+          "spoken": "nitrogen and phosphorus",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 2,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 3,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 4,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "ppm",
+          "spoken": "parts per million",
+          "count": 4,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)ppm(?!\\w)"
+        },
+        {
+          "written": "6.0–7.0",
+          "spoken": "six point zero to seven point zero",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "3.0–5.0",
+          "spoken": "three point zero to five point zero",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "30–50",
+          "spoken": "thirty to fifty",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "150–250",
+          "spoken": "one hundred fifty to two hundred fifty",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "180",
+          "spoken": "one hundred eighty",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])180(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "2.1",
+          "spoken": "two point one",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])2\\.1(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5.2",
+          "spoken": "five point two",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "25",
+          "spoken": "twenty-five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])25(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 2,
+          "kind": "unit"
+        },
+        {
+          "written": "/",
+          "spoken": " and ",
+          "count": 1,
+          "kind": "source_pair_separator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-005",
+        "spokenTextSha256": "a32b2cf6e05042c0bab8672626db70ea7715cb1516a41797210c6b706ce8d034",
+        "requestFingerprintSha256": "e2144c2a5853b3c2fa7b9a48bc3d7637ff75c8e819b6eb901340cc96c4d5a87e"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-006",
+      "locale": "en",
+      "semanticGroup": "S2-15-R05",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "displayText": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "captionText": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "spokenText": "The teaching method example takes ten cores from the top fifteen centimetres in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service or device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm nitrogen deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "spokenTextSha256": "ab7d0f6cfbaf596b9d233f482fb81e68886abf75173b5d4bf7c9598ce6085002",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "e5cc6250d3e68eed930d1f4e7e8d4a8f8d2e4def89fa6c55b32831a57898ba48",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.",
+          "sha256": "5f6f075a570e5acaae38fb171a11b3abd13d193b9ebb99d3fa3978459db51f36"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Record soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+          "sha256": "055ed76dc665dc97fc7057dd76b91d6b8329533fb535430adfc512d35d6d0281"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "service/device",
+          "spoken": "service or device",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "cm",
+          "spoken": "centimetres",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)cm(?!\\w)"
+        },
+        {
+          "written": "10",
+          "spoken": "ten",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])10(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "15",
+          "spoken": "fifteen",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])15(?!\\d|\\.\\d)"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-006",
+        "spokenTextSha256": "8a7db0376e2ad6166c8a2e1908e40bf26f7d29e5491a1b0a5cc479f3f4b1291c",
+        "requestFingerprintSha256": "7f64c6bcc84d79926c362794771b3cbd1398dc6ca7e4c8d970c818ca31c1691a"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-007",
+      "locale": "en",
+      "semanticGroup": "S2-15-R06",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "displayText": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "captionText": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "spokenText": "Farmer Jones's West Field is a supplied tomato case: P H five point five; O M one point five percent; nitrogen Low; phosphorus fifteen parts per million; potassium two hundred parts per million; visible compaction and slow drainage after rain. The source model gives tomato bands P H six point zero to six point eight, O M greater than three percent, nitrogen 'Optimal', phosphorus greater than fifty parts per million and potassium one hundred seventy-five to two hundred fifty parts per million. These are provided classroom target labels, not independently validated local lab ranges. In particular, phosphorus greater than fifty parts per million conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is five minutes, writing thirty-five and discussion ten with fifteen- and five-minute warnings during work. Address acidity, nitrogen and phosphorus questions and compaction and drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when potassium may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage and subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop and rotation section is an optional extension, not proof the learner built the table independently.",
+      "spokenTextSha256": "f300cc39934fdafecc02670d530a5af8698dbffadfe3d8376a4b56ca24984c80",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "8f40d496dbaf06fcc1d53715ba4b79172ec66ab0f467bb9d752601ef000b2a0a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.",
+          "sha256": "0cc5d4255df07e4bdbc75ec4c3c879d95f6457b32ac622f5e1dfa72e9c771f1a"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "In groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+          "sha256": "827a8cb765133a3b2952ad39914e8430c43263b1064e2d88e538a5c96cb52ff2"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "N/P",
+          "spoken": "nitrogen and phosphorus",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 2,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 2,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 3,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 3,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "ppm",
+          "spoken": "parts per million",
+          "count": 5,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)ppm(?!\\w)"
+        },
+        {
+          "written": "6.0–6.8",
+          "spoken": "six point zero to six point eight",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": "175–250",
+          "spoken": "one hundred seventy-five to two hundred fifty",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": ">3",
+          "spoken": "greater than three",
+          "count": 1,
+          "kind": "strict_comparison"
+        },
+        {
+          "written": ">50",
+          "spoken": "greater than fifty",
+          "count": 2,
+          "kind": "strict_comparison"
+        },
+        {
+          "written": "1.5",
+          "spoken": "one point five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])1\\.5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "200",
+          "spoken": "two hundred",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])200(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5.5",
+          "spoken": "five point five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "10",
+          "spoken": "ten",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])10(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "15",
+          "spoken": "fifteen",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])15(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "35",
+          "spoken": "thirty-five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])35(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5",
+          "spoken": "five",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 2,
+          "kind": "unit"
+        },
+        {
+          "written": "/",
+          "spoken": " and ",
+          "count": 3,
+          "kind": "source_pair_separator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-007",
+        "spokenTextSha256": "02498e0e8ba6f2700097f5f963869924477dadc3486058b89608277244734841",
+        "requestFingerprintSha256": "2e6a6fd446f4c399e8bc221b166fd20fef11e773bbdded936a96a75cfdcebd37"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-008",
+      "locale": "en",
+      "semanticGroup": "S2-15-R07",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "displayText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "captionText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "spokenText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low, optimum or high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the one to five self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "spokenTextSha256": "80df27fe8f9f8e9d055a7f819fffdce20a32b40591570d9b862cc7351567ae48",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "89965bfcef2c18917343250af32cbe5f921aaf24f1f24cd56903e6746cdb0bef",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.",
+          "sha256": "43817992879c43f0634fd778e88a68e832410a04248814a795f0b05f9f5aca5d"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "After revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+          "sha256": "c49282a243fc96904889d877e4c5b05f425724d142a901e76e0fb50035c1f459"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "low/optimum/high",
+          "spoken": "low, optimum or high",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "1–5",
+          "spoken": "one to five",
+          "count": 1,
+          "kind": "range"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-008",
+        "spokenTextSha256": "3af52da96e5072edcf9bbd88d36d8c232ca33ffde02e471e0b81f7d481aa842f",
+        "requestFingerprintSha256": "3b2a82e25a7dda7228773799f46060e499ebbc9e8b6205580b3b18beeafb3799"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-009",
+      "locale": "en",
+      "semanticGroup": "S2-15-E01",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+      "displayText": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+      "captionText": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+      "spokenText": "Illustrative table, not a laboratory certificate\n\nSupplied model: P H five point two; O M two point one percent; nitrogen Low; phosphorus twenty-five parts per million; potassium one hundred eighty parts per million, with its own example reference bands.",
+      "spokenTextSha256": "337414de6c04da426f0064f3bedb9e1702de405d4b61a1ebd71a7786fb699c0d",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "333d6d15563835263f350fcf6a35fd38a5387d90c181edfd796c76037752349f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Illustrative table, not a laboratory certificate",
+          "sha256": "b30a771997c702f20541eff00887e00760f7eaa3759406ffbc7faa8d7026ef70"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Supplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+          "sha256": "3f8482e391911abe96e635165b2ac27bfc5007ae108b22216da5265b4634f1e5"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "ppm",
+          "spoken": "parts per million",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)ppm(?!\\w)"
+        },
+        {
+          "written": "180",
+          "spoken": "one hundred eighty",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])180(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "2.1",
+          "spoken": "two point one",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])2\\.1(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5.2",
+          "spoken": "five point two",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "25",
+          "spoken": "twenty-five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])25(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 1,
+          "kind": "unit"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-009",
+        "spokenTextSha256": "9b5c3f3f34dc7993424e81e7903391755ee4d8443ee8ba3beefc29b0b164ac81",
+        "requestFingerprintSha256": "bcc1b1692b5f242fe06154ef62c71a8b05c32a11f98ec23d5101e29636b3cf46"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-010",
+      "locale": "en",
+      "semanticGroup": "S2-15-E02",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+      "displayText": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+      "captionText": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+      "spokenText": "Farmer Jones: West Field tomatoes\n\nProvided P H five point five, O M one point five percent, nitrogen Low, phosphorus fifteen parts per million, potassium two hundred parts per million, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+      "spokenTextSha256": "80584319c0ea19570ba60e61dc4b28201ee7b26f4ff6577068f8f554e832214d",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "c16739393151c39e8bef99a7206da06fb643ff56554246b226fdab6cbc01fab3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Farmer Jones: West Field tomatoes",
+          "sha256": "f331733664f13a5f895e44973ed75b490d5a0bde7754a94d41f6a775f46bc7c2"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Provided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+          "sha256": "06c46c97dc8a83b4adbd40b399620a7a6d4fefb2f414156660ec80b20505b037"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "ppm",
+          "spoken": "parts per million",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)ppm(?!\\w)"
+        },
+        {
+          "written": "1.5",
+          "spoken": "one point five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])1\\.5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "200",
+          "spoken": "two hundred",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])200(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5.5",
+          "spoken": "five point five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "15",
+          "spoken": "fifteen",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])15(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 1,
+          "kind": "unit"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-010",
+        "spokenTextSha256": "60e86099ae5af8e373d94d2428afc2c2007bbaa62c223384cdd3e1917891afe0",
+        "requestFingerprintSha256": "d676c4d1364a726292a282e55133a770b7ab74f120f12574be723446638be029"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-011",
+      "locale": "en",
+      "semanticGroup": "S2-15-E03",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+      "displayText": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+      "captionText": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+      "spokenText": "Separate written case: corn\n\nCorn case: P H five point four (stated target six point zero to seven point zero), O M two point zero percent (stated target greater than three percent), nitrogen Low, phosphorus Low, potassium Optimum; compacted soil and prior yellow leaves.",
+      "spokenTextSha256": "8dc835d79593ed76c2dc1808614095e99e23f5d14b25cd9b4b906f81352eedb3",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "a9c51a255f5d9ea8612485c157e161d68032dd447bb75eb430008587172ecd93",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Separate written case: corn",
+          "sha256": "5c74506ea17cdb26aa288eea6c9b2cb194a176eb430404cd9be439bc9a08410f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Corn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+          "sha256": "e382f1eb62ac01f37078593e9b03917f33f3ceb0ec36265a7a664106beecc1d2"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "6.0–7.0",
+          "spoken": "six point zero to seven point zero",
+          "count": 1,
+          "kind": "range"
+        },
+        {
+          "written": ">3",
+          "spoken": "greater than three",
+          "count": 1,
+          "kind": "strict_comparison"
+        },
+        {
+          "written": "2.0",
+          "spoken": "two point zero",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])2\\.0(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "5.4",
+          "spoken": "five point four",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.4(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 2,
+          "kind": "unit"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-011",
+        "spokenTextSha256": "f6c18558625512c58160c014ce9c3d60757077bdaa827f47d473f310562c1e69",
+        "requestFingerprintSha256": "5abc8e0ecd786add1575b606634e56006fbe8183dfb933b77d4d205abe794bef"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-012",
+      "locale": "en",
+      "semanticGroup": "S2-15-E04",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "displayText": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "captionText": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "spokenText": "Field B: five P H readings\n\nField B's five reported P H readings are six point two, six point four, six point one, six point three and six point two; the date is requested but not supplied.\n\nPreserve Field B's five individual P H readings and report their arithmetic mean six point two four with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nShow all five readings in an identified table.\n\nThe sum is thirty-one point two and the arithmetic mean is thirty-one point two divided by five  equals  six point two four.\n\nSay 'mean of five readings', not 'P H of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "spokenTextSha256": "5e6b94dd504f7d0933dfe65e550757682c1504f040c5a8fbd607e94a3d5db865",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "200aaca45c3df47a5964a933812022142265835e27befd6c34f0af6a2c1d4c67",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Field B: five pH readings",
+          "sha256": "e94f71a0d2085f1bf352d3ae6952ef9a8c055332ec0abb2d260580bd3522b065"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Field B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.",
+          "sha256": "63088ec2d0e1558837f68babb7bd3fed225789a382766565847d229a7abb7294"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "sha256": "b8ce75e444708af2e35b5ba52187d50f2233c39767bec5c559c5cce3a0f40f34"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Show all five readings in an identified table.",
+          "sha256": "b36eda059a98c8f71915d82b069660efff435f9dddd99dee8f30559e1666ed18"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "The sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.",
+          "sha256": "618b02b655097ce4580d7d3ce551cb8e7b596c3a1455b7505014cfd398edafdd"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Say 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.",
+          "sha256": "e32cf54687ccaed46714792a7e6d0c1d86118bdf80128c6938ef330b37c3af4c"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "An average summarizes separate measurements; it does not manufacture a new physical measurement.",
+          "sha256": "4ce87b23bd7da2efcb9b9d9338ae7d9a8b03af421bb3a491fe8dc08543905b09"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 4,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "31.2/5",
+          "spoken": "thirty-one point two divided by five",
+          "count": 1,
+          "kind": "arithmetic_quotient"
+        },
+        {
+          "written": "31.2",
+          "spoken": "thirty-one point two",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])31\\.2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.24",
+          "spoken": "six point two four",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.24(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.1",
+          "spoken": "six point one",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.1(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.2",
+          "spoken": "six point two",
+          "count": 2,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.3",
+          "spoken": "six point three",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.3(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.4",
+          "spoken": "six point four",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.4(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "=",
+          "spoken": " equals ",
+          "count": 1,
+          "kind": "arithmetic_operator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "AFTER_MATCHING_FIELD_B_ATTEMPT",
+        "caseId": "S2-15-E04",
+        "locale": "en",
+        "reason": "Exact source goal and worked arithmetic comparison; original visual case prompt remains available before attempt."
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-012",
+        "spokenTextSha256": "6204fd6fab831fe6f9729d249a50cdd1f7ac11d6495abde7adfc17040e4c13d6",
+        "requestFingerprintSha256": "688867f22c0a0bb4715eae706f55bee2b88b8971c885b17f808214cd57d97467"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-013",
+      "locale": "en",
+      "semanticGroup": "S2-15-E05",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+      "displayText": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+      "captionText": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+      "spokenText": "Paddock three one-page product\n\nSupplied P H seven point eight alkaline, O M one point five percent low, nitrogen High, phosphorus Very Low and potassium Low; the task asks for at least one practical phosphorus and potassium-related action.",
+      "spokenTextSha256": "06002bdc8e2a21232b291e84abfb0aeb4a19a192cfb34cf29d1de4ce7a2690f7",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "1b5dc5a8db4968c2917cf869cbc800cda2a7eb97e98275751c07f88af76897b1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/title",
+          "text": "Paddock 3 one-page product",
+          "sha256": "f02b94f72cf10aeaa0bd62b94b1ac79d72a4552c77a8b660ca5d8812632ca1a4"
+        },
+        {
+          "pointer": "/examples/4/situation",
+          "text": "Supplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+          "sha256": "29fe72441c723350bb2accda72131f3b54c86f22e95d947de6b1d835e9dce9b9"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "P/K",
+          "spoken": "phosphorus and potassium",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "1.5",
+          "spoken": "one point five",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])1\\.5(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "7.8",
+          "spoken": "seven point eight",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])7\\.8(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "3",
+          "spoken": "three",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])3(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 1,
+          "kind": "unit"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-013",
+        "spokenTextSha256": "061435865d6d4e15b085a1b3a08e239545f3fe86ee7c704d96dfe07ec51a5ded",
+        "requestFingerprintSha256": "595515b997674868d96fdf4e5ec61a7cace85980779e1ee10a8ca6d466a6dc31"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-014",
+      "locale": "en",
+      "semanticGroup": "S2-15-E06",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+      "displayText": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+      "captionText": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+      "spokenText": "Keep later written cases distinct\n\nCase A: P H five point two, nitrogen Low, phosphorus Low, potassium Medium, O M one percent, with two soil techniques and crop examples requested. Case B: P H six point eight, nitrogen Medium, phosphorus High, potassium Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+      "spokenTextSha256": "542e63a425302b83b53bd325272d3d1c3a82d23e7375b9dd5b3cbc66de7b2150",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "ccad6e953e85d631def4d43a686f080c1e8989c824037646c2f0583524118777",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/5/title",
+          "text": "Keep later written cases distinct",
+          "sha256": "3c8aea0985363566958132f553f9687a295249865328cbe313e067434a1a5b0e"
+        },
+        {
+          "pointer": "/examples/5/situation",
+          "text": "Case A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+          "sha256": "ba67ff68413aea786c767a94a184e373b271649a96e4c4fc82e3769de5a1bd38"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 2,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "N",
+          "spoken": "nitrogen",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)N(?!\\w)"
+        },
+        {
+          "written": "P",
+          "spoken": "phosphorus",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)P(?!\\w| H\\b)"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 2,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "5.2",
+          "spoken": "five point two",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])5\\.2(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "6.8",
+          "spoken": "six point eight",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])6\\.8(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "1",
+          "spoken": "one",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])1(?!\\d|\\.\\d)"
+        },
+        {
+          "written": "%",
+          "spoken": " percent",
+          "count": 1,
+          "kind": "unit"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-014",
+        "spokenTextSha256": "a72eab661eeac3c89a99b6e041dd925693c89a47374bfc6c0d82101b46e9575f",
+        "requestFingerprintSha256": "74bd03b82970779fa9842f543b32cb8a8ebae4e8c78f919d15bd48091d5504cf"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-015",
+      "locale": "en",
+      "semanticGroup": "guided-boundary",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "displayText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "captionText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenTextSha256": "9434da730c5723d9f5e1db6ad4afdc50dddf8ef77d2c8340aa014f22e075fad4",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "a6d6ee4f30b716c35152ceea9bbfd0ba998e15a6dd5f5f5437b2a3b8c60575c9",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.",
+          "sha256": "ffe3db08bc0dda5cbee4285df7fe924592db6ecef6a643d985ed5b0a971a0a2f"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "sha256": "78c3dc15d28afa519d9e47c85afac1c0dc3c93dea2900b974bd5ba1ab1a8c848"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "3",
+          "spoken": "three",
+          "count": 1,
+          "kind": "numeric_token",
+          "pattern": "(?<![\\d.])3(?!\\d|\\.\\d)"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-015",
+        "spokenTextSha256": "ef278e38e1ead6a014c53d8a4c180104b3f1292ebbf8f7170369663e2baeba5a",
+        "requestFingerprintSha256": "770b28a8b4ed6ef0518ea30087d5dc51ee043b60e21ca314cecb64b87a73eea7"
+      }
+    },
+    {
+      "id": "S2-15-en-r1-016",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "model": "gemini-3.8-flash-tts",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "displayText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "captionText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenText": "P H\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nnitrogen, phosphorus, potassium\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (O M)\n\nOrganic material in soil relevant to structure and nutrient and water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (C E C)\n\nCapacity to hold exchangeable positively charged ions such as potassium, calcium and magnesium, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenTextSha256": "b1e4c80d6212f6c13480e806344a3dc2e79910aed4953a1c72f7632619bca530",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "68bb26179b25e3011814e4695965f36d5be766407f0f1c3282f7572fc2d52efb",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.",
+          "sha256": "a0fc2d5bb537d4283a8dedf0cc8d149b34361e56796a6a7625e2f04901010007"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Nitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.",
+          "sha256": "86e8b58e1ffa42d48ad32bfbd4394c6ccb1fe2a65769655d5582b25e387bdcb8"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "organic matter (OM)",
+          "sha256": "38f381ae61e57074d22eea1be965745fcd6bd599c7643f294d2ffaef65855f6e"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Organic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.",
+          "sha256": "86b5e41e28460b526e7f265167d24c1d3c80b0631e885484ef2e5aeaf31b3c06"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "cation exchange capacity (CEC)",
+          "sha256": "f978d7ec7835341b637121c6a8276a36eb61a1c0b1ac4180e10401e93d7e7762"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Capacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.",
+          "sha256": "45d9523386cba862428a47e4a6f361afb053b30856391093405cc8f2645cc09e"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "compaction",
+          "sha256": "96847128a59a0bfa3bf9526873a325465149ff3e11f00a19d102643e6c37af47"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.",
+          "sha256": "0d224ba23ab2467e21bf9d92c0a3271b394bc828b2ade486988bcfefe037323a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "tillage",
+          "sha256": "081bcdf2867e779813c21c123af147fc1de5bbfade2405dfffa990fae99b5469"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Mechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.",
+          "sha256": "2129cac07f6c59e9cc83918057edd876e5f6d4f3685ebd3b1f453c12f86edab0"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "deficient",
+          "sha256": "6f5657b70de5c769863ed44d21859dc7dafbc890b7397c9baf53c462c3159074"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Below a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "sha256": "dc1e8cea641f6efe16c557304c991e486b35942f01ef75fc67d789638e5b40b5"
+        }
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "N-P-K",
+          "spoken": "nitrogen, phosphorus, potassium",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "CEC",
+          "spoken": "C E C",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "OM",
+          "spoken": "O M",
+          "count": 1,
+          "kind": "scientific_symbol_or_explicit_label"
+        },
+        {
+          "written": "K",
+          "spoken": "potassium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)K(?!\\w)"
+        },
+        {
+          "written": "Ca",
+          "spoken": "calcium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)Ca(?!\\w)"
+        },
+        {
+          "written": "Mg",
+          "spoken": "magnesium",
+          "count": 1,
+          "kind": "whole_token",
+          "pattern": "(?<!\\w)Mg(?!\\w)"
+        },
+        {
+          "written": "/",
+          "spoken": " and ",
+          "count": 1,
+          "kind": "source_pair_separator"
+        }
+      ],
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "maximumBlindReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "release": "SOURCE_BOUND_RECORDING_CANDIDATE_NOT_AUDIO_ACCEPTED",
+      "pronunciationReview": "TEXT_ADAPTATION_AUDITED_ACTUAL_AUDIO_UNTESTED",
+      "disclosureAdaptations": [],
+      "sourceOriginalFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceFileSHA256": "7b5e82c94afa882e568b5f67601968e37a61b623a86c0812ff843c588111151f",
+      "maximumProviderCalls": 1,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      },
+      "draftLineage": {
+        "unitId": "S2-15-en-draft-r1-016",
+        "spokenTextSha256": "08b064d8e1b4b44373bad0a836b3f8f4de61cffe496acc194f606209cb08fc0a",
+        "requestFingerprintSha256": "07660d31d68b9cf890c5f21898092c5c8fef9630c19cfda669b52d3d1199741b"
+      }
+    }
+  ],
+  "status": "TEXT_AUDITED_AUDIO_NOT_GENERATED"
+}

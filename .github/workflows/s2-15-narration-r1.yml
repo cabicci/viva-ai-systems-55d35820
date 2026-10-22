@@ -1,0 +1,3146 @@
+name: S2-15 four-locale narration r1 first push only
+on:
+  push:
+    branches:
+      - work/soil-s215-narration-20261022-r1
+permissions:
+  contents: read
+concurrency:
+  group: s215-connected-r1-78f63dfc38550224bbdc40def69419a0ce0335c3b2dffcb6a9319342f80083d9
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/masaarat-media-review-job/s2-15-narration-r1
+  REQUEST_SHA: 78f63dfc38550224bbdc40def69419a0ce0335c3b2dffcb6a9319342f80083d9
+  WORKER_SHA: 18f565d3dcf46b26f2c72817a20f4f57559dbdabaede6796cff66780e8fd2a16
+  FREEZE_SHA: 8b201bf146329eaaec2114fa9a4875e28e1c1efaac4ce34f35a7e7cb230d94ae
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narration:
+    if: >-
+      github.run_attempt == 1 && github.event_name == 'push' &&
+      github.repository == 'cabicci/viva-ai-systems-55d35820' && github.event.repository.id == 1272666418 &&
+      github.event.repository.private == false && github.event.repository.fork == false &&
+      github.ref == 'refs/heads/work/soil-s215-narration-20261022-r1' && github.ref_type == 'branch' &&
+      github.event.ref == github.ref && github.event.created == true &&
+      github.event.deleted == false && github.event.forced == false &&
+      github.event.before == '0000000000000000000000000000000000000000' && github.event.after == github.sha
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Offline validate frozen complete source-bound request
+        run: |
+          cd "$PACKAGE"
+          python worker.py validate
+      - name: Exact model metadata preflight no fallback
+        id: preflight
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py preflight
+      - name: One TTS attempt S2-15-en-r1-001
+        id: tts001
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-001
+      - name: Immediate finished audio upload S2-15-en-r1-001
+        id: upload001
+        if: ${{ !cancelled() && steps.tts001.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-001
+        id: bind001
+        if: ${{ !cancelled() && steps.upload001.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload001.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload001.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-002
+        id: tts002
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-002
+      - name: Immediate finished audio upload S2-15-en-r1-002
+        id: upload002
+        if: ${{ !cancelled() && steps.tts002.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-002
+        id: bind002
+        if: ${{ !cancelled() && steps.upload002.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload002.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload002.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-003
+        id: tts003
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-003
+      - name: Immediate finished audio upload S2-15-en-r1-003
+        id: upload003
+        if: ${{ !cancelled() && steps.tts003.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-003
+        id: bind003
+        if: ${{ !cancelled() && steps.upload003.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload003.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload003.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-004
+        id: tts004
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-004
+      - name: Immediate finished audio upload S2-15-en-r1-004
+        id: upload004
+        if: ${{ !cancelled() && steps.tts004.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-004
+        id: bind004
+        if: ${{ !cancelled() && steps.upload004.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload004.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload004.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-005
+        id: tts005
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-005
+      - name: Immediate finished audio upload S2-15-en-r1-005
+        id: upload005
+        if: ${{ !cancelled() && steps.tts005.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-005
+        id: bind005
+        if: ${{ !cancelled() && steps.upload005.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload005.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload005.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-006
+        id: tts006
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-006
+      - name: Immediate finished audio upload S2-15-en-r1-006
+        id: upload006
+        if: ${{ !cancelled() && steps.tts006.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-006
+        id: bind006
+        if: ${{ !cancelled() && steps.upload006.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload006.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload006.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-007
+        id: tts007
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-007
+      - name: Immediate finished audio upload S2-15-en-r1-007
+        id: upload007
+        if: ${{ !cancelled() && steps.tts007.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-007
+        id: bind007
+        if: ${{ !cancelled() && steps.upload007.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload007.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload007.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-008
+        id: tts008
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-008
+      - name: Immediate finished audio upload S2-15-en-r1-008
+        id: upload008
+        if: ${{ !cancelled() && steps.tts008.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-008
+        id: bind008
+        if: ${{ !cancelled() && steps.upload008.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload008.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload008.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-009
+        id: tts009
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-009
+      - name: Immediate finished audio upload S2-15-en-r1-009
+        id: upload009
+        if: ${{ !cancelled() && steps.tts009.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-009
+        id: bind009
+        if: ${{ !cancelled() && steps.upload009.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload009.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload009.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-010
+        id: tts010
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-010
+      - name: Immediate finished audio upload S2-15-en-r1-010
+        id: upload010
+        if: ${{ !cancelled() && steps.tts010.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-010
+        id: bind010
+        if: ${{ !cancelled() && steps.upload010.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload010.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload010.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-011
+        id: tts011
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-011
+      - name: Immediate finished audio upload S2-15-en-r1-011
+        id: upload011
+        if: ${{ !cancelled() && steps.tts011.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-011
+        id: bind011
+        if: ${{ !cancelled() && steps.upload011.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload011.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload011.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-012
+        id: tts012
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-012
+      - name: Immediate finished audio upload S2-15-en-r1-012
+        id: upload012
+        if: ${{ !cancelled() && steps.tts012.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-012
+        id: bind012
+        if: ${{ !cancelled() && steps.upload012.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload012.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload012.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-013
+        id: tts013
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-013
+      - name: Immediate finished audio upload S2-15-en-r1-013
+        id: upload013
+        if: ${{ !cancelled() && steps.tts013.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-013
+        id: bind013
+        if: ${{ !cancelled() && steps.upload013.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload013.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload013.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-014
+        id: tts014
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-014
+      - name: Immediate finished audio upload S2-15-en-r1-014
+        id: upload014
+        if: ${{ !cancelled() && steps.tts014.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-014
+        id: bind014
+        if: ${{ !cancelled() && steps.upload014.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload014.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload014.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-015
+        id: tts015
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-015
+      - name: Immediate finished audio upload S2-15-en-r1-015
+        id: upload015
+        if: ${{ !cancelled() && steps.tts015.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-015
+        id: bind015
+        if: ${{ !cancelled() && steps.upload015.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload015.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload015.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-en-r1-016
+        id: tts016
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-en-r1-016
+      - name: Immediate finished audio upload S2-15-en-r1-016
+        id: upload016
+        if: ${{ !cancelled() && steps.tts016.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-en-r1-016
+        id: bind016
+        if: ${{ !cancelled() && steps.upload016.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload016.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload016.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-en-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-001
+        id: tts017
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-001
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-001
+        id: upload017
+        if: ${{ !cancelled() && steps.tts017.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-001
+        id: bind017
+        if: ${{ !cancelled() && steps.upload017.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload017.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload017.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-002
+        id: tts018
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-002
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-002
+        id: upload018
+        if: ${{ !cancelled() && steps.tts018.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-002
+        id: bind018
+        if: ${{ !cancelled() && steps.upload018.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload018.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload018.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-003
+        id: tts019
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-003
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-003
+        id: upload019
+        if: ${{ !cancelled() && steps.tts019.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-003
+        id: bind019
+        if: ${{ !cancelled() && steps.upload019.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload019.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload019.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-004
+        id: tts020
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-004
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-004
+        id: upload020
+        if: ${{ !cancelled() && steps.tts020.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-004
+        id: bind020
+        if: ${{ !cancelled() && steps.upload020.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload020.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload020.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-005
+        id: tts021
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-005
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-005
+        id: upload021
+        if: ${{ !cancelled() && steps.tts021.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-005
+        id: bind021
+        if: ${{ !cancelled() && steps.upload021.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload021.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload021.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-006
+        id: tts022
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-006
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-006
+        id: upload022
+        if: ${{ !cancelled() && steps.tts022.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-006
+        id: bind022
+        if: ${{ !cancelled() && steps.upload022.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload022.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload022.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-007
+        id: tts023
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-007
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-007
+        id: upload023
+        if: ${{ !cancelled() && steps.tts023.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-007
+        id: bind023
+        if: ${{ !cancelled() && steps.upload023.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload023.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload023.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-008
+        id: tts024
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-008
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-008
+        id: upload024
+        if: ${{ !cancelled() && steps.tts024.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-008
+        id: bind024
+        if: ${{ !cancelled() && steps.upload024.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload024.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload024.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-009
+        id: tts025
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-009
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-009
+        id: upload025
+        if: ${{ !cancelled() && steps.tts025.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-009
+        id: bind025
+        if: ${{ !cancelled() && steps.upload025.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload025.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload025.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-010
+        id: tts026
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-010
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-010
+        id: upload026
+        if: ${{ !cancelled() && steps.tts026.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-010
+        id: bind026
+        if: ${{ !cancelled() && steps.upload026.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload026.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload026.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-011
+        id: tts027
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-011
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-011
+        id: upload027
+        if: ${{ !cancelled() && steps.tts027.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-011
+        id: bind027
+        if: ${{ !cancelled() && steps.upload027.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload027.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload027.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-012
+        id: tts028
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-012
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-012
+        id: upload028
+        if: ${{ !cancelled() && steps.tts028.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-012
+        id: bind028
+        if: ${{ !cancelled() && steps.upload028.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload028.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload028.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-013
+        id: tts029
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-013
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-013
+        id: upload029
+        if: ${{ !cancelled() && steps.tts029.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-013
+        id: bind029
+        if: ${{ !cancelled() && steps.upload029.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload029.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload029.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-014
+        id: tts030
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-014
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-014
+        id: upload030
+        if: ${{ !cancelled() && steps.tts030.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-014
+        id: bind030
+        if: ${{ !cancelled() && steps.upload030.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload030.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload030.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-015
+        id: tts031
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-015
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-015
+        id: upload031
+        if: ${{ !cancelled() && steps.tts031.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-015
+        id: bind031
+        if: ${{ !cancelled() && steps.upload031.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload031.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload031.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-ar-EG-r1-016
+        id: tts032
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-ar-EG-r1-016
+      - name: Immediate finished audio upload S2-15-ar-EG-r1-016
+        id: upload032
+        if: ${{ !cancelled() && steps.tts032.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-ar-EG-r1-016
+        id: bind032
+        if: ${{ !cancelled() && steps.upload032.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload032.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload032.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-ar-EG-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-001
+        id: tts033
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-001
+      - name: Immediate finished audio upload S2-15-it-r1-001
+        id: upload033
+        if: ${{ !cancelled() && steps.tts033.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-001
+        id: bind033
+        if: ${{ !cancelled() && steps.upload033.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload033.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload033.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-002
+        id: tts034
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-002
+      - name: Immediate finished audio upload S2-15-it-r1-002
+        id: upload034
+        if: ${{ !cancelled() && steps.tts034.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-002
+        id: bind034
+        if: ${{ !cancelled() && steps.upload034.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload034.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload034.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-003
+        id: tts035
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-003
+      - name: Immediate finished audio upload S2-15-it-r1-003
+        id: upload035
+        if: ${{ !cancelled() && steps.tts035.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-003
+        id: bind035
+        if: ${{ !cancelled() && steps.upload035.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload035.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload035.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-004
+        id: tts036
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-004
+      - name: Immediate finished audio upload S2-15-it-r1-004
+        id: upload036
+        if: ${{ !cancelled() && steps.tts036.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-004
+        id: bind036
+        if: ${{ !cancelled() && steps.upload036.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload036.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload036.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-005
+        id: tts037
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-005
+      - name: Immediate finished audio upload S2-15-it-r1-005
+        id: upload037
+        if: ${{ !cancelled() && steps.tts037.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-005
+        id: bind037
+        if: ${{ !cancelled() && steps.upload037.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload037.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload037.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-006
+        id: tts038
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-006
+      - name: Immediate finished audio upload S2-15-it-r1-006
+        id: upload038
+        if: ${{ !cancelled() && steps.tts038.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-006
+        id: bind038
+        if: ${{ !cancelled() && steps.upload038.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload038.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload038.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-007
+        id: tts039
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-007
+      - name: Immediate finished audio upload S2-15-it-r1-007
+        id: upload039
+        if: ${{ !cancelled() && steps.tts039.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-007
+        id: bind039
+        if: ${{ !cancelled() && steps.upload039.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload039.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload039.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-008
+        id: tts040
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-008
+      - name: Immediate finished audio upload S2-15-it-r1-008
+        id: upload040
+        if: ${{ !cancelled() && steps.tts040.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-008
+        id: bind040
+        if: ${{ !cancelled() && steps.upload040.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload040.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload040.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-009
+        id: tts041
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-009
+      - name: Immediate finished audio upload S2-15-it-r1-009
+        id: upload041
+        if: ${{ !cancelled() && steps.tts041.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-009
+        id: bind041
+        if: ${{ !cancelled() && steps.upload041.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload041.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload041.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-010
+        id: tts042
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-010
+      - name: Immediate finished audio upload S2-15-it-r1-010
+        id: upload042
+        if: ${{ !cancelled() && steps.tts042.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-010
+        id: bind042
+        if: ${{ !cancelled() && steps.upload042.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload042.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload042.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-011
+        id: tts043
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-011
+      - name: Immediate finished audio upload S2-15-it-r1-011
+        id: upload043
+        if: ${{ !cancelled() && steps.tts043.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-011
+        id: bind043
+        if: ${{ !cancelled() && steps.upload043.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload043.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload043.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-012
+        id: tts044
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-012
+      - name: Immediate finished audio upload S2-15-it-r1-012
+        id: upload044
+        if: ${{ !cancelled() && steps.tts044.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-012
+        id: bind044
+        if: ${{ !cancelled() && steps.upload044.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload044.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload044.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-013
+        id: tts045
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-013
+      - name: Immediate finished audio upload S2-15-it-r1-013
+        id: upload045
+        if: ${{ !cancelled() && steps.tts045.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-013
+        id: bind045
+        if: ${{ !cancelled() && steps.upload045.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload045.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload045.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-014
+        id: tts046
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-014
+      - name: Immediate finished audio upload S2-15-it-r1-014
+        id: upload046
+        if: ${{ !cancelled() && steps.tts046.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-014
+        id: bind046
+        if: ${{ !cancelled() && steps.upload046.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload046.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload046.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-015
+        id: tts047
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-015
+      - name: Immediate finished audio upload S2-15-it-r1-015
+        id: upload047
+        if: ${{ !cancelled() && steps.tts047.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-015
+        id: bind047
+        if: ${{ !cancelled() && steps.upload047.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload047.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload047.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-it-r1-016
+        id: tts048
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-it-r1-016
+      - name: Immediate finished audio upload S2-15-it-r1-016
+        id: upload048
+        if: ${{ !cancelled() && steps.tts048.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-it-r1-016
+        id: bind048
+        if: ${{ !cancelled() && steps.upload048.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload048.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload048.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-it-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-001
+        id: tts049
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-001
+      - name: Immediate finished audio upload S2-15-de-r1-001
+        id: upload049
+        if: ${{ !cancelled() && steps.tts049.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-001
+        id: bind049
+        if: ${{ !cancelled() && steps.upload049.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload049.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload049.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-002
+        id: tts050
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-002
+      - name: Immediate finished audio upload S2-15-de-r1-002
+        id: upload050
+        if: ${{ !cancelled() && steps.tts050.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-002
+        id: bind050
+        if: ${{ !cancelled() && steps.upload050.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload050.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload050.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-003
+        id: tts051
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-003
+      - name: Immediate finished audio upload S2-15-de-r1-003
+        id: upload051
+        if: ${{ !cancelled() && steps.tts051.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-003
+        id: bind051
+        if: ${{ !cancelled() && steps.upload051.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload051.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload051.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-004
+        id: tts052
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-004
+      - name: Immediate finished audio upload S2-15-de-r1-004
+        id: upload052
+        if: ${{ !cancelled() && steps.tts052.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-004
+        id: bind052
+        if: ${{ !cancelled() && steps.upload052.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload052.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload052.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-005
+        id: tts053
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-005
+      - name: Immediate finished audio upload S2-15-de-r1-005
+        id: upload053
+        if: ${{ !cancelled() && steps.tts053.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-005
+        id: bind053
+        if: ${{ !cancelled() && steps.upload053.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload053.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload053.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-006
+        id: tts054
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-006
+      - name: Immediate finished audio upload S2-15-de-r1-006
+        id: upload054
+        if: ${{ !cancelled() && steps.tts054.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-006
+        id: bind054
+        if: ${{ !cancelled() && steps.upload054.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload054.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload054.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-007
+        id: tts055
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-007
+      - name: Immediate finished audio upload S2-15-de-r1-007
+        id: upload055
+        if: ${{ !cancelled() && steps.tts055.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-007
+        id: bind055
+        if: ${{ !cancelled() && steps.upload055.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload055.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload055.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-008
+        id: tts056
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-008
+      - name: Immediate finished audio upload S2-15-de-r1-008
+        id: upload056
+        if: ${{ !cancelled() && steps.tts056.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-008
+        id: bind056
+        if: ${{ !cancelled() && steps.upload056.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload056.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload056.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-009
+        id: tts057
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-009
+      - name: Immediate finished audio upload S2-15-de-r1-009
+        id: upload057
+        if: ${{ !cancelled() && steps.tts057.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-009
+        id: bind057
+        if: ${{ !cancelled() && steps.upload057.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload057.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload057.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-010
+        id: tts058
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-010
+      - name: Immediate finished audio upload S2-15-de-r1-010
+        id: upload058
+        if: ${{ !cancelled() && steps.tts058.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-010
+        id: bind058
+        if: ${{ !cancelled() && steps.upload058.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload058.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload058.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-011
+        id: tts059
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-011
+      - name: Immediate finished audio upload S2-15-de-r1-011
+        id: upload059
+        if: ${{ !cancelled() && steps.tts059.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-011
+        id: bind059
+        if: ${{ !cancelled() && steps.upload059.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload059.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload059.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-012
+        id: tts060
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-012
+      - name: Immediate finished audio upload S2-15-de-r1-012
+        id: upload060
+        if: ${{ !cancelled() && steps.tts060.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-012
+        id: bind060
+        if: ${{ !cancelled() && steps.upload060.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload060.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload060.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-013
+        id: tts061
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-013
+      - name: Immediate finished audio upload S2-15-de-r1-013
+        id: upload061
+        if: ${{ !cancelled() && steps.tts061.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-013
+        id: bind061
+        if: ${{ !cancelled() && steps.upload061.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload061.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload061.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-014
+        id: tts062
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-014
+      - name: Immediate finished audio upload S2-15-de-r1-014
+        id: upload062
+        if: ${{ !cancelled() && steps.tts062.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-014
+        id: bind062
+        if: ${{ !cancelled() && steps.upload062.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload062.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload062.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-015
+        id: tts063
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-015
+      - name: Immediate finished audio upload S2-15-de-r1-015
+        id: upload063
+        if: ${{ !cancelled() && steps.tts063.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-015
+        id: bind063
+        if: ${{ !cancelled() && steps.upload063.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload063.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload063.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One TTS attempt S2-15-de-r1-016
+        id: tts064
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S2-15-de-r1-016
+      - name: Immediate finished audio upload S2-15-de-r1-016
+        id: upload064
+        if: ${{ !cancelled() && steps.tts064.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact audio transfer S2-15-de-r1-016
+        id: bind064
+        if: ${{ !cancelled() && steps.upload064.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload064.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload064.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S2-15-de-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Install hash verified independent ASR runtime after all audio transfers
+        id: asrsetup
+        if: ${{ !cancelled() && steps.preflight.outcome == 'success' }}
+        run: |
+          cd "$PACKAGE"
+          python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+          python worker.py verify-wheel
+          python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+      - name: One blind review and independent ASR S2-15-en-r1-001
+        if: ${{ !cancelled() && steps.bind001.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-001 || true
+          python worker.py asr --unit S2-15-en-r1-001 || true
+          python worker.py compare --unit S2-15-en-r1-001
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-001
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-002
+        if: ${{ !cancelled() && steps.bind002.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-002 || true
+          python worker.py asr --unit S2-15-en-r1-002 || true
+          python worker.py compare --unit S2-15-en-r1-002
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-002
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-003
+        if: ${{ !cancelled() && steps.bind003.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-003 || true
+          python worker.py asr --unit S2-15-en-r1-003 || true
+          python worker.py compare --unit S2-15-en-r1-003
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-003
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-004
+        if: ${{ !cancelled() && steps.bind004.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-004 || true
+          python worker.py asr --unit S2-15-en-r1-004 || true
+          python worker.py compare --unit S2-15-en-r1-004
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-004
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-005
+        if: ${{ !cancelled() && steps.bind005.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-005 || true
+          python worker.py asr --unit S2-15-en-r1-005 || true
+          python worker.py compare --unit S2-15-en-r1-005
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-005
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-006
+        if: ${{ !cancelled() && steps.bind006.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-006 || true
+          python worker.py asr --unit S2-15-en-r1-006 || true
+          python worker.py compare --unit S2-15-en-r1-006
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-006
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-007
+        if: ${{ !cancelled() && steps.bind007.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-007 || true
+          python worker.py asr --unit S2-15-en-r1-007 || true
+          python worker.py compare --unit S2-15-en-r1-007
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-007
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-008
+        if: ${{ !cancelled() && steps.bind008.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-008 || true
+          python worker.py asr --unit S2-15-en-r1-008 || true
+          python worker.py compare --unit S2-15-en-r1-008
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-008
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-009
+        if: ${{ !cancelled() && steps.bind009.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-009 || true
+          python worker.py asr --unit S2-15-en-r1-009 || true
+          python worker.py compare --unit S2-15-en-r1-009
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-009
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-010
+        if: ${{ !cancelled() && steps.bind010.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-010 || true
+          python worker.py asr --unit S2-15-en-r1-010 || true
+          python worker.py compare --unit S2-15-en-r1-010
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-010
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-011
+        if: ${{ !cancelled() && steps.bind011.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-011 || true
+          python worker.py asr --unit S2-15-en-r1-011 || true
+          python worker.py compare --unit S2-15-en-r1-011
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-011
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-012
+        if: ${{ !cancelled() && steps.bind012.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-012 || true
+          python worker.py asr --unit S2-15-en-r1-012 || true
+          python worker.py compare --unit S2-15-en-r1-012
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-012
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-013
+        if: ${{ !cancelled() && steps.bind013.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-013 || true
+          python worker.py asr --unit S2-15-en-r1-013 || true
+          python worker.py compare --unit S2-15-en-r1-013
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-013
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-014
+        if: ${{ !cancelled() && steps.bind014.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-014 || true
+          python worker.py asr --unit S2-15-en-r1-014 || true
+          python worker.py compare --unit S2-15-en-r1-014
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-014
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-015
+        if: ${{ !cancelled() && steps.bind015.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-015 || true
+          python worker.py asr --unit S2-15-en-r1-015 || true
+          python worker.py compare --unit S2-15-en-r1-015
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-015
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-en-r1-016
+        if: ${{ !cancelled() && steps.bind016.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-en-r1-016 || true
+          python worker.py asr --unit S2-15-en-r1-016 || true
+          python worker.py compare --unit S2-15-en-r1-016
+      - name: Preserve immediate part diagnostic evidence S2-15-en-r1-016
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-en-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S2-15-en-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-001
+        if: ${{ !cancelled() && steps.bind017.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-001 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-001 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-001
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-001
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-002
+        if: ${{ !cancelled() && steps.bind018.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-002 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-002 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-002
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-002
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-003
+        if: ${{ !cancelled() && steps.bind019.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-003 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-003 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-003
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-003
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-004
+        if: ${{ !cancelled() && steps.bind020.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-004 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-004 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-004
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-004
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-005
+        if: ${{ !cancelled() && steps.bind021.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-005 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-005 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-005
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-005
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-006
+        if: ${{ !cancelled() && steps.bind022.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-006 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-006 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-006
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-006
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-007
+        if: ${{ !cancelled() && steps.bind023.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-007 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-007 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-007
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-007
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-008
+        if: ${{ !cancelled() && steps.bind024.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-008 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-008 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-008
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-008
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-009
+        if: ${{ !cancelled() && steps.bind025.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-009 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-009 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-009
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-009
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-010
+        if: ${{ !cancelled() && steps.bind026.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-010 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-010 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-010
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-010
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-011
+        if: ${{ !cancelled() && steps.bind027.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-011 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-011 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-011
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-011
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-012
+        if: ${{ !cancelled() && steps.bind028.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-012 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-012 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-012
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-012
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-013
+        if: ${{ !cancelled() && steps.bind029.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-013 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-013 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-013
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-013
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-014
+        if: ${{ !cancelled() && steps.bind030.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-014 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-014 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-014
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-014
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-015
+        if: ${{ !cancelled() && steps.bind031.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-015 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-015 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-015
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-015
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-ar-EG-r1-016
+        if: ${{ !cancelled() && steps.bind032.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-ar-EG-r1-016 || true
+          python worker.py asr --unit S2-15-ar-EG-r1-016 || true
+          python worker.py compare --unit S2-15-ar-EG-r1-016
+      - name: Preserve immediate part diagnostic evidence S2-15-ar-EG-r1-016
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-ar-EG-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S2-15-ar-EG-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-001
+        if: ${{ !cancelled() && steps.bind033.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-001 || true
+          python worker.py asr --unit S2-15-it-r1-001 || true
+          python worker.py compare --unit S2-15-it-r1-001
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-001
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-002
+        if: ${{ !cancelled() && steps.bind034.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-002 || true
+          python worker.py asr --unit S2-15-it-r1-002 || true
+          python worker.py compare --unit S2-15-it-r1-002
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-002
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-003
+        if: ${{ !cancelled() && steps.bind035.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-003 || true
+          python worker.py asr --unit S2-15-it-r1-003 || true
+          python worker.py compare --unit S2-15-it-r1-003
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-003
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-004
+        if: ${{ !cancelled() && steps.bind036.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-004 || true
+          python worker.py asr --unit S2-15-it-r1-004 || true
+          python worker.py compare --unit S2-15-it-r1-004
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-004
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-005
+        if: ${{ !cancelled() && steps.bind037.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-005 || true
+          python worker.py asr --unit S2-15-it-r1-005 || true
+          python worker.py compare --unit S2-15-it-r1-005
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-005
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-006
+        if: ${{ !cancelled() && steps.bind038.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-006 || true
+          python worker.py asr --unit S2-15-it-r1-006 || true
+          python worker.py compare --unit S2-15-it-r1-006
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-006
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-007
+        if: ${{ !cancelled() && steps.bind039.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-007 || true
+          python worker.py asr --unit S2-15-it-r1-007 || true
+          python worker.py compare --unit S2-15-it-r1-007
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-007
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-008
+        if: ${{ !cancelled() && steps.bind040.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-008 || true
+          python worker.py asr --unit S2-15-it-r1-008 || true
+          python worker.py compare --unit S2-15-it-r1-008
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-008
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-009
+        if: ${{ !cancelled() && steps.bind041.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-009 || true
+          python worker.py asr --unit S2-15-it-r1-009 || true
+          python worker.py compare --unit S2-15-it-r1-009
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-009
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-010
+        if: ${{ !cancelled() && steps.bind042.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-010 || true
+          python worker.py asr --unit S2-15-it-r1-010 || true
+          python worker.py compare --unit S2-15-it-r1-010
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-010
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-011
+        if: ${{ !cancelled() && steps.bind043.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-011 || true
+          python worker.py asr --unit S2-15-it-r1-011 || true
+          python worker.py compare --unit S2-15-it-r1-011
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-011
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-012
+        if: ${{ !cancelled() && steps.bind044.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-012 || true
+          python worker.py asr --unit S2-15-it-r1-012 || true
+          python worker.py compare --unit S2-15-it-r1-012
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-012
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-013
+        if: ${{ !cancelled() && steps.bind045.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-013 || true
+          python worker.py asr --unit S2-15-it-r1-013 || true
+          python worker.py compare --unit S2-15-it-r1-013
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-013
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-014
+        if: ${{ !cancelled() && steps.bind046.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-014 || true
+          python worker.py asr --unit S2-15-it-r1-014 || true
+          python worker.py compare --unit S2-15-it-r1-014
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-014
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-015
+        if: ${{ !cancelled() && steps.bind047.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-015 || true
+          python worker.py asr --unit S2-15-it-r1-015 || true
+          python worker.py compare --unit S2-15-it-r1-015
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-015
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-it-r1-016
+        if: ${{ !cancelled() && steps.bind048.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-it-r1-016 || true
+          python worker.py asr --unit S2-15-it-r1-016 || true
+          python worker.py compare --unit S2-15-it-r1-016
+      - name: Preserve immediate part diagnostic evidence S2-15-it-r1-016
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-it-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S2-15-it-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-001
+        if: ${{ !cancelled() && steps.bind049.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-001 || true
+          python worker.py asr --unit S2-15-de-r1-001 || true
+          python worker.py compare --unit S2-15-de-r1-001
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-001
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-002
+        if: ${{ !cancelled() && steps.bind050.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-002 || true
+          python worker.py asr --unit S2-15-de-r1-002 || true
+          python worker.py compare --unit S2-15-de-r1-002
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-002
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-003
+        if: ${{ !cancelled() && steps.bind051.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-003 || true
+          python worker.py asr --unit S2-15-de-r1-003 || true
+          python worker.py compare --unit S2-15-de-r1-003
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-003
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-004
+        if: ${{ !cancelled() && steps.bind052.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-004 || true
+          python worker.py asr --unit S2-15-de-r1-004 || true
+          python worker.py compare --unit S2-15-de-r1-004
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-004
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-005
+        if: ${{ !cancelled() && steps.bind053.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-005 || true
+          python worker.py asr --unit S2-15-de-r1-005 || true
+          python worker.py compare --unit S2-15-de-r1-005
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-005
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-006
+        if: ${{ !cancelled() && steps.bind054.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-006 || true
+          python worker.py asr --unit S2-15-de-r1-006 || true
+          python worker.py compare --unit S2-15-de-r1-006
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-006
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-007
+        if: ${{ !cancelled() && steps.bind055.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-007 || true
+          python worker.py asr --unit S2-15-de-r1-007 || true
+          python worker.py compare --unit S2-15-de-r1-007
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-007
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-008
+        if: ${{ !cancelled() && steps.bind056.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-008 || true
+          python worker.py asr --unit S2-15-de-r1-008 || true
+          python worker.py compare --unit S2-15-de-r1-008
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-008
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-009
+        if: ${{ !cancelled() && steps.bind057.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-009 || true
+          python worker.py asr --unit S2-15-de-r1-009 || true
+          python worker.py compare --unit S2-15-de-r1-009
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-009
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-010
+        if: ${{ !cancelled() && steps.bind058.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-010 || true
+          python worker.py asr --unit S2-15-de-r1-010 || true
+          python worker.py compare --unit S2-15-de-r1-010
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-010
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-011
+        if: ${{ !cancelled() && steps.bind059.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-011 || true
+          python worker.py asr --unit S2-15-de-r1-011 || true
+          python worker.py compare --unit S2-15-de-r1-011
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-011
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-012
+        if: ${{ !cancelled() && steps.bind060.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-012 || true
+          python worker.py asr --unit S2-15-de-r1-012 || true
+          python worker.py compare --unit S2-15-de-r1-012
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-012
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-013
+        if: ${{ !cancelled() && steps.bind061.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-013 || true
+          python worker.py asr --unit S2-15-de-r1-013 || true
+          python worker.py compare --unit S2-15-de-r1-013
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-013
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-014
+        if: ${{ !cancelled() && steps.bind062.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-014 || true
+          python worker.py asr --unit S2-15-de-r1-014 || true
+          python worker.py compare --unit S2-15-de-r1-014
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-014
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-015
+        if: ${{ !cancelled() && steps.bind063.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-015 || true
+          python worker.py asr --unit S2-15-de-r1-015 || true
+          python worker.py compare --unit S2-15-de-r1-015
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-015
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One blind review and independent ASR S2-15-de-r1-016
+        if: ${{ !cancelled() && steps.bind064.outcome == 'success' }}
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S2-15-de-r1-016 || true
+          python worker.py asr --unit S2-15-de-r1-016 || true
+          python worker.py compare --unit S2-15-de-r1-016
+      - name: Preserve immediate part diagnostic evidence S2-15-de-r1-016
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-S2-15-de-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S2-15-de-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Report all64 required candidate recordings and missing diagnostics
+        if: always()
+        run: |
+          cd "$PACKAGE"
+          python batch_status.py
+      - name: Preserve all finished audio partial attempts and frozen provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s215-connected-r1-complete-evidence
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            ${{ env.PACKAGE }}/output/
+            ${{ env.PACKAGE }}/request.json
+            ${{ env.PACKAGE }}/runtime.json
+            ${{ env.PACKAGE }}/freeze.json
+            ${{ env.PACKAGE }}/worker.py
+            ${{ env.PACKAGE }}/source-audit.json
+            ${{ env.PACKAGE }}/offline-verification.json

@@ -1,0 +1,818 @@
+{
+  "status": "COMPLETE_64_REQUIRED_TEACHING_AND_PROMPT_PASSAGES",
+  "partsPerLocale": 16,
+  "groups": [
+    "opening",
+    "S2-15-R01",
+    "S2-15-R02",
+    "S2-15-R03",
+    "S2-15-R04",
+    "S2-15-R05",
+    "S2-15-R06",
+    "S2-15-R07",
+    "S2-15-E01",
+    "S2-15-E02",
+    "S2-15-E03",
+    "S2-15-E04",
+    "S2-15-E05",
+    "S2-15-E06",
+    "guided-boundary",
+    "glossary"
+  ],
+  "coverage": [
+    {
+      "unitId": "S2-15-en-r1-001",
+      "pointers": [
+        "/intro",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/goals/3"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-002",
+      "pointers": [
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-003",
+      "pointers": [
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-004",
+      "pointers": [
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-005",
+      "pointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-006",
+      "pointers": [
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-007",
+      "pointers": [
+        "/reading/5/paragraphs/0",
+        "/reading/5/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-008",
+      "pointers": [
+        "/reading/6/paragraphs/0",
+        "/reading/6/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-009",
+      "pointers": [
+        "/examples/0/title",
+        "/examples/0/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-010",
+      "pointers": [
+        "/examples/1/title",
+        "/examples/1/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-011",
+      "pointers": [
+        "/examples/2/title",
+        "/examples/2/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-012",
+      "pointers": [
+        "/examples/3/title",
+        "/examples/3/situation",
+        "/goals/1",
+        "/examples/3/reasoning/0",
+        "/examples/3/reasoning/1",
+        "/examples/3/reasoning/2",
+        "/examples/3/takeaway"
+      ],
+      "releaseGate": {
+        "kind": "AFTER_MATCHING_FIELD_B_ATTEMPT",
+        "caseId": "S2-15-E04",
+        "locale": "en",
+        "reason": "Exact source goal and worked arithmetic comparison; original visual case prompt remains available before attempt."
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-013",
+      "pointers": [
+        "/examples/4/title",
+        "/examples/4/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-014",
+      "pointers": [
+        "/examples/5/title",
+        "/examples/5/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-015",
+      "pointers": [
+        "/guidedPractice/prompt",
+        "/guidedPractice/practicalBoundary"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-en-r1-016",
+      "pointers": [
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/glossary/6/0",
+        "/glossary/6/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "en"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-001",
+      "pointers": [
+        "/intro",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/goals/3"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-002",
+      "pointers": [
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-003",
+      "pointers": [
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-004",
+      "pointers": [
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-005",
+      "pointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-006",
+      "pointers": [
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-007",
+      "pointers": [
+        "/reading/5/paragraphs/0",
+        "/reading/5/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-008",
+      "pointers": [
+        "/reading/6/paragraphs/0",
+        "/reading/6/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-009",
+      "pointers": [
+        "/examples/0/title",
+        "/examples/0/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-010",
+      "pointers": [
+        "/examples/1/title",
+        "/examples/1/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-011",
+      "pointers": [
+        "/examples/2/title",
+        "/examples/2/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-012",
+      "pointers": [
+        "/examples/3/title",
+        "/examples/3/situation",
+        "/goals/1",
+        "/examples/3/reasoning/0",
+        "/examples/3/reasoning/1",
+        "/examples/3/reasoning/2",
+        "/examples/3/takeaway"
+      ],
+      "releaseGate": {
+        "kind": "AFTER_MATCHING_FIELD_B_ATTEMPT",
+        "caseId": "S2-15-E04",
+        "locale": "ar-EG",
+        "reason": "Exact source goal and worked arithmetic comparison; original visual case prompt remains available before attempt."
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-013",
+      "pointers": [
+        "/examples/4/title",
+        "/examples/4/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-014",
+      "pointers": [
+        "/examples/5/title",
+        "/examples/5/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-015",
+      "pointers": [
+        "/guidedPractice/prompt",
+        "/guidedPractice/practicalBoundary"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-ar-EG-r1-016",
+      "pointers": [
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/glossary/6/0",
+        "/glossary/6/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-001",
+      "pointers": [
+        "/intro",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/goals/3"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-002",
+      "pointers": [
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-003",
+      "pointers": [
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-004",
+      "pointers": [
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-005",
+      "pointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-006",
+      "pointers": [
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-007",
+      "pointers": [
+        "/reading/5/paragraphs/0",
+        "/reading/5/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-008",
+      "pointers": [
+        "/reading/6/paragraphs/0",
+        "/reading/6/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-009",
+      "pointers": [
+        "/examples/0/title",
+        "/examples/0/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-010",
+      "pointers": [
+        "/examples/1/title",
+        "/examples/1/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-011",
+      "pointers": [
+        "/examples/2/title",
+        "/examples/2/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-012",
+      "pointers": [
+        "/examples/3/title",
+        "/examples/3/situation",
+        "/goals/1",
+        "/examples/3/reasoning/0",
+        "/examples/3/reasoning/1",
+        "/examples/3/reasoning/2",
+        "/examples/3/takeaway"
+      ],
+      "releaseGate": {
+        "kind": "AFTER_MATCHING_FIELD_B_ATTEMPT",
+        "caseId": "S2-15-E04",
+        "locale": "it",
+        "reason": "Exact source goal and worked arithmetic comparison; original visual case prompt remains available before attempt."
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-013",
+      "pointers": [
+        "/examples/4/title",
+        "/examples/4/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-014",
+      "pointers": [
+        "/examples/5/title",
+        "/examples/5/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-015",
+      "pointers": [
+        "/guidedPractice/prompt",
+        "/guidedPractice/practicalBoundary"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-it-r1-016",
+      "pointers": [
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/glossary/6/0",
+        "/glossary/6/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "it"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-001",
+      "pointers": [
+        "/intro",
+        "/goals/0",
+        "/goals/1",
+        "/goals/2",
+        "/goals/3"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-002",
+      "pointers": [
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-003",
+      "pointers": [
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-004",
+      "pointers": [
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-005",
+      "pointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-006",
+      "pointers": [
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-007",
+      "pointers": [
+        "/reading/5/paragraphs/0",
+        "/reading/5/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-008",
+      "pointers": [
+        "/reading/6/paragraphs/0",
+        "/reading/6/paragraphs/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-009",
+      "pointers": [
+        "/examples/0/title",
+        "/examples/0/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-010",
+      "pointers": [
+        "/examples/1/title",
+        "/examples/1/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-011",
+      "pointers": [
+        "/examples/2/title",
+        "/examples/2/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-012",
+      "pointers": [
+        "/examples/3/title",
+        "/examples/3/situation",
+        "/goals/1",
+        "/examples/3/reasoning/0",
+        "/examples/3/reasoning/1",
+        "/examples/3/reasoning/2",
+        "/examples/3/takeaway"
+      ],
+      "releaseGate": {
+        "kind": "AFTER_MATCHING_FIELD_B_ATTEMPT",
+        "caseId": "S2-15-E04",
+        "locale": "de",
+        "reason": "Exact source goal and worked arithmetic comparison; original visual case prompt remains available before attempt."
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-013",
+      "pointers": [
+        "/examples/4/title",
+        "/examples/4/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-014",
+      "pointers": [
+        "/examples/5/title",
+        "/examples/5/situation"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-015",
+      "pointers": [
+        "/guidedPractice/prompt",
+        "/guidedPractice/practicalBoundary"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    },
+    {
+      "unitId": "S2-15-de-r1-016",
+      "pointers": [
+        "/glossary/0/0",
+        "/glossary/0/1",
+        "/glossary/1/0",
+        "/glossary/1/1",
+        "/glossary/2/0",
+        "/glossary/2/1",
+        "/glossary/3/0",
+        "/glossary/3/1",
+        "/glossary/4/0",
+        "/glossary/4/1",
+        "/glossary/5/0",
+        "/glossary/5/1",
+        "/glossary/6/0",
+        "/glossary/6/1"
+      ],
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "de"
+      }
+    }
+  ],
+  "privateAssessmentsPreservedInFrozenScenePackage": true,
+  "actualAudio": null
+}

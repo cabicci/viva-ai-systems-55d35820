@@ -1,0 +1,140 @@
+{
+  "stepId": "S2-15",
+  "locale": "en",
+  "title": "Write a clear soil report for a farmer",
+  "intro": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.",
+  "goals": [
+    "Write all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.",
+    "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+    "Prioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.",
+    "Review another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice."
+  ],
+  "reading": [
+    {
+      "id": "audience-and-plan",
+      "title": "1. Tell the farmer what the test can and cannot say",
+      "paragraphs": [
+        "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.",
+        "This is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement."
+      ]
+    },
+    {
+      "id": "five-sections",
+      "title": "2. Use all five sections",
+      "paragraphs": [
+        "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.",
+        "The house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale."
+      ]
+    },
+    {
+      "id": "plain-terms",
+      "title": "3. Explain technical words without changing their meaning",
+      "paragraphs": [
+        "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.",
+        "Organic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom."
+      ]
+    },
+    {
+      "id": "table-and-priority",
+      "title": "4. Make results scannable and decisions conditional",
+      "paragraphs": [
+        "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+        "Use a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case."
+      ]
+    },
+    {
+      "id": "method-and-observation",
+      "title": "5. Separate what was done, seen and inferred",
+      "paragraphs": [
+        "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.",
+        "Record soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty."
+      ]
+    },
+    {
+      "id": "west-field",
+      "title": "6. Write the West Field tomato report from supplied data",
+      "paragraphs": [
+        "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.",
+        "In groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently."
+      ]
+    },
+    {
+      "id": "review",
+      "title": "7. Review the report as a peer and a client",
+      "paragraphs": [
+        "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.",
+        "After revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence."
+      ]
+    }
+  ],
+  "glossary": [
+    [
+      "pH",
+      "A measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method."
+    ],
+    [
+      "N-P-K",
+      "Nitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency."
+    ],
+    [
+      "organic matter (OM)",
+      "Organic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context."
+    ],
+    [
+      "cation exchange capacity (CEC)",
+      "Capacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure."
+    ],
+    [
+      "compaction",
+      "A condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation."
+    ],
+    [
+      "tillage",
+      "Mechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason."
+    ],
+    [
+      "deficient",
+      "Below a suitable crop- and method-specific interpretation range, rather than simply a small-looking number."
+    ]
+  ],
+  "examples": [
+    {
+      "title": "Illustrative table, not a laboratory certificate",
+      "situation": "Supplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands."
+    },
+    {
+      "title": "Farmer Jones: West Field tomatoes",
+      "situation": "Provided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated."
+    },
+    {
+      "title": "Separate written case: corn",
+      "situation": "Corn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves."
+    },
+    {
+      "title": "Field B: five pH readings",
+      "situation": "Field B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.",
+      "reasoning": [
+        "Show all five readings in an identified table.",
+        "The sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.",
+        "Say 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing."
+      ],
+      "takeaway": "An average summarizes separate measurements; it does not manufacture a new physical measurement."
+    },
+    {
+      "title": "Paddock 3 one-page product",
+      "situation": "Supplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action."
+    },
+    {
+      "title": "Keep later written cases distinct",
+      "situation": "Case A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops."
+    }
+  ],
+  "guidedPractice": {
+    "prompt": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.",
+    "practicalBoundary": "This step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action."
+  },
+  "projectionDisclosure": {
+    "originalSourceSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "scope": "Teaching and case prompts, plus only Field B comparison gated after matching attempt. Private quiz/written keys, other worked solutions, rubrics and legacy unused UI omitted."
+  }
+}

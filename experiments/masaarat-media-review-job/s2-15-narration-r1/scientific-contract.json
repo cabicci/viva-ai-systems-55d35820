@@ -1,0 +1,76 @@
+{
+  "activeMinutes": 60,
+  "activePhases": [
+    5,
+    10,
+    35,
+    10
+  ],
+  "elapsedLabTime": null,
+  "coreReportSections": 5,
+  "longTermExtensionOptional": true,
+  "teachingDataset": {
+    "pH": 5.2,
+    "OMpercent": 2.1,
+    "N": "Low",
+    "Pppm": 25,
+    "Kppm": 180
+  },
+  "westTomatoDataset": {
+    "pH": 5.5,
+    "OMpercent": 1.5,
+    "N": "Low",
+    "Pppm": 15,
+    "Kppm": 200,
+    "labMethod": null,
+    "date": null,
+    "sampling": null,
+    "layerDepth": null
+  },
+  "cornDataset": {
+    "pH": 5.4,
+    "OMpercent": 2.0,
+    "N": "Low",
+    "P": "Low",
+    "K": "Optimum"
+  },
+  "fieldB": {
+    "readings": [
+      6.2,
+      6.4,
+      6.1,
+      6.3,
+      6.2
+    ],
+    "date": null,
+    "arithmeticMean": 6.24,
+    "pooledSampleMeasurement": false,
+    "meanPlaybackRequiresMatchingAttempt": true
+  },
+  "laterA": {
+    "pH": 5.2,
+    "N": "Low",
+    "P": "Low",
+    "K": "Medium",
+    "OMpercent": 1
+  },
+  "laterB": {
+    "pH": 6.8,
+    "N": "Medium",
+    "P": "High",
+    "K": "Low",
+    "OMpercent": null
+  },
+  "pHDefinition": "hydrogen-ion activity; classroom 10^-5 mol/L is simplified concentration only",
+  "CEC": "exchangeable positive K/Ca/Mg; not nitrate or every nutrient",
+  "referencesAreClassroomExamplesNotUniversal": true,
+  "doseEstablished": false,
+  "symptomsEstablishUniqueCause": false,
+  "realFieldSamplingMethodEstablished": false,
+  "assessmentInitiallyUnobserved": true,
+  "trainerSignature": null,
+  "confidenceIsPass": false,
+  "quizKeysPublished": false,
+  "workedComparisonSolutionsPublished": true,
+  "workedComparisonScope": "Only existing Field B worked comparison, POST_ATTEMPT unit012. Other five solutions remain private."
+}
