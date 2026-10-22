@@ -1,0 +1,2837 @@
+{
+  "locale": "de",
+  "stepId": "S1-01",
+  "currentSource": {
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/content/de.json",
+    "sha256": "4d947b5dc6cc9c4aaa869aa07b18e23d97ec5029a60b3cd38cfb08608a1cf6c3",
+    "bytes": 27866
+  },
+  "currentSourceMatchesDeclaredR3Pin": true,
+  "completeCanonicalSourcePayload": {
+    "locale": "de",
+    "name": "Deutsch",
+    "dir": "ltr",
+    "title": "Sicherheit und Vorbereitung am Arbeitsort",
+    "path": "Boden und Nutzpflanzen",
+    "station": "Station 1 · Sichere Probenahme",
+    "step": "Schritt 1 von 44",
+    "intro": "Sorge vor der ersten Probe für einen sicheren Arbeitsort. Erkenne Gefahren, wähle die passende Schutzausrüstung und begründe, wann du die Arbeit unterbrechen musst.",
+    "ui": {
+      "reading": "Erklärung",
+      "video": "Video",
+      "examples": "Gelöste Beispiele",
+      "training": "3D-Übung",
+      "assessment": "Wissensprüfung",
+      "practical": "Praktische Aufgabe",
+      "downloads": "Arbeitsblätter",
+      "assistant": "Assistent",
+      "preview": "Vorschau des Pilotschritts",
+      "goals": "Das sollst du zeigen können",
+      "open": "3D-Arbeitsort erkunden",
+      "drag": "Ziehen zum Drehen · Mausrad oder zwei Finger zum Zoomen · Nummer auswählen",
+      "accessible": "Alle Punkte sind auch über die Schaltflächen unten erreichbar.",
+      "resetView": "Ansicht zurücksetzen",
+      "inspect": "Wähle einen Prüfpunkt",
+      "choose": "Wähle Handlung und Begründung",
+      "check": "Entscheidung prüfen",
+      "retry": "Diesen Punkt erneut versuchen",
+      "right": "Richtige Entscheidung",
+      "wrong": "Überprüfe deine Begründung",
+      "completed": "Entscheidungen nachgewiesen",
+      "trainingNote": "Die Übung erklärt Antworten sofort. Sie bestätigt keine praktische Handlungskompetenz.",
+      "testStart": "Neuen Prüfversuch beginnen",
+      "testSubmit": "Entscheidungen abgeben",
+      "testNote": "Beantworte alle acht Punkte vor der Abgabe. Übungsantworten werden nicht übernommen.",
+      "testMissing": "Beantworte zuerst alle Punkte.",
+      "result": "Entscheidungen am Arbeitsort",
+      "pass": "Alle Entscheidungen am Arbeitsort sind in diesem Versuch richtig.",
+      "notPass": "Einige Entscheidungen brauchen eine Überarbeitung. Lies die verknüpfte Erklärung und beginne einen neuen Versuch.",
+      "unlimited": "Die Zahl der Versuche ist unbegrenzt. Jeder neue Versuch beginnt ohne Antworten.",
+      "readMore": "Erklärung nachlesen",
+      "unobserved": "Praktische Leistung: noch nicht von einer Lehrkraft beobachtet",
+      "seen": "Erklärung als gelesen markieren",
+      "seenDone": "Erklärung gelesen",
+      "videoPending": "Das neue Video mit zwei abwechselnden Stimmen wird vorbereitet. Hier wird kein Video einer früheren Lektion als Ersatz gezeigt.",
+      "assistantPending": "Freie Fragen sind möglich, sobald der Kursassistent auf der Plattform angeschlossen ist. In dieser Vorschau ist er nicht aktiviert.",
+      "list": "Prüfpunkte",
+      "simulation": "Lernsimulation · keine reale Ortsprüfung",
+      "selfCheck": "Sicherheitscheckliste mit fünf Punkten",
+      "write": "Schreibe auf, was das Team prüft und wann es die Arbeit stoppen muss.",
+      "save": "Checkliste auf diesem Gerät speichern",
+      "saved": "Lokal gespeichert. Eine schriftliche Antwort allein führt nicht automatisch zum Bestehen des Kriteriums.",
+      "model": "Mit einer Beispielcheckliste vergleichen",
+      "exampleOnly": "Prüfe damit deine Begründungen. Die Einzelheiten des realen Arbeitsorts gibt die Lehrkraft vor.",
+      "quizTitle": "Sicherheitsgrundlagen überprüfen",
+      "quizSubmit": "Antworten prüfen",
+      "downloadPractice": "Übungsblatt herunterladen",
+      "downloadField": "Praxisanleitung herunterladen",
+      "downloadHint": "Druckbare Dateien in der gewählten Sprache.",
+      "next": "Nächster Bereich",
+      "back": "Zurück",
+      "progress": "Dein Lernfortschritt",
+      "local": "Nur auf diesem Gerät gespeichert",
+      "allRead": "Gelesene Bereiche",
+      "reviewChecklist": "Checklisten-Kriterium: schriftliche Antwort muss geprüft werden",
+      "fieldLabel": "Praktische Nachweise sind von Online-Ergebnissen getrennt",
+      "unavailable3d": "3D ist auf diesem Gerät nicht verfügbar. Nutze die gleichwertigen Beschreibungen und Entscheidungsschaltflächen unten.",
+      "decisionCount": "Acht Entscheidungen am Arbeitsort",
+      "attempt": "Prüfversuch",
+      "continue": "Weiter erkunden",
+      "simulationTitle": "Darf das Team anfangen?",
+      "practiceTitle": "Prüfe den Arbeitsort vor dem Start",
+      "practicalIntro": "Führe diese Aufgabe an einem von der Lehrkraft ausgewählten und geprüften realen Ort aus. Die Simulation erlaubt weder Graben noch den Umgang mit Chemikalien oder das Bedienen von Maschinen.",
+      "reflection": "Mit eigenen Worten",
+      "reflectionPrompt": "Wie schützt gute Vorbereitung dich und deine Begleitperson? Du darfst einen erfundenen Vorfall statt einer persönlichen Erfahrung verwenden.",
+      "glossary": "Wichtige Begriffe",
+      "stop": "Stoppen und die Lehrkraft fragen",
+      "storageFailed": "Der Browser konnte deinen aktuellen Entwurf nicht speichern. Deine Eingaben bleiben auf dem Bildschirm, können beim Schließen oder Neuladen aber verloren gehen. Versuche vor dem Verlassen erneut zu speichern.",
+      "restoreWarning": "Einige gespeicherte Entwurfsdaten konnten nicht sicher wiederhergestellt werden. Gültige Einträge wurden soweit möglich übernommen; prüfe vor dem Speichern die leeren Felder. Es wurden keine praktische Beobachtung und keine Unterschrift der Lehrkraft erstellt."
+    },
+    "goals": [
+      "Gefahren erkennen und Schutzmaßnahmen begründen; bei Chemikalien die zugehörigen Sicherheitsinformationen nutzen.",
+      "Eine Checkliste mit fünf Punkten erstellen: Ort, Werkzeuge, Schutz, Kommunikation und Notfälle.",
+      "Vorbereitung, geeignete Schutzausrüstung und sicheres Tragen der Werkzeuge vor der Lehrkraft zeigen."
+    ],
+    "reading": [
+      {
+        "id": "purpose",
+        "title": "Sicherheit beginnt vor dem Zwischenfall",
+        "paragraphs": [
+          "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.",
+          "Stell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.",
+          "Erkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig."
+        ]
+      },
+      {
+        "id": "site",
+        "title": "1. Achte auch auf unsichtbare Gefahren",
+        "paragraphs": [
+          "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.",
+          "Achte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.",
+          "Bewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen."
+        ]
+      },
+      {
+        "id": "communication",
+        "title": "2. Sorge dafür, dass Hilfe euch findet",
+        "paragraphs": [
+          "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.",
+          "Ein Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst."
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "3. Kenne Werkzeuge und eigene Grenzen",
+        "paragraphs": [
+          "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.",
+          "Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.",
+          "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus."
+        ]
+      },
+      {
+        "id": "environment",
+        "title": "4. Berücksichtige Lebewesen und Wetter",
+        "paragraphs": [
+          "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.",
+          "Berücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung."
+        ]
+      },
+      {
+        "id": "ppe",
+        "title": "Schutz nach Gefährdung wählen, nicht aus Gewohnheit",
+        "paragraphs": [
+          "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.",
+          "Robuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.",
+          "Wähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet."
+        ]
+      },
+      {
+        "id": "chemical",
+        "title": "Chemikalienschutz braucht eine Beständigkeitsprüfung",
+        "paragraphs": [
+          "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.",
+          "Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.",
+          "Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.",
+          "Warnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein."
+        ]
+      },
+      {
+        "id": "checklist",
+        "title": "Fasse die Prüfungen vor Arbeitsbeginn zusammen",
+        "paragraphs": [
+          "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.",
+          "Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.",
+          "Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt."
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "id": "route",
+        "title": "Abkürzung neben dem Traktor",
+        "situation": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“",
+        "reasoning": [
+          "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.",
+          "Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.",
+          "Es bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt."
+        ],
+        "takeaway": "Zuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start."
+      },
+      {
+        "id": "gloves",
+        "title": "Zwei Paar Handschuhe auf dem Tisch",
+        "situation": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.",
+        "reasoning": [
+          "Stoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.",
+          "Nitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.",
+          "Unterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen."
+        ],
+        "takeaway": "Die richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen."
+      }
+    ],
+    "points": [
+      {
+        "id": "terrain",
+        "label": "Weg und Boden",
+        "description": "Ein Sprinklerkopf und ein Tierbau unterbrechen den Weg zur Probenfläche.",
+        "question": "Wie erreicht das Team die Fläche?",
+        "options": [
+          "Die Abkürzung nehmen: feste Schuhe verhindern jedes Stolpern.",
+          "Hindernisse melden und den von der Lehrkraft bestätigten Weg nutzen.",
+          "Den Sprinkler ohne Erlaubnis entfernen."
+        ],
+        "answer": 1,
+        "feedback": [
+          "Schuhe beseitigen kein Hindernis. Beachte Tierbau und Sprinkler vor dem Werkzeugtransport.",
+          "Richtig: Hindernisse meiden schützt Menschen und Bewässerungsanlage.",
+          "Verändere die Anlage nicht eigenmächtig. Melde das Problem und nutze den vereinbarten Weg."
+        ],
+        "readingId": "site"
+      },
+      {
+        "id": "utilities",
+        "label": "Probenstelle",
+        "description": "Die Oberfläche ist frei, aber Bewässerungs-, Gas- oder Stromleitungen im Boden wurden nicht geprüft.",
+        "question": "Darfst du die Sonde einstecken?",
+        "options": [
+          "Ja, weil an der Oberfläche nichts sichtbar ist.",
+          "Ja, wenn du langsam drückst.",
+          "Nein. Warte, bis die Lehrkraft genau diesen Punkt freigegeben hat."
+        ],
+        "answer": 2,
+        "feedback": [
+          "Unterirdische Leitungen sind möglicherweise unsichtbar. Eine freie Fläche ist keine Freigabe.",
+          "Langsames Drücken zeigt nicht, wo ein Rohr oder Kabel liegt.",
+          "Richtig: Erlaubnis und ortsbezogene Freigabe kommen vor jedem Einstecken."
+        ],
+        "readingId": "site"
+      },
+      {
+        "id": "tractor",
+        "label": "Maschinen",
+        "description": "Neben dem Weg arbeitet ein Traktor; sein Rückfahrwarnsignal ist zu hören.",
+        "question": "Welche Entscheidung ist sicher?",
+        "options": [
+          "Außerhalb des Arbeitsbereichs bleiben und den vereinbarten Weg nutzen.",
+          "Hinter ihm gehen und auf das Handy schauen.",
+          "Warnweste anziehen und erwarten, dass der Fahrer anhält."
+        ],
+        "answer": 0,
+        "feedback": [
+          "Richtig: Abstand und Aufmerksamkeit sind auch mit Warnkleidung nötig.",
+          "Rückwärtsfahrt und Ablenkung bilden eine gefährliche Kombination.",
+          "Sichtbarkeit garantiert nicht, dass die fahrende Person dich bemerkt hat."
+        ],
+        "readingId": "site"
+      },
+      {
+        "id": "tools",
+        "label": "Handwerkzeuge",
+        "description": "Der Spaten hat einen lockeren Griff. Jemand möchte ihn auf der Schulter tragen.",
+        "question": "Wie gehst du mit dem Werkzeug um?",
+        "options": [
+          "Vorsichtig benutzen; der Griff hält wahrscheinlich.",
+          "Melden, ein intaktes Werkzeug nehmen und die Spitze nach unten von Menschen weg richten.",
+          "Auf Schulterhöhe tragen, damit es sichtbar ist."
+        ],
+        "answer": 1,
+        "feedback": [
+          "Vorsichtige Benutzung repariert keinen lockeren Griff.",
+          "Richtig: zuerst prüfen, dann die gezeigte Trageweise mit dem intakten Werkzeug anwenden.",
+          "Ein scharfes Werkzeug auf Schulterhöhe kann jemanden treffen."
+        ],
+        "readingId": "limits"
+      },
+      {
+        "id": "chemical",
+        "label": "Stoffinformationen",
+        "description": "Ein geschlossener Reagenzbehälter steht auf dem Tisch. Das Etikett ist beschädigt, das SDS fehlt.",
+        "question": "Was muss vor der Verwendung geschehen?",
+        "options": [
+          "Handschuhe nach Farbe wählen und weitermachen.",
+          "Gefahren anhand der Ergebnis-Farbskala bestimmen.",
+          "Stoppen und Stoffidentifikation, Etikett sowie aktuelles SDS von der Lehrkraft verlangen."
+        ],
+        "answer": 2,
+        "feedback": [
+          "Die Handschuhfarbe zeigt keine chemische Beständigkeit.",
+          "Die Ergebnisskala enthält keine ausreichenden Gefahr- oder Erste-Hilfe-Informationen.",
+          "Richtig: Stoffidentität und Sicherheitsinformationen müssen vor dem Umgang geklärt sein."
+        ],
+        "readingId": "chemical"
+      },
+      {
+        "id": "ppe",
+        "label": "Schutzausrüstung",
+        "description": "Die chemische Tätigkeit ist erlaubt, die Beständigkeit der gezeigten Nitril- und Stoffhandschuhe aber noch ungeprüft.",
+        "question": "Was ist die beste Wahl?",
+        "options": [
+          "Mit der Lehrkraft SDS und Herstellerdaten prüfen und den gesamten erforderlichen Schutz auswählen.",
+          "Nitril schützt immer vor allen flüssigen Chemikalien.",
+          "Dicker Stoff reicht, weil er Flüssigkeit aufsaugt."
+        ],
+        "answer": 0,
+        "feedback": [
+          "Richtig: Handschuhe und weiterer Schutz müssen zum Stoff und zur Einwirkung passen.",
+          "Nitril ist nicht universell beständig. Prüfe konkretes Produkt und Einwirkung.",
+          "Aufgesaugte Flüssigkeit kann an der Haut bleiben. Aufsaugen bedeutet nicht schützen."
+        ],
+        "readingId": "chemical"
+      },
+      {
+        "id": "communication",
+        "label": "Begleitung und Kontakt",
+        "description": "Das Team geht in eine abgelegene Ecke. Das Handy ist geladen, aber die Aufsicht kennt Weg und Rückkehrzeit nicht.",
+        "question": "Was fehlt?",
+        "options": [
+          "Nichts: das geladene Handy ersetzt Begleitung und Rückmeldung.",
+          "Standort und Rückkehr melden, Begleitung und Kontakt vereinbaren und Signalverlust einplanen.",
+          "Den Plan geheim halten, um ungestört zu arbeiten."
+        ],
+        "answer": 1,
+        "feedback": [
+          "Empfang kann fehlen und eine verletzte Person möglicherweise nicht anrufen.",
+          "Richtig: Andere müssen wissen, wo sie suchen und was sie bei Kontaktverlust tun sollen.",
+          "Ein unbekannter Standort verzögert Hilfe. Kommunikation gehört zur Arbeit."
+        ],
+        "readingId": "communication"
+      },
+      {
+        "id": "weather",
+        "label": "Wetter und Lebewesen",
+        "description": "Auf dem offenen Feld ist es heiß. Pausen sind nicht geplant, nahe dem Weg sind stechende Insekten aktiv.",
+        "question": "Was plant das Team?",
+        "options": [
+          "Schnell weiterarbeiten, bevor jemand krank wird.",
+          "Einen Hut tragen und alles andere ignorieren.",
+          "Gefahren melden, Wasser, Schatten, Pausen und sicheren Weg vereinbaren und Beschwerden rasch melden."
+        ],
+        "answer": 2,
+        "feedback": [
+          "Eile beherrscht weder Hitze noch biologische Gefahren.",
+          "Ein Hut allein ist kein vollständiger Plan und entfernt keine Insektengefahr.",
+          "Richtig: Bedingungen einplanen und Änderungen melden, statt Schäden abzuwarten."
+        ],
+        "readingId": "environment"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "q1",
+        "question": "Welche Grundregel gilt vor Feldarbeiten?",
+        "options": [
+          "Möglichst schnell arbeiten.",
+          "Unabhängig von der Tätigkeit das Handy nur in Pausen nutzen.",
+          "Standort und erwartete Rückkehrzeit mitteilen.",
+          "Eine Maschine bedienen, wenn sie einfach aussieht."
+        ],
+        "answer": 2,
+        "feedback": "Standort und Rückkehr machen den Kontaktplan nutzbar. Schnelligkeit und einfache Optik beweisen keine Sicherheit."
+      },
+      {
+        "id": "q2",
+        "question": "Was passt bei Stoßgefahr für die Füße, wenn die Lehrkraft es vorgibt?",
+        "options": [
+          "Laufschuhe.",
+          "Robuste Arbeitsschuhe mit geeigneten Schutzkappen, etwa aus Stahl.",
+          "Offene Sandalen.",
+          "Beliebige Gummistiefel ohne Prüfung der Schutzwirkung."
+        ],
+        "answer": 1,
+        "feedback": "Schuhe müssen zur Gefahr passen. Bezeichnung oder Material allein reichen nicht."
+      },
+      {
+        "id": "q3",
+        "question": "Wie wählst du Handschutz für ein flüssiges Pflanzenschutzmittel?",
+        "options": [
+          "Beliebige Lederhandschuhe.",
+          "Beliebige Baumwollhandschuhe.",
+          "Nachweislich geeignete chemikalienbeständige Handschuhe, etwa passendes Nitril, wenn angegeben.",
+          "Keine Handschuhe, wenn du vorsichtig bist."
+        ],
+        "answer": 2,
+        "feedback": "Prüfe das konkrete Produkt. Nitril ist ein Beispiel, keine universelle Garantie; Stoff oder Leder können Flüssigkeit aufnehmen."
+      },
+      {
+        "id": "q4",
+        "question": "Was schützt bei möglicherweise verunreinigtem Boden oder Reagenzien gezielt die Hände, wenn es nach Gefährdung gewählt wird?",
+        "options": [
+          "Schuhe mit Stahlkappen.",
+          "Geeignete chemikalienbeständige Handschuhe.",
+          "Schutzhelm.",
+          "Warnweste."
+        ],
+        "answer": 1,
+        "feedback": "Geeignete Handschuhe schützen Hände, ersetzen aber keine weiteren nötigen Schutzmaßnahmen."
+      },
+      {
+        "id": "q5",
+        "question": "Wo stehen genaue Gefahren- und Erste-Hilfe-Informationen für die Reagenzien eines Bodentests?",
+        "options": [
+          "Auf dem Lagerregal.",
+          "Im aktuellen SDS, in älteren Unterlagen auch MSDS genannt.",
+          "Nur im allgemeinen Betriebshandbuch.",
+          "Auf der Farbskala der Ergebnisse."
+        ],
+        "answer": 1,
+        "feedback": "Nutze die Sicherheitsinformationen des Reagenzes, nicht die Tabelle zur Ergebnisauswertung."
+      }
+    ],
+    "checklistLabels": [
+      "Ort und Weg",
+      "Werkzeuge und Tragen",
+      "Schutz für die Tätigkeit",
+      "Begleitung und Kommunikation",
+      "Notfälle und Wetter"
+    ],
+    "checklistModel": [
+      "Weg, Erlaubnis und Leitungsfreigabe bestätigen; bei Unklarheit stoppen.",
+      "Saubere, intakte Werkzeuge und Trageweise prüfen; lockere Griffe und Mängel melden.",
+      "PSA mit Tätigkeit, Etikett und SDS abstimmen; bei unbekannter Eignung oder fehlendem Schutz stoppen.",
+      "Standort und Rückkehr melden; Begleitung, Kontakte und Vorgehen bei Kontaktverlust vereinbaren.",
+      "Zugang, Treffpunkt, Kontakte, Wasser, Schatten und Pausen prüfen; Gefahren und Beschwerden rasch melden."
+    ],
+    "practical": [
+      "Lehrkraft: zugänglichen Ort und unterirdische Leitungen prüfen; erlaubte Arbeiten, reale Gefahren, Kommunikation und Notfallplan festlegen.",
+      "Lernende: die fünf Prüfpunkte erklären und reale Weggefahren einschließlich Bewässerungsteilen und Maschinen erkennen.",
+      "Lernende: Werkzeuge prüfen, Mängel melden, vorgegebene PSA auswählen und anlegen sowie sicheres Tragen zeigen.",
+      "Lernende: Kontaktplan zeigen und Bedingungen nennen, bei denen sie stoppen und nachfragen.",
+      "Lehrkraft: jede Person einzeln beobachten, Leistung und nötige Hilfe dokumentieren. Unsichere Handlungen unterbrechen und vor Bestätigung eine neue sichere Durchführung verlangen."
+    ],
+    "glossary": [
+      [
+        "Gefahr",
+        "Etwas mit dem Potenzial, Schaden zu verursachen."
+      ],
+      [
+        "PSA",
+        "Persönliche Schutzausrüstung für die konkrete Tätigkeit und Gefährdung."
+      ],
+      [
+        "SDS",
+        "Sicherheitsdatenblatt zu Gefahren, Umgang, Schutz und Notfällen eines bestimmten Stoffes."
+      ],
+      [
+        "Arbeiten mit Begleitung",
+        "Gemeinsames Arbeiten mit vereinbartem Kontakt und gegenseitiger Unterstützung."
+      ],
+      [
+        "Leitungsfreigabe",
+        "Bestätigung, dass an einem bestimmten Punkt hinsichtlich unterirdischer Leitungen sicher gearbeitet werden kann."
+      ]
+    ],
+    "selfReflection": {
+      "question": "Kann ich Sicherheitsregeln erklären und passende Schutzausrüstung wählen?",
+      "labels": [
+        "Kann ich",
+        "Noch nicht",
+        "Teilweise"
+      ],
+      "note": "Dies ist eine Selbsteinschätzung, kein Kompetenznachweis.",
+      "notesPrompt": "Notizen (freiwillig)",
+      "resetLabel": "Diese Selbsteinschätzung löschen"
+    },
+    "illustrations": {
+      "s101-lesson-route": {
+        "alt": "Dreidimensionale Darstellung eines Feldwegs mit einem Sprinklerkopf und einem Tierbau; ein Zaun trennt den Traktor vom Weg."
+      },
+      "s101-lesson-gloves": {
+        "alt": "Zwei unterteilte Aufbewahrungskoffer mit Stoffhandschuhen, nicht porösen Handschuhen, einer Schutzbrille gegen Spritzer und einer verschlossenen Flasche. Das Bild allein belegt keine Eignung der Handschuhe für einen bestimmten Stoff."
+      }
+    }
+  },
+  "allLocalizedStringLeaves": [
+    {
+      "pointer": "/locale",
+      "text": "de",
+      "textSha256": "959a45d44e6fcf58361ed004681556fe50129f2109e817dec098c00c9e5d2578"
+    },
+    {
+      "pointer": "/name",
+      "text": "Deutsch",
+      "textSha256": "801cfe0fa1182664d16f4aaf7856cc73412f79ef508a866eebc2e5ccf125ff0a"
+    },
+    {
+      "pointer": "/dir",
+      "text": "ltr",
+      "textSha256": "9422b24d2f1f1fc85c11d8c79624a50a75fc77c4dedb8d12ad59d597ac545431"
+    },
+    {
+      "pointer": "/title",
+      "text": "Sicherheit und Vorbereitung am Arbeitsort",
+      "textSha256": "1796bd6761d8d4a55f5f53d4d171ae200c881c71a26e783f1c07cb786929b9b2"
+    },
+    {
+      "pointer": "/path",
+      "text": "Boden und Nutzpflanzen",
+      "textSha256": "5d96d990129f6021510d6d678e6d0ddc36cc99507af77b4b551cbc6d10a2e0e1"
+    },
+    {
+      "pointer": "/station",
+      "text": "Station 1 · Sichere Probenahme",
+      "textSha256": "c50d43fc676e1a7bf3f1811e9bcab614250f7418bcf097356c158bfdb729ec02"
+    },
+    {
+      "pointer": "/step",
+      "text": "Schritt 1 von 44",
+      "textSha256": "6484a58440beca5eb71e86098a1b7174f743c4fe2fb42845756ea2b1c63afa8a"
+    },
+    {
+      "pointer": "/intro",
+      "text": "Sorge vor der ersten Probe für einen sicheren Arbeitsort. Erkenne Gefahren, wähle die passende Schutzausrüstung und begründe, wann du die Arbeit unterbrechen musst.",
+      "textSha256": "dde8a22fd1c28afd58305ab42fcf29039b84a814e76f27614b3ab1ab196ce409"
+    },
+    {
+      "pointer": "/ui/reading",
+      "text": "Erklärung",
+      "textSha256": "f9c1bddd1ec339c785c1ff064e43689aa469e4673066cfa01327a78d99beffce"
+    },
+    {
+      "pointer": "/ui/video",
+      "text": "Video",
+      "textSha256": "d534be829e32196b4d1e53b67103cf1e376b1d60071857572598c196abfefbc6"
+    },
+    {
+      "pointer": "/ui/examples",
+      "text": "Gelöste Beispiele",
+      "textSha256": "942e1bd0d6a306652e184db1a7f312f6011860c596851e25553fb8766c84db64"
+    },
+    {
+      "pointer": "/ui/training",
+      "text": "3D-Übung",
+      "textSha256": "209af3fe4dc5217a71f5e4856619d8e1102955f4220366c1f6509bc7a00276e0"
+    },
+    {
+      "pointer": "/ui/assessment",
+      "text": "Wissensprüfung",
+      "textSha256": "5fb4860571f8346933bea65c7bc88b762682046836430ea8c28c9d589c84ec1f"
+    },
+    {
+      "pointer": "/ui/practical",
+      "text": "Praktische Aufgabe",
+      "textSha256": "f13b604f4d71ef11a9a67aee232b78ab9d2eb8a49c151cfe7b5512d036b7a032"
+    },
+    {
+      "pointer": "/ui/downloads",
+      "text": "Arbeitsblätter",
+      "textSha256": "bead1a8d7bf59f904fa20e0d43a7f3560631fd3508ae03f1c8c5828a4c5e6894"
+    },
+    {
+      "pointer": "/ui/assistant",
+      "text": "Assistent",
+      "textSha256": "f49464f500c688ce8c13aea743f3057ff5e5ebe249c8c816dfac78f7206641fd"
+    },
+    {
+      "pointer": "/ui/preview",
+      "text": "Vorschau des Pilotschritts",
+      "textSha256": "42387d337e77e8e97f5c73ca9f255793ee4b5a5e9aa03643edafafd1e0d2470d"
+    },
+    {
+      "pointer": "/ui/goals",
+      "text": "Das sollst du zeigen können",
+      "textSha256": "260986e063187ddf8b15eee7786fe52cd80e76392eb6cafe52216c5fa4a0d35c"
+    },
+    {
+      "pointer": "/ui/open",
+      "text": "3D-Arbeitsort erkunden",
+      "textSha256": "b65641be2e49f0d5b1ed635514e756f9ae5b91dedacee3a4154501ecad87d1ab"
+    },
+    {
+      "pointer": "/ui/drag",
+      "text": "Ziehen zum Drehen · Mausrad oder zwei Finger zum Zoomen · Nummer auswählen",
+      "textSha256": "459aca7117e659b880d1c145e9b908e3d7b930ceb1518dfaedc47605dd682dbb"
+    },
+    {
+      "pointer": "/ui/accessible",
+      "text": "Alle Punkte sind auch über die Schaltflächen unten erreichbar.",
+      "textSha256": "b8db0a4663da04b004f51b904943b286035ecc2e073acf052805272691b3c899"
+    },
+    {
+      "pointer": "/ui/resetView",
+      "text": "Ansicht zurücksetzen",
+      "textSha256": "11df30f282ed8157fbc1066a94955ed679c301e03e132959de06fcd98ed9a328"
+    },
+    {
+      "pointer": "/ui/inspect",
+      "text": "Wähle einen Prüfpunkt",
+      "textSha256": "59cd3fa4b259e9f66c3e77633db45004fd7c0a20a9f099d369377cec8362ebfa"
+    },
+    {
+      "pointer": "/ui/choose",
+      "text": "Wähle Handlung und Begründung",
+      "textSha256": "f3e985f69265176fb26b0166c00f0866350ff3aca4fa0b996b409f6d225e240e"
+    },
+    {
+      "pointer": "/ui/check",
+      "text": "Entscheidung prüfen",
+      "textSha256": "e4f5ace0f6835490c93f841f1dd240c9d4e37ef05053916591fa8f975422d07c"
+    },
+    {
+      "pointer": "/ui/retry",
+      "text": "Diesen Punkt erneut versuchen",
+      "textSha256": "7807faea39712ae68f6cafc906d0bc06a8545fe7bfe876dd69ae71e4f4d035f0"
+    },
+    {
+      "pointer": "/ui/right",
+      "text": "Richtige Entscheidung",
+      "textSha256": "d678f6ac1a29d4425cae214d63c8cb5614a51770773d22880043ad28e075f4b7"
+    },
+    {
+      "pointer": "/ui/wrong",
+      "text": "Überprüfe deine Begründung",
+      "textSha256": "0a97e0f6a77c1692eb699a4854cf6d6bad93ae98d8e9f4bd203acc49ad98b70f"
+    },
+    {
+      "pointer": "/ui/completed",
+      "text": "Entscheidungen nachgewiesen",
+      "textSha256": "68d60827161ad1857f03c2a1c70a4b58e4a8121eebac45bd76d6c0f9a5231591"
+    },
+    {
+      "pointer": "/ui/trainingNote",
+      "text": "Die Übung erklärt Antworten sofort. Sie bestätigt keine praktische Handlungskompetenz.",
+      "textSha256": "ce78342fe800843bedab1a03c07c1a64e80be0c36c5fac045b951acba66cc779"
+    },
+    {
+      "pointer": "/ui/testStart",
+      "text": "Neuen Prüfversuch beginnen",
+      "textSha256": "3bfe8d15a92461a3ab892bb7674433e4725192c277f4e0f04fdebceed43003ff"
+    },
+    {
+      "pointer": "/ui/testSubmit",
+      "text": "Entscheidungen abgeben",
+      "textSha256": "0a96538ce4295cd8af008a8952c090245ae1202a23024ecae333419cda0d9f09"
+    },
+    {
+      "pointer": "/ui/testNote",
+      "text": "Beantworte alle acht Punkte vor der Abgabe. Übungsantworten werden nicht übernommen.",
+      "textSha256": "8dda03f9411761ae641c06d3741085d625413a992700a5f1f8cb9da0d604e7fd"
+    },
+    {
+      "pointer": "/ui/testMissing",
+      "text": "Beantworte zuerst alle Punkte.",
+      "textSha256": "0a2086646c97695ba8519bbdf265ed48f7d569f96913e5057ae3e9480830fc27"
+    },
+    {
+      "pointer": "/ui/result",
+      "text": "Entscheidungen am Arbeitsort",
+      "textSha256": "d17f3411118d6baae78ff4e8015c8c62807eb0575e9aa6d3c89d4c277b5efeaf"
+    },
+    {
+      "pointer": "/ui/pass",
+      "text": "Alle Entscheidungen am Arbeitsort sind in diesem Versuch richtig.",
+      "textSha256": "20d5b5439017556d75accc2b589c338f53a38855ca34c4b62f9fc3467e5051ce"
+    },
+    {
+      "pointer": "/ui/notPass",
+      "text": "Einige Entscheidungen brauchen eine Überarbeitung. Lies die verknüpfte Erklärung und beginne einen neuen Versuch.",
+      "textSha256": "7a07a7b5b6612381dab8c878c2e3bb583b6489b09d472717713d8c7e66182f3e"
+    },
+    {
+      "pointer": "/ui/unlimited",
+      "text": "Die Zahl der Versuche ist unbegrenzt. Jeder neue Versuch beginnt ohne Antworten.",
+      "textSha256": "d2c188f9e761020f2fb565e282079436d673488c2e9b9d3048cf006a0d3d7a23"
+    },
+    {
+      "pointer": "/ui/readMore",
+      "text": "Erklärung nachlesen",
+      "textSha256": "eadbf757ae70e8ae6209fc0fbd7ae7bb826dcd5ce2c1a6ff3e238b2a68172d66"
+    },
+    {
+      "pointer": "/ui/unobserved",
+      "text": "Praktische Leistung: noch nicht von einer Lehrkraft beobachtet",
+      "textSha256": "bbdabb05cfffac4864ed529f516399aaae70f2e8a5b962a232bd220de71d9ee3"
+    },
+    {
+      "pointer": "/ui/seen",
+      "text": "Erklärung als gelesen markieren",
+      "textSha256": "2ca6bf1e450df35d702fb69ca83e780ef0e103f5bc3bbc3a4c6b9b31ee3919eb"
+    },
+    {
+      "pointer": "/ui/seenDone",
+      "text": "Erklärung gelesen",
+      "textSha256": "58081889ddd1fa2a640f02a247d7c83719af6876d5ed4944a2fe4ccb9eebc384"
+    },
+    {
+      "pointer": "/ui/videoPending",
+      "text": "Das neue Video mit zwei abwechselnden Stimmen wird vorbereitet. Hier wird kein Video einer früheren Lektion als Ersatz gezeigt.",
+      "textSha256": "ec17a29a9497a58d9b403b81d91055234ecbcaee1eab8cadfde8158d47d7a3d9"
+    },
+    {
+      "pointer": "/ui/assistantPending",
+      "text": "Freie Fragen sind möglich, sobald der Kursassistent auf der Plattform angeschlossen ist. In dieser Vorschau ist er nicht aktiviert.",
+      "textSha256": "419959a5314627694b095f5ace6094d6f747093a8e28bf9cfb43c6b4d49b8854"
+    },
+    {
+      "pointer": "/ui/list",
+      "text": "Prüfpunkte",
+      "textSha256": "7c484219db0d20de688a0848880b0b90ab72c83e8d0bbdcbf6fbb72e150d7661"
+    },
+    {
+      "pointer": "/ui/simulation",
+      "text": "Lernsimulation · keine reale Ortsprüfung",
+      "textSha256": "cf90beb3361faecac2326f59849d5fa69bab5bc2d42ad0d61d74bd55385a147a"
+    },
+    {
+      "pointer": "/ui/selfCheck",
+      "text": "Sicherheitscheckliste mit fünf Punkten",
+      "textSha256": "f00d4e14189efbf6e07dda584695b285a6a5f5f6663b59cca84af1e20b153fb6"
+    },
+    {
+      "pointer": "/ui/write",
+      "text": "Schreibe auf, was das Team prüft und wann es die Arbeit stoppen muss.",
+      "textSha256": "9da0f653987120aff0524f9c81be8a0a91b25ee5ad323428608b200e06bffb5f"
+    },
+    {
+      "pointer": "/ui/save",
+      "text": "Checkliste auf diesem Gerät speichern",
+      "textSha256": "0ff1fab63daff5c8ef6f5c22bac798f5b810a84cb02ace5fa13d817763598a88"
+    },
+    {
+      "pointer": "/ui/saved",
+      "text": "Lokal gespeichert. Eine schriftliche Antwort allein führt nicht automatisch zum Bestehen des Kriteriums.",
+      "textSha256": "3c9711db2895a61719bf9c51d951f512e5b541b122cd2931cc7811d51df3863f"
+    },
+    {
+      "pointer": "/ui/model",
+      "text": "Mit einer Beispielcheckliste vergleichen",
+      "textSha256": "1514b0aeadd0ddfcaa288ac0149e47acb6465ea9760ca772ac9e4efe7c303f57"
+    },
+    {
+      "pointer": "/ui/exampleOnly",
+      "text": "Prüfe damit deine Begründungen. Die Einzelheiten des realen Arbeitsorts gibt die Lehrkraft vor.",
+      "textSha256": "a55d4e1da22c7a331236f58668e1d76331758fb0be16f51e2a8af074038eb670"
+    },
+    {
+      "pointer": "/ui/quizTitle",
+      "text": "Sicherheitsgrundlagen überprüfen",
+      "textSha256": "6ec25e530e7fcdc6934ca9bd01789e7d4566516eda5e12da3addc2a5ce38c031"
+    },
+    {
+      "pointer": "/ui/quizSubmit",
+      "text": "Antworten prüfen",
+      "textSha256": "f435f6264a2f3a4f3947267d963d755b769071f9f0ec2aaaa9916e3bcbc9c661"
+    },
+    {
+      "pointer": "/ui/downloadPractice",
+      "text": "Übungsblatt herunterladen",
+      "textSha256": "3a600969806f35c6b2c9f4a983d5cbc5ecf87871c07c1755b9d8b2fcbe246ae3"
+    },
+    {
+      "pointer": "/ui/downloadField",
+      "text": "Praxisanleitung herunterladen",
+      "textSha256": "e36c198dcf0a9c761b0946c1f662a3d5a9bf5fbcb72b0179f44e8292613929e7"
+    },
+    {
+      "pointer": "/ui/downloadHint",
+      "text": "Druckbare Dateien in der gewählten Sprache.",
+      "textSha256": "e5b5e8046a6836f62d6c1749c2cd78874f171e92512fb7259b1d2630eca4ace8"
+    },
+    {
+      "pointer": "/ui/next",
+      "text": "Nächster Bereich",
+      "textSha256": "f0c3cbd4c116767e310e2984a03b38270713fbef20a988b1aa83b507223b05cb"
+    },
+    {
+      "pointer": "/ui/back",
+      "text": "Zurück",
+      "textSha256": "548611ce58f71a173404d9cfc99816457f97ad25b814310374f5c3f096546ee8"
+    },
+    {
+      "pointer": "/ui/progress",
+      "text": "Dein Lernfortschritt",
+      "textSha256": "df09f5ee9155bed2b60f6eae455820e1812938aee214ab8895ef1a20dbbdfdcd"
+    },
+    {
+      "pointer": "/ui/local",
+      "text": "Nur auf diesem Gerät gespeichert",
+      "textSha256": "8c5399922a867e36bf1663aadd03eb59b79d838a81a726a2760d522b2d986449"
+    },
+    {
+      "pointer": "/ui/allRead",
+      "text": "Gelesene Bereiche",
+      "textSha256": "d1f149d85a2eba43abf56bedd3eee2149c7d1cde60a67755022b5294970356de"
+    },
+    {
+      "pointer": "/ui/reviewChecklist",
+      "text": "Checklisten-Kriterium: schriftliche Antwort muss geprüft werden",
+      "textSha256": "9358cc4cf79061c3d5810fd51a13abb35607f54fcec68bce2d73552adc3769ce"
+    },
+    {
+      "pointer": "/ui/fieldLabel",
+      "text": "Praktische Nachweise sind von Online-Ergebnissen getrennt",
+      "textSha256": "00aa6a943e97d4fd1ce74f5b71200f56a6394a5b39ecc48cc1af9f8d7d882e32"
+    },
+    {
+      "pointer": "/ui/unavailable3d",
+      "text": "3D ist auf diesem Gerät nicht verfügbar. Nutze die gleichwertigen Beschreibungen und Entscheidungsschaltflächen unten.",
+      "textSha256": "c8343ad9e40f512f0c5ff1e84f78d8505aed4dcbce89982b7c49b1f93a44aef6"
+    },
+    {
+      "pointer": "/ui/decisionCount",
+      "text": "Acht Entscheidungen am Arbeitsort",
+      "textSha256": "41ed6d498860f2fc5654a46b0b4b18a5e61ab0f2c8dfd4f0b08a7c6ad49e59dd"
+    },
+    {
+      "pointer": "/ui/attempt",
+      "text": "Prüfversuch",
+      "textSha256": "a0b6657e568b7baaee4950694f422b1be9dd74e6eb64238925c5c33192c7554b"
+    },
+    {
+      "pointer": "/ui/continue",
+      "text": "Weiter erkunden",
+      "textSha256": "66e1301dbec63959a9a0252c4c2ddf7b28a1e0931e3d6105a14c82cce13d220f"
+    },
+    {
+      "pointer": "/ui/simulationTitle",
+      "text": "Darf das Team anfangen?",
+      "textSha256": "74e47fbf961558e800039667e0da11e23a967b7f814f209e983bfcb665818b6c"
+    },
+    {
+      "pointer": "/ui/practiceTitle",
+      "text": "Prüfe den Arbeitsort vor dem Start",
+      "textSha256": "d47806687bd584853dfade343ac17bd724b340429775665d3362c10b3297db21"
+    },
+    {
+      "pointer": "/ui/practicalIntro",
+      "text": "Führe diese Aufgabe an einem von der Lehrkraft ausgewählten und geprüften realen Ort aus. Die Simulation erlaubt weder Graben noch den Umgang mit Chemikalien oder das Bedienen von Maschinen.",
+      "textSha256": "d96bf09fbae871207391b5c6de10cb70d8e6343c8eb969e138aa1e3a459e27ee"
+    },
+    {
+      "pointer": "/ui/reflection",
+      "text": "Mit eigenen Worten",
+      "textSha256": "2fbe6421b814090df634c335524f309e73000d7eb38d2290d391e6bc06a54b6d"
+    },
+    {
+      "pointer": "/ui/reflectionPrompt",
+      "text": "Wie schützt gute Vorbereitung dich und deine Begleitperson? Du darfst einen erfundenen Vorfall statt einer persönlichen Erfahrung verwenden.",
+      "textSha256": "dee0f900a51525b1e086c12673fa7c68dfadf55b9b84f55cfbcc8ee561428ddd"
+    },
+    {
+      "pointer": "/ui/glossary",
+      "text": "Wichtige Begriffe",
+      "textSha256": "3b5824d6d0172bd4028fdbbcc97ecfd0e069f037f0a241a87817ea4124bd05ac"
+    },
+    {
+      "pointer": "/ui/stop",
+      "text": "Stoppen und die Lehrkraft fragen",
+      "textSha256": "e13f6977150ab2af322032140f191476470d69be59f60b3b0783b2986ac60482"
+    },
+    {
+      "pointer": "/ui/storageFailed",
+      "text": "Der Browser konnte deinen aktuellen Entwurf nicht speichern. Deine Eingaben bleiben auf dem Bildschirm, können beim Schließen oder Neuladen aber verloren gehen. Versuche vor dem Verlassen erneut zu speichern.",
+      "textSha256": "59d1d33e08d5675f316cf1b91385f2b1b0f033cd5fc843d22e8675143b6d7340"
+    },
+    {
+      "pointer": "/ui/restoreWarning",
+      "text": "Einige gespeicherte Entwurfsdaten konnten nicht sicher wiederhergestellt werden. Gültige Einträge wurden soweit möglich übernommen; prüfe vor dem Speichern die leeren Felder. Es wurden keine praktische Beobachtung und keine Unterschrift der Lehrkraft erstellt.",
+      "textSha256": "ec473c25eb6311259468c0978f3c38a1ddcc17853c0f49c4b848a56244086719"
+    },
+    {
+      "pointer": "/goals/0",
+      "text": "Gefahren erkennen und Schutzmaßnahmen begründen; bei Chemikalien die zugehörigen Sicherheitsinformationen nutzen.",
+      "textSha256": "02208ec47ef38ecb136933829aa30e61e906bfe01236347d7b3ca64936d2f7b7"
+    },
+    {
+      "pointer": "/goals/1",
+      "text": "Eine Checkliste mit fünf Punkten erstellen: Ort, Werkzeuge, Schutz, Kommunikation und Notfälle.",
+      "textSha256": "6bfe4e3630b03e4167d13e234b0ad3d110598945938e2fb5ea3128ee91b5c655"
+    },
+    {
+      "pointer": "/goals/2",
+      "text": "Vorbereitung, geeignete Schutzausrüstung und sicheres Tragen der Werkzeuge vor der Lehrkraft zeigen.",
+      "textSha256": "9dffd7c7d0e5b9c3fd34c0babbc6088c37289b42dbab17522237308ba979ad43"
+    },
+    {
+      "pointer": "/reading/0/id",
+      "text": "purpose",
+      "textSha256": "81b06df4303e6581efecfa2830bf76c30a9d32a3e4892eac2fe43b7487d3ae2f"
+    },
+    {
+      "pointer": "/reading/0/title",
+      "text": "Sicherheit beginnt vor dem Zwischenfall",
+      "textSha256": "01e73377e12d063b58dd1fb3a09881f649db0d812edcc5a28ff9b1f21a7ea658"
+    },
+    {
+      "pointer": "/reading/0/paragraphs/0",
+      "text": "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.",
+      "textSha256": "80e9bb577da50fcedec965509719a88b1260887328557772b0a55125bf84cf89"
+    },
+    {
+      "pointer": "/reading/0/paragraphs/1",
+      "text": "Stell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.",
+      "textSha256": "61be35c89f605bcbc2977e7b65583ee6bd639c5ab826b23be158e48c667a9d2a"
+    },
+    {
+      "pointer": "/reading/0/paragraphs/2",
+      "text": "Erkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig.",
+      "textSha256": "3dd3ed79bee1649b68b1b4021b2c2a4d408466a1eb6c307463f660ff08e324ef"
+    },
+    {
+      "pointer": "/reading/1/id",
+      "text": "site",
+      "textSha256": "fbae041b02c41ed0fd8a4efb039bc780dd6af4a1f0c420f42561ae705dda43fe"
+    },
+    {
+      "pointer": "/reading/1/title",
+      "text": "1. Achte auch auf unsichtbare Gefahren",
+      "textSha256": "2e059b4deb75f023b84659d57c29cc1bd8cd51d489d75924ddbb5c0fd9c1587c"
+    },
+    {
+      "pointer": "/reading/1/paragraphs/0",
+      "text": "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.",
+      "textSha256": "88b602af71215cc90878d2eacda2c512d46212224e449b1d377a7f1c5ec1f4bb"
+    },
+    {
+      "pointer": "/reading/1/paragraphs/1",
+      "text": "Achte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.",
+      "textSha256": "93589b8f9e02f35f615a66e1ed03aead5e2a6686b8f472d11049c28fbab20e2a"
+    },
+    {
+      "pointer": "/reading/1/paragraphs/2",
+      "text": "Bewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen.",
+      "textSha256": "35040bbc12716d345b4d316f32508d71c858d8dd164f28defdcf30cdc703b404"
+    },
+    {
+      "pointer": "/reading/2/id",
+      "text": "communication",
+      "textSha256": "d4e16994df9002e53294f899714d7137592fd13ba986fcd070214dc85d659968"
+    },
+    {
+      "pointer": "/reading/2/title",
+      "text": "2. Sorge dafür, dass Hilfe euch findet",
+      "textSha256": "40bbe4bddf9eedb696b6b7c2069970cd91e4351dadd36f0e73afecb0446c72f2"
+    },
+    {
+      "pointer": "/reading/2/paragraphs/0",
+      "text": "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.",
+      "textSha256": "3921860c399079ef447ee40f7640d25fb33aa24ca699c2dd8057e4ebcfc7d6d7"
+    },
+    {
+      "pointer": "/reading/2/paragraphs/1",
+      "text": "Ein Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst.",
+      "textSha256": "b125c30d817af0d421f706d1fe8b9b5d5ce6eed0eb8e85e1b127937097b5d5d8"
+    },
+    {
+      "pointer": "/reading/3/id",
+      "text": "limits",
+      "textSha256": "8a46fd6fc3d79d419361a7043d0365b6dfeb6b92da9e376450898ff88d9cea00"
+    },
+    {
+      "pointer": "/reading/3/title",
+      "text": "3. Kenne Werkzeuge und eigene Grenzen",
+      "textSha256": "fa3157dd19f44868b3226e79e7a3cf37cecf59039532631175bb3e2b268a65ae"
+    },
+    {
+      "pointer": "/reading/3/paragraphs/0",
+      "text": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.",
+      "textSha256": "b35c23d20c24412fb4d3d9735187eace90b99376dd0180ef42a8daa916dfaeaa"
+    },
+    {
+      "pointer": "/reading/3/paragraphs/1",
+      "text": "Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.",
+      "textSha256": "712556985c5460d6770b8c7214e3c45642d577301ea44b814e44b78ae3615e29"
+    },
+    {
+      "pointer": "/reading/3/paragraphs/2",
+      "text": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+      "textSha256": "760ca17ba7a9850fe149237852232407f1dba03b9d5e10ff74f0cfd48da68bb8"
+    },
+    {
+      "pointer": "/reading/4/id",
+      "text": "environment",
+      "textSha256": "ba5285161ba6eed0085fb13784ce5c92f70ebc268b94fd66aa1d68a32884204d"
+    },
+    {
+      "pointer": "/reading/4/title",
+      "text": "4. Berücksichtige Lebewesen und Wetter",
+      "textSha256": "0fda956e8271968736aab30831d4cecb2e39dba0ec01ad4349115a3d87570778"
+    },
+    {
+      "pointer": "/reading/4/paragraphs/0",
+      "text": "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.",
+      "textSha256": "dc4998d82a4e364a39eb9b93ce81f3b59352e9af09982af61d1c6c755b9b2573"
+    },
+    {
+      "pointer": "/reading/4/paragraphs/1",
+      "text": "Berücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung.",
+      "textSha256": "8ad7a7eb80db106b5d9bc3a87d029fcf13a13df10f8d9b7a69305c8151b6e07a"
+    },
+    {
+      "pointer": "/reading/5/id",
+      "text": "ppe",
+      "textSha256": "79b296dde86122db801869195e25b6820ba9f3417ea83946f15fab114c0282b7"
+    },
+    {
+      "pointer": "/reading/5/title",
+      "text": "Schutz nach Gefährdung wählen, nicht aus Gewohnheit",
+      "textSha256": "6bd4bc21dd4c87a58dfc034f5f5c87ac66b269b5acb7e11c52ef4f87fc5b0350"
+    },
+    {
+      "pointer": "/reading/5/paragraphs/0",
+      "text": "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.",
+      "textSha256": "88af605e4b949b3d64a0e57f2e810861c46cfe7874e2f75fdfb7aa81e9bff46c"
+    },
+    {
+      "pointer": "/reading/5/paragraphs/1",
+      "text": "Robuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.",
+      "textSha256": "1a22a5fd1a42ea5646ff6094ba2c7b21c3f988d226eaaf1229dd905d2331e726"
+    },
+    {
+      "pointer": "/reading/5/paragraphs/2",
+      "text": "Wähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet.",
+      "textSha256": "8d26af5ebd9b581372583254c71125eb8c0293c76a43f7fc80cbeb6405a0c662"
+    },
+    {
+      "pointer": "/reading/6/id",
+      "text": "chemical",
+      "textSha256": "6850ca355247469531b982f5b7544a75b136cb414770a261b0c6d1765f55e1b3"
+    },
+    {
+      "pointer": "/reading/6/title",
+      "text": "Chemikalienschutz braucht eine Beständigkeitsprüfung",
+      "textSha256": "b7753bdfa056a824391616c14d10d8c19807175e7825d0e36d2392193e29a21f"
+    },
+    {
+      "pointer": "/reading/6/paragraphs/0",
+      "text": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.",
+      "textSha256": "b8e4af881b8c4fb77ed0f66e31405b49fb28427dde602439675d2d7b6e7453e5"
+    },
+    {
+      "pointer": "/reading/6/paragraphs/1",
+      "text": "Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.",
+      "textSha256": "6d81a625755b686ea8115da5fd18fa39ed46e1e60f24f59a837fc376c9335cc0"
+    },
+    {
+      "pointer": "/reading/6/paragraphs/2",
+      "text": "Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.",
+      "textSha256": "0195b0466d5a622ffd6a77c75be2bdf830dde312d350469dbc48777cc6c3e410"
+    },
+    {
+      "pointer": "/reading/6/paragraphs/3",
+      "text": "Warnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+      "textSha256": "490fcc25784285e6acf575e057ac4fc62b33fc8f526ed99e276adf4a6665cd12"
+    },
+    {
+      "pointer": "/reading/7/id",
+      "text": "checklist",
+      "textSha256": "6da624dba5235ba1f3901c904a78ea41debbfb0d8a488aeba7063dba508d9211"
+    },
+    {
+      "pointer": "/reading/7/title",
+      "text": "Fasse die Prüfungen vor Arbeitsbeginn zusammen",
+      "textSha256": "8f49351a85d1a7d4a7314664ba6d02f111e61ef0c4606fc30ce06f572ba3eeae"
+    },
+    {
+      "pointer": "/reading/7/paragraphs/0",
+      "text": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.",
+      "textSha256": "6da70ff03fc3edb574b35efcd268537b6c1f1e218240832f03292569700e4122"
+    },
+    {
+      "pointer": "/reading/7/paragraphs/1",
+      "text": "Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.",
+      "textSha256": "bb6b0dff70e31047482af5a102481271e77cb94e1b506599cdac431b00b73a41"
+    },
+    {
+      "pointer": "/reading/7/paragraphs/2",
+      "text": "Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+      "textSha256": "6c7ddebbc373755a07f702a12378ccba77ba3a6a25aa96a5bdaa01c083d37472"
+    },
+    {
+      "pointer": "/examples/0/id",
+      "text": "route",
+      "textSha256": "8a84e406c08ac9594f47222406598f7598e15c55f8044b04813e28c9dee70976"
+    },
+    {
+      "pointer": "/examples/0/title",
+      "text": "Abkürzung neben dem Traktor",
+      "textSha256": "835e7aa434ef6408d88f86a51c5525817c7e536371fb1febe2c76314f3abac72"
+    },
+    {
+      "pointer": "/examples/0/situation",
+      "text": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“",
+      "textSha256": "680d8c69649820298ca7a25dcd42c6cbabddae63e6e5c6c734868a3a42c0b9b3"
+    },
+    {
+      "pointer": "/examples/0/reasoning/0",
+      "text": "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.",
+      "textSha256": "5bf15210aafd618c4dc6e7b43cdf9c6d5a528134b9edbb4b9891644ff76a40d1"
+    },
+    {
+      "pointer": "/examples/0/reasoning/1",
+      "text": "Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.",
+      "textSha256": "3b038ddfd60817191c46e7eb7199dfdcdf018ba020407ead5030443d4e172a9f"
+    },
+    {
+      "pointer": "/examples/0/reasoning/2",
+      "text": "Es bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt.",
+      "textSha256": "d4cf08ddbb5ef1636289b9ae640b18b3aa1986d57e7379129c4205ee9ed49a10"
+    },
+    {
+      "pointer": "/examples/0/takeaway",
+      "text": "Zuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start.",
+      "textSha256": "d8ae60abc5a005a897a28ef7c4557fbba4d0bf28eeef20debea9aff80b9e859e"
+    },
+    {
+      "pointer": "/examples/1/id",
+      "text": "gloves",
+      "textSha256": "0e376c13c26b9a46256c487ea1f73a0cf71fa0e3f837692f1086c2971abf69b1"
+    },
+    {
+      "pointer": "/examples/1/title",
+      "text": "Zwei Paar Handschuhe auf dem Tisch",
+      "textSha256": "699d743024862c3511c576de2ff4a0b9f7507587f20e05f10f8677cb6bb5c05e"
+    },
+    {
+      "pointer": "/examples/1/situation",
+      "text": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.",
+      "textSha256": "17e684f0e2cd4eb02f15cd2994a2454dd83abac4eefff0c914162e42009dd548"
+    },
+    {
+      "pointer": "/examples/1/reasoning/0",
+      "text": "Stoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.",
+      "textSha256": "d84989e7c71cfb81fa4540a20fb447edcfeac39ca79da4085702efd8c41a2c7a"
+    },
+    {
+      "pointer": "/examples/1/reasoning/1",
+      "text": "Nitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.",
+      "textSha256": "2d2c4b69b1bf6775598bf9acd8bc7cc679465fb8c404cabc6982803efa26751a"
+    },
+    {
+      "pointer": "/examples/1/reasoning/2",
+      "text": "Unterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen.",
+      "textSha256": "45a664f98461c1ac88f01dd1e3932751b060166f4edb9d1da27f19320615e705"
+    },
+    {
+      "pointer": "/examples/1/takeaway",
+      "text": "Die richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen.",
+      "textSha256": "951c8bea737aa1ba33a909b05b94eab6d6da5043010185a5b20efcf96f2239b2"
+    },
+    {
+      "pointer": "/points/0/id",
+      "text": "terrain",
+      "textSha256": "84088805e145b555f349c164a7cfdcf13981e0affcba4393aaa78ae40f320f4e"
+    },
+    {
+      "pointer": "/points/0/label",
+      "text": "Weg und Boden",
+      "textSha256": "fc657b2f39e57f203e7fd13133adcb0de6b4873db28ba54678493f5a7f712492"
+    },
+    {
+      "pointer": "/points/0/description",
+      "text": "Ein Sprinklerkopf und ein Tierbau unterbrechen den Weg zur Probenfläche.",
+      "textSha256": "e72d2c3f78259ca60b8035db4a999bd40c2f4d4808e07111116ab227ba32ab2c"
+    },
+    {
+      "pointer": "/points/0/question",
+      "text": "Wie erreicht das Team die Fläche?",
+      "textSha256": "4d8d1c4480b92d0c83c796bb6a2adb2d284ffc4107b100127a67d7d5f46f2b60"
+    },
+    {
+      "pointer": "/points/0/options/0",
+      "text": "Die Abkürzung nehmen: feste Schuhe verhindern jedes Stolpern.",
+      "textSha256": "0cd1334248656bed1aa99c559a3d59748640a9e5365db10538b0fa239cfcbfbc"
+    },
+    {
+      "pointer": "/points/0/options/1",
+      "text": "Hindernisse melden und den von der Lehrkraft bestätigten Weg nutzen.",
+      "textSha256": "c3324c15adc2f0c66cb6ea6388d803e3f840f5c790c9107937784e1d4211d01a"
+    },
+    {
+      "pointer": "/points/0/options/2",
+      "text": "Den Sprinkler ohne Erlaubnis entfernen.",
+      "textSha256": "5aef6cdb02ee60f1531a05764c7d7f619b1e3ebc90109de1ea19227b67a655a1"
+    },
+    {
+      "pointer": "/points/0/feedback/0",
+      "text": "Schuhe beseitigen kein Hindernis. Beachte Tierbau und Sprinkler vor dem Werkzeugtransport.",
+      "textSha256": "e0618510671ad9ef19466050b54467e9229cb682220a370b906ac89089390cec"
+    },
+    {
+      "pointer": "/points/0/feedback/1",
+      "text": "Richtig: Hindernisse meiden schützt Menschen und Bewässerungsanlage.",
+      "textSha256": "0b8a6295d552a2cd8fb3ab192fd217a2cba30eddb1a3a9cb3ad68347104436bd"
+    },
+    {
+      "pointer": "/points/0/feedback/2",
+      "text": "Verändere die Anlage nicht eigenmächtig. Melde das Problem und nutze den vereinbarten Weg.",
+      "textSha256": "d6ab8ca5422d17692d8ef47951d83642e90c7f003125b6fcb07926b81ab17b20"
+    },
+    {
+      "pointer": "/points/0/readingId",
+      "text": "site",
+      "textSha256": "fbae041b02c41ed0fd8a4efb039bc780dd6af4a1f0c420f42561ae705dda43fe"
+    },
+    {
+      "pointer": "/points/1/id",
+      "text": "utilities",
+      "textSha256": "abe2c417d1ddae1e3be903c7733aacf4116eb94109562930886b63538cbf63a5"
+    },
+    {
+      "pointer": "/points/1/label",
+      "text": "Probenstelle",
+      "textSha256": "b577fbd0d842a5116e7cc2fda485bc7749df59c0a3ee75b7ad853091eff3be16"
+    },
+    {
+      "pointer": "/points/1/description",
+      "text": "Die Oberfläche ist frei, aber Bewässerungs-, Gas- oder Stromleitungen im Boden wurden nicht geprüft.",
+      "textSha256": "8004e9324ccfb93ef3879aa8e0af5883ac154fc600bc37249befb48cdec030ea"
+    },
+    {
+      "pointer": "/points/1/question",
+      "text": "Darfst du die Sonde einstecken?",
+      "textSha256": "8999d35f4ab68434bf41ac2e61b654847e26f3ba0fa96fecc1896a7d815cff94"
+    },
+    {
+      "pointer": "/points/1/options/0",
+      "text": "Ja, weil an der Oberfläche nichts sichtbar ist.",
+      "textSha256": "d70c4fca0c99fd779c746b561b53709b3c77430c9f02f1691d01c444a5bc4c9c"
+    },
+    {
+      "pointer": "/points/1/options/1",
+      "text": "Ja, wenn du langsam drückst.",
+      "textSha256": "7712565ef9ca02406e154937cc7e3ae46b14de5be7582a9a40d12d8b20cb25f7"
+    },
+    {
+      "pointer": "/points/1/options/2",
+      "text": "Nein. Warte, bis die Lehrkraft genau diesen Punkt freigegeben hat.",
+      "textSha256": "97ff8bb03882dbc3947793677719325aa9dc377867ebf451bab37b8cb5420d3c"
+    },
+    {
+      "pointer": "/points/1/feedback/0",
+      "text": "Unterirdische Leitungen sind möglicherweise unsichtbar. Eine freie Fläche ist keine Freigabe.",
+      "textSha256": "e39eb92c93f4fc5810b2ac135268102cf6fd07bec6c2100b0d01d4c5cd96bca1"
+    },
+    {
+      "pointer": "/points/1/feedback/1",
+      "text": "Langsames Drücken zeigt nicht, wo ein Rohr oder Kabel liegt.",
+      "textSha256": "1b9a1fb9dac0321301431777d0740ed87f3146b281dd3ddffc35be58c665fa8b"
+    },
+    {
+      "pointer": "/points/1/feedback/2",
+      "text": "Richtig: Erlaubnis und ortsbezogene Freigabe kommen vor jedem Einstecken.",
+      "textSha256": "41e8ca4a1c1ffc159a238a23e9f408b45762be59991f7b1b68e3cabebf40a2aa"
+    },
+    {
+      "pointer": "/points/1/readingId",
+      "text": "site",
+      "textSha256": "fbae041b02c41ed0fd8a4efb039bc780dd6af4a1f0c420f42561ae705dda43fe"
+    },
+    {
+      "pointer": "/points/2/id",
+      "text": "tractor",
+      "textSha256": "902760138ab456912e88a9c4a0f1d2a79252fa844450c6af020a7cc903fc7d34"
+    },
+    {
+      "pointer": "/points/2/label",
+      "text": "Maschinen",
+      "textSha256": "ec8f57b616f1f763b687b01bbaeea7daaaf0406ac2299e7f5f87e7d6e50ee1fd"
+    },
+    {
+      "pointer": "/points/2/description",
+      "text": "Neben dem Weg arbeitet ein Traktor; sein Rückfahrwarnsignal ist zu hören.",
+      "textSha256": "02950e6d09d4aeeb64af1014c8483df3272fed3fea2ecfd8da730c331471167f"
+    },
+    {
+      "pointer": "/points/2/question",
+      "text": "Welche Entscheidung ist sicher?",
+      "textSha256": "07d8bb9089b67d7f07f9b59a28548376bd631516106f6ae1d1bbc54849d1534c"
+    },
+    {
+      "pointer": "/points/2/options/0",
+      "text": "Außerhalb des Arbeitsbereichs bleiben und den vereinbarten Weg nutzen.",
+      "textSha256": "5b4f7ac2f9867b73f20d203ffe480704f5afe06c068fb88c29a038af3cec46d4"
+    },
+    {
+      "pointer": "/points/2/options/1",
+      "text": "Hinter ihm gehen und auf das Handy schauen.",
+      "textSha256": "789dbf3b5f8369d7ff8cddc8ae1d26079d18b933768c1eda8c353ed37cecb052"
+    },
+    {
+      "pointer": "/points/2/options/2",
+      "text": "Warnweste anziehen und erwarten, dass der Fahrer anhält.",
+      "textSha256": "fafc92579793ed648fc1947522ed45aff5acb06b1c066011d844fb47d6a91e43"
+    },
+    {
+      "pointer": "/points/2/feedback/0",
+      "text": "Richtig: Abstand und Aufmerksamkeit sind auch mit Warnkleidung nötig.",
+      "textSha256": "888165ff521b9138948a6642253bb396eb19037b589c134ea42abc579b58d126"
+    },
+    {
+      "pointer": "/points/2/feedback/1",
+      "text": "Rückwärtsfahrt und Ablenkung bilden eine gefährliche Kombination.",
+      "textSha256": "959adab29b2c182e55298eee90de816f679f4217639799516a2013a968140ae5"
+    },
+    {
+      "pointer": "/points/2/feedback/2",
+      "text": "Sichtbarkeit garantiert nicht, dass die fahrende Person dich bemerkt hat.",
+      "textSha256": "8edeb63cac65d07e93883fb4ef76136e86d533bcf920d0b13dd2a96850fe65d0"
+    },
+    {
+      "pointer": "/points/2/readingId",
+      "text": "site",
+      "textSha256": "fbae041b02c41ed0fd8a4efb039bc780dd6af4a1f0c420f42561ae705dda43fe"
+    },
+    {
+      "pointer": "/points/3/id",
+      "text": "tools",
+      "textSha256": "f9d35d43770d39092a663e665e82ae1d84a9e0da3d0d10c407acada6a40cd281"
+    },
+    {
+      "pointer": "/points/3/label",
+      "text": "Handwerkzeuge",
+      "textSha256": "d9c23365563ef126c07b2a51fee5e70b7c953ddf63b8910ab0457f5db0f0c173"
+    },
+    {
+      "pointer": "/points/3/description",
+      "text": "Der Spaten hat einen lockeren Griff. Jemand möchte ihn auf der Schulter tragen.",
+      "textSha256": "e8edd951ede5e14635148964927597c2d275ee6cda4ff9e07fa616d5ff447828"
+    },
+    {
+      "pointer": "/points/3/question",
+      "text": "Wie gehst du mit dem Werkzeug um?",
+      "textSha256": "070d79ade82fdd83d3f73260b06b61c1c4b0e14d93e02912112c637293fe3417"
+    },
+    {
+      "pointer": "/points/3/options/0",
+      "text": "Vorsichtig benutzen; der Griff hält wahrscheinlich.",
+      "textSha256": "6b109b422b98897e063500dd14125de081e2a48635a87b534d13ddc2c0e88b3b"
+    },
+    {
+      "pointer": "/points/3/options/1",
+      "text": "Melden, ein intaktes Werkzeug nehmen und die Spitze nach unten von Menschen weg richten.",
+      "textSha256": "ea1d2b0aa5ea2e1ab5dd311238a7377f97a61138a74670e0ffb2d12d7bc0fce1"
+    },
+    {
+      "pointer": "/points/3/options/2",
+      "text": "Auf Schulterhöhe tragen, damit es sichtbar ist.",
+      "textSha256": "eed929530cc882772eb70174fd9f2daddef47e5609dec3a5599f2381a1e7ead4"
+    },
+    {
+      "pointer": "/points/3/feedback/0",
+      "text": "Vorsichtige Benutzung repariert keinen lockeren Griff.",
+      "textSha256": "054ab2e9ee1ddc163b15d93157e1015b04b504978d3daa4beba8d1b299b415d0"
+    },
+    {
+      "pointer": "/points/3/feedback/1",
+      "text": "Richtig: zuerst prüfen, dann die gezeigte Trageweise mit dem intakten Werkzeug anwenden.",
+      "textSha256": "d85ea2635209cc93f63d95314fe6c7c96b252fc1b9dcffe9ab5185fc10e34a76"
+    },
+    {
+      "pointer": "/points/3/feedback/2",
+      "text": "Ein scharfes Werkzeug auf Schulterhöhe kann jemanden treffen.",
+      "textSha256": "b68451127f282e2491f0b7468f90dea26520a2851179417a8cf6eeebe10605d3"
+    },
+    {
+      "pointer": "/points/3/readingId",
+      "text": "limits",
+      "textSha256": "8a46fd6fc3d79d419361a7043d0365b6dfeb6b92da9e376450898ff88d9cea00"
+    },
+    {
+      "pointer": "/points/4/id",
+      "text": "chemical",
+      "textSha256": "6850ca355247469531b982f5b7544a75b136cb414770a261b0c6d1765f55e1b3"
+    },
+    {
+      "pointer": "/points/4/label",
+      "text": "Stoffinformationen",
+      "textSha256": "c180a41b50e4136403f8590bd3b6a95b5c21f3ec529b4f46cdffd345e924851d"
+    },
+    {
+      "pointer": "/points/4/description",
+      "text": "Ein geschlossener Reagenzbehälter steht auf dem Tisch. Das Etikett ist beschädigt, das SDS fehlt.",
+      "textSha256": "90af3d9a54747dc97af06c9c8732157bf001a4cab077e6ede8bd0860c859dd7b"
+    },
+    {
+      "pointer": "/points/4/question",
+      "text": "Was muss vor der Verwendung geschehen?",
+      "textSha256": "310d7639f35945bb5ac051dfe5a189fd4b5c15606e57210316cc3f91712e75fe"
+    },
+    {
+      "pointer": "/points/4/options/0",
+      "text": "Handschuhe nach Farbe wählen und weitermachen.",
+      "textSha256": "bdf0a946220a6bf327365ff4d595c7306b59d2d8fbc947ca8185d43b523b771f"
+    },
+    {
+      "pointer": "/points/4/options/1",
+      "text": "Gefahren anhand der Ergebnis-Farbskala bestimmen.",
+      "textSha256": "74d772b7d01f2395c60bf89c9c7c2e2879cfa8891f46d6fd4b1a5147ab4bf640"
+    },
+    {
+      "pointer": "/points/4/options/2",
+      "text": "Stoppen und Stoffidentifikation, Etikett sowie aktuelles SDS von der Lehrkraft verlangen.",
+      "textSha256": "bfe571cd25adf7acd9246b6f44988a4f2c2e72d350bdc9a482313d0f088611d6"
+    },
+    {
+      "pointer": "/points/4/feedback/0",
+      "text": "Die Handschuhfarbe zeigt keine chemische Beständigkeit.",
+      "textSha256": "7b59e3ae9becc7dd4553a5e6dc39c6e9da6a613dad031e520ef6d63479bd0d94"
+    },
+    {
+      "pointer": "/points/4/feedback/1",
+      "text": "Die Ergebnisskala enthält keine ausreichenden Gefahr- oder Erste-Hilfe-Informationen.",
+      "textSha256": "a8a2d0d182056a9cccabf7425ece8a2776c98a527be5a83a04cc16d1b8be4cbc"
+    },
+    {
+      "pointer": "/points/4/feedback/2",
+      "text": "Richtig: Stoffidentität und Sicherheitsinformationen müssen vor dem Umgang geklärt sein.",
+      "textSha256": "394f673b8adf8b61e74cf41c7e43884ef2e4d50c7eda418999dcd1875deaa4da"
+    },
+    {
+      "pointer": "/points/4/readingId",
+      "text": "chemical",
+      "textSha256": "6850ca355247469531b982f5b7544a75b136cb414770a261b0c6d1765f55e1b3"
+    },
+    {
+      "pointer": "/points/5/id",
+      "text": "ppe",
+      "textSha256": "79b296dde86122db801869195e25b6820ba9f3417ea83946f15fab114c0282b7"
+    },
+    {
+      "pointer": "/points/5/label",
+      "text": "Schutzausrüstung",
+      "textSha256": "eebd90b1c46eb28ab28f95628af07e4364b0cf72021ccd5d3e80aba73588ab22"
+    },
+    {
+      "pointer": "/points/5/description",
+      "text": "Die chemische Tätigkeit ist erlaubt, die Beständigkeit der gezeigten Nitril- und Stoffhandschuhe aber noch ungeprüft.",
+      "textSha256": "df86046ca77addc4046b7f6b46df6113cd5f762d403f25ace1533e70483faa7f"
+    },
+    {
+      "pointer": "/points/5/question",
+      "text": "Was ist die beste Wahl?",
+      "textSha256": "ab55d5f1edaff4ae685e0c3d389f1490ea11be02556c1ceabd431716d88007ae"
+    },
+    {
+      "pointer": "/points/5/options/0",
+      "text": "Mit der Lehrkraft SDS und Herstellerdaten prüfen und den gesamten erforderlichen Schutz auswählen.",
+      "textSha256": "07e0ba963b1e079034a1b4a9b65f94f687e3e02078f31b47d25d5b6b3a9ccb2a"
+    },
+    {
+      "pointer": "/points/5/options/1",
+      "text": "Nitril schützt immer vor allen flüssigen Chemikalien.",
+      "textSha256": "895f56e0fab66e953c9497b2c346268ee978b918a67232de05a01938727843b1"
+    },
+    {
+      "pointer": "/points/5/options/2",
+      "text": "Dicker Stoff reicht, weil er Flüssigkeit aufsaugt.",
+      "textSha256": "6b13b1ee21e2b5335cace724f5bde74c527695145994390113b57a10ab49db0e"
+    },
+    {
+      "pointer": "/points/5/feedback/0",
+      "text": "Richtig: Handschuhe und weiterer Schutz müssen zum Stoff und zur Einwirkung passen.",
+      "textSha256": "b30b1c9171451249035fd6535c57c42e0995b2585932da470687d193073005c2"
+    },
+    {
+      "pointer": "/points/5/feedback/1",
+      "text": "Nitril ist nicht universell beständig. Prüfe konkretes Produkt und Einwirkung.",
+      "textSha256": "0f6181362207d02d450c0fd921b69f68d019fa5e3f090ea2967921b5b3fb1ee7"
+    },
+    {
+      "pointer": "/points/5/feedback/2",
+      "text": "Aufgesaugte Flüssigkeit kann an der Haut bleiben. Aufsaugen bedeutet nicht schützen.",
+      "textSha256": "503ecf92220335d2ee5b927bf2513af053f6d5e768dff893ec068010651bd440"
+    },
+    {
+      "pointer": "/points/5/readingId",
+      "text": "chemical",
+      "textSha256": "6850ca355247469531b982f5b7544a75b136cb414770a261b0c6d1765f55e1b3"
+    },
+    {
+      "pointer": "/points/6/id",
+      "text": "communication",
+      "textSha256": "d4e16994df9002e53294f899714d7137592fd13ba986fcd070214dc85d659968"
+    },
+    {
+      "pointer": "/points/6/label",
+      "text": "Begleitung und Kontakt",
+      "textSha256": "2c5674e6cb509f268a4021fa26e2fbb23adcbcc1386828283687bef63ab8a8fe"
+    },
+    {
+      "pointer": "/points/6/description",
+      "text": "Das Team geht in eine abgelegene Ecke. Das Handy ist geladen, aber die Aufsicht kennt Weg und Rückkehrzeit nicht.",
+      "textSha256": "7741134d3d684dbedf842f626e93a9927656ef8363759fa462c9ba853bc73c61"
+    },
+    {
+      "pointer": "/points/6/question",
+      "text": "Was fehlt?",
+      "textSha256": "67798d620eeac300c6af52cbd4c3c97a4f291145a8739586de636d35fbf6361b"
+    },
+    {
+      "pointer": "/points/6/options/0",
+      "text": "Nichts: das geladene Handy ersetzt Begleitung und Rückmeldung.",
+      "textSha256": "c8c4b70cbd1d30d26e626b8d750fbab06b42bb9652de039b6010829d3a9a71ce"
+    },
+    {
+      "pointer": "/points/6/options/1",
+      "text": "Standort und Rückkehr melden, Begleitung und Kontakt vereinbaren und Signalverlust einplanen.",
+      "textSha256": "4f50f630954f0eccb222b45e1f2b3e6b75ec1970cb45db43b560688fc6d2c8d0"
+    },
+    {
+      "pointer": "/points/6/options/2",
+      "text": "Den Plan geheim halten, um ungestört zu arbeiten.",
+      "textSha256": "6c32d5bc3a4540aed89b36ee09bc721aec37816b7e700eb42783163c66a943eb"
+    },
+    {
+      "pointer": "/points/6/feedback/0",
+      "text": "Empfang kann fehlen und eine verletzte Person möglicherweise nicht anrufen.",
+      "textSha256": "08bf0a23d4fa8ef34d1e3102dd3937765ab807d02eccd2370260cde5d6996310"
+    },
+    {
+      "pointer": "/points/6/feedback/1",
+      "text": "Richtig: Andere müssen wissen, wo sie suchen und was sie bei Kontaktverlust tun sollen.",
+      "textSha256": "89d7ad5a941a9c539fde10306526ba90a18dc23580c95e572059c3dbe2557396"
+    },
+    {
+      "pointer": "/points/6/feedback/2",
+      "text": "Ein unbekannter Standort verzögert Hilfe. Kommunikation gehört zur Arbeit.",
+      "textSha256": "82a0a3ed7323c18ed6806357461f8d783f1158f77173d6b27cc4c10d632a00f9"
+    },
+    {
+      "pointer": "/points/6/readingId",
+      "text": "communication",
+      "textSha256": "d4e16994df9002e53294f899714d7137592fd13ba986fcd070214dc85d659968"
+    },
+    {
+      "pointer": "/points/7/id",
+      "text": "weather",
+      "textSha256": "e5e72beb4e3c6926d3dc9e3e2ef7833ba50cd919c2460a782b244fd071e920de"
+    },
+    {
+      "pointer": "/points/7/label",
+      "text": "Wetter und Lebewesen",
+      "textSha256": "dcec2af18d4319876f9c9489a4866c0131d2f340cb179f4249a2f327c535a546"
+    },
+    {
+      "pointer": "/points/7/description",
+      "text": "Auf dem offenen Feld ist es heiß. Pausen sind nicht geplant, nahe dem Weg sind stechende Insekten aktiv.",
+      "textSha256": "f4f0e6bd85f63ea92538dad89b9c341cb65bde370c8ec15809df518efd6e7533"
+    },
+    {
+      "pointer": "/points/7/question",
+      "text": "Was plant das Team?",
+      "textSha256": "d830b868ec0ca01c2ceea50e4133b73a1546e186449369c8e8a6885bb7e93d59"
+    },
+    {
+      "pointer": "/points/7/options/0",
+      "text": "Schnell weiterarbeiten, bevor jemand krank wird.",
+      "textSha256": "52fbba55033e4d068c814b167df24906f6b39e311cffc154569f0757dc5b1165"
+    },
+    {
+      "pointer": "/points/7/options/1",
+      "text": "Einen Hut tragen und alles andere ignorieren.",
+      "textSha256": "547c13163f6fe21e2f2f5edc1eb3d27a3a0c8b8088c70f3d577e501043accb35"
+    },
+    {
+      "pointer": "/points/7/options/2",
+      "text": "Gefahren melden, Wasser, Schatten, Pausen und sicheren Weg vereinbaren und Beschwerden rasch melden.",
+      "textSha256": "fe1a5a7420feb75c8a6f6bca98d90993b9399840e7f8281792b660eb73c2155a"
+    },
+    {
+      "pointer": "/points/7/feedback/0",
+      "text": "Eile beherrscht weder Hitze noch biologische Gefahren.",
+      "textSha256": "27e0a015a420f63e4755f243b3e9d982849d731b07df7b91e9c6419f2f382c9a"
+    },
+    {
+      "pointer": "/points/7/feedback/1",
+      "text": "Ein Hut allein ist kein vollständiger Plan und entfernt keine Insektengefahr.",
+      "textSha256": "46d22e1f40090123ace21057b4a4a8732a08129ac4e38d663bcc8053dad1bcff"
+    },
+    {
+      "pointer": "/points/7/feedback/2",
+      "text": "Richtig: Bedingungen einplanen und Änderungen melden, statt Schäden abzuwarten.",
+      "textSha256": "efcc07239bb8b0a1c61fde5ec387581b0579556fa474031cf2848fefcb8bc04a"
+    },
+    {
+      "pointer": "/points/7/readingId",
+      "text": "environment",
+      "textSha256": "ba5285161ba6eed0085fb13784ce5c92f70ebc268b94fd66aa1d68a32884204d"
+    },
+    {
+      "pointer": "/quiz/0/id",
+      "text": "q1",
+      "textSha256": "c75de8c1b7c3ae5252091267a736a9bf57001d80e82668b3cb3cd09e2f6a43cb"
+    },
+    {
+      "pointer": "/quiz/0/question",
+      "text": "Welche Grundregel gilt vor Feldarbeiten?",
+      "textSha256": "a31442cf80c47938abe938f92fb9f446f4f363d1bf89666f4a2915f016caadf7"
+    },
+    {
+      "pointer": "/quiz/0/options/0",
+      "text": "Möglichst schnell arbeiten.",
+      "textSha256": "a5aa002ce2180900a6bcaee544f89a08aed8bf8bc5f01c7abc9dee2c131d3f1a"
+    },
+    {
+      "pointer": "/quiz/0/options/1",
+      "text": "Unabhängig von der Tätigkeit das Handy nur in Pausen nutzen.",
+      "textSha256": "327577a2a512fa8d833120049c4c965d41af3f070f66265c0701ea2016ffd3a8"
+    },
+    {
+      "pointer": "/quiz/0/options/2",
+      "text": "Standort und erwartete Rückkehrzeit mitteilen.",
+      "textSha256": "abde95b058fcb7336def5063f2acfcf5167aa7f3c13942a036ce375f740c6811"
+    },
+    {
+      "pointer": "/quiz/0/options/3",
+      "text": "Eine Maschine bedienen, wenn sie einfach aussieht.",
+      "textSha256": "07454d1634952a86c2403e6609a264dca9db9e9721acace3bdce9cf3d0f1963a"
+    },
+    {
+      "pointer": "/quiz/0/feedback",
+      "text": "Standort und Rückkehr machen den Kontaktplan nutzbar. Schnelligkeit und einfache Optik beweisen keine Sicherheit.",
+      "textSha256": "c180a999d11e5d79a66dfa881323f11f88f270169ab2ed8c9d49f66fd1d7e311"
+    },
+    {
+      "pointer": "/quiz/1/id",
+      "text": "q2",
+      "textSha256": "bee98bf120e8906382754c6be52860ac5dbc65a1ca4dbee7576267d8fd3367e1"
+    },
+    {
+      "pointer": "/quiz/1/question",
+      "text": "Was passt bei Stoßgefahr für die Füße, wenn die Lehrkraft es vorgibt?",
+      "textSha256": "e310e8d0c0e40c0e38b623b1d260a4ace0e1a45e2d91261674e92b0123fef1c1"
+    },
+    {
+      "pointer": "/quiz/1/options/0",
+      "text": "Laufschuhe.",
+      "textSha256": "1de1da1aa1144da0c9c6618af6bafc4dbc2d3d144d0e46aa8ed43325d3ee3ba7"
+    },
+    {
+      "pointer": "/quiz/1/options/1",
+      "text": "Robuste Arbeitsschuhe mit geeigneten Schutzkappen, etwa aus Stahl.",
+      "textSha256": "eaa8f4375f61bb64b8c351eb1ad12a266d04d994d0cae91d8a203ed3d3299bc9"
+    },
+    {
+      "pointer": "/quiz/1/options/2",
+      "text": "Offene Sandalen.",
+      "textSha256": "61930cc524efa9988e49b35d934c55c52206c0062ce4ba999d662d6ae59d3037"
+    },
+    {
+      "pointer": "/quiz/1/options/3",
+      "text": "Beliebige Gummistiefel ohne Prüfung der Schutzwirkung.",
+      "textSha256": "0c04b9e45e7b45be55c27bdd237d38bc9caf1b8eb33db170811e27766041edb3"
+    },
+    {
+      "pointer": "/quiz/1/feedback",
+      "text": "Schuhe müssen zur Gefahr passen. Bezeichnung oder Material allein reichen nicht.",
+      "textSha256": "5f29fed13011b6ded9db59314109e3dac7eaddffa5fd16b99451ea456b674dbe"
+    },
+    {
+      "pointer": "/quiz/2/id",
+      "text": "q3",
+      "textSha256": "58e2791934fdd9cfdd6d0e892cb6ca4894abc58559de0ec04d51bc2801bad291"
+    },
+    {
+      "pointer": "/quiz/2/question",
+      "text": "Wie wählst du Handschutz für ein flüssiges Pflanzenschutzmittel?",
+      "textSha256": "548dd55d60fa55d74cbfed6a4cb05c789e4777d1f07fac437483e896913c0a78"
+    },
+    {
+      "pointer": "/quiz/2/options/0",
+      "text": "Beliebige Lederhandschuhe.",
+      "textSha256": "2abb32920a9a7520b7eb95372316335346f8487a164423357dcc3d8fc5a9a65e"
+    },
+    {
+      "pointer": "/quiz/2/options/1",
+      "text": "Beliebige Baumwollhandschuhe.",
+      "textSha256": "4a042b6b32afd4bb81a91b2ef3a0e2f2936a24d12518e92c38df7d37f28ad013"
+    },
+    {
+      "pointer": "/quiz/2/options/2",
+      "text": "Nachweislich geeignete chemikalienbeständige Handschuhe, etwa passendes Nitril, wenn angegeben.",
+      "textSha256": "dc8adbe4944381e4debd5589ce275d01b6fa75c4faea66816e7c44a1301a2503"
+    },
+    {
+      "pointer": "/quiz/2/options/3",
+      "text": "Keine Handschuhe, wenn du vorsichtig bist.",
+      "textSha256": "95d14957a836494bb62c37dc627ff653f8886afa1fc0dae3a5f471ada63e9fd8"
+    },
+    {
+      "pointer": "/quiz/2/feedback",
+      "text": "Prüfe das konkrete Produkt. Nitril ist ein Beispiel, keine universelle Garantie; Stoff oder Leder können Flüssigkeit aufnehmen.",
+      "textSha256": "664226568dbc60d733d6409fa756e386c7e88f1109ac95976004c1f28e4285ef"
+    },
+    {
+      "pointer": "/quiz/3/id",
+      "text": "q4",
+      "textSha256": "112f2dfa31205df3f5f9db109460c8b85067d7dc27f70781c2e4ef903ee9f26a"
+    },
+    {
+      "pointer": "/quiz/3/question",
+      "text": "Was schützt bei möglicherweise verunreinigtem Boden oder Reagenzien gezielt die Hände, wenn es nach Gefährdung gewählt wird?",
+      "textSha256": "1b35376ff53881978b703c438599ab6d44cd0b74e23bb9fe03088d12e99b8eae"
+    },
+    {
+      "pointer": "/quiz/3/options/0",
+      "text": "Schuhe mit Stahlkappen.",
+      "textSha256": "18cfb887e09185227b7683422c174e708bfa3d0cad158672f714dd8ea671f2c1"
+    },
+    {
+      "pointer": "/quiz/3/options/1",
+      "text": "Geeignete chemikalienbeständige Handschuhe.",
+      "textSha256": "705f2032b598a1c7fd36f61371d0dda342a4225f425a7da77e089d7a88c2ec1b"
+    },
+    {
+      "pointer": "/quiz/3/options/2",
+      "text": "Schutzhelm.",
+      "textSha256": "fd8433d883506e46d3a79e26f9ecb17df4cce47cdd7d8f5d89fe78b822d7474c"
+    },
+    {
+      "pointer": "/quiz/3/options/3",
+      "text": "Warnweste.",
+      "textSha256": "0a6496ac12e59904cbe5f842469d5a5b5a9d3f5ff2e51951515728d615232073"
+    },
+    {
+      "pointer": "/quiz/3/feedback",
+      "text": "Geeignete Handschuhe schützen Hände, ersetzen aber keine weiteren nötigen Schutzmaßnahmen.",
+      "textSha256": "dc4bf212284300f3d72044428e70a9ce68ce949798c3b4662d258ed75a1b1c98"
+    },
+    {
+      "pointer": "/quiz/4/id",
+      "text": "q5",
+      "textSha256": "26eab90d2b0be7cd188983eae071bbcce8dfe9c2f48b20a7489b42080b47360b"
+    },
+    {
+      "pointer": "/quiz/4/question",
+      "text": "Wo stehen genaue Gefahren- und Erste-Hilfe-Informationen für die Reagenzien eines Bodentests?",
+      "textSha256": "7f06e3925f89a9e37cf7221eb4c0ae624b396e2b9537b6798176b92574debaa5"
+    },
+    {
+      "pointer": "/quiz/4/options/0",
+      "text": "Auf dem Lagerregal.",
+      "textSha256": "9b847c1a4d4a80466e8ee97296fdd3f0e3f0259625490410013c65c9488a3f49"
+    },
+    {
+      "pointer": "/quiz/4/options/1",
+      "text": "Im aktuellen SDS, in älteren Unterlagen auch MSDS genannt.",
+      "textSha256": "54ecd7947760dfae3a2c740bebd19ccce1f1ccf95bcc9315ea7e114a400f6c9d"
+    },
+    {
+      "pointer": "/quiz/4/options/2",
+      "text": "Nur im allgemeinen Betriebshandbuch.",
+      "textSha256": "14224b7c4daf2f576cadf93a4138d51ada7077efcb453b1d35f94c934a4e7980"
+    },
+    {
+      "pointer": "/quiz/4/options/3",
+      "text": "Auf der Farbskala der Ergebnisse.",
+      "textSha256": "5a228fd1cf5961425f64209d5216a152dd2d0da05b0ffdb34241a1593c9ba626"
+    },
+    {
+      "pointer": "/quiz/4/feedback",
+      "text": "Nutze die Sicherheitsinformationen des Reagenzes, nicht die Tabelle zur Ergebnisauswertung.",
+      "textSha256": "46c032a6301f01c566007687d9021630db46627d45f36b909d411193d52246c9"
+    },
+    {
+      "pointer": "/checklistLabels/0",
+      "text": "Ort und Weg",
+      "textSha256": "591d9a5abfa2ef2a77156f565dc9173ace56833a7fe99d30e80d4823491c03c9"
+    },
+    {
+      "pointer": "/checklistLabels/1",
+      "text": "Werkzeuge und Tragen",
+      "textSha256": "374dab295895ace1f40671c2f5889849f29e06d61bcba8bdd160cc16b38daed9"
+    },
+    {
+      "pointer": "/checklistLabels/2",
+      "text": "Schutz für die Tätigkeit",
+      "textSha256": "ca5f90b9bc97139528424756c9bdf07bfa1745fb726d450cdc6795fa2c2b7ca7"
+    },
+    {
+      "pointer": "/checklistLabels/3",
+      "text": "Begleitung und Kommunikation",
+      "textSha256": "b1625720ca09e9b1d012fc88877d5bc66123b627b3190cb3c7ddfb339264ad08"
+    },
+    {
+      "pointer": "/checklistLabels/4",
+      "text": "Notfälle und Wetter",
+      "textSha256": "8a29a8d70162d697449ff602a65e783c2f5261ab25d7c02262480bed68ca021c"
+    },
+    {
+      "pointer": "/checklistModel/0",
+      "text": "Weg, Erlaubnis und Leitungsfreigabe bestätigen; bei Unklarheit stoppen.",
+      "textSha256": "9c5df62b0498f14682a413b2b646507080cb4810302f10ec54266f69759e823d"
+    },
+    {
+      "pointer": "/checklistModel/1",
+      "text": "Saubere, intakte Werkzeuge und Trageweise prüfen; lockere Griffe und Mängel melden.",
+      "textSha256": "63458d71e261572b098e3d96eb852e65c2f381bbd9606e8968d4deac11bc37b1"
+    },
+    {
+      "pointer": "/checklistModel/2",
+      "text": "PSA mit Tätigkeit, Etikett und SDS abstimmen; bei unbekannter Eignung oder fehlendem Schutz stoppen.",
+      "textSha256": "b354a872b7ae157e6f516fed2e53a2f2a7c10335e90348ee92ed60af3dc18120"
+    },
+    {
+      "pointer": "/checklistModel/3",
+      "text": "Standort und Rückkehr melden; Begleitung, Kontakte und Vorgehen bei Kontaktverlust vereinbaren.",
+      "textSha256": "fed5380fde422d3e6308daf5e81f0b8dff339c354284658577b581441c84c200"
+    },
+    {
+      "pointer": "/checklistModel/4",
+      "text": "Zugang, Treffpunkt, Kontakte, Wasser, Schatten und Pausen prüfen; Gefahren und Beschwerden rasch melden.",
+      "textSha256": "388c92b32cbc60d74fb8ff35f6588ba3a2972df00343c0cc48d8781159fd9225"
+    },
+    {
+      "pointer": "/practical/0",
+      "text": "Lehrkraft: zugänglichen Ort und unterirdische Leitungen prüfen; erlaubte Arbeiten, reale Gefahren, Kommunikation und Notfallplan festlegen.",
+      "textSha256": "71165a0abdfd9d7677f91d631d966959a8ed449ca821907550fa37dcf26c60f1"
+    },
+    {
+      "pointer": "/practical/1",
+      "text": "Lernende: die fünf Prüfpunkte erklären und reale Weggefahren einschließlich Bewässerungsteilen und Maschinen erkennen.",
+      "textSha256": "cba322aa133fc605fe68497bea5375e38e68d7e2cc05fe22cee0be3761367bfb"
+    },
+    {
+      "pointer": "/practical/2",
+      "text": "Lernende: Werkzeuge prüfen, Mängel melden, vorgegebene PSA auswählen und anlegen sowie sicheres Tragen zeigen.",
+      "textSha256": "07672cb0514c0278d4b0a9026fdc1ef8c4c8f1067bd518b06b70017bf4e39806"
+    },
+    {
+      "pointer": "/practical/3",
+      "text": "Lernende: Kontaktplan zeigen und Bedingungen nennen, bei denen sie stoppen und nachfragen.",
+      "textSha256": "d5cba80686b51c1f82bbaaead8448329fe6d29ad54d90c353cad2cc66e5f6de9"
+    },
+    {
+      "pointer": "/practical/4",
+      "text": "Lehrkraft: jede Person einzeln beobachten, Leistung und nötige Hilfe dokumentieren. Unsichere Handlungen unterbrechen und vor Bestätigung eine neue sichere Durchführung verlangen.",
+      "textSha256": "f0c48707b42e4b5760c3a3a56ec26c307b535229eefc7862ca58c2038d8e447f"
+    },
+    {
+      "pointer": "/glossary/0/0",
+      "text": "Gefahr",
+      "textSha256": "c723c10a631c1221b68b4fd1c452885beb9ed169661faaa91cb22051a092596e"
+    },
+    {
+      "pointer": "/glossary/0/1",
+      "text": "Etwas mit dem Potenzial, Schaden zu verursachen.",
+      "textSha256": "d422f22b48b311c7824a2ad0d42a8139b49c087e2e358ac288bf9b62ff712738"
+    },
+    {
+      "pointer": "/glossary/1/0",
+      "text": "PSA",
+      "textSha256": "9c2803bdee7e18871c866e5afdfade8bef4cd6eb11864dbedc11ce5547cc1cc2"
+    },
+    {
+      "pointer": "/glossary/1/1",
+      "text": "Persönliche Schutzausrüstung für die konkrete Tätigkeit und Gefährdung.",
+      "textSha256": "44eeed1f4236bfb7e66950ab9fa8b929793d6a9f764def054d6400d6d16e51d5"
+    },
+    {
+      "pointer": "/glossary/2/0",
+      "text": "SDS",
+      "textSha256": "54b6b356d70e258999180cbb8bd30b2f7c9744a899b80baed209212ca04efdc1"
+    },
+    {
+      "pointer": "/glossary/2/1",
+      "text": "Sicherheitsdatenblatt zu Gefahren, Umgang, Schutz und Notfällen eines bestimmten Stoffes.",
+      "textSha256": "e4c39728d0237b933221dbe07f39e75b59fec2c610ab7b862f1ae7ce86a1df14"
+    },
+    {
+      "pointer": "/glossary/3/0",
+      "text": "Arbeiten mit Begleitung",
+      "textSha256": "be8f25f244501a056bf557b16d88a05af26d8f552d7a54c77cca589a5c2b42d3"
+    },
+    {
+      "pointer": "/glossary/3/1",
+      "text": "Gemeinsames Arbeiten mit vereinbartem Kontakt und gegenseitiger Unterstützung.",
+      "textSha256": "d494d34367e78b416878cc40e5347485333d185cc99b98d5eadd8a2325aadf4a"
+    },
+    {
+      "pointer": "/glossary/4/0",
+      "text": "Leitungsfreigabe",
+      "textSha256": "f97cb7d223034ea2cba54adb957a362e73b0d2f818e78bb42c8139de2d09d4d7"
+    },
+    {
+      "pointer": "/glossary/4/1",
+      "text": "Bestätigung, dass an einem bestimmten Punkt hinsichtlich unterirdischer Leitungen sicher gearbeitet werden kann.",
+      "textSha256": "7ca3acd9c55d8952d454dbef8e54549002144dd7e8ba75b5761347a77fdeb379"
+    },
+    {
+      "pointer": "/selfReflection/question",
+      "text": "Kann ich Sicherheitsregeln erklären und passende Schutzausrüstung wählen?",
+      "textSha256": "c0c9ebdffd602515caaf0b623e8ba53c6d40372e06fc395e4aa510b37f6c95ca"
+    },
+    {
+      "pointer": "/selfReflection/labels/0",
+      "text": "Kann ich",
+      "textSha256": "3398859a680838a080049a5ed8c11b866f1ac2b09262b1c5b2f4a7ffc0f6d2d8"
+    },
+    {
+      "pointer": "/selfReflection/labels/1",
+      "text": "Noch nicht",
+      "textSha256": "f9a9cc523086b1338f0925afc615937f97e56804acbad4e6f358c0effed54161"
+    },
+    {
+      "pointer": "/selfReflection/labels/2",
+      "text": "Teilweise",
+      "textSha256": "296f1fe2c06d79ed4ff1776ff72f73b0c26463b2bb065b55f1bc9b2e9ccf760d"
+    },
+    {
+      "pointer": "/selfReflection/note",
+      "text": "Dies ist eine Selbsteinschätzung, kein Kompetenznachweis.",
+      "textSha256": "033b9a969258e55e1c17794d17f5b2997319562d8b04f4729e9ad90c2d92ba52"
+    },
+    {
+      "pointer": "/selfReflection/notesPrompt",
+      "text": "Notizen (freiwillig)",
+      "textSha256": "09a1e95590765318a90d3cba8a915b9842544b9543ed8411e669780fa49c1e49"
+    },
+    {
+      "pointer": "/selfReflection/resetLabel",
+      "text": "Diese Selbsteinschätzung löschen",
+      "textSha256": "90cc230290926dec96257365d3ce321cd7d7fc65c210f748729d1846ae3e8484"
+    },
+    {
+      "pointer": "/illustrations/s101-lesson-route/alt",
+      "text": "Dreidimensionale Darstellung eines Feldwegs mit einem Sprinklerkopf und einem Tierbau; ein Zaun trennt den Traktor vom Weg.",
+      "textSha256": "420c68c3c14c4500a8e9733a2d4e7d96f5d43fdcbe6c93f7b88dd5afbfb714b7"
+    },
+    {
+      "pointer": "/illustrations/s101-lesson-gloves/alt",
+      "text": "Zwei unterteilte Aufbewahrungskoffer mit Stoffhandschuhen, nicht porösen Handschuhen, einer Schutzbrille gegen Spritzer und einer verschlossenen Flasche. Das Bild allein belegt keine Eignung der Handschuhe für einen bestimmten Stoff.",
+      "textSha256": "05ec9fd337c46f8f84f9f67eab6dac596f53fe244001098504ed7ac73e75af6b"
+    }
+  ],
+  "currentCourse": {
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/course/de.json",
+    "sha256": "bfde82bf217da46b475c93021bf353d98be7c8db61089f2ee092500e81864bd2",
+    "bytes": 35002
+  },
+  "narratedSemanticScope": {
+    "readingParagraphs": 23,
+    "workedFragments": 10,
+    "totalFragments": 33,
+    "scenes": 10
+  },
+  "sceneBindings": [
+    {
+      "sceneId": "s101-purpose",
+      "expectedNarration": "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.\n\nStell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.\n\nErkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig.",
+      "expectedNarrationSha256": "18ce5f10e6646256ec665a036c50e48f92408e0b4d120af08ea89ed14271c13c",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.",
+          "textSha256": "80e9bb577da50fcedec965509719a88b1260887328557772b0a55125bf84cf89",
+          "sceneId": "s101-purpose",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Stell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.",
+          "textSha256": "61be35c89f605bcbc2977e7b65583ee6bd639c5ab826b23be158e48c667a9d2a",
+          "sceneId": "s101-purpose",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Erkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig.",
+          "textSha256": "3dd3ed79bee1649b68b1b4021b2c2a4d408466a1eb6c307463f660ff08e324ef",
+          "sceneId": "s101-purpose",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-site",
+      "expectedNarration": "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.\n\nAchte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.\n\nBewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen.",
+      "expectedNarrationSha256": "cc2afda2889adc1086b7f5a096027e6b8ccdd046b3e33c741e757df0378a6490",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.",
+          "textSha256": "88b602af71215cc90878d2eacda2c512d46212224e449b1d377a7f1c5ec1f4bb",
+          "sceneId": "s101-site",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Achte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.",
+          "textSha256": "93589b8f9e02f35f615a66e1ed03aead5e2a6686b8f472d11049c28fbab20e2a",
+          "sceneId": "s101-site",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Bewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen.",
+          "textSha256": "35040bbc12716d345b4d316f32508d71c858d8dd164f28defdcf30cdc703b404",
+          "sceneId": "s101-site",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-communication",
+      "expectedNarration": "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.\n\nEin Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst.",
+      "expectedNarrationSha256": "fdc6d257f808a5f9a7abd5d4afa76c0ba9022600a02a46c201336a0a1a6d6249",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.",
+          "textSha256": "3921860c399079ef447ee40f7640d25fb33aa24ca699c2dd8057e4ebcfc7d6d7",
+          "sceneId": "s101-communication",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Ein Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst.",
+          "textSha256": "b125c30d817af0d421f706d1fe8b9b5d5ce6eed0eb8e85e1b127937097b5d5d8",
+          "sceneId": "s101-communication",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-limits",
+      "expectedNarration": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.\n\nTrage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.\n\nLies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+      "expectedNarrationSha256": "250687db8f56ef0079172868fa0d1e5231d41d1a6042725bac9dbd358cbc319e",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.",
+          "textSha256": "b35c23d20c24412fb4d3d9735187eace90b99376dd0180ef42a8daa916dfaeaa",
+          "sceneId": "s101-limits",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.",
+          "textSha256": "712556985c5460d6770b8c7214e3c45642d577301ea44b814e44b78ae3615e29",
+          "sceneId": "s101-limits",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+          "textSha256": "760ca17ba7a9850fe149237852232407f1dba03b9d5e10ff74f0cfd48da68bb8",
+          "sceneId": "s101-limits",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-environment",
+      "expectedNarration": "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.\n\nBerücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung.",
+      "expectedNarrationSha256": "43444c3c8deeaa6739d7938c8da5014d7edcb9be5f083497491f5a5338cd0da7",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.",
+          "textSha256": "dc4998d82a4e364a39eb9b93ce81f3b59352e9af09982af61d1c6c755b9b2573",
+          "sceneId": "s101-environment",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Berücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung.",
+          "textSha256": "8ad7a7eb80db106b5d9bc3a87d029fcf13a13df10f8d9b7a69305c8151b6e07a",
+          "sceneId": "s101-environment",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-ppe",
+      "expectedNarration": "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.\n\nRobuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.\n\nWähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet.",
+      "expectedNarrationSha256": "6c95e26a83a946b1250607a2d7bc9462410eaaed6810393abad6271d13f5ffe4",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.",
+          "textSha256": "88af605e4b949b3d64a0e57f2e810861c46cfe7874e2f75fdfb7aa81e9bff46c",
+          "sceneId": "s101-ppe",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Robuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.",
+          "textSha256": "1a22a5fd1a42ea5646ff6094ba2c7b21c3f988d226eaaf1229dd905d2331e726",
+          "sceneId": "s101-ppe",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Wähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet.",
+          "textSha256": "8d26af5ebd9b581372583254c71125eb8c0293c76a43f7fc80cbeb6405a0c662",
+          "sceneId": "s101-ppe",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-chemical",
+      "expectedNarration": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.\n\nVergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.\n\nJe nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.\n\nWarnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+      "expectedNarrationSha256": "dc968c02de583831c4b2f545d5c0d6cf2c5c970468824e7a11c5e991a201a185",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.",
+          "textSha256": "b8e4af881b8c4fb77ed0f66e31405b49fb28427dde602439675d2d7b6e7453e5",
+          "sceneId": "s101-chemical",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.",
+          "textSha256": "6d81a625755b686ea8115da5fd18fa39ed46e1e60f24f59a837fc376c9335cc0",
+          "sceneId": "s101-chemical",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/2",
+          "text": "Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.",
+          "textSha256": "0195b0466d5a622ffd6a77c75be2bdf830dde312d350469dbc48777cc6c3e410",
+          "sceneId": "s101-chemical",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/3",
+          "text": "Warnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+          "textSha256": "490fcc25784285e6acf575e057ac4fc62b33fc8f526ed99e276adf4a6665cd12",
+          "sceneId": "s101-chemical",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-checklist",
+      "expectedNarration": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.\n\nNenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.\n\nVorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+      "expectedNarrationSha256": "6a3d4d4efe071b61be255ac4b56e93b999f0b2871ce297ac75bb811d176cadf9",
+      "canonicalFragments": [
+        {
+          "pointer": "/reading/7/paragraphs/0",
+          "text": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.",
+          "textSha256": "6da70ff03fc3edb574b35efcd268537b6c1f1e218240832f03292569700e4122",
+          "sceneId": "s101-checklist",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/7/paragraphs/1",
+          "text": "Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.",
+          "textSha256": "bb6b0dff70e31047482af5a102481271e77cb94e1b506599cdac431b00b73a41",
+          "sceneId": "s101-checklist",
+          "sourceKind": "reading_paragraph"
+        },
+        {
+          "pointer": "/reading/7/paragraphs/2",
+          "text": "Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+          "textSha256": "6c7ddebbc373755a07f702a12378ccba77ba3a6a25aa96a5bdaa01c083d37472",
+          "sceneId": "s101-checklist",
+          "sourceKind": "reading_paragraph"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-example-route",
+      "expectedNarration": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“\n\nSchuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.\n\nDas Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.\n\nEs bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt.\n\nZuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start.",
+      "expectedNarrationSha256": "6c77de5bde08701ccb82cb84280fb8f590d92348f0cbcbb9aea3bbda90af3d93",
+      "canonicalFragments": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“",
+          "sourceKind": "worked_situation",
+          "textSha256": "680d8c69649820298ca7a25dcd42c6cbabddae63e6e5c6c734868a3a42c0b9b3",
+          "sceneId": "s101-example-route"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "5bf15210aafd618c4dc6e7b43cdf9c6d5a528134b9edbb4b9891644ff76a40d1",
+          "sceneId": "s101-example-route"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "3b038ddfd60817191c46e7eb7199dfdcdf018ba020407ead5030443d4e172a9f",
+          "sceneId": "s101-example-route"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Es bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "d4cf08ddbb5ef1636289b9ae640b18b3aa1986d57e7379129c4205ee9ed49a10",
+          "sceneId": "s101-example-route"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Zuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start.",
+          "sourceKind": "worked_takeaway",
+          "textSha256": "d8ae60abc5a005a897a28ef7c4557fbba4d0bf28eeef20debea9aff80b9e859e",
+          "sceneId": "s101-example-route"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    },
+    {
+      "sceneId": "s101-example-gloves",
+      "expectedNarration": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.\n\nStoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.\n\nNitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.\n\nUnterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen.\n\nDie richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen.",
+      "expectedNarrationSha256": "0b7bcdeb729f1983a99662e875b4a41d071f2a34795a8077946e7a0e85240bbf",
+      "canonicalFragments": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.",
+          "sourceKind": "worked_situation",
+          "textSha256": "17e684f0e2cd4eb02f15cd2994a2454dd83abac4eefff0c914162e42009dd548",
+          "sceneId": "s101-example-gloves"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Stoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "d84989e7c71cfb81fa4540a20fb447edcfeac39ca79da4085702efd8c41a2c7a",
+          "sceneId": "s101-example-gloves"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Nitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "2d2c4b69b1bf6775598bf9acd8bc7cc679465fb8c404cabc6982803efa26751a",
+          "sceneId": "s101-example-gloves"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Unterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen.",
+          "sourceKind": "worked_reasoning",
+          "textSha256": "45a664f98461c1ac88f01dd1e3932751b060166f4edb9d1da27f19320615e705",
+          "sceneId": "s101-example-gloves"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Die richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen.",
+          "sourceKind": "worked_takeaway",
+          "textSha256": "951c8bea737aa1ba33a909b05b94eab6d6da5043010185a5b20efcf96f2239b2",
+          "sceneId": "s101-example-gloves"
+        }
+      ],
+      "currentCourseNarrationEqualsFullSource": true
+    }
+  ],
+  "nonNarratedFunctionalContentPolicy": "Complete UI, decisions, questions, answers, worksheets, practical observations and labels remain preserved in the source payload; they are not silently turned into narration or dropped.",
+  "nativeLanguageOrScientificCertificationClaimed": false,
+  "existingAudioCandidates": [
+    {
+      "sceneId": "s101-purpose",
+      "sourceFragmentPointers": [
+        "/reading/0/paragraphs/0",
+        "/reading/0/paragraphs/1",
+        "/reading/0/paragraphs/2"
+      ],
+      "identity": {
+        "text": "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung.\n\nStell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen.\n\nErkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich; persönliche Erlebnisse zu erzählen ist freiwillig.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Charon",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "4cb38af15f4dc83bed369ee763465e1b44660e27f7a9a4b8a43712e095d8b73c",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/4cb38af15f4dc83bed369ee763465e1b44660e27f7a9a4b8a43712e095d8b73c.wav",
+        "sha256": "10ca0e2bc53c008a533c7a68712e284d53bc8f9423d75bf7983e34a9256e18c0",
+        "bytes": 3366330
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1683143,
+        "durationSeconds": 70.13095833333334,
+        "pcmSha256": "ebc0df8618a6250bea45870fa7e469fc03b7c5962c7f3d6a33682d682ebfda73"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/073d998044e1d744214c9e679d3fbe0c6c1ad23f2ece8a16583a3fe81b404be4.json",
+        "sha256": "38da955a365e24bbe93290f3a09c1b0847b3c76f1bd32832d2abe7cf5dbccb20",
+        "bytes": 2073
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Eine Probe ist nur dann nützlich, wenn bei der Entnahme niemand verletzt wird. Vorbeugung bedeutet, Gefahren vor Arbeitsbeginn zu erkennen und zu beherrschen. Notfallmaßnahmen sind das geordnete Handeln, wenn trotzdem etwas passiert. Dieser Schritt behandelt Vorbereitung und Vorbeugung. Die nächsten beiden behandeln Verletzungen, Hitzeerkrankungen, verschüttete Stoffe und Evakuierung. Stell dir vor, eine Begleitperson wird auf einem abgelegenen Feld schwindelig und verwirrt, oder ein Düngerbehälter kippt um. Wer kennt euren Standort? Wie alarmiert ihr Hilfe? Wohin könnt ihr euch sicher bewegen? Diese Fragen zeigen den Wert der Vorbereitung. Sie fordern nicht dazu auf, über die eigene Ausbildung hinaus zu behandeln oder Stoffe zu beseitigen. Erkläre das Arbeitsziel mit eigenen Worten. Du kannst überlegen, was Menschen bei einem bekannten Notfall richtig oder falsch gemacht haben. Ein erfundenes Beispiel ist ebenso möglich. Persönliche Erlebnisse zu erzählen ist freiwillig.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-site",
+      "sourceFragmentPointers": [
+        "/reading/1/paragraphs/0",
+        "/reading/1/paragraphs/1",
+        "/reading/1/paragraphs/2"
+      ],
+      "identity": {
+        "text": "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden.\n\nAchte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat.\n\nBewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Kore",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "65c00e5699e08b9bf04258d7ca47659071e8fccd5c94a424351f3712738c2a3e",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/65c00e5699e08b9bf04258d7ca47659071e8fccd5c94a424351f3712738c2a3e.wav",
+        "sha256": "da685204ecd162b672bd04c038a9e1dbba94ae1f9765a2cad60f6ffa61b890d7",
+        "bytes": 3493050
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1746503,
+        "durationSeconds": 72.77095833333334,
+        "pcmSha256": "022e9507baffa2064f2242375ef7ec681311d4d71b16d2d2b68a879370031c50"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/08de3b0534ecc57c78b88ffdbd84aef37d71ed92d5ed66426b1dfaf6c9646d8b.json",
+        "sha256": "1752df472d8c2219a5b34562f7131f0a33829ddba7c977ba09f2e88e27fd957f",
+        "bytes": 2123
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Höre vor dem Aufbruch die kurze Sicherheitsunterweisung der Lehrkraft. Sie wählt einen sicheren, zugänglichen Ort und legt erlaubte Probenahmestellen fest. Prüfe den Weg auf Unebenheiten, Löcher, Tierbaue und Hindernisse. Sprinklerköpfe am Feldrand können Stolperstellen sein; außerdem kann die Bewässerungsanlage beschädigt werden. Achte auf Maschinen, Rückfahrwarnsignale und elektrische Freileitungen. Wer neben einem fahrenden Traktor auf das Handy schaut, verliert wichtige Aufmerksamkeit. Bleibe außerhalb des Arbeitsbereichs der Maschine und nutze den vereinbarten sicheren Weg. Verlasse dich nicht darauf, dass die fahrende Person dich gesehen hat. Bewässerungsrohre, Gasleitungen und Stromkabel können im Boden liegen. Eine freie Oberfläche beweist keine Grabungssicherheit. Stecke Sonde, Bohrer oder Spaten erst ein, wenn die Lehrkraft diesen Punkt hinsichtlich der Leitungen freigegeben hat. Fehlen Markierungen oder bestehen Zweifel, stoppe und frage nach. Eine Lernzeichnung lokalisiert keine realen Leitungen.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-communication",
+      "sourceFragmentPointers": [
+        "/reading/2/paragraphs/0",
+        "/reading/2/paragraphs/1"
+      ],
+      "identity": {
+        "text": "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein.\n\nEin Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Charon",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "10f3fe180ed7c04e12450054516137c9594ab559ae59053ff97c7f4212c86f75",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/10f3fe180ed7c04e12450054516137c9594ab559ae59053ff97c7f4212c86f75.wav",
+        "sha256": "18d95bbac5527f31f717814c6c1be5de6148b706d82f56c48f67302cdc84278b",
+        "bytes": 2298810
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1149383,
+        "durationSeconds": 47.89095833333333,
+        "pcmSha256": "5deb92de1cb21b6c2a38fbabf2244911e26504757ef35ba417674495048df643"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/340ba4bc7ab78de4cbef98698ffee389696d3472f1ab7ab1596c8bfb51f54512.json",
+        "sha256": "183f5827527118685b2be4e787e81b29d1f3896b55bb01b07eb5393e7a206aad",
+        "bytes": 1784
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Melde der Aufsicht, wohin das Team geht und wann es zurückkehren soll. Arbeite in abgelegenen Bereichen mit einer Begleitperson und vereinbart die Kommunikation. Nimm ein geladenes Telefon oder das für den Ort vorgesehene Funkgerät mit; die passenden Notfallkontakte müssen verfügbar sein. Ein Telefon ersetzt die Begleitperson nicht. Empfang oder Akku können ausfallen, und eine verletzte Person kann möglicherweise nicht anrufen. Vereinbart vorher das Vorgehen bei Kontaktverlust oder ausbleibender Rückkehr. Kenne Zufahrt und Treffpunkt, damit du Hilfe gezielt einweisen kannst.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-limits",
+      "sourceFragmentPointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2"
+      ],
+      "identity": {
+        "text": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.\n\nTrage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.\n\nLies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Kore",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "6fb9d39c00d36f39e97b30dd3495c0e85d03a26692eb9068492afc643f1c96d3",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/6fb9d39c00d36f39e97b30dd3495c0e85d03a26692eb9068492afc643f1c96d3.wav",
+        "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+        "bytes": 3324090
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/bf098fedbe52513c7dd3f51598bb3778863170eb1a90c326eb701f9919d09f22.json",
+        "sha256": "9f62dc72e4561d386b6e7bb8f2b55f57d9d665698550c1e5179c1d91c1252b11",
+        "bytes": 2146
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht. Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-environment",
+      "sourceFragmentPointers": [
+        "/reading/4/paragraphs/0",
+        "/reading/4/paragraphs/1"
+      ],
+      "identity": {
+        "text": "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar.\n\nBerücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt; hier zählen Vorbeugung und schnelle Meldung.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Charon",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "0a64b0fdb8fd392356b887cd9df2dd856821f0fc0a66d7060806b7125060b9f7",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/0a64b0fdb8fd392356b887cd9df2dd856821f0fc0a66d7060806b7125060b9f7.wav",
+        "sha256": "eeb5bb3c89e8d0deed76c276fd6356ae3242919ecd003a7d5fcd561c712c99fb",
+        "bytes": 2085690
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1042823,
+        "durationSeconds": 43.45095833333333,
+        "pcmSha256": "66b7ed6724836310228f692738fd111c6267a8e5bdfe7d14ba943b1cf21184e0"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/a5aaea3bc21da7dcd8773de518f05fc4a2cca7d24416e3ac8665918a184d46ac.json",
+        "sha256": "36e8527638fac30b8729a518cefafa2da96fdcd90edd529c10366e6a54795cfa",
+        "bytes": 1707
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Achte auf Schlangen, stechende Insekten und schädliche Pflanzen, ohne sie anzufassen, zu stören oder dich ihnen zu nähern. Melde Gefahren und nutze den vereinbarten Weg. Biologische Gefahren sind aus der Ferne nicht immer erkennbar. Berücksichtige Hitze, Sonne und Wetteränderungen. Plane Trinkwasser, geeignete Kleidung, Schatten und Pausen. Melde Veränderungen der Bedingungen oder deines Befindens. Hut und Wasser sind kein Grund, Schwindel oder Verwirrtheit zu ignorieren. Genaue Maßnahmen bei Hitzeerkrankungen folgen im nächsten Schritt. Hier zählen Vorbeugung und schnelle Meldung.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-ppe",
+      "sourceFragmentPointers": [
+        "/reading/5/paragraphs/0",
+        "/reading/5/paragraphs/1",
+        "/reading/5/paragraphs/2"
+      ],
+      "identity": {
+        "text": "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab.\n\nRobuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern; ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen.\n\nWähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhe schützen die Hände und können Probenverunreinigung begrenzen; sie sind nicht unbedingt chemikaliengeeignet.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Kore",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "39dbe312c48c1353354f2ead5830f46771bfc38f98712db94f69abfbd2e4b096",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/39dbe312c48c1353354f2ead5830f46771bfc38f98712db94f69abfbd2e4b096.wav",
+        "sha256": "561b06319650daf8c55cf9a1c6871bac31bf4ef3d7a5f3917c9a90a05f55ac18",
+        "bytes": 2980410
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1490183,
+        "durationSeconds": 62.09095833333333,
+        "pcmSha256": "92f7f0857da15917f6ad11fb941a62dc24502551233641f82d1ca48ca823de06"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/49ba1f17e005352cb73d48549ab6bebe142e345338487f9efe649c0fad5ec1a9.json",
+        "sha256": "622499d43d382ce3ecf11326fdf229fb3e4e47d11866127a45fae20581658389",
+        "bytes": 2214
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Persönliche Schutzausrüstung, PSA, verringert die Einwirkung von Gefahren. Sie ergänzt sicheres Arbeiten, macht aber weder einen unsicheren Ort noch eine unerlaubte Tätigkeit akzeptabel. Die Kombination hängt von Arbeit, Stoff und Bedingungen ab. Robuste Arbeitsschuhe geben Halt und schützen die Füße. Bei Stoß- oder Quetschgefahr legt die Lehrkraft geeignete Schutzkappen fest, beispielsweise Stahlkappen. Lange Ärmel und Hosen können Kratzer, Sonne und Insektenkontakt vermindern. Ein breitkrempiger Hut schützt zusätzlich vor Sonne. Kleidung muss auch zu Hitze und Tätigkeit passen. Wähle Augenschutz passend zur Gefahr. Eine Schutzbrille gegen Partikel ersetzt nicht automatisch eine dicht schließende Schutzbrille gegen Chemikalienspritzer. Für Bodenarbeiten geeignete Handschuhen schützen die Hände und können Probenverunreinigung begrenzen. Sie sind nicht unbedingt chemikaliengeeignet.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-chemical",
+      "sourceFragmentPointers": [
+        "/reading/6/paragraphs/0",
+        "/reading/6/paragraphs/1",
+        "/reading/6/paragraphs/2",
+        "/reading/6/paragraphs/3"
+      ],
+      "identity": {
+        "text": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten.\n\nVergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden.\n\nJe nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz.\n\nWarnkleidung hilft anderen, dich nahe Maschinen zu sehen; sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Charon",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "450a77e1668b2c7a2744482906dca2f2c8acfd26337d9dcbe316bf396a39b1f3",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/450a77e1668b2c7a2744482906dca2f2c8acfd26337d9dcbe316bf396a39b1f3.wav",
+        "sha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+        "bytes": 3852090
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1926023,
+        "durationSeconds": 80.25095833333333,
+        "pcmSha256": "0d8116d1635685ddaa61b1de08175fd94789df566c986a5b5bd1efe3d38c1ed1"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/f511f0e45d2b1f9f25c6fe9fe8dbda9df134fe86f81dc9740a99ff3dcad24d24.json",
+        "sha256": "ed1c2faaaa71f0ff34a9a59fa4ce031c3da41a087c740207c7c5e3f70077efcf",
+        "bytes": 2446
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Das Handschuhmaterial muss zum konkreten Stoff und zur erwarteten Einwirkung passen. Nitril und Neopren sind Materialbeispiele, keine universelle Schutzgarantie. Prüfe mit der Lehrkraft SDS und Herstellerangaben. Stoff- oder Lederhandschuhe können Flüssigkeit aufnehmen und an der Haut halten. Vergleiche einen sauberen Gartenhandschuh aus Stoff mit einem geeigneten beständigen Handschuh, nur mit sauberen Anschauungsobjekten. Erkläre, warum Aussehen und Dicke allein keine chemische Beständigkeit beweisen. Prüfe Ausrüstung vor dem Anlegen auf Eignung und Schäden. Je nach Gefährdungsbeurteilung sind auch ein beständiger Schutzanzug oder eine Schürze erforderlich. Wenn schädliche Stäube, Dämpfe oder Nebel eingeatmet werden können, muss Atemschutz zu Schadstoff und Tätigkeit passen, mit geeignetem Filter oder geeigneter Kartusche und Unterweisung. Dicht anliegender Atemschutz braucht eine geeignete Anpassungsüberprüfung. Ein Maskenbild oder eine Staubmaske für die falsche Gefahr beweist keinen Schutz. Warnkleidung hilft anderen, dich nahe Maschinen zu sehen. Sie ersetzt keinen Abstand zu bewegten Geräten. Bei lauten Motoren oder Maschinen kann geeigneter Gehörschutz wie Kapselgehörschützer oder Ohrstöpsel notwendig sein. Halte die für den realen Ort festgelegte Ausrüstung und Arbeitsorganisation ein.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-checklist",
+      "sourceFragmentPointers": [
+        "/reading/7/paragraphs/0",
+        "/reading/7/paragraphs/1",
+        "/reading/7/paragraphs/2"
+      ],
+      "identity": {
+        "text": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge.\n\nNenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr.\n\nVorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Kore",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "17013264e9086a2d1ab4d068fa35577663b3859257f3e4ebfe9d636787c93af1",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/17013264e9086a2d1ab4d068fa35577663b3859257f3e4ebfe9d636787c93af1.wav",
+        "sha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+        "bytes": 3283770
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1641863,
+        "durationSeconds": 68.41095833333334,
+        "pcmSha256": "4e1b67a64680399e1c9933cc9393bd215a6361096c02a93b8e1e3846302db961"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/928b536cae7beb1b2db63c2e580a8eaf58007b19bba15e71730afa4b37ada2f5.json",
+        "sha256": "dfe55e6c1a5280e4924cce47cd73a4904b2e0fa2cbdd49c07f4e2b486f7067f2",
+        "bytes": 2075
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Erstelle fünf Prüfpunkte statt nur einer Ausrüstungsliste: sicherer Ort und Weg mit Erlaubnis und Leitungsfreigabe; intakte, saubere Werkzeuge und sicheres Tragen; zur Tätigkeit und Chemikalieninformation passender Schutz; gemeldeter Standort und Rückkehrzeit mit Begleitung und Kommunikationsplan; Notfallkontakte, Zugang, Treffpunkt, Wasser und Wettervorsorge. Nenne für jeden Punkt einen Stoppgrund: unklare Leitungen, lockerer Griff, fehlende Stoffinformationen, unzureichende Kommunikation oder eine Maschine im Weg. Melde das Problem und warte auf eine sichere Lösung. Ein Häkchen beseitigt keine Gefahr. Vorbereitung, Aufmerksamkeit und das Einhalten eigener Grenzen verhindern, dass eine Lage schlimmer wird. Dieser Schritt ist keine Erste-Hilfe-Qualifikation und kein Nachweis praktischer Kompetenz. Die Lehrkraft beobachtet die praktische Durchführung getrennt.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-example-route",
+      "sourceFragmentPointers": [
+        "/examples/0/situation",
+        "/examples/0/reasoning/0",
+        "/examples/0/reasoning/1",
+        "/examples/0/reasoning/2",
+        "/examples/0/takeaway"
+      ],
+      "identity": {
+        "text": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“\n\nSchuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine.\n\nDas Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg.\n\nEs bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt.\n\nZuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Charon",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "5072071efc6e1038b5a619760e07b9242af40aeef0bd30de8197344e9e7ac1b3",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/5072071efc6e1038b5a619760e07b9242af40aeef0bd30de8197344e9e7ac1b3.wav",
+        "sha256": "b9a95b6a419afe71fd1568ec2d726c61e09466bf664056c35beef9cc104142aa",
+        "bytes": 2279610
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1139783,
+        "durationSeconds": 47.49095833333333,
+        "pcmSha256": "52cf5017fcf023ee2a1560fefcba73fe3dbea9a76596127758025500539b751e"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/a00f4edfd5934744ac1beecc637729efc9a2086a0bd3d341a1427deaa632e883.json",
+        "sha256": "f5b1c4f1898dd5dca822b5704fb55199d64875ecf22a229631192579fe72fd19",
+        "bytes": 1795
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Auf dem kürzesten Weg liegen ein Loch und ein Sprinklerkopf. Ein Traktor fährt rückwärts. Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“ Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine. Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg. Es bestätigt Probenstelle, Leitungsfreigabe, Rückkehr und Kommunikation, bevor es Werkzeuge mit Spitzen nach unten und von Menschen weg trägt. Zuerst Weg und Arbeit absichern. Ausrüstung allein ist keine Erlaubnis zum Start.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    },
+    {
+      "sceneId": "s101-example-gloves",
+      "sourceFragmentPointers": [
+        "/examples/1/situation",
+        "/examples/1/reasoning/0",
+        "/examples/1/reasoning/1",
+        "/examples/1/reasoning/2",
+        "/examples/1/takeaway"
+      ],
+      "identity": {
+        "text": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen.\n\nStoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten.\n\nNitril kommt möglicherweise infrage, doch der Materialname beweist keine Eignung für dieses Reagenz.\n\nUnterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen- und weitere Schutzmaßnahmen.\n\nDie richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen.",
+        "locale": "de",
+        "style": "Lies in natürlichem, klarem Deutsch wie eine geduldige Lehrkraft im Agrarbereich. Mittleres Tempo. Lies nur den genauen Text ohne Einleitung oder Kommentare.",
+        "model": "gemini-2.5-flash-preview-tts",
+        "voice": "Kore",
+        "format": "pcm-s16le-24000-mono-v1"
+      },
+      "audioCacheKey": "0a5b22b49c4142590556e12d42d4eaecc508fe1737fb19a2824a84094903c24b",
+      "wav": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/0a5b22b49c4142590556e12d42d4eaecc508fe1737fb19a2824a84094903c24b.wav",
+        "sha256": "bf2f0cc0119abf78684f51b90450b1a14378f64e3378e9d3bd17b9075fdfe24d",
+        "bytes": 1711290
+      },
+      "audio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 855623,
+        "durationSeconds": 35.650958333333335,
+        "pcmSha256": "7855d96c653108a04ab1688ff0832bde48804a7d659e35d7710a8bb8f025044d"
+      },
+      "savedQa": {
+        "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio-qa/eab68d8f95e75c50ef0c7d0e7ae22576a1fea45b6751420fa7bd4fbb590f2b04.json",
+        "sha256": "6ea0fa526bdddaf40c85017786ae84ca511967f27b0938bbc0ae326de31352fb",
+        "bytes": 1698
+      },
+      "savedQaPassed": true,
+      "savedTranscript": "Für ein flüssiges Reagenz gibt es Stoff- und Nitrilhandschuhe. Ein aktuelles SDS und Beständigkeitsangaben fehlen. Stoff kann verschüttete Flüssigkeit aufsaugen und an der Hand halten. Nitril kommt möglicherweise in Frage, doch der Materialname beweist keine Eignung für dieses Reagenz. Unterbrich den Umgang und verlange SDS, Handschuhdaten und Anweisungen. Prüfe außerdem Augen und weitere Schutzmaßnahmen. Die richtige Entscheidung kann sein, fehlende Informationen abzuwarten, statt das robusteste Aussehen zu wählen.",
+      "qualityMethodQualification": "Historical actual-audio model QA used the expected script. It is hash-bound saved evidence, not a new blind review, ASR alignment or human listening certification.",
+      "humanListeningReviewed": false,
+      "reuseDisposition": "EXACT_CURRENT_TEXT_DELIVERY_MODEL_VOICE_FORMAT_IDENTITY_AND_WAV_HASH_REUSE_CANDIDATE",
+      "newTTSRequiredByVisualChange": false,
+      "actualWordTimingsVerified": false
+    }
+  ],
+  "excludedExtraCachedWavs": [
+    {
+      "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/7bad66a0e1ae038aba388d3b1bb79729ca8a260e4fca2f510cb5525f17d6d7d0.wav",
+      "sha256": "4e4175bd3d8bd4acd66f86f5ddbdf8d90f40d3b79b4cb34e454c8817f2744e6c",
+      "disposition": "Not selected: filename existence alone does not match current narration identity"
+    },
+    {
+      "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/output/de/audio/df1587f5c6deebe87c21e359a889b9b03304928ccf601c047eb293998343c231.wav",
+      "sha256": "3aeb224cc5917d82566d87543ba737993c5ea6a8b47882f0ec4ce473ab018553",
+      "disposition": "Not selected: filename existence alone does not match current narration identity"
+    }
+  ],
+  "savedActualPcmMasterChain": {
+    "master": {
+      "path": "Private/soil-rebuild-20261014/pilot-S1-01/artifacts/preview-de-v4/master.wav",
+      "sha256": "db9533712a26aab022b8482122f4fd3bb91bf7704af631c835bf19306547a4c9",
+      "bytes": 28969644
+    },
+    "samples": 14484800,
+    "durationSeconds": 603.5333333333333,
+    "sourcePcmComparisons": [
+      {
+        "sceneId": "s101-purpose",
+        "startSample": 0,
+        "sourceSamples": 1683143,
+        "existingEndPaddingSamples": 14457,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-site",
+        "startSample": 1697600,
+        "sourceSamples": 1746503,
+        "existingEndPaddingSamples": 15097,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-communication",
+        "startSample": 3459200,
+        "sourceSamples": 1149383,
+        "existingEndPaddingSamples": 14617,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-limits",
+        "startSample": 4623200,
+        "sourceSamples": 1662023,
+        "existingEndPaddingSamples": 14777,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-environment",
+        "startSample": 6300000,
+        "sourceSamples": 1042823,
+        "existingEndPaddingSamples": 14777,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-ppe",
+        "startSample": 7357600,
+        "sourceSamples": 1490183,
+        "existingEndPaddingSamples": 14617,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-chemical",
+        "startSample": 8862400,
+        "sourceSamples": 1926023,
+        "existingEndPaddingSamples": 14777,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-checklist",
+        "startSample": 10803200,
+        "sourceSamples": 1641863,
+        "existingEndPaddingSamples": 14937,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-example-route",
+        "startSample": 12460000,
+        "sourceSamples": 1139783,
+        "existingEndPaddingSamples": 14617,
+        "originalPcmPresentAtExactOffset": true
+      },
+      {
+        "sceneId": "s101-example-gloves",
+        "startSample": 13614400,
+        "sourceSamples": 855623,
+        "existingEndPaddingSamples": 14777,
+        "originalPcmPresentAtExactOffset": true
+      }
+    ],
+    "noNewAssemblyPerformed": true
+  },
+  "timingEvidence": {
+    "oldProps": {
+      "path": "Private/soil-rebuild-20261014/pilot-S1-01/artifacts/preview-de-v4/props.json",
+      "sha256": "6ccb616742ba1591df1a984ce61c3d880d55acabfcdc4deca3534a3e3d7fefc5",
+      "bytes": 28023
+    },
+    "oldReceipt": {
+      "path": "Private/soil-rebuild-20261014/pilot-S1-01/artifacts/preview-de-v4/receipt.json",
+      "sha256": "4994e1300762e33a918f9cb5dcdc62d07dde669a8e016562e95501f407e65222",
+      "bytes": 3592
+    },
+    "oldVtt": {
+      "path": "Deliverables/S1-01-complete-review-20261019/app/public/media/de/captions.vtt",
+      "sha256": "780e6e63dc7bd5acb87938ec92aeb831ef21d3b66d5bca2d232d7a92e60c1545",
+      "bytes": 11593
+    },
+    "historicalCaptionTimingMethod": "scene-aligned, proportional sentence timings",
+    "plannedCueRecord": {
+      "path": "Private/soil-rebuild-20261014/delivery-20261020/pilot-cues/cue-plan-de.private.json",
+      "sha256": "0d6a15563051106451f290e6155c0e5cc25e9997c62f480305dc35c471d8cc09",
+      "bytes": 174310
+    },
+    "plannedCueStatus": "PLANNED_VISUAL_CUES_NOT_RENDERED_MEDIA",
+    "knownCaptionVerificationIssues": [
+      {
+        "locale": "de",
+        "operation": "delete",
+        "fullNarrationMissingFromTimedVttCues": "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine. ",
+        "fullNarrationMissingFromVtt": "Schuhe mindern manche Verletzungsrisiken, beseitigen aber weder Loch noch Sprinkler oder fahrende Maschine. ",
+        "legacyFieldNameCaution": "fullNarrationMissingFromVtt means absent from parsed timed cues; the sentence exists as untimed raw VTT text",
+        "vttOnlyText": "",
+        "normalizedNarrationCharRange": [
+          7388,
+          7496
+        ],
+        "status": "UNTIMED_ORPHAN_VTT_PARAGRAPH_NOT_AUDIO_OMISSION",
+        "action": "Keep complete original narration; parent must inspect original audio in stated window. Do not synthesize replacement audio/captions.",
+        "precedingCaption": {
+          "start": 525.8,
+          "end": 539.821,
+          "text": "Eine Begleitperson meint: „Wir haben feste Schuhe und ein Handy, los geht's.“"
+        },
+        "candidateAudioVerificationWindowSeconds": [
+          525.8,
+          549.923
+        ],
+        "followingCaption": {
+          "start": 539.821,
+          "end": 549.923,
+          "text": "Das Team bleibt außerhalb des Maschinenbereichs, meldet Hindernisse und wartet auf einen sicheren, mit der Lehrkraft vereinbarten Weg."
+        }
+      }
+    ],
+    "observedWordTimingFilesInExplicitSelectedScope": [],
+    "fineNativeSynchronizationReady": false,
+    "nextTimingAction": "Derive bounded actual-recording word/phrase timing for these exact unchanged WAVs; preserve complete source text and repair any untimed caption paragraphs. Do not scale Arabic timings or reuse proportional sentence estimates as acoustic anchors."
+  },
+  "legacyVideo": {
+    "file": {
+      "path": "Deliverables/S1-01-complete-review-20261019/app/public/media/de/lesson.mp4",
+      "sha256": "5ee16cd4381660a8e760bb46e38612e2f25b810009f0b1e8a0274fb8def73c1a",
+      "bytes": 64948222
+    },
+    "disposition": "LEGACY_REFERENCE_NOT_COMPLETED_CURRENT_NATIVE_VIDEO",
+    "nativeReplacementRenderState": {
+      "path": "Private/soil-rebuild-20261014/delivery-20261020/localized-renders/de/HOLD.private.json",
+      "sha256": "c1e155b119a846e8bba4df4233188e08d78ba2ae9478d48ae3f42c96a636559d",
+      "bytes": 544
+    },
+    "state": "NOT_LAUNCHED_OWNER_FEEDBACK_HOLD",
+    "selectedAsCurrentNativeVideo": false
+  },
+  "currentNarrationPlan": {
+    "path": "Deliverables/Animated-full-step-S1-01-20261020/narration/de.json",
+    "sha256": "04a76b9dd4797b531a6d9792a00ec4b80d25b81a9a8355be5cb841847e8bad8f",
+    "bytes": 15104
+  }
+}

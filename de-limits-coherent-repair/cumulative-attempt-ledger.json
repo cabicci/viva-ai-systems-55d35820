@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "unitId": "de-s101-limits",
+  "atUTC": "2026-10-22T12:50:30.338174+00:00",
+  "originalRecording": {
+    "wavSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+    "historicalTTSCalls": "UNKNOWN_NOT_INFERRED_FROM_FILENAME",
+    "originalActualASRTimingCallsKnown": 1
+  },
+  "priorEvidence": [
+    {
+      "runId": 39771662640,
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\request.json",
+      "requestSha256": "478efe48e871c70f4ea5abecf248ab982128d50c6ae0a21c3b409add9a260d50",
+      "deLimitsCallsSpent": {
+        "tts": 2,
+        "blindReview": 2,
+        "asr": 2
+      },
+      "priorFiniteScope": "EXHAUSTED_OR_TERMINAL_NOT_REUSED",
+      "diagnosis": "Two DE source-sentence pickups accurate, joined continuity not established"
+    },
+    {
+      "runId": 39768575970,
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\request.json",
+      "requestSha256": "645bbb864eb252d72d6b61ebfba200e1dd4c5ffa73fc085cec3b80720b8a3d9d",
+      "deLimitsCallsSpent": {
+        "tts": 0,
+        "blindReview": 1,
+        "asr": 0
+      },
+      "priorFiniteScope": "EXHAUSTED_OR_TERMINAL_NOT_REUSED",
+      "diagnosis": "Original Schwinge/Lies errors corroborated"
+    },
+    {
+      "runId": 39773995439,
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\join-audition-public-r1\\request.json",
+      "requestSha256": "cb21e666348fcc95a5ee18e7c293a24caab8d6cf9c141dc3fb368b8f0a4bdeec",
+      "deLimitsCallsSpent": {
+        "tts": 0,
+        "blindReview": 1,
+        "asr": 1
+      },
+      "priorFiniteScope": "EXHAUSTED_OR_TERMINAL_NOT_REUSED",
+      "diagnosis": "Four joined voice/breath concerns held"
+    },
+    {
+      "runId": 39777519141,
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\de-join-measure-public-r1\\request.json",
+      "requestSha256": "f42c8bbc193e5db1cb4e623bd00c7be52c3294aeeb1ff0bee3d3679a5c52dc5d",
+      "deLimitsCallsSpent": {
+        "tts": 0,
+        "blindReview": 0,
+        "asr": 0
+      },
+      "priorFiniteScope": "EXHAUSTED_OR_TERMINAL_NOT_REUSED",
+      "diagnosis": "Numeric evidence rejects gain/EQ"
+    },
+    {
+      "runId": 39779556097,
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\de-boundary-audition-r2\\request.json",
+      "requestSha256": "182a0a22d6f267e9ecba24f242cbf47255b2be4c01b57c1e7d8a831f34a3f7a1",
+      "deLimitsCallsSpent": {
+        "tts": 0,
+        "blindReview": 1,
+        "asr": 1
+      },
+      "priorFiniteScope": "EXHAUSTED_OR_TERMINAL_NOT_REUSED",
+      "diagnosis": "Held; model narrative about unchanged inner contexts conflicts with exact PCM"
+    },
+    {
+      "evidencePath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\review-r1\\review.json",
+      "sha256": "0328d89b86eb3492894b509d44309647f5c335e2877b7b70f48853ac659ce7d6"
+    },
+    {
+      "evidencePath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\measure39777519141\\review-r1\\review.json",
+      "sha256": "385e1a14616671b860acd5fbc8975a297699a0cd75cd900e4a8b21c41df71ee2"
+    },
+    {
+      "evidencePath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\deboundary39779556097\\review-r1\\review.json",
+      "sha256": "29e3a319bb1bb3365bc795a77413ac9682f4f7cfe213c777a20bf792980ed1e9"
+    },
+    {
+      "evidencePath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\review-r1\\review.json",
+      "sha256": "0b0a5fa293c0d75d0733fa8e787389e7a07df5a2a438156614f2e0447193653c"
+    }
+  ],
+  "verifiedPostOriginalDELimitsCallsSpent": {
+    "tts": 2,
+    "blindReview": 5,
+    "asr": 4
+  },
+  "plusOriginalActualASRCallsKnown": 1,
+  "historicalCallsOutsideEnumeratedEvidence": "UNKNOWN_NOT_CLAIMED_ZERO",
+  "newDiagnosis": "Two demonstrated source-pronunciation errors; accurate short pickups do not establish coherent voice continuity after two held joined auditions. Numeric results do not justify gain/EQ; no further boundary loop. One complete held-scene recording is the concrete newly bounded repair.",
+  "newBudget": {
+    "tts": 1,
+    "blindReview": 1,
+    "asr": 1,
+    "metadataGET": 2,
+    "automaticRetries": 0,
+    "automaticReruns": 0
+  },
+  "newBudgetState": "PREPARED_NOT_RESERVED_NOT_EXECUTED",
+  "priorBudgetReused": false,
+  "existingFiniteGlobalRestrictionFound": false,
+  "restrictionAuditScope": "Known relevant frozen request and owner-authority records. Prior zero-TTS restrictions applied to diagnostic/measurement/boundary job scopes, not a perpetual prohibition. Latest delegated root task authorizes preparation of a new one-scene budget; root review/publication before calls.",
+  "otherNineGermanScenesReusedUnchanged": true,
+  "humanListeningApproved": false
+}

@@ -1,0 +1,291 @@
+{
+  "atUTC": "2026-10-22T12:50:30.338174+00:00",
+  "identity": {
+    "spokenTextSha256": "250687db8f56ef0079172868fa0d1e5231d41d1a6042725bac9dbd358cbc319e",
+    "deliverySha256": "cf857fd7f1fd7c1d27923d2a05132fba367bab28d4e55428b97a1c047eec4b48",
+    "locale": "de",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Kore",
+    "format": "pcm-s16le-24000-mono-v1"
+  },
+  "checkedRelevantRequestPackages": [
+    {
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\request.json",
+      "requestSha256": "645bbb864eb252d72d6b61ebfba200e1dd4c5ffa73fc085cec3b80720b8a3d9d",
+      "unitId": "de-s101-limits",
+      "fullSpokenTextMatches": false,
+      "exactRequestIdentityMatches": false,
+      "model": "gemini-4-argon",
+      "voice": null,
+      "scope": "S1_01_SIX_EXISTING_WAV_FOCUSED_DIAGNOSTICS_R2_ONLY"
+    },
+    {
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\request.json",
+      "requestSha256": "478efe48e871c70f4ea5abecf248ab982128d50c6ae0a21c3b409add9a260d50",
+      "unitId": "de-s101-limits-bounded-sentence-1",
+      "fullSpokenTextMatches": false,
+      "exactRequestIdentityMatches": false,
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Kore",
+      "scope": "S1_01_THREE_CORROBORATED_SOURCE_SENTENCE_REPAIRS_ONLY"
+    },
+    {
+      "requestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\request.json",
+      "requestSha256": "478efe48e871c70f4ea5abecf248ab982128d50c6ae0a21c3b409add9a260d50",
+      "unitId": "de-s101-limits-bounded-sentence-2",
+      "fullSpokenTextMatches": false,
+      "exactRequestIdentityMatches": false,
+      "model": "gemini-3.8-flash-tts",
+      "voice": "Kore",
+      "scope": "S1_01_THREE_CORROBORATED_SOURCE_SENTENCE_REPAIRS_ONLY"
+    }
+  ],
+  "pilotCacheJsonFilesInspected": 25,
+  "originalCacheEvidence": [
+    {
+      "path": "\\\\?\\D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-attempts\\6fb9d39c00d36f39e97b30dd3495c0e85d03a26692eb9068492afc643f1c96d3-c7ecf069eefeb1c38be93bffc34b650d41acb3726cc522093e338e67c7a3f461.json",
+      "sha256": "c4c79f94b17eb4b33ce639fa41ce2e981e9466c77aef4d477ad51e8b3f0e7487"
+    },
+    {
+      "path": "\\\\?\\D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\bf098fedbe52513c7dd3f51598bb3778863170eb1a90c326eb701f9919d09f22.json",
+      "sha256": "9f62dc72e4561d386b6e7bb8f2b55f57d9d665698550c1e5179c1d91c1252b11"
+    }
+  ],
+  "originalCacheWav": {
+    "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+    "disposition": "PRESERVE_NOT_MATCHING_LATEST_MODEL_DELIVERY_AND_HAS_CORROBORATED_SOURCE_ERRORS"
+  },
+  "exactReusableCandidateFound": false,
+  "latest25Runs": [
+    {
+      "id": 39781605953,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39780921320,
+      "head_sha": "2ded02d8d38b368dbc3ef2b07d74c88bf5d16a0e",
+      "head_branch": "work/soil-s101-it-assembly-20261022-r1",
+      "status": "in_progress",
+      "conclusion": null,
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39779556097,
+      "head_sha": "e89dcb74d5e814abc3698f65b22d7470f03c937a",
+      "head_branch": "work/soil-s101-de-boundary-audition-20261022-r2",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39777519141,
+      "head_sha": "b826ef3d7043f16df635aa4859d54cbe4ce6a2cd",
+      "head_branch": "work/soil-s101-de-join-measure-20261022-r1",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39777511659,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39774650122,
+      "head_sha": "c9c0e3a6b7829a72618e35e729044a195227bb85",
+      "head_branch": "work/soil-s105-opening-assembly-20261022-r2",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39774376547,
+      "head_sha": "66c11e28e107792f2aced5a563f3880b5b210f68",
+      "head_branch": "work/soil-s105-opening-assembly-20261022-r1",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39773997918,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39773995439,
+      "head_sha": "da4a7945025cb894a10f2734e2e36a9178bc01a2",
+      "head_branch": "work/soil-s101-repair-join-audition-20261022-r1",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39772649701,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39771662640,
+      "head_sha": "bd4016d6a2acac3437beb94b41fe44cd46e5e22a",
+      "head_branch": "work/soil-s101-targeted-sentence-repair-20261022-r1",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39770868975,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39770745592,
+      "head_sha": "d316ac53e33cd1b11baf765a6a1de2c6831aa126",
+      "head_branch": "work/soil-s317-narration-20261022-r2",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39768797351,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39768575970,
+      "head_sha": "aab1736525b4715a4db7cb45534595239154129b",
+      "head_branch": "work/soil-s101-locale-focused-review-20261022-r2",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39766613952,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39765481281,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "workflow_run",
+      "run_attempt": 1
+    },
+    {
+      "id": 39765298266,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "event": "schedule",
+      "run_attempt": 1
+    },
+    {
+      "id": 39764893697,
+      "head_sha": "c32a50256c6a86f1f76209a05995710a13dedb6a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "run_attempt": 1
+    },
+    {
+      "id": 39764049733,
+      "head_sha": "cdcac640fb030ad6f1be10157c81374bde35c28d",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "pull_request",
+      "run_attempt": 1
+    },
+    {
+      "id": 39764049713,
+      "head_sha": "cdcac640fb030ad6f1be10157c81374bde35c28d",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "pull_request",
+      "run_attempt": 1
+    },
+    {
+      "id": 39764049703,
+      "head_sha": "cdcac640fb030ad6f1be10157c81374bde35c28d",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "skipped",
+      "event": "pull_request",
+      "run_attempt": 1
+    },
+    {
+      "id": 39763741415,
+      "head_sha": "495c6b558f7ae5b82c68389f2a7dce6a458637c3",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "event": "pull_request",
+      "run_attempt": 1
+    },
+    {
+      "id": 39763741393,
+      "head_sha": "495c6b558f7ae5b82c68389f2a7dce6a458637c3",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "event": "pull_request",
+      "run_attempt": 1
+    },
+    {
+      "id": 39763741373,
+      "head_sha": "495c6b558f7ae5b82c68389f2a7dce6a458637c3",
+      "head_branch": "work/masaarat/e9760456a6feaa69fc72f319",
+      "status": "completed",
+      "conclusion": "skipped",
+      "event": "pull_request",
+      "run_attempt": 1
+    }
+  ],
+  "newBranch": "work/soil-s101-de-limits-coherent-repair-20261022-r1",
+  "newBranchAbsent": true,
+  "newBranchPriorRunCount": 0,
+  "limitations": "Bounded known cache/package and latest-25-run audit, not exhaustive remote history. Publisher must recheck branch absence and zero runs before one create-only push. No provider endpoint called.",
+  "cacheIdentityLimitation": "Historical cache evidence inspected by exact original WAV hash; old entries do not prove the new full-text/model/voice/delivery identity. Existing originals and all prior outputs preserved."
+}

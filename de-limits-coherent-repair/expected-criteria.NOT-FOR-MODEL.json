@@ -1,0 +1,43 @@
+{
+  "unitId": "de-s101-limits-coherent-full-scene-r1",
+  "sourceText": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.\n\nTrage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.\n\nLies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+  "sourceTextSha256": "250687db8f56ef0079172868fa0d1e5231d41d1a6042725bac9dbd358cbc319e",
+  "diagnosedOriginalWords": [
+    "Schwinge",
+    "Lies"
+  ],
+  "preserveEverySourceWord": true,
+  "criticalContent": [
+    "Bediene keine Maschine",
+    "Ausbildung, Erlaubnis und geeignete Aufsicht",
+    "Melde Mängel",
+    "beschädigte Werkzeuge nicht",
+    "Spitze oder Schneide nach unten und von Menschen weg",
+    "Schwinge es nicht",
+    "nicht nahe anderen auf der Schulter",
+    "nicht in Laufwege",
+    "die Probe nicht zu verunreinigen",
+    "Lies vor dem Umgang",
+    "Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien",
+    "Etikett und aktuelles Sicherheitsdatenblatt, SDS",
+    "MSDS",
+    "Schutzmaßnahmen und Notfallinformationen",
+    "nichts Verlässliches über chemische Gefahren"
+  ],
+  "sameRoleReference": {
+    "path": "originals/de-s101-limits.wav",
+    "wavSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+    "knownOriginalContentErrors": [
+      "Schwinge",
+      "Lies"
+    ],
+    "use": "Voice/context comparison; original is not a trustworthy transcript or pronunciation template for diagnosed words."
+  },
+  "evaluationAfterBlindOutputsOnly": [
+    "Full new transcript vs exact unchanged source; all safety negations and qualifications",
+    "Actual whole-passage fluency, clipping, repetitions and consistency",
+    "Actual same-role voice comparison with original; retain timbre uncertainty",
+    "No human listening claim or automatic adoption; root reviews before fresh measured timing/rendering"
+  ],
+  "notFedToReviewOrASR": true
+}
