@@ -1,0 +1,25 @@
+{
+  "scope": "S1-05_EN001_OPENING_ONLY",
+  "unitId": "S1-05-en-r1-001",
+  "fps": 30,
+  "frames": 1556,
+  "sampleCount": 1244160,
+  "sourcePcmSha256": "edb7a01daf66da7b09a913d98a55615130c715bba51904005a2d17d0d039382f",
+  "sourceFrameQA": "ROOT_VISUAL_QA_PASS",
+  "providerCalls": 0,
+  "automaticRetries": 0,
+  "inputs": {
+    "voice.wav": {
+      "sha256": "0c90ddc4fc3bafdee675a7dd7ee99419bc44e1ed2e948fbadde4812e7f082f8f",
+      "bytes": 2494438
+    },
+    "video.ivf": {
+      "sha256": "0e4b57f33a78f0c12f3383457dec5af6113ef516a73cdfd93b63bb26a4f07d39",
+      "bytes": 1539541
+    }
+  },
+  "sourceVisualReceiptSha256": "b8d89dee455cdc9ec0e82acf2e68c70f72083ba3dc05ea3104e4bc4bafb9ce5f",
+  "sourceEncodeReceiptSha256": "716a881fbff28c823999dbb1c6881120bbb4d3b23226d940e57914f4afa87e68",
+  "completeLesson": false,
+  "usesOriginalPcm": true
+}
