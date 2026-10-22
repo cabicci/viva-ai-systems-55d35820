@@ -1,0 +1,14 @@
+{
+  "status": "MEASURE_FIRST_NUMERIC_JUSTIFICATION_REQUIRED",
+  "knownIssue": "Actual joined-audio reviewer reports breath discontinuity near first/last joins and brighter/louder pickups. Words and negations are intact. Earlier isolated-pair optimism does not override actual-join evidence.",
+  "candidateCorrection": "Candidate-only uniform gain if supported by shared-word RMS/peak measurements; propose original pause-boundary intervals from contextual waveform traces. No gain/cut selected in this preparation.",
+  "rootWillReview": [
+    "raw per-frame and per-word measurements",
+    "numeric gain delta and headroom limit",
+    "complete neighboring-word/gap context and breath uncertainty",
+    "whether any non-speech boundary can be justified",
+    "actual corrected join audition before adoption"
+  ],
+  "ifUnresolved": "Keep DE scene held; no automatic TTS, repeated generic review, EQ or trimming of accepted syllables.",
+  "gainCannotGuarantee": "Matching RMS does not establish matching timbre, brightness or prosody. Those remain an explicit limitation requiring actual listening of any later corrected preview."
+}

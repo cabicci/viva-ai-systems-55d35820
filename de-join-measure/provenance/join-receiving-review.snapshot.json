@@ -1,0 +1,245 @@
+{
+  "runId": 39773995439,
+  "commit": "da4a7945025cb894a10f2734e2e36a9178bc01a2",
+  "request": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\join-audition-public-r1\\request.json",
+    "sha256": "cb21e666348fcc95a5ee18e7c293a24caab8d6cf9c141dc3fb368b8f0a4bdeec"
+  },
+  "worker": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\join-audition-public-r1\\worker.py",
+    "sha256": "4c6f5b068a9212c549273c04f81697f856f3d100fd70ceabd58100f7ac2fc9fd"
+  },
+  "intake": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\intake.json",
+    "sha256": "5a13f0d7764325d5ba306972be0b764986bdbf2ba3f4389383af49ee68f0f574"
+  },
+  "scenes": [
+    {
+      "sceneId": "en-s101-checklist",
+      "wav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u1-review\\audition.wav",
+        "sha256": "dd58d92e4e4aa7d6368c02b99fe0f1c32e843c2be94a6028456aecdefe28866d"
+      },
+      "pcmSha256": "6d5e53202d8e30fea8cbf5a070752a7b14bef28ce283552800060fb7132605b0",
+      "sampleCount": 1816823,
+      "durationSeconds": 75.70095833333333,
+      "spliceLedger": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u1-review\\splice-ledger.json",
+        "sha256": "2968cc55fbb5ce3799416d60aaa3f1b5cce8323f1d7c9559047492a7e6f73377"
+      },
+      "allOutsideOriginalAndAllNewPcmVerified": true,
+      "blindReview": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u1-review\\blind-review.json",
+        "sha256": "e59dfe8b4a7dda2e5a2d727d9aec4facea33c737c4b27fbf4a61394b41813834"
+      },
+      "rawBlindResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u1-review\\blind-review-response.raw.json",
+        "sha256": "467254fe2f65a1065759c764527254a4dbb661025a898d1b803043dc24bbf46a"
+      },
+      "actualASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u1-review\\asr-word-timestamps.json",
+        "sha256": "ec2ec6d0e45584b15ffc10f2d68361582e842abfa1a3ff90aea98aaa6269a61b"
+      },
+      "rawModelResult": {
+        "transcript": "Build a five-point checklist rather than a list of equipment names. First, the site and route are safe, with permission and utility clearance. Second, tools are sound, clean, and carried safely. Third, protection matches the task and any chemical information. Fourth, the supervisor knows the location and return time, and the buddy and communication arrangements are clear. Fifth, emergency contacts, access, meeting point, water, and weather precautions are known. For each point, state what would make you stop. Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan, or a moving machine blocking the route. Report the problem and wait for a safe arrangement. Ticking a box does not resolve a hazard. Preparation, awareness, and limits reduce the chance of making a bad situation worse. Completing this step does not qualify you as a first aider or certify your physical performance. Your trainer observes the practical task separately.",
+        "joinWindowTranscripts": [
+          {
+            "joinTimeSeconds": 41.56,
+            "windowStartSeconds": 39.56,
+            "windowEndSeconds": 43.56,
+            "heardText": "state what would make you stop. Examples include uncertain"
+          },
+          {
+            "joinTimeSeconds": 52.8,
+            "windowStartSeconds": 50.8,
+            "windowEndSeconds": 54.8,
+            "heardText": "moving machine blocking the route. Report the problem"
+          }
+        ],
+        "joinAssessments": [
+          {
+            "joinTimeSeconds": 41.56,
+            "status": "no_defect_detected",
+            "observations": "The splice occurs cleanly in the pause between the complete utterance 'For each point, state what would make you stop.' and the following utterance 'Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan, or a moving machine blocking the route.' Both the final stop release on 'stop' and the initial vowel onset on 'Examples' are intact, with no clicks, clipping, or repetitions.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "Inter-sentence pause duration (~0.4 seconds) is natural and matches the pacing of the original recording. Voice timbre, pitch, and level remain consistent across the transition."
+          },
+          {
+            "joinTimeSeconds": 52.8,
+            "status": "no_defect_detected",
+            "observations": "The splice occurs cleanly within the silence following 'or a moving machine blocking the route.' and preceding 'Report the problem and wait for a safe arrangement.' The final /t/ release on 'route' and the initial onset of 'Report' are fully intact with no audible splice artifacts, double pauses, or abrupt transitions.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "The sentence-boundary pause (~0.8 seconds) is natural and prosodically appropriate. Voice quality, level, and acoustic environment match the surrounding original material."
+          }
+        ],
+        "findings": [],
+        "overall": "no_defect_detected",
+        "voiceContinuity": "Voice characteristics—including pitch, timbre, cadence, loudness, and background room tone—remain consistent throughout the first recording, including the spliced segment between 41.56s and 52.8s where 'moving machine' replaces 'machine' from the second reference WAV.",
+        "limitations": "This assessment is generated by an automated audio analysis model and does not constitute human listening verification or formal speaker identity certification. Subtle sub-threshold spectral differences that do not affect perceived continuity or intelligibility may remain subject to human editorial review."
+      },
+      "rootDisposition": "ROOT_APPROVED_INTERNALLY_FOR_MEASURED_TIMING_CAPTURE_AFTER_COMPLETE_SOURCE_ASR_AUDIT",
+      "humanListeningApproval": false,
+      "priorOriginalAndCandidateRawWavsPreserved": true,
+      "extraTTSOrGenericReviewAuthorized": false
+    },
+    {
+      "sceneId": "de-s101-limits",
+      "wav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u2-review\\audition.wav",
+        "sha256": "b2d7d42c893631e158d32c712a01075946fb613964eae6ef5d426c0632ad14cc"
+      },
+      "pcmSha256": "b54e128a5e5c1d9009764fdff59d6e91508b5308a742dcbcbfe2351defa95a70",
+      "sampleCount": 1658663,
+      "durationSeconds": 69.11095833333333,
+      "spliceLedger": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u2-review\\splice-ledger.json",
+        "sha256": "648fbd91aead51f060acd37d84d96bbdfe9cd97a59da77a1794b7700ac2b80ce"
+      },
+      "allOutsideOriginalAndAllNewPcmVerified": true,
+      "blindReview": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u2-review\\blind-review.json",
+        "sha256": "11843d9d1516f5e3a4e15fbce5c5cce607e0de2f40045d2ba1d4d4b183ab3822"
+      },
+      "rawBlindResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u2-review\\blind-review-response.raw.json",
+        "sha256": "54c3ccf3cbd3eeb2f88a1c563fb62056bccbf48f9bcc752dc6c286a883321430"
+      },
+      "actualASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\join39773995439\\u2-review\\asr-word-timestamps.json",
+        "sha256": "170dce5342f12db8017d6e87345ef72982dc02b931a4c66a9710ae44377f4a51"
+      },
+      "rawModelResult": {
+        "transcript": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht. Trage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg. Halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+        "joinWindowTranscripts": [
+          {
+            "joinTimeSeconds": 30.05,
+            "windowStartSeconds": 28.05,
+            "windowEndSeconds": 32.05,
+            "transcript": "führung für das jeweilige Werkzeug. Schwinge es nicht, trage"
+          },
+          {
+            "joinTimeSeconds": 36.13,
+            "windowStartSeconds": 34.13,
+            "windowEndSeconds": 38.13,
+            "transcript": "und lege es nicht in Laufwege. Saubere Werkzeuge und"
+          },
+          {
+            "joinTimeSeconds": 42.95,
+            "windowStartSeconds": 40.95,
+            "windowEndSeconds": 44.95,
+            "transcript": "die Probe nicht zu verunreinigen. Lies vor dem Umgang mit Dünger,"
+          },
+          {
+            "joinTimeSeconds": 53.07,
+            "windowStartSeconds": 51.07,
+            "windowEndSeconds": 55.07,
+            "transcript": "Sicherheitsdatenblatt, SDS. Ältere Unterlagen können"
+          }
+        ],
+        "joinAssessments": [
+          {
+            "joinTimeSeconds": 30.05,
+            "status": "needs_review",
+            "observations": "An inhalation begins after 'Werkzeug' around 29.85s and is abruptly cut/joined at 30.05s into another breath right before 'Schwinge es nicht', creating a noticeable clipped/double-breath artifact. In addition, the inserted pickup segment starting at 30.05s has a slightly brighter, more forward vocal timbre and firmer prosody than the preceding utterance.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "Inter-sentence pause contains an audible breath splice at 30.05s; vocal timbre and presence shift noticeably on the following utterance."
+          },
+          {
+            "joinTimeSeconds": 36.13,
+            "status": "needs_review",
+            "observations": "The transition from the inserted pickup ('...in Laufwege.') back to the original recording ('Saubere Werkzeuge...') occurs in the pause prior to the speaker's inhalation. Word boundaries on both sides are intact, but there is a noticeable shift in vocal timbre and acoustic presence back to the softer original recording.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "Pause duration is natural, with a slight room-tone/breath transition at 36.13s and a shift from the brighter pickup voice back to the softer baseline voice."
+          },
+          {
+            "joinTimeSeconds": 42.95,
+            "status": "needs_review",
+            "observations": "Following '...nicht zu verunreinigen.', the splice at 42.95s transitions into a pickup take ('Lies vor dem Umgang...'). While no syllables are clipped, there is an abrupt increase in vocal level, brightness, and prosodic energy starting immediately after the splice.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "Pause timing is acceptable, but vocal loudness, brightness, and projection jump noticeably on the right side of the cut."
+          },
+          {
+            "joinTimeSeconds": 53.07,
+            "status": "needs_review",
+            "observations": "After '...Sicherheitsdatenblatt, SDS.', there is an audible edit transient/clipped breath artifact at 53.07s just before 'Ältere Unterlagen...', accompanied by an abrupt drop in vocal level, brightness, and energy as the audio returns from the louder pickup take to the softer original recording.",
+            "leftSpeechIntact": true,
+            "rightSpeechIntact": true,
+            "pauseAndVoice": "Audible breath/room-tone discontinuity at 53.07s and an abrupt drop in vocal loudness and timbre back to the baseline recording."
+          }
+        ],
+        "findings": [
+          {
+            "startSeconds": 29.8,
+            "endSeconds": 30.4,
+            "heardText": "Werkzeug. Schwinge",
+            "issueType": "breath_cut_and_timbre_shift",
+            "observation": "A breath starting after 'Werkzeug' is abruptly cut at 30.05s into the pickup take's breath before 'Schwinge', accompanied by a shift to a slightly brighter, firmer vocal delivery.",
+            "certainty": "high"
+          },
+          {
+            "startSeconds": 35.7,
+            "endSeconds": 36.8,
+            "heardText": "Laufwege. Saubere",
+            "issueType": "timbre_and_presence_shift",
+            "observation": "At 36.13s the audio transitions from the pickup segment back to the original recording, resulting in a subtle shift in vocal timbre and proximity between 'Laufwege.' and 'Saubere'.",
+            "certainty": "medium"
+          },
+          {
+            "startSeconds": 42.5,
+            "endSeconds": 44.0,
+            "heardText": "verunreinigen. Lies vor dem",
+            "issueType": "abrupt_level_timbre_prosody_change",
+            "observation": "Across the splice at 42.95s, the inserted take beginning with 'Lies vor dem Umgang...' is noticeably louder, brighter, and more forcefully projected than the preceding utterance.",
+            "certainty": "high"
+          },
+          {
+            "startSeconds": 52.5,
+            "endSeconds": 54.0,
+            "heardText": "SDS. Ältere Unterlagen",
+            "issueType": "splice_artifact_and_level_drop",
+            "observation": "At 53.07s there is an audible edit artifact / clipped breath noise in the pause before 'Ältere Unterlagen', followed by an immediate drop in vocal level and brightness back to the original take.",
+            "certainty": "high"
+          }
+        ],
+        "overall": "needs_review",
+        "voiceContinuity": "The recording appears to be spoken by the same voice throughout, but the two spliced-in pickup segments (30.05s–36.13s and especially 42.95s–53.07s) exhibit noticeable differences in vocal level, brightness/EQ, and prosodic energy compared to the surrounding baseline recording.",
+        "limitations": "Automated model-based acoustic analysis without human listening certification or biometric speaker verification; subtle room-tone and breath-edit judgments near low-energy boundaries retain inherent uncertainty."
+      },
+      "rootDisposition": "HELD_NOT_ADOPTED_BREATH_LEVEL_TIMBRE_JOIN_ISSUES_REQUIRE_CONCRETE_CORRECTION",
+      "humanListeningApproval": false,
+      "priorOriginalAndCandidateRawWavsPreserved": true,
+      "extraTTSOrGenericReviewAuthorized": false
+    }
+  ],
+  "actualBudgetUsed": {
+    "joinReviews": 2,
+    "asr": 2,
+    "metadataGET": 1,
+    "tts": 0,
+    "automaticRetries": 0
+  },
+  "checks": [
+    "complete request.json exact frozen input",
+    "complete worker.py exact frozen input",
+    "complete freeze.json exact frozen input",
+    "complete runtime.json exact frozen input",
+    "en-s101-checklist all complete duplicates equal incremental outputs",
+    "en-s101-checklist actual blind transcript complete exact science/negations",
+    "en-s101-checklist actual diagnostics valid timestamp ranges",
+    "en-s101-checklist one actual review and ASR",
+    "de-s101-limits all complete duplicates equal incremental outputs",
+    "de-s101-limits actual blind transcript complete exact science/negations",
+    "de-s101-limits actual diagnostics valid timestamp ranges",
+    "de-s101-limits one actual review and ASR"
+  ],
+  "count": 12,
+  "providerCallsByReceivingReview": 0,
+  "audioEditsByReceivingReview": 0,
+  "humanListeningClaimed": false,
+  "deAudioAdoptionApproved": false
+}

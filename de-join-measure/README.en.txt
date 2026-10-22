@@ -1,0 +1,1 @@
+One bounded numeric measurement and proposal pass on Actions; zero TTS, ASR, review or other network calls by worker. Three immutable 24k mono16 input WAVs. No audio output or accepted PCM modification. Upload measurements before deriving conditional candidate-only gain proposals. Boundaries remain unresolved hypotheses until root acoustic review.

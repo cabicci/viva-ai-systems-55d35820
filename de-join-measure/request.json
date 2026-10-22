@@ -1,0 +1,748 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_DE_TWO_PICKUP_NUMERIC_GAIN_AND_BOUNDARY_MEASUREMENT_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "branch": "refs/heads/work/soil-s101-de-join-measure-20261022-r1",
+  "inputs": [
+    {
+      "id": "original",
+      "path": "inputs/original.wav",
+      "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc",
+      "sampleCount": 1662023
+    },
+    {
+      "id": "candidate-1",
+      "path": "inputs/candidate-1.wav",
+      "sha256": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4",
+      "pcmSha256": "a6c9c908aa5d0198baef21d9a5dca2d17b5f82cb115468b8dc914e51f8066424",
+      "sampleCount": 145920
+    },
+    {
+      "id": "candidate-2",
+      "path": "inputs/candidate-2.wav",
+      "sha256": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac",
+      "pcmSha256": "bc920880d8efb623844e33339f3a1b62022e11f0b42bd0c12cfc067c65607cac",
+      "sampleCount": 242880
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-1",
+      "originalRepairId": "de-s101-limits-bounded-sentence-1",
+      "exactSpokenText": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "matchingLexicalWordPairs": [
+        {
+          "originalWord": {
+            "actualWordIndex": 54,
+            "segmentId": 8,
+            "wordIndexInSegment": 1,
+            "word": " es",
+            "start": 30.76,
+            "end": 30.98,
+            "probability": 0.9857584238052368
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 1,
+            "word": " es",
+            "start": 0.7,
+            "end": 0.84,
+            "probability": 0.9906405210494995,
+            "actualWordIndex": 1
+          },
+          "sameNormalizedLexicalValue": "es"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 55,
+            "segmentId": 8,
+            "wordIndexInSegment": 2,
+            "word": " nicht,",
+            "start": 30.98,
+            "end": 31.22,
+            "probability": 0.9983774423599243
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 2,
+            "word": " nicht,",
+            "start": 0.84,
+            "end": 1.1,
+            "probability": 0.9968441724777222,
+            "actualWordIndex": 2
+          },
+          "sameNormalizedLexicalValue": "nicht"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 56,
+            "segmentId": 8,
+            "wordIndexInSegment": 3,
+            "word": " trage",
+            "start": 31.62,
+            "end": 31.88,
+            "probability": 0.9875532388687134
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 3,
+            "word": " trage",
+            "start": 1.48,
+            "end": 1.82,
+            "probability": 0.9881978332996368,
+            "actualWordIndex": 3
+          },
+          "sameNormalizedLexicalValue": "trage"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 57,
+            "segmentId": 8,
+            "wordIndexInSegment": 4,
+            "word": " es",
+            "start": 31.88,
+            "end": 32.04,
+            "probability": 0.9990100860595703
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 4,
+            "word": " es",
+            "start": 1.82,
+            "end": 1.94,
+            "probability": 0.9982125759124756,
+            "actualWordIndex": 4
+          },
+          "sameNormalizedLexicalValue": "es"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 58,
+            "segmentId": 8,
+            "wordIndexInSegment": 5,
+            "word": " nicht",
+            "start": 32.04,
+            "end": 32.24,
+            "probability": 0.9966965913772583
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 5,
+            "word": " nicht",
+            "start": 1.94,
+            "end": 2.14,
+            "probability": 0.9911666512489319,
+            "actualWordIndex": 5
+          },
+          "sameNormalizedLexicalValue": "nicht"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 59,
+            "segmentId": 8,
+            "wordIndexInSegment": 6,
+            "word": " nahe",
+            "start": 32.24,
+            "end": 32.64,
+            "probability": 0.9884548783302307
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 6,
+            "word": " nahe",
+            "start": 2.14,
+            "end": 2.58,
+            "probability": 0.9805222153663635,
+            "actualWordIndex": 6
+          },
+          "sameNormalizedLexicalValue": "nahe"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 60,
+            "segmentId": 8,
+            "wordIndexInSegment": 7,
+            "word": " anderen",
+            "start": 32.64,
+            "end": 33.0,
+            "probability": 0.9180758595466614
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 7,
+            "word": " anderen",
+            "start": 2.58,
+            "end": 2.88,
+            "probability": 0.8890053033828735,
+            "actualWordIndex": 7
+          },
+          "sameNormalizedLexicalValue": "anderen"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 61,
+            "segmentId": 8,
+            "wordIndexInSegment": 8,
+            "word": " auf",
+            "start": 33.0,
+            "end": 33.32,
+            "probability": 0.9976617097854614
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 8,
+            "word": " auf",
+            "start": 2.88,
+            "end": 3.16,
+            "probability": 0.9973297119140625,
+            "actualWordIndex": 8
+          },
+          "sameNormalizedLexicalValue": "auf"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 62,
+            "segmentId": 8,
+            "wordIndexInSegment": 9,
+            "word": " der",
+            "start": 33.32,
+            "end": 33.46,
+            "probability": 0.9968308806419373
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 9,
+            "word": " der",
+            "start": 3.16,
+            "end": 3.32,
+            "probability": 0.9936770796775818,
+            "actualWordIndex": 9
+          },
+          "sameNormalizedLexicalValue": "der"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 63,
+            "segmentId": 8,
+            "wordIndexInSegment": 10,
+            "word": " Schulter",
+            "start": 33.46,
+            "end": 33.88,
+            "probability": 0.9957538843154907
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 10,
+            "word": " Schulter",
+            "start": 3.32,
+            "end": 3.78,
+            "probability": 0.9935743510723114,
+            "actualWordIndex": 10
+          },
+          "sameNormalizedLexicalValue": "schulter"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 64,
+            "segmentId": 8,
+            "wordIndexInSegment": 11,
+            "word": " und",
+            "start": 33.88,
+            "end": 34.44,
+            "probability": 0.9278849363327026
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 11,
+            "word": " und",
+            "start": 3.78,
+            "end": 4.28,
+            "probability": 0.9453985095024109,
+            "actualWordIndex": 11
+          },
+          "sameNormalizedLexicalValue": "und"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 65,
+            "segmentId": 8,
+            "wordIndexInSegment": 12,
+            "word": " lege",
+            "start": 34.44,
+            "end": 34.7,
+            "probability": 0.9754607677459717
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 12,
+            "word": " lege",
+            "start": 4.28,
+            "end": 4.58,
+            "probability": 0.9814554154872894,
+            "actualWordIndex": 12
+          },
+          "sameNormalizedLexicalValue": "lege"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 66,
+            "segmentId": 8,
+            "wordIndexInSegment": 13,
+            "word": " es",
+            "start": 34.7,
+            "end": 34.92,
+            "probability": 0.9990936517715454
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 13,
+            "word": " es",
+            "start": 4.58,
+            "end": 4.72,
+            "probability": 0.9985098242759705,
+            "actualWordIndex": 13
+          },
+          "sameNormalizedLexicalValue": "es"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 67,
+            "segmentId": 8,
+            "wordIndexInSegment": 14,
+            "word": " nicht",
+            "start": 34.92,
+            "end": 35.1,
+            "probability": 0.9989954829216003
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 14,
+            "word": " nicht",
+            "start": 4.72,
+            "end": 4.96,
+            "probability": 0.9982099533081055,
+            "actualWordIndex": 14
+          },
+          "sameNormalizedLexicalValue": "nicht"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 68,
+            "segmentId": 8,
+            "wordIndexInSegment": 15,
+            "word": " in",
+            "start": 35.1,
+            "end": 35.34,
+            "probability": 0.9960869550704956
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 15,
+            "word": " in",
+            "start": 4.96,
+            "end": 5.16,
+            "probability": 0.9939391613006592,
+            "actualWordIndex": 15
+          },
+          "sameNormalizedLexicalValue": "in"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 69,
+            "segmentId": 8,
+            "wordIndexInSegment": 16,
+            "word": " Laufwege.",
+            "start": 35.34,
+            "end": 35.94,
+            "probability": 0.8796873688697815
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 16,
+            "word": " Laufwege.",
+            "start": 5.16,
+            "end": 5.7,
+            "probability": 0.8945510685443878,
+            "actualWordIndex": 16
+          },
+          "sameNormalizedLexicalValue": "laufwege"
+        }
+      ],
+      "originalSourceASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+        "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+      },
+      "candidateSourceASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\asr-word-timestamps.json",
+        "sha256": "57d92410a58cdf6d30713d87ccb9514a49090c21dc5aa61ca57ca494bc8eb0b9"
+      },
+      "originalSentenceWordIndices": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "originalBoundaryGapsSeconds": {
+        "start": [
+          29.78,
+          30.32
+        ],
+        "end": [
+          35.94,
+          36.7
+        ]
+      },
+      "previousOriginalCutSamples": [
+        721200,
+        871680
+      ],
+      "gainDbSelected": null,
+      "cutSamplesSelected": null,
+      "constraints": "Preserve every original sample outside the proposed sentence replacement and immutable raw candidate WAVs. Only a uniform candidate gain and original non-speech boundary hypotheses may be proposed. No EQ, time stretch, source-word changes or automatic adoption."
+    },
+    {
+      "id": "candidate-2",
+      "originalRepairId": "de-s101-limits-bounded-sentence-2",
+      "exactSpokenText": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "matchingLexicalWordPairs": [
+        {
+          "originalWord": {
+            "actualWordIndex": 84,
+            "segmentId": 10,
+            "wordIndexInSegment": 1,
+            "word": " vor",
+            "start": 43.86,
+            "end": 44.14,
+            "probability": 0.9890608787536621
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 1,
+            "word": " vor",
+            "start": 0.56,
+            "end": 0.82,
+            "probability": 0.9890503883361816,
+            "actualWordIndex": 1
+          },
+          "sameNormalizedLexicalValue": "vor"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 85,
+            "segmentId": 10,
+            "wordIndexInSegment": 2,
+            "word": " dem",
+            "start": 44.14,
+            "end": 44.28,
+            "probability": 0.9968599081039429
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 2,
+            "word": " dem",
+            "start": 0.82,
+            "end": 1.0,
+            "probability": 0.9934078454971313,
+            "actualWordIndex": 2
+          },
+          "sameNormalizedLexicalValue": "dem"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 86,
+            "segmentId": 10,
+            "wordIndexInSegment": 3,
+            "word": " Umgang",
+            "start": 44.28,
+            "end": 44.72,
+            "probability": 0.9919461905956268
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 3,
+            "word": " Umgang",
+            "start": 1.0,
+            "end": 1.46,
+            "probability": 0.9897691309452057,
+            "actualWordIndex": 3
+          },
+          "sameNormalizedLexicalValue": "umgang"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 87,
+            "segmentId": 10,
+            "wordIndexInSegment": 4,
+            "word": " mit",
+            "start": 44.72,
+            "end": 44.94,
+            "probability": 0.996807873249054
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 4,
+            "word": " mit",
+            "start": 1.46,
+            "end": 1.66,
+            "probability": 0.9965871572494507,
+            "actualWordIndex": 4
+          },
+          "sameNormalizedLexicalValue": "mit"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 88,
+            "segmentId": 10,
+            "wordIndexInSegment": 5,
+            "word": " Dünger,",
+            "start": 44.94,
+            "end": 45.32,
+            "probability": 0.9885198076566061
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 5,
+            "word": " Dünger,",
+            "start": 1.66,
+            "end": 2.12,
+            "probability": 0.98194952805837,
+            "actualWordIndex": 5
+          },
+          "sameNormalizedLexicalValue": "dünger"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 89,
+            "segmentId": 10,
+            "wordIndexInSegment": 6,
+            "word": " Pflanzenschutzmitteln,",
+            "start": 45.66,
+            "end": 46.66,
+            "probability": 0.9802485193525042
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 6,
+            "word": " Pflanzenschutzmitteln,",
+            "start": 2.42,
+            "end": 3.56,
+            "probability": 0.9885256290435791,
+            "actualWordIndex": 6
+          },
+          "sameNormalizedLexicalValue": "pflanzenschutzmitteln"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 90,
+            "segmentId": 10,
+            "wordIndexInSegment": 7,
+            "word": " Bodenverbesserern",
+            "start": 47.14,
+            "end": 48.12,
+            "probability": 0.9723513722419739
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 7,
+            "word": " Bodenverbesserern",
+            "start": 3.76,
+            "end": 4.76,
+            "probability": 0.9860022217035294,
+            "actualWordIndex": 7
+          },
+          "sameNormalizedLexicalValue": "bodenverbesserern"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 91,
+            "segmentId": 10,
+            "wordIndexInSegment": 8,
+            "word": " oder",
+            "start": 48.12,
+            "end": 48.38,
+            "probability": 0.976042628288269
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 8,
+            "word": " oder",
+            "start": 4.76,
+            "end": 5.0,
+            "probability": 0.9691193699836731,
+            "actualWordIndex": 8
+          },
+          "sameNormalizedLexicalValue": "oder"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 93,
+            "segmentId": 11,
+            "wordIndexInSegment": 0,
+            "word": " Etikett",
+            "start": 49.22,
+            "end": 50.22,
+            "probability": 0.8306991457939148
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 10,
+            "word": " Etikett",
+            "start": 6.22,
+            "end": 6.86,
+            "probability": 0.9411723613739014,
+            "actualWordIndex": 10
+          },
+          "sameNormalizedLexicalValue": "etikett"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 94,
+            "segmentId": 11,
+            "wordIndexInSegment": 1,
+            "word": " und",
+            "start": 50.22,
+            "end": 50.44,
+            "probability": 0.6297735571861267
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 11,
+            "word": " und",
+            "start": 6.86,
+            "end": 7.06,
+            "probability": 0.9029982089996338,
+            "actualWordIndex": 11
+          },
+          "sameNormalizedLexicalValue": "und"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 96,
+            "segmentId": 11,
+            "wordIndexInSegment": 3,
+            "word": " Sicherheitsdatenblatt,",
+            "start": 51.12,
+            "end": 52.22,
+            "probability": 0.9875348607699076
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 13,
+            "word": " Sicherheitsdatenblatt,",
+            "start": 7.62,
+            "end": 8.9,
+            "probability": 0.9850907723108927,
+            "actualWordIndex": 13
+          },
+          "sameNormalizedLexicalValue": "sicherheitsdatenblatt"
+        },
+        {
+          "originalWord": {
+            "actualWordIndex": 97,
+            "segmentId": 11,
+            "wordIndexInSegment": 4,
+            "word": " SDS.",
+            "start": 52.44,
+            "end": 52.78,
+            "probability": 0.9694734811782837
+          },
+          "candidateWord": {
+            "segmentId": 1,
+            "wordIndex": 14,
+            "word": " SDS.",
+            "start": 9.08,
+            "end": 9.44,
+            "probability": 0.9356614649295807,
+            "actualWordIndex": 14
+          },
+          "sameNormalizedLexicalValue": "sds"
+        }
+      ],
+      "originalSourceASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+        "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+      },
+      "candidateSourceASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\asr-word-timestamps.json",
+        "sha256": "83b22a5254d40060a6f4b295030c66d983d485e9bd4d142b8735d6ed48d9d44c"
+      },
+      "originalSentenceWordIndices": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "originalBoundaryGapsSeconds": {
+        "start": [
+          42.64,
+          43.64
+        ],
+        "end": [
+          52.78,
+          53.64
+        ]
+      },
+      "previousOriginalCutSamples": [
+        1035360,
+        1277040
+      ],
+      "gainDbSelected": null,
+      "cutSamplesSelected": null,
+      "constraints": "Preserve every original sample outside the proposed sentence replacement and immutable raw candidate WAVs. Only a uniform candidate gain and original non-speech boundary hypotheses may be proposed. No EQ, time stretch, source-word changes or automatic adoption."
+    }
+  ],
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "modelReviewCalls": 0,
+  "networkCallsByWorker": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "maximumMeasurementPasses": 1,
+  "maximumProposalPasses": 1,
+  "measurementPolicy": {
+    "sampleRate": 24000,
+    "frameSamples": 480,
+    "hopSamples": 240,
+    "wordEdgeTrimSamples": 240,
+    "speechEnergyGateDbfs": -45,
+    "minimumSpeechFrames": 20,
+    "minimumMatchingWordPairs": 10,
+    "gainMethod": "Original minus candidate median dBFS of 20ms higher-energy ASR-word-anchored frames; record all distributions and per-word pairs first.",
+    "maximumAbsoluteProposedGainDb": 6,
+    "peakHeadroomDbfs": -1,
+    "requiredOriginalGapMarginSamples": 720,
+    "minimumBoundaryPlateauSamples": 960,
+    "boundaryQuietRmsCeilingDbfs": -45,
+    "boundaryPeakCeilingDbfs": -35,
+    "boundaryMethod": "Inspect complete ASR gap with30ms margins. Quiet plateaus are hypotheses only; low energy and ASR do not certify non-speech or breath continuity. Output traces and candidate sample intervals for root acoustic decision, never select a verified cut."
+  },
+  "audioOutputAllowed": false,
+  "originalPcmChangesAllowed": false,
+  "rawCandidateChangesAllowed": false,
+  "rootAcousticDecisionRequiredBeforeAnyCorrectedAudition": true
+}

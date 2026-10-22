@@ -1,0 +1,130 @@
+{
+  "unitId": "de-s101-limits",
+  "originalInputId": "de-original",
+  "inputWavHashes": {
+    "de-original": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+    "de-s101-limits-bounded-sentence-1": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4",
+    "de-s101-limits-bounded-sentence-2": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac"
+  },
+  "pieces": [
+    {
+      "kind": "retained_original",
+      "inputId": "de-original",
+      "inputSampleRange": [
+        0,
+        721200
+      ],
+      "outputSampleRange": [
+        0,
+        721200
+      ],
+      "pcmSha256": "fb0efba2904018e7df24c1424ed55c10ae154a8597c2a24362d75fefaaf71865"
+    },
+    {
+      "kind": "complete_new_candidate",
+      "inputId": "de-s101-limits-bounded-sentence-1",
+      "inputSampleRange": [
+        0,
+        145920
+      ],
+      "outputSampleRange": [
+        721200,
+        867120
+      ],
+      "pcmSha256": "a6c9c908aa5d0198baef21d9a5dca2d17b5f82cb115468b8dc914e51f8066424"
+    },
+    {
+      "kind": "retained_original",
+      "inputId": "de-original",
+      "inputSampleRange": [
+        871680,
+        1035360
+      ],
+      "outputSampleRange": [
+        867120,
+        1030800
+      ],
+      "pcmSha256": "9cdbf0aa8072670e52c166076b19c49509488b4215281c5788ef03fcda8ba2ed"
+    },
+    {
+      "kind": "complete_new_candidate",
+      "inputId": "de-s101-limits-bounded-sentence-2",
+      "inputSampleRange": [
+        0,
+        242880
+      ],
+      "outputSampleRange": [
+        1030800,
+        1273680
+      ],
+      "pcmSha256": "bc920880d8efb623844e33339f3a1b62022e11f0b42bd0c12cfc067c65607cac"
+    },
+    {
+      "kind": "retained_original",
+      "inputId": "de-original",
+      "inputSampleRange": [
+        1277040,
+        1662023
+      ],
+      "outputSampleRange": [
+        1273680,
+        1658663
+      ],
+      "pcmSha256": "303e650f53c02c39a1fec654dd5c17b0666265daada08e5697a8fce7609816c1"
+    }
+  ],
+  "joins": [
+    {
+      "side": "original_to_candidate",
+      "candidateId": "de-s101-limits-bounded-sentence-1",
+      "outputSample": 721200,
+      "timeSeconds": 30.05,
+      "originalCutSample": 721200,
+      "boundarySafeCutApproved": false
+    },
+    {
+      "side": "candidate_to_original",
+      "candidateId": "de-s101-limits-bounded-sentence-1",
+      "outputSample": 867120,
+      "timeSeconds": 36.13,
+      "originalCutSample": 871680,
+      "boundarySafeCutApproved": false
+    },
+    {
+      "side": "original_to_candidate",
+      "candidateId": "de-s101-limits-bounded-sentence-2",
+      "outputSample": 1030800,
+      "timeSeconds": 42.95,
+      "originalCutSample": 1035360,
+      "boundarySafeCutApproved": false
+    },
+    {
+      "side": "candidate_to_original",
+      "candidateId": "de-s101-limits-bounded-sentence-2",
+      "outputSample": 1273680,
+      "timeSeconds": 53.07,
+      "originalCutSample": 1277040,
+      "boundarySafeCutApproved": false
+    }
+  ],
+  "originalDeletedSampleRanges": [
+    [
+      721200,
+      871680
+    ],
+    [
+      1035360,
+      1277040
+    ]
+  ],
+  "outputWavSha256": "b2d7d42c893631e158d32c712a01075946fb613964eae6ef5d426c0632ad14cc",
+  "outputPcmSha256": "b54e128a5e5c1d9009764fdff59d6e91508b5308a742dcbcbfe2351defa95a70",
+  "outputSamples": 1658663,
+  "allOutsideOriginalPcmVerified": true,
+  "allNewCandidatePcmVerified": true,
+  "addedPaddingSamples": 0,
+  "normalizationTimeStretchCrossfadeOrGain": false,
+  "safeCutApproval": false,
+  "acceptedOriginalFilesModified": false,
+  "rootAcousticJoinReviewStillRequired": true
+}
