@@ -1,0 +1,45 @@
+{
+  "scope": "S105_EN004_ONE_CHANGED_JUNCTION03_SPACING_CONTEXT_BLIND_ACTUAL_AUDIO_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s105-en004-junction03-spacing-20261022-r2",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumReviewPOSTCalls": 1,
+  "maximumMetadataGETCalls": 0,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "candidateFullWavSha256": "3d93e470d8e1c76ee8fde2526dc87e2bfb8e81159402a8a20a658c63244f6a24",
+  "candidateFullPcmSha256": "eacdc190c1e4a6a8e1f9286424357873783b153bd556df6bc3f77e0b9245f2b7",
+  "candidateSamples": 2320800,
+  "sampleRate": 24000,
+  "promptPath": "prompts/blind-context.txt",
+  "promptSha256": "b19f638c8dba5bbdb2a1903ac3b9994fb109c90504880992e86e77789ce3a262",
+  "sourceMap": "provenance/pcm-source-map.json",
+  "expectedTranscriptSuppliedToModel": false,
+  "adoptionApproved": false,
+  "units": [
+    {
+      "id": "S1-05-en004-junction03-spacing-r2",
+      "path": "inputs/context-01.wav",
+      "wavSha256": "45b4b7d3eaf4f95e8a28a7406b931dfa2f588aa9031561b309d3080f2c689d8e",
+      "pcmSha256": "9fdae051371daa780d670150f86b444860f1c67881364c93e33ed4912749dea7",
+      "samples": 186360,
+      "durationSeconds": 7.765,
+      "joinLocalSample": 90360,
+      "joinLocalSeconds": 3.765,
+      "explicitZeroLocalSampleBounds": [
+        72000,
+        90360
+      ],
+      "candidateSampleBounds": [
+        2018280,
+        2204640
+      ],
+      "maximumReviewPOSTCalls": 1
+    }
+  ],
+  "sourceMapSha256": "977e184e537ab8c3af6eebd4b6b197cbb98c9516f0429315c8ab25e79806fd09"
+}

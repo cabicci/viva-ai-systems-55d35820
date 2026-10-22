@@ -1,0 +1,15 @@
+{
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "timeoutSeconds": 900,
+  "maxOutputTokens": 32768,
+  "maximumReviewPOSTCalls": 1,
+  "maximumMetadataGETCalls": 0,
+  "priorExactServerModelAvailabilityRun": 39816051691,
+  "priorActualSuccessfulSameModelRun": 39820872913,
+  "priorAvailabilitySha256": "7b7d55606f5776840e9ea2d3dde17b001c7ab3f71f9a83eda9773516b1ced8b2",
+  "noFreshAvailabilityClaim": true,
+  "silentFallbackAllowed": false,
+  "automaticRetries": 0
+}

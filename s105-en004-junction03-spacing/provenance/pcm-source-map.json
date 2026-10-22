@@ -1,0 +1,173 @@
+{
+  "candidateWavSha256": "3d93e470d8e1c76ee8fde2526dc87e2bfb8e81159402a8a20a658c63244f6a24",
+  "candidatePcmSha256": "eacdc190c1e4a6a8e1f9286424357873783b153bd556df6bc3f77e0b9245f2b7",
+  "candidateSamples": 2320800,
+  "originalWavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+  "originalPcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+  "sources": {
+    "original": {
+      "sha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+      "samples": 2295360
+    },
+    "repair1": {
+      "sha256": "19e6c4f12a2b9793dc8a781547469319f5c2b09a3c60c520e9f238e9c3be2f88",
+      "pcmSha256": "3c910cbadf945a5444b14bbefa7ee94a446505dd497027ca1c41513075783e0b",
+      "samples": 547200
+    },
+    "repair2": {
+      "sha256": "9768b055a34125d1f0ebe4ff90b3ae56edf353b01277060fbbe2cc3f9a7b88d9",
+      "pcmSha256": "625bb46fa873770ef1a44a1887f49f27b234f7f1266f767be8376521ba2d68bf",
+      "samples": 212160
+    }
+  },
+  "retainedAndInsertedSegments": [
+    {
+      "name": "original-retained-prefix",
+      "source": "original",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 601200,
+      "outputFirstSample": 0,
+      "outputEndSampleExclusive": 601200,
+      "samples": 601200,
+      "pcmSha256": "1c9e9e4425e665194752a89cabd494cb9d54032cd139e95fc9907d4405f17091"
+    },
+    {
+      "name": "complete-new-paragraph2",
+      "source": "repair1",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 547200,
+      "outputFirstSample": 601200,
+      "outputEndSampleExclusive": 1148400,
+      "samples": 547200,
+      "pcmSha256": "3c910cbadf945a5444b14bbefa7ee94a446505dd497027ca1c41513075783e0b"
+    },
+    {
+      "name": "original-retained-middle",
+      "source": "original",
+      "sourceFirstSample": 1149840,
+      "sourceEndSampleExclusive": 2091720,
+      "outputFirstSample": 1148400,
+      "outputEndSampleExclusive": 2090280,
+      "samples": 941880,
+      "pcmSha256": "ab229624b96326b9efd097ccfecb58f13a18d6224b2a35a46b4d881846cc31b7"
+    },
+    {
+      "name": "explicit-topic-transition-zeros",
+      "source": "explicitZeros",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 18360,
+      "outputFirstSample": 2090280,
+      "outputEndSampleExclusive": 2108640,
+      "samples": 18360,
+      "pcmSha256": "d83259b3635ee97ea23f96eed2a2f0f3bd18f78b59d44141d08ee833d8d6e4d2"
+    },
+    {
+      "name": "complete-new-glossary",
+      "source": "repair2",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 212160,
+      "outputFirstSample": 2108640,
+      "outputEndSampleExclusive": 2320800,
+      "samples": 212160,
+      "pcmSha256": "625bb46fa873770ef1a44a1887f49f27b234f7f1266f767be8376521ba2d68bf"
+    }
+  ],
+  "deletedOriginalRanges": [
+    {
+      "firstSample": 601200,
+      "endSampleExclusive": 1149840,
+      "seconds": [
+        25.05,
+        47.91
+      ],
+      "scope": "Entire old paragraph2 plus its complete pre-utterance lead-in; retain preceding matter and next paragraph lead-in"
+    },
+    {
+      "firstSample": 2091720,
+      "endSampleExclusive": 2295360,
+      "seconds": [
+        87.155,
+        95.64
+      ],
+      "scope": "Entire old glossary plus complete pre-utterance lead-in through sourceEOF"
+    }
+  ],
+  "contextMaps": [
+    {
+      "unitId": "S1-05-en004-junction03-spacing-r2",
+      "wavSha256": "45b4b7d3eaf4f95e8a28a7406b931dfa2f588aa9031561b309d3080f2c689d8e",
+      "pcmSha256": "9fdae051371daa780d670150f86b444860f1c67881364c93e33ed4912749dea7",
+      "candidateSampleBounds": [
+        2018280,
+        2204640
+      ],
+      "joinCandidateSample": 2108640,
+      "contextLocalJoinSample": 90360,
+      "explicitZeroLocalSampleBounds": [
+        72000,
+        90360
+      ],
+      "parts": [
+        {
+          "source": "original",
+          "sourceSampleBounds": [
+            2019720,
+            2091720
+          ],
+          "contextLocalSampleBounds": [
+            0,
+            72000
+          ],
+          "candidateSampleBounds": [
+            2018280,
+            2090280
+          ],
+          "pcmSha256": "2ae8e7ab6c929db7e9e96ea81d58291d85d9df860b281638fa7fb8c8bf9473d3"
+        },
+        {
+          "source": "explicitZeros",
+          "sourceSampleBounds": [
+            0,
+            18360
+          ],
+          "contextLocalSampleBounds": [
+            72000,
+            90360
+          ],
+          "candidateSampleBounds": [
+            2090280,
+            2108640
+          ],
+          "pcmSha256": "d83259b3635ee97ea23f96eed2a2f0f3bd18f78b59d44141d08ee833d8d6e4d2"
+        },
+        {
+          "source": "repair2",
+          "sourceSampleBounds": [
+            0,
+            96000
+          ],
+          "contextLocalSampleBounds": [
+            90360,
+            186360
+          ],
+          "candidateSampleBounds": [
+            2108640,
+            2204640
+          ],
+          "pcmSha256": "9da685c1602990a9fc8a8c87f2eb01c915ea44618d6306aaa9307596fdabddf8"
+        }
+      ]
+    }
+  ],
+  "allOriginalOutsideRepairSpansUnchanged": true,
+  "allNewCandidateSamplesPreserved": true,
+  "previousCandidateWavSha256": "fb838ce45702a52724ad05c7174d686419ed65f2bd00bda6b718cc633a3073bc",
+  "previousCandidatePcmSha256": "e4851837c2ca6b79859164f79687d36f50175acd277933335483d225b1abdca9",
+  "explicitZeroInsertion": {
+    "atPreviousCandidateSample": 2090280,
+    "samples": 18360,
+    "seconds": 0.765
+  },
+  "audioOperation": "One explicit18360zero sample insertion only; no existing sample processing or deletion"
+}
