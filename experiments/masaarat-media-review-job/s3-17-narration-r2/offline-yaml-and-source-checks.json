@@ -1,0 +1,37 @@
+{
+  "schema": "masaarat.S3-17.r2.actual-yaml-and-source-checks.v1",
+  "checkedAtUTC": "2026-10-22T11:21:33.707162+00:00",
+  "status": "PASS",
+  "actualYAMLParser": "PyYAML BaseLoader",
+  "steps": 346,
+  "artifactUploadSteps": 137,
+  "all29FrozenHashesVerified": true,
+  "fiveApprovedSpokenOnlyParts": [
+    "S3-17-en-r1-006",
+    "S3-17-en-r1-014",
+    "S3-17-ar-EG-r1-001",
+    "S3-17-ar-EG-r1-004",
+    "S3-17-ar-EG-r1-008"
+  ],
+  "other63WholeUnitObjectsEqualFrozenR1": true,
+  "all68OriginalDisplayCaptionSourceDeliveryVoiceAndIDsPreserved": true,
+  "allFourSafeInputFilesByteExactFrozenR1": true,
+  "all68ProduceUploadReceiptDiagnosticsSequencesVerified": true,
+  "r1AllFilesByteIdentical": true,
+  "onlyTrigger": {
+    "push": {
+      "branches": [
+        "work/soil-s317-narration-20261022-r2"
+      ]
+    }
+  },
+  "jobGuard": "github.run_attempt == 1 && github.event_name == 'push' && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.event.repository.id == 1272666418 && github.event.repository.private == false && github.event.repository.fork == false && github.ref == 'refs/heads/work/soil-s317-narration-20261022-r2' && github.ref_type == 'branch' && github.event.ref == github.ref && github.event.created == true && github.event.deleted == false && github.event.forced == false && github.event.before == '0000000000000000000000000000000000000000' && github.event.after == github.sha",
+  "workflowSHA256": "c76d948903b85c9e8a544a979bcccb13bcf6e4ab3d8d90f0e6d62e760902a993",
+  "requestSHA256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+  "workerSHA256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+  "freezeSHA256": "4d5982b744a6f19d39360d86dcf5937c12bf60e041a7f5b8379f903b358c7390",
+  "offlineTests": 86,
+  "providerCalls": 0,
+  "remoteWrites": 0,
+  "completedMedia": false
+}

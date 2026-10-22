@@ -1,0 +1,1128 @@
+{
+  "schema": "masaarat.S3-17.connected-narration-script.v1",
+  "stepId": "S3-17",
+  "locale": "en",
+  "model": "gemini-3.8-flash-tts",
+  "coherentParts": [
+    {
+      "id": "S3-17-en-r1-001",
+      "semanticGroup": "OPEN",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Present the final soil report and improve a missing skill\n\nComplete a one-page report from your own supervised Plot C work. State what your pH and texture evidence supports, suggest two conditional crop candidates and at least one management next step. A report, self-rating or second attempt cannot substitute for observed practical competence.\n\nSubmit a one-page Plot C report identifying the sample, date, purpose, real pH and texture method/results, interpretation, two conditional crop candidates and at least one supported management action with limitations.\n\nCompare personal data with the separate pH 6.8/loam and pH 5.8/sandy-loam models, state what pH and texture alone cannot prove, and trace every final-review task to its own answer or performance evidence.\n\nUse specific feedback to practise the affected skill and submit a new performance record; allow another 'not yet demonstrated' decision if a criterion is still missing.\n\nRead the course result as a combination of online knowledge evidence and individually observed practical evidence, with each unobserved skill left visibly unassessed.",
+      "spokenText": "Present the final soil report and improve a missing skill\n\nComplete a one-page report from your own supervised Plot C work. State what your pH and texture evidence supports, suggest two conditional crop candidates and at least one management next step. A report, self-rating or second attempt cannot substitute for observed practical competence.\n\nSubmit a one-page Plot C report identifying the sample, date, purpose, real pH and texture method/results, interpretation, two conditional crop candidates and at least one supported management action with limitations.\n\nCompare personal data with the separate pH six point eight/loam and pH five point eight/sandy-loam models, state what pH and texture alone cannot prove, and trace every final-review task to its own answer or performance evidence.\n\nUse specific feedback to practise the affected skill and submit a new performance record; allow another 'not yet demonstrated' decision if a criterion is still missing.\n\nRead the course result as a combination of online knowledge evidence and individually observed practical evidence, with each unobserved skill left visibly unassessed.",
+      "displayText": "Present the final soil report and improve a missing skill\n\nComplete a one-page report from your own supervised Plot C work. State what your pH and texture evidence supports, suggest two conditional crop candidates and at least one management next step. A report, self-rating or second attempt cannot substitute for observed practical competence.\n\nSubmit a one-page Plot C report identifying the sample, date, purpose, real pH and texture method/results, interpretation, two conditional crop candidates and at least one supported management action with limitations.\n\nCompare personal data with the separate pH 6.8/loam and pH 5.8/sandy-loam models, state what pH and texture alone cannot prove, and trace every final-review task to its own answer or performance evidence.\n\nUse specific feedback to practise the affected skill and submit a new performance record; allow another 'not yet demonstrated' decision if a criterion is still missing.\n\nRead the course result as a combination of online knowledge evidence and individually observed practical evidence, with each unobserved skill left visibly unassessed.",
+      "captionText": "Present the final soil report and improve a missing skill\n\nComplete a one-page report from your own supervised Plot C work. State what your pH and texture evidence supports, suggest two conditional crop candidates and at least one management next step. A report, self-rating or second attempt cannot substitute for observed practical competence.\n\nSubmit a one-page Plot C report identifying the sample, date, purpose, real pH and texture method/results, interpretation, two conditional crop candidates and at least one supported management action with limitations.\n\nCompare personal data with the separate pH 6.8/loam and pH 5.8/sandy-loam models, state what pH and texture alone cannot prove, and trace every final-review task to its own answer or performance evidence.\n\nUse specific feedback to practise the affected skill and submit a new performance record; allow another 'not yet demonstrated' decision if a criterion is still missing.\n\nRead the course result as a combination of online knowledge evidence and individually observed practical evidence, with each unobserved skill left visibly unassessed.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/title",
+          "text": "Present the final soil report and improve a missing skill",
+          "sha256": "3c3964fa9d032ea280be2a519e70269073182f0de5958d24511dcd0b77bb4ad9"
+        },
+        {
+          "pointer": "/intro",
+          "text": "Complete a one-page report from your own supervised Plot C work. State what your pH and texture evidence supports, suggest two conditional crop candidates and at least one management next step. A report, self-rating or second attempt cannot substitute for observed practical competence.",
+          "sha256": "3394f437b92c68f4bb8f2a44a8f20fce56292e1417dbd273ec891e1a37a86946"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Submit a one-page Plot C report identifying the sample, date, purpose, real pH and texture method/results, interpretation, two conditional crop candidates and at least one supported management action with limitations.",
+          "sha256": "bde05a9946feacb7e6fcb3f914d0ee95e2bcf1702ffeaedaeafee7b249db38c5"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Compare personal data with the separate pH 6.8/loam and pH 5.8/sandy-loam models, state what pH and texture alone cannot prove, and trace every final-review task to its own answer or performance evidence.",
+          "sha256": "e4e85294ee28d4a1ead5866f182709ec1501fcf50bc168510605dd1877d5b4ac"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Use specific feedback to practise the affected skill and submit a new performance record; allow another 'not yet demonstrated' decision if a criterion is still missing.",
+          "sha256": "8b85cd21199fca2f31f0599d0cace23ec6e1daa4de90da6ebde87774d945df1e"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Read the course result as a combination of online knowledge evidence and individually observed practical evidence, with each unobserved skill left visibly unassessed.",
+          "sha256": "315b63d7c273056bca40355e383159d36d4dd490cc57afd7c4ba84bdaf5c1c03"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "6.8",
+          "spoken": "six point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "5.8",
+          "spoken": "five point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "9cdf41001170438b686a4bcbd560cba3efc608af078da4ee30ac66b039a564e7",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "0b87e09f2a009d5151ee2bec20fc841203e5b7dba7b7fa55f72596e6d9079bbb",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-002",
+      "semanticGroup": "R01",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "1. Put each result behind its evidence\n\nA soil technician acts like an investigator: identify the sampling area, collect the sample under supervision, use the actual approved pH and texture procedures, inspect what each result says and report a reasoned recommendation. The grower's season depends on more than two tests; pH and mineral texture do not by themselves reveal all fertility, salinity, drainage, climate or crop constraints.\n\nThe final task checks safe precise procedure, interpretation, communication and willingness to practise a missing skill. A polished report is evidence for reporting and reasoning; each physical technique needs a separate individual trainer record. Do not turn a group result, a remembered model or a self-rating into a measured skill.\n\nAct as a junior agricultural technician advising a local grower about Plot C and a coming crop season. Preserve the five report sections within one page. The source's 20-minute writing period is active writing after staged practical work; genuine drying and pH equilibration are separate. Do not substitute the bank's Field B or Paddock 3 records for Plot C.",
+      "spokenText": "1. Put each result behind its evidence\n\nA soil technician acts like an investigator: identify the sampling area, collect the sample under supervision, use the actual approved pH and texture procedures, inspect what each result says and report a reasoned recommendation. The grower's season depends on more than two tests; pH and mineral texture do not by themselves reveal all fertility, salinity, drainage, climate or crop constraints.\n\nThe final task checks safe precise procedure, interpretation, communication and willingness to practise a missing skill. A polished report is evidence for reporting and reasoning; each physical technique needs a separate individual trainer record. Do not turn a group result, a remembered model or a self-rating into a measured skill.\n\nAct as a junior agricultural technician advising a local grower about Plot C and a coming crop season. Preserve the five report sections within one page. The source's twenty-minute writing period is active writing after staged practical work; genuine drying and pH equilibration are separate. Do not substitute the bank's Field B or Paddock 3 records for Plot C.",
+      "displayText": "1. Put each result behind its evidence\n\nA soil technician acts like an investigator: identify the sampling area, collect the sample under supervision, use the actual approved pH and texture procedures, inspect what each result says and report a reasoned recommendation. The grower's season depends on more than two tests; pH and mineral texture do not by themselves reveal all fertility, salinity, drainage, climate or crop constraints.\n\nThe final task checks safe precise procedure, interpretation, communication and willingness to practise a missing skill. A polished report is evidence for reporting and reasoning; each physical technique needs a separate individual trainer record. Do not turn a group result, a remembered model or a self-rating into a measured skill.\n\nAct as a junior agricultural technician advising a local grower about Plot C and a coming crop season. Preserve the five report sections within one page. The source's 20-minute writing period is active writing after staged practical work; genuine drying and pH equilibration are separate. Do not substitute the bank's Field B or Paddock 3 records for Plot C.",
+      "captionText": "1. Put each result behind its evidence\n\nA soil technician acts like an investigator: identify the sampling area, collect the sample under supervision, use the actual approved pH and texture procedures, inspect what each result says and report a reasoned recommendation. The grower's season depends on more than two tests; pH and mineral texture do not by themselves reveal all fertility, salinity, drainage, climate or crop constraints.\n\nThe final task checks safe precise procedure, interpretation, communication and willingness to practise a missing skill. A polished report is evidence for reporting and reasoning; each physical technique needs a separate individual trainer record. Do not turn a group result, a remembered model or a self-rating into a measured skill.\n\nAct as a junior agricultural technician advising a local grower about Plot C and a coming crop season. Preserve the five report sections within one page. The source's 20-minute writing period is active writing after staged practical work; genuine drying and pH equilibration are separate. Do not substitute the bank's Field B or Paddock 3 records for Plot C.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/title",
+          "text": "1. Put each result behind its evidence",
+          "sha256": "ef0e9959ffadbdc9839cbbebea5c6c02ec1900f17ee9b3b0cf5b932ca8959236"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A soil technician acts like an investigator: identify the sampling area, collect the sample under supervision, use the actual approved pH and texture procedures, inspect what each result says and report a reasoned recommendation. The grower's season depends on more than two tests; pH and mineral texture do not by themselves reveal all fertility, salinity, drainage, climate or crop constraints.",
+          "sha256": "379b8d60b879b942c19f95f34bb68d7842922270a092f5e4ca15ff511e67911f"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "The final task checks safe precise procedure, interpretation, communication and willingness to practise a missing skill. A polished report is evidence for reporting and reasoning; each physical technique needs a separate individual trainer record. Do not turn a group result, a remembered model or a self-rating into a measured skill.",
+          "sha256": "c088c0aa278476b69ad1fc13371e6218f5004da4f79372e75f55d33fb77ed3ab"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Act as a junior agricultural technician advising a local grower about Plot C and a coming crop season. Preserve the five report sections within one page. The source's 20-minute writing period is active writing after staged practical work; genuine drying and pH equilibration are separate. Do not substitute the bank's Field B or Paddock 3 records for Plot C.",
+          "sha256": "198d44e783d0c2ef640d7c65ce855abde84e5407391492155f0d5b4a17a44f74"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "20-minute",
+          "spoken": "twenty-minute",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "afef015f0d769832fff7f5fcf1dfc31276fa331b91286ce236d5089e6152ed8a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "4db2079a8ef69e9922d4e0c912b41c22bed3d40f3596398312d3fedb22725ea3",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-003",
+      "semanticGroup": "R02",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "2. Write one page from your Plot C record\n\nKeep five clear sections within the one-page Plot C report: (1) title/identity heading with learner name, actual date and field/location; (2) introduction stating the test purpose; (3) results identifying the sample, methods, actual raw pH and texture evidence; (4) interpretation and discussion of what those results support and their limits; (5) recommendations with two conditional crop candidates and at least one justified management action. The title is a heading on that page, not an extra cover sheet. The source's approximately 20-minute active writing block follows the staged practical work; actual drying, instrument preparation and pH equilibration take their own recorded time. Mark unavailable data honestly in a pending draft, without copying a model value or claiming the completed actual-results report.\n\nUse Plot C consistently for this ongoing task and its report. Explain the texture from observed ribbon/feel or documented percentage method. Put limitations beside crop and amendment choices, including climate, water, drainage, salinity and lab nutrient data not measured here.",
+      "spokenText": "2. Write one page from your Plot C record\n\nKeep five clear sections within the one-page Plot C report: (1) title/identity heading with learner name, actual date and field/location; (2) introduction stating the test purpose; (3) results identifying the sample, methods, actual raw pH and texture evidence; (4) interpretation and discussion of what those results support and their limits; (5) recommendations with two conditional crop candidates and at least one justified management action. The title is a heading on that page, not an extra cover sheet. The source's approximately twenty-minute active writing block follows the staged practical work; actual drying, instrument preparation and pH equilibration take their own recorded time. Mark unavailable data honestly in a pending draft, without copying a model value or claiming the completed actual-results report.\n\nUse Plot C consistently for this ongoing task and its report. Explain the texture from observed ribbon/feel or documented percentage method. Put limitations beside crop and amendment choices, including climate, water, drainage, salinity and lab nutrient data not measured here.",
+      "displayText": "2. Write one page from your Plot C record\n\nKeep five clear sections within the one-page Plot C report: (1) title/identity heading with learner name, actual date and field/location; (2) introduction stating the test purpose; (3) results identifying the sample, methods, actual raw pH and texture evidence; (4) interpretation and discussion of what those results support and their limits; (5) recommendations with two conditional crop candidates and at least one justified management action. The title is a heading on that page, not an extra cover sheet. The source's approximately 20-minute active writing block follows the staged practical work; actual drying, instrument preparation and pH equilibration take their own recorded time. Mark unavailable data honestly in a pending draft, without copying a model value or claiming the completed actual-results report.\n\nUse Plot C consistently for this ongoing task and its report. Explain the texture from observed ribbon/feel or documented percentage method. Put limitations beside crop and amendment choices, including climate, water, drainage, salinity and lab nutrient data not measured here.",
+      "captionText": "2. Write one page from your Plot C record\n\nKeep five clear sections within the one-page Plot C report: (1) title/identity heading with learner name, actual date and field/location; (2) introduction stating the test purpose; (3) results identifying the sample, methods, actual raw pH and texture evidence; (4) interpretation and discussion of what those results support and their limits; (5) recommendations with two conditional crop candidates and at least one justified management action. The title is a heading on that page, not an extra cover sheet. The source's approximately 20-minute active writing block follows the staged practical work; actual drying, instrument preparation and pH equilibration take their own recorded time. Mark unavailable data honestly in a pending draft, without copying a model value or claiming the completed actual-results report.\n\nUse Plot C consistently for this ongoing task and its report. Explain the texture from observed ribbon/feel or documented percentage method. Put limitations beside crop and amendment choices, including climate, water, drainage, salinity and lab nutrient data not measured here.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/title",
+          "text": "2. Write one page from your Plot C record",
+          "sha256": "5b3d611002fd0ee1b42d6739fd25ec74fa99ca86681783b4f1ce38a80dc10cda"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Keep five clear sections within the one-page Plot C report: (1) title/identity heading with learner name, actual date and field/location; (2) introduction stating the test purpose; (3) results identifying the sample, methods, actual raw pH and texture evidence; (4) interpretation and discussion of what those results support and their limits; (5) recommendations with two conditional crop candidates and at least one justified management action. The title is a heading on that page, not an extra cover sheet. The source's approximately 20-minute active writing block follows the staged practical work; actual drying, instrument preparation and pH equilibration take their own recorded time. Mark unavailable data honestly in a pending draft, without copying a model value or claiming the completed actual-results report.",
+          "sha256": "27a1716bf61fa773093b2c47eb57e489a5ddab0203bc1ad5266739b420f2d6ea"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Use Plot C consistently for this ongoing task and its report. Explain the texture from observed ribbon/feel or documented percentage method. Put limitations beside crop and amendment choices, including climate, water, drainage, salinity and lab nutrient data not measured here.",
+          "sha256": "138009a67c495400876d03943efff42fe3dbe06e46804ea40d1b3e011a2d0f73"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "20-minute",
+          "spoken": "twenty-minute",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "eced9d2af4a93bf813b6331c8af148e7194744922accb70dc3b090b9b2291b72",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "554502937d89cb3188a10e2e7d7caa79f1ad96c6dbf768bc59d4d0a81ca6fa3b",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-004",
+      "semanticGroup": "R03",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "3. Learn from the pH 6.8 and loam model\n\nThe supplied Plot C teaching model has pH 6.8 and loam texture. It suggests tomatoes and corn, annual compost and pH monitoring every 1–2 years. Keep those exact figures, crops and intervals as the source example, never as the learner's observation or a mandatory management schedule. Tomatoes and corn also depend on climate, water, season, salinity, nutrients and actual field structure.\n\nA loam label often signals a useful particle-size balance, and pH 6.8 is neutral under the cited USDA-NRCS and Oregon State University Extension reaction classes. These facts do not prove that the entire soil is in 'excellent condition'. Check a site- and crop-specific lab report and field observations before asserting health or prescribing compost quality, rate or frequency. Here 'neutral' names a soil-reaction class; 6.8 remains below 7 and chemically near neutral. State the classification used.",
+      "spokenText": "3. Learn from the pH six point eight and loam model\n\nThe supplied Plot C teaching model has pH six point eight and loam texture. It suggests tomatoes and corn, annual compost and pH monitoring every one to two years. Keep those exact figures, crops and intervals as the source example, never as the learner's observation or a mandatory management schedule. Tomatoes and corn also depend on climate, water, season, salinity, nutrients and actual field structure.\n\nA loam label often signals a useful particle-size balance, and pH six point eight is neutral under the cited USDA-NRCS and Oregon State University Extension reaction classes. These facts do not prove that the entire soil is in 'excellent condition'. Check a site- and crop-specific lab report and field observations before asserting health or prescribing compost quality, rate or frequency. Here 'neutral' names a soil-reaction class; six point eight remains below 7 and chemically near neutral. State the classification used.",
+      "displayText": "3. Learn from the pH 6.8 and loam model\n\nThe supplied Plot C teaching model has pH 6.8 and loam texture. It suggests tomatoes and corn, annual compost and pH monitoring every 1–2 years. Keep those exact figures, crops and intervals as the source example, never as the learner's observation or a mandatory management schedule. Tomatoes and corn also depend on climate, water, season, salinity, nutrients and actual field structure.\n\nA loam label often signals a useful particle-size balance, and pH 6.8 is neutral under the cited USDA-NRCS and Oregon State University Extension reaction classes. These facts do not prove that the entire soil is in 'excellent condition'. Check a site- and crop-specific lab report and field observations before asserting health or prescribing compost quality, rate or frequency. Here 'neutral' names a soil-reaction class; 6.8 remains below 7 and chemically near neutral. State the classification used.",
+      "captionText": "3. Learn from the pH 6.8 and loam model\n\nThe supplied Plot C teaching model has pH 6.8 and loam texture. It suggests tomatoes and corn, annual compost and pH monitoring every 1–2 years. Keep those exact figures, crops and intervals as the source example, never as the learner's observation or a mandatory management schedule. Tomatoes and corn also depend on climate, water, season, salinity, nutrients and actual field structure.\n\nA loam label often signals a useful particle-size balance, and pH 6.8 is neutral under the cited USDA-NRCS and Oregon State University Extension reaction classes. These facts do not prove that the entire soil is in 'excellent condition'. Check a site- and crop-specific lab report and field observations before asserting health or prescribing compost quality, rate or frequency. Here 'neutral' names a soil-reaction class; 6.8 remains below 7 and chemically near neutral. State the classification used.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/title",
+          "text": "3. Learn from the pH 6.8 and loam model",
+          "sha256": "4f36fa27c0bd59bde021b1901a620b721e35dab45caf21107ec543fb4715c475"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "The supplied Plot C teaching model has pH 6.8 and loam texture. It suggests tomatoes and corn, annual compost and pH monitoring every 1–2 years. Keep those exact figures, crops and intervals as the source example, never as the learner's observation or a mandatory management schedule. Tomatoes and corn also depend on climate, water, season, salinity, nutrients and actual field structure.",
+          "sha256": "39c8feee075c2867385b9de391f3d4345fb6cf8915dc2953050b9fae597c0e49"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "A loam label often signals a useful particle-size balance, and pH 6.8 is neutral under the cited USDA-NRCS and Oregon State University Extension reaction classes. These facts do not prove that the entire soil is in 'excellent condition'. Check a site- and crop-specific lab report and field observations before asserting health or prescribing compost quality, rate or frequency. Here 'neutral' names a soil-reaction class; 6.8 remains below 7 and chemically near neutral. State the classification used.",
+          "sha256": "3955aed81ca31dcf117f33a31ca0c25cca67b8872e77cf0fb40074892d34efa6"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "6.8",
+          "spoken": "six point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "1–2 years",
+          "spoken": "one to two years",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "3b3dc973d0eb2263bedf1e8c54fefa627fa76796186eae9e12abc0ba64fbad04",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "2ec089d06cbf910ad1d46729a267fb8146b683442efd52cb768e3dae278295f4",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-005",
+      "semanticGroup": "R04",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "4. Compare a different pH 5.8 sandy-loam example\n\nAnother source example uses pH 5.8 and sandy loam, with a 0.5-inch ribbon and gritty feel. USDA-NRCS and Oregon State University Extension classify pH 5.8 as moderately acidic; the source's 'slightly acidic' label is inconsistent with those cited scales. Low pH may affect nutrient availability, while sandy loam can have relatively rapid drainage and lower retention under some structures. Those are questions to check, not a complete diagnosis.\n\nPotatoes and strawberries are the example crop pair, with corn also mentioned if further conditions fit. Retain them as candidates, not a guaranteed field plan. In the separate illustrative move from pH 5.8 toward 6.5, the source names corn and alfalfa as examples of broader crop options and suggests agricultural limestone. That is a conditional crop-target rationale, not a lime dose or a universal pH target. Organic matter or cover cropping is also suggested. Actual crop requirements, lime-requirement testing, material analysis, drainage and local suitability must be checked before a rate or fixed treatment; organic matter may improve structure without changing mineral texture class.",
+      "spokenText": "4. Compare a different pH five point eight sandy-loam example\n\nAnother source example uses pH five point eight and sandy loam, with a half-inch ribbon and gritty feel. USDA-NRCS and Oregon State University Extension classify pH five point eight as moderately acidic; the source's 'slightly acidic' label is inconsistent with those cited scales. Low pH may affect nutrient availability, while sandy loam can have relatively rapid drainage and lower retention under some structures. Those are questions to check, not a complete diagnosis.\n\nPotatoes and strawberries are the example crop pair, with corn also mentioned if further conditions fit. Retain them as candidates, not a guaranteed field plan. In the separate illustrative move from pH five point eight toward six point five, the source names corn and alfalfa as examples of broader crop options and suggests agricultural limestone. That is a conditional crop-target rationale, not a lime dose or a universal pH target. Organic matter or cover cropping is also suggested. Actual crop requirements, lime-requirement testing, material analysis, drainage and local suitability must be checked before a rate or fixed treatment; organic matter may improve structure without changing mineral texture class.",
+      "displayText": "4. Compare a different pH 5.8 sandy-loam example\n\nAnother source example uses pH 5.8 and sandy loam, with a 0.5-inch ribbon and gritty feel. USDA-NRCS and Oregon State University Extension classify pH 5.8 as moderately acidic; the source's 'slightly acidic' label is inconsistent with those cited scales. Low pH may affect nutrient availability, while sandy loam can have relatively rapid drainage and lower retention under some structures. Those are questions to check, not a complete diagnosis.\n\nPotatoes and strawberries are the example crop pair, with corn also mentioned if further conditions fit. Retain them as candidates, not a guaranteed field plan. In the separate illustrative move from pH 5.8 toward 6.5, the source names corn and alfalfa as examples of broader crop options and suggests agricultural limestone. That is a conditional crop-target rationale, not a lime dose or a universal pH target. Organic matter or cover cropping is also suggested. Actual crop requirements, lime-requirement testing, material analysis, drainage and local suitability must be checked before a rate or fixed treatment; organic matter may improve structure without changing mineral texture class.",
+      "captionText": "4. Compare a different pH 5.8 sandy-loam example\n\nAnother source example uses pH 5.8 and sandy loam, with a 0.5-inch ribbon and gritty feel. USDA-NRCS and Oregon State University Extension classify pH 5.8 as moderately acidic; the source's 'slightly acidic' label is inconsistent with those cited scales. Low pH may affect nutrient availability, while sandy loam can have relatively rapid drainage and lower retention under some structures. Those are questions to check, not a complete diagnosis.\n\nPotatoes and strawberries are the example crop pair, with corn also mentioned if further conditions fit. Retain them as candidates, not a guaranteed field plan. In the separate illustrative move from pH 5.8 toward 6.5, the source names corn and alfalfa as examples of broader crop options and suggests agricultural limestone. That is a conditional crop-target rationale, not a lime dose or a universal pH target. Organic matter or cover cropping is also suggested. Actual crop requirements, lime-requirement testing, material analysis, drainage and local suitability must be checked before a rate or fixed treatment; organic matter may improve structure without changing mineral texture class.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/title",
+          "text": "4. Compare a different pH 5.8 sandy-loam example",
+          "sha256": "c286ccbf213f396ff7b2df3de1a0000fc84d2d33ad0be796550aeb82e1261550"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Another source example uses pH 5.8 and sandy loam, with a 0.5-inch ribbon and gritty feel. USDA-NRCS and Oregon State University Extension classify pH 5.8 as moderately acidic; the source's 'slightly acidic' label is inconsistent with those cited scales. Low pH may affect nutrient availability, while sandy loam can have relatively rapid drainage and lower retention under some structures. Those are questions to check, not a complete diagnosis.",
+          "sha256": "30ffdc98e31d3a01e7d8198dc2e54b8075d583131f260e8aa446247e98525094"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Potatoes and strawberries are the example crop pair, with corn also mentioned if further conditions fit. Retain them as candidates, not a guaranteed field plan. In the separate illustrative move from pH 5.8 toward 6.5, the source names corn and alfalfa as examples of broader crop options and suggests agricultural limestone. That is a conditional crop-target rationale, not a lime dose or a universal pH target. Organic matter or cover cropping is also suggested. Actual crop requirements, lime-requirement testing, material analysis, drainage and local suitability must be checked before a rate or fixed treatment; organic matter may improve structure without changing mineral texture class.",
+          "sha256": "33bc9ef60a56e8b4bd6976da6659e8a0c9d6e98fe3cf607f6959f0dc20603bbc"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "5.8",
+          "spoken": "five point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "6.5",
+          "spoken": "six point five",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "0.5-inch",
+          "spoken": "half-inch",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "baf6b6f357054de2bc5524e0263387675a601746a835a5ffff30a7b9b1b29e6e",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "3da7fbb5b2d7561d6f315b241b400923a5c89f19d087dc620f2ff69fe06ac258",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-006",
+      "semanticGroup": "R05",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "5. Keep the four final review models and their evidence separate\n\nThe four final-review sets bring together multiple-choice questions, written answers, finished products and practical processes. Set 1 includes a labelled 500 g soil sample and a rapid colour-kit pH test. Set 2 includes five Field B pH readings and a separate Paddock 3 report. Set 3 includes a 5 kg tomato-mix product and texture by the ribbon/feel method. Set 4 includes a crop chart for three soils and a simulated reagent spill. Keep each case's data, methods, instructions and evidence separate. Practising a topic earlier or reading a model answer does not prove completion of its product or process.\n\nThe colorimetric rapid-kit task is distinct from Plot C's digital electrode; use the actual kit's chart, instructions and safety procedure for that task. A written response needs review of its reasoning and conditions; filled fields do not prove a correct answer. Each required product or process must be assessed against its own checklist with individual actual evidence. Online reasoning, a model answer and watching a demonstration do not substitute for that evidence.",
+      "spokenText": "5. Keep the four final review models and their evidence separate\n\nThe four final-review sets bring together multiple-choice questions, written answers, finished products and practical processes. Set 1 includes a labelled five hundred gram soil sample and a rapid colour-kit pH test. Set 2 includes five Field B pH readings and a separate Paddock 3 report. Set 3 includes a five kilogram tomato-mix product and texture by the ribbon/feel method. Set 4 includes a crop chart for three soils and a simulated reagent spill. Keep each case's data, methods, instructions and evidence separate. Practising a topic earlier or reading a model answer does not prove completion of its product or process.\n\nThe colorimetric rapid-kit task is distinct from Plot C's digital electrode; use the actual kit's chart, instructions and safety procedure for that task. A written response needs review of its reasoning and conditions; filled fields do not prove a correct answer. Each required product or process must be assessed against its own checklist with individual actual evidence. Online reasoning, a model answer and watching a demonstration do not substitute for that evidence.",
+      "displayText": "5. Keep the four final review models and their evidence separate\n\nThe four final-review sets bring together multiple-choice questions, written answers, finished products and practical processes. Set 1 includes a labelled 500 g soil sample and a rapid colour-kit pH test. Set 2 includes five Field B pH readings and a separate Paddock 3 report. Set 3 includes a 5 kg tomato-mix product and texture by the ribbon/feel method. Set 4 includes a crop chart for three soils and a simulated reagent spill. Keep each case's data, methods, instructions and evidence separate. Practising a topic earlier or reading a model answer does not prove completion of its product or process.\n\nThe colorimetric rapid-kit task is distinct from Plot C's digital electrode; use the actual kit's chart, instructions and safety procedure for that task. A written response needs review of its reasoning and conditions; filled fields do not prove a correct answer. Each required product or process must be assessed against its own checklist with individual actual evidence. Online reasoning, a model answer and watching a demonstration do not substitute for that evidence.",
+      "captionText": "5. Keep the four final review models and their evidence separate\n\nThe four final-review sets bring together multiple-choice questions, written answers, finished products and practical processes. Set 1 includes a labelled 500 g soil sample and a rapid colour-kit pH test. Set 2 includes five Field B pH readings and a separate Paddock 3 report. Set 3 includes a 5 kg tomato-mix product and texture by the ribbon/feel method. Set 4 includes a crop chart for three soils and a simulated reagent spill. Keep each case's data, methods, instructions and evidence separate. Practising a topic earlier or reading a model answer does not prove completion of its product or process.\n\nThe colorimetric rapid-kit task is distinct from Plot C's digital electrode; use the actual kit's chart, instructions and safety procedure for that task. A written response needs review of its reasoning and conditions; filled fields do not prove a correct answer. Each required product or process must be assessed against its own checklist with individual actual evidence. Online reasoning, a model answer and watching a demonstration do not substitute for that evidence.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/title",
+          "text": "5. Keep the four final review models and their evidence separate",
+          "sha256": "0652233504524cc4188e38696a281e3ba5e772b82ae45ef02869f839f5f8ce7b"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The four final-review sets bring together multiple-choice questions, written answers, finished products and practical processes. Set 1 includes a labelled 500 g soil sample and a rapid colour-kit pH test. Set 2 includes five Field B pH readings and a separate Paddock 3 report. Set 3 includes a 5 kg tomato-mix product and texture by the ribbon/feel method. Set 4 includes a crop chart for three soils and a simulated reagent spill. Keep each case's data, methods, instructions and evidence separate. Practising a topic earlier or reading a model answer does not prove completion of its product or process.",
+          "sha256": "63b4e994fcaea1c9c36d0a3c45a95a6dbb9065c8e608e719ed171d25ac26d8fe"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "The colorimetric rapid-kit task is distinct from Plot C's digital electrode; use the actual kit's chart, instructions and safety procedure for that task. A written response needs review of its reasoning and conditions; filled fields do not prove a correct answer. Each required product or process must be assessed against its own checklist with individual actual evidence. Online reasoning, a model answer and watching a demonstration do not substitute for that evidence.",
+          "sha256": "5aaa0ad62b81054eefacaea8c7ac4b67f11857911a2e51cd5884df421f00a932"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "500 g",
+          "spoken": "five hundred gram",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "5 kg",
+          "spoken": "five kilogram",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "de7c1e1be00f2116eda2e7dcecb106faa0d2e37b97ed8b6e7df9eaeb917175bb",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "050ff282d1c0f866de90263e2b353235c77e750b6aa5c344c1f3353a26131b1e",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-007",
+      "semanticGroup": "R06",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "6. Practise the missing criterion and record what happened\n\nThe assessor records 'competent' only when a particular skill has been safely and accurately demonstrated to its defined standard. Otherwise the record says 'not yet demonstrated' and names the gap. For example, correct sample preparation does not make a pH result valid if the meter calibration was wrong. The learner reviews that calibration step, practises it, then performs a new observed attempt.\n\nRecord the actual second decision with date, evidence and trainer identity. It may still be 'not yet demonstrated'; offer another targeted practice and attempt as appropriate. Online knowledge attempts are open with directed review, while a practical criterion requires a real observed action. Self-assessment item 5.2 about submitting a report supports reflection; the original self-check table omits cultivator operation/maintenance, so add an honest reflection prompt for those skills without filling a trainer result.",
+      "spokenText": "6. Practise the missing criterion and record what happened\n\nThe assessor records 'competent' only when a particular skill has been safely and accurately demonstrated to its defined standard. Otherwise the record says 'not yet demonstrated' and names the gap. For example, correct sample preparation does not make a pH result valid if the meter calibration was wrong. The learner reviews that calibration step, practises it, then performs a new observed attempt.\n\nRecord the actual second decision with date, evidence and trainer identity. It may still be 'not yet demonstrated'; offer another targeted practice and attempt as appropriate. Online knowledge attempts are open with directed review, while a practical criterion requires a real observed action. Self-assessment item five point two about submitting a report supports reflection; the original self-check table omits cultivator operation/maintenance, so add an honest reflection prompt for those skills without filling a trainer result.",
+      "displayText": "6. Practise the missing criterion and record what happened\n\nThe assessor records 'competent' only when a particular skill has been safely and accurately demonstrated to its defined standard. Otherwise the record says 'not yet demonstrated' and names the gap. For example, correct sample preparation does not make a pH result valid if the meter calibration was wrong. The learner reviews that calibration step, practises it, then performs a new observed attempt.\n\nRecord the actual second decision with date, evidence and trainer identity. It may still be 'not yet demonstrated'; offer another targeted practice and attempt as appropriate. Online knowledge attempts are open with directed review, while a practical criterion requires a real observed action. Self-assessment item 5.2 about submitting a report supports reflection; the original self-check table omits cultivator operation/maintenance, so add an honest reflection prompt for those skills without filling a trainer result.",
+      "captionText": "6. Practise the missing criterion and record what happened\n\nThe assessor records 'competent' only when a particular skill has been safely and accurately demonstrated to its defined standard. Otherwise the record says 'not yet demonstrated' and names the gap. For example, correct sample preparation does not make a pH result valid if the meter calibration was wrong. The learner reviews that calibration step, practises it, then performs a new observed attempt.\n\nRecord the actual second decision with date, evidence and trainer identity. It may still be 'not yet demonstrated'; offer another targeted practice and attempt as appropriate. Online knowledge attempts are open with directed review, while a practical criterion requires a real observed action. Self-assessment item 5.2 about submitting a report supports reflection; the original self-check table omits cultivator operation/maintenance, so add an honest reflection prompt for those skills without filling a trainer result.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/title",
+          "text": "6. Practise the missing criterion and record what happened",
+          "sha256": "5c6762d309ab9f38930627a3dda977f091e49e05be7c207e8757f906e485e414"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "The assessor records 'competent' only when a particular skill has been safely and accurately demonstrated to its defined standard. Otherwise the record says 'not yet demonstrated' and names the gap. For example, correct sample preparation does not make a pH result valid if the meter calibration was wrong. The learner reviews that calibration step, practises it, then performs a new observed attempt.",
+          "sha256": "fd7598710e6cc303f1f5a8677e215525d3998f9aaf6f054d7e848ae5df277924"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Record the actual second decision with date, evidence and trainer identity. It may still be 'not yet demonstrated'; offer another targeted practice and attempt as appropriate. Online knowledge attempts are open with directed review, while a practical criterion requires a real observed action. Self-assessment item 5.2 about submitting a report supports reflection; the original self-check table omits cultivator operation/maintenance, so add an honest reflection prompt for those skills without filling a trainer result.",
+          "sha256": "7e063354a6bc5f12b15d13752f38e3db833a9000a69a4fd00062d4fcd220cb1d"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "5.2",
+          "spoken": "five point two",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "5aa1e85e04e07745e7bc44974ecc4afd011850d36d34d32a846fb6abc1698629",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "e993b787047cfa856e643042e4af0bd223e30176f356ddb462985a0346134000",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-008",
+      "semanticGroup": "E01",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "spokenText": "Supplied model: Plot C pH six point eight, loam\n\nThe source's teaching model reports pH six point eight and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every one to two years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "displayText": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "captionText": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Supplied model: Plot C pH 6.8, loam",
+          "sha256": "4e39af840e92038a73f52cd2444091215eb33aced9f50e16084e30504d410a42"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.",
+          "sha256": "d3931dc208c7327c3d75a067feb29f91cb9689ce10b7a49e39f032dfcec096ce"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Keep pH and texture labelled supplied model rather than personal measurements.",
+          "sha256": "d2d2452263db77653878d071926bacd936f424027b864a40e560d19c153ab719"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Explain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.",
+          "sha256": "5ec82aa421122d7ed0e1d6c0f07f831acc671dfb6ec209ff2dca0eb6a909de0b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Treat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.",
+          "sha256": "86d591c4b78e5ca0dfa8d6a36bc2796595a13fcf6be6034364b951ae941ac64f"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A model supports report writing; it cannot certify all soil conditions.",
+          "sha256": "0b45997deba61a38836c5f93c701aec7b014e36c6f206029127e070a8468e82b"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "6.8",
+          "spoken": "six point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "1–2 years",
+          "spoken": "one to two years",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "43a16a3346ef2fb7e6b06992af390f0a9fb84641324cb4121769d8c92ca2f5b7",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "f56dd02ff29cb439a3e2fd04c6eda356408d59bd0087c802ce5014d008463b48",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-009",
+      "semanticGroup": "E02",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "spokenText": "Separate pH five point eight sandy-loam case\n\nA different case uses pH five point eight, sandy loam, gritty feel and an approximately half-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH five point eight→six point five lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "displayText": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "captionText": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Separate pH 5.8 sandy-loam case",
+          "sha256": "782f9c5b2e391ba09d22c67ebc25907cd1f6c009c693547f9c97c9e4384d55a5"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.",
+          "sha256": "e4488235dbaf60ec25e453714a7ef69658f3b5d2ed138bb97167d35d69900bc6"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "State the acidity classification source instead of relying on a vague adjective.",
+          "sha256": "100f697c2709a5686c96181fc8b943675f1b46d49fcf672eda8cba872d3cdd67"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Discuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.",
+          "sha256": "8ee3c7831ca6b268b9c50b062cded3ab4e64babb9535d084d44a1258f6b1405a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "The source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.",
+          "sha256": "460df2e8df3649401f88fd5e9b9a64458724fb73bf1ab910785fb0029e6f5d6f"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Different source examples and the learner's real Plot C belong in separate report records.",
+          "sha256": "65f9e8aa41b09436a1a5c7ce53bca168386781ce4c1a16c0ea0a89f3d30c1167"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "5.8",
+          "spoken": "five point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "6.5",
+          "spoken": "six point five",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "0.5-inch",
+          "spoken": "half-inch",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "04c4d97a8342e80c4d81089b9b501127256e50a4cf55825a841d322994abf9e6",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "e99a918afb0c5f31d12d3460df8827f3ff206ab40d0daedd1e24ff3b938ea997",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-010",
+      "semanticGroup": "E03",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "spokenText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "displayText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "captionText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A retry can still need more practice",
+          "sha256": "e2f41610990c1e349de9f10d9fc2fda4d62205291f4ed9cf29ec7549b7cc41b0"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.",
+          "sha256": "cd6bf8a238c247716c9203ed32ede26ea944868a2379712287bb73f4e44111d4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.",
+          "sha256": "9db8d846904ea7d833bfb8256e1c52f2f881cd863898ee233badccf6d5a7ffcb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "The learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.",
+          "sha256": "0128e28022184d042b3f6fbad59c3d64cfc358057a47b589d3ef200c368c199a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "The trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.",
+          "sha256": "0299ecc6eead66691d0cf79aa09b4a6bf819fdf17c1efce66d437d9aa133dd31"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A new attempt creates new evidence, not automatic success.",
+          "sha256": "5768414454f8abca05ac7665b04e5c4b831a4a1d02ed5f851854ff7bc55e10fa"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [],
+      "spokenTextSha256": "8489e34f3fdcc91dd00667861d26e69b187ccf681ae736e1e24be3b71a5918d2",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "4e9e63ae7f62c194a1b69becece8a2357b19fba8a19d617384d7cb064553de7e",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-011",
+      "semanticGroup": "REPORT-ORG",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Five report sections in a schematic 3D organiser\n\nThe five cards illustrate report organisation; stacking them does not create, submit, assess or verify a one-page report. The cards show section order, not measured evidence. No model card represents an actual measurement.\n\nIdentity and title\n\nIntroduction and purpose\n\nTest results and methods\n\nInterpretation and discussion\n\nRecommendations\n\nUse a heading within the one-page report: learner, actual date, Plot C/location and sample identity. Do not invent missing information.\n\nState the grower's purpose and the properties actually investigated, without promising a complete fertility diagnosis.\n\nLink actual pH and texture to sample, method, device/SOP, units and raw observations. Missing results stay pending.\n\nExplain the supported meaning and the unmeasured conditions. Distinguish the two supplied teaching models from your own results.\n\nName two crop candidates with separate reasons, and at least one supported management next step with limits; no guessed material dose.",
+      "spokenText": "Five report sections in a schematic 3D organiser\n\nThe five cards illustrate report organisation; stacking them does not create, submit, assess or verify a one-page report. The cards show section order, not measured evidence. No model card represents an actual measurement.\n\nIdentity and title\n\nIntroduction and purpose\n\nTest results and methods\n\nInterpretation and discussion\n\nRecommendations\n\nUse a heading within the one-page report: learner, actual date, Plot C/location and sample identity. Do not invent missing information.\n\nState the grower's purpose and the properties actually investigated, without promising a complete fertility diagnosis.\n\nLink actual pH and texture to sample, method, device/SOP, units and raw observations. Missing results stay pending.\n\nExplain the supported meaning and the unmeasured conditions. Distinguish the two supplied teaching models from your own results.\n\nName two crop candidates with separate reasons, and at least one supported management next step with limits; no guessed material dose.",
+      "displayText": "Five report sections in a schematic 3D organiser\n\nThe five cards illustrate report organisation; stacking them does not create, submit, assess or verify a one-page report. The cards show section order, not measured evidence. No model card represents an actual measurement.\n\nIdentity and title\n\nIntroduction and purpose\n\nTest results and methods\n\nInterpretation and discussion\n\nRecommendations\n\nUse a heading within the one-page report: learner, actual date, Plot C/location and sample identity. Do not invent missing information.\n\nState the grower's purpose and the properties actually investigated, without promising a complete fertility diagnosis.\n\nLink actual pH and texture to sample, method, device/SOP, units and raw observations. Missing results stay pending.\n\nExplain the supported meaning and the unmeasured conditions. Distinguish the two supplied teaching models from your own results.\n\nName two crop candidates with separate reasons, and at least one supported management next step with limits; no guessed material dose.",
+      "captionText": "Five report sections in a schematic 3D organiser\n\nThe five cards illustrate report organisation; stacking them does not create, submit, assess or verify a one-page report. The cards show section order, not measured evidence. No model card represents an actual measurement.\n\nIdentity and title\n\nIntroduction and purpose\n\nTest results and methods\n\nInterpretation and discussion\n\nRecommendations\n\nUse a heading within the one-page report: learner, actual date, Plot C/location and sample identity. Do not invent missing information.\n\nState the grower's purpose and the properties actually investigated, without promising a complete fertility diagnosis.\n\nLink actual pH and texture to sample, method, device/SOP, units and raw observations. Missing results stay pending.\n\nExplain the supported meaning and the unmeasured conditions. Distinguish the two supplied teaching models from your own results.\n\nName two crop candidates with separate reasons, and at least one supported management next step with limits; no guessed material dose.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/finalCourseReport/ui/model",
+          "text": "Five report sections in a schematic 3D organiser",
+          "sha256": "c7cceb38d9d2477d017df05d2f254bc3ff8f44d0acf2c48fca557f27b757b987"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/modelHelp",
+          "text": "The five cards illustrate report organisation; stacking them does not create, submit, assess or verify a one-page report. The cards show section order, not measured evidence. No model card represents an actual measurement.",
+          "sha256": "eafa7c71412d61412bc4651be35cabe885f393b0dd8deb54333371a76b2bea80"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sections/0",
+          "text": "Identity and title",
+          "sha256": "afc9cc1ca17673c59ff11c76099e4ddefff719a955f137c497225a6982dd182a"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sections/1",
+          "text": "Introduction and purpose",
+          "sha256": "8a5262019bfaad9289d4bc57f43a0d97ddf5294daf88cb899eda2cf952cdc8b7"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sections/2",
+          "text": "Test results and methods",
+          "sha256": "5193b304ed3882ced1a408bb250809f99983060cd399adedfbb8d3400f04a180"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sections/3",
+          "text": "Interpretation and discussion",
+          "sha256": "43b512e5f790f057fab3a92caa03f194c58b8ee2095757acae694f33b03b2f11"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sections/4",
+          "text": "Recommendations",
+          "sha256": "0738ee00b61bc3afc0edf2dc46e06cbe4cdafdc9637644ee7b71237a0cebe284"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sectionHelp/0",
+          "text": "Use a heading within the one-page report: learner, actual date, Plot C/location and sample identity. Do not invent missing information.",
+          "sha256": "e049b383304d29158921dbafae29c1709e27ed3b4da6d0a67cf4e6ef7fc7784b"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sectionHelp/1",
+          "text": "State the grower's purpose and the properties actually investigated, without promising a complete fertility diagnosis.",
+          "sha256": "83b5a9e238d2d3fd726b4145c0c51a83c8c4cd626a1e693ffd10862a18c7496a"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sectionHelp/2",
+          "text": "Link actual pH and texture to sample, method, device/SOP, units and raw observations. Missing results stay pending.",
+          "sha256": "c031cc51252e28b07671c48419cc10861b177af78081f01b1b440ac7fb09a727"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sectionHelp/3",
+          "text": "Explain the supported meaning and the unmeasured conditions. Distinguish the two supplied teaching models from your own results.",
+          "sha256": "b8677a6c97d2c96406a31c4820b8f95a1b525e192b9c224066df7378b19de692"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/sectionHelp/4",
+          "text": "Name two crop candidates with separate reasons, and at least one supported management next step with limits; no guessed material dose.",
+          "sha256": "da0411445709bd3cf70e0f5983b6bae0ef1233f7c25c04133e11740fcc21d528"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [],
+      "spokenTextSha256": "4932a0ce37d58cdd71f209220ada942c648195d225b000df92ebebb4fae18f3b",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "ac2dba1108d9b6b662ecdd7fba40be24033041675c929d7462d18e27aa8691ca",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-012",
+      "semanticGroup": "REPORT-DATA",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Draft your own Plot C report\n\nLearner, actual date, Plot C/location and sample/aliquot identity\n\nPurpose of the grower's soil investigation\n\nActual pH method, device/SOP, quantity basis, raw reading, resolution and genuine measurement time\n\nActual texture method, ball/ribbon/wet-rub observations, length unit, conditional class and uncertainty\n\nInterpretation supported by your actual results, with limitations\n\nFirst named crop candidate and its evidence-based suitability conditions\n\nSecond named crop candidate and its evidence-based suitability conditions\n\nAt least one supported management next step and information required before any rate\n\nUnmeasured climate, water, drainage, salinity and nutrient constraints; explicitly missing evidence",
+      "spokenText": "Draft your own Plot C report\n\nLearner, actual date, Plot C/location and sample/aliquot identity\n\nPurpose of the grower's soil investigation\n\nActual pH method, device/SOP, quantity basis, raw reading, resolution and genuine measurement time\n\nActual texture method, ball/ribbon/wet-rub observations, length unit, conditional class and uncertainty\n\nInterpretation supported by your actual results, with limitations\n\nFirst named crop candidate and its evidence-based suitability conditions\n\nSecond named crop candidate and its evidence-based suitability conditions\n\nAt least one supported management next step and information required before any rate\n\nUnmeasured climate, water, drainage, salinity and nutrient constraints; explicitly missing evidence",
+      "displayText": "Draft your own Plot C report\n\nLearner, actual date, Plot C/location and sample/aliquot identity\n\nPurpose of the grower's soil investigation\n\nActual pH method, device/SOP, quantity basis, raw reading, resolution and genuine measurement time\n\nActual texture method, ball/ribbon/wet-rub observations, length unit, conditional class and uncertainty\n\nInterpretation supported by your actual results, with limitations\n\nFirst named crop candidate and its evidence-based suitability conditions\n\nSecond named crop candidate and its evidence-based suitability conditions\n\nAt least one supported management next step and information required before any rate\n\nUnmeasured climate, water, drainage, salinity and nutrient constraints; explicitly missing evidence",
+      "captionText": "Draft your own Plot C report\n\nLearner, actual date, Plot C/location and sample/aliquot identity\n\nPurpose of the grower's soil investigation\n\nActual pH method, device/SOP, quantity basis, raw reading, resolution and genuine measurement time\n\nActual texture method, ball/ribbon/wet-rub observations, length unit, conditional class and uncertainty\n\nInterpretation supported by your actual results, with limitations\n\nFirst named crop candidate and its evidence-based suitability conditions\n\nSecond named crop candidate and its evidence-based suitability conditions\n\nAt least one supported management next step and information required before any rate\n\nUnmeasured climate, water, drainage, salinity and nutrient constraints; explicitly missing evidence",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/finalCourseReport/ui/reportTitle",
+          "text": "Draft your own Plot C report",
+          "sha256": "0cbcd28a27bfe9b7775547db0d8765b448ae9c5f54b0a1f77ce32ba758253875"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/0",
+          "text": "Learner, actual date, Plot C/location and sample/aliquot identity",
+          "sha256": "6fb3f78f73c6e7c633b35ce047ae5a9afeed2ffa8dfea9fb896dcf223cb2cec3"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/1",
+          "text": "Purpose of the grower's soil investigation",
+          "sha256": "5b9dec40da1513afc92ac586e0cac517fb8cd563a6600ac04050c27ba932497b"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/2",
+          "text": "Actual pH method, device/SOP, quantity basis, raw reading, resolution and genuine measurement time",
+          "sha256": "761408c387cdd391a5b6a659319e542666ec1599f4a8b77a9b18d558b1556d76"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/3",
+          "text": "Actual texture method, ball/ribbon/wet-rub observations, length unit, conditional class and uncertainty",
+          "sha256": "ba6fa7c700d85089374582441103bd7a5f4edf9736078bc7dbb3a4a76aef94a4"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/4",
+          "text": "Interpretation supported by your actual results, with limitations",
+          "sha256": "ecf603103650850ff5083ff48db8368be6b7b3b522110452c84e19909f7de38b"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/5",
+          "text": "First named crop candidate and its evidence-based suitability conditions",
+          "sha256": "42d58fed08287168e5b3cf8a057ef13900e65d6494d42d2c8105dcf39ba740dc"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/6",
+          "text": "Second named crop candidate and its evidence-based suitability conditions",
+          "sha256": "08e89aac23e736c4473778ed41a307ba958dd9e53a4bdf22a7e4d71675dc0d68"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/7",
+          "text": "At least one supported management next step and information required before any rate",
+          "sha256": "dff580fc9ec25468fe58a00c36370b2f78cb5b1d96a03f99097e84be268a9c5a"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/reportFields/8",
+          "text": "Unmeasured climate, water, drainage, salinity and nutrient constraints; explicitly missing evidence",
+          "sha256": "9d087637d6ff1696c0890d982e8ec7950d213305d88fdacba7454abe4767149e"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [],
+      "spokenTextSha256": "1345b7fea671d764533605f7692b2828ac09eab9ec426a0b1050a7017dff7390",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "55e5ea0b780276c292b7ccc500172c333f6097edf8b9268e4a3fff9958af5392",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-013",
+      "semanticGroup": "RECORD",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Keep actual assessment and reassessment evidence separate\n\nActual criterion and learner/sample identity\n\nFirst observed attempt: date, action, evidence and actual decision\n\nSpecific technical error or missing evidence identified by the assessor\n\nTargeted feedback and focused practice actually completed\n\nNew observed attempt: date, action and fresh evidence\n\nActual new decision: competent, not yet competent or not attempted\n\nDependent readings, interpretation or report sections needing correction\n\nActual assessor identity and comments; reference to the signed assessment record, if it exists\n\nCourse criteria still unassessed and the evidence required before completion\n\nLeave real observations, dates and results blank until they exist. A retry can remain not yet competent. Preserve the original attempt; a corrected calibration can require rechecking the dependent pH reading and report. Record the assessor's identity and reference an actual signed record only when available. Names or other text entered here are unsigned notes and do not authenticate a signature or approve an assessment.",
+      "spokenText": "Keep actual assessment and reassessment evidence separate\n\nActual criterion and learner/sample identity\n\nFirst observed attempt: date, action, evidence and actual decision\n\nSpecific technical error or missing evidence identified by the assessor\n\nTargeted feedback and focused practice actually completed\n\nNew observed attempt: date, action and fresh evidence\n\nActual new decision: competent, not yet competent or not attempted\n\nDependent readings, interpretation or report sections needing correction\n\nActual assessor identity and comments; reference to the signed assessment record, if it exists\n\nCourse criteria still unassessed and the evidence required before completion\n\nLeave real observations, dates and results blank until they exist. A retry can remain not yet competent. Preserve the original attempt; a corrected calibration can require rechecking the dependent pH reading and report. Record the assessor's identity and reference an actual signed record only when available. Names or other text entered here are unsigned notes and do not authenticate a signature or approve an assessment.",
+      "displayText": "Keep actual assessment and reassessment evidence separate\n\nActual criterion and learner/sample identity\n\nFirst observed attempt: date, action, evidence and actual decision\n\nSpecific technical error or missing evidence identified by the assessor\n\nTargeted feedback and focused practice actually completed\n\nNew observed attempt: date, action and fresh evidence\n\nActual new decision: competent, not yet competent or not attempted\n\nDependent readings, interpretation or report sections needing correction\n\nActual assessor identity and comments; reference to the signed assessment record, if it exists\n\nCourse criteria still unassessed and the evidence required before completion\n\nLeave real observations, dates and results blank until they exist. A retry can remain not yet competent. Preserve the original attempt; a corrected calibration can require rechecking the dependent pH reading and report. Record the assessor's identity and reference an actual signed record only when available. Names or other text entered here are unsigned notes and do not authenticate a signature or approve an assessment.",
+      "captionText": "Keep actual assessment and reassessment evidence separate\n\nActual criterion and learner/sample identity\n\nFirst observed attempt: date, action, evidence and actual decision\n\nSpecific technical error or missing evidence identified by the assessor\n\nTargeted feedback and focused practice actually completed\n\nNew observed attempt: date, action and fresh evidence\n\nActual new decision: competent, not yet competent or not attempted\n\nDependent readings, interpretation or report sections needing correction\n\nActual assessor identity and comments; reference to the signed assessment record, if it exists\n\nCourse criteria still unassessed and the evidence required before completion\n\nLeave real observations, dates and results blank until they exist. A retry can remain not yet competent. Preserve the original attempt; a corrected calibration can require rechecking the dependent pH reading and report. Record the assessor's identity and reference an actual signed record only when available. Names or other text entered here are unsigned notes and do not authenticate a signature or approve an assessment.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/finalCourseReport/ui/recordTitle",
+          "text": "Keep actual assessment and reassessment evidence separate",
+          "sha256": "f30251c657799db36714649a2db4e0fec81ac178fc474cc2998f7cd70cb90ba4"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/0",
+          "text": "Actual criterion and learner/sample identity",
+          "sha256": "7d4ca839ffc6350cc690c4986c0aee5e8a5ff52b661253352237d6921777f7cf"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/1",
+          "text": "First observed attempt: date, action, evidence and actual decision",
+          "sha256": "8cfb732bce227c6dc90ef351efeb05959eb9046db23ad2c6e480f87b602b95f0"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/2",
+          "text": "Specific technical error or missing evidence identified by the assessor",
+          "sha256": "73707c3bed980e32c3b4279ace03276b65ec1abcad8928b1404908de6db5403f"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/3",
+          "text": "Targeted feedback and focused practice actually completed",
+          "sha256": "4a2b77c8e9db5e845f18055d3b621db1a89af082c147804446a133e95c465f07"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/4",
+          "text": "New observed attempt: date, action and fresh evidence",
+          "sha256": "a4a31574cf4021592c5ec7da9adab7e5ede4b34a822936a7a76bf8b581e48ea5"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/5",
+          "text": "Actual new decision: competent, not yet competent or not attempted",
+          "sha256": "8c7966c8e1579ea5a3150a41a4f5140c86267599c1867b5d3a8046d5e8dc3f1a"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/6",
+          "text": "Dependent readings, interpretation or report sections needing correction",
+          "sha256": "1124b9bfd10d5c12289990de0f485147e7a4f521c01496392970f64008faec7e"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/7",
+          "text": "Actual assessor identity and comments; reference to the signed assessment record, if it exists",
+          "sha256": "0d6e10bdce92008e6ac2c2c50fb8def366ba1438631696fe2de19c70c7e7c9ec"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordFields/8",
+          "text": "Course criteria still unassessed and the evidence required before completion",
+          "sha256": "87ece5c7cece41c719ce466b0342b1bab0cf69c589cfe65b9fe5d07ce2384eb0"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/recordHelp",
+          "text": "Leave real observations, dates and results blank until they exist. A retry can remain not yet competent. Preserve the original attempt; a corrected calibration can require rechecking the dependent pH reading and report. Record the assessor's identity and reference an actual signed record only when available. Names or other text entered here are unsigned notes and do not authenticate a signature or approve an assessment.",
+          "sha256": "4e359f42255ccdd1e75eb050a9f8575f5d29f86a9510847860e07b467a11082a"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [],
+      "spokenTextSha256": "512a4d27e07522372da4fef6a0869b090440e8ad4c1371a2335d613db7c0a04a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "8891ac41fa32e1e872ed83b063949bff605f36d7aaa5d90d3b473c9f1f954eb9",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-014",
+      "semanticGroup": "FINAL",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "Four final-review models remain distinct\n\nThe four original models contain 32 multiple-choice questions, nine written tasks, four products and four processes. Repeated topics still have distinct task conditions. Review the relevant answers and individual checklist evidence; a topic mention is not proof of completion.\n\nModel 1: labelled 500 g sample product; separate colour-reagent pH process\n\nModel 2: five Field B readings and separate Paddock 3 report product; composite-sampling process\n\nModel 3: documented 5 kg tomato mix product; full ribbon/feel process\n\nModel 4: three-soil crop chart product; harmless-prop simulated spill process\n\nA multiple-choice crop or soil question\n\nThe five-point team safety checklist before sampling\n\nA 500 g labelled sample assessed against its product card\n\nA colour-reagent pH procedure using the actual kit and its chart\n\nA one-page Paddock 3 report assessed against its product criteria\n\nA five-kilogram tomato mix made to a documented trainer specification\n\nA three-soil chart with two suitable and one poor-fit crop for each soil\n\nA ribbon procedure with moisture, ball, ribbon and wet-rub observations\n\nA harmless-prop simulated reagent spill under the actual represented-product/site procedure\n\nCompare reasoning only after your own attempt. Each required product and process still needs its own assessment evidence. Completing this page never signs off the whole course.",
+      "spokenText": "Four final-review models remain distinct\n\nThe four original models contain 32 multiple-choice questions, nine written tasks, four products and four processes. Repeated topics still have distinct task conditions. Review the relevant answers and individual checklist evidence; a topic mention is not proof of completion.\n\nModel 1: labelled five hundred gram sample product; separate colour-reagent pH process\n\nModel 2: five Field B readings and separate Paddock 3 report product; composite-sampling process\n\nModel 3: documented five kilogram tomato mix product; full ribbon/feel process\n\nModel 4: three-soil crop chart product; harmless-prop simulated spill process\n\nA multiple-choice crop or soil question\n\nThe five-point team safety checklist before sampling\n\nA five hundred gram labelled sample assessed against its product card\n\nA colour-reagent pH procedure using the actual kit and its chart\n\nA one-page Paddock 3 report assessed against its product criteria\n\nA five-kilogram tomato mix made to a documented trainer specification\n\nA three-soil chart with two suitable and one poor-fit crop for each soil\n\nA ribbon procedure with moisture, ball, ribbon and wet-rub observations\n\nA harmless-prop simulated reagent spill under the actual represented-product/site procedure\n\nCompare reasoning only after your own attempt. Each required product and process still needs its own assessment evidence. Completing this page never signs off the whole course.",
+      "displayText": "Four final-review models remain distinct\n\nThe four original models contain 32 multiple-choice questions, nine written tasks, four products and four processes. Repeated topics still have distinct task conditions. Review the relevant answers and individual checklist evidence; a topic mention is not proof of completion.\n\nModel 1: labelled 500 g sample product; separate colour-reagent pH process\n\nModel 2: five Field B readings and separate Paddock 3 report product; composite-sampling process\n\nModel 3: documented 5 kg tomato mix product; full ribbon/feel process\n\nModel 4: three-soil crop chart product; harmless-prop simulated spill process\n\nA multiple-choice crop or soil question\n\nThe five-point team safety checklist before sampling\n\nA 500 g labelled sample assessed against its product card\n\nA colour-reagent pH procedure using the actual kit and its chart\n\nA one-page Paddock 3 report assessed against its product criteria\n\nA five-kilogram tomato mix made to a documented trainer specification\n\nA three-soil chart with two suitable and one poor-fit crop for each soil\n\nA ribbon procedure with moisture, ball, ribbon and wet-rub observations\n\nA harmless-prop simulated reagent spill under the actual represented-product/site procedure\n\nCompare reasoning only after your own attempt. Each required product and process still needs its own assessment evidence. Completing this page never signs off the whole course.",
+      "captionText": "Four final-review models remain distinct\n\nThe four original models contain 32 multiple-choice questions, nine written tasks, four products and four processes. Repeated topics still have distinct task conditions. Review the relevant answers and individual checklist evidence; a topic mention is not proof of completion.\n\nModel 1: labelled 500 g sample product; separate colour-reagent pH process\n\nModel 2: five Field B readings and separate Paddock 3 report product; composite-sampling process\n\nModel 3: documented 5 kg tomato mix product; full ribbon/feel process\n\nModel 4: three-soil crop chart product; harmless-prop simulated spill process\n\nA multiple-choice crop or soil question\n\nThe five-point team safety checklist before sampling\n\nA 500 g labelled sample assessed against its product card\n\nA colour-reagent pH procedure using the actual kit and its chart\n\nA one-page Paddock 3 report assessed against its product criteria\n\nA five-kilogram tomato mix made to a documented trainer specification\n\nA three-soil chart with two suitable and one poor-fit crop for each soil\n\nA ribbon procedure with moisture, ball, ribbon and wet-rub observations\n\nA harmless-prop simulated reagent spill under the actual represented-product/site procedure\n\nCompare reasoning only after your own attempt. Each required product and process still needs its own assessment evidence. Completing this page never signs off the whole course.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/finalCourseReport/ui/finalTitle",
+          "text": "Four final-review models remain distinct",
+          "sha256": "7a5f384cce9bdf05f1890cfeac443b35c659571a845fd71f8340b24c9c6a0d40"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalHelp",
+          "text": "The four original models contain 32 multiple-choice questions, nine written tasks, four products and four processes. Repeated topics still have distinct task conditions. Review the relevant answers and individual checklist evidence; a topic mention is not proof of completion.",
+          "sha256": "3454e12b429cbfcdc0ae0ea16b592c0b8cd30f9cf9c02e56981732d7f337b883"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalModels/0",
+          "text": "Model 1: labelled 500 g sample product; separate colour-reagent pH process",
+          "sha256": "4a0d0d9aa024ba09a34cd02e17f0dac16330c0a367578f0b447ad3c01c906213"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalModels/1",
+          "text": "Model 2: five Field B readings and separate Paddock 3 report product; composite-sampling process",
+          "sha256": "62799a95a2010e8199c0b8e33b56b9cb1ec70bcfc36e830f4ddf1f371fb9e28d"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalModels/2",
+          "text": "Model 3: documented 5 kg tomato mix product; full ribbon/feel process",
+          "sha256": "9dbbb7f635e14b74fa163d1f912bcbf32fa202133b6815f883f1b8090efca6c2"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalModels/3",
+          "text": "Model 4: three-soil crop chart product; harmless-prop simulated spill process",
+          "sha256": "b9067d30940f542bd9f3d0342c418a9213a5ff1ababad101cb3c91b063dbf07c"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/0",
+          "text": "A multiple-choice crop or soil question",
+          "sha256": "38076d7e1bd4f45eb1efe3e879336f49827e8d6c482e76df83666c408f2983db"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/1",
+          "text": "The five-point team safety checklist before sampling",
+          "sha256": "42035d626ecc6824bd7c5b123b7ce742e9234c1eae9ae4b42639d841c1fdb262"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/2",
+          "text": "A 500 g labelled sample assessed against its product card",
+          "sha256": "ba35c2222f0eb4fd82169ea3aae29d926994d11f918950899eb2c5a1463d6138"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/3",
+          "text": "A colour-reagent pH procedure using the actual kit and its chart",
+          "sha256": "5eac0e1352d3b7155acb4d24bb786945477a54f14e006778cb31c1f62f982e31"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/4",
+          "text": "A one-page Paddock 3 report assessed against its product criteria",
+          "sha256": "77c8e8733e07682a5c3977c6f155d59fe83d80e8daae9d4ce66efc562a5d3bb0"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/5",
+          "text": "A five-kilogram tomato mix made to a documented trainer specification",
+          "sha256": "f6994d241d7b91cec8b9d1a280175bc3b5759138b6fcad995df8aff1e086f83f"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/6",
+          "text": "A three-soil chart with two suitable and one poor-fit crop for each soil",
+          "sha256": "875156972641cbe1704601561b57e094a29186df39ab637fe3b24eabf7854350"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/7",
+          "text": "A ribbon procedure with moisture, ball, ribbon and wet-rub observations",
+          "sha256": "36c41eeee640b648d9d0ec8b66981553aaba38e588abca42a505e899a01445f6"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/evidenceTasks/8",
+          "text": "A harmless-prop simulated reagent spill under the actual represented-product/site procedure",
+          "sha256": "c8bc8f96a6ced55496471074dbc8224bec207c58ee79bd88381400a0eed67f4a"
+        },
+        {
+          "pointer": "/finalCourseReport/ui/finalLimits",
+          "text": "Compare reasoning only after your own attempt. Each required product and process still needs its own assessment evidence. Completing this page never signs off the whole course.",
+          "sha256": "30cdaa1b60bb8b91548a79d5ac1a5e7abe3b2f6b40ec83f490bef888e2fa88b0"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "500 g",
+          "spoken": "five hundred gram",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        },
+        {
+          "written": "5 kg",
+          "spoken": "five kilogram",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "46b5af667ba9f57dc929b5e1dadc08493cb1039027788e1252096057194faded",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "59c6a048c481dd0a0531d558dbade1b709a167cc26f987bee6ff21a17c79a9d8",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-015",
+      "semanticGroup": "PRACTICE",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Arrange a Plot C one-page report, inserting only your own observed pH and texture records and marking any still-missing method or date.\n\nChoose two crop candidates and one management next step, then state the unmeasured limits and distinguish the pH 6.8 model from your sample.\n\nSort final-review evidence into an answer, written product or individually observed process. Then draft the source's five-point team safety checklist covering PPE and emergency preparedness; its content needs review and the real site still needs the trainer's inspection.\n\nGiven an invalid calibration result, write specific feedback, practice and a new assessment record that can still be unpassed.\n\nThis workspace saves drafts. Text presence, a model value, a quiz score and a self-rating do not approve the final report, verify one printed page or establish practical competence. An assessor must review the actual evidence and reasoning. Missing own-sample pH or texture leaves the actual-results report pending; practical records remain separately unobserved.",
+      "spokenText": "Arrange a Plot C one-page report, inserting only your own observed pH and texture records and marking any still-missing method or date.\n\nChoose two crop candidates and one management next step, then state the unmeasured limits and distinguish the pH six point eight model from your sample.\n\nSort final-review evidence into an answer, written product or individually observed process. Then draft the source's five-point team safety checklist covering PPE and emergency preparedness; its content needs review and the real site still needs the trainer's inspection.\n\nGiven an invalid calibration result, write specific feedback, practice and a new assessment record that can still be unpassed.\n\nThis workspace saves drafts. Text presence, a model value, a quiz score and a self-rating do not approve the final report, verify one printed page or establish practical competence. An assessor must review the actual evidence and reasoning. Missing own-sample pH or texture leaves the actual-results report pending; practical records remain separately unobserved.",
+      "displayText": "Arrange a Plot C one-page report, inserting only your own observed pH and texture records and marking any still-missing method or date.\n\nChoose two crop candidates and one management next step, then state the unmeasured limits and distinguish the pH 6.8 model from your sample.\n\nSort final-review evidence into an answer, written product or individually observed process. Then draft the source's five-point team safety checklist covering PPE and emergency preparedness; its content needs review and the real site still needs the trainer's inspection.\n\nGiven an invalid calibration result, write specific feedback, practice and a new assessment record that can still be unpassed.\n\nThis workspace saves drafts. Text presence, a model value, a quiz score and a self-rating do not approve the final report, verify one printed page or establish practical competence. An assessor must review the actual evidence and reasoning. Missing own-sample pH or texture leaves the actual-results report pending; practical records remain separately unobserved.",
+      "captionText": "Arrange a Plot C one-page report, inserting only your own observed pH and texture records and marking any still-missing method or date.\n\nChoose two crop candidates and one management next step, then state the unmeasured limits and distinguish the pH 6.8 model from your sample.\n\nSort final-review evidence into an answer, written product or individually observed process. Then draft the source's five-point team safety checklist covering PPE and emergency preparedness; its content needs review and the real site still needs the trainer's inspection.\n\nGiven an invalid calibration result, write specific feedback, practice and a new assessment record that can still be unpassed.\n\nThis workspace saves drafts. Text presence, a model value, a quiz score and a self-rating do not approve the final report, verify one printed page or establish practical competence. An assessor must review the actual evidence and reasoning. Missing own-sample pH or texture leaves the actual-results report pending; practical records remain separately unobserved.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Arrange a Plot C one-page report, inserting only your own observed pH and texture records and marking any still-missing method or date.",
+          "sha256": "d31b33b2e9933970c22068fa707055b65f6b01ef4220adcc16394eb22fbbd5fe"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Choose two crop candidates and one management next step, then state the unmeasured limits and distinguish the pH 6.8 model from your sample.",
+          "sha256": "b7cf08bfa802ffa4b2102b91e6c50d11e0fabf5ae5bef99740a0033227dbab86"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Sort final-review evidence into an answer, written product or individually observed process. Then draft the source's five-point team safety checklist covering PPE and emergency preparedness; its content needs review and the real site still needs the trainer's inspection.",
+          "sha256": "71cb9254978d349c9ba9b8fcb9181670c9a9d28e3a7fe5c6b3aebdef0bffa61d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Given an invalid calibration result, write specific feedback, practice and a new assessment record that can still be unpassed.",
+          "sha256": "3d146f5f1cc9b73048c51034e77555eeb412e0f20b290f4ef5b4702266ab2922"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This workspace saves drafts. Text presence, a model value, a quiz score and a self-rating do not approve the final report, verify one printed page or establish practical competence. An assessor must review the actual evidence and reasoning. Missing own-sample pH or texture leaves the actual-results report pending; practical records remain separately unobserved.",
+          "sha256": "9bbd397e0184c7dc3b63ecec0cce7d23081b264a15009e1e6c96a98a1e3912f9"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "6.8",
+          "spoken": "six point eight",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "35e277d59ab25daac9d8b0db0a316a8ec24bc9cbccfa4eec0d833ba86e39879a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "ff1c89d22af347c3d82b3cf478e2e11053a0b9499dbba693b49a5f7c6f189f3b",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-016",
+      "semanticGroup": "GLOSSARY",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalText": "preliminary report\n\nA concise interpretation of available evidence with its limits, not a certificate of complete soil health.\n\nreassessment\n\nA new assessment after specific feedback and practice, with a new actual decision rather than an automatic pass.\n\ncompetent\n\nThe relevant skill was observed safely and accurately against its stated practical standard.\n\nnot yet demonstrated\n\nRequired evidence is incomplete or did not meet the criterion; targeted practice and another genuine observation may follow.\n\ndata provenance\n\nThe record linking a value to the learner’s sample, date, method, instrument and person who performed the work.\n\ncrop candidate\n\nA possible crop based on current evidence, requiring checks of climate, water, drainage and nutrients before a planting decision.",
+      "spokenText": "preliminary report\n\nA concise interpretation of available evidence with its limits, not a certificate of complete soil health.\n\nreassessment\n\nA new assessment after specific feedback and practice, with a new actual decision rather than an automatic pass.\n\ncompetent\n\nThe relevant skill was observed safely and accurately against its stated practical standard.\n\nnot yet demonstrated\n\nRequired evidence is incomplete or did not meet the criterion; targeted practice and another genuine observation may follow.\n\ndata provenance\n\nThe record linking a value to the learner’s sample, date, method, instrument and person who performed the work.\n\ncrop candidate\n\nA possible crop based on current evidence, requiring checks of climate, water, drainage and nutrients before a planting decision.",
+      "displayText": "preliminary report\n\nA concise interpretation of available evidence with its limits, not a certificate of complete soil health.\n\nreassessment\n\nA new assessment after specific feedback and practice, with a new actual decision rather than an automatic pass.\n\ncompetent\n\nThe relevant skill was observed safely and accurately against its stated practical standard.\n\nnot yet demonstrated\n\nRequired evidence is incomplete or did not meet the criterion; targeted practice and another genuine observation may follow.\n\ndata provenance\n\nThe record linking a value to the learner’s sample, date, method, instrument and person who performed the work.\n\ncrop candidate\n\nA possible crop based on current evidence, requiring checks of climate, water, drainage and nutrients before a planting decision.",
+      "captionText": "preliminary report\n\nA concise interpretation of available evidence with its limits, not a certificate of complete soil health.\n\nreassessment\n\nA new assessment after specific feedback and practice, with a new actual decision rather than an automatic pass.\n\ncompetent\n\nThe relevant skill was observed safely and accurately against its stated practical standard.\n\nnot yet demonstrated\n\nRequired evidence is incomplete or did not meet the criterion; targeted practice and another genuine observation may follow.\n\ndata provenance\n\nThe record linking a value to the learner’s sample, date, method, instrument and person who performed the work.\n\ncrop candidate\n\nA possible crop based on current evidence, requiring checks of climate, water, drainage and nutrients before a planting decision.",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "preliminary report",
+          "sha256": "cf033ce4efd40b1c1372782b546973f9a9e451e57fdcaf3e80dc24419f4307a3"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A concise interpretation of available evidence with its limits, not a certificate of complete soil health.",
+          "sha256": "0eb47f52a7d40ac3edcb110be497c63aa3ef9a5de41c1ae7e5a6007a23c8f8c0"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "reassessment",
+          "sha256": "fedbe04cf65980fc639202cd11529641e6b4d8525505e9dd81de95ff7548029f"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A new assessment after specific feedback and practice, with a new actual decision rather than an automatic pass.",
+          "sha256": "09bb8a558beca045d38cc21282d3ac2e94bc2c37769022fd80e82fba01cf0106"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "competent",
+          "sha256": "9923e7741b8d8c822759de3a4b00f4c0e732064b07624e4caa884cd54ac0d88f"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "The relevant skill was observed safely and accurately against its stated practical standard.",
+          "sha256": "82d9a49293099dc18f8f598c6e0d9fad74ef972934e473590a7bb1933703822a"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "not yet demonstrated",
+          "sha256": "bf7dd25ef43ac1049876779307d7d263b7ebfb63d3cf72e2800adb4f13d4516b"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Required evidence is incomplete or did not meet the criterion; targeted practice and another genuine observation may follow.",
+          "sha256": "0c1397211f06706cc34d223a397b1ba5012187c676624bc8a35a9b595bb1a55b"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "data provenance",
+          "sha256": "2fb4e0f052e0cb81cc8dd4540fb3d329fefe6b581966e65cb3a1a6e4e4a9f347"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "The record linking a value to the learner’s sample, date, method, instrument and person who performed the work.",
+          "sha256": "bbe0f96e747bdd946ec48a9a1fb649cea39a4941b3ac58bff2e6f688dc04d0b4"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "crop candidate",
+          "sha256": "62c7fc4a7d1c188ae0d5a5df1a6432a6b9281d184ff2fdad44e0378fefbea84f"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A possible crop based on current evidence, requiring checks of climate, water, drainage and nutrients before a planting decision.",
+          "sha256": "66cb15c1ee810e32503d720e933dd1c628293eda9c1c463f20bda8e20e53e696"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [],
+      "spokenTextSha256": "bc7324a10a29c3e51a0b58b0ceb7a797cccccf6da5c49b173487f29cf675b90c",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "cf88fafe55e6acbb460fa05a268e94f1364aca3653921ae330b9201dcfa894b8",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    },
+    {
+      "id": "S3-17-en-r1-017",
+      "semanticGroup": "REFLECTION",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "originalText": "Can I prepare and submit a clear report recommending suitable crops and management based on test results?\n\ncan\n\ncannot\n\npartly\n\nSelf-assessment 5.2 supports reflection about reporting. Its Can / Cannot / Partly choices and notes do not approve a report or establish practical competence. Reflect on what still needs practice; actual assessment requires separate individual evidence.\n\nNotes: evidence or reporting stage needing further practice",
+      "spokenText": "Can I prepare and submit a clear report recommending suitable crops and management based on test results?\n\ncan\n\ncannot\n\npartly\n\nSelf-assessment five point two supports reflection about reporting. Its Can / Cannot / Partly choices and notes do not approve a report or establish practical competence. Reflect on what still needs practice; actual assessment requires separate individual evidence.\n\nNotes: evidence or reporting stage needing further practice",
+      "displayText": "Can I prepare and submit a clear report recommending suitable crops and management based on test results?\n\ncan\n\ncannot\n\npartly\n\nSelf-assessment 5.2 supports reflection about reporting. Its Can / Cannot / Partly choices and notes do not approve a report or establish practical competence. Reflect on what still needs practice; actual assessment requires separate individual evidence.\n\nNotes: evidence or reporting stage needing further practice",
+      "captionText": "Can I prepare and submit a clear report recommending suitable crops and management based on test results?\n\ncan\n\ncannot\n\npartly\n\nSelf-assessment 5.2 supports reflection about reporting. Its Can / Cannot / Partly choices and notes do not approve a report or establish practical competence. Reflect on what still needs practice; actual assessment requires separate individual evidence.\n\nNotes: evidence or reporting stage needing further practice",
+      "delivery": "Read only the supplied English text in a calm, warm, natural teaching voice, at a moderate pace with connected phrasing and natural pauses. Preserve all quantities, units, negations, scientific conditions and uncertainty. Do not add introductions, explanations, sound effects or instructions.",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I prepare and submit a clear report recommending suitable crops and management based on test results?",
+          "sha256": "b740630754d949f4f5d21a5eb765711756bf22795a6344f0b1d39a9f2410dc0f"
+        },
+        {
+          "pointer": "/selfReflection/choices/0",
+          "text": "can",
+          "sha256": "9f584196e7fe6de85d3898bc0b11c78b1d0a1d49530ee5eaf7c26c3939cf043d"
+        },
+        {
+          "pointer": "/selfReflection/choices/1",
+          "text": "cannot",
+          "sha256": "9a43b6dac466089780a2087bab24e7d30bbf56313b2f1b93ab455204696cfd96"
+        },
+        {
+          "pointer": "/selfReflection/choices/2",
+          "text": "partly",
+          "sha256": "13bfaf8f3c4750362fa8a7e9682ec630cebc996739a335cf2b3d5e0e82ebeed0"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-assessment 5.2 supports reflection about reporting. Its Can / Cannot / Partly choices and notes do not approve a report or establish practical competence. Reflect on what still needs practice; actual assessment requires separate individual evidence.",
+          "sha256": "251fc0d0e626507a4432eb0ddb3aef4ce18a8e59bb327da03c63d1da3c8692e6"
+        },
+        {
+          "pointer": "/selfReflection/notesPrompt",
+          "text": "Notes: evidence or reporting stage needing further practice",
+          "sha256": "5898dbade012ed8576fc107dfbd06c363f1c005bcd681c5c6054a3edcaec07b1"
+        }
+      ],
+      "sourceFileSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+      "sourceOriginalFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "5.2",
+          "spoken": "five point two",
+          "reason": "Targeted native-locale pronunciation/acronym/quantity rendering; numerical/source meaning preserved."
+        }
+      ],
+      "spokenTextSha256": "59d3fed8250a04f45129a1be77fea0d62585da3f721a6de701de7625033b371a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "requestFingerprintSha256": "eede808afc58bcdec0e9a948b077c2c6f59f5040974baed1a2c9a599d97c5235",
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "timingSource": null,
+      "assessmentSolutionsIncluded": false
+    }
+  ],
+  "sourceSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+  "safeProjectionSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0",
+  "status": "SOURCE_BOUND_NOT_GENERATED"
+}

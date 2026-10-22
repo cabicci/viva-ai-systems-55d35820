@@ -1,0 +1,653 @@
+{
+  "schema": "masaarat.S3-17.exact-passage-reuse-intake.v1",
+  "checkedAtUTC": "2026-10-22T10:33:39.551717+00:00",
+  "propsFilesScanned": 66,
+  "narrationRecordsScanned": 404,
+  "requiredUnits": 68,
+  "exactWholePassageTextMatches": [],
+  "verifiedAcceptedRequestAndPCMReuseCandidates": [],
+  "sourceAudioFilenameInventory": {
+    "path": "existing-audio-paths.json",
+    "sha256": "a7c19259141111b505aa373ac05db792f961ea1475b00f5d9b1e339fd7882e55",
+    "WAVCount": 968
+  },
+  "coverageByLocale": {
+    "en": {
+      "requiredParts": 17,
+      "exactWholePassageTextMatches": 0,
+      "verifiedReuse": 0
+    },
+    "ar-EG": {
+      "requiredParts": 17,
+      "exactWholePassageTextMatches": 0,
+      "verifiedReuse": 0
+    },
+    "it": {
+      "requiredParts": 17,
+      "exactWholePassageTextMatches": 0,
+      "verifiedReuse": 0
+    },
+    "de": {
+      "requiredParts": 17,
+      "exactWholePassageTextMatches": 0,
+      "verifiedReuse": 0
+    }
+  },
+  "reusePolicy": "Preserve valid accepted older-model recordings by exact request/text/locale/delivery/voice identity and PCM evidence. Neither matching names nor WAV existence proves reuse. No recording removed or regenerated.",
+  "scopeLimit": "Known full-course props metadata and current on-drive WAV filename inventory. No filesystem-wide listening or guarantee that every historic accepted request/PCM archive is available.",
+  "newProviderCalls": 0,
+  "unitFingerprints": [
+    {
+      "id": "S3-17-en-r1-001",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "0b87e09f2a009d5151ee2bec20fc841203e5b7dba7b7fa55f72596e6d9079bbb",
+      "spokenTextSha256": "9cdf41001170438b686a4bcbd560cba3efc608af078da4ee30ac66b039a564e7",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-002",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "4db2079a8ef69e9922d4e0c912b41c22bed3d40f3596398312d3fedb22725ea3",
+      "spokenTextSha256": "afef015f0d769832fff7f5fcf1dfc31276fa331b91286ce236d5089e6152ed8a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-003",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "554502937d89cb3188a10e2e7d7caa79f1ad96c6dbf768bc59d4d0a81ca6fa3b",
+      "spokenTextSha256": "eced9d2af4a93bf813b6331c8af148e7194744922accb70dc3b090b9b2291b72",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-004",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "2ec089d06cbf910ad1d46729a267fb8146b683442efd52cb768e3dae278295f4",
+      "spokenTextSha256": "3b3dc973d0eb2263bedf1e8c54fefa627fa76796186eae9e12abc0ba64fbad04",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-005",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "3da7fbb5b2d7561d6f315b241b400923a5c89f19d087dc620f2ff69fe06ac258",
+      "spokenTextSha256": "baf6b6f357054de2bc5524e0263387675a601746a835a5ffff30a7b9b1b29e6e",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-006",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "1dfcbd84544fe91ae94631ad1464dab78de0eeb9b31bd0df7da26e52aff5cf3c",
+      "spokenTextSha256": "7a0c10405219945949d4d40225e5d08a26f82fbb05e61b6d79a5b24206ecd15f",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-007",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "e993b787047cfa856e643042e4af0bd223e30176f356ddb462985a0346134000",
+      "spokenTextSha256": "5aa1e85e04e07745e7bc44974ecc4afd011850d36d34d32a846fb6abc1698629",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-008",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "f56dd02ff29cb439a3e2fd04c6eda356408d59bd0087c802ce5014d008463b48",
+      "spokenTextSha256": "43a16a3346ef2fb7e6b06992af390f0a9fb84641324cb4121769d8c92ca2f5b7",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-009",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "e99a918afb0c5f31d12d3460df8827f3ff206ab40d0daedd1e24ff3b938ea997",
+      "spokenTextSha256": "04c4d97a8342e80c4d81089b9b501127256e50a4cf55825a841d322994abf9e6",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-010",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "4e9e63ae7f62c194a1b69becece8a2357b19fba8a19d617384d7cb064553de7e",
+      "spokenTextSha256": "8489e34f3fdcc91dd00667861d26e69b187ccf681ae736e1e24be3b71a5918d2",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-011",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "ac2dba1108d9b6b662ecdd7fba40be24033041675c929d7462d18e27aa8691ca",
+      "spokenTextSha256": "4932a0ce37d58cdd71f209220ada942c648195d225b000df92ebebb4fae18f3b",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-012",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "55e5ea0b780276c292b7ccc500172c333f6097edf8b9268e4a3fff9958af5392",
+      "spokenTextSha256": "1345b7fea671d764533605f7692b2828ac09eab9ec426a0b1050a7017dff7390",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-013",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "8891ac41fa32e1e872ed83b063949bff605f36d7aaa5d90d3b473c9f1f954eb9",
+      "spokenTextSha256": "512a4d27e07522372da4fef6a0869b090440e8ad4c1371a2335d613db7c0a04a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-014",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "74041dde8a5d55f2bd423576afd4dcaba7c2742a92bfe2ba8eb577e6b973b59d",
+      "spokenTextSha256": "b98e5155d2731eb36f9fa62997a845e195c4e1e698c6a56e70f8ca4a80983dc0",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-015",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "ff1c89d22af347c3d82b3cf478e2e11053a0b9499dbba693b49a5f7c6f189f3b",
+      "spokenTextSha256": "35e277d59ab25daac9d8b0db0a316a8ec24bc9cbccfa4eec0d833ba86e39879a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-016",
+      "locale": "en",
+      "voice": "Kore",
+      "requestFingerprintSha256": "cf88fafe55e6acbb460fa05a268e94f1364aca3653921ae330b9201dcfa894b8",
+      "spokenTextSha256": "bc7324a10a29c3e51a0b58b0ceb7a797cccccf6da5c49b173487f29cf675b90c",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-en-r1-017",
+      "locale": "en",
+      "voice": "Charon",
+      "requestFingerprintSha256": "eede808afc58bcdec0e9a948b077c2c6f59f5040974baed1a2c9a599d97c5235",
+      "spokenTextSha256": "59d3fed8250a04f45129a1be77fea0d62585da3f721a6de701de7625033b371a",
+      "deliverySha256": "f5c8ebc26f2b119159b09f5a909a2c0080a2784c2bb69520e458169469ef67fd",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-001",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "2c2d29237ea24e0421344b602725fcca5a326cfbe30b97d2d16117d514551dc9",
+      "spokenTextSha256": "31bbbc3e361a5317a3ef93d27ef728ca3cf2125de9590672dc19a0a611e15890",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-002",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "152303ab606817110a9bc3d09863cdbc47c2dab1ada8fdf6abfc980ef52a1481",
+      "spokenTextSha256": "f059060fc481c55d9f6d1ba747eda5e004989f3edb57706ce32cafcacbc20964",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-003",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "db34f546a4c37c36613c6ee57f29e841a273cb9c8877a0ad5c08cf88ac1fd716",
+      "spokenTextSha256": "369c98e9da24dbd758945a37c098a5a02195ee2c0a8e573cfc0b4058c96ae1db",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-004",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "7f5eca8eb9a37af0e55925a16e3a9b1a28aba0cf5bf9bbba739c9579c16cfd57",
+      "spokenTextSha256": "c356d313e1bc125f8aaa9e55c7b4ca31ed65deb3c126c483f80cc358aa34a974",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-005",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "232e23fcdffa129c600cbead49ca99e476b5651bff81262f98ba7a80b5f44349",
+      "spokenTextSha256": "938e028e345195de4088ab8975cc7ce564d48b0a77c4db892863d264d0568f6b",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-006",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "65768e36a3f7ba5a46a993015e885b03c3ffdacb7120bd48d14883619b3888ed",
+      "spokenTextSha256": "ec4de75682f187befdcb163e71879e480b8d719682e5c1cfd0ff87398fb217a0",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-007",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "2c5082d261095b99dab60a65853bd6079870e6d790e0a0f6708129b754144d4a",
+      "spokenTextSha256": "a2d445b319115f6b7ffa3db4dbc1c326e20655f2feb754e753a460fc25ee4fbe",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-008",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "07f458b3fb41be557d9fa6a3251ee38110dff885f291955e93cd839c59d00f05",
+      "spokenTextSha256": "6ff1a2ef9e85d58cc656c39814850ee843f66adef82ac1da111ff615d54743a7",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-009",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "b5c41f0a24c3c4fee7a3395fa42107b7ee8382a030d5f953812685f8f4e86fd0",
+      "spokenTextSha256": "037ffbebb310ca8afd616ffd45a7d67f903b7a4960f6d453e6f70fb8558dc5e2",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-010",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "dbfba6b78582eef852add48a651d34615ea98384178c078cb59da7d9ed735a60",
+      "spokenTextSha256": "8b20decae0c80ae3f937c65da1c84b29c25351540dfbcb7fd79638f672a93cb6",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-011",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "5d9d3a03c3addbaeece770d535b80ed98688f8aaf11d4a3484319283adfae6e1",
+      "spokenTextSha256": "708a3c916b8053b7d36684d20f1b675cad28fd5d4705e213c82fb489acdb612e",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-012",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "1b1b0767803f360041f7507179c6c8dfc7e8f0daa0a57e864cf9e6b5f643f440",
+      "spokenTextSha256": "6f00680fcb19b500907092fd3d33c296a9d116c9fd4768f3e7ebc9a4beb953d5",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-013",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "3ec7c723fd59571ec1e4881bef0d4267db80241ba09052baee223802fe5c66e4",
+      "spokenTextSha256": "d6b1a0c6054408d030f22450c329bd21821a248c24d16240558e3e8e3b1fa842",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-014",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "e0bfd9065e4597ac54890aa83b5eded66239e6c69839fcc2021c694d836c4e19",
+      "spokenTextSha256": "8269498a6a066f459a4ad246a0b3a2c43df6084f9f9a5e4d8c49d5c7006fe9dc",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-015",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "5c5b19fc561eae6c09d28a5d73337fb0a3eb5c08784e91ef80ee1e95df5ba806",
+      "spokenTextSha256": "603cdbfb3007173b1ec8c4bd1210feb177dadb689ff1886073b36ab3f80d6caf",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-016",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "requestFingerprintSha256": "a412cb3fc3d8f4bf32064bca72b3f8a59092c411557685dd1c1fd08a0e4bdfd6",
+      "spokenTextSha256": "33e4f1bff288aa04a565d6a789b0102e466c533b5d25e4081b5e53041e2ce2d3",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-ar-EG-r1-017",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "requestFingerprintSha256": "40d4157c72e17bb11462d64218e4f090285c4ca006831db80d69e97c9dbdec3c",
+      "spokenTextSha256": "84daaddd54ffcdc3bf758a6e6b18f31bf461abd96aefd633448215869142be0b",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-001",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "d6f0c89ccc465a9537d65f44f9086a8f1306be6f906913085ffb02202d3cf6a9",
+      "spokenTextSha256": "577abfc71438626dc7eec69d0245fbeff63ecc22c5f2d8c5d2ae1cad45b7d4ea",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-002",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "4343f6d842f6427a55758b6ff6c4f1faaa6dbc98d8c20f2ffd0a07a4563c81b6",
+      "spokenTextSha256": "5c86fe5b4ba34533de3233431f8944e10541c29e14680d9c4ca24744d0ef27b0",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-003",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "0fe342155855aa79e942156b38073b4a95b381d4d7bbad50b222888bd5887c96",
+      "spokenTextSha256": "3d25515c356b5f10bf845b51b967421a43f564235b279b7413b83587472ac52e",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-004",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "026fa4fad8f5faa688ff7b0f23024f34ad2b83b4a678bcf7eb93b0cbe8299cec",
+      "spokenTextSha256": "6d69379cf9875521dad463fc92903e258f8dd327d26b05843d068d9837cfd713",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-005",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "35efb0a742090a059ff7912fea6b8e6708554182a81a5c52428d239e8109aac3",
+      "spokenTextSha256": "bc7034969f97d5947b01579380bccfa836e0358d26a03f34f7756f2c73efc6a5",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-006",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "0c64d1419b8a80356c7cab39b46eb7c90024ad4fe80818c42b087d97b46276ae",
+      "spokenTextSha256": "e074f81327878bfe90a4bbcf7288d54f89bb5f3992de3a7d9ee3200fb04afe2c",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-007",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "d0e4657f3c11082795014ffe505d6a2f1460f9493fbb80eb30d3fefe59eafd16",
+      "spokenTextSha256": "b11587f5c112fc46f2d00a45d72c265f8bc037a80a05ce10385df80e8f3f6ed8",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-008",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "6535b4238333179693c5d82595c91dfe7f3cc504de178e401a67ad164f38f847",
+      "spokenTextSha256": "bc523bdd74660320be7446e23147895900555327ee173f7f673244424aedd61a",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-009",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "7d43d042c452e2102b55561d484c1551003333a0c1601fdc3b299c6c36ca7389",
+      "spokenTextSha256": "c242f4bed52e9715b70b53a57c3c1319cfa7683d0480727b0f49e364a838f577",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-010",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "9b1cafeeac49daa848af52988cc3ce21ff20c61380fc1f5cda2255470bc73277",
+      "spokenTextSha256": "08b42d79e8485c866c662991b0a07780fb58d393987b5f86d1ddd3f74ca48bdd",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-011",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "37b295d4751324d76fcefedf97b8fc6e3e9b1459ad3595c42680b93a8cdb40fd",
+      "spokenTextSha256": "80c810707a5e02028224bf000dce70b0a54b4260fee35d24544cb6240cebfa13",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-012",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "a5fc551c53d117251175b2eaceb0bd73d00db147eff9ae7bab4ee97d33cffcef",
+      "spokenTextSha256": "dbef85ec4024c740dd034ef1bbd8da34e07fd7985e547ae5d24e83e9d600c9d3",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-013",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "86c2ce9cea9f78d03636c2b55be559699b48021970cf2123a8e5bebe5365cac1",
+      "spokenTextSha256": "f37cfecd97653240c5f8aee99c180b551786a126a94bbe4c45e838076f2f26ef",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-014",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "f9cdde72aa1ddaf0bc87bd6bfaad9bf71ee9089447bba9f6108f29b1f7204486",
+      "spokenTextSha256": "50ee2fa1597eb643e99d261554e9d712c5a4d5c1f272d563ea1d74265bcb79e1",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-015",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "f2da018561000da915604eddb47e11eaa7cce6c861889c40db2269cf7bca2601",
+      "spokenTextSha256": "5fe2dc71bd9d038b3f1bc2215b64139bdf37ee1c5c58d37681fe2689ea4f0569",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-016",
+      "locale": "it",
+      "voice": "Kore",
+      "requestFingerprintSha256": "d2d68581c28a027b7238b83b6278079777e3c88e814905151fc0531ebe8345f7",
+      "spokenTextSha256": "b8b787b0d6100683634850d7b36b02ffdd6f4cb79d50deb4d4e32bf0a95a5f38",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-it-r1-017",
+      "locale": "it",
+      "voice": "Charon",
+      "requestFingerprintSha256": "452960d93bc3b06057d0182eb13b2f874538782cd9883c24fc1c30d31380a3c0",
+      "spokenTextSha256": "fcae5a5cc7147fa867bc11c6d88bfd714c2967cdd0ac9f6b5ff1ba606dca3d5c",
+      "deliverySha256": "5bf0bdb2aad2587ecd4133642b556598fb97bb3680f71a4dec570cebf1a2a7fe",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-001",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "aa412688140fd170513fa2c1d409d0361fc08d39b1d6357d441a9e622ee0b330",
+      "spokenTextSha256": "18f4b7b6658d83170c0ad55a34737cffd9baf94192294e7688e1e1736789d379",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-002",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "38d42e267a2fefe11ec98e48b71c8f4ea8ff2454bb3ade6f0a066377cb616fc6",
+      "spokenTextSha256": "2a63375dcd2f3e6b5e335944d61dd482e9a6eead404ab86fb26edaa1d28958a3",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-003",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "38144d10803127d2b91bdf6ef360cb30d1ed8cccbdbc8ea854aecbace52b3a57",
+      "spokenTextSha256": "445e9d50dba28913a82fc3d1dbf0703740aae70aadce771c79dc723deaa69c01",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-004",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "966354d651845a5961904165a40f89f341e72565639a7b2f22c593a1776ed0f3",
+      "spokenTextSha256": "12db5aa764f2933060210e2135b5efa403ffc3431ab0f60b72de9dde2a06b70d",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-005",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "c80878cb8e16936a7b69f400560e646b642081bb7083392082e9924a767011c8",
+      "spokenTextSha256": "46687d9b8fb15f167d1ced6e8714aca9e5dbed09d92d914e453a0160e4cf6246",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-006",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "983b6a9d8e1adecc1053aceac2f35de892b66bbddc6f8434d90e59fb48fc03b0",
+      "spokenTextSha256": "720425610026076974575e67dfe7c5abbf6f251dd1ee1e9810326c68d95779b3",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-007",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "849837c1c1cf18aeea83d83fd4dbe98fed14ca5a0657b165be0844aeb70d54d9",
+      "spokenTextSha256": "3c9b0ad25a5c3f2a777704a8a18972080fc5983e8003a130b1009352df62b555",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-008",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "0c5d43ffe9b2beaabebe106456784e2d1338c1e75925c4db54b7c54cb181f045",
+      "spokenTextSha256": "f34ff5dc6da6d43bf239deba3828dc8f07272aa8e69b60d1ff011838ee141e4e",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-009",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "002c8b2c2262c86200300723925afe4be7685525736bca32e2f3384c7135c4ff",
+      "spokenTextSha256": "ee735b695c397b750e26d852d2b53e181ba9c60b6f539e10ef62f646136b697e",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-010",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "c3e371664ae1a7529ff3263ae70ac9a9df7b65d9c6cb0078dca2cef5860dcb9e",
+      "spokenTextSha256": "5086cc224dc68b8eec08ad7645232ea05ffdd9d30975a921ebb9ee72f597a87b",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-011",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "3d2dbce9286965568abd3bcd1f2e121356ef2839cb8adf6f6b19a2d1f5ec2048",
+      "spokenTextSha256": "22c1b7051453028d0db16aff9a95a7da7792d79a3377afa7ecd57c820179b977",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-012",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "d3ce0ba7a5fa30617c7cff8408dfa7e3e18ab600bcaa32a7aab7af2b6313647b",
+      "spokenTextSha256": "ca6ab6d7251ee4b5e4d1d82cb138648c013954205fd2cef326df4b278a1c5aab",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-013",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "e7643c430746998562a53368eae8e06a0689f0ee6201ad066b2f67274566fe41",
+      "spokenTextSha256": "07d8bf4090b055ff1b7b66d945380bfae5c84c2cfa763c031ffb13d09298470c",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-014",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "0f78f4adb709706f34828e3046bd49f3d611a453d02ea6f09f32a2dba51658ae",
+      "spokenTextSha256": "91f3d17dda71c27cb3977967b6f36201bb167127182623af5214daa7a8f54099",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-015",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "5801961631db30db591fbce39b464f096a2db3e0f794e06965f1caaee3a4181b",
+      "spokenTextSha256": "4f74a2c0eb6eef029644b31285468e75276c6b76c4aa0f307c06ff8b9d29b58e",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-016",
+      "locale": "de",
+      "voice": "Kore",
+      "requestFingerprintSha256": "6081286f1d5b1e6582cecfa300f6e289471f3bb85302e9cb96dff8c617573fb3",
+      "spokenTextSha256": "c0698e8067f4a82c908d6bf28bc17a971c6cfb64352f1116b2e378707d823d14",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    },
+    {
+      "id": "S3-17-de-r1-017",
+      "locale": "de",
+      "voice": "Charon",
+      "requestFingerprintSha256": "a9c57d93971f066ec5908da2a9f59be2934bb8e328b5a40059994a11b086d7c3",
+      "spokenTextSha256": "e30c20ee42ac67fd62cdbc32da45c7bf4ebf9eeb904b426aaf733776cfe3b86c",
+      "deliverySha256": "778a8ace2e57c1135509fa1290f4d23ae14cdc0272a9b88d1339f299552f6760",
+      "verifiedExistingAcceptedPCM": false
+    }
+  ]
+}

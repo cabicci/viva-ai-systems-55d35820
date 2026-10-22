@@ -1,0 +1,11 @@
+# S3-17 safe public explanation projection
+
+The full four-locale current course sources remain private and byte-exact. This package includes only a strict explicit teaching allowlist: identity/title/intro/goals, complete readings and worked examples, glossary, resource label, reflection, instructional learner actions and their practical boundary. The report UI projection includes only explanatory section/field requirements, records guidance and unclassified final-task scope descriptions. Unknown fields are rejected.
+
+The public projection omits quiz and written-assessment prompts/answers, feedback, private review points, report passChecks, evidence-type answer choices/mappings, retry-order answer choices/outcomes and scoring decisions. Teaching an explanation that a later task assesses remains permitted. Final task descriptions identify the distinct cases/products/processes without solving or grading them. The49 original final-model occurrences still require independent four-language assessment localization/review.
+
+Every included value retains its exact original JSON pointer and text hash. sourceFileSHA256 pins the safe runnable projection; sourceOriginalFileSHA256 pins the separate private full-source lineage. These are distinct identities. Projection bytes alone cannot prove private original bytes: the local contract verification separately compared current originals and private snapshots before freezing this package.
+
+Each spoken passage records original/display/caption text separately, with explicit native-locale pronunciation adaptations and a model/locale/voice/delivery/format fingerprint. The actual worker checks all17 source-pointer groups per language, immutable68-unit identity, exact script equality, quantities/case distinctions, initial blank/unobserved states and finite budgets. Offline tests mutate the actual worker's root and nested projections, scientific state and event guards with network forbidden.
+
+Never recursively publish the parent preparation directory. Publish only the final explicit package allowlist and the separate exact workflow file. No full private source, assessment body, QA history, learner observation or signed result belongs in this public narration job.

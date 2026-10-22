@@ -1,0 +1,2718 @@
+name: S3-17 four-locale narration r2 first push only
+on:
+  push:
+    branches:
+      - work/soil-s317-narration-20261022-r2
+permissions:
+  contents: read
+concurrency:
+  group: s317-connected-r2-38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/masaarat-media-review-job/s3-17-narration-r2
+  REQUEST_SHA: 38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a
+  WORKER_SHA: 55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845
+  FREEZE_SHA: 4d5982b744a6f19d39360d86dcf5937c12bf60e041a7f5b8379f903b358c7390
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narration:
+    if: >-
+      github.run_attempt == 1 && github.event_name == 'push' &&
+      github.repository == 'cabicci/viva-ai-systems-55d35820' && github.event.repository.id == 1272666418 &&
+      github.event.repository.private == false && github.event.repository.fork == false &&
+      github.ref == 'refs/heads/work/soil-s317-narration-20261022-r2' && github.ref_type == 'branch' &&
+      github.event.ref == github.ref && github.event.created == true &&
+      github.event.deleted == false && github.event.forced == false &&
+      github.event.before == '0000000000000000000000000000000000000000' && github.event.after == github.sha
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Validate frozen complete source-bound request offline
+        run: |
+          cd "$PACKAGE"
+          python worker.py validate
+      - name: Exact preferred-model metadata preflight; no fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py preflight
+      - name: Install hash-verified Whisper runtime once
+        run: |
+          cd "$PACKAGE"
+          python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+          python worker.py verify-wheel
+          python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+      - name: One TTS attempt S3-17-en-r1-001
+        id: tts001
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-001
+      - name: Immediate audio upload before review S3-17-en-r1-001
+        id: upload001
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts001.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-001
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload001.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload001.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-001
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-001 || true
+          python worker.py asr --unit S3-17-en-r1-001 || true
+          python worker.py compare --unit S3-17-en-r1-001
+      - name: Preserve immediate part review evidence S3-17-en-r1-001
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-002
+        id: tts002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-002
+      - name: Immediate audio upload before review S3-17-en-r1-002
+        id: upload002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts002.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-002
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload002.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload002.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-002 || true
+          python worker.py asr --unit S3-17-en-r1-002 || true
+          python worker.py compare --unit S3-17-en-r1-002
+      - name: Preserve immediate part review evidence S3-17-en-r1-002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-003
+        id: tts003
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-003
+      - name: Immediate audio upload before review S3-17-en-r1-003
+        id: upload003
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts003.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-003
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload003.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload003.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-003
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-003 || true
+          python worker.py asr --unit S3-17-en-r1-003 || true
+          python worker.py compare --unit S3-17-en-r1-003
+      - name: Preserve immediate part review evidence S3-17-en-r1-003
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-004
+        id: tts004
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-004
+      - name: Immediate audio upload before review S3-17-en-r1-004
+        id: upload004
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts004.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-004
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload004.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload004.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-004
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-004 || true
+          python worker.py asr --unit S3-17-en-r1-004 || true
+          python worker.py compare --unit S3-17-en-r1-004
+      - name: Preserve immediate part review evidence S3-17-en-r1-004
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-005
+        id: tts005
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-005
+      - name: Immediate audio upload before review S3-17-en-r1-005
+        id: upload005
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts005.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-005
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload005.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload005.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-005
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-005 || true
+          python worker.py asr --unit S3-17-en-r1-005 || true
+          python worker.py compare --unit S3-17-en-r1-005
+      - name: Preserve immediate part review evidence S3-17-en-r1-005
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-006
+        id: tts006
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-006
+      - name: Immediate audio upload before review S3-17-en-r1-006
+        id: upload006
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts006.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-006
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload006.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload006.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-006
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-006 || true
+          python worker.py asr --unit S3-17-en-r1-006 || true
+          python worker.py compare --unit S3-17-en-r1-006
+      - name: Preserve immediate part review evidence S3-17-en-r1-006
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-007
+        id: tts007
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-007
+      - name: Immediate audio upload before review S3-17-en-r1-007
+        id: upload007
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts007.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-007
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload007.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload007.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-007
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-007 || true
+          python worker.py asr --unit S3-17-en-r1-007 || true
+          python worker.py compare --unit S3-17-en-r1-007
+      - name: Preserve immediate part review evidence S3-17-en-r1-007
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-008
+        id: tts008
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-008
+      - name: Immediate audio upload before review S3-17-en-r1-008
+        id: upload008
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts008.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-008
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload008.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload008.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-008
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-008 || true
+          python worker.py asr --unit S3-17-en-r1-008 || true
+          python worker.py compare --unit S3-17-en-r1-008
+      - name: Preserve immediate part review evidence S3-17-en-r1-008
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-009
+        id: tts009
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-009
+      - name: Immediate audio upload before review S3-17-en-r1-009
+        id: upload009
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts009.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-009
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload009.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload009.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-009
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-009 || true
+          python worker.py asr --unit S3-17-en-r1-009 || true
+          python worker.py compare --unit S3-17-en-r1-009
+      - name: Preserve immediate part review evidence S3-17-en-r1-009
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-010
+        id: tts010
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-010
+      - name: Immediate audio upload before review S3-17-en-r1-010
+        id: upload010
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts010.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-010
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload010.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload010.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-010
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-010 || true
+          python worker.py asr --unit S3-17-en-r1-010 || true
+          python worker.py compare --unit S3-17-en-r1-010
+      - name: Preserve immediate part review evidence S3-17-en-r1-010
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-011
+        id: tts011
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-011
+      - name: Immediate audio upload before review S3-17-en-r1-011
+        id: upload011
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts011.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-011
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload011.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload011.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-011
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-011 || true
+          python worker.py asr --unit S3-17-en-r1-011 || true
+          python worker.py compare --unit S3-17-en-r1-011
+      - name: Preserve immediate part review evidence S3-17-en-r1-011
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-012
+        id: tts012
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-012
+      - name: Immediate audio upload before review S3-17-en-r1-012
+        id: upload012
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts012.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-012
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload012.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload012.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-012
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-012 || true
+          python worker.py asr --unit S3-17-en-r1-012 || true
+          python worker.py compare --unit S3-17-en-r1-012
+      - name: Preserve immediate part review evidence S3-17-en-r1-012
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-013
+        id: tts013
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-013
+      - name: Immediate audio upload before review S3-17-en-r1-013
+        id: upload013
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts013.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-013
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload013.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload013.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-013
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-013 || true
+          python worker.py asr --unit S3-17-en-r1-013 || true
+          python worker.py compare --unit S3-17-en-r1-013
+      - name: Preserve immediate part review evidence S3-17-en-r1-013
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-014
+        id: tts014
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-014
+      - name: Immediate audio upload before review S3-17-en-r1-014
+        id: upload014
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts014.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-014
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload014.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload014.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-014
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-014 || true
+          python worker.py asr --unit S3-17-en-r1-014 || true
+          python worker.py compare --unit S3-17-en-r1-014
+      - name: Preserve immediate part review evidence S3-17-en-r1-014
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-015
+        id: tts015
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-015
+      - name: Immediate audio upload before review S3-17-en-r1-015
+        id: upload015
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts015.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-015
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload015.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload015.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-015
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-015 || true
+          python worker.py asr --unit S3-17-en-r1-015 || true
+          python worker.py compare --unit S3-17-en-r1-015
+      - name: Preserve immediate part review evidence S3-17-en-r1-015
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-016
+        id: tts016
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-016
+      - name: Immediate audio upload before review S3-17-en-r1-016
+        id: upload016
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts016.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-016
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload016.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload016.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-016
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-016 || true
+          python worker.py asr --unit S3-17-en-r1-016 || true
+          python worker.py compare --unit S3-17-en-r1-016
+      - name: Preserve immediate part review evidence S3-17-en-r1-016
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-en-r1-017
+        id: tts017
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-en-r1-017
+      - name: Immediate audio upload before review S3-17-en-r1-017
+        id: upload017
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts017.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-en-r1-017-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-017/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-en-r1-017
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload017.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload017.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-en-r1-017 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-en-r1-017
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-en-r1-017 || true
+          python worker.py asr --unit S3-17-en-r1-017 || true
+          python worker.py compare --unit S3-17-en-r1-017
+      - name: Preserve immediate part review evidence S3-17-en-r1-017
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-en-r1-017-review
+          path: ${{ env.PACKAGE }}/output/S3-17-en-r1-017/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-001
+        id: tts018
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-001
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-001
+        id: upload018
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts018.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-001
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload018.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload018.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-001
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-001 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-001 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-001
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-001
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-002
+        id: tts019
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-002
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-002
+        id: upload019
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts019.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-002
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload019.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload019.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-002 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-002 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-002
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-003
+        id: tts020
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-003
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-003
+        id: upload020
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts020.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-003
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload020.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload020.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-003
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-003 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-003 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-003
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-003
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-004
+        id: tts021
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-004
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-004
+        id: upload021
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts021.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-004
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload021.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload021.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-004
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-004 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-004 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-004
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-004
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-005
+        id: tts022
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-005
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-005
+        id: upload022
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts022.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-005
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload022.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload022.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-005
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-005 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-005 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-005
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-005
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-006
+        id: tts023
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-006
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-006
+        id: upload023
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts023.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-006
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload023.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload023.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-006
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-006 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-006 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-006
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-006
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-007
+        id: tts024
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-007
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-007
+        id: upload024
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts024.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-007
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload024.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload024.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-007
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-007 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-007 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-007
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-007
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-008
+        id: tts025
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-008
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-008
+        id: upload025
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts025.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-008
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload025.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload025.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-008
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-008 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-008 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-008
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-008
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-009
+        id: tts026
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-009
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-009
+        id: upload026
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts026.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-009
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload026.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload026.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-009
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-009 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-009 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-009
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-009
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-010
+        id: tts027
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-010
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-010
+        id: upload027
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts027.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-010
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload027.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload027.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-010
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-010 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-010 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-010
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-010
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-011
+        id: tts028
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-011
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-011
+        id: upload028
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts028.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-011
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload028.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload028.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-011
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-011 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-011 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-011
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-011
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-012
+        id: tts029
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-012
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-012
+        id: upload029
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts029.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-012
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload029.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload029.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-012
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-012 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-012 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-012
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-012
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-013
+        id: tts030
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-013
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-013
+        id: upload030
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts030.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-013
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload030.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload030.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-013
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-013 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-013 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-013
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-013
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-014
+        id: tts031
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-014
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-014
+        id: upload031
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts031.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-014
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload031.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload031.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-014
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-014 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-014 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-014
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-014
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-015
+        id: tts032
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-015
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-015
+        id: upload032
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts032.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-015
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload032.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload032.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-015
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-015 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-015 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-015
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-015
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-016
+        id: tts033
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-016
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-016
+        id: upload033
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts033.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-016
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload033.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload033.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-016
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-016 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-016 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-016
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-016
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-ar-EG-r1-017
+        id: tts034
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-ar-EG-r1-017
+      - name: Immediate audio upload before review S3-17-ar-EG-r1-017
+        id: upload034
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts034.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-017-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-017/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-ar-EG-r1-017
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload034.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload034.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-ar-EG-r1-017 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-ar-EG-r1-017
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-ar-EG-r1-017 || true
+          python worker.py asr --unit S3-17-ar-EG-r1-017 || true
+          python worker.py compare --unit S3-17-ar-EG-r1-017
+      - name: Preserve immediate part review evidence S3-17-ar-EG-r1-017
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-ar-EG-r1-017-review
+          path: ${{ env.PACKAGE }}/output/S3-17-ar-EG-r1-017/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-001
+        id: tts035
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-001
+      - name: Immediate audio upload before review S3-17-it-r1-001
+        id: upload035
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts035.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-001
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload035.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload035.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-001
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-001 || true
+          python worker.py asr --unit S3-17-it-r1-001 || true
+          python worker.py compare --unit S3-17-it-r1-001
+      - name: Preserve immediate part review evidence S3-17-it-r1-001
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-002
+        id: tts036
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-002
+      - name: Immediate audio upload before review S3-17-it-r1-002
+        id: upload036
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts036.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-002
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload036.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload036.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-002 || true
+          python worker.py asr --unit S3-17-it-r1-002 || true
+          python worker.py compare --unit S3-17-it-r1-002
+      - name: Preserve immediate part review evidence S3-17-it-r1-002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-003
+        id: tts037
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-003
+      - name: Immediate audio upload before review S3-17-it-r1-003
+        id: upload037
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts037.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-003
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload037.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload037.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-003
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-003 || true
+          python worker.py asr --unit S3-17-it-r1-003 || true
+          python worker.py compare --unit S3-17-it-r1-003
+      - name: Preserve immediate part review evidence S3-17-it-r1-003
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-004
+        id: tts038
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-004
+      - name: Immediate audio upload before review S3-17-it-r1-004
+        id: upload038
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts038.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-004
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload038.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload038.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-004
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-004 || true
+          python worker.py asr --unit S3-17-it-r1-004 || true
+          python worker.py compare --unit S3-17-it-r1-004
+      - name: Preserve immediate part review evidence S3-17-it-r1-004
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-005
+        id: tts039
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-005
+      - name: Immediate audio upload before review S3-17-it-r1-005
+        id: upload039
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts039.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-005
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload039.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload039.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-005
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-005 || true
+          python worker.py asr --unit S3-17-it-r1-005 || true
+          python worker.py compare --unit S3-17-it-r1-005
+      - name: Preserve immediate part review evidence S3-17-it-r1-005
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-006
+        id: tts040
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-006
+      - name: Immediate audio upload before review S3-17-it-r1-006
+        id: upload040
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts040.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-006
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload040.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload040.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-006
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-006 || true
+          python worker.py asr --unit S3-17-it-r1-006 || true
+          python worker.py compare --unit S3-17-it-r1-006
+      - name: Preserve immediate part review evidence S3-17-it-r1-006
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-007
+        id: tts041
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-007
+      - name: Immediate audio upload before review S3-17-it-r1-007
+        id: upload041
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts041.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-007
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload041.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload041.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-007
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-007 || true
+          python worker.py asr --unit S3-17-it-r1-007 || true
+          python worker.py compare --unit S3-17-it-r1-007
+      - name: Preserve immediate part review evidence S3-17-it-r1-007
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-008
+        id: tts042
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-008
+      - name: Immediate audio upload before review S3-17-it-r1-008
+        id: upload042
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts042.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-008
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload042.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload042.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-008
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-008 || true
+          python worker.py asr --unit S3-17-it-r1-008 || true
+          python worker.py compare --unit S3-17-it-r1-008
+      - name: Preserve immediate part review evidence S3-17-it-r1-008
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-009
+        id: tts043
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-009
+      - name: Immediate audio upload before review S3-17-it-r1-009
+        id: upload043
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts043.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-009
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload043.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload043.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-009
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-009 || true
+          python worker.py asr --unit S3-17-it-r1-009 || true
+          python worker.py compare --unit S3-17-it-r1-009
+      - name: Preserve immediate part review evidence S3-17-it-r1-009
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-010
+        id: tts044
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-010
+      - name: Immediate audio upload before review S3-17-it-r1-010
+        id: upload044
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts044.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-010
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload044.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload044.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-010
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-010 || true
+          python worker.py asr --unit S3-17-it-r1-010 || true
+          python worker.py compare --unit S3-17-it-r1-010
+      - name: Preserve immediate part review evidence S3-17-it-r1-010
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-011
+        id: tts045
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-011
+      - name: Immediate audio upload before review S3-17-it-r1-011
+        id: upload045
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts045.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-011
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload045.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload045.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-011
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-011 || true
+          python worker.py asr --unit S3-17-it-r1-011 || true
+          python worker.py compare --unit S3-17-it-r1-011
+      - name: Preserve immediate part review evidence S3-17-it-r1-011
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-012
+        id: tts046
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-012
+      - name: Immediate audio upload before review S3-17-it-r1-012
+        id: upload046
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts046.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-012
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload046.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload046.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-012
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-012 || true
+          python worker.py asr --unit S3-17-it-r1-012 || true
+          python worker.py compare --unit S3-17-it-r1-012
+      - name: Preserve immediate part review evidence S3-17-it-r1-012
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-013
+        id: tts047
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-013
+      - name: Immediate audio upload before review S3-17-it-r1-013
+        id: upload047
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts047.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-013
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload047.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload047.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-013
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-013 || true
+          python worker.py asr --unit S3-17-it-r1-013 || true
+          python worker.py compare --unit S3-17-it-r1-013
+      - name: Preserve immediate part review evidence S3-17-it-r1-013
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-014
+        id: tts048
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-014
+      - name: Immediate audio upload before review S3-17-it-r1-014
+        id: upload048
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts048.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-014
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload048.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload048.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-014
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-014 || true
+          python worker.py asr --unit S3-17-it-r1-014 || true
+          python worker.py compare --unit S3-17-it-r1-014
+      - name: Preserve immediate part review evidence S3-17-it-r1-014
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-015
+        id: tts049
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-015
+      - name: Immediate audio upload before review S3-17-it-r1-015
+        id: upload049
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts049.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-015
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload049.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload049.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-015
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-015 || true
+          python worker.py asr --unit S3-17-it-r1-015 || true
+          python worker.py compare --unit S3-17-it-r1-015
+      - name: Preserve immediate part review evidence S3-17-it-r1-015
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-016
+        id: tts050
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-016
+      - name: Immediate audio upload before review S3-17-it-r1-016
+        id: upload050
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts050.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-016
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload050.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload050.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-016
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-016 || true
+          python worker.py asr --unit S3-17-it-r1-016 || true
+          python worker.py compare --unit S3-17-it-r1-016
+      - name: Preserve immediate part review evidence S3-17-it-r1-016
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-it-r1-017
+        id: tts051
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-it-r1-017
+      - name: Immediate audio upload before review S3-17-it-r1-017
+        id: upload051
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts051.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-it-r1-017-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-017/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-it-r1-017
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload051.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload051.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-it-r1-017 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-it-r1-017
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-it-r1-017 || true
+          python worker.py asr --unit S3-17-it-r1-017 || true
+          python worker.py compare --unit S3-17-it-r1-017
+      - name: Preserve immediate part review evidence S3-17-it-r1-017
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-it-r1-017-review
+          path: ${{ env.PACKAGE }}/output/S3-17-it-r1-017/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-001
+        id: tts052
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-001
+      - name: Immediate audio upload before review S3-17-de-r1-001
+        id: upload052
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts052.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-001-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-001/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-001
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload052.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload052.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-001 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-001
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-001 || true
+          python worker.py asr --unit S3-17-de-r1-001 || true
+          python worker.py compare --unit S3-17-de-r1-001
+      - name: Preserve immediate part review evidence S3-17-de-r1-001
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-001-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-001/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-002
+        id: tts053
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-002
+      - name: Immediate audio upload before review S3-17-de-r1-002
+        id: upload053
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts053.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-002-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-002/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-002
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload053.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload053.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-002 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-002
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-002 || true
+          python worker.py asr --unit S3-17-de-r1-002 || true
+          python worker.py compare --unit S3-17-de-r1-002
+      - name: Preserve immediate part review evidence S3-17-de-r1-002
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-002-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-002/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-003
+        id: tts054
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-003
+      - name: Immediate audio upload before review S3-17-de-r1-003
+        id: upload054
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts054.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-003-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-003/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-003
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload054.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload054.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-003 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-003
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-003 || true
+          python worker.py asr --unit S3-17-de-r1-003 || true
+          python worker.py compare --unit S3-17-de-r1-003
+      - name: Preserve immediate part review evidence S3-17-de-r1-003
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-003-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-003/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-004
+        id: tts055
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-004
+      - name: Immediate audio upload before review S3-17-de-r1-004
+        id: upload055
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts055.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-004-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-004/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-004
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload055.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload055.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-004 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-004
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-004 || true
+          python worker.py asr --unit S3-17-de-r1-004 || true
+          python worker.py compare --unit S3-17-de-r1-004
+      - name: Preserve immediate part review evidence S3-17-de-r1-004
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-004-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-005
+        id: tts056
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-005
+      - name: Immediate audio upload before review S3-17-de-r1-005
+        id: upload056
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts056.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-005-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-005/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-005
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload056.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload056.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-005 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-005
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-005 || true
+          python worker.py asr --unit S3-17-de-r1-005 || true
+          python worker.py compare --unit S3-17-de-r1-005
+      - name: Preserve immediate part review evidence S3-17-de-r1-005
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-005-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-005/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-006
+        id: tts057
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-006
+      - name: Immediate audio upload before review S3-17-de-r1-006
+        id: upload057
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts057.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-006-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-006/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-006
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload057.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload057.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-006 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-006
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-006 || true
+          python worker.py asr --unit S3-17-de-r1-006 || true
+          python worker.py compare --unit S3-17-de-r1-006
+      - name: Preserve immediate part review evidence S3-17-de-r1-006
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-006-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-006/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-007
+        id: tts058
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-007
+      - name: Immediate audio upload before review S3-17-de-r1-007
+        id: upload058
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts058.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-007-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-007/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-007
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload058.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload058.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-007 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-007
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-007 || true
+          python worker.py asr --unit S3-17-de-r1-007 || true
+          python worker.py compare --unit S3-17-de-r1-007
+      - name: Preserve immediate part review evidence S3-17-de-r1-007
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-007-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-007/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-008
+        id: tts059
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-008
+      - name: Immediate audio upload before review S3-17-de-r1-008
+        id: upload059
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts059.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-008-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-008/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-008
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload059.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload059.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-008 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-008
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-008 || true
+          python worker.py asr --unit S3-17-de-r1-008 || true
+          python worker.py compare --unit S3-17-de-r1-008
+      - name: Preserve immediate part review evidence S3-17-de-r1-008
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-008-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-008/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-009
+        id: tts060
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-009
+      - name: Immediate audio upload before review S3-17-de-r1-009
+        id: upload060
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts060.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-009-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-009/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-009
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload060.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload060.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-009 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-009
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-009 || true
+          python worker.py asr --unit S3-17-de-r1-009 || true
+          python worker.py compare --unit S3-17-de-r1-009
+      - name: Preserve immediate part review evidence S3-17-de-r1-009
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-009-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-009/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-010
+        id: tts061
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-010
+      - name: Immediate audio upload before review S3-17-de-r1-010
+        id: upload061
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts061.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-010-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-010/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-010
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload061.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload061.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-010 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-010
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-010 || true
+          python worker.py asr --unit S3-17-de-r1-010 || true
+          python worker.py compare --unit S3-17-de-r1-010
+      - name: Preserve immediate part review evidence S3-17-de-r1-010
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-010-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-011
+        id: tts062
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-011
+      - name: Immediate audio upload before review S3-17-de-r1-011
+        id: upload062
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts062.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-011-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-011/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-011
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload062.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload062.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-011 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-011
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-011 || true
+          python worker.py asr --unit S3-17-de-r1-011 || true
+          python worker.py compare --unit S3-17-de-r1-011
+      - name: Preserve immediate part review evidence S3-17-de-r1-011
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-011-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-011/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-012
+        id: tts063
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-012
+      - name: Immediate audio upload before review S3-17-de-r1-012
+        id: upload063
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts063.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-012-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-012/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-012
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload063.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload063.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-012 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-012
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-012 || true
+          python worker.py asr --unit S3-17-de-r1-012 || true
+          python worker.py compare --unit S3-17-de-r1-012
+      - name: Preserve immediate part review evidence S3-17-de-r1-012
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-012-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-012/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-013
+        id: tts064
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-013
+      - name: Immediate audio upload before review S3-17-de-r1-013
+        id: upload064
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts064.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-013-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-013/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-013
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload064.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload064.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-013 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-013
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-013 || true
+          python worker.py asr --unit S3-17-de-r1-013 || true
+          python worker.py compare --unit S3-17-de-r1-013
+      - name: Preserve immediate part review evidence S3-17-de-r1-013
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-013-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-013/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-014
+        id: tts065
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-014
+      - name: Immediate audio upload before review S3-17-de-r1-014
+        id: upload065
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts065.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-014-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-014/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-014
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload065.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload065.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-014 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-014
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-014 || true
+          python worker.py asr --unit S3-17-de-r1-014 || true
+          python worker.py compare --unit S3-17-de-r1-014
+      - name: Preserve immediate part review evidence S3-17-de-r1-014
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-014-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-014/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-015
+        id: tts066
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-015
+      - name: Immediate audio upload before review S3-17-de-r1-015
+        id: upload066
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts066.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-015-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-015/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-015
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload066.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload066.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-015 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-015
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-015 || true
+          python worker.py asr --unit S3-17-de-r1-015 || true
+          python worker.py compare --unit S3-17-de-r1-015
+      - name: Preserve immediate part review evidence S3-17-de-r1-015
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-015-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-015/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-016
+        id: tts067
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-016
+      - name: Immediate audio upload before review S3-17-de-r1-016
+        id: upload067
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts067.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-016-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-016/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-016
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload067.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload067.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-016 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-016
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-016 || true
+          python worker.py asr --unit S3-17-de-r1-016 || true
+          python worker.py compare --unit S3-17-de-r1-016
+      - name: Preserve immediate part review evidence S3-17-de-r1-016
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-016-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-016/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: One TTS attempt S3-17-de-r1-017
+        id: tts068
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py produce --unit S3-17-de-r1-017
+      - name: Immediate audio upload before review S3-17-de-r1-017
+        id: upload068
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: steps.tts068.outcome == 'success'
+        with:
+          name: s317-connected-r2-S3-17-de-r1-017-audio
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-017/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind audio transfer receipt S3-17-de-r1-017
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload068.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload068.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit S3-17-de-r1-017 --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: Independent actual-audio diagnostics S3-17-de-r1-017
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit S3-17-de-r1-017 || true
+          python worker.py asr --unit S3-17-de-r1-017 || true
+          python worker.py compare --unit S3-17-de-r1-017
+      - name: Preserve immediate part review evidence S3-17-de-r1-017
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-S3-17-de-r1-017-review
+          path: ${{ env.PACKAGE }}/output/S3-17-de-r1-017/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve all partial attempts and frozen provenance
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: s317-connected-r2-complete-evidence
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            ${{ env.PACKAGE }}/output/
+            ${{ env.PACKAGE }}/request.json
+            ${{ env.PACKAGE }}/runtime.json
+            ${{ env.PACKAGE }}/freeze.json
+            ${{ env.PACKAGE }}/worker.py
+            ${{ env.PACKAGE }}/worker-derivation.json
+            ${{ env.PACKAGE }}/offline-verification.json

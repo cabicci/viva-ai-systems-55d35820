@@ -1,0 +1,36 @@
+{
+  "schema": "masaarat.S3-17.source-content-preservation.v1",
+  "sourcePins": [
+    {
+      "locale": "en",
+      "currentSourceSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "projectionPath": "inputs/source-en.json",
+      "projectionSHA256": "7a0fe7f141836f0359a92964497ad8408102905321f1eaef09c4e43c2ecb7fe0"
+    },
+    {
+      "locale": "ar-EG",
+      "currentSourceSHA256": "f1e2323718e81e7e95fa50aeb09032e7a5dd8cf7549aec4f8c6682cc0f6276de",
+      "projectionPath": "inputs/source-ar-EG.json",
+      "projectionSHA256": "f63dd69bc29b252e43409a0e45c8186b8b593a27c47ae8f761e55ecd06cbe514"
+    },
+    {
+      "locale": "it",
+      "currentSourceSHA256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+      "projectionPath": "inputs/source-it.json",
+      "projectionSHA256": "8157ecc3baf2d8af4706d3d0ac1f630f574c6e4822546c876e5dc9f89e1f2fce"
+    },
+    {
+      "locale": "de",
+      "currentSourceSHA256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+      "projectionPath": "inputs/source-de.json",
+      "projectionSHA256": "a4188d67560f14954fc1c2d71977ce064787f4b7ff14e145442b0dfc90bdb989"
+    }
+  ],
+  "allOriginalSourcesPrivateAndByteExact": true,
+  "allReadingExampleGoalGlossaryAndExplanatoryFormMeaningBound": true,
+  "fullPrivateAssessmentBodiesNotCopied": true,
+  "fullPrivateContractVerificationSHA256": "96edeaac4699116dc16899a9982cc36faf5e2eacaec5e25e06d3ac3fa53296ad",
+  "noSourceEdits": true,
+  "noNativeEdits": true,
+  "noApprovalClaimForFutureAudio": true
+}

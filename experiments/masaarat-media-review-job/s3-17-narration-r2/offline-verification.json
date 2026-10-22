@@ -1,0 +1,377 @@
+{
+  "schema": "masaarat.S3-17.actual-worker-offline-verification.v1",
+  "checkedAtUTC": "2026-10-22T11:20:01.442893+00:00",
+  "status": "PASS_OFFLINE_ACTUAL_WORKER",
+  "requestSha256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+  "workerSha256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+  "freezeSha256": "4d5982b744a6f19d39360d86dcf5937c12bf60e041a7f5b8379f903b358c7390",
+  "workflowSha256": "c76d948903b85c9e8a544a979bcccb13bcf6e4ab3d8d90f0e6d62e760902a993",
+  "testScriptSha256": "66d474508536652c287361ab99c7b98a9dd0718bbcad3ae6d90192aff2b06a26",
+  "tests": [
+    {
+      "name": "actual_worker_validate",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_old_tts_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_call_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_automatic_retry",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_required_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_voice",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_speaker",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unit_id_outside_scope",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_file_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_spoken_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unrecorded_spoken_omission",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_display_or_caption_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_invented_duration",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_rubric_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_feedback_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_false_quiz_release_flag",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_binding_text",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_request_fingerprint_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_explanatory_binding",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_group_order",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_original_lineage_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_delivery_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_argon_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_asr_locale_fallback",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_review_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_asr_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_produce_rejects_local_execution_before_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_actions_rerun_attempt2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_other_lesson_output_unit",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_reserve_allows68_rejects69_and_duplicate",
+      "result": "PASS"
+    },
+    {
+      "name": "frozen_vendor_engine_imports_without_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_written_review_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unknown_public_projection_field",
+      "result": "PASS"
+    },
+    {
+      "name": "workflow_all68_once_fresh_push_run1_and_upload_before_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "name": "accept_exact_original_public_first_push_only",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_workflow_dispatch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_repository_dispatch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_schedule_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_later_push_created_false",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_created_string_true",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_nonzero_before_even_when_created_true",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_branch_deletion",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_force_push",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_runner_rerun2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_runner_repository",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_runner_repository_id",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_main_runner_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_main_event_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_r0_runner_ref",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_tag_runner_ref_type",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_zero_runner_commit",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_event_commit_mismatch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_payload_repository_name",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_payload_repository_id",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_repo_payload",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fork_repo_payload",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_worker_requires_same_first_push_guard_in_production_and_validate",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_nonblank_initial_own_record_claim",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_supplied68_case_value",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_half_inch_ribbon_conversion",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_crop_pair_conflation_between_cases",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_49_final_task_omission",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_ph_only_lime_dose_claim",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_universal65_target_claim",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_assessment_answer_release_flag",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_invented_fourlocale49_review_claim",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fabricated_learner_observation",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fabricated_trainer_signature",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fabricated_physical_pass",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fabricated_report_approval",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fabricated_course_completion",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_evidence_type_key_in_nested_public_ui",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_passchecks_in_public_report",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_produce_rejects_later_push_before_provider_or_attempt",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_previous_r1_branch_for_r2",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_has_exactly_five_spoken_delta_parts",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_preserves63_entire_unit_hashes",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_retains_written_display_caption_all68",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_arabic_intervals_clear_and_unchanged_quantity",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_arabic_final49_noun_phrase_natural",
+      "result": "PASS"
+    },
+    {
+      "name": "r2_english_attributive_unit_singular",
+      "result": "PASS"
+    },
+    {
+      "name": "network_calls_remain_zero",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_worker_cli_validate",
+      "result": "PASS",
+      "exitCode": 0,
+      "stdout": "Frozen S3-17 first-push r1 package and all68 reviewed narration identities verified; zero provider calls."
+    }
+  ],
+  "testCount": 86,
+  "providerCalls": 0,
+  "networkCalls": 0,
+  "productionOutputCreated": false,
+  "finiteScope": {
+    "locales": 4,
+    "partsPerLocale": 17,
+    "TTS": 68,
+    "blindArgonReviews": 68,
+    "ASR": 68,
+    "metadataGETs": 2,
+    "automaticRetries": 0
+  },
+  "limits": [
+    "No provider metadata/TTS/audio-review/ASR production invocation ran.",
+    "Availability and actual audio quality are untested for this new batch.",
+    "Offline fixture reservations are synthetic tests, kept separately from production output.",
+    "Frozen manifest and workflow must be rederived if any frozen input changes."
+  ]
+}
