@@ -1,0 +1,253 @@
+{
+  "runId": 39768575970,
+  "commit": "aab1736525b4715a4db7cb45534595239154129b",
+  "state": "EXACT_AUDIO_MODEL_DIAGNOSTIC_INTERPRETATION_NOT_HUMAN_LISTENING_APPROVAL",
+  "intake": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\intake.json",
+    "sha256": "0bbd85ea9f5ddd2ca634c9dc50c84cb7174d309ef25ceb5d68c65ac8333b0999"
+  },
+  "criteria": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+    "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+  },
+  "clips": [
+    {
+      "clipId": "en-s101-checklist",
+      "audioSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "status": "SOURCE_MOTION_MODIFIER_OMISSION_CORROBORATED_BY_THREE_AUDIO_TRANSCRIPTS",
+      "interpretation": "Blind focused transcript again says a machine blocking the route without moving, agreeing with current actual ASR and historical exact-WAV QA transcript. Model overall no_defect_detected is blind to the unsupplied source and cannot establish source completeness. Buried is retained and is not a repair target.",
+      "nextBoundedAction": "BOUNDED_SOURCE_SENTENCE_REPAIR_PROPOSAL",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-en-s101-checklist\\blind-review.json",
+        "sha256": "c03be3fc8959e2cea2c75c8ef78d0569f04f8b936e0c4640a1a3d9a43ab5273e"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-en-s101-checklist\\blind-review-response.raw.json",
+        "sha256": "1fd2add7b9ce25ca9e04c4efc2de7e4f22d34e0a92812acf313b5cf2339bdbff"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-en-s101-checklist\\blind-review-attempt.json",
+        "sha256": "f644db7561712e927c4385d6b632bfb8abe6bc8cb343c1825b3ade97729ab6a3"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-en-s101-checklist\\audio-upload-receipt.json",
+        "sha256": "247f30334280fee19fe56ad53750345df4cf44594b2770b8eb14ea8536c8e7cb"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-en-s101-checklist\\word-timestamps.json",
+        "sha256": "78253d226c3e87ffb2581efe88a307b5d9d79c64ded21df4add7c6b85d02024f"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\en\\audio-qa\\6e3f23dfccc6988da7ee75bf6f5ff3ce9e61625321d082ecd3d97fadc5d178d6.json",
+        "sha256": "c7207e2bf2ede68f000878d8ae5dff203129c41b3b118365483b39fc73153ce9"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "no_defect_detected",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    },
+    {
+      "clipId": "de-s101-limits",
+      "audioSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "status": "ACTION_VERB_AND_IMPERATIVE_DISTORTION_CORROBORATED_BY_ASR_AND_BLIND_REVIEW",
+      "interpretation": "Blind Spinne/Spinje and Les match current ASR conflicts with Schwinge and Lies. Historical script-aware QA had correct source; this disagreement remains explicit. Reagenzien now heard correctly. New Wodenverbesserern allegation conflicts with high-confidence actual ASR Bodenverbesserern and old QA; one new allegation is uncertain and not an extra repair target.",
+      "nextBoundedAction": "TWO_BOUNDED_SOURCE_SENTENCE_REPAIR_PROPOSALS",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-limits\\blind-review.json",
+        "sha256": "b693224ded8fbb7e5c591261643f69770ddbc771bde81ab84a5edf86b6d8aabc"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-limits\\blind-review-response.raw.json",
+        "sha256": "d4b1093a53fb3b600e2430c48bd3f4294b2a61af7397ac98bb941b3ad6c8b8ee"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-limits\\blind-review-attempt.json",
+        "sha256": "c782fb75bfdbd63e53cb19df8d37fe13117a1c9cda0690650401d868013493e1"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-limits\\audio-upload-receipt.json",
+        "sha256": "838afc2c14002efd1d57c1bdf588bb00dcc2686dc85e5592d2185a16ae70a4fb"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+        "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\bf098fedbe52513c7dd3f51598bb3778863170eb1a90c326eb701f9919d09f22.json",
+        "sha256": "9f62dc72e4561d386b6e7bb8f2b55f57d9d665698550c1e5179c1d91c1252b11"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "needs_review",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    },
+    {
+      "clipId": "it-s101-example-gloves",
+      "audioSha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+      "status": "SOURCE_CONTENT_AND_ONSET_PRESENT_RESOLVED_SINGLE_WARBLE_ALLEGATION_RETAINED",
+      "interpretation": "Blind hears complete Controlla including Con- and full instruction directly intelligibly. Current ASR Prolla is not established as a missing-syllable defect. A medium-high brief medial warble allegation remains subjective and isolated; no automatic repair.",
+      "nextBoundedAction": "CONTENT_TIMING_MAY_USE_WHOLE_OBSERVED_CLAUSE_NO_INVENTED_CONTROLLA_ONSET",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-example-gloves\\blind-review.json",
+        "sha256": "4528c0da8c538faf4b80c6c1cc01592aee678abe2899418246336e4330c9ac84"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-example-gloves\\blind-review-response.raw.json",
+        "sha256": "13c41cd0541fdef1832ad4e069b095be891a7a14adf87c725d5d8e0f348164a3"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-example-gloves\\blind-review-attempt.json",
+        "sha256": "aae6b90fcd4aa9ccb6c6d217fa8f2902330cd707628e1d37f959b5eb70c1c107"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-example-gloves\\audio-upload-receipt.json",
+        "sha256": "2d103a80e28165d40b4c2035be60d7196fcd26584e0d2920b7ca54d598cfd8e0"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-example-gloves\\word-timestamps.json",
+        "sha256": "618beb41efa9c9b6f5e5cfefb935e678960cee40c6f37b002a53b869f253e46b"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\it\\audio-qa\\b7541d258c7a5a2f83b0697eed66b38af128487ab420cd2dffcfe21f8d8d62d8.json",
+        "sha256": "4939529547444eb7b56784f29aa247883f452c7c8a0df16b86354ce16e9737c7"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "needs_review",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    },
+    {
+      "clipId": "it-s101-checklist",
+      "audioSha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+      "status": "FOCUSED_ARTICULATION_CONCERN_NOT_CORROBORATED_NEGATIVE_RETAINED",
+      "interpretation": "Focused blind review hears comunicazioni inadeguate clearly in natural connected speech; agrees with current actual ASR and historical same-WAV QA. Prior broad-review compressed-word allegation is not corroborated.",
+      "nextBoundedAction": "PREPARE_SOURCE_COMPLETE_TIMED_PLAN_USING_EXISTING_ASR_GROUPS",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-checklist\\blind-review.json",
+        "sha256": "f52d250efc9f9fb2675d771898d5ee57d73a060bdce83deb0512d0a6ab1ce895"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-checklist\\blind-review-response.raw.json",
+        "sha256": "6d9ed2b18109f8d4ad0e55109d55b9116084a314fbfb43946e612b82fc1f34fb"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-checklist\\blind-review-attempt.json",
+        "sha256": "f32a54333b473e4e54571c2f438a513757835f7f6f94ae6e45b58b720253d914"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-checklist\\audio-upload-receipt.json",
+        "sha256": "69107c1cbd296341dae57ec5e6923a48326b22a96cd73fe58a8a098ddf6b2f30"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-it-s101-checklist\\word-timestamps.json",
+        "sha256": "3b6b0e4ce42fb8a6655de2a431eb655e14fd570ac41dd5384dac511222684393"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\it\\audio-qa\\81dc74d3efe004b6f71cee153a7d11f3484aebf1120699705dc07efc8255381d.json",
+        "sha256": "11f6d684360ec6ac2876bdf5a8bf8cc4efc41cc3b415366b73d6a79541418a66"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "no_defect_detected",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    },
+    {
+      "clipId": "de-s101-chemical",
+      "audioSha256": "0df5481fe45c0ac4e5d250373c4b2e23bfbfe33b1032f5a58acfafb7d21b0b6d",
+      "status": "REPEATED_MODEL_ARTICULATION_ALLEGATION_CONFLICTS_WITH_ASR_AND_HISTORICAL_QA",
+      "interpretation": "Dickle intrusive-lateral allegation repeats in two model diagnostics; actual ASR and historical script-aware QA retain Dicke. This is repeated model evidence, not independent human listening. Source-content omission is not established. Original fit-test requirement was resolved previously and stays intact.",
+      "nextBoundedAction": "KEEP_EXACT_REGION_ARTICULATION_UNCERTAINTY_ISOLATED_NO_AUTOMATIC_TTS",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-chemical\\blind-review.json",
+        "sha256": "fc9476197e893d6499b025de4abbb74b9807d33e3b2cc49ecb2a502ea8767789"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-chemical\\blind-review-response.raw.json",
+        "sha256": "f4e84b751294b46601845bfc3ed266ae019e7b2d60789f7c32a958c582539f16"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-chemical\\blind-review-attempt.json",
+        "sha256": "c2df3f4f7cf74fbe2d550eb3de609b7fea74ace7ad2c9a548ed2d6c653767b68"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-chemical\\audio-upload-receipt.json",
+        "sha256": "b668a9533ce28200d9e79679cea64570fc28c4268c8c7407e3c9970118715672"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-chemical\\word-timestamps.json",
+        "sha256": "4b1bb713b1398e601b05498df9203513d5f07589bc05da6f73c4d67547b14529"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\f511f0e45d2b1f9f25c6fe9fe8dbda9df134fe86f81dc9740a99ff3dcad24d24.json",
+        "sha256": "ed1c2faaaa71f0ff34a9a59fa4ce031c3da41a087c740207c7c5e3f70077efcf"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "needs_review",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    },
+    {
+      "clipId": "de-s101-checklist",
+      "audioSha256": "b9b6add152b63be239612c8d6e8f6c619748ccc6029f1b2355d751443524d857",
+      "status": "FOCUSED_NEGATIVE_AND_ARTICULATION_CONCERN_RESOLVED",
+      "interpretation": "Focused review clearly hears keine, no clipping/noise; current actual ASR and historical same-WAV QA agree. Prior narrow glitch allegation is not corroborated. Earlier unzureichende Kommunikation content concern remains resolved.",
+      "nextBoundedAction": "PREPARE_SOURCE_COMPLETE_TIMED_PLAN_USING_EXISTING_ASR_GROUPS",
+      "focusedResult": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-checklist\\blind-review.json",
+        "sha256": "edcac4a1ebb790757222936bcb55b42dcf96b7a36899d146c37209f2c6a50613"
+      },
+      "rawProviderResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-checklist\\blind-review-response.raw.json",
+        "sha256": "59c83f928cfd6300503eac7fcf00f84d81f339aa8b79f696bc4b15359c1717cd"
+      },
+      "attempt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-checklist\\blind-review-attempt.json",
+        "sha256": "4757b64a4e0c60d6409eeda870be05b7b6b48cb0774402c3fdd0642cd4783e15"
+      },
+      "uploadReceipt": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-checklist\\audio-upload-receipt.json",
+        "sha256": "006da5836ed8ca849935e5f7bbb8196cca94eb6694e6aaefddb7849a37152662"
+      },
+      "actualASREvidence": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-checklist\\word-timestamps.json",
+        "sha256": "fd2ebd50da96f99d82a1ca75134a1c8512f6d4891c53865a17d828866e4a26af"
+      },
+      "historicalSameWavQA": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\output\\de\\audio-qa\\928b536cae7beb1b2db63c2e580a8eaf58007b19bba15e71730afa4b37ada2f5.json",
+        "sha256": "dfe55e6c1a5280e4924cce47cd73a4904b2e0fa2cbdd49c07f4e2b486f7067f2"
+      },
+      "frozenCriteria": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\expected-criteria.NOT-FOR-MODEL.json",
+        "sha256": "1440e4583aca62ad0aad41a52ee92b31fe3aeccdc7ff355cacf4bca97a51d2d7"
+      },
+      "modelOverall": "no_defect_detected",
+      "humanListeningOrPhoneticCertification": false,
+      "newIndividualWordTimesInvented": false,
+      "sourceAudioModified": false
+    }
+  ],
+  "providerCallsByThisPreparation": 0,
+  "ttsCalls": 0,
+  "sourceAudioModified": false,
+  "automaticRepairOrApproval": false
+}

@@ -1,0 +1,127 @@
+{
+  "passed": 21,
+  "checks": [
+    {
+      "name": "complete request worker freeze criteria are exact frozen package copies",
+      "passed": true
+    },
+    {
+      "name": "exact finite six-call summary no TTS ASR retries",
+      "passed": true
+    },
+    {
+      "name": "en-s101-checklist complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "en-s101-checklist result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "en-s101-checklist success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "de-s101-limits complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "de-s101-limits result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "de-s101-limits success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "it-s101-example-gloves complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "it-s101-example-gloves result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "it-s101-example-gloves success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "it-s101-checklist complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "it-s101-checklist result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "it-s101-checklist success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "de-s101-chemical complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "de-s101-chemical result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "de-s101-chemical success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "de-s101-checklist complete duplicates byte-match incremental evidence",
+      "passed": true
+    },
+    {
+      "name": "de-s101-checklist result source WAV prompt hashes remain exact",
+      "passed": true
+    },
+    {
+      "name": "de-s101-checklist success terminal and valid findings",
+      "passed": true
+    },
+    {
+      "name": "original source WAVs unchanged and no other candidate added",
+      "passed": true
+    }
+  ],
+  "runId": 39768575970,
+  "humanListeningApproval": false,
+  "providerCallsByVerifier": 0,
+  "providerCallsByCompletedActionsJob": 6,
+  "metadataGETsByJob": 1,
+  "receiptFiles": [
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-checklist.receipt.json",
+      "sha256": "5339f315abd343da936b3fe3af1d8e2b415e37e0eb89b74f983168bafff49001"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-chemical.receipt.json",
+      "sha256": "eed27ae08dcaf2e5316f48a2034548f55977a4e2de82776d388b45d55620df97"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-de-s101-limits.receipt.json",
+      "sha256": "599a0145025aad5f8df25906c077c54881b20f83babfc4b0de0b4ad08d98f14a"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-en-s101-checklist.receipt.json",
+      "sha256": "1610c994ba1350881302727f389843baf2e7d27a06ff09b8237114f966a46983"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-checklist.receipt.json",
+      "sha256": "e243c1b6224258da81f7f87bf949471e00d708ca60177001a703b78205636a2b"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-focused-result-it-s101-example-gloves.receipt.json",
+      "sha256": "9436f8ee60a510b99d5f0c8b109bc3050e8f9f1f603c6ee2ae112373b941c63c"
+    },
+    {
+      "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\diag-r2-39768575970\\s101-six-focused-wav-diagnostics-complete.receipt.json",
+      "sha256": "c27b525110017e7b5ee05c018c253f3e553e90bdf5d7450c41930c5824a2bc21"
+    }
+  ],
+  "intakeSha256": "0bbd85ea9f5ddd2ca634c9dc50c84cb7174d309ef25ceb5d68c65ac8333b0999",
+  "receiverSha256": "ad404256985fb65ce24d60aeb94bce1f54d9a26d1939f0459bedf258aeabcc9d",
+  "partialIntakeEvidencePreserved": "Earlier long-path extraction failure kept under locale-timed-plans/focused-diagnostic-receiving-r2; its verified archive was reused from local bytes, not downloaded twice."
+}

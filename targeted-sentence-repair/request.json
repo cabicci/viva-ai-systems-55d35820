@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_THREE_CORROBORATED_SOURCE_SENTENCE_REPAIRS_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "branch": "refs/heads/work/soil-s101-targeted-sentence-repair-20261022-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 3,
+  "maximumBlindAudioReviewCalls": 3,
+  "maximumASRInvocations": 3,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "maximumMetadataGETCalls": 2,
+  "units": [
+    {
+      "id": "en-s101-checklist-bounded-sentence-1",
+      "locale": "en",
+      "voice": "Kore",
+      "speakerId": "B",
+      "spokenText": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route.",
+      "displayText": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route.",
+      "spokenTextSha256": "8902b918e95eaaf47fa86d25dd729708d354b592d7254fa8989a0b6c6db779f6",
+      "delivery": "Speak natural, clear English as a calm vocational instructor, at a moderate pace with connected speech. Read only the supplied passage. Preserve every word, modifier and safety condition. No introduction or extra advice.",
+      "maximumProviderCalls": 1,
+      "originalPath": "originals/en-s101-checklist.wav",
+      "originalWavSha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1823303,
+        "durationSeconds": 75.97095833333333,
+        "pcmSha256": "00e1f05267c15845ed7be288189769d5b416fa2fa62e8e604048c7ca8304f5a5"
+      },
+      "originalClipId": "en-s101-checklist",
+      "originalASRWordIndices": [
+        79,
+        80,
+        81,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        41.88,
+        52.7
+      ],
+      "sourceCharacterRangeInScene": [
+        514,
+        676
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\en\\s101-checklist\\renderer-plan.json",
+        "sha256": "054cc13db87abc39d9acda96f7f3851ef5a9e6fa24fac759a229b52ff184bde8"
+      },
+      "sourceBindingSha256": "ba6cd4e721c37c1489c625a870dc89dd19a36a4ea0380e9026d1a89718c24fef",
+      "originalNarration": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Deliverables\\Animated-full-step-S1-01-20261020\\narration\\en.json",
+        "sha256": "a979cd7d739636d9198c80f0221e243695f0138216abe9350968bf1e9f7c2a16",
+        "speakerId": "B",
+        "snapshotPath": "provenance/original-en-narration.json"
+      },
+      "criticalContentToPreserve": [
+        "uncertain buried services",
+        "a loose tool handle",
+        "missing chemical information",
+        "a failed communication plan",
+        "a moving machine blocking the route"
+      ],
+      "replacementDurationNotEstimated": true
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-1",
+      "locale": "de",
+      "voice": "Kore",
+      "speakerId": "B",
+      "spokenText": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "displayText": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "spokenTextSha256": "9ed08e89751afbf52c6dfa071037d5b5723786c62544d67eab4420b871410942",
+      "delivery": "Sprich natürliches, deutliches Standarddeutsch wie eine ruhige Lehrkraft in der Berufsausbildung, mit mittlerem Tempo und zusammenhängender Sprache. Lies nur den vorgegebenen Abschnitt. Bewahre alle Wörter, Verneinungen und Sicherheitsbedingungen. Keine Einleitung und keine zusätzlichen Ratschläge.",
+      "maximumProviderCalls": 1,
+      "originalPath": "originals/de-s101-limits.wav",
+      "originalWavSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "originalClipId": "de-s101-limits",
+      "originalASRWordIndices": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        30.32,
+        35.94
+      ],
+      "sourceCharacterRangeInScene": [
+        408,
+        502
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "originalNarration": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Deliverables\\Animated-full-step-S1-01-20261020\\narration\\de.json",
+        "sha256": "04a76b9dd4797b531a6d9792a00ec4b80d25b81a9a8355be5cb841847e8bad8f",
+        "speakerId": "B",
+        "snapshotPath": "provenance/original-de-narration.json"
+      },
+      "criticalContentToPreserve": [
+        "Schwinge es nicht",
+        "nicht nahe anderen auf der Schulter",
+        "nicht in Laufwege"
+      ],
+      "replacementDurationNotEstimated": true
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-2",
+      "locale": "de",
+      "voice": "Kore",
+      "speakerId": "B",
+      "spokenText": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "displayText": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "spokenTextSha256": "c9455d251d52d0c3a96ecd62a6b6f00e284225286d79a2e97394b4faf3bb7542",
+      "delivery": "Sprich natürliches, deutliches Standarddeutsch wie eine ruhige Lehrkraft in der Berufsausbildung, mit mittlerem Tempo und zusammenhängender Sprache. Lies nur den vorgegebenen Abschnitt. Bewahre alle Wörter, Verneinungen und Sicherheitsbedingungen. Keine Einleitung und keine zusätzlichen Ratschläge.",
+      "maximumProviderCalls": 1,
+      "originalPath": "originals/de-s101-limits.wav",
+      "originalWavSha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "originalClipId": "de-s101-limits",
+      "originalASRWordIndices": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        43.64,
+        52.78
+      ],
+      "sourceCharacterRangeInScene": [
+        602,
+        740
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "originalNarration": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Deliverables\\Animated-full-step-S1-01-20261020\\narration\\de.json",
+        "sha256": "04a76b9dd4797b531a6d9792a00ec4b80d25b81a9a8355be5cb841847e8bad8f",
+        "speakerId": "B",
+        "snapshotPath": "provenance/original-de-narration.json"
+      },
+      "criticalContentToPreserve": [
+        "vor dem Umgang",
+        "Dünger",
+        "Pflanzenschutzmitteln",
+        "Bodenverbesserern",
+        "Reagenzien",
+        "Etikett",
+        "aktuelles Sicherheitsdatenblatt",
+        "SDS"
+      ],
+      "replacementDurationNotEstimated": true
+    }
+  ],
+  "sourceTextChangesAllowed": false,
+  "assemblyAllowed": false,
+  "humanListeningApproved": false,
+  "sourceRoleMapping": {
+    "manifestPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\course\\manifest.json",
+    "manifestSha256": "6b1dc2a332d4b9f29329e9161626a1a6ac381443ae2a59cf4cd0d0cc06b7e70c",
+    "roles": {
+      "A": "Charon",
+      "B": "Kore"
+    },
+    "snapshotPath": "provenance/original-course-manifest.json"
+  }
+}

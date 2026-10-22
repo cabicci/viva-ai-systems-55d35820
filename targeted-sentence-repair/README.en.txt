@@ -1,0 +1,1 @@
+Three bounded exact-source sentence repairs only. No assembly or accepted PCM overwrite. Actual original/new voice comparison is one blind call per candidate. Quiet PCM windows are candidates, not approved crop samples. Root reviews actual joins and voice continuity before integration. This preparation does not publish or call providers.

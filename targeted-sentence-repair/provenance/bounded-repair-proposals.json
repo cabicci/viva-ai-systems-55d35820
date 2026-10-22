@@ -1,0 +1,584 @@
+{
+  "status": "CONCRETE_SOURCE_SENTENCE_PROPOSALS_ONLY_NOT_RUNNABLE_APPROVAL",
+  "maximumProposedCandidateTTSCalls": 3,
+  "candidates": [
+    {
+      "candidateId": "en-s101-checklist-bounded-sentence-1",
+      "originalClipId": "en-s101-checklist",
+      "status": "PREPARATION_ONLY_ROOT_REVIEW_REQUIRED_NO_GENERATION",
+      "diagnosisScope": "SOURCE_MOTION_MODIFIER_OMISSION_CORROBORATED_BY_THREE_AUDIO_TRANSCRIPTS",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\inputs\\en-s101-checklist.wav",
+        "sha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387"
+      },
+      "originalPcm": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1823303,
+        "durationSeconds": 75.97095833333333,
+        "pcmSha256": "00e1f05267c15845ed7be288189769d5b416fa2fa62e8e604048c7ca8304f5a5"
+      },
+      "exactReplacementSpokenText": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route.",
+      "replacementTextPolicy": "Exact current-source complete sentence; no shortening, no removed modifiers, no rewriting",
+      "sourceCharacterRangeInScene": [
+        514,
+        676
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\en\\s101-checklist\\renderer-plan.json",
+        "sha256": "054cc13db87abc39d9acda96f7f3851ef5a9e6fa24fac759a229b52ff184bde8"
+      },
+      "sourceBindingSha256": "ba6cd4e721c37c1489c625a870dc89dd19a36a4ea0380e9026d1a89718c24fef",
+      "sourceFragmentPointers": [
+        "/reading/7/paragraphs/0",
+        "/reading/7/paragraphs/1",
+        "/reading/7/paragraphs/2"
+      ],
+      "sourceNarrationSha256": "1826799e642fb91f379e487b727f515f621840fee9321fb45f9fa6a982ca0eb9",
+      "originalObservedSentenceGroupEvidence": [
+        {
+          "actualWordIndex": 79,
+          "word": " Examples",
+          "start": 41.88,
+          "end": 42.16,
+          "probability": 0.9935346841812134
+        },
+        {
+          "actualWordIndex": 80,
+          "word": " include",
+          "start": 42.16,
+          "end": 42.84,
+          "probability": 0.997750461101532
+        },
+        {
+          "actualWordIndex": 81,
+          "word": " uncertain",
+          "start": 42.84,
+          "end": 43.46,
+          "probability": 0.7534445524215698
+        },
+        {
+          "actualWordIndex": 83,
+          "word": " services,",
+          "start": 43.98,
+          "end": 44.54,
+          "probability": 0.9973188042640686
+        },
+        {
+          "actualWordIndex": 84,
+          "word": " a",
+          "start": 45.12,
+          "end": 45.3,
+          "probability": 0.9885836839675903
+        },
+        {
+          "actualWordIndex": 85,
+          "word": " loose",
+          "start": 45.3,
+          "end": 45.54,
+          "probability": 0.9879905581474304
+        },
+        {
+          "actualWordIndex": 86,
+          "word": " tool",
+          "start": 45.54,
+          "end": 45.8,
+          "probability": 0.9835688471794128
+        },
+        {
+          "actualWordIndex": 87,
+          "word": " handle,",
+          "start": 45.8,
+          "end": 46.14,
+          "probability": 0.9675623774528503
+        },
+        {
+          "actualWordIndex": 88,
+          "word": " missing",
+          "start": 46.64,
+          "end": 47.02,
+          "probability": 0.9970230460166931
+        },
+        {
+          "actualWordIndex": 89,
+          "word": " chemical",
+          "start": 47.02,
+          "end": 47.46,
+          "probability": 0.996828019618988
+        },
+        {
+          "actualWordIndex": 90,
+          "word": " information,",
+          "start": 47.46,
+          "end": 48.16,
+          "probability": 0.9989110231399536
+        },
+        {
+          "actualWordIndex": 91,
+          "word": " a",
+          "start": 48.16,
+          "end": 48.94,
+          "probability": 0.5367392897605896
+        },
+        {
+          "actualWordIndex": 92,
+          "word": " failed",
+          "start": 48.94,
+          "end": 49.28,
+          "probability": 0.9968953132629395
+        },
+        {
+          "actualWordIndex": 93,
+          "word": " communication",
+          "start": 49.28,
+          "end": 49.84,
+          "probability": 0.9825948476791382
+        },
+        {
+          "actualWordIndex": 94,
+          "word": " plan,",
+          "start": 49.84,
+          "end": 50.34,
+          "probability": 0.9992427825927734
+        },
+        {
+          "actualWordIndex": 95,
+          "word": " or",
+          "start": 50.68,
+          "end": 51.02,
+          "probability": 0.9983022212982178
+        },
+        {
+          "actualWordIndex": 96,
+          "word": " a",
+          "start": 51.02,
+          "end": 51.24,
+          "probability": 0.9914807081222534
+        },
+        {
+          "actualWordIndex": 97,
+          "word": " machine",
+          "start": 51.24,
+          "end": 51.66,
+          "probability": 0.996900200843811
+        },
+        {
+          "actualWordIndex": 98,
+          "word": " blocking",
+          "start": 51.66,
+          "end": 52.14,
+          "probability": 0.996195912361145
+        },
+        {
+          "actualWordIndex": 99,
+          "word": " the",
+          "start": 52.14,
+          "end": 52.4,
+          "probability": 0.9984636306762695
+        },
+        {
+          "actualWordIndex": 100,
+          "word": " route.",
+          "start": 52.4,
+          "end": 52.7,
+          "probability": 0.9976323843002319
+        }
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        41.88,
+        52.7
+      ],
+      "boundsQualification": "Existing actual-ASR observed group, not a verified crop or a new duration. Missing/variant source word individual times remain unavailable.",
+      "verifiedSpliceSampleBoundaries": null,
+      "sourcePrefixSuffixPcmMustBeRetainedExactly": true,
+      "criticalContentToPreserve": [
+        "uncertain buried services",
+        "a loose tool handle",
+        "missing chemical information",
+        "a failed communication plan",
+        "a moving machine blocking the route"
+      ],
+      "maximumTTSCallsIfRootExecutesThisCandidate": 1,
+      "automaticRetries": 0,
+      "preferredNewModelPerOwner": "gemini-3.8-flash-tts",
+      "voiceSelection": "Reuse evidenced original speaker role after original production receipt check; no silent voice substitution or matching-timbre claim",
+      "requiredBeforeUse": [
+        "Root review exact candidate and confirmed defect scope",
+        "Verify exact original voice/delivery receipt and server model availability",
+        "Measure safe splice boundaries from actual PCM in bounded Actions analysis; never crop an accepted syllable",
+        "Retain all original PCM outside approved sentence replacement exactly; verify prefix/suffix hashes and sample offsets",
+        "Upload new WAV before actual-audio blind review and actual ASR",
+        "Compare new actual speech/source negations and modifiers, matching speaker/timbre uncertainty and actual joins",
+        "Derive replacement timings only from new actual recording; root reviews updated full scene before release"
+      ],
+      "noWholeSceneRegeneration": true,
+      "providerCallsMadeForProposal": 0,
+      "audioEditsMadeForProposal": 0
+    },
+    {
+      "candidateId": "de-s101-limits-bounded-sentence-1",
+      "originalClipId": "de-s101-limits",
+      "status": "PREPARATION_ONLY_ROOT_REVIEW_REQUIRED_NO_GENERATION",
+      "diagnosisScope": "ACTION_VERB_AND_IMPERATIVE_DISTORTION_CORROBORATED_BY_ASR_AND_BLIND_REVIEW",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\inputs\\de-s101-limits.wav",
+        "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3"
+      },
+      "originalPcm": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "exactReplacementSpokenText": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "replacementTextPolicy": "Exact current-source complete sentence; no shortening, no removed modifiers, no rewriting",
+      "sourceCharacterRangeInScene": [
+        408,
+        502
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "sourceFragmentPointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2"
+      ],
+      "sourceNarrationSha256": "250687db8f56ef0079172868fa0d1e5231d41d1a6042725bac9dbd358cbc319e",
+      "originalObservedSentenceGroupEvidence": [
+        {
+          "actualWordIndex": 53,
+          "segmentId": 8,
+          "wordIndexInSegment": 0,
+          "word": " Spinne",
+          "start": 30.32,
+          "end": 30.76,
+          "probability": 0.7511997818946838
+        },
+        {
+          "actualWordIndex": 54,
+          "word": " es",
+          "start": 30.76,
+          "end": 30.98,
+          "probability": 0.9857584238052368
+        },
+        {
+          "actualWordIndex": 55,
+          "word": " nicht,",
+          "start": 30.98,
+          "end": 31.22,
+          "probability": 0.9983774423599243
+        },
+        {
+          "actualWordIndex": 56,
+          "word": " trage",
+          "start": 31.62,
+          "end": 31.88,
+          "probability": 0.9875532388687134
+        },
+        {
+          "actualWordIndex": 57,
+          "word": " es",
+          "start": 31.88,
+          "end": 32.04,
+          "probability": 0.9990100860595703
+        },
+        {
+          "actualWordIndex": 58,
+          "word": " nicht",
+          "start": 32.04,
+          "end": 32.24,
+          "probability": 0.9966965913772583
+        },
+        {
+          "actualWordIndex": 59,
+          "word": " nahe",
+          "start": 32.24,
+          "end": 32.64,
+          "probability": 0.9884548783302307
+        },
+        {
+          "actualWordIndex": 60,
+          "word": " anderen",
+          "start": 32.64,
+          "end": 33.0,
+          "probability": 0.9180758595466614
+        },
+        {
+          "actualWordIndex": 61,
+          "word": " auf",
+          "start": 33.0,
+          "end": 33.32,
+          "probability": 0.9976617097854614
+        },
+        {
+          "actualWordIndex": 62,
+          "word": " der",
+          "start": 33.32,
+          "end": 33.46,
+          "probability": 0.9968308806419373
+        },
+        {
+          "actualWordIndex": 63,
+          "word": " Schulter",
+          "start": 33.46,
+          "end": 33.88,
+          "probability": 0.9957538843154907
+        },
+        {
+          "actualWordIndex": 64,
+          "word": " und",
+          "start": 33.88,
+          "end": 34.44,
+          "probability": 0.9278849363327026
+        },
+        {
+          "actualWordIndex": 65,
+          "word": " lege",
+          "start": 34.44,
+          "end": 34.7,
+          "probability": 0.9754607677459717
+        },
+        {
+          "actualWordIndex": 66,
+          "word": " es",
+          "start": 34.7,
+          "end": 34.92,
+          "probability": 0.9990936517715454
+        },
+        {
+          "actualWordIndex": 67,
+          "word": " nicht",
+          "start": 34.92,
+          "end": 35.1,
+          "probability": 0.9989954829216003
+        },
+        {
+          "actualWordIndex": 68,
+          "word": " in",
+          "start": 35.1,
+          "end": 35.34,
+          "probability": 0.9960869550704956
+        },
+        {
+          "actualWordIndex": 69,
+          "word": " Laufwege.",
+          "start": 35.34,
+          "end": 35.94,
+          "probability": 0.8796873688697815
+        }
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        30.32,
+        35.94
+      ],
+      "boundsQualification": "Existing actual-ASR observed group, not a verified crop or a new duration. Missing/variant source word individual times remain unavailable.",
+      "verifiedSpliceSampleBoundaries": null,
+      "sourcePrefixSuffixPcmMustBeRetainedExactly": true,
+      "criticalContentToPreserve": [
+        "Schwinge es nicht",
+        "nicht nahe anderen auf der Schulter",
+        "nicht in Laufwege"
+      ],
+      "maximumTTSCallsIfRootExecutesThisCandidate": 1,
+      "automaticRetries": 0,
+      "preferredNewModelPerOwner": "gemini-3.8-flash-tts",
+      "voiceSelection": "Reuse evidenced original speaker role after original production receipt check; no silent voice substitution or matching-timbre claim",
+      "requiredBeforeUse": [
+        "Root review exact candidate and confirmed defect scope",
+        "Verify exact original voice/delivery receipt and server model availability",
+        "Measure safe splice boundaries from actual PCM in bounded Actions analysis; never crop an accepted syllable",
+        "Retain all original PCM outside approved sentence replacement exactly; verify prefix/suffix hashes and sample offsets",
+        "Upload new WAV before actual-audio blind review and actual ASR",
+        "Compare new actual speech/source negations and modifiers, matching speaker/timbre uncertainty and actual joins",
+        "Derive replacement timings only from new actual recording; root reviews updated full scene before release"
+      ],
+      "noWholeSceneRegeneration": true,
+      "providerCallsMadeForProposal": 0,
+      "audioEditsMadeForProposal": 0
+    },
+    {
+      "candidateId": "de-s101-limits-bounded-sentence-2",
+      "originalClipId": "de-s101-limits",
+      "status": "PREPARATION_ONLY_ROOT_REVIEW_REQUIRED_NO_GENERATION",
+      "diagnosisScope": "ACTION_VERB_AND_IMPERATIVE_DISTORTION_CORROBORATED_BY_ASR_AND_BLIND_REVIEW",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\focused-diagnostic-public-r2\\inputs\\de-s101-limits.wav",
+        "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3"
+      },
+      "originalPcm": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1662023,
+        "durationSeconds": 69.25095833333333,
+        "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc"
+      },
+      "exactReplacementSpokenText": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "replacementTextPolicy": "Exact current-source complete sentence; no shortening, no removed modifiers, no rewriting",
+      "sourceCharacterRangeInScene": [
+        602,
+        740
+      ],
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "sourceFragmentPointers": [
+        "/reading/3/paragraphs/0",
+        "/reading/3/paragraphs/1",
+        "/reading/3/paragraphs/2"
+      ],
+      "sourceNarrationSha256": "250687db8f56ef0079172868fa0d1e5231d41d1a6042725bac9dbd358cbc319e",
+      "originalObservedSentenceGroupEvidence": [
+        {
+          "actualWordIndex": 83,
+          "word": " Les",
+          "start": 43.64,
+          "end": 43.86,
+          "probability": 0.4963854253292084
+        },
+        {
+          "actualWordIndex": 84,
+          "word": " vor",
+          "start": 43.86,
+          "end": 44.14,
+          "probability": 0.9890608787536621
+        },
+        {
+          "actualWordIndex": 85,
+          "word": " dem",
+          "start": 44.14,
+          "end": 44.28,
+          "probability": 0.9968599081039429
+        },
+        {
+          "actualWordIndex": 86,
+          "word": " Umgang",
+          "start": 44.28,
+          "end": 44.72,
+          "probability": 0.9919461905956268
+        },
+        {
+          "actualWordIndex": 87,
+          "word": " mit",
+          "start": 44.72,
+          "end": 44.94,
+          "probability": 0.996807873249054
+        },
+        {
+          "actualWordIndex": 88,
+          "word": " Dünger,",
+          "start": 44.94,
+          "end": 45.32,
+          "probability": 0.9885198076566061
+        },
+        {
+          "actualWordIndex": 89,
+          "word": " Pflanzenschutzmitteln,",
+          "start": 45.66,
+          "end": 46.66,
+          "probability": 0.9802485193525042
+        },
+        {
+          "actualWordIndex": 90,
+          "word": " Bodenverbesserern",
+          "start": 47.14,
+          "end": 48.12,
+          "probability": 0.9723513722419739
+        },
+        {
+          "actualWordIndex": 91,
+          "word": " oder",
+          "start": 48.12,
+          "end": 48.38,
+          "probability": 0.976042628288269
+        },
+        {
+          "actualWordIndex": 92,
+          "word": " Reagenzchen,",
+          "start": 48.38,
+          "end": 49.22,
+          "probability": 0.90439473092556
+        },
+        {
+          "actualWordIndex": 93,
+          "word": " Etikett",
+          "start": 49.22,
+          "end": 50.22,
+          "probability": 0.8306991457939148
+        },
+        {
+          "actualWordIndex": 94,
+          "word": " und",
+          "start": 50.22,
+          "end": 50.44,
+          "probability": 0.6297735571861267
+        },
+        {
+          "actualWordIndex": 95,
+          "word": " aktuelles",
+          "start": 50.44,
+          "end": 51.12,
+          "probability": 0.7747350136439005
+        },
+        {
+          "actualWordIndex": 96,
+          "word": " Sicherheitsdatenblatt,",
+          "start": 51.12,
+          "end": 52.22,
+          "probability": 0.9875348607699076
+        },
+        {
+          "actualWordIndex": 97,
+          "word": " SDS.",
+          "start": 52.44,
+          "end": 52.78,
+          "probability": 0.9694734811782837
+        }
+      ],
+      "originalObservedGroupBoundsSeconds": [
+        43.64,
+        52.78
+      ],
+      "boundsQualification": "Existing actual-ASR observed group, not a verified crop or a new duration. Missing/variant source word individual times remain unavailable.",
+      "verifiedSpliceSampleBoundaries": null,
+      "sourcePrefixSuffixPcmMustBeRetainedExactly": true,
+      "criticalContentToPreserve": [
+        "vor dem Umgang",
+        "Dünger",
+        "Pflanzenschutzmitteln",
+        "Bodenverbesserern",
+        "Reagenzien",
+        "Etikett",
+        "aktuelles Sicherheitsdatenblatt",
+        "SDS"
+      ],
+      "maximumTTSCallsIfRootExecutesThisCandidate": 1,
+      "automaticRetries": 0,
+      "preferredNewModelPerOwner": "gemini-3.8-flash-tts",
+      "voiceSelection": "Reuse evidenced original speaker role after original production receipt check; no silent voice substitution or matching-timbre claim",
+      "requiredBeforeUse": [
+        "Root review exact candidate and confirmed defect scope",
+        "Verify exact original voice/delivery receipt and server model availability",
+        "Measure safe splice boundaries from actual PCM in bounded Actions analysis; never crop an accepted syllable",
+        "Retain all original PCM outside approved sentence replacement exactly; verify prefix/suffix hashes and sample offsets",
+        "Upload new WAV before actual-audio blind review and actual ASR",
+        "Compare new actual speech/source negations and modifiers, matching speaker/timbre uncertainty and actual joins",
+        "Derive replacement timings only from new actual recording; root reviews updated full scene before release"
+      ],
+      "noWholeSceneRegeneration": true,
+      "providerCallsMadeForProposal": 0,
+      "audioEditsMadeForProposal": 0
+    }
+  ],
+  "excludedHealthyWholeScenes": true,
+  "otherFourClipsNotAddedToTTSBudget": true,
+  "changesOutsideReplacedSentencesForbidden": true
+}
