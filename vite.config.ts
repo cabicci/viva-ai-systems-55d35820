@@ -7,6 +7,20 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { loadEnv } from "vite";
 import path from "node:path";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+
+// An algorithm change invalidates automatic preparation receipts. Ordinary UI
+// deployments keep the same fingerprint and do not pay to re-embed content.
+const indexerInputs = [
+  "src/lib/assistant-automation/manifest.ts", "src/lib/assistant-automation/worker.server.ts",
+  "src/lib/card-assistant/corpus.ts", "src/lib/card-assistant/assistant.server.ts",
+  "src/lib/academic-education/assistant-corpus.ts", "src/lib/academic-education/assistant.server.ts",
+  "src/lib/rag/current-release/executor.server.ts", "src/lib/rag/current-release/corpus.ts",
+];
+const indexerHash = createHash("sha256");
+for (const file of indexerInputs) indexerHash.update(file).update("\0").update(readFileSync(path.resolve(__dirname, file), "utf8").replace(/\r\n/g, "\n")).update("\0");
+const assistantIndexerBuild = indexerHash.digest("hex");
 
 // Load all env vars into process.env for server routes only (never into envDefine/client bundle).
 const serverEnv = loadEnv(process.env.NODE_ENV ?? "production", process.cwd(), "");
@@ -27,6 +41,7 @@ export default defineConfig({
       },
     },
     define: {
+      __ASSISTANT_INDEXER_BUILD__: JSON.stringify(assistantIndexerBuild),
       "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(process.env.VITE_SUPABASE_URL || SUPABASE_URL_FALLBACK),
       "import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY": JSON.stringify(
         process.env.VITE_SUPABASE_PUBLISHABLE_KEY || SUPABASE_PUBLISHABLE_KEY_FALLBACK,
