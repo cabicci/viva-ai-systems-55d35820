@@ -1,0 +1,18 @@
+{
+  "checkedAtUTC": "2026-10-22T10:01:12.486403+00:00",
+  "method": "Unauthenticated read-only GitHub REST GETs immediately before final freeze; no mutation/provider invocation",
+  "repositoryGET": {
+    "url": "https://api.github.com/repos/cabicci/viva-ai-systems-55d35820",
+    "status": 200,
+    "fullName": "cabicci/viva-ai-systems-55d35820",
+    "private": false
+  },
+  "exactRefGET": {
+    "url": "https://api.github.com/repos/cabicci/viva-ai-systems-55d35820/git/ref/heads/work/soil-s111-narration-20261022-r3",
+    "status": 404
+  },
+  "result": "EXACT_BRANCH_ABSENT_AT_CHECK",
+  "branch": "work/soil-s111-narration-20261022-r3",
+  "ref": "refs/heads/work/soil-s111-narration-20261022-r3",
+  "notAReservation": "Recheck before root first push; if branch exists do not update/reuse it."
+}

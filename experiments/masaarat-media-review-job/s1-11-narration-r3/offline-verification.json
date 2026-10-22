@@ -1,0 +1,245 @@
+{
+  "schema": "masaarat.S1-11.actual-worker-offline-verification.v1",
+  "checkedAtUTC": "2026-10-22T10:01:13.168134+00:00",
+  "status": "PASS_OFFLINE_ACTUAL_WORKER",
+  "requestSha256": "643f062a85d2d2a5636a5f904d9e54ec7560f93abf22eb00c5142cea1c46e906",
+  "workerSha256": "1117bf22f343aac51c8f5267c5d3e4a8f8359392904ff8e1c29fbbd5592210ae",
+  "freezeSha256": "bd951c43860ea9e8f0dc09e330ca389b8f371619ef872ed427bbfda1bcc0ff2b",
+  "workflowSha256": "2ef6560e9cbdee4815f6a97c2e564567d0ac563da7aa578422ebdc533966df2b",
+  "testScriptSha256": "4a5e9cdc6828b82f4ec470fd4f4fb35746c1b63e91329e48b9fc8ff3a1513e63",
+  "tests": [
+    {
+      "name": "actual_worker_validate",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_old_tts_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_call_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_automatic_retry",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_required_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_part",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_voice",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_speaker",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unit_id_outside_scope",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_file_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_spoken_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unrecorded_spoken_omission",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_display_or_caption_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_invented_duration",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_rubric_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_feedback_pre_attempt_release",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_false_quiz_release_flag",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_binding_text",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_request_fingerprint_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_explanatory_binding",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_changed_group_order",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_source_original_lineage_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_delivery_hash_change",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_argon_model",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_asr_locale_fallback",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_review_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_extra_asr_budget",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_produce_rejects_local_execution_before_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_actions_rerun_attempt2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_other_lesson_output_unit",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_reserve_allows40_rejects41_and_duplicate",
+      "result": "PASS"
+    },
+    {
+      "name": "frozen_vendor_engine_imports_without_provider",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_quiz_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_private_written_review_in_public_projection",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_unknown_public_projection_field",
+      "result": "PASS"
+    },
+    {
+      "name": "exact_fresh_branch_push_run1_scope_passes_actual_worker",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_later_push_created_false",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_missing_created_flag",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_string_created_true",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_deleted_branch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_wrong_repository",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_main_branch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_different_scoped_branch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_workflow_dispatch_event",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_fresh_push_rerun_attempt2",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_event_repository_mismatch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_event_ref_mismatch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_event_after_commit_mismatch",
+      "result": "PASS"
+    },
+    {
+      "name": "reject_deployment_target_change",
+      "result": "PASS"
+    },
+    {
+      "name": "workflow_exact_first_push_all40_once_and_upload_before_diagnostics",
+      "result": "PASS"
+    },
+    {
+      "name": "network_calls_remain_zero",
+      "result": "PASS"
+    },
+    {
+      "name": "actual_worker_cli_validate",
+      "result": "PASS",
+      "exitCode": 0,
+      "stdout": "Frozen S1-11 four-locale40-unit r3 request and worker verified; zero provider calls."
+    }
+  ],
+  "testCount": 53,
+  "providerCalls": 0,
+  "networkCalls": 0,
+  "productionOutputCreated": false,
+  "finiteScope": {
+    "locales": 4,
+    "partsPerLocale": 10,
+    "TTS": 40,
+    "blindArgonReviews": 40,
+    "ASR": 40,
+    "metadataGETs": 2,
+    "automaticRetries": 0
+  },
+  "limits": [
+    "No provider metadata/TTS/audio-review/ASR production invocation ran.",
+    "Availability and actual audio quality are untested for this new batch.",
+    "Offline fixture reservations are synthetic tests, kept separately from production output.",
+    "Frozen manifest and workflow must be rederived if any frozen input changes."
+  ]
+}

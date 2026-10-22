@@ -1,0 +1,163 @@
+{
+  "stepId": "S1-11",
+  "locale": "it",
+  "examples": [
+    {
+      "reasoning": [
+        "Lascia 0–30 cm leggibile sotto una sola riga.",
+        "Scrivi 0–15 cm con iniziali e dettagli di correzione richiesti dal progetto.",
+        "Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate."
+      ],
+      "situation": "Hai scritto 0–30 cm, ma la registrazione contemporanea della raccolta conferma 0–15 cm.",
+      "takeaway": "Correggi la traccia delle prove; non cancellarla."
+    },
+    {
+      "reasoning": [
+        "Conserva risultato misurato e osservazione della pioggia.",
+        "Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito.",
+        "Non dichiarare l'area pulita o la causa provata da un solo campione."
+      ],
+      "situation": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante.",
+      "takeaway": "Il contesto orienta l'interpretazione senza creare certezze."
+    },
+    {
+      "reasoning": [
+        "La vegetazione è un contesto pertinente.",
+        "La vicinanza non dimostra che gli aghi abbiano causato l'acidità.",
+        "Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa."
+      ],
+      "situation": "Una nota di campo registra pini sopra un campione con pH basso.",
+      "takeaway": "Un indizio utile non equivale a una causa dimostrata."
+    }
+  ],
+  "fieldPractical": {
+    "boundary": "Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+    "checklist": [
+      "Apri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili.",
+      "Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo.",
+      "Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività.",
+      "Distingui valori misurati, stimati, forniti dallo scenario e non disponibili.",
+      "Separa osservazione e interpretazione.",
+      "Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore.",
+      "Confronta etichetta e scheda di campo e conserva la storia della correzione."
+    ]
+  },
+  "goals": [
+    "Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate.",
+    "Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio.",
+    "Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione."
+  ],
+  "guidedPractice": {
+    "learnerActions": [
+      "Collega ID, posizione, profondità, data/ora e condizioni realmente registrate.",
+      "Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto.",
+      "Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato.",
+      "Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili."
+    ],
+    "prompt": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona."
+  },
+  "intro": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara.",
+  "reading": [
+    {
+      "paragraphs": [
+        "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.",
+        "I metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pH 6.5, lascia aperte domande essenziali.",
+        "Nell'esempio didattico, pH 6.5 appartiene al campione da 0–15 cm della zona bassa e mal drenata del pascolo settentrionale, raccolto il 26 ottobre 2024 dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pH. Non trasferire data e condizioni dell'esempio in un vero registro attuale.",
+        "Scrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.",
+        "Se scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.",
+        "In digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.",
+        "Annota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto."
+      ]
+    },
+    {
+      "paragraphs": [
+        "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.",
+        "Registra meteo e condizioni recenti pertinenti. 'Sole, 18°C, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta 18°C come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.",
+        "In una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.",
+        "Apri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere '10 m a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.",
+        "Registra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio 0–15 cm o 15–30 cm. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.",
+        "Descrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.",
+        "Annota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.",
+        "Una depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.",
+        "Se il pH è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.",
+        "Se mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale."
+      ]
+    }
+  ],
+  "projectionDisclosure": {
+    "originalSourceSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+    "method": "Exact teaching JSON-pointer allowlist; no generic full-source copies.",
+    "allowedSourcePointers": [
+      "/examples/0/reasoning/0",
+      "/examples/0/reasoning/1",
+      "/examples/0/reasoning/2",
+      "/examples/0/situation",
+      "/examples/0/takeaway",
+      "/examples/1/reasoning/0",
+      "/examples/1/reasoning/1",
+      "/examples/1/reasoning/2",
+      "/examples/1/situation",
+      "/examples/1/takeaway",
+      "/examples/2/reasoning/0",
+      "/examples/2/reasoning/1",
+      "/examples/2/reasoning/2",
+      "/examples/2/situation",
+      "/examples/2/takeaway",
+      "/fieldPractical/boundary",
+      "/fieldPractical/checklist/0",
+      "/fieldPractical/checklist/1",
+      "/fieldPractical/checklist/2",
+      "/fieldPractical/checklist/3",
+      "/fieldPractical/checklist/4",
+      "/fieldPractical/checklist/5",
+      "/fieldPractical/checklist/6",
+      "/goals/0",
+      "/goals/1",
+      "/goals/2",
+      "/guidedPractice/learnerActions/0",
+      "/guidedPractice/learnerActions/1",
+      "/guidedPractice/learnerActions/2",
+      "/guidedPractice/learnerActions/3",
+      "/guidedPractice/prompt",
+      "/intro",
+      "/reading/0/paragraphs/0",
+      "/reading/0/paragraphs/1",
+      "/reading/0/paragraphs/2",
+      "/reading/0/paragraphs/3",
+      "/reading/1/paragraphs/0",
+      "/reading/1/paragraphs/1",
+      "/reading/1/paragraphs/2",
+      "/reading/1/paragraphs/3",
+      "/reading/2/paragraphs/0",
+      "/reading/2/paragraphs/1",
+      "/reading/2/paragraphs/2",
+      "/reading/2/paragraphs/3",
+      "/reading/3/paragraphs/0",
+      "/reading/3/paragraphs/1",
+      "/reading/3/paragraphs/2",
+      "/reading/3/paragraphs/3",
+      "/reading/4/paragraphs/0",
+      "/reading/4/paragraphs/1",
+      "/reading/4/paragraphs/2",
+      "/reading/4/paragraphs/3"
+    ],
+    "omittedAssessmentContents": true,
+    "omittedGuidedPracticeFeedback": true,
+    "originalIsPrivateNotReconstructableFromProjection": true
+  }
+}

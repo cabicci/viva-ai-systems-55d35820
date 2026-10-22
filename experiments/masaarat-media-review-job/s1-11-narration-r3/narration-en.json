@@ -1,0 +1,707 @@
+{
+  "schema": "masaarat.S1-11.connected-narration-r3.v1",
+  "locale": "en",
+  "status": "ROOT_REVIEW_ONLY_NO_PROVIDER_OR_PUBLISH",
+  "model": "gemini-3.8-flash-tts",
+  "parts": [
+    {
+      "id": "S1-11-en-r3-001",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "opening",
+      "originalText": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error. Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable. Separate observations from interpretations and explain how missing context limits a laboratory result. Correct a record without hiding the earlier entry and identify any data supplied by a simulation.",
+      "displayText": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error. Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable. Separate observations from interpretations and explain how missing context limits a laboratory result. Correct a record without hiding the earlier entry and identify any data supplied by a simulation.",
+      "captionText": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error. Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable. Separate observations from interpretations and explain how missing context limits a laboratory result. Correct a record without hiding the earlier entry and identify any data supplied by a simulation.",
+      "spokenText": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error. Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable. Separate observations from interpretations and explain how missing context limits a laboratory result. Correct a record without hiding the earlier entry and identify any data supplied by a simulation.",
+      "spokenTextSha256": "37267586a9d78ca42a38689ebcf39f1b676ed3d84a74914c5695b467c4c28acf",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "fd9492730b7ff74d18257110cceb7f79c1a0afcdc73ccdc2293d862d24b83a6a",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error.",
+          "sha256": "fe6e1b62e97c6dc54c1b728b59256929324a2f790c212936eccdd7e6b8f5bcb1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable.",
+          "sha256": "6b9a9d87711337ccac7b7e6960dceed7ab9422816a814eab499966fe8262ece3"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Separate observations from interpretations and explain how missing context limits a laboratory result.",
+          "sha256": "78ea310530db8de8f1bec4ba0a036bea673cb43e88ccd67c888bdb5689116dde"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Correct a record without hiding the earlier entry and identify any data supplied by a simulation.",
+          "sha256": "dec3b23da92a6bf1c212af96d57e4646beb48c35f93c28af29dd4ce381650ad8"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-001",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-002",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R01",
+      "originalText": "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.\n\nMetadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as pH 6.5 leaves important questions unanswered.\n\nIn a teaching example, pH 6.5 belongs to the 0–15 cm sample from the poorly drained lower part of North Paddock, collected on 26 October 2024 after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that pH. The example's date and conditions must not be copied into a current real field record.\n\nRecord information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site.",
+      "displayText": "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.\n\nMetadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as pH 6.5 leaves important questions unanswered.\n\nIn a teaching example, pH 6.5 belongs to the 0–15 cm sample from the poorly drained lower part of North Paddock, collected on 26 October 2024 after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that pH. The example's date and conditions must not be copied into a current real field record.\n\nRecord information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site.",
+      "captionText": "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.\n\nMetadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as pH 6.5 leaves important questions unanswered.\n\nIn a teaching example, pH 6.5 belongs to the 0–15 cm sample from the poorly drained lower part of North Paddock, collected on 26 October 2024 after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that pH. The example's date and conditions must not be copied into a current real field record.\n\nRecord information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site.",
+      "spokenText": "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.\n\nMetadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as P H six point five leaves important questions unanswered.\n\nIn a teaching example, P H six point five belongs to the zero to fifteen centimetres sample from the poorly drained lower part of North Paddock, collected on the twenty-sixth of October, twenty twenty-four after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that P H. The example's date and conditions must not be copied into a current real field record.\n\nRecord information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site.",
+      "spokenTextSha256": "0c7ecaaf2856650cd3e6cb38ebe93e08ca251bb9ed97fba21ad15d7f8fe47c75",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "17b28e0997ee35f923f0386b737196dbccce26bbd069c96783b2108b5aa65825",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.",
+          "sha256": "8de40281ef308ddbd574a598e68a072ff1b9707b4a6f82465f65f05816330c4b"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Metadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as pH 6.5 leaves important questions unanswered.",
+          "sha256": "b1b1264242a47a967c478deadec39a652e8b32b77bf4be24abe5972b4e02fc82"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "In a teaching example, pH 6.5 belongs to the 0–15 cm sample from the poorly drained lower part of North Paddock, collected on 26 October 2024 after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that pH. The example's date and conditions must not be copied into a current real field record.",
+          "sha256": "d7732b622ff46f0813b187732764cebbba037911031503c584f8df482965735d"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Record information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site.",
+          "sha256": "012437db3fffa9042b57e1b6610dcd45257a374425904bb2d92481cbd4d091cd"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R01-en-P01-U01",
+        "S1-11-R01-en-P01-U02",
+        "S1-11-R01-en-P01-U03",
+        "S1-11-R01-en-P02-U01",
+        "S1-11-R01-en-P02-U02",
+        "S1-11-R01-en-P02-U03",
+        "S1-11-R01-en-P03-U01",
+        "S1-11-R01-en-P03-U02",
+        "S1-11-R01-en-P03-U03",
+        "S1-11-R01-en-P03-U04",
+        "S1-11-R01-en-P04-U01",
+        "S1-11-R01-en-P04-U02",
+        "S1-11-R01-en-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH 6.5",
+          "spoken": "P H six point five"
+        },
+        {
+          "written": "26 October 2024",
+          "spoken": "the twenty-sixth of October, twenty twenty-four"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres"
+        },
+        {
+          "written": "pH 6.5",
+          "spoken": "P H six point five"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-002",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-003",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R02",
+      "originalText": "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.\n\nIf you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.\n\nFor a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample ID unchanged unless an authorized, traceable correction establishes that it was wrong.\n\nUse observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred.",
+      "displayText": "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.\n\nIf you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.\n\nFor a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample ID unchanged unless an authorized, traceable correction establishes that it was wrong.\n\nUse observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred.",
+      "captionText": "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.\n\nIf you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.\n\nFor a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample ID unchanged unless an authorized, traceable correction establishes that it was wrong.\n\nUse observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred.",
+      "spokenText": "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.\n\nIf you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.\n\nFor a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample I D unchanged unless an authorized, traceable correction establishes that it was wrong.\n\nUse observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred.",
+      "spokenTextSha256": "2a23a9c9069ce1ae961db4effedd45786546e6d48995767c2585186f0a127783",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "ac7065998e870f7d44b2dcafc65d5ac21ea19fd9709427d14fdbb29c7112a444",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.",
+          "sha256": "518386b31dbb2166b256ee098467c4cdd558658bebe539819d144f6037a2f9f5"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "If you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.",
+          "sha256": "1f369af2505da4329bd368c9a93cbfe11d639c41d736f2b83c86c86eb20232aa"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "For a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample ID unchanged unless an authorized, traceable correction establishes that it was wrong.",
+          "sha256": "74be0dc336742c90a283a1c3aaaeb4fc8630f7ab9a9718c19b4e131c0ad2fd49"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "Use observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred.",
+          "sha256": "0330566272b545fd43f359164b6eeffa0236c1c48c9f379c006b473883bb57e9"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R02-en-P01-U01",
+        "S1-11-R02-en-P01-U02",
+        "S1-11-R02-en-P01-U03",
+        "S1-11-R02-en-P02-U01",
+        "S1-11-R02-en-P02-U02",
+        "S1-11-R02-en-P02-U03",
+        "S1-11-R02-en-P03-U01",
+        "S1-11-R02-en-P03-U02",
+        "S1-11-R02-en-P03-U03",
+        "S1-11-R02-en-P04-U01",
+        "S1-11-R02-en-P04-U02",
+        "S1-11-R02-en-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "ID",
+          "spoken": "I D"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-003",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-004",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R03",
+      "originalText": "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.\n\nRecord relevant weather and recent conditions. 'Sunny, 18°C, light wind' and 'overcast, rain in the morning' are example descriptions. Only write 18°C as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.\n\nFor a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.\n\nStart a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations.",
+      "displayText": "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.\n\nRecord relevant weather and recent conditions. 'Sunny, 18°C, light wind' and 'overcast, rain in the morning' are example descriptions. Only write 18°C as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.\n\nFor a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.\n\nStart a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations.",
+      "captionText": "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.\n\nRecord relevant weather and recent conditions. 'Sunny, 18°C, light wind' and 'overcast, rain in the morning' are example descriptions. Only write 18°C as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.\n\nFor a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.\n\nStart a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations.",
+      "spokenText": "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.\n\nRecord relevant weather and recent conditions. 'Sunny, eighteen degrees Celsius, light wind' and 'overcast, rain in the morning' are example descriptions. Only write eighteen degrees Celsius as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.\n\nFor a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.\n\nStart a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations.",
+      "spokenTextSha256": "b23a805cbdfb62e5dd54c9e0775393d8a1979e83c36b160a36694e50612bc029",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "4b11f6dbc26318e876a9ececb6ec2f00e8ed263617f0278e258df21f2e74729b",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.",
+          "sha256": "0f7745c84fd785b11d270852c0512048ee1f07fa234e2a51d7850d5de88c2aef"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Record relevant weather and recent conditions. 'Sunny, 18°C, light wind' and 'overcast, rain in the morning' are example descriptions. Only write 18°C as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.",
+          "sha256": "c1b46c9722656ccbea5d3882285d1b47885e984bb2781a98141d2a389efbcbdb"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "For a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.",
+          "sha256": "48ec6ade3ff0b5f6940386082fa73795acfdcfa5ea35a87a1a6f8a8368be73fb"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/3",
+          "text": "Start a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations.",
+          "sha256": "f47f168ca5d24532540afdb44e0ac195c4e60c0c9b98c72a05a87354031467dc"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R03-en-P01-U01",
+        "S1-11-R03-en-P01-U02",
+        "S1-11-R03-en-P01-U03",
+        "S1-11-R03-en-P02-U01",
+        "S1-11-R03-en-P02-U02",
+        "S1-11-R03-en-P02-U03",
+        "S1-11-R03-en-P03-U01",
+        "S1-11-R03-en-P03-U02",
+        "S1-11-R03-en-P03-U03",
+        "S1-11-R03-en-P04-U01",
+        "S1-11-R03-en-P04-U02"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "18°C",
+          "spoken": "eighteen degrees Celsius"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-004",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-005",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R04",
+      "originalText": "Write the unique sample ID exactly as it appears on the bag, the collection time and the specific position. This may be '10 m west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent GPS coordinates to fill a box.\n\nRecord the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example 0–15 cm or 15–30 cm. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.\n\nDescribe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.\n\nRecord topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell.",
+      "displayText": "Write the unique sample ID exactly as it appears on the bag, the collection time and the specific position. This may be '10 m west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent GPS coordinates to fill a box.\n\nRecord the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example 0–15 cm or 15–30 cm. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.\n\nDescribe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.\n\nRecord topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell.",
+      "captionText": "Write the unique sample ID exactly as it appears on the bag, the collection time and the specific position. This may be '10 m west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent GPS coordinates to fill a box.\n\nRecord the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example 0–15 cm or 15–30 cm. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.\n\nDescribe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.\n\nRecord topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell.",
+      "spokenText": "Write the unique sample I D exactly as it appears on the bag, the collection time and the specific position. This may be 'ten metres west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent G P S coordinates to fill a box.\n\nRecord the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example zero to fifteen centimetres or fifteen to thirty centimetres. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.\n\nDescribe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.\n\nRecord topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell.",
+      "spokenTextSha256": "0f91d37033a94fdf53c351310f7514dda93ffadf4bb6b158a93b1b5ee1cb8a7c",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "27b7503a1899616c59c213a3ec444e98a2eb7aa591e76483ddeb4868a69a34dc",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Write the unique sample ID exactly as it appears on the bag, the collection time and the specific position. This may be '10 m west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent GPS coordinates to fill a box.",
+          "sha256": "a184f90dd81d66a4c2aa88615f6436882ce077e86dc72002c4b4b211e9614b4c"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Record the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example 0–15 cm or 15–30 cm. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.",
+          "sha256": "eca6a091b195d89128f7d896860d658000710c055e10c276824d9b3475127a3a"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Describe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.",
+          "sha256": "7127931a14b7841832adcbdfaf5a6be4fe6dcb5a2531855e30fc16fa9f5c3430"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/3",
+          "text": "Record topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell.",
+          "sha256": "d4f9307de36fed1d4f2352b38295ad3ecf2ab9ab3846b39fc15c14be3f984cd0"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R04-en-P01-U01",
+        "S1-11-R04-en-P01-U02",
+        "S1-11-R04-en-P01-U03",
+        "S1-11-R04-en-P02-U01",
+        "S1-11-R04-en-P02-U02",
+        "S1-11-R04-en-P02-U03",
+        "S1-11-R04-en-P03-U01",
+        "S1-11-R04-en-P03-U02",
+        "S1-11-R04-en-P03-U03",
+        "S1-11-R04-en-P03-U04",
+        "S1-11-R04-en-P04-U01",
+        "S1-11-R04-en-P04-U02",
+        "S1-11-R04-en-P04-U03",
+        "S1-11-R04-en-P04-U04"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "10 m",
+          "spoken": "ten metres"
+        },
+        {
+          "written": "GPS",
+          "spoken": "G P S"
+        },
+        {
+          "written": "ID",
+          "spoken": "I D"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres"
+        },
+        {
+          "written": "15–30 cm",
+          "spoken": "fifteen to thirty centimetres"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-005",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-006",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R05",
+      "originalText": "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.\n\nA depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.\n\nFor an unusually low pH, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low pH. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.\n\nIf key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation.",
+      "displayText": "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.\n\nA depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.\n\nFor an unusually low pH, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low pH. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.\n\nIf key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation.",
+      "captionText": "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.\n\nA depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.\n\nFor an unusually low pH, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low pH. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.\n\nIf key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation.",
+      "spokenText": "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.\n\nA depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.\n\nFor an unusually low P H, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low P H. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.\n\nIf key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation.",
+      "spokenTextSha256": "1b50565da418c1a9bd3bd885b768e7104c096555db63a93f7b625190f4e42b39",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "ac3e743d83a53938facd52d7427fb223150db4a0f222fefed964ddfc8371b447",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.",
+          "sha256": "4cf92179bb09e77c9f83e570f853c6dae93097bccd6c9a58f88a60932a89040c"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "A depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.",
+          "sha256": "669286ee51bf57f77d7ccabd40f6742f1122c59cc05de71b21a77aacfd48abe0"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "For an unusually low pH, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low pH. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.",
+          "sha256": "f2df8c9ba9fb44465ebf41ae85520f16ce4f6edfd61ab21a236b36d0db5b7d3b"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/3",
+          "text": "If key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation.",
+          "sha256": "84527d8a20ba6381fa503ee8ced54052895439e8fdb431351257d141af017e8f"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R05-en-P01-U01",
+        "S1-11-R05-en-P01-U02",
+        "S1-11-R05-en-P01-U03",
+        "S1-11-R05-en-P02-U01",
+        "S1-11-R05-en-P02-U02",
+        "S1-11-R05-en-P02-U03",
+        "S1-11-R05-en-P02-U04",
+        "S1-11-R05-en-P03-U01",
+        "S1-11-R05-en-P03-U02",
+        "S1-11-R05-en-P03-U03",
+        "S1-11-R05-en-P04-U01",
+        "S1-11-R05-en-P04-U02",
+        "S1-11-R05-en-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-006",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-007",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E01",
+      "originalText": "You wrote 0–30 cm, but the contemporaneous collection record confirms 0–15 cm. Keep the old 0–30 cm readable under a single line. Write 0–15 cm with your initials and the correction details required by the project. Check the label and report for consistency and record any related authorized corrections. Correct the evidence trail; do not erase it.",
+      "displayText": "You wrote 0–30 cm, but the contemporaneous collection record confirms 0–15 cm. Keep the old 0–30 cm readable under a single line. Write 0–15 cm with your initials and the correction details required by the project. Check the label and report for consistency and record any related authorized corrections. Correct the evidence trail; do not erase it.",
+      "captionText": "You wrote 0–30 cm, but the contemporaneous collection record confirms 0–15 cm. Keep the old 0–30 cm readable under a single line. Write 0–15 cm with your initials and the correction details required by the project. Check the label and report for consistency and record any related authorized corrections. Correct the evidence trail; do not erase it.",
+      "spokenText": "You wrote zero to thirty centimetres, but the contemporaneous collection record confirms zero to fifteen centimetres. Keep the old zero to thirty centimetres readable under a single line. Write zero to fifteen centimetres with your initials and the correction details required by the project. Check the label and report for consistency and record any related authorized corrections. Correct the evidence trail; do not erase it.",
+      "spokenTextSha256": "e58fdbb3c3c2ef01c9eb9a84ad14a31270d8c39377a9a1825936782cb3c19a18",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "0ee55172affb80af4f1061d1c3103a65520d60facb5641bfe581dd12d7177339",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "You wrote 0–30 cm, but the contemporaneous collection record confirms 0–15 cm.",
+          "sha256": "e64f1a1e65cce035074bfa11befc1f5d0b04d9a183544eb51ab71a373cf82e56"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Keep the old 0–30 cm readable under a single line.",
+          "sha256": "83b426016af5ef27b966f69d599e58411c0d71ff22008d9b00bcdd92cb58ae11"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Write 0–15 cm with your initials and the correction details required by the project.",
+          "sha256": "086ee237c0aa1fd5d8c03282d6731081ba6b9f7da7a0aaa06962143af836860c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Check the label and report for consistency and record any related authorized corrections.",
+          "sha256": "5a5c1023d0316a4f67c9ff3ab2f3a29db8c9d9b1efba423567b88a4b2108da32"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Correct the evidence trail; do not erase it.",
+          "sha256": "64cd2a3b5ff9c6bc7735fe3fa326cce0582dd20fb3e5431e55f705f15914caa9"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E01-en-S",
+        "S1-11-E01-en-R01",
+        "S1-11-E01-en-R02",
+        "S1-11-E01-en-R03",
+        "S1-11-E01-en-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres"
+        },
+        {
+          "written": "0–30 cm",
+          "spoken": "zero to thirty centimetres"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-007",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-008",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "E02",
+      "originalText": "A sample collected after heavy rain has a low measured contaminant concentration. Retain the measured result and rain observation. List movement or redistribution as possibilities dependent on the contaminant and site. Do not declare the field clean or the cause proved from one sample. Context guides further interpretation without manufacturing certainty.",
+      "displayText": "A sample collected after heavy rain has a low measured contaminant concentration. Retain the measured result and rain observation. List movement or redistribution as possibilities dependent on the contaminant and site. Do not declare the field clean or the cause proved from one sample. Context guides further interpretation without manufacturing certainty.",
+      "captionText": "A sample collected after heavy rain has a low measured contaminant concentration. Retain the measured result and rain observation. List movement or redistribution as possibilities dependent on the contaminant and site. Do not declare the field clean or the cause proved from one sample. Context guides further interpretation without manufacturing certainty.",
+      "spokenText": "A sample collected after heavy rain has a low measured contaminant concentration. Retain the measured result and rain observation. List movement or redistribution as possibilities dependent on the contaminant and site. Do not declare the field clean or the cause proved from one sample. Context guides further interpretation without manufacturing certainty.",
+      "spokenTextSha256": "7408eadb07978671dbf9bc98c0068f2b9effae9d10735d26e76a64c22453df01",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "05de8aa748360f3ae8b6a464667308cdb65bf194c031932ff6912b339d590f40",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A sample collected after heavy rain has a low measured contaminant concentration.",
+          "sha256": "d7d687e0c2f87f1c50ccf7d8d302ad3d5338f747181d9e733c6736a1077c22df"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Retain the measured result and rain observation.",
+          "sha256": "699f7ec1a41f5bdafaaf99e986eb94f35462b2b3d889349eb0e26a784bdafca5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "List movement or redistribution as possibilities dependent on the contaminant and site.",
+          "sha256": "c1eeeedf2d576cf22d18715ef8adfabaaef6e19ddb4d9a4fa4a5363e30d739ec"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Do not declare the field clean or the cause proved from one sample.",
+          "sha256": "adc806d45e21b68f272a8e04090426f72bafc61b0001a20fdc84d8a0e3600431"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Context guides further interpretation without manufacturing certainty.",
+          "sha256": "c699b9dc2b8ed47e632af3dc516315f6392da350dd9c6aa2f10efe42fdf6d2e5"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E02-en-S",
+        "S1-11-E02-en-R01",
+        "S1-11-E02-en-R02",
+        "S1-11-E02-en-R03",
+        "S1-11-E02-en-T"
+      ],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-008",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-009",
+      "locale": "en",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E03",
+      "originalText": "A field note records pine trees above a sample with low pH. The vegetation note is relevant context. Association alone does not show that the needles caused the acidity. Consider the site's other evidence and the soil test method before explaining the cause. A useful clue is different from a demonstrated cause.",
+      "displayText": "A field note records pine trees above a sample with low pH. The vegetation note is relevant context. Association alone does not show that the needles caused the acidity. Consider the site's other evidence and the soil test method before explaining the cause. A useful clue is different from a demonstrated cause.",
+      "captionText": "A field note records pine trees above a sample with low pH. The vegetation note is relevant context. Association alone does not show that the needles caused the acidity. Consider the site's other evidence and the soil test method before explaining the cause. A useful clue is different from a demonstrated cause.",
+      "spokenText": "A field note records pine trees above a sample with low P H. The vegetation note is relevant context. Association alone does not show that the needles caused the acidity. Consider the site's other evidence and the soil test method before explaining the cause. A useful clue is different from a demonstrated cause.",
+      "spokenTextSha256": "8e5a7ea22490a06f18b654a019e67433070955be0c5df9f17c4f3f62207e6ac7",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "7ebeaf9a413a184c37facc20db2bf2674a6f09645a99241260ef3462baf4a625",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A field note records pine trees above a sample with low pH.",
+          "sha256": "76b95eedcd493f120da465196ddb22496b22dffbe9975946c7c2d6c118446150"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The vegetation note is relevant context.",
+          "sha256": "14bae6d782e7f8d2c7d54cdbc60128c683ed84d27d846541ba43b4a802599bfb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Association alone does not show that the needles caused the acidity.",
+          "sha256": "d7c83d1273cd958d32029f45c30725129a27d227a2ee8ec586b051a7389d7e54"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Consider the site's other evidence and the soil test method before explaining the cause.",
+          "sha256": "ae76641aa3dc0030e915d41a58f773d6a6639338713aa10d2d253d09b30ff7c9"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A useful clue is different from a demonstrated cause.",
+          "sha256": "d6e0806f43572156a966a7696b28dec2f62331c12b06fcf4e5e0918e7369186c"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E03-en-S",
+        "S1-11-E03-en-R01",
+        "S1-11-E03-en-R02",
+        "S1-11-E03-en-R03",
+        "S1-11-E03-en-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-009",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    },
+    {
+      "id": "S1-11-en-r3-010",
+      "locale": "en",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "guided-practice-and-trainer-boundary",
+      "originalText": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit. Connect the sample ID, place, depth, date/time and observed conditions as actually recorded. Keep the earlier wrong entry readable under a single line and attribute the correction using the project method. Separate the observed rain and vegetation from possible explanations for the laboratory result. Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories.\n\nOpen a dated project/site entry with team and weather data or explicit unavailable fields. Copy the sample ID exactly from the container and record collection time/location. Record actual method, depth and soil/site observations during the work. Mark measured, estimated, supplied-scenario and unavailable values appropriately. Separate observation from interpretation. Correct a planted training error transparently, retaining the old value and editor identity. Cross-check the sample label and field sheet and preserve the correction history. The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "displayText": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit. Connect the sample ID, place, depth, date/time and observed conditions as actually recorded. Keep the earlier wrong entry readable under a single line and attribute the correction using the project method. Separate the observed rain and vegetation from possible explanations for the laboratory result. Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories.\n\nOpen a dated project/site entry with team and weather data or explicit unavailable fields. Copy the sample ID exactly from the container and record collection time/location. Record actual method, depth and soil/site observations during the work. Mark measured, estimated, supplied-scenario and unavailable values appropriately. Separate observation from interpretation. Correct a planted training error transparently, retaining the old value and editor identity. Cross-check the sample label and field sheet and preserve the correction history. The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "captionText": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit. Connect the sample ID, place, depth, date/time and observed conditions as actually recorded. Keep the earlier wrong entry readable under a single line and attribute the correction using the project method. Separate the observed rain and vegetation from possible explanations for the laboratory result. Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories.\n\nOpen a dated project/site entry with team and weather data or explicit unavailable fields. Copy the sample ID exactly from the container and record collection time/location. Record actual method, depth and soil/site observations during the work. Mark measured, estimated, supplied-scenario and unavailable values appropriately. Separate observation from interpretation. Correct a planted training error transparently, retaining the old value and editor identity. Cross-check the sample label and field sheet and preserve the correction history. The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "spokenText": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit. Connect the sample I D, place, depth, date/time and observed conditions as actually recorded. Keep the earlier wrong entry readable under a single line and attribute the correction using the project method. Separate the observed rain and vegetation from possible explanations for the laboratory result. Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories.\n\nOpen a dated project/site entry with team and weather data or explicit unavailable fields. Copy the sample I D exactly from the container and record collection time/location. Record actual method, depth and soil/site observations during the work. Mark measured, estimated, supplied-scenario and unavailable values appropriately. Separate observation from interpretation. Correct a planted training error transparently, retaining the old value and editor identity. Cross-check the sample label and field sheet and preserve the correction history. The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "spokenTextSha256": "37880c326f4250146dc6f44bff977d3289d798f88fa80bceef1fd004f58288fc",
+      "delivery": "Explain calmly and naturally to vocational learners in clear English. Read only the spoken text. Preserve every quantity, unit, negation, condition and distinction between observation, interpretation and supplied examples. Use connected sentences and natural pauses. No character voices, music, introductions or summaries added. Keep the same stable voice and delivery across this locale. pH is the letters P and H, not a word.",
+      "deliverySha256": "6a420817aceee4d3c05e4d015529acc67b3d92d678d3727c2ed2b3e8514178aa",
+      "requestFingerprintSha256": "627604b88153c6d004d8944645b4a99ef9574b2aa5497a92f0cc66fff644f057",
+      "sourceFileSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit.",
+          "sha256": "db1db69fcd6a6aa4e6b9c1724a0f23b6a86fd4fa95a7ccd25e123677e0b95459"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Connect the sample ID, place, depth, date/time and observed conditions as actually recorded.",
+          "sha256": "1b2cc4712bd095aa04dec1e64ac14ab37e735442a8dc0aff7d0633802e3f7e0d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Keep the earlier wrong entry readable under a single line and attribute the correction using the project method.",
+          "sha256": "bc514f9be61ef9f8644d2be1cc74179d2a11eb9857ad7e61778f84ac868cfa5b"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Separate the observed rain and vegetation from possible explanations for the laboratory result.",
+          "sha256": "0d7df72a0f42b29323a66e792165b2e939570a0b41f1c401083720cfd3e37884"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories.",
+          "sha256": "529025d96bcfa5eaa5124a7b95d8cd3268cc69dbb770ed539261b96f6be25dc8"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/0",
+          "text": "Open a dated project/site entry with team and weather data or explicit unavailable fields.",
+          "sha256": "35d3f9f88578c464aa39f03770fa1ecb4eb5d394aa737410a11d282402b111c8"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/1",
+          "text": "Copy the sample ID exactly from the container and record collection time/location.",
+          "sha256": "082bf9e679f5a55fb3862b664996c31150dbf80a6bd2d42a9642304c0e248c1a"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/2",
+          "text": "Record actual method, depth and soil/site observations during the work.",
+          "sha256": "bfc99c47b4aa8211bfec1f5eff16830c29350dbd608218aeeb8f4ff98f56e119"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/3",
+          "text": "Mark measured, estimated, supplied-scenario and unavailable values appropriately.",
+          "sha256": "31dcd692baf00fa35140466d0f12087348094d0ee79eff6c9bd4f3ab6e1248bf"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/4",
+          "text": "Separate observation from interpretation.",
+          "sha256": "42bc710eb3c1f984c6cafa466b6bb3c9ae9a352faa249a2b92eda8928be42139"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/5",
+          "text": "Correct a planted training error transparently, retaining the old value and editor identity.",
+          "sha256": "16ba06e00b6790631f8bb8da5bcaa30085fd99993a9656c708bbd5750202d06a"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/6",
+          "text": "Cross-check the sample label and field sheet and preserve the correction history.",
+          "sha256": "0e138f7d85757d041dd16e63d24b92c39cb21cc94b6be9bfa913f5e17bc963cf"
+        },
+        {
+          "pointer": "/fieldPractical/boundary",
+          "text": "The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+          "sha256": "a57eed1d7669eb7da16c2c3bbca9299cd3467d750c800d4135bf2c904dd71bb0"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [
+        {
+          "written": "ID",
+          "spoken": "I D"
+        },
+        {
+          "written": "ID",
+          "spoken": "I D"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-en-r2-010",
+      "sourceOriginalFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9"
+    }
+  ],
+  "sourcePin": {
+    "privateOriginalSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+    "publicProjectionSHA256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+    "publicProjectionPath": "inputs/source-en.json"
+  },
+  "groupingDecision": "One coherent opening; five full reading sections, three complete worked reasoning examples, one connected guided-practice/trainer-evidence passage. Natural within-passage pauses; no sentence or paragraph TTS fragmentation. No word-count cap or invented durations.",
+  "r1Preserved": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-script-en.json",
+  "quizSolutionsIncludedBeforeAttempt": false,
+  "providerCalls": 0,
+  "r2Preserved": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-r2\\narration-en.json",
+    "sha256": "c44367692d8a787ba286c023b071509e6b67a920afd2433f1ce40c911a369653"
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "schema": "masaarat.S1-11.connected-narration-r3.v1",
+  "locale": "it",
+  "status": "ROOT_REVIEW_ONLY_NO_PROVIDER_OR_PUBLISH",
+  "model": "gemini-3.8-flash-tts",
+  "parts": [
+    {
+      "id": "S1-11-it-r3-001",
+      "locale": "it",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "opening",
+      "originalText": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara. Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate. Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio. Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione.",
+      "displayText": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara. Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate. Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio. Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione.",
+      "captionText": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara. Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate. Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio. Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione.",
+      "spokenText": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara. Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate. Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio. Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione.",
+      "spokenTextSha256": "72931368bb629491ff388a4f3a8ae39b2755ad9e4c8dcee850ccfeac2e75c504",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "36a8e98aff2ac4d3f89f1762091b1190c17f6dd73ea68a9ef3f5f3442a116dfa",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Registra il contesto del campione mentre lavori. Distingui osservazioni, interpretazioni e dati forniti dallo scenario; quando correggi un errore, lascia una traccia chiara.",
+          "sha256": "887fe59d7b6b50aa7a6fe3113cd494d8343fdee60f83a0dbfbc73543de85bf9c"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Registrare tempestivamente dati di sito e campione, con ID corrispondente e lacune dichiarate.",
+          "sha256": "f93c6af6fdf0c2ff953592cf23727a334806c07edd4e00a6c729bfa0bcc918a6"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Separare osservazioni da interpretazioni e spiegare come la mancanza di contesto limita un risultato di laboratorio.",
+          "sha256": "8be0aa112e5c2466a3c758959a086f751c3e277aa6c01fbec299a2b5e7dc1f53"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Correggere il registro senza nascondere il dato precedente e identificare i valori forniti in una simulazione.",
+          "sha256": "cb2952acf020753720c6c9c4a1a23e2ebc585d360600e57ef38c8c32de6ea7d9"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-001",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-002",
+      "locale": "it",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R01",
+      "originalText": "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.\n\nI metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pH 6.5, lascia aperte domande essenziali.\n\nNell'esempio didattico, pH 6.5 appartiene al campione da 0–15 cm della zona bassa e mal drenata del pascolo settentrionale, raccolto il 26 ottobre 2024 dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pH. Non trasferire data e condizioni dell'esempio in un vero registro attuale.\n\nScrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto.",
+      "displayText": "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.\n\nI metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pH 6.5, lascia aperte domande essenziali.\n\nNell'esempio didattico, pH 6.5 appartiene al campione da 0–15 cm della zona bassa e mal drenata del pascolo settentrionale, raccolto il 26 ottobre 2024 dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pH. Non trasferire data e condizioni dell'esempio in un vero registro attuale.\n\nScrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto.",
+      "captionText": "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.\n\nI metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pH 6.5, lascia aperte domande essenziali.\n\nNell'esempio didattico, pH 6.5 appartiene al campione da 0–15 cm della zona bassa e mal drenata del pascolo settentrionale, raccolto il 26 ottobre 2024 dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pH. Non trasferire data e condizioni dell'esempio in un vero registro attuale.\n\nScrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto.",
+      "spokenText": "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.\n\nI metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pi acca sei virgola cinque, lascia aperte domande essenziali.\n\nNell'esempio didattico, pi acca sei virgola cinque appartiene al campione da da zero a quindici centimetri della zona bassa e mal drenata del pascolo settentrionale, raccolto il ventisei ottobre duemilaventiquattro dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pi acca. Non trasferire data e condizioni dell'esempio in un vero registro attuale.\n\nScrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto.",
+      "spokenTextSha256": "87ddc00edbe2613b7fc3247d3c1799a5f219da43fdb4bc62e52304fe7e35de40",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "b901c98c4ee2fa46028f95d77a8d7362ce3c33e2ddedabb501b6536fb59e5898",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Pensa a un esempio innocuo: non riesci più a trovare qualcosa perché nome del file o etichetta sono poco chiari. Non devi condividere password o dati privati. Un campione con un registro ambiguo crea un problema simile: il materiale esiste, ma non lo colleghi con certezza al lavoro svolto.",
+          "sha256": "ffd16f69ba03ea90556230f612c438d49eea71420fcc55a712d6c5d7409d5185"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "I metadati sono informazioni sui dati. Se l'etichetta è il passaporto del campione, il registro di campo ne è la biografia: provenienza, momento, metodo e condizioni. Un valore isolato di laboratorio, come pH 6.5, lascia aperte domande essenziali.",
+          "sha256": "58236c904bb16e9c9d269fe306c4503189b4fa88af08c1885c19ef0f8d8f413f"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Nell'esempio didattico, pH 6.5 appartiene al campione da 0–15 cm della zona bassa e mal drenata del pascolo settentrionale, raccolto il 26 ottobre 2024 dopo pioggia intensa. Il contesto aiuta a identificare e leggere il risultato, ma da solo non prova che la pioggia abbia causato quel pH. Non trasferire data e condizioni dell'esempio in un vero registro attuale.",
+          "sha256": "558c3bbffafdbae546bc29c82aa15e31586a57bdbe1b2d83b74f24b3fc396221"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Scrivi durante il lavoro, quando i dettagli si possono verificare. Il ricordo a fine giornata vale meno di una nota contemporanea. Se hai perso un'osservazione, segnala che non è disponibile e spiega la lacuna; non scrivere ciò che di solito accade nel sito come se lo avessi visto.",
+          "sha256": "18be5a73f8346b14ef7df2bbe52d5aaa9617b63f85fded739b6ec635fef59fb1"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R01-it-P01-U01",
+        "S1-11-R01-it-P01-U02",
+        "S1-11-R01-it-P01-U03",
+        "S1-11-R01-it-P02-U01",
+        "S1-11-R01-it-P02-U02",
+        "S1-11-R01-it-P02-U03",
+        "S1-11-R01-it-P03-U01",
+        "S1-11-R01-it-P03-U02",
+        "S1-11-R01-it-P03-U03",
+        "S1-11-R01-it-P04-U01",
+        "S1-11-R01-it-P04-U02",
+        "S1-11-R01-it-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH 6.5",
+          "spoken": "pi acca sei virgola cinque"
+        },
+        {
+          "written": "26 ottobre 2024",
+          "spoken": "ventisei ottobre duemilaventiquattro"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri"
+        },
+        {
+          "written": "pH 6.5",
+          "spoken": "pi acca sei virgola cinque"
+        },
+        {
+          "written": "pH",
+          "spoken": "pi acca"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-002",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-003",
+      "locale": "it",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R02",
+      "originalText": "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.\n\nSe scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.\n\nIn digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.\n\nAnnota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto.",
+      "displayText": "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.\n\nSe scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.\n\nIn digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.\n\nAnnota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto.",
+      "captionText": "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.\n\nSe scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.\n\nIn digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.\n\nAnnota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto.",
+      "spokenText": "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.\n\nSe scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.\n\nIn digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.\n\nAnnota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto.",
+      "spokenTextSha256": "61b898c6ed4e4caef37285cdb5c83c34b5bf76c8a40899eebaba17556d24d9f6",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "5517c000265d91fed2028e0040adbde2376c9c7eea2031c6cfdd62a22eb3b1df",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Usa un quaderno o modulo adatto alle condizioni del campo e inchiostro permanente compatibile. Proteggilo da acqua e fango. Un modulo digitale è utile se conserva identità, date e cronologia delle correzioni invece di sostituire di nascosto il valore precedente.",
+          "sha256": "09c5020733690aa3907d42f6fc92b77e86209976a841aa98aaf1d6eae6b2ab43"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Se scrivi un dato errato su carta, tracciane una sola riga sopra lasciandolo leggibile. Aggiungi il valore corretto e le tue iniziali, oltre a data/ora o motivo se il progetto li richiede. Non strappare la pagina, cancellare il valore o coprirlo con correttore.",
+          "sha256": "817738fe2f3eac01858bf50830358ce7f7d06f3a4593f6f09c4a2a82c26c1271"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "In digitale mantieni valore precedente, valore nuovo, autore, ora e spiegazione. Correggere fa parte del buon lavoro; occultare la prima registrazione no. Non cambiare l'ID del campione senza una correzione autorizzata e tracciabile che dimostri l'errore.",
+          "sha256": "20d37400d90d119782ad7ac3640e0bb15935616b917a074170699016a40ec9cd"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "Annota 'bruno scuro, granuloso al tatto, umido' invece di 'buon terreno'. In una colonna diversa potresti interpretare: 'tessitura sabbiosa sospetta, da controllare con la guida di campo'. Chi leggerà saprà che cosa hai osservato e che cosa hai dedotto.",
+          "sha256": "3a0e6220aa8c01ff730f284a909a629318fbcbe6c2a8b167ad183faa2b437114"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R02-it-P01-U01",
+        "S1-11-R02-it-P01-U02",
+        "S1-11-R02-it-P01-U03",
+        "S1-11-R02-it-P02-U01",
+        "S1-11-R02-it-P02-U02",
+        "S1-11-R02-it-P02-U03",
+        "S1-11-R02-it-P03-U01",
+        "S1-11-R02-it-P03-U02",
+        "S1-11-R02-it-P03-U03",
+        "S1-11-R02-it-P04-U01",
+        "S1-11-R02-it-P04-U02",
+        "S1-11-R02-it-P04-U03"
+      ],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-003",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-004",
+      "locale": "it",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R03",
+      "originalText": "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.\n\nRegistra meteo e condizioni recenti pertinenti. 'Sole, 18°C, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta 18°C come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.\n\nIn una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.\n\nApri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri.",
+      "displayText": "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.\n\nRegistra meteo e condizioni recenti pertinenti. 'Sole, 18°C, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta 18°C come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.\n\nIn una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.\n\nApri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri.",
+      "captionText": "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.\n\nRegistra meteo e condizioni recenti pertinenti. 'Sole, 18°C, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta 18°C come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.\n\nIn una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.\n\nApri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri.",
+      "spokenText": "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.\n\nRegistra meteo e condizioni recenti pertinenti. 'Sole, diciotto gradi Celsius, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta diciotto gradi Celsius come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.\n\nIn una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.\n\nApri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri.",
+      "spokenTextSha256": "eafedbbc961b0de269315beb89246309462956b1a408f101f04a6e8a3db312b1",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "5460b5010efa64622e389308fd13537465eba2dd3ac22338bb6356f09a9d1548",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "All'inizio dell'annotazione scrivi nome e numero del progetto, data, nomi completi del gruppo e posizione generale. Usa indirizzo, riferimento di mappa o coordinate quando il compito li fornisce. Le informazioni devono collegare il foglio al progetto e al luogo reali.",
+          "sha256": "c83ac664ea352591aa18ee32c9abad7131a1143258143804b02adec63a9a48b1"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Registra meteo e condizioni recenti pertinenti. 'Sole, 18°C, vento leggero' e 'cielo coperto, pioggia al mattino' sono esempi. Riporta 18°C come valore reale solo se misurato o fornito da una fonte affidabile identificata; altrimenti descrivi il meteo osservato e marca la temperatura non disponibile.",
+          "sha256": "60b4dc3dff51cba425e18a6167ca7e5b24d49707b0d9868df650538162b4976b"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "In una simulazione etichetta i valori ricevuti come dati dello scenario. Se manca una cifra necessaria, usa solo un'ipotesi dichiarata e autorizzata per l'esercizio oppure scrivi 'non fornito'. Un bollettino inventato non deve sembrare un'osservazione fatta all'aperto.",
+          "sha256": "7d55e3527dd86efa6bb1037baf4b2d1d2227ff11a870fd7fd983d544e54cc1ec"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/3",
+          "text": "Apri una nuova annotazione quando cambiano sito o giorno. Dati generali del giorno possono servire a più campioni, ma ciascuno conserva ora di prelievo, posizione precisa, metodo e osservazioni propri.",
+          "sha256": "0dabefc785f34b1e3ced6fe7828df6e9923e1c7f884799014475cc32b3c379d2"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R03-it-P01-U01",
+        "S1-11-R03-it-P01-U02",
+        "S1-11-R03-it-P01-U03",
+        "S1-11-R03-it-P02-U01",
+        "S1-11-R03-it-P02-U02",
+        "S1-11-R03-it-P02-U03",
+        "S1-11-R03-it-P03-U01",
+        "S1-11-R03-it-P03-U02",
+        "S1-11-R03-it-P03-U03",
+        "S1-11-R03-it-P04-U01",
+        "S1-11-R03-it-P04-U02"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "18°C",
+          "spoken": "diciotto gradi Celsius"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-004",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-005",
+      "locale": "it",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R04",
+      "originalText": "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere '10 m a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.\n\nRegistra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio 0–15 cm o 15–30 cm. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.\n\nDescrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.\n\nAnnota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore.",
+      "displayText": "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere '10 m a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.\n\nRegistra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio 0–15 cm o 15–30 cm. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.\n\nDescrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.\n\nAnnota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore.",
+      "captionText": "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere '10 m a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.\n\nRegistra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio 0–15 cm o 15–30 cm. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.\n\nDescrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.\n\nAnnota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore.",
+      "spokenText": "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere 'dieci metri a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.\n\nRegistra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio da zero a quindici centimetri o da quindici a trenta centimetri. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.\n\nDescrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.\n\nAnnota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore.",
+      "spokenTextSha256": "62d0e9f1d3bae0157d9f7192fb20ff84f70b5d866ad94a0ab9950e44b2557966",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "cdc0da48893b9cd9b8471cebf42fe38232aac786a1e2d2765025d622b397009d",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Scrivi l'ID univoco esattamente come sul sacchetto, ora del prelievo e punto preciso. Potrebbe essere '10 m a ovest del cancello', coordinate misurate o uno schizzo chiaro con riferimenti. Distingui distanze stimate da misurate; non inventare coordinate GPS per riempire una casella.",
+          "sha256": "179bf649a9dbdc9946b471337802215cb87a3b7c56f36f4d18fb5f3271771af3"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Registra metodo e strumento davvero usati, come trivella manuale, paletta o vanga, e intervallo di profondità con unità, per esempio 0–15 cm o 15–30 cm. Mantieni separati strati e campioni con identità propria. Il nome dello strumento da solo non descrive tutto il metodo.",
+          "sha256": "d587e38c977a8640f8a320a7897593e010c81e0a87e2baf6d286c7425002f5ba"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Descrivi colore, sensazione tattile, umidità e struttura separatamente. Il colore può essere bruno rossastro scuro; al tatto il suolo può sembrare granuloso e formare una palla debole. Una classe tessiturale richiede l'intera prova appropriata, non una sola impressione. Scrivi asciutto, umido o bagnato come osservato e descrivi aggregati granulari o a blocchi solo se riconosciuti.",
+          "sha256": "5c65c2c8834f7505348b137caa8c83f6a4bd9f81c26ba987d4b3c5fab462a6af"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/3",
+          "text": "Annota topografia, per esempio cima, lieve pendio o depressione; vegetazione, per esempio prato con qualche infestante; e anomalie. Esempi: erosione visibile, pietre che ostacolano la trivella o acqua stagnante. Se avverti per caso un odore chimico, interrompi il lavoro e segui la procedura di sicurezza del sito. Non annusare deliberatamente il campione né identificare sostanza o concentrazione dall'odore.",
+          "sha256": "eb7fad4449a93956d6b579c8e3879ea6cfa0645fd98b4eff2eefb60e39d0c4f3"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R04-it-P01-U01",
+        "S1-11-R04-it-P01-U02",
+        "S1-11-R04-it-P01-U03",
+        "S1-11-R04-it-P02-U01",
+        "S1-11-R04-it-P02-U02",
+        "S1-11-R04-it-P02-U03",
+        "S1-11-R04-it-P03-U01",
+        "S1-11-R04-it-P03-U02",
+        "S1-11-R04-it-P03-U03",
+        "S1-11-R04-it-P03-U04",
+        "S1-11-R04-it-P04-U01",
+        "S1-11-R04-it-P04-U02",
+        "S1-11-R04-it-P04-U03",
+        "S1-11-R04-it-P04-U04"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "10 m",
+          "spoken": "dieci metri"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri"
+        },
+        {
+          "written": "15–30 cm",
+          "spoken": "da quindici a trenta centimetri"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-005",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-006",
+      "locale": "it",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R05",
+      "originalText": "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.\n\nUna depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.\n\nSe il pH è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.\n\nSe mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale.",
+      "displayText": "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.\n\nUna depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.\n\nSe il pH è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.\n\nSe mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale.",
+      "captionText": "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.\n\nUna depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.\n\nSe il pH è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.\n\nSe mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale.",
+      "spokenText": "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.\n\nUna depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.\n\nSe il pi acca è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.\n\nSe mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale.",
+      "spokenTextSha256": "d5b82992423f7fe81b24e05b5ef8659af16e588f8108ec3f1c189b2c8177f8d6",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "181136ea92bb2e74b18d30680f5f8abccedaf4d263920bf3443dbfcc9d9f661f",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Dopo pioggia forte, un contaminante può muoversi con ruscellamento, infiltrazione o sedimento, a seconda di sostanza e sito. Una bassa concentrazione in un solo campione non prova che la pioggia abbia diluito l'intera area o che sia sicura. La nota meteo aiuta a formulare e verificare ipotesi, non sostituisce un'indagine.",
+          "sha256": "297738fe1f6ea0d678b16fe768b4166bd0b9ea67e765468beac2f805abb9c37a"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Una depressione può raccogliere acqua o sedimento; la topografia suggerisce dove approfondire. Un valore alto in cima può suggerire distribuzione o origine diversa. Nessuna posizione da sola dimostra la fonte. Confronta luogo, profondità, disegno di campionamento e metodo di laboratorio prima di concludere.",
+          "sha256": "d5db54dcc234a5385f30493041fcffff6a69daa23ad85b61e1e8fd0aecf33268"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "Se il pH è insolitamente basso, la presenza registrata di pini sopra il punto è contesto utile. Non dimostra che gli aghi caduti abbiano causato l'acidità. Formazione del suolo, gestione e altre condizioni possono contare; confronta prove invece di trasformare un'associazione in causa.",
+          "sha256": "bfe073fc432deb851faca48cae7f6d725db8ab86443963e9121dacb850b4b897"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/3",
+          "text": "Se mancano metadati essenziali, conserva il risultato di laboratorio ma dichiara i limiti. Senza posizione non puoi mappare o ritrovare con certezza il punto; senza descrizione del suolo il confronto è ridotto; senza note anomale perdi indizi investigativi. Non riempire i vuoti ricavando fittizie osservazioni dal numero finale.",
+          "sha256": "adae4ed99c6a852342ec44dc6a6b0b2d6d4b332e386f3c6f295be84d84e18d73"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R05-it-P01-U01",
+        "S1-11-R05-it-P01-U02",
+        "S1-11-R05-it-P01-U03",
+        "S1-11-R05-it-P02-U01",
+        "S1-11-R05-it-P02-U02",
+        "S1-11-R05-it-P02-U03",
+        "S1-11-R05-it-P02-U04",
+        "S1-11-R05-it-P03-U01",
+        "S1-11-R05-it-P03-U02",
+        "S1-11-R05-it-P03-U03",
+        "S1-11-R05-it-P04-U01",
+        "S1-11-R05-it-P04-U02",
+        "S1-11-R05-it-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "pi acca"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-006",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-007",
+      "locale": "it",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E01",
+      "originalText": "Hai scritto 0–30 cm, ma la registrazione contemporanea della raccolta conferma 0–15 cm. Lascia 0–30 cm leggibile sotto una sola riga. Scrivi 0–15 cm con iniziali e dettagli di correzione richiesti dal progetto. Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate. Correggi la traccia delle prove; non cancellarla.",
+      "displayText": "Hai scritto 0–30 cm, ma la registrazione contemporanea della raccolta conferma 0–15 cm. Lascia 0–30 cm leggibile sotto una sola riga. Scrivi 0–15 cm con iniziali e dettagli di correzione richiesti dal progetto. Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate. Correggi la traccia delle prove; non cancellarla.",
+      "captionText": "Hai scritto 0–30 cm, ma la registrazione contemporanea della raccolta conferma 0–15 cm. Lascia 0–30 cm leggibile sotto una sola riga. Scrivi 0–15 cm con iniziali e dettagli di correzione richiesti dal progetto. Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate. Correggi la traccia delle prove; non cancellarla.",
+      "spokenText": "Hai scritto da zero a trenta centimetri, ma la registrazione contemporanea della raccolta conferma da zero a quindici centimetri. Lascia da zero a trenta centimetri leggibile sotto una sola riga. Scrivi da zero a quindici centimetri con iniziali e dettagli di correzione richiesti dal progetto. Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate. Correggi la traccia delle prove; non cancellarla.",
+      "spokenTextSha256": "137e8290d2b46c9fa6ee6ce8c926c1acd5cce09bbc35c001c15d094b96f34a8d",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "8cc37f87435ed33781cdabfcdbeb0add86b5ddd0108a01d95b0df2887e7e91e2",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Hai scritto 0–30 cm, ma la registrazione contemporanea della raccolta conferma 0–15 cm.",
+          "sha256": "d047ff755c6f1976b1073bdbc243cf935b7ad546c2a27c691a4e97d252714bce"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Lascia 0–30 cm leggibile sotto una sola riga.",
+          "sha256": "e6f8c7a35bf05a2363c3528d5118e71afa529fd1f4a4ba528a4dc598565416b5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Scrivi 0–15 cm con iniziali e dettagli di correzione richiesti dal progetto.",
+          "sha256": "c856964f710746ab153e5986a3f16cf4c4dd5d75c835bd6e34017d8a64d369d2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Controlla etichetta e rapporto e registra eventuali altre correzioni autorizzate.",
+          "sha256": "7a6616ce3750da47ff6a131c307acd379c306b75930e6c84376e5f339c421431"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Correggi la traccia delle prove; non cancellarla.",
+          "sha256": "b7daaa7c21713b27812675353de87a9ed494d4b45780080af73d048478596c37"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E01-it-S",
+        "S1-11-E01-it-R01",
+        "S1-11-E01-it-R02",
+        "S1-11-E01-it-R03",
+        "S1-11-E01-it-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri"
+        },
+        {
+          "written": "0–30 cm",
+          "spoken": "da zero a trenta centimetri"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-007",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-008",
+      "locale": "it",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "E02",
+      "originalText": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante. Conserva risultato misurato e osservazione della pioggia. Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito. Non dichiarare l'area pulita o la causa provata da un solo campione. Il contesto orienta l'interpretazione senza creare certezze.",
+      "displayText": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante. Conserva risultato misurato e osservazione della pioggia. Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito. Non dichiarare l'area pulita o la causa provata da un solo campione. Il contesto orienta l'interpretazione senza creare certezze.",
+      "captionText": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante. Conserva risultato misurato e osservazione della pioggia. Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito. Non dichiarare l'area pulita o la causa provata da un solo campione. Il contesto orienta l'interpretazione senza creare certezze.",
+      "spokenText": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante. Conserva risultato misurato e osservazione della pioggia. Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito. Non dichiarare l'area pulita o la causa provata da un solo campione. Il contesto orienta l'interpretazione senza creare certezze.",
+      "spokenTextSha256": "9a750c5a7a2c616c6a175549ffbba00714e44fdc2bd3b090470f092cfa724a2a",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "2c5f02f53af6958c2ab8a0cc01443c375286c0cb0366a26aa6151f3fe521be0c",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un campione raccolto dopo pioggia intensa presenta una bassa concentrazione misurata di un contaminante.",
+          "sha256": "5f94e33b27d269cadd0a8832b38fdaa7e029a8bcdc1e5819c88b4ce70cab33fa"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Conserva risultato misurato e osservazione della pioggia.",
+          "sha256": "f7633237cc2c99706b24c85af7bd6a6552d05d15b0bfc4cb3181523f45cd0fef"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Elenca movimento o ridistribuzione come possibilità dipendenti da contaminante e sito.",
+          "sha256": "3001a79bf055cb7d7f3d2f585fc1c6a7d1d09cfb20242b71a5c084ccc652c7ac"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Non dichiarare l'area pulita o la causa provata da un solo campione.",
+          "sha256": "26011fd4c5b122080dbe67d6a678b7330de852fa260704b6b47964183245390e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Il contesto orienta l'interpretazione senza creare certezze.",
+          "sha256": "556f47eccdf4e474acd90d90ce087b7e073158ff9eab84791e37074bde5e6cb6"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E02-it-S",
+        "S1-11-E02-it-R01",
+        "S1-11-E02-it-R02",
+        "S1-11-E02-it-R03",
+        "S1-11-E02-it-T"
+      ],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-008",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-009",
+      "locale": "it",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E03",
+      "originalText": "Una nota di campo registra pini sopra un campione con pH basso. La vegetazione è un contesto pertinente. La vicinanza non dimostra che gli aghi abbiano causato l'acidità. Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa. Un indizio utile non equivale a una causa dimostrata.",
+      "displayText": "Una nota di campo registra pini sopra un campione con pH basso. La vegetazione è un contesto pertinente. La vicinanza non dimostra che gli aghi abbiano causato l'acidità. Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa. Un indizio utile non equivale a una causa dimostrata.",
+      "captionText": "Una nota di campo registra pini sopra un campione con pH basso. La vegetazione è un contesto pertinente. La vicinanza non dimostra che gli aghi abbiano causato l'acidità. Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa. Un indizio utile non equivale a una causa dimostrata.",
+      "spokenText": "Una nota di campo registra pini sopra un campione con pi acca basso. La vegetazione è un contesto pertinente. La vicinanza non dimostra che gli aghi abbiano causato l'acidità. Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa. Un indizio utile non equivale a una causa dimostrata.",
+      "spokenTextSha256": "c355dcca2cf8090136b57d722d68e9c0b5d950c4a2ffca682935e5b3eb4c360a",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "f15e9ca5b22fb805c22c1c0d579759edc5a10a1f8a2c9861e6f614792bd4a7ba",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Una nota di campo registra pini sopra un campione con pH basso.",
+          "sha256": "e90ccf414e40b3eece190cf1f410bcc05197c23a75186cd75a9032b96622e435"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "La vegetazione è un contesto pertinente.",
+          "sha256": "291c2698a80d0939c80c80e2d01692698dc602a2dc919c1152268f348ca15dda"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "La vicinanza non dimostra che gli aghi abbiano causato l'acidità.",
+          "sha256": "265bd1efb7c6d04348264b383a99efaf0be4f66ec9d31e47e30a20d160045d41"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Valuta altre evidenze del sito e il metodo di analisi prima di spiegare la causa.",
+          "sha256": "bdd6e8fa976d7c6b7b9add4cb707812cd13a7ed8f6c1589f1353791ba697b1b2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Un indizio utile non equivale a una causa dimostrata.",
+          "sha256": "bde9f4a54e01b86e0b7caf6cf9eb4a93e25e0ae6595624b08eebf76620610138"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E03-it-S",
+        "S1-11-E03-it-R01",
+        "S1-11-E03-it-R02",
+        "S1-11-E03-it-R03",
+        "S1-11-E03-it-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "pi acca"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-009",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    },
+    {
+      "id": "S1-11-it-r3-010",
+      "locale": "it",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "guided-practice-and-trainer-boundary",
+      "originalText": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona. Collega ID, posizione, profondità, data/ora e condizioni realmente registrate. Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto. Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato. Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili.\n\nApri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili. Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo. Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività. Distingui valori misurati, stimati, forniti dallo scenario e non disponibili. Separa osservazione e interpretazione. Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore. Confronta etichetta e scheda di campo e conserva la storia della correzione. Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "displayText": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona. Collega ID, posizione, profondità, data/ora e condizioni realmente registrate. Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto. Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato. Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili.\n\nApri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili. Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo. Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività. Distingui valori misurati, stimati, forniti dallo scenario e non disponibili. Separa osservazione e interpretazione. Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore. Confronta etichetta e scheda di campo e conserva la storia della correzione. Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "captionText": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona. Collega ID, posizione, profondità, data/ora e condizioni realmente registrate. Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto. Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato. Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili.\n\nApri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili. Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo. Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività. Distingui valori misurati, stimati, forniti dallo scenario e non disponibili. Separa osservazione e interpretazione. Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore. Confronta etichetta e scheda di campo e conserva la storia della correzione. Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "spokenText": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona. Collega ID, posizione, profondità, data/ora e condizioni realmente registrate. Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto. Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato. Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili.\n\nApri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili. Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo. Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività. Distingui valori misurati, stimati, forniti dallo scenario e non disponibili. Separa osservazione e interpretazione. Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore. Confronta etichetta e scheda di campo e conserva la storia della correzione. Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "spokenTextSha256": "d56862c57524ce5b378be7d89fffc8893033ddd24802ab3336badc2e04d75435",
+      "delivery": "Spiega con italiano naturale, chiaro e calmo, a persone in formazione professionale. Leggi soltanto il testo parlato, con frasi collegate e pause naturali. Conserva numeri, unità, negazioni, condizioni e distinzione fra osservazioni, interpretazioni ed esempi. Nessun personaggio, canto, introduzione o commento aggiunto. Mantieni timbro e ritmo coerenti. Pronuncia pH come le lettere pi e acca.",
+      "deliverySha256": "0878eca9d89dce6a11f384e812506b0c5364a2e93938c3e0a26a1d08825854dd",
+      "requestFingerprintSha256": "0b3e65991a5ec50f6f2663650601e279d1ce6ca4f3a5e01f057b5054d9eeda9e",
+      "sourceFileSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Una scheda contiene una profondità sbagliata, un risultato dopo pioggia e una nota sui pini. Prepara una traccia delle prove controllabile da un'altra persona.",
+          "sha256": "be79f0f7b3a31255c42f9e527649b89bfd6d688e84bb03744551d19a6a6d636c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Collega ID, posizione, profondità, data/ora e condizioni realmente registrate.",
+          "sha256": "fe59c366c1db48c0ec9700d727e5519553a635f3739ac0272453e82676d3e0af"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Lascia leggibile l'errore sotto una riga e attribuisci la correzione secondo il progetto.",
+          "sha256": "c53f7ae776339744063b99d3647e45b55482f0b13622ee870cd343c966baefc4"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Separa pioggia e vegetazione osservate dalle possibili spiegazioni del risultato.",
+          "sha256": "a9b1d76167676fb431f90d67d7a53b28b8be5df02e28660c82be6ff486f954e3"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Marca dati simulati o non disponibili e non riempire i vuoti con ricordi plausibili.",
+          "sha256": "1ee0f5f08976f3888d6d625f0886ccc72ca33a9831088bca8452504da3932dc3"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/0",
+          "text": "Apri una voce datata con progetto, sito, gruppo e meteo o dichiara i campi non disponibili.",
+          "sha256": "0866400a27ad995e09b7dd8e200ae9fc390a43721a8e07e01d6bfcec24df2a2a"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/1",
+          "text": "Copia esattamente l'ID dal contenitore e indica ora e punto di prelievo.",
+          "sha256": "50cb4987f86d1f3e6b585528a53d450c1a7470f82b8549b24f1e16c2a3c56a16"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/2",
+          "text": "Registra metodo, profondità e osservazioni reali di suolo e sito durante l'attività.",
+          "sha256": "c57d5c924550b47071b7b9d78c4b5bdd75f24cdd086181c041457ec9de43f47a"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/3",
+          "text": "Distingui valori misurati, stimati, forniti dallo scenario e non disponibili.",
+          "sha256": "43468eb91e1f16bd4b0e7beb735a13aec7d0df7e41aebb60d4be4bbbd60f8548"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/4",
+          "text": "Separa osservazione e interpretazione.",
+          "sha256": "eb8eaa3d2aea7108b3c1fa20d0d62ec9c3892b1a12fcc4148a5f9581a9ae794b"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/5",
+          "text": "Correggi un errore inserito nell'esercizio mantenendo leggibile il primo valore e identificando l'autore.",
+          "sha256": "fb96878f4196092ece380fe76a06271991819bf9c5f3513438e428a98e8c2ed9"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/6",
+          "text": "Confronta etichetta e scheda di campo e conserva la storia della correzione.",
+          "sha256": "f168f2d210a172df7c698cce122bdb715131aa7e20c442a1a06975bf746d4ec8"
+        },
+        {
+          "pointer": "/fieldPractical/boundary",
+          "text": "Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+          "sha256": "6d5ea6480adc1d09a70b9d849ad0d3dcddd67d2b42129862184d138696744036"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-it-r2-010",
+      "sourceOriginalFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4"
+    }
+  ],
+  "sourcePin": {
+    "privateOriginalSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+    "publicProjectionSHA256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+    "publicProjectionPath": "inputs/source-it.json"
+  },
+  "groupingDecision": "One coherent opening; five full reading sections, three complete worked reasoning examples, one connected guided-practice/trainer-evidence passage. Natural within-passage pauses; no sentence or paragraph TTS fragmentation. No word-count cap or invented durations.",
+  "r1Preserved": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-script-it.json",
+  "quizSolutionsIncludedBeforeAttempt": false,
+  "providerCalls": 0,
+  "r2Preserved": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-r2\\narration-it.json",
+    "sha256": "e638f4cf49ad220406da94f21a0a0ef24b4b16a5d5a6f3d7ccfc29a9cf04f74f"
+  }
+}

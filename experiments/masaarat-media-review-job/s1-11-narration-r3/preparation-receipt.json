@@ -1,0 +1,187 @@
+{
+  "schema": "masaarat.S1-11.narration-r3-preparation.v1",
+  "status": "COMPLETE_OFFLINE_PUBLIC_PACKAGE_FOR_ROOT_FIRST_PUSH",
+  "atUTC": "2026-10-22T10:01:13.327715+00:00",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "branch": "work/soil-s111-narration-20261022-r3",
+  "ref": "refs/heads/work/soil-s111-narration-20261022-r3",
+  "freshPushRequired": true,
+  "remoteProbeSHA256": "7fb1c2b5405f2d695ee847ef4216ede03d9633ff2c5c99e2069fd5e9c96668e8",
+  "requestSha256": "643f062a85d2d2a5636a5f904d9e54ec7560f93abf22eb00c5142cea1c46e906",
+  "workerSha256": "1117bf22f343aac51c8f5267c5d3e4a8f8359392904ff8e1c29fbbd5592210ae",
+  "freezeSha256": "bd951c43860ea9e8f0dc09e330ca389b8f371619ef872ed427bbfda1bcc0ff2b",
+  "workflowSha256": "2ef6560e9cbdee4815f6a97c2e564567d0ac563da7aa578422ebdc533966df2b",
+  "sameR2SpokenParts": 40,
+  "publicTeachingPointersPerLocale": 52,
+  "actualOfflineTestsPassed": 53,
+  "unsafeAssessmentContentsIncluded": false,
+  "privateOriginalsAndR2R1Unchanged": true,
+  "s105FrozenPackageUnchanged": true,
+  "finiteBudgets": {
+    "TTS": 40,
+    "blindAudioReviews": 40,
+    "ASR": 40,
+    "metadataGETs": 2,
+    "perPartPerKind": 1,
+    "automaticRetries": 0
+  },
+  "providerCalls": 0,
+  "publishPushOrDispatchPerformed": false,
+  "publicStagingPayloadAllowlist": [
+    {
+      "relativePath": "worker.py",
+      "sha256": "1117bf22f343aac51c8f5267c5d3e4a8f8359392904ff8e1c29fbbd5592210ae",
+      "bytes": 27984
+    },
+    {
+      "relativePath": "request.json",
+      "sha256": "643f062a85d2d2a5636a5f904d9e54ec7560f93abf22eb00c5142cea1c46e906",
+      "bytes": 317790
+    },
+    {
+      "relativePath": "runtime.json",
+      "sha256": "d4e24408a53f25f68315aa7393f389aa86202ff155b4226e4ebbfd16cd711354",
+      "bytes": 1196
+    },
+    {
+      "relativePath": "source-coverage.json",
+      "sha256": "f179009b2a80e08ae06344904c7017904659b226e9d53e58107fa5c9f4a76ee3",
+      "bytes": 49733
+    },
+    {
+      "relativePath": "remote-branch-probe.json",
+      "sha256": "7fb1c2b5405f2d695ee847ef4216ede03d9633ff2c5c99e2069fd5e9c96668e8",
+      "bytes": 814
+    },
+    {
+      "relativePath": "preserved-inputs.json",
+      "sha256": "765767c992fc72cbe892ddc671cb5564bfc28dd5fcdd5d69eeabaeb3bd951c20",
+      "bytes": 31093
+    },
+    {
+      "relativePath": "worker-derivation.json",
+      "sha256": "60cf1119da4d195621d5b18f55fd7723badf223459cf95604846a6b28a8aa7a2",
+      "bytes": 1496
+    },
+    {
+      "relativePath": "implementation-dependency-pins.json",
+      "sha256": "1722b19a3eb36569213712af565126d4e7fedf06a9be10e3219466f1505aa982",
+      "bytes": 2744
+    },
+    {
+      "relativePath": "README.en.md",
+      "sha256": "b661f777e27fd2592d1f3611bb5047a690524f9ea4c3a687be37d1a17d18f495",
+      "bytes": 5596
+    },
+    {
+      "relativePath": "offline_tests.py",
+      "sha256": "4a5e9cdc6828b82f4ec470fd4f4fb35746c1b63e91329e48b9fc8ff3a1513e63",
+      "bytes": 14102
+    },
+    {
+      "relativePath": "freeze_package.py",
+      "sha256": "b421bd74a55643f58074195039a43703d26b028d2cb3438f9ca58fdbaedd6c74",
+      "bytes": 6252
+    },
+    {
+      "relativePath": ".gitignore",
+      "sha256": "5bf7b8ce10fb579fe047efa70fa2df7504f40fb487832f8255de050ecbf1f285",
+      "bytes": 80
+    },
+    {
+      "relativePath": "vendor/pipeline-engine.py",
+      "sha256": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+      "bytes": 24800
+    },
+    {
+      "relativePath": "vendor/course/manifest.json",
+      "sha256": "2c407f38709b03f65f9b6ffff424229286df990b3e4f31ff9c51f93f81072627",
+      "bytes": 188
+    },
+    {
+      "relativePath": "narration-en.json",
+      "sha256": "2584a60d8c4b5993668bbd998c20d8c61f86c46d6194ce70965c224d1fde02ce",
+      "bytes": 75394
+    },
+    {
+      "relativePath": "narration-ar-EG.json",
+      "sha256": "556a2b65e081cdcf0c1f4160937b375d737185f2c6abe21803635896db0face5",
+      "bytes": 93447
+    },
+    {
+      "relativePath": "narration-it.json",
+      "sha256": "fd75f8625d660d95c8fd22f38f8ad7374371c3bd3a488dae5bb36ea3becfee8f",
+      "bytes": 73846
+    },
+    {
+      "relativePath": "narration-de.json",
+      "sha256": "200c0dd4874da8fbf7b393a034afd4c068dd966b15d1322997499307c33df491",
+      "bytes": 76393
+    },
+    {
+      "relativePath": "inputs/source-en.json",
+      "sha256": "3cb4f57afd3bb9626b99741552c519255d4a9be46afaeae6aa6bf3f908e07de2",
+      "bytes": 12141
+    },
+    {
+      "relativePath": "inputs/source-ar-EG.json",
+      "sha256": "0ed19153cb94dd580958eae4e273083ff3c107e1481689dfb0b990625ccbe8aa",
+      "bytes": 15654
+    },
+    {
+      "relativePath": "inputs/source-it.json",
+      "sha256": "750ebbec3410067f93442a64e6005c61503c3864c9ccd0774c49a979834abcfc",
+      "bytes": 11968
+    },
+    {
+      "relativePath": "inputs/source-de.json",
+      "sha256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "bytes": 12377
+    },
+    {
+      "relativePath": "freeze.json",
+      "sha256": "bd951c43860ea9e8f0dc09e330ca389b8f371619ef872ed427bbfda1bcc0ff2b",
+      "bytes": 2398
+    },
+    {
+      "relativePath": "s1-11-narration-r3.yml",
+      "sha256": "2ef6560e9cbdee4815f6a97c2e564567d0ac563da7aa578422ebdc533966df2b",
+      "bytes": 75247
+    },
+    {
+      "relativePath": "offline-verification.json",
+      "sha256": "10fb5455e2dc88816dd0e147d4b8f37e7d03797d81d377ccbf6e6b3113935c8e",
+      "bytes": 6098
+    },
+    {
+      "relativePath": "package-receipt.json",
+      "sha256": "e6df9973b9c13846b69038fb4b73ad5d6177c66489b92fe45bf87733b7a32d17",
+      "bytes": 655
+    },
+    {
+      "relativePath": "package-audit.json",
+      "sha256": "b04e235110a5e9929739f5c86dd1d0f7e7fcd24afa42b93c957a2800eee398c1",
+      "bytes": 2432
+    }
+  ],
+  "includeThisReceiptInRootStaging": true,
+  "doNotStage": [
+    "authoring helper scripts",
+    "offline-fixtures/",
+    "__pycache__/",
+    "surrounding private course/source files",
+    "narration-r2/",
+    "earlier r1 files"
+  ],
+  "rootNextSteps": [
+    "Review exact package and receipt.",
+    "Recheck exact branch absence immediately before first push; do not update an existing branch.",
+    "Stage only allowlisted public payload plus this receipt and the workflow at .github/workflows/s1-11-narration-r3.yml in one first branch-creation push.",
+    "Preserve every attempt; no subsequent push/rerun/dispatch to replay an ambiguous run.",
+    "Review actual generated audio before any measured cue alignment or assembly."
+  ],
+  "scopeLimits": [
+    "Offline/source/trigger guards tested; no TTS model metadata preflight or new actual-audio quality tested.",
+    "Prior accepted method authority does not claim acceptance of new S1-11 audio."
+  ]
+}

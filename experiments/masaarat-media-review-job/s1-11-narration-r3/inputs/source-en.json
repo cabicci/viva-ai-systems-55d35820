@@ -1,0 +1,163 @@
+{
+  "stepId": "S1-11",
+  "locale": "en",
+  "examples": [
+    {
+      "reasoning": [
+        "Keep the old 0–30 cm readable under a single line.",
+        "Write 0–15 cm with your initials and the correction details required by the project.",
+        "Check the label and report for consistency and record any related authorized corrections."
+      ],
+      "situation": "You wrote 0–30 cm, but the contemporaneous collection record confirms 0–15 cm.",
+      "takeaway": "Correct the evidence trail; do not erase it."
+    },
+    {
+      "reasoning": [
+        "Retain the measured result and rain observation.",
+        "List movement or redistribution as possibilities dependent on the contaminant and site.",
+        "Do not declare the field clean or the cause proved from one sample."
+      ],
+      "situation": "A sample collected after heavy rain has a low measured contaminant concentration.",
+      "takeaway": "Context guides further interpretation without manufacturing certainty."
+    },
+    {
+      "reasoning": [
+        "The vegetation note is relevant context.",
+        "Association alone does not show that the needles caused the acidity.",
+        "Consider the site's other evidence and the soil test method before explaining the cause."
+      ],
+      "situation": "A field note records pine trees above a sample with low pH.",
+      "takeaway": "A useful clue is different from a demonstrated cause."
+    }
+  ],
+  "fieldPractical": {
+    "boundary": "The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+    "checklist": [
+      "Open a dated project/site entry with team and weather data or explicit unavailable fields.",
+      "Copy the sample ID exactly from the container and record collection time/location.",
+      "Record actual method, depth and soil/site observations during the work.",
+      "Mark measured, estimated, supplied-scenario and unavailable values appropriately.",
+      "Separate observation from interpretation.",
+      "Correct a planted training error transparently, retaining the old value and editor identity.",
+      "Cross-check the sample label and field sheet and preserve the correction history."
+    ]
+  },
+  "goals": [
+    "Record site and sample data during the work, with a matching identifier and explicit gaps where information is unavailable.",
+    "Separate observations from interpretations and explain how missing context limits a laboratory result.",
+    "Correct a record without hiding the earlier entry and identify any data supplied by a simulation."
+  ],
+  "guidedPractice": {
+    "learnerActions": [
+      "Connect the sample ID, place, depth, date/time and observed conditions as actually recorded.",
+      "Keep the earlier wrong entry readable under a single line and attribute the correction using the project method.",
+      "Separate the observed rain and vegetation from possible explanations for the laboratory result.",
+      "Mark simulated or unavailable fields clearly; do not fill gaps with plausible memories."
+    ],
+    "prompt": "A sample record has a wrong depth, a result collected after rain and a note about pine trees. Make an evidence trail that another person can audit."
+  },
+  "intro": "Record the sample's context while you work. Keep observations, interpretations and supplied scenario values clearly separated, and leave an honest trail when you correct an error.",
+  "reading": [
+    {
+      "paragraphs": [
+        "Think of a harmless example of losing track of an important item because its label or file name was unclear. You do not need to share a password or private information. A sample with an unclear record has a similar problem: the material may still exist, but you cannot confidently connect it to the work.",
+        "Metadata means information about the data. If a sample label is its passport, the field record is its biography: where it came from, when, how and under what conditions. An isolated laboratory value such as pH 6.5 leaves important questions unanswered.",
+        "In a teaching example, pH 6.5 belongs to the 0–15 cm sample from the poorly drained lower part of North Paddock, collected on 26 October 2024 after heavy rain. Those details help identify and interpret the result. They do not, by themselves, prove that the rain caused that pH. The example's date and conditions must not be copied into a current real field record.",
+        "Record information during the work while the details can be checked. End-of-day memory is a weak substitute for a contemporaneous note. If an observation was missed, mark it unavailable and explain the gap rather than writing what normally happens at that site."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Use a field notebook or sheet that can withstand the conditions, and durable permanent ink suitable for it. Keep the notebook protected from water and mud. A digital form is also useful when it preserves identity, timestamps and a history of corrections rather than silently replacing earlier entries.",
+        "If you write an incorrect value on paper, draw one line through it so it remains readable. Add the corrected value and your initials, with correction date/time or reason when the project requires them. Do not tear out the page, erase the entry or hide it under correction fluid.",
+        "For a digital correction, retain the previous value, new value, editor, time and explanation. Correcting an error is part of good work; hiding the earlier record is not. Keep the sample ID unchanged unless an authorized, traceable correction establishes that it was wrong.",
+        "Use observations such as 'dark brown, gritty, moist' instead of 'good soil'. A separate interpretation might be 'sandy texture suspected, to be checked by the field guide'. The wording tells a later reader what you observed and what you inferred."
+      ]
+    },
+    {
+      "paragraphs": [
+        "At the start of the entry record the project name and number, date, full names of the team and general site location. Give a site address, map reference or coordinates as the task provides them. Use enough information to connect the entry to the actual project and place.",
+        "Record relevant weather and recent conditions. 'Sunny, 18°C, light wind' and 'overcast, rain in the morning' are example descriptions. Only write 18°C as an actual value if it was measured or supplied by an identified reliable source; otherwise describe the weather you can observe and mark the temperature unavailable.",
+        "For a simulation, tag the supplied values as scenario data. If the exercise needs a value not supplied, either use an explicitly identified hypothetical addition authorized for that exercise or record 'not supplied'. Do not make an invented weather report look like an observation made outdoors.",
+        "Start a new site or day entry when the context changes. Shared day information can be referenced by several samples, but each sample still needs its own collection time, precise location, method and observations."
+      ]
+    },
+    {
+      "paragraphs": [
+        "Write the unique sample ID exactly as it appears on the bag, the collection time and the specific position. This may be '10 m west of the gate', measured coordinates or a clear sketch related to landmarks. Label estimated distances as estimates and do not invent GPS coordinates to fill a box.",
+        "Record the actual collection method and tool, such as a hand auger, trowel or shovel, and the sampled interval with units, for example 0–15 cm or 15–30 cm. Keep separate intervals and independently identified samples distinct. A tool name alone does not explain the full method.",
+        "Describe colour, feel, moisture and structure separately. Colour could be dark reddish-brown. Feel might be gritty with a weak ball; a texture class needs the full relevant test rather than that one observation. State dry, moist or wet as observed, and describe visible aggregates as granular or blocky if that is what you can identify.",
+        "Record topography, such as hilltop, gentle slope or depression; vegetation, such as pasture grass with a few weeds; and unusual observations. Examples include visible erosion, stony material that made augering difficult or standing water. If an unexpected chemical odour is noticed incidentally, stop and follow the site's safety procedure. Do not deliberately sniff the sample, and do not identify a chemical or its concentration by smell."
+      ]
+    },
+    {
+      "paragraphs": [
+        "After heavy rain, a contaminant may have moved in runoff, infiltrating water or sediment, depending on the substance and the site. A low concentration in one sample does not prove rain diluted the entire site or that it is safe. Weather notes help form and test explanations, not replace an investigation.",
+        "A depression may collect runoff or sediment, so topography can help explain where to investigate. A high result on a hilltop may suggest another distribution or source. Neither position alone proves where contamination came from. Match the location, depth, sampling design and laboratory method before drawing a conclusion.",
+        "For an unusually low pH, a note that the sample was taken under pine trees provides relevant ecological context. It does not prove that fallen pine needles caused the low pH. Soil formation, management and other conditions may be relevant; compare the evidence rather than assert a cause from one association.",
+        "If key metadata are missing, keep the laboratory result but state the limits. Missing location prevents confident mapping or return sampling; missing soil description restricts comparison; missing unusual site observations removes context for investigation. Do not fill those gaps by interpreting the laboratory number backwards as though it were an observation."
+      ]
+    }
+  ],
+  "projectionDisclosure": {
+    "originalSourceSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+    "method": "Exact teaching JSON-pointer allowlist; no generic full-source copies.",
+    "allowedSourcePointers": [
+      "/examples/0/reasoning/0",
+      "/examples/0/reasoning/1",
+      "/examples/0/reasoning/2",
+      "/examples/0/situation",
+      "/examples/0/takeaway",
+      "/examples/1/reasoning/0",
+      "/examples/1/reasoning/1",
+      "/examples/1/reasoning/2",
+      "/examples/1/situation",
+      "/examples/1/takeaway",
+      "/examples/2/reasoning/0",
+      "/examples/2/reasoning/1",
+      "/examples/2/reasoning/2",
+      "/examples/2/situation",
+      "/examples/2/takeaway",
+      "/fieldPractical/boundary",
+      "/fieldPractical/checklist/0",
+      "/fieldPractical/checklist/1",
+      "/fieldPractical/checklist/2",
+      "/fieldPractical/checklist/3",
+      "/fieldPractical/checklist/4",
+      "/fieldPractical/checklist/5",
+      "/fieldPractical/checklist/6",
+      "/goals/0",
+      "/goals/1",
+      "/goals/2",
+      "/guidedPractice/learnerActions/0",
+      "/guidedPractice/learnerActions/1",
+      "/guidedPractice/learnerActions/2",
+      "/guidedPractice/learnerActions/3",
+      "/guidedPractice/prompt",
+      "/intro",
+      "/reading/0/paragraphs/0",
+      "/reading/0/paragraphs/1",
+      "/reading/0/paragraphs/2",
+      "/reading/0/paragraphs/3",
+      "/reading/1/paragraphs/0",
+      "/reading/1/paragraphs/1",
+      "/reading/1/paragraphs/2",
+      "/reading/1/paragraphs/3",
+      "/reading/2/paragraphs/0",
+      "/reading/2/paragraphs/1",
+      "/reading/2/paragraphs/2",
+      "/reading/2/paragraphs/3",
+      "/reading/3/paragraphs/0",
+      "/reading/3/paragraphs/1",
+      "/reading/3/paragraphs/2",
+      "/reading/3/paragraphs/3",
+      "/reading/4/paragraphs/0",
+      "/reading/4/paragraphs/1",
+      "/reading/4/paragraphs/2",
+      "/reading/4/paragraphs/3"
+    ],
+    "omittedAssessmentContents": true,
+    "omittedGuidedPracticeFeedback": true,
+    "originalIsPrivateNotReconstructableFromProjection": true
+  }
+}

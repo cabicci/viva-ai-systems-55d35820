@@ -1,0 +1,48 @@
+{
+  "status": "PASS_FINAL_OFFLINE_PACKAGE_AUDIT",
+  "atUTC": "2026-10-22T10:01:13.327715+00:00",
+  "yamlLibraryVersion": "6.0.3",
+  "yamlSteps": 206,
+  "trigger": "Exact first creation push on fixed repository/ref, run attempt1; no later push/retry/dispatch.",
+  "all40PassagesExactlyPreservedFromR2": true,
+  "allOriginalSourceBindingsAndFingerprintsPreserved": true,
+  "publicFrozenJSONUnsafeAssessmentKeys": [],
+  "allPrivateOriginalCurrentHashesVerified": [
+    {
+      "locale": "en",
+      "currentPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-11-en.json",
+      "sha256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+      "unchanged": true
+    },
+    {
+      "locale": "ar-EG",
+      "currentPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-11-ar-EG.json",
+      "sha256": "f1866149fa072fec26f652fc570708cb4e9f6208861d8471c20da70dafbe756b",
+      "unchanged": true
+    },
+    {
+      "locale": "it",
+      "currentPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-11-it.json",
+      "sha256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+      "unchanged": true
+    },
+    {
+      "locale": "de",
+      "currentPath": "D:\\Masaarat\\Masaarat — Plan technical course production\\Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-11-de.json",
+      "sha256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88",
+      "unchanged": true
+    }
+  ],
+  "preservedPriorS111FileCount": 92,
+  "priorFilesUnchanged": true,
+  "s105FrozenPackageUnchanged": true,
+  "s105CurrentTrigger": "workflow_dispatch only; not modified, root note in README",
+  "offlineTests": 53,
+  "offlineNetworkCalls": 0,
+  "providerCalls": 0,
+  "readOnlyRemoteProbe": "remote-branch-probe.json records separate GitHub REST status200 repository and404 exact branch before freeze.",
+  "filesFrozen": 22,
+  "publicationPerformed": false,
+  "pushPerformed": false,
+  "dispatchPerformed": false
+}

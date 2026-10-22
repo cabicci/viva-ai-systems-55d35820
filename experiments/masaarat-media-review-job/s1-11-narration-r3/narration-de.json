@@ -1,0 +1,684 @@
+{
+  "schema": "masaarat.S1-11.connected-narration-r3.v1",
+  "locale": "de",
+  "status": "ROOT_REVIEW_ONLY_NO_PROVIDER_OR_PUBLISH",
+  "model": "gemini-3.8-flash-tts",
+  "parts": [
+    {
+      "id": "S1-11-de-r3-001",
+      "locale": "de",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "opening",
+      "originalText": "Halte den Kontext der Probe während der Arbeit fest. Trenne Beobachtungen von Deutungen und vorgegebenen Szenariowerten; korrigiere Fehler mit einer erkennbaren Änderungsspur. Standort- und Probendaten zeitnah mit passender Kennung und ausdrücklich benannten Datenlücken erfassen. Beobachtung von Deutung trennen und erklären, wie fehlender Kontext einen Laborbefund einschränkt. Einen Eintrag korrigieren, ohne den alten Wert zu verbergen, und vorgegebene Simulationsdaten kennzeichnen.",
+      "displayText": "Halte den Kontext der Probe während der Arbeit fest. Trenne Beobachtungen von Deutungen und vorgegebenen Szenariowerten; korrigiere Fehler mit einer erkennbaren Änderungsspur. Standort- und Probendaten zeitnah mit passender Kennung und ausdrücklich benannten Datenlücken erfassen. Beobachtung von Deutung trennen und erklären, wie fehlender Kontext einen Laborbefund einschränkt. Einen Eintrag korrigieren, ohne den alten Wert zu verbergen, und vorgegebene Simulationsdaten kennzeichnen.",
+      "captionText": "Halte den Kontext der Probe während der Arbeit fest. Trenne Beobachtungen von Deutungen und vorgegebenen Szenariowerten; korrigiere Fehler mit einer erkennbaren Änderungsspur. Standort- und Probendaten zeitnah mit passender Kennung und ausdrücklich benannten Datenlücken erfassen. Beobachtung von Deutung trennen und erklären, wie fehlender Kontext einen Laborbefund einschränkt. Einen Eintrag korrigieren, ohne den alten Wert zu verbergen, und vorgegebene Simulationsdaten kennzeichnen.",
+      "spokenText": "Halte den Kontext der Probe während der Arbeit fest. Trenne Beobachtungen von Deutungen und vorgegebenen Szenariowerten; korrigiere Fehler mit einer erkennbaren Änderungsspur. Standort- und Probendaten zeitnah mit passender Kennung und ausdrücklich benannten Datenlücken erfassen. Beobachtung von Deutung trennen und erklären, wie fehlender Kontext einen Laborbefund einschränkt. Einen Eintrag korrigieren, ohne den alten Wert zu verbergen, und vorgegebene Simulationsdaten kennzeichnen.",
+      "spokenTextSha256": "0f52dfc62dab255ffe75c5e92224ec4d5fc639e2a03587f9c25a03742eecee58",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "d90657dc350d3049ccc75b84cb2c79287e73835b1d533021518f7480e4502007",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Halte den Kontext der Probe während der Arbeit fest. Trenne Beobachtungen von Deutungen und vorgegebenen Szenariowerten; korrigiere Fehler mit einer erkennbaren Änderungsspur.",
+          "sha256": "bd0fd77f7e28ce05b145c3890c72820ca25ca1bcc9b55c90cce716ed7a085cae"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Standort- und Probendaten zeitnah mit passender Kennung und ausdrücklich benannten Datenlücken erfassen.",
+          "sha256": "ccbc4d739e3ac6aa2a5e9d32ab8f73b739efa47899887509f947aa406e2f7d96"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Beobachtung von Deutung trennen und erklären, wie fehlender Kontext einen Laborbefund einschränkt.",
+          "sha256": "d1d818a4b980626c273152627298ec741eaf4981beef06e1e6b0538e0960f3d1"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Einen Eintrag korrigieren, ohne den alten Wert zu verbergen, und vorgegebene Simulationsdaten kennzeichnen.",
+          "sha256": "d39b041d570f4a7519e3cf51305a685077ae068740fac13b18236c25ca907932"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-001",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-002",
+      "locale": "de",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R01",
+      "originalText": "Denk an ein harmloses Beispiel: Ein wichtiger Gegenstand oder eine Datei lässt sich wegen unklarer Beschriftung nicht wiederfinden. Du musst weder Passwort noch private Daten teilen. Eine Probe mit undeutlichem Protokoll hat dasselbe Problem: Material ist vorhanden, lässt sich aber der Arbeit nicht sicher zuordnen.\n\nMetadaten sind Angaben über Daten. Wenn das Probenetikett ihr Reisepass ist, dann ist das Feldprotokoll ihre Lebensgeschichte: Herkunft, Zeitpunkt, Vorgehen und Bedingungen. Ein isolierter Laborwert wie pH 6.5 lässt wichtige Fragen offen.\n\nIm Lehrbeispiel gehört pH 6.5 zu einer Probe aus 0–15 cm Tiefe aus dem schlecht entwässerten unteren Teil der Nordweide, gesammelt am 26. Oktober 2024 nach starkem Regen. Dieser Kontext hilft bei Identität und Deutung, beweist aber nicht, dass Regen den pH verursacht hat. Übertrage Beispieltag und -bedingungen nicht in ein aktuelles echtes Feldprotokoll.\n\nSchreibe während der Arbeit, solange sich Details überprüfen lassen. Erinnerung am Abend ersetzt die zeitnahe Beobachtung nur schlecht. Fehlt eine Beobachtung, markiere sie als nicht verfügbar und erläutere die Lücke; schreibe nicht als Tatsache auf, was an diesem Ort gewöhnlich geschieht.",
+      "displayText": "Denk an ein harmloses Beispiel: Ein wichtiger Gegenstand oder eine Datei lässt sich wegen unklarer Beschriftung nicht wiederfinden. Du musst weder Passwort noch private Daten teilen. Eine Probe mit undeutlichem Protokoll hat dasselbe Problem: Material ist vorhanden, lässt sich aber der Arbeit nicht sicher zuordnen.\n\nMetadaten sind Angaben über Daten. Wenn das Probenetikett ihr Reisepass ist, dann ist das Feldprotokoll ihre Lebensgeschichte: Herkunft, Zeitpunkt, Vorgehen und Bedingungen. Ein isolierter Laborwert wie pH 6.5 lässt wichtige Fragen offen.\n\nIm Lehrbeispiel gehört pH 6.5 zu einer Probe aus 0–15 cm Tiefe aus dem schlecht entwässerten unteren Teil der Nordweide, gesammelt am 26. Oktober 2024 nach starkem Regen. Dieser Kontext hilft bei Identität und Deutung, beweist aber nicht, dass Regen den pH verursacht hat. Übertrage Beispieltag und -bedingungen nicht in ein aktuelles echtes Feldprotokoll.\n\nSchreibe während der Arbeit, solange sich Details überprüfen lassen. Erinnerung am Abend ersetzt die zeitnahe Beobachtung nur schlecht. Fehlt eine Beobachtung, markiere sie als nicht verfügbar und erläutere die Lücke; schreibe nicht als Tatsache auf, was an diesem Ort gewöhnlich geschieht.",
+      "captionText": "Denk an ein harmloses Beispiel: Ein wichtiger Gegenstand oder eine Datei lässt sich wegen unklarer Beschriftung nicht wiederfinden. Du musst weder Passwort noch private Daten teilen. Eine Probe mit undeutlichem Protokoll hat dasselbe Problem: Material ist vorhanden, lässt sich aber der Arbeit nicht sicher zuordnen.\n\nMetadaten sind Angaben über Daten. Wenn das Probenetikett ihr Reisepass ist, dann ist das Feldprotokoll ihre Lebensgeschichte: Herkunft, Zeitpunkt, Vorgehen und Bedingungen. Ein isolierter Laborwert wie pH 6.5 lässt wichtige Fragen offen.\n\nIm Lehrbeispiel gehört pH 6.5 zu einer Probe aus 0–15 cm Tiefe aus dem schlecht entwässerten unteren Teil der Nordweide, gesammelt am 26. Oktober 2024 nach starkem Regen. Dieser Kontext hilft bei Identität und Deutung, beweist aber nicht, dass Regen den pH verursacht hat. Übertrage Beispieltag und -bedingungen nicht in ein aktuelles echtes Feldprotokoll.\n\nSchreibe während der Arbeit, solange sich Details überprüfen lassen. Erinnerung am Abend ersetzt die zeitnahe Beobachtung nur schlecht. Fehlt eine Beobachtung, markiere sie als nicht verfügbar und erläutere die Lücke; schreibe nicht als Tatsache auf, was an diesem Ort gewöhnlich geschieht.",
+      "spokenText": "Denk an ein harmloses Beispiel: Ein wichtiger Gegenstand oder eine Datei lässt sich wegen unklarer Beschriftung nicht wiederfinden. Du musst weder Passwort noch private Daten teilen. Eine Probe mit undeutlichem Protokoll hat dasselbe Problem: Material ist vorhanden, lässt sich aber der Arbeit nicht sicher zuordnen.\n\nMetadaten sind Angaben über Daten. Wenn das Probenetikett ihr Reisepass ist, dann ist das Feldprotokoll ihre Lebensgeschichte: Herkunft, Zeitpunkt, Vorgehen und Bedingungen. Ein isolierter Laborwert wie p H sechs Komma fünf lässt wichtige Fragen offen.\n\nIm Lehrbeispiel gehört p H sechs Komma fünf zu einer Probe aus null bis fünfzehn Zentimeter Tiefe aus dem schlecht entwässerten unteren Teil der Nordweide, gesammelt am sechsundzwanzigsten Oktober zweitausendvierundzwanzig nach starkem Regen. Dieser Kontext hilft bei Identität und Deutung, beweist aber nicht, dass Regen den p H verursacht hat. Übertrage Beispieltag und -bedingungen nicht in ein aktuelles echtes Feldprotokoll.\n\nSchreibe während der Arbeit, solange sich Details überprüfen lassen. Erinnerung am Abend ersetzt die zeitnahe Beobachtung nur schlecht. Fehlt eine Beobachtung, markiere sie als nicht verfügbar und erläutere die Lücke; schreibe nicht als Tatsache auf, was an diesem Ort gewöhnlich geschieht.",
+      "spokenTextSha256": "d0d3f3ada84035efb8adb58bb3cd672b64d409405d15596de508c7edcddd8d56",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "2b516402ded31fb36d73ff4f6fccec15b1ed66d6f6186fb7176f68563e829e2d",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Denk an ein harmloses Beispiel: Ein wichtiger Gegenstand oder eine Datei lässt sich wegen unklarer Beschriftung nicht wiederfinden. Du musst weder Passwort noch private Daten teilen. Eine Probe mit undeutlichem Protokoll hat dasselbe Problem: Material ist vorhanden, lässt sich aber der Arbeit nicht sicher zuordnen.",
+          "sha256": "d4090d21686a42db47c7fe11efa930b134a2b7c2da2edc4a6d820c343ba912fc"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Metadaten sind Angaben über Daten. Wenn das Probenetikett ihr Reisepass ist, dann ist das Feldprotokoll ihre Lebensgeschichte: Herkunft, Zeitpunkt, Vorgehen und Bedingungen. Ein isolierter Laborwert wie pH 6.5 lässt wichtige Fragen offen.",
+          "sha256": "380dce99dc7dd3906e14d6032fa6f60804cede676efc5082afe180fca19a2448"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Im Lehrbeispiel gehört pH 6.5 zu einer Probe aus 0–15 cm Tiefe aus dem schlecht entwässerten unteren Teil der Nordweide, gesammelt am 26. Oktober 2024 nach starkem Regen. Dieser Kontext hilft bei Identität und Deutung, beweist aber nicht, dass Regen den pH verursacht hat. Übertrage Beispieltag und -bedingungen nicht in ein aktuelles echtes Feldprotokoll.",
+          "sha256": "27d1b5d2a1cf70d0ee43ea384b9a10494cde808c3116a8de6578ba685b63aac2"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Schreibe während der Arbeit, solange sich Details überprüfen lassen. Erinnerung am Abend ersetzt die zeitnahe Beobachtung nur schlecht. Fehlt eine Beobachtung, markiere sie als nicht verfügbar und erläutere die Lücke; schreibe nicht als Tatsache auf, was an diesem Ort gewöhnlich geschieht.",
+          "sha256": "5493ba8828f06bf348d44c1271b773d2468b111565db5f8f20fe86f703d3f69b"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R01-de-P01-U01",
+        "S1-11-R01-de-P01-U02",
+        "S1-11-R01-de-P01-U03",
+        "S1-11-R01-de-P02-U01",
+        "S1-11-R01-de-P02-U02",
+        "S1-11-R01-de-P02-U03",
+        "S1-11-R01-de-P03-U01",
+        "S1-11-R01-de-P03-U02",
+        "S1-11-R01-de-P03-U03",
+        "S1-11-R01-de-P04-U01",
+        "S1-11-R01-de-P04-U02",
+        "S1-11-R01-de-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH 6.5",
+          "spoken": "p H sechs Komma fünf"
+        },
+        {
+          "written": "26. Oktober 2024",
+          "spoken": "sechsundzwanzigsten Oktober zweitausendvierundzwanzig"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "null bis fünfzehn Zentimeter"
+        },
+        {
+          "written": "pH 6.5",
+          "spoken": "p H sechs Komma fünf"
+        },
+        {
+          "written": "pH",
+          "spoken": "p H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-002",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-003",
+      "locale": "de",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R02",
+      "originalText": "Nutze ein für den Einsatz geeignetes Feldheft oder Formular mit beständiger, dazu passender Tinte. Schütze es vor Wasser und Schlamm. Ein digitales Formular ist ebenfalls geeignet, wenn es Identität, Zeitstempel und Korrekturverlauf aufbewahrt statt frühere Werte still zu überschreiben.\n\nIst ein Papierwert falsch, ziehe eine einzige Linie darüber, sodass er lesbar bleibt. Ergänze den richtigen Wert und deine Initialen; Datum, Uhrzeit oder Begründung kommen hinzu, wenn das Projekt sie verlangt. Reiße kein Blatt heraus, radiere nichts weg und überdecke den Eintrag nicht mit Korrekturmittel.\n\nBei digitaler Berichtigung bleiben alter und neuer Wert, bearbeitende Person, Zeitpunkt und Erklärung erhalten. Fehler zu korrigieren gehört zu guter Arbeit; die alte Aufzeichnung zu verstecken nicht. Eine Proben-ID darf nur nach einer berechtigten, nachvollziehbaren Berichtigung geändert werden.\n\nNotiere 'dunkelbraun, körnig, feucht' statt 'guter Boden'. Eine getrennte Deutung könnte lauten: 'sandige Textur vermutet; anhand der Feldanleitung prüfen'. So erkennt die lesende Person, was du wahrgenommen und was du gefolgert hast.",
+      "displayText": "Nutze ein für den Einsatz geeignetes Feldheft oder Formular mit beständiger, dazu passender Tinte. Schütze es vor Wasser und Schlamm. Ein digitales Formular ist ebenfalls geeignet, wenn es Identität, Zeitstempel und Korrekturverlauf aufbewahrt statt frühere Werte still zu überschreiben.\n\nIst ein Papierwert falsch, ziehe eine einzige Linie darüber, sodass er lesbar bleibt. Ergänze den richtigen Wert und deine Initialen; Datum, Uhrzeit oder Begründung kommen hinzu, wenn das Projekt sie verlangt. Reiße kein Blatt heraus, radiere nichts weg und überdecke den Eintrag nicht mit Korrekturmittel.\n\nBei digitaler Berichtigung bleiben alter und neuer Wert, bearbeitende Person, Zeitpunkt und Erklärung erhalten. Fehler zu korrigieren gehört zu guter Arbeit; die alte Aufzeichnung zu verstecken nicht. Eine Proben-ID darf nur nach einer berechtigten, nachvollziehbaren Berichtigung geändert werden.\n\nNotiere 'dunkelbraun, körnig, feucht' statt 'guter Boden'. Eine getrennte Deutung könnte lauten: 'sandige Textur vermutet; anhand der Feldanleitung prüfen'. So erkennt die lesende Person, was du wahrgenommen und was du gefolgert hast.",
+      "captionText": "Nutze ein für den Einsatz geeignetes Feldheft oder Formular mit beständiger, dazu passender Tinte. Schütze es vor Wasser und Schlamm. Ein digitales Formular ist ebenfalls geeignet, wenn es Identität, Zeitstempel und Korrekturverlauf aufbewahrt statt frühere Werte still zu überschreiben.\n\nIst ein Papierwert falsch, ziehe eine einzige Linie darüber, sodass er lesbar bleibt. Ergänze den richtigen Wert und deine Initialen; Datum, Uhrzeit oder Begründung kommen hinzu, wenn das Projekt sie verlangt. Reiße kein Blatt heraus, radiere nichts weg und überdecke den Eintrag nicht mit Korrekturmittel.\n\nBei digitaler Berichtigung bleiben alter und neuer Wert, bearbeitende Person, Zeitpunkt und Erklärung erhalten. Fehler zu korrigieren gehört zu guter Arbeit; die alte Aufzeichnung zu verstecken nicht. Eine Proben-ID darf nur nach einer berechtigten, nachvollziehbaren Berichtigung geändert werden.\n\nNotiere 'dunkelbraun, körnig, feucht' statt 'guter Boden'. Eine getrennte Deutung könnte lauten: 'sandige Textur vermutet; anhand der Feldanleitung prüfen'. So erkennt die lesende Person, was du wahrgenommen und was du gefolgert hast.",
+      "spokenText": "Nutze ein für den Einsatz geeignetes Feldheft oder Formular mit beständiger, dazu passender Tinte. Schütze es vor Wasser und Schlamm. Ein digitales Formular ist ebenfalls geeignet, wenn es Identität, Zeitstempel und Korrekturverlauf aufbewahrt statt frühere Werte still zu überschreiben.\n\nIst ein Papierwert falsch, ziehe eine einzige Linie darüber, sodass er lesbar bleibt. Ergänze den richtigen Wert und deine Initialen; Datum, Uhrzeit oder Begründung kommen hinzu, wenn das Projekt sie verlangt. Reiße kein Blatt heraus, radiere nichts weg und überdecke den Eintrag nicht mit Korrekturmittel.\n\nBei digitaler Berichtigung bleiben alter und neuer Wert, bearbeitende Person, Zeitpunkt und Erklärung erhalten. Fehler zu korrigieren gehört zu guter Arbeit; die alte Aufzeichnung zu verstecken nicht. Eine Proben-ID darf nur nach einer berechtigten, nachvollziehbaren Berichtigung geändert werden.\n\nNotiere 'dunkelbraun, körnig, feucht' statt 'guter Boden'. Eine getrennte Deutung könnte lauten: 'sandige Textur vermutet; anhand der Feldanleitung prüfen'. So erkennt die lesende Person, was du wahrgenommen und was du gefolgert hast.",
+      "spokenTextSha256": "53a1599f6494d55bdc0ddad6d941e4057513c6b4c74cecfabc7ad49f0b60082c",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "a8bc7cc35f8dfaa16d9940ab9d17ecfe3072914505695d287374616fdf1c2755",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Nutze ein für den Einsatz geeignetes Feldheft oder Formular mit beständiger, dazu passender Tinte. Schütze es vor Wasser und Schlamm. Ein digitales Formular ist ebenfalls geeignet, wenn es Identität, Zeitstempel und Korrekturverlauf aufbewahrt statt frühere Werte still zu überschreiben.",
+          "sha256": "73eb37123665e757ef24a05394244d11b2243c28fed9d65bb057ff569ded6365"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Ist ein Papierwert falsch, ziehe eine einzige Linie darüber, sodass er lesbar bleibt. Ergänze den richtigen Wert und deine Initialen; Datum, Uhrzeit oder Begründung kommen hinzu, wenn das Projekt sie verlangt. Reiße kein Blatt heraus, radiere nichts weg und überdecke den Eintrag nicht mit Korrekturmittel.",
+          "sha256": "c72118276768b345c2a51a86350af51cfbb5c0f6502e32a039b8573849d7a6f7"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Bei digitaler Berichtigung bleiben alter und neuer Wert, bearbeitende Person, Zeitpunkt und Erklärung erhalten. Fehler zu korrigieren gehört zu guter Arbeit; die alte Aufzeichnung zu verstecken nicht. Eine Proben-ID darf nur nach einer berechtigten, nachvollziehbaren Berichtigung geändert werden.",
+          "sha256": "7d9ce3c033882c7bffd4b06aebe394a441ed3902d41a674df171f442062a20d9"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "Notiere 'dunkelbraun, körnig, feucht' statt 'guter Boden'. Eine getrennte Deutung könnte lauten: 'sandige Textur vermutet; anhand der Feldanleitung prüfen'. So erkennt die lesende Person, was du wahrgenommen und was du gefolgert hast.",
+          "sha256": "f901c5d1b20b0500fbef8909f4978954fd2abeac7fa741a418f63bc4014bdb53"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R02-de-P01-U01",
+        "S1-11-R02-de-P01-U02",
+        "S1-11-R02-de-P01-U03",
+        "S1-11-R02-de-P02-U01",
+        "S1-11-R02-de-P02-U02",
+        "S1-11-R02-de-P02-U03",
+        "S1-11-R02-de-P03-U01",
+        "S1-11-R02-de-P03-U02",
+        "S1-11-R02-de-P03-U03",
+        "S1-11-R02-de-P04-U01",
+        "S1-11-R02-de-P04-U02",
+        "S1-11-R02-de-P04-U03"
+      ],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-003",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-004",
+      "locale": "de",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R03",
+      "originalText": "Beginne mit Projektname und -nummer, Datum, vollständigen Teamnamen und allgemeinem Standort. Nutze Adresse, Kartenbezug oder Koordinaten, wenn die Aufgabe sie vorgibt. Die Angaben müssen die Notiz dem wirklichen Projekt und Ort zuordnen können.\n\nHalte relevantes Wetter und jüngste Bedingungen fest. 'Sonnig, 18°C, schwacher Wind' und 'bedeckt, morgens Regen' sind Beispiele. Trage 18°C nur als echten Wert ein, wenn er gemessen wurde oder aus einer genannten verlässlichen Quelle stammt; sonst beschreibe beobachtetes Wetter und markiere die Temperatur als nicht verfügbar.\n\nIn einer Simulation sind vorgegebene Werte ausdrücklich Szenariodaten. Fehlt ein benötigter Wert, verwende nur eine für die Übung erlaubte und offen bezeichnete Annahme oder schreibe 'nicht vorgegeben'. Ein erfundener Wetterbericht darf nicht wie eine Beobachtung vor Ort aussehen.\n\nWechselt Tag oder Standort, beginne einen neuen Eintrag. Allgemeine Tagesdaten können für mehrere Proben gelten; jede Probe braucht dennoch ihre eigene Entnahmezeit, genaue Position, Methode und Beobachtungen.",
+      "displayText": "Beginne mit Projektname und -nummer, Datum, vollständigen Teamnamen und allgemeinem Standort. Nutze Adresse, Kartenbezug oder Koordinaten, wenn die Aufgabe sie vorgibt. Die Angaben müssen die Notiz dem wirklichen Projekt und Ort zuordnen können.\n\nHalte relevantes Wetter und jüngste Bedingungen fest. 'Sonnig, 18°C, schwacher Wind' und 'bedeckt, morgens Regen' sind Beispiele. Trage 18°C nur als echten Wert ein, wenn er gemessen wurde oder aus einer genannten verlässlichen Quelle stammt; sonst beschreibe beobachtetes Wetter und markiere die Temperatur als nicht verfügbar.\n\nIn einer Simulation sind vorgegebene Werte ausdrücklich Szenariodaten. Fehlt ein benötigter Wert, verwende nur eine für die Übung erlaubte und offen bezeichnete Annahme oder schreibe 'nicht vorgegeben'. Ein erfundener Wetterbericht darf nicht wie eine Beobachtung vor Ort aussehen.\n\nWechselt Tag oder Standort, beginne einen neuen Eintrag. Allgemeine Tagesdaten können für mehrere Proben gelten; jede Probe braucht dennoch ihre eigene Entnahmezeit, genaue Position, Methode und Beobachtungen.",
+      "captionText": "Beginne mit Projektname und -nummer, Datum, vollständigen Teamnamen und allgemeinem Standort. Nutze Adresse, Kartenbezug oder Koordinaten, wenn die Aufgabe sie vorgibt. Die Angaben müssen die Notiz dem wirklichen Projekt und Ort zuordnen können.\n\nHalte relevantes Wetter und jüngste Bedingungen fest. 'Sonnig, 18°C, schwacher Wind' und 'bedeckt, morgens Regen' sind Beispiele. Trage 18°C nur als echten Wert ein, wenn er gemessen wurde oder aus einer genannten verlässlichen Quelle stammt; sonst beschreibe beobachtetes Wetter und markiere die Temperatur als nicht verfügbar.\n\nIn einer Simulation sind vorgegebene Werte ausdrücklich Szenariodaten. Fehlt ein benötigter Wert, verwende nur eine für die Übung erlaubte und offen bezeichnete Annahme oder schreibe 'nicht vorgegeben'. Ein erfundener Wetterbericht darf nicht wie eine Beobachtung vor Ort aussehen.\n\nWechselt Tag oder Standort, beginne einen neuen Eintrag. Allgemeine Tagesdaten können für mehrere Proben gelten; jede Probe braucht dennoch ihre eigene Entnahmezeit, genaue Position, Methode und Beobachtungen.",
+      "spokenText": "Beginne mit Projektname und -nummer, Datum, vollständigen Teamnamen und allgemeinem Standort. Nutze Adresse, Kartenbezug oder Koordinaten, wenn die Aufgabe sie vorgibt. Die Angaben müssen die Notiz dem wirklichen Projekt und Ort zuordnen können.\n\nHalte relevantes Wetter und jüngste Bedingungen fest. 'Sonnig, achtzehn Grad Celsius, schwacher Wind' und 'bedeckt, morgens Regen' sind Beispiele. Trage achtzehn Grad Celsius nur als echten Wert ein, wenn er gemessen wurde oder aus einer genannten verlässlichen Quelle stammt; sonst beschreibe beobachtetes Wetter und markiere die Temperatur als nicht verfügbar.\n\nIn einer Simulation sind vorgegebene Werte ausdrücklich Szenariodaten. Fehlt ein benötigter Wert, verwende nur eine für die Übung erlaubte und offen bezeichnete Annahme oder schreibe 'nicht vorgegeben'. Ein erfundener Wetterbericht darf nicht wie eine Beobachtung vor Ort aussehen.\n\nWechselt Tag oder Standort, beginne einen neuen Eintrag. Allgemeine Tagesdaten können für mehrere Proben gelten; jede Probe braucht dennoch ihre eigene Entnahmezeit, genaue Position, Methode und Beobachtungen.",
+      "spokenTextSha256": "fac2330e7e98c1949f1b2d450900a1e7c6eb0bc2cc9714675327810486581757",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "2cf15d23a0d6cc2e150fc8507def8d5afb72135f94cb5a4337206b714ebe0d45",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Beginne mit Projektname und -nummer, Datum, vollständigen Teamnamen und allgemeinem Standort. Nutze Adresse, Kartenbezug oder Koordinaten, wenn die Aufgabe sie vorgibt. Die Angaben müssen die Notiz dem wirklichen Projekt und Ort zuordnen können.",
+          "sha256": "d9621a253d110f7f3277b0f08653b270641ee49d65e5c88b1f58b6fde4d7778c"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Halte relevantes Wetter und jüngste Bedingungen fest. 'Sonnig, 18°C, schwacher Wind' und 'bedeckt, morgens Regen' sind Beispiele. Trage 18°C nur als echten Wert ein, wenn er gemessen wurde oder aus einer genannten verlässlichen Quelle stammt; sonst beschreibe beobachtetes Wetter und markiere die Temperatur als nicht verfügbar.",
+          "sha256": "03c369c52a9d2cb710cc9e66c77381772150cd4f1a41f99d60500b2022dfa3b2"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "In einer Simulation sind vorgegebene Werte ausdrücklich Szenariodaten. Fehlt ein benötigter Wert, verwende nur eine für die Übung erlaubte und offen bezeichnete Annahme oder schreibe 'nicht vorgegeben'. Ein erfundener Wetterbericht darf nicht wie eine Beobachtung vor Ort aussehen.",
+          "sha256": "82803603b79ac9a9e97edde4ad6f8b730a539d77ac0145e8925791dbe954b77c"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/3",
+          "text": "Wechselt Tag oder Standort, beginne einen neuen Eintrag. Allgemeine Tagesdaten können für mehrere Proben gelten; jede Probe braucht dennoch ihre eigene Entnahmezeit, genaue Position, Methode und Beobachtungen.",
+          "sha256": "f18f1b14b4065e50d7af08e7d5323d2d2286ff4844fda79c36978357cb123090"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R03-de-P01-U01",
+        "S1-11-R03-de-P01-U02",
+        "S1-11-R03-de-P01-U03",
+        "S1-11-R03-de-P02-U01",
+        "S1-11-R03-de-P02-U02",
+        "S1-11-R03-de-P02-U03",
+        "S1-11-R03-de-P03-U01",
+        "S1-11-R03-de-P03-U02",
+        "S1-11-R03-de-P03-U03",
+        "S1-11-R03-de-P04-U01",
+        "S1-11-R03-de-P04-U02"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "18°C",
+          "spoken": "achtzehn Grad Celsius"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-004",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-005",
+      "locale": "de",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "R04",
+      "originalText": "Schreibe die eindeutige Proben-ID genau wie auf dem Beutel, dazu Uhrzeit und genaue Stelle. Das kann '10 m westlich des Tores', eine gemessene Koordinate oder eine klare Skizze zu Geländemarken sein. Kennzeichne geschätzte Strecken als Schätzung und erfinde keine GPS-Koordinaten zum Ausfüllen eines Feldes.\n\nNotiere tatsächlich verwendete Methode und Werkzeug, etwa Handbohrer, Kelle oder Spaten, sowie das beprobte Tiefenintervall mit Einheit, zum Beispiel 0–15 cm oder 15–30 cm. Getrennte Tiefen und eigenständig gekennzeichnete Proben bleiben getrennt. Ein Werkzeugname allein beschreibt nicht das gesamte Verfahren.\n\nBeschreibe Farbe, fühlbare Eigenschaften, Feuchte und Gefüge getrennt. Farbe kann dunkel rötlichbraun sein; der Boden kann sich körnig anfühlen und eine schwache Kugel bilden. Eine Texturklasse braucht die vollständige geeignete Prüfung statt einer Einzelbeobachtung. Schreibe trocken, feucht oder nass gemäß Beobachtung und beschreibe erkennbare Aggregate nur nach tatsächlicher Prüfung als körnig oder blockig.\n\nHalte Geländeform wie Kuppe, sanften Hang oder Senke, Vegetation wie Weidegras mit wenig Unkraut und Auffälligkeiten fest. Beispiele sind sichtbare Erosion, Steine beim Bohren oder stehendes Wasser. Bemerkst du zufällig einen chemischen Geruch, stoppe und befolge die Sicherheitsregel des Standorts. Rieche nicht absichtlich an der Probe und bestimme Stoff oder Konzentration nicht anhand des Geruchs.",
+      "displayText": "Schreibe die eindeutige Proben-ID genau wie auf dem Beutel, dazu Uhrzeit und genaue Stelle. Das kann '10 m westlich des Tores', eine gemessene Koordinate oder eine klare Skizze zu Geländemarken sein. Kennzeichne geschätzte Strecken als Schätzung und erfinde keine GPS-Koordinaten zum Ausfüllen eines Feldes.\n\nNotiere tatsächlich verwendete Methode und Werkzeug, etwa Handbohrer, Kelle oder Spaten, sowie das beprobte Tiefenintervall mit Einheit, zum Beispiel 0–15 cm oder 15–30 cm. Getrennte Tiefen und eigenständig gekennzeichnete Proben bleiben getrennt. Ein Werkzeugname allein beschreibt nicht das gesamte Verfahren.\n\nBeschreibe Farbe, fühlbare Eigenschaften, Feuchte und Gefüge getrennt. Farbe kann dunkel rötlichbraun sein; der Boden kann sich körnig anfühlen und eine schwache Kugel bilden. Eine Texturklasse braucht die vollständige geeignete Prüfung statt einer Einzelbeobachtung. Schreibe trocken, feucht oder nass gemäß Beobachtung und beschreibe erkennbare Aggregate nur nach tatsächlicher Prüfung als körnig oder blockig.\n\nHalte Geländeform wie Kuppe, sanften Hang oder Senke, Vegetation wie Weidegras mit wenig Unkraut und Auffälligkeiten fest. Beispiele sind sichtbare Erosion, Steine beim Bohren oder stehendes Wasser. Bemerkst du zufällig einen chemischen Geruch, stoppe und befolge die Sicherheitsregel des Standorts. Rieche nicht absichtlich an der Probe und bestimme Stoff oder Konzentration nicht anhand des Geruchs.",
+      "captionText": "Schreibe die eindeutige Proben-ID genau wie auf dem Beutel, dazu Uhrzeit und genaue Stelle. Das kann '10 m westlich des Tores', eine gemessene Koordinate oder eine klare Skizze zu Geländemarken sein. Kennzeichne geschätzte Strecken als Schätzung und erfinde keine GPS-Koordinaten zum Ausfüllen eines Feldes.\n\nNotiere tatsächlich verwendete Methode und Werkzeug, etwa Handbohrer, Kelle oder Spaten, sowie das beprobte Tiefenintervall mit Einheit, zum Beispiel 0–15 cm oder 15–30 cm. Getrennte Tiefen und eigenständig gekennzeichnete Proben bleiben getrennt. Ein Werkzeugname allein beschreibt nicht das gesamte Verfahren.\n\nBeschreibe Farbe, fühlbare Eigenschaften, Feuchte und Gefüge getrennt. Farbe kann dunkel rötlichbraun sein; der Boden kann sich körnig anfühlen und eine schwache Kugel bilden. Eine Texturklasse braucht die vollständige geeignete Prüfung statt einer Einzelbeobachtung. Schreibe trocken, feucht oder nass gemäß Beobachtung und beschreibe erkennbare Aggregate nur nach tatsächlicher Prüfung als körnig oder blockig.\n\nHalte Geländeform wie Kuppe, sanften Hang oder Senke, Vegetation wie Weidegras mit wenig Unkraut und Auffälligkeiten fest. Beispiele sind sichtbare Erosion, Steine beim Bohren oder stehendes Wasser. Bemerkst du zufällig einen chemischen Geruch, stoppe und befolge die Sicherheitsregel des Standorts. Rieche nicht absichtlich an der Probe und bestimme Stoff oder Konzentration nicht anhand des Geruchs.",
+      "spokenText": "Schreibe die eindeutige Proben-ID genau wie auf dem Beutel, dazu Uhrzeit und genaue Stelle. Das kann 'zehn Meter westlich des Tores', eine gemessene Koordinate oder eine klare Skizze zu Geländemarken sein. Kennzeichne geschätzte Strecken als Schätzung und erfinde keine GPS-Koordinaten zum Ausfüllen eines Feldes.\n\nNotiere tatsächlich verwendete Methode und Werkzeug, etwa Handbohrer, Kelle oder Spaten, sowie das beprobte Tiefenintervall mit Einheit, zum Beispiel null bis fünfzehn Zentimeter oder fünfzehn bis dreißig Zentimeter. Getrennte Tiefen und eigenständig gekennzeichnete Proben bleiben getrennt. Ein Werkzeugname allein beschreibt nicht das gesamte Verfahren.\n\nBeschreibe Farbe, fühlbare Eigenschaften, Feuchte und Gefüge getrennt. Farbe kann dunkel rötlichbraun sein; der Boden kann sich körnig anfühlen und eine schwache Kugel bilden. Eine Texturklasse braucht die vollständige geeignete Prüfung statt einer Einzelbeobachtung. Schreibe trocken, feucht oder nass gemäß Beobachtung und beschreibe erkennbare Aggregate nur nach tatsächlicher Prüfung als körnig oder blockig.\n\nHalte Geländeform wie Kuppe, sanften Hang oder Senke, Vegetation wie Weidegras mit wenig Unkraut und Auffälligkeiten fest. Beispiele sind sichtbare Erosion, Steine beim Bohren oder stehendes Wasser. Bemerkst du zufällig einen chemischen Geruch, stoppe und befolge die Sicherheitsregel des Standorts. Rieche nicht absichtlich an der Probe und bestimme Stoff oder Konzentration nicht anhand des Geruchs.",
+      "spokenTextSha256": "cfb6a071dfe37aa9ffb16bbe990afcdc7402024de0aaac02712d2dbbfd29a3f8",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "7e3c01938451e0dd94d1ac7fc683b0f04a9ed661fd6ab2c175996523079bccef",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Schreibe die eindeutige Proben-ID genau wie auf dem Beutel, dazu Uhrzeit und genaue Stelle. Das kann '10 m westlich des Tores', eine gemessene Koordinate oder eine klare Skizze zu Geländemarken sein. Kennzeichne geschätzte Strecken als Schätzung und erfinde keine GPS-Koordinaten zum Ausfüllen eines Feldes.",
+          "sha256": "fbd0214ef68eea0b16f433d853d5c57e58a4caa8e0d32230f1e64ab20cccdefb"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Notiere tatsächlich verwendete Methode und Werkzeug, etwa Handbohrer, Kelle oder Spaten, sowie das beprobte Tiefenintervall mit Einheit, zum Beispiel 0–15 cm oder 15–30 cm. Getrennte Tiefen und eigenständig gekennzeichnete Proben bleiben getrennt. Ein Werkzeugname allein beschreibt nicht das gesamte Verfahren.",
+          "sha256": "9802fbedf95a1cd44552c78ee6ebecb5fa9ba339720536efe5de18b5b63e8dfd"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Beschreibe Farbe, fühlbare Eigenschaften, Feuchte und Gefüge getrennt. Farbe kann dunkel rötlichbraun sein; der Boden kann sich körnig anfühlen und eine schwache Kugel bilden. Eine Texturklasse braucht die vollständige geeignete Prüfung statt einer Einzelbeobachtung. Schreibe trocken, feucht oder nass gemäß Beobachtung und beschreibe erkennbare Aggregate nur nach tatsächlicher Prüfung als körnig oder blockig.",
+          "sha256": "6adfda89bf51854a107b94e8498bcf3e7689a9928fbfc1d49d10ff0e35c287ca"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/3",
+          "text": "Halte Geländeform wie Kuppe, sanften Hang oder Senke, Vegetation wie Weidegras mit wenig Unkraut und Auffälligkeiten fest. Beispiele sind sichtbare Erosion, Steine beim Bohren oder stehendes Wasser. Bemerkst du zufällig einen chemischen Geruch, stoppe und befolge die Sicherheitsregel des Standorts. Rieche nicht absichtlich an der Probe und bestimme Stoff oder Konzentration nicht anhand des Geruchs.",
+          "sha256": "201ba887a81a859e3040e3cf8af32a69bab172aa1f7e0a34dca0794b3fbc3447"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R04-de-P01-U01",
+        "S1-11-R04-de-P01-U02",
+        "S1-11-R04-de-P01-U03",
+        "S1-11-R04-de-P02-U01",
+        "S1-11-R04-de-P02-U02",
+        "S1-11-R04-de-P02-U03",
+        "S1-11-R04-de-P03-U01",
+        "S1-11-R04-de-P03-U02",
+        "S1-11-R04-de-P03-U03",
+        "S1-11-R04-de-P03-U04",
+        "S1-11-R04-de-P04-U01",
+        "S1-11-R04-de-P04-U02",
+        "S1-11-R04-de-P04-U03",
+        "S1-11-R04-de-P04-U04"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "10 m",
+          "spoken": "zehn Meter"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "null bis fünfzehn Zentimeter"
+        },
+        {
+          "written": "15–30 cm",
+          "spoken": "fünfzehn bis dreißig Zentimeter"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-005",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-006",
+      "locale": "de",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "R05",
+      "originalText": "Nach starkem Regen kann ein Schadstoff mit Oberflächenabfluss, eindringendem Wasser oder Sediment wandern, je nach Stoff und Ort. Eine niedrige Konzentration in einer Probe beweist weder eine Verdünnung des ganzen Geländes noch Sicherheit. Wetteraufzeichnungen helfen, Erklärungen zu entwickeln und zu prüfen; sie ersetzen keine Untersuchung.\n\nEine Senke kann Abfluss oder Sediment sammeln und so auf weitere Prüfstellen hinweisen. Ein hoher Messwert auf einer Kuppe kann ein anderes Muster oder eine andere Quelle nahelegen. Keine Lage beweist allein die Ursache. Vergleiche Ort, Tiefe, Stichprobendesign und Labormethode vor einer Schlussfolgerung.\n\nIst der pH ungewöhnlich niedrig, kann die Notiz über Kiefern am Entnahmeort relevanter Kontext sein. Sie beweist nicht, dass abgefallene Nadeln die Säure verursacht haben. Bodenbildung, Bewirtschaftung und andere Umstände können beitragen; vergleiche Belege statt eine Beziehung zur gesicherten Ursache zu erklären.\n\nFehlen wichtige Metadaten, bewahre den Laborwert auf und benenne seine Grenzen. Ohne Ort sind Kartierung und erneute Beprobung desselben Punkts unsicher; ohne Bodenbeschreibung ist Vergleich erschwert; ohne auffällige Standortnotizen fehlen mögliche Ermittlungsansätze. Fülle Lücken nicht durch rückwärts erfundene Feldbeobachtungen aus dem Laborwert.",
+      "displayText": "Nach starkem Regen kann ein Schadstoff mit Oberflächenabfluss, eindringendem Wasser oder Sediment wandern, je nach Stoff und Ort. Eine niedrige Konzentration in einer Probe beweist weder eine Verdünnung des ganzen Geländes noch Sicherheit. Wetteraufzeichnungen helfen, Erklärungen zu entwickeln und zu prüfen; sie ersetzen keine Untersuchung.\n\nEine Senke kann Abfluss oder Sediment sammeln und so auf weitere Prüfstellen hinweisen. Ein hoher Messwert auf einer Kuppe kann ein anderes Muster oder eine andere Quelle nahelegen. Keine Lage beweist allein die Ursache. Vergleiche Ort, Tiefe, Stichprobendesign und Labormethode vor einer Schlussfolgerung.\n\nIst der pH ungewöhnlich niedrig, kann die Notiz über Kiefern am Entnahmeort relevanter Kontext sein. Sie beweist nicht, dass abgefallene Nadeln die Säure verursacht haben. Bodenbildung, Bewirtschaftung und andere Umstände können beitragen; vergleiche Belege statt eine Beziehung zur gesicherten Ursache zu erklären.\n\nFehlen wichtige Metadaten, bewahre den Laborwert auf und benenne seine Grenzen. Ohne Ort sind Kartierung und erneute Beprobung desselben Punkts unsicher; ohne Bodenbeschreibung ist Vergleich erschwert; ohne auffällige Standortnotizen fehlen mögliche Ermittlungsansätze. Fülle Lücken nicht durch rückwärts erfundene Feldbeobachtungen aus dem Laborwert.",
+      "captionText": "Nach starkem Regen kann ein Schadstoff mit Oberflächenabfluss, eindringendem Wasser oder Sediment wandern, je nach Stoff und Ort. Eine niedrige Konzentration in einer Probe beweist weder eine Verdünnung des ganzen Geländes noch Sicherheit. Wetteraufzeichnungen helfen, Erklärungen zu entwickeln und zu prüfen; sie ersetzen keine Untersuchung.\n\nEine Senke kann Abfluss oder Sediment sammeln und so auf weitere Prüfstellen hinweisen. Ein hoher Messwert auf einer Kuppe kann ein anderes Muster oder eine andere Quelle nahelegen. Keine Lage beweist allein die Ursache. Vergleiche Ort, Tiefe, Stichprobendesign und Labormethode vor einer Schlussfolgerung.\n\nIst der pH ungewöhnlich niedrig, kann die Notiz über Kiefern am Entnahmeort relevanter Kontext sein. Sie beweist nicht, dass abgefallene Nadeln die Säure verursacht haben. Bodenbildung, Bewirtschaftung und andere Umstände können beitragen; vergleiche Belege statt eine Beziehung zur gesicherten Ursache zu erklären.\n\nFehlen wichtige Metadaten, bewahre den Laborwert auf und benenne seine Grenzen. Ohne Ort sind Kartierung und erneute Beprobung desselben Punkts unsicher; ohne Bodenbeschreibung ist Vergleich erschwert; ohne auffällige Standortnotizen fehlen mögliche Ermittlungsansätze. Fülle Lücken nicht durch rückwärts erfundene Feldbeobachtungen aus dem Laborwert.",
+      "spokenText": "Nach starkem Regen kann ein Schadstoff mit Oberflächenabfluss, eindringendem Wasser oder Sediment wandern, je nach Stoff und Ort. Eine niedrige Konzentration in einer Probe beweist weder eine Verdünnung des ganzen Geländes noch Sicherheit. Wetteraufzeichnungen helfen, Erklärungen zu entwickeln und zu prüfen; sie ersetzen keine Untersuchung.\n\nEine Senke kann Abfluss oder Sediment sammeln und so auf weitere Prüfstellen hinweisen. Ein hoher Messwert auf einer Kuppe kann ein anderes Muster oder eine andere Quelle nahelegen. Keine Lage beweist allein die Ursache. Vergleiche Ort, Tiefe, Stichprobendesign und Labormethode vor einer Schlussfolgerung.\n\nIst der p H ungewöhnlich niedrig, kann die Notiz über Kiefern am Entnahmeort relevanter Kontext sein. Sie beweist nicht, dass abgefallene Nadeln die Säure verursacht haben. Bodenbildung, Bewirtschaftung und andere Umstände können beitragen; vergleiche Belege statt eine Beziehung zur gesicherten Ursache zu erklären.\n\nFehlen wichtige Metadaten, bewahre den Laborwert auf und benenne seine Grenzen. Ohne Ort sind Kartierung und erneute Beprobung desselben Punkts unsicher; ohne Bodenbeschreibung ist Vergleich erschwert; ohne auffällige Standortnotizen fehlen mögliche Ermittlungsansätze. Fülle Lücken nicht durch rückwärts erfundene Feldbeobachtungen aus dem Laborwert.",
+      "spokenTextSha256": "c9a6e8e996d6c8e61ac08bad28eaa9b1a6a355596f92078a253ea1b5547970ad",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "051585582efd73042fc9a1c09283e3892c3e6ca4c79554691c1c8727db37307a",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Nach starkem Regen kann ein Schadstoff mit Oberflächenabfluss, eindringendem Wasser oder Sediment wandern, je nach Stoff und Ort. Eine niedrige Konzentration in einer Probe beweist weder eine Verdünnung des ganzen Geländes noch Sicherheit. Wetteraufzeichnungen helfen, Erklärungen zu entwickeln und zu prüfen; sie ersetzen keine Untersuchung.",
+          "sha256": "255b315d86b176139bec448fac3edfb11072dc3d35f1caba73355c67102fad07"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Eine Senke kann Abfluss oder Sediment sammeln und so auf weitere Prüfstellen hinweisen. Ein hoher Messwert auf einer Kuppe kann ein anderes Muster oder eine andere Quelle nahelegen. Keine Lage beweist allein die Ursache. Vergleiche Ort, Tiefe, Stichprobendesign und Labormethode vor einer Schlussfolgerung.",
+          "sha256": "0219f91dacdb3e74ffc43f3df0c3a95ab376ba3562461ac084a984fc0f2fa9f0"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "Ist der pH ungewöhnlich niedrig, kann die Notiz über Kiefern am Entnahmeort relevanter Kontext sein. Sie beweist nicht, dass abgefallene Nadeln die Säure verursacht haben. Bodenbildung, Bewirtschaftung und andere Umstände können beitragen; vergleiche Belege statt eine Beziehung zur gesicherten Ursache zu erklären.",
+          "sha256": "0b6cb97830dfe7f7a8c01852d43a3f5dd6c9217d3b3eb8bdeb968749f28d6879"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/3",
+          "text": "Fehlen wichtige Metadaten, bewahre den Laborwert auf und benenne seine Grenzen. Ohne Ort sind Kartierung und erneute Beprobung desselben Punkts unsicher; ohne Bodenbeschreibung ist Vergleich erschwert; ohne auffällige Standortnotizen fehlen mögliche Ermittlungsansätze. Fülle Lücken nicht durch rückwärts erfundene Feldbeobachtungen aus dem Laborwert.",
+          "sha256": "4865a34274529cce73657139fe01e19a0be82fbe016228ecbec4a3f3cd18c6f1"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-R05-de-P01-U01",
+        "S1-11-R05-de-P01-U02",
+        "S1-11-R05-de-P01-U03",
+        "S1-11-R05-de-P02-U01",
+        "S1-11-R05-de-P02-U02",
+        "S1-11-R05-de-P02-U03",
+        "S1-11-R05-de-P02-U04",
+        "S1-11-R05-de-P03-U01",
+        "S1-11-R05-de-P03-U02",
+        "S1-11-R05-de-P03-U03",
+        "S1-11-R05-de-P04-U01",
+        "S1-11-R05-de-P04-U02",
+        "S1-11-R05-de-P04-U03"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "p H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-006",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-007",
+      "locale": "de",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E01",
+      "originalText": "Du hast 0–30 cm notiert, doch die zeitnahe Entnahmeaufzeichnung belegt 0–15 cm. Lass 0–30 cm unter einer einzigen Linie lesbar. Schreibe 0–15 cm mit Initialen und allen projektspezifischen Korrekturangaben. Vergleiche Etikett und Bericht und dokumentiere verbundene berechtigte Änderungen. Korrigiere die Beweisspur, statt sie zu löschen.",
+      "displayText": "Du hast 0–30 cm notiert, doch die zeitnahe Entnahmeaufzeichnung belegt 0–15 cm. Lass 0–30 cm unter einer einzigen Linie lesbar. Schreibe 0–15 cm mit Initialen und allen projektspezifischen Korrekturangaben. Vergleiche Etikett und Bericht und dokumentiere verbundene berechtigte Änderungen. Korrigiere die Beweisspur, statt sie zu löschen.",
+      "captionText": "Du hast 0–30 cm notiert, doch die zeitnahe Entnahmeaufzeichnung belegt 0–15 cm. Lass 0–30 cm unter einer einzigen Linie lesbar. Schreibe 0–15 cm mit Initialen und allen projektspezifischen Korrekturangaben. Vergleiche Etikett und Bericht und dokumentiere verbundene berechtigte Änderungen. Korrigiere die Beweisspur, statt sie zu löschen.",
+      "spokenText": "Du hast null bis dreißig Zentimeter notiert, doch die zeitnahe Entnahmeaufzeichnung belegt null bis fünfzehn Zentimeter. Lass null bis dreißig Zentimeter unter einer einzigen Linie lesbar. Schreibe null bis fünfzehn Zentimeter mit Initialen und allen projektspezifischen Korrekturangaben. Vergleiche Etikett und Bericht und dokumentiere verbundene berechtigte Änderungen. Korrigiere die Beweisspur, statt sie zu löschen.",
+      "spokenTextSha256": "b456a263a7d1400927821300c2fd64e1d0b0479675ba050b19bfcbe8ca1bfce3",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "56cf7167ff37c5b0be5aaf3f80eb151acabe33bff45444baf256dd1e28d0911d",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Du hast 0–30 cm notiert, doch die zeitnahe Entnahmeaufzeichnung belegt 0–15 cm.",
+          "sha256": "62bb36eeab8d4b7fe8ec8b7156b009f6a9be40f2b4d8232b2defa563b0673ca2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Lass 0–30 cm unter einer einzigen Linie lesbar.",
+          "sha256": "5b955f5decd0de39ce719b0ac5d4ab91a40848ffbf11e71833ef823cfd43d692"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Schreibe 0–15 cm mit Initialen und allen projektspezifischen Korrekturangaben.",
+          "sha256": "ab832bf787f9a3e77d4e419794b8a763702103aa150181503c5070d38a7d17cc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Vergleiche Etikett und Bericht und dokumentiere verbundene berechtigte Änderungen.",
+          "sha256": "24f71728d41e29fab479fce7bf2ac3133ff944a6814ee06dd5d8e55404f7d341"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Korrigiere die Beweisspur, statt sie zu löschen.",
+          "sha256": "0ecb66042dccc13958458dfa9dd80ecbc637c2a8baf1fa9ec626825001b9ced0"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E01-de-S",
+        "S1-11-E01-de-R01",
+        "S1-11-E01-de-R02",
+        "S1-11-E01-de-R03",
+        "S1-11-E01-de-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "null bis fünfzehn Zentimeter"
+        },
+        {
+          "written": "0–30 cm",
+          "spoken": "null bis dreißig Zentimeter"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-007",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-008",
+      "locale": "de",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "E02",
+      "originalText": "Eine nach starkem Regen gesammelte Probe weist eine niedrig gemessene Schadstoffkonzentration auf. Bewahre Messwert und Regenbeobachtung auf. Nenne Transport oder Umverteilung nur als stoff- und standortabhängige Möglichkeiten. Erkläre weder das Gelände für sauber noch die Ursache aus einer Probe für erwiesen. Kontext lenkt die spätere Deutung, ohne Gewissheit zu erfinden.",
+      "displayText": "Eine nach starkem Regen gesammelte Probe weist eine niedrig gemessene Schadstoffkonzentration auf. Bewahre Messwert und Regenbeobachtung auf. Nenne Transport oder Umverteilung nur als stoff- und standortabhängige Möglichkeiten. Erkläre weder das Gelände für sauber noch die Ursache aus einer Probe für erwiesen. Kontext lenkt die spätere Deutung, ohne Gewissheit zu erfinden.",
+      "captionText": "Eine nach starkem Regen gesammelte Probe weist eine niedrig gemessene Schadstoffkonzentration auf. Bewahre Messwert und Regenbeobachtung auf. Nenne Transport oder Umverteilung nur als stoff- und standortabhängige Möglichkeiten. Erkläre weder das Gelände für sauber noch die Ursache aus einer Probe für erwiesen. Kontext lenkt die spätere Deutung, ohne Gewissheit zu erfinden.",
+      "spokenText": "Eine nach starkem Regen gesammelte Probe weist eine niedrig gemessene Schadstoffkonzentration auf. Bewahre Messwert und Regenbeobachtung auf. Nenne Transport oder Umverteilung nur als stoff- und standortabhängige Möglichkeiten. Erkläre weder das Gelände für sauber noch die Ursache aus einer Probe für erwiesen. Kontext lenkt die spätere Deutung, ohne Gewissheit zu erfinden.",
+      "spokenTextSha256": "75ebacb828b832baf644f3c8ef3738ef1d018b98b4ccc9534b123b0ceaf90148",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "6e6f72b81268a0e6e63631a4e980d51637aa43e24cc038934b3372c72679abc1",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Eine nach starkem Regen gesammelte Probe weist eine niedrig gemessene Schadstoffkonzentration auf.",
+          "sha256": "7b3575177c364137a1d2eb8c853121f27b4ebf6c7fe9bab1d0c9e472cc9f80ba"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Bewahre Messwert und Regenbeobachtung auf.",
+          "sha256": "88f8d2cfc914f7b18353473ce3956de08b8a02e3e3b99ab10cc25e47f7f821f9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Nenne Transport oder Umverteilung nur als stoff- und standortabhängige Möglichkeiten.",
+          "sha256": "9ff5581189dfcbdac85d4714680e3793a6e10e5f577266bbb5914ec36b8952ab"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Erkläre weder das Gelände für sauber noch die Ursache aus einer Probe für erwiesen.",
+          "sha256": "939dc37eaf9a1032bcef80597f907988bcfb7dfed21426983df9ce306a6905b1"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Kontext lenkt die spätere Deutung, ohne Gewissheit zu erfinden.",
+          "sha256": "b8353980474a49773289ee4161e46cb447e222d3f406d6922904b15363b8ad7c"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E02-de-S",
+        "S1-11-E02-de-R01",
+        "S1-11-E02-de-R02",
+        "S1-11-E02-de-R03",
+        "S1-11-E02-de-T"
+      ],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-008",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-009",
+      "locale": "de",
+      "speakerId": "A",
+      "voice": "Charon",
+      "semanticGroup": "E03",
+      "originalText": "Im Feldblatt stehen Kiefern über der Stelle einer Probe mit niedrigem pH. Die Vegetationsangabe liefert relevanten Kontext. Zusammenhang allein beweist nicht, dass Nadeln die Säure verursacht haben. Prüfe weitere Standortbelege und das Verfahren der Bodenmessung vor einer Ursachenbehauptung. Ein nützlicher Hinweis ist kein bewiesener Grund.",
+      "displayText": "Im Feldblatt stehen Kiefern über der Stelle einer Probe mit niedrigem pH. Die Vegetationsangabe liefert relevanten Kontext. Zusammenhang allein beweist nicht, dass Nadeln die Säure verursacht haben. Prüfe weitere Standortbelege und das Verfahren der Bodenmessung vor einer Ursachenbehauptung. Ein nützlicher Hinweis ist kein bewiesener Grund.",
+      "captionText": "Im Feldblatt stehen Kiefern über der Stelle einer Probe mit niedrigem pH. Die Vegetationsangabe liefert relevanten Kontext. Zusammenhang allein beweist nicht, dass Nadeln die Säure verursacht haben. Prüfe weitere Standortbelege und das Verfahren der Bodenmessung vor einer Ursachenbehauptung. Ein nützlicher Hinweis ist kein bewiesener Grund.",
+      "spokenText": "Im Feldblatt stehen Kiefern über der Stelle einer Probe mit niedrigem p H. Die Vegetationsangabe liefert relevanten Kontext. Zusammenhang allein beweist nicht, dass Nadeln die Säure verursacht haben. Prüfe weitere Standortbelege und das Verfahren der Bodenmessung vor einer Ursachenbehauptung. Ein nützlicher Hinweis ist kein bewiesener Grund.",
+      "spokenTextSha256": "b8d5248b5d2fcf079e22e8b2b826e41b1903b9ccc3eff0be1c4d8e64c6210965",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "fc4d1caf5129f2dc9e1a67df9a878a6bbbc73357aed4d6642cb2c2c48c4aa6ed",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Im Feldblatt stehen Kiefern über der Stelle einer Probe mit niedrigem pH.",
+          "sha256": "87536649221a0b3c78402ce98895176e0ac60e1c761ecea048d3f1637b8a7266"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Die Vegetationsangabe liefert relevanten Kontext.",
+          "sha256": "6161fd25ac169acced2ddcf453d394bf31b72a7e4d659db1f312d7becdd6514c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Zusammenhang allein beweist nicht, dass Nadeln die Säure verursacht haben.",
+          "sha256": "191e16bc4204b61489d6d2279dfe239d2e1ae234274f535909c16cccce6892e2"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Prüfe weitere Standortbelege und das Verfahren der Bodenmessung vor einer Ursachenbehauptung.",
+          "sha256": "cb93828e97abce5e71e1278e31dc3631d3b76ec28aae9bc14bed0ab8ab80a15c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Ein nützlicher Hinweis ist kein bewiesener Grund.",
+          "sha256": "6db8dca501029c1d760e542dfb782936be1b094dbc5d0f73c5a697e29aa769f4"
+        }
+      ],
+      "sourceSceneUnitIds": [
+        "S1-11-E03-de-S",
+        "S1-11-E03-de-R01",
+        "S1-11-E03-de-R02",
+        "S1-11-E03-de-R03",
+        "S1-11-E03-de-T"
+      ],
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "p H"
+        }
+      ],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-009",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    },
+    {
+      "id": "S1-11-de-r3-010",
+      "locale": "de",
+      "speakerId": "B",
+      "voice": "Kore",
+      "semanticGroup": "guided-practice-and-trainer-boundary",
+      "originalText": "Ein Probenblatt hat eine falsche Tiefe, einen Messwert nach Regen und eine Notiz über Kiefern. Erstelle eine von anderen prüfbare Beweisspur. ID, Ort, Tiefe, Datum/Uhrzeit und tatsächlich erfasste Bedingungen verknüpfen. Den alten Fehler unter einer Linie lesbar lassen und die Berichtigung nach Projektregel zuordnen. Beobachteten Regen und Vegetation von möglichen Erklärungen für den Laborwert trennen. Simulierte oder fehlende Felder klar kennzeichnen und Lücken nicht aus plausibler Erinnerung füllen.\n\nDatierte Projekt- und Standortnotiz mit Team und Wetter beginnen oder fehlende Felder benennen. Proben-ID exakt vom Behälter übernehmen und Entnahmezeit sowie Stelle notieren. Tatsächliche Methode, Tiefe und Boden- und Standortbeobachtungen während der Arbeit erfassen. Gemessene, geschätzte, vorgegebene und nicht verfügbare Werte unterscheiden. Beobachtung und Interpretation trennen. Einen eingefügten Übungsfehler offen berichtigen; der alte Wert und die bearbeitende Person bleiben erkennbar. Etikett und Feldblatt abgleichen und den Korrekturverlauf erhalten. Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "displayText": "Ein Probenblatt hat eine falsche Tiefe, einen Messwert nach Regen und eine Notiz über Kiefern. Erstelle eine von anderen prüfbare Beweisspur. ID, Ort, Tiefe, Datum/Uhrzeit und tatsächlich erfasste Bedingungen verknüpfen. Den alten Fehler unter einer Linie lesbar lassen und die Berichtigung nach Projektregel zuordnen. Beobachteten Regen und Vegetation von möglichen Erklärungen für den Laborwert trennen. Simulierte oder fehlende Felder klar kennzeichnen und Lücken nicht aus plausibler Erinnerung füllen.\n\nDatierte Projekt- und Standortnotiz mit Team und Wetter beginnen oder fehlende Felder benennen. Proben-ID exakt vom Behälter übernehmen und Entnahmezeit sowie Stelle notieren. Tatsächliche Methode, Tiefe und Boden- und Standortbeobachtungen während der Arbeit erfassen. Gemessene, geschätzte, vorgegebene und nicht verfügbare Werte unterscheiden. Beobachtung und Interpretation trennen. Einen eingefügten Übungsfehler offen berichtigen; der alte Wert und die bearbeitende Person bleiben erkennbar. Etikett und Feldblatt abgleichen und den Korrekturverlauf erhalten. Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "captionText": "Ein Probenblatt hat eine falsche Tiefe, einen Messwert nach Regen und eine Notiz über Kiefern. Erstelle eine von anderen prüfbare Beweisspur. ID, Ort, Tiefe, Datum/Uhrzeit und tatsächlich erfasste Bedingungen verknüpfen. Den alten Fehler unter einer Linie lesbar lassen und die Berichtigung nach Projektregel zuordnen. Beobachteten Regen und Vegetation von möglichen Erklärungen für den Laborwert trennen. Simulierte oder fehlende Felder klar kennzeichnen und Lücken nicht aus plausibler Erinnerung füllen.\n\nDatierte Projekt- und Standortnotiz mit Team und Wetter beginnen oder fehlende Felder benennen. Proben-ID exakt vom Behälter übernehmen und Entnahmezeit sowie Stelle notieren. Tatsächliche Methode, Tiefe und Boden- und Standortbeobachtungen während der Arbeit erfassen. Gemessene, geschätzte, vorgegebene und nicht verfügbare Werte unterscheiden. Beobachtung und Interpretation trennen. Einen eingefügten Übungsfehler offen berichtigen; der alte Wert und die bearbeitende Person bleiben erkennbar. Etikett und Feldblatt abgleichen und den Korrekturverlauf erhalten. Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "spokenText": "Ein Probenblatt hat eine falsche Tiefe, einen Messwert nach Regen und eine Notiz über Kiefern. Erstelle eine von anderen prüfbare Beweisspur. ID, Ort, Tiefe, Datum/Uhrzeit und tatsächlich erfasste Bedingungen verknüpfen. Den alten Fehler unter einer Linie lesbar lassen und die Berichtigung nach Projektregel zuordnen. Beobachteten Regen und Vegetation von möglichen Erklärungen für den Laborwert trennen. Simulierte oder fehlende Felder klar kennzeichnen und Lücken nicht aus plausibler Erinnerung füllen.\n\nDatierte Projekt- und Standortnotiz mit Team und Wetter beginnen oder fehlende Felder benennen. Proben-ID exakt vom Behälter übernehmen und Entnahmezeit sowie Stelle notieren. Tatsächliche Methode, Tiefe und Boden- und Standortbeobachtungen während der Arbeit erfassen. Gemessene, geschätzte, vorgegebene und nicht verfügbare Werte unterscheiden. Beobachtung und Interpretation trennen. Einen eingefügten Übungsfehler offen berichtigen; der alte Wert und die bearbeitende Person bleiben erkennbar. Etikett und Feldblatt abgleichen und den Korrekturverlauf erhalten. Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "spokenTextSha256": "49d81ea37acdd54575d40ad6ba175d341f79cd1f27d001da2734023ea502522e",
+      "delivery": "Erkläre ruhig und natürlich auf Deutsch für Lernende einer beruflichen Ausbildung. Lies nur den Sprechtext, mit zusammenhängenden Sätzen und natürlichen Pausen. Erhalte Zahlen, Einheiten, Verneinungen, Bedingungen und die Trennung von Beobachtung, Deutung und vorgegebenem Beispiel. Keine Rollenstimmen, Musik oder zusätzlichen Einleitungen. Gleiche Stimme und gleichmäßige Sprechweise beibehalten. pH als die Buchstaben p und H sprechen.",
+      "deliverySha256": "a895115a60e0d51c57df81fc694d3a7726baaf3d0281e0f0b88f8c0c66922f42",
+      "requestFingerprintSha256": "8a805f9b1dc823c1c7dc60a8a1a72c75e46c11b9e47f9fa3e55eac69f25ec6ef",
+      "sourceFileSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ein Probenblatt hat eine falsche Tiefe, einen Messwert nach Regen und eine Notiz über Kiefern. Erstelle eine von anderen prüfbare Beweisspur.",
+          "sha256": "0c1e65c9733c65d8d61c43127024a9a02ab6b6cd8ed9bb6f2cc9245d85f01a28"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "ID, Ort, Tiefe, Datum/Uhrzeit und tatsächlich erfasste Bedingungen verknüpfen.",
+          "sha256": "cd80508a5dac803e1119fe4b72dedd3aeba844f0ab98ec5f41d35fabdb0f3e22"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Den alten Fehler unter einer Linie lesbar lassen und die Berichtigung nach Projektregel zuordnen.",
+          "sha256": "730fad8f1e2d8d2c9fdcc23fb3607f47c0d67675d410e69c251582481f1b48fc"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Beobachteten Regen und Vegetation von möglichen Erklärungen für den Laborwert trennen.",
+          "sha256": "f702cd77f21b655a998cd4de230495a1f49ee690a70e6493caf13eee8a599277"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Simulierte oder fehlende Felder klar kennzeichnen und Lücken nicht aus plausibler Erinnerung füllen.",
+          "sha256": "24b3012bccce1e7caa96becd3b8b343d5edfeb574b3609b7033163765c221c34"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/0",
+          "text": "Datierte Projekt- und Standortnotiz mit Team und Wetter beginnen oder fehlende Felder benennen.",
+          "sha256": "ccc10ffdbf0af9a5c81a4a14ad44ff1584b0969ef028aec735129800b50f4485"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/1",
+          "text": "Proben-ID exakt vom Behälter übernehmen und Entnahmezeit sowie Stelle notieren.",
+          "sha256": "68f7e58c9a901a2b085aad96bd6edd12acb3ba8e1f6560c044667188a2a6ae9e"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/2",
+          "text": "Tatsächliche Methode, Tiefe und Boden- und Standortbeobachtungen während der Arbeit erfassen.",
+          "sha256": "c13f7e1ebefe23d44f5ad4fca5eb6acab30841b76a6985f9a8a5b2a6e1f81928"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/3",
+          "text": "Gemessene, geschätzte, vorgegebene und nicht verfügbare Werte unterscheiden.",
+          "sha256": "46b777e28a30a2963204e5336a3710c0f604548ccdf8cad799264f8d82685e5b"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/4",
+          "text": "Beobachtung und Interpretation trennen.",
+          "sha256": "d67402ed99b6749215015d4b5e9c4b4aa112cc3e2d86278f5e0717454fc234d6"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/5",
+          "text": "Einen eingefügten Übungsfehler offen berichtigen; der alte Wert und die bearbeitende Person bleiben erkennbar.",
+          "sha256": "7a1f2ff5bb0a3e5a6a889e7aa76c86c92afdfca76d6ce97967c9542e91878ef9"
+        },
+        {
+          "pointer": "/fieldPractical/checklist/6",
+          "text": "Etikett und Feldblatt abgleichen und den Korrekturverlauf erhalten.",
+          "sha256": "e7dd34f85e2112c22e3e48e9c7b36a98c880838d159aa9d0ad3f90f935f0fb59"
+        },
+        {
+          "pointer": "/fieldPractical/boundary",
+          "text": "Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+          "sha256": "4a8a403e64cb7b07d19b0dbeb402f2effc353761d6b6206e9f5f4b7471f4814f"
+        }
+      ],
+      "sourceSceneUnitIds": [],
+      "spokenAdaptationChanges": [],
+      "maximumProviderCalls": 1,
+      "estimatedDuration": null,
+      "actualAudio": null,
+      "releaseGate": "Teaching/guided practice only. Quiz answers, rubrics and post-attempt feedback are excluded. Practical requires actual individual trainer review.",
+      "sourceR2UnitId": "S1-11-de-r2-010",
+      "sourceOriginalFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88"
+    }
+  ],
+  "sourcePin": {
+    "privateOriginalSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88",
+    "publicProjectionSHA256": "ea411515ab355924260a1c90b09053bb09c7eed1aee1b5a3bc4b0df17ad99510",
+    "publicProjectionPath": "inputs/source-de.json"
+  },
+  "groupingDecision": "One coherent opening; five full reading sections, three complete worked reasoning examples, one connected guided-practice/trainer-evidence passage. Natural within-passage pauses; no sentence or paragraph TTS fragmentation. No word-count cap or invented durations.",
+  "r1Preserved": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-script-de.json",
+  "quizSolutionsIncludedBeforeAttempt": false,
+  "providerCalls": 0,
+  "r2Preserved": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\course-production-queue\\course-steps\\S1-11\\narration-r2\\narration-de.json",
+    "sha256": "ba546f7efb1db1d193c3dc76e1dc2a8086234daa5db4c85ae4a2d144c8df0299"
+  }
+}
