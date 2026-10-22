@@ -1,0 +1,173 @@
+{
+  "atUTC": "2026-10-22T12:42:09.932014+00:00",
+  "status": "PACKET_AND_FULL_DECODE_PASS_VISUAL_REVIEW_PENDING",
+  "frames": 2525,
+  "videoSha256": "4073e00225b429def593e690edf0ec4384d37f35b683362d5c70dcf56d0f4116",
+  "sourceReceiptSha256": "9d99579fa9dc6c9b82aa00c5ecfdf6a0a150ba1204b4e18a90c15e91ac79a7ea",
+  "sourcePinsRechecked": 23,
+  "actualEncodedEventFrames": [
+    {
+      "eventId": "zoneMeaning",
+      "frame": 15,
+      "time": 0.5,
+      "file": "00-15.png",
+      "sha256": "352980d158faa538763a7bf5f5adf68581690335f72d4be9ee4178062a4efac9"
+    },
+    {
+      "eventId": "soilFactor",
+      "frame": 200,
+      "time": 6.666666666666667,
+      "file": "01-200.png",
+      "sha256": "5dda1ac815142cee4d04e71ec766ec5b585799077d2789a6652433ec53758ad7"
+    },
+    {
+      "eventId": "slopeFactor",
+      "frame": 254,
+      "time": 8.466666666666667,
+      "file": "02-254.png",
+      "sha256": "a274583d14aa1d2e675182a2b48edf53b6fd8b8a705ac2ba70cdf841e1f8cdbe"
+    },
+    {
+      "eventId": "historyFactor",
+      "frame": 299,
+      "time": 9.966666666666667,
+      "file": "03-299.png",
+      "sha256": "a7ddbedca61721c94cab21b76503380e4bb49a52c9f147ec7d14d202f5103b57"
+    },
+    {
+      "eventId": "managementFactor",
+      "frame": 340,
+      "time": 11.333333333333334,
+      "file": "04-340.png",
+      "sha256": "162de07e8cf6d8a7899bf8fafbc95f351b6a94299f58056230cf57cceda77fce"
+    },
+    {
+      "eventId": "growthFactor",
+      "frame": 382,
+      "time": 12.733333333333333,
+      "file": "05-382.png",
+      "sha256": "5ee58e77541ba852dbfb1944823b31df75bb1b9ca50eac1b8a455142ef60e010"
+    },
+    {
+      "eventId": "boundaryNotProof",
+      "frame": 475,
+      "time": 15.833333333333334,
+      "file": "06-475.png",
+      "sha256": "bf3319eba1a99e6348c3cacb5ac58fb939cc515c45a0dc93170904ff8b295cc4"
+    },
+    {
+      "eventId": "separateConditions",
+      "frame": 636,
+      "time": 21.2,
+      "file": "07-636.png",
+      "sha256": "1605ac36ca2ae294edc4dd7bac4529f193f27afaee7f5e023073d2f7dcbe83c3"
+    },
+    {
+      "eventId": "mixingCanHide",
+      "frame": 849,
+      "time": 28.3,
+      "file": "08-849.png",
+      "sha256": "471755bd01910ca70e612b9db3c6bc8f0851cb50baa111000d06b94c5788cec6"
+    },
+    {
+      "eventId": "zoneIdentity",
+      "frame": 1097,
+      "time": 36.56666666666667,
+      "file": "09-1097.png",
+      "sha256": "48111621fa7419d7cac2f27dd6365c9aea26e1cb7e663a4384f48f92351c01f6"
+    },
+    {
+      "eventId": "trainingZones",
+      "frame": 1260,
+      "time": 42.0,
+      "file": "10-1260.png",
+      "sha256": "97c39822869925121cccb5d22a55b35b6390b1e9d41109a81e11329ac3c928ea"
+    },
+    {
+      "eventId": "boundaryReason",
+      "frame": 1438,
+      "time": 47.93333333333333,
+      "file": "11-1438.png",
+      "sha256": "d1cf0883e3d10744b87b3a93c1e067a366beb00cb6ec8fb686fad004260aea61"
+    },
+    {
+      "eventId": "noArbitraryStrips",
+      "frame": 1534,
+      "time": 51.13333333333333,
+      "file": "12-1534.png",
+      "sha256": "5ed0109477b68da65c05d2256fe62d4eca14d0a55fc054fd55443f22e0d46057"
+    },
+    {
+      "eventId": "useMapEvidence",
+      "frame": 1699,
+      "time": 56.63333333333333,
+      "file": "13-1699.png",
+      "sha256": "91c7f3c8e243f1f6add54cbd0f527c1edcac7f144ba39a74353d4a7a74523f3a"
+    },
+    {
+      "eventId": "oneZoneConditional",
+      "frame": 1798,
+      "time": 59.93333333333333,
+      "file": "14-1798.png",
+      "sha256": "bbe67fd124168d6552b0f22ed632ff8b18ecc5aa305f68d4d59332340b11b9b2"
+    },
+    {
+      "eventId": "divideIfDifferent",
+      "frame": 2044,
+      "time": 68.13333333333334,
+      "file": "15-2044.png",
+      "sha256": "276ed0e9db88fd221f613b13e657fe3e224c51bd4576740e322dc61a937d0916"
+    },
+    {
+      "eventId": "evidencePurpose",
+      "frame": 2149,
+      "time": 71.63333333333334,
+      "file": "16-2149.png",
+      "sha256": "83e6c5a53880c1232f4573284f35df6f5410805a57769cae17fdef505f5d16b3"
+    },
+    {
+      "eventId": "notBagCount",
+      "frame": 2278,
+      "time": 75.93333333333334,
+      "file": "17-2278.png",
+      "sha256": "084090c5ad3fab0b6a1f0d4ee25fdb0c7eb350eb9bb8c24b9bf2ef49fa776fe9"
+    },
+    {
+      "eventId": "glossaryTerm",
+      "frame": 2364,
+      "time": 78.8,
+      "file": "18-2364.png",
+      "sha256": "bf6fe48ac1fbd229149b1c473c6c61eda11b16eca46ce9f08dbb78819a9be6a0"
+    },
+    {
+      "eventId": "glossaryDefinition",
+      "frame": 2407,
+      "time": 80.23333333333333,
+      "file": "19-2407.png",
+      "sha256": "26178209fddb2b2a7d5d9a13f889c083a1f10df0bdc109b752677fd3d7d0e8aa"
+    }
+  ],
+  "sheets": [
+    {
+      "file": "sheet-00.jpg",
+      "sha256": "d7cf5127293cf47dd7e3be6ccd51682324352cd6fcadfcedc5f21f5eb23f77c6"
+    },
+    {
+      "file": "sheet-01.jpg",
+      "sha256": "eb051031541b4992d4aeaf7fdab639988fcb9d382e371129abfc3732e1ec60b9"
+    },
+    {
+      "file": "sheet-02.jpg",
+      "sha256": "6ae43b2d60a63b99d7e4d936a47ae758fc6804b84a3c13221215d951f1c7189d"
+    },
+    {
+      "file": "sheet-03.jpg",
+      "sha256": "dfbea6d0db4e938ae67f8c4f8781665c704c51e5d9617e7e305681906f1fbabf"
+    },
+    {
+      "file": "sheet-04.jpg",
+      "sha256": "3517d38a9cc1bc0ef7c410c74433594a05787e0ec1bfc75eb3ab84a8b0c27f1e"
+    }
+  ],
+  "noNewTtsOrRender": true
+}

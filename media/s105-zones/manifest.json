@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1-05_EN002_MANAGEMENT_ZONES_ONLY",
+  "unitId": "S1-05-en-r1-002",
+  "locale": "en",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "work/soil-s105-zones-assembly-20261022-r1",
+  "fps": 30,
+  "frames": 2525,
+  "sampleCount": 2019840,
+  "sourcePcmSha256": "44136a13221716e670029b316d59e678381b3a30971452d4f30734f7e4e13b8c",
+  "durationSeconds": 84.16,
+  "frameDurationSeconds": 84.16666666666667,
+  "explicitTrailingSilenceSamples": 160,
+  "sourceFrameQA": "ROOT_ACTUAL_ENCODED_IVF_QA_PASS_PENDING_MUX_OUTPUT_QA",
+  "sourceVisualReceiptSha256": "aea530e45ed9ed03f4217a13277e3fe0175bbc4565bb673e1fde87d369c2b9ce",
+  "sourceEncodeReceiptSha256": "9d99579fa9dc6c9b82aa00c5ecfdf6a0a150ba1204b4e18a90c15e91ac79a7ea",
+  "sourceTimingSha256": "c0a8d5273918d3e74b45bd944d5da5bc4329d0f1408e997b9ff0a95b9abd2784",
+  "sourceMotionContractSha256": "0aa5f6e7214b96982505910031dc33280df6a2518cfd2a420be23c3c0c07873a",
+  "providerCalls": 0,
+  "automaticRetries": 0,
+  "completeLesson": false,
+  "usesOriginalPcm": true,
+  "ownerVideoAccepted": false,
+  "rootPackageReviewBeforeLaunchRequired": true,
+  "sourceRecapture": false,
+  "silencePolicy": "Exactly160 zero PCM samples after all2019840 original samples. No pause, crop, crossfade, time stretch, normalization or other silence.",
+  "inputs": {
+    "captions.json": {
+      "sha256": "4dfb1ac7505f06849f4555ee45ec220decfd82794eba4c9a98d643b6d3a268d5",
+      "bytes": 113677
+    },
+    "encoded-verification.json": {
+      "sha256": "15e38823a647436050500cfb75307bb813249d1d4c2d6bfdc4e74edd7eba63ac",
+      "bytes": 5423
+    },
+    "encoding.json": {
+      "sha256": "859663b6be9fec37dbd89e1b72ecf9cfa8f3316d344eb7c2942fbd63b3c2ed89",
+      "bytes": 185119
+    },
+    "root-qa.json": {
+      "sha256": "c5badc20d20256139f1a4b39fa6ccc35ab0174ab48c165d5b37b0ac8a35ab35f",
+      "bytes": 1649
+    },
+    "video.ivf": {
+      "sha256": "4073e00225b429def593e690edf0ec4384d37f35b683362d5c70dcf56d0f4116",
+      "bytes": 2181619
+    },
+    "voice.wav": {
+      "sha256": "8d7c46be8c053ca82131e4c4cb5a3cb2c6e27a5503c691d1104ca3c798f186f6",
+      "bytes": 4045798
+    }
+  },
+  "encodedFrameRequests": [
+    {
+      "requestedSeconds": 0.52,
+      "sourceClauseId": "S1-05-en-r1-002-zoneMeaning",
+      "sourcePreviewFrameSha256": "2f96ed2e817f16b2a32871ca8dd9c901f79c89324a6eb8ed124627034fa55654",
+      "sourcePreviewFile": "zoneMeaning-early.png",
+      "encodedFrameIndex": 15
+    },
+    {
+      "requestedSeconds": 5.64,
+      "sourceClauseId": "S1-05-en-r1-002-zoneMeaning",
+      "sourcePreviewFrameSha256": "2f96ed2e817f16b2a32871ca8dd9c901f79c89324a6eb8ed124627034fa55654",
+      "sourcePreviewFile": "zoneMeaning-late.png",
+      "encodedFrameIndex": 169
+    },
+    {
+      "requestedSeconds": 6.86,
+      "sourceClauseId": "S1-05-en-r1-002-soilFactor",
+      "sourcePreviewFrameSha256": "135da1d9d1a6ab091af3d38816cb0fd8d6f176b27b0a30aeb3547670190242d3",
+      "sourcePreviewFile": "soilFactor-early.png",
+      "encodedFrameIndex": 205
+    },
+    {
+      "requestedSeconds": 7.54,
+      "sourceClauseId": "S1-05-en-r1-002-soilFactor",
+      "sourcePreviewFrameSha256": "135da1d9d1a6ab091af3d38816cb0fd8d6f176b27b0a30aeb3547670190242d3",
+      "sourcePreviewFile": "soilFactor-late.png",
+      "encodedFrameIndex": 226
+    },
+    {
+      "requestedSeconds": 8.04,
+      "sourceClauseId": "S1-05-en-r1-002-slopeFactor",
+      "sourcePreviewFrameSha256": "386632aa190f21544c2fffdba3f7aa62bb3f417981e7c13eda428033d2f48ce4",
+      "sourcePreviewFile": "slopeFactor-early.png",
+      "encodedFrameIndex": 241
+    },
+    {
+      "requestedSeconds": 8.98,
+      "sourceClauseId": "S1-05-en-r1-002-slopeFactor",
+      "sourcePreviewFrameSha256": "386632aa190f21544c2fffdba3f7aa62bb3f417981e7c13eda428033d2f48ce4",
+      "sourcePreviewFile": "slopeFactor-late.png",
+      "encodedFrameIndex": 269
+    },
+    {
+      "requestedSeconds": 9.62,
+      "sourceClauseId": "S1-05-en-r1-002-historyFactor",
+      "sourcePreviewFrameSha256": "103d17fb0562d7e0fb34aa06c4c9846e539ed93e436c21d655fa954121e6be19",
+      "sourcePreviewFile": "historyFactor-early.png",
+      "encodedFrameIndex": 288
+    },
+    {
+      "requestedSeconds": 10.38,
+      "sourceClauseId": "S1-05-en-r1-002-historyFactor",
+      "sourcePreviewFrameSha256": "103d17fb0562d7e0fb34aa06c4c9846e539ed93e436c21d655fa954121e6be19",
+      "sourcePreviewFile": "historyFactor-late.png",
+      "encodedFrameIndex": 311
+    },
+    {
+      "requestedSeconds": 10.94,
+      "sourceClauseId": "S1-05-en-r1-002-managementFactor",
+      "sourcePreviewFrameSha256": "4e1896aa92112438985c2723a2a76dc8f2628e3cbd9b721dd02fd06b9099302e",
+      "sourcePreviewFile": "managementFactor-early.png",
+      "encodedFrameIndex": 328
+    },
+    {
+      "requestedSeconds": 11.780000000000001,
+      "sourceClauseId": "S1-05-en-r1-002-managementFactor",
+      "sourcePreviewFrameSha256": "4e1896aa92112438985c2723a2a76dc8f2628e3cbd9b721dd02fd06b9099302e",
+      "sourcePreviewFile": "managementFactor-late.png",
+      "encodedFrameIndex": 353
+    },
+    {
+      "requestedSeconds": 12.66,
+      "sourceClauseId": "S1-05-en-r1-002-growthFactor",
+      "sourcePreviewFrameSha256": "ee2a9991e2b335112b4d8949ca0465f5a9a0122e504fb939cf8284146f9e11e8",
+      "sourcePreviewFile": "growthFactor-early.png",
+      "encodedFrameIndex": 379
+    },
+    {
+      "requestedSeconds": 14.5,
+      "sourceClauseId": "S1-05-en-r1-002-growthFactor",
+      "sourcePreviewFrameSha256": "ee2a9991e2b335112b4d8949ca0465f5a9a0122e504fb939cf8284146f9e11e8",
+      "sourcePreviewFile": "growthFactor-late.png",
+      "encodedFrameIndex": 435
+    },
+    {
+      "requestedSeconds": 17.06,
+      "sourceClauseId": "S1-05-en-r1-002-boundaryNotProof",
+      "sourcePreviewFrameSha256": "9dbf653e5654a26b9cdce7c8e806e938dc5db5daf4a2f4b00ac160a569ee9f20",
+      "sourcePreviewFile": "boundaryNotProof-early.png",
+      "encodedFrameIndex": 511
+    },
+    {
+      "requestedSeconds": 19.880000000000003,
+      "sourceClauseId": "S1-05-en-r1-002-boundaryNotProof",
+      "sourcePreviewFrameSha256": "9dbf653e5654a26b9cdce7c8e806e938dc5db5daf4a2f4b00ac160a569ee9f20",
+      "sourcePreviewFile": "boundaryNotProof-late.png",
+      "encodedFrameIndex": 596
+    },
+    {
+      "requestedSeconds": 20.779999999999998,
+      "sourceClauseId": "S1-05-en-r1-002-separateConditions",
+      "sourcePreviewFrameSha256": "ac99e6c9793fe6c8ab3584e3624a87129c32a546c79233fdb6adae25f32e9cf9",
+      "sourcePreviewFile": "separateConditions-early.png",
+      "encodedFrameIndex": 623
+    },
+    {
+      "requestedSeconds": 26.84,
+      "sourceClauseId": "S1-05-en-r1-002-separateConditions",
+      "sourcePreviewFrameSha256": "4d981b41bed91763c8c2cabb5367f93afd4f7e3f0034949db5ddd610ccf7bc02",
+      "sourcePreviewFile": "separateConditions-late.png",
+      "encodedFrameIndex": 805
+    },
+    {
+      "requestedSeconds": 29.06,
+      "sourceClauseId": "S1-05-en-r1-002-mixingCanHide",
+      "sourcePreviewFrameSha256": "93816d8e534d1528132559f7b387dbc8d4cdee31606369d6b7763e3ae9aa2f45",
+      "sourcePreviewFile": "mixingCanHide-early.png",
+      "encodedFrameIndex": 871
+    },
+    {
+      "requestedSeconds": 35.4,
+      "sourceClauseId": "S1-05-en-r1-002-mixingCanHide",
+      "sourcePreviewFrameSha256": "93816d8e534d1528132559f7b387dbc8d4cdee31606369d6b7763e3ae9aa2f45",
+      "sourcePreviewFile": "mixingCanHide-late.png",
+      "encodedFrameIndex": 1062
+    },
+    {
+      "requestedSeconds": 37.44,
+      "sourceClauseId": "S1-05-en-r1-002-zoneIdentity",
+      "sourcePreviewFrameSha256": "7773e92628ba52d4e653a381aded27850c6d6cbc34daa9e085fc508ee44d1347",
+      "sourcePreviewFile": "zoneIdentity-early.png",
+      "encodedFrameIndex": 1123
+    },
+    {
+      "requestedSeconds": 40.54,
+      "sourceClauseId": "S1-05-en-r1-002-zoneIdentity",
+      "sourcePreviewFrameSha256": "c60f77dfb64e4ab6b4486c1d03cb5c949b9984aa6bd653571afa3aeabf9310e8",
+      "sourcePreviewFile": "zoneIdentity-late.png",
+      "encodedFrameIndex": 1216
+    },
+    {
+      "requestedSeconds": 43.14,
+      "sourceClauseId": "S1-05-en-r1-002-trainingZones",
+      "sourcePreviewFrameSha256": "2a255d8e7813db3b001a4da12e617b7bb176babe5c24272805b9b19be121c0c2",
+      "sourcePreviewFile": "trainingZones-early.png",
+      "encodedFrameIndex": 1294
+    },
+    {
+      "requestedSeconds": 47.02,
+      "sourceClauseId": "S1-05-en-r1-002-trainingZones",
+      "sourcePreviewFrameSha256": "2a255d8e7813db3b001a4da12e617b7bb176babe5c24272805b9b19be121c0c2",
+      "sourcePreviewFile": "trainingZones-late.png",
+      "encodedFrameIndex": 1410
+    },
+    {
+      "requestedSeconds": 47.519999999999996,
+      "sourceClauseId": "S1-05-en-r1-002-boundaryReason",
+      "sourcePreviewFrameSha256": "05bcbfd4ad87c4185f071cd622e817926cde21dcef738996f2aedf28e0f5ed6e",
+      "sourcePreviewFile": "boundaryReason-early.png",
+      "encodedFrameIndex": 1425
+    },
+    {
+      "requestedSeconds": 49.980000000000004,
+      "sourceClauseId": "S1-05-en-r1-002-boundaryReason",
+      "sourcePreviewFrameSha256": "05bcbfd4ad87c4185f071cd622e817926cde21dcef738996f2aedf28e0f5ed6e",
+      "sourcePreviewFile": "boundaryReason-late.png",
+      "encodedFrameIndex": 1499
+    },
+    {
+      "requestedSeconds": 50.699999999999996,
+      "sourceClauseId": "S1-05-en-r1-002-noArbitraryStrips",
+      "sourcePreviewFrameSha256": "1fc9e49da407b582971a2b8df719d957666068d96d81957d6c9af431bf84ae48",
+      "sourcePreviewFile": "noArbitraryStrips-early.png",
+      "encodedFrameIndex": 1520
+    },
+    {
+      "requestedSeconds": 55.68,
+      "sourceClauseId": "S1-05-en-r1-002-noArbitraryStrips",
+      "sourcePreviewFrameSha256": "a4cecf5dd36906e4972d98ab4a7555d27c90fc75dc8389f5031405d250585429",
+      "sourcePreviewFile": "noArbitraryStrips-late.png",
+      "encodedFrameIndex": 1670
+    },
+    {
+      "requestedSeconds": 56.22,
+      "sourceClauseId": "S1-05-en-r1-002-useMapEvidence",
+      "sourcePreviewFrameSha256": "0a5e815e5de1f1110d3aaf01cc77f1f01e15141e5601be804fc3d6f14a6727f6",
+      "sourcePreviewFile": "useMapEvidence-early.png",
+      "encodedFrameIndex": 1686
+    },
+    {
+      "requestedSeconds": 58.6,
+      "sourceClauseId": "S1-05-en-r1-002-useMapEvidence",
+      "sourcePreviewFrameSha256": "0a5e815e5de1f1110d3aaf01cc77f1f01e15141e5601be804fc3d6f14a6727f6",
+      "sourcePreviewFile": "useMapEvidence-late.png",
+      "encodedFrameIndex": 1758
+    },
+    {
+      "requestedSeconds": 59.519999999999996,
+      "sourceClauseId": "S1-05-en-r1-002-oneZoneConditional",
+      "sourcePreviewFrameSha256": "54718ab98e541d61bf24752b59eefd8e62a44e284137f4423f5aba239a9c9d51",
+      "sourcePreviewFile": "oneZoneConditional-early.png",
+      "encodedFrameIndex": 1785
+    },
+    {
+      "requestedSeconds": 66.96,
+      "sourceClauseId": "S1-05-en-r1-002-oneZoneConditional",
+      "sourcePreviewFrameSha256": "54718ab98e541d61bf24752b59eefd8e62a44e284137f4423f5aba239a9c9d51",
+      "sourcePreviewFile": "oneZoneConditional-late.png",
+      "encodedFrameIndex": 2008
+    },
+    {
+      "requestedSeconds": 67.72,
+      "sourceClauseId": "S1-05-en-r1-002-divideIfDifferent",
+      "sourcePreviewFrameSha256": "1dcbe0fd2643f2916b401742328cef352c75c61201c0c6dbf3102acae167281c",
+      "sourcePreviewFile": "divideIfDifferent-early.png",
+      "encodedFrameIndex": 2031
+    },
+    {
+      "requestedSeconds": 70.22,
+      "sourceClauseId": "S1-05-en-r1-002-divideIfDifferent",
+      "sourcePreviewFrameSha256": "1dcbe0fd2643f2916b401742328cef352c75c61201c0c6dbf3102acae167281c",
+      "sourcePreviewFile": "divideIfDifferent-late.png",
+      "encodedFrameIndex": 2106
+    },
+    {
+      "requestedSeconds": 72.3,
+      "sourceClauseId": "S1-05-en-r1-002-evidencePurpose",
+      "sourcePreviewFrameSha256": "7b5846ab61707b80840c29d79143b58a5096c970ef2570b8927eff0cd7143301",
+      "sourcePreviewFile": "evidencePurpose-early.png",
+      "encodedFrameIndex": 2169
+    },
+    {
+      "requestedSeconds": 75.02,
+      "sourceClauseId": "S1-05-en-r1-002-evidencePurpose",
+      "sourcePreviewFrameSha256": "7b5846ab61707b80840c29d79143b58a5096c970ef2570b8927eff0cd7143301",
+      "sourcePreviewFile": "evidencePurpose-late.png",
+      "encodedFrameIndex": 2250
+    },
+    {
+      "requestedSeconds": 75.52,
+      "sourceClauseId": "S1-05-en-r1-002-notBagCount",
+      "sourcePreviewFrameSha256": "81bf9a8d64aa4434a0ae365a90166838900a15e18514819cc7d28a0555373158",
+      "sourcePreviewFile": "notBagCount-early.png",
+      "encodedFrameIndex": 2265
+    },
+    {
+      "requestedSeconds": 77.16,
+      "sourceClauseId": "S1-05-en-r1-002-notBagCount",
+      "sourcePreviewFrameSha256": "81bf9a8d64aa4434a0ae365a90166838900a15e18514819cc7d28a0555373158",
+      "sourcePreviewFile": "notBagCount-late.png",
+      "encodedFrameIndex": 2314
+    },
+    {
+      "requestedSeconds": 78.38,
+      "sourceClauseId": "S1-05-en-r1-002-glossaryTerm",
+      "sourcePreviewFrameSha256": "74b7ead3472e637a8641341146426f292dde8a2b8785114b67503bccd4dc84fa",
+      "sourcePreviewFile": "glossaryTerm-early.png",
+      "encodedFrameIndex": 2351
+    },
+    {
+      "requestedSeconds": 79.67999999999999,
+      "sourceClauseId": "S1-05-en-r1-002-glossaryTerm",
+      "sourcePreviewFrameSha256": "74b7ead3472e637a8641341146426f292dde8a2b8785114b67503bccd4dc84fa",
+      "sourcePreviewFile": "glossaryTerm-late.png",
+      "encodedFrameIndex": 2390
+    },
+    {
+      "requestedSeconds": 79.8,
+      "sourceClauseId": "S1-05-en-r1-002-glossaryDefinition",
+      "sourcePreviewFrameSha256": "b8fefa7f15ea98ab900909459cec8b9aa2b49353aec000445d715bbad549c897",
+      "sourcePreviewFile": "glossaryDefinition-early.png",
+      "encodedFrameIndex": 2394
+    },
+    {
+      "requestedSeconds": 83.6,
+      "sourceClauseId": "S1-05-en-r1-002-glossaryDefinition",
+      "sourcePreviewFrameSha256": "b8fefa7f15ea98ab900909459cec8b9aa2b49353aec000445d715bbad549c897",
+      "sourcePreviewFile": "glossaryDefinition-late.png",
+      "encodedFrameIndex": 2508
+    },
+    {
+      "requestedSeconds": 21,
+      "sourceClauseId": "S1-05-en-r1-002-separateConditions",
+      "sourcePreviewFrameSha256": "db9dfa441bea283433304383d9a7f196f48d74f8fe681b91bd7447ae0b9c4785",
+      "sourcePreviewFile": "separateEarly.png",
+      "encodedFrameIndex": 630
+    },
+    {
+      "requestedSeconds": 23.5,
+      "sourceClauseId": "S1-05-en-r1-002-separateConditions",
+      "sourcePreviewFrameSha256": "1fc617360b226a886c50b8dbb4eb59111a1eadbe2861bdf99725c1a683f71e79",
+      "sourcePreviewFile": "separateMid.png",
+      "encodedFrameIndex": 705
+    },
+    {
+      "requestedSeconds": 26.8,
+      "sourceClauseId": "S1-05-en-r1-002-separateConditions",
+      "sourcePreviewFrameSha256": "792d6741457fd4ee91cea040a582a10c9aaaa153a358ff9b5bfb62811decd8fc",
+      "sourcePreviewFile": "separateLate.png",
+      "encodedFrameIndex": 804
+    },
+    {
+      "requestedSeconds": 40.33,
+      "sourceClauseId": "S1-05-en-r1-002-zoneIdentity",
+      "sourcePreviewFrameSha256": "a52a01eaa03ddf4d826f326069bc2fb40b1d1dff5dd1923af60149f6fdf8d00e",
+      "sourcePreviewFile": "identityEarly.png",
+      "encodedFrameIndex": 1209
+    },
+    {
+      "requestedSeconds": 40.44,
+      "sourceClauseId": "S1-05-en-r1-002-zoneIdentity",
+      "sourcePreviewFrameSha256": "f658e76c66f2c172b54e3201660908c63b6f7281036f6ec023debbed1022c65c",
+      "sourcePreviewFile": "identityMid.png",
+      "encodedFrameIndex": 1213
+    },
+    {
+      "requestedSeconds": 40.55,
+      "sourceClauseId": "S1-05-en-r1-002-zoneIdentity",
+      "sourcePreviewFrameSha256": "51dbad6d980c7ad4a4c06d5a8f7741ea7520eafdbae79bd30b39e0e2eda9b3ec",
+      "sourcePreviewFile": "identityLate.png",
+      "encodedFrameIndex": 1216
+    },
+    {
+      "requestedSeconds": 59.3,
+      "sourceClauseId": "S1-05-en-r1-002-useMapEvidence",
+      "sourcePreviewFrameSha256": "0a5e815e5de1f1110d3aaf01cc77f1f01e15141e5601be804fc3d6f14a6727f6",
+      "sourcePreviewFile": "uniformBefore.png",
+      "encodedFrameIndex": 1779
+    },
+    {
+      "requestedSeconds": 63.5,
+      "sourceClauseId": "S1-05-en-r1-002-oneZoneConditional",
+      "sourcePreviewFrameSha256": "54718ab98e541d61bf24752b59eefd8e62a44e284137f4423f5aba239a9c9d51",
+      "sourcePreviewFile": "uniformCase.png",
+      "encodedFrameIndex": 1905
+    },
+    {
+      "requestedSeconds": 69.2,
+      "sourceClauseId": "S1-05-en-r1-002-divideIfDifferent",
+      "sourcePreviewFrameSha256": "1dcbe0fd2643f2916b401742328cef352c75c61201c0c6dbf3102acae167281c",
+      "sourcePreviewFile": "differentAgain.png",
+      "encodedFrameIndex": 2076
+    },
+    {
+      "requestedSeconds": 54,
+      "sourceClauseId": "S1-05-en-r1-002-noArbitraryStrips",
+      "sourcePreviewFrameSha256": "a4cecf5dd36906e4972d98ab4a7555d27c90fc75dc8389f5031405d250585429",
+      "sourcePreviewFile": "stripReject.png",
+      "encodedFrameIndex": 1620
+    },
+    {
+      "requestedSeconds": 84.1,
+      "sourceClauseId": "S1-05-en-r1-002-glossaryDefinition",
+      "sourcePreviewFrameSha256": "b8fefa7f15ea98ab900909459cec8b9aa2b49353aec000445d715bbad549c897",
+      "sourcePreviewFile": "final.png",
+      "encodedFrameIndex": 2523
+    }
+  ],
+  "sourceRootEncodedQaSha256": "c5badc20d20256139f1a4b39fa6ccc35ab0174ab48c165d5b37b0ac8a35ab35f"
+}

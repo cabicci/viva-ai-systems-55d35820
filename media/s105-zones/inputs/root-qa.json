@@ -1,0 +1,35 @@
+{
+  "atUTC": "2026-10-22T12:43:53.9591997Z",
+  "status": "ROOT_ACTUAL_ENCODED_EVENT_FRAME_REVIEW_PASS",
+  "verificationSha256": "15e38823a647436050500cfb75307bb813249d1d4c2d6bfdc4e74edd7eba63ac",
+  "encodedFramesViewed": 20,
+  "sheets": [
+    {
+      "file": "sheet-00.jpg",
+      "sha256": "d7cf5127293cf47dd7e3be6ccd51682324352cd6fcadfcedc5f21f5eb23f77c6"
+    },
+    {
+      "file": "sheet-01.jpg",
+      "sha256": "eb051031541b4992d4aeaf7fdab639988fcb9d382e371129abfc3732e1ec60b9"
+    },
+    {
+      "file": "sheet-02.jpg",
+      "sha256": "6ae43b2d60a63b99d7e4d936a47ae758fc6804b84a3c13221215d951f1c7189d"
+    },
+    {
+      "file": "sheet-03.jpg",
+      "sha256": "dfbea6d0db4e938ae67f8c4f8781665c704c51e5d9617e7e305681906f1fbabf"
+    },
+    {
+      "file": "sheet-04.jpg",
+      "sha256": "3517d38a9cc1bc0ef7c410c74433594a05787e0ec1bfc75eb3ab84a8b0c27f1e"
+    }
+  ],
+  "scope": "Root viewed all five contact sheets: captions and conditional zone qualifiers visible, no overlap or cropped content; map is explicitly illustrative, routes and point count not treated as real measurements. Planned bag identities stay separate; no physical skill completion claimed.",
+  "limitations": "Sampled encoded visual inspection, not a human full-film listening test. Sampling displayStart does not approve uncertain phonetic timings.",
+  "checkerCorrections": [
+    "Packet field is packetPins, not packetHashes; first checker attempt failed before extraction.",
+    "Null speech boundaries preserved: visual sampling uses existing displayStart only, does not fabricate speech alignment."
+  ],
+  "newProviderCalls": 0
+}

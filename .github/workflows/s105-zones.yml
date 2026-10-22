@@ -1,0 +1,40 @@
+name: Bounded S105 English management-zones assembly
+on:
+  push:
+    branches: [work/soil-s105-zones-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: soil-s105-zones-assembly-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.repository_id == '1272666418' && github.ref == 'refs/heads/work/soil-s105-zones-assembly-20261022-r1' && github.event.created == true && github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MANIFEST_SHA: 2bb034029180c52a07ce59a1bef6ed61751ada98863dfb06764d6a7ca2f7b499
+      WORKER_SHA: 8b1dc11f50266d7bc981acef4143c9ba92a709f72a465ddc400be845092d0388
+      FREEZE_SHA: 1e592016543c4b55473d06206cff711e4fe7117e474698b160dd2fdf128d080b
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Ensure complete video codecs explicitly
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+          ffprobe -version
+      - name: Validate exact original PCM and every captured packet
+        run: python -B media/s105-zones/assemble.py validate
+      - name: Assemble once and verify exact PCM and packet grid
+        run: python -B media/s105-zones/assemble.py run
+      - name: Preserve output, attempts and diagnostic failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s105-en-zones-r1
+          path: media/s105-zones/output/
+          if-no-files-found: warn
+          retention-days: 7
