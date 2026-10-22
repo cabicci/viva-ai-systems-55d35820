@@ -1,0 +1,1 @@
+One exact original-PCM 27–33 second context. One unprompted actual-audio review, zero TTS/ASR/GET/retry. No suspected word or prior finding is sent to reviewer. Preserve raw response and ambiguity. No automatic speech repair, cutting, splicing or adoption.
