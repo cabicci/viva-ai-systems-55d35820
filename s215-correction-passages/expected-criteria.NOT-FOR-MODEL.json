@@ -1,0 +1,44 @@
+{
+  "scope": "Only three approved coherent passage corrections; nine single-reviewer uncertainties excluded",
+  "criteria": [
+    {
+      "unitId": "S2-15-ar-EG-repair-r1-001",
+      "referenceSpokenText": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "criticalContent": [
+        "تقييم ثقتك بنفسك",
+        "للتخطيط للتدريب بس"
+      ],
+      "question": "Corroborated transcript-level distortion of ثقتك; blind سقطك/سفطك, ASR سكتك. Alleged final cutoff is contradicted by observed ASR fullending; source-authored formal register is not an independent repair basis.",
+      "laterIntegrationRequirement": "Actual measured safe whole-passage boundaries and original/candidate-context voice/joins review; none accepted by this package."
+    },
+    {
+      "unitId": "S2-15-ar-EG-repair-r1-006",
+      "referenceSpokenText": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن عنصر النيتروجين، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "criticalContent": [
+        "سجّل اللون",
+        "عن عنصر النيتروجين",
+        "لكن ما يثبتش نقصه",
+        "التغذية والمرض والجذور والغمر",
+        "سببه محتاج فحص",
+        "الملاحظة والتفسير المحتمل والفحص المقترح"
+      ],
+      "question": "Both transcripts recognize عن النن where source has عن إن. Intended nutrientN requires clear whole-context realization; connected-nun ambiguity remains explicit, not claimed human phonetic proof.",
+      "laterIntegrationRequirement": "Actual measured safe whole-passage boundaries and original/candidate-context voice/joins review; none accepted by this package."
+    },
+    {
+      "unitId": "S2-15-ar-EG-repair-r1-009",
+      "referenceSpokenText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: بي إتش خمسة فاصلة اتنين؛ المادة العضوية اتنين فاصلة واحد في المية؛ إن منخفض؛ بي خمسة وعشرين جزء في المليون؛ كي مية وتمانين جزء في المليون، مع نطاقات مثال خاصة به.",
+      "criticalContent": [
+        "جدول توضيحي، مش شهادة معمل",
+        "خمسة فاصلة اتنين",
+        "اتنين فاصلة واحد في المية",
+        "خمسة وعشرين جزء في المليون",
+        "مية وتمانين جزء في المليون",
+        "مع نطاقات مثال خاصة به"
+      ],
+      "question": "Both actual transcripts add fraction wording من عشرة after2.1, absent from source; preserve intended2.1% and avoid silently accepting ambiguous redundant quantity wording.",
+      "laterIntegrationRequirement": "Actual measured safe whole-passage boundaries and original/candidate-context voice/joins review; none accepted by this package."
+    }
+  ],
+  "fedToModel": false
+}

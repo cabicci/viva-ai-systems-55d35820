@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "scope": "S2_15_THREE_ARABIC_COHERENT_PASSAGE_CORRECTIONS_ONLY",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s215-correction-passages-20261022-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 3,
+  "maximumBlindAudioReviewCalls": 3,
+  "maximumASRInvocations": 3,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "sourceSnapshot": "provenance/source-unit-snapshot.json",
+  "sourceSnapshotSha256": "d98ac08e3c7e630c080c5ce738847931fd18a163faa0135baab899f6c087b465",
+  "units": [
+    {
+      "id": "S2-15-ar-EG-repair-r1-001",
+      "locale": "ar-EG",
+      "speakerId": "A",
+      "voice": "Charon",
+      "scientificMeaning": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "displayText": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "captionText": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "spokenText": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "spokenTextSha256": "b37aee22e6a9c0c6b5ebefc2abde3f386272d33b69496db3f277dc08749e3f2b",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية. انطق كلمة «ثقتك» بوضوح وبسلاسة داخل الجملة، من غير إضافة أي كلمة أو تغيير باقي صياغة النص.",
+      "deliverySha256": "9e1a99d2403613363c10eb57e3ff6cacbe2ffa06fd1c588702ffeec3dbd7ebc8",
+      "requestFingerprintSha256": "a87633c182729906c2288c7e6140916ba0ef2a8f409c68707a9c830dee559bcc",
+      "criticalContentToPreserve": [
+        "تقييم ثقتك بنفسك",
+        "للتخطيط للتدريب بس"
+      ],
+      "originalUnitId": "S2-15-ar-EG-r1-001",
+      "originalPath": "originals/S2-15-ar-EG-r1-001.wav",
+      "originalWavSha256": "9db58ffb266ca68bbbf92ac1bc627c83199c109cdd5fb2f70fd8303279509e1c",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1492800,
+        "durationSeconds": 62.2,
+        "pcmSha256": "ea7981046738544ac371d063486a55ad223b6b442c2559bc91bb6403385a0499"
+      },
+      "sourcePassageBeforeCorrection": "تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "sourcePassageBeforeCorrectionSha256": "b37aee22e6a9c0c6b5ebefc2abde3f386272d33b69496db3f277dc08749e3f2b",
+      "sourceBindings": [
+        {
+          "pointer": "/goals/3",
+          "text": "تراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+          "sha256": "e926ddbd6bb9aece7d65d39e9fa81e0f899b7242ab3f9839e366eb12ef93a5e6"
+        }
+      ],
+      "sourceFileSHA256": "3659f31c0c2215fcc803e17b4628d8046e71a61a94ef57030bc125754e6b4f5b",
+      "approvedSpokenOnlyChange": null,
+      "visibleSourceUnchanged": true,
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "originalSelectedUnitScope": "FINAL_COMPLETE_SENTENCE",
+      "cutsOrJoinsApproved": false,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "timingSource": null,
+      "actualAudio": null
+    },
+    {
+      "id": "S2-15-ar-EG-repair-r1-006",
+      "locale": "ar-EG",
+      "speakerId": "B",
+      "voice": "Kore",
+      "scientificMeaning": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن N، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "displayText": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن N، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "captionText": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن N، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "spokenText": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن عنصر النيتروجين، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "spokenTextSha256": "30714e6e84ab5e9b0e9741f2fc8fb0717b5bbc8e41cf2d874dc9b6eaa75b308b",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية.",
+      "deliverySha256": "0df4c7569ecb8445ac1d99307f58737ca19c49bd80046fde32bb0023772b5473",
+      "requestFingerprintSha256": "4f4c2e8d7a793d14f88fd5ca664f046583121be19789e5cb5cc34f0921b74e13",
+      "criticalContentToPreserve": [
+        "سجّل اللون",
+        "عن عنصر النيتروجين",
+        "لكن ما يثبتش نقصه",
+        "التغذية والمرض والجذور والغمر",
+        "سببه محتاج فحص",
+        "الملاحظة والتفسير المحتمل والفحص المقترح"
+      ],
+      "originalUnitId": "S2-15-ar-EG-r1-006",
+      "originalPath": "originals/S2-15-ar-EG-r1-006.wav",
+      "originalWavSha256": "f76d61fa6c9358191f59132249a3e1160f7898c396848665bf36f2589a988bdd",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 1271040,
+        "durationSeconds": 52.96,
+        "pcmSha256": "0699d343a04048436678b8ed5e0b0ce77b6a284184bc1ef06afa36c0309a75c0"
+      },
+      "sourcePassageBeforeCorrection": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن إن، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+      "sourcePassageBeforeCorrectionSha256": "484286be72262b36c48160ed6d414dce12485f909b691b6fd460158602988c71",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "سجّل اللون والملمس والرطوبة والماء الراكد وحالة المحصول والحشائش كملاحظات. اصفرار الورق يفتح سؤالًا عن N، لكن ما يثبتش نقصه؛ افحص التغذية والمرض والجذور والغمر. الصرف البطيء ممكن يضر الجذور والامتصاص، لكن سببه محتاج فحص. افصل في التقرير الملاحظة والتفسير المحتمل والفحص المقترح.",
+          "sha256": "43939d1eeedf11aa5ee357c1ff92465245ce017d7c17826c955bb91c9b18c62b"
+        }
+      ],
+      "sourceFileSHA256": "3659f31c0c2215fcc803e17b4628d8046e71a61a94ef57030bc125754e6b4f5b",
+      "approvedSpokenOnlyChange": {
+        "kind": "EXPLICIT_SOURCE_N_SYMBOL_EXPANSION",
+        "writtenSource": "N",
+        "originalSpoken": "إن",
+        "approvedSpoken": "عنصر النيتروجين",
+        "count": 1,
+        "sourcePointer": "/reading/4/paragraphs/1",
+        "sourceBindingSha256": "43939d1eeedf11aa5ee357c1ff92465245ce017d7c17826c955bb91c9b18c62b",
+        "visibleSourceChanged": false
+      },
+      "visibleSourceUnchanged": true,
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "originalSelectedUnitScope": "SECOND_COMPLETE_PARAGRAPH",
+      "cutsOrJoinsApproved": false,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "timingSource": null,
+      "actualAudio": null
+    },
+    {
+      "id": "S2-15-ar-EG-repair-r1-009",
+      "locale": "ar-EG",
+      "speakerId": "A",
+      "voice": "Charon",
+      "scientificMeaning": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.",
+      "displayText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.",
+      "captionText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.",
+      "spokenText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: بي إتش خمسة فاصلة اتنين؛ المادة العضوية اتنين فاصلة واحد في المية؛ إن منخفض؛ بي خمسة وعشرين جزء في المليون؛ كي مية وتمانين جزء في المليون، مع نطاقات مثال خاصة به.",
+      "spokenTextSha256": "861f0b7ed5fdbf982492a6e755fbddbeae0d57901c8830a47e45f58b9bdee5c0",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية. الأرقام تتقال بوضوح وبوقفات طبيعية عند الفواصل. «اتنين فاصلة واحد في المية» قيمة عشرية واحدة؛ ما تضيفش شرح أو كلمة زيادة.",
+      "deliverySha256": "4f1edecb595715c33c7e2fb6da30ed22f4bbf5dd72a0fc81d5bf47da7eb2021e",
+      "requestFingerprintSha256": "e9127f9a391b50c517271d28a7a5339666bb688e33487eac8b52d81280d16521",
+      "criticalContentToPreserve": [
+        "جدول توضيحي، مش شهادة معمل",
+        "خمسة فاصلة اتنين",
+        "اتنين فاصلة واحد في المية",
+        "خمسة وعشرين جزء في المليون",
+        "مية وتمانين جزء في المليون",
+        "مع نطاقات مثال خاصة به"
+      ],
+      "originalUnitId": "S2-15-ar-EG-r1-009",
+      "originalPath": "originals/S2-15-ar-EG-r1-009.wav",
+      "originalWavSha256": "7fc3d2dfeeb638d0c71037a584ee3ab134193d573813b4a8ab45b89d2e5d83d0",
+      "originalAudio": {
+        "sampleRate": 24000,
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleCount": 508800,
+        "durationSeconds": 21.2,
+        "pcmSha256": "024a6604568633f8f670229cc85b7e936fd3b4f78da2f342e06d1bef0a7dff59"
+      },
+      "sourcePassageBeforeCorrection": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: بي إتش خمسة فاصلة اتنين؛ المادة العضوية اتنين فاصلة واحد في المية؛ إن منخفض؛ بي خمسة وعشرين جزء في المليون؛ كي مية وتمانين جزء في المليون، مع نطاقات مثال خاصة به.",
+      "sourcePassageBeforeCorrectionSha256": "861f0b7ed5fdbf982492a6e755fbddbeae0d57901c8830a47e45f58b9bdee5c0",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "جدول توضيحي، مش شهادة معمل",
+          "sha256": "7e15254b21c1a3c58ef858f455de9794315e0bd6d309f551f536d52894509c27"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "مثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.",
+          "sha256": "7aa73a73cab81f9e3a0345f85cf048598540fc88c8d5509b8f6511dde3a6c932"
+        }
+      ],
+      "sourceFileSHA256": "3659f31c0c2215fcc803e17b4628d8046e71a61a94ef57030bc125754e6b4f5b",
+      "approvedSpokenOnlyChange": null,
+      "visibleSourceUnchanged": true,
+      "originalOutsidePcmMustRemainUnchanged": true,
+      "originalSelectedUnitScope": "WHOLE_SHORT_RECORDING",
+      "cutsOrJoinsApproved": false,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_OR_CASE_PROMPT_ONLY",
+        "locale": "ar-EG"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "timingSource": null,
+      "actualAudio": null
+    }
+  ],
+  "assemblyPerformed": false,
+  "cutsAndJoinsAccepted": false,
+  "other61OriginalPartsUntouched": true,
+  "executionOrder": "ALL_THREE_TTS_AND_EACH_IMMEDIATE_UPLOAD_BEFORE_ISOLATED_DIAGNOSTICS",
+  "diagnosticFailureIsolation": "One failed unit/operation cannot repeat and cannot block unrelated requested units; shared model/runtime preflight failure blocks all generation."
+}

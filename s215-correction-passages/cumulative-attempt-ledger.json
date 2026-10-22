@@ -1,0 +1,82 @@
+{
+  "status": "NEW_EXPLICIT_THREE_PASSAGE_DIAGNOSIS_BUDGET_NOT_ORIGINAL_BATCH_RETRY",
+  "originalBatch": {
+    "runId": 39784071575,
+    "commit": "943127c7d5b9f1cb17299c708e606623b3d5c494",
+    "requestSha256": "78f63dfc38550224bbdc40def69419a0ce0335c3b2dffcb6a9319342f80083d9",
+    "tts": 64,
+    "actualBlindReviews": 64,
+    "terminalASRSteps": 64,
+    "budgetSpent": true
+  },
+  "newBudget": {
+    "tts": 3,
+    "blindReview": 3,
+    "asr": 3,
+    "metadataGET": 2,
+    "retries": 0
+  },
+  "records": [
+    {
+      "originalUnitId": "S2-15-ar-EG-r1-001",
+      "originalRunId": 39784071575,
+      "originalCommit": "943127c7d5b9f1cb17299c708e606623b3d5c494",
+      "knownOriginalTTS": 1,
+      "knownOriginalBlindReview": 1,
+      "knownOriginalASRReservedTerminalStep": 1,
+      "originalBatchBudget": "64/64/64 SPENT; not reset",
+      "newRepairUnitId": "S2-15-ar-EG-repair-r1-001",
+      "newDiagnosisBudget": {
+        "tts": 1,
+        "actualBlindReview": 1,
+        "asr": 1,
+        "retries": 0
+      },
+      "diagnosis": "Corroborated transcript-level distortion of ثقتك; blind سقطك/سفطك, ASR سكتك. Alleged final cutoff is contradicted by observed ASR fullending; source-authored formal register is not an independent repair basis.",
+      "originalAndAllOther61PartsPreserved": true,
+      "newCallsPerformed": 0,
+      "unknownHistoricalAttemptsNotInferred": true
+    },
+    {
+      "originalUnitId": "S2-15-ar-EG-r1-006",
+      "originalRunId": 39784071575,
+      "originalCommit": "943127c7d5b9f1cb17299c708e606623b3d5c494",
+      "knownOriginalTTS": 1,
+      "knownOriginalBlindReview": 1,
+      "knownOriginalASRReservedTerminalStep": 1,
+      "originalBatchBudget": "64/64/64 SPENT; not reset",
+      "newRepairUnitId": "S2-15-ar-EG-repair-r1-006",
+      "newDiagnosisBudget": {
+        "tts": 1,
+        "actualBlindReview": 1,
+        "asr": 1,
+        "retries": 0
+      },
+      "diagnosis": "Both transcripts recognize عن النن where source has عن إن. Intended nutrientN requires clear whole-context realization; connected-nun ambiguity remains explicit, not claimed human phonetic proof.",
+      "originalAndAllOther61PartsPreserved": true,
+      "newCallsPerformed": 0,
+      "unknownHistoricalAttemptsNotInferred": true
+    },
+    {
+      "originalUnitId": "S2-15-ar-EG-r1-009",
+      "originalRunId": 39784071575,
+      "originalCommit": "943127c7d5b9f1cb17299c708e606623b3d5c494",
+      "knownOriginalTTS": 1,
+      "knownOriginalBlindReview": 1,
+      "knownOriginalASRReservedTerminalStep": 1,
+      "originalBatchBudget": "64/64/64 SPENT; not reset",
+      "newRepairUnitId": "S2-15-ar-EG-repair-r1-009",
+      "newDiagnosisBudget": {
+        "tts": 1,
+        "actualBlindReview": 1,
+        "asr": 1,
+        "retries": 0
+      },
+      "diagnosis": "Both actual transcripts add fraction wording من عشرة after2.1, absent from source; preserve intended2.1% and avoid silently accepting ambiguous redundant quantity wording.",
+      "originalAndAllOther61PartsPreserved": true,
+      "newCallsPerformed": 0,
+      "unknownHistoricalAttemptsNotInferred": true
+    }
+  ],
+  "newCallsPerformed": 0
+}

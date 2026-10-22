@@ -1,0 +1,26 @@
+{
+  "atUTC": "2026-10-22T14:44:50.826720+00:00",
+  "boundedLocalRequestDirectories": [
+    "history-r1",
+    "narration-draft",
+    "narration-r1"
+  ],
+  "matchingNewRequestIdentities": [],
+  "existingOriginalCandidatesRetained": 3,
+  "exactNewBranchLiveRead": {
+    "repository": "cabicci/viva-ai-systems-55d35820",
+    "branch": "work/soil-s215-correction-passages-20261022-r1",
+    "totalRuns": 0,
+    "tool": "gh api actions/runs read-only",
+    "readPerformedBeforePreparation": true
+  },
+  "doNotReuseRejectedOriginalAsNewCorrection": true,
+  "noNewCallOrPublication": true,
+  "supersededUnlaunchedPreparation": {
+    "oldRequestSha256": "4e62215f31e69a2e284668842b263728e3baa6f053b02cee4ad3291182b3ba7f",
+    "providerCalls": 0,
+    "publicationPerformed": false,
+    "sameUnitTtsIdentitiesUnchanged": true,
+    "noGeneratedMatchingCorrectionExists": true
+  }
+}
