@@ -1,0 +1,506 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-04-en.json",
+    "sha256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+    "bytes": 30390
+  },
+  "units": [
+    {
+      "id": "S1-04-en-opening-r1",
+      "unitId": "S1-04-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A laboratory can measure the soil you send accurately and still give an unhelpful answer about your field if you collected the wrong sample. Start by deciding what the sample should represent, then choose and prepare the tools.",
+          "sha256": "5ddb778caafe860163e742552dd8f729f23d1e0d84ed92f599acdcb04aec2e08"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Explain how sampling bias affects a decision and distinguish a subsample, a composite sample and a sample collected to preserve soil structure.",
+          "sha256": "8c49625f03078af4aef7b30dceaa66c8be95ec78607ed85d094106dad28a2bb7"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Choose a suitable sampling tool and explain three sources of contamination, their possible effects and how to prevent them.",
+          "sha256": "b2b82a200ed2b4d71b7215137f10d07dd241ad2395d444915a798ba6cb33cfe9"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Inspect and clean the sampling tools and plastic bucket before collection and between sampling areas under trainer observation.",
+          "sha256": "c6a34de80348fb78f61ac61f86f746f0eadecd0d6940db068173edf92dfd894c"
+        }
+      ],
+      "scientificMeaning": "A laboratory can measure the soil you send accurately and still give an unhelpful answer about your field if you collected the wrong sample. Start by deciding what the sample should represent, then choose and prepare the tools.\n\nExplain how sampling bias affects a decision and distinguish a subsample, a composite sample and a sample collected to preserve soil structure.\n\nChoose a suitable sampling tool and explain three sources of contamination, their possible effects and how to prevent them.\n\nInspect and clean the sampling tools and plastic bucket before collection and between sampling areas under trainer observation.",
+      "displayText": "A laboratory can measure the soil you send accurately and still give an unhelpful answer about your field if you collected the wrong sample. Start by deciding what the sample should represent, then choose and prepare the tools.\n\nExplain how sampling bias affects a decision and distinguish a subsample, a composite sample and a sample collected to preserve soil structure.\n\nChoose a suitable sampling tool and explain three sources of contamination, their possible effects and how to prevent them.\n\nInspect and clean the sampling tools and plastic bucket before collection and between sampling areas under trainer observation.",
+      "captionText": "A laboratory can measure the soil you send accurately and still give an unhelpful answer about your field if you collected the wrong sample. Start by deciding what the sample should represent, then choose and prepare the tools.\n\nExplain how sampling bias affects a decision and distinguish a subsample, a composite sample and a sample collected to preserve soil structure.\n\nChoose a suitable sampling tool and explain three sources of contamination, their possible effects and how to prevent them.\n\nInspect and clean the sampling tools and plastic bucket before collection and between sampling areas under trainer observation.",
+      "spokenText": "A laboratory can measure the soil you send accurately and still give an unhelpful answer about your field if you collected the wrong sample. Start by deciding what the sample should represent, then choose and prepare the tools.\n\nExplain how sampling bias affects a decision and distinguish a subsample, a composite sample and a sample collected to preserve soil structure.\n\nChoose a suitable sampling tool and explain three sources of contamination, their possible effects and how to prevent them.\n\nInspect and clean the sampling tools and plastic bucket before collection and between sampling areas under trainer observation.",
+      "spokenTextSHA256": "b27d56f748bdd1394e0a516ce23754a9625d1a8eed78ed1cb80291f77b3acb25",
+      "spokenTextSha256": "b27d56f748bdd1394e0a516ce23754a9625d1a8eed78ed1cb80291f77b3acb25",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "CURRENT_VISIBLE_TEACHING",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5eee82e2ab99c40e07b78a89eb6cd49c3533d50d142432ede001d61eccad578d",
+      "requestFingerprintSha256": "5eee82e2ab99c40e07b78a89eb6cd49c3533d50d142432ede001d61eccad578d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-E01-r1",
+      "unitId": "S1-04-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "One patch of a field is yellow and stunted, while another patch is growing better. A learner wants to scoop soil beside the gate and use its result to treat the whole field.",
+          "sha256": "5a5480c424b20362acc3525c54b0ad298a5a5b4d26601abfe98b8db37cb1e1ed"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "State the question: investigate the poor-growth patch and compare relevant evidence, rather than diagnose the whole field from one convenient point.",
+          "sha256": "753c175daaa23ce28936b7c2531abf1582add512b9a103a7cc8490630c059bc3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Record the difference and discuss separate sampling zones with the trainer. Do not mix the contrasting areas before deciding what the samples should represent.",
+          "sha256": "822c3c4c4fd50332301ff0e74d3a1961579f6101ff7be03260080e102ecc123d"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Select the appropriate tests and collection instructions. Interpret the results together with observations and crop history; do not assume a soil result excludes pests, water stress or every other cause.",
+          "sha256": "a10666e22bbb376c872906ee426340ebe0f3967d366a60dd94878a44323910e5"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Represent the problem you want to investigate before deciding on a treatment.",
+          "sha256": "f64139614d4ed5f36e623eadce6643c24307635c204333fa5303fee178888180"
+        }
+      ],
+      "scientificMeaning": "One patch of a field is yellow and stunted, while another patch is growing better. A learner wants to scoop soil beside the gate and use its result to treat the whole field.\n\nState the question: investigate the poor-growth patch and compare relevant evidence, rather than diagnose the whole field from one convenient point.\n\nRecord the difference and discuss separate sampling zones with the trainer. Do not mix the contrasting areas before deciding what the samples should represent.\n\nSelect the appropriate tests and collection instructions. Interpret the results together with observations and crop history; do not assume a soil result excludes pests, water stress or every other cause.\n\nRepresent the problem you want to investigate before deciding on a treatment.",
+      "displayText": "One patch of a field is yellow and stunted, while another patch is growing better. A learner wants to scoop soil beside the gate and use its result to treat the whole field.\n\nState the question: investigate the poor-growth patch and compare relevant evidence, rather than diagnose the whole field from one convenient point.\n\nRecord the difference and discuss separate sampling zones with the trainer. Do not mix the contrasting areas before deciding what the samples should represent.\n\nSelect the appropriate tests and collection instructions. Interpret the results together with observations and crop history; do not assume a soil result excludes pests, water stress or every other cause.\n\nRepresent the problem you want to investigate before deciding on a treatment.",
+      "captionText": "One patch of a field is yellow and stunted, while another patch is growing better. A learner wants to scoop soil beside the gate and use its result to treat the whole field.\n\nState the question: investigate the poor-growth patch and compare relevant evidence, rather than diagnose the whole field from one convenient point.\n\nRecord the difference and discuss separate sampling zones with the trainer. Do not mix the contrasting areas before deciding what the samples should represent.\n\nSelect the appropriate tests and collection instructions. Interpret the results together with observations and crop history; do not assume a soil result excludes pests, water stress or every other cause.\n\nRepresent the problem you want to investigate before deciding on a treatment.",
+      "spokenText": "One patch of a field is yellow and stunted, while another patch is growing better. A learner wants to scoop soil beside the gate and use its result to treat the whole field.\n\nState the question: investigate the poor-growth patch and compare relevant evidence, rather than diagnose the whole field from one convenient point.\n\nRecord the difference and discuss separate sampling zones with the trainer. Do not mix the contrasting areas before deciding what the samples should represent.\n\nSelect the appropriate tests and collection instructions. Interpret the results together with observations and crop history; do not assume a soil result excludes pests, water stress or every other cause.\n\nRepresent the problem you want to investigate before deciding on a treatment.",
+      "spokenTextSHA256": "4dbae0cbbd14aa2476285ffe505162951e391437d7f8a86b2ad91cd0b261ccaf",
+      "spokenTextSha256": "4dbae0cbbd14aa2476285ffe505162951e391437d7f8a86b2ad91cd0b261ccaf",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "CURRENT_VISIBLE_WORKED_EXAMPLE_NOT_HIDDEN_QUIZ_KEY",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "782d73173ac86ea589929229afcd1fc14a459117ea35166f4b36bb8edd6e8f92",
+      "requestFingerprintSha256": "782d73173ac86ea589929229afcd1fc14a459117ea35166f4b36bb8edd6e8f92",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-E03-r1",
+      "unitId": "S1-04-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The team finishes one field and reaches another. A little soil remains in the probe groove and along the bucket rim.",
+          "sha256": "59842e082dd9836d1434cf642712ea053f8b6716dcc371912f2ef510491116ab"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Stop before collecting the new field's soil.",
+          "sha256": "3af03e76b223d227b53e87e1502fae7db77da93bfb28870f83b389973dfbe62c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Remove and clean away the old material from the tool and bucket by the approved procedure, including areas where residue is easy to miss.",
+          "sha256": "ee6666558c9a265b95150d0331aa55d129df3c68f7c4c2e62a02230cd09d6797"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Recheck the surfaces and glove cleanliness, then start the new identified sample separately. Do not brush old soil into the new bucket and call it a subsample.",
+          "sha256": "20cdf98e530af78ed53ee66cfe1c85af7f2e675ede63e5b883d1df2baa4ee4ab"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Cleaning between locations protects the link between the soil and the name on the bag.",
+          "sha256": "f895c5e9c069e6ef7c1f93f96a48341dbb3d6e34a8a7c5826fa62469eecd31f4"
+        }
+      ],
+      "scientificMeaning": "The team finishes one field and reaches another. A little soil remains in the probe groove and along the bucket rim.\n\nStop before collecting the new field's soil.\n\nRemove and clean away the old material from the tool and bucket by the approved procedure, including areas where residue is easy to miss.\n\nRecheck the surfaces and glove cleanliness, then start the new identified sample separately. Do not brush old soil into the new bucket and call it a subsample.\n\nCleaning between locations protects the link between the soil and the name on the bag.",
+      "displayText": "The team finishes one field and reaches another. A little soil remains in the probe groove and along the bucket rim.\n\nStop before collecting the new field's soil.\n\nRemove and clean away the old material from the tool and bucket by the approved procedure, including areas where residue is easy to miss.\n\nRecheck the surfaces and glove cleanliness, then start the new identified sample separately. Do not brush old soil into the new bucket and call it a subsample.\n\nCleaning between locations protects the link between the soil and the name on the bag.",
+      "captionText": "The team finishes one field and reaches another. A little soil remains in the probe groove and along the bucket rim.\n\nStop before collecting the new field's soil.\n\nRemove and clean away the old material from the tool and bucket by the approved procedure, including areas where residue is easy to miss.\n\nRecheck the surfaces and glove cleanliness, then start the new identified sample separately. Do not brush old soil into the new bucket and call it a subsample.\n\nCleaning between locations protects the link between the soil and the name on the bag.",
+      "spokenText": "The team finishes one field and reaches another. A little soil remains in the probe groove and along the bucket rim.\n\nStop before collecting the new field's soil.\n\nRemove and clean away the old material from the tool and bucket by the approved procedure, including areas where residue is easy to miss.\n\nRecheck the surfaces and glove cleanliness, then start the new identified sample separately. Do not brush old soil into the new bucket and call it a subsample.\n\nCleaning between locations protects the link between the soil and the name on the bag.",
+      "spokenTextSHA256": "a1f0ffea3ae960e40b93fc80e9c7a4a99739846c602e8ab57b6ab332a01b4af2",
+      "spokenTextSha256": "a1f0ffea3ae960e40b93fc80e9c7a4a99739846c602e8ab57b6ab332a01b4af2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "CURRENT_VISIBLE_WORKED_EXAMPLE_NOT_HIDDEN_QUIZ_KEY",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "15ada572e003167a0ee79219196f51806e272b819729b598acbeeb74a181d9ab",
+      "requestFingerprintSha256": "15ada572e003167a0ee79219196f51806e272b819729b598acbeeb74a181d9ab",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-P01-r1",
+      "unitId": "S1-04-en-P01-r1",
+      "locale": "en",
+      "semanticGroup": "P01",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/practical/title",
+          "text": "Prepare equipment for two sampling areas",
+          "sha256": "fccfbe9b85c058cd89d99e103c6506ec61870ccd4bb28fb7b1cb1e01c3636683"
+        },
+        {
+          "pointer": "/practical/safety",
+          "text": "The trainer provides suitable sampling tools, a clean preparation area, the prescribed cleaning procedure and safe materials to represent residue. No unidentified chemical container, hazardous dust or buried-service investigation is used.",
+          "sha256": "22223d99eace4911a815e7c0305d2473e0ccb0404b2e9478ccadaad05de2f55f"
+        },
+        {
+          "pointer": "/practical/steps/0",
+          "text": "Name the probe, auger, spade or shovel, trowel and plastic bucket. Explain which tool suits the assigned sample and why.",
+          "sha256": "f7ab13bd88c887465cf6d13cc4eb131784ffde530e7ab6d122b2190159d2487e"
+        },
+        {
+          "pointer": "/practical/steps/1",
+          "text": "Inspect handles, joints and sample-contact surfaces. Identify and set aside a labelled defective or unsuitable example without using it.",
+          "sha256": "7c07d80d342a1109ad3e8f3943032262efbf921fd7bb7f622341cc4ff99e63f8"
+        },
+        {
+          "pointer": "/practical/steps/2",
+          "text": "Clean the tools and bucket by the given procedure, including grooves and the rim; rinse and dry as specified.",
+          "sha256": "92668a7153003f47b79a8fb629ee4a1b7c2ec5fba6e8a05c47fa1e1efd3c9f99"
+        },
+        {
+          "pointer": "/practical/steps/3",
+          "text": "Demonstrate how you will keep prepared surfaces and gloves from transferring residue back into the sample.",
+          "sha256": "780214addd21c68bbec4a147edae9442c4edb774710e89212fca04093e5ef0fe"
+        },
+        {
+          "pointer": "/practical/steps/4",
+          "text": "At the simulated change to the second area, stop and repeat the cleaning and readiness check before collecting anything.",
+          "sha256": "28eab6812a6d605af99697c93e07beb4ace114e81d0722810193c8fa3d6c8398"
+        },
+        {
+          "pointer": "/practical/steps/5",
+          "text": "Explain at least three contamination routes and the consequences of skipping a check.",
+          "sha256": "7ccec77de2398a40477f8d848099a0facdae6f875ef3f3058125c0ad5f3f0ded"
+        },
+        {
+          "pointer": "/practical/evidence/0",
+          "text": "Individual observed tool identification and suitability decision.",
+          "sha256": "a7b52f3c9eda8258f867b59d7839939809f154085292fc82dc37010c4237cf22"
+        },
+        {
+          "pointer": "/practical/evidence/1",
+          "text": "Inspection and rejection of the defective or contaminated example.",
+          "sha256": "67032d2ad6da5e382a5f20dcd4f286ff2632fd4c63d2db1513da6ee0ef5ec811"
+        },
+        {
+          "pointer": "/practical/evidence/2",
+          "text": "Observed completion of the specified cleaning and between-area checks.",
+          "sha256": "f5c288490fedcf3ea4d3edc2694bfbd07f6b6583a872578d99c749d23125b8ab"
+        },
+        {
+          "pointer": "/practical/passRule",
+          "text": "All tool-readiness actions must be performed safely and correctly under trainer observation. Correct any missed area and repeat the affected action. Written explanations support, but do not replace, the observed cleaning performance.",
+          "sha256": "ea5f35baca6ce0cd878d44a8884ed1f058f736dce66fc405263ef1c24088bf9b"
+        }
+      ],
+      "scientificMeaning": "Prepare equipment for two sampling areas\n\nThe trainer provides suitable sampling tools, a clean preparation area, the prescribed cleaning procedure and safe materials to represent residue. No unidentified chemical container, hazardous dust or buried-service investigation is used.\n\nName the probe, auger, spade or shovel, trowel and plastic bucket. Explain which tool suits the assigned sample and why.\n\nInspect handles, joints and sample-contact surfaces. Identify and set aside a labelled defective or unsuitable example without using it.\n\nClean the tools and bucket by the given procedure, including grooves and the rim; rinse and dry as specified.\n\nDemonstrate how you will keep prepared surfaces and gloves from transferring residue back into the sample.\n\nAt the simulated change to the second area, stop and repeat the cleaning and readiness check before collecting anything.\n\nExplain at least three contamination routes and the consequences of skipping a check.\n\nIndividual observed tool identification and suitability decision.\n\nInspection and rejection of the defective or contaminated example.\n\nObserved completion of the specified cleaning and between-area checks.\n\nAll tool-readiness actions must be performed safely and correctly under trainer observation. Correct any missed area and repeat the affected action. Written explanations support, but do not replace, the observed cleaning performance.",
+      "displayText": "Prepare equipment for two sampling areas\n\nThe trainer provides suitable sampling tools, a clean preparation area, the prescribed cleaning procedure and safe materials to represent residue. No unidentified chemical container, hazardous dust or buried-service investigation is used.\n\nName the probe, auger, spade or shovel, trowel and plastic bucket. Explain which tool suits the assigned sample and why.\n\nInspect handles, joints and sample-contact surfaces. Identify and set aside a labelled defective or unsuitable example without using it.\n\nClean the tools and bucket by the given procedure, including grooves and the rim; rinse and dry as specified.\n\nDemonstrate how you will keep prepared surfaces and gloves from transferring residue back into the sample.\n\nAt the simulated change to the second area, stop and repeat the cleaning and readiness check before collecting anything.\n\nExplain at least three contamination routes and the consequences of skipping a check.\n\nIndividual observed tool identification and suitability decision.\n\nInspection and rejection of the defective or contaminated example.\n\nObserved completion of the specified cleaning and between-area checks.\n\nAll tool-readiness actions must be performed safely and correctly under trainer observation. Correct any missed area and repeat the affected action. Written explanations support, but do not replace, the observed cleaning performance.",
+      "captionText": "Prepare equipment for two sampling areas\n\nThe trainer provides suitable sampling tools, a clean preparation area, the prescribed cleaning procedure and safe materials to represent residue. No unidentified chemical container, hazardous dust or buried-service investigation is used.\n\nName the probe, auger, spade or shovel, trowel and plastic bucket. Explain which tool suits the assigned sample and why.\n\nInspect handles, joints and sample-contact surfaces. Identify and set aside a labelled defective or unsuitable example without using it.\n\nClean the tools and bucket by the given procedure, including grooves and the rim; rinse and dry as specified.\n\nDemonstrate how you will keep prepared surfaces and gloves from transferring residue back into the sample.\n\nAt the simulated change to the second area, stop and repeat the cleaning and readiness check before collecting anything.\n\nExplain at least three contamination routes and the consequences of skipping a check.\n\nIndividual observed tool identification and suitability decision.\n\nInspection and rejection of the defective or contaminated example.\n\nObserved completion of the specified cleaning and between-area checks.\n\nAll tool-readiness actions must be performed safely and correctly under trainer observation. Correct any missed area and repeat the affected action. Written explanations support, but do not replace, the observed cleaning performance.",
+      "spokenText": "Prepare equipment for two sampling areas\n\nThe trainer provides suitable sampling tools, a clean preparation area, the prescribed cleaning procedure and safe materials to represent residue. No unidentified chemical container, hazardous dust or buried-service investigation is used.\n\nName the probe, auger, spade or shovel, trowel and plastic bucket. Explain which tool suits the assigned sample and why.\n\nInspect handles, joints and sample-contact surfaces. Identify and set aside a labelled defective or unsuitable example without using it.\n\nClean the tools and bucket by the given procedure, including grooves and the rim; rinse and dry as specified.\n\nDemonstrate how you will keep prepared surfaces and gloves from transferring residue back into the sample.\n\nAt the simulated change to the second area, stop and repeat the cleaning and readiness check before collecting anything.\n\nExplain at least three contamination routes and the consequences of skipping a check.\n\nIndividual observed tool identification and suitability decision.\n\nInspection and rejection of the defective or contaminated example.\n\nObserved completion of the specified cleaning and between-area checks.\n\nAll tool-readiness actions must be performed safely and correctly under trainer observation. Correct any missed area and repeat the affected action. Written explanations support, but do not replace, the observed cleaning performance.",
+      "spokenTextSHA256": "1c4ec7b571995f1dff766982d4039b560dc961607a2894b07e55d22b01f6345f",
+      "spokenTextSha256": "1c4ec7b571995f1dff766982d4039b560dc961607a2894b07e55d22b01f6345f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "HARMLESS_TRAINER_OBSERVED_PREPARATION_NOT_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ca05a015cb3fd5b621b13b8669f575bca8e6294694ab4d0451e4fa9eecbe11b8",
+      "requestFingerprintSha256": "ca05a015cb3fd5b621b13b8669f575bca8e6294694ab4d0451e4fa9eecbe11b8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-guided-practice-r1",
+      "unitId": "S1-04-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "A field has a poor-growth patch and a better area. Choose the question each sample should answer, select a suitable tool and container, then identify what changes when the team moves to the second area.",
+          "sha256": "a74164ae18fcdaec6bf9e7b1faed681d5cef94420ae8c41e659469a7e0fd081c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Keep distinct management or comparison zones separate rather than mixing a convenient gate sample into the whole-field result.",
+          "sha256": "af64e0bb090534c315537495e55b977df702303411237e9850eca1e2ed6e9183"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Distinguish a subsample, a composite made from a defined zone, and a sample collected to preserve structure.",
+          "sha256": "dbae20b17c497c604222ab433634303054fe6961bcabe6d95ddb741004e753a5"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Reject a flaking galvanised bucket for nutrient sampling and identify zinc or metal contamination risks.",
+          "sha256": "7f5c51fdd212e8ffac17368e925a2eb95a219dc4963dbbab0212e275260b9b2c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Sequence inspection and method-approved cleaning before first use and between areas.",
+          "sha256": "e536e103854bdcdfc7fcbe020c2d70e13ebdf7658ab530ab327876adb944d91e"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The actual tool inspection and cleaning are a separate supervised performance check.",
+          "sha256": "cb91636991946a9ef385c9b16c265b313243a9ded862dbb7cb22c6fe35a5cb71"
+        }
+      ],
+      "scientificMeaning": "A field has a poor-growth patch and a better area. Choose the question each sample should answer, select a suitable tool and container, then identify what changes when the team moves to the second area.\n\nKeep distinct management or comparison zones separate rather than mixing a convenient gate sample into the whole-field result.\n\nDistinguish a subsample, a composite made from a defined zone, and a sample collected to preserve structure.\n\nReject a flaking galvanised bucket for nutrient sampling and identify zinc or metal contamination risks.\n\nSequence inspection and method-approved cleaning before first use and between areas.\n\nThe actual tool inspection and cleaning are a separate supervised performance check.",
+      "displayText": "A field has a poor-growth patch and a better area. Choose the question each sample should answer, select a suitable tool and container, then identify what changes when the team moves to the second area.\n\nKeep distinct management or comparison zones separate rather than mixing a convenient gate sample into the whole-field result.\n\nDistinguish a subsample, a composite made from a defined zone, and a sample collected to preserve structure.\n\nReject a flaking galvanised bucket for nutrient sampling and identify zinc or metal contamination risks.\n\nSequence inspection and method-approved cleaning before first use and between areas.\n\nThe actual tool inspection and cleaning are a separate supervised performance check.",
+      "captionText": "A field has a poor-growth patch and a better area. Choose the question each sample should answer, select a suitable tool and container, then identify what changes when the team moves to the second area.\n\nKeep distinct management or comparison zones separate rather than mixing a convenient gate sample into the whole-field result.\n\nDistinguish a subsample, a composite made from a defined zone, and a sample collected to preserve structure.\n\nReject a flaking galvanised bucket for nutrient sampling and identify zinc or metal contamination risks.\n\nSequence inspection and method-approved cleaning before first use and between areas.\n\nThe actual tool inspection and cleaning are a separate supervised performance check.",
+      "spokenText": "A field has a poor-growth patch and a better area. Choose the question each sample should answer, select a suitable tool and container, then identify what changes when the team moves to the second area.\n\nKeep distinct management or comparison zones separate rather than mixing a convenient gate sample into the whole-field result.\n\nDistinguish a subsample, a composite made from a defined zone, and a sample collected to preserve structure.\n\nReject a flaking galvanised bucket for nutrient sampling and identify zinc or metal contamination risks.\n\nSequence inspection and method-approved cleaning before first use and between areas.\n\nThe actual tool inspection and cleaning are a separate supervised performance check.",
+      "spokenTextSHA256": "043ebbae3e97d72b76dcff023f683edd2cf54d0fb4aaf393ab71c8ec460c7784",
+      "spokenTextSha256": "043ebbae3e97d72b76dcff023f683edd2cf54d0fb4aaf393ab71c8ec460c7784",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "GUIDED_PROMPT_ACTIONS_BOUNDARY_ONLY_FEEDBACK_EXCLUDED",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a293a656c3de613fb77b537bb594c40de6c854981f8c8a7e52e7f295d67e8e31",
+      "requestFingerprintSha256": "a293a656c3de613fb77b537bb594c40de6c854981f8c8a7e52e7f295d67e8e31",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-reflection-r1",
+      "unitId": "S1-04-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I identify and select the correct soil-sampling tools?",
+          "sha256": "765dba9d4a1a4c963de12d2b29031994a6a0dbda54b33b4ed48cc8b29afce009"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Use your choice to identify what to practise. Practical completion requires the trainer's individual evidence.",
+          "sha256": "ad3a636f2741ff5fd59ed865f7fb3d4bb81f5adebb032f7f27e3f59f80893672"
+        }
+      ],
+      "scientificMeaning": "Can I identify and select the correct soil-sampling tools?\n\nUse your choice to identify what to practise. Practical completion requires the trainer's individual evidence.",
+      "displayText": "Can I identify and select the correct soil-sampling tools?\n\nUse your choice to identify what to practise. Practical completion requires the trainer's individual evidence.",
+      "captionText": "Can I identify and select the correct soil-sampling tools?\n\nUse your choice to identify what to practise. Practical completion requires the trainer's individual evidence.",
+      "spokenText": "Can I identify and select the correct soil-sampling tools?\n\nUse your choice to identify what to practise. Practical completion requires the trainer's individual evidence.",
+      "spokenTextSHA256": "3fca18d5ccf3fb1ede94ae33c2fef881d8ec27be5d5e189dbf63436d21c69844",
+      "spokenTextSha256": "3fca18d5ccf3fb1ede94ae33c2fef881d8ec27be5d5e189dbf63436d21c69844",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "SELF_REFLECTION_NOT_SKILL_CERTIFICATION",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ce19973dac30609cf1be0e340d65db9e690f1c793ba0ccc6b665cecb7ba3b10",
+      "requestFingerprintSha256": "8ce19973dac30609cf1be0e340d65db9e690f1c793ba0ccc6b665cecb7ba3b10",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-04-en-glossary-r1",
+      "unitId": "S1-04-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "73cc89c7ac250857e89ab33f9b72fc6eec0440748aaa58380bf055c3e3ae0e6d",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Representative sample",
+          "sha256": "3d3bd1101fca685dde9d9087d9384d307a691950e5cbc2e41e5dfb0009aeeaff"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A sample collected to describe the area and layer specified by the sampling purpose.",
+          "sha256": "f665205f0c02b9b37bfa6197c7f14da7b23defa857b5dc336aa5353609a387e0"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Subsample",
+          "sha256": "4b667a621b40811f1bcb931ac103dbc915b7f8f8c939649ae9fdc0e70d4c345c"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "One small portion collected at one planned location and depth.",
+          "sha256": "2a81b9710baa668efaa952c93efb29cd091c307cbb0aab22213e5fd3f4afb109"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Composite sample",
+          "sha256": "d30e961e9e13eb443f2295bffb4a616da3df549ec80e9442ac26546b97c44664"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A thoroughly mixed combination of planned subsamples from the same defined zone and layer.",
+          "sha256": "06f33f94cc3a72fa8fe2b6f9f785e46063259b6885a0b0ebdbbf9a1d154dcb89"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Probe",
+          "sha256": "3bd51ab9c14f9514ea37fac91f5f245e93cf5733bd39ca1652e5525a1d67b5d1"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "A sampling tube; its actual design and collection method must suit the task.",
+          "sha256": "e80a2c1463a9902f3d4a3e95410e8457101322f0d235bdfaab054206a2d0f10c"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Auger",
+          "sha256": "692a83407adfdf867fc6007642acd2ad5a9519613e7725fc285479fb14e7c62e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A rotating cutting tool that loosens and retrieves soil.",
+          "sha256": "c81c8c79dbb47bee346bfabb236a4e1df3f8cdb11fcf7632010d8cb9c78224d8"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Contamination",
+          "sha256": "6ce7867f2ae29fcdfba78cf51ebd001b71fed4c2255f4d7a06e99c6927454869"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Unwanted material entering and potentially changing a sample.",
+          "sha256": "d99668a21d8206802af8298a139ac0e5cc16f401d7227ac46aea38872783bf59"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Cross-contamination",
+          "sha256": "c02b917c5a0e68a04976581d6e552ccde2f837481976e8d4b33094796ce9f323"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Transfer of material between samples or sampling locations.",
+          "sha256": "96ed4c948ff1872c2b1c019e4912eb6e7e8a476f9ba53c1a285cb2539b17bad9"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Undisturbed core",
+          "sha256": "3f2e26563a606b74a6d738ee0e921b939ddb50937d0c7dd3056ecb4fd014bd68"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A core collected and handled to preserve the original arrangement as required by its test.",
+          "sha256": "62cda67c31e06f534b9931e9ef8e89b3775945048f696bf630bae7742853893d"
+        }
+      ],
+      "scientificMeaning": "Representative sample\n\nA sample collected to describe the area and layer specified by the sampling purpose.\n\nSubsample\n\nOne small portion collected at one planned location and depth.\n\nComposite sample\n\nA thoroughly mixed combination of planned subsamples from the same defined zone and layer.\n\nProbe\n\nA sampling tube; its actual design and collection method must suit the task.\n\nAuger\n\nA rotating cutting tool that loosens and retrieves soil.\n\nContamination\n\nUnwanted material entering and potentially changing a sample.\n\nCross-contamination\n\nTransfer of material between samples or sampling locations.\n\nUndisturbed core\n\nA core collected and handled to preserve the original arrangement as required by its test.",
+      "displayText": "Representative sample\n\nA sample collected to describe the area and layer specified by the sampling purpose.\n\nSubsample\n\nOne small portion collected at one planned location and depth.\n\nComposite sample\n\nA thoroughly mixed combination of planned subsamples from the same defined zone and layer.\n\nProbe\n\nA sampling tube; its actual design and collection method must suit the task.\n\nAuger\n\nA rotating cutting tool that loosens and retrieves soil.\n\nContamination\n\nUnwanted material entering and potentially changing a sample.\n\nCross-contamination\n\nTransfer of material between samples or sampling locations.\n\nUndisturbed core\n\nA core collected and handled to preserve the original arrangement as required by its test.",
+      "captionText": "Representative sample\n\nA sample collected to describe the area and layer specified by the sampling purpose.\n\nSubsample\n\nOne small portion collected at one planned location and depth.\n\nComposite sample\n\nA thoroughly mixed combination of planned subsamples from the same defined zone and layer.\n\nProbe\n\nA sampling tube; its actual design and collection method must suit the task.\n\nAuger\n\nA rotating cutting tool that loosens and retrieves soil.\n\nContamination\n\nUnwanted material entering and potentially changing a sample.\n\nCross-contamination\n\nTransfer of material between samples or sampling locations.\n\nUndisturbed core\n\nA core collected and handled to preserve the original arrangement as required by its test.",
+      "spokenText": "Representative sample\n\nA sample collected to describe the area and layer specified by the sampling purpose.\n\nSubsample\n\nOne small portion collected at one planned location and depth.\n\nComposite sample\n\nA thoroughly mixed combination of planned subsamples from the same defined zone and layer.\n\nProbe\n\nA sampling tube; its actual design and collection method must suit the task.\n\nAuger\n\nA rotating cutting tool that loosens and retrieves soil.\n\nContamination\n\nUnwanted material entering and potentially changing a sample.\n\nCross-contamination\n\nTransfer of material between samples or sampling locations.\n\nUndisturbed core\n\nA core collected and handled to preserve the original arrangement as required by its test.",
+      "spokenTextSHA256": "137f98e7d03615cb22b245c6844a628bac2049e04075c292b7fb0a1cdcb7b101",
+      "spokenTextSha256": "137f98e7d03615cb22b245c6844a628bac2049e04075c292b7fb0a1cdcb7b101",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "releaseGate": "CURRENT_VISIBLE_TERMS",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d285fca02a879dfde01de394e92adb71da1db5614ce5877f5439b42ccebe21a5",
+      "requestFingerprintSha256": "d285fca02a879dfde01de394e92adb71da1db5614ce5877f5439b42ccebe21a5",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

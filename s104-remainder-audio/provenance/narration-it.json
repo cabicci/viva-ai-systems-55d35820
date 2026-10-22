@@ -1,0 +1,506 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-04-it.json",
+    "sha256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+    "bytes": 32272
+  },
+  "units": [
+    {
+      "id": "S1-04-it-opening-r1",
+      "unitId": "S1-04-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Il laboratorio può misurare con precisione il terreno che invii e darti comunque una risposta poco utile sul campo se hai raccolto il campione sbagliato. Prima decidi cosa deve rappresentare il campione; poi scegli e prepara gli strumenti.",
+          "sha256": "74ac155b640764ebdc1c9468b343a9be97f7f73bffb030fa5c6276be64db42ec"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Spiegare come un campionamento distorto influenza la decisione e distinguere un sottocampione, un campione composito e un campione raccolto per conservare la struttura del terreno.",
+          "sha256": "fcb90003bf185377fff5fbcfc8a5bb5c9baa7aaaa502a6cd5227cc0f96a43026"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Scegliere uno strumento adatto e spiegare tre fonti di contaminazione, i loro possibili effetti e come prevenirle.",
+          "sha256": "924f5caf27ffc192cecd495e076583778a42f96ec778a96934ac2fbcc45647ab"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Ispezionare e pulire strumenti di campionamento e secchio di plastica prima della raccolta e tra aree diverse sotto osservazione del formatore.",
+          "sha256": "84b05f87c900c4b1899e80864d206b01c755b22061a43000df539891bad121b3"
+        }
+      ],
+      "scientificMeaning": "Il laboratorio può misurare con precisione il terreno che invii e darti comunque una risposta poco utile sul campo se hai raccolto il campione sbagliato. Prima decidi cosa deve rappresentare il campione; poi scegli e prepara gli strumenti.\n\nSpiegare come un campionamento distorto influenza la decisione e distinguere un sottocampione, un campione composito e un campione raccolto per conservare la struttura del terreno.\n\nScegliere uno strumento adatto e spiegare tre fonti di contaminazione, i loro possibili effetti e come prevenirle.\n\nIspezionare e pulire strumenti di campionamento e secchio di plastica prima della raccolta e tra aree diverse sotto osservazione del formatore.",
+      "displayText": "Il laboratorio può misurare con precisione il terreno che invii e darti comunque una risposta poco utile sul campo se hai raccolto il campione sbagliato. Prima decidi cosa deve rappresentare il campione; poi scegli e prepara gli strumenti.\n\nSpiegare come un campionamento distorto influenza la decisione e distinguere un sottocampione, un campione composito e un campione raccolto per conservare la struttura del terreno.\n\nScegliere uno strumento adatto e spiegare tre fonti di contaminazione, i loro possibili effetti e come prevenirle.\n\nIspezionare e pulire strumenti di campionamento e secchio di plastica prima della raccolta e tra aree diverse sotto osservazione del formatore.",
+      "captionText": "Il laboratorio può misurare con precisione il terreno che invii e darti comunque una risposta poco utile sul campo se hai raccolto il campione sbagliato. Prima decidi cosa deve rappresentare il campione; poi scegli e prepara gli strumenti.\n\nSpiegare come un campionamento distorto influenza la decisione e distinguere un sottocampione, un campione composito e un campione raccolto per conservare la struttura del terreno.\n\nScegliere uno strumento adatto e spiegare tre fonti di contaminazione, i loro possibili effetti e come prevenirle.\n\nIspezionare e pulire strumenti di campionamento e secchio di plastica prima della raccolta e tra aree diverse sotto osservazione del formatore.",
+      "spokenText": "Il laboratorio può misurare con precisione il terreno che invii e darti comunque una risposta poco utile sul campo se hai raccolto il campione sbagliato. Prima decidi cosa deve rappresentare il campione; poi scegli e prepara gli strumenti.\n\nSpiegare come un campionamento distorto influenza la decisione e distinguere un sottocampione, un campione composito e un campione raccolto per conservare la struttura del terreno.\n\nScegliere uno strumento adatto e spiegare tre fonti di contaminazione, i loro possibili effetti e come prevenirle.\n\nIspezionare e pulire strumenti di campionamento e secchio di plastica prima della raccolta e tra aree diverse sotto osservazione del formatore.",
+      "spokenTextSHA256": "f52fff21c148669e4d0babf4b48d1e04145c83267362c7a1a50e3f41881ad205",
+      "spokenTextSha256": "f52fff21c148669e4d0babf4b48d1e04145c83267362c7a1a50e3f41881ad205",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "CURRENT_VISIBLE_TEACHING",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0dd7e5a858c6a5fca67b5bf0bfcda9d14f6f55e7f2b94d0beccc10e74aaa272f",
+      "requestFingerprintSha256": "0dd7e5a858c6a5fca67b5bf0bfcda9d14f6f55e7f2b94d0beccc10e74aaa272f",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-E01-r1",
+      "unitId": "S1-04-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una zona del campo ha piante gialle e stentate, mentre un'altra cresce meglio. Uno studente propone di raccogliere terreno vicino al cancello e usare il risultato per trattare tutto il campo.",
+          "sha256": "876cc32e8c913997dee37f13e676d049210cc6829ae99f33ab1586aeb2edafda"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Definisci la domanda: indaga la zona con crescita scarsa e confronta prove pertinenti, invece di diagnosticare l'intero campo da un punto comodo.",
+          "sha256": "3dc6ade19619f58163bf4ad1f3a64583e9f408128380ff38eaa6790bd0b49862"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Registra la differenza e discuti con il formatore zone di campionamento separate. Non mescolare aree contrastanti prima di decidere cosa devono rappresentare.",
+          "sha256": "a6f3bc8117e3f41bd1b46f1a1d43fb620c52430345dd1becbb1a6174457b845c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Seleziona analisi e istruzioni di raccolta appropriate. Interpreta i risultati insieme alle osservazioni e alla storia della coltura; non presumere che un risultato del terreno escluda parassiti, stress idrico o qualsiasi altra causa.",
+          "sha256": "a99c004ab08597d5855a26625b2fb321a1715dc07f297d1dfbb9463919bc7d5d"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Fai rappresentare al campione il problema che vuoi studiare prima di decidere un trattamento.",
+          "sha256": "bafb14a5b4e9a1550326b48eb8591c1ed7a7bd13ccefe9656946607ce659585b"
+        }
+      ],
+      "scientificMeaning": "Una zona del campo ha piante gialle e stentate, mentre un'altra cresce meglio. Uno studente propone di raccogliere terreno vicino al cancello e usare il risultato per trattare tutto il campo.\n\nDefinisci la domanda: indaga la zona con crescita scarsa e confronta prove pertinenti, invece di diagnosticare l'intero campo da un punto comodo.\n\nRegistra la differenza e discuti con il formatore zone di campionamento separate. Non mescolare aree contrastanti prima di decidere cosa devono rappresentare.\n\nSeleziona analisi e istruzioni di raccolta appropriate. Interpreta i risultati insieme alle osservazioni e alla storia della coltura; non presumere che un risultato del terreno escluda parassiti, stress idrico o qualsiasi altra causa.\n\nFai rappresentare al campione il problema che vuoi studiare prima di decidere un trattamento.",
+      "displayText": "Una zona del campo ha piante gialle e stentate, mentre un'altra cresce meglio. Uno studente propone di raccogliere terreno vicino al cancello e usare il risultato per trattare tutto il campo.\n\nDefinisci la domanda: indaga la zona con crescita scarsa e confronta prove pertinenti, invece di diagnosticare l'intero campo da un punto comodo.\n\nRegistra la differenza e discuti con il formatore zone di campionamento separate. Non mescolare aree contrastanti prima di decidere cosa devono rappresentare.\n\nSeleziona analisi e istruzioni di raccolta appropriate. Interpreta i risultati insieme alle osservazioni e alla storia della coltura; non presumere che un risultato del terreno escluda parassiti, stress idrico o qualsiasi altra causa.\n\nFai rappresentare al campione il problema che vuoi studiare prima di decidere un trattamento.",
+      "captionText": "Una zona del campo ha piante gialle e stentate, mentre un'altra cresce meglio. Uno studente propone di raccogliere terreno vicino al cancello e usare il risultato per trattare tutto il campo.\n\nDefinisci la domanda: indaga la zona con crescita scarsa e confronta prove pertinenti, invece di diagnosticare l'intero campo da un punto comodo.\n\nRegistra la differenza e discuti con il formatore zone di campionamento separate. Non mescolare aree contrastanti prima di decidere cosa devono rappresentare.\n\nSeleziona analisi e istruzioni di raccolta appropriate. Interpreta i risultati insieme alle osservazioni e alla storia della coltura; non presumere che un risultato del terreno escluda parassiti, stress idrico o qualsiasi altra causa.\n\nFai rappresentare al campione il problema che vuoi studiare prima di decidere un trattamento.",
+      "spokenText": "Una zona del campo ha piante gialle e stentate, mentre un'altra cresce meglio. Uno studente propone di raccogliere terreno vicino al cancello e usare il risultato per trattare tutto il campo.\n\nDefinisci la domanda: indaga la zona con crescita scarsa e confronta prove pertinenti, invece di diagnosticare l'intero campo da un punto comodo.\n\nRegistra la differenza e discuti con il formatore zone di campionamento separate. Non mescolare aree contrastanti prima di decidere cosa devono rappresentare.\n\nSeleziona analisi e istruzioni di raccolta appropriate. Interpreta i risultati insieme alle osservazioni e alla storia della coltura; non presumere che un risultato del terreno escluda parassiti, stress idrico o qualsiasi altra causa.\n\nFai rappresentare al campione il problema che vuoi studiare prima di decidere un trattamento.",
+      "spokenTextSHA256": "3ab841734959b5671eb1c249962558401c6bec03667689e69e9ece026c4c3d7b",
+      "spokenTextSha256": "3ab841734959b5671eb1c249962558401c6bec03667689e69e9ece026c4c3d7b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "CURRENT_VISIBLE_WORKED_EXAMPLE_NOT_HIDDEN_QUIZ_KEY",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ec516d3c092b8a658be8a9b3e1ec97786a9d7133c7a0b4b8a4341db31e64193",
+      "requestFingerprintSha256": "6ec516d3c092b8a658be8a9b3e1ec97786a9d7133c7a0b4b8a4341db31e64193",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-E03-r1",
+      "unitId": "S1-04-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Il gruppo finisce un campo e arriva in un altro. Poco terreno rimane nella scanalatura della sonda e sul bordo del secchio.",
+          "sha256": "7818ac85168c8f0c48e93b0d6c2cbca53a0931254f64f771d87dc9dab85c90ec"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Fermati prima di raccogliere terreno nel nuovo campo.",
+          "sha256": "bd402cc92ad98aa972503b26e71dbe5c05c0abc304598ee35d69dfd9cdf23b8f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Rimuovi e pulisci il materiale precedente da strumento e secchio con la procedura approvata, incluse le parti dove i residui sfuggono facilmente.",
+          "sha256": "ee68c11f946c31597beecd1244c790505f51830e9e0addb0edba60ecc258b5ff"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Ricontrolla superfici e pulizia dei guanti, poi avvia separatamente il nuovo campione identificato. Non spazzolare vecchio terreno nel nuovo secchio chiamandolo sottocampione.",
+          "sha256": "fc77905974ad0172293200baff5c10aa1f957214d72636ce259e8d0322446a0f"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "La pulizia tra luoghi protegge il legame tra terreno e nome sul sacchetto.",
+          "sha256": "9033443fd16ab155842f3b644efc5a8923387e2e8ad8a45e345afa7901d7d33e"
+        }
+      ],
+      "scientificMeaning": "Il gruppo finisce un campo e arriva in un altro. Poco terreno rimane nella scanalatura della sonda e sul bordo del secchio.\n\nFermati prima di raccogliere terreno nel nuovo campo.\n\nRimuovi e pulisci il materiale precedente da strumento e secchio con la procedura approvata, incluse le parti dove i residui sfuggono facilmente.\n\nRicontrolla superfici e pulizia dei guanti, poi avvia separatamente il nuovo campione identificato. Non spazzolare vecchio terreno nel nuovo secchio chiamandolo sottocampione.\n\nLa pulizia tra luoghi protegge il legame tra terreno e nome sul sacchetto.",
+      "displayText": "Il gruppo finisce un campo e arriva in un altro. Poco terreno rimane nella scanalatura della sonda e sul bordo del secchio.\n\nFermati prima di raccogliere terreno nel nuovo campo.\n\nRimuovi e pulisci il materiale precedente da strumento e secchio con la procedura approvata, incluse le parti dove i residui sfuggono facilmente.\n\nRicontrolla superfici e pulizia dei guanti, poi avvia separatamente il nuovo campione identificato. Non spazzolare vecchio terreno nel nuovo secchio chiamandolo sottocampione.\n\nLa pulizia tra luoghi protegge il legame tra terreno e nome sul sacchetto.",
+      "captionText": "Il gruppo finisce un campo e arriva in un altro. Poco terreno rimane nella scanalatura della sonda e sul bordo del secchio.\n\nFermati prima di raccogliere terreno nel nuovo campo.\n\nRimuovi e pulisci il materiale precedente da strumento e secchio con la procedura approvata, incluse le parti dove i residui sfuggono facilmente.\n\nRicontrolla superfici e pulizia dei guanti, poi avvia separatamente il nuovo campione identificato. Non spazzolare vecchio terreno nel nuovo secchio chiamandolo sottocampione.\n\nLa pulizia tra luoghi protegge il legame tra terreno e nome sul sacchetto.",
+      "spokenText": "Il gruppo finisce un campo e arriva in un altro. Poco terreno rimane nella scanalatura della sonda e sul bordo del secchio.\n\nFermati prima di raccogliere terreno nel nuovo campo.\n\nRimuovi e pulisci il materiale precedente da strumento e secchio con la procedura approvata, incluse le parti dove i residui sfuggono facilmente.\n\nRicontrolla superfici e pulizia dei guanti, poi avvia separatamente il nuovo campione identificato. Non spazzolare vecchio terreno nel nuovo secchio chiamandolo sottocampione.\n\nLa pulizia tra luoghi protegge il legame tra terreno e nome sul sacchetto.",
+      "spokenTextSHA256": "235c86a5e68e345f377062ec6978e4be3c2dc08d8ec7c0d028a48bd7719c6a20",
+      "spokenTextSha256": "235c86a5e68e345f377062ec6978e4be3c2dc08d8ec7c0d028a48bd7719c6a20",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "CURRENT_VISIBLE_WORKED_EXAMPLE_NOT_HIDDEN_QUIZ_KEY",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e3268f6a946e655cb420b2586d36f969d14aae581291a1ed32d61dfe9dfdbbb4",
+      "requestFingerprintSha256": "e3268f6a946e655cb420b2586d36f969d14aae581291a1ed32d61dfe9dfdbbb4",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-P01-r1",
+      "unitId": "S1-04-it-P01-r1",
+      "locale": "it",
+      "semanticGroup": "P01",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/practical/title",
+          "text": "Prepara l'attrezzatura per due aree di campionamento",
+          "sha256": "067442647262923959ecceadb5765d6704cced8524aa66d446e96d0073e61c1e"
+        },
+        {
+          "pointer": "/practical/safety",
+          "text": "Il formatore fornisce strumenti adatti, un'area di preparazione pulita, la procedura di pulizia prevista e materiali sicuri per rappresentare i residui. Non si usano contenitori chimici sconosciuti, polveri pericolose o indagini su servizi interrati.",
+          "sha256": "8034d90e26ae52045bea8982aee3522356002b2b00bf67383116c10bd6d8cc72"
+        },
+        {
+          "pointer": "/practical/steps/0",
+          "text": "Nomina sonda, trivella, vanga o pala, piccola paletta e secchio di plastica. Spiega quale strumento è adatto al campione assegnato e perché.",
+          "sha256": "dd024b5b0eb595a66d80b1e8b75b42b495dbc3080dd3b83d9a0a905aa66270d8"
+        },
+        {
+          "pointer": "/practical/steps/1",
+          "text": "Controlla manici, giunti e superfici a contatto col campione. Riconosci e metti da parte un esempio etichettato come difettoso o inadatto senza usarlo.",
+          "sha256": "663c2779039ab62c8183bded38d7275ecbccc5f77408995bbba408582e29888d"
+        },
+        {
+          "pointer": "/practical/steps/2",
+          "text": "Pulisci strumenti e secchio secondo la procedura data, incluse scanalature e bordo; risciacqua e asciuga come indicato.",
+          "sha256": "37d0e16b26e7632d2ff09fde5dd42add17a0f615136655a7c8c00c8943f360e3"
+        },
+        {
+          "pointer": "/practical/steps/3",
+          "text": "Dimostra come impedisci che superfici preparate e guanti trasferiscano nuovamente residui nel campione.",
+          "sha256": "a0c30263e666b3bc38e939f226e36c691b2bfbd94edecd4831f16c168c5c3a62"
+        },
+        {
+          "pointer": "/practical/steps/4",
+          "text": "Nel passaggio simulato alla seconda area, fermati e ripeti controllo della pulizia e dell'idoneità prima di raccogliere altro.",
+          "sha256": "faa5c1310a6c45946d97de831e2541e2c5c0e6b3824ad54924b6f1145242b7bb"
+        },
+        {
+          "pointer": "/practical/steps/5",
+          "text": "Spiega almeno tre vie di contaminazione e le conseguenze di un controllo saltato.",
+          "sha256": "274a621c0aa552379bfface5926e956401c61606e38e394e5cb97614090fa653"
+        },
+        {
+          "pointer": "/practical/evidence/0",
+          "text": "Osservazione individuale del riconoscimento degli strumenti e della scelta motivata.",
+          "sha256": "ac693df2411234094d21a8b28937c78aa80d34b6f5adcad8cbdc2df1dab5e0f7"
+        },
+        {
+          "pointer": "/practical/evidence/1",
+          "text": "Controllo e rifiuto dell'esempio difettoso o contaminato.",
+          "sha256": "6ee5cd1555a0476ec4da131539d46d79ee9ddd450005e0112a6f84ef6dbee77a"
+        },
+        {
+          "pointer": "/practical/evidence/2",
+          "text": "Osservazione della pulizia prescritta e dei controlli tra aree.",
+          "sha256": "a10374498b124956650f58e0ef6e69bcf29b5833f34107dfd4e320a56bbc6db5"
+        },
+        {
+          "pointer": "/practical/passRule",
+          "text": "Tutte le azioni di preparazione degli strumenti devono essere svolte correttamente e in sicurezza sotto osservazione del formatore. Correggi le parti saltate e ripeti l'azione interessata. Le spiegazioni scritte aiutano ma non sostituiscono la pulizia osservata.",
+          "sha256": "26a811899773b78ffee543dbf3c43dc5a58fe4d533dabe06012bd601da6ba2ae"
+        }
+      ],
+      "scientificMeaning": "Prepara l'attrezzatura per due aree di campionamento\n\nIl formatore fornisce strumenti adatti, un'area di preparazione pulita, la procedura di pulizia prevista e materiali sicuri per rappresentare i residui. Non si usano contenitori chimici sconosciuti, polveri pericolose o indagini su servizi interrati.\n\nNomina sonda, trivella, vanga o pala, piccola paletta e secchio di plastica. Spiega quale strumento è adatto al campione assegnato e perché.\n\nControlla manici, giunti e superfici a contatto col campione. Riconosci e metti da parte un esempio etichettato come difettoso o inadatto senza usarlo.\n\nPulisci strumenti e secchio secondo la procedura data, incluse scanalature e bordo; risciacqua e asciuga come indicato.\n\nDimostra come impedisci che superfici preparate e guanti trasferiscano nuovamente residui nel campione.\n\nNel passaggio simulato alla seconda area, fermati e ripeti controllo della pulizia e dell'idoneità prima di raccogliere altro.\n\nSpiega almeno tre vie di contaminazione e le conseguenze di un controllo saltato.\n\nOsservazione individuale del riconoscimento degli strumenti e della scelta motivata.\n\nControllo e rifiuto dell'esempio difettoso o contaminato.\n\nOsservazione della pulizia prescritta e dei controlli tra aree.\n\nTutte le azioni di preparazione degli strumenti devono essere svolte correttamente e in sicurezza sotto osservazione del formatore. Correggi le parti saltate e ripeti l'azione interessata. Le spiegazioni scritte aiutano ma non sostituiscono la pulizia osservata.",
+      "displayText": "Prepara l'attrezzatura per due aree di campionamento\n\nIl formatore fornisce strumenti adatti, un'area di preparazione pulita, la procedura di pulizia prevista e materiali sicuri per rappresentare i residui. Non si usano contenitori chimici sconosciuti, polveri pericolose o indagini su servizi interrati.\n\nNomina sonda, trivella, vanga o pala, piccola paletta e secchio di plastica. Spiega quale strumento è adatto al campione assegnato e perché.\n\nControlla manici, giunti e superfici a contatto col campione. Riconosci e metti da parte un esempio etichettato come difettoso o inadatto senza usarlo.\n\nPulisci strumenti e secchio secondo la procedura data, incluse scanalature e bordo; risciacqua e asciuga come indicato.\n\nDimostra come impedisci che superfici preparate e guanti trasferiscano nuovamente residui nel campione.\n\nNel passaggio simulato alla seconda area, fermati e ripeti controllo della pulizia e dell'idoneità prima di raccogliere altro.\n\nSpiega almeno tre vie di contaminazione e le conseguenze di un controllo saltato.\n\nOsservazione individuale del riconoscimento degli strumenti e della scelta motivata.\n\nControllo e rifiuto dell'esempio difettoso o contaminato.\n\nOsservazione della pulizia prescritta e dei controlli tra aree.\n\nTutte le azioni di preparazione degli strumenti devono essere svolte correttamente e in sicurezza sotto osservazione del formatore. Correggi le parti saltate e ripeti l'azione interessata. Le spiegazioni scritte aiutano ma non sostituiscono la pulizia osservata.",
+      "captionText": "Prepara l'attrezzatura per due aree di campionamento\n\nIl formatore fornisce strumenti adatti, un'area di preparazione pulita, la procedura di pulizia prevista e materiali sicuri per rappresentare i residui. Non si usano contenitori chimici sconosciuti, polveri pericolose o indagini su servizi interrati.\n\nNomina sonda, trivella, vanga o pala, piccola paletta e secchio di plastica. Spiega quale strumento è adatto al campione assegnato e perché.\n\nControlla manici, giunti e superfici a contatto col campione. Riconosci e metti da parte un esempio etichettato come difettoso o inadatto senza usarlo.\n\nPulisci strumenti e secchio secondo la procedura data, incluse scanalature e bordo; risciacqua e asciuga come indicato.\n\nDimostra come impedisci che superfici preparate e guanti trasferiscano nuovamente residui nel campione.\n\nNel passaggio simulato alla seconda area, fermati e ripeti controllo della pulizia e dell'idoneità prima di raccogliere altro.\n\nSpiega almeno tre vie di contaminazione e le conseguenze di un controllo saltato.\n\nOsservazione individuale del riconoscimento degli strumenti e della scelta motivata.\n\nControllo e rifiuto dell'esempio difettoso o contaminato.\n\nOsservazione della pulizia prescritta e dei controlli tra aree.\n\nTutte le azioni di preparazione degli strumenti devono essere svolte correttamente e in sicurezza sotto osservazione del formatore. Correggi le parti saltate e ripeti l'azione interessata. Le spiegazioni scritte aiutano ma non sostituiscono la pulizia osservata.",
+      "spokenText": "Prepara l'attrezzatura per due aree di campionamento\n\nIl formatore fornisce strumenti adatti, un'area di preparazione pulita, la procedura di pulizia prevista e materiali sicuri per rappresentare i residui. Non si usano contenitori chimici sconosciuti, polveri pericolose o indagini su servizi interrati.\n\nNomina sonda, trivella, vanga o pala, piccola paletta e secchio di plastica. Spiega quale strumento è adatto al campione assegnato e perché.\n\nControlla manici, giunti e superfici a contatto col campione. Riconosci e metti da parte un esempio etichettato come difettoso o inadatto senza usarlo.\n\nPulisci strumenti e secchio secondo la procedura data, incluse scanalature e bordo; risciacqua e asciuga come indicato.\n\nDimostra come impedisci che superfici preparate e guanti trasferiscano nuovamente residui nel campione.\n\nNel passaggio simulato alla seconda area, fermati e ripeti controllo della pulizia e dell'idoneità prima di raccogliere altro.\n\nSpiega almeno tre vie di contaminazione e le conseguenze di un controllo saltato.\n\nOsservazione individuale del riconoscimento degli strumenti e della scelta motivata.\n\nControllo e rifiuto dell'esempio difettoso o contaminato.\n\nOsservazione della pulizia prescritta e dei controlli tra aree.\n\nTutte le azioni di preparazione degli strumenti devono essere svolte correttamente e in sicurezza sotto osservazione del formatore. Correggi le parti saltate e ripeti l'azione interessata. Le spiegazioni scritte aiutano ma non sostituiscono la pulizia osservata.",
+      "spokenTextSHA256": "fa111aad4d41617d3b465767a1ee9adc05335fb66ef09bc20902390dac4971d5",
+      "spokenTextSha256": "fa111aad4d41617d3b465767a1ee9adc05335fb66ef09bc20902390dac4971d5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "HARMLESS_TRAINER_OBSERVED_PREPARATION_NOT_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6f1f94c119f63eac1b5997e42bffdac173f5d89f4fb0f49f6f8e539be54a9a41",
+      "requestFingerprintSha256": "6f1f94c119f63eac1b5997e42bffdac173f5d89f4fb0f49f6f8e539be54a9a41",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-guided-practice-r1",
+      "unitId": "S1-04-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Un campo ha una zona di crescita scarsa e una migliore. Scegli la domanda a cui deve rispondere ciascun campione, lo strumento e il recipiente adatti, poi individua cosa cambia quando il gruppo passa alla seconda area.",
+          "sha256": "014cd69881ce0a128bf274ff145306fe4c910cc1ace95d9c5782268b3ff0d27f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Tieni separate zone di gestione o confronto invece di usare un campione comodo vicino al cancello per tutto il campo.",
+          "sha256": "19f948a3d42e7141b48653709d28071784bcf6c93833caec721b4baaab587064"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Distingui sottocampione, composito di una zona definita e campione raccolto per conservare la struttura.",
+          "sha256": "4d03597796a8695c7550b242d2999a84c22dfd3f6948370f7568dc000605c664"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Scarta un secchio zincato che si sfalda per l'analisi dei nutrienti e identifica i rischi di zinco o metallo.",
+          "sha256": "5a71fc2245ba022629bb2bc7ca00d7cfe483c01bd9adfdedc8954f97d76bc004"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Metti in ordine ispezione e pulizia con metodo approvato prima del primo uso e tra aree.",
+          "sha256": "1abd82579d5c57acc54a807497ab5c1b18d67b8e2775f4ecb0bb52e9e60ab6f9"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Ispezione e pulizia effettive degli strumenti richiedono una prova pratica separata sotto osservazione.",
+          "sha256": "8731a54c8fbd0116a364852b61f5129bcbf38b9ce377f495b3712df97babc918"
+        }
+      ],
+      "scientificMeaning": "Un campo ha una zona di crescita scarsa e una migliore. Scegli la domanda a cui deve rispondere ciascun campione, lo strumento e il recipiente adatti, poi individua cosa cambia quando il gruppo passa alla seconda area.\n\nTieni separate zone di gestione o confronto invece di usare un campione comodo vicino al cancello per tutto il campo.\n\nDistingui sottocampione, composito di una zona definita e campione raccolto per conservare la struttura.\n\nScarta un secchio zincato che si sfalda per l'analisi dei nutrienti e identifica i rischi di zinco o metallo.\n\nMetti in ordine ispezione e pulizia con metodo approvato prima del primo uso e tra aree.\n\nIspezione e pulizia effettive degli strumenti richiedono una prova pratica separata sotto osservazione.",
+      "displayText": "Un campo ha una zona di crescita scarsa e una migliore. Scegli la domanda a cui deve rispondere ciascun campione, lo strumento e il recipiente adatti, poi individua cosa cambia quando il gruppo passa alla seconda area.\n\nTieni separate zone di gestione o confronto invece di usare un campione comodo vicino al cancello per tutto il campo.\n\nDistingui sottocampione, composito di una zona definita e campione raccolto per conservare la struttura.\n\nScarta un secchio zincato che si sfalda per l'analisi dei nutrienti e identifica i rischi di zinco o metallo.\n\nMetti in ordine ispezione e pulizia con metodo approvato prima del primo uso e tra aree.\n\nIspezione e pulizia effettive degli strumenti richiedono una prova pratica separata sotto osservazione.",
+      "captionText": "Un campo ha una zona di crescita scarsa e una migliore. Scegli la domanda a cui deve rispondere ciascun campione, lo strumento e il recipiente adatti, poi individua cosa cambia quando il gruppo passa alla seconda area.\n\nTieni separate zone di gestione o confronto invece di usare un campione comodo vicino al cancello per tutto il campo.\n\nDistingui sottocampione, composito di una zona definita e campione raccolto per conservare la struttura.\n\nScarta un secchio zincato che si sfalda per l'analisi dei nutrienti e identifica i rischi di zinco o metallo.\n\nMetti in ordine ispezione e pulizia con metodo approvato prima del primo uso e tra aree.\n\nIspezione e pulizia effettive degli strumenti richiedono una prova pratica separata sotto osservazione.",
+      "spokenText": "Un campo ha una zona di crescita scarsa e una migliore. Scegli la domanda a cui deve rispondere ciascun campione, lo strumento e il recipiente adatti, poi individua cosa cambia quando il gruppo passa alla seconda area.\n\nTieni separate zone di gestione o confronto invece di usare un campione comodo vicino al cancello per tutto il campo.\n\nDistingui sottocampione, composito di una zona definita e campione raccolto per conservare la struttura.\n\nScarta un secchio zincato che si sfalda per l'analisi dei nutrienti e identifica i rischi di zinco o metallo.\n\nMetti in ordine ispezione e pulizia con metodo approvato prima del primo uso e tra aree.\n\nIspezione e pulizia effettive degli strumenti richiedono una prova pratica separata sotto osservazione.",
+      "spokenTextSHA256": "d46c8f0954beda9df9380ab3d322f80fe5147a20bbc281f6761188b788cc1910",
+      "spokenTextSha256": "d46c8f0954beda9df9380ab3d322f80fe5147a20bbc281f6761188b788cc1910",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "GUIDED_PROMPT_ACTIONS_BOUNDARY_ONLY_FEEDBACK_EXCLUDED",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4eeefa4f0d08d8f13b7c5639dd490dfff0e844eab28693dd4976fdca86ecd5e4",
+      "requestFingerprintSha256": "4eeefa4f0d08d8f13b7c5639dd490dfff0e844eab28693dd4976fdca86ecd5e4",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-reflection-r1",
+      "unitId": "S1-04-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So riconoscere e scegliere gli strumenti giusti per campionare il terreno?",
+          "sha256": "51183fe11067fe106f412a5d90abdda84904a17e82fa89501f1a0f2829d6f85b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Usa la scelta per individuare cosa esercitare. Il completamento pratico richiede prove individuali osservate dal formatore.",
+          "sha256": "a06898d092d549886fa1b6600b9c125a1cd936199e73335aa3d5fd804580070c"
+        }
+      ],
+      "scientificMeaning": "So riconoscere e scegliere gli strumenti giusti per campionare il terreno?\n\nUsa la scelta per individuare cosa esercitare. Il completamento pratico richiede prove individuali osservate dal formatore.",
+      "displayText": "So riconoscere e scegliere gli strumenti giusti per campionare il terreno?\n\nUsa la scelta per individuare cosa esercitare. Il completamento pratico richiede prove individuali osservate dal formatore.",
+      "captionText": "So riconoscere e scegliere gli strumenti giusti per campionare il terreno?\n\nUsa la scelta per individuare cosa esercitare. Il completamento pratico richiede prove individuali osservate dal formatore.",
+      "spokenText": "So riconoscere e scegliere gli strumenti giusti per campionare il terreno?\n\nUsa la scelta per individuare cosa esercitare. Il completamento pratico richiede prove individuali osservate dal formatore.",
+      "spokenTextSHA256": "d426c65e6595453c8fd196be74a257652404f81290d0f45e3ef57718eccb966d",
+      "spokenTextSha256": "d426c65e6595453c8fd196be74a257652404f81290d0f45e3ef57718eccb966d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "SELF_REFLECTION_NOT_SKILL_CERTIFICATION",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "92aca539287b1483041286f8cdde404c82015d1441d0eaf264057cb5d8cb179a",
+      "requestFingerprintSha256": "92aca539287b1483041286f8cdde404c82015d1441d0eaf264057cb5d8cb179a",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-04-it-glossary-r1",
+      "unitId": "S1-04-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5f58667482a4fe3eafa194a1659242155d8fabe4fc8db26b2abaa189846dc994",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Campione rappresentativo",
+          "sha256": "99350bbdc86c5906098d9a7f35a0da6184bc1af39608ccfa636db5ca4c608f70"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Campione raccolto per descrivere area e strato indicati dallo scopo del prelievo.",
+          "sha256": "7912fd81f27b02e3021bfd15db5783343007c34409f10a346a8c66f6a1b16261"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Sottocampione",
+          "sha256": "a6ca68e2a84f856d6e55ffa41e69efa389bbb50126f070baf95774659ddc8fb1"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Piccola porzione raccolta in un luogo e a una profondità pianificati.",
+          "sha256": "2aed3d7b61c056cd98020056a4894373a5080efe1e5e9232bfda681733ab9427"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Campione composito",
+          "sha256": "aa93632446b689d7c636b1801559a4d6a304cc2c68a122254b40eb360bdcef57"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Combinazione ben mescolata di sottocampioni pianificati della stessa zona e dello stesso strato definiti.",
+          "sha256": "8438b642eb09ccfe7890b6d64e3722101504f45d77e4a77b1fffb5c60f6ca4a2"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Sonda",
+          "sha256": "f3ec89e7942e25df4b9d9e76608264dc3e9ed26be0763bc212791993b76202a0"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Tubo di campionamento; disegno e metodo effettivi devono essere adatti al compito.",
+          "sha256": "5bebbe2062001dcf952e5b6fdbda4eb7669669ec0bd3e28e1ecd05e0a6771b6e"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Trivella",
+          "sha256": "3ce8c6908977e41db8a15a056fda296ef993fdbf7edddd80f80029d34d1bdd8b"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Strumento tagliente che ruota, allenta e recupera il terreno.",
+          "sha256": "14ac477dee24fbf1c35b32c1c30286a592d8183d665e89997e032ed168019f36"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Contaminazione",
+          "sha256": "3cceccc175e109ff01e273c360b01b39d9ed09b00821091bb59173696182d401"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Ingresso di materiale indesiderato che può cambiare il campione.",
+          "sha256": "afcc895f0fbef101d077c60803b2473382339999285f3f2f509064f4219ae6cf"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Contaminazione incrociata",
+          "sha256": "27b3068c29967f2a90ce139ff6e890dc059f6bf4be6f126c813ed52193666fc9"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Trasferimento di materiale tra campioni o luoghi di raccolta.",
+          "sha256": "b386042dd81a805da80022fa2e40c7cc6125f2f057beb1b7d5101813b18180ab"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Carota indisturbata",
+          "sha256": "8d8e17852c8778f72b7e597046f2e6fe8d35f76a4f4cabc777d81faa41d94c1a"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Carota raccolta e trattata per conservare la disposizione iniziale richiesta dall'analisi.",
+          "sha256": "28f0045210443935ca78e33e2410faf3b62d653fe4b0b20a53766cddda75cf61"
+        }
+      ],
+      "scientificMeaning": "Campione rappresentativo\n\nCampione raccolto per descrivere area e strato indicati dallo scopo del prelievo.\n\nSottocampione\n\nPiccola porzione raccolta in un luogo e a una profondità pianificati.\n\nCampione composito\n\nCombinazione ben mescolata di sottocampioni pianificati della stessa zona e dello stesso strato definiti.\n\nSonda\n\nTubo di campionamento; disegno e metodo effettivi devono essere adatti al compito.\n\nTrivella\n\nStrumento tagliente che ruota, allenta e recupera il terreno.\n\nContaminazione\n\nIngresso di materiale indesiderato che può cambiare il campione.\n\nContaminazione incrociata\n\nTrasferimento di materiale tra campioni o luoghi di raccolta.\n\nCarota indisturbata\n\nCarota raccolta e trattata per conservare la disposizione iniziale richiesta dall'analisi.",
+      "displayText": "Campione rappresentativo\n\nCampione raccolto per descrivere area e strato indicati dallo scopo del prelievo.\n\nSottocampione\n\nPiccola porzione raccolta in un luogo e a una profondità pianificati.\n\nCampione composito\n\nCombinazione ben mescolata di sottocampioni pianificati della stessa zona e dello stesso strato definiti.\n\nSonda\n\nTubo di campionamento; disegno e metodo effettivi devono essere adatti al compito.\n\nTrivella\n\nStrumento tagliente che ruota, allenta e recupera il terreno.\n\nContaminazione\n\nIngresso di materiale indesiderato che può cambiare il campione.\n\nContaminazione incrociata\n\nTrasferimento di materiale tra campioni o luoghi di raccolta.\n\nCarota indisturbata\n\nCarota raccolta e trattata per conservare la disposizione iniziale richiesta dall'analisi.",
+      "captionText": "Campione rappresentativo\n\nCampione raccolto per descrivere area e strato indicati dallo scopo del prelievo.\n\nSottocampione\n\nPiccola porzione raccolta in un luogo e a una profondità pianificati.\n\nCampione composito\n\nCombinazione ben mescolata di sottocampioni pianificati della stessa zona e dello stesso strato definiti.\n\nSonda\n\nTubo di campionamento; disegno e metodo effettivi devono essere adatti al compito.\n\nTrivella\n\nStrumento tagliente che ruota, allenta e recupera il terreno.\n\nContaminazione\n\nIngresso di materiale indesiderato che può cambiare il campione.\n\nContaminazione incrociata\n\nTrasferimento di materiale tra campioni o luoghi di raccolta.\n\nCarota indisturbata\n\nCarota raccolta e trattata per conservare la disposizione iniziale richiesta dall'analisi.",
+      "spokenText": "Campione rappresentativo\n\nCampione raccolto per descrivere area e strato indicati dallo scopo del prelievo.\n\nSottocampione\n\nPiccola porzione raccolta in un luogo e a una profondità pianificati.\n\nCampione composito\n\nCombinazione ben mescolata di sottocampioni pianificati della stessa zona e dello stesso strato definiti.\n\nSonda\n\nTubo di campionamento; disegno e metodo effettivi devono essere adatti al compito.\n\nTrivella\n\nStrumento tagliente che ruota, allenta e recupera il terreno.\n\nContaminazione\n\nIngresso di materiale indesiderato che può cambiare il campione.\n\nContaminazione incrociata\n\nTrasferimento di materiale tra campioni o luoghi di raccolta.\n\nCarota indisturbata\n\nCarota raccolta e trattata per conservare la disposizione iniziale richiesta dall'analisi.",
+      "spokenTextSHA256": "9c4fb15647ced08c04339acc2dbd1ba346aca2d14d5a365072da78ff1893bdc0",
+      "spokenTextSha256": "9c4fb15647ced08c04339acc2dbd1ba346aca2d14d5a365072da78ff1893bdc0",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "releaseGate": "CURRENT_VISIBLE_TERMS",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_COHERENT_SOURCE_PASSAGE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f45020fa5807687d1a973a18eb2b6f155a29b54d17b613ce71988306fda22b51",
+      "requestFingerprintSha256": "f45020fa5807687d1a973a18eb2b6f155a29b54d17b613ce71988306fda22b51",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
