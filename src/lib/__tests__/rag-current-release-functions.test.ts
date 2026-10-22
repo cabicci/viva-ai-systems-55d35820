@@ -5,7 +5,7 @@ vi.mock('@tanstack/react-start',()=>({createServerFn:()=>({middleware(){return t
 vi.mock('@/integrations/supabase/auth-middleware',()=>({requireSupabaseAuth:{}}));
 vi.mock('@/integrations/supabase/client.server',()=>({supabaseAdmin:{rpc:state.rpcs}}));
 vi.mock('@/lib/rag/current-release/corpus.server',()=>({loadCurrentRelease:()=>{state.loads++;return {approval:{releaseId:'a'.repeat(64),indexVersion:'version',packages:{one:{}}},chunks:[{}]}}}));
-vi.mock('@/lib/rag/lovable-native/executor.server',()=>({createOpenAiEmbeddingFetcher:state.embed}));
+vi.mock('@/lib/rag/lovable-native/embedding-provider.server',()=>({createOpenAiEmbeddingFetcher:state.embed}));
 import { currentRagRequestSchema, getCurrentRagRelease, runCurrentRagRelease } from '../rag-current-release.functions';
 const invoke=(fn:unknown,data?:unknown)=>(fn as (args:unknown)=>Promise<unknown>)({context:state.context,data});
 beforeEach(()=>{
@@ -14,6 +14,11 @@ beforeEach(()=>{
  state.rpcs.mockResolvedValue({data:{executionId:null,state:null},error:null});
 });
 describe('current release server boundary',()=>{
+ it('identifies a lost database transport response without replay or private diagnostics',async()=>{
+  state.rpcs.mockRejectedValue(new TypeError('private network details'));
+  await expect(invoke(getCurrentRagRelease)).rejects.toThrow('CURRENT_DATABASE_TRANSPORT_UNAVAILABLE');
+  expect(state.rpcs).toHaveBeenCalledTimes(1);expect(state.embed).not.toHaveBeenCalled();
+ });
  it('keeps a database SQLSTATE while discarding sensitive row/message details',async()=>{
   state.rpcs.mockResolvedValue({data:null,error:{code:'23514',message:'private row and service-key details'}});
   await expect(invoke(getCurrentRagRelease)).rejects.toThrow('CURRENT_DATABASE_23514');

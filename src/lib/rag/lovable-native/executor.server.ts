@@ -6,7 +6,6 @@
 import type { PackageManifest, RagChunkRecord } from "../types";
 import {
   LOCKED_ARTIFACT_DIGESTS,
-  LOCKED_BATCH_SIZE,
   LOCKED_CHUNK_COUNT,
   LOCKED_EMBEDDING_DIMENSIONS,
   LOCKED_EMBEDDING_MODEL,
@@ -41,11 +40,9 @@ type AdminClient = {
   ) => Promise<{ data: unknown; error: { message: string } | null }>;
 };
 
-export interface EmbeddingFetchResult {
-  vectors: number[][];
-}
-
-export type EmbeddingFetcher = (texts: string[]) => Promise<EmbeddingFetchResult>;
+import { createOpenAiEmbeddingFetcher, type EmbeddingFetcher } from "./embedding-provider.server";
+export { createOpenAiEmbeddingFetcher } from "./embedding-provider.server";
+export type { EmbeddingFetchResult, EmbeddingFetcher } from "./embedding-provider.server";
 
 export type LifecycleGateErrorCode =
   | SanitizedErrorCode
@@ -214,51 +211,6 @@ export function mapStatusRpc(data: Record<string, unknown> | null): RagImportSta
     lastErrorCode: (data.lastErrorCode as string) ?? null,
     plannedBatchCount: Number(data.plannedBatchCount ?? LOCKED_PLANNED_BATCH_COUNT),
     maxProviderAttempts: Number(data.maxProviderAttempts ?? LOCKED_MAX_PROVIDER_ATTEMPTS),
-  };
-}
-
-export function createOpenAiEmbeddingFetcher(apiKey: string): EmbeddingFetcher {
-  return async (texts: string[]) => {
-    if (texts.length === 0) return { vectors: [] };
-    if (texts.length > LOCKED_BATCH_SIZE) {
-      throw new Error("PROVIDER_RESPONSE_INVALID:batch_too_large");
-    }
-    const resp = await fetch("https://api.openai.com/v1/embeddings", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: LOCKED_EMBEDDING_MODEL,
-        input: texts,
-      }),
-    });
-    if (!resp.ok) {
-      await resp.body?.cancel().catch(() => undefined);
-      throw new Error(`PROVIDER_FAILED:HTTP_${resp.status}`);
-    }
-    const json = (await resp.json()) as {
-      data?: Array<{ index: number; embedding: number[] }>;
-    };
-    if (!json.data || json.data.length !== texts.length) {
-      throw new Error("PROVIDER_RESPONSE_INVALID:count");
-    }
-    const sorted = [...json.data].sort((a, b) => a.index - b.index);
-    const vectors: number[][] = [];
-    for (let i = 0; i < sorted.length; i++) {
-      const row = sorted[i]!;
-      if (row.index !== i) throw new Error("PROVIDER_RESPONSE_INVALID:index");
-      const emb = row.embedding;
-      if (!Array.isArray(emb) || emb.length !== LOCKED_EMBEDDING_DIMENSIONS) {
-        throw new Error("PROVIDER_RESPONSE_INVALID:dims");
-      }
-      if (!emb.every((n) => typeof n === "number" && Number.isFinite(n))) {
-        throw new Error("PROVIDER_RESPONSE_INVALID:non_finite");
-      }
-      vectors.push(emb);
-    }
-    return { vectors };
   };
 }
 

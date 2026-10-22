@@ -8,6 +8,35 @@ const view=()=>({releaseId:'a'.repeat(64),indexVersion:'current',packages:4,chun
  state:'staging',completedBatches:1,totalBatches:1,providerAttempts:1,currentActiveVersion:'prior',previousVersion:null}});
 beforeEach(()=>{vi.clearAllMocks();state.status.mockResolvedValue(view());state.run.mockResolvedValue({activated:true});});
 describe('current release administrator controls',()=>{
+ it('prepares exactly one reviewed batch and does not claim the full release is complete',async()=>{
+  state.status.mockResolvedValue({...view(),chunks:192,status:{...view().status,completedBatches:1,totalBatches:3}});
+  state.run.mockResolvedValueOnce({executionId:view().status.executionId}).mockResolvedValueOnce({done:false});
+  render(<CurrentRagReleasePanel/>);fireEvent.click(screen.getByRole('button',{name:'تحديث الحالة'}));
+  const single=await screen.findByRole('button',{name:'تجهيز دفعة واحدة'});expect(single).toBeDisabled();
+  fireEvent.click(screen.getByRole('checkbox',{name:/أوافق على تجهيز/}));fireEvent.click(single);
+  await screen.findByText(/انتهت محاولة تجهيز دفعة واحدة/);
+  expect(state.run.mock.calls.map(([args])=>args.data.operation)).toEqual(['initialize','batch']);
+  expect(screen.queryByText(/اكتمل تجهيز التحديث/)).not.toBeInTheDocument();
+ });
+ it('does not send a second batch after losing the first batch response',async()=>{
+  state.status.mockResolvedValue({...view(),chunks:192,status:{...view().status,completedBatches:1,totalBatches:3}});
+  state.run.mockResolvedValueOnce({executionId:view().status.executionId}).mockRejectedValueOnce(new Error('lost response'));
+  render(<CurrentRagReleasePanel/>);fireEvent.click(screen.getByRole('button',{name:'تحديث الحالة'}));
+  fireEvent.click(await screen.findByRole('checkbox',{name:/أوافق على تجهيز/}));
+  fireEvent.click(screen.getByRole('button',{name:'تجهيز دفعة واحدة'}));
+  await screen.findByText(/لم يتم تشغيل إعادة محاولة تلقائية/);expect(state.run).toHaveBeenCalledTimes(2);
+ });
+ it.each([
+  ['CURRENT_PROVIDER_TIMEOUT','انتهت مهلة انتظار مزود الفهرسة.'],
+  ['CURRENT_DATABASE_TRANSPORT_UNAVAILABLE','انقطع الاتصال بقاعدة البيانات قبل تأكيد نتيجة الطلب.'],
+ ])('explains %s without replaying the action',async(code,text)=>{
+  state.run.mockResolvedValue({errorCode:code});
+  render(<CurrentRagReleasePanel/>);fireEvent.click(screen.getByRole('button',{name:'تحديث الحالة'}));
+  fireEvent.click(await screen.findByRole('checkbox',{name:/راجعت الإصدار/}));
+  fireEvent.click(screen.getByRole('button',{name:'تفعيل الإصدار المراجع'}));
+  await screen.findByText((_,element)=>element?.getAttribute('role')==='status'&&!!element.textContent?.includes(text));
+  expect(state.run).toHaveBeenCalledTimes(1);
+ });
  it('shows a sanitized provider limit and stops without reporting activation success',async()=>{
   state.run.mockResolvedValue({activated:false,errorCode:'CURRENT_PROVIDER_HTTP_429'});
   render(<CurrentRagReleasePanel/>);fireEvent.click(screen.getByRole('button',{name:'تحديث الحالة'}));
