@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { beforeEach, afterEach, describe, expect, it, vi, type Mock } from "vitest";
 import { sha256, sourceChunks, CARD_EMBEDDING_MODEL, type SourceDocument } from "../card-assistant/corpus";
-import { runCardAssistant, indexCardBatch } from "../card-assistant/assistant.server";
+import { runCardAssistant, indexCardBatch, indexCardBatchWithAuthority } from "../card-assistant/assistant.server";
 import type { CardQuestion } from "../card-assistant/runtime";
 
 const mocks = vi.hoisted(() => ({ from: vi.fn(), rpc: vi.fn(), download: vi.fn(), ai: vi.fn() }));
@@ -65,6 +65,28 @@ describe("authenticated server adapter without provider or network calls", () =>
   it("requires a current admin check before any indexing source read", async () => {
     context.supabase.rpc.mockResolvedValue({ data: false, error: null });
     await expect(indexCardBatch({ area: "kids", cardId: "level-1", offset: 0, batchSize: 1 }, context)).rejects.toThrow("ADMIN_REQUIRED");
+    expect(mocks.download).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
+  });
+  it("never starts paid work when the automatic reservation is refused", async () => {
+    const reserve = vi.fn().mockRejectedValue(new Error("AUTOMATION_LEASE_UNAVAILABLE"));
+    await expect(indexCardBatchWithAuthority({ area: "kids", cardId: "level-1", offset: 3, batchSize: 1 }, {
+      check: vi.fn().mockResolvedValue(undefined), beforeEmbedding: reserve,
+    })).rejects.toThrow("AUTOMATION_LEASE_UNAVAILABLE");
+    expect(reserve).toHaveBeenCalledOnce(); expect(fetch).not.toHaveBeenCalled();
+    expect(mocks.rpc.mock.calls.some(([name]) => name === "card_assistant_sync_source")).toBe(false);
+  });
+  it("rejects a changed automatic source before a provider reservation", async () => {
+    const reserve = vi.fn();
+    await expect(indexCardBatchWithAuthority({ area: "kids", cardId: "level-1", offset: 0, batchSize: 1 }, {
+      check: vi.fn().mockResolvedValue(undefined), beforeEmbedding: reserve,
+      sources: [{ stepId: "1", locale: "ar-EG", sourceSha: "0".repeat(64) }],
+    })).rejects.toThrow("AUTOMATION_SOURCE_CHANGED");
+    expect(reserve).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
+  });
+  it("rejects a stopped automatic lease before any source read", async () => {
+    await expect(indexCardBatchWithAuthority({ area: "kids", cardId: "level-1", offset: 0, batchSize: 1 }, {
+      check: vi.fn().mockRejectedValue(new Error("AUTOMATION_LEASE_UNAVAILABLE")),
+    })).rejects.toThrow("AUTOMATION_LEASE_UNAVAILABLE");
     expect(mocks.download).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
   });
 });

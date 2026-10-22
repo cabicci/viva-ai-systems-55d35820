@@ -88,32 +88,47 @@ async function requireAdmin(context: Context) {
   if (await rpc<boolean>(context.supabase, "card_assistant_review_allowed", {}) !== true) throw new Error("CARD_ADMIN_REQUIRED");
 }
 export async function indexCardBatch(data: { area: "kids" | "technical"; cardId: string; offset: number; batchSize: number }, context: Context) {
-  await requireAdmin(context);
+  return indexCardBatchWithAuthority(data, { check: () => requireAdmin(context) });
+}
+/** Server-only shared preparation core. Interactive requests keep their own
+ * administrator checks; automatic work supplies a durable, service-owned lease. */
+export async function indexCardBatchWithAuthority(data: { area: "kids" | "technical"; cardId: string; offset: number; batchSize: number }, authority: {
+  check: () => Promise<void>;
+  beforeEmbedding?: () => Promise<void>;
+  sources?: { stepId: string; locale: string; sourceSha: string }[];
+}) {
+  await authority.check();
   const card = registeredCard(data.area, data.cardId);
   const locales: SupportedLocale[] = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
   const scopes = card.steps.flatMap(step => locales.map(locale => ({ stepId: step.id, locale })));
   const admin = await adminClient();
   let embedded = 0, reused = 0, synchronized = 0;
+  const proofs: { stepId: string; locale: string; sourceSha: string; chunks: { id: string; payloadSha: string; contentSha: string }[] }[] = [];
   for (const scope of scopes.slice(data.offset, data.offset + data.batchSize)) {
     const source = await loadSource(data.area, data.cardId, scope.stepId, scope.locale);
+    if (authority.sources && !authority.sources.some(expected => expected.stepId === scope.stepId &&
+      expected.locale === scope.locale && expected.sourceSha === source?.sourceSha256)) throw new Error("AUTOMATION_SOURCE_CHANGED");
     const chunks = source ? await sourceChunks(source) : [];
     const old = await rpc<IndexedChunk[]>(admin, "card_assistant_existing", {
       p_area: data.area, p_card: data.cardId, p_step: scope.stepId, p_locale: scope.locale,
     });
     const plan = planChunkUpdates(chunks, old);
     const fresh = plan.filter(item => !item.embedding);
+    if (fresh.length) await authority.beforeEmbedding?.();
     const vectors = await embeddings(fresh.map(item => item.chunk.content));
     let cursor = 0;
     const rows = plan.map(item => ({ ...item.chunk, embedding: JSON.stringify(item.embedding ?? vectors[cursor++]),
       embeddingModel: CARD_EMBEDDING_MODEL, embeddingDimensions: CARD_EMBEDDING_DIMENSIONS }));
-    await requireAdmin(context);
+    await authority.check();
     // One transaction verifies current source identity and replaces only this
     // complete source scope, deleting removed sections without touching others.
     await rpc<number>(admin, "card_assistant_sync_source", { p_area: data.area, p_card: data.cardId, p_step: scope.stepId,
       p_locale: scope.locale, p_source_sha: source?.sourceSha256 ?? null, p_payload_sha: chunks[0]?.payloadSha256 ?? null,
       p_payload: source?.payload ?? null, p_rows: rows });
     embedded += fresh.length; reused += plan.length - fresh.length; synchronized++;
+    if (source) proofs.push({ stepId: scope.stepId, locale: scope.locale, sourceSha: source.sourceSha256,
+      chunks: chunks.map(chunk => ({ id: chunk.chunkId, payloadSha: chunk.payloadSha256, contentSha: chunk.contentSha256 })) });
   }
-  return { area: data.area, cardId: data.cardId, synchronized, embedded, reused,
+  return { area: data.area, cardId: data.cardId, synchronized, embedded, reused, proofs,
     nextOffset: data.offset + data.batchSize < scopes.length ? data.offset + data.batchSize : null };
 }

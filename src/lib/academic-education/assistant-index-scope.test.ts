@@ -19,7 +19,7 @@ vi.mock("@/integrations/supabase/client.server", () => ({ supabaseAdmin: {
   },
   rpc: (...args: unknown[]) => state.sync(...args),
 } }));
-import { indexAcademicBatch } from "./assistant.server";
+import { indexAcademicBatch, indexAcademicBatchWithAuthority } from "./assistant.server";
 const context = { userId: "admin-user", supabase: { rpc: async (_name: string, body: unknown) => {
   state.adminCalls++; state.adminCheck(body);
   return { data: state.admin && !(state.revoke && state.adminCalls > 1), error: null };
@@ -108,4 +108,24 @@ it("requires a verified admin before reading/indexing and rechecks before index 
 it("propagates a source-change transaction failure instead of reporting a successful cleanup", async () => {
   state.sync.mockResolvedValue({ data: null, error: { message: "ACADEMIC_IMPORT_SOURCE_CHANGED" } });
   await expect(indexAcademicBatch(input, context)).rejects.toThrow("ACADEMIC_SERVICE_UNAVAILABLE");
+});
+
+it("refuses a changed automatic source before reservation or provider work", async () => {
+  const reserve = vi.fn();
+  await expect(indexAcademicBatchWithAuthority(input, { check: vi.fn().mockResolvedValue(undefined),
+    beforeEmbedding: reserve, sources: [{ stepId: "AC-NEW-M01-L01", locale: "ar-EG", sourceSha: "0".repeat(64) }],
+  })).rejects.toThrow("AUTOMATION_SOURCE_CHANGED");
+  expect(reserve).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled(); expect(state.sync).not.toHaveBeenCalled();
+});
+it("requires a durable reservation before the Academic provider request", async () => {
+  const reserve = vi.fn().mockRejectedValue(new Error("AUTOMATION_PROVIDER_ALREADY_RESERVED"));
+  await expect(indexAcademicBatchWithAuthority(input, { check: vi.fn().mockResolvedValue(undefined), beforeEmbedding: reserve,
+  })).rejects.toThrow("AUTOMATION_PROVIDER_ALREADY_RESERVED");
+  expect(reserve).toHaveBeenCalledOnce(); expect(fetch).not.toHaveBeenCalled(); expect(state.sync).not.toHaveBeenCalled();
+});
+it("reuses an unchanged Academic vector without reserving a paid call", async () => {
+  state.existing = [await currentIndex()]; const reserve = vi.fn();
+  expect(await indexAcademicBatchWithAuthority(input, { check: vi.fn().mockResolvedValue(undefined), beforeEmbedding: reserve,
+  })).toMatchObject({ embedded: 0, skipped: 1 });
+  expect(reserve).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
 });

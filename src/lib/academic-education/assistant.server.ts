@@ -87,7 +87,14 @@ async function requireAdmin(context: Context, courseId: string) {
   if (allowed !== true) throw new Error("ACADEMIC_ADMIN_REQUIRED");
 }
 export async function indexAcademicBatch(data:{courseId:string;offset:number;batchSize:number},context:Context) {
-  await requireAdmin(context, data.courseId);
+  return indexAcademicBatchWithAuthority(data, { check: () => requireAdmin(context, data.courseId) });
+}
+/** Same source validation/reuse/write path for administrator and automatic work. */
+export async function indexAcademicBatchWithAuthority(data:{courseId:string;offset:number;batchSize:number},authority:{
+  check:()=>Promise<void>;beforeEmbedding?:()=>Promise<void>;
+  sources?:{stepId:string;locale:string;sourceSha:string}[];
+}) {
+  await authority.check();
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const result = await supabaseAdmin.from("academic_lesson_content" as never)
     .select("course_id,lesson_id,locale,approved,source_sha256,payload")
@@ -101,6 +108,9 @@ export async function indexAcademicBatch(data:{courseId:string;offset:number;bat
   validateAcademicCorpus(lessons, data.courseId, false);
   const groups = await Promise.all(lessons.map(row => row.approved ? approvedChunks(row) : []));
   const batchLessons = lessons.slice(data.offset,data.offset+data.batchSize);
+  if(authority.sources && batchLessons.some(row=>!row.approved || !authority.sources!.some(expected=>
+    expected.stepId===row.lesson_id && expected.locale===row.locale && expected.sourceSha===row.source_sha256)))
+    throw new Error("AUTOMATION_SOURCE_CHANGED");
   const batch = groups.slice(data.offset,data.offset+data.batchSize).flat();
   if (batch.length > 80) throw new Error("ACADEMIC_BATCH_TOO_LARGE");
   const existing = await supabaseAdmin.from("academic_rag_chunks" as never)
@@ -111,6 +121,7 @@ export async function indexAcademicBatch(data:{courseId:string;offset:number;bat
   if (existing.error || !Array.isArray(existing.data)) throw new Error("ACADEMIC_INDEX_UNAVAILABLE");
   const plan = planAcademicChunkUpdates(batch, existing.data as unknown as IndexedAcademicChunk[]);
   const fresh = plan.pending.filter(item => item.embedding === null);
+  if(fresh.length) await authority.beforeEmbedding?.();
   const vectors = fresh.length ? await embeddings(fresh.map(item => item.chunk.content)) : [];
   let nextVector = 0;
   const rows = plan.pending.map(item => ({ ...item.chunk,
@@ -118,13 +129,16 @@ export async function indexAcademicBatch(data:{courseId:string;offset:number;bat
     embedding_model: ACADEMIC_EMBEDDING_MODEL, embedding_dimensions: ACADEMIC_EMBEDDING_DIMENSIONS,
   }));
   if (batchLessons.length) {
-    await requireAdmin(context, data.courseId);
+    await authority.check();
     // One transaction verifies the new complete scopes, then removes obsolete rows.
     await rpc<number>(supabaseAdmin,"academic_sync_chunks",{p_course:data.courseId,
       p_scopes:batchLessons.map(row => ({ lesson_id:row.lesson_id, locale:row.locale,
         source_sha256:row.source_sha256, approved:row.approved })), p_rows:rows});
   }
   return {courseId:data.courseId,verifiedLessons:lessons.length,expectedChunks:groups.flat().length,
+    proofs:batchLessons.map(row=>({stepId:row.lesson_id,locale:row.locale,sourceSha:row.source_sha256,
+      chunks:batch.filter(chunk=>chunk.lesson_id===row.lesson_id && chunk.locale===row.locale).map(chunk=>({
+        id:chunk.section_id,contentSha:chunk.content_sha256,version:chunk.content_version}))})),
     inserted:plan.pending.length,embedded:fresh.length,reused:plan.pending.length-fresh.length,skipped:plan.skipped,
     nextOffset:data.offset+data.batchSize<lessons.length?data.offset+data.batchSize:null};
 }

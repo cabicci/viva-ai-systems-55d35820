@@ -69,6 +69,10 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      if (new URL(request.url).pathname === "/api/internal/assistant-indexing") {
+        const { handleAutomaticIndexing } = await import("./lib/assistant-automation/endpoint.server");
+        return await handleAutomaticIndexing(request);
+      }
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
@@ -78,3 +82,4 @@ export default {
     }
   },
 };
+
