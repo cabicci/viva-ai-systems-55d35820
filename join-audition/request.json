@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_01_TWO_FULL_SCENE_JOIN_AUDITION_PREVIEWS_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "branch": "refs/heads/work/soil-s101-repair-join-audition-20261022-r1",
+  "inputs": [
+    {
+      "id": "en-original",
+      "path": "inputs/en-original.wav",
+      "sha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387",
+      "pcmSha256": "00e1f05267c15845ed7be288189769d5b416fa2fa62e8e604048c7ca8304f5a5",
+      "sampleCount": 1823303,
+      "locale": "en",
+      "role": "preserved_original_full_scene"
+    },
+    {
+      "id": "en-s101-checklist-bounded-sentence-1",
+      "path": "inputs/candidate-1.wav",
+      "sha256": "dd8881b0cb60e3939dccc535c2a16ba6a0e4818eeb1aa23482c8f2c25a6cd918",
+      "pcmSha256": "2d03952dcb67bfd84ce36cf29dc65462465538c9614894762803363dad34e878",
+      "sampleCount": 269760,
+      "locale": "en",
+      "role": "complete_new_candidate_pcm_no_trim"
+    },
+    {
+      "id": "de-original",
+      "path": "inputs/de-original.wav",
+      "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3",
+      "pcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc",
+      "sampleCount": 1662023,
+      "locale": "de",
+      "role": "preserved_original_full_scene"
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-1",
+      "path": "inputs/candidate-2.wav",
+      "sha256": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4",
+      "pcmSha256": "a6c9c908aa5d0198baef21d9a5dca2d17b5f82cb115468b8dc914e51f8066424",
+      "sampleCount": 145920,
+      "locale": "de",
+      "role": "complete_new_candidate_pcm_no_trim"
+    },
+    {
+      "id": "de-s101-limits-bounded-sentence-2",
+      "path": "inputs/candidate-3.wav",
+      "sha256": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac",
+      "pcmSha256": "bc920880d8efb623844e33339f3a1b62022e11f0b42bd0c12cfc067c65607cac",
+      "sampleCount": 242880,
+      "locale": "de",
+      "role": "complete_new_candidate_pcm_no_trim"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "en-s101-checklist",
+      "locale": "en",
+      "originalInputId": "en-original",
+      "originalClipId": "en-s101-checklist",
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\en\\s101-checklist\\renderer-plan.json",
+        "sha256": "054cc13db87abc39d9acda96f7f3851ef5a9e6fa24fac759a229b52ff184bde8"
+      },
+      "sourceBindingSha256": "ba6cd4e721c37c1489c625a870dc89dd19a36a4ea0380e9026d1a89718c24fef",
+      "completeExpectedSpokenText": "Build a five-point checklist rather than a list of equipment names. First: the site and route are safe, with permission and utility clearance. Second: tools are sound, clean and carried safely. Third: protection matches the task and any chemical information. Fourth: the supervisor knows the location and return time, and the buddy and communication arrangements are clear. Fifth: emergency contacts, access, meeting point, water and weather precautions are known.\n\nFor each point, state what would make you stop. Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route. Report the problem and wait for a safe arrangement; ticking a box does not resolve a hazard.\n\nPreparation, awareness and limits reduce the chance of making a bad situation worse. Completing this step does not qualify you as a first aider or certify your physical performance. Your trainer observes the practical task separately.",
+      "replacements": [
+        {
+          "candidateId": "en-s101-checklist-bounded-sentence-1",
+          "sourceSentence": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route.",
+          "sourceCharacterRange": [
+            514,
+            676
+          ],
+          "sourceFirstActualWordIndex": 79,
+          "sourceLastActualWordIndex": 100,
+          "proposedOriginalCutSamples": [
+            997440,
+            1273680
+          ],
+          "proposedOriginalCutSeconds": [
+            41.56,
+            53.07
+          ],
+          "boundaryStatus": "UNRESOLVED_AUDITION_HYPOTHESIS_NOT_VERIFIED_SAFE_CUT",
+          "rationale": "Midpoint of measured whole-sentence ASR gap, with exact neighboring word evidence and unchanged original PCM outside the replaced region. Not chosen from low energy alone; actual acoustic join review remains mandatory.",
+          "leftBoundaryEvidence": {
+            "precedingWord": {
+              "actualWordIndex": 78,
+              "segmentId": 7,
+              "wordIndexInSegment": 8,
+              "word": " stop.",
+              "start": 40.92,
+              "end": 41.24,
+              "probability": 0.993035078048706
+            },
+            "firstReplacedObservedWord": {
+              "actualWordIndex": 79,
+              "segmentId": 8,
+              "wordIndexInSegment": 0,
+              "word": " Examples",
+              "start": 41.88,
+              "end": 42.16,
+              "probability": 0.9935346841812134
+            },
+            "gapSeconds": [
+              41.24,
+              41.88
+            ]
+          },
+          "rightBoundaryEvidence": {
+            "lastReplacedObservedWord": {
+              "actualWordIndex": 100,
+              "segmentId": 9,
+              "wordIndexInSegment": 9,
+              "word": " route.",
+              "start": 52.4,
+              "end": 52.7,
+              "probability": 0.9976323843002319
+            },
+            "followingWord": {
+              "actualWordIndex": 101,
+              "segmentId": 10,
+              "wordIndexInSegment": 0,
+              "word": " Report",
+              "start": 53.44,
+              "end": 53.8,
+              "probability": 0.9834233522415161
+            },
+            "gapSeconds": [
+              52.7,
+              53.44
+            ]
+          },
+          "observedASREvidence": {
+            "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-en-s101-checklist\\word-timestamps.json",
+            "sha256": "78253d226c3e87ffb2581efe88a307b5d9d79c64ded21df4add7c6b85d02024f"
+          },
+          "newCandidateActualDiagnostics": [
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\blind-review.json",
+              "sha256": "29b6b2bb57a9f8dff3dd879dc1e2c1053d44817a518489ca15c27fff5d0e3318"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\blind-review-response.raw.json",
+              "sha256": "6e3d4c95e36e7a3596ae6338a92a5236c7bdfe5c8528455ee2c00a3a875905aa"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\asr-word-timestamps.json",
+              "sha256": "679682d2e61ba957b600f043cb96bc2fbd2306432feb478de802605653c09430"
+            }
+          ],
+          "allNewCandidatePcmMustBePreserved": true,
+          "verifiedSpliceSample": null
+        }
+      ],
+      "sourceWavChanged": false,
+      "purpose": "Disposable full-scene PCM audition preview, not adopted lesson audio",
+      "actualAcousticContextReviewStatus": "NOT_YET_REVIEWED_FOR_PROPOSED_CUTS",
+      "rootAdoptionAllowed": false
+    },
+    {
+      "id": "de-s101-limits",
+      "locale": "de",
+      "originalInputId": "de-original",
+      "originalClipId": "de-s101-limits",
+      "sourcePlan": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\revisions\\r7\\de\\s101-limits\\renderer-plan.json",
+        "sha256": "7ba2f44427c692233f1bad632f1653899a0cbef12005e2900f7d2e5ea214a3d4"
+      },
+      "sourceBindingSha256": "11394c7358cc9696e517320528f6528e2fde48db1c8c5e1fd2d80be09c0e90c3",
+      "completeExpectedSpokenText": "Bediene keine Maschine allein deshalb, weil ihre Steuerung einfach aussieht. Ausbildung, Erlaubnis und geeignete Aufsicht kommen zuerst. Prüfe Handwerkzeuge: fester Griff, intakter und sauberer Arbeitsteil. Melde Mängel und benutze beschädigte Werkzeuge nicht.\n\nTrage scharfe Werkzeuge mit Spitze oder Schneide nach unten und von Menschen weg; halte Abstand. Folge der Vorführung für das jeweilige Werkzeug. Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege. Saubere Werkzeuge und geeignete saubere Handschuhe helfen auch, die Probe nicht zu verunreinigen.\n\nLies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS. Ältere Unterlagen können MSDS heißen. Suche Gefahren, Handhabung und Lagerung, Schutzmaßnahmen und Notfallinformationen. Behälterfarbe und Farbskala eines Tests sagen nichts Verlässliches über chemische Gefahren aus.",
+      "replacements": [
+        {
+          "candidateId": "de-s101-limits-bounded-sentence-1",
+          "sourceSentence": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+          "sourceCharacterRange": [
+            408,
+            502
+          ],
+          "sourceFirstActualWordIndex": 53,
+          "sourceLastActualWordIndex": 69,
+          "proposedOriginalCutSamples": [
+            721200,
+            871680
+          ],
+          "proposedOriginalCutSeconds": [
+            30.05,
+            36.32
+          ],
+          "boundaryStatus": "UNRESOLVED_AUDITION_HYPOTHESIS_NOT_VERIFIED_SAFE_CUT",
+          "rationale": "Midpoint of measured whole-sentence ASR gap, with exact neighboring word evidence and unchanged original PCM outside the replaced region. Not chosen from low energy alone; actual acoustic join review remains mandatory.",
+          "leftBoundaryEvidence": {
+            "precedingWord": {
+              "actualWordIndex": 52,
+              "segmentId": 7,
+              "wordIndexInSegment": 6,
+              "word": " Werkzeug.",
+              "start": 29.24,
+              "end": 29.78,
+              "probability": 0.9981788992881775
+            },
+            "firstReplacedObservedWord": {
+              "actualWordIndex": 53,
+              "segmentId": 8,
+              "wordIndexInSegment": 0,
+              "word": " Spinne",
+              "start": 30.32,
+              "end": 30.76,
+              "probability": 0.7511997818946838
+            },
+            "gapSeconds": [
+              29.78,
+              30.32
+            ]
+          },
+          "rightBoundaryEvidence": {
+            "lastReplacedObservedWord": {
+              "actualWordIndex": 69,
+              "segmentId": 8,
+              "wordIndexInSegment": 16,
+              "word": " Laufwege.",
+              "start": 35.34,
+              "end": 35.94,
+              "probability": 0.8796873688697815
+            },
+            "followingWord": {
+              "actualWordIndex": 70,
+              "segmentId": 9,
+              "wordIndexInSegment": 0,
+              "word": " Saubere",
+              "start": 36.7,
+              "end": 37.22,
+              "probability": 0.9561495383580526
+            },
+            "gapSeconds": [
+              35.94,
+              36.7
+            ]
+          },
+          "observedASREvidence": {
+            "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+            "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+          },
+          "newCandidateActualDiagnostics": [
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review.json",
+              "sha256": "ef2b296a5f12c4cad72a31d4613cea5c2c124426717157bb5b9e7eba72c898cf"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review-response.raw.json",
+              "sha256": "fd8f72bc842767e8b88147d7c7a39fe03a1f9a87206f87da870e06787c5dca93"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\asr-word-timestamps.json",
+              "sha256": "57d92410a58cdf6d30713d87ccb9514a49090c21dc5aa61ca57ca494bc8eb0b9"
+            }
+          ],
+          "allNewCandidatePcmMustBePreserved": true,
+          "verifiedSpliceSample": null
+        },
+        {
+          "candidateId": "de-s101-limits-bounded-sentence-2",
+          "sourceSentence": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+          "sourceCharacterRange": [
+            602,
+            740
+          ],
+          "sourceFirstActualWordIndex": 83,
+          "sourceLastActualWordIndex": 97,
+          "proposedOriginalCutSamples": [
+            1035360,
+            1277040
+          ],
+          "proposedOriginalCutSeconds": [
+            43.14,
+            53.21
+          ],
+          "boundaryStatus": "UNRESOLVED_AUDITION_HYPOTHESIS_NOT_VERIFIED_SAFE_CUT",
+          "rationale": "Midpoint of measured whole-sentence ASR gap, with exact neighboring word evidence and unchanged original PCM outside the replaced region. Not chosen from low energy alone; actual acoustic join review remains mandatory.",
+          "leftBoundaryEvidence": {
+            "precedingWord": {
+              "actualWordIndex": 82,
+              "segmentId": 9,
+              "wordIndexInSegment": 12,
+              "word": " verunreinigen.",
+              "start": 41.94,
+              "end": 42.64,
+              "probability": 0.9875085353851318
+            },
+            "firstReplacedObservedWord": {
+              "actualWordIndex": 83,
+              "segmentId": 10,
+              "wordIndexInSegment": 0,
+              "word": " Les",
+              "start": 43.64,
+              "end": 43.86,
+              "probability": 0.4963854253292084
+            },
+            "gapSeconds": [
+              42.64,
+              43.64
+            ]
+          },
+          "rightBoundaryEvidence": {
+            "lastReplacedObservedWord": {
+              "actualWordIndex": 97,
+              "segmentId": 11,
+              "wordIndexInSegment": 4,
+              "word": " SDS.",
+              "start": 52.44,
+              "end": 52.78,
+              "probability": 0.9694734811782837
+            },
+            "followingWord": {
+              "actualWordIndex": 98,
+              "segmentId": 11,
+              "wordIndexInSegment": 5,
+              "word": " Ältere",
+              "start": 53.64,
+              "end": 54.06,
+              "probability": 0.9707821408907572
+            },
+            "gapSeconds": [
+              52.78,
+              53.64
+            ]
+          },
+          "observedASREvidence": {
+            "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timing-job\\received-39701124166\\s101-timing-de-s101-limits\\word-timestamps.json",
+            "sha256": "47e7bee2a4dbb6c62f77d28db260623ef726b08765e80f7a27f4e3a66b6fb8f2"
+          },
+          "newCandidateActualDiagnostics": [
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review.json",
+              "sha256": "fd3209d4deb4307fa30ecf2f6593e3212a5d0e6428d12d66cb3c0b671f0cecb9"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review-response.raw.json",
+              "sha256": "eb1cfe64e0f15f4d8a93c7f641dee68dc706d55e748f712c007f9162d06b0ce3"
+            },
+            {
+              "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\asr-word-timestamps.json",
+              "sha256": "83b22a5254d40060a6f4b295030c66d983d485e9bd4d142b8735d6ed48d9d44c"
+            }
+          ],
+          "allNewCandidatePcmMustBePreserved": true,
+          "verifiedSpliceSample": null
+        }
+      ],
+      "sourceWavChanged": false,
+      "purpose": "Disposable full-scene PCM audition preview, not adopted lesson audio",
+      "actualAcousticContextReviewStatus": "NOT_YET_REVIEWED_FOR_PROPOSED_CUTS",
+      "rootAdoptionAllowed": false
+    }
+  ],
+  "maximumBlindReviewCalls": 2,
+  "maximumASRInvocations": 2,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "adoptionAllowed": false,
+  "acceptedAudioOverwriteAllowed": false,
+  "sourceCriteriaSuppliedToModel": false
+}

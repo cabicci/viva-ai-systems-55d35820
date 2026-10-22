@@ -1,0 +1,1 @@
+Two full-scene audition previews only. Every retained original PCM slice and every complete new candidate PCM is byte-verified at exact output offsets. No fade, gain, time stretch, trim of candidates, added silence, or accepted-file overwrite. Proposed cuts are ASR-gap midpoint hypotheses, not verified safe cuts. Actual join review and root adoption decision remain mandatory.

@@ -1,0 +1,473 @@
+{
+  "runId": 39771662640,
+  "commit": "bd4016d6a2acac3437beb94b41fe44cd46e5e22a",
+  "request": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\request.json",
+    "sha256": "478efe48e871c70f4ea5abecf248ab982128d50c6ae0a21c3b409add9a260d50"
+  },
+  "worker": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\worker.py",
+    "sha256": "abc39a3802cc9bbfe3e93aa5ccd2ba10abc69e4a91ae81c9202ce9f6974c19af"
+  },
+  "intake": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\intake.json",
+    "sha256": "cf66e2da04d7134b2661b428096df261645fe99778d2d85fe8c5313cf5fd6417"
+  },
+  "originalQuietAnalysis": {
+    "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\originals\\output\\original-analysis.json",
+    "sha256": "316a98a081edef60a59a1d53237486cae5ca6b413ce9c6893b3c698601645f63"
+  },
+  "candidates": [
+    {
+      "candidateId": "en-s101-checklist-bounded-sentence-1",
+      "state": "REPAIR_WORDING_CORROBORATED_BY_ACTUAL_AUDIO_DIAGNOSTICS_CANDIDATE_NOT_INTEGRATED",
+      "newWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\voice.wav",
+        "sha256": "dd8881b0cb60e3939dccc535c2a16ba6a0e4818eeb1aa23482c8f2c25a6cd918"
+      },
+      "newPcmSha256": "2d03952dcb67bfd84ce36cf29dc65462465538c9614894762803363dad34e878",
+      "newSampleCount": 269760,
+      "newDurationSeconds": 11.24,
+      "exactSourceSpokenText": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan or a moving machine blocking the route.",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\originals\\en-s101-checklist.wav",
+        "sha256": "ad48296acc48a1ff554d3806040addec8124e2eb17e9e5d9e019fd773f170387"
+      },
+      "originalPcmSha256": "00e1f05267c15845ed7be288189769d5b416fa2fa62e8e604048c7ca8304f5a5",
+      "actualASRTranscript": "Examples include uncertain varied services, a loose tool handle, missing chemical information, a failed communication plan, or a moving machine blocking the route.",
+      "actualASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\asr-word-timestamps.json",
+        "sha256": "679682d2e61ba957b600f043cb96bc2fbd2306432feb478de802605653c09430"
+      },
+      "actualBlindTranscript": "Examples include uncertain buried services, a loose tool handle, missing chemical information, a failed communication plan, or a moving machine blocking the route.",
+      "blindReview": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\blind-review.json",
+        "sha256": "29b6b2bb57a9f8dff3dd879dc1e2c1053d44817a518489ca15c27fff5d0e3318"
+      },
+      "rawBlindResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u1-review\\blind-review-response.raw.json",
+        "sha256": "6e3d4c95e36e7a3596ae6338a92a5236c7bdfe5c8528455ee2c00a3a875905aa"
+      },
+      "voiceComparisonModelObservation": {
+        "observations": "The NEW candidate recording closely matches the ORIGINAL scene in vocal timbre, pitch range, speaking rate, and calm instructional tone, with clean, dry acoustic characteristics consistent with the original.",
+        "uncertainty": "Voice and timbre similarity is assessed perceptually for continuity only and does not constitute biometric or human voice certification. Subtle prosodic or level differences at splice boundaries cannot be ruled out without listening to the rendered join."
+      },
+      "voiceComparisonQualification": "Actual original and new recordings were compared by the model. No human listening, speaker identity or continuity approval is claimed. No actual splice was attached or heard.",
+      "remainingASRVariants": [
+        {
+          "sourceText": "buried",
+          "sourceCharacterRangeInCandidate": null,
+          "actualWordIndices": [
+            3
+          ],
+          "actualText": "varied",
+          "status": "ASR_RECOGNITION_CONFLICT_RETAINED_BLIND_TRANSCRIPT_HAS_SOURCE_TERM",
+          "individualSourceWordTimingApproved": false,
+          "qualification": "Source and actual-audio blind transcript retain buried; ASR also used varied in the original. This is not a new confirmed speech defect or a basis for another TTS call."
+        }
+      ],
+      "originalQuietBoundaryAnalysis": [
+        {
+          "edge": "start",
+          "observedASRBoundarySeconds": 41.88,
+          "searchSamples": [
+            995520,
+            1014720
+          ],
+          "quietWindowCount": 0,
+          "quietSampleWindows": [],
+          "verifiedSpliceSample": null,
+          "status": "NO_QUALIFYING_WINDOW_IN_BOUNDED_SEARCH",
+          "qualification": "No qualifying40ms window was found within the already executed ±0.40s search. This does not establish no safe boundary exists elsewhere.",
+          "specificConcern": null
+        },
+        {
+          "edge": "end",
+          "observedASRBoundarySeconds": 52.7,
+          "searchSamples": [
+            1255200,
+            1274400
+          ],
+          "quietWindowCount": 0,
+          "quietSampleWindows": [],
+          "verifiedSpliceSample": null,
+          "status": "NO_QUALIFYING_WINDOW_IN_BOUNDED_SEARCH",
+          "qualification": "No qualifying40ms window was found within the already executed ±0.40s search. This does not establish no safe boundary exists elsewhere.",
+          "specificConcern": null
+        }
+      ],
+      "rootActualSpliceReviewRequired": true,
+      "verifiedSpliceSamples": null,
+      "integrationAllowedByThisReview": false,
+      "newTTSOrRetryRequiredFromThisReview": false
+    },
+    {
+      "candidateId": "de-s101-limits-bounded-sentence-1",
+      "state": "REPAIR_WORDING_CORROBORATED_BY_ACTUAL_AUDIO_DIAGNOSTICS_CANDIDATE_NOT_INTEGRATED",
+      "newWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\voice.wav",
+        "sha256": "ff0e1ebb54962fce8f7088867a900fe0a70378b7aa50a088d08f8e2691ad16b4"
+      },
+      "newPcmSha256": "a6c9c908aa5d0198baef21d9a5dca2d17b5f82cb115468b8dc914e51f8066424",
+      "newSampleCount": 145920,
+      "newDurationSeconds": 6.08,
+      "exactSourceSpokenText": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\originals\\de-s101-limits.wav",
+        "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3"
+      },
+      "originalPcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc",
+      "actualASRTranscript": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "actualASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\asr-word-timestamps.json",
+        "sha256": "57d92410a58cdf6d30713d87ccb9514a49090c21dc5aa61ca57ca494bc8eb0b9"
+      },
+      "actualBlindTranscript": "Schwinge es nicht, trage es nicht nahe anderen auf der Schulter und lege es nicht in Laufwege.",
+      "blindReview": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review.json",
+        "sha256": "ef2b296a5f12c4cad72a31d4613cea5c2c124426717157bb5b9e7eba72c898cf"
+      },
+      "rawBlindResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u2-review\\blind-review-response.raw.json",
+        "sha256": "fd8f72bc842767e8b88147d7c7a39fe03a1f9a87206f87da870e06787c5dca93"
+      },
+      "voiceComparisonModelObservation": {
+        "observations": "The NEW candidate recording matches the female German instructional speaker timbre, pitch range, and calm pacing heard in the ORIGINAL scene. Articulation of 'Schwinge es nicht' is clean and resolves the consonant distortion heard around 00:30 in the ORIGINAL recording, though the NEW clip sounds slightly more neutral/controlled in prosody.",
+        "uncertainty": "This is an auditory comparison only and not human voice certification. Subtle level, room-tone, or prosodic transition differences at the splice points remain uncertain until heard in the actual joined audio."
+      },
+      "voiceComparisonQualification": "Actual original and new recordings were compared by the model. No human listening, speaker identity or continuity approval is claimed. No actual splice was attached or heard.",
+      "remainingASRVariants": [],
+      "originalQuietBoundaryAnalysis": [
+        {
+          "edge": "start",
+          "observedASRBoundarySeconds": 30.32,
+          "searchSamples": [
+            718080,
+            737280
+          ],
+          "quietWindowCount": 4,
+          "quietSampleWindows": [
+            [
+              728160,
+              729120
+            ],
+            [
+              728400,
+              729360
+            ],
+            [
+              728640,
+              729600
+            ],
+            [
+              728880,
+              729840
+            ]
+          ],
+          "verifiedSpliceSample": null,
+          "status": "QUIET_CANDIDATES_ONLY_NOT_SAFE_CUT_APPROVAL",
+          "qualification": "Low amplitude can occur inside syllables. Retain neighboring accepted speech and inspect actual context before choosing any cut.",
+          "specificConcern": "All four recorded start-window candidates lie after the ASR source-word onset30.32s; they could be an internal quiet interval and must not be treated as safe sentence-start cuts."
+        },
+        {
+          "edge": "end",
+          "observedASRBoundarySeconds": 35.94,
+          "searchSamples": [
+            852960,
+            872159
+          ],
+          "quietWindowCount": 6,
+          "quietSampleWindows": [
+            [
+              868080,
+              869040
+            ],
+            [
+              869520,
+              870480
+            ],
+            [
+              869760,
+              870720
+            ],
+            [
+              870000,
+              870960
+            ],
+            [
+              870720,
+              871680
+            ],
+            [
+              870960,
+              871920
+            ]
+          ],
+          "verifiedSpliceSample": null,
+          "status": "QUIET_CANDIDATES_ONLY_NOT_SAFE_CUT_APPROVAL",
+          "qualification": "Low amplitude can occur inside syllables. Retain neighboring accepted speech and inspect actual context before choosing any cut.",
+          "specificConcern": null
+        }
+      ],
+      "rootActualSpliceReviewRequired": true,
+      "verifiedSpliceSamples": null,
+      "integrationAllowedByThisReview": false,
+      "newTTSOrRetryRequiredFromThisReview": false
+    },
+    {
+      "candidateId": "de-s101-limits-bounded-sentence-2",
+      "state": "REPAIR_WORDING_CORROBORATED_BY_ACTUAL_AUDIO_DIAGNOSTICS_CANDIDATE_NOT_INTEGRATED",
+      "newWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\voice.wav",
+        "sha256": "7df261ddf6a0f8978e0dc510180ce87638af00bd56e105d8b10a1a81f2fa97ac"
+      },
+      "newPcmSha256": "bc920880d8efb623844e33339f3a1b62022e11f0b42bd0c12cfc067c65607cac",
+      "newSampleCount": 242880,
+      "newDurationSeconds": 10.12,
+      "exactSourceSpokenText": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "speakerId": "B",
+      "voice": "Kore",
+      "originalWav": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\locale-timed-plans\\targeted-repair-public-r1\\originals\\de-s101-limits.wav",
+        "sha256": "d133290e6302abd30944a21c8249c87effa8a3023d4e8edd6da5bea9f082ddb3"
+      },
+      "originalPcmSha256": "b2ea14a18d7f97e4aaab907cd306f4435b0215d5d99bbe0b62ae981f267708cc",
+      "actualASRTranscript": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagänzchen, Etikett und aktuelle Sicherheitsdatenblatt, SDS.",
+      "actualASR": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\asr-word-timestamps.json",
+        "sha256": "83b22a5254d40060a6f4b295030c66d983d485e9bd4d142b8735d6ed48d9d44c"
+      },
+      "actualBlindTranscript": "Lies vor dem Umgang mit Dünger, Pflanzenschutzmitteln, Bodenverbesserern oder Reagenzien Etikett und aktuelles Sicherheitsdatenblatt, SDS.",
+      "blindReview": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review.json",
+        "sha256": "fd3209d4deb4307fa30ecf2f6593e3212a5d0e6428d12d66cb3c0b671f0cecb9"
+      },
+      "rawBlindResponse": {
+        "path": "D:\\Masaarat\\Masaarat — Plan technical course production\\Private\\soil-rebuild-20261014\\native-media-20261022\\full-lesson-r1\\repair39771662640\\u3-review\\blind-review-response.raw.json",
+        "sha256": "eb1cfe64e0f15f4d8a93c7f641dee68dc706d55e748f712c007f9162d06b0ce3"
+      },
+      "voiceComparisonModelObservation": {
+        "observations": "The NEW candidate recording closely matches the ORIGINAL scene in vocal timbre, pitch range, speaking rate, and calm instructional delivery (specifically aligning with the corresponding segment around 00:43–00:53 in the original, while correcting 'Les' to 'Lies'). Acoustic loudness and tonal balance appear consistent.",
+        "uncertainty": "Comparison is based on perceptual listening only and does not constitute formal speaker verification or certification. Spliced boundary transitions in the final assembled track cannot be evaluated from isolated clips."
+      },
+      "voiceComparisonQualification": "Actual original and new recordings were compared by the model. No human listening, speaker identity or continuity approval is claimed. No actual splice was attached or heard.",
+      "remainingASRVariants": [
+        {
+          "sourceText": "Reagenzien",
+          "actualWordIndices": [
+            9
+          ],
+          "actualText": "Reagänzchen",
+          "status": "ASR_RECOGNITION_CONFLICT_RETAINED_BLIND_TRANSCRIPT_HAS_SOURCE_TERM",
+          "individualSourceWordTimingApproved": false,
+          "qualification": "The exact new-audio blind transcript retains Reagenzien. Source-word internal timing and phonetic certainty are not inferred from recognizer spelling."
+        },
+        {
+          "sourceText": "aktuelles",
+          "actualWordIndices": [
+            12
+          ],
+          "actualText": "aktuelle",
+          "status": "GRAMMATICAL_INFLECTION_ASR_VARIANT_WITH_SOURCE_COMPLETE_BLIND_TRANSCRIPT",
+          "individualSourceWordTimingApproved": false,
+          "qualification": "Current SDS is retained in both actual transcripts. Display must preserve the approved source text; no individual final-s timing or new content defect is invented."
+        }
+      ],
+      "originalQuietBoundaryAnalysis": [
+        {
+          "edge": "start",
+          "observedASRBoundarySeconds": 43.64,
+          "searchSamples": [
+            1037760,
+            1056960
+          ],
+          "quietWindowCount": 35,
+          "quietSampleWindows": [
+            [
+              1037760,
+              1038720
+            ],
+            [
+              1038000,
+              1038960
+            ],
+            [
+              1038240,
+              1039200
+            ],
+            [
+              1038480,
+              1039440
+            ],
+            [
+              1038720,
+              1039680
+            ],
+            [
+              1038960,
+              1039920
+            ],
+            [
+              1039200,
+              1040160
+            ],
+            [
+              1039440,
+              1040400
+            ],
+            [
+              1039680,
+              1040640
+            ],
+            [
+              1039920,
+              1040880
+            ],
+            [
+              1040160,
+              1041120
+            ],
+            [
+              1040400,
+              1041360
+            ],
+            [
+              1040640,
+              1041600
+            ],
+            [
+              1040880,
+              1041840
+            ],
+            [
+              1042560,
+              1043520
+            ],
+            [
+              1042800,
+              1043760
+            ],
+            [
+              1043040,
+              1044000
+            ],
+            [
+              1043280,
+              1044240
+            ],
+            [
+              1043520,
+              1044480
+            ],
+            [
+              1043760,
+              1044720
+            ],
+            [
+              1044000,
+              1044960
+            ],
+            [
+              1044240,
+              1045200
+            ],
+            [
+              1044480,
+              1045440
+            ],
+            [
+              1044720,
+              1045680
+            ],
+            [
+              1044960,
+              1045920
+            ],
+            [
+              1045200,
+              1046160
+            ],
+            [
+              1045440,
+              1046400
+            ],
+            [
+              1045680,
+              1046640
+            ],
+            [
+              1045920,
+              1046880
+            ],
+            [
+              1046160,
+              1047120
+            ],
+            [
+              1046400,
+              1047360
+            ],
+            [
+              1046640,
+              1047600
+            ],
+            [
+              1046880,
+              1047840
+            ],
+            [
+              1047120,
+              1048080
+            ],
+            [
+              1047360,
+              1048320
+            ]
+          ],
+          "verifiedSpliceSample": null,
+          "status": "QUIET_CANDIDATES_ONLY_NOT_SAFE_CUT_APPROVAL",
+          "qualification": "Low amplitude can occur inside syllables. Retain neighboring accepted speech and inspect actual context before choosing any cut.",
+          "specificConcern": null
+        },
+        {
+          "edge": "end",
+          "observedASRBoundarySeconds": 52.78,
+          "searchSamples": [
+            1257120,
+            1276320
+          ],
+          "quietWindowCount": 0,
+          "quietSampleWindows": [],
+          "verifiedSpliceSample": null,
+          "status": "NO_QUALIFYING_WINDOW_IN_BOUNDED_SEARCH",
+          "qualification": "No qualifying40ms window was found within the already executed ±0.40s search. This does not establish no safe boundary exists elsewhere.",
+          "specificConcern": null
+        }
+      ],
+      "rootActualSpliceReviewRequired": true,
+      "verifiedSpliceSamples": null,
+      "integrationAllowedByThisReview": false,
+      "newTTSOrRetryRequiredFromThisReview": false
+    }
+  ],
+  "budgetActuallyUsed": {
+    "tts": 3,
+    "blindReview": 3,
+    "asr": 3,
+    "metadataGET": 2,
+    "automaticRetries": 0
+  },
+  "uncertainOtherRecordingsPreserved": {
+    "de-s101-chemical": "Repeated model Dickle allegation conflicts with prior/current ASR Dicke and historical source-complete QA; still isolated. No extra calls or TTS.",
+    "it-s101-example-gloves": "Full Controlla onset/content is present and intelligible in prior focused review; single medium-high medial warble allegation remains subjective and isolated. No extra calls or TTS."
+  },
+  "actualJoinsReviewed": false,
+  "humanListeningApproved": false,
+  "integrationPerformed": false,
+  "providerCallsByThisReceivingReview": 0,
+  "sourceOrRendererEdited": false
+}

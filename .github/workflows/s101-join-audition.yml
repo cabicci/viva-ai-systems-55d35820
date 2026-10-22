@@ -1,0 +1,142 @@
+name: S1-01 two full-scene join audition previews zero TTS
+on:
+  push:
+    branches: [work/soil-s101-repair-join-audition-20261022-r1]
+    paths: [join-audition/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s101-join-audition-cb21e666348fcc95a5ee18e7c293a24caab8d6cf9c141dc3fb368b8f0a4bdeec
+  cancel-in-progress: false
+env:
+  PACKAGE: join-audition
+  REQUEST_SHA: cb21e666348fcc95a5ee18e7c293a24caab8d6cf9c141dc3fb368b8f0a4bdeec
+  WORKER_SHA: 4c6f5b068a9212c549273c04f81697f856f3d100fd70ceabd58100f7ac2fc9fd
+  FREEZE_SHA: 7f1a3f18aae7c8987600257b231b6faa92e02fe8a58cacac55ee898f19e4fd40
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+jobs:
+  audition:
+    if: github.run_attempt == 1 && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s101-repair-join-audition-20261022-r1' && github.event.created == true && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify frozen exact inputs and unresolved boundary hypotheses
+        run: |
+          cd "$PACKAGE"
+          python worker.py validate
+      - name: Install verified Whisper runtime before any paid review
+        run: |
+          cd "$PACKAGE"
+          python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+          python worker.py verify-wheel
+          python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+      - name: One exact Argon metadata GET no fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py preflight
+      - name: Assemble byte-exact audition preview en-s101-checklist
+        run: |
+          cd "$PACKAGE"
+          python worker.py assemble --unit en-s101-checklist
+      - name: Upload completed audition before join review en-s101-checklist
+        id: upload1
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-join-en-s101-checklist-audio
+          path: ${{ env.PACKAGE }}/output/en-s101-checklist/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact successful audition transfer en-s101-checklist
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload1.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload1.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit en-s101-checklist --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One actual joined-context Argon high review en-s101-checklist
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit en-s101-checklist
+      - name: One actual audition ASR and source comparison en-s101-checklist
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit en-s101-checklist
+          python worker.py compare --unit en-s101-checklist
+      - name: Preserve finished or failed join diagnostics en-s101-checklist
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-join-en-s101-checklist-review
+          path: ${{ env.PACKAGE }}/output/en-s101-checklist/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Assemble byte-exact audition preview de-s101-limits
+        run: |
+          cd "$PACKAGE"
+          python worker.py assemble --unit de-s101-limits
+      - name: Upload completed audition before join review de-s101-limits
+        id: upload2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-join-de-s101-limits-audio
+          path: ${{ env.PACKAGE }}/output/de-s101-limits/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Bind exact successful audition transfer de-s101-limits
+        env:
+          AUDIO_ARTIFACT_ID: ${{ steps.upload2.outputs.artifact-id }}
+          AUDIO_ARTIFACT_DIGEST: ${{ steps.upload2.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --unit de-s101-limits --artifact-id "$AUDIO_ARTIFACT_ID" --artifact-digest "$AUDIO_ARTIFACT_DIGEST"
+      - name: One actual joined-context Argon high review de-s101-limits
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py blind-review --unit de-s101-limits
+      - name: One actual audition ASR and source comparison de-s101-limits
+        run: |
+          cd "$PACKAGE"
+          python worker.py asr --unit de-s101-limits
+          python worker.py compare --unit de-s101-limits
+      - name: Preserve finished or failed join diagnostics de-s101-limits
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-join-de-s101-limits-review
+          path: ${{ env.PACKAGE }}/output/de-s101-limits/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Verify both finite diagnostic outcomes without adopting audio
+        run: |
+          cd "$PACKAGE"
+          python worker.py summarize
+      - name: Preserve original candidate failed and exact-input evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s101-two-join-auditions-complete
+          retention-days: 30
+          path: |
+            ${{ env.PACKAGE }}/output/
+            ${{ env.PACKAGE }}/inputs/
+            ${{ env.PACKAGE }}/request.json
+            ${{ env.PACKAGE }}/worker.py
+            ${{ env.PACKAGE }}/runtime.json
+            ${{ env.PACKAGE }}/freeze.json
+            ${{ env.PACKAGE }}/owner-authority.json
+            ${{ env.PACKAGE }}/boundary-proposals.NOT-APPROVED.json
+            ${{ env.PACKAGE }}/remaining-uncertainty-proposal.json
