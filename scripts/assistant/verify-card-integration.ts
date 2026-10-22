@@ -15,6 +15,7 @@ import { approvedChunks, sha256 as academicHash, canonicalJson, type ApprovedLes
 import { sourceChunks, sha256, technicalSourceJson, type SourceDocument } from "../../src/lib/card-assistant/corpus";
 import { verifyAssistantWiring, verifySharedLessonRoutes } from "./integration-wiring";
 import { parseAiCommerceRegistration, verifyAiCommerceRegistration, verifyAcademicPolicyRegistration, type AcademicPolicyCourse, type AcademicPolicyRow } from "./access-registration-contract";
+import { unpackCorpusJson, verifyEdgeCorpusPackaging } from "./edge-corpus-packaging";
 
 type PublicationSnapshot = {
   schemaVersion: "assistant-publication-v1";
@@ -30,15 +31,17 @@ export async function verifyRepository(repoRoot: string, snapshotFile?: string) 
   const membership = JSON.parse(read("supabase/functions/assistant-runtime/current-card-membership.json")) as CardMembershipJson;
   const issues: IntegrationIssue[] = [];
   try {
+    verifyEdgeCorpusPackaging(repoRoot);
     const generated = buildCurrentAiRelease(loadCurrentAiSources(repoRoot));
     for (const [file, expected] of Object.entries({
       "artifacts/rag/current/approval-snapshot.json": generated.approval,
       "artifacts/rag/current/package-manifest.json": generated.packageManifest,
       "artifacts/rag/current/chunk-manifest.json": generated.chunkManifest,
       "artifacts/rag/current/chunks.json": generated.chunks,
-      "supabase/functions/assistant-runtime/current-corpus-approval.json": generated.approval,
     })) if (stableCanonicalStringify(JSON.parse(read(file))) !== stableCanonicalStringify(expected))
       issues.push({ code: "STALE_CURRENT_RELEASE", location: file, message: "Run rag:generate-current and review the changed-source report before publication." });
+    if (stableCanonicalStringify(unpackCorpusJson(JSON.parse(read("supabase/functions/assistant-runtime/current-corpus-approval.packed.json")))) !== stableCanonicalStringify(generated.approval))
+      issues.push({ code: "STALE_CURRENT_RELEASE", location: "supabase/functions/assistant-runtime/current-corpus-approval.packed.json", message: "Regenerate the reviewed current corpus pack." });
     if (stableCanonicalStringify(generated.membership) !== stableCanonicalStringify(membership))
       issues.push({ code: "STALE_MEMBERSHIP", location: "supabase/functions/assistant-runtime/current-card-membership.json", message: "Run rag:generate-current from approved current sources; do not manually expand station aliases." });
   } catch (cause) { issues.push({ code: "MANIFEST_CONTRACT", location: "artifacts/rag", message: String(cause) }); }

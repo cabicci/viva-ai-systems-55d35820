@@ -6,6 +6,7 @@ import { APPROVED_LOCALES, EMBEDDING_DIMENSIONS, EMBEDDING_MODEL_PLACEHOLDER } f
 import { normalizeCanonicalText, sha256CanonicalHex, sha256CanonicalJson } from "./canonical-checksum";
 import type { ApprovedPackageRecord, ChunkManifest, PackageManifest, RagChunkRecord } from "./types";
 import type { RagLocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import { packCorpusJson } from "../../../scripts/assistant/edge-corpus-packaging";
 
 export type CurrentAiPackage = {
   locale: string; lessonId: string; trackId: string; moduleId: string; contextModuleIds: string[];
@@ -113,7 +114,7 @@ export function writeCurrentAiRelease(root: string) {
     "artifacts/rag/current/chunks.json": release.chunks,
     "artifacts/rag/current/package-manifest.json": release.packageManifest,
     "artifacts/rag/current/chunk-manifest.json": release.chunkManifest,
-    "supabase/functions/assistant-runtime/current-corpus-approval.json": release.approval,
+    "supabase/functions/assistant-runtime/current-corpus-approval.packed.json": packCorpusJson(release.approval),
     "supabase/functions/assistant-runtime/current-card-membership.json": release.membership,
   };
   for (const [relative, value] of Object.entries(files)) {

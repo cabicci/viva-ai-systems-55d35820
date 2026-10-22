@@ -11,6 +11,7 @@ import { CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "@/lib/rag/constants";
 import { sha256CanonicalHex } from "@/lib/rag/canonical-checksum";
 import { currentSample, legacySample } from "./helpers/current-assistant-corpus";
 import { buildCurrentAiRelease } from "@/lib/rag/current-source-release";
+import { packCorpusJson } from "../../../scripts/assistant/edge-corpus-packaging";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const FIXED_NOW = new Date("2026-01-01T00:00:00.000Z");
@@ -408,7 +409,7 @@ describe("current-card isolation and content entitlement", () => {
       sourceSha: release.approval.releaseId, indexVersion: release.approval.indexVersion,
       productionRoute: chunk.productionRoute };
     vi.resetModules();
-    vi.doMock("../../../supabase/functions/assistant-runtime/current-corpus-approval.json", () => ({ default: release.approval }));
+    vi.doMock("../../../supabase/functions/assistant-runtime/current-corpus-approval.packed.json", () => ({ default: packCorpusJson(release.approval) }));
     vi.doMock("../../../supabase/functions/assistant-runtime/current-card-membership.json", () => ({ default: release.membership }));
     try {
       const runtime = await import("../../../supabase/functions/assistant-runtime/handler.ts");
@@ -417,7 +418,7 @@ describe("current-card isolation and content entitlement", () => {
       expect(res.status).toBe(200);
       expect((await res.json()).citations[0].trackId).toBe("new-card");
     } finally {
-      vi.doUnmock("../../../supabase/functions/assistant-runtime/current-corpus-approval.json");
+      vi.doUnmock("../../../supabase/functions/assistant-runtime/current-corpus-approval.packed.json");
       vi.doUnmock("../../../supabase/functions/assistant-runtime/current-card-membership.json");
       vi.resetModules();
     }
@@ -721,7 +722,7 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
   });
 
   it("17: duplicate/ambiguous registration fails closed at lookup build (source check)", () => {
-    expect(HANDLER_SRC).toContain("authoritative-corpus-lookup.json");
+    expect(HANDLER_SRC).toContain("authoritative-corpus-lookup.packed.json");
     expect(HANDLER_SRC).toContain("isValidSha256Digest");
   });
 

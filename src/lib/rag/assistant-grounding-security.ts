@@ -6,7 +6,7 @@
 import { APPROVED_LOCALES, CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "./constants";
 import { isValidSha256Digest, sha256CanonicalHex } from "./canonical-checksum";
 import runtimeCardMembership from "../../../supabase/functions/assistant-runtime/current-card-membership.json";
-import currentCorpusJson from "../../../supabase/functions/assistant-runtime/current-corpus-approval.json";
+import currentCorpusJson from "../../../artifacts/rag/current/approval-snapshot.json";
 import { isValidCurrentApproval, matchesCurrentApprovedContent, isCurrentReleaseRow, type CurrentCorpusApproval } from "../../../supabase/functions/assistant-runtime/current-corpus-admission.ts";
 const currentCorpus: CurrentCorpusApproval = currentCorpusJson;
 const currentCorpusValid = isValidCurrentApproval(currentCorpus);
