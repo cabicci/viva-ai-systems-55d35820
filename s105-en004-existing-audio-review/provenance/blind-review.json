@@ -1,0 +1,43 @@
+{
+  "audioSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+  "result": {
+    "transcript": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark 10 separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample. The marked collection locations matter. 10 points down one straight line may follow an old fertilizer band, a drainage line, or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation. Taking more soil from the same wrong strip does not solve the problem. A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here, the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends. If drawing the route is difficult, use the provided map with a route already drawn and place the 10 collection marks yourself. You still need to check the boundaries, point locations, exclusions, and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement, and record the change. Sampling bias: a systematic mismatch between collected material and the area or layer it is intended to represent.",
+    "uncertainWords": [
+      "collected"
+    ],
+    "findings": [
+      {
+        "startSeconds": 29.5,
+        "endSeconds": 31.2,
+        "heardText": "fertilizer band, [audible chuckle/nasal breath] a drainage line",
+        "issueType": "pacing_or_vocal_artifact",
+        "observation": "There is an audible suppressed laugh or sharp nasal breath immediately after 'fertilizer band' followed by slightly laugh-inflected phrasing on 'a drainage line'.",
+        "certainty": "high"
+      },
+      {
+        "startSeconds": 129.5,
+        "endSeconds": 131.0,
+        "heardText": "a systematic mismatch",
+        "issueType": "vocal_hitch",
+        "observation": "A brief breathy hitch or slight vocal break occurs mid-word during 'systematic'.",
+        "certainty": "medium"
+      },
+      {
+        "startSeconds": 131.2,
+        "endSeconds": 132.8,
+        "heardText": "between collected material",
+        "issueType": "consonant_reduction",
+        "observation": "The final alveolar stop in 'collected' is unreleased or assimilated before 'material', making it sound slightly close to 'collecting material'.",
+        "certainty": "medium"
+      }
+    ],
+    "overall": "needs_review",
+    "limitations": "Assessment is based solely on the provided audio without a reference script, human listening approval, or voice-identity verification."
+  },
+  "invalidTimestampFindingIndexes": [
+    1,
+    2
+  ],
+  "humanListeningApproved": false,
+  "reviewLimitations": "Model diagnostic only; invalid timing is a review defect, not evidence of defective speech."
+}

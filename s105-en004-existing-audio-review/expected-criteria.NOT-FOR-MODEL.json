@@ -1,0 +1,66 @@
+{
+  "sourceText": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.\n\nTen points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.\n\nA W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.\n\nIf drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.\n\nSampling bias\n\nA systematic mismatch between collected material and the area or layer it is intended to represent.",
+  "sourcePointers": [
+    {
+      "pointer": "/reading/2/paragraphs/0",
+      "text": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark ten separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample; the marked collection locations matter.",
+      "sha256": "7f65dbcc009b2d251e04840486890791d1a2e4c2bd78f4df9ba82875bbccee7c"
+    },
+    {
+      "pointer": "/reading/2/paragraphs/1",
+      "text": "Ten points down one straight line may follow an old fertilizer band, a drainage line or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation; taking more soil from the same wrong strip does not solve the problem.",
+      "sha256": "14591d3af94e35a54cc5d9c3b6fecaee3949d8c5c83dfe1a382b8764ba070cf1"
+    },
+    {
+      "pointer": "/reading/2/paragraphs/2",
+      "text": "A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends.",
+      "sha256": "8a2c12629377ac3b0b49f50a89ee0cac8a265bee548c74e29f59c6dcebde328a"
+    },
+    {
+      "pointer": "/reading/2/paragraphs/3",
+      "text": "If drawing the route is difficult, use the provided map with a route already drawn and place the ten collection marks yourself. You still need to check the boundaries, point locations, exclusions and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement and record the change.",
+      "sha256": "d0a5bda9762646e93fad1282991c69255e77ee8232d655057d8828e24dc3e430"
+    },
+    {
+      "pointer": "/glossary/1/0",
+      "text": "Sampling bias",
+      "sha256": "1b7e67606638c24d6fd4567b366a336e71edf9371beedf1214f82732fce16fb7"
+    },
+    {
+      "pointer": "/glossary/1/1",
+      "text": "A systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "sha256": "b50aa805761d00f5483970af51e85068302fe9843bceef9e2d87f8835302ea02"
+    }
+  ],
+  "priorFindings": [
+    {
+      "startSeconds": 29.5,
+      "endSeconds": 31.2,
+      "heardText": "fertilizer band, [audible chuckle/nasal breath] a drainage line",
+      "issueType": "pacing_or_vocal_artifact",
+      "observation": "There is an audible suppressed laugh or sharp nasal breath immediately after 'fertilizer band' followed by slightly laugh-inflected phrasing on 'a drainage line'.",
+      "certainty": "high"
+    },
+    {
+      "startSeconds": 129.5,
+      "endSeconds": 131.0,
+      "heardText": "a systematic mismatch",
+      "issueType": "vocal_hitch",
+      "observation": "A brief breathy hitch or slight vocal break occurs mid-word during 'systematic'.",
+      "certainty": "medium"
+    },
+    {
+      "startSeconds": 131.2,
+      "endSeconds": 132.8,
+      "heardText": "between collected material",
+      "issueType": "consonant_reduction",
+      "observation": "The final alveolar stop in 'collected' is unreleased or assimilated before 'material', making it sound slightly close to 'collecting material'.",
+      "certainty": "medium"
+    }
+  ],
+  "invalidPriorIndexes": [
+    1,
+    2
+  ],
+  "note": "Prior129.5-132.8s findings exceed95.64s recording: review defect, not evidence of speech defect. One valid29.5-31.2s acoustic concern needs independent diagnosis; no TTS repair inferred."
+}

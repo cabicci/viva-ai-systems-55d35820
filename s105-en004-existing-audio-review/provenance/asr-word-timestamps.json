@@ -1,0 +1,3989 @@
+{
+  "atUTC": "2026-10-22T10:16:39.804192+00:00",
+  "audioSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+  "audio": {
+    "channels": 1,
+    "sampleWidthBytes": 2,
+    "sampleRate": 24000,
+    "frames": 2295360,
+    "durationSeconds": 95.64,
+    "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+  },
+  "settings": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "maximumInvocationsPerUnit": 1,
+    "maximumInvocationsForBatch": 40,
+    "runtimeDependencies": "Resolved package versions, pip installation report and model file hashes are retained; transitive dependency lock is not claimed.",
+    "languageByLocale": {
+      "en": "en",
+      "ar-EG": "ar",
+      "it": "it",
+      "de": "de"
+    }
+  },
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 5.26,
+      "text": " Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone.",
+      "avgLogprob": -0.1281401854826183,
+      "noSpeechProbability": 0.0025786624755710363,
+      "words": [
+        {
+          "segmentId": 1,
+          "wordIndex": 0,
+          "word": " Draw",
+          "start": 0.0,
+          "end": 0.46,
+          "probability": 0.8791509866714478
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 1,
+          "word": " a",
+          "start": 0.46,
+          "end": 0.72,
+          "probability": 0.9972297549247742
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 2,
+          "word": " zigzag",
+          "start": 0.72,
+          "end": 1.22,
+          "probability": 0.8488225042819977
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 3,
+          "word": " or",
+          "start": 1.22,
+          "end": 1.52,
+          "probability": 0.9126361012458801
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 4,
+          "word": " W",
+          "start": 1.52,
+          "end": 1.98,
+          "probability": 0.6425115466117859
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 5,
+          "word": "-shaped",
+          "start": 1.98,
+          "end": 2.26,
+          "probability": 0.8176540732383728
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 6,
+          "word": " walking",
+          "start": 2.26,
+          "end": 2.78,
+          "probability": 0.9826191663742065
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 7,
+          "word": " route",
+          "start": 2.78,
+          "end": 3.02,
+          "probability": 0.9937885403633118
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 8,
+          "word": " that",
+          "start": 3.02,
+          "end": 3.4,
+          "probability": 0.975468099117279
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 9,
+          "word": " reaches",
+          "start": 3.4,
+          "end": 3.72,
+          "probability": 0.9980205297470093
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 10,
+          "word": " different",
+          "start": 3.72,
+          "end": 4.08,
+          "probability": 0.9949146509170532
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 11,
+          "word": " parts",
+          "start": 4.08,
+          "end": 4.4,
+          "probability": 0.99776291847229
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 12,
+          "word": " of",
+          "start": 4.4,
+          "end": 4.6,
+          "probability": 0.9987537860870361
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 13,
+          "word": " the",
+          "start": 4.6,
+          "end": 4.72,
+          "probability": 0.9981424808502197
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 14,
+          "word": " assigned",
+          "start": 4.72,
+          "end": 4.98,
+          "probability": 0.960070013999939
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 15,
+          "word": " zone.",
+          "start": 4.98,
+          "end": 5.26,
+          "probability": 0.9965682029724121
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.8,
+      "end": 12.98,
+      "text": " Mark 10 separate collection points for this training task and label them P01 to P10 once each.",
+      "avgLogprob": -0.1281401854826183,
+      "noSpeechProbability": 0.0025786624755710363,
+      "words": [
+        {
+          "segmentId": 2,
+          "wordIndex": 0,
+          "word": " Mark",
+          "start": 5.8,
+          "end": 6.4,
+          "probability": 0.9974748492240906
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 1,
+          "word": " 10",
+          "start": 6.4,
+          "end": 6.86,
+          "probability": 0.5789722800254822
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 2,
+          "word": " separate",
+          "start": 6.86,
+          "end": 7.34,
+          "probability": 0.9956183433532715
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 3,
+          "word": " collection",
+          "start": 7.34,
+          "end": 7.58,
+          "probability": 0.9781600832939148
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 4,
+          "word": " points",
+          "start": 7.58,
+          "end": 8.08,
+          "probability": 0.9983288645744324
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 5,
+          "word": " for",
+          "start": 8.08,
+          "end": 8.34,
+          "probability": 0.9987844824790955
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 6,
+          "word": " this",
+          "start": 8.34,
+          "end": 8.48,
+          "probability": 0.9933996200561523
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 7,
+          "word": " training",
+          "start": 8.48,
+          "end": 8.78,
+          "probability": 0.9861422181129456
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 8,
+          "word": " task",
+          "start": 8.78,
+          "end": 9.18,
+          "probability": 0.9967749714851379
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 9,
+          "word": " and",
+          "start": 9.18,
+          "end": 9.74,
+          "probability": 0.8390174508094788
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 10,
+          "word": " label",
+          "start": 9.74,
+          "end": 10.06,
+          "probability": 0.9980297684669495
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 11,
+          "word": " them",
+          "start": 10.06,
+          "end": 10.3,
+          "probability": 0.9955418705940247
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 12,
+          "word": " P01",
+          "start": 10.3,
+          "end": 11.1,
+          "probability": 0.7992699444293976
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 13,
+          "word": " to",
+          "start": 11.1,
+          "end": 11.64,
+          "probability": 0.9107463955879211
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 14,
+          "word": " P10",
+          "start": 11.64,
+          "end": 12.18,
+          "probability": 0.9900079667568207
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 15,
+          "word": " once",
+          "start": 12.18,
+          "end": 12.64,
+          "probability": 0.9331327676773071
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 16,
+          "word": " each.",
+          "start": 12.64,
+          "end": 12.98,
+          "probability": 0.9972457885742188
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 13.64,
+      "end": 18.6,
+      "text": " Keep the points within the intended zone and away from the identified unrepresentative features.",
+      "avgLogprob": -0.1281401854826183,
+      "noSpeechProbability": 0.0025786624755710363,
+      "words": [
+        {
+          "segmentId": 3,
+          "wordIndex": 0,
+          "word": " Keep",
+          "start": 13.64,
+          "end": 14.18,
+          "probability": 0.9964648485183716
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 1,
+          "word": " the",
+          "start": 14.18,
+          "end": 14.36,
+          "probability": 0.9966421127319336
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 2,
+          "word": " points",
+          "start": 14.36,
+          "end": 14.62,
+          "probability": 0.9975503087043762
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 3,
+          "word": " within",
+          "start": 14.62,
+          "end": 14.88,
+          "probability": 0.9969006776809692
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 14.88,
+          "end": 15.06,
+          "probability": 0.9977589845657349
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 5,
+          "word": " intended",
+          "start": 15.06,
+          "end": 15.42,
+          "probability": 0.9970065951347351
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 6,
+          "word": " zone",
+          "start": 15.42,
+          "end": 15.8,
+          "probability": 0.9974092841148376
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 7,
+          "word": " and",
+          "start": 15.8,
+          "end": 16.12,
+          "probability": 0.9419583082199097
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 8,
+          "word": " away",
+          "start": 16.12,
+          "end": 16.36,
+          "probability": 0.9986317753791809
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 9,
+          "word": " from",
+          "start": 16.36,
+          "end": 16.58,
+          "probability": 0.9969339370727539
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 10,
+          "word": " the",
+          "start": 16.58,
+          "end": 16.7,
+          "probability": 0.9929636120796204
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 11,
+          "word": " identified",
+          "start": 16.7,
+          "end": 17.28,
+          "probability": 0.9982913136482239
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 12,
+          "word": " unrepresentative",
+          "start": 17.28,
+          "end": 18.28,
+          "probability": 0.9548354744911194
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 13,
+          "word": " features.",
+          "start": 18.28,
+          "end": 18.6,
+          "probability": 0.9987247586250305
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 19.78,
+      "end": 24.78,
+      "text": " A route line is not itself a sample. The marked collection locations matter.",
+      "avgLogprob": -0.1281401854826183,
+      "noSpeechProbability": 0.0025786624755710363,
+      "words": [
+        {
+          "segmentId": 4,
+          "wordIndex": 0,
+          "word": " A",
+          "start": 19.78,
+          "end": 20.06,
+          "probability": 0.9947258830070496
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 1,
+          "word": " route",
+          "start": 20.06,
+          "end": 20.26,
+          "probability": 0.9688740968704224
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 2,
+          "word": " line",
+          "start": 20.26,
+          "end": 20.6,
+          "probability": 0.9854037165641785
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 3,
+          "word": " is",
+          "start": 20.6,
+          "end": 20.96,
+          "probability": 0.9971503615379333
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 4,
+          "word": " not",
+          "start": 20.96,
+          "end": 21.2,
+          "probability": 0.9969935417175293
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 5,
+          "word": " itself",
+          "start": 21.2,
+          "end": 21.66,
+          "probability": 0.9744856357574463
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 6,
+          "word": " a",
+          "start": 21.66,
+          "end": 22.02,
+          "probability": 0.9981611371040344
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 7,
+          "word": " sample.",
+          "start": 22.02,
+          "end": 22.34,
+          "probability": 0.997681736946106
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 8,
+          "word": " The",
+          "start": 22.76,
+          "end": 22.9,
+          "probability": 0.9956478476524353
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 9,
+          "word": " marked",
+          "start": 22.9,
+          "end": 23.24,
+          "probability": 0.997852087020874
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 10,
+          "word": " collection",
+          "start": 23.24,
+          "end": 23.74,
+          "probability": 0.983307957649231
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 11,
+          "word": " locations",
+          "start": 23.74,
+          "end": 24.34,
+          "probability": 0.9967306852340698
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 12,
+          "word": " matter.",
+          "start": 24.34,
+          "end": 24.78,
+          "probability": 0.9992700219154358
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 24.78,
+      "end": 32.52,
+      "text": " 10 points down one straight line may follow an old fertilizer band, a drainage line, or an equipment track.",
+      "avgLogprob": -0.09685188637060278,
+      "noSpeechProbability": 0.03616325557231903,
+      "words": [
+        {
+          "segmentId": 5,
+          "wordIndex": 0,
+          "word": " 10",
+          "start": 24.78,
+          "end": 26.04,
+          "probability": 0.33261626958847046
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 1,
+          "word": " points",
+          "start": 26.04,
+          "end": 26.36,
+          "probability": 0.951197624206543
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 2,
+          "word": " down",
+          "start": 26.36,
+          "end": 26.74,
+          "probability": 0.9956716299057007
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 3,
+          "word": " one",
+          "start": 26.74,
+          "end": 27.04,
+          "probability": 0.9508381485939026
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 4,
+          "word": " straight",
+          "start": 27.04,
+          "end": 27.34,
+          "probability": 0.9976000189781189
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 5,
+          "word": " line",
+          "start": 27.34,
+          "end": 27.72,
+          "probability": 0.9910652041435242
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 6,
+          "word": " may",
+          "start": 27.72,
+          "end": 28.14,
+          "probability": 0.9656860828399658
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 7,
+          "word": " follow",
+          "start": 28.14,
+          "end": 28.52,
+          "probability": 0.9951474070549011
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 8,
+          "word": " an",
+          "start": 28.52,
+          "end": 28.76,
+          "probability": 0.984984278678894
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 9,
+          "word": " old",
+          "start": 28.76,
+          "end": 28.94,
+          "probability": 0.9968897700309753
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 10,
+          "word": " fertilizer",
+          "start": 28.94,
+          "end": 29.36,
+          "probability": 0.9956560134887695
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 11,
+          "word": " band,",
+          "start": 29.36,
+          "end": 29.88,
+          "probability": 0.9461231827735901
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 12,
+          "word": " a",
+          "start": 30.2,
+          "end": 30.48,
+          "probability": 0.9657115340232849
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 13,
+          "word": " drainage",
+          "start": 30.48,
+          "end": 30.88,
+          "probability": 0.9984667301177979
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 14,
+          "word": " line,",
+          "start": 30.88,
+          "end": 31.32,
+          "probability": 0.9987126588821411
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 15,
+          "word": " or",
+          "start": 31.46,
+          "end": 31.72,
+          "probability": 0.9959696531295776
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 16,
+          "word": " an",
+          "start": 31.72,
+          "end": 31.86,
+          "probability": 0.9679214358329773
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 17,
+          "word": " equipment",
+          "start": 31.86,
+          "end": 32.1,
+          "probability": 0.9941439032554626
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 18,
+          "word": " track.",
+          "start": 32.1,
+          "end": 32.52,
+          "probability": 0.9565167427062988
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 32.96,
+      "end": 38.06,
+      "text": " Many points along the same unusual feature can give a consistently biased picture.",
+      "avgLogprob": -0.09685188637060278,
+      "noSpeechProbability": 0.03616325557231903,
+      "words": [
+        {
+          "segmentId": 6,
+          "wordIndex": 0,
+          "word": " Many",
+          "start": 32.96,
+          "end": 33.44,
+          "probability": 0.9046823978424072
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 1,
+          "word": " points",
+          "start": 33.44,
+          "end": 33.8,
+          "probability": 0.9981529116630554
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 2,
+          "word": " along",
+          "start": 33.8,
+          "end": 34.1,
+          "probability": 0.989887535572052
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 3,
+          "word": " the",
+          "start": 34.1,
+          "end": 34.38,
+          "probability": 0.9947362542152405
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 4,
+          "word": " same",
+          "start": 34.38,
+          "end": 34.7,
+          "probability": 0.9978734254837036
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 5,
+          "word": " unusual",
+          "start": 34.7,
+          "end": 35.22,
+          "probability": 0.9809108376502991
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 6,
+          "word": " feature",
+          "start": 35.22,
+          "end": 35.76,
+          "probability": 0.9923377633094788
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 7,
+          "word": " can",
+          "start": 35.76,
+          "end": 36.24,
+          "probability": 0.9757807850837708
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 8,
+          "word": " give",
+          "start": 36.24,
+          "end": 36.42,
+          "probability": 0.9976364374160767
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 9,
+          "word": " a",
+          "start": 36.42,
+          "end": 36.6,
+          "probability": 0.9978349804878235
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 10,
+          "word": " consistently",
+          "start": 36.6,
+          "end": 37.1,
+          "probability": 0.9961673617362976
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 11,
+          "word": " biased",
+          "start": 37.1,
+          "end": 37.6,
+          "probability": 0.9941366910934448
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 12,
+          "word": " picture.",
+          "start": 37.6,
+          "end": 38.06,
+          "probability": 0.9989866614341736
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 38.78,
+      "end": 42.66,
+      "text": " A route spread across the zone helps cover more of its variation.",
+      "avgLogprob": -0.09685188637060278,
+      "noSpeechProbability": 0.03616325557231903,
+      "words": [
+        {
+          "segmentId": 7,
+          "wordIndex": 0,
+          "word": " A",
+          "start": 38.78,
+          "end": 38.88,
+          "probability": 0.9952126741409302
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 1,
+          "word": " route",
+          "start": 38.88,
+          "end": 39.14,
+          "probability": 0.9875730872154236
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 2,
+          "word": " spread",
+          "start": 39.14,
+          "end": 39.58,
+          "probability": 0.9912022352218628
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 3,
+          "word": " across",
+          "start": 39.58,
+          "end": 39.92,
+          "probability": 0.998722493648529
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 39.92,
+          "end": 40.42,
+          "probability": 0.9959653615951538
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 5,
+          "word": " zone",
+          "start": 40.42,
+          "end": 40.8,
+          "probability": 0.9940548539161682
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 6,
+          "word": " helps",
+          "start": 40.8,
+          "end": 41.34,
+          "probability": 0.9910629987716675
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 7,
+          "word": " cover",
+          "start": 41.34,
+          "end": 41.64,
+          "probability": 0.9975416660308838
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 8,
+          "word": " more",
+          "start": 41.64,
+          "end": 41.92,
+          "probability": 0.9989309906959534
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 9,
+          "word": " of",
+          "start": 41.92,
+          "end": 42.06,
+          "probability": 0.9981422424316406
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 10,
+          "word": " its",
+          "start": 42.06,
+          "end": 42.18,
+          "probability": 0.9879209995269775
+        },
+        {
+          "segmentId": 7,
+          "wordIndex": 11,
+          "word": " variation.",
+          "start": 42.18,
+          "end": 42.66,
+          "probability": 0.9948721528053284
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 43.26,
+      "end": 47.58,
+      "text": " Taking more soil from the same wrong strip does not solve the problem.",
+      "avgLogprob": -0.09685188637060278,
+      "noSpeechProbability": 0.03616325557231903,
+      "words": [
+        {
+          "segmentId": 8,
+          "wordIndex": 0,
+          "word": " Taking",
+          "start": 43.26,
+          "end": 43.58,
+          "probability": 0.9947302341461182
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 1,
+          "word": " more",
+          "start": 43.58,
+          "end": 44.0,
+          "probability": 0.9991201758384705
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 2,
+          "word": " soil",
+          "start": 44.0,
+          "end": 44.38,
+          "probability": 0.9971056580543518
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 3,
+          "word": " from",
+          "start": 44.38,
+          "end": 44.64,
+          "probability": 0.9985843896865845
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 44.64,
+          "end": 44.84,
+          "probability": 0.9859718680381775
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 5,
+          "word": " same",
+          "start": 44.84,
+          "end": 45.14,
+          "probability": 0.9945540428161621
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 6,
+          "word": " wrong",
+          "start": 45.14,
+          "end": 45.64,
+          "probability": 0.9011755585670471
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 7,
+          "word": " strip",
+          "start": 45.64,
+          "end": 46.04,
+          "probability": 0.9874356985092163
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 8,
+          "word": " does",
+          "start": 46.04,
+          "end": 46.56,
+          "probability": 0.987321674823761
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 9,
+          "word": " not",
+          "start": 46.56,
+          "end": 46.78,
+          "probability": 0.999579131603241
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 10,
+          "word": " solve",
+          "start": 46.78,
+          "end": 47.08,
+          "probability": 0.9981539845466614
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 11,
+          "word": " the",
+          "start": 47.08,
+          "end": 47.2,
+          "probability": 0.998713493347168
+        },
+        {
+          "segmentId": 8,
+          "wordIndex": 12,
+          "word": " problem.",
+          "start": 47.2,
+          "end": 47.58,
+          "probability": 0.9988284707069397
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 48.88,
+      "end": 51.78,
+      "text": " A W shape does not guarantee statistical randomness.",
+      "avgLogprob": -0.09685188637060278,
+      "noSpeechProbability": 0.03616325557231903,
+      "words": [
+        {
+          "segmentId": 9,
+          "wordIndex": 0,
+          "word": " A",
+          "start": 48.88,
+          "end": 49.14,
+          "probability": 0.9890953898429871
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 1,
+          "word": " W",
+          "start": 49.14,
+          "end": 49.54,
+          "probability": 0.735043466091156
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 2,
+          "word": " shape",
+          "start": 49.54,
+          "end": 49.86,
+          "probability": 0.662514328956604
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 3,
+          "word": " does",
+          "start": 49.86,
+          "end": 50.16,
+          "probability": 0.9915468096733093
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 4,
+          "word": " not",
+          "start": 50.16,
+          "end": 50.46,
+          "probability": 0.9992536902427673
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 5,
+          "word": " guarantee",
+          "start": 50.46,
+          "end": 50.84,
+          "probability": 0.9929152727127075
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 6,
+          "word": " statistical",
+          "start": 50.84,
+          "end": 51.66,
+          "probability": 0.9973289966583252
+        },
+        {
+          "segmentId": 9,
+          "wordIndex": 7,
+          "word": " randomness.",
+          "start": 51.66,
+          "end": 52.03999999999999,
+          "probability": 0.9993810653686523
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 52.04,
+      "end": 55.84,
+      "text": " Random sampling needs a defined method of choosing locations.",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 10,
+          "wordIndex": 0,
+          "word": " Random",
+          "start": 52.04,
+          "end": 53.12,
+          "probability": 0.767772376537323
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 1,
+          "word": " sampling",
+          "start": 53.12,
+          "end": 53.54,
+          "probability": 0.9451746344566345
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 2,
+          "word": " needs",
+          "start": 53.54,
+          "end": 53.92,
+          "probability": 0.9782763123512268
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 3,
+          "word": " a",
+          "start": 53.92,
+          "end": 54.1,
+          "probability": 0.995799720287323
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 4,
+          "word": " defined",
+          "start": 54.1,
+          "end": 54.44,
+          "probability": 0.9934535026550293
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 5,
+          "word": " method",
+          "start": 54.44,
+          "end": 54.82,
+          "probability": 0.9987126588821411
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 6,
+          "word": " of",
+          "start": 54.82,
+          "end": 54.98,
+          "probability": 0.997688889503479
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 7,
+          "word": " choosing",
+          "start": 54.98,
+          "end": 55.34,
+          "probability": 0.9980643391609192
+        },
+        {
+          "segmentId": 10,
+          "wordIndex": 8,
+          "word": " locations.",
+          "start": 55.34,
+          "end": 55.84,
+          "probability": 0.9913952946662903
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 56.48,
+      "end": 60.66,
+      "text": " Here, the purpose of the route is practical spatial coverage within the zone.",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 11,
+          "wordIndex": 0,
+          "word": " Here,",
+          "start": 56.48,
+          "end": 56.76,
+          "probability": 0.9934651255607605
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 1,
+          "word": " the",
+          "start": 56.9,
+          "end": 57.0,
+          "probability": 0.9980273842811584
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 2,
+          "word": " purpose",
+          "start": 57.0,
+          "end": 57.28,
+          "probability": 0.9915353059768677
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 3,
+          "word": " of",
+          "start": 57.28,
+          "end": 57.46,
+          "probability": 0.9988362193107605
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 4,
+          "word": " the",
+          "start": 57.46,
+          "end": 57.54,
+          "probability": 0.9938240051269531
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 5,
+          "word": " route",
+          "start": 57.54,
+          "end": 57.76,
+          "probability": 0.9906697273254395
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 6,
+          "word": " is",
+          "start": 57.76,
+          "end": 58.06,
+          "probability": 0.9858778715133667
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 7,
+          "word": " practical",
+          "start": 58.06,
+          "end": 58.66,
+          "probability": 0.9418062567710876
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 8,
+          "word": " spatial",
+          "start": 58.66,
+          "end": 59.18,
+          "probability": 0.7933411002159119
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 9,
+          "word": " coverage",
+          "start": 59.18,
+          "end": 59.72,
+          "probability": 0.9989100694656372
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 10,
+          "word": " within",
+          "start": 59.72,
+          "end": 60.12,
+          "probability": 0.9961394667625427
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 11,
+          "word": " the",
+          "start": 60.12,
+          "end": 60.38,
+          "probability": 0.9973830580711365
+        },
+        {
+          "segmentId": 11,
+          "wordIndex": 12,
+          "word": " zone.",
+          "start": 60.38,
+          "end": 60.66,
+          "probability": 0.9814126491546631
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 61.14,
+      "end": 65.16,
+      "text": " Do not describe the plan as statistically random, merely because the line bends.",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 12,
+          "wordIndex": 0,
+          "word": " Do",
+          "start": 61.14,
+          "end": 61.36,
+          "probability": 0.988555371761322
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 1,
+          "word": " not",
+          "start": 61.36,
+          "end": 61.58,
+          "probability": 0.9931803941726685
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 2,
+          "word": " describe",
+          "start": 61.58,
+          "end": 61.96,
+          "probability": 0.9954220652580261
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 3,
+          "word": " the",
+          "start": 61.96,
+          "end": 62.12,
+          "probability": 0.9981240630149841
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 4,
+          "word": " plan",
+          "start": 62.12,
+          "end": 62.36,
+          "probability": 0.9942941069602966
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 5,
+          "word": " as",
+          "start": 62.36,
+          "end": 62.6,
+          "probability": 0.9816426634788513
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 6,
+          "word": " statistically",
+          "start": 62.6,
+          "end": 63.06,
+          "probability": 0.987905740737915
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 7,
+          "word": " random,",
+          "start": 63.06,
+          "end": 63.54,
+          "probability": 0.9951216578483582
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 8,
+          "word": " merely",
+          "start": 63.84,
+          "end": 64.16,
+          "probability": 0.9949418902397156
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 9,
+          "word": " because",
+          "start": 64.16,
+          "end": 64.5,
+          "probability": 0.9979787468910217
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 10,
+          "word": " the",
+          "start": 64.5,
+          "end": 64.7,
+          "probability": 0.9887646436691284
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 11,
+          "word": " line",
+          "start": 64.7,
+          "end": 64.88,
+          "probability": 0.9969171285629272
+        },
+        {
+          "segmentId": 12,
+          "wordIndex": 12,
+          "word": " bends.",
+          "start": 64.88,
+          "end": 65.16,
+          "probability": 0.9984069466590881
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 66.28,
+      "end": 70.92,
+      "text": " If drawing the route is difficult, use the provided map with a route already drawn",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 13,
+          "wordIndex": 0,
+          "word": " If",
+          "start": 66.28,
+          "end": 66.5,
+          "probability": 0.9933785200119019
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 1,
+          "word": " drawing",
+          "start": 66.5,
+          "end": 66.78,
+          "probability": 0.9607022404670715
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 2,
+          "word": " the",
+          "start": 66.78,
+          "end": 66.96,
+          "probability": 0.995894193649292
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 3,
+          "word": " route",
+          "start": 66.96,
+          "end": 67.2,
+          "probability": 0.9951474070549011
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 4,
+          "word": " is",
+          "start": 67.2,
+          "end": 67.4,
+          "probability": 0.9986617565155029
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 5,
+          "word": " difficult,",
+          "start": 67.4,
+          "end": 67.82,
+          "probability": 0.998573899269104
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 6,
+          "word": " use",
+          "start": 68.22,
+          "end": 68.46,
+          "probability": 0.9970976114273071
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 7,
+          "word": " the",
+          "start": 68.46,
+          "end": 68.64,
+          "probability": 0.9960939288139343
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 8,
+          "word": " provided",
+          "start": 68.64,
+          "end": 69.0,
+          "probability": 0.9874936938285828
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 9,
+          "word": " map",
+          "start": 69.0,
+          "end": 69.34,
+          "probability": 0.997865617275238
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 10,
+          "word": " with",
+          "start": 69.34,
+          "end": 69.64,
+          "probability": 0.9711889028549194
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 11,
+          "word": " a",
+          "start": 69.64,
+          "end": 69.76,
+          "probability": 0.9612798094749451
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 12,
+          "word": " route",
+          "start": 69.76,
+          "end": 70.02,
+          "probability": 0.9962077140808105
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 13,
+          "word": " already",
+          "start": 70.02,
+          "end": 70.52,
+          "probability": 0.9960643649101257
+        },
+        {
+          "segmentId": 13,
+          "wordIndex": 14,
+          "word": " drawn",
+          "start": 70.52,
+          "end": 70.92,
+          "probability": 0.9964509010314941
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 70.92,
+      "end": 73.2,
+      "text": " and place the 10 collection marks yourself.",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 14,
+          "wordIndex": 0,
+          "word": " and",
+          "start": 70.92,
+          "end": 71.4,
+          "probability": 0.8930299282073975
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 1,
+          "word": " place",
+          "start": 71.4,
+          "end": 71.64,
+          "probability": 0.9981153011322021
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 2,
+          "word": " the",
+          "start": 71.64,
+          "end": 71.86,
+          "probability": 0.994125485420227
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 3,
+          "word": " 10",
+          "start": 71.86,
+          "end": 72.08,
+          "probability": 0.6084991097450256
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 4,
+          "word": " collection",
+          "start": 72.08,
+          "end": 72.4,
+          "probability": 0.966440737247467
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 5,
+          "word": " marks",
+          "start": 72.4,
+          "end": 72.76,
+          "probability": 0.9959122538566589
+        },
+        {
+          "segmentId": 14,
+          "wordIndex": 6,
+          "word": " yourself.",
+          "start": 72.76,
+          "end": 73.2,
+          "probability": 0.9964022636413574
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 73.78,
+      "end": 78.04,
+      "text": " You still need to check the boundaries, point locations, exclusions, and count.",
+      "avgLogprob": -0.08855326018835369,
+      "noSpeechProbability": 0.07001033425331116,
+      "words": [
+        {
+          "segmentId": 15,
+          "wordIndex": 0,
+          "word": " You",
+          "start": 73.78,
+          "end": 74.04,
+          "probability": 0.9977957010269165
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 1,
+          "word": " still",
+          "start": 74.04,
+          "end": 74.34,
+          "probability": 0.9961179494857788
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 2,
+          "word": " need",
+          "start": 74.34,
+          "end": 74.52,
+          "probability": 0.9990599751472473
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 3,
+          "word": " to",
+          "start": 74.52,
+          "end": 74.66,
+          "probability": 0.9986100196838379
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 4,
+          "word": " check",
+          "start": 74.66,
+          "end": 74.88,
+          "probability": 0.9985939860343933
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 5,
+          "word": " the",
+          "start": 74.88,
+          "end": 75.04,
+          "probability": 0.994809627532959
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 6,
+          "word": " boundaries,",
+          "start": 75.04,
+          "end": 75.44,
+          "probability": 0.9966887831687927
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 7,
+          "word": " point",
+          "start": 75.9,
+          "end": 76.1,
+          "probability": 0.9935444593429565
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 8,
+          "word": " locations,",
+          "start": 76.1,
+          "end": 76.58,
+          "probability": 0.9969068169593811
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 9,
+          "word": " exclusions,",
+          "start": 76.88,
+          "end": 77.5,
+          "probability": 0.9969726800918579
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 10,
+          "word": " and",
+          "start": 77.68,
+          "end": 77.78,
+          "probability": 0.9991889595985413
+        },
+        {
+          "segmentId": 15,
+          "wordIndex": 11,
+          "word": " count.",
+          "start": 77.78,
+          "end": 78.04,
+          "probability": 0.9956645369529724
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 78.04,
+      "end": 86.84,
+      "text": " If a planned point proves unsafe or unsuitable on-site, stop, follow the trainer's plan for an appropriate replacement and record the change.",
+      "avgLogprob": -0.19112992495821232,
+      "noSpeechProbability": 0.006857597269117832,
+      "words": [
+        {
+          "segmentId": 16,
+          "wordIndex": 0,
+          "word": " If",
+          "start": 78.04,
+          "end": 79.18,
+          "probability": 0.6854072213172913
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 1,
+          "word": " a",
+          "start": 79.18,
+          "end": 79.36,
+          "probability": 0.9930332899093628
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 2,
+          "word": " planned",
+          "start": 79.36,
+          "end": 79.66,
+          "probability": 0.9541699290275574
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 3,
+          "word": " point",
+          "start": 79.66,
+          "end": 79.94,
+          "probability": 0.9978445768356323
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 4,
+          "word": " proves",
+          "start": 79.94,
+          "end": 80.3,
+          "probability": 0.9943118095397949
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 5,
+          "word": " unsafe",
+          "start": 80.3,
+          "end": 80.84,
+          "probability": 0.9955783486366272
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 6,
+          "word": " or",
+          "start": 80.84,
+          "end": 81.12,
+          "probability": 0.9956021308898926
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 7,
+          "word": " unsuitable",
+          "start": 81.12,
+          "end": 81.72,
+          "probability": 0.9932477474212646
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 8,
+          "word": " on",
+          "start": 81.72,
+          "end": 81.94,
+          "probability": 0.9033040404319763
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 9,
+          "word": "-site,",
+          "start": 81.94,
+          "end": 82.18,
+          "probability": 0.6826891899108887
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 10,
+          "word": " stop,",
+          "start": 82.58,
+          "end": 82.84,
+          "probability": 0.9623700380325317
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 11,
+          "word": " follow",
+          "start": 83.32,
+          "end": 83.68,
+          "probability": 0.9965901374816895
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 12,
+          "word": " the",
+          "start": 83.68,
+          "end": 83.86,
+          "probability": 0.9939007759094238
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 13,
+          "word": " trainer's",
+          "start": 83.86,
+          "end": 84.24,
+          "probability": 0.9643175005912781
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 14,
+          "word": " plan",
+          "start": 84.24,
+          "end": 84.48,
+          "probability": 0.9956455230712891
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 15,
+          "word": " for",
+          "start": 84.48,
+          "end": 84.7,
+          "probability": 0.9984215497970581
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 16,
+          "word": " an",
+          "start": 84.7,
+          "end": 84.82,
+          "probability": 0.8100555539131165
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 17,
+          "word": " appropriate",
+          "start": 84.82,
+          "end": 85.16,
+          "probability": 0.9965662956237793
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 18,
+          "word": " replacement",
+          "start": 85.16,
+          "end": 85.7,
+          "probability": 0.9983153343200684
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 19,
+          "word": " and",
+          "start": 85.7,
+          "end": 86.1,
+          "probability": 0.5868421196937561
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 20,
+          "word": " record",
+          "start": 86.1,
+          "end": 86.4,
+          "probability": 0.9986585378646851
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 21,
+          "word": " the",
+          "start": 86.4,
+          "end": 86.56,
+          "probability": 0.9968922734260559
+        },
+        {
+          "segmentId": 16,
+          "wordIndex": 22,
+          "word": " change.",
+          "start": 86.56,
+          "end": 86.84,
+          "probability": 0.9990555644035339
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 88.04,
+      "end": 95.08,
+      "text": " Sampling bias – a systematic mismatch between collected material and the area or layer it is intended to represent.",
+      "avgLogprob": -0.19112992495821232,
+      "noSpeechProbability": 0.006857597269117832,
+      "words": [
+        {
+          "segmentId": 17,
+          "wordIndex": 0,
+          "word": " Sampling",
+          "start": 88.04,
+          "end": 88.54,
+          "probability": 0.9858428835868835
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 1,
+          "word": " bias",
+          "start": 88.54,
+          "end": 88.84,
+          "probability": 0.6471028923988342
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 2,
+          "word": " –",
+          "start": 88.84,
+          "end": 89.44,
+          "probability": 0.1460130512714386
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 3,
+          "word": " a",
+          "start": 89.44,
+          "end": 89.56,
+          "probability": 0.6942492723464966
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 4,
+          "word": " systematic",
+          "start": 89.56,
+          "end": 89.96,
+          "probability": 0.995002806186676
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 5,
+          "word": " mismatch",
+          "start": 89.96,
+          "end": 90.78,
+          "probability": 0.9964250326156616
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 6,
+          "word": " between",
+          "start": 90.78,
+          "end": 91.16,
+          "probability": 0.9990018010139465
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 7,
+          "word": " collected",
+          "start": 91.16,
+          "end": 91.56,
+          "probability": 0.46091940999031067
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 8,
+          "word": " material",
+          "start": 91.56,
+          "end": 92.1,
+          "probability": 0.9972965121269226
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 9,
+          "word": " and",
+          "start": 92.1,
+          "end": 92.66,
+          "probability": 0.9859926104545593
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 10,
+          "word": " the",
+          "start": 92.66,
+          "end": 92.8,
+          "probability": 0.9927922487258911
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 11,
+          "word": " area",
+          "start": 92.8,
+          "end": 93.2,
+          "probability": 0.9951497912406921
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 12,
+          "word": " or",
+          "start": 93.2,
+          "end": 93.48,
+          "probability": 0.9908334612846375
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 13,
+          "word": " layer",
+          "start": 93.48,
+          "end": 93.74,
+          "probability": 0.9978267550468445
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 14,
+          "word": " it",
+          "start": 93.74,
+          "end": 94.0,
+          "probability": 0.9950254559516907
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 15,
+          "word": " is",
+          "start": 94.0,
+          "end": 94.12,
+          "probability": 0.9968826770782471
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 16,
+          "word": " intended",
+          "start": 94.12,
+          "end": 94.46,
+          "probability": 0.9933991432189941
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 17,
+          "word": " to",
+          "start": 94.46,
+          "end": 94.66,
+          "probability": 0.9979661703109741
+        },
+        {
+          "segmentId": 17,
+          "wordIndex": 18,
+          "word": " represent.",
+          "start": 94.66,
+          "end": 95.08,
+          "probability": 0.9985384941101074
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "segmentId": 1,
+      "wordIndex": 0,
+      "word": " Draw",
+      "start": 0.0,
+      "end": 0.46,
+      "probability": 0.8791509866714478
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 1,
+      "word": " a",
+      "start": 0.46,
+      "end": 0.72,
+      "probability": 0.9972297549247742
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 2,
+      "word": " zigzag",
+      "start": 0.72,
+      "end": 1.22,
+      "probability": 0.8488225042819977
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 3,
+      "word": " or",
+      "start": 1.22,
+      "end": 1.52,
+      "probability": 0.9126361012458801
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 4,
+      "word": " W",
+      "start": 1.52,
+      "end": 1.98,
+      "probability": 0.6425115466117859
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 5,
+      "word": "-shaped",
+      "start": 1.98,
+      "end": 2.26,
+      "probability": 0.8176540732383728
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 6,
+      "word": " walking",
+      "start": 2.26,
+      "end": 2.78,
+      "probability": 0.9826191663742065
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 7,
+      "word": " route",
+      "start": 2.78,
+      "end": 3.02,
+      "probability": 0.9937885403633118
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 8,
+      "word": " that",
+      "start": 3.02,
+      "end": 3.4,
+      "probability": 0.975468099117279
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 9,
+      "word": " reaches",
+      "start": 3.4,
+      "end": 3.72,
+      "probability": 0.9980205297470093
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 10,
+      "word": " different",
+      "start": 3.72,
+      "end": 4.08,
+      "probability": 0.9949146509170532
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 11,
+      "word": " parts",
+      "start": 4.08,
+      "end": 4.4,
+      "probability": 0.99776291847229
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 12,
+      "word": " of",
+      "start": 4.4,
+      "end": 4.6,
+      "probability": 0.9987537860870361
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 13,
+      "word": " the",
+      "start": 4.6,
+      "end": 4.72,
+      "probability": 0.9981424808502197
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 14,
+      "word": " assigned",
+      "start": 4.72,
+      "end": 4.98,
+      "probability": 0.960070013999939
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 15,
+      "word": " zone.",
+      "start": 4.98,
+      "end": 5.26,
+      "probability": 0.9965682029724121
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 0,
+      "word": " Mark",
+      "start": 5.8,
+      "end": 6.4,
+      "probability": 0.9974748492240906
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 1,
+      "word": " 10",
+      "start": 6.4,
+      "end": 6.86,
+      "probability": 0.5789722800254822
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 2,
+      "word": " separate",
+      "start": 6.86,
+      "end": 7.34,
+      "probability": 0.9956183433532715
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 3,
+      "word": " collection",
+      "start": 7.34,
+      "end": 7.58,
+      "probability": 0.9781600832939148
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 4,
+      "word": " points",
+      "start": 7.58,
+      "end": 8.08,
+      "probability": 0.9983288645744324
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 5,
+      "word": " for",
+      "start": 8.08,
+      "end": 8.34,
+      "probability": 0.9987844824790955
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 6,
+      "word": " this",
+      "start": 8.34,
+      "end": 8.48,
+      "probability": 0.9933996200561523
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 7,
+      "word": " training",
+      "start": 8.48,
+      "end": 8.78,
+      "probability": 0.9861422181129456
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 8,
+      "word": " task",
+      "start": 8.78,
+      "end": 9.18,
+      "probability": 0.9967749714851379
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 9,
+      "word": " and",
+      "start": 9.18,
+      "end": 9.74,
+      "probability": 0.8390174508094788
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 10,
+      "word": " label",
+      "start": 9.74,
+      "end": 10.06,
+      "probability": 0.9980297684669495
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 11,
+      "word": " them",
+      "start": 10.06,
+      "end": 10.3,
+      "probability": 0.9955418705940247
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 12,
+      "word": " P01",
+      "start": 10.3,
+      "end": 11.1,
+      "probability": 0.7992699444293976
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 13,
+      "word": " to",
+      "start": 11.1,
+      "end": 11.64,
+      "probability": 0.9107463955879211
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 14,
+      "word": " P10",
+      "start": 11.64,
+      "end": 12.18,
+      "probability": 0.9900079667568207
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 15,
+      "word": " once",
+      "start": 12.18,
+      "end": 12.64,
+      "probability": 0.9331327676773071
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 16,
+      "word": " each.",
+      "start": 12.64,
+      "end": 12.98,
+      "probability": 0.9972457885742188
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 0,
+      "word": " Keep",
+      "start": 13.64,
+      "end": 14.18,
+      "probability": 0.9964648485183716
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 1,
+      "word": " the",
+      "start": 14.18,
+      "end": 14.36,
+      "probability": 0.9966421127319336
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 2,
+      "word": " points",
+      "start": 14.36,
+      "end": 14.62,
+      "probability": 0.9975503087043762
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 3,
+      "word": " within",
+      "start": 14.62,
+      "end": 14.88,
+      "probability": 0.9969006776809692
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 4,
+      "word": " the",
+      "start": 14.88,
+      "end": 15.06,
+      "probability": 0.9977589845657349
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 5,
+      "word": " intended",
+      "start": 15.06,
+      "end": 15.42,
+      "probability": 0.9970065951347351
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 6,
+      "word": " zone",
+      "start": 15.42,
+      "end": 15.8,
+      "probability": 0.9974092841148376
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 7,
+      "word": " and",
+      "start": 15.8,
+      "end": 16.12,
+      "probability": 0.9419583082199097
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 8,
+      "word": " away",
+      "start": 16.12,
+      "end": 16.36,
+      "probability": 0.9986317753791809
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 9,
+      "word": " from",
+      "start": 16.36,
+      "end": 16.58,
+      "probability": 0.9969339370727539
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 10,
+      "word": " the",
+      "start": 16.58,
+      "end": 16.7,
+      "probability": 0.9929636120796204
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 11,
+      "word": " identified",
+      "start": 16.7,
+      "end": 17.28,
+      "probability": 0.9982913136482239
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 12,
+      "word": " unrepresentative",
+      "start": 17.28,
+      "end": 18.28,
+      "probability": 0.9548354744911194
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 13,
+      "word": " features.",
+      "start": 18.28,
+      "end": 18.6,
+      "probability": 0.9987247586250305
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 0,
+      "word": " A",
+      "start": 19.78,
+      "end": 20.06,
+      "probability": 0.9947258830070496
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 1,
+      "word": " route",
+      "start": 20.06,
+      "end": 20.26,
+      "probability": 0.9688740968704224
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 2,
+      "word": " line",
+      "start": 20.26,
+      "end": 20.6,
+      "probability": 0.9854037165641785
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 3,
+      "word": " is",
+      "start": 20.6,
+      "end": 20.96,
+      "probability": 0.9971503615379333
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 4,
+      "word": " not",
+      "start": 20.96,
+      "end": 21.2,
+      "probability": 0.9969935417175293
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 5,
+      "word": " itself",
+      "start": 21.2,
+      "end": 21.66,
+      "probability": 0.9744856357574463
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 6,
+      "word": " a",
+      "start": 21.66,
+      "end": 22.02,
+      "probability": 0.9981611371040344
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 7,
+      "word": " sample.",
+      "start": 22.02,
+      "end": 22.34,
+      "probability": 0.997681736946106
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 8,
+      "word": " The",
+      "start": 22.76,
+      "end": 22.9,
+      "probability": 0.9956478476524353
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 9,
+      "word": " marked",
+      "start": 22.9,
+      "end": 23.24,
+      "probability": 0.997852087020874
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 10,
+      "word": " collection",
+      "start": 23.24,
+      "end": 23.74,
+      "probability": 0.983307957649231
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 11,
+      "word": " locations",
+      "start": 23.74,
+      "end": 24.34,
+      "probability": 0.9967306852340698
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 12,
+      "word": " matter.",
+      "start": 24.34,
+      "end": 24.78,
+      "probability": 0.9992700219154358
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 0,
+      "word": " 10",
+      "start": 24.78,
+      "end": 26.04,
+      "probability": 0.33261626958847046
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 1,
+      "word": " points",
+      "start": 26.04,
+      "end": 26.36,
+      "probability": 0.951197624206543
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 2,
+      "word": " down",
+      "start": 26.36,
+      "end": 26.74,
+      "probability": 0.9956716299057007
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 3,
+      "word": " one",
+      "start": 26.74,
+      "end": 27.04,
+      "probability": 0.9508381485939026
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 4,
+      "word": " straight",
+      "start": 27.04,
+      "end": 27.34,
+      "probability": 0.9976000189781189
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 5,
+      "word": " line",
+      "start": 27.34,
+      "end": 27.72,
+      "probability": 0.9910652041435242
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 6,
+      "word": " may",
+      "start": 27.72,
+      "end": 28.14,
+      "probability": 0.9656860828399658
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 7,
+      "word": " follow",
+      "start": 28.14,
+      "end": 28.52,
+      "probability": 0.9951474070549011
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 8,
+      "word": " an",
+      "start": 28.52,
+      "end": 28.76,
+      "probability": 0.984984278678894
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 9,
+      "word": " old",
+      "start": 28.76,
+      "end": 28.94,
+      "probability": 0.9968897700309753
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 10,
+      "word": " fertilizer",
+      "start": 28.94,
+      "end": 29.36,
+      "probability": 0.9956560134887695
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 11,
+      "word": " band,",
+      "start": 29.36,
+      "end": 29.88,
+      "probability": 0.9461231827735901
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 12,
+      "word": " a",
+      "start": 30.2,
+      "end": 30.48,
+      "probability": 0.9657115340232849
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 13,
+      "word": " drainage",
+      "start": 30.48,
+      "end": 30.88,
+      "probability": 0.9984667301177979
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 14,
+      "word": " line,",
+      "start": 30.88,
+      "end": 31.32,
+      "probability": 0.9987126588821411
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 15,
+      "word": " or",
+      "start": 31.46,
+      "end": 31.72,
+      "probability": 0.9959696531295776
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 16,
+      "word": " an",
+      "start": 31.72,
+      "end": 31.86,
+      "probability": 0.9679214358329773
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 17,
+      "word": " equipment",
+      "start": 31.86,
+      "end": 32.1,
+      "probability": 0.9941439032554626
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 18,
+      "word": " track.",
+      "start": 32.1,
+      "end": 32.52,
+      "probability": 0.9565167427062988
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 0,
+      "word": " Many",
+      "start": 32.96,
+      "end": 33.44,
+      "probability": 0.9046823978424072
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 1,
+      "word": " points",
+      "start": 33.44,
+      "end": 33.8,
+      "probability": 0.9981529116630554
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 2,
+      "word": " along",
+      "start": 33.8,
+      "end": 34.1,
+      "probability": 0.989887535572052
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 3,
+      "word": " the",
+      "start": 34.1,
+      "end": 34.38,
+      "probability": 0.9947362542152405
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 4,
+      "word": " same",
+      "start": 34.38,
+      "end": 34.7,
+      "probability": 0.9978734254837036
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 5,
+      "word": " unusual",
+      "start": 34.7,
+      "end": 35.22,
+      "probability": 0.9809108376502991
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 6,
+      "word": " feature",
+      "start": 35.22,
+      "end": 35.76,
+      "probability": 0.9923377633094788
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 7,
+      "word": " can",
+      "start": 35.76,
+      "end": 36.24,
+      "probability": 0.9757807850837708
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 8,
+      "word": " give",
+      "start": 36.24,
+      "end": 36.42,
+      "probability": 0.9976364374160767
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 9,
+      "word": " a",
+      "start": 36.42,
+      "end": 36.6,
+      "probability": 0.9978349804878235
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 10,
+      "word": " consistently",
+      "start": 36.6,
+      "end": 37.1,
+      "probability": 0.9961673617362976
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 11,
+      "word": " biased",
+      "start": 37.1,
+      "end": 37.6,
+      "probability": 0.9941366910934448
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 12,
+      "word": " picture.",
+      "start": 37.6,
+      "end": 38.06,
+      "probability": 0.9989866614341736
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 0,
+      "word": " A",
+      "start": 38.78,
+      "end": 38.88,
+      "probability": 0.9952126741409302
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 1,
+      "word": " route",
+      "start": 38.88,
+      "end": 39.14,
+      "probability": 0.9875730872154236
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 2,
+      "word": " spread",
+      "start": 39.14,
+      "end": 39.58,
+      "probability": 0.9912022352218628
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 3,
+      "word": " across",
+      "start": 39.58,
+      "end": 39.92,
+      "probability": 0.998722493648529
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 4,
+      "word": " the",
+      "start": 39.92,
+      "end": 40.42,
+      "probability": 0.9959653615951538
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 5,
+      "word": " zone",
+      "start": 40.42,
+      "end": 40.8,
+      "probability": 0.9940548539161682
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 6,
+      "word": " helps",
+      "start": 40.8,
+      "end": 41.34,
+      "probability": 0.9910629987716675
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 7,
+      "word": " cover",
+      "start": 41.34,
+      "end": 41.64,
+      "probability": 0.9975416660308838
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 8,
+      "word": " more",
+      "start": 41.64,
+      "end": 41.92,
+      "probability": 0.9989309906959534
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 9,
+      "word": " of",
+      "start": 41.92,
+      "end": 42.06,
+      "probability": 0.9981422424316406
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 10,
+      "word": " its",
+      "start": 42.06,
+      "end": 42.18,
+      "probability": 0.9879209995269775
+    },
+    {
+      "segmentId": 7,
+      "wordIndex": 11,
+      "word": " variation.",
+      "start": 42.18,
+      "end": 42.66,
+      "probability": 0.9948721528053284
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 0,
+      "word": " Taking",
+      "start": 43.26,
+      "end": 43.58,
+      "probability": 0.9947302341461182
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 1,
+      "word": " more",
+      "start": 43.58,
+      "end": 44.0,
+      "probability": 0.9991201758384705
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 2,
+      "word": " soil",
+      "start": 44.0,
+      "end": 44.38,
+      "probability": 0.9971056580543518
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 3,
+      "word": " from",
+      "start": 44.38,
+      "end": 44.64,
+      "probability": 0.9985843896865845
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 4,
+      "word": " the",
+      "start": 44.64,
+      "end": 44.84,
+      "probability": 0.9859718680381775
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 5,
+      "word": " same",
+      "start": 44.84,
+      "end": 45.14,
+      "probability": 0.9945540428161621
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 6,
+      "word": " wrong",
+      "start": 45.14,
+      "end": 45.64,
+      "probability": 0.9011755585670471
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 7,
+      "word": " strip",
+      "start": 45.64,
+      "end": 46.04,
+      "probability": 0.9874356985092163
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 8,
+      "word": " does",
+      "start": 46.04,
+      "end": 46.56,
+      "probability": 0.987321674823761
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 9,
+      "word": " not",
+      "start": 46.56,
+      "end": 46.78,
+      "probability": 0.999579131603241
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 10,
+      "word": " solve",
+      "start": 46.78,
+      "end": 47.08,
+      "probability": 0.9981539845466614
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 11,
+      "word": " the",
+      "start": 47.08,
+      "end": 47.2,
+      "probability": 0.998713493347168
+    },
+    {
+      "segmentId": 8,
+      "wordIndex": 12,
+      "word": " problem.",
+      "start": 47.2,
+      "end": 47.58,
+      "probability": 0.9988284707069397
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 0,
+      "word": " A",
+      "start": 48.88,
+      "end": 49.14,
+      "probability": 0.9890953898429871
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 1,
+      "word": " W",
+      "start": 49.14,
+      "end": 49.54,
+      "probability": 0.735043466091156
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 2,
+      "word": " shape",
+      "start": 49.54,
+      "end": 49.86,
+      "probability": 0.662514328956604
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 3,
+      "word": " does",
+      "start": 49.86,
+      "end": 50.16,
+      "probability": 0.9915468096733093
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 4,
+      "word": " not",
+      "start": 50.16,
+      "end": 50.46,
+      "probability": 0.9992536902427673
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 5,
+      "word": " guarantee",
+      "start": 50.46,
+      "end": 50.84,
+      "probability": 0.9929152727127075
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 6,
+      "word": " statistical",
+      "start": 50.84,
+      "end": 51.66,
+      "probability": 0.9973289966583252
+    },
+    {
+      "segmentId": 9,
+      "wordIndex": 7,
+      "word": " randomness.",
+      "start": 51.66,
+      "end": 52.03999999999999,
+      "probability": 0.9993810653686523
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 0,
+      "word": " Random",
+      "start": 52.04,
+      "end": 53.12,
+      "probability": 0.767772376537323
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 1,
+      "word": " sampling",
+      "start": 53.12,
+      "end": 53.54,
+      "probability": 0.9451746344566345
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 2,
+      "word": " needs",
+      "start": 53.54,
+      "end": 53.92,
+      "probability": 0.9782763123512268
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 3,
+      "word": " a",
+      "start": 53.92,
+      "end": 54.1,
+      "probability": 0.995799720287323
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 4,
+      "word": " defined",
+      "start": 54.1,
+      "end": 54.44,
+      "probability": 0.9934535026550293
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 5,
+      "word": " method",
+      "start": 54.44,
+      "end": 54.82,
+      "probability": 0.9987126588821411
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 6,
+      "word": " of",
+      "start": 54.82,
+      "end": 54.98,
+      "probability": 0.997688889503479
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 7,
+      "word": " choosing",
+      "start": 54.98,
+      "end": 55.34,
+      "probability": 0.9980643391609192
+    },
+    {
+      "segmentId": 10,
+      "wordIndex": 8,
+      "word": " locations.",
+      "start": 55.34,
+      "end": 55.84,
+      "probability": 0.9913952946662903
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 0,
+      "word": " Here,",
+      "start": 56.48,
+      "end": 56.76,
+      "probability": 0.9934651255607605
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 1,
+      "word": " the",
+      "start": 56.9,
+      "end": 57.0,
+      "probability": 0.9980273842811584
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 2,
+      "word": " purpose",
+      "start": 57.0,
+      "end": 57.28,
+      "probability": 0.9915353059768677
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 3,
+      "word": " of",
+      "start": 57.28,
+      "end": 57.46,
+      "probability": 0.9988362193107605
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 4,
+      "word": " the",
+      "start": 57.46,
+      "end": 57.54,
+      "probability": 0.9938240051269531
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 5,
+      "word": " route",
+      "start": 57.54,
+      "end": 57.76,
+      "probability": 0.9906697273254395
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 6,
+      "word": " is",
+      "start": 57.76,
+      "end": 58.06,
+      "probability": 0.9858778715133667
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 7,
+      "word": " practical",
+      "start": 58.06,
+      "end": 58.66,
+      "probability": 0.9418062567710876
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 8,
+      "word": " spatial",
+      "start": 58.66,
+      "end": 59.18,
+      "probability": 0.7933411002159119
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 9,
+      "word": " coverage",
+      "start": 59.18,
+      "end": 59.72,
+      "probability": 0.9989100694656372
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 10,
+      "word": " within",
+      "start": 59.72,
+      "end": 60.12,
+      "probability": 0.9961394667625427
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 11,
+      "word": " the",
+      "start": 60.12,
+      "end": 60.38,
+      "probability": 0.9973830580711365
+    },
+    {
+      "segmentId": 11,
+      "wordIndex": 12,
+      "word": " zone.",
+      "start": 60.38,
+      "end": 60.66,
+      "probability": 0.9814126491546631
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 0,
+      "word": " Do",
+      "start": 61.14,
+      "end": 61.36,
+      "probability": 0.988555371761322
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 1,
+      "word": " not",
+      "start": 61.36,
+      "end": 61.58,
+      "probability": 0.9931803941726685
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 2,
+      "word": " describe",
+      "start": 61.58,
+      "end": 61.96,
+      "probability": 0.9954220652580261
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 3,
+      "word": " the",
+      "start": 61.96,
+      "end": 62.12,
+      "probability": 0.9981240630149841
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 4,
+      "word": " plan",
+      "start": 62.12,
+      "end": 62.36,
+      "probability": 0.9942941069602966
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 5,
+      "word": " as",
+      "start": 62.36,
+      "end": 62.6,
+      "probability": 0.9816426634788513
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 6,
+      "word": " statistically",
+      "start": 62.6,
+      "end": 63.06,
+      "probability": 0.987905740737915
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 7,
+      "word": " random,",
+      "start": 63.06,
+      "end": 63.54,
+      "probability": 0.9951216578483582
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 8,
+      "word": " merely",
+      "start": 63.84,
+      "end": 64.16,
+      "probability": 0.9949418902397156
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 9,
+      "word": " because",
+      "start": 64.16,
+      "end": 64.5,
+      "probability": 0.9979787468910217
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 10,
+      "word": " the",
+      "start": 64.5,
+      "end": 64.7,
+      "probability": 0.9887646436691284
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 11,
+      "word": " line",
+      "start": 64.7,
+      "end": 64.88,
+      "probability": 0.9969171285629272
+    },
+    {
+      "segmentId": 12,
+      "wordIndex": 12,
+      "word": " bends.",
+      "start": 64.88,
+      "end": 65.16,
+      "probability": 0.9984069466590881
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 0,
+      "word": " If",
+      "start": 66.28,
+      "end": 66.5,
+      "probability": 0.9933785200119019
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 1,
+      "word": " drawing",
+      "start": 66.5,
+      "end": 66.78,
+      "probability": 0.9607022404670715
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 2,
+      "word": " the",
+      "start": 66.78,
+      "end": 66.96,
+      "probability": 0.995894193649292
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 3,
+      "word": " route",
+      "start": 66.96,
+      "end": 67.2,
+      "probability": 0.9951474070549011
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 4,
+      "word": " is",
+      "start": 67.2,
+      "end": 67.4,
+      "probability": 0.9986617565155029
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 5,
+      "word": " difficult,",
+      "start": 67.4,
+      "end": 67.82,
+      "probability": 0.998573899269104
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 6,
+      "word": " use",
+      "start": 68.22,
+      "end": 68.46,
+      "probability": 0.9970976114273071
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 7,
+      "word": " the",
+      "start": 68.46,
+      "end": 68.64,
+      "probability": 0.9960939288139343
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 8,
+      "word": " provided",
+      "start": 68.64,
+      "end": 69.0,
+      "probability": 0.9874936938285828
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 9,
+      "word": " map",
+      "start": 69.0,
+      "end": 69.34,
+      "probability": 0.997865617275238
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 10,
+      "word": " with",
+      "start": 69.34,
+      "end": 69.64,
+      "probability": 0.9711889028549194
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 11,
+      "word": " a",
+      "start": 69.64,
+      "end": 69.76,
+      "probability": 0.9612798094749451
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 12,
+      "word": " route",
+      "start": 69.76,
+      "end": 70.02,
+      "probability": 0.9962077140808105
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 13,
+      "word": " already",
+      "start": 70.02,
+      "end": 70.52,
+      "probability": 0.9960643649101257
+    },
+    {
+      "segmentId": 13,
+      "wordIndex": 14,
+      "word": " drawn",
+      "start": 70.52,
+      "end": 70.92,
+      "probability": 0.9964509010314941
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 0,
+      "word": " and",
+      "start": 70.92,
+      "end": 71.4,
+      "probability": 0.8930299282073975
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 1,
+      "word": " place",
+      "start": 71.4,
+      "end": 71.64,
+      "probability": 0.9981153011322021
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 2,
+      "word": " the",
+      "start": 71.64,
+      "end": 71.86,
+      "probability": 0.994125485420227
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 3,
+      "word": " 10",
+      "start": 71.86,
+      "end": 72.08,
+      "probability": 0.6084991097450256
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 4,
+      "word": " collection",
+      "start": 72.08,
+      "end": 72.4,
+      "probability": 0.966440737247467
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 5,
+      "word": " marks",
+      "start": 72.4,
+      "end": 72.76,
+      "probability": 0.9959122538566589
+    },
+    {
+      "segmentId": 14,
+      "wordIndex": 6,
+      "word": " yourself.",
+      "start": 72.76,
+      "end": 73.2,
+      "probability": 0.9964022636413574
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 0,
+      "word": " You",
+      "start": 73.78,
+      "end": 74.04,
+      "probability": 0.9977957010269165
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 1,
+      "word": " still",
+      "start": 74.04,
+      "end": 74.34,
+      "probability": 0.9961179494857788
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 2,
+      "word": " need",
+      "start": 74.34,
+      "end": 74.52,
+      "probability": 0.9990599751472473
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 3,
+      "word": " to",
+      "start": 74.52,
+      "end": 74.66,
+      "probability": 0.9986100196838379
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 4,
+      "word": " check",
+      "start": 74.66,
+      "end": 74.88,
+      "probability": 0.9985939860343933
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 5,
+      "word": " the",
+      "start": 74.88,
+      "end": 75.04,
+      "probability": 0.994809627532959
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 6,
+      "word": " boundaries,",
+      "start": 75.04,
+      "end": 75.44,
+      "probability": 0.9966887831687927
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 7,
+      "word": " point",
+      "start": 75.9,
+      "end": 76.1,
+      "probability": 0.9935444593429565
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 8,
+      "word": " locations,",
+      "start": 76.1,
+      "end": 76.58,
+      "probability": 0.9969068169593811
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 9,
+      "word": " exclusions,",
+      "start": 76.88,
+      "end": 77.5,
+      "probability": 0.9969726800918579
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 10,
+      "word": " and",
+      "start": 77.68,
+      "end": 77.78,
+      "probability": 0.9991889595985413
+    },
+    {
+      "segmentId": 15,
+      "wordIndex": 11,
+      "word": " count.",
+      "start": 77.78,
+      "end": 78.04,
+      "probability": 0.9956645369529724
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 0,
+      "word": " If",
+      "start": 78.04,
+      "end": 79.18,
+      "probability": 0.6854072213172913
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 1,
+      "word": " a",
+      "start": 79.18,
+      "end": 79.36,
+      "probability": 0.9930332899093628
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 2,
+      "word": " planned",
+      "start": 79.36,
+      "end": 79.66,
+      "probability": 0.9541699290275574
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 3,
+      "word": " point",
+      "start": 79.66,
+      "end": 79.94,
+      "probability": 0.9978445768356323
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 4,
+      "word": " proves",
+      "start": 79.94,
+      "end": 80.3,
+      "probability": 0.9943118095397949
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 5,
+      "word": " unsafe",
+      "start": 80.3,
+      "end": 80.84,
+      "probability": 0.9955783486366272
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 6,
+      "word": " or",
+      "start": 80.84,
+      "end": 81.12,
+      "probability": 0.9956021308898926
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 7,
+      "word": " unsuitable",
+      "start": 81.12,
+      "end": 81.72,
+      "probability": 0.9932477474212646
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 8,
+      "word": " on",
+      "start": 81.72,
+      "end": 81.94,
+      "probability": 0.9033040404319763
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 9,
+      "word": "-site,",
+      "start": 81.94,
+      "end": 82.18,
+      "probability": 0.6826891899108887
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 10,
+      "word": " stop,",
+      "start": 82.58,
+      "end": 82.84,
+      "probability": 0.9623700380325317
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 11,
+      "word": " follow",
+      "start": 83.32,
+      "end": 83.68,
+      "probability": 0.9965901374816895
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 12,
+      "word": " the",
+      "start": 83.68,
+      "end": 83.86,
+      "probability": 0.9939007759094238
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 13,
+      "word": " trainer's",
+      "start": 83.86,
+      "end": 84.24,
+      "probability": 0.9643175005912781
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 14,
+      "word": " plan",
+      "start": 84.24,
+      "end": 84.48,
+      "probability": 0.9956455230712891
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 15,
+      "word": " for",
+      "start": 84.48,
+      "end": 84.7,
+      "probability": 0.9984215497970581
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 16,
+      "word": " an",
+      "start": 84.7,
+      "end": 84.82,
+      "probability": 0.8100555539131165
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 17,
+      "word": " appropriate",
+      "start": 84.82,
+      "end": 85.16,
+      "probability": 0.9965662956237793
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 18,
+      "word": " replacement",
+      "start": 85.16,
+      "end": 85.7,
+      "probability": 0.9983153343200684
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 19,
+      "word": " and",
+      "start": 85.7,
+      "end": 86.1,
+      "probability": 0.5868421196937561
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 20,
+      "word": " record",
+      "start": 86.1,
+      "end": 86.4,
+      "probability": 0.9986585378646851
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 21,
+      "word": " the",
+      "start": 86.4,
+      "end": 86.56,
+      "probability": 0.9968922734260559
+    },
+    {
+      "segmentId": 16,
+      "wordIndex": 22,
+      "word": " change.",
+      "start": 86.56,
+      "end": 86.84,
+      "probability": 0.9990555644035339
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 0,
+      "word": " Sampling",
+      "start": 88.04,
+      "end": 88.54,
+      "probability": 0.9858428835868835
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 1,
+      "word": " bias",
+      "start": 88.54,
+      "end": 88.84,
+      "probability": 0.6471028923988342
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 2,
+      "word": " –",
+      "start": 88.84,
+      "end": 89.44,
+      "probability": 0.1460130512714386
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 3,
+      "word": " a",
+      "start": 89.44,
+      "end": 89.56,
+      "probability": 0.6942492723464966
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 4,
+      "word": " systematic",
+      "start": 89.56,
+      "end": 89.96,
+      "probability": 0.995002806186676
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 5,
+      "word": " mismatch",
+      "start": 89.96,
+      "end": 90.78,
+      "probability": 0.9964250326156616
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 6,
+      "word": " between",
+      "start": 90.78,
+      "end": 91.16,
+      "probability": 0.9990018010139465
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 7,
+      "word": " collected",
+      "start": 91.16,
+      "end": 91.56,
+      "probability": 0.46091940999031067
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 8,
+      "word": " material",
+      "start": 91.56,
+      "end": 92.1,
+      "probability": 0.9972965121269226
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 9,
+      "word": " and",
+      "start": 92.1,
+      "end": 92.66,
+      "probability": 0.9859926104545593
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 10,
+      "word": " the",
+      "start": 92.66,
+      "end": 92.8,
+      "probability": 0.9927922487258911
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 11,
+      "word": " area",
+      "start": 92.8,
+      "end": 93.2,
+      "probability": 0.9951497912406921
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 12,
+      "word": " or",
+      "start": 93.2,
+      "end": 93.48,
+      "probability": 0.9908334612846375
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 13,
+      "word": " layer",
+      "start": 93.48,
+      "end": 93.74,
+      "probability": 0.9978267550468445
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 14,
+      "word": " it",
+      "start": 93.74,
+      "end": 94.0,
+      "probability": 0.9950254559516907
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 15,
+      "word": " is",
+      "start": 94.0,
+      "end": 94.12,
+      "probability": 0.9968826770782471
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 16,
+      "word": " intended",
+      "start": 94.12,
+      "end": 94.46,
+      "probability": 0.9933991432189941
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 17,
+      "word": " to",
+      "start": 94.46,
+      "end": 94.66,
+      "probability": 0.9979661703109741
+    },
+    {
+      "segmentId": 17,
+      "wordIndex": 18,
+      "word": " represent.",
+      "start": 94.66,
+      "end": 95.08,
+      "probability": 0.9985384941101074
+    }
+  ],
+  "elapsedASRSeconds": 17.95076191199996,
+  "language": "en",
+  "initialPromptSupplied": false,
+  "referenceTranscriptSupplied": false,
+  "method": "ASR_ESTIMATES_NOT_FORCED_ALIGNMENT_OR_PRONUNCIATION_APPROVAL",
+  "humanListeningApproved": false
+}

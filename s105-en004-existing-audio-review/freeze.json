@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sha256": {
+    ".gitignore": "239bc8162d8ecb0c64d96f4ce42bfbe85a0617ff927b14285621f62d2cb17f60",
+    "README.en.txt": "dbc3ffd444171fec598112cf9d7a2a497dc6a5f637680ab917d49914e0a9941f",
+    "worker.py": "2796238bd71baa6ee3b1c2dea1f03ed2bbe07e2bceff10631d6fee8a1bc74a9e",
+    "offline_check.py": "e566a4c7fd0c539add97e6e2d5bd3c949b4170ff2d564da4f2240128cc50e94d",
+    "freeze_package.py": "1d4cd8ce22b344496fe127e9e6f19e1cf8161f3673271b2cce118cfca7a8846d",
+    "request.json": "432be6213a3826a0029072c2515ddd64475034b5d7575b78d46300095902f8f4",
+    "runtime.json": "4daec70e54ce3e7cff182af6b587017c1ff2135cb59c035bb1304b56268d43d8",
+    "owner-authority.json": "b952c33c06ab26f69e7918a0b2b3871ac9673f15311df83ceb30e8ee1720daeb",
+    "expected-criteria.NOT-FOR-MODEL.json": "a7fd052a0416d3bb1ae3dcd7d10427b9ef3ff31b05de48608ad2b43a26584d4d",
+    "prompts/S1-05-en-r1-004.txt": "90628ec936ce5c65ca57374437b64ab42a08e3a7ab6bba897eb92267cbaaba4a",
+    "provenance/asr-word-timestamps.json": "5adaaaa117044e90d3144cb07ecd14dc8f25f86e685c28a8dcf0a8188b9223ca",
+    "provenance/blind-review-attempt.json": "e4db1be1e1108d002ffbb2809dee9a627c42152646e1be8657f535f846e7f24d",
+    "provenance/blind-review.json": "4087c4ef0f462afb0679154135190df0a120250590f69ef9a1e54009a3ea2c31",
+    "provenance/original-unit-report.json": "0a4e93516ceb2201e31e339337b02af391f777ac20fdb4d0a8495a81148281b2",
+    "provenance/reference-comparison.json": "f9edb2697ee3b94bc86d614913cbf7aef3ca3c6481e671f2e08b3831d48aac9f",
+    "provenance/source-request-unit.json": "a2dbb1cc4eb95c9dfb0e959f5eea21f04a5e2079eab1f8632e1164d5ad7db524"
+  },
+  "audioHashesInFrozenRequest": true,
+  "maximumBlindReviews": 1,
+  "maximumPerWav": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0
+}

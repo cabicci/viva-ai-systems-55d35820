@@ -1,0 +1,78 @@
+name: S1-05 one existing EN004 acoustic diagnostic
+on:
+  push:
+    branches: [work/soil-s105-en004-existing-audio-review-20261022-r1]
+    paths: [s105-en004-existing-audio-review/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s105-en004-432be6213a3826a0029072c2515ddd64475034b5d7575b78d46300095902f8f4
+  cancel-in-progress: false
+env:
+  REQUEST_SHA: 432be6213a3826a0029072c2515ddd64475034b5d7575b78d46300095902f8f4
+  WORKER_SHA: 2796238bd71baa6ee3b1c2dea1f03ed2bbe07e2bceff10631d6fee8a1bc74a9e
+  FREEZE_SHA: 8f4918911414ebe6ccfd3ce62be18545f90b01a058938934d533e980d4d6a88c
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.event_name == 'push' && github.event.created == true && github.run_attempt == 1 && github.event.repository.private == false && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s105-en004-existing-audio-review-20261022-r1'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+      BRANCH_CREATED: ${{ github.event.created }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify frozen scope and one exact WAV byte and PCM hashes
+        run: python s105-en004-existing-audio-review/worker.py validate
+      - name: Verify preferred model availability once without fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python s105-en004-existing-audio-review/worker.py preflight
+      - name: Transfer exact source WAV before blind review S1-05-en-r1-004
+        id: source0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s105-en004-source-S1-05-en-r1-004
+          path: s105-en004-existing-audio-review/inputs/S1-05-en-r1-004.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt S1-05-en-r1-004
+        run: >-
+          python s105-en004-existing-audio-review/worker.py uploaded --unit S1-05-en-r1-004
+          --artifact-id "${{ steps.source0.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source0.outputs.artifact-digest }}"
+      - name: One terminal blind review S1-05-en-r1-004
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python s105-en004-existing-audio-review/worker.py blind-review --unit S1-05-en-r1-004
+      - name: Transfer finished raw response or failure evidence S1-05-en-r1-004
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s105-en004-result-S1-05-en-r1-004
+          path: s105-en004-existing-audio-review/output/S1-05-en-r1-004/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Summarize one bounded outcome
+        if: always()
+        run: python s105-en004-existing-audio-review/worker.py summarize
+      - name: Preserve all evidence and exact request provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s105-one-en004-diagnostic-complete
+          retention-days: 30
+          path: |
+            s105-en004-existing-audio-review/output/
+            s105-en004-existing-audio-review/request.json
+            s105-en004-existing-audio-review/runtime.json
+            s105-en004-existing-audio-review/freeze.json
+            s105-en004-existing-audio-review/owner-authority.json
+            s105-en004-existing-audio-review/worker.py
+            s105-en004-existing-audio-review/prompts/
+            s105-en004-existing-audio-review/expected-criteria.NOT-FOR-MODEL.json

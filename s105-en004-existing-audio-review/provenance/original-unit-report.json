@@ -1,0 +1,303 @@
+{
+  "unitId": "S1-05-en-r1-004",
+  "locale": "en",
+  "semanticGroup": "R03",
+  "atUTC": "2026-10-22T11:12:03.976736+00:00",
+  "status": "HELD_RETURNED_AUDIO_DIAGNOSTIC_UNCERTAINTY",
+  "humanListeningPerformed": false,
+  "ownerAccepted": false,
+  "artifactSources": [
+    {
+      "artifactId": 12418366151,
+      "artifactName": "s105-connected-r2-S1-05-en-r1-004-audio",
+      "artifactDigest": "sha256:146c0c26cbdaa407d573d72756fb49eb232558f33a9ff720055a2db771ddaaf0",
+      "artifactReceiptSha256": "37a7ca02dd47300b5107cc8dc0fa6d323f19cb0f133f5c9ab719600a3631de0b"
+    },
+    {
+      "artifactId": 12418935593,
+      "artifactName": "s105-connected-r2-S1-05-en-r1-004-review",
+      "artifactDigest": "sha256:6d950d2801c7ab8dc54348ffc74a1ebe6af8d9f9ccc237ad0f73f812d77e1ed7",
+      "artifactReceiptSha256": "28886f0055b75cf2bf3d45ef1c5dd98d2fe7f8a821bb47d0630f305f8aa5b925"
+    },
+    {
+      "artifactId": 12421390978,
+      "artifactName": "s105-connected-r2-complete-evidence",
+      "artifactDigest": "sha256:a8c39534dc0ffbca2d5580bc8f319d3010ac8c0416c2d182d8cabf2ba9f2b669",
+      "artifactReceiptSha256": "fa802fff05a5f0e4eca9bbab0829ea78abb058e720d8293e7c6201c9bcdbe4b4"
+    }
+  ],
+  "proofs": [
+    {
+      "artifactId": 12418366151,
+      "wav": "artifacts\\12418366151\\extracted\\voice.wav",
+      "wavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "frames": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "requestSha256": "35b2cb870157a0d9dd0179f1e5ef5e33ef7f44b14a36edbd42ef46edf2ac5b63",
+      "workerSha256": "b30cd2ad4197cf0e815e4e92df5ffccb3a7d425dc37611896dcf9804fbd85e35",
+      "ttsRequestFingerprintSha256": "7ba2919b6d9006f2c18c71484201376c6683042d6c125c1f262c304552fddd26",
+      "payloadMatchesFrozenTextDeliveryVoiceAndFormat": true,
+      "providerOriginalEqualsReceivedWav": true,
+      "providerResponseAudioBytesVerified": true
+    },
+    {
+      "artifactId": 12418935593,
+      "wav": "artifacts\\12418935593\\extracted\\voice.wav",
+      "wavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "frames": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "requestSha256": "35b2cb870157a0d9dd0179f1e5ef5e33ef7f44b14a36edbd42ef46edf2ac5b63",
+      "workerSha256": "b30cd2ad4197cf0e815e4e92df5ffccb3a7d425dc37611896dcf9804fbd85e35",
+      "ttsRequestFingerprintSha256": "7ba2919b6d9006f2c18c71484201376c6683042d6c125c1f262c304552fddd26",
+      "payloadMatchesFrozenTextDeliveryVoiceAndFormat": true,
+      "providerOriginalEqualsReceivedWav": true,
+      "providerResponseAudioBytesVerified": true
+    },
+    {
+      "artifactId": 12421390978,
+      "wav": "artifacts\\12421390978\\extracted\\output\\S1-05-en-r1-004\\voice.wav",
+      "wavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "frames": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "requestSha256": "35b2cb870157a0d9dd0179f1e5ef5e33ef7f44b14a36edbd42ef46edf2ac5b63",
+      "workerSha256": "b30cd2ad4197cf0e815e4e92df5ffccb3a7d425dc37611896dcf9804fbd85e35",
+      "ttsRequestFingerprintSha256": "7ba2919b6d9006f2c18c71484201376c6683042d6c125c1f262c304552fddd26",
+      "payloadMatchesFrozenTextDeliveryVoiceAndFormat": true,
+      "providerOriginalEqualsReceivedWav": true,
+      "providerResponseAudioBytesVerified": true
+    }
+  ],
+  "issues": [],
+  "bindingVerified": true,
+  "audioSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+  "diagnosticsVerified": true,
+  "diagnosticArtifactId": 12418935593,
+  "diagnosticFiles": [
+    {
+      "file": "artifacts\\12418935593\\extracted\\blind-review.json",
+      "sha256": "4087c4ef0f462afb0679154135190df0a120250590f69ef9a1e54009a3ea2c31"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\blind-review-attempt.json",
+      "sha256": "e4db1be1e1108d002ffbb2809dee9a627c42152646e1be8657f535f846e7f24d"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\blind-review-prompt.json",
+      "sha256": "e4b1bf3a307a09217c8583d3a99458620055556d8d1843bdffad824adcb68894"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\asr-word-timestamps.json",
+      "sha256": "5adaaaa117044e90d3144cb07ecd14dc8f25f86e685c28a8dcf0a8188b9223ca"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\asr-attempt.json",
+      "sha256": "175a9469ef7cb395aedb09def03eb699cc3835d225e02fda838b2752fd86ac3b"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\reference-comparison.json",
+      "sha256": "f9edb2697ee3b94bc86d614913cbf7aef3ca3c6481e671f2e08b3831d48aac9f"
+    },
+    {
+      "file": "artifacts\\12418935593\\extracted\\audio-upload-receipt.json",
+      "sha256": "1d21737bdb508f6b5b67f06aa269f7b80781dd15684c3ad264c75ebab8ad9a66"
+    }
+  ],
+  "blindFindings": [
+    {
+      "startSeconds": 29.5,
+      "endSeconds": 31.2,
+      "heardText": "fertilizer band, [audible chuckle/nasal breath] a drainage line",
+      "issueType": "pacing_or_vocal_artifact",
+      "observation": "There is an audible suppressed laugh or sharp nasal breath immediately after 'fertilizer band' followed by slightly laugh-inflected phrasing on 'a drainage line'.",
+      "certainty": "high"
+    },
+    {
+      "startSeconds": 129.5,
+      "endSeconds": 131.0,
+      "heardText": "a systematic mismatch",
+      "issueType": "vocal_hitch",
+      "observation": "A brief breathy hitch or slight vocal break occurs mid-word during 'systematic'.",
+      "certainty": "medium"
+    },
+    {
+      "startSeconds": 131.2,
+      "endSeconds": 132.8,
+      "heardText": "between collected material",
+      "issueType": "consonant_reduction",
+      "observation": "The final alveolar stop in 'collected' is unreleased or assimilated before 'material', making it sound slightly close to 'collecting material'.",
+      "certainty": "medium"
+    }
+  ],
+  "blindUncertainWords": [
+    "collected"
+  ],
+  "blindOverall": "needs_review",
+  "invalidTimestampFindingIndexes": [
+    1,
+    2
+  ],
+  "transcriptComparisons": {
+    "asr": {
+      "comparisonBase": "displayNotation",
+      "changedSpans": [
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "parts of the assigned zone mark ten separate collection points for this training",
+          "heardContext": "parts of the assigned zone mark 10 separate collection points for this training",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "sample the marked collection locations matter ten points down one straight line may",
+          "heardContext": "sample the marked collection locations matter 10 points down one straight line may",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "route already drawn and place the ten collection marks yourself you still need",
+          "heardContext": "route already drawn and place the 10 collection marks yourself you still need",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        }
+      ],
+      "criticalCandidateSpans": [
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "parts of the assigned zone mark ten separate collection points for this training",
+          "heardContext": "parts of the assigned zone mark 10 separate collection points for this training",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "sample the marked collection locations matter ten points down one straight line may",
+          "heardContext": "sample the marked collection locations matter 10 points down one straight line may",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "route already drawn and place the ten collection marks yourself you still need",
+          "heardContext": "route already drawn and place the 10 collection marks yourself you still need",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        }
+      ]
+    },
+    "blindReview": {
+      "comparisonBase": "displayNotation",
+      "changedSpans": [
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "parts of the assigned zone mark ten separate collection points for this training",
+          "heardContext": "parts of the assigned zone mark 10 separate collection points for this training",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "sample the marked collection locations matter ten points down one straight line may",
+          "heardContext": "sample the marked collection locations matter 10 points down one straight line may",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "route already drawn and place the ten collection marks yourself you still need",
+          "heardContext": "route already drawn and place the 10 collection marks yourself you still need",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        }
+      ],
+      "criticalCandidateSpans": [
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "parts of the assigned zone mark ten separate collection points for this training",
+          "heardContext": "parts of the assigned zone mark 10 separate collection points for this training",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "sample the marked collection locations matter ten points down one straight line may",
+          "heardContext": "sample the marked collection locations matter 10 points down one straight line may",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        },
+        {
+          "type": "replace",
+          "reference": "ten",
+          "heard": "10",
+          "referenceContext": "route already drawn and place the ten collection marks yourself you still need",
+          "heardContext": "route already drawn and place the 10 collection marks yourself you still need",
+          "reviewKinds": [
+            "quantity_or_notation_candidate"
+          ]
+        }
+      ]
+    }
+  },
+  "blindTranscript": "Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark 10 separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample. The marked collection locations matter. 10 points down one straight line may follow an old fertilizer band, a drainage line, or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation. Taking more soil from the same wrong strip does not solve the problem. A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here, the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random merely because the line bends. If drawing the route is difficult, use the provided map with a route already drawn and place the 10 collection marks yourself. You still need to check the boundaries, point locations, exclusions, and count. If a planned point proves unsafe or unsuitable on site, stop, follow the trainer's plan for an appropriate replacement, and record the change. Sampling bias: a systematic mismatch between collected material and the area or layer it is intended to represent.",
+  "asrTranscript": " Draw a zigzag or W-shaped walking route that reaches different parts of the assigned zone. Mark 10 separate collection points for this training task and label them P01 to P10 once each. Keep the points within the intended zone and away from the identified unrepresentative features. A route line is not itself a sample. The marked collection locations matter. 10 points down one straight line may follow an old fertilizer band, a drainage line, or an equipment track. Many points along the same unusual feature can give a consistently biased picture. A route spread across the zone helps cover more of its variation. Taking more soil from the same wrong strip does not solve the problem. A W shape does not guarantee statistical randomness. Random sampling needs a defined method of choosing locations. Here, the purpose of the route is practical spatial coverage within the zone. Do not describe the plan as statistically random, merely because the line bends. If drawing the route is difficult, use the provided map with a route already drawn and place the 10 collection marks yourself. You still need to check the boundaries, point locations, exclusions, and count. If a planned point proves unsafe or unsuitable on-site, stop, follow the trainer's plan for an appropriate replacement and record the change. Sampling bias – a systematic mismatch between collected material and the area or layer it is intended to represent.",
+  "limitations": [
+    "Model findings and transcript differences are diagnostic evidence, not confirmed speech errors or pronunciation certification.",
+    "Correct ASR does not negate a separate reported acoustic uncertainty; invalid timestamps are review defects.",
+    "No human listening, owner acceptance, repair request or provider retry performed by this receiver."
+  ]
+}

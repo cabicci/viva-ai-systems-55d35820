@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1_05_ONE_EXISTING_EN004_ACOUSTIC_UNCERTAINTY_DIAGNOSTIC",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryVisibility": "public",
+  "branch": "refs/heads/work/soil-s105-en004-existing-audio-review-20261022-r1",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumBlindReviewCalls": 1,
+  "maximumPerUnit": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "authorityPath": "owner-authority.json",
+  "units": [
+    {
+      "id": "S1-05-en-r1-004",
+      "locale": "en",
+      "path": "inputs/S1-05-en-r1-004.wav",
+      "audioSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "sampleCount": 2295360,
+        "durationSeconds": 95.64,
+        "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7"
+      },
+      "bytes": 4596838,
+      "focusWindowSeconds": [
+        0,
+        95.64
+      ],
+      "focusWindowsSeconds": [
+        [
+          27,
+          34
+        ],
+        [
+          85,
+          95.64
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/S1-05-en-r1-004.txt",
+      "promptSha256": "90628ec936ce5c65ca57374437b64ab42a08e3a7ab6bba897eb92267cbaaba4a"
+    }
+  ],
+  "diagnosis": "One independent additional review of exact original95.64s recording; original full transcript agrees but one valid acoustic allegation remains; two findings used out-of-duration timestamps. No source rewrite, audio generation or ASR repeat.",
+  "priorReviewCallState": "SPENT_PRESERVED_REVIEW_WITH_UNRESOLVED_ACOUSTIC_FINDING",
+  "adoptionAllowed": false
+}
