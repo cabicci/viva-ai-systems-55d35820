@@ -1,0 +1,11 @@
+S3-17 German remaining narration only: DE011–017
+
+Seven full coherent passages are byte-for-byte unchanged as unit objects from the source-reviewed frozen narration-r2. Voices, delivery, scientific facts, quantities, negations, qualifications, examples and request fingerprints are preserved. Only the exact seven previously unproduced German units are executable. Prior Actions39770745592 produced61 WAVs; DE010 has valid audio and ASR but a blind response with completed metadata and no model output. It is deliberately excluded from TTS. Existing61 WAVs/private originals remain unchanged on D and are absent from this public package.
+
+Budget:7 TTS,7 blind Argon reviews,7 ASR invocations,2 model metadata GETs; one call per unit/kind, zero automatic retries/fallback. Current accepted method gemini-3.8-flash-tts with exact unchanged Charon/Kore assignment and gemini-4-argon blind review. Audio upload occurs before diagnostics; partial attempts are retained. No providers, publication or human listening occurred during preparation.
+
+Only first creation push to work/soil-s317-de-remaining-20261022-r2 in original public cabicci/viva-ai-systems-55d35820 id1272666418 may execute. No manual dispatch/later push/rerun/main change. Root must review before any publication. A fresh branch and repo identity are checked read-only at preparation and must be checked again at publication.
+
+Public source is the existing safe German teaching projection and exact selected bindings/hashes. It excludes private quizzes, marking rubrics, feedback and assessment answers. The final49 bank already exists separately; a fresh independent four-locale semantic review is a separate gate, never a missing-bank assertion. Original full68 package and existing audio evidence remain private/frozen. This request completes neither course media nor physical competency nor owner audio approval.
+
+R2 workflow correction: complete all seven independent TTS attempts and immediate uploads/bindings before starting any blind/ASR diagnostics. A diagnostic failure cannot suppress a later TTS. Per-unit diagnostics continue independently after failures. Final inventory explicitly fails if any audio/upload/diagnostic is missing, preserving each sanitized failure and every successful artifact. This is neither retry nor acceptance. Frozen r1 is preserved and never launched.

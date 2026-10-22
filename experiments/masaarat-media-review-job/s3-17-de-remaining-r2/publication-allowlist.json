@@ -1,0 +1,52 @@
+{
+  "schema": "masaarat.S3-17.safe-seven-only-publication-allowlist.v1",
+  "targetRepository": "cabicci/viva-ai-systems-55d35820",
+  "targetRepositoryId": 1272666418,
+  "targetRef": "refs/heads/work/soil-s317-de-remaining-20261022-r2",
+  "packageDirectory": "experiments/masaarat-media-review-job/s3-17-de-remaining-r2",
+  "packageFiles": [
+    "worker.py",
+    "request.json",
+    "runtime.json",
+    "narration-de.json",
+    "inputs/source-de.json",
+    "scientific-contract.json",
+    "implementation-dependency-pins.json",
+    "subset-provenance.json",
+    "content-identities.json",
+    "source-coverage.json",
+    "README.en.md",
+    "trigger-policy.json",
+    "remote-branch-check.json",
+    ".gitignore",
+    "vendor/pipeline-engine.py",
+    "vendor/course/manifest.json",
+    "freeze_package.py",
+    "offline_tests.py",
+    "worker-derivation.json",
+    "workflow.template.yml",
+    "freeze.json",
+    "offline-verification.json",
+    "package-receipt.json",
+    "publication-allowlist.json"
+  ],
+  "workflow": {
+    "source": "s3-17-de-remaining-r2.yml",
+    "destination": ".github/workflows/s3-17-de-remaining-r2.yml",
+    "sha256": "30db9f977b2ee2e657044becb6d7ed404876b0765e94d3d1ca48f8aa02fd3562"
+  },
+  "excluded": [
+    "prior-run-preservation.private.json",
+    "all prior61WAVs and original68-unit request",
+    "private full sources, quiz/rubric/feedback bodies",
+    "offline-fixtures/**",
+    "output/**",
+    "wheels/**",
+    "model-cache/**",
+    "__pycache__/**",
+    "every nonlisted path",
+    "r1-preservation.private.json"
+  ],
+  "publicationPerformed": false,
+  "mainFilesIncluded": false
+}
