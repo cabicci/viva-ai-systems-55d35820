@@ -1,0 +1,71 @@
+{
+  "scope": "S105_EN004_EXACT_THREE_JOINED_CONTEXTS_BLIND_ACTUAL_AUDIO_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s105-en004-joined-context-review-20261022-r1",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumReviewPOSTCalls": 3,
+  "maximumMetadataGETCalls": 0,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "candidateFullWavSha256": "fb838ce45702a52724ad05c7174d686419ed65f2bd00bda6b718cc633a3073bc",
+  "candidateFullPcmSha256": "e4851837c2ca6b79859164f79687d36f50175acd277933335483d225b1abdca9",
+  "candidateSamples": 2302440,
+  "sampleRate": 24000,
+  "promptPath": "prompts/blind-context.txt",
+  "promptSha256": "a9732dafb370f28ca7cbca9e22e66a010781c0b1f4399d80f98d85b5ed078946",
+  "sourceMap": "provenance/pcm-source-map.json",
+  "expectedTranscriptSuppliedToModel": false,
+  "adoptionApproved": false,
+  "units": [
+    {
+      "id": "S1-05-en004-junction-r1-01",
+      "path": "inputs/context-01.wav",
+      "wavSha256": "a90d4b29526dc5591dfde79c98de4f7ed44afb0b4afcad1efef29986fbaafdd2",
+      "pcmSha256": "eff3b0e252c1fb717b94476cbb89281c1f7073e046d554dd54dd92ba55ecfdd3",
+      "samples": 168000,
+      "durationSeconds": 7.0,
+      "joinLocalSample": 72000,
+      "joinLocalSeconds": 3.0,
+      "candidateSampleBounds": [
+        529200,
+        697200
+      ],
+      "maximumReviewPOSTCalls": 1
+    },
+    {
+      "id": "S1-05-en004-junction-r1-02",
+      "path": "inputs/context-02.wav",
+      "wavSha256": "739543aa18936a25c3afd7d9fa939e612455a2e2361153b57655303504f8752a",
+      "pcmSha256": "28da0119827e27ba08eb02408725c5f16bffe2feb2bbc4644763c7c272e59090",
+      "samples": 168000,
+      "durationSeconds": 7.0,
+      "joinLocalSample": 72000,
+      "joinLocalSeconds": 3.0,
+      "candidateSampleBounds": [
+        1076400,
+        1244400
+      ],
+      "maximumReviewPOSTCalls": 1
+    },
+    {
+      "id": "S1-05-en004-junction-r1-03",
+      "path": "inputs/context-03.wav",
+      "wavSha256": "729991dfdeafec2890c02428b405f97c662a492280713cd3ed7d48972cabb8f6",
+      "pcmSha256": "0b20f13050a0fbd1cc68304c01ad57145d5d8679d82fb4ddd11ca9dcd5aad50d",
+      "samples": 168000,
+      "durationSeconds": 7.0,
+      "joinLocalSample": 72000,
+      "joinLocalSeconds": 3.0,
+      "candidateSampleBounds": [
+        2018280,
+        2186280
+      ],
+      "maximumReviewPOSTCalls": 1
+    }
+  ],
+  "sourceMapSha256": "d0cf33aac9fe2788f14f3ee843bf6e106f8ef95c02bc1ae61915f09ae104523d"
+}

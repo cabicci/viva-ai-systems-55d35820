@@ -1,0 +1,226 @@
+{
+  "candidateWavSha256": "fb838ce45702a52724ad05c7174d686419ed65f2bd00bda6b718cc633a3073bc",
+  "candidatePcmSha256": "e4851837c2ca6b79859164f79687d36f50175acd277933335483d225b1abdca9",
+  "candidateSamples": 2302440,
+  "originalWavSha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+  "originalPcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+  "sources": {
+    "original": {
+      "sha256": "4f3dc37ec63d818b543c43664413efd1afb7990065ae33e92b5a896d4204130a",
+      "pcmSha256": "79714fcbd13501eec3357c9eced58ce6865584c85af1e08df50b5c257bbc2cc7",
+      "samples": 2295360
+    },
+    "repair1": {
+      "sha256": "19e6c4f12a2b9793dc8a781547469319f5c2b09a3c60c520e9f238e9c3be2f88",
+      "pcmSha256": "3c910cbadf945a5444b14bbefa7ee94a446505dd497027ca1c41513075783e0b",
+      "samples": 547200
+    },
+    "repair2": {
+      "sha256": "9768b055a34125d1f0ebe4ff90b3ae56edf353b01277060fbbe2cc3f9a7b88d9",
+      "pcmSha256": "625bb46fa873770ef1a44a1887f49f27b234f7f1266f767be8376521ba2d68bf",
+      "samples": 212160
+    }
+  },
+  "retainedAndInsertedSegments": [
+    {
+      "name": "original-retained-prefix",
+      "source": "original",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 601200,
+      "outputFirstSample": 0,
+      "outputEndSampleExclusive": 601200,
+      "samples": 601200,
+      "pcmSha256": "1c9e9e4425e665194752a89cabd494cb9d54032cd139e95fc9907d4405f17091"
+    },
+    {
+      "name": "complete-new-paragraph2",
+      "source": "repair1",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 547200,
+      "outputFirstSample": 601200,
+      "outputEndSampleExclusive": 1148400,
+      "samples": 547200,
+      "pcmSha256": "3c910cbadf945a5444b14bbefa7ee94a446505dd497027ca1c41513075783e0b"
+    },
+    {
+      "name": "original-retained-middle",
+      "source": "original",
+      "sourceFirstSample": 1149840,
+      "sourceEndSampleExclusive": 2091720,
+      "outputFirstSample": 1148400,
+      "outputEndSampleExclusive": 2090280,
+      "samples": 941880,
+      "pcmSha256": "ab229624b96326b9efd097ccfecb58f13a18d6224b2a35a46b4d881846cc31b7"
+    },
+    {
+      "name": "complete-new-glossary",
+      "source": "repair2",
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 212160,
+      "outputFirstSample": 2090280,
+      "outputEndSampleExclusive": 2302440,
+      "samples": 212160,
+      "pcmSha256": "625bb46fa873770ef1a44a1887f49f27b234f7f1266f767be8376521ba2d68bf"
+    }
+  ],
+  "deletedOriginalRanges": [
+    {
+      "firstSample": 601200,
+      "endSampleExclusive": 1149840,
+      "seconds": [
+        25.05,
+        47.91
+      ],
+      "scope": "Entire old paragraph2 plus its complete pre-utterance lead-in; retain preceding matter and next paragraph lead-in"
+    },
+    {
+      "firstSample": 2091720,
+      "endSampleExclusive": 2295360,
+      "seconds": [
+        87.155,
+        95.64
+      ],
+      "scope": "Entire old glossary plus complete pre-utterance lead-in through sourceEOF"
+    }
+  ],
+  "contextMaps": [
+    {
+      "unitId": "S1-05-en004-junction-r1-01",
+      "wavSha256": "a90d4b29526dc5591dfde79c98de4f7ed44afb0b4afcad1efef29986fbaafdd2",
+      "pcmSha256": "eff3b0e252c1fb717b94476cbb89281c1f7073e046d554dd54dd92ba55ecfdd3",
+      "candidateSampleBounds": [
+        529200,
+        697200
+      ],
+      "joinCandidateSample": 601200,
+      "contextLocalJoinSample": 72000,
+      "parts": [
+        {
+          "source": "original",
+          "sourceSampleBounds": [
+            529200,
+            601200
+          ],
+          "contextLocalSampleBounds": [
+            0,
+            72000
+          ],
+          "candidateSampleBounds": [
+            529200,
+            601200
+          ],
+          "pcmSha256": "595ecde3c8d73cef0ea4dd2ef6bb012a6ecb10c9371572c6a2214563aaaa4567"
+        },
+        {
+          "source": "repair1",
+          "sourceSampleBounds": [
+            0,
+            96000
+          ],
+          "contextLocalSampleBounds": [
+            72000,
+            168000
+          ],
+          "candidateSampleBounds": [
+            601200,
+            697200
+          ],
+          "pcmSha256": "6479e46566f390b12e30974c93965f2db7833e44aafb83d7f2aaa5ed4fea053d"
+        }
+      ]
+    },
+    {
+      "unitId": "S1-05-en004-junction-r1-02",
+      "wavSha256": "739543aa18936a25c3afd7d9fa939e612455a2e2361153b57655303504f8752a",
+      "pcmSha256": "28da0119827e27ba08eb02408725c5f16bffe2feb2bbc4644763c7c272e59090",
+      "candidateSampleBounds": [
+        1076400,
+        1244400
+      ],
+      "joinCandidateSample": 1148400,
+      "contextLocalJoinSample": 72000,
+      "parts": [
+        {
+          "source": "repair1",
+          "sourceSampleBounds": [
+            475200,
+            547200
+          ],
+          "contextLocalSampleBounds": [
+            0,
+            72000
+          ],
+          "candidateSampleBounds": [
+            1076400,
+            1148400
+          ],
+          "pcmSha256": "1739bffe927911f49266a438587525d70ef5ea73ffe2d595e1001744c99f4076"
+        },
+        {
+          "source": "original",
+          "sourceSampleBounds": [
+            1149840,
+            1245840
+          ],
+          "contextLocalSampleBounds": [
+            72000,
+            168000
+          ],
+          "candidateSampleBounds": [
+            1148400,
+            1244400
+          ],
+          "pcmSha256": "b66c4d9bedb4c2cd27bf5a758706765423aaf90eb83c8e022fd4e9d871ba45dc"
+        }
+      ]
+    },
+    {
+      "unitId": "S1-05-en004-junction-r1-03",
+      "wavSha256": "729991dfdeafec2890c02428b405f97c662a492280713cd3ed7d48972cabb8f6",
+      "pcmSha256": "0b20f13050a0fbd1cc68304c01ad57145d5d8679d82fb4ddd11ca9dcd5aad50d",
+      "candidateSampleBounds": [
+        2018280,
+        2186280
+      ],
+      "joinCandidateSample": 2090280,
+      "contextLocalJoinSample": 72000,
+      "parts": [
+        {
+          "source": "original",
+          "sourceSampleBounds": [
+            2019720,
+            2091720
+          ],
+          "contextLocalSampleBounds": [
+            0,
+            72000
+          ],
+          "candidateSampleBounds": [
+            2018280,
+            2090280
+          ],
+          "pcmSha256": "2ae8e7ab6c929db7e9e96ea81d58291d85d9df860b281638fa7fb8c8bf9473d3"
+        },
+        {
+          "source": "repair2",
+          "sourceSampleBounds": [
+            0,
+            96000
+          ],
+          "contextLocalSampleBounds": [
+            72000,
+            168000
+          ],
+          "candidateSampleBounds": [
+            2090280,
+            2186280
+          ],
+          "pcmSha256": "9da685c1602990a9fc8a8c87f2eb01c915ea44618d6306aaa9307596fdabddf8"
+        }
+      ]
+    }
+  ],
+  "noNewAudioProcessing": true,
+  "allOriginalOutsideRepairSpansUnchanged": true,
+  "allNewCandidateSamplesPreserved": true
+}

@@ -1,0 +1,185 @@
+name: S105 EN004 three exact joined context blind actualaudio reviews
+'on':
+  push:
+    branches:
+    - work/soil-s105-en004-joined-context-review-20261022-r1
+    paths:
+    - s105-en004-joined-context-review/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s105-en004-joined-context-review-b60b7ed10d45305382a7153aa75faef99f768e737b4387b89f8cce366a8a6891
+  cancel-in-progress: false
+env:
+  PACKAGE: s105-en004-joined-context-review
+  REQUEST_SHA: b60b7ed10d45305382a7153aa75faef99f768e737b4387b89f8cce366a8a6891
+  WORKER_SHA: 7563ccdf9cb7d5f942989568da0886160c05329c713a416e924863878408b025
+  FREEZE_SHA: a19df609b0aba149bfcb6e49ba73cbcc8a47e39401b540e55243189132b098da
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820'
+      && github.ref == 'refs/heads/work/soil-s105-en004-joined-context-review-20261022-r1' && github.event.created == true
+      && github.event.before == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 55
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify exact three context PCM/source maps and finite budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Upload exact existing context01 before any review
+      id: context1
+      if: always() && steps.validate.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-context-01
+        retention-days: 30
+        if-no-files-found: error
+        path: ${{ env.PACKAGE }}/inputs/context-01.wav
+    - name: Record exact uploaded context01
+      id: receipt1
+      if: always() && steps.validate.outcome == 'success' && steps.context1.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.context1.outputs.artifact-id }}
+        DIGEST: ${{ steps.context1.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-en004-junction-r1-01 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: Upload exact existing context02 before any review
+      id: context2
+      if: always() && steps.validate.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-context-02
+        retention-days: 30
+        if-no-files-found: error
+        path: ${{ env.PACKAGE }}/inputs/context-02.wav
+    - name: Record exact uploaded context02
+      id: receipt2
+      if: always() && steps.validate.outcome == 'success' && steps.context2.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.context2.outputs.artifact-id }}
+        DIGEST: ${{ steps.context2.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-en004-junction-r1-02 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: Upload exact existing context03 before any review
+      id: context3
+      if: always() && steps.validate.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-context-03
+        retention-days: 30
+        if-no-files-found: error
+        path: ${{ env.PACKAGE }}/inputs/context-03.wav
+    - name: Record exact uploaded context03
+      id: receipt3
+      if: always() && steps.validate.outcome == 'success' && steps.context3.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.context3.outputs.artifact-id }}
+        DIGEST: ${{ steps.context3.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-en004-junction-r1-03 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One blind actualaudio contextreview01
+      id: review1
+      if: always() && steps.validate.outcome == 'success' && steps.context1.outcome == 'success' && steps.receipt1.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --unit S1-05-en004-junction-r1-01
+
+        '
+    - name: Preserve raw parsed or failed diagnostic01
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-review-01
+        retention-days: 30
+        if-no-files-found: warn
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-junction-r1-01/
+    - name: One blind actualaudio contextreview02
+      id: review2
+      if: always() && steps.validate.outcome == 'success' && steps.context2.outcome == 'success' && steps.receipt2.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --unit S1-05-en004-junction-r1-02
+
+        '
+    - name: Preserve raw parsed or failed diagnostic02
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-review-02
+        retention-days: 30
+        if-no-files-found: warn
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-junction-r1-02/
+    - name: One blind actualaudio contextreview03
+      id: review3
+      if: always() && steps.validate.outcome == 'success' && steps.context3.outcome == 'success' && steps.receipt3.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --unit S1-05-en004-junction-r1-03
+
+        '
+    - name: Preserve raw parsed or failed diagnostic03
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-review-03
+        retention-days: 30
+        if-no-files-found: warn
+        path: ${{ env.PACKAGE }}/output/S1-05-en004-junction-r1-03/
+    - name: Terminal summary never masks incomplete diagnostics
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Preserve entire frozen input and finite diagnostics
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-en004-joined-r1-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/
+
+          .github/workflows/s105-en004-joined-context-review.yml
+
+          '

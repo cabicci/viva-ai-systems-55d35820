@@ -1,0 +1,35 @@
+{
+  "originalUnit": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1
+  },
+  "additionalOriginalReview": {
+    "run": 39812595952,
+    "blind": 1
+  },
+  "coherentRepairCandidates": {
+    "run": 39816051691,
+    "tts": 2,
+    "blind": 2,
+    "asr": 2,
+    "metadataGET": 2
+  },
+  "focusedExistingBoundaryDiagnostic": {
+    "run": 39820872913,
+    "blind": 1,
+    "tts": 0,
+    "asr": 0,
+    "metadataGET": 0
+  },
+  "newScope": {
+    "threeDistinctJoinedContexts": 3,
+    "maximumPOST": 3,
+    "tts": 0,
+    "asr": 0,
+    "metadataGET": 0,
+    "retry": 0
+  },
+  "newCallsPerformed": 0,
+  "priorAttemptsPreservedAndNotReset": true
+}
