@@ -1,0 +1,28 @@
+{
+  "targetFingerprintPriorCalls": {
+    "71c6771d7c8bc1ef415213004cc288fa07c054fc5676ad1ab9c16d3ec89ccbec": 0,
+    "2b31df9e9a23fa69843e12750f54a444c6c2ef0ace7ded059251711fc53fad41": 0
+  },
+  "originalWholeRecordingCallsEach": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "additionalContextBlind": 1
+  },
+  "maximumNewCalls": {
+    "TTS": 2,
+    "blind": 2,
+    "ASR": 2,
+    "metadataGET": 2,
+    "retry": 0
+  },
+  "newCallsStarted": 0,
+  "postJoinAutomaticCalls": 0,
+  "priorPublishedZeroJobRun": {
+    "runId": 39873441919,
+    "evidenceSHA256": "98b76ced737d2aead2bc0c65c74ea4868048be424054f2114bf88e6e2b22c0c3",
+    "actualJobs": 0,
+    "actualArtifacts": 0,
+    "providerCallsExecutableByRun": 0
+  }
+}

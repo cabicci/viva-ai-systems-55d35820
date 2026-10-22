@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "scope": "S106_AR_TWO_CORROBORATED_ARTICULATION_SENTENCE_REPAIRS_ONLY",
+  "stepId": "S1-06",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s106-ar-two-sentence-repair-20261023-r2",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 2,
+  "maximumBlindAudioReviewCalls": 2,
+  "maximumASRInvocations": 2,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "TWO_AR_SENTENCES_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-06-ar-EG-R04-sentence-repair-r1",
+      "unitId": "S1-06-ar-EG-R04-sentence-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "R04-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c52b4d34988cc968d7a56b1fd251aaac90cf26a56d99fad3f70064f43913e72b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "ما تفضّيش حمولة الكوريك كلها، أو تكشط السطح بس، أو تاخد من قاع الفتحة بس. الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ. ورّي الشريط المنتظم من كامل العمق قبل ما تكرر الطريقة في النقط المخصصة الباقية.",
+          "sha256": "49a0e79b24419e5d8579407b34cdd0357c62a9b7c77d21a020c50700be47df53"
+        }
+      ],
+      "scientificMeaning": "ما تفضّيش حمولة الكوريك كلها، أو تكشط السطح بس، أو تاخد من قاع الفتحة بس. الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ. ورّي الشريط المنتظم من كامل العمق قبل ما تكرر الطريقة في النقط المخصصة الباقية.",
+      "displayText": "ما تفضّيش حمولة الكوريك كلها، أو تكشط السطح بس، أو تاخد من قاع الفتحة بس. الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ. ورّي الشريط المنتظم من كامل العمق قبل ما تكرر الطريقة في النقط المخصصة الباقية.",
+      "captionText": "ما تفضّيش حمولة الكوريك كلها، أو تكشط السطح بس، أو تاخد من قاع الفتحة بس. الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ. ورّي الشريط المنتظم من كامل العمق قبل ما تكرر الطريقة في النقط المخصصة الباقية.",
+      "spokenText": "الشريحة اللي فوقها أعرض بكتير من تحتها بتخلّي نصيب الطبقات في العينة مش متساوي.",
+      "spokenTextSHA256": "8ae79bd37a5b790569791fd5df5de91bebb88e918aba127a9c9ff73772daa4aa",
+      "spokenTextSha256": "8ae79bd37a5b790569791fd5df5de91bebb88e918aba127a9c9ff73772daa4aa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ما تفضّيش حمولة الكوريك كلها، أو تكشط السطح بس، أو تاخد من قاع الفتحة بس. الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ. ورّي الشريط المنتظم من كامل العمق قبل ما تكرر الطريقة في النقط المخصصة الباقية.",
+          "spoken": "الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ.",
+          "occurrences": 1,
+          "purpose": "REPAIR_ONLY_EXACT_SENTENCE_EXTRACTION_FROM_BOUND_PARAGRAPH_OTHER_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ.",
+          "spoken": "الشريحة اللي فوقها أعرض بكتير من تحتها بتخلّي نصيب الطبقات في العينة مش متساوي.",
+          "occurrences": 1,
+          "purpose": "ROOT_REQUESTED_SOURCE_EQUIVALENT_SIMPLER_EGYPTIAN_SENTENCE_FOR_CONFIRMED_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. حافظ على إن العشر نقط وعمق من صفر لخمستاشر سنتيمتر خاصين بالمهمة. الأمثلة التانية تفضل منفصلة. حرف V يوصف شكل الفتحة، مش وحدة قياس. السُمك والعرض غير العمق، والكوبين مش خمسمية جرام تلقائيًا.",
+      "deliverySHA256": "435a4d9aca3724fa3d16aa461c133d9c8649cc30092b6985799eb850265df828",
+      "deliverySha256": "435a4d9aca3724fa3d16aa461c133d9c8649cc30092b6985799eb850265df828",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "exactSentenceBefore": "الشريحة اللي فوقها أعرض جدًا من تحتها بتمثل الطبقات بشكل غير متساوٍ.",
+      "requestFingerprintSHA256": "71c6771d7c8bc1ef415213004cc288fa07c054fc5676ad1ab9c16d3ec89ccbec",
+      "requestFingerprintSha256": "71c6771d7c8bc1ef415213004cc288fa07c054fc5676ad1ab9c16d3ec89ccbec",
+      "sourcePlanSha256": "a094a49288f4a743be5a0f35e45eb8de04cc6ae27903464cf10cc9627d590f83"
+    },
+    {
+      "id": "S1-06-ar-EG-R06-sentence-repair-r1",
+      "unitId": "S1-06-ar-EG-R06-sentence-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "R06-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c52b4d34988cc968d7a56b1fd251aaac90cf26a56d99fad3f70064f43913e72b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "للمراجعة بين المجموعات، اشتغل مع مجموعة تانية. اسأل سؤالين واضحين: هل كل البيانات المطلوبة موجودة؟ وهل كل خانة مقروءة؟ وبعدها طابق هوية الكيس بالخريطة وسجل الجمع. الملصق المرتب لكن برمز منطقة غلط ما زال غلط.",
+          "sha256": "ac3abb94fee96eb6edd21805ef5518ee0155e32c26a2df6d94f5c1fa7840744c"
+        }
+      ],
+      "scientificMeaning": "للمراجعة بين المجموعات، اشتغل مع مجموعة تانية. اسأل سؤالين واضحين: هل كل البيانات المطلوبة موجودة؟ وهل كل خانة مقروءة؟ وبعدها طابق هوية الكيس بالخريطة وسجل الجمع. الملصق المرتب لكن برمز منطقة غلط ما زال غلط.",
+      "displayText": "للمراجعة بين المجموعات، اشتغل مع مجموعة تانية. اسأل سؤالين واضحين: هل كل البيانات المطلوبة موجودة؟ وهل كل خانة مقروءة؟ وبعدها طابق هوية الكيس بالخريطة وسجل الجمع. الملصق المرتب لكن برمز منطقة غلط ما زال غلط.",
+      "captionText": "للمراجعة بين المجموعات، اشتغل مع مجموعة تانية. اسأل سؤالين واضحين: هل كل البيانات المطلوبة موجودة؟ وهل كل خانة مقروءة؟ وبعدها طابق هوية الكيس بالخريطة وسجل الجمع. الملصق المرتب لكن برمز منطقة غلط ما زال غلط.",
+      "spokenText": "وبعد كده طابق بيانات هوية الكيس مع خريطة الحقل وسجل جمع العينات.",
+      "spokenTextSHA256": "944ad2083d76672794a1de03d3dc6582a70edbddf9f35b97be37c208e5951239",
+      "spokenTextSha256": "944ad2083d76672794a1de03d3dc6582a70edbddf9f35b97be37c208e5951239",
+      "spokenAdaptationChanges": [
+        {
+          "written": "للمراجعة بين المجموعات، اشتغل مع مجموعة تانية. اسأل سؤالين واضحين: هل كل البيانات المطلوبة موجودة؟ وهل كل خانة مقروءة؟ وبعدها طابق هوية الكيس بالخريطة وسجل الجمع. الملصق المرتب لكن برمز منطقة غلط ما زال غلط.",
+          "spoken": "وبعدها طابق هوية الكيس بالخريطة وسجل الجمع.",
+          "occurrences": 1,
+          "purpose": "REPAIR_ONLY_EXACT_SENTENCE_EXTRACTION_FROM_BOUND_PARAGRAPH_OTHER_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "وبعدها طابق هوية الكيس بالخريطة وسجل الجمع.",
+          "spoken": "وبعد كده طابق بيانات هوية الكيس مع خريطة الحقل وسجل جمع العينات.",
+          "occurrences": 1,
+          "purpose": "ROOT_REQUESTED_SOURCE_EQUIVALENT_SIMPLER_EGYPTIAN_SENTENCE_FOR_CONFIRMED_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. حافظ على إن العشر نقط وعمق من صفر لخمستاشر سنتيمتر خاصين بالمهمة. الأمثلة التانية تفضل منفصلة. حرف V يوصف شكل الفتحة، مش وحدة قياس. السُمك والعرض غير العمق، والكوبين مش خمسمية جرام تلقائيًا.",
+      "deliverySHA256": "435a4d9aca3724fa3d16aa461c133d9c8649cc30092b6985799eb850265df828",
+      "deliverySha256": "435a4d9aca3724fa3d16aa461c133d9c8649cc30092b6985799eb850265df828",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "exactSentenceBefore": "وبعدها طابق هوية الكيس بالخريطة وسجل الجمع.",
+      "requestFingerprintSHA256": "2b31df9e9a23fa69843e12750f54a444c6c2ef0ace7ded059251711fc53fad41",
+      "requestFingerprintSha256": "2b31df9e9a23fa69843e12750f54a444c6c2ef0ace7ded059251711fc53fad41",
+      "sourcePlanSha256": "a094a49288f4a743be5a0f35e45eb8de04cc6ae27903464cf10cc9627d590f83"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 2,
+    "blind": 2,
+    "asr": 2,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S1-06-ar-EG-R04-sentence-repair-r1",
+      "S1-06-ar-EG-R06-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39873441919,
+    "commit": "594ed3c93b0bd9da776251a1775cf3a9d4c1dd23",
+    "failureEvidenceSHA256": "98b76ced737d2aead2bc0c65c74ea4868048be424054f2114bf88e6e2b22c0c3",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
