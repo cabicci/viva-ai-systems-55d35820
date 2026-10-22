@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "scope": "S1-11_EN008_RAIN_CONTEXT_ONLY",
+  "unitId": "S1-11-en-r3-008",
+  "locale": "en",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "work/soil-s111-rain-assembly-20261022-r1",
+  "fps": 30,
+  "frames": 774,
+  "sampleCount": 619200,
+  "sourcePcmSha256": "31a921cbf1b1ed137b0a20070ad9ba500c1de95c811d096adb7735c0a1d81eb9",
+  "durationSeconds": 25.8,
+  "frameDurationSeconds": 25.8,
+  "explicitTrailingSilenceSamples": 0,
+  "sourceFrameQA": "ROOT_ACTUAL_ENCODED_IMAGE_REVIEW_PASS_PENDING_MUX_QA",
+  "sourceEncodeReceiptSha256": "fbe2dda8227199cbbfe547e9b62f5f875aee895b43ea933e95750123a5cc1a11",
+  "sourceVisualReceiptSha256": "49802e9c38509596a4c1df1e7c3f5d7361fb7cceb7eb5eb987d68b403857f4c6",
+  "sourceTimingSha256": "5f10e4f581c525195d55659841d5f9c5052aa8d45eba17d910f9f597953bbc77",
+  "sourceMotionContractSha256": "5f10e4f581c525195d55659841d5f9c5052aa8d45eba17d910f9f597953bbc77",
+  "sourceRootEncodedQaSha256": "6548d4dcc6bf8b402607eaf2611c64134e4221ab4fbfe7182de7731c3e066ef2",
+  "runtimePolicy": {
+    "source": "preinstalled-only",
+    "required": [
+      "libvpx-vp9 decode",
+      "libx264 encode",
+      "aac encode"
+    ],
+    "syntheticCheckRequired": true,
+    "maximumPreflightCalls": 8,
+    "maximumPreflightTimeoutSeconds": 90,
+    "installerCalls": 0,
+    "fallbacks": 0,
+    "retry": 0
+  },
+  "providerCalls": 0,
+  "automaticRetries": 0,
+  "completeLesson": false,
+  "usesOriginalPcm": true,
+  "ownerVideoAccepted": false,
+  "assessmentExcluded": true,
+  "rootPackageReviewBeforeLaunchRequired": true,
+  "sourceRecapture": false,
+  "silencePolicy": "Zero padding. Preserve all619200 source PCM samples at offset0. No crop,gain,normalization,EQ,crossfade or time stretch.",
+  "inputs": {
+    "captions.json": {
+      "sha256": "aeca5013d7f44b1f5c46313a466081c33be71548f9876a1ff044e5071a586e87",
+      "bytes": 2765
+    },
+    "encoded-verification.json": {
+      "sha256": "98d696651bc705fab1afeb2bd19836292968fc6c24d7b8fede27c93fd6eee7f7",
+      "bytes": 2264
+    },
+    "encoding.json": {
+      "sha256": "481c447b01af408299afe4387a12f408a118c18e2378012fd38cab3cd993f1ee",
+      "bytes": 56588
+    },
+    "root-qa.json": {
+      "sha256": "6548d4dcc6bf8b402607eaf2611c64134e4221ab4fbfe7182de7731c3e066ef2",
+      "bytes": 684
+    },
+    "video.ivf": {
+      "sha256": "80de1ed3ca7ad7894d71dbef00267bf793389f57ad0f768764a0351b1bb0d984",
+      "bytes": 8580147
+    },
+    "voice.wav": {
+      "sha256": "cf4b4ed2eb55bb431073ced788f05410b3d0ba7903948f915ad73cc6931f0ea9",
+      "bytes": 1244518
+    }
+  },
+  "encodedFrameRequests": [
+    {
+      "encodedFrameIndex": 0,
+      "encodedGridSeconds": 0.0,
+      "sourcePreviewFrameSha256": "db43d66eb3b139dac98bdcae979252f9abdc736487989937af277395632fdeee"
+    },
+    {
+      "encodedFrameIndex": 79,
+      "encodedGridSeconds": 2.6333333333333333,
+      "sourcePreviewFrameSha256": "a86f3737acf288c7dcb3a2707e44cf88b2c426999b7a93cd7b8ff835bed4637e"
+    },
+    {
+      "encodedFrameIndex": 225,
+      "encodedGridSeconds": 7.5,
+      "sourcePreviewFrameSha256": "26f9fdefab87eaf4139c03965a01e202d6439c087e689baf25f2776b6bad7d4e"
+    },
+    {
+      "encodedFrameIndex": 300,
+      "encodedGridSeconds": 10.0,
+      "sourcePreviewFrameSha256": "3f4516cc11856d35e51542c03c932a1d36bac5eb115346512a1e482449c13394"
+    },
+    {
+      "encodedFrameIndex": 384,
+      "encodedGridSeconds": 12.8,
+      "sourcePreviewFrameSha256": "b2f17a6fb5dce5863dd02388299f8f3c4f4137e3533c45d98d4d1791023bf8fb"
+    },
+    {
+      "encodedFrameIndex": 467,
+      "encodedGridSeconds": 15.566666666666666,
+      "sourcePreviewFrameSha256": "37bb521e5afc621c5d35354ca4a7d4d9e4983066b216ec65b75f63a9b67bb539"
+    },
+    {
+      "encodedFrameIndex": 557,
+      "encodedGridSeconds": 18.566666666666666,
+      "sourcePreviewFrameSha256": "bfeae5768e93a9d359899f7ceee1011cb20e46fa780416489b923f8c43dba842"
+    },
+    {
+      "encodedFrameIndex": 702,
+      "encodedGridSeconds": 23.4,
+      "sourcePreviewFrameSha256": "3bd73d99f168049ab75a103b7a24cf4376d4a4b89114c96032725ad372a5a3b8"
+    },
+    {
+      "encodedFrameIndex": 773,
+      "encodedGridSeconds": 25.766666666666666,
+      "sourcePreviewFrameSha256": "04dd91b514dfcd2f448ee8951d64609b5a9b2da1e09165317be9170d0652fee3"
+    }
+  ]
+}

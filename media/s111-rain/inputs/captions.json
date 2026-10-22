@@ -1,0 +1,66 @@
+{
+  "unitId": "S1-11-en-r3-008",
+  "locale": "en",
+  "title": "Low result after rain",
+  "spokenText": "A sample collected after heavy rain has a low measured contaminant concentration. Retain the measured result and rain observation. List movement or redistribution as possibilities dependent on the contaminant and site. Do not declare the field clean or the cause proved from one sample. Context guides further interpretation without manufacturing certainty.",
+  "spokenTextSha256": "7408eadb07978671dbf9bc98c0068f2b9effae9d10735d26e76a64c22453df01",
+  "audioSha256": "cf4b4ed2eb55bb431073ced788f05410b3d0ba7903948f915ad73cc6931f0ea9",
+  "pcmSha256": "31a921cbf1b1ed137b0a20070ad9ba500c1de95c811d096adb7735c0a1d81eb9",
+  "sourceTimingSha256": "5f10e4f581c525195d55659841d5f9c5052aa8d45eba17d910f9f597953bbc77",
+  "sourceOriginalFileSha256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+  "captions": [
+    {
+      "clauseId": "S1-11-E02-en-S",
+      "sourcePointer": "/examples/1/situation",
+      "spokenText": "A sample collected after heavy rain has a low measured contaminant concentration.",
+      "startSeconds": 0.0,
+      "endSeconds": 5.26,
+      "timingStatus": "EXACT_COMPLETE_CONTIGUOUS_ASR_CLAUSE_DRAFT"
+    },
+    {
+      "clauseId": "S1-11-E02-en-R01",
+      "sourcePointer": "/examples/1/reasoning/0",
+      "spokenText": "Retain the measured result and rain observation.",
+      "startSeconds": 5.94,
+      "endSeconds": 9.08,
+      "timingStatus": "EXACT_COMPLETE_CONTIGUOUS_ASR_CLAUSE_DRAFT"
+    },
+    {
+      "clauseId": "S1-11-E02-en-R02",
+      "sourcePointer": "/examples/1/reasoning/1",
+      "spokenText": "List movement or redistribution as possibilities dependent on the contaminant and site.",
+      "startSeconds": 10,
+      "endSeconds": 15.58,
+      "timingStatus": "OBSERVED_CONTIGUOUS_WHOLE_SOURCE_CLAUSE_GROUP_INTERNAL_REVIEW"
+    },
+    {
+      "clauseId": "S1-11-E02-en-R03",
+      "sourcePointer": "/examples/1/reasoning/2",
+      "spokenText": "Do not declare the field clean or the cause proved from one sample.",
+      "startSeconds": 16.44,
+      "endSeconds": 20.7,
+      "timingStatus": "EXACT_COMPLETE_CONTIGUOUS_ASR_CLAUSE_DRAFT"
+    },
+    {
+      "clauseId": "S1-11-E02-en-T",
+      "sourcePointer": "/examples/1/takeaway",
+      "spokenText": "Context guides further interpretation without manufacturing certainty.",
+      "startSeconds": 21.44,
+      "endSeconds": 25.34,
+      "timingStatus": "EXACT_COMPLETE_CONTIGUOUS_ASR_CLAUSE_DRAFT"
+    }
+  ],
+  "unresolvedIndividualWordTimings": [
+    {
+      "wordIndex": 29,
+      "text": "and",
+      "startSeconds": null,
+      "endSeconds": null
+    }
+  ],
+  "wholeClauseObservedGroup": [
+    10,
+    15.58
+  ],
+  "assessmentExcluded": true
+}

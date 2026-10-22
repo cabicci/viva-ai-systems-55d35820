@@ -1,0 +1,20 @@
+{
+  "atUTC": "2026-10-22T15:07:38.3933300Z",
+  "status": "ROOT_ACTUAL_ENCODED_IMAGE_REVIEW_PASS",
+  "actualFrames": 9,
+  "boards": [
+    "board-01.png",
+    "board-02.png",
+    "board-03.png"
+  ],
+  "receiptSha256": "4bb93fc35b34289193b56bf81ff8abe707cce7c9d5100f69794113bfa2758054",
+  "checks": [
+    "All five complete phrases covered plus start/end/group edges",
+    "Low result and rain retained",
+    "No clean-field or causal conclusion",
+    "Originalsource and individual timing null retained",
+    "Native carriers and captions readable"
+  ],
+  "scope": "EN008 encoded clip only; final assembled MP4 QA still required",
+  "humanListeningClaimed": false
+}

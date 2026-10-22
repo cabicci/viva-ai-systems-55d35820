@@ -1,0 +1,58 @@
+name: Bounded S111 EN008 rain-context assembly
+on:
+  push:
+    branches: [work/soil-s111-rain-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: s111-en008-rain-assembly-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.repository_id == '1272666418' && github.ref == 'refs/heads/work/soil-s111-rain-assembly-20261022-r1' && github.event.created == true && github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      MANIFEST_SHA: ac84cc127e7c53b5082ce95d72caa0d7e96f00d083dd5f91eeda736fa493ec56
+      WORKER_SHA: dccc0d036897f7b86b6fbc1116aa5d54d4b2ccfb5a997ae5dc737dfb92bb087b
+      RUNTIME_SHA: 96b16b4b8c4254793ccfb6470e3433358acc0619c8ea1995ed49df090854955a
+      FREEZE_SHA: eab89712930c17ef3f8f23b58a9378be4acae0a4d53657f5e5ef211853bd0fdc
+    steps:
+      - uses: actions/checkout@v4
+        timeout-minutes: 1
+        with:
+          persist-credentials: false
+      - name: Validate exact source PCM and all774 existing packets
+        run: python -B media/s111-rain/assemble.py validate
+      - name: Qualify only preinstalled codecs with bounded synthetic material
+        timeout-minutes: 2
+        run: python -B media/s111-rain/assemble.py preflight
+      - name: Assemble once after successful codec qualification
+        id: assemble
+        timeout-minutes: 5
+        run: python -B media/s111-rain/assemble.py assemble
+      - name: Preserve finished MP4 and original lossless source before diagnostics
+        if: always()
+        timeout-minutes: 1
+        uses: actions/upload-artifact@v4
+        with:
+          name: s111-en008-media-r1
+          path: |
+            media/s111-rain/output/*.mp4
+            media/s111-rain/output/*.wav
+            media/s111-rain/output/assembly-completion.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Verify final packet grid full decode and nine actual encoded frames
+        if: always() && steps.assemble.outcome == 'success'
+        timeout-minutes: 4
+        run: python -B media/s111-rain/assemble.py verify
+      - name: Preserve attempts versions synthetic checks and diagnostic results
+        if: always()
+        timeout-minutes: 1
+        uses: actions/upload-artifact@v4
+        with:
+          name: s111-en008-diagnostics-r1
+          path: media/s111-rain/output/
+          if-no-files-found: warn
+          retention-days: 7
