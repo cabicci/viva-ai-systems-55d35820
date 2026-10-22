@@ -1,0 +1,1531 @@
+{
+  "schemaVersion": 1,
+  "scope": "S107_TWENTYFOUR_REMAINING_CURRENT_TEACHING_GROUPS_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S1-07",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s107-remainder-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 24,
+  "maximumBlindAudioReviewCalls": 24,
+  "maximumASRInvocations": 24,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_SIX_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-07-ar-EG-opening-r1",
+      "unitId": "S1-07-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "الفني بيلاحظ الأول وبيفسر بعد كده. اتعلم التربة ملمسها وشكلها إيه، والملاحظات دي ممكن تشير لإيه، وإيه اللي ما تقدرش تثبته لوحدها.",
+          "sha256": "91f36183f2d5a99c2d8d1a3a630759ad5319ed8983249c2a5dabd5eb78f3e040"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تقارن بين الرمل والسلت والطين، وتشرح ليه التربة اللومية خليط بنسب قوام، مش نوعًا رابعًا من الحبيبات ولا أي كيس تربة زراعة.",
+          "sha256": "ad5ec84c3b026f6b168fdb9895fa4fc4d1a48bf607a6f7f47a18cfba47416068"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "تفصل بين ملاحظة اللون والتفسير المحتمل والدليل الإضافي المطلوب.",
+          "sha256": "54f5263d16c67d91af176097ac07e914cc7d14cd6a0218875a93ec3cb9565f38"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "تشرح تأثير القوام على حركة الميه مع بنية التربة والمادة العضوية، وتحدد حدود النموذج التوضيحي.",
+          "sha256": "166dfb1012b8188e0473f02ff314c8bcb8477fdcc0451bda1c621fa1bf2df5b9"
+        }
+      ],
+      "scientificMeaning": "الفني بيلاحظ الأول وبيفسر بعد كده. اتعلم التربة ملمسها وشكلها إيه، والملاحظات دي ممكن تشير لإيه، وإيه اللي ما تقدرش تثبته لوحدها.\n\nتقارن بين الرمل والسلت والطين، وتشرح ليه التربة اللومية خليط بنسب قوام، مش نوعًا رابعًا من الحبيبات ولا أي كيس تربة زراعة.\n\nتفصل بين ملاحظة اللون والتفسير المحتمل والدليل الإضافي المطلوب.\n\nتشرح تأثير القوام على حركة الميه مع بنية التربة والمادة العضوية، وتحدد حدود النموذج التوضيحي.",
+      "displayText": "الفني بيلاحظ الأول وبيفسر بعد كده. اتعلم التربة ملمسها وشكلها إيه، والملاحظات دي ممكن تشير لإيه، وإيه اللي ما تقدرش تثبته لوحدها.\n\nتقارن بين الرمل والسلت والطين، وتشرح ليه التربة اللومية خليط بنسب قوام، مش نوعًا رابعًا من الحبيبات ولا أي كيس تربة زراعة.\n\nتفصل بين ملاحظة اللون والتفسير المحتمل والدليل الإضافي المطلوب.\n\nتشرح تأثير القوام على حركة الميه مع بنية التربة والمادة العضوية، وتحدد حدود النموذج التوضيحي.",
+      "captionText": "الفني بيلاحظ الأول وبيفسر بعد كده. اتعلم التربة ملمسها وشكلها إيه، والملاحظات دي ممكن تشير لإيه، وإيه اللي ما تقدرش تثبته لوحدها.\n\nتقارن بين الرمل والسلت والطين، وتشرح ليه التربة اللومية خليط بنسب قوام، مش نوعًا رابعًا من الحبيبات ولا أي كيس تربة زراعة.\n\nتفصل بين ملاحظة اللون والتفسير المحتمل والدليل الإضافي المطلوب.\n\nتشرح تأثير القوام على حركة الميه مع بنية التربة والمادة العضوية، وتحدد حدود النموذج التوضيحي.",
+      "spokenText": "الفني بيلاحظ الأول وبيفسر بعد كده. اتعلم التربة ملمسها وشكلها إيه، والملاحظات دي ممكن تشير لإيه، وإيه اللي ما تقدرش تثبته لوحدها.\n\nتقارن بين الرمل والسلت والطين، وتشرح ليه التربة اللومية خليط بنسب قوام، مش نوع رابع من الحبيبات ولا أي كيس تربة زراعة.\n\nتفصل بين ملاحظة اللون والتفسير المحتمل والدليل الإضافي المطلوب.\n\nتشرح تأثير القوام على حركة الميه مع بنية التربة والمادة العضوية، وتحدد حدود النموذج التوضيحي.",
+      "spokenTextSHA256": "79927eab6bf88e62df409b71647a76c64fa9fba76cd60de5ee0cf968efdd83f8",
+      "spokenTextSha256": "79927eab6bf88e62df409b71647a76c64fa9fba76cd60de5ee0cf968efdd83f8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "نوعًا رابعًا",
+          "spoken": "نوع رابع",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "55e02fec4bed6e86b9ed02371091a286d593771cd600e6b752f2673f176ef354",
+      "requestFingerprintSha256": "55e02fec4bed6e86b9ed02371091a286d593771cd600e6b752f2673f176ef354",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-ar-EG-E01-r1",
+      "unitId": "S1-07-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "طالب قال إن وسط نمو تجاري غامق لومي من غير ما يفحص مكوناته.",
+          "sha256": "391e78e524df898a24e1c12665e20e3916df5aad6d385157b0427c6100f87d79"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "اللون الغامق ملاحظة لون؛ وتربة زراعة وصف منتج.",
+          "sha256": "e9ab7bcc61d7845adb60d2a03f68f3d30cb7a81c86d784804fd4a72915a958a5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "افحص المادة. خليط ألياف جوز الهند واللحاء ما يتحولش لتربة معدنية لومية بمجرد الاسم المكتوب على كيسه.",
+          "sha256": "cfa8fc1e99057251b73c3c21c8401362e0ff9420f62aa553458d9da82080c2d7"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "لتمرين القوام، اختار عينة تربة معدنية المدرّب تحقق منها وصنّفها بالدليل المتفق عليه.",
+          "sha256": "6f14357e13df8579aeeb2f5b0b5369b2e3682f3b0777ca5b3ed9986eecb8cd1e"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "اعرف المادة الأول قبل ما تطبق عليها اختبار قوام تربة معدنية.",
+          "sha256": "76a2d02b7eeeef43ddf119b1fa702a842b01148a63414b5ef9dbe5d8876d9cbb"
+        }
+      ],
+      "scientificMeaning": "طالب قال إن وسط نمو تجاري غامق لومي من غير ما يفحص مكوناته.\n\nاللون الغامق ملاحظة لون؛ وتربة زراعة وصف منتج.\n\nافحص المادة. خليط ألياف جوز الهند واللحاء ما يتحولش لتربة معدنية لومية بمجرد الاسم المكتوب على كيسه.\n\nلتمرين القوام، اختار عينة تربة معدنية المدرّب تحقق منها وصنّفها بالدليل المتفق عليه.\n\nاعرف المادة الأول قبل ما تطبق عليها اختبار قوام تربة معدنية.",
+      "displayText": "طالب قال إن وسط نمو تجاري غامق لومي من غير ما يفحص مكوناته.\n\nاللون الغامق ملاحظة لون؛ وتربة زراعة وصف منتج.\n\nافحص المادة. خليط ألياف جوز الهند واللحاء ما يتحولش لتربة معدنية لومية بمجرد الاسم المكتوب على كيسه.\n\nلتمرين القوام، اختار عينة تربة معدنية المدرّب تحقق منها وصنّفها بالدليل المتفق عليه.\n\nاعرف المادة الأول قبل ما تطبق عليها اختبار قوام تربة معدنية.",
+      "captionText": "طالب قال إن وسط نمو تجاري غامق لومي من غير ما يفحص مكوناته.\n\nاللون الغامق ملاحظة لون؛ وتربة زراعة وصف منتج.\n\nافحص المادة. خليط ألياف جوز الهند واللحاء ما يتحولش لتربة معدنية لومية بمجرد الاسم المكتوب على كيسه.\n\nلتمرين القوام، اختار عينة تربة معدنية المدرّب تحقق منها وصنّفها بالدليل المتفق عليه.\n\nاعرف المادة الأول قبل ما تطبق عليها اختبار قوام تربة معدنية.",
+      "spokenText": "طالب قال إن وسط نمو تجاري غامق لومي من غير ما يفحص مكوناته.\n\nاللون الغامق ملاحظة لون؛ وتربة زراعة وصف منتج.\n\nافحص المادة. خليط ألياف جوز الهند واللحاء ما يتحولش لتربة معدنية لومية بمجرد الاسم المكتوب على كيسه.\n\nلتمرين القوام، اختار عينة تربة معدنية المدرّب تحقق منها وصنّفها بالدليل المتفق عليه.\n\nاعرف المادة الأول قبل ما تطبق عليها اختبار قوام تربة معدنية.",
+      "spokenTextSHA256": "637d52026159a611f2e1065706dd8ee06e4e1915fcf7971f3f07c7d41aededa2",
+      "spokenTextSha256": "637d52026159a611f2e1065706dd8ee06e4e1915fcf7971f3f07c7d41aededa2",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ab0457e8167747ba28bcdab93ec6b3ff55f285369874f2e069bb3a4d63c3889d",
+      "requestFingerprintSha256": "ab0457e8167747ba28bcdab93ec6b3ff55f285369874f2e069bb3a4d63c3889d",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-ar-EG-E02-r1",
+      "unitId": "S1-07-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "العينة لونها محمر، لكن المزارع بيقول إن الميه بتقف بعد المطر.",
+          "sha256": "9f5f05a2e5ee8628e8c329b7e9459c37d07aa94514083fcac71fd07bc4c8561e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "سجّل اللون وكمان كلام المزارع عن الميه الراكدة.",
+          "sha256": "b4b851d75f1bbbaafeb2c8ce89f5786084581f3cdd11bcc1bcafbcc5541ecec9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اللون المرتبط بالحديد ما يلغيش دليلًا على مشكلة صرف حالية.",
+          "sha256": "d94be74577f162fb6a7a8370a8b5ceb446798eae2c0e8ab75cb3f49177742e77"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "افحص قطاع التربة والانضغاط والصرف وظروف الموقع اللي ليها علاقة بالحالة قبل ما تنصح بمحصول.",
+          "sha256": "d0ce9fb0da4cc9759648ccbc40d7ff32503545a27a785723499ba7ab8631fcb8"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "إشارة اللون ما تلغيش كل الملاحظات التانية.",
+          "sha256": "000ec2dc3a8410eaf98dd49556c18546f879b8be0953c61036f1ce6d05dbc985"
+        }
+      ],
+      "scientificMeaning": "العينة لونها محمر، لكن المزارع بيقول إن الميه بتقف بعد المطر.\n\nسجّل اللون وكمان كلام المزارع عن الميه الراكدة.\n\nاللون المرتبط بالحديد ما يلغيش دليلًا على مشكلة صرف حالية.\n\nافحص قطاع التربة والانضغاط والصرف وظروف الموقع اللي ليها علاقة بالحالة قبل ما تنصح بمحصول.\n\nإشارة اللون ما تلغيش كل الملاحظات التانية.",
+      "displayText": "العينة لونها محمر، لكن المزارع بيقول إن الميه بتقف بعد المطر.\n\nسجّل اللون وكمان كلام المزارع عن الميه الراكدة.\n\nاللون المرتبط بالحديد ما يلغيش دليلًا على مشكلة صرف حالية.\n\nافحص قطاع التربة والانضغاط والصرف وظروف الموقع اللي ليها علاقة بالحالة قبل ما تنصح بمحصول.\n\nإشارة اللون ما تلغيش كل الملاحظات التانية.",
+      "captionText": "العينة لونها محمر، لكن المزارع بيقول إن الميه بتقف بعد المطر.\n\nسجّل اللون وكمان كلام المزارع عن الميه الراكدة.\n\nاللون المرتبط بالحديد ما يلغيش دليلًا على مشكلة صرف حالية.\n\nافحص قطاع التربة والانضغاط والصرف وظروف الموقع اللي ليها علاقة بالحالة قبل ما تنصح بمحصول.\n\nإشارة اللون ما تلغيش كل الملاحظات التانية.",
+      "spokenText": "العينة لونها محمر، لكن المزارع بيقول إن الميه بتقف بعد المطر.\n\nسجّل اللون وكمان كلام المزارع عن الميه الراكدة.\n\nاللون المرتبط بالحديد ما يلغيش دليل على مشكلة صرف حالية.\n\nافحص قطاع التربة والانضغاط والصرف وظروف الموقع اللي ليها علاقة بالحالة قبل ما تنصح بمحصول.\n\nإشارة اللون ما تلغيش كل الملاحظات التانية.",
+      "spokenTextSHA256": "1c194674777a34518eb25bef08d47d571f4e39f8db771cdd821ee8e6690b183f",
+      "spokenTextSha256": "1c194674777a34518eb25bef08d47d571f4e39f8db771cdd821ee8e6690b183f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "دليلًا",
+          "spoken": "دليل",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0b6649091041d13cd7a4df1c1bfde95416c92e5de90ab96b1a2700e969667868",
+      "requestFingerprintSha256": "0b6649091041d13cd7a4df1c1bfde95416c92e5de90ab96b1a2700e969667868",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-ar-EG-E03-r1",
+      "unitId": "S1-07-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "عرض توضيحي بيستخدم السكر لتمثيل السلت وبيقول إن مرور الميه يثبت إزاي التربة السلتية بتصرف.",
+          "sha256": "08e5735111d19f7f3a49549be3ac9dba9aedb6c2f2f98f0e8a3605064ac0e45e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "القطع هنا بتوضح مقارنة الحجم.",
+          "sha256": "fc6b6a067f64104437a51c153663e1642f15048bd4faae8939ce7f5ea8adf88b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "السكر بيدوب، فالتمثيل ما بيكررش سلوك معادن التربة.",
+          "sha256": "021961bbab94c97600fb276ae1a311de9e7859539569ed70845d6e466c9ca01e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "احتفظ بالتشبيه للحجم والفراغات، واستخدم فحص تربة مناسب لسلوك الميه الحقيقي.",
+          "sha256": "4d14ab2e3471cfca0346f18e215a68fe503e03bc240c1f3bf0e2f21a4ad6301d"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "قول النموذج بيمثل إيه، وفين بيتوقف عن إنه يكون موثوقًا.",
+          "sha256": "506302daf84ba82a1e33c1eb5623bfb49351e8d60d5b1f843726939f2008cd34"
+        }
+      ],
+      "scientificMeaning": "عرض توضيحي بيستخدم السكر لتمثيل السلت وبيقول إن مرور الميه يثبت إزاي التربة السلتية بتصرف.\n\nالقطع هنا بتوضح مقارنة الحجم.\n\nالسكر بيدوب، فالتمثيل ما بيكررش سلوك معادن التربة.\n\nاحتفظ بالتشبيه للحجم والفراغات، واستخدم فحص تربة مناسب لسلوك الميه الحقيقي.\n\nقول النموذج بيمثل إيه، وفين بيتوقف عن إنه يكون موثوقًا.",
+      "displayText": "عرض توضيحي بيستخدم السكر لتمثيل السلت وبيقول إن مرور الميه يثبت إزاي التربة السلتية بتصرف.\n\nالقطع هنا بتوضح مقارنة الحجم.\n\nالسكر بيدوب، فالتمثيل ما بيكررش سلوك معادن التربة.\n\nاحتفظ بالتشبيه للحجم والفراغات، واستخدم فحص تربة مناسب لسلوك الميه الحقيقي.\n\nقول النموذج بيمثل إيه، وفين بيتوقف عن إنه يكون موثوقًا.",
+      "captionText": "عرض توضيحي بيستخدم السكر لتمثيل السلت وبيقول إن مرور الميه يثبت إزاي التربة السلتية بتصرف.\n\nالقطع هنا بتوضح مقارنة الحجم.\n\nالسكر بيدوب، فالتمثيل ما بيكررش سلوك معادن التربة.\n\nاحتفظ بالتشبيه للحجم والفراغات، واستخدم فحص تربة مناسب لسلوك الميه الحقيقي.\n\nقول النموذج بيمثل إيه، وفين بيتوقف عن إنه يكون موثوقًا.",
+      "spokenText": "عرض توضيحي بيستخدم السكر لتمثيل السلت وبيقول إن مرور الميه يثبت إزاي التربة السلتية بتصرف.\n\nالقطع هنا بتوضح مقارنة الحجم.\n\nالسكر بيدوب، فالتمثيل ما بيكررش سلوك معادن التربة.\n\nاحتفظ بالتشبيه للحجم والفراغات، واستخدم فحص تربة مناسب لسلوك الميه الحقيقي.\n\nقول النموذج بيمثل إيه، وفين بيتوقف عن إنه يكون موثوق.",
+      "spokenTextSHA256": "32bdd5b821bd8e16e33d1255a1dccac83847e82fae4804d746c6ab4024442515",
+      "spokenTextSha256": "32bdd5b821bd8e16e33d1255a1dccac83847e82fae4804d746c6ab4024442515",
+      "spokenAdaptationChanges": [
+        {
+          "written": "موثوقًا",
+          "spoken": "موثوق",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "db64aa95ce7e66d081244bf945c303ce2b218085253e7e11f5f235ce2f095c53",
+      "requestFingerprintSha256": "db64aa95ce7e66d081244bf945c303ce2b218085253e7e11f5f235ce2f095c53",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-ar-EG-guided-practice-r1",
+      "unitId": "S1-07-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "صنّف كلامًا عن وسط زراعة تجاري غامق، وحقل أحمر رطب، ونموذج حبيبات السكر إلى: ما اتلاحظ، وتفسير ممكن، وإيه اللي لسه يحتاج فحصًا.",
+          "sha256": "6321165a53c7cc00ee6f78869c4b798870a37643d606fa99957debf48fdb3509"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "سمّ الرمل والسلت والطين مجموعات أحجام حبيبات معدنية، واللومي خليطًا مش حبيبة رابعة.",
+          "sha256": "f9a4f785fa76cf3dc08d1813cafaf1938d6360a867e70d93ef1bfc1df46f381c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "سجّل ملاحظات القوام واللون من غير ما تعلن الخصوبة أو الصرف من اللون وحده.",
+          "sha256": "2c413f0f59dc25d10898627102d044213a9cb3075ceb48387999c8bc6df1e01e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "قارن حركة الميه المحتملة مع مراعاة البنية والمادة العضوية.",
+          "sha256": "a705ab1291f0ab4deddd7924f444cab64595a15920d0b58b83ff1ae4ce57ee23"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "حدد حاجة النموذج بيمثلها وحاجة ما يقدرش يثبتها.",
+          "sha256": "1cf7e1e02a1ae11ec39adf22cfab22d0be9f8088c3d03a1500c6bd24a50ad4f8"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "أي تمرين لمس عينة يستخدم مادة حقيقية محددة الهوية وآمنة حسب إجراء المدرّب؛ التدريب ده لتحسين التعلم بالملاحظات، مش اجتيازًا عمليًا جديدًا بتوقيع.",
+          "sha256": "f39366b58f5487f24b6513c244a2b15166ca3a66d8a2141eafc055d4eb2fa8c2"
+        }
+      ],
+      "scientificMeaning": "صنّف كلامًا عن وسط زراعة تجاري غامق، وحقل أحمر رطب، ونموذج حبيبات السكر إلى: ما اتلاحظ، وتفسير ممكن، وإيه اللي لسه يحتاج فحصًا.\n\nسمّ الرمل والسلت والطين مجموعات أحجام حبيبات معدنية، واللومي خليطًا مش حبيبة رابعة.\n\nسجّل ملاحظات القوام واللون من غير ما تعلن الخصوبة أو الصرف من اللون وحده.\n\nقارن حركة الميه المحتملة مع مراعاة البنية والمادة العضوية.\n\nحدد حاجة النموذج بيمثلها وحاجة ما يقدرش يثبتها.\n\nأي تمرين لمس عينة يستخدم مادة حقيقية محددة الهوية وآمنة حسب إجراء المدرّب؛ التدريب ده لتحسين التعلم بالملاحظات، مش اجتيازًا عمليًا جديدًا بتوقيع.",
+      "displayText": "صنّف كلامًا عن وسط زراعة تجاري غامق، وحقل أحمر رطب، ونموذج حبيبات السكر إلى: ما اتلاحظ، وتفسير ممكن، وإيه اللي لسه يحتاج فحصًا.\n\nسمّ الرمل والسلت والطين مجموعات أحجام حبيبات معدنية، واللومي خليطًا مش حبيبة رابعة.\n\nسجّل ملاحظات القوام واللون من غير ما تعلن الخصوبة أو الصرف من اللون وحده.\n\nقارن حركة الميه المحتملة مع مراعاة البنية والمادة العضوية.\n\nحدد حاجة النموذج بيمثلها وحاجة ما يقدرش يثبتها.\n\nأي تمرين لمس عينة يستخدم مادة حقيقية محددة الهوية وآمنة حسب إجراء المدرّب؛ التدريب ده لتحسين التعلم بالملاحظات، مش اجتيازًا عمليًا جديدًا بتوقيع.",
+      "captionText": "صنّف كلامًا عن وسط زراعة تجاري غامق، وحقل أحمر رطب، ونموذج حبيبات السكر إلى: ما اتلاحظ، وتفسير ممكن، وإيه اللي لسه يحتاج فحصًا.\n\nسمّ الرمل والسلت والطين مجموعات أحجام حبيبات معدنية، واللومي خليطًا مش حبيبة رابعة.\n\nسجّل ملاحظات القوام واللون من غير ما تعلن الخصوبة أو الصرف من اللون وحده.\n\nقارن حركة الميه المحتملة مع مراعاة البنية والمادة العضوية.\n\nحدد حاجة النموذج بيمثلها وحاجة ما يقدرش يثبتها.\n\nأي تمرين لمس عينة يستخدم مادة حقيقية محددة الهوية وآمنة حسب إجراء المدرّب؛ التدريب ده لتحسين التعلم بالملاحظات، مش اجتيازًا عمليًا جديدًا بتوقيع.",
+      "spokenText": "صنّف كلام عن وسط زراعة تجاري غامق، وحقل أحمر رطب، ونموذج حبيبات السكر إلى: ما اتلاحظ، وتفسير ممكن، وإيه اللي لسه يحتاج فحص.\n\nسمّ الرمل والسلت والطين مجموعات أحجام حبيبات معدنية، واللومي خليط مش حبيبة رابعة.\n\nسجّل ملاحظات القوام واللون من غير ما تعلن الخصوبة أو الصرف من اللون وحده.\n\nقارن حركة الميه المحتملة مع مراعاة البنية والمادة العضوية.\n\nحدد حاجة النموذج بيمثلها وحاجة ما يقدرش يثبتها.\n\nأي تمرين لمس عينة يستخدم مادة حقيقية محددة الهوية وآمنة حسب إجراء المدرّب؛ التدريب ده لتحسين التعلم بالملاحظات، مش اجتياز عملي جديد بتوقيع.",
+      "spokenTextSHA256": "02692cdf666669e035791edc891b77cb29127c09353d87bc78d74bbeb3328595",
+      "spokenTextSha256": "02692cdf666669e035791edc891b77cb29127c09353d87bc78d74bbeb3328595",
+      "spokenAdaptationChanges": [
+        {
+          "written": "كلامًا",
+          "spoken": "كلام",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        },
+        {
+          "written": "فحصًا",
+          "spoken": "فحص",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        },
+        {
+          "written": "خليطًا",
+          "spoken": "خليط",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        },
+        {
+          "written": "اجتيازًا عمليًا جديدًا",
+          "spoken": "اجتياز عملي جديد",
+          "occurrences": 1,
+          "purpose": "Natural Egyptian spoken form only; source/display/meaning unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9ba7210bf444dd98e70b7dbab8944d153e08ba1cb90ae57c8d8aba18df2fa8f1",
+      "requestFingerprintSha256": "9ba7210bf444dd98e70b7dbab8944d153e08ba1cb90ae57c8d8aba18df2fa8f1",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-ar-EG-reflection-r1",
+      "unitId": "S1-07-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f86c0c697eddb06a6d9d8c73fe2a100888bcf6cbe13a55715fba1f7b9bc27b9c",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أقدر أشرح اللون والقوام ممكن يشيروا لإيه، وأقول إيه الدليل اللي لسه ناقص؟",
+          "sha256": "d6dec3f6a368c65c3021cb19677125ed31fbe633ec670c174bd16ef05d462dac"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "تقييمك لنفسك يساعدك تحدد اللي تراجعه؛ مش اجتياز للمهارة العملية.",
+          "sha256": "9e69e87966cc353ea2b9530d1bc937503cf75e81828e96ece3b30f80066f0529"
+        }
+      ],
+      "scientificMeaning": "أقدر أشرح اللون والقوام ممكن يشيروا لإيه، وأقول إيه الدليل اللي لسه ناقص؟\n\nتقييمك لنفسك يساعدك تحدد اللي تراجعه؛ مش اجتياز للمهارة العملية.",
+      "displayText": "أقدر أشرح اللون والقوام ممكن يشيروا لإيه، وأقول إيه الدليل اللي لسه ناقص؟\n\nتقييمك لنفسك يساعدك تحدد اللي تراجعه؛ مش اجتياز للمهارة العملية.",
+      "captionText": "أقدر أشرح اللون والقوام ممكن يشيروا لإيه، وأقول إيه الدليل اللي لسه ناقص؟\n\nتقييمك لنفسك يساعدك تحدد اللي تراجعه؛ مش اجتياز للمهارة العملية.",
+      "spokenText": "أقدر أشرح اللون والقوام ممكن يشيروا لإيه، وأقول إيه الدليل اللي لسه ناقص؟\n\nتقييمك لنفسك يساعدك تحدد اللي تراجعه؛ مش اجتياز للمهارة العملية.",
+      "spokenTextSHA256": "3149473c51738fe044217b342b32cb80c9cba55efed78f64e473e771cfe40ed9",
+      "spokenTextSha256": "3149473c51738fe044217b342b32cb80c9cba55efed78f64e473e771cfe40ed9",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "599cf385712331c3f59cde1fbdc2ff30b6931a7e9f4635f8cf8345911fcafd4f",
+      "requestFingerprintSha256": "599cf385712331c3f59cde1fbdc2ff30b6931a7e9f4635f8cf8345911fcafd4f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "2a8bba3db39b96f1fe79d11972e281ebca95f0a7e564f1328d41abd744d04ab6"
+    },
+    {
+      "id": "S1-07-en-opening-r1",
+      "unitId": "S1-07-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A technician observes first and explains second. Learn what soil feels and looks like, what those observations suggest, and what they cannot prove on their own.",
+          "sha256": "023f5b1ff60a8b0c22d9138c71ac0d71ca9307514307d2bf3b49c5a3a88e03c1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Compare sand, silt and clay, and explain why loam is a mixture rather than a fourth particle or a bag of potting mix.",
+          "sha256": "6a71fb4f1818adaa2898d92360fb9592d652e1a06f893390fe56b7b1fa8ddc53"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Separate a colour observation, a possible explanation and the further evidence needed.",
+          "sha256": "5666371bb38671e4a7673116c92e0c4aac31864e05cb95f7f1eb745e821cd464"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain how texture influences water behaviour alongside structure and organic matter, and identify the limits of a model.",
+          "sha256": "44fd9ff26490c419760b070b19f2238eb1d2e1cc4ffcf7557c666e0444ab94d0"
+        }
+      ],
+      "scientificMeaning": "A technician observes first and explains second. Learn what soil feels and looks like, what those observations suggest, and what they cannot prove on their own.\n\nCompare sand, silt and clay, and explain why loam is a mixture rather than a fourth particle or a bag of potting mix.\n\nSeparate a colour observation, a possible explanation and the further evidence needed.\n\nExplain how texture influences water behaviour alongside structure and organic matter, and identify the limits of a model.",
+      "displayText": "A technician observes first and explains second. Learn what soil feels and looks like, what those observations suggest, and what they cannot prove on their own.\n\nCompare sand, silt and clay, and explain why loam is a mixture rather than a fourth particle or a bag of potting mix.\n\nSeparate a colour observation, a possible explanation and the further evidence needed.\n\nExplain how texture influences water behaviour alongside structure and organic matter, and identify the limits of a model.",
+      "captionText": "A technician observes first and explains second. Learn what soil feels and looks like, what those observations suggest, and what they cannot prove on their own.\n\nCompare sand, silt and clay, and explain why loam is a mixture rather than a fourth particle or a bag of potting mix.\n\nSeparate a colour observation, a possible explanation and the further evidence needed.\n\nExplain how texture influences water behaviour alongside structure and organic matter, and identify the limits of a model.",
+      "spokenText": "A technician observes first and explains second. Learn what soil feels and looks like, what those observations suggest, and what they cannot prove on their own.\n\nCompare sand, silt and clay, and explain why loam is a mixture rather than a fourth particle or a bag of potting mix.\n\nSeparate a colour observation, a possible explanation and the further evidence needed.\n\nExplain how texture influences water behaviour alongside structure and organic matter, and identify the limits of a model.",
+      "spokenTextSHA256": "3b5123efc6fc85774b4f11ff83f0c8902775b04ec2dc55df9bb1646e340661ad",
+      "spokenTextSha256": "3b5123efc6fc85774b4f11ff83f0c8902775b04ec2dc55df9bb1646e340661ad",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0159bc76f2d51c9e5d4bf93df6d573c514fece690ed4750b63e2de8b9f76969d",
+      "requestFingerprintSha256": "0159bc76f2d51c9e5d4bf93df6d573c514fece690ed4750b63e2de8b9f76969d",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-en-E01-r1",
+      "unitId": "S1-07-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A learner calls a dark commercial growing medium loam without examining its ingredients.",
+          "sha256": "1f784f3f7caef415f05e2db1979ea8c090cb452df2d2bbfd700dd249529baaa1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Dark is a colour observation; potting soil is a product description.",
+          "sha256": "ed66dd7b9dd61cb026a2434e8339e4077fb2d899cee19610f45246bbc61bb753"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Check the material. A coir-and-bark mixture is not established as a mineral loam by the name on its bag.",
+          "sha256": "1b924563b7a380975279397a8850ed0e4ffb114ce0d83b2d2610b27da7607d13"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "For the texture exercise, choose the trainer-verified mineral sample and classify it using the agreed evidence.",
+          "sha256": "0882d4983149d38ad023419ae85e08c53ea039b51ef805d1abf6f27b9ac47099"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Name the material before applying a mineral texture test.",
+          "sha256": "2659cf8ba897d0fb08e2dfd788f55cf86cc07bdc1f68791a928f5c2bc7076c44"
+        }
+      ],
+      "scientificMeaning": "A learner calls a dark commercial growing medium loam without examining its ingredients.\n\nDark is a colour observation; potting soil is a product description.\n\nCheck the material. A coir-and-bark mixture is not established as a mineral loam by the name on its bag.\n\nFor the texture exercise, choose the trainer-verified mineral sample and classify it using the agreed evidence.\n\nName the material before applying a mineral texture test.",
+      "displayText": "A learner calls a dark commercial growing medium loam without examining its ingredients.\n\nDark is a colour observation; potting soil is a product description.\n\nCheck the material. A coir-and-bark mixture is not established as a mineral loam by the name on its bag.\n\nFor the texture exercise, choose the trainer-verified mineral sample and classify it using the agreed evidence.\n\nName the material before applying a mineral texture test.",
+      "captionText": "A learner calls a dark commercial growing medium loam without examining its ingredients.\n\nDark is a colour observation; potting soil is a product description.\n\nCheck the material. A coir-and-bark mixture is not established as a mineral loam by the name on its bag.\n\nFor the texture exercise, choose the trainer-verified mineral sample and classify it using the agreed evidence.\n\nName the material before applying a mineral texture test.",
+      "spokenText": "A learner calls a dark commercial growing medium loam without examining its ingredients.\n\nDark is a colour observation; potting soil is a product description.\n\nCheck the material. A coir-and-bark mixture is not established as a mineral loam by the name on its bag.\n\nFor the texture exercise, choose the trainer-verified mineral sample and classify it using the agreed evidence.\n\nName the material before applying a mineral texture test.",
+      "spokenTextSHA256": "13af17edb7f382d66992063ebb10142f465bd91d2a7d38265e31ed0216023044",
+      "spokenTextSha256": "13af17edb7f382d66992063ebb10142f465bd91d2a7d38265e31ed0216023044",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "84a6595aacc48d4201575fdde014ce4536befff9c4c8a8fe0ac32fa0441dc9ab",
+      "requestFingerprintSha256": "84a6595aacc48d4201575fdde014ce4536befff9c4c8a8fe0ac32fa0441dc9ab",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-en-E02-r1",
+      "unitId": "S1-07-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The sample is reddish, but the grower reports water standing after rain.",
+          "sha256": "fb4f7ddda0d8cb206ac289efa5d2c955fbdbdc69213ff13564d72c585e6c82d9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Record both the colour and the report of standing water.",
+          "sha256": "324535ae28df9d19989839399962714a64b17a181901f1e1c3d45fed2ae1913b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Iron-related colour does not cancel evidence of a present drainage problem.",
+          "sha256": "0aebe4050044bbaeae62e584b30627b07af9eec82cd9dbab4a9fbe446c18268d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Investigate the profile, compaction, drainage and relevant site conditions before advising on cropping.",
+          "sha256": "975678ee292b02eeecea7a0580322236f4091cd943d269260c7a19d0c2f1a459"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "A colour clue never overrides all other observations.",
+          "sha256": "dd4803c68b674d8d8b819800176bea8b5de9667aedfe775e324ed02f4fea02ab"
+        }
+      ],
+      "scientificMeaning": "The sample is reddish, but the grower reports water standing after rain.\n\nRecord both the colour and the report of standing water.\n\nIron-related colour does not cancel evidence of a present drainage problem.\n\nInvestigate the profile, compaction, drainage and relevant site conditions before advising on cropping.\n\nA colour clue never overrides all other observations.",
+      "displayText": "The sample is reddish, but the grower reports water standing after rain.\n\nRecord both the colour and the report of standing water.\n\nIron-related colour does not cancel evidence of a present drainage problem.\n\nInvestigate the profile, compaction, drainage and relevant site conditions before advising on cropping.\n\nA colour clue never overrides all other observations.",
+      "captionText": "The sample is reddish, but the grower reports water standing after rain.\n\nRecord both the colour and the report of standing water.\n\nIron-related colour does not cancel evidence of a present drainage problem.\n\nInvestigate the profile, compaction, drainage and relevant site conditions before advising on cropping.\n\nA colour clue never overrides all other observations.",
+      "spokenText": "The sample is reddish, but the grower reports water standing after rain.\n\nRecord both the colour and the report of standing water.\n\nIron-related colour does not cancel evidence of a present drainage problem.\n\nInvestigate the profile, compaction, drainage and relevant site conditions before advising on cropping.\n\nA colour clue never overrides all other observations.",
+      "spokenTextSHA256": "0d049f72d0e74780ec6b7bb9ecfd134db2df3a46b22a3f0590c09ad7866135ac",
+      "spokenTextSha256": "0d049f72d0e74780ec6b7bb9ecfd134db2df3a46b22a3f0590c09ad7866135ac",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2758bce8dc80ca5c7d8857f80791041f2b3b6ca3d01ba02206ea05cd8e9e3cbe",
+      "requestFingerprintSha256": "2758bce8dc80ca5c7d8857f80791041f2b3b6ca3d01ba02206ea05cd8e9e3cbe",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-en-E03-r1",
+      "unitId": "S1-07-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A demonstration uses sugar to represent silt and claims the water proves how silty soil drains.",
+          "sha256": "c2f6d708a5cda9fde29aa76c65f49e696b786b9b7b3dacc83b879f02c0d15493"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The pieces illustrate a size comparison.",
+          "sha256": "f51ffc6719f2df885d190313ef1bb8e2c401d8e9a34077808828d65fde3af7fc"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Sugar dissolves, so the demonstration does not reproduce soil mineral behaviour.",
+          "sha256": "8f3fef889886e0fa9e7067d47447f379f432b7c55c92ee181f8dbdb08b7f1f0d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Keep the analogy for size and spaces; use a suitable soil investigation for actual water behaviour.",
+          "sha256": "8b0b93c14382c69e567ede3dc57c8a66800074829845850bedc39d5a066f88da"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "State what a model represents and where it stops being reliable.",
+          "sha256": "ebe595f551bf1d4da4e0a30d6570e0a241b5c45bb1add8186ee97ac9e113c7cd"
+        }
+      ],
+      "scientificMeaning": "A demonstration uses sugar to represent silt and claims the water proves how silty soil drains.\n\nThe pieces illustrate a size comparison.\n\nSugar dissolves, so the demonstration does not reproduce soil mineral behaviour.\n\nKeep the analogy for size and spaces; use a suitable soil investigation for actual water behaviour.\n\nState what a model represents and where it stops being reliable.",
+      "displayText": "A demonstration uses sugar to represent silt and claims the water proves how silty soil drains.\n\nThe pieces illustrate a size comparison.\n\nSugar dissolves, so the demonstration does not reproduce soil mineral behaviour.\n\nKeep the analogy for size and spaces; use a suitable soil investigation for actual water behaviour.\n\nState what a model represents and where it stops being reliable.",
+      "captionText": "A demonstration uses sugar to represent silt and claims the water proves how silty soil drains.\n\nThe pieces illustrate a size comparison.\n\nSugar dissolves, so the demonstration does not reproduce soil mineral behaviour.\n\nKeep the analogy for size and spaces; use a suitable soil investigation for actual water behaviour.\n\nState what a model represents and where it stops being reliable.",
+      "spokenText": "A demonstration uses sugar to represent silt and claims the water proves how silty soil drains.\n\nThe pieces illustrate a size comparison.\n\nSugar dissolves, so the demonstration does not reproduce soil mineral behaviour.\n\nKeep the analogy for size and spaces; use a suitable soil investigation for actual water behaviour.\n\nState what a model represents and where it stops being reliable.",
+      "spokenTextSHA256": "9135a5c5a7869ee269730675d73bd1159e665786f4b0272d07d8d41d0dcd49c4",
+      "spokenTextSha256": "9135a5c5a7869ee269730675d73bd1159e665786f4b0272d07d8d41d0dcd49c4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a3a1f2bfe3531f877a77dd5b5da77b735f8996a19127c7fd7741024d8284f306",
+      "requestFingerprintSha256": "a3a1f2bfe3531f877a77dd5b5da77b735f8996a19127c7fd7741024d8284f306",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-en-guided-practice-r1",
+      "unitId": "S1-07-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sort observations about a dark commercial medium, a reddish wet field and a sugar-particle model into what was observed, what might explain it and what still needs testing.",
+          "sha256": "ab84afc5eb621ec3c21ab184678645d2a6715ae0009f20e585fb6ec104c38659"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Name sand, silt and clay as mineral particle-size groups and loam as a mixture, not a fourth particle.",
+          "sha256": "ac0ed07f7e2aee5106faf4e5c0df8e12220226ef7e12b481c8d15abe9df4505c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Record texture and colour observations without declaring fertility or drainage from colour alone.",
+          "sha256": "5bee5a9288021a81dcc53aeb9bf8fc818abd81c314e20ecc30734651a6ff6393"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Compare possible water movement with structure and organic matter kept in view.",
+          "sha256": "123249cdbefd86013e48783dad80b7a9e28fd423b1e289777b4b2788f2fb66a6"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Point to one feature the model represents and one feature it cannot validate.",
+          "sha256": "689b7061dfcc3e7aa6458b60450d5ff26851e30d75aebdd2dafcd2b7bc43e962"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Any feel or sample exercise uses real labelled material under the trainer's safe procedure; this training card is formative, not a new signed practical pass.",
+          "sha256": "142d05145816598f37cf553be1dc7ebee52c8f261457e9be3da4ddbf38ad641c"
+        }
+      ],
+      "scientificMeaning": "Sort observations about a dark commercial medium, a reddish wet field and a sugar-particle model into what was observed, what might explain it and what still needs testing.\n\nName sand, silt and clay as mineral particle-size groups and loam as a mixture, not a fourth particle.\n\nRecord texture and colour observations without declaring fertility or drainage from colour alone.\n\nCompare possible water movement with structure and organic matter kept in view.\n\nPoint to one feature the model represents and one feature it cannot validate.\n\nAny feel or sample exercise uses real labelled material under the trainer's safe procedure; this training card is formative, not a new signed practical pass.",
+      "displayText": "Sort observations about a dark commercial medium, a reddish wet field and a sugar-particle model into what was observed, what might explain it and what still needs testing.\n\nName sand, silt and clay as mineral particle-size groups and loam as a mixture, not a fourth particle.\n\nRecord texture and colour observations without declaring fertility or drainage from colour alone.\n\nCompare possible water movement with structure and organic matter kept in view.\n\nPoint to one feature the model represents and one feature it cannot validate.\n\nAny feel or sample exercise uses real labelled material under the trainer's safe procedure; this training card is formative, not a new signed practical pass.",
+      "captionText": "Sort observations about a dark commercial medium, a reddish wet field and a sugar-particle model into what was observed, what might explain it and what still needs testing.\n\nName sand, silt and clay as mineral particle-size groups and loam as a mixture, not a fourth particle.\n\nRecord texture and colour observations without declaring fertility or drainage from colour alone.\n\nCompare possible water movement with structure and organic matter kept in view.\n\nPoint to one feature the model represents and one feature it cannot validate.\n\nAny feel or sample exercise uses real labelled material under the trainer's safe procedure; this training card is formative, not a new signed practical pass.",
+      "spokenText": "Sort observations about a dark commercial medium, a reddish wet field and a sugar-particle model into what was observed, what might explain it and what still needs testing.\n\nName sand, silt and clay as mineral particle-size groups and loam as a mixture, not a fourth particle.\n\nRecord texture and colour observations without declaring fertility or drainage from colour alone.\n\nCompare possible water movement with structure and organic matter kept in view.\n\nPoint to one feature the model represents and one feature it cannot validate.\n\nAny feel or sample exercise uses real labelled material under the trainer's safe procedure; this training card is formative, not a new signed practical pass.",
+      "spokenTextSHA256": "566e0d307ed909bc3c116908487e9ca7eb8bd6df07b7c6c16aa9b23c5c83870d",
+      "spokenTextSha256": "566e0d307ed909bc3c116908487e9ca7eb8bd6df07b7c6c16aa9b23c5c83870d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "997387a5e3c80c70594fd9f3f644f0cf39fa33ebbad3adf4ea8607405cbb5c24",
+      "requestFingerprintSha256": "997387a5e3c80c70594fd9f3f644f0cf39fa33ebbad3adf4ea8607405cbb5c24",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-en-reflection-r1",
+      "unitId": "S1-07-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8993e6180c177a137a4afed009dcea7b37a91debada27557d48f76e0f78dca4",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I explain what soil colour and texture suggest while saying what evidence is still missing?",
+          "sha256": "d541eb61d8b5a4fc4f5d76f04f1f9af9dbb6bdb9d3657e9711769a982c794c57"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-reflection helps you plan review; it is not a practical skill pass.",
+          "sha256": "cdaf9f365f52c8a410dc16f62b165142ac8c047eb690fe800e8190a7f92d92d5"
+        }
+      ],
+      "scientificMeaning": "Can I explain what soil colour and texture suggest while saying what evidence is still missing?\n\nSelf-reflection helps you plan review; it is not a practical skill pass.",
+      "displayText": "Can I explain what soil colour and texture suggest while saying what evidence is still missing?\n\nSelf-reflection helps you plan review; it is not a practical skill pass.",
+      "captionText": "Can I explain what soil colour and texture suggest while saying what evidence is still missing?\n\nSelf-reflection helps you plan review; it is not a practical skill pass.",
+      "spokenText": "Can I explain what soil colour and texture suggest while saying what evidence is still missing?\n\nSelf-reflection helps you plan review; it is not a practical skill pass.",
+      "spokenTextSHA256": "a65c3bb3c8f09b122af856e5b364c990635231b337b49efa143902499e06e366",
+      "spokenTextSha256": "a65c3bb3c8f09b122af856e5b364c990635231b337b49efa143902499e06e366",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c3ca74182c2404218da1c5713bd10e0c0b42e20e54863a6b9cb6f9dc0f8305d0",
+      "requestFingerprintSha256": "c3ca74182c2404218da1c5713bd10e0c0b42e20e54863a6b9cb6f9dc0f8305d0",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "b53d88a06281d4db7283b52a167b1ca2c6d98771ed3fd28312f98839ba8e81c5"
+    },
+    {
+      "id": "S1-07-it-opening-r1",
+      "unitId": "S1-07-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.",
+          "sha256": "e6020064a975b68d73968292575b962de5c6c2afc7d945e8d11d0562ae2c7257"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Confrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.",
+          "sha256": "0ed0a872739e9e8aaba93420479c34e7287a6b2948d5df535cb73bd0f6acb4d4"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Separare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.",
+          "sha256": "96e0cab05bf8ac1256ae81661bb384cad19ed95e08289ffd205bba263e7a7cba"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Spiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+          "sha256": "9954994106fdc19927da6512fc4a0f97b82559a1244e3f7ebc681cf8d900668c"
+        }
+      ],
+      "scientificMeaning": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "displayText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "captionText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "spokenText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "spokenTextSHA256": "fa41117cbe6cb58e92a7c5ec46a28fbfa9e4e1dfd0e629122706ba21f19a4a2c",
+      "spokenTextSha256": "fa41117cbe6cb58e92a7c5ec46a28fbfa9e4e1dfd0e629122706ba21f19a4a2c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "65f8e9724905571cf900a1e29c5d2b70513d4d5a3f40d73c596433b5ad8219c4",
+      "requestFingerprintSha256": "65f8e9724905571cf900a1e29c5d2b70513d4d5a3f40d73c596433b5ad8219c4",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-it-E01-r1",
+      "unitId": "S1-07-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.",
+          "sha256": "d698d7e3ab6d0c3aed195b3344860610e43dffe0b5c3afeeb6e44398c2471051"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Scuro è un'osservazione del colore; terriccio è una descrizione commerciale.",
+          "sha256": "21827a8148d72b362d7e954a980c7850123c779b5318d1250ffbd2eaea539bd7"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Controlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.",
+          "sha256": "c67c5c5644d2f609115e4a730e842ea9872713b43348741634b2cec9ab3e83eb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Per l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.",
+          "sha256": "d03bd87622bdbb1af00cbcfc4469338964cdafcf472ee7d888691aed2aaab262"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Identifica il materiale prima di applicare una prova tessiturale minerale.",
+          "sha256": "57c9c03385d87bb87e4508b255e82e3ccc5f17f71a357bf46ca82fc8cc383c8f"
+        }
+      ],
+      "scientificMeaning": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "displayText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "captionText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "spokenText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "spokenTextSHA256": "a01c78cde761bbbd480135bc78fc9f9a77c7ca5e3c2c8c8816fcabaa0ed110d4",
+      "spokenTextSha256": "a01c78cde761bbbd480135bc78fc9f9a77c7ca5e3c2c8c8816fcabaa0ed110d4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "448a30093e169c4eda766af9bd7a7bbf8009699bf3e01243da26147b9fc52aa6",
+      "requestFingerprintSha256": "448a30093e169c4eda766af9bd7a7bbf8009699bf3e01243da26147b9fc52aa6",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-it-E02-r1",
+      "unitId": "S1-07-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.",
+          "sha256": "2e3fc504435dba8f37b9dc9296a3483c1bf9e301e57b081f421fb9a3c93b63a3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Registra sia il colore sia il resoconto dell'acqua stagnante.",
+          "sha256": "6b63c9fed253d0e5202e2f6062672cadbb34ecfee3d584b6dfcd2174b2eba018"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Un colore legato al ferro non annulla la prova di un problema attuale di drenaggio.",
+          "sha256": "50332c4effe1a57685f86b813935e487b5cd0c46406248cd9abb87c7e4ecc7dc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Indaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.",
+          "sha256": "76301c55ca26d318631973dc262de7e42fd512656b22aa6312d63c990cdd03b5"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Un indizio cromatico non prevale su tutte le altre osservazioni.",
+          "sha256": "164d0291f2130ffd77dc9d7f247d6d88a50b3b7575884e7d10c8f96be96c2537"
+        }
+      ],
+      "scientificMeaning": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "displayText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "captionText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "spokenText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "spokenTextSHA256": "b672a774009c5c81dfe74c9599d0194fc424ca506a82712fcffeb972d5a99f90",
+      "spokenTextSha256": "b672a774009c5c81dfe74c9599d0194fc424ca506a82712fcffeb972d5a99f90",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4266b109793ec103aa2d5c1677ce919cfa2d179a8b3b5c15396eb19fa091513b",
+      "requestFingerprintSha256": "4266b109793ec103aa2d5c1677ce919cfa2d179a8b3b5c15396eb19fa091513b",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-it-E03-r1",
+      "unitId": "S1-07-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.",
+          "sha256": "401d7502e491e4ce21469cc3e2619ea697ab76b9707ce0ce1259eea7f7c2e6cd"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "I pezzi illustrano il confronto dimensionale.",
+          "sha256": "a074884272b4f8d58276f959c0d8f34e6a0545779774c90d566195a9d5f21aa7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Lo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.",
+          "sha256": "05302eae9efb331a5f8e24c3ad79a20e75e70439ed5763354e13d12dc6eb130a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Conserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.",
+          "sha256": "5cc89143b0c89dca67ce4a0e665d884aeb260099825b832d60cd941708c3798c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Dichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+          "sha256": "6442e28f084f2b00b50b62b297dffc1edffcea8bfe897c4a29cc84c975ce86b8"
+        }
+      ],
+      "scientificMeaning": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "displayText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "captionText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "spokenText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "spokenTextSHA256": "b0aec5e9c2516a69a413f33472f23bb9c3758181493fbff96404982d4bbfe579",
+      "spokenTextSha256": "b0aec5e9c2516a69a413f33472f23bb9c3758181493fbff96404982d4bbfe579",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "adac0427d5f2e95380e389844f70b9a50cb362bc88a70611a8b12c693f6224db",
+      "requestFingerprintSha256": "adac0427d5f2e95380e389844f70b9a50cb362bc88a70611a8b12c693f6224db",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-it-guided-practice-r1",
+      "unitId": "S1-07-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.",
+          "sha256": "d0ac5516aae7a3f4ca08833ee00cd534b567dc7839f2c288dab9f49bece7755f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Indica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.",
+          "sha256": "1fe82212f4071f3ee8ce4ddfce8ace1a378546316e28c5cab1450580f21aa99d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Registra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.",
+          "sha256": "d03a9713e9ed74b3310d071d369407499e24140d72d2cbd82884d231b678b32c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Confronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.",
+          "sha256": "5d5d3ee680cb39f933829890d9ba03b17a8f5a7ce36e2ad79d233ea7e26d4456"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Indica un aspetto rappresentato dal modello e uno che non può convalidare.",
+          "sha256": "769352a74040104e51dbafadc9ef3e01675030653038dee0de968cf98fa8875d"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+          "sha256": "7d440dd1a2a5ef3f100f63b9558c36a1d2a2e07a5436ab82899c32657f83b430"
+        }
+      ],
+      "scientificMeaning": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "displayText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "captionText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "spokenText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "spokenTextSHA256": "4827e302c2bdbd293eb977a846fe757aa6fc023f25de2fb03d0e17478b095edd",
+      "spokenTextSha256": "4827e302c2bdbd293eb977a846fe757aa6fc023f25de2fb03d0e17478b095edd",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d3d78004a64a40e34ae85e04742d7d62c51923a1bd97d26fcf35c8c29a2442ab",
+      "requestFingerprintSha256": "d3d78004a64a40e34ae85e04742d7d62c51923a1bd97d26fcf35c8c29a2442ab",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-it-reflection-r1",
+      "unitId": "S1-07-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?",
+          "sha256": "bc5f48d285cbf200d4c2a6ad9994d74c4ff0cb888deb443a0af94a4bdbc30fc9"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "L'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+          "sha256": "21027aa178b847efcdef91d518dbd604f8118f451558871b8079bffa6a1ec9f2"
+        }
+      ],
+      "scientificMeaning": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "displayText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "captionText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "spokenText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "spokenTextSHA256": "420a123d49e0bee45414971cd11a0f4c35214e7fc1d8d0f130a746546915d4a5",
+      "spokenTextSha256": "420a123d49e0bee45414971cd11a0f4c35214e7fc1d8d0f130a746546915d4a5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "356cbd09658e9c7d32a013574996f8d33ec187198b0e227b6439642f1f9f418e",
+      "requestFingerprintSha256": "356cbd09658e9c7d32a013574996f8d33ec187198b0e227b6439642f1f9f418e",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c837eab1be3b1090e1fa089429c65a3de5a0bffa25cd13ed8ca7cd4babef6ff4"
+    },
+    {
+      "id": "S1-07-de-opening-r1",
+      "unitId": "S1-07-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Fachkräfte beobachten zuerst und deuten danach. Lerne, wie Boden aussieht und sich anfühlt, was diese Beobachtungen nahelegen und was sie allein nicht beweisen.",
+          "sha256": "b6e43675c94ff9771c0d4690b0d7d9348751dd15242c552c7eca7bb30a5602f6"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Sand, Schluff und Ton vergleichen und erklären, weshalb Lehm eine Texturmischung ist, weder eine vierte Partikelart noch automatisch ein Sack Pflanzerde.",
+          "sha256": "a58702b19afdd2027050cb9401161218e3eb5dbbc6198fcbdf0ab83b52b59bf2"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Eine Farbbeobachtung, eine mögliche Erklärung und noch benötigte Belege voneinander trennen.",
+          "sha256": "830e957c079e6e2bddf5913a29ff22ee190b87c87ce38ee5e6d07947e8c11e4b"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Erklären, wie die Textur das Wasserverhalten zusammen mit Bodenstruktur und organischer Substanz beeinflusst, und Modellgrenzen erkennen.",
+          "sha256": "df8b127b3dbd605ac9624ad9f25be7569810e79bb2225a0e5680d6354dd0afb9"
+        }
+      ],
+      "scientificMeaning": "Fachkräfte beobachten zuerst und deuten danach. Lerne, wie Boden aussieht und sich anfühlt, was diese Beobachtungen nahelegen und was sie allein nicht beweisen.\n\nSand, Schluff und Ton vergleichen und erklären, weshalb Lehm eine Texturmischung ist, weder eine vierte Partikelart noch automatisch ein Sack Pflanzerde.\n\nEine Farbbeobachtung, eine mögliche Erklärung und noch benötigte Belege voneinander trennen.\n\nErklären, wie die Textur das Wasserverhalten zusammen mit Bodenstruktur und organischer Substanz beeinflusst, und Modellgrenzen erkennen.",
+      "displayText": "Fachkräfte beobachten zuerst und deuten danach. Lerne, wie Boden aussieht und sich anfühlt, was diese Beobachtungen nahelegen und was sie allein nicht beweisen.\n\nSand, Schluff und Ton vergleichen und erklären, weshalb Lehm eine Texturmischung ist, weder eine vierte Partikelart noch automatisch ein Sack Pflanzerde.\n\nEine Farbbeobachtung, eine mögliche Erklärung und noch benötigte Belege voneinander trennen.\n\nErklären, wie die Textur das Wasserverhalten zusammen mit Bodenstruktur und organischer Substanz beeinflusst, und Modellgrenzen erkennen.",
+      "captionText": "Fachkräfte beobachten zuerst und deuten danach. Lerne, wie Boden aussieht und sich anfühlt, was diese Beobachtungen nahelegen und was sie allein nicht beweisen.\n\nSand, Schluff und Ton vergleichen und erklären, weshalb Lehm eine Texturmischung ist, weder eine vierte Partikelart noch automatisch ein Sack Pflanzerde.\n\nEine Farbbeobachtung, eine mögliche Erklärung und noch benötigte Belege voneinander trennen.\n\nErklären, wie die Textur das Wasserverhalten zusammen mit Bodenstruktur und organischer Substanz beeinflusst, und Modellgrenzen erkennen.",
+      "spokenText": "Fachkräfte beobachten zuerst und deuten danach. Lerne, wie Boden aussieht und sich anfühlt, was diese Beobachtungen nahelegen und was sie allein nicht beweisen.\n\nSand, Schluff und Ton vergleichen und erklären, weshalb Lehm eine Texturmischung ist, weder eine vierte Partikelart noch automatisch ein Sack Pflanzerde.\n\nEine Farbbeobachtung, eine mögliche Erklärung und noch benötigte Belege voneinander trennen.\n\nErklären, wie die Textur das Wasserverhalten zusammen mit Bodenstruktur und organischer Substanz beeinflusst, und Modellgrenzen erkennen.",
+      "spokenTextSHA256": "88f79482ff47fccd9962b23589f01af7bc24d97acdde5f673f5cfb9d063473d4",
+      "spokenTextSha256": "88f79482ff47fccd9962b23589f01af7bc24d97acdde5f673f5cfb9d063473d4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "edbf0567b51734d1d52b6706c78edb34d4958ee8d083bc3d5e4827a7c9e043dc",
+      "requestFingerprintSha256": "edbf0567b51734d1d52b6706c78edb34d4958ee8d083bc3d5e4827a7c9e043dc",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    },
+    {
+      "id": "S1-07-de-E01-r1",
+      "unitId": "S1-07-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ein Lernender bezeichnet ein dunkles handelsübliches Substrat als Lehm, ohne die Bestandteile zu untersuchen.",
+          "sha256": "cdc213b346d523fafa617c380b79af666a46e37449471b23050504ee5caaabad"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Dunkel ist eine Farbbeobachtung; Pflanzerde ist eine Produktbeschreibung.",
+          "sha256": "cc74fa2a05c4fe4b2978e661adfdc664f1ff6a3e13165f45cb0d3ba0f0230def"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Prüfe das Material. Eine Mischung aus Kokosfasern und Rinde ist durch den Namen auf dem Sack keine nachgewiesene mineralische Lehmtextur.",
+          "sha256": "c650843d06b73b543289d6ff4af8e93dbb92e8eefd4e6ff4bbd08b41a7212bc8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Wähle für die Texturübung die von der Lehrkraft bestätigte mineralische Bodenprobe und klassifiziere sie anhand der vereinbarten Belege.",
+          "sha256": "b4d1754655f4c9963de8d2537a69773edd829fced1ccbba84f12560f37af20e3"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Benenne das Material, bevor du einen mineralischen Texturtest anwendest.",
+          "sha256": "cb4327b9ffdb9d8353317c5f46394b84f1f4d2401a131164967de7d3813e0319"
+        }
+      ],
+      "scientificMeaning": "Ein Lernender bezeichnet ein dunkles handelsübliches Substrat als Lehm, ohne die Bestandteile zu untersuchen.\n\nDunkel ist eine Farbbeobachtung; Pflanzerde ist eine Produktbeschreibung.\n\nPrüfe das Material. Eine Mischung aus Kokosfasern und Rinde ist durch den Namen auf dem Sack keine nachgewiesene mineralische Lehmtextur.\n\nWähle für die Texturübung die von der Lehrkraft bestätigte mineralische Bodenprobe und klassifiziere sie anhand der vereinbarten Belege.\n\nBenenne das Material, bevor du einen mineralischen Texturtest anwendest.",
+      "displayText": "Ein Lernender bezeichnet ein dunkles handelsübliches Substrat als Lehm, ohne die Bestandteile zu untersuchen.\n\nDunkel ist eine Farbbeobachtung; Pflanzerde ist eine Produktbeschreibung.\n\nPrüfe das Material. Eine Mischung aus Kokosfasern und Rinde ist durch den Namen auf dem Sack keine nachgewiesene mineralische Lehmtextur.\n\nWähle für die Texturübung die von der Lehrkraft bestätigte mineralische Bodenprobe und klassifiziere sie anhand der vereinbarten Belege.\n\nBenenne das Material, bevor du einen mineralischen Texturtest anwendest.",
+      "captionText": "Ein Lernender bezeichnet ein dunkles handelsübliches Substrat als Lehm, ohne die Bestandteile zu untersuchen.\n\nDunkel ist eine Farbbeobachtung; Pflanzerde ist eine Produktbeschreibung.\n\nPrüfe das Material. Eine Mischung aus Kokosfasern und Rinde ist durch den Namen auf dem Sack keine nachgewiesene mineralische Lehmtextur.\n\nWähle für die Texturübung die von der Lehrkraft bestätigte mineralische Bodenprobe und klassifiziere sie anhand der vereinbarten Belege.\n\nBenenne das Material, bevor du einen mineralischen Texturtest anwendest.",
+      "spokenText": "Ein Lernender bezeichnet ein dunkles handelsübliches Substrat als Lehm, ohne die Bestandteile zu untersuchen.\n\nDunkel ist eine Farbbeobachtung; Pflanzerde ist eine Produktbeschreibung.\n\nPrüfe das Material. Eine Mischung aus Kokosfasern und Rinde ist durch den Namen auf dem Sack keine nachgewiesene mineralische Lehmtextur.\n\nWähle für die Texturübung die von der Lehrkraft bestätigte mineralische Bodenprobe und klassifiziere sie anhand der vereinbarten Belege.\n\nBenenne das Material, bevor du einen mineralischen Texturtest anwendest.",
+      "spokenTextSHA256": "493dca60a50eab5360ec2e9714b19ffdfbcffe84a69d617a03137534c5ba534a",
+      "spokenTextSha256": "493dca60a50eab5360ec2e9714b19ffdfbcffe84a69d617a03137534c5ba534a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "90d5cad6a38bc44e653fb1f812eb5501ab8e9314f1b3e00587925132ea05e7a6",
+      "requestFingerprintSha256": "90d5cad6a38bc44e653fb1f812eb5501ab8e9314f1b3e00587925132ea05e7a6",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    },
+    {
+      "id": "S1-07-de-E02-r1",
+      "unitId": "S1-07-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Die Probe ist rötlich, doch der Landwirt berichtet, dass nach Regen Wasser stehen bleibt.",
+          "sha256": "28f7c1755683d8de0a499f224fc8951e231dd3eb2275fb86c9c375d9c14df6fb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Halte Farbe und Bericht über stehendes Wasser fest.",
+          "sha256": "9063e91252b0fe0953fbce4b81f1966fba05f6e50168d90b0c5e90110a9af749"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Eisenbedingte Farbe entkräftet Hinweise auf ein gegenwärtiges Drainageproblem nicht.",
+          "sha256": "b7a15bec819197f507fe12b3ddac366d5a3ad37450f2c2665bc4029ec08aa724"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Untersuche Bodenprofil, Verdichtung, Abfluss und relevante Standortbedingungen, bevor du eine Anbauempfehlung gibst.",
+          "sha256": "d112fd5e3b922655d7ceb7dde34c90192fe7caebc65610b86c55bdb625b7781b"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Ein Farbhinweis hebt nicht alle anderen Beobachtungen auf.",
+          "sha256": "4fb0cd65ac4e0c08b6b4107cedbdab2e53fdd9bb1ef4b0bc5f6f6cc7c4325757"
+        }
+      ],
+      "scientificMeaning": "Die Probe ist rötlich, doch der Landwirt berichtet, dass nach Regen Wasser stehen bleibt.\n\nHalte Farbe und Bericht über stehendes Wasser fest.\n\nEisenbedingte Farbe entkräftet Hinweise auf ein gegenwärtiges Drainageproblem nicht.\n\nUntersuche Bodenprofil, Verdichtung, Abfluss und relevante Standortbedingungen, bevor du eine Anbauempfehlung gibst.\n\nEin Farbhinweis hebt nicht alle anderen Beobachtungen auf.",
+      "displayText": "Die Probe ist rötlich, doch der Landwirt berichtet, dass nach Regen Wasser stehen bleibt.\n\nHalte Farbe und Bericht über stehendes Wasser fest.\n\nEisenbedingte Farbe entkräftet Hinweise auf ein gegenwärtiges Drainageproblem nicht.\n\nUntersuche Bodenprofil, Verdichtung, Abfluss und relevante Standortbedingungen, bevor du eine Anbauempfehlung gibst.\n\nEin Farbhinweis hebt nicht alle anderen Beobachtungen auf.",
+      "captionText": "Die Probe ist rötlich, doch der Landwirt berichtet, dass nach Regen Wasser stehen bleibt.\n\nHalte Farbe und Bericht über stehendes Wasser fest.\n\nEisenbedingte Farbe entkräftet Hinweise auf ein gegenwärtiges Drainageproblem nicht.\n\nUntersuche Bodenprofil, Verdichtung, Abfluss und relevante Standortbedingungen, bevor du eine Anbauempfehlung gibst.\n\nEin Farbhinweis hebt nicht alle anderen Beobachtungen auf.",
+      "spokenText": "Die Probe ist rötlich, doch der Landwirt berichtet, dass nach Regen Wasser stehen bleibt.\n\nHalte Farbe und Bericht über stehendes Wasser fest.\n\nEisenbedingte Farbe entkräftet Hinweise auf ein gegenwärtiges Drainageproblem nicht.\n\nUntersuche Bodenprofil, Verdichtung, Abfluss und relevante Standortbedingungen, bevor du eine Anbauempfehlung gibst.\n\nEin Farbhinweis hebt nicht alle anderen Beobachtungen auf.",
+      "spokenTextSHA256": "052509e5e12df069b6245ee5370e38924ce5571de22e606ba4dd27896cc2b6d3",
+      "spokenTextSha256": "052509e5e12df069b6245ee5370e38924ce5571de22e606ba4dd27896cc2b6d3",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ae111854313a8292acff57d9844141c5aef69ac27bab72814740a7faca7c57a4",
+      "requestFingerprintSha256": "ae111854313a8292acff57d9844141c5aef69ac27bab72814740a7faca7c57a4",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    },
+    {
+      "id": "S1-07-de-E03-r1",
+      "unitId": "S1-07-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Eine Vorführung nutzt Zucker als Modell für Schluff und behauptet, das Wasser beweise die Drainage schluffigen Bodens.",
+          "sha256": "a1da5460c098e12d8846c0db89ab4972d2a8d395db3e7a7791fe6c32209d8155"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Die Teilchen veranschaulichen nur einen Größenvergleich.",
+          "sha256": "621b1c01a56dd6296910ecff8e4557d07212285172f31636d59dd3cab0dc5885"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Zucker löst sich; daher bildet die Vorführung das Verhalten von Bodenmineralen nicht nach.",
+          "sha256": "bd4f7f466199ea9edf31738b54b175720ffe2f4bed3a497240e92d50e98d82c4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Nutze die Analogie für Größen und Zwischenräume, eine geeignete Bodenuntersuchung für wirkliches Wasserverhalten.",
+          "sha256": "fea940bfefa52ac9ad7e1c8a013d7f9e36f505aa8d563c3196eace786c7bc49c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Erkläre, was ein Modell darstellt und wo seine Aussagekraft endet.",
+          "sha256": "5046535536c6ca5d406744958788cad99d53a7570e33c4dd88a111b831190613"
+        }
+      ],
+      "scientificMeaning": "Eine Vorführung nutzt Zucker als Modell für Schluff und behauptet, das Wasser beweise die Drainage schluffigen Bodens.\n\nDie Teilchen veranschaulichen nur einen Größenvergleich.\n\nZucker löst sich; daher bildet die Vorführung das Verhalten von Bodenmineralen nicht nach.\n\nNutze die Analogie für Größen und Zwischenräume, eine geeignete Bodenuntersuchung für wirkliches Wasserverhalten.\n\nErkläre, was ein Modell darstellt und wo seine Aussagekraft endet.",
+      "displayText": "Eine Vorführung nutzt Zucker als Modell für Schluff und behauptet, das Wasser beweise die Drainage schluffigen Bodens.\n\nDie Teilchen veranschaulichen nur einen Größenvergleich.\n\nZucker löst sich; daher bildet die Vorführung das Verhalten von Bodenmineralen nicht nach.\n\nNutze die Analogie für Größen und Zwischenräume, eine geeignete Bodenuntersuchung für wirkliches Wasserverhalten.\n\nErkläre, was ein Modell darstellt und wo seine Aussagekraft endet.",
+      "captionText": "Eine Vorführung nutzt Zucker als Modell für Schluff und behauptet, das Wasser beweise die Drainage schluffigen Bodens.\n\nDie Teilchen veranschaulichen nur einen Größenvergleich.\n\nZucker löst sich; daher bildet die Vorführung das Verhalten von Bodenmineralen nicht nach.\n\nNutze die Analogie für Größen und Zwischenräume, eine geeignete Bodenuntersuchung für wirkliches Wasserverhalten.\n\nErkläre, was ein Modell darstellt und wo seine Aussagekraft endet.",
+      "spokenText": "Eine Vorführung nutzt Zucker als Modell für Schluff und behauptet, das Wasser beweise die Drainage schluffigen Bodens.\n\nDie Teilchen veranschaulichen nur einen Größenvergleich.\n\nZucker löst sich; daher bildet die Vorführung das Verhalten von Bodenmineralen nicht nach.\n\nNutze die Analogie für Größen und Zwischenräume, eine geeignete Bodenuntersuchung für wirkliches Wasserverhalten.\n\nErkläre, was ein Modell darstellt und wo seine Aussagekraft endet.",
+      "spokenTextSHA256": "aa99b9bbcbb49ec4ce7983e3371816ac6a169b97b55882a0739b8191bdfd4847",
+      "spokenTextSha256": "aa99b9bbcbb49ec4ce7983e3371816ac6a169b97b55882a0739b8191bdfd4847",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5934f46a4063675501b771e7b8510aa542a4f6058c7924cd9d096f4f82c9efdf",
+      "requestFingerprintSha256": "5934f46a4063675501b771e7b8510aa542a4f6058c7924cd9d096f4f82c9efdf",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    },
+    {
+      "id": "S1-07-de-guided-practice-r1",
+      "unitId": "S1-07-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ordne Aussagen über ein dunkles handelsübliches Substrat, ein rötliches nasses Feld und ein Zucker-Partikelmodell in Beobachtetes, mögliche Erklärung und noch nötige Prüfung ein.",
+          "sha256": "82c3cdab75f4d174cdd4a3a6b43159bcfa20e19dce6110793a247c2e717dd7cd"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Nenne Sand, Schluff und Ton als mineralische Größenklassen und Lehm als Mischung, nicht viertes Partikel.",
+          "sha256": "2c92e755e66da494365bb9259451dec4a857c03018186d74660fcc9ce3dde694"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Halte Tast- und Farbbeobachtungen fest, ohne Fruchtbarkeit oder Drainage aus Farbe allein zu behaupten.",
+          "sha256": "20d4c832df15932728c7694b3977bce34a4e8622d0af212964738400cc73c4ee"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Vergleiche mögliche Wasserbewegung unter Berücksichtigung von Struktur und organischer Substanz.",
+          "sha256": "477786e0273e79b78251266012fc1831bfc79fc33c289e89385c189e4f60f280"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Zeige eine Eigenschaft, die das Modell veranschaulicht, und eine, die es nicht bestätigen kann.",
+          "sha256": "bbe1378f07a28132dd8a91b370c94386b21a95e32425ba747a27f239744a225e"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Für Tast- oder andere Probenübungen wird echtes, gekennzeichnetes Material nach dem sicheren Verfahren der Lehrkraft verwendet; diese Karte dient dem Üben und bestätigt keine neue unterschriebene praktische Leistung.",
+          "sha256": "596a2273a692a62d6ef3cd5ee19036007ae2bf83dfdb565d3e352c926d35e54f"
+        }
+      ],
+      "scientificMeaning": "Ordne Aussagen über ein dunkles handelsübliches Substrat, ein rötliches nasses Feld und ein Zucker-Partikelmodell in Beobachtetes, mögliche Erklärung und noch nötige Prüfung ein.\n\nNenne Sand, Schluff und Ton als mineralische Größenklassen und Lehm als Mischung, nicht viertes Partikel.\n\nHalte Tast- und Farbbeobachtungen fest, ohne Fruchtbarkeit oder Drainage aus Farbe allein zu behaupten.\n\nVergleiche mögliche Wasserbewegung unter Berücksichtigung von Struktur und organischer Substanz.\n\nZeige eine Eigenschaft, die das Modell veranschaulicht, und eine, die es nicht bestätigen kann.\n\nFür Tast- oder andere Probenübungen wird echtes, gekennzeichnetes Material nach dem sicheren Verfahren der Lehrkraft verwendet; diese Karte dient dem Üben und bestätigt keine neue unterschriebene praktische Leistung.",
+      "displayText": "Ordne Aussagen über ein dunkles handelsübliches Substrat, ein rötliches nasses Feld und ein Zucker-Partikelmodell in Beobachtetes, mögliche Erklärung und noch nötige Prüfung ein.\n\nNenne Sand, Schluff und Ton als mineralische Größenklassen und Lehm als Mischung, nicht viertes Partikel.\n\nHalte Tast- und Farbbeobachtungen fest, ohne Fruchtbarkeit oder Drainage aus Farbe allein zu behaupten.\n\nVergleiche mögliche Wasserbewegung unter Berücksichtigung von Struktur und organischer Substanz.\n\nZeige eine Eigenschaft, die das Modell veranschaulicht, und eine, die es nicht bestätigen kann.\n\nFür Tast- oder andere Probenübungen wird echtes, gekennzeichnetes Material nach dem sicheren Verfahren der Lehrkraft verwendet; diese Karte dient dem Üben und bestätigt keine neue unterschriebene praktische Leistung.",
+      "captionText": "Ordne Aussagen über ein dunkles handelsübliches Substrat, ein rötliches nasses Feld und ein Zucker-Partikelmodell in Beobachtetes, mögliche Erklärung und noch nötige Prüfung ein.\n\nNenne Sand, Schluff und Ton als mineralische Größenklassen und Lehm als Mischung, nicht viertes Partikel.\n\nHalte Tast- und Farbbeobachtungen fest, ohne Fruchtbarkeit oder Drainage aus Farbe allein zu behaupten.\n\nVergleiche mögliche Wasserbewegung unter Berücksichtigung von Struktur und organischer Substanz.\n\nZeige eine Eigenschaft, die das Modell veranschaulicht, und eine, die es nicht bestätigen kann.\n\nFür Tast- oder andere Probenübungen wird echtes, gekennzeichnetes Material nach dem sicheren Verfahren der Lehrkraft verwendet; diese Karte dient dem Üben und bestätigt keine neue unterschriebene praktische Leistung.",
+      "spokenText": "Ordne Aussagen über ein dunkles handelsübliches Substrat, ein rötliches nasses Feld und ein Zucker-Partikelmodell in Beobachtetes, mögliche Erklärung und noch nötige Prüfung ein.\n\nNenne Sand, Schluff und Ton als mineralische Größenklassen und Lehm als Mischung, nicht viertes Partikel.\n\nHalte Tast- und Farbbeobachtungen fest, ohne Fruchtbarkeit oder Drainage aus Farbe allein zu behaupten.\n\nVergleiche mögliche Wasserbewegung unter Berücksichtigung von Struktur und organischer Substanz.\n\nZeige eine Eigenschaft, die das Modell veranschaulicht, und eine, die es nicht bestätigen kann.\n\nFür Tast- oder andere Probenübungen wird echtes, gekennzeichnetes Material nach dem sicheren Verfahren der Lehrkraft verwendet; diese Karte dient dem Üben und bestätigt keine neue unterschriebene praktische Leistung.",
+      "spokenTextSHA256": "59e1790b71644abc083aa984b068dcd6168ce8874df399dedf5050dad28faca7",
+      "spokenTextSha256": "59e1790b71644abc083aa984b068dcd6168ce8874df399dedf5050dad28faca7",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7370893dc6708196e77a3f73a2b145226d974fc142dc360505deb70427951c3f",
+      "requestFingerprintSha256": "7370893dc6708196e77a3f73a2b145226d974fc142dc360505deb70427951c3f",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    },
+    {
+      "id": "S1-07-de-reflection-r1",
+      "unitId": "S1-07-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fc0ff658ebae041d7e3f60daa7ea3012bc15d2733928299ac35a83c7637597e9",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kann ich erklären, worauf Bodenfarbe und Textur hindeuten und welche Belege noch fehlen?",
+          "sha256": "c7bcf7790603405e2a359816c2dbe64807476044c605670be68907eb63a98eb9"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Die Selbsteinschätzung lenkt die Wiederholung; sie bestätigt keine praktische Fähigkeit.",
+          "sha256": "e8b83430b0e0fec39b0aa901f911dd067fb123a4a341eec4c41d778b34960029"
+        }
+      ],
+      "scientificMeaning": "Kann ich erklären, worauf Bodenfarbe und Textur hindeuten und welche Belege noch fehlen?\n\nDie Selbsteinschätzung lenkt die Wiederholung; sie bestätigt keine praktische Fähigkeit.",
+      "displayText": "Kann ich erklären, worauf Bodenfarbe und Textur hindeuten und welche Belege noch fehlen?\n\nDie Selbsteinschätzung lenkt die Wiederholung; sie bestätigt keine praktische Fähigkeit.",
+      "captionText": "Kann ich erklären, worauf Bodenfarbe und Textur hindeuten und welche Belege noch fehlen?\n\nDie Selbsteinschätzung lenkt die Wiederholung; sie bestätigt keine praktische Fähigkeit.",
+      "spokenText": "Kann ich erklären, worauf Bodenfarbe und Textur hindeuten und welche Belege noch fehlen?\n\nDie Selbsteinschätzung lenkt die Wiederholung; sie bestätigt keine praktische Fähigkeit.",
+      "spokenTextSHA256": "5d5348f6471f26c2d8704186caba6ac790bcc744078ab442ae537cc5a92ff37f",
+      "spokenTextSha256": "5d5348f6471f26c2d8704186caba6ac790bcc744078ab442ae537cc5a92ff37f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "60af22f776cdf0370961cc30f400d42a1004e2ec52e597c1427fbb44fb8fd9ae",
+      "requestFingerprintSha256": "60af22f776cdf0370961cc30f400d42a1004e2ec52e597c1427fbb44fb8fd9ae",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cf7ebc529b04e15ba800fb2ac472291ec7eb624a3ae4e48867f884f9ba73688d"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 6,
+    "blind": 6,
+    "asr": 6,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S1-07-ar-EG-opening-r1",
+      "S1-07-ar-EG-E01-r1",
+      "S1-07-ar-EG-E02-r1",
+      "S1-07-ar-EG-E03-r1",
+      "S1-07-ar-EG-guided-practice-r1",
+      "S1-07-ar-EG-reflection-r1"
+    ],
+    "en": [
+      "S1-07-en-opening-r1",
+      "S1-07-en-E01-r1",
+      "S1-07-en-E02-r1",
+      "S1-07-en-E03-r1",
+      "S1-07-en-guided-practice-r1",
+      "S1-07-en-reflection-r1"
+    ],
+    "it": [
+      "S1-07-it-opening-r1",
+      "S1-07-it-E01-r1",
+      "S1-07-it-E02-r1",
+      "S1-07-it-E03-r1",
+      "S1-07-it-guided-practice-r1",
+      "S1-07-it-reflection-r1"
+    ],
+    "de": [
+      "S1-07-de-opening-r1",
+      "S1-07-de-E01-r1",
+      "S1-07-de-E02-r1",
+      "S1-07-de-E03-r1",
+      "S1-07-de-guided-practice-r1",
+      "S1-07-de-reflection-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

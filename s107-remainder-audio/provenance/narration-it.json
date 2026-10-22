@@ -1,0 +1,350 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-07-it.json",
+    "sha256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+    "bytes": 16670
+  },
+  "units": [
+    {
+      "id": "S1-07-it-opening-r1",
+      "unitId": "S1-07-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.",
+          "sha256": "e6020064a975b68d73968292575b962de5c6c2afc7d945e8d11d0562ae2c7257"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Confrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.",
+          "sha256": "0ed0a872739e9e8aaba93420479c34e7287a6b2948d5df535cb73bd0f6acb4d4"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Separare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.",
+          "sha256": "96e0cab05bf8ac1256ae81661bb384cad19ed95e08289ffd205bba263e7a7cba"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Spiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+          "sha256": "9954994106fdc19927da6512fc4a0f97b82559a1244e3f7ebc681cf8d900668c"
+        }
+      ],
+      "scientificMeaning": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "displayText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "captionText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "spokenText": "Un tecnico prima osserva, poi interpreta. Impara come appare e si sente il suolo, cosa suggeriscono queste osservazioni e cosa non possono dimostrare da sole.\n\nConfrontare sabbia, limo e argilla e spiegare perché il suolo franco è una miscela tessiturale, non una quarta particella né automaticamente un terriccio commerciale.\n\nSeparare l'osservazione del colore, una possibile interpretazione e le ulteriori prove necessarie.\n\nSpiegare come la tessitura influisce sull'acqua insieme a struttura e sostanza organica e riconoscere i limiti di un modello.",
+      "spokenTextSHA256": "fa41117cbe6cb58e92a7c5ec46a28fbfa9e4e1dfd0e629122706ba21f19a4a2c",
+      "spokenTextSha256": "fa41117cbe6cb58e92a7c5ec46a28fbfa9e4e1dfd0e629122706ba21f19a4a2c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "65f8e9724905571cf900a1e29c5d2b70513d4d5a3f40d73c596433b5ad8219c4",
+      "requestFingerprintSha256": "65f8e9724905571cf900a1e29c5d2b70513d4d5a3f40d73c596433b5ad8219c4",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-07-it-E01-r1",
+      "unitId": "S1-07-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.",
+          "sha256": "d698d7e3ab6d0c3aed195b3344860610e43dffe0b5c3afeeb6e44398c2471051"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Scuro è un'osservazione del colore; terriccio è una descrizione commerciale.",
+          "sha256": "21827a8148d72b362d7e954a980c7850123c779b5318d1250ffbd2eaea539bd7"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Controlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.",
+          "sha256": "c67c5c5644d2f609115e4a730e842ea9872713b43348741634b2cec9ab3e83eb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Per l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.",
+          "sha256": "d03bd87622bdbb1af00cbcfc4469338964cdafcf472ee7d888691aed2aaab262"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Identifica il materiale prima di applicare una prova tessiturale minerale.",
+          "sha256": "57c9c03385d87bb87e4508b255e82e3ccc5f17f71a357bf46ca82fc8cc383c8f"
+        }
+      ],
+      "scientificMeaning": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "displayText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "captionText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "spokenText": "Uno studente chiama franco un substrato commerciale scuro senza esaminarne gli ingredienti.\n\nScuro è un'osservazione del colore; terriccio è una descrizione commerciale.\n\nControlla il materiale. Una miscela di fibra di cocco e corteccia non diventa franca minerale per il nome stampato sul sacchetto.\n\nPer l'esercizio sulla tessitura scegli il campione minerale verificato dal formatore e classificalo con le prove concordate.\n\nIdentifica il materiale prima di applicare una prova tessiturale minerale.",
+      "spokenTextSHA256": "a01c78cde761bbbd480135bc78fc9f9a77c7ca5e3c2c8c8816fcabaa0ed110d4",
+      "spokenTextSha256": "a01c78cde761bbbd480135bc78fc9f9a77c7ca5e3c2c8c8816fcabaa0ed110d4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "448a30093e169c4eda766af9bd7a7bbf8009699bf3e01243da26147b9fc52aa6",
+      "requestFingerprintSha256": "448a30093e169c4eda766af9bd7a7bbf8009699bf3e01243da26147b9fc52aa6",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-07-it-E02-r1",
+      "unitId": "S1-07-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.",
+          "sha256": "2e3fc504435dba8f37b9dc9296a3483c1bf9e301e57b081f421fb9a3c93b63a3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Registra sia il colore sia il resoconto dell'acqua stagnante.",
+          "sha256": "6b63c9fed253d0e5202e2f6062672cadbb34ecfee3d584b6dfcd2174b2eba018"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Un colore legato al ferro non annulla la prova di un problema attuale di drenaggio.",
+          "sha256": "50332c4effe1a57685f86b813935e487b5cd0c46406248cd9abb87c7e4ecc7dc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Indaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.",
+          "sha256": "76301c55ca26d318631973dc262de7e42fd512656b22aa6312d63c990cdd03b5"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Un indizio cromatico non prevale su tutte le altre osservazioni.",
+          "sha256": "164d0291f2130ffd77dc9d7f247d6d88a50b3b7575884e7d10c8f96be96c2537"
+        }
+      ],
+      "scientificMeaning": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "displayText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "captionText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "spokenText": "Il campione è rossastro ma l'agricoltore segnala acqua che ristagna dopo la pioggia.\n\nRegistra sia il colore sia il resoconto dell'acqua stagnante.\n\nUn colore legato al ferro non annulla la prova di un problema attuale di drenaggio.\n\nIndaga profilo, compattazione, drenaggio e condizioni pertinenti del sito prima di consigliare colture.\n\nUn indizio cromatico non prevale su tutte le altre osservazioni.",
+      "spokenTextSHA256": "b672a774009c5c81dfe74c9599d0194fc424ca506a82712fcffeb972d5a99f90",
+      "spokenTextSha256": "b672a774009c5c81dfe74c9599d0194fc424ca506a82712fcffeb972d5a99f90",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4266b109793ec103aa2d5c1677ce919cfa2d179a8b3b5c15396eb19fa091513b",
+      "requestFingerprintSha256": "4266b109793ec103aa2d5c1677ce919cfa2d179a8b3b5c15396eb19fa091513b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-07-it-E03-r1",
+      "unitId": "S1-07-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.",
+          "sha256": "401d7502e491e4ce21469cc3e2619ea697ab76b9707ce0ce1259eea7f7c2e6cd"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "I pezzi illustrano il confronto dimensionale.",
+          "sha256": "a074884272b4f8d58276f959c0d8f34e6a0545779774c90d566195a9d5f21aa7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Lo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.",
+          "sha256": "05302eae9efb331a5f8e24c3ad79a20e75e70439ed5763354e13d12dc6eb130a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Conserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.",
+          "sha256": "5cc89143b0c89dca67ce4a0e665d884aeb260099825b832d60cd941708c3798c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Dichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+          "sha256": "6442e28f084f2b00b50b62b297dffc1edffcea8bfe897c4a29cc84c975ce86b8"
+        }
+      ],
+      "scientificMeaning": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "displayText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "captionText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "spokenText": "Una dimostrazione usa lo zucchero per rappresentare il limo e afferma che l'acqua provi come drena il suolo limoso.\n\nI pezzi illustrano il confronto dimensionale.\n\nLo zucchero si scioglie, quindi la dimostrazione non riproduce il comportamento dei minerali del suolo.\n\nConserva l'analogia per dimensioni e spazi; per l'acqua reale usa un'indagine adeguata sul suolo.\n\nDichiara cosa rappresenta il modello e dove smette di essere affidabile.",
+      "spokenTextSHA256": "b0aec5e9c2516a69a413f33472f23bb9c3758181493fbff96404982d4bbfe579",
+      "spokenTextSha256": "b0aec5e9c2516a69a413f33472f23bb9c3758181493fbff96404982d4bbfe579",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "adac0427d5f2e95380e389844f70b9a50cb362bc88a70611a8b12c693f6224db",
+      "requestFingerprintSha256": "adac0427d5f2e95380e389844f70b9a50cb362bc88a70611a8b12c693f6224db",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-07-it-guided-practice-r1",
+      "unitId": "S1-07-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.",
+          "sha256": "d0ac5516aae7a3f4ca08833ee00cd534b567dc7839f2c288dab9f49bece7755f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Indica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.",
+          "sha256": "1fe82212f4071f3ee8ce4ddfce8ace1a378546316e28c5cab1450580f21aa99d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Registra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.",
+          "sha256": "d03a9713e9ed74b3310d071d369407499e24140d72d2cbd82884d231b678b32c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Confronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.",
+          "sha256": "5d5d3ee680cb39f933829890d9ba03b17a8f5a7ce36e2ad79d233ea7e26d4456"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Indica un aspetto rappresentato dal modello e uno che non può convalidare.",
+          "sha256": "769352a74040104e51dbafadc9ef3e01675030653038dee0de968cf98fa8875d"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+          "sha256": "7d440dd1a2a5ef3f100f63b9558c36a1d2a2e07a5436ab82899c32657f83b430"
+        }
+      ],
+      "scientificMeaning": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "displayText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "captionText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "spokenText": "Classifica frasi su un substrato commerciale scuro, un campo rossastro e umido e un modello con zucchero in ciò che è stato osservato, ciò che potrebbe spiegarlo e ciò che richiede ancora una prova.\n\nIndica sabbia, limo e argilla come classi dimensionali minerali e franco come miscela, non quarta particella.\n\nRegistra tessitura e colore senza dichiarare fertilità o drenaggio in base al colore soltanto.\n\nConfronta possibili movimenti dell'acqua tenendo conto di struttura e sostanza organica.\n\nIndica un aspetto rappresentato dal modello e uno che non può convalidare.\n\nLe attività al tatto usano materiale reale etichettato e una procedura sicura del formatore; questa scheda è formativa e non assegna una nuova idoneità pratica firmata.",
+      "spokenTextSHA256": "4827e302c2bdbd293eb977a846fe757aa6fc023f25de2fb03d0e17478b095edd",
+      "spokenTextSha256": "4827e302c2bdbd293eb977a846fe757aa6fc023f25de2fb03d0e17478b095edd",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d3d78004a64a40e34ae85e04742d7d62c51923a1bd97d26fcf35c8c29a2442ab",
+      "requestFingerprintSha256": "d3d78004a64a40e34ae85e04742d7d62c51923a1bd97d26fcf35c8c29a2442ab",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-07-it-reflection-r1",
+      "unitId": "S1-07-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "397c3994a6bf74899ff4a755de182513d041880c79802a760234fbab28b7e319",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?",
+          "sha256": "bc5f48d285cbf200d4c2a6ad9994d74c4ff0cb888deb443a0af94a4bdbc30fc9"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "L'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+          "sha256": "21027aa178b847efcdef91d518dbd604f8118f451558871b8079bffa6a1ec9f2"
+        }
+      ],
+      "scientificMeaning": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "displayText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "captionText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "spokenText": "So spiegare cosa suggeriscono colore e tessitura e quali prove ancora mancano?\n\nL'autovalutazione orienta il ripasso; non certifica un'abilità pratica.",
+      "spokenTextSHA256": "420a123d49e0bee45414971cd11a0f4c35214e7fc1d8d0f130a746546915d4a5",
+      "spokenTextSha256": "420a123d49e0bee45414971cd11a0f4c35214e7fc1d8d0f130a746546915d4a5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "356cbd09658e9c7d32a013574996f8d33ec187198b0e227b6439642f1f9f418e",
+      "requestFingerprintSha256": "356cbd09658e9c7d32a013574996f8d33ec187198b0e227b6439642f1f9f418e",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
