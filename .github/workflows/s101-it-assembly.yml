@@ -1,0 +1,46 @@
+name: S101 Italian full first-lesson assembly only
+on:
+  push:
+    branches: [work/soil-s101-it-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: s101-it-assembly-20261022-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    if: >-
+      github.repository == 'cabicci/viva-ai-systems-55d35820' &&
+      github.repository_id == '1272666418' &&
+      github.ref == 'refs/heads/work/soil-s101-it-assembly-20261022-r1' &&
+      github.event_name == 'push' && github.event.created == true &&
+      github.event.before == '0000000000000000000000000000000000000000' &&
+      github.run_attempt == 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      MANIFEST_SHA: 6faeda2fb569dbe182081cc3ba8c754fb2c01c29cb64e49d13ed18c0717a0881
+      WORKER_SHA: 39f107f2acf996ffbaf9e29c098de051c3ba3b51dd35405dde07a3f40b25e7c2
+      FREEZE_SHA: 2b9e0d331499998ec7b1885139cf42bcd5652a39ab3f3339b496a4f379e4e94b
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Ensure complete video codecs before validation
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+          ffprobe -version
+      - name: Verify all exact existing inputs and source PCM
+        run: python -B media/s101-it-assembly/assemble.py validate
+      - name: Assemble ten existing clips with exact original PCM
+        run: python -B media/s101-it-assembly/assemble.py execute
+      - name: Preserve output and finite command journal
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s101-it-full-first-lesson-r1
+          path: media/s101-it-assembly/output
+          if-no-files-found: error
+          retention-days: 7

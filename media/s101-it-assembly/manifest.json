@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "status": "ALL_TEN_ENCODED_CLIP_QA_BOUND_PACKAGE_PREPARED_FOR_ROOT_REVIEW",
+  "scope": "S1-01_FULL_ITALIAN_LESSON_ONLY",
+  "lessonId": "S1-01",
+  "locale": "it",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "work/soil-s101-it-assembly-20261022-r1",
+  "fps": 30,
+  "audioFormat": {
+    "sampleRate": 24000,
+    "channels": 1,
+    "sampleWidthBytes": 2
+  },
+  "ownerDelegatedMediaReview": true,
+  "gates": {
+    "boundedFullItalianLessonAssemblyPreparationAuthorized": true,
+    "allTenActualEncodedClipQaBound": true,
+    "sourcePcmMustRemainByteIdentical": true,
+    "noNewTts": true,
+    "publicOriginalRepositoryExplicitScope": true,
+    "rootPackageReviewAndPublicationStillRequired": true
+  },
+  "rolloutApproved": false,
+  "ownerFullVideoApproved": false,
+  "providerCalls": 0,
+  "silencePolicy": "Only end padding to each existing30fps clip grid;0..799 zero PCM samples per scene. No added pause/crossfade/time-stretch/crop/normalization.",
+  "blocks": [
+    {
+      "id": "it-s101-purpose",
+      "sceneId": "s101-purpose",
+      "sequence": 1,
+      "covers": [
+        "s101-purpose"
+      ],
+      "sampleCount": 1559303,
+      "pcmSha256": "3b9e2c1d25c0d386ab3ff51770d955c9c911b57c5dcbb0faaeb741d0de2fed19",
+      "frameCount": 1950,
+      "audio": {
+        "path": "s101-purpose/voice.wav",
+        "sha256": "004b88db51543789381eb11f3dc9ac818fa5e8e7c1c568a47ddf0bed4e80be2c",
+        "bytes": 3118650
+      },
+      "video": {
+        "path": "s101-purpose/video.ivf",
+        "sha256": "b1047601f926100a2d7ef65b9c869cdef9f7e1ef3f22cc16beaa9c6fd9387b9b",
+        "bytes": 8223852,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-purpose/captions.json",
+        "sha256": "c53ba737ab0ab77d9fcb366379c1ab0c66bcce52ebc35a2311e45da51f5179aa",
+        "bytes": 6913
+      },
+      "encoding": {
+        "path": "s101-purpose/encoding.json",
+        "sha256": "8cc4fe1e54054cdb3427d4bd0fecea8d036d685b060a27839d28c92f511b74a7",
+        "bytes": 143479
+      },
+      "rootQa": {
+        "path": "s101-purpose/root-qa.json",
+        "sha256": "befa844860dc5a3bd2e204d5bf8342eb9a95b4342ac229106651ba23ca8b6461",
+        "bytes": 1171
+      },
+      "startSample": 0,
+      "startVideoFrame": 0,
+      "endPaddingSamples": 697
+    },
+    {
+      "id": "it-s101-site",
+      "sceneId": "s101-site",
+      "sequence": 2,
+      "covers": [
+        "s101-site"
+      ],
+      "sampleCount": 1556423,
+      "pcmSha256": "81c31a1e20d66da5954f00f0bd8b4f7021cd7b905656158e91a320d5ef7c9823",
+      "frameCount": 1946,
+      "audio": {
+        "path": "s101-site/voice.wav",
+        "sha256": "16be0ec63f5c42a9149bbe169e54e946b6b0bd109ae99445a2be8396f0cc6ea3",
+        "bytes": 3112890
+      },
+      "video": {
+        "path": "s101-site/video.ivf",
+        "sha256": "28e49c7c531cf58ae074c4de3460827e786578d13b774ac449e55299ac09869f",
+        "bytes": 21898281,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-site/captions.json",
+        "sha256": "a7bda030171b1050d015986cc0d572b125c020677e1c38cd4e885041183b0ee2",
+        "bytes": 6275
+      },
+      "encoding": {
+        "path": "s101-site/encoding.json",
+        "sha256": "acfa4ba20a7db0a9148279be231e31fb16db54f436ad1f605f6b42104a2601e4",
+        "bytes": 143689
+      },
+      "rootQa": {
+        "path": "s101-site/root-qa.json",
+        "sha256": "9bd474bd898d1f829f37ad88da6f32300ba9b57fb4a8b04c7cdf374a5b8d0ac7",
+        "bytes": 1168
+      },
+      "startSample": 1560000,
+      "startVideoFrame": 1950,
+      "endPaddingSamples": 377
+    },
+    {
+      "id": "it-s101-communication",
+      "sceneId": "s101-communication",
+      "sequence": 3,
+      "covers": [
+        "s101-communication"
+      ],
+      "sampleCount": 1030343,
+      "pcmSha256": "aff93309e44fc08d0eb94d49100a6fab02699962a17f11d317338ff88b7dc485",
+      "frameCount": 1288,
+      "audio": {
+        "path": "s101-communication/voice.wav",
+        "sha256": "3dc4de0254a446540989802c40e8cb6454435950dcbd5dd2c9b54de739b05d6c",
+        "bytes": 2060730
+      },
+      "video": {
+        "path": "s101-communication/video.ivf",
+        "sha256": "329ae0876a19c7dc2ade8a77aa5323a365002c2a98ff18ffdd157f0de869e78b",
+        "bytes": 4946327,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-communication/captions.json",
+        "sha256": "c4003e40984a7791c467950f50cd70390c432c55cd7008b69c6d87e4b1a5eabf",
+        "bytes": 4001
+      },
+      "encoding": {
+        "path": "s101-communication/encoding.json",
+        "sha256": "0bcee7b17ddac84f84727e2aa98fd0ae97d49849a62b63ab836f262faa3881d4",
+        "bytes": 95066
+      },
+      "rootQa": {
+        "path": "s101-communication/root-qa.json",
+        "sha256": "e1380eaeeef81715ec44782a6756e4ba154637664e0d1e993ecb2c556d731b73",
+        "bytes": 1077
+      },
+      "startSample": 3116800,
+      "startVideoFrame": 3896,
+      "endPaddingSamples": 57
+    },
+    {
+      "id": "it-s101-limits",
+      "sceneId": "s101-limits",
+      "sequence": 4,
+      "covers": [
+        "s101-limits"
+      ],
+      "sampleCount": 1644743,
+      "pcmSha256": "e1421a4c76252d72c08bcc3956b60e567f9baa8089dc3098fffbde82638e02b9",
+      "frameCount": 2056,
+      "audio": {
+        "path": "s101-limits/voice.wav",
+        "sha256": "fa280abadc70824b62eed8b2226be339271836d990c327508f0b86a26f0592d3",
+        "bytes": 3289530
+      },
+      "video": {
+        "path": "s101-limits/video.ivf",
+        "sha256": "08708053c2c3a74f5b2dfc1c325c623434d3e123635a0767b4e69d7a0084b53e",
+        "bytes": 11305248,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-limits/captions.json",
+        "sha256": "8d96ab7cb8b579c8643ea7fa21b9049d6cf3e55e457d7e06dbc739e8959b434a",
+        "bytes": 6572
+      },
+      "encoding": {
+        "path": "s101-limits/encoding.json",
+        "sha256": "d5c601850a54d63d5a50b5eeea620e0bb644c294acc3c2cdaddfbf44dc1c141d",
+        "bytes": 152759
+      },
+      "rootQa": {
+        "path": "s101-limits/root-qa.json",
+        "sha256": "e8fa343799de235c33626b8c9cf0a54baa0bc4144378a9acdfa11d8e434cd7c5",
+        "bytes": 1368
+      },
+      "startSample": 4147200,
+      "startVideoFrame": 5184,
+      "endPaddingSamples": 57
+    },
+    {
+      "id": "it-s101-environment",
+      "sceneId": "s101-environment",
+      "sequence": 5,
+      "covers": [
+        "s101-environment"
+      ],
+      "sampleCount": 1248263,
+      "pcmSha256": "2aeb880bc2d33716c130c417d74f770a755fcbbe97293f34c4ee14f147508c19",
+      "frameCount": 1561,
+      "audio": {
+        "path": "s101-environment/voice.wav",
+        "sha256": "1faebc62cbc990e488143ddc6663bbfa8d2e42a0f825f8ed1cd0339c3d2e71bc",
+        "bytes": 2496570
+      },
+      "video": {
+        "path": "s101-environment/video.ivf",
+        "sha256": "153d04248dcd96b6d394b1ce063a184dbc2d6605905b5f1605b605e780d27c76",
+        "bytes": 18697017,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-environment/captions.json",
+        "sha256": "9b628bf9de029dc6edcba9d72fe754067cc958f220fdf0c158d1395d56194b26",
+        "bytes": 4489
+      },
+      "encoding": {
+        "path": "s101-environment/encoding.json",
+        "sha256": "99b91438bc43131f8d0f057d48b277481c2371e56e62be96f438cdb43b374504",
+        "bytes": 115417
+      },
+      "rootQa": {
+        "path": "s101-environment/root-qa.json",
+        "sha256": "ee0ec83af840d06ef0be0b306d53a25a4eaa60b7019cf6748af7a13f0798556f",
+        "bytes": 1075
+      },
+      "startSample": 5792000,
+      "startVideoFrame": 7240,
+      "endPaddingSamples": 537
+    },
+    {
+      "id": "it-s101-ppe",
+      "sceneId": "s101-ppe",
+      "sequence": 6,
+      "covers": [
+        "s101-ppe"
+      ],
+      "sampleCount": 1667783,
+      "pcmSha256": "7bf72b4ac62eb24676163affd62dca67de6e5ad83d5b532788ecbb33994c9331",
+      "frameCount": 2085,
+      "audio": {
+        "path": "s101-ppe/voice.wav",
+        "sha256": "0b2011a50e928f7bab7f065e0b360d9809468fc6de9a200bc64bf2fec31cedd9",
+        "bytes": 3335610
+      },
+      "video": {
+        "path": "s101-ppe/video.ivf",
+        "sha256": "9bddba7763a54089658de6c7365758b2a9de129c86a2769e6e4b177b46d0ee3f",
+        "bytes": 17073311,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-ppe/captions.json",
+        "sha256": "416e9bb92dfa55d33235486d910a74236b32c9346ad9d85c16049edb7a396b3c",
+        "bytes": 6045
+      },
+      "encoding": {
+        "path": "s101-ppe/encoding.json",
+        "sha256": "f9d3114bc28327ad9ac2ce529eccb3214d28dea975f1b6b0aacd3d658d07279d",
+        "bytes": 153790
+      },
+      "rootQa": {
+        "path": "s101-ppe/root-qa.json",
+        "sha256": "2ddfc7626ff42a4b5886de577ad391608efc956f132732d573bf65563bf371ab",
+        "bytes": 1166
+      },
+      "startSample": 7040800,
+      "startVideoFrame": 8801,
+      "endPaddingSamples": 217
+    },
+    {
+      "id": "it-s101-chemical",
+      "sceneId": "s101-chemical",
+      "sequence": 7,
+      "covers": [
+        "s101-chemical"
+      ],
+      "sampleCount": 2116103,
+      "pcmSha256": "ec1e4cb094fe5dc3a12d464d6cb52a26fe55a8d4518ea85c1feb6239e29342ce",
+      "frameCount": 2646,
+      "audio": {
+        "path": "s101-chemical/voice.wav",
+        "sha256": "cdbb8d077909449d630042ebbbd1a5a287c29c4f7caaa848cfe58b8c5540f3c3",
+        "bytes": 4232250
+      },
+      "video": {
+        "path": "s101-chemical/video.ivf",
+        "sha256": "86f961c7fe9f2b6380406cf6578f615eab81410a49808e162ad69127cea1d7a6",
+        "bytes": 12874253,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-chemical/captions.json",
+        "sha256": "f01ebd8522160a711c52ad0a9752b37af47ae0c08a8949df4bcfac5fcfa17fef",
+        "bytes": 8657
+      },
+      "encoding": {
+        "path": "s101-chemical/encoding.json",
+        "sha256": "56ade6731014f94cc47ecbf50c9d4ae1752861e3bf5d09e80bdab5bfac696e12",
+        "bytes": 194898
+      },
+      "rootQa": {
+        "path": "s101-chemical/root-qa.json",
+        "sha256": "7192f3c7d1e42d9fb521eeee372286a24ac6ab9b595307e69d011c7b97d22bfa",
+        "bytes": 1271
+      },
+      "startSample": 8708800,
+      "startVideoFrame": 10886,
+      "endPaddingSamples": 697
+    },
+    {
+      "id": "it-s101-checklist",
+      "sceneId": "s101-checklist",
+      "sequence": 8,
+      "covers": [
+        "s101-checklist"
+      ],
+      "sampleCount": 1613063,
+      "pcmSha256": "64634c7b6a7b5ce4fab1bb6824c6a43d6d81405a27d9e9496079504ccd9a9a38",
+      "frameCount": 2017,
+      "audio": {
+        "path": "s101-checklist/voice.wav",
+        "sha256": "096de7b6e6828bb939c96d36010d501a26ae8fc3c23f8ae4780b361b12dd44a2",
+        "bytes": 3226170
+      },
+      "video": {
+        "path": "s101-checklist/video.ivf",
+        "sha256": "d14acf17d6def00a32c715e6950da6e33f1c39eb35a77943ad81f75b01353e9d",
+        "bytes": 45040147,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-checklist/captions.json",
+        "sha256": "b6e5a447dd9bce89b2bb15faa758fffe9e4500982e937d0a493fddf915791727",
+        "bytes": 5482
+      },
+      "encoding": {
+        "path": "s101-checklist/encoding.json",
+        "sha256": "156a7f7acecdc513c11ecf1f0c941b5be68fe2624bf7ce62876fbe0f514a4cee",
+        "bytes": 148180
+      },
+      "rootQa": {
+        "path": "s101-checklist/root-qa.json",
+        "sha256": "2f8a69a70bf3c37e9fb899b9ceec0e73a38ea9054e40ee04ae707b43a887cd5e",
+        "bytes": 1173
+      },
+      "startSample": 10825600,
+      "startVideoFrame": 13532,
+      "endPaddingSamples": 537
+    },
+    {
+      "id": "it-s101-example-route",
+      "sceneId": "s101-example-route",
+      "sequence": 9,
+      "covers": [
+        "s101-example-route"
+      ],
+      "sampleCount": 1154183,
+      "pcmSha256": "fe6aa354c0cebb5794f7f701af357754e34988c113a25272a47e51af07297444",
+      "frameCount": 1443,
+      "audio": {
+        "path": "s101-example-route/voice.wav",
+        "sha256": "3755a48b84c028377e98ddd806253c3a579ff2776e69a21d5cb5112747126aa6",
+        "bytes": 2308410
+      },
+      "video": {
+        "path": "s101-example-route/video.ivf",
+        "sha256": "31ff91e6e061a7faffd225c1f8a740b13c400ef1561a8e5b7193422acc87bf4e",
+        "bytes": 17992357,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-example-route/captions.json",
+        "sha256": "b21eb5705b94572a8d6e5d769a677632d5d16df3bea2aae5fffceeb8f474b477",
+        "bytes": 5058
+      },
+      "encoding": {
+        "path": "s101-example-route/encoding.json",
+        "sha256": "26f514f436bbd341fc5c91891d237ec0bb3ce9bb24122da7502fc0afcd811e13",
+        "bytes": 106983
+      },
+      "rootQa": {
+        "path": "s101-example-route/root-qa.json",
+        "sha256": "8f50f3a904c449a2862d3a79dd8577f17e714532284c6ad4e8ad14d92c6bbfcb",
+        "bytes": 1176
+      },
+      "startSample": 12439200,
+      "startVideoFrame": 15549,
+      "endPaddingSamples": 217
+    },
+    {
+      "id": "it-s101-example-gloves",
+      "sceneId": "s101-example-gloves",
+      "sequence": 10,
+      "covers": [
+        "s101-example-gloves"
+      ],
+      "sampleCount": 977543,
+      "pcmSha256": "ada2a7cb2c3c874daed3176637dcabd8f6d1567b4f56388f2a81db780ccbac8c",
+      "frameCount": 1222,
+      "audio": {
+        "path": "s101-example-gloves/voice.wav",
+        "sha256": "2bcebab283e6e256ddb7d12190d22c5d98bf56e2ec0f872a5fe907fff40176d7",
+        "bytes": 1955130
+      },
+      "video": {
+        "path": "s101-example-gloves/video.ivf",
+        "sha256": "38ef40f2fde891e10af336a949f1f361b504919acb6c4ab222e5fd80628f92f9",
+        "bytes": 6624327,
+        "container": "ivf"
+      },
+      "captions": {
+        "path": "s101-example-gloves/captions.json",
+        "sha256": "9df382128b2607f664164b052c19a6faf156eefd37565da934f81085d3af57c8",
+        "bytes": 3519
+      },
+      "encoding": {
+        "path": "s101-example-gloves/encoding.json",
+        "sha256": "24ea138e3735a181ddd1948d945932c4e7536c74515439fd3d5be8d370862708",
+        "bytes": 90571
+      },
+      "rootQa": {
+        "path": "s101-example-gloves/root-qa.json",
+        "sha256": "a2f5851d47ebecaf4de81a4a46c8f78ad5538e491806ffab8bdbb2d3e254cca8",
+        "bytes": 1078
+      },
+      "startSample": 13593600,
+      "startVideoFrame": 16992,
+      "endPaddingSamples": 57
+    }
+  ],
+  "totals": {
+    "videoFrames": 18214,
+    "masterSamples": 14571200,
+    "durationSeconds": 607.1333333333333,
+    "originalSourceSamples": 14567750,
+    "explicitEndPaddingSamples": 3450
+  }
+}
