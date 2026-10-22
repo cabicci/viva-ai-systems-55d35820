@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { packCorpusJson } from "../../../scripts/assistant/edge-corpus-packaging";
 import {
   CONTENT_FREEZE_SHA,
   EMBEDDING_DIMENSIONS,
@@ -174,7 +175,7 @@ export function writeRagArtifacts(
   const authoritativeLookupPath = path.join(absOutput, "authoritative-lookup.json");
   const edgeAuthoritativeLookupPath = path.join(
     repoRoot,
-    "supabase/functions/assistant-runtime/authoritative-corpus-lookup.json",
+    "supabase/functions/assistant-runtime/authoritative-corpus-lookup.packed.json",
   );
 
   if (!options?.dryRun) {
@@ -188,7 +189,7 @@ export function writeRagArtifacts(
     const normalizedOutput = outputDir.replace(/\\/g, "/").replace(/^\.\//, "");
     if (normalizedOutput === RAG_ARTIFACTS_DIR) {
       fs.mkdirSync(path.dirname(edgeAuthoritativeLookupPath), { recursive: true });
-      writeJsonDeterministic(edgeAuthoritativeLookupPath, lookupJson);
+      writeJsonDeterministic(edgeAuthoritativeLookupPath, packCorpusJson(lookupJson));
     }
   }
 

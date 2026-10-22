@@ -57,3 +57,11 @@ reservations, holds across revisions and atomic native/Academic publication.
 Database tests use disposable PostgreSQL with pgvector and require no live
 provider calls. Full repository CI and deployment smoke tests are still required
 before installation and activation.
+
+The Edge runtime loads gzip-packed copies of the committed corpus artifacts.
+The existing corpus generators update these copies; no extra per-card assistant
+step is required. Runtime decoding verifies the exact original UTF-8 length and
+SHA-256 before the existing corpus admission checks. `assistant:verify` rejects
+stale copies, unpacked duplicates and function source above the deployment size
+budget, before any paid deployment request. Canonical artifacts and release IDs
+are retained unchanged by packaging.

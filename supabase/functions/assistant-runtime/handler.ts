@@ -33,10 +33,15 @@
 //   a paid AI reservation alone does not grant access to every card.
 
 import { isValidSha256Digest, sha256CanonicalHex } from "./canonical-checksum.ts";
-import AUTHORITATIVE_CORPUS_LOOKUP_JSON from "./authoritative-corpus-lookup.json" with { type: "json" };
+import AUTHORITATIVE_CORPUS_PACK from "./authoritative-corpus-lookup.packed.json" with { type: "json" };
 import CARD_MEMBERSHIP_JSON from "./current-card-membership.json" with { type: "json" };
-import CURRENT_CORPUS_JSON from "./current-corpus-approval.json" with { type: "json" };
+import CURRENT_CORPUS_PACK from "./current-corpus-approval.packed.json" with { type: "json" };
 import { isValidCurrentApproval, matchesCurrentApprovedContent, isCurrentReleaseRow, type CurrentCorpusApproval } from "./current-corpus-admission.ts";
+import { decodePackedCorpus } from "./packed-corpus.ts";
+
+const [AUTHORITATIVE_CORPUS_LOOKUP_JSON, CURRENT_CORPUS_JSON] = await Promise.all([
+  decodePackedCorpus(AUTHORITATIVE_CORPUS_PACK), decodePackedCorpus(CURRENT_CORPUS_PACK),
+]);
 
 // Restrict CORS to known origins (preview + published + local dev).
 const ALLOWED_ORIGINS = new Set<string>([
@@ -319,7 +324,7 @@ type AuthoritativeLookupJson = {
 
 /** Module-scope server-owned authoritative corpus lookup (Edge + tests). */
 const AUTHORITATIVE_LOOKUP = AUTHORITATIVE_CORPUS_LOOKUP_JSON as AuthoritativeLookupJson;
-const CURRENT_CORPUS: CurrentCorpusApproval = CURRENT_CORPUS_JSON;
+const CURRENT_CORPUS = CURRENT_CORPUS_JSON as CurrentCorpusApproval;
 const CURRENT_CORPUS_VALID = isValidCurrentApproval(CURRENT_CORPUS);
 type CardMembershipRecord = {
   locale: string; lessonId: string; trackId: string; moduleId: string;
