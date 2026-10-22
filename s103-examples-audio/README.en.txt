@@ -1,0 +1,1 @@
+Sixteen complete visible S1-03 teaching cases, four languages. Source content unchanged; recorded selective Egyptian speech adaptations and range/phone delivery cues. No hidden keys, native assets, assembly or automatic adoption. Exactly16TTS16blind16ASR2metadataGET maximum; zero retries/reruns. Root exact review and guarded publication required.

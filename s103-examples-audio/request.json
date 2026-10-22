@@ -1,0 +1,1156 @@
+{
+  "schemaVersion": 1,
+  "scope": "S103_E01_E04_FOUR_LOCALE_SIXTEEN_COMPLETE_WORKED_CASES_ONLY",
+  "stepId": "S1-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s103-examples-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ALL_SIXTEEN_TTS_AND_EACH_IMMEDIATE_UPLOAD_BEFORE_ISOLATED_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-03-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a3e7418cb5e32596e944a5970c2f7ed22d271a3957de89a8d31ae5147e724439",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "سائل كاوي معروف رَشّ على دراع زميلك. بطاقة الخطر واضحة، ومفيش خطر مباشر تاني في المنطقة اللي حواليه.",
+          "sha256": "0d271260d6847df307257bf124ae010048c06777347abcb03d8b18e677085713"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "قيّم التعرض للمادة الكاوية من غير ما تلمس السائل أو تلوّث نفسك. استخدم الوقاية المحددة للمساعدة بأمان.",
+          "sha256": "47db7c08b04d5dc7b3488ed4c5b37ad6da6ef769f861158f212c461eb36e412a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "اطلب الإسعاف فورًا. في مصر اتصل بـ١٢٣، وادّي المكان بالضبط، واذكر تعرض الدراع وحالة الشخص واسم المنتج لو تعرفه. اطلب من حد يجيب صحيفة بيانات السلامة من غير ما يأخر المساعدة.",
+          "sha256": "3bbcb64bd6f59af0193713e223e39474473961b18e2b446ec07d6d5252e2340f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "ابدأ فورًا الغسل المناسب بكمية كبيرة من الميه الجارية الباردة. في التمرين ده المدة الأولية المذكورة على الأقل ١٥–٢٠ دقيقة؛ دي مش نقطة انتهاء عامة. كمل حسب تعليمات الإسعاف الخاصة بالمنتج وتوجيهات المختصين.",
+          "sha256": "9c8636e0e3ef5246af42f4fd172e5225628d10a5fddc345fa9c7e96508570347"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "شيل اللبس الملوّث من المنطقة المصابة أثناء الغسل لو تقدر تعمل ده بأمان، واتبع صحيفة البيانات. ما تحاولش تعادل المادة على الجلد بمادة كيميائية تانية. التدريب بيستخدم مجسّم، مش مادة كاوية أو تعرضًا حقيقيًا.",
+          "sha256": "3790dbdbec047af75ec055cc009a244f9b4c0a672e8f6dc79f77de01ff0ec082"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "الغسل العاجل وطلب المساعدة ممكن يحصلوا مع بعض؛ تنظيف الأرض يستنى لحد ما نهتم بالشخص المتعرض.",
+          "sha256": "fde22df57ca606a154e46e777cf00ea37cfabac857655059c184a6174f2f7e29"
+        }
+      ],
+      "scientificMeaning": "سائل كاوي معروف رَشّ على دراع زميلك. بطاقة الخطر واضحة، ومفيش خطر مباشر تاني في المنطقة اللي حواليه.\n\nقيّم التعرض للمادة الكاوية من غير ما تلمس السائل أو تلوّث نفسك. استخدم الوقاية المحددة للمساعدة بأمان.\n\nاطلب الإسعاف فورًا. في مصر اتصل بـ١٢٣، وادّي المكان بالضبط، واذكر تعرض الدراع وحالة الشخص واسم المنتج لو تعرفه. اطلب من حد يجيب صحيفة بيانات السلامة من غير ما يأخر المساعدة.\n\nابدأ فورًا الغسل المناسب بكمية كبيرة من الميه الجارية الباردة. في التمرين ده المدة الأولية المذكورة على الأقل ١٥–٢٠ دقيقة؛ دي مش نقطة انتهاء عامة. كمل حسب تعليمات الإسعاف الخاصة بالمنتج وتوجيهات المختصين.\n\nشيل اللبس الملوّث من المنطقة المصابة أثناء الغسل لو تقدر تعمل ده بأمان، واتبع صحيفة البيانات. ما تحاولش تعادل المادة على الجلد بمادة كيميائية تانية. التدريب بيستخدم مجسّم، مش مادة كاوية أو تعرضًا حقيقيًا.\n\nالغسل العاجل وطلب المساعدة ممكن يحصلوا مع بعض؛ تنظيف الأرض يستنى لحد ما نهتم بالشخص المتعرض.",
+      "displayText": "سائل كاوي معروف رَشّ على دراع زميلك. بطاقة الخطر واضحة، ومفيش خطر مباشر تاني في المنطقة اللي حواليه.\n\nقيّم التعرض للمادة الكاوية من غير ما تلمس السائل أو تلوّث نفسك. استخدم الوقاية المحددة للمساعدة بأمان.\n\nاطلب الإسعاف فورًا. في مصر اتصل بـ١٢٣، وادّي المكان بالضبط، واذكر تعرض الدراع وحالة الشخص واسم المنتج لو تعرفه. اطلب من حد يجيب صحيفة بيانات السلامة من غير ما يأخر المساعدة.\n\nابدأ فورًا الغسل المناسب بكمية كبيرة من الميه الجارية الباردة. في التمرين ده المدة الأولية المذكورة على الأقل ١٥–٢٠ دقيقة؛ دي مش نقطة انتهاء عامة. كمل حسب تعليمات الإسعاف الخاصة بالمنتج وتوجيهات المختصين.\n\nشيل اللبس الملوّث من المنطقة المصابة أثناء الغسل لو تقدر تعمل ده بأمان، واتبع صحيفة البيانات. ما تحاولش تعادل المادة على الجلد بمادة كيميائية تانية. التدريب بيستخدم مجسّم، مش مادة كاوية أو تعرضًا حقيقيًا.\n\nالغسل العاجل وطلب المساعدة ممكن يحصلوا مع بعض؛ تنظيف الأرض يستنى لحد ما نهتم بالشخص المتعرض.",
+      "captionText": "سائل كاوي معروف رَشّ على دراع زميلك. بطاقة الخطر واضحة، ومفيش خطر مباشر تاني في المنطقة اللي حواليه.\n\nقيّم التعرض للمادة الكاوية من غير ما تلمس السائل أو تلوّث نفسك. استخدم الوقاية المحددة للمساعدة بأمان.\n\nاطلب الإسعاف فورًا. في مصر اتصل بـ١٢٣، وادّي المكان بالضبط، واذكر تعرض الدراع وحالة الشخص واسم المنتج لو تعرفه. اطلب من حد يجيب صحيفة بيانات السلامة من غير ما يأخر المساعدة.\n\nابدأ فورًا الغسل المناسب بكمية كبيرة من الميه الجارية الباردة. في التمرين ده المدة الأولية المذكورة على الأقل ١٥–٢٠ دقيقة؛ دي مش نقطة انتهاء عامة. كمل حسب تعليمات الإسعاف الخاصة بالمنتج وتوجيهات المختصين.\n\nشيل اللبس الملوّث من المنطقة المصابة أثناء الغسل لو تقدر تعمل ده بأمان، واتبع صحيفة البيانات. ما تحاولش تعادل المادة على الجلد بمادة كيميائية تانية. التدريب بيستخدم مجسّم، مش مادة كاوية أو تعرضًا حقيقيًا.\n\nالغسل العاجل وطلب المساعدة ممكن يحصلوا مع بعض؛ تنظيف الأرض يستنى لحد ما نهتم بالشخص المتعرض.",
+      "spokenText": "سائل كاوي معروف رَشّ على دراع زميلك. بطاقة الخطر واضحة، ومفيش خطر مباشر تاني في المنطقة اللي حواليه.\n\nقيّم التعرض للمادة الكاوية من غير ما تلمس السائل أو تلوّث نفسك. استخدم الوقاية المحددة للمساعدة بأمان.\n\nاطلب الإسعاف فورًا. في مصر اتصل بـ١٢٣، وادّي المكان بالضبط، واذكر تعرض الدراع وحالة الشخص واسم المنتج لو تعرفه. اطلب من حد يجيب صحيفة بيانات السلامة من غير ما يأخر المساعدة.\n\nابدأ فورًا الغسل المناسب بكمية كبيرة من الميه الجارية الباردة. في التمرين ده المدة الأولية المذكورة على الأقل ١٥–٢٠ دقيقة؛ دي مش نقطة انتهاء عامة. كمل حسب تعليمات الإسعاف الخاصة بالمنتج وتوجيهات المختصين.\n\nشيل اللبس الملوّث من المنطقة المصابة أثناء الغسل لو تقدر تعمل ده بأمان، واتبع صحيفة البيانات. ما تحاولش تعادل المادة على الجلد بمادة كيميائية تانية. التدريب بيستخدم مجسّم، مش مادة كاوية أو تعرّض حقيقي.\n\nالغسل العاجل وطلب المساعدة ممكن يحصلوا مع بعض؛ تنظيف الأرض يستنى لحد ما نهتم بالشخص المتعرض.",
+      "spokenTextSHA256": "7e26546714370f141180f3ba2b71adf05d737d74886ae8863b3352153fbed879",
+      "spokenAdaptationChanges": [
+        {
+          "written": "تعرضًا حقيقيًا",
+          "spoken": "تعرّض حقيقي",
+          "occurrences": 1,
+          "purpose": "Remove formal case ending from Egyptian spoken adaptation without scientific change"
+        }
+      ],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "7e26546714370f141180f3ba2b71adf05d737d74886ae8863b3352153fbed879",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. رقم الإسعاف في النص ١٢٣: واحد اتنين تلاتة. الرقم لمكان التدريب في مصر، مش حسب لغة الشرح. المدى ١٥–٢٠ في النص يُنطق خمسطاشر لعشرين دقيقة. حافظ على «على الأقل» وعلى إن دي مش نقطة انتهاء عامة.",
+      "deliverySHA256": "68b6da63efa6ec18c94e036946ffd2e26080d96ac027fd6daa10ca3b7a147e3d",
+      "deliverySha256": "68b6da63efa6ec18c94e036946ffd2e26080d96ac027fd6daa10ca3b7a147e3d",
+      "pronunciationCues": [
+        "رقم الإسعاف في النص ١٢٣: واحد اتنين تلاتة. الرقم لمكان التدريب في مصر، مش حسب لغة الشرح.",
+        "المدى ١٥–٢٠ في النص يُنطق خمسطاشر لعشرين دقيقة. حافظ على «على الأقل» وعلى إن دي مش نقطة انتهاء عامة."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "8f83b3f4ec7309c3eef04064e0ed9424e786827380344620b908277c8fdd2d3a",
+      "requestFingerprintSha256": "8f83b3f4ec7309c3eef04064e0ed9424e786827380344620b908277c8fdd2d3a",
+      "caseId": "chemical-arm",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-ar-EG-E01-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8530a7008588642b054ab3822d0e61981419e1106bb654456752a851a12fbb6e"
+    },
+    {
+      "id": "S1-03-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a3e7418cb5e32596e944a5970c2f7ed22d271a3957de89a8d31ae5147e724439",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "زميل بيشتغل في الشمس وعنده عرق غزير وصداع وغثيان. لسه واعي وبيبلع طبيعي؛ والعربية بعيدة.",
+          "sha256": "3bb764d8f54065985f1bc85f46e1d1f7b9700b28827ab813c38837f2d1470dec"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "وقّف الشغل واستخدم أقرب ضل آمن وبارد بدل ما تخليه يمشي مسافة طويلة.",
+          "sha256": "94bdb962ef7acb6746338179ccdc077c4367c32be39e64c25f331da64c7f0c80"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "بلّغ المشرف بالمكان والأعراض، ورتّب له تقييم طبي. خلي حد مع الشخص.",
+          "sha256": "ac021889b35feb621d04cf20136439cafb800325eb93b85dfde307995562a7a9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "خفّف اللبس الزيادة، وحط فوط مبلولة وباردة على الرأس والرقبة وتحت الإبط، وهوّي عليه، وقدّم رشفات صغيرة من ميه باردة طول ما البلع آمن.",
+          "sha256": "83064851aa83bc6d3c82c61a01ab964fe2ea6f885a64733da9f02c0f8d2a4998"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "لو ظهر تشوش أو انهار فجأة أو حالته ساءت، اتصل بالإسعاف ١٢٣ فورًا وكمل تبريد. ما تستناش العرق يقف. وما تديش شراب لشخص مشوش أو فاقد الوعي.",
+          "sha256": "7528e312f28faf4b22f4e21431d6094dc8e79e0c5ea0d488c22e8eb50017d230"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "الاحتياج الفوري هو التبريد والمساعدة، مع متابعة الحالة لأي علامة طوارئ.",
+          "sha256": "2bd4c085611df19c098039843c063da0c6f61e1ed6ca688e8fd9e1a354166233"
+        }
+      ],
+      "scientificMeaning": "زميل بيشتغل في الشمس وعنده عرق غزير وصداع وغثيان. لسه واعي وبيبلع طبيعي؛ والعربية بعيدة.\n\nوقّف الشغل واستخدم أقرب ضل آمن وبارد بدل ما تخليه يمشي مسافة طويلة.\n\nبلّغ المشرف بالمكان والأعراض، ورتّب له تقييم طبي. خلي حد مع الشخص.\n\nخفّف اللبس الزيادة، وحط فوط مبلولة وباردة على الرأس والرقبة وتحت الإبط، وهوّي عليه، وقدّم رشفات صغيرة من ميه باردة طول ما البلع آمن.\n\nلو ظهر تشوش أو انهار فجأة أو حالته ساءت، اتصل بالإسعاف ١٢٣ فورًا وكمل تبريد. ما تستناش العرق يقف. وما تديش شراب لشخص مشوش أو فاقد الوعي.\n\nالاحتياج الفوري هو التبريد والمساعدة، مع متابعة الحالة لأي علامة طوارئ.",
+      "displayText": "زميل بيشتغل في الشمس وعنده عرق غزير وصداع وغثيان. لسه واعي وبيبلع طبيعي؛ والعربية بعيدة.\n\nوقّف الشغل واستخدم أقرب ضل آمن وبارد بدل ما تخليه يمشي مسافة طويلة.\n\nبلّغ المشرف بالمكان والأعراض، ورتّب له تقييم طبي. خلي حد مع الشخص.\n\nخفّف اللبس الزيادة، وحط فوط مبلولة وباردة على الرأس والرقبة وتحت الإبط، وهوّي عليه، وقدّم رشفات صغيرة من ميه باردة طول ما البلع آمن.\n\nلو ظهر تشوش أو انهار فجأة أو حالته ساءت، اتصل بالإسعاف ١٢٣ فورًا وكمل تبريد. ما تستناش العرق يقف. وما تديش شراب لشخص مشوش أو فاقد الوعي.\n\nالاحتياج الفوري هو التبريد والمساعدة، مع متابعة الحالة لأي علامة طوارئ.",
+      "captionText": "زميل بيشتغل في الشمس وعنده عرق غزير وصداع وغثيان. لسه واعي وبيبلع طبيعي؛ والعربية بعيدة.\n\nوقّف الشغل واستخدم أقرب ضل آمن وبارد بدل ما تخليه يمشي مسافة طويلة.\n\nبلّغ المشرف بالمكان والأعراض، ورتّب له تقييم طبي. خلي حد مع الشخص.\n\nخفّف اللبس الزيادة، وحط فوط مبلولة وباردة على الرأس والرقبة وتحت الإبط، وهوّي عليه، وقدّم رشفات صغيرة من ميه باردة طول ما البلع آمن.\n\nلو ظهر تشوش أو انهار فجأة أو حالته ساءت، اتصل بالإسعاف ١٢٣ فورًا وكمل تبريد. ما تستناش العرق يقف. وما تديش شراب لشخص مشوش أو فاقد الوعي.\n\nالاحتياج الفوري هو التبريد والمساعدة، مع متابعة الحالة لأي علامة طوارئ.",
+      "spokenText": "زميل بيشتغل في الشمس وعنده عرق غزير وصداع وغثيان. لسه واعي وبيبلع طبيعي؛ والعربية بعيدة.\n\nوقّف الشغل واستخدم أقرب ضل آمن وبارد بدل ما تخليه يمشي مسافة طويلة.\n\nبلّغ المشرف بالمكان والأعراض، ورتّب له تقييم طبي. خلي حد مع الشخص.\n\nخفّف اللبس الزيادة، وحط فوط مبلولة وباردة على الرأس والرقبة وتحت الإبط، وهوّي عليه، وقدّم رشفات صغيرة من ميه باردة طول ما البلع آمن.\n\nلو ظهر تشوش أو انهار فجأة أو حالته ساءت، اتصل بالإسعاف ١٢٣ فورًا وكمل تبريد. ما تستناش العرق يقف. وما تديش شراب لشخص مشوش أو فاقد الوعي.\n\nالاحتياج الفوري هو التبريد والمساعدة، مع متابعة الحالة لأي علامة طوارئ.",
+      "spokenTextSHA256": "c4b7cb1ba0fd1f7cc95b9eb29930e6dc32a789591b82aae3fa378f909251bb34",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "c4b7cb1ba0fd1f7cc95b9eb29930e6dc32a789591b82aae3fa378f909251bb34",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. رقم الإسعاف في النص ١٢٣: واحد اتنين تلاتة. الرقم لمكان التدريب في مصر، مش حسب لغة الشرح.",
+      "deliverySHA256": "1a84fc8f81517ba12e2b81f8ff80fa532b6aa8c5065d25b3d084feae40b3dde6",
+      "deliverySha256": "1a84fc8f81517ba12e2b81f8ff80fa532b6aa8c5065d25b3d084feae40b3dde6",
+      "pronunciationCues": [
+        "رقم الإسعاف في النص ١٢٣: واحد اتنين تلاتة. الرقم لمكان التدريب في مصر، مش حسب لغة الشرح."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "ca7887bf3f09600908f92655df0bdff27f7453cc2b7e3410a34e5ed17088e57a",
+      "requestFingerprintSha256": "ca7887bf3f09600908f92655df0bdff27f7453cc2b7e3410a34e5ed17088e57a",
+      "caseId": "dizzy",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-ar-EG-E02-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8530a7008588642b054ab3822d0e61981419e1106bb654456752a851a12fbb6e"
+    },
+    {
+      "id": "S1-03-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a3e7418cb5e32596e944a5970c2f7ed22d271a3957de89a8d31ae5147e724439",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "زميل وقع في حفرة مستخبية. كاحله في وضع غريب، والألم شديد، ومش قادر يتحرك بأمان.",
+          "sha256": "9ea2907aa07e241537f47fd59a50d1dc8211953621b26dfc49fa92200342178b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "اتأكد إن المنطقة القريبة آمنة وحذّر الناس من الحفرة.",
+          "sha256": "a9d96ae3188f194a0d5b9a4d9d18db13d4eb22dc086d9c9e23f3a16aacb687ea"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "اطلب الإسعاف، واشرح المكان والألم الشديد ووضع الكاحل غير المعتاد وطريق الوصول. قل إنها إصابة مشتبه فيها بدل ما تجزم بالتشخيص.",
+          "sha256": "a38f10aeb766e429cc79d549625273f25e3d69006eea747ccb09e265f6cf9735"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "هدّيه وخليه ثابت. ما تعدّلش وضع الكاحل وما تخليهوش يمشي. قدّم رعاية مناسبة لأي نزيف عند اللزوم من غير ضغط على عظم ظاهر.",
+          "sha256": "5395f97ad7efd6c19d4852665c6f4bd2008903827b538322ed776f6705b74dc8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "احميه من البرد أو السخونة وخليك معاه. تحريكه أو تثبيت الطرف لازم يبقى في حدود التدريب وتوجيهات الطوارئ المناسبة.",
+          "sha256": "6c1831b962312b5b0c6d039997e474ab459aab626ae6bca11de5040abb11a8ce"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "خطة الإخلاء لازم تراعي الشخص المصاب اللي مش قادر يمشي؛ ما ترتجلش إنقاذًا ممكن يعرّضه أو يعرّضك للخطر.",
+          "sha256": "e3be32cf3f72adcd38a8810c4f69d5bb1927419ec42a1b41b686537c34f1e95f"
+        }
+      ],
+      "scientificMeaning": "زميل وقع في حفرة مستخبية. كاحله في وضع غريب، والألم شديد، ومش قادر يتحرك بأمان.\n\nاتأكد إن المنطقة القريبة آمنة وحذّر الناس من الحفرة.\n\nاطلب الإسعاف، واشرح المكان والألم الشديد ووضع الكاحل غير المعتاد وطريق الوصول. قل إنها إصابة مشتبه فيها بدل ما تجزم بالتشخيص.\n\nهدّيه وخليه ثابت. ما تعدّلش وضع الكاحل وما تخليهوش يمشي. قدّم رعاية مناسبة لأي نزيف عند اللزوم من غير ضغط على عظم ظاهر.\n\nاحميه من البرد أو السخونة وخليك معاه. تحريكه أو تثبيت الطرف لازم يبقى في حدود التدريب وتوجيهات الطوارئ المناسبة.\n\nخطة الإخلاء لازم تراعي الشخص المصاب اللي مش قادر يمشي؛ ما ترتجلش إنقاذًا ممكن يعرّضه أو يعرّضك للخطر.",
+      "displayText": "زميل وقع في حفرة مستخبية. كاحله في وضع غريب، والألم شديد، ومش قادر يتحرك بأمان.\n\nاتأكد إن المنطقة القريبة آمنة وحذّر الناس من الحفرة.\n\nاطلب الإسعاف، واشرح المكان والألم الشديد ووضع الكاحل غير المعتاد وطريق الوصول. قل إنها إصابة مشتبه فيها بدل ما تجزم بالتشخيص.\n\nهدّيه وخليه ثابت. ما تعدّلش وضع الكاحل وما تخليهوش يمشي. قدّم رعاية مناسبة لأي نزيف عند اللزوم من غير ضغط على عظم ظاهر.\n\nاحميه من البرد أو السخونة وخليك معاه. تحريكه أو تثبيت الطرف لازم يبقى في حدود التدريب وتوجيهات الطوارئ المناسبة.\n\nخطة الإخلاء لازم تراعي الشخص المصاب اللي مش قادر يمشي؛ ما ترتجلش إنقاذًا ممكن يعرّضه أو يعرّضك للخطر.",
+      "captionText": "زميل وقع في حفرة مستخبية. كاحله في وضع غريب، والألم شديد، ومش قادر يتحرك بأمان.\n\nاتأكد إن المنطقة القريبة آمنة وحذّر الناس من الحفرة.\n\nاطلب الإسعاف، واشرح المكان والألم الشديد ووضع الكاحل غير المعتاد وطريق الوصول. قل إنها إصابة مشتبه فيها بدل ما تجزم بالتشخيص.\n\nهدّيه وخليه ثابت. ما تعدّلش وضع الكاحل وما تخليهوش يمشي. قدّم رعاية مناسبة لأي نزيف عند اللزوم من غير ضغط على عظم ظاهر.\n\nاحميه من البرد أو السخونة وخليك معاه. تحريكه أو تثبيت الطرف لازم يبقى في حدود التدريب وتوجيهات الطوارئ المناسبة.\n\nخطة الإخلاء لازم تراعي الشخص المصاب اللي مش قادر يمشي؛ ما ترتجلش إنقاذًا ممكن يعرّضه أو يعرّضك للخطر.",
+      "spokenText": "زميل وقع في حفرة مستخبية. كاحله في وضع غريب، والألم شديد، ومش قادر يتحرك بأمان.\n\nاتأكد إن المنطقة القريبة آمنة وحذّر الناس من الحفرة.\n\nاطلب الإسعاف، واشرح المكان والألم الشديد ووضع الكاحل غير المعتاد وطريق الوصول. قل إنها إصابة مشتبه فيها بدل ما تجزم بالتشخيص.\n\nهدّيه وخليه ثابت. ما تعدّلش وضع الكاحل وما تخليهوش يمشي. قدّم رعاية مناسبة لأي نزيف عند اللزوم من غير ضغط على عظم ظاهر.\n\nاحميه من البرد أو السخونة وخليك معاه. تحريكه أو تثبيت الطرف لازم يبقى في حدود التدريب وتوجيهات الطوارئ المناسبة.\n\nخطة الإخلاء لازم تراعي الشخص المصاب اللي مش قادر يمشي؛ ما ترتجلش إنقاذ ممكن يعرّضه أو يعرّضك للخطر.",
+      "spokenTextSHA256": "1f03b59e9746e04e7078eba08914d891e87811abc75542dd6a6a74e5ff36d4bb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "إنقاذًا",
+          "spoken": "إنقاذ",
+          "occurrences": 1,
+          "purpose": "Remove formal case ending from Egyptian spoken adaptation without scientific change"
+        }
+      ],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "1f03b59e9746e04e7078eba08914d891e87811abc75542dd6a6a74e5ff36d4bb",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "7cd99ebc4ff0199c61c937fdf36de14519a6d68e035796ba5f5dba568e863f09",
+      "requestFingerprintSha256": "7cd99ebc4ff0199c61c937fdf36de14519a6d68e035796ba5f5dba568e863f09",
+      "caseId": "ankle",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-ar-EG-E03-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8530a7008588642b054ab3822d0e61981419e1106bb654456752a851a12fbb6e"
+    },
+    {
+      "id": "S1-03-ar-EG-E04-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a3e7418cb5e32596e944a5970c2f7ed22d271a3957de89a8d31ae5147e724439",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "الفريق لاحظ ريحة كيميائية غريبة وتهيجًا في العين أثناء الشغل جنب حقل مجاور. المادة ومدى انتشارها مش معروفين.",
+          "sha256": "f9ba6bbd9e6a6b3d49c7ad638038f63c8b4bf26441cde98af264c50703f57236"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "اعتبر المنطقة غير آمنة. حذّر الفريق وابعد عن المصدر المشتبه فيه؛ ما تروحش تستكشف الريحة.",
+          "sha256": "8935f5b385e670df8d06ee708b652f50a8a96df12dbe3c53116c0de039b6e839"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "امشِ في طريق آمن لهوا نضيف، عكس اتجاه الريح لو تقدر، مع اتباع خطة الموقع وتعليمات الطوارئ. ما تعدّيش خلال منطقة التعرض عشان توصل لنقطة تجمع تفضلها.",
+          "sha256": "5cd2247f4c052c96e89d711fd0c65e57f4182fa4da3927c2d44cf086baedc0a4"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "من مكان آمن، بلّغ المنسق عن الاشتباه في انتقال مادة كيميائية مع الهوا والمكان والناس المتأثرين والأعراض. اطلب نصيحة طبية لو في تعرض أو أعراض، وبشكل عاجل لو في صعوبة تنفس أو مرض شديد.",
+          "sha256": "bbcced2eb4f2fd2dbe2390e74b0e77024bfa374abe9206df27bb30da164de628"
+        },
+        {
+          "pointer": "/examples/3/reasoning/3",
+          "text": "في المنطقة الآمنة، استخدم غسل عين مناسب بميه نضيفة للتهيج واتبع التوجيه الطبي. اتأكد من وجود كل الناس، وما ترجعش إلا لما الجهة المسؤولة تعلن إن المكان آمن.",
+          "sha256": "ed82ac2c00e6a81ddf0c58fdced5513e9fcf69919f14664f4dcb373ec32ea9fe"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "التعرض المجهول عن طريق الهوا يحتاج انسحابًا ومساعدة، مش خطوات تنظيف الانسكاب الصغير.",
+          "sha256": "df90df524d010e7a58dc454c43d9b5ac95dd4fda10584689d3b399abbde6b825"
+        }
+      ],
+      "scientificMeaning": "الفريق لاحظ ريحة كيميائية غريبة وتهيجًا في العين أثناء الشغل جنب حقل مجاور. المادة ومدى انتشارها مش معروفين.\n\nاعتبر المنطقة غير آمنة. حذّر الفريق وابعد عن المصدر المشتبه فيه؛ ما تروحش تستكشف الريحة.\n\nامشِ في طريق آمن لهوا نضيف، عكس اتجاه الريح لو تقدر، مع اتباع خطة الموقع وتعليمات الطوارئ. ما تعدّيش خلال منطقة التعرض عشان توصل لنقطة تجمع تفضلها.\n\nمن مكان آمن، بلّغ المنسق عن الاشتباه في انتقال مادة كيميائية مع الهوا والمكان والناس المتأثرين والأعراض. اطلب نصيحة طبية لو في تعرض أو أعراض، وبشكل عاجل لو في صعوبة تنفس أو مرض شديد.\n\nفي المنطقة الآمنة، استخدم غسل عين مناسب بميه نضيفة للتهيج واتبع التوجيه الطبي. اتأكد من وجود كل الناس، وما ترجعش إلا لما الجهة المسؤولة تعلن إن المكان آمن.\n\nالتعرض المجهول عن طريق الهوا يحتاج انسحابًا ومساعدة، مش خطوات تنظيف الانسكاب الصغير.",
+      "displayText": "الفريق لاحظ ريحة كيميائية غريبة وتهيجًا في العين أثناء الشغل جنب حقل مجاور. المادة ومدى انتشارها مش معروفين.\n\nاعتبر المنطقة غير آمنة. حذّر الفريق وابعد عن المصدر المشتبه فيه؛ ما تروحش تستكشف الريحة.\n\nامشِ في طريق آمن لهوا نضيف، عكس اتجاه الريح لو تقدر، مع اتباع خطة الموقع وتعليمات الطوارئ. ما تعدّيش خلال منطقة التعرض عشان توصل لنقطة تجمع تفضلها.\n\nمن مكان آمن، بلّغ المنسق عن الاشتباه في انتقال مادة كيميائية مع الهوا والمكان والناس المتأثرين والأعراض. اطلب نصيحة طبية لو في تعرض أو أعراض، وبشكل عاجل لو في صعوبة تنفس أو مرض شديد.\n\nفي المنطقة الآمنة، استخدم غسل عين مناسب بميه نضيفة للتهيج واتبع التوجيه الطبي. اتأكد من وجود كل الناس، وما ترجعش إلا لما الجهة المسؤولة تعلن إن المكان آمن.\n\nالتعرض المجهول عن طريق الهوا يحتاج انسحابًا ومساعدة، مش خطوات تنظيف الانسكاب الصغير.",
+      "captionText": "الفريق لاحظ ريحة كيميائية غريبة وتهيجًا في العين أثناء الشغل جنب حقل مجاور. المادة ومدى انتشارها مش معروفين.\n\nاعتبر المنطقة غير آمنة. حذّر الفريق وابعد عن المصدر المشتبه فيه؛ ما تروحش تستكشف الريحة.\n\nامشِ في طريق آمن لهوا نضيف، عكس اتجاه الريح لو تقدر، مع اتباع خطة الموقع وتعليمات الطوارئ. ما تعدّيش خلال منطقة التعرض عشان توصل لنقطة تجمع تفضلها.\n\nمن مكان آمن، بلّغ المنسق عن الاشتباه في انتقال مادة كيميائية مع الهوا والمكان والناس المتأثرين والأعراض. اطلب نصيحة طبية لو في تعرض أو أعراض، وبشكل عاجل لو في صعوبة تنفس أو مرض شديد.\n\nفي المنطقة الآمنة، استخدم غسل عين مناسب بميه نضيفة للتهيج واتبع التوجيه الطبي. اتأكد من وجود كل الناس، وما ترجعش إلا لما الجهة المسؤولة تعلن إن المكان آمن.\n\nالتعرض المجهول عن طريق الهوا يحتاج انسحابًا ومساعدة، مش خطوات تنظيف الانسكاب الصغير.",
+      "spokenText": "الفريق لاحظ ريحة كيميائية غريبة وتهيج في العين أثناء الشغل جنب حقل مجاور. المادة ومدى انتشارها مش معروفين.\n\nاعتبر المنطقة غير آمنة. حذّر الفريق وابعد عن المصدر المشتبه فيه؛ ما تروحش تستكشف الريحة.\n\nامشِ في طريق آمن لهوا نضيف، عكس اتجاه الريح لو تقدر، مع اتباع خطة الموقع وتعليمات الطوارئ. ما تعدّيش خلال منطقة التعرض عشان توصل لنقطة تجمع تفضلها.\n\nمن مكان آمن، بلّغ المنسق عن الاشتباه في انتقال مادة كيميائية مع الهوا والمكان والناس المتأثرين والأعراض. اطلب نصيحة طبية لو في تعرض أو أعراض، وبشكل عاجل لو في صعوبة تنفس أو مرض شديد.\n\nفي المنطقة الآمنة، استخدم غسل عين مناسب بميه نضيفة للتهيج واتبع التوجيه الطبي. اتأكد من وجود كل الناس، وما ترجعش إلا لما الجهة المسؤولة تعلن إن المكان آمن.\n\nالتعرض المجهول عن طريق الهوا يحتاج انسحاب ومساعدة، مش خطوات تنظيف الانسكاب الصغير.",
+      "spokenTextSHA256": "40db90b85086c73ab4fea04b56e47e745562b44b147f000288544c48872b939a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "تهيجًا",
+          "spoken": "تهيج",
+          "occurrences": 1,
+          "purpose": "Remove formal case ending from Egyptian spoken adaptation without scientific change"
+        },
+        {
+          "written": "انسحابًا",
+          "spoken": "انسحاب",
+          "occurrences": 1,
+          "purpose": "Remove formal case ending from Egyptian spoken adaptation without scientific change"
+        }
+      ],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "40db90b85086c73ab4fea04b56e47e745562b44b147f000288544c48872b939a",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "2760babebc82b524ef113e18dad3029e0fb617c9fb63c259ed59295e8387eee4",
+      "requestFingerprintSha256": "2760babebc82b524ef113e18dad3029e0fb617c9fb63c259ed59295e8387eee4",
+      "caseId": "airborne",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-ar-EG-E04-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8530a7008588642b054ab3822d0e61981419e1106bb654456752a851a12fbb6e"
+    },
+    {
+      "id": "S1-03-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A colleague is splashed on the arm by a known corrosive liquid. The hazard label is visible and there is no other immediate danger in the surrounding area.",
+          "sha256": "301baafb06eb557daed685caca2484cc8e14370ef5d8e1acb71aef4f650f5033"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Assess the corrosive exposure without touching the liquid or contaminating yourself. Use the protection specified for assisting safely.",
+          "sha256": "576fac3e892839d365afccfecc26afd07cd458e20323b7772c63d323c7a7d254"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Call for urgent medical help. In Egypt, call 123 and give the exact location, the arm exposure, the person's condition and the product name if known. Ask a helper to retrieve the SDS without delaying assistance.",
+          "sha256": "a4842a5a87ecb5200625862f0809d6bc216fccfc5e2de13c014c125d715cce69"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Immediately begin the appropriate flushing with plentiful cool running water. For this exercise, the stated initial period is at least 15–20 minutes; that is not a universal endpoint. Continue as required by the product's first-aid guidance and medical responders.",
+          "sha256": "551b03dfb130a4a4850ce371f1e214826ff02e2d6d3d8ee5c5a74c6ee5ee6c80"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Remove contaminated clothing from the affected area while flushing if that can be done safely, and follow the SDS. Do not neutralize the material on the skin with another chemical. The practice uses a prop, not an actual corrosive substance or exposure.",
+          "sha256": "d4859383216e5c120fd2b9c8ded7928592b9e5fcefe08050a6514d00c68607d7"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Urgent flushing and the call for help can happen together; cleaning the floor must wait behind care for the exposed person.",
+          "sha256": "53b9a1e051ed091c4a32a92680043d021a05acc8a1e261c1997c4a05054bb257"
+        }
+      ],
+      "scientificMeaning": "A colleague is splashed on the arm by a known corrosive liquid. The hazard label is visible and there is no other immediate danger in the surrounding area.\n\nAssess the corrosive exposure without touching the liquid or contaminating yourself. Use the protection specified for assisting safely.\n\nCall for urgent medical help. In Egypt, call 123 and give the exact location, the arm exposure, the person's condition and the product name if known. Ask a helper to retrieve the SDS without delaying assistance.\n\nImmediately begin the appropriate flushing with plentiful cool running water. For this exercise, the stated initial period is at least 15–20 minutes; that is not a universal endpoint. Continue as required by the product's first-aid guidance and medical responders.\n\nRemove contaminated clothing from the affected area while flushing if that can be done safely, and follow the SDS. Do not neutralize the material on the skin with another chemical. The practice uses a prop, not an actual corrosive substance or exposure.\n\nUrgent flushing and the call for help can happen together; cleaning the floor must wait behind care for the exposed person.",
+      "displayText": "A colleague is splashed on the arm by a known corrosive liquid. The hazard label is visible and there is no other immediate danger in the surrounding area.\n\nAssess the corrosive exposure without touching the liquid or contaminating yourself. Use the protection specified for assisting safely.\n\nCall for urgent medical help. In Egypt, call 123 and give the exact location, the arm exposure, the person's condition and the product name if known. Ask a helper to retrieve the SDS without delaying assistance.\n\nImmediately begin the appropriate flushing with plentiful cool running water. For this exercise, the stated initial period is at least 15–20 minutes; that is not a universal endpoint. Continue as required by the product's first-aid guidance and medical responders.\n\nRemove contaminated clothing from the affected area while flushing if that can be done safely, and follow the SDS. Do not neutralize the material on the skin with another chemical. The practice uses a prop, not an actual corrosive substance or exposure.\n\nUrgent flushing and the call for help can happen together; cleaning the floor must wait behind care for the exposed person.",
+      "captionText": "A colleague is splashed on the arm by a known corrosive liquid. The hazard label is visible and there is no other immediate danger in the surrounding area.\n\nAssess the corrosive exposure without touching the liquid or contaminating yourself. Use the protection specified for assisting safely.\n\nCall for urgent medical help. In Egypt, call 123 and give the exact location, the arm exposure, the person's condition and the product name if known. Ask a helper to retrieve the SDS without delaying assistance.\n\nImmediately begin the appropriate flushing with plentiful cool running water. For this exercise, the stated initial period is at least 15–20 minutes; that is not a universal endpoint. Continue as required by the product's first-aid guidance and medical responders.\n\nRemove contaminated clothing from the affected area while flushing if that can be done safely, and follow the SDS. Do not neutralize the material on the skin with another chemical. The practice uses a prop, not an actual corrosive substance or exposure.\n\nUrgent flushing and the call for help can happen together; cleaning the floor must wait behind care for the exposed person.",
+      "spokenText": "A colleague is splashed on the arm by a known corrosive liquid. The hazard label is visible and there is no other immediate danger in the surrounding area.\n\nAssess the corrosive exposure without touching the liquid or contaminating yourself. Use the protection specified for assisting safely.\n\nCall for urgent medical help. In Egypt, call 123 and give the exact location, the arm exposure, the person's condition and the product name if known. Ask a helper to retrieve the SDS without delaying assistance.\n\nImmediately begin the appropriate flushing with plentiful cool running water. For this exercise, the stated initial period is at least 15–20 minutes; that is not a universal endpoint. Continue as required by the product's first-aid guidance and medical responders.\n\nRemove contaminated clothing from the affected area while flushing if that can be done safely, and follow the SDS. Do not neutralize the material on the skin with another chemical. The practice uses a prop, not an actual corrosive substance or exposure.\n\nUrgent flushing and the call for help can happen together; cleaning the floor must wait behind care for the exposed person.",
+      "spokenTextSHA256": "9748bc7b7de99942e252e623a56491ec058f0b0babd47807f4816d746a2fd6af",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "9748bc7b7de99942e252e623a56491ec058f0b0babd47807f4816d746a2fd6af",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. The emergency telephone number 123 is spoken as one two three; the setting remains Egypt. The range 15–20 is fifteen to twenty minutes, not a subtraction. Preserve at least and the statement that this is not a universal stopping point.",
+      "deliverySHA256": "739638f12f899a65b88f2152cc22a44226233465073bb0db582d20a982ce884c",
+      "deliverySha256": "739638f12f899a65b88f2152cc22a44226233465073bb0db582d20a982ce884c",
+      "pronunciationCues": [
+        "The emergency telephone number 123 is spoken as one two three; the setting remains Egypt.",
+        "The range 15–20 is fifteen to twenty minutes, not a subtraction. Preserve at least and the statement that this is not a universal stopping point."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "4cbecb74706674b5d8a5c3065640d6e194ceec70fea689e8a4047bee7ae94efe",
+      "requestFingerprintSha256": "4cbecb74706674b5d8a5c3065640d6e194ceec70fea689e8a4047bee7ae94efe",
+      "caseId": "chemical-arm",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-en-E01-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "76d694bfb81cbac0a55052466d6328c06a1ffdb78b2d963510cf6b37ba84d3ab"
+    },
+    {
+      "id": "S1-03-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A partner working in the sun has heavy sweating, headache and nausea. They remain alert and can swallow normally; the vehicle is far away.",
+          "sha256": "c88b036207c67fa38e9bd4b74d69d4c282e21186fdd1973e04887ccbcdaf7fc9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Stop work and use the nearest safe cool shade rather than making them walk a long distance.",
+          "sha256": "e50fc96ff0a1e6bb17cc121ddf38cb51351f05a21eaba0e26e3ab9f2d6c26c66"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Alert the supervisor with the location and symptoms and arrange medical assessment. Keep someone with the person.",
+          "sha256": "cf910a84f7494c820acd88b3e1f5b1646d4af1b136c7c5539e910bfee152b541"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Loosen unnecessary clothing, use cool wet cloths on the head, neck and armpits, fan them and offer small sips of cool water while swallowing remains safe.",
+          "sha256": "ca94704c626c5931b75f65fe344a69c6110b544a6fa2daa5cb0167ef56abf7fc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "If confusion, collapse or deterioration appears, call 123 urgently and continue cooling. Do not wait for sweating to stop. Do not give drinks to someone confused or unconscious.",
+          "sha256": "7bd348b4e7e5940d80012d471babf20ad6a09e786ba217ba0d4c116828e874cd"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "The immediate need is cooling and help, with continued observation for an emergency.",
+          "sha256": "f52b24cfee8f245704a4a9bb93bb87856e527bfc6810878735f0370bf7265145"
+        }
+      ],
+      "scientificMeaning": "A partner working in the sun has heavy sweating, headache and nausea. They remain alert and can swallow normally; the vehicle is far away.\n\nStop work and use the nearest safe cool shade rather than making them walk a long distance.\n\nAlert the supervisor with the location and symptoms and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, use cool wet cloths on the head, neck and armpits, fan them and offer small sips of cool water while swallowing remains safe.\n\nIf confusion, collapse or deterioration appears, call 123 urgently and continue cooling. Do not wait for sweating to stop. Do not give drinks to someone confused or unconscious.\n\nThe immediate need is cooling and help, with continued observation for an emergency.",
+      "displayText": "A partner working in the sun has heavy sweating, headache and nausea. They remain alert and can swallow normally; the vehicle is far away.\n\nStop work and use the nearest safe cool shade rather than making them walk a long distance.\n\nAlert the supervisor with the location and symptoms and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, use cool wet cloths on the head, neck and armpits, fan them and offer small sips of cool water while swallowing remains safe.\n\nIf confusion, collapse or deterioration appears, call 123 urgently and continue cooling. Do not wait for sweating to stop. Do not give drinks to someone confused or unconscious.\n\nThe immediate need is cooling and help, with continued observation for an emergency.",
+      "captionText": "A partner working in the sun has heavy sweating, headache and nausea. They remain alert and can swallow normally; the vehicle is far away.\n\nStop work and use the nearest safe cool shade rather than making them walk a long distance.\n\nAlert the supervisor with the location and symptoms and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, use cool wet cloths on the head, neck and armpits, fan them and offer small sips of cool water while swallowing remains safe.\n\nIf confusion, collapse or deterioration appears, call 123 urgently and continue cooling. Do not wait for sweating to stop. Do not give drinks to someone confused or unconscious.\n\nThe immediate need is cooling and help, with continued observation for an emergency.",
+      "spokenText": "A partner working in the sun has heavy sweating, headache and nausea. They remain alert and can swallow normally; the vehicle is far away.\n\nStop work and use the nearest safe cool shade rather than making them walk a long distance.\n\nAlert the supervisor with the location and symptoms and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, use cool wet cloths on the head, neck and armpits, fan them and offer small sips of cool water while swallowing remains safe.\n\nIf confusion, collapse or deterioration appears, call 123 urgently and continue cooling. Do not wait for sweating to stop. Do not give drinks to someone confused or unconscious.\n\nThe immediate need is cooling and help, with continued observation for an emergency.",
+      "spokenTextSHA256": "a9ca4df1a5732b654b2f429e354af2505adae96616b9f40dcd81af51f88ec277",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "a9ca4df1a5732b654b2f429e354af2505adae96616b9f40dcd81af51f88ec277",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. The emergency telephone number 123 is spoken as one two three; the setting remains Egypt.",
+      "deliverySHA256": "8d94dc2747430d71a5c7877da90b2afb3603033728a67bf57aac9a900b3a102a",
+      "deliverySha256": "8d94dc2747430d71a5c7877da90b2afb3603033728a67bf57aac9a900b3a102a",
+      "pronunciationCues": [
+        "The emergency telephone number 123 is spoken as one two three; the setting remains Egypt."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "823eb08201131bdbbc5dd00deb016ce2cfc682023a7be174e715a39d2feee05d",
+      "requestFingerprintSha256": "823eb08201131bdbbc5dd00deb016ce2cfc682023a7be174e715a39d2feee05d",
+      "caseId": "dizzy",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-en-E02-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "76d694bfb81cbac0a55052466d6328c06a1ffdb78b2d963510cf6b37ba84d3ab"
+    },
+    {
+      "id": "S1-03-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A colleague falls into a hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely.",
+          "sha256": "91c23430acae3fbeab6ff014ca84a88e895effbdec521cee27df2bc7140a77f9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Check that the immediate area is safe and warn other people about the hole.",
+          "sha256": "d12e506c3cc24649651152739917d92eea89a136468740600b606d182b6c1126"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Call emergency medical help and describe the location, severe pain, unusual ankle position and access route. Report a suspected injury rather than claiming a confirmed diagnosis.",
+          "sha256": "b84bdfc280dd4ceb846cf49f76f1495019fdf89b8faa9de75047a778f89a2d9b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Keep the person calm and still. Do not straighten the ankle or make them walk. Provide appropriate bleeding care if needed without pressing onto exposed bone.",
+          "sha256": "007d3d9c7047dd81367fe6bf6b6b2e2f5e96f0e5a8a16976fbb10674f5dbf297"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Protect them from chilling or overheating and stay with them. Movement or immobilization must remain within suitable training and emergency guidance.",
+          "sha256": "f959170127a87e9cc66b4ccf672d2efc4fa51ed49dbb724d513211a1a5655cd2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "An evacuation plan must allow for an injured person who cannot walk; do not improvise a hazardous rescue.",
+          "sha256": "cfca7e4d463e17cd821fea43355c8f73a04d3871df91146ffd903ef647f51b09"
+        }
+      ],
+      "scientificMeaning": "A colleague falls into a hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely.\n\nCheck that the immediate area is safe and warn other people about the hole.\n\nCall emergency medical help and describe the location, severe pain, unusual ankle position and access route. Report a suspected injury rather than claiming a confirmed diagnosis.\n\nKeep the person calm and still. Do not straighten the ankle or make them walk. Provide appropriate bleeding care if needed without pressing onto exposed bone.\n\nProtect them from chilling or overheating and stay with them. Movement or immobilization must remain within suitable training and emergency guidance.\n\nAn evacuation plan must allow for an injured person who cannot walk; do not improvise a hazardous rescue.",
+      "displayText": "A colleague falls into a hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely.\n\nCheck that the immediate area is safe and warn other people about the hole.\n\nCall emergency medical help and describe the location, severe pain, unusual ankle position and access route. Report a suspected injury rather than claiming a confirmed diagnosis.\n\nKeep the person calm and still. Do not straighten the ankle or make them walk. Provide appropriate bleeding care if needed without pressing onto exposed bone.\n\nProtect them from chilling or overheating and stay with them. Movement or immobilization must remain within suitable training and emergency guidance.\n\nAn evacuation plan must allow for an injured person who cannot walk; do not improvise a hazardous rescue.",
+      "captionText": "A colleague falls into a hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely.\n\nCheck that the immediate area is safe and warn other people about the hole.\n\nCall emergency medical help and describe the location, severe pain, unusual ankle position and access route. Report a suspected injury rather than claiming a confirmed diagnosis.\n\nKeep the person calm and still. Do not straighten the ankle or make them walk. Provide appropriate bleeding care if needed without pressing onto exposed bone.\n\nProtect them from chilling or overheating and stay with them. Movement or immobilization must remain within suitable training and emergency guidance.\n\nAn evacuation plan must allow for an injured person who cannot walk; do not improvise a hazardous rescue.",
+      "spokenText": "A colleague falls into a hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely.\n\nCheck that the immediate area is safe and warn other people about the hole.\n\nCall emergency medical help and describe the location, severe pain, unusual ankle position and access route. Report a suspected injury rather than claiming a confirmed diagnosis.\n\nKeep the person calm and still. Do not straighten the ankle or make them walk. Provide appropriate bleeding care if needed without pressing onto exposed bone.\n\nProtect them from chilling or overheating and stay with them. Movement or immobilization must remain within suitable training and emergency guidance.\n\nAn evacuation plan must allow for an injured person who cannot walk; do not improvise a hazardous rescue.",
+      "spokenTextSHA256": "7652e8c6bd15da07ea6d60ca8c0e11c8adfaf95358700aba4f9c03ea12819f9f",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "7652e8c6bd15da07ea6d60ca8c0e11c8adfaf95358700aba4f9c03ea12819f9f",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "4b4b53e5c26ef35197bd511d2e388d6aa169e294ab8345bbb2dae5ca95227882",
+      "requestFingerprintSha256": "4b4b53e5c26ef35197bd511d2e388d6aa169e294ab8345bbb2dae5ca95227882",
+      "caseId": "ankle",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-en-E03-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "76d694bfb81cbac0a55052466d6328c06a1ffdb78b2d963510cf6b37ba84d3ab"
+    },
+    {
+      "id": "S1-03-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "The team notices an unfamiliar chemical smell and eye irritation while working near an adjacent field. The substance and the extent of the release are unknown.",
+          "sha256": "2cd9cc93df549217253848364a1b4f76a75585c071bcf40a2ba343ea6c97e03e"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Treat the area as unsafe. Warn the team and move away from the suspected release; do not investigate the smell.",
+          "sha256": "5bbb1a4fb2da8bf0f12b6ee6fe12897fac8b4332e9319b882552183775df03e0"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Use a safe route to fresh air, upwind if possible, following the site's plan and emergency instructions. Do not cross the release to reach a preferred meeting point.",
+          "sha256": "7762d54b18c0fadab3dcbaebf7927d92ef6ed634699ae5e4acccad05bb973d4d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "From safety, report the suspected drift, location, affected people and symptoms to the coordinator. Obtain medical advice for exposure or symptoms, urgently for breathing difficulty or severe illness.",
+          "sha256": "1feea2ec1f7894ea7cdd1c7e81927441f32451262fe190d73b00ff78a4c234c9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/3",
+          "text": "In the safe area, use appropriate clean-water eye flushing for the irritation and follow medical guidance. Account for everyone and do not return until the area is declared safe by the responsible authority.",
+          "sha256": "431507fcae3219df33bee7702cb88333245cf38f0e230aeba53fe66b239e6ce7"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Unknown airborne exposure calls for withdrawal and help, not the small-spill cleanup sequence.",
+          "sha256": "1bd1be8976729068142e848ab79ab954fb50a96762b34f3c98101acb1c8f2ac2"
+        }
+      ],
+      "scientificMeaning": "The team notices an unfamiliar chemical smell and eye irritation while working near an adjacent field. The substance and the extent of the release are unknown.\n\nTreat the area as unsafe. Warn the team and move away from the suspected release; do not investigate the smell.\n\nUse a safe route to fresh air, upwind if possible, following the site's plan and emergency instructions. Do not cross the release to reach a preferred meeting point.\n\nFrom safety, report the suspected drift, location, affected people and symptoms to the coordinator. Obtain medical advice for exposure or symptoms, urgently for breathing difficulty or severe illness.\n\nIn the safe area, use appropriate clean-water eye flushing for the irritation and follow medical guidance. Account for everyone and do not return until the area is declared safe by the responsible authority.\n\nUnknown airborne exposure calls for withdrawal and help, not the small-spill cleanup sequence.",
+      "displayText": "The team notices an unfamiliar chemical smell and eye irritation while working near an adjacent field. The substance and the extent of the release are unknown.\n\nTreat the area as unsafe. Warn the team and move away from the suspected release; do not investigate the smell.\n\nUse a safe route to fresh air, upwind if possible, following the site's plan and emergency instructions. Do not cross the release to reach a preferred meeting point.\n\nFrom safety, report the suspected drift, location, affected people and symptoms to the coordinator. Obtain medical advice for exposure or symptoms, urgently for breathing difficulty or severe illness.\n\nIn the safe area, use appropriate clean-water eye flushing for the irritation and follow medical guidance. Account for everyone and do not return until the area is declared safe by the responsible authority.\n\nUnknown airborne exposure calls for withdrawal and help, not the small-spill cleanup sequence.",
+      "captionText": "The team notices an unfamiliar chemical smell and eye irritation while working near an adjacent field. The substance and the extent of the release are unknown.\n\nTreat the area as unsafe. Warn the team and move away from the suspected release; do not investigate the smell.\n\nUse a safe route to fresh air, upwind if possible, following the site's plan and emergency instructions. Do not cross the release to reach a preferred meeting point.\n\nFrom safety, report the suspected drift, location, affected people and symptoms to the coordinator. Obtain medical advice for exposure or symptoms, urgently for breathing difficulty or severe illness.\n\nIn the safe area, use appropriate clean-water eye flushing for the irritation and follow medical guidance. Account for everyone and do not return until the area is declared safe by the responsible authority.\n\nUnknown airborne exposure calls for withdrawal and help, not the small-spill cleanup sequence.",
+      "spokenText": "The team notices an unfamiliar chemical smell and eye irritation while working near an adjacent field. The substance and the extent of the release are unknown.\n\nTreat the area as unsafe. Warn the team and move away from the suspected release; do not investigate the smell.\n\nUse a safe route to fresh air, upwind if possible, following the site's plan and emergency instructions. Do not cross the release to reach a preferred meeting point.\n\nFrom safety, report the suspected drift, location, affected people and symptoms to the coordinator. Obtain medical advice for exposure or symptoms, urgently for breathing difficulty or severe illness.\n\nIn the safe area, use appropriate clean-water eye flushing for the irritation and follow medical guidance. Account for everyone and do not return until the area is declared safe by the responsible authority.\n\nUnknown airborne exposure calls for withdrawal and help, not the small-spill cleanup sequence.",
+      "spokenTextSHA256": "983881d9897e0d0fd6c6b1ed16363fda1a8ee48996caafc2e35ea4b5c832e9e6",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "983881d9897e0d0fd6c6b1ed16363fda1a8ee48996caafc2e35ea4b5c832e9e6",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "d488be5a615aba2e5d793e68c644b1bd71002d639afba9925b0a631149d32b3d",
+      "requestFingerprintSha256": "d488be5a615aba2e5d793e68c644b1bd71002d639afba9925b0a631149d32b3d",
+      "caseId": "airborne",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-en-E04-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "76d694bfb81cbac0a55052466d6328c06a1ffdb78b2d963510cf6b37ba84d3ab"
+    },
+    {
+      "id": "S1-03-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Un liquido corrosivo conosciuto schizza sul braccio di un collega. L'etichetta di pericolo è visibile e non ci sono altri pericoli immediati nell'area.",
+          "sha256": "4ddfe749451ee095e68880dda23fb35f13ca6a637cefba70c7a9de6a22519ff3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Valuta l'esposizione corrosiva senza toccare il liquido né contaminarti. Usa la protezione indicata per aiutare in sicurezza.",
+          "sha256": "c5263347e6a6ddfb7ee9ca9ec05454c014c8588121bcb339abb0a8ec91cb69a1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Chiama subito il soccorso medico. In Egitto chiama il 123 e comunica luogo esatto, esposizione del braccio, condizioni della persona e nome del prodotto se noto. Chiedi a un aiutante di portare la SDS senza ritardare l'assistenza.",
+          "sha256": "8394546c477290a4c81c47542845b456e460879b257e43dd0df484667bd65697"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Inizia immediatamente un lavaggio appropriato con abbondante acqua corrente fresca. Per questo esercizio, il periodo iniziale indicato è almeno 15–20 minuti: non è una scadenza universale. Prosegui quanto richiesto dalle istruzioni di primo soccorso del prodotto e dai soccorritori.",
+          "sha256": "0f80ec6cb0ed1540357d3c27cef5d81b1a7cfabcb278d5279becd031dd5e1ade"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Rimuovi gli indumenti contaminati dalla zona colpita durante il lavaggio, se puoi farlo in sicurezza, e segui la SDS. Non tentare di neutralizzare il prodotto sulla pelle con un'altra sostanza chimica. La pratica usa un supporto didattico, non un corrosivo o un'esposizione reale.",
+          "sha256": "b2e50bfd620dfb59538852bb5e6868e8c10ec06bb97edbab484695e94c5c375f"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Il lavaggio urgente e la chiamata possono avvenire insieme; pulire il pavimento viene dopo la cura della persona esposta.",
+          "sha256": "01c76fb243d0ad3f91f0169d6de76b70b8ab985e97eb99688e9a93d6ddf3030f"
+        }
+      ],
+      "scientificMeaning": "Un liquido corrosivo conosciuto schizza sul braccio di un collega. L'etichetta di pericolo è visibile e non ci sono altri pericoli immediati nell'area.\n\nValuta l'esposizione corrosiva senza toccare il liquido né contaminarti. Usa la protezione indicata per aiutare in sicurezza.\n\nChiama subito il soccorso medico. In Egitto chiama il 123 e comunica luogo esatto, esposizione del braccio, condizioni della persona e nome del prodotto se noto. Chiedi a un aiutante di portare la SDS senza ritardare l'assistenza.\n\nInizia immediatamente un lavaggio appropriato con abbondante acqua corrente fresca. Per questo esercizio, il periodo iniziale indicato è almeno 15–20 minuti: non è una scadenza universale. Prosegui quanto richiesto dalle istruzioni di primo soccorso del prodotto e dai soccorritori.\n\nRimuovi gli indumenti contaminati dalla zona colpita durante il lavaggio, se puoi farlo in sicurezza, e segui la SDS. Non tentare di neutralizzare il prodotto sulla pelle con un'altra sostanza chimica. La pratica usa un supporto didattico, non un corrosivo o un'esposizione reale.\n\nIl lavaggio urgente e la chiamata possono avvenire insieme; pulire il pavimento viene dopo la cura della persona esposta.",
+      "displayText": "Un liquido corrosivo conosciuto schizza sul braccio di un collega. L'etichetta di pericolo è visibile e non ci sono altri pericoli immediati nell'area.\n\nValuta l'esposizione corrosiva senza toccare il liquido né contaminarti. Usa la protezione indicata per aiutare in sicurezza.\n\nChiama subito il soccorso medico. In Egitto chiama il 123 e comunica luogo esatto, esposizione del braccio, condizioni della persona e nome del prodotto se noto. Chiedi a un aiutante di portare la SDS senza ritardare l'assistenza.\n\nInizia immediatamente un lavaggio appropriato con abbondante acqua corrente fresca. Per questo esercizio, il periodo iniziale indicato è almeno 15–20 minuti: non è una scadenza universale. Prosegui quanto richiesto dalle istruzioni di primo soccorso del prodotto e dai soccorritori.\n\nRimuovi gli indumenti contaminati dalla zona colpita durante il lavaggio, se puoi farlo in sicurezza, e segui la SDS. Non tentare di neutralizzare il prodotto sulla pelle con un'altra sostanza chimica. La pratica usa un supporto didattico, non un corrosivo o un'esposizione reale.\n\nIl lavaggio urgente e la chiamata possono avvenire insieme; pulire il pavimento viene dopo la cura della persona esposta.",
+      "captionText": "Un liquido corrosivo conosciuto schizza sul braccio di un collega. L'etichetta di pericolo è visibile e non ci sono altri pericoli immediati nell'area.\n\nValuta l'esposizione corrosiva senza toccare il liquido né contaminarti. Usa la protezione indicata per aiutare in sicurezza.\n\nChiama subito il soccorso medico. In Egitto chiama il 123 e comunica luogo esatto, esposizione del braccio, condizioni della persona e nome del prodotto se noto. Chiedi a un aiutante di portare la SDS senza ritardare l'assistenza.\n\nInizia immediatamente un lavaggio appropriato con abbondante acqua corrente fresca. Per questo esercizio, il periodo iniziale indicato è almeno 15–20 minuti: non è una scadenza universale. Prosegui quanto richiesto dalle istruzioni di primo soccorso del prodotto e dai soccorritori.\n\nRimuovi gli indumenti contaminati dalla zona colpita durante il lavaggio, se puoi farlo in sicurezza, e segui la SDS. Non tentare di neutralizzare il prodotto sulla pelle con un'altra sostanza chimica. La pratica usa un supporto didattico, non un corrosivo o un'esposizione reale.\n\nIl lavaggio urgente e la chiamata possono avvenire insieme; pulire il pavimento viene dopo la cura della persona esposta.",
+      "spokenText": "Un liquido corrosivo conosciuto schizza sul braccio di un collega. L'etichetta di pericolo è visibile e non ci sono altri pericoli immediati nell'area.\n\nValuta l'esposizione corrosiva senza toccare il liquido né contaminarti. Usa la protezione indicata per aiutare in sicurezza.\n\nChiama subito il soccorso medico. In Egitto chiama il 123 e comunica luogo esatto, esposizione del braccio, condizioni della persona e nome del prodotto se noto. Chiedi a un aiutante di portare la SDS senza ritardare l'assistenza.\n\nInizia immediatamente un lavaggio appropriato con abbondante acqua corrente fresca. Per questo esercizio, il periodo iniziale indicato è almeno 15–20 minuti: non è una scadenza universale. Prosegui quanto richiesto dalle istruzioni di primo soccorso del prodotto e dai soccorritori.\n\nRimuovi gli indumenti contaminati dalla zona colpita durante il lavaggio, se puoi farlo in sicurezza, e segui la SDS. Non tentare di neutralizzare il prodotto sulla pelle con un'altra sostanza chimica. La pratica usa un supporto didattico, non un corrosivo o un'esposizione reale.\n\nIl lavaggio urgente e la chiamata possono avvenire insieme; pulire il pavimento viene dopo la cura della persona esposta.",
+      "spokenTextSHA256": "3790feea7f80daac5d74358c905bd73a9fb3bb07aaadcbcf2ec35e8152f95711",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "3790feea7f80daac5d74358c905bd73a9fb3bb07aaadcbcf2ec35e8152f95711",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Il numero telefonico di emergenza 123 si legge uno due tre; lo scenario rimane in Egitto. La notazione 15–20 indica quindici-venti minuti, non una sottrazione. Conserva almeno e il fatto che non si tratta di una scadenza universale.",
+      "deliverySHA256": "036c911b9d2cab790680e8daab2f96c4d7fd5e341da7d4557197a7c391bdd701",
+      "deliverySha256": "036c911b9d2cab790680e8daab2f96c4d7fd5e341da7d4557197a7c391bdd701",
+      "pronunciationCues": [
+        "Il numero telefonico di emergenza 123 si legge uno due tre; lo scenario rimane in Egitto.",
+        "La notazione 15–20 indica quindici-venti minuti, non una sottrazione. Conserva almeno e il fatto che non si tratta di una scadenza universale."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "5e28aa5473f873cbc29e4e37a2aa0ed40ba5f7a1dad1119dca7d39e6d3b91204",
+      "requestFingerprintSha256": "5e28aa5473f873cbc29e4e37a2aa0ed40ba5f7a1dad1119dca7d39e6d3b91204",
+      "caseId": "chemical-arm",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-it-E01-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "02f1ad9852c82dc3917fe3d4c77a64fe6b07f46bb56956ec999b36adaacba288"
+    },
+    {
+      "id": "S1-03-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un compagno che lavora al sole suda molto e ha mal di testa e nausea. Rimane vigile e deglutisce normalmente; il veicolo è lontano.",
+          "sha256": "8ba6f9c50ae4b5274b42d7d6baf2f4816748ad373159cd981dace0ba8c58176b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Interrompi il lavoro e usa l'ombra fresca e sicura più vicina invece di farlo camminare a lungo.",
+          "sha256": "2aece0e0f6bf1a45af2a371557cbdd451b84b03b62728837f59c43a99991a846"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Avvisa il responsabile comunicando posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.",
+          "sha256": "12ceb9532c55ec3d50683a83737db986bf3a72850eab8f8272d5579c446e5a6e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Allenta gli indumenti superflui, metti panni freschi bagnati su testa, collo e ascelle, fai circolare l'aria e offri piccoli sorsi d'acqua fresca finché deglutire resta sicuro.",
+          "sha256": "8fdeacb92cb8d06dadd8fef30dcf403046aa1d0296263790ae106add8821a179"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "Se compaiono confusione, collasso o peggioramento, chiama subito il 123 e continua a raffreddare. Non aspettare che smetta di sudare. Non dare bevande a chi è confuso o incosciente.",
+          "sha256": "b2befd1867be3f4167fba53d770a768c44fbcbdd78547aa36b36fb91f294411a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "La necessità immediata è raffreddare e chiedere aiuto, osservando continuamente eventuali segni d'emergenza.",
+          "sha256": "3ae5a0fdc3ca5282ee42c6c76d66f116955a9f95c690cc531bc0157a83b3d003"
+        }
+      ],
+      "scientificMeaning": "Un compagno che lavora al sole suda molto e ha mal di testa e nausea. Rimane vigile e deglutisce normalmente; il veicolo è lontano.\n\nInterrompi il lavoro e usa l'ombra fresca e sicura più vicina invece di farlo camminare a lungo.\n\nAvvisa il responsabile comunicando posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti superflui, metti panni freschi bagnati su testa, collo e ascelle, fai circolare l'aria e offri piccoli sorsi d'acqua fresca finché deglutire resta sicuro.\n\nSe compaiono confusione, collasso o peggioramento, chiama subito il 123 e continua a raffreddare. Non aspettare che smetta di sudare. Non dare bevande a chi è confuso o incosciente.\n\nLa necessità immediata è raffreddare e chiedere aiuto, osservando continuamente eventuali segni d'emergenza.",
+      "displayText": "Un compagno che lavora al sole suda molto e ha mal di testa e nausea. Rimane vigile e deglutisce normalmente; il veicolo è lontano.\n\nInterrompi il lavoro e usa l'ombra fresca e sicura più vicina invece di farlo camminare a lungo.\n\nAvvisa il responsabile comunicando posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti superflui, metti panni freschi bagnati su testa, collo e ascelle, fai circolare l'aria e offri piccoli sorsi d'acqua fresca finché deglutire resta sicuro.\n\nSe compaiono confusione, collasso o peggioramento, chiama subito il 123 e continua a raffreddare. Non aspettare che smetta di sudare. Non dare bevande a chi è confuso o incosciente.\n\nLa necessità immediata è raffreddare e chiedere aiuto, osservando continuamente eventuali segni d'emergenza.",
+      "captionText": "Un compagno che lavora al sole suda molto e ha mal di testa e nausea. Rimane vigile e deglutisce normalmente; il veicolo è lontano.\n\nInterrompi il lavoro e usa l'ombra fresca e sicura più vicina invece di farlo camminare a lungo.\n\nAvvisa il responsabile comunicando posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti superflui, metti panni freschi bagnati su testa, collo e ascelle, fai circolare l'aria e offri piccoli sorsi d'acqua fresca finché deglutire resta sicuro.\n\nSe compaiono confusione, collasso o peggioramento, chiama subito il 123 e continua a raffreddare. Non aspettare che smetta di sudare. Non dare bevande a chi è confuso o incosciente.\n\nLa necessità immediata è raffreddare e chiedere aiuto, osservando continuamente eventuali segni d'emergenza.",
+      "spokenText": "Un compagno che lavora al sole suda molto e ha mal di testa e nausea. Rimane vigile e deglutisce normalmente; il veicolo è lontano.\n\nInterrompi il lavoro e usa l'ombra fresca e sicura più vicina invece di farlo camminare a lungo.\n\nAvvisa il responsabile comunicando posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti superflui, metti panni freschi bagnati su testa, collo e ascelle, fai circolare l'aria e offri piccoli sorsi d'acqua fresca finché deglutire resta sicuro.\n\nSe compaiono confusione, collasso o peggioramento, chiama subito il 123 e continua a raffreddare. Non aspettare che smetta di sudare. Non dare bevande a chi è confuso o incosciente.\n\nLa necessità immediata è raffreddare e chiedere aiuto, osservando continuamente eventuali segni d'emergenza.",
+      "spokenTextSHA256": "42cf5a80cac05537bb994510fba49f283c9f8a4818e86528a91b1f9c62f0018d",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "42cf5a80cac05537bb994510fba49f283c9f8a4818e86528a91b1f9c62f0018d",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Il numero telefonico di emergenza 123 si legge uno due tre; lo scenario rimane in Egitto.",
+      "deliverySHA256": "91865e73b200c11aa439e0d3b1218b9ea73ab00aa4b1d4f02baa721034e4af81",
+      "deliverySha256": "91865e73b200c11aa439e0d3b1218b9ea73ab00aa4b1d4f02baa721034e4af81",
+      "pronunciationCues": [
+        "Il numero telefonico di emergenza 123 si legge uno due tre; lo scenario rimane in Egitto."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "328c27c5affae8dcc7118995bcbb43c374829b0f9e8cbcd1b39db8a5000596c0",
+      "requestFingerprintSha256": "328c27c5affae8dcc7118995bcbb43c374829b0f9e8cbcd1b39db8a5000596c0",
+      "caseId": "dizzy",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-it-E02-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "02f1ad9852c82dc3917fe3d4c77a64fe6b07f46bb56956ec999b36adaacba288"
+    },
+    {
+      "id": "S1-03-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un collega cade in una buca nascosta. La caviglia è in una posizione insolita, il dolore è forte e non può muoversi in sicurezza.",
+          "sha256": "105651c5f76206ea91973ea51d8e3e5daf0427b3c698693b9a440f1da2b52615"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Verifica che l'area immediata sia sicura e avvisa gli altri della buca.",
+          "sha256": "32431bab9f10432a55e4dc980caf72267e9dcf5ca193ca42c8003390b4589ed9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Chiama il soccorso medico e descrivi posizione, forte dolore, posizione insolita della caviglia e via d'accesso. Segnala una lesione sospetta, senza dichiarare certa una diagnosi.",
+          "sha256": "3d5bc20beeade232cc0c161d6d6a65d7da51eaa37daec3804d946e838fc46c54"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Calma la persona e mantienila ferma. Non raddrizzare la caviglia e non farla camminare. Se necessario, presta un'assistenza appropriata per una perdita di sangue senza premere su un osso esposto.",
+          "sha256": "6ddb2f0ea42dea4729e250c997373910d97a185f95a7f59625aa7a0b11decfce"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Proteggila dal freddo o dal caldo e resta con lei. Movimento o immobilizzazione devono rientrare nella formazione e nelle indicazioni d'emergenza appropriate.",
+          "sha256": "57bebf8026a40da6087fffd05f17e41144aeb80d8b2f5e080be08e23d229d944"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Un piano di evacuazione deve considerare la persona ferita che non può camminare; non improvvisare un soccorso pericoloso.",
+          "sha256": "1e2dcfdb50c09c06fec5415c481e08d614595a5e7ee0eef03445ab768548398b"
+        }
+      ],
+      "scientificMeaning": "Un collega cade in una buca nascosta. La caviglia è in una posizione insolita, il dolore è forte e non può muoversi in sicurezza.\n\nVerifica che l'area immediata sia sicura e avvisa gli altri della buca.\n\nChiama il soccorso medico e descrivi posizione, forte dolore, posizione insolita della caviglia e via d'accesso. Segnala una lesione sospetta, senza dichiarare certa una diagnosi.\n\nCalma la persona e mantienila ferma. Non raddrizzare la caviglia e non farla camminare. Se necessario, presta un'assistenza appropriata per una perdita di sangue senza premere su un osso esposto.\n\nProteggila dal freddo o dal caldo e resta con lei. Movimento o immobilizzazione devono rientrare nella formazione e nelle indicazioni d'emergenza appropriate.\n\nUn piano di evacuazione deve considerare la persona ferita che non può camminare; non improvvisare un soccorso pericoloso.",
+      "displayText": "Un collega cade in una buca nascosta. La caviglia è in una posizione insolita, il dolore è forte e non può muoversi in sicurezza.\n\nVerifica che l'area immediata sia sicura e avvisa gli altri della buca.\n\nChiama il soccorso medico e descrivi posizione, forte dolore, posizione insolita della caviglia e via d'accesso. Segnala una lesione sospetta, senza dichiarare certa una diagnosi.\n\nCalma la persona e mantienila ferma. Non raddrizzare la caviglia e non farla camminare. Se necessario, presta un'assistenza appropriata per una perdita di sangue senza premere su un osso esposto.\n\nProteggila dal freddo o dal caldo e resta con lei. Movimento o immobilizzazione devono rientrare nella formazione e nelle indicazioni d'emergenza appropriate.\n\nUn piano di evacuazione deve considerare la persona ferita che non può camminare; non improvvisare un soccorso pericoloso.",
+      "captionText": "Un collega cade in una buca nascosta. La caviglia è in una posizione insolita, il dolore è forte e non può muoversi in sicurezza.\n\nVerifica che l'area immediata sia sicura e avvisa gli altri della buca.\n\nChiama il soccorso medico e descrivi posizione, forte dolore, posizione insolita della caviglia e via d'accesso. Segnala una lesione sospetta, senza dichiarare certa una diagnosi.\n\nCalma la persona e mantienila ferma. Non raddrizzare la caviglia e non farla camminare. Se necessario, presta un'assistenza appropriata per una perdita di sangue senza premere su un osso esposto.\n\nProteggila dal freddo o dal caldo e resta con lei. Movimento o immobilizzazione devono rientrare nella formazione e nelle indicazioni d'emergenza appropriate.\n\nUn piano di evacuazione deve considerare la persona ferita che non può camminare; non improvvisare un soccorso pericoloso.",
+      "spokenText": "Un collega cade in una buca nascosta. La caviglia è in una posizione insolita, il dolore è forte e non può muoversi in sicurezza.\n\nVerifica che l'area immediata sia sicura e avvisa gli altri della buca.\n\nChiama il soccorso medico e descrivi posizione, forte dolore, posizione insolita della caviglia e via d'accesso. Segnala una lesione sospetta, senza dichiarare certa una diagnosi.\n\nCalma la persona e mantienila ferma. Non raddrizzare la caviglia e non farla camminare. Se necessario, presta un'assistenza appropriata per una perdita di sangue senza premere su un osso esposto.\n\nProteggila dal freddo o dal caldo e resta con lei. Movimento o immobilizzazione devono rientrare nella formazione e nelle indicazioni d'emergenza appropriate.\n\nUn piano di evacuazione deve considerare la persona ferita che non può camminare; non improvvisare un soccorso pericoloso.",
+      "spokenTextSHA256": "24a48fdf3dda1d5ca8d4ae0cc80daed88aa57e413bf43091a3244ca546849b4a",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "24a48fdf3dda1d5ca8d4ae0cc80daed88aa57e413bf43091a3244ca546849b4a",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "dc3a8693e99c9be46871fc60bd99081c52e7fb578b044c3e96120ca43e3650e8",
+      "requestFingerprintSha256": "dc3a8693e99c9be46871fc60bd99081c52e7fb578b044c3e96120ca43e3650e8",
+      "caseId": "ankle",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-it-E03-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "02f1ad9852c82dc3917fe3d4c77a64fe6b07f46bb56956ec999b36adaacba288"
+    },
+    {
+      "id": "S1-03-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Mentre lavora vicino al campo adiacente, il gruppo avverte un odore chimico insolito e irritazione agli occhi. Sostanza ed estensione del rilascio non sono note.",
+          "sha256": "fe347a2ea17d9a0c081e6fca9d05b522df9b247aee31ec3230610e498e5cf071"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Considera l'area non sicura. Avvisa il gruppo e allontanati dal rilascio sospetto; non andare a cercare la fonte dell'odore.",
+          "sha256": "a2c8b525a634527254f230f5317188892b424b9372fb0a2966a1a59475615e52"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Prendi una via sicura verso aria pulita, sopravento se possibile, seguendo il piano del sito e le istruzioni d'emergenza. Non attraversare il rilascio per raggiungere un punto di raccolta preferito.",
+          "sha256": "eee79f9a74915cf22ceb163121e94b46799aea5f22ba37b4ee89abf4cad6d17a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Una volta al sicuro, segnala al coordinatore possibile deriva, luogo, persone coinvolte e sintomi. Chiedi consiglio medico per esposizione o sintomi, con urgenza se c'è difficoltà respiratoria o malessere grave.",
+          "sha256": "1e84fc457da4cce002361ce62ac2c34ef7b3814f880f2a68bfcbd60cb2b32435"
+        },
+        {
+          "pointer": "/examples/3/reasoning/3",
+          "text": "Nell'area sicura, usa un lavaggio oculare appropriato con acqua pulita per l'irritazione e segui le indicazioni mediche. Verifica che ci siano tutti e non tornare finché l'autorità responsabile non dichiara l'area sicura.",
+          "sha256": "0d83a0e264314398f18f1ba61e0b5aec2997579fafc003f6679bc85335772e63"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Un'esposizione sconosciuta nell'aria richiede allontanamento e aiuto, non la procedura per piccoli sversamenti.",
+          "sha256": "1db2df4ed4d40bb8fa54f74fc00453a79f039b95ec8b4e7975c26575a8846eb1"
+        }
+      ],
+      "scientificMeaning": "Mentre lavora vicino al campo adiacente, il gruppo avverte un odore chimico insolito e irritazione agli occhi. Sostanza ed estensione del rilascio non sono note.\n\nConsidera l'area non sicura. Avvisa il gruppo e allontanati dal rilascio sospetto; non andare a cercare la fonte dell'odore.\n\nPrendi una via sicura verso aria pulita, sopravento se possibile, seguendo il piano del sito e le istruzioni d'emergenza. Non attraversare il rilascio per raggiungere un punto di raccolta preferito.\n\nUna volta al sicuro, segnala al coordinatore possibile deriva, luogo, persone coinvolte e sintomi. Chiedi consiglio medico per esposizione o sintomi, con urgenza se c'è difficoltà respiratoria o malessere grave.\n\nNell'area sicura, usa un lavaggio oculare appropriato con acqua pulita per l'irritazione e segui le indicazioni mediche. Verifica che ci siano tutti e non tornare finché l'autorità responsabile non dichiara l'area sicura.\n\nUn'esposizione sconosciuta nell'aria richiede allontanamento e aiuto, non la procedura per piccoli sversamenti.",
+      "displayText": "Mentre lavora vicino al campo adiacente, il gruppo avverte un odore chimico insolito e irritazione agli occhi. Sostanza ed estensione del rilascio non sono note.\n\nConsidera l'area non sicura. Avvisa il gruppo e allontanati dal rilascio sospetto; non andare a cercare la fonte dell'odore.\n\nPrendi una via sicura verso aria pulita, sopravento se possibile, seguendo il piano del sito e le istruzioni d'emergenza. Non attraversare il rilascio per raggiungere un punto di raccolta preferito.\n\nUna volta al sicuro, segnala al coordinatore possibile deriva, luogo, persone coinvolte e sintomi. Chiedi consiglio medico per esposizione o sintomi, con urgenza se c'è difficoltà respiratoria o malessere grave.\n\nNell'area sicura, usa un lavaggio oculare appropriato con acqua pulita per l'irritazione e segui le indicazioni mediche. Verifica che ci siano tutti e non tornare finché l'autorità responsabile non dichiara l'area sicura.\n\nUn'esposizione sconosciuta nell'aria richiede allontanamento e aiuto, non la procedura per piccoli sversamenti.",
+      "captionText": "Mentre lavora vicino al campo adiacente, il gruppo avverte un odore chimico insolito e irritazione agli occhi. Sostanza ed estensione del rilascio non sono note.\n\nConsidera l'area non sicura. Avvisa il gruppo e allontanati dal rilascio sospetto; non andare a cercare la fonte dell'odore.\n\nPrendi una via sicura verso aria pulita, sopravento se possibile, seguendo il piano del sito e le istruzioni d'emergenza. Non attraversare il rilascio per raggiungere un punto di raccolta preferito.\n\nUna volta al sicuro, segnala al coordinatore possibile deriva, luogo, persone coinvolte e sintomi. Chiedi consiglio medico per esposizione o sintomi, con urgenza se c'è difficoltà respiratoria o malessere grave.\n\nNell'area sicura, usa un lavaggio oculare appropriato con acqua pulita per l'irritazione e segui le indicazioni mediche. Verifica che ci siano tutti e non tornare finché l'autorità responsabile non dichiara l'area sicura.\n\nUn'esposizione sconosciuta nell'aria richiede allontanamento e aiuto, non la procedura per piccoli sversamenti.",
+      "spokenText": "Mentre lavora vicino al campo adiacente, il gruppo avverte un odore chimico insolito e irritazione agli occhi. Sostanza ed estensione del rilascio non sono note.\n\nConsidera l'area non sicura. Avvisa il gruppo e allontanati dal rilascio sospetto; non andare a cercare la fonte dell'odore.\n\nPrendi una via sicura verso aria pulita, sopravento se possibile, seguendo il piano del sito e le istruzioni d'emergenza. Non attraversare il rilascio per raggiungere un punto di raccolta preferito.\n\nUna volta al sicuro, segnala al coordinatore possibile deriva, luogo, persone coinvolte e sintomi. Chiedi consiglio medico per esposizione o sintomi, con urgenza se c'è difficoltà respiratoria o malessere grave.\n\nNell'area sicura, usa un lavaggio oculare appropriato con acqua pulita per l'irritazione e segui le indicazioni mediche. Verifica che ci siano tutti e non tornare finché l'autorità responsabile non dichiara l'area sicura.\n\nUn'esposizione sconosciuta nell'aria richiede allontanamento e aiuto, non la procedura per piccoli sversamenti.",
+      "spokenTextSHA256": "c0e4dc4b9b7d0dc4856f86838ccb6ff5c633238314959121ba6cee8460681fbb",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "c0e4dc4b9b7d0dc4856f86838ccb6ff5c633238314959121ba6cee8460681fbb",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "83564aed469eddc8f245c9a6509fc0b380a9431dec90029a636a4ac57752129c",
+      "requestFingerprintSha256": "83564aed469eddc8f245c9a6509fc0b380a9431dec90029a636a4ac57752129c",
+      "caseId": "airborne",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-it-E04-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "02f1ad9852c82dc3917fe3d4c77a64fe6b07f46bb56956ec999b36adaacba288"
+    },
+    {
+      "id": "S1-03-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "069caa6e2069c60e1e7e35cc2baec2126458ccada3f5d61e7fd9cd5b15d49280",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ein bekannter ätzender Stoff spritzt auf den Arm eines Kollegen. Die Gefahrenkennzeichnung ist zu sehen; in der Umgebung besteht keine weitere unmittelbare Gefahr.",
+          "sha256": "5f9cb0358f11967c4bc223a65b223137b4f773a7c3fe36c5db784b14bf40928c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Beurteilen Sie die Einwirkung, ohne die Flüssigkeit zu berühren oder sich selbst zu kontaminieren. Nutzen Sie den für sichere Hilfe vorgeschriebenen Schutz.",
+          "sha256": "48ffbbc915240e873f4aaaa38defe054e87b1d5b7f6029931154e5e71132448e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Rufen Sie dringend medizinische Hilfe. In Ägypten wählen Sie 123 und melden genauen Ort, Einwirkung auf den Arm, Zustand der Person und Produktnamen, falls bekannt. Lassen Sie eine zweite Person das SDB holen, ohne die Hilfe zu verzögern.",
+          "sha256": "b3adce676880c2011ec1bbe40711e2c46b6c45f92f0359b0f85613441c30c8f4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Beginnen Sie sofort geeignet mit reichlich kühlem fließendem Wasser zu spülen. Die Übung nennt zunächst mindestens 15–20 Minuten; das ist keine allgemeine Schlusszeit. Spülen Sie nach Produkthinweisen und medizinischen Anweisungen weiter.",
+          "sha256": "57ff5b2e2092e7e3de8c2114fe81e34abcf464ba819d7d2452a229b442a67f38"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Entfernen Sie verunreinigte Kleidung von der betroffenen Stelle während des Spülens, falls es sicher möglich ist, und befolgen Sie das SDB. Neutralisieren Sie den Stoff auf der Haut nicht mit einer anderen Chemikalie. In der Übung wird eine Attrappe benutzt, kein echter ätzender Stoff und keine echte Exposition.",
+          "sha256": "ba8300bfe7bfe0fe66e69c8ef8f75aad940ff6929ae8bc22102f4aa2fb4a2e8a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Dringendes Spülen und Hilferuf können gleichzeitig stattfinden; die Reinigung des Bodens kommt nach der Versorgung der betroffenen Person.",
+          "sha256": "4f047af6276e2a9f066d6122d18f85521f04bec69ad469634f19fd9debe745fa"
+        }
+      ],
+      "scientificMeaning": "Ein bekannter ätzender Stoff spritzt auf den Arm eines Kollegen. Die Gefahrenkennzeichnung ist zu sehen; in der Umgebung besteht keine weitere unmittelbare Gefahr.\n\nBeurteilen Sie die Einwirkung, ohne die Flüssigkeit zu berühren oder sich selbst zu kontaminieren. Nutzen Sie den für sichere Hilfe vorgeschriebenen Schutz.\n\nRufen Sie dringend medizinische Hilfe. In Ägypten wählen Sie 123 und melden genauen Ort, Einwirkung auf den Arm, Zustand der Person und Produktnamen, falls bekannt. Lassen Sie eine zweite Person das SDB holen, ohne die Hilfe zu verzögern.\n\nBeginnen Sie sofort geeignet mit reichlich kühlem fließendem Wasser zu spülen. Die Übung nennt zunächst mindestens 15–20 Minuten; das ist keine allgemeine Schlusszeit. Spülen Sie nach Produkthinweisen und medizinischen Anweisungen weiter.\n\nEntfernen Sie verunreinigte Kleidung von der betroffenen Stelle während des Spülens, falls es sicher möglich ist, und befolgen Sie das SDB. Neutralisieren Sie den Stoff auf der Haut nicht mit einer anderen Chemikalie. In der Übung wird eine Attrappe benutzt, kein echter ätzender Stoff und keine echte Exposition.\n\nDringendes Spülen und Hilferuf können gleichzeitig stattfinden; die Reinigung des Bodens kommt nach der Versorgung der betroffenen Person.",
+      "displayText": "Ein bekannter ätzender Stoff spritzt auf den Arm eines Kollegen. Die Gefahrenkennzeichnung ist zu sehen; in der Umgebung besteht keine weitere unmittelbare Gefahr.\n\nBeurteilen Sie die Einwirkung, ohne die Flüssigkeit zu berühren oder sich selbst zu kontaminieren. Nutzen Sie den für sichere Hilfe vorgeschriebenen Schutz.\n\nRufen Sie dringend medizinische Hilfe. In Ägypten wählen Sie 123 und melden genauen Ort, Einwirkung auf den Arm, Zustand der Person und Produktnamen, falls bekannt. Lassen Sie eine zweite Person das SDB holen, ohne die Hilfe zu verzögern.\n\nBeginnen Sie sofort geeignet mit reichlich kühlem fließendem Wasser zu spülen. Die Übung nennt zunächst mindestens 15–20 Minuten; das ist keine allgemeine Schlusszeit. Spülen Sie nach Produkthinweisen und medizinischen Anweisungen weiter.\n\nEntfernen Sie verunreinigte Kleidung von der betroffenen Stelle während des Spülens, falls es sicher möglich ist, und befolgen Sie das SDB. Neutralisieren Sie den Stoff auf der Haut nicht mit einer anderen Chemikalie. In der Übung wird eine Attrappe benutzt, kein echter ätzender Stoff und keine echte Exposition.\n\nDringendes Spülen und Hilferuf können gleichzeitig stattfinden; die Reinigung des Bodens kommt nach der Versorgung der betroffenen Person.",
+      "captionText": "Ein bekannter ätzender Stoff spritzt auf den Arm eines Kollegen. Die Gefahrenkennzeichnung ist zu sehen; in der Umgebung besteht keine weitere unmittelbare Gefahr.\n\nBeurteilen Sie die Einwirkung, ohne die Flüssigkeit zu berühren oder sich selbst zu kontaminieren. Nutzen Sie den für sichere Hilfe vorgeschriebenen Schutz.\n\nRufen Sie dringend medizinische Hilfe. In Ägypten wählen Sie 123 und melden genauen Ort, Einwirkung auf den Arm, Zustand der Person und Produktnamen, falls bekannt. Lassen Sie eine zweite Person das SDB holen, ohne die Hilfe zu verzögern.\n\nBeginnen Sie sofort geeignet mit reichlich kühlem fließendem Wasser zu spülen. Die Übung nennt zunächst mindestens 15–20 Minuten; das ist keine allgemeine Schlusszeit. Spülen Sie nach Produkthinweisen und medizinischen Anweisungen weiter.\n\nEntfernen Sie verunreinigte Kleidung von der betroffenen Stelle während des Spülens, falls es sicher möglich ist, und befolgen Sie das SDB. Neutralisieren Sie den Stoff auf der Haut nicht mit einer anderen Chemikalie. In der Übung wird eine Attrappe benutzt, kein echter ätzender Stoff und keine echte Exposition.\n\nDringendes Spülen und Hilferuf können gleichzeitig stattfinden; die Reinigung des Bodens kommt nach der Versorgung der betroffenen Person.",
+      "spokenText": "Ein bekannter ätzender Stoff spritzt auf den Arm eines Kollegen. Die Gefahrenkennzeichnung ist zu sehen; in der Umgebung besteht keine weitere unmittelbare Gefahr.\n\nBeurteilen Sie die Einwirkung, ohne die Flüssigkeit zu berühren oder sich selbst zu kontaminieren. Nutzen Sie den für sichere Hilfe vorgeschriebenen Schutz.\n\nRufen Sie dringend medizinische Hilfe. In Ägypten wählen Sie 123 und melden genauen Ort, Einwirkung auf den Arm, Zustand der Person und Produktnamen, falls bekannt. Lassen Sie eine zweite Person das SDB holen, ohne die Hilfe zu verzögern.\n\nBeginnen Sie sofort geeignet mit reichlich kühlem fließendem Wasser zu spülen. Die Übung nennt zunächst mindestens 15–20 Minuten; das ist keine allgemeine Schlusszeit. Spülen Sie nach Produkthinweisen und medizinischen Anweisungen weiter.\n\nEntfernen Sie verunreinigte Kleidung von der betroffenen Stelle während des Spülens, falls es sicher möglich ist, und befolgen Sie das SDB. Neutralisieren Sie den Stoff auf der Haut nicht mit einer anderen Chemikalie. In der Übung wird eine Attrappe benutzt, kein echter ätzender Stoff und keine echte Exposition.\n\nDringendes Spülen und Hilferuf können gleichzeitig stattfinden; die Reinigung des Bodens kommt nach der Versorgung der betroffenen Person.",
+      "spokenTextSHA256": "c09e6a448bb31391fe896487444b023584665517e2c2e081dd35675d920de0d7",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "c09e6a448bb31391fe896487444b023584665517e2c2e081dd35675d920de0d7",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung. Die Notrufnummer 123 wird eins zwei drei gelesen; das Szenario bleibt in Ägypten. 15–20 ist fünfzehn bis zwanzig Minuten, keine Subtraktion. Mindestens und der Hinweis auf keine allgemeine Schlusszeit bleiben erhalten.",
+      "deliverySHA256": "4a6221dc6dcf8e3169823e1d6cff9de7385871e15f2aec9c3737cfa10ea1e38f",
+      "deliverySha256": "4a6221dc6dcf8e3169823e1d6cff9de7385871e15f2aec9c3737cfa10ea1e38f",
+      "pronunciationCues": [
+        "Die Notrufnummer 123 wird eins zwei drei gelesen; das Szenario bleibt in Ägypten.",
+        "15–20 ist fünfzehn bis zwanzig Minuten, keine Subtraktion. Mindestens und der Hinweis auf keine allgemeine Schlusszeit bleiben erhalten."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "bfe012bd8148e89ed94523653220da752e33c8a9d595dc939975128507b11d14",
+      "requestFingerprintSha256": "bfe012bd8148e89ed94523653220da752e33c8a9d595dc939975128507b11d14",
+      "caseId": "chemical-arm",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-de-E01-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "0314d835872550ba75a23d5f732a7fbf8607c1efc8141bee95247ec84cfa055d"
+    },
+    {
+      "id": "S1-03-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "069caa6e2069c60e1e7e35cc2baec2126458ccada3f5d61e7fd9cd5b15d49280",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Eine Person arbeitet in der Sonne, schwitzt stark und hat Kopfschmerzen und Übelkeit. Sie bleibt wach und kann normal schlucken; das Fahrzeug ist weit weg.",
+          "sha256": "b2707f6f4c3fbbdcd10b39dd9dcaae0af943b846174db6f248e133040c493654"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Beenden Sie die Arbeit und nutzen Sie den nächsten sicheren kühlen Schatten, statt die Person weit laufen zu lassen.",
+          "sha256": "022059abd56cbf64ed1621c776c242f4a5570af757db693700f5c1ee1256c19f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Melden Sie der Aufsicht Ort und Symptome und organisieren Sie eine medizinische Beurteilung. Jemand bleibt bei der Person.",
+          "sha256": "4b092bdde9ed333eb2ff0ca5c325d86a68da328b1b889837982916ee65011602"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Lockern Sie unnötige Kleidung; legen Sie kühle feuchte Tücher an Kopf, Hals und Achselhöhlen, fächeln Sie Luft zu und bieten Sie kleine Schlucke kühlen Wassers an, solange das Schlucken sicher ist.",
+          "sha256": "b7b8fa9c9122e9f52891316b6032311b757ba829a58d926e2f42bc364f8d88b4"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "Bei Verwirrtheit, Zusammenbruch oder Verschlechterung rufen Sie sofort 123 und kühlen weiter. Warten Sie nicht auf ein Ende des Schwitzens. Verwirrten oder bewusstlosen Personen geben Sie nichts zu trinken.",
+          "sha256": "d35780bea1ea95b02fe2c2b5cfaf840a52e73819792b5628ce55cc1d6a03707a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Sofort sind Kühlung und Hilfe nötig, verbunden mit fortlaufender Beobachtung auf Notfallzeichen.",
+          "sha256": "86a532350058580484b561caa9e4c719e9edbcd5320fdf8a13ccf1b9ea63e633"
+        }
+      ],
+      "scientificMeaning": "Eine Person arbeitet in der Sonne, schwitzt stark und hat Kopfschmerzen und Übelkeit. Sie bleibt wach und kann normal schlucken; das Fahrzeug ist weit weg.\n\nBeenden Sie die Arbeit und nutzen Sie den nächsten sicheren kühlen Schatten, statt die Person weit laufen zu lassen.\n\nMelden Sie der Aufsicht Ort und Symptome und organisieren Sie eine medizinische Beurteilung. Jemand bleibt bei der Person.\n\nLockern Sie unnötige Kleidung; legen Sie kühle feuchte Tücher an Kopf, Hals und Achselhöhlen, fächeln Sie Luft zu und bieten Sie kleine Schlucke kühlen Wassers an, solange das Schlucken sicher ist.\n\nBei Verwirrtheit, Zusammenbruch oder Verschlechterung rufen Sie sofort 123 und kühlen weiter. Warten Sie nicht auf ein Ende des Schwitzens. Verwirrten oder bewusstlosen Personen geben Sie nichts zu trinken.\n\nSofort sind Kühlung und Hilfe nötig, verbunden mit fortlaufender Beobachtung auf Notfallzeichen.",
+      "displayText": "Eine Person arbeitet in der Sonne, schwitzt stark und hat Kopfschmerzen und Übelkeit. Sie bleibt wach und kann normal schlucken; das Fahrzeug ist weit weg.\n\nBeenden Sie die Arbeit und nutzen Sie den nächsten sicheren kühlen Schatten, statt die Person weit laufen zu lassen.\n\nMelden Sie der Aufsicht Ort und Symptome und organisieren Sie eine medizinische Beurteilung. Jemand bleibt bei der Person.\n\nLockern Sie unnötige Kleidung; legen Sie kühle feuchte Tücher an Kopf, Hals und Achselhöhlen, fächeln Sie Luft zu und bieten Sie kleine Schlucke kühlen Wassers an, solange das Schlucken sicher ist.\n\nBei Verwirrtheit, Zusammenbruch oder Verschlechterung rufen Sie sofort 123 und kühlen weiter. Warten Sie nicht auf ein Ende des Schwitzens. Verwirrten oder bewusstlosen Personen geben Sie nichts zu trinken.\n\nSofort sind Kühlung und Hilfe nötig, verbunden mit fortlaufender Beobachtung auf Notfallzeichen.",
+      "captionText": "Eine Person arbeitet in der Sonne, schwitzt stark und hat Kopfschmerzen und Übelkeit. Sie bleibt wach und kann normal schlucken; das Fahrzeug ist weit weg.\n\nBeenden Sie die Arbeit und nutzen Sie den nächsten sicheren kühlen Schatten, statt die Person weit laufen zu lassen.\n\nMelden Sie der Aufsicht Ort und Symptome und organisieren Sie eine medizinische Beurteilung. Jemand bleibt bei der Person.\n\nLockern Sie unnötige Kleidung; legen Sie kühle feuchte Tücher an Kopf, Hals und Achselhöhlen, fächeln Sie Luft zu und bieten Sie kleine Schlucke kühlen Wassers an, solange das Schlucken sicher ist.\n\nBei Verwirrtheit, Zusammenbruch oder Verschlechterung rufen Sie sofort 123 und kühlen weiter. Warten Sie nicht auf ein Ende des Schwitzens. Verwirrten oder bewusstlosen Personen geben Sie nichts zu trinken.\n\nSofort sind Kühlung und Hilfe nötig, verbunden mit fortlaufender Beobachtung auf Notfallzeichen.",
+      "spokenText": "Eine Person arbeitet in der Sonne, schwitzt stark und hat Kopfschmerzen und Übelkeit. Sie bleibt wach und kann normal schlucken; das Fahrzeug ist weit weg.\n\nBeenden Sie die Arbeit und nutzen Sie den nächsten sicheren kühlen Schatten, statt die Person weit laufen zu lassen.\n\nMelden Sie der Aufsicht Ort und Symptome und organisieren Sie eine medizinische Beurteilung. Jemand bleibt bei der Person.\n\nLockern Sie unnötige Kleidung; legen Sie kühle feuchte Tücher an Kopf, Hals und Achselhöhlen, fächeln Sie Luft zu und bieten Sie kleine Schlucke kühlen Wassers an, solange das Schlucken sicher ist.\n\nBei Verwirrtheit, Zusammenbruch oder Verschlechterung rufen Sie sofort 123 und kühlen weiter. Warten Sie nicht auf ein Ende des Schwitzens. Verwirrten oder bewusstlosen Personen geben Sie nichts zu trinken.\n\nSofort sind Kühlung und Hilfe nötig, verbunden mit fortlaufender Beobachtung auf Notfallzeichen.",
+      "spokenTextSHA256": "2777a4cf2527b6349cb3d7eb1ca164fed61d7ed033e594cc73b3fbe20b795dee",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "2777a4cf2527b6349cb3d7eb1ca164fed61d7ed033e594cc73b3fbe20b795dee",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung. Die Notrufnummer 123 wird eins zwei drei gelesen; das Szenario bleibt in Ägypten.",
+      "deliverySHA256": "dab99ac82e4d3e474c176f6a53505b013d34689a98f64a02d9217215a206a832",
+      "deliverySha256": "dab99ac82e4d3e474c176f6a53505b013d34689a98f64a02d9217215a206a832",
+      "pronunciationCues": [
+        "Die Notrufnummer 123 wird eins zwei drei gelesen; das Szenario bleibt in Ägypten."
+      ],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "ab097be15a28899007ad04ffea3c552d57f63ff5f91b8ff25b0a45686b57c7b7",
+      "requestFingerprintSha256": "ab097be15a28899007ad04ffea3c552d57f63ff5f91b8ff25b0a45686b57c7b7",
+      "caseId": "dizzy",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-de-E02-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "0314d835872550ba75a23d5f732a7fbf8607c1efc8141bee95247ec84cfa055d"
+    },
+    {
+      "id": "S1-03-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "069caa6e2069c60e1e7e35cc2baec2126458ccada3f5d61e7fd9cd5b15d49280",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein Kollege fällt in ein verstecktes Loch. Das Sprunggelenk steht ungewöhnlich, die Schmerzen sind stark, und er kann sich nicht sicher bewegen.",
+          "sha256": "1bd4c3d0134b7b58604be776894b10a4cfbd06220de39fd03859a636972893ef"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Prüfen Sie die Sicherheit des unmittelbaren Bereichs und warnen Sie andere vor dem Loch.",
+          "sha256": "93f7a3ed63308e8ad8b116cd71fba874371008ad6ec49ef992767892e9d1a643"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Rufen Sie medizinische Notfallhilfe und melden Sie Ort, starke Schmerzen, ungewöhnliche Stellung und Zugang. Beschreiben Sie eine vermutete Verletzung statt eine gesicherte Diagnose.",
+          "sha256": "e82b0f94c008a44dcc8274fac7552c0989f6d4b4b42fea8aa6e9caf58b306f11"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Beruhigen Sie die Person und halten Sie sie ruhig. Richten Sie das Gelenk nicht und lassen Sie sie nicht gehen. Bei Bedarf leisten Sie geeignete Blutungshilfe, ohne auf freiliegenden Knochen zu drücken.",
+          "sha256": "f7c90d28b03d57e34633d2eb55c6d5b53df3ea42008ff7be404d65a4eb59eb6e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Schützen Sie die Person vor Kälte oder Überhitzung und bleiben Sie bei ihr. Bewegung oder Ruhigstellung nur im Rahmen geeigneter Ausbildung und Notfallanweisungen.",
+          "sha256": "1ccde891a1f4ade8d02cb7afbaac9aba335c7b7194e6ed171768bb753af07c3a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Ein Evakuierungsplan muss Menschen berücksichtigen, die verletzt sind und nicht gehen können; improvisieren Sie keine gefährliche Rettung.",
+          "sha256": "047a14337aefb7877ec176905422347495d67441adfa6bb98274fc478643e5e6"
+        }
+      ],
+      "scientificMeaning": "Ein Kollege fällt in ein verstecktes Loch. Das Sprunggelenk steht ungewöhnlich, die Schmerzen sind stark, und er kann sich nicht sicher bewegen.\n\nPrüfen Sie die Sicherheit des unmittelbaren Bereichs und warnen Sie andere vor dem Loch.\n\nRufen Sie medizinische Notfallhilfe und melden Sie Ort, starke Schmerzen, ungewöhnliche Stellung und Zugang. Beschreiben Sie eine vermutete Verletzung statt eine gesicherte Diagnose.\n\nBeruhigen Sie die Person und halten Sie sie ruhig. Richten Sie das Gelenk nicht und lassen Sie sie nicht gehen. Bei Bedarf leisten Sie geeignete Blutungshilfe, ohne auf freiliegenden Knochen zu drücken.\n\nSchützen Sie die Person vor Kälte oder Überhitzung und bleiben Sie bei ihr. Bewegung oder Ruhigstellung nur im Rahmen geeigneter Ausbildung und Notfallanweisungen.\n\nEin Evakuierungsplan muss Menschen berücksichtigen, die verletzt sind und nicht gehen können; improvisieren Sie keine gefährliche Rettung.",
+      "displayText": "Ein Kollege fällt in ein verstecktes Loch. Das Sprunggelenk steht ungewöhnlich, die Schmerzen sind stark, und er kann sich nicht sicher bewegen.\n\nPrüfen Sie die Sicherheit des unmittelbaren Bereichs und warnen Sie andere vor dem Loch.\n\nRufen Sie medizinische Notfallhilfe und melden Sie Ort, starke Schmerzen, ungewöhnliche Stellung und Zugang. Beschreiben Sie eine vermutete Verletzung statt eine gesicherte Diagnose.\n\nBeruhigen Sie die Person und halten Sie sie ruhig. Richten Sie das Gelenk nicht und lassen Sie sie nicht gehen. Bei Bedarf leisten Sie geeignete Blutungshilfe, ohne auf freiliegenden Knochen zu drücken.\n\nSchützen Sie die Person vor Kälte oder Überhitzung und bleiben Sie bei ihr. Bewegung oder Ruhigstellung nur im Rahmen geeigneter Ausbildung und Notfallanweisungen.\n\nEin Evakuierungsplan muss Menschen berücksichtigen, die verletzt sind und nicht gehen können; improvisieren Sie keine gefährliche Rettung.",
+      "captionText": "Ein Kollege fällt in ein verstecktes Loch. Das Sprunggelenk steht ungewöhnlich, die Schmerzen sind stark, und er kann sich nicht sicher bewegen.\n\nPrüfen Sie die Sicherheit des unmittelbaren Bereichs und warnen Sie andere vor dem Loch.\n\nRufen Sie medizinische Notfallhilfe und melden Sie Ort, starke Schmerzen, ungewöhnliche Stellung und Zugang. Beschreiben Sie eine vermutete Verletzung statt eine gesicherte Diagnose.\n\nBeruhigen Sie die Person und halten Sie sie ruhig. Richten Sie das Gelenk nicht und lassen Sie sie nicht gehen. Bei Bedarf leisten Sie geeignete Blutungshilfe, ohne auf freiliegenden Knochen zu drücken.\n\nSchützen Sie die Person vor Kälte oder Überhitzung und bleiben Sie bei ihr. Bewegung oder Ruhigstellung nur im Rahmen geeigneter Ausbildung und Notfallanweisungen.\n\nEin Evakuierungsplan muss Menschen berücksichtigen, die verletzt sind und nicht gehen können; improvisieren Sie keine gefährliche Rettung.",
+      "spokenText": "Ein Kollege fällt in ein verstecktes Loch. Das Sprunggelenk steht ungewöhnlich, die Schmerzen sind stark, und er kann sich nicht sicher bewegen.\n\nPrüfen Sie die Sicherheit des unmittelbaren Bereichs und warnen Sie andere vor dem Loch.\n\nRufen Sie medizinische Notfallhilfe und melden Sie Ort, starke Schmerzen, ungewöhnliche Stellung und Zugang. Beschreiben Sie eine vermutete Verletzung statt eine gesicherte Diagnose.\n\nBeruhigen Sie die Person und halten Sie sie ruhig. Richten Sie das Gelenk nicht und lassen Sie sie nicht gehen. Bei Bedarf leisten Sie geeignete Blutungshilfe, ohne auf freiliegenden Knochen zu drücken.\n\nSchützen Sie die Person vor Kälte oder Überhitzung und bleiben Sie bei ihr. Bewegung oder Ruhigstellung nur im Rahmen geeigneter Ausbildung und Notfallanweisungen.\n\nEin Evakuierungsplan muss Menschen berücksichtigen, die verletzt sind und nicht gehen können; improvisieren Sie keine gefährliche Rettung.",
+      "spokenTextSHA256": "c5900233b7b5d4507ac6c707ba89994e13de912bc9b62c7e1100f805d06420af",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "c5900233b7b5d4507ac6c707ba89994e13de912bc9b62c7e1100f805d06420af",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "ad7f47d6031493029cb502aeb5448b3466dc92c13531b79baa84020d94120bdc",
+      "requestFingerprintSha256": "ad7f47d6031493029cb502aeb5448b3466dc92c13531b79baa84020d94120bdc",
+      "caseId": "ankle",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-de-E03-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "0314d835872550ba75a23d5f732a7fbf8607c1efc8141bee95247ec84cfa055d"
+    },
+    {
+      "id": "S1-03-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "069caa6e2069c60e1e7e35cc2baec2126458ccada3f5d61e7fd9cd5b15d49280",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Bei der Arbeit neben einem anderen Feld bemerkt das Team einen unbekannten chemischen Geruch und Augenreizung. Stoff und Ausdehnung der Freisetzung sind unbekannt.",
+          "sha256": "186cfb4dc3e25fef8d08bbac1c249760f73ec4365874a2d97d6cdee9cb6b4866"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Behandeln Sie den Bereich als unsicher. Warnen Sie das Team und entfernen Sie sich von der vermuteten Freisetzung; gehen Sie der Geruchsquelle nicht nach.",
+          "sha256": "d8b62ee31b61ec814fedbd09895de1c4a049acd511d4fc97c31d8a24545093f8"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Nutzen Sie einen sicheren Weg zu frischer Luft, wenn möglich gegen den Wind, nach Ortsplan und Notfallanweisungen. Durchqueren Sie die Freisetzung nicht, um einen bevorzugten Treffpunkt zu erreichen.",
+          "sha256": "c820e6ad3e6344b777bb0fe6e517b28cf71dfb34f089f96cc434513555cc14fa"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Melden Sie vom sicheren Ort aus vermutete Abdrift, Standort, Betroffene und Symptome. Holen Sie bei Exposition oder Symptomen medizinischen Rat ein, dringend bei Atemnot oder schwerer Erkrankung.",
+          "sha256": "27da4c5c0f00f3738651284374679bf451530f2df185d8a8d8c510340164b7ea"
+        },
+        {
+          "pointer": "/examples/3/reasoning/3",
+          "text": "Spülen Sie im sicheren Bereich die gereizten Augen bei Bedarf geeignet mit sauberem Wasser und folgen Sie medizinischen Anweisungen. Erfassen Sie alle Personen und kehren Sie erst nach offizieller Sicherheitsfreigabe zurück.",
+          "sha256": "3822ca2d888e9b173e4fe13321023622893c4909680d15d6aa7963ac0b8e8278"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Unbekannte Stoffe in der Luft erfordern Rückzug und Hilfe, nicht die Reinigungsfolge für kleine verschüttete Mengen.",
+          "sha256": "c00254bd73e5de62db6b8747a6d39fd690f4d737bbf7974356eb8e2f5056373d"
+        }
+      ],
+      "scientificMeaning": "Bei der Arbeit neben einem anderen Feld bemerkt das Team einen unbekannten chemischen Geruch und Augenreizung. Stoff und Ausdehnung der Freisetzung sind unbekannt.\n\nBehandeln Sie den Bereich als unsicher. Warnen Sie das Team und entfernen Sie sich von der vermuteten Freisetzung; gehen Sie der Geruchsquelle nicht nach.\n\nNutzen Sie einen sicheren Weg zu frischer Luft, wenn möglich gegen den Wind, nach Ortsplan und Notfallanweisungen. Durchqueren Sie die Freisetzung nicht, um einen bevorzugten Treffpunkt zu erreichen.\n\nMelden Sie vom sicheren Ort aus vermutete Abdrift, Standort, Betroffene und Symptome. Holen Sie bei Exposition oder Symptomen medizinischen Rat ein, dringend bei Atemnot oder schwerer Erkrankung.\n\nSpülen Sie im sicheren Bereich die gereizten Augen bei Bedarf geeignet mit sauberem Wasser und folgen Sie medizinischen Anweisungen. Erfassen Sie alle Personen und kehren Sie erst nach offizieller Sicherheitsfreigabe zurück.\n\nUnbekannte Stoffe in der Luft erfordern Rückzug und Hilfe, nicht die Reinigungsfolge für kleine verschüttete Mengen.",
+      "displayText": "Bei der Arbeit neben einem anderen Feld bemerkt das Team einen unbekannten chemischen Geruch und Augenreizung. Stoff und Ausdehnung der Freisetzung sind unbekannt.\n\nBehandeln Sie den Bereich als unsicher. Warnen Sie das Team und entfernen Sie sich von der vermuteten Freisetzung; gehen Sie der Geruchsquelle nicht nach.\n\nNutzen Sie einen sicheren Weg zu frischer Luft, wenn möglich gegen den Wind, nach Ortsplan und Notfallanweisungen. Durchqueren Sie die Freisetzung nicht, um einen bevorzugten Treffpunkt zu erreichen.\n\nMelden Sie vom sicheren Ort aus vermutete Abdrift, Standort, Betroffene und Symptome. Holen Sie bei Exposition oder Symptomen medizinischen Rat ein, dringend bei Atemnot oder schwerer Erkrankung.\n\nSpülen Sie im sicheren Bereich die gereizten Augen bei Bedarf geeignet mit sauberem Wasser und folgen Sie medizinischen Anweisungen. Erfassen Sie alle Personen und kehren Sie erst nach offizieller Sicherheitsfreigabe zurück.\n\nUnbekannte Stoffe in der Luft erfordern Rückzug und Hilfe, nicht die Reinigungsfolge für kleine verschüttete Mengen.",
+      "captionText": "Bei der Arbeit neben einem anderen Feld bemerkt das Team einen unbekannten chemischen Geruch und Augenreizung. Stoff und Ausdehnung der Freisetzung sind unbekannt.\n\nBehandeln Sie den Bereich als unsicher. Warnen Sie das Team und entfernen Sie sich von der vermuteten Freisetzung; gehen Sie der Geruchsquelle nicht nach.\n\nNutzen Sie einen sicheren Weg zu frischer Luft, wenn möglich gegen den Wind, nach Ortsplan und Notfallanweisungen. Durchqueren Sie die Freisetzung nicht, um einen bevorzugten Treffpunkt zu erreichen.\n\nMelden Sie vom sicheren Ort aus vermutete Abdrift, Standort, Betroffene und Symptome. Holen Sie bei Exposition oder Symptomen medizinischen Rat ein, dringend bei Atemnot oder schwerer Erkrankung.\n\nSpülen Sie im sicheren Bereich die gereizten Augen bei Bedarf geeignet mit sauberem Wasser und folgen Sie medizinischen Anweisungen. Erfassen Sie alle Personen und kehren Sie erst nach offizieller Sicherheitsfreigabe zurück.\n\nUnbekannte Stoffe in der Luft erfordern Rückzug und Hilfe, nicht die Reinigungsfolge für kleine verschüttete Mengen.",
+      "spokenText": "Bei der Arbeit neben einem anderen Feld bemerkt das Team einen unbekannten chemischen Geruch und Augenreizung. Stoff und Ausdehnung der Freisetzung sind unbekannt.\n\nBehandeln Sie den Bereich als unsicher. Warnen Sie das Team und entfernen Sie sich von der vermuteten Freisetzung; gehen Sie der Geruchsquelle nicht nach.\n\nNutzen Sie einen sicheren Weg zu frischer Luft, wenn möglich gegen den Wind, nach Ortsplan und Notfallanweisungen. Durchqueren Sie die Freisetzung nicht, um einen bevorzugten Treffpunkt zu erreichen.\n\nMelden Sie vom sicheren Ort aus vermutete Abdrift, Standort, Betroffene und Symptome. Holen Sie bei Exposition oder Symptomen medizinischen Rat ein, dringend bei Atemnot oder schwerer Erkrankung.\n\nSpülen Sie im sicheren Bereich die gereizten Augen bei Bedarf geeignet mit sauberem Wasser und folgen Sie medizinischen Anweisungen. Erfassen Sie alle Personen und kehren Sie erst nach offizieller Sicherheitsfreigabe zurück.\n\nUnbekannte Stoffe in der Luft erfordern Rückzug und Hilfe, nicht die Reinigungsfolge für kleine verschüttete Mengen.",
+      "spokenTextSHA256": "bce7111bb7b345828e68060296dddf3b375f4b357c3b0717441e88e79711dad0",
+      "spokenAdaptationChanges": [],
+      "releaseGate": "CURRENT_VISIBLE_TEACHING_WORKED_EXAMPLE_NOT_A_QUIZ_KEY_OR_PHYSICAL_PASS",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "automaticRetries": 0,
+      "spokenTextSha256": "bce7111bb7b345828e68060296dddf3b375f4b357c3b0717441e88e79711dad0",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "pronunciationCues": [],
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "requestFingerprintSHA256": "92f4ad557de2c5d20769d0b974030140de9bc0e3582e0ec3b269f282b19e08a4",
+      "requestFingerprintSha256": "92f4ad557de2c5d20769d0b974030140de9bc0e3582e0ec3b269f282b19e08a4",
+      "caseId": "airborne",
+      "status": "REVIEWABLE_NEXT_SPEECH_UNIT_NO_CALLS",
+      "unitId": "S1-03-de-E04-r1",
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "0314d835872550ba75a23d5f732a7fbf8607c1efc8141bee95247ec84cfa055d"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false
+}
