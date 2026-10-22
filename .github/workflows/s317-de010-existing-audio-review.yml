@@ -1,0 +1,78 @@
+name: S3-17 one existing DE010 missing diagnostic output
+on:
+  push:
+    branches: [work/soil-s317-de010-existing-audio-review-20261022-r1]
+    paths: [s317-de010-existing-audio-review/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s317-de010-f448df25b1cd3c38947f9ecde913c76f6351fddb17224fc51e87e53b11299727
+  cancel-in-progress: false
+env:
+  REQUEST_SHA: f448df25b1cd3c38947f9ecde913c76f6351fddb17224fc51e87e53b11299727
+  WORKER_SHA: c84a399075773d3a6bf6bdb4a227ec0fa07f20b0351f2a6ca8b74c363a7e0e69
+  FREEZE_SHA: 77ed5dbf48c3a882e6f70e4de6aeed374cdb667e0bca31ee6f1b9d1fdff4a764
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.event_name == 'push' && github.event.created == true && github.run_attempt == 1 && github.event.repository.private == false && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s317-de010-existing-audio-review-20261022-r1'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+      BRANCH_CREATED: ${{ github.event.created }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify frozen scope and one exact WAV byte and PCM hashes
+        run: python s317-de010-existing-audio-review/worker.py validate
+      - name: Verify preferred model availability once without fallback
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python s317-de010-existing-audio-review/worker.py preflight
+      - name: Transfer exact source WAV before blind review S3-17-de-r1-010
+        id: source0
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s317-de010-source-S3-17-de-r1-010
+          path: s317-de010-existing-audio-review/inputs/S3-17-de-r1-010.wav
+          if-no-files-found: error
+          retention-days: 30
+      - name: Record prior source artifact receipt S3-17-de-r1-010
+        run: >-
+          python s317-de010-existing-audio-review/worker.py uploaded --unit S3-17-de-r1-010
+          --artifact-id "${{ steps.source0.outputs.artifact-id }}"
+          --artifact-digest "${{ steps.source0.outputs.artifact-digest }}"
+      - name: One terminal blind review S3-17-de-r1-010
+        timeout-minutes: 18
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python s317-de010-existing-audio-review/worker.py blind-review --unit S3-17-de-r1-010
+      - name: Transfer finished raw response or failure evidence S3-17-de-r1-010
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s317-de010-result-S3-17-de-r1-010
+          path: s317-de010-existing-audio-review/output/S3-17-de-r1-010/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Summarize one bounded outcome
+        if: always()
+        run: python s317-de010-existing-audio-review/worker.py summarize
+      - name: Preserve all evidence and exact request provenance
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s317-one-de010-diagnostic-complete
+          retention-days: 30
+          path: |
+            s317-de010-existing-audio-review/output/
+            s317-de010-existing-audio-review/request.json
+            s317-de010-existing-audio-review/runtime.json
+            s317-de010-existing-audio-review/freeze.json
+            s317-de010-existing-audio-review/owner-authority.json
+            s317-de010-existing-audio-review/worker.py
+            s317-de010-existing-audio-review/prompts/
+            s317-de010-existing-audio-review/expected-criteria.NOT-FOR-MODEL.json

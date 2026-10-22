@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sha256": {
+    ".gitignore": "239bc8162d8ecb0c64d96f4ce42bfbe85a0617ff927b14285621f62d2cb17f60",
+    "README.en.txt": "58bc01df25bea5dbee8cc8392a46f54d3df8875b32ae8371338c26d3798a94fc",
+    "worker.py": "c84a399075773d3a6bf6bdb4a227ec0fa07f20b0351f2a6ca8b74c363a7e0e69",
+    "offline_check.py": "6b5caaae27bcb2a52a19ff5ab9178c93f351f39db267f803471b214c0cbbf2a9",
+    "freeze_package.py": "d7efe233bea35cd5a9af758a37a10d828238ef9ac11acd48ec0c6c406097311e",
+    "request.json": "f448df25b1cd3c38947f9ecde913c76f6351fddb17224fc51e87e53b11299727",
+    "runtime.json": "4daec70e54ce3e7cff182af6b587017c1ff2135cb59c035bb1304b56268d43d8",
+    "owner-authority.json": "3e6ca25f29c11e8ac20def4864eb47e7ef8ba73fd802688fdcbe51a9b1934abc",
+    "expected-criteria.NOT-FOR-MODEL.json": "efd0fb28dc1cae06de1a950f936422396ba18671865f5f1ff2e5e2fab3c9e919",
+    "prompts/S3-17-de-r1-010.txt": "b7a4ee149ac2160474e587f139ff2e2ba752f9748dff4cd8929dcf474d6c9de5",
+    "provenance/asr-attempt.json": "e87dbba1cf87faf444cd060b2bbd6d6d7ccd7969e810fd1017aa29fffd7aa89e",
+    "provenance/asr-word-timestamps.json": "d0386fe954ed99bdc6c9b8dc6dbf0921f95c346afbf74127b415de1c3c6e6bd7",
+    "provenance/audio-upload-receipt.json": "c0b0f2dabb1395fc33c2e57a3014465f55b3f92ced830564902dbf8398e1b82a",
+    "provenance/blind-review-attempt.json": "e6883d1b42f6ebe691b357b60b6891cd2a44b02c1df95c6c5e36cc489b0ed030",
+    "provenance/blind-review-response.raw.json": "afb5345d9695de1e2ccf1bf3372380e808239b296ed8800bd41ab2d8ed0d5437",
+    "provenance/complete-archive-de010-audit.json": "9e677a30ac03802c4a70703b20ab71af221da42acef2186858e8e661e94beabc",
+    "provenance/failed-run-request-unit.json": "feb461d4b390221bdde185c2092aa83578c27b0a7e177fe884d629621cc6b589",
+    "provenance/original-unit-report.json": "2750353256264f246e98b6aaaa6eae6a1ad0c9ae2e44c0076b0b174555708f21",
+    "provenance/previous-focused-worker.snapshot.py": "0af5c031ce251f3b8d8ce6b50767194afca45c59a1e4dfa326a7bd4d6a6f48c8",
+    "provenance/reference-comparison.json": "942833c2d0c5288e3b95a2d7fd2434fab46cf6dad305f01a3b9056bcf2fbe39d",
+    "provenance/tts-attempt.json": "8968ee586907567a0dab3c02351038445d12661d18dcd3862345aa9cb338e220"
+  },
+  "audioHashesInFrozenRequest": true,
+  "maximumBlindReviews": 1,
+  "maximumPerWav": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0
+}

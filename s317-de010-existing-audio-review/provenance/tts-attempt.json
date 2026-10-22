@@ -1,0 +1,29 @@
+{
+  "atUTC": "2026-10-22T12:30:34.822068+00:00",
+  "state": "GENERATED_CANDIDATE_AWAITING_ACTUAL_AUDIO_REVIEW",
+  "kind": "tts",
+  "unitId": "S3-17-de-r1-010",
+  "callsReserved": 1,
+  "maximumCallsForUnit": 1,
+  "maximumCallsForBatch": 68,
+  "requestSha256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+  "workerSha256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+  "audioSha256": null,
+  "humanListeningApproved": false,
+  "githubRunId": "39770745592",
+  "githubRunAttempt": "1",
+  "providerCalls": 1,
+  "startedUTC": "2026-10-22T12:30:34.823068+00:00",
+  "file": "voice.wav",
+  "sha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+  "audio": {
+    "channels": 1,
+    "sampleWidthBytes": 2,
+    "sampleRate": 24000,
+    "frames": 799680,
+    "durationSeconds": 33.32,
+    "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16"
+  },
+  "finishedUTC": "2026-10-22T12:30:45.680617+00:00",
+  "ownerAccepted": false
+}

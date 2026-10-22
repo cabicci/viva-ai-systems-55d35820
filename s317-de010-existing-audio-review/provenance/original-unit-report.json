@@ -1,0 +1,76 @@
+{
+  "unitId": "S3-17-de-r1-010",
+  "locale": "de",
+  "semanticGroup": "E03",
+  "atUTC": "2026-10-22T12:38:02.386060+00:00",
+  "status": "AUDIO_VERIFIED_AWAITING_COMPLETE_DIAGNOSTICS",
+  "humanListeningPerformed": false,
+  "ownerAccepted": false,
+  "artifactSources": [
+    {
+      "artifactId": 12425324470,
+      "artifactName": "s317-connected-r2-S3-17-de-r1-010-review",
+      "artifactDigest": "sha256:025d7b407ea8b3a857ecbead358dd5b2ab940a536cd995255a81e0b7e538fa44",
+      "artifactReceiptSha256": "8ef2394c4063ca41b4bebb4d4165f0dcd4be54840880b4b3927eb4d764d0b5d5"
+    },
+    {
+      "artifactId": 12425359006,
+      "artifactName": "s317-connected-r2-S3-17-de-r1-010-audio",
+      "artifactDigest": "sha256:99d461075ce6bac5202e1beff7ab22a77f52d3e2e44e49b966c98e9a311168bc",
+      "artifactReceiptSha256": "c00fa958bd824640243e6bd9972a2570337e23c910514a4542973761a0b21731"
+    }
+  ],
+  "proofs": [
+    {
+      "artifactId": 12425324470,
+      "wav": "artifacts\\12425324470\\extracted\\voice.wav",
+      "wavSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+      "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "frames": 799680,
+        "durationSeconds": 33.32,
+        "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16"
+      },
+      "requestSha256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+      "workerSha256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+      "ttsRequestFingerprintSha256": "c3e371664ae1a7529ff3263ae70ac9a9df7b65d9c6cb0078dca2cef5860dcb9e",
+      "payloadMatchesFrozenTextDeliveryVoiceAndFormat": true,
+      "providerOriginalEqualsReceivedWav": true,
+      "providerResponseAudioBytesVerified": true
+    },
+    {
+      "artifactId": 12425359006,
+      "wav": "artifacts\\12425359006\\extracted\\voice.wav",
+      "wavSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+      "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "frames": 799680,
+        "durationSeconds": 33.32,
+        "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16"
+      },
+      "requestSha256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+      "workerSha256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+      "ttsRequestFingerprintSha256": "c3e371664ae1a7529ff3263ae70ac9a9df7b65d9c6cb0078dca2cef5860dcb9e",
+      "payloadMatchesFrozenTextDeliveryVoiceAndFormat": true,
+      "providerOriginalEqualsReceivedWav": true,
+      "providerResponseAudioBytesVerified": true
+    }
+  ],
+  "issues": [],
+  "bindingVerified": true,
+  "audioSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+  "missingDiagnosticFiles": [
+    "blind-review.json"
+  ],
+  "limitations": [
+    "Model findings and transcript differences are diagnostic evidence, not confirmed speech errors or pronunciation certification.",
+    "Correct ASR does not negate a separate reported acoustic uncertainty; invalid timestamps are review defects.",
+    "No human listening, owner acceptance, repair request or provider retry performed by this receiver."
+  ]
+}

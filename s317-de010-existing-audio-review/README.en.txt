@@ -1,0 +1,1 @@
+Preparation only: one DE010 existing-audio blind review after missing upstream content, one metadata GET, zero TTS/ASR/retries. Preserve generated WAV and all failed evidence. Expected source criteria remain isolated from model input. Root reviews before public publication; no automatic adoption.

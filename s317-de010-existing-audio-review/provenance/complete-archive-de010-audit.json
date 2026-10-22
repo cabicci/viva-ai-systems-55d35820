@@ -1,0 +1,40 @@
+{
+  "atUTC": "2026-10-22T12:59:47.348265+00:00",
+  "runId": 39770745592,
+  "commit": "d316ac53e33cd1b11baf765a6a1de2c6831aa126",
+  "archiveSha256": "2f6328c5a9e1f4a2834338119f3e668debcc6255300bbf1980de1c47ba02ab92",
+  "archiveBytes": 496407991,
+  "de010Entries": [
+    "output/S3-17-de-r1-010/asr-attempt.json",
+    "output/S3-17-de-r1-010/asr-word-timestamps.json",
+    "output/S3-17-de-r1-010/audio-upload-receipt.json",
+    "output/S3-17-de-r1-010/blind-review-attempt.json",
+    "output/S3-17-de-r1-010/blind-review-prompt.json",
+    "output/S3-17-de-r1-010/blind-review-response.raw.json",
+    "output/S3-17-de-r1-010/provider-audio-format.json",
+    "output/S3-17-de-r1-010/provider-audio.original.bin",
+    "output/S3-17-de-r1-010/reference-comparison.json",
+    "output/S3-17-de-r1-010/tts-attempt.json",
+    "output/S3-17-de-r1-010/tts-request.json",
+    "output/S3-17-de-r1-010/tts-response.raw.json",
+    "output/S3-17-de-r1-010/voice.wav"
+  ],
+  "rawResponseSha256": "afb5345d9695de1e2ccf1bf3372380e808239b296ed8800bd41ab2d8ed0d5437",
+  "rawResponseBytes": 562,
+  "rawResponseKeys": [
+    "created",
+    "id",
+    "model",
+    "object",
+    "service_tier",
+    "status",
+    "updated",
+    "usage"
+  ],
+  "hiddenParsedResultFound": false,
+  "inventory": {
+    "wavUnits": 61,
+    "parsedBlindReviews": 60
+  },
+  "noProviderCalls": true
+}

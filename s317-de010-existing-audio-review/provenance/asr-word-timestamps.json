@@ -1,0 +1,935 @@
+{
+  "atUTC": "2026-10-22T12:33:31.242094+00:00",
+  "audioSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+  "audio": {
+    "channels": 1,
+    "sampleWidthBytes": 2,
+    "sampleRate": 24000,
+    "frames": 799680,
+    "durationSeconds": 33.32,
+    "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16"
+  },
+  "settings": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "maximumInvocationsPerUnit": 1,
+    "maximumInvocationsForBatch": 68,
+    "runtimeDependencies": "Resolved package versions, pip installation report and model file hashes are retained; transitive dependency lock is not claimed.",
+    "languageByLocale": {
+      "en": "en",
+      "ar-EG": "ar",
+      "it": "it",
+      "de": "de"
+    }
+  },
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 6.8,
+      "text": " Wiederholung kann noch Übung brauchen. Probe gut vorbereitet, aber PH-Gerät falsch",
+      "avgLogprob": -0.12656910304261856,
+      "noSpeechProbability": 0.253181129693985,
+      "words": [
+        {
+          "segmentId": 1,
+          "wordIndex": 0,
+          "word": " Wiederholung",
+          "start": 0.0,
+          "end": 1.4,
+          "probability": 0.9362523754437765
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 1,
+          "word": " kann",
+          "start": 1.4,
+          "end": 1.64,
+          "probability": 0.9839555621147156
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 2,
+          "word": " noch",
+          "start": 1.64,
+          "end": 1.82,
+          "probability": 0.982696533203125
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 3,
+          "word": " Übung",
+          "start": 1.82,
+          "end": 2.14,
+          "probability": 0.9321257472038269
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 4,
+          "word": " brauchen.",
+          "start": 2.14,
+          "end": 2.56,
+          "probability": 0.9902728199958801
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 5,
+          "word": " Probe",
+          "start": 3.42,
+          "end": 3.96,
+          "probability": 0.9923886358737946
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 6,
+          "word": " gut",
+          "start": 3.96,
+          "end": 4.26,
+          "probability": 0.9300410151481628
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 7,
+          "word": " vorbereitet,",
+          "start": 4.26,
+          "end": 4.9,
+          "probability": 0.9990535378456116
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 8,
+          "word": " aber",
+          "start": 5.4,
+          "end": 5.7,
+          "probability": 0.9933773875236511
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 9,
+          "word": " PH",
+          "start": 5.7,
+          "end": 6.08,
+          "probability": 0.45997875928878784
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 10,
+          "word": "-Gerät",
+          "start": 6.08,
+          "end": 6.54,
+          "probability": 0.9427802413702011
+        },
+        {
+          "segmentId": 1,
+          "wordIndex": 11,
+          "word": " falsch",
+          "start": 6.54,
+          "end": 6.8,
+          "probability": 0.979250431060791
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 6.8,
+      "end": 12.58,
+      "text": " kalibriert, Messung unzuverlässig. Trainer würdigt Vorbereitung nur unter",
+      "avgLogprob": -0.12656910304261856,
+      "noSpeechProbability": 0.253181129693985,
+      "words": [
+        {
+          "segmentId": 2,
+          "wordIndex": 0,
+          "word": " kalibriert,",
+          "start": 6.8,
+          "end": 7.5,
+          "probability": 0.9105953127145767
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 1,
+          "word": " Messung",
+          "start": 7.78,
+          "end": 8.22,
+          "probability": 0.976717472076416
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 2,
+          "word": " unzuverlässig.",
+          "start": 8.22,
+          "end": 9.08,
+          "probability": 0.9747811357180277
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 3,
+          "word": " Trainer",
+          "start": 9.98,
+          "end": 10.4,
+          "probability": 0.857506513595581
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 4,
+          "word": " würdigt",
+          "start": 10.4,
+          "end": 11.0,
+          "probability": 0.9495991667111715
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 5,
+          "word": " Vorbereitung",
+          "start": 11.0,
+          "end": 11.74,
+          "probability": 0.9921923081080118
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 6,
+          "word": " nur",
+          "start": 11.74,
+          "end": 12.22,
+          "probability": 0.9487650990486145
+        },
+        {
+          "segmentId": 2,
+          "wordIndex": 7,
+          "word": " unter",
+          "start": 12.22,
+          "end": 12.58,
+          "probability": 0.9980568289756775
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 12.58,
+      "end": 17.82,
+      "text": " ihrem Kriterium und benennt fehlende Kalibrierung. Person studiert echte",
+      "avgLogprob": -0.12656910304261856,
+      "noSpeechProbability": 0.253181129693985,
+      "words": [
+        {
+          "segmentId": 3,
+          "wordIndex": 0,
+          "word": " ihrem",
+          "start": 12.58,
+          "end": 12.86,
+          "probability": 0.908173143863678
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 1,
+          "word": " Kriterium",
+          "start": 12.86,
+          "end": 13.58,
+          "probability": 0.9901702602704366
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 2,
+          "word": " und",
+          "start": 13.58,
+          "end": 14.02,
+          "probability": 0.9907630085945129
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 3,
+          "word": " benennt",
+          "start": 14.02,
+          "end": 14.46,
+          "probability": 0.9562569657961527
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 4,
+          "word": " fehlende",
+          "start": 14.46,
+          "end": 14.82,
+          "probability": 0.9933566053708395
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 5,
+          "word": " Kalibrierung.",
+          "start": 14.82,
+          "end": 15.52,
+          "probability": 0.9519099742174149
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 6,
+          "word": " Person",
+          "start": 16.16,
+          "end": 17.0,
+          "probability": 0.9239912629127502
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 7,
+          "word": " studiert",
+          "start": 17.0,
+          "end": 17.46,
+          "probability": 0.91873499751091
+        },
+        {
+          "segmentId": 3,
+          "wordIndex": 8,
+          "word": " echte",
+          "start": 17.46,
+          "end": 17.82,
+          "probability": 0.99650439620018
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 17.82,
+      "end": 22.3,
+      "text": " Geräteanleitung und wiederholt Kalibrierung, Schrägstrichmessung unter",
+      "avgLogprob": -0.12656910304261856,
+      "noSpeechProbability": 0.253181129693985,
+      "words": [
+        {
+          "segmentId": 4,
+          "wordIndex": 0,
+          "word": " Geräteanleitung",
+          "start": 17.82,
+          "end": 18.82,
+          "probability": 0.9797660807768503
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 1,
+          "word": " und",
+          "start": 18.82,
+          "end": 19.52,
+          "probability": 0.9733797311782837
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 2,
+          "word": " wiederholt",
+          "start": 19.52,
+          "end": 20.12,
+          "probability": 0.9861313104629517
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 3,
+          "word": " Kalibrierung,",
+          "start": 20.12,
+          "end": 20.98,
+          "probability": 0.9846521466970444
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 4,
+          "word": " Schrägstrichmessung",
+          "start": 21.18,
+          "end": 22.06,
+          "probability": 0.9170664176344872
+        },
+        {
+          "segmentId": 4,
+          "wordIndex": 5,
+          "word": " unter",
+          "start": 22.06,
+          "end": 22.3,
+          "probability": 0.8590238094329834
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 22.3,
+      "end": 27.36,
+      "text": " Beobachtung. Trainer notiert wirkliches, auch erneut noch nicht",
+      "avgLogprob": -0.12656910304261856,
+      "noSpeechProbability": 0.253181129693985,
+      "words": [
+        {
+          "segmentId": 5,
+          "wordIndex": 0,
+          "word": " Beobachtung.",
+          "start": 22.3,
+          "end": 23.0,
+          "probability": 0.9920889586210251
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 1,
+          "word": " Trainer",
+          "start": 23.8,
+          "end": 24.46,
+          "probability": 0.9706534147262573
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 2,
+          "word": " notiert",
+          "start": 24.46,
+          "end": 24.96,
+          "probability": 0.9978313446044922
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 3,
+          "word": " wirkliches,",
+          "start": 24.96,
+          "end": 25.68,
+          "probability": 0.8288786113262177
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 4,
+          "word": " auch",
+          "start": 26.1,
+          "end": 26.26,
+          "probability": 0.9977490305900574
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 5,
+          "word": " erneut",
+          "start": 26.26,
+          "end": 26.74,
+          "probability": 0.9923340678215027
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 6,
+          "word": " noch",
+          "start": 26.74,
+          "end": 27.1,
+          "probability": 0.8485920429229736
+        },
+        {
+          "segmentId": 5,
+          "wordIndex": 7,
+          "word": " nicht",
+          "start": 27.1,
+          "end": 27.36,
+          "probability": 0.9926175475120544
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 27.36,
+      "end": 32.78,
+      "text": " nachgewiesen. Neuer Versuch schafft neuen Beleg keinen automatischen Erfolg.",
+      "avgLogprob": -0.1809533437093099,
+      "noSpeechProbability": 0.047488983720541,
+      "words": [
+        {
+          "segmentId": 6,
+          "wordIndex": 0,
+          "word": " nachgewiesen.",
+          "start": 27.36,
+          "end": 28.04,
+          "probability": 0.8887895941734314
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 1,
+          "word": " Neuer",
+          "start": 28.74,
+          "end": 29.46,
+          "probability": 0.9786701500415802
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 2,
+          "word": " Versuch",
+          "start": 29.46,
+          "end": 29.92,
+          "probability": 0.9822844564914703
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 3,
+          "word": " schafft",
+          "start": 29.92,
+          "end": 30.24,
+          "probability": 0.9905855357646942
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 4,
+          "word": " neuen",
+          "start": 30.24,
+          "end": 30.48,
+          "probability": 0.904085099697113
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 5,
+          "word": " Beleg",
+          "start": 30.48,
+          "end": 30.94,
+          "probability": 0.982607513666153
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 6,
+          "word": " keinen",
+          "start": 30.94,
+          "end": 31.64,
+          "probability": 0.8646001219749451
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 7,
+          "word": " automatischen",
+          "start": 31.64,
+          "end": 32.5,
+          "probability": 0.9936966001987457
+        },
+        {
+          "segmentId": 6,
+          "wordIndex": 8,
+          "word": " Erfolg.",
+          "start": 32.5,
+          "end": 32.78,
+          "probability": 0.9958601593971252
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "segmentId": 1,
+      "wordIndex": 0,
+      "word": " Wiederholung",
+      "start": 0.0,
+      "end": 1.4,
+      "probability": 0.9362523754437765
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 1,
+      "word": " kann",
+      "start": 1.4,
+      "end": 1.64,
+      "probability": 0.9839555621147156
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 2,
+      "word": " noch",
+      "start": 1.64,
+      "end": 1.82,
+      "probability": 0.982696533203125
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 3,
+      "word": " Übung",
+      "start": 1.82,
+      "end": 2.14,
+      "probability": 0.9321257472038269
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 4,
+      "word": " brauchen.",
+      "start": 2.14,
+      "end": 2.56,
+      "probability": 0.9902728199958801
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 5,
+      "word": " Probe",
+      "start": 3.42,
+      "end": 3.96,
+      "probability": 0.9923886358737946
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 6,
+      "word": " gut",
+      "start": 3.96,
+      "end": 4.26,
+      "probability": 0.9300410151481628
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 7,
+      "word": " vorbereitet,",
+      "start": 4.26,
+      "end": 4.9,
+      "probability": 0.9990535378456116
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 8,
+      "word": " aber",
+      "start": 5.4,
+      "end": 5.7,
+      "probability": 0.9933773875236511
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 9,
+      "word": " PH",
+      "start": 5.7,
+      "end": 6.08,
+      "probability": 0.45997875928878784
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 10,
+      "word": "-Gerät",
+      "start": 6.08,
+      "end": 6.54,
+      "probability": 0.9427802413702011
+    },
+    {
+      "segmentId": 1,
+      "wordIndex": 11,
+      "word": " falsch",
+      "start": 6.54,
+      "end": 6.8,
+      "probability": 0.979250431060791
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 0,
+      "word": " kalibriert,",
+      "start": 6.8,
+      "end": 7.5,
+      "probability": 0.9105953127145767
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 1,
+      "word": " Messung",
+      "start": 7.78,
+      "end": 8.22,
+      "probability": 0.976717472076416
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 2,
+      "word": " unzuverlässig.",
+      "start": 8.22,
+      "end": 9.08,
+      "probability": 0.9747811357180277
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 3,
+      "word": " Trainer",
+      "start": 9.98,
+      "end": 10.4,
+      "probability": 0.857506513595581
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 4,
+      "word": " würdigt",
+      "start": 10.4,
+      "end": 11.0,
+      "probability": 0.9495991667111715
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 5,
+      "word": " Vorbereitung",
+      "start": 11.0,
+      "end": 11.74,
+      "probability": 0.9921923081080118
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 6,
+      "word": " nur",
+      "start": 11.74,
+      "end": 12.22,
+      "probability": 0.9487650990486145
+    },
+    {
+      "segmentId": 2,
+      "wordIndex": 7,
+      "word": " unter",
+      "start": 12.22,
+      "end": 12.58,
+      "probability": 0.9980568289756775
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 0,
+      "word": " ihrem",
+      "start": 12.58,
+      "end": 12.86,
+      "probability": 0.908173143863678
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 1,
+      "word": " Kriterium",
+      "start": 12.86,
+      "end": 13.58,
+      "probability": 0.9901702602704366
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 2,
+      "word": " und",
+      "start": 13.58,
+      "end": 14.02,
+      "probability": 0.9907630085945129
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 3,
+      "word": " benennt",
+      "start": 14.02,
+      "end": 14.46,
+      "probability": 0.9562569657961527
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 4,
+      "word": " fehlende",
+      "start": 14.46,
+      "end": 14.82,
+      "probability": 0.9933566053708395
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 5,
+      "word": " Kalibrierung.",
+      "start": 14.82,
+      "end": 15.52,
+      "probability": 0.9519099742174149
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 6,
+      "word": " Person",
+      "start": 16.16,
+      "end": 17.0,
+      "probability": 0.9239912629127502
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 7,
+      "word": " studiert",
+      "start": 17.0,
+      "end": 17.46,
+      "probability": 0.91873499751091
+    },
+    {
+      "segmentId": 3,
+      "wordIndex": 8,
+      "word": " echte",
+      "start": 17.46,
+      "end": 17.82,
+      "probability": 0.99650439620018
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 0,
+      "word": " Geräteanleitung",
+      "start": 17.82,
+      "end": 18.82,
+      "probability": 0.9797660807768503
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 1,
+      "word": " und",
+      "start": 18.82,
+      "end": 19.52,
+      "probability": 0.9733797311782837
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 2,
+      "word": " wiederholt",
+      "start": 19.52,
+      "end": 20.12,
+      "probability": 0.9861313104629517
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 3,
+      "word": " Kalibrierung,",
+      "start": 20.12,
+      "end": 20.98,
+      "probability": 0.9846521466970444
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 4,
+      "word": " Schrägstrichmessung",
+      "start": 21.18,
+      "end": 22.06,
+      "probability": 0.9170664176344872
+    },
+    {
+      "segmentId": 4,
+      "wordIndex": 5,
+      "word": " unter",
+      "start": 22.06,
+      "end": 22.3,
+      "probability": 0.8590238094329834
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 0,
+      "word": " Beobachtung.",
+      "start": 22.3,
+      "end": 23.0,
+      "probability": 0.9920889586210251
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 1,
+      "word": " Trainer",
+      "start": 23.8,
+      "end": 24.46,
+      "probability": 0.9706534147262573
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 2,
+      "word": " notiert",
+      "start": 24.46,
+      "end": 24.96,
+      "probability": 0.9978313446044922
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 3,
+      "word": " wirkliches,",
+      "start": 24.96,
+      "end": 25.68,
+      "probability": 0.8288786113262177
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 4,
+      "word": " auch",
+      "start": 26.1,
+      "end": 26.26,
+      "probability": 0.9977490305900574
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 5,
+      "word": " erneut",
+      "start": 26.26,
+      "end": 26.74,
+      "probability": 0.9923340678215027
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 6,
+      "word": " noch",
+      "start": 26.74,
+      "end": 27.1,
+      "probability": 0.8485920429229736
+    },
+    {
+      "segmentId": 5,
+      "wordIndex": 7,
+      "word": " nicht",
+      "start": 27.1,
+      "end": 27.36,
+      "probability": 0.9926175475120544
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 0,
+      "word": " nachgewiesen.",
+      "start": 27.36,
+      "end": 28.04,
+      "probability": 0.8887895941734314
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 1,
+      "word": " Neuer",
+      "start": 28.74,
+      "end": 29.46,
+      "probability": 0.9786701500415802
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 2,
+      "word": " Versuch",
+      "start": 29.46,
+      "end": 29.92,
+      "probability": 0.9822844564914703
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 3,
+      "word": " schafft",
+      "start": 29.92,
+      "end": 30.24,
+      "probability": 0.9905855357646942
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 4,
+      "word": " neuen",
+      "start": 30.24,
+      "end": 30.48,
+      "probability": 0.904085099697113
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 5,
+      "word": " Beleg",
+      "start": 30.48,
+      "end": 30.94,
+      "probability": 0.982607513666153
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 6,
+      "word": " keinen",
+      "start": 30.94,
+      "end": 31.64,
+      "probability": 0.8646001219749451
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 7,
+      "word": " automatischen",
+      "start": 31.64,
+      "end": 32.5,
+      "probability": 0.9936966001987457
+    },
+    {
+      "segmentId": 6,
+      "wordIndex": 8,
+      "word": " Erfolg.",
+      "start": 32.5,
+      "end": 32.78,
+      "probability": 0.9958601593971252
+    }
+  ],
+  "elapsedASRSeconds": 3.596954033000202,
+  "language": "de",
+  "initialPromptSupplied": false,
+  "referenceTranscriptSupplied": false,
+  "method": "ASR_ESTIMATES_NOT_FORCED_ALIGNMENT_OR_PRONUNCIATION_APPROVAL",
+  "humanListeningApproved": false
+}

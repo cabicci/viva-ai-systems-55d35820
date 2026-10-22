@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "scope": "S3_17_ONE_EXISTING_DE010_MISSING_DIAGNOSTIC_OUTPUT_ONLY",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryVisibility": "public",
+  "branch": "refs/heads/work/soil-s317-de010-existing-audio-review-20261022-r1",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "maximumBlindReviewCalls": 1,
+  "maximumPerUnit": 1,
+  "maximumMetadataGETCalls": 1,
+  "ttsCalls": 0,
+  "asrCalls": 0,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "authorityPath": "owner-authority.json",
+  "units": [
+    {
+      "id": "S3-17-de-r1-010",
+      "locale": "de",
+      "path": "inputs/S3-17-de-r1-010.wav",
+      "audioSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+      "audio": {
+        "channels": 1,
+        "sampleWidthBytes": 2,
+        "sampleRate": 24000,
+        "durationSeconds": 33.32,
+        "pcmSha256": "257256fd59d64983eccf5cbdda8b971cfecdb56a33889825679020d3af362c16",
+        "sampleCount": 799680
+      },
+      "bytes": 1605478,
+      "focusWindowSeconds": [
+        0,
+        33.32
+      ],
+      "focusWindowsSeconds": [
+        [
+          0,
+          33.32
+        ]
+      ],
+      "maximumBlindReviewInvocations": 1,
+      "referenceTranscriptSuppliedToModel": false,
+      "promptPath": "prompts/S3-17-de-r1-010.txt",
+      "promptSha256": "b7a4ee149ac2160474e587f139ff2e2ba752f9748dff4cd8929dcf474d6c9de5"
+    }
+  ],
+  "diagnosis": "Original review call spent, completed metadata-only response has no content even in complete digest-verified archive. This new independently bounded recovery diagnostic reuses the exact generated WAV and prior ASR, no TTS or ASR repetition.",
+  "priorReviewCallState": "SPENT_FAILED_NO_CONTENT_NOT_RESET",
+  "adoptionAllowed": false
+}

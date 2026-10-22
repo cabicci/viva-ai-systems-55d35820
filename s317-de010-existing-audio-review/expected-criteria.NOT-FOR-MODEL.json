@@ -1,0 +1,15 @@
+{
+  "unitId": "S3-17-de-r1-010",
+  "audioSha256": "77777dff9fd55027c3faab4d34cad07b83dedcfea116e0bbf41e98050c5148ce",
+  "sourceText": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+  "existingASRSha256": "d0386fe954ed99bdc6c9b8dc6dbf0921f95c346afbf74127b415de1c3c6e6bd7",
+  "concreteUnresolvedQuestion": "The initial provider returned no actual review content. Independently transcribe and diagnose this already generated recording once, preserving uncertainty, then compare source after review.",
+  "criticalMeaning": [
+    "Preparation criterion alone does not establish pH calibration",
+    "Actual device manual and observed repeat calibration/measurement",
+    "Trainer records what happened, including still not demonstrated",
+    "New attempt supplies new evidence, not automatic success"
+  ],
+  "authoredSlash": "Kalibrierung/Messung may be spoken literally as Schrägstrich; inspect style without assuming a number or negation changed.",
+  "notFedToModel": true
+}

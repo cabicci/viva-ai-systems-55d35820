@@ -1,0 +1,43 @@
+{
+  "unitId": "S3-17-de-r1-010",
+  "originalRequestSha256": "38e5c4fb6a598033367858aadcac59c31304a21be0afcffc649685558a108c8a",
+  "originalWorkerSha256": "55e46d6507852efc945769087219187a62ea42a67011ef23bcbbe1c5d3460845",
+  "fullSourceText": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+  "speakerVoiceEvidence": {
+    "model": "gemini-3.8-flash-tts",
+    "locale": "de",
+    "format": "pcm-s16le-24000-mono-v1",
+    "body": {
+      "model": "gemini-3.8-flash-tts",
+      "input": [
+        {
+          "type": "user_input",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+              "annotations": [
+                {
+                  "type": "speech_metadata",
+                  "style": "Lies ausschließlich den vorgegebenen deutschen Text in einer ruhigen, freundlichen und natürlichen Lehrstimme, mit mäßigem Tempo, zusammenhängenden Sätzen und natürlichen Pausen. Bewahre Mengen, Einheiten, Verneinungen, wissenschaftliche Bedingungen und Unsicherheit. Keine Einleitung, Zusätze, Klangeffekte oder Anweisungen."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "response_format": {
+        "type": "audio",
+        "mime_type": "audio/wav",
+        "sample_rate": 24000
+      },
+      "generation_config": {
+        "speech_config": [
+          {
+            "voice": "Kore"
+          }
+        ]
+      }
+    }
+  }
+}
