@@ -1,0 +1,3 @@
+36NEW remainingS106wholeteachinggroups; fourfixed9unitlocalejobs,36TTS36blind36ASR8GET/0retry. Allprevious172newunitfingerprints+historicalrequests preserved; S105fortycurrent3.8voiceidentities notrepeated. Same reviewedthinartifactengine: originalPCM/providerresponseonce, exactrefs/receiverjoinmandatory. Currentcomplete sourcefacts/qualifiers, spokennotationledger, no hiddenkeys/nativeinput/sourceedit/automaticadoption.
+
+R2 corrects workflow-only duplicate step IDs/references after verified first run had zero jobs/artifacts/provider execution. Source/voices/spoken scripts/request fingerprints unchanged; no provider retry or old-job mutation.
