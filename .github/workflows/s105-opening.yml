@@ -1,0 +1,31 @@
+name: S105 measured opening assembly only
+on:
+  push:
+    branches: [work/soil-s105-opening-assembly-20261022-r1]
+permissions:
+  contents: read
+concurrency:
+  group: s105-opening-assembly-20261022-r1
+  cancel-in-progress: false
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Exact input preflight
+        run: python -B media/s105-opening/assemble.py validate
+      - name: Ensure codecs
+        run: command -v ffmpeg && command -v ffprobe
+      - name: Assemble existing reviewed video and original PCM
+        run: python -B media/s105-opening/assemble.py run
+      - name: Preserve result and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s105-en-opening-r1
+          path: media/s105-opening/output
+          if-no-files-found: error
+          retention-days: 7
