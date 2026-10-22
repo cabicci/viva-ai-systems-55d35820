@@ -1,0 +1,11 @@
+{
+  "sourceWorkerSHA256": "8827624deee121a240ed11170860f3f2f08acaf04b3d78269a148337ea504d4b",
+  "sourceRun": "39832336188",
+  "changes": [
+    "New exact step, source identities, coherent section IDs and first-push branch",
+    "Replace step-specific validation with exact frozen four-paragraph R01 validation",
+    "General non-leading audio-only blind prompt; no topic or reference script supplied",
+    "Same finite 4/4/4/2 call budgets, no retries, no reruns, immediate per-unit audio upload and failure isolation"
+  ],
+  "noNativeAssetOrMediaInputs": true
+}

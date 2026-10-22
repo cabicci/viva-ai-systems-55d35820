@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "scope": "S103_R01_FOUR_LOCALE_ONE_COHERENT_TEACHING_SECTION_ONLY",
+  "stepId": "S1-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s103-r01-audio-20261022-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 4,
+  "maximumBlindAudioReviewCalls": 4,
+  "maximumASRInvocations": 4,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ALL_FOUR_TTS_AND_EACH_IMMEDIATE_UPLOAD_BEFORE_ISOLATED_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-03-ar-EG-R01-r1",
+      "unitId": "S1-03-ar-EG-R01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a3e7418cb5e32596e944a5970c2f7ed22d271a3957de89a8d31ae5147e724439",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "ابدأ بـ«قيّم، بلّغ، ساعد». بص بسرعة على المكان، وحذّر اللي حواليك، واطلب المساعدة المناسبة. لو في حد اتعرض للمادة، الإسعاف الضروري ليه أولوية على جمع المادة المنسكبة. اللي بيغسل عينه بعد تعرضها للمادة ما ينفعش يستنى حقيبة الانسكابات أو استمارة بلاغ تخلص.",
+          "sha256": "a62cac5edd151d9201a0c37dc8e2ca304710fc5ed0e10c62379963fadcb79b55"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "الانسكاب اللي ممكن تتعامل معاه هو اللي خطة المكان تسمح لشخص متدرّب تدريب مناسب يتصرف فيه بالمعدات الصح. لازم تعرف المادة وخطورتها وكميتها وانتشارها وظروف المكان والوقاية وطريقة التنظيف المطلوبة. سائل مجهول، أو مادة بتنتشر بسرعة، أو خطر حريق، أو معدات مش كافية: كل ده سبب إنك تبعد وتبلّغ حتى لو الكمية شكلها صغيرة.",
+          "sha256": "aa02e617c1ff799895e6b2896f8157f8d02dce7cb3cd155e1980749dabf2f133"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "الدوخة أو التهيّج أو دموع العين ممكن تعني إنك بتتعرض للمادة. انسحب لمكان آمن واطلب مساعدة. الريحة القوية ممكن تنبهك لخطر، لكن عدم وجود ريحة ما يثبتش إن الهوا آمن. ما تقرّبش عشان تشم أو تلمس أو تاخد عينة من انسكاب مجهول.",
+          "sha256": "a11cc5fcab1d6e030e78e73ec57af3f710035384542043ec44c304bf2611fd0c"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "سيناريو التدريب فيه عبوة مكتوب عليها خمسة لترات. ده تفصيل في الحالة التدريبية، مش حد عام للانسكاب الآمن. قبل بدء المحاكاة العملية، المدرّب يديك بطاقة تحدد البديل غير الضار وافتراضات الحالة اللي تسمح بالتعامل معاها. لو الافتراضات دي اتغيرت، ممكن يبقى التصرف الصح إنك توقف وتنفّذ الإخلاء.",
+          "sha256": "4b82e0bc9a8db330968042cc1721def7322d8e9b30189aaf7a4d85c177b3b822"
+        }
+      ],
+      "scientificMeaning": "ابدأ بـ«قيّم، بلّغ، ساعد». بص بسرعة على المكان، وحذّر اللي حواليك، واطلب المساعدة المناسبة. لو في حد اتعرض للمادة، الإسعاف الضروري ليه أولوية على جمع المادة المنسكبة. اللي بيغسل عينه بعد تعرضها للمادة ما ينفعش يستنى حقيبة الانسكابات أو استمارة بلاغ تخلص.\n\nالانسكاب اللي ممكن تتعامل معاه هو اللي خطة المكان تسمح لشخص متدرّب تدريب مناسب يتصرف فيه بالمعدات الصح. لازم تعرف المادة وخطورتها وكميتها وانتشارها وظروف المكان والوقاية وطريقة التنظيف المطلوبة. سائل مجهول، أو مادة بتنتشر بسرعة، أو خطر حريق، أو معدات مش كافية: كل ده سبب إنك تبعد وتبلّغ حتى لو الكمية شكلها صغيرة.\n\nالدوخة أو التهيّج أو دموع العين ممكن تعني إنك بتتعرض للمادة. انسحب لمكان آمن واطلب مساعدة. الريحة القوية ممكن تنبهك لخطر، لكن عدم وجود ريحة ما يثبتش إن الهوا آمن. ما تقرّبش عشان تشم أو تلمس أو تاخد عينة من انسكاب مجهول.\n\nسيناريو التدريب فيه عبوة مكتوب عليها خمسة لترات. ده تفصيل في الحالة التدريبية، مش حد عام للانسكاب الآمن. قبل بدء المحاكاة العملية، المدرّب يديك بطاقة تحدد البديل غير الضار وافتراضات الحالة اللي تسمح بالتعامل معاها. لو الافتراضات دي اتغيرت، ممكن يبقى التصرف الصح إنك توقف وتنفّذ الإخلاء.",
+      "spokenText": "ابدأ بـ«قيّم، بلّغ، ساعد». بص بسرعة على المكان، وحذّر اللي حواليك، واطلب المساعدة المناسبة. لو في حد اتعرض للمادة، الإسعاف الضروري ليه أولوية على جمع المادة المنسكبة. اللي بيغسل عينه بعد تعرضها للمادة ما ينفعش يستنى حقيبة الانسكابات أو استمارة بلاغ تخلص.\n\nالانسكاب اللي ممكن تتعامل معاه هو اللي خطة المكان تسمح لشخص متدرّب تدريب مناسب يتصرف فيه بالمعدات الصح. لازم تعرف المادة وخطورتها وكميتها وانتشارها وظروف المكان والوقاية وطريقة التنظيف المطلوبة. سائل مجهول، أو مادة بتنتشر بسرعة، أو خطر حريق، أو معدات مش كافية: كل ده سبب إنك تبعد وتبلّغ حتى لو الكمية شكلها صغيرة.\n\nالدوخة أو التهيّج أو دموع العين ممكن تعني إنك بتتعرض للمادة. انسحب لمكان آمن واطلب مساعدة. الريحة القوية ممكن تنبهك لخطر، لكن عدم وجود ريحة ما يثبتش إن الهوا آمن. ما تقرّبش عشان تشم أو تلمس أو تاخد عينة من انسكاب مجهول.\n\nسيناريو التدريب فيه عبوة مكتوب عليها خمسة لترات. ده تفصيل في الحالة التدريبية، مش حد عام للانسكاب الآمن. قبل بدء المحاكاة العملية، المدرّب يديك بطاقة تحدد البديل غير الضار وافتراضات الحالة اللي تسمح بالتعامل معاها. لو الافتراضات دي اتغيرت، ممكن يبقى التصرف الصح إنك توقف وتنفّذ الإخلاء.",
+      "spokenTextSha256": "ed19692974989a9196da4b6d531826239c726bdd4676838370f5118a0304a09c",
+      "spokenTextSHA256": "ed19692974989a9196da4b6d531826239c726bdd4676838370f5118a0304a09c",
+      "displayText": "ابدأ بـ«قيّم، بلّغ، ساعد». بص بسرعة على المكان، وحذّر اللي حواليك، واطلب المساعدة المناسبة. لو في حد اتعرض للمادة، الإسعاف الضروري ليه أولوية على جمع المادة المنسكبة. اللي بيغسل عينه بعد تعرضها للمادة ما ينفعش يستنى حقيبة الانسكابات أو استمارة بلاغ تخلص.\n\nالانسكاب اللي ممكن تتعامل معاه هو اللي خطة المكان تسمح لشخص متدرّب تدريب مناسب يتصرف فيه بالمعدات الصح. لازم تعرف المادة وخطورتها وكميتها وانتشارها وظروف المكان والوقاية وطريقة التنظيف المطلوبة. سائل مجهول، أو مادة بتنتشر بسرعة، أو خطر حريق، أو معدات مش كافية: كل ده سبب إنك تبعد وتبلّغ حتى لو الكمية شكلها صغيرة.\n\nالدوخة أو التهيّج أو دموع العين ممكن تعني إنك بتتعرض للمادة. انسحب لمكان آمن واطلب مساعدة. الريحة القوية ممكن تنبهك لخطر، لكن عدم وجود ريحة ما يثبتش إن الهوا آمن. ما تقرّبش عشان تشم أو تلمس أو تاخد عينة من انسكاب مجهول.\n\nسيناريو التدريب فيه عبوة مكتوب عليها خمسة لترات. ده تفصيل في الحالة التدريبية، مش حد عام للانسكاب الآمن. قبل بدء المحاكاة العملية، المدرّب يديك بطاقة تحدد البديل غير الضار وافتراضات الحالة اللي تسمح بالتعامل معاها. لو الافتراضات دي اتغيرت، ممكن يبقى التصرف الصح إنك توقف وتنفّذ الإخلاء.",
+      "captionText": "ابدأ بـ«قيّم، بلّغ، ساعد». بص بسرعة على المكان، وحذّر اللي حواليك، واطلب المساعدة المناسبة. لو في حد اتعرض للمادة، الإسعاف الضروري ليه أولوية على جمع المادة المنسكبة. اللي بيغسل عينه بعد تعرضها للمادة ما ينفعش يستنى حقيبة الانسكابات أو استمارة بلاغ تخلص.\n\nالانسكاب اللي ممكن تتعامل معاه هو اللي خطة المكان تسمح لشخص متدرّب تدريب مناسب يتصرف فيه بالمعدات الصح. لازم تعرف المادة وخطورتها وكميتها وانتشارها وظروف المكان والوقاية وطريقة التنظيف المطلوبة. سائل مجهول، أو مادة بتنتشر بسرعة، أو خطر حريق، أو معدات مش كافية: كل ده سبب إنك تبعد وتبلّغ حتى لو الكمية شكلها صغيرة.\n\nالدوخة أو التهيّج أو دموع العين ممكن تعني إنك بتتعرض للمادة. انسحب لمكان آمن واطلب مساعدة. الريحة القوية ممكن تنبهك لخطر، لكن عدم وجود ريحة ما يثبتش إن الهوا آمن. ما تقرّبش عشان تشم أو تلمس أو تاخد عينة من انسكاب مجهول.\n\nسيناريو التدريب فيه عبوة مكتوب عليها خمسة لترات. ده تفصيل في الحالة التدريبية، مش حد عام للانسكاب الآمن. قبل بدء المحاكاة العملية، المدرّب يديك بطاقة تحدد البديل غير الضار وافتراضات الحالة اللي تسمح بالتعامل معاها. لو الافتراضات دي اتغيرت، ممكن يبقى التصرف الصح إنك توقف وتنفّذ الإخلاء.",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_READING_ONLY",
+        "locale": "ar-EG"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "actualAudio": null,
+      "timings": null,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSha256": "d913157832b794f7723efb0c9322b3d7f0c7707f685d77595d2bd781f6ebf0d6",
+      "requestFingerprintSHA256": "d913157832b794f7723efb0c9322b3d7f0c7707f685d77595d2bd781f6ebf0d6",
+      "sourcePlanSha256": "f98a7e019bee5d7ca36a56e532e88e205cfddb744734ee75690de67d21b24ed6"
+    },
+    {
+      "id": "S1-03-en-R01-r1",
+      "unitId": "S1-03-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "739ac50460a824dcfa27e7be6fb7645b79f09b0772a7ff3aeaa7a23ba4e8cd26",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Start with Assess, Alert, Attend. Quickly check the scene, warn the people nearby and summon the appropriate help. If someone has been exposed, necessary first aid takes priority over collecting the spill. A person washing an exposed eye must not wait for a spill kit or a completed incident form.",
+          "sha256": "aa16630d4f84293305da9e87240f45233b8739daaf6aafc302c39f6148f2d1ba"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "A manageable spill is one that the site's plan authorizes a suitably trained person to handle with the correct equipment. You need to know the substance, its hazards, the amount and spread, the surroundings, and the protection and cleanup method required. An unknown liquid, a rapidly spreading release, a fire risk or inadequate equipment is a reason to keep away and report, even if the amount looks small.",
+          "sha256": "5bda11c1e5c8f5552ae519ec5a7333a40fa5ecd2096fb3bb94d88120ef68b252"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Dizziness, irritation or watering eyes may mean that you are being exposed. Withdraw to safety and get help. A strong smell can warn of a problem, but no smell does not prove that the air is safe. Do not move closer to sniff, touch or sample an unknown spill.",
+          "sha256": "3f5a49965f139a8cc4bef095760992ecf1f44006616dbdf1c7a946d959f576ae"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "The practice scenario uses a container marked five litres. That is a scenario detail, not a universal safe spill limit. Before a hands-on simulation begins, the trainer must provide a card identifying the harmless substitute and stating the assumptions under which the represented spill may be handled. If those assumptions change, the correct response may be to stop and evacuate.",
+          "sha256": "b2f4b24a4d1bdd4aca0126bbcf8214a58f8d3967ec5c33c1ec430359e43761c9"
+        }
+      ],
+      "scientificMeaning": "Start with Assess, Alert, Attend. Quickly check the scene, warn the people nearby and summon the appropriate help. If someone has been exposed, necessary first aid takes priority over collecting the spill. A person washing an exposed eye must not wait for a spill kit or a completed incident form.\n\nA manageable spill is one that the site's plan authorizes a suitably trained person to handle with the correct equipment. You need to know the substance, its hazards, the amount and spread, the surroundings, and the protection and cleanup method required. An unknown liquid, a rapidly spreading release, a fire risk or inadequate equipment is a reason to keep away and report, even if the amount looks small.\n\nDizziness, irritation or watering eyes may mean that you are being exposed. Withdraw to safety and get help. A strong smell can warn of a problem, but no smell does not prove that the air is safe. Do not move closer to sniff, touch or sample an unknown spill.\n\nThe practice scenario uses a container marked five litres. That is a scenario detail, not a universal safe spill limit. Before a hands-on simulation begins, the trainer must provide a card identifying the harmless substitute and stating the assumptions under which the represented spill may be handled. If those assumptions change, the correct response may be to stop and evacuate.",
+      "spokenText": "Start with Assess, Alert, Attend. Quickly check the scene, warn the people nearby and summon the appropriate help. If someone has been exposed, necessary first aid takes priority over collecting the spill. A person washing an exposed eye must not wait for a spill kit or a completed incident form.\n\nA manageable spill is one that the site's plan authorizes a suitably trained person to handle with the correct equipment. You need to know the substance, its hazards, the amount and spread, the surroundings, and the protection and cleanup method required. An unknown liquid, a rapidly spreading release, a fire risk or inadequate equipment is a reason to keep away and report, even if the amount looks small.\n\nDizziness, irritation or watering eyes may mean that you are being exposed. Withdraw to safety and get help. A strong smell can warn of a problem, but no smell does not prove that the air is safe. Do not move closer to sniff, touch or sample an unknown spill.\n\nThe practice scenario uses a container marked five litres. That is a scenario detail, not a universal safe spill limit. Before a hands-on simulation begins, the trainer must provide a card identifying the harmless substitute and stating the assumptions under which the represented spill may be handled. If those assumptions change, the correct response may be to stop and evacuate.",
+      "spokenTextSha256": "10a8e968981ddd001814ba33e00555ccb36e07a667bf1371736056aa0a83aaf0",
+      "spokenTextSHA256": "10a8e968981ddd001814ba33e00555ccb36e07a667bf1371736056aa0a83aaf0",
+      "displayText": "Start with Assess, Alert, Attend. Quickly check the scene, warn the people nearby and summon the appropriate help. If someone has been exposed, necessary first aid takes priority over collecting the spill. A person washing an exposed eye must not wait for a spill kit or a completed incident form.\n\nA manageable spill is one that the site's plan authorizes a suitably trained person to handle with the correct equipment. You need to know the substance, its hazards, the amount and spread, the surroundings, and the protection and cleanup method required. An unknown liquid, a rapidly spreading release, a fire risk or inadequate equipment is a reason to keep away and report, even if the amount looks small.\n\nDizziness, irritation or watering eyes may mean that you are being exposed. Withdraw to safety and get help. A strong smell can warn of a problem, but no smell does not prove that the air is safe. Do not move closer to sniff, touch or sample an unknown spill.\n\nThe practice scenario uses a container marked five litres. That is a scenario detail, not a universal safe spill limit. Before a hands-on simulation begins, the trainer must provide a card identifying the harmless substitute and stating the assumptions under which the represented spill may be handled. If those assumptions change, the correct response may be to stop and evacuate.",
+      "captionText": "Start with Assess, Alert, Attend. Quickly check the scene, warn the people nearby and summon the appropriate help. If someone has been exposed, necessary first aid takes priority over collecting the spill. A person washing an exposed eye must not wait for a spill kit or a completed incident form.\n\nA manageable spill is one that the site's plan authorizes a suitably trained person to handle with the correct equipment. You need to know the substance, its hazards, the amount and spread, the surroundings, and the protection and cleanup method required. An unknown liquid, a rapidly spreading release, a fire risk or inadequate equipment is a reason to keep away and report, even if the amount looks small.\n\nDizziness, irritation or watering eyes may mean that you are being exposed. Withdraw to safety and get help. A strong smell can warn of a problem, but no smell does not prove that the air is safe. Do not move closer to sniff, touch or sample an unknown spill.\n\nThe practice scenario uses a container marked five litres. That is a scenario detail, not a universal safe spill limit. Before a hands-on simulation begins, the trainer must provide a card identifying the harmless substitute and stating the assumptions under which the represented spill may be handled. If those assumptions change, the correct response may be to stop and evacuate.",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_READING_ONLY",
+        "locale": "en"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "actualAudio": null,
+      "timings": null,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSha256": "eaf59ecbf2f2c2c411ae6164a6464974ca5c84a06d616da52609065b06e6a20c",
+      "requestFingerprintSHA256": "eaf59ecbf2f2c2c411ae6164a6464974ca5c84a06d616da52609065b06e6a20c",
+      "sourcePlanSha256": "42a4600defe5a5a62ede1a5b87eac8d8f8964ee2c3c20a8b8349820a9a8c58f2"
+    },
+    {
+      "id": "S1-03-it-R01-r1",
+      "unitId": "S1-03-it-R01-r1",
+      "locale": "it",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f7e52f47f15b4cbe115565a9fb996104952ed1966e2ebe05fd879054e4cf079e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Inizia con Valuta, Avvisa, Assisti. Controlla rapidamente l'area, avvisa chi è vicino e chiama l'aiuto appropriato. Se qualcuno è stato esposto, il primo soccorso necessario ha priorità sulla raccolta della sostanza. Una persona che sta lavando un occhio esposto non deve aspettare il kit per gli sversamenti o il completamento della scheda d'incidente.",
+          "sha256": "6b8cec114d82bb7a5c43b84ecd7868013e1ef97c37761d8ca27ae9b5f4da9529"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Uno sversamento gestibile è quello che il piano del sito permette a una persona adeguatamente formata di trattare con l'attrezzatura corretta. Devi conoscere la sostanza, i pericoli, la quantità e l'estensione, ciò che la circonda e la protezione e il metodo di pulizia richiesti. Un liquido sconosciuto, un rilascio che si espande rapidamente, il rischio d'incendio o attrezzature inadeguate impongono di restare lontano e segnalare, anche se la quantità sembra piccola.",
+          "sha256": "d4c62aef909df0c8f4c9ae49b7a3cab08e1d2bb0f95def7a3ad22d71a2f83bd2"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Capogiri, irritazione o lacrimazione possono indicare un'esposizione. Allontanati verso un luogo sicuro e chiedi aiuto. Un odore forte può avvertire di un problema, ma l'assenza di odore non dimostra che l'aria sia sicura. Non avvicinarti per annusare, toccare o prelevare un campione di uno sversamento sconosciuto.",
+          "sha256": "a891738b2ce7c43609504607579d713a409d8dfbcfdee3918c8940833d64bcda"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Lo scenario di pratica usa un contenitore indicato come cinque litri. È un dettaglio dello scenario, non una soglia universale di sicurezza. Prima della simulazione pratica, il formatore deve fornire una scheda che identifichi il sostituto innocuo e le condizioni in cui lo sversamento rappresentato può essere gestito. Se queste condizioni cambiano, la risposta corretta può essere interrompere e far evacuare.",
+          "sha256": "7cd63611761be92696fc281036ef9a0e7d257b0f954c7db786df795234022355"
+        }
+      ],
+      "scientificMeaning": "Inizia con Valuta, Avvisa, Assisti. Controlla rapidamente l'area, avvisa chi è vicino e chiama l'aiuto appropriato. Se qualcuno è stato esposto, il primo soccorso necessario ha priorità sulla raccolta della sostanza. Una persona che sta lavando un occhio esposto non deve aspettare il kit per gli sversamenti o il completamento della scheda d'incidente.\n\nUno sversamento gestibile è quello che il piano del sito permette a una persona adeguatamente formata di trattare con l'attrezzatura corretta. Devi conoscere la sostanza, i pericoli, la quantità e l'estensione, ciò che la circonda e la protezione e il metodo di pulizia richiesti. Un liquido sconosciuto, un rilascio che si espande rapidamente, il rischio d'incendio o attrezzature inadeguate impongono di restare lontano e segnalare, anche se la quantità sembra piccola.\n\nCapogiri, irritazione o lacrimazione possono indicare un'esposizione. Allontanati verso un luogo sicuro e chiedi aiuto. Un odore forte può avvertire di un problema, ma l'assenza di odore non dimostra che l'aria sia sicura. Non avvicinarti per annusare, toccare o prelevare un campione di uno sversamento sconosciuto.\n\nLo scenario di pratica usa un contenitore indicato come cinque litri. È un dettaglio dello scenario, non una soglia universale di sicurezza. Prima della simulazione pratica, il formatore deve fornire una scheda che identifichi il sostituto innocuo e le condizioni in cui lo sversamento rappresentato può essere gestito. Se queste condizioni cambiano, la risposta corretta può essere interrompere e far evacuare.",
+      "spokenText": "Inizia con Valuta, Avvisa, Assisti. Controlla rapidamente l'area, avvisa chi è vicino e chiama l'aiuto appropriato. Se qualcuno è stato esposto, il primo soccorso necessario ha priorità sulla raccolta della sostanza. Una persona che sta lavando un occhio esposto non deve aspettare il kit per gli sversamenti o il completamento della scheda d'incidente.\n\nUno sversamento gestibile è quello che il piano del sito permette a una persona adeguatamente formata di trattare con l'attrezzatura corretta. Devi conoscere la sostanza, i pericoli, la quantità e l'estensione, ciò che la circonda e la protezione e il metodo di pulizia richiesti. Un liquido sconosciuto, un rilascio che si espande rapidamente, il rischio d'incendio o attrezzature inadeguate impongono di restare lontano e segnalare, anche se la quantità sembra piccola.\n\nCapogiri, irritazione o lacrimazione possono indicare un'esposizione. Allontanati verso un luogo sicuro e chiedi aiuto. Un odore forte può avvertire di un problema, ma l'assenza di odore non dimostra che l'aria sia sicura. Non avvicinarti per annusare, toccare o prelevare un campione di uno sversamento sconosciuto.\n\nLo scenario di pratica usa un contenitore indicato come cinque litri. È un dettaglio dello scenario, non una soglia universale di sicurezza. Prima della simulazione pratica, il formatore deve fornire una scheda che identifichi il sostituto innocuo e le condizioni in cui lo sversamento rappresentato può essere gestito. Se queste condizioni cambiano, la risposta corretta può essere interrompere e far evacuare.",
+      "spokenTextSha256": "adc7820d213726a1cba8fc90ce1a25320d1b1005f6450cba47165e3672f98469",
+      "spokenTextSHA256": "adc7820d213726a1cba8fc90ce1a25320d1b1005f6450cba47165e3672f98469",
+      "displayText": "Inizia con Valuta, Avvisa, Assisti. Controlla rapidamente l'area, avvisa chi è vicino e chiama l'aiuto appropriato. Se qualcuno è stato esposto, il primo soccorso necessario ha priorità sulla raccolta della sostanza. Una persona che sta lavando un occhio esposto non deve aspettare il kit per gli sversamenti o il completamento della scheda d'incidente.\n\nUno sversamento gestibile è quello che il piano del sito permette a una persona adeguatamente formata di trattare con l'attrezzatura corretta. Devi conoscere la sostanza, i pericoli, la quantità e l'estensione, ciò che la circonda e la protezione e il metodo di pulizia richiesti. Un liquido sconosciuto, un rilascio che si espande rapidamente, il rischio d'incendio o attrezzature inadeguate impongono di restare lontano e segnalare, anche se la quantità sembra piccola.\n\nCapogiri, irritazione o lacrimazione possono indicare un'esposizione. Allontanati verso un luogo sicuro e chiedi aiuto. Un odore forte può avvertire di un problema, ma l'assenza di odore non dimostra che l'aria sia sicura. Non avvicinarti per annusare, toccare o prelevare un campione di uno sversamento sconosciuto.\n\nLo scenario di pratica usa un contenitore indicato come cinque litri. È un dettaglio dello scenario, non una soglia universale di sicurezza. Prima della simulazione pratica, il formatore deve fornire una scheda che identifichi il sostituto innocuo e le condizioni in cui lo sversamento rappresentato può essere gestito. Se queste condizioni cambiano, la risposta corretta può essere interrompere e far evacuare.",
+      "captionText": "Inizia con Valuta, Avvisa, Assisti. Controlla rapidamente l'area, avvisa chi è vicino e chiama l'aiuto appropriato. Se qualcuno è stato esposto, il primo soccorso necessario ha priorità sulla raccolta della sostanza. Una persona che sta lavando un occhio esposto non deve aspettare il kit per gli sversamenti o il completamento della scheda d'incidente.\n\nUno sversamento gestibile è quello che il piano del sito permette a una persona adeguatamente formata di trattare con l'attrezzatura corretta. Devi conoscere la sostanza, i pericoli, la quantità e l'estensione, ciò che la circonda e la protezione e il metodo di pulizia richiesti. Un liquido sconosciuto, un rilascio che si espande rapidamente, il rischio d'incendio o attrezzature inadeguate impongono di restare lontano e segnalare, anche se la quantità sembra piccola.\n\nCapogiri, irritazione o lacrimazione possono indicare un'esposizione. Allontanati verso un luogo sicuro e chiedi aiuto. Un odore forte può avvertire di un problema, ma l'assenza di odore non dimostra che l'aria sia sicura. Non avvicinarti per annusare, toccare o prelevare un campione di uno sversamento sconosciuto.\n\nLo scenario di pratica usa un contenitore indicato come cinque litri. È un dettaglio dello scenario, non una soglia universale di sicurezza. Prima della simulazione pratica, il formatore deve fornire una scheda che identifichi il sostituto innocuo e le condizioni in cui lo sversamento rappresentato può essere gestito. Se queste condizioni cambiano, la risposta corretta può essere interrompere e far evacuare.",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_READING_ONLY",
+        "locale": "it"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "actualAudio": null,
+      "timings": null,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSha256": "adc6cb95715cfd20557a11155eddd7a564aeb7c9f834cdca082e2219a2de0ac0",
+      "requestFingerprintSHA256": "adc6cb95715cfd20557a11155eddd7a564aeb7c9f834cdca082e2219a2de0ac0",
+      "sourcePlanSha256": "9f48ca3eb0cc4c9db4b5bb62af45187291c3e304615cf93062e650537e00b67c"
+    },
+    {
+      "id": "S1-03-de-R01-r1",
+      "unitId": "S1-03-de-R01-r1",
+      "locale": "de",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "069caa6e2069c60e1e7e35cc2baec2126458ccada3f5d61e7fd9cd5b15d49280",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Beginnen Sie mit Einschätzen, Alarmieren, Helfen. Prüfen Sie rasch den Bereich, warnen Sie Menschen in der Nähe und holen Sie geeignete Hilfe. Wurde eine Person einem Stoff ausgesetzt, geht notwendige Erste Hilfe vor der Aufnahme des verschütteten Materials. Wer ein betroffenes Auge spült, darf nicht auf den Reinigungskasten oder ein fertig ausgefülltes Unfallformular warten.",
+          "sha256": "c833674f42981b47620cb728a6d62865fc0b9c87fc8c63463760471f1db83746"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Ein behandelbarer Stoffaustritt ist ein Fall, den der Plan des Einsatzortes einer angemessen geschulten Person mit passender Ausrüstung ausdrücklich erlaubt. Sie müssen Stoff und Gefahren, Menge und Ausbreitung, Umgebung sowie vorgeschriebenen Schutz und Reinigungsweg kennen. Unbekannte Flüssigkeit, rasche Ausbreitung, Brandgefahr oder fehlende Ausrüstung sind Gründe, Abstand zu halten und den Fall zu melden, auch wenn die Menge klein aussieht.",
+          "sha256": "19b48c9d2c7e76d72d8d23bcc082f5c40cbc33de57f20337b5444b7bfebccc26"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Schwindel, Reizung oder tränende Augen können auf eine eigene Exposition hinweisen. Ziehen Sie sich an einen sicheren Ort zurück und holen Sie Hilfe. Ein starker Geruch kann warnen, aber fehlender Geruch beweist keine sichere Luft. Gehen Sie bei einem unbekannten Stoff nicht näher heran, um daran zu riechen, ihn zu berühren oder eine Probe zu nehmen.",
+          "sha256": "b8271b1c2944e4eea64e8eb45adf09b0979279ef6408559739f0b993348c3628"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Im Übungsszenario ist ein Behälter mit fünf Litern gekennzeichnet. Das ist ein Szenariodetail, kein allgemein sicherer Grenzwert. Vor der praktischen Übung muss die ausbildende Person eine Karte mit dem harmlosen Ersatzstoff und den Annahmen ausgeben, unter denen dieser dargestellte Austritt bearbeitet werden darf. Ändern sich diese Annahmen, kann Anhalten und Evakuieren die richtige Reaktion sein.",
+          "sha256": "a1c479e9cf4699046a61d781464d81cc1bdf89438add55e5b4363676953f8899"
+        }
+      ],
+      "scientificMeaning": "Beginnen Sie mit Einschätzen, Alarmieren, Helfen. Prüfen Sie rasch den Bereich, warnen Sie Menschen in der Nähe und holen Sie geeignete Hilfe. Wurde eine Person einem Stoff ausgesetzt, geht notwendige Erste Hilfe vor der Aufnahme des verschütteten Materials. Wer ein betroffenes Auge spült, darf nicht auf den Reinigungskasten oder ein fertig ausgefülltes Unfallformular warten.\n\nEin behandelbarer Stoffaustritt ist ein Fall, den der Plan des Einsatzortes einer angemessen geschulten Person mit passender Ausrüstung ausdrücklich erlaubt. Sie müssen Stoff und Gefahren, Menge und Ausbreitung, Umgebung sowie vorgeschriebenen Schutz und Reinigungsweg kennen. Unbekannte Flüssigkeit, rasche Ausbreitung, Brandgefahr oder fehlende Ausrüstung sind Gründe, Abstand zu halten und den Fall zu melden, auch wenn die Menge klein aussieht.\n\nSchwindel, Reizung oder tränende Augen können auf eine eigene Exposition hinweisen. Ziehen Sie sich an einen sicheren Ort zurück und holen Sie Hilfe. Ein starker Geruch kann warnen, aber fehlender Geruch beweist keine sichere Luft. Gehen Sie bei einem unbekannten Stoff nicht näher heran, um daran zu riechen, ihn zu berühren oder eine Probe zu nehmen.\n\nIm Übungsszenario ist ein Behälter mit fünf Litern gekennzeichnet. Das ist ein Szenariodetail, kein allgemein sicherer Grenzwert. Vor der praktischen Übung muss die ausbildende Person eine Karte mit dem harmlosen Ersatzstoff und den Annahmen ausgeben, unter denen dieser dargestellte Austritt bearbeitet werden darf. Ändern sich diese Annahmen, kann Anhalten und Evakuieren die richtige Reaktion sein.",
+      "spokenText": "Beginnen Sie mit Einschätzen, Alarmieren, Helfen. Prüfen Sie rasch den Bereich, warnen Sie Menschen in der Nähe und holen Sie geeignete Hilfe. Wurde eine Person einem Stoff ausgesetzt, geht notwendige Erste Hilfe vor der Aufnahme des verschütteten Materials. Wer ein betroffenes Auge spült, darf nicht auf den Reinigungskasten oder ein fertig ausgefülltes Unfallformular warten.\n\nEin behandelbarer Stoffaustritt ist ein Fall, den der Plan des Einsatzortes einer angemessen geschulten Person mit passender Ausrüstung ausdrücklich erlaubt. Sie müssen Stoff und Gefahren, Menge und Ausbreitung, Umgebung sowie vorgeschriebenen Schutz und Reinigungsweg kennen. Unbekannte Flüssigkeit, rasche Ausbreitung, Brandgefahr oder fehlende Ausrüstung sind Gründe, Abstand zu halten und den Fall zu melden, auch wenn die Menge klein aussieht.\n\nSchwindel, Reizung oder tränende Augen können auf eine eigene Exposition hinweisen. Ziehen Sie sich an einen sicheren Ort zurück und holen Sie Hilfe. Ein starker Geruch kann warnen, aber fehlender Geruch beweist keine sichere Luft. Gehen Sie bei einem unbekannten Stoff nicht näher heran, um daran zu riechen, ihn zu berühren oder eine Probe zu nehmen.\n\nIm Übungsszenario ist ein Behälter mit fünf Litern gekennzeichnet. Das ist ein Szenariodetail, kein allgemein sicherer Grenzwert. Vor der praktischen Übung muss die ausbildende Person eine Karte mit dem harmlosen Ersatzstoff und den Annahmen ausgeben, unter denen dieser dargestellte Austritt bearbeitet werden darf. Ändern sich diese Annahmen, kann Anhalten und Evakuieren die richtige Reaktion sein.",
+      "spokenTextSha256": "c6a38d7bb25df5a992bf1f4e106792b8c2333ad330aeac27dce6a280cb62373c",
+      "spokenTextSHA256": "c6a38d7bb25df5a992bf1f4e106792b8c2333ad330aeac27dce6a280cb62373c",
+      "displayText": "Beginnen Sie mit Einschätzen, Alarmieren, Helfen. Prüfen Sie rasch den Bereich, warnen Sie Menschen in der Nähe und holen Sie geeignete Hilfe. Wurde eine Person einem Stoff ausgesetzt, geht notwendige Erste Hilfe vor der Aufnahme des verschütteten Materials. Wer ein betroffenes Auge spült, darf nicht auf den Reinigungskasten oder ein fertig ausgefülltes Unfallformular warten.\n\nEin behandelbarer Stoffaustritt ist ein Fall, den der Plan des Einsatzortes einer angemessen geschulten Person mit passender Ausrüstung ausdrücklich erlaubt. Sie müssen Stoff und Gefahren, Menge und Ausbreitung, Umgebung sowie vorgeschriebenen Schutz und Reinigungsweg kennen. Unbekannte Flüssigkeit, rasche Ausbreitung, Brandgefahr oder fehlende Ausrüstung sind Gründe, Abstand zu halten und den Fall zu melden, auch wenn die Menge klein aussieht.\n\nSchwindel, Reizung oder tränende Augen können auf eine eigene Exposition hinweisen. Ziehen Sie sich an einen sicheren Ort zurück und holen Sie Hilfe. Ein starker Geruch kann warnen, aber fehlender Geruch beweist keine sichere Luft. Gehen Sie bei einem unbekannten Stoff nicht näher heran, um daran zu riechen, ihn zu berühren oder eine Probe zu nehmen.\n\nIm Übungsszenario ist ein Behälter mit fünf Litern gekennzeichnet. Das ist ein Szenariodetail, kein allgemein sicherer Grenzwert. Vor der praktischen Übung muss die ausbildende Person eine Karte mit dem harmlosen Ersatzstoff und den Annahmen ausgeben, unter denen dieser dargestellte Austritt bearbeitet werden darf. Ändern sich diese Annahmen, kann Anhalten und Evakuieren die richtige Reaktion sein.",
+      "captionText": "Beginnen Sie mit Einschätzen, Alarmieren, Helfen. Prüfen Sie rasch den Bereich, warnen Sie Menschen in der Nähe und holen Sie geeignete Hilfe. Wurde eine Person einem Stoff ausgesetzt, geht notwendige Erste Hilfe vor der Aufnahme des verschütteten Materials. Wer ein betroffenes Auge spült, darf nicht auf den Reinigungskasten oder ein fertig ausgefülltes Unfallformular warten.\n\nEin behandelbarer Stoffaustritt ist ein Fall, den der Plan des Einsatzortes einer angemessen geschulten Person mit passender Ausrüstung ausdrücklich erlaubt. Sie müssen Stoff und Gefahren, Menge und Ausbreitung, Umgebung sowie vorgeschriebenen Schutz und Reinigungsweg kennen. Unbekannte Flüssigkeit, rasche Ausbreitung, Brandgefahr oder fehlende Ausrüstung sind Gründe, Abstand zu halten und den Fall zu melden, auch wenn die Menge klein aussieht.\n\nSchwindel, Reizung oder tränende Augen können auf eine eigene Exposition hinweisen. Ziehen Sie sich an einen sicheren Ort zurück und holen Sie Hilfe. Ein starker Geruch kann warnen, aber fehlender Geruch beweist keine sichere Luft. Gehen Sie bei einem unbekannten Stoff nicht näher heran, um daran zu riechen, ihn zu berühren oder eine Probe zu nehmen.\n\nIm Übungsszenario ist ein Behälter mit fünf Litern gekennzeichnet. Das ist ein Szenariodetail, kein allgemein sicherer Grenzwert. Vor der praktischen Übung muss die ausbildende Person eine Karte mit dem harmlosen Ersatzstoff und den Annahmen ausgeben, unter denen dieser dargestellte Austritt bearbeitet werden darf. Ändern sich diese Annahmen, kann Anhalten und Evakuieren die richtige Reaktion sein.",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "releaseGate": {
+        "kind": "TEACHING_READING_ONLY",
+        "locale": "de"
+      },
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "actualAudio": null,
+      "timings": null,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSha256": "709af5b5f762950a622472b33bd51b4625346c59853a30edb1e2df3d8b954b2f",
+      "requestFingerprintSHA256": "709af5b5f762950a622472b33bd51b4625346c59853a30edb1e2df3d8b954b2f",
+      "sourcePlanSha256": "eb2d489665a9766d8b6f421b39b22ad3cad9efe360cbc979f9f3500a1bad0e2d"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false
+}
