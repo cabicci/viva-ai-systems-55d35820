@@ -1,0 +1,1 @@
+Exactly TWO Egyptian Arabic complete repair sentences after corroborated articulation faults.2TTS2blind2ASR2GET/0retry, same acceptedKore/delivery. Fullsource paragraphbindings preserved, exactsentenceprojection explicit, allothergoodPCM retained. No source/display/caption change or automaticsplice/adoption; bounded actualQA first.
