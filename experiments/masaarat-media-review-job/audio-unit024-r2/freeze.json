@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "sha256": {
+    "worker.py": "9e16139654aaaf20fe55d18353920470568d462a2c84d7c3830941ea913e05e5",
+    "request.json": "9a7bcee2abaf26c408bf888495433fa32d40c47ccf84330554501a2fa93891a8",
+    "request.original-20261022.json": "5c6ad824568d18fbb1e3fe01340f18cdc459a8aa2740e50d93a405b7028a401c",
+    "request.prior-batch.json": "f8a87ac086c8b449a65daefd1421dff6ed19fb6eaf0d92f7d6ce3cd0c0da297a",
+    "prior-candidate-diagnosis.json": "67633e3ac8210046963c1afeeb0f297e68bdac365deb2418c2b689563f284e74",
+    "prior-batch-preservation.json": "f0fec7b2a2072ddecbe6ba32724d37c5eaf11e4878e83f4cb9ffb223adffd1ba",
+    "runtime.json": "7b7c5f7333d06990caad6eea22451ba2c976baaa078b891374abb1c291f703d2",
+    "vendor/pipeline-engine.py": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+    "vendor/course/manifest.json": "4b87fe3f7d34af09a203f540c5028fde721f3d99ec4ee0205a6e8e493e77f7d0",
+    "offline_check.py": "bb15c3808b0a01e1d232b998dbb625f8519500a170baf4725e363adccc6ecf11",
+    "README.en.md": "0eb7a257a84c43a3b6312515a36a221ce6ea3440d9f8d1a3aa39cf47d5391802",
+    "model-evidence.json": "eff052dd29c036237a16f4f03c468f57dd68dc6c0290408fdbfbc74e16fb30f9",
+    "freeze_package.py": "026b589ace078a11574f30e818f304ee2427d4e9b35c5323b5fa986e36bfa059",
+    ".gitignore": "ee969cd30de5b48a2bc4b930c0216bc3869916e5683e6132cbd00c4e7dd031c4"
+  },
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETs": 2,
+  "automaticRetries": 0
+}

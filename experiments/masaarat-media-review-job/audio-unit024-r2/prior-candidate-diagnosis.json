@@ -1,0 +1,41 @@
+{
+  "audioSha256": "ee1da3349dbe097aeecae62ca6266c8bb90eb7c4da388ccfc93d6b023843c561",
+  "blindReviewSha256": "c870c276de891eee256c77c638e56f553876b57d7b19fb599599e0f9f235b16b",
+  "asrSha256": "0103a0b59ae5f3287910f02c3922225bb096aab9bf5ca455e48a55b8b37b5fc2",
+  "diagnostic": {
+    "audioSha256": "ee1da3349dbe097aeecae62ca6266c8bb90eb7c4da388ccfc93d6b023843c561",
+    "result": {
+      "transcript": "اكتب خمس نقاط فحص، مش مجرد أسماء معدات. أول نقطة، الموقع والطريق آمنين، وفيه تصريح للشغل، وتأكيد إن مكان ما هناخد العينة آمن من المرافق المدفونة. تاني نقطة، الأدوات سليمة ونضيفة وطريقة حملها آمنة. تالت نقطة، الحماية مناسبة للمهمة والمعلومات أي مادة كيميائية. رابع نقطة، المشرف عارف المكان ومعاد الرجوع، واتفاقك مع زميلك وخطة الاتصال واضحين. خامس نقطة، أرقام الطوارئ وطريق الدخول ونقطة التجمع ومياه الشرب واحتياطات الجو كلهم معروفين.",
+      "uncertainWords": [],
+      "findings": [
+        {
+          "startSeconds": 21.2,
+          "endSeconds": 23.5,
+          "heardText": "والمعلومات أي مادة كيميائية",
+          "issueType": "wording_or_misread_prefix",
+          "observation": "The speaker pronounces 'والمعلومات' (wel-ma'loomat) with the definite article 'الـ' instead of the preposition 'لـ' ('ولمعلومات أي مادة كيميائية' to parallel 'مناسبة للمهمة ولمعلومات أي مادة كيميائية'). Having the definite article on the first noun of an idafa construct ('والمعلومات أي مادة...') makes the phrase syntactically broken.",
+          "certainty": "high"
+        },
+        {
+          "startSeconds": 0.8,
+          "endSeconds": 1.6,
+          "heardText": "نقاط",
+          "issueType": "dialectal_phonology",
+          "observation": "The word 'نقاط' is realized with a glottal stop ('نؤاط' / no'aat) rather than the typical Egyptian plural 'نقط' (no'at) or standard-loan pronunciation 'نقاط' (nuqaat) with /q/. While understandable in Cairo speech, it sounds slightly hybrid.",
+          "certainty": "low"
+        }
+      ],
+      "overall": "needs_review",
+      "limitations": "Assessment is based solely on the provided audio without a reference script; therefore, it is not possible to determine whether 'والمعلومات أي مادة كيميائية' originated from a source text typo or a reading/TTS mispronunciation of 'ولمعلومات'. No human listening approval or voice-identity certification is available."
+    },
+    "invalidTimestampFindingIndexes": [],
+    "humanListeningApproved": false,
+    "reviewLimitations": "Model diagnostic only; invalid timing is a review defect, not evidence of defective speech."
+  },
+  "preservePriorCandidate": true,
+  "firstBatchRunId": 39694914880,
+  "beforePhrase": "الحماية مناسبة للمهمة ولمعلومات أي مادة كيميائية",
+  "replacementPhrase": "الحماية مناسبة للمهمة، وبنختارها حسب معلومات السلامة الخاصة بأي مادة كيميائية هنستخدمها",
+  "ownerOrHumanListeningApproved": false,
+  "noAutomaticNewCall": true
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "scope": "Deliberate single-unit S1-01-ar-024 r2 followup for diagnosed safety-information prefix; preserve original five-unit batch and all accepted recordings.",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "automaticRetries": 0,
+  "units": [
+    {
+      "id": "S1-01-ar-024",
+      "voice": "Kore",
+      "speakerId": "B",
+      "originalText": "اكتب خمس نقاط فحص، مش مجرد أسماء معدات. أول نقطة: الموقع والطريق آمنين، وفيه تصريح للشغل، وتأكيد إن مكان أخذ العينة آمن من المرافق المدفونة. تاني نقطة: الأدوات سليمة ونضيفة، وطريقة حملها آمنة. تالت نقطة: الحماية مناسبة للمهمة ولمعلومات أي مادة كيميائية. رابع نقطة: المشرف عارف المكان وميعاد الرجوع، واتفاقك مع زميلك وخطة الاتصال واضحين. خامس نقطة: أرقام الطوارئ، وطريق الدخول، ونقطة التجمع، ومياه الشرب، واحتياطات الجو، كلهم معروفين.",
+      "spokenText": "اكتب خمس نقاط فحص، مش مجرد أسماء معدات. أول نقطة: الموقع والطريق آمنين، وفيه تصريح للشغل، وتأكيد إن مكان ما هناخد العينة آمن من المرافق المدفونة. تاني نقطة: الأدوات سليمة ونضيفة، وطريقة حملها آمنة. تالت نقطة: الحماية مناسبة للمهمة، وبنختارها حسب معلومات السلامة الخاصة بأي مادة كيميائية هنستخدمها. رابع نقطة: المشرف عارف المكان وميعاد الرجوع، واتفاقك مع زميلك وخطة الاتصال واضحين. خامس نقطة: أرقام الطوارئ، وطريق الدخول، ونقطة التجمع، ومياه الشرب، واحتياطات الجو، كلهم معروفين.",
+      "displayText": "اكتب خمس نقاط فحص، مش مجرد أسماء معدات. أول نقطة: الموقع والطريق آمنين، وفيه تصريح للشغل، وتأكيد إن مكان ما هناخد العينة آمن من المرافق المدفونة. تاني نقطة: الأدوات سليمة ونضيفة، وطريقة حملها آمنة. تالت نقطة: الحماية مناسبة للمهمة، وبنختارها حسب معلومات السلامة الخاصة بأي مادة كيميائية هنستخدمها. رابع نقطة: المشرف عارف المكان وميعاد الرجوع، واتفاقك مع زميلك وخطة الاتصال واضحين. خامس نقطة: أرقام الطوارئ، وطريق الدخول، ونقطة التجمع، ومياه الشرب، واحتياطات الجو، كلهم معروفين.",
+      "spokenTextSha256": "a06a506417ad8f19f9246c6b1e39c9a4509c61dd9a77a344b93ffaaec171832a",
+      "sourcePointer": "/scenes/7/narration#paragraph=0",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي كأنك مدرّس بيشرح لطلبة التعليم الفني. نبرة هادية ودافية وسرعة متوسطة ووقفات طبيعية. الجيم مصرية. حافظ على النفي وشروط الأمان. اقرأ النص فقط من غير مقدمة أو تعليمات، ومن غير فصحى أو لهجة خليجية.",
+      "reason": "Bounded repair from preserved actual-audio ROOT-REVIEW, not blanket regeneration",
+      "maximumProviderCalls": 1
+    }
+  ],
+  "preserveAcceptedMasterSha256": "4a204ed561b80f303d0fb9ceffe858a52aa6730882f6d142ad961a471d35d493",
+  "modelSelectionAuthority": "Latest explicit owner instruction 2026-10-22: use highest Gemini model. Preferred flagship TTS per official Google model index; exact prior request retained as history; server availability must pass before generation.",
+  "followupDiagnosis": {
+    "priorRepository": "cabicci/viva-ai-systems-55d35820",
+    "priorRunId": 39694914880,
+    "priorCandidateSha256": "ee1da3349dbe097aeecae62ca6266c8bb90eb7c4da388ccfc93d6b023843c561",
+    "priorUnit": "S1-01-ar-024",
+    "approximateStartSeconds": 21.2,
+    "approximateEndSeconds": 23.5,
+    "heardByIndependentDiagnostics": "والمعلومات أي مادة كيميائية",
+    "intendedPriorPhrase": "ولمعلومات أي مادة كيميائية",
+    "correctionScope": "Replace this one third-check clause with natural explicit Egyptian wording; preserve all five checks, no qaf formalization.",
+    "freshAuthorization": "Root delegated a deliberate bounded corrective attempt within the owner-approved five target repairs. No batch replay or automatic retry."
+  }
+}
