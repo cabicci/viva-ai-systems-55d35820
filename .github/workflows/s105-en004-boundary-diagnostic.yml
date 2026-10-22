@@ -1,0 +1,72 @@
+name: S105 EN004 one original context boundary diagnostic
+on:
+  push:
+    branches: [work/soil-s105-en004-boundary-diagnostic-20261022-r1]
+    paths: [s105-en004-boundary-diagnostic/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: s105-en004-boundary-f60047bd9db8cab7516dd0d15f819be2a9be0d89c5fa6226cff924ff0f9a6424
+  cancel-in-progress: false
+env:
+  PACKAGE: s105-en004-boundary-diagnostic
+  REQUEST_SHA: f60047bd9db8cab7516dd0d15f819be2a9be0d89c5fa6226cff924ff0f9a6424
+  WORKER_SHA: 9ade28d0e82f2da2ccc8ec58b08426d97014d8e19742630be1209e661021ce5b
+  FREEZE_SHA: 85bd7f38c02baa8a3f999d5f1a1252bf3d83b4d17a05418d7efd2f94c4a34fb2
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s105-en004-boundary-diagnostic-20261022-r1' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Verify freeze and derive exact original PCM context
+        run: |
+          cd "$PACKAGE"
+          python worker.py validate
+          python worker.py prepare
+      - name: Preserve exact context before review
+        id: context
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s105-en004-boundary-r1-context
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            ${{ env.PACKAGE }}/output/context.wav
+            ${{ env.PACKAGE }}/output/context-proof.json
+      - name: Record exact context upload
+        env:
+          AID: ${{ steps.context.outputs.artifact-id }}
+          DIGEST: ${{ steps.context.outputs.artifact-digest }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+      - name: One actual context utterance boundary review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd "$PACKAGE"
+          python worker.py review
+      - name: Fail if missing or invalid diagnostic, preserve uncertainty
+        if: always()
+        run: |
+          cd "$PACKAGE"
+          python worker.py summarize
+      - name: Preserve all raw/parsed/failed records and exact frozen inputs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: s105-en004-boundary-r1-complete-evidence
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            ${{ env.PACKAGE }}/
+            .github/workflows/s105-en004-boundary-diagnostic.yml

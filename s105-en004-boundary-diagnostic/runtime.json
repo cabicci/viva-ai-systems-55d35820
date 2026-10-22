@@ -1,0 +1,11 @@
+{
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/interactions",
+  "model": "gemini-4-argon",
+  "thinkingLevel": "high",
+  "timeoutSeconds": 900,
+  "maxOutputTokens": 32768,
+  "metadataGETCalls": 0,
+  "priorExactModelAvailabilityRun": 39816051691,
+  "priorAvailabilitySha256": "7b7d55606f5776840e9ea2d3dde17b001c7ab3f71f9a83eda9773516b1ced8b2",
+  "availabilityLimitation": "Existing exact preferred-model response retained. No fresh server availability is claimed and no fallback/retry is permitted if this one review fails."
+}
