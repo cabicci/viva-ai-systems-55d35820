@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S213_DE_COMPARISON_WET_COMPACTED_SUBPASSAGE_REPAIR",
+  "stepId": "S2-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s213-de-comparison-wet-compacted-subpassage-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-13-de-comparison-wet-compacted-subpassage-repair-r1",
+      "unitId": "S2-13-de-comparison-wet-compacted-subpassage-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair-s213-de-comparison-wet-compacted-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/rows/3/3",
+          "text": "Bei Nässe oder Verdichtung eventuell gering",
+          "sha256": "3811f96a07e52fc5d8d9d31afd25d58475f91c856d4d6dbb56ccef5d3061c2bd"
+        }
+      ],
+      "scientificMeaning": "Bei Nässe oder Verdichtung eventuell gering",
+      "displayText": "Bei Nässe oder Verdichtung eventuell gering",
+      "captionText": "Bei Nässe oder Verdichtung eventuell gering",
+      "spokenText": "Wenn der Boden nass ist oder verdichtet wurde, kann die Belüftung gering sein.",
+      "spokenTextSHA256": "270486c7c76eb16714766ecdf4908e27b1289ac806e1859a0d36f35fdcb0d9dd",
+      "spokenTextSha256": "270486c7c76eb16714766ecdf4908e27b1289ac806e1859a0d36f35fdcb0d9dd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bei Nässe oder Verdichtung eventuell gering",
+          "spoken": "Bei Nässe oder Verdichtung eventuell gering",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Bei Nässe oder Verdichtung eventuell gering",
+          "spoken": "Wenn der Boden nass ist oder verdichtet wurde, kann die Belüftung gering sein.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "29e7ef8027ee37fd52dec11577c437599e4e3c9c6940eb622c71b41ee4e77545",
+      "requestFingerprintSha256": "29e7ef8027ee37fd52dec11577c437599e4e3c9c6940eb622c71b41ee4e77545",
+      "sourcePlanSha256": "efad9a6cbfccb954e135872ec15ad5f1fc6ef83cc0172595e198c22a9adba515",
+      "exactSentenceBefore": "Bei Nässe oder Verdichtung eventuell gering",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/comparison/rows/3/3",
+        "original": "Bei Nässe oder Verdichtung eventuell gering",
+        "effective": "Bei Nässe oder Verdichtung eventuell gering",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/comparison/rows/3/3",
+            "text": "Bei Nässe oder Verdichtung eventuell gering",
+            "sha256": "3811f96a07e52fc5d8d9d31afd25d58475f91c856d4d6dbb56ccef5d3061c2bd"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s213-four-bounded-subpassage-root-decisions-r2.json",
+        "rootSelectedAuthoritySHA256": "5b8000205667d306d3163082076a9b13ed0cb6e87566ae2e1b9bf7172e02a662"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-13-de-comparison-wet-compacted-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
