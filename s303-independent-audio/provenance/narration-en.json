@@ -1,0 +1,281 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-en.json",
+    "sha256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+    "bytes": 32274
+  },
+  "units": [
+    {
+      "id": "S3-03-en-opening-r1",
+      "unitId": "S3-03-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A rotation is a planned sequence of crops on the same land. You will justify each year from field evidence, draw arrows that follow the year numbers, and test whether the plan works for the farm's nutrients, pests, season, water, equipment and market.",
+          "sha256": "20f45ac028a942607e978deb180b1d0eed4e4bfedd8f208326a953605eb8d28a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Draw a three-year crop sequence with arrows that match the numbered years and justify each year using nutrients, host pests, roots and residues rather than crop names alone.",
+          "sha256": "fd19d243b3463df2ec3a0595e8639467ade1e4563ee4bdb61c76993f809fa2a0"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Explain at least three potential rotation benefits with examples and limits, including why neither universal rootworm control nor a complete nitrogen refund is guaranteed.",
+          "sha256": "5d65d1964154800554c28d889023729b70b2c7154bb98351687c14100a08c934"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Defend a different or four-year plan using site and crop evidence, land occupancy, market, equipment and water constraints; allow a valid alternative to the model sequence.",
+          "sha256": "99b71c7f42d0d3712d0af0ee7f01d68c1893ab61cb8f15fc0f88e6f1301ea648"
+        }
+      ],
+      "scientificMeaning": "A rotation is a planned sequence of crops on the same land. You will justify each year from field evidence, draw arrows that follow the year numbers, and test whether the plan works for the farm's nutrients, pests, season, water, equipment and market.\n\nDraw a three-year crop sequence with arrows that match the numbered years and justify each year using nutrients, host pests, roots and residues rather than crop names alone.\n\nExplain at least three potential rotation benefits with examples and limits, including why neither universal rootworm control nor a complete nitrogen refund is guaranteed.\n\nDefend a different or four-year plan using site and crop evidence, land occupancy, market, equipment and water constraints; allow a valid alternative to the model sequence.",
+      "displayText": "A rotation is a planned sequence of crops on the same land. You will justify each year from field evidence, draw arrows that follow the year numbers, and test whether the plan works for the farm's nutrients, pests, season, water, equipment and market.\n\nDraw a three-year crop sequence with arrows that match the numbered years and justify each year using nutrients, host pests, roots and residues rather than crop names alone.\n\nExplain at least three potential rotation benefits with examples and limits, including why neither universal rootworm control nor a complete nitrogen refund is guaranteed.\n\nDefend a different or four-year plan using site and crop evidence, land occupancy, market, equipment and water constraints; allow a valid alternative to the model sequence.",
+      "captionText": "A rotation is a planned sequence of crops on the same land. You will justify each year from field evidence, draw arrows that follow the year numbers, and test whether the plan works for the farm's nutrients, pests, season, water, equipment and market.\n\nDraw a three-year crop sequence with arrows that match the numbered years and justify each year using nutrients, host pests, roots and residues rather than crop names alone.\n\nExplain at least three potential rotation benefits with examples and limits, including why neither universal rootworm control nor a complete nitrogen refund is guaranteed.\n\nDefend a different or four-year plan using site and crop evidence, land occupancy, market, equipment and water constraints; allow a valid alternative to the model sequence.",
+      "spokenText": "A rotation is a planned sequence of crops on the same land. You will justify each year from field evidence, draw arrows that follow the year numbers, and test whether the plan works for the farm's nutrients, pests, season, water, equipment and market.\n\nDraw a three-year crop sequence with arrows that match the numbered years and justify each year using nutrients, host pests, roots and residues rather than crop names alone.\n\nExplain at least three potential rotation benefits with examples and limits, including why neither universal rootworm control nor a complete nitrogen refund is guaranteed.\n\nDefend a different or four-year plan using site and crop evidence, land occupancy, market, equipment and water constraints; allow a valid alternative to the model sequence.",
+      "spokenTextSHA256": "89eecfdbc41ad259bd3a0799f0c61a8142a3c885447230949371feaa4c31b1d8",
+      "spokenTextSha256": "89eecfdbc41ad259bd3a0799f0c61a8142a3c885447230949371feaa4c31b1d8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "08edc5a0b2ad27d87e2917bc9690b565cc2e65e212f3025fb55e60c222c3784f",
+      "requestFingerprintSha256": "08edc5a0b2ad27d87e2917bc9690b565cc2e65e212f3025fb55e60c222c3784f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-guided-practice-r1",
+      "unitId": "S3-03-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Arrange maize, soybean and wheat under Years 1, 2 and 3. Draw two forward arrows, 1→2 and 2→3, and one return arrow, 3→1: three directed links in total. Justify every transition.",
+          "sha256": "102cd0d49a5e4009cd1bccfd2a021787a9d83c2463dfe6dad716892b6563f798"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "For nutrient, pest and soil-cover/root benefits, write one plausible mechanism, one crop example and one condition that could limit it.",
+          "sha256": "77c43a608993114c69910f1990891a9f12fb507bd2c1741ea2df43215fc40c6e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Using the exact 10-ha temperate case and your prior eight-crop shortlist, complete a three-year crop/reason table. Compare it with the model and one peer plan, then revise your own justification.",
+          "sha256": "4497bc82c92da3b2ba66bf78d1c9e8c0f8a9dfc28dd2a6f41d376bc212faf14c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Optionally extend to Year 4 using a cover crop or another crop. State its season, duration, termination or harvest, market/equipment implications and water need.",
+          "sha256": "ef0a3f446f8d0c8727d3fff506f5f23af72b9a17920458cc9c97980be090e844"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Compare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.",
+          "sha256": "a23622a685b1f353bb9b588da26acec965ed35ffd7a02ec89da831b9022790df"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer facilitates the 15-minute planning and 10-minute discussion portions of the 45-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+          "sha256": "8b3f41b4a2b1e603257552419958e68bcb8e952e38b187c0eb94c65ba6c241d9"
+        }
+      ],
+      "scientificMeaning": "Arrange maize, soybean and wheat under Years 1, 2 and 3. Draw two forward arrows, 1→2 and 2→3, and one return arrow, 3→1: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover/root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact 10-ha temperate case and your prior eight-crop shortlist, complete a three-year crop/reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year 4 using a cover crop or another crop. State its season, duration, termination or harvest, market/equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the 15-minute planning and 10-minute discussion portions of the 45-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+      "displayText": "Arrange maize, soybean and wheat under Years 1, 2 and 3. Draw two forward arrows, 1→2 and 2→3, and one return arrow, 3→1: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover/root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact 10-ha temperate case and your prior eight-crop shortlist, complete a three-year crop/reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year 4 using a cover crop or another crop. State its season, duration, termination or harvest, market/equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the 15-minute planning and 10-minute discussion portions of the 45-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+      "captionText": "Arrange maize, soybean and wheat under Years 1, 2 and 3. Draw two forward arrows, 1→2 and 2→3, and one return arrow, 3→1: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover/root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact 10-ha temperate case and your prior eight-crop shortlist, complete a three-year crop/reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year 4 using a cover crop or another crop. State its season, duration, termination or harvest, market/equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the 15-minute planning and 10-minute discussion portions of the 45-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+      "spokenText": "Arrange maize, soybean and wheat under Years one, two and three. Draw two forward arrows, from year one to year two and from year two to year three, and one return arrow, from year three to year one: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover, root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact ten-hectare temperate case and your prior eight-crop shortlist, complete a three-year crop, reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year four using a cover crop or another crop. State its season, duration, termination or harvest, market, equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the fifteen-minute planning and ten-minute discussion portions of the forty-five-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+      "spokenTextSHA256": "330117351333d083f98972df84aba7d54474fb098a24bd4e809c6ea6571c26b0",
+      "spokenTextSha256": "330117351333d083f98972df84aba7d54474fb098a24bd4e809c6ea6571c26b0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Arrange maize, soybean and wheat under Years 1, 2 and 3. Draw two forward arrows, 1→2 and 2→3, and one return arrow, 3→1: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover/root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact 10-ha temperate case and your prior eight-crop shortlist, complete a three-year crop/reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year 4 using a cover crop or another crop. State its season, duration, termination or harvest, market/equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the 15-minute planning and 10-minute discussion portions of the 45-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+          "spoken": "Arrange maize, soybean and wheat under Years one, two and three. Draw two forward arrows, from year one to year two and from year two to year three, and one return arrow, from year three to year one: three directed links in total. Justify every transition.\n\nFor nutrient, pest and soil-cover, root benefits, write one plausible mechanism, one crop example and one condition that could limit it.\n\nUsing the exact ten-hectare temperate case and your prior eight-crop shortlist, complete a three-year crop, reason table. Compare it with the model and one peer plan, then revise your own justification.\n\nOptionally extend to Year four using a cover crop or another crop. State its season, duration, termination or harvest, market, equipment implications and water need.\n\nCompare every arrow with the printed year number; reversed direction or a guaranteed nitrogen claim triggers revision.\n\nThe trainer facilitates the fifteen-minute planning and ten-minute discussion portions of the forty-five-minute case. Each learner submits an individual plan and reasoned revision. This knowledge step does not certify a physical field skill.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful naturalspoken numeral/acronym/unit expansion, exact directedlinks1→2/2→3/3→1 voiced as explicit FROM-TO yearpairs:2forward+1return=3links. Nutrientcredit/host-specificbenefits/site/landoccupancy/45case15plan10discussion/individualreasoning/physicalboundary preserved. Source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e5436e621d1840b10b63d5bc05c9e23534edcd7519f5586dbdc7b3eaa7cc8c40",
+      "requestFingerprintSha256": "e5436e621d1840b10b63d5bc05c9e23534edcd7519f5586dbdc7b3eaa7cc8c40",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-reflection-r1",
+      "unitId": "S3-03-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I explain each year and transition with evidence and limits?",
+          "sha256": "531066fbdb4b6c08005645afef81190ebfd2957ee395a94ba8639ec018b84f15"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Use this self-check to plan further practice; it does not award a pass.",
+          "sha256": "448f42694a7bf0b7852497bf77a1352e910ec6a45c323d743fa564a2544d1148"
+        }
+      ],
+      "scientificMeaning": "Can I explain each year and transition with evidence and limits?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "displayText": "Can I explain each year and transition with evidence and limits?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "captionText": "Can I explain each year and transition with evidence and limits?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "spokenText": "Can I explain each year and transition with evidence and limits?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "spokenTextSHA256": "7ce648dd79a27a940907391f47b9427b56f5f17b8a6b6b8d9d6bfbd02d71cfad",
+      "spokenTextSha256": "7ce648dd79a27a940907391f47b9427b56f5f17b8a6b6b8d9d6bfbd02d71cfad",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "00704f74900ca2adb4ceeefc613015a4032c049e8a43ebb929ab679434fa7bda",
+      "requestFingerprintSha256": "00704f74900ca2adb4ceeefc613015a4032c049e8a43ebb929ab679434fa7bda",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-glossary-r1",
+      "unitId": "S3-03-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "crop rotation",
+          "sha256": "f17297d28e27fc6b8b860bf109176733b5b06c305fd758ade90791ec0fdb7dc2"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A planned sequence of crops on the same area of land across seasons or years.",
+          "sha256": "2c16bef62353e54e6893449eb00196295a2f64aafab71974f1abef49d36d5109"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "host crop",
+          "sha256": "a7e5da5cda1f9e75d9a8afaf40dcd1ece9406e4c9206e7e029e96246fb20107e"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A crop on which a particular pest can survive or reproduce; host status is pest-specific.",
+          "sha256": "3fdc4feeaf2e2d2cff35404225080b209782506a601d15f077272113f1330c95"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "nitrogen credit",
+          "sha256": "2a8e59c79f120989a04ba594e766d2cf6cfc0efdebbb9008209b3aad984acc05"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "An evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.",
+          "sha256": "7653db63b44b551c0db8c64bcc43f8d9da478a5f4fb5d61c399bace0853e462f"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "crop residue",
+          "sha256": "a96095476f5ae084687bad565c8533fa59c4dc6aa7b85e0ed35a465ec0f33d30"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Plant material remaining after harvest, whose return or removal changes soil cover and nutrient/carbon flows.",
+          "sha256": "df3de0be5bf15a499693d1e013e7b35dd3f429355e81823a57c51acdffc6ff94"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "cover crop",
+          "sha256": "3337c22f2eaa0588fa7a84069b2839082d06d5aa3dbac0a823b3ff246bd112f8"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A crop grown mainly to cover and manage soil; its benefit depends on species, season and management.",
+          "sha256": "d6a1728e5843abf048cab8be00994040b362e62a4c897d59e81f99cbdef89f94"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "monocropping",
+          "sha256": "6b52e9da44a178db6fdbf26063d3dfae3f60834f3db61605d852cdb32f208517"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Repeated production of the same crop on the same field over successive seasons or years.",
+          "sha256": "1eef56c490a144534e0a56d0eff5217a957091fe60b18df8c755b3ebe7b346b3"
+        }
+      ],
+      "scientificMeaning": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient/carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+      "displayText": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient/carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+      "captionText": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient/carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+      "spokenText": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient, carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+      "spokenTextSHA256": "e7592382866d8f29e0efc17b88e42aa09f1f5f8ea858a6339b18dcaf82a046cf",
+      "spokenTextSha256": "e7592382866d8f29e0efc17b88e42aa09f1f5f8ea858a6339b18dcaf82a046cf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient/carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+          "spoken": "crop rotation\n\nA planned sequence of crops on the same area of land across seasons or years.\n\nhost crop\n\nA crop on which a particular pest can survive or reproduce; host status is pest-specific.\n\nnitrogen credit\n\nAn evidence-based estimate of nitrogen supplied to a later crop by a prior crop or its residues, not a guaranteed amount from a crop name.\n\ncrop residue\n\nPlant material remaining after harvest, whose return or removal changes soil cover and nutrient, carbon flows.\n\ncover crop\n\nA crop grown mainly to cover and manage soil; its benefit depends on species, season and management.\n\nmonocropping\n\nRepeated production of the same crop on the same field over successive seasons or years.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful naturalspoken numeral/acronym/unit expansion, exact directedlinks1→2/2→3/3→1 voiced as explicit FROM-TO yearpairs:2forward+1return=3links. Nutrientcredit/host-specificbenefits/site/landoccupancy/45case15plan10discussion/individualreasoning/physicalboundary preserved. Source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ce8ae272816a0926326c801f7c89019425516eb78f0f677e0d7c3f34f14d9a48",
+      "requestFingerprintSha256": "ce8ae272816a0926326c801f7c89019425516eb78f0f677e0d7c3f34f14d9a48",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
