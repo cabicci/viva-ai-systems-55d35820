@@ -1,0 +1,138 @@
+{
+  "stepId": "S3-07",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato",
+      "title": "Case 1: sandy tomato patch",
+      "situation": "Hot, windy sandy plot with flood/surface watering; tomatoes look well in the morning but wilt in the afternoon and older leaves are pale or yellow.",
+      "hypotheses": [
+        "High daytime demand may exceed short-term root uptake; limited root-zone storage or poorly controlled flood application may contribute.",
+        "Older-leaf yellowing raises mobile N or K shortage, leaching, root problems or another cause."
+      ],
+      "checks": [
+        "Sample moisture through the root zone in morning and afternoon; inspect roots, drainage, timing of previous watering, weather and emitter feasibility.",
+        "Obtain soil/tissue nutrient evidence and a crop-stage record before selecting a fertilizer.",
+        "The teaching model discusses a fruiting-stage tomato fertilizer class. Confirm the actual stage before using that example; the bank question alone does not supply a fertilizer analysis."
+      ],
+      "waterDecision": "Consider a filtered, maintainable drip system over uncontrolled flood delivery for the stated site, while measuring its operation; do not prescribe daily watering from appearance alone. Near-root delivery avoids overhead spray drift, can reduce soil-surface evaporation and inter-row weed wetting, and can keep foliage drier to reduce some disease risk. Small monitored applications can suit limited sandy storage, but excess can still pass below roots; these benefits depend on design, operation and conditions.",
+      "fourR": {
+        "source": "Choose a tomato-appropriate nutrient source only after evidence; a balanced soluble product is one possible product class, not a diagnosis.",
+        "rate": "Use test results, plant demand, current supply and local guidance; no number follows from the leaf colour.",
+        "time": "Match confirmed demand and loss risk; fertigation every watering or every other watering is not an automatic schedule.",
+        "place": "Use product-approved root-zone delivery if fertigation is justified; monitor leaching and uniformity."
+      },
+      "reasoning": [
+        "High daytime demand may exceed short-term root uptake; limited root-zone storage or poorly controlled flood application may contribute.",
+        "Older-leaf yellowing raises mobile N or K shortage, leaching, root problems or another cause.",
+        "Sample moisture through the root zone in morning and afternoon; inspect roots, drainage, timing of previous watering, weather and emitter feasibility.",
+        "Obtain soil/tissue nutrient evidence and a crop-stage record before selecting a fertilizer.",
+        "Consider a filtered, maintainable drip system over uncontrolled flood delivery for the stated site, while measuring its operation; do not prescribe daily watering from appearance alone. Near-root delivery avoids overhead spray drift, can reduce soil-surface evaporation and inter-row weed wetting, and can keep foliage drier to reduce some disease risk. Small monitored applications can suit limited sandy storage, but excess can still pass below roots; these benefits depend on design, operation and conditions.",
+        "Choose a tomato-appropriate nutrient source only after evidence; a balanced soluble product is one possible product class, not a diagnosis.",
+        "Use test results, plant demand, current supply and local guidance; no number follows from the leaf colour.",
+        "Match confirmed demand and loss risk; fertigation every watering or every other watering is not an automatic schedule.",
+        "Use product-approved root-zone delivery if fertigation is justified; monitor leaching and uniformity.",
+        "The teaching model discusses a fruiting-stage tomato fertilizer class. Confirm the actual stage before using that example; the bank question alone does not supply a fertilizer analysis."
+      ],
+      "takeaway": "Separate heat/water and nutrient hypotheses, verify both, then choose a conditional water and 4R plan."
+    },
+    {
+      "id": "wheat",
+      "title": "Case 2: stunted wheat in wet clay",
+      "situation": "After heavy rain the clay field has standing water; wheat is stunted and some older leaf margins yellow.",
+      "hypotheses": [
+        "Waterlogging can deprive roots of oxygen and reduce water or nutrient uptake.",
+        "K shortage is possible from marginal symptoms, but root stress, other nutrient disorders or damage can mimic it."
+      ],
+      "checks": [
+        "Map standing water and drainage, examine roots when safe and reassess after drainage; obtain soil/tissue K evidence if symptoms persist.",
+        "Check whether feasible temporary surface drainage is safe and permitted at this site; plan longer-term drainage only after site evaluation.",
+        "The teaching case names organic matter for structure and subsurface tile drainage as long-term examples. They require site-specific assessment and design, not an automatic cure or permission to excavate."
+      ],
+      "waterDecision": "Stop added irrigation while the soil is saturated and prioritise drainage assessment; do not claim that every clay field should avoid all irrigation forever.",
+      "fourR": {
+        "source": "Only select a K source such as potassium sulfate if a need is established; foliar K is not a mandatory quick fix.",
+        "rate": "Use appropriate test, crop and local recommendation after conditions improve; no fixed low rate.",
+        "time": "Avoid fertiliser application into standing water; reassess roots and plant recovery first.",
+        "place": "Choose soil or labelled foliar placement for a verified need, considering uptake, runoff and crop safety."
+      },
+      "reasoning": [
+        "Waterlogging can deprive roots of oxygen and reduce water or nutrient uptake.",
+        "K shortage is possible from marginal symptoms, but root stress, other nutrient disorders or damage can mimic it.",
+        "Map standing water and drainage, examine roots when safe and reassess after drainage; obtain soil/tissue K evidence if symptoms persist.",
+        "Check whether feasible temporary surface drainage is safe and permitted at this site; plan longer-term drainage only after site evaluation.",
+        "Stop added irrigation while the soil is saturated and prioritise drainage assessment; do not claim that every clay field should avoid all irrigation forever.",
+        "Only select a K source such as potassium sulfate if a need is established; foliar K is not a mandatory quick fix.",
+        "Use appropriate test, crop and local recommendation after conditions improve; no fixed low rate.",
+        "Avoid fertiliser application into standing water; reassess roots and plant recovery first.",
+        "Choose soil or labelled foliar placement for a verified need, considering uptake, runoff and crop safety.",
+        "The teaching case names organic matter for structure and subsurface tile drainage as long-term examples. They require site-specific assessment and design, not an automatic cure or permission to excavate."
+      ],
+      "takeaway": "Drainage/root oxygen is the first problem to investigate; K is a testable secondary hypothesis."
+    },
+    {
+      "id": "leafy",
+      "title": "Case 3: leafy crop planning on loam",
+      "situation": "A leafy crop is planned in loam with limited water; the card describes planning, not an existing deficiency symptom.",
+      "hypotheses": [
+        "Drip may distribute limited water near rows if equipment and maintenance are feasible.",
+        "Nitrogen demand may be substantial, but no deficiency or rate is established."
+      ],
+      "checks": [
+        "Identify crop and stage, local ET and effective rainfall, root-zone storage, system suitability, water quality and a valid nutrient test.",
+        "Compare costs and maintenance; check fertilizer product analysis."
+      ],
+      "waterDecision": "Consider a designed, monitored drip system; no blanket weekly or twice-weekly irrigation cycle.",
+      "fourR": {
+        "source": "Choose a complete NPK formulation only if the nutrient plan requires N, P and K. Calcium nitrate supplies N and Ca; it is not a balanced NPK product.",
+        "rate": "Derive from crop need, test and local guidance, not 'a little and often' alone.",
+        "time": "Fit applications to growth and measured demand; neither weekly nor fortnightly fertigation is universal.",
+        "place": "If an approved soluble product and equipment permit fertigation, deliver through a checked drip system to the root zone; otherwise choose a suitable alternative."
+      },
+      "reasoning": [
+        "Drip may distribute limited water near rows if equipment and maintenance are feasible.",
+        "Nitrogen demand may be substantial, but no deficiency or rate is established.",
+        "Identify crop and stage, local ET and effective rainfall, root-zone storage, system suitability, water quality and a valid nutrient test.",
+        "Compare costs and maintenance; check fertilizer product analysis.",
+        "Consider a designed, monitored drip system; no blanket weekly or twice-weekly irrigation cycle.",
+        "Choose a complete NPK formulation only if the nutrient plan requires N, P and K. Calcium nitrate supplies N and Ca; it is not a balanced NPK product.",
+        "Derive from crop need, test and local guidance, not 'a little and often' alone.",
+        "Fit applications to growth and measured demand; neither weekly nor fortnightly fertigation is universal.",
+        "If an approved soluble product and equipment permit fertigation, deliver through a checked drip system to the root zone; otherwise choose a suitable alternative."
+      ],
+      "takeaway": "This is preventive planning; do not invent a diagnosed deficiency or fixed water/fertilizer schedule."
+    },
+    {
+      "id": "cold-maize",
+      "title": "Case 4: purple young maize in cold clay",
+      "situation": "Young maize shows purple leaves and slow growth during a cold spring on heavy clay.",
+      "hypotheses": [
+        "Restricted P uptake from cold/wet soil or limited rooting may cause the sign even if soil P is adequate.",
+        "A true soil P deficiency or another cause remains possible."
+      ],
+      "checks": [
+        "Assess temperature, drainage, root growth, relevant soil P test and whether the crop improves as the soil warms."
+      ],
+      "waterDecision": "Do not add water automatically to a cold wet clay soil; check moisture and drainage first.",
+      "fourR": {
+        "source": "DAP or monoammonium phosphate (MAP) are possible P-source examples only if agronomic need and product suitability are confirmed.",
+        "rate": "Use test and local crop guidance, not a vague 'modest' dose.",
+        "time": "Plan when P is needed and field conditions permit safe application; avoid an unexamined immediate remedy.",
+        "place": "A safe band near young roots can be appropriate, with product-specific separation from the seed and no universal superiority over every alternative. This teaching example illustrates an at-planting starter band 2 inches to the side and 2 inches below the seed row. This is a placement example, not a universal setting or an instruction to dig beside established seedlings. Actual placement must follow the product, crop, equipment and local seed-safety guidance."
+      },
+      "reasoning": [
+        "Restricted P uptake from cold/wet soil or limited rooting may cause the sign even if soil P is adequate.",
+        "A true soil P deficiency or another cause remains possible.",
+        "Assess temperature, drainage, root growth, relevant soil P test and whether the crop improves as the soil warms.",
+        "Do not add water automatically to a cold wet clay soil; check moisture and drainage first.",
+        "DAP or monoammonium phosphate (MAP) are possible P-source examples only if agronomic need and product suitability are confirmed.",
+        "Use test and local crop guidance, not a vague 'modest' dose.",
+        "Plan when P is needed and field conditions permit safe application; avoid an unexamined immediate remedy.",
+        "A safe band near young roots can be appropriate, with product-specific separation from the seed and no universal superiority over every alternative. This teaching example illustrates an at-planting starter band 2 inches to the side and 2 inches below the seed row. This is a placement example, not a universal setting or an instruction to dig beside established seedlings. Actual placement must follow the product, crop, equipment and local seed-safety guidance."
+      ],
+      "takeaway": "Test the P hypothesis and soil conditions before a four-part fertilizer recommendation."
+    }
+  ]
+}

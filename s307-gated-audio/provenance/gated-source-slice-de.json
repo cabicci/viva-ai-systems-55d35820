@@ -1,0 +1,138 @@
+{
+  "stepId": "S3-07",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato",
+      "title": "Fall 1: Tomaten auf Sand",
+      "situation": "Heißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.",
+      "hypotheses": [
+        "Hoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.",
+        "Gelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes."
+      ],
+      "checks": [
+        "Feuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.",
+        "Boden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.",
+        "Das Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse."
+      ],
+      "waterDecision": "Für diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.",
+      "fourR": {
+        "source": "Tomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.",
+        "rate": "Tests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.",
+        "time": "Bestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.",
+        "place": "Falls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen."
+      },
+      "reasoning": [
+        "Hoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.",
+        "Gelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.",
+        "Feuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.",
+        "Boden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.",
+        "Für diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.",
+        "Tomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.",
+        "Tests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.",
+        "Bestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.",
+        "Falls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.",
+        "Das Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse."
+      ],
+      "takeaway": "Hitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen."
+    },
+    {
+      "id": "wheat",
+      "title": "Fall 2: kümmernder Weizen auf nassem Ton",
+      "situation": "Nach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.",
+      "hypotheses": [
+        "Staunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.",
+        "K-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen."
+      ],
+      "checks": [
+        "Stehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.",
+        "Mögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.",
+        "Der Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis."
+      ],
+      "waterDecision": "Bei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.",
+      "fourR": {
+        "source": "K-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.",
+        "rate": "Geeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.",
+        "time": "Kein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.",
+        "place": "Für bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen."
+      },
+      "reasoning": [
+        "Staunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.",
+        "K-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.",
+        "Stehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.",
+        "Mögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.",
+        "Bei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.",
+        "K-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.",
+        "Geeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.",
+        "Kein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.",
+        "Für bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.",
+        "Der Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis."
+      ],
+      "takeaway": "Entwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese."
+    },
+    {
+      "id": "leafy",
+      "title": "Fall 3: Blattgemüse-Planung auf Lehm",
+      "situation": "Eine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.",
+      "hypotheses": [
+        "Tropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.",
+        "N-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt."
+      ],
+      "checks": [
+        "Kultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.",
+        "Kosten/Wartung und Produktanalyse vergleichen."
+      ],
+      "waterDecision": "Eine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.",
+      "fourR": {
+        "source": "Vollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.",
+        "rate": "Aus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.",
+        "time": "Nach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.",
+        "place": "Bei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative."
+      },
+      "reasoning": [
+        "Tropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.",
+        "N-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.",
+        "Kultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.",
+        "Kosten/Wartung und Produktanalyse vergleichen.",
+        "Eine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.",
+        "Vollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.",
+        "Aus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.",
+        "Nach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.",
+        "Bei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative."
+      ],
+      "takeaway": "Vorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden."
+    },
+    {
+      "id": "cold-maize",
+      "title": "Fall 4: purpurner Jungmais auf kaltem Ton",
+      "situation": "Jungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.",
+      "hypotheses": [
+        "Kälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.",
+        "Echter P-Mangel oder eine andere Ursache bleibt möglich."
+      ],
+      "checks": [
+        "Temperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen."
+      ],
+      "waterDecision": "Kalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.",
+      "fourR": {
+        "source": "DAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.",
+        "rate": "Nach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.",
+        "time": "Bei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.",
+        "place": "Sicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts."
+      },
+      "reasoning": [
+        "Kälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.",
+        "Echter P-Mangel oder eine andere Ursache bleibt möglich.",
+        "Temperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.",
+        "Kalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.",
+        "DAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.",
+        "Nach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.",
+        "Bei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.",
+        "Sicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts."
+      ],
+      "takeaway": "P-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen."
+    }
+  ]
+}

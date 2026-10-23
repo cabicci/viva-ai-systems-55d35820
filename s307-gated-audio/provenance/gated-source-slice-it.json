@@ -1,0 +1,138 @@
+{
+  "stepId": "S3-07",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato",
+      "title": "Caso 1: pomodori su sabbia",
+      "situation": "Terreno sabbioso caldo e ventoso con irrigazione superficiale; pomodori sani al mattino ma appassiti al pomeriggio, foglie vecchie pallide o gialle.",
+      "hypotheses": [
+        "La domanda diurna può superare temporaneamente l’assorbimento; poca riserva radicale o irrigazione a scorrimento non controllata possono contribuire.",
+        "Il giallo sulle foglie vecchie suggerisce carenza mobile di N o K, lisciviazione, problemi radicali o altro."
+      ],
+      "checks": [
+        "Controlla umidità radicale mattina/pomeriggio, radici, drenaggio, ultimo turno irriguo, meteo e fattibilità del goccia.",
+        "Ottieni analisi del suolo/tessuti e fase colturale prima di scegliere concime.",
+        "Il modello parla di una classe di concime per pomodori in fruttificazione. Conferma la fase reale; la domanda del banco da sola non determina l’analisi del prodotto."
+      ],
+      "waterDecision": "Valuta un impianto a goccia filtrato e mantenibile al posto di apporti superficiali incontrollati, misurandone il funzionamento; non prescrivere acqua ogni giorno dal solo aspetto. La distribuzione vicino alle radici evita la deriva del getto in aria, può ridurre evaporazione dal suolo e bagnatura delle infestanti tra le file e mantenere più asciutte le foglie, riducendo alcuni rischi di malattia. Piccoli apporti monitorati possono adattarsi alla limitata riserva della sabbia, ma l’eccesso può ancora scendere sotto le radici; i vantaggi dipendono da progetto, gestione e condizioni.",
+      "fourR": {
+        "source": "Scegli la fonte adatta al pomodoro solo dopo prove; un prodotto solubile bilanciato è una classe possibile, non una diagnosi.",
+        "rate": "Usa risultati, domanda colturale, disponibilità esistente e guida locale; il colore non fornisce dose.",
+        "time": "Conferma domanda e rischio di perdite; fertirrigare ogni turno o a turni alterni non è automatico.",
+        "place": "Se la fertirrigazione è giustificata, usa erogazione radicale autorizzata e controlla lisciviazione e uniformità."
+      },
+      "reasoning": [
+        "La domanda diurna può superare temporaneamente l’assorbimento; poca riserva radicale o irrigazione a scorrimento non controllata possono contribuire.",
+        "Il giallo sulle foglie vecchie suggerisce carenza mobile di N o K, lisciviazione, problemi radicali o altro.",
+        "Controlla umidità radicale mattina/pomeriggio, radici, drenaggio, ultimo turno irriguo, meteo e fattibilità del goccia.",
+        "Ottieni analisi del suolo/tessuti e fase colturale prima di scegliere concime.",
+        "Valuta un impianto a goccia filtrato e mantenibile al posto di apporti superficiali incontrollati, misurandone il funzionamento; non prescrivere acqua ogni giorno dal solo aspetto. La distribuzione vicino alle radici evita la deriva del getto in aria, può ridurre evaporazione dal suolo e bagnatura delle infestanti tra le file e mantenere più asciutte le foglie, riducendo alcuni rischi di malattia. Piccoli apporti monitorati possono adattarsi alla limitata riserva della sabbia, ma l’eccesso può ancora scendere sotto le radici; i vantaggi dipendono da progetto, gestione e condizioni.",
+        "Scegli la fonte adatta al pomodoro solo dopo prove; un prodotto solubile bilanciato è una classe possibile, non una diagnosi.",
+        "Usa risultati, domanda colturale, disponibilità esistente e guida locale; il colore non fornisce dose.",
+        "Conferma domanda e rischio di perdite; fertirrigare ogni turno o a turni alterni non è automatico.",
+        "Se la fertirrigazione è giustificata, usa erogazione radicale autorizzata e controlla lisciviazione e uniformità.",
+        "Il modello parla di una classe di concime per pomodori in fruttificazione. Conferma la fase reale; la domanda del banco da sola non determina l’analisi del prodotto."
+      ],
+      "takeaway": "Distingui ipotesi su caldo/acqua e nutrienti, verifica entrambe e poi scegli acqua e 4R condizionate."
+    },
+    {
+      "id": "wheat",
+      "title": "Caso 2: frumento basso in argilla bagnata",
+      "situation": "Dopo forti piogge, ristagno nel campo argilloso; frumento stentato e margini di alcune foglie vecchie ingialliti.",
+      "hypotheses": [
+        "Il ristagno può privare le radici di ossigeno e ridurre il loro assorbimento di acqua o nutrienti.",
+        "La carenza di K è possibile per i margini, ma stress radicale, altri disturbi o danni possono imitarla."
+      ],
+      "checks": [
+        "Mappa ristagno e drenaggio, esamina radici in sicurezza e rivaluta dopo il deflusso; testa K se il segno persiste.",
+        "Verifica se un drenaggio superficiale provvisorio è sicuro e consentito; opere permanenti richiedono studio del sito.",
+        "Il caso cita sostanza organica per la struttura e drenaggio tubolare sottosuperficiale come esempi a lungo termine. Richiedono valutazione e progetto del sito, non rimedio automatico o permesso di scavo."
+      ],
+      "waterDecision": "Sospendi l’irrigazione aggiunta durante la saturazione e valuta il drenaggio; non dire che ogni argilla non va mai irrigata.",
+      "fourR": {
+        "source": "Scegli un K come solfato di potassio solo con necessità confermata; K fogliare non è una cura obbligata.",
+        "rate": "Analisi, coltura e guida locale dopo il miglioramento; nessuna dose bassa fissa.",
+        "time": "Evita concime in acqua stagnante; valuta prima ripresa delle radici e coltura.",
+        "place": "Per necessità verificata scegli suolo o foglia secondo etichetta, assorbimento, ruscellamento e sicurezza."
+      },
+      "reasoning": [
+        "Il ristagno può privare le radici di ossigeno e ridurre il loro assorbimento di acqua o nutrienti.",
+        "La carenza di K è possibile per i margini, ma stress radicale, altri disturbi o danni possono imitarla.",
+        "Mappa ristagno e drenaggio, esamina radici in sicurezza e rivaluta dopo il deflusso; testa K se il segno persiste.",
+        "Verifica se un drenaggio superficiale provvisorio è sicuro e consentito; opere permanenti richiedono studio del sito.",
+        "Sospendi l’irrigazione aggiunta durante la saturazione e valuta il drenaggio; non dire che ogni argilla non va mai irrigata.",
+        "Scegli un K come solfato di potassio solo con necessità confermata; K fogliare non è una cura obbligata.",
+        "Analisi, coltura e guida locale dopo il miglioramento; nessuna dose bassa fissa.",
+        "Evita concime in acqua stagnante; valuta prima ripresa delle radici e coltura.",
+        "Per necessità verificata scegli suolo o foglia secondo etichetta, assorbimento, ruscellamento e sicurezza.",
+        "Il caso cita sostanza organica per la struttura e drenaggio tubolare sottosuperficiale come esempi a lungo termine. Richiedono valutazione e progetto del sito, non rimedio automatico o permesso di scavo."
+      ],
+      "takeaway": "Drenaggio e ossigeno radicale sono la prima indagine; K è ipotesi secondaria verificabile."
+    },
+    {
+      "id": "leafy",
+      "title": "Caso 3: verdura a foglia su franco",
+      "situation": "Si pianifica una coltura a foglia su franco con poca acqua; la scheda riguarda la pianificazione, non sintomi di carenza già osservati.",
+      "hypotheses": [
+        "Il goccia può distribuire acqua vicino alle file se kit e manutenzione sono fattibili.",
+        "La domanda di N può essere rilevante, ma nessuna carenza o dose è dimostrata."
+      ],
+      "checks": [
+        "Identifica coltura e fase, evapotraspirazione locale e pioggia efficace, riserva idrica nella zona radicale, idoneità del sistema, qualità dell'acqua e un'analisi valida dei nutrienti.",
+        "Confronta costo/manutenzione e analisi del prodotto."
+      ],
+      "waterDecision": "Valuta un impianto a goccia progettato e controllato; nessun ciclo irriguo settimanale o due volte alla settimana valido per tutti.",
+      "fourR": {
+        "source": "Una formula NPK completa solo se il piano richiede N, P e K. Il nitrato di calcio dà N e Ca, non è NPK bilanciato.",
+        "rate": "Deriva da coltura, analisi e guida locale, non solo da «poco e spesso».",
+        "time": "Adegua alle fasi e domanda misurata; fertirrigare ogni settimana o due non è universale.",
+        "place": "Se prodotto solubile approvato e impianto lo consentono, distribuisci alle radici con goccia verificato; altrimenti usa alternativa idonea."
+      },
+      "reasoning": [
+        "Il goccia può distribuire acqua vicino alle file se kit e manutenzione sono fattibili.",
+        "La domanda di N può essere rilevante, ma nessuna carenza o dose è dimostrata.",
+        "Identifica coltura e fase, evapotraspirazione locale e pioggia efficace, riserva idrica nella zona radicale, idoneità del sistema, qualità dell'acqua e un'analisi valida dei nutrienti.",
+        "Confronta costo/manutenzione e analisi del prodotto.",
+        "Valuta un impianto a goccia progettato e controllato; nessun ciclo irriguo settimanale o due volte alla settimana valido per tutti.",
+        "Una formula NPK completa solo se il piano richiede N, P e K. Il nitrato di calcio dà N e Ca, non è NPK bilanciato.",
+        "Deriva da coltura, analisi e guida locale, non solo da «poco e spesso».",
+        "Adegua alle fasi e domanda misurata; fertirrigare ogni settimana o due non è universale.",
+        "Se prodotto solubile approvato e impianto lo consentono, distribuisci alle radici con goccia verificato; altrimenti usa alternativa idonea."
+      ],
+      "takeaway": "Pianificazione preventiva: non inventare carenza diagnosticata né calendario fisso."
+    },
+    {
+      "id": "cold-maize",
+      "title": "Caso 4: mais giovane viola su argilla fredda",
+      "situation": "Mais giovane viola e lento in una primavera fredda su terreno argilloso pesante.",
+      "hypotheses": [
+        "Freddo/ristagno o poche radici possono frenare P anche se l’analisi del suolo è adeguata.",
+        "Vera carenza di P o altra causa resta possibile."
+      ],
+      "checks": [
+        "Controlla temperatura, drenaggio, radici, analisi P pertinente e miglioramento con il riscaldamento."
+      ],
+      "waterDecision": "Non aggiungere acqua automaticamente a un’argilla fredda e bagnata; controlla umidità e drenaggio.",
+      "fourR": {
+        "source": "DAP o fosfato monoammonico (MAP) sono esempi possibili di fonte P solo con bisogno agronomico e compatibilità del prodotto confermati.",
+        "rate": "Dose da analisi e guida locale, non da «modesta» indefinita.",
+        "time": "Intervieni quando serve e il campo consente sicurezza, non subito senza indagine.",
+        "place": "Banda vicino alle giovani radici possibile con separazione dal seme prevista dall’etichetta, non superiore sempre alle alternative. Questo esempio didattico illustra alla semina una banda starter a 2 pollici di lato e 2 pollici sotto la fila dei semi. È un esempio di posizionamento, non un’impostazione universale né un invito a scavare accanto a piantine già insediate. Il posizionamento reale segue prodotto, coltura, attrezzatura e indicazioni locali per la sicurezza del seme."
+      },
+      "reasoning": [
+        "Freddo/ristagno o poche radici possono frenare P anche se l’analisi del suolo è adeguata.",
+        "Vera carenza di P o altra causa resta possibile.",
+        "Controlla temperatura, drenaggio, radici, analisi P pertinente e miglioramento con il riscaldamento.",
+        "Non aggiungere acqua automaticamente a un’argilla fredda e bagnata; controlla umidità e drenaggio.",
+        "DAP o fosfato monoammonico (MAP) sono esempi possibili di fonte P solo con bisogno agronomico e compatibilità del prodotto confermati.",
+        "Dose da analisi e guida locale, non da «modesta» indefinita.",
+        "Intervieni quando serve e il campo consente sicurezza, non subito senza indagine.",
+        "Banda vicino alle giovani radici possibile con separazione dal seme prevista dall’etichetta, non superiore sempre alle alternative. Questo esempio didattico illustra alla semina una banda starter a 2 pollici di lato e 2 pollici sotto la fila dei semi. È un esempio di posizionamento, non un’impostazione universale né un invito a scavare accanto a piantine già insediate. Il posizionamento reale segue prodotto, coltura, attrezzatura e indicazioni locali per la sicurezza del seme."
+      ],
+      "takeaway": "Verifica ipotesi P e condizioni prima di proporre le quattro decisioni."
+    }
+  ]
+}

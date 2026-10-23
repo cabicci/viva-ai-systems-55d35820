@@ -1,0 +1,468 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-de.json",
+    "sha256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+    "bytes": 38885
+  },
+  "units": [
+    {
+      "id": "S3-07-de-E01-r1",
+      "unitId": "S3-07-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Fall 1: Tomaten auf Sand",
+          "sha256": "012756e8353be7f44683d8228167042d07b1cf4eefc61a8a4ada7077601b8e8d"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Heißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.",
+          "sha256": "a5e611de67fbada410db372194fcbf51b17c96a9eae0bab9438bc73621e62ee1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Hoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.",
+          "sha256": "00bd80bbabe5bb4b93f31a64c27e640d993f7846d9265e534686a33927202127"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Gelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.",
+          "sha256": "4e54f66ec57cfb1c8a697856e344e1cbd07a577f0b8440c40f9cf04afd72354a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Feuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.",
+          "sha256": "ef2ec315418a5124db1185d813a04b77983911e09ecb6650a0a5aa0cf5b2f5f4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Boden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.",
+          "sha256": "51708529eef8cf949408cd0e63244160760bab002f6161825d33ebd27b2df980"
+        },
+        {
+          "pointer": "/examples/0/reasoning/4",
+          "text": "Für diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.",
+          "sha256": "dd7175e9c68d90b7fd097a947cb7500df685892f88ac9baa174a7f618f170353"
+        },
+        {
+          "pointer": "/examples/0/reasoning/5",
+          "text": "Tomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.",
+          "sha256": "8c4bb12e94efe5f482a3072c8f35e09828fa1f25b65faf34f2d88ddafdbe5c5f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/6",
+          "text": "Tests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.",
+          "sha256": "00bad9c30fa66022f8d60ecfd7b5dfc0676f277c97fdf8a7e8cf056a63c69c20"
+        },
+        {
+          "pointer": "/examples/0/reasoning/7",
+          "text": "Bestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.",
+          "sha256": "950aa1ebf05536e63a432b56478e6a79e99d3bcc043ec467548cac5f8f8f6571"
+        },
+        {
+          "pointer": "/examples/0/reasoning/8",
+          "text": "Falls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.",
+          "sha256": "6e3cb5e989786f533abdec31bdb7e363e2cbb8d752ea72940e8b269501efa3e8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/9",
+          "text": "Das Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.",
+          "sha256": "3f2c573a311904db01c538d0de599c0ec7b5108a5f7b47039dbba936dd8037b4"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Hitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen.",
+          "sha256": "9ad2a64c369b97d38551c9b0a083a403fecfb5dcc4b6775e98846bb9da2fbaa1"
+        }
+      ],
+      "scientificMeaning": "Fall 1: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen.",
+      "displayText": "Fall 1: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen.",
+      "captionText": "Fall 1: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen.",
+      "spokenText": "Fall eins: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-, Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles En, Ka-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-, Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung, Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze, Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und vier R Prinzipien-Plan wählen.",
+      "spokenTextSHA256": "16ddfbd17aa845e5f46b51563425fd1158f2da1ee2d5a89f3f80cdd48c194423",
+      "spokenTextSha256": "16ddfbd17aa845e5f46b51563425fd1158f2da1ee2d5a89f3f80cdd48c194423",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fall 1: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-/Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles N/K-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-/Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung/Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze/Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und 4R-Plan wählen.",
+          "spoken": "Fall eins: Tomaten auf Sand\n\nHeißer windiger Sandstandort mit Oberflächen-, Überstau-Bewässerung: Tomaten morgens gesund, nachmittags welk, alte Blätter blass oder gelb.\n\nHoher Tagesbedarf kann die kurzfristige Wurzelaufnahme übersteigen; geringe Speicherung oder ungeregeltes Überstauen kann beitragen.\n\nGelb an alten Blättern spricht für mögliches mobiles En, Ka-Defizit, Auswaschung, Wurzelproblem oder anderes.\n\nFeuchte im Wurzelraum morgens und nachmittags, Wurzeln, Abfluss, letzte Bewässerung, Wetter und Tropf-Eignung prüfen.\n\nBoden-, Gewebeanalysen und Kulturphase vor der Düngerwahl erheben.\n\nFür diesen Ort gefilterte wartbare Tropfbewässerung statt ungeregelter Überstauung erwägen und Leistung messen; aus dem Aussehen kein tägliches Gießen festlegen. Wasser nahe den Wurzeln vermeidet Sprühverwehung, kann Bodenverdunstung und die Benetzung von Unkraut zwischen den Reihen mindern und das Laub trockener halten, wodurch manche Krankheitsrisiken sinken können. Kleine überwachte Gaben können zum geringen Sandspeicher passen; Überschüsse können dennoch unter die Wurzeln gelangen. Die Vorteile hängen von Auslegung, Betrieb und Bedingungen ab.\n\nTomatengeeignete Quelle erst nach Belegen; löslicher Mehrnährstoffdünger ist eine mögliche Produktart, keine Diagnose.\n\nTests, Kulturbedarf, Vorrat und lokale Beratung nutzen; Blattfarbe liefert keine Menge.\n\nBestätigten Bedarf und Verlustrisiko berücksichtigen; Fertigation bei jedem oder jedem zweiten Gießen ist kein Automatismus.\n\nFalls Fertigation begründet ist, wurzelnah nach Produktfreigabe ausbringen und Auswaschung, Verteilung überwachen.\n\nDas Lehrmodell beschreibt eine Düngerklasse für fruchtende Tomaten. Tatsächliche Phase zuerst bestätigen; die Bankfrage allein liefert keine Produktanalyse.\n\nHitze, Wasser und Nährstoffe als getrennte Hypothesen prüfen und bedingten Wasser- und vier R Prinzipien-Plan wählen.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2b04f8476b6bbe31e4bab45792d124f7e59e7b675f09925a5efd2c58b45ecf50",
+      "requestFingerprintSha256": "2b04f8476b6bbe31e4bab45792d124f7e59e7b675f09925a5efd2c58b45ecf50",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-07-de-E02-r1",
+      "unitId": "S3-07-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Fall 2: kümmernder Weizen auf nassem Ton",
+          "sha256": "6428c87f9a4a5e50e23baa30988830540caf8ecb29deced35040ff6c28957d0b"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Nach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.",
+          "sha256": "c7c6189243b5791634026fd4fe0ed4dacd5eec7a23ba1cbcc1b59d22a93ee45d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Staunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.",
+          "sha256": "b717c9692eb057939352d82b9fe90cefa66a18569a49060f9b6e8795f01c4e04"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "K-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.",
+          "sha256": "bf4733d1069371f39903b96f50c1432c7a3612f3662c7d57a1973aa449dc2dce"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Stehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.",
+          "sha256": "e05db5ad73c8b53842c43755b87c5fc8ce992b32d8e17f8cc570a8668485a861"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "Mögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.",
+          "sha256": "d71b439fdb65f4c68b9b826cef94a305a322636bc8b3c619966d227c57deb5bd"
+        },
+        {
+          "pointer": "/examples/1/reasoning/4",
+          "text": "Bei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.",
+          "sha256": "9d498a5cf2759dd1c0d164596ddf4b172b64e2cfb33cdb2c025f346e35ba6ce1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/5",
+          "text": "K-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.",
+          "sha256": "f9ac417251043ce2c5760802d485bf7d6c293970a69300821a00094b879f36b9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/6",
+          "text": "Geeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.",
+          "sha256": "ea7abdd9ee340b5d04443d83b7cc8348065715cb81a59e5b68ab8dece82d1a30"
+        },
+        {
+          "pointer": "/examples/1/reasoning/7",
+          "text": "Kein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.",
+          "sha256": "195f8b542173b940bb3bb496563b66768df70ad5ee7820b9ed8f864bb67f6d53"
+        },
+        {
+          "pointer": "/examples/1/reasoning/8",
+          "text": "Für bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.",
+          "sha256": "981ab377c858ae91cecab5ebfa13e6ca81fe0503f6a2c6fd18de06732c4b3bc0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/9",
+          "text": "Der Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.",
+          "sha256": "74be7b02a5597812adef2e862172b311059394718aa48d7edf6f68fed2974f17"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Entwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese.",
+          "sha256": "4dcef2aed74fd27100f5987afb4f0acf97c2c387072a64d2fb30cd9fda527dde"
+        }
+      ],
+      "scientificMeaning": "Fall 2: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nK-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nK-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese.",
+      "displayText": "Fall 2: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nK-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nK-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese.",
+      "captionText": "Fall 2: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nK-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nK-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese.",
+      "spokenText": "Fall zwei: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nKa-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; Ka-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nKa-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-Ka ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; Ka ist eine prüfbare Zweithypothese.",
+      "spokenTextSHA256": "ab075f54e41b67ea56c956c6564efe33d3bf61d2274a3f2af5759f837970b032",
+      "spokenTextSha256": "ab075f54e41b67ea56c956c6564efe33d3bf61d2274a3f2af5759f837970b032",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fall 2: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nK-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; K-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nK-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-K ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; K ist eine prüfbare Zweithypothese.",
+          "spoken": "Fall zwei: kümmernder Weizen auf nassem Ton\n\nNach starkem Regen steht Wasser auf Ton; Weizen ist klein, einige ältere Blattränder vergilben.\n\nStaunässe begrenzt Sauerstoff an Wurzeln und damit Wasser- und Nährstoffaufnahme.\n\nKa-Mangel bleibt wegen der Ränder möglich, doch Wurzelstress, andere Störungen oder Schäden können ähnlich aussehen.\n\nStehendes Wasser und Abfluss kartieren, Wurzeln sicher prüfen und nach Entwässerung erneut sehen; Ka-Test bei anhaltenden Zeichen.\n\nMögliche vorläufige Oberflächenentwässerung nur sicher und erlaubt; dauerhafte Anlage erst nach Standortprüfung.\n\nBei Sättigung keine weitere Bewässerung; Abfluss prüfen. Das heißt nicht, Tonboden dürfe nie bewässert werden.\n\nKa-Quelle wie Kaliumsulfat nur bei belegtem Bedarf; Blatt-Ka ist keine zwingende Schnelllösung.\n\nGeeignete Analyse, Kultur und lokale Vorgabe nach Besserung; keine feste „niedrige“ Menge.\n\nKein Dünger in stehendem Wasser; zuerst Wurzeln und Erholung beurteilen.\n\nFür bestätigten Bedarf Boden- oder etikettgerechte Blattgabe nach Aufnahme, Abschwemmung und Pflanzensicherheit wählen.\n\nDer Lehrfall nennt organische Substanz für die Struktur und unterirdische Dränrohre als langfristige Beispiele. Standortprüfung und Planung bleiben erforderlich, keine automatische Heilung oder Grabungserlaubnis.\n\nEntwässerung und Wurzelsauerstoff zuerst untersuchen; Ka ist eine prüfbare Zweithypothese.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "db282e295892d56970db5ec5ae06fdb7d35f339625579bd58d78b854748b785f",
+      "requestFingerprintSha256": "db282e295892d56970db5ec5ae06fdb7d35f339625579bd58d78b854748b785f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wheat",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-07-de-E03-r1",
+      "unitId": "S3-07-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Fall 3: Blattgemüse-Planung auf Lehm",
+          "sha256": "1131dcf75ed6ae844a788a45f398a2370a670787f00d3030d6d7f64f1be12de1"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Eine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.",
+          "sha256": "e4472b5f89d7e85401cc8502c33811bfd3bfc8a36b03fbebfff911a8f8044a50"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.",
+          "sha256": "11729a8c3a0d34b937863153d993faacaa2ed563a48443a1c4d4eb180d5de30f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "N-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.",
+          "sha256": "03d87cfbf9fb497e82cf1dc7b54b9a494ed9a674ce3301e5870067511707bcb8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Kultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.",
+          "sha256": "945b095488cdf6d458e30ae88d3b129eaeb7448503fe72e32bdeea8f004ab6f8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Kosten/Wartung und Produktanalyse vergleichen.",
+          "sha256": "b5b0afb525792b1ec1070e04cf4fca8618284425d4f59c412de2d26075503c97"
+        },
+        {
+          "pointer": "/examples/2/reasoning/4",
+          "text": "Eine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.",
+          "sha256": "df9c681e7512c8cfe001e17fd7fb5b8829d457db4a3803479e3d3796ddd904f7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/5",
+          "text": "Vollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.",
+          "sha256": "3017ba27bbb3f6152a3e9305d8b062024d6ce801e2c73fb312a1f29b8d5e131a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/6",
+          "text": "Aus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.",
+          "sha256": "3192f67241e0abc3c32960509a03bc6e982f0dfa1f65284640a243eb64b3d096"
+        },
+        {
+          "pointer": "/examples/2/reasoning/7",
+          "text": "Nach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.",
+          "sha256": "2e210fb89594683f1823cc75ce39b16dc3383778ddfc0c1d8d53c97b74301d17"
+        },
+        {
+          "pointer": "/examples/2/reasoning/8",
+          "text": "Bei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.",
+          "sha256": "6a6889c25d879dd74c3ead61e4d3cc9415011a9a3ec045b30598f80d4c369393"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Vorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden.",
+          "sha256": "d818fbc77a8b2eb642aecb674c4cdda63e513ad17cf55594299eb58eab4f524a"
+        }
+      ],
+      "scientificMeaning": "Fall 3: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nN-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten/Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden.",
+      "displayText": "Fall 3: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nN-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten/Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden.",
+      "captionText": "Fall 3: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nN-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten/Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden.",
+      "spokenText": "Fall drei: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nEn-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur, Phase, lokale Evapotranspiration, wirksamen Regen, Wurzelspeicher, System, Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten, Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges En Pe Ka nur, wenn der Plan En, Pe und Ka fordert. Calciumnitrat enthält En und Ce A, ist kein ausgewogenes En Pe Ka.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche, zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-, Düngeplan zu erfinden.",
+      "spokenTextSHA256": "2cbc287ff3011717b67490f0a585ee7f820629220cd0c87f8c1fc09db0bf7d08",
+      "spokenTextSha256": "2cbc287ff3011717b67490f0a585ee7f820629220cd0c87f8c1fc09db0bf7d08",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fall 3: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nN-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur/Phase, lokale ET, wirksamen Regen, Wurzelspeicher, System/Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten/Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges NPK nur, wenn der Plan N, P und K fordert. Calciumnitrat enthält N und Ca, ist kein ausgewogenes NPK.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche/zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-/Düngeplan zu erfinden.",
+          "spoken": "Fall drei: Blattgemüse-Planung auf Lehm\n\nEine Blattkultur wird auf Lehm mit begrenztem Wasser geplant; die Karte schildert Planung, keine bestehenden Mangelzeichen.\n\nTropfbewässerung kann wenig Wasser in Reihen verteilen, wenn Technik und Wartung passen.\n\nEn-Bedarf kann hoch sein, doch weder Mangel noch Menge sind festgestellt.\n\nKultur, Phase, lokale Evapotranspiration, wirksamen Regen, Wurzelspeicher, System, Wasserqualität und gültigen Nährstofftest ermitteln.\n\nKosten, Wartung und Produktanalyse vergleichen.\n\nEine geplante und überwachte Tropfanlage erwägen; keinen pauschalen wöchentlichen oder zweimal wöchentlichen Bewässerungszyklus festlegen.\n\nVollständiges En Pe Ka nur, wenn der Plan En, Pe und Ka fordert. Calciumnitrat enthält En und Ce A, ist kein ausgewogenes En Pe Ka.\n\nAus Kultur, Analyse und lokaler Vorgabe statt bloß „wenig und oft“ ableiten.\n\nNach Wachstum und gemessenem Bedarf; wöchentliche, zweiwöchentliche Fertigation nicht allgemein.\n\nBei freigegebenem löslichem Produkt und passender Anlage über geprüfte Tropfer zur Wurzelzone; sonst geeignete Alternative.\n\nVorausschauende Planung, ohne Mangel oder festen Wasser-, Düngeplan zu erfinden.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "508828ddd66fd71b57e5712429c3ac7375200b9239da7e667e3add487e0f7156",
+      "requestFingerprintSha256": "508828ddd66fd71b57e5712429c3ac7375200b9239da7e667e3add487e0f7156",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "leafy",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-07-de-E04-r1",
+      "unitId": "S3-07-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Fall 4: purpurner Jungmais auf kaltem Ton",
+          "sha256": "222eba278e833e7ba2bec3b5cba0c8b6e72c2c86d3f9e7917b98ef01c216767a"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Jungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.",
+          "sha256": "599959640274ec3271848c0d619f4993b2b5c06aad48d9518155f7ebbf010880"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Kälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.",
+          "sha256": "e12fe12d55a94a982e766a9a3bf57d5a4a816072ccf39839c4b906c06eb37076"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Echter P-Mangel oder eine andere Ursache bleibt möglich.",
+          "sha256": "fa13dc838f4427d38ec9b9a01008842e9b3e18ab96aa4a4daa3ae621d47187d9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Temperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.",
+          "sha256": "b30c01f86a3d56d487a5bd2664b45b434fa718f8528e3bcc74dc0f1917945c55"
+        },
+        {
+          "pointer": "/examples/3/reasoning/3",
+          "text": "Kalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.",
+          "sha256": "5b131c951de7b10db0351464b2ac82cfab1d5a3bf5b67a9143f6432e6d0b02f1"
+        },
+        {
+          "pointer": "/examples/3/reasoning/4",
+          "text": "DAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.",
+          "sha256": "65933b35762b21ae13d7f4967dd462710c4c0079b81d8865b356824b2f18b84f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/5",
+          "text": "Nach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.",
+          "sha256": "3102cbcb7ac43dbc62999bcf605dbad9434c396cc4ef56a6af41cd0a7d838fad"
+        },
+        {
+          "pointer": "/examples/3/reasoning/6",
+          "text": "Bei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.",
+          "sha256": "75542c1e5b01cef308bf457eb797f783dadfceb4ee5859e3ff0d6ad24f59cbde"
+        },
+        {
+          "pointer": "/examples/3/reasoning/7",
+          "text": "Sicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.",
+          "sha256": "2fd2beb854c46af6b401677bb32fa5141c7c1cd734b3b530166998e960c7dbc3"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "P-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+          "sha256": "c41172c8ff1954a647ab822057a8e9faa2d37b32ca5fe6aa6766edfe6d62ec74"
+        }
+      ],
+      "scientificMeaning": "Fall 4: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter P-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nP-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+      "displayText": "Fall 4: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter P-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nP-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+      "captionText": "Fall 4: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter P-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nP-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+      "spokenText": "Fall vier: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können Pe-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter Pe-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden Pe-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDe A Pe oder Monoammoniumphosphat (Em A Pe) sind mögliche Beispiele für Pe-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat zwei Zoll seitlich und zwei Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nPe-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+      "spokenTextSHA256": "9c3839328e0f731366bb69d04b8033857f7d4ad47ab5a9f40cef507943dfca1d",
+      "spokenTextSha256": "9c3839328e0f731366bb69d04b8033857f7d4ad47ab5a9f40cef507943dfca1d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fall 4: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können P-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter P-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden P-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDAP oder Monoammoniumphosphat (MAP) sind mögliche Beispiele für P-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat 2 Zoll seitlich und 2 Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nP-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+          "spoken": "Fall vier: purpurner Jungmais auf kaltem Ton\n\nJungmais mit Purpurblättern und langsamem Wachstum im kalten Frühjahr auf schwerem Ton.\n\nKälte, Nässe oder schwache Wurzeln können Pe-Aufnahme trotz ausreichendem Bodengehalt hemmen.\n\nEchter Pe-Mangel oder eine andere Ursache bleibt möglich.\n\nTemperatur, Entwässerung, Wurzelwachstum, passenden Pe-Test und Besserung beim Erwärmen prüfen.\n\nKalten nassen Ton nicht automatisch weiter gießen; Feuchte und Abfluss zuerst prüfen.\n\nDe A Pe oder Monoammoniumphosphat (Em A Pe) sind mögliche Beispiele für Pe-Quellen, sofern Bedarf und Produkteignung bestätigt sind.\n\nNach Analyse und lokaler Kulturberatung, nicht pauschal „mäßig“.\n\nBei Bedarf und sicheren Feldbedingungen, nicht ungeprüft sofort.\n\nSicheres Band neben jungen Wurzeln nach etikettgerechtem Saatabstand möglich, nicht immer allen Alternativen überlegen. Dieses Lehrbeispiel zeigt ein Starterband bei der Aussaat zwei Zoll seitlich und zwei Zoll unterhalb der Saatreihe. Das ist ein Platzierungsbeispiel, keine allgemeine Einstellung und keine Anweisung, neben bereits etablierten Jungpflanzen zu graben. Die tatsächliche Platzierung richtet sich nach Produkt, Kultur, Gerät und örtlichen Vorgaben zum Schutz des Saatguts.\n\nPe-Hypothese und Bodenverhältnisse vor der vierteiligen Empfehlung prüfen.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "05aa0e3e405dd383af6ca1311d03d91b1b938ac84bb03c0d76963cdae5437005",
+      "requestFingerprintSha256": "05aa0e3e405dd383af6ca1311d03d91b1b938ac84bb03c0d76963cdae5437005",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "cold-maize",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
