@@ -1,0 +1,75 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-08-it.json",
+    "sha256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+    "bytes": 38807
+  },
+  "units": [
+    {
+      "id": "S2-08-it-R03-source-phrase-repair-r1",
+      "unitId": "S2-08-it-R03-source-phrase-repair-r1",
+      "locale": "it",
+      "semanticGroup": "exception-s208-it-r03-source-phrase-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+          "sha256": "cfee3ecc74377e786a66ed81a50064f530e015dd03c2df4c06694bacdd9da5a2"
+        }
+      ],
+      "scientificMeaning": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+      "displayText": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+      "captionText": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+      "spokenText": "Non usare una differenza di pH presa da un libro per inventare un numero di sacchi.",
+      "spokenTextSHA256": "59c7382e182682d0ac239e61f594ee4d88b419bc36fa6fda4fd69cbbcbdad1ce",
+      "spokenTextSha256": "59c7382e182682d0ac239e61f594ee4d88b419bc36fa6fda4fd69cbbcbdad1ce",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+          "spoken": "Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+          "spoken": "Non usare una differenza di pH presa da un libro per inventare un numero di sacchi.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "63ac6e49a0124ece75447a2ced1472e07625908738e52667160a4a508e7437be",
+      "requestFingerprintSha256": "63ac6e49a0124ece75447a2ced1472e07625908738e52667160a4a508e7437be",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/2/paragraphs/1",
+        "original": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+        "effective": "Chiedi al laboratorio un metodo locale adatto per il fabbisogno di calce o il pH tampone, l'obiettivo della coltura e la base per la dose. Contano anche finezza e potere neutralizzante del materiale, profondità d'incorporazione e tempo. Non moltiplicare la differenza di pH del libro per un numero di sacchi inventato.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
