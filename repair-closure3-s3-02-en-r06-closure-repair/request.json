@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_CLOSURE3_S3_02_EN_R06_CLOSURE_REPAIR",
+  "stepId": "S3-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-closure3-s3-02-en-r06-closure-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-02-en-R06-closure-repair-r1",
+      "unitId": "S3-02-en-R06-closure-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-closure3-s3-02-en-r06-closure-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Write at least two candidates per group and explain each. The worked case proposes maize and barley (grains); soybean and clover or alfalfa (legumes); carrot or potato plus lettuce or spinach (vegetables); strawberry and melon (fruits). Retain these alternatives as possibilities, not proven fits. Check variety and season, soil test, drainage, water, pests, available equipment and market before advising planting. Soybean and forage/cover legumes may have different harvest and land-use purposes.",
+          "sha256": "420f85f6ec2c2c35be584a3a9693bcc7e9210ce40388fce17ef63ece9eb2ba87"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Strawberry is not an orchard tree, and a clover or alfalfa stand, a perennial fruit planting or another continuing crop may occupy land beyond a one-year annual slot. Ask how long it establishes and remains, whether it is harvested or terminated, and what its pH and drainage requirements are. Do not force a perennial into a one-season rotation table without stating those consequences.",
+          "sha256": "2f6db8e23be118335facb0cc40300be5a3c5ab7323fcd41441f2607f0dd590d5"
+        }
+      ],
+      "scientificMeaning": "Write at least two candidates per group and explain each. The worked case proposes maize and barley (grains); soybean and clover or alfalfa (legumes); carrot or potato plus lettuce or spinach (vegetables); strawberry and melon (fruits). Retain these alternatives as possibilities, not proven fits. Check variety and season, soil test, drainage, water, pests, available equipment and market before advising planting. Soybean and forage/cover legumes may have different harvest and land-use purposes.\n\nStrawberry is not an orchard tree, and a clover or alfalfa stand, a perennial fruit planting or another continuing crop may occupy land beyond a one-year annual slot. Ask how long it establishes and remains, whether it is harvested or terminated, and what its pH and drainage requirements are. Do not force a perennial into a one-season rotation table without stating those consequences.",
+      "displayText": "Write at least two candidates per group and explain each. The worked case proposes maize and barley (grains); soybean and clover or alfalfa (legumes); carrot or potato plus lettuce or spinach (vegetables); strawberry and melon (fruits). Retain these alternatives as possibilities, not proven fits. Check variety and season, soil test, drainage, water, pests, available equipment and market before advising planting. Soybean and forage/cover legumes may have different harvest and land-use purposes.\n\nStrawberry is not an orchard tree, and a clover or alfalfa stand, a perennial fruit planting or another continuing crop may occupy land beyond a one-year annual slot. Ask how long it establishes and remains, whether it is harvested or terminated, and what its pH and drainage requirements are. Do not force a perennial into a one-season rotation table without stating those consequences.",
+      "captionText": "Write at least two candidates per group and explain each. The worked case proposes maize and barley (grains); soybean and clover or alfalfa (legumes); carrot or potato plus lettuce or spinach (vegetables); strawberry and melon (fruits). Retain these alternatives as possibilities, not proven fits. Check variety and season, soil test, drainage, water, pests, available equipment and market before advising planting. Soybean and forage/cover legumes may have different harvest and land-use purposes.\n\nStrawberry is not an orchard tree, and a clover or alfalfa stand, a perennial fruit planting or another continuing crop may occupy land beyond a one-year annual slot. Ask how long it establishes and remains, whether it is harvested or terminated, and what its pH and drainage requirements are. Do not force a perennial into a one-season rotation table without stating those consequences.",
+      "spokenText": "Do not force a perennial into a one-season rotation table without stating those consequences.",
+      "spokenTextSHA256": "9e1d4298f004a52fb6a09e92e11227d5e56131574a0ff7cafbfea369bed2506b",
+      "spokenTextSha256": "9e1d4298f004a52fb6a09e92e11227d5e56131574a0ff7cafbfea369bed2506b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Write at least two candidates per group and explain each. The worked case proposes maize and barley (grains); soybean and clover or alfalfa (legumes); carrot or potato plus lettuce or spinach (vegetables); strawberry and melon (fruits). Retain these alternatives as possibilities, not proven fits. Check variety and season, soil test, drainage, water, pests, available equipment and market before advising planting. Soybean and forage/cover legumes may have different harvest and land-use purposes.\n\nStrawberry is not an orchard tree, and a clover or alfalfa stand, a perennial fruit planting or another continuing crop may occupy land beyond a one-year annual slot. Ask how long it establishes and remains, whether it is harvested or terminated, and what its pH and drainage requirements are. Do not force a perennial into a one-season rotation table without stating those consequences.",
+          "spoken": "Do not force a perennial into a one-season rotation table without stating those consequences.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Do not force a perennial into a one-season rotation table without stating those consequences.",
+          "spoken": "Do not force a perennial into a one-season rotation table without stating those consequences.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "e70c34d03ae3dc1bb496ec19cf28e33f7ea9fbbec9d6465b52280d7bdfe96a19",
+      "requestFingerprintSha256": "e70c34d03ae3dc1bb496ec19cf28e33f7ea9fbbec9d6465b52280d7bdfe96a19",
+      "sourcePlanSha256": "465875aea4c90ad2db91604f662d792feccfcf9305fb267465667624b7e09f5f",
+      "exactSentenceBefore": "Do not force a perennial into a one-season rotation table without stating those consequences.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointers": [
+          "/reading/5/paragraphs/0",
+          "/reading/5/paragraphs/1"
+        ],
+        "spokenOnly": true,
+        "sourceTextUnchanged": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S3-02-en-R06-closure-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
