@@ -1,0 +1,291 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-en.json",
+    "sha256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+    "bytes": 25136
+  },
+  "units": [
+    {
+      "id": "S3-06-en-R01-r1",
+      "unitId": "S3-06-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about 10–15 cm as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.",
+          "sha256": "5384cd079a0aa6e14f2cf636a8467397e76305250339cef81f5fd2289751c331"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Record date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+          "sha256": "e3b61182c751c7f94001169bdd6f4258890526642cae16f32917ea4e90c0c139"
+        }
+      ],
+      "scientificMeaning": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about 10–15 cm as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+      "displayText": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about 10–15 cm as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+      "captionText": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about 10–15 cm as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+      "spokenText": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about ten to fifteen centimetres as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+      "spokenTextSHA256": "a4cb18b7eebb2eff7de12eeb3e2298be443942679b889e4ef2db5ae052bbe5df",
+      "spokenTextSha256": "a4cb18b7eebb2eff7de12eeb3e2298be443942679b889e4ef2db5ae052bbe5df",
+      "spokenAdaptationChanges": [
+        {
+          "written": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about 10–15 cm as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+          "spoken": "An irrigation recommendation depends on crop, soil and weather. For the supervised planter-box exercise, a trainer may indicate a sampling depth of about ten to fifteen centimetres as the process card does. In a real field, identify the crop's active rooting depth and sample at more than one suitable depth and location when assessing the whole root zone. Surface dust alone is not a root-zone measurement.\n\nRecord date, position, depth, estimated texture, recent rain or watering and the actual sample condition before interpreting it. Moisture by feel and appearance is an estimate developed through practice, not a digital percentage or a substitute for a calibrated measurement when one is needed.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exact10–15cmplanterbox-only/texture-specificfeel/1m3emitters/manualspecificpressure/isolatetest safety/actualindividualtrainercheck preserved. Last3D→online wording pendingrootruntime selection. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "14eea52596ee83ddd6beca70d05a59ce620fed35b3a0656e04dd3da3ed753f3e",
+      "requestFingerprintSha256": "14eea52596ee83ddd6beca70d05a59ce620fed35b3a0656e04dd3da3ed753f3e",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-R02-r1",
+      "unitId": "S3-06-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball = ideal' and 'no ball = dry' are unsafe universal rules.",
+          "sha256": "a50ae24b296e9a45874e7226715def88dc1466cb6d1c5c489551dd65258794b9"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Compare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+          "sha256": "a4066481479f715532a8c40a63f1460b8946c2d2dd3ec848e70d5f5c65e41ed4"
+        }
+      ],
+      "scientificMeaning": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball = ideal' and 'no ball = dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+      "displayText": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball = ideal' and 'no ball = dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+      "captionText": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball = ideal' and 'no ball = dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+      "spokenText": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball equals ideal' and 'no ball equals dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+      "spokenTextSHA256": "8522a561195b495a98d5e3f23796e32fe4b72fff40cfd01c5627cdc07a6b9051",
+      "spokenTextSha256": "8522a561195b495a98d5e3f23796e32fe4b72fff40cfd01c5627cdc07a6b9051",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball = ideal' and 'no ball = dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+          "spoken": "Squeeze a representative handful firmly several times and note whether grains stay separate, form a weak or firm ball, smear or ribbon, darken, stain the hand, or release free water. A muddy sample with water dripping is very wet, but the meaning of ball formation differs with texture. A loamy sand, a sand-dominant texture with some finer material, can form a weak ball while moist; a fine-textured clay can retain a ball even when relatively dry. 'Ball equals ideal' and 'no ball equals dry' are unsafe universal rules.\n\nCompare the sample with a texture-specific feel-and-appearance guide, other root-zone depths and the crop's condition. If the soil is very wet, do not keep adding water to force a desired ball; record the condition and follow the trainer's safe method for resetting a teaching sample. Never claim that the sample is 'too dry' merely because a printed process card predicts it.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exact10–15cmplanterbox-only/texture-specificfeel/1m3emitters/manualspecificpressure/isolatetest safety/actualindividualtrainercheck preserved. Last3D→online wording pendingrootruntime selection. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1c087501ddeaf2568a2081abc13cad0c789c9415f6602046709d164cfa85f359",
+      "requestFingerprintSha256": "1c087501ddeaf2568a2081abc13cad0c789c9415f6602046709d164cfa85f359",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-R03-r1",
+      "unitId": "S3-06-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "The trainer can prepare initially dry sand, loam and clay samples, add small recorded amounts of water, and let each student compare before and after. Sand is typically gritty; loam mixes particle sizes and may form a modest ball; clay can feel sticky and ribbon when sufficiently moist. Exact appearance depends on texture and water content, so observe and record instead of reciting the sample label.",
+          "sha256": "a2202aa2b84ccc11ab92da72f0d6e4a0cb3b505dbaa620115bfdd621d0271128"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "A training sample may be reused after being reset under the trainer's directions. Do not report the number of added drops as measured soil-water percentage or a universal irrigation target.",
+          "sha256": "a0e7d7f55f308a6fcb1b71a7397fdaa71c3f7cb9d69bc52c2dc5884c711100be"
+        }
+      ],
+      "scientificMeaning": "The trainer can prepare initially dry sand, loam and clay samples, add small recorded amounts of water, and let each student compare before and after. Sand is typically gritty; loam mixes particle sizes and may form a modest ball; clay can feel sticky and ribbon when sufficiently moist. Exact appearance depends on texture and water content, so observe and record instead of reciting the sample label.\n\nA training sample may be reused after being reset under the trainer's directions. Do not report the number of added drops as measured soil-water percentage or a universal irrigation target.",
+      "displayText": "The trainer can prepare initially dry sand, loam and clay samples, add small recorded amounts of water, and let each student compare before and after. Sand is typically gritty; loam mixes particle sizes and may form a modest ball; clay can feel sticky and ribbon when sufficiently moist. Exact appearance depends on texture and water content, so observe and record instead of reciting the sample label.\n\nA training sample may be reused after being reset under the trainer's directions. Do not report the number of added drops as measured soil-water percentage or a universal irrigation target.",
+      "captionText": "The trainer can prepare initially dry sand, loam and clay samples, add small recorded amounts of water, and let each student compare before and after. Sand is typically gritty; loam mixes particle sizes and may form a modest ball; clay can feel sticky and ribbon when sufficiently moist. Exact appearance depends on texture and water content, so observe and record instead of reciting the sample label.\n\nA training sample may be reused after being reset under the trainer's directions. Do not report the number of added drops as measured soil-water percentage or a universal irrigation target.",
+      "spokenText": "The trainer can prepare initially dry sand, loam and clay samples, add small recorded amounts of water, and let each student compare before and after. Sand is typically gritty; loam mixes particle sizes and may form a modest ball; clay can feel sticky and ribbon when sufficiently moist. Exact appearance depends on texture and water content, so observe and record instead of reciting the sample label.\n\nA training sample may be reused after being reset under the trainer's directions. Do not report the number of added drops as measured soil-water percentage or a universal irrigation target.",
+      "spokenTextSHA256": "0f3946c111c3a6a2ae56911baa82604bac39b040f8224b7b20e3b04b6e6d58ca",
+      "spokenTextSha256": "0f3946c111c3a6a2ae56911baa82604bac39b040f8224b7b20e3b04b6e6d58ca",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "392348478ab41915e356d7275915317ee4405c3cd751250e34250ea6ed45c65f",
+      "requestFingerprintSha256": "392348478ab41915e356d7275915317ee4405c3cd751250e34250ea6ed45c65f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-R04-r1",
+      "unitId": "S3-06-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "The assessment card supplies one metre of compatible polyethylene tubing, three emitters, a matching hole punch, an end cap and a source connector. The tubing carries water; each emitter releases it near a designated plant; the punch makes a kit-matched hole; the cap seals the downstream end; and the connector joins the upstream supply.",
+          "sha256": "7c970ca7a623648618c26f2bcc766964e5b73e0f03c30384b812281532baea93"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "A real working supply also needs water quality control. Identify the upstream filter and any pressure-control or gauge parts required by the selected kit, then check their manufacturer instructions with the trainer. Different products need different hole sizes, pressure and flow; this course does not invent a universal number or permit connection to an unverified live source.",
+          "sha256": "f674206ab2f7fdf3acf2c33a22c5a828b35a4f004622add43cdcf49ba4747aaa"
+        }
+      ],
+      "scientificMeaning": "The assessment card supplies one metre of compatible polyethylene tubing, three emitters, a matching hole punch, an end cap and a source connector. The tubing carries water; each emitter releases it near a designated plant; the punch makes a kit-matched hole; the cap seals the downstream end; and the connector joins the upstream supply.\n\nA real working supply also needs water quality control. Identify the upstream filter and any pressure-control or gauge parts required by the selected kit, then check their manufacturer instructions with the trainer. Different products need different hole sizes, pressure and flow; this course does not invent a universal number or permit connection to an unverified live source.",
+      "displayText": "The assessment card supplies one metre of compatible polyethylene tubing, three emitters, a matching hole punch, an end cap and a source connector. The tubing carries water; each emitter releases it near a designated plant; the punch makes a kit-matched hole; the cap seals the downstream end; and the connector joins the upstream supply.\n\nA real working supply also needs water quality control. Identify the upstream filter and any pressure-control or gauge parts required by the selected kit, then check their manufacturer instructions with the trainer. Different products need different hole sizes, pressure and flow; this course does not invent a universal number or permit connection to an unverified live source.",
+      "captionText": "The assessment card supplies one metre of compatible polyethylene tubing, three emitters, a matching hole punch, an end cap and a source connector. The tubing carries water; each emitter releases it near a designated plant; the punch makes a kit-matched hole; the cap seals the downstream end; and the connector joins the upstream supply.\n\nA real working supply also needs water quality control. Identify the upstream filter and any pressure-control or gauge parts required by the selected kit, then check their manufacturer instructions with the trainer. Different products need different hole sizes, pressure and flow; this course does not invent a universal number or permit connection to an unverified live source.",
+      "spokenText": "The assessment card supplies one metre of compatible polyethylene tubing, three emitters, a matching hole punch, an end cap and a source connector. The tubing carries water; each emitter releases it near a designated plant; the punch makes a kit-matched hole; the cap seals the downstream end; and the connector joins the upstream supply.\n\nA real working supply also needs water quality control. Identify the upstream filter and any pressure-control or gauge parts required by the selected kit, then check their manufacturer instructions with the trainer. Different products need different hole sizes, pressure and flow; this course does not invent a universal number or permit connection to an unverified live source.",
+      "spokenTextSHA256": "e2e66a54f3d7b52621f151f2eba29ec40e0b834ec140d2a1e4f517f7df2ff551",
+      "spokenTextSha256": "e2e66a54f3d7b52621f151f2eba29ec40e0b834ec140d2a1e4f517f7df2ff551",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fc0605206f2c770758ab915ba066d14f27a313cc1c4221bf72c72f9537ffbcca",
+      "requestFingerprintSha256": "fc0605206f2c770758ab915ba066d14f27a313cc1c4221bf72c72f9537ffbcca",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-R05-r1",
+      "unitId": "S3-06-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "At an unpressurised workbench, lay out and name the components. Measure the compatible one-metre tube. Mark three positions based on the actual plant spacing and the emitter’s soil-wetting pattern; do not assume equal intervals if the plants are not equally spaced. With the trainer's approved punch, make three clean holes away from your hand and seat the three matching emitters firmly. Fit the end cap and source connector as the kit guide specifies.",
+          "sha256": "6ea1c5e2ee5bf89ffe76fbda253d47430eed9bfe6b6e8136c0b3467f7fc81a4e"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "The trainer verifies the filter, pressure-control arrangement, safe supply and product limits before a controlled water test. Observe all three outputs and joints, look for leaks or a blocked emitter, isolate the supply before adjusting parts, retest corrected faults, and clean the bench and site. 'Looks complete' is not evidence that the line works.",
+          "sha256": "ffca6eee53fec731a3bd553bd5dce7597e96365f3ba8b88ecadb0c2c8c7ad091"
+        }
+      ],
+      "scientificMeaning": "At an unpressurised workbench, lay out and name the components. Measure the compatible one-metre tube. Mark three positions based on the actual plant spacing and the emitter’s soil-wetting pattern; do not assume equal intervals if the plants are not equally spaced. With the trainer's approved punch, make three clean holes away from your hand and seat the three matching emitters firmly. Fit the end cap and source connector as the kit guide specifies.\n\nThe trainer verifies the filter, pressure-control arrangement, safe supply and product limits before a controlled water test. Observe all three outputs and joints, look for leaks or a blocked emitter, isolate the supply before adjusting parts, retest corrected faults, and clean the bench and site. 'Looks complete' is not evidence that the line works.",
+      "displayText": "At an unpressurised workbench, lay out and name the components. Measure the compatible one-metre tube. Mark three positions based on the actual plant spacing and the emitter’s soil-wetting pattern; do not assume equal intervals if the plants are not equally spaced. With the trainer's approved punch, make three clean holes away from your hand and seat the three matching emitters firmly. Fit the end cap and source connector as the kit guide specifies.\n\nThe trainer verifies the filter, pressure-control arrangement, safe supply and product limits before a controlled water test. Observe all three outputs and joints, look for leaks or a blocked emitter, isolate the supply before adjusting parts, retest corrected faults, and clean the bench and site. 'Looks complete' is not evidence that the line works.",
+      "captionText": "At an unpressurised workbench, lay out and name the components. Measure the compatible one-metre tube. Mark three positions based on the actual plant spacing and the emitter’s soil-wetting pattern; do not assume equal intervals if the plants are not equally spaced. With the trainer's approved punch, make three clean holes away from your hand and seat the three matching emitters firmly. Fit the end cap and source connector as the kit guide specifies.\n\nThe trainer verifies the filter, pressure-control arrangement, safe supply and product limits before a controlled water test. Observe all three outputs and joints, look for leaks or a blocked emitter, isolate the supply before adjusting parts, retest corrected faults, and clean the bench and site. 'Looks complete' is not evidence that the line works.",
+      "spokenText": "At an unpressurised workbench, lay out and name the components. Measure the compatible one-metre tube. Mark three positions based on the actual plant spacing and the emitter’s soil-wetting pattern; do not assume equal intervals if the plants are not equally spaced. With the trainer's approved punch, make three clean holes away from your hand and seat the three matching emitters firmly. Fit the end cap and source connector as the kit guide specifies.\n\nThe trainer verifies the filter, pressure-control arrangement, safe supply and product limits before a controlled water test. Observe all three outputs and joints, look for leaks or a blocked emitter, isolate the supply before adjusting parts, retest corrected faults, and clean the bench and site. 'Looks complete' is not evidence that the line works.",
+      "spokenTextSHA256": "33af4d96644a2c458e579e1a6f53a73361b8dd55138045436ecff99b393c7fed",
+      "spokenTextSha256": "33af4d96644a2c458e579e1a6f53a73361b8dd55138045436ecff99b393c7fed",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "87c9dc637813f6229be1a406d330b53097c8e24d9ffda29499983013766f0bb6",
+      "requestFingerprintSha256": "87c9dc637813f6229be1a406d330b53097c8e24d9ffda29499983013766f0bb6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-R06-r1",
+      "unitId": "S3-06-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+          "sha256": "610fbf3cb67df1d1403d9789c8b7de4ccf238f0fe0b396cfc52409bb56e876d6"
+        }
+      ],
+      "scientificMeaning": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "displayText": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "captionText": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "spokenText": "An online rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "spokenTextSHA256": "16b88c57be95f334991c1f5502e7b8575c7074cf8487f0141d95a1a638605ec9",
+      "spokenTextSha256": "16b88c57be95f334991c1f5502e7b8575c7074cf8487f0141d95a1a638605ec9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+          "spoken": "An online rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exact10–15cmplanterbox-only/texture-specificfeel/1m3emitters/manualspecificpressure/isolatetest safety/actualindividualtrainercheck preserved. Last3D→online wording pendingrootruntime selection. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6317a53fc291e7cdd809d41c27cb323c625cf2e67a86859766fcfbbe81825980",
+      "requestFingerprintSha256": "6317a53fc291e7cdd809d41c27cb323c625cf2e67a86859766fcfbbe81825980",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
