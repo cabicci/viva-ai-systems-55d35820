@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR13_S215_IT_R04_IDENTIFIED_ANALYTES_REPAIR",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair13-s215-it-r04-identified-analytes-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-15-it-R04-identified-analytes-repair-r1",
+      "unitId": "S2-15-it-R04-identified-analytes-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair13-s215-it-r04-identified-analytes-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "La tabella didattica originale contiene pH 5.2, sostanza organica 2.1%, N Basso, P 25 ppm, K 180 ppm. Riporta intervalli illustrativi pH 6.0–7.0, sostanza organica 3.0–5.0%, N “Ottimale”, P 30–50 ppm, K 150–250 ppm. Conservali come dati del modello: differiscono da un’altra tabella e manca il metodo. Una riga reale richiede parametro, valore, unità, fonte/metodo, riferimento applicabile e stato; se manca il supporto scrivi “non determinato”. Unità come mg/L, µg/L e mg/kg non identificano da sole la sostanza misurata: non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+          "sha256": "28db8ef3277d21d0f55963989e78cc0f704593959b6d5147b11b4578ced4f78b"
+        }
+      ],
+      "scientificMeaning": "La tabella didattica originale contiene pH 5.2, sostanza organica 2.1%, N Basso, P 25 ppm, K 180 ppm. Riporta intervalli illustrativi pH 6.0–7.0, sostanza organica 3.0–5.0%, N “Ottimale”, P 30–50 ppm, K 150–250 ppm. Conservali come dati del modello: differiscono da un’altra tabella e manca il metodo. Una riga reale richiede parametro, valore, unità, fonte/metodo, riferimento applicabile e stato; se manca il supporto scrivi “non determinato”. Unità come mg/L, µg/L e mg/kg non identificano da sole la sostanza misurata: non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+      "displayText": "La tabella didattica originale contiene pH 5.2, sostanza organica 2.1%, N Basso, P 25 ppm, K 180 ppm. Riporta intervalli illustrativi pH 6.0–7.0, sostanza organica 3.0–5.0%, N “Ottimale”, P 30–50 ppm, K 150–250 ppm. Conservali come dati del modello: differiscono da un’altra tabella e manca il metodo. Una riga reale richiede parametro, valore, unità, fonte/metodo, riferimento applicabile e stato; se manca il supporto scrivi “non determinato”. Unità come mg/L, µg/L e mg/kg non identificano da sole la sostanza misurata: non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+      "captionText": "La tabella didattica originale contiene pH 5.2, sostanza organica 2.1%, N Basso, P 25 ppm, K 180 ppm. Riporta intervalli illustrativi pH 6.0–7.0, sostanza organica 3.0–5.0%, N “Ottimale”, P 30–50 ppm, K 150–250 ppm. Conservali come dati del modello: differiscono da un’altra tabella e manca il metodo. Una riga reale richiede parametro, valore, unità, fonte/metodo, riferimento applicabile e stato; se manca il supporto scrivi “non determinato”. Unità come mg/L, µg/L e mg/kg non identificano da sole la sostanza misurata: non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+      "spokenText": "Non riportare come risultati dei nutrienti del suolo le righe in cui la sostanza analizzata non è identificata.",
+      "spokenTextSHA256": "561aa8b3064574b12cde48e6f91dd84b353ad64f386ddf842934ac94022b2fa2",
+      "spokenTextSha256": "561aa8b3064574b12cde48e6f91dd84b353ad64f386ddf842934ac94022b2fa2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La tabella didattica originale contiene pH 5.2, sostanza organica 2.1%, N Basso, P 25 ppm, K 180 ppm. Riporta intervalli illustrativi pH 6.0–7.0, sostanza organica 3.0–5.0%, N “Ottimale”, P 30–50 ppm, K 150–250 ppm. Conservali come dati del modello: differiscono da un’altra tabella e manca il metodo. Una riga reale richiede parametro, valore, unità, fonte/metodo, riferimento applicabile e stato; se manca il supporto scrivi “non determinato”. Unità come mg/L, µg/L e mg/kg non identificano da sole la sostanza misurata: non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+          "spoken": "non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+          "spoken": "Non riportare come risultati dei nutrienti del suolo le righe in cui la sostanza analizzata non è identificata.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "1d76be53c095bc95d949af343251974e78cb7eee22a2756a83f98ddc1b7df7c2",
+      "requestFingerprintSha256": "1d76be53c095bc95d949af343251974e78cb7eee22a2756a83f98ddc1b7df7c2",
+      "sourcePlanSha256": "895f59889a407d192d5bd0cf70676ac004b60a37e8c46c22f871099da9d659be",
+      "exactSentenceBefore": "non riportare righe senza analiti identificati come risultati dei nutrienti del suolo.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-15-it-R04-identified-analytes-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
