@@ -1,0 +1,73 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-it.json",
+    "sha256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+    "bytes": 31630
+  },
+  "units": [
+    {
+      "id": "S3-01-it-R06-sustained-care-repair-r1",
+      "unitId": "S3-01-it-R06-sustained-care-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair13-s3-01-it-r06-sustained-care-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale. Profondità delle radici e idoneità variano per coltura, varietà, portinnesto e campo. Non dedurre che ogni fruttifero vada in argilla o che una coltura sia adatta a un campo egiziano dal solo nome del gruppo.",
+          "sha256": "cd549e3ad42fc9e695aaf476f141735ae95bb13fa1f6b5311247f3d39aebcbdd"
+        }
+      ],
+      "scientificMeaning": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale. Profondità delle radici e idoneità variano per coltura, varietà, portinnesto e campo. Non dedurre che ogni fruttifero vada in argilla o che una coltura sia adatta a un campo egiziano dal solo nome del gruppo.",
+      "displayText": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale. Profondità delle radici e idoneità variano per coltura, varietà, portinnesto e campo. Non dedurre che ogni fruttifero vada in argilla o che una coltura sia adatta a un campo egiziano dal solo nome del gruppo.",
+      "captionText": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale. Profondità delle radici e idoneità variano per coltura, varietà, portinnesto e campo. Non dedurre che ogni fruttifero vada in argilla o che una coltura sia adatta a un campo egiziano dal solo nome del gruppo.",
+      "spokenText": "Le colture longeve richiedono attenzione continua al suolo, al drenaggio e alla zona radicale.",
+      "spokenTextSHA256": "0cdbde6c8cf89717ab1110bbf5737b47dd166e874f279686ed9d2d7d159349e8",
+      "spokenTextSha256": "0cdbde6c8cf89717ab1110bbf5737b47dd166e874f279686ed9d2d7d159349e8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale. Profondità delle radici e idoneità variano per coltura, varietà, portinnesto e campo. Non dedurre che ogni fruttifero vada in argilla o che una coltura sia adatta a un campo egiziano dal solo nome del gruppo.",
+          "spoken": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale.",
+          "spoken": "Le colture longeve richiedono attenzione continua al suolo, al drenaggio e alla zona radicale.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "88e52215975e25c7540173ccb6e272b9e6a64fe79ea1a450a22bb274a8104e87",
+      "requestFingerprintSha256": "88e52215975e25c7540173ccb6e272b9e6a64fe79ea1a450a22bb274a8104e87",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Le colture longeve richiedono cura continua del suolo, del drenaggio e della zona radicale.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
