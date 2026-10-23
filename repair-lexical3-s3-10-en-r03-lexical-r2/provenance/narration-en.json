@@ -1,0 +1,78 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-en.json",
+    "sha256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+    "bytes": 47884
+  },
+  "units": [
+    {
+      "id": "S3-10-en-R03-lexical-r2",
+      "unitId": "S3-10-en-R03-lexical-r2",
+      "locale": "en",
+      "semanticGroup": "repair-lexical3-s3-10-en-r03-lexical-r2-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.",
+          "sha256": "7f12e8746b49c9b64ef131370a2d2aa4639d8ee696dc14d013e97df30e131fd6"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Silt is a particle-size fraction, not simply wet mud or the feature that makes every loam 'perfect'. If the identification changes with wetness, repeat under a comparable moisture condition. Use measured particle percentages and a faithful triangle when a precise textural class is needed. The original model descriptions are comparison criteria, not observations that have already been made of today's real samples.",
+          "sha256": "723a39d452a20e1539e394700cc6b302fc56fd939137b181f5e6f0741e0df279"
+        }
+      ],
+      "scientificMeaning": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.\n\nSilt is a particle-size fraction, not simply wet mud or the feature that makes every loam 'perfect'. If the identification changes with wetness, repeat under a comparable moisture condition. Use measured particle percentages and a faithful triangle when a precise textural class is needed. The original model descriptions are comparison criteria, not observations that have already been made of today's real samples.",
+      "displayText": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.\n\nSilt is a particle-size fraction, not simply wet mud or the feature that makes every loam 'perfect'. If the identification changes with wetness, repeat under a comparable moisture condition. Use measured particle percentages and a faithful triangle when a precise textural class is needed. The original model descriptions are comparison criteria, not observations that have already been made of today's real samples.",
+      "captionText": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.\n\nSilt is a particle-size fraction, not simply wet mud or the feature that makes every loam 'perfect'. If the identification changes with wetness, repeat under a comparable moisture condition. Use measured particle percentages and a faithful triangle when a precise textural class is needed. The original model descriptions are comparison criteria, not observations that have already been made of today's real samples.",
+      "spokenText": "In the N R C S flow, sand does not retain a ball after moisture checks.",
+      "spokenTextSHA256": "b96099a456bc14012819ef9d5894d610cecb6af7ab742968bad7a943ecdf62a6",
+      "spokenTextSha256": "b96099a456bc14012819ef9d5894d610cecb6af7ab742968bad7a943ecdf62a6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.\n\nSilt is a particle-size fraction, not simply wet mud or the feature that makes every loam 'perfect'. If the identification changes with wetness, repeat under a comparable moisture condition. Use measured particle percentages and a faithful triangle when a precise textural class is needed. The original model descriptions are comparison criteria, not observations that have already been made of today's real samples.",
+          "spoken": "In the NRCS flow, Sand does not retain a ball after moisture checks",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "In the NRCS flow, Sand does not retain a ball after moisture checks",
+          "spoken": "In the N R C S flow, sand does not retain a ball after moisture checks.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "72a1e551d53618512bf8dd812e5cfe75e4605302075055757a00384e15f20091",
+      "requestFingerprintSha256": "72a1e551d53618512bf8dd812e5cfe75e4605302075055757a00384e15f20091",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "In the NRCS flow, Sand does not retain a ball after moisture checks",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/2/paragraphs/0",
+        "sourceText": "With the trainer, gradually moisten and work each unlabelled sample to a suitable mouldable condition. Record grittiness, smoothness, stickiness, ball strength and ribbon behaviour before naming. In the NRCS flow, Sand does not retain a ball after moisture checks; Loamy Sand forms a ball but no ribbon; gritty Sandy Loam can form a weak ribbon. Do not call all sandy-group material the same class. Clay-rich and loamy groups also need several clues; these are field estimates, not observations already made on today’s trays.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
