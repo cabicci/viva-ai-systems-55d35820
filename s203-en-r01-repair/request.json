@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S203_EN_R01_ONE_CORROBORATED_SENTENCE_REPAIR",
+  "stepId": "S2-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s203-en-r01-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-03-en-R01-sentence-repair-r1",
+      "unitId": "S2-03-en-R01-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s203-en-r01-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+          "sha256": "9bad027e1e963b9f453703af17f72517049adcd225daad16b6320b4d1ffbeb4b"
+        }
+      ],
+      "scientificMeaning": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "displayText": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "captionText": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "spokenText": "Then suggest a likely explanation and state what might disprove it.",
+      "spokenTextSHA256": "61517fe1cac341515741363585574119eb608b961c88b0ed202b0e083cc98bb5",
+      "spokenTextSha256": "61517fe1cac341515741363585574119eb608b961c88b0ed202b0e083cc98bb5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+          "spoken": "Then offer a likely explanation and what might disprove it.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Then offer a likely explanation and what might disprove it.",
+          "spoken": "Then suggest a likely explanation and state what might disprove it.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_PROVISIONAL_EXPLANATION_AND_FALSIFYING_CHECK"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "8544440b73b102438dbccece338c5ec08a62d6b6c135dd5d9a8f14394dfc8202",
+      "requestFingerprintSha256": "8544440b73b102438dbccece338c5ec08a62d6b6c135dd5d9a8f14394dfc8202",
+      "sourcePlanSha256": "1a40cf1f7a93a064abd0e4dfdf826ba03e472e765dd43f4b5639e32a9450402d",
+      "exactSentenceBefore": "Then offer a likely explanation and what might disprove it.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-03-en-R01-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

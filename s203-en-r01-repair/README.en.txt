@@ -1,0 +1,1 @@
+One approved11word English provisional explanation/falsifying-check sentence only, originalCharon/currentmodel/delivery.1TTS1blind1ASR2GET0retry;exact40.67–44.43s quietcuts/source/prefixsuffixproof; outsidePCM/display immutable. No automaticjoin/postjoin; root selects actual candidate.
