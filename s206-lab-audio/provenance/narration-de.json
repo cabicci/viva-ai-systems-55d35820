@@ -1,0 +1,357 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-06-de.json",
+    "sha256": "8e84d0be579865a345f016205c9364c6b079cbb1c4f5c2129bec68c9c7c4b4af",
+    "bytes": 29916
+  },
+  "units": [
+    {
+      "id": "S2-06-de-supervised-stages-r1",
+      "unitId": "S2-06-de-supervised-stages-r1",
+      "locale": "de",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8e84d0be579865a345f016205c9364c6b079cbb1c4f5c2129bec68c9c7c4b4af",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/method/role",
+          "text": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts",
+          "sha256": "ff32e90afb5d04420bdc57aa04e0f4a992c4585369b08c435c57c64556aa31ad"
+        },
+        {
+          "pointer": "/methodPractice/method/product",
+          "text": "Rapitest Soil Test Kit 1601, pH-Farbkomparator",
+          "sha256": "eb55a5f71a2291bde72377ddf6bfcc87bb2bc38fe71f8c4ffe1b6448ace56ddc"
+        },
+        {
+          "pointer": "/methodPractice/method/manualScope",
+          "text": "Das pH-Verfahren auf Seite 1 des Rapitest-1601-Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne pH-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem NPK-Verfahren oder anderen Sets austauschbar.",
+          "sha256": "52c32b307f211d88a4a1081432fcf7182fe44963f988370ecc650a8918201b84"
+        },
+        {
+          "pointer": "/methodPractice/method/fieldGate",
+          "text": "Vor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-SDS und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.",
+          "sha256": "f767d0337a41d62bb3df87d3d96b8758f7c128b61caddeb7364445da8c50909f"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/0",
+          "text": "Kennung, passende Skala, SDS und Schutz prüfen",
+          "sha256": "c7692477fa330517e554a643cf3e68bae6cfd7a7f29e5f696c1a850ed6f0d62a"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/1",
+          "text": "Erde bis zur Bodenmarke dieses Komparators",
+          "sha256": "1bf3fb4aa3828a4765e0a30f037f06f17857f2c8c1692533ae2fb854fd2109f9"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/2",
+          "text": "Eine passende grüne pH-Kapsel",
+          "sha256": "6144b1e8a10fc0b225bc6bc265e9314a4573ea7afde95da513267425af2d7076"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/3",
+          "text": "Wasser bis zur Wassermarke dieses Komparators",
+          "sha256": "15a6672385bfad78de43d7259d340024ce682104a9f124b94ccf49e68b1d3f3d"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/4",
+          "text": "Deckel fest schließen und gründlich schütteln",
+          "sha256": "040b980466d7b28243e290a3300dcc2adaf1576b6e1732b9fba14242f16b777c"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/5",
+          "text": "Absetzen und Farbentwicklung: hier etwa 1 Minute",
+          "sha256": "1968cd382774f7dee75ac90105472c8f3f2a638b058db6e9c5e8af2948abc367"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/6",
+          "text": "Überstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen",
+          "sha256": "68829927993e95e7e70b78262d1f6d35694f0d7a7431e6c8ac6782f72c4f6f8c"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/7",
+          "text": "Unterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+          "sha256": "95403f8c61cebb446dc8d757035c8fcd357775a9856455d3519cc98a6a9bd57c"
+        }
+      ],
+      "scientificMeaning": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit 1601, pH-Farbkomparator\n\nDas pH-Verfahren auf Seite 1 des Rapitest-1601-Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne pH-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem NPK-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-SDS und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, SDS und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne pH-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa 1 Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+      "displayText": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit 1601, pH-Farbkomparator\n\nDas pH-Verfahren auf Seite 1 des Rapitest-1601-Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne pH-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem NPK-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-SDS und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, SDS und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne pH-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa 1 Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+      "captionText": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit 1601, pH-Farbkomparator\n\nDas pH-Verfahren auf Seite 1 des Rapitest-1601-Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne pH-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem NPK-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-SDS und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, SDS und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne pH-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa 1 Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+      "spokenText": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit eins sechs null eins, P H-Farbkomparator\n\nDas P H-Verfahren auf Seite eins des Rapitest eins sechs null eins Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne P H-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem N P K-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-S D S und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, S D S und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne P H-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa eine Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+      "spokenTextSHA256": "a18452b09062bc20643853d459b6bbecd1b150f23e1155f3e9c27cac6cc72352",
+      "spokenTextSha256": "a18452b09062bc20643853d459b6bbecd1b150f23e1155f3e9c27cac6cc72352",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Rapitest-1601-",
+          "spoken": "Rapitest eins sechs null eins ",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar or explicit alternative, all scientific source facts unchanged"
+        },
+        {
+          "written": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit 1601, pH-Farbkomparator\n\nDas pH-Verfahren auf Seite 1 des Rapitest eins sechs null eins Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne pH-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem NPK-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-SDS und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, SDS und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne pH-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa 1 Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+          "spoken": "Dokumentiertes Lehrbeispiel, kein Beleg für Verfügbarkeit in Ägypten oder die Ausstattung des Trainingsorts\n\nRapitest Soil Test Kit eins sechs null eins, P H-Farbkomparator\n\nDas P H-Verfahren auf Seite eine des Rapitest eins sechs null eins Handbuchs nutzt den grünen Komparator mit eigener Skala: Erde bis zur Bodenlinie, eine passende grüne P H-Kapsel, vorzugsweise destilliertes Wasser bis zur Wasserlinie, Deckel fest schließen und schütteln, ungefähr eine Minute absetzen und Farbe entwickeln lassen, dann bei Tageslicht ohne direkte Sonne mit dieser Skala vergleichen. Es ist nicht mit dem N P K-Verfahren oder anderen Sets austauschbar.\n\nVor einer praktischen Bewertung erfasst die Lehrkraft wirkliches Set, Handbuchstand, Reagenz-S D S und Skalenbereich. Die lernende Person folgt genau diesen Anweisungen. Fehlen sie, bleibt nur die Simulation ohne praktische Anerkennung.\n\nKennung, passende Skala, S D S und Schutz prüfen\n\nErde bis zur Bodenmarke dieses Komparators\n\nEine passende grüne P H-Kapsel\n\nWasser bis zur Wassermarke dieses Komparators\n\nDeckel fest schließen und gründlich schütteln\n\nAbsetzen und Farbentwicklung: hier etwa eine Minute\n\nÜberstehende Flüssigkeit bei diffusem Tageslicht mit eigener Skala vergleichen\n\nUnterstützten Wert notieren; nach Standortverfahren reinigen/entsorgen",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        },
+        {
+          "written": "Seite eine des",
+          "spoken": "Seite eins des",
+          "occurrences": 1,
+          "purpose": "Page-number spoken grammar only, exact source page1 unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cddedf8718dddbc4574dfb4a865252b411506609d3bf9823ba0cde6696cceba6",
+      "requestFingerprintSha256": "cddedf8718dddbc4574dfb4a865252b411506609d3bf9823ba0cde6696cceba6",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-06-de-practical-completion-r1",
+      "unitId": "S2-06-de-practical-completion-r1",
+      "locale": "de",
+      "semanticGroup": "practical-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8e84d0be579865a345f016205c9364c6b079cbb1c4f5c2129bec68c9c7c4b4af",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/passChecks/0/evidence",
+          "text": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem pH-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.",
+          "sha256": "cc255250b26c125040c8f224d166cab546658280472f4588ee5da072a85fe804"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/0/decision",
+          "text": "Bestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder SDS bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.",
+          "sha256": "dbb7f7d6e47549dfd6ab7e4d0974c25dbb466cfd501b84395246bd566347e093"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/evidence",
+          "text": "Die Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.",
+          "sha256": "84524720ad7e1bd72a892b38c6dedfe8c787d37b13f63389ed316de611c4f6b9"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/decision",
+          "text": "Kennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.",
+          "sha256": "e8a1f63e859871ed7304ee4149949c10ae83a6a3899ef7bad36a4852073645e6"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/evidence",
+          "text": "Die Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem pH-Meter und Labor.",
+          "sha256": "90e95600223822e4d57d63194b7e57255991d1463ba501c397129d8ea47bf785"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/decision",
+          "text": "Nur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+          "sha256": "4e326c7d55a444b1f02488edfc99302e971e95c1a1a89fc34f3a303a204fdff3"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem pH-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder SDS bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem pH-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+      "displayText": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem pH-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder SDS bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem pH-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+      "captionText": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem pH-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder SDS bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem pH-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+      "spokenText": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem P H-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder S D S bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem P H-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+      "spokenTextSHA256": "1223492088ec98468713ed0752799953a0cdeeba58f13a0a15f450beb4b83a01",
+      "spokenTextSha256": "1223492088ec98468713ed0752799953a0cdeeba58f13a0a15f450beb4b83a01",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem pH-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder SDS bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem pH-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+          "spoken": "Die Lehrkraft erfasst genaues Set und Handbuch und beobachtet jede lernende Person bei richtiger Bodenmenge, passendem P H-Reagenz, Wasserstand, Verschluss, Schütteln und realer Farbentwicklungszeit. Mengen und Zeiten eines anderen Sets werden nicht übertragen.\n\nBestanden nur, wenn alle setgebundenen Phasen individuell und mit passendem Schutz ausgeführt sind. Ohne echtes Set, Handbuch oder S D S bleibt die Praxis unbewertet; Online-Übung ist ohne Praxisgutschrift möglich.\n\nDie Lehrkraft beobachtet den Vergleich mit der Skala desselben Sets bei diffusem Tageslicht, prüft Probenkennung und Skalenbereich und lässt Unsicherheit oder schlechten Farbabgleich festhalten statt erfundener Dezimalstellen.\n\nKennung, passende Skala, gestützte Lesung und Aufzeichnung müssen stimmen. Allgemeine Blau-/Violettregel, fremde Skala oder Schätzung außerhalb des Bereichs reichen nicht.\n\nDie Lehrkraft beobachtet Schutz, sauberen Arbeitsplatz, Reinigung und standortgerechte Abfalltrennung und hört einen begründeten Vergleich von Feldtest, kalibriertem P H-Meter und Labor.\n\nNur sicher beobachteter Abschluss plus begründete Methodenwahl bestehen. Unbeaufsichtigter Reagenzeinsatz oder unsichere Entsorgung stoppen die Station bis zur Nachbesserung.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "073028ed93a937a7c6da4ff09d4324ee601e7deff853a1ee797339faabf34bce",
+      "requestFingerprintSha256": "073028ed93a937a7c6da4ff09d4324ee601e7deff853a1ee797339faabf34bce",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-06-de-card-scope-r1",
+      "unitId": "S2-06-de-card-scope-r1",
+      "locale": "de",
+      "semanticGroup": "card-scope",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8e84d0be579865a345f016205c9364c6b079cbb1c4f5c2129bec68c9c7c4b4af",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/cards/0/scope",
+          "text": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und SDS-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.",
+          "sha256": "751c9b08f37cb60030f80fd6908fcd5f88a290b79c4875827c2d9b53bb588c30"
+        },
+        {
+          "pointer": "/methodPractice/cards/1/scope",
+          "text": "Schutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.",
+          "sha256": "840f19c6a2ab1456ae250a7390c9605c45a48f9e5a928169b80d4f977c62eb3e"
+        },
+        {
+          "pointer": "/methodPractice/guidedPhysical",
+          "text": "Die Lehrkraft wählt das wirkliche Set, prüft Handbuch/SDS und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+          "sha256": "db38943a56babbdb69dcfbacde25b2bb8584789749c582a1d3ea431136c90942"
+        }
+      ],
+      "scientificMeaning": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und SDS-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/SDS und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+      "displayText": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und SDS-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/SDS und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+      "captionText": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und SDS-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/SDS und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+      "spokenText": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und S D S-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/S D S und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+      "spokenTextSHA256": "effd29ff19454bded9053e9874a322f46229892b75b0aa1f35e90f3cb2408f9b",
+      "spokenTextSha256": "effd29ff19454bded9053e9874a322f46229892b75b0aa1f35e90f3cb2408f9b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und SDS-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/SDS und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+          "spoken": "Die acht Kontrollen betreffen die richtige Boden-, Reagenz- und Wassermenge, fest verschlossenes Schütteln für die Dauer des tatsächlichen Sets, Absetzen/Farbentwicklung, Vergleich mit der passenden Skala, Aufzeichnung des Wertes sowie Geräte- und Arbeitsplatzreinigung. Erfasse außerdem Schutz- und S D S-Prüfung, Skalenidentität und Unsicherheit. Nutze die tatsächlichen Herstellerwerte, statt sie zu erfinden.\n\nSchutz, korrekte Mengen von Erde/Reagenz/Wasser, Mischen und Entwicklung nach Hersteller, Skalenlesung sowie Reinigung und Entsorgung der Abschlusskarte erhalten. Bestanden nur durch individuell beobachtete Arbeit nach wirklichem Setprotokoll.\n\nDie Lehrkraft wählt das wirkliche Set, prüft Handbuch/S D S und testet A/B/C vorher. Jede lernende Person misst unter Beobachtung der Lehrkraft, notiert tatsächlichen Wert und Unsicherheit, reinigt und entsorgt sicher. Schreib- und Analytikerrollen wechseln, aber die Messung einer Person besteht nicht für andere.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5c55b8c2aa41aaede52cadc556e13c9ec992ff75039704ba01c2cb34c0717f07",
+      "requestFingerprintSha256": "5c55b8c2aa41aaede52cadc556e13c9ec992ff75039704ba01c2cb34c0717f07",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-06-de-record-and-method-guidance-r1",
+      "unitId": "S2-06-de-record-and-method-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8e84d0be579865a345f016205c9364c6b079cbb1c4f5c2129bec68c9c7c4b4af",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/ui/modelHelp",
+          "text": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare pH-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.",
+          "sha256": "3a3b709340b51aad1cd4c98a9056c1657b6087ad7beba8132ca7ef09b534e1d3"
+        },
+        {
+          "pointer": "/methodPractice/ui/recordHelp",
+          "text": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.",
+          "sha256": "96ee0b875efd85ca6b5edc7f289a7738230bebd3bb42ba62e3ba26bbd8649866"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/0",
+          "text": "Proben- und Feldkennung",
+          "sha256": "f13a137862cc9ca3fbba70c5f59447a7d9b7d811b05472802a11f1a211858ed4"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/1",
+          "text": "Testdatum / prüfende Person",
+          "sha256": "d627aecdcacddcb54c0a43b41fbdac8cb67132a94829d19519f18909e97ded1c"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/2",
+          "text": "Set, Anleitung und passende Skala",
+          "sha256": "6f1c662c13282d21e7ed6f39e24287beaa077e05502cf208c55d85a5e6c8a670"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/3",
+          "text": "Beobachteter Wert oder unterstütztes Intervall",
+          "sha256": "2128182e84de60a6e4f3e16e32ba730185c330d72318ba1a64c87c2469de3e7b"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/4",
+          "text": "Auflösung / Unsicherheit",
+          "sha256": "30f002141c44626ba8fcacb56a85ca5efd7ef8a474cc9e443f841537f6b73465"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/5",
+          "text": "Echte Entwicklungszeit / Beobachtung",
+          "sha256": "1488e6369252f728eed746e1b31c80741546b908a8dc951c5c8185e0ef67ec43"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/6",
+          "text": "Mögliche Nährstofffrage und alternative Prüfung",
+          "sha256": "dc06d33d7b715547da71cf09919e8b659360af3b38c961c3e82071d91a97ba68"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/7",
+          "text": "Nächste kulturspezifische Untersuchung, keine erfundene Menge",
+          "sha256": "ab41676abcd1f7c1b35fbf64765c15f57b7e21b89ebc59a865d7ff865b8a1931"
+        },
+        {
+          "pointer": "/finalCardRecords/localOnly",
+          "text": "Nur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.",
+          "sha256": "453af05b283ddafe6e4aab0f9ee603f712a29b345bffa4ffddcc9bb7be5181e7"
+        },
+        {
+          "pointer": "/finalCardRecords/controls/boundary",
+          "text": "Dieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.",
+          "sha256": "71be3509e222fa6c78f7cd11cfdf71447450c9c632fc7c2980f9094879eed709"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt Farb-pH-Test",
+          "sha256": "b3866de8d2cd212c6a971bdc12d72590fd4e0ca78558ae4b70def739eba7be4d"
+        }
+      ],
+      "scientificMeaning": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare pH-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-pH-Test",
+      "displayText": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare pH-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-pH-Test",
+      "captionText": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare pH-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-pH-Test",
+      "spokenText": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare P H-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/S O P; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-P H-Test",
+      "spokenTextSHA256": "2065e8e00bfc203337da572d2c5d3e76483ca012c82c04ea2df01a088870d147",
+      "spokenTextSha256": "2065e8e00bfc203337da572d2c5d3e76483ca012c82c04ea2df01a088870d147",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare pH-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-pH-Test",
+          "spoken": "Verfahrensschema, kein kalibriertes Rapitest-Gerät und keine ablesbare P H-Farbskala. Keine Farbe ist ein Messwert. Phasenwahl ersetzt keine echte Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/S O P; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Farb-P H-Test",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7bf52723c3bfddc7f917e045a6ed7223f609df831b1a25682848ce000db16d2f",
+      "requestFingerprintSha256": "7bf52723c3bfddc7f917e045a6ed7223f609df831b1a25682848ce000db16d2f",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

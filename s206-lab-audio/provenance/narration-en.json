@@ -1,0 +1,345 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-06-en.json",
+    "sha256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+    "bytes": 29413
+  },
+  "units": [
+    {
+      "id": "S2-06-en-supervised-stages-r1",
+      "unitId": "S2-06-en-supervised-stages-r1",
+      "locale": "en",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/method/role",
+          "text": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site",
+          "sha256": "a0fdcc17a18185d0039b8a909422afba05989ccb6957176ca88a66fe69bd7a08"
+        },
+        {
+          "pointer": "/methodPractice/method/product",
+          "text": "Rapitest Soil Test Kit 1601, pH comparator",
+          "sha256": "bdf2d53e1b86d723fcd273951ed0f47ba15385a6ad9a9e58c8840375308ee5a4"
+        },
+        {
+          "pointer": "/methodPractice/method/manualScope",
+          "text": "The pH procedure on manual page 1 uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the NPK tests or another kit.",
+          "sha256": "7ab1f2c2b6585a9b8873fa6c5318e4e84c957e066fdb77cd7b8170a76d0360a1"
+        },
+        {
+          "pointer": "/methodPractice/method/fieldGate",
+          "text": "Before practical scoring, the trainer records the actual kit make/model, current manual revision, reagent SDS and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.",
+          "sha256": "0094ee51cf35cab5335b3fdfb0e0e724c651f61b10dce0acea662d4c2b6aa4b8"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/0",
+          "text": "Check sample identity, matched chart, label/SDS and PPE",
+          "sha256": "8e2b674b58d8f0a3a7792b0c1e196c3e70d2c466dcbee3dbf5c83454e01d7ea2"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/1",
+          "text": "Soil to this comparator’s soil line",
+          "sha256": "950d9b91f56680e91ba04c9f41e115475a33c6b0af48eab3cf36f29258bcbcc7"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/2",
+          "text": "One matching green pH capsule",
+          "sha256": "0824502b319bc5a43e2aad83d5be5968982922eba0670ad711e5a6ef79a50fed"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/3",
+          "text": "Water to this comparator’s water line",
+          "sha256": "18bae6740060dc33ade1e63ca95ec07fb3c1bc7a5fb1cc1167ccd6b8c418eb06"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/4",
+          "text": "Fit the cap and shake thoroughly",
+          "sha256": "1968de8dd26cb2b7186476060e634bd6dd1c0358309f0ecd841ef82de5a4cb23"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/5",
+          "text": "Allow settling and colour development: about 1 minute for this example",
+          "sha256": "4641e182c16d9e16c98b0f1f53a3fb031bf71dc4589244a9ab2a8dc095d26659"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/6",
+          "text": "Compare liquid above soil with its own chart in diffuse daylight",
+          "sha256": "12bc978d2cb25d47f657f9f4af398e96cc73070fd24f6604fe86236b96c0acd7"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/7",
+          "text": "Record supported result and clean/dispose by site procedure",
+          "sha256": "4403d7ea46eeae239cfb1b9294cfd5c931ec12ca11dec5c96c95d11628989088"
+        }
+      ],
+      "scientificMeaning": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit 1601, pH comparator\n\nThe pH procedure on manual page 1 uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the NPK tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent SDS and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/SDS and PPE\n\nSoil to this comparator’s soil line\n\nOne matching green pH capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about 1 minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+      "displayText": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit 1601, pH comparator\n\nThe pH procedure on manual page 1 uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the NPK tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent SDS and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/SDS and PPE\n\nSoil to this comparator’s soil line\n\nOne matching green pH capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about 1 minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+      "captionText": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit 1601, pH comparator\n\nThe pH procedure on manual page 1 uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the NPK tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent SDS and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/SDS and PPE\n\nSoil to this comparator’s soil line\n\nOne matching green pH capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about 1 minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+      "spokenText": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit one six zero one, P H comparator\n\nThe P H procedure on manual page one uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the N P K tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent S D S and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/S D S and P P E\n\nSoil to this comparator’s soil line\n\nOne matching green P H capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about one minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+      "spokenTextSHA256": "dc31549b820f71334b2845facb446db2173e01709a8e74971e8c15f74a194f77",
+      "spokenTextSha256": "dc31549b820f71334b2845facb446db2173e01709a8e74971e8c15f74a194f77",
+      "spokenAdaptationChanges": [
+        {
+          "written": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit 1601, pH comparator\n\nThe pH procedure on manual page 1 uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the NPK tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent SDS and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/SDS and PPE\n\nSoil to this comparator’s soil line\n\nOne matching green pH capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about 1 minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+          "spoken": "documented teaching example, not a claim of Egyptian availability or the exact equipment at the training site\n\nRapitest Soil Test Kit one six zero one, P H comparator\n\nThe P H procedure on manual page one uses the green comparator, soil fill line, one matching green powder capsule, preferably distilled water to its fill line, a tight cap, shaking, about one minute for settling/colour development, and that comparator's own chart in daylight away from direct sun. These instructions are not interchangeable with the N P K tests or another kit.\n\nBefore practical scoring, the trainer records the actual kit make/model, current manual revision, reagent S D S and chart range; the learner follows those exact instructions. If these are unavailable, only the simulation can proceed and no practical pass is awarded.\n\nCheck sample identity, matched chart, label/S D S and P P E\n\nSoil to this comparator’s soil line\n\nOne matching green P H capsule\n\nWater to this comparator’s water line\n\nFit the cap and shake thoroughly\n\nAllow settling and colour development: about one minute for this example\n\nCompare liquid above soil with its own chart in diffuse daylight\n\nRecord supported result and clean/dispose by site procedure",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "edcc5f8e05aa39ac2a816201acb8e93247581f0003b4f52e572c3f3c84da4e0a",
+      "requestFingerprintSha256": "edcc5f8e05aa39ac2a816201acb8e93247581f0003b4f52e572c3f3c84da4e0a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-practical-completion-r1",
+      "unitId": "S2-06-en-practical-completion-r1",
+      "locale": "en",
+      "semanticGroup": "practical-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/passChecks/0/evidence",
+          "text": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched pH reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.",
+          "sha256": "abeff204393fd0f196dc81f79946ac766a1dcf39ca01bc4f4a2bca155ed3c797"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/0/decision",
+          "text": "Pass only when every kit-specific stage is correctly performed by that learner with compatible PPE. If the physical kit/manual/SDS is missing, record unassessed and allow online rehearsal without practical credit.",
+          "sha256": "d26c5ce8f807118a8d9da862c6acc067e948060b3007f78f0c956c76b5b95710"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/evidence",
+          "text": "Trainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.",
+          "sha256": "5b75f0d1fe024ffd319dfd5cd33e9712d24ef5d194e94549850805eee766e4f6"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/decision",
+          "text": "Pass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.",
+          "sha256": "89f06efe0bb04769d22e0a301250cd33e724769cc7f4f5656ec5035bf6d551aa"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/evidence",
+          "text": "Trainer observes safe PPE, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.",
+          "sha256": "84ac593c78d09bcdea847904db457b23b0019d912af8f4cc0b06d094d6546af3"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/decision",
+          "text": "Pass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+          "sha256": "3b5da77df74f505e523d28882d59f4df70dcdacc1e957e5e0f3fad48dad3c9e3"
+        }
+      ],
+      "scientificMeaning": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched pH reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible PPE. If the physical kit/manual/SDS is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe PPE, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+      "displayText": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched pH reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible PPE. If the physical kit/manual/SDS is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe PPE, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+      "captionText": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched pH reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible PPE. If the physical kit/manual/SDS is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe PPE, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+      "spokenText": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched P H reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible P P E. If the physical kit/manual/S D S is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe P P E, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+      "spokenTextSHA256": "d7daf52c3004c0f4f1d371ab3f4613a614535553deec28fad9e7c6e0a0f3f6c2",
+      "spokenTextSha256": "d7daf52c3004c0f4f1d371ab3f4613a614535553deec28fad9e7c6e0a0f3f6c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched pH reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible PPE. If the physical kit/manual/SDS is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe PPE, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+          "spoken": "Trainer records the exact kit and manual and directly observes each learner use the correct sample fill/measure, matched P H reagent quantity, specified water and closure, mixing and real development wait; no substituted time or amount from another kit.\n\nPass only when every kit-specific stage is correctly performed by that learner with compatible P P E. If the physical kit/manual/S D S is missing, record unassessed and allow online rehearsal without practical credit.\n\nTrainer observes same-kit chart comparison in diffuse daylight, identifies the actual sample, verifies value or interval is within chart scale, and records uncertainty or poor colour match instead of invented decimal precision.\n\nPass when identity, chart, supported reading and recording are all correct. A universal blue/purple rule, a borrowed chart or an out-of-range guess does not pass.\n\nTrainer observes safe P P E, bench hygiene, correct cleaning and site-specific waste separation and hears a comparison of quick field-kit screening with calibrated meter/lab testing and its limitations.\n\nPass only with both observed safe completion and a justified method choice. Unsupervised reagent use or unsafe disposal is a stop-and-remediate condition.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "833f85227623721200726b742ed19a02ac4be1f853de5ba917e42af399c80534",
+      "requestFingerprintSha256": "833f85227623721200726b742ed19a02ac4be1f853de5ba917e42af399c80534",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-card-scope-r1",
+      "unitId": "S2-06-en-card-scope-r1",
+      "locale": "en",
+      "semanticGroup": "card-scope",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/cards/0/scope",
+          "text": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record PPE and SDS checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.",
+          "sha256": "bdfb9d61dad2408cef797a27f1f68f89f47fb94d82ce1e5727bc9c8759e380fe"
+        },
+        {
+          "pointer": "/methodPractice/cards/1/scope",
+          "text": "Retain source's PPE, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.",
+          "sha256": "c5325693bae65f32014576af0ff3d26c210bf46c243255e2fbb8e100112519f6"
+        },
+        {
+          "pointer": "/methodPractice/guidedPhysical",
+          "text": "Trainer selects the actual kit, verifies manual/SDS and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+          "sha256": "cece3ee77d759633271a13fe2abd9cf11b3c002b184a8c2262725a3aebc08a93"
+        }
+      ],
+      "scientificMeaning": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record PPE and SDS checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's PPE, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/SDS and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+      "displayText": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record PPE and SDS checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's PPE, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/SDS and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+      "captionText": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record PPE and SDS checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's PPE, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/SDS and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+      "spokenText": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record P P E and S D S checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's P P E, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/S D S and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+      "spokenTextSHA256": "dbf19a36d150f400bf79c634b2c3f01a232eb64767fbf13cb8f3c3378b2cc865",
+      "spokenTextSha256": "dbf19a36d150f400bf79c634b2c3f01a232eb64767fbf13cb8f3c3378b2cc865",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record PPE and SDS checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's PPE, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/SDS and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+          "spoken": "The eight checks are correct sample amount, reagent quantity, water fill, capped shaking for the actual kit’s duration, settling/colour development, comparison with the matching chart, recording the value, and cleaning the equipment/bench. Also record P P E and S D S checks, chart identity and uncertainty. Use the actual manufacturer’s values; do not invent them.\n\nRetain source's P P E, correct soil/reagent/water, manufacturer mixing/development, chart reading and cleanup/disposal checks. Only an individually observed learner under the actual kit protocol can pass.\n\nTrainer selects the actual kit, verifies manual/S D S and pretests samples A/B/C. Each learner measures under observation, records actual result and uncertainty, cleans and disposes safely. Group recorder/analyst roles rotate, but one learner's test does not pass another.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "32cc6d3f4b2970306a8d4954cca25c7f2576367fc74a09a8a73de78e6e6f8a1b",
+      "requestFingerprintSha256": "32cc6d3f4b2970306a8d4954cca25c7f2576367fc74a09a8a73de78e6e6f8a1b",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-record-and-method-guidance-r1",
+      "unitId": "S2-06-en-record-and-method-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/ui/modelHelp",
+          "text": "This schematic shows the procedure, not a calibrated Rapitest device or a readable pH chart. No colour here is a measured pH. Selecting a later phase does not complete a real wait.",
+          "sha256": "adf99a31a78585e7c35e020d7eacdda0e63e3962a92898e24da5271dcef4bb60"
+        },
+        {
+          "pointer": "/methodPractice/ui/recordHelp",
+          "text": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.",
+          "sha256": "d3b46231e6e5ef80ed23aac0b36a89193abb835b41f21b77a33eefdbc3f86a7b"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/0",
+          "text": "Sample and field ID",
+          "sha256": "70d1e460da11d7630adb2084ed7ba93c9e4481af196d930d9e99abf36f7b0dab"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/1",
+          "text": "Test date / tester",
+          "sha256": "4dee51a46073f1135100a7e2e95c65074674fa1a90ca108d434efc2abe2184ae"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/2",
+          "text": "Kit, manual and matching chart",
+          "sha256": "c4b7aa3bb25c30b652e625b7a91e62910ece970271d0a9f006410906163d9f62"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/3",
+          "text": "Observed value or supported interval",
+          "sha256": "540e2684310106f30fa39b418485bc9146d820c9807bfc7d8f07a5fd392d641d"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/4",
+          "text": "Chart resolution / uncertainty",
+          "sha256": "1874beeb8bb86398f46709e16d2d34b0e35cb05100aa9bf68aba57cd0d5d7751"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/5",
+          "text": "Actual development wait / observation",
+          "sha256": "a7a5f99ff9099bfad6763399c5416deeb18857378d556f146a53fc7df99fc7fb"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/6",
+          "text": "Possible nutrient issue and alternative check",
+          "sha256": "10198c38dcb357ba791c8845e247fac0b4609fad95b4a8d93418c1fccba3c9d2"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/7",
+          "text": "Crop-specific next investigation, without a guessed dose",
+          "sha256": "f3f258bced9814e06670675a9894d7f7636aa15f27527924945709bd65e24fe6"
+        },
+        {
+          "pointer": "/finalCardRecords/localOnly",
+          "text": "Use actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.",
+          "sha256": "c38df3ed0160aeb65930e47e80304af2e5e25d30d701fa4382443ceabbbdef6c"
+        },
+        {
+          "pointer": "/finalCardRecords/controls/boundary",
+          "text": "This blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.",
+          "sha256": "afe5028c211ca68033e7cf3e2a73e5f74fe6d7cc508ed94118b5af5b4dc1e6b2"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Colour-kit practice worksheet",
+          "sha256": "41aac1851d89cd0b9cda55f07d0886b7de0a46f193520eced932b83151b7e240"
+        }
+      ],
+      "scientificMeaning": "This schematic shows the procedure, not a calibrated Rapitest device or a readable pH chart. No colour here is a measured pH. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+      "displayText": "This schematic shows the procedure, not a calibrated Rapitest device or a readable pH chart. No colour here is a measured pH. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+      "captionText": "This schematic shows the procedure, not a calibrated Rapitest device or a readable pH chart. No colour here is a measured pH. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+      "spokenText": "This schematic shows the procedure, not a calibrated Rapitest device or a readable P H chart. No colour here is a measured P H. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field I D\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/S O P; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+      "spokenTextSHA256": "65b1699dcede7cc6901d950a54318765709796f097a93acc6313e867a42ed841",
+      "spokenTextSha256": "65b1699dcede7cc6901d950a54318765709796f097a93acc6313e867a42ed841",
+      "spokenAdaptationChanges": [
+        {
+          "written": "This schematic shows the procedure, not a calibrated Rapitest device or a readable pH chart. No colour here is a measured pH. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+          "spoken": "This schematic shows the procedure, not a calibrated Rapitest device or a readable P H chart. No colour here is a measured P H. Selecting a later phase does not complete a real wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field I D\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/S O P; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nColour-kit practice worksheet",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "65311805ad2b503a6da2ab8b8591a2ed30263fc733975bb8747bd2e5f96ea986",
+      "requestFingerprintSha256": "65311805ad2b503a6da2ab8b8591a2ed30263fc733975bb8747bd2e5f96ea986",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

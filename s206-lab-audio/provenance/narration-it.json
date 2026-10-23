@@ -1,0 +1,351 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-06-it.json",
+    "sha256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+    "bytes": 29068
+  },
+  "units": [
+    {
+      "id": "S2-06-it-supervised-stages-r1",
+      "unitId": "S2-06-it-supervised-stages-r1",
+      "locale": "it",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/method/role",
+          "text": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro",
+          "sha256": "139c4b323e26f29e7dfbac421502c1406f3afd6a0734fe89af484a048bc5fbf1"
+        },
+        {
+          "pointer": "/methodPractice/method/product",
+          "text": "Rapitest Soil Test Kit 1601, comparatore colorimetrico del pH",
+          "sha256": "1893ea55954d2a1a31880f8c0ee32ae81c7269f388645443d9e9ad40a27b870a"
+        },
+        {
+          "pointer": "/methodPractice/method/manualScope",
+          "text": "La procedura pH a pagina 1 del manuale Rapitest 1601 usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con NPK né con altri kit.",
+          "sha256": "456f30b0c8715f841f408c1bcf1e2218215ab886819d42984f91d3d6e27ccad8"
+        },
+        {
+          "pointer": "/methodPractice/method/fieldGate",
+          "text": "Prima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, SDS del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.",
+          "sha256": "e3c586fe27491c98449418db749f66305bf80fb82b88e00cc1136683978e70b1"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/0",
+          "text": "Controlla identità, scala abbinata, SDS e DPI",
+          "sha256": "14cc882139515cf58e37db7fda567c9bcbf6fac01180792c4914bce888d56c1c"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/1",
+          "text": "Terra alla tacca del comparatore",
+          "sha256": "69b4e08536a180a76e45d30b5bfdbb46ecc8d5cfd72630836cd7eccea250a0af"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/2",
+          "text": "Una capsula pH verde corrispondente",
+          "sha256": "83c1f577e47000f861fd8a5b28179ff8b27225dc34b4f764a83459f1ff2573cb"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/3",
+          "text": "Acqua alla tacca del comparatore",
+          "sha256": "dba766ffb472263c7e16d31b1b3f1cf77e59a4275ec960b6a06b5e15498ed7ce"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/4",
+          "text": "Chiudi bene e agita a fondo",
+          "sha256": "79525ae0422e2daaadedf5450cfcf7cc28407b0882750f4d877cbec2a2a5e360"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/5",
+          "text": "Attendi sedimentazione e colore: circa 1 minuto in questo esempio",
+          "sha256": "5a33ba7dcaaae7691be50a4da26fc11a4c4a900cb225119f5e35563973f1721c"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/6",
+          "text": "Confronta il liquido sovrastante con la propria scala in luce diffusa",
+          "sha256": "abc7838a969b29355edd4f939b5c65f9902543aa21983f1f29c01d05212a58d9"
+        },
+        {
+          "pointer": "/methodPractice/ui/steps/7",
+          "text": "Registra il valore supportato e pulisci/smaltisci secondo il sito",
+          "sha256": "e160a971cf5d79ca0ba38fcca8317a7d0704a10e4d6b3a15610dfa94861094d0"
+        }
+      ],
+      "scientificMeaning": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit 1601, comparatore colorimetrico del pH\n\nLa procedura pH a pagina 1 del manuale Rapitest 1601 usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con NPK né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, SDS del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, SDS e DPI\n\nTerra alla tacca del comparatore\n\nUna capsula pH verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa 1 minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+      "displayText": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit 1601, comparatore colorimetrico del pH\n\nLa procedura pH a pagina 1 del manuale Rapitest 1601 usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con NPK né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, SDS del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, SDS e DPI\n\nTerra alla tacca del comparatore\n\nUna capsula pH verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa 1 minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+      "captionText": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit 1601, comparatore colorimetrico del pH\n\nLa procedura pH a pagina 1 del manuale Rapitest 1601 usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con NPK né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, SDS del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, SDS e DPI\n\nTerra alla tacca del comparatore\n\nUna capsula pH verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa 1 minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+      "spokenText": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit uno sei zero uno, comparatore colorimetrico del P H\n\nLa procedura P H a pagina uno del manuale Rapitest uno sei zero uno usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con N P K né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, S D S del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, S D S e D P I\n\nTerra alla tacca del comparatore\n\nUna capsula P H verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa un minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+      "spokenTextSHA256": "21a2e71c42caccf091807e51982749458da1ee8ff37a9b119b877d7abe0ac887",
+      "spokenTextSha256": "21a2e71c42caccf091807e51982749458da1ee8ff37a9b119b877d7abe0ac887",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit 1601, comparatore colorimetrico del pH\n\nLa procedura pH a pagina 1 del manuale Rapitest 1601 usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con NPK né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, SDS del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, SDS e DPI\n\nTerra alla tacca del comparatore\n\nUna capsula pH verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa 1 minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+          "spoken": "Esempio didattico documentato, non prova di disponibilità in Egitto o del kit posseduto dal centro\n\nRapitest Soil Test Kit uno sei zero uno, comparatore colorimetrico del P H\n\nLa procedura P H a pagina un del manuale Rapitest uno sei zero uno usa il comparatore verde con la propria scala, terra fino alla tacca, una capsula verde corrispondente, acqua preferibilmente distillata fino alla tacca, tappo ben chiuso, agitazione, circa un minuto di sedimentazione e sviluppo del colore e confronto con quella scala alla luce del giorno senza sole diretto. Non è intercambiabile con N P K né con altri kit.\n\nPrima di valutare la pratica, il formatore registra marca e modello del kit reale, versione del manuale, S D S del reagente e intervallo della scala; l'allievo segue quelle istruzioni. Se mancano, solo simulazione, senza superamento pratico.\n\nControlla identità, scala abbinata, S D S e D P I\n\nTerra alla tacca del comparatore\n\nUna capsula P H verde corrispondente\n\nAcqua alla tacca del comparatore\n\nChiudi bene e agita a fondo\n\nAttendi sedimentazione e colore: circa un minuto in questo esempio\n\nConfronta il liquido sovrastante con la propria scala in luce diffusa\n\nRegistra il valore supportato e pulisci/smaltisci secondo il sito",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        },
+        {
+          "written": "pagina un del",
+          "spoken": "pagina uno del",
+          "occurrences": 1,
+          "purpose": "Page-number spoken grammar only, exact source page1 unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5cd298cecc722d50d01ebb306890e33d21440f508418168a0c481fc1aefc8e83",
+      "requestFingerprintSha256": "5cd298cecc722d50d01ebb306890e33d21440f508418168a0c481fc1aefc8e83",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-practical-completion-r1",
+      "unitId": "S2-06-it-practical-completion-r1",
+      "locale": "it",
+      "semanticGroup": "practical-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/passChecks/0/evidence",
+          "text": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente pH corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.",
+          "sha256": "8f00620797602546d05b33a9297739f6357335859cb43c6401677bd3f1a2e9ad"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/0/decision",
+          "text": "Superamento solo dopo esecuzione individuale di ogni fase del kit con DPI compatibili. Se kit, manuale o SDS reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.",
+          "sha256": "a53d0c2d3ecb6f2b434ca1ae85b2d5e37c1c1e0b0a1a72be9e2de4e6f7f801c0"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/evidence",
+          "text": "Il formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.",
+          "sha256": "45a2b948ff289b970ba6762e14ef1e6bb9a526c7c16604505b1b2fced9b18bcc"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/1/decision",
+          "text": "Servono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.",
+          "sha256": "609f26138a626eea1340f0054bb624fecbad33800f19585cff94bf95591aa38f"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/evidence",
+          "text": "Il formatore osserva DPI, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, pH-metro calibrato e prova di laboratorio.",
+          "sha256": "4be55437fc52ff07d5dea1c2d161378dfdab3387635bc13389d4ad38850947a1"
+        },
+        {
+          "pointer": "/methodPractice/passChecks/2/decision",
+          "text": "Servono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+          "sha256": "e21cf5a3c849639b1b97bc2dde719895d19c08dac72906dcdbc0dae9bd3d190e"
+        }
+      ],
+      "scientificMeaning": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente pH corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con DPI compatibili. Se kit, manuale o SDS reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva DPI, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, pH-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+      "displayText": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente pH corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con DPI compatibili. Se kit, manuale o SDS reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva DPI, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, pH-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+      "captionText": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente pH corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con DPI compatibili. Se kit, manuale o SDS reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva DPI, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, pH-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+      "spokenText": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente P H corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con D P I compatibili. Se kit, manuale o S D S reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva D P I, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, P H-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+      "spokenTextSHA256": "ebcea2352518818635cc485b6ff8bc5981ec8b8d81d65eadf3024b7b197118a1",
+      "spokenTextSha256": "ebcea2352518818635cc485b6ff8bc5981ec8b8d81d65eadf3024b7b197118a1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente pH corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con DPI compatibili. Se kit, manuale o SDS reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva DPI, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, pH-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+          "spoken": "Il formatore registra kit e manuale esatti e osserva ciascun allievo usare terra nella quantità corretta, reagente P H corrispondente, acqua alla tacca, chiusura, agitazione e attesa reale. Non si prendono quantità o tempi da un altro kit.\n\nSuperamento solo dopo esecuzione individuale di ogni fase del kit con D P I compatibili. Se kit, manuale o S D S reali mancano, la pratica è non valutata; la simulazione online può proseguire senza credito pratico.\n\nIl formatore osserva il confronto con la scala del medesimo kit in luce diffusa, controlla l'identità del campione, un valore entro il campo della scala e la registrazione di incertezza o corrispondenza cromatica scarsa invece di decimali inventati.\n\nServono identità, scala, lettura sostenuta e registro corretti. Una regola universale blu/viola, una scala presa in prestito o una stima fuori intervallo non superano la prova.\n\nIl formatore osserva D P I, igiene del banco, pulizia e separazione dei rifiuti del sito e ascolta un confronto motivato fra screening colorimetrico, P H-metro calibrato e prova di laboratorio.\n\nServono sia conclusione sicura osservata sia scelta motivata del metodo. Reagenti usati senza supervisione o smaltimento insicuro fermano l'esercizio fino alla correzione.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1dafe12a40357b6b164a317046b367deb80b742df87f6028b1d7fea9918c51b8",
+      "requestFingerprintSha256": "1dafe12a40357b6b164a317046b367deb80b742df87f6028b1d7fea9918c51b8",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-card-scope-r1",
+      "unitId": "S2-06-it-card-scope-r1",
+      "locale": "it",
+      "semanticGroup": "card-scope",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/cards/0/scope",
+          "text": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di DPI e SDS, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.",
+          "sha256": "03b1258fdccd59bb5c0898c24b6510788e576dd814a0ac9b9b96eae494d5827c"
+        },
+        {
+          "pointer": "/methodPractice/cards/1/scope",
+          "text": "Conservare DPI, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.",
+          "sha256": "2bc31dfc3028dce18ae9419bdf0579ce097526cd894b3a09cd32456eb38b36fe"
+        },
+        {
+          "pointer": "/methodPractice/guidedPhysical",
+          "text": "Il formatore sceglie il kit reale, verifica manuale/SDS e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+          "sha256": "5db8057422ab0c81271d66c512d6913c0f1a8bd04d0c8d2a8d68adf8041e6b57"
+        }
+      ],
+      "scientificMeaning": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di DPI e SDS, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare DPI, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/SDS e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+      "displayText": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di DPI e SDS, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare DPI, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/SDS e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+      "captionText": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di DPI e SDS, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare DPI, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/SDS e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+      "spokenText": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di D P I e S D S, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare D P I, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/S D S e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+      "spokenTextSHA256": "e2c0d2b3a03d69ba525cc3d4fc1c5f31361c88eda08199119cfbc8b3f905a2a3",
+      "spokenTextSha256": "e2c0d2b3a03d69ba525cc3d4fc1c5f31361c88eda08199119cfbc8b3f905a2a3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di DPI e SDS, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare DPI, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/SDS e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+          "spoken": "Gli otto controlli sono quantità corretta di terra, reagente e acqua, agitazione a tappo chiuso per la durata del kit effettivo, sedimentazione e sviluppo del colore, confronto con la scala corrispondente, registrazione del valore e pulizia di strumenti e banco. Registra anche i controlli di D P I e S D S, l’identità della scala e l’incertezza. Usa i valori effettivi del produttore, senza inventarli.\n\nConservare D P I, dosi corrette di terra/reagente/acqua, mescolamento e sviluppo secondo produttore, lettura della scala, pulizia e smaltimento della scheda finale. Supera solo l'allievo osservato individualmente mentre segue il protocollo del kit reale.\n\nIl formatore sceglie il kit reale, verifica manuale/S D S e prova A/B/C in anticipo. Ogni allievo misura sotto osservazione, registra risultato e incertezza, pulisce e smaltisce in sicurezza. I ruoli di scrivente e analista ruotano, ma la prova di uno non promuove l'altro.",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "04d887afc4271221d4ce84bdf1d45b0d6f4dca1b625448d2a4282c1b55400e3a",
+      "requestFingerprintSha256": "04d887afc4271221d4ce84bdf1d45b0d6f4dca1b625448d2a4282c1b55400e3a",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-record-and-method-guidance-r1",
+      "unitId": "S2-06-it-record-and-method-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/methodPractice/ui/modelHelp",
+          "text": "Schema della procedura, non dispositivo Rapitest calibrato né scala pH leggibile. Nessun colore rappresenta un pH misurato. Scegliere una fase non completa l’attesa reale.",
+          "sha256": "fc57375e452ae4d1dc7e931c172c7e77912a8ae74693c21f2f4fe268d32caade"
+        },
+        {
+          "pointer": "/methodPractice/ui/recordHelp",
+          "text": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.",
+          "sha256": "a472a13c8f02c773e6b0e2fdcb6b1be4da81655f451cfb6035afb3fdb8fcc0f1"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/0",
+          "text": "ID campione e campo",
+          "sha256": "0758df38e1e55a7467a7b89d0390386cc9267390b80ed63faab87b698b2cea32"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/1",
+          "text": "Data / esecutore",
+          "sha256": "113177fcb7fb996f5b01bbd60aeb8b86e442fb716c026adaa187814a3da74490"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/2",
+          "text": "Kit, manuale e scala abbinata",
+          "sha256": "d9966c99f477da6b1ddaae1cae8818a57e307d08fbfee71eae7c38a18a8b4850"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/3",
+          "text": "Valore osservato o intervallo supportato",
+          "sha256": "41f5c277293a68230c4acf1839d70a7560002ef9a35a359297de17f5069417ff"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/4",
+          "text": "Risoluzione / incertezza",
+          "sha256": "e6551477f2efb18744b0314ebad237d522aa8acbe8825790f10f563c393bdf74"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/5",
+          "text": "Attesa reale / osservazione",
+          "sha256": "7344a7a9e83a6aa00eddb825a21a474da0e462f79f98b53bee118e1f1d67d9cd"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/6",
+          "text": "Possibile problema nutritivo e verifica alternativa",
+          "sha256": "69db715424645216d98906a7d9242c62bedfd6d92f883bb3bc754c049d04504d"
+        },
+        {
+          "pointer": "/methodPractice/ui/fields/7",
+          "text": "Indagine successiva per la coltura, senza dosi inventate",
+          "sha256": "53e32011135d2c73a9705cb46737dd179495e5c141fad5bdf3888128355340ae"
+        },
+        {
+          "pointer": "/finalCardRecords/localOnly",
+          "text": "Usa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/SOP effettivi corrispondenti; altrimenti restano non valutate.",
+          "sha256": "ec086fb7e831ae0c35cb143058c06dc067caee24599c0445fcdd2728a5086f87"
+        },
+        {
+          "pointer": "/finalCardRecords/controls/boundary",
+          "text": "Questa scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.",
+          "sha256": "5bf2be2bb2b0fa19df746bb2bad71f8aa2ae54ac73b3d5d65e9412d65c217be3"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda del kit pH colorimetrico",
+          "sha256": "89fc386f75e98b9f5df8c56d1922792e554bcc5c8b83ef8f26f2a649bf96cb7d"
+        }
+      ],
+      "scientificMeaning": "Schema della procedura, non dispositivo Rapitest calibrato né scala pH leggibile. Nessun colore rappresenta un pH misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/SOP effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit pH colorimetrico",
+      "displayText": "Schema della procedura, non dispositivo Rapitest calibrato né scala pH leggibile. Nessun colore rappresenta un pH misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/SOP effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit pH colorimetrico",
+      "captionText": "Schema della procedura, non dispositivo Rapitest calibrato né scala pH leggibile. Nessun colore rappresenta un pH misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/SOP effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit pH colorimetrico",
+      "spokenText": "Schema della procedura, non dispositivo Rapitest calibrato né scala P H leggibile. Nessun colore rappresenta un P H misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nI D campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/S O P effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit P H colorimetrico",
+      "spokenTextSHA256": "254b9f838480c036a174cdf65c76bba1f4e2cc4bacbf02ccd37aebeed5fe0a3c",
+      "spokenTextSha256": "254b9f838480c036a174cdf65c76bba1f4e2cc4bacbf02ccd37aebeed5fe0a3c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Schema della procedura, non dispositivo Rapitest calibrato né scala pH leggibile. Nessun colore rappresenta un pH misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/SOP effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit pH colorimetrico",
+          "spoken": "Schema della procedura, non dispositivo Rapitest calibrato né scala P H leggibile. Nessun colore rappresenta un P H misurato. Scegliere una fase non completa l’attesa reale.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nI D campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nUsa soltanto evidenze effettive. Inserimenti locali e nomi digitati sono note non firmate, non decisioni o firme autenticate del formatore. La revisione del prodotto non prova chi ha eseguito la preparazione; le procedure richiedono osservazione individuale. Le righe specifiche del kit riguardano l’esempio documentato e richiedono manuale/S O P effettivi corrispondenti; altrimenti restano non valutate.\n\nQuesta scheda vuota non è un’osservazione né un superamento. Lascia decisioni e dati reali vuoti fino all’effettiva osservazione o revisione individuale del formatore.\n\nScheda del kit P H colorimetrico",
+          "occurrences": 1,
+          "purpose": "Bounded whole-token acronym, source example5.5 versus actual6, and product1601 digit expansion. No hidden full ABC model included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "52fcb5a2ac0a7892c304a507a69cd170d3241affa486fcda334b2e13d6466cf4",
+      "requestFingerprintSha256": "52fcb5a2ac0a7892c304a507a69cd170d3241affa486fcda334b2e13d6466cf4",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
