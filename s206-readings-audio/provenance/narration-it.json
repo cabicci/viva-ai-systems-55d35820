@@ -1,0 +1,413 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-06-it.json",
+    "sha256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+    "bytes": 29068
+  },
+  "units": [
+    {
+      "id": "S2-06-it-R01-r1",
+      "unitId": "S2-06-it-R01-r1",
+      "locale": "it",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Usa un campione rappresentativo ed etichettato, raccolto con profondità e schema adatti a coltura, domanda sul campo e metodo del laboratorio ricevente. La fonte cita 15–20 cm (6–8 inches) come esempio, non come intera zona radicale di tutte le colture o sostituto del piano di campionamento. La provetta conserva lo stesso ID del campo: non analizzare una manciata anonima.",
+          "sha256": "f8df8bb983655a7648c1c9ba05ee7e06a2f29b0853be8fe75fd6251c09049bd0"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Prima di aprire, verifica marca e modello del kit, comparatore pH, sua scala cromatica, reagente, scadenza e istruzioni. Indossa protezioni scelte secondo etichetta del reagente, scheda di sicurezza (SDS) e procedura locale. Usa l'acqua distillata prevista quando il metodo la richiede. Non copiare quantità o significato dei colori dalla foto o dal video di un'altra marca.",
+          "sha256": "daf7f4db543400938f1616fb4a504ab07a56d374e73f058232e7511a4476f182"
+        }
+      ],
+      "scientificMeaning": "Usa un campione rappresentativo ed etichettato, raccolto con profondità e schema adatti a coltura, domanda sul campo e metodo del laboratorio ricevente. La fonte cita 15–20 cm (6–8 inches) come esempio, non come intera zona radicale di tutte le colture o sostituto del piano di campionamento. La provetta conserva lo stesso ID del campo: non analizzare una manciata anonima.\n\nPrima di aprire, verifica marca e modello del kit, comparatore pH, sua scala cromatica, reagente, scadenza e istruzioni. Indossa protezioni scelte secondo etichetta del reagente, scheda di sicurezza (SDS) e procedura locale. Usa l'acqua distillata prevista quando il metodo la richiede. Non copiare quantità o significato dei colori dalla foto o dal video di un'altra marca.",
+      "displayText": "Usa un campione rappresentativo ed etichettato, raccolto con profondità e schema adatti a coltura, domanda sul campo e metodo del laboratorio ricevente. La fonte cita 15–20 cm (6–8 inches) come esempio, non come intera zona radicale di tutte le colture o sostituto del piano di campionamento. La provetta conserva lo stesso ID del campo: non analizzare una manciata anonima.\n\nPrima di aprire, verifica marca e modello del kit, comparatore pH, sua scala cromatica, reagente, scadenza e istruzioni. Indossa protezioni scelte secondo etichetta del reagente, scheda di sicurezza (SDS) e procedura locale. Usa l'acqua distillata prevista quando il metodo la richiede. Non copiare quantità o significato dei colori dalla foto o dal video di un'altra marca.",
+      "captionText": "Usa un campione rappresentativo ed etichettato, raccolto con profondità e schema adatti a coltura, domanda sul campo e metodo del laboratorio ricevente. La fonte cita 15–20 cm (6–8 inches) come esempio, non come intera zona radicale di tutte le colture o sostituto del piano di campionamento. La provetta conserva lo stesso ID del campo: non analizzare una manciata anonima.\n\nPrima di aprire, verifica marca e modello del kit, comparatore pH, sua scala cromatica, reagente, scadenza e istruzioni. Indossa protezioni scelte secondo etichetta del reagente, scheda di sicurezza (SDS) e procedura locale. Usa l'acqua distillata prevista quando il metodo la richiede. Non copiare quantità o significato dei colori dalla foto o dal video di un'altra marca.",
+      "spokenText": "Usa un campione rappresentativo ed etichettato, raccolto con profondità e schema adatti a coltura, domanda sul campo e metodo del laboratorio ricevente. La fonte cita quindici a venti centimetri (sei a otto pollici) come esempio, non come intera zona radicale di tutte le colture o sostituto del piano di campionamento. La provetta conserva lo stesso I D del campo: non analizzare una manciata anonima.\n\nPrima di aprire, verifica marca e modello del kit, comparatore P H, sua scala cromatica, reagente, scadenza e istruzioni. Indossa protezioni scelte secondo etichetta del reagente, scheda di sicurezza (S D S) e procedura locale. Usa l'acqua distillata prevista quando il metodo la richiede. Non copiare quantità o significato dei colori dalla foto o dal video di un'altra marca.",
+      "spokenTextSHA256": "ddba70ee96215c58dc44115a88ae80ac8cad61f4f878a817fe968fbc3c1d579a",
+      "spokenTextSha256": "ddba70ee96215c58dc44115a88ae80ac8cad61f4f878a817fe968fbc3c1d579a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "SDS",
+          "spoken": "S D S",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "15–20 cm",
+          "spoken": "quindici a venti centimetri",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "6–8 inches",
+          "spoken": "sei a otto pollici",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "ID",
+          "spoken": "I D",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8765b559b304af9abe2633f5f68c8036ff360577c08cf8dccaa5a6449ea85d7e",
+      "requestFingerprintSha256": "8765b559b304af9abe2633f5f68c8036ff360577c08cf8dccaa5a6449ea85d7e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-R02-r1",
+      "unitId": "S2-06-it-R02-r1",
+      "locale": "it",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Nel metodo pH documentato Luster Leaf Rapitest 1601, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula pH verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala pH del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e ID del campione. Non seguire le istruzioni NPK separate della stessa confezione per questa prova pH.",
+          "sha256": "c0093491f9efb5859911a434fd5dfd0947a2ccd7c9bc75d59734895c5788678b"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "La scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+          "sha256": "745d22f59cff71df0fef023258c8fc2618a8deae7d41f60266c1fdd8ba15f6e8"
+        }
+      ],
+      "scientificMeaning": "Nel metodo pH documentato Luster Leaf Rapitest 1601, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula pH verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala pH del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e ID del campione. Non seguire le istruzioni NPK separate della stessa confezione per questa prova pH.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+      "displayText": "Nel metodo pH documentato Luster Leaf Rapitest 1601, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula pH verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala pH del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e ID del campione. Non seguire le istruzioni NPK separate della stessa confezione per questa prova pH.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+      "captionText": "Nel metodo pH documentato Luster Leaf Rapitest 1601, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula pH verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala pH del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e ID del campione. Non seguire le istruzioni NPK separate della stessa confezione per questa prova pH.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+      "spokenText": "Nel metodo P H documentato Luster Leaf Rapitest uno sei zero uno, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula P H verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala P H del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e I D del campione. Non seguire le istruzioni N P K separate della stessa confezione per questa prova P H.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+      "spokenTextSHA256": "02abcf4bb7d01d7513ca40da3cf7d72c9e9ffab6fd945893a9e075861e8bd0e3",
+      "spokenTextSha256": "02abcf4bb7d01d7513ca40da3cf7d72c9e9ffab6fd945893a9e075861e8bd0e3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "NPK",
+          "spoken": "N P K",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 4,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "ID",
+          "spoken": "I D",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Nel metodo P H documentato Luster Leaf Rapitest 1601, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula P H verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala P H del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e I D del campione. Non seguire le istruzioni N P K separate della stessa confezione per questa prova P H.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+          "spoken": "Nel metodo P H documentato Luster Leaf Rapitest uno sei zero uno, verifica che il comparatore verde contenga la propria scala. Riempi la camera fino alla tacca della terra; aggiungi il contenuto di una capsula P H verde corrispondente; col contagocce versa acqua, preferibilmente distillata, fino alla tacca; chiudi bene e agita. Lascia sedimentare e sviluppare il colore per circa un minuto, poi confronta il liquido sopra la terra con la scala P H del medesimo comparatore alla luce del giorno senza sole diretto. Registra colore più vicino e I D del campione. Non seguire le istruzioni N P K separate della stessa confezione per questa prova P H.\n\nLa scheda di valutazione originale descrive provetta generica, reagente in polvere o liquido, tacca, agitazione per il tempo richiesto (un minuto è solo un esempio), sedimentazione, confronto, registrazione e pulizia. La procedura del produttore è un'applicazione documentata di questa sequenza, non il permesso di trasferire quantità, tempo o scala a un altro kit. Se il kit del sito è diverso, prevale il manuale aggiornato e il formatore mappa su di esso le azioni da valutare.",
+          "occurrences": 1,
+          "purpose": "Exact sampledepth15–20cm6–8inches example/model1601/6.8/10minute spoken forms; kitmethod/time/chart/individual observation conditions untouched"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "97366c07cb4f6bb08ce0274a9d095f320a2db3b762f272a95f37e9204ff5902a",
+      "requestFingerprintSha256": "97366c07cb4f6bb08ce0274a9d095f320a2db3b762f272a95f37e9204ff5902a",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-R03-r1",
+      "unitId": "S2-06-it-R03-r1",
+      "locale": "it",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Accosta il comparatore alla propria scala con buona luce diffusa. Confronta il liquido sopra le particelle sedimentate, non il colore della terra né una figura di un'altra prova. Se il colore è fra due blocchi, annota intervallo o valore più vicino sostenuto con una nota: non inventare precisione oltre le tacche. Se è fuori scala, torbido o difficile da distinguere, registra il limite e ripeti o ricorri a metodo con pH-metro o laboratorio adeguato.",
+          "sha256": "f41eef1cc635d9e950b666998506d1a67f4bb0c528bfba46c4f94cc41e74d561"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Una domanda finale della fonte dice che blu o viola di solito indicano alcalinità in un kit tipico. Può valere per un determinato indicatore, ma non esiste un colore pH universale per tutti i kit. Consulta sempre la scala pH del kit scelto: il colore da solo, senza scala, non è un risultato valido.",
+          "sha256": "6e97648f29ba33702e8be084672ae6757db00ea4011a448dee518ef5adf6d18f"
+        }
+      ],
+      "scientificMeaning": "Accosta il comparatore alla propria scala con buona luce diffusa. Confronta il liquido sopra le particelle sedimentate, non il colore della terra né una figura di un'altra prova. Se il colore è fra due blocchi, annota intervallo o valore più vicino sostenuto con una nota: non inventare precisione oltre le tacche. Se è fuori scala, torbido o difficile da distinguere, registra il limite e ripeti o ricorri a metodo con pH-metro o laboratorio adeguato.\n\nUna domanda finale della fonte dice che blu o viola di solito indicano alcalinità in un kit tipico. Può valere per un determinato indicatore, ma non esiste un colore pH universale per tutti i kit. Consulta sempre la scala pH del kit scelto: il colore da solo, senza scala, non è un risultato valido.",
+      "displayText": "Accosta il comparatore alla propria scala con buona luce diffusa. Confronta il liquido sopra le particelle sedimentate, non il colore della terra né una figura di un'altra prova. Se il colore è fra due blocchi, annota intervallo o valore più vicino sostenuto con una nota: non inventare precisione oltre le tacche. Se è fuori scala, torbido o difficile da distinguere, registra il limite e ripeti o ricorri a metodo con pH-metro o laboratorio adeguato.\n\nUna domanda finale della fonte dice che blu o viola di solito indicano alcalinità in un kit tipico. Può valere per un determinato indicatore, ma non esiste un colore pH universale per tutti i kit. Consulta sempre la scala pH del kit scelto: il colore da solo, senza scala, non è un risultato valido.",
+      "captionText": "Accosta il comparatore alla propria scala con buona luce diffusa. Confronta il liquido sopra le particelle sedimentate, non il colore della terra né una figura di un'altra prova. Se il colore è fra due blocchi, annota intervallo o valore più vicino sostenuto con una nota: non inventare precisione oltre le tacche. Se è fuori scala, torbido o difficile da distinguere, registra il limite e ripeti o ricorri a metodo con pH-metro o laboratorio adeguato.\n\nUna domanda finale della fonte dice che blu o viola di solito indicano alcalinità in un kit tipico. Può valere per un determinato indicatore, ma non esiste un colore pH universale per tutti i kit. Consulta sempre la scala pH del kit scelto: il colore da solo, senza scala, non è un risultato valido.",
+      "spokenText": "Accosta il comparatore alla propria scala con buona luce diffusa. Confronta il liquido sopra le particelle sedimentate, non il colore della terra né una figura di un'altra prova. Se il colore è fra due blocchi, annota intervallo o valore più vicino sostenuto con una nota: non inventare precisione oltre le tacche. Se è fuori scala, torbido o difficile da distinguere, registra il limite e ripeti o ricorri a metodo con P H-metro o laboratorio adeguato.\n\nUna domanda finale della fonte dice che blu o viola di solito indicano alcalinità in un kit tipico. Può valere per un determinato indicatore, ma non esiste un colore P H universale per tutti i kit. Consulta sempre la scala P H del kit scelto: il colore da solo, senza scala, non è un risultato valido.",
+      "spokenTextSHA256": "6e5a177d436582bf047e85d44ec4482a0e515b944817dfeede26b2e3805f43b1",
+      "spokenTextSha256": "6e5a177d436582bf047e85d44ec4482a0e515b944817dfeede26b2e3805f43b1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 3,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "56dccafd94ea80167140e6f6f4ea097f8f6c5dc84431a25f32447f4a08112b13",
+      "requestFingerprintSha256": "56dccafd94ea80167140e6f6f4ea097f8f6c5dc84431a25f32447f4a08112b13",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-R04-r1",
+      "unitId": "S2-06-it-R04-r1",
+      "locale": "it",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Scrivi ID campione/campo, data di raccolta o prova, kit e scala, risultato o intervallo, incertezza, nome di chi prova e tempo effettivo di sviluppo richiesto dal kit. Se il sito usa A, B e C, dedica una riga a ciascuno; non sostituire l'osservazione con il valore obiettivo. Ogni allievo misura a turno e viene osservato individualmente anche se il gruppo alterna chi scrive e chi interpreta.",
+          "sha256": "3e57d418424e426c1fe5c3c345219818325af8506b59a606280c16f98d540e9f"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Dopo la lettura tratta miscela e reagente secondo SDS e procedura di smaltimento del sito. Pulisci e asciuga comparatore e tappo come da manuale, rimetti la scala corretta con il dispositivo e lascia il banco sicuro. Non vale una regola generale di versare tutti i reagenti nel lavandino o mescolare rifiuti chimici in ogni sede.",
+          "sha256": "38deb5d230f2250c1a2c47afc3add385ad31e382324d4c09208e02d75a6f2ef6"
+        }
+      ],
+      "scientificMeaning": "Scrivi ID campione/campo, data di raccolta o prova, kit e scala, risultato o intervallo, incertezza, nome di chi prova e tempo effettivo di sviluppo richiesto dal kit. Se il sito usa A, B e C, dedica una riga a ciascuno; non sostituire l'osservazione con il valore obiettivo. Ogni allievo misura a turno e viene osservato individualmente anche se il gruppo alterna chi scrive e chi interpreta.\n\nDopo la lettura tratta miscela e reagente secondo SDS e procedura di smaltimento del sito. Pulisci e asciuga comparatore e tappo come da manuale, rimetti la scala corretta con il dispositivo e lascia il banco sicuro. Non vale una regola generale di versare tutti i reagenti nel lavandino o mescolare rifiuti chimici in ogni sede.",
+      "displayText": "Scrivi ID campione/campo, data di raccolta o prova, kit e scala, risultato o intervallo, incertezza, nome di chi prova e tempo effettivo di sviluppo richiesto dal kit. Se il sito usa A, B e C, dedica una riga a ciascuno; non sostituire l'osservazione con il valore obiettivo. Ogni allievo misura a turno e viene osservato individualmente anche se il gruppo alterna chi scrive e chi interpreta.\n\nDopo la lettura tratta miscela e reagente secondo SDS e procedura di smaltimento del sito. Pulisci e asciuga comparatore e tappo come da manuale, rimetti la scala corretta con il dispositivo e lascia il banco sicuro. Non vale una regola generale di versare tutti i reagenti nel lavandino o mescolare rifiuti chimici in ogni sede.",
+      "captionText": "Scrivi ID campione/campo, data di raccolta o prova, kit e scala, risultato o intervallo, incertezza, nome di chi prova e tempo effettivo di sviluppo richiesto dal kit. Se il sito usa A, B e C, dedica una riga a ciascuno; non sostituire l'osservazione con il valore obiettivo. Ogni allievo misura a turno e viene osservato individualmente anche se il gruppo alterna chi scrive e chi interpreta.\n\nDopo la lettura tratta miscela e reagente secondo SDS e procedura di smaltimento del sito. Pulisci e asciuga comparatore e tappo come da manuale, rimetti la scala corretta con il dispositivo e lascia il banco sicuro. Non vale una regola generale di versare tutti i reagenti nel lavandino o mescolare rifiuti chimici in ogni sede.",
+      "spokenText": "Scrivi I D campione/campo, data di raccolta o prova, kit e scala, risultato o intervallo, incertezza, nome di chi prova e tempo effettivo di sviluppo richiesto dal kit. Se il sito usa A, B e C, dedica una riga a ciascuno; non sostituire l'osservazione con il valore obiettivo. Ogni allievo misura a turno e viene osservato individualmente anche se il gruppo alterna chi scrive e chi interpreta.\n\nDopo la lettura tratta miscela e reagente secondo S D S e procedura di smaltimento del sito. Pulisci e asciuga comparatore e tappo come da manuale, rimetti la scala corretta con il dispositivo e lascia il banco sicuro. Non vale una regola generale di versare tutti i reagenti nel lavandino o mescolare rifiuti chimici in ogni sede.",
+      "spokenTextSHA256": "5d2fa7873960d528160d84f72069050160c8c1dc2bcf875efc2935b509f59408",
+      "spokenTextSha256": "5d2fa7873960d528160d84f72069050160c8c1dc2bcf875efc2935b509f59408",
+      "spokenAdaptationChanges": [
+        {
+          "written": "SDS",
+          "spoken": "S D S",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "ID",
+          "spoken": "I D",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fc71c2455e49a73b5aa94d6cb7307496ec7dabe95166e3547502e43eebb79f6e",
+      "requestFingerprintSha256": "fc71c2455e49a73b5aa94d6cb7307496ec7dabe95166e3547502e43eebb79f6e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-R05-r1",
+      "unitId": "S2-06-it-R05-r1",
+      "locale": "it",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Un kit colorimetrico è rapido, trasportabile e utile per una stima grossolana sul campo, ma la risoluzione dipende dalla scala e dal giudizio visivo. Il pH-metro mostra un numero, ma necessita calibrazione, preparazione e lettura stabile: il display da solo non garantisce accuratezza. Il laboratorio può usare metodi controllati e forse fornire nutrienti, sostanza organica e interpretazione per la coltura, ma richiede un campione e una spedizione corretti, oltre a tempo.",
+          "sha256": "d64f5eeabfac9a07a3f7a34ac38a8f5a924cd27e5772935ad31ee0cf7fb4933c"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "La dimostrazione deve mostrare identità, scala abbinata, miscelazione, vera attesa e registrazione supportata. Fermati a ogni fase e spiegane il motivo; non copiare quantità, tempi o colori da un altro kit.",
+          "sha256": "03eb66194e2c55c097b136ecc543b359f91d813aeb320286fef1a34168d4e038"
+        }
+      ],
+      "scientificMeaning": "Un kit colorimetrico è rapido, trasportabile e utile per una stima grossolana sul campo, ma la risoluzione dipende dalla scala e dal giudizio visivo. Il pH-metro mostra un numero, ma necessita calibrazione, preparazione e lettura stabile: il display da solo non garantisce accuratezza. Il laboratorio può usare metodi controllati e forse fornire nutrienti, sostanza organica e interpretazione per la coltura, ma richiede un campione e una spedizione corretti, oltre a tempo.\n\nLa dimostrazione deve mostrare identità, scala abbinata, miscelazione, vera attesa e registrazione supportata. Fermati a ogni fase e spiegane il motivo; non copiare quantità, tempi o colori da un altro kit.",
+      "displayText": "Un kit colorimetrico è rapido, trasportabile e utile per una stima grossolana sul campo, ma la risoluzione dipende dalla scala e dal giudizio visivo. Il pH-metro mostra un numero, ma necessita calibrazione, preparazione e lettura stabile: il display da solo non garantisce accuratezza. Il laboratorio può usare metodi controllati e forse fornire nutrienti, sostanza organica e interpretazione per la coltura, ma richiede un campione e una spedizione corretti, oltre a tempo.\n\nLa dimostrazione deve mostrare identità, scala abbinata, miscelazione, vera attesa e registrazione supportata. Fermati a ogni fase e spiegane il motivo; non copiare quantità, tempi o colori da un altro kit.",
+      "captionText": "Un kit colorimetrico è rapido, trasportabile e utile per una stima grossolana sul campo, ma la risoluzione dipende dalla scala e dal giudizio visivo. Il pH-metro mostra un numero, ma necessita calibrazione, preparazione e lettura stabile: il display da solo non garantisce accuratezza. Il laboratorio può usare metodi controllati e forse fornire nutrienti, sostanza organica e interpretazione per la coltura, ma richiede un campione e una spedizione corretti, oltre a tempo.\n\nLa dimostrazione deve mostrare identità, scala abbinata, miscelazione, vera attesa e registrazione supportata. Fermati a ogni fase e spiegane il motivo; non copiare quantità, tempi o colori da un altro kit.",
+      "spokenText": "Un kit colorimetrico è rapido, trasportabile e utile per una stima grossolana sul campo, ma la risoluzione dipende dalla scala e dal giudizio visivo. Il P H-metro mostra un numero, ma necessita calibrazione, preparazione e lettura stabile: il display da solo non garantisce accuratezza. Il laboratorio può usare metodi controllati e forse fornire nutrienti, sostanza organica e interpretazione per la coltura, ma richiede un campione e una spedizione corretti, oltre a tempo.\n\nLa dimostrazione deve mostrare identità, scala abbinata, miscelazione, vera attesa e registrazione supportata. Fermati a ogni fase e spiegane il motivo; non copiare quantità, tempi o colori da un altro kit.",
+      "spokenTextSHA256": "ec22d4adb082c26c11dbfd5dc5badf89a4c2cb7eb1bd9276c6561673fb0e5c72",
+      "spokenTextSha256": "ec22d4adb082c26c11dbfd5dc5badf89a4c2cb7eb1bd9276c6561673fb0e5c72",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6db06dfe0784528bb2d30f937fa584c318afd80847b84f1eeaad6f7ad658462b",
+      "requestFingerprintSha256": "6db06dfe0784528bb2d30f937fa584c318afd80847b84f1eeaad6f7ad658462b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-06-it-R06-r1",
+      "unitId": "S2-06-it-R06-r1",
+      "locale": "it",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a6.8 resta leggermente acido, non esattamente neutro.",
+          "sha256": "49dd973ec8238a4275b28b33257b791f09654d721d87cb70683be044822efb01"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Il foglio originale ha tre parti di 10 minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con pH basso si considerano possibili limiti P/Ca/Mg e rischi Al/Mn; con pH alto possibili limiti Fe/Mn/Zn. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+          "sha256": "8e783c43fce6ee88aa302463597e39ef2f620f5a80cf3c726d6e1d97fe0ed53e"
+        }
+      ],
+      "scientificMeaning": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a6.8 resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di 10 minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con pH basso si considerano possibili limiti P/Ca/Mg e rischi Al/Mn; con pH alto possibili limiti Fe/Mn/Zn. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+      "displayText": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a6.8 resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di 10 minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con pH basso si considerano possibili limiti P/Ca/Mg e rischi Al/Mn; con pH alto possibili limiti Fe/Mn/Zn. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+      "captionText": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a6.8 resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di 10 minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con pH basso si considerano possibili limiti P/Ca/Mg e rischi Al/Mn; con pH alto possibili limiti Fe/Mn/Zn. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+      "spokenText": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a sei virgola otto resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di dieci minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con P H basso si considerano possibili limitazioni di fosforo, calcio e magnesio e rischi legati ad alluminio e manganese; con P H alto possibili limitazioni di ferro, manganese e zinco. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+      "spokenTextSHA256": "53f0f299eca2e5deab05ebaee25368ac502dba7ac2bbf1457c6374c337813fea",
+      "spokenTextSha256": "53f0f299eca2e5deab05ebaee25368ac502dba7ac2bbf1457c6374c337813fea",
+      "spokenAdaptationChanges": [
+        {
+          "written": "P/Ca/Mg",
+          "spoken": "fosforo, calcio e magnesio",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Al/Mn",
+          "spoken": "alluminio e manganese",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Fe/Mn/Zn",
+          "spoken": "ferro, manganese e zinco",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 2,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "a6.8",
+          "spoken": "a 6.8",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a 6.8 resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di 10 minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con P H basso si considerano possibili limiti fosforo, calcio e magnesio e rischi alluminio e manganese; con P H alto possibili limiti ferro, manganese e zinco. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+          "spoken": "Usa tre campioni distinti A, B e C. Il formatore li prepara, li verifica prima e conserva una chiave misurata separata. Registra ogni risultato supportato dal kit prima del confronto didattico. I numeri di esempio non garantiscono decimali; un valore vicino a sei virgola otto resta leggermente acido, non esattamente neutro.\n\nIl foglio originale ha tre parti di dieci minuti: misurare, spiegare possibili effetti sulla disponibilità dei nutrienti e proporre il passo successivo per la coltura; il piano completo include anche preparazione, gruppi, pulizia e discussione. Spiegazione e proposta dipendono da risultati veri e altre prove. Con P H basso si considerano possibili limiti fosforo, calcio e magnesio e rischi alluminio e manganese; con P H alto possibili limiti ferro, manganese e zinco. Scelta e dose di calce, zolfo o altro richiedono ulteriori dati su suolo e coltura. Una scala approssimativa non trasforma la risposta modello in ricetta.",
+          "occurrences": 1,
+          "purpose": "Exact sampledepth15–20cm6–8inches example/model1601/6.8/10minute spoken forms; kitmethod/time/chart/individual observation conditions untouched"
+        },
+        {
+          "written": "possibili limiti fosforo, calcio e magnesio",
+          "spoken": "possibili limitazioni di fosforo, calcio e magnesio",
+          "occurrences": 1,
+          "purpose": "Faithful spoken-only natural Egyptian number/order wording, explicit alternative tool slash, or grammatical fullnutrientname list; unchanged scientific identity/conditions/source"
+        },
+        {
+          "written": "rischi alluminio e manganese",
+          "spoken": "rischi legati ad alluminio e manganese",
+          "occurrences": 1,
+          "purpose": "Faithful spoken-only natural Egyptian number/order wording, explicit alternative tool slash, or grammatical fullnutrientname list; unchanged scientific identity/conditions/source"
+        },
+        {
+          "written": "possibili limiti ferro, manganese e zinco",
+          "spoken": "possibili limitazioni di ferro, manganese e zinco",
+          "occurrences": 1,
+          "purpose": "Faithful spoken-only natural Egyptian number/order wording, explicit alternative tool slash, or grammatical fullnutrientname list; unchanged scientific identity/conditions/source"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5075831d65abf06b779bd6207a5fa7f15ede0267195cc600af3a9c2a51e22b44",
+      "requestFingerprintSha256": "5075831d65abf06b779bd6207a5fa7f15ede0267195cc600af3a9c2a51e22b44",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

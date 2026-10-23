@@ -1,0 +1,382 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-06-en.json",
+    "sha256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+    "bytes": 29413
+  },
+  "units": [
+    {
+      "id": "S2-06-en-R01-r1",
+      "unitId": "S2-06-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Use a representative, labelled soil sample collected to the depth and pattern specified for the crop, field question and receiving method. The source gives 15–20 cm (6–8 inches) as one field example, not the entire root zone for all crops or a replacement for the sampling plan. The test tube inherits the field sample ID; do not test an unlabelled handful.",
+          "sha256": "a5358b1caf60372670c83a32a8df567e280d32c2141ca4144d371f11653db556"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Check the actual kit's make, pH comparator, colour chart, reagent, expiry and instructions before opening it. Wear protection selected from the reagent label, SDS and local procedure. Use the supplied distilled water where the method calls for it. Colour and reagent quantities cannot be copied from a different brand's photo or video.",
+          "sha256": "b1decdc8cc6890ac5cd6b069a0f220b96344b3da0df3c23aa88881fe543e0246"
+        }
+      ],
+      "scientificMeaning": "Use a representative, labelled soil sample collected to the depth and pattern specified for the crop, field question and receiving method. The source gives 15–20 cm (6–8 inches) as one field example, not the entire root zone for all crops or a replacement for the sampling plan. The test tube inherits the field sample ID; do not test an unlabelled handful.\n\nCheck the actual kit's make, pH comparator, colour chart, reagent, expiry and instructions before opening it. Wear protection selected from the reagent label, SDS and local procedure. Use the supplied distilled water where the method calls for it. Colour and reagent quantities cannot be copied from a different brand's photo or video.",
+      "displayText": "Use a representative, labelled soil sample collected to the depth and pattern specified for the crop, field question and receiving method. The source gives 15–20 cm (6–8 inches) as one field example, not the entire root zone for all crops or a replacement for the sampling plan. The test tube inherits the field sample ID; do not test an unlabelled handful.\n\nCheck the actual kit's make, pH comparator, colour chart, reagent, expiry and instructions before opening it. Wear protection selected from the reagent label, SDS and local procedure. Use the supplied distilled water where the method calls for it. Colour and reagent quantities cannot be copied from a different brand's photo or video.",
+      "captionText": "Use a representative, labelled soil sample collected to the depth and pattern specified for the crop, field question and receiving method. The source gives 15–20 cm (6–8 inches) as one field example, not the entire root zone for all crops or a replacement for the sampling plan. The test tube inherits the field sample ID; do not test an unlabelled handful.\n\nCheck the actual kit's make, pH comparator, colour chart, reagent, expiry and instructions before opening it. Wear protection selected from the reagent label, SDS and local procedure. Use the supplied distilled water where the method calls for it. Colour and reagent quantities cannot be copied from a different brand's photo or video.",
+      "spokenText": "Use a representative, labelled soil sample collected to the depth and pattern specified for the crop, field question and receiving method. The source gives fifteen to twenty centimetres (six to eight inches) as one field example, not the entire root zone for all crops or a replacement for the sampling plan. The test tube inherits the field sample ID; do not test an unlabelled handful.\n\nCheck the actual kit's make, P H comparator, colour chart, reagent, expiry and instructions before opening it. Wear protection selected from the reagent label, S D S and local procedure. Use the supplied distilled water where the method calls for it. Colour and reagent quantities cannot be copied from a different brand's photo or video.",
+      "spokenTextSHA256": "bd87552adfad5d18fa2d15aa6df36ab86f4429dccaf43bab4d82f26427639d58",
+      "spokenTextSha256": "bd87552adfad5d18fa2d15aa6df36ab86f4429dccaf43bab4d82f26427639d58",
+      "spokenAdaptationChanges": [
+        {
+          "written": "SDS",
+          "spoken": "S D S",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "15–20 cm",
+          "spoken": "fifteen to twenty centimetres",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "6–8 inches",
+          "spoken": "six to eight inches",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ec2a6c0d2385cf0ebd2abaa111cd647f134d05fae770492328ae1e9bf9f9c8dd",
+      "requestFingerprintSha256": "ec2a6c0d2385cf0ebd2abaa111cd647f134d05fae770492328ae1e9bf9f9c8dd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-R02-r1",
+      "unitId": "S2-06-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "In the documented Luster Leaf Rapitest 1601 pH method, confirm that the green pH comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green pH capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's pH chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate NPK instructions for this pH test.",
+          "sha256": "07fc18e8d6a5455afbdce5611de47b0e89b27e682ddcce07c03aa087042070be"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "The source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+          "sha256": "782b79cb74e9db3f7439ab0208e31ecaf1b3dd6c3ab4010bdf950433370756a9"
+        }
+      ],
+      "scientificMeaning": "In the documented Luster Leaf Rapitest 1601 pH method, confirm that the green pH comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green pH capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's pH chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate NPK instructions for this pH test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+      "displayText": "In the documented Luster Leaf Rapitest 1601 pH method, confirm that the green pH comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green pH capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's pH chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate NPK instructions for this pH test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+      "captionText": "In the documented Luster Leaf Rapitest 1601 pH method, confirm that the green pH comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green pH capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's pH chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate NPK instructions for this pH test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+      "spokenText": "In the documented Luster Leaf Rapitest one six zero one P H method, confirm that the green P H comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green P H capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's P H chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate N P K instructions for this P H test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+      "spokenTextSHA256": "3a00d60031b298dc8363f08307ed4951ce7669807856ad351e69e3c670edd731",
+      "spokenTextSha256": "3a00d60031b298dc8363f08307ed4951ce7669807856ad351e69e3c670edd731",
+      "spokenAdaptationChanges": [
+        {
+          "written": "NPK",
+          "spoken": "N P K",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 5,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "In the documented Luster Leaf Rapitest 1601 P H method, confirm that the green P H comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green P H capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's P H chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate N P K instructions for this P H test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+          "spoken": "In the documented Luster Leaf Rapitest one six zero one P H method, confirm that the green P H comparator contains its own colour chart. Fill its test chamber to the soil line; carefully open one matching green P H capsule over the test chamber and pour in its powder; use its dropper to add preferably distilled water to the water line; fasten the cap and shake thoroughly. Allow soil to settle and colour to develop for about one minute, then compare the liquid above the soil with that comparator's P H chart in daylight, away from direct sun. Record the nearest chart colour and the sample ID. Do not follow its separate N P K instructions for this P H test.\n\nThe source assessment card describes a generic tube, reagent powder or liquid, a fill line, shaking for the required time (one minute is only an example), settling, chart comparison, record and cleaning. The manufacturer's procedure above is one valid implementation of that sequence, not a licence to use its quantities, time or chart with a different kit. If the site's kit differs, the current manufacturer manual governs and the trainer maps the same assessed actions to it.",
+          "occurrences": 1,
+          "purpose": "Exact sampledepth15–20cm6–8inches example/model1601/6.8/10minute spoken forms; kitmethod/time/chart/individual observation conditions untouched"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a14ea05a01f24619e969b8590bfce4c8f89384ebe2efa28b099df44bdff130f9",
+      "requestFingerprintSha256": "a14ea05a01f24619e969b8590bfce4c8f89384ebe2efa28b099df44bdff130f9",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-R03-r1",
+      "unitId": "S2-06-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Place the comparator against its own chart under suitable diffuse daylight. Compare the liquid above settled particles rather than soil colour or a printed illustration of a different test. If a colour falls between reference blocks, record the interval or the closest supported value with a note; do not invent a precision beyond the kit's scale. If the colour is off-scale, too cloudy or hard to distinguish, record that limitation and repeat or refer the sample for a suitable meter/lab method.",
+          "sha256": "9e09007448e0bf82b26430be3b8ad1ec1b7155ee5affbf865ef7f625effae3fa"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "The source final question says bright blue or purple usually means alkaline in a typical kit. Such a colour association may be true for a particular indicator, but there is no universal soil-pH colour across all kits. The learner must consult the selected kit's pH chart. The colour by itself, without its chart, is not a valid pH result.",
+          "sha256": "964fc36c3df3a5f0c8c3594d2fb1a5157bf7fc38fb80aa3d38ab8eb5461c7667"
+        }
+      ],
+      "scientificMeaning": "Place the comparator against its own chart under suitable diffuse daylight. Compare the liquid above settled particles rather than soil colour or a printed illustration of a different test. If a colour falls between reference blocks, record the interval or the closest supported value with a note; do not invent a precision beyond the kit's scale. If the colour is off-scale, too cloudy or hard to distinguish, record that limitation and repeat or refer the sample for a suitable meter/lab method.\n\nThe source final question says bright blue or purple usually means alkaline in a typical kit. Such a colour association may be true for a particular indicator, but there is no universal soil-pH colour across all kits. The learner must consult the selected kit's pH chart. The colour by itself, without its chart, is not a valid pH result.",
+      "displayText": "Place the comparator against its own chart under suitable diffuse daylight. Compare the liquid above settled particles rather than soil colour or a printed illustration of a different test. If a colour falls between reference blocks, record the interval or the closest supported value with a note; do not invent a precision beyond the kit's scale. If the colour is off-scale, too cloudy or hard to distinguish, record that limitation and repeat or refer the sample for a suitable meter/lab method.\n\nThe source final question says bright blue or purple usually means alkaline in a typical kit. Such a colour association may be true for a particular indicator, but there is no universal soil-pH colour across all kits. The learner must consult the selected kit's pH chart. The colour by itself, without its chart, is not a valid pH result.",
+      "captionText": "Place the comparator against its own chart under suitable diffuse daylight. Compare the liquid above settled particles rather than soil colour or a printed illustration of a different test. If a colour falls between reference blocks, record the interval or the closest supported value with a note; do not invent a precision beyond the kit's scale. If the colour is off-scale, too cloudy or hard to distinguish, record that limitation and repeat or refer the sample for a suitable meter/lab method.\n\nThe source final question says bright blue or purple usually means alkaline in a typical kit. Such a colour association may be true for a particular indicator, but there is no universal soil-pH colour across all kits. The learner must consult the selected kit's pH chart. The colour by itself, without its chart, is not a valid pH result.",
+      "spokenText": "Place the comparator against its own chart under suitable diffuse daylight. Compare the liquid above settled particles rather than soil colour or a printed illustration of a different test. If a colour falls between reference blocks, record the interval or the closest supported value with a note; do not invent a precision beyond the kit's scale. If the colour is off-scale, too cloudy or hard to distinguish, record that limitation and repeat or refer the sample for a suitable meter or laboratory method.\n\nThe source final question says bright blue or purple usually means alkaline in a typical kit. Such a colour association may be true for a particular indicator, but there is no universal soil-P H colour across all kits. The learner must consult the selected kit's P H chart. The colour by itself, without its chart, is not a valid P H result.",
+      "spokenTextSHA256": "9eea0bdad5e501053d26a5cd270256021d026b0dbcf64f64d6894ab77d517e48",
+      "spokenTextSha256": "9eea0bdad5e501053d26a5cd270256021d026b0dbcf64f64d6894ab77d517e48",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 3,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "meter/lab method",
+          "spoken": "meter or laboratory method",
+          "occurrences": 1,
+          "purpose": "Faithful spoken-only natural Egyptian number/order wording, explicit alternative tool slash, or grammatical fullnutrientname list; unchanged scientific identity/conditions/source"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "df4a01e827eb34c728bee98c8e46214b19b7a7c2a0c6e39d03f2bbb409448070",
+      "requestFingerprintSha256": "df4a01e827eb34c728bee98c8e46214b19b7a7c2a0c6e39d03f2bbb409448070",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-R04-r1",
+      "unitId": "S2-06-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Record sample/field ID, collection or test date, kit and chart identity, result or interval, any uncertainty, tester, and the actual elapsed development time required by the kit. If the site uses three soil samples A, B and C, keep three distinct rows; never substitute an intended target value for an observation. Each learner takes a turn as tester and is individually observed, even when the group also assigns recorder and analyst roles.",
+          "sha256": "2511832bfebe734c4d86d7ab7244b491b2e1d8ebc80c4c0e784ebbd8bb154b28"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "After the reading, handle the reagent and soil mixture according to its SDS and the training site's waste procedure. Clean and dry the comparator and cap as its manual instructs, preserve the correct chart with its device, and return the bench to a safe state. No generic instruction to pour all reagents into a sink or to mix chemical waste streams applies to every site.",
+          "sha256": "e3f1ff5009b1e9094cb6ba71e19219ff5edc0e2b9a4570b5af63425961d62bb0"
+        }
+      ],
+      "scientificMeaning": "Record sample/field ID, collection or test date, kit and chart identity, result or interval, any uncertainty, tester, and the actual elapsed development time required by the kit. If the site uses three soil samples A, B and C, keep three distinct rows; never substitute an intended target value for an observation. Each learner takes a turn as tester and is individually observed, even when the group also assigns recorder and analyst roles.\n\nAfter the reading, handle the reagent and soil mixture according to its SDS and the training site's waste procedure. Clean and dry the comparator and cap as its manual instructs, preserve the correct chart with its device, and return the bench to a safe state. No generic instruction to pour all reagents into a sink or to mix chemical waste streams applies to every site.",
+      "displayText": "Record sample/field ID, collection or test date, kit and chart identity, result or interval, any uncertainty, tester, and the actual elapsed development time required by the kit. If the site uses three soil samples A, B and C, keep three distinct rows; never substitute an intended target value for an observation. Each learner takes a turn as tester and is individually observed, even when the group also assigns recorder and analyst roles.\n\nAfter the reading, handle the reagent and soil mixture according to its SDS and the training site's waste procedure. Clean and dry the comparator and cap as its manual instructs, preserve the correct chart with its device, and return the bench to a safe state. No generic instruction to pour all reagents into a sink or to mix chemical waste streams applies to every site.",
+      "captionText": "Record sample/field ID, collection or test date, kit and chart identity, result or interval, any uncertainty, tester, and the actual elapsed development time required by the kit. If the site uses three soil samples A, B and C, keep three distinct rows; never substitute an intended target value for an observation. Each learner takes a turn as tester and is individually observed, even when the group also assigns recorder and analyst roles.\n\nAfter the reading, handle the reagent and soil mixture according to its SDS and the training site's waste procedure. Clean and dry the comparator and cap as its manual instructs, preserve the correct chart with its device, and return the bench to a safe state. No generic instruction to pour all reagents into a sink or to mix chemical waste streams applies to every site.",
+      "spokenText": "Record sample or field ID, collection or test date, kit and chart identity, result or interval, any uncertainty, tester, and the actual elapsed development time required by the kit. If the site uses three soil samples A, B and C, keep three distinct rows; never substitute an intended target value for an observation. Each learner takes a turn as tester and is individually observed, even when the group also assigns recorder and analyst roles.\n\nAfter the reading, handle the reagent and soil mixture according to its S D S and the training site's waste procedure. Clean and dry the comparator and cap as its manual instructs, preserve the correct chart with its device, and return the bench to a safe state. No generic instruction to pour all reagents into a sink or to mix chemical waste streams applies to every site.",
+      "spokenTextSHA256": "847ad12fe4362bc645b8512db9ec525d57c1d8a4feb7e7d7a76e8efc6a01d7a9",
+      "spokenTextSha256": "847ad12fe4362bc645b8512db9ec525d57c1d8a4feb7e7d7a76e8efc6a01d7a9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "SDS",
+          "spoken": "S D S",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "sample/field ID",
+          "spoken": "sample or field ID",
+          "occurrences": 1,
+          "purpose": "Faithful spoken-only natural Egyptian number/order wording, explicit alternative tool slash, or grammatical fullnutrientname list; unchanged scientific identity/conditions/source"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f5d0614c742405d1242d9f52657fb972f57293c3a5412a4c1c9d865c7acbd8e8",
+      "requestFingerprintSha256": "f5d0614c742405d1242d9f52657fb972f57293c3a5412a4c1c9d865c7acbd8e8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-R05-r1",
+      "unitId": "S2-06-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "A colour kit can be fast, portable and useful for a rough field indication, but resolution depends on its chart and user colour judgement. A digital meter gives a number, yet needs suitable calibration, sample preparation and a stable reading; a display alone does not guarantee accuracy. A laboratory can use controlled methods and may provide nutrient and organic-matter results and crop-specific interpretation, but it requires the right sample, submission and time.",
+          "sha256": "9392f94358c31bf18151a5a04f5a6b599ef9e5f03748c5b159bca37f743818e0"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "A measurement demonstration must keep the sample ID, matching chart, mixing, real development wait and supported recording visible. Stop at each stage and explain why it matters; never copy quantities, timing or colours from a different kit.",
+          "sha256": "e84419d29e9f37ac281ce6aeffb0c0069fcd974f3a1364e18c71ba0a1b9baace"
+        }
+      ],
+      "scientificMeaning": "A colour kit can be fast, portable and useful for a rough field indication, but resolution depends on its chart and user colour judgement. A digital meter gives a number, yet needs suitable calibration, sample preparation and a stable reading; a display alone does not guarantee accuracy. A laboratory can use controlled methods and may provide nutrient and organic-matter results and crop-specific interpretation, but it requires the right sample, submission and time.\n\nA measurement demonstration must keep the sample ID, matching chart, mixing, real development wait and supported recording visible. Stop at each stage and explain why it matters; never copy quantities, timing or colours from a different kit.",
+      "displayText": "A colour kit can be fast, portable and useful for a rough field indication, but resolution depends on its chart and user colour judgement. A digital meter gives a number, yet needs suitable calibration, sample preparation and a stable reading; a display alone does not guarantee accuracy. A laboratory can use controlled methods and may provide nutrient and organic-matter results and crop-specific interpretation, but it requires the right sample, submission and time.\n\nA measurement demonstration must keep the sample ID, matching chart, mixing, real development wait and supported recording visible. Stop at each stage and explain why it matters; never copy quantities, timing or colours from a different kit.",
+      "captionText": "A colour kit can be fast, portable and useful for a rough field indication, but resolution depends on its chart and user colour judgement. A digital meter gives a number, yet needs suitable calibration, sample preparation and a stable reading; a display alone does not guarantee accuracy. A laboratory can use controlled methods and may provide nutrient and organic-matter results and crop-specific interpretation, but it requires the right sample, submission and time.\n\nA measurement demonstration must keep the sample ID, matching chart, mixing, real development wait and supported recording visible. Stop at each stage and explain why it matters; never copy quantities, timing or colours from a different kit.",
+      "spokenText": "A colour kit can be fast, portable and useful for a rough field indication, but resolution depends on its chart and user colour judgement. A digital meter gives a number, yet needs suitable calibration, sample preparation and a stable reading; a display alone does not guarantee accuracy. A laboratory can use controlled methods and may provide nutrient and organic-matter results and crop-specific interpretation, but it requires the right sample, submission and time.\n\nA measurement demonstration must keep the sample ID, matching chart, mixing, real development wait and supported recording visible. Stop at each stage and explain why it matters; never copy quantities, timing or colours from a different kit.",
+      "spokenTextSHA256": "aa534b592a881d5db74f7951a1a61f4320e54c7055914b532aaafbf098e129a4",
+      "spokenTextSha256": "aa534b592a881d5db74f7951a1a61f4320e54c7055914b532aaafbf098e129a4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "74f652cee0d4066f76b0fcd2eb6c26a68fa6fcf3f73b21e021cd39161b41c49b",
+      "requestFingerprintSha256": "74f652cee0d4066f76b0fcd2eb6c26a68fa6fcf3f73b21e021cd39161b41c49b",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-06-en-R06-r1",
+      "unitId": "S2-06-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4eecae03111fc9b206315db0f63ffa5cf46efa396ee6097e0cb2116cf5033a1e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near6.8 remains slightly acidic, not exactly neutral.",
+          "sha256": "f121188ca972b5dbbcdf22e1cea440331da363b87a26a38abff4a3929e02517d"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "The original activity has three 10-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower pH, possible P/Ca/Mg constraints and Al/Mn risk can be considered; at high pH, Fe/Mn/Zn constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+          "sha256": "3501de88531825813ccc3139d15e1ab41f81a8d19be53568c86d954ccaa028e7"
+        }
+      ],
+      "scientificMeaning": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near6.8 remains slightly acidic, not exactly neutral.\n\nThe original activity has three 10-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower pH, possible P/Ca/Mg constraints and Al/Mn risk can be considered; at high pH, Fe/Mn/Zn constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+      "displayText": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near6.8 remains slightly acidic, not exactly neutral.\n\nThe original activity has three 10-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower pH, possible P/Ca/Mg constraints and Al/Mn risk can be considered; at high pH, Fe/Mn/Zn constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+      "captionText": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near6.8 remains slightly acidic, not exactly neutral.\n\nThe original activity has three 10-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower pH, possible P/Ca/Mg constraints and Al/Mn risk can be considered; at high pH, Fe/Mn/Zn constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+      "spokenText": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near six point eight remains slightly acidic, not exactly neutral.\n\nThe original activity has three ten-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower P H, possible phosphorus, calcium and magnesium constraints and aluminum and manganese risk can be considered; at high P H, iron, manganese and zinc constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+      "spokenTextSHA256": "1d36f7e32f78c202415430dd800a72887e9842c142356a405554b07e818d87c3",
+      "spokenTextSha256": "1d36f7e32f78c202415430dd800a72887e9842c142356a405554b07e818d87c3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "P/Ca/Mg",
+          "spoken": "phosphorus, calcium and magnesium",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Al/Mn",
+          "spoken": "aluminum and manganese",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Fe/Mn/Zn",
+          "spoken": "iron, manganese and zinc",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 2,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "near6.8",
+          "spoken": "near 6.8",
+          "occurrences": 1,
+          "purpose": "Faithful chemical full-name/letter/unit/depth/code expansion or natural Egyptian grammar/spacing; no safety/qualification/source changes"
+        },
+        {
+          "written": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near 6.8 remains slightly acidic, not exactly neutral.\n\nThe original activity has three 10-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower P H, possible phosphorus, calcium and magnesium constraints and aluminum and manganese risk can be considered; at high P H, iron, manganese and zinc constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+          "spoken": "Use three separately identified samples A, B and C. The trainer prepares and prechecks them and retains a separate measured key. Write each actual kit-supported result before comparison with any teaching example. Model numbers do not guarantee the colour kit can show decimals; a reading near six point eight remains slightly acidic, not exactly neutral.\n\nThe original activity has three ten-minute parts: measure, explain possible nutrient-availability implications, and suggest a crop-specific next step; instruction, grouping and cleanup are also timed in the fuller plan. The explanation and recommendation depend on the true results and other evidence. At lower P H, possible phosphorus, calcium and magnesium constraints and aluminum and manganese risk can be considered; at high P H, iron, manganese and zinc constraints can be considered. Exact lime, sulfur or other amendment choices and rates need later soil and crop evidence. An approximate chart does not turn the source model answer into a prescription.",
+          "occurrences": 1,
+          "purpose": "Exact sampledepth15–20cm6–8inches example/model1601/6.8/10minute spoken forms; kitmethod/time/chart/individual observation conditions untouched"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e2601daa7b382049fc912af76ec33c535f688442defe9fadcbb728ece2cc8719",
+      "requestFingerprintSha256": "e2601daa7b382049fc912af76ec33c535f688442defe9fadcbb728ece2cc8719",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
