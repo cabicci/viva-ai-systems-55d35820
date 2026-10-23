@@ -1,0 +1,82 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-14-it.json",
+    "sha256": "de6ca043924d20fa6300c82076755584e87eab8fd1e9981e2eb6a07f1c03f2e8",
+    "bytes": 37242
+  },
+  "units": [
+    {
+      "id": "S2-14-it-map-letters-subpassage-repair-r1",
+      "unitId": "S2-14-it-map-letters-subpassage-repair-r1",
+      "locale": "it",
+      "semanticGroup": "s214-it-map-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de6ca043924d20fa6300c82076755584e87eab8fd1e9981e2eb6a07f1c03f2e8",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+          "sha256": "d1b8521132bf92e4afe6a90350c6938b646a8ddfbefe3fcd600bf0877761ff8f"
+        }
+      ],
+      "scientificMeaning": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+      "displayText": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+      "captionText": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+      "spokenText": "Nel modello, il prodotto indicato con le lettere emme, a, pi viene collocato prima della semina. Anche la risposta sul pomodoro prevede di incorporare il prodotto fosfatico proposto prima della semina.",
+      "spokenTextSHA256": "033da9465f35c69867aa7cb82a820dcac092d97e681f4a6b42e3a1cdce7297d8",
+      "spokenTextSha256": "033da9465f35c69867aa7cb82a820dcac092d97e681f4a6b42e3a1cdce7297d8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+          "spoken": "Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina.",
+          "spoken": "Nel modello, il prodotto indicato con le lettere emme, a, pi viene collocato prima della semina. Anche la risposta sul pomodoro prevede di incorporare il prodotto fosfatico proposto prima della semina.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "689d0f26dfa2b4e0194f26a011b3b3e10aeef71741dd46f8bc2206214fa0d114",
+      "requestFingerprintSha256": "689d0f26dfa2b4e0194f26a011b3b3e10aeef71741dd46f8bc2206214fa0d114",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/5/paragraphs/2",
+        "original": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+        "effective": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reading/5/paragraphs/2",
+            "text": "La risposta modello distinta sul pomodoro propone anche pH almeno 6.2, 2–3 pollici di compost o letame ben maturo e farina d’ossa, 10-20-10 o perfosfato triplo; afferma di non aggiungere potassio. Sono proposte illustrative da esaminare, non prescrizioni verificate. Obiettivo, materiale, incorporazione e aggiunta o sospensione di K richiedono rapporto reale con metodo calibrato, bilancio nutritivo e prove locali. Il modello colloca MAP prima della semina; la risposta sul pomodoro incorpora anche il prodotto fosfatico proposto prima della semina. Conserva tale tempistica solo se un piano locale qualificato conferma materiale e collocazione.",
+            "sha256": "d1b8521132bf92e4afe6a90350c6938b646a8ddfbefe3fcd600bf0877761ff8f"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-four-postcontext-root-repairs-r1.json",
+        "rootSelectedAuthoritySHA256": "510932912c883cc82ecb189a03c81c3438082ccdad50a2ff3c304de3a3b53b20"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
