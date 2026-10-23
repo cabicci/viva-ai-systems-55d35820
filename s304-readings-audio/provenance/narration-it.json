@@ -1,0 +1,388 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-it.json",
+    "sha256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+    "bytes": 24790
+  },
+  "units": [
+    {
+      "id": "S3-04-it-R01a-r1",
+      "unitId": "S3-04-it-R01a-r1",
+      "locale": "it",
+      "semanticGroup": "R01a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Pensare a una pianta domestica afflosciata o ingiallita: che cosa si è visto e quali cause diverse possono produrre il segno? Formulare un’ipotesi, poi un’osservazione per verificarla. Una foglia appassita o gialla da sola non dimostra siccità né carenza: radici danneggiate, ristagno e calore possono somigliarle.",
+          "sha256": "975eee3ab8de900701d6e356cbd81419552050ed5fa6e0c57606c2bb6df6b78d"
+        }
+      ],
+      "scientificMeaning": "Pensare a una pianta domestica afflosciata o ingiallita: che cosa si è visto e quali cause diverse possono produrre il segno? Formulare un’ipotesi, poi un’osservazione per verificarla. Una foglia appassita o gialla da sola non dimostra siccità né carenza: radici danneggiate, ristagno e calore possono somigliarle.",
+      "displayText": "Pensare a una pianta domestica afflosciata o ingiallita: che cosa si è visto e quali cause diverse possono produrre il segno? Formulare un’ipotesi, poi un’osservazione per verificarla. Una foglia appassita o gialla da sola non dimostra siccità né carenza: radici danneggiate, ristagno e calore possono somigliarle.",
+      "captionText": "Pensare a una pianta domestica afflosciata o ingiallita: che cosa si è visto e quali cause diverse possono produrre il segno? Formulare un’ipotesi, poi un’osservazione per verificarla. Una foglia appassita o gialla da sola non dimostra siccità né carenza: radici danneggiate, ristagno e calore possono somigliarle.",
+      "spokenText": "Pensare a una pianta domestica afflosciata o ingiallita: che cosa si è visto e quali cause diverse possono produrre il segno? Formulare un’ipotesi, poi un’osservazione per verificarla. Una foglia appassita o gialla da sola non dimostra siccità né carenza: radici danneggiate, ristagno e calore possono somigliarle.",
+      "spokenTextSHA256": "975eee3ab8de900701d6e356cbd81419552050ed5fa6e0c57606c2bb6df6b78d",
+      "spokenTextSha256": "975eee3ab8de900701d6e356cbd81419552050ed5fa6e0c57606c2bb6df6b78d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9ff6f7120f66a18b10c0e148a318ff5605f8c208a347fa4caae03482c98a11c6",
+      "requestFingerprintSha256": "9ff6f7120f66a18b10c0e148a318ff5605f8c208a347fa4caae03482c98a11c6",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R01b-r1",
+      "unitId": "S3-04-it-R01b-r1",
+      "locale": "it",
+      "semanticGroup": "R01b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Il tema originale dura 90 minuti: 45 di spiegazione/discussione e 45 di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.",
+          "sha256": "25ed314cb39f5d5d660a8f4f20cb9fc1042b470f79c403633d4b32c36f375147"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "L’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+          "sha256": "c167c44b83c4a67228fd20e887e81cce8fef66d9329ece11e393aae860e1146c"
+        }
+      ],
+      "scientificMeaning": "Il tema originale dura 90 minuti: 45 di spiegazione/discussione e 45 di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+      "displayText": "Il tema originale dura 90 minuti: 45 di spiegazione/discussione e 45 di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+      "captionText": "Il tema originale dura 90 minuti: 45 di spiegazione/discussione e 45 di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+      "spokenText": "Il tema originale dura novanta minuti: quarantacinque di spiegazione, discussione e quarantacinque di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+      "spokenTextSHA256": "7c6774813ae34ea9b531ac3af37e6e019a3b6530ebea9a321a0509370d45d0ab",
+      "spokenTextSha256": "7c6774813ae34ea9b531ac3af37e6e019a3b6530ebea9a321a0509370d45d0ab",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il tema originale dura 90 minuti: 45 di spiegazione/discussione e 45 di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+          "spoken": "Il tema originale dura novanta minuti: quarantacinque di spiegazione, discussione e quarantacinque di laboratorio di diagnosi sul campo. Le tappe successive trattano fabbisogni idrici, metodi irrigui, stress, nutrienti e raccomandazioni basate su prove. Qui si stabiliscono i concetti dell’acqua, senza certificare quelle abilità successive. Il formatore può usare facoltativamente vasetti di suolo, carota e sedano in acqua colorata.\n\nL’apertura dura cinque minuti: parlare circa un minuto con un compagno di una pianta domestica malata, poi ascoltare alcune coppie. Annotare segno e ipotesi e rivederli alla luce di prove.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ca96c2f34f50ccd02874078c0d6168f0554fb86b0d45907258ed2eb6f941ad0c",
+      "requestFingerprintSha256": "ca96c2f34f50ccd02874078c0d6168f0554fb86b0d45907258ed2eb6f941ad0c",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R01c-r1",
+      "unitId": "S3-04-it-R01c-r1",
+      "locale": "it",
+      "semanticGroup": "R01c",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua/nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.",
+          "sha256": "b278a5ea6712816dffc85e4c02058a2ff2db1316b56f479574181491db377f31"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/4",
+          "text": "Materiali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+          "sha256": "898bc42f3260ebec47fd18279b0592f6dfb2ebbe5fc8a58295f87d5bef5ef25b"
+        }
+      ],
+      "scientificMeaning": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua/nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+      "displayText": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua/nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+      "captionText": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua/nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+      "spokenText": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua, nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+      "spokenTextSHA256": "700535e36a86f18f52030d4380c329e03e4f20d2b036cf7776cde074190e7c6e",
+      "spokenTextSha256": "700535e36a86f18f52030d4380c329e03e4f20d2b036cf7776cde074190e7c6e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua/nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+          "spoken": "I cinque obiettivi del tema sono riconoscere fabbisogni idrici comuni, descrivere metodi irrigui e idoneità, riconoscere stress idrico, individuare nutrienti e possibili carenze e proporre gestione di acqua, nutrienti dopo riscontro con coltura, suolo e segni. Rivederli a fine tema: questo solo passo non li certifica tutti.\n\nMateriali: lavagna o fogli mobili, pennarelli, proiettore e schede diagnostiche preparate. Facoltativi: sabbia, franco e argilla in vasi trasparenti, carote e sedano preparato in acqua colorata. La spugna è analogia dell’intervallo disponibile, non strumento di misura.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ee50bf6eea3091d0d7c8176bbaa6561421c41de65dcc28cbb861d354cc6496b",
+      "requestFingerprintSha256": "6ee50bf6eea3091d0d7c8176bbaa6561421c41de65dcc28cbb861d354cc6496b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R02-r1",
+      "unitId": "S3-04-it-R02-r1",
+      "locale": "it",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa 80–95% può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+          "sha256": "b4165ffabd3b3d1ff904986f4707117d8075f2cc37d318fcbc74dae8d82cc6d8"
+        }
+      ],
+      "scientificMeaning": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa 80–95% può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+      "displayText": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa 80–95% può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+      "captionText": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa 80–95% può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+      "spokenText": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa ottanta a novantacinque per cento può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+      "spokenTextSHA256": "f133d03f4ef0cefdfe4adebecce6599a3bd10c533554f251cdead04e13545f5d",
+      "spokenTextSha256": "f133d03f4ef0cefdfe4adebecce6599a3bd10c533554f251cdead04e13545f5d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa 80–95% può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+          "spoken": "Molti tessuti molli e in crescita contengono molta acqua. Una cifra didattica di circa ottanta a novantacinque per cento può descrivere alcuni tessuti freschi, ma non tutti gli organi: fusti legnosi e semi secchi differiscono nettamente. La domanda importante è quale funzione l’acqua svolge nelle cellule e nella pianta, non una percentuale universale.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e9d925113f4729b5bcee86ba2ac969edff68e0a5658dd254deaa249f67a4b207",
+      "requestFingerprintSha256": "e9d925113f4729b5bcee86ba2ac969edff68e0a5658dd254deaa249f67a4b207",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R03-r1",
+      "unitId": "S3-04-it-R03-r1",
+      "locale": "it",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "L’acqua è un reagente della fotosintesi, processo che usa luce per produrre zuccheri. Le radici assorbono acqua e nutrienti minerali disciolti, trasportati nei tessuti conduttori. La pressione idrica nelle cellule vive sostiene il turgore e la consistenza di foglie e radici fresche; perderlo può causare appassimento.",
+          "sha256": "cb42b38f3b4eb7ba1a7e22043323855e0fde43704956db9305617f21fdb1579e"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+          "sha256": "2b61f5d0bb3754d5b1c2a18c0a7e69edb5061530af6864cae6485099c31e8834"
+        }
+      ],
+      "scientificMeaning": "L’acqua è un reagente della fotosintesi, processo che usa luce per produrre zuccheri. Le radici assorbono acqua e nutrienti minerali disciolti, trasportati nei tessuti conduttori. La pressione idrica nelle cellule vive sostiene il turgore e la consistenza di foglie e radici fresche; perderlo può causare appassimento.\n\nL’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "displayText": "L’acqua è un reagente della fotosintesi, processo che usa luce per produrre zuccheri. Le radici assorbono acqua e nutrienti minerali disciolti, trasportati nei tessuti conduttori. La pressione idrica nelle cellule vive sostiene il turgore e la consistenza di foglie e radici fresche; perderlo può causare appassimento.\n\nL’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "captionText": "L’acqua è un reagente della fotosintesi, processo che usa luce per produrre zuccheri. Le radici assorbono acqua e nutrienti minerali disciolti, trasportati nei tessuti conduttori. La pressione idrica nelle cellule vive sostiene il turgore e la consistenza di foglie e radici fresche; perderlo può causare appassimento.\n\nL’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "spokenText": "L’acqua è un reagente della fotosintesi, processo che usa luce per produrre zuccheri. Le radici assorbono acqua e nutrienti minerali disciolti, trasportati nei tessuti conduttori. La pressione idrica nelle cellule vive sostiene il turgore e la consistenza di foglie e radici fresche; perderlo può causare appassimento.\n\nL’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "spokenTextSHA256": "9045ce4ae1d45b2d6fd5091982d1b12f39ea7ef80df6e2b98035ccbe8b924edc",
+      "spokenTextSha256": "9045ce4ae1d45b2d6fd5091982d1b12f39ea7ef80df6e2b98035ccbe8b924edc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a598dbc188f4ad5bb9023d89fb23c2da22aa0101397661d8115f3b6a98f817b7",
+      "requestFingerprintSha256": "a598dbc188f4ad5bb9023d89fb23c2da22aa0101397661d8115f3b6a98f817b7",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R04-r1",
+      "unitId": "S3-04-it-R04-r1",
+      "locale": "it",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Confrontare una carota fresca e croccante con una floscia o gommosa: illustra il turgore, ma non identifica da sola la causa dell’appassimento in campo. Porre un picciolo di sedano reciso con foglie in acqua con colorante alimentare sicuro, annotare l’ora iniziale e osservare le tracce dopo alcune ore oppure usare un campione preparato il giorno prima. Le tracce indicano movimento idrico nel tessuto vascolare: il colorante è tracciante visibile, non test quantitativo di nutrienti.",
+          "sha256": "f5b40537b590e3e7e2e86d8d68cd39d7aa6be5b1c253f443f29a84aa79a20844"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Lavare mani e attrezzi, non mettere l’acqua colorata in contenitori da bere e non mangiare l’ortaggio dopo la dimostrazione. Registrare le osservazioni senza attribuire la stessa velocità di trasporto a tutte le piante.",
+          "sha256": "132bbc1100b79b72ad767805b4d7a44eb96b34c13907002e74d52d559a8d51de"
+        }
+      ],
+      "scientificMeaning": "Confrontare una carota fresca e croccante con una floscia o gommosa: illustra il turgore, ma non identifica da sola la causa dell’appassimento in campo. Porre un picciolo di sedano reciso con foglie in acqua con colorante alimentare sicuro, annotare l’ora iniziale e osservare le tracce dopo alcune ore oppure usare un campione preparato il giorno prima. Le tracce indicano movimento idrico nel tessuto vascolare: il colorante è tracciante visibile, non test quantitativo di nutrienti.\n\nLavare mani e attrezzi, non mettere l’acqua colorata in contenitori da bere e non mangiare l’ortaggio dopo la dimostrazione. Registrare le osservazioni senza attribuire la stessa velocità di trasporto a tutte le piante.",
+      "displayText": "Confrontare una carota fresca e croccante con una floscia o gommosa: illustra il turgore, ma non identifica da sola la causa dell’appassimento in campo. Porre un picciolo di sedano reciso con foglie in acqua con colorante alimentare sicuro, annotare l’ora iniziale e osservare le tracce dopo alcune ore oppure usare un campione preparato il giorno prima. Le tracce indicano movimento idrico nel tessuto vascolare: il colorante è tracciante visibile, non test quantitativo di nutrienti.\n\nLavare mani e attrezzi, non mettere l’acqua colorata in contenitori da bere e non mangiare l’ortaggio dopo la dimostrazione. Registrare le osservazioni senza attribuire la stessa velocità di trasporto a tutte le piante.",
+      "captionText": "Confrontare una carota fresca e croccante con una floscia o gommosa: illustra il turgore, ma non identifica da sola la causa dell’appassimento in campo. Porre un picciolo di sedano reciso con foglie in acqua con colorante alimentare sicuro, annotare l’ora iniziale e osservare le tracce dopo alcune ore oppure usare un campione preparato il giorno prima. Le tracce indicano movimento idrico nel tessuto vascolare: il colorante è tracciante visibile, non test quantitativo di nutrienti.\n\nLavare mani e attrezzi, non mettere l’acqua colorata in contenitori da bere e non mangiare l’ortaggio dopo la dimostrazione. Registrare le osservazioni senza attribuire la stessa velocità di trasporto a tutte le piante.",
+      "spokenText": "Confrontare una carota fresca e croccante con una floscia o gommosa: illustra il turgore, ma non identifica da sola la causa dell’appassimento in campo. Porre un picciolo di sedano reciso con foglie in acqua con colorante alimentare sicuro, annotare l’ora iniziale e osservare le tracce dopo alcune ore oppure usare un campione preparato il giorno prima. Le tracce indicano movimento idrico nel tessuto vascolare: il colorante è tracciante visibile, non test quantitativo di nutrienti.\n\nLavare mani e attrezzi, non mettere l’acqua colorata in contenitori da bere e non mangiare l’ortaggio dopo la dimostrazione. Registrare le osservazioni senza attribuire la stessa velocità di trasporto a tutte le piante.",
+      "spokenTextSHA256": "1f163ae20e09568d6c1412e8b19489b73f19e739eb8b246cc06ac521fbaf8188",
+      "spokenTextSha256": "1f163ae20e09568d6c1412e8b19489b73f19e739eb8b246cc06ac521fbaf8188",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8f9d7dd4ea541d1b6a7004a8b840d0618c48a5e3e0aa7c9768d05997847f295d",
+      "requestFingerprintSha256": "8f9d7dd4ea541d1b6a7004a8b840d0618c48a5e3e0aa7c9768d05997847f295d",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R05-r1",
+      "unitId": "S3-04-it-R05-r1",
+      "locale": "it",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo (FC): acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.",
+          "sha256": "224540b94d6ce1a023aa90ceae388e097c21b01a141f3825a5a18357c82a7bc6"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Al punto di appassimento permanente (PWP) il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile (AWC) = FC − PWP sulla stessa base di misura. Sopra FC l’acqua tende a drenare; sotto PWP non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+          "sha256": "8c1c6e2c14a0efab309949c3a0f9bb6ec4c47e29999edcceb62e4383a3cdcc91"
+        }
+      ],
+      "scientificMeaning": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo (FC): acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente (PWP) il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile (AWC) = FC − PWP sulla stessa base di misura. Sopra FC l’acqua tende a drenare; sotto PWP non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+      "displayText": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo (FC): acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente (PWP) il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile (AWC) = FC − PWP sulla stessa base di misura. Sopra FC l’acqua tende a drenare; sotto PWP non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+      "captionText": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo (FC): acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente (PWP) il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile (AWC) = FC − PWP sulla stessa base di misura. Sopra FC l’acqua tende a drenare; sotto PWP non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+      "spokenText": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo: acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile uguale a capacità di campo meno punto di appassimento permanente sulla stessa base di misura. Sopra la capacità di campo l’acqua tende a drenare; sotto il punto di appassimento permanente non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+      "spokenTextSHA256": "0144990bbad218465acfd436e2c4de0a1db50ccdc1ec2df7ec915a0fac90c9da",
+      "spokenTextSha256": "0144990bbad218465acfd436e2c4de0a1db50ccdc1ec2df7ec915a0fac90c9da",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo (FC): acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente (PWP) il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile (AWC) = FC − PWP sulla stessa base di misura. Sopra FC l’acqua tende a drenare; sotto PWP non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+          "spoken": "Saturazione: i pori del suolo sono pieni d’acqua. Se gravità e via di uscita lo permettono, l’eccesso drena verso il basso; saturazione prolungata limita l’ossigeno delle radici. Capacità di campo: acqua rimasta dopo il drenaggio della frazione facilmente mobile secondo il metodo dichiarato. È un riferimento superiore per la riserva disponibile, non l’umidità ideale per ogni specie in ogni momento.\n\nAl punto di appassimento permanente il suolo trattiene acqua troppo fortemente perché la pianta di riferimento recuperi il turgore nelle condizioni definite. Capacità d’acqua disponibile uguale a capacità di campo meno punto di appassimento permanente sulla stessa base di misura. Sopra la capacità di campo l’acqua tende a drenare; sotto il punto di appassimento permanente non è disponibile per definizione. La spugna aiuta a comprendere la fascia centrale, ma strizzarla non misura i tre parametri in campo.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c298be047218ba1f5a32b28e1384a867c0c940c7482a1b9dc1dfa5d90ba55742",
+      "requestFingerprintSha256": "c298be047218ba1f5a32b28e1384a867c0c940c7482a1b9dc1dfa5d90ba55742",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-R06-r1",
+      "unitId": "S3-04-it-R06-r1",
+      "locale": "it",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "In un esempio dichiarato con FC = 30% e PWP = 12% sulla stessa base volumetrica, la differenza è 18 punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.",
+          "sha256": "70ce47521fb5364e5858f63e86f32215d3def964a4e4d439980ee83fc9858eea"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "La sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+          "sha256": "62bcb5ef6d0a2678a8edd457e2839d349b1595a713954bdb097b5488a333a864"
+        }
+      ],
+      "scientificMeaning": "In un esempio dichiarato con FC = 30% e PWP = 12% sulla stessa base volumetrica, la differenza è 18 punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+      "displayText": "In un esempio dichiarato con FC = 30% e PWP = 12% sulla stessa base volumetrica, la differenza è 18 punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+      "captionText": "In un esempio dichiarato con FC = 30% e PWP = 12% sulla stessa base volumetrica, la differenza è 18 punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+      "spokenText": "In un esempio dichiarato con capacità di campo uguale a trenta per cento e punto di appassimento permanente uguale a dodici per cento sulla stessa base volumetrica, la differenza è diciotto punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+      "spokenTextSHA256": "4a5d19b2b482dc7455afa1379152a43a57db2bf917a0be00a177b86e45b07829",
+      "spokenTextSha256": "4a5d19b2b482dc7455afa1379152a43a57db2bf917a0be00a177b86e45b07829",
+      "spokenAdaptationChanges": [
+        {
+          "written": "In un esempio dichiarato con FC = 30% e PWP = 12% sulla stessa base volumetrica, la differenza è 18 punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+          "spoken": "In un esempio dichiarato con capacità di campo uguale a trenta per cento e punto di appassimento permanente uguale a dodici per cento sulla stessa base volumetrica, la differenza è diciotto punti percentuali del volume del suolo. Sono valori didattici, non misure del proprio campo. Una quantità nella zona radicale richiede profondità e dati degli strati: non convertire direttamente il risultato in dose irrigua.\n\nLa sabbia spesso immagazzina meno acqua disponibile per unità di profondità di molti suoli medi, quindi intervalli più brevi possono essere plausibili a pari domanda, radici e impianto. Alcune argille trattengono più acqua totale ma una quota può essere inutilizzabile; la tessitura non classifica tutte le riserve accessibili. Struttura, organico, salinità, penetrazione radicale, stadio e monitoraggio cambiano la decisione. Stabilire frequenza e volume dal sito, non dal solo nome del suolo.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aa97b0353777c5cca18e3eb559f124474592c18399a55d257f2a85910f69901d",
+      "requestFingerprintSha256": "aa97b0353777c5cca18e3eb559f124474592c18399a55d257f2a85910f69901d",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

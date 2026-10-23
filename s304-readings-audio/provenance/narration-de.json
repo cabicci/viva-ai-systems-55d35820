@@ -1,0 +1,388 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-de.json",
+    "sha256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+    "bytes": 24585
+  },
+  "units": [
+    {
+      "id": "S3-04-de-R01a-r1",
+      "unitId": "S3-04-de-R01a-r1",
+      "locale": "de",
+      "semanticGroup": "R01a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "An eine Zimmerpflanze mit hängenden oder gelben Blättern denken: Was war zu sehen und welche verschiedenen Ursachen sind möglich? Erst eine Hypothese, dann eine Beobachtung zum Prüfen nennen. Welke oder Gelbfärbung allein beweist weder Trockenheit noch Mangel; Wurzelschaden, Staunässe, Hitze und anderes können ähnlich aussehen.",
+          "sha256": "1a16def33b0c1ed457a73f70be40a67ff27eeac6de96d2914fc41cbcbd6a1c36"
+        }
+      ],
+      "scientificMeaning": "An eine Zimmerpflanze mit hängenden oder gelben Blättern denken: Was war zu sehen und welche verschiedenen Ursachen sind möglich? Erst eine Hypothese, dann eine Beobachtung zum Prüfen nennen. Welke oder Gelbfärbung allein beweist weder Trockenheit noch Mangel; Wurzelschaden, Staunässe, Hitze und anderes können ähnlich aussehen.",
+      "displayText": "An eine Zimmerpflanze mit hängenden oder gelben Blättern denken: Was war zu sehen und welche verschiedenen Ursachen sind möglich? Erst eine Hypothese, dann eine Beobachtung zum Prüfen nennen. Welke oder Gelbfärbung allein beweist weder Trockenheit noch Mangel; Wurzelschaden, Staunässe, Hitze und anderes können ähnlich aussehen.",
+      "captionText": "An eine Zimmerpflanze mit hängenden oder gelben Blättern denken: Was war zu sehen und welche verschiedenen Ursachen sind möglich? Erst eine Hypothese, dann eine Beobachtung zum Prüfen nennen. Welke oder Gelbfärbung allein beweist weder Trockenheit noch Mangel; Wurzelschaden, Staunässe, Hitze und anderes können ähnlich aussehen.",
+      "spokenText": "An eine Zimmerpflanze mit hängenden oder gelben Blättern denken: Was war zu sehen und welche verschiedenen Ursachen sind möglich? Erst eine Hypothese, dann eine Beobachtung zum Prüfen nennen. Welke oder Gelbfärbung allein beweist weder Trockenheit noch Mangel; Wurzelschaden, Staunässe, Hitze und anderes können ähnlich aussehen.",
+      "spokenTextSHA256": "1a16def33b0c1ed457a73f70be40a67ff27eeac6de96d2914fc41cbcbd6a1c36",
+      "spokenTextSha256": "1a16def33b0c1ed457a73f70be40a67ff27eeac6de96d2914fc41cbcbd6a1c36",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ddcdc89476d781a0794b89f7c408b0aa04eba05c1d9f667df2059dc21cff4cba",
+      "requestFingerprintSha256": "ddcdc89476d781a0794b89f7c408b0aa04eba05c1d9f667df2059dc21cff4cba",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R01b-r1",
+      "unitId": "S3-04-de-R01b-r1",
+      "locale": "de",
+      "semanticGroup": "R01b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Das gesamte Originalthema umfasst 90 Minuten: 45 Erklärung und Diskussion, 45 Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.",
+          "sha256": "04d8f62f0ba37ea285de6cf0baa06fc661d9215b3f789f14c9efd53b1fb2145b"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Der Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+          "sha256": "e7f2db15c13f15009ceeb4fbb8f08588bcb7bda825deff50c2ce2bbcd9bdf376"
+        }
+      ],
+      "scientificMeaning": "Das gesamte Originalthema umfasst 90 Minuten: 45 Erklärung und Diskussion, 45 Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+      "displayText": "Das gesamte Originalthema umfasst 90 Minuten: 45 Erklärung und Diskussion, 45 Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+      "captionText": "Das gesamte Originalthema umfasst 90 Minuten: 45 Erklärung und Diskussion, 45 Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+      "spokenText": "Das gesamte Originalthema umfasst neunzig Minuten: fünfundvierzig Erklärung und Diskussion, fünfundvierzig Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+      "spokenTextSHA256": "a93bba1c97e723473cefd0d1e67e1f68bb68a2114292edfa90468b199d095345",
+      "spokenTextSha256": "a93bba1c97e723473cefd0d1e67e1f68bb68a2114292edfa90468b199d095345",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Das gesamte Originalthema umfasst 90 Minuten: 45 Erklärung und Diskussion, 45 Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+          "spoken": "Das gesamte Originalthema umfasst neunzig Minuten: fünfundvierzig Erklärung und Diskussion, fünfundvierzig Werkstatt zur Felddiagnose. Spätere Schritte behandeln Kulturwasserbedarf, Bewässerungsarten, Stresszeichen, Nährstoffe und belegte Maßnahmen. Hier werden Pflanzen- und Bodenwassergrundlagen gelegt; spätere Fertigkeiten gelten dadurch nicht als bestanden. Bodenproben im Glas, Karotte und Stangensellerie in gefärbtem Wasser sind optionale Lehrhilfen.\n\nDer Einstieg dauert fünf Minuten: etwa eine Minute zu zweit über eine kranke Zimmerpflanze sprechen, dann mehrere Paare hören. Zeichen und Hypothese notieren und später anhand von Belegen überprüfen.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2b89b5a80c99d179241a758393250f6a6f456cba5190316a392daaddf8f9b120",
+      "requestFingerprintSha256": "2b89b5a80c99d179241a758393250f6a6f456cba5190316a392daaddf8f9b120",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R01c-r1",
+      "unitId": "S3-04-de-R01c-r1",
+      "locale": "de",
+      "semanticGroup": "R01c",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-/Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.",
+          "sha256": "01d2096ebb984c4c7d94ce40bf39a9dd1cfaf4c2147aea2ccd01d58fc810cb97"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/4",
+          "text": "Material: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+          "sha256": "2fd6c301cff63279ef7e4ff342bdaa4303885b03de88818e08590debbb1f95f2"
+        }
+      ],
+      "scientificMeaning": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-/Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+      "displayText": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-/Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+      "captionText": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-/Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+      "spokenText": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-, Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+      "spokenTextSHA256": "ef21d3c81cdf3133d91fe5df4f187d77c7c130d8b6b0bf26c0ea37e3c41308f1",
+      "spokenTextSha256": "ef21d3c81cdf3133d91fe5df4f187d77c7c130d8b6b0bf26c0ea37e3c41308f1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-/Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+          "spoken": "Die fünf Themenziele sind häufiger Kulturwasserbedarf, Bewässerungsarten und Eignung, Wasserstresszeichen, wichtige Nährstoffe und mögliche Mängel sowie belegte Wasser-, Nährstoffmaßnahmen nach Abgleich von Kultur, Boden und Symptomen. Am Themenende wieder aufgreifen; dieser einzelne Schritt zertifiziert nicht alle Ziele.\n\nMaterial: Tafel oder Flipchart, Stifte, Projektor und vorbereitete Diagnosekarten. Optional Sand, Lehm und Ton in klaren Gläsern, Karotten und vorbereiteter Stangensellerie in Farbwasser. Der Schwamm ist ein Vergleich für den verfügbaren Bereich, kein Messgerät.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "584fc74ad4f27229159e93f0d9643718f28b9dfb5d1615f19fa5447198e65f59",
+      "requestFingerprintSha256": "584fc74ad4f27229159e93f0d9643718f28b9dfb5d1615f19fa5447198e65f59",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R02-r1",
+      "unitId": "S3-04-de-R02-r1",
+      "locale": "de",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa 80–95% kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+          "sha256": "ef67d5e9cd43e8dac7fd51c9d97abd612b131e8a677c10be374a34ce1fb2da1b"
+        }
+      ],
+      "scientificMeaning": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa 80–95% kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+      "displayText": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa 80–95% kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+      "captionText": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa 80–95% kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+      "spokenText": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa achtzig bis fünfundneunzig Prozent kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+      "spokenTextSHA256": "6854539119cdb1b473d1560187ce41dec95183a33a6c75ba11c28083e007e3f4",
+      "spokenTextSha256": "6854539119cdb1b473d1560187ce41dec95183a33a6c75ba11c28083e007e3f4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa 80–95% kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+          "spoken": "Viele frische, weiche Wachstumsgewebe enthalten viel Wasser. Die Lehrzahl etwa achtzig bis fünfundneunzig Prozent kann einige frische Gewebe beschreiben, ist aber kein fester Anteil in allen Pflanzenteilen: verholzte Stängel und trockene Samen unterscheiden sich stark. Wesentlich ist die Aufgabe des Wassers in Zellen und Pflanze, nicht ein allgemeiner Prozentsatz.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "144fcf1ee137dc6a0bb82faefdc1016d56447f38d88eab287dc6c0eb9b19a604",
+      "requestFingerprintSha256": "144fcf1ee137dc6a0bb82faefdc1016d56447f38d88eab287dc6c0eb9b19a604",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R03-r1",
+      "unitId": "S3-04-de-R03-r1",
+      "locale": "de",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Wasser ist ein Ausgangsstoff der Photosynthese, bei der Licht zur Zuckerbildung genutzt wird. Wurzeln nehmen Wasser und darin gelöste Mineralstoffe auf, die in Leitgeweben transportiert werden. Wasserdruck in lebenden Zellen erhält den Turgor und macht Blätter und frische Wurzeln fest; sein Verlust kann Welken auslösen.",
+          "sha256": "c118bb66d78a96491f50c8f0ce8df292f35b19aa81b14b7407b376dc8b05a1f3"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Wasser bewegt sich auch von Wurzeln zu Blättern und kann als Dampf über Spaltöffnungen austreten: Transpiration, die zur Kühlung beiträgt. Verdunstung von nackter Bodenoberfläche ist ein anderer Vorgang. Beides verursacht Wasserverlust im Feld; Farbe im Sellerieblattstiel zeigt jedoch Wasserleitwege, nicht Bodenverdunstung und keine genaue Nährstoffmessung.",
+          "sha256": "58c0b998ab7806dc92365485904f3540eb8ac68d51c13c00212ecf64af0a02f0"
+        }
+      ],
+      "scientificMeaning": "Wasser ist ein Ausgangsstoff der Photosynthese, bei der Licht zur Zuckerbildung genutzt wird. Wurzeln nehmen Wasser und darin gelöste Mineralstoffe auf, die in Leitgeweben transportiert werden. Wasserdruck in lebenden Zellen erhält den Turgor und macht Blätter und frische Wurzeln fest; sein Verlust kann Welken auslösen.\n\nWasser bewegt sich auch von Wurzeln zu Blättern und kann als Dampf über Spaltöffnungen austreten: Transpiration, die zur Kühlung beiträgt. Verdunstung von nackter Bodenoberfläche ist ein anderer Vorgang. Beides verursacht Wasserverlust im Feld; Farbe im Sellerieblattstiel zeigt jedoch Wasserleitwege, nicht Bodenverdunstung und keine genaue Nährstoffmessung.",
+      "displayText": "Wasser ist ein Ausgangsstoff der Photosynthese, bei der Licht zur Zuckerbildung genutzt wird. Wurzeln nehmen Wasser und darin gelöste Mineralstoffe auf, die in Leitgeweben transportiert werden. Wasserdruck in lebenden Zellen erhält den Turgor und macht Blätter und frische Wurzeln fest; sein Verlust kann Welken auslösen.\n\nWasser bewegt sich auch von Wurzeln zu Blättern und kann als Dampf über Spaltöffnungen austreten: Transpiration, die zur Kühlung beiträgt. Verdunstung von nackter Bodenoberfläche ist ein anderer Vorgang. Beides verursacht Wasserverlust im Feld; Farbe im Sellerieblattstiel zeigt jedoch Wasserleitwege, nicht Bodenverdunstung und keine genaue Nährstoffmessung.",
+      "captionText": "Wasser ist ein Ausgangsstoff der Photosynthese, bei der Licht zur Zuckerbildung genutzt wird. Wurzeln nehmen Wasser und darin gelöste Mineralstoffe auf, die in Leitgeweben transportiert werden. Wasserdruck in lebenden Zellen erhält den Turgor und macht Blätter und frische Wurzeln fest; sein Verlust kann Welken auslösen.\n\nWasser bewegt sich auch von Wurzeln zu Blättern und kann als Dampf über Spaltöffnungen austreten: Transpiration, die zur Kühlung beiträgt. Verdunstung von nackter Bodenoberfläche ist ein anderer Vorgang. Beides verursacht Wasserverlust im Feld; Farbe im Sellerieblattstiel zeigt jedoch Wasserleitwege, nicht Bodenverdunstung und keine genaue Nährstoffmessung.",
+      "spokenText": "Wasser ist ein Ausgangsstoff der Photosynthese, bei der Licht zur Zuckerbildung genutzt wird. Wurzeln nehmen Wasser und darin gelöste Mineralstoffe auf, die in Leitgeweben transportiert werden. Wasserdruck in lebenden Zellen erhält den Turgor und macht Blätter und frische Wurzeln fest; sein Verlust kann Welken auslösen.\n\nWasser bewegt sich auch von Wurzeln zu Blättern und kann als Dampf über Spaltöffnungen austreten: Transpiration, die zur Kühlung beiträgt. Verdunstung von nackter Bodenoberfläche ist ein anderer Vorgang. Beides verursacht Wasserverlust im Feld; Farbe im Sellerieblattstiel zeigt jedoch Wasserleitwege, nicht Bodenverdunstung und keine genaue Nährstoffmessung.",
+      "spokenTextSHA256": "a79992a6215d72684fd0c17e3bf932753f3589a3458a40f740bc5c6474b1cebf",
+      "spokenTextSha256": "a79992a6215d72684fd0c17e3bf932753f3589a3458a40f740bc5c6474b1cebf",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e688f63096fbfd81486dbb98167d5d29fa3e2846fe0c718a034a06074a2249b5",
+      "requestFingerprintSha256": "e688f63096fbfd81486dbb98167d5d29fa3e2846fe0c718a034a06074a2249b5",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R04-r1",
+      "unitId": "S3-04-de-R04-r1",
+      "locale": "de",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Eine frische knackige mit einer weichen, gummiartigen Karotte vergleichen: Das zeigt Turgor, aber nicht allein die Welkursache im Feld. Einen abgeschnittenen Sellerieblattstiel mit Blättern in Wasser mit sicherer Lebensmittelfarbe stellen, Startzeit notieren und gefärbte Wege nach Stunden beobachten oder eine am Vortag vorbereitete Probe verwenden. Der Farbstoff markiert Gefäßtransport sichtbar, ist kein quantitativer Nährstofftest.",
+          "sha256": "2d6eae911ef9cc8de34847b7e0abf3a81eedfc5a0d54720b08aa88344ab00235"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Hände und Geräte waschen, Farbwasser aus Trinkgefäßen fernhalten und das Gemüse nach dem Versuch nicht essen. Beobachtungen festhalten statt gleiche Transportgeschwindigkeit für jede Pflanze zu behaupten.",
+          "sha256": "36ca793a2ad638405ad2cb8b494b129fc71a5c494e14e122b741f19ad36f946f"
+        }
+      ],
+      "scientificMeaning": "Eine frische knackige mit einer weichen, gummiartigen Karotte vergleichen: Das zeigt Turgor, aber nicht allein die Welkursache im Feld. Einen abgeschnittenen Sellerieblattstiel mit Blättern in Wasser mit sicherer Lebensmittelfarbe stellen, Startzeit notieren und gefärbte Wege nach Stunden beobachten oder eine am Vortag vorbereitete Probe verwenden. Der Farbstoff markiert Gefäßtransport sichtbar, ist kein quantitativer Nährstofftest.\n\nHände und Geräte waschen, Farbwasser aus Trinkgefäßen fernhalten und das Gemüse nach dem Versuch nicht essen. Beobachtungen festhalten statt gleiche Transportgeschwindigkeit für jede Pflanze zu behaupten.",
+      "displayText": "Eine frische knackige mit einer weichen, gummiartigen Karotte vergleichen: Das zeigt Turgor, aber nicht allein die Welkursache im Feld. Einen abgeschnittenen Sellerieblattstiel mit Blättern in Wasser mit sicherer Lebensmittelfarbe stellen, Startzeit notieren und gefärbte Wege nach Stunden beobachten oder eine am Vortag vorbereitete Probe verwenden. Der Farbstoff markiert Gefäßtransport sichtbar, ist kein quantitativer Nährstofftest.\n\nHände und Geräte waschen, Farbwasser aus Trinkgefäßen fernhalten und das Gemüse nach dem Versuch nicht essen. Beobachtungen festhalten statt gleiche Transportgeschwindigkeit für jede Pflanze zu behaupten.",
+      "captionText": "Eine frische knackige mit einer weichen, gummiartigen Karotte vergleichen: Das zeigt Turgor, aber nicht allein die Welkursache im Feld. Einen abgeschnittenen Sellerieblattstiel mit Blättern in Wasser mit sicherer Lebensmittelfarbe stellen, Startzeit notieren und gefärbte Wege nach Stunden beobachten oder eine am Vortag vorbereitete Probe verwenden. Der Farbstoff markiert Gefäßtransport sichtbar, ist kein quantitativer Nährstofftest.\n\nHände und Geräte waschen, Farbwasser aus Trinkgefäßen fernhalten und das Gemüse nach dem Versuch nicht essen. Beobachtungen festhalten statt gleiche Transportgeschwindigkeit für jede Pflanze zu behaupten.",
+      "spokenText": "Eine frische knackige mit einer weichen, gummiartigen Karotte vergleichen: Das zeigt Turgor, aber nicht allein die Welkursache im Feld. Einen abgeschnittenen Sellerieblattstiel mit Blättern in Wasser mit sicherer Lebensmittelfarbe stellen, Startzeit notieren und gefärbte Wege nach Stunden beobachten oder eine am Vortag vorbereitete Probe verwenden. Der Farbstoff markiert Gefäßtransport sichtbar, ist kein quantitativer Nährstofftest.\n\nHände und Geräte waschen, Farbwasser aus Trinkgefäßen fernhalten und das Gemüse nach dem Versuch nicht essen. Beobachtungen festhalten statt gleiche Transportgeschwindigkeit für jede Pflanze zu behaupten.",
+      "spokenTextSHA256": "89b62652d531449f9983cd3c4c6b3dca6896b573eec9e80e2936101f2581f715",
+      "spokenTextSha256": "89b62652d531449f9983cd3c4c6b3dca6896b573eec9e80e2936101f2581f715",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9f4068d9e31e0ff60ecd5f54a87cf07be7591208252e37a08cd7116385646999",
+      "requestFingerprintSha256": "9f4068d9e31e0ff60ecd5f54a87cf07be7591208252e37a08cd7116385646999",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R05-r1",
+      "unitId": "S3-04-de-R05-r1",
+      "locale": "de",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität (FC) ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.",
+          "sha256": "2cb7108c97bdb849de96ff3e8a43d482c59822f37b6f25d16637136221021ca2"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Beim permanenten Welkepunkt (PWP) hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität (AWC) ist FC − PWP auf gleicher Messbasis. Wasser oberhalb FC neigt zur Drainage, unterhalb PWP ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+          "sha256": "9e2da05e26138c04ee30af83d4530c727d7e4307d85a8cdb5447c8a28b493927"
+        }
+      ],
+      "scientificMeaning": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität (FC) ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt (PWP) hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität (AWC) ist FC − PWP auf gleicher Messbasis. Wasser oberhalb FC neigt zur Drainage, unterhalb PWP ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+      "displayText": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität (FC) ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt (PWP) hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität (AWC) ist FC − PWP auf gleicher Messbasis. Wasser oberhalb FC neigt zur Drainage, unterhalb PWP ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+      "captionText": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität (FC) ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt (PWP) hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität (AWC) ist FC − PWP auf gleicher Messbasis. Wasser oberhalb FC neigt zur Drainage, unterhalb PWP ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+      "spokenText": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität ist Feldkapazität minus permanenter Welkepunkt auf gleicher Messbasis. Wasser oberhalb der Feldkapazität neigt zur Drainage, unterhalb des permanenten Welkepunkts ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+      "spokenTextSHA256": "cea30fb3d17f8f5998355eb08941f1c9bb28f8840ba1b6e47888dbe355c20bfa",
+      "spokenTextSha256": "cea30fb3d17f8f5998355eb08941f1c9bb28f8840ba1b6e47888dbe355c20bfa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität (FC) ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt (PWP) hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität (AWC) ist FC − PWP auf gleicher Messbasis. Wasser oberhalb FC neigt zur Drainage, unterhalb PWP ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+          "spoken": "Sättigung heißt, dass die Bodenporen mit Wasser gefüllt sind. Bei wirksamer Schwerkraft und Abfluss kann überschüssiges Wasser nach unten ablaufen; längere Sättigung kann Wurzelsauerstoff begrenzen. Feldkapazität ist das Wasser nach Abfluss leicht drainierbarer Anteile unter der angegebenen Methode. Sie ist eine obere Bezugsgröße für verfügbaren Speicher, nicht zu jedem Zeitpunkt die ideale Feuchte jeder Kultur.\n\nBeim permanenten Welkepunkt hält der Boden Wasser für die definierte Pflanze zu fest, um unter definierten Bedingungen wieder Turgor zu erreichen. Nutzbare Wasserkapazität ist Feldkapazität minus permanenter Welkepunkt auf gleicher Messbasis. Wasser oberhalb der Feldkapazität neigt zur Drainage, unterhalb des permanenten Welkepunkts ist es nach dieser Definition nicht verfügbar. Ein Schwamm veranschaulicht die Mitte, ist aber keine Feldmessung der Grenzen.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "054ae88a7b324fbd9ca97654501532658a68dd9d67bfb6b4416fc15af6096a89",
+      "requestFingerprintSha256": "054ae88a7b324fbd9ca97654501532658a68dd9d67bfb6b4416fc15af6096a89",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-04-de-R06-r1",
+      "unitId": "S3-04-de-R06-r1",
+      "locale": "de",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Gibt ein gekennzeichnetes Rechenbeispiel FC = 30% und PWP = 12% auf gleicher Volumenbasis an, beträgt die Differenz 18 Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.",
+          "sha256": "0b8f0cf287050d6f3c0a0cc480936327e46937342c98ab8ed3f5fb81f2978640"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Sandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+          "sha256": "9693357746b72663ffb4d6666412b6d961d8ff856427451ccf6a4a2b3455071e"
+        }
+      ],
+      "scientificMeaning": "Gibt ein gekennzeichnetes Rechenbeispiel FC = 30% und PWP = 12% auf gleicher Volumenbasis an, beträgt die Differenz 18 Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+      "displayText": "Gibt ein gekennzeichnetes Rechenbeispiel FC = 30% und PWP = 12% auf gleicher Volumenbasis an, beträgt die Differenz 18 Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+      "captionText": "Gibt ein gekennzeichnetes Rechenbeispiel FC = 30% und PWP = 12% auf gleicher Volumenbasis an, beträgt die Differenz 18 Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+      "spokenText": "Gibt ein gekennzeichnetes Rechenbeispiel Feldkapazität gleich dreißig Prozent und permanenter Welkepunkt gleich zwölf Prozent auf gleicher Volumenbasis an, beträgt die Differenz achtzehn Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+      "spokenTextSHA256": "1361a41e38aa1ee1240bb2ff5be2a471141db6095fdc09583ddad98f126450aa",
+      "spokenTextSha256": "1361a41e38aa1ee1240bb2ff5be2a471141db6095fdc09583ddad98f126450aa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Gibt ein gekennzeichnetes Rechenbeispiel FC = 30% und PWP = 12% auf gleicher Volumenbasis an, beträgt die Differenz 18 Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+          "spoken": "Gibt ein gekennzeichnetes Rechenbeispiel Feldkapazität gleich dreißig Prozent und permanenter Welkepunkt gleich zwölf Prozent auf gleicher Volumenbasis an, beträgt die Differenz achtzehn Prozentpunkte des Bodenvolumens. Diese Zahlen sind Lehrwerte, keine Feldmessung. Für eine Wassermenge im Wurzelraum braucht man tatsächliche Wurzeltiefe und Schichtdaten; das Ergebnis nicht direkt in Bewässerungsmenge umwandeln.\n\nSandböden speichern je Tiefe häufig weniger pflanzenverfügbares Wasser als viele mittlere Böden; kürzere Intervalle können bei vergleichbarem Pflanzenbedarf, Wurzeln und System plausibel sein. Manche tonreichen Böden halten insgesamt mehr Wasser, doch vieles kann unzugänglich sein, und die Textur ordnet nicht jedes Feld. Struktur, organische Substanz, Salz, Durchwurzelung, Stadium und Feuchtemessung beeinflussen die Entscheidung. Häufigkeit und Volumen aus dem Standort statt nur aus „Sand“ oder „Ton“ ableiten.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d1b341b257506deeab6549564a8030ec14333d9cf5aad7b88417489d90a81609",
+      "requestFingerprintSha256": "d1b341b257506deeab6549564a8030ec14333d9cf5aad7b88417489d90a81609",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

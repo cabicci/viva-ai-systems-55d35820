@@ -1,0 +1,388 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-en.json",
+    "sha256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+    "bytes": 25054
+  },
+  "units": [
+    {
+      "id": "S3-04-en-R01a-r1",
+      "unitId": "S3-04-en-R01a-r1",
+      "locale": "en",
+      "semanticGroup": "R01a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Think of a houseplant that drooped or yellowed. What did you notice, and what possible causes could produce that sign? Discuss a first hypothesis, then ask what observation would test it. A wilting or yellow leaf alone does not prove drought or a nutrient deficiency; root damage, waterlogging, heat or other problems may look similar.",
+          "sha256": "e22b2540e05f9e539768345c10183eed0267e66304a18ad8921f689d7f225b1e"
+        }
+      ],
+      "scientificMeaning": "Think of a houseplant that drooped or yellowed. What did you notice, and what possible causes could produce that sign? Discuss a first hypothesis, then ask what observation would test it. A wilting or yellow leaf alone does not prove drought or a nutrient deficiency; root damage, waterlogging, heat or other problems may look similar.",
+      "displayText": "Think of a houseplant that drooped or yellowed. What did you notice, and what possible causes could produce that sign? Discuss a first hypothesis, then ask what observation would test it. A wilting or yellow leaf alone does not prove drought or a nutrient deficiency; root damage, waterlogging, heat or other problems may look similar.",
+      "captionText": "Think of a houseplant that drooped or yellowed. What did you notice, and what possible causes could produce that sign? Discuss a first hypothesis, then ask what observation would test it. A wilting or yellow leaf alone does not prove drought or a nutrient deficiency; root damage, waterlogging, heat or other problems may look similar.",
+      "spokenText": "Think of a houseplant that drooped or yellowed. What did you notice, and what possible causes could produce that sign? Discuss a first hypothesis, then ask what observation would test it. A wilting or yellow leaf alone does not prove drought or a nutrient deficiency; root damage, waterlogging, heat or other problems may look similar.",
+      "spokenTextSHA256": "e22b2540e05f9e539768345c10183eed0267e66304a18ad8921f689d7f225b1e",
+      "spokenTextSha256": "e22b2540e05f9e539768345c10183eed0267e66304a18ad8921f689d7f225b1e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "48d614689616e4d96cbe6e5f8070b219bf4c7cb07a46fcc335709c1faba425bd",
+      "requestFingerprintSha256": "48d614689616e4d96cbe6e5f8070b219bf4c7cb07a46fcc335709c1faba425bd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R01b-r1",
+      "unitId": "S3-04-en-R01b-r1",
+      "locale": "en",
+      "semanticGroup": "R01b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Across this 90-minute topic, the original teaching plan allocates 45 minutes to explanation/discussion and 45 minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.",
+          "sha256": "30194fb047039524546c4d170ba95b9969778c82b985af2a3c42dec69e73bee7"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "The opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+          "sha256": "37e490c6c38986b8711294fb80b1a325d5aa774a8bfba92d2306b024d8f3734d"
+        }
+      ],
+      "scientificMeaning": "Across this 90-minute topic, the original teaching plan allocates 45 minutes to explanation/discussion and 45 minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+      "displayText": "Across this 90-minute topic, the original teaching plan allocates 45 minutes to explanation/discussion and 45 minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+      "captionText": "Across this 90-minute topic, the original teaching plan allocates 45 minutes to explanation/discussion and 45 minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+      "spokenText": "Across this ninety-minute topic, the original teaching plan allocates forty-five minutes to explanation, discussion and forty-five minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+      "spokenTextSHA256": "1b6daa27ede1f26147b19e56d571986074b8583763159e78064f8880883f7ddb",
+      "spokenTextSha256": "1b6daa27ede1f26147b19e56d571986074b8583763159e78064f8880883f7ddb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Across this 90-minute topic, the original teaching plan allocates 45 minutes to explanation/discussion and 45 minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+          "spoken": "Across this ninety-minute topic, the original teaching plan allocates forty-five minutes to explanation, discussion and forty-five minutes to a field-diagnosis workshop. Later steps address crop water requirements, irrigation methods, stress signs, nutrients and evidence-based management recommendations. This step establishes the plant and soil water concepts; it does not certify the later skills. The trainer may use soil jars, a carrot and colored-water celery as optional aids.\n\nThe opening takes five minutes: talk with a partner about an unhealthy houseplant for about one minute, then hear examples from several pairs. Record the sign and a possible cause; return to the hypothesis when evidence is available.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3bbfa99985790a7a52aa991d2bb6addcaff09cee2a58101c49f643bb54f2b58d",
+      "requestFingerprintSha256": "3bbfa99985790a7a52aa991d2bb6addcaff09cee2a58101c49f643bb54f2b58d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R01c-r1",
+      "unitId": "S3-04-en-R01c-r1",
+      "locale": "en",
+      "semanticGroup": "R01c",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water/nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.",
+          "sha256": "bdc6a786589399f5afb1c1252f5eb420f8bc81226ab2828162db30538be2a2a1"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/4",
+          "text": "Class materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+          "sha256": "75468779102d2bf2fae4e604deeb42566f94f2f9f1bed47adbcaef5a1a02f8e8"
+        }
+      ],
+      "scientificMeaning": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water/nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+      "displayText": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water/nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+      "captionText": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water/nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+      "spokenText": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water, nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+      "spokenTextSHA256": "1c694c43aa1580feb43c16badaa1566d9d05987bf28cc2e7752518b19c492862",
+      "spokenTextSha256": "1c694c43aa1580feb43c16badaa1566d9d05987bf28cc2e7752518b19c492862",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water/nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+          "spoken": "The five wider-topic outcomes are: identify common crop water needs; describe irrigation methods and their suitability; recognise water-stress signs; identify key nutrients and possible deficiency signs; and recommend basic water, nutrient management after corroborating crop, soil and symptom evidence. Revisit these at the topic end. They are not all certified by this single step.\n\nClass materials are a whiteboard or flip chart, markers, projector and prepared diagnostic case cards. Optional aids are sand, loam and clay in clear jars, carrots and prepared coloured-water celery. A sponge is an analogy for the available interval, not a measuring instrument.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c00ed3d033cb1d64ce663d2ee16cc1a16db6352e6c520c3dac8e00f3625180bb",
+      "requestFingerprintSha256": "c00ed3d033cb1d64ce663d2ee16cc1a16db6352e6c520c3dac8e00f3625180bb",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R02-r1",
+      "unitId": "S3-04-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around 80–95% may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+          "sha256": "d3e1f35237fc8fab55ae0f4425decaf730fc42d4df2efc728d81be8ed8ee0049"
+        }
+      ],
+      "scientificMeaning": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around 80–95% may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+      "displayText": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around 80–95% may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+      "captionText": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around 80–95% may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+      "spokenText": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around eighty to ninety-five percent may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+      "spokenTextSHA256": "a5558d3d10f53c07b9ef3e9528e9082517d833f03cc8147c01048b9837c307fa",
+      "spokenTextSha256": "a5558d3d10f53c07b9ef3e9528e9082517d833f03cc8147c01048b9837c307fa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around 80–95% may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+          "spoken": "Many actively growing, soft plant tissues contain a high fraction of water. A teaching figure around eighty to ninety-five percent may describe some fresh tissues, but it is not a fixed percentage for every plant part: woody stems and dry seeds differ greatly. The useful question is what water does in living cells and the plant, not a universal tissue percentage.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "96ab1073bf258e74a41b7c9afc908d8db3bc4ef90f9ce2b1084713fdb6b1d627",
+      "requestFingerprintSha256": "96ab1073bf258e74a41b7c9afc908d8db3bc4ef90f9ce2b1084713fdb6b1d627",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R03-r1",
+      "unitId": "S3-04-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Water is a reactant in photosynthesis, the process that uses light to make sugars. Roots take in water and dissolved mineral nutrients, which move through transport tissues. Water pressure inside living cells supports turgor, helping a leaf or fresh root remain firm; a loss of turgor can cause wilting.",
+          "sha256": "91eb42239ef689e421f07cf657bf02feea12e4d63e202212676ab15f230333ea"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Water also moves from roots to leaves and can leave as vapour through stomata: this is transpiration, which can help cool the plant. Evaporation from bare soil is a separate process. Both contribute to field water loss, but colored water travelling up a celery petiole shows transport pathways, not evaporation from soil and not an exact nutrient measurement.",
+          "sha256": "b3edfb43407663c33db70bdfb7df9b0a8ca8a8d238e588976a1638df8cca3f19"
+        }
+      ],
+      "scientificMeaning": "Water is a reactant in photosynthesis, the process that uses light to make sugars. Roots take in water and dissolved mineral nutrients, which move through transport tissues. Water pressure inside living cells supports turgor, helping a leaf or fresh root remain firm; a loss of turgor can cause wilting.\n\nWater also moves from roots to leaves and can leave as vapour through stomata: this is transpiration, which can help cool the plant. Evaporation from bare soil is a separate process. Both contribute to field water loss, but colored water travelling up a celery petiole shows transport pathways, not evaporation from soil and not an exact nutrient measurement.",
+      "displayText": "Water is a reactant in photosynthesis, the process that uses light to make sugars. Roots take in water and dissolved mineral nutrients, which move through transport tissues. Water pressure inside living cells supports turgor, helping a leaf or fresh root remain firm; a loss of turgor can cause wilting.\n\nWater also moves from roots to leaves and can leave as vapour through stomata: this is transpiration, which can help cool the plant. Evaporation from bare soil is a separate process. Both contribute to field water loss, but colored water travelling up a celery petiole shows transport pathways, not evaporation from soil and not an exact nutrient measurement.",
+      "captionText": "Water is a reactant in photosynthesis, the process that uses light to make sugars. Roots take in water and dissolved mineral nutrients, which move through transport tissues. Water pressure inside living cells supports turgor, helping a leaf or fresh root remain firm; a loss of turgor can cause wilting.\n\nWater also moves from roots to leaves and can leave as vapour through stomata: this is transpiration, which can help cool the plant. Evaporation from bare soil is a separate process. Both contribute to field water loss, but colored water travelling up a celery petiole shows transport pathways, not evaporation from soil and not an exact nutrient measurement.",
+      "spokenText": "Water is a reactant in photosynthesis, the process that uses light to make sugars. Roots take in water and dissolved mineral nutrients, which move through transport tissues. Water pressure inside living cells supports turgor, helping a leaf or fresh root remain firm; a loss of turgor can cause wilting.\n\nWater also moves from roots to leaves and can leave as vapour through stomata: this is transpiration, which can help cool the plant. Evaporation from bare soil is a separate process. Both contribute to field water loss, but colored water travelling up a celery petiole shows transport pathways, not evaporation from soil and not an exact nutrient measurement.",
+      "spokenTextSHA256": "4382f4961b36d41184d95536249df1aa1dc2bf806e31b2dd5c78f52754ccae5f",
+      "spokenTextSha256": "4382f4961b36d41184d95536249df1aa1dc2bf806e31b2dd5c78f52754ccae5f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1faccfb7094ad2dcf064f30a00f32fb25ff17b3b5ecaa9003b53c4748f12baa1",
+      "requestFingerprintSha256": "1faccfb7094ad2dcf064f30a00f32fb25ff17b3b5ecaa9003b53c4748f12baa1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R04-r1",
+      "unitId": "S3-04-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+          "sha256": "107b1e010a8db434d0a5a16658e4cb14102d5b3a495f6b0495e326b07a44d88a"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Wash hands and equipment used for the classroom demonstration, keep dyed water out of drinking containers, and do not treat the vegetable as food after the demonstration. Record observations instead of claiming that every plant transports water at the same rate.",
+          "sha256": "d0e4a2721f5a67a0c60adc603d9af9c25975d479af00663e3e221018a0de5165"
+        }
+      ],
+      "scientificMeaning": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.\n\nWash hands and equipment used for the classroom demonstration, keep dyed water out of drinking containers, and do not treat the vegetable as food after the demonstration. Record observations instead of claiming that every plant transports water at the same rate.",
+      "displayText": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.\n\nWash hands and equipment used for the classroom demonstration, keep dyed water out of drinking containers, and do not treat the vegetable as food after the demonstration. Record observations instead of claiming that every plant transports water at the same rate.",
+      "captionText": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.\n\nWash hands and equipment used for the classroom demonstration, keep dyed water out of drinking containers, and do not treat the vegetable as food after the demonstration. Record observations instead of claiming that every plant transports water at the same rate.",
+      "spokenText": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.\n\nWash hands and equipment used for the classroom demonstration, keep dyed water out of drinking containers, and do not treat the vegetable as food after the demonstration. Record observations instead of claiming that every plant transports water at the same rate.",
+      "spokenTextSHA256": "cb50332c5b78db8ee5398aa81f3a1f2694163fc5f772ff90b1131d897a57b550",
+      "spokenTextSha256": "cb50332c5b78db8ee5398aa81f3a1f2694163fc5f772ff90b1131d897a57b550",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9d0e3f1a118dab58bebec2f4b89b058daab0e52a91402428e981c3722991d2c7",
+      "requestFingerprintSha256": "9d0e3f1a118dab58bebec2f4b89b058daab0e52a91402428e981c3722991d2c7",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R05-r1",
+      "unitId": "S3-04-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity (FC) is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.",
+          "sha256": "32fd2e93d6f940d808ff0a4ec181a3283e2829f41c9a242969b4a50b56d0b288"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "At the permanent wilting point (PWP), the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity (AWC) is the difference FC − PWP on the same measurement basis. Water above FC tends to drain; water below PWP is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of FC, PWP or AWC.",
+          "sha256": "f50d15b172aa810db18fd1d75da6f1e97eeb2d2a638b994213970deeef4de608"
+        }
+      ],
+      "scientificMeaning": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity (FC) is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point (PWP), the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity (AWC) is the difference FC − PWP on the same measurement basis. Water above FC tends to drain; water below PWP is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of FC, PWP or AWC.",
+      "displayText": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity (FC) is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point (PWP), the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity (AWC) is the difference FC − PWP on the same measurement basis. Water above FC tends to drain; water below PWP is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of FC, PWP or AWC.",
+      "captionText": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity (FC) is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point (PWP), the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity (AWC) is the difference FC − PWP on the same measurement basis. Water above FC tends to drain; water below PWP is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of FC, PWP or AWC.",
+      "spokenText": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point, the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity is the difference field capacity minus permanent wilting point on the same measurement basis. Water above field capacity tends to drain; water below permanent wilting point is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of field capacity, permanent wilting point or plant-available water capacity.",
+      "spokenTextSHA256": "ccb560bfe5258bb29d3c10ba31206e1cad235dfe17b76c1e94405ed585ec2043",
+      "spokenTextSha256": "ccb560bfe5258bb29d3c10ba31206e1cad235dfe17b76c1e94405ed585ec2043",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity (FC) is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point (PWP), the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity (AWC) is the difference FC − PWP on the same measurement basis. Water above FC tends to drain; water below PWP is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of FC, PWP or AWC.",
+          "spoken": "Saturation means that soil pore space is filled with water. Under gravity and a functioning outlet, some excess water drains downward; prolonged saturation can limit oxygen to roots. Field capacity is the water remaining after readily drainable water has left under the stated method. It is an upper reference for plant-available storage, not a universal ideal moisture level for all crops at every moment.\n\nAt the permanent wilting point, the soil holds water too tightly for the reference plant to recover turgor under the defined conditions. Plant-available water capacity is the difference field capacity minus permanent wilting point on the same measurement basis. Water above field capacity tends to drain; water below permanent wilting point is not available by this definition. The sponge analogy helps identify the middle range, but squeezing a sponge is not a field measurement of field capacity, permanent wilting point or plant-available water capacity.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0f8437b2e78e459fae02726d33a69eb0c5072d6a45334a30b299d0ca3e45ffed",
+      "requestFingerprintSha256": "0f8437b2e78e459fae02726d33a69eb0c5072d6a45334a30b299d0ca3e45ffed",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-R06-r1",
+      "unitId": "S3-04-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "If a worked example gives FC = 30% and PWP = 12% by the same volume basis, the difference is 18 percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.",
+          "sha256": "8c1706c5b9396b0b383c8462e54968b04f2f3b406ea8a56f09531df26e2b51eb"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Sandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+          "sha256": "35a7cb2e64e0dfc941a3f95350100744414986e538e2817195b2d73570b7cac2"
+        }
+      ],
+      "scientificMeaning": "If a worked example gives FC = 30% and PWP = 12% by the same volume basis, the difference is 18 percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+      "displayText": "If a worked example gives FC = 30% and PWP = 12% by the same volume basis, the difference is 18 percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+      "captionText": "If a worked example gives FC = 30% and PWP = 12% by the same volume basis, the difference is 18 percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+      "spokenText": "If a worked example gives a field capacity of thirty percent and a permanent wilting point of twelve percent by the same volume basis, the difference is eighteen percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+      "spokenTextSHA256": "ca8e2c01c7c779a1cb685caba582b971d701be86e026524b5d5535111e4a7915",
+      "spokenTextSha256": "ca8e2c01c7c779a1cb685caba582b971d701be86e026524b5d5535111e4a7915",
+      "spokenAdaptationChanges": [
+        {
+          "written": "If a worked example gives FC = 30% and PWP = 12% by the same volume basis, the difference is 18 percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+          "spoken": "If a worked example gives a field capacity of thirty percent and a permanent wilting point of twelve percent by the same volume basis, the difference is eighteen percentage points of soil volume. Those are labelled teaching values, not measured values for your field. A root-zone water amount also needs the relevant rooting depth and soil-layer data; do not turn the percentage-point result straight into an irrigation rate.\n\nSandy soils often store less plant-available water per unit depth than many medium-textured soils, so shorter intervals can be plausible when crop demand, roots and irrigation system are comparable. Some clay-rich soils hold more total water but much may be unavailable, and texture does not rank every field's usable root-zone water. Structure, organic matter, salinity, root penetration, crop growth stage and monitoring can change the decision. Judge frequency and volume from the site rather than the texture label alone.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful coherentparagraph narration; naturalspoken numerals/percent/minus/FC-PWP-AWC quantitynames with connectedArabicconjunction and English/Italiangrammar.30minus12=18PERCENTAGEPOINTSsamevolume/nodosefromdifference/90wide-topic andallqualifiers retained. Canonical/display/source readonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "05ceee3556582c3e026103a36237dbbb406082e2917965d3623d955358af8826",
+      "requestFingerprintSha256": "05ceee3556582c3e026103a36237dbbb406082e2917965d3623d955358af8826",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
