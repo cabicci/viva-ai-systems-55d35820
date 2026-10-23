@@ -1,0 +1,75 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-07-ar-EG.json",
+    "sha256": "9cd0f2847cd5c2861056254cd801a2bc7e8fd7f6907ee247421d12a46bb7f7b2",
+    "bytes": 40594
+  },
+  "units": [
+    {
+      "id": "S2-07-ar-EG-R01-source-phrase-repair-r1",
+      "unitId": "S2-07-ar-EG-R01-source-phrase-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "exception-s207-ar-r01-source-phrase-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "9cd0f2847cd5c2861056254cd801a2bc7e8fd7f6907ee247421d12a46bb7f7b2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+          "sha256": "178aeec72f31b2491050824f8c63cea6327d5c54c3a4f3bf26354abb47cb70a0"
+        }
+      ],
+      "scientificMeaning": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+      "displayText": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+      "captionText": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+      "spokenText": "ما تدفعش مسبار زجاج عادي في التربة لمجرد إن شاشته بتعرض أرقام.",
+      "spokenTextSHA256": "f5ef0e6a4932aaf486a7e94c58cc90c9be0b98b7597124bd374eca2a12418e16",
+      "spokenTextSha256": "f5ef0e6a4932aaf486a7e94c58cc90c9be0b98b7597124bd374eca2a12418e16",
+      "spokenAdaptationChanges": [
+        {
+          "written": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+          "spoken": "ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+          "spoken": "ما تدفعش مسبار زجاج عادي في التربة لمجرد إن شاشته بتعرض أرقام.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "035ad143eaf0378ffa073e1ccbe0f8d0e7a7b93dd9f7c92020387e7e48754f8f",
+      "requestFingerprintSha256": "035ad143eaf0378ffa073e1ccbe0f8d0e7a7b93dd9f7c92020387e7e48754f8f",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/0/paragraphs/0",
+        "original": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+        "effective": "جهاز pH الرقمي بيقدّر حموضة الوسط اللي بيلمس المسبار. وجود خانتين عشريتين على الشاشة ما يثبتش إن سحب العينة أو المعايرة أو التحضير كانوا صح. علّم العينة الممثلة أولًا، وبعدها حدد هل الجهاز المعتمد مخصص يلمس التربة مباشرة ولا يشتغل على معلق تربة. ما تدفعش قطبًا زجاجيًا عاديًا في الأرض لمجرد إنه بيعرض أرقامًا.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
