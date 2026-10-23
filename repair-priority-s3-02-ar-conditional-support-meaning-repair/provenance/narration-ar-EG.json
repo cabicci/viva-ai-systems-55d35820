@@ -1,0 +1,72 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-ar-EG.json",
+    "sha256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+    "bytes": 42602
+  },
+  "units": [
+    {
+      "id": "S3-02-ar-EG-conditional-support-meaning-repair-r1",
+      "unitId": "S3-02-ar-EG-conditional-support-meaning-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-priority-s3-02-ar-conditional-support-meaning-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/reasonBoundary",
+          "text": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+          "sha256": "54047e548e1bf447f7fce14e8d3384b61f99fe35f4073e8363c9fc4c1ea2e654"
+        }
+      ],
+      "scientificMeaning": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+      "displayText": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+      "captionText": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+      "spokenText": "قارن تبريرك وعدّله. الزر مش بيقيّم صحة التفسير، ومش بيديك اجتياز للمعيار.",
+      "spokenTextSHA256": "c9f20d63cf3f546fe1030c2aae8b9babc18195bca4970f0e247893c3fa677635",
+      "spokenTextSha256": "c9f20d63cf3f546fe1030c2aae8b9babc18195bca4970f0e247893c3fa677635",
+      "spokenAdaptationChanges": [
+        {
+          "written": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+          "spoken": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+          "spoken": "قارن تبريرك وعدّله. الزر مش بيقيّم صحة التفسير، ومش بيديك اجتياز للمعيار.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "d05318b8c69de77271c574c380491841e177370def975bfc0313e5b478dfde53",
+      "requestFingerprintSha256": "d05318b8c69de77271c574c380491841e177370def975bfc0313e5b478dfde53",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\five-meaning-priority-repairs-root-authority-r1.json",
+        "authoritySHA256": "f720d03b66fba9da2c37a833d87476dd4c4084ba6228817e29e60d09e798ea91"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
