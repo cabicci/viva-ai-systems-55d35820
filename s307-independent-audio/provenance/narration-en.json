@@ -1,0 +1,318 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-en.json",
+    "sha256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+    "bytes": 40383
+  },
+  "units": [
+    {
+      "id": "S3-07-en-opening-r1",
+      "unitId": "S3-07-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.",
+          "sha256": "e4067b43438f8f05a181cdb3419debbc77d911a0877cdeed5600535bb36d5da6"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Separate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.",
+          "sha256": "41d6fca98134b20eb7b89bf9df415fd27d09428afe0fdce6c618d3aa48ffe78b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Build a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.",
+          "sha256": "e8f01f4560f7f6092a72934244a814deccf83e46a771d198fbcf1041086ba78f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Work through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "sha256": "a5b2792ba6601849de4e2aba1ea0696a2594a5e72199e5761377437855507a67"
+        }
+      ],
+      "scientificMeaning": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "displayText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "captionText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "spokenText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four decisions of the four R principles, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-C A source rather than a complete N P K product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "spokenTextSHA256": "229089d0fc913c660ba10c9719118ac0986c9e8f68ed1c4601afde4f3835eb91",
+      "spokenTextSha256": "229089d0fc913c660ba10c9719118ac0986c9e8f68ed1c4601afde4f3835eb91",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "spoken": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four decisions of the four R principles, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-C A source rather than a complete N P K product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a68e5e52c2c2f4ad9424dfe353dfcd4f938833dd99602588659b4037edc1a369",
+      "requestFingerprintSha256": "a68e5e52c2c2f4ad9424dfe353dfcd4f938833dd99602588659b4037edc1a369",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-guided-practice-r1",
+      "unitId": "S3-07-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.",
+          "sha256": "27799991575c2c32c610aae1ad80264b5d0c353ab3adca7838e743c115aa953e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Match N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.",
+          "sha256": "1590eddb59d770fa2d2976cd6222d6bec2db02900eb7915ad25a63abdcd1b0e2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "For a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.",
+          "sha256": "ee6ab85552d97eb001c31d62645f13af8b4fb9eb54b9408f54ea5d726099ccce"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Take two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.",
+          "sha256": "068e65494d239f5e8ae71707a7f33e25c3102a01684dea1fa20fb97f66fedc36"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "If a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.",
+          "sha256": "2dc2cca9fac1c93f9df98ce29f9d634bd5f9d314beb8c50de80740e226a6ff71"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "These online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "sha256": "59053f6d794ac59361b17e23cb742baa801e4ac98ab05c18d15523480f126b94"
+        }
+      ],
+      "scientificMeaning": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "displayText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "captionText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, C A, M G, S, F E, M N and Z N to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation, hypothesis, test, water, four R principles sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenTextSHA256": "823ebffefac94a147fb2792f0efdd3d16d8789bbb9e079d43dd64402053d2606",
+      "spokenTextSha256": "823ebffefac94a147fb2792f0efdd3d16d8789bbb9e079d43dd64402053d2606",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "spoken": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, C A, M G, S, F E, M N and Z N to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation, hypothesis, test, water, four R principles sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2ac1dee1251bf3635ba7623a4a56b531779660aa3c40fdaa48feba41125b1b6e",
+      "requestFingerprintSha256": "2ac1dee1251bf3635ba7623a4a56b531779660aa3c40fdaa48feba41125b1b6e",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-reflection-r1",
+      "unitId": "S3-07-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Recognise signs of water stress and nutrient shortage in plants.",
+          "sha256": "75448b8e1e9d6b82e3f01ca8e1d956c9b45362042635b4fe8cd1ef32ea2d9c60"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Use self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+          "sha256": "c322b715b30e0b14370f8ace8c0163bd8857ae016d64f77b0dc1e69d11f7edae"
+        }
+      ],
+      "scientificMeaning": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "displayText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "captionText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "spokenText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "spokenTextSHA256": "4bce474d754b499c28b90f1d467e41b79c04e779970bbb9d3db009f5396ab61d",
+      "spokenTextSha256": "4bce474d754b499c28b90f1d467e41b79c04e779970bbb9d3db009f5396ab61d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6a7b04e763512d3bc8fcb95455c24ae9cbbec460ccedbc564408b17e9c015511",
+      "requestFingerprintSha256": "6a7b04e763512d3bc8fcb95455c24ae9cbbec460ccedbc564408b17e9c015511",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-glossary-r1",
+      "unitId": "S3-07-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "symptom",
+          "sha256": "b093720ae25363643156e5e718dce3925eae7f866eefa3ee1fa17b9abfc86fff"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "An observed plant change that can prompt investigation but does not alone prove its cause.",
+          "sha256": "8b3a79f98f4954253059c9cbbfb47bfa0babc81b8ac9248ca73ae1bc15685042"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "hypothesis",
+          "sha256": "7beb7f4a57251263ca5d7274880aa4ba470a8b32e18885340ca2fd40a588fe23"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A plausible explanation that can be tested against further observations or measurements.",
+          "sha256": "58eac4f3a7179d83d02efd8aa96d8e4f27753f03374ebc6bc83376007e125f44"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "temporary wilting",
+          "sha256": "eea8138e3e48e7ceb19bf4952d443271c45c2f8544e35e6ea832a28401a18bca"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.",
+          "sha256": "4469d2b7c70e88c11c0127974aa2d7e5f0176fe8470e06646d5e9ecfd23506e7"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "waterlogging",
+          "sha256": "44c315388e27090d87cbc2510d0d4dadce763472cd175a8b87354f787b8b7d0a"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Saturation that restricts oxygen to roots and may limit their uptake of water and nutrients.",
+          "sha256": "622f33164e8ef56aff47afb6a1351b47c9f8a05bb4ab165fda16c84f0e2c8f51"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "macronutrient",
+          "sha256": "d437df34eed70254f8ee2cb3eb208e74f8c81725405c2bfbdf8df0e283b7162e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "An essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.",
+          "sha256": "416342b73abbc195da04026c28f6c71c1d1ad293864088663151c03c2dce111f"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "micronutrient",
+          "sha256": "e1b391ad99599ceb362663158c47c4b1ab100640d84305c9642e7f76ef6e216f"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "An essential nutrient needed in smaller amount, such as Fe, Mn or Zn.",
+          "sha256": "7225d03aa0d804e701b0360fc60c704d2b48b77eaafcee56c654f5dcd7ba6b71"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "4R nutrient stewardship",
+          "sha256": "7298afa8253cef1a52fe621b4841df615a80e5e4733da5b4245ddcc65ec3be0b"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Choosing the right nutrient source, rate, time and place for the crop and site.",
+          "sha256": "04c1b31521b24af5ddcd06ce1b9d39be7e251ccf995d84f6efb6110ba7bb3732"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "band placement",
+          "sha256": "523050bc1e4091cfbee1716c4109c52ae37941adbbc4e34bf439ed1baae15492"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.",
+          "sha256": "acd02427d28f1b9fd3e354e9d2aa13de99435c2058221cdc0b3d477112116e0b"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "calcium nitrate",
+          "sha256": "0ca6ea22dd22dbf44a0807367d29f18ec87f109a40415f0cf89f088a0be50ed4"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "A fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+          "sha256": "f89791e5d6c6243b39b1ba4eaa37109c8a2cca3b7e44ee5d00675bbbebd5572d"
+        }
+      ],
+      "scientificMeaning": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "displayText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "captionText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "spokenText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, C A, M G and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as F E, M N or Z N.\n\nfour R principles nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N P K balance.",
+      "spokenTextSHA256": "629569100e00ee9368a4f68da08edea4bfda43f48f2e448693f86e6b26d18b18",
+      "spokenTextSha256": "629569100e00ee9368a4f68da08edea4bfda43f48f2e448693f86e6b26d18b18",
+      "spokenAdaptationChanges": [
+        {
+          "written": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+          "spoken": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, C A, M G and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as F E, M N or Z N.\n\nfour R principles nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N P K balance.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1d5c1a23ee4c29d2ab9dc6256cf92bba13a56bf3ceac035bd97826e3ec8f87e1",
+      "requestFingerprintSha256": "1d5c1a23ee4c29d2ab9dc6256cf92bba13a56bf3ceac035bd97826e3ec8f87e1",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

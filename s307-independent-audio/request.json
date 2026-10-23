@@ -1,0 +1,1998 @@
+{
+  "schemaVersion": 1,
+  "scope": "S307_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-07",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s307-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-07-ar-EG-opening-r1",
+      "unitId": "S3-07-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "43ca81abebf2020f5d0d6b44ca4fbac13d9e0b4edaeedef0a000377994aeb137",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.",
+          "sha256": "b56dc4f816bf8d8221b05d86e3540005f9d9386feeb6e20150adec1657bd06ed"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "افصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.",
+          "sha256": "9bf8fa3027885e17c52bbc06fe892d1acf0c34b4684544c2ab2fcdd0a26d2a72"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "ابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد NPK كامل.",
+          "sha256": "1423cd28542abfcc44e18ce08a4bcae8f117dd5a00a96b60c7928e5b7ce3d48a"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "حلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+          "sha256": "3e1f5a9c130b8eb1a04028616b574ab0bf1f3c3f40f43b824da06ef349486c8a"
+        }
+      ],
+      "scientificMeaning": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد NPK كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+      "displayText": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد NPK كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+      "captionText": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد NPK كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+      "spokenText": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد إن وبي وكي كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+      "spokenTextSHA256": "f063210e6e5739276892e165650fba829ea28b6bb8d414359a7ed362ee9e4d7e",
+      "spokenTextSha256": "f063210e6e5739276892e165650fba829ea28b6bb8d414359a7ed362ee9e4d7e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد NPK كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+          "spoken": "الورقة الدبلانة أو اللي لونها اتغيّر دي ملاحظة، مش تشخيص. كوّن تفسير تقدر تختبره، وافحص التربة والجذور والجو والأدلة، وبعدها برّر قرار الري والتسميد بالمصدر والكمية والوقت والمكان المناسبين.\n\nافصل بين الأعراض اللي شفتها وبين التشخيص في الحالات الأربع؛ افحص الصرف وبرودة التربة ووظيفة الجذور والجو والنتائج قبل علاج نقص ماء أو عنصر مفترض.\n\nابنِ خطة للمياه بشروط واضحة والسماد فيها قرارات المصدر والكمية والوقت والمكان الأربعة، ووضح إيه الأدلة اللي تحدد كمية السماد، وليه نترات الكالسيوم مصدر نيتروجين وكالسيوم مش سماد إن وبي وكي كامل.\n\nحلّل حالتين مختلفتين بالكامل، واشرح واحدة ودافع عن تفسيرك أثناء النقاش، وقارن الحالات الباقية من غير ما تحط جدول ري أو تسميد ثابت لمجرد شكل النبات.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e68e2e048c7010177b04c8099b6e079a3b531081a9e328bd21ca4c60d97bcbe5",
+      "requestFingerprintSha256": "e68e2e048c7010177b04c8099b6e079a3b531081a9e328bd21ca4c60d97bcbe5",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8943bf7b4fe984e299f292f1b289d447eaa190ea62c8285f5c7c79eb69d9aa90"
+    },
+    {
+      "id": "S3-07-ar-EG-guided-practice-r1",
+      "unitId": "S3-07-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "43ca81abebf2020f5d0d6b44ca4fbac13d9e0b4edaeedef0a000377994aeb137",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.",
+          "sha256": "ce615eef4ac38183d090c7be0df51710a56fc42078bb269b6de5d245d4df288e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "طابق N وP وK وCa وMg وS وFe وMn وZn مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.",
+          "sha256": "ec6da395a9951c4f54ec90205219c3d26df5e45d1b4180fe60e392d4d45fd56c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "لحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.",
+          "sha256": "ff9fe8d6548dbfec51614044438ee9aafb8f06dab0b71e4d9e378ec47eef6d0c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "خد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري وقرارات 4R، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.",
+          "sha256": "e0ac05c79573e12f120ecc423fedb0af45e462863a3d7ad632ee9390c18c702f"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "لو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.",
+          "sha256": "5382943fd09ed50bdde067c6a660416dde02396cbb0fb53d07086ba45efca389"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "التدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+          "sha256": "4a14f07031768b521d1c0859e99ab30ea58ee9021a4ccc23d59a64e294e78917"
+        }
+      ],
+      "scientificMeaning": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق N وP وK وCa وMg وS وFe وMn وZn مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري وقرارات 4R، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+      "displayText": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق N وP وK وCa وMg وS وFe وMn وZn مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري وقرارات 4R، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+      "captionText": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق N وP وK وCa وMg وS وFe وMn وZn مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري وقرارات 4R، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+      "spokenText": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق إن وبي وكي وسي إيه وإم جي وإس وإف إي وإم إن وزد إن مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري والقرارات الأربعة للمصدر والكمية والوقت والمكان، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+      "spokenTextSHA256": "afbddaf4ee920cf4a4661909c3e5ca31f8d5ca2ad76706f2a4cfd3a1846c781d",
+      "spokenTextSha256": "afbddaf4ee920cf4a4661909c3e5ca31f8d5ca2ad76706f2a4cfd3a1846c781d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق N وP وK وCa وMg وS وFe وMn وZn مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري وقرارات 4R، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+          "spoken": "صنّف الذبول واللون وعمر الورقة والماء الواقف والحرارة كملاحظات، وافصلها عن أسبابها المحتملة؛ اقترح فحصًا ميدانيًا يقدر ينفي كل تشخيص.\n\nطابق إن وبي وكي وسي إيه وإم جي وإس وإف إي وإم إن وزد إن مع اسم العنصر والمجموعة الصح، وبعدين استخدم اصفرار الورق القديم، واللون البنفسجي في الذرة، وحواف الورق القديم كعلامات محتاجة تأكيد.\n\nلحالة تختارها، اكتب المصدر المناسب ودليل الكمية وشروط الوقت والمكان، مع أولوية الماء ومسار الفقد المحتمل.\n\nخد بطاقتين مختلفتين، وكمّل لكل واحدة الملاحظة والفرضيات والفحص وقرار الري والقرارات الأربعة للمصدر والكمية والوقت والمكان، واعرض واحدة ودافع عنها مع مقارنة الحالات الباقية.\n\nلو انتقلت من عرض واحد مباشرةً لسماد أو أمر ري، ارجع للملاحظة والفرضيات البديلة.\n\nالتدريبات دي بتجهّز التفكير بس. كتابة كل الخانات أو صحة الاختيارات ما تثبتش تشخيص حقل أو علاج فعلي أو اجتياز المعايير؛ المدرّب لازم يراجع تفسير الحالتين.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3af574da4711e8beaa647e597a244178a7b4d69c18ba49fce44d5648cd4cfb3a",
+      "requestFingerprintSha256": "3af574da4711e8beaa647e597a244178a7b4d69c18ba49fce44d5648cd4cfb3a",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8943bf7b4fe984e299f292f1b289d447eaa190ea62c8285f5c7c79eb69d9aa90"
+    },
+    {
+      "id": "S3-07-ar-EG-reflection-r1",
+      "unitId": "S3-07-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "43ca81abebf2020f5d0d6b44ca4fbac13d9e0b4edaeedef0a000377994aeb137",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أتعرف على علامات إجهاد المياه ونقص العناصر في النبات.",
+          "sha256": "bed89df5149544f2425a6d3dfd66199e5699365894889a700aea100c7d30374e"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "التقييم الذاتي يساعدك تحدد محتاج تتدرب أكتر على إيه. هو مش إثبات إنك أتقنت التشخيص.",
+          "sha256": "7383abbdeef1941a52d416e1bfcb0b698274e380c9354209b1b3aff2f3140097"
+        }
+      ],
+      "scientificMeaning": "أتعرف على علامات إجهاد المياه ونقص العناصر في النبات.\n\nالتقييم الذاتي يساعدك تحدد محتاج تتدرب أكتر على إيه. هو مش إثبات إنك أتقنت التشخيص.",
+      "displayText": "أتعرف على علامات إجهاد المياه ونقص العناصر في النبات.\n\nالتقييم الذاتي يساعدك تحدد محتاج تتدرب أكتر على إيه. هو مش إثبات إنك أتقنت التشخيص.",
+      "captionText": "أتعرف على علامات إجهاد المياه ونقص العناصر في النبات.\n\nالتقييم الذاتي يساعدك تحدد محتاج تتدرب أكتر على إيه. هو مش إثبات إنك أتقنت التشخيص.",
+      "spokenText": "أتعرف على علامات إجهاد المياه ونقص العناصر في النبات.\n\nالتقييم الذاتي يساعدك تحدد محتاج تتدرب أكتر على إيه. هو مش إثبات إنك أتقنت التشخيص.",
+      "spokenTextSHA256": "5e685ccf5800c5bc7143d18f778babf65d80effc96a2111229e186c18bf128ad",
+      "spokenTextSha256": "5e685ccf5800c5bc7143d18f778babf65d80effc96a2111229e186c18bf128ad",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d19145a05fc8f16e368102b9d17f1dd20590dcdd26eb34c75d08470516d12e4f",
+      "requestFingerprintSha256": "d19145a05fc8f16e368102b9d17f1dd20590dcdd26eb34c75d08470516d12e4f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8943bf7b4fe984e299f292f1b289d447eaa190ea62c8285f5c7c79eb69d9aa90"
+    },
+    {
+      "id": "S3-07-ar-EG-glossary-r1",
+      "unitId": "S3-07-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "43ca81abebf2020f5d0d6b44ca4fbac13d9e0b4edaeedef0a000377994aeb137",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "عرض",
+          "sha256": "3824e18ca83beb79a607c67f8f7d8aef22c3a652d57e43faeae8689c9127008e"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "تغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.",
+          "sha256": "42682045204dede2580a1b5850f56e178ea18b485530cd939f775c8fb5ea85bb"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "فرضية",
+          "sha256": "15a8ab2aaa9490fab305168467ad8c31807d1200972b624cf45381ba6baba3f8"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "تفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.",
+          "sha256": "dafbb6e4ea6cd8b37a0e2aaf5c083afaeb5ff02de21fa01c6fce461a533d988c"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "ذبول مؤقت",
+          "sha256": "596ccf26451e7b68c71cce091147b5a537a5350e2af406250a1b14db563bb10c"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "انخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.",
+          "sha256": "e540026a1fd240db2e8e37c8c5fd9bf2dfa9f43c4d8b4001712ba390de8ab0ae"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "تغدّق",
+          "sha256": "2e5015ea4b91b470d7fbcab1a9b35056a24ece76710ebb8971f15c141e2c321c"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "تشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.",
+          "sha256": "e50b88bd6cd2c175ff05b9cfe20159a6cfdf677ff097f06adeea26adb8cadab0"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "عنصر من العناصر الكبرى",
+          "sha256": "1936426fe7233e0a295adaa53532cf66a630197d915a9d9064fdebb05b19361d"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "عنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل N وP وK وCa وMg وS.",
+          "sha256": "05300bde479bf7e884a39268673379f41a42e1f2b82139b25080b71507166af4"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "عنصر من العناصر الصغرى",
+          "sha256": "b45addc7b4d99d6ccdaf340a80faa6c91efc93ab297f05b09663f67f018a00af"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "عنصر أساسي يحتاجه النبات بكمية أقل، مثل Fe وMn وZn.",
+          "sha256": "328dd2943b6eb021924c2d1c782a865a224404ecce5a6d16604204ec9f8e38d1"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "قواعد التسميد الأربع 4R",
+          "sha256": "ec7f5a6d7a0634d79ae704f9d3e15e279f2fc659e2ba99cb8aebd3073f921717"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "اختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.",
+          "sha256": "ad58474e0118f73b5b6839751bed35f56cbf60d2e634287afd70fffd6957354e"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "إضافة في شريط",
+          "sha256": "f54d80f928808f9088b038b1f2827ecdf2d5875c30a5832dbdc16a7cb73bee88"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "وضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.",
+          "sha256": "965e61e5594a9d7d380064903becaf8d9281973b292bda8f8bad59bb4b577d4b"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "نترات الكالسيوم",
+          "sha256": "574d2b1b2488dab68c8771820f339f5a0a8ff359d2a4ec1eb91ff82365e5f160"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "سماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من N وP وK.",
+          "sha256": "6c48cf1e7e9395c1be7cda458e28dbc73d5db377fc55f96bb0fc5625f996d514"
+        }
+      ],
+      "scientificMeaning": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل N وP وK وCa وMg وS.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل Fe وMn وZn.\n\nقواعد التسميد الأربع 4R\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من N وP وK.",
+      "displayText": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل N وP وK وCa وMg وS.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل Fe وMn وZn.\n\nقواعد التسميد الأربع 4R\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من N وP وK.",
+      "captionText": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل N وP وK وCa وMg وS.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل Fe وMn وZn.\n\nقواعد التسميد الأربع 4R\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من N وP وK.",
+      "spokenText": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل إن وبي وكي وسي إيه وإم جي وإس.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل إف إي وإم إن وزد إن.\n\nقواعد التسميد الأربع: المصدر والكمية والوقت والمكان\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من إن وبي وكي.",
+      "spokenTextSHA256": "a1c9056fdbbeb990a199174c5ce2df9253bed309af8363dbdbffe3d7d4fd6ac0",
+      "spokenTextSha256": "a1c9056fdbbeb990a199174c5ce2df9253bed309af8363dbdbffe3d7d4fd6ac0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل N وP وK وCa وMg وS.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل Fe وMn وZn.\n\nقواعد التسميد الأربع 4R\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من N وP وK.",
+          "spoken": "عرض\n\nتغيّر في النبات تلاحظه ويفتح فحصًا، لكنه وحده ما يثبتش السبب.\n\nفرضية\n\nتفسير محتمل تقدر تختبره بملاحظات أو قياسات إضافية.\n\nذبول مؤقت\n\nانخفاض مؤقت في ضغط امتلاء الخلايا ممكن يرجع لطبيعته، وبيظهر أحيانًا لما فقد الميه نهارًا يزيد عن الامتصاص، حتى لو رطوبة التربة لسه مش معروفة.\n\nتغدّق\n\nتشبع بالماء يقلل أكسجين الجذور وقد يضعف امتصاصها للماء والعناصر.\n\nعنصر من العناصر الكبرى\n\nعنصر أساسي يحتاجه النبات بكمية أكبر نسبيًا، مثل إن وبي وكي وسي إيه وإم جي وإس.\n\nعنصر من العناصر الصغرى\n\nعنصر أساسي يحتاجه النبات بكمية أقل، مثل إف إي وإم إن وزد إن.\n\nقواعد التسميد الأربع: المصدر والكمية والوقت والمكان\n\nاختيار مصدر العنصر وكميته ووقته ومكانه بما يناسب المحصول والموقع.\n\nإضافة في شريط\n\nوضع السماد في شريط محدد قرب الجذور أو صف البذور مع مراعاة حدود أمان المنتج والمحصول.\n\nنترات الكالسيوم\n\nسماد يمدّ النيتروجين والكالسيوم؛ وحده لا يعطي توازنًا كاملًا من إن وبي وكي.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "74f6f27e726314a1d61d626fc5300cd1f330bb02ce517ad07b62b1872db09323",
+      "requestFingerprintSha256": "74f6f27e726314a1d61d626fc5300cd1f330bb02ce517ad07b62b1872db09323",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8943bf7b4fe984e299f292f1b289d447eaa190ea62c8285f5c7c79eb69d9aa90"
+    },
+    {
+      "id": "S3-07-en-opening-r1",
+      "unitId": "S3-07-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.",
+          "sha256": "e4067b43438f8f05a181cdb3419debbc77d911a0877cdeed5600535bb36d5da6"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Separate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.",
+          "sha256": "41d6fca98134b20eb7b89bf9df415fd27d09428afe0fdce6c618d3aa48ffe78b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Build a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.",
+          "sha256": "e8f01f4560f7f6092a72934244a814deccf83e46a771d198fbcf1041086ba78f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Work through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "sha256": "a5b2792ba6601849de4e2aba1ea0696a2594a5e72199e5761377437855507a67"
+        }
+      ],
+      "scientificMeaning": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "displayText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "captionText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "spokenText": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four decisions of the four R principles, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-C A source rather than a complete N P K product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+      "spokenTextSHA256": "229089d0fc913c660ba10c9719118ac0986c9e8f68ed1c4601afde4f3835eb91",
+      "spokenTextSha256": "229089d0fc913c660ba10c9719118ac0986c9e8f68ed1c4601afde4f3835eb91",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four 4R decisions, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-Ca source rather than a complete NPK product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "spoken": "A wilted or discoloured leaf is an observation. Build a testable explanation, check soil, roots and weather, then justify water and nutrient actions with the right source, rate, time and place.\n\nSeparate observed symptoms from a diagnosis in all four cases; investigate drainage, cold soil, root function, weather and test results before treating a supposed water or nutrient shortage.\n\nBuild a conditional water-and-fertilizer response using all four decisions of the four R principles, stating which evidence sets fertilizer rate and why calcium nitrate is an N-and-C A source rather than a complete N P K product.\n\nWork through two distinct cases in full, explain and defend one during discussion, and compare the other source cases without prescribing a fixed watering or fertilizing calendar from appearance alone.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a68e5e52c2c2f4ad9424dfe353dfcd4f938833dd99602588659b4037edc1a369",
+      "requestFingerprintSha256": "a68e5e52c2c2f4ad9424dfe353dfcd4f938833dd99602588659b4037edc1a369",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "a0bf762d15e93e28d6de739f6e7bffbc155709db817bfa9db07b37dfdeec9ffa"
+    },
+    {
+      "id": "S3-07-en-guided-practice-r1",
+      "unitId": "S3-07-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.",
+          "sha256": "27799991575c2c32c610aae1ad80264b5d0c353ab3adca7838e743c115aa953e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Match N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.",
+          "sha256": "1590eddb59d770fa2d2976cd6222d6bec2db02900eb7915ad25a63abdcd1b0e2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "For a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.",
+          "sha256": "ee6ab85552d97eb001c31d62645f13af8b4fb9eb54b9408f54ea5d726099ccce"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Take two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.",
+          "sha256": "068e65494d239f5e8ae71707a7f33e25c3102a01684dea1fa20fb97f66fedc36"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "If a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.",
+          "sha256": "2dc2cca9fac1c93f9df98ce29f9d634bd5f9d314beb8c50de80740e226a6ff71"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "These online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "sha256": "59053f6d794ac59361b17e23cb742baa801e4ac98ab05c18d15523480f126b94"
+        }
+      ],
+      "scientificMeaning": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "displayText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "captionText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenText": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, C A, M G, S, F E, M N and Z N to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation, hypothesis, test, water, four R principles sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenTextSHA256": "823ebffefac94a147fb2792f0efdd3d16d8789bbb9e079d43dd64402053d2606",
+      "spokenTextSha256": "823ebffefac94a147fb2792f0efdd3d16d8789bbb9e079d43dd64402053d2606",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, Ca, Mg, S, Fe, Mn and Zn to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation/hypothesis/test/water/4R sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "spoken": "Sort observed wilt, colour, leaf age, standing water and temperature from the possible causes; propose a field check that could disprove each diagnosis.\n\nMatch N, P, K, C A, M G, S, F E, M N and Z N to the correct element name and nutrient group, then use old-leaf yellowing, purple maize and old-leaf margins as qualified clues.\n\nFor a chosen case, supply right source, rate evidence, timing condition and placement with water priority and potential loss pathway.\n\nTake two different case cards, complete observation, hypothesis, test, water, four R principles sheets for both, and present and defend one while comparing the other cases.\n\nIf a student jumps from one symptom to one fertilizer or watering order, route back to observation and alternative hypotheses.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2ac1dee1251bf3635ba7623a4a56b531779660aa3c40fdaa48feba41125b1b6e",
+      "requestFingerprintSha256": "2ac1dee1251bf3635ba7623a4a56b531779660aa3c40fdaa48feba41125b1b6e",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "a0bf762d15e93e28d6de739f6e7bffbc155709db817bfa9db07b37dfdeec9ffa"
+    },
+    {
+      "id": "S3-07-en-reflection-r1",
+      "unitId": "S3-07-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Recognise signs of water stress and nutrient shortage in plants.",
+          "sha256": "75448b8e1e9d6b82e3f01ca8e1d956c9b45362042635b4fe8cd1ef32ea2d9c60"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Use self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+          "sha256": "c322b715b30e0b14370f8ace8c0163bd8857ae016d64f77b0dc1e69d11f7edae"
+        }
+      ],
+      "scientificMeaning": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "displayText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "captionText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "spokenText": "Recognise signs of water stress and nutrient shortage in plants.\n\nUse self-assessment to identify where you need more practice. It does not establish diagnostic competence.",
+      "spokenTextSHA256": "4bce474d754b499c28b90f1d467e41b79c04e779970bbb9d3db009f5396ab61d",
+      "spokenTextSha256": "4bce474d754b499c28b90f1d467e41b79c04e779970bbb9d3db009f5396ab61d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6a7b04e763512d3bc8fcb95455c24ae9cbbec460ccedbc564408b17e9c015511",
+      "requestFingerprintSha256": "6a7b04e763512d3bc8fcb95455c24ae9cbbec460ccedbc564408b17e9c015511",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "a0bf762d15e93e28d6de739f6e7bffbc155709db817bfa9db07b37dfdeec9ffa"
+    },
+    {
+      "id": "S3-07-en-glossary-r1",
+      "unitId": "S3-07-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "symptom",
+          "sha256": "b093720ae25363643156e5e718dce3925eae7f866eefa3ee1fa17b9abfc86fff"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "An observed plant change that can prompt investigation but does not alone prove its cause.",
+          "sha256": "8b3a79f98f4954253059c9cbbfb47bfa0babc81b8ac9248ca73ae1bc15685042"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "hypothesis",
+          "sha256": "7beb7f4a57251263ca5d7274880aa4ba470a8b32e18885340ca2fd40a588fe23"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A plausible explanation that can be tested against further observations or measurements.",
+          "sha256": "58eac4f3a7179d83d02efd8aa96d8e4f27753f03374ebc6bc83376007e125f44"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "temporary wilting",
+          "sha256": "eea8138e3e48e7ceb19bf4952d443271c45c2f8544e35e6ea832a28401a18bca"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.",
+          "sha256": "4469d2b7c70e88c11c0127974aa2d7e5f0176fe8470e06646d5e9ecfd23506e7"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "waterlogging",
+          "sha256": "44c315388e27090d87cbc2510d0d4dadce763472cd175a8b87354f787b8b7d0a"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Saturation that restricts oxygen to roots and may limit their uptake of water and nutrients.",
+          "sha256": "622f33164e8ef56aff47afb6a1351b47c9f8a05bb4ab165fda16c84f0e2c8f51"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "macronutrient",
+          "sha256": "d437df34eed70254f8ee2cb3eb208e74f8c81725405c2bfbdf8df0e283b7162e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "An essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.",
+          "sha256": "416342b73abbc195da04026c28f6c71c1d1ad293864088663151c03c2dce111f"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "micronutrient",
+          "sha256": "e1b391ad99599ceb362663158c47c4b1ab100640d84305c9642e7f76ef6e216f"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "An essential nutrient needed in smaller amount, such as Fe, Mn or Zn.",
+          "sha256": "7225d03aa0d804e701b0360fc60c704d2b48b77eaafcee56c654f5dcd7ba6b71"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "4R nutrient stewardship",
+          "sha256": "7298afa8253cef1a52fe621b4841df615a80e5e4733da5b4245ddcc65ec3be0b"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Choosing the right nutrient source, rate, time and place for the crop and site.",
+          "sha256": "04c1b31521b24af5ddcd06ce1b9d39be7e251ccf995d84f6efb6110ba7bb3732"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "band placement",
+          "sha256": "523050bc1e4091cfbee1716c4109c52ae37941adbbc4e34bf439ed1baae15492"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.",
+          "sha256": "acd02427d28f1b9fd3e354e9d2aa13de99435c2058221cdc0b3d477112116e0b"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "calcium nitrate",
+          "sha256": "0ca6ea22dd22dbf44a0807367d29f18ec87f109a40415f0cf89f088a0be50ed4"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "A fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+          "sha256": "f89791e5d6c6243b39b1ba4eaa37109c8a2cca3b7e44ee5d00675bbbebd5572d"
+        }
+      ],
+      "scientificMeaning": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "displayText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "captionText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+      "spokenText": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, C A, M G and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as F E, M N or Z N.\n\nfour R principles nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N P K balance.",
+      "spokenTextSHA256": "629569100e00ee9368a4f68da08edea4bfda43f48f2e448693f86e6b26d18b18",
+      "spokenTextSha256": "629569100e00ee9368a4f68da08edea4bfda43f48f2e448693f86e6b26d18b18",
+      "spokenAdaptationChanges": [
+        {
+          "written": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, Ca, Mg and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as Fe, Mn or Zn.\n\n4R nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N-P-K balance.",
+          "spoken": "symptom\n\nAn observed plant change that can prompt investigation but does not alone prove its cause.\n\nhypothesis\n\nA plausible explanation that can be tested against further observations or measurements.\n\ntemporary wilting\n\nA reversible drop in turgor that may appear when daytime loss exceeds uptake, even before soil moisture is known.\n\nwaterlogging\n\nSaturation that restricts oxygen to roots and may limit their uptake of water and nutrients.\n\nmacronutrient\n\nAn essential nutrient needed in relatively larger amount, including N, P, K, C A, M G and S.\n\nmicronutrient\n\nAn essential nutrient needed in smaller amount, such as F E, M N or Z N.\n\nfour R principles nutrient stewardship\n\nChoosing the right nutrient source, rate, time and place for the crop and site.\n\nband placement\n\nA fertilizer strip placed at a specified position near roots or seed row, subject to product and crop safety limits.\n\ncalcium nitrate\n\nA fertilizer source of nitrogen and calcium; it does not by itself supply a complete N P K balance.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1d5c1a23ee4c29d2ab9dc6256cf92bba13a56bf3ceac035bd97826e3ec8f87e1",
+      "requestFingerprintSha256": "1d5c1a23ee4c29d2ab9dc6256cf92bba13a56bf3ceac035bd97826e3ec8f87e1",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "a0bf762d15e93e28d6de739f6e7bffbc155709db817bfa9db07b37dfdeec9ffa"
+    },
+    {
+      "id": "S3-07-it-opening-r1",
+      "unitId": "S3-07-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.",
+          "sha256": "cb0f9afa6d53cd6bb7c65098001bc59a8ae01326270a6d7d6aae07d12e46ab18"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Distingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.",
+          "sha256": "f3dfd1e16a169d0ca7950da0e85ad8642fc3be7063f236dc95790e2570d92849"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Costruisci una risposta condizionata per acqua e concime con le quattro decisioni 4R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce N e Ca, non un NPK completo.",
+          "sha256": "7a5219ee995e40fb45d9d01d12fff24a4b9c50d1382d177367efed25b68cd075"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Analizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+          "sha256": "63c75e062f5ccc5204e3acdf5b11c95d1a7effe653386178877c2de0c3476c15"
+        }
+      ],
+      "scientificMeaning": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni 4R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce N e Ca, non un NPK completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+      "displayText": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni 4R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce N e Ca, non un NPK completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+      "captionText": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni 4R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce N e Ca, non un NPK completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+      "spokenText": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni dei principi quattro R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce enne e ci a, non un enne pi cappa completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+      "spokenTextSHA256": "b1734918112d66b6141400d90c2de1e9a4077fa981cdf1f6021af9a700322f83",
+      "spokenTextSha256": "b1734918112d66b6141400d90c2de1e9a4077fa981cdf1f6021af9a700322f83",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni 4R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce N e Ca, non un NPK completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+          "spoken": "Una foglia appassita o scolorita è un’osservazione, non una diagnosi. Formula ipotesi verificabili; controlla suolo, radici, clima e risultati, poi giustifica irrigazione e nutrizione con fonte, dose, momento e posizione appropriati.\n\nDistingui sintomi osservati e diagnosi in tutti e quattro i casi; controlla drenaggio, terreno freddo, radici, clima e test prima di trattare una presunta carenza idrica o nutritiva.\n\nCostruisci una risposta condizionata per acqua e concime con le quattro decisioni dei principi quattro R; indica le prove per stabilire la dose e spiega perché il nitrato di calcio fornisce enne e ci a, non un enne pi cappa completo.\n\nAnalizza interamente due casi diversi, presenta e difendi uno durante il confronto e compara gli altri senza prescrivere calendari fissi dall’aspetto della pianta.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f46e92fdddba8388d91ebc08982f1935f361ebd951a2dc55c6349c3f34b02803",
+      "requestFingerprintSha256": "f46e92fdddba8388d91ebc08982f1935f361ebd951a2dc55c6349c3f34b02803",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "2ae5ca382faa2af4b6146c8d26c7a442dce1913e41cf872acb0bdb1982b851eb"
+    },
+    {
+      "id": "S3-07-it-guided-practice-r1",
+      "unitId": "S3-07-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.",
+          "sha256": "ab40b021d6a97c34e770f46f6560fd0cc87e31becc5704065650d77c67bb5f53"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Associa N, P, K, Ca, Mg, S, Fe, Mn e Zn al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.",
+          "sha256": "d6992c0cac2b2de5733d71c567d1ce15f7e50a25cfadd574c93b1da7f97c8754"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Per un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.",
+          "sha256": "424f7b1052dfa938fe9c106439b070f94628ff61d72f653f2869f6a2392bbbab"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Analizza due schede diverse: osservazioni, ipotesi, test, acqua e 4R per entrambe. Presentane una e difendila confrontando gli altri casi.",
+          "sha256": "82f9bb96361d7a3609866765a13ad6adb5d9b0b1d48d6fc258b7ad7bdbfad5f6"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Dal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.",
+          "sha256": "54a31c77a26717d61522229b8037533bd97dca00e733c4ae1257a1d37b922b80"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "sha256": "b29de053cf2b52240dc03f29f853fbdc27a4901129640c64de203c434a566f7f"
+        }
+      ],
+      "scientificMeaning": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia N, P, K, Ca, Mg, S, Fe, Mn e Zn al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e 4R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "displayText": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia N, P, K, Ca, Mg, S, Fe, Mn e Zn al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e 4R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "captionText": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia N, P, K, Ca, Mg, S, Fe, Mn e Zn al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e 4R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "spokenText": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia enne, pi, cappa, ci a, emme gi, esse, effe e, emme enne e zeta enne al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e quattro principi R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "spokenTextSHA256": "b69a053268805a4aa00a517b9d582f4da30b7fd953ffebfe74500fa97dd308a4",
+      "spokenTextSha256": "b69a053268805a4aa00a517b9d582f4da30b7fd953ffebfe74500fa97dd308a4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia N, P, K, Ca, Mg, S, Fe, Mn e Zn al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e 4R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "spoken": "Separa appassimento, colore, età fogliare, acqua stagnante e temperatura dalle cause possibili; indica una verifica capace di smentire ogni diagnosi.\n\nAssocia enne, pi, cappa, ci a, emme gi, esse, effe e, emme enne e zeta enne al nome dell’elemento e al gruppo corretti; usa ingiallimento delle foglie vecchie, mais viola e margini delle foglie vecchie come indizi da verificare.\n\nPer un caso scelto indica fonte, prova della dose, condizione temporale e posizione con priorità idrica e via possibile di perdita.\n\nAnalizza due schede diverse: osservazioni, ipotesi, test, acqua e quattro principi R per entrambe. Presentane una e difendila confrontando gli altri casi.\n\nDal singolo sintomo al concime o al turno irriguo è un salto: ritorna a osservazione e ipotesi alternative.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aa539d60ed5f3574b1e913a3b00437e87e6c4b1b96bebf836ddca96a838f99ed",
+      "requestFingerprintSha256": "aa539d60ed5f3574b1e913a3b00437e87e6c4b1b96bebf836ddca96a838f99ed",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "2ae5ca382faa2af4b6146c8d26c7a442dce1913e41cf872acb0bdb1982b851eb"
+    },
+    {
+      "id": "S3-07-it-reflection-r1",
+      "unitId": "S3-07-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Riconosco segni di stress idrico e carenza nutritiva nelle piante.",
+          "sha256": "157a70e0ce38f0b742574ee5c41a4a574d6139d17b52ee63076de1a5628bea30"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Usa l’autovalutazione per individuare dove serve più pratica. Non dimostra competenza diagnostica.",
+          "sha256": "49037f04e427dc12b70630090a490095c9ffe8c03ea2c7de06ea7f22e4f542cc"
+        }
+      ],
+      "scientificMeaning": "Riconosco segni di stress idrico e carenza nutritiva nelle piante.\n\nUsa l’autovalutazione per individuare dove serve più pratica. Non dimostra competenza diagnostica.",
+      "displayText": "Riconosco segni di stress idrico e carenza nutritiva nelle piante.\n\nUsa l’autovalutazione per individuare dove serve più pratica. Non dimostra competenza diagnostica.",
+      "captionText": "Riconosco segni di stress idrico e carenza nutritiva nelle piante.\n\nUsa l’autovalutazione per individuare dove serve più pratica. Non dimostra competenza diagnostica.",
+      "spokenText": "Riconosco segni di stress idrico e carenza nutritiva nelle piante.\n\nUsa l’autovalutazione per individuare dove serve più pratica. Non dimostra competenza diagnostica.",
+      "spokenTextSHA256": "5a260754228055008f1f3aa6df0eb474d3ebfbec13450334281490d3dfba5504",
+      "spokenTextSha256": "5a260754228055008f1f3aa6df0eb474d3ebfbec13450334281490d3dfba5504",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5876ef754370f4e4cd4a21c631dbafd3acd9e04c63f0ac5fb8a8e13f75bbd4f0",
+      "requestFingerprintSha256": "5876ef754370f4e4cd4a21c631dbafd3acd9e04c63f0ac5fb8a8e13f75bbd4f0",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "2ae5ca382faa2af4b6146c8d26c7a442dce1913e41cf872acb0bdb1982b851eb"
+    },
+    {
+      "id": "S3-07-it-glossary-r1",
+      "unitId": "S3-07-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "sintomo",
+          "sha256": "0c2bea4f244686057ce1a38dcbae34d4c1bc64f13159d67c6cb16cc868319cb2"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Cambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.",
+          "sha256": "14815d3d44f8a3ff105ef541fc9621cb5ad7a6e2d4420a5168c6ede929508634"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "ipotesi",
+          "sha256": "e18338ad8f71649c1be07dc43b79c9d053057a1aaaa0cccd241030c20dbc4ad7"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Spiegazione plausibile verificabile con altre osservazioni o misure.",
+          "sha256": "7bd41b953c48a9218f23ce2b2de60578e11a782f65a4914c1cca832d991f1ae8"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "appassimento temporaneo",
+          "sha256": "886c3c50351d4a2d20779e6a067a0e90594a3b5785bceab3d67f269e1448086d"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Perdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.",
+          "sha256": "b0f2a6bc2f9589b10e34b0958e2e70061edfa14e974ae537ef7ca6cb6d08928a"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "ristagno idrico",
+          "sha256": "37aa652c84a1b1f0a1eda01600625ea80dd3b9da4499148d0ae79a66d4c5b36f"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Saturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.",
+          "sha256": "18a184b9af752f68e97b67737343bbc647da87bb564135fb64324b596d6addf1"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "macroelemento",
+          "sha256": "8f689b940ae4e30a9e724399a30b926da0ee5a5f8f0dcbd846ea0aee3d277b52"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Nutriente essenziale richiesto relativamente in maggiore quantità, tra cui N, P, K, Ca, Mg e S.",
+          "sha256": "b3282f6107ab6f044fa3b044348c5bf0f887c7b4595dbfe825884cf42d71d0fd"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "microelemento",
+          "sha256": "0aa0191e79b5d9d18be216e494bc4e4b71eb17cd8509e11ba28fb7bc37a2b4d1"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Nutriente essenziale richiesto in minore quantità, come Fe, Mn o Zn.",
+          "sha256": "af52356dc426d32977346a64821ebbb27cbf28232bf00c1689911d98b04a8f3f"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "gestione 4R",
+          "sha256": "9801233c6823f6d85ae76012e30fbd32c7581e80b91a75775f74baf786a84eeb"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Scelta di fonte, dose, momento e posizione adatti a coltura e sito.",
+          "sha256": "c4d7c62bbee35c8caa2f7be75722d347c564a4af0d07cd716c1b5b089ce0959d"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "concimazione a banda",
+          "sha256": "3373c7c0120a0d89c8f634230257831107b0a4e19cb6d7a7ed06a1ab154ce331"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Striscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.",
+          "sha256": "38fb7dea0d1274828716994db683fb807582f6147837fd53843b44803dbc1ca7"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "nitrato di calcio",
+          "sha256": "dba59d4bc17f10182bc5c5d3d6a99d8b31f138b299de6d6f41ee63d489c84d9d"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "Fonte di azoto e calcio che da sola non apporta un bilancio completo N-P-K.",
+          "sha256": "887b4abcbdf62020345c0c422124d84840767925663f8c286c20ae4219a18257"
+        }
+      ],
+      "scientificMeaning": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui N, P, K, Ca, Mg e S.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come Fe, Mn o Zn.\n\ngestione 4R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo N-P-K.",
+      "displayText": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui N, P, K, Ca, Mg e S.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come Fe, Mn o Zn.\n\ngestione 4R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo N-P-K.",
+      "captionText": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui N, P, K, Ca, Mg e S.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come Fe, Mn o Zn.\n\ngestione 4R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo N-P-K.",
+      "spokenText": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui enne, pi, cappa, ci a, emme gi e esse.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come effe e, emme enne o zeta enne.\n\ngestione quattro principi R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo enne pi cappa.",
+      "spokenTextSHA256": "8bfd923bcf060d381c03e1b05479497a0432d86763dc7652b79b1c558d9f6e89",
+      "spokenTextSha256": "8bfd923bcf060d381c03e1b05479497a0432d86763dc7652b79b1c558d9f6e89",
+      "spokenAdaptationChanges": [
+        {
+          "written": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui N, P, K, Ca, Mg e S.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come Fe, Mn o Zn.\n\ngestione 4R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo N-P-K.",
+          "spoken": "sintomo\n\nCambiamento osservato della pianta che avvia una verifica ma da solo non prova la causa.\n\nipotesi\n\nSpiegazione plausibile verificabile con altre osservazioni o misure.\n\nappassimento temporaneo\n\nPerdita reversibile di turgore quando la perdita diurna può superare l’assorbimento, prima ancora di conoscere l’umidità del suolo.\n\nristagno idrico\n\nSaturazione che limita l’ossigeno radicale e può ridurre l’assorbimento di acqua e nutrienti.\n\nmacroelemento\n\nNutriente essenziale richiesto relativamente in maggiore quantità, tra cui enne, pi, cappa, ci a, emme gi e esse.\n\nmicroelemento\n\nNutriente essenziale richiesto in minore quantità, come effe e, emme enne o zeta enne.\n\ngestione quattro principi R\n\nScelta di fonte, dose, momento e posizione adatti a coltura e sito.\n\nconcimazione a banda\n\nStriscia di concime posta vicino a radici o fila di semi con limiti di sicurezza del prodotto e della coltura.\n\nnitrato di calcio\n\nFonte di azoto e calcio che da sola non apporta un bilancio completo enne pi cappa.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e5cbe86311e2cbf95cbdc84772a7ea11b2d4f984112c99c5d01dcd1244d537f7",
+      "requestFingerprintSha256": "e5cbe86311e2cbf95cbdc84772a7ea11b2d4f984112c99c5d01dcd1244d537f7",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "2ae5ca382faa2af4b6146c8d26c7a442dce1913e41cf872acb0bdb1982b851eb"
+    },
+    {
+      "id": "S3-07-de-opening-r1",
+      "unitId": "S3-07-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.",
+          "sha256": "522d4036c43a53f0532763c14e9ed0fba5ee9c772d3b61d0aa01a416138f7e44"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Trenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.",
+          "sha256": "96f595d611ff0a3ec318cc3ccaf7468373a76907de5e9ae500c4b0178d964448"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Entwickle eine bedingte Wasser-/Düngerantwort mit allen vier 4R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat N und Ca, aber kein vollständiges NPK liefert.",
+          "sha256": "3a1081f36ccd503faf0589408138cf581adfb2c982424b2af5e6c62ee68023f6"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Bearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+          "sha256": "0cc6c9d51c38fa41f413668a388ec5750d9300d93ec0ee8431114261ea0c4e2f"
+        }
+      ],
+      "scientificMeaning": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser-/Düngerantwort mit allen vier 4R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat N und Ca, aber kein vollständiges NPK liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+      "displayText": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser-/Düngerantwort mit allen vier 4R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat N und Ca, aber kein vollständiges NPK liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+      "captionText": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser-/Düngerantwort mit allen vier 4R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat N und Ca, aber kein vollständiges NPK liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+      "spokenText": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser- und Düngerantwort mit allen vier R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat En und Ce A, aber kein vollständiges En Pe Ka liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+      "spokenTextSHA256": "2bee72b7fe4b2350e0629613b2b4f8d6db3b9a487df447525e972de222a11961",
+      "spokenTextSha256": "2bee72b7fe4b2350e0629613b2b4f8d6db3b9a487df447525e972de222a11961",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser-/Düngerantwort mit allen vier 4R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat N und Ca, aber kein vollständiges NPK liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+          "spoken": "Ein welkes oder verfärbtes Blatt ist eine Beobachtung, keine Diagnose. Formuliere überprüfbare Erklärungen, prüfe Boden, Wurzeln, Wetter und Befunde und begründe Wasser- und Nährstoffmaßnahmen mit passender Quelle, Menge, Zeit und Platzierung.\n\nTrenne bei allen vier Fällen beobachtete Symptome von Diagnosen. Prüfe Entwässerung, kalten Boden, Wurzelfunktion, Wetter und Analysen vor Behandlung eines vermuteten Wasser- oder Nährstoffmangels.\n\nEntwickle eine bedingte Wasser- und Düngerantwort mit allen vier R-Entscheidungen. Nenne Belege für die Menge und erkläre, warum Calciumnitrat En und Ce A, aber kein vollständiges En Pe Ka liefert.\n\nBearbeite zwei unterschiedliche Fälle vollständig, verteidige einen in der Diskussion und vergleiche die übrigen, ohne allein aus dem Aussehen feste Bewässerungs- oder Düngungspläne abzuleiten.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "802778a67922f10fb60464930c9711345503ece15c24db29035cc290dea9649c",
+      "requestFingerprintSha256": "802778a67922f10fb60464930c9711345503ece15c24db29035cc290dea9649c",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "300e722a7b2d42aa17bdfa970d7c4eeb813fe5bd1ba0792183f1c7d871c8af23"
+    },
+    {
+      "id": "S3-07-de-guided-practice-r1",
+      "unitId": "S3-07-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.",
+          "sha256": "87199e4ecbd32733d6ef7481216225664e5201a44a04a0df827b288f5205dc45"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Ordne N, P, K, Ca, Mg, S, Fe, Mn und Zn den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.",
+          "sha256": "48c714fed196e07c5d5f4c52b3e5c7bc2c34e7f7029d3727d9f3b399ebf6055a"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Nenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.",
+          "sha256": "1f99d5713be50636a45c0d64f5c64a1636db1e8e4c01f86ae1e8e64e9ee62029"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Bearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und 4R; verteidige eine und vergleiche die übrigen.",
+          "sha256": "71466500603c14019ec785f37c12c1eccc97f19a6dfcbfd28e26a33a15b73ac0"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Bei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.",
+          "sha256": "8e33366c3e6ecb19a970f0cbdd7c5caecee6a9d919eeb44753ae663a7632ccb7"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Onlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "sha256": "04ce401540d66f529221e71d096c3c8a1f13bee978634ac550426c9f9b084239"
+        }
+      ],
+      "scientificMeaning": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne N, P, K, Ca, Mg, S, Fe, Mn und Zn den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und 4R; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "displayText": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne N, P, K, Ca, Mg, S, Fe, Mn und Zn den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und 4R; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "captionText": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne N, P, K, Ca, Mg, S, Fe, Mn und Zn den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und 4R; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "spokenText": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne En, Pe, Ka, Ce A, Em Ge, Es, Ef E, Em En und Zet En den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und vier R Prinzipien; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "spokenTextSHA256": "c77fe3d3b363c863e6639764d1a4124f168e16437a28badfcf8a9ee8d7b0b628",
+      "spokenTextSha256": "c77fe3d3b363c863e6639764d1a4124f168e16437a28badfcf8a9ee8d7b0b628",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne N, P, K, Ca, Mg, S, Fe, Mn und Zn den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und 4R; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "spoken": "Sortiere Welke, Farbe, Blattalter, Stauwasser und Temperatur als Beobachtungen getrennt von möglichen Ursachen und nenne eine Feldprüfung, die eine Diagnose widerlegt.\n\nOrdne En, Pe, Ka, Ce A, Em Ge, Es, Ef E, Em En und Zet En den richtigen Elementnamen und Gruppen zu; nutze gelbe ältere Blätter, purpurnen Mais und ältere Blattränder nur als zu prüfende Hinweise.\n\nNenne für einen Fall passende Quelle, Mengenbeleg, Zeitpunktbedingung und Platzierung mit Wasserpriorität und Verlustweg.\n\nBearbeite zwei verschiedene Karten mit Beobachtung, Hypothese, Test, Wasser und vier R Prinzipien; verteidige eine und vergleiche die übrigen.\n\nBei direktem Sprung von einem Zeichen zu Dünger oder Gießanweisung zurück zu Beobachtung und Alternativen.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7d28c0fa2f71f0cec3c9a65b70285cc938309e9315015f5eeb0279313fd8897b",
+      "requestFingerprintSha256": "7d28c0fa2f71f0cec3c9a65b70285cc938309e9315015f5eeb0279313fd8897b",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "300e722a7b2d42aa17bdfa970d7c4eeb813fe5bd1ba0792183f1c7d871c8af23"
+    },
+    {
+      "id": "S3-07-de-reflection-r1",
+      "unitId": "S3-07-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Ich erkenne Zeichen von Wasserstress und Nährstoffmangel an Pflanzen.",
+          "sha256": "ef6ee06321c58f301b4cb09c631c8aca33dd2e484c9ab6c9c960e5deeac50b88"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Nutze die Selbsteinschätzung, um deinen Übungsbedarf zu erkennen. Sie weist keine diagnostische Kompetenz nach.",
+          "sha256": "f408e8060e0864c8986fa4b8b8d9de3f63b4188bfc28cf74eb110608dec65863"
+        }
+      ],
+      "scientificMeaning": "Ich erkenne Zeichen von Wasserstress und Nährstoffmangel an Pflanzen.\n\nNutze die Selbsteinschätzung, um deinen Übungsbedarf zu erkennen. Sie weist keine diagnostische Kompetenz nach.",
+      "displayText": "Ich erkenne Zeichen von Wasserstress und Nährstoffmangel an Pflanzen.\n\nNutze die Selbsteinschätzung, um deinen Übungsbedarf zu erkennen. Sie weist keine diagnostische Kompetenz nach.",
+      "captionText": "Ich erkenne Zeichen von Wasserstress und Nährstoffmangel an Pflanzen.\n\nNutze die Selbsteinschätzung, um deinen Übungsbedarf zu erkennen. Sie weist keine diagnostische Kompetenz nach.",
+      "spokenText": "Ich erkenne Zeichen von Wasserstress und Nährstoffmangel an Pflanzen.\n\nNutze die Selbsteinschätzung, um deinen Übungsbedarf zu erkennen. Sie weist keine diagnostische Kompetenz nach.",
+      "spokenTextSHA256": "e4c7d6ec615957a2d1b04f0c93e66dd5cc3174bb033f248b34bc388b950eb514",
+      "spokenTextSha256": "e4c7d6ec615957a2d1b04f0c93e66dd5cc3174bb033f248b34bc388b950eb514",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d933879b985a208081fae4d2c831b8d9211c5af38ecd8c061a21049bfa4e4878",
+      "requestFingerprintSha256": "d933879b985a208081fae4d2c831b8d9211c5af38ecd8c061a21049bfa4e4878",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "300e722a7b2d42aa17bdfa970d7c4eeb813fe5bd1ba0792183f1c7d871c8af23"
+    },
+    {
+      "id": "S3-07-de-glossary-r1",
+      "unitId": "S3-07-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Symptom",
+          "sha256": "a6527b2eb4a96dd41fbc735c8c1cc1bd698317358a7e9693e5afb731ebb82dd8"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Beobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.",
+          "sha256": "40e1c26f5dcee45c1c9d2c26eeefadb5e399fbcc7748bfb9e7e1af69c17988fb"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Hypothese",
+          "sha256": "77ec39454d5f816347c27ac02080a84313f0401cdf4121d1f8134a493874f3ad"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Plausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.",
+          "sha256": "6623cbb190805d8b660f4bbcda78907fbfac327d446322185342e47a6ace9c9a"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "vorübergehendes Welken",
+          "sha256": "def13a5ee1446cc85cfbb43d8c6d0e8298893d7b1c5e8c4c8c018f57703b4132"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Umkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.",
+          "sha256": "17f94d1fa1f61bbdc11291d049c1e38c5ab1c92f9e8b12d93a69504e69000462"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Staunässe",
+          "sha256": "74cf071e12d8e74d721db8e826eda93fbde0d7d95672839d991f9a524794ad85"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Sättigung, die Wurzelsauerstoff mindert und Wasser-/Nährstoffaufnahme begrenzen kann.",
+          "sha256": "89bdb482e901fa485289fb13bb689e822ea48355524f15ef0390c56071b5fca8"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Makronährstoff",
+          "sha256": "dfc49580921b81a58a05d04c4d2f22290797eb6ffb440a9388515a618ff055bf"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Essenzielles Element mit relativ größerem Bedarf, etwa N, P, K, Ca, Mg und S.",
+          "sha256": "980dcdc435ac5e6c12727191b65e449183a5f9e71fb1c7e63fdcc0b6d3e3ab96"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Mikronährstoff",
+          "sha256": "3870e14eaf25dbc85c204c57fec0ef542a152dbf61724748b056434f45015bf4"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Essenzielles Element in kleineren Mengen, etwa Fe, Mn oder Zn.",
+          "sha256": "46521492bb8b6120eb4c3a3aa8c8c4a18ab9fd1f7a3fc23515e6dd3069071f4f"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "4R-Nährstoffmanagement",
+          "sha256": "f290209580ecb7501d1176d569096989e022b7c61b5ca8f11df962112a87d724"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Passende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.",
+          "sha256": "09ed58a18f54873f29a5601140abb371662b34ec1c9bd847474e3c54a6d0398d"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Banddüngung",
+          "sha256": "709c34d3ead644d27faf5b1052926de570f58ca2dfb3ee4c5c02eb95b6aaa776"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Düngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.",
+          "sha256": "76919fab56f306b85b986da6b99d4d9914063d0d70df0e5188a6ce79a95358f7"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "Calciumnitrat",
+          "sha256": "2e1d3f277f3056cd789eca332bcacec2077a10225b7eee04f2e5263ae4a09435"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "N- und Ca-Dünger, der allein kein vollständiges N-P-K-Verhältnis liefert.",
+          "sha256": "3a0b36d8d0f85e918954e8caea94f4be5a1fb273e375151382335aaa72867bae"
+        }
+      ],
+      "scientificMeaning": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-/Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa N, P, K, Ca, Mg und S.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Fe, Mn oder Zn.\n\n4R-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nN- und Ca-Dünger, der allein kein vollständiges N-P-K-Verhältnis liefert.",
+      "displayText": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-/Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa N, P, K, Ca, Mg und S.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Fe, Mn oder Zn.\n\n4R-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nN- und Ca-Dünger, der allein kein vollständiges N-P-K-Verhältnis liefert.",
+      "captionText": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-/Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa N, P, K, Ca, Mg und S.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Fe, Mn oder Zn.\n\n4R-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nN- und Ca-Dünger, der allein kein vollständiges N-P-K-Verhältnis liefert.",
+      "spokenText": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-, Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa En, Pe, Ka, Ce A, Em Ge und Es.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Ef E, Em En oder Zet En.\n\nvier R Prinzipien-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nEn- und Ce A-Dünger, der allein kein vollständiges En Pe Ka-Verhältnis liefert.",
+      "spokenTextSHA256": "35377e81d38effe9d0f07e5b5500f902d8f4cd02449c9a629f933f78542c5c73",
+      "spokenTextSha256": "35377e81d38effe9d0f07e5b5500f902d8f4cd02449c9a629f933f78542c5c73",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-/Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa N, P, K, Ca, Mg und S.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Fe, Mn oder Zn.\n\n4R-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nN- und Ca-Dünger, der allein kein vollständiges N-P-K-Verhältnis liefert.",
+          "spoken": "Symptom\n\nBeobachtete Veränderung, die Untersuchung anstößt, ihre Ursache allein aber nicht beweist.\n\nHypothese\n\nPlausible Erklärung, die sich an weiteren Beobachtungen oder Messungen prüfen lässt.\n\nvorübergehendes Welken\n\nUmkehrbarer Verlust des Zelldrucks, wenn Tagesverlust Aufnahme übersteigt, auch ohne bekannte Bodenfeuchte.\n\nStaunässe\n\nSättigung, die Wurzelsauerstoff mindert und Wasser-, Nährstoffaufnahme begrenzen kann.\n\nMakronährstoff\n\nEssenzielles Element mit relativ größerem Bedarf, etwa En, Pe, Ka, Ce A, Em Ge und Es.\n\nMikronährstoff\n\nEssenzielles Element in kleineren Mengen, etwa Ef E, Em En oder Zet En.\n\nvier R Prinzipien-Nährstoffmanagement\n\nPassende Quelle, Menge, Zeit und Platzierung für Kultur und Standort wählen.\n\nBanddüngung\n\nDüngerstreifen an vorgegebenem Ort nahe Wurzel oder Saatreihe unter Produkt- und Sicherheitsgrenzen.\n\nCalciumnitrat\n\nEn- und Ce A-Dünger, der allein kein vollständiges En Pe Ka-Verhältnis liefert.",
+          "occurrences": 1,
+          "purpose": "Fullsource-faithful diagnosis/waternutrient4R/twodistinctcase/individualexplanation/calciumnitrateNandCaNOTcompleteNPK/all9glossary; natural symbol/name/principlesgrammar. Source/captionread-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "051ae96231269540b4ca0474a79ccac73ad0e0a7870fb3e6f01adc576f87beda",
+      "requestFingerprintSha256": "051ae96231269540b4ca0474a79ccac73ad0e0a7870fb3e6f01adc576f87beda",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "300e722a7b2d42aa17bdfa970d7c4eeb813fe5bd1ba0792183f1c7d871c8af23"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-07-ar-EG-opening-r1",
+      "S3-07-ar-EG-guided-practice-r1",
+      "S3-07-ar-EG-reflection-r1",
+      "S3-07-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-07-en-opening-r1",
+      "S3-07-en-guided-practice-r1",
+      "S3-07-en-reflection-r1",
+      "S3-07-en-glossary-r1"
+    ],
+    "it": [
+      "S3-07-it-opening-r1",
+      "S3-07-it-guided-practice-r1",
+      "S3-07-it-reflection-r1",
+      "S3-07-it-glossary-r1"
+    ],
+    "de": [
+      "S3-07-de-opening-r1",
+      "S3-07-de-guided-practice-r1",
+      "S3-07-de-reflection-r1",
+      "S3-07-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
