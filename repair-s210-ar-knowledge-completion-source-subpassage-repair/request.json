@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S210_AR_KNOWLEDGE_COMPLETION_SOURCE_SUBPASSAGE_REPAIR",
+  "stepId": "S2-10",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s210-ar-knowledge-completion-source-subpassage-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-10-ar-EG-knowledge-completion-source-subpassage-repair-r1",
+      "unitId": "S2-10-ar-EG-knowledge-completion-source-subpassage-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s210-ar-knowledge-completion-source-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0e3494c682aa8667e99a4958421e7da468ae3d3f71a36a98fa52be07d7d17d9f",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/passChecks/2/evidence",
+          "text": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "sha256": "50cc28669c9d833d0c1e5919a8c86c00ce75dfed9ec3e050577c12a8cdadbbd8"
+        }
+      ],
+      "scientificMeaning": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "displayText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "captionText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "spokenText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقد غير عضوي تاني ممكن يؤثر على إل أو آي حسب الطريقة والتربة؛ ويعامل تلاتة إلى ستة في المية كمثال تعليمي ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "spokenTextSHA256": "a9e39987d17186488f0486e48e85dea958a4cd2d6a53ed3907b867b3069db2e5",
+      "spokenTextSha256": "a9e39987d17186488f0486e48e85dea958a4cd2d6a53ed3907b867b3069db2e5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "spoken": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "spoken": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقد غير عضوي تاني ممكن يؤثر على إل أو آي حسب الطريقة والتربة؛ ويعامل تلاتة إلى ستة في المية كمثال تعليمي ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "5419e0ecc6028934a7490e7d7e1dac39b962809cd98e99f21830e013e4e732d9",
+      "requestFingerprintSha256": "5419e0ecc6028934a7490e7d7e1dac39b962809cd98e99f21830e013e4e732d9",
+      "sourcePlanSha256": "7fcf8d200bd62219b0cced0de949af2b17edf53858994074a43a493ab3f9e622",
+      "exactSentenceBefore": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/loiPractice/passChecks/2/evidence",
+        "original": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+        "effective": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s210-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "24f9b78d4698a623e8b85f3e6842f645bad49a472892f86d5429188c265629a6"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-10-ar-EG-knowledge-completion-source-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

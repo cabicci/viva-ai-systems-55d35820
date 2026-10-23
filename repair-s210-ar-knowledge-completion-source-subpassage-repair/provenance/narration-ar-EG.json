@@ -1,0 +1,75 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-10-ar-EG.json",
+    "sha256": "0e3494c682aa8667e99a4958421e7da468ae3d3f71a36a98fa52be07d7d17d9f",
+    "bytes": 36696
+  },
+  "units": [
+    {
+      "id": "S2-10-ar-EG-knowledge-completion-source-subpassage-repair-r1",
+      "unitId": "S2-10-ar-EG-knowledge-completion-source-subpassage-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s210-ar-knowledge-completion-source-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0e3494c682aa8667e99a4958421e7da468ae3d3f71a36a98fa52be07d7d17d9f",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/passChecks/2/evidence",
+          "text": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "sha256": "50cc28669c9d833d0c1e5919a8c86c00ce75dfed9ec3e050577c12a8cdadbbd8"
+        }
+      ],
+      "scientificMeaning": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "displayText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "captionText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "spokenText": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقد غير عضوي تاني ممكن يؤثر على إل أو آي حسب الطريقة والتربة؛ ويعامل تلاتة إلى ستة في المية كمثال تعليمي ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "spokenTextSHA256": "a9e39987d17186488f0486e48e85dea958a4cd2d6a53ed3907b867b3069db2e5",
+      "spokenTextSha256": "a9e39987d17186488f0486e48e85dea958a4cd2d6a53ed3907b867b3069db2e5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "spoken": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "spoken": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقد غير عضوي تاني ممكن يؤثر على إل أو آي حسب الطريقة والتربة؛ ويعامل تلاتة إلى ستة في المية كمثال تعليمي ويسأل عن سياق الأرض والمناخ والمعمل.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "5419e0ecc6028934a7490e7d7e1dac39b962809cd98e99f21830e013e4e732d9",
+      "requestFingerprintSha256": "5419e0ecc6028934a7490e7d7e1dac39b962809cd98e99f21830e013e4e732d9",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/loiPractice/passChecks/2/evidence",
+        "original": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+        "effective": "الطالب يوضح إن رطوبة متبقية أو ماء مرتبط بالطين أو فقدًا غير عضوي آخر ممكن يؤثر على LOI حسب الطريقة والتربة؛ ويعامل 3–6% كمثال فصل ويسأل عن سياق الأرض والمناخ والمعمل.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s210-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "24f9b78d4698a623e8b85f3e6842f645bad49a472892f86d5429188c265629a6"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
