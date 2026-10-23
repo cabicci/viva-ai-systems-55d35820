@@ -1,0 +1,709 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Deliverables\\New-method-source-corrections-r1\\S1-02-it-effective.json",
+    "sha256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+    "bytes": 39765
+  },
+  "units": [
+    {
+      "id": "S1-02-it-opening-r1",
+      "unitId": "S1-02-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Se qualcuno si sente male o si ferisce in campo, le prime decisioni contano. Esercitati a riconoscere i segnali di pericolo, chiedere l'aiuto giusto e prestare solo l'assistenza per cui sei stato formato.",
+          "sha256": "92ec6dfd2b857696915d6677b896f5fbbc9d06db44a8b72de307ac76400e628a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Riconoscere i segnali di infortunio e di emergenza da calore, compreso un possibile colpo di calore in una persona che sta ancora sudando.",
+          "sha256": "6701541613275e2570322acb114a25aaeb9ddb1ee8b4d47ec358ca514b124ba6"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Comunicare chiaramente un'emergenza e spiegare quali azioni immediate sono adatte alla situazione e alla propria formazione.",
+          "sha256": "79d3e508c067d82bb816090fc3c3d9162b70dfbc13b20427fca30b1707b64221"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Dimostrare una risposta simulata sicura, chiamare aiuto e scegliere attrezzature di primo soccorso adeguate sotto l'osservazione del formatore.",
+          "sha256": "089ef3161e494b9e8955a66a12b902b5bd5b291ae3d9e397ab57895cd0bd8194"
+        }
+      ],
+      "scientificMeaning": "Se qualcuno si sente male o si ferisce in campo, le prime decisioni contano. Esercitati a riconoscere i segnali di pericolo, chiedere l'aiuto giusto e prestare solo l'assistenza per cui sei stato formato.\n\nRiconoscere i segnali di infortunio e di emergenza da calore, compreso un possibile colpo di calore in una persona che sta ancora sudando.\n\nComunicare chiaramente un'emergenza e spiegare quali azioni immediate sono adatte alla situazione e alla propria formazione.\n\nDimostrare una risposta simulata sicura, chiamare aiuto e scegliere attrezzature di primo soccorso adeguate sotto l'osservazione del formatore.",
+      "displayText": "Se qualcuno si sente male o si ferisce in campo, le prime decisioni contano. Esercitati a riconoscere i segnali di pericolo, chiedere l'aiuto giusto e prestare solo l'assistenza per cui sei stato formato.\n\nRiconoscere i segnali di infortunio e di emergenza da calore, compreso un possibile colpo di calore in una persona che sta ancora sudando.\n\nComunicare chiaramente un'emergenza e spiegare quali azioni immediate sono adatte alla situazione e alla propria formazione.\n\nDimostrare una risposta simulata sicura, chiamare aiuto e scegliere attrezzature di primo soccorso adeguate sotto l'osservazione del formatore.",
+      "captionText": "Se qualcuno si sente male o si ferisce in campo, le prime decisioni contano. Esercitati a riconoscere i segnali di pericolo, chiedere l'aiuto giusto e prestare solo l'assistenza per cui sei stato formato.\n\nRiconoscere i segnali di infortunio e di emergenza da calore, compreso un possibile colpo di calore in una persona che sta ancora sudando.\n\nComunicare chiaramente un'emergenza e spiegare quali azioni immediate sono adatte alla situazione e alla propria formazione.\n\nDimostrare una risposta simulata sicura, chiamare aiuto e scegliere attrezzature di primo soccorso adeguate sotto l'osservazione del formatore.",
+      "spokenText": "Se qualcuno si sente male o si ferisce in campo, le prime decisioni contano. Esercitati a riconoscere i segnali di pericolo, chiedere l'aiuto giusto e prestare solo l'assistenza per cui sei stato formato.\n\nRiconoscere i segnali di infortunio e di emergenza da calore, compreso un possibile colpo di calore in una persona che sta ancora sudando.\n\nComunicare chiaramente un'emergenza e spiegare quali azioni immediate sono adatte alla situazione e alla propria formazione.\n\nDimostrare una risposta simulata sicura, chiamare aiuto e scegliere attrezzature di primo soccorso adeguate sotto l'osservazione del formatore.",
+      "spokenTextSHA256": "b091dadc9a1e2fbe898e1ee50ea8a55023dbad6e424f85388f6f6c5dbf3d0025",
+      "spokenTextSha256": "b091dadc9a1e2fbe898e1ee50ea8a55023dbad6e424f85388f6f6c5dbf3d0025",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "752f355a581960b485c69520ace62a5e7f2b242cecc0b8c43237f1932c33907d",
+      "requestFingerprintSha256": "752f355a581960b485c69520ace62a5e7f2b242cecc0b8c43237f1932c33907d",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-E01-r1",
+      "unitId": "S1-02-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una persona inciampa vicino alla strada di accesso alla fattoria. Un veicolo si avvicina e la persona dice che le fa male una gamba.",
+          "sha256": "4d79e80237aaa4bb5d8a7ffdac3517d2bc087dab7691263720273963aaae2e2b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Valuta il traffico e resta fuori dalla sua traiettoria. Avvisa gli altri senza entrare in una zona pericolosa.",
+          "sha256": "bd727971149787d9cc18ff45da13ac604473db2d796193a40f9eee476d3b8574"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Avvisa il responsabile e chiedi soccorso medico se la lesione è grave. Comunica il punto esatto sulla strada di accesso.",
+          "sha256": "05fd08e7152f85bc44042350c5428050fe34d9546a4d2bc1efd4223f59b115ea"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Rassicura la persona da una posizione sicura. Non tirarla su e non mettere alla prova la gamba dolorante. Segui le indicazioni d'emergenza appropriate.",
+          "sha256": "95c1e3a453d3b2ac117801f6ff7685ba53f1ddfed0b265d7c4622e2011ea00a4"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Per aiutare, parti dalla sicurezza del luogo; una caduta apparentemente comune non giustifica lo spostamento di una possibile frattura.",
+          "sha256": "5c45c8ee570edcb1c99ce2301b110b72c1439b997648123c697fdefe0b5985fb"
+        }
+      ],
+      "scientificMeaning": "Una persona inciampa vicino alla strada di accesso alla fattoria. Un veicolo si avvicina e la persona dice che le fa male una gamba.\n\nValuta il traffico e resta fuori dalla sua traiettoria. Avvisa gli altri senza entrare in una zona pericolosa.\n\nAvvisa il responsabile e chiedi soccorso medico se la lesione è grave. Comunica il punto esatto sulla strada di accesso.\n\nRassicura la persona da una posizione sicura. Non tirarla su e non mettere alla prova la gamba dolorante. Segui le indicazioni d'emergenza appropriate.\n\nPer aiutare, parti dalla sicurezza del luogo; una caduta apparentemente comune non giustifica lo spostamento di una possibile frattura.",
+      "displayText": "Una persona inciampa vicino alla strada di accesso alla fattoria. Un veicolo si avvicina e la persona dice che le fa male una gamba.\n\nValuta il traffico e resta fuori dalla sua traiettoria. Avvisa gli altri senza entrare in una zona pericolosa.\n\nAvvisa il responsabile e chiedi soccorso medico se la lesione è grave. Comunica il punto esatto sulla strada di accesso.\n\nRassicura la persona da una posizione sicura. Non tirarla su e non mettere alla prova la gamba dolorante. Segui le indicazioni d'emergenza appropriate.\n\nPer aiutare, parti dalla sicurezza del luogo; una caduta apparentemente comune non giustifica lo spostamento di una possibile frattura.",
+      "captionText": "Una persona inciampa vicino alla strada di accesso alla fattoria. Un veicolo si avvicina e la persona dice che le fa male una gamba.\n\nValuta il traffico e resta fuori dalla sua traiettoria. Avvisa gli altri senza entrare in una zona pericolosa.\n\nAvvisa il responsabile e chiedi soccorso medico se la lesione è grave. Comunica il punto esatto sulla strada di accesso.\n\nRassicura la persona da una posizione sicura. Non tirarla su e non mettere alla prova la gamba dolorante. Segui le indicazioni d'emergenza appropriate.\n\nPer aiutare, parti dalla sicurezza del luogo; una caduta apparentemente comune non giustifica lo spostamento di una possibile frattura.",
+      "spokenText": "Una persona inciampa vicino alla strada di accesso alla fattoria. Un veicolo si avvicina e la persona dice che le fa male una gamba.\n\nValuta il traffico e resta fuori dalla sua traiettoria. Avvisa gli altri senza entrare in una zona pericolosa.\n\nAvvisa il responsabile e chiedi soccorso medico se la lesione è grave. Comunica il punto esatto sulla strada di accesso.\n\nRassicura la persona da una posizione sicura. Non tirarla su e non mettere alla prova la gamba dolorante. Segui le indicazioni d'emergenza appropriate.\n\nPer aiutare, parti dalla sicurezza del luogo; una caduta apparentemente comune non giustifica lo spostamento di una possibile frattura.",
+      "spokenTextSHA256": "e057a7bbea3a5958bd9bcc22057a9ad2d5e0ea97940a730343f1f51a36f3d75b",
+      "spokenTextSha256": "e057a7bbea3a5958bd9bcc22057a9ad2d5e0ea97940a730343f1f51a36f3d75b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ee0990e1065a3e614d7e9ac22d6d5ccd8491f34c792c50a92169a6b3df59792",
+      "requestFingerprintSha256": "8ee0990e1065a3e614d7e9ac22d6d5ccd8491f34c792c50a92169a6b3df59792",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-E02-r1",
+      "unitId": "S1-02-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Dopo il lavoro al sole, il tuo compagno suda molto, ha mal di testa e nausea. Il veicolo è lontano. È vigile e deglutisce normalmente.",
+          "sha256": "622dafd5c0da4bfeeaa2659a0aeab2baf8b50aaec12132a0e31c4810b38ecce3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Interrompi il lavoro e riconosci il possibile esaurimento da calore. Usa l'ombra sicura più vicina; non costringerlo a continuare o a camminare a lungo fino al veicolo.",
+          "sha256": "bde79d4e47c4cce31e227e307c8207347d821c66adb85a7d1f868dc64e202a0f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Avvisa il responsabile, comunica posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.",
+          "sha256": "ed079d3eeb7489f1036aa629b46725bea0782461e3e0482b8c62345846adb86b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Allenta gli indumenti non necessari; raffredda con panni bagnati su testa, collo e ascelle e ventilazione; offri piccoli sorsi di acqua fresca finché resta vigile e deglutisce senza rischio.",
+          "sha256": "87354e25ea8acd577fd1741701169ab7f123f8157c7012e347d99472e2cc8232"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "Se diventa confuso, collassa o peggiora, chiama subito il 123 e continua a raffreddarlo. Non aspettare che smetta di sudare e non dare da bere se la deglutizione non è sicura.",
+          "sha256": "46dec1395d283cb49a6c1505e8dd88e01340c1e13a871d7bf6fc9561d503ec1a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Osserva la persona senza interruzioni: la sudorazione abbondante può continuare anche quando la situazione diventa un'emergenza.",
+          "sha256": "2a7670c35e9f5bdeea92af19dabc0416c3ad5dd6100b8571409500f85214cdf9"
+        }
+      ],
+      "scientificMeaning": "Dopo il lavoro al sole, il tuo compagno suda molto, ha mal di testa e nausea. Il veicolo è lontano. È vigile e deglutisce normalmente.\n\nInterrompi il lavoro e riconosci il possibile esaurimento da calore. Usa l'ombra sicura più vicina; non costringerlo a continuare o a camminare a lungo fino al veicolo.\n\nAvvisa il responsabile, comunica posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti non necessari; raffredda con panni bagnati su testa, collo e ascelle e ventilazione; offri piccoli sorsi di acqua fresca finché resta vigile e deglutisce senza rischio.\n\nSe diventa confuso, collassa o peggiora, chiama subito il 123 e continua a raffreddarlo. Non aspettare che smetta di sudare e non dare da bere se la deglutizione non è sicura.\n\nOsserva la persona senza interruzioni: la sudorazione abbondante può continuare anche quando la situazione diventa un'emergenza.",
+      "displayText": "Dopo il lavoro al sole, il tuo compagno suda molto, ha mal di testa e nausea. Il veicolo è lontano. È vigile e deglutisce normalmente.\n\nInterrompi il lavoro e riconosci il possibile esaurimento da calore. Usa l'ombra sicura più vicina; non costringerlo a continuare o a camminare a lungo fino al veicolo.\n\nAvvisa il responsabile, comunica posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti non necessari; raffredda con panni bagnati su testa, collo e ascelle e ventilazione; offri piccoli sorsi di acqua fresca finché resta vigile e deglutisce senza rischio.\n\nSe diventa confuso, collassa o peggiora, chiama subito il 123 e continua a raffreddarlo. Non aspettare che smetta di sudare e non dare da bere se la deglutizione non è sicura.\n\nOsserva la persona senza interruzioni: la sudorazione abbondante può continuare anche quando la situazione diventa un'emergenza.",
+      "captionText": "Dopo il lavoro al sole, il tuo compagno suda molto, ha mal di testa e nausea. Il veicolo è lontano. È vigile e deglutisce normalmente.\n\nInterrompi il lavoro e riconosci il possibile esaurimento da calore. Usa l'ombra sicura più vicina; non costringerlo a continuare o a camminare a lungo fino al veicolo.\n\nAvvisa il responsabile, comunica posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti non necessari; raffredda con panni bagnati su testa, collo e ascelle e ventilazione; offri piccoli sorsi di acqua fresca finché resta vigile e deglutisce senza rischio.\n\nSe diventa confuso, collassa o peggiora, chiama subito il 123 e continua a raffreddarlo. Non aspettare che smetta di sudare e non dare da bere se la deglutizione non è sicura.\n\nOsserva la persona senza interruzioni: la sudorazione abbondante può continuare anche quando la situazione diventa un'emergenza.",
+      "spokenText": "Dopo il lavoro al sole, il tuo compagno suda molto, ha mal di testa e nausea. Il veicolo è lontano. È vigile e deglutisce normalmente.\n\nInterrompi il lavoro e riconosci il possibile esaurimento da calore. Usa l'ombra sicura più vicina; non costringerlo a continuare o a camminare a lungo fino al veicolo.\n\nAvvisa il responsabile, comunica posizione e sintomi e organizza una valutazione medica. Qualcuno deve restare con la persona.\n\nAllenta gli indumenti non necessari; raffredda con panni bagnati su testa, collo e ascelle e ventilazione; offri piccoli sorsi di acqua fresca finché resta vigile e deglutisce senza rischio.\n\nSe diventa confuso, collassa o peggiora, chiama subito il uno due tre e continua a raffreddarlo. Non aspettare che smetta di sudare e non dare da bere se la deglutizione non è sicura.\n\nOsserva la persona senza interruzioni: la sudorazione abbondante può continuare anche quando la situazione diventa un'emergenza.",
+      "spokenTextSHA256": "860e35392ed7512543b1cca4d1e0c63b82e0379d3cea4b3ce4f8ba4cc900e61f",
+      "spokenTextSha256": "860e35392ed7512543b1cca4d1e0c63b82e0379d3cea4b3ce4f8ba4cc900e61f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "123",
+          "spoken": "uno due tre",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1160cdd02979e6cd2a0fc118c14c4dd219fcc7cac7de48a40b1b4128143d3f58",
+      "requestFingerprintSha256": "1160cdd02979e6cd2a0fc118c14c4dd219fcc7cac7de48a40b1b4128143d3f58",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-E03-r1",
+      "unitId": "S1-02-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un collega cade in una buca poco profonda e nascosta. La caviglia ha una posizione insolita, il dolore è forte e non può muoversi in sicurezza. L'area immediata è altrimenti sicura.",
+          "sha256": "550b49e17c56c2ca101fd52f34f0c6e8e0259d0e32f9d989afad2aea2333b7de"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tieni le altre persone lontane dalla buca e verifica se ci sono altri pericoli.",
+          "sha256": "81501188e5f168b40965c2644771220bc736bd7f0827c6a4b6fd1f6c92ded853"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Chiama il soccorso medico d'emergenza. Descrivi il forte dolore, la posizione insolita della caviglia, il punto esatto nel campo e l'accesso più sicuro. Segnala una lesione sospetta, non una diagnosi certa.",
+          "sha256": "6769c044d3b7b208e2f9f2c93e24c2fa201f547c8bb4d8b846cbdb94fc671f04"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Mantieni la persona ferma e rassicurala. Non raddrizzare la caviglia, non togliere la scarpa per guardarla e non chiederle di camminare. Sostieni o immobilizza solo secondo la tua formazione e le indicazioni ricevute.",
+          "sha256": "b1321c3836e315dbfa5516a69ac836da4700f309a9c6d62035b277cb23c6ef0d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Se c'è sanguinamento, applica una pressione diretta appropriata senza premere su un osso sporgente. Proteggi la persona dal freddo o dal caldo e osserva i cambiamenti fino all'arrivo dei soccorsi.",
+          "sha256": "8f18a91e72a9dc44b1518161a4d5fd1213ac10aa56d4eee3db13d19810814013"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "La risposta sicura non dipende dal dimostrare se la lesione è una distorsione o una frattura.",
+          "sha256": "c7006d9bd3a69cdf47a3f1817380b1ef052b5eb244d32d4db91c172bac35bee4"
+        }
+      ],
+      "scientificMeaning": "Un collega cade in una buca poco profonda e nascosta. La caviglia ha una posizione insolita, il dolore è forte e non può muoversi in sicurezza. L'area immediata è altrimenti sicura.\n\nTieni le altre persone lontane dalla buca e verifica se ci sono altri pericoli.\n\nChiama il soccorso medico d'emergenza. Descrivi il forte dolore, la posizione insolita della caviglia, il punto esatto nel campo e l'accesso più sicuro. Segnala una lesione sospetta, non una diagnosi certa.\n\nMantieni la persona ferma e rassicurala. Non raddrizzare la caviglia, non togliere la scarpa per guardarla e non chiederle di camminare. Sostieni o immobilizza solo secondo la tua formazione e le indicazioni ricevute.\n\nSe c'è sanguinamento, applica una pressione diretta appropriata senza premere su un osso sporgente. Proteggi la persona dal freddo o dal caldo e osserva i cambiamenti fino all'arrivo dei soccorsi.\n\nLa risposta sicura non dipende dal dimostrare se la lesione è una distorsione o una frattura.",
+      "displayText": "Un collega cade in una buca poco profonda e nascosta. La caviglia ha una posizione insolita, il dolore è forte e non può muoversi in sicurezza. L'area immediata è altrimenti sicura.\n\nTieni le altre persone lontane dalla buca e verifica se ci sono altri pericoli.\n\nChiama il soccorso medico d'emergenza. Descrivi il forte dolore, la posizione insolita della caviglia, il punto esatto nel campo e l'accesso più sicuro. Segnala una lesione sospetta, non una diagnosi certa.\n\nMantieni la persona ferma e rassicurala. Non raddrizzare la caviglia, non togliere la scarpa per guardarla e non chiederle di camminare. Sostieni o immobilizza solo secondo la tua formazione e le indicazioni ricevute.\n\nSe c'è sanguinamento, applica una pressione diretta appropriata senza premere su un osso sporgente. Proteggi la persona dal freddo o dal caldo e osserva i cambiamenti fino all'arrivo dei soccorsi.\n\nLa risposta sicura non dipende dal dimostrare se la lesione è una distorsione o una frattura.",
+      "captionText": "Un collega cade in una buca poco profonda e nascosta. La caviglia ha una posizione insolita, il dolore è forte e non può muoversi in sicurezza. L'area immediata è altrimenti sicura.\n\nTieni le altre persone lontane dalla buca e verifica se ci sono altri pericoli.\n\nChiama il soccorso medico d'emergenza. Descrivi il forte dolore, la posizione insolita della caviglia, il punto esatto nel campo e l'accesso più sicuro. Segnala una lesione sospetta, non una diagnosi certa.\n\nMantieni la persona ferma e rassicurala. Non raddrizzare la caviglia, non togliere la scarpa per guardarla e non chiederle di camminare. Sostieni o immobilizza solo secondo la tua formazione e le indicazioni ricevute.\n\nSe c'è sanguinamento, applica una pressione diretta appropriata senza premere su un osso sporgente. Proteggi la persona dal freddo o dal caldo e osserva i cambiamenti fino all'arrivo dei soccorsi.\n\nLa risposta sicura non dipende dal dimostrare se la lesione è una distorsione o una frattura.",
+      "spokenText": "Un collega cade in una buca poco profonda e nascosta. La caviglia ha una posizione insolita, il dolore è forte e non può muoversi in sicurezza. L'area immediata è altrimenti sicura.\n\nTieni le altre persone lontane dalla buca e verifica se ci sono altri pericoli.\n\nChiama il soccorso medico d'emergenza. Descrivi il forte dolore, la posizione insolita della caviglia, il punto esatto nel campo e l'accesso più sicuro. Segnala una lesione sospetta, non una diagnosi certa.\n\nMantieni la persona ferma e rassicurala. Non raddrizzare la caviglia, non togliere la scarpa per guardarla e non chiederle di camminare. Sostieni o immobilizza solo secondo la tua formazione e le indicazioni ricevute.\n\nSe c'è sanguinamento, applica una pressione diretta appropriata senza premere su un osso sporgente. Proteggi la persona dal freddo o dal caldo e osserva i cambiamenti fino all'arrivo dei soccorsi.\n\nLa risposta sicura non dipende dal dimostrare se la lesione è una distorsione o una frattura.",
+      "spokenTextSHA256": "3d7e3a3ace071283795e84ba7e09a2938b57bafb8b96d436595a22d01c36cd1b",
+      "spokenTextSha256": "3d7e3a3ace071283795e84ba7e09a2938b57bafb8b96d436595a22d01c36cd1b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "34929caf9872e2ec954e6051cb31cf06cfe66bb08771d2679b34be3bff5c2e25",
+      "requestFingerprintSha256": "34929caf9872e2ec954e6051cb31cf06cfe66bb08771d2679b34be3bff5c2e25",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-E04-r1",
+      "unitId": "S1-02-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Durante un'attività autorizzata, del fertilizzante liquido schizza nell'occhio del tuo compagno. L'area è sicura e il sistema di lavaggio oculare previsto è accessibile.",
+          "sha256": "5fed7c1d5e5d5799350551ae914c05bd336bbb8188c742849e861af675d1e886"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Inizia subito un lavaggio appropriato. Il controllo della sicurezza deve essere rapido, non un motivo per rinviare il lavaggio.",
+          "sha256": "813ea7190298ddce82aa549a06cfe096fca9daec7a95ef6626c1d103739c7593"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Chiedi a un'altra persona di chiamare il soccorso medico e portare le informazioni sul prodotto. Comunica luogo, esposizione dell'occhio, prodotto se noto e condizioni osservate.",
+          "sha256": "8bdb4a2082a7ef78df54a46eee517e3d7067048e0774c0f09f5351fab3d885a0"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Continua a lavare secondo le istruzioni del prodotto e del personale medico. Non fermarti solo perché sono trascorsi 15 minuti e non cercare i documenti prima di iniziare il lavaggio.",
+          "sha256": "dabe62c0135c60853ce651510954106f6e31140a191166d93555d99592a622e4"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Il soccorso immediato e la chiamata possono avvenire contemporaneamente.",
+          "sha256": "84f0bc25b373dbfcce3f1faca962f257dc84d9b9d910a927255612e2de08b95f"
+        }
+      ],
+      "scientificMeaning": "Durante un'attività autorizzata, del fertilizzante liquido schizza nell'occhio del tuo compagno. L'area è sicura e il sistema di lavaggio oculare previsto è accessibile.\n\nInizia subito un lavaggio appropriato. Il controllo della sicurezza deve essere rapido, non un motivo per rinviare il lavaggio.\n\nChiedi a un'altra persona di chiamare il soccorso medico e portare le informazioni sul prodotto. Comunica luogo, esposizione dell'occhio, prodotto se noto e condizioni osservate.\n\nContinua a lavare secondo le istruzioni del prodotto e del personale medico. Non fermarti solo perché sono trascorsi 15 minuti e non cercare i documenti prima di iniziare il lavaggio.\n\nIl soccorso immediato e la chiamata possono avvenire contemporaneamente.",
+      "displayText": "Durante un'attività autorizzata, del fertilizzante liquido schizza nell'occhio del tuo compagno. L'area è sicura e il sistema di lavaggio oculare previsto è accessibile.\n\nInizia subito un lavaggio appropriato. Il controllo della sicurezza deve essere rapido, non un motivo per rinviare il lavaggio.\n\nChiedi a un'altra persona di chiamare il soccorso medico e portare le informazioni sul prodotto. Comunica luogo, esposizione dell'occhio, prodotto se noto e condizioni osservate.\n\nContinua a lavare secondo le istruzioni del prodotto e del personale medico. Non fermarti solo perché sono trascorsi 15 minuti e non cercare i documenti prima di iniziare il lavaggio.\n\nIl soccorso immediato e la chiamata possono avvenire contemporaneamente.",
+      "captionText": "Durante un'attività autorizzata, del fertilizzante liquido schizza nell'occhio del tuo compagno. L'area è sicura e il sistema di lavaggio oculare previsto è accessibile.\n\nInizia subito un lavaggio appropriato. Il controllo della sicurezza deve essere rapido, non un motivo per rinviare il lavaggio.\n\nChiedi a un'altra persona di chiamare il soccorso medico e portare le informazioni sul prodotto. Comunica luogo, esposizione dell'occhio, prodotto se noto e condizioni osservate.\n\nContinua a lavare secondo le istruzioni del prodotto e del personale medico. Non fermarti solo perché sono trascorsi 15 minuti e non cercare i documenti prima di iniziare il lavaggio.\n\nIl soccorso immediato e la chiamata possono avvenire contemporaneamente.",
+      "spokenText": "Durante un'attività autorizzata, del fertilizzante liquido schizza nell'occhio del tuo compagno. L'area è sicura e il sistema di lavaggio oculare previsto è accessibile.\n\nInizia subito un lavaggio appropriato. Il controllo della sicurezza deve essere rapido, non un motivo per rinviare il lavaggio.\n\nChiedi a un'altra persona di chiamare il soccorso medico e portare le informazioni sul prodotto. Comunica luogo, esposizione dell'occhio, prodotto se noto e condizioni osservate.\n\nContinua a lavare secondo le istruzioni del prodotto e del personale medico. Non fermarti solo perché sono trascorsi quindici minuti e non cercare i documenti prima di iniziare il lavaggio.\n\nIl soccorso immediato e la chiamata possono avvenire contemporaneamente.",
+      "spokenTextSHA256": "8a1863d0c168610ee95c588fd09f21abf75ba4b2ac189df4ffe04c7ab9cf4747",
+      "spokenTextSha256": "8a1863d0c168610ee95c588fd09f21abf75ba4b2ac189df4ffe04c7ab9cf4747",
+      "spokenAdaptationChanges": [
+        {
+          "written": "15 minuti",
+          "spoken": "quindici minuti",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "00c0d00ee857b3f2866e1e2339ceae89de65ec02166a41b07fea943558ce30b8",
+      "requestFingerprintSha256": "00c0d00ee857b3f2866e1e2339ceae89de65ec02166a41b07fea943558ce30b8",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-E05-r1",
+      "unitId": "S1-02-it-E05-r1",
+      "locale": "it",
+      "semanticGroup": "E05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/situation",
+          "text": "Nella cassetta da campo trovi garze, nastro medico, una piccola bottiglia lavaocchi, una coperta d'emergenza e i contatti scritti.",
+          "sha256": "4f871671189af08bf0c70cdd54a877fcb20d482f13ce4fc45a73c361b4c986c3"
+        },
+        {
+          "pointer": "/examples/4/reasoning/0",
+          "text": "Per una ferita profonda, scegli garze pulite per la pressione diretta. Il nastro può aiutare a fissare una medicazione, se usato correttamente; prenderlo non deve ritardare pressione o richiesta di aiuto.",
+          "sha256": "b1b61c3fee53bd70831ca7442a7a8550f19069ad27e2b04163863f719f5fac3f"
+        },
+        {
+          "pointer": "/examples/4/reasoning/1",
+          "text": "Per uno schizzo nell'occhio, avvia un lavaggio appropriato e verifica l'accesso alla dotazione completa. La piccola bottiglia da sola potrebbe esaurirsi troppo presto.",
+          "sha256": "cbf2749654583d11dc2923fb630e7f84833a96a0bf5ac8c8c8121b370558ea06"
+        },
+        {
+          "pointer": "/examples/4/reasoning/2",
+          "text": "Usa contatti e indicazioni del luogo scritti per una chiamata precisa anche sotto stress. Scegli la coperta solo quando serve proteggere la persona dal raffreddamento.",
+          "sha256": "8c7631b05eba340bf93dc64372a79de0277bc15684d0d458503eba28f8baaefd"
+        },
+        {
+          "pointer": "/examples/4/takeaway",
+          "text": "Capire perché serve un oggetto conta più che recitare l'inventario della cassetta.",
+          "sha256": "11dbc8201904a759e8cd541b5cc76b98cf1fe89846ee6e660de501e310938d0c"
+        }
+      ],
+      "scientificMeaning": "Nella cassetta da campo trovi garze, nastro medico, una piccola bottiglia lavaocchi, una coperta d'emergenza e i contatti scritti.\n\nPer una ferita profonda, scegli garze pulite per la pressione diretta. Il nastro può aiutare a fissare una medicazione, se usato correttamente; prenderlo non deve ritardare pressione o richiesta di aiuto.\n\nPer uno schizzo nell'occhio, avvia un lavaggio appropriato e verifica l'accesso alla dotazione completa. La piccola bottiglia da sola potrebbe esaurirsi troppo presto.\n\nUsa contatti e indicazioni del luogo scritti per una chiamata precisa anche sotto stress. Scegli la coperta solo quando serve proteggere la persona dal raffreddamento.\n\nCapire perché serve un oggetto conta più che recitare l'inventario della cassetta.",
+      "displayText": "Nella cassetta da campo trovi garze, nastro medico, una piccola bottiglia lavaocchi, una coperta d'emergenza e i contatti scritti.\n\nPer una ferita profonda, scegli garze pulite per la pressione diretta. Il nastro può aiutare a fissare una medicazione, se usato correttamente; prenderlo non deve ritardare pressione o richiesta di aiuto.\n\nPer uno schizzo nell'occhio, avvia un lavaggio appropriato e verifica l'accesso alla dotazione completa. La piccola bottiglia da sola potrebbe esaurirsi troppo presto.\n\nUsa contatti e indicazioni del luogo scritti per una chiamata precisa anche sotto stress. Scegli la coperta solo quando serve proteggere la persona dal raffreddamento.\n\nCapire perché serve un oggetto conta più che recitare l'inventario della cassetta.",
+      "captionText": "Nella cassetta da campo trovi garze, nastro medico, una piccola bottiglia lavaocchi, una coperta d'emergenza e i contatti scritti.\n\nPer una ferita profonda, scegli garze pulite per la pressione diretta. Il nastro può aiutare a fissare una medicazione, se usato correttamente; prenderlo non deve ritardare pressione o richiesta di aiuto.\n\nPer uno schizzo nell'occhio, avvia un lavaggio appropriato e verifica l'accesso alla dotazione completa. La piccola bottiglia da sola potrebbe esaurirsi troppo presto.\n\nUsa contatti e indicazioni del luogo scritti per una chiamata precisa anche sotto stress. Scegli la coperta solo quando serve proteggere la persona dal raffreddamento.\n\nCapire perché serve un oggetto conta più che recitare l'inventario della cassetta.",
+      "spokenText": "Nella cassetta da campo trovi garze, nastro medico, una piccola bottiglia lavaocchi, una coperta d'emergenza e i contatti scritti.\n\nPer una ferita profonda, scegli garze pulite per la pressione diretta. Il nastro può aiutare a fissare una medicazione, se usato correttamente; prenderlo non deve ritardare pressione o richiesta di aiuto.\n\nPer uno schizzo nell'occhio, avvia un lavaggio appropriato e verifica l'accesso alla dotazione completa. La piccola bottiglia da sola potrebbe esaurirsi troppo presto.\n\nUsa contatti e indicazioni del luogo scritti per una chiamata precisa anche sotto stress. Scegli la coperta solo quando serve proteggere la persona dal raffreddamento.\n\nCapire perché serve un oggetto conta più che recitare l'inventario della cassetta.",
+      "spokenTextSHA256": "685a8ca5d96a570c47fb286e189f763f862da5fec3b3d850afe967f2a91acff4",
+      "spokenTextSha256": "685a8ca5d96a570c47fb286e189f763f862da5fec3b3d850afe967f2a91acff4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b9801d9f798b2a0d3acdc6e66c8608f6c5f275664415070ff033c50a611e62f",
+      "requestFingerprintSha256": "6b9801d9f798b2a0d3acdc6e66c8608f6c5f275664415070ff033c50a611e62f",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-practical-r1",
+      "unitId": "S1-02-it-practical-r1",
+      "locale": "it",
+      "semanticGroup": "practical",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/practical/safety",
+          "text": "Usa schede di ruolo, materiale pulito e mai usato e un manichino o altro supporto didattico. Niente sostanze chimiche reali, esposizione intenzionale al caldo, lesioni, lavaggio degli occhi dei compagni o forza su un arto. Le chiamate simulate non devono comporre il numero dei soccorsi.",
+          "sha256": "412ddc7f132ba78487c10074bc646a522bbc9aaaf611f1cecf785699feafe8fe"
+        },
+        {
+          "pointer": "/practical/steps/0",
+          "text": "Prima della simulazione, individua con il formatore l'area sicura, gli strumenti di comunicazione, la cassetta e le strutture di lavaggio. Conferma numero d'emergenza e informazioni sull'accesso al luogo reale.",
+          "sha256": "7443ac269c8d7b88f14231c5edac77d49aa13b5a178cb178d979ac455bec8ddb"
+        },
+        {
+          "pointer": "/practical/steps/1",
+          "text": "In un gruppo di 3–4 persone, leggi lo scenario assegnato e dedica fino a 15 minuti a preparare una risposta. Individua azioni immediate, protezioni adatte, comunicazione d'emergenza e responsabilità.",
+          "sha256": "b135068976918c4cb798a86d9fdfb7c27837c5867b9f4bea836d8c4ece52d142"
+        },
+        {
+          "pointer": "/practical/steps/2",
+          "text": "Simula il caso del compagno con capogiri e quello della sospetta lesione alla caviglia. Nella tappa successiva, simula lo schizzo chimico e il pericolo nell'aria, per esercitarti su tutte e quattro le situazioni.",
+          "sha256": "c628340227fd2ba49016cc023f19a6183381d4f991cd2eab04f324a7669dc48d"
+        },
+        {
+          "pointer": "/practical/steps/3",
+          "text": "Ogni partecipante deve dimostrare individualmente il controllo della scena, una chiamata d'emergenza simulata, la scelta dell'attrezzatura e i limiti dell'assistenza sicura. Spiega con un supporto didattico la risposta a uno schizzo nell'occhio, senza lavare davvero gli occhi di una persona.",
+          "sha256": "268a5b2ef60b06e89d327653427c52853f9fcf6765ac0b1931a0f13b6bfaea69"
+        },
+        {
+          "pointer": "/practical/steps/4",
+          "text": "Presenta il ragionamento del gruppo in 2–3 minuti. Usa il periodo comune di discussione di 15 minuti per confrontare i piani e correggere decisioni pericolose. Partecipare al gruppo non sostituisce la prova individuale.",
+          "sha256": "c0c42d76c5071e842235a72eab4334ffdcaa5ca76e0adb501c4978a4e0014e3e"
+        },
+        {
+          "pointer": "/practical/steps/5",
+          "text": "Metti alla prova una perdita di comunicazione: spiega il piano alternativo sicuro concordato se manca la copertura telefonica. Ripeti l'azione interessata dopo il feedback. Il formatore registra quanto osservato e ciò che resta da migliorare.",
+          "sha256": "4592af0d74bc73e7de993732306cd89cbd5f997dce8d4c85707c4218da9442b0"
+        },
+        {
+          "pointer": "/practical/evidence/0",
+          "text": "Comunicazione d'emergenza completa nelle cinque parti, basata su fatti corretti dello scenario.",
+          "sha256": "c0914b716fde062d3dc2188be478d076b0a4a21f05df7b3f523dd7cec00a364e"
+        },
+        {
+          "pointer": "/practical/evidence/1",
+          "text": "Osservazione individuale di sicurezza della scena, tempestività della richiesta di aiuto, attrezzatura appropriata e assistenza entro i limiti della formazione.",
+          "sha256": "70818434b4641b65d36add9778a563a032e9eb0efe6dd1334ae94723cb36dc8d"
+        },
+        {
+          "pointer": "/practical/evidence/2",
+          "text": "Riconoscimento del possibile colpo di calore anche se la sudorazione continua; nessuna bevanda se deglutire non è sicuro.",
+          "sha256": "eb140b7f345c138d0c2fce3f7149b4bc0ab947312b4dd686e872ddeca095854e"
+        },
+        {
+          "pointer": "/practical/evidence/3",
+          "text": "Nessun raddrizzamento o movimento non necessario di una sospetta frattura; nessun ritardo nel lavaggio oculare urgente nella simulazione.",
+          "sha256": "44c32c47be3c6d73a3c0f3f37ce2c2d1710e686376d8cab5dd4e93de3416569c"
+        },
+        {
+          "pointer": "/practical/passRule",
+          "text": "Ogni elemento pratico deve essere dimostrato in sicurezza al formatore. Interrompi una simulazione non sicura, spiega il pericolo e ripeti la prestazione interessata. Le risposte online o la sola presentazione di gruppo non possono far superare questo criterio.",
+          "sha256": "6249102a33d740e60b2081a9be7c0b40f972c99f933c0ff1532e68001284b3d4"
+        }
+      ],
+      "scientificMeaning": "Usa schede di ruolo, materiale pulito e mai usato e un manichino o altro supporto didattico. Niente sostanze chimiche reali, esposizione intenzionale al caldo, lesioni, lavaggio degli occhi dei compagni o forza su un arto. Le chiamate simulate non devono comporre il numero dei soccorsi.\n\nPrima della simulazione, individua con il formatore l'area sicura, gli strumenti di comunicazione, la cassetta e le strutture di lavaggio. Conferma numero d'emergenza e informazioni sull'accesso al luogo reale.\n\nIn un gruppo di 3–4 persone, leggi lo scenario assegnato e dedica fino a 15 minuti a preparare una risposta. Individua azioni immediate, protezioni adatte, comunicazione d'emergenza e responsabilità.\n\nSimula il caso del compagno con capogiri e quello della sospetta lesione alla caviglia. Nella tappa successiva, simula lo schizzo chimico e il pericolo nell'aria, per esercitarti su tutte e quattro le situazioni.\n\nOgni partecipante deve dimostrare individualmente il controllo della scena, una chiamata d'emergenza simulata, la scelta dell'attrezzatura e i limiti dell'assistenza sicura. Spiega con un supporto didattico la risposta a uno schizzo nell'occhio, senza lavare davvero gli occhi di una persona.\n\nPresenta il ragionamento del gruppo in 2–3 minuti. Usa il periodo comune di discussione di 15 minuti per confrontare i piani e correggere decisioni pericolose. Partecipare al gruppo non sostituisce la prova individuale.\n\nMetti alla prova una perdita di comunicazione: spiega il piano alternativo sicuro concordato se manca la copertura telefonica. Ripeti l'azione interessata dopo il feedback. Il formatore registra quanto osservato e ciò che resta da migliorare.\n\nComunicazione d'emergenza completa nelle cinque parti, basata su fatti corretti dello scenario.\n\nOsservazione individuale di sicurezza della scena, tempestività della richiesta di aiuto, attrezzatura appropriata e assistenza entro i limiti della formazione.\n\nRiconoscimento del possibile colpo di calore anche se la sudorazione continua; nessuna bevanda se deglutire non è sicuro.\n\nNessun raddrizzamento o movimento non necessario di una sospetta frattura; nessun ritardo nel lavaggio oculare urgente nella simulazione.\n\nOgni elemento pratico deve essere dimostrato in sicurezza al formatore. Interrompi una simulazione non sicura, spiega il pericolo e ripeti la prestazione interessata. Le risposte online o la sola presentazione di gruppo non possono far superare questo criterio.",
+      "displayText": "Usa schede di ruolo, materiale pulito e mai usato e un manichino o altro supporto didattico. Niente sostanze chimiche reali, esposizione intenzionale al caldo, lesioni, lavaggio degli occhi dei compagni o forza su un arto. Le chiamate simulate non devono comporre il numero dei soccorsi.\n\nPrima della simulazione, individua con il formatore l'area sicura, gli strumenti di comunicazione, la cassetta e le strutture di lavaggio. Conferma numero d'emergenza e informazioni sull'accesso al luogo reale.\n\nIn un gruppo di 3–4 persone, leggi lo scenario assegnato e dedica fino a 15 minuti a preparare una risposta. Individua azioni immediate, protezioni adatte, comunicazione d'emergenza e responsabilità.\n\nSimula il caso del compagno con capogiri e quello della sospetta lesione alla caviglia. Nella tappa successiva, simula lo schizzo chimico e il pericolo nell'aria, per esercitarti su tutte e quattro le situazioni.\n\nOgni partecipante deve dimostrare individualmente il controllo della scena, una chiamata d'emergenza simulata, la scelta dell'attrezzatura e i limiti dell'assistenza sicura. Spiega con un supporto didattico la risposta a uno schizzo nell'occhio, senza lavare davvero gli occhi di una persona.\n\nPresenta il ragionamento del gruppo in 2–3 minuti. Usa il periodo comune di discussione di 15 minuti per confrontare i piani e correggere decisioni pericolose. Partecipare al gruppo non sostituisce la prova individuale.\n\nMetti alla prova una perdita di comunicazione: spiega il piano alternativo sicuro concordato se manca la copertura telefonica. Ripeti l'azione interessata dopo il feedback. Il formatore registra quanto osservato e ciò che resta da migliorare.\n\nComunicazione d'emergenza completa nelle cinque parti, basata su fatti corretti dello scenario.\n\nOsservazione individuale di sicurezza della scena, tempestività della richiesta di aiuto, attrezzatura appropriata e assistenza entro i limiti della formazione.\n\nRiconoscimento del possibile colpo di calore anche se la sudorazione continua; nessuna bevanda se deglutire non è sicuro.\n\nNessun raddrizzamento o movimento non necessario di una sospetta frattura; nessun ritardo nel lavaggio oculare urgente nella simulazione.\n\nOgni elemento pratico deve essere dimostrato in sicurezza al formatore. Interrompi una simulazione non sicura, spiega il pericolo e ripeti la prestazione interessata. Le risposte online o la sola presentazione di gruppo non possono far superare questo criterio.",
+      "captionText": "Usa schede di ruolo, materiale pulito e mai usato e un manichino o altro supporto didattico. Niente sostanze chimiche reali, esposizione intenzionale al caldo, lesioni, lavaggio degli occhi dei compagni o forza su un arto. Le chiamate simulate non devono comporre il numero dei soccorsi.\n\nPrima della simulazione, individua con il formatore l'area sicura, gli strumenti di comunicazione, la cassetta e le strutture di lavaggio. Conferma numero d'emergenza e informazioni sull'accesso al luogo reale.\n\nIn un gruppo di 3–4 persone, leggi lo scenario assegnato e dedica fino a 15 minuti a preparare una risposta. Individua azioni immediate, protezioni adatte, comunicazione d'emergenza e responsabilità.\n\nSimula il caso del compagno con capogiri e quello della sospetta lesione alla caviglia. Nella tappa successiva, simula lo schizzo chimico e il pericolo nell'aria, per esercitarti su tutte e quattro le situazioni.\n\nOgni partecipante deve dimostrare individualmente il controllo della scena, una chiamata d'emergenza simulata, la scelta dell'attrezzatura e i limiti dell'assistenza sicura. Spiega con un supporto didattico la risposta a uno schizzo nell'occhio, senza lavare davvero gli occhi di una persona.\n\nPresenta il ragionamento del gruppo in 2–3 minuti. Usa il periodo comune di discussione di 15 minuti per confrontare i piani e correggere decisioni pericolose. Partecipare al gruppo non sostituisce la prova individuale.\n\nMetti alla prova una perdita di comunicazione: spiega il piano alternativo sicuro concordato se manca la copertura telefonica. Ripeti l'azione interessata dopo il feedback. Il formatore registra quanto osservato e ciò che resta da migliorare.\n\nComunicazione d'emergenza completa nelle cinque parti, basata su fatti corretti dello scenario.\n\nOsservazione individuale di sicurezza della scena, tempestività della richiesta di aiuto, attrezzatura appropriata e assistenza entro i limiti della formazione.\n\nRiconoscimento del possibile colpo di calore anche se la sudorazione continua; nessuna bevanda se deglutire non è sicuro.\n\nNessun raddrizzamento o movimento non necessario di una sospetta frattura; nessun ritardo nel lavaggio oculare urgente nella simulazione.\n\nOgni elemento pratico deve essere dimostrato in sicurezza al formatore. Interrompi una simulazione non sicura, spiega il pericolo e ripeti la prestazione interessata. Le risposte online o la sola presentazione di gruppo non possono far superare questo criterio.",
+      "spokenText": "Usa schede di ruolo, materiale pulito e mai usato e un manichino o altro supporto didattico. Niente sostanze chimiche reali, esposizione intenzionale al caldo, lesioni, lavaggio degli occhi dei compagni o forza su un arto. Le chiamate simulate non devono comporre il numero dei soccorsi.\n\nPrima della simulazione, individua con il formatore l'area sicura, gli strumenti di comunicazione, la cassetta e le strutture di lavaggio. Conferma numero d'emergenza e informazioni sull'accesso al luogo reale.\n\nIn un gruppo di tre o quattro persone, leggi lo scenario assegnato e dedica fino a quindici minuti a preparare una risposta. Individua azioni immediate, protezioni adatte, comunicazione d'emergenza e responsabilità.\n\nSimula il caso del compagno con capogiri e quello della sospetta lesione alla caviglia. Nella tappa successiva, simula lo schizzo chimico e il pericolo nell'aria, per esercitarti su tutte e quattro le situazioni.\n\nOgni partecipante deve dimostrare individualmente il controllo della scena, una chiamata d'emergenza simulata, la scelta dell'attrezzatura e i limiti dell'assistenza sicura. Spiega con un supporto didattico la risposta a uno schizzo nell'occhio, senza lavare davvero gli occhi di una persona.\n\nPresenta il ragionamento del gruppo in due o tre minuti. Usa il periodo comune di discussione di quindici minuti per confrontare i piani e correggere decisioni pericolose. Partecipare al gruppo non sostituisce la prova individuale.\n\nMetti alla prova una perdita di comunicazione: spiega il piano alternativo sicuro concordato se manca la copertura telefonica. Ripeti l'azione interessata dopo il feedback. Il formatore registra quanto osservato e ciò che resta da migliorare.\n\nComunicazione d'emergenza completa nelle cinque parti, basata su fatti corretti dello scenario.\n\nOsservazione individuale di sicurezza della scena, tempestività della richiesta di aiuto, attrezzatura appropriata e assistenza entro i limiti della formazione.\n\nRiconoscimento del possibile colpo di calore anche se la sudorazione continua; nessuna bevanda se deglutire non è sicuro.\n\nNessun raddrizzamento o movimento non necessario di una sospetta frattura; nessun ritardo nel lavaggio oculare urgente nella simulazione.\n\nOgni elemento pratico deve essere dimostrato in sicurezza al formatore. Interrompi una simulazione non sicura, spiega il pericolo e ripeti la prestazione interessata. Le risposte online o la sola presentazione di gruppo non possono far superare questo criterio.",
+      "spokenTextSHA256": "8e67319e57a8001d013fbbc313ba12f956e7a84568b0ba452c657e63a9b1da0d",
+      "spokenTextSha256": "8e67319e57a8001d013fbbc313ba12f956e7a84568b0ba452c657e63a9b1da0d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "15 minuti",
+          "spoken": "quindici minuti",
+          "occurrences": 2,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "3–4",
+          "spoken": "tre o quattro",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "2–3 minuti",
+          "spoken": "due o tre minuti",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f59237db74a58793b455aa1b2e07bdd3aa18c1c32ce3ced709cf78913ddf7fa2",
+      "requestFingerprintSha256": "f59237db74a58793b455aa1b2e07bdd3aa18c1c32ce3ced709cf78913ddf7fa2",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-guided-practice-r1",
+      "unitId": "S1-02-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Per una persona vicina al traffico, una persona confusa dopo il caldo e uno schizzo nell'occhio, scegli la prima osservazione sicura, l'aiuto da richiedere e un'azione entro i limiti della tua formazione. Di' quale segnale ti farebbe interrompere o intensificare la risposta.",
+          "sha256": "7f2b4b04028a055eef7c92b5c7aeddebc2c014cf90f514b0ca25c01d9dda5ef3"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Indica il pericolo per soccorritori e presenti in ogni scena.",
+          "sha256": "c06b3f40c77ee57f37f731086c4b239eefe06b190f3a25337c99ad70c60cfb43"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Seleziona una comunicazione d'emergenza con luogo, condizioni osservate e pericolo, senza inventare una diagnosi.",
+          "sha256": "70ed0915b5232c5a7f4f510ebaaebb176503c51e72d7b178f7187259f7cd9e33"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Scegli raffreddamento e soccorso urgente per un possibile colpo di calore anche se la persona suda; scegli un lavaggio oculare appropriato e tempestivo per uno schizzo senza ritardarlo per pulire la fuoriuscita.",
+          "sha256": "3a8bfa21f3d2dba62c3f3fc8ef5c84ea16718de527eb37bd13cc88309d001e7e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Abbina un oggetto sicuro della cassetta didattica al suo scopo, oppure spiega perché non va usato senza istruzioni.",
+          "sha256": "bce82e02e7c87072010351d00a60da1dc7c23ac7803cbd5c4d42d7bf78249014"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le scelte online esercitano solo il ragionamento. La simulazione e la scelta dell'attrezzatura richiedono osservazione del formatore; niente esposizione reale al caldo, lesioni o sostanze chimiche.",
+          "sha256": "05d6cd023d3f7804a0e4165110c587d025e62e4cb965f4d16f57b88b2076e545"
+        }
+      ],
+      "scientificMeaning": "Per una persona vicina al traffico, una persona confusa dopo il caldo e uno schizzo nell'occhio, scegli la prima osservazione sicura, l'aiuto da richiedere e un'azione entro i limiti della tua formazione. Di' quale segnale ti farebbe interrompere o intensificare la risposta.\n\nIndica il pericolo per soccorritori e presenti in ogni scena.\n\nSeleziona una comunicazione d'emergenza con luogo, condizioni osservate e pericolo, senza inventare una diagnosi.\n\nScegli raffreddamento e soccorso urgente per un possibile colpo di calore anche se la persona suda; scegli un lavaggio oculare appropriato e tempestivo per uno schizzo senza ritardarlo per pulire la fuoriuscita.\n\nAbbina un oggetto sicuro della cassetta didattica al suo scopo, oppure spiega perché non va usato senza istruzioni.\n\nLe scelte online esercitano solo il ragionamento. La simulazione e la scelta dell'attrezzatura richiedono osservazione del formatore; niente esposizione reale al caldo, lesioni o sostanze chimiche.",
+      "displayText": "Per una persona vicina al traffico, una persona confusa dopo il caldo e uno schizzo nell'occhio, scegli la prima osservazione sicura, l'aiuto da richiedere e un'azione entro i limiti della tua formazione. Di' quale segnale ti farebbe interrompere o intensificare la risposta.\n\nIndica il pericolo per soccorritori e presenti in ogni scena.\n\nSeleziona una comunicazione d'emergenza con luogo, condizioni osservate e pericolo, senza inventare una diagnosi.\n\nScegli raffreddamento e soccorso urgente per un possibile colpo di calore anche se la persona suda; scegli un lavaggio oculare appropriato e tempestivo per uno schizzo senza ritardarlo per pulire la fuoriuscita.\n\nAbbina un oggetto sicuro della cassetta didattica al suo scopo, oppure spiega perché non va usato senza istruzioni.\n\nLe scelte online esercitano solo il ragionamento. La simulazione e la scelta dell'attrezzatura richiedono osservazione del formatore; niente esposizione reale al caldo, lesioni o sostanze chimiche.",
+      "captionText": "Per una persona vicina al traffico, una persona confusa dopo il caldo e uno schizzo nell'occhio, scegli la prima osservazione sicura, l'aiuto da richiedere e un'azione entro i limiti della tua formazione. Di' quale segnale ti farebbe interrompere o intensificare la risposta.\n\nIndica il pericolo per soccorritori e presenti in ogni scena.\n\nSeleziona una comunicazione d'emergenza con luogo, condizioni osservate e pericolo, senza inventare una diagnosi.\n\nScegli raffreddamento e soccorso urgente per un possibile colpo di calore anche se la persona suda; scegli un lavaggio oculare appropriato e tempestivo per uno schizzo senza ritardarlo per pulire la fuoriuscita.\n\nAbbina un oggetto sicuro della cassetta didattica al suo scopo, oppure spiega perché non va usato senza istruzioni.\n\nLe scelte online esercitano solo il ragionamento. La simulazione e la scelta dell'attrezzatura richiedono osservazione del formatore; niente esposizione reale al caldo, lesioni o sostanze chimiche.",
+      "spokenText": "Per una persona vicina al traffico, una persona confusa dopo il caldo e uno schizzo nell'occhio, scegli la prima osservazione sicura, l'aiuto da richiedere e un'azione entro i limiti della tua formazione. Di' quale segnale ti farebbe interrompere o intensificare la risposta.\n\nIndica il pericolo per soccorritori e presenti in ogni scena.\n\nSeleziona una comunicazione d'emergenza con luogo, condizioni osservate e pericolo, senza inventare una diagnosi.\n\nScegli raffreddamento e soccorso urgente per un possibile colpo di calore anche se la persona suda; scegli un lavaggio oculare appropriato e tempestivo per uno schizzo senza ritardarlo per pulire la fuoriuscita.\n\nAbbina un oggetto sicuro della cassetta didattica al suo scopo, oppure spiega perché non va usato senza istruzioni.\n\nLe scelte online esercitano solo il ragionamento. La simulazione e la scelta dell'attrezzatura richiedono osservazione del formatore; niente esposizione reale al caldo, lesioni o sostanze chimiche.",
+      "spokenTextSHA256": "6242c3ce81691f161a731bf6f56f8a1d45f0ca1c34e36d00de5287b97ca7c4f4",
+      "spokenTextSha256": "6242c3ce81691f161a731bf6f56f8a1d45f0ca1c34e36d00de5287b97ca7c4f4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "33fc068a19be1bdffc6abb50717aad0df7a69cde881d93cd9f4e4f90b654a244",
+      "requestFingerprintSha256": "33fc068a19be1bdffc6abb50717aad0df7a69cde881d93cd9f4e4f90b654a244",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-reflection-r1",
+      "unitId": "S1-02-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So spiegare e dimostrare una risposta d'emergenza entro i limiti della mia formazione?",
+          "sha256": "6fa86d2f6eddbaef329848d95eca792001973c39aa6981ada7a273ee986e01a6"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Questa tappa tratta le lesioni e le malattie da calore. Completa la tappa su schizzi chimici ed evacuazione per le altre parti della preparazione. L'autovalutazione non certifica la competenza pratica.",
+          "sha256": "a0220e2accb865c5e17c6607e50c203b22f37f0a2bf0151573cfe2b090e51cd2"
+        }
+      ],
+      "scientificMeaning": "So spiegare e dimostrare una risposta d'emergenza entro i limiti della mia formazione?\n\nQuesta tappa tratta le lesioni e le malattie da calore. Completa la tappa su schizzi chimici ed evacuazione per le altre parti della preparazione. L'autovalutazione non certifica la competenza pratica.",
+      "displayText": "So spiegare e dimostrare una risposta d'emergenza entro i limiti della mia formazione?\n\nQuesta tappa tratta le lesioni e le malattie da calore. Completa la tappa su schizzi chimici ed evacuazione per le altre parti della preparazione. L'autovalutazione non certifica la competenza pratica.",
+      "captionText": "So spiegare e dimostrare una risposta d'emergenza entro i limiti della mia formazione?\n\nQuesta tappa tratta le lesioni e le malattie da calore. Completa la tappa su schizzi chimici ed evacuazione per le altre parti della preparazione. L'autovalutazione non certifica la competenza pratica.",
+      "spokenText": "So spiegare e dimostrare una risposta d'emergenza entro i limiti della mia formazione?\n\nQuesta tappa tratta le lesioni e le malattie da calore. Completa la tappa su schizzi chimici ed evacuazione per le altre parti della preparazione. L'autovalutazione non certifica la competenza pratica.",
+      "spokenTextSHA256": "ac77504fe72078ea4c65d70efdec7aa8077d1e35ef77f93ce3e84529abedb556",
+      "spokenTextSha256": "ac77504fe72078ea4c65d70efdec7aa8077d1e35ef77f93ce3e84529abedb556",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a7af4651d571c6c217a61c009fda6f69fc85ae37f2293d661f0f1ecd55a73c0b",
+      "requestFingerprintSha256": "a7af4651d571c6c217a61c009fda6f69fc85ae37f2293d661f0f1ecd55a73c0b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-glossary-r1",
+      "unitId": "S1-02-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Valuta",
+          "sha256": "2eea90d4140b2c6ed5309a6888528ad2d4df1943dd20c6f834801c8c470b162d"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Controlla la situazione, i pericoli immediati e le condizioni osservate prima di scegliere una risposta sicura.",
+          "sha256": "8c696ecc359fa356ae682f19f68077fe742da74553fa7fc433c28905fa553bd5"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Avvisa",
+          "sha256": "3edc94ee1acf15c9c6432ce05ed454a5859659d564fa3388f77a2e4c3936a9e4"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Chiama l'aiuto appropriato e comunica fatti utili.",
+          "sha256": "88ed2f5c3274332205555ef7e3695a83cb13d996d335367a600d9af7c5c558e7"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Assisti",
+          "sha256": "5d1899a830b8a0f51b95bdded05af44a087ee4078bb660606c856b027dbf9fb6"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Presta l'assistenza appropriata alla tua formazione mentre viene richiesto aiuto.",
+          "sha256": "26ec0c6ae4fe8255d53a32806ba6aaf1967b3dfede2fb65ae1a6d9bb99426e51"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Frattura",
+          "sha256": "02b9104d4ddcce38747e5d7d17d5589c061882941a85fab04c0ac4a358cd566c"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Rottura o incrinatura di un osso; una sospetta frattura richiede valutazione medica.",
+          "sha256": "1f6b2492b624a13e059ae870f0cdc0fbf331f4772f6d91c4f4d1e15fcbb4606d"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Esaurimento da calore",
+          "sha256": "610370eb4f302bc7524fcc6603698f7e2a7938e68bc73660de3fa6b9f7b28c33"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Malattia legata al caldo che può presentare sudorazione abbondante, debolezza e capogiri.",
+          "sha256": "393e3f7b3f7867493c0145fd6d15df5064bb5e4d46e617505fa83274b8c75b67"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Colpo di calore",
+          "sha256": "f1c65dfc00c4a9e2c1e1443e3129de0ce5e627b6e0a06fff84a9dcb9f7bf6dce"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Pericolosa emergenza da caldo che può comprendere confusione, convulsioni o perdita di coscienza, con o senza sudorazione.",
+          "sha256": "dcaffbed086f54a1cf2d9904282747acd64993db7d074e5e83bdac2735582dbd"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "SDS",
+          "sha256": "54b6b356d70e258999180cbb8bd30b2f7c9744a899b80baed209212ca04efdc1"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Scheda di dati di sicurezza: informazioni su un prodotto, compresi pericoli e misure di primo soccorso.",
+          "sha256": "6157505f00f6813d6e79ac7616e2534ab532daf041ac940267fff0c00f7448da"
+        }
+      ],
+      "scientificMeaning": "Valuta\n\nControlla la situazione, i pericoli immediati e le condizioni osservate prima di scegliere una risposta sicura.\n\nAvvisa\n\nChiama l'aiuto appropriato e comunica fatti utili.\n\nAssisti\n\nPresta l'assistenza appropriata alla tua formazione mentre viene richiesto aiuto.\n\nFrattura\n\nRottura o incrinatura di un osso; una sospetta frattura richiede valutazione medica.\n\nEsaurimento da calore\n\nMalattia legata al caldo che può presentare sudorazione abbondante, debolezza e capogiri.\n\nColpo di calore\n\nPericolosa emergenza da caldo che può comprendere confusione, convulsioni o perdita di coscienza, con o senza sudorazione.\n\nSDS\n\nScheda di dati di sicurezza: informazioni su un prodotto, compresi pericoli e misure di primo soccorso.",
+      "displayText": "Valuta\n\nControlla la situazione, i pericoli immediati e le condizioni osservate prima di scegliere una risposta sicura.\n\nAvvisa\n\nChiama l'aiuto appropriato e comunica fatti utili.\n\nAssisti\n\nPresta l'assistenza appropriata alla tua formazione mentre viene richiesto aiuto.\n\nFrattura\n\nRottura o incrinatura di un osso; una sospetta frattura richiede valutazione medica.\n\nEsaurimento da calore\n\nMalattia legata al caldo che può presentare sudorazione abbondante, debolezza e capogiri.\n\nColpo di calore\n\nPericolosa emergenza da caldo che può comprendere confusione, convulsioni o perdita di coscienza, con o senza sudorazione.\n\nSDS\n\nScheda di dati di sicurezza: informazioni su un prodotto, compresi pericoli e misure di primo soccorso.",
+      "captionText": "Valuta\n\nControlla la situazione, i pericoli immediati e le condizioni osservate prima di scegliere una risposta sicura.\n\nAvvisa\n\nChiama l'aiuto appropriato e comunica fatti utili.\n\nAssisti\n\nPresta l'assistenza appropriata alla tua formazione mentre viene richiesto aiuto.\n\nFrattura\n\nRottura o incrinatura di un osso; una sospetta frattura richiede valutazione medica.\n\nEsaurimento da calore\n\nMalattia legata al caldo che può presentare sudorazione abbondante, debolezza e capogiri.\n\nColpo di calore\n\nPericolosa emergenza da caldo che può comprendere confusione, convulsioni o perdita di coscienza, con o senza sudorazione.\n\nSDS\n\nScheda di dati di sicurezza: informazioni su un prodotto, compresi pericoli e misure di primo soccorso.",
+      "spokenText": "Valuta\n\nControlla la situazione, i pericoli immediati e le condizioni osservate prima di scegliere una risposta sicura.\n\nAvvisa\n\nChiama l'aiuto appropriato e comunica fatti utili.\n\nAssisti\n\nPresta l'assistenza appropriata alla tua formazione mentre viene richiesto aiuto.\n\nFrattura\n\nRottura o incrinatura di un osso; una sospetta frattura richiede valutazione medica.\n\nEsaurimento da calore\n\nMalattia legata al caldo che può presentare sudorazione abbondante, debolezza e capogiri.\n\nColpo di calore\n\nPericolosa emergenza da caldo che può comprendere confusione, convulsioni o perdita di coscienza, con o senza sudorazione.\n\nSDS\n\nScheda di dati di sicurezza: informazioni su un prodotto, compresi pericoli e misure di primo soccorso.",
+      "spokenTextSHA256": "a476e29753267a09504e979d598c9100f89f542ac16eb7acd6ab35e05fd176bb",
+      "spokenTextSha256": "a476e29753267a09504e979d598c9100f89f542ac16eb7acd6ab35e05fd176bb",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9bfd3cf671ede0ff32b04269aae0269150b9c76345898e841457efea9314dbcd",
+      "requestFingerprintSha256": "9bfd3cf671ede0ff32b04269aae0269150b9c76345898e841457efea9314dbcd",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

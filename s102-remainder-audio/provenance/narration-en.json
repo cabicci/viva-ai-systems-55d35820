@@ -1,0 +1,715 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-02-en.json",
+    "sha256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+    "bytes": 36033
+  },
+  "units": [
+    {
+      "id": "S1-02-en-opening-r1",
+      "unitId": "S1-02-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "When someone becomes unwell in the field, your first decisions matter. Practise recognizing danger, getting the right help and giving only the assistance you are trained to provide.",
+          "sha256": "4ae3fbd830bf88988eb30043d2051e4121e589ef79df23fcb6c23678b7d71f7f"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Recognize injury and heat emergency warning signs, including possible heatstroke in a person who is still sweating.",
+          "sha256": "439765e36a46c32dd73268a506cf82702be612007c5ead6ebaec600c93787996"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Give a clear emergency report and justify which immediate actions are appropriate for the situation and your training.",
+          "sha256": "08be733db7060bbf845d31c9c96f3af78ba0ba3bf1d237246ff66cf8a2eec381"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Demonstrate a safe response simulation, summon help and select suitable first-aid equipment under trainer observation.",
+          "sha256": "0aad007d5650585f205b926de190b434aed3d515db038ccc3218791c3eabec31"
+        }
+      ],
+      "scientificMeaning": "When someone becomes unwell in the field, your first decisions matter. Practise recognizing danger, getting the right help and giving only the assistance you are trained to provide.\n\nRecognize injury and heat emergency warning signs, including possible heatstroke in a person who is still sweating.\n\nGive a clear emergency report and justify which immediate actions are appropriate for the situation and your training.\n\nDemonstrate a safe response simulation, summon help and select suitable first-aid equipment under trainer observation.",
+      "displayText": "When someone becomes unwell in the field, your first decisions matter. Practise recognizing danger, getting the right help and giving only the assistance you are trained to provide.\n\nRecognize injury and heat emergency warning signs, including possible heatstroke in a person who is still sweating.\n\nGive a clear emergency report and justify which immediate actions are appropriate for the situation and your training.\n\nDemonstrate a safe response simulation, summon help and select suitable first-aid equipment under trainer observation.",
+      "captionText": "When someone becomes unwell in the field, your first decisions matter. Practise recognizing danger, getting the right help and giving only the assistance you are trained to provide.\n\nRecognize injury and heat emergency warning signs, including possible heatstroke in a person who is still sweating.\n\nGive a clear emergency report and justify which immediate actions are appropriate for the situation and your training.\n\nDemonstrate a safe response simulation, summon help and select suitable first-aid equipment under trainer observation.",
+      "spokenText": "When someone becomes unwell in the field, your first decisions matter. Practise recognizing danger, getting the right help and giving only the assistance you are trained to provide.\n\nRecognize injury and heat emergency warning signs, including possible heatstroke in a person who is still sweating.\n\nGive a clear emergency report and justify which immediate actions are appropriate for the situation and your training.\n\nDemonstrate a safe response simulation, summon help and select suitable first-aid equipment under trainer observation.",
+      "spokenTextSHA256": "a41d8e6d3fa820250a6b3c300f06c33be6eff6cef79553d62ab9f04d705cb453",
+      "spokenTextSha256": "a41d8e6d3fa820250a6b3c300f06c33be6eff6cef79553d62ab9f04d705cb453",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ebc34e4572b8d29fa636b7a8f003021c62ea4ccec80fb029d53998be02f0acf0",
+      "requestFingerprintSha256": "ebc34e4572b8d29fa636b7a8f003021c62ea4ccec80fb029d53998be02f0acf0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-E01-r1",
+      "unitId": "S1-02-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A person trips near the farm access road. A vehicle is approaching and the person says their leg hurts.",
+          "sha256": "995568f1b4182ccc9e7b3337c649e44b6f9aae8c271385d3e3c92360354d15eb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Assess the traffic and stay out of its path. Warn others without entering an unsafe area.",
+          "sha256": "fcdd76e0d2e6e4c450226ce19bc5a8c4077de5423b4e8e7f266935bd2b908c6c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Alert the supervisor and summon emergency help if the injury is serious. Give the access-road location.",
+          "sha256": "925505eccf72af73456541368e28402852bb5dcb4045a79e490a6ad092bf4cff"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Reassure the person from a safe position. Do not pull them up or test the painful leg. Follow appropriate emergency guidance.",
+          "sha256": "72fec9dc668da7d1f4b2b3ad846193d2fb82e2546b5ccd973ddad699314838c6"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Helping starts with scene safety; a familiar fall does not justify moving a possible fracture.",
+          "sha256": "9dddd0c1ae274a96cd46ac77b5a5debb5f0d7768cb4ff4089895fa5a38695a05"
+        }
+      ],
+      "scientificMeaning": "A person trips near the farm access road. A vehicle is approaching and the person says their leg hurts.\n\nAssess the traffic and stay out of its path. Warn others without entering an unsafe area.\n\nAlert the supervisor and summon emergency help if the injury is serious. Give the access-road location.\n\nReassure the person from a safe position. Do not pull them up or test the painful leg. Follow appropriate emergency guidance.\n\nHelping starts with scene safety; a familiar fall does not justify moving a possible fracture.",
+      "displayText": "A person trips near the farm access road. A vehicle is approaching and the person says their leg hurts.\n\nAssess the traffic and stay out of its path. Warn others without entering an unsafe area.\n\nAlert the supervisor and summon emergency help if the injury is serious. Give the access-road location.\n\nReassure the person from a safe position. Do not pull them up or test the painful leg. Follow appropriate emergency guidance.\n\nHelping starts with scene safety; a familiar fall does not justify moving a possible fracture.",
+      "captionText": "A person trips near the farm access road. A vehicle is approaching and the person says their leg hurts.\n\nAssess the traffic and stay out of its path. Warn others without entering an unsafe area.\n\nAlert the supervisor and summon emergency help if the injury is serious. Give the access-road location.\n\nReassure the person from a safe position. Do not pull them up or test the painful leg. Follow appropriate emergency guidance.\n\nHelping starts with scene safety; a familiar fall does not justify moving a possible fracture.",
+      "spokenText": "A person trips near the farm access road. A vehicle is approaching and the person says their leg hurts.\n\nAssess the traffic and stay out of its path. Warn others without entering an unsafe area.\n\nAlert the supervisor and summon emergency help if the injury is serious. Give the access-road location.\n\nReassure the person from a safe position. Do not pull them up or test the painful leg. Follow appropriate emergency guidance.\n\nHelping starts with scene safety; a familiar fall does not justify moving a possible fracture.",
+      "spokenTextSHA256": "399bc01399922e35fcf85f8f45192a75e2f6e78cb95210f0d2ff3504e6aa42c7",
+      "spokenTextSha256": "399bc01399922e35fcf85f8f45192a75e2f6e78cb95210f0d2ff3504e6aa42c7",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "93c2c25186d5f51e90b9cdaaeede83657cab37acc79e9a7c41c65d24e99dab65",
+      "requestFingerprintSha256": "93c2c25186d5f51e90b9cdaaeede83657cab37acc79e9a7c41c65d24e99dab65",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-E02-r1",
+      "unitId": "S1-02-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Your partner is sweating heavily, has a headache and feels nauseated after working in the sun. The vehicle is far away. They are alert and can swallow normally.",
+          "sha256": "c48ddb1cc6f514f63e2b9e8053af81035a28182261ee3262b6c03f0ccdb981d0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Stop work and recognize possible heat exhaustion. Use the nearest safe shade; do not make them keep working or walk a long distance to the vehicle.",
+          "sha256": "9522f2235f950de4f44f2354fc34a9847aa82caf47bd35d061d98fb3005ca9eb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Alert the supervisor, report the location and symptoms, and arrange medical assessment. Keep someone with the person.",
+          "sha256": "70a46c3bb5cc6d8eef0370966044168a8e51834ef7d7ab135c579464030d953e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Loosen unnecessary clothing, cool with wet cloths on the head, neck and armpits and with fanning, and offer small sips of cool water while they remain alert and able to swallow.",
+          "sha256": "60988b6ad4634b8651798fb28d8b72ed5defb2bac60bf9d692ef91622cdb6c76"
+        },
+        {
+          "pointer": "/examples/1/reasoning/3",
+          "text": "If they become confused, collapse or worsen, call 123 immediately and continue cooling. Do not wait for sweating to stop and do not give drinks if swallowing is unsafe.",
+          "sha256": "9a1565c15e102e6af3e19de61fa2d772d1d676592aa5f0934ab2945a635ca58a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Observe the person continuously: heavy sweating can continue even when the situation becomes an emergency.",
+          "sha256": "8be97c135b714acf50b4a2111f9cff8de169f704a78c94561276e06bb008744b"
+        }
+      ],
+      "scientificMeaning": "Your partner is sweating heavily, has a headache and feels nauseated after working in the sun. The vehicle is far away. They are alert and can swallow normally.\n\nStop work and recognize possible heat exhaustion. Use the nearest safe shade; do not make them keep working or walk a long distance to the vehicle.\n\nAlert the supervisor, report the location and symptoms, and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, cool with wet cloths on the head, neck and armpits and with fanning, and offer small sips of cool water while they remain alert and able to swallow.\n\nIf they become confused, collapse or worsen, call 123 immediately and continue cooling. Do not wait for sweating to stop and do not give drinks if swallowing is unsafe.\n\nObserve the person continuously: heavy sweating can continue even when the situation becomes an emergency.",
+      "displayText": "Your partner is sweating heavily, has a headache and feels nauseated after working in the sun. The vehicle is far away. They are alert and can swallow normally.\n\nStop work and recognize possible heat exhaustion. Use the nearest safe shade; do not make them keep working or walk a long distance to the vehicle.\n\nAlert the supervisor, report the location and symptoms, and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, cool with wet cloths on the head, neck and armpits and with fanning, and offer small sips of cool water while they remain alert and able to swallow.\n\nIf they become confused, collapse or worsen, call 123 immediately and continue cooling. Do not wait for sweating to stop and do not give drinks if swallowing is unsafe.\n\nObserve the person continuously: heavy sweating can continue even when the situation becomes an emergency.",
+      "captionText": "Your partner is sweating heavily, has a headache and feels nauseated after working in the sun. The vehicle is far away. They are alert and can swallow normally.\n\nStop work and recognize possible heat exhaustion. Use the nearest safe shade; do not make them keep working or walk a long distance to the vehicle.\n\nAlert the supervisor, report the location and symptoms, and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, cool with wet cloths on the head, neck and armpits and with fanning, and offer small sips of cool water while they remain alert and able to swallow.\n\nIf they become confused, collapse or worsen, call 123 immediately and continue cooling. Do not wait for sweating to stop and do not give drinks if swallowing is unsafe.\n\nObserve the person continuously: heavy sweating can continue even when the situation becomes an emergency.",
+      "spokenText": "Your partner is sweating heavily, has a headache and feels nauseated after working in the sun. The vehicle is far away. They are alert and can swallow normally.\n\nStop work and recognize possible heat exhaustion. Use the nearest safe shade; do not make them keep working or walk a long distance to the vehicle.\n\nAlert the supervisor, report the location and symptoms, and arrange medical assessment. Keep someone with the person.\n\nLoosen unnecessary clothing, cool with wet cloths on the head, neck and armpits and with fanning, and offer small sips of cool water while they remain alert and able to swallow.\n\nIf they become confused, collapse or worsen, call one two three immediately and continue cooling. Do not wait for sweating to stop and do not give drinks if swallowing is unsafe.\n\nObserve the person continuously: heavy sweating can continue even when the situation becomes an emergency.",
+      "spokenTextSHA256": "2d23dfc4962a2b45363d1038c8471957f55737433d06d087ea7c81aa6ea4cf3d",
+      "spokenTextSha256": "2d23dfc4962a2b45363d1038c8471957f55737433d06d087ea7c81aa6ea4cf3d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "123",
+          "spoken": "one two three",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3e83070d5a93f061a486787657bd41a9a24d5102c3e2d363e586ff381218d5e3",
+      "requestFingerprintSha256": "3e83070d5a93f061a486787657bd41a9a24d5102c3e2d363e586ff381218d5e3",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-E03-r1",
+      "unitId": "S1-02-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A colleague falls into a shallow hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely. The immediate area is otherwise safe.",
+          "sha256": "76f20c00806e728ea36acec34c61185a9dfc6aaa6de224826f412530117e4c29"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Keep other people away from the hole and check for additional hazards.",
+          "sha256": "8f26f30fccf1774482606f7da2f04187c6bfad3dfad5b50db62ed0ac9f76dd0c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Call for emergency medical help. Describe the severe pain, unusual ankle position, exact field location and safest access route. Report a suspected injury, not a confirmed diagnosis.",
+          "sha256": "d27b4ebe2ff86179507f7c06d0bfc617f89f3d36de0ff29a5368d723e840869f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Keep the person still and reassured. Do not straighten the ankle, pull off footwear to inspect it or ask them to walk. Support or immobilize only as trained and directed.",
+          "sha256": "b58f7efa5808daf491d7cd7c89362d4ca578ce050b434f733182a4407618ed87"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "If there is bleeding, provide appropriate direct-pressure care without pressing on protruding bone. Protect the person from chilling or overheating and watch for changes until help arrives.",
+          "sha256": "04ad34da80c7c96be581b48759fb6fd3a915acbf89ab435f673ca13c3abdefd8"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "The safe response does not depend on proving whether the injury is a sprain or fracture.",
+          "sha256": "5427fd9c8ee916232a40499d2630c1fd68dee29923358f0570e79ee61b919acc"
+        }
+      ],
+      "scientificMeaning": "A colleague falls into a shallow hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely. The immediate area is otherwise safe.\n\nKeep other people away from the hole and check for additional hazards.\n\nCall for emergency medical help. Describe the severe pain, unusual ankle position, exact field location and safest access route. Report a suspected injury, not a confirmed diagnosis.\n\nKeep the person still and reassured. Do not straighten the ankle, pull off footwear to inspect it or ask them to walk. Support or immobilize only as trained and directed.\n\nIf there is bleeding, provide appropriate direct-pressure care without pressing on protruding bone. Protect the person from chilling or overheating and watch for changes until help arrives.\n\nThe safe response does not depend on proving whether the injury is a sprain or fracture.",
+      "displayText": "A colleague falls into a shallow hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely. The immediate area is otherwise safe.\n\nKeep other people away from the hole and check for additional hazards.\n\nCall for emergency medical help. Describe the severe pain, unusual ankle position, exact field location and safest access route. Report a suspected injury, not a confirmed diagnosis.\n\nKeep the person still and reassured. Do not straighten the ankle, pull off footwear to inspect it or ask them to walk. Support or immobilize only as trained and directed.\n\nIf there is bleeding, provide appropriate direct-pressure care without pressing on protruding bone. Protect the person from chilling or overheating and watch for changes until help arrives.\n\nThe safe response does not depend on proving whether the injury is a sprain or fracture.",
+      "captionText": "A colleague falls into a shallow hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely. The immediate area is otherwise safe.\n\nKeep other people away from the hole and check for additional hazards.\n\nCall for emergency medical help. Describe the severe pain, unusual ankle position, exact field location and safest access route. Report a suspected injury, not a confirmed diagnosis.\n\nKeep the person still and reassured. Do not straighten the ankle, pull off footwear to inspect it or ask them to walk. Support or immobilize only as trained and directed.\n\nIf there is bleeding, provide appropriate direct-pressure care without pressing on protruding bone. Protect the person from chilling or overheating and watch for changes until help arrives.\n\nThe safe response does not depend on proving whether the injury is a sprain or fracture.",
+      "spokenText": "A colleague falls into a shallow hidden hole. Their ankle is at an unusual angle, the pain is severe and they cannot move safely. The immediate area is otherwise safe.\n\nKeep other people away from the hole and check for additional hazards.\n\nCall for emergency medical help. Describe the severe pain, unusual ankle position, exact field location and safest access route. Report a suspected injury, not a confirmed diagnosis.\n\nKeep the person still and reassured. Do not straighten the ankle, pull off footwear to inspect it or ask them to walk. Support or immobilize only as trained and directed.\n\nIf there is bleeding, provide appropriate direct-pressure care without pressing on protruding bone. Protect the person from chilling or overheating and watch for changes until help arrives.\n\nThe safe response does not depend on proving whether the injury is a sprain or fracture.",
+      "spokenTextSHA256": "c8a5918bad933f05f8498fae2c79610800a8d89353592b3012ffe0db021f5a9d",
+      "spokenTextSha256": "c8a5918bad933f05f8498fae2c79610800a8d89353592b3012ffe0db021f5a9d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5dbbb2ae54fb55d8ca6fde7480cb671a81d686ad686803b3e64d838e9e3c8811",
+      "requestFingerprintSha256": "5dbbb2ae54fb55d8ca6fde7480cb671a81d686ad686803b3e64d838e9e3c8811",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-E04-r1",
+      "unitId": "S1-02-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "During an authorized task, liquid fertilizer splashes into your partner's eye. The surrounding area is safe and the planned eyewash is accessible.",
+          "sha256": "2896e7fd4dc239e48fc5de7d984a95e5f2658caad305fcfbb463704428c8d385"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Begin suitable flushing immediately. Scene safety is a rapid check, not a reason to postpone washing.",
+          "sha256": "0fe38b2437f0263a73aea372215f5f7a1e8725e64c587fcd6560ea889c3b9232"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Ask a helper to summon medical help and bring the product information. Explain the location, eye exposure, product if known and current condition.",
+          "sha256": "58fab7b62b630ecf6ec4198f5e3f24bec6db9636cf00c0c0eb7c068f3563268a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Keep flushing according to product and medical guidance. Do not stop merely because 15 minutes has elapsed, and do not delay washing while searching for paperwork.",
+          "sha256": "9f8679bc118561ded17a076a08ccb117c5850f6498ef75fa7ae74cc0d9c4485f"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Urgent assistance and the call for help can happen together.",
+          "sha256": "1635dd94a6358a6a9cef48ee132e0e2d4a1b80578103a6f4d49f676dea21b23f"
+        }
+      ],
+      "scientificMeaning": "During an authorized task, liquid fertilizer splashes into your partner's eye. The surrounding area is safe and the planned eyewash is accessible.\n\nBegin suitable flushing immediately. Scene safety is a rapid check, not a reason to postpone washing.\n\nAsk a helper to summon medical help and bring the product information. Explain the location, eye exposure, product if known and current condition.\n\nKeep flushing according to product and medical guidance. Do not stop merely because 15 minutes has elapsed, and do not delay washing while searching for paperwork.\n\nUrgent assistance and the call for help can happen together.",
+      "displayText": "During an authorized task, liquid fertilizer splashes into your partner's eye. The surrounding area is safe and the planned eyewash is accessible.\n\nBegin suitable flushing immediately. Scene safety is a rapid check, not a reason to postpone washing.\n\nAsk a helper to summon medical help and bring the product information. Explain the location, eye exposure, product if known and current condition.\n\nKeep flushing according to product and medical guidance. Do not stop merely because 15 minutes has elapsed, and do not delay washing while searching for paperwork.\n\nUrgent assistance and the call for help can happen together.",
+      "captionText": "During an authorized task, liquid fertilizer splashes into your partner's eye. The surrounding area is safe and the planned eyewash is accessible.\n\nBegin suitable flushing immediately. Scene safety is a rapid check, not a reason to postpone washing.\n\nAsk a helper to summon medical help and bring the product information. Explain the location, eye exposure, product if known and current condition.\n\nKeep flushing according to product and medical guidance. Do not stop merely because 15 minutes has elapsed, and do not delay washing while searching for paperwork.\n\nUrgent assistance and the call for help can happen together.",
+      "spokenText": "During an authorized task, liquid fertilizer splashes into your partner's eye. The surrounding area is safe and the planned eyewash is accessible.\n\nBegin suitable flushing immediately. Scene safety is a rapid check, not a reason to postpone washing.\n\nAsk a helper to summon medical help and bring the product information. Explain the location, eye exposure, product if known and current condition.\n\nKeep flushing according to product and medical guidance. Do not stop merely because fifteen minutes has elapsed, and do not delay washing while searching for paperwork.\n\nUrgent assistance and the call for help can happen together.",
+      "spokenTextSHA256": "e2ab7e6d8325bb31fc2d6ad88bf94bfebd900b9cc2acfd0fe83062387a8046a8",
+      "spokenTextSha256": "e2ab7e6d8325bb31fc2d6ad88bf94bfebd900b9cc2acfd0fe83062387a8046a8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "15 minutes",
+          "spoken": "fifteen minutes",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c01c52566bdb710cd40cc4a275a13b662f8890f515bfd1c0a54620bcca658304",
+      "requestFingerprintSha256": "c01c52566bdb710cd40cc4a275a13b662f8890f515bfd1c0a54620bcca658304",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-E05-r1",
+      "unitId": "S1-02-en-E05-r1",
+      "locale": "en",
+      "semanticGroup": "E05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/situation",
+          "text": "You find gauze, tape, a small eyewash bottle, an emergency blanket and written contact details in the field kit.",
+          "sha256": "53c13dfa98ad79e6222ac92b2815298970d7b22d29338cf2796bdd3b48394623"
+        },
+        {
+          "pointer": "/examples/4/reasoning/0",
+          "text": "For a deep cut, choose clean gauze for direct pressure. Tape may support a dressing when used appropriately; fetching it must not delay pressure or the call for help.",
+          "sha256": "81f7bc67dc55fb2dfdc341ad2f72e1d66e2bd5cacb9a7adf8113c859519046e1"
+        },
+        {
+          "pointer": "/examples/4/reasoning/1",
+          "text": "For an eye splash, start the appropriate flushing and check access to the full eyewash provision. The small bottle alone may run out too soon.",
+          "sha256": "635b63f522d5ace686604aacab9b0092dbee74bd891d8333fc0e0c3e6ac4578c"
+        },
+        {
+          "pointer": "/examples/4/reasoning/2",
+          "text": "Use the written contacts and location information to make an accurate call even under stress. Select the blanket only when protection from chilling is appropriate.",
+          "sha256": "06b23772960d8294ca55e8d4904c31ed72ba382d9efa8fd413a5e5ad8b4c64ff"
+        },
+        {
+          "pointer": "/examples/4/takeaway",
+          "text": "Knowing why an item is needed matters more than reciting the kit inventory.",
+          "sha256": "60bc0a75afd746a280441a4b2173dd34b0b429a76f49dca491dd051153b5132e"
+        }
+      ],
+      "scientificMeaning": "You find gauze, tape, a small eyewash bottle, an emergency blanket and written contact details in the field kit.\n\nFor a deep cut, choose clean gauze for direct pressure. Tape may support a dressing when used appropriately; fetching it must not delay pressure or the call for help.\n\nFor an eye splash, start the appropriate flushing and check access to the full eyewash provision. The small bottle alone may run out too soon.\n\nUse the written contacts and location information to make an accurate call even under stress. Select the blanket only when protection from chilling is appropriate.\n\nKnowing why an item is needed matters more than reciting the kit inventory.",
+      "displayText": "You find gauze, tape, a small eyewash bottle, an emergency blanket and written contact details in the field kit.\n\nFor a deep cut, choose clean gauze for direct pressure. Tape may support a dressing when used appropriately; fetching it must not delay pressure or the call for help.\n\nFor an eye splash, start the appropriate flushing and check access to the full eyewash provision. The small bottle alone may run out too soon.\n\nUse the written contacts and location information to make an accurate call even under stress. Select the blanket only when protection from chilling is appropriate.\n\nKnowing why an item is needed matters more than reciting the kit inventory.",
+      "captionText": "You find gauze, tape, a small eyewash bottle, an emergency blanket and written contact details in the field kit.\n\nFor a deep cut, choose clean gauze for direct pressure. Tape may support a dressing when used appropriately; fetching it must not delay pressure or the call for help.\n\nFor an eye splash, start the appropriate flushing and check access to the full eyewash provision. The small bottle alone may run out too soon.\n\nUse the written contacts and location information to make an accurate call even under stress. Select the blanket only when protection from chilling is appropriate.\n\nKnowing why an item is needed matters more than reciting the kit inventory.",
+      "spokenText": "You find gauze, tape, a small eyewash bottle, an emergency blanket and written contact details in the field kit.\n\nFor a deep cut, choose clean gauze for direct pressure. Tape may support a dressing when used appropriately; fetching it must not delay pressure or the call for help.\n\nFor an eye splash, start the appropriate flushing and check access to the full eyewash provision. The small bottle alone may run out too soon.\n\nUse the written contacts and location information to make an accurate call even under stress. Select the blanket only when protection from chilling is appropriate.\n\nKnowing why an item is needed matters more than reciting the kit inventory.",
+      "spokenTextSHA256": "00bd887049e1e95eabb3369aef4e8f9b794a7e4a8e5382918ecf08d83ada0e84",
+      "spokenTextSha256": "00bd887049e1e95eabb3369aef4e8f9b794a7e4a8e5382918ecf08d83ada0e84",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4b3d7c894180bbfeb9cdc9c281a55c90ae4eb7de35d6d8ce76a922426fdfaf81",
+      "requestFingerprintSha256": "4b3d7c894180bbfeb9cdc9c281a55c90ae4eb7de35d6d8ce76a922426fdfaf81",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-practical-r1",
+      "unitId": "S1-02-en-practical-r1",
+      "locale": "en",
+      "semanticGroup": "practical",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/practical/safety",
+          "text": "Use role cards, clean unused equipment and a training prop. No real chemicals, deliberate heat exposure, injury, eye flushing on classmates or force on a limb. Mock calls must not dial emergency services.",
+          "sha256": "00fde8498e885447c54cbc6326fdea42e6c9b68c9d9c2c72b9ea0ce58ec6f43c"
+        },
+        {
+          "pointer": "/practical/steps/0",
+          "text": "Before the rehearsal, locate the safe area, communication equipment, kit and washing facilities with the trainer. Confirm the emergency number and access information for the actual location.",
+          "sha256": "99b588c9f1447cd6a62d94af2f4a7e584f3edb6627e1151d981c3459601ced3b"
+        },
+        {
+          "pointer": "/practical/steps/1",
+          "text": "In a group of 3–4, read the assigned scenario and spend up to 15 minutes developing a response. Identify immediate actions, suitable protection, the emergency report and responsibilities.",
+          "sha256": "77cbb2badfcc9e7a4fb0e7077abc3c6905890dc6e92e00e2a493fc6baac87ab2"
+        },
+        {
+          "pointer": "/practical/steps/2",
+          "text": "Rehearse the dizzy-partner and suspected-ankle-injury cases. In the next step, rehearse the chemical-splash and airborne-hazard cases to practise all four situations.",
+          "sha256": "19a356b6fd9c90e9fb60cdd67d80f290399045386c671892c48386956df5fadd"
+        },
+        {
+          "pointer": "/practical/steps/3",
+          "text": "Each learner must individually demonstrate the scene assessment, a mock emergency report, equipment selection and safe limits of assistance. Explain an eye-splash response using a prop, without actually flushing a person's eyes.",
+          "sha256": "60729fdd36fe7f5b0e3cfa00154c0e0241aa9e23aac1dcd8ded6ee6ae74d3eed"
+        },
+        {
+          "pointer": "/practical/steps/4",
+          "text": "Present the group's reasoning in 2–3 minutes. Use the shared 15-minute discussion period to compare plans and correct unsafe decisions. Group participation does not replace individual evidence.",
+          "sha256": "d4d7821387a4b765c5ecc95f25a7c1da41b3b73353e75ad9f7634cd15f36f23d"
+        },
+        {
+          "pointer": "/practical/steps/5",
+          "text": "Test a communication failure: explain the agreed safe backup if mobile coverage is lost. Repeat the affected action after feedback. The trainer records what was observed and what still needs work.",
+          "sha256": "a46d4d852855d90d179aefbac6ff670a960b586b4ad3fca2f83038da8c679f40"
+        },
+        {
+          "pointer": "/practical/evidence/0",
+          "text": "A five-part emergency report with accurate scenario facts.",
+          "sha256": "1dd0340c7d68ab7f7f053ba6412e8ce0372a1595f3c87add5b0a206acd9a92f7"
+        },
+        {
+          "pointer": "/practical/evidence/1",
+          "text": "Individual observation of scene safety, timely help, appropriate equipment and assistance within training.",
+          "sha256": "f8dcbf986c82b96255423cabb10925b28cc678dfe5c7d0848b50de4ba435e0b6"
+        },
+        {
+          "pointer": "/practical/evidence/2",
+          "text": "Recognition of heatstroke despite continued sweating; no drink offered when swallowing is unsafe.",
+          "sha256": "d710554c2f27141b77a5b9168190b3817eaebd6fae9b723cb95e6a407d78857e"
+        },
+        {
+          "pointer": "/practical/evidence/3",
+          "text": "No straightening or unnecessary movement of a suspected fracture; no delay to urgent eye washing in the simulation.",
+          "sha256": "433243d366bea1d22399269b74d8c3b0f83608e050bc34ab77e44c2ed66b978f"
+        },
+        {
+          "pointer": "/practical/passRule",
+          "text": "Every practical element must be demonstrated safely to the trainer. Stop an unsafe simulation, explain the hazard, and repeat the affected performance. Online answers or a group presentation alone cannot pass this criterion.",
+          "sha256": "2ea7b5c84c5319b33bc532fe91ff78c851f63197caadeeb6c0a517f72bfb840c"
+        }
+      ],
+      "scientificMeaning": "Use role cards, clean unused equipment and a training prop. No real chemicals, deliberate heat exposure, injury, eye flushing on classmates or force on a limb. Mock calls must not dial emergency services.\n\nBefore the rehearsal, locate the safe area, communication equipment, kit and washing facilities with the trainer. Confirm the emergency number and access information for the actual location.\n\nIn a group of 3–4, read the assigned scenario and spend up to 15 minutes developing a response. Identify immediate actions, suitable protection, the emergency report and responsibilities.\n\nRehearse the dizzy-partner and suspected-ankle-injury cases. In the next step, rehearse the chemical-splash and airborne-hazard cases to practise all four situations.\n\nEach learner must individually demonstrate the scene assessment, a mock emergency report, equipment selection and safe limits of assistance. Explain an eye-splash response using a prop, without actually flushing a person's eyes.\n\nPresent the group's reasoning in 2–3 minutes. Use the shared 15-minute discussion period to compare plans and correct unsafe decisions. Group participation does not replace individual evidence.\n\nTest a communication failure: explain the agreed safe backup if mobile coverage is lost. Repeat the affected action after feedback. The trainer records what was observed and what still needs work.\n\nA five-part emergency report with accurate scenario facts.\n\nIndividual observation of scene safety, timely help, appropriate equipment and assistance within training.\n\nRecognition of heatstroke despite continued sweating; no drink offered when swallowing is unsafe.\n\nNo straightening or unnecessary movement of a suspected fracture; no delay to urgent eye washing in the simulation.\n\nEvery practical element must be demonstrated safely to the trainer. Stop an unsafe simulation, explain the hazard, and repeat the affected performance. Online answers or a group presentation alone cannot pass this criterion.",
+      "displayText": "Use role cards, clean unused equipment and a training prop. No real chemicals, deliberate heat exposure, injury, eye flushing on classmates or force on a limb. Mock calls must not dial emergency services.\n\nBefore the rehearsal, locate the safe area, communication equipment, kit and washing facilities with the trainer. Confirm the emergency number and access information for the actual location.\n\nIn a group of 3–4, read the assigned scenario and spend up to 15 minutes developing a response. Identify immediate actions, suitable protection, the emergency report and responsibilities.\n\nRehearse the dizzy-partner and suspected-ankle-injury cases. In the next step, rehearse the chemical-splash and airborne-hazard cases to practise all four situations.\n\nEach learner must individually demonstrate the scene assessment, a mock emergency report, equipment selection and safe limits of assistance. Explain an eye-splash response using a prop, without actually flushing a person's eyes.\n\nPresent the group's reasoning in 2–3 minutes. Use the shared 15-minute discussion period to compare plans and correct unsafe decisions. Group participation does not replace individual evidence.\n\nTest a communication failure: explain the agreed safe backup if mobile coverage is lost. Repeat the affected action after feedback. The trainer records what was observed and what still needs work.\n\nA five-part emergency report with accurate scenario facts.\n\nIndividual observation of scene safety, timely help, appropriate equipment and assistance within training.\n\nRecognition of heatstroke despite continued sweating; no drink offered when swallowing is unsafe.\n\nNo straightening or unnecessary movement of a suspected fracture; no delay to urgent eye washing in the simulation.\n\nEvery practical element must be demonstrated safely to the trainer. Stop an unsafe simulation, explain the hazard, and repeat the affected performance. Online answers or a group presentation alone cannot pass this criterion.",
+      "captionText": "Use role cards, clean unused equipment and a training prop. No real chemicals, deliberate heat exposure, injury, eye flushing on classmates or force on a limb. Mock calls must not dial emergency services.\n\nBefore the rehearsal, locate the safe area, communication equipment, kit and washing facilities with the trainer. Confirm the emergency number and access information for the actual location.\n\nIn a group of 3–4, read the assigned scenario and spend up to 15 minutes developing a response. Identify immediate actions, suitable protection, the emergency report and responsibilities.\n\nRehearse the dizzy-partner and suspected-ankle-injury cases. In the next step, rehearse the chemical-splash and airborne-hazard cases to practise all four situations.\n\nEach learner must individually demonstrate the scene assessment, a mock emergency report, equipment selection and safe limits of assistance. Explain an eye-splash response using a prop, without actually flushing a person's eyes.\n\nPresent the group's reasoning in 2–3 minutes. Use the shared 15-minute discussion period to compare plans and correct unsafe decisions. Group participation does not replace individual evidence.\n\nTest a communication failure: explain the agreed safe backup if mobile coverage is lost. Repeat the affected action after feedback. The trainer records what was observed and what still needs work.\n\nA five-part emergency report with accurate scenario facts.\n\nIndividual observation of scene safety, timely help, appropriate equipment and assistance within training.\n\nRecognition of heatstroke despite continued sweating; no drink offered when swallowing is unsafe.\n\nNo straightening or unnecessary movement of a suspected fracture; no delay to urgent eye washing in the simulation.\n\nEvery practical element must be demonstrated safely to the trainer. Stop an unsafe simulation, explain the hazard, and repeat the affected performance. Online answers or a group presentation alone cannot pass this criterion.",
+      "spokenText": "Use role cards, clean unused equipment and a training prop. No real chemicals, deliberate heat exposure, injury, eye flushing on classmates or force on a limb. Mock calls must not dial emergency services.\n\nBefore the rehearsal, locate the safe area, communication equipment, kit and washing facilities with the trainer. Confirm the emergency number and access information for the actual location.\n\nIn a group of three to four, read the assigned scenario and spend up to fifteen minutes developing a response. Identify immediate actions, suitable protection, the emergency report and responsibilities.\n\nRehearse the dizzy-partner and suspected-ankle-injury cases. In the next step, rehearse the chemical-splash and airborne-hazard cases to practise all four situations.\n\nEach learner must individually demonstrate the scene assessment, a mock emergency report, equipment selection and safe limits of assistance. Explain an eye-splash response using a prop, without actually flushing a person's eyes.\n\nPresent the group's reasoning in two to three minutes. Use the shared fifteen-minute discussion period to compare plans and correct unsafe decisions. Group participation does not replace individual evidence.\n\nTest a communication failure: explain the agreed safe backup if mobile coverage is lost. Repeat the affected action after feedback. The trainer records what was observed and what still needs work.\n\nA five-part emergency report with accurate scenario facts.\n\nIndividual observation of scene safety, timely help, appropriate equipment and assistance within training.\n\nRecognition of heatstroke despite continued sweating; no drink offered when swallowing is unsafe.\n\nNo straightening or unnecessary movement of a suspected fracture; no delay to urgent eye washing in the simulation.\n\nEvery practical element must be demonstrated safely to the trainer. Stop an unsafe simulation, explain the hazard, and repeat the affected performance. Online answers or a group presentation alone cannot pass this criterion.",
+      "spokenTextSHA256": "dc4eb074da9616c04dd3595069eef034e7b917f0cb32650cfd95bece9c07d039",
+      "spokenTextSha256": "dc4eb074da9616c04dd3595069eef034e7b917f0cb32650cfd95bece9c07d039",
+      "spokenAdaptationChanges": [
+        {
+          "written": "15 minutes",
+          "spoken": "fifteen minutes",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "15-minute",
+          "spoken": "fifteen-minute",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "3–4",
+          "spoken": "three to four",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "2–3 minutes",
+          "spoken": "two to three minutes",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ccf4879a0564a4bec9caa02585bf3204024a2f66fca6d1a19c6e76c2efbf0027",
+      "requestFingerprintSha256": "ccf4879a0564a4bec9caa02585bf3204024a2f66fca6d1a19c6e76c2efbf0027",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-guided-practice-r1",
+      "unitId": "S1-02-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "For a person beside moving traffic, a confused person after heat exposure, and an eye splash, choose the first safe observation, the help to summon and an action within your training. Say what would make you stop or escalate.",
+          "sha256": "e2f05425b03ecf48013d8c6838c97a3b98ee1ad36699db19b9f22c3fd60a10da"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Mark the danger to responders and bystanders in each scene.",
+          "sha256": "12005f438c2b52ac96cd69feaa0c89f3ff65ae6e298124d0583a5002797e474d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Select an emergency report with location, observed condition and hazard, without inventing a diagnosis.",
+          "sha256": "c689278cc9e22b5bbe47ddef9a71c937bca9d4228300e36e3d906d80fd22bc04"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Choose cooling and emergency help for possible heatstroke even if the person is sweating; choose prompt appropriate eye flushing for a splash and do not delay it for cleanup.",
+          "sha256": "95958252cf585e0d5dcd39b538168205b726f35d6176ad1c1bab6fe1322e55c4"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Match a safe training-kit item to its purpose, or say why no item should be used without instruction.",
+          "sha256": "21f986c48b1fcca574c340f4a26e1c2382bd2bdd6501d043191a22728076a88f"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Online choices rehearse reasoning only. The response simulation and equipment selection require trainer observation; no real heat, injury or chemical exposure.",
+          "sha256": "d9e37f16c7c9bc8b7e37dec556ba324a91e9baa8ad46e14a1d93f260b21ed196"
+        }
+      ],
+      "scientificMeaning": "For a person beside moving traffic, a confused person after heat exposure, and an eye splash, choose the first safe observation, the help to summon and an action within your training. Say what would make you stop or escalate.\n\nMark the danger to responders and bystanders in each scene.\n\nSelect an emergency report with location, observed condition and hazard, without inventing a diagnosis.\n\nChoose cooling and emergency help for possible heatstroke even if the person is sweating; choose prompt appropriate eye flushing for a splash and do not delay it for cleanup.\n\nMatch a safe training-kit item to its purpose, or say why no item should be used without instruction.\n\nOnline choices rehearse reasoning only. The response simulation and equipment selection require trainer observation; no real heat, injury or chemical exposure.",
+      "displayText": "For a person beside moving traffic, a confused person after heat exposure, and an eye splash, choose the first safe observation, the help to summon and an action within your training. Say what would make you stop or escalate.\n\nMark the danger to responders and bystanders in each scene.\n\nSelect an emergency report with location, observed condition and hazard, without inventing a diagnosis.\n\nChoose cooling and emergency help for possible heatstroke even if the person is sweating; choose prompt appropriate eye flushing for a splash and do not delay it for cleanup.\n\nMatch a safe training-kit item to its purpose, or say why no item should be used without instruction.\n\nOnline choices rehearse reasoning only. The response simulation and equipment selection require trainer observation; no real heat, injury or chemical exposure.",
+      "captionText": "For a person beside moving traffic, a confused person after heat exposure, and an eye splash, choose the first safe observation, the help to summon and an action within your training. Say what would make you stop or escalate.\n\nMark the danger to responders and bystanders in each scene.\n\nSelect an emergency report with location, observed condition and hazard, without inventing a diagnosis.\n\nChoose cooling and emergency help for possible heatstroke even if the person is sweating; choose prompt appropriate eye flushing for a splash and do not delay it for cleanup.\n\nMatch a safe training-kit item to its purpose, or say why no item should be used without instruction.\n\nOnline choices rehearse reasoning only. The response simulation and equipment selection require trainer observation; no real heat, injury or chemical exposure.",
+      "spokenText": "For a person beside moving traffic, a confused person after heat exposure, and an eye splash, choose the first safe observation, the help to summon and an action within your training. Say what would make you stop or escalate.\n\nMark the danger to responders and bystanders in each scene.\n\nSelect an emergency report with location, observed condition and hazard, without inventing a diagnosis.\n\nChoose cooling and emergency help for possible heatstroke even if the person is sweating; choose prompt appropriate eye flushing for a splash and do not delay it for cleanup.\n\nMatch a safe training-kit item to its purpose, or say why no item should be used without instruction.\n\nOnline choices rehearse reasoning only. The response simulation and equipment selection require trainer observation; no real heat, injury or chemical exposure.",
+      "spokenTextSHA256": "5977a2d3666f4ec1c9bc4952c1e10e370a363816bd41ecf17f7b58c4896b2944",
+      "spokenTextSha256": "5977a2d3666f4ec1c9bc4952c1e10e370a363816bd41ecf17f7b58c4896b2944",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9d5cc6d3dcd3e86c3f300d675de48636ab7cf7c464be4d33d69b73e2eab7f400",
+      "requestFingerprintSha256": "9d5cc6d3dcd3e86c3f300d675de48636ab7cf7c464be4d33d69b73e2eab7f400",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-reflection-r1",
+      "unitId": "S1-02-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I explain and demonstrate an emergency response within my training?",
+          "sha256": "375ad44dd7de0c490cefae10fca7e5cfd5f07eb2613819f4e4ff2866113ef5ad"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "This step covers injury and heat response. Complete the spill-response and evacuation step for the other parts of emergency preparation. Self-rating does not certify practical competence.",
+          "sha256": "cae4f1de32e5481622e4b77306b3650bb105950df340bb3c364e0578951e6015"
+        }
+      ],
+      "scientificMeaning": "Can I explain and demonstrate an emergency response within my training?\n\nThis step covers injury and heat response. Complete the spill-response and evacuation step for the other parts of emergency preparation. Self-rating does not certify practical competence.",
+      "displayText": "Can I explain and demonstrate an emergency response within my training?\n\nThis step covers injury and heat response. Complete the spill-response and evacuation step for the other parts of emergency preparation. Self-rating does not certify practical competence.",
+      "captionText": "Can I explain and demonstrate an emergency response within my training?\n\nThis step covers injury and heat response. Complete the spill-response and evacuation step for the other parts of emergency preparation. Self-rating does not certify practical competence.",
+      "spokenText": "Can I explain and demonstrate an emergency response within my training?\n\nThis step covers injury and heat response. Complete the spill-response and evacuation step for the other parts of emergency preparation. Self-rating does not certify practical competence.",
+      "spokenTextSHA256": "58f0edac497f0a28f84a66c8a557d7c59640b92d79ff869b2999df84a8d7ea29",
+      "spokenTextSha256": "58f0edac497f0a28f84a66c8a557d7c59640b92d79ff869b2999df84a8d7ea29",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "58738ed6367fdc4e3bcfc78fb5f59fdc005503c3be0e58b5c97d096747c6e2e6",
+      "requestFingerprintSha256": "58738ed6367fdc4e3bcfc78fb5f59fdc005503c3be0e58b5c97d096747c6e2e6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-glossary-r1",
+      "unitId": "S1-02-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Assess",
+          "sha256": "b7629cecee74de732c203019eb744cbca8f67a67c4e39575063e2e5c282094cf"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Check the situation, immediate dangers and observed condition before choosing a safe response.",
+          "sha256": "d369c87cc187c9371c31362a076e8a944206199850b5ba056ad4213e3148bcb8"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Alert",
+          "sha256": "44a57b22e03d9a661c22ffc5ffea51b3e1e33de24a53609e70f690dea8f70872"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Summon appropriate help and communicate useful facts.",
+          "sha256": "90f6a394f5e2ec052addccf4a25f34727bf6cbe08b582b5cb0a52fb44001014c"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Attend",
+          "sha256": "1ad345d68ed2b4ce4b68f7fff043fc43215627376d5ceb5166b22d47634ea81f"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Give appropriate assistance within your training while help is arranged.",
+          "sha256": "75b039b6fc83256b65c2073144556c78a9bf95a91d12aa3e8c2363f5267670d9"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Fracture",
+          "sha256": "091625f82e82e05476baf2ee436a8ac4cd9cdab9eac4b3cefb567a88fac067d0"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "A break or crack in a bone; a suspected fracture needs medical assessment.",
+          "sha256": "d78eb01c4bdde8de169767375e9e400bca43900203d88d23559b5e86ab3bcc70"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Heat exhaustion",
+          "sha256": "46f20f16bf1884eff69888748c5a226fb483b0874b40407d1f915c5d1b0ead22"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Heat-related illness involving symptoms such as heavy sweating, weakness and dizziness.",
+          "sha256": "9a073a48c4e6ff0d092f2ef4feae1ddddaf25651782b4e7842c890b247f0ea83"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Heatstroke",
+          "sha256": "fe7614e06f3b64efb1c011d8ad4d7424101007af5f33267962da7b19ade0b6b0"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A dangerous heat emergency that may include confusion, seizures or unconsciousness, with or without sweating.",
+          "sha256": "0303910a669a5725b1c109865ac8b0924ff28a4ec765f6ce13ba7752b7eb03a3"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "SDS",
+          "sha256": "54b6b356d70e258999180cbb8bd30b2f7c9744a899b80baed209212ca04efdc1"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Safety data sheet: product information that includes hazards and first-aid measures.",
+          "sha256": "bbc9c192924ba04d3c18cd079c3c62cab5f9989f2b114ed4d8510cfef82ec5c7"
+        }
+      ],
+      "scientificMeaning": "Assess\n\nCheck the situation, immediate dangers and observed condition before choosing a safe response.\n\nAlert\n\nSummon appropriate help and communicate useful facts.\n\nAttend\n\nGive appropriate assistance within your training while help is arranged.\n\nFracture\n\nA break or crack in a bone; a suspected fracture needs medical assessment.\n\nHeat exhaustion\n\nHeat-related illness involving symptoms such as heavy sweating, weakness and dizziness.\n\nHeatstroke\n\nA dangerous heat emergency that may include confusion, seizures or unconsciousness, with or without sweating.\n\nSDS\n\nSafety data sheet: product information that includes hazards and first-aid measures.",
+      "displayText": "Assess\n\nCheck the situation, immediate dangers and observed condition before choosing a safe response.\n\nAlert\n\nSummon appropriate help and communicate useful facts.\n\nAttend\n\nGive appropriate assistance within your training while help is arranged.\n\nFracture\n\nA break or crack in a bone; a suspected fracture needs medical assessment.\n\nHeat exhaustion\n\nHeat-related illness involving symptoms such as heavy sweating, weakness and dizziness.\n\nHeatstroke\n\nA dangerous heat emergency that may include confusion, seizures or unconsciousness, with or without sweating.\n\nSDS\n\nSafety data sheet: product information that includes hazards and first-aid measures.",
+      "captionText": "Assess\n\nCheck the situation, immediate dangers and observed condition before choosing a safe response.\n\nAlert\n\nSummon appropriate help and communicate useful facts.\n\nAttend\n\nGive appropriate assistance within your training while help is arranged.\n\nFracture\n\nA break or crack in a bone; a suspected fracture needs medical assessment.\n\nHeat exhaustion\n\nHeat-related illness involving symptoms such as heavy sweating, weakness and dizziness.\n\nHeatstroke\n\nA dangerous heat emergency that may include confusion, seizures or unconsciousness, with or without sweating.\n\nSDS\n\nSafety data sheet: product information that includes hazards and first-aid measures.",
+      "spokenText": "Assess\n\nCheck the situation, immediate dangers and observed condition before choosing a safe response.\n\nAlert\n\nSummon appropriate help and communicate useful facts.\n\nAttend\n\nGive appropriate assistance within your training while help is arranged.\n\nFracture\n\nA break or crack in a bone; a suspected fracture needs medical assessment.\n\nHeat exhaustion\n\nHeat-related illness involving symptoms such as heavy sweating, weakness and dizziness.\n\nHeatstroke\n\nA dangerous heat emergency that may include confusion, seizures or unconsciousness, with or without sweating.\n\nSDS\n\nSafety data sheet: product information that includes hazards and first-aid measures.",
+      "spokenTextSHA256": "a071c035be6dd46857cdc63bb7f50bdc28c6a662bb2a19ee9f45310a4112ee55",
+      "spokenTextSha256": "a071c035be6dd46857cdc63bb7f50bdc28c6a662bb2a19ee9f45310a4112ee55",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bcf94015de7462bf35dc5c09e287b881bd7f4139ac8a84c6f63aad957dfc7f66",
+      "requestFingerprintSha256": "bcf94015de7462bf35dc5c09e287b881bd7f4139ac8a84c6f63aad957dfc7f66",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
