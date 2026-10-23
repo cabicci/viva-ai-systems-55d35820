@@ -1,0 +1,36 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 2,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "separateExplicitReservation": {
+    "authoritySHA256": "2e5cb79b1719eba5237f3fabe48069af1f8d68fbdc30081b0219f072137d0c3d",
+    "reservationSHA256": "13752442c6693449b8bd0df49c988d307315f32279c95c605c1ad2a7b71b44c7",
+    "maximumBlindPOSTs": 2,
+    "original96PoolUnchanged": true,
+    "unknownOutcomeCharged": true
+  }
+}
