@@ -1,0 +1,68 @@
+name: Reviewed Soil original MP4 Bunny upload only test
+'on':
+  push:
+    branches: ['work/soil-bunny-upload-test-20261023-r1']
+    paths: ['upload-only/manifest.json']
+permissions:
+  contents: read
+concurrency:
+  group: soil-upload-test-711344a8fee64816
+  cancel-in-progress: false
+jobs:
+  upload:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.ref == 'refs/heads/work/soil-bunny-upload-test-20261023-r1' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      MANIFEST_SHA: 6f21799abbbbfd671ad362c717ceb125c447f0fdf8cb7d8880b053367d0451e9
+      WORKER_SHA: 23092e05c306fb6a999a90a62789cdf40840990b944016792c2745ceb53951cf
+      PYTHONUNBUFFERED: '1'
+    defaults:
+      run:
+        working-directory: upload-only
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify bounded upload code and manifest
+        run: |
+          echo "$WORKER_SHA  worker.py" | sha256sum --check --strict
+          echo "$MANIFEST_SHA  manifest.json" | sha256sum --check --strict
+          python3 worker.py validate
+      - name: Receive and verify exact draft-release originals
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 worker.py prepare
+      - name: Create exactly one new reviewed video GUID
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py create
+      - name: Preserve created GUID before attempting upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bunny-created-guid
+          path: upload-only/output/*.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload same original MP4 once
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py upload
+      - name: Bounded readiness for same GUID
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py readiness
+      - name: Preserve actual upload outcome and readiness
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bunny-upload-outcome
+          path: upload-only/output/*.json
+          if-no-files-found: error
+          retention-days: 30
