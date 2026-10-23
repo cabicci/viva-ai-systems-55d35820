@@ -1,0 +1,72 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-it.json",
+    "sha256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+    "bytes": 38890
+  },
+  "units": [
+    {
+      "id": "S3-07-it-criteria-meaning-repair-r1",
+      "unitId": "S3-07-it-criteria-meaning-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-priority-s3-07-it-criteria-meaning-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/passChecks/1/evidence",
+          "text": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+          "sha256": "866ea61d5cbdb28c5b781d1750876a9b2835d4fbf21c45532926da833b777ff6"
+        }
+      ],
+      "scientificMeaning": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+      "displayText": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+      "captionText": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+      "spokenText": "Non proporre automaticamente urea, il fertilizzante indicato con le lettere di, a, pi, oppure potassio per via fogliare.",
+      "spokenTextSHA256": "d35c51f2893398eba3336c8b0909790a8180eadff096a528c1f44e2b55f01b19",
+      "spokenTextSha256": "d35c51f2893398eba3336c8b0909790a8180eadff096a528c1f44e2b55f01b19",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+          "spoken": "niente urea, DAP o K fogliare automatici.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "niente urea, DAP o K fogliare automatici.",
+          "spoken": "Non proporre automaticamente urea, il fertilizzante indicato con le lettere di, a, pi, oppure potassio per via fogliare.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "079ee7f7c913f15cc93e61115a57ba000189807ae39b9d1e1bd70db9b135dfe7",
+      "requestFingerprintSha256": "079ee7f7c913f15cc93e61115a57ba000189807ae39b9d1e1bd70db9b135dfe7",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "niente urea, DAP o K fogliare automatici.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\five-meaning-priority-repairs-root-authority-r1.json",
+        "authoritySHA256": "f720d03b66fba9da2c37a833d87476dd4c4084ba6228817e29e60d09e798ea91"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
