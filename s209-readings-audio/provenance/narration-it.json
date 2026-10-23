@@ -1,0 +1,414 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-09-it.json",
+    "sha256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+    "bytes": 30593
+  },
+  "units": [
+    {
+      "id": "S2-09-it-R01-r1",
+      "unitId": "S2-09-it-R01-r1",
+      "locale": "it",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "L'azoto (N) sostiene crescita fogliare e proteine della pianta. Il fosforo (P) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (K) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.",
+          "sha256": "790d7af2c5e302ed1b0092fa26df08b12cec5ddfb660ab56f155a1a17f35e20e"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Il nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+          "sha256": "fe95a25f2c7bb82d0b90bdcd26447b385d1c900ad0af34b02e43b7a69eab46ae"
+        }
+      ],
+      "scientificMeaning": "L'azoto (N) sostiene crescita fogliare e proteine della pianta. Il fosforo (P) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (K) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+      "displayText": "L'azoto (N) sostiene crescita fogliare e proteine della pianta. Il fosforo (P) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (K) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+      "captionText": "L'azoto (N) sostiene crescita fogliare e proteine della pianta. Il fosforo (P) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (K) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+      "spokenText": "L'azoto, simbolo enne sostiene crescita fogliare e proteine della pianta. Il fosforo, simbolo pi partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio, simbolo cappa aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+      "spokenTextSHA256": "509fbf726bf2a6e75d7e42ecc78e73cafa0e34de22dcf88936a80c712e062fc1",
+      "spokenTextSha256": "509fbf726bf2a6e75d7e42ecc78e73cafa0e34de22dcf88936a80c712e062fc1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L'azoto (N) sostiene crescita fogliare e proteine della pianta. Il fosforo (P) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (K) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+          "spoken": "L'azoto (azoto) sostiene crescita fogliare e proteine della pianta. Il fosforo (fosforo) partecipa al trasferimento di energia, allo sviluppo radicale e riproduttivo. Il potassio (potassio) aiuta a regolare l'acqua e molti processi vegetali. Sono prime associazioni utili, non un modo per diagnosticare una carenza da una sola foglia gialla o per calcolare una dose.\n\nIl nome del nutriente sul rapporto del suolo, la forma chimica misurata e il numero sul sacco del concime possono usare basi diverse. Controlla ogni etichetta prima di confrontarle.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "azoto (azoto)",
+          "spoken": "azoto, simbolo enne",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "fosforo (fosforo)",
+          "spoken": "fosforo, simbolo pi",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "potassio (potassio)",
+          "spoken": "potassio, simbolo cappa",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cdf5d42abfbe0fe539d92d5ddf4f7d6fead217c36f53688ca6890ce23a8b77f8",
+      "requestFingerprintSha256": "cdf5d42abfbe0fe539d92d5ddf4f7d6fead217c36f53688ca6890ce23a8b77f8",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R02-r1",
+      "unitId": "S2-09-it-R02-r1",
+      "locale": "it",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Nella dimostrazione di un kit rapido, una quantità misurata di suolo preparato incontra una soluzione estraente indicata. Metodo, rapporto suolo:soluzione, tempo di agitazione e condizioni determinano quale frazione entra nel liquido. La dimostrazione insegna il concetto senza che gli allievi manipolino reagenti.",
+          "sha256": "8324f3edf3e2430fe22f88a143d4d1e15d2690d9ba969ccba0749a2540812fa4"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Non immaginare che la soluzione replichi le radici o liberi ogni nutriente del suolo. Un estratto è un indice definito dal metodo e calibrato dai laboratori con la risposta delle colture; riserve totali e quantità ottenibile da una coltura particolare sono questioni diverse. Scrivi nome del metodo, base del campione e significato dichiarato del risultato.",
+          "sha256": "a2e48070267b813cce7409eabf579106c5660ebd10631601f86fd57a29bbf769"
+        }
+      ],
+      "scientificMeaning": "Nella dimostrazione di un kit rapido, una quantità misurata di suolo preparato incontra una soluzione estraente indicata. Metodo, rapporto suolo:soluzione, tempo di agitazione e condizioni determinano quale frazione entra nel liquido. La dimostrazione insegna il concetto senza che gli allievi manipolino reagenti.\n\nNon immaginare che la soluzione replichi le radici o liberi ogni nutriente del suolo. Un estratto è un indice definito dal metodo e calibrato dai laboratori con la risposta delle colture; riserve totali e quantità ottenibile da una coltura particolare sono questioni diverse. Scrivi nome del metodo, base del campione e significato dichiarato del risultato.",
+      "displayText": "Nella dimostrazione di un kit rapido, una quantità misurata di suolo preparato incontra una soluzione estraente indicata. Metodo, rapporto suolo:soluzione, tempo di agitazione e condizioni determinano quale frazione entra nel liquido. La dimostrazione insegna il concetto senza che gli allievi manipolino reagenti.\n\nNon immaginare che la soluzione replichi le radici o liberi ogni nutriente del suolo. Un estratto è un indice definito dal metodo e calibrato dai laboratori con la risposta delle colture; riserve totali e quantità ottenibile da una coltura particolare sono questioni diverse. Scrivi nome del metodo, base del campione e significato dichiarato del risultato.",
+      "captionText": "Nella dimostrazione di un kit rapido, una quantità misurata di suolo preparato incontra una soluzione estraente indicata. Metodo, rapporto suolo:soluzione, tempo di agitazione e condizioni determinano quale frazione entra nel liquido. La dimostrazione insegna il concetto senza che gli allievi manipolino reagenti.\n\nNon immaginare che la soluzione replichi le radici o liberi ogni nutriente del suolo. Un estratto è un indice definito dal metodo e calibrato dai laboratori con la risposta delle colture; riserve totali e quantità ottenibile da una coltura particolare sono questioni diverse. Scrivi nome del metodo, base del campione e significato dichiarato del risultato.",
+      "spokenText": "Nella dimostrazione di un kit rapido, una quantità misurata di suolo preparato incontra una soluzione estraente indicata. Metodo, rapporto suolo:soluzione, tempo di agitazione e condizioni determinano quale frazione entra nel liquido. La dimostrazione insegna il concetto senza che gli allievi manipolino reagenti.\n\nNon immaginare che la soluzione replichi le radici o liberi ogni nutriente del suolo. Un estratto è un indice definito dal metodo e calibrato dai laboratori con la risposta delle colture; riserve totali e quantità ottenibile da una coltura particolare sono questioni diverse. Scrivi nome del metodo, base del campione e significato dichiarato del risultato.",
+      "spokenTextSHA256": "885c9adff9e08af0415d6a72b52b5b1b014a2bcdc533eef50c80d8e4a5ffc375",
+      "spokenTextSha256": "885c9adff9e08af0415d6a72b52b5b1b014a2bcdc533eef50c80d8e4a5ffc375",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "29568d75fb871cf4ec6125ce5aaf359658991b41a714ccd136e4b0d96eab2d7c",
+      "requestFingerprintSha256": "29568d75fb871cf4ec6125ce5aaf359658991b41a714ccd136e4b0d96eab2d7c",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R03-r1",
+      "unitId": "S2-09-it-R03-r1",
+      "locale": "it",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Poi la sospensione viene filtrata per ottenere l'estratto. In un metodo colorimetrico, un reagente specifico reagisce con una porzione misurata e sviluppa colore. Lo si confronta con la scala del kit o lo si legge con uno strumento idoneo dopo bianco o taratura prescritti. La procedura esatta appartiene al kit o laboratorio, non a una ricetta generica in quattro parole.",
+          "sha256": "ba8c5caacd7f847f9b2684084ec97e2c7129b970ae99f58cb5ac91708b5b88f8"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Il formatore può invece mostrare un rapporto di laboratorio da un metodo strumentale. Uno strumento digitale non usa necessariamente la stessa reazione colorata. Chiedi metodi di estrazione e lettura; non inserire il risultato del kit nella fascia di riferimento di un altro metodo.",
+          "sha256": "0d23ef91026842f47db265eae05a1b0ed5591bd323bf3ee45663295bea612f99"
+        }
+      ],
+      "scientificMeaning": "Poi la sospensione viene filtrata per ottenere l'estratto. In un metodo colorimetrico, un reagente specifico reagisce con una porzione misurata e sviluppa colore. Lo si confronta con la scala del kit o lo si legge con uno strumento idoneo dopo bianco o taratura prescritti. La procedura esatta appartiene al kit o laboratorio, non a una ricetta generica in quattro parole.\n\nIl formatore può invece mostrare un rapporto di laboratorio da un metodo strumentale. Uno strumento digitale non usa necessariamente la stessa reazione colorata. Chiedi metodi di estrazione e lettura; non inserire il risultato del kit nella fascia di riferimento di un altro metodo.",
+      "displayText": "Poi la sospensione viene filtrata per ottenere l'estratto. In un metodo colorimetrico, un reagente specifico reagisce con una porzione misurata e sviluppa colore. Lo si confronta con la scala del kit o lo si legge con uno strumento idoneo dopo bianco o taratura prescritti. La procedura esatta appartiene al kit o laboratorio, non a una ricetta generica in quattro parole.\n\nIl formatore può invece mostrare un rapporto di laboratorio da un metodo strumentale. Uno strumento digitale non usa necessariamente la stessa reazione colorata. Chiedi metodi di estrazione e lettura; non inserire il risultato del kit nella fascia di riferimento di un altro metodo.",
+      "captionText": "Poi la sospensione viene filtrata per ottenere l'estratto. In un metodo colorimetrico, un reagente specifico reagisce con una porzione misurata e sviluppa colore. Lo si confronta con la scala del kit o lo si legge con uno strumento idoneo dopo bianco o taratura prescritti. La procedura esatta appartiene al kit o laboratorio, non a una ricetta generica in quattro parole.\n\nIl formatore può invece mostrare un rapporto di laboratorio da un metodo strumentale. Uno strumento digitale non usa necessariamente la stessa reazione colorata. Chiedi metodi di estrazione e lettura; non inserire il risultato del kit nella fascia di riferimento di un altro metodo.",
+      "spokenText": "Poi la sospensione viene filtrata per ottenere l'estratto. In un metodo colorimetrico, un reagente specifico reagisce con una porzione misurata e sviluppa colore. Lo si confronta con la scala del kit o lo si legge con uno strumento idoneo dopo bianco o taratura prescritti. La procedura esatta appartiene al kit o laboratorio, non a una ricetta generica in quattro parole.\n\nIl formatore può invece mostrare un rapporto di laboratorio da un metodo strumentale. Uno strumento digitale non usa necessariamente la stessa reazione colorata. Chiedi metodi di estrazione e lettura; non inserire il risultato del kit nella fascia di riferimento di un altro metodo.",
+      "spokenTextSHA256": "de506b866acc97e7e33eef0014bd1253c443f713a29f5539bdebe8ccc0d2c4b2",
+      "spokenTextSha256": "de506b866acc97e7e33eef0014bd1253c443f713a29f5539bdebe8ccc0d2c4b2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c7ad1604ec1fc0c8d49b729084830a54ceb009b08ca1953191f3427d6b428de9",
+      "requestFingerprintSha256": "c7ad1604ec1fc0c8d49b729084830a54ceb009b08ca1953191f3427d6b428de9",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R04-r1",
+      "unitId": "S2-09-it-R04-r1",
+      "locale": "it",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Il rapporto può indicare parti per milione (ppm) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, 1 ppm può essere 1 mg/kg; in soluzione può essere mg/L. Non convertire senza base del rapporto e calcolo del laboratorio.",
+          "sha256": "11a16e5decc30ad873c582d20a35b097b20608d8e5ad4bf4e071c3ff2f3bcdf1"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Lo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+          "sha256": "1f23a63c4153192e68533fad5c0d1c330ad5fbdbe226213d2add4f5437cc5af4"
+        }
+      ],
+      "scientificMeaning": "Il rapporto può indicare parti per milione (ppm) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, 1 ppm può essere 1 mg/kg; in soluzione può essere mg/L. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+      "displayText": "Il rapporto può indicare parti per milione (ppm) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, 1 ppm può essere 1 mg/kg; in soluzione può essere mg/L. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+      "captionText": "Il rapporto può indicare parti per milione (ppm) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, 1 ppm può essere 1 mg/kg; in soluzione può essere mg/L. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+      "spokenText": "Il rapporto può indicare parti per milione, abbreviate pi pi emme o categorie Basso, Medio/Adatto e Alto. Pi pi emme significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, una parte per milione può essere un milligrammo per chilogrammo; in soluzione può essere milligrammi per litro. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+      "spokenTextSHA256": "9affeefe24d92e3df702d8329da873068756f0ac799c6dfb31879c2bb51af40e",
+      "spokenTextSha256": "9affeefe24d92e3df702d8329da873068756f0ac799c6dfb31879c2bb51af40e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il rapporto può indicare parti per milione (ppm) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, 1 ppm può essere 1 mg/kg; in soluzione può essere mg/L. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+          "spoken": "Il rapporto può indicare parti per milione (parti per milione) o categorie Basso, Medio/Adatto e Alto. Ppm significa una parte su un milione sulla base di massa o volume dichiarata. Per una massa di suolo, una parte per milione può essere un milligrammo per chilogrammo; in soluzione può essere milligrammi per litro. Non convertire senza base del rapporto e calcolo del laboratorio.\n\nLo stesso numero può avere classe diversa con estraente, regione, coltura o calibrazione differenti. Tieni metodo e riferimento accanto al risultato. La categoria interpreta la probabile risposta colturale nelle condizioni dichiarate, non il numero diretto di sacchi.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "parti per milione (parti per milione)",
+          "spoken": "parti per milione, abbreviate pi pi emme",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Ppm significa",
+          "spoken": "Pi pi emme significa",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "25ad21cde7f8c601e5d0c78612c71ff0fa48ae0e3a933b1058f3ed168551aea8",
+      "requestFingerprintSha256": "25ad21cde7f8c601e5d0c78612c71ff0fa48ae0e3a933b1058f3ed168551aea8",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R05-r1",
+      "unitId": "S2-09-it-R05-r1",
+      "locale": "it",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica 2–3%, P 15–20 e 40–50 ppm, K 100–120 e 200–250 ppm. La riga N non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.",
+          "sha256": "a5c1be4d7caebeffff6a7cdd580e85e3fa85f83cd0177ce60b5b9f1ca74f07e7"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Le azioni semplici della tabella — valutare calce per pH basso rispetto alla coltura, possibili apporti P o K se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un pH alto non impone zolfo in un terreno calcareo. Un solo valore basso di N non dimostra una dose fissa.",
+          "sha256": "355ef92ff72cfecba07824c95ee5fbe35942fc1a8dff7d3a7b7326a6bffd7427"
+        }
+      ],
+      "scientificMeaning": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica 2–3%, P 15–20 e 40–50 ppm, K 100–120 e 200–250 ppm. La riga N non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per pH basso rispetto alla coltura, possibili apporti P o K se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un pH alto non impone zolfo in un terreno calcareo. Un solo valore basso di N non dimostra una dose fissa.",
+      "displayText": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica 2–3%, P 15–20 e 40–50 ppm, K 100–120 e 200–250 ppm. La riga N non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per pH basso rispetto alla coltura, possibili apporti P o K se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un pH alto non impone zolfo in un terreno calcareo. Un solo valore basso di N non dimostra una dose fissa.",
+      "captionText": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica 2–3%, P 15–20 e 40–50 ppm, K 100–120 e 200–250 ppm. La riga N non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per pH basso rispetto alla coltura, possibili apporti P o K se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un pH alto non impone zolfo in un terreno calcareo. Un solo valore basso di N non dimostra una dose fissa.",
+      "spokenText": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica due a tre per cento, fosforo quindici a venti e quaranta a cinquanta parti per milione, potassio cento a centoventi e duecento a duecentocinquanta parti per milione. La riga azoto non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per P H basso rispetto alla coltura, possibili apporti di fosforo o potassio se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un P H alto non impone zolfo in un terreno calcareo. Un solo valore basso di azoto non dimostra una dose fissa.",
+      "spokenTextSHA256": "ab7e17207cf6c6d4f4e177f19f45ac159716415282c386e274bc90db360711e7",
+      "spokenTextSha256": "ab7e17207cf6c6d4f4e177f19f45ac159716415282c386e274bc90db360711e7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica 2–3%, P 15–20 e 40–50 ppm, K 100–120 e 200–250 ppm. La riga N non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per pH basso rispetto alla coltura, possibili apporti P o K se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un pH alto non impone zolfo in un terreno calcareo. Un solo valore basso di N non dimostra una dose fissa.",
+          "spoken": "La tabella seguente conserva deliberatamente i numeri dell'esempio. Ha intervalli senza classe: sostanza organica due a tre per cento, fosforo quindici a venti e quaranta a cinquanta parti per milione, potassio cento a centoventi e duecento a duecentocinquanta parti per milione. La riga azoto non dà soglie stabili di adeguato o alto. Non inventare una classe in un intervallo vuoto né trasferire queste soglie a un altro laboratorio.\n\nLe azioni semplici della tabella — valutare calce per P H basso rispetto alla coltura, possibili apporti fosforo o potassio se la carenza è confermata, o materiali organici idonei — richiedono una raccomandazione locale, non sono prescrizioni automatiche. Un P H alto non impone zolfo in un terreno calcareo. Un solo valore basso di azoto non dimostra una dose fissa.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "possibili apporti fosforo o potassio",
+          "spoken": "possibili apporti di fosforo o potassio",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b43e303125be14ce34f2272bcfc87549cb0e77a7375da7c750313e1b89cd5dd8",
+      "requestFingerprintSha256": "b43e303125be14ce34f2272bcfc87549cb0e77a7375da7c750313e1b89cd5dd8",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R06-r1",
+      "unitId": "S2-09-it-R06-r1",
+      "locale": "it",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Pensa per un minuto: solo nella tabella mostrata, pH 5.5 ricade nella riga del pH basso e P 12 ppm in quella del P basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione P calibrata mancano prima di dare una quantità.",
+          "sha256": "92b6bda35bd8ca9e8bfc1939ec9134d3b383d820b00b0db876aa2baaf41a6705"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "La direzione difendibile può essere valutare calce e piano fosforo, ma dai soli pH 5.5 e 12 ppm non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+          "sha256": "00f10970cfd49187cf3ed049bdbb6033727be38ea1843d62a2ca219eb8465a35"
+        }
+      ],
+      "scientificMeaning": "Pensa per un minuto: solo nella tabella mostrata, pH 5.5 ricade nella riga del pH basso e P 12 ppm in quella del P basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione P calibrata mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli pH 5.5 e 12 ppm non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+      "displayText": "Pensa per un minuto: solo nella tabella mostrata, pH 5.5 ricade nella riga del pH basso e P 12 ppm in quella del P basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione P calibrata mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli pH 5.5 e 12 ppm non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+      "captionText": "Pensa per un minuto: solo nella tabella mostrata, pH 5.5 ricade nella riga del pH basso e P 12 ppm in quella del P basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione P calibrata mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli pH 5.5 e 12 ppm non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+      "spokenText": "Pensa per un minuto: solo nella tabella mostrata, P H cinque virgola cinque ricade nella riga del P H basso e fosforo dodici parti per milione in quella del fosforo basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione calibrata per il fosforo mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli P H cinque virgola cinque e dodici parti per milione non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+      "spokenTextSHA256": "f4a6038a3bb6f94ea4979cb47226a0c4ce321e37429498bad814ddf2ff3ff692",
+      "spokenTextSha256": "f4a6038a3bb6f94ea4979cb47226a0c4ce321e37429498bad814ddf2ff3ff692",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pensa per un minuto: solo nella tabella mostrata, pH 5.5 ricade nella riga del pH basso e P 12 ppm in quella del P basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione P calibrata mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli pH 5.5 e 12 ppm non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+          "spoken": "Pensa per un minuto: solo nella tabella mostrata, P H cinque virgola cinque ricade nella riga del P H basso e fosforo dodici parti per milione in quella del fosforo basso. Confrontati per due minuti sul perché le classi dipendono da metodo e pertinenza locale. Condividi per due minuti quali coltura, metodo di laboratorio, acidità di riserva e raccomandazione fosforo calibrata mancano prima di dare una quantità.\n\nLa direzione difendibile può essere valutare calce e piano fosforo, ma dai soli P H cinque virgola cinque e dodici parti per milione non segue alcun numero di sacchi. Scrivi X per possibile calce e Y per possibile concime come incognite, non zero o stime inventate.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "raccomandazione fosforo calibrata",
+          "spoken": "raccomandazione calibrata per il fosforo",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "966b37b5abf3a28a5c7aa9cd35cf110424280340124052010392124c88f44cd4",
+      "requestFingerprintSha256": "966b37b5abf3a28a5c7aa9cd35cf110424280340124052010392124c88f44cd4",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-09-it-R07-r1",
+      "unitId": "S2-09-it-R07-r1",
+      "locale": "it",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Una misura rapida di N cambia con tempo, movimento dell'acqua e processi biologici. Immagina N come un pasto che può muoversi o essere usato presto, mentre P e K a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano N dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.",
+          "sha256": "b2257fb1c9f0b511094659a41b4b30a4f6fc4ff5918c5e05fc64bd103f09b1ca"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Una concentrazione P o K in ppm nel suolo non è l'etichetta del concime. Un sacco 11-52-0 dichiara percentuali di N, fosfato espresso come P2O5 e potassa espressa come K2O. Non significa che il suolo contenga 11, 52 o 0 ppm. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+          "sha256": "b507ed651d04603b342bf578f0ef263edbee53103cd774823ff5ece4ebfdebe8"
+        }
+      ],
+      "scientificMeaning": "Una misura rapida di N cambia con tempo, movimento dell'acqua e processi biologici. Immagina N come un pasto che può muoversi o essere usato presto, mentre P e K a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano N dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione P o K in ppm nel suolo non è l'etichetta del concime. Un sacco 11-52-0 dichiara percentuali di N, fosfato espresso come P2O5 e potassa espressa come K2O. Non significa che il suolo contenga 11, 52 o 0 ppm. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+      "displayText": "Una misura rapida di N cambia con tempo, movimento dell'acqua e processi biologici. Immagina N come un pasto che può muoversi o essere usato presto, mentre P e K a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano N dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione P o K in ppm nel suolo non è l'etichetta del concime. Un sacco 11-52-0 dichiara percentuali di N, fosfato espresso come P2O5 e potassa espressa come K2O. Non significa che il suolo contenga 11, 52 o 0 ppm. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+      "captionText": "Una misura rapida di N cambia con tempo, movimento dell'acqua e processi biologici. Immagina N come un pasto che può muoversi o essere usato presto, mentre P e K a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano N dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione P o K in ppm nel suolo non è l'etichetta del concime. Un sacco 11-52-0 dichiara percentuali di N, fosfato espresso come P2O5 e potassa espressa come K2O. Non significa che il suolo contenga 11, 52 o 0 ppm. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+      "spokenText": "Una misura rapida di azoto cambia con tempo, movimento dell'acqua e processi biologici. Immagina l’azoto come un pasto che può muoversi o essere usato presto, mentre fosforo e potassio a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano dell’azoto dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione di fosforo o potassio in parti per milione nel suolo non è l'etichetta del concime. Un sacco undici, cinquantadue, zero dichiara percentuali di azoto, fosfato espresso come pi due o cinque e potassa espressa come cappa due o. Non significa che il suolo contenga undici, cinquantadue o zero parti per milione. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+      "spokenTextSHA256": "19f738d51a9e91efb848b459dc634244bd3907d5a34d6986b304e414becf3da0",
+      "spokenTextSha256": "19f738d51a9e91efb848b459dc634244bd3907d5a34d6986b304e414becf3da0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Una misura rapida di N cambia con tempo, movimento dell'acqua e processi biologici. Immagina N come un pasto che può muoversi o essere usato presto, mentre P e K a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano N dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione P o K in ppm nel suolo non è l'etichetta del concime. Un sacco 11-52-0 dichiara percentuali di N, fosfato espresso come P2O5 e potassa espressa come K2O. Non significa che il suolo contenga 11, 52 o 0 ppm. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+          "spoken": "Una misura rapida di azoto cambia con tempo, movimento dell'acqua e processi biologici. Immagina azoto come un pasto che può muoversi o essere usato presto, mentre fosforo e potassio a volte si paragonano a una dispensa: l'analogia ricorda il tempo, ma non è una legge agronomica. Il piano azoto dipende da fabbisogno della coltura, tempo, apporti precedenti, disponibilità del suolo e indicazione locale appropriata, non da un solo numero basso.\n\nUna concentrazione fosforo o potassio in parti per milione nel suolo non è l'etichetta del concime. Un sacco undici, cinquantadue, zero dichiara percentuali di azoto, fosfato espresso come pi due o cinque e potassa espressa come cappa due o. Non significa che il suolo contenga undici, cinquantadue o zero parti per milione. Leggi risultati, metodo, interpretazione e consiglio colturale del rapporto separatamente dall'analisi garantita del prodotto.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "Immagina azoto",
+          "spoken": "Immagina l’azoto",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Il piano azoto",
+          "spoken": "Il piano dell’azoto",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Una concentrazione fosforo o potassio",
+          "spoken": "Una concentrazione di fosforo o potassio",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2df69ed9189cbdeaa21f74b9df246702e5c5fdc562c6ad957f1172ca38d469b6",
+      "requestFingerprintSha256": "2df69ed9189cbdeaa21f74b9df246702e5c5fdc562c6ad957f1172ca38d469b6",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

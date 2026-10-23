@@ -1,0 +1,390 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-09-en.json",
+    "sha256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+    "bytes": 31046
+  },
+  "units": [
+    {
+      "id": "S2-09-en-R01-r1",
+      "unitId": "S2-09-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Nitrogen (N) supports leafy growth and plant proteins. Phosphorus (P) is involved in energy transfer, roots and reproductive growth. Potassium (K) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.",
+          "sha256": "1dba096f5af45c59df4952399c3fd896cd7bce99a76bae99ee2177ad6bdfe5a5"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "The nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+          "sha256": "92a678bb991a30346ff62650359f833ee60aa7df0401c775ccdeeab24e5fbe75"
+        }
+      ],
+      "scientificMeaning": "Nitrogen (N) supports leafy growth and plant proteins. Phosphorus (P) is involved in energy transfer, roots and reproductive growth. Potassium (K) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+      "displayText": "Nitrogen (N) supports leafy growth and plant proteins. Phosphorus (P) is involved in energy transfer, roots and reproductive growth. Potassium (K) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+      "captionText": "Nitrogen (N) supports leafy growth and plant proteins. Phosphorus (P) is involved in energy transfer, roots and reproductive growth. Potassium (K) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+      "spokenText": "Nitrogen, symbol N supports leafy growth and plant proteins. Phosphorus, symbol P is involved in energy transfer, roots and reproductive growth. Potassium, symbol K helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+      "spokenTextSHA256": "35c4d52db148e73ca6518b6754c8d83ce3573f2afd708473cf90668ccdda8908",
+      "spokenTextSha256": "35c4d52db148e73ca6518b6754c8d83ce3573f2afd708473cf90668ccdda8908",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nitrogen (N) supports leafy growth and plant proteins. Phosphorus (P) is involved in energy transfer, roots and reproductive growth. Potassium (K) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+          "spoken": "Nitrogen (nitrogen) supports leafy growth and plant proteins. Phosphorus (phosphorus) is involved in energy transfer, roots and reproductive growth. Potassium (potassium) helps regulate water use and many plant processes. These are useful first associations, not a way to diagnose a deficiency from one yellow leaf or to calculate a fertilizer rate.\n\nThe nutrient name on a soil report, the chemical form measured and the number on a fertilizer bag may not use the same basis. Confirm each label before comparing them.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "Nitrogen (nitrogen)",
+          "spoken": "Nitrogen, symbol N",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Phosphorus (phosphorus)",
+          "spoken": "Phosphorus, symbol P",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Potassium (potassium)",
+          "spoken": "Potassium, symbol K",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4fa7116a1dfae24692f3af70d8bd4b7fd24a00bbcc1a70359ea9a407e37dcb81",
+      "requestFingerprintSha256": "4fa7116a1dfae24692f3af70d8bd4b7fd24a00bbcc1a70359ea9a407e37dcb81",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R02-r1",
+      "unitId": "S2-09-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "In the trainer's rapid-kit demonstration, a measured quantity of prepared soil meets a stated extracting solution. The extraction method, soil-to-solution amount, mixing time and conditions determine which nutrient fraction enters the liquid. A demonstration can show the concept without learners handling the chemicals.",
+          "sha256": "d124b5d5e229a5bc056ac2a2a9339f42fa04590555704d50881ad7ce98a32b11"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Do not imagine that the solution duplicates plant roots or releases every nutrient in the soil. A soil-test extract is a method-defined index that laboratories calibrate against crop response; total nutrient reserves and the amount a particular crop can obtain are different questions. Write down the method name, sample basis and what the laboratory says its result represents.",
+          "sha256": "e8be37e2d41578e44b5e3861c3c6dfc05b9c12e7afd59143cbaeeea79919b407"
+        }
+      ],
+      "scientificMeaning": "In the trainer's rapid-kit demonstration, a measured quantity of prepared soil meets a stated extracting solution. The extraction method, soil-to-solution amount, mixing time and conditions determine which nutrient fraction enters the liquid. A demonstration can show the concept without learners handling the chemicals.\n\nDo not imagine that the solution duplicates plant roots or releases every nutrient in the soil. A soil-test extract is a method-defined index that laboratories calibrate against crop response; total nutrient reserves and the amount a particular crop can obtain are different questions. Write down the method name, sample basis and what the laboratory says its result represents.",
+      "displayText": "In the trainer's rapid-kit demonstration, a measured quantity of prepared soil meets a stated extracting solution. The extraction method, soil-to-solution amount, mixing time and conditions determine which nutrient fraction enters the liquid. A demonstration can show the concept without learners handling the chemicals.\n\nDo not imagine that the solution duplicates plant roots or releases every nutrient in the soil. A soil-test extract is a method-defined index that laboratories calibrate against crop response; total nutrient reserves and the amount a particular crop can obtain are different questions. Write down the method name, sample basis and what the laboratory says its result represents.",
+      "captionText": "In the trainer's rapid-kit demonstration, a measured quantity of prepared soil meets a stated extracting solution. The extraction method, soil-to-solution amount, mixing time and conditions determine which nutrient fraction enters the liquid. A demonstration can show the concept without learners handling the chemicals.\n\nDo not imagine that the solution duplicates plant roots or releases every nutrient in the soil. A soil-test extract is a method-defined index that laboratories calibrate against crop response; total nutrient reserves and the amount a particular crop can obtain are different questions. Write down the method name, sample basis and what the laboratory says its result represents.",
+      "spokenText": "In the trainer's rapid-kit demonstration, a measured quantity of prepared soil meets a stated extracting solution. The extraction method, soil-to-solution amount, mixing time and conditions determine which nutrient fraction enters the liquid. A demonstration can show the concept without learners handling the chemicals.\n\nDo not imagine that the solution duplicates plant roots or releases every nutrient in the soil. A soil-test extract is a method-defined index that laboratories calibrate against crop response; total nutrient reserves and the amount a particular crop can obtain are different questions. Write down the method name, sample basis and what the laboratory says its result represents.",
+      "spokenTextSHA256": "f7a327b9531481c6976c9d426a2071616d556b93356308759957f4bdea817b6f",
+      "spokenTextSha256": "f7a327b9531481c6976c9d426a2071616d556b93356308759957f4bdea817b6f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "faba125ef0f66f76abf58bdb9eac5d64edff77ecd40948ac012b43f0e910ba01",
+      "requestFingerprintSha256": "faba125ef0f66f76abf58bdb9eac5d64edff77ecd40948ac012b43f0e910ba01",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R03-r1",
+      "unitId": "S2-09-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Next the soil suspension is filtered to obtain an extract. In a colour-based method, a specified reagent reacts with a measured portion to develop a colour. The colour is compared with the kit chart or read by an appropriate instrument after its required blank or calibration. The precise procedure belongs to that kit or laboratory, not to a generic four-word recipe.",
+          "sha256": "30c552bf3872b5f27df26bf7376991590c8d04114a0f4b97294e47a09516bd90"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "The teacher may instead show a laboratory report from an instrumental method. A digital instrument does not automatically use the same colour reaction. Ask what extraction and readout methods were used; do not copy a colour-kit result into a report with another method's reference range.",
+          "sha256": "7f94ec6951a01435a41bd019096b52ac1cd90cc6ffe95c44f332706323b7e381"
+        }
+      ],
+      "scientificMeaning": "Next the soil suspension is filtered to obtain an extract. In a colour-based method, a specified reagent reacts with a measured portion to develop a colour. The colour is compared with the kit chart or read by an appropriate instrument after its required blank or calibration. The precise procedure belongs to that kit or laboratory, not to a generic four-word recipe.\n\nThe teacher may instead show a laboratory report from an instrumental method. A digital instrument does not automatically use the same colour reaction. Ask what extraction and readout methods were used; do not copy a colour-kit result into a report with another method's reference range.",
+      "displayText": "Next the soil suspension is filtered to obtain an extract. In a colour-based method, a specified reagent reacts with a measured portion to develop a colour. The colour is compared with the kit chart or read by an appropriate instrument after its required blank or calibration. The precise procedure belongs to that kit or laboratory, not to a generic four-word recipe.\n\nThe teacher may instead show a laboratory report from an instrumental method. A digital instrument does not automatically use the same colour reaction. Ask what extraction and readout methods were used; do not copy a colour-kit result into a report with another method's reference range.",
+      "captionText": "Next the soil suspension is filtered to obtain an extract. In a colour-based method, a specified reagent reacts with a measured portion to develop a colour. The colour is compared with the kit chart or read by an appropriate instrument after its required blank or calibration. The precise procedure belongs to that kit or laboratory, not to a generic four-word recipe.\n\nThe teacher may instead show a laboratory report from an instrumental method. A digital instrument does not automatically use the same colour reaction. Ask what extraction and readout methods were used; do not copy a colour-kit result into a report with another method's reference range.",
+      "spokenText": "Next the soil suspension is filtered to obtain an extract. In a colour-based method, a specified reagent reacts with a measured portion to develop a colour. The colour is compared with the kit chart or read by an appropriate instrument after its required blank or calibration. The precise procedure belongs to that kit or laboratory, not to a generic four-word recipe.\n\nThe teacher may instead show a laboratory report from an instrumental method. A digital instrument does not automatically use the same colour reaction. Ask what extraction and readout methods were used; do not copy a colour-kit result into a report with another method's reference range.",
+      "spokenTextSHA256": "40c75ac7b4650afb4f5e7d4f18036989c51294324c52d1f6b0d45306980f1e6b",
+      "spokenTextSha256": "40c75ac7b4650afb4f5e7d4f18036989c51294324c52d1f6b0d45306980f1e6b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "51d301d38e962287571416dca9df24a90084b0ce0defc4fdc771b7ddd0b407da",
+      "requestFingerprintSha256": "51d301d38e962287571416dca9df24a90084b0ce0defc4fdc771b7ddd0b407da",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R04-r1",
+      "unitId": "S2-09-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "sha256": "c0f59cccdb23ed42d3b12f1423718ca9be809dd5a402e3b7e04dffe7f43b40e0"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "The same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+          "sha256": "7d9875652d5bb2d027dfc7c0a9ca92d945e7274808b64b0b4803e637c403b582"
+        }
+      ],
+      "scientificMeaning": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+      "displayText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+      "captionText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+      "spokenText": "A report may state a nutrient in parts per million, abbreviated P P M, or provide a Low, Medium/Optimum or High class. P P M means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, one part per million can be expressed as one milligram per kilogram; a solution result might be milligrams per litre. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+      "spokenTextSHA256": "4d34e0167655a58ef44e4d3cf55131bcebde400a117afb7817379c97dc0fc5c0",
+      "spokenTextSha256": "4d34e0167655a58ef44e4d3cf55131bcebde400a117afb7817379c97dc0fc5c0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+          "spoken": "A report may state a nutrient in parts per million (parts per million), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, one part per million can be expressed as one milligram per kilogram; a solution result might be milligrams per litre. Do not convert one into the other without the laboratory's reporting basis and calculation.\n\nThe same number can receive a different class when the extraction method, region, crop or calibration changes. Keep the report's method and reference beside the result. A class is an interpretation of crop response probability under stated conditions, not a direct bag count.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "parts per million (parts per million)",
+          "spoken": "parts per million, abbreviated P P M",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        },
+        {
+          "written": "Ppm means",
+          "spoken": "P P M means",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "de4fd8d61aa2433cef5082765d0b6e7a258ac44693a7b9cac6efb4cbde8cf552",
+      "requestFingerprintSha256": "de4fd8d61aa2433cef5082765d0b6e7a258ac44693a7b9cac6efb4cbde8cf552",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R05-r1",
+      "unitId": "S2-09-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter 2–3%, P 15–20 and 40–50 ppm, and K 100–120 and 200–250 ppm are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.",
+          "sha256": "19a48395afc33107ce8ccfb91934818532a93b2ad6d2b19b6583c29b04b4b40b"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "The table's simple actions—consider lime for a low crop-relevant pH, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High pH does not automatically justify sulfur on a calcareous field. A low N snapshot does not by itself prove a fixed nitrogen dose.",
+          "sha256": "3d89e8ed7264580bca47f9c421391b1afdfdbb5090769c68b9330ed51c64d5b1"
+        }
+      ],
+      "scientificMeaning": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter 2–3%, P 15–20 and 40–50 ppm, and K 100–120 and 200–250 ppm are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant pH, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High pH does not automatically justify sulfur on a calcareous field. A low N snapshot does not by itself prove a fixed nitrogen dose.",
+      "displayText": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter 2–3%, P 15–20 and 40–50 ppm, and K 100–120 and 200–250 ppm are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant pH, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High pH does not automatically justify sulfur on a calcareous field. A low N snapshot does not by itself prove a fixed nitrogen dose.",
+      "captionText": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter 2–3%, P 15–20 and 40–50 ppm, and K 100–120 and 200–250 ppm are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant pH, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High pH does not automatically justify sulfur on a calcareous field. A low N snapshot does not by itself prove a fixed nitrogen dose.",
+      "spokenText": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter two to three percent, phosphorus fifteen to twenty and forty to fifty parts per million, and potassium one hundred to one hundred twenty and two hundred to two hundred fifty parts per million are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant P H, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High P H does not automatically justify sulfur on a calcareous field. A low nitrogen snapshot does not by itself prove a fixed nitrogen dose.",
+      "spokenTextSHA256": "d2b88d6fae0e6e9d9519efdfc52b28959913196e37d5f3723538c970427bc748",
+      "spokenTextSha256": "d2b88d6fae0e6e9d9519efdfc52b28959913196e37d5f3723538c970427bc748",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter 2–3%, P 15–20 and 40–50 ppm, and K 100–120 and 200–250 ppm are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant pH, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High pH does not automatically justify sulfur on a calcareous field. A low N snapshot does not by itself prove a fixed nitrogen dose.",
+          "spoken": "The training table below deliberately preserves its example figures. It has unclassified gaps: organic matter two to three percent, phosphorus fifteen to twenty and forty to fifty parts per million, and potassium one hundred to one hundred twenty and two hundred to two hundred fifty parts per million are not assigned by those rows. Its nitrogen row gives no stable optimum or high boundary. Do not invent a class inside a gap or transfer these cutoffs to another laboratory.\n\nThe table's simple actions—consider lime for a low crop-relevant P H, consider a suitable phosphorus or potassium input when truly deficient, and use organic inputs when appropriate—are questions for a local recommendation, not automatic prescriptions. High P H does not automatically justify sulfur on a calcareous field. A low nitrogen snapshot does not by itself prove a fixed nitrogen dose.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "38eab15c9ee4e2ecc65d113897cd2e284cb13972e0c54d27a4668a087d9bb244",
+      "requestFingerprintSha256": "38eab15c9ee4e2ecc65d113897cd2e284cb13972e0c54d27a4668a087d9bb244",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R06-r1",
+      "unitId": "S2-09-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Think for one minute: under the displayed teaching table only, pH 5.5 is in its low-pH row and P 12 ppm is in its low-P row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated P recommendation you still need before giving an amount.",
+          "sha256": "9f721976c13909ede1b4083ffcf22e6c212513917a36ad3710d2af05791658fd"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "The defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from pH 5.5 and 12 ppm alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+          "sha256": "9b561e80d742df570db3f41329c3617499cf8757bb682676e7a32586b7ae547c"
+        }
+      ],
+      "scientificMeaning": "Think for one minute: under the displayed teaching table only, pH 5.5 is in its low-pH row and P 12 ppm is in its low-P row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated P recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from pH 5.5 and 12 ppm alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+      "displayText": "Think for one minute: under the displayed teaching table only, pH 5.5 is in its low-pH row and P 12 ppm is in its low-P row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated P recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from pH 5.5 and 12 ppm alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+      "captionText": "Think for one minute: under the displayed teaching table only, pH 5.5 is in its low-pH row and P 12 ppm is in its low-P row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated P recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from pH 5.5 and 12 ppm alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+      "spokenText": "Think for one minute: under the displayed teaching table only, P H five point five is in its low-P H row and phosphorus twelve parts per million is in its low-phosphorus row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated phosphorus recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from P H five point five and twelve parts per million alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+      "spokenTextSHA256": "41090491ec72dd1710190ad5bcaf1cb910c98385aad1d392c60ecf06c2a05143",
+      "spokenTextSha256": "41090491ec72dd1710190ad5bcaf1cb910c98385aad1d392c60ecf06c2a05143",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Think for one minute: under the displayed teaching table only, pH 5.5 is in its low-pH row and P 12 ppm is in its low-P row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated P recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from pH 5.5 and 12 ppm alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+          "spoken": "Think for one minute: under the displayed teaching table only, P H five point five is in its low-P H row and phosphorus twelve parts per million is in its low-phosphorus row. Pair for two minutes to explain why those classes depend on the table's method and local relevance. Share for two minutes what crop, lab method, reserve-acidity result and calibrated phosphorus recommendation you still need before giving an amount.\n\nThe defensible direction may be to investigate liming and a phosphorus plan, but no number of bags follows from P H five point five and twelve parts per million alone. Record X for a possible lime amount and Y for a possible fertilizer amount as unresolved placeholders, not as zero or guessed values.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "56fffe63b75b2a627687183138864216105dc4e0abbfa618aeb55ea959a050e6",
+      "requestFingerprintSha256": "56fffe63b75b2a627687183138864216105dc4e0abbfa618aeb55ea959a050e6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-R07-r1",
+      "unitId": "S2-09-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "A quick N measurement can change with timing, water movement and biological processes. Think of N as a meal that can move or be used quickly, while P and K tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.",
+          "sha256": "378f596fe8a804b93f5e65089663cb227e7f1f030b7fc60d247fca9daac934a4"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "A soil-test P or K concentration in ppm is different from a fertilizer label. A bag marked 11-52-0 reports percentage N, phosphate expressed as P2O5 and potash expressed as K2O. It does not say that the soil contains 11, 52 or 0 ppm. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+          "sha256": "947f8d64abed5a94f4ace10dcda668d6f0add16a562db89de3cd313369cdf83c"
+        }
+      ],
+      "scientificMeaning": "A quick N measurement can change with timing, water movement and biological processes. Think of N as a meal that can move or be used quickly, while P and K tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test P or K concentration in ppm is different from a fertilizer label. A bag marked 11-52-0 reports percentage N, phosphate expressed as P2O5 and potash expressed as K2O. It does not say that the soil contains 11, 52 or 0 ppm. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+      "displayText": "A quick N measurement can change with timing, water movement and biological processes. Think of N as a meal that can move or be used quickly, while P and K tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test P or K concentration in ppm is different from a fertilizer label. A bag marked 11-52-0 reports percentage N, phosphate expressed as P2O5 and potash expressed as K2O. It does not say that the soil contains 11, 52 or 0 ppm. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+      "captionText": "A quick N measurement can change with timing, water movement and biological processes. Think of N as a meal that can move or be used quickly, while P and K tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test P or K concentration in ppm is different from a fertilizer label. A bag marked 11-52-0 reports percentage N, phosphate expressed as P2O5 and potash expressed as K2O. It does not say that the soil contains 11, 52 or 0 ppm. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+      "spokenText": "A quick nitrogen measurement can change with timing, water movement and biological processes. Think of nitrogen as a meal that can move or be used quickly, while phosphorus and potassium tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test phosphorus or potassium concentration in parts per million is different from a fertilizer label. A bag marked eleven, fifty-two, zero reports percentages of nitrogen, phosphate expressed as P two O five and potash expressed as K two O. It does not say that the soil contains eleven, fifty-two or zero parts per million. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+      "spokenTextSHA256": "37327a742a8a99833c3f7d012f15cea441c1654993c70187f667ddbe6f18b3af",
+      "spokenTextSha256": "37327a742a8a99833c3f7d012f15cea441c1654993c70187f667ddbe6f18b3af",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A quick N measurement can change with timing, water movement and biological processes. Think of N as a meal that can move or be used quickly, while P and K tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test P or K concentration in ppm is different from a fertilizer label. A bag marked 11-52-0 reports percentage N, phosphate expressed as P2O5 and potash expressed as K2O. It does not say that the soil contains 11, 52 or 0 ppm. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+          "spoken": "A quick nitrogen measurement can change with timing, water movement and biological processes. Think of nitrogen as a meal that can move or be used quickly, while phosphorus and potassium tests are sometimes compared with a pantry; the analogy helps remember timing but is not a chemical or agronomic rule. Nitrogen planning depends on crop demand, timing, prior inputs, soil supply and an appropriate local recommendation—not one low number alone.\n\nA soil-test phosphorus or potassium concentration in parts per million is different from a fertilizer label. A bag marked eleven, fifty-two, zero reports percentage nitrogen, phosphate expressed as P two O five and potash expressed as K two O. It does not say that the soil contains eleven, fifty-two or zero parts per million. Read the report's results, method, interpretation and crop-specific recommendation separately from the product's guaranteed analysis.",
+          "occurrences": 1,
+          "purpose": "Exact source quantities/ranges/units/chemical-formula letters and N/P/K names expanded for natural speech; qualifiers and model/table scope preserved. Egyptian case endings localized. No display/source changes."
+        },
+        {
+          "written": "reports percentage nitrogen",
+          "spoken": "reports percentages of nitrogen",
+          "occurrences": 1,
+          "purpose": "Pre-production natural grammar and explicit original symbol/acronym identity instead of redundant name expansion; exact original facts and quantities/source/display retained"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b99ed68181744417b4435fe812230e32baace650a002ebe69832b7a7498220a4",
+      "requestFingerprintSha256": "b99ed68181744417b4435fe812230e32baace650a002ebe69832b7a7498220a4",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
