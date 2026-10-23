@@ -1,0 +1,306 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-08-en.json",
+    "sha256": "b8aed081fe59011a46d02489f8904c19f6eba9c9eb8fc01b954184fdc5253dc2",
+    "bytes": 37985
+  },
+  "units": [
+    {
+      "id": "S2-08-en-reasoning-evidence-guidance-r1",
+      "unitId": "S2-08-en-reasoning-evidence-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "reasoning-evidence-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8aed081fe59011a46d02489f8904c19f6eba9c9eb8fc01b954184fdc5253dc2",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/modelHelp",
+          "text": "Two teaching soils at the same model pH5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.",
+          "sha256": "ae925e65e9a20e2aede7aca9b208bde8d8e1c4ac4d69c30ef40f725452f4519b"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/0",
+          "text": "Under otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.",
+          "sha256": "59458084707677fbe965f2610e78e92957483aa3e61766e04c777b577b0d21bb"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/1",
+          "text": "Clay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.",
+          "sha256": "88fd282256746fe8bc461de63eb876d19d7f390bb101e39fe5d4af78e1a11c69"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/0",
+          "text": "Consider raising pH",
+          "sha256": "a40324523026cfa7c43fcaf824531e8a3c44885784db32b15f5ded64499dbd20"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/1",
+          "text": "Investigate possible lowering",
+          "sha256": "bafd2a41f299684ac466d5f8b44ee3a0c5b10c25d4d0463005aadb2e2566e2b0"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/2",
+          "text": "Consider a soil-health input, not a pH cure",
+          "sha256": "abc8bb397961a831dd2d228a89d8ca7ba7e495f7cebaeee502d9656af878fe9c"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/3",
+          "text": "Insufficient evidence for that decision",
+          "sha256": "771ad0866432f1505f4e20d2f704e35d31395c8a83e7249610f915064a621f63"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/0",
+          "text": "Crop and suitable target",
+          "sha256": "055deb38f5940655c10bd4b3f199518562ccc381fad80314e31f6aa144b1bad6"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/1",
+          "text": "Representative pH result and named method",
+          "sha256": "c8d33853d393a3a12efef88f86f07c18c04a886d54778ac4b115e39f0eaabbd1"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/2",
+          "text": "Appropriate buffer / lime-requirement test",
+          "sha256": "4982b18cc38d0d3775662a1009d769d8d9ebbff94b254cdf2828814aad3114bb"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/3",
+          "text": "Confirmed Mg or P status as relevant",
+          "sha256": "48b45aa44703236d98950df280c1e6a05041b0f7cb64964ab91ec756582dcd22"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/4",
+          "text": "Material effectiveness, quality and rate basis",
+          "sha256": "74360ee2c6971f5e57474893916377d0b65422ff8cf3558e5f31271213df489d"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/5",
+          "text": "Carbonates, irrigation water and site feasibility",
+          "sha256": "2bcecc34e3dd1ee90d46e1ebdd9dda1c55b60fe6c088de57fee94bc0b7aec7ce"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/6",
+          "text": "Material maturity, salt/nutrient load and timing",
+          "sha256": "736b2d640ef0fcf332c5cb59074f1af75cb28deec35ea0e8245128db89924f59"
+        },
+        {
+          "pointer": "/amendmentPractice/accessibility",
+          "text": "Sentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+          "sha256": "d15274ed9489902830a89becb560e1447abe4d791795e90c8a2d691d53dcf593"
+        }
+      ],
+      "scientificMeaning": "Two teaching soils at the same model pH5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+      "displayText": "Two teaching soils at the same model pH5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+      "captionText": "Two teaching soils at the same model pH5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+      "spokenText": "Two teaching soils at the same model P H five point two. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted P H change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to P H change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising P H\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a P H cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative P H result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed magnesium or phosphorus status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted phosphorus, aluminum and iron chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+      "spokenTextSHA256": "d1a73345d701bca452e84bfbf2b89c2131e6bcdde07d12163e9bcad228714652",
+      "spokenTextSha256": "d1a73345d701bca452e84bfbf2b89c2131e6bcdde07d12163e9bcad228714652",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Two teaching soils at the same model pH5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+          "spoken": "Two teaching soils at the same model pH 5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted P/Al/Fe chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+          "occurrences": 1,
+          "purpose": "Separate attached scientific symbols and decimal values before exact spoken expansion"
+        },
+        {
+          "written": "P/Al/Fe",
+          "spoken": "phosphorus, aluminum and iron",
+          "occurrences": 1,
+          "purpose": "Exact course identifier, chemical element or specimen-label spoken expansion; source unchanged"
+        },
+        {
+          "written": "Two teaching soils at the same model pH 5.2. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted pH change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to pH change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising pH\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a pH cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative pH result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed Mg or P status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted phosphorus, aluminum and iron chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+          "spoken": "Two teaching soils at the same model P H five point two. Grain shapes are schematic, not measured texture or a count of acidity. Select a soil to inspect; no amount or predicted P H change is simulated.\n\nUnder otherwise comparable conditions, a sandy soil often has less buffering. The lime requirement is still tested, not calculated from particle appearance.\n\nClay and organic matter often increase reserve acidity and resistance to P H change. A suitable buffer/lime-requirement test is still needed.\n\nConsider raising P H\n\nInvestigate possible lowering\n\nConsider a soil-health input, not a P H cure\n\nInsufficient evidence for that decision\n\nCrop and suitable target\n\nRepresentative P H result and named method\n\nAppropriate buffer / lime-requirement test\n\nConfirmed magnesium or phosphorus status as relevant\n\nMaterial effectiveness, quality and rate basis\n\nCarbonates, irrigation water and site feasibility\n\nMaterial maturity, salt/nutrient load and timing\n\nSentence starters, definitions and highlighted phosphorus, aluminum and iron chart rows are available; no need to disclose a personal experience or invent a laboratory value.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cc1a189d8e02c44f006be6e2b1eecb1e0e0fd4f2f92b87a5c76889b8d3fca1b2",
+      "requestFingerprintSha256": "cc1a189d8e02c44f006be6e2b1eecb1e0e0fd4f2f92b87a5c76889b8d3fca1b2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-08-en-reasoning-completion-r1",
+      "unitId": "S2-08-en-reasoning-completion-r1",
+      "locale": "en",
+      "semanticGroup": "reasoning-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8aed081fe59011a46d02489f8904c19f6eba9c9eb8fc01b954184fdc5253dc2",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/passChecks/0/evidence",
+          "text": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.",
+          "sha256": "1f576880a0bc66b755c55981b27ca3d70e237e38e2abd28e2e2c1e87f1d633c5"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/0/decision",
+          "text": "Pass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed pH change from pH alone does not pass.",
+          "sha256": "2fa535f33ac4d9a9e793760dc124637c3056011498acc00fb53ff05ce52cb089"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/evidence",
+          "text": "Learner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.",
+          "sha256": "62b7729e9817ddaff8bb06ec354a050754d795c7a85c0c4f6f98d8ab5e60d1ec"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/decision",
+          "text": "Pass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.",
+          "sha256": "f068e86203c367f1337ddbe99bfa3295fa908b056819eea245f2b732652822b4"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/evidence",
+          "text": "Learner keeps A, B, C and soybean 5.2 as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic pH fixes.",
+          "sha256": "f0820f566b1b36614bdc0d9b8248330b670c2963a9fd40f4ec0d45e4b0052405"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/decision",
+          "text": "Pass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+          "sha256": "a3d5e990b98cfbc14446db9f0bbd2dc37dffe5fc6ca09d109c9f5f4a385db0a0"
+        }
+      ],
+      "scientificMeaning": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed pH change from pH alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean 5.2 as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic pH fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+      "displayText": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed pH change from pH alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean 5.2 as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic pH fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+      "captionText": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed pH change from pH alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean 5.2 as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic pH fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+      "spokenText": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed P H change from P H alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean five point two as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic P H fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+      "spokenTextSHA256": "76e1b15cbffad594b33bb9c1a3ec0cdc89dd2fdb76e2e1b3a5cdb9326644dee0",
+      "spokenTextSha256": "76e1b15cbffad594b33bb9c1a3ec0cdc89dd2fdb76e2e1b3a5cdb9326644dee0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed pH change from pH alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean 5.2 as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic pH fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+          "spoken": "Learner correctly states the direction of change, identifies calcium carbonate versus calcium-magnesium carbonate, describes sulfur's microbial oxidation and a crop/soil-specific reason to postpone a recommendation.\n\nPass with a qualified explanation, not a one-word product answer. A dose or immediate guaranteed P H change from P H alone does not pass.\n\nLearner compares sand, clay/organic matter and calcareous soil using reserve acidity or buffering, and names the test, target, material effectiveness and field conditions needed for a site rate.\n\nPass when all decision inputs and limits are understood. No numeric application rate is scored without actual lab and site data.\n\nLearner keeps A, B, C and soybean five point two as source model cases until verified; proposes measurement and diagnosis before conditional recommendations; explains when compost/manure/cover crops are useful but not automatic P H fixes.\n\nPass with evidence-based distinctions and an appropriate next check for each case. Symptoms or model key alone are insufficient.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba3d4c09cae44709a9478fcddb23d624c6a2b206359d8f70466a7eb6a06746cb",
+      "requestFingerprintSha256": "ba3d4c09cae44709a9478fcddb23d624c6a2b206359d8f70466a7eb6a06746cb",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-08-en-record-guidance-r1",
+      "unitId": "S2-08-en-record-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8aed081fe59011a46d02489f8904c19f6eba9c9eb8fc01b954184fdc5253dc2",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/recordHelp",
+          "text": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.",
+          "sha256": "d3b46231e6e5ef80ed23aac0b36a89193abb835b41f21b77a33eefdbc3f86a7b"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/0",
+          "text": "Sample and field ID",
+          "sha256": "70d1e460da11d7630adb2084ed7ba93c9e4481af196d930d9e99abf36f7b0dab"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/1",
+          "text": "Test date / tester",
+          "sha256": "4dee51a46073f1135100a7e2e95c65074674fa1a90ca108d434efc2abe2184ae"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/2",
+          "text": "Kit, manual and matching chart",
+          "sha256": "c4b7aa3bb25c30b652e625b7a91e62910ece970271d0a9f006410906163d9f62"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/3",
+          "text": "Observed value or supported interval",
+          "sha256": "540e2684310106f30fa39b418485bc9146d820c9807bfc7d8f07a5fd392d641d"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/4",
+          "text": "Chart resolution / uncertainty",
+          "sha256": "1874beeb8bb86398f46709e16d2d34b0e35cb05100aa9bf68aba57cd0d5d7751"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/5",
+          "text": "Actual development wait / observation",
+          "sha256": "a7a5f99ff9099bfad6763399c5416deeb18857378d556f146a53fc7df99fc7fb"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/6",
+          "text": "Possible nutrient issue and alternative check",
+          "sha256": "10198c38dcb357ba791c8845e247fac0b4609fad95b4a8d93418c1fccba3c9d2"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/7",
+          "text": "Crop-specific next investigation, without a guessed dose",
+          "sha256": "f3f258bced9814e06670675a9894d7f7636aa15f27527924945709bd65e24fe6"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/saved",
+          "text": "Row saved locally. No practical result or trainer signature has been created.",
+          "sha256": "62c7270d05bedab98a453106b48f0bed9507d77be519761ae9c7858a01235dcc"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "pH amendment decision worksheet",
+          "sha256": "99157ce2a2219bf6439d9c67400884920593f2a4697a6074c0dde6a1b41077fe"
+        }
+      ],
+      "scientificMeaning": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\npH amendment decision worksheet",
+      "displayText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\npH amendment decision worksheet",
+      "captionText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\npH amendment decision worksheet",
+      "spokenText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nP H amendment decision worksheet",
+      "spokenTextSHA256": "4fe594c68ec2b43ad0e48df8fa15386b3e9bc14502a2ab7cc22a4667b0ad590a",
+      "spokenTextSha256": "4fe594c68ec2b43ad0e48df8fa15386b3e9bc14502a2ab7cc22a4667b0ad590a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\npH amendment decision worksheet",
+          "spoken": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field ID\n\nTest date / tester\n\nKit, manual and matching chart\n\nObserved value or supported interval\n\nChart resolution / uncertainty\n\nActual development wait / observation\n\nPossible nutrient issue and alternative check\n\nCrop-specific next investigation, without a guessed dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nP H amendment decision worksheet",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4f909d7aaba7d63485fdda6bdd3ebff663dd1a5519e1c889656655ff5622f657",
+      "requestFingerprintSha256": "4f909d7aaba7d63485fdda6bdd3ebff663dd1a5519e1c889656655ff5622f657",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

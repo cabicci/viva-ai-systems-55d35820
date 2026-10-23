@@ -1,0 +1,312 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-08-de.json",
+    "sha256": "6c86571d234cb207d7999e1de43cc2aa6ffe1040d9d2ebc74da80625f9535a1c",
+    "bytes": 38403
+  },
+  "units": [
+    {
+      "id": "S2-08-de-reasoning-evidence-guidance-r1",
+      "unitId": "S2-08-de-reasoning-evidence-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "reasoning-evidence-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6c86571d234cb207d7999e1de43cc2aa6ffe1040d9d2ebc74da80625f9535a1c",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/modelHelp",
+          "text": "Zwei Lehrböden mit gleichem Modell-pH5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.",
+          "sha256": "e9ce35f485c41ab62fbeea97fce87cbc717acdf5aafe4c9fba52c034ae05ceeb"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/0",
+          "text": "Bei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.",
+          "sha256": "77832dc3efae1ce865efaa6ab691a5e22b3434dc7e9fe05e88374b104d158461"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/1",
+          "text": "Ton und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.",
+          "sha256": "a3dc1179fec37d2d1d918a3796b89cc4391510004e26ed9f139c36b4174e1edb"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/0",
+          "text": "pH-Anhebung erwägen",
+          "sha256": "744d7da35cccf67a85e816c77b1d6a3e22bec4cd1c4903c745adf7708f28bd21"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/1",
+          "text": "Mögliche Absenkung untersuchen",
+          "sha256": "23bd009f8d750c45f6c52064b0b05b35774ed74c1c03c7c4b419f93fdf85b38d"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/2",
+          "text": "Bodengesundheit erwägen, keine pH-Heilung",
+          "sha256": "53608843ae1bae30e2afbd9100b02957af3f952b49e641a4729a882becd86600"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/3",
+          "text": "Unzureichende Belege für diese Entscheidung",
+          "sha256": "9c64c12173d5aa6d547ab659f4b05b6d56364104fda3451483cc87fc32c87efd"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/0",
+          "text": "Kultur und geeigneter Zielbereich",
+          "sha256": "a1bcd699c100044f880688ba09de4cfa91010893a83e5cfa62d682ca5fe5f130"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/1",
+          "text": "Repräsentativer pH und benannte Methode",
+          "sha256": "d24c245b7ed5890279ebdab786c6454355a00d738d1c0d286bddb70664cc694d"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/2",
+          "text": "Geeigneter Puffer-/Kalkbedarfstest",
+          "sha256": "e10842d903955c97530f4e76e7c9642e4f862266ff986eb1dbf1bb295d58421e"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/3",
+          "text": "Je nach Fall bestätigter Mg- oderP-Status",
+          "sha256": "4e43d3cd85f828872dfec84102dc621a94a2b6276af5b42e33bc22d07783c335"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/4",
+          "text": "Materialwirkung/-qualität und Mengenbasis",
+          "sha256": "66d51683bb21fb69d8e5bdad36ae08db08d981992c7422cc5c2751655f1e7d43"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/5",
+          "text": "Carbonate, Bewässerungswasser und Standorteignung",
+          "sha256": "e2497fe981d8962e06708e9127ddfb82857bf36ec47c8bab120661faf9060756"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/6",
+          "text": "Reife, Salz-/Nährstofflast und Zeitpunkt",
+          "sha256": "3470a0a2d6d8d2e4e34ba079a1c3045c7644e1fe64633c95c3a1ee4cf0996e3f"
+        },
+        {
+          "pointer": "/amendmentPractice/accessibility",
+          "text": "Biete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+          "sha256": "959bd3859a51f5d5c1156e57166c4396f76c20b522e3ac23740756f5c19ae6d0"
+        }
+      ],
+      "scientificMeaning": "Zwei Lehrböden mit gleichem Modell-pH5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oderP-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+      "displayText": "Zwei Lehrböden mit gleichem Modell-pH5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oderP-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+      "captionText": "Zwei Lehrböden mit gleichem Modell-pH5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oderP-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+      "spokenText": "Zwei Lehrböden mit gleichem Modell-P H fünf Komma zwei. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder P H-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen P H-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\nP H-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine P H-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer P H und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Magnesium- oder Phosphor-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene Phosphor, Aluminium und Eisen-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+      "spokenTextSHA256": "3b1d6ed3e8046019936d9bc8617f522b6323f88dd7d199c33b86e3dbbca5cc28",
+      "spokenTextSha256": "3b1d6ed3e8046019936d9bc8617f522b6323f88dd7d199c33b86e3dbbca5cc28",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zwei Lehrböden mit gleichem Modell-pH5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oderP-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+          "spoken": "Zwei Lehrböden mit gleichem Modell-pH 5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oderP-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene P/Al/Fe-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+          "occurrences": 1,
+          "purpose": "Separate attached scientific symbols and decimal values before exact spoken expansion"
+        },
+        {
+          "written": "P/Al/Fe",
+          "spoken": "Phosphor, Aluminium und Eisen",
+          "occurrences": 1,
+          "purpose": "Exact course identifier, chemical element or specimen-label spoken expansion; source unchanged"
+        },
+        {
+          "written": "oderP",
+          "spoken": "oder Phosphor",
+          "occurrences": 1,
+          "purpose": "Exact course identifier, chemical element or specimen-label spoken expansion; source unchanged"
+        },
+        {
+          "written": "Zwei Lehrböden mit gleichem Modell-pH 5.2. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder pH-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen pH-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\npH-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine pH-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer pH und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Mg- oder Phosphor-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene Phosphor, Aluminium und Eisen-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+          "spoken": "Zwei Lehrböden mit gleichem Modell-P H fünf Komma zwei. Schematische Formen, keine gemessene Textur oder Säureanzahl. Boden wählen; keine Menge oder P H-Änderung simuliert.\n\nBei sonst vergleichbaren Bedingungen ist Sandboden oft weniger gepuffert. Kalkbedarf muss trotzdem getestet werden, nicht aus Körnerform berechnet.\n\nTon und organische Substanz erhöhen oft Reservesäure und Widerstand gegen P H-Änderung. Geeigneter Puffer-/Kalkbedarfstest bleibt nötig.\n\nP H-Anhebung erwägen\n\nMögliche Absenkung untersuchen\n\nBodengesundheit erwägen, keine P H-Heilung\n\nUnzureichende Belege für diese Entscheidung\n\nKultur und geeigneter Zielbereich\n\nRepräsentativer P H und benannte Methode\n\nGeeigneter Puffer-/Kalkbedarfstest\n\nJe nach Fall bestätigter Magnesium- oder Phosphor-Status\n\nMaterialwirkung/-qualität und Mengenbasis\n\nCarbonate, Bewässerungswasser und Standorteignung\n\nReife, Salz-/Nährstofflast und Zeitpunkt\n\nBiete Satzanfänge, Begriffe und hervorgehobene Phosphor, Aluminium und Eisen-Zeilen; persönliche Erfahrungen und erfundene Laborwerte sind nicht nötig.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f08c3e8a2def74502e0c44ed8b56fc8d9467739574ed7a6e1d5d0bcaa5bd1349",
+      "requestFingerprintSha256": "f08c3e8a2def74502e0c44ed8b56fc8d9467739574ed7a6e1d5d0bcaa5bd1349",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-08-de-reasoning-completion-r1",
+      "unitId": "S2-08-de-reasoning-completion-r1",
+      "locale": "de",
+      "semanticGroup": "reasoning-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6c86571d234cb207d7999e1de43cc2aa6ffe1040d9d2ebc74da80625f9535a1c",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/passChecks/0/evidence",
+          "text": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.",
+          "sha256": "8d5689c0f701471929cf2b3c96ecbb5e68dad51d319d377a04fc30a4efda75dd"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/0/decision",
+          "text": "Bestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte pH-Änderung aus einem pH-Wert genügt nicht.",
+          "sha256": "015a997431a561950a4b7d606491c664e9169f6ef9e5ed4945afc1384df5a588"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/evidence",
+          "text": "Sand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.",
+          "sha256": "bab21a8140d5d0d38810ad8de550612f3dab0b854ec390766cceb296725e691b"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/decision",
+          "text": "Bestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.",
+          "sha256": "cd3eedaad5b26a409fb0809ce61c7291c5c00d562c5042139af46cfc9a523cd0"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/evidence",
+          "text": "A, B, C und Soja 5.2 bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.",
+          "sha256": "3e956435db5862811ff724fafd8126291f35d6a1e96b45d5696f9d23b18e9fc4"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/decision",
+          "text": "Bestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+          "sha256": "013cfc716668625445608934c772ad8e7219a25c729d4e7b21f9c54838c8d516"
+        }
+      ],
+      "scientificMeaning": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte pH-Änderung aus einem pH-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja 5.2 bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+      "displayText": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte pH-Änderung aus einem pH-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja 5.2 bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+      "captionText": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte pH-Änderung aus einem pH-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja 5.2 bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+      "spokenText": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte P H-Änderung aus einem P H-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja fünf Komma zwei bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+      "spokenTextSHA256": "c23ee26fa962aa0b2f4aca94553f7ccd054e09aebf4b55330cf1b9c6cad8032f",
+      "spokenTextSha256": "c23ee26fa962aa0b2f4aca94553f7ccd054e09aebf4b55330cf1b9c6cad8032f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte pH-Änderung aus einem pH-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja 5.2 bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+          "spoken": "Die lernende Person nennt die richtige Änderungsrichtung, trennt Calciumcarbonat von Calcium-Magnesium-Carbonat, erklärt die mikrobielle Schwefeloxidation und einen kultur- oder bodenbezogenen Grund, eine Empfehlung aufzuschieben.\n\nBestanden mit begründeter, bedingter Erklärung, nicht nur einem Produktnamen. Eine Dosis oder sofort garantierte P H-Änderung aus einem P H-Wert genügt nicht.\n\nSand, Ton, organische Substanz und kalkhaltiger Boden werden nach Reserveazidität und Pufferung verglichen; die Person benennt Untersuchung, Ziel, Materialwirksamkeit und Feldbedingungen für eine standortbezogene Dosis.\n\nBestanden, wenn alle entscheidenden Daten und Grenzen verstanden sind. Ohne echte Labor- und Standortdaten wird keine Zahlenmenge bewertet.\n\nA, B, C und Soja fünf Komma zwei bleiben Modellfälle bis zur Prüfung; vor bedingten Empfehlungen werden Messung und Diagnose vorgeschlagen; Nutzen und Grenzen von Kompost, gereiftem Mist und Zwischenfrüchten werden erläutert.\n\nBestanden mit belegten Unterscheidungen und passender nächster Prüfung für jeden Fall. Symptome oder Modelllösung allein reichen nicht.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b7336ae5e97d651b46a00b44ce0c82ae248b162ac0a4f0d5ad3ee07b8ec7ec62",
+      "requestFingerprintSha256": "b7336ae5e97d651b46a00b44ce0c82ae248b162ac0a4f0d5ad3ee07b8ec7ec62",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-08-de-record-guidance-r1",
+      "unitId": "S2-08-de-record-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6c86571d234cb207d7999e1de43cc2aa6ffe1040d9d2ebc74da80625f9535a1c",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/recordHelp",
+          "text": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.",
+          "sha256": "96ee0b875efd85ca6b5edc7f289a7738230bebd3bb42ba62e3ba26bbd8649866"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/0",
+          "text": "Proben- und Feldkennung",
+          "sha256": "f13a137862cc9ca3fbba70c5f59447a7d9b7d811b05472802a11f1a211858ed4"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/1",
+          "text": "Testdatum / prüfende Person",
+          "sha256": "d627aecdcacddcb54c0a43b41fbdac8cb67132a94829d19519f18909e97ded1c"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/2",
+          "text": "Set, Anleitung und passende Skala",
+          "sha256": "6f1c662c13282d21e7ed6f39e24287beaa077e05502cf208c55d85a5e6c8a670"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/3",
+          "text": "Beobachteter Wert oder unterstütztes Intervall",
+          "sha256": "2128182e84de60a6e4f3e16e32ba730185c330d72318ba1a64c87c2469de3e7b"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/4",
+          "text": "Auflösung / Unsicherheit",
+          "sha256": "30f002141c44626ba8fcacb56a85ca5efd7ef8a474cc9e443f841537f6b73465"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/5",
+          "text": "Echte Entwicklungszeit / Beobachtung",
+          "sha256": "1488e6369252f728eed746e1b31c80741546b908a8dc951c5c8185e0ef67ec43"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/6",
+          "text": "Mögliche Nährstofffrage und alternative Prüfung",
+          "sha256": "dc06d33d7b715547da71cf09919e8b659360af3b38c961c3e82071d91a97ba68"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/7",
+          "text": "Nächste kulturspezifische Untersuchung, keine erfundene Menge",
+          "sha256": "ab41676abcd1f7c1b35fbf64765c15f57b7e21b89ebc59a865d7ff865b8a1931"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/saved",
+          "text": "Lokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.",
+          "sha256": "e2d01ad0810b05294c20db0fb827b99ae0ee0f09041648c1e5a96fdd3172dac6"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt pH-Änderungsentscheidung",
+          "sha256": "9e0bf4bb309584ce1166bf80772c6b034064ad43f56b1511008666de6df7fec2"
+        }
+      ],
+      "scientificMeaning": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt pH-Änderungsentscheidung",
+      "displayText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt pH-Änderungsentscheidung",
+      "captionText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt pH-Änderungsentscheidung",
+      "spokenText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt P H-Änderungsentscheidung",
+      "spokenTextSHA256": "73e0382b5ddb07aa257730d6960c8189cd7271dbda9d7aed26ba2be1182e9224",
+      "spokenTextSha256": "73e0382b5ddb07aa257730d6960c8189cd7271dbda9d7aed26ba2be1182e9224",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt pH-Änderungsentscheidung",
+          "spoken": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nTestdatum / prüfende Person\n\nSet, Anleitung und passende Skala\n\nBeobachteter Wert oder unterstütztes Intervall\n\nAuflösung / Unsicherheit\n\nEchte Entwicklungszeit / Beobachtung\n\nMögliche Nährstofffrage und alternative Prüfung\n\nNächste kulturspezifische Untersuchung, keine erfundene Menge\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt P H-Änderungsentscheidung",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "eb125ac38cf207566f30aceefcfd2ab970fc2eea2040f86782295e63069f40ce",
+      "requestFingerprintSha256": "eb125ac38cf207566f30aceefcfd2ab970fc2eea2040f86782295e63069f40ce",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

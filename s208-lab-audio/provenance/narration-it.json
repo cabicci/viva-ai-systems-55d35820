@@ -1,0 +1,312 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-08-it.json",
+    "sha256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+    "bytes": 38807
+  },
+  "units": [
+    {
+      "id": "S2-08-it-reasoning-evidence-guidance-r1",
+      "unitId": "S2-08-it-reasoning-evidence-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "reasoning-evidence-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/modelHelp",
+          "text": "Due suoli didattici allo stesso pH5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.",
+          "sha256": "1dbf0379227b8312f0ba022d65eec2b4dd3c78e30d58da7185856289821a1607"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/0",
+          "text": "A parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.",
+          "sha256": "ca04d9d8dd367780f84502e1caae5eaef589c486bb1336bd8a861a2fb864e530"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/soilNotes/1",
+          "text": "Argilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.",
+          "sha256": "bfef74f42afeefa4a804bb5d946374c919788e95f19400825620dca4c4df54e6"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/0",
+          "text": "Considerare aumento del pH",
+          "sha256": "670090f55c0d3241d0ad676f5f77dc465b0c66a5f1a0e601f402c81274a23d2a"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/1",
+          "text": "Indagare una possibile riduzione",
+          "sha256": "c742099e0223275b12a6e0c434df3f0359660a03b32a94d11f27687653a73b0a"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/2",
+          "text": "Considerare salute del suolo, non cura del pH",
+          "sha256": "c75b9d2dcb1fedd1abbae088a7f058ecc03283e0d7a4144151801419ac5a5726"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/directions/3",
+          "text": "Prove insufficienti per questa decisione",
+          "sha256": "ef618daac7a3b8538016db56d1f8a0642ed0cb6070acfc7838e7aea16a07a7fc"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/0",
+          "text": "Coltura e intervallo obiettivo",
+          "sha256": "d010f0e4541710fef07e3955d9ddba7e72407a83fc18fd42fc57d3f1853b5e7a"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/1",
+          "text": "pH rappresentativo e metodo dichiarato",
+          "sha256": "25ed18fb323487bc511fa50d1d12a45eb8329efedb0fabb5965cc568529fd86a"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/2",
+          "text": "Test tampone / fabbisogno di calce idoneo",
+          "sha256": "e21639e4e52bd9c0b940bfffab7965a48cbbb67316b00d1d05ab3bc42f500685"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/3",
+          "text": "Stato Mg oP confermato secondo il caso",
+          "sha256": "dd5713de280b9368ac134224615fb11729a7831aa5e3685c0f3aefb3a0974a45"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/4",
+          "text": "Efficacia/qualità del materiale e base della dose",
+          "sha256": "7419c3338517367543e1604dbd9db9a85ddaa390abe4547eaa67cf97fd5e2d29"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/5",
+          "text": "Carbonati, acqua irrigua e fattibilità del sito",
+          "sha256": "57209f7d081c9e882cbb2c2b35d4cad0940d58b67930403c51d5256ec6348eb8"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/inputs/6",
+          "text": "Maturità, sali/nutrienti del materiale e tempi",
+          "sha256": "2cd5a5e14b6e0ddce5929789a69690c8679e879f29e53da81856b91f8adc67f4"
+        },
+        {
+          "pointer": "/amendmentPractice/accessibility",
+          "text": "Offri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+          "sha256": "e39d0e34f6e501e0da7f55ac81e9152a5c371b5436c8f5564fb107f816861e41"
+        }
+      ],
+      "scientificMeaning": "Due suoli didattici allo stesso pH5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg oP confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+      "displayText": "Due suoli didattici allo stesso pH5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg oP confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+      "captionText": "Due suoli didattici allo stesso pH5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg oP confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+      "spokenText": "Due suoli didattici allo stesso P H cinque virgola due. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di P H è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del P H\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del P H\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\nP H rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato magnesio o fosforo confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe fosforo, alluminio e ferro evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+      "spokenTextSHA256": "059c62bde5e4abdb4f30dfd1778115d57a1aa5a98d0215d19172faf48b01e57f",
+      "spokenTextSha256": "059c62bde5e4abdb4f30dfd1778115d57a1aa5a98d0215d19172faf48b01e57f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Due suoli didattici allo stesso pH5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg oP confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+          "spoken": "Due suoli didattici allo stesso pH 5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg oP confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe P/Al/Fe evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+          "occurrences": 1,
+          "purpose": "Separate attached scientific symbols and decimal values before exact spoken expansion"
+        },
+        {
+          "written": "P/Al/Fe",
+          "spoken": "fosforo, alluminio e ferro",
+          "occurrences": 1,
+          "purpose": "Exact course identifier, chemical element or specimen-label spoken expansion; source unchanged"
+        },
+        {
+          "written": "oP",
+          "spoken": "o fosforo",
+          "occurrences": 1,
+          "purpose": "Exact course identifier, chemical element or specimen-label spoken expansion; source unchanged"
+        },
+        {
+          "written": "Due suoli didattici allo stesso pH 5.2. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di pH è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del pH\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del pH\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\npH rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato Mg o fosforo confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe fosforo, alluminio e ferro evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+          "spoken": "Due suoli didattici allo stesso P H cinque virgola due. Forme schematiche, non tessitura misurata o conteggio di acidità. Seleziona un suolo; nessuna dose o variazione di P H è simulata.\n\nA parità di altre condizioni il suolo sabbioso spesso è meno tamponato. Serve comunque un test del fabbisogno, non la forma dei granuli.\n\nArgilla e sostanza organica spesso aumentano acidità di riserva e resistenza al cambiamento. Occorre un test tampone/fabbisogno idoneo.\n\nConsiderare aumento del P H\n\nIndagare una possibile riduzione\n\nConsiderare salute del suolo, non cura del P H\n\nProve insufficienti per questa decisione\n\nColtura e intervallo obiettivo\n\nP H rappresentativo e metodo dichiarato\n\nTest tampone / fabbisogno di calce idoneo\n\nStato magnesio o fosforo confermato secondo il caso\n\nEfficacia/qualità del materiale e base della dose\n\nCarbonati, acqua irrigua e fattibilità del sito\n\nMaturità, sali/nutrienti del materiale e tempi\n\nOffri inizi di frase, definizioni e righe fosforo, alluminio e ferro evidenziate; nessuno deve raccontare esperienze personali o inventare risultati di laboratorio.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4c199308e604ad56a52e7109bad7c2f8abfb98e21339cafefb34f69e31f83025",
+      "requestFingerprintSha256": "4c199308e604ad56a52e7109bad7c2f8abfb98e21339cafefb34f69e31f83025",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-08-it-reasoning-completion-r1",
+      "unitId": "S2-08-it-reasoning-completion-r1",
+      "locale": "it",
+      "semanticGroup": "reasoning-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/passChecks/0/evidence",
+          "text": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.",
+          "sha256": "8ec3cf56a0e9457fa0bdd8960c13b306426b48a292038fdfc88170d7d61bd6b6"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/0/decision",
+          "text": "Superato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di pH immediato garantito dal solo valore non supera la prova.",
+          "sha256": "8c86b33d217548b68271581d506c1ebdb26ac243d2d035ec492dc856c10bac6a"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/evidence",
+          "text": "L'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.",
+          "sha256": "d157bb596c596ce8163037682af6ab2524bdd97256105c25c47ef8a00d3f47f6"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/1/decision",
+          "text": "Superato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.",
+          "sha256": "4f362ec1f8092f19a5547ccac94b6f4040877a4cfcc8ab5791bf824c2d363a9d"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/evidence",
+          "text": "L’allievo mantiene A, B, C e soia 5.2 come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del pH.",
+          "sha256": "4b2e18b978b53b9a882f808cef2da790422fc4c9a1e6087e80e1dcb5e982a6dd"
+        },
+        {
+          "pointer": "/amendmentPractice/passChecks/2/decision",
+          "text": "Superato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+          "sha256": "b08359e74b6bd88e35bc94740c0463f0a1127226134fda62a3fb8758eaa6be5e"
+        }
+      ],
+      "scientificMeaning": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di pH immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia 5.2 come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del pH.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+      "displayText": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di pH immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia 5.2 come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del pH.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+      "captionText": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di pH immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia 5.2 come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del pH.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+      "spokenText": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di P H immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia cinque virgola due come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del P H.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+      "spokenTextSHA256": "2e5548ab3f68869d55046b605605bd29ba99fa4c62f555e98af608a419e018c9",
+      "spokenTextSha256": "2e5548ab3f68869d55046b605605bd29ba99fa4c62f555e98af608a419e018c9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di pH immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia 5.2 come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del pH.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+          "spoken": "L'allievo indica la direzione corretta del cambiamento, distingue carbonato di calcio da carbonato di calcio e magnesio, descrive l'ossidazione microbica dello zolfo e un motivo specifico di coltura o suolo per rinviare la raccomandazione.\n\nSuperato con spiegazione qualificata, non con il solo nome di un prodotto. Una dose o un cambiamento di P H immediato garantito dal solo valore non supera la prova.\n\nL'allievo confronta sabbia, argilla, sostanza organica e suolo calcareo in termini di acidità di riserva o potere tampone, e nomina test, obiettivo, efficacia del materiale e condizioni di campo necessari per una dose locale.\n\nSuperato quando comprende tutti i dati decisionali e i loro limiti. Non si valuta una dose numerica senza dati reali di laboratorio e sito.\n\nL’allievo mantiene A, B, C e soia cinque virgola due come casi modello finché non siano verificati, propone misure e diagnosi prima di raccomandazioni condizionate, e distingue i benefici di compost, letame maturo e colture di copertura dalle correzioni automatiche del P H.\n\nSuperato con distinzioni sostenute da prove e una verifica successiva appropriata per ogni caso. Sintomi e soluzione modello da soli non bastano.",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "18c623a1e9b5d3fe7d6aadcf7e4fb5f83ec675a157799b6479040f0d81e9e4db",
+      "requestFingerprintSha256": "18c623a1e9b5d3fe7d6aadcf7e4fb5f83ec675a157799b6479040f0d81e9e4db",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-08-it-record-guidance-r1",
+      "unitId": "S2-08-it-record-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "92c12ce88a5d0fb511e01449ac3c84f521383dae1fa37f7d8c3212ee742de9f6",
+      "sourceBindings": [
+        {
+          "pointer": "/amendmentPractice/ui/recordHelp",
+          "text": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.",
+          "sha256": "a472a13c8f02c773e6b0e2fdcb6b1be4da81655f451cfb6035afb3fdb8fcc0f1"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/0",
+          "text": "ID campione e campo",
+          "sha256": "0758df38e1e55a7467a7b89d0390386cc9267390b80ed63faab87b698b2cea32"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/1",
+          "text": "Data / esecutore",
+          "sha256": "113177fcb7fb996f5b01bbd60aeb8b86e442fb716c026adaa187814a3da74490"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/2",
+          "text": "Kit, manuale e scala abbinata",
+          "sha256": "d9966c99f477da6b1ddaae1cae8818a57e307d08fbfee71eae7c38a18a8b4850"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/3",
+          "text": "Valore osservato o intervallo supportato",
+          "sha256": "41f5c277293a68230c4acf1839d70a7560002ef9a35a359297de17f5069417ff"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/4",
+          "text": "Risoluzione / incertezza",
+          "sha256": "e6551477f2efb18744b0314ebad237d522aa8acbe8825790f10f563c393bdf74"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/5",
+          "text": "Attesa reale / osservazione",
+          "sha256": "7344a7a9e83a6aa00eddb825a21a474da0e462f79f98b53bee118e1f1d67d9cd"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/6",
+          "text": "Possibile problema nutritivo e verifica alternativa",
+          "sha256": "69db715424645216d98906a7d9242c62bedfd6d92f883bb3bc754c049d04504d"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/fields/7",
+          "text": "Indagine successiva per la coltura, senza dosi inventate",
+          "sha256": "53e32011135d2c73a9705cb46737dd179495e5c141fad5bdf3888128355340ae"
+        },
+        {
+          "pointer": "/amendmentPractice/ui/saved",
+          "text": "Riga salvata in locale. Nessun risultato pratico certificato né firma creata.",
+          "sha256": "a0ccc837d3726361d5ed077b53e4cdac08fca4dac8487f843e9eda224124ac77"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda decisionale ammendanti pH",
+          "sha256": "61c45712e091bb93a500d4cd7de022362039fff604c8d326b88867545c9ebdf4"
+        }
+      ],
+      "scientificMeaning": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti pH",
+      "displayText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti pH",
+      "captionText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti pH",
+      "spokenText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti P H",
+      "spokenTextSHA256": "6cf8778ddd2601cea812d9543c14096756742ca8ac5ef98b3b6c26186903b0e1",
+      "spokenTextSha256": "6cf8778ddd2601cea812d9543c14096756742ca8ac5ef98b3b6c26186903b0e1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti pH",
+          "spoken": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nID campione e campo\n\nData / esecutore\n\nKit, manuale e scala abbinata\n\nValore osservato o intervallo supportato\n\nRisoluzione / incertezza\n\nAttesa reale / osservazione\n\nPossibile problema nutritivo e verifica alternativa\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda decisionale ammendanti P H",
+          "occurrences": 1,
+          "purpose": "Exact whole-token chemical names, specimen labels and decimal quantity expansion"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8c54ce6e5a4414c0718c8df2ce33e7a2197e524202b9f0b4de39d8454b23f166",
+      "requestFingerprintSha256": "8c54ce6e5a4414c0718c8df2ce33e7a2197e524202b9f0b4de39d8454b23f166",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
