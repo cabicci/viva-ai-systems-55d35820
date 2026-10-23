@@ -1,0 +1,73 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-en.json",
+    "sha256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+    "bytes": 25054
+  },
+  "units": [
+    {
+      "id": "S3-04-en-R04-dye-marker-repair-r1",
+      "unitId": "S3-04-en-R04-dye-marker-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-s304-s3-04-en-r04-dye-marker-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+          "sha256": "107b1e010a8db434d0a5a16658e4cb14102d5b3a495f6b0495e326b07a44d88a"
+        }
+      ],
+      "scientificMeaning": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+      "displayText": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+      "captionText": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+      "spokenText": "The dye is a visible marker, not a quantitative nutrient test.",
+      "spokenTextSHA256": "12eea644678c586fb90dd0d74a62fd6486650dcc430e5c30c4739f4567550f98",
+      "spokenTextSha256": "12eea644678c586fb90dd0d74a62fd6486650dcc430e5c30c4739f4567550f98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Compare a fresh crisp carrot with one that has become limp or rubbery. The contrast illustrates turgor, although it does not alone identify why a field plant wilted. Put a cut celery petiole with leaves into water tinted with safe food coloring, note the starting time, and observe colored paths over several hours or use a sample prepared the day before. The pathways indicate water movement through vascular tissue; the dye is a visible tracer rather than a quantitative nutrient test.",
+          "spoken": "the dye is a visible tracer rather than a quantitative nutrient test.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "the dye is a visible tracer rather than a quantitative nutrient test.",
+          "spoken": "The dye is a visible marker, not a quantitative nutrient test.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "7739ab850d5886a776a5c36377a9e421adf3374412d24fdba05535d528219ec2",
+      "requestFingerprintSha256": "7739ab850d5886a776a5c36377a9e421adf3374412d24fdba05535d528219ec2",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "the dye is a visible tracer rather than a quantitative nutrient test.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s304-three-repairs-one-context-root-authority-r1.json",
+        "authoritySHA256": "703cc846f723c5a145f38558960e2fec8e0fc9f069c76ec9ec4dab2b35a41f26",
+        "metadataGETAuthoritySHA256": "21d7a238bc1be716c7acbee8f9c12c96f9dad5accc0383b5e6fcba505cb5c1c5"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
